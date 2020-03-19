@@ -35,6 +35,14 @@
     --input-background-color: #fcfcfc;
     --input-focus-border-color: #5f8cff;
 
+    --search-input-background-color: #e6eef3; /* derived from --input-background-color */
+    --search-match-color: #2c6b96; /* derived from --link-color */
+    --search-match-background-color: #e3f2fd; /* derived from --link-color */
+    --search-active-color: #efefef;
+    --search-credits-background-color: #333f67; /* derived from --navbar-background-color */
+    --search-credits-color: #b3b3b3; /* derived from --footer-color */
+    --search-credits-link-color: #4392c5; /* derived from --link-color */
+
     --highlight-background-color: #f5ffe1;
     --highlight-comment-color: #408090;
     --highlight-keyword-color: #007020;
@@ -63,6 +71,11 @@
     --admonition-tip-color: #404040;
     --admonition-tip-title-background-color: #1abc9c;
     --admonition-tip-title-color: #fff;
+
+    --kbd-background-color: #fafbfc;
+    --kbd-outline-color: #d1d5da;
+    --kbd-shadow-color: #b0b7bf;
+    --kbd-text-color: #444d56;
 
     --btn-neutral-background-color: #f3f6f6;
     --btn-neutral-hover-background-color: #e5ebeb;
@@ -101,6 +114,14 @@
         --input-background-color: #333537;
         --input-focus-border-color: #5f8cff;
 
+        --search-input-background-color: #43464a; /* derived from --input-background-color */
+        --search-match-color: #52b4ff; /* derived from --link-color */
+        --search-match-background-color: #414c56; /* derived from --link-color */
+        --search-active-color: #202326;
+        --search-credits-background-color: #202123; /* derived from --navbar-background-color */
+        --search-credits-color: #6b6b6b; /* derived from --footer-color */
+        --search-credits-link-color: #628fb1; /* derived from --link-color */
+
         /* Colors taken from the Godot script editor with the Adaptive theme */
         --highlight-background-color: #202531;
         --highlight-comment-color: rgba(204, 206, 211, 0.5);
@@ -130,6 +151,11 @@
         --admonition-tip-color: #dfd;
         --admonition-tip-title-background-color: #336648;
         --admonition-tip-title-color: #dfd;
+
+        --kbd-background-color: #595b5d;
+        --kbd-outline-color: #3d4144;
+        --kbd-shadow-color: #1e2023;
+        --kbd-text-color: #e2f2ff;
 
         --btn-neutral-background-color: #404040;
         --btn-neutral-hover-background-color: #505050;
@@ -232,6 +258,99 @@ footer,
     color: var(--footer-color);
 }
 
+/* Sphinx Search extension */
+/* .wy-body-for-nav is used for higher rule specificity */
+
+/* search popup body */
+.wy-body-for-nav .search__outer {
+    background-color: var(--content-background-color);
+    border: 2px solid var(--content-background-color);
+}
+.wy-body-for-nav .search__cross svg {
+    fill: var(--body-color);
+}
+
+.wy-body-for-nav .search__outer::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: var(--content-background-color);
+}
+.wy-body-for-nav .search__outer::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    background-color: var(--content-background-color);
+}
+.wy-body-for-nav .search__outer::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--hr-color);
+}
+
+/* search input */
+.wy-body-for-nav .search__outer__input {
+    background-color: var(--search-input-background-color);
+    background-image: none;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    color: var(--body-color);
+    height: 36px;
+    padding: 6px 12px;
+}
+.wy-body-for-nav .search__outer__input:focus {
+    border-color: var(--input-focus-border-color);
+}
+.wy-body-for-nav .search__outer .bar:after,
+.wy-body-for-nav .search__outer .bar:before {
+    display: none;
+}
+
+/* search item */
+.wy-body-for-nav .search__result__single {
+    border-bottom-color: var(--hr-color);
+}
+/* search item title */
+.wy-body-for-nav .search__result__title {
+    color: var(--link-color);
+    border-bottom: none;
+    font-size: 120%;
+    font-weight: 400;
+}
+
+/* search item section */
+.wy-body-for-nav .outer_div_page_results:hover,
+.wy-body-for-nav .search__result__box .active {
+    background-color: var(--search-active-color);
+}
+.wy-body-for-nav .search__result__subheading{
+    color: var(--body-color);
+    font-size: 100%;
+    font-weight: 400;
+}
+.wy-body-for-nav .search__result__content {
+    color: var(--footer-color);
+}
+
+/* search item matching substring */
+.wy-body-for-nav .search__outer .search__result__title span,
+.wy-body-for-nav .search__outer .search__result__content span {
+    color: var(--search-match-color);
+    border-bottom: 1px solid var(--search-match-color);
+    background-color: var(--search-match-background-color);
+    padding: 0 2px;
+}
+.wy-body-for-nav .search__result__subheading span {
+    border-bottom-color: var(--body-color);
+}
+
+/* search credits */
+.wy-body-for-nav .rtd__search__credits {
+    background-color: var(--search-credits-background-color);
+    border-color: var(--search-credits-background-color);
+    color: var(--search-credits-color);
+    padding: 4px 8px;
+}
+.wy-body-for-nav .rtd__search__credits a {
+    color: var(--search-credits-link-color);
+}
+
 /* Main sections */
 
 .wy-nav-content-wrap {
@@ -246,7 +365,7 @@ footer,
     background-color: var(--content-wrap-background-color);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
     .wy-body-for-nav {
         /* Center the page on wide displays for better readability */
         max-width: 1100px;
@@ -349,7 +468,8 @@ code,
     color: var(--highlight-type2-color);
 }
 
-.highlight .nf {
+.highlight .nf,
+.highlight .nt {
     color: var(--highlight-function-color);
 }
 
@@ -415,6 +535,20 @@ code,
     color: var(--admonition-tip-title-color);
 }
 
+/* Keyboard shortcuts tweaks */
+kbd, .kbd {
+    background-color: var(--kbd-background-color);
+    border: 1px solid var(--kbd-outline-color);
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 var(--kbd-shadow-color);
+    color: var(--kbd-text-color);
+    display: inline-block;
+    font-size: 12px;
+    line-height: 11px;
+    padding: 4px 5px;
+    vertical-align: middle;
+}
+
 /* Buttons */
 
 .btn-neutral {
@@ -444,7 +578,7 @@ code,
     position: fixed;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
     /* Simulate a drop shadow that only affects the bottom edge */
     /* This is used to indicate the search bar is fixed */
     .wy-side-nav-search.fixed::after {
@@ -495,7 +629,7 @@ code,
     background-color: var(--navbar-background-color);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
     .wy-nav-side {
         /* Required to center the page on wide displays */
         left: inherit;
@@ -604,7 +738,7 @@ code,
     background-color: var(--navbar-current-background-color);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
     .rst-versions {
         /* Required to center the page on wide displays */
         left: inherit;

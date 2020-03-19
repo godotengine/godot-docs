@@ -48,8 +48,6 @@ Methods
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`is_simulating_physics<class_PhysicalBone_method_is_simulating_physics>` **(** **)**                                                               |
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_static_body<class_PhysicalBone_method_is_static_body>` **(** **)**                                                                             |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -225,10 +223,4 @@ Method Descriptions
 .. _class_PhysicalBone_method_is_simulating_physics:
 
 - :ref:`bool<class_bool>` **is_simulating_physics** **(** **)**
-
-----
-
-.. _class_PhysicalBone_method_is_static_body:
-
-- :ref:`bool<class_bool>` **is_static_body** **(** **)**
 

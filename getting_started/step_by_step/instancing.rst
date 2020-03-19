@@ -79,7 +79,7 @@ Multiple instances
 
 You can add as many instances as you like to a scene, either by using the
 "Instance" button again, or by clicking on the ball instance and pressing
-"Duplicate" (Ctrl-D):
+"Duplicate" (:kbd:`Ctrl + D`):
 
 .. image:: img/instancing_multiball.png
 
@@ -90,8 +90,9 @@ Run the scene again and all of the balls will fall.
 Editing instances
 -----------------
 
-Open the ``Ball`` scene and add a ``PhysicsMaterial`` by clicking on the down
-arrow and selecting "New PhysicsMaterial".
+Open the ``Ball`` scene and add a ``PhysicsMaterial`` by opening the "Physics
+Material Override" dropdown in the Inspector dock and selecting "New
+PhysicsMaterial".
 
 .. image:: img/instancing_physicsmat1.png
 

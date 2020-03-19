@@ -38,8 +38,6 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                     | :ref:`applied_torque<class_RigidBody2D_property_applied_torque>`                       | ``0.0``             |
 +-----------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                     | :ref:`bounce<class_RigidBody2D_property_bounce>`                                       |                     |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`                       | :ref:`can_sleep<class_RigidBody2D_property_can_sleep>`                                 | ``true``            |
 +-----------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`                       | :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>`                     | ``false``           |
@@ -49,8 +47,6 @@ Properties
 | :ref:`CCDMode<enum_RigidBody2D_CCDMode>`      | :ref:`continuous_cd<class_RigidBody2D_property_continuous_cd>`                         | ``0``               |
 +-----------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`                       | :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>`                 | ``false``           |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                     | :ref:`friction<class_RigidBody2D_property_friction>`                                   |                     |
 +-----------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                     | :ref:`gravity_scale<class_RigidBody2D_property_gravity_scale>`                         | ``1.0``             |
 +-----------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
@@ -245,22 +241,6 @@ The body's total applied torque.
 
 ----
 
-.. _class_RigidBody2D_property_bounce:
-
-- :ref:`float<class_float>` **bounce**
-
-+----------+-------------------+
-| *Setter* | set_bounce(value) |
-+----------+-------------------+
-| *Getter* | get_bounce()      |
-+----------+-------------------+
-
-The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounciness).
-
-Deprecated, use :ref:`PhysicsMaterial.bounce<class_PhysicsMaterial_property_bounce>` instead via :ref:`physics_material_override<class_RigidBody2D_property_physics_material_override>`.
-
-----
-
 .. _class_RigidBody2D_property_can_sleep:
 
 - :ref:`bool<class_bool>` **can_sleep**
@@ -340,22 +320,6 @@ Continuous collision detection tries to predict where a moving body will collide
 +-----------+----------------------------------+
 
 If ``true``, internal force integration is disabled for this body. Aside from collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody2D_method__integrate_forces>` function.
-
-----
-
-.. _class_RigidBody2D_property_friction:
-
-- :ref:`float<class_float>` **friction**
-
-+----------+---------------------+
-| *Setter* | set_friction(value) |
-+----------+---------------------+
-| *Getter* | get_friction()      |
-+----------+---------------------+
-
-The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum friction).
-
-Deprecated, use :ref:`PhysicsMaterial.friction<class_PhysicsMaterial_property_friction>` instead via :ref:`physics_material_override<class_RigidBody2D_property_physics_material_override>`.
 
 ----
 

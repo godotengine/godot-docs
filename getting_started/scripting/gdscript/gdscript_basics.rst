@@ -63,6 +63,7 @@ here's a simple example of how GDScript looks.
 
     class_name MyClass, "res://path/to/optional/icon.svg"
 
+
     # Member variables
 
     var a = 5
@@ -87,6 +88,7 @@ here's a simple example of how GDScript looks.
     var v2 = Vector2(1, 2)
     var v3 = Vector3(1, 2, 3)
 
+
     # Function
 
     func some_function(param1, param2):
@@ -108,16 +110,19 @@ here's a simple example of how GDScript looks.
         var local_var2 = param1 + 3
         return local_var2
 
+
     # Functions override functions with the same name on the base/parent class.
     # If you still want to call them, use '.' (like 'super' in other languages).
 
     func something(p1, p2):
         .something(p1, p2)
 
+
     # Inner class
 
     class Something:
         var a = 10
+
 
     # Constructor
 
@@ -563,8 +568,8 @@ after the variable name, followed by the type.
 If the variable is initialized within the declaration, the type can be inferred, so
 it's possible to omit the type name::
 
-    var my_vector2 := Vector2() # 'my_vector2' is of type 'Vector2'
-    var my_node := Sprite.new() # 'my_node' is of type 'Sprite'
+    var my_vector2 := Vector2() # 'my_vector2' is of type 'Vector2'.
+    var my_node := Sprite.new() # 'my_node' is of type 'Sprite'.
 
 Type inference is only possible if the assigned value has a defined type, otherwise
 it will raise an error.
@@ -590,14 +595,14 @@ same type or a subtype of the cast type.
 ::
 
     var my_node2D: Node2D
-    my_node2D = $Sprite as Node2D # Works since Sprite is a subtype of Node2D
+    my_node2D = $Sprite as Node2D # Works since Sprite is a subtype of Node2D.
 
 If the value is not a subtype, the casting operation will result in a ``null`` value.
 
 ::
 
     var my_node2D: Node2D
-    my_node2D = $Button as Node2D # Results in 'null' since a Button is not a subtype of Node2D
+    my_node2D = $Button as Node2D # Results in 'null' since a Button is not a subtype of Node2D.
 
 For built-in types, they will be forcibly converted if possible, otherwise the
 engine will raise an error.
@@ -605,8 +610,8 @@ engine will raise an error.
 ::
 
     var my_int: int
-    my_int = "123" as int # The string can be converted to int
-    my_int = Vector2() as int # A Vector2 can't be converted to int, this will cause an error
+    my_int = "123" as int # The string can be converted to int.
+    my_int = Vector2() as int # A Vector2 can't be converted to int, this will cause an error.
 
 Casting is also useful to have better type-safe variables when interacting with
 the scene tree::
@@ -987,11 +992,11 @@ By default, all script files are unnamed classes. In this case, you can only
 reference them using the file's path, using either a relative or an absolute
 path. For example, if you name a script file ``character.gd``::
 
-   # Inherit from Character.gd
+   # Inherit from 'Character.gd'.
 
    extends "res://path/to/character.gd"
 
-   # Load character.gd and create a new node instance from it
+   # Load character.gd and create a new node instance from it.
 
    var Character = load("res://path/to/character.gd")
    var character_node = Character.new()
@@ -1067,7 +1072,7 @@ the ``is`` keyword can be used::
     # [...]
 
     # Use 'is' to check inheritance.
-    if (entity is Enemy):
+    if entity is Enemy:
         entity.apply_damage()
 
 To call a function in a *parent class* (i.e. one ``extend``-ed in your current
@@ -1293,7 +1298,7 @@ to. To create custom signals for a class, use the ``signal`` keyword.
 
    extends Node
 
-   # A signal named health_depleted
+   # A signal named health_depleted.
    signal health_depleted
 
 .. note::
@@ -1312,14 +1317,14 @@ In the example below, we connect the ``health_depleted`` signal from a
 ``Character`` node to a ``Game`` node. When the ``Character`` node emits the
 signal, the game node's ``_on_Character_health_depleted`` is called::
 
-   # Game.gd
+    # Game.gd
 
-   func _ready():
-      var character_node = get_node('Character')
-      character_node.connect("health_depleted", self, "_on_Character_health_depleted")
+    func _ready():
+        var character_node = get_node('Character')
+        character_node.connect("health_depleted", self, "_on_Character_health_depleted")
 
-   func _on_Character_health_depleted():
-      get_tree().reload_current_scene()
+    func _on_Character_health_depleted():
+        get_tree().reload_current_scene()
 
 You can emit as many arguments as you want along with a signal.
 
@@ -1342,7 +1347,7 @@ the :ref:`Object.connect() <class_Object_method_connect>` method::
         health -= amount
 
         # We emit the health_changed signal every time the
-        # character takes damage
+        # character takes damage.
         emit_signal("health_changed", old_health, health)
     ...
 
@@ -1351,7 +1356,7 @@ the :ref:`Object.connect() <class_Object_method_connect>` method::
     # Lifebar.gd
 
     # Here, we define a function to use as a callback when the
-    # character's health_changed signal is emitted
+    # character's health_changed signal is emitted.
 
     ...
     func _on_Character_health_changed(old_value, new_value):
@@ -1361,7 +1366,7 @@ the :ref:`Object.connect() <class_Object_method_connect>` method::
             progress_bar.modulate = Color.green
 
         # Imagine that `animate` is a user-defined function that animates the
-        # bar filling up or emptying itself
+        # bar filling up or emptying itself.
         progress_bar.animate(old_value, new_value)
     ...
 
@@ -1376,13 +1381,13 @@ node in this case.
 
 ::
 
-   # Game.gd
+    # Game.gd
 
-   func _ready():
-      var character_node = get_node('Character')
-      var lifebar_node = get_node('UserInterface/Lifebar')
+    func _ready():
+        var character_node = get_node('Character')
+        var lifebar_node = get_node('UserInterface/Lifebar')
 
-      character_node.connect("health_changed", lifebar_node, "_on_Character_health_changed")
+        character_node.connect("health_changed", lifebar_node, "_on_Character_health_changed")
 
 This allows the ``Lifebar`` to react to health changes without coupling it to
 the ``Character`` node.
@@ -1390,8 +1395,8 @@ the ``Character`` node.
 You can write optional argument names in parentheses after the signal's
 definition::
 
-   # Defining a signal that forwards two arguments
-   signal health_changed(old_value, new_value)
+    # Defining a signal that forwards two arguments.
+    signal health_changed(old_value, new_value)
 
 These arguments show up in the editor's node dock, and Godot can use them to
 generate callback functions for you. However, you can still emit any number of
@@ -1414,23 +1419,24 @@ taken by each character on the screen, like ``Player1 took 22 damage.``. The
 damage. So when we connect the signal to the in-game console, we can add the
 character's name in the binds array argument::
 
-   # Game.gd
+    # Game.gd
 
-   func _ready():
-      var character_node = get_node('Character')
-      var battle_log_node = get_node('UserInterface/BattleLog')
+    func _ready():
+        var character_node = get_node('Character')
+        var battle_log_node = get_node('UserInterface/BattleLog')
 
-      character_node.connect("health_changed", battle_log_node, "_on_Character_health_changed", [character_node.name])
+        character_node.connect("health_changed", battle_log_node, "_on_Character_health_changed", [character_node.name])
 
 Our ``BattleLog`` node receives each element in the binds array as an extra argument::
 
-   # BattleLog.gd
+    # BattleLog.gd
 
-   func _on_Character_health_changed(old_value, new_value, character_name):
-      if not new_value <= old_value:
-         return
-      var damage = old_value - new_value
-      label.text += character_name + " took " + str(damage) + " damage."
+    func _on_Character_health_changed(old_value, new_value, character_name):
+        if not new_value <= old_value:
+            return
+            
+        var damage = old_value - new_value
+        label.text += character_name + " took " + str(damage) + " damage."
 
 
 Coroutines with yield
@@ -1445,9 +1451,9 @@ function returns. Once resumed, the state object becomes invalid. Here is
 an example::
 
     func my_func():
-       print("Hello")
-       yield()
-       print("world")
+        print("Hello")
+        yield()
+        print("world")
 
     func _ready():
         var y = my_func()
@@ -1466,9 +1472,9 @@ It is also possible to pass values between ``yield()`` and ``resume()``,
 for example::
 
     func my_func():
-       print("Hello")
-       print(yield())
-       return "cheers!"
+        print("Hello")
+        print(yield())
+        return "cheers!"
 
     func _ready():
         var y = my_func()
@@ -1481,6 +1487,19 @@ Will print::
     Hello
     world
     cheers!
+
+Remember to save the new function state, when using multiple ``yield``\s::
+
+    func co_func():
+        for i in range(1, 5):
+            print("Turn %d" % i)
+            yield();
+
+    func _ready():
+        var co = co_func();
+        while co is GDScriptFunction && co.is_valid():
+            co = co.resume();
+
 
 Coroutines & signals
 ^^^^^^^^^^^^^^^^^^^^

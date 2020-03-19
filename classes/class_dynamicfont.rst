@@ -47,10 +47,6 @@ Properties
 +-----------------------------------------------+------------------------------------------------------------------------------+-------------------------+
 | :ref:`int<class_int>`                         | :ref:`size<class_DynamicFont_property_size>`                                 | ``16``                  |
 +-----------------------------------------------+------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`use_filter<class_DynamicFont_property_use_filter>`                     | ``false``               |
-+-----------------------------------------------+------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`use_mipmaps<class_DynamicFont_property_use_mipmaps>`                   | ``false``               |
-+-----------------------------------------------+------------------------------------------------------------------------------+-------------------------+
 
 Methods
 -------
@@ -222,38 +218,6 @@ The font outline's thickness in pixels (not relative to the font size).
 +-----------+-----------------+
 
 The font size in pixels.
-
-----
-
-.. _class_DynamicFont_property_use_filter:
-
-- :ref:`bool<class_bool>` **use_filter**
-
-+-----------+-----------------------+
-| *Default* | ``false``             |
-+-----------+-----------------------+
-| *Setter*  | set_use_filter(value) |
-+-----------+-----------------------+
-| *Getter*  | get_use_filter()      |
-+-----------+-----------------------+
-
-If ``true``, filtering is used. This makes the font blurry instead of pixelated when scaling it if font oversampling is disabled or ineffective. It's recommended to enable this when using the font in a control whose size changes over time, unless a pixel art aesthetic is desired.
-
-----
-
-.. _class_DynamicFont_property_use_mipmaps:
-
-- :ref:`bool<class_bool>` **use_mipmaps**
-
-+-----------+------------------------+
-| *Default* | ``false``              |
-+-----------+------------------------+
-| *Setter*  | set_use_mipmaps(value) |
-+-----------+------------------------+
-| *Getter*  | get_use_mipmaps()      |
-+-----------+------------------------+
-
-If ``true``, mipmapping is used. This improves the font's appearance when downscaling it if font oversampling is disabled or ineffective.
 
 Method Descriptions
 -------------------

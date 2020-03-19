@@ -38,28 +38,28 @@ Properties
 Methods
 -------
 
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`add_focusable<class_EditorProperty_method_add_focusable>` **(** :ref:`Control<class_Control>` control **)**                                                                                                                 |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`emit_changed<class_EditorProperty_method_emit_changed>` **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value, :ref:`String<class_String>` field="", :ref:`bool<class_bool>` changing=false **)** |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>` | :ref:`get_edited_object<class_EditorProperty_method_get_edited_object>` **(** **)**                                                                                                                                               |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_edited_property<class_EditorProperty_method_get_edited_property>` **(** **)**                                                                                                                                           |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_tooltip_text<class_EditorProperty_method_get_tooltip_text>` **(** **)** const                                                                                                                                           |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`set_bottom_editor<class_EditorProperty_method_set_bottom_editor>` **(** :ref:`Control<class_Control>` editor **)**                                                                                                          |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`update_property<class_EditorProperty_method_update_property>` **(** **)** virtual                                                                                                                                           |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`add_focusable<class_EditorProperty_method_add_focusable>` **(** :ref:`Control<class_Control>` control **)**                                                                                                                                  |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`emit_changed<class_EditorProperty_method_emit_changed>` **(** :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value, :ref:`StringName<class_StringName>` field=@"", :ref:`bool<class_bool>` changing=false **)** |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>`         | :ref:`get_edited_object<class_EditorProperty_method_get_edited_object>` **(** **)**                                                                                                                                                                |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringName<class_StringName>` | :ref:`get_edited_property<class_EditorProperty_method_get_edited_property>` **(** **)**                                                                                                                                                            |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`get_tooltip_text<class_EditorProperty_method_get_tooltip_text>` **(** **)** const                                                                                                                                                            |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`set_bottom_editor<class_EditorProperty_method_set_bottom_editor>` **(** :ref:`Control<class_Control>` editor **)**                                                                                                                           |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`update_property<class_EditorProperty_method_update_property>` **(** **)** virtual                                                                                                                                                            |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
 .. _class_EditorProperty_signal_multiple_properties_changed:
 
-- **multiple_properties_changed** **(** :ref:`PoolStringArray<class_PoolStringArray>` properties, :ref:`Array<class_Array>` value **)**
+- **multiple_properties_changed** **(** :ref:`PackedStringArray<class_PackedStringArray>` properties, :ref:`Array<class_Array>` value **)**
 
 Emit it if you want multiple properties modified at the same time. Do not use if added via :ref:`EditorInspectorPlugin.parse_property<class_EditorInspectorPlugin_method_parse_property>`.
 
@@ -67,7 +67,7 @@ Emit it if you want multiple properties modified at the same time. Do not use if
 
 .. _class_EditorProperty_signal_object_id_selected:
 
-- **object_id_selected** **(** :ref:`String<class_String>` property, :ref:`int<class_int>` id **)**
+- **object_id_selected** **(** :ref:`StringName<class_StringName>` property, :ref:`int<class_int>` id **)**
 
 Used by sub-inspectors. Emit it if what was selected was an Object ID.
 
@@ -75,7 +75,7 @@ Used by sub-inspectors. Emit it if what was selected was an Object ID.
 
 .. _class_EditorProperty_signal_property_changed:
 
-- **property_changed** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
+- **property_changed** **(** :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value **)**
 
 Do not emit this manually, use the :ref:`emit_changed<class_EditorProperty_method_emit_changed>` method instead.
 
@@ -83,7 +83,7 @@ Do not emit this manually, use the :ref:`emit_changed<class_EditorProperty_metho
 
 .. _class_EditorProperty_signal_property_checked:
 
-- **property_checked** **(** :ref:`String<class_String>` property, :ref:`String<class_String>` bool **)**
+- **property_checked** **(** :ref:`StringName<class_StringName>` property, :ref:`String<class_String>` bool **)**
 
 Emitted when a property was checked. Used internally.
 
@@ -91,7 +91,7 @@ Emitted when a property was checked. Used internally.
 
 .. _class_EditorProperty_signal_property_keyed:
 
-- **property_keyed** **(** :ref:`String<class_String>` property **)**
+- **property_keyed** **(** :ref:`StringName<class_StringName>` property **)**
 
 Emit it if you want to add this value as an animation key (check for keying being enabled first).
 
@@ -99,7 +99,7 @@ Emit it if you want to add this value as an animation key (check for keying bein
 
 .. _class_EditorProperty_signal_property_keyed_with_value:
 
-- **property_keyed_with_value** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
+- **property_keyed_with_value** **(** :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value **)**
 
 Emit it if you want to key a property with a single value.
 
@@ -229,7 +229,7 @@ If any of the controls added can gain keyboard focus, add it here. This ensures 
 
 .. _class_EditorProperty_method_emit_changed:
 
-- void **emit_changed** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value, :ref:`String<class_String>` field="", :ref:`bool<class_bool>` changing=false **)**
+- void **emit_changed** **(** :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value, :ref:`StringName<class_StringName>` field=@"", :ref:`bool<class_bool>` changing=false **)**
 
 If one or several properties have changed, this must be called. ``field`` is used in case your editor can modify fields separately (as an example, Vector3.x). The ``changing`` argument avoids the editor requesting this property to be refreshed (leave as ``false`` if unsure).
 
@@ -245,7 +245,7 @@ Gets the edited object.
 
 .. _class_EditorProperty_method_get_edited_property:
 
-- :ref:`String<class_String>` **get_edited_property** **(** **)**
+- :ref:`StringName<class_StringName>` **get_edited_property** **(** **)**
 
 Gets the edited property. If your editor is for a single property (added via :ref:`EditorInspectorPlugin.parse_property<class_EditorInspectorPlugin_method_parse_property>`), then this will return the property.
 

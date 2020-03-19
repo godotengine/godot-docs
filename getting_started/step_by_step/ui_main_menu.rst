@@ -127,7 +127,7 @@ We have to add a root node before we can save the scene. Your UI's root
 should be the outermost container or element. In this case it's a
 ``MarginContainer``. ``MarginContainer`` is a good starting point for
 most interfaces, as you often need padding around the UI. Press
-``Meta+S`` to save the scene to the disk. Name it *MainMenu*.
+:kbd:`Meta + S` to save the scene to the disk. Name it *MainMenu*.
 
 Select the ``MarginContainer`` again, and head to the inspector to
 define the margins' size. Scroll down the ``Control`` class, to the
@@ -152,9 +152,9 @@ Select the ``MarginContainer``, and create the UI elements as
 3. the version note,
 4. and the main menu’s illustration.
 
-Click the **Add Node** button or press ``Meta+A`` on your keyboard.
+Click the **Add Node** button or press :kbd:`Meta + A` on your keyboard.
 Start to type ``TextureRect`` to find the corresponding node and press
-enter. With the new node selected, press ``Meta+D`` five times to
+enter. With the new node selected, press :kbd:`Meta + D` five times to
 create five extra ``TextureRect`` instances.
 
 Click each of the nodes to select it. In the inspector, find the **Texture**
@@ -234,7 +234,7 @@ automatically.
 
 To space out the menu options and the logo on the left, we'll use one
 final container and its size flags. Select the ``VBoxContainer`` and
-press ``Meta+A`` to add a new node inside it. Add a second
+press :kbd:`Meta + A` to add a new node inside it. Add a second
 ``VBoxContainer`` and name it *MenuOptions*. Select all three menu
 options, ``Continue``, ``NewGame`` and ``Options``, and drag and drop
 them inside the new ``VBoxContainer``. The UI's layout should barely
@@ -288,7 +288,7 @@ size of UI elements.
 
 The order in which you nest matters. To see if your
 UI adapts nicely to different screen ratios, select the root node, press
-the Q key to activate the Select Mode, select the container and click
+:kbd:`Q` to activate the Select Mode, select the container and click
 and drag on one of the container's corners to resize it. The UI
 components should flow inside of it.
 

@@ -192,7 +192,7 @@ Returns the enabled status of a plugin. The plugin name is the same as its direc
 
 - :ref:`Array<class_Array>` **make_mesh_previews** **(** :ref:`Array<class_Array>` meshes, :ref:`int<class_int>` preview_size **)**
 
-Returns mesh previews rendered at the given size as an :ref:`Array<class_Array>` of :ref:`Texture<class_Texture>`\ s.
+Returns mesh previews rendered at the given size as an :ref:`Array<class_Array>` of :ref:`Texture2D<class_Texture2D>`\ s.
 
 ----
 

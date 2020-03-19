@@ -66,7 +66,7 @@ Signals
 
 .. _class_ARVRServer_signal_interface_added:
 
-- **interface_added** **(** :ref:`String<class_String>` interface_name **)**
+- **interface_added** **(** :ref:`StringName<class_StringName>` interface_name **)**
 
 Emitted when a new interface has been added.
 
@@ -74,7 +74,7 @@ Emitted when a new interface has been added.
 
 .. _class_ARVRServer_signal_interface_removed:
 
-- **interface_removed** **(** :ref:`String<class_String>` interface_name **)**
+- **interface_removed** **(** :ref:`StringName<class_StringName>` interface_name **)**
 
 Emitted when an interface is removed.
 
@@ -82,7 +82,7 @@ Emitted when an interface is removed.
 
 .. _class_ARVRServer_signal_tracker_added:
 
-- **tracker_added** **(** :ref:`String<class_String>` tracker_name, :ref:`int<class_int>` type, :ref:`int<class_int>` id **)**
+- **tracker_added** **(** :ref:`StringName<class_StringName>` tracker_name, :ref:`int<class_int>` type, :ref:`int<class_int>` id **)**
 
 Emitted when a new tracker has been added. If you don't use a fixed number of controllers or if you're using :ref:`ARVRAnchor<class_ARVRAnchor>`\ s for an AR solution, it is important to react to this signal to add the appropriate :ref:`ARVRController<class_ARVRController>` or :ref:`ARVRAnchor<class_ARVRAnchor>` nodes related to this new tracker.
 
@@ -90,7 +90,7 @@ Emitted when a new tracker has been added. If you don't use a fixed number of co
 
 .. _class_ARVRServer_signal_tracker_removed:
 
-- **tracker_removed** **(** :ref:`String<class_String>` tracker_name, :ref:`int<class_int>` type, :ref:`int<class_int>` id **)**
+- **tracker_removed** **(** :ref:`StringName<class_StringName>` tracker_name, :ref:`int<class_int>` type, :ref:`int<class_int>` id **)**
 
 Emitted when a tracker is removed. You should remove any :ref:`ARVRController<class_ARVRController>` or :ref:`ARVRAnchor<class_ARVRAnchor>` points if applicable. This is not mandatory, the nodes simply become inactive and will be made active again when a new tracker becomes available (i.e. a new controller is switched on that takes the place of the previous one).
 

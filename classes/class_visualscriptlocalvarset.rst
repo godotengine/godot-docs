@@ -33,11 +33,11 @@ Changes a local variable's value to the given input. The new value is also provi
 Properties
 ----------
 
-+-----------------------------------------------------+------------------------------------------------------------------+-----------------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptLocalVarSet_property_type>`         | ``0``           |
-+-----------------------------------------------------+------------------------------------------------------------------+-----------------+
-| :ref:`String<class_String>`                         | :ref:`var_name<class_VisualScriptLocalVarSet_property_var_name>` | ``"new_local"`` |
-+-----------------------------------------------------+------------------------------------------------------------------+-----------------+
++-----------------------------------------------------+------------------------------------------------------------------+------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptLocalVarSet_property_type>`         | ``0``            |
++-----------------------------------------------------+------------------------------------------------------------------+------------------+
+| :ref:`StringName<class_StringName>`                 | :ref:`var_name<class_VisualScriptLocalVarSet_property_var_name>` | ``@"new_local"`` |
++-----------------------------------------------------+------------------------------------------------------------------+------------------+
 
 Property Descriptions
 ---------------------
@@ -60,10 +60,10 @@ The local variable's type.
 
 .. _class_VisualScriptLocalVarSet_property_var_name:
 
-- :ref:`String<class_String>` **var_name**
+- :ref:`StringName<class_StringName>` **var_name**
 
 +-----------+---------------------+
-| *Default* | ``"new_local"``     |
+| *Default* | ``@"new_local"``    |
 +-----------+---------------------+
 | *Setter*  | set_var_name(value) |
 +-----------+---------------------+

@@ -35,6 +35,8 @@ Properties
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
 | :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` | :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` | ``0``            |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`dtls_verify<class_NetworkedMultiplayerENet_property_dtls_verify>`           | ``true``         |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
 | :ref:`bool<class_bool>`                                               | refuse_new_connections                                                            | **O:** ``false`` |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
 | :ref:`bool<class_bool>`                                               | :ref:`server_relay<class_NetworkedMultiplayerENet_property_server_relay>`         | ``true``         |
@@ -42,6 +44,8 @@ Properties
 | :ref:`int<class_int>`                                                 | :ref:`transfer_channel<class_NetworkedMultiplayerENet_property_transfer_channel>` | ``-1``           |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
 | :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>`       | transfer_mode                                                                     | **O:** ``2``     |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>`                 | ``false``        |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
 
 Methods
@@ -65,6 +69,10 @@ Methods
 | :ref:`int<class_int>`                 | :ref:`get_peer_port<class_NetworkedMultiplayerENet_method_get_peer_port>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                    |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`set_bind_ip<class_NetworkedMultiplayerENet_method_set_bind_ip>` **(** :ref:`String<class_String>` ip **)**                                                                                                                                                        |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_dtls_certificate<class_NetworkedMultiplayerENet_method_set_dtls_certificate>` **(** :ref:`X509Certificate<class_X509Certificate>` certificate **)**                                                                                                           |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_dtls_key<class_NetworkedMultiplayerENet_method_set_dtls_key>` **(** :ref:`CryptoKey<class_CryptoKey>` key **)**                                                                                                                                               |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
@@ -145,6 +153,22 @@ The compression method used for network packets. These have different tradeoffs 
 
 ----
 
+.. _class_NetworkedMultiplayerENet_property_dtls_verify:
+
+- :ref:`bool<class_bool>` **dtls_verify**
+
++-----------+--------------------------------+
+| *Default* | ``true``                       |
++-----------+--------------------------------+
+| *Setter*  | set_dtls_verify_enabled(value) |
++-----------+--------------------------------+
+| *Getter*  | is_dtls_verify_enabled()       |
++-----------+--------------------------------+
+
+Enable or disable certificate verification when :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>` ``true``.
+
+----
+
 .. _class_NetworkedMultiplayerENet_property_server_relay:
 
 - :ref:`bool<class_bool>` **server_relay**
@@ -174,6 +198,24 @@ Enable or disable the server feature that notifies clients of other peers' conne
 +-----------+-----------------------------+
 
 Set the default channel to be used to transfer data. By default, this value is ``-1`` which means that ENet will only use 2 channels, one for reliable and one for unreliable packets. Channel ``0`` is reserved, and cannot be used. Setting this member to any value between ``0`` and :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>` (excluded) will force ENet to use that channel for sending data.
+
+----
+
+.. _class_NetworkedMultiplayerENet_property_use_dtls:
+
+- :ref:`bool<class_bool>` **use_dtls**
+
++-----------+-------------------------+
+| *Default* | ``false``               |
++-----------+-------------------------+
+| *Setter*  | set_dtls_enabled(value) |
++-----------+-------------------------+
+| *Getter*  | is_dtls_enabled()       |
++-----------+-------------------------+
+
+When enabled, the client or server created by this peer, will use :ref:`PacketPeerDTLS<class_PacketPeerDTLS>` instead of raw UDP sockets for communicating with the remote peer. This will make the communication encrypted with DTLS at the cost of higher resource usage and potentially larger packet size.
+
+Note: When creating a DTLS server, make sure you setup the key/certificate pair via :ref:`set_dtls_key<class_NetworkedMultiplayerENet_method_set_dtls_key>` and :ref:`set_dtls_certificate<class_NetworkedMultiplayerENet_method_set_dtls_certificate>`. For DTLS clients, have a look at the :ref:`dtls_verify<class_NetworkedMultiplayerENet_property_dtls_verify>` option, and configure the certificate accordingly via :ref:`set_dtls_certificate<class_NetworkedMultiplayerENet_method_set_dtls_certificate>`.
 
 Method Descriptions
 -------------------
@@ -247,4 +289,20 @@ Returns the remote port of the given peer.
 - void **set_bind_ip** **(** :ref:`String<class_String>` ip **)**
 
 The IP used when creating a server. This is set to the wildcard ``"*"`` by default, which binds to all available interfaces. The given IP needs to be in IPv4 or IPv6 address format, for example: ``"192.168.1.1"``.
+
+----
+
+.. _class_NetworkedMultiplayerENet_method_set_dtls_certificate:
+
+- void **set_dtls_certificate** **(** :ref:`X509Certificate<class_X509Certificate>` certificate **)**
+
+Configure the :ref:`X509Certificate<class_X509Certificate>` to use when :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>` is ``true``. For servers, you must also setup the :ref:`CryptoKey<class_CryptoKey>` via :ref:`set_dtls_key<class_NetworkedMultiplayerENet_method_set_dtls_key>`.
+
+----
+
+.. _class_NetworkedMultiplayerENet_method_set_dtls_key:
+
+- void **set_dtls_key** **(** :ref:`CryptoKey<class_CryptoKey>` key **)**
+
+Configure the :ref:`CryptoKey<class_CryptoKey>` to use when :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>` is ``true``. Remember to also call :ref:`set_dtls_certificate<class_NetworkedMultiplayerENet_method_set_dtls_certificate>` to setup your :ref:`X509Certificate<class_X509Certificate>`.
 

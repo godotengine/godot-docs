@@ -164,7 +164,11 @@ is another vector type (or scalar). This is easier shown than explained:
     vec3 b = a.ggg; // Also valid; creates a vec3 and fills it with a single vec4 component.
     vec3 b = a.bgr; // Order does not matter.
     vec3 b = a.xyz; // Also rgba, xyzw are equivalent.
+    vec3 b = a.stp; // And stpq (for texture coordinates).
     float c = b.w; // Invalid, because "w" is not present in vec3 b.
+    vec3 c = b.xrt; // Invalid, mixing different styles is forbidden.
+    b.rrr = a.rgb; // Invalid, assignment with duplication.
+    b.bgr = a.rgb; // Valid assignment.
 
 Precision
 ~~~~~~~~~
@@ -285,6 +289,74 @@ Global constants are useful when you want to have access to a value throughout y
     shader_type spatial;
 
     const float PI = 3.14159265358979323846;
+
+
+Structs
+-------
+
+Structs are compound types which can be used for better abstaction of shader code. You can declare them at the global scope like:
+
+.. code-block:: glsl
+
+    struct PointLight {
+        vec3 position;
+        vec3 color;
+        float intensity;
+    };
+
+After declaration, you can instantiate and initialize them like:
+
+.. code-block:: glsl
+
+    void fragment()
+    {
+        PointLight light;
+        light.position = vec3(0.0);
+        light.color = vec3(1.0, 0.0, 0.0);
+        light.intensity = 0.5;
+    }
+
+Or use struct constructor for same purpose:
+
+.. code-block:: glsl
+
+    PointLight light = PointLight(vec3(0.0), vec3(1.0, 0.0, 0.0), 0.5);
+
+Structs may contain other struct or array, you can also instance them as global constant:
+
+.. code-block:: glsl
+
+    shader_type spatial;
+
+    ...
+
+    struct Scene {
+        PointLight lights[2];
+    };
+
+    const Scene scene = Scene(PointLight[2](PointLight(vec3(0.0, 0.0, 0.0), vec3(1.0, 0.0, 0.0), 1.0), PointLight(vec3(0.0, 0.0, 0.0), vec3(1.0, 0.0, 0.0), 1.0)));
+
+    void fragment()
+    {
+        ALBEDO = scene.lights[0].color;
+    }
+
+You can also pass them to functions:
+
+.. code-block:: glsl
+
+    shader_type canvas_item;
+
+    ...
+
+    Scene construct_scene(PointLight light1, PointLight light2) {
+        return Scene({light1, light2});
+    }
+
+    void fragment()
+    { 
+        COLOR.rgb = construct_scene(PointLight(vec3(0.0, 0.0, 0.0), vec3(1.0, 0.0, 0.0), 1.0), PointLight(vec3(0.0, 0.0, 0.0), vec3(1.0, 0.0, 1.0), 1.0)).lights[0].color;
+    }
 
 Operators
 ---------

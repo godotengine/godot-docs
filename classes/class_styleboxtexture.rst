@@ -46,11 +46,11 @@ Properties
 +--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
 | :ref:`Color<class_Color>`                                    | :ref:`modulate_color<class_StyleBoxTexture_property_modulate_color>`                   | ``Color( 1, 1, 1, 1 )`` |
 +--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`                                | :ref:`normal_map<class_StyleBoxTexture_property_normal_map>`                           |                         |
+| :ref:`Texture2D<class_Texture2D>`                            | :ref:`normal_map<class_StyleBoxTexture_property_normal_map>`                           |                         |
 +--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
 | :ref:`Rect2<class_Rect2>`                                    | :ref:`region_rect<class_StyleBoxTexture_property_region_rect>`                         | ``Rect2( 0, 0, 0, 0 )`` |
 +--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`                                | :ref:`texture<class_StyleBoxTexture_property_texture>`                                 |                         |
+| :ref:`Texture2D<class_Texture2D>`                            | :ref:`texture<class_StyleBoxTexture_property_texture>`                                 |                         |
 +--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
 
 Methods
@@ -311,7 +311,7 @@ Modulates the color of the texture when this style box is drawn.
 
 .. _class_StyleBoxTexture_property_normal_map:
 
-- :ref:`Texture<class_Texture>` **normal_map**
+- :ref:`Texture2D<class_Texture2D>` **normal_map**
 
 +----------+-----------------------+
 | *Setter* | set_normal_map(value) |
@@ -343,7 +343,7 @@ This is equivalent to first wrapping the texture in an :ref:`AtlasTexture<class_
 
 .. _class_StyleBoxTexture_property_texture:
 
-- :ref:`Texture<class_Texture>` **texture**
+- :ref:`Texture2D<class_Texture2D>` **texture**
 
 +----------+--------------------+
 | *Setter* | set_texture(value) |

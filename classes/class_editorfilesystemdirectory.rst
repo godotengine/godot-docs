@@ -38,7 +38,7 @@ Methods
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                       | :ref:`get_file_script_class_name<class_EditorFileSystemDirectory_method_get_file_script_class_name>` **(** :ref:`int<class_int>` idx **)** const       |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                       | :ref:`get_file_type<class_EditorFileSystemDirectory_method_get_file_type>` **(** :ref:`int<class_int>` idx **)** const                                 |
+| :ref:`StringName<class_StringName>`                               | :ref:`get_file_type<class_EditorFileSystemDirectory_method_get_file_type>` **(** :ref:`int<class_int>` idx **)** const                                 |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                       | :ref:`get_name<class_EditorFileSystemDirectory_method_get_name>` **(** **)**                                                                           |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -116,7 +116,7 @@ Returns the path to the file at index ``idx``.
 
 .. _class_EditorFileSystemDirectory_method_get_file_type:
 
-- :ref:`String<class_String>` **get_file_type** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`StringName<class_StringName>` **get_file_type** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the file extension of the file at index ``idx``.
 

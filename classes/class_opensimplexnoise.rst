@@ -101,7 +101,9 @@ Difference in period between :ref:`octaves<class_OpenSimplexNoise_property_octav
 | *Getter*  | get_octaves()      |
 +-----------+--------------------+
 
-Number of OpenSimplex noise layers that are sampled to get the fractal noise.
+Number of OpenSimplex noise layers that are sampled to get the fractal noise. Higher values result in more detailed noise but take more time to generate.
+
+**Note:** The maximum allowed value is 9.
 
 ----
 

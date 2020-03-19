@@ -262,7 +262,7 @@ Adds a mapping to forward the external ``port`` (between 1 and 65535) on the def
 
 If ``internal_port`` is ``0`` (the default), the same port number is used for both the external and the internal port (the ``port`` value).
 
-The description (``desc``) is shown in some router UIs and can be used to point out which application added the mapping, and the lifetime of the mapping can be limited by ``duration``. However, some routers are incompatible with one or both of these, so use with caution and add fallback logic in case of errors to retry without them if in doubt.
+The description (``desc``) is shown in some router UIs and can be used to point out which application added the mapping. The mapping's lease duration can be limited by specifying a ``duration`` (in seconds). However, some routers are incompatible with one or both of these, so use with caution and add fallback logic in case of errors to retry without them if in doubt.
 
 See :ref:`UPNPResult<enum_UPNP_UPNPResult>` for possible return values.
 

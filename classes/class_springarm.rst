@@ -128,7 +128,7 @@ Method Descriptions
 
 - void **add_excluded_object** **(** :ref:`RID<class_RID>` RID **)**
 
-Adds the object with the given :ref:`RID<class_RID>` to the list of objects excluded from the collision check.
+Adds the :ref:`PhysicsBody<class_PhysicsBody>` object with the given :ref:`RID<class_RID>` to the list of :ref:`PhysicsBody<class_PhysicsBody>` objects excluded from the collision check.
 
 ----
 
@@ -136,7 +136,7 @@ Adds the object with the given :ref:`RID<class_RID>` to the list of objects excl
 
 - void **clear_excluded_objects** **(** **)**
 
-Clears the list of objects excluded from the collision check.
+Clears the list of :ref:`PhysicsBody<class_PhysicsBody>` objects excluded from the collision check.
 
 ----
 
@@ -152,5 +152,5 @@ Returns the proportion between the current arm length (after checking for collis
 
 - :ref:`bool<class_bool>` **remove_excluded_object** **(** :ref:`RID<class_RID>` RID **)**
 
-Removes the given :ref:`RID<class_RID>` from the list of objects excluded from the collision check.
+Removes the given :ref:`RID<class_RID>` from the list of :ref:`PhysicsBody<class_PhysicsBody>` objects excluded from the collision check.
 

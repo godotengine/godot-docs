@@ -5,6 +5,7 @@ Editor plugins
    :maxdepth: 1
    :name: toc-tutorials-plugins
 
+   installing_plugins
    making_plugins
    making_main_screen_plugins
    import_plugins

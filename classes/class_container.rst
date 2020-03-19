@@ -22,6 +22,13 @@ Base node for containers. A ``Container`` contains other controls and automatica
 
 A Control can inherit this to create custom container classes.
 
+Properties
+----------
+
++----------------------------------------------+--------------+--------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter | **O:** ``1`` |
++----------------------------------------------+--------------+--------------+
+
 Methods
 -------
 

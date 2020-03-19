@@ -26,13 +26,13 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`       | :ref:`mesh<class_MeshInstance2D_property_mesh>`             |
-+-------------------------------+-------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`normal_map<class_MeshInstance2D_property_normal_map>` |
-+-------------------------------+-------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`texture<class_MeshInstance2D_property_texture>`       |
-+-------------------------------+-------------------------------------------------------------+
++-----------------------------------+-------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`           | :ref:`mesh<class_MeshInstance2D_property_mesh>`             |
++-----------------------------------+-------------------------------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`normal_map<class_MeshInstance2D_property_normal_map>` |
++-----------------------------------+-------------------------------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`texture<class_MeshInstance2D_property_texture>`       |
++-----------------------------------+-------------------------------------------------------------+
 
 Signals
 -------
@@ -62,7 +62,7 @@ The :ref:`Mesh<class_Mesh>` that will be drawn by the ``MeshInstance2D``.
 
 .. _class_MeshInstance2D_property_normal_map:
 
-- :ref:`Texture<class_Texture>` **normal_map**
+- :ref:`Texture2D<class_Texture2D>` **normal_map**
 
 +----------+-----------------------+
 | *Setter* | set_normal_map(value) |
@@ -76,7 +76,7 @@ The normal map that will be used if using the default :ref:`CanvasItemMaterial<c
 
 .. _class_MeshInstance2D_property_texture:
 
-- :ref:`Texture<class_Texture>` **texture**
+- :ref:`Texture2D<class_Texture2D>` **texture**
 
 +----------+--------------------+
 | *Setter* | set_texture(value) |
@@ -84,5 +84,5 @@ The normal map that will be used if using the default :ref:`CanvasItemMaterial<c
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-The :ref:`Texture<class_Texture>` that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`. Can be accessed as ``TEXTURE`` in CanvasItem shader.
+The :ref:`Texture2D<class_Texture2D>` that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`. Can be accessed as ``TEXTURE`` in CanvasItem shader.
 

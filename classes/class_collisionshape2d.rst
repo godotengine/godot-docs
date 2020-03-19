@@ -83,7 +83,7 @@ Sets whether this collision shape should only detect collision on one side (top 
 | *Getter*  | get_one_way_collision_margin()      |
 +-----------+-------------------------------------+
 
-The margin used for one-way collision (in pixels).
+The margin used for one-way collision (in pixels). Higher values will make the shape thicker, and work better for colliders that enter the shape at a high velocity.
 
 ----
 

@@ -44,11 +44,13 @@ Methods
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Mesh<class_Mesh>`                                    | :ref:`get_mesh<class_ARVRPositionalTracker_method_get_mesh>` **(** **)** const                                                             |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                | :ref:`get_name<class_ARVRPositionalTracker_method_get_name>` **(** **)** const                                                             |
+| :ref:`StringName<class_StringName>`                        | :ref:`get_name<class_ARVRPositionalTracker_method_get_name>` **(** **)** const                                                             |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`                                  | :ref:`get_orientation<class_ARVRPositionalTracker_method_get_orientation>` **(** **)** const                                               |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`                              | :ref:`get_position<class_ARVRPositionalTracker_method_get_position>` **(** **)** const                                                     |
++------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                      | :ref:`get_tracker_id<class_ARVRPositionalTracker_method_get_tracker_id>` **(** **)** const                                                 |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                    | :ref:`get_tracks_orientation<class_ARVRPositionalTracker_method_get_tracks_orientation>` **(** **)** const                                 |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -124,7 +126,7 @@ Returns the mesh related to a controller or anchor point if one is available.
 
 .. _class_ARVRPositionalTracker_method_get_name:
 
-- :ref:`String<class_String>` **get_name** **(** **)** const
+- :ref:`StringName<class_StringName>` **get_name** **(** **)** const
 
 Returns the controller or anchor point's name if available.
 
@@ -143,6 +145,14 @@ Returns the controller's orientation matrix.
 - :ref:`Vector3<class_Vector3>` **get_position** **(** **)** const
 
 Returns the world-space controller position.
+
+----
+
+.. _class_ARVRPositionalTracker_method_get_tracker_id:
+
+- :ref:`int<class_int>` **get_tracker_id** **(** **)** const
+
+Returns the internal tracker ID. This uniquely identifies the tracker per tracker type and matches the ID you need to specify for nodes such as the :ref:`ARVRController<class_ARVRController>` and :ref:`ARVRAnchor<class_ARVRAnchor>` nodes.
 
 ----
 

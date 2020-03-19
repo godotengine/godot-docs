@@ -43,12 +43,12 @@ Similarly, you can include attachments (like assets as support material for a tu
 ## Building with Sphinx
 
 To build the HTML website (or any other format supported by Sphinx, like PDF, EPUB or LaTeX), you need to install [Sphinx](https://www.sphinx-doc.org/) >= 1.3 as well as (for the HTML) the [readthedocs.org theme](https://github.com/snide/sphinx_rtd_theme). Only the Python 3 flavor was tested, though the Python 2 versions might work too.
+You also need to install the Sphinx extensions defined in `requirements.txt`.
 
 Those tools are best installed using [pip](https://pip.pypa.io), Python's module installer. The Python 3 version might be provided (on Linux distros) as `pip3` or `python3-pip`. You can then run:
 
 ```sh
-pip3 install sphinx
-pip3 install sphinx_rtd_theme
+pip install -r requirements.txt
 ```
 
 You can then build the HTML documentation from the root folder of this repository with:
@@ -63,7 +63,20 @@ or:
 make SPHINXBUILD=~/.local/bin/sphinx-build html
 ```
 
+Building the documentation requires at least 8 GB of RAM to be done without swapping. If you have at least 16 GB of RAM, you can speed up compilation by using:
+
+```bash
+# On Linux/macOS
+make html SPHINXOPTS=-j2
+
+# On Windows
+set SPHINXOPTS=-j2 && make html
+```
+
 The compilation might take some time as the `classes/` folder contains many files to parse.
+
+In case of a `MemoryError` or `EOFError`, you can remove the `classes/` folder and run `make` again. This will drop the class references from the final HTML documentation but will keep the rest intact. Make sure to avoid using `git add .` in this case when working on a pull request, or the whole `classes/` folder will be removed when you make a commit. See [#3157](https://github.com/godotengine/godot-docs/issues/3157) for more details.
+
 You can then test the changes live by opening `_build/html/index.html` in your favorite browser.
 
 ### Building with Sphinx on Windows

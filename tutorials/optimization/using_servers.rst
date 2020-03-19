@@ -90,7 +90,10 @@ This is a simple example of how to create a sprite from code and move it using t
  .. code-tab:: gdscript GDScript
 
     extends Node2D
-
+    
+    # VisualServer expects references to be kept around
+    var sprite
+    
     func _ready():
         # Create a canvas item, child of this node.
         var ci_rid = VisualServer.canvas_item_create()
@@ -98,7 +101,7 @@ This is a simple example of how to create a sprite from code and move it using t
         VisualServer.canvas_item_set_parent(ci_rid, get_canvas_item())
         # Draw a sprite on it.
         # Remember, keep this reference.
-        var sprite = load("res://mysprite.png")
+        sprite = load("res://mysprite.png")
         # Add it, centered.
         VisualServer.canvas_item_add_texture_rect(ci_rid, Rect2(sprite.get_size() / 2, sprite.get_size()), sprite)
         # Add the item, rotated 45 degrees and translated.
@@ -126,7 +129,10 @@ The 3D APIs are different than the 2D ones, so the instantiation API must be use
  .. code-tab:: gdscript GDScript
 
     extends Spatial
-
+    
+    # VisualServer expects references to be kept around
+    var mesh
+    
     func _ready():
         # Create a visual instance (for 3D).
         var instance = VisualServer.instance_create()
@@ -136,7 +142,7 @@ The 3D APIs are different than the 2D ones, so the instantiation API must be use
         VisualServer.instance_set_scenario(instance, scenario)
         # Add a mesh to it.
         # Remember, keep the reference.
-        var mesh = load("res://mymesh.obj")
+        mesh = load("res://mymesh.obj")
         VisualServer.instance_set_base(instance, mesh)
         # Move the mesh around.
         var xform = Transform(Basis(), Vector3(20, 100, 0))
@@ -150,6 +156,10 @@ and moves a :ref:`CanvasItem <class_CanvasItem>` when the body moves.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+    
+    # Physics2DServer expects references to be kept around
+    var body
+    var shape
 
     func _body_moved(state, index):
         # Created your own canvas item, use it here.
@@ -157,10 +167,10 @@ and moves a :ref:`CanvasItem <class_CanvasItem>` when the body moves.
 
     func _ready():
         # Create the body.
-        var body = Physics2DServer.body_create()
+        body = Physics2DServer.body_create()
         Physics2DServer.body_set_mode(body, Physics2DServer.BODY_MODE_RIGID)
         # Add a shape.
-        var shape = RectangleShape2D.new()
+        shape = RectangleShape2D.new()
         shape.extents = Vector2(10, 10)
         # Make sure to keep the shape reference!
         Physics2DServer.body_add_shape(body, shape)

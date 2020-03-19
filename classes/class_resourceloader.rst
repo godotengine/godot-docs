@@ -25,23 +25,48 @@ GDScript has a simplified :ref:`@GDScript.load<class_@GDScript_method_load>` bui
 Methods
 -------
 
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                           | :ref:`exists<class_ResourceLoader_method_exists>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="" **)**                                     |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>`                     | :ref:`get_dependencies<class_ResourceLoader_method_get_dependencies>` **(** :ref:`String<class_String>` path **)**                                                           |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>`                     | :ref:`get_recognized_extensions_for_type<class_ResourceLoader_method_get_recognized_extensions_for_type>` **(** :ref:`String<class_String>` type **)**                       |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                           | :ref:`has<class_ResourceLoader_method_has>` **(** :ref:`String<class_String>` path **)**                                                                                     |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                           | :ref:`has_cached<class_ResourceLoader_method_has_cached>` **(** :ref:`String<class_String>` path **)**                                                                       |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_Resource>`                                   | :ref:`load<class_ResourceLoader_method_load>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="", :ref:`bool<class_bool>` no_cache=false **)** |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>` | :ref:`load_interactive<class_ResourceLoader_method_load_interactive>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="" **)**                 |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`set_abort_on_missing_resources<class_ResourceLoader_method_set_abort_on_missing_resources>` **(** :ref:`bool<class_bool>` abort **)**                                  |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                       | :ref:`exists<class_ResourceLoader_method_exists>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="" **)**                                                                              |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>`             | :ref:`get_dependencies<class_ResourceLoader_method_get_dependencies>` **(** :ref:`String<class_String>` path **)**                                                                                                    |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>`             | :ref:`get_recognized_extensions_for_type<class_ResourceLoader_method_get_recognized_extensions_for_type>` **(** :ref:`String<class_String>` type **)**                                                                |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                       | :ref:`has_cached<class_ResourceLoader_method_has_cached>` **(** :ref:`String<class_String>` path **)**                                                                                                                |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_Resource>`                               | :ref:`load<class_ResourceLoader_method_load>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="", :ref:`bool<class_bool>` no_cache=false **)**                                          |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_Resource>`                               | :ref:`load_threaded_get<class_ResourceLoader_method_load_threaded_get>` **(** :ref:`String<class_String>` path **)**                                                                                                  |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ThreadLoadStatus<enum_ResourceLoader_ThreadLoadStatus>` | :ref:`load_threaded_get_status<class_ResourceLoader_method_load_threaded_get_status>` **(** :ref:`String<class_String>` path, :ref:`Array<class_Array>` progress=[  ] **)**                                           |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`                         | :ref:`load_threaded_request<class_ResourceLoader_method_load_threaded_request>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="", :ref:`bool<class_bool>` use_sub_threads=false **)** |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                          | :ref:`set_abort_on_missing_resources<class_ResourceLoader_method_set_abort_on_missing_resources>` **(** :ref:`bool<class_bool>` abort **)**                                                                           |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enumerations
+------------
+
+.. _enum_ResourceLoader_ThreadLoadStatus:
+
+.. _class_ResourceLoader_constant_THREAD_LOAD_INVALID_RESOURCE:
+
+.. _class_ResourceLoader_constant_THREAD_LOAD_IN_PROGRESS:
+
+.. _class_ResourceLoader_constant_THREAD_LOAD_FAILED:
+
+.. _class_ResourceLoader_constant_THREAD_LOAD_LOADED:
+
+enum **ThreadLoadStatus**:
+
+- **THREAD_LOAD_INVALID_RESOURCE** = **0** --- The resource is invalid, or has not been loaded with :ref:`load_threaded_request<class_ResourceLoader_method_load_threaded_request>`.
+
+- **THREAD_LOAD_IN_PROGRESS** = **1** --- The resource is still being loaded.
+
+- **THREAD_LOAD_FAILED** = **2** --- Some error occurred during loading and it failed.
+
+- **THREAD_LOAD_LOADED** = **3** --- The resource was loaded successfully and can be accessed via :ref:`load_threaded_get<class_ResourceLoader_method_load_threaded_get>`.
 
 Method Descriptions
 -------------------
@@ -58,7 +83,7 @@ An optional ``type_hint`` can be used to further specify the :ref:`Resource<clas
 
 .. _class_ResourceLoader_method_get_dependencies:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_dependencies** **(** :ref:`String<class_String>` path **)**
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_dependencies** **(** :ref:`String<class_String>` path **)**
 
 Returns the dependencies for the resource at the given ``path``.
 
@@ -66,17 +91,9 @@ Returns the dependencies for the resource at the given ``path``.
 
 .. _class_ResourceLoader_method_get_recognized_extensions_for_type:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_recognized_extensions_for_type** **(** :ref:`String<class_String>` type **)**
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_recognized_extensions_for_type** **(** :ref:`String<class_String>` type **)**
 
 Returns the list of recognized extensions for a resource type.
-
-----
-
-.. _class_ResourceLoader_method_has:
-
-- :ref:`bool<class_bool>` **has** **(** :ref:`String<class_String>` path **)**
-
-*Deprecated method.* Use :ref:`has_cached<class_ResourceLoader_method_has_cached>` or :ref:`exists<class_ResourceLoader_method_exists>` instead.
 
 ----
 
@@ -86,7 +103,7 @@ Returns the list of recognized extensions for a resource type.
 
 Returns whether a cached resource is available for the given ``path``.
 
-Once a resource has been loaded by the engine, it is cached in memory for faster access, and future calls to the :ref:`load<class_ResourceLoader_method_load>` or :ref:`load_interactive<class_ResourceLoader_method_load_interactive>` methods will use the cached version. The cached resource can be overridden by using :ref:`Resource.take_over_path<class_Resource_method_take_over_path>` on a new resource for that same path.
+Once a resource has been loaded by the engine, it is cached in memory for faster access, and future calls to the :ref:`load<class_ResourceLoader_method_load>` method will use the cached version. The cached resource can be overridden by using :ref:`Resource.take_over_path<class_Resource_method_take_over_path>` on a new resource for that same path.
 
 ----
 
@@ -106,13 +123,31 @@ Returns an empty resource if no ResourceFormatLoader could handle the file.
 
 ----
 
-.. _class_ResourceLoader_method_load_interactive:
+.. _class_ResourceLoader_method_load_threaded_get:
 
-- :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>` **load_interactive** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="" **)**
+- :ref:`Resource<class_Resource>` **load_threaded_get** **(** :ref:`String<class_String>` path **)**
 
-Starts loading a resource interactively. The returned :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>` object allows to load with high granularity, calling its :ref:`ResourceInteractiveLoader.poll<class_ResourceInteractiveLoader_method_poll>` method successively to load chunks.
+Returns the resource loaded by :ref:`load_threaded_request<class_ResourceLoader_method_load_threaded_request>`.
 
-An optional ``type_hint`` can be used to further specify the :ref:`Resource<class_Resource>` type that should be handled by the :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`.
+If this is called before the loading thread is done (i.e. :ref:`load_threaded_get_status<class_ResourceLoader_method_load_threaded_get_status>` is not :ref:`THREAD_LOAD_LOADED<class_ResourceLoader_constant_THREAD_LOAD_LOADED>`), the calling thread will be blocked until the resource has finished loading.
+
+----
+
+.. _class_ResourceLoader_method_load_threaded_get_status:
+
+- :ref:`ThreadLoadStatus<enum_ResourceLoader_ThreadLoadStatus>` **load_threaded_get_status** **(** :ref:`String<class_String>` path, :ref:`Array<class_Array>` progress=[  ] **)**
+
+Returns the status of a threaded loading operation started with :ref:`load_threaded_request<class_ResourceLoader_method_load_threaded_request>` for the resource at ``path``. See :ref:`ThreadLoadStatus<enum_ResourceLoader_ThreadLoadStatus>` for possible return values.
+
+An array variable can optionally be passed via ``progress``, and will return a one-element array containing the percentage of completion of the threaded loading.
+
+----
+
+.. _class_ResourceLoader_method_load_threaded_request:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **load_threaded_request** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="", :ref:`bool<class_bool>` use_sub_threads=false **)**
+
+Loads the resource using threads. If ``use_sub_threads`` is ``true``, multiple threads will be used to load the resource, which makes loading faster, but may affect the main thread (and thus cause game slowdowns).
 
 ----
 

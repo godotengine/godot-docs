@@ -11,7 +11,7 @@ Material
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`, :ref:`ParticlesMaterial<class_ParticlesMaterial>`, :ref:`ShaderMaterial<class_ShaderMaterial>`, :ref:`SpatialMaterial<class_SpatialMaterial>`
+**Inherited By:** :ref:`BaseMaterial3D<class_BaseMaterial3D>`, :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`, :ref:`ParticlesMaterial<class_ParticlesMaterial>`, :ref:`ShaderMaterial<class_ShaderMaterial>`
 
 Abstract base :ref:`Resource<class_Resource>` for coloring and shading geometry.
 
@@ -55,7 +55,7 @@ Property Descriptions
 
 Sets the ``Material`` to be used for the next pass. This renders the object again using a different material.
 
-**Note:** only applies to :ref:`SpatialMaterial<class_SpatialMaterial>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
+**Note:** only applies to :ref:`StandardMaterial3D<class_StandardMaterial3D>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
 
 ----
 

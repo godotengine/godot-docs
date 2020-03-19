@@ -26,27 +26,27 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------------+------------------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                 | :ref:`area_mask<class_AudioStreamPlayer2D_property_area_mask>`         | ``1``        |
-+---------------------------------------+------------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`             | :ref:`attenuation<class_AudioStreamPlayer2D_property_attenuation>`     | ``1.0``      |
-+---------------------------------------+------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`               | :ref:`autoplay<class_AudioStreamPlayer2D_property_autoplay>`           | ``false``    |
-+---------------------------------------+------------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>`           | :ref:`bus<class_AudioStreamPlayer2D_property_bus>`                     | ``"Master"`` |
-+---------------------------------------+------------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`             | :ref:`max_distance<class_AudioStreamPlayer2D_property_max_distance>`   | ``2000.0``   |
-+---------------------------------------+------------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`             | :ref:`pitch_scale<class_AudioStreamPlayer2D_property_pitch_scale>`     | ``1.0``      |
-+---------------------------------------+------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`               | :ref:`playing<class_AudioStreamPlayer2D_property_playing>`             | ``false``    |
-+---------------------------------------+------------------------------------------------------------------------+--------------+
-| :ref:`AudioStream<class_AudioStream>` | :ref:`stream<class_AudioStreamPlayer2D_property_stream>`               |              |
-+---------------------------------------+------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`               | :ref:`stream_paused<class_AudioStreamPlayer2D_property_stream_paused>` | ``false``    |
-+---------------------------------------+------------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`             | :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>`         | ``0.0``      |
-+---------------------------------------+------------------------------------------------------------------------+--------------+
++---------------------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`int<class_int>`                 | :ref:`area_mask<class_AudioStreamPlayer2D_property_area_mask>`         | ``1``         |
++---------------------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`             | :ref:`attenuation<class_AudioStreamPlayer2D_property_attenuation>`     | ``1.0``       |
++---------------------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`bool<class_bool>`               | :ref:`autoplay<class_AudioStreamPlayer2D_property_autoplay>`           | ``false``     |
++---------------------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`StringName<class_StringName>`   | :ref:`bus<class_AudioStreamPlayer2D_property_bus>`                     | ``@"Master"`` |
++---------------------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`             | :ref:`max_distance<class_AudioStreamPlayer2D_property_max_distance>`   | ``2000.0``    |
++---------------------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`             | :ref:`pitch_scale<class_AudioStreamPlayer2D_property_pitch_scale>`     | ``1.0``       |
++---------------------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`bool<class_bool>`               | :ref:`playing<class_AudioStreamPlayer2D_property_playing>`             | ``false``     |
++---------------------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`AudioStream<class_AudioStream>` | :ref:`stream<class_AudioStreamPlayer2D_property_stream>`               |               |
++---------------------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`bool<class_bool>`               | :ref:`stream_paused<class_AudioStreamPlayer2D_property_stream_paused>` | ``false``     |
++---------------------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`             | :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>`         | ``0.0``       |
++---------------------------------------+------------------------------------------------------------------------+---------------+
 
 Methods
 -------
@@ -125,10 +125,10 @@ If ``true``, audio plays when added to scene tree.
 
 .. _class_AudioStreamPlayer2D_property_bus:
 
-- :ref:`String<class_String>` **bus**
+- :ref:`StringName<class_StringName>` **bus**
 
 +-----------+----------------+
-| *Default* | ``"Master"``   |
+| *Default* | ``@"Master"``  |
 +-----------+----------------+
 | *Setter*  | set_bus(value) |
 +-----------+----------------+

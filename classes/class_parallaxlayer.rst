@@ -48,7 +48,7 @@ Property Descriptions
 | *Getter*  | get_mirroring()      |
 +-----------+----------------------+
 
-The ParallaxLayer's :ref:`Texture<class_Texture>` mirroring. Useful for creating an infinite scrolling background. If an axis is set to ``0``, the :ref:`Texture<class_Texture>` will not be mirrored.
+The ParallaxLayer's :ref:`Texture2D<class_Texture2D>` mirroring. Useful for creating an infinite scrolling background. If an axis is set to ``0``, the :ref:`Texture2D<class_Texture2D>` will not be mirrored.
 
 ----
 

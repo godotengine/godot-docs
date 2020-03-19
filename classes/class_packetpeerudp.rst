@@ -24,9 +24,13 @@ Methods
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`close<class_PacketPeerUDP_method_close>` **(** **)**                                                                                                                           |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`connect_to_host<class_PacketPeerUDP_method_connect_to_host>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**                                          |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`           | :ref:`get_packet_ip<class_PacketPeerUDP_method_get_packet_ip>` **(** **)** const                                                                                                     |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                 | :ref:`get_packet_port<class_PacketPeerUDP_method_get_packet_port>` **(** **)** const                                                                                                 |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`is_connected_to_host<class_PacketPeerUDP_method_is_connected_to_host>` **(** **)** const                                                                                       |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`               | :ref:`is_listening<class_PacketPeerUDP_method_is_listening>` **(** **)** const                                                                                                       |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -54,6 +58,16 @@ Closes the UDP socket the ``PacketPeerUDP`` is currently listening on.
 
 ----
 
+.. _class_PacketPeerUDP_method_connect_to_host:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **connect_to_host** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**
+
+Calling this method connects this UDP peer to the given ``host``/``port`` pair. UDP is in reality connectionless, so this option only means that incoming packets from different addresses are automatically discarded, and that outgoing packets are always sent to the connected address (future calls to :ref:`set_dest_address<class_PacketPeerUDP_method_set_dest_address>` are not allowed). This method does not send any data to the remote peer, to do that, use :ref:`PacketPeer.put_var<class_PacketPeer_method_put_var>` or :ref:`PacketPeer.put_packet<class_PacketPeer_method_put_packet>` as usual. See also :ref:`UDPServer<class_UDPServer>`.
+
+Note: Connecting to the remote peer does not help to protect from malicious attacks like IP spoofing, etc. Think about using an encryption technique like SSL or DTLS if you feel like your application is transferring sensitive information.
+
+----
+
 .. _class_PacketPeerUDP_method_get_packet_ip:
 
 - :ref:`String<class_String>` **get_packet_ip** **(** **)** const
@@ -67,6 +81,14 @@ Returns the IP of the remote peer that sent the last packet(that was received wi
 - :ref:`int<class_int>` **get_packet_port** **(** **)** const
 
 Returns the port of the remote peer that sent the last packet(that was received with :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>` or :ref:`PacketPeer.get_var<class_PacketPeer_method_get_var>`).
+
+----
+
+.. _class_PacketPeerUDP_method_is_connected_to_host:
+
+- :ref:`bool<class_bool>` **is_connected_to_host** **(** **)** const
+
+Returns ``true`` if the UDP socket is open and has been connected to a remote address. See :ref:`connect_to_host<class_PacketPeerUDP_method_connect_to_host>`.
 
 ----
 

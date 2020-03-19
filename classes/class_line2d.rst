@@ -18,8 +18,6 @@ Description
 
 A line through several points in 2D space.
 
-**Note:** By default, Godot can only draw up to 4,096 polygon points at a time. To increase this limit, open the Project Settings and increase :ref:`ProjectSettings.rendering/limits/buffers/canvas_polygon_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/canvas_polygon_buffer_size_kb>` and :ref:`ProjectSettings.rendering/limits/buffers/canvas_polygon_index_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/canvas_polygon_index_buffer_size_kb>`.
-
 Properties
 ----------
 
@@ -36,13 +34,13 @@ Properties
 +-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
 | :ref:`LineJointMode<enum_Line2D_LineJointMode>`     | :ref:`joint_mode<class_Line2D_property_joint_mode>`           | ``0``                       |
 +-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>`     | :ref:`points<class_Line2D_property_points>`                   | ``PoolVector2Array(  )``    |
+| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`points<class_Line2D_property_points>`                   | ``PackedVector2Array(  )``  |
 +-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
 | :ref:`int<class_int>`                               | :ref:`round_precision<class_Line2D_property_round_precision>` | ``8``                       |
 +-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                           | :ref:`sharp_limit<class_Line2D_property_sharp_limit>`         | ``2.0``                     |
 +-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
-| :ref:`Texture<class_Texture>`                       | :ref:`texture<class_Line2D_property_texture>`                 |                             |
+| :ref:`Texture2D<class_Texture2D>`                   | :ref:`texture<class_Line2D_property_texture>`                 |                             |
 +-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
 | :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` | :ref:`texture_mode<class_Line2D_property_texture_mode>`       | ``0``                       |
 +-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
@@ -222,15 +220,15 @@ The style for the points between the start and the end.
 
 .. _class_Line2D_property_points:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **points**
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **points**
 
-+-----------+--------------------------+
-| *Default* | ``PoolVector2Array(  )`` |
-+-----------+--------------------------+
-| *Setter*  | set_points(value)        |
-+-----------+--------------------------+
-| *Getter*  | get_points()             |
-+-----------+--------------------------+
++-----------+----------------------------+
+| *Default* | ``PackedVector2Array(  )`` |
++-----------+----------------------------+
+| *Setter*  | set_points(value)          |
++-----------+----------------------------+
+| *Getter*  | get_points()               |
++-----------+----------------------------+
 
 The points that form the lines. The line is drawn between every point set in this array.
 
@@ -270,7 +268,7 @@ The direction difference in radians between vector points. This value is only us
 
 .. _class_Line2D_property_texture:
 
-- :ref:`Texture<class_Texture>` **texture**
+- :ref:`Texture2D<class_Texture2D>` **texture**
 
 +----------+--------------------+
 | *Setter* | set_texture(value) |

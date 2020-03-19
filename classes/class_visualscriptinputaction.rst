@@ -16,11 +16,11 @@ VisualScriptInputAction
 Properties
 ----------
 
-+------------------------------------------------+--------------------------------------------------------------+--------+
-| :ref:`String<class_String>`                    | :ref:`action<class_VisualScriptInputAction_property_action>` | ``""`` |
-+------------------------------------------------+--------------------------------------------------------------+--------+
-| :ref:`Mode<enum_VisualScriptInputAction_Mode>` | :ref:`mode<class_VisualScriptInputAction_property_mode>`     | ``0``  |
-+------------------------------------------------+--------------------------------------------------------------+--------+
++------------------------------------------------+--------------------------------------------------------------+---------+
+| :ref:`StringName<class_StringName>`            | :ref:`action<class_VisualScriptInputAction_property_action>` | ``@""`` |
++------------------------------------------------+--------------------------------------------------------------+---------+
+| :ref:`Mode<enum_VisualScriptInputAction_Mode>` | :ref:`mode<class_VisualScriptInputAction_property_mode>`     | ``0``   |
++------------------------------------------------+--------------------------------------------------------------+---------+
 
 Enumerations
 ------------
@@ -50,10 +50,10 @@ Property Descriptions
 
 .. _class_VisualScriptInputAction_property_action:
 
-- :ref:`String<class_String>` **action**
+- :ref:`StringName<class_StringName>` **action**
 
 +-----------+------------------------+
-| *Default* | ``""``                 |
+| *Default* | ``@""``                |
 +-----------+------------------------+
 | *Setter*  | set_action_name(value) |
 +-----------+------------------------+

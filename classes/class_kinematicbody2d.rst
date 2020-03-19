@@ -181,7 +181,9 @@ If ``test_only`` is ``true``, the body does not move but the would-be collision 
 
 Moves the body along a vector. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a ``KinematicBody2D`` or :ref:`RigidBody2D<class_RigidBody2D>`, it will also be affected by the motion of the other body. You can use this to make moving or rotating platforms, or to make nodes push other nodes.
 
-``linear_velocity`` is the velocity vector in pixels per second. Unlike in :ref:`move_and_collide<class_KinematicBody2D_method_move_and_collide>`, you should *not* multiply it by ``delta`` — the physics engine handles applying the velocity.
+This method should be used in :ref:`Node._physics_process<class_Node_method__physics_process>` (or in a method called by :ref:`Node._physics_process<class_Node_method__physics_process>`), as it uses the physics step's ``delta`` value automatically in calculations. Otherwise, the simulation will run at an incorrect speed.
+
+``linear_velocity`` is the velocity vector in pixels per second. Unlike in :ref:`move_and_collide<class_KinematicBody2D_method_move_and_collide>`, you should *not* multiply it by ``delta`` — the physics engine handles applying the velocity. 
 
 ``up_direction`` is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of ``Vector2(0, 0)``, everything is considered a wall. This is useful for topdown games.
 

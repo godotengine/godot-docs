@@ -11,12 +11,12 @@ CheckBox
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Binary choice user interface widget.
+Binary choice user interface widget. See also :ref:`CheckButton<class_CheckButton>`.
 
 Description
 -----------
 
-A checkbox allows the user to make a binary choice (choosing only one of two possible options).
+A checkbox allows the user to make a binary choice (choosing only one of two possible options). It's similar to :ref:`CheckButton<class_CheckButton>` in functionality, but it has a different appearance. To follow established UX patterns, it's recommended to use CheckBox when toggling it has **no** immediate effect on something. For instance, it should be used when toggling it will only do something once a confirmation button is pressed.
 
 Properties
 ----------
@@ -30,41 +30,41 @@ Properties
 Theme Properties
 ----------------
 
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`int<class_int>`           | check_vadjust            | 0                            |
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`Texture<class_Texture>`   | checked                  |                              |
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | disabled                 |                              |
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | focus                    |                              |
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`Font<class_Font>`         | font                     |                              |
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`Color<class_Color>`       | font_color               | Color( 0.88, 0.88, 0.88, 1 ) |
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`Color<class_Color>`       | font_color_disabled      | Color( 0.9, 0.9, 0.9, 0.2 )  |
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`Color<class_Color>`       | font_color_hover         | Color( 0.94, 0.94, 0.94, 1 ) |
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`Color<class_Color>`       | font_color_hover_pressed | Color( 1, 1, 1, 1 )          |
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`Color<class_Color>`       | font_color_pressed       | Color( 1, 1, 1, 1 )          |
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | hover                    |                              |
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | hover_pressed            |                              |
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`int<class_int>`           | hseparation              | 4                            |
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | normal                   |                              |
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | pressed                  |                              |
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`Texture<class_Texture>`   | radio_checked            |                              |
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`Texture<class_Texture>`   | radio_unchecked          |                              |
-+---------------------------------+--------------------------+------------------------------+
-| :ref:`Texture<class_Texture>`   | unchecked                |                              |
-+---------------------------------+--------------------------+------------------------------+
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`int<class_int>`             | check_vadjust            | 0                            |
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | checked                  |                              |
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | disabled                 |                              |
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | focus                    |                              |
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`Font<class_Font>`           | font                     |                              |
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`Color<class_Color>`         | font_color               | Color( 0.88, 0.88, 0.88, 1 ) |
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`Color<class_Color>`         | font_color_disabled      | Color( 0.9, 0.9, 0.9, 0.2 )  |
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`Color<class_Color>`         | font_color_hover         | Color( 0.94, 0.94, 0.94, 1 ) |
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`Color<class_Color>`         | font_color_hover_pressed | Color( 1, 1, 1, 1 )          |
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`Color<class_Color>`         | font_color_pressed       | Color( 1, 1, 1, 1 )          |
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | hover                    |                              |
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | hover_pressed            |                              |
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`int<class_int>`             | hseparation              | 4                            |
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | normal                   |                              |
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | pressed                  |                              |
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | radio_checked            |                              |
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | radio_unchecked          |                              |
++-----------------------------------+--------------------------+------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | unchecked                |                              |
++-----------------------------------+--------------------------+------------------------------+
 

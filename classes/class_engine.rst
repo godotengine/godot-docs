@@ -99,7 +99,7 @@ If ``true``, it is running inside the editor. Useful for tool scripts.
 | *Getter*  | get_iterations_per_second()      |
 +-----------+----------------------------------+
 
-The number of fixed iterations per second (for fixed process and physics).
+The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process<class_Node_method__physics_process>` methods are run. This value should generally always be set to ``60`` or above, as Godot doesn't interpolate the physics step. As a result, values lower than ``60`` will look stuttery. This value can be increased to make input more reactive or work around tunneling issues, but keep in mind doing so will increase CPU usage.
 
 ----
 
@@ -115,7 +115,7 @@ The number of fixed iterations per second (for fixed process and physics).
 | *Getter*  | get_physics_jitter_fix()      |
 +-----------+-------------------------------+
 
-Controls how much physic ticks are synchronized  with real time. For 0 or less, the ticks are synchronized. Such values are recommended for network games, where clock synchronization matters. Higher values cause higher deviation of in-game clock and real clock, but allows to smooth out framerate jitters. The default value of 0.5 should be fine for most; values above 2 could cause the game to react to dropped frames with a noticeable delay and are not recommended.
+Controls how much physics ticks are synchronized with real time. For 0 or less, the ticks are synchronized. Such values are recommended for network games, where clock synchronization matters. Higher values cause higher deviation of in-game clock and real clock, but allows to smooth out framerate jitters. The default value of 0.5 should be fine for most; values above 2 could cause the game to react to dropped frames with a noticeable delay and are not recommended.
 
 ----
 

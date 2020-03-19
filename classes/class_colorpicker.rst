@@ -16,7 +16,7 @@ Color picker control.
 Description
 -----------
 
-:ref:`Control<class_Control>` node displaying a color picker widget. It's useful for selecting a color from an RGB/RGBA colorspace.
+Displays a color picker widget. Useful for selecting a color from an RGB/RGBA colorspace.
 
 Properties
 ----------
@@ -40,40 +40,40 @@ Properties
 Methods
 -------
 
-+---------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`add_preset<class_ColorPicker_method_add_preset>` **(** :ref:`Color<class_Color>` color **)**     |
-+---------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`erase_preset<class_ColorPicker_method_erase_preset>` **(** :ref:`Color<class_Color>` color **)** |
-+---------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`PoolColorArray<class_PoolColorArray>` | :ref:`get_presets<class_ColorPicker_method_get_presets>` **(** **)** const                             |
-+---------------------------------------------+--------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`add_preset<class_ColorPicker_method_add_preset>` **(** :ref:`Color<class_Color>` color **)**     |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`erase_preset<class_ColorPicker_method_erase_preset>` **(** :ref:`Color<class_Color>` color **)** |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`PackedColorArray<class_PackedColorArray>` | :ref:`get_presets<class_ColorPicker_method_get_presets>` **(** **)** const                             |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
 
-+-------------------------------+----------------------+-----+
-| :ref:`Texture<class_Texture>` | add_preset           |     |
-+-------------------------------+----------------------+-----+
-| :ref:`Texture<class_Texture>` | color_hue            |     |
-+-------------------------------+----------------------+-----+
-| :ref:`Texture<class_Texture>` | color_sample         |     |
-+-------------------------------+----------------------+-----+
-| :ref:`int<class_int>`         | h_width              | 30  |
-+-------------------------------+----------------------+-----+
-| :ref:`int<class_int>`         | label_width          | 10  |
-+-------------------------------+----------------------+-----+
-| :ref:`int<class_int>`         | margin               | 4   |
-+-------------------------------+----------------------+-----+
-| :ref:`Texture<class_Texture>` | overbright_indicator |     |
-+-------------------------------+----------------------+-----+
-| :ref:`Texture<class_Texture>` | preset_bg            |     |
-+-------------------------------+----------------------+-----+
-| :ref:`Texture<class_Texture>` | screen_picker        |     |
-+-------------------------------+----------------------+-----+
-| :ref:`int<class_int>`         | sv_height            | 256 |
-+-------------------------------+----------------------+-----+
-| :ref:`int<class_int>`         | sv_width             | 256 |
-+-------------------------------+----------------------+-----+
++-----------------------------------+----------------------+-----+
+| :ref:`Texture2D<class_Texture2D>` | add_preset           |     |
++-----------------------------------+----------------------+-----+
+| :ref:`Texture2D<class_Texture2D>` | color_hue            |     |
++-----------------------------------+----------------------+-----+
+| :ref:`Texture2D<class_Texture2D>` | color_sample         |     |
++-----------------------------------+----------------------+-----+
+| :ref:`int<class_int>`             | h_width              | 30  |
++-----------------------------------+----------------------+-----+
+| :ref:`int<class_int>`             | label_width          | 10  |
++-----------------------------------+----------------------+-----+
+| :ref:`int<class_int>`             | margin               | 4   |
++-----------------------------------+----------------------+-----+
+| :ref:`Texture2D<class_Texture2D>` | overbright_indicator |     |
++-----------------------------------+----------------------+-----+
+| :ref:`Texture2D<class_Texture2D>` | preset_bg            |     |
++-----------------------------------+----------------------+-----+
+| :ref:`Texture2D<class_Texture2D>` | screen_picker        |     |
++-----------------------------------+----------------------+-----+
+| :ref:`int<class_int>`             | sv_height            | 256 |
++-----------------------------------+----------------------+-----+
+| :ref:`int<class_int>`             | sv_width             | 256 |
++-----------------------------------+----------------------+-----+
 
 Signals
 -------
@@ -240,7 +240,7 @@ Removes the given color from the list of color presets of this color picker.
 
 .. _class_ColorPicker_method_get_presets:
 
-- :ref:`PoolColorArray<class_PoolColorArray>` **get_presets** **(** **)** const
+- :ref:`PackedColorArray<class_PackedColorArray>` **get_presets** **(** **)** const
 
 Returns the list of colors in the presets of the color picker.
 

@@ -82,7 +82,7 @@ are not selectable."
 
 .. image:: img/lock_children.png
 
-Save the scene. Click Scene -> Save, or press ``Ctrl+S`` on Windows/Linux or ``Command+S`` on Mac.
+Save the scene. Click Scene -> Save, or press :kbd:`Ctrl + S` on Windows/Linux or :kbd:`Cmd + S` on macOS.
 
 .. note:: For this project, we will be following the Godot naming conventions.
 
@@ -739,7 +739,7 @@ Drag ``Mob.tscn`` from the "FileSystem" panel and drop it in the
 
 Next, click on the Player and connect the ``hit`` signal. We want to make a
 new function named ``game_over``, which will handle what needs to happen when a
-game ends. Type "game_over" in the "Method In Node" box at the bottom of the
+game ends. Type "game_over" in the "Receiver Method" box at the bottom of the
 "Connecting Signal" window. Add the following code, as well as a ``new_game``
 function to set everything up for a new game:
 
@@ -815,7 +815,7 @@ Note that a new instance must be added to the scene using
 
     func _on_MobTimer_timeout():
         # Choose a random location on Path2D.
-        $MobPath/MobSpawnLocation.set_offset(randi())
+        $MobPath/MobSpawnLocation.offset = randi()
         # Create a Mob instance and add it to the scene.
         var mob = Mob.instance()
         add_child(mob)
@@ -1227,7 +1227,7 @@ This is the default input event associated with the spacebar.
 
 .. image:: img/start_button_shortcut.png
 
-Now when the start button appears, you can either click it or press the spacebar
+Now when the start button appears, you can either click it or press :kbd:`Space`
 to start the game.
 
 Project files

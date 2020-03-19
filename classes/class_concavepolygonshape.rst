@@ -18,21 +18,23 @@ Description
 
 Concave polygon shape resource, which can be set into a :ref:`PhysicsBody<class_PhysicsBody>` or area. This shape is created by feeding a list of triangles.
 
+Note: when used for collision, ``ConcavePolygonShape`` is intended to work with static :ref:`PhysicsBody<class_PhysicsBody>` nodes like :ref:`StaticBody<class_StaticBody>` and will not work with :ref:`KinematicBody<class_KinematicBody>` or :ref:`RigidBody<class_RigidBody>` with a mode other than Static.
+
 Methods
 -------
 
-+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_faces<class_ConcavePolygonShape_method_get_faces>` **(** **)** const                                                 |
-+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`set_faces<class_ConcavePolygonShape_method_set_faces>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` faces **)** |
-+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_faces<class_ConcavePolygonShape_method_get_faces>` **(** **)** const                                                     |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_faces<class_ConcavePolygonShape_method_set_faces>` **(** :ref:`PackedVector3Array<class_PackedVector3Array>` faces **)** |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_ConcavePolygonShape_method_get_faces:
 
-- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_faces** **(** **)** const
+- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_faces** **(** **)** const
 
 Returns the faces (an array of triangles).
 
@@ -40,7 +42,7 @@ Returns the faces (an array of triangles).
 
 .. _class_ConcavePolygonShape_method_set_faces:
 
-- void **set_faces** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` faces **)**
+- void **set_faces** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` faces **)**
 
 Sets the faces (an array of triangles).
 

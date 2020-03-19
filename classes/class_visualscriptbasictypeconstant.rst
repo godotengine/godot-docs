@@ -24,7 +24,7 @@ Properties
 +-----------------------------------------------------+----------------------------------------------------------------------------+-------+
 | :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`basic_type<class_VisualScriptBasicTypeConstant_property_basic_type>` | ``0`` |
 +-----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`String<class_String>`                         | :ref:`constant<class_VisualScriptBasicTypeConstant_property_constant>`     |       |
+| :ref:`StringName<class_StringName>`                 | :ref:`constant<class_VisualScriptBasicTypeConstant_property_constant>`     |       |
 +-----------------------------------------------------+----------------------------------------------------------------------------+-------+
 
 Property Descriptions
@@ -48,7 +48,7 @@ The type to get the constant from.
 
 .. _class_VisualScriptBasicTypeConstant_property_constant:
 
-- :ref:`String<class_String>` **constant**
+- :ref:`StringName<class_StringName>` **constant**
 
 +----------+--------------------------------+
 | *Setter* | set_basic_type_constant(value) |

@@ -36,7 +36,7 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`atan2<class_@GDScript_method_atan2>` **(** :ref:`float<class_float>` y, :ref:`float<class_float>` x **)**                                                                                                                        |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                             | :ref:`bytes2var<class_@GDScript_method_bytes2var>` **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes, :ref:`bool<class_bool>` allow_objects=false **)**                                                                            |
+| :ref:`Variant<class_Variant>`                             | :ref:`bytes2var<class_@GDScript_method_bytes2var>` **(** :ref:`PackedByteArray<class_PackedByteArray>` bytes, :ref:`bool<class_bool>` allow_objects=false **)**                                                                        |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                             | :ref:`cartesian2polar<class_@GDScript_method_cartesian2polar>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**                                                                                                    |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -53,8 +53,6 @@ Methods
 | :ref:`float<class_float>`                                 | :ref:`cosh<class_@GDScript_method_cosh>` **(** :ref:`float<class_float>` s **)**                                                                                                                                                       |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`db2linear<class_@GDScript_method_db2linear>` **(** :ref:`float<class_float>` db **)**                                                                                                                                            |
-+-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                     | :ref:`decimals<class_@GDScript_method_decimals>` **(** :ref:`float<class_float>` step **)**                                                                                                                                            |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`dectime<class_@GDScript_method_dectime>` **(** :ref:`float<class_float>` value, :ref:`float<class_float>` amount, :ref:`float<class_float>` step **)**                                                                           |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -194,7 +192,7 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                               | :ref:`validate_json<class_@GDScript_method_validate_json>` **(** :ref:`String<class_String>` json **)**                                                                                                                                |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>`                 | :ref:`var2bytes<class_@GDScript_method_var2bytes>` **(** :ref:`Variant<class_Variant>` var, :ref:`bool<class_bool>` full_objects=false **)**                                                                                           |
+| :ref:`PackedByteArray<class_PackedByteArray>`             | :ref:`var2bytes<class_@GDScript_method_var2bytes>` **(** :ref:`Variant<class_Variant>` var, :ref:`bool<class_bool>` full_objects=false **)**                                                                                           |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                               | :ref:`var2str<class_@GDScript_method_var2str>` **(** :ref:`Variant<class_Variant>` var **)**                                                                                                                                           |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -348,7 +346,7 @@ Returns the arc tangent of ``y/x`` in radians. Use to get the angle of tangent `
 
 .. _class_@GDScript_method_bytes2var:
 
-- :ref:`Variant<class_Variant>` **bytes2var** **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes, :ref:`bool<class_bool>` allow_objects=false **)**
+- :ref:`Variant<class_Variant>` **bytes2var** **(** :ref:`PackedByteArray<class_PackedByteArray>` bytes, :ref:`bool<class_bool>` allow_objects=false **)**
 
 Decodes a byte array back to a value. When ``allow_objects`` is ``true`` decoding objects is allowed.
 
@@ -460,14 +458,6 @@ Returns the hyperbolic cosine of ``s`` in radians.
 - :ref:`float<class_float>` **db2linear** **(** :ref:`float<class_float>` db **)**
 
 Converts from decibels to linear energy (audio).
-
-----
-
-.. _class_@GDScript_method_decimals:
-
-- :ref:`int<class_int>` **decimals** **(** :ref:`float<class_float>` step **)**
-
-Deprecated alias for :ref:`step_decimals<class_@GDScript_method_step_decimals>`.
 
 ----
 
@@ -688,11 +678,15 @@ Returns the Object that corresponds to ``instance_id``. All Objects have a uniqu
 
 - :ref:`float<class_float>` **inverse_lerp** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**
 
-Returns a normalized value considering the given range.
+Returns a normalized value considering the given range. This is the opposite of :ref:`lerp<class_@GDScript_method_lerp>`.
 
 ::
 
-    inverse_lerp(3, 5, 4) # Returns 0.5
+    var middle = lerp(20, 30, 0.75)
+    # `middle` is now 27.5.
+    # Now, we pretend to have forgotten the original ratio and want to get it back.
+    var ratio = inverse_lerp(20, 30, 27.5)
+    # `ratio` is now 0.75.
 
 ----
 
@@ -755,7 +749,7 @@ Returns length of Variant ``var``. Length is the character count of String, elem
 
 - :ref:`Variant<class_Variant>` **lerp** **(** :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` weight **)**
 
-Linearly interpolates between two values by a normalized value.
+Linearly interpolates between two values by a normalized value. This is the opposite of :ref:`inverse_lerp<class_@GDScript_method_inverse_lerp>`.
 
 If the ``from`` and ``to`` arguments are of type :ref:`int<class_int>` or :ref:`float<class_float>`, the return value is a :ref:`float<class_float>`.
 
@@ -774,7 +768,7 @@ If both are of the same vector type (:ref:`Vector2<class_Vector2>`, :ref:`Vector
 
 Linearly interpolates between two angles (in radians) by a normalized value.
 
-Similar to :ref:`lerp<class_@GDScript_method_lerp>` but interpolate correctly when the angles wrap around :ref:`TAU<class_@GDScript_constant_TAU>`.
+Similar to :ref:`lerp<class_@GDScript_method_lerp>`, but interpolates correctly when the angles wrap around :ref:`TAU<class_@GDScript_constant_TAU>`.
 
 ::
 
@@ -792,7 +786,14 @@ Similar to :ref:`lerp<class_@GDScript_method_lerp>` but interpolate correctly wh
 
 - :ref:`float<class_float>` **linear2db** **(** :ref:`float<class_float>` nrg **)**
 
-Converts from linear energy to decibels (audio).
+Converts from linear energy to decibels (audio). This can be used to implement volume sliders that behave as expected (since volume isn't linear). Example:
+
+::
+
+    # "Slider" refers to a node that inherits Range such as HSlider or VSlider.
+    # Its range must be configured to go from 0 to 1.
+    # Change the bus name if you'd like to change the volume of a specific bus only.
+    AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear2db($Slider.value))
 
 ----
 
@@ -1448,7 +1449,7 @@ Checks that ``json`` is valid JSON data. Returns an empty string if valid, or an
 
 .. _class_@GDScript_method_var2bytes:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **var2bytes** **(** :ref:`Variant<class_Variant>` var, :ref:`bool<class_bool>` full_objects=false **)**
+- :ref:`PackedByteArray<class_PackedByteArray>` **var2bytes** **(** :ref:`Variant<class_Variant>` var, :ref:`bool<class_bool>` full_objects=false **)**
 
 Encodes a variable value to a byte array. When ``full_objects`` is ``true`` encoding objects is allowed (and can potentially include code).
 

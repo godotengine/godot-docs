@@ -11,7 +11,7 @@ AnimationTree
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-
+A node to be used for advanced animation transitions in an :ref:`AnimationPlayer<class_AnimationPlayer>`.
 
 Tutorials
 ---------
@@ -59,11 +59,11 @@ Enumerations
 
 enum **AnimationProcessMode**:
 
-- **ANIMATION_PROCESS_PHYSICS** = **0**
+- **ANIMATION_PROCESS_PHYSICS** = **0** --- The animations will progress during the physics frame (i.e. :ref:`Node._physics_process<class_Node_method__physics_process>`).
 
-- **ANIMATION_PROCESS_IDLE** = **1**
+- **ANIMATION_PROCESS_IDLE** = **1** --- The animations will progress during the idle frame (i.e. :ref:`Node._process<class_Node_method__process>`).
 
-- **ANIMATION_PROCESS_MANUAL** = **2**
+- **ANIMATION_PROCESS_MANUAL** = **2** --- The animations will only progress manually (see :ref:`advance<class_AnimationTree_method_advance>`).
 
 Property Descriptions
 ---------------------
@@ -80,6 +80,8 @@ Property Descriptions
 | *Getter*  | is_active()       |
 +-----------+-------------------+
 
+If ``true``, the ``AnimationTree`` will be processing.
+
 ----
 
 .. _class_AnimationTree_property_anim_player:
@@ -94,6 +96,8 @@ Property Descriptions
 | *Getter*  | get_animation_player()      |
 +-----------+-----------------------------+
 
+The path to the :ref:`AnimationPlayer<class_AnimationPlayer>` used for animating.
+
 ----
 
 .. _class_AnimationTree_property_process_mode:
@@ -107,6 +111,8 @@ Property Descriptions
 +-----------+-------------------------+
 | *Getter*  | get_process_mode()      |
 +-----------+-------------------------+
+
+The process mode of this ``AnimationTree``. See :ref:`AnimationProcessMode<enum_AnimationTree_AnimationProcessMode>` for available modes.
 
 ----
 
@@ -134,12 +140,16 @@ Property Descriptions
 | *Getter* | get_tree_root()      |
 +----------+----------------------+
 
+The root animation node of this ``AnimationTree``. See :ref:`AnimationNode<class_AnimationNode>`.
+
 Method Descriptions
 -------------------
 
 .. _class_AnimationTree_method_advance:
 
 - void **advance** **(** :ref:`float<class_float>` delta **)**
+
+Manually advance the animations by the specified time (in seconds).
 
 ----
 

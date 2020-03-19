@@ -26,11 +26,11 @@ Properties
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
 | :ref:`BitMap<class_BitMap>`                                  | :ref:`bitmask<class_TouchScreenButton_property_bitmask>`                 |           |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
-| :ref:`Texture<class_Texture>`                                | :ref:`normal<class_TouchScreenButton_property_normal>`                   |           |
+| :ref:`Texture2D<class_Texture2D>`                            | :ref:`normal<class_TouchScreenButton_property_normal>`                   |           |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                      | :ref:`passby_press<class_TouchScreenButton_property_passby_press>`       | ``false`` |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
-| :ref:`Texture<class_Texture>`                                | :ref:`pressed<class_TouchScreenButton_property_pressed>`                 |           |
+| :ref:`Texture2D<class_Texture2D>`                            | :ref:`pressed<class_TouchScreenButton_property_pressed>`                 |           |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
 | :ref:`Shape2D<class_Shape2D>`                                | :ref:`shape<class_TouchScreenButton_property_shape>`                     |           |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
@@ -115,7 +115,7 @@ The button's bitmask.
 
 .. _class_TouchScreenButton_property_normal:
 
-- :ref:`Texture<class_Texture>` **normal**
+- :ref:`Texture2D<class_Texture2D>` **normal**
 
 +----------+--------------------+
 | *Setter* | set_texture(value) |
@@ -145,7 +145,7 @@ If ``true``, pass-by presses are enabled.
 
 .. _class_TouchScreenButton_property_pressed:
 
-- :ref:`Texture<class_Texture>` **pressed**
+- :ref:`Texture2D<class_Texture2D>` **pressed**
 
 +----------+----------------------------+
 | *Setter* | set_texture_pressed(value) |

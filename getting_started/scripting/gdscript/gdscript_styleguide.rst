@@ -361,7 +361,7 @@ This helps differentiate text comments from disabled code.
 .. note::
 
    In the script editor, to toggle the selected code commented, press
-   <kbd>Ctrl</kbd> <kbd>K</kbd>. This feature adds a single # sign at the start
+   :kbd:`Ctrl + K`. This feature adds a single # sign at the start
    of the selected lines.
 
 Whitespace

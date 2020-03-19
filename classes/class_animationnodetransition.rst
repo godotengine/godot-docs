@@ -11,7 +11,12 @@ AnimationNodeTransition
 
 **Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+A generic animation transition node for :ref:`AnimationTree<class_AnimationTree>`.
 
+Description
+-----------
+
+Simple state machine for cases which don't require a more advanced :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`. Animations can be connected to the inputs and transition times can be specified.
 
 Tutorials
 ---------
@@ -55,6 +60,8 @@ Property Descriptions
 | *Getter*  | get_enabled_inputs()      |
 +-----------+---------------------------+
 
+The number of available input ports for this node.
+
 ----
 
 .. _class_AnimationNodeTransition_property_xfade_time:
@@ -68,6 +75,8 @@ Property Descriptions
 +-----------+----------------------------+
 | *Getter*  | get_cross_fade_time()      |
 +-----------+----------------------------+
+
+Cross-fading time (in seconds) between each animation connected to the inputs.
 
 Method Descriptions
 -------------------

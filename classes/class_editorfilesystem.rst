@@ -54,7 +54,7 @@ Emitted if the filesystem changed.
 
 .. _class_EditorFileSystem_signal_resources_reimported:
 
-- **resources_reimported** **(** :ref:`PoolStringArray<class_PoolStringArray>` resources **)**
+- **resources_reimported** **(** :ref:`PackedStringArray<class_PackedStringArray>` resources **)**
 
 Remitted if a resource is reimported.
 
@@ -62,7 +62,7 @@ Remitted if a resource is reimported.
 
 .. _class_EditorFileSystem_signal_resources_reload:
 
-- **resources_reload** **(** :ref:`PoolStringArray<class_PoolStringArray>` resources **)**
+- **resources_reload** **(** :ref:`PackedStringArray<class_PackedStringArray>` resources **)**
 
 ----
 
@@ -142,4 +142,6 @@ Update a file information. Call this if an external program (not Godot) modified
 .. _class_EditorFileSystem_method_update_script_classes:
 
 - void **update_script_classes** **(** **)**
+
+Scans the script files and updates the list of custom class names.
 

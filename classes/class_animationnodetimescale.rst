@@ -11,7 +11,12 @@ AnimationNodeTimeScale
 
 **Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+A time-scaling animation node to be used with :ref:`AnimationTree<class_AnimationTree>`.
 
+Description
+-----------
+
+Allows scaling the speed of the animation (or reversing it) in any children nodes. Setting it to 0 will pause the animation.
 
 Tutorials
 ---------

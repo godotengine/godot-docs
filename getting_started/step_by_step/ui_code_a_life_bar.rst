@@ -353,7 +353,7 @@ This method needs to:
 
 Also call ``update_health`` at the end of the ``_ready`` function to
 initialize the ``Number`` node's ``text`` with the right value at the
-start of the game. Press F5 to test the game: the life bar updates with
+start of the game. Press :kbd:`F5` to test the game: the life bar updates with
 every attack!
 
 .. figure:: img/lifebar_tutorial_LifeBar_health_update_no_anim.gif
@@ -440,7 +440,7 @@ duration in seconds.
 
 ::
 
-    ...  0.6, tween.TRANS_LINEAR, Tween.EASE_IN)
+    ...  0.6, Tween.TRANS_LINEAR, Tween.EASE_IN)
 
 The last two arguments are constants from the ``Tween`` class.
 ``TRANS_LINEAR`` means the animation should be linear. ``EASE_IN``

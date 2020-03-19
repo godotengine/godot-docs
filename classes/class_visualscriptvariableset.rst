@@ -31,19 +31,19 @@ Changes a variable's value to the given input.
 Properties
 ----------
 
-+-----------------------------+------------------------------------------------------------------+--------+
-| :ref:`String<class_String>` | :ref:`var_name<class_VisualScriptVariableSet_property_var_name>` | ``""`` |
-+-----------------------------+------------------------------------------------------------------+--------+
++-------------------------------------+------------------------------------------------------------------+---------+
+| :ref:`StringName<class_StringName>` | :ref:`var_name<class_VisualScriptVariableSet_property_var_name>` | ``@""`` |
++-------------------------------------+------------------------------------------------------------------+---------+
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptVariableSet_property_var_name:
 
-- :ref:`String<class_String>` **var_name**
+- :ref:`StringName<class_StringName>` **var_name**
 
 +-----------+---------------------+
-| *Default* | ``""``              |
+| *Default* | ``@""``             |
 +-----------+---------------------+
 | *Setter*  | set_variable(value) |
 +-----------+---------------------+

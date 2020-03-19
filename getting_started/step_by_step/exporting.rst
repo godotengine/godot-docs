@@ -415,6 +415,8 @@ to wait a few moments while the game loads before you see the start screen.
 The console window beneath the game tells you if anything goes wrong. You can
 disable it by setting "Export With Debug" off when you export the project.
 
+.. image:: img/export_web_export_with_debug_disabled.png
+
 .. note:: While WASM is supported in all major browsers, it is still an emerging
           technology and you may find some things that don't work. Make sure
           you have updated your browser to the most recent version, and report

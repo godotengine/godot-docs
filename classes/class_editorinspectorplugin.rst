@@ -38,7 +38,7 @@ Methods
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`add_property_editor<class_EditorInspectorPlugin_method_add_property_editor>` **(** :ref:`String<class_String>` property, :ref:`Control<class_Control>` editor **)**                                                                                                                     |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`add_property_editor_for_multiple_properties<class_EditorInspectorPlugin_method_add_property_editor_for_multiple_properties>` **(** :ref:`String<class_String>` label, :ref:`PoolStringArray<class_PoolStringArray>` properties, :ref:`Control<class_Control>` editor **)**              |
+| void                    | :ref:`add_property_editor_for_multiple_properties<class_EditorInspectorPlugin_method_add_property_editor_for_multiple_properties>` **(** :ref:`String<class_String>` label, :ref:`PackedStringArray<class_PackedStringArray>` properties, :ref:`Control<class_Control>` editor **)**          |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`can_handle<class_EditorInspectorPlugin_method_can_handle>` **(** :ref:`Object<class_Object>` object **)** virtual                                                                                                                                                                       |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -72,7 +72,7 @@ Adds a property editor, this must inherit :ref:`EditorProperty<class_EditorPrope
 
 .. _class_EditorInspectorPlugin_method_add_property_editor_for_multiple_properties:
 
-- void **add_property_editor_for_multiple_properties** **(** :ref:`String<class_String>` label, :ref:`PoolStringArray<class_PoolStringArray>` properties, :ref:`Control<class_Control>` editor **)**
+- void **add_property_editor_for_multiple_properties** **(** :ref:`String<class_String>` label, :ref:`PackedStringArray<class_PackedStringArray>` properties, :ref:`Control<class_Control>` editor **)**
 
 Adds an editor that allows modifying multiple properties, this must inherit :ref:`EditorProperty<class_EditorProperty>`.
 

@@ -23,21 +23,21 @@ This class can also be used to store dynamically-generated PCM audio data.
 Properties
 ----------
 
-+--------------------------------------------------+----------------------------------------------------------------+-----------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>`        | :ref:`data<class_AudioStreamSample_property_data>`             | ``PoolByteArray(  )`` |
-+--------------------------------------------------+----------------------------------------------------------------+-----------------------+
-| :ref:`Format<enum_AudioStreamSample_Format>`     | :ref:`format<class_AudioStreamSample_property_format>`         | ``0``                 |
-+--------------------------------------------------+----------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`                            | :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` | ``0``                 |
-+--------------------------------------------------+----------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`                            | :ref:`loop_end<class_AudioStreamSample_property_loop_end>`     | ``0``                 |
-+--------------------------------------------------+----------------------------------------------------------------+-----------------------+
-| :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` | :ref:`loop_mode<class_AudioStreamSample_property_loop_mode>`   | ``0``                 |
-+--------------------------------------------------+----------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`                            | :ref:`mix_rate<class_AudioStreamSample_property_mix_rate>`     | ``44100``             |
-+--------------------------------------------------+----------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                          | :ref:`stereo<class_AudioStreamSample_property_stereo>`         | ``false``             |
-+--------------------------------------------------+----------------------------------------------------------------+-----------------------+
++--------------------------------------------------+----------------------------------------------------------------+-------------------------+
+| :ref:`PackedByteArray<class_PackedByteArray>`    | :ref:`data<class_AudioStreamSample_property_data>`             | ``PackedByteArray(  )`` |
++--------------------------------------------------+----------------------------------------------------------------+-------------------------+
+| :ref:`Format<enum_AudioStreamSample_Format>`     | :ref:`format<class_AudioStreamSample_property_format>`         | ``0``                   |
++--------------------------------------------------+----------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                            | :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` | ``0``                   |
++--------------------------------------------------+----------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                            | :ref:`loop_end<class_AudioStreamSample_property_loop_end>`     | ``0``                   |
++--------------------------------------------------+----------------------------------------------------------------+-------------------------+
+| :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` | :ref:`loop_mode<class_AudioStreamSample_property_loop_mode>`   | ``0``                   |
++--------------------------------------------------+----------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                            | :ref:`mix_rate<class_AudioStreamSample_property_mix_rate>`     | ``44100``               |
++--------------------------------------------------+----------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`stereo<class_AudioStreamSample_property_stereo>`         | ``false``               |
++--------------------------------------------------+----------------------------------------------------------------+-------------------------+
 
 Methods
 -------
@@ -92,15 +92,15 @@ Property Descriptions
 
 .. _class_AudioStreamSample_property_data:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **data**
+- :ref:`PackedByteArray<class_PackedByteArray>` **data**
 
-+-----------+-----------------------+
-| *Default* | ``PoolByteArray(  )`` |
-+-----------+-----------------------+
-| *Setter*  | set_data(value)       |
-+-----------+-----------------------+
-| *Getter*  | get_data()            |
-+-----------+-----------------------+
++-----------+-------------------------+
+| *Default* | ``PackedByteArray(  )`` |
++-----------+-------------------------+
+| *Setter*  | set_data(value)         |
++-----------+-------------------------+
+| *Getter*  | get_data()              |
++-----------+-------------------------+
 
 Contains the audio data in bytes.
 

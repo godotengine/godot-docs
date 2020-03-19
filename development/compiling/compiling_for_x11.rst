@@ -12,7 +12,7 @@ For compiling under Linux or other Unix variants, the following is
 required:
 
 -  GCC or Clang
--  Python 3 or 2.7+
+-  Python 3.5+
 -  SCons build system (3.0 or later for Python 3)
 -  pkg-config (used to detect the dependencies below)
 -  X11, Xcursor, Xinerama, Xi and XRandR development libraries
@@ -114,6 +114,11 @@ manager.
           make the final executable smaller and faster by adding the
           SCons option ``target=release_debug``.
 
+          If you are compiling Godot with GCC, you can make the binary
+          even smaller and faster by adding the SCons option ``use_lto=yes``.
+          As link-time optimization is a memory-intensive process,
+          this will require about 3 GB of available RAM while compiling.
+
 Building export templates
 -------------------------
 
@@ -169,3 +174,21 @@ here:
 You don't even need to copy them, you can just reference the resulting
 files in the ``bin/`` directory of your Godot source folder, so the next
 time you build, you automatically have the custom templates referenced.
+
+Using Clang and LLD for faster development
+------------------------------------------
+
+You can also use Clang and LLD to build Godot. This has two upsides compared to
+the default GCC + GNU ld setup:
+
+- LLD links Godot significantly faster compared to GNU ld or gold. This leads to
+  faster iteration times.
+- Clang tends to give more useful error messages compared to GCC.
+
+To do so, install Clang and the ``lld`` package from your distribution's package manager
+then use the following SCons command::
+
+    user@host:~/godot$ scons platform=x11 use_llvm=yes use_lld=yes
+
+It's still recommended to use GCC for production builds as they can be compiled using
+link-time optimization, making the resulting binaries smaller and faster.

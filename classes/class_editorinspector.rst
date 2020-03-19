@@ -11,7 +11,12 @@ EditorInspector
 
 **Inherits:** :ref:`ScrollContainer<class_ScrollContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+A tab used to edit properties of the selected node.
 
+Description
+-----------
+
+The editor inspector is by default located on the right-hand side of the editor. It's used to edit the properties of the selected node. For example, you can select a node such as the Sprite2D then edit its transform through the inspector tool. The editor inspector is an essential tool in the game development workflow.
 
 Properties
 ----------

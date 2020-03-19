@@ -43,7 +43,7 @@ Methods
 -------
 
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>`     | :ref:`generate_random_bytes<class_Crypto_method_generate_random_bytes>` **(** :ref:`int<class_int>` size **)**                                                                                                                                                                                                                                |
+| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`generate_random_bytes<class_Crypto_method_generate_random_bytes>` **(** :ref:`int<class_int>` size **)**                                                                                                                                                                                                                                |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`CryptoKey<class_CryptoKey>`             | :ref:`generate_rsa<class_Crypto_method_generate_rsa>` **(** :ref:`int<class_int>` size **)**                                                                                                                                                                                                                                                  |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -55,9 +55,9 @@ Method Descriptions
 
 .. _class_Crypto_method_generate_random_bytes:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **generate_random_bytes** **(** :ref:`int<class_int>` size **)**
+- :ref:`PackedByteArray<class_PackedByteArray>` **generate_random_bytes** **(** :ref:`int<class_int>` size **)**
 
-Generates a :ref:`PoolByteArray<class_PoolByteArray>` of cryptographically secure random bytes with given ``size``.
+Generates a :ref:`PackedByteArray<class_PackedByteArray>` of cryptographically secure random bytes with given ``size``.
 
 ----
 

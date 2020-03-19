@@ -52,7 +52,7 @@ Methods
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Mesh<class_Mesh>`                                    | :ref:`get_mesh<class_ARVRController_method_get_mesh>` **(** **)** const                                                |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`is_button_pressed<class_ARVRController_method_is_button_pressed>` **(** :ref:`int<class_int>` button **)** const |
+| :ref:`bool<class_bool>`                                    | :ref:`is_button_pressed<class_ARVRController_method_is_button_pressed>` **(** :ref:`int<class_int>` button **)** const |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -174,7 +174,7 @@ If provided by the :ref:`ARVRInterface<class_ARVRInterface>`, this returns a mes
 
 .. _class_ARVRController_method_is_button_pressed:
 
-- :ref:`int<class_int>` **is_button_pressed** **(** :ref:`int<class_int>` button **)** const
+- :ref:`bool<class_bool>` **is_button_pressed** **(** :ref:`int<class_int>` button **)** const
 
 Returns ``true`` if the button at index ``button`` is pressed. See :ref:`JoystickList<enum_@GlobalScope_JoystickList>`, in particular the ``JOY_VR_*`` constants.
 

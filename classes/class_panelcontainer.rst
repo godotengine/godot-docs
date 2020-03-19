@@ -20,6 +20,13 @@ Description
 
 Panel container type. This container fits controls inside of the delimited area of a stylebox. It's useful for giving controls an outline.
 
+Properties
+----------
+
++----------------------------------------------+--------------+--------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter | **O:** ``0`` |
++----------------------------------------------+--------------+--------------+
+
 Theme Properties
 ----------------
 

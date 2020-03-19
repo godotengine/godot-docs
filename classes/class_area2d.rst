@@ -29,7 +29,7 @@ Properties
 +-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                       | :ref:`angular_damp<class_Area2D_property_angular_damp>`                     | ``1.0``             |
 +-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
-| :ref:`String<class_String>`                     | :ref:`audio_bus_name<class_Area2D_property_audio_bus_name>`                 | ``"Master"``        |
+| :ref:`StringName<class_StringName>`             | :ref:`audio_bus_name<class_Area2D_property_audio_bus_name>`                 | ``@"Master"``       |
 +-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`                         | :ref:`audio_bus_override<class_Area2D_property_audio_bus_override>`         | ``false``           |
 +-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
@@ -198,10 +198,10 @@ The rate at which objects stop spinning in this area. Represents the angular vel
 
 .. _class_Area2D_property_audio_bus_name:
 
-- :ref:`String<class_String>` **audio_bus_name**
+- :ref:`StringName<class_StringName>` **audio_bus_name**
 
 +-----------+---------------------------+
-| *Default* | ``"Master"``              |
+| *Default* | ``@"Master"``             |
 +-----------+---------------------------+
 | *Setter*  | set_audio_bus_name(value) |
 +-----------+---------------------------+

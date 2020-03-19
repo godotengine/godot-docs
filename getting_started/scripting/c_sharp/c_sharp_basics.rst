@@ -79,9 +79,9 @@ Configuring an external editor
 C# support in Godot's script editor is minimal. Consider using an
 external IDE or editor, such as  `Visual Studio Code <https://code.visualstudio.com/>`_
 or MonoDevelop. These provide autocompletion, debugging, and other
-useful features for C#. To select an external editor in Godot, 
+useful features for C#. To select an external editor in Godot,
 click on **Editor → Editor Settings** and scroll down to
-**Mono**. Under **Mono**, click on **Editor**, and select your 
+**Mono**. Under **Mono**, click on **Editor**, and select your
 external editor of choice. Godot currently supports the following
 external editors:
 
@@ -222,9 +222,9 @@ take a look over the official
   `#20271 <https://github.com/godotengine/godot/issues/20271>`_).
 - Attached C# scripts should refer to a class that has a class name
   that matches the file name.
-- There are some methods such as ``Get()``/``Set()``, ``Call()``/``CallDeferred()`` 
+- There are some methods such as ``Get()``/``Set()``, ``Call()``/``CallDeferred()``
   and signal connection method ``Connect()`` that rely on Godot's ``snake_case`` API
-  naming conventions. 
+  naming conventions.
   So when using e.g. ``CallDeferred("AddChild")``, ``AddChild`` will not work because
   the API is expecting the original ``snake_case`` version ``add_child``. However, you
   can use any custom properties or methods without this limitation.
@@ -251,13 +251,17 @@ the ``.csproj`` file located in the project root:
     :emphasize-lines: 2
 
         <ItemGroup>
-            <PackageReference Include="Newtonsoft.Json" Version="11.0.2"/>
+            <PackageReference Include="Newtonsoft.Json">
+              <Version>11.0.2</Version>
+            </PackageReference>
         </ItemGroup>
         ...
     </Project>
 
+.. note::
+    By default, tools like NuGet put ``Version`` as an attribute of the ```PackageReference``` Node. **You must manually create a Version node as shown above.**  This is because the version of MSBuild used requires this. (This will be fixed in Godot 4.0.)
 
-Whenever packages are added or modified, run ``nuget restore`` in the root of the
+Whenever packages are added or modified, run ``nuget restore`` (*not* ``dotnet restore``) in the root of the
 project directory. To ensure that NuGet packages will be available for
 msbuild to use, run:
 
@@ -268,7 +272,7 @@ msbuild to use, run:
 Profiling your C# code
 ----------------------
 
-- `Mono log profiler <https://www.mono-project.com/docs/debug+profile/profile/profiler/>`_ is available via `this PR <https://github.com/godotengine/godot/pull/26513>`_.
+- `Mono log profiler <https://www.mono-project.com/docs/debug+profile/profile/profiler/>`_ is available for Linux and macOS. Due to a Mono change, it does not work on Windows currently.
 - External Mono profiler like `JetBrains dotTrace <https://www.jetbrains.com/profiler/>`_ can be used as described `here <https://github.com/godotengine/godot/pull/34382>`_.
 
 Configuring VS 2019 for debugging

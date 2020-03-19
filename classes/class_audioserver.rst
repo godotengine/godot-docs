@@ -58,7 +58,7 @@ Methods
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AudioEffectInstance<class_AudioEffectInstance>` | :ref:`get_bus_effect_instance<class_AudioServer_method_get_bus_effect_instance>` **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx, :ref:`int<class_int>` channel=0 **)** |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                 | :ref:`get_bus_index<class_AudioServer_method_get_bus_index>` **(** :ref:`String<class_String>` bus_name **)** const                                                                           |
+| :ref:`int<class_int>`                                 | :ref:`get_bus_index<class_AudioServer_method_get_bus_index>` **(** :ref:`StringName<class_StringName>` bus_name **)** const                                                                   |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                           | :ref:`get_bus_name<class_AudioServer_method_get_bus_name>` **(** :ref:`int<class_int>` bus_idx **)** const                                                                                    |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -66,7 +66,7 @@ Methods
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                             | :ref:`get_bus_peak_volume_right_db<class_AudioServer_method_get_bus_peak_volume_right_db>` **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` channel **)** const                     |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                           | :ref:`get_bus_send<class_AudioServer_method_get_bus_send>` **(** :ref:`int<class_int>` bus_idx **)** const                                                                                    |
+| :ref:`StringName<class_StringName>`                   | :ref:`get_bus_send<class_AudioServer_method_get_bus_send>` **(** :ref:`int<class_int>` bus_idx **)** const                                                                                    |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                             | :ref:`get_bus_volume_db<class_AudioServer_method_get_bus_volume_db>` **(** :ref:`int<class_int>` bus_idx **)** const                                                                          |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -108,7 +108,7 @@ Methods
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                  | :ref:`set_bus_name<class_AudioServer_method_set_bus_name>` **(** :ref:`int<class_int>` bus_idx, :ref:`String<class_String>` name **)**                                                        |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                  | :ref:`set_bus_send<class_AudioServer_method_set_bus_send>` **(** :ref:`int<class_int>` bus_idx, :ref:`String<class_String>` send **)**                                                        |
+| void                                                  | :ref:`set_bus_send<class_AudioServer_method_set_bus_send>` **(** :ref:`int<class_int>` bus_idx, :ref:`StringName<class_StringName>` send **)**                                                |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                  | :ref:`set_bus_solo<class_AudioServer_method_set_bus_solo>` **(** :ref:`int<class_int>` bus_idx, :ref:`bool<class_bool>` enable **)**                                                          |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -285,7 +285,7 @@ Returns the :ref:`AudioEffectInstance<class_AudioEffectInstance>` assigned to th
 
 .. _class_AudioServer_method_get_bus_index:
 
-- :ref:`int<class_int>` **get_bus_index** **(** :ref:`String<class_String>` bus_name **)** const
+- :ref:`int<class_int>` **get_bus_index** **(** :ref:`StringName<class_StringName>` bus_name **)** const
 
 Returns the index of the bus with the name ``bus_name``.
 
@@ -317,7 +317,7 @@ Returns the peak volume of the right speaker at bus index ``bus_idx`` and channe
 
 .. _class_AudioServer_method_get_bus_send:
 
-- :ref:`String<class_String>` **get_bus_send** **(** :ref:`int<class_int>` bus_idx **)** const
+- :ref:`StringName<class_StringName>` **get_bus_send** **(** :ref:`int<class_int>` bus_idx **)** const
 
 Returns the name of the bus that the bus at index ``bus_idx`` sends to.
 
@@ -487,7 +487,7 @@ Sets the name of the bus at index ``bus_idx`` to ``name``.
 
 .. _class_AudioServer_method_set_bus_send:
 
-- void **set_bus_send** **(** :ref:`int<class_int>` bus_idx, :ref:`String<class_String>` send **)**
+- void **set_bus_send** **(** :ref:`int<class_int>` bus_idx, :ref:`StringName<class_StringName>` send **)**
 
 Connects the output of the bus at ``bus_idx`` to the bus named ``send``.
 

@@ -38,6 +38,8 @@ Properties
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
 | :ref:`Material<class_Material>`                                         | :ref:`material_override<class_GeometryInstance_property_material_override>`   |           |
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                                 | :ref:`use_dynamic_gi<class_GeometryInstance_property_use_dynamic_gi>`         | ``false`` |
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                                 | :ref:`use_in_baked_light<class_GeometryInstance_property_use_in_baked_light>` | ``false`` |
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
 
@@ -87,17 +89,21 @@ In other words, the actual mesh will not be visible, only the shadows casted fro
 
 .. _class_GeometryInstance_constant_FLAG_USE_BAKED_LIGHT:
 
+.. _class_GeometryInstance_constant_FLAG_USE_DYNAMIC_GI:
+
 .. _class_GeometryInstance_constant_FLAG_DRAW_NEXT_FRAME_IF_VISIBLE:
 
 .. _class_GeometryInstance_constant_FLAG_MAX:
 
 enum **Flags**:
 
-- **FLAG_USE_BAKED_LIGHT** = **0** --- Will allow the GeometryInstance to be used when baking lights using a :ref:`GIProbe<class_GIProbe>` or :ref:`BakedLightmap<class_BakedLightmap>`.
+- **FLAG_USE_BAKED_LIGHT** = **0** --- Will allow the GeometryInstance to be used when baking lights using a :ref:`GIProbe<class_GIProbe>`.
 
-- **FLAG_DRAW_NEXT_FRAME_IF_VISIBLE** = **1** --- Unused in this class, exposed for consistency with :ref:`InstanceFlags<enum_VisualServer_InstanceFlags>`.
+- **FLAG_USE_DYNAMIC_GI** = **1**
 
-- **FLAG_MAX** = **2** --- Represents the size of the :ref:`Flags<enum_GeometryInstance_Flags>` enum.
+- **FLAG_DRAW_NEXT_FRAME_IF_VISIBLE** = **2** --- Unused in this class, exposed for consistency with :ref:`InstanceFlags<enum_VisualServer_InstanceFlags>`.
+
+- **FLAG_MAX** = **3** --- Represents the size of the :ref:`Flags<enum_GeometryInstance_Flags>` enum.
 
 Property Descriptions
 ---------------------
@@ -222,6 +228,20 @@ If a material is assigned to this property, it will be used instead of any mater
 
 ----
 
+.. _class_GeometryInstance_property_use_dynamic_gi:
+
+- :ref:`bool<class_bool>` **use_dynamic_gi**
+
++-----------+-----------------+
+| *Default* | ``false``       |
++-----------+-----------------+
+| *Setter*  | set_flag(value) |
++-----------+-----------------+
+| *Getter*  | get_flag()      |
++-----------+-----------------+
+
+----
+
 .. _class_GeometryInstance_property_use_in_baked_light:
 
 - :ref:`bool<class_bool>` **use_in_baked_light**
@@ -234,7 +254,7 @@ If a material is assigned to this property, it will be used instead of any mater
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
 
-If ``true``, this GeometryInstance will be used when baking lights using a :ref:`GIProbe<class_GIProbe>` or :ref:`BakedLightmap<class_BakedLightmap>`.
+If ``true``, this GeometryInstance will be used when baking lights using a :ref:`GIProbe<class_GIProbe>`.
 
 Method Descriptions
 -------------------

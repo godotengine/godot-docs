@@ -60,6 +60,10 @@ node.
 .. warning:: The target node *must* have a script attached or you'll receive
              an error message.
 
+On the right side, you can bind an arbitrary number of arguments of (possibly) different
+types. This can be useful when you have more than one signal connected to the same method,
+as each signal propagation will result in different values for those extra call arguments.
+
 On the bottom of the window is a field labeled "Receiver Method". This is the name
 of the function in the target node's script that you want to use. By default,
 Godot will create this function using the naming convention ``_on_<node_name>_<signal_name>``
@@ -79,7 +83,7 @@ Click "Connect" and you'll see that the function has been created in the script:
 
     public class TimerExample : Node2D
     {
-        private void _on_Timer_timeout()
+        public void _on_Timer_timeout()
         {
             // Replace with function body.
         }
@@ -202,6 +206,56 @@ To emit a signal via code, use the ``emit_signal`` function:
         public override void _Ready()
         {
             EmitSignal(nameof(MySignal));
+        }
+    }
+    
+A signal can also optionally declare one or more arguments. Specify the
+argument names between parentheses:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends Node
+
+    signal my_signal(value, other_value)
+
+ .. code-tab:: csharp
+
+    public class Main : Node
+    {
+        [Signal]
+        public delegate void MySignal();
+    }
+
+.. note::
+
+    The signal arguments show up in the editor's node dock, and Godot
+    can use them to generate callback functions for you. However, you can still
+    emit any number of arguments when you emit signals. So it's up to you to
+    emit the correct values.
+
+To pass values, add them as the second argument to the ``emit_signal`` function:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends Node
+
+    signal my_signal(value, other_value)
+
+    func _ready():
+        emit_signal("my_signal", true, 42)
+
+ .. code-tab:: csharp
+
+    public class Main : Node
+    {
+        [Signal]
+        public delegate void MySignal();
+
+        public override void _Ready()
+        {
+            EmitSignal(nameof(MySignal), true, 42);
         }
     }
 

@@ -35,7 +35,7 @@ Methods
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`add_control_to_dock<class_EditorPlugin_method_add_control_to_dock>` **(** :ref:`DockSlot<enum_EditorPlugin_DockSlot>` slot, :ref:`Control<class_Control>` control **)**                                                          |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`add_custom_type<class_EditorPlugin_method_add_custom_type>` **(** :ref:`String<class_String>` type, :ref:`String<class_String>` base, :ref:`Script<class_Script>` script, :ref:`Texture<class_Texture>` icon **)**               |
+| void                                                | :ref:`add_custom_type<class_EditorPlugin_method_add_custom_type>` **(** :ref:`String<class_String>` type, :ref:`String<class_String>` base, :ref:`Script<class_Script>` script, :ref:`Texture2D<class_Texture2D>` icon **)**           |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`add_export_plugin<class_EditorPlugin_method_add_export_plugin>` **(** :ref:`EditorExportPlugin<class_EditorExportPlugin>` plugin **)**                                                                                           |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -71,11 +71,11 @@ Methods
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`forward_spatial_gui_input<class_EditorPlugin_method_forward_spatial_gui_input>` **(** :ref:`Camera<class_Camera>` camera, :ref:`InputEvent<class_InputEvent>` event **)** virtual                                                |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>`       | :ref:`get_breakpoints<class_EditorPlugin_method_get_breakpoints>` **(** **)** virtual                                                                                                                                                  |
+| :ref:`PackedStringArray<class_PackedStringArray>`   | :ref:`get_breakpoints<class_EditorPlugin_method_get_breakpoints>` **(** **)** virtual                                                                                                                                                  |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorInterface<class_EditorInterface>`       | :ref:`get_editor_interface<class_EditorPlugin_method_get_editor_interface>` **(** **)**                                                                                                                                                |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>`                         | :ref:`get_plugin_icon<class_EditorPlugin_method_get_plugin_icon>` **(** **)** virtual                                                                                                                                                  |
+| :ref:`Texture2D<class_Texture2D>`                   | :ref:`get_plugin_icon<class_EditorPlugin_method_get_plugin_icon>` **(** **)** virtual                                                                                                                                                  |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`get_plugin_name<class_EditorPlugin_method_get_plugin_name>` **(** **)** virtual                                                                                                                                                  |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -307,11 +307,11 @@ When your plugin is deactivated, make sure to remove your custom control with :r
 
 .. _class_EditorPlugin_method_add_custom_type:
 
-- void **add_custom_type** **(** :ref:`String<class_String>` type, :ref:`String<class_String>` base, :ref:`Script<class_Script>` script, :ref:`Texture<class_Texture>` icon **)**
+- void **add_custom_type** **(** :ref:`String<class_String>` type, :ref:`String<class_String>` base, :ref:`Script<class_Script>` script, :ref:`Texture2D<class_Texture2D>` icon **)**
 
 Adds a custom type, which will appear in the list of nodes or resources. An icon can be optionally passed.
 
-When given node or resource is selected, the base type will be instanced (ie, "Spatial", "Control", "Resource"), then the script will be loaded and set to this object.
+When given node or resource is selected, the base type will be instanced (e.g. "Spatial", "Control", "Resource"), then the script will be loaded and set to this object.
 
 You can use the virtual method :ref:`handles<class_EditorPlugin_method_handles>` to check if your custom object is being edited by checking the script or using the ``is`` keyword.
 
@@ -479,7 +479,7 @@ Must ``return false`` in order to forward the :ref:`InputEvent<class_InputEvent>
 
 .. _class_EditorPlugin_method_get_breakpoints:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_breakpoints** **(** **)** virtual
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_breakpoints** **(** **)** virtual
 
 This is for editors that edit script-based objects. You can return a list of breakpoints in the format (``script:line``), for example: ``res://path_to_script.gd:25``.
 
@@ -495,13 +495,31 @@ Returns the :ref:`EditorInterface<class_EditorInterface>` object that gives you 
 
 .. _class_EditorPlugin_method_get_plugin_icon:
 
-- :ref:`Object<class_Object>` **get_plugin_icon** **(** **)** virtual
+- :ref:`Texture2D<class_Texture2D>` **get_plugin_icon** **(** **)** virtual
+
+Override this method in your plugin to return a :ref:`Texture2D<class_Texture2D>` in order to give it an icon.
+
+For main screen plugins, this appears at the top of the screen, to the right of the "2D", "3D", "Script", and "AssetLib" buttons.
+
+Ideally, the plugin icon should be white with a transparent background and 16x16 pixels in size.
+
+::
+
+    func get_plugin_icon():
+        # You can use a custom icon:
+        return preload("res://addons/my_plugin/my_plugin_icon.svg")
+        # Or use a built-in icon:
+        return get_editor_interface().get_base_control().get_icon("Node", "EditorIcons")
 
 ----
 
 .. _class_EditorPlugin_method_get_plugin_name:
 
 - :ref:`String<class_String>` **get_plugin_name** **(** **)** virtual
+
+Override this method in your plugin to provide the name of the plugin when displayed in the Godot editor.
+
+For main screen plugins, this appears at the top of the screen, to the right of the "2D", "3D", "Script", and "AssetLib" buttons.
 
 ----
 

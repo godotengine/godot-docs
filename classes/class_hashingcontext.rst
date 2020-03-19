@@ -47,13 +47,13 @@ The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashi
 Methods
 -------
 
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`finish<class_HashingContext_method_finish>` **(** **)**                                                  |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`start<class_HashingContext_method_start>` **(** :ref:`HashType<enum_HashingContext_HashType>` type **)** |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`update<class_HashingContext_method_update>` **(** :ref:`PoolByteArray<class_PoolByteArray>` chunk **)**  |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`finish<class_HashingContext_method_finish>` **(** **)**                                                     |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`start<class_HashingContext_method_start>` **(** :ref:`HashType<enum_HashingContext_HashType>` type **)**    |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`update<class_HashingContext_method_update>` **(** :ref:`PackedByteArray<class_PackedByteArray>` chunk **)** |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -79,7 +79,7 @@ Method Descriptions
 
 .. _class_HashingContext_method_finish:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **finish** **(** **)**
+- :ref:`PackedByteArray<class_PackedByteArray>` **finish** **(** **)**
 
 Closes the current context, and return the computed hash.
 
@@ -95,7 +95,7 @@ Starts a new hash computation of the given ``type`` (e.g. :ref:`HASH_SHA256<clas
 
 .. _class_HashingContext_method_update:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **update** **(** :ref:`PoolByteArray<class_PoolByteArray>` chunk **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **update** **(** :ref:`PackedByteArray<class_PackedByteArray>` chunk **)**
 
 Updates the computation with the given ``chunk`` of data.
 

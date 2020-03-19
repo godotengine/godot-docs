@@ -27,7 +27,7 @@ Methods
 -------
 
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`add_material<class_EditorSpatialGizmoPlugin_method_add_material>` **(** :ref:`String<class_String>` name, :ref:`SpatialMaterial<class_SpatialMaterial>` material **)**                                                                                                               |
+| void                                                | :ref:`add_material<class_EditorSpatialGizmoPlugin_method_add_material>` **(** :ref:`String<class_String>` name, :ref:`StandardMaterial3D<class_StandardMaterial3D>` material **)**                                                                                                         |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`can_be_hidden<class_EditorSpatialGizmoPlugin_method_can_be_hidden>` **(** **)** virtual                                                                                                                                                                                              |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -37,7 +37,7 @@ Methods
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`create_handle_material<class_EditorSpatialGizmoPlugin_method_create_handle_material>` **(** :ref:`String<class_String>` name, :ref:`bool<class_bool>` billboard=false **)**                                                                                                          |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`create_icon_material<class_EditorSpatialGizmoPlugin_method_create_icon_material>` **(** :ref:`String<class_String>` name, :ref:`Texture<class_Texture>` texture, :ref:`bool<class_bool>` on_top=false, :ref:`Color<class_Color>` color=Color( 1, 1, 1, 1 ) **)**                     |
+| void                                                | :ref:`create_icon_material<class_EditorSpatialGizmoPlugin_method_create_icon_material>` **(** :ref:`String<class_String>` name, :ref:`Texture2D<class_Texture2D>` texture, :ref:`bool<class_bool>` on_top=false, :ref:`Color<class_Color>` color=Color( 1, 1, 1, 1 ) **)**                 |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`create_material<class_EditorSpatialGizmoPlugin_method_create_material>` **(** :ref:`String<class_String>` name, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` billboard=false, :ref:`bool<class_bool>` on_top=false, :ref:`bool<class_bool>` use_vertex_color=false **)** |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -45,7 +45,7 @@ Methods
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                       | :ref:`get_handle_value<class_EditorSpatialGizmoPlugin_method_get_handle_value>` **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index **)** virtual                                                                                                 |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SpatialMaterial<class_SpatialMaterial>`       | :ref:`get_material<class_EditorSpatialGizmoPlugin_method_get_material>` **(** :ref:`String<class_String>` name, :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo **)**                                                                                                            |
+| :ref:`StandardMaterial3D<class_StandardMaterial3D>` | :ref:`get_material<class_EditorSpatialGizmoPlugin_method_get_material>` **(** :ref:`String<class_String>` name, :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo **)**                                                                                                            |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`get_name<class_EditorSpatialGizmoPlugin_method_get_name>` **(** **)** virtual                                                                                                                                                                                                        |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -67,7 +67,7 @@ Method Descriptions
 
 .. _class_EditorSpatialGizmoPlugin_method_add_material:
 
-- void **add_material** **(** :ref:`String<class_String>` name, :ref:`SpatialMaterial<class_SpatialMaterial>` material **)**
+- void **add_material** **(** :ref:`String<class_String>` name, :ref:`StandardMaterial3D<class_StandardMaterial3D>` material **)**
 
 Adds a new material to the internal material list for the plugin. It can then be accessed with :ref:`get_material<class_EditorSpatialGizmoPlugin_method_get_material>`. Should not be overridden.
 
@@ -107,7 +107,7 @@ Creates a handle material with its variants (selected and/or editable) and adds 
 
 .. _class_EditorSpatialGizmoPlugin_method_create_icon_material:
 
-- void **create_icon_material** **(** :ref:`String<class_String>` name, :ref:`Texture<class_Texture>` texture, :ref:`bool<class_bool>` on_top=false, :ref:`Color<class_Color>` color=Color( 1, 1, 1, 1 ) **)**
+- void **create_icon_material** **(** :ref:`String<class_String>` name, :ref:`Texture2D<class_Texture2D>` texture, :ref:`bool<class_bool>` on_top=false, :ref:`Color<class_Color>` color=Color( 1, 1, 1, 1 ) **)**
 
 Creates an icon material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with :ref:`get_material<class_EditorSpatialGizmoPlugin_method_get_material>` and used in :ref:`EditorSpatialGizmo.add_unscaled_billboard<class_EditorSpatialGizmo_method_add_unscaled_billboard>`. Should not be overridden.
 
@@ -139,7 +139,7 @@ Gets actual value of a handle from gizmo. Called for this plugin's active gizmos
 
 .. _class_EditorSpatialGizmoPlugin_method_get_material:
 
-- :ref:`SpatialMaterial<class_SpatialMaterial>` **get_material** **(** :ref:`String<class_String>` name, :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo **)**
+- :ref:`StandardMaterial3D<class_StandardMaterial3D>` **get_material** **(** :ref:`String<class_String>` name, :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo **)**
 
 Gets material from the internal list of materials. If an :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` is provided, it will try to get the corresponding variant (selected and/or editable).
 

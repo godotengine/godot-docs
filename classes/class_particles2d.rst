@@ -33,7 +33,7 @@ Properties
 +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
 | :ref:`DrawOrder<enum_Particles2D_DrawOrder>` | :ref:`draw_order<class_Particles2D_property_draw_order>`             | ``0``                             |
 +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`emitting<class_Particles2D_property_emitting>`                 | ``true``                          |
+| :ref:`bool<class_bool>`                      | :ref:`emitting<class_Particles2D_property_emitting>`                 | ``false``                         |
 +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
 | :ref:`float<class_float>`                    | :ref:`explosiveness<class_Particles2D_property_explosiveness>`       | ``0.0``                           |
 +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
@@ -45,7 +45,7 @@ Properties
 +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`local_coords<class_Particles2D_property_local_coords>`         | ``true``                          |
 +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`Texture<class_Texture>`                | :ref:`normal_map<class_Particles2D_property_normal_map>`             |                                   |
+| :ref:`Texture2D<class_Texture2D>`            | :ref:`normal_map<class_Particles2D_property_normal_map>`             |                                   |
 +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`one_shot<class_Particles2D_property_one_shot>`                 | ``false``                         |
 +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
@@ -57,7 +57,7 @@ Properties
 +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
 | :ref:`float<class_float>`                    | :ref:`speed_scale<class_Particles2D_property_speed_scale>`           | ``1.0``                           |
 +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`Texture<class_Texture>`                | :ref:`texture<class_Particles2D_property_texture>`                   |                                   |
+| :ref:`Texture2D<class_Texture2D>`            | :ref:`texture<class_Particles2D_property_texture>`                   |                                   |
 +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
 | :ref:`Rect2<class_Rect2>`                    | :ref:`visibility_rect<class_Particles2D_property_visibility_rect>`   | ``Rect2( -100, -100, 200, 200 )`` |
 +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
@@ -126,7 +126,7 @@ Particle draw order. Uses :ref:`DrawOrder<enum_Particles2D_DrawOrder>` values.
 - :ref:`bool<class_bool>` **emitting**
 
 +-----------+---------------------+
-| *Default* | ``true``            |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_emitting(value) |
 +-----------+---------------------+
@@ -219,7 +219,7 @@ If ``true``, particles use the parent node's coordinate space. If ``false``, the
 
 .. _class_Particles2D_property_normal_map:
 
-- :ref:`Texture<class_Texture>` **normal_map**
+- :ref:`Texture2D<class_Texture2D>` **normal_map**
 
 +----------+-----------------------+
 | *Setter* | set_normal_map(value) |
@@ -311,7 +311,7 @@ Particle system's running speed scaling ratio. A value of ``0`` can be used to p
 
 .. _class_Particles2D_property_texture:
 
-- :ref:`Texture<class_Texture>` **texture**
+- :ref:`Texture2D<class_Texture2D>` **texture**
 
 +----------+--------------------+
 | *Setter* | set_texture(value) |

@@ -11,7 +11,7 @@ VisualShaderNodeInput
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-
+Represents the input shader parameter within the visual shader graph.
 
 Properties
 ----------
@@ -34,6 +34,8 @@ Signals
 
 - **input_type_changed** **(** **)**
 
+Emitted when input is changed via :ref:`input_name<class_VisualShaderNodeInput_property_input_name>`.
+
 Property Descriptions
 ---------------------
 
@@ -49,10 +51,14 @@ Property Descriptions
 | *Getter*  | get_input_name()      |
 +-----------+-----------------------+
 
+One of the several input constants in lower-case style like: "vertex"(``\ VERTEX``) or "point_size"([code]POINT_SIZE``).
+
 Method Descriptions
 -------------------
 
 .. _class_VisualShaderNodeInput_method_get_input_real_name:
 
 - :ref:`String<class_String>` **get_input_real_name** **(** **)** const
+
+Returns a translated name of the current constant in the Godot Shader Language. eg. ``"ALBEDO"`` if the :ref:`input_name<class_VisualShaderNodeInput_property_input_name>` equal to ``"albedo"``.
 

@@ -9,12 +9,14 @@
 Vector2
 =======
 
-Vector used for 2D math.
+Vector used for 2D math using floating point coordinates.
 
 Description
 -----------
 
 2-element structure that can be used to represent positions in 2D space or any other pair of numeric values.
+
+It uses floating point coordinates.
 
 Tutorials
 ---------
@@ -33,6 +35,8 @@ Properties
 Methods
 -------
 
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`Vector2<class_Vector2_method_Vector2>` **(** :ref:`Vector2i<class_Vector2i>` from **)**                                                                                                                        |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`Vector2<class_Vector2_method_Vector2>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**                                                                                                    |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -172,9 +176,15 @@ Method Descriptions
 
 .. _class_Vector2_method_Vector2:
 
+- :ref:`Vector2<class_Vector2>` **Vector2** **(** :ref:`Vector2i<class_Vector2i>` from **)**
+
+Constructs a new ``Vector2`` from :ref:`Vector2i<class_Vector2i>`.
+
+----
+
 - :ref:`Vector2<class_Vector2>` **Vector2** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**
 
-Constructs a new Vector2 from the given ``x`` and ``y``.
+Constructs a new ``Vector2`` from the given ``x`` and ``y``.
 
 ----
 

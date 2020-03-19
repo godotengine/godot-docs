@@ -33,21 +33,21 @@ Compressor has many uses in the mix:
 Properties
 ----------
 
-+-----------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`   | :ref:`attack_us<class_AudioEffectCompressor_property_attack_us>`   | ``20.0``  |
-+-----------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`   | :ref:`gain<class_AudioEffectCompressor_property_gain>`             | ``0.0``   |
-+-----------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`   | :ref:`mix<class_AudioEffectCompressor_property_mix>`               | ``1.0``   |
-+-----------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`   | :ref:`ratio<class_AudioEffectCompressor_property_ratio>`           | ``4.0``   |
-+-----------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`   | :ref:`release_ms<class_AudioEffectCompressor_property_release_ms>` | ``250.0`` |
-+-----------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`String<class_String>` | :ref:`sidechain<class_AudioEffectCompressor_property_sidechain>`   | ``""``    |
-+-----------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`   | :ref:`threshold<class_AudioEffectCompressor_property_threshold>`   | ``0.0``   |
-+-----------------------------+--------------------------------------------------------------------+-----------+
++-------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`           | :ref:`attack_us<class_AudioEffectCompressor_property_attack_us>`   | ``20.0``  |
++-------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`           | :ref:`gain<class_AudioEffectCompressor_property_gain>`             | ``0.0``   |
++-------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`           | :ref:`mix<class_AudioEffectCompressor_property_mix>`               | ``1.0``   |
++-------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`           | :ref:`ratio<class_AudioEffectCompressor_property_ratio>`           | ``4.0``   |
++-------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`           | :ref:`release_ms<class_AudioEffectCompressor_property_release_ms>` | ``250.0`` |
++-------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`StringName<class_StringName>` | :ref:`sidechain<class_AudioEffectCompressor_property_sidechain>`   | ``@""``   |
++-------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`           | :ref:`threshold<class_AudioEffectCompressor_property_threshold>`   | ``0.0``   |
++-------------------------------------+--------------------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
@@ -134,10 +134,10 @@ Compressor's delay time to stop reducing the signal after the signal level falls
 
 .. _class_AudioEffectCompressor_property_sidechain:
 
-- :ref:`String<class_String>` **sidechain**
+- :ref:`StringName<class_StringName>` **sidechain**
 
 +-----------+----------------------+
-| *Default* | ``""``               |
+| *Default* | ``@""``              |
 +-----------+----------------------+
 | *Setter*  | set_sidechain(value) |
 +-----------+----------------------+

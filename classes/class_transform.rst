@@ -64,9 +64,9 @@ Methods
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_Transform>` | :ref:`translated<class_Transform_method_translated>` **(** :ref:`Vector3<class_Vector3>` offset **)**                                                                                                                 |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`     | :ref:`xform<class_Transform_method_xform>` **(** :ref:`Variant<class_Variant>` v **)**                                                                                                                                |
+| void                              | :ref:`xform<class_Transform_method_xform>` **(** :ref:`Variant<class_Variant>` v **)**                                                                                                                                |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`     | :ref:`xform_inv<class_Transform_method_xform_inv>` **(** :ref:`Variant<class_Variant>` v **)**                                                                                                                        |
+| void                              | :ref:`xform_inv<class_Transform_method_xform_inv>` **(** :ref:`Variant<class_Variant>` v **)**                                                                                                                        |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Constants
@@ -228,15 +228,15 @@ Unlike :ref:`rotated<class_Transform_method_rotated>` and :ref:`scaled<class_Tra
 
 .. _class_Transform_method_xform:
 
-- :ref:`Variant<class_Variant>` **xform** **(** :ref:`Variant<class_Variant>` v **)**
+- void **xform** **(** :ref:`Variant<class_Variant>` v **)**
 
-Transforms the given :ref:`Vector3<class_Vector3>`, :ref:`Plane<class_Plane>`, :ref:`AABB<class_AABB>`, or :ref:`PoolVector3Array<class_PoolVector3Array>` by this transform.
+Transforms the given :ref:`Vector3<class_Vector3>`, :ref:`Plane<class_Plane>`, :ref:`AABB<class_AABB>`, or :ref:`PackedVector3Array<class_PackedVector3Array>` by this transform.
 
 ----
 
 .. _class_Transform_method_xform_inv:
 
-- :ref:`Variant<class_Variant>` **xform_inv** **(** :ref:`Variant<class_Variant>` v **)**
+- void **xform_inv** **(** :ref:`Variant<class_Variant>` v **)**
 
-Inverse-transforms the given :ref:`Vector3<class_Vector3>`, :ref:`Plane<class_Plane>`, :ref:`AABB<class_AABB>`, or :ref:`PoolVector3Array<class_PoolVector3Array>` by this transform.
+Inverse-transforms the given :ref:`Vector3<class_Vector3>`, :ref:`Plane<class_Plane>`, :ref:`AABB<class_AABB>`, or :ref:`PackedVector3Array<class_PackedVector3Array>` by this transform.
 

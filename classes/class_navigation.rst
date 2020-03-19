@@ -16,38 +16,66 @@ Mesh-based navigation and pathfinding node.
 Description
 -----------
 
-Provides navigation and pathfinding within a collection of :ref:`NavigationMesh<class_NavigationMesh>`\ es. By default, these will be automatically collected from child :ref:`NavigationMeshInstance<class_NavigationMeshInstance>` nodes, but they can also be added on the fly with :ref:`navmesh_add<class_Navigation_method_navmesh_add>`. In addition to basic pathfinding, this class also assists with aligning navigation agents with the meshes they are navigating on.
+Provides navigation and pathfinding within a collection of :ref:`NavigationMesh<class_NavigationMesh>`\ es. These will be automatically collected from child :ref:`NavigationRegion<class_NavigationRegion>` nodes. In addition to basic pathfinding, this class also assists with aligning navigation agents with the meshes they are navigating on.
 
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`up_vector<class_Navigation_property_up_vector>` | ``Vector3( 0, 1, 0 )`` |
-+-------------------------------+-------------------------------------------------------+------------------------+
++-------------------------------+---------------------------------------------------------------------------------+------------------------+
+| :ref:`float<class_float>`     | :ref:`cell_size<class_Navigation_property_cell_size>`                           | ``0.3``                |
++-------------------------------+---------------------------------------------------------------------------------+------------------------+
+| :ref:`float<class_float>`     | :ref:`edge_connection_margin<class_Navigation_property_edge_connection_margin>` | ``5.0``                |
++-------------------------------+---------------------------------------------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`up_vector<class_Navigation_property_up_vector>`                           | ``Vector3( 0, 1, 0 )`` |
++-------------------------------+---------------------------------------------------------------------------------+------------------------+
 
 Methods
 -------
 
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                   | :ref:`get_closest_point<class_Navigation_method_get_closest_point>` **(** :ref:`Vector3<class_Vector3>` to_point **)**                                                                                                    |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                   | :ref:`get_closest_point_normal<class_Navigation_method_get_closest_point_normal>` **(** :ref:`Vector3<class_Vector3>` to_point **)**                                                                                      |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>`                     | :ref:`get_closest_point_owner<class_Navigation_method_get_closest_point_owner>` **(** :ref:`Vector3<class_Vector3>` to_point **)**                                                                                        |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                   | :ref:`get_closest_point_to_segment<class_Navigation_method_get_closest_point_to_segment>` **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` use_collision=false **)** |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_simple_path<class_Navigation_method_get_simple_path>` **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` optimize=true **)**                                 |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`navmesh_add<class_Navigation_method_navmesh_add>` **(** :ref:`NavigationMesh<class_NavigationMesh>` mesh, :ref:`Transform<class_Transform>` xform, :ref:`Object<class_Object>` owner=null **)**                     |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`navmesh_remove<class_Navigation_method_navmesh_remove>` **(** :ref:`int<class_int>` id **)**                                                                                                                        |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`navmesh_set_transform<class_Navigation_method_navmesh_set_transform>` **(** :ref:`int<class_int>` id, :ref:`Transform<class_Transform>` xform **)**                                                                 |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                       | :ref:`get_closest_point<class_Navigation_method_get_closest_point>` **(** :ref:`Vector3<class_Vector3>` to_point **)** const                                                                                                    |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                       | :ref:`get_closest_point_normal<class_Navigation_method_get_closest_point_normal>` **(** :ref:`Vector3<class_Vector3>` to_point **)** const                                                                                      |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                               | :ref:`get_closest_point_owner<class_Navigation_method_get_closest_point_owner>` **(** :ref:`Vector3<class_Vector3>` to_point **)** const                                                                                        |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                       | :ref:`get_closest_point_to_segment<class_Navigation_method_get_closest_point_to_segment>` **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` use_collision=false **)** const |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                               | :ref:`get_rid<class_Navigation_method_get_rid>` **(** **)** const                                                                                                                                                               |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_simple_path<class_Navigation_method_get_simple_path>` **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` optimize=true **)** const                                 |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
+
+.. _class_Navigation_property_cell_size:
+
+- :ref:`float<class_float>` **cell_size**
+
++-----------+----------------------+
+| *Default* | ``0.3``              |
++-----------+----------------------+
+| *Setter*  | set_cell_size(value) |
++-----------+----------------------+
+| *Getter*  | get_cell_size()      |
++-----------+----------------------+
+
+----
+
+.. _class_Navigation_property_edge_connection_margin:
+
+- :ref:`float<class_float>` **edge_connection_margin**
+
++-----------+-----------------------------------+
+| *Default* | ``5.0``                           |
++-----------+-----------------------------------+
+| *Setter*  | set_edge_connection_margin(value) |
++-----------+-----------------------------------+
+| *Getter*  | get_edge_connection_margin()      |
++-----------+-----------------------------------+
+
+----
 
 .. _class_Navigation_property_up_vector:
 
@@ -68,63 +96,45 @@ Method Descriptions
 
 .. _class_Navigation_method_get_closest_point:
 
-- :ref:`Vector3<class_Vector3>` **get_closest_point** **(** :ref:`Vector3<class_Vector3>` to_point **)**
+- :ref:`Vector3<class_Vector3>` **get_closest_point** **(** :ref:`Vector3<class_Vector3>` to_point **)** const
 
-Returns the navigation point closest to the point given. Points are in local coordinate space.
+Returns the point closest to the provided ``to_point`` on the navigation mesh surface.
 
 ----
 
 .. _class_Navigation_method_get_closest_point_normal:
 
-- :ref:`Vector3<class_Vector3>` **get_closest_point_normal** **(** :ref:`Vector3<class_Vector3>` to_point **)**
+- :ref:`Vector3<class_Vector3>` **get_closest_point_normal** **(** :ref:`Vector3<class_Vector3>` to_point **)** const
 
-Returns the surface normal at the navigation point closest to the point given. Useful for rotating a navigation agent according to the navigation mesh it moves on.
+Returns the normal for the point returned by :ref:`get_closest_point<class_Navigation_method_get_closest_point>`.
 
 ----
 
 .. _class_Navigation_method_get_closest_point_owner:
 
-- :ref:`Object<class_Object>` **get_closest_point_owner** **(** :ref:`Vector3<class_Vector3>` to_point **)**
+- :ref:`RID<class_RID>` **get_closest_point_owner** **(** :ref:`Vector3<class_Vector3>` to_point **)** const
 
-Returns the owner of the :ref:`NavigationMesh<class_NavigationMesh>` which contains the navigation point closest to the point given. This is usually a :ref:`NavigationMeshInstance<class_NavigationMeshInstance>`. For meshes added via :ref:`navmesh_add<class_Navigation_method_navmesh_add>`, returns the owner that was given (or ``null`` if the ``owner`` parameter was omitted).
+Returns the owner region RID for the point returned by :ref:`get_closest_point<class_Navigation_method_get_closest_point>`.
 
 ----
 
 .. _class_Navigation_method_get_closest_point_to_segment:
 
-- :ref:`Vector3<class_Vector3>` **get_closest_point_to_segment** **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` use_collision=false **)**
+- :ref:`Vector3<class_Vector3>` **get_closest_point_to_segment** **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` use_collision=false **)** const
 
-Returns the navigation point closest to the given line segment. When enabling ``use_collision``, only considers intersection points between segment and navigation meshes. If multiple intersection points are found, the one closest to the segment start point is returned.
+Returns the closest point between the navigation surface and the segment.
+
+----
+
+.. _class_Navigation_method_get_rid:
+
+- :ref:`RID<class_RID>` **get_rid** **(** **)** const
 
 ----
 
 .. _class_Navigation_method_get_simple_path:
 
-- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_simple_path** **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` optimize=true **)**
+- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_simple_path** **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` optimize=true **)** const
 
 Returns the path between two given points. Points are in local coordinate space. If ``optimize`` is ``true`` (the default), the agent properties associated with each :ref:`NavigationMesh<class_NavigationMesh>` (radius, height, etc.) are considered in the path calculation, otherwise they are ignored.
-
-----
-
-.. _class_Navigation_method_navmesh_add:
-
-- :ref:`int<class_int>` **navmesh_add** **(** :ref:`NavigationMesh<class_NavigationMesh>` mesh, :ref:`Transform<class_Transform>` xform, :ref:`Object<class_Object>` owner=null **)**
-
-Adds a :ref:`NavigationMesh<class_NavigationMesh>`. Returns an ID for use with :ref:`navmesh_remove<class_Navigation_method_navmesh_remove>` or :ref:`navmesh_set_transform<class_Navigation_method_navmesh_set_transform>`. If given, a :ref:`Transform2D<class_Transform2D>` is applied to the polygon. The optional ``owner`` is used as return value for :ref:`get_closest_point_owner<class_Navigation_method_get_closest_point_owner>`.
-
-----
-
-.. _class_Navigation_method_navmesh_remove:
-
-- void **navmesh_remove** **(** :ref:`int<class_int>` id **)**
-
-Removes the :ref:`NavigationMesh<class_NavigationMesh>` with the given ID.
-
-----
-
-.. _class_Navigation_method_navmesh_set_transform:
-
-- void **navmesh_set_transform** **(** :ref:`int<class_int>` id, :ref:`Transform<class_Transform>` xform **)**
-
-Sets the transform applied to the :ref:`NavigationMesh<class_NavigationMesh>` with the given ID.
 

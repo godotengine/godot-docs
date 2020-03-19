@@ -29,15 +29,15 @@ Methods
 -------
 
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`action_press<class_Input_method_action_press>` **(** :ref:`String<class_String>` action, :ref:`float<class_float>` strength=1.0 **)**                                                                                             |
+| void                                       | :ref:`action_press<class_Input_method_action_press>` **(** :ref:`StringName<class_StringName>` action, :ref:`float<class_float>` strength=1.0 **)**                                                                                     |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`action_release<class_Input_method_action_release>` **(** :ref:`String<class_String>` action **)**                                                                                                                                 |
+| void                                       | :ref:`action_release<class_Input_method_action_release>` **(** :ref:`StringName<class_StringName>` action **)**                                                                                                                         |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`add_joy_mapping<class_Input_method_add_joy_mapping>` **(** :ref:`String<class_String>` mapping, :ref:`bool<class_bool>` update_existing=false **)**                                                                               |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`              | :ref:`get_accelerometer<class_Input_method_get_accelerometer>` **(** **)** const                                                                                                                                                        |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                  | :ref:`get_action_strength<class_Input_method_get_action_strength>` **(** :ref:`String<class_String>` action **)** const                                                                                                                 |
+| :ref:`float<class_float>`                  | :ref:`get_action_strength<class_Input_method_get_action_strength>` **(** :ref:`StringName<class_StringName>` action **)** const                                                                                                         |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                  | :ref:`get_connected_joypads<class_Input_method_get_connected_joypads>` **(** **)**                                                                                                                                                      |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -73,17 +73,17 @@ Methods
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`MouseMode<enum_Input_MouseMode>`     | :ref:`get_mouse_mode<class_Input_method_get_mouse_mode>` **(** **)** const                                                                                                                                                              |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`is_action_just_pressed<class_Input_method_is_action_just_pressed>` **(** :ref:`String<class_String>` action **)** const                                                                                                           |
+| :ref:`bool<class_bool>`                    | :ref:`is_action_just_pressed<class_Input_method_is_action_just_pressed>` **(** :ref:`StringName<class_StringName>` action **)** const                                                                                                   |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`is_action_just_released<class_Input_method_is_action_just_released>` **(** :ref:`String<class_String>` action **)** const                                                                                                         |
+| :ref:`bool<class_bool>`                    | :ref:`is_action_just_released<class_Input_method_is_action_just_released>` **(** :ref:`StringName<class_StringName>` action **)** const                                                                                                 |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`is_action_pressed<class_Input_method_is_action_pressed>` **(** :ref:`String<class_String>` action **)** const                                                                                                                     |
+| :ref:`bool<class_bool>`                    | :ref:`is_action_pressed<class_Input_method_is_action_pressed>` **(** :ref:`StringName<class_StringName>` action **)** const                                                                                                             |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                    | :ref:`is_joy_button_pressed<class_Input_method_is_joy_button_pressed>` **(** :ref:`int<class_int>` device, :ref:`int<class_int>` button **)** const                                                                                     |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                    | :ref:`is_joy_known<class_Input_method_is_joy_known>` **(** :ref:`int<class_int>` device **)**                                                                                                                                           |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`is_key_pressed<class_Input_method_is_key_pressed>` **(** :ref:`int<class_int>` scancode **)** const                                                                                                                               |
+| :ref:`bool<class_bool>`                    | :ref:`is_key_pressed<class_Input_method_is_key_pressed>` **(** :ref:`int<class_int>` keycode **)** const                                                                                                                                |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                    | :ref:`is_mouse_button_pressed<class_Input_method_is_mouse_button_pressed>` **(** :ref:`int<class_int>` button **)** const                                                                                                               |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -221,7 +221,7 @@ Method Descriptions
 
 .. _class_Input_method_action_press:
 
-- void **action_press** **(** :ref:`String<class_String>` action, :ref:`float<class_float>` strength=1.0 **)**
+- void **action_press** **(** :ref:`StringName<class_StringName>` action, :ref:`float<class_float>` strength=1.0 **)**
 
 This will simulate pressing the specified action.
 
@@ -233,7 +233,7 @@ The strength can be used for non-boolean actions, it's ranged between 0 and 1 re
 
 .. _class_Input_method_action_release:
 
-- void **action_release** **(** :ref:`String<class_String>` action **)**
+- void **action_release** **(** :ref:`StringName<class_StringName>` action **)**
 
 If the specified action is already pressed, this will release it.
 
@@ -259,7 +259,7 @@ Note this method returns an empty :ref:`Vector3<class_Vector3>` when running fro
 
 .. _class_Input_method_get_action_strength:
 
-- :ref:`float<class_float>` **get_action_strength** **(** :ref:`String<class_String>` action **)** const
+- :ref:`float<class_float>` **get_action_strength** **(** :ref:`StringName<class_StringName>` action **)** const
 
 Returns a value between 0 and 1 representing the intensity of the given action. In a joypad, for example, the further away the axis (analog sticks or L2, R2 triggers) is from the dead zone, the closer the value will be to 1. If the action is mapped to a control that has no axis as the keyboard, the value returned will be 0 or 1.
 
@@ -403,7 +403,7 @@ Returns the mouse mode. See the constants for more information.
 
 .. _class_Input_method_is_action_just_pressed:
 
-- :ref:`bool<class_bool>` **is_action_just_pressed** **(** :ref:`String<class_String>` action **)** const
+- :ref:`bool<class_bool>` **is_action_just_pressed** **(** :ref:`StringName<class_StringName>` action **)** const
 
 Returns ``true`` when the user starts pressing the action event, meaning it's ``true`` only on the frame that the user pressed down the button.
 
@@ -413,7 +413,7 @@ This is useful for code that needs to run only once when an action is pressed, i
 
 .. _class_Input_method_is_action_just_released:
 
-- :ref:`bool<class_bool>` **is_action_just_released** **(** :ref:`String<class_String>` action **)** const
+- :ref:`bool<class_bool>` **is_action_just_released** **(** :ref:`StringName<class_StringName>` action **)** const
 
 Returns ``true`` when the user stops pressing the action event, meaning it's ``true`` only on the frame that the user released the button.
 
@@ -421,7 +421,7 @@ Returns ``true`` when the user stops pressing the action event, meaning it's ``t
 
 .. _class_Input_method_is_action_pressed:
 
-- :ref:`bool<class_bool>` **is_action_pressed** **(** :ref:`String<class_String>` action **)** const
+- :ref:`bool<class_bool>` **is_action_pressed** **(** :ref:`StringName<class_StringName>` action **)** const
 
 Returns ``true`` if you are pressing the action event. Note that if an action has multiple buttons assigned and more than one of them is pressed, releasing one button will release the action, even if some other button assigned to this action is still pressed.
 
@@ -445,9 +445,9 @@ Returns ``true`` if the system knows the specified device. This means that it se
 
 .. _class_Input_method_is_key_pressed:
 
-- :ref:`bool<class_bool>` **is_key_pressed** **(** :ref:`int<class_int>` scancode **)** const
+- :ref:`bool<class_bool>` **is_key_pressed** **(** :ref:`int<class_int>` keycode **)** const
 
-Returns ``true`` if you are pressing the key. You can pass a :ref:`KeyList<enum_@GlobalScope_KeyList>` constant.
+Returns ``true`` if you are pressing the key in the current keyboard layout. You can pass a :ref:`KeyList<enum_@GlobalScope_KeyList>` constant.
 
 ----
 
@@ -534,7 +534,9 @@ Sets the mouse mode. See the constants for more information.
 
 - void **set_use_accumulated_input** **(** :ref:`bool<class_bool>` enable **)**
 
-Whether to accumulate similar input events sent by the operating system. Enabled by default.
+Enables or disables the accumulation of similar input events sent by the operating system. When input accumulation is enabled, all input events generated during a frame will be merged and emitted when the frame is done rendering. Therefore, this limits the number of input method calls per second to the rendering FPS.
+
+Input accumulation is enabled by default. It can be disabled to get slightly more precise/reactive input at the cost of increased CPU usage. In applications where drawing freehand lines is required, input accumulation should generally be disabled while the user is drawing the line to get results that closely follow the actual input.
 
 ----
 

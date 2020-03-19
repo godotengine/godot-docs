@@ -25,6 +25,19 @@ Please note that the AssetLib is relatively young - it may have various pain poi
 and usability issues. As with all Godot projects, the code repository is available on `GitHub <https://github.com/godotengine/godot-asset-library>`_,
 where you can submit pull requests and issues, so please do not hesitate to visit it!
 
+Types of assets
+---------------
+
+Be aware that there are, broadly, two different types of assets you can post.
+
+* Assets labeled as "Templates", "Projects", or "Demos" appear under
+  the "Templates" tab in the Godot project manager. These assets are
+  standalone Godot projects that can run by themselves.
+
+* Other assets show up inside of the Godot editor under the "AssetLib"
+  main screen tab, next to "2D", "3D", and "Script". These assets are
+  meant to be downloaded and placed into an existing Godot project.
+
 Frequently asked questions
 --------------------------
 

@@ -103,7 +103,7 @@ instead to get auto-completion for a type in your entire project.
    Autoload is not exactly a Singleton. Nothing prevents you from instantiating
    copies of an auto-loaded node. It is only a tool that makes a node load
    automatically as a child of the root of your scene tree, regardless of your
-   game's node structure or which scene you run, e.g. by pressing the ``F6`` key.
+   game's node structure or which scene you run, e.g. by pressing :kbd:`F6` key.
 
    As a result, you can get the auto-loaded node, for example an autoload called
    ``Sound``, by calling ``get_node("/root/Sound")``.

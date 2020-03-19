@@ -30,15 +30,15 @@ Properties
 +----------------------------------------------------+----------------------------------------------------------------------------+-----------+
 | :ref:`BitMap<class_BitMap>`                        | :ref:`texture_click_mask<class_TextureButton_property_texture_click_mask>` |           |
 +----------------------------------------------------+----------------------------------------------------------------------------+-----------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_disabled<class_TextureButton_property_texture_disabled>`     |           |
+| :ref:`Texture2D<class_Texture2D>`                  | :ref:`texture_disabled<class_TextureButton_property_texture_disabled>`     |           |
 +----------------------------------------------------+----------------------------------------------------------------------------+-----------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_focused<class_TextureButton_property_texture_focused>`       |           |
+| :ref:`Texture2D<class_Texture2D>`                  | :ref:`texture_focused<class_TextureButton_property_texture_focused>`       |           |
 +----------------------------------------------------+----------------------------------------------------------------------------+-----------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_hover<class_TextureButton_property_texture_hover>`           |           |
+| :ref:`Texture2D<class_Texture2D>`                  | :ref:`texture_hover<class_TextureButton_property_texture_hover>`           |           |
 +----------------------------------------------------+----------------------------------------------------------------------------+-----------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_normal<class_TextureButton_property_texture_normal>`         |           |
+| :ref:`Texture2D<class_Texture2D>`                  | :ref:`texture_normal<class_TextureButton_property_texture_normal>`         |           |
 +----------------------------------------------------+----------------------------------------------------------------------------+-----------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_pressed<class_TextureButton_property_texture_pressed>`       |           |
+| :ref:`Texture2D<class_Texture2D>`                  | :ref:`texture_pressed<class_TextureButton_property_texture_pressed>`       |           |
 +----------------------------------------------------+----------------------------------------------------------------------------+-----------+
 
 Enumerations
@@ -127,7 +127,7 @@ Pure black and white :ref:`BitMap<class_BitMap>` image to use for click detectio
 
 .. _class_TextureButton_property_texture_disabled:
 
-- :ref:`Texture<class_Texture>` **texture_disabled**
+- :ref:`Texture2D<class_Texture2D>` **texture_disabled**
 
 +----------+-----------------------------+
 | *Setter* | set_disabled_texture(value) |
@@ -141,7 +141,7 @@ Texture to display when the node is disabled. See :ref:`BaseButton.disabled<clas
 
 .. _class_TextureButton_property_texture_focused:
 
-- :ref:`Texture<class_Texture>` **texture_focused**
+- :ref:`Texture2D<class_Texture2D>` **texture_focused**
 
 +----------+----------------------------+
 | *Setter* | set_focused_texture(value) |
@@ -155,7 +155,7 @@ Texture to display when the node has mouse or keyboard focus.
 
 .. _class_TextureButton_property_texture_hover:
 
-- :ref:`Texture<class_Texture>` **texture_hover**
+- :ref:`Texture2D<class_Texture2D>` **texture_hover**
 
 +----------+--------------------------+
 | *Setter* | set_hover_texture(value) |
@@ -169,7 +169,7 @@ Texture to display when the mouse hovers the node.
 
 .. _class_TextureButton_property_texture_normal:
 
-- :ref:`Texture<class_Texture>` **texture_normal**
+- :ref:`Texture2D<class_Texture2D>` **texture_normal**
 
 +----------+---------------------------+
 | *Setter* | set_normal_texture(value) |
@@ -183,7 +183,7 @@ Texture to display by default, when the node is **not** in the disabled, focused
 
 .. _class_TextureButton_property_texture_pressed:
 
-- :ref:`Texture<class_Texture>` **texture_pressed**
+- :ref:`Texture2D<class_Texture2D>` **texture_pressed**
 
 +----------+----------------------------+
 | *Setter* | set_pressed_texture(value) |

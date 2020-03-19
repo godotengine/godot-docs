@@ -46,7 +46,7 @@ Methods
 +------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                      | :ref:`get_capabilities<class_ARVRInterface_method_get_capabilities>` **(** **)** const       |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                | :ref:`get_name<class_ARVRInterface_method_get_name>` **(** **)** const                       |
+| :ref:`StringName<class_StringName>`                        | :ref:`get_name<class_ARVRInterface_method_get_name>` **(** **)** const                       |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                              | :ref:`get_render_targetsize<class_ARVRInterface_method_get_render_targetsize>` **(** **)**   |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------------+
@@ -200,7 +200,7 @@ Returns a combination of :ref:`Capabilities<enum_ARVRInterface_Capabilities>` fl
 
 .. _class_ARVRInterface_method_get_name:
 
-- :ref:`String<class_String>` **get_name** **(** **)** const
+- :ref:`StringName<class_StringName>` **get_name** **(** **)** const
 
 Returns the name of this interface (OpenVR, OpenHMD, ARKit, etc).
 

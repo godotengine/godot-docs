@@ -25,7 +25,7 @@ To begin, the RegEx object needs to be compiled with the search pattern using :r
     var regex = RegEx.new()
     regex.compile("\\w-(\\d+)")
 
-The search pattern must be escaped first for gdscript before it is escaped for the expression. For example, ``compile("\\d+")`` would be read by RegEx as ``\d+``. Similarly, ``compile("\"(?:\\\\.|[^\"])*\"")`` would be read as ``"(?:\\.|[^"])*"``.
+The search pattern must be escaped first for GDScript before it is escaped for the expression. For example, ``compile("\\d+")`` would be read by RegEx as ``\d+``. Similarly, ``compile("\"(?:\\\\.|[^\"])*\"")`` would be read as ``"(?:\\.|[^"])*"``.
 
 Using :ref:`search<class_RegEx_method_search>` you can find the pattern within the given text. If a pattern is found, :ref:`RegExMatch<class_RegExMatch>` is returned and you can retrieve details of the results using functions such as :ref:`RegExMatch.get_string<class_RegExMatch_method_get_string>` and :ref:`RegExMatch.get_start<class_RegExMatch_method_get_start>`.
 
@@ -57,6 +57,10 @@ If you need to process multiple results, :ref:`search_all<class_RegEx_method_sea
         print(result.get_string("digit"))
     # Would print 01 03 3f 42
     # Note that d0c would not match
+
+**Note:** Godot's regex implementation is based on the `PCRE2 <https://www.pcre.org/>`_ library. You can view the full pattern reference `here <https://www.pcre.org/current/doc/html/pcre2pattern.html>`_.
+
+**Tip:** You can use `Regexr <https://regexr.com/>`_ to test regular expressions online.
 
 Methods
 -------

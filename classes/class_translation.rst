@@ -37,17 +37,17 @@ Properties
 Methods
 -------
 
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`add_message<class_Translation_method_add_message>` **(** :ref:`String<class_String>` src_message, :ref:`String<class_String>` xlated_message **)** |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`erase_message<class_Translation_method_erase_message>` **(** :ref:`String<class_String>` src_message **)**                                         |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_message<class_Translation_method_get_message>` **(** :ref:`String<class_String>` src_message **)** const                                       |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`get_message_count<class_Translation_method_get_message_count>` **(** **)** const                                                                   |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_message_list<class_Translation_method_get_message_list>` **(** **)** const                                                                     |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`add_message<class_Translation_method_add_message>` **(** :ref:`StringName<class_StringName>` src_message, :ref:`StringName<class_StringName>` xlated_message **)** |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`erase_message<class_Translation_method_erase_message>` **(** :ref:`StringName<class_StringName>` src_message **)**                                                 |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringName<class_StringName>`               | :ref:`get_message<class_Translation_method_get_message>` **(** :ref:`StringName<class_StringName>` src_message **)** const                                               |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`get_message_count<class_Translation_method_get_message_count>` **(** **)** const                                                                                   |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_message_list<class_Translation_method_get_message_list>` **(** **)** const                                                                                     |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -71,7 +71,7 @@ Method Descriptions
 
 .. _class_Translation_method_add_message:
 
-- void **add_message** **(** :ref:`String<class_String>` src_message, :ref:`String<class_String>` xlated_message **)**
+- void **add_message** **(** :ref:`StringName<class_StringName>` src_message, :ref:`StringName<class_StringName>` xlated_message **)**
 
 Adds a message if nonexistent, followed by its translation.
 
@@ -79,7 +79,7 @@ Adds a message if nonexistent, followed by its translation.
 
 .. _class_Translation_method_erase_message:
 
-- void **erase_message** **(** :ref:`String<class_String>` src_message **)**
+- void **erase_message** **(** :ref:`StringName<class_StringName>` src_message **)**
 
 Erases a message.
 
@@ -87,7 +87,7 @@ Erases a message.
 
 .. _class_Translation_method_get_message:
 
-- :ref:`String<class_String>` **get_message** **(** :ref:`String<class_String>` src_message **)** const
+- :ref:`StringName<class_StringName>` **get_message** **(** :ref:`StringName<class_StringName>` src_message **)** const
 
 Returns a message's translation.
 
@@ -103,7 +103,7 @@ Returns the number of existing messages.
 
 .. _class_Translation_method_get_message_list:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_message_list** **(** **)** const
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_message_list** **(** **)** const
 
 Returns all the messages (keys).
 

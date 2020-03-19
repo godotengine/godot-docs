@@ -11,7 +11,7 @@ VisualInstance
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`BakedLightmap<class_BakedLightmap>`, :ref:`GIProbe<class_GIProbe>`, :ref:`GeometryInstance<class_GeometryInstance>`, :ref:`Light<class_Light>`, :ref:`ReflectionProbe<class_ReflectionProbe>`, :ref:`RootMotionView<class_RootMotionView>`
+**Inherited By:** :ref:`GIProbe<class_GIProbe>`, :ref:`GeometryInstance<class_GeometryInstance>`, :ref:`Light<class_Light>`, :ref:`ReflectionProbe<class_ReflectionProbe>`, :ref:`RootMotionView<class_RootMotionView>`
 
 Parent of all visual 3D nodes.
 

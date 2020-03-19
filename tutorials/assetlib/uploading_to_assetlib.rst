@@ -13,6 +13,67 @@ As mentioned in the :ref:`doc_using_assetlib` document, in order to be able to
 submit assets to the AssetLib, you need to have a registered account, and be
 logged in.
 
+Submission guidelines
+---------------------
+
+Before submitting your asset, please ensure it follows all of the
+requirements, and also consider following the recommendations.
+
+Requirements
+~~~~~~~~~~~~
+
+Generally speaking, most assets people submit to the asset library
+are accepted. However, in order for your asset to be accepted, there
+are a few requirements your asset needs to meet to be approved.
+
+* The asset must work. If the asset doesn't run or otherwise doesn't
+  work in the specified Godot version, then it will be rejected.
+
+* No submodules, or any submodules must be non-essential. GitHub
+  does not include submodules in the downloaded ZIP file, so if the
+  asset needs the contents of the submodule, your asset won't work.
+
+* The license needs to be correct. The license listed on the asset
+  library must match the license in the repository.
+
+* Do not set the download commit to "master". The asset library validates
+  all assets with a SHA256 hash, so the version hosted on GitHub needs
+  to be *exactly* the same. Instead of "master", either specify a commit
+  hash, or tag versions and specify a version number.
+
+* Use proper English for the name and description of your asset.
+  This includes using correct capitalization, and using full
+  sentences in the description.
+
+* The icon link must be a direct link. For icons hosted on GitHub, the
+  link must start with "raw.githubusercontent.com", not "github.com".
+
+Recommendations
+~~~~~~~~~~~~~~~
+
+These things are not required for your asset to be approved, but
+if you follow these recommendations, you can help make the asset
+library a better place for all users.
+
+* Fix or suppress all script warnings. The warning system is there to
+  help identify issues with your code, but people using your asset
+  don't need to see them.
+
+* Make your code conform to the official style guides. Having a
+  consistent style helps other people read your code, and it also helps
+  if other people wish to contribute to your asset. See: the
+  :ref:`doc_gdscript_styleguide` or the :ref:`doc_c_sharp_styleguide`.
+
+* If your asset is a library for working with other files,
+  consider including example files in the asset.
+
+* The icon should be a square, its aspect ratio should be 1:1. It should
+  also ideally have a minimum resolution of 64x64 pixels.
+
+* While the asset library allows more than just GitHub, consider
+  hosting your asset's source code on GitHub. Other services may not
+  work reliably, and a lack of familiarity can be a barrier to contributors.
+
 Submitting
 ----------
 
@@ -101,10 +162,5 @@ with the appropriate changes.
 You may have some luck accelerating the approval process by messaging the
 moderators/assetlib reviewers on IRC (the #godotengine-atelier channel on Freenode),
 or the official Discord server.
-
-Submission guidelines
----------------------
-
-[TODO]
 
 .. |image0| image:: ./img/assetlib_submit.png

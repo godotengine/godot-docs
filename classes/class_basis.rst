@@ -58,7 +58,7 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`     | :ref:`inverse<class_Basis_method_inverse>` **(** **)**                                                                                                              |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Basis_method_is_equal_approx>` **(** :ref:`Basis<class_Basis>` b, :ref:`float<class_float>` epsilon=0.00001 **)**                       |
+| :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Basis_method_is_equal_approx>` **(** :ref:`Basis<class_Basis>` b, :ref:`float<class_float>` epsilon=1e-05 **)**                         |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`     | :ref:`orthonormalized<class_Basis_method_orthonormalized>` **(** **)**                                                                                              |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -216,7 +216,7 @@ Returns the inverse of the matrix.
 
 .. _class_Basis_method_is_equal_approx:
 
-- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Basis<class_Basis>` b, :ref:`float<class_float>` epsilon=0.00001 **)**
+- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Basis<class_Basis>` b, :ref:`float<class_float>` epsilon=1e-05 **)**
 
 Returns ``true`` if this basis and ``b`` are approximately equal, by calling ``is_equal_approx`` on each component.
 

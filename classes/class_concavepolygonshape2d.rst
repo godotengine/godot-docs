@@ -23,24 +23,24 @@ The main difference between a :ref:`ConvexPolygonShape2D<class_ConvexPolygonShap
 Properties
 ----------
 
-+-------------------------------------------------+----------------------------------------------------------------+--------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`segments<class_ConcavePolygonShape2D_property_segments>` | ``PoolVector2Array(  )`` |
-+-------------------------------------------------+----------------------------------------------------------------+--------------------------+
++-----------------------------------------------------+----------------------------------------------------------------+----------------------------+
+| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`segments<class_ConcavePolygonShape2D_property_segments>` | ``PackedVector2Array(  )`` |
++-----------------------------------------------------+----------------------------------------------------------------+----------------------------+
 
 Property Descriptions
 ---------------------
 
 .. _class_ConcavePolygonShape2D_property_segments:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **segments**
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **segments**
 
-+-----------+--------------------------+
-| *Default* | ``PoolVector2Array(  )`` |
-+-----------+--------------------------+
-| *Setter*  | set_segments(value)      |
-+-----------+--------------------------+
-| *Getter*  | get_segments()           |
-+-----------+--------------------------+
++-----------+----------------------------+
+| *Default* | ``PackedVector2Array(  )`` |
++-----------+----------------------------+
+| *Setter*  | set_segments(value)        |
++-----------+----------------------------+
+| *Getter*  | get_segments()             |
++-----------+----------------------------+
 
 The array of points that make up the ``ConcavePolygonShape2D``'s line segments.
 
