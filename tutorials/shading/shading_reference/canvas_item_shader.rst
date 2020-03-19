@@ -35,6 +35,17 @@ Render modes
 | **skip_vertex_transform**       | VERTEX/NORMAL/etc need to be transformed manually in vertex function.|
 +---------------------------------+----------------------------------------------------------------------+
 
+Global built-ins
+^^^^^^^^^^^^^^^^
+
+Global built-ins are available everywhere, including custom functions.
+
++--------------------------------+-------------------------+
+| Built-in                       | Description             |
++================================+=========================+
+| in float **TIME**              | Global time, in seconds.|
++--------------------------------+-------------------------+
+
 Vertex built-ins
 ^^^^^^^^^^^^^^^^
 
@@ -99,8 +110,6 @@ is usually:
 | in mat4 **EXTRA_MATRIX**       | Extra transform.                                               |
 +--------------------------------+----------------------------------------------------------------+
 | in mat4 **PROJECTION_MATRIX**  | View space to clip space transform.                            |
-+--------------------------------+----------------------------------------------------------------+
-| in float **TIME**              | Global time, in seconds.                                       |
 +--------------------------------+----------------------------------------------------------------+
 | in vec4 **INSTANCE_CUSTOM**    | Instance custom data.                                          |
 +--------------------------------+----------------------------------------------------------------+
@@ -172,8 +181,6 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 | in vec2 **SCREEN_PIXEL_SIZE**    | Size of individual pixels. Equal to inverse of resolution.     |
 +----------------------------------+----------------------------------------------------------------+
 | in vec2 **POINT_COORD**          | Coordinate for drawing points.                                 |
-+----------------------------------+----------------------------------------------------------------+
-| in float **TIME**                | Global time in seconds.                                        |
 +----------------------------------+----------------------------------------------------------------+
 | in bool **AT_LIGHT_PASS**        | ``true`` if this is a light pass.                              |
 +----------------------------------+----------------------------------------------------------------+

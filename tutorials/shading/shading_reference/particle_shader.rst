@@ -36,6 +36,17 @@ Render modes
 | **disable_velocity**            | Ignore **VELOCITY** value.                                           |
 +---------------------------------+----------------------------------------------------------------------+
 
+Global built-ins
+^^^^^^^^^^^^^^^^
+
+Global built-ins are available everywhere, including custom functions.
+
++--------------------------------+-------------------------+
+| Built-in                       | Description             |
++================================+=========================+
+| in float **TIME**              | Global time, in seconds.|
++--------------------------------+-------------------------+
+
 Vertex built-ins
 ^^^^^^^^^^^^^^^^
 
@@ -63,8 +74,6 @@ to ``true``. In a ShaderMaterial, access it with the ``COLOR`` variable.
 | inout vec4 **CUSTOM**           | Custom particle data. Accessible from shader of mesh as **INSTANCE_CUSTOM**.        |
 +---------------------------------+-------------------------------------------------------------------------------------+
 | inout mat4 **TRANSFORM**        | Particle transform.                                                                 |
-+---------------------------------+-------------------------------------------------------------------------------------+
-| in float **TIME**               | Global time in seconds.                                                             |
 +---------------------------------+-------------------------------------------------------------------------------------+
 | in float **LIFETIME**           | Particle lifetime.                                                                  |
 +---------------------------------+-------------------------------------------------------------------------------------+
