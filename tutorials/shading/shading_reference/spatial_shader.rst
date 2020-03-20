@@ -77,6 +77,14 @@ Render modes
 |                                 | a camera feed in AR.                                                  |
 +---------------------------------+-----------------------------------------------------------------------+
 
+Built-ins
+^^^^^^^^^
+
+Values marked as "in" are read-only. Values marked as "out" are for optional writing and will 
+not necessarily contain sensible values. Values marked as "inout" provide a sensible default 
+value, and can optionally be written to. Samplers are not subjects of writing and they are 
+not marked.
+
 Global built-ins
 ^^^^^^^^^^^^^^^^
 
@@ -90,11 +98,6 @@ Global built-ins are available everywhere, including custom functions.
 
 Vertex built-ins
 ^^^^^^^^^^^^^^^^
-
-Values marked as "in" are read-only. Values marked as "out" are for optional writing and will 
-not necessarily contain sensible values. Values marked as "inout" provide a sensible default 
-value, and can optionally be written to. Samplers are not subjects of writing and they are 
-not marked.
 
 Vertex data (``VERTEX``, ``NORMAL``, ``TANGENT``, ``BITANGENT``) are presented in local 
 model space. If not written to, these values will not be modified and be passed through 

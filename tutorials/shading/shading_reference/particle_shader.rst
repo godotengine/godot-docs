@@ -36,6 +36,14 @@ Render modes
 | **disable_velocity**            | Ignore **VELOCITY** value.                                           |
 +---------------------------------+----------------------------------------------------------------------+
 
+Built-ins
+^^^^^^^^^
+
+Values marked as "in" are read-only. Values marked as "out" are for optional writing and will 
+not necessarily contain sensible values. Values marked as "inout" provide a sensible default 
+value, and can optionally be written to. Samplers are not subjects of writing and they are 
+not marked.
+
 Global built-ins
 ^^^^^^^^^^^^^^^^
 
@@ -49,11 +57,6 @@ Global built-ins are available everywhere, including custom functions.
 
 Vertex built-ins
 ^^^^^^^^^^^^^^^^
-
-Values marked as "in" are read-only. Values marked as "out" are for optional writing and will 
-not necessarily contain sensible values. Values marked as "inout" provide a sensible default 
-value, and can optionally be written to. Samplers are not subjects of writing and they are 
-not marked.
 
 In order to use the ``COLOR`` variable in a SpatialMaterial, set ``use_vertex_as_albedo``
 to ``true``. In a ShaderMaterial, access it with the ``COLOR`` variable.
