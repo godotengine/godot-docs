@@ -82,11 +82,11 @@ Global built-ins
 
 Global built-ins are available everywhere, including custom functions.
 
-+--------------------------------+-------------------------+
-| Built-in                       | Description             |
-+================================+=========================+
-| in float **TIME**              | Global time, in seconds.|
-+--------------------------------+-------------------------+
++-------------------+--------------------------+
+| Built-in          | Description              |
++===================+==========================+
+| in float **TIME** | Global time, in seconds. |
++-------------------+--------------------------+
 
 Vertex built-ins
 ^^^^^^^^^^^^^^^^
