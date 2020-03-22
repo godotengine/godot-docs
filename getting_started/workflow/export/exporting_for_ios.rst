@@ -23,7 +23,7 @@ The following export options are required. Leaving any blank will cause the
 exporter to throw an error:
 
   * In the **Application** category
-    * **App Store Team ID**
+    * **App Store Team ID** and (Bundle) **Identifier**
   * Everything in the **Required Icons** category
   * Everything in the **Landscape Launch Screens** category
   * Everything in the **Portrait Launch Screens** category
