@@ -18,6 +18,8 @@ Description
 
 The VisibilityEnabler will disable :ref:`RigidBody<class_RigidBody>` and :ref:`AnimationPlayer<class_AnimationPlayer>` nodes when they are not visible. It will only affect other nodes within the same scene as the VisibilityEnabler itself.
 
+Note that VisibilityEnabler will not affect nodes added after scene initialization.
+
 Properties
 ----------
 

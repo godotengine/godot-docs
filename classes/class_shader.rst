@@ -58,6 +58,8 @@ Enumerations
 
 .. _class_Shader_constant_MODE_PARTICLES:
 
+.. _class_Shader_constant_MODE_SKY:
+
 enum **Mode**:
 
 - **MODE_SPATIAL** = **0** --- Mode used to draw all 3D objects.
@@ -65,6 +67,8 @@ enum **Mode**:
 - **MODE_CANVAS_ITEM** = **1** --- Mode used to draw all 2D objects.
 
 - **MODE_PARTICLES** = **2** --- Mode used to calculate particle information on a per-particle basis. Not used for drawing.
+
+- **MODE_SKY** = **3** --- Mode used for drawing skies. Only works with shaders attached to :ref:`Sky<class_Sky>` objects.
 
 Property Descriptions
 ---------------------

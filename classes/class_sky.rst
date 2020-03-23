@@ -11,14 +11,12 @@ Sky
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`PanoramaSky<class_PanoramaSky>`, :ref:`ProceduralSky<class_ProceduralSky>`
-
-The base class for :ref:`PanoramaSky<class_PanoramaSky>` and :ref:`ProceduralSky<class_ProceduralSky>`.
+Background that uses a :ref:`Material<class_Material>` to draw a sky.
 
 Description
 -----------
 
-The base class for :ref:`PanoramaSky<class_PanoramaSky>` and :ref:`ProceduralSky<class_ProceduralSky>`.
+The ``Sky`` class uses a :ref:`Material<class_Material>` to draw the background and update the reflection/radiance cubemaps.
 
 Properties
 ----------
@@ -26,7 +24,9 @@ Properties
 +--------------------------------------------+--------------------------------------------------------+-------+
 | :ref:`ProcessMode<enum_Sky_ProcessMode>`   | :ref:`process_mode<class_Sky_property_process_mode>`   | ``0`` |
 +--------------------------------------------+--------------------------------------------------------+-------+
-| :ref:`RadianceSize<enum_Sky_RadianceSize>` | :ref:`radiance_size<class_Sky_property_radiance_size>` | ``2`` |
+| :ref:`RadianceSize<enum_Sky_RadianceSize>` | :ref:`radiance_size<class_Sky_property_radiance_size>` | ``3`` |
++--------------------------------------------+--------------------------------------------------------+-------+
+| :ref:`Material<class_Material>`            | :ref:`sky_material<class_Sky_property_sky_material>`   |       |
 +--------------------------------------------+--------------------------------------------------------+-------+
 
 Enumerations
@@ -82,7 +82,7 @@ enum **ProcessMode**:
 
 - **PROCESS_MODE_REALTIME** = **1** --- Uses the fast filtering algorithm to process the radiance map. In general this results in lower quality, but substantially faster run times.
 
-**Note:** The fast filtering algorithm is limited to 128x128 cubemaps, so :ref:`radiance_size<class_Sky_property_radiance_size>` must be set to :ref:`RADIANCE_SIZE_128<class_Sky_constant_RADIANCE_SIZE_128>`.
+**Note:** The fast filtering algorithm is limited to 256x256 cubemaps, so :ref:`radiance_size<class_Sky_property_radiance_size>` must be set to :ref:`RADIANCE_SIZE_256<class_Sky_constant_RADIANCE_SIZE_256>`.
 
 Property Descriptions
 ---------------------
@@ -108,7 +108,7 @@ Sets the method for generating the radiance map from the sky. The radiance map i
 - :ref:`RadianceSize<enum_Sky_RadianceSize>` **radiance_size**
 
 +-----------+--------------------------+
-| *Default* | ``2``                    |
+| *Default* | ``3``                    |
 +-----------+--------------------------+
 | *Setter*  | set_radiance_size(value) |
 +-----------+--------------------------+
@@ -120,4 +120,18 @@ The ``Sky``'s radiance map size. The higher the radiance map size, the more deta
 See :ref:`RadianceSize<enum_Sky_RadianceSize>` constants for values.
 
 **Note:** Some hardware will have trouble with higher radiance sizes, especially :ref:`RADIANCE_SIZE_512<class_Sky_constant_RADIANCE_SIZE_512>` and above. Only use such high values on high-end hardware.
+
+----
+
+.. _class_Sky_property_sky_material:
+
+- :ref:`Material<class_Material>` **sky_material**
+
++----------+---------------------+
+| *Setter* | set_material(value) |
++----------+---------------------+
+| *Getter* | get_material()      |
++----------+---------------------+
+
+:ref:`Material<class_Material>` used to draw the background. Can be :ref:`PanoramaSkyMaterial<class_PanoramaSkyMaterial>`, :ref:`ProceduralSkyMaterial<class_ProceduralSkyMaterial>`, :ref:`PhysicalSkyMaterial<class_PhysicalSkyMaterial>`, or even a :ref:`ShaderMaterial<class_ShaderMaterial>` if you want to use your own custom shader.
 

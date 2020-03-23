@@ -63,9 +63,9 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_Transform2D>` | :ref:`translated<class_Transform2D_method_translated>` **(** :ref:`Vector2<class_Vector2>` offset **)**                                                                               |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`xform<class_Transform2D_method_xform>` **(** :ref:`Variant<class_Variant>` v **)**                                                                                              |
+| :ref:`Variant<class_Variant>`         | :ref:`xform<class_Transform2D_method_xform>` **(** :ref:`Variant<class_Variant>` v **)**                                                                                              |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`xform_inv<class_Transform2D_method_xform_inv>` **(** :ref:`Variant<class_Variant>` v **)**                                                                                      |
+| :ref:`Variant<class_Variant>`         | :ref:`xform_inv<class_Transform2D_method_xform_inv>` **(** :ref:`Variant<class_Variant>` v **)**                                                                                      |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Constants
@@ -251,7 +251,7 @@ Unlike :ref:`rotated<class_Transform2D_method_rotated>` and :ref:`scaled<class_T
 
 .. _class_Transform2D_method_xform:
 
-- void **xform** **(** :ref:`Variant<class_Variant>` v **)**
+- :ref:`Variant<class_Variant>` **xform** **(** :ref:`Variant<class_Variant>` v **)**
 
 Transforms the given :ref:`Vector2<class_Vector2>`, :ref:`Rect2<class_Rect2>`, or :ref:`PackedVector2Array<class_PackedVector2Array>` by this transform.
 
@@ -259,7 +259,7 @@ Transforms the given :ref:`Vector2<class_Vector2>`, :ref:`Rect2<class_Rect2>`, o
 
 .. _class_Transform2D_method_xform_inv:
 
-- void **xform_inv** **(** :ref:`Variant<class_Variant>` v **)**
+- :ref:`Variant<class_Variant>` **xform_inv** **(** :ref:`Variant<class_Variant>` v **)**
 
 Inverse-transforms the given :ref:`Vector2<class_Vector2>`, :ref:`Rect2<class_Rect2>`, or :ref:`PackedVector2Array<class_PackedVector2Array>` by this transform.
 

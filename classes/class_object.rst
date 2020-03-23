@@ -98,6 +98,8 @@ Methods
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`has_method<class_Object_method_has_method>` **(** :ref:`StringName<class_StringName>` method **)** const                                                                                                    |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`has_signal<class_Object_method_has_signal>` **(** :ref:`StringName<class_StringName>` signal **)** const                                                                                                    |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`has_user_signal<class_Object_method_has_user_signal>` **(** :ref:`StringName<class_StringName>` signal **)** const                                                                                          |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`is_blocking_signals<class_Object_method_is_blocking_signals>` **(** **)** const                                                                                                                             |
@@ -477,11 +479,19 @@ Returns ``true`` if the object contains the given ``method``.
 
 ----
 
+.. _class_Object_method_has_signal:
+
+- :ref:`bool<class_bool>` **has_signal** **(** :ref:`StringName<class_StringName>` signal **)** const
+
+Returns ``true`` if the given ``signal`` exists.
+
+----
+
 .. _class_Object_method_has_user_signal:
 
 - :ref:`bool<class_bool>` **has_user_signal** **(** :ref:`StringName<class_StringName>` signal **)** const
 
-Returns ``true`` if the given user-defined ``signal`` exists.
+Returns ``true`` if the given user-defined ``signal`` exists. Only signals added using :ref:`add_user_signal<class_Object_method_add_user_signal>` are taken into account.
 
 ----
 

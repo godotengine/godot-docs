@@ -57,7 +57,7 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`               | :ref:`file_exists<class_Directory_method_file_exists>` **(** :ref:`String<class_String>` path **)**                                                                 |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_current_dir<class_Directory_method_get_current_dir>` **(** :ref:`bool<class_bool>` include_drive=true **)**                                               |
+| :ref:`String<class_String>`           | :ref:`get_current_dir<class_Directory_method_get_current_dir>` **(** **)**                                                                                          |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                 | :ref:`get_current_drive<class_Directory_method_get_current_drive>` **(** **)**                                                                                      |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -133,11 +133,9 @@ Returns whether the target file exists. The argument can be relative to the curr
 
 .. _class_Directory_method_get_current_dir:
 
-- :ref:`String<class_String>` **get_current_dir** **(** :ref:`bool<class_bool>` include_drive=true **)**
+- :ref:`String<class_String>` **get_current_dir** **(** **)**
 
 Returns the absolute path to the currently opened directory (e.g. ``res://folder`` or ``C:\tmp\folder``).
-
-On Windows, if ``include_drive`` is ``false``, the leading drive specificator is omitted from the returned value (e.g. ``\tmp\folder``).
 
 ----
 

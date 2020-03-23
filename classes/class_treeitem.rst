@@ -249,9 +249,7 @@ Method Descriptions
 
 - void **add_button** **(** :ref:`int<class_int>` column, :ref:`Texture2D<class_Texture2D>` button, :ref:`int<class_int>` button_idx=-1, :ref:`bool<class_bool>` disabled=false, :ref:`String<class_String>` tooltip="" **)**
 
-Adds a button with :ref:`Texture2D<class_Texture2D>` ``button`` at column ``column``. The ``button_idx`` index is used to identify the button when calling other methods. If not specified, the next available index is used, which may be retrieved by calling :ref:`get_button_count<class_TreeItem_method_get_button_count>` immediately after this method. Optionally, the button can be ``disabled`` and have a ``tooltip
-
-``.
+Adds a button with :ref:`Texture2D<class_Texture2D>` ``button`` at column ``column``. The ``button_idx`` index is used to identify the button when calling other methods. If not specified, the next available index is used, which may be retrieved by calling :ref:`get_button_count<class_TreeItem_method_get_button_count>` immediately after this method. Optionally, the button can be ``disabled`` and have a ``tooltip``.
 
 ----
 

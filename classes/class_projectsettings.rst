@@ -576,7 +576,7 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/quality/reflection_atlas/reflection_count<class_ProjectSettings_property_rendering/quality/reflection_atlas/reflection_count>`                       | ``64``                                                                                          |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/quality/reflection_atlas/reflection_size<class_ProjectSettings_property_rendering/quality/reflection_atlas/reflection_size>`                         | ``128``                                                                                         |
+| :ref:`int<class_int>`                             | :ref:`rendering/quality/reflection_atlas/reflection_size<class_ProjectSettings_property_rendering/quality/reflection_atlas/reflection_size>`                         | ``256``                                                                                         |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/quality/reflection_atlas/reflection_size.mobile<class_ProjectSettings_property_rendering/quality/reflection_atlas/reflection_size.mobile>`           | ``128``                                                                                         |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -586,7 +586,7 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/quality/reflections/ggx_samples.mobile<class_ProjectSettings_property_rendering/quality/reflections/ggx_samples.mobile>`                             | ``128``                                                                                         |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/quality/reflections/roughness_layers<class_ProjectSettings_property_rendering/quality/reflections/roughness_layers>`                                 | ``6``                                                                                           |
+| :ref:`int<class_int>`                             | :ref:`rendering/quality/reflections/roughness_layers<class_ProjectSettings_property_rendering/quality/reflections/roughness_layers>`                                 | ``8``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/quality/reflections/texture_array_reflections<class_ProjectSettings_property_rendering/quality/reflections/texture_array_reflections>`               | ``true``                                                                                        |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -3988,7 +3988,7 @@ Number of cubemaps to store in the reflection atlas. The number of :ref:`Reflect
 - :ref:`int<class_int>` **rendering/quality/reflection_atlas/reflection_size**
 
 +-----------+---------+
-| *Default* | ``128`` |
+| *Default* | ``256`` |
 +-----------+---------+
 
 Size of cubemap faces for :ref:`ReflectionProbe<class_ReflectionProbe>`\ s. A higher number requires more VRAM and may make reflection probe updating slower.
@@ -4048,7 +4048,7 @@ Lower-end override for :ref:`rendering/quality/reflections/ggx_samples<class_Pro
 - :ref:`int<class_int>` **rendering/quality/reflections/roughness_layers**
 
 +-----------+-------+
-| *Default* | ``6`` |
+| *Default* | ``8`` |
 +-----------+-------+
 
 Limits the number of layers to use in radiance maps when using importance sampling. A lower number will be slightly faster and take up less VRAM.

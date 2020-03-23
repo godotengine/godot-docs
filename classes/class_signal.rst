@@ -19,7 +19,7 @@ Methods
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`connect<class_Signal_method_connect>` **(** :ref:`Callable<class_Callable>` callable, :ref:`Array<class_Array>` binds=[  ], :ref:`int<class_int>` flags=0 **)** |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                | :ref:`disconnect<class_Signal_method_disconnect>` **(** :ref:`Callable<class_Callable>` callable **)**                                                                |
+| :ref:`Variant<class_Variant>`       | :ref:`disconnect<class_Signal_method_disconnect>` **(** :ref:`Callable<class_Callable>` callable **)**                                                                |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                | :ref:`emit<class_Signal_method_emit>` **(** ... **)** vararg                                                                                                          |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -57,7 +57,7 @@ Connects this signal to the specified :ref:`Callable<class_Callable>`, optionall
 
 .. _class_Signal_method_disconnect:
 
-- void **disconnect** **(** :ref:`Callable<class_Callable>` callable **)**
+- :ref:`Variant<class_Variant>` **disconnect** **(** :ref:`Callable<class_Callable>` callable **)**
 
 Disconnects this signal from the specified :ref:`Callable<class_Callable>`.
 

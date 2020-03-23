@@ -22,6 +22,10 @@ Methods
 -------
 
 +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                           | :ref:`_compute_cost<class_AStar2D_method__compute_cost>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual                                      |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                           | :ref:`_estimate_cost<class_AStar2D_method__estimate_cost>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual                                    |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`add_point<class_AStar2D_method_add_point>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` weight_scale=1.0 **)**    |
 +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`are_points_connected<class_AStar2D_method_are_points_connected>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id **)** const                               |
@@ -71,6 +75,26 @@ Methods
 
 Method Descriptions
 -------------------
+
+.. _class_AStar2D_method__compute_cost:
+
+- :ref:`float<class_float>` **_compute_cost** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual
+
+Called when computing the cost between two connected points.
+
+Note that this function is hidden in the default ``AStar2D`` class.
+
+----
+
+.. _class_AStar2D_method__estimate_cost:
+
+- :ref:`float<class_float>` **_estimate_cost** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual
+
+Called when estimating the cost between a point and the path's ending point.
+
+Note that this function is hidden in the default ``AStar2D`` class.
+
+----
 
 .. _class_AStar2D_method_add_point:
 
