@@ -54,7 +54,7 @@ to each other.
   array object in traditional C++ libraries. It is a "templated"
   type, meaning that its records can only contain a particular type (denoted
   by angled brackets). So, for example, a
-  :ref:`PoolStringArray <class_PoolStringArray>` would be something like
+  :ref:`PackedStringArray <class_PackedStringArray>` would be something like
   a ``Vector<String>``.
 
 Contiguous memory stores imply the following operation performance:

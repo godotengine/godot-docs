@@ -162,7 +162,7 @@ Now, attach a script to the MeshInstance and use the following code:
 
   func _ready():
     # Create a single triangle out of vertices:
-    var verts = PoolVector3Array()
+    var verts = PackedVector3Array()
     verts.append(Vector3(-1.0, -1.0, 0.0))
     verts.append(Vector3(-1.0, 3.0, 0.0))
     verts.append(Vector3(3.0, -1.0, 0.0))

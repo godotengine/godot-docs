@@ -171,7 +171,7 @@ In our example, we will simply use a fixed number of points, no matter the radiu
 
     func draw_circle_arc(center, radius, angle_from, angle_to, color):
         var nb_points = 32
-        var points_arc = PoolVector2Array()
+        var points_arc = PackedVector2Array()
 
         for i in range(nb_points + 1):
             var angle_point = deg2rad(angle_from + i * (angle_to-angle_from) / nb_points - 90)
@@ -200,7 +200,7 @@ In our example, we will simply use a fixed number of points, no matter the radiu
 
 Remember the number of points our shape has to be decomposed into? We fixed this
 number in the ``nb_points`` variable to a value of ``32``. Then, we initialize an empty
-``PoolVector2Array``, which is simply an array of ``Vector2``\ s.
+``PackedVector2Array``, which is simply an array of ``Vector2``\ s.
 
 The next step consists of computing the actual positions of these 32 points that
 compose an arc. This is done in the first for-loop: we iterate over the number of
@@ -219,7 +219,7 @@ between -1 and 1, the position is located on a circle of radius 1. To have this
 position on our support circle, which has a radius of ``radius``, we simply need to
 multiply the position by ``radius``. Finally, we need to position our support circle
 at the ``center`` position, which is performed by adding it to our ``Vector2`` value.
-Finally, we insert the point in the ``PoolVector2Array`` which was previously defined.
+Finally, we insert the point in the ``PackedVector2Array`` which was previously defined.
 
 Now, we need to actually draw our points. As you can imagine, we will not simply
 draw our 32 points: we need to draw everything that is between each of them.
@@ -276,9 +276,9 @@ the same as before, except that we draw a polygon instead of lines:
 
     func draw_circle_arc_poly(center, radius, angle_from, angle_to, color):
         var nb_points = 32
-        var points_arc = PoolVector2Array()
+        var points_arc = PackedVector2Array()
         points_arc.push_back(center)
-        var colors = PoolColorArray([color])
+        var colors = PackedColorArray([color])
 
         for i in range(nb_points + 1):
             var angle_point = deg2rad(angle_from + i * (angle_to - angle_from) / nb_points - 90)

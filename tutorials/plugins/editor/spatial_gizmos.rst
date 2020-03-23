@@ -89,12 +89,12 @@ or all the handle related ones.
 
         var spatial = gizmo.get_spatial_node()
         
-        var lines = PoolVector3Array()
+        var lines = PackedVector3Array()
         
         lines.push_back(Vector3(0, 1, 0))
         lines.push_back(Vector3(0, spatial.my_custom_value, 0))
 
-        var handles = PoolVector3Array()
+        var handles = PackedVector3Array()
 
         handles.push_back(Vector3(0, 1, 0))
         handles.push_back(Vector3(0, spatial.my_custom_value, 0))
@@ -129,12 +129,12 @@ So the final plugin would look somewhat like this:
 
         var spatial = gizmo.get_spatial_node()
         
-        var lines = PoolVector3Array()
+        var lines = PackedVector3Array()
         
         lines.push_back(Vector3(0, 1, 0))
         lines.push_back(Vector3(0, spatial.my_custom_value, 0))
 
-        var handles = PoolVector3Array()
+        var handles = PackedVector3Array()
 
         handles.push_back(Vector3(0, 1, 0))
         handles.push_back(Vector3(0, spatial.my_custom_value, 0))
@@ -195,12 +195,12 @@ This way all the gizmo logic and drawing methods can be implemented in a new cla
 
         var spatial = get_spatial_node()
         
-        var lines = PoolVector3Array()
+        var lines = PackedVector3Array()
         
         lines.push_back(Vector3(0, 1, 0))
         lines.push_back(Vector3(gizmo_size, spatial.my_custom_value, 0))
 
-        var handles = PoolVector3Array()
+        var handles = PackedVector3Array()
 
         handles.push_back(Vector3(0, 1, 0))
         handles.push_back(Vector3(gizmo_size, spatial.my_custom_value, 0))

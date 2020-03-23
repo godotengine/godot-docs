@@ -81,7 +81,7 @@ It will connect and fetch a website.
 
             # This method works for both anyway
 
-            var rb = PoolByteArray() # Array that will hold the data.
+            var rb = PackedByteArray() # Array that will hold the data.
 
             while http.get_status() == HTTPClient.STATUS_BODY:
                 # While there is body left to be read

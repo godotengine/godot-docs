@@ -193,7 +193,7 @@ returned by ``eval()`` under certain circumstances:
  * JavaScript ``boolean`` is returned as GDScript :ref:`class_bool`
  * JavaScript ``string`` is returned as GDScript :ref:`class_String`
  * JavaScript ``ArrayBuffer``, ``TypedArray`` and ``DataView`` are returned as
-   GDScript :ref:`class_PoolByteArray`
+   GDScript :ref:`PackedByteArray<class_PackedByteArray>`
 
 ::
 
