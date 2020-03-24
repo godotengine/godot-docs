@@ -397,11 +397,14 @@ Let's place this code at the end of our ``_process()`` function:
 
            .. code-tab:: csharp
 
-             if velocity.x < 0:
+             if (velocity.x < 0)
+             {
                  animatedSprite.FlipH = true
-             else:
+             }
+             else
+             {
                  animatedSprite.FlipH = false
-
+             }
 Play the scene again and check that the animations are correct in each
 of the directions. When you're sure the movement is working correctly,
 add this line to ``_ready()``, so the player will be hidden when the game
