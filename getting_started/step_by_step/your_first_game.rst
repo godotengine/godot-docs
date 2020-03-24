@@ -377,7 +377,7 @@ Let's place this code at the end of our ``_process()`` function:
             // See the note below about boolean assignment
             animatedSprite.FlipH = velocity.x < 0;
         }
-        else if(velocity.y != 0)
+        else if (velocity.y != 0)
         {
             animatedSprite.Animation = "up";
             animatedSprite.FlipV = velocity.y > 0;
@@ -399,11 +399,11 @@ Let's place this code at the end of our ``_process()`` function:
 
              if (velocity.x < 0)
              {
-                 animatedSprite.FlipH = true
+                 animatedSprite.FlipH = true;
              }
              else
              {
-                 animatedSprite.FlipH = false
+                 animatedSprite.FlipH = false;
              }
 Play the scene again and check that the animations are correct in each
 of the directions. When you're sure the movement is working correctly,
