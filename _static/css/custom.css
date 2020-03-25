@@ -253,6 +253,27 @@ hr,
     color: var(--admonition-note-color);
 }
 
+/* JavaScript documentation directives */
+.rst-content dl:not(.docutils) tt.descclassname,
+.rst-content dl:not(.docutils) code.descclassname {
+    color: var(--highlight-type2-color)
+}
+.rst-content dl:not(.docutils) tt.descname,
+.rst-content dl:not(.docutils) code.descname {
+    color: var(--highlight-function-color)
+}
+.rst-content dl:not(.docutils) .sig-paren,
+.rst-content dl:not(.docutils) .optional {
+    color: var(--highlight-operator-color)
+}
+.rst-content dl:not(.docutils).class dt > em,
+.rst-content dl:not(.docutils).function dt > em {
+    color: var(--code-literal-color)
+}
+.rst-content dl:not(.docutils).class dt > em.property {
+    color: var(--highlight-keyword-color)
+}
+
 footer,
 #search-results .context {
     color: var(--footer-color);
