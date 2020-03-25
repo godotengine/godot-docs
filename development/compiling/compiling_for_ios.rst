@@ -8,8 +8,8 @@ Compiling for iOS
 Requirements
 ------------
 
--  SCons (you can get it from macports, you should be able to run
-   ``scons`` in a terminal when installed)
+-  SCons 3.0+ (you can install it via Homebrew or Macports, you should be able
+   to run ``scons`` in a terminal when installed).
 -  Xcode 10.0 (or later) with the iOS (10.0) SDK and the command line tools.
 
 .. seealso:: For a general overview of SCons usage for Godot, see

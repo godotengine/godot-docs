@@ -11,16 +11,19 @@ Requirements
 For compiling under Linux or other Unix variants, the following is
 required:
 
--  GCC or Clang
--  Python 3.5+
--  SCons build system (3.0 or later for Python 3)
--  pkg-config (used to detect the dependencies below)
--  X11, Xcursor, Xinerama, Xi and XRandR development libraries
--  MesaGL development libraries
--  ALSA development libraries
--  PulseAudio development libraries
--  *Optional* - libudev (build with ``udev=yes``)
--  *Optional* - yasm (for WebM SIMD optimizations)
+-  GCC 7+ or Clang 6+.
+-  Python 3.5+.
+-  SCons 3.0+ build system. If your Linux distribution only provides a Python 2
+   build of SCons, install the Python 3 flavor with ``pip3 install --user scons``.
+   You may also want to uninstall the distribution ``scons`` package to ensure
+   that the pip-installed one takes precedence.
+-  pkg-config (used to detect the dependencies below).
+-  X11, Xcursor, Xinerama, Xi and XRandR development libraries.
+-  MesaGL development libraries.
+-  ALSA development libraries.
+-  PulseAudio development libraries.
+-  *Optional* - libudev (build with ``udev=yes``).
+-  *Optional* - yasm (for WebM SIMD optimizations).
 
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
