@@ -10,8 +10,8 @@ Requirements
 
 For compiling under macOS, the following is required:
 
-- `Python 3.5+ <https://www.python.org>`_
-- `SCons <https://www.scons.org>`_ build system.
+- `Python 3.5+ <https://www.python.org>`_.
+- `SCons 3.0+ <https://www.scons.org>`_ build system.
 - `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`_
   (or the more lightweight Command Line Tools for Xcode).
 - *Optional* - `yasm <https://yasm.tortall.net/>`_ (for WebM SIMD optimizations).

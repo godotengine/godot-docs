@@ -10,11 +10,9 @@ Requirements
 
 To compile export templates for the Web, the following is required:
 
--  `Emscripten 1.38.27+ <http://kripken.github.io/emscripten-site>`__: If the version available
-   per package manager is not recent enough, the best alternative is to install
-   using the `Emscripten SDK <http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html>`__
--  `Python 3.5+ <https://www.python.org/>`__
--  `SCons <https://www.scons.org>`__ build system
+-  `Emscripten 1.39.0+ <https://emscripten.org>`__.
+-  `Python 3.5+ <https://www.python.org/>`__.
+-  `SCons 3.0+ <https://www.scons.org>`__ build system.
 
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
