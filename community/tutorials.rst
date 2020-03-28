@@ -21,6 +21,7 @@ Video tutorials
 
 - `Emilio <https://www.youtube.com/channel/UC9DR22-qohBDtZ74R3FxOZg>`_ (2D, GDScript and VisualScript).
 - `GDQuest <https://www.youtube.com/channel/UCxboW7x0jZqFdvMdCFKTMsQ/playlists>`_ (2D and 3D, GDScript, VisualScript and C#).
+- `Game Development Channel <https://www.youtube.com/channel/UClseGZiVmeHamsjYmpbiAmQ/playlists>`_ (2D, GDScript).
 - `Game Endeavor <https://www.youtube.com/channel/UCLweX1UtQjRjj7rs_0XQ2Eg/videos>`_ (2D, GDScript).
 - `Game from Scratch <https://www.youtube.com/watch?v=iDEcP8Mc-7s&list=PLS9MbmO_ssyDk79j9ewONxV88fD5e_o5d>`_ (2D and 3D, GDScript and C#).
 - `HeartBeast <https://www.youtube.com/watch?v=wETY5_9kFtA&list=PL9FzW-m48fn2jlBu_0DRh7PvAt-GULEmd>`_ (2D, GDScript).
