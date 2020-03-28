@@ -64,8 +64,8 @@ won't play games windowed (games that are played in a window, e.g. puzzle games,
 For fullscreen, Windows gives special priority to the game so stutter is no longer visible and very rare.
 This is how most games are played.
 
-Linux (X11)
-^^^^^^^^^^^
+Linux
+^^^^^
 
 Stutter may be visible on Desktop Linux, but this is usually associated with different video drivers and compositors.
 Nouveau drivers often exhibit this, while AMD or NVidia proprietary don't. Some compositors may also trigger this problem

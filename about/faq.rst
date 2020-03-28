@@ -37,13 +37,13 @@ Which platforms are supported by Godot?
 
 * Windows
 * macOS
-* X11 (Linux, \*BSD)
+* Linux, \*BSD
 
 **For exporting your games:**
 
 * Windows (and UWP)
 * macOS
-* X11 (Linux, \*BSD)
+* Linux, \*BSD
 * Android
 * iOS
 * Web

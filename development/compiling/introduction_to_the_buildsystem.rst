@@ -40,9 +40,9 @@ Setup
 -----
 
 Please refer to the documentation for :ref:`doc_compiling_for_android`,
-:ref:`doc_compiling_for_ios`, :ref:`doc_compiling_for_osx`,
-:ref:`doc_compiling_for_uwp`, :ref:`doc_compiling_for_web`,
-:ref:`doc_compiling_for_windows` and :ref:`doc_compiling_for_x11`.
+:ref:`doc_compiling_for_ios`,  :ref:`doc_compiling_for_linuxbsd`,
+:ref:`doc_compiling_for_osx`, :ref:`doc_compiling_for_uwp`,
+:ref:`doc_compiling_for_web`, and :ref:`doc_compiling_for_windows`.
 
 Note that for **Windows/Visual Studio**, you need to use ``x86_x64 Cross Tools
 Command Prompt for VS 2017`` or similar, depending on your install, instead of
@@ -68,18 +68,18 @@ To list the available target platforms, use ``scons platform=list``::
 
         android
         javascript
+        linuxbsd
         server
         windows
-        x11
 
     Please run SCons again and select a valid platform: platform=<string>
 
-To build for a platform (for example, x11), run with the ``platform=`` (or
-``p=`` to make it short) argument:
+To build for a platform (for example, ``linuxbsd``), run with the ``platform=``
+(or ``p=`` to make it short) argument:
 
 ::
 
-    user@host:~/godot$ scons platform=x11
+    user@host:~/godot$ scons platform=linuxbsd
 
 This will start the build process, which will take a while. If you want
 SCons to build faster, use the ``-j <cores>`` parameter to specify how many
@@ -90,7 +90,7 @@ Example for using 4 cores:
 
 ::
 
-    user@host:~/godot$ scons platform=x11 -j 4
+    user@host:~/godot$ scons platform=linuxbsd -j 4
 
 Resulting binary
 ----------------
@@ -103,9 +103,9 @@ generally with this naming convention::
 For the previous build attempt, the result would look like this::
 
     user@host:~/godot$ ls bin
-    bin/godot.x11.tools.64
+    bin/godot.linuxbsd.tools.64
 
-This means that the binary is for X11, is not optimized, has tools (the
+This means that the binary is for Linux *or* \*BSD (*not* both), is not optimized, has tools (the
 whole editor) compiled in, and is meant for 64 bits.
 
 A Windows binary with the same configuration will look like this::
