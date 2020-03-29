@@ -246,32 +246,74 @@ hr,
     border-color: var(--hr-color);
 }
 
-/* Doesn't seem to be used on Read the Docs online builds, but is present when building locally */
+/* JavaScript documentation directives */
 .rst-content dl:not(.docutils) dt {
     background-color: var(--admonition-note-background-color);
     border-color: var(--admonition-note-title-background-color);
     color: var(--admonition-note-color);
 }
-
-/* JavaScript documentation directives */
+.rst-content dl:not(.docutils) dl dt {
+    background-color: var(--admonition-attention-background-color);
+    border-color: var(--admonition-attention-title-background-color);
+    color: var(--admonition-attention-color);
+}
+.rst-content dl:not(.docutils).class dt,
+.rst-content dl:not(.docutils).function dt,
+.rst-content dl:not(.docutils).method dt,
+.rst-content dl:not(.docutils).attribute dt {
+    width: 100%;
+}
+.rst-content dl:not(.docutils).class > dt,
+.rst-content dl:not(.docutils).function > dt,
+.rst-content dl:not(.docutils).method > dt,
+.rst-content dl:not(.docutils).attribute > dt {
+    font-size: 100%;
+    font-weight: normal;
+    margin-bottom: 16px;
+    padding: 6px 8px;
+}
 .rst-content dl:not(.docutils) tt.descclassname,
 .rst-content dl:not(.docutils) code.descclassname {
-    color: var(--highlight-type2-color)
+    color: var(--highlight-type2-color);
+    font-weight: normal;
 }
 .rst-content dl:not(.docutils) tt.descname,
 .rst-content dl:not(.docutils) code.descname {
-    color: var(--highlight-function-color)
+    color: var(--highlight-function-color);
+    font-weight: normal;
 }
 .rst-content dl:not(.docutils) .sig-paren,
 .rst-content dl:not(.docutils) .optional {
-    color: var(--highlight-operator-color)
+    color: var(--highlight-operator-color);
+    font-weight: normal;
+    padding: 0 2px;
 }
+.rst-content dl:not(.docutils) .optional {
+    font-style: italic;
+}
+.rst-content dl:not(.docutils) .sig-param,
 .rst-content dl:not(.docutils).class dt > em,
-.rst-content dl:not(.docutils).function dt > em {
-    color: var(--code-literal-color)
+.rst-content dl:not(.docutils).function dt > em,
+.rst-content dl:not(.docutils).method dt > em {
+    color: var(--code-literal-color);
+    font-style: normal;
+    padding: 0 4px;
+}
+.rst-content dl:not(.docutils) .sig-param,
+.rst-content dl:not(.docutils).class dt > .optional ~ em,
+.rst-content dl:not(.docutils).function dt > .optional ~ em,
+.rst-content dl:not(.docutils).method dt > .optional ~ em {
+    color: var(--highlight-number-color);
+    font-style: italic;
 }
 .rst-content dl:not(.docutils).class dt > em.property {
-    color: var(--highlight-keyword-color)
+    color: var(--highlight-keyword-color);
+}
+.rst-content dl:not(.docutils) dt a.headerlink {
+    color: var(--link-color);
+}
+.rst-content dl:not(.docutils) dt a.headerlink:visited {
+    color: var(--link-color-visited);
 }
 
 footer,
