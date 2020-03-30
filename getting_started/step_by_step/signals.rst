@@ -224,7 +224,7 @@ argument names between parentheses:
     public class Main : Node
     {
         [Signal]
-        public delegate void MySignal();
+        public delegate void MySignal(bool value, int other_value);
     }
 
 .. note::
@@ -251,7 +251,7 @@ To pass values, add them as the second argument to the ``emit_signal`` function:
     public class Main : Node
     {
         [Signal]
-        public delegate void MySignal();
+        public delegate void MySignal(bool value, int other_value);
 
         public override void _Ready()
         {
