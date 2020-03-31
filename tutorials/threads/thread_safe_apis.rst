@@ -57,4 +57,4 @@ In GDScript, reading and writing elements from multiple threads is ok, but anyth
 Resources
 ---------
 
-Modifying a unique resource from multiple threads is not supported, but loading them on threads or handling a reference is perfectly supported. Scenes, textures, meshes, etc. Can be loaded and manipulated on threads, then added to the active scene in the main thread.
+Modifying a unique resource from multiple threads is not supported. However handling references on multiple threads is perfectly supported, hence loading resources on a thread is as well - scenes, textures, meshes, etc - can be loaded and manipulated on a thread and then added to the active scene in the main thread. The limitation here is as described above, one must be careful not to load a the same resource from multiple threads at once, therefore it is easiest to use **one** thread for loading and modifying resources, and then the main thread for adding them.
