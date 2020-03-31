@@ -91,7 +91,7 @@ Start a terminal, go to the root dir of the engine source code and type:
 
 ::
 
-    user@host:~/godot$ scons -j8 platform=x11
+    user@host:~/godot$ scons -j8 platform=linuxbsd
 
 A good rule of thumb for the ``-j`` (*jobs*) flag, is to have at least as many
 threads compiling Godot as you have cores in your CPU, if not one or two more.
@@ -108,7 +108,7 @@ manager.
 
     ::
 
-        user@host:~/godot$ scons platform=x11 use_llvm=yes
+        user@host:~/godot$ scons platform=linuxbsd use_llvm=yes
 
     Using Clang appears to be a requirement for OpenBSD, otherwise fonts
     would not build.
@@ -140,15 +140,15 @@ following parameters:
 
 ::
 
-    user@host:~/godot$ scons platform=x11 tools=no target=release bits=32
-    user@host:~/godot$ scons platform=x11 tools=no target=release_debug bits=32
+    user@host:~/godot$ scons platform=linuxbsd tools=no target=release bits=32
+    user@host:~/godot$ scons platform=linuxbsd tools=no target=release_debug bits=32
 
 -  (64 bits)
 
 ::
 
-    user@host:~/godot$ scons platform=x11 tools=no target=release bits=64
-    user@host:~/godot$ scons platform=x11 tools=no target=release_debug bits=64
+    user@host:~/godot$ scons platform=linuxbsd tools=no target=release bits=64
+    user@host:~/godot$ scons platform=linuxbsd tools=no target=release_debug bits=64
 
 Note that cross-compiling for the opposite bits (64/32) as your host
 platform is not always straight-forward and might need a chroot environment.
@@ -191,7 +191,7 @@ the default GCC + GNU ld setup:
 To do so, install Clang and the ``lld`` package from your distribution's package manager
 then use the following SCons command::
 
-    user@host:~/godot$ scons platform=x11 use_llvm=yes use_lld=yes
+    user@host:~/godot$ scons platform=linuxbsd use_llvm=yes use_lld=yes
 
 It's still recommended to use GCC for production builds as they can be compiled using
 link-time optimization, making the resulting binaries smaller and faster.
