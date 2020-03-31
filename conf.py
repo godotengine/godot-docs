@@ -28,9 +28,9 @@ author = 'Juan Linietsky, Ariel Manzur and the Godot community'
 
 # Version info for the project, acts as replacement for |version| and |release|
 # The short X.Y version
-version = 'latest'
+version = os.getenv("READTHEDOCS_VERSION", "3.1")
 # The full version, including alpha/beta/rc tags
-release = 'latest'
+release = version
 
 # Parse Sphinx tags passed from RTD via environment
 env_tags = os.getenv('SPHINX_TAGS')
