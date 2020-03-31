@@ -28,9 +28,9 @@ author = 'Juan Linietsky, Ariel Manzur and the Godot community'
 
 # Version info for the project, acts as replacement for |version| and |release|
 # The short X.Y version
-version = '2.1'
+version = os.getenv("READTHEDOCS_VERSION", "2.1")
 # The full version, including alpha/beta/rc tags
-release = '2.1'
+release = version
 
 language = 'en'
 
