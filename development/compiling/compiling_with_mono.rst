@@ -224,8 +224,8 @@ Building the Mono runtime
 
 When building Godot for the desktop, you will likely use the pre-built Mono runtime
 that is installed on your system. This likely won't be the case when targeting other
-platforms like Android, iOS and WebAssembly. For those platforms you will have to
-build the Mono runtime yourself.
+platforms like Android, iOS and WebAssembly. You will have to build the Mono runtime
+yourself for those platforms.
 
 We recommend using these `build scripts <https://github.com/godotengine/godot-mono-builds>`_.
 They simplify this process but also include some patches needed
@@ -298,7 +298,7 @@ The Godot editor will look for the libraries in ``<templates>/iphone-mono-libs/l
 Targeting WebAssembly
 ---------------------
 
-As of now, building for WebAssembly is the same both when the mono module is enabled and when it is disabled.
+Building for WebAssembly currently involves the same process regardless of whether the Mono module is enabled.
 
 Once you've built Mono, you can proceed to build Godot with the instructions
 described in this page and the
@@ -340,7 +340,7 @@ if it cannot find the BCL in the export templates.
 AOT cross-compilers
 -------------------
 
-In order to do Ahead Of Time (AOT) compilation for other platforms, Godot needs to have
+To perform ahead-of-time (AOT) compilation for other platforms, Godot needs to have
 access to the Mono cross-compilers for that platform and architecture.
 
 Godot will look for the cross-compiler executable in the AOT compilers folder.
