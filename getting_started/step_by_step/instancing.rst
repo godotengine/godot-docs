@@ -79,7 +79,7 @@ Multiple instances
 
 You can add as many instances as you like to a scene, either by using the
 "Instance" button again, or by clicking on the ball instance and pressing
-"Duplicate" (:kbd:`Ctrl + D`):
+:kbd:`Ctrl + D` (:kbd:`Cmd + D` on macOS) to duplicate it:
 
 .. image:: img/instancing_multiball.png
 
