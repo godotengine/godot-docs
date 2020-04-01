@@ -143,7 +143,7 @@ the texture color for such nodes, use:
 
   COLOR = texture(TEXTURE, UV);
 
-This differs from the behaviour of the built-in normal map. If a normal map is attached, Godot uses
+This differs from the behavior of the built-in normal map. If a normal map is attached, Godot uses
 it by default and assigns its value to the built-in ``NORMAL`` variable. If you are using a normal
 map meant for use in 3D, it will appear inverted. In order to use it in your shader, you must assign
 it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D and overwriting ``NORMAL``.

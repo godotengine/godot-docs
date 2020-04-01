@@ -625,7 +625,7 @@ to shaders, Godot converts the type automatically. Below is a table of the corre
 +-----------------+-----------+
 
 .. note:: Be careful when setting shader uniforms from GDScript, no error will be thrown if the
-          type does not match. Your shader will just exhibit undefined behaviour.
+          type does not match. Your shader will just exhibit undefined behavior.
 
 Uniforms can also be assigned default values:
 

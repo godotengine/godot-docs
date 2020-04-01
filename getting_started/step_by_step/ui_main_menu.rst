@@ -191,8 +191,8 @@ containers split the area into two: a left and a right side or a top and
 a bottom side. They also allow the user to resize the left and right
 areas using an interactive bar. On the other hand, ``HBoxContainer``
 just splits itself into as many columns as it has children. Although you
-can deactivate the split container's resize behaviour, I recommend to
-favour box containers.
+can deactivate the split container's resize behavior, I recommend to
+favor box containers.
 
 Select the ``MarginContainer`` and add an ``HBoxContainer``. Then, we
 need two containers as children of our ``HBoxContainer``: a

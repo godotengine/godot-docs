@@ -79,7 +79,7 @@ You can check the list of all remote servers with:
 
     git remote -v
 
-You should have two: ``origin``, your fork on github, that git adds by default, and ``upstream``, that you just added:
+You should have two: ``origin``, your fork on GitHub, that git adds by default, and ``upstream``, that you just added:
 
 
 ::
@@ -162,7 +162,7 @@ How to edit class XML
 
 Edit the file for your chosen class in ``doc/classes/`` to update the class reference. The folder contains an XML file for each class. The XML lists the constants and methods you'll find in the class reference. Godot generates and updates the XML automatically.
 
-Edit it using your favourite text editor. If you use a code editor, make sure that it doesn't change the indent style: tabs for the XML, and 4 spaces inside BBcode-style blocks. More on that below.
+Edit it using your favorite text editor. If you use a code editor, make sure that it doesn't change the indent style: tabs for the XML, and 4 spaces inside BBcode-style blocks. More on that below.
 
 If you need to check that the modifications you've made are correct in the generated documentation, build Godot as described :ref:`here <toc-devel-compiling>`, run the editor and open the help for the page you modified.
 

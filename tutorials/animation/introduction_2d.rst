@@ -212,7 +212,7 @@ the end.
    Animation loop
 
 If you set the animation length to 4 seconds now, the animation moves
-back and forth. You can change this behaviour if you change the track's
+back and forth. You can change this behavior if you change the track's
 loop mode. This is covered in the next chapter.
 
 Track settings

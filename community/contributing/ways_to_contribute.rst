@@ -41,7 +41,7 @@ positive to the engine, regardless of their skill set:
    user donations for many things. Apart from usual expenses such as hosting
    costs or promotional material on events, we also use donation money to
    acquire hardware when necessary (e.g. we used donation money to buy a
-   Macbook Pro to implement Retina/HiDPI support and various other
+   MacBook Pro to implement Retina/HiDPI support and various other
    macOS-related features).
    Most importantly, we also used donation money to hire core developers so they
    can work full-time on the engine. Even with a low
