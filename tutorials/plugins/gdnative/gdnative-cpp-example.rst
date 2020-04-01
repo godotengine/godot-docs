@@ -420,13 +420,13 @@ loaded for each platform and is called ``gdexample.gdnlib``.
 
     [entry]
 
-    X11.64="res://bin/x11/libgdexample.so"
+    Linux.64="res://bin/linux/libgdexample.so"
     Windows.64="res://bin/win64/libgdexample.dll"
     OSX.64="res://bin/osx/libgdexample.dylib"
 
     [dependencies]
 
-    X11.64=[]
+    Linux.64=[]
     Windows.64=[]
     OSX.64=[]
 

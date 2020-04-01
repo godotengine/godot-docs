@@ -122,7 +122,7 @@ When classes are modified in the source code, the documentation template might b
 
 ::
 
-    ./bin/godot.x11.tools.64 --doctool .
+    ./bin/godot.linuxbsd.tools.64 --doctool .
 
 The xml files in doc/classes should then be up-to-date with current Godot Engine features. You can then check what changed using the ``git diff`` command. If there are changes to other classes than the one you are planning to document, please commit those changes first before starting to edit the template:
 

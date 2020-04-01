@@ -222,7 +222,7 @@ Full list of defines
 
 * One of ``GODOT_64`` or ``GODOT_32`` is defined depending on if the architecture is 64-bit or 32-bit.
 
-* One of ``GODOT_X11``, ``GODOT_WINDOWS``, ``GODOT_OSX``, ``GODOT_ANDROID``, ``GODOT_HTML5``,
+* One of ``GODOT_LINUXBSD``, ``GODOT_WINDOWS``, ``GODOT_OSX``, ``GODOT_ANDROID``, ``GODOT_HTML5``,
   or ``GODOT_SERVER`` depending on the OS. These names may change in the future.
   These are created from the ``get_name()`` method of the :ref:``OS <class_OS>`` singleton,
   but not every possible OS the method returns is an OS that Godot with Mono runs on.

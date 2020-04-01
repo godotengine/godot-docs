@@ -68,7 +68,7 @@ without having to repeat this process.
 ``<godot_binary>`` refers to the tools binary you compiled above with the Mono
 module enabled. Its exact name will differ based on your system and
 configuration, but should be of the form
-``bin/godot.<platform>.tools.<bits>.mono``, e.g. ``bin/godot.x11.tools.64.mono``
+``bin/godot.<platform>.tools.<bits>.mono``, e.g. ``bin/godot.linuxbsd.tools.64.mono``
 or ``bin/godot.windows.tools.64.exe``. Be especially aware of the **.mono**
 suffix! If you've previously compiled Godot without Mono support, you might have
 similarly named binaries without this suffix. These binaries can't be used to
@@ -135,21 +135,21 @@ Example (Windows)
     scons p=windows target=release_debug tools=no module_mono_enabled=yes
     scons p=windows target=release tools=no module_mono_enabled=yes
 
-Example (X11)
-^^^^^^^^^^^^^
+Example (Linux, \*BSD)
+^^^^^^^^^^^^^^^^^^^^^^
 ::
 
     # Build temporary binary
-    scons p=x11 tools=yes module_mono_enabled=yes mono_glue=no
+    scons p=linuxbsd tools=yes module_mono_enabled=yes mono_glue=no
     # Generate glue sources
-    bin/godot.x11.tools.64.mono --generate-mono-glue modules/mono/glue
+    bin/godot.linuxbsd.tools.64.mono --generate-mono-glue modules/mono/glue
 
     ### Build binaries normally
     # Editor
-    scons p=x11 target=release_debug tools=yes module_mono_enabled=yes
+    scons p=linuxbsd target=release_debug tools=yes module_mono_enabled=yes
     # Export templates
-    scons p=x11 target=release_debug tools=no module_mono_enabled=yes
-    scons p=x11 target=release tools=no module_mono_enabled=yes
+    scons p=linuxbsd target=release_debug tools=no module_mono_enabled=yes
+    scons p=linuxbsd target=release tools=no module_mono_enabled=yes
 
 .. _compiling_with_mono_data_directory:
 
@@ -168,7 +168,7 @@ Export templates
 
 The name of the data directory for an export template differs based on the
 configuration it was built with. The format is
-``data.mono.<platform>.<bits>.<target>``, e.g. ``data.mono.x11.32.release_debug`` or
+``data.mono.<platform>.<bits>.<target>``, e.g. ``data.mono.linuxbsd.32.release_debug`` or
 ``data.mono.windows.64.release``.
 
 This directory must be placed with its original name next to the Godot export

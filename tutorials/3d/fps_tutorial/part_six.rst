@@ -268,7 +268,7 @@ ______
 
 In ``_ready``, we set the ``OS_Label``'s text to the name provided by :ref:`OS <class_OS>` using the ``get_name`` function. This will return the
 name of the OS (or Operating System) for which Godot was compiled. For example, when you are running Windows, it will return ``Windows``, while when you
-are running Linux, it will return ``X11``.
+are running Linux, it will return ``Linux``.
 
 Then, we set the ``Engine_Label``'s text to the version info provided by ``Engine.get_version_info``. ``Engine.get_version_info`` returns a dictionary full
 of useful information about the version of Godot which is currently running. We only care about the string version, for this label at least, so we get the string
@@ -1038,4 +1038,3 @@ The skybox was converted to a 360 equirectangular image using this tool: https:/
 While no sounds are provided, you can find many game ready sounds at https://gamesounds.xyz/
 
 .. warning:: **OpenGameArt.org, 360toolkit.co, the creator(s) of Titillium-Regular, StumpyStrust, and GameSounds.xyz are in no way involved in this tutorial.**
-

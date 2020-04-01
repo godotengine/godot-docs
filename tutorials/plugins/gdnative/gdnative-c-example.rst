@@ -479,17 +479,17 @@ this:
 
     [entry]
 
+    Linux.64="res://bin/libsimple.so"
     OSX.64="res://bin/libsimple.dylib"
     OSX.32="res://bin/libsimple.dylib"
     Windows.64="res://bin/libsimple.dll"
-    X11.64="res://bin/libsimple.so"
 
     [dependencies]
 
+    Linux.64=[  ]
     OSX.64=[  ]
     OSX.32=[  ]
     Windows.64=[  ]
-    X11.64=[  ]
 
 Creating the NativeScript (``.gdns``) file
 ------------------------------------------

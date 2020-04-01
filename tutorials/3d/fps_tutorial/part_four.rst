@@ -79,7 +79,7 @@ In ``process_input``, add the following code just before ``input_movement_vector
 
         if OS.get_name() == "Windows":
             joypad_vec = Vector2(Input.get_joy_axis(0, 0), -Input.get_joy_axis(0, 1))
-        elif OS.get_name() == "X11":
+        elif OS.get_name() == "Linux":
             joypad_vec = Vector2(Input.get_joy_axis(0, 1), Input.get_joy_axis(0, 2))
         elif OS.get_name() == "OSX":
             joypad_vec = Vector2(Input.get_joy_axis(0, 1), Input.get_joy_axis(0, 2))
@@ -98,7 +98,7 @@ In ``process_input``, add the following code just before ``input_movement_vector
 
         var joypad_vec = Vector2(0, 0)
 
-        if OS.get_name() == "Windows" or OS.get_name() == "X11":
+        if OS.get_name() == "Windows" or OS.get_name() == "Linux":
             joypad_vec = Vector2(Input.get_joy_axis(0, 0), -Input.get_joy_axis(0, 1))
         elif OS.get_name() == "OSX":
             joypad_vec = Vector2(Input.get_joy_axis(0, 1), Input.get_joy_axis(0, 2))
@@ -159,7 +159,7 @@ Make a new function called ``process_view_input`` and add the following:
 
             if OS.get_name() == "Windows":
                 joypad_vec = Vector2(Input.get_joy_axis(0, 2), Input.get_joy_axis(0, 3))
-            elif OS.get_name() == "X11":
+            elif OS.get_name() == "Linux":
                 joypad_vec = Vector2(Input.get_joy_axis(0, 3), Input.get_joy_axis(0, 4))
             elif OS.get_name() == "OSX":
                 joypad_vec = Vector2(Input.get_joy_axis(0, 3), Input.get_joy_axis(0, 4))
@@ -194,7 +194,7 @@ Make a new function called ``process_view_input`` and add the following:
         var joypad_vec = Vector2()
         if Input.get_connected_joypads().size() > 0:
 
-            if OS.get_name() == "Windows" or OS.get_name() == "X11":
+            if OS.get_name() == "Windows" or OS.get_name() == "Linux":
                 joypad_vec = Vector2(Input.get_joy_axis(0, 2), Input.get_joy_axis(0, 3))
             elif OS.get_name() == "OSX":
                 joypad_vec = Vector2(Input.get_joy_axis(0, 3), Input.get_joy_axis(0, 4))
@@ -787,4 +787,3 @@ add turrets!
 .. warning:: If you ever get lost, be sure to read over the code again!
 
              You can download the finished project for this part here: :download:`Godot_FPS_Part_4.zip <files/Godot_FPS_Part_4.zip>`
-

@@ -374,7 +374,7 @@ library that will be dynamically loaded when starting our game's binary.
 
     # Finally notify the main env it has our shared lirary as a new dependency.
     # To do so, SCons wants the name of the lib with it custom suffixes
-    # (e.g. ".x11.tools.64") but without the final ".so".
+    # (e.g. ".linuxbsd.tools.64") but without the final ".so".
     # We pass this along with the directory of our library to the main env.
     shared_lib_shim = shared_lib[0].name.rsplit('.', 1)[0]
     env.Append(LIBS=[shared_lib_shim])
@@ -433,7 +433,7 @@ shared module as target in the scons command:
 
 ::
 
-    user@host:~/godot$ scons summator_shared=yes platform=x11 bin/libsummator.x11.tools.64.so
+    user@host:~/godot$ scons summator_shared=yes platform=linuxbsd bin/libsummator.linuxbsd.tools.64.so
 
 Writing custom documentation
 ----------------------------
