@@ -275,7 +275,7 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
     var teleport_raycast
 
     # A constant to define the dead zone for both the trackpad and the joystick.
-    # See (http://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html)
+    # See https://web.archive.org/web/20191208161810/http://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html
     # for more information on what dead zones are, and how we are using them in this project.
     const CONTROLLER_DEADZONE = 0.65
 
@@ -564,7 +564,7 @@ First, let's go through all of the class variables in the script:
 * ``CONTROLLER_RUMBLE_FADE_SPEED``: A constant to define how fast the VR controller rumble fades.
 * ``directional_movement``: A variable to hold whether this VR controller is moving the player using the touchpad/joystick.
 
-.. note:: You can find a great article explaining all about how to handle touchpad/joystick dead zones here: http://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html
+.. note:: You can find a great article explaining all about how to handle touchpad/joystick dead zones `here <https://web.archive.org/web/20191208161810/http://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html>`__.
           
           We are using a translated version of the scaled radial dead zone code provided in that article for the VR controller's joystick/touchpad.
           The article is a great read, and I highly suggest giving it a look!
@@ -704,8 +704,6 @@ First this function gets the axes for the trackpad and the joystick and assigns 
 
 Then ``trackpad_vector`` and ``joystick_vector`` have their deadzones account for. The code for this is detailed in the article below, with slight changes as the code is converted from
 C# to GDScript.
-
-.. note:: You can find a great article explaining all about how to handle touchpad/joystick dead zones here: http://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html
 
 Once the ``trackpad_vector`` and ``joystick_vector`` variables have had their deadzones account for, the code then gets the forward and right direction vectors relative to the
 global transform of the :ref:`ARVRCamera <class_ARVRCamera>`. What this does is that it gives us vectors that point forward and right relative to the rotation of the user camera,
