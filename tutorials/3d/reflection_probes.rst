@@ -107,4 +107,6 @@ In the current renderer implementation, all probes are the same size and
 are fit into a Reflection Atlas. The size and amount of probes can be
 customized in Project Settings -> Quality -> Reflections
 
+The default setting of Atlas Subdiv: 8 will allow up to 16 reflection probes in a scene. This value needs to be increased if you need more reflection probes.
+
 .. image:: img/refprobe_atlas.png
