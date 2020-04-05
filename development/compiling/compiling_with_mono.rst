@@ -69,7 +69,7 @@ without having to repeat this process.
 module enabled. Its exact name will differ based on your system and
 configuration, but should be of the form
 ``bin/godot.<platform>.tools.<bits>.mono``, e.g. ``bin/godot.linuxbsd.tools.64.mono``
-or ``bin/godot.windows.tools.64.exe``. Be especially aware of the **.mono**
+or ``bin/godot.windows.tools.64.mono.exe``. Be especially aware of the **.mono**
 suffix! If you've previously compiled Godot without Mono support, you might have
 similarly named binaries without this suffix. These binaries can't be used to
 generate the Mono glue.
