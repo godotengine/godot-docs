@@ -100,6 +100,34 @@ body will remain attached to the surface. Note that this means you must disable
 snapping when jumping, for example. You can do this either by setting ``snap``
 to ``Vector2(0, 0)`` or by using ``move_and_slide()`` instead.
 
+
+Detecting collisions
+--------------------
+
+When using ``move_and_collide()`` the function returns a ``KinematicCollision2D``
+directly, and you can use this in your code.
+
+When using ``move_and_slide()`` it's possible to have multiple collisions occur,
+as the slide response is calculated. To process these collisions, use ``get_slide_count()``
+and ``get_slide_collision()``:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # Using move_and_collide.
+    var collision = move_and_collide(velocity * delta)
+    if collision:
+        print("I collided with ", collision.collider.name)
+
+    # Using move_and_slide.
+    velocity = move_and_slide(velocity)
+    for i in get_slide_count():
+        var collision = get_slide_collision(i)
+        print("I collided with ", collision.collider.name)
+
+See :ref:`KinematicCollision2D <class_KinematicCollision2D>` for details on what
+collision data is returned.
+
 Which movement method to use?
 -----------------------------
 
