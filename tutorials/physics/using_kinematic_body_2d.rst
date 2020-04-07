@@ -114,12 +114,12 @@ and ``get_slide_collision()``:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # using move_and_collide
+    # Using move_and_collide.
     var collision = move_and_collide(velocity * delta)
     if collision:
         print("I collided with ", collision.collider.name)
 
-    # using move_and_slide
+    # Using move_and_slide.
     velocity = move_and_slide(velocity)
     for i in get_slide_count():
         var collision = get_slide_collision(i)
