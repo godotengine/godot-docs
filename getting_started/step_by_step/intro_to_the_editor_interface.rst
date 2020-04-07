@@ -139,8 +139,24 @@ to access it, and :kbd:`F4` to search the reference.
 
 .. image:: img/editor_ui_intro_editor_06_script_workspace_expanded.png
 
-Finally the **AssetLib** is a library of Free add-ons, scripts and
-assets to use in your projects.
+To search for information about a class, method, property, constant, or signal
+in the engine while you are writing a script, press the "Search Help" button at
+the top right of the Script workspace.
+
+.. image:: img/editor_ui_intro_script_search_documentation.png
+
+A new window will pop up. Search for the item that you want to find information
+about.
+
+.. image:: img/editor_ui_intro_script_search_help_window.png
+
+Click on the item you are looking for and press open. The documentation for the
+item will be displayed in the script workspace.
+
+.. image:: img/editor_ui_intro_script_class_documentation.png
+
+Finally the **AssetLib** is a library of free and open source add-ons, scripts
+and assets to use in your projects.
 
 Modify the interface
 --------------------
