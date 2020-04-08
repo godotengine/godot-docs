@@ -70,7 +70,7 @@ access.
 
     // Tool script added for the sake of the "const [Export]" example.
     [Tool]
-    public MyType : extends Object
+    public MyType
     {
         // Property initializations load during Script instancing, i.e. .new().
         // No "preload" loads during scene load exists in C#.
@@ -472,7 +472,7 @@ accesses:
   .. code-tab:: csharp
 
     // Child.cs
-    public class Child extends Node
+    public class Child : Node
     {
         public FuncRef FN = null;
 
@@ -484,7 +484,7 @@ accesses:
     }
 
     // Parent.cs
-    public class Parent extends Node
+    public class Parent : Node
     {
         public Node Child;
 
