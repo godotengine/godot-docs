@@ -12,4 +12,5 @@ Shading
    intro_to_shaders_water_workshop
    screen-reading_shaders
    migrating_to_godot_shader_language
+   godot_shader_language_style_guide
    advanced_postprocessing
