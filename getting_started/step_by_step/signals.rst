@@ -1,3 +1,6 @@
+.. meta::
+    :keywords: Signal
+
 .. _doc_signals:
 
 Signals
@@ -208,7 +211,7 @@ To emit a signal via code, use the ``emit_signal`` function:
             EmitSignal(nameof(MySignal));
         }
     }
-    
+
 A signal can also optionally declare one or more arguments. Specify the
 argument names between parentheses:
 
