@@ -64,7 +64,7 @@ Here is a complete class example based on these guidelines:
             return
 
         var target_state = get_node(target_state_path)
-        assert target_state.is_composite == false
+        assert(target_state.is_composite == false)
 
         _state.exit()
         self._state = target_state
@@ -635,7 +635,7 @@ in that order.
             return
 
         var target_state = get_node(target_state_path)
-        assert target_state.is_composite == false
+        assert(target_state.is_composite == false)
 
         _state.exit()
         self._state = target_state
