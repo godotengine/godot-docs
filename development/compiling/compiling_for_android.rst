@@ -38,6 +38,8 @@ For compiling under Windows, Linux or macOS, the following is required:
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
 
+.. _doc_android_setting_up_the_buildsystem:
+
 Setting up the buildsystem
 --------------------------
 
@@ -196,6 +198,15 @@ referenced.
 
 Troubleshooting
 ---------------
+
+Platform doesn't appear in SCons
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Double-check that you've set both the ``ANDROID_HOME`` and ``ANDROID_NDK_ROOT``
+environment variables. This is required for the platform to appear in SCons'
+list of detected platforms.
+See :ref:`Setting up the buildsystem <doc_android_setting_up_the_buildsystem>`
+for more information.
 
 Application not installed
 ~~~~~~~~~~~~~~~~~~~~~~~~~
