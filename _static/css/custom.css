@@ -593,6 +593,13 @@ kbd, .kbd {
     opacity: var(--logo-opacity);
 }
 
+.wy-side-nav-search > a img.logo {
+    /* Fixed size to prevent reflows and support hiDPI displays */
+    /* A 5 pixel margin is added on each side. The logo itself displays at 200×200 at 100% scaling. */
+    width: 210px;
+    height: 210px;
+}
+
 .wy-side-nav-search {
     background-color: var(--navbar-background-color);
 }
