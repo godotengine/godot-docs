@@ -79,8 +79,9 @@ Click "Connect" and you'll see that the function has been created in the script:
 
     extends Node2D
 
+
     func _on_Timer_timeout():
-        pass # replace with function body
+        pass # Replace with function body.
 
  .. code-tab:: csharp
 
@@ -99,6 +100,7 @@ the signal is received. Let's make the Sprite blink:
  .. code-tab:: gdscript GDScript
 
     extends Node2D
+
 
     func _on_Timer_timeout():
         # Note: the `$` operator is a shorthand for `get_node()`,
@@ -141,8 +143,10 @@ Here is the code for our Timer connection:
 
     extends Node2D
 
+
     func _ready():
         $Timer.connect("timeout", self, "_on_Timer_timeout")
+
 
     func _on_Timer_timeout():
         $Sprite.visible = !$Sprite.visible
@@ -174,6 +178,7 @@ You can also declare your own custom signals in Godot:
 
     extends Node2D
 
+
     signal my_signal
 
  .. code-tab:: csharp
@@ -194,7 +199,9 @@ To emit a signal via code, use the ``emit_signal`` function:
 
     extends Node2D
 
+
     signal my_signal
+
 
     func _ready():
         emit_signal("my_signal")
@@ -220,6 +227,7 @@ argument names between parentheses:
 
     extends Node
 
+
     signal my_signal(value, other_value)
 
  .. code-tab:: csharp
@@ -244,7 +252,9 @@ To pass values, add them as the second argument to the ``emit_signal`` function:
 
     extends Node
 
+
     signal my_signal(value, other_value)
+
 
     func _ready():
         emit_signal("my_signal", true, 42)
