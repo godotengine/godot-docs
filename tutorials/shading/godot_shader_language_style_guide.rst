@@ -269,8 +269,6 @@ distinguishing numbers greater than 1 from those lower than 1.
         ALBEDO.rgb = vec3(5., .1, .2);
     }
 
-.. _naming_conventions:
-
 Accessing vector members
 ------------------------
 
@@ -283,7 +281,7 @@ understand what the underlying data represents.
 
 .. code-block:: glsl
 
-    COLOR.rgb = vec3(5., .1, .2);
+    COLOR.rgb = vec3(5.0, 0.1, 0.2);
 
 **Bad**:
 
