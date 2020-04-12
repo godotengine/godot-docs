@@ -201,9 +201,9 @@ Godot will ensure the type works and if so, the line number will turn
 green at the left of the script editor.
 
 .. figure:: ./img/typed_gdscript_safe_unsafe_line.png
-   :alt: Safe vs Unsafe Line
+   :alt: Unsafe vs Safe Line
 
-   Safe vs Unsafe Line
+   Unsafe line (line 7) vs Safe Lines (line 6 and 8)
 
 .. note::
 
