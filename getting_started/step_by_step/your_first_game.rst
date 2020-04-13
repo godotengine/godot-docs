@@ -1225,9 +1225,9 @@ is using the "Shortcut" property of the ``Button`` node.
 
 In the ``HUD`` scene, select the ``StartButton`` and find its *Shortcut* property
 in the Inspector. Select "New Shortcut" and click on the "Shortcut" item. A
-second *Shortcut* property will appear. Select "New InputEventAction" and click
-the new "InputEvent". Finally, in the *Action* property, type the name ``ui_select``.
-This is the default input event associated with the spacebar.
+second *Shortcut* property will appear. Select "New InputEventAction". Finally,
+in the *Action* property, type the name ``ui_select``. This is the default input
+event associated with the spacebar.
 
 .. image:: img/start_button_shortcut.png
 
