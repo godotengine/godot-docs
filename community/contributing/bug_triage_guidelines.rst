@@ -123,7 +123,7 @@ be filed under the corresponding milestone; if they don't correspond to
 any current roadmap, they should be left without milestone. As a rule of
 thumb, an issue corresponds to a given milestone if it concerns a feature
 that is new in the milestone, or a critical bug that can't be accepted in any
-future stable release, or anything that Juan wants to work on right now
+future stable release, or anything that Juan wants to work on right now.
 :)
 
 Contributors are free to pick issues regardless of their assigned milestone;

@@ -93,19 +93,19 @@ instead of a commit hash.
 is done, in the terminal window, use ``cd`` to reach the Godot repository
 folder and enter the following command:
 
-.. code-block::
+.. code-block:: shell
 
     # <good> is the commit hash of the build that works as expected.
     # <bad> is the commit hash of the build exhibiting the bug.
-    git bisect start <good> <bad>
+    $ git bisect start <good> <bad>
 
 Compile Godot. This assumes you've set up a build environment:
 
-.. code-block::
+.. code-block:: shell
 
     # <platform> is the platform you're targeting for regression testing,
     # like "windows", "x11" or "osx".
-    scons platform=<platform> -j4
+    $ scons platform=<platform> -j4
 
 Since building Godot takes a while, you want to dedicate as many CPU threads as
 possible to the task. This is what the ``-j`` parameter does. Here, the command
@@ -115,15 +115,15 @@ Run the binary located in the ``bin/`` folder and try to reproduce the bug.
 
 If the build **still** exhibits the bug, run the following command:
 
-.. code-block::
+.. code-block:: shell
 
-    git bisect bad
+    $ git bisect bad
 
 If the build **does not** exhibit the bug, run the following command:
 
-.. code-block::
+.. code-block:: shell
 
-    git bisect good
+    $ git bisect good
 
 After entering one of the commands above, Git will switch to a different commit.
 You should now build Godot again, try to reproduce the bug, then enter ``git
