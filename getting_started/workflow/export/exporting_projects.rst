@@ -140,7 +140,7 @@ with the ``--export`` and ``--export-debug`` command line parameters.
 Exporting from the command line still requires an export preset to define
 the export parameters. A basic invocation of the command would be:
 
-::
+.. code-block:: shell
 
     godot --export "Windows Desktop" some_name
 
@@ -156,6 +156,6 @@ This takes place if the target name ends with ``.pck`` or ``.zip``.
 It is often useful to combine the ``--export`` flag with the ``--path``
 flag, and to create a dedicated export preset for automated export:
 
-::
+.. code-block:: shell
 
     godot --path path/to/project --export "pck" game_name.pck

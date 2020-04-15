@@ -89,7 +89,7 @@ Language can be tested when running Godot from the command line.
 For example, to test a game in French, the following argument can be
 supplied:
 
-::
+.. code-block:: shell
 
    godot --language fr
 

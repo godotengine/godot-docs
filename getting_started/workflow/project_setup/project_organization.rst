@@ -28,7 +28,7 @@ As an example, one can usually place into a single folder their basic assets,
 such as sprite images, 3D model meshes, materials, and music, etc.
 They can then use a separate folder to store built levels that use them.
 
-::
+.. code-block:: none
 
     /project.godot
     /docs/.gdignore  # See "Ignoring specific folders" below

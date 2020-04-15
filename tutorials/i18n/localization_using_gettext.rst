@@ -93,7 +93,7 @@ create and update the POT file from your scene files and scripts.
 
 After installing ``babel`` and ``babel-godot``, for example using pip:
 
-::
+.. code-block:: shell
 
     pip install babel babel-godot
 
@@ -101,7 +101,7 @@ Write a mapping file (for example ``babelrc``) which will indicate which files
 pybabel needs to process (note that we process GDScript as Python, which is
 generally sufficient):
 
-::
+.. code-block:: none
 
     [python: **.gd]
     encoding = utf-8
@@ -111,7 +111,7 @@ generally sufficient):
 
 You can then run pybabel like so:
 
-::
+.. code-block:: shell
 
     pybabel extract -F babelrc -k text -k LineEdit/placeholder_text -k tr -o godot-l10n.pot .
 
@@ -127,7 +127,7 @@ The ``msginit`` command is used to turn a PO template into a messages file.
 For instance, to create a French localization file, use the following command
 while in the ``locale`` directory:
 
-::
+.. code-block:: shell
 
     msginit --no-translator --input=messages.pot --locale=fr
 
@@ -157,7 +157,7 @@ that they contain new strings, while removing strings that are no longer
 present in the PO template removed in the PO template. This can be done
 automatically using the ``msgmerge`` tool:
 
-::
+.. code-block:: shell
 
     # The order matters: specify the message file *then* the PO template!
     msgmerge --update --backup=none fr.po messages.pot
@@ -171,7 +171,7 @@ Checking the validity of a PO file or template
 It is possible to check whether a gettext file's syntax is valid by running
 the command below:
 
-::
+.. code-block:: shell
 
     msgfmt fr.po --check
 

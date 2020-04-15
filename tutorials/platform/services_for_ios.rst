@@ -25,7 +25,7 @@ locally (no internet connection, API incorrectly configured, etc). If
 the error value is 'OK', a response event will be produced and added to
 the 'pending events' queue. Example:
 
-.. code-block:: python
+::
 
     func on_purchase_pressed():
         var result = InAppStore.purchase( { "product_id": "my_product" } )
@@ -428,7 +428,7 @@ you need inside a conditional block, you need to also define them as
 valid identifiers (local variable or class member). This is an example
 of how to work around this in a class:
 
-.. code-block:: python
+::
 
     var GameCenter = null # define it as a class member
 

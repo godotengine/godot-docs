@@ -10,7 +10,7 @@ which has a tutorial available :ref:`here <doc_http_request_class>`.
 Here's an example of using the :ref:`HTTPClient <class_HTTPClient>`
 class. It's just a script, so it can be run by executing:
 
-::
+.. code-block:: console
 
     c:\godot> godot -s http_test.gd
 
