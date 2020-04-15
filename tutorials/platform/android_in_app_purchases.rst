@@ -3,8 +3,6 @@
 Android in-app purchases
 ========================
 
-.. highlight:: shell
-
 Godot engine has integrated GooglePaymentsV3 module with which we can implement in-app purchases in our game.
 
 The Godot engine demo project repository has an android-iap example project. It includes a gdscript interface for android IAP.
@@ -13,7 +11,7 @@ Check the repository here https://github.com/godotengine/godot-demo-projects
 
 Find the iap.gd script in
 
-::
+.. code-block:: none
 
     godot-demo-projects/misc/android_iap
 

@@ -334,7 +334,7 @@ tool that Godot uses to communicate with your device.
 Next, create a debug keystore by running the following command on your
 system's command line:
 
-::
+.. code-block:: shell
 
     keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999
 
@@ -351,7 +351,7 @@ for Android (see above). Select the Android Presets and under *Options* go to
 Click the "Export Project" button and Godot will build an APK you can download
 on your device. To do this on the command line, use the following:
 
-::
+.. code-block:: shell
 
     adb install dodge.apk
 

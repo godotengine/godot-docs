@@ -27,7 +27,7 @@ Git, Mercurial, Perforce, etc.
 
 Example of file system contents:
 
-::
+.. code-block:: none
 
     /project.godot
     /enemy/enemy.tscn

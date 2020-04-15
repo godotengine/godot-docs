@@ -45,6 +45,7 @@
     --search-credits-link-color: #4392c5; /* derived from --link-color */
 
     --highlight-background-color: #f5ffe1;
+    --highlight-default-color: #404040;
     --highlight-comment-color: #408090;
     --highlight-keyword-color: #007020;
     --highlight-keyword2-color: #902000;
@@ -126,6 +127,7 @@
 
         /* Colors taken from the Godot script editor with the Adaptive theme */
         --highlight-background-color: #202531;
+        --highlight-default-color: rgba(255, 255, 255, 0.85);
         --highlight-comment-color: rgba(204, 206, 211, 0.5);
         --highlight-keyword-color: #ff7085;
         --highlight-keyword2-color: #42ffc2;
@@ -495,58 +497,95 @@ code,
     background-color: var(--highlight-background-color);
 }
 
-.highlight .c1,
-.highlight .cm {
+.highlight .gh /* Generic.Heading */,
+.highlight .gu /* Generic.Subheading */,
+.highlight .go /* Generic.Output */,
+.highlight .gt /* Generic.Traceback */ {
+    color: var(--highlight-default-color);
+}
+
+.highlight .c  /* Comment */,
+.highlight .c1 /* Comment.Single */,
+.highlight .cm /* Comment.Multiline */,
+.highlight .cs /* Comment.Special */ {
     color: var(--highlight-comment-color);
 }
 
-.highlight .bp,
-.highlight .k,
-.highlight .kd,
-.highlight .kn,
-.highlight .kt,
-.highlight .ow {
+.highlight .bp /* Name.Builtin.Pseudo */,
+.highlight .k  /* Keyword */,
+.highlight .kc /* Keyword.Constant */,
+.highlight .kd /* Keyword.Declaration */,
+.highlight .kn /* Keyword.Namespace */,
+.highlight .kp /* Keyword.Pseudo */,
+.highlight .kr /* Keyword.Reserved */,
+.highlight .kt /* Keyword.Type */,
+.highlight .ow /* Operator.Word */ {
     color: var(--highlight-keyword-color);
 }
 
-.highlight .cp {
+.highlight .ch /* Comment.Hashbang */,
+.highlight .cp /* Comment.Preproc */ {
     color: var(--highlight-keyword2-color);
 }
 
-.highlight .m,
-.highlight .mf,
-.highlight .mi {
+.highlight .m  /* Literal.Number */,
+.highlight .mf /* Literal.Number.Float */,
+.highlight .mi /* Literal.Number.Integer */,
+.highlight .il /* Literal.Number.Integer.Long */,
+.highlight .mb /* Literal.Number.Bin */,
+.highlight .mh /* Literal.Number.Hex */,
+.highlight .mo /* Literal.Number.Oct */ {
     color: var(--highlight-number-color);
 }
 
-.highlight .na {
+.highlight .na /* Name.Attribute */,
+.highlight .nd /* Name.Decorator */,
+.highlight .ni /* Name.Entity */,
+.highlight .nl /* Name.Label */ {
     color: var(--highlight-decorator-color);
 }
 
-.highlight .nb {
+.highlight .nb /* Name.Builtin */,
+.highlight .ne /* Name.Exception */ {
     color: var(--highlight-type-color);
 }
 
-.highlight .nc,
-.highlight .nn,
-.highlight .nv {
+.highlight .nc /* Name.Class */,
+.highlight .nn /* Name.Namespace */,
+.highlight .no /* Name.Constant */,
+.highlight .nv /* Name.Variable */,
+.highlight .vc /* Name.Variable.Class */,
+.highlight .vg /* Name.Variable.Global */,
+.highlight .vi /* Name.Variable.Instance */,
+.highlight .vm /* Name.Variable.Magic */ {
     color: var(--highlight-type2-color);
 }
 
-.highlight .nf,
-.highlight .nt {
+.highlight .nf /* Name.Function */,
+.highlight .fm /* Name.Function.Magic */,
+.highlight .nt /* Name.Tag */ {
     color: var(--highlight-function-color);
 }
 
-.highlight .o {
+.highlight .o  /* Operator */,
+.highlight .si /* Literal.String.Interpol */,
+.highlight .sx /* Literal.String.Other */,
+.highlight .sr /* Literal.String.Regex */,
+.highlight .ss /* Literal.String.Symbol */ {
     color: var(--highlight-operator-color);
 }
 
-.highlight .cpf,
-.highlight .s,
-.highlight .s1,
-.highlight .s2,
-.highlight .se {
+.highlight .cpf/* Comment.PreprocFile */,
+.highlight .s  /* Literal.String */,
+.highlight .s1 /* Literal.String.Single */,
+.highlight .s2 /* Literal.String.Double */,
+.highlight .sc /* Literal.String.Char */,
+.highlight .se /* Literal.String.Escape */,
+.highlight .sa /* Literal.String.Affix */,
+.highlight .sb /* Literal.String.Backtick */,
+.highlight .dl /* Literal.String.Delimiter */,
+.highlight .sd /* Literal.String.Doc */,
+.highlight .sh /* Literal.String.Heredoc */ {
     color: var(--highlight-string-color);
 }
 

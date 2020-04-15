@@ -56,7 +56,7 @@ shader resource to it. You can access your rendered ``Viewport`` with the built-
     need to create your own uniform in the shader and pass the ``Viewport`` texture in
     manually, like so:
 
-    ::
+    .. code-block:: glsl
 
       // Inside the Shader
       uniform sampler2D ViewportTexture;
@@ -72,7 +72,7 @@ shader resource to it. You can access your rendered ``Viewport`` with the built-
 Copy the following code to your shader. The above code is a single pass edge detection filter, a
 `Sobel filter <https://en.wikipedia.org/wiki/Sobel_operator>`_.
 
-::
+.. code-block:: glsl
 
   shader_type canvas_item;
 
@@ -129,7 +129,7 @@ As an example, you could write a full screen Gaussian blur effect by attaching t
 to each of the :ref:`ViewportContainers <class_ViewportContainer>`. The order in which you apply the shaders
 does not matter:
 
-::
+.. code-block:: glsl
 
   shader_type canvas_item;
 
@@ -147,7 +147,7 @@ does not matter:
       COLOR.xyz = col;
   }
 
-::
+.. code-block:: glsl
 
   shader_type canvas_item;
 
