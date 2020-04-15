@@ -32,11 +32,11 @@ In summary, you can use the low-level networking API for maximum control and imp
           well as raw access to low-level protocols like TCP and UDP.
 
 .. note:: More about TCP/IP, UDP, and networking:
-          https://web.archive.org/web/20190406162102/https://gafferongames.com/post/udp_vs_tcp/
+          https://gafferongames.com/post/udp_vs_tcp/
 
           Gaffer On Games has a lot of useful articles about networking in Games
-          (`here <https://web.archive.org/web/20190405204744/https://gafferongames.com/tags/networking/>`__), including the comprehensive
-          `introduction to networking models in games <http://web.archive.org/web/20190407004521/https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/>`__.
+          (`here <https://gafferongames.com/categories/game-networking/>`__), including the comprehensive
+          `introduction to networking models in games <https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/>`__.
 
           If you want to use your low-level networking library of choice instead of Godot's built-in networking,
           see here for an example:
