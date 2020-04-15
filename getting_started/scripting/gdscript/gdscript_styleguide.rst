@@ -595,6 +595,19 @@ variables, in that order.
    child nodes in the scene that your class relies on. This is what the example
    above shows.
 
+Member variables
+~~~~~~~~~~~~~~~~
+
+Don't declare member variables if they are only used locally in a method, as it
+makes the code more difficult to follow. Instead, declare them as local
+variables in the method's body.
+
+Local variables
+~~~~~~~~~~~~~~~
+
+Declare local variables as close as possible to their first use. This makes it
+easier to follow the code, without having to scroll too much to find where the
+variable was declared.
 
 Methods and static functions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
