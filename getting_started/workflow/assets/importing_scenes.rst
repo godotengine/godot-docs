@@ -318,8 +318,13 @@ In general, this should always be turned on unless you suspect that an animation
 Clips
 ~~~~~
 
-It is possible to specify multiple animations from a single timeline as clips. Specify from which frame to which frame each
-clip must be taken (and, of course, don't forget to specify the FPS option above).
+It is possible to specify multiple animations from a single timeline as clips. For this to work, the model
+must have only one animation that is named ``default``. To create clips, change the clip amount to something
+greater than zero. You can then name a clip, specify which frames it starts and stops on, and choose whether
+the animation loops or not.
+
+.. If this PR (https://github.com/godotengine/godot/pull/36709) is merged for Godot 4.0 this section must
+be updated to reflect that for the 4.0 documentation.
 
 Scene inheritance
 -----------------
