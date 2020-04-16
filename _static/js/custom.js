@@ -89,8 +89,10 @@ const registerOnScrollEvent = (function(){
 
         // Near the bottom we start moving the sidebar banner into view.
         if (menuScrollBottom < ethicalOffsetBottom) {
+          $ethical.css('display', 'block');
           $ethical.css('margin-top', `-${ethicalOffsetBottom - menuScrollBottom}px`);
         } else {
+          $ethical.css('display', 'none');
           $ethical.css('margin-top', '0px');
         }
       };
@@ -131,29 +133,72 @@ const registerOnScrollEvent = (function(){
       $menu.css('max-height', 'initial');
       $menuPadding.css('height', `0px`);
       $ethical.css('margin-top', '0px');
+      $ethical.css('display', 'block');
     }
-  }
+  };
+})();
+
+// Subscribe to DOM changes in the sidebar container, because there is a 
+// banner that gets added at a later point, that we might not catch otherwise.
+const registerSidebarObserver = (function(){
+  return function(callback) {
+    const sidebarContainer = document.querySelector('.wy-side-scroll');
+    
+    let sidebarEthical = null;
+    const registerEthicalObserver = () => {
+      if (sidebarEthical) {
+        // Do it only once.
+        return;
+      }
+
+      sidebarEthical = sidebarContainer.querySelector('.ethical-rtd');
+      if (!sidebarEthical) {
+        // Do it only after we have the element there.
+        return;
+      }
+
+      // This observer watches over the ethical block in sidebar, and all of its subtree.
+      const ethicalObserverConfig = { childList: true, subtree: true };
+      const ethicalObserverCallback = (mutationsList, observer) => {
+        for (let mutation of mutationsList) {
+          if (mutation.type !== 'childList') {
+            continue;
+          }
+    
+          callback();
+        }
+      };
+    
+      const ethicalObserver = new MutationObserver(ethicalObserverCallback);
+      ethicalObserver.observe(sidebarEthical, ethicalObserverConfig);
+    };
+    registerEthicalObserver();
+  
+    // This observer watches over direct children of the main sidebar container.
+    const observerConfig = { childList: true };
+    const observerCallback = (mutationsList, observer) => {
+      for (let mutation of mutationsList) {
+        if (mutation.type !== 'childList') {
+          continue;
+        }
+  
+        callback();
+        registerEthicalObserver();
+      }
+    };
+  
+    const observer = new MutationObserver(observerCallback);
+    observer.observe(sidebarContainer, observerConfig);
+  };
 })();
 
 $(document).ready(() => {
-  const sidebarContainer = document.querySelector('.wy-side-scroll');
   const mediaQuery = window.matchMedia('only screen and (min-width: 769px)');
   
-  // Subscribe to DOM changes in the sidebar container, because there is a 
-  // banner that gets added at a later point, that we might not catch otherwise.
-  const observerConfig = { childList: true };
-  const observerCallback = (mutationsList, observer) => {
-    for (let mutation of mutationsList) {
-      if (mutation.type !== 'childList') {
-        continue;
-      }
-
-      registerOnScrollEvent(mediaQuery);
-    }
-  };
-  const observer = new MutationObserver(observerCallback);
-  observer.observe(sidebarContainer, observerConfig);
-
   registerOnScrollEvent(mediaQuery);
   mediaQuery.addListener(registerOnScrollEvent);
+
+  registerSidebarObserver(() => {
+    registerOnScrollEvent(mediaQuery);
+  });
 });
