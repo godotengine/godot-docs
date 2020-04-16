@@ -31,16 +31,25 @@ const registerOnScrollEvent = (function(){
     // to their initial state.
 
     const $window = $(window);
-    const $menu = $('.wy-menu-vertical');
-    const $search = $('.wy-side-nav-search');
-    const $ethical = $('.ethical-rtd');
+    const $sidebar = $('.wy-side-scroll');
+    const $search = $sidebar.children('.wy-side-nav-search');
+    const $menu = $sidebar.children('.wy-menu-vertical');
+    const $ethical = $sidebar.children('.ethical-rtd');
+
+    // This padding is needed to correctly adjust the height of the scrollable area in the sidebar.
+    // It has to have the same height as the ethical block, if there is one.
+    let $menuPadding = $menu.children('.wy-menu-ethical-padding');
+    if ($menuPadding.length == 0) {
+      $menuPadding = $('<div class="wy-menu-ethical-padding"></div>');
+      $menu.append($menuPadding);
+    }
 
     if (mediaQuery.matches) {
       // Entering the "desktop" state.
 
-      // The scroll event handler.
+      // The main scroll event handler.
       // Executed as the page is scrolled and once immediatelly as the page enters this state.
-      const handleScroll = (currentScroll) => {
+      const handleMainScroll = (currentScroll) => {
         if (currentScroll >= scrollTopPixels) {
           // After the page is scrolled below the threshold, we fix everything in place.
           $search.css('margin-top', `-${scrollTopPixels}px`);
@@ -63,24 +72,13 @@ const registerOnScrollEvent = (function(){
         }
       };
 
-      $search.addClass('fixed');
-      $ethical.addClass('fixed');
-
-      // Adjust the inner height of navigation so that the banner can be overlaid there later.
-      const ethicalOffsetBottom = $ethical.height() || 0;
-      if (ethicalOffsetBottom) {
-        $menu.css('padding-bottom', `${ethicalOffsetBottom}px`);
-      } else {
-        $menu.css('padding-bottom', `0px`);
-      }
-
-      $window.scroll(function() {
-        handleScroll(window.scrollY);
-      });
-
-      $menu.scroll(function() {
-        const menuScrollTop = $(this).scrollTop();
-        const menuScrollBottom = this.scrollHeight - (menuScrollTop + this.offsetHeight);
+      // The sidebar scroll event handler.
+      // Executed as the sidebar is scrolled as well as after the main scroll. This is needed
+      // because the main scroll can affect the scrollable area of the sidebar.
+      const handleSidebarScroll = () => {
+        const menuElement = $menu.get(0);
+        const menuScrollTop = $menu.scrollTop();
+        const menuScrollBottom = menuElement.scrollHeight - (menuScrollTop + menuElement.offsetHeight);
 
         // As the navigation is scrolled we add a shadow to the top bar hanging over it.
         if (menuScrollTop > 0) {
@@ -95,9 +93,30 @@ const registerOnScrollEvent = (function(){
         } else {
           $ethical.css('margin-top', '0px');
         }
+      };
+
+      $search.addClass('fixed');
+      $ethical.addClass('fixed');
+
+      // Adjust the inner height of navigation so that the banner can be overlaid there later.
+      const ethicalOffsetBottom = $ethical.height() || 0;
+      if (ethicalOffsetBottom) {
+        $menuPadding.css('height', `${ethicalOffsetBottom}px`);
+      } else {
+        $menuPadding.css('height', `0px`);
+      }
+
+      $window.scroll(function() {
+        handleMainScroll(window.scrollY);
+        handleSidebarScroll();
+      });
+
+      $menu.scroll(function() {
+        handleSidebarScroll();
       })
 
-      handleScroll(window.scrollY);
+      handleMainScroll(window.scrollY);
+      handleSidebarScroll();
     } else {
       // Entering the "mobile" state.
 
@@ -109,15 +128,32 @@ const registerOnScrollEvent = (function(){
 
       $search.css('margin-top', `0px`);
       $menu.css('margin-top', `0px`);
-      $menu.css('padding-bottom', `0px`);
       $menu.css('max-height', 'initial');
+      $menuPadding.css('height', `0px`);
       $ethical.css('margin-top', '0px');
     }
   }
 })();
 
 $(document).ready(() => {
+  const sidebarContainer = document.querySelector('.wy-side-scroll');
   const mediaQuery = window.matchMedia('only screen and (min-width: 769px)');
+  
+  // Subscribe to DOM changes in the sidebar container, because there is a 
+  // banner that gets added at a later point, that we might not catch otherwise.
+  const observerConfig = { childList: true };
+  const observerCallback = (mutationsList, observer) => {
+    for (let mutation of mutationsList) {
+      if (mutation.type !== 'childList') {
+        continue;
+      }
+
+      registerOnScrollEvent(mediaQuery);
+    }
+  };
+  const observer = new MutationObserver(observerCallback);
+  observer.observe(sidebarContainer, observerConfig);
+
   registerOnScrollEvent(mediaQuery);
   mediaQuery.addListener(registerOnScrollEvent);
 });
