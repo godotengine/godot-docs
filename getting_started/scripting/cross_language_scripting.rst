@@ -5,7 +5,7 @@ Cross-language scripting
 
 Godot allows you to mix and match scripting languages to suit your needs.
 This means a single project can define nodes in both C# and GDScript.
-This page will go through the possible interactions between two nodes writen
+This page will go through the possible interactions between two nodes written
 in different languages.
 
 The following two scripts will be used as references throughout this page.
@@ -104,7 +104,7 @@ be instantiated with :ref:`GDScript.New() <class_GDScript_method_new>`.
     GDScript MyGDScript = (GDScript) GD.Load("res://path_to_gd_file.gd");
     Object myGDScriptNode = (Godot.Object) MyGDScript.New(); // This is a Godot.Object
 
-Here we are using an :ref:`class_Object` but you can use type convertion like
+Here we are using an :ref:`class_Object` but you can use type conversion like
 explained in :ref:`doc_c_sharp_features_type_conversion_and_casting`.
 
 Accessing fields

@@ -294,7 +294,7 @@ Global constants are useful when you want to have access to a value throughout y
 Structs
 -------
 
-Structs are compound types which can be used for better abstaction of shader code. You can declare them at the global scope like:
+Structs are compound types which can be used for better abstraction of shader code. You can declare them at the global scope like:
 
 .. code-block:: glsl
 

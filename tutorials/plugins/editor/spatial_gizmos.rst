@@ -178,7 +178,7 @@ for the Spatial nodes we want to target.
         else:
             return null
 
-This way all the gizmo logic and drawing methods can be implemented in a new clas extending
+This way all the gizmo logic and drawing methods can be implemented in a new class extending
 :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>`, like so:
 
 ::

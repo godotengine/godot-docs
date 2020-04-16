@@ -83,11 +83,11 @@ Example:
         var x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
         var y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 
-        # the ouputs array is used to set the data of the output ports
+        # the outputs array is used to set the data of the output ports
 
         outputs[0] = Vector2(x,y)
 
-        # return the error string if an error occured, else the id of the next sequence port
+        # return the error string if an error occurred, else the id of the next sequence port
         return 0
 
 Using a custom node

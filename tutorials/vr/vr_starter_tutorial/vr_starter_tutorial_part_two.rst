@@ -794,7 +794,7 @@ is not on any collision layers, and is instead only on a single collision mask. 
 We are going to use the ``Damage_Body`` :ref:`KinematicBody <class_KinematicBody>` node to detect the collision point and normal when the sword collides with something in the scene.
 
 .. tip:: While this is perhaps not the best way of getting the collision information from a performance point of view, it does give us a lot of information we can use for post-processing!
-         Using a :ref:`KinematicBody <class_KinematicBody>` this way means we can detect exactly where ths sword collided with other :ref:`PhysicsBody <class_PhysicsBody>` nodes.
+         Using a :ref:`KinematicBody <class_KinematicBody>` this way means we can detect exactly where the sword collided with other :ref:`PhysicsBody <class_PhysicsBody>` nodes.
 
 That is really the only thing note worthy about the sword scene. Select the ``Sword`` :ref:`RigidBody <class_RigidBody>` node and make a new script called ``Sword.gd``.
 Add the following code:
