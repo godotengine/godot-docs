@@ -163,7 +163,7 @@ linked from one to the next. As you can imagine, the more points your shape is m
 the smoother it will appear, but the heavier it will also be in terms of processing cost. In general,
 if your shape is huge (or in 3D, close to the camera), it will require more points to be drawn without
 it being angular-looking. On the contrary, if your shape is small (or in 3D, far from the camera),
-you may decrease its number of points to save processing costs; this is known as *Level of Detail (LoD)*.
+you may decrease its number of points to save processing costs; this is known as *Level of Detail (LOD)*.
 In our example, we will simply use a fixed number of points, no matter the radius.
 
 .. tabs::

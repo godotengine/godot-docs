@@ -124,12 +124,12 @@ When we do this, we get the desired result of rotating the object:
 
 .. image:: img/matrices_and_transforms/rotate1.png
 
-If you have trouble understanding the above, try this excercise:
+If you have trouble understanding the above, try this exercise:
 Cut a square of paper, draw X and Y vectors on top of it, place
 it on graph paper, then rotate it and note the endpoints.
 
 To perform rotation in code, we need to be able to calculate
-the values programatically. This image shows the formulas needed
+the values programmatically. This image shows the formulas needed
 to calculate the transformation matrix from a rotation angle.
 Don't worry if this part seems complicated, I promise it's the
 hardest thing you need to know.
