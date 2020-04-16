@@ -7,12 +7,12 @@ Introduction
 ------------
 
 In 3D, meshes are used to display the world. In 2D, they are rare as images are used more often.
-Godot's 2D engine is a pure two dimensional engine, so it can't really display 3D meshes directly (although it can be done
+Godot's 2D engine is a pure two-dimensional engine, so it can't really display 3D meshes directly (although it can be done
 via ``Viewport`` and ``ViewportTexture``).
 
 .. seealso:: If you are interested in displaying 3D meshes on a 2D viewport, see the :ref:`doc_viewport_as_texture` tutorial.
 
-2D meshes are meshes that contain two dimensional geometry (Z can be omitted or ignored) instead of 3D.
+2D meshes are meshes that contain two-dimensional geometry (Z can be omitted or ignored) instead of 3D.
 You can experiment creating them yourself using ``SurfaceTool`` from code and displaying them in a ``MeshInstance2D`` node.
 
 Currently, the only way to generate a 2D mesh within the editor is by either importing an OBJ file as a mesh, or converting it from a Sprite.

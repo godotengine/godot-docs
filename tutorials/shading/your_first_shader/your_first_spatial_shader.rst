@@ -156,7 +156,7 @@ To access a texture in a shader add the following code near the top of your shad
   uniform sampler2D noise;
 
 This will allow you to send a noise texture to the shader. Now look in the inspecter under your material.
-You should see a section called "Shader Params". If you open it up you will see a section called "noise".
+You should see a section called "Shader Params". If you open it up, you'll see a section called "noise".
 
 Click beside it where it says "[empty]" and select "New NoiseTexture". Then in your NoiseTexture click beside
 where it says "Noise" and select "New OpenSimplexNoise".
@@ -185,7 +185,7 @@ Using this code you can see the texture creates random looking hills.
 
 .. image:: img/noise.png
 
-Right now it is too spiky, we want to soften the hills a bit. To do that we will use a uniform.
+Right now it is too spiky, we want to soften the hills a bit. To do that, we will use a uniform.
 You already used a uniform above to pass in the noise texture, now let's learn how they work.
 
 Uniforms
@@ -213,7 +213,7 @@ precedence over the value used to initialize it in the shader.
   # called from the MeshInstance
   mesh.material.set_shader_param("height_scale", 0.5)
 
-.. note:: Changing uniforms from Spatial nodes is different than in CanvasItem nodes. Here, 
+.. note:: Changing uniforms in Spatial-based nodes is different from CanvasItem-based nodes. Here, 
           we set the material inside the PlaneMesh resource. In other mesh resources you may
           need to first access the material by calling ``surface_get_material()``. While in
           the MeshInstance you would access the material using ``get_surface_material()`` or

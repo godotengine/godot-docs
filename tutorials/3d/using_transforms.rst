@@ -380,7 +380,11 @@ Converting a rotation to quaternion is straightforward.
     // Apply back
     transform.basis = new Basis(c);
 
-The :ref:`class_Quat` type reference has more information on the datatype (it can also do transform accumulation, transform points, etc., though this is used less often). If you interpolate or apply operations to quaternions many times, keep in mind they need to be eventually normalized or they also may suffer from numerical precision errors.
+The :ref:`class_Quat` type reference has more information on the datatype (it
+can also do transform accumulation, transform points, etc., though this is used
+less often). If you interpolate or apply operations to quaternions many times,
+keep in mind they need to be eventually normalized. Otherwise, they will also
+suffer from numerical precision errors.
 
 Quaternions are useful when doing camera/path/etc. interpolations, as the result will always be correct and smooth.
 

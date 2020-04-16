@@ -1164,7 +1164,7 @@ Then we tell the current weapon the player is using to fire by calling its ``fir
 
 _______
 
-Before we are ready to test our new weapons, we still have a little bit of work to do.
+Before we are ready to test our new weapons, we still have a bit of work to do.
 
 Creating some test subjects
 ---------------------------

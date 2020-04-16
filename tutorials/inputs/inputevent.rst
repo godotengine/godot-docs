@@ -37,7 +37,7 @@ you can define multiple keys for the same action (e.g. they keyboard escape key 
 You can then more easily change this mapping in the project settings without updating your code,
 and even build a key mapping feature on top of it to allow your game to change the key mapping at runtime!
 
-You can setup your InputMap under **Project > Project Settings > Input Map** and then use those actions like this:
+You can set up your InputMap under **Project > Project Settings > Input Map** and then use those actions like this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

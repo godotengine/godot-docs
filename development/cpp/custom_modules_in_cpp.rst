@@ -12,10 +12,10 @@ functionality at every level without modifying the core, which can be
 split for use and reuse in different modules.
 
 Modules are located in the ``modules/`` subdirectory of the build system.
-By default, many different modules exist, such as GDScript (which, yes,
+By default, dozens of modules are enabled, such as GDScript (which, yes,
 is not part of the base engine), the Mono runtime, a regular expressions
 module, and others. As many new modules as desired can be
-created and combined, and the SCons build system will take care of it
+created and combined. The SCons build system will take care of it
 transparently.
 
 What for?
@@ -166,8 +166,8 @@ string list:
     env.add_source_files(env.modules_sources, src_list)
 
 This allows for powerful possibilities using Python to construct the file list
-using loops and logic statements. Look at some of the other modules that ship
-with Godot by default for examples.
+using loops and logic statements. Look at some modules that ship with Godot by
+default for examples.
 
 To add include directories for the compiler to look at you can append it to the
 environment's paths:
@@ -342,7 +342,7 @@ of our new module as part of the Godot binary.
 This static approach is fine when we want to build a release version of our
 game given we want all the modules in a single binary.
 
-However the trade-off is every single change means a full recompilation of the
+However, the trade-off is every single change means a full recompilation of the
 game. Even if SCons is able to detect and recompile only the file that have
 changed, finding such files and eventually linking the final binary is a
 long and costly part.
@@ -372,7 +372,7 @@ library that will be dynamically loaded when starting our game's binary.
     # next to the Godot binary.
     shared_lib = module_env.SharedLibrary(target='#bin/summator', source=sources)
 
-    # Finally notify the main env it has our shared lirary as a new dependency.
+    # Finally, notify the main env it has our shared lirary as a new dependency.
     # To do so, SCons wants the name of the lib with it custom suffixes
     # (e.g. ".linuxbsd.tools.64") but without the final ".so".
     # We pass this along with the directory of our library to the main env.
@@ -428,8 +428,8 @@ using the `ARGUMENT` command:
 Now by default ``scons`` command will build our module as part of Godot's binary
 and as a shared library when passing ``summator_shared=yes``.
 
-Finally you can even speedup build further by explicitly specifying your
-shared module as target in the scons command:
+Finally, you can even speed up the build further by explicitly specifying your
+shared module as target in the SCons command:
 
 .. code-block:: shell
 

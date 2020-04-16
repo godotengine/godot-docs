@@ -128,19 +128,20 @@ help achieve a nice watery effect.
 
 .. image:: img/rim.png
 
-In order to add fresnal reflectance we will compute a fresnel term in our fragment shader.
-We are not going to use a real fresnel term, instead we will approximate it using the dot
-product of the ``NORMAL`` and ``VIEW`` vectors. The ``NORMAL`` vector points away from a 
-surface of the, while the ``VIEW`` vector is the direction between your eye and that point
-on the surface. The dot product between them is a handy way to tell when you are looking
-at the surface head-on your at a glancing angle.
+In order to add fresnal reflectance, we will compute a fresnel term in our
+fragment shader. Here, we aren't going to use a real fresnel term for
+performance reasons. Instead, we'll approximate it using the dot product of the
+``NORMAL`` and ``VIEW`` vectors. The ``NORMAL`` vector points away from the
+mesh's surface, while the ``VIEW`` vector is the direction between your eye and
+that point on the surface. The dot product between them is a handy way to tell
+when you are looking at the surface head-on or at a glancing angle.
 
 .. code-block:: glsl
 
   float fresnel = sqrt(1.0 - dot(NORMAL, VIEW));
 
 And mix it into both ``ROUGHNESS`` and ``ALBEDO``. This is the benefit of ShaderMaterials over 
-SpatialMaterials. With SpatialMaterials we could set these properties with a texture, or to a flat
+SpatialMaterials. With SpatialMaterials, we could set these properties with a texture, or to a flat
 number. But with shaders we can set them based on any mathematical function that we can dream up.
 
 
@@ -166,7 +167,7 @@ decreasing the values of the ``vec3`` we pass into ``ALBEDO``. Let's set them to
 Animating with ``TIME``
 -----------------------
 
-Going back to the vertex function, we can animated the waves using the built-in variable ``TIME``.
+Going back to the vertex function, we can animate the waves using the built-in variable ``TIME``.
 
 ``TIME`` is a built-in variable that is accessible from the vertex and fragment functions. 
 
@@ -177,10 +178,10 @@ we will do the same. Put the heightmap code in a function called ``height()``.
 .. code-block:: glsl
 
   float height(vec2 position) {
-    return texture(noise, position / 10.0).x; //scaling factor is based on mesh size (This PlanMesh is 10x10)
+    return texture(noise, position / 10.0).x; // Scaling factor is based on mesh size (this PlaneMesh is 10×10).
   }
 
-In order to use ``TIME`` in the ``height()`` function we need to pass it in. 
+In order to use ``TIME`` in the ``height()`` function, we need to pass it in. 
 
 .. code-block:: glsl
 
@@ -246,8 +247,8 @@ At first this looks complicated. So let's go through it line-by-line.
 
     position += texture(noise, position / 10.0).x * 2.0 - 1.0;
 
-Offset the position by the ``noise`` texture. This will make the waves curve so they are not straight lines
-completely aligned with the grid.
+Offset the position by the ``noise`` texture. This will make the waves curve, so
+they won't be straight lines completely aligned with the grid.
 
 .. code-block:: glsl
 
@@ -310,8 +311,8 @@ Note that we add time to two and subtract it from the other two. This makes the 
 creating a complex effect. Also note that the amplitudes (the number the result is multiplied by) all 
 add up to ``1.0``. This keeps the wave in the 0-1 range.
 
-With this code you should end up with more complex looking waves and all you had to do was add a little bit
-of math! 
+With this code you should end up with more complex looking waves and all you had
+to do was add a bit of math! 
 
 .. image:: img/wave3.png
 

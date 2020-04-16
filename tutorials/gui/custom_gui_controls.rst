@@ -93,7 +93,7 @@ for example:
         return new Vector2(20, 20);
     }
 
-Or alternatively, set it via function:
+Alternatively, set it using a function:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

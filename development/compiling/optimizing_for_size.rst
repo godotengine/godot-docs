@@ -66,8 +66,8 @@ to play videos).
 Optimizing for size instead of speed
 ------------------------------------
 
-Godot 3.1 onwards allows to compile using size optimizations.
-To enable this, just set the ``optimize`` flag to ``size``:
+Godot 3.1 onwards allows compiling using size optimizations (instead of speed).
+To enable this, set the ``optimize`` flag to ``size``:
 
 ::
 

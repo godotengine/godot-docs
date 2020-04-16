@@ -6,7 +6,7 @@ BBCode in RichTextLabel
 Introduction
 ------------
 
-Label nodes are great for displaying basic text but they have limits. If you want
+Label nodes are great for displaying basic text, but they have limits. If you want
 to change the color of the text, or its alignment, that change affects all of the
 text in the Label node. You can't have only one part of the text be one color, or
 only one part of the text be centered. To get around this limitation you would use

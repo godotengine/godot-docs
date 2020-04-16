@@ -111,7 +111,7 @@ Very simple state machine (when you don't want to cope with a ``StateMachine`` n
 BlendSpace2D
 ^^^^^^^^^^^^
 
-``BlendSpace2D`` is a node to do advanced blending in two dimensions. Points are added to a two dimensional space and then a position
+``BlendSpace2D`` is a node to do advanced blending in two dimensions. Points are added to a two-dimensional space and then a position
 can be controlled to determine blending:
 
 .. image:: img/animtree7.gif

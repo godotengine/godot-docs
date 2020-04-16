@@ -133,7 +133,7 @@ know what you are doing).
 When working with 3D assets, it's always best to work in the correct
 scale (set your DCC to metric). Godot allows scaling post-import and,
 while this works in most cases, in rare situations it may introduce
-floating point precision issues (and thus, glitches or artifacts) in
+floating-point precision issues (and thus, glitches or artifacts) in
 delicate areas, such as rendering or physics, so make sure your artists
 always work in the right scale!
 

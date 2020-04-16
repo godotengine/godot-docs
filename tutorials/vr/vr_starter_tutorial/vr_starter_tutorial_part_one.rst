@@ -193,7 +193,7 @@ Creating the controllers
 .. image:: img/starter_vr_tutorial_hands.png
 
 Right now all that the VR user can do is stand around, which isn't really what we are going for unless we are working on a VR film. Lets write the code for the
-VR controllers. We are going to write all of the code for the VR controllers in one go, so the code is rather long. That said, once we are finished you will be
+VR controllers. We are going to write all the code for the VR controllers in one go, so the code is rather long. That said, once we are finished you will be
 able to teleport around the scene, artificially move using the touchpad/joystick on the VR controller, and be able to pick up, drop, and throw
 :ref:`RigidBody <class_RigidBody>`-based nodes.
 
@@ -244,7 +244,7 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
 
 .. tip:: You can copy and paste the code from this page directly into the script editor.
          
-         If you do this, all of the code copied will be using spaces instead of tabs.
+         If you do this, all the code copied will be using spaces instead of tabs.
 
          To convert the spaces to tabs in the script editor, click the ``Edit`` menu and select ``Convert Indent To Tabs``.
          This will convert all the spaces into tabs. You can select ``Convert Indent To Spaces`` to convert tabs back into spaces.
@@ -542,7 +542,7 @@ This is quite a bit of code to go through. Let's go through what the code does s
 Explaining the VR controller code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First, let's go through all of the class variables in the script:
+First, let's go through all the class variables in the script:
 
 * ``controller_velocity``: A variable to hold a rough approximation of the VR controller's velocity.
 * ``prior_controller_position``: A variable to hold the VR controller's last position in 3D space.
@@ -653,7 +653,7 @@ This section of code will keep the held object in the same position and rotation
 
 _________________
 
-Finally, the last section of code simply calls the ``_physics_process_directional_movement`` function. This function contains all of the code for moving the player when the
+Finally, the last section of code simply calls the ``_physics_process_directional_movement`` function. This function contains all the code for moving the player when the
 touchpad/joystick on the VR controller moves.
 
 
