@@ -21,6 +21,9 @@
     --navbar-level-2-color: #b8d6f0;
     --navbar-level-3-color: #a3c4e1;
     --navbar-heading-color: #ff7381;
+    --navbar-scrollbar-color: #d45a66;
+    --navbar-scrollbar-hover-color: #b14550;
+    --navbar-scrollbar-active-color: #72383e;
     --navbar-scrollbar-background: #131e2b;
 
     --link-color: #2980b9;
@@ -102,6 +105,9 @@
         --navbar-level-2-color: #ccc;
         --navbar-level-3-color: #bbb;
         --navbar-heading-color: #ee7381;
+        --navbar-scrollbar-color: #be5460;
+        --navbar-scrollbar-hover-color: #963e48;
+        --navbar-scrollbar-active-color: #5f3034;
         --navbar-scrollbar-background: #1c1e21;
 
         --link-color: #8cf;
@@ -845,7 +851,7 @@ kbd, .kbd {
 
 /* Banner panel in sidebar */
 .wy-nav-side .ethical-rtd.fixed {
-    position: fixed
+    position: fixed;
 }
 
 /* Version selector (only visible on Read the Docs) */
@@ -899,10 +905,15 @@ kbd, .kbd {
     padding: 0;
 }
 
-/* Allows the navbar's scrollbar to be shown */
+/* Allows the scrollbar to be shown in the sidebar */
 @media only screen and (min-width: 769px) {
     .wy-side-scroll {
         overflow: hidden;
+    }
+
+    .wy-nav-side .wy-side-scroll .ethical-rtd {
+        width: calc(300px - 1.25em);
+        padding: 0 0 0 1em;
     }
 }
 .wy-menu.wy-menu-vertical {
@@ -920,9 +931,9 @@ kbd, .kbd {
     }
 }
 
-/* Navbar's scrollbar styling */
+/* Scrollbar styling */
 .wy-menu.wy-menu-vertical {
-    scrollbar-color: var(--navbar-heading-color) var(--navbar-scrollbar-background);
+    scrollbar-color: var(--navbar-scrollbar-color) var(--navbar-scrollbar-background);
 }
 .wy-menu.wy-menu-vertical::-webkit-scrollbar {
     width: .75rem;
@@ -931,5 +942,12 @@ kbd, .kbd {
     background-color: var(--navbar-scrollbar-background);
 }
 .wy-menu.wy-menu-vertical::-webkit-scrollbar-thumb {
-    background-color: var(--navbar-heading-color);
+    background-color: var(--navbar-scrollbar-color);
+}
+/* Firefox does the dimming on hover automatically. We emulate it for Webkit-based browsers. */
+.wy-menu.wy-menu-vertical::-webkit-scrollbar-thumb:hover {
+    background-color: var(--navbar-scrollbar-hover-color);
+}
+.wy-menu.wy-menu-vertical::-webkit-scrollbar-thumb:active {
+    background-color: var(--navbar-scrollbar-active-color);
 }
