@@ -843,6 +843,11 @@ kbd, .kbd {
     margin-right: 0;
 }
 
+/* Banner panel in sidebar */
+.wy-nav-side .ethical-rtd.fixed {
+    position: fixed
+}
+
 /* Version selector (only visible on Read the Docs) */
 
 .rst-versions {
@@ -895,8 +900,14 @@ kbd, .kbd {
 }
 
 /* Allows the navbar's scrollbar to be shown */
+@media only screen and (min-width: 769px) {
+    .wy-side-scroll {
+        overflow: hidden;
+    }
+}
 .wy-menu.wy-menu-vertical {
     overflow-y: auto;
+    overflow-x: hidden;
     max-height: calc(100% - 348px);
 }
 @media screen and (max-width: 768px) {
