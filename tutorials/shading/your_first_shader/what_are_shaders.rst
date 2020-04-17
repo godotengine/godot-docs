@@ -104,10 +104,11 @@ many or all cores are doing the same calculation at once, but with different dat
 That is where shaders come in. The GPU will call the shader a bunch of times simultaneously, and then
 operate on different bits of data (vertices, or pixels). These bunches of data are often called wavefronts.
 A shader will run the same for every thread in the wavefront. For example, if a given GPU can handle 100 
-threads per wavefront, a wavefront will run on a 10x10 block of pixels together. And it will continue to
+threads per wavefront, a wavefront will run on a 10×10 block of pixels together. It will continue to
 run for all pixels in that wavefront until they are complete. Accordingly, if you have one pixel slower 
 than the rest (due to excessive branching), the entire block will be slowed down, resulting in massively
-slower render times. This is different than CPU based operations, on a CPU if you can speed up even one
-pixel the entire rendering time will decrease. On a GPU, you have to speed up the entire wavefront
-to speed up rendering.
+slower render times.
 
+This is different from CPU-based operations. On a CPU, if you can speed up even one
+pixel, the entire rendering time will decrease. On a GPU, you have to speed up the entire wavefront
+to speed up rendering.

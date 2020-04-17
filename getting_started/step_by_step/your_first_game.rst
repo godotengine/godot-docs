@@ -287,7 +287,7 @@ or ``false`` if it isn't.
         }
     }
 
-We start by setting the ``velocity`` to ``(0, 0)`` - by default the player
+We start by setting the ``velocity`` to ``(0, 0)`` - by default, the player
 should not be moving. Then we check each input and add/subtract from the
 ``velocity`` to obtain a total direction. For example, if you hold ``right``
 and ``down`` at the same time, the resulting ``velocity`` vector will be
@@ -1033,8 +1033,8 @@ show the "Start" button.
 
 .. note:: When you need to pause for a brief time, an alternative to using a
           Timer node is to use the SceneTree's ``create_timer()`` function. This
-          can be very useful to delay, such as in the above code, where we want
-          to wait a little bit of time before showing the "Start" button.
+          can be very useful to add delays such as in the above code, where we want
+          to wait some time before showing the "Start" button.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

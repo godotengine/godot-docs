@@ -3,7 +3,7 @@
 Tutorials and resources
 =======================
 
-This is a list of third-party tutorials and resources created by the Godot community. For resources, remember that there is the official `Godot Asset Library <https://godotengine.org/asset-library/asset>`_ full of official and community resources too! Also have a look at this `huge list over at Reddit <https://www.reddit.com/r/godot/comments/an0iq5/godot_tutorials_list_of_video_and_written/>`_.
+This is a list of third-party tutorials and resources created by the Godot community. For resources, remember that there is the official `Godot Asset Library <https://godotengine.org/asset-library/asset>`_ full of official and community resources too! Also, have a look at this `huge list over at Reddit <https://www.reddit.com/r/godot/comments/an0iq5/godot_tutorials_list_of_video_and_written/>`_.
 
 Think there is something missing here? Feel free to submit a `Pull Request <https://github.com/godotengine/godot-docs/blob/master/community/tutorials.rst>`_ as always.
 
@@ -14,7 +14,7 @@ The Godot video tutorials by `GDQuest <https://www.youtube.com/channel/UCxboW7x0
 
 If you're interested in Visual Scripting, `Emilio's tutorials <https://www.youtube.com/channel/UC9DR22-qohBDtZ74R3FxOZg>`_ may be worth a look.
 
-Some of the others mentioned below provide more advanced tutorials, e.g. on 3D or shaders.
+Some tutorials mentioned below provide more advanced tutorials, e.g. on 3D or shaders.
 
 Video tutorials
 ---------------

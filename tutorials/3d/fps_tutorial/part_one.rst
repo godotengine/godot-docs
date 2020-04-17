@@ -377,7 +377,7 @@ This is a lot of code, so let's break it down function by function:
 .. tip:: While copy and pasting code is ill advised, as you can learn a lot from manually typing the code in, you can
          copy and paste the code from this page directly into the script editor.
 
-         If you do this, all of the code copied will be using spaces instead of tabs.
+         If you do this, all the code copied will be using spaces instead of tabs.
 
          To convert the spaces to tabs in the script editor, click the "edit" menu and select "Convert Indent To Tabs".
          This will convert all the spaces into tabs. You can select "Convert Indent To Spaces" to convert tabs back into spaces.
@@ -642,7 +642,7 @@ our ``DEACCEL`` constant so the player will decelerate.
 Then we interpolate the horizontal velocity, set the player's ``X`` and ``Z`` velocity to the interpolated horizontal velocity,
 and call ``move_and_slide`` to let the :ref:`KinematicBody <class_KinematicBody>` handle moving the player through the physics world.
 
-.. tip:: All of the code in ``process_movement`` is exactly the same as the movement code from the Kinematic Character demo!
+.. tip:: All the code in ``process_movement`` is exactly the same as the movement code from the Kinematic Character demo!
 
 _________
 

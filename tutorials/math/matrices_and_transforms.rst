@@ -583,7 +583,7 @@ How does it all work in 3D?
 
 One of the great things about transformation matrices is that they
 work very similarly between 2D and 3D transformations.
-All of the code and formulas used above for 2D work the same in 3D,
+All the code and formulas used above for 2D work the same in 3D,
 with 3 exceptions: the addition of a third axis, that each
 axis is of type :ref:`class_Vector3`, and also that Godot stores
 the :ref:`class_Basis` separately from the :ref:`class_Transform`,
@@ -625,7 +625,7 @@ how you represent rotation by itself without the basis vectors.
 With 2D, we have an easy way (atan2) to switch between a transformation
 matrix and an angle. In 3D, we can't simply represent rotation as one
 number. There is something called Euler angles, which can represent
-rotations as a set of 3 numbers, however they are limited and not very
+rotations as a set of 3 numbers, however, they are limited and not very
 useful, except for trivial cases.
 
 In 3D we do not typically use angles, we either use a transformation basis

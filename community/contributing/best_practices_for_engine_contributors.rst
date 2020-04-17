@@ -57,7 +57,7 @@ Whether a problem is worth solving is determined by the difficulty the user has 
 - The complexity of the problem
 - The frequency the problem
 
-If the problem is *too complex* for most users to solve, the software must offer a ready made solution for it. Likewise, if the problem is easy for the user to workaround, offering such a solution is unnecessary and it's up to the user to do it.
+If the problem is *too complex* for most users to solve, the software must offer a ready-made solution for it. Likewise, if the problem is easy for the user to workaround, offering such a solution is unnecessary and it's up to the user to do it.
 
 The exception, however, is when the user stumbles into this problem *frequently enough* that having to do the simple solution every time becomes an annoyance. In this case, the software must offer a solution to simplify this use case.
 
@@ -72,7 +72,7 @@ Because of this, user proposed solutions don't always contemplate other use case
 
 .. image:: img/best_practices4.png
 
-For developers, the perspective is different. They may find the user's problem too unique to justify a solution (instead of an user workaround), or maybe they will suggest a partial (usually simpler or lower level) solution that applies to a wider range of known problems, and leave the rest of the solution up to the user. 
+For developers, the perspective is different. They may find the user's problem too unique to justify a solution (instead of a user workaround), or maybe they will suggest a partial (usually simpler or lower level) solution that applies to a wider range of known problems, and leave the rest of the solution up to the user. 
 
 In any case, before attempting a contribution, it is important to discuss the actual problems with the other developers or contributors, so a better agreement on implementation can be reached. 
 
@@ -91,7 +91,7 @@ The main problem is that, in reality, it rarely works this way. Most of the time
 
 Additionally, solutions that target individual problems are better for the users, as they find something that does exactly what they need, without having to learn and remember a more complex system they will only need for simple tasks.
 
-Big and flexible solutions also have an additional drawback which is that, over time, they rarely are flexible enough for all users, which keep requesting more functions added (and making the API and codebase more and more complex).
+Big and flexible solutions also have an additional drawback which is that, over time, they are rarely flexible enough for all users, which keep requesting more functions added (and making the API and codebase more and more complex).
 
 #6: Cater to common use cases, leave the door open for the rare ones
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -106,7 +106,7 @@ The question is then, how to design software that gives users what *we know they
 
 .. image:: img/best_practices6.png
 
-The answer to this question is that, to ensure users still can do what they want to do, we need to give them access to a *low level API* that they can use to achieve what they want, even if it's more work for them because it means reimplementing some of the logic that already exists.
+The answer to this question is that, to ensure users still can do what they want to do, we need to give them access to a *low level API* that they can use to achieve what they want, even if it's more work for them because it means reimplementing some logic that already exists.
 
 In real-life scenarios, these use cases will be at most rare and uncommon anyway, so it makes sense a custom solution needs to be written. This is why it's important to still provide users the basic building blocks to do it.
 
@@ -117,7 +117,7 @@ When looking for a solution to a problem, be it implementing a new feature or fi
 
 The main problem here is, adding something to the core layers that will only be used from a single location far away will not only make the code more difficult to follow (split in two), but also make the core API larger, more complex, more difficult to understand in general. 
 
-This is bad, because readability and cleanness of core APIs is always of extreme importance given how much code relies from it, and because it's key for new contributors as a starting point to learning the codebase.
+This is bad, because readability and cleanness of core APIs is always of extreme importance given how much code relies on it, and because it's key for new contributors as a starting point to learning the codebase.
 
 
 .. image:: img/best_practices7.png

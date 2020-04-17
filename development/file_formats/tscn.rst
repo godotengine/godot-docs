@@ -400,13 +400,13 @@ Each track is described by a list of key-value pairs in the format
 2. The ``path`` has the format ``NodePath(Path/To/Node:attribute)``.
    It's the path to the animated node or attribute, relative to the root node
    defined in the AnimationPlayer.
-
+I 
 3. The ``interp`` is the method to interpolate frames from the keyframes.
-   it is a enum variable and can has value:
+   It is an enum variable with one of the following values:
 
-    - 0 (constant)
-    - 1 (linear)
-    - 2 (cubic)
+    - ``0`` (constant)
+    - ``1`` (linear)
+    - ``2`` (cubic)
 
 4. The ``keys`` correspond to the keyframes. It appears as a ``PackedFloat32Array()``,
    but may have a different structure for tracks with different types.

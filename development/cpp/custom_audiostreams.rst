@@ -43,7 +43,7 @@ internal/external buffer, or a file reference.
 Some AudioStreams need to be stateless such as objects loaded from
 ResourceLoader. ResourceLoader loads once and references the same
 object regardless how many times ``load`` is called on a specific resource.
-Therefore, playback state must be self contained in AudioStreamPlayback.
+Therefore, playback state must be self-contained in AudioStreamPlayback.
 
 .. code-block:: cpp
 

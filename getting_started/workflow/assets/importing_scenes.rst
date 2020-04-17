@@ -17,7 +17,7 @@ Godot supports the following 3D *scene file formats*:
 * DAE (COLLADA), an older format that is fully supported.
 * OBJ (Wavefront) formats. It is also fully supported, but pretty limited (no support for pivots, skeletons, etc).
 * ESCN, a Godot specific format that Blender can export with a plugin.
-* FBX, supported via the Open Asset Import library. However, FBX is proprietary so we recommend using other formats
+* FBX, supported via the Open Asset Import library. However, FBX is proprietary, so we recommend using other formats
   listed above, if suitable for your workflow.
 
 Just copy the scene file together with the texture to the project repository, and Godot will do a full import.

@@ -30,7 +30,7 @@ for different areas of the world.
 It is also possible to execute some logic inside the vertex shader (using the ``INSTANCE_ID`` or
 ``INSTANCE_CUSTOM`` built-in constants). For an example of animating thousands of objects in a MultiMesh,
 see the :ref:`Animating thousands of fish <doc_animating_thousands_of_fish>` tutorial. Information
-to the shader can be provided via textures (there are floating point :ref:`Image<class_Image>` formats
+to the shader can be provided via textures (there are floating-point :ref:`Image<class_Image>` formats
 which are ideal for this).
 
 Another alternative is to use GDNative and C++, which should be extremely efficient (it's possible

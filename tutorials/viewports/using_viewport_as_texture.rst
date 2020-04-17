@@ -20,7 +20,7 @@ a :ref:`Camera <class_Camera>`, a :ref:`light source <class_OmniLight>`, a
 and applying a :ref:`Spatial Material <class_SpatialMaterial>` to the mesh. The focus will be on using
 the :ref:`Viewport <class_Viewport>` to dynamically create textures that can be applied to the mesh.
 
-During the course of this tutorial, we'll cover the following topics:
+In this tutorial, we'll cover the following topics:
 
 - How to use a :ref:`Viewport <class_Viewport>` as a render texture
 - Mapping a texture to a sphere with equirectangular mapping
@@ -285,7 +285,7 @@ alpha value, it gets drawn as a transparent object over the background. And sinc
 of the :ref:`Viewport <class_Viewport>` is opaque, the ``alpha`` channel of the
 :ref:`Viewport Texture <class_ViewportTexture>` is ``1``, resulting in the planet texture being
 drawn with slightly fainter colors and a ``Roughness`` value of ``1`` everywhere. To correct this, we
-go into the :ref:`Viewport <class_Viewport>` and set "Transparent Bg" to on. Since we are now
+go into the :ref:`Viewport <class_Viewport>` and enable the "Transparent Bg" property. Since we are now
 rendering one transparent object on top of another, we want to enable ``blend_premul_alpha``:
 
 .. code-block:: glsl

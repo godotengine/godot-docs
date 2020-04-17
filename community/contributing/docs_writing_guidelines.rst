@@ -425,7 +425,7 @@ For boolean member variables, always use ``if true`` and/or
 ``if false``, to stay explicit. ``Controls whether or not`` may be
 ambiguous and won't work for every member variable.
 
-Also surround boolean values, variable names and methods with ``[code][/code]``.
+Also, surround boolean values, variable names and methods with ``[code][/code]``.
 
 **Do** start with "if true":
 

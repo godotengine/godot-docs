@@ -180,23 +180,21 @@ degrees to either side:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # calculate vector from a to b
+    # Calculate vector from `a` to `b`.
     var dvec = (point_b - point_a).normalized()
-    # rotate 90 degrees
+    # Rotate 90 degrees.
     var normal = Vector2(dvec.y, -dvec.x)
-    # or alternatively
+    # Alternatively (depending the desired side of the normal):
     # var normal = Vector2(-dvec.y, dvec.x)
-    # depending the desired side of the normal
 
  .. code-tab:: csharp
 
-    // calculate vector from a to b
+    // Calculate vector from `a` to `b`.
     var dvec = (pointB - pointA).Normalized();
-    // rotate 90 degrees
+    // Rotate 90 degrees.
     var normal = new Vector2(dvec.y, -dvec.x);
-    // or alternatively
+    // Alternatively (depending the desired side of the normal):
     // var normal = new Vector2(-dvec.y, dvec.x);
-    // depending the desired side of the normal
 
 The rest is the same as the previous example, either point_a or
 point_b will work since they are in the same plane:

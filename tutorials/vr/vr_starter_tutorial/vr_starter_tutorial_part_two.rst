@@ -81,7 +81,7 @@ Let's go over how this script works.
 Explaining the Sphere Target code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First, let's go through all of the class variables in the script:
+First, let's go through all the class variables in the script:
 
 * ``destroyed``: A variable to track whether the sphere target has been destroyed.
 * ``destroyed_timer``: A variable to track how long the sphere target has been destroyed.
@@ -98,7 +98,7 @@ First, let's go through all of the class variables in the script:
 """"""""""""""""""""""""""""""""""""""""""""
 
 All the ``_ready`` function does is that it stops the ``_physics_process`` from being called by calling ``set_physics_process`` and passing ``false``.
-The reason we do this is because all of the code in ``_physics_process`` is for destroying this node when enough time has passed, which we only want to
+The reason we do this is because all the code in ``_physics_process`` is for destroying this node when enough time has passed, which we only want to
 do when the target has been destroyed.
 
 
@@ -1033,4 +1033,3 @@ help serve as an introduction to making fully-featured VR games in Godot! The co
 story-based games, and more!
 
 .. warning:: You can download the finished project for this tutorial series on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`_, under the releases tab!
-

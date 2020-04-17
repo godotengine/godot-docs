@@ -46,13 +46,13 @@ Most GLSL ES 3.0 datatypes are supported:
 +---------------------+---------------------------------------------------------------------------------+
 | **uvec4**           | Four-component vector of unsigned integers.                                     |
 +---------------------+---------------------------------------------------------------------------------+
-| **float**           | Floating point scalar.                                                          |
+| **float**           | Floating-point scalar.                                                          |
 +---------------------+---------------------------------------------------------------------------------+
-| **vec2**            | Two-component vector of floating point values.                                  |
+| **vec2**            | Two-component vector of floating-point values.                                  |
 +---------------------+---------------------------------------------------------------------------------+
-| **vec3**            | Three-component vector of floating point values.                                |
+| **vec3**            | Three-component vector of floating-point values.                                |
 +---------------------+---------------------------------------------------------------------------------+
-| **vec4**            | Four-component vector of floating point values.                                 |
+| **vec4**            | Four-component vector of floating-point values.                                 |
 +---------------------+---------------------------------------------------------------------------------+
 | **mat2**            | 2x2 matrix, in column major order.                                              |
 +---------------------+---------------------------------------------------------------------------------+

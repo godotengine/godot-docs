@@ -8,7 +8,7 @@ Pause?
 
 In most games it is desirable to, at some point, interrupt the
 game to do something else, such as taking a break or changing options.
-However this is not as simple as it seems. The game might be stopped,
+However, this is not as simple as it seems. The game might be stopped,
 but it might be desirable that some menus and animations continue
 working.
 
