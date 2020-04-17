@@ -126,12 +126,13 @@ Create a script like this:
 
 ::
 
-    tool # needed so it runs in the editor
+    tool # Needed so it runs in the editor.
     extends EditorScenePostImport
 
+
     func post_import(scene):
-      # do your stuff here
-      return scene # remember to return the imported scene
+        # Do your stuff here.
+        return scene # remember to return the imported scene
 
 The ``post_import`` function takes the imported scene as argument (the
 parameter is actually the root node of the scene). The scene that
@@ -324,7 +325,7 @@ greater than zero. You can then name a clip, specify which frames it starts and 
 the animation loops or not.
 
 .. If this PR (https://github.com/godotengine/godot/pull/36709) is merged for Godot 4.0 this section must
-be updated to reflect that for the 4.0 documentation.
+   be updated to reflect that for the 4.0 documentation.
 
 Scene inheritance
 -----------------
@@ -387,7 +388,7 @@ depending on Blender's empty draw type:
 
 -  Single arrow will create a :ref:`class_rayshape`
 -  Cube will create a :ref:`class_boxshape`
--  Image will create a :ref:`class_planeshape`
+-  Image will create a :ref:`class_worldmarginshape`
 -  Sphere (and the others not listed) will create a :ref:`class_sphereshape`
 
 For better visibility in Blender's editor, the user can set "X-Ray" option on collision
