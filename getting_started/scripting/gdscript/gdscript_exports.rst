@@ -181,3 +181,12 @@ initializers, but they must be constant expressions.
     # be exported.
 
     var c = [a, 2, 3]
+
+Setting exported variables from a tool script
+---------------------------------------------
+
+When changing an exported variable's value from a script in
+:ref:`doc_gdscript_tool_mode`, the value in the inspector won't be updated
+automatically. To update it, call
+:ref:`class_Object_method_property_list_changed_notify` after setting the
+exported variable's value.
