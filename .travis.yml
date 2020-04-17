@@ -1,3 +1,4 @@
+os: linux
 dist: bionic
 language: python
 
@@ -21,6 +22,10 @@ matrix:
 
 script:
   - bash ./format.sh
+
+  # Check for possible typos
+  - pip install codespell
+  - codespell -I codespell-ignore.txt {about,community,development,getting_started,tutorials}/**/*.rst
 
   - pip install -r requirements.txt
   # TODO: Add `-W` to turn warnings into errors.
