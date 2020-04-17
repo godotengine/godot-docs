@@ -3,7 +3,7 @@
 Environment and post-processing
 ===============================
 
-Godot 3 provides a redesigned Environment resource, as well as a brand new
+Godot 3 provides a redesigned Environment resource, as well as a new
 post-processing system with many available effects right out of the box.
 
 Environment
@@ -94,7 +94,8 @@ Here is a comparison of how different ambient light affects a scene:
 
 .. image:: img/environment_ambient2.png
 
-Finally there is an **Energy** setting, which is a multiplier, useful when working with HDR.
+Finally, there is an **Energy** setting, which is a multiplier. It's useful when
+working with HDR.
 
 In general, ambient light should only be used for simple scenes, large exteriors,
 or for performance reasons (ambient light is cheap), as it does not provide the

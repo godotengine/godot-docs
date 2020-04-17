@@ -134,7 +134,7 @@ The :ref:`RemoteTransform2D <class_RemoteTransform2D>` node transforms nodes
 somewhere else in the hierarchy. This node applies its own transform (including
 any transformation it inherits from its parents) to the remote node it targets.
 
-This allows us to correct the visibility order of our elements independent from
+This allows us to correct the visibility order of our elements, independently of
 the locations of those parts in the cutout hierarchy.
 
 Create a ``RemoteTransform2D`` node as a child of the torso. Call it ``remote_arm_l``.
@@ -369,4 +369,3 @@ Skeletal deform can be used to augment a cutout rig, allowing single pieces to
 deform organically (e.g. antennae that wobble as an insect character walks).
 
 This process is described in a :ref:`separate tutorial <doc_2d_skeletons>`.
-

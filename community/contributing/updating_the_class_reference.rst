@@ -54,7 +54,7 @@ Clone the repository on your computer:
 
     git clone https://github.com/your_name/godot.git
 
-Create a new branch to make your changes. It makes it a lot easier to sync your improvements with other docs writers, and it's easier to cleanup your repository clean if you have any issues with git.
+Create a new branch to make your changes. It makes it a lot easier to sync your improvements with other docs writers. It's also easier to clean up your repository if you run into any issues with Git.
 
 ::
 
@@ -106,7 +106,7 @@ If you made changes you don't want to keep in your local branch, use the followi
 
 **Warning:** The above command will reset your branch to the state of the ``upstream master`` branch. It will discard all local changes. Make sure to only run this *before* you make important changes.
 
-Another option is to delete the branch you're working on, synchronize the master branch with the Godot repository, and create a brand new branch:
+Another option is to delete the branch you're working on, synchronize the master branch with the Godot repository, and create a new branch:
 
 ::
 

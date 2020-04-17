@@ -76,7 +76,7 @@ to remove duplicate vertices.
     st.add_index(3)
     st.add_index(2)
 
-    # Or alternatively:
+    # Alternatively:
     st.index()
 
 Similarly, if you have an index array, but you want each vertex to be unique (e.g. because

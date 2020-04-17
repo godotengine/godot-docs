@@ -47,7 +47,7 @@ results in real time, without the shader having to recompile.
 
 All the motions will be made using cosine waves applied to ``VERTEX`` in model space. We want the vertices to
 be in model space so that the motion is always relative to the orientation of the fish. For example, side-to-side 
-will always be move the fish back and forth in its left to right direction, instead of on the ``x`` axis in the
+will always move the fish back and forth in its left to right direction, instead of on the ``x`` axis in the
 world orientation. 
 
 In order to control the speed of the animation, we will start by defining our own time variable using ``TIME``.
@@ -124,7 +124,7 @@ we first  construct a rotation matrix.
   mat2 twist_matrix = mat2(vec2(cos(twist_angle), -sin(twist_angle)), vec2(sin(twist_angle), cos(twist_angle)));
 
 We apply the rotation in the ``xy`` axes so that the fish appears to roll around its spine. For 
-this to work, the fishes spine needs to be centered on the ``z`` axis.
+this to work, the fish's spine needs to be centered on the ``z`` axis.
 
 .. code-block:: glsl
 
@@ -164,7 +164,7 @@ In order to apply the mask to the twist, we use ``mix``. ``mix`` allows us to mi
 vertex position between a fully rotated vertex and one that is not rotated. We need to 
 use ``mix`` instead of multiplying ``mask`` by the rotated ``VERTEX`` because we are not
 adding the motion to the ``VERTEX`` we are replacing the ``VERTEX`` with the rotated 
-version. If we multiplied that by ``mask`` we would shrink the fish.
+version. If we multiplied that by ``mask``, we would shrink the fish.
 
 .. code-block:: glsl
 
@@ -203,7 +203,7 @@ a :ref:`Color <class_Color>`.
 For both ``color_format`` and ``custom_data_format`` you can choose between ``None``, ``Byte``, and 
 ``Float``. ``None`` means you won't be passing in that data (either a per-instance ``COLOR`` variable, 
 or ``INSTANCE_CUSTOM``) to the shader. ``Byte`` means each number making up the color you pass in will 
-be stored with 8 bits while ``Float`` means each number will be stored in a floating point number 
+be stored with 8 bits while ``Float`` means each number will be stored in a floating-point number 
 (32 bits). ``Float`` is slower but more precise, ``Byte`` will take less memory and be faster, but you 
 may see some visual artifacts. 
 
@@ -268,7 +268,7 @@ custom value.
 
 One problem that you will run into at this point is that the fish are animated, but they are not
 moving. You can move them by updating the per-instance transform for each fish every frame. Although
-doing so will be faster then moving thousands of MeshInstances per frame, it is still likely to be 
+doing so will be faster than moving thousands of MeshInstances per frame, it'll still likely be 
 slow.
 
 In the next tutorial we will cover how to use :ref:`Particles <class_Particles>` to take advantage 

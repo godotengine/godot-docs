@@ -108,17 +108,17 @@ Tutorial: Creating a simple animation
 Scene setup
 ~~~~~~~~~~~
 
-For this tutorial, we'll going to create an AnimationPlayer node and a
-sprite node as its child.
+For this tutorial, we'll create an AnimationPlayer node and a sprite node as its
+child.
 
 .. figure:: img/animation_animation_player_tree.png
    :alt: Our scene setup
 
    Our scene setup
 
-The sprite holds an image texture and we animate that sprite to move
-between two points on the screen. For this tutorial use the default Godot
-Icon as the sprites' texture. As a starting point, move the sprite
+The sprite holds an image texture. We animate that sprite to move
+between two points on the screen. For this tutorial, use the default Godot
+icon as the sprite's texture. As a starting point, move the sprite
 to a left position on the screen.
 
 .. tip::
@@ -155,8 +155,7 @@ Deselect rotation, because we are only interested in the location of our
 sprite for this tutorial and click on the key button.
 
 As we don't have a track already set up for the transform/location
-property, Godot asks, whether it should set it up for us. Click on
-"Create".
+property, Godot asks whether it should set it up for us. Click **Create**.
 
 This creates a new track and our first keyframe at the beginning of
 the timeline:
@@ -181,7 +180,7 @@ the timeline controls in animation panel's lower panel to 2.
 
    Animation length
 
-Click on the timeline header near the 2 second mark and move the sprite
+Click on the timeline header near the 2-second mark and move the sprite
 to the target destination on the right side.
 
 Again, click the key button in the toolbar. This creates our second
@@ -284,7 +283,7 @@ Godot doesn't restrict you to only edit transform properties. Every
 property can be used as a track where you can set keyframes.
 
 If you select your sprite while the animation panel is visible, you get
-a small keyframe button for all of the sprite's properties. Click on
+a small keyframe button for all the sprite's properties. Click on
 this button and Godot automatically adds a track and keyframe to the
 current animation.
 

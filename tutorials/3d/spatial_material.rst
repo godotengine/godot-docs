@@ -142,7 +142,7 @@ Vertex Color
 ------------
 
 This setting allows choosing what is done by default to vertex colors that come
-from your 3D modelling application. By default they are ignored.
+from your 3D modelling application. By default, they are ignored.
 
 .. image:: img/spatial_material4.png
 
@@ -461,6 +461,38 @@ texture, which can be blended in many ways. By combining this with secondary
 UV or triplanar modes, many interesting textures can be achieved.
 
 .. image:: img/spatial_material24.png
+
+There are several settings that control how detail is used.
+
+Mask: The detail mask is a black and white image used to control where the
+blending takes place on a texture. White is for the detail textures, Black
+is for the regular material textures, different shades of gray are for
+partial blending of the material textures and detail textures.
+
+Blend Mode: These four modes control how the textures are blended together.
+
+- Mix: Combines pixel values of both textures. At black, only show the material texture,
+  at white, only show the detail texture. Values of gray create a smooth blend between
+  the two.
+
+- Add: Adds pixel values of one Texture with the other. Unlike mix mode
+  both textures are completely mixed at white parts of a mask and not at gray
+  parts. The original texture is mostly unchanged at black
+
+- Sub: Subtracts pixel values of one texture with the other. The second
+  texture is completely subtracted at white parts of a mask with only a little
+  subtraction in black parts, gray parts being different levels of subtraction
+  based on the exact texture.
+
+- Mul: Multiplies the RGB channel numbers for each pixel from the top texture
+  with the values for the corresponding pixel from the bottom texture.
+
+Albedo: This is where you put an albedo texture you want to blend. If nothing
+is in this slot it will be interpreted as white by default.
+
+Normal: This is where you put a normal texture you want to blend. If nothing is
+in this slot it will be interpreted as a flat normal map. This can still be used
+even if the material does not have normal map enabled.
 
 UV1 and UV2
 ~~~~~~~~~~~~

@@ -155,7 +155,7 @@ item will be displayed in the script workspace.
 
 .. image:: img/editor_ui_intro_script_class_documentation.png
 
-Finally the **AssetLib** is a library of free and open source add-ons, scripts
+Finally, the **AssetLib** is a library of free and open source add-ons, scripts
 and assets to use in your projects.
 
 Modify the interface

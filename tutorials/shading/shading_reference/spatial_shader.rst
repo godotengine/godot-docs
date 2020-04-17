@@ -132,7 +132,7 @@ is usually:
 * **y**: Phase during lifetime (0 to 1).
 * **z**: Animation frame.
 
-This allows you to easily adjust the shader to a particle system using default particles material. When writing a custom particles
+This allows you to easily adjust the shader to a particle system using default particles material. When writing a custom particle
 shader, this value can be used as desired.
 
 +--------------------------------------+-------------------------------------------------------+

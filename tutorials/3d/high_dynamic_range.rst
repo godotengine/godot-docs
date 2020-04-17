@@ -68,7 +68,7 @@ Scene linear & asset pipelines
 
 Working in scene-linear sRGB is not as simple as just pressing a switch. First,
 imported image assets must be converted to linear light ratios on import. Even
-when linearized, those assets may not be perfectly well suited for use
+when linearized, those assets may not be perfectly well-suited for use
 as textures, depending on how they were generated.
 
 There are two ways to do this:
@@ -84,7 +84,7 @@ These textures may also be compressed later, which can exacerbate the problem.
 Hardware sRGB transfer function to display linear conversion
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The GPU will do the conversion after reading the texel using floating point.
+The GPU will do the conversion after reading the texel using floating-point.
 This works fine on PC and consoles, but most mobile devices don't support it,
 or they don't support it on compressed texture formats (iOS for example).
 

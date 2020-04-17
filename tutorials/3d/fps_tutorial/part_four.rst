@@ -303,7 +303,7 @@ We then check to see if the player is changing weapons or reloading. If the play
           we would get an error when we tried to run the project.
 
 Next, we check to see if the weapon name at ``round_mouse_scroll_value`` is not equal to the current weapon name using ``WEAPON_NUMBER_TO_NAME``.
-If the weapon is different than the player's current weapon, we assign ``changing_weapon_name``, set ``changing_weapon`` to ``true`` so the player will change weapons in
+If the weapon is different from the player's current weapon, we assign ``changing_weapon_name``, set ``changing_weapon`` to ``true`` so the player will change weapons in
 ``process_changing_weapon``, and set ``mouse_scroll_value`` to ``round_mouse_scroll_value``.
 
 .. tip:: The reason we are setting ``mouse_scroll_value`` to the rounded scroll value is because we do not want the player to keep their

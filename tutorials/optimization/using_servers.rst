@@ -123,7 +123,7 @@ Primitives are cleared this way:
 Instantiating a Mesh into 3D space
 ----------------------------------
 
-The 3D APIs are different than the 2D ones, so the instantiation API must be used.
+The 3D APIs are different from the 2D ones, so the instantiation API must be used.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

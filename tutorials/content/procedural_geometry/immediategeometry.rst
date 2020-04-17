@@ -4,8 +4,8 @@ Using ImmediateGeometry
 =======================
 
 Unlike the SurfaceTool or ArrayMesh, :ref:`ImmediateGeometry <class_ImmediateGeometry>` is an actual
-node. Being an node makes it quick to add to a scene and get visual output. It uses an "OpenGL 1.x" style
-API like the SurfaceTool, but it's actually designed to create content on the fly.
+node. Being a node makes it quick to add to a scene and get visual output. It uses an OpenGL 1.x-style
+API like SurfaceTool, but it's actually designed to create meshes on the fly.
 
 Generating complex geometry (several thousand vertices) with this node is inefficient, even if it's
 done only once. Instead, it is designed to generate simple geometry that changes every frame.

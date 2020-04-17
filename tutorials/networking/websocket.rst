@@ -7,7 +7,7 @@ HTML5 and WebSocket
 -------------------
 
 The WebSocket protocol was standardized in 2011 with the original goal of allowing browsers to create stable and bidirectional connections with a server.
-Before that, browsers used to only support HTTPRequests, which is not well suited for bidirectional communication.
+Before that, browsers used to only support HTTPRequests, which is not well-suited for bidirectional communication.
 
 The protocol is quite simple, message based, and a very powerful tool to send push notifications to browsers, and has been used to implement chats, turn-based games, etc. It still uses a TCP connection, which is good for reliability but not for latency, so not good for real-time applications like VoIP and fast-paced games (see :ref:`WebRTC <doc_webrtc>` for those use cases).
 

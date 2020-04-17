@@ -215,7 +215,7 @@ to clear our API pointers.
         nativescript_api = NULL;
     }
 
-Finally we have ``nativescript_init`` which is the most important function we'll
+Finally, we have ``nativescript_init`` which is the most important function we'll
 need today. This function will be called by Godot as part of loading a GDNative
 library and communicates back to the engine what objects we make available.
 
@@ -510,7 +510,7 @@ select our ``.gdnlib`` file by clicking on *Library* and selecting *Load*:
 
 .. image:: img/nativescript_library.png
 
-Finally click on the save icon and save this as ``bin/simple.gdns``:
+Finally, click on the save icon and save this as ``bin/simple.gdns``:
 
 .. image:: img/save_gdns.gif
 

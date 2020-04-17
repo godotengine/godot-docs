@@ -287,7 +287,7 @@ the size of the ``Background``.
 Let's change the ``Number``'s align properties to move it to the left
 and center of the ``Background``. Select the ``Number`` node, change its
 ``Align`` property to left and the ``Valign`` property to centre. Then
-resize its left edge a little bit to add some padding between the left
+resize its left edge a bit to add some padding between the left
 edge of the ``Background`` and the text.
 
 .. figure:: ./img/ui_gui_step_tutorial_counter_design_3.png
@@ -535,7 +535,7 @@ with the emerald icon. In the FileSystem tab, drag the ``emeralds_icon.png``
 onto the ``Icon`` node's ``Texture`` slot. ``Icon`` already anchors to
 the right edge of the ``Background`` node so we can change its position
 and it will scale and reposition with the ``EmeraldCounter`` container.
-Shift the emerald icon a little bit to the right and down. Use the Arrow
+Shift the emerald icon a bit to the right and down. Use the Arrow
 Keys on the keyboard to nudge its position. Save, and we're done with
 all the UI elements.
 

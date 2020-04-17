@@ -147,8 +147,8 @@ The main reasons for creating a custom scripting language for Godot were:
 5. Garbage collector results in stalls or unnecessarily large memory
    usage (Lua, Python, JavaScript, ActionScript, etc.).
 6. Difficulty to integrate with the code editor for providing code
-   completion, live editing, etc. (all of them). This is well
-   supported by GDScript.
+   completion, live editing, etc. (all of them). This is well-supported
+   by GDScript.
 
 GDScript was designed to curtail the issues above, and more.
 
@@ -259,7 +259,7 @@ I have a great idea for Godot. How can I share it?
 It might be tempting to want to bring ideas to Godot, like ones that
 result in massive core changes, some sort of mimicry of what another
 game engine does, or alternative workflows that you'd like built into
-the editor. These are great and we are thankful to have such motivated
+the editor. These are great, and we are thankful to have such motivated
 people want to contribute, but Godot's focus is and always will be the
 core functionality as outlined in the `Roadmap <https://github.com/godotengine/godot-roadmap/blob/master/ROADMAP.md>`_,
 `squashing bugs and addressing issues <https://github.com/godotengine/godot/issues>`_,
@@ -325,7 +325,7 @@ Why does Godot not force users to implement DoD (Data oriented Design)?
 -----------------------------------------------------------------------
 
 While Godot internally for a lot of the heavy performance tasks attempts
-to use cache coherency as best as possible, we believe most users don't
+to use cache coherency as well as possible, we believe most users don't
 really need to be forced to use DoD practices.
 
 DoD is mostly a cache coherency optimization that can only gain you

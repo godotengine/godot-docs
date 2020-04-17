@@ -80,7 +80,7 @@ API Bridge.
 
 This language is the best choice for performance and does not need to be
 used throughout an entire game, as other parts can be written in GDScript or Visual
-Script. However the API is clear and easy to use as it resembles, mostly,
+Script. However, the API is clear and easy to use as it resembles, mostly,
 Godot's actual C++ API.
 
 More languages can be made available through the GDNative interface, but keep in mind
