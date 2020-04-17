@@ -325,7 +325,7 @@ greater than zero. You can then name a clip, specify which frames it starts and 
 the animation loops or not.
 
 .. If this PR (https://github.com/godotengine/godot/pull/36709) is merged for Godot 4.0 this section must
-.. be updated to reflect that for the 4.0 documentation.
+   be updated to reflect that for the 4.0 documentation.
 
 Scene inheritance
 -----------------
