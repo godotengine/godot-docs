@@ -17,7 +17,7 @@ of making a procedural planet like the one below:
 This tutorial assumes you are familiar with how to set up a basic scene including:
 a :ref:`Camera <class_Camera>`, a :ref:`light source <class_OmniLight>`, a
 :ref:`Mesh Instance <class_MeshInstance>` with a :ref:`Primitive Mesh <class_PrimitiveMesh>`,
-and applying a :ref:`Spatial Material <class_SpatialMaterial>` to the mesh. The focus will be on using
+and applying a :ref:`StandardMaterial3D <class_StandardMaterial3D>` to the mesh. The focus will be on using
 the :ref:`Viewport <class_Viewport>` to dynamically create textures that can be applied to the mesh.
 
 In this tutorial, we'll cover the following topics:
@@ -75,15 +75,15 @@ apply to the sphere.
 Applying the texture
 --------------------
 
-MeshInstance > GeometryInstance > Geometry > Material Override > ``New SpatialMaterial``:
+MeshInstance > GeometryInstance > Geometry > Material Override > ``New StandardMaterial3D``:
 
-Now we go into the :ref:`Mesh Instance <class_MeshInstance>` and add a :ref:`Spatial Material <class_SpatialMaterial>`
+Now we go into the :ref:`Mesh Instance <class_MeshInstance>` and add a :ref:`StandardMaterial3D <class_StandardMaterial3D>`
 to it. No need for a special :ref:`Shader Material <class_ShaderMaterial>` (although that would be a good idea
 for more advanced effects, like the atmosphere in the example above).
 
 MeshInstance > GeometryInstance > Geometry > Material Override > ``click`` / ``Edit``:
 
-Open the newly created :ref:`Spatial Material <class_SpatialMaterial>` and scroll down to the "Albedo" section
+Open the newly created :ref:`StandardMaterial3D <class_StandardMaterial3D>` and scroll down to the "Albedo" section
 and click beside the "Texture" property to add an Albedo Texture. Here we will apply the texture we made.
 Choose "New ViewportTexture"
 
@@ -119,7 +119,7 @@ the sphere in a nice way? One solution is to use a function that repeats on the 
 
 Not too bad. If you look around, you can see that the seam has now disappeared, but in its place, we
 have pinching at the poles. This pinching is due to the way Godot maps textures to spheres in its
-:ref:`Spatial Material <class_SpatialMaterial>`. It uses a projection technique called equirectangular
+:ref:`StandardMaterial3D <class_StandardMaterial3D>`. It uses a projection technique called equirectangular
 projection, which translates a spherical map onto a 2D plane.
 
 .. note:: If you are interested in a little extra information on the technique, we will be converting from
