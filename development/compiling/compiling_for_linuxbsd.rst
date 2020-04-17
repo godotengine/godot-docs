@@ -123,6 +123,11 @@ manager.
           As link-time optimization is a memory-intensive process,
           this will require about 3 GB of available RAM while compiling.
 
+.. note:: If you want to use separate editor settings for your own Godot builds
+          and official releases, you can enable
+          :ref:`doc_data_paths_self_contained_mode` by creating a file called
+          ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
+
 Building export templates
 -------------------------
 

@@ -79,6 +79,8 @@ the specification to change the editor (and project) data paths.
           the editor data paths will be located in subfolders in
           ``~/.var/app/org.godotengine.Godot/``.
 
+.. _doc_data_paths_self_contained_mode:
+
 Self-contained mode
 ~~~~~~~~~~~~~~~~~~~
 
