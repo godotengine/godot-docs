@@ -50,7 +50,7 @@ Add these two and it's possible to guess almost exactly when sound or music will
         var time = (OS.get_ticks_usec() - time_begin) / 1000000.0
         # Compensate for latency.
         time -= time_delay
-        # May be below 0 (did not being yet).
+        # May be below 0 (did not begin yet).
         time = max(0, time)
         print("Time is: ", time)
 

@@ -139,7 +139,7 @@ Now that the project has been imported, open the project configuration.
 
 Add the following includes/imports:
 
-::
+.. code-block:: none
 
     .  // a dot to indicate the root of the Godot project
     core/

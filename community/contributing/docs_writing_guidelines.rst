@@ -506,7 +506,7 @@ important guidelines to follow.
 First, you should always be using the default editor theme and text when taking
 screenshots.
 
-To improve the apperance of 3D screenshots, use 4× MSAA, enable anisotropic
+To improve the appearance of 3D screenshots, use 4× MSAA, enable anisotropic
 filtering on the project's textures, and set the anisotropic filter quality to
 16× in Project Settings.
 

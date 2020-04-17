@@ -3,7 +3,7 @@
 Introduction to the buildsystem
 ===============================
 
-.. highlight:: none
+.. highlight:: shell
 
 SCons
 -----
@@ -108,7 +108,9 @@ For the previous build attempt, the result would look like this::
 This means that the binary is for X11, is not optimized, has tools (the
 whole editor) compiled in, and is meant for 64 bits.
 
-A Windows binary with the same configuration will look like this::
+A Windows binary with the same configuration will look like this:
+
+.. code-block:: console
 
     C:\godot> dir bin/
     godot.windows.tools.64.exe
@@ -202,7 +204,7 @@ If you download the official export templates package and unzip it, you
 will notice that most files are optimized binaries or packages for each
 platform:
 
-::
+.. code-block:: none
 
     android_debug.apk
     android_release.apk

@@ -45,7 +45,7 @@ The example module will be called "summator", and is placed inside the
 Godot source tree (``C:\godot`` refers to wherever the Godot sources are
 located):
 
-::
+.. code-block:: console
 
     C:\godot> cd modules
     C:\godot\modules> mkdir summator
@@ -114,7 +114,7 @@ And then the cpp file.
 Then, the new class needs to be registered somehow, so two more files
 need to be created:
 
-::
+.. code-block:: none
 
     register_types.h
     register_types.cpp
@@ -211,7 +211,7 @@ this case, ``True`` means it will build for every platform).
 And that's it. Hope it was not too complex! Your module should look like
 this:
 
-::
+.. code-block:: none
 
     godot/modules/summator/config.py
     godot/modules/summator/summator.h
@@ -309,7 +309,7 @@ Once compiled, we should end up with a ``bin`` directory containing both the
 a standard directory (like ``/usr/lib``), we have to help our binary find it
 during runtime with the ``LD_LIBRARY_PATH`` environ variable:
 
-::
+.. code-block:: shell
 
     user@host:~/godot$ export LD_LIBRARY_PATH=`pwd`/bin/
     user@host:~/godot$ ./bin/godot*
@@ -355,7 +355,7 @@ and as a shared library when passing ``summator_shared=yes``.
 Finally you can even speedup build further by explicitly specifying your
 shared module as target in the scons command:
 
-::
+.. code-block:: shell
 
     user@host:~/godot$ scons summator_shared=yes platform=x11 bin/libsummator.x11.tools.64.so
 
@@ -397,7 +397,7 @@ directory.
 
 3. Run command:
 
-   ::
+   .. code-block:: shell
 
       godot --doctool <path>
 

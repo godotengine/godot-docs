@@ -36,13 +36,27 @@ Render modes
 | **disable_velocity**            | Ignore **VELOCITY** value.                                           |
 +---------------------------------+----------------------------------------------------------------------+
 
-Vertex built-ins
-^^^^^^^^^^^^^^^^
+Built-ins
+^^^^^^^^^
 
 Values marked as "in" are read-only. Values marked as "out" are for optional writing and will 
 not necessarily contain sensible values. Values marked as "inout" provide a sensible default 
 value, and can optionally be written to. Samplers are not subjects of writing and they are 
 not marked.
+
+Global built-ins
+^^^^^^^^^^^^^^^^
+
+Global built-ins are available everywhere, including custom functions.
+
++-------------------+--------------------------+
+| Built-in          | Description              |
++===================+==========================+
+| in float **TIME** | Global time, in seconds. |
++-------------------+--------------------------+
+
+Vertex built-ins
+^^^^^^^^^^^^^^^^
 
 In order to use the ``COLOR`` variable in a SpatialMaterial, set ``use_vertex_as_albedo``
 to ``true``. In a ShaderMaterial, access it with the ``COLOR`` variable.
@@ -63,8 +77,6 @@ to ``true``. In a ShaderMaterial, access it with the ``COLOR`` variable.
 | inout vec4 **CUSTOM**           | Custom particle data. Accessible from shader of mesh as **INSTANCE_CUSTOM**.        |
 +---------------------------------+-------------------------------------------------------------------------------------+
 | inout mat4 **TRANSFORM**        | Particle transform.                                                                 |
-+---------------------------------+-------------------------------------------------------------------------------------+
-| in float **TIME**               | Global time in seconds.                                                             |
 +---------------------------------+-------------------------------------------------------------------------------------+
 | in float **LIFETIME**           | Particle lifetime.                                                                  |
 +---------------------------------+-------------------------------------------------------------------------------------+

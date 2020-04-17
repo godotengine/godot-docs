@@ -28,7 +28,7 @@ Usage is generally as follows
 Obtaining a ResourceInteractiveLoader
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
+.. code-block:: cpp
 
     Ref<ResourceInteractiveLoader> ResourceLoader::load_interactive(String p_path);
 
@@ -38,7 +38,7 @@ to manage the load operation.
 Polling
 ~~~~~~~
 
-::
+.. code-block:: cpp
 
     Error ResourceInteractiveLoader::poll();
 
@@ -55,7 +55,7 @@ Load progress (optional)
 
 To query the progress of the load, use the following methods:
 
-::
+.. code-block:: cpp
 
     int ResourceInteractiveLoader::get_stage_count() const;
     int ResourceInteractiveLoader::get_stage() const;
@@ -66,7 +66,7 @@ To query the progress of the load, use the following methods:
 Forcing completion (optional)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
+.. code-block:: cpp
 
     Error ResourceInteractiveLoader::wait();
 
@@ -76,7 +76,7 @@ frame, without any more steps.
 Obtaining the resource
 ~~~~~~~~~~~~~~~~~~~~~~
 
-::
+.. code-block:: cpp
 
     Ref<Resource> ResourceInteractiveLoader::get_resource();
 

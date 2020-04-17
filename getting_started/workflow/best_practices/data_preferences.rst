@@ -128,7 +128,7 @@ the expense of memory and some minor operational efficiency.
       minimize hash collisions and maintain the speed of the accesses.
 
 As one might be able to tell, Dictionaries specialize in tasks that Arrays
-aren't. An overview of their operational details is as follows:
+do not. An overview of their operational details is as follows:
 
 - **Iterate:** Fast.
 

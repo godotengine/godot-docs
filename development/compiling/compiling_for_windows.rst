@@ -11,14 +11,14 @@ Requirements
 For compiling under Windows, the following is required:
 
 - `Visual Studio Community <https://www.visualstudio.com/vs/community/>`_,
-  version 2015 (14.0) or later. VS 2019 is recommended.
+  version 2017 or later. VS 2019 is recommended.
   **Make sure to read "Installing Visual Studio caveats" below or you
   will have to run/download the installer again.**
-- MinGW-w64 with GCC can be used as an alternative to Visual Studio.
-  Be sure to install/configure it to use the ``posix`` thread model.
-- `Python 3.5+ <https://www.python.org/downloads/windows/>`_
-- `SCons <https://www.scons.org>`_ build system. If using Visual Studio 2019,
-  you *must* have SCons 3.1.1 or later.
+- `MinGW-w64 <http://mingw-w64.org/>`_ with GCC can be used as an alternative to
+  Visual Studio. Be sure to install/configure it to use the ``posix`` thread model.
+- `Python 3.5+ <https://www.python.org/downloads/windows/>`_.
+- `SCons 3.0 <https://www.scons.org>`_ build system. If using Visual Studio 2019,
+  you need at least SCons 3.1.1.
 - *Optional* - `yasm <https://yasm.tortall.net/>`_ (for WebM SIMD optimizations)
 
 .. note:: If you have `Scoop <https://scoop.sh/>`_ installed, you can easily

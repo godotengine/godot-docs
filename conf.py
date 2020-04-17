@@ -11,8 +11,13 @@ import os
 needs_sphinx = "1.3"
 
 # Sphinx extension module names and templates location
-sys.path.append(os.path.abspath("extensions"))
-extensions = ["gdscript", "sphinx_tabs.tabs", "sphinx.ext.imgmath"]
+sys.path.append(os.path.abspath("_extensions"))
+extensions = [
+    "gdscript",
+    "sphinx_search.extension",
+    "sphinx_tabs.tabs",
+    "sphinx.ext.imgmath",
+]
 
 templates_path = ["_templates"]
 
@@ -32,9 +37,9 @@ author = "Juan Linietsky, Ariel Manzur and the Godot community"
 
 # Version info for the project, acts as replacement for |version| and |release|
 # The short X.Y version
-version = "latest"
+version = os.getenv("READTHEDOCS_VERSION", "latest")
 # The full version, including alpha/beta/rc tags
-release = "latest"
+release = version
 
 # Parse Sphinx tags passed from RTD via environment
 env_tags = os.getenv("SPHINX_TAGS")
@@ -51,7 +56,7 @@ exclude_patterns = ["_build"]
 
 # fmt: off
 # These imports should *not* be moved to the start of the file,
-# they depend on the sys.path.append call registering "extensions".
+# they depend on the sys.path.append call registering "_extensions".
 # GDScript syntax highlighting
 from gdscript import GDScriptLexer
 from sphinx.highlighting import lexers
@@ -155,7 +160,3 @@ rst_epilog = """
     image_locale="-" if language == "en" else language,
     target_locale="" if language == "en" else "/" + language,
 )
-
-# Exclude class reference when marked with tag i18n.
-if is_i18n:
-    exclude_patterns = ["classes"]

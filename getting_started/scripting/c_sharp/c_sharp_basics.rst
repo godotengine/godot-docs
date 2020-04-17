@@ -214,12 +214,9 @@ take a look over the official
 - Writing editor plugins is possible, but it is currently quite convoluted.
 - State is currently not saved and restored when hot-reloading,
   with the exception of exported variables.
-- Exporting Mono projects is only supported for desktop platforms
-  (Linux, Windows and macOS). Android, iOS, HTML5 and UWP are not currently supported
-  (`#20267 <https://github.com/godotengine/godot/issues/20267>`_,
-  `#20268 <https://github.com/godotengine/godot/issues/20268>`_
-  `#20270 <https://github.com/godotengine/godot/issues/20270>`_
-  `#20271 <https://github.com/godotengine/godot/issues/20271>`_).
+- Exporting Mono projects is supported for desktop platforms
+  (Linux, Windows and macOS), Android, HTML5, and iOS. UWP is not currently supported.
+  (`#20271 <https://github.com/godotengine/godot/issues/20271>`_).
 - Attached C# scripts should refer to a class that has a class name
   that matches the file name.
 - There are some methods such as ``Get()``/``Set()``, ``Call()``/``CallDeferred()``

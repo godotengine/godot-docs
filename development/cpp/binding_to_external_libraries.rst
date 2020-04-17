@@ -13,7 +13,7 @@ library written in C++.
 
 To bind to an external library, set up a module directory similar to the Summator example:
 
-::
+.. code-block:: none
 
     godot/modules/tts/
 
@@ -70,7 +70,7 @@ And then you'll add the cpp file.
 Just as before, the new class needs to be registered somehow, so two more files
 need to be created:
 
-::
+.. code-block:: none
 
     register_types.h
     register_types.cpp
@@ -118,7 +118,7 @@ You'll need to install the external library on your machine to get the .a librar
 documentation for specific instructions on how to do this for your operation system.  We've included the
 installation commands for Linux below, for reference.
 
-::
+.. code-block:: shell
 
     sudo apt-get install festival festival-dev <-- Installs festival and speech_tools libraries
     apt-cache search festvox-* <-- Displays list of voice packages
@@ -135,7 +135,7 @@ files accessible to the compiler, while also keeping the module code self-contai
 festival and speech_tools libraries can be installed from the modules/tts/ directory via
 git using the following commands:
 
-::
+.. code-block:: shell
 
     git clone https://github.com/festvox/festival
     git clone https://github.com/festvox/speech_tools
@@ -143,7 +143,7 @@ git using the following commands:
 If you don't want the external repository source files committed to your repository, you
 can link to them instead by adding them as submodules (from within the modules/tts/ directory), as seen below:
 
-::
+.. code-block:: shell
 
     git submodule add https://github.com/festvox/festival
     git submodule add https://github.com/festvox/speech_tools
@@ -182,7 +182,7 @@ Example `SCsub` with custom flags:
 
 The final module should look like this:
 
-::
+.. code-block:: none
 
     godot/modules/tts/festival/
     godot/modules/tts/libpath/libestbase.a

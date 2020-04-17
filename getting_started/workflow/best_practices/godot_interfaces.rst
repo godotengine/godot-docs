@@ -70,7 +70,7 @@ access.
 
     // Tool script added for the sake of the "const [Export]" example.
     [Tool]
-    public MyType : extends Object
+    public MyType
     {
         // Property initializations load during Script instancing, i.e. .new().
         // No "preload" loads during scene load exists in C#.
@@ -167,8 +167,8 @@ Nodes likewise have an alternative access point: the SceneTree.
             return
 
         # Fail and terminate.
-        # Compiled scripts in final binary do not include assert statements
-        assert prop.
+        # Note: Scripts run from a release export template don't run `assert` statements.
+        assert(prop, "'prop' wasn't initialized")
 
     # Use an autoload.
     # Dangerous for typical nodes, but useful for true singleton nodes
@@ -342,9 +342,9 @@ accesses:
       # If one does not wish to fail these checks without notifying users, one
       # can use an assert instead. These will trigger runtime errors
       # immediately if not true.
-      assert child.has("set_visible")
-      assert child.is_in_group("offer")
-      assert child is CanvasItem
+      assert(child.has("set_visible"))
+      assert(child.is_in_group("offer"))
+      assert(child is CanvasItem)
 
       # Can also use object labels to imply an interface, i.e. assume it implements certain methods.
       # There are two types, both of which only exist for Nodes: Names and Groups
@@ -472,7 +472,7 @@ accesses:
   .. code-tab:: csharp
 
     // Child.cs
-    public class Child extends Node
+    public class Child : Node
     {
         public FuncRef FN = null;
 
@@ -484,7 +484,7 @@ accesses:
     }
 
     // Parent.cs
-    public class Parent extends Node
+    public class Parent : Node
     {
         public Node Child;
 

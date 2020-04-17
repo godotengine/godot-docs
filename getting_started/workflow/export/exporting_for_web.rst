@@ -17,8 +17,7 @@ in the user's browser.
                ``file://`` protocol. To get around this, use a local server.
 
                .. tip:: Python offers an easy method to start a local server.
-                        Use ``python -m SimpleHTTPServer`` with Python 2 or
-                        ``python -m http.server`` with Python 3 to serve the
+                        Use ``python -m http.server`` with Python 3 to serve the
                         current working directory at ``http://localhost:8000``.
 
 WebGL 2

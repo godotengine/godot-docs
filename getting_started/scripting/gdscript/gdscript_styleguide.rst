@@ -64,7 +64,7 @@ Here is a complete class example based on these guidelines:
             return
 
         var target_state = get_node(target_state_path)
-        assert target_state.is_composite == false
+        assert(target_state.is_composite == false)
 
         _state.exit()
         self._state = target_state
@@ -595,6 +595,19 @@ variables, in that order.
    child nodes in the scene that your class relies on. This is what the example
    above shows.
 
+Member variables
+~~~~~~~~~~~~~~~~
+
+Don't declare member variables if they are only used locally in a method, as it
+makes the code more difficult to follow. Instead, declare them as local
+variables in the method's body.
+
+Local variables
+~~~~~~~~~~~~~~~
+
+Declare local variables as close as possible to their first use. This makes it
+easier to follow the code, without having to scroll too much to find where the
+variable was declared.
 
 Methods and static functions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -635,7 +648,7 @@ in that order.
             return
 
         var target_state = get_node(target_state_path)
-        assert target_state.is_composite == false
+        assert(target_state.is_composite == false)
 
         _state.exit()
         self._state = target_state

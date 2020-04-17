@@ -61,7 +61,7 @@ and it will work.
 If you are using Linux, you can use the supplied certs file, generally
 located in:
 
-::
+.. code-block:: none
 
     /etc/ssl/certs/ca-certificates.crt
 

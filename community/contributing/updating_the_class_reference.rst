@@ -3,6 +3,8 @@
 Contribute to the Class Reference
 =================================
 
+.. highlight:: shell
+
 Godot ships with many nodes and singletons to help you develop your games. Each is a class, documented in the :ref:`class reference <toc-class-ref>`.
 This reference is essential for anyone learning the engine: it is available both online and in the engine.
 
@@ -255,7 +257,7 @@ Godot's class reference supports BBcode-like tags. They add nice formatting to t
 
 Use ``[codeblock]`` for pre-formatted code blocks. Inside ``[codeblock]``, always use **four spaces** for indentation (the parser will delete tabs). Example:
 
-.. code-block:: xml
+.. code-block:: none
 
     [codeblock]
     func _ready():
@@ -265,7 +267,7 @@ Use ``[codeblock]`` for pre-formatted code blocks. Inside ``[codeblock]``, alway
 
 Will display as:
 
-::
+.. code-block:: gdscript
 
     func _ready():
         var sprite = get_node("Sprite")

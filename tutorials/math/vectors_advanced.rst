@@ -586,3 +586,14 @@ So the final algorithm is something like:
     {
         GD.Print("Polygons Collided!");
     }
+
+More information
+~~~~~~~~~~~~~~~~
+
+For more information on using vector math in Godot, see the following article:
+
+- :ref:`doc_matrices_and_transforms`
+
+If you would like additional explanation, you should check out
+3Blue1Brown's excellent video series "Essence of Linear Algebra":
+https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab

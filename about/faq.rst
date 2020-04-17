@@ -87,6 +87,8 @@ NativeScript / PluginScript facilities. (See the question about plugins below.)
 Work is currently underway, for example, on unofficial bindings for Godot
 to `Python <https://github.com/touilleMan/godot-python>`_ and `Nim <https://github.com/pragmagic/godot-nim>`_.
 
+.. _doc_faq_what_is_gdscript:
+
 What is GDScript and why should I use it?
 -----------------------------------------
 
@@ -124,25 +126,31 @@ languages can be found in the :ref:`doc_gdscript_more_efficiently` tutorial.
 What were the motivations behind creating GDScript?
 ---------------------------------------------------
 
+In the early days, the engine used the `Lua <https://www.lua.org>`__
+scripting language. Lua is fast, but creating bindings to an object
+oriented system (by using fallbacks) was complex and slow and took an
+enormous amount of code. After some experiments with
+`Python <https://www.python.org>`__, it also proved difficult to embed.
+
 The main reasons for creating a custom scripting language for Godot were:
 
-1. Poor thread support in most script VMs, and Godot uses threads
-   (Lua, Python, Squirrel, JS, AS, etc.).
+1. Poor threading support in most script VMs, and Godot uses threads
+   (Lua, Python, Squirrel, JavaScript, ActionScript, etc.).
 2. Poor class-extending support in most script VMs, and adapting to
-   the way Godot works is highly inefficient (Lua, Python, JS).
+   the way Godot works is highly inefficient (Lua, Python, JavaScript).
 3. Many existing languages have horrible interfaces for binding to C++, resulting in large amount of
    code, bugs, bottlenecks, and general inefficiency (Lua, Python,
-   Squirrel, JS, etc.) We wanted to focus on a great engine, not a great amount of integrations.
+   Squirrel, JavaScript, etc.) We wanted to focus on a great engine, not a great amount of integrations.
 4. No native vector types (vector3, matrix4, etc.), resulting in highly
    reduced performance when using custom types (Lua, Python, Squirrel,
-   JS, AS, etc.).
+   JavaScript, ActionScript, etc.).
 5. Garbage collector results in stalls or unnecessarily large memory
-   usage (Lua, Python, JS, AS, etc.).
+   usage (Lua, Python, JavaScript, ActionScript, etc.).
 6. Difficulty to integrate with the code editor for providing code
    completion, live editing, etc. (all of them). This is well
    supported by GDScript.
 
-GDScript was designed to curtail the issues above and more.
+GDScript was designed to curtail the issues above, and more.
 
 What type of 3D model formats does Godot support?
 -------------------------------------------------

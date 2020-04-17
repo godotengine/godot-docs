@@ -73,13 +73,12 @@ The Toolbar at the top of the screen is similar in both editors, offering contro
 Projects in Godot run in a separate window, rather than inside the editor
 (but the tree and objects can still be explored in the debugger window).
 
-This approach has the disadvantage that in Godot the running game can't be explored from different angles
-(though this may be supported in the future and displaying collision gizmos in the running game is already possible),
-but in exchange has several advantages:
+This approach has several advantages:
 
 - Running the project and closing it is fast (Unity has to save, run the project, close the project, and then reload the previous state).
 - Live editing is a lot more useful because changes done to the editor take effect immediately in the game and are not lost (nor have to be synced) when the game is closed. This allows fantastic workflows, like creating levels while you play them.
 - The editor is more stable because the game runs in a separate process.
+- The running game can be explored from different angles by toggling the "Camera Override" button in the editor viewport, which will switch between using the editor view and the game camera view.
 
 Finally, Godot's top toolbar includes a menu for remote debugging.
 These options allow deployment to a device (connected phone, tablet, or browser via HTML5),

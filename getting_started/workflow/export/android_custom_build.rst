@@ -78,7 +78,7 @@ carefully:
 Create a new folder anywhere you want named ``android-sdk`` (it **must** be
 an empty directory). On Windows, the following path is usually good enough:
 
-::
+.. code-block:: none
 
   C:\users\<yourusername>\Documents\android-sdk
 
@@ -86,7 +86,7 @@ Unzip the Android SDK ZIP file you just downloaded there. The only thing in the
 directory you created in the previous step should be the ``tools`` folder with
 its contents inside, like this:
 
-::
+.. code-block:: none
 
   android-sdk/
   android-sdk/tools/
@@ -128,7 +128,7 @@ Generating the keystore
 Once the *platform tools* are installed, the last step is to generate a debug
 keystore (this is needed to build). Go up two folders by writing:
 
-::
+.. code-block:: shell
 
     cd ..\..
 
@@ -137,7 +137,7 @@ keystore (this is needed to build). Go up two folders by writing:
 And you need to input the following line (on Linux and macOS, this should work
 out of the box, for Windows there are further instructions below):
 
-::
+.. code-block:: shell
 
     keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999
 
@@ -192,7 +192,7 @@ where the *android-sdk* directory is created.
 In any case, it's better to select a different path inside your user folders.
 The recommended one is usually:
 
-::
+.. code-block:: none
 
   C:\Users\<yourusername>\Documents\android-sdk
 
@@ -218,7 +218,7 @@ The actual command line to type is the following. On Linux and macOS, it should
 work out of the box, but on Windows, it needs additional details (keep reading
 afterwards).
 
-::
+.. code-block:: shell
 
     keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999
 
