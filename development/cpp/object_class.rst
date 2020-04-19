@@ -182,9 +182,10 @@ call).
 
 .. code-block:: cpp
 
-    void _get_property_info(List<PropertyInfo> *r_props); // return list of properties
-    bool _get(const StringName &p_property, Variant &r_value) const; // return true if property was found
-    bool _set(const StringName &p_property, const Variant &p_value); // return true if property was found
+    protected:
+         void _get_property_list(List<PropertyInfo> *r_props) const;      // return list of properties
+         bool _get(const StringName &p_property, Variant &r_value) const; // return true if property was found
+         bool _set(const StringName &p_property, const Variant &p_value); // return true if property was found
 
 This is also a little less efficient since ``p_property`` must be
 compared against the desired names in serial order.
