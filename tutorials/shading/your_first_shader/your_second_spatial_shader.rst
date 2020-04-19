@@ -141,7 +141,7 @@ when you are looking at the surface head-on or at a glancing angle.
   float fresnel = sqrt(1.0 - dot(NORMAL, VIEW));
 
 And mix it into both ``ROUGHNESS`` and ``ALBEDO``. This is the benefit of ShaderMaterials over 
-SpatialMaterials. With SpatialMaterials, we could set these properties with a texture, or to a flat
+StandardMaterial3Ds. With StandardMaterial3D, we could set these properties with a texture, or to a flat
 number. But with shaders we can set them based on any mathematical function that we can dream up.
 
 

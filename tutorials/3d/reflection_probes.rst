@@ -6,7 +6,7 @@ Reflection probes
 Introduction
 ------------
 
-As stated in the :ref:`doc_spatial_material`, objects can show reflected or diffuse light.
+As stated in the :ref:`doc_standard_material_3d`, objects can show reflected or diffuse light.
 Reflection probes are used as a source of reflected and ambient light for objects inside their area of influence.
 
 A probe of this type captures the surroundings (as a sort of 360 degrees image), and stores versions

@@ -50,10 +50,10 @@ GLES2 is not capable of using High Dynamic Range (HDR) rendering features. If HD
 project, or for a given viewport, Godot will still user Low Dynamic Range (LDR) which limits
 viewport values to the ``0-1`` range.
 
-SpatialMaterial features
-------------------------
+StandardMaterial3D features
+---------------------------
 
-In GLES2, the following advanced rendering features in the :ref:`SpatialMaterial <class_SpatialMaterial>` are missing:
+In GLES2, the following advanced rendering features in the :ref:`StandardMaterial3D <class_StandardMaterial3D>` are missing:
 
 - Refraction
 - Subsurface scattering
@@ -61,7 +61,7 @@ In GLES2, the following advanced rendering features in the :ref:`SpatialMaterial
 - Clearcoat
 - Depth mapping
 
-When using SpatialMaterials they will not even appear in the editor.
+When using StandardMaterial3Ds they will not even appear in the editor.
 
 In custom :ref:`ShaderMaterials <class_ShaderMaterial>`, you can set values for these features but they
 will be non-functional. For example, you will still be able to set the ``SSS`` built-in (which normally adds

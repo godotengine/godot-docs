@@ -58,7 +58,7 @@ Global built-ins are available everywhere, including custom functions.
 Vertex built-ins
 ^^^^^^^^^^^^^^^^
 
-In order to use the ``COLOR`` variable in a SpatialMaterial, set ``use_vertex_as_albedo``
+In order to use the ``COLOR`` variable in a StandardMaterial3D, set ``use_vertex_as_albedo``
 to ``true``. In a ShaderMaterial, access it with the ``COLOR`` variable.
 
 +---------------------------------+-------------------------------------------------------------------------------------+

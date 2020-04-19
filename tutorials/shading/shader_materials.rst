@@ -7,7 +7,7 @@ Introduction
 ------------
 
 For the most common cases, Godot provides ready to use materials for
-most types of shaders, such as :ref:`SpatialMaterial <class_SpatialMaterial>`, 
+most types of shaders, such as :ref:`StandardMaterial3D <class_StandardMaterial3D>`, 
 :ref:`CanvasItemMaterial <class_CanvasItemMaterial>` and :ref:`ParticlesMaterial <class_ParticlesMaterial>`. 
 They are flexible implementations that cover most use cases.
 
@@ -69,7 +69,7 @@ your visual shader to a text shader.
 Converting to ShaderMaterial
 ----------------------------
 
-It is possible to convert from SpatialMaterial, CanvasItemMaterial and
+It is possible to convert from StandardMaterial3D, CanvasItemMaterial and
 ParticlesMaterial to ShaderMaterial. To do so, go to the material properties
 and select the convert option.
 
@@ -77,5 +77,5 @@ and select the convert option.
 
 .. note::
     
-   Using the convert option will turn the SpatialMaterial into a ShaderMaterial
+   Using the convert option will turn the StandardMaterial3D into a ShaderMaterial
    with a text shader, not a visual shader.
