@@ -24,7 +24,7 @@ Creating a dictionary:
 
     var my_dir = {} # Creates an empty dictionary.
     var points_dir = {"White": 50, "Yellow": 75, "Orange": 100}
-    var my_dir = {
+    var another_dir = {
         key1: value1,
         key2: value2,
         key3: value3,
@@ -53,7 +53,7 @@ To add a key to an existing dictionary, access it like an existing key and assig
 ::
 
     var points_dir = {"White": 50, "Yellow": 75, "Orange": 100}
-    var points_dir["Blue"] = 150 # Add "Blue" as a key and assign 150 as its value.
+    points_dir["Blue"] = 150 # Add "Blue" as a key and assign 150 as its value.
 
 Finally, dictionaries can contain different types of keys and values in the same dictionary:
 
