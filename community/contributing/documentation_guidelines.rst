@@ -95,8 +95,12 @@ You can help to translate the official Godot documentation on our `Hosted Weblat
     :alt: Translation state
     :align: center
     :target: https://hosted.weblate.org/engage/godot-engine/?utm_source=widget
+    :width: 287
+    :height: 66
 
-There also is the official `Godot I18N repository <https://github.com/godotengine/godot-docs-l10n>`_. where you can see when the data was last synced.
+There also is the official
+`Godot i18n repository <https://github.com/godotengine/godot-docs-l10n>`_
+where you can see when the data was last synchronized.
 
 License
 -------
