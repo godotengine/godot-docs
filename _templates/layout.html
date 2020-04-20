@@ -1,14 +1,12 @@
-{% extends "!layout.html" %}
-{% block linktags %}
-    <link rel="alternate" hreflang="en" href="https://docs.godotengine.org/en/" />
-    <link rel="alternate" hreflang="de" href="https://docs.godotengine.org/de/" />
-    <link rel="alternate" hreflang="es" href="https://docs.godotengine.org/es/" />
-    <link rel="alternate" hreflang="fr" href="https://docs.godotengine.org/fr/" />
-    <link rel="alternate" hreflang="ko" href="https://docs.godotengine.org/ko/" />
-    <link rel="alternate" hreflang="pl" href="https://docs.godotengine.org/pl/" />
-    <link rel="alternate" hreflang="pt-br" href="https://docs.godotengine.org/pt-br/" />
-    <link rel="alternate" hreflang="uk" href="https://docs.godotengine.org/uk/" />
-    <link rel="alternate" hreflang="zh-cn" href="https://docs.godotengine.org/zh-cn/" />
-    <link rel="alternate" hreflang="x-default" href="https://docs.godotengine.org/" />
-    {{ super() }}
-{% endblock %}
+{% extends "!layout.html" -%}
+{% block linktags -%}
+  {% if godot_inject_language_links -%}
+  {% for alternate_lang in godot_docs_supported_languages -%}
+  <link rel="alternate" hreflang="{{ alternate_lang }}" href="{{ godot_docs_basepath }}{{ alternate_lang }}/{{ godot_canonical_version }}/{{ pagename }}{{ godot_docs_suffix }}" />
+  {% endfor -%}
+  <link rel="alternate" hreflang="x-default" href="{{ godot_docs_basepath }}{{ godot_default_lang }}/{{ godot_canonical_version }}/{{ pagename }}{{ godot_docs_suffix }}" />
+  
+  <link rel="canonical" href="{{ godot_docs_basepath }}{{ lang_attr }}/{{ godot_canonical_version }}/{{ pagename }}{{ godot_docs_suffix }}" />
+  {% endif -%}
+  {{ super() }}
+{% endblock -%}

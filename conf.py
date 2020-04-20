@@ -49,7 +49,13 @@ if env_tags is not None:
         tags.add(tag.strip())  # noqa: F821
 
 # Language / i18n
+supported_languages = ['en', 'de', 'es', 'fr', 'fi', 'it', 'ja', 'ko', 'pl', 'pt-br', 'ru', 'uk', 'zh-cn']
 language = os.getenv("READTHEDOCS_LANGUAGE", "en")
+if not language in supported_languages:
+    print("Unknown language: " + language)
+    print("Supported languages: " + ", ".join(supported_languages))
+    print("This is an error or needs to be added to supported_languages in conf.py")
+
 is_i18n = tags.has("i18n")  # noqa: F821
 
 exclude_patterns = ["_build"]
@@ -94,6 +100,12 @@ html_context = {
     "github_repo": "godot-docs",  # Repo name
     "github_version": "master",  # Version
     "conf_py_path": "/",  # Path in the checkout to the docs root
+    "godot_inject_language_links": True,
+    "godot_docs_supported_languages": supported_languages,
+    "godot_docs_basepath": "https://docs.godotengine.org/",
+    "godot_docs_suffix": ".html",
+    "godot_default_lang": "en",
+    "godot_canonical_version": "stable",
 }
 
 html_logo = "img/docs_logo.png"
