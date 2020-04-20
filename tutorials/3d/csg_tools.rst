@@ -11,6 +11,16 @@ Level prototyping is one of the main uses of CSG in Godot. This technique allows
 users to create simple versions of most common shapes by combining primitives.
 Interior environments can be created by using inverted primitives.
 
+.. note:: The CSG nodes in Godot are mainly intended for prototyping. There is
+          no built-in support for UV mapping or editing 3D polygons (though
+          extruded 2D polygons can be used with the CSGPolygon node).
+
+          If you're looking for an easy to use level design tool for a project,
+          you may want to use `Qodot <https://github.com/Shfty/qodot-plugin>`__
+          instead. It lets you design levels using
+          `TrenchBroom <https://kristianduske.com/trenchbroom/>`__ and import
+          them in Godot.
+
 .. image:: img/csg.gif
 
 Introduction to CSG nodes
