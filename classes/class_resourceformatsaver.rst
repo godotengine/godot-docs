@@ -11,8 +11,6 @@ ResourceFormatSaver
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`ResourceFormatSaverCrypto<class_ResourceFormatSaverCrypto>`
-
 Saves a specific resource type to a file.
 
 Description

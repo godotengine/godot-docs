@@ -11,8 +11,6 @@ Physics2DServer
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`Physics2DServerSW<class_Physics2DServerSW>`
-
 Server interface for low-level 2D physics access.
 
 Description

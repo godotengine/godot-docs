@@ -11,8 +11,6 @@ PhysicsDirectBodyState
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`BulletPhysicsDirectBodyState<class_BulletPhysicsDirectBodyState>`
-
 Direct access object to a physics body in the :ref:`PhysicsServer<class_PhysicsServer>`.
 
 Description

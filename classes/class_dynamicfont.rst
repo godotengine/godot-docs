@@ -27,6 +27,8 @@ DynamicFont uses the `FreeType <https://www.freetype.org/>`_ library for rasteri
     dynamic_font.size = 64
     $"Label".set("custom_fonts/font", dynamic_font)
 
+**Note:** DynamicFont doesn't support features such as right-to-left typesetting, ligatures, text shaping, variable fonts and optional font features yet. If you wish to "bake" an optional font feature into a TTF font file, you can use `FontForge <https://fontforge.org/>`_ to do so. In FontForge, use **File > Generate Fonts**, click **Options**, choose the desired features then generate the font.
+
 Properties
 ----------
 

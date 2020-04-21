@@ -14,9 +14,11 @@ Dictionary type.
 Description
 -----------
 
-Dictionary type. Associative container which contains values referenced by unique keys. Dictionary are composed of pairs of keys (which must be unique) and values. You can define a dictionary by placing a comma separated list of ``key: value`` pairs in curly braces ``{}``.
+Dictionary type. Associative container which contains values referenced by unique keys. Dictionaries are composed of pairs of keys (which must be unique) and values. Dictionaries will preserve the insertion order when adding elements, even though this may not be reflected when printing the dictionary. In other programming languages, this data structure is sometimes referred to as an hash map or associative array.
 
-Erasing elements while iterating over them **is not supported**.
+You can define a dictionary by placing a comma-separated list of ``key: value`` pairs in curly braces ``{}``.
+
+Erasing elements while iterating over them **is not supported** and will result in undefined behavior.
 
 Creating a dictionary:
 
@@ -24,13 +26,13 @@ Creating a dictionary:
 
     var my_dir = {} # Creates an empty dictionary.
     var points_dir = {"White": 50, "Yellow": 75, "Orange": 100}
-    var my_dir = {
+    var another_dir = {
         key1: value1,
         key2: value2,
         key3: value3,
     }
 
-You can access values of a dictionary by referencing appropriate key in above example ``points_dir["White"]`` would return value of 50.
+You can access a dictionary's values by referencing the appropriate key. In the above example, ``points_dir["White"]`` will return ``50``. You can also write ``points_dir.White``, which is equivalent. However, you'll have to use the bracket syntax if the key you're accessing the dictionary with isn't a fixed string (such as a number or variable).
 
 ::
 
@@ -38,9 +40,10 @@ You can access values of a dictionary by referencing appropriate key in above ex
     var points_dir = {"White": 50, "Yellow": 75, "Orange": 100}
     
     func _ready():
+        # We can't use dot syntax here as `my_color` is a variable.
         var points = points_dir[my_color]
 
-In the above code ``points`` will be assigned the value that is paired with the appropriate color selected in ``my_color``.
+In the above code, ``points`` will be assigned the value that is paired with the appropriate color selected in ``my_color``.
 
 Dictionaries can contain more complex data:
 
@@ -53,15 +56,23 @@ To add a key to an existing dictionary, access it like an existing key and assig
 ::
 
     var points_dir = {"White": 50, "Yellow": 75, "Orange": 100}
-    var points_dir["Blue"] = 150 # Add "Blue" as a key and assign 150 as its value.
+    points_dir["Blue"] = 150 # Add "Blue" as a key and assign 150 as its value.
 
 Finally, dictionaries can contain different types of keys and values in the same dictionary:
 
 ::
 
-    var my_dir = {"String Key": 5, 4: [1, 2, 3], 7: "Hello"} # This is a valid dictionary.
+    # This is a valid dictionary.
+    # To access the string "Nested value" below, use `my_dir.sub_dir.sub_key` or `my_dir["sub_dir"]["sub_key"]`.
+    # Indexing styles can be mixed and matched depending on your needs.
+    var my_dir = {
+        "String Key": 5,
+        4: [1, 2, 3],
+        7: "Hello",
+        "sub_dir": {"sub_key": "Nested value"},
+    }
 
-**Note:** Unlike :ref:`Array<class_Array>`\ s you can't compare dictionaries directly:
+**Note:** Unlike :ref:`Array<class_Array>`\ s, you can't compare dictionaries directly:
 
 ::
 
@@ -134,7 +145,7 @@ Clear the dictionary, removing all key/value pairs.
 
 - :ref:`Dictionary<class_Dictionary>` **duplicate** **(** :ref:`bool<class_bool>` deep=false **)**
 
-Creates a copy of the dictionary, and returns it.
+Creates a copy of the dictionary, and returns it. The ``deep`` parameter causes inner dictionaries and arrays to be copied recursively, but does not apply to objects.
 
 ----
 

@@ -13,12 +13,14 @@ VisibilityNotifier
 
 **Inherited By:** :ref:`VisibilityEnabler<class_VisibilityEnabler>`
 
-Detects when the node is visible on screen.
+Detects approximately when the node is visible on screen.
 
 Description
 -----------
 
 The VisibilityNotifier detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a :ref:`Camera<class_Camera>`'s view.
+
+**Note:** VisibilityNotifier uses an approximate heuristic for performance reasons. It doesn't take walls and other occlusion into account. If you need exact visibility checking, use another method such as adding an :ref:`Area<class_Area>` node as a child of a :ref:`Camera<class_Camera>` node.
 
 Properties
 ----------

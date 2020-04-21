@@ -49,7 +49,7 @@ Methods
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`get_previous_tab<class_TabContainer_method_get_previous_tab>` **(** **)** const                                                           |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Control<class_Control>` | :ref:`get_tab_control<class_TabContainer_method_get_tab_control>` **(** :ref:`int<class_int>` idx **)** const                                   |
+| :ref:`Control<class_Control>` | :ref:`get_tab_control<class_TabContainer_method_get_tab_control>` **(** :ref:`int<class_int>` tab_idx **)** const                               |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`get_tab_count<class_TabContainer_method_get_tab_count>` **(** **)** const                                                                 |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -269,9 +269,9 @@ Returns the previously active tab index.
 
 .. _class_TabContainer_method_get_tab_control:
 
-- :ref:`Control<class_Control>` **get_tab_control** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Control<class_Control>` **get_tab_control** **(** :ref:`int<class_int>` tab_idx **)** const
 
-Returns the currently visible tab's :ref:`Control<class_Control>` node.
+Returns the :ref:`Control<class_Control>` node from the tab at index ``tab_idx``.
 
 ----
 

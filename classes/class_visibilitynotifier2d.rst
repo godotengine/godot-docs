@@ -13,12 +13,14 @@ VisibilityNotifier2D
 
 **Inherited By:** :ref:`VisibilityEnabler2D<class_VisibilityEnabler2D>`
 
-Detects when the node is visible on screen.
+Detects approximately when the node is visible on screen.
 
 Description
 -----------
 
 The VisibilityNotifier2D detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a viewport.
+
+**Note:** VisibilityNotifier2D uses an approximate heuristic for performance reasons. If you need exact visibility checking, use another method such as adding an :ref:`Area2D<class_Area2D>` node as a child of a :ref:`Camera2D<class_Camera2D>` node.
 
 Properties
 ----------

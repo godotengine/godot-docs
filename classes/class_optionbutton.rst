@@ -21,15 +21,15 @@ OptionButton is a type button that provides a selectable list of items when pres
 Properties
 ----------
 
-+-----------------------------------------------+-------------------------------------------------------+-----------------+
-| :ref:`ActionMode<enum_BaseButton_ActionMode>` | action_mode                                           | **O:** ``0``    |
-+-----------------------------------------------+-------------------------------------------------------+-----------------+
-| :ref:`TextAlign<enum_Button_TextAlign>`       | align                                                 | **O:** ``0``    |
-+-----------------------------------------------+-------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`                         | :ref:`selected<class_OptionButton_property_selected>` | ``-1``          |
-+-----------------------------------------------+-------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                       | toggle_mode                                           | **O:** ``true`` |
-+-----------------------------------------------+-------------------------------------------------------+-----------------+
++-----------------------------------------------+-------------------------------------------------------+------------------------------+
+| :ref:`ActionMode<enum_BaseButton_ActionMode>` | action_mode                                           | ``0`` *(parent override)*    |
++-----------------------------------------------+-------------------------------------------------------+------------------------------+
+| :ref:`TextAlign<enum_Button_TextAlign>`       | align                                                 | ``0`` *(parent override)*    |
++-----------------------------------------------+-------------------------------------------------------+------------------------------+
+| :ref:`int<class_int>`                         | :ref:`selected<class_OptionButton_property_selected>` | ``-1``                       |
++-----------------------------------------------+-------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>`                       | toggle_mode                                           | ``true`` *(parent override)* |
++-----------------------------------------------+-------------------------------------------------------+------------------------------+
 
 Methods
 -------
@@ -114,7 +114,7 @@ Signals
 
 .. _class_OptionButton_signal_item_focused:
 
-- **item_focused** **(** :ref:`int<class_int>` id **)**
+- **item_focused** **(** :ref:`int<class_int>` index **)**
 
 Emitted the when user navigates to an item using the ``ui_up`` or ``ui_down`` actions. The index of the item selected is passed as argument.
 
@@ -122,7 +122,7 @@ Emitted the when user navigates to an item using the ``ui_up`` or ``ui_down`` ac
 
 .. _class_OptionButton_signal_item_selected:
 
-- **item_selected** **(** :ref:`int<class_int>` id **)**
+- **item_selected** **(** :ref:`int<class_int>` index **)**
 
 Emitted when the current item has been changed by the user. The index of the item selected is passed as argument.
 

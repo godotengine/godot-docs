@@ -70,6 +70,8 @@ Methods
 +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                                  | :ref:`rename_node<class_AnimationNodeStateMachine_method_rename_node>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` new_name **)**                                                                                                   |
 +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                                                  | :ref:`replace_node<class_AnimationNodeStateMachine_method_replace_node>` **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node **)**                                                                                       |
++---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                                  | :ref:`set_end_node<class_AnimationNodeStateMachine_method_set_end_node>` **(** :ref:`String<class_String>` name **)**                                                                                                                                       |
 +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                                  | :ref:`set_graph_offset<class_AnimationNodeStateMachine_method_set_graph_offset>` **(** :ref:`Vector2<class_Vector2>` offset **)**                                                                                                                           |
@@ -223,6 +225,14 @@ Deletes the given transition by index.
 - void **rename_node** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` new_name **)**
 
 Renames the given node.
+
+----
+
+.. _class_AnimationNodeStateMachine_method_replace_node:
+
+- void **replace_node** **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node **)**
+
+Replaces the node and keeps its transitions unchanged.
 
 ----
 

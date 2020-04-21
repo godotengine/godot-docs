@@ -477,6 +477,8 @@ Changes the file reading/writing cursor to the specified position (in bytes from
 
 Stores an integer as 16 bits in the file.
 
+**Note:** The ``value`` should lie in the interval ``[0, 2^16 - 1]``.
+
 ----
 
 .. _class_File_method_store_32:
@@ -484,6 +486,8 @@ Stores an integer as 16 bits in the file.
 - void **store_32** **(** :ref:`int<class_int>` value **)**
 
 Stores an integer as 32 bits in the file.
+
+**Note:** The ``value`` should lie in the interval ``[0, 2^32 - 1]``.
 
 ----
 
@@ -493,6 +497,8 @@ Stores an integer as 32 bits in the file.
 
 Stores an integer as 64 bits in the file.
 
+**Note:** The ``value`` must lie in the interval ``[-2^63, 2^63 - 1]`` (i.e. be a valid :ref:`int<class_int>` value).
+
 ----
 
 .. _class_File_method_store_8:
@@ -500,6 +506,8 @@ Stores an integer as 64 bits in the file.
 - void **store_8** **(** :ref:`int<class_int>` value **)**
 
 Stores an integer as 8 bits in the file.
+
+**Note:** The ``value`` should lie in the interval ``[0, 255]``.
 
 ----
 

@@ -18,6 +18,8 @@ Description
 
 A node that displays a 2D texture in a 3D environment. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
 
+**Note:** There are `known performance issues <https://github.com/godotengine/godot/issues/20855>`_ when using ``Sprite3D``. Consider using a :ref:`MeshInstance<class_MeshInstance>` with a :ref:`QuadMesh<class_QuadMesh>` as the mesh instead. You can still have billboarding by enabling billboard properties in the QuadMesh's :ref:`SpatialMaterial<class_SpatialMaterial>`.
+
 Properties
 ----------
 

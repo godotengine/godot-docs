@@ -11,8 +11,6 @@ IP
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`IP_Unix<class_IP_Unix>`
-
 Internet protocol (IP) support functions such as DNS resolution.
 
 Description

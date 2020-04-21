@@ -70,6 +70,10 @@ Enumerations
 
 .. _class_Performance_constant_RENDER_DRAW_CALLS_IN_FRAME:
 
+.. _class_Performance_constant_RENDER_2D_ITEMS_IN_FRAME:
+
+.. _class_Performance_constant_RENDER_2D_DRAW_CALLS_IN_FRAME:
+
 .. _class_Performance_constant_RENDER_VIDEO_MEM_USED:
 
 .. _class_Performance_constant_RENDER_TEXTURE_MEM_USED:
@@ -132,29 +136,33 @@ enum **Monitor**:
 
 - **RENDER_DRAW_CALLS_IN_FRAME** = **17** --- Draw calls per frame. 3D only.
 
-- **RENDER_VIDEO_MEM_USED** = **18** --- The amount of video memory used, i.e. texture and vertex memory combined.
+- **RENDER_2D_ITEMS_IN_FRAME** = **18** --- Items or joined items drawn per frame.
 
-- **RENDER_TEXTURE_MEM_USED** = **19** --- The amount of texture memory used.
+- **RENDER_2D_DRAW_CALLS_IN_FRAME** = **19** --- Draw calls per frame.
 
-- **RENDER_VERTEX_MEM_USED** = **20** --- The amount of vertex memory used.
+- **RENDER_VIDEO_MEM_USED** = **20** --- The amount of video memory used, i.e. texture and vertex memory combined.
 
-- **RENDER_USAGE_VIDEO_MEM_TOTAL** = **21** --- Unimplemented in the GLES2 and GLES3 rendering backends, always returns 0.
+- **RENDER_TEXTURE_MEM_USED** = **21** --- The amount of texture memory used.
 
-- **PHYSICS_2D_ACTIVE_OBJECTS** = **22** --- Number of active :ref:`RigidBody2D<class_RigidBody2D>` nodes in the game.
+- **RENDER_VERTEX_MEM_USED** = **22** --- The amount of vertex memory used.
 
-- **PHYSICS_2D_COLLISION_PAIRS** = **23** --- Number of collision pairs in the 2D physics engine.
+- **RENDER_USAGE_VIDEO_MEM_TOTAL** = **23** --- Unimplemented in the GLES2 and GLES3 rendering backends, always returns 0.
 
-- **PHYSICS_2D_ISLAND_COUNT** = **24** --- Number of islands in the 2D physics engine.
+- **PHYSICS_2D_ACTIVE_OBJECTS** = **24** --- Number of active :ref:`RigidBody2D<class_RigidBody2D>` nodes in the game.
 
-- **PHYSICS_3D_ACTIVE_OBJECTS** = **25** --- Number of active :ref:`RigidBody<class_RigidBody>` and :ref:`VehicleBody<class_VehicleBody>` nodes in the game.
+- **PHYSICS_2D_COLLISION_PAIRS** = **25** --- Number of collision pairs in the 2D physics engine.
 
-- **PHYSICS_3D_COLLISION_PAIRS** = **26** --- Number of collision pairs in the 3D physics engine.
+- **PHYSICS_2D_ISLAND_COUNT** = **26** --- Number of islands in the 2D physics engine.
 
-- **PHYSICS_3D_ISLAND_COUNT** = **27** --- Number of islands in the 3D physics engine.
+- **PHYSICS_3D_ACTIVE_OBJECTS** = **27** --- Number of active :ref:`RigidBody<class_RigidBody>` and :ref:`VehicleBody<class_VehicleBody>` nodes in the game.
 
-- **AUDIO_OUTPUT_LATENCY** = **28** --- Output latency of the :ref:`AudioServer<class_AudioServer>`.
+- **PHYSICS_3D_COLLISION_PAIRS** = **28** --- Number of collision pairs in the 3D physics engine.
 
-- **MONITOR_MAX** = **29** --- Represents the size of the :ref:`Monitor<enum_Performance_Monitor>` enum.
+- **PHYSICS_3D_ISLAND_COUNT** = **29** --- Number of islands in the 3D physics engine.
+
+- **AUDIO_OUTPUT_LATENCY** = **30** --- Output latency of the :ref:`AudioServer<class_AudioServer>`.
+
+- **MONITOR_MAX** = **31** --- Represents the size of the :ref:`Monitor<enum_Performance_Monitor>` enum.
 
 Method Descriptions
 -------------------

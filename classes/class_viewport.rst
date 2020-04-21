@@ -249,6 +249,10 @@ enum **ShadowAtlasQuadrantSubdiv**:
 
 .. _class_Viewport_constant_RENDER_INFO_DRAW_CALLS_IN_FRAME:
 
+.. _class_Viewport_constant_RENDER_INFO_2D_ITEMS_IN_FRAME:
+
+.. _class_Viewport_constant_RENDER_INFO_2D_DRAW_CALLS_IN_FRAME:
+
 .. _class_Viewport_constant_RENDER_INFO_MAX:
 
 enum **RenderInfo**:
@@ -265,7 +269,11 @@ enum **RenderInfo**:
 
 - **RENDER_INFO_DRAW_CALLS_IN_FRAME** = **5** --- Amount of draw calls in frame.
 
-- **RENDER_INFO_MAX** = **6** --- Represents the size of the :ref:`RenderInfo<enum_Viewport_RenderInfo>` enum.
+- **RENDER_INFO_2D_ITEMS_IN_FRAME** = **6** --- Amount of items or joined items in frame.
+
+- **RENDER_INFO_2D_DRAW_CALLS_IN_FRAME** = **7** --- Amount of draw calls in frame.
+
+- **RENDER_INFO_MAX** = **8** --- Represents the size of the :ref:`RenderInfo<enum_Viewport_RenderInfo>` enum.
 
 ----
 

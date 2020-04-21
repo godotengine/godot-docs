@@ -11,12 +11,16 @@ VisibilityEnabler
 
 **Inherits:** :ref:`VisibilityNotifier<class_VisibilityNotifier>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Enables certain nodes only when visible.
+Enables certain nodes only when approximately visible.
 
 Description
 -----------
 
 The VisibilityEnabler will disable :ref:`RigidBody<class_RigidBody>` and :ref:`AnimationPlayer<class_AnimationPlayer>` nodes when they are not visible. It will only affect other nodes within the same scene as the VisibilityEnabler itself.
+
+**Note:** VisibilityEnabler uses an approximate heuristic for performance reasons. It doesn't take walls and other occlusion into account. If you need exact visibility checking, use another method such as adding an :ref:`Area<class_Area>` node as a child of a :ref:`Camera<class_Camera>` node.
+
+**Note:** VisibilityEnabler will not affect nodes added after scene initialization.
 
 Properties
 ----------

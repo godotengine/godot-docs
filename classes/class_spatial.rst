@@ -22,6 +22,8 @@ Most basic 3D game object, with a 3D :ref:`Transform<class_Transform>` and visib
 
 Affine operations (rotate, scale, translate) happen in parent's local coordinate system, unless the ``Spatial`` object is set as top-level. Affine operations in this coordinate system correspond to direct affine operations on the ``Spatial``'s transform. The word local below refers to this coordinate system. The coordinate system that is attached to the ``Spatial`` object itself is referred to as object-local coordinate system.
 
+**Note:** Unless otherwise specified, all methods that have angle parameters must have angles specified as *radians*. To convert degrees to radians, use :ref:`@GDScript.deg2rad<class_@GDScript_method_deg2rad>`.
+
 Tutorials
 ---------
 

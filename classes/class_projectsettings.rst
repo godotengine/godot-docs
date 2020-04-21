@@ -524,6 +524,22 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`rendering/environment/default_environment<class_ProjectSettings_property_rendering/environment/default_environment>`                                           | ``""``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/gles2/batching/batch_buffer_size<class_ProjectSettings_property_rendering/gles2/batching/batch_buffer_size>`                                         | ``16384``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`rendering/gles2/batching/colored_vertex_format_threshold<class_ProjectSettings_property_rendering/gles2/batching/colored_vertex_format_threshold>`             | ``0.25``                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`rendering/gles2/batching/light_scissor_area_threshold<class_ProjectSettings_property_rendering/gles2/batching/light_scissor_area_threshold>`                   | ``1.0``                                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/gles2/batching/max_join_item_commands<class_ProjectSettings_property_rendering/gles2/batching/max_join_item_commands>`                               | ``16``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/batching/use_batching<class_ProjectSettings_property_rendering/gles2/batching/use_batching>`                                                   | ``true``                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/debug/diagnose_frame<class_ProjectSettings_property_rendering/gles2/debug/diagnose_frame>`                                                     | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/debug/flash_batching<class_ProjectSettings_property_rendering/gles2/debug/flash_batching>`                                                     | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/debug/use_batching_in_editor<class_ProjectSettings_property_rendering/gles2/debug/use_batching_in_editor>`                                     | ``true``                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/limits/buffers/blend_shape_max_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/blend_shape_max_buffer_size_kb>`               | ``4096``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/limits/buffers/canvas_polygon_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/canvas_polygon_buffer_size_kb>`                 | ``128``                                                                                         |
@@ -3680,6 +3696,102 @@ Default background clear color. Overridable per :ref:`Viewport<class_Viewport>` 
 +-----------+--------+
 
 :ref:`Environment<class_Environment>` that will be used as a fallback environment in case a scene does not specify its own environment. The default environment is loaded in at scene load time regardless of whether you have set an environment or not. If you do not rely on the fallback environment, it is best to delete ``default_env.tres``, or to specify a different default environment here.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles2/batching/batch_buffer_size:
+
+- :ref:`int<class_int>` **rendering/gles2/batching/batch_buffer_size**
+
++-----------+-----------+
+| *Default* | ``16384`` |
++-----------+-----------+
+
+Size of buffer reserved for batched vertices. Larger size enables larger batches, but there are diminishing returns for the memory used.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles2/batching/colored_vertex_format_threshold:
+
+- :ref:`float<class_float>` **rendering/gles2/batching/colored_vertex_format_threshold**
+
++-----------+----------+
+| *Default* | ``0.25`` |
++-----------+----------+
+
+Including color in the vertex format has a cost, however, not including color prevents batching across color changes. This threshold determines the ratio of ``number of vertex color changes / total number of vertices`` above which vertices will be translated to colored format. A value of 0 will always use colored vertices, 1 will never use colored vertices.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles2/batching/light_scissor_area_threshold:
+
+- :ref:`float<class_float>` **rendering/gles2/batching/light_scissor_area_threshold**
+
++-----------+---------+
+| *Default* | ``1.0`` |
++-----------+---------+
+
+Sets the proportion of the screen area that must be saved by a scissor operation in order to activate light scissoring. This can prevent parts of items being rendered outside the light area. Lower values scissor more aggressively. A value of 1 scissors none of the items, a value of 0 scissors every item. This can reduce fill rate requirements in scenes with a lot of lighting.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles2/batching/max_join_item_commands:
+
+- :ref:`int<class_int>` **rendering/gles2/batching/max_join_item_commands**
+
++-----------+--------+
+| *Default* | ``16`` |
++-----------+--------+
+
+Sets the number of commands to lookahead to determine whether to batch render items. A value of 1 can join items consisting of single commands, 0 turns off joining. Higher values are in theory more likely to join, however this has diminishing returns and has a runtime cost so a small value is recommended.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles2/batching/use_batching:
+
+- :ref:`bool<class_bool>` **rendering/gles2/batching/use_batching**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+Turns batching on and off. Batching increases performance by reducing the amount of graphics API drawcalls.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles2/debug/diagnose_frame:
+
+- :ref:`bool<class_bool>` **rendering/gles2/debug/diagnose_frame**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+When batching is on, this regularly prints a frame diagnosis log. Note that this will degrade performance.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles2/debug/flash_batching:
+
+- :ref:`bool<class_bool>` **rendering/gles2/debug/flash_batching**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+**Experimental** For regression testing against the old renderer. If this is switched on, and ``use_batching`` is set, the renderer will swap alternately between using the old renderer, and the batched renderer, on each frame. This makes it easy to identify visual differences. Performance will be degraded.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles2/debug/use_batching_in_editor:
+
+- :ref:`bool<class_bool>` **rendering/gles2/debug/use_batching_in_editor**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+**Experimental** Switches on batching within the editor. Use with caution - note that if your editor does not render correctly you may need to edit your ``project.godot`` and remove the use_batching_in_editor setting manually.
 
 ----
 

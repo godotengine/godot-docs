@@ -16,9 +16,11 @@ Captures its surroundings to create reflections.
 Description
 -----------
 
-Capture its surroundings as a dual parabolid image, and stores versions of it with increasing levels of blur to simulate different material roughnesses.
+Capture its surroundings as a dual paraboloid image, and stores versions of it with increasing levels of blur to simulate different material roughnesses.
 
 The ``ReflectionProbe`` is used to create high-quality reflections at the cost of performance. It can be combined with :ref:`GIProbe<class_GIProbe>`\ s and Screen Space Reflections to achieve high quality reflections. ``ReflectionProbe``\ s render all objects within their :ref:`cull_mask<class_ReflectionProbe_property_cull_mask>`, so updating them can be quite expensive. It is best to update them once with the important static objects and then leave them.
+
+Note: By default Godot will only render 16 reflection probes. If you need more, increase the number of atlas subdivisions. This setting can be found in :ref:`ProjectSettings.rendering/quality/reflections/atlas_subdiv<class_ProjectSettings_property_rendering/quality/reflections/atlas_subdiv>`.
 
 Tutorials
 ---------

@@ -16,7 +16,9 @@ Description
 
 A color is represented by red, green, and blue ``(r, g, b)`` components. Additionally, ``a`` represents the alpha component, often used for transparency. Values are in floating-point and usually range from 0 to 1. Some properties (such as :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`) may accept values greater than 1.
 
-You can also create a color from standardized color names by using :ref:`@GDScript.ColorN<class_@GDScript_method_ColorN>` or directly using the color constants defined here. The standardized color set is based on the `X11 color names <https://en.wikipedia.org/wiki/X11_color_names>`_.
+You can also create a color from standardized color names by using :ref:`@GDScript.ColorN<class_@GDScript_method_ColorN>` or directly using the color constants defined here. The standardized color set is based on the `X11 color names <https://en.wikipedia.org/wiki/X11_color_names>`_. 
+
+If you want to supply values in a range of 0 to 255, you should use :ref:`@GDScript.Color8<class_@GDScript_method_Color8>`.
 
 Properties
 ----------

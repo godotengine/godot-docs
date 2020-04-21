@@ -21,9 +21,9 @@ The editor inspector is by default located on the right-hand side of the editor.
 Properties
 ----------
 
-+-------------------------+---------------------------+------------------+
-| :ref:`bool<class_bool>` | scroll_horizontal_enabled | **O:** ``false`` |
-+-------------------------+---------------------------+------------------+
++-------------------------+---------------------------+-------------------------------+
+| :ref:`bool<class_bool>` | scroll_horizontal_enabled | ``false`` *(parent override)* |
++-------------------------+---------------------------+-------------------------------+
 
 Methods
 -------

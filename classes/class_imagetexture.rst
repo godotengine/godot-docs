@@ -18,16 +18,18 @@ Description
 
 A :ref:`Texture<class_Texture>` based on an :ref:`Image<class_Image>`. Can be created from an :ref:`Image<class_Image>` with :ref:`create_from_image<class_ImageTexture_method_create_from_image>`.
 
+**Note:** The maximum image size is 16384×16384 pixels due to graphics hardware limitations. Larger images will fail to import.
+
 Properties
 ----------
 
-+-------------------------------------------+-----------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                     | flags                                                           | **O:** ``7`` |
-+-------------------------------------------+-----------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`                 | :ref:`lossy_quality<class_ImageTexture_property_lossy_quality>` | ``0.7``      |
-+-------------------------------------------+-----------------------------------------------------------------+--------------+
-| :ref:`Storage<enum_ImageTexture_Storage>` | :ref:`storage<class_ImageTexture_property_storage>`             | ``0``        |
-+-------------------------------------------+-----------------------------------------------------------------+--------------+
++-------------------------------------------+-----------------------------------------------------------------+---------------------------+
+| :ref:`int<class_int>`                     | flags                                                           | ``7`` *(parent override)* |
++-------------------------------------------+-----------------------------------------------------------------+---------------------------+
+| :ref:`float<class_float>`                 | :ref:`lossy_quality<class_ImageTexture_property_lossy_quality>` | ``0.7``                   |
++-------------------------------------------+-----------------------------------------------------------------+---------------------------+
+| :ref:`Storage<enum_ImageTexture_Storage>` | :ref:`storage<class_ImageTexture_property_storage>`             | ``0``                     |
++-------------------------------------------+-----------------------------------------------------------------+---------------------------+
 
 Methods
 -------

@@ -30,9 +30,11 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------+-----------------------------------------+--------+
-| :ref:`String<class_String>` | :ref:`code<class_Shader_property_code>` | ``""`` |
-+-----------------------------+-----------------------------------------+--------+
++-----------------------------+-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`code<class_Shader_property_code>`                     | ``""``                                                                                                                                     |
++-----------------------------+-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`custom_defines<class_Shader_property_custom_defines>` | ``"#define MAX_LIGHT_DATA_STRUCTS 409#define MAX_FORWARD_LIGHTS 8#define MAX_REFLECTION_DATA_STRUCTS 455#define MAX_SKELETON_BONES 1365"`` |
++-----------------------------+-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -82,6 +84,24 @@ Property Descriptions
 +-----------+-----------------+
 
 Returns the shader's code as the user has written it, not the full generated code used internally.
+
+----
+
+.. _class_Shader_property_custom_defines:
+
+- :ref:`String<class_String>` **custom_defines**
+
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| *Default* | ``"#define MAX_LIGHT_DATA_STRUCTS 409#define MAX_FORWARD_LIGHTS 8#define MAX_REFLECTION_DATA_STRUCTS 455#define MAX_SKELETON_BONES 1365"`` |
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| *Setter*  | set_custom_defines(value)                                                                                                                  |
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| *Getter*  | get_custom_defines()                                                                                                                       |
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+
+Returns the shader's custom defines. Custom defines can be used in Godot to add GLSL preprocessor directives (e.g: extensions) required for the shader logic.
+
+**Note:** Custom defines are not validated by the Godot shader parser, so care should be taken when using them.
 
 Method Descriptions
 -------------------

@@ -838,11 +838,11 @@ enum **TextureType**:
 
 - **TEXTURE_TYPE_2D** = **0** --- Normal texture with 2 dimensions, width and height.
 
-- **TEXTURE_TYPE_CUBEMAP** = **1** --- Texture made up of six faces, can be looked up with a ``vec3`` in shader.
+- **TEXTURE_TYPE_CUBEMAP** = **2** --- Texture made up of six faces, can be looked up with a ``vec3`` in shader.
 
-- **TEXTURE_TYPE_2D_ARRAY** = **2** --- An array of 2-dimensional textures.
+- **TEXTURE_TYPE_2D_ARRAY** = **3** --- An array of 2-dimensional textures.
 
-- **TEXTURE_TYPE_3D** = **3** --- A 3-dimensional texture with width, height, and depth.
+- **TEXTURE_TYPE_3D** = **4** --- A 3-dimensional texture with width, height, and depth.
 
 ----
 
@@ -1350,6 +1350,10 @@ enum **ViewportUsage**:
 
 .. _class_VisualServer_constant_VIEWPORT_RENDER_INFO_DRAW_CALLS_IN_FRAME:
 
+.. _class_VisualServer_constant_VIEWPORT_RENDER_INFO_2D_ITEMS_IN_FRAME:
+
+.. _class_VisualServer_constant_VIEWPORT_RENDER_INFO_2D_DRAW_CALLS_IN_FRAME:
+
 .. _class_VisualServer_constant_VIEWPORT_RENDER_INFO_MAX:
 
 enum **ViewportRenderInfo**:
@@ -1366,7 +1370,11 @@ enum **ViewportRenderInfo**:
 
 - **VIEWPORT_RENDER_INFO_DRAW_CALLS_IN_FRAME** = **5** --- Number of draw calls during this frame.
 
-- **VIEWPORT_RENDER_INFO_MAX** = **6** --- Represents the size of the :ref:`ViewportRenderInfo<enum_VisualServer_ViewportRenderInfo>` enum.
+- **VIEWPORT_RENDER_INFO_2D_ITEMS_IN_FRAME** = **6** --- Number of 2d items drawn this frame.
+
+- **VIEWPORT_RENDER_INFO_2D_DRAW_CALLS_IN_FRAME** = **7** --- Number of 2d draw calls during this frame.
+
+- **VIEWPORT_RENDER_INFO_MAX** = **8** --- Represents the size of the :ref:`ViewportRenderInfo<enum_VisualServer_ViewportRenderInfo>` enum.
 
 ----
 
@@ -1606,6 +1614,10 @@ enum **CanvasOccluderPolygonCullMode**:
 
 .. _class_VisualServer_constant_INFO_DRAW_CALLS_IN_FRAME:
 
+.. _class_VisualServer_constant_INFO_2D_ITEMS_IN_FRAME:
+
+.. _class_VisualServer_constant_INFO_2D_DRAW_CALLS_IN_FRAME:
+
 .. _class_VisualServer_constant_INFO_USAGE_VIDEO_MEM_TOTAL:
 
 .. _class_VisualServer_constant_INFO_VIDEO_MEM_USED:
@@ -1628,13 +1640,17 @@ enum **RenderInfo**:
 
 - **INFO_DRAW_CALLS_IN_FRAME** = **5** --- The amount of draw calls in frame.
 
-- **INFO_USAGE_VIDEO_MEM_TOTAL** = **6** --- Unimplemented in the GLES2 and GLES3 rendering backends, always returns 0.
+- **INFO_2D_ITEMS_IN_FRAME** = **6** --- The amount of 2d items in the frame.
 
-- **INFO_VIDEO_MEM_USED** = **7** --- The amount of video memory used, i.e. texture and vertex memory combined.
+- **INFO_2D_DRAW_CALLS_IN_FRAME** = **7** --- The amount of 2d draw calls in frame.
 
-- **INFO_TEXTURE_MEM_USED** = **8** --- The amount of texture memory used.
+- **INFO_USAGE_VIDEO_MEM_TOTAL** = **8** --- Unimplemented in the GLES2 and GLES3 rendering backends, always returns 0.
 
-- **INFO_VERTEX_MEM_USED** = **9** --- The amount of vertex memory used.
+- **INFO_VIDEO_MEM_USED** = **9** --- The amount of video memory used, i.e. texture and vertex memory combined.
+
+- **INFO_TEXTURE_MEM_USED** = **10** --- The amount of texture memory used.
+
+- **INFO_VERTEX_MEM_USED** = **11** --- The amount of vertex memory used.
 
 ----
 

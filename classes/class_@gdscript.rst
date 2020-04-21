@@ -30,7 +30,7 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`asin<class_@GDScript_method_asin>` **(** :ref:`float<class_float>` s **)**                                                                                                                                                       |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`assert<class_@GDScript_method_assert>` **(** :ref:`bool<class_bool>` condition **)**                                                                                                                                             |
+| void                                                      | :ref:`assert<class_@GDScript_method_assert>` **(** :ref:`bool<class_bool>` condition, :ref:`String<class_String>` message="" **)**                                                                                                     |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`atan<class_@GDScript_method_atan>` **(** :ref:`float<class_float>` s **)**                                                                                                                                                       |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -306,9 +306,11 @@ Returns the arc sine of ``s`` in radians. Use to get the angle of sine ``s``.
 
 .. _class_@GDScript_method_assert:
 
-- void **assert** **(** :ref:`bool<class_bool>` condition **)**
+- void **assert** **(** :ref:`bool<class_bool>` condition, :ref:`String<class_String>` message="" **)**
 
-Asserts that the ``condition`` is ``true`` . If the ``condition`` is ``false``, an error is generated and the program is halted until you resume it. Only executes in debug builds, or when running the game from the editor. Use it for debugging purposes, to make sure a statement is ``true`` during development.
+Asserts that the ``condition`` is ``true``. If the ``condition`` is ``false``, an error is generated and the program is halted until you resume it. Only executes in debug builds, or when running the game from the editor. Use it for debugging purposes, to make sure a statement is ``true`` during development.
+
+The optional ``message`` argument, if given, is shown in addition to the generic "Assertion failed" message. You can use this to provide additional details about why the assertion failed.
 
 ::
 
@@ -317,6 +319,7 @@ Asserts that the ``condition`` is ``true`` . If the ``condition`` is ``false``, 
     assert(speed < 20) # True, the program will continue
     assert(speed >= 0) # False, the program will stop
     assert(speed >= 0 && speed < 20) # You can also combine the two conditional statements in one check
+    assert(speed < 20, "speed = %f, but the speed limit is 20" % speed) # Show a message with clarifying details
 
 ----
 

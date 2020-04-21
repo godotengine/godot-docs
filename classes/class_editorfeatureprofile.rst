@@ -11,7 +11,14 @@ EditorFeatureProfile
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+An editor feature profile which can be used to disable specific features.
 
+Description
+-----------
+
+An editor feature profile can be used to disable specific features of the Godot editor. When disabled, the features won't appear in the editor, which makes the editor less cluttered. This is useful in education settings to reduce confusion or when working in a team. For example, artists and level designers could use a feature profile that disables the script editor to avoid accidentally making changes to files they aren't supposed to edit.
+
+To manage editor feature profiles visually, use **Editor > Manage Feature Profiles...** at the top of the editor window.
 
 Methods
 -------
@@ -63,19 +70,19 @@ Enumerations
 
 enum **Feature**:
 
-- **FEATURE_3D** = **0**
+- **FEATURE_3D** = **0** --- The 3D editor. If this feature is disabled, the 3D editor won't display but 3D nodes will still display in the Create New Node dialog.
 
-- **FEATURE_SCRIPT** = **1**
+- **FEATURE_SCRIPT** = **1** --- The Script tab, which contains the script editor and class reference browser. If this feature is disabled, the Script tab won't display.
 
-- **FEATURE_ASSET_LIB** = **2**
+- **FEATURE_ASSET_LIB** = **2** --- The AssetLib tab. If this feature is disabled, the AssetLib tab won't display.
 
-- **FEATURE_SCENE_TREE** = **3**
+- **FEATURE_SCENE_TREE** = **3** --- Scene tree editing. If this feature is disabled, the Scene tree dock will still be visible but will be read-only.
 
-- **FEATURE_IMPORT_DOCK** = **4**
+- **FEATURE_IMPORT_DOCK** = **4** --- The Import dock. If this feature is disabled, the Import dock won't be visible.
 
-- **FEATURE_NODE_DOCK** = **5**
+- **FEATURE_NODE_DOCK** = **5** --- The Node dock. If this feature is disabled, signals and groups won't be visible and modifiable from the editor.
 
-- **FEATURE_FILESYSTEM_DOCK** = **6**
+- **FEATURE_FILESYSTEM_DOCK** = **6** --- The FileSystem dock. If this feature is disabled, the FileSystem dock won't be visible.
 
 - **FEATURE_MAX** = **7** --- Represents the size of the :ref:`Feature<enum_EditorFeatureProfile_Feature>` enum.
 
@@ -86,11 +93,15 @@ Method Descriptions
 
 - :ref:`String<class_String>` **get_feature_name** **(** :ref:`Feature<enum_EditorFeatureProfile_Feature>` feature **)**
 
+Returns the specified ``feature``'s human-readable name.
+
 ----
 
 .. _class_EditorFeatureProfile_method_is_class_disabled:
 
 - :ref:`bool<class_bool>` **is_class_disabled** **(** :ref:`String<class_String>` class_name **)** const
+
+Returns ``true`` if the class specified by ``class_name`` is disabled. When disabled, the class won't appear in the Create New Node dialog.
 
 ----
 
@@ -98,11 +109,15 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **is_class_editor_disabled** **(** :ref:`String<class_String>` class_name **)** const
 
+Returns ``true`` if editing for the class specified by ``class_name`` is disabled. When disabled, the class will still appear in the Create New Node dialog but the inspector will be read-only when selecting a node that extends the class.
+
 ----
 
 .. _class_EditorFeatureProfile_method_is_class_property_disabled:
 
 - :ref:`bool<class_bool>` **is_class_property_disabled** **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` property **)** const
+
+Returns ``true`` if ``property`` is disabled in the class specified by ``class_name``. When a property is disabled, it won't appear in the inspector when selecting a node that extends the class specified by ``class_name``.
 
 ----
 
@@ -110,11 +125,15 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **is_feature_disabled** **(** :ref:`Feature<enum_EditorFeatureProfile_Feature>` feature **)** const
 
+Returns ``true`` if the ``feature`` is disabled. When a feature is disabled, it will disappear from the editor entirely.
+
 ----
 
 .. _class_EditorFeatureProfile_method_load_from_file:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load_from_file** **(** :ref:`String<class_String>` path **)**
+
+Loads an editor feature profile from a file. The file must follow the JSON format obtained by using the feature profile manager's **Export** button or the :ref:`save_to_file<class_EditorFeatureProfile_method_save_to_file>` method.
 
 ----
 
@@ -122,11 +141,15 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save_to_file** **(** :ref:`String<class_String>` path **)**
 
+Saves the editor feature profile to a file in JSON format. It can then be imported using the feature profile manager's **Import** button or the :ref:`load_from_file<class_EditorFeatureProfile_method_load_from_file>` button.
+
 ----
 
 .. _class_EditorFeatureProfile_method_set_disable_class:
 
 - void **set_disable_class** **(** :ref:`String<class_String>` class_name, :ref:`bool<class_bool>` disable **)**
+
+If ``disable`` is ``true``, disables the class specified by ``class_name``. When disabled, the class won't appear in the Create New Node dialog.
 
 ----
 
@@ -134,15 +157,21 @@ Method Descriptions
 
 - void **set_disable_class_editor** **(** :ref:`String<class_String>` class_name, :ref:`bool<class_bool>` disable **)**
 
+If ``disable`` is ``true``, disables editing for the class specified by ``class_name``. When disabled, the class will still appear in the Create New Node dialog but the inspector will be read-only when selecting a node that extends the class.
+
 ----
 
 .. _class_EditorFeatureProfile_method_set_disable_class_property:
 
 - void **set_disable_class_property** **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` property, :ref:`bool<class_bool>` disable **)**
 
+If ``disable`` is ``true``, disables editing for ``property`` in the class specified by ``class_name``. When a property is disabled, it won't appear in the inspector when selecting a node that extends the class specified by ``class_name``.
+
 ----
 
 .. _class_EditorFeatureProfile_method_set_disable_feature:
 
 - void **set_disable_feature** **(** :ref:`Feature<enum_EditorFeatureProfile_Feature>` feature, :ref:`bool<class_bool>` disable **)**
+
+If ``disable`` is ``true``, disables the editor feature specified in ``feature``. When a feature is disabled, it will disappear from the editor entirely.
 

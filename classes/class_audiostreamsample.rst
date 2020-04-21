@@ -81,11 +81,11 @@ enum **LoopMode**:
 
 - **LOOP_DISABLED** = **0** --- Audio does not loop.
 
-- **LOOP_FORWARD** = **1** --- Audio loops the data between :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` and :ref:`loop_end<class_AudioStreamSample_property_loop_end>` playing forward only.
+- **LOOP_FORWARD** = **1** --- Audio loops the data between :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` and :ref:`loop_end<class_AudioStreamSample_property_loop_end>`, playing forward only.
 
-- **LOOP_PING_PONG** = **2** --- Audio loops the data between :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` and :ref:`loop_end<class_AudioStreamSample_property_loop_end>` playing back and forth.
+- **LOOP_PING_PONG** = **2** --- Audio loops the data between :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` and :ref:`loop_end<class_AudioStreamSample_property_loop_end>`, playing back and forth.
 
-- **LOOP_BACKWARD** = **3** --- Audio loops the data between :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` and :ref:`loop_end<class_AudioStreamSample_property_loop_end>` playing backward only.
+- **LOOP_BACKWARD** = **3** --- Audio loops the data between :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` and :ref:`loop_end<class_AudioStreamSample_property_loop_end>`, playing backward only.
 
 Property Descriptions
 ---------------------
@@ -136,7 +136,7 @@ Audio format. See :ref:`Format<enum_AudioStreamSample_Format>` constants for val
 | *Getter*  | get_loop_begin()      |
 +-----------+-----------------------+
 
-Loop start in bytes.
+The loop start point (in number of samples, relative to the beginning of the sample). This information will be imported automatically from the WAV file if present.
 
 ----
 
@@ -152,7 +152,7 @@ Loop start in bytes.
 | *Getter*  | get_loop_end()      |
 +-----------+---------------------+
 
-Loop end in bytes.
+The loop end point (in number of samples, relative to the beginning of the sample). This information will be imported automatically from the WAV file if present.
 
 ----
 
@@ -168,7 +168,7 @@ Loop end in bytes.
 | *Getter*  | get_loop_mode()      |
 +-----------+----------------------+
 
-Loop mode. See :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` constants for values.
+The loop mode. This information will be imported automatically from the WAV file if present. See :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` constants for values.
 
 ----
 

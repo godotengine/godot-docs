@@ -28,6 +28,8 @@ A ``CanvasItem`` can also be hidden, which will also hide its children. It provi
 
 Ultimately, a transform notification can be requested, which will notify the node that its global position changed in case the parent tree changed.
 
+**Note:** Unless otherwise specified, all methods that have angle parameters must have angles specified as *radians*. To convert degrees to radians, use :ref:`@GDScript.deg2rad<class_@GDScript_method_deg2rad>`.
+
 Tutorials
 ---------
 

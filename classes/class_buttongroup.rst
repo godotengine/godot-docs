@@ -23,9 +23,9 @@ Group of :ref:`Button<class_Button>`. All direct and indirect children buttons b
 Properties
 ----------
 
-+-------------------------+-------------------------+-----------------+
-| :ref:`bool<class_bool>` | resource_local_to_scene | **O:** ``true`` |
-+-------------------------+-------------------------+-----------------+
++-------------------------+-------------------------+------------------------------+
+| :ref:`bool<class_bool>` | resource_local_to_scene | ``true`` *(parent override)* |
++-------------------------+-------------------------+------------------------------+
 
 Methods
 -------

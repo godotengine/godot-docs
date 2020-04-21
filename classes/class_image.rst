@@ -18,6 +18,8 @@ Description
 
 Native image datatype. Contains image data, which can be converted to a :ref:`Texture<class_Texture>`, and several functions to interact with it. The maximum width and height for an ``Image`` are :ref:`MAX_WIDTH<class_Image_constant_MAX_WIDTH>` and :ref:`MAX_HEIGHT<class_Image_constant_MAX_HEIGHT>`.
 
+**Note:** The maximum image size is 16384×16384 pixels due to graphics hardware limitations. Larger images will fail to import.
+
 Properties
 ----------
 

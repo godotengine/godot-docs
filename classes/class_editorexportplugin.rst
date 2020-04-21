@@ -35,6 +35,8 @@ Methods
 +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`add_ios_plist_content<class_EditorExportPlugin_method_add_ios_plist_content>` **(** :ref:`String<class_String>` plist_content **)**                                                                                                       |
 +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`add_ios_project_static_lib<class_EditorExportPlugin_method_add_ios_project_static_lib>` **(** :ref:`String<class_String>` path **)**                                                                                                      |
++------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`add_shared_object<class_EditorExportPlugin_method_add_shared_object>` **(** :ref:`String<class_String>` path, :ref:`PoolStringArray<class_PoolStringArray>` tags **)**                                                                    |
 +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`skip<class_EditorExportPlugin_method_skip>` **(** **)**                                                                                                                                                                                   |
@@ -98,6 +100,12 @@ Virtual method to be overridden by the user. Called when the export is finished.
 .. _class_EditorExportPlugin_method_add_ios_plist_content:
 
 - void **add_ios_plist_content** **(** :ref:`String<class_String>` plist_content **)**
+
+----
+
+.. _class_EditorExportPlugin_method_add_ios_project_static_lib:
+
+- void **add_ios_project_static_lib** **(** :ref:`String<class_String>` path **)**
 
 ----
 

@@ -26,23 +26,25 @@ Can be used to save a node to a file. When saving, the node as well as all the n
 
 ::
 
-    # Create the objects
+    # Create the objects.
     var node = Node2D.new()
     var rigid = RigidBody2D.new()
     var collision = CollisionShape2D.new()
     
-    # Create the object hierarchy
+    # Create the object hierarchy.
     rigid.add_child(collision)
     node.add_child(rigid)
     
-    # Change owner of rigid, but not of collision
+    # Change owner of `rigid`, but not of `collision`.
     rigid.owner = node
     
     var scene = PackedScene.new()
-    # Only node and rigid are now packed
+    # Only `node` and `rigid` are now packed.
     var result = scene.pack(node)
     if result == OK:
-        ResourceSaver.save("res://path/name.scn", scene) # Or "user://..."
+        var error = ResourceSaver.save("res://path/name.scn", scene)  # Or "user://..."
+        if error != OK:
+            push_error("An error occurred while saving the scene to disk.")
 
 Properties
 ----------

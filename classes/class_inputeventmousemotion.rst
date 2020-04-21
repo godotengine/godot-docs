@@ -67,7 +67,9 @@ Represents the pressure the user puts on the pen. Ranges from ``0.0`` to ``1.0``
 | *Getter*  | get_relative()      |
 +-----------+---------------------+
 
-The mouse position relative to the previous position (position at the last frame).
+The mouse position relative to the previous position (position at the last frame). 
+
+**Note:** Since ``InputEventMouseMotion`` is only emitted when the mouse moves, the last event won't have a relative position of ``Vector2(0, 0)`` when the user stops moving the mouse.
 
 ----
 

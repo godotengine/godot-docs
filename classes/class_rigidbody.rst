@@ -563,7 +563,7 @@ Called during physics processing, allowing you to read and safely modify the sim
 
 - void **add_central_force** **(** :ref:`Vector3<class_Vector3>` force **)**
 
-Adds a constant directional force without affecting rotation.
+Adds a constant directional force (i.e. acceleration) without affecting rotation.
 
 This is equivalent to ``add_force(force, Vector3(0,0,0))``.
 
@@ -573,7 +573,9 @@ This is equivalent to ``add_force(force, Vector3(0,0,0))``.
 
 - void **add_force** **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position **)**
 
-Adds a constant force (i.e. acceleration).
+Adds a constant directional force (i.e. acceleration).
+
+The position uses the rotation of the global coordinate system, but is centered at the object's origin.
 
 ----
 

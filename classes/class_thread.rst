@@ -78,7 +78,7 @@ Returns ``true`` if this ``Thread`` is currently active. An active ``Thread`` ca
 
 - :ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`Object<class_Object>` instance, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` userdata=null, :ref:`Priority<enum_Thread_Priority>` priority=1 **)**
 
-Starts a new ``Thread`` that runs ``method`` on object ``instance`` with ``userdata`` passed as an argument. The ``priority`` of the ``Thread`` can be changed by passing a value from the :ref:`Priority<enum_Thread_Priority>` enum.
+Starts a new ``Thread`` that runs ``method`` on object ``instance`` with ``userdata`` passed as an argument. Even if no userdata is passed, ``method`` must accept one argument and it will be null. The ``priority`` of the ``Thread`` can be changed by passing a value from the :ref:`Priority<enum_Thread_Priority>` enum.
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` on failure.
 

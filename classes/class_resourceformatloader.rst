@@ -11,8 +11,6 @@ ResourceFormatLoader
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`ResourceFormatLoaderCrypto<class_ResourceFormatLoaderCrypto>`
-
 Loads a specific resource type from a file.
 
 Description

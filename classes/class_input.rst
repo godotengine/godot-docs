@@ -11,8 +11,6 @@ Input
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`InputDefault<class_InputDefault>`
-
 A singleton that deals with inputs.
 
 Description
@@ -534,7 +532,9 @@ Sets the mouse mode. See the constants for more information.
 
 - void **set_use_accumulated_input** **(** :ref:`bool<class_bool>` enable **)**
 
-Whether to accumulate similar input events sent by the operating system. Enabled by default.
+Enables or disables the accumulation of similar input events sent by the operating system. When input accumulation is enabled, all input events generated during a frame will be merged and emitted when the frame is done rendering. Therefore, this limits the number of input method calls per second to the rendering FPS.
+
+Input accumulation is enabled by default. It can be disabled to get slightly more precise/reactive input at the cost of increased CPU usage. In applications where drawing freehand lines is required, input accumulation should generally be disabled while the user is drawing the line to get results that closely follow the actual input.
 
 ----
 
