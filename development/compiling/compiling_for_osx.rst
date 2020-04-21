@@ -32,7 +32,7 @@ Compiling
 
 Start a terminal, go to the root directory of the engine source code and type::
 
-    scons platform=osx --jobs=$(sysctl -n hw.logicalcpu)
+    python3 $(which scons platform=osx --jobs=$(sysctl -n hw.logicalcpu))
 
 If all goes well, the resulting binary executable will be placed in the
 ``bin/`` subdirectory. This executable file contains the whole engine and
