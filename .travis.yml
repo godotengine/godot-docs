@@ -5,6 +5,11 @@ language: python
 python:
   - "3.8"
 
+cache:
+  directories:
+    # Sphinx build directory
+    - _build
+
 stages:
   - build
 
