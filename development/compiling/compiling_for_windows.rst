@@ -34,8 +34,8 @@ For compiling under Windows, the following is required:
                   mingw-w64-i686-python3-pip mingw-w64-i686-gcc \
                   mingw-w64-i686-yasm make
               
-              For each MSYS2 MinGW subsystem, you should then run
-              `pip install scons` in its shell.
+          For each MSYS2 MinGW subsystem, you should then run
+          `pip install scons` in its shell.
 
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
@@ -109,19 +109,18 @@ You can specify a number of CPU threads to use to speed up the build::
 
     C:\godot> scons -j6 platform=windows
 
-In general, it is OK to have at least as many threads compiling Godot as
-you have cores in your CPU, if not one or two more. Feel free to add the
--j option to any SCons command you see below.
+In general, it is OK to have at least as many threads compiling Godot as you
+have cores in your CPU, if not one or two more. Feel free to add the ``-j``
+option to any SCons command you see below.
 
 .. note:: When compiling with multiple CPU threads, SCons may warn about
           pywin32 being missing. You can safely ignore this warning.
 
 If all goes well, the resulting binary executable will be placed in
 ``C:\godot\bin\`` with the name ``godot.windows.tools.32.exe`` or
-``godot.windows.tools.64.exe``.
-
-.. note:: By default, SCons will build a binary matching your CPU architecture,
-          but this can be overridden using ``bits=64`` or ``bits=32``.
+``godot.windows.tools.64.exe``. By default, SCons will build a binary matching
+your CPU architecture, but this can be overridden using ``bits=64`` or
+``bits=32``.
 
 This executable file contains the whole engine and runs without any
 dependencies. Running it will bring up the Project Manager.
@@ -134,6 +133,11 @@ dependencies. Running it will bring up the Project Manager.
           even smaller and faster by adding the SCons option ``use_lto=yes``.
           As link-time optimization is a memory-intensive process,
           this will require about 3 GB of available RAM while compiling.
+
+.. note:: If you want to use separate editor settings for your own Godot builds
+          and official releases, you can enable
+          :ref:`doc_data_paths_self_contained_mode` by creating a file called
+          ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
 
 Development in Visual Studio or other IDEs
 ------------------------------------------
