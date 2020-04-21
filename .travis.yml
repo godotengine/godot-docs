@@ -28,6 +28,7 @@ matrix:
 script:
   - bash ./format.sh
 
+  
   # Check for possible typos
   - pip install codespell
   - codespell -I codespell-ignore.txt {about,community,development,getting_started,tutorials}/**/*.rst
