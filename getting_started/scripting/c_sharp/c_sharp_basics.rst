@@ -294,3 +294,19 @@ Configuring VS 2019 for debugging
 
 5. Run the game in Godot. It should hang at the Godot splash screen while it waits for your debugger to attach.
 6. In VS 2019, open your project and choose Extensions --> Mono --> Attach to Mono Debugger.
+
+Configuring Visual Studio Code for debugging
+--------------------------------------------
+
+To configure Visual Studio Code for debugging open up a project in Godot. Click on Project
+and open the project settings. Scroll down and click on Debugger Agent under the Mono
+category. Then turn on the setting "wait for debugger." Next, copy the port number
+and open up Visual Studio Code.
+
+You need to download the Mono Debug extension from Microsoft. Then open the Godot
+project folder. Go to the run tab and click on create a launch.json file. Select C#
+Mono from the dropdown menu. When the launch.json file is automatically opened,
+change the port number to the number you copied previously and save the file. On the
+run tab, switch the run setting from launch to attach. Whenever you want to debug,
+make sure Wait for Debugger is turned on in Godot, run the project, and run the
+debugger in Visual Studio Code.
