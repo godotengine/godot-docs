@@ -48,6 +48,7 @@
     --search-credits-link-color: #4392c5; /* derived from --link-color */
 
     --highlight-background-color: #f5ffe1;
+    --highlight-background-emph-color: #dbe6c3;
     --highlight-default-color: #404040;
     --highlight-comment-color: #408090;
     --highlight-keyword-color: #007020;
@@ -59,6 +60,7 @@
     --highlight-function-color: #06287e;
     --highlight-operator-color: #666666;
     --highlight-string-color: #4070a0;
+    --highlight-whitespace-color: #abb793;
 
     --admonition-note-background-color: #e7f2fa;
     --admonition-note-color: #404040;
@@ -133,6 +135,7 @@
 
         /* Colors taken from the Godot script editor with the Adaptive theme */
         --highlight-background-color: #202531;
+        --highlight-background-emph-color: #2d3444;
         --highlight-default-color: rgba(255, 255, 255, 0.85);
         --highlight-comment-color: rgba(204, 206, 211, 0.5);
         --highlight-keyword-color: #ff7085;
@@ -144,6 +147,7 @@
         --highlight-function-color: #57b3ff;
         --highlight-operator-color: #abc8ff;
         --highlight-string-color: #ffeca1;
+        --highlight-whitespace-color: #636875;
 
         --admonition-note-background-color: #303d4f;
         --admonition-note-color: #bfeeff;
@@ -501,6 +505,30 @@ code,
 
 .highlight {
     background-color: var(--highlight-background-color);
+}
+
+/* Emphasized lines */
+.highlight .hll {
+    background-color: var(--highlight-background-emph-color);
+}
+
+.highlight .w /* Text.Whitespace */ {
+    position: relative;
+    tab-size: 4; /* Defaults to 8, which is too big. */
+    -moz-tab-size: 4;
+}
+/* Whitespace characters only visible on emphasized lines. */
+.highlight .hll .w:before {
+    /* This is a blunt way to add just enough characters to cover most of reasonable indentations. */
+    content: "→   →   →   →   →   →   →   →   →   →   ";
+    color: var(--highlight-whitespace-color);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    /* Disable text selection and mouse events, as these elements are display-only. */
+    user-select: none;
+    pointer-events: none;
 }
 
 .highlight .gh /* Generic.Heading */,

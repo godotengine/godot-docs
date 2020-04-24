@@ -201,4 +201,12 @@ $(document).ready(() => {
   registerSidebarObserver(() => {
     registerOnScrollEvent(mediaQuery);
   });
+
+  // GDScript, as per the official style guide, uses tabs for indentation.
+  // Sphinx, however, replaces everything with spaces; additionally, most docs use spaces outright.
+  // This forces any 4-space combination in GDScript code samples to be converted into a tab,
+  // thus ensuring that code snippets are properly formatted and are ready to be copied.
+  document.querySelectorAll(".highlight-gdscript .highlight span.w").forEach((item) => {
+     item.innerText = item.innerText.replace(/[ ]{4}/g, "\t")
+  });
 });

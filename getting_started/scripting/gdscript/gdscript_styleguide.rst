@@ -108,18 +108,22 @@ Each indent level should be one greater than the block containing it.
 
 **Good**:
 
-::
+.. code-block::
+    :emphasize-lines: 2
 
     for i in range(10):
         print("hello")
 
 **Bad**:
 
-::
+.. code-block::
+    :emphasize-lines: 3,7
 
+    # This example uses 2 spaces for the indentation instead of a full tab.
     for i in range(10):
       print("hello")
 
+    # This example uses 2 indent levels (or 2 tabs) for the indentation instead of just one.
     for i in range(10):
             print("hello")
 

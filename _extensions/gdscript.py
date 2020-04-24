@@ -31,6 +31,9 @@ from pygments.token import (
     Number,
     Punctuation,
 )
+from pygments.filters import (
+    VisibleWhitespaceFilter,
+)
 
 __all__ = ["GDScriptLexer"]
 
@@ -341,7 +344,15 @@ class GDScriptLexer(RegexLexer):
 
 
 def setup(sphinx):
-    sphinx.add_lexer("gdscript", GDScriptLexer())
+    """
+    We force the whitespaces filter here because Sphinx takes control away from us
+    further down the line. This hack requires add_lexer to accept an instance of the lexer.
+    This type of argument is not supported starting with Sphinx 3.x.
+    See https://www.sphinx-doc.org/en/master/extdev/appapi.html#sphinx.application.Sphinx.add_lexer
+    """
+    l = GDScriptLexer()
+    l.add_filter(VisibleWhitespaceFilter(spaces=" ",wstokentype=True))
+    sphinx.add_lexer("gdscript", l)
 
     return {
         "parallel_read_safe": True,
