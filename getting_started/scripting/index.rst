@@ -9,3 +9,4 @@ Scripting
    visual_script/index
    c_sharp/index
    cross_language_scripting
+   creating_script_templates
