@@ -109,8 +109,7 @@ Execute this from the root folder of this repository:
 ```sh
 virtualenv --system-site-packages env/
 . env/bin/activate
-pip3 install sphinx
-pip3 install sphinx_rtd_theme
+pip install -r requirements.txt
 ```
 
 Then do `make html` like above.
