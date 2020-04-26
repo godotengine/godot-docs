@@ -47,6 +47,22 @@ you can download just the
 instead.
 Make sure you at least have the .NET Framework 4.5 targeting pack installed, you can get it using any of the installers mentioned above inside the "Individual components" tab.
 
+Windows (JetBrains Rider)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+JetBrains Rider comes with bundled MSBuild, so you just need a recent .NET Framework Developer Pack.
+Make sure to set the following preferences:
+
+- In Godot:
+
+   - Mono External Editor to JetBrains Rider
+   - Mono Build Tool to JetBrains Mono.
+
+- In Rider:
+ 
+   - TargetFrameworkVersion in csproj should match installed .NET Framework Developer Pack.
+   - Install **Godot support** plugin
+
 macOS and Linux
 ~~~~~~~~~~~~~~~
 
