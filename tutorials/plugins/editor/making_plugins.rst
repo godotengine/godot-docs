@@ -57,7 +57,7 @@ You should end up with a directory structure like this:
 .. image:: img/making_plugins-my_custom_mode_folder.png
 
 ``plugin.cfg`` is a simple INI file with metadata about your plugin.
-The name and description help people undersatnd what it does.
+The name and description help people understand what it does.
 Your name helps you get properly credited for your work.
 The version number helps others know if they have an outdated version;
 if you are unsure on how to come up with the version number, check out `Semantic Versioning <https://semver.org/>`_.
