@@ -290,18 +290,18 @@ You can now start developing with Visual Studio.
 Debugging
 ^^^^^^^^^^
 
-Debugging with Visual Studio is easy. This allows the user to examin the source code of godot, stop at spesific points in the code,
+Visual Studio features a powerful debugger. This allows the user to examine Godot's source code, stop at specific points in the code,
 make changes, and view them on the run.
 
 .. Note:: Debugging the Godot Engine inside the editor will require an extra setup step.
              
-             Because openning godot opens firstly the Project Manager, and not the project(game) you are working on,
-             the debugger will detach as soon as you open a project, meanning the debugger will stop, even though godot is still running.
+             Because opening Godot opens the Project Manager at first instead of the project you're working on,
+             the debugger will detach as soon as you open a project. This means the debugger will stop, even though Godot is still running in another process.
 
-             The reason is because the debugger attaches to the Project Manager process, and when you open a project it will close and open
+             The reason is that the debugger attaches to the Project Manager process only. When you open a project, it will close and open another process for
              the editor.
              
-To overcome this, you need to edit the debugging command line arguments in VS. In your project, click *Project* -> *Project Properties*:
+To overcome this, you need to edit the debugging command line arguments in VS. In your project, click **Project > Project Properties**:
 
 .. image:: img/vs_2_project_properties.png
 
