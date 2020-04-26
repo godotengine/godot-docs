@@ -14,7 +14,7 @@ send out a message that other nodes can listen for and respond to. For example,
 rather than continuously checking a button to see if it's being pressed, the
 button can emit a signal when it's pressed.
 
-.. note:: You can read more about the observer pattern here: http://gameprogrammingpatterns.com/observer.html
+.. note:: You can read more about the observer pattern here: https://gameprogrammingpatterns.com/observer.html
 
 Signals are a way to *decouple* your game objects, which leads to better organized
 and more manageable code. Instead of forcing game objects to expect other objects
