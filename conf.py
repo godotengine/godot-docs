@@ -168,6 +168,8 @@ rst_epilog = """
 .. |weblate_widget| image:: https://hosted.weblate.org/widgets/godot-engine/{image_locale}/godot-docs/287x66-white.png
     :alt: Translation status
     :target: https://hosted.weblate.org/engage/godot-engine{target_locale}/?utm_source=widget
+    :width: 287
+    :height: 66
 """.format(
     image_locale="-" if language == "en" else language,
     target_locale="" if language == "en" else "/" + language,
