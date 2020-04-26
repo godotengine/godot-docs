@@ -213,8 +213,8 @@ of information. And you will update the state of your connected node
 .. note::
 
     The Observer pattern, that signals derive from, still adds a bit of coupling between node branches. But it's generally lighter and more secure than accessing nodes directly to communicate between two separate classes. It can be okay for a parent node to get values from its children. But you'll want to favor signals if you're working with two separate branches.
-    Read Game Programming Patterns for more information on the `Observer pattern <http://gameprogrammingpatterns.com/observer.html>`_.
-    The `full book <http://gameprogrammingpatterns.com/contents.html>`_ is available online for free.
+    Read Game Programming Patterns for more information on the `Observer pattern <https://gameprogrammingpatterns.com/observer.html>`_.
+    The `full book <https://gameprogrammingpatterns.com/contents.html>`_ is available online for free.
 
 With this in mind, let's connect the ``GUI`` to the ``Player``. Click on
 the ``Player`` node in the scene dock to select it. Head down to the
