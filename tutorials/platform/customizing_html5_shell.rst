@@ -44,6 +44,9 @@ replaced with their actual values during export.
   class. A splash image shown during the booting process can be accessed using this variable 
   as well: ``$GODOT_BASENAME.png``.
 
+- ``$GODOT_PROJECT_NAME``:
+  The project name as defined in the Project Settings.
+
 - ``$GODOT_HEAD_INCLUDE``:
   A custom string to include in the HTML document just before the end of the ``<head>`` tag. It 
   is customized in the export options under the *Html / Head Include* section. While you fully 
