@@ -35,8 +35,8 @@ page in the Mono documentation.
 Setting up C# for Godot
 -----------------------
 
-Windows
-~~~~~~~
+Windows (Visaul Studio)
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Download and install the latest version of
 `Visual Studio <https://visualstudio.microsoft.com/downloads/>`_
@@ -59,9 +59,9 @@ Make sure to set the following preferences:
    - Mono Build Tool to JetBrains Mono.
 
 - In Rider:
- 
-   - TargetFrameworkVersion in csproj should match installed .NET Framework Developer Pack.
-   - Install **Godot support** plugin
+
+   - ``TargetFrameworkVersion`` in ``csproj`` should match the installed .NET Framework Developer Pack.
+   - Install **Godot support** plugin.
 
 macOS and Linux
 ~~~~~~~~~~~~~~~

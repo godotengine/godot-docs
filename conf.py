@@ -68,7 +68,9 @@ language = os.getenv("READTHEDOCS_LANGUAGE", "en")
 if not language in supported_languages.keys():
     print("Unknown language: " + language)
     print("Supported languages: " + ", ".join(supported_languages.keys()))
-    print("The configured language is either wrong, or it should be added to supported_languages in conf.py. Falling back to 'en'.")
+    print(
+        "The configured language is either wrong, or it should be added to supported_languages in conf.py. Falling back to 'en'."
+    )
     language = en
 
 is_i18n = tags.has("i18n")  # noqa: F821

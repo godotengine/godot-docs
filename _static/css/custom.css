@@ -465,7 +465,7 @@ footer,
 
 /* Override table no-wrap */
 /* The first column cells are not verbose, no need to wrap them */
-.wy-table-responsive table td:not(:nth-child(1)), 
+.wy-table-responsive table td:not(:nth-child(1)),
 .wy-table-responsive table th:not(:nth-child(1)) {
     white-space: normal;
 }

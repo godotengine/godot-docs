@@ -23,7 +23,7 @@ const registerOnScrollEvent = (function(){
   // Media query handler.
   return function(mediaQuery) {
     // We only apply this logic to the "desktop" resolution (defined by a media query at the bottom).
-    // This handler is executed when the result of the query evaluation changes, which means that 
+    // This handler is executed when the result of the query evaluation changes, which means that
     // the page has moved between "desktop" and "mobile" states.
 
     // When entering the "desktop" state, we register scroll events and adjust elements on the page.
@@ -57,7 +57,7 @@ const registerOnScrollEvent = (function(){
           $menu.css('max-height', `calc(100% - ${menuHeightOffset_fixed}px)`);
         }
         else {
-          // Between the top of the page and the threshold we calculate intermediate values 
+          // Between the top of the page and the threshold we calculate intermediate values
           // to guarantee a smooth transition.
           $search.css('margin-top', `-${currentScroll}px`);
           $menu.css('margin-top', `${menuTopMargin + (scrollTopPixels - currentScroll)}px`);
@@ -138,12 +138,12 @@ const registerOnScrollEvent = (function(){
   };
 })();
 
-// Subscribe to DOM changes in the sidebar container, because there is a 
+// Subscribe to DOM changes in the sidebar container, because there is a
 // banner that gets added at a later point, that we might not catch otherwise.
 const registerSidebarObserver = (function(){
   return function(callback) {
     const sidebarContainer = document.querySelector('.wy-side-scroll');
-    
+
     let sidebarEthical = null;
     const registerEthicalObserver = () => {
       if (sidebarEthical) {
@@ -164,16 +164,16 @@ const registerSidebarObserver = (function(){
           if (mutation.type !== 'childList') {
             continue;
           }
-    
+
           callback();
         }
       };
-    
+
       const ethicalObserver = new MutationObserver(ethicalObserverCallback);
       ethicalObserver.observe(sidebarEthical, ethicalObserverConfig);
     };
     registerEthicalObserver();
-  
+
     // This observer watches over direct children of the main sidebar container.
     const observerConfig = { childList: true };
     const observerCallback = (mutationsList, observer) => {
@@ -181,12 +181,12 @@ const registerSidebarObserver = (function(){
         if (mutation.type !== 'childList') {
           continue;
         }
-  
+
         callback();
         registerEthicalObserver();
       }
     };
-  
+
     const observer = new MutationObserver(observerCallback);
     observer.observe(sidebarContainer, observerConfig);
   };
@@ -194,7 +194,7 @@ const registerSidebarObserver = (function(){
 
 $(document).ready(() => {
   const mediaQuery = window.matchMedia('only screen and (min-width: 769px)');
-  
+
   registerOnScrollEvent(mediaQuery);
   mediaQuery.addListener(registerOnScrollEvent);
 

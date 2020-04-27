@@ -21,7 +21,7 @@ Editor-defined templates
 
 These are available globally throughout any project. The location of these
 templates are determined per each OS:
-   
+
 -  Windows: ``%APPDATA%\Godot\script_templates\``
 -  Linux: ``$HOME/.local/share/godot/script_templates/``
 -  macOS: ``$HOME/Library/Application Support/Godot/script_templates/``
@@ -40,7 +40,7 @@ the ``editor/script_templates_search_path`` setting in the
 
 If no ``script_templates`` directory is found within a project, it is simply
 ignored.
-   
+
 Language support and overriding behavior
 ----------------------------------------
 
@@ -118,7 +118,7 @@ List of template placeholders
 The following describes the complete list of built-in template placeholders
 which are currently implemented.
 
-Base placeholders 
+Base placeholders
 ~~~~~~~~~~~~~~~~~
 
 +-------------+----------------------------------------------------------------+
@@ -130,7 +130,7 @@ Base placeholders
 +-------------+----------------------------------------------------------------+
 | ``%TS%``    | Indentation placeholder. The exact type and number of          |
 |             | whitespace characters used for indentation is determined by    |
-|             | the ``text_editor/indent/type`` and ``text_editor/indent/size``| 
+|             | the ``text_editor/indent/type`` and ``text_editor/indent/size``|
 |             | settings in the :ref:`EditorSettings <class_EditorSettings>`   |
 |             | respectively.                                                  |
 +-------------+----------------------------------------------------------------+
