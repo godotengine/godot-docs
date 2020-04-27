@@ -66,17 +66,6 @@ supported_languages = {
     "zh_CN": "Godot Engine (%s) 简体中文文档",
 }
 
-# Some language codes used on Weblate/RTD and in the docs URL differ,
-# so we need to remap them.
-languages_remap = {
-    "pt_BR": "pt-br",
-    "zh_CN": "zh-cn",
-}
-languages_url = sorted(
-    [l for l in supported_languages.keys() if l not in languages_remap.keys()]
-    + list(languages_remap.values())
-)
-
 language = os.getenv("READTHEDOCS_LANGUAGE", "en")
 if not language in supported_languages.keys():
     print("Unknown language: " + language)
@@ -109,7 +98,6 @@ highlight_language = "gdscript"
 # on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
 on_rtd = os.environ.get("READTHEDOCS", None) == "True"
 
-
 html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 if on_rtd:
@@ -133,7 +121,7 @@ html_context = {
     "github_version": "master",  # Version
     "conf_py_path": "/",  # Path in the checkout to the docs root
     "godot_inject_language_links": True,
-    "godot_docs_supported_languages": languages_url,
+    "godot_docs_supported_languages": list(supported_languages.keys()),
     "godot_docs_basepath": "https://docs.godotengine.org/",
     "godot_docs_suffix": ".html",
     "godot_default_lang": "en",
