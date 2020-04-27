@@ -293,7 +293,7 @@ reach the point where the muzzle starts to flash.
           points represents a point of animation data.
           
           To actually preview the "Pistol_fire" animation, select the :ref:`Camera <class_Camera>` node
-          underneath Rotation Helper and check the "Preview" box underneath Perspective in the top left corner
+          underneath Rotation Helper and check the "Preview" box underneath Perspective in the top-left corner.
             
 
           Scrubbing the timeline means moving ourselves through the animation. So when we say "scrub the timeline
