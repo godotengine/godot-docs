@@ -33,6 +33,10 @@ Below is an example of how MeshDataTool may be used.
     mesh.surface_remove(0)
     mdt.commit_to_surface(mesh)
 
+See also :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`ImmediateGeometry<class_ImmediateGeometry>` and :ref:`SurfaceTool<class_SurfaceTool>` for procedural geometry generation.
+
+**Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`_ for front faces of triangle primitive modes.
+
 Methods
 -------
 

@@ -18,6 +18,12 @@ Description
 
 Draws simple geometry from code. Uses a drawing mode similar to OpenGL 1.x.
 
+See also :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`MeshDataTool<class_MeshDataTool>` and :ref:`SurfaceTool<class_SurfaceTool>` for procedural geometry generation.
+
+**Note:** ImmediateGeometry3D is best suited to small amounts of mesh data that change every frame. It will be slow when handling large amounts of mesh data. If mesh data doesn't change often, use :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`MeshDataTool<class_MeshDataTool>` or :ref:`SurfaceTool<class_SurfaceTool>` instead.
+
+**Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`_ for front faces of triangle primitive modes.
+
 Methods
 -------
 

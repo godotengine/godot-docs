@@ -16,7 +16,9 @@ A tab used to edit properties of the selected node.
 Description
 -----------
 
-The editor inspector is by default located on the right-hand side of the editor. It's used to edit the properties of the selected node. For example, you can select a node such as Sprite2D then edit its transform through the inspector tool. The editor inspector is an essential tool in the game development workflow.
+The editor inspector is by default located on the right-hand side of the editor. It's used to edit the properties of the selected node. For example, you can select a node such as :ref:`Sprite<class_Sprite>` then edit its transform through the inspector tool. The editor inspector is an essential tool in the game development workflow.
+
+**Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_inspector<class_EditorInterface_method_get_inspector>`.
 
 Properties
 ----------

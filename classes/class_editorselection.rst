@@ -18,6 +18,8 @@ Description
 
 This object manages the SceneTree selection in the editor.
 
+**Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_selection<class_EditorInterface_method_get_selection>`.
+
 Methods
 -------
 

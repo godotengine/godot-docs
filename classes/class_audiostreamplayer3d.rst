@@ -368,7 +368,7 @@ Decides if audio should pause when source is outside of :ref:`max_distance<class
 | *Getter*  | get_pitch_scale()      |
 +-----------+------------------------+
 
-Changes the pitch and the tempo of the audio.
+The pitch and the tempo of the audio, as a multiplier of the audio sample's sample rate.
 
 ----
 

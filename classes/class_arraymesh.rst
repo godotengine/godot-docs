@@ -38,6 +38,10 @@ The most basic example is the creation of a single triangle:
 
 The :ref:`MeshInstance<class_MeshInstance>` is ready to be added to the :ref:`SceneTree<class_SceneTree>` to be shown.
 
+See also :ref:`ImmediateGeometry<class_ImmediateGeometry>`, :ref:`MeshDataTool<class_MeshDataTool>` and :ref:`SurfaceTool<class_SurfaceTool>` for procedural geometry generation.
+
+**Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`_ for front faces of triangle primitive modes.
+
 Tutorials
 ---------
 
@@ -246,8 +250,6 @@ Surfaces are created to be rendered using a ``primitive``, which may be any of t
 The ``arrays`` argument is an array of arrays. See :ref:`ArrayType<enum_ArrayMesh_ArrayType>` for the values used in this array. For example, ``arrays[0]`` is the array of vertices. That first vertex sub-array is always required; the others are optional. Adding an index array puts this function into "index mode" where the vertex and other arrays become the sources of data and the index array defines the vertex order. All sub-arrays must have the same length as the vertex array or be empty, except for :ref:`ARRAY_INDEX<class_ArrayMesh_constant_ARRAY_INDEX>` if it is used.
 
 Adding an index array puts this function into "index mode" where the vertex and other arrays become the sources of data, and the index array defines the order of the vertices.
-
-Godot uses clockwise winding order for front faces of triangle primitive modes.
 
 ----
 

@@ -167,7 +167,7 @@ Maximum distance from which audio is still hearable.
 | *Getter*  | get_pitch_scale()      |
 +-----------+------------------------+
 
-Changes the pitch and the tempo of the audio.
+The pitch and the tempo of the audio, as a multiplier of the audio sample's sample rate.
 
 ----
 

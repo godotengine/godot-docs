@@ -26,6 +26,8 @@ Accessing the settings is done by using the regular :ref:`Object<class_Object>` 
     settings.get(prop)
     list_of_settings = settings.get_property_list()
 
+**Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_editor_settings<class_EditorInterface_method_get_editor_settings>`.
+
 Methods
 -------
 

@@ -18,6 +18,8 @@ Description
 
 This object is used to generate previews for resources of files.
 
+**Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_resource_previewer<class_EditorInterface_method_get_resource_previewer>`.
+
 Methods
 -------
 

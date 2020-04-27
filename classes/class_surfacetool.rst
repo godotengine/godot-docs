@@ -32,6 +32,10 @@ Vertex attributes must be passed **before** calling :ref:`add_vertex<class_Surfa
 
 Additionally, the attributes used before the first vertex is added determine the format of the mesh. For example, if you only add UVs to the first vertex, you cannot add color to any of the subsequent vertices.
 
+See also :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`ImmediateGeometry<class_ImmediateGeometry>` and :ref:`MeshDataTool<class_MeshDataTool>` for procedural geometry generation.
+
+**Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`_ for front faces of triangle primitive modes.
+
 Methods
 -------
 
