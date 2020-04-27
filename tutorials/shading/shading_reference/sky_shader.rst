@@ -60,7 +60,7 @@ the radiance cubemap:
 * If the screen is resized and either of the subpasses are used.
 
 Try to avoid updating the radiance cubemap needlessly. If you do need to
-update the radiance cubemap each frame. Make sure your 
+update the radiance cubemap each frame, make sure your 
 :ref:`Sky process mode <class_Sky_property_process_mode>` is set to
 :ref:`REALTIME <class_Sky_constant_PROCESS_MODE_REALTIME>`.
 
