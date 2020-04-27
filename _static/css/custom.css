@@ -463,6 +463,18 @@ footer,
     background-color: var(--table-row-odd-background-color);
 }
 
+/* Override table no-wrap */
+/* The first column cells are not verbose, no need to wrap them */
+.wy-table-responsive table td:not(:nth-child(1)),
+.wy-table-responsive table th:not(:nth-child(1)) {
+    white-space: normal;
+}
+
+/* Make sure not to wrap keyboard shortcuts */
+.wy-table-responsive table td kbd {
+    white-space: nowrap;
+}
+
 /* Code display tweaks */
 
 code,

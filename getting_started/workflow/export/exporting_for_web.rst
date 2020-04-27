@@ -20,13 +20,18 @@ in the user's browser.
                         Use ``python -m http.server`` with Python 3 to serve the
                         current working directory at ``http://localhost:8000``.
 
+.. attention:: `There are significant bugs when running HTML5 projects on iOS <https://github.com/godotengine/godot/issues/26554>`__
+               (regardless of the browser). We recommend using
+               :ref:`iOS' native export functionality <doc_exporting_for_ios>`
+               instead, as it will also result in better performance.
+
 WebGL 2
 -------
 
 Until the *OpenGL ES 3* renderer is removed from Godot in favor of *Vulkan*,
 HTML5 export uses *WebGL 2* when the *GLES3* option is selected.
 
-.. warning:: Usage of WebGL 2 is not recommended due to its expected removal
+.. warning:: Using WebGL 2 is not recommended due to its expected removal
              from Godot without replacement.
 
 WebGL 2 is not supported in all browsers. **Firefox** and

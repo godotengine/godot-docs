@@ -39,9 +39,10 @@ reference documentation about the reStructuredText markup language.
 The 'Edit on GitHub' link
 -------------------------
 
-If you're reading documentation on ``docs.godotengine.org``, you'll see an
-**Edit on GitHub** hyperlink at the top right of the page. Once you've created a
-GitHub account, you can propose changes to a page you're reading as follows:
+If you're reading documentation on `docs.godotengine.org <https://docs.godotengine.org>`_,
+you'll see an **Edit on GitHub** hyperlink at the top right of the page.
+Once you've created a GitHub account, you can propose changes to a page you're
+reading as follows:
 
 1. Click the **Edit on GitHub** button.
 
@@ -55,11 +56,11 @@ GitHub account, you can propose changes to a page you're reading as follows:
    click the button labelled **Propose file change** when done.
 
 5. On the following screens, click the **Create pull request** button until you
-   see a message like ``Open. yourGitHubUsername wants to merge 1 commit into
-   godotengine:master from yourGitHubUsername:patch-6``.
+   see a message like *Username wants to merge 1 commit into
+   godotengine:master from Username:patch-6*.
 
 6. A reviewer will evaluate your changes and incorporate them into the docs if
-   they're judged to improve them. You might also be asked to make
+   they're acceptable. You might also be asked to make
    modifications to your changes before they're included.
 
 What makes good documentation?
@@ -121,9 +122,11 @@ You can help to translate the official Godot documentation on our `Hosted Weblat
     :alt: Translation state
     :align: center
     :target: https://hosted.weblate.org/engage/godot-engine/?utm_source=widget
+    :width: 287
+    :height: 66
 
 There also is the official
-`Godot i18N repository <https://github.com/godotengine/godot-docs-l10n>`_
+`Godot i18n repository <https://github.com/godotengine/godot-docs-l10n>`_
 where you can see when the data was last synchronized.
 
 License

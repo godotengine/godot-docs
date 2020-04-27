@@ -420,5 +420,5 @@ disable it by setting "Export With Debug" off when you export the project.
 .. note:: While WASM is supported in all major browsers, it is still an emerging
           technology and you may find some things that don't work. Make sure
           you have updated your browser to the most recent version, and report
-          any bugs you find at the `Godot Github repository
+          any bugs you find at the `Godot GitHub repository
           <https://github.com/godotengine/godot/issues>`_.

@@ -49,12 +49,29 @@ if env_tags is not None:
         tags.add(tag.strip())  # noqa: F821
 
 # Language / i18n
-supported_languages = ['en', 'de', 'es', 'fr', 'fi', 'it', 'ja', 'ko', 'pl', 'pt-br', 'ru', 'uk', 'zh-cn']
+supported_languages = {
+    "en": "Godot Engine (%s) documentation in English",
+    "de": "Godot Engine (%s) Dokumentation auf Deutsch",
+    "es": "Documentación de Godot Engine (%s) en español",
+    "fr": "Documentation de Godot Engine (%s) en français",
+    "fi": "Godot Engine (%s) dokumentaatio suomeksi",
+    "it": "Godot Engine (%s) documentazione in italiano",
+    "ja": "Godot Engine (%s)の日本語のドキュメント",
+    "ko": "Godot Engine (%s) 문서 (한국어)",
+    "pl": "Dokumentacja Godot Engine (%s) w języku polskim",
+    "pt-br": "Documentação da Godot Engine (%s) em Português Brasileiro",
+    "ru": "Документация Godot Engine (%s) на русском языке",
+    "uk": "Документація до Godot Engine (%s) українською мовою",
+    "zh-cn": "Godot Engine (%s) 简体中文文档",
+}
 language = os.getenv("READTHEDOCS_LANGUAGE", "en")
-if not language in supported_languages:
+if not language in supported_languages.keys():
     print("Unknown language: " + language)
-    print("Supported languages: " + ", ".join(supported_languages))
-    print("This is an error or needs to be added to supported_languages in conf.py")
+    print("Supported languages: " + ", ".join(supported_languages.keys()))
+    print(
+        "The configured language is either wrong, or it should be added to supported_languages in conf.py. Falling back to 'en'."
+    )
+    language = en
 
 is_i18n = tags.has("i18n")  # noqa: F821
 
@@ -93,6 +110,8 @@ html_theme_options = {
     "collapse_navigation": False,
 }
 
+html_title = supported_languages[language] % version
+
 # VCS options: https://docs.readthedocs.io/en/latest/vcs.html#github
 html_context = {
     "display_github": not is_i18n,  # Integrate GitHub
@@ -101,7 +120,7 @@ html_context = {
     "github_version": "master",  # Version
     "conf_py_path": "/",  # Path in the checkout to the docs root
     "godot_inject_language_links": True,
-    "godot_docs_supported_languages": supported_languages,
+    "godot_docs_supported_languages": list(supported_languages.keys()),
     "godot_docs_basepath": "https://docs.godotengine.org/",
     "godot_docs_suffix": ".html",
     "godot_default_lang": "en",
@@ -168,6 +187,8 @@ rst_epilog = """
 .. |weblate_widget| image:: https://hosted.weblate.org/widgets/godot-engine/{image_locale}/godot-docs/287x66-white.png
     :alt: Translation status
     :target: https://hosted.weblate.org/engage/godot-engine{target_locale}/?utm_source=widget
+    :width: 287
+    :height: 66
 """.format(
     image_locale="-" if language == "en" else language,
     target_locale="" if language == "en" else "/" + language,

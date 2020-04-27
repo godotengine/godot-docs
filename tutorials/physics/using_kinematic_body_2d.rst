@@ -347,11 +347,11 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
             _velocity = new Vector2();
             if (Input.IsActionPressed("backward"))
             {
-                _velocity = new Vector2(-speed/3, 0).Rotated(Rotation);
+                _velocity = new Vector2(-Speed/3, 0).Rotated(Rotation);
             }
             if (Input.IsActionPressed("forward"))
             {
-                _velocity = new Vector2(speed, 0).Rotated(Rotation);
+                _velocity = new Vector2(Speed, 0).Rotated(Rotation);
             }
             if (Input.IsActionPressed("mouse_click"))
             {

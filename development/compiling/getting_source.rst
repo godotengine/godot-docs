@@ -15,6 +15,9 @@ The source code is available on `GitHub <https://github.com/godotengine/godot>`_
 and while you can manually download it via the website, in general you want to
 do it via the ``git`` version control system.
 
+If you are compiling in order to make contributions or pull requests, you should
+follow the instructions from the :ref:`Pull Request workflow <doc_pr_workflow>`.
+
 If you don't know much about ``git`` yet, there are a great number of
 `tutorials <https://git-scm.com/book>`__ available on various websites.
 
