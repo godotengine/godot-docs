@@ -56,13 +56,13 @@ supported_languages = {
     "fr": "Documentation de Godot Engine (%s) en français",
     "fi": "Godot Engine (%s) dokumentaatio suomeksi",
     "it": "Godot Engine (%s) documentazione in italiano",
-    "ja": "日本語のGodot Engine (%s)ドキュメント",
-    "ko": "한국어로 된 Godot Engine (%s) 문서",
+    "ja": "Godot Engine (%s)の日本語のドキュメント",
+    "ko": "Godot Engine (%s) 문서 (한국어)",
     "pl": "Dokumentacja Godot Engine (%s) w języku polskim",
-    "pt-br": "Documentação do Godot Engine (%s) em português do Brasil",
-    "ru": "Godot Engine (%s) документация на русском языке",
-    "uk": "Документація Godot Engine (3.2) російською мовою",
-    "zh-cn": "Godot Engine（%s）文档为俄语",
+    "pt-br": "Documentação da Godot Engine (%s) em Português Brasileiro",
+    "ru": "Документация Godot Engine (%s) на русском языке",
+    "uk": "Документація до Godot Engine (%s) українською мовою",
+    "zh-cn": "Godot Engine (%s) 简体中文文档",
 }
 language = os.getenv("READTHEDOCS_LANGUAGE", "en")
 if not language in supported_languages.keys():
