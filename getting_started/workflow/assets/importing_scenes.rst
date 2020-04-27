@@ -388,7 +388,7 @@ depending on Blender's empty draw type:
 
 -  Single arrow will create a :ref:`class_rayshape`
 -  Cube will create a :ref:`class_boxshape`
--  Image will create a :ref:`class_worldmarginshape`
+-  Image will create a :ref:`class_planeshape`
 -  Sphere (and the others not listed) will create a :ref:`class_sphereshape`
 
 For better visibility in Blender's editor, the user can set "X-Ray" option on collision
