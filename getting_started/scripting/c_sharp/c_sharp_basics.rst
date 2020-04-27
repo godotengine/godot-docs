@@ -35,7 +35,7 @@ page in the Mono documentation.
 Setting up C# for Godot
 -----------------------
 
-Windows (Visaul Studio)
+Windows (Visual Studio)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Download and install the latest version of

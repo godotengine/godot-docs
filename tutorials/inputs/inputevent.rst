@@ -115,7 +115,7 @@ specific Controls, only direct ancestors of the targeted Control node receive th
 In accordance with Godot's node-based design, this enables
 specialized child nodes to handle and consume particular events, while
 their ancestors, and ultimately the scene root, can provide more
-generalized behaviour if needed.
+generalized behavior if needed.
 
 Anatomy of an InputEvent
 ------------------------
@@ -124,14 +124,14 @@ Anatomy of an InputEvent
 anything and only contains some basic information, such as event ID
 (which is increased for each event), device index, etc.
 
-There are several specialised types of InputEvent, described in the table below:
+There are several specialized types of InputEvent, described in the table below:
 
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
 | Event                                                             | Type Index         | Description                             |
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
 | :ref:`InputEvent <class_InputEvent>`                              | NONE               | Empty Input Event.                      |
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
-| :ref:`InputEventKey <class_InputEventKey>`                        | KEY                | Contains a scancode and unicode value,  |
+| :ref:`InputEventKey <class_InputEventKey>`                        | KEY                | Contains a scancode and Unicode value,  |
 |                                                                   |                    | as well as modifiers.                   |
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
 | :ref:`InputEventMouseButton <class_InputEventMouseButton>`        | MOUSE_BUTTON       | Contains click information, such as     |

@@ -12,7 +12,7 @@ and aims to help you migrate your existing Unity experience into the world of Go
 
 .. note::
 
-   This article talks about older versions of Unity. Nestable prefabs ('Nested prefabs') were added to Unity 2018.3. Nestable prefabs are analogous to Godot's scenes, and allow a more Godot-like approach to scene organisation.
+   This article talks about older versions of Unity. Nestable prefabs ('Nested prefabs') were added to Unity 2018.3. Nestable prefabs are analogous to Godot's scenes, and allow a more Godot-like approach to scene organization.
 
 Differences
 -----------
@@ -28,7 +28,7 @@ Differences
 |                   | * **Mobile:** Android, iOS, Windows Phone, Tizen                                   | * **Mobile:** Android, iOS                                                                                     |
 |                   | * **Web:** WebAssembly or asm.js                                                   | * **Web:** WebAssembly                                                                                         |
 |                   | * **Consoles:** PS4, PS Vita, Xbox One, Xbox 360, Wii U, Nintendo 3DS              | * **Console:** See :ref:`doc_consoles`                                                                         |
-|                   | * **VR:** Oculus Rift, SteamVR, Google Cardboard, Playstation VR, Gear VR, HoloLens| * **VR:** Oculus Rift, SteamVR                                                                                 |
+|                   | * **VR:** Oculus Rift, SteamVR, Google Cardboard, PlayStation VR, Gear VR, HoloLens| * **VR:** Oculus Rift, SteamVR                                                                                 |
 |                   | * **TV:** Android TV, Samsung SMART TV, tvOS                                       |                                                                                                                |
 +-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | Scene system      | * Component/Scene (GameObject > Component)                                         | :ref:`Scene tree and nodes <doc_scenes_and_nodes>`, allowing scenes to be nested and/or inherit other scenes   |
@@ -87,7 +87,7 @@ and debugging/live editing on it after the game is exported.
 The scene system
 ----------------
 
-This is the most important difference between Unity and Godot and the favourite feature of most Godot users.
+This is the most important difference between Unity and Godot and the favorite feature of most Godot users.
 
 Working on a 'level' in Unity usually means embedding all the required assets in a scene
 and linking them together with components and scripts.
@@ -116,14 +116,14 @@ Consider the player as an element we'd like to use in different parent scenes (f
 2. **A scene for the Enemy.**
 
 An enemy is also an element we'd like to use in several scenes. It's almost the same
-as the Player node. The only differences are the script (it needs 'AI' routines to generate the enemy's behaviour)
+as the Player node. The only differences are the script (it needs 'AI' routines to generate the enemy's behavior)
 and the sprite textures used by the AnimatedSprite node.
 
 3. **A Level scene.**
 
 A Level scene is composed of Bricks (for platforms), Coins (for the player to collect) and a
 number of instances of the Enemy scene. Each instance is a node in the Level scene tree. These instances are separate enemies,
-which initially have shared behaviour and appearance as defined in the Enemy scene. You can set different properties for each Enemy node (to change its color, for example).
+which initially have shared behavior and appearance as defined in the Enemy scene. You can set different properties for each Enemy node (to change its color, for example).
 
 4. **A Main scene.**
 The Main scene would be composed of one root node with 2 children: a Player instance node, and a Level instance node.
@@ -202,7 +202,7 @@ please read the :ref:`doc_gdscript` and :ref:`doc_faq` pages. GDScript is strong
 and doesn't take long to learn: Between one evening for an experienced programmer and a week for a complete beginner.
 
 Unity allows you to attach as many scripts as you want to a GameObject.
-Each script adds a behaviour to the GameObject: For example, you can attach a script so that it reacts to the player's controls,
+Each script adds a behavior to the GameObject: For example, you can attach a script so that it reacts to the player's controls,
 and another that controls its specific game logic.
 
 In Godot, you can only attach one script per node. You can use either an external GDScript file

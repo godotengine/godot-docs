@@ -22,7 +22,7 @@ Download the project files: :download:`ui_gui_design.zip <files/ui_gui_design.zi
 
 .. note::
 
-    You can watch this tutorial as a `video on Youtube <https://www.youtube.com/watch?v=y1E_y9AIqow>`_.
+    You can watch this tutorial as a `video on YouTube <https://www.youtube.com/watch?v=y1E_y9AIqow>`_.
 
 Breaking down the UI
 --------------------

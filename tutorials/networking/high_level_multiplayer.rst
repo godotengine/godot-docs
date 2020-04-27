@@ -65,7 +65,7 @@ This class interface can abstract most types of network layers, topologies and l
 provides an implementation based on ENet (:ref:`NetworkedMultiplayerEnet <class_NetworkedMultiplayerENet>`),
 one based on WebRTC (:ref:`WebRTCMultiplayer <class_WebRTCMultiplayer>`), and one based on WebSocket
 (:ref:`WebSocketMultiplayerPeer <class_WebSocketMultiplayerPeer>`), but this could be used to implement
-mobile APIs (for adhoc WiFi, Bluetooth) or custom device/console-specific networking APIs.
+mobile APIs (for ad hoc WiFi, Bluetooth) or custom device/console-specific networking APIs.
 
 For most common cases, using this object directly is discouraged, as Godot provides even higher level networking facilities.
 Yet it is made available in case a game has specific needs for a lower level API.

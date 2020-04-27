@@ -34,16 +34,16 @@ not introducing trailing whitespace or space-based indentation, you should be
 fine. If you plan to contribute regularly however, we strongly advise that you
 setup clang-format locally to check and automatically fix all your commits.
 
-.. warning:: Godot's code style should *not* be applied to thirdparty code,
+.. warning:: Godot's code style should *not* be applied to third-party code,
              i.e. that is included in Godot's source tree but was not written
              specifically for our project. Such code usually come from
              different upstream projects with their own style guides (or lack
              thereof), and don't want to introduce differences that would make
              syncing with upstream repositories harder.
 
-             Thirdparty code is usually included in the ``thirdparty/`` folder
+             Third-party code is usually included in the ``thirdparty/`` folder
              and can thus easily be excluded from formatting scripts. For the
-             rare cases where a thirdparty code snippet needs to be included
+             rare cases where a third-party code snippet needs to be included
              directly within a Godot file, you can use
              ``/* clang-format off */`` and ``/* clang-format on */`` to tell
              clang-format to ignore a chunk of code.
@@ -139,11 +139,11 @@ ones, the following rules should be followed:
   includes should be done with quotes, e.g. ``#include "core/object.h"``. The
   block of Godot header includes should then be followed by an empty line for
   separation.
-- Finally, thirdparty headers (either from ``thirdparty`` or from the system's
+- Finally, third-party headers (either from ``thirdparty`` or from the system's
   include paths) come next and should be included with the < and > symbols, e.g.
-  ``#include <png.h>``. The block of thirdparty headers should also be followed
+  ``#include <png.h>``. The block of third-party headers should also be followed
   by an empty line for separation.
-- Godot and thirdparty headers should be included in the file that requires
+- Godot and third-party headers should be included in the file that requires
   them, i.e. in the `.h` header if used in the declarative code or in the `.cpp`
   if used only in the imperative code.
 
@@ -240,7 +240,7 @@ Java
 Godot's Java code (mostly in ``platform/android``) is also enforced via
 ``clang-format``, so see the instructions above to set it up. Keep in mind that
 this style guide only applies to code written and maintained by Godot, not
-thirdparty code such as the ``java/src/com/google`` subfolder.
+third-party code such as the ``java/src/com/google`` subfolder.
 
 Python
 ------

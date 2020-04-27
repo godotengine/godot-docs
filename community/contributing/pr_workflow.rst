@@ -21,7 +21,7 @@ the *master* branch).
 
 We will go together through an example to show the typical workflow and
 associated Git commands. But first, let's have a quick look at the
-organisation of Godot's Git repository.
+organization of Godot's Git repository.
 
 Git source repository
 ---------------------
@@ -442,7 +442,7 @@ will raise an error:
     hint: Updates were rejected because the tip of your current branch is behind
     hint: its remote counterpart.
 
-This is a sane behaviour, Git will not let you push changes that would
+This is a sane behavior, Git will not let you push changes that would
 override remote content. But that's actually what we want to do here, so we
 will have to *force* it:
 
