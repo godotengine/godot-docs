@@ -18,7 +18,7 @@ There are three places the sky shader is used.
   used in the high-res background or cubemap pass. 
 
 In total, this means the sky shader can run up
-to six times per frame, however, practice it will be much less than that
+to six times per frame, however, in practice it will be much less than that
 because the radiance cubemap does not need to be updated every frame, and 
 not all subpasses will be used. You can change the behavior of the shader
 based on where it is called by checking the ``AT_*_PASS`` booleans. For
