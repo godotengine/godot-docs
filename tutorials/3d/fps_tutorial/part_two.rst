@@ -291,6 +291,10 @@ reach the point where the muzzle starts to flash.
 
 .. note:: The timeline is the window where all the points in our animation are stored. Each of the little
           points represents a point of animation data.
+          
+          To actually preview the "Pistol_fire" animation, select the :ref:`Camera <class_Camera>` node
+          underneath Rotation Helper and check the "Preview" box underneath Perspective in the top left corner
+            
 
           Scrubbing the timeline means moving ourselves through the animation. So when we say "scrub the timeline
           until you reach a point", what we mean is move through the animation window until you reach the point
