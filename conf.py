@@ -49,6 +49,7 @@ if env_tags is not None:
         tags.add(tag.strip())  # noqa: F821
 
 # Language / i18n
+
 supported_languages = {
     "en": "Godot Engine (%s) documentation in English",
     "de": "Godot Engine (%s) Dokumentation auf Deutsch",
@@ -59,11 +60,23 @@ supported_languages = {
     "ja": "Godot Engine (%s)の日本語のドキュメント",
     "ko": "Godot Engine (%s) 문서 (한국어)",
     "pl": "Dokumentacja Godot Engine (%s) w języku polskim",
-    "pt-br": "Documentação da Godot Engine (%s) em Português Brasileiro",
+    "pt_BR": "Documentação da Godot Engine (%s) em Português Brasileiro",
     "ru": "Документация Godot Engine (%s) на русском языке",
     "uk": "Документація до Godot Engine (%s) українською мовою",
-    "zh-cn": "Godot Engine (%s) 简体中文文档",
+    "zh_CN": "Godot Engine (%s) 简体中文文档",
 }
+
+# Some language codes used on Weblate/RTD and in the docs URL differ,
+# so we need to remap them.
+languages_remap = {
+    "pt_BR": "pt-br",
+    "zh_CN": "zh-cn",
+}
+languages_url = sorted(
+    [l for l in supported_languages.keys() if l not in languages_remap.keys()]
+    + list(languages_remap.values())
+)
+
 language = os.getenv("READTHEDOCS_LANGUAGE", "en")
 if not language in supported_languages.keys():
     print("Unknown language: " + language)
@@ -71,7 +84,7 @@ if not language in supported_languages.keys():
     print(
         "The configured language is either wrong, or it should be added to supported_languages in conf.py. Falling back to 'en'."
     )
-    language = en
+    language = "en"
 
 is_i18n = tags.has("i18n")  # noqa: F821
 
@@ -120,7 +133,7 @@ html_context = {
     "github_version": "master",  # Version
     "conf_py_path": "/",  # Path in the checkout to the docs root
     "godot_inject_language_links": True,
-    "godot_docs_supported_languages": list(supported_languages.keys()),
+    "godot_docs_supported_languages": languages_url,
     "godot_docs_basepath": "https://docs.godotengine.org/",
     "godot_docs_suffix": ".html",
     "godot_default_lang": "en",
