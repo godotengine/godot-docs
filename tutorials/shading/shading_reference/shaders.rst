@@ -41,7 +41,7 @@ Valid types are:
 * :ref:`spatial <doc_spatial_shader>`: For 3D rendering.
 * :ref:`canvas_item <doc_canvas_item_shader>`: For 2D rendering.
 * :ref:`particles <doc_particle_shader>`: For particle systems.
-* :ref:`sky <doc_sky_shader>`: for rendering :ref:`Skies <class_Sky>`.
+* :ref:`sky <doc_sky_shader>`: For rendering :ref:`Skies <class_Sky>`.
 
 For detailed information on each shading type, see the corresponding reference document.
 
