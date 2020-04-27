@@ -12,3 +12,7 @@
   {% endif -%}
   {{ super() }}
 {% endblock -%}
+
+{% block htmltitle -%}
+<title>{{ godot_title_prefix }}{{ title|striptags|e }}{{ titlesuffix }}</title>
+{% endblock -%}
