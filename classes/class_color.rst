@@ -875,7 +875,7 @@ Returns a new color resulting from blending this color over another. If the colo
 
 - :ref:`Color<class_Color>` **contrasted** **(** **)**
 
-Returns the most contrasting color.
+Returns the color's complimentary color.
 
 ::
 
