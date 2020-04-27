@@ -41,7 +41,7 @@ example:
 
 
 When using the sky shader to draw a background, the shader will be called for
-all non-occluded fragments on screen. However, for the background's
+all non-occluded fragments on the screen. However, for the background's
 subpasses, the shader will be called for every pixel of the subpass.
 
 When using the sky shader to update the radiance cubemap, the sky shader 
