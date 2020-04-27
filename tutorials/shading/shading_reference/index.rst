@@ -10,3 +10,4 @@ Shading reference
    spatial_shader
    canvas_item_shader
    particle_shader
+   sky_shader
