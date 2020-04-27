@@ -47,7 +47,7 @@ Social networks
 - `Facebook group <https://www.facebook.com/groups/godotengine/>`_
 - `Twitter (also, #godotengine) <https://twitter.com/godotengine>`_
 - `Reddit <https://www.reddit.com/r/godot>`_
-- `Youtube <https://www.youtube.com/c/GodotEngineOfficial>`_
+- `YouTube <https://www.youtube.com/c/GodotEngineOfficial>`_
 - `Steam <https://steamcommunity.com/app/404790>`_
 
 Forum

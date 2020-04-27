@@ -110,7 +110,7 @@ scene:
 
 .. note::
 
-    The project uses a simple organisation that works for game jams and tiny games.
+    The project uses a simple organization that works for game jams and tiny games.
 
     At the root of the project, in the `res://` folder, you will find the `LevelMockup`. That's the main game scene and the one we will work with. All the components that make up the game are in the `scenes/` folder. The `assets/` folder contains the game sprites and the font for the HP counter. In the `scripts/` folder you will find the enemy, the player, and the GUI controller scripts.
 

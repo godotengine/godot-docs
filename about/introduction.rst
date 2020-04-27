@@ -76,7 +76,7 @@ attribution to "Juan Linietsky, Ariel Manzur and the Godot Engine community".
 Organization of the documentation
 ---------------------------------
 
-This documentation is organised in five sections with an impressively
+This documentation is organized in five sections with an impressively
 unbalanced distribution of contents – but the way it is split up should be
 relatively intuitive:
 

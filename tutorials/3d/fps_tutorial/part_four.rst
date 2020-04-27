@@ -118,7 +118,7 @@ If there is a joypad connected, we then get its left stick axes for right/left a
 Because a wired Xbox 360 controller has different joystick axis mapping based on OS, we will use different axes based on
 the OS.
 
-.. warning:: This tutorial assumes you are using a XBox 360 or a Playstation wired controller.
+.. warning:: This tutorial assumes you are using a XBox 360 or a PlayStation wired controller.
              Also, I do not (currently) have access to a Mac computer, so the joystick axes may need changing.
              If they do, please open a GitHub issue on the Godot documentation repository! Thanks!
 
@@ -178,7 +178,7 @@ Make a new function called ``process_view_input`` and add the following:
             rotation_helper.rotation_degrees = camera_rot
         # ----------------------------------
 
- .. code-tab:: gdscript Playstation Controller
+ .. code-tab:: gdscript PlayStation Controller
 
      func process_view_input(delta):
 

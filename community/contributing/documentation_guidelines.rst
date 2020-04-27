@@ -52,7 +52,7 @@ reading as follows:
 
 3. Complete all the edits you want to make for that page.
 
-4. Summarise the changes you made in the form at the bottom of the page and
+4. Summarize the changes you made in the form at the bottom of the page and
    click the button labelled **Propose file change** when done.
 
 5. On the following screens, click the **Create pull request** button until you

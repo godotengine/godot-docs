@@ -116,10 +116,10 @@ The following functionality is currently unavailable on the HTML5 platform:
  -  Threads
  -  GDNative
  -  C#
- -  Clipboard synchronisation between engine and operating system
+ -  Clipboard synchronization between engine and operating system
  -  Networking other than :ref:`class_HTTPClient` and :ref:`class_WebSocketClient`
 
-.. tip:: Check the `list of open HTML5 issues on Github
+.. tip:: Check the `list of open HTML5 issues on GitHub
          <https://github.com/godotengine/godot/issues?q=is:open+is:issue+label:platform:html5>`__
          to see if the functionality you're interested in has an issue yet. If
          not, open one to communicate your interest.

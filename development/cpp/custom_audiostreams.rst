@@ -231,7 +231,7 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
 Resampling
 ~~~~~~~~~~
 
-Godot’s AudioServer currently uses 44100 Hz sample rate. When other sample rates are
+Godot's AudioServer currently uses 44100 Hz sample rate. When other sample rates are
 needed such as 48000, either provide one or use AudioStreamPlaybackResampled.
 Godot provides cubic interpolation for audio resampling.
 

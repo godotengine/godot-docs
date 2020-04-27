@@ -1,16 +1,16 @@
 .. _doc_intro_to_the_editor_interface:
 
-Introduction to Godot’s editor
+Introduction to Godot's editor
 ==============================
 
-This tutorial will run you through Godot’s interface. We’re going to
+This tutorial will run you through Godot's interface. We're going to
 look at the **Project Manager, docks, workspaces** and everything you
 need to know to get started with the engine.
 
 Project manager
 ---------------
 
-When you launch Godot, the first window you’ll see is the Project
+When you launch Godot, the first window you'll see is the Project
 Manager. Since you have no projects there will be a popup asking if you
 want to open the asset library, just click cancel, we'll look at it later.
 
@@ -21,8 +21,8 @@ or play game projects.
 
 .. image:: img/editor_ui_intro_project_manager_01.png
 
-In the top-right corner you’ll find a drop-down menu to change the
-editor’s language.
+In the top-right corner you'll find a drop-down menu to change the
+editor's language.
 
 .. image:: img/editor_ui_intro_project_manager_02.png
 
@@ -43,8 +43,8 @@ and choose a renderer.
 
 .. image:: img/editor_ui_intro_project_manager_04.png
 
-Click the Browse button to open Godot’s file browser and pick a location
-or type the folder’s path in the Project Path field.
+Click the Browse button to open Godot's file browser and pick a location
+or type the folder's path in the Project Path field.
 
 .. image:: img/editor_ui_intro_project_manager_05.png
 
@@ -61,7 +61,7 @@ later on. For this tutorial either backend is fine.
 Once you are done click ``Create & Edit``. Godot will create
 the project for you and open it in the editor.
 
-The next time you open the project manager, you’ll see your new project in the
+The next time you open the project manager, you'll see your new project in the
 list. Double click on it to open it in the editor.
 
 .. image:: img/editor_ui_intro_project_manager_06.png
@@ -76,10 +76,10 @@ When the folder path is correct, you'll see a green checkmark.
 
 .. image:: img/editor_ui_intro_project_manager_09.png
 
-Your first look at Godot’s editor
+Your first look at Godot's editor
 ---------------------------------
 
-Welcome to Godot! With your project open, you should see the editor’s interface
+Welcome to Godot! With your project open, you should see the editor's interface
 with menus along the top of the interface and docks along the far extremes of
 the interface on either side of the viewport.
 
@@ -88,24 +88,24 @@ the interface on either side of the viewport.
 At the top, from left to right, you can see the **main menus**, the
 **workspaces**, and the **playtest buttons**.
 
-The **FileSystem dock** is where you’ll manage your project files and assets.
+The **FileSystem dock** is where you'll manage your project files and assets.
 
 .. image:: img/editor_ui_intro_dock_filesystem.png
 
-The **Scene dock** lists the active scene’s content and the **Inspector**
+The **Scene dock** lists the active scene's content and the **Inspector**
 allows for the management of the properties of a scene's content.
 
 .. image:: img/editor_ui_intro_dock_inspector.png
 
-In the center, you have the **Toolbar** at the top, where you’ll find
-tools to move, scale or lock your scene’s objects. It changes as you
+In the center, you have the **Toolbar** at the top, where you'll find
+tools to move, scale or lock your scene's objects. It changes as you
 jump to different workspaces.
 
 .. image:: img/editor_ui_intro_editor_02_toolbar.png
 
 The **Bottom Panel** is the host for the debug console, the animation
 editor, the audio mixer… They are wide and can take precious space.
-That’s why they’re folded by default.
+That's why they're folded by default.
 
 .. image:: img/editor_ui_intro_editor_03_animation_player.png
 
@@ -115,7 +115,7 @@ The workspaces
 You can see four workspace buttons at the top: 2D, 3D, Script and
 AssetLib.
 
-You’ll use the **2D workspace** for all types of games. In addition to 2D games,
+You'll use the **2D workspace** for all types of games. In addition to 2D games,
 the 2D workspace is where you'll build your interfaces. Press :kbd:`F1` 
 (or :kbd:`Alt + 1` on macOS) to access it.
 
@@ -161,7 +161,7 @@ and assets to use in your projects.
 Modify the interface
 --------------------
 
-Godot’s interface lives in a single window. You cannot split it across
+Godot's interface lives in a single window. You cannot split it across
 multiple screens although you can work with an external code editor like
 Atom or Visual Studio Code for instance.
 

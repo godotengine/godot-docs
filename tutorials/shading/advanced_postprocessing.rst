@@ -91,8 +91,8 @@ When displaying depth directly from the ``DEPTH_TEXTURE``, everything will look 
 white unless it is very close. This is because the depth buffer stores objects closer
 to the camera using more bits than those further, so most of the detail in depth
 buffer is found close to the camera. In order to make the depth value align with world or 
-model coordinates, we need to linearise the value. When we apply the projection matrix to the 
-vertex position, the z value is made nonlinear, so to linearise it, we multiply it by the 
+model coordinates, we need to linearize the value. When we apply the projection matrix to the 
+vertex position, the z value is made nonlinear, so to linearize it, we multiply it by the 
 inverse of the projection matrix, which in Godot, is accessible with the variable 
 ``INV_PROJECTION_MATRIX``.
 

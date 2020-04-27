@@ -1014,9 +1014,9 @@ At this point, you have a good base to build more complicated FPS games.
           Other than that, the source is exactly the same, just with helpful comments explaining what
           each part does.
 
-.. tip:: The finished project source is hosted on Github as well: https://github.com/TwistedTwigleg/Godot_FPS_Tutorial
+.. tip:: The finished project source is hosted on GitHub as well: https://github.com/TwistedTwigleg/Godot_FPS_Tutorial
 
-         **Please note that the code in Github may or may not be in sync with the tutorial in the documentation**.
+         **Please note that the code in GitHub may or may not be in sync with the tutorial in the documentation**.
 
          The code in the documentation is likely better managed and/or more up to date.
          If you are unsure of which to use, use the project(s) provided in the documentation, as they are maintained by the Godot community.

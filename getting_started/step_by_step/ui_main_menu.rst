@@ -28,7 +28,7 @@ folder.
 .. note::
 
     Read the :doc:`ui_introduction_to_the_ui_system` first to learn how
-    Godot’s UI system works.
+    Godot's UI system works.
 
 How to design your game UI
 --------------------------
@@ -70,7 +70,7 @@ There are two ways to design your UI in Godot. You can:
    components that inherit from your base scenes.
 
 We will use the first approach, because the first version of your UI may
-not work as well as you’d like. You’re likely to throw parts away and
+not work as well as you'd like. You're likely to throw parts away and
 redesign components as you go. When you're sure everything works, it's
 easy to make some parts reusable, as you'll see below.
 
@@ -150,7 +150,7 @@ Select the ``MarginContainer``, and create the UI elements as
 1. the title or logo,
 2. the three text options as individual nodes,
 3. the version note,
-4. and the main menu’s illustration.
+4. and the main menu's illustration.
 
 Click the **Add Node** button or press :kbd:`Meta + A` on your keyboard.
 Start to type ``TextureRect`` to find the corresponding node and press
@@ -191,8 +191,8 @@ containers split the area into two: a left and a right side or a top and
 a bottom side. They also allow the user to resize the left and right
 areas using an interactive bar. On the other hand, ``HBoxContainer``
 just splits itself into as many columns as it has children. Although you
-can deactivate the split container's resize behaviour, I recommend to
-favour box containers.
+can deactivate the split container's resize behavior, I recommend to
+favor box containers.
 
 Select the ``MarginContainer`` and add an ``HBoxContainer``. Then, we
 need two containers as children of our ``HBoxContainer``: a

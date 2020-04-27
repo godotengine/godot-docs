@@ -509,7 +509,7 @@ to make the compiler understand for what the uniform is used.
     uniform float amount : hint_range(0, 1);
     uniform vec4 other_color : hint_color = vec4(1.0);
 
-It's important to understand that textures that are supplied as color require hints for proper sRGB->linear conversion (i.e. ``hint_albedo``), as Godot’s 3D engine renders in linear color space.
+It's important to understand that textures that are supplied as color require hints for proper sRGB->linear conversion (i.e. ``hint_albedo``), as Godot's 3D engine renders in linear color space.
 
 Full list of hints below:
 
@@ -557,7 +557,7 @@ to shaders, Godot converts the type automatically. Below is a table of the corre
 +-----------------+-----------+
 
 .. note:: Be careful when setting shader uniforms from GDScript, no error will be thrown if the
-          type does not match. Your shader will just exhibit undefined behaviour.
+          type does not match. Your shader will just exhibit undefined behavior.
 
 Uniforms can also be assigned default values:
 

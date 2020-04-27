@@ -81,7 +81,7 @@ are placed in just one AnimationPlayer in the scene root.
 
 **Mode 'Animation as Action with Squash'**
 
-This mode has very similar behaviour of mode 'Animation as Action', but it
+This mode has very similar behavior of mode 'Animation as Action', but it
 can generate fewer AnimationPlayers; objects in parent-children relationship would
 share their AnimationPlayer. It is useful when you have several rigs, and each
 Skeleton and Mesh has actions; then one rig would have just one AnimationPlayer.

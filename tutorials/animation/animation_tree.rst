@@ -212,7 +212,7 @@ Check the "Parameters" section of the ``AnimationTree`` node to see all the para
 .. image:: img/animtree16.png
 
 This is handy because it makes it possible to animate them from an ``AnimationPlayer``, or even the ``AnimationTree`` itself,
-allowing the realisation of very complex animation logic.
+allowing the realization of very complex animation logic.
 
 To modify these values from code, the property path must be obtained. This is done easily by hovering the mouse over any of the parameters:
 

@@ -1216,7 +1216,7 @@ and ``$Music.stop()`` in the ``game_over()`` function.
 
 Finally, add ``$DeathSound.play()`` in the ``game_over()`` function.
 
-Keyboard Shortcut
+Keyboard shortcut
 ~~~~~~~~~~~~~~~~~
 
 Since the game is played with keyboard controls, it would be convenient if we

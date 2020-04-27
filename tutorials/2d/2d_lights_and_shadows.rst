@@ -14,7 +14,7 @@ to make a scene like the demo step by step.
 .. image:: img/light_shadow_main.png
 
 All the resources for this tutorial can be found in the `official demo repository <https://github.com/godotengine/godot-demo-projects>`_
-on github. I suggest you download it before starting. Alternatively,
+on GitHub. I suggest you download it before starting. Alternatively,
 it can be downloaded from the Project Manager. Launch Godot and in the top
 bar select "Templates" and search for "2D Lights and Shadows Demo".
 
