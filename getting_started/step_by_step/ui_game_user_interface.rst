@@ -625,9 +625,9 @@ find the final project here: :download:`ui_gui_design.zip <files/ui_gui_design.z
     **A final note about Responsive Design**. If you resize the
     GUI, you'll see the nodes move, but the textures and text won't scale.
     The GUI also has a minimum size, based on the textures inside of it. In
-    games, we don’t need the interface to be as flexible as that of a
+    games, we don't need the interface to be as flexible as that of a
     website. You almost never want to support both landscape and portrait
-    screen orientations. It’s one or the other. In landscape orientation,
+    screen orientations. It's one or the other. In landscape orientation,
     the most common ratios range from 4:3 to 16:9. They are close to one
-    another. That's why it’s enough for the GUI elements to only move
+    another. That's why it's enough for the GUI elements to only move
     horizontally when we change the window size.

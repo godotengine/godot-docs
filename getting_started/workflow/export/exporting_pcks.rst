@@ -31,7 +31,7 @@ with extension ``.pck``).
 - offer mod support
 - no source code disclosure needed for mods
 - more modular project structure
-- users don’t have to replace the entire game
+- users don't have to replace the entire game
 
 The first part of using them involves exporting and delivering the project to
 players. Then, when one wants to add functionality or content later on, they

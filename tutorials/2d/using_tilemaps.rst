@@ -106,7 +106,7 @@ the node's lock button:
 
 .. image:: img/tile_lock.png
 
-Collision Shapes
+Collision shapes
 ----------------
 
 If you're making a map that needs collisions - walls, floor, or other obstacles,

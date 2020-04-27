@@ -1,6 +1,6 @@
 .. _doc_custom_visualscript_nodes:
 
-Custom VisualScript Nodes
+Custom VisualScript nodes
 =========================
 
 Custom nodes are written in GDScript and can then be used in VisualScript.
