@@ -36,6 +36,7 @@ Supported image formats
 Godot can import the following image formats:
 
 - BMP (``.bmp``)
+  - No support for 16-bit per pixel images. Only 1-bit, 4-bit, 8-bit, 24-bit, and 32-bit per pixel images are supported.
 - DirectDraw Surface (``.dds``)
   - If mipmaps are present in the texture, they will be loaded directly.
   This can be used to achieve effects using custom mipmaps.
