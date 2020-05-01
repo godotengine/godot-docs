@@ -408,7 +408,7 @@ Inherit the Bar Scene to build the LifeBar
 Go to ``Scene -> New Inherited Scene`` to create a new type of ``Bar``.
 Select the Bar scene and open it. You should see a new [unsaved] tab,
 that's like your ``Bar``, but with all nodes except the root in grey.
-Press :kbd:`Meta + S` to save the new inherited scene and name it
+Press :kbd:`Ctrl + S` (:kbd:`Cmd + S` on macOS) to save the new inherited scene and name it
 ``LifeBar``.
 
 .. figure:: img/ui_gui_step_tutorial_inherited_scene_parent.png
@@ -474,7 +474,7 @@ all the resources this node uses and create unique copies for us.
 .. tip::
 
     When you duplicate a node from the Scene tree, with
-    :kbd:`Meta + D`, it shares its resources with the original node. You
+    :kbd:`Ctrl + D` (:kbd:`Cmd + D` on macOS), it shares its resources with the original node. You
     need to use ``Make Sub-Resources Unique`` before you can tweak the
     resources without affecting the source node.
 
