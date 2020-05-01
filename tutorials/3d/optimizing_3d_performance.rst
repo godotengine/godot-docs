@@ -1,7 +1,10 @@
-.. _doc_3d_performance_and_limitations:
+.. meta::
+    :keywords: optimization
 
-3D performance and limitations
-==============================
+.. _doc_optimizing_3d_performance:
+
+Optimizing 3D performance
+=========================
 
 Introduction
 ~~~~~~~~~~~~
