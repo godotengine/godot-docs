@@ -111,10 +111,20 @@ Examples
     export(Color, RGB) var col
     # Color given as red-green-blue-alpha value.
     export(Color, RGBA) var col
-
-    # Another node in the scene can be exported, too.
-
-    export(NodePath) var node
+    
+    # Nodes
+    
+    # Another node in the scene can be exported as a NodePath.
+    export(NodePath) var node_path
+    # Do take note that the node itself isn't being exported -
+    # there is one more step to call the true node:
+    var node = get_node(node_path)
+    
+    # Resources
+    
+    export(Resource) var resource
+    # In the Inspector, you can then drag and drop a resource file
+    # from the File System into the variable slot.
 
 It must be noted that even if the script is not being run while in the
 editor, the exported properties are still editable. This can be used
