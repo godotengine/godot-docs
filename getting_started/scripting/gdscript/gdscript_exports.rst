@@ -163,6 +163,10 @@ between all instances. This means that editing them in one instance will
 cause them to change in all other instances. Exported arrays can have
 initializers, but they must be constant expressions.
 
+If the exported array specifies a type which inherits from Resource, the array
+values can be set in the inspector by dragging and dropping multiple files 
+from the FileSystem dock at once.
+
 ::
 
     # Exported array, shared between all instances.
@@ -179,6 +183,12 @@ initializers, but they must be constant expressions.
     # You can omit the default value, but then it would be null if not assigned.
 
     export(Array) var b
+    export(Array, PackedScene) var scenes
+
+    # Arrays with specified types which inherit from resource can be set by
+    # drag-and-dropping multiple files from the FileSystem dock.
+
+    export(Array, Texture) var textures
     export(Array, PackedScene) var scenes
 
     # Typed arrays also work, only initialized empty:
