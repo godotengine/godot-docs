@@ -475,7 +475,7 @@ With that done, all we need to do is add some code to ``process_input``:
     # ----------------------------------
     # Grabbing and throwing objects
 
-    if Input.is_action_just_pressed("fire") and current_weapon_name == "UNARMED":
+    if Input.is_action_just_pressed("fire_grenade") and current_weapon_name == "UNARMED":
         if grabbed_object == null:
             var state = get_world().direct_space_state
 
