@@ -13,6 +13,7 @@ needs_sphinx = "1.3"
 sys.path.append(os.path.abspath("_extensions"))
 extensions = [
     "gdscript",
+    "godot_descriptions",
 ]
 templates_path = ["_templates"]
 
