@@ -155,7 +155,7 @@ initializers, but they must be constant expressions.
 
 If the exported array specifies a type which inherits from Resource, the array
 values can be set in the inspector by dragging and dropping multiple files 
-from the FileSystem panel at once.
+from the FileSystem dock at once.
 
 ::
 
@@ -176,7 +176,7 @@ from the FileSystem panel at once.
     export(Array, PackedScene) var scenes
 
     # Arrays with specified types which inherit from resource can be set by
-    # drag-and-dropping multiple files from the FileSystem 
+    # drag-and-dropping multiple files from the FileSystem dock.
 
     export(Array, Texture) var textures
     export(Array, PackedScene) var scenes
