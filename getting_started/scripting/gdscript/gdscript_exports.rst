@@ -124,7 +124,7 @@ Examples
     
     export(Resource) var resource
     # In the Inspector, you can then drag and drop a resource file
-    # from the File System into the variable slot.
+    # from the FileSystem dock into the variable slot.
 
 It must be noted that even if the script is not being run while in the
 editor, the exported properties are still editable. This can be used
