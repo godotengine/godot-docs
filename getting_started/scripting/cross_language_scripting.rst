@@ -72,7 +72,7 @@ Instantiating C# nodes from GDScript
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Using C# from GDScript doesn't need much work. Once loaded
-(see :ref:`doc_gdscript_classes_as_resources`) the script can be instantiated
+(see :ref:`doc_gdscript_classes_as_resources`), the script can be instantiated
 with :ref:`new() <class_CSharpScript_method_new>`.
 
 ::
@@ -83,15 +83,15 @@ with :ref:`new() <class_CSharpScript_method_new>`.
 
 .. warning::
 
-    When creating .cs scripts you should always keep in mind that the class
-    Godot will use is the one named like the .cs file itself. If that class
+    When creating ``.cs`` scripts, you should always keep in mind that the class
+    Godot will use is the one named like the ``.cs`` file itself. If that class
     does not exist in the file, you'll see the following error:
     ``Invalid call. Nonexistent function `new` in base``.
 
     For example, MyCoolNode.cs should contain a class named MyCoolNode.
 
-    You also need to check your .cs file is referenced in the project's .csproj
-    file. Otherwise, the same error will occur.
+    You also need to check your ``.cs`` file is referenced in the project's
+    ``.csproj`` file. Otherwise, the same error will occur.
 
 Instantiating GDScript nodes from C#
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -104,7 +104,7 @@ be instantiated with :ref:`GDScript.New() <class_GDScript_method_new>`.
     GDScript MyGDScript = (GDScript) GD.Load("res://path_to_gd_file.gd");
     Object myGDScriptNode = (Godot.Object) MyGDScript.New(); // This is a Godot.Object
 
-Here we are using an :ref:`class_Object` but you can use type conversion like
+Here we are using an :ref:`class_Object`, but you can use type conversion like
 explained in :ref:`doc_c_sharp_features_type_conversion_and_casting`.
 
 Accessing fields
@@ -126,8 +126,8 @@ anything to worry about.
     # my_csharp_node.str2 = "BARBAR" # This line will hang and crash
 
 Note that it doesn't matter if the field is defined as a property or an
-attribute, but trying to set a value on a property that does not define a
-setter will result in a crash.
+attribute. However, trying to set a value on a property that does not define
+a setter will result in a crash.
 
 Accessing GDScript fields from C#
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -158,7 +158,7 @@ Calling C# methods from GDScript
 Again, calling C# methods from GDScript should be straightforward. The
 marshalling process will do its best to cast your the arguments to match
 function signatures.
-If that's impossible you'll see the following error: ``Invalid call. Nonexistent function `FunctionName```.
+If that's impossible, you'll see the following error: ``Invalid call. Nonexistent function `FunctionName```.
 
 ::
 
@@ -174,7 +174,7 @@ Calling GDScript methods from C#
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To call GDScript methods from C# you'll need to use
-:ref:`Object.Call() <class_Object_method_call>`. The first arguments is the
+:ref:`Object.Call() <class_Object_method_call>`. The first argument is the
 name of the method you want to call. The following arguments will be passed
 to said method.
 
@@ -197,5 +197,14 @@ to said method.
 
     As you can see, if the first argument of the called method is an array,
     you'll need to cast it as ``object``.
-    Otherwise each element of your array will be treated as a single argument
+    Otherwise, each element of your array will be treated as a single argument
     and the function signature won't match.
+
+Inheritance
+-----------
+
+A GDScript file may not inherit from a C# script. Likewise, a C# script may not
+inherit from a GDScript file. Due to how complex this would be to implement,
+this limitation is unlikely to be lifted in the future. See
+`this GitHub issue <https://github.com/godotengine/godot/issues/38352>`__
+for more information.
