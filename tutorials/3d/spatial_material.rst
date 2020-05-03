@@ -354,14 +354,26 @@ lighting in the scene.
 
 .. image:: img/spatial_material15.png
 
-Normalmap
-~~~~~~~~~
+Normal map
+~~~~~~~~~~
 
 Normal mapping allows you to set a texture that represents finer shape detail.
 This does not modify geometry, only the incident angle for light. In Godot,
-only the red and green channels of normal maps are used for wider compatibility.
+only the red and green channels of normal maps are used for better compression
+and wider compatibility.
 
 .. image:: img/spatial_material16.png
+
+.. note::
+
+  Godot requires the normal map to use the X+, Y- and Z+ coordinates. In other
+  words, if you've imported a material made to be used with another engine, you
+  may have to convert the normal map so its Y axis is flipped. Otherwise, the
+  normal map direction may appear to be inverted on the Y axis.
+
+  More information about normal maps (including a coordinate order table for
+  popular engines) can be found
+  `here <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details>`__. 
 
 Rim
 ~~~

@@ -128,6 +128,17 @@ reimported automatically.
 
 Note that RGTC compression affects the resulting normal map image. You will have to adjust custom shaders that use the normal map to take this into account.
 
+.. note::
+
+  Godot requires the normal map to use the X+, Y- and Z+ coordinates. In other
+  words, if you've imported a material made to be used with another engine, you
+  may have to convert the normal map so its Y axis is flipped. Otherwise, the
+  normal map direction may appear to be inverted on the Y axis.
+
+  More information about normal maps (including a coordinate order table for
+  popular engines) can be found
+  `here <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details>`__. 
+
 Flags
 -----
 
