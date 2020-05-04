@@ -222,11 +222,13 @@ example of a built-in category.
 
     func _get_property_list():
         var properties = []
-        properties.append({
+        properties.append(
+            {
                 name = "Debug",
                 type = TYPE_NIL,
                 usage = PROPERTY_USAGE_CATEGORY | PROPERTY_USAGE_SCRIPT_VARIABLE
-        })
+            }
+        )
         return properties
         
 * ``name`` is the name of a category to be added to the inspector;
