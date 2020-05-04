@@ -210,3 +210,77 @@ When changing an exported variable's value from a script in
 automatically. To update it, call
 :ref:`property_list_changed_notify() <class_Object_method_property_list_changed_notify>`
 after setting the exported variable's value.
+
+Advanced exports
+----------------
+
+Not every type of export can be provided on the level of the language itself to
+avoid unnecessary design complexity. The following describes some more or less
+common exporting features which can be implemented with a low-level API.
+
+Before reading further, you should get familiar with the way properties are
+handled and how they can be customized with
+:ref:`_set() <class_Object_method__get_property_list>`,
+:ref:`_get() <class_Object_method__get_property_list>`, and
+:ref:`_get_property_list() <class_Object_method__get_property_list>` methods as
+described in :ref:`doc_accessing_data_or_logic_from_object`.
+
+.. seealso:: For binding properties using the above methods in C++, see
+             :ref:`doc_binding_properties_using_set_get_property_list`.
+             
+.. warning:: The script must operate in the ``tool`` mode so the above methods
+             can work from within the editor.
+
+Adding script categories
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+For better visual distinguishing of properties, a special script category can be
+embedded into the inspector to act as a separator. ``Script Variables`` is one
+example of a built-in category.
+
+::
+
+    func _get_property_list():
+        var properties = []
+        properties.append(
+            {
+                name = "Debug",
+                type = TYPE_NIL,
+                usage = PROPERTY_USAGE_CATEGORY | PROPERTY_USAGE_SCRIPT_VARIABLE
+            }
+        )
+        return properties
+        
+* ``name`` is the name of a category to be added to the inspector;
+
+* ``PROPERTY_USAGE_CATEGORY`` indicates that the property should be treated as a
+  script category specifically, so the type ``TYPE_NIL`` can be ignored as it
+  won't be actually used for the scripting logic, yet it must be defined anyway.
+
+Grouping properties
+~~~~~~~~~~~~~~~~~~~
+
+A list of properties with similar names can be grouped.
+
+::
+
+    func _get_property_list():
+        var properties = []
+        properties.append({
+                name = "Rotate",
+                type = TYPE_NIL,
+                hint_string = "rotate_",
+                usage = PROPERTY_USAGE_GROUP | PROPERTY_USAGE_SCRIPT_VARIABLE
+        })
+        return properties
+        
+* ``name`` is the name of a group which is going to be displayed as collapsible
+  list of properties;
+
+* every successive property added after the group property will be collapsed and
+  shortened as determined by the prefix defined via the ``hint_string`` key. For
+  instance, ``rotate_speed`` is going to be shortened to ``speed`` in this case.
+
+* ``PROPERTY_USAGE_GROUP`` indicates that the property should be treated as a
+  script group specifically, so the type ``TYPE_NIL`` can be ignored as it
+  won't be actually used for the scripting logic, yet it must be defined anyway.
