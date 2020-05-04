@@ -52,7 +52,7 @@ Reuse shaders and materials
 
 The Godot renderer is a little different to what is out there. It's designed
 to minimize GPU state changes as much as possible.
-:ref:`class_SpatialMaterial`
+:ref:`class_StandardMaterial3D`
 does a good job at reusing materials that need similar shaders but, if
 custom shaders are used, make sure to reuse them as much as possible.
 Godot's priorities will be like this:
@@ -62,7 +62,7 @@ Godot's priorities will be like this:
    of objects (in the hundreds or thousands) try reusing the materials
    or in the worst case use atlases.
 -  **Reusing Shaders**: If materials can't be reused, at least try to
-   re-use shaders (or SpatialMaterials with different parameters but the same
+   re-use shaders (or StandardMaterial3Ds with different parameters but the same
    configuration).
 
 If a scene has, for example, 20.000 objects with 20.000 different

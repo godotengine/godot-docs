@@ -9,7 +9,7 @@
    using_transforms
    optimizing_3d_performance
    3d_rendering_limitations
-   spatial_material
+   standard_material_3d
    lights_and_shadows
    reflection_probes
    gi_probes

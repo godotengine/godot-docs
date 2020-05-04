@@ -13,7 +13,7 @@ To do this, the exporter attempts to find Godot materials with names that match
 those of the material name in Blender. So if you export an object in Blender
 with the material name ``PurpleDots`` then the exporter will search for the
 file ``PurpleDots.tres`` and assign it to the object. If this file is not a
-``SpatialMaterial`` or ``ShaderMaterial`` or if it cannot be found, then the
+``StandardMaterial3D`` or ``ShaderMaterial`` or if it cannot be found, then the
 exporter will fall back to exporting the material from Blender.
 
 

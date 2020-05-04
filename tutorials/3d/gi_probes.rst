@@ -11,7 +11,7 @@ Introduction
           when using the GLES2 renderer.
 
 Just like with :ref:`doc_reflection_probes`, and as stated in
-the :ref:`doc_spatial_material`, objects can show reflected or diffuse light.
+the :ref:`doc_standard_material_3d`, objects can show reflected or diffuse light.
 GI Probes are similar to Reflection Probes, but they use a different and more
 complex technique to produce indirect light and reflections.
 

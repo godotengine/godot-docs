@@ -147,13 +147,13 @@ way by the engine.
 ::
 
     func get_resource_type():
-        return "SpatialMaterial"
+        return "StandardMaterial3D"
 
 The imported resource has a specific type, so the editor can know which property
 slot it belongs to. This allows drag and drop from the FileSystem dock to a
 property in the Inspector.
 
-In our case it's a :ref:`class_SpatialMaterial`, which can be applied to 3D
+In our case it's a :ref:`class_StandardMaterial3D`, which can be applied to 3D
 objects.
 
 .. note:: If you need to import different types from the same extension, you
@@ -324,10 +324,10 @@ it sets the color as a pure red instead.
 
 ::
 
-    var material = SpatialMaterial.new()
+    var material = StandardMaterial3D.new()
     material.albedo_color = color
 
-This part makes a new :ref:`SpatialMaterial <class_SpatialMaterial>` that is the
+This part makes a new :ref:`StandardMaterial3D <class_StandardMaterial3D>` that is the
 imported resource. We create a new instance of it and then set its albedo color
 as the value we got before.
 
@@ -382,7 +382,7 @@ in a different file:
 
 ::
 
-    var next_pass = SpatialMaterial.new()
+    var next_pass = StandardMaterial3D.new()
     next_pass.albedo_color = color.inverted()
     var next_pass_path = "%s.next_pass.%s" % [save_path, get_save_extension()]
 

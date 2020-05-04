@@ -17,7 +17,7 @@ result. Light can come from several types of sources in a scene:
 -  Baked Light (read :ref:`doc_baked_lightmaps`).
 
 The emission color is a material property. You can read more about it
-in the :ref:`doc_spatial_material` tutorial.
+in the :ref:`doc_standard_material_3d` tutorial.
 
 Light nodes
 -----------

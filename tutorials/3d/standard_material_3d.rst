@@ -1,18 +1,18 @@
-.. _doc_spatial_material:
+.. _doc_standard_material_3d:
 
-Spatial Material
-================
+Standard Material 3D
+====================
 
 Introduction
 ------------
 
-``SpatialMaterial`` is a default 3D material that aims to provide most of the features
+``StandardMaterial3D`` is a default 3D material that aims to provide most of the features
 artists look for in a material, without the need for writing shader code. However,
 it can be converted to shader code if additional functionality is needed.
 
-This tutorial explains most parameters present in ``SpatialMaterial``.
+This tutorial explains most parameters present in ``StandardMaterial3D``.
 
-There are three ways to add a ``SpatialMaterial`` to an object. It can be added in
+There are three ways to add a ``StandardMaterial3D`` to an object. It can be added in
 the *Material* property of the mesh. It can be added in the *Material* property of
 the node using the mesh (such as a MeshInstance node), or in the *Material Override*
 property of the node using the mesh.
@@ -160,7 +160,7 @@ option on will help them look correct.
 Parameters
 -----------
 
-``SpatialMaterial`` also has several configurable parameters to tweak
+``StandardMaterial3D`` also has several configurable parameters to tweak
 many aspects of the rendering:
 
 .. image:: img/spatial_material5.png
