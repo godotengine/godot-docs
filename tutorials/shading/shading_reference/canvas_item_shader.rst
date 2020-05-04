@@ -48,11 +48,16 @@ Global built-ins
 
 Global built-ins are available everywhere, including custom functions.
 
-+-------------------+--------------------------+
-| Built-in          | Description              |
-+===================+==========================+
-| in float **TIME** | Global time, in seconds. |
-+-------------------+--------------------------+
++-----------------------+---------------------------------------------------------------------------+
+| Built-in              | Description                                                               |
++=======================+===========================================================================+
+| in float **TIME**     | Global time, in seconds.                                                  |
+|                       | It's subject to the roll back setting (which is 3,600 by default).        |
++-----------------------+---------------------------------------------------------------------------+
+| in vec4 **MODULATE**  | Final modulate color.                                                     |
+|                       | If used, the default behavior of having the output **COLOR** from the     |
+|                       | fragment function automatically multiplied by it won't happen.            |
++-----------------------+---------------------------------------------------------------------------+
 
 Vertex built-ins
 ^^^^^^^^^^^^^^^^
@@ -214,7 +219,8 @@ When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``tru
 | in vec2 **UV**                      | UV from vertex function, equivalent to the UV in the fragment function.       |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in vec4 **COLOR**                   | Input Color.                                                                  |
-|                                     | This is the output of the fragment function with final modulation applied.    |
+|                                     | This is the output of the fragment function (with final modulation applied,   |
+|                                     | if **MODULATE** is not used in any section of the shader).                    |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | sampler2D **TEXTURE**               | Current texture in use for CanvasItem.                                        |
 +-------------------------------------+-------------------------------------------------------------------------------+
@@ -225,8 +231,6 @@ When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``tru
 | in vec2 **SCREEN_UV**               | **SCREEN_TEXTURE** Coordinate (for using with screen texture).                |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in vec2 **POINT_COORD**             | UV for Point Sprite.                                                          |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| in float **TIME**                   | Global time in seconds.                                                       |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | inout vec2 **LIGHT_VEC**            | Vector from light to fragment in local coordinates. It can be modified to     |
 |                                     | alter illumination direction when normal maps are used.                       |
