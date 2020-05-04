@@ -36,6 +36,7 @@ Supported image formats
 Godot can import the following image formats:
 
 - BMP (``.bmp``)
+  - No support for 16-bit per pixel images. Only 1-bit, 4-bit, 8-bit, 24-bit, and 32-bit per pixel images are supported.
 - DirectDraw Surface (``.dds``)
   - If mipmaps are present in the texture, they will be loaded directly.
   This can be used to achieve effects using custom mipmaps.
@@ -126,6 +127,17 @@ image as RGTC compressed. By default, it's set to "Detect", which means that if 
 reimported automatically.
 
 Note that RGTC compression affects the resulting normal map image. You will have to adjust custom shaders that use the normal map to take this into account.
+
+.. note::
+
+  Godot requires the normal map to use the X+, Y- and Z+ coordinates. In other
+  words, if you've imported a material made to be used with another engine, you
+  may have to convert the normal map so its Y axis is flipped. Otherwise, the
+  normal map direction may appear to be inverted on the Y axis.
+
+  More information about normal maps (including a coordinate order table for
+  popular engines) can be found
+  `here <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details>`__. 
 
 Flags
 -----

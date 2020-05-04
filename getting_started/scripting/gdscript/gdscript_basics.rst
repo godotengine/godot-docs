@@ -985,7 +985,6 @@ will then appear with its new icon in the editor::
    # Item.gd
 
    extends Node
-
    class_name Item, "res://interface/icons/item.png"
 
 .. image:: img/class_name_editor_register_example.png
@@ -998,10 +997,13 @@ Here's a class file example:
 
     class_name Character
 
+
     var health = 5
+
 
     func print_health():
         print(health)
+
 
     func print_this_script_three_times():
         print(get_script())
@@ -1091,8 +1093,10 @@ This is better explained through examples. Consider this scenario::
     var entity = null
     var message = null
 
+
     func _init(e=null):
         entity = e
+
 
     func enter(m):
         message = m
@@ -1100,6 +1104,7 @@ This is better explained through examples. Consider this scenario::
 
     # Idle.gd (inheriting class)
     extends "State.gd"
+
 
     func _init(e=null, m=null).(e):
         # Do something with 'e'.
@@ -1136,8 +1141,11 @@ function.
     # An inner class in this class file.
     class SomeInnerClass:
         var a = 5
+
+
         func print_value_of_a():
             print(a)
+
 
     # This is the constructor of the class file's main class.
     func _init():
@@ -1159,6 +1167,7 @@ class resource is done by calling the ``new`` function on the class object::
 
     # Preload the class only once at compile time.
     const MyClass = preload("myclass.gd")
+
 
     func _init():
         var a = MyClass.new()
@@ -1192,8 +1201,10 @@ with the new value. Vice versa, when ``variable`` is accessed, the *getter* func
 
     var my_var setget my_var_set, my_var_get
 
+
     func my_var_set(new_value):
         my_var = new_value
+
 
     func my_var_get():
         return my_var # Getter must return a value.
@@ -1236,6 +1247,7 @@ placed at the top of the file::
     tool
     extends Button
 
+
     func _ready():
         print("Hello")
 
@@ -1274,6 +1286,7 @@ to. To create custom signals for a class, use the ``signal`` keyword.
 
    extends Node
 
+
    # A signal named health_depleted.
    signal health_depleted
 
@@ -1299,6 +1312,7 @@ signal, the game node's ``_on_Character_health_depleted`` is called::
         var character_node = get_node('Character')
         character_node.connect("health_depleted", self, "_on_Character_health_depleted")
 
+
     func _on_Character_health_depleted():
         get_tree().reload_current_scene()
 
@@ -1317,6 +1331,7 @@ the :ref:`Object.connect() <class_Object_method_connect>` method::
 
     ...
     signal health_changed
+
 
     func take_damage(amount):
         var old_health = health
@@ -1431,6 +1446,7 @@ an example::
         yield()
         print("world")
 
+
     func _ready():
         var y = my_func()
         # Function state saved in 'y'.
@@ -1452,6 +1468,7 @@ for example::
         print(yield())
         return "cheers!"
 
+
     func _ready():
         var y = my_func()
         # Function state saved in 'y'.
@@ -1470,6 +1487,7 @@ Remember to save the new function state, when using multiple ``yield``\s::
         for i in range(1, 5):
             print("Turn %d" % i)
             yield();
+
 
     func _ready():
         var co = co_func();
@@ -1500,11 +1518,46 @@ into an invalid state, for example::
         yield(button_func(), "completed")
         print("All buttons were pressed, hurray!")
 
+
     func button_func():
         yield($Button0, "pressed")
         yield($Button1, "pressed")
 
 ``my_func`` will only continue execution once both buttons have been pressed.
+
+You can also get the signal's argument once it's emitted by an object:
+
+::
+
+    # Wait for when any node is added to the scene tree.
+    var node = yield(get_tree(), "node_added")
+
+If you're unsure whether a function may yield or not, or whether it may yield
+multiple times, you can yield to the ``completed`` signal conditionally:
+
+::
+
+    func generate():
+        var result = rand_range(-1.0, 1.0)
+
+        if result < 0.0:
+            yield(get_tree(), "idle_frame")
+
+        return result
+
+
+    func make():
+        var result = generate()
+
+        if result is GDScriptFunctionState: # Still working.
+            result = yield(result, "completed")
+
+        return result
+
+This ensures that the function returns whatever it was supposed to return
+irregardless of whether coroutines were used internally. Note that using
+``while`` would be redundant here as the ``completed`` signal is only emitted
+when the function didn't yield anymore.
 
 Onready keyword
 ~~~~~~~~~~~~~~~
@@ -1517,6 +1570,7 @@ be obtained when a call to ``Node._ready()`` is made.
 ::
 
     var my_label
+
 
     func _ready():
         my_label = get_node("MyLabel")

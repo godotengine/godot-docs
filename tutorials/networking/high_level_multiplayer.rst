@@ -57,7 +57,7 @@ Mid level abstraction
 Before going into how we would like to synchronize a game across the network, it can be helpful to understand how the base network API for synchronization works.
 
 Godot uses a mid-level object :ref:`NetworkedMultiplayerPeer <class_NetworkedMultiplayerPeer>`.
-This object is not meant to be created directly, but is designed so that several implementations can provide it.
+This object is not meant to be created directly, but is designed so that several C++ implementations can provide it.
 
 This object extends from :ref:`PacketPeer <class_PacketPeer>`, so it inherits all the useful methods for serializing, sending and receiving data. On top of that, it adds methods to set a peer, transfer mode, etc. It also includes signals that will let you know when peers connect or disconnect.
 
@@ -85,7 +85,7 @@ Initializing as a server, listening on the given port, with a given maximum numb
 
     var peer = NetworkedMultiplayerENet.new()
     peer.create_server(SERVER_PORT, MAX_PLAYERS)
-    get_tree().set_network_peer(peer)
+    get_tree().network_peer = peer
 
 Initializing as a client, connecting to a given IP and port:
 
@@ -93,7 +93,7 @@ Initializing as a client, connecting to a given IP and port:
 
     var peer = NetworkedMultiplayerENet.new()
     peer.create_client(SERVER_IP, SERVER_PORT)
-    get_tree().set_network_peer(peer)
+    get_tree().network_peer = peer
 
 Get the previously set network peer:
 
@@ -111,7 +111,7 @@ Terminating the networking feature:
 
 ::
 
-    get_tree().set_network_peer(null)
+    get_tree().network_peer = null
 
 (Although it may make sense to send a message first to let the other peers know you're going away instead of letting the connection close or timeout, depending on your game.)
 

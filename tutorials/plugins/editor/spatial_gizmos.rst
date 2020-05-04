@@ -82,7 +82,7 @@ or all the handle related ones.
 
     func _init():
         create_material("main", Color(1, 0, 0))
-        create_handles_material("handles")
+        create_handle_material("handles")
 
     func redraw(gizmo):
         gizmo.clear()
@@ -119,7 +119,7 @@ So the final plugin would look somewhat like this:
 
     func _init():
         create_material("main", Color(1,0,0))
-        create_handles_material("handles")
+        create_handle_material("handles")
 
     func has_gizmo(spatial):
         return spatial is MyCustomSpatial
@@ -170,7 +170,7 @@ for the Spatial nodes we want to target.
 
     func _init():
         create_material("main", Color(1, 0, 0))
-        create_handles_material("handles")
+        create_handle_material("handles")
 
     func create_gizmo(spatial):
         if spatial is MyCustomSpatial:

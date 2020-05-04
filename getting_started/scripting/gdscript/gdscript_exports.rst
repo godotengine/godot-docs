@@ -111,10 +111,20 @@ Examples
     export(Color, RGB) var col
     # Color given as red-green-blue-alpha value.
     export(Color, RGBA) var col
-
-    # Another node in the scene can be exported, too.
-
-    export(NodePath) var node
+    
+    # Nodes
+    
+    # Another node in the scene can be exported as a NodePath.
+    export(NodePath) var node_path
+    # Do take note that the node itself isn't being exported -
+    # there is one more step to call the true node:
+    var node = get_node(node_path)
+    
+    # Resources
+    
+    export(Resource) var resource
+    # In the Inspector, you can then drag and drop a resource file
+    # from the FileSystem dock into the variable slot.
 
 It must be noted that even if the script is not being run while in the
 editor, the exported properties are still editable. This can be used
@@ -153,6 +163,10 @@ between all instances. This means that editing them in one instance will
 cause them to change in all other instances. Exported arrays can have
 initializers, but they must be constant expressions.
 
+If the exported array specifies a type which inherits from Resource, the array
+values can be set in the inspector by dragging and dropping multiple files 
+from the FileSystem dock at once.
+
 ::
 
     # Exported array, shared between all instances.
@@ -169,6 +183,12 @@ initializers, but they must be constant expressions.
     # You can omit the default value, but then it would be null if not assigned.
 
     export(Array) var b
+    export(Array, PackedScene) var scenes
+
+    # Arrays with specified types which inherit from resource can be set by
+    # drag-and-dropping multiple files from the FileSystem dock.
+
+    export(Array, Texture) var textures
     export(Array, PackedScene) var scenes
 
     # Typed arrays also work, only initialized empty:
