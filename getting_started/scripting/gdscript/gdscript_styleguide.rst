@@ -427,6 +427,26 @@ These naming conventions follow the Godot Engine style. Breaking these will make
 your code clash with the built-in naming conventions, leading to inconsistent
 code.
 
+File names
+~~~~~~~~~~
+
+Use snake_case for file names. For named classes, convert the PascalCase class
+name to snake_case::
+
+    # This file should be saved as `weapon.gd`.
+    extends Node
+    class_name Weapon
+
+::
+
+    # This file should be saved as `yaml_parser.gd`.
+    extends Object
+    class_name YAMLParser
+
+This is consistent with how C++ files are named in Godot's source code. This
+also avoids case sensitivity issues that can crop up when exporting a project
+from Windows to other platforms.
+
 Classes and nodes
 ~~~~~~~~~~~~~~~~~
 
