@@ -121,6 +121,7 @@ Afterwards, install the platform tools (this is required to install ``adb``):
 
 .. image:: img/custom_build_platform_tools.png
 
+If you get an error saying ``Warning: Could not create settings``, try ``./sdkmanager --sdk_root=../../ --licenses`` or ``./sdkmanager --sdk_root=../../ platform-tools``. These must be executed inside the ``/tools/bin/`` folder because the path for ``--sdk_root`` is relative.
 
 Generating the keystore
 ^^^^^^^^^^^^^^^^^^^^^^^
