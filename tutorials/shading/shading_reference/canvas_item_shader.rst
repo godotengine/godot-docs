@@ -48,11 +48,12 @@ Global built-ins
 
 Global built-ins are available everywhere, including custom functions.
 
-+-------------------+--------------------------+
-| Built-in          | Description              |
-+===================+==========================+
-| in float **TIME** | Global time, in seconds. |
-+-------------------+--------------------------+
++-------------------+-----------------------------------------------------------------------------+
+| Built-in          | Description                                                                 |
++===================+=============================================================================+
+| in float **TIME** | Global time, in seconds.                                                    |
+|                   | It's subject to the rollover setting (which is 3,600 -1 hour- by default).  |
++-------------------+-----------------------------------------------------------------------------+
 
 Vertex built-ins
 ^^^^^^^^^^^^^^^^
@@ -128,6 +129,10 @@ is usually:
 +--------------------------------+----------------------------------------------------------------+
 | inout vec4 **COLOR**           | Color from vertex primitive.                                   |
 +--------------------------------+----------------------------------------------------------------+
+| in vec4 **MODULATE**           | Final modulate color.                                          |
+|                                | If used, **COLOR** will not be multiplied by modulate          |
+|                                | automatically after the fragment function.                     |
++--------------------------------+----------------------------------------------------------------+
 | inout float **POINT_SIZE**     | Point size for point drawing.                                  |
 +--------------------------------+----------------------------------------------------------------+
 
@@ -170,6 +175,10 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 +----------------------------------+----------------------------------------------------------------+
 | inout vec4 **COLOR**             | Color from vertex function and output fragment color. If       |
 |                                  | unused, will be set to **TEXTURE** color.                      |
++----------------------------------+----------------------------------------------------------------+
+| in vec4 **MODULATE**             | Final modulate color.                                          |
+|                                  | If used, **COLOR** will not be multiplied by modulate          |
+|                                  | automatically after the fragment function.                     |
 +----------------------------------+----------------------------------------------------------------+
 | in sampler2D **TEXTURE**         | Default 2D texture.                                            |
 +----------------------------------+----------------------------------------------------------------+
@@ -214,7 +223,12 @@ When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``tru
 | in vec2 **UV**                      | UV from vertex function, equivalent to the UV in the fragment function.       |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in vec4 **COLOR**                   | Input Color.                                                                  |
-|                                     | This is the output of the fragment function with final modulation applied.    |
+|                                     | This is the output of the fragment function (with final modulation applied,   |
+|                                     | if **MODULATE** is not used in any function of the shader).                   |
++-------------------------------------+-------------------------------------------------------------------------------+
+| in vec4 **MODULATE**                | Final modulate color.                                                         |
+|                                     | If used, **COLOR** will not be multiplied by modulate                         |
+|                                     | automatically after the fragment function.                                    |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | sampler2D **TEXTURE**               | Current texture in use for CanvasItem.                                        |
 +-------------------------------------+-------------------------------------------------------------------------------+
@@ -225,8 +239,6 @@ When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``tru
 | in vec2 **SCREEN_UV**               | **SCREEN_TEXTURE** Coordinate (for using with screen texture).                |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in vec2 **POINT_COORD**             | UV for Point Sprite.                                                          |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| in float **TIME**                   | Global time in seconds.                                                       |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | inout vec2 **LIGHT_VEC**            | Vector from light to fragment in local coordinates. It can be modified to     |
 |                                     | alter illumination direction when normal maps are used.                       |
