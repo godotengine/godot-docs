@@ -48,11 +48,12 @@ Global built-ins
 
 Global built-ins are available everywhere, including custom functions.
 
-+-------------------+--------------------------+
-| Built-in          | Description              |
-+===================+==========================+
-| in float **TIME** | Global time, in seconds. |
-+-------------------+--------------------------+
++-------------------+-----------------------------------------------------------------------------+
+| Built-in          | Description                                                                 |
++===================+=============================================================================+
+| in float **TIME** | Global time, in seconds.                                                    |
+|                   | It's subject to the rollover setting (which is 3,600 -1 hour- by default).  |
++-------------------+-----------------------------------------------------------------------------+
 
 Vertex built-ins
 ^^^^^^^^^^^^^^^^
@@ -225,8 +226,6 @@ When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``tru
 | in vec2 **SCREEN_UV**               | **SCREEN_TEXTURE** Coordinate (for using with screen texture).                |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in vec2 **POINT_COORD**             | UV for Point Sprite.                                                          |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| in float **TIME**                   | Global time in seconds.                                                       |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | inout vec2 **LIGHT_VEC**            | Vector from light to fragment in local coordinates. It can be modified to     |
 |                                     | alter illumination direction when normal maps are used.                       |
