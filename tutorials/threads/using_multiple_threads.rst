@@ -50,9 +50,10 @@ wait until the thread is done (if not done yet), then properly dispose of it.
 Mutexes
 -------
 
-Accessing objects or data from multiple threads is not always supported (if you do it, it will
-cause unexpected behaviors or crashes). Read the :ref:`Thread safe APIs<doc_thread_safe_apis>`
-to understand which engine APIs support multiple thread access.
+Accessing objects or data from multiple threads is not always supported (if you
+do it, it will cause unexpected behaviors or crashes). Read the
+:ref:`doc_thread_safe_apis` documentation to understand which engine APIs
+support multiple thread access.
 
 When processing your own data or calling your own functions, as a rule, try to
 avoid accessing the same data directly from different threads. You may run into
