@@ -100,4 +100,30 @@ Save the script. Now the object will spin clockwise in the editor, but if you ru
 
 .. note:: Code from other nodes doesn't run in the editor. Your access to other nodes is limited. You can access the tree and nodes, and their default properties, but you can't access user variables. If you want to do so, other nodes have to run in the editor too. AutoLoad nodes cannot be accessed in the editor at all.
 
+Instancing scenes
+-----------------
+
+You can instantiate packed scenes normally and add them to the scene currently opened in the editor. Be sure to set the scene root as the owner of all the nodes created this way or the nodes won't be visible in the editor.
+
+If you are using ``tool``:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _ready():
+        var node = Spatial.new()
+        add_child(node) # Parent could be any node in the scene
+        node.set_owner(get_tree().edited_scene_root)
+
+If you are using :ref:`EditorScript<class_EditorScript>`:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _run():
+        var parent = get_scene().find_node("Parent") # Parent could be any node in the scene
+        var node = Spatial.new()
+        parent.add_child(node)
+        node.set_owner(get_scene())
+
 .. warning:: Using ``tool`` improperly can yield many errors. It is advised to first write the code how you want it, and only then add the ``tool`` keyword to the top. Also make sure you divide your code into part that runs in editor and part that runs in game. This way you can find your bug easier.
