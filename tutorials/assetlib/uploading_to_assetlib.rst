@@ -36,11 +36,6 @@ are a few requirements your asset needs to meet to be approved.
 * The license needs to be correct. The license listed on the asset
   library must match the license in the repository.
 
-* Do not set the download commit to "master". The asset library validates
-  all assets with a SHA256 hash, so the version hosted on GitHub needs
-  to be *exactly* the same. Instead of "master", either specify a commit
-  hash, or tag versions and specify a version number.
-
 * Use proper English for the name and description of your asset.
   This includes using correct capitalization, and using full
   sentences in the description.
@@ -121,9 +116,9 @@ is required in the submission form here as well.
     from repository host to repository host, but will likely look similar to
     `https://github.com/<user>/<project>/issues`. You may leave this field empty
     if you use your provider's issue tracker, and it's part of the same repository.
-* **Download Commit/Tag**:
-    The commit or tag of the asset. For example,
-    `b1d3172f89b86e52465a74f63a74ac84c491d3e1` or `v1.0`. The site computes
+* **Download Commit**:
+    The commit of the asset. For example,
+    `b1d3172f89b86e52465a74f63a74ac84c491d3e1`. The site computes
     the actual download URL from this.
 * **Icon URL**:
     The URL to your asset's icon (which will be used as a thumbnail

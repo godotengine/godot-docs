@@ -60,15 +60,13 @@ Now let's take a look at what an asset's page looks like and what it contains.
 1. Asset's thumbnail/icon.
 2. Asset's name.
 3. Current version number of the asset.
-4. Asset's average rating, displayed in stars. (This is currently unimplemented.)
-5. Asset's category, Godot version, and support status.
-6. Asset's original author/submitter.
-7. The license the asset is distributed under.
-8. The date of the asset's latest edit/update.
-9. A textual description of the asset.
-10. Links related to the asset (download link, file list, issue tracker).
-11. A SHA-256 hash of the asset, for download validation purposes.
-12. Images and videos showcasing the asset.
+4. Asset's category, Godot version, and support status.
+5. Asset's original author/submitter.
+6. The license the asset is distributed under.
+7. The date of the asset's latest edit/update.
+8. A textual description of the asset.
+9. Links related to the asset (download link, file list, issue tracker).
+10. Images and videos showcasing the asset.
 
 Registering and logging in
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
