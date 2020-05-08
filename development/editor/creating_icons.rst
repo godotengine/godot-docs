@@ -5,8 +5,8 @@ Editor icons
 
 When a new class is created and exposed to scripting, the editor's interface
 will display it with a default icon representing the base class it inherits
-from. Yet in most cases it is recommended to create icons for new classes
-to improve the user experience.
+from. In most cases, it's still recommended to create icons for new classes to
+improve the user experience.
 
 Creating icons
 ~~~~~~~~~~~~~~
@@ -18,7 +18,7 @@ Clone the ``godot`` repository containing all the editor icons:
 
    .. code-block:: bash
 
-       git clone https://github.com/godotengine/godot
+       git clone https://github.com/godotengine/godot.git
 
 The icons must be created in a vector graphics editor in SVG format. There are
 two main requirements to follow:
@@ -32,6 +32,16 @@ Once you're satisfied with the icon's design, save the icon in the cloned
 repository's ``editor/icons`` folder. The icon name should match the intended
 name in a case-sensitive manner. For example, to create an icon for
 CPUParticles2D, name the file ``CPUParticles2D.svg``.
+
+Color conversion for light editor themes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the user has configured their editor to use a light theme, Godot will
+convert the icon's colors based on a
+`set of predefined color mappings <https://github.com/godotengine/godot/blob/b9f2e57d6240346f1833fd0390de195c956299e7/editor/editor_themes.cpp#L122-L184>`__.
+This is to ensure the icon always displays with a sufficient contrast rate.
+Try to restrict your icon's color palette to colors found in the list above.
+Otherwise, your icon may become difficult to read on a light background.
 
 Icon optimization
 ~~~~~~~~~~~~~~~~~
@@ -69,7 +79,7 @@ For specific instructions on how to create module icons, refer to
 Troubleshooting
 ~~~~~~~~~~~~~~~
 
-If icons don't appear in the editor make sure that:
+If icons don't appear in the editor, make sure that:
 
 1. Each icon's filename matches the naming requirement as described previously.
 
