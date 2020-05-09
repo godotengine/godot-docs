@@ -92,19 +92,25 @@ you'll see the autoloaded nodes appear:
 Custom scene switcher
 ---------------------
 
-This tutorial will demonstrate building a scene switcher using autoload. For
-basic scene switching, you can use the
-:ref:`SceneTree.change_scene() <class_SceneTree_method_change_scene>`
-method (see :ref:`doc_scene_tree` for details). However, if you need more
-complex behavior when changing scenes, this method provides more functionality.
+This tutorial will demonstrate building a scene switcher using
+autoload and passing values from a scene to the next one. For basic
+scene switching, you can use the :ref:`SceneTree.change_scene()
+<class_SceneTree_method_change_scene>` method (see
+:ref:`doc_scene_tree` for details). However, if you need more complex
+behavior when changing scenes, this method provides more
+functionality.
 
 To begin, download the template from here:
 :download:`autoload.zip <files/autoload.zip>` and open it in Godot.
 
-The project contains two scenes: ``Scene1.tscn`` and ``Scene2.tscn``. Each
-scene contains a label displaying the scene name and a button with its
-``pressed()`` signal connected. When you run the project, it starts in
-``Scene1.tscn``. However, pressing the button does nothing.
+The project contains two scenes: ``Scene1.tscn`` and
+``Scene2.tscn``. Each scene contains a label displaying the scene
+name, a color picker and a button with its ``pressed()`` signal
+connected. When you run the project, it starts in
+``Scene1.tscn``. However, pressing the button does nothing. At the end
+of this tutorial, pressing the button will switch to the other scene,
+setting its background color according to the previous scene's color
+picker selection.
 
 Global.gd
 ~~~~~~~~~
@@ -125,7 +131,7 @@ Now whenever we run any scene in the project, this script will always be loaded.
 
 Returning to the script, it needs to fetch the current scene in the
 `_ready()` function. Both the current scene (the one with the button) and
-``global.gd`` are children of root, but autoloaded nodes are always first. This
+``Global.gd`` are children of root, but autoloaded nodes are always first. This
 means that the last child of root is always the loaded scene.
 
 .. tabs::
@@ -155,13 +161,18 @@ means that the last child of root is always the loaded scene.
         }
     }
 
-Now we need a function for changing the scene. This function needs to free the
-current scene and replace it with the requested one.
+Now we need a function for changing the scene. This function needs to
+free the current scene and replace it with the requested one,
+specified by the first argument ``path``.
+
+We also want to optionally initialize any property in the new scene
+before it's added to the scene, so we define the second argument
+``params``.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func goto_scene(path):
+    func goto_scene(path, params = {}):
         # This function will usually be called from a signal callback,
         # or some other function in the current scene.
         # Deleting the current scene at this point is
@@ -171,10 +182,10 @@ current scene and replace it with the requested one.
         # The solution is to defer the load to a later time, when
         # we can be sure that no code from the current scene is running:
 
-        call_deferred("_deferred_goto_scene", path)
+        call_deferred("_deferred_goto_scene", path, params)
 
 
-    func _deferred_goto_scene(path):
+    func _deferred_goto_scene(path, params):
         # It is now safe to remove the current scene
         current_scene.free()
 
@@ -183,6 +194,11 @@ current scene and replace it with the requested one.
 
         # Instance the new scene.
         current_scene = s.instance()
+
+	# Set properties in the new scene instance from the values in
+	# the params argument.
+	for k in params:
+	    current_scene.set(k, params[k])
 
         # Add it to the active scene, as child of root.
         get_tree().get_root().add_child(current_scene)
@@ -236,8 +252,20 @@ Finally, we need to fill the empty callback functions in the two scenes:
 
     # Add to 'Scene1.gd'.
 
+    var color
+
+    func _ready():
+        # If the color property has ben set after instancing, use its
+        # value to paint the background color.
+        if color:
+            $Background.color = color
+
+
     func _on_Button_pressed():
-        Global.goto_scene("res://Scene2.tscn")
+        # Switch to the new scene, passing the selected color as parameter.
+        Global.goto_scene("res://Scene2.tscn", {
+            color = $ColorPicker.color
+        })
 
  .. code-tab:: csharp
 
@@ -256,8 +284,17 @@ and
 
     # Add to 'Scene2.gd'.
 
+    var color
+
+    func _ready():
+        if color:
+            $Background.color = color
+
+
     func _on_Button_pressed():
-        Global.goto_scene("res://Scene1.tscn")
+        Global.goto_scene("res://Scene1.tscn", {
+            color = $ColorPicker.color
+        })
 
  .. code-tab:: csharp
 
@@ -269,8 +306,9 @@ and
         global.GotoScene("res://Scene1.tscn");
     }
 
-Run the project and test that you can switch between scenes by pressing
-the button.
+Run the project and test that you can switch between scenes by
+pressing the button. Any color you select in a scene will be used as
+background fill in the next one.
 
 Note: When scenes are small, the transition is instantaneous. However, if your
 scenes are more complex, they may take a noticeable amount of time to appear. To
