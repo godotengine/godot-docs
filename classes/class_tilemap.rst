@@ -556,7 +556,9 @@ Returns a :ref:`Vector2<class_Vector2>` array with the positions of all cells co
 
 - :ref:`Array<class_Array>` **get_used_cells_by_id** **(** :ref:`int<class_int>` id **)** const
 
-Returns an array of all cells with the given tile ``id``.
+Returns an array of all cells with the given tile ``id``.  
+
+Note: The tile ``id`` is referred to as the tile ``index`` in other methods.
 
 ----
 
