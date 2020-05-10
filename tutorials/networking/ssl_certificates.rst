@@ -13,8 +13,8 @@ which can take a regular connection and add security around it. The
 :ref:`HTTPClient <class_HTTPClient>`
 class also supports HTTPS by using this same wrapper.
 
-For SSL to work, certificates need to be provided. A .crt file must be
-specified in the project settings:
+Godot includes SSL certificates from Mozilla, but you can provide your own
+with a .crt file in the project settings:
 
 .. image:: img/ssl_certs.png
 
