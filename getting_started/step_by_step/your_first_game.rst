@@ -22,32 +22,38 @@ final result:
 .. image:: img/dodge_preview.gif
 
 **Why 2D?** 3D games are much more complex than 2D ones. You should stick to 2D
-until you have a good understanding of the game development process.
+until you have a good understanding of the game development process and how to
+use Godot.
 
 Project setup
 -------------
 
 Launch Godot and create a new project. Then, download
-:download:`dodge_assets.zip <files/dodge_assets.zip>` - the images and sounds you'll be
-using to make the game. Unzip these files to your project folder.
+:download:`dodge_assets.zip <files/dodge_assets.zip>`. This contains the
+images and sounds you'll be using to make the game. Unzip these files in your
+project folder.
 
 .. note:: For this tutorial, we will assume you are familiar with the
-          editor. If you haven't read :ref:`doc_scenes_and_nodes`, do so now
+          Godot editor. If you haven't read :ref:`doc_scenes_and_nodes`, do so now
           for an explanation of setting up a project and using the editor.
 
-This game will use portrait mode, so we need to adjust the size of the
+This game is designed for portrait mode, so we need to adjust the size of the
 game window. Click on Project -> Project Settings -> Display -> Window and
 set "Width" to ``480`` and "Height" to ``720``.
+
+Also in this section, under the "Stretch" options, set ``Mode`` to "2d" and
+``Aspect`` to "keep". This ensures that the game scales consistently on
+different sized screens.
 
 Organizing the project
 ~~~~~~~~~~~~~~~~~~~~~~
 
 In this project, we will make 3 independent scenes: ``Player``,
 ``Mob``, and ``HUD``, which we will combine into the game's ``Main``
-scene. In a larger project, it might be useful to make folders to hold
+scene. In a larger project, it might be useful to create folders to hold
 the various scenes and their scripts, but for this relatively small
 game, you can save your scenes and scripts in the project's root folder,
-referred to as ``res://``.  You can see your project folders in the FileSystem
+identified by ``res://``.  You can see your project folders in the FileSystem
 Dock in the lower left corner:
 
 .. image:: img/filesystem_dock.png
@@ -62,7 +68,9 @@ before we've created other parts of the game.
 Node structure
 ~~~~~~~~~~~~~~
 
-To begin, click the "Add/Create a New Node" button and add an :ref:`Area2D <class_Area2D>`
+To begin, we need to choose a root node for the player object. As a general rule,
+a scene's root node should reflect the object's desired functionality - what the
+object *is*. Click the "Other Node" button and add an :ref:`Area2D <class_Area2D>`
 node to the scene.
 
 .. image:: img/add_node.png
@@ -71,8 +79,8 @@ Godot will display a warning icon next to the node in the scene tree. You can
 ignore it for now. We will address it later.
 
 With ``Area2D`` we can detect objects that overlap or run into the player.
-Change its name to ``Player`` by clicking on the node's name.
-This is the scene's root node. We can add additional nodes to the player to add
+Change the node's name to ``Player`` by double-clicking on it. Now that we've
+set the scene's root node, we can add additional nodes to give it more
 functionality.
 
 Before we add any children to the ``Player`` node, we want to make sure we don't
@@ -105,15 +113,17 @@ for our player. Notice that there is a warning symbol next to the node.
 An ``AnimatedSprite`` requires a :ref:`SpriteFrames <class_SpriteFrames>` resource, which is a
 list of the animations it can display. To create one, find the
 ``Frames`` property in the Inspector and click "[empty]" ->
-"New SpriteFrames". This should automatically open the SpriteFrames panel.
+"New SpriteFrames". Click again to open the "SpriteFrames" panel:
 
 .. image:: img/spriteframes_panel.png
 
 
 On the left is a list of animations. Click the "default" one and rename
-it to "right". Then click the "Add" button to create a second animation
-named "up". Drag the two images for each animation, named ``playerGrey_up[1/2]`` and ``playerGrey_walk[1/2]``,
-into the "Animation Frames" side of the panel:
+it to "walk". Then click the "New Animation" button to create a second animation
+named "up". Find the player images in the "FileSystem" tab - they're in the
+``art`` folder you unzipped earlier. Drag the two images for each animation, named
+``playerGrey_up[1/2]`` and ``playerGrey_walk[1/2]``, into the "Animation Frames"
+side of the panel for the corresponding animation:
 
 .. image:: img/spriteframes_panel2.png
 
@@ -137,12 +147,14 @@ When you're finished, your ``Player`` scene should look like this:
 
 .. image:: img/player_scene_nodes.png
 
+Make sure to save the scene again after these changes.
+
 Moving the player
 ~~~~~~~~~~~~~~~~~
 
 Now we need to add some functionality that we can't get from a built-in
 node, so we'll add a script. Click the ``Player`` node and click the
-"Add Script" button:
+"Attach Script" button:
 
 .. image:: img/add_script_button.png
 
@@ -226,7 +238,7 @@ we will use the default events that are assigned to the arrow keys on the
 keyboard.
 
 You can detect whether a key is pressed using
-``Input.is_action_pressed()``, which returns ``true`` if it is pressed
+``Input.is_action_pressed()``, which returns ``true`` if it's pressed
 or ``false`` if it isn't.
 
 .. tabs::
@@ -292,29 +304,29 @@ should not be moving. Then we check each input and add/subtract from the
 ``velocity`` to obtain a total direction. For example, if you hold ``right``
 and ``down`` at the same time, the resulting ``velocity`` vector will be
 ``(1, 1)``. In this case, since we're adding a horizontal and a vertical
-movement, the player would move *faster* than if it just moved horizontally.
+movement, the player would move *faster* diagonally than if it just moved horizontally.
 
 We can prevent that if we *normalize* the velocity, which means we set
-its *length* to ``1``, and multiply by the desired speed. This means no
+its *length* to ``1``, then multiply by the desired speed. This means no
 more fast diagonal movement.
 
 .. tip:: If you've never used vector math before, or need a refresher,
          you can see an explanation of vector usage in Godot at :ref:`doc_vector_math`.
          It's good to know but won't be necessary for the rest of this tutorial.
 
-We also check whether the player is moving so we can start or stop the
-AnimatedSprite animation.
-
-.. tip:: In GDScript, ``$`` returns the node at the relative path from the current node, or returns ``null`` if the node is not found.
-         Since AnimatedSprite is a child of the current node, we can use ``$AnimatedSprite``.
+We also check whether the player is moving so we can call ``play()`` or ``stop()``
+on the AnimatedSprite.
 
          ``$`` is shorthand for ``get_node()``.
          So in the code above, ``$AnimatedSprite.play()`` is the same as ``get_node("AnimatedSprite").play()``.
 
+.. tip:: In GDScript, ``$`` returns the node at the relative path from the current node, or returns ``null`` if the node is not found.
+         Since AnimatedSprite is a child of the current node, we can use ``$AnimatedSprite``.
+
 Now that we have a movement direction, we can update the player's position. We
 can also use ``clamp()`` to prevent it from leaving the screen. *Clamping* a value
 means restricting it to a given range. Add the following to the bottom of
-the ``_process`` function:
+the ``_process`` function (make sure it's not indented under the `else`):
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -338,23 +350,26 @@ the ``_process`` function:
         consistent even if the frame rate changes.
 
 Click "Play Scene" (``F6``) and confirm you can move the player
-around the screen in all directions. The console output that opens upon playing
-the scene can be closed by clicking ``Output`` (which should be highlighted in
-blue) in the lower left of the Bottom Panel.
+around the screen in all directions.
 
-.. warning:: If you get an error in the "Debugger" panel that refers to a "null instance",
-             this likely means you spelled the node name wrong. Node names are case-sensitive
-             and ``$NodeName`` or ``get_node("NodeName")`` must match the name you see in the scene tree.
+.. warning:: If you get an error in the "Debugger" panel that says
+
+            ``Attempt to call function 'play' in base 'null instance' on a null instance``
+
+            this likely means you spelled the name of the AnimatedSprite node wrong.
+            Node names are case-sensitive and ``$NodeName`` must match the name
+            you see in the scene tree.
 
 Choosing animations
 ~~~~~~~~~~~~~~~~~~~
 
 Now that the player can move, we need to change which animation the
-AnimatedSprite is playing based on direction. We have a "right"
-animation, which should be flipped horizontally using the ``flip_h``
-property for left movement, and an "up" animation, which should be
-flipped vertically with ``flip_v`` for downward movement.
-Let's place this code at the end of our ``_process()`` function:
+AnimatedSprite is playing based on its direction. We have the "walk"
+animation, which shows the player walking to the right. This animation should
+be flipped horizontally using the ``flip_h`` property for left movement. We also
+have the "up" animation, which should be flipped vertically with ``flip_v``
+for downward movement. Let's place this code at the end of the ``_process()``
+function:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -384,8 +399,9 @@ Let's place this code at the end of our ``_process()`` function:
         }
 
 .. Note:: The boolean assignments in the code above are a common shorthand
-          for programmers. Consider this code versus the shortened
-          boolean assignment above:
+          for programmers. Since we're doing a comparison test (boolean) and also
+          *assigning* a boolean value, we can do both at the same time. Consider
+          this code versus the one-line boolean assignment above:
 
           .. tabs::
            .. code-tab :: gdscript GDScript
@@ -407,9 +423,15 @@ Let's place this code at the end of our ``_process()`` function:
              }
 
 Play the scene again and check that the animations are correct in each
-of the directions. When you're sure the movement is working correctly,
-add this line to ``_ready()``, so the player will be hidden when the game
-starts:
+of the directions.
+
+.. tip:: A common mistake here is to type the names of the animations wrong. The
+        animation names in the SpriteFrames panel must match what you type in the
+        code. If you named the animation ``"Walk"``, you must also use a capital
+        "W" in the code.
+
+When you're sure the movement is working correctly, add this line to ``_ready()``,
+so the player will be hidden when the game starts:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -450,18 +472,15 @@ next to the Inspector tab to see the list of signals the player can emit:
 
 Notice our custom "hit" signal is there as well! Since our enemies are
 going to be ``RigidBody2D`` nodes, we want the
-``body_entered( Object body )`` signal; this will be emitted when a
-body contacts the player. Click "Connect.." and then "Connect" again on
-the "Connecting Signal" window. We don't need to change any of these
-settings - Godot will automatically create a function in your player's script.
-This function will be called whenever the signal is emitted - it *handles* the
-signal.
+``body_entered(body: Node)`` signal. This signal will be emitted when a
+body contacts the player. Click "Connect.." and the "Connect a Signal" window
+appears. We don't need to change any of these settings so click "Connect" again.
+Godot will automatically create a function in your player's script.
 
-.. tip:: When connecting a signal, instead of having Godot create a
-         function for you, you can also give the name of an existing
-         function that you want to link the signal to.
+.. image:: img/player_signal_connection.png
 
-Add this code to the function:
+Note the green icon indicating that a signal is connected to this function. Add
+this code to the function:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -486,11 +505,10 @@ more than once.
 
 .. Note:: Disabling the area's collision shape can cause an error if it happens
           in the middle of the engine's collision processing. Using ``set_deferred()``
-          allows us to have Godot wait to disable the shape until it's safe to
-          do so.
+          tells Godot to wait to disable the shape until it's safe to do so.
 
-The last piece for our player is to add a function we can call to reset
-the player when starting a new game.
+The last piece is to add a function we can call to reset the player when
+starting a new game.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -514,24 +532,23 @@ Enemy scene
 
 Now it's time to make the enemies our player will have to dodge. Their
 behavior will not be very complex: mobs will spawn randomly at the edges
-of the screen and move in a random direction in a straight line, then
-despawn when they go offscreen.
+of the screen, choose a random direction, and move in a straight line.
 
-We will build this into a ``Mob`` scene, which we can then *instance* to
-create any number of independent mobs in the game.
+We'll create a ``Mob`` scene, which we can then *instance* to create any
+number of independent mobs in the game.
+
+.. note:: See :ref:`doc_instancing` to learn more about instancing.
 
 Node setup
 ~~~~~~~~~~
 
-Click Scene -> New Scene and we'll create the Mob.
-
-The Mob scene will use the following nodes:
+Click Scene -> New Scene and add the following nodes:
 
 -  :ref:`RigidBody2D <class_RigidBody2D>` (named ``Mob``)
 
    -  :ref:`AnimatedSprite <class_AnimatedSprite>`
    -  :ref:`CollisionShape2D <class_CollisionShape2D>`
-   -  :ref:`VisibilityNotifier2D <class_VisibilityNotifier2D>` (named ``Visibility``)
+   -  :ref:`VisibilityNotifier2D <class_VisibilityNotifier2D>`
 
 Don't forget to set the children so they can't be selected, like you did with the
 Player scene.
@@ -544,20 +561,25 @@ uncheck the first box. This will ensure the mobs do not collide with each other.
 .. image:: img/set_collision_mask.png
 
 Set up the :ref:`AnimatedSprite <class_AnimatedSprite>` like you did for the player.
-This time, we have 3 animations: ``fly``, ``swim``, and ``walk``. Set the ``Playing``
-property in the Inspector to "On" and adjust the "Speed (FPS)" setting as shown below.
-We'll select one of these animations randomly so that the mobs will have some variety.
+This time, we have 3 animations: ``fly``, ``swim``, and ``walk``. There are two
+images for each animation in the art folder.
+
+Adjust the "Speed (FPS)" to ``3`` for all animations.
 
 .. image:: img/mob_animations.gif
 
-``fly`` should be set to 3 FPS, with ``swim`` and ``walk`` set to 4 FPS.
+Set the ``Playing`` property in the Inspector to “On”.
+
+We'll select one of these animations randomly so that the mobs will have some variety.
 
 Like the player images, these mob images need to be scaled down. Set the
 ``AnimatedSprite``'s ``Scale`` property to ``(0.75, 0.75)``.
 
 As in the ``Player`` scene, add a ``CapsuleShape2D`` for the
 collision. To align the shape with the image, you'll need to set the
-``Rotation Degrees`` property to ``90`` under ``Node2D``.
+``Rotation Degrees`` property to ``90`` (under "Transform" in the Inspector).
+
+Save the scene.
 
 Enemy script
 ~~~~~~~~~~~~
@@ -571,7 +593,6 @@ Add a script to the ``Mob`` and add the following member variables:
 
     export var min_speed = 150  # Minimum speed range.
     export var max_speed = 250  # Maximum speed range.
-    var mob_types = ["walk", "swim", "fly"]
 
  .. code-tab:: csharp
 
@@ -585,14 +606,11 @@ Add a script to the ``Mob`` and add the following member variables:
         [Export]
         public int MaxSpeed = 250; // Maximum speed range.
 
-        private String[] _mobTypes = {"walk", "swim", "fly"};
     }
 
 When we spawn a mob, we'll pick a random value between ``min_speed`` and
 ``max_speed`` for how fast each mob will move (it would be boring if they
-were all moving at the same speed). We also have an array containing the names
-of the three animations, which we'll use to select a random one. Make sure
-you've spelled these the same in the script and in the SpriteFrames resource.
+were all moving at the same speed).
 
 Now let's look at the rest of the script. In ``_ready()`` we randomly
 choose one of the three animation types:
@@ -601,6 +619,7 @@ choose one of the three animation types:
  .. code-tab:: gdscript GDScript
 
     func _ready():
+        var mob_types = $AnimatedSprite.frames.get_animation_names()
         $AnimatedSprite.animation = mob_types[randi() % mob_types.size()]
 
  .. code-tab:: csharp
@@ -613,25 +632,31 @@ choose one of the three animation types:
         GetNode<AnimatedSprite>("AnimatedSprite").Animation = _mobTypes[_random.Next(0, _mobTypes.Length)];
     }
 
-.. note:: You must use ``randomize()`` if you want
-          your sequence of "random" numbers to be different every time you run
-          the scene. We're going to use ``randomize()`` in our ``Main`` scene,
-          so we won't need it here. ``randi() % n`` is the standard way to get
-          a random integer between ``0`` and ``n-1``.
+First, we get the list of animation names from the AnimatedSprite's ``frames``
+property. This returns an Array containing all three animation names:
+``["walk", "swim", "fly]``.
+
+We then need to pick a random number between ``0`` and ``2`` to select one of these
+names from the list (array indices start at ``0``). ``randi() % n`` selects a
+random integer between ``0`` and ``n-1``.
+
+.. note::  You must use ``randomize()`` if you want your sequence of "random"
+            numbers to be different every time you run the scene. We're going
+            to use ``randomize()`` in our ``Main`` scene, so we won't need it here.
 
 The last piece is to make the mobs delete themselves when they leave the
-screen. Connect the ``screen_exited()`` signal of the ``Visibility``
+screen. Connect the ``screen_exited()`` signal of the ``VisibilityNotifier2D``
 node and add this code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_Visibility_screen_exited():
+    func _on_VisibilityNotifier2D_screen_exited():
         queue_free()
 
  .. code-tab:: csharp
 
-    public void OnVisibilityScreenExited()
+    public void OnVisibilityNotifier2DScreenExited()
     {
         QueueFree();
     }
@@ -646,8 +671,6 @@ Now it's time to bring it all together. Create a new scene and add a
 saved ``Player.tscn``.
 
 .. image:: img/instance_scene.png
-
-.. note:: See :ref:`doc_instancing` to learn more about instancing.
 
 Now, add the following nodes as children of ``Main``, and name them as
 shown (values are in seconds):
@@ -682,10 +705,12 @@ the points at the corners shown. To have the points snap to the grid, make
 sure "Use Grid Snap" is selected. This option can be found to the left of
 the "Lock" button, appearing as a magnet next to some intersecting lines.
 
-.. image:: img/draw_path2d.gif
+.. image:: img/grid_snap_button.png
 
 .. important:: Draw the path in *clockwise* order, or your mobs will spawn
                pointing *outwards* instead of *inwards*!
+
+.. image:: img/draw_path2d.gif
 
 After placing point ``4`` in the image, click the "Close Curve" button and
 your curve will be complete.
@@ -694,6 +719,10 @@ Now that the path is defined, add a :ref:`PathFollow2D <class_PathFollow2D>`
 node as a child of ``MobPath`` and name it ``MobSpawnLocation``. This node will
 automatically rotate and follow the path as it moves, so we can use it
 to select a random position and direction along the path.
+
+Your scene should look like this:
+
+.. image:: img/main_scene_nodes.png
 
 Main script
 ~~~~~~~~~~~
@@ -738,14 +767,21 @@ instance.
         }
     }
 
-Drag ``Mob.tscn`` from the "FileSystem" panel and drop it in the
-``Mob`` property under the Script Variables of the ``Main`` node.
+Click the ``Main`` node and you will see the ``Mob`` property in the Inspector
+under "Script Variables".
+
+You can assign this property's value in two ways:
+
+- Drag ``Mob.tscn`` from the "FileSystem" panel and drop it in the
+``Mob`` property .
+- Click the down arrow next to "[empty]" and choose "Load". Select ``Mob.tscn``.
 
 Next, click on the Player and connect the ``hit`` signal. We want to make a
 new function named ``game_over``, which will handle what needs to happen when a
 game ends. Type "game_over" in the "Receiver Method" box at the bottom of the
-"Connecting Signal" window. Add the following code, as well as a ``new_game``
-function to set everything up for a new game:
+"Connect a Signal" window and click "Connect". Add the following code to the
+new function, as well as a ``new_game`` function that will set everything up
+for a new game:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -779,7 +815,7 @@ function to set everything up for a new game:
     }
 
 Now connect the ``timeout()`` signal of each of the Timer nodes (``StartTimer``,
-``ScoreTimer`` ,and ``MobTimer``) to the main script. ``StartTimer`` will start
+``ScoreTimer`` , and ``MobTimer``) to the main script. ``StartTimer`` will start
 the other two timers. ``ScoreTimer`` will increment the score by 1.
 
 .. tabs::
@@ -860,25 +896,55 @@ Note that a new instance must be added to the scene using
         mobInstance.SetLinearVelocity(new Vector2(RandRange(150f, 250f), 0).Rotated(direction));
     }
 
-.. important:: In functions requiring angles, GDScript uses *radians*,
+.. important:: Why ``PI``? In functions requiring angles, GDScript uses *radians*,
                not degrees. If you're more comfortable working with
                degrees, you'll need to use the ``deg2rad()`` and
                ``rad2deg()`` functions to convert between the two.
+
+Testing the scene
+~~~~~~~~~~~~~~~~~
+
+Let's test the scene to make sure everything is working. Add this to ``_ready()``:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _ready():
+        randomize()
+        new_game()
+
+ .. code-tab:: csharp
+
+        public override void _Ready()
+        {
+            NewGame();
+        }
+    }
+
+Let's also assign ``Main`` as our "Main Scene" - the one that runs automatically
+when the game launches. Press the "Play" button and select ``Main.tscn`` when
+prompted.
+
+You should be able to move the player around, see mobs spawning, and see the player
+disappear when hit by a mob.
+
+When you're sure everything is working, remove the call to ``new_game()`` from
+``_ready()``.
 
 HUD
 ---
 
 The final piece our game needs is a UI: an interface to display things
 like score, a "game over" message, and a restart button. Create a new
-scene, and add a :ref:`CanvasLayer <class_CanvasLayer>` node named ``HUD``. "HUD" stands for
-"heads-up display", an informational display that appears as an
+scene, and add a :ref:`CanvasLayer <class_CanvasLayer>` node named ``HUD``. "HUD"
+stands for "heads-up display", an informational display that appears as an
 overlay on top of the game view.
 
 The :ref:`CanvasLayer <class_CanvasLayer>` node lets us draw our UI elements on
 a layer above the rest of the game, so that the information it displays isn't
 covered up by any game elements like the player or mobs.
 
-The HUD displays the following information:
+The HUD needs to display the following information:
 
 -  Score, changed by ``ScoreTimer``.
 -  A message, such as "Game Over" or "Get Ready!"
@@ -891,15 +957,14 @@ and :ref:`Button <class_Button>`.
 Create the following as children of the ``HUD`` node:
 
 -  :ref:`Label <class_Label>` named ``ScoreLabel``.
--  :ref:`Label <class_Label>` named ``MessageLabel``.
+-  :ref:`Label <class_Label>` named ``Message``.
 -  :ref:`Button <class_Button>` named ``StartButton``.
 -  :ref:`Timer <class_Timer>` named ``MessageTimer``.
 
-Click on the ``ScoreLabel`` and type a number into the *Text* field in the
+Click on the ``ScoreLabel`` and type a number into the ``Text`` field in the
 Inspector. The default font for ``Control`` nodes is small and doesn't scale
 well. There is a font file included in the game assets called
-"Xolonium-Regular.ttf". To use this font, do the following for each of
-the three ``Control`` nodes:
+"Xolonium-Regular.ttf". To use this font, do the following:
 
 1. Under "Custom Fonts", choose "New DynamicFont"
 
@@ -910,6 +975,10 @@ the three ``Control`` nodes:
    also set the font's ``Size``. A setting of ``64`` works well.
 
 .. image:: img/custom_font2.png
+
+Once you've done this on the ``ScoreLabel``, you can click the down arrow next
+to the DynamicFont property and choose "Copy", then "Paste" it in the same place
+on the other two Control nodes.
 
 .. note:: **Anchors and Margins:** ``Control`` nodes have a position and size,
           but they also have anchors and margins. Anchors define the
@@ -929,15 +998,15 @@ placement, use the following settings:
 ScoreLabel
 ~~~~~~~~~~
 
--  *Text* : ``0``
 -  *Layout* : "Top Wide"
+-  *Text* : ``0``
 -  *Align* : "Center"
 
-MessageLabel
+Message
 ~~~~~~~~~~~~
 
--  *Text* : ``Dodge the Creeps!``
 -  *Layout* : "HCenter Wide"
+-  *Text* : ``Dodge the Creeps!``
 -  *Align* : "Center"
 -  *Autowrap* : "On"
 
@@ -950,6 +1019,9 @@ StartButton
 
    -  Top: ``-200``
    -  Bottom: ``-100``
+
+On the ``MessageTimer``, set the ``Wait Time`` to ``2`` and set the ``One Shot``
+property to "On".
 
 Now add this script to ``HUD``:
 
@@ -977,38 +1049,36 @@ has been pressed.
  .. code-tab:: gdscript GDScript
 
     func show_message(text):
-        $MessageLabel.text = text
-        $MessageLabel.show()
+        $Message.text = text
+        $Message.show()
         $MessageTimer.start()
 
  .. code-tab:: csharp
 
     public void ShowMessage(string text)
     {
-        var messageLabel = GetNode<Label>("MessageLabel");
-        messageLabel.Text = text;
-        messageLabel.Show();
+        var message = GetNode<Label>("Message");
+        message.Text = text;
+        message.Show();
 
         GetNode<Timer>("MessageTimer").Start();
     }
 
 This function is called when we want to display a message
-temporarily, such as "Get Ready". On the ``MessageTimer``, set the
-``Wait Time`` to ``2`` and set the ``One Shot`` property to "On".
+temporarily, such as "Get Ready".
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func show_game_over():
         show_message("Game Over")
-
+        # Wait until the MessageTimer has counted down.
         yield($MessageTimer, "timeout")
 
-        $MessageLabel.text = "Dodge the\nCreeps!"
-        $MessageLabel.show()
-
+        $Message.text = "Dodge the\nCreeps!"
+        $Message.show()
+        # Make a one-shot timer and wait for it to finish.
         yield(get_tree().create_timer(1), "timeout")
-
         $StartButton.show()
 
  .. code-tab:: csharp
@@ -1020,9 +1090,9 @@ temporarily, such as "Get Ready". On the ``MessageTimer``, set the
         var messageTimer = GetNode<Timer>("MessageTimer");
         await ToSignal(messageTimer, "timeout");
 
-        var messageLabel = GetNode<Label>("MessageLabel");
-        messageLabel.Text = "Dodge the\nCreeps!";
-        messageLabel.Show();
+        var message = GetNode<Label>("Message");
+        message.Text = "Dodge the\nCreeps!";
+        message.Show();
 
         GetNode<Button>("StartButton").Show();
     }
@@ -1052,7 +1122,8 @@ show the "Start" button.
 This function is called by ``Main`` whenever the score changes.
 
 Connect the ``timeout()`` signal of ``MessageTimer`` and the
-``pressed()`` signal of ``StartButton``.
+``pressed()`` signal of ``StartButton`` and add the following code to the new
+functions:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -1080,10 +1151,9 @@ Connect the ``timeout()`` signal of ``MessageTimer`` and the
 Connecting HUD to Main
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Now that we're done creating the ``HUD`` scene, save it and go back to ``Main``.
-Instance the ``HUD`` scene in ``Main`` like you did the ``Player`` scene, and
-place it at the bottom of the tree. The full tree should look like this,
-so make sure you didn't miss anything:
+Now that we're done creating the ``HUD`` scene, go back to ``Main``.
+Instance the ``HUD`` scene in ``Main`` like you did the ``Player`` scene. The
+scene tree should look like this, so make sure you didn't miss anything:
 
 .. image:: img/completed_main_scene.png
 
@@ -1091,7 +1161,9 @@ Now we need to connect the ``HUD`` functionality to our ``Main`` script.
 This requires a few additions to the ``Main`` scene:
 
 In the Node tab, connect the HUD's ``start_game`` signal to the
-``new_game()`` function of the Main node.
+``new_game()`` function of the Main node by typing "new_game" in the "Receiver
+Method" in the "Connect a Signal" window. Verify that the green connection icon
+now appears next to ``func new_game()`` in the script.
 
 In ``new_game()``, update the score display and show the "Get Ready"
 message:
@@ -1137,46 +1209,32 @@ be asked to select a main scene, so choose ``Main.tscn``.
 Removing old creeps
 ~~~~~~~~~~~~~~~~~~~
 
-If you play until "Game Over" and then start a new game the creeps from the
-previous game are still on screen. It would be better if they all disappeared
-at the start of a new game.
+If you play until "Game Over" and then start a new game right away, the creeps
+from the previous game may still be on the screen. It would be better if they
+all disappeared at the start of a new game. We just need a way to tell *all* the
+mobs to remove themselves. We can do this with the "group" feature.
 
-We'll use the ``start_game`` signal that's already being emitted by the ``HUD``
-node to remove the remaining creeps. We can't use the editor to connect the
-signal to the mobs in the way we need because there are no ``Mob`` nodes in the
-``Main`` scene tree until we run the game. Instead we'll use code.
+In the ``Mob`` scene, select the root node and click the "Node" tab next to the
+Inspector (the same place where you find the node's signals). Next to "Signals",
+click "Groups" and you can type a new group name and click "Add".
 
-Start by adding a new function to ``Mob.gd``. ``queue_free()`` will delete the
-current node at the end of the current frame.
+.. image:: img/group_tab.png
 
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    func _on_start_game():
-        queue_free()
-
- .. code-tab:: csharp
-
-    public void OnStartGame()
-    {
-        QueueFree();
-    }
-
-Then in ``Main.gd`` add a new line inside the ``_on_MobTimer_timeout()`` function,
-at the end.
+Now all mobs will be in the "mobs" group. We can then add the following line to
+the ``game_over()`` function in ``Main``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    $HUD.connect("start_game", mob, "_on_start_game")
+        get_tree().call_group("mobs", "queue_free")
+
 
  .. code-tab:: csharp
 
-    GetNode("HUD").Connect("StartGame", mobInstance, "OnStartGame");
+        GetTree().CallGroup("mobs", "queue_free");
 
-This line tells the new Mob node (referenced by the ``mob`` variable) to respond
-to any ``start_game`` signal emitted by the ``HUD`` node by running its
-``_on_start_game()`` function.
+The ``call_group()`` function calls the named function on every node in a group -
+in this case we are telling every mob to delete itself.
 
 Finishing up
 ------------
@@ -1192,11 +1250,10 @@ The default gray background is not very appealing, so let's change its
 color. One way to do this is to use a :ref:`ColorRect <class_ColorRect>` node.
 Make it the first node under ``Main`` so that it will be drawn behind the other
 nodes. ``ColorRect`` only has one property: ``Color``. Choose a color
-you like and drag the size of the ``ColorRect`` so that it covers the
-screen.
+you like and select "Layout" -> "Full Rect" so that it covers the screen.
 
 You could also add a background image, if you have one, by using a
-``Sprite`` node.
+``TextureRect`` node instead.
 
 Sound effects
 ~~~~~~~~~~~~~
@@ -1220,8 +1277,8 @@ Keyboard shortcut
 ~~~~~~~~~~~~~~~~~
 
 Since the game is played with keyboard controls, it would be convenient if we
-could also start the game by pressing a key on the keyboard. One way to do this
-is using the "Shortcut" property of the ``Button`` node.
+could also start the game by pressing a key on the keyboard. We can do this
+with the "Shortcut" property of the ``Button`` node.
 
 In the ``HUD`` scene, select the ``StartButton`` and find its *Shortcut* property
 in the Inspector. Select "New Shortcut" and click on the "Shortcut" item. A
