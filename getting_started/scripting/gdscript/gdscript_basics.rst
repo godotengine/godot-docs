@@ -1507,7 +1507,7 @@ Remember to save the new function state, when using multiple ``yield``\s::
 
     func _ready():
         var co = co_func();
-        while co is GDScriptFunction && co.is_valid():
+        while co is GDScriptFunctionState && co.is_valid():
             co = co.resume();
 
 
