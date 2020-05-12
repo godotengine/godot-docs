@@ -29,6 +29,10 @@ are a few requirements your asset needs to meet to be approved.
 * The asset must work. If the asset doesn't run or otherwise doesn't
   work in the specified Godot version, then it will be rejected.
 
+* The asset must have a proper **.gitignore** file. It's important to
+  keep redundant data out of the repository.
+  `Here's a template. <https://github.com/github/gitignore/blob/master/Godot.gitignore>`_
+
 * No submodules, or any submodules must be non-essential. GitHub
   does not include submodules in the downloaded ZIP file, so if the
   asset needs the contents of the submodule, your asset won't work.
