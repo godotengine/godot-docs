@@ -84,9 +84,7 @@ changed:
         var velocity = Vector2()
         # Move towards the target and stop when close.
         if position.distance_to(target) > 10:
-            velocity = (target - position).normalized() * speed
-        else:
-            velocity = Vector2()
+            velocity = target - position
 
     # Remove keyboard controls.
     #    if Input.is_action_pressed("ui_right"):
@@ -172,11 +170,7 @@ changed:
             // Move towards the target and stop when close.
             if (Position.DistanceTo(_target) > 10)
             {
-                velocity = (_target - Position).Normalized() * Speed;
-            }
-            else
-            {
-                velocity = new Vector2();
+                velocity = _target - Position
             }
 
             // Remove keyboard controls.
