@@ -13,21 +13,16 @@ VisualShaderNodeExpression
 
 **Inherited By:** :ref:`VisualShaderNodeGlobalExpression<class_VisualShaderNodeGlobalExpression>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`     | editable                                                                | **O:** true |
-+-----------------------------+-------------------------------------------------------------------------+-------------+
-| :ref:`String<class_String>` | :ref:`expression<class_VisualShaderNodeExpression_property_expression>` | ""          |
-+-----------------------------+-------------------------------------------------------------------------+-------------+
++-----------------------------+-------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`     | editable                                                                | **O:** ``true`` |
++-----------------------------+-------------------------------------------------------------------------+-----------------+
+| :ref:`String<class_String>` | :ref:`expression<class_VisualShaderNodeExpression_property_expression>` | ``""``          |
++-----------------------------+-------------------------------------------------------------------------+-----------------+
 
 Methods
 -------
@@ -44,7 +39,7 @@ Property Descriptions
 - :ref:`String<class_String>` **expression**
 
 +-----------+-----------------------+
-| *Default* | ""                    |
+| *Default* | ``""``                |
 +-----------+-----------------------+
 | *Setter*  | set_expression(value) |
 +-----------+-----------------------+

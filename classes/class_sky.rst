@@ -13,19 +13,19 @@ Sky
 
 **Inherited By:** :ref:`PanoramaSky<class_PanoramaSky>`, :ref:`ProceduralSky<class_ProceduralSky>`
 
-**Category:** Core
+The base class for :ref:`PanoramaSky<class_PanoramaSky>` and :ref:`ProceduralSky<class_ProceduralSky>`.
 
-Brief Description
------------------
+Description
+-----------
 
 The base class for :ref:`PanoramaSky<class_PanoramaSky>` and :ref:`ProceduralSky<class_ProceduralSky>`.
 
 Properties
 ----------
 
-+--------------------------------------------+--------------------------------------------------------+---+
-| :ref:`RadianceSize<enum_Sky_RadianceSize>` | :ref:`radiance_size<class_Sky_property_radiance_size>` | 2 |
-+--------------------------------------------+--------------------------------------------------------+---+
++--------------------------------------------+--------------------------------------------------------+-------+
+| :ref:`RadianceSize<enum_Sky_RadianceSize>` | :ref:`radiance_size<class_Sky_property_radiance_size>` | ``2`` |
++--------------------------------------------+--------------------------------------------------------+-------+
 
 Enumerations
 ------------
@@ -66,11 +66,6 @@ enum **RadianceSize**:
 
 - **RADIANCE_SIZE_MAX** = **7** --- Represents the size of the :ref:`RadianceSize<enum_Sky_RadianceSize>` enum.
 
-Description
------------
-
-The base class for :ref:`PanoramaSky<class_PanoramaSky>` and :ref:`ProceduralSky<class_ProceduralSky>`.
-
 Property Descriptions
 ---------------------
 
@@ -79,7 +74,7 @@ Property Descriptions
 - :ref:`RadianceSize<enum_Sky_RadianceSize>` **radiance_size**
 
 +-----------+--------------------------+
-| *Default* | 2                        |
+| *Default* | ``2``                    |
 +-----------+--------------------------+
 | *Setter*  | set_radiance_size(value) |
 +-----------+--------------------------+

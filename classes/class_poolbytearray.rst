@@ -9,12 +9,14 @@
 PoolByteArray
 =============
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 A pooled :ref:`Array<class_Array>` of bytes.
+
+Description
+-----------
+
+An :ref:`Array<class_Array>` specifically designed to hold bytes. Optimized for memory usage, does not fragment the memory.
+
+**Note:** This type is passed by value and not by reference.
 
 Methods
 -------
@@ -54,13 +56,6 @@ Methods
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`subarray<class_PoolByteArray_method_subarray>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**                            |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-An :ref:`Array<class_Array>` specifically designed to hold bytes. Optimized for memory usage, does not fragment the memory.
-
-**Note:** This type is passed by value and not by reference.
 
 Method Descriptions
 -------------------
@@ -132,6 +127,13 @@ Returns a copy of the array's contents as :ref:`String<class_String>`. Slower th
 .. _class_PoolByteArray_method_hex_encode:
 
 - :ref:`String<class_String>` **hex_encode** **(** **)**
+
+Returns a hexadecimal representation of this array as a :ref:`String<class_String>`.
+
+::
+
+    var array = PoolByteArray([11, 46, 255])
+    print(array.hex_encode()) # Prints: 0b2eff
 
 ----
 

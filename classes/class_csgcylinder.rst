@@ -11,34 +11,29 @@ CSGCylinder
 
 **Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A CSG Cylinder shape.
-
-Properties
-----------
-
-+---------------------------------+--------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`         | :ref:`cone<class_CSGCylinder_property_cone>`                 | false |
-+---------------------------------+--------------------------------------------------------------+-------+
-| :ref:`float<class_float>`       | :ref:`height<class_CSGCylinder_property_height>`             | 1.0   |
-+---------------------------------+--------------------------------------------------------------+-------+
-| :ref:`Material<class_Material>` | :ref:`material<class_CSGCylinder_property_material>`         |       |
-+---------------------------------+--------------------------------------------------------------+-------+
-| :ref:`float<class_float>`       | :ref:`radius<class_CSGCylinder_property_radius>`             | 1.0   |
-+---------------------------------+--------------------------------------------------------------+-------+
-| :ref:`int<class_int>`           | :ref:`sides<class_CSGCylinder_property_sides>`               | 8     |
-+---------------------------------+--------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`         | :ref:`smooth_faces<class_CSGCylinder_property_smooth_faces>` | true  |
-+---------------------------------+--------------------------------------------------------------+-------+
 
 Description
 -----------
 
 This node allows you to create a cylinder (or cone) for use with the CSG system.
+
+Properties
+----------
+
++---------------------------------+--------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`         | :ref:`cone<class_CSGCylinder_property_cone>`                 | ``false`` |
++---------------------------------+--------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`       | :ref:`height<class_CSGCylinder_property_height>`             | ``1.0``   |
++---------------------------------+--------------------------------------------------------------+-----------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CSGCylinder_property_material>`         |           |
++---------------------------------+--------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`       | :ref:`radius<class_CSGCylinder_property_radius>`             | ``1.0``   |
++---------------------------------+--------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`           | :ref:`sides<class_CSGCylinder_property_sides>`               | ``8``     |
++---------------------------------+--------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`         | :ref:`smooth_faces<class_CSGCylinder_property_smooth_faces>` | ``true``  |
++---------------------------------+--------------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
@@ -48,7 +43,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **cone**
 
 +-----------+-----------------+
-| *Default* | false           |
+| *Default* | ``false``       |
 +-----------+-----------------+
 | *Setter*  | set_cone(value) |
 +-----------+-----------------+
@@ -64,7 +59,7 @@ If ``true`` a cone is created, the :ref:`radius<class_CSGCylinder_property_radiu
 - :ref:`float<class_float>` **height**
 
 +-----------+-------------------+
-| *Default* | 1.0               |
+| *Default* | ``1.0``           |
 +-----------+-------------------+
 | *Setter*  | set_height(value) |
 +-----------+-------------------+
@@ -94,7 +89,7 @@ The material used to render the cylinder.
 - :ref:`float<class_float>` **radius**
 
 +-----------+-------------------+
-| *Default* | 1.0               |
+| *Default* | ``1.0``           |
 +-----------+-------------------+
 | *Setter*  | set_radius(value) |
 +-----------+-------------------+
@@ -110,7 +105,7 @@ The radius of the cylinder.
 - :ref:`int<class_int>` **sides**
 
 +-----------+------------------+
-| *Default* | 8                |
+| *Default* | ``8``            |
 +-----------+------------------+
 | *Setter*  | set_sides(value) |
 +-----------+------------------+
@@ -126,7 +121,7 @@ The number of sides of the cylinder, the higher this number the more detail ther
 - :ref:`bool<class_bool>` **smooth_faces**
 
 +-----------+-------------------------+
-| *Default* | true                    |
+| *Default* | ``true``                |
 +-----------+-------------------------+
 | *Setter*  | set_smooth_faces(value) |
 +-----------+-------------------------+

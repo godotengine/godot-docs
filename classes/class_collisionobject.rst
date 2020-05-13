@@ -13,21 +13,21 @@ CollisionObject
 
 **Inherited By:** :ref:`Area<class_Area>`, :ref:`PhysicsBody<class_PhysicsBody>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base node for collision objects.
+
+Description
+-----------
+
+CollisionObject is the base class for physics objects. It can hold any number of collision :ref:`Shape<class_Shape>`\ s. Each shape must be assigned to a *shape owner*. The CollisionObject can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner_*`` methods.
 
 Properties
 ----------
 
-+-------------------------+------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`input_capture_on_drag<class_CollisionObject_property_input_capture_on_drag>` | false |
-+-------------------------+------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`input_ray_pickable<class_CollisionObject_property_input_ray_pickable>`       | true  |
-+-------------------------+------------------------------------------------------------------------------------+-------+
++-------------------------+------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`input_capture_on_drag<class_CollisionObject_property_input_capture_on_drag>` | ``false`` |
++-------------------------+------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`input_ray_pickable<class_CollisionObject_property_input_ray_pickable>`       | ``true``  |
++-------------------------+------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -93,11 +93,6 @@ Emitted when the mouse pointer enters any of this object's shapes.
 
 Emitted when the mouse pointer exits all this object's shapes.
 
-Description
------------
-
-CollisionObject is the base class for physics objects. It can hold any number of collision :ref:`Shape<class_Shape>`\ s. Each shape must be assigned to a *shape owner*. The CollisionObject can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner_*`` methods.
-
 Property Descriptions
 ---------------------
 
@@ -106,7 +101,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **input_capture_on_drag**
 
 +-----------+----------------------------------+
-| *Default* | false                            |
+| *Default* | ``false``                        |
 +-----------+----------------------------------+
 | *Setter*  | set_capture_input_on_drag(value) |
 +-----------+----------------------------------+
@@ -122,7 +117,7 @@ If ``true``, the ``CollisionObject`` will continue to receive input events as th
 - :ref:`bool<class_bool>` **input_ray_pickable**
 
 +-----------+-------------------------+
-| *Default* | true                    |
+| *Default* | ``true``                |
 +-----------+-------------------------+
 | *Setter*  | set_ray_pickable(value) |
 +-----------+-------------------------+

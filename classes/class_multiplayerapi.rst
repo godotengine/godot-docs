@@ -11,23 +11,27 @@ MultiplayerAPI
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 High-level multiplayer API.
+
+Description
+-----------
+
+This class implements most of the logic behind the high-level multiplayer API.
+
+By default, :ref:`SceneTree<class_SceneTree>` has a reference to this class that is used to provide multiplayer capabilities (i.e. RPC/RSET) across the whole scene.
+
+It is possible to override the MultiplayerAPI instance used by specific Nodes by setting the :ref:`Node.custom_multiplayer<class_Node_property_custom_multiplayer>` property, effectively allowing to run both client and server in the same scene.
 
 Properties
 ----------
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`allow_object_decoding<class_MultiplayerAPI_property_allow_object_decoding>`                   | false |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------+
-| :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` | :ref:`network_peer<class_MultiplayerAPI_property_network_peer>`                                     |       |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_MultiplayerAPI_property_refuse_new_network_connections>` | false |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`allow_object_decoding<class_MultiplayerAPI_property_allow_object_decoding>`                   | ``false`` |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
+| :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` | :ref:`network_peer<class_MultiplayerAPI_property_network_peer>`                                     |           |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_MultiplayerAPI_property_refuse_new_network_connections>` | ``false`` |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -144,15 +148,6 @@ enum **RPCMode**:
 
 - **RPC_MODE_PUPPETSYNC** = **6** --- Behave like :ref:`RPC_MODE_PUPPET<class_MultiplayerAPI_constant_RPC_MODE_PUPPET>` but also make the call or property change locally. Analogous to the ``puppetsync`` keyword.
 
-Description
------------
-
-This class implements most of the logic behind the high-level multiplayer API.
-
-By default, :ref:`SceneTree<class_SceneTree>` has a reference to this class that is used to provide multiplayer capabilities (i.e. RPC/RSET) across the whole scene.
-
-It is possible to override the MultiplayerAPI instance used by specific Nodes by setting the :ref:`Node.custom_multiplayer<class_Node_property_custom_multiplayer>` property, effectively allowing to run both client and server in the same scene.
-
 Property Descriptions
 ---------------------
 
@@ -161,7 +156,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **allow_object_decoding**
 
 +-----------+----------------------------------+
-| *Default* | false                            |
+| *Default* | ``false``                        |
 +-----------+----------------------------------+
 | *Setter*  | set_allow_object_decoding(value) |
 +-----------+----------------------------------+
@@ -193,7 +188,7 @@ The peer object to handle the RPC system (effectively enabling networking when s
 - :ref:`bool<class_bool>` **refuse_new_network_connections**
 
 +-----------+-------------------------------------------+
-| *Default* | false                                     |
+| *Default* | ``false``                                 |
 +-----------+-------------------------------------------+
 | *Setter*  | set_refuse_new_network_connections(value) |
 +-----------+-------------------------------------------+

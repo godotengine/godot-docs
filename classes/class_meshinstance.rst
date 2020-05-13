@@ -13,23 +13,23 @@ MeshInstance
 
 **Inherited By:** :ref:`SoftBody<class_SoftBody>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Node that instances meshes into a scenario.
+
+Description
+-----------
+
+MeshInstance is a node that takes a :ref:`Mesh<class_Mesh>` resource and adds it to the current scenario by creating an instance of it. This is the class most often used to get 3D geometry rendered and can be used to instance a single :ref:`Mesh<class_Mesh>` in many places. This allows to reuse geometry and save on resources. When a :ref:`Mesh<class_Mesh>` has to be instanced more than thousands of times at close proximity, consider using a :ref:`MultiMesh<class_MultiMesh>` in a :ref:`MultiMeshInstance<class_MultiMeshInstance>` instead.
 
 Properties
 ----------
 
-+---------------------------------+-------------------------------------------------------+----------------+
-| :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_MeshInstance_property_mesh>`         |                |
-+---------------------------------+-------------------------------------------------------+----------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`skeleton<class_MeshInstance_property_skeleton>` | NodePath("..") |
-+---------------------------------+-------------------------------------------------------+----------------+
-| :ref:`Skin<class_Skin>`         | :ref:`skin<class_MeshInstance_property_skin>`         |                |
-+---------------------------------+-------------------------------------------------------+----------------+
++---------------------------------+-------------------------------------------------------+--------------------+
+| :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_MeshInstance_property_mesh>`         |                    |
++---------------------------------+-------------------------------------------------------+--------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`skeleton<class_MeshInstance_property_skeleton>` | ``NodePath("..")`` |
++---------------------------------+-------------------------------------------------------+--------------------+
+| :ref:`Skin<class_Skin>`         | :ref:`skin<class_MeshInstance_property_skin>`         |                    |
++---------------------------------+-------------------------------------------------------+--------------------+
 
 Methods
 -------
@@ -47,11 +47,6 @@ Methods
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`set_surface_material<class_MeshInstance_method_set_surface_material>` **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)** |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-MeshInstance is a node that takes a :ref:`Mesh<class_Mesh>` resource and adds it to the current scenario by creating an instance of it. This is the class most often used to get 3D geometry rendered and can be used to instance a single :ref:`Mesh<class_Mesh>` in many places. This allows to reuse geometry and save on resources. When a :ref:`Mesh<class_Mesh>` has to be instanced more than thousands of times at close proximity, consider using a :ref:`MultiMesh<class_MultiMesh>` in a :ref:`MultiMeshInstance<class_MultiMeshInstance>` instead.
 
 Property Descriptions
 ---------------------
@@ -75,7 +70,7 @@ The :ref:`Mesh<class_Mesh>` resource for the instance.
 - :ref:`NodePath<class_NodePath>` **skeleton**
 
 +-----------+--------------------------+
-| *Default* | NodePath("..")           |
+| *Default* | ``NodePath("..")``       |
 +-----------+--------------------------+
 | *Setter*  | set_skeleton_path(value) |
 +-----------+--------------------------+
@@ -95,6 +90,8 @@ The :ref:`Mesh<class_Mesh>` resource for the instance.
 +----------+-----------------+
 | *Getter* | get_skin()      |
 +----------+-----------------+
+
+Sets the skin to be used by this instance.
 
 Method Descriptions
 -------------------

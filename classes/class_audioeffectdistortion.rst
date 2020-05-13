@@ -11,29 +11,31 @@ AudioEffectDistortion
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Adds a distortion audio effect to an Audio bus.
 
 Modify the sound to make it dirty.
 
+Description
+-----------
+
+Modify the sound and make it dirty. Different types are available: clip, tan, lo-fi (bit crushing), overdrive, or waveshape.
+
+By distorting the waveform the frequency content change, which will often make the sound "crunchy" or "abrasive". For games, it can simulate sound coming from some saturated device or speaker very efficiently.
+
 Properties
 ----------
 
-+----------------------------------------------+--------------------------------------------------------------------+---------+
-| :ref:`float<class_float>`                    | :ref:`drive<class_AudioEffectDistortion_property_drive>`           | 0.0     |
-+----------------------------------------------+--------------------------------------------------------------------+---------+
-| :ref:`float<class_float>`                    | :ref:`keep_hf_hz<class_AudioEffectDistortion_property_keep_hf_hz>` | 16000.0 |
-+----------------------------------------------+--------------------------------------------------------------------+---------+
-| :ref:`Mode<enum_AudioEffectDistortion_Mode>` | :ref:`mode<class_AudioEffectDistortion_property_mode>`             | 0       |
-+----------------------------------------------+--------------------------------------------------------------------+---------+
-| :ref:`float<class_float>`                    | :ref:`post_gain<class_AudioEffectDistortion_property_post_gain>`   | 0.0     |
-+----------------------------------------------+--------------------------------------------------------------------+---------+
-| :ref:`float<class_float>`                    | :ref:`pre_gain<class_AudioEffectDistortion_property_pre_gain>`     | 0.0     |
-+----------------------------------------------+--------------------------------------------------------------------+---------+
++----------------------------------------------+--------------------------------------------------------------------+-------------+
+| :ref:`float<class_float>`                    | :ref:`drive<class_AudioEffectDistortion_property_drive>`           | ``0.0``     |
++----------------------------------------------+--------------------------------------------------------------------+-------------+
+| :ref:`float<class_float>`                    | :ref:`keep_hf_hz<class_AudioEffectDistortion_property_keep_hf_hz>` | ``16000.0`` |
++----------------------------------------------+--------------------------------------------------------------------+-------------+
+| :ref:`Mode<enum_AudioEffectDistortion_Mode>` | :ref:`mode<class_AudioEffectDistortion_property_mode>`             | ``0``       |
++----------------------------------------------+--------------------------------------------------------------------+-------------+
+| :ref:`float<class_float>`                    | :ref:`post_gain<class_AudioEffectDistortion_property_post_gain>`   | ``0.0``     |
++----------------------------------------------+--------------------------------------------------------------------+-------------+
+| :ref:`float<class_float>`                    | :ref:`pre_gain<class_AudioEffectDistortion_property_pre_gain>`     | ``0.0``     |
++----------------------------------------------+--------------------------------------------------------------------+-------------+
 
 Enumerations
 ------------
@@ -62,13 +64,6 @@ enum **Mode**:
 
 - **MODE_WAVESHAPE** = **4** --- Waveshaper distortions are used mainly by electronic musicians to achieve an extra-abrasive sound.
 
-Description
------------
-
-Modify the sound and make it dirty. Different types are available: clip, tan, lo-fi (bit crushing), overdrive, or waveshape.
-
-By distorting the waveform the frequency content change, which will often make the sound "crunchy" or "abrasive". For games, it can simulate sound coming from some saturated device or speaker very efficiently.
-
 Property Descriptions
 ---------------------
 
@@ -77,7 +72,7 @@ Property Descriptions
 - :ref:`float<class_float>` **drive**
 
 +-----------+------------------+
-| *Default* | 0.0              |
+| *Default* | ``0.0``          |
 +-----------+------------------+
 | *Setter*  | set_drive(value) |
 +-----------+------------------+
@@ -93,7 +88,7 @@ Distortion power. Value can range from 0 to 1.
 - :ref:`float<class_float>` **keep_hf_hz**
 
 +-----------+-----------------------+
-| *Default* | 16000.0               |
+| *Default* | ``16000.0``           |
 +-----------+-----------------------+
 | *Setter*  | set_keep_hf_hz(value) |
 +-----------+-----------------------+
@@ -109,7 +104,7 @@ High-pass filter, in Hz. Frequencies higher than this value will not be affected
 - :ref:`Mode<enum_AudioEffectDistortion_Mode>` **mode**
 
 +-----------+-----------------+
-| *Default* | 0               |
+| *Default* | ``0``           |
 +-----------+-----------------+
 | *Setter*  | set_mode(value) |
 +-----------+-----------------+
@@ -125,7 +120,7 @@ Distortion type.
 - :ref:`float<class_float>` **post_gain**
 
 +-----------+----------------------+
-| *Default* | 0.0                  |
+| *Default* | ``0.0``              |
 +-----------+----------------------+
 | *Setter*  | set_post_gain(value) |
 +-----------+----------------------+
@@ -141,7 +136,7 @@ Increases or decreases the volume after the effect. Value can range from -80 to 
 - :ref:`float<class_float>` **pre_gain**
 
 +-----------+---------------------+
-| *Default* | 0.0                 |
+| *Default* | ``0.0``             |
 +-----------+---------------------+
 | *Setter*  | set_pre_gain(value) |
 +-----------+---------------------+

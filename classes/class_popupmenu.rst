@@ -11,29 +11,29 @@ PopupMenu
 
 **Inherits:** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 PopupMenu displays a list of options.
+
+Description
+-----------
+
+``PopupMenu`` is a :ref:`Control<class_Control>` that displays a list of options. They are popular in toolbars or context menus.
 
 Properties
 ----------
 
-+------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                  | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                         | false    |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
-| :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                                                         | **O:** 2 |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                  | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>` | true     |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                  | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                     | true     |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                  | :ref:`hide_on_state_item_selection<class_PopupMenu_property_hide_on_state_item_selection>`         | false    |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                           | 0.3      |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
++------------------------------------------+----------------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                  | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                         | ``false``    |
++------------------------------------------+----------------------------------------------------------------------------------------------------+--------------+
+| :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                                                         | **O:** ``2`` |
++------------------------------------------+----------------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                  | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>` | ``true``     |
++------------------------------------------+----------------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                  | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                     | ``true``     |
++------------------------------------------+----------------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                  | :ref:`hide_on_state_item_selection<class_PopupMenu_property_hide_on_state_item_selection>`         | ``false``    |
++------------------------------------------+----------------------------------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`                | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                           | ``0.3``      |
++------------------------------------------+----------------------------------------------------------------------------------------------------+--------------+
 
 Methods
 -------
@@ -210,11 +210,6 @@ Emitted when an item of some ``id`` is pressed or its accelerator is activated.
 
 Emitted when an item of some ``index`` is pressed or its accelerator is activated.
 
-Description
------------
-
-``PopupMenu`` is a :ref:`Control<class_Control>` that displays a list of options. They are popular in toolbars or context menus.
-
 Property Descriptions
 ---------------------
 
@@ -223,7 +218,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **allow_search**
 
 +-----------+-------------------------+
-| *Default* | false                   |
+| *Default* | ``false``               |
 +-----------+-------------------------+
 | *Setter*  | set_allow_search(value) |
 +-----------+-------------------------+
@@ -239,7 +234,7 @@ If ``true``, allows to navigate ``PopupMenu`` with letter keys.
 - :ref:`bool<class_bool>` **hide_on_checkable_item_selection**
 
 +-----------+---------------------------------------------+
-| *Default* | true                                        |
+| *Default* | ``true``                                    |
 +-----------+---------------------------------------------+
 | *Setter*  | set_hide_on_checkable_item_selection(value) |
 +-----------+---------------------------------------------+
@@ -255,7 +250,7 @@ If ``true``, hides the ``PopupMenu`` when a checkbox or radio button is selected
 - :ref:`bool<class_bool>` **hide_on_item_selection**
 
 +-----------+-----------------------------------+
-| *Default* | true                              |
+| *Default* | ``true``                          |
 +-----------+-----------------------------------+
 | *Setter*  | set_hide_on_item_selection(value) |
 +-----------+-----------------------------------+
@@ -271,7 +266,7 @@ If ``true``, hides the ``PopupMenu`` when an item is selected.
 - :ref:`bool<class_bool>` **hide_on_state_item_selection**
 
 +-----------+-----------------------------------------+
-| *Default* | false                                   |
+| *Default* | ``false``                               |
 +-----------+-----------------------------------------+
 | *Setter*  | set_hide_on_state_item_selection(value) |
 +-----------+-----------------------------------------+
@@ -287,7 +282,7 @@ If ``true``, hides the ``PopupMenu`` when a state item is selected.
 - :ref:`float<class_float>` **submenu_popup_delay**
 
 +-----------+--------------------------------+
-| *Default* | 0.3                            |
+| *Default* | ``0.3``                        |
 +-----------+--------------------------------+
 | *Setter*  | set_submenu_popup_delay(value) |
 +-----------+--------------------------------+
@@ -549,7 +544,7 @@ Returns the tooltip associated with the specified index index ``idx``.
 
 - :ref:`bool<class_bool>` **is_hide_on_window_lose_focus** **(** **)** const
 
-Returns whether the popup will be hidden when the window loses focus or not.
+Returns ``true`` if the popup will be hidden when the window loses focus or not.
 
 ----
 
@@ -603,7 +598,7 @@ Returns ``true`` if the item is a separator. If it is, it will be displayed as a
 
 - :ref:`bool<class_bool>` **is_item_shortcut_disabled** **(** :ref:`int<class_int>` idx **)** const
 
-Returns whether the shortcut of the specified item ``idx`` is disabled or not.
+Returns ``true`` if the specified item's shortcut is disabled.
 
 ----
 
@@ -671,7 +666,7 @@ Sets the checkstate status of the item at index ``idx``.
 
 - void **set_item_disabled** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**
 
-Sets whether the item at index ``idx`` is disabled or not. When it is disabled, it can't be selected and its action can't be invoked.
+Enables/disables the item at index ``idx``. When it is disabled, it can't be selected and its action can't be invoked.
 
 ----
 
@@ -702,6 +697,8 @@ Sets the metadata of an item, which may be of any type. You can later get it wit
 .. _class_PopupMenu_method_set_item_multistate:
 
 - void **set_item_multistate** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` state **)**
+
+Sets the state of an multistate item. See :ref:`add_multistate_item<class_PopupMenu_method_add_multistate_item>` for details.
 
 ----
 
@@ -756,4 +753,6 @@ Toggles the check state of the item of the specified index ``idx``.
 .. _class_PopupMenu_method_toggle_item_multistate:
 
 - void **toggle_item_multistate** **(** :ref:`int<class_int>` idx **)**
+
+Cycle to the next state of an multistate item. See :ref:`add_multistate_item<class_PopupMenu_method_add_multistate_item>` for details.
 

@@ -9,23 +9,28 @@
 AABB
 ====
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Axis-Aligned Bounding Box.
+
+Description
+-----------
+
+AABB consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
 
 Properties
 ----------
 
-+-------------------------------+-----------------------------------------------+--------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`end<class_AABB_property_end>`           | Vector3( 0, 0, 0 ) |
-+-------------------------------+-----------------------------------------------+--------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`position<class_AABB_property_position>` | Vector3( 0, 0, 0 ) |
-+-------------------------------+-----------------------------------------------+--------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`size<class_AABB_property_size>`         | Vector3( 0, 0, 0 ) |
-+-------------------------------+-----------------------------------------------+--------------------+
++-------------------------------+-----------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`end<class_AABB_property_end>`           | ``Vector3( 0, 0, 0 )`` |
++-------------------------------+-----------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`position<class_AABB_property_position>` | ``Vector3( 0, 0, 0 )`` |
++-------------------------------+-----------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`size<class_AABB_property_size>`         | ``Vector3( 0, 0, 0 )`` |
++-------------------------------+-----------------------------------------------+------------------------+
 
 Methods
 -------
@@ -76,16 +81,6 @@ Methods
 | :ref:`AABB<class_AABB>`       | :ref:`merge<class_AABB_method_merge>` **(** :ref:`AABB<class_AABB>` with **)**                                                                   |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-AABB consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
-
-Tutorials
----------
-
-- :doc:`../tutorials/math/index`
-
 Property Descriptions
 ---------------------
 
@@ -93,9 +88,9 @@ Property Descriptions
 
 - :ref:`Vector3<class_Vector3>` **end**
 
-+-----------+--------------------+
-| *Default* | Vector3( 0, 0, 0 ) |
-+-----------+--------------------+
++-----------+------------------------+
+| *Default* | ``Vector3( 0, 0, 0 )`` |
++-----------+------------------------+
 
 Ending corner. This is calculated as ``position + size``. Changing this property changes :ref:`size<class_AABB_property_size>` accordingly.
 
@@ -105,9 +100,9 @@ Ending corner. This is calculated as ``position + size``. Changing this property
 
 - :ref:`Vector3<class_Vector3>` **position**
 
-+-----------+--------------------+
-| *Default* | Vector3( 0, 0, 0 ) |
-+-----------+--------------------+
++-----------+------------------------+
+| *Default* | ``Vector3( 0, 0, 0 )`` |
++-----------+------------------------+
 
 Beginning corner.
 
@@ -117,9 +112,9 @@ Beginning corner.
 
 - :ref:`Vector3<class_Vector3>` **size**
 
-+-----------+--------------------+
-| *Default* | Vector3( 0, 0, 0 ) |
-+-----------+--------------------+
++-----------+------------------------+
+| *Default* | ``Vector3( 0, 0, 0 )`` |
++-----------+------------------------+
 
 Size from position to end.
 

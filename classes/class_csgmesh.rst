@@ -11,12 +11,12 @@ CSGMesh
 
 **Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A CSG Mesh shape that uses a mesh resource.
+
+Description
+-----------
+
+This CSG node allows you to use any mesh resource as a CSG shape, provided it is closed, does not self-intersect, does not contain internal faces and has no edges that connect to more then two faces.
 
 Properties
 ----------
@@ -26,11 +26,6 @@ Properties
 +---------------------------------+--------------------------------------------------+
 | :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_CSGMesh_property_mesh>`         |
 +---------------------------------+--------------------------------------------------+
-
-Description
------------
-
-This CSG node allows you to use any mesh resource as a CSG shape, provided it is closed, does not self-intersect, does not contain internal faces and has no edges that connect to more then two faces.
 
 Property Descriptions
 ---------------------

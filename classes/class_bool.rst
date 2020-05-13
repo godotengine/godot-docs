@@ -9,12 +9,50 @@
 bool
 ====
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Boolean built-in type.
+
+Description
+-----------
+
+Boolean is a built-in type. It can represent any data type that is either a true or false value. You can think of it as an switch with on or off (1 or 0) setting . It's often used as part of programming logic in condition statements like ``if`` statements.
+
+**Note:** In a code below ``if can_shoot`` is equivalent of ``if can_shoot == true``. It is good practice to follow the natural spoken language structure when possible. Use ``if can_shoot`` rather than ``if can_shoot == true`` and use ``if not can_shoot`` rather than ``if can_shoot == false``.
+
+::
+
+    var can_shoot = true
+    
+    func shoot():
+        if can_shoot:
+            # Perform shooting actions here.
+
+The following code will only create a bullet if both conditions are met: action "shoot" is pressed and if ``can_shoot`` is ``true``.
+
+**Note:** ``Input.is_action_pressed("shoot")`` is also a boolean that is ``true`` when "shoot" is pressed and ``false`` when "shoot" isn't pressed.
+
+::
+
+    var can_shoot = true
+    
+    func shoot():
+        if can_shoot and Input.is_action_pressed("shoot"):
+            create_bullet()
+
+The following code will set ``can_shoot`` to ``false`` and start a timer. This will prevent player from shooting until the timer runs out. Next ``can_shoot`` will be set to ``true`` again allowing player to shoot once again.
+
+::
+
+    var can_shoot = true
+    onready var cool_down = $CoolDownTimer
+    
+    func shoot():
+        if can_shoot and Input.is_action_pressed("shoot"):
+            create_bullet()
+            can_shoot = false
+            cool_down.start()
+    
+    func _on_CoolDownTimer_timeout():
+        can_shoot = true
 
 Methods
 -------
@@ -26,11 +64,6 @@ Methods
 +-------------------------+----------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`bool<class_bool_method_bool>` **(** :ref:`String<class_String>` from **)** |
 +-------------------------+----------------------------------------------------------------------------------+
-
-Description
------------
-
-Boolean built-in type.
 
 Method Descriptions
 -------------------

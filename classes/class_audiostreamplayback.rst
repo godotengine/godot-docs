@@ -13,11 +13,6 @@ AudioStreamPlayback
 
 **Inherited By:** :ref:`AudioStreamPlaybackResampled<class_AudioStreamPlaybackResampled>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Meta class for playing back audio.
 
 Description

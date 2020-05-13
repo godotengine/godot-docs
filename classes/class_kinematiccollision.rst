@@ -11,39 +11,7 @@ KinematicCollision
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Collision data for :ref:`KinematicBody<class_KinematicBody>` collisions.
-
-Properties
-----------
-
-+-------------------------------+-------------------------------------------------------------------------------------+--------------------+
-| :ref:`Object<class_Object>`   | :ref:`collider<class_KinematicCollision_property_collider>`                         |                    |
-+-------------------------------+-------------------------------------------------------------------------------------+--------------------+
-| :ref:`int<class_int>`         | :ref:`collider_id<class_KinematicCollision_property_collider_id>`                   | 0                  |
-+-------------------------------+-------------------------------------------------------------------------------------+--------------------+
-| :ref:`Variant<class_Variant>` | :ref:`collider_metadata<class_KinematicCollision_property_collider_metadata>`       |                    |
-+-------------------------------+-------------------------------------------------------------------------------------+--------------------+
-| :ref:`Object<class_Object>`   | :ref:`collider_shape<class_KinematicCollision_property_collider_shape>`             |                    |
-+-------------------------------+-------------------------------------------------------------------------------------+--------------------+
-| :ref:`int<class_int>`         | :ref:`collider_shape_index<class_KinematicCollision_property_collider_shape_index>` | 0                  |
-+-------------------------------+-------------------------------------------------------------------------------------+--------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`collider_velocity<class_KinematicCollision_property_collider_velocity>`       | Vector3( 0, 0, 0 ) |
-+-------------------------------+-------------------------------------------------------------------------------------+--------------------+
-| :ref:`Object<class_Object>`   | :ref:`local_shape<class_KinematicCollision_property_local_shape>`                   |                    |
-+-------------------------------+-------------------------------------------------------------------------------------+--------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`normal<class_KinematicCollision_property_normal>`                             | Vector3( 0, 0, 0 ) |
-+-------------------------------+-------------------------------------------------------------------------------------+--------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`position<class_KinematicCollision_property_position>`                         | Vector3( 0, 0, 0 ) |
-+-------------------------------+-------------------------------------------------------------------------------------+--------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`remainder<class_KinematicCollision_property_remainder>`                       | Vector3( 0, 0, 0 ) |
-+-------------------------------+-------------------------------------------------------------------------------------+--------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`travel<class_KinematicCollision_property_travel>`                             | Vector3( 0, 0, 0 ) |
-+-------------------------------+-------------------------------------------------------------------------------------+--------------------+
 
 Description
 -----------
@@ -51,6 +19,33 @@ Description
 Contains collision data for :ref:`KinematicBody<class_KinematicBody>` collisions. When a :ref:`KinematicBody<class_KinematicBody>` is moved using :ref:`KinematicBody.move_and_collide<class_KinematicBody_method_move_and_collide>`, it stops if it detects a collision with another body. If a collision is detected, a KinematicCollision object is returned.
 
 This object contains information about the collision, including the colliding object, the remaining motion, and the collision position. This information can be used to calculate a collision response.
+
+Properties
+----------
+
++-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+| :ref:`Object<class_Object>`   | :ref:`collider<class_KinematicCollision_property_collider>`                         |                        |
++-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+| :ref:`int<class_int>`         | :ref:`collider_id<class_KinematicCollision_property_collider_id>`                   | ``0``                  |
++-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`collider_metadata<class_KinematicCollision_property_collider_metadata>`       |                        |
++-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+| :ref:`Object<class_Object>`   | :ref:`collider_shape<class_KinematicCollision_property_collider_shape>`             |                        |
++-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+| :ref:`int<class_int>`         | :ref:`collider_shape_index<class_KinematicCollision_property_collider_shape_index>` | ``0``                  |
++-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`collider_velocity<class_KinematicCollision_property_collider_velocity>`       | ``Vector3( 0, 0, 0 )`` |
++-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+| :ref:`Object<class_Object>`   | :ref:`local_shape<class_KinematicCollision_property_local_shape>`                   |                        |
++-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`normal<class_KinematicCollision_property_normal>`                             | ``Vector3( 0, 0, 0 )`` |
++-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`position<class_KinematicCollision_property_position>`                         | ``Vector3( 0, 0, 0 )`` |
++-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`remainder<class_KinematicCollision_property_remainder>`                       | ``Vector3( 0, 0, 0 )`` |
++-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`travel<class_KinematicCollision_property_travel>`                             | ``Vector3( 0, 0, 0 )`` |
++-------------------------------+-------------------------------------------------------------------------------------+------------------------+
 
 Property Descriptions
 ---------------------
@@ -72,7 +67,7 @@ The colliding body.
 - :ref:`int<class_int>` **collider_id**
 
 +-----------+-------------------+
-| *Default* | 0                 |
+| *Default* | ``0``             |
 +-----------+-------------------+
 | *Getter*  | get_collider_id() |
 +-----------+-------------------+
@@ -110,7 +105,7 @@ The colliding body's shape.
 - :ref:`int<class_int>` **collider_shape_index**
 
 +-----------+----------------------------+
-| *Default* | 0                          |
+| *Default* | ``0``                      |
 +-----------+----------------------------+
 | *Getter*  | get_collider_shape_index() |
 +-----------+----------------------------+
@@ -124,7 +119,7 @@ The colliding shape's index. See :ref:`CollisionObject<class_CollisionObject>`.
 - :ref:`Vector3<class_Vector3>` **collider_velocity**
 
 +-----------+-------------------------+
-| *Default* | Vector3( 0, 0, 0 )      |
+| *Default* | ``Vector3( 0, 0, 0 )``  |
 +-----------+-------------------------+
 | *Getter*  | get_collider_velocity() |
 +-----------+-------------------------+
@@ -149,11 +144,11 @@ The moving object's colliding shape.
 
 - :ref:`Vector3<class_Vector3>` **normal**
 
-+-----------+--------------------+
-| *Default* | Vector3( 0, 0, 0 ) |
-+-----------+--------------------+
-| *Getter*  | get_normal()       |
-+-----------+--------------------+
++-----------+------------------------+
+| *Default* | ``Vector3( 0, 0, 0 )`` |
++-----------+------------------------+
+| *Getter*  | get_normal()           |
++-----------+------------------------+
 
 The colliding body's shape's normal at the point of collision.
 
@@ -163,13 +158,13 @@ The colliding body's shape's normal at the point of collision.
 
 - :ref:`Vector3<class_Vector3>` **position**
 
-+-----------+--------------------+
-| *Default* | Vector3( 0, 0, 0 ) |
-+-----------+--------------------+
-| *Getter*  | get_position()     |
-+-----------+--------------------+
++-----------+------------------------+
+| *Default* | ``Vector3( 0, 0, 0 )`` |
++-----------+------------------------+
+| *Getter*  | get_position()         |
++-----------+------------------------+
 
-The point of collision.
+The point of collision, in global coordinates.
 
 ----
 
@@ -177,11 +172,11 @@ The point of collision.
 
 - :ref:`Vector3<class_Vector3>` **remainder**
 
-+-----------+--------------------+
-| *Default* | Vector3( 0, 0, 0 ) |
-+-----------+--------------------+
-| *Getter*  | get_remainder()    |
-+-----------+--------------------+
++-----------+------------------------+
+| *Default* | ``Vector3( 0, 0, 0 )`` |
++-----------+------------------------+
+| *Getter*  | get_remainder()        |
++-----------+------------------------+
 
 The moving object's remaining movement vector.
 
@@ -191,11 +186,11 @@ The moving object's remaining movement vector.
 
 - :ref:`Vector3<class_Vector3>` **travel**
 
-+-----------+--------------------+
-| *Default* | Vector3( 0, 0, 0 ) |
-+-----------+--------------------+
-| *Getter*  | get_travel()       |
-+-----------+--------------------+
++-----------+------------------------+
+| *Default* | ``Vector3( 0, 0, 0 )`` |
++-----------+------------------------+
+| *Getter*  | get_travel()           |
++-----------+------------------------+
 
 The distance the moving object traveled before collision.
 

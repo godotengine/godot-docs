@@ -11,25 +11,25 @@ OptionButton
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Button control that provides selectable options when pressed.
+
+Description
+-----------
+
+OptionButton is a type button that provides a selectable list of items when pressed. The item selected becomes the "current" item and is displayed as the button text.
 
 Properties
 ----------
 
-+-----------------------------------------------+-------------------------------------------------------+-------------+
-| :ref:`ActionMode<enum_BaseButton_ActionMode>` | action_mode                                           | **O:** 0    |
-+-----------------------------------------------+-------------------------------------------------------+-------------+
-| :ref:`TextAlign<enum_Button_TextAlign>`       | align                                                 | **O:** 0    |
-+-----------------------------------------------+-------------------------------------------------------+-------------+
-| :ref:`int<class_int>`                         | :ref:`selected<class_OptionButton_property_selected>` | -1          |
-+-----------------------------------------------+-------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`                       | toggle_mode                                           | **O:** true |
-+-----------------------------------------------+-------------------------------------------------------+-------------+
++-----------------------------------------------+-------------------------------------------------------+-----------------+
+| :ref:`ActionMode<enum_BaseButton_ActionMode>` | action_mode                                           | **O:** ``0``    |
++-----------------------------------------------+-------------------------------------------------------+-----------------+
+| :ref:`TextAlign<enum_Button_TextAlign>`       | align                                                 | **O:** ``0``    |
++-----------------------------------------------+-------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`                         | :ref:`selected<class_OptionButton_property_selected>` | ``-1``          |
++-----------------------------------------------+-------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                       | toggle_mode                                           | **O:** ``true`` |
++-----------------------------------------------+-------------------------------------------------------+-----------------+
 
 Methods
 -------
@@ -126,11 +126,6 @@ Emitted the when user navigates to an item using the ``ui_up`` or ``ui_down`` ac
 
 Emitted when the current item has been changed by the user. The index of the item selected is passed as argument.
 
-Description
------------
-
-OptionButton is a type button that provides a selectable list of items when pressed. The item selected becomes the "current" item and is displayed as the button text.
-
 Property Descriptions
 ---------------------
 
@@ -139,7 +134,7 @@ Property Descriptions
 - :ref:`int<class_int>` **selected**
 
 +-----------+----------------+
-| *Default* | -1             |
+| *Default* | ``-1``         |
 +-----------+----------------+
 | *Getter*  | get_selected() |
 +-----------+----------------+

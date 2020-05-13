@@ -11,26 +11,21 @@ AudioStreamRandomPitch
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Plays audio with random pitch shifting.
-
-Properties
-----------
-
-+---------------------------------------+-------------------------------------------------------------------------+-----+
-| :ref:`AudioStream<class_AudioStream>` | :ref:`audio_stream<class_AudioStreamRandomPitch_property_audio_stream>` |     |
-+---------------------------------------+-------------------------------------------------------------------------+-----+
-| :ref:`float<class_float>`             | :ref:`random_pitch<class_AudioStreamRandomPitch_property_random_pitch>` | 1.1 |
-+---------------------------------------+-------------------------------------------------------------------------+-----+
 
 Description
 -----------
 
 Randomly varies pitch on each start.
+
+Properties
+----------
+
++---------------------------------------+-------------------------------------------------------------------------+---------+
+| :ref:`AudioStream<class_AudioStream>` | :ref:`audio_stream<class_AudioStreamRandomPitch_property_audio_stream>` |         |
++---------------------------------------+-------------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`             | :ref:`random_pitch<class_AudioStreamRandomPitch_property_random_pitch>` | ``1.1`` |
++---------------------------------------+-------------------------------------------------------------------------+---------+
 
 Property Descriptions
 ---------------------
@@ -54,7 +49,7 @@ The current :ref:`AudioStream<class_AudioStream>`.
 - :ref:`float<class_float>` **random_pitch**
 
 +-----------+-------------------------+
-| *Default* | 1.1                     |
+| *Default* | ``1.1``                 |
 +-----------+-------------------------+
 | *Setter*  | set_random_pitch(value) |
 +-----------+-------------------------+

@@ -11,31 +11,33 @@ PathFollow
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Point sampler for a :ref:`Path<class_Path>`.
+
+Description
+-----------
+
+This node takes its parent :ref:`Path<class_Path>`, and returns the coordinates of a point within it, given a distance from the first vertex.
+
+It is useful for making other nodes follow a path, without coding the movement pattern. For that, the nodes must be children of this node. The descendant nodes will then move accordingly when setting an offset in this node.
 
 Properties
 ----------
 
-+---------------------------------------------------+---------------------------------------------------------------+------+
-| :ref:`bool<class_bool>`                           | :ref:`cubic_interp<class_PathFollow_property_cubic_interp>`   | true |
-+---------------------------------------------------+---------------------------------------------------------------+------+
-| :ref:`float<class_float>`                         | :ref:`h_offset<class_PathFollow_property_h_offset>`           | 0.0  |
-+---------------------------------------------------+---------------------------------------------------------------+------+
-| :ref:`bool<class_bool>`                           | :ref:`loop<class_PathFollow_property_loop>`                   | true |
-+---------------------------------------------------+---------------------------------------------------------------+------+
-| :ref:`float<class_float>`                         | :ref:`offset<class_PathFollow_property_offset>`               | 0.0  |
-+---------------------------------------------------+---------------------------------------------------------------+------+
-| :ref:`RotationMode<enum_PathFollow_RotationMode>` | :ref:`rotation_mode<class_PathFollow_property_rotation_mode>` | 3    |
-+---------------------------------------------------+---------------------------------------------------------------+------+
-| :ref:`float<class_float>`                         | :ref:`unit_offset<class_PathFollow_property_unit_offset>`     | 0.0  |
-+---------------------------------------------------+---------------------------------------------------------------+------+
-| :ref:`float<class_float>`                         | :ref:`v_offset<class_PathFollow_property_v_offset>`           | 0.0  |
-+---------------------------------------------------+---------------------------------------------------------------+------+
++---------------------------------------------------+---------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                           | :ref:`cubic_interp<class_PathFollow_property_cubic_interp>`   | ``true`` |
++---------------------------------------------------+---------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                         | :ref:`h_offset<class_PathFollow_property_h_offset>`           | ``0.0``  |
++---------------------------------------------------+---------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                           | :ref:`loop<class_PathFollow_property_loop>`                   | ``true`` |
++---------------------------------------------------+---------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                         | :ref:`offset<class_PathFollow_property_offset>`               | ``0.0``  |
++---------------------------------------------------+---------------------------------------------------------------+----------+
+| :ref:`RotationMode<enum_PathFollow_RotationMode>` | :ref:`rotation_mode<class_PathFollow_property_rotation_mode>` | ``3``    |
++---------------------------------------------------+---------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                         | :ref:`unit_offset<class_PathFollow_property_unit_offset>`     | ``0.0``  |
++---------------------------------------------------+---------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                         | :ref:`v_offset<class_PathFollow_property_v_offset>`           | ``0.0``  |
++---------------------------------------------------+---------------------------------------------------------------+----------+
 
 Enumerations
 ------------
@@ -64,13 +66,6 @@ enum **RotationMode**:
 
 - **ROTATION_ORIENTED** = **4** --- Uses the up vector information in a :ref:`Curve3D<class_Curve3D>` to enforce orientation. This rotation mode requires the :ref:`Path<class_Path>`'s :ref:`Curve3D.up_vector_enabled<class_Curve3D_property_up_vector_enabled>` property to be set to ``true``.
 
-Description
------------
-
-This node takes its parent :ref:`Path<class_Path>`, and returns the coordinates of a point within it, given a distance from the first vertex.
-
-It is useful for making other nodes follow a path, without coding the movement pattern. For that, the nodes must be children of this node. The descendant nodes will then move accordingly when setting an offset in this node.
-
 Property Descriptions
 ---------------------
 
@@ -79,7 +74,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **cubic_interp**
 
 +-----------+--------------------------------+
-| *Default* | true                           |
+| *Default* | ``true``                       |
 +-----------+--------------------------------+
 | *Setter*  | set_cubic_interpolation(value) |
 +-----------+--------------------------------+
@@ -99,7 +94,7 @@ There are two answers to this problem: either increase the number of cached poin
 - :ref:`float<class_float>` **h_offset**
 
 +-----------+---------------------+
-| *Default* | 0.0                 |
+| *Default* | ``0.0``             |
 +-----------+---------------------+
 | *Setter*  | set_h_offset(value) |
 +-----------+---------------------+
@@ -115,7 +110,7 @@ The node's offset along the curve.
 - :ref:`bool<class_bool>` **loop**
 
 +-----------+-----------------+
-| *Default* | true            |
+| *Default* | ``true``        |
 +-----------+-----------------+
 | *Setter*  | set_loop(value) |
 +-----------+-----------------+
@@ -131,7 +126,7 @@ If ``true``, any offset outside the path's length will wrap around, instead of s
 - :ref:`float<class_float>` **offset**
 
 +-----------+-------------------+
-| *Default* | 0.0               |
+| *Default* | ``0.0``           |
 +-----------+-------------------+
 | *Setter*  | set_offset(value) |
 +-----------+-------------------+
@@ -147,7 +142,7 @@ The distance from the first vertex, measured in 3D units along the path. This se
 - :ref:`RotationMode<enum_PathFollow_RotationMode>` **rotation_mode**
 
 +-----------+--------------------------+
-| *Default* | 3                        |
+| *Default* | ``3``                    |
 +-----------+--------------------------+
 | *Setter*  | set_rotation_mode(value) |
 +-----------+--------------------------+
@@ -163,7 +158,7 @@ Allows or forbids rotation on one or more axes, depending on the :ref:`RotationM
 - :ref:`float<class_float>` **unit_offset**
 
 +-----------+------------------------+
-| *Default* | 0.0                    |
+| *Default* | ``0.0``                |
 +-----------+------------------------+
 | *Setter*  | set_unit_offset(value) |
 +-----------+------------------------+
@@ -179,7 +174,7 @@ The distance from the first vertex, considering 0.0 as the first vertex and 1.0 
 - :ref:`float<class_float>` **v_offset**
 
 +-----------+---------------------+
-| *Default* | 0.0                 |
+| *Default* | ``0.0``             |
 +-----------+---------------------+
 | *Setter*  | set_v_offset(value) |
 +-----------+---------------------+

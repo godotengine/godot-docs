@@ -13,21 +13,21 @@ Popup
 
 **Inherited By:** :ref:`PopupDialog<class_PopupDialog>`, :ref:`PopupMenu<class_PopupMenu>`, :ref:`PopupPanel<class_PopupPanel>`, :ref:`WindowDialog<class_WindowDialog>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base container control for popups and dialogs.
+
+Description
+-----------
+
+Popup is a base :ref:`Control<class_Control>` used to show dialogs and popups. It's a subwindow and modal by default (see :ref:`Control<class_Control>`) and has helpers for custom popup behavior. All popup methods ensure correct placement within the viewport.
 
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>` | :ref:`popup_exclusive<class_Popup_property_popup_exclusive>` | false        |
-+-------------------------+--------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>` | visible                                                      | **O:** false |
-+-------------------------+--------------------------------------------------------------+--------------+
++-------------------------+--------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>` | :ref:`popup_exclusive<class_Popup_property_popup_exclusive>` | ``false``        |
++-------------------------+--------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>` | visible                                                      | **O:** ``false`` |
++-------------------------+--------------------------------------------------------------+------------------+
 
 Methods
 -------
@@ -74,11 +74,6 @@ Constants
 
 - **NOTIFICATION_POPUP_HIDE** = **81** --- Notification sent right after the popup is hidden.
 
-Description
------------
-
-Popup is a base :ref:`Control<class_Control>` used to show dialogs and popups. It's a subwindow and modal by default (see :ref:`Control<class_Control>`) and has helpers for custom popup behavior. All popup methods ensure correct placement within the viewport.
-
 Property Descriptions
 ---------------------
 
@@ -87,7 +82,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **popup_exclusive**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_exclusive(value) |
 +-----------+----------------------+

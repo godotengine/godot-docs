@@ -13,21 +13,21 @@ WindowDialog
 
 **Inherited By:** :ref:`AcceptDialog<class_AcceptDialog>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for window dialogs.
+
+Description
+-----------
+
+Windowdialog is the base class for all window-based dialogs. It's a by-default toplevel :ref:`Control<class_Control>` that draws a window decoration and allows motion and resizing.
 
 Properties
 ----------
 
-+-----------------------------+---------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`resizable<class_WindowDialog_property_resizable>`       | false |
-+-----------------------------+---------------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`window_title<class_WindowDialog_property_window_title>` | ""    |
-+-----------------------------+---------------------------------------------------------------+-------+
++-----------------------------+---------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`     | :ref:`resizable<class_WindowDialog_property_resizable>`       | ``false`` |
++-----------------------------+---------------------------------------------------------------+-----------+
+| :ref:`String<class_String>` | :ref:`window_title<class_WindowDialog_property_window_title>` | ``""``    |
++-----------------------------+---------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -59,11 +59,6 @@ Theme Properties
 | :ref:`int<class_int>`           | title_height     | 20                  |
 +---------------------------------+------------------+---------------------+
 
-Description
------------
-
-Windowdialog is the base class for all window-based dialogs. It's a by-default toplevel :ref:`Control<class_Control>` that draws a window decoration and allows motion and resizing.
-
 Property Descriptions
 ---------------------
 
@@ -72,7 +67,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **resizable**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_resizable(value) |
 +-----------+----------------------+
@@ -88,7 +83,7 @@ If ``true``, the user can resize the window.
 - :ref:`String<class_String>` **window_title**
 
 +-----------+------------------+
-| *Default* | ""               |
+| *Default* | ``""``           |
 +-----------+------------------+
 | *Setter*  | set_title(value) |
 +-----------+------------------+

@@ -11,11 +11,6 @@ CameraTexture
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 This texture gives access to the camera texture provided by a :ref:`CameraFeed<class_CameraFeed>`.
 
 **Note:** Many cameras supply YCbCr images which need to be converted in a shader.
@@ -23,15 +18,15 @@ This texture gives access to the camera texture provided by a :ref:`CameraFeed<c
 Properties
 ----------
 
-+-----------------------------------------------+------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`                         | :ref:`camera_feed_id<class_CameraTexture_property_camera_feed_id>`     | 0        |
-+-----------------------------------------------+------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                       | :ref:`camera_is_active<class_CameraTexture_property_camera_is_active>` | false    |
-+-----------------------------------------------+------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`                         | flags                                                                  | **O:** 0 |
-+-----------------------------------------------+------------------------------------------------------------------------+----------+
-| :ref:`FeedImage<enum_CameraServer_FeedImage>` | :ref:`which_feed<class_CameraTexture_property_which_feed>`             | 0        |
-+-----------------------------------------------+------------------------------------------------------------------------+----------+
++-----------------------------------------------+------------------------------------------------------------------------+--------------+
+| :ref:`int<class_int>`                         | :ref:`camera_feed_id<class_CameraTexture_property_camera_feed_id>`     | ``0``        |
++-----------------------------------------------+------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                       | :ref:`camera_is_active<class_CameraTexture_property_camera_is_active>` | ``false``    |
++-----------------------------------------------+------------------------------------------------------------------------+--------------+
+| :ref:`int<class_int>`                         | flags                                                                  | **O:** ``0`` |
++-----------------------------------------------+------------------------------------------------------------------------+--------------+
+| :ref:`FeedImage<enum_CameraServer_FeedImage>` | :ref:`which_feed<class_CameraTexture_property_which_feed>`             | ``0``        |
++-----------------------------------------------+------------------------------------------------------------------------+--------------+
 
 Property Descriptions
 ---------------------
@@ -41,7 +36,7 @@ Property Descriptions
 - :ref:`int<class_int>` **camera_feed_id**
 
 +-----------+---------------------------+
-| *Default* | 0                         |
+| *Default* | ``0``                     |
 +-----------+---------------------------+
 | *Setter*  | set_camera_feed_id(value) |
 +-----------+---------------------------+
@@ -57,7 +52,7 @@ The ID of the :ref:`CameraFeed<class_CameraFeed>` for which we want to display t
 - :ref:`bool<class_bool>` **camera_is_active**
 
 +-----------+--------------------------+
-| *Default* | false                    |
+| *Default* | ``false``                |
 +-----------+--------------------------+
 | *Setter*  | set_camera_active(value) |
 +-----------+--------------------------+
@@ -73,7 +68,7 @@ Convenience property that gives access to the active property of the :ref:`Camer
 - :ref:`FeedImage<enum_CameraServer_FeedImage>` **which_feed**
 
 +-----------+-----------------------+
-| *Default* | 0                     |
+| *Default* | ``0``                 |
 +-----------+-----------------------+
 | *Setter*  | set_which_feed(value) |
 +-----------+-----------------------+

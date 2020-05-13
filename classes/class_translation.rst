@@ -13,19 +13,26 @@ Translation
 
 **Inherited By:** :ref:`PHashTranslation<class_PHashTranslation>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Language Translation.
+
+Description
+-----------
+
+Translations are resources that can be loaded and unloaded on demand. They map a string to another string.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/i18n/internationalizing_games`
+
+- :doc:`../tutorials/i18n/locales`
 
 Properties
 ----------
 
-+-----------------------------+--------------------------------------------------+------+
-| :ref:`String<class_String>` | :ref:`locale<class_Translation_property_locale>` | "en" |
-+-----------------------------+--------------------------------------------------+------+
++-----------------------------+--------------------------------------------------+----------+
+| :ref:`String<class_String>` | :ref:`locale<class_Translation_property_locale>` | ``"en"`` |
++-----------------------------+--------------------------------------------------+----------+
 
 Methods
 -------
@@ -42,18 +49,6 @@ Methods
 | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_message_list<class_Translation_method_get_message_list>` **(** **)** const                                                                     |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-Translations are resources that can be loaded and unloaded on demand. They map a string to another string.
-
-Tutorials
----------
-
-- :doc:`../tutorials/i18n/internationalizing_games`
-
-- :doc:`../tutorials/i18n/locales`
-
 Property Descriptions
 ---------------------
 
@@ -62,7 +57,7 @@ Property Descriptions
 - :ref:`String<class_String>` **locale**
 
 +-----------+-------------------+
-| *Default* | "en"              |
+| *Default* | ``"en"``          |
 +-----------+-------------------+
 | *Setter*  | set_locale(value) |
 +-----------+-------------------+

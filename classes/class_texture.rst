@@ -13,19 +13,21 @@ Texture
 
 **Inherited By:** :ref:`AnimatedTexture<class_AnimatedTexture>`, :ref:`AtlasTexture<class_AtlasTexture>`, :ref:`CameraTexture<class_CameraTexture>`, :ref:`CurveTexture<class_CurveTexture>`, :ref:`GradientTexture<class_GradientTexture>`, :ref:`ImageTexture<class_ImageTexture>`, :ref:`LargeTexture<class_LargeTexture>`, :ref:`MeshTexture<class_MeshTexture>`, :ref:`NoiseTexture<class_NoiseTexture>`, :ref:`ProxyTexture<class_ProxyTexture>`, :ref:`StreamTexture<class_StreamTexture>`, :ref:`ViewportTexture<class_ViewportTexture>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Texture for 2D and 3D.
+
+Description
+-----------
+
+A texture works by registering an image in the video hardware, which then can be used in 3D models or 2D :ref:`Sprite<class_Sprite>` or GUI :ref:`Control<class_Control>`.
+
+Textures are often created by loading them from a file. See :ref:`@GDScript.load<class_@GDScript_method_load>`.
 
 Properties
 ----------
 
-+-----------------------+--------------------------------------------+---+
-| :ref:`int<class_int>` | :ref:`flags<class_Texture_property_flags>` | 4 |
-+-----------------------+--------------------------------------------+---+
++-----------------------+--------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`flags<class_Texture_property_flags>` | ``4`` |
++-----------------------+--------------------------------------------+-------+
 
 Methods
 -------
@@ -89,13 +91,6 @@ This results in better-looking textures when viewed from oblique angles.
 
 - **FLAG_VIDEO_SURFACE** = **2048** --- Texture is a video surface.
 
-Description
------------
-
-A texture works by registering an image in the video hardware, which then can be used in 3D models or 2D :ref:`Sprite<class_Sprite>` or GUI :ref:`Control<class_Control>`.
-
-Textures are often created by loading them from a file. See :ref:`@GDScript.load<class_@GDScript_method_load>`.
-
 Property Descriptions
 ---------------------
 
@@ -104,7 +99,7 @@ Property Descriptions
 - :ref:`int<class_int>` **flags**
 
 +-----------+------------------+
-| *Default* | 4                |
+| *Default* | ``4``            |
 +-----------+------------------+
 | *Setter*  | set_flags(value) |
 +-----------+------------------+

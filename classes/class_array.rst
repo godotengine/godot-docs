@@ -9,12 +9,25 @@
 Array
 =====
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Generic array datatype.
+
+Description
+-----------
+
+Generic array which can contain several elements of any type, accessible by a numerical index starting at 0. Negative indices can be used to count from the back, like in Python (-1 is the last element, -2 the second to last, etc.).
+
+**Example:**
+
+::
+
+    var array = ["One", 2, 3, "Four"]
+    print(array[0])   # One
+    print(array[2])   # 3
+    print(array[-1])  # Four
+    array[2] = "Three"
+    print(array[-2])  # Three
+
+Arrays are always passed by reference.
 
 Methods
 -------
@@ -94,24 +107,6 @@ Methods
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`sort_custom<class_Array_method_sort_custom>` **(** :ref:`Object<class_Object>` obj, :ref:`String<class_String>` func **)**                                                                                 |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Generic array which can contain several elements of any type, accessible by a numerical index starting at 0. Negative indices can be used to count from the back, like in Python (-1 is the last element, -2 the second to last, etc.).
-
-**Example:**
-
-::
-
-    var array = ["One", 2, 3, "Four"]
-    print(array[0])   # One
-    print(array[2])   # 3
-    print(array[-1])  # Four
-    array[2] = "Three"
-    print(array[-2])  # Three
-
-Arrays are always passed by reference.
 
 Method Descriptions
 -------------------
@@ -411,18 +406,19 @@ Sorts the array.
 
 - void **sort_custom** **(** :ref:`Object<class_Object>` obj, :ref:`String<class_String>` func **)**
 
-Sorts the array using a custom method. The arguments are an object that holds the method and the name of such method. The custom method receives two arguments (a pair of elements from the array) and must return ``true`` if the first argument is less than the second, and return ``false`` otherwise.
+Sorts the array using a custom method. The arguments are an object that holds the method and the name of such method. The custom method receives two arguments (a pair of elements from the array) and must return either ``true`` or ``false``.
 
 **Note:** you cannot randomize the return value as the heapsort algorithm expects a deterministic result. Doing so will result in unexpected behavior.
 
 ::
 
     class MyCustomSorter:
-        static func sort(a, b):
+        static func sort_ascending(a, b):
             if a[0] < b[0]:
                 return true
             return false
     
     var my_items = [[5, "Potato"], [9, "Rice"], [4, "Tomato"]]
-    my_items.sort_custom(MyCustomSorter, "sort")
+    my_items.sort_custom(MyCustomSorter, "sort_ascending")
+    print(my_items) # Prints [[4, Tomato], [5, Potato], [9, Rice]]
 

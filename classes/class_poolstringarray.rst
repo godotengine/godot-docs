@@ -9,12 +9,14 @@
 PoolStringArray
 ===============
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 A pooled :ref:`Array<class_Array>` of :ref:`String<class_String>`.
+
+Description
+-----------
+
+An :ref:`Array<class_Array>` specifically designed to hold :ref:`String<class_String>`\ s. Optimized for memory usage, does not fragment the memory.
+
+**Note:** This type is passed by value and not by reference.
 
 Methods
 -------
@@ -44,13 +46,6 @@ Methods
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`size<class_PoolStringArray_method_size>` **(** **)**                                                                     |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-An :ref:`Array<class_Array>` specifically designed to hold :ref:`String<class_String>`\ s. Optimized for memory usage, does not fragment the memory.
-
-**Note:** This type is passed by value and not by reference.
 
 Method Descriptions
 -------------------

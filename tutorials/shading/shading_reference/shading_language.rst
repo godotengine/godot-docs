@@ -191,7 +191,7 @@ Arrays
 ------
 
 Arrays are containers for multiple variables of a similar type.
-Note: As of Godot 3.2, only local arrays have been implemented.
+Note: As of Godot 3.2, only local and varying arrays have been implemented.
 
 Local arrays
 ~~~~~~~~~~~~
@@ -209,11 +209,13 @@ They can be initialized at the beginning like:
 
 .. code-block:: glsl
 
-      float arr[3] = float[3] (1.0, 0.5, 0.0); // first constructor
+      float float_arr[3] = float[3] ( 1.0, 0.5, 0.0 ); // first constructor
 
-      vec2 arr_v2[2] = { vec2(0.0, 0.0), vec2(1.0, 1.0) }; // second constructor
+      int int_arr[3] = int[] ( 2, 1, 0 ); // second constructor
 
-      bool bvec_arr[] = { false, false, true, true }; // third constructor - size is defined automatically from the argument count
+      vec2 vec2_arr[3] = { vec2(1.0, 1.0), vec2(0.5, 0.5), vec2(0.0, 0.0) }; // third constructor
+
+      bool bool_arr[] = { true, true, false }; // fourth constructor - size is defined automatically from the element count
 
 You can declare multiple arrays (even with different sizes) in one expression:
 
@@ -421,6 +423,22 @@ pixel in the fragment processor.
 
     void fragment() {
         ALBEDO = some_color;
+    }
+
+Varying can also be an array:
+
+.. code-block:: glsl
+
+    shader_type spatial;
+
+    varying float var_arr[3];
+    void vertex() {
+        var_arr[0] = 1.0;
+        var_arr[1] = 0.0;
+    }
+
+    void fragment() {
+        ALBEDO = vec3(var_arr[0], var_arr[1], var_arr[2]); // red color
     }
 
 Interpolation qualifiers

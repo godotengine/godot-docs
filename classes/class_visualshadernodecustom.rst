@@ -11,19 +11,32 @@ VisualShaderNodeCustom
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Virtual class to define custom :ref:`VisualShaderNode<class_VisualShaderNode>`\ s for use in the Visual Shader Editor.
+
+Description
+-----------
+
+By inheriting this class you can create a custom :ref:`VisualShader<class_VisualShader>` script addon which will be automatically added to the Visual Shader Editor. The :ref:`VisualShaderNode<class_VisualShaderNode>`'s behavior is defined by overriding the provided virtual methods.
+
+In order for the node to be registered as an editor addon, you must use the ``tool`` keyword and provide a ``class_name`` for your custom script. For example:
+
+::
+
+    tool
+    extends VisualShaderNodeCustom
+    class_name VisualShaderNodeNoise
+
+Tutorials
+---------
+
+- :doc:`../tutorials/plugins/editor/visual_shader_plugins`
 
 Properties
 ----------
 
-+---------------------------+----------------------+-------------+
-| :ref:`Array<class_Array>` | default_input_values | **O:** [  ] |
-+---------------------------+----------------------+-------------+
++---------------------------+----------------------+-----------------+
+| :ref:`Array<class_Array>` | default_input_values | **O:** ``[  ]`` |
++---------------------------+----------------------+-----------------+
 
 Methods
 -------
@@ -55,24 +68,6 @@ Methods
 +-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>` | :ref:`_get_subcategory<class_VisualShaderNodeCustom_method__get_subcategory>` **(** **)** virtual                                                                                                                       |
 +-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-By inheriting this class you can create a custom :ref:`VisualShader<class_VisualShader>` script addon which will be automatically added to the Visual Shader Editor. The :ref:`VisualShaderNode<class_VisualShaderNode>`'s behavior is defined by overriding the provided virtual methods.
-
-In order for the node to be registered as an editor addon, you must use the ``tool`` keyword and provide a ``class_name`` for your custom script. For example:
-
-::
-
-    tool
-    extends VisualShaderNodeCustom
-    class_name VisualShaderNodeNoise
-
-Tutorials
----------
-
-- :doc:`../tutorials/plugins/editor/visual_shader_plugins`
 
 Method Descriptions
 -------------------

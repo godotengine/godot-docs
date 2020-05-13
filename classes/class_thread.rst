@@ -11,12 +11,17 @@ Thread
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A unit of execution in a process.
+
+Description
+-----------
+
+A unit of execution in a process. Can run methods on :ref:`Object<class_Object>`\ s simultaneously. The use of synchronization via :ref:`Mutex<class_Mutex>` or :ref:`Semaphore<class_Semaphore>` is advised if working with shared objects.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/threads/using_multiple_threads`
 
 Methods
 -------
@@ -44,21 +49,11 @@ Enumerations
 
 enum **Priority**:
 
-- **PRIORITY_LOW** = **0**
+- **PRIORITY_LOW** = **0** --- A thread running with lower priority than normally.
 
-- **PRIORITY_NORMAL** = **1**
+- **PRIORITY_NORMAL** = **1** --- A thread with a standard priority.
 
-- **PRIORITY_HIGH** = **2**
-
-Description
------------
-
-A unit of execution in a process. Can run methods on :ref:`Object<class_Object>`\ s simultaneously. The use of synchronization via :ref:`Mutex<class_Mutex>` or :ref:`Semaphore<class_Semaphore>` is advised if working with shared objects.
-
-Tutorials
----------
-
-- :doc:`../tutorials/threads/using_multiple_threads`
+- **PRIORITY_HIGH** = **2** --- A thread running with higher priority than normally.
 
 Method Descriptions
 -------------------

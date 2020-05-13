@@ -11,21 +11,21 @@ VSlider
 
 **Inherits:** :ref:`Slider<class_Slider>` **<** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Vertical slider.
+
+Description
+-----------
+
+Vertical slider. See :ref:`Slider<class_Slider>`. This one goes from bottom (min) to top (max).
 
 Properties
 ----------
 
-+-----------------------+-----------------------+----------+
-| :ref:`int<class_int>` | size_flags_horizontal | **O:** 0 |
-+-----------------------+-----------------------+----------+
-| :ref:`int<class_int>` | size_flags_vertical   | **O:** 1 |
-+-----------------------+-----------------------+----------+
++-----------------------+-----------------------+--------------+
+| :ref:`int<class_int>` | size_flags_horizontal | **O:** ``0`` |
++-----------------------+-----------------------+--------------+
+| :ref:`int<class_int>` | size_flags_vertical   | **O:** ``1`` |
++-----------------------+-----------------------+--------------+
 
 Theme Properties
 ----------------
@@ -43,9 +43,4 @@ Theme Properties
 +---------------------------------+-------------------+
 | :ref:`Texture<class_Texture>`   | tick              |
 +---------------------------------+-------------------+
-
-Description
------------
-
-Vertical slider. See :ref:`Slider<class_Slider>`. This one goes from bottom (min) to top (max).
 

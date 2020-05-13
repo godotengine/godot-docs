@@ -11,25 +11,20 @@ NativeScript
 
 **Inherits:** :ref:`Script<class_Script>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------------+----+
-| :ref:`String<class_String>`                   | :ref:`class_name<class_NativeScript_property_class_name>`                         | "" |
-+-----------------------------------------------+-----------------------------------------------------------------------------------+----+
-| :ref:`GDNativeLibrary<class_GDNativeLibrary>` | :ref:`library<class_NativeScript_property_library>`                               |    |
-+-----------------------------------------------+-----------------------------------------------------------------------------------+----+
-| :ref:`String<class_String>`                   | :ref:`script_class_icon_path<class_NativeScript_property_script_class_icon_path>` | "" |
-+-----------------------------------------------+-----------------------------------------------------------------------------------+----+
-| :ref:`String<class_String>`                   | :ref:`script_class_name<class_NativeScript_property_script_class_name>`           | "" |
-+-----------------------------------------------+-----------------------------------------------------------------------------------+----+
++-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
+| :ref:`String<class_String>`                   | :ref:`class_name<class_NativeScript_property_class_name>`                         | ``""`` |
++-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
+| :ref:`GDNativeLibrary<class_GDNativeLibrary>` | :ref:`library<class_NativeScript_property_library>`                               |        |
++-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
+| :ref:`String<class_String>`                   | :ref:`script_class_icon_path<class_NativeScript_property_script_class_icon_path>` | ``""`` |
++-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
+| :ref:`String<class_String>`                   | :ref:`script_class_name<class_NativeScript_property_script_class_name>`           | ``""`` |
++-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
 
 Methods
 -------
@@ -54,7 +49,7 @@ Property Descriptions
 - :ref:`String<class_String>` **class_name**
 
 +-----------+-----------------------+
-| *Default* | ""                    |
+| *Default* | ``""``                |
 +-----------+-----------------------+
 | *Setter*  | set_class_name(value) |
 +-----------+-----------------------+
@@ -80,7 +75,7 @@ Property Descriptions
 - :ref:`String<class_String>` **script_class_icon_path**
 
 +-----------+-----------------------------------+
-| *Default* | ""                                |
+| *Default* | ``""``                            |
 +-----------+-----------------------------------+
 | *Setter*  | set_script_class_icon_path(value) |
 +-----------+-----------------------------------+
@@ -94,7 +89,7 @@ Property Descriptions
 - :ref:`String<class_String>` **script_class_name**
 
 +-----------+------------------------------+
-| *Default* | ""                           |
+| *Default* | ``""``                       |
 +-----------+------------------------------+
 | *Setter*  | set_script_class_name(value) |
 +-----------+------------------------------+

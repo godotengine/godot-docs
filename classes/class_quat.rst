@@ -9,25 +9,34 @@
 Quat
 ====
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Quaternion.
+
+Description
+-----------
+
+A unit quaternion used for representing 3D rotations.
+
+It is similar to :ref:`Basis<class_Basis>`, which implements matrix representation of rotations, and can be parametrized using both an axis-angle pair or Euler angles. But due to its compactness and the way it is stored in memory, certain operations (obtaining axis-angle and performing SLERP, in particular) are more efficient and robust against floating-point errors.
+
+Quaternions need to be (re)normalized.
+
+Tutorials
+---------
+
+- `#interpolating-with-quaternions <../tutorials/3d/using_transforms.html#interpolating-with-quaternions>`_ in :doc:`../tutorials/3d/using_transforms`
 
 Properties
 ----------
 
-+---------------------------+---------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`w<class_Quat_property_w>` | 1.0 |
-+---------------------------+---------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`x<class_Quat_property_x>` | 0.0 |
-+---------------------------+---------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`y<class_Quat_property_y>` | 0.0 |
-+---------------------------+---------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`z<class_Quat_property_z>` | 0.0 |
-+---------------------------+---------------------------------+-----+
++---------------------------+---------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`w<class_Quat_property_w>` | ``1.0`` |
++---------------------------+---------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`x<class_Quat_property_x>` | ``0.0`` |
++---------------------------+---------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`y<class_Quat_property_y>` | ``0.0`` |
++---------------------------+---------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`z<class_Quat_property_z>` | ``0.0`` |
++---------------------------+---------------------------------+---------+
 
 Methods
 -------
@@ -77,20 +86,6 @@ Constants
 
 - **IDENTITY** = **Quat( 0, 0, 0, 1 )**
 
-Description
------------
-
-A unit quaternion used for representing 3D rotations.
-
-It is similar to :ref:`Basis<class_Basis>`, which implements matrix representation of rotations, and can be parametrized using both an axis-angle pair or Euler angles. But due to its compactness and the way it is stored in memory, certain operations (obtaining axis-angle and performing SLERP, in particular) are more efficient and robust against floating-point errors.
-
-Quaternions need to be (re)normalized.
-
-Tutorials
----------
-
-- `#interpolating-with-quaternions <../tutorials/3d/using_transforms.html#interpolating-with-quaternions>`_ in :doc:`../tutorials/3d/using_transforms`
-
 Property Descriptions
 ---------------------
 
@@ -98,9 +93,9 @@ Property Descriptions
 
 - :ref:`float<class_float>` **w**
 
-+-----------+-----+
-| *Default* | 1.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``1.0`` |
++-----------+---------+
 
 W component of the quaternion.
 
@@ -110,9 +105,9 @@ W component of the quaternion.
 
 - :ref:`float<class_float>` **x**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 X component of the quaternion.
 
@@ -122,9 +117,9 @@ X component of the quaternion.
 
 - :ref:`float<class_float>` **y**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 Y component of the quaternion.
 
@@ -134,9 +129,9 @@ Y component of the quaternion.
 
 - :ref:`float<class_float>` **z**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 Z component of the quaternion.
 

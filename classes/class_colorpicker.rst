@@ -11,31 +11,31 @@ ColorPicker
 
 **Inherits:** :ref:`BoxContainer<class_BoxContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Color picker control.
+
+Description
+-----------
+
+:ref:`Control<class_Control>` node displaying a color picker widget. It's useful for selecting a color from an RGB/RGBA colorspace.
 
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_ColorPicker_property_color>`                     | Color( 1, 1, 1, 1 ) |
-+---------------------------+--------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`   | :ref:`deferred_mode<class_ColorPicker_property_deferred_mode>`     | false               |
-+---------------------------+--------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPicker_property_edit_alpha>`           | true                |
-+---------------------------+--------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`   | :ref:`hsv_mode<class_ColorPicker_property_hsv_mode>`               | false               |
-+---------------------------+--------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`   | :ref:`presets_enabled<class_ColorPicker_property_presets_enabled>` | true                |
-+---------------------------+--------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`   | :ref:`presets_visible<class_ColorPicker_property_presets_visible>` | true                |
-+---------------------------+--------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`   | :ref:`raw_mode<class_ColorPicker_property_raw_mode>`               | false               |
-+---------------------------+--------------------------------------------------------------------+---------------------+
++---------------------------+--------------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_ColorPicker_property_color>`                     | ``Color( 1, 1, 1, 1 )`` |
++---------------------------+--------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`   | :ref:`deferred_mode<class_ColorPicker_property_deferred_mode>`     | ``false``               |
++---------------------------+--------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPicker_property_edit_alpha>`           | ``true``                |
++---------------------------+--------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`   | :ref:`hsv_mode<class_ColorPicker_property_hsv_mode>`               | ``false``               |
++---------------------------+--------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`   | :ref:`presets_enabled<class_ColorPicker_property_presets_enabled>` | ``true``                |
++---------------------------+--------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`   | :ref:`presets_visible<class_ColorPicker_property_presets_visible>` | ``true``                |
++---------------------------+--------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`   | :ref:`raw_mode<class_ColorPicker_property_raw_mode>`               | ``false``               |
++---------------------------+--------------------------------------------------------------------+-------------------------+
 
 Methods
 -------
@@ -100,11 +100,6 @@ Emitted when a preset is added.
 
 Emitted when a preset is removed.
 
-Description
------------
-
-:ref:`Control<class_Control>` node displaying a color picker widget. It's useful for selecting a color from an RGB/RGBA colorspace.
-
 Property Descriptions
 ---------------------
 
@@ -112,13 +107,13 @@ Property Descriptions
 
 - :ref:`Color<class_Color>` **color**
 
-+-----------+-----------------------+
-| *Default* | Color( 1, 1, 1, 1 )   |
-+-----------+-----------------------+
-| *Setter*  | set_pick_color(value) |
-+-----------+-----------------------+
-| *Getter*  | get_pick_color()      |
-+-----------+-----------------------+
++-----------+-------------------------+
+| *Default* | ``Color( 1, 1, 1, 1 )`` |
++-----------+-------------------------+
+| *Setter*  | set_pick_color(value)   |
++-----------+-------------------------+
+| *Getter*  | get_pick_color()        |
++-----------+-------------------------+
 
 The currently selected color.
 
@@ -129,7 +124,7 @@ The currently selected color.
 - :ref:`bool<class_bool>` **deferred_mode**
 
 +-----------+--------------------------+
-| *Default* | false                    |
+| *Default* | ``false``                |
 +-----------+--------------------------+
 | *Setter*  | set_deferred_mode(value) |
 +-----------+--------------------------+
@@ -145,7 +140,7 @@ If ``true``, the color will apply only after the user releases the mouse button,
 - :ref:`bool<class_bool>` **edit_alpha**
 
 +-----------+-----------------------+
-| *Default* | true                  |
+| *Default* | ``true``              |
 +-----------+-----------------------+
 | *Setter*  | set_edit_alpha(value) |
 +-----------+-----------------------+
@@ -161,7 +156,7 @@ If ``true``, shows an alpha channel slider (transparency).
 - :ref:`bool<class_bool>` **hsv_mode**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_hsv_mode(value) |
 +-----------+---------------------+
@@ -179,7 +174,7 @@ If ``true``, allows editing the color with Hue/Saturation/Value sliders.
 - :ref:`bool<class_bool>` **presets_enabled**
 
 +-----------+----------------------------+
-| *Default* | true                       |
+| *Default* | ``true``                   |
 +-----------+----------------------------+
 | *Setter*  | set_presets_enabled(value) |
 +-----------+----------------------------+
@@ -195,7 +190,7 @@ If ``true``, the "add preset" button is enabled.
 - :ref:`bool<class_bool>` **presets_visible**
 
 +-----------+----------------------------+
-| *Default* | true                       |
+| *Default* | ``true``                   |
 +-----------+----------------------------+
 | *Setter*  | set_presets_visible(value) |
 +-----------+----------------------------+
@@ -211,7 +206,7 @@ If ``true``, saved color presets are visible.
 - :ref:`bool<class_bool>` **raw_mode**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_raw_mode(value) |
 +-----------+---------------------+

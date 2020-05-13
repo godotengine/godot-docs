@@ -11,25 +11,31 @@ AnimationNodeBlendSpace1D
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Blends linearly between two of any number of :ref:`AnimationNode<class_AnimationNode>` of any type placed on a virtual axis.
+
+Description
+-----------
+
+A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
+
+This is a virtual axis on which you can add any type of :ref:`AnimationNode<class_AnimationNode>` using :ref:`add_blend_point<class_AnimationNodeBlendSpace1D_method_add_blend_point>`.
+
+Outputs the linear blend of the two ``AnimationNode`` closest to the node's current ``value``.
+
+You can set the extents of the axis using the :ref:`min_space<class_AnimationNodeBlendSpace1D_property_min_space>` and :ref:`max_space<class_AnimationNodeBlendSpace1D_property_max_space>`.
 
 Properties
 ----------
 
-+-----------------------------+--------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>`   | :ref:`max_space<class_AnimationNodeBlendSpace1D_property_max_space>`     | 1.0     |
-+-----------------------------+--------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>`   | :ref:`min_space<class_AnimationNodeBlendSpace1D_property_min_space>`     | -1.0    |
-+-----------------------------+--------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>`   | :ref:`snap<class_AnimationNodeBlendSpace1D_property_snap>`               | 0.1     |
-+-----------------------------+--------------------------------------------------------------------------+---------+
-| :ref:`String<class_String>` | :ref:`value_label<class_AnimationNodeBlendSpace1D_property_value_label>` | "value" |
-+-----------------------------+--------------------------------------------------------------------------+---------+
++-----------------------------+--------------------------------------------------------------------------+-------------+
+| :ref:`float<class_float>`   | :ref:`max_space<class_AnimationNodeBlendSpace1D_property_max_space>`     | ``1.0``     |
++-----------------------------+--------------------------------------------------------------------------+-------------+
+| :ref:`float<class_float>`   | :ref:`min_space<class_AnimationNodeBlendSpace1D_property_min_space>`     | ``-1.0``    |
++-----------------------------+--------------------------------------------------------------------------+-------------+
+| :ref:`float<class_float>`   | :ref:`snap<class_AnimationNodeBlendSpace1D_property_snap>`               | ``0.1``     |
++-----------------------------+--------------------------------------------------------------------------+-------------+
+| :ref:`String<class_String>` | :ref:`value_label<class_AnimationNodeBlendSpace1D_property_value_label>` | ``"value"`` |
++-----------------------------+--------------------------------------------------------------------------+-------------+
 
 Methods
 -------
@@ -50,17 +56,6 @@ Methods
 | void                                              | :ref:`set_blend_point_position<class_AnimationNodeBlendSpace1D_method_set_blend_point_position>` **(** :ref:`int<class_int>` point, :ref:`float<class_float>` pos **)**                                             |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
-
-This is a virtual axis on which you can add any type of :ref:`AnimationNode<class_AnimationNode>` using :ref:`add_blend_point<class_AnimationNodeBlendSpace1D_method_add_blend_point>`.
-
-Outputs the linear blend of the two ``AnimationNode`` closest to the node's current ``value``.
-
-You can set the extents of the axis using the :ref:`min_space<class_AnimationNodeBlendSpace1D_property_min_space>` and :ref:`max_space<class_AnimationNodeBlendSpace1D_property_max_space>`.
-
 Property Descriptions
 ---------------------
 
@@ -69,7 +64,7 @@ Property Descriptions
 - :ref:`float<class_float>` **max_space**
 
 +-----------+----------------------+
-| *Default* | 1.0                  |
+| *Default* | ``1.0``              |
 +-----------+----------------------+
 | *Setter*  | set_max_space(value) |
 +-----------+----------------------+
@@ -85,7 +80,7 @@ The blend space's axis's upper limit for the points' position. See :ref:`add_ble
 - :ref:`float<class_float>` **min_space**
 
 +-----------+----------------------+
-| *Default* | -1.0                 |
+| *Default* | ``-1.0``             |
 +-----------+----------------------+
 | *Setter*  | set_min_space(value) |
 +-----------+----------------------+
@@ -101,7 +96,7 @@ The blend space's axis's lower limit for the points' position. See :ref:`add_ble
 - :ref:`float<class_float>` **snap**
 
 +-----------+-----------------+
-| *Default* | 0.1             |
+| *Default* | ``0.1``         |
 +-----------+-----------------+
 | *Setter*  | set_snap(value) |
 +-----------+-----------------+
@@ -117,7 +112,7 @@ Position increment to snap to when moving a point on the axis.
 - :ref:`String<class_String>` **value_label**
 
 +-----------+------------------------+
-| *Default* | "value"                |
+| *Default* | ``"value"``            |
 +-----------+------------------------+
 | *Setter*  | set_value_label(value) |
 +-----------+------------------------+

@@ -13,33 +13,40 @@ Spatial
 
 **Inherited By:** :ref:`ARVRAnchor<class_ARVRAnchor>`, :ref:`ARVRController<class_ARVRController>`, :ref:`ARVROrigin<class_ARVROrigin>`, :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`, :ref:`BoneAttachment<class_BoneAttachment>`, :ref:`Camera<class_Camera>`, :ref:`CollisionObject<class_CollisionObject>`, :ref:`CollisionPolygon<class_CollisionPolygon>`, :ref:`CollisionShape<class_CollisionShape>`, :ref:`GridMap<class_GridMap>`, :ref:`Joint<class_Joint>`, :ref:`Listener<class_Listener>`, :ref:`Navigation<class_Navigation>`, :ref:`NavigationMeshInstance<class_NavigationMeshInstance>`, :ref:`Path<class_Path>`, :ref:`PathFollow<class_PathFollow>`, :ref:`Position3D<class_Position3D>`, :ref:`ProximityGroup<class_ProximityGroup>`, :ref:`RayCast<class_RayCast>`, :ref:`RemoteTransform<class_RemoteTransform>`, :ref:`Skeleton<class_Skeleton>`, :ref:`SpringArm<class_SpringArm>`, :ref:`VehicleWheel<class_VehicleWheel>`, :ref:`VisibilityNotifier<class_VisibilityNotifier>`, :ref:`VisualInstance<class_VisualInstance>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Most basic 3D game object, parent of all 3D-related nodes.
+
+Description
+-----------
+
+Most basic 3D game object, with a 3D :ref:`Transform<class_Transform>` and visibility settings. All other 3D game objects inherit from Spatial. Use ``Spatial`` as a parent node to move, scale, rotate and show/hide children in a 3D project.
+
+Affine operations (rotate, scale, translate) happen in parent's local coordinate system, unless the ``Spatial`` object is set as top-level. Affine operations in this coordinate system correspond to direct affine operations on the ``Spatial``'s transform. The word local below refers to this coordinate system. The coordinate system that is attached to the ``Spatial`` object itself is referred to as object-local coordinate system.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/introduction_to_3d`
 
 Properties
 ----------
 
-+-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
-| :ref:`SpatialGizmo<class_SpatialGizmo>` | :ref:`gizmo<class_Spatial_property_gizmo>`                       |                                                 |
-+-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
-| :ref:`Transform<class_Transform>`       | :ref:`global_transform<class_Spatial_property_global_transform>` |                                                 |
-+-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`           | :ref:`rotation<class_Spatial_property_rotation>`                 |                                                 |
-+-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`           | :ref:`rotation_degrees<class_Spatial_property_rotation_degrees>` | Vector3( 0, 0, 0 )                              |
-+-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`           | :ref:`scale<class_Spatial_property_scale>`                       | Vector3( 1, 1, 1 )                              |
-+-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
-| :ref:`Transform<class_Transform>`       | :ref:`transform<class_Spatial_property_transform>`               | Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) |
-+-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`           | :ref:`translation<class_Spatial_property_translation>`           | Vector3( 0, 0, 0 )                              |
-+-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`visible<class_Spatial_property_visible>`                   | true                                            |
-+-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
++-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`SpatialGizmo<class_SpatialGizmo>` | :ref:`gizmo<class_Spatial_property_gizmo>`                       |                                                     |
++-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Transform<class_Transform>`       | :ref:`global_transform<class_Spatial_property_global_transform>` |                                                     |
++-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`           | :ref:`rotation<class_Spatial_property_rotation>`                 |                                                     |
++-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`           | :ref:`rotation_degrees<class_Spatial_property_rotation_degrees>` | ``Vector3( 0, 0, 0 )``                              |
++-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`           | :ref:`scale<class_Spatial_property_scale>`                       | ``Vector3( 1, 1, 1 )``                              |
++-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Transform<class_Transform>`       | :ref:`transform<class_Spatial_property_transform>`               | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
++-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`           | :ref:`translation<class_Spatial_property_translation>`           | ``Vector3( 0, 0, 0 )``                              |
++-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`bool<class_bool>`                 | :ref:`visible<class_Spatial_property_visible>`                   | ``true``                                            |
++-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
 
 Methods
 -------
@@ -142,18 +149,6 @@ In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Spatial_constant_NOTIFIC
 
 - **NOTIFICATION_VISIBILITY_CHANGED** = **43** --- Spatial nodes receives this notification when their visibility changes.
 
-Description
------------
-
-Most basic 3D game object, with a 3D :ref:`Transform<class_Transform>` and visibility settings. All other 3D game objects inherit from Spatial. Use ``Spatial`` as a parent node to move, scale, rotate and show/hide children in a 3D project.
-
-Affine operations (rotate, scale, translate) happen in parent's local coordinate system, unless the ``Spatial`` object is set as top-level. Affine operations in this coordinate system correspond to direct affine operations on the ``Spatial``'s transform. The word local below refers to this coordinate system. The coordinate system that is attached to the ``Spatial`` object itself is referred to as object-local coordinate system.
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/introduction_to_3d`
-
 Property Descriptions
 ---------------------
 
@@ -206,7 +201,7 @@ Rotation part of the local transformation in radians, specified in terms of YXZ-
 - :ref:`Vector3<class_Vector3>` **rotation_degrees**
 
 +-----------+-----------------------------+
-| *Default* | Vector3( 0, 0, 0 )          |
+| *Default* | ``Vector3( 0, 0, 0 )``      |
 +-----------+-----------------------------+
 | *Setter*  | set_rotation_degrees(value) |
 +-----------+-----------------------------+
@@ -221,13 +216,13 @@ Rotation part of the local transformation in degrees, specified in terms of YXZ-
 
 - :ref:`Vector3<class_Vector3>` **scale**
 
-+-----------+--------------------+
-| *Default* | Vector3( 1, 1, 1 ) |
-+-----------+--------------------+
-| *Setter*  | set_scale(value)   |
-+-----------+--------------------+
-| *Getter*  | get_scale()        |
-+-----------+--------------------+
++-----------+------------------------+
+| *Default* | ``Vector3( 1, 1, 1 )`` |
++-----------+------------------------+
+| *Setter*  | set_scale(value)       |
++-----------+------------------------+
+| *Getter*  | get_scale()            |
++-----------+------------------------+
 
 Scale part of the local transformation.
 
@@ -237,13 +232,13 @@ Scale part of the local transformation.
 
 - :ref:`Transform<class_Transform>` **transform**
 
-+-----------+-------------------------------------------------+
-| *Default* | Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) |
-+-----------+-------------------------------------------------+
-| *Setter*  | set_transform(value)                            |
-+-----------+-------------------------------------------------+
-| *Getter*  | get_transform()                                 |
-+-----------+-------------------------------------------------+
++-----------+-----------------------------------------------------+
+| *Default* | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
++-----------+-----------------------------------------------------+
+| *Setter*  | set_transform(value)                                |
++-----------+-----------------------------------------------------+
+| *Getter*  | get_transform()                                     |
++-----------+-----------------------------------------------------+
 
 Local space :ref:`Transform<class_Transform>` of this node, with respect to the parent node.
 
@@ -254,7 +249,7 @@ Local space :ref:`Transform<class_Transform>` of this node, with respect to the 
 - :ref:`Vector3<class_Vector3>` **translation**
 
 +-----------+------------------------+
-| *Default* | Vector3( 0, 0, 0 )     |
+| *Default* | ``Vector3( 0, 0, 0 )`` |
 +-----------+------------------------+
 | *Setter*  | set_translation(value) |
 +-----------+------------------------+
@@ -270,7 +265,7 @@ Local translation of this node.
 - :ref:`bool<class_bool>` **visible**
 
 +-----------+--------------------+
-| *Default* | true               |
+| *Default* | ``true``           |
 +-----------+--------------------+
 | *Setter*  | set_visible(value) |
 +-----------+--------------------+

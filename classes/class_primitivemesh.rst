@@ -13,23 +13,23 @@ PrimitiveMesh
 
 **Inherited By:** :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`CubeMesh<class_CubeMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`PointMesh<class_PointMesh>`, :ref:`PrismMesh<class_PrismMesh>`, :ref:`QuadMesh<class_QuadMesh>`, :ref:`SphereMesh<class_SphereMesh>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh.
+
+Description
+-----------
+
+Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh. Examples include :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`CubeMesh<class_CubeMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`PrismMesh<class_PrismMesh>`, :ref:`QuadMesh<class_QuadMesh>`, and :ref:`SphereMesh<class_SphereMesh>`.
 
 Properties
 ----------
 
-+---------------------------------+--------------------------------------------------------------+--------------------------+
-| :ref:`AABB<class_AABB>`         | :ref:`custom_aabb<class_PrimitiveMesh_property_custom_aabb>` | AABB( 0, 0, 0, 0, 0, 0 ) |
-+---------------------------------+--------------------------------------------------------------+--------------------------+
-| :ref:`bool<class_bool>`         | :ref:`flip_faces<class_PrimitiveMesh_property_flip_faces>`   | false                    |
-+---------------------------------+--------------------------------------------------------------+--------------------------+
-| :ref:`Material<class_Material>` | :ref:`material<class_PrimitiveMesh_property_material>`       |                          |
-+---------------------------------+--------------------------------------------------------------+--------------------------+
++---------------------------------+--------------------------------------------------------------+------------------------------+
+| :ref:`AABB<class_AABB>`         | :ref:`custom_aabb<class_PrimitiveMesh_property_custom_aabb>` | ``AABB( 0, 0, 0, 0, 0, 0 )`` |
++---------------------------------+--------------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`flip_faces<class_PrimitiveMesh_property_flip_faces>`   | ``false``                    |
++---------------------------------+--------------------------------------------------------------+------------------------------+
+| :ref:`Material<class_Material>` | :ref:`material<class_PrimitiveMesh_property_material>`       |                              |
++---------------------------------+--------------------------------------------------------------+------------------------------+
 
 Methods
 -------
@@ -38,11 +38,6 @@ Methods
 | :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>` **(** **)** const |
 +---------------------------+--------------------------------------------------------------------------------------+
 
-Description
------------
-
-Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh. Examples include :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`CubeMesh<class_CubeMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`PrismMesh<class_PrismMesh>`, :ref:`QuadMesh<class_QuadMesh>`, and :ref:`SphereMesh<class_SphereMesh>`.
-
 Property Descriptions
 ---------------------
 
@@ -50,13 +45,13 @@ Property Descriptions
 
 - :ref:`AABB<class_AABB>` **custom_aabb**
 
-+-----------+--------------------------+
-| *Default* | AABB( 0, 0, 0, 0, 0, 0 ) |
-+-----------+--------------------------+
-| *Setter*  | set_custom_aabb(value)   |
-+-----------+--------------------------+
-| *Getter*  | get_custom_aabb()        |
-+-----------+--------------------------+
++-----------+------------------------------+
+| *Default* | ``AABB( 0, 0, 0, 0, 0, 0 )`` |
++-----------+------------------------------+
+| *Setter*  | set_custom_aabb(value)       |
++-----------+------------------------------+
+| *Getter*  | get_custom_aabb()            |
++-----------+------------------------------+
 
 Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frustum culling. Especially useful to avoid unnexpected culling when  using a shader to offset vertices.
 
@@ -67,7 +62,7 @@ Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frus
 - :ref:`bool<class_bool>` **flip_faces**
 
 +-----------+-----------------------+
-| *Default* | false                 |
+| *Default* | ``false``             |
 +-----------+-----------------------+
 | *Setter*  | set_flip_faces(value) |
 +-----------+-----------------------+

@@ -11,12 +11,12 @@ ResourceInteractiveLoader
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Interactive :ref:`Resource<class_Resource>` loader.
+
+Description
+-----------
+
+Interactive :ref:`Resource<class_Resource>` loader. This object is returned by :ref:`ResourceLoader<class_ResourceLoader>` when performing an interactive load. It allows loading resources with high granularity, which makes it mainly useful for displaying loading bars or percentages.
 
 Methods
 -------
@@ -32,11 +32,6 @@ Methods
 +---------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_ResourceInteractiveLoader_method_wait>` **(** **)**                             |
 +---------------------------------------+--------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Interactive :ref:`Resource<class_Resource>` loader. This object is returned by :ref:`ResourceLoader<class_ResourceLoader>` when performing an interactive load. It allows loading resources with high granularity, which makes it mainly useful for displaying loading bars or percentages.
 
 Method Descriptions
 -------------------

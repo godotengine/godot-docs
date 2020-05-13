@@ -13,12 +13,12 @@ Physics2DServer
 
 **Inherited By:** :ref:`Physics2DServerSW<class_Physics2DServerSW>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Server interface for low-level 2D physics access.
+
+Description
+-----------
+
+Physics2DServer is the server responsible for all 2D physics. It can create many kinds of physics objects, but does not insert them on the node tree.
 
 Methods
 -------
@@ -563,11 +563,6 @@ enum **ProcessInfo**:
 - **INFO_COLLISION_PAIRS** = **1** --- Constant to get the number of possible collisions.
 
 - **INFO_ISLAND_COUNT** = **2** --- Constant to get the number of space regions where a collision could occur.
-
-Description
------------
-
-Physics2DServer is the server responsible for all 2D physics. It can create many kinds of physics objects, but does not insert them on the node tree.
 
 Method Descriptions
 -------------------

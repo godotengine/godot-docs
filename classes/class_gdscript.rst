@@ -11,21 +11,7 @@ GDScript
 
 **Inherits:** :ref:`Script<class_Script>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A script implemented in the GDScript programming language.
-
-Methods
--------
-
-+-------------------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_as_byte_code<class_GDScript_method_get_as_byte_code>` **(** **)** const |
-+-------------------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`             | :ref:`new<class_GDScript_method_new>` **(** ... **)** vararg                      |
-+-------------------------------------------+-----------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -38,6 +24,15 @@ Tutorials
 ---------
 
 - :doc:`../getting_started/scripting/gdscript/index`
+
+Methods
+-------
+
++-------------------------------------------+-----------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_as_byte_code<class_GDScript_method_get_as_byte_code>` **(** **)** const |
++-------------------------------------------+-----------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`             | :ref:`new<class_GDScript_method_new>` **(** ... **)** vararg                      |
++-------------------------------------------+-----------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------

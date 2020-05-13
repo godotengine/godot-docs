@@ -11,12 +11,40 @@ ConfigFile
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Helper class to handle INI-style files.
+
+Description
+-----------
+
+This helper class can be used to store :ref:`Variant<class_Variant>` values on the filesystem using INI-style formatting. The stored values are identified by a section and a key:
+
+::
+
+    [section]
+    some_key=42
+    string_example="Hello World!"
+    a_vector=Vector3( 1, 0, 2 )
+
+The stored data can be saved to or parsed from a file, though ConfigFile objects can also be used directly without accessing the filesystem.
+
+The following example shows how to parse an INI-style file from the system, read its contents and store new values in it:
+
+::
+
+    var config = ConfigFile.new()
+    var err = config.load("user://settings.cfg")
+    if err == OK: # If not, something went wrong with the file loading
+        # Look for the display/width pair, and default to 1024 if missing
+        var screen_width = config.get_value("display", "width", 1024)
+        # Store a variable if and only if it hasn't been defined yet
+        if not config.has_section_key("audio", "mute"):
+            config.set_value("audio", "mute", false)
+        # Save the changes by overwriting the previous file
+        config.save("user://settings.cfg")
+
+Keep in mind that section and property names can't contain spaces. Anything after a space will be ignored on save and on load.
+
+ConfigFiles can also contain manually written comment lines starting with a semicolon (``;``). Those lines will be ignored when parsing the file. Note that comments will be lost when saving the ConfigFile. This can still be useful for dedicated server configuration files, which are typically never overwritten without explicit user action.
 
 Methods
 -------
@@ -50,37 +78,6 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`set_value<class_ConfigFile_method_set_value>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` value **)**              |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-This helper class can be used to store :ref:`Variant<class_Variant>` values on the filesystem using INI-style formatting. The stored values are identified by a section and a key:
-
-::
-
-    [section]
-    some_key=42
-    string_example="Hello World!"
-    a_vector=Vector3( 1, 0, 2 )
-
-The stored data can be saved to or parsed from a file, though ConfigFile objects can also be used directly without accessing the filesystem.
-
-The following example shows how to parse an INI-style file from the system, read its contents and store new values in it:
-
-::
-
-    var config = ConfigFile.new()
-    var err = config.load("user://settings.cfg")
-    if err == OK: # If not, something went wrong with the file loading
-        # Look for the display/width pair, and default to 1024 if missing
-        var screen_width = config.get_value("display", "width", 1024)
-        # Store a variable if and only if it hasn't been defined yet
-        if not config.has_section_key("audio", "mute"):
-            config.set_value("audio", "mute", false)
-        # Save the changes by overwriting the previous file
-        config.save("user://settings.cfg")
-
-Keep in mind that section and property names can't contain spaces. Anything after a space will be ignored on save and on load.
 
 Method Descriptions
 -------------------

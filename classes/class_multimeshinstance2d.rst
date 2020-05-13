@@ -11,12 +11,14 @@ MultiMeshInstance2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Node that instances a :ref:`MultiMesh<class_MultiMesh>` in 2D.
+
+Description
+-----------
+
+``MultiMeshInstance2D`` is a specialized node to instance a :ref:`MultiMesh<class_MultiMesh>` resource in 2D.
+
+Usage is the same as :ref:`MultiMeshInstance<class_MultiMeshInstance>`.
 
 Properties
 ----------
@@ -36,12 +38,7 @@ Signals
 
 - **texture_changed** **(** **)**
 
-Description
------------
-
-``MultiMeshInstance2D`` is a specialized node to instance a :ref:`MultiMesh<class_MultiMesh>` resource in 2D.
-
-Usage is the same as :ref:`MultiMeshInstance<class_MultiMeshInstance>`.
+Emitted when the :ref:`texture<class_MultiMeshInstance2D_property_texture>` is changed.
 
 Property Descriptions
 ---------------------

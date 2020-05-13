@@ -11,19 +11,24 @@ StreamPeerSSL
 
 **Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 SSL stream peer.
+
+Description
+-----------
+
+SSL stream peer. This object can be used to connect to an SSL server or accept a single SSL client connection.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/networking/ssl_certificates`
 
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------------------+------+
-| :ref:`bool<class_bool>` | :ref:`blocking_handshake<class_StreamPeerSSL_property_blocking_handshake>` | true |
-+-------------------------+----------------------------------------------------------------------------+------+
++-------------------------+----------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>` | :ref:`blocking_handshake<class_StreamPeerSSL_property_blocking_handshake>` | ``true`` |
++-------------------------+----------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -67,16 +72,6 @@ enum **Status**:
 
 - **STATUS_ERROR_HOSTNAME_MISMATCH** = **4** --- An error status that shows a mismatch in the SSL certificate domain presented by the host and the domain requested for validation.
 
-Description
------------
-
-SSL stream peer. This object can be used to connect to an SSL server or accept a single SSL client connection.
-
-Tutorials
----------
-
-- :doc:`../tutorials/networking/ssl_certificates`
-
 Property Descriptions
 ---------------------
 
@@ -85,7 +80,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **blocking_handshake**
 
 +-----------+---------------------------------------+
-| *Default* | true                                  |
+| *Default* | ``true``                              |
 +-----------+---------------------------------------+
 | *Setter*  | set_blocking_handshake_enabled(value) |
 +-----------+---------------------------------------+
@@ -108,6 +103,8 @@ Accepts a peer connection as a server using the given ``private_key`` and provid
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_to_stream** **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_String>` for_hostname="", :ref:`X509Certificate<class_X509Certificate>` valid_certificate=null **)**
 
 Connects to a peer using an underlying :ref:`StreamPeer<class_StreamPeer>` ``stream``. If ``validate_certs`` is ``true``, ``StreamPeerSSL`` will validate that the certificate presented by the peer matches the ``for_hostname``.
+
+**Note:** Specifying a custom ``valid_certificate`` is not supported in HTML5 exports due to browsers restrictions.
 
 ----
 

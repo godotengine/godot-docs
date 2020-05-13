@@ -11,23 +11,23 @@ DynamicFontData
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a font file.
+
+Description
+-----------
+
+Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a vector font file for dynamic rendering at runtime.
 
 Properties
 ----------
 
-+----------------------------------------------+----------------------------------------------------------------+------+
-| :ref:`bool<class_bool>`                      | :ref:`antialiased<class_DynamicFontData_property_antialiased>` | true |
-+----------------------------------------------+----------------------------------------------------------------+------+
-| :ref:`String<class_String>`                  | :ref:`font_path<class_DynamicFontData_property_font_path>`     | ""   |
-+----------------------------------------------+----------------------------------------------------------------+------+
-| :ref:`Hinting<enum_DynamicFontData_Hinting>` | :ref:`hinting<class_DynamicFontData_property_hinting>`         | 2    |
-+----------------------------------------------+----------------------------------------------------------------+------+
++----------------------------------------------+----------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`antialiased<class_DynamicFontData_property_antialiased>` | ``true`` |
++----------------------------------------------+----------------------------------------------------------------+----------+
+| :ref:`String<class_String>`                  | :ref:`font_path<class_DynamicFontData_property_font_path>`     | ``""``   |
++----------------------------------------------+----------------------------------------------------------------+----------+
+| :ref:`Hinting<enum_DynamicFontData_Hinting>` | :ref:`hinting<class_DynamicFontData_property_hinting>`         | ``2``    |
++----------------------------------------------+----------------------------------------------------------------+----------+
 
 Enumerations
 ------------
@@ -48,11 +48,6 @@ enum **Hinting**:
 
 - **HINTING_NORMAL** = **2** --- Use the default font hinting mode (crisper but less smooth).
 
-Description
------------
-
-Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a vector font file for dynamic rendering at runtime.
-
 Property Descriptions
 ---------------------
 
@@ -61,14 +56,14 @@ Property Descriptions
 - :ref:`bool<class_bool>` **antialiased**
 
 +-----------+------------------------+
-| *Default* | true                   |
+| *Default* | ``true``               |
 +-----------+------------------------+
 | *Setter*  | set_antialiased(value) |
 +-----------+------------------------+
 | *Getter*  | is_antialiased()       |
 +-----------+------------------------+
 
-Controls whether the font should be rendered with anti-aliasing.
+If ``true``, the font is rendered with anti-aliasing.
 
 ----
 
@@ -77,7 +72,7 @@ Controls whether the font should be rendered with anti-aliasing.
 - :ref:`String<class_String>` **font_path**
 
 +-----------+----------------------+
-| *Default* | ""                   |
+| *Default* | ``""``               |
 +-----------+----------------------+
 | *Setter*  | set_font_path(value) |
 +-----------+----------------------+
@@ -93,12 +88,12 @@ The path to the vector font file.
 - :ref:`Hinting<enum_DynamicFontData_Hinting>` **hinting**
 
 +-----------+--------------------+
-| *Default* | 2                  |
+| *Default* | ``2``              |
 +-----------+--------------------+
 | *Setter*  | set_hinting(value) |
 +-----------+--------------------+
 | *Getter*  | get_hinting()      |
 +-----------+--------------------+
 
-The font hinting mode used by FreeType.
+The font hinting mode used by FreeType. See :ref:`Hinting<enum_DynamicFontData_Hinting>` for options.
 

@@ -11,21 +11,21 @@ ARVRServer
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 The AR/VR server.
+
+Description
+-----------
+
+The AR/VR server is the heart of our AR/VR solution and handles all the processing.
 
 Properties
 ----------
 
-+-------------------------------------------+-----------------------------------------------------------------------+-----+
-| :ref:`ARVRInterface<class_ARVRInterface>` | :ref:`primary_interface<class_ARVRServer_property_primary_interface>` |     |
-+-------------------------------------------+-----------------------------------------------------------------------+-----+
-| :ref:`float<class_float>`                 | :ref:`world_scale<class_ARVRServer_property_world_scale>`             | 1.0 |
-+-------------------------------------------+-----------------------------------------------------------------------+-----+
++-------------------------------------------+-----------------------------------------------------------------------+---------+
+| :ref:`ARVRInterface<class_ARVRInterface>` | :ref:`primary_interface<class_ARVRServer_property_primary_interface>` |         |
++-------------------------------------------+-----------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`                 | :ref:`world_scale<class_ARVRServer_property_world_scale>`             | ``1.0`` |
++-------------------------------------------+-----------------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -138,11 +138,6 @@ enum **RotationMode**:
 
 - **DONT_RESET_ROTATION** = **2** --- Does not reset the orientation of the HMD, only the position of the player gets centered.
 
-Description
------------
-
-The AR/VR server is the heart of our AR/VR solution and handles all the processing.
-
 Property Descriptions
 ---------------------
 
@@ -163,7 +158,7 @@ Property Descriptions
 - :ref:`float<class_float>` **world_scale**
 
 +-----------+------------------------+
-| *Default* | 1.0                    |
+| *Default* | ``1.0``                |
 +-----------+------------------------+
 | *Setter*  | set_world_scale(value) |
 +-----------+------------------------+

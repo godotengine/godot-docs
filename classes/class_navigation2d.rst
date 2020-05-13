@@ -11,12 +11,12 @@ Navigation2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 2D navigation and pathfinding node.
+
+Description
+-----------
+
+Navigation2D provides navigation and pathfinding within a 2D area, specified as a collection of :ref:`NavigationPolygon<class_NavigationPolygon>` resources. By default, these are automatically collected from child :ref:`NavigationPolygonInstance<class_NavigationPolygonInstance>` nodes, but they can also be added on the fly with :ref:`navpoly_add<class_Navigation2D_method_navpoly_add>`.
 
 Methods
 -------
@@ -34,11 +34,6 @@ Methods
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`navpoly_set_transform<class_Navigation2D_method_navpoly_set_transform>` **(** :ref:`int<class_int>` id, :ref:`Transform2D<class_Transform2D>` xform **)**                                                   |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Navigation2D provides navigation and pathfinding within a 2D area, specified as a collection of :ref:`NavigationPolygon<class_NavigationPolygon>` resources. By default, these are automatically collected from child :ref:`NavigationPolygonInstance<class_NavigationPolygonInstance>` nodes, but they can also be added on the fly with :ref:`navpoly_add<class_Navigation2D_method_navpoly_add>`.
 
 Method Descriptions
 -------------------

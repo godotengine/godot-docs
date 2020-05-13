@@ -11,25 +11,7 @@ EditorScript
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base script that can be used to add extension functions to the editor.
-
-Methods
--------
-
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`_run<class_EditorScript_method__run>` **(** **)** virtual                                        |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`add_root_node<class_EditorScript_method_add_root_node>` **(** :ref:`Node<class_Node>` node **)** |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`EditorInterface<class_EditorInterface>` | :ref:`get_editor_interface<class_EditorScript_method_get_editor_interface>` **(** **)**                |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`                       | :ref:`get_scene<class_EditorScript_method_get_scene>` **(** **)**                                      |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -49,6 +31,19 @@ Scripts extending this class and implementing its :ref:`_run<class_EditorScript_
         print("Hello from the Godot Editor!")
 
 **Note:** The script is run in the Editor context, which means the output is visible in the console window started with the Editor (stdout) instead of the usual Godot **Output** dock.
+
+Methods
+-------
+
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`_run<class_EditorScript_method__run>` **(** **)** virtual                                        |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`add_root_node<class_EditorScript_method_add_root_node>` **(** :ref:`Node<class_Node>` node **)** |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`EditorInterface<class_EditorInterface>` | :ref:`get_editor_interface<class_EditorScript_method_get_editor_interface>` **(** **)**                |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_Node>`                       | :ref:`get_scene<class_EditorScript_method_get_scene>` **(** **)**                                      |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------

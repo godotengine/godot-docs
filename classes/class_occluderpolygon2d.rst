@@ -11,23 +11,23 @@ OccluderPolygon2D
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Defines a 2D polygon for LightOccluder2D.
+
+Description
+-----------
+
+Editor facility that helps you draw a 2D polygon used as resource for :ref:`LightOccluder2D<class_LightOccluder2D>`.
 
 Properties
 ----------
 
-+--------------------------------------------------+--------------------------------------------------------------+----------------------+
-| :ref:`bool<class_bool>`                          | :ref:`closed<class_OccluderPolygon2D_property_closed>`       | true                 |
-+--------------------------------------------------+--------------------------------------------------------------+----------------------+
-| :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` | :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>` | 0                    |
-+--------------------------------------------------+--------------------------------------------------------------+----------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>`  | :ref:`polygon<class_OccluderPolygon2D_property_polygon>`     | PoolVector2Array(  ) |
-+--------------------------------------------------+--------------------------------------------------------------+----------------------+
++--------------------------------------------------+--------------------------------------------------------------+--------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`closed<class_OccluderPolygon2D_property_closed>`       | ``true``                 |
++--------------------------------------------------+--------------------------------------------------------------+--------------------------+
+| :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` | :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>` | ``0``                    |
++--------------------------------------------------+--------------------------------------------------------------+--------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>`  | :ref:`polygon<class_OccluderPolygon2D_property_polygon>`     | ``PoolVector2Array(  )`` |
++--------------------------------------------------+--------------------------------------------------------------+--------------------------+
 
 Enumerations
 ------------
@@ -48,11 +48,6 @@ enum **CullMode**:
 
 - **CULL_COUNTER_CLOCKWISE** = **2** --- Culling is performed in the counterclockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
 
-Description
------------
-
-Editor facility that helps you draw a 2D polygon used as resource for :ref:`LightOccluder2D<class_LightOccluder2D>`.
-
 Property Descriptions
 ---------------------
 
@@ -61,7 +56,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **closed**
 
 +-----------+-------------------+
-| *Default* | true              |
+| *Default* | ``true``          |
 +-----------+-------------------+
 | *Setter*  | set_closed(value) |
 +-----------+-------------------+
@@ -77,7 +72,7 @@ If ``true``, closes the polygon. A closed OccluderPolygon2D occludes the light c
 - :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` **cull_mode**
 
 +-----------+----------------------+
-| *Default* | 0                    |
+| *Default* | ``0``                |
 +-----------+----------------------+
 | *Setter*  | set_cull_mode(value) |
 +-----------+----------------------+
@@ -92,13 +87,13 @@ The culling mode to use.
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
 
-+-----------+----------------------+
-| *Default* | PoolVector2Array(  ) |
-+-----------+----------------------+
-| *Setter*  | set_polygon(value)   |
-+-----------+----------------------+
-| *Getter*  | get_polygon()        |
-+-----------+----------------------+
++-----------+--------------------------+
+| *Default* | ``PoolVector2Array(  )`` |
++-----------+--------------------------+
+| *Setter*  | set_polygon(value)       |
++-----------+--------------------------+
+| *Getter*  | get_polygon()            |
++-----------+--------------------------+
 
 A :ref:`Vector2<class_Vector2>` array with the index for polygon's vertices positions.
 

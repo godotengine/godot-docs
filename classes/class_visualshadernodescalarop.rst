@@ -11,21 +11,16 @@ VisualShaderNodeScalarOp
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+---------------------------------------------------------+-------------------------------------------------------------------+---------------------------+
-| :ref:`Array<class_Array>`                               | default_input_values                                              | **O:** [ 0, 0.0, 1, 0.0 ] |
-+---------------------------------------------------------+-------------------------------------------------------------------+---------------------------+
-| :ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` | :ref:`operator<class_VisualShaderNodeScalarOp_property_operator>` | 0                         |
-+---------------------------------------------------------+-------------------------------------------------------------------+---------------------------+
++---------------------------------------------------------+-------------------------------------------------------------------+-------------------------------+
+| :ref:`Array<class_Array>`                               | default_input_values                                              | **O:** ``[ 0, 0.0, 1, 0.0 ]`` |
++---------------------------------------------------------+-------------------------------------------------------------------+-------------------------------+
+| :ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` | :ref:`operator<class_VisualShaderNodeScalarOp_property_operator>` | ``0``                         |
++---------------------------------------------------------+-------------------------------------------------------------------+-------------------------------+
 
 Enumerations
 ------------
@@ -82,7 +77,7 @@ Property Descriptions
 - :ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` **operator**
 
 +-----------+---------------------+
-| *Default* | 0                   |
+| *Default* | ``0``               |
 +-----------+---------------------+
 | *Setter*  | set_operator(value) |
 +-----------+---------------------+

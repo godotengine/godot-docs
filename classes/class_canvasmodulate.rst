@@ -11,24 +11,19 @@ CanvasModulate
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Tint the entire canvas.
-
-Properties
-----------
-
-+---------------------------+---------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_CanvasModulate_property_color>` | Color( 1, 1, 1, 1 ) |
-+---------------------------+---------------------------------------------------+---------------------+
 
 Description
 -----------
 
 ``CanvasModulate`` tints the canvas elements using its assigned :ref:`color<class_CanvasModulate_property_color>`.
+
+Properties
+----------
+
++---------------------------+---------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_CanvasModulate_property_color>` | ``Color( 1, 1, 1, 1 )`` |
++---------------------------+---------------------------------------------------+-------------------------+
 
 Property Descriptions
 ---------------------
@@ -37,13 +32,13 @@ Property Descriptions
 
 - :ref:`Color<class_Color>` **color**
 
-+-----------+---------------------+
-| *Default* | Color( 1, 1, 1, 1 ) |
-+-----------+---------------------+
-| *Setter*  | set_color(value)    |
-+-----------+---------------------+
-| *Getter*  | get_color()         |
-+-----------+---------------------+
++-----------+-------------------------+
+| *Default* | ``Color( 1, 1, 1, 1 )`` |
++-----------+-------------------------+
+| *Setter*  | set_color(value)        |
++-----------+-------------------------+
+| *Getter*  | get_color()             |
++-----------+-------------------------+
 
 The tint color to apply.
 

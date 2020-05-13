@@ -11,12 +11,12 @@ EditorSelection
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Manages the SceneTree selection in the editor.
+
+Description
+-----------
+
+This object manages the SceneTree selection in the editor.
 
 Methods
 -------
@@ -41,11 +41,6 @@ Signals
 - **selection_changed** **(** **)**
 
 Emitted when the selection changes.
-
-Description
------------
-
-This object manages the SceneTree selection in the editor.
 
 Method Descriptions
 -------------------

@@ -11,23 +11,23 @@ PinJoint
 
 **Inherits:** :ref:`Joint<class_Joint>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Pin joint for 3D shapes.
+
+Description
+-----------
+
+Pin joint for 3D rigid bodies. It pins 2 bodies (rigid or static) together.
 
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`params/bias<class_PinJoint_property_params/bias>`                   | 0.3 |
-+---------------------------+---------------------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`params/damping<class_PinJoint_property_params/damping>`             | 1.0 |
-+---------------------------+---------------------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`params/impulse_clamp<class_PinJoint_property_params/impulse_clamp>` | 0.0 |
-+---------------------------+---------------------------------------------------------------------------+-----+
++---------------------------+---------------------------------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`params/bias<class_PinJoint_property_params/bias>`                   | ``0.3`` |
++---------------------------+---------------------------------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`params/damping<class_PinJoint_property_params/damping>`             | ``1.0`` |
++---------------------------+---------------------------------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`params/impulse_clamp<class_PinJoint_property_params/impulse_clamp>` | ``0.0`` |
++---------------------------+---------------------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -57,11 +57,6 @@ enum **Param**:
 
 - **PARAM_IMPULSE_CLAMP** = **2** --- If above 0, this value is the maximum value for an impulse that this Joint produces.
 
-Description
------------
-
-Pin joint for 3D rigid bodies. It pins 2 bodies (rigid or static) together.
-
 Property Descriptions
 ---------------------
 
@@ -70,7 +65,7 @@ Property Descriptions
 - :ref:`float<class_float>` **params/bias**
 
 +-----------+------------------+
-| *Default* | 0.3              |
+| *Default* | ``0.3``          |
 +-----------+------------------+
 | *Setter*  | set_param(value) |
 +-----------+------------------+
@@ -86,7 +81,7 @@ The force with which the pinned objects stay in positional relation to each othe
 - :ref:`float<class_float>` **params/damping**
 
 +-----------+------------------+
-| *Default* | 1.0              |
+| *Default* | ``1.0``          |
 +-----------+------------------+
 | *Setter*  | set_param(value) |
 +-----------+------------------+
@@ -102,7 +97,7 @@ The force with which the pinned objects stay in velocity relation to each other.
 - :ref:`float<class_float>` **params/impulse_clamp**
 
 +-----------+------------------+
-| *Default* | 0.0              |
+| *Default* | ``0.0``          |
 +-----------+------------------+
 | *Setter*  | set_param(value) |
 +-----------+------------------+

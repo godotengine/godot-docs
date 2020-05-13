@@ -13,43 +13,43 @@ SpriteBase3D
 
 **Inherited By:** :ref:`AnimatedSprite3D<class_AnimatedSprite3D>`, :ref:`Sprite3D<class_Sprite3D>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 2D sprite node in 3D environment.
+
+Description
+-----------
+
+A node that displays 2D texture information in a 3D environment.
 
 Properties
 ----------
 
-+----------------------------------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>`      | :ref:`alpha_cut<class_SpriteBase3D_property_alpha_cut>`       | 0                   |
-+----------------------------------------------------------+---------------------------------------------------------------+---------------------+
-| Vector3.Axis                                             | :ref:`axis<class_SpriteBase3D_property_axis>`                 | 2                   |
-+----------------------------------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`BillboardMode<enum_SpatialMaterial_BillboardMode>` | :ref:`billboard<class_SpriteBase3D_property_billboard>`       | 0                   |
-+----------------------------------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`centered<class_SpriteBase3D_property_centered>`         | true                |
-+----------------------------------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`double_sided<class_SpriteBase3D_property_double_sided>` | true                |
-+----------------------------------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`flip_h<class_SpriteBase3D_property_flip_h>`             | false               |
-+----------------------------------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`flip_v<class_SpriteBase3D_property_flip_v>`             | false               |
-+----------------------------------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>`                                | :ref:`modulate<class_SpriteBase3D_property_modulate>`         | Color( 1, 1, 1, 1 ) |
-+----------------------------------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>`                            | :ref:`offset<class_SpriteBase3D_property_offset>`             | Vector2( 0, 0 )     |
-+----------------------------------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                                | :ref:`opacity<class_SpriteBase3D_property_opacity>`           | 1.0                 |
-+----------------------------------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                                | :ref:`pixel_size<class_SpriteBase3D_property_pixel_size>`     | 0.01                |
-+----------------------------------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`shaded<class_SpriteBase3D_property_shaded>`             | false               |
-+----------------------------------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`transparent<class_SpriteBase3D_property_transparent>`   | true                |
-+----------------------------------------------------------+---------------------------------------------------------------+---------------------+
++----------------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>`      | :ref:`alpha_cut<class_SpriteBase3D_property_alpha_cut>`       | ``0``                   |
++----------------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| Vector3.Axis                                             | :ref:`axis<class_SpriteBase3D_property_axis>`                 | ``2``                   |
++----------------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`BillboardMode<enum_SpatialMaterial_BillboardMode>` | :ref:`billboard<class_SpriteBase3D_property_billboard>`       | ``0``                   |
++----------------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                                  | :ref:`centered<class_SpriteBase3D_property_centered>`         | ``true``                |
++----------------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                                  | :ref:`double_sided<class_SpriteBase3D_property_double_sided>` | ``true``                |
++----------------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                                  | :ref:`flip_h<class_SpriteBase3D_property_flip_h>`             | ``false``               |
++----------------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                                  | :ref:`flip_v<class_SpriteBase3D_property_flip_v>`             | ``false``               |
++----------------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>`                                | :ref:`modulate<class_SpriteBase3D_property_modulate>`         | ``Color( 1, 1, 1, 1 )`` |
++----------------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`Vector2<class_Vector2>`                            | :ref:`offset<class_SpriteBase3D_property_offset>`             | ``Vector2( 0, 0 )``     |
++----------------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                                | :ref:`opacity<class_SpriteBase3D_property_opacity>`           | ``1.0``                 |
++----------------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                                | :ref:`pixel_size<class_SpriteBase3D_property_pixel_size>`     | ``0.01``                |
++----------------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                                  | :ref:`shaded<class_SpriteBase3D_property_shaded>`             | ``false``               |
++----------------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                                  | :ref:`transparent<class_SpriteBase3D_property_transparent>`   | ``true``                |
++----------------------------------------------------------+---------------------------------------------------------------+-------------------------+
 
 Methods
 -------
@@ -105,11 +105,6 @@ enum **AlphaCutMode**:
 
 - **ALPHA_CUT_OPAQUE_PREPASS** = **2**
 
-Description
------------
-
-A node that displays 2D texture information in a 3D environment.
-
 Property Descriptions
 ---------------------
 
@@ -118,7 +113,7 @@ Property Descriptions
 - :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>` **alpha_cut**
 
 +-----------+---------------------------+
-| *Default* | 0                         |
+| *Default* | ``0``                     |
 +-----------+---------------------------+
 | *Setter*  | set_alpha_cut_mode(value) |
 +-----------+---------------------------+
@@ -132,7 +127,7 @@ Property Descriptions
 - Vector3.Axis **axis**
 
 +-----------+-----------------+
-| *Default* | 2               |
+| *Default* | ``2``           |
 +-----------+-----------------+
 | *Setter*  | set_axis(value) |
 +-----------+-----------------+
@@ -148,7 +143,7 @@ The direction in which the front of the texture faces.
 - :ref:`BillboardMode<enum_SpatialMaterial_BillboardMode>` **billboard**
 
 +-----------+---------------------------+
-| *Default* | 0                         |
+| *Default* | ``0``                     |
 +-----------+---------------------------+
 | *Setter*  | set_billboard_mode(value) |
 +-----------+---------------------------+
@@ -162,7 +157,7 @@ The direction in which the front of the texture faces.
 - :ref:`bool<class_bool>` **centered**
 
 +-----------+---------------------+
-| *Default* | true                |
+| *Default* | ``true``            |
 +-----------+---------------------+
 | *Setter*  | set_centered(value) |
 +-----------+---------------------+
@@ -178,7 +173,7 @@ If ``true``, texture will be centered.
 - :ref:`bool<class_bool>` **double_sided**
 
 +-----------+----------------------+
-| *Default* | true                 |
+| *Default* | ``true``             |
 +-----------+----------------------+
 | *Setter*  | set_draw_flag(value) |
 +-----------+----------------------+
@@ -194,7 +189,7 @@ If ``true``, texture can be seen from the back as well, if ``false``, it is invi
 - :ref:`bool<class_bool>` **flip_h**
 
 +-----------+-------------------+
-| *Default* | false             |
+| *Default* | ``false``         |
 +-----------+-------------------+
 | *Setter*  | set_flip_h(value) |
 +-----------+-------------------+
@@ -210,7 +205,7 @@ If ``true``, texture is flipped horizontally.
 - :ref:`bool<class_bool>` **flip_v**
 
 +-----------+-------------------+
-| *Default* | false             |
+| *Default* | ``false``         |
 +-----------+-------------------+
 | *Setter*  | set_flip_v(value) |
 +-----------+-------------------+
@@ -225,13 +220,13 @@ If ``true``, texture is flipped vertically.
 
 - :ref:`Color<class_Color>` **modulate**
 
-+-----------+---------------------+
-| *Default* | Color( 1, 1, 1, 1 ) |
-+-----------+---------------------+
-| *Setter*  | set_modulate(value) |
-+-----------+---------------------+
-| *Getter*  | get_modulate()      |
-+-----------+---------------------+
++-----------+-------------------------+
+| *Default* | ``Color( 1, 1, 1, 1 )`` |
++-----------+-------------------------+
+| *Setter*  | set_modulate(value)     |
++-----------+-------------------------+
+| *Getter*  | get_modulate()          |
++-----------+-------------------------+
 
 A color value that gets multiplied on, could be used for mood-coloring or to simulate the color of light.
 
@@ -241,13 +236,13 @@ A color value that gets multiplied on, could be used for mood-coloring or to sim
 
 - :ref:`Vector2<class_Vector2>` **offset**
 
-+-----------+-------------------+
-| *Default* | Vector2( 0, 0 )   |
-+-----------+-------------------+
-| *Setter*  | set_offset(value) |
-+-----------+-------------------+
-| *Getter*  | get_offset()      |
-+-----------+-------------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 0, 0 )`` |
++-----------+---------------------+
+| *Setter*  | set_offset(value)   |
++-----------+---------------------+
+| *Getter*  | get_offset()        |
++-----------+---------------------+
 
 The texture's drawing offset.
 
@@ -258,7 +253,7 @@ The texture's drawing offset.
 - :ref:`float<class_float>` **opacity**
 
 +-----------+--------------------+
-| *Default* | 1.0                |
+| *Default* | ``1.0``            |
 +-----------+--------------------+
 | *Setter*  | set_opacity(value) |
 +-----------+--------------------+
@@ -274,7 +269,7 @@ The objects visibility on a scale from ``0`` fully invisible to ``1`` fully visi
 - :ref:`float<class_float>` **pixel_size**
 
 +-----------+-----------------------+
-| *Default* | 0.01                  |
+| *Default* | ``0.01``              |
 +-----------+-----------------------+
 | *Setter*  | set_pixel_size(value) |
 +-----------+-----------------------+
@@ -290,7 +285,7 @@ The size of one pixel's width on the sprite to scale it in 3D.
 - :ref:`bool<class_bool>` **shaded**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_draw_flag(value) |
 +-----------+----------------------+
@@ -306,7 +301,7 @@ If ``true``, the :ref:`Light<class_Light>` in the :ref:`Environment<class_Enviro
 - :ref:`bool<class_bool>` **transparent**
 
 +-----------+----------------------+
-| *Default* | true                 |
+| *Default* | ``true``             |
 +-----------+----------------------+
 | *Setter*  | set_draw_flag(value) |
 +-----------+----------------------+

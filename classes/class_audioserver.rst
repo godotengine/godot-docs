@@ -11,25 +11,30 @@ AudioServer
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Server interface for low-level audio access.
+
+Description
+-----------
+
+AudioServer is a low-level server interface for audio access. It is in charge of creating sample data (playable audio) as well as its playback via a voice interface.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/audio/audio_buses`
 
 Properties
 ----------
 
-+-----------------------------+------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`       | :ref:`bus_count<class_AudioServer_property_bus_count>`                 | 1         |
-+-----------------------------+------------------------------------------------------------------------+-----------+
-| :ref:`String<class_String>` | :ref:`capture_device<class_AudioServer_property_capture_device>`       | ""        |
-+-----------------------------+------------------------------------------------------------------------+-----------+
-| :ref:`String<class_String>` | :ref:`device<class_AudioServer_property_device>`                       | "Default" |
-+-----------------------------+------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`   | :ref:`global_rate_scale<class_AudioServer_property_global_rate_scale>` | 1.0       |
-+-----------------------------+------------------------------------------------------------------------+-----------+
++-----------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`int<class_int>`       | :ref:`bus_count<class_AudioServer_property_bus_count>`                 | ``1``         |
++-----------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`String<class_String>` | :ref:`capture_device<class_AudioServer_property_capture_device>`       | ``""``        |
++-----------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`String<class_String>` | :ref:`device<class_AudioServer_property_device>`                       | ``"Default"`` |
++-----------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`   | :ref:`global_rate_scale<class_AudioServer_property_global_rate_scale>` | ``1.0``       |
++-----------------------------+------------------------------------------------------------------------+---------------+
 
 Methods
 -------
@@ -166,16 +171,6 @@ enum **SpeakerMode**:
 
 - **SPEAKER_SURROUND_71** = **3** --- A 7.1 channel surround setup was  detected.
 
-Description
------------
-
-AudioServer is a low-level server interface for audio access. It is in charge of creating sample data (playable audio) as well as its playback via a voice interface.
-
-Tutorials
----------
-
-- :doc:`../tutorials/audio/audio_buses`
-
 Property Descriptions
 ---------------------
 
@@ -184,7 +179,7 @@ Property Descriptions
 - :ref:`int<class_int>` **bus_count**
 
 +-----------+----------------------+
-| *Default* | 1                    |
+| *Default* | ``1``                |
 +-----------+----------------------+
 | *Setter*  | set_bus_count(value) |
 +-----------+----------------------+
@@ -200,7 +195,7 @@ Number of available audio buses.
 - :ref:`String<class_String>` **capture_device**
 
 +-----------+---------------------------+
-| *Default* | ""                        |
+| *Default* | ``""``                    |
 +-----------+---------------------------+
 | *Setter*  | capture_set_device(value) |
 +-----------+---------------------------+
@@ -216,7 +211,7 @@ Name of the current device for audio input (see :ref:`capture_get_device_list<cl
 - :ref:`String<class_String>` **device**
 
 +-----------+-------------------+
-| *Default* | "Default"         |
+| *Default* | ``"Default"``     |
 +-----------+-------------------+
 | *Setter*  | set_device(value) |
 +-----------+-------------------+
@@ -232,7 +227,7 @@ Name of the current device for audio output (see :ref:`get_device_list<class_Aud
 - :ref:`float<class_float>` **global_rate_scale**
 
 +-----------+------------------------------+
-| *Default* | 1.0                          |
+| *Default* | ``1.0``                      |
 +-----------+------------------------------+
 | *Setter*  | set_global_rate_scale(value) |
 +-----------+------------------------------+

@@ -11,12 +11,12 @@ PanoramaSky
 
 **Inherits:** :ref:`Sky<class_Sky>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A type of :ref:`Sky<class_Sky>` used to draw a background texture.
+
+Description
+-----------
+
+A resource referenced in an :ref:`Environment<class_Environment>` that is used to draw a background. The Panorama sky functions similar to skyboxes in other engines, except it uses an equirectangular sky map instead of a cube map.
 
 Properties
 ----------
@@ -24,11 +24,6 @@ Properties
 +-------------------------------+------------------------------------------------------+
 | :ref:`Texture<class_Texture>` | :ref:`panorama<class_PanoramaSky_property_panorama>` |
 +-------------------------------+------------------------------------------------------+
-
-Description
------------
-
-A resource referenced in an :ref:`Environment<class_Environment>` that is used to draw a background. The Panorama sky functions similar to skyboxes in other engines, except it uses an equirectangular sky map instead of a cube map.
 
 Property Descriptions
 ---------------------

@@ -11,35 +11,46 @@ GridMap
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Node for 3D tile-based maps.
+
+Description
+-----------
+
+GridMap lets you place meshes on a grid interactively. It works both from the editor and from scripts, which can help you create in-game level editors.
+
+GridMaps use a :ref:`MeshLibrary<class_MeshLibrary>` which contains a list of tiles. Each tile is a mesh with materials plus optional collision and navigation shapes.
+
+A GridMap contains a collection of cells. Each grid cell refers to a tile in the :ref:`MeshLibrary<class_MeshLibrary>`. All cells in the map have the same dimensions.
+
+Internally, a GridMap is split into a sparse collection of octants for efficient rendering and physics processing. Every octant has the same dimensions and can contain several cells.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/using_gridmaps`
 
 Properties
 ----------
 
-+---------------------------------------+------------------------------------------------------------------+--------------------+
-| :ref:`bool<class_bool>`               | :ref:`cell_center_x<class_GridMap_property_cell_center_x>`       | true               |
-+---------------------------------------+------------------------------------------------------------------+--------------------+
-| :ref:`bool<class_bool>`               | :ref:`cell_center_y<class_GridMap_property_cell_center_y>`       | true               |
-+---------------------------------------+------------------------------------------------------------------+--------------------+
-| :ref:`bool<class_bool>`               | :ref:`cell_center_z<class_GridMap_property_cell_center_z>`       | true               |
-+---------------------------------------+------------------------------------------------------------------+--------------------+
-| :ref:`int<class_int>`                 | :ref:`cell_octant_size<class_GridMap_property_cell_octant_size>` | 8                  |
-+---------------------------------------+------------------------------------------------------------------+--------------------+
-| :ref:`float<class_float>`             | :ref:`cell_scale<class_GridMap_property_cell_scale>`             | 1.0                |
-+---------------------------------------+------------------------------------------------------------------+--------------------+
-| :ref:`Vector3<class_Vector3>`         | :ref:`cell_size<class_GridMap_property_cell_size>`               | Vector3( 2, 2, 2 ) |
-+---------------------------------------+------------------------------------------------------------------+--------------------+
-| :ref:`int<class_int>`                 | :ref:`collision_layer<class_GridMap_property_collision_layer>`   | 1                  |
-+---------------------------------------+------------------------------------------------------------------+--------------------+
-| :ref:`int<class_int>`                 | :ref:`collision_mask<class_GridMap_property_collision_mask>`     | 1                  |
-+---------------------------------------+------------------------------------------------------------------+--------------------+
-| :ref:`MeshLibrary<class_MeshLibrary>` | :ref:`mesh_library<class_GridMap_property_mesh_library>`         |                    |
-+---------------------------------------+------------------------------------------------------------------+--------------------+
++---------------------------------------+------------------------------------------------------------------+------------------------+
+| :ref:`bool<class_bool>`               | :ref:`cell_center_x<class_GridMap_property_cell_center_x>`       | ``true``               |
++---------------------------------------+------------------------------------------------------------------+------------------------+
+| :ref:`bool<class_bool>`               | :ref:`cell_center_y<class_GridMap_property_cell_center_y>`       | ``true``               |
++---------------------------------------+------------------------------------------------------------------+------------------------+
+| :ref:`bool<class_bool>`               | :ref:`cell_center_z<class_GridMap_property_cell_center_z>`       | ``true``               |
++---------------------------------------+------------------------------------------------------------------+------------------------+
+| :ref:`int<class_int>`                 | :ref:`cell_octant_size<class_GridMap_property_cell_octant_size>` | ``8``                  |
++---------------------------------------+------------------------------------------------------------------+------------------------+
+| :ref:`float<class_float>`             | :ref:`cell_scale<class_GridMap_property_cell_scale>`             | ``1.0``                |
++---------------------------------------+------------------------------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>`         | :ref:`cell_size<class_GridMap_property_cell_size>`               | ``Vector3( 2, 2, 2 )`` |
++---------------------------------------+------------------------------------------------------------------+------------------------+
+| :ref:`int<class_int>`                 | :ref:`collision_layer<class_GridMap_property_collision_layer>`   | ``1``                  |
++---------------------------------------+------------------------------------------------------------------+------------------------+
+| :ref:`int<class_int>`                 | :ref:`collision_mask<class_GridMap_property_collision_mask>`     | ``1``                  |
++---------------------------------------+------------------------------------------------------------------+------------------------+
+| :ref:`MeshLibrary<class_MeshLibrary>` | :ref:`mesh_library<class_GridMap_property_mesh_library>`         |                        |
++---------------------------------------+------------------------------------------------------------------+------------------------+
 
 Methods
 -------
@@ -98,22 +109,6 @@ Constants
 
 - **INVALID_CELL_ITEM** = **-1** --- Invalid cell item that can be used in :ref:`set_cell_item<class_GridMap_method_set_cell_item>` to clear cells (or represent an empty cell in :ref:`get_cell_item<class_GridMap_method_get_cell_item>`).
 
-Description
------------
-
-GridMap lets you place meshes on a grid interactively. It works both from the editor and from scripts, which can help you create in-game level editors.
-
-GridMaps use a :ref:`MeshLibrary<class_MeshLibrary>` which contains a list of tiles. Each tile is a mesh with materials plus optional collision and navigation shapes.
-
-A GridMap contains a collection of cells. Each grid cell refers to a tile in the :ref:`MeshLibrary<class_MeshLibrary>`. All cells in the map have the same dimensions.
-
-Internally, a GridMap is split into a sparse collection of octants for efficient rendering and physics processing. Every octant has the same dimensions and can contain several cells.
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/using_gridmaps`
-
 Property Descriptions
 ---------------------
 
@@ -122,7 +117,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **cell_center_x**
 
 +-----------+---------------------+
-| *Default* | true                |
+| *Default* | ``true``            |
 +-----------+---------------------+
 | *Setter*  | set_center_x(value) |
 +-----------+---------------------+
@@ -138,7 +133,7 @@ If ``true``, grid items are centered on the X axis.
 - :ref:`bool<class_bool>` **cell_center_y**
 
 +-----------+---------------------+
-| *Default* | true                |
+| *Default* | ``true``            |
 +-----------+---------------------+
 | *Setter*  | set_center_y(value) |
 +-----------+---------------------+
@@ -154,7 +149,7 @@ If ``true``, grid items are centered on the Y axis.
 - :ref:`bool<class_bool>` **cell_center_z**
 
 +-----------+---------------------+
-| *Default* | true                |
+| *Default* | ``true``            |
 +-----------+---------------------+
 | *Setter*  | set_center_z(value) |
 +-----------+---------------------+
@@ -170,7 +165,7 @@ If ``true``, grid items are centered on the Z axis.
 - :ref:`int<class_int>` **cell_octant_size**
 
 +-----------+------------------------+
-| *Default* | 8                      |
+| *Default* | ``8``                  |
 +-----------+------------------------+
 | *Setter*  | set_octant_size(value) |
 +-----------+------------------------+
@@ -186,7 +181,7 @@ The size of each octant measured in number of cells. This applies to all three a
 - :ref:`float<class_float>` **cell_scale**
 
 +-----------+-----------------------+
-| *Default* | 1.0                   |
+| *Default* | ``1.0``               |
 +-----------+-----------------------+
 | *Setter*  | set_cell_scale(value) |
 +-----------+-----------------------+
@@ -203,13 +198,13 @@ This does not affect the size of the grid cells themselves, only the items in th
 
 - :ref:`Vector3<class_Vector3>` **cell_size**
 
-+-----------+----------------------+
-| *Default* | Vector3( 2, 2, 2 )   |
-+-----------+----------------------+
-| *Setter*  | set_cell_size(value) |
-+-----------+----------------------+
-| *Getter*  | get_cell_size()      |
-+-----------+----------------------+
++-----------+------------------------+
+| *Default* | ``Vector3( 2, 2, 2 )`` |
++-----------+------------------------+
+| *Setter*  | set_cell_size(value)   |
++-----------+------------------------+
+| *Getter*  | get_cell_size()        |
++-----------+------------------------+
 
 The dimensions of the grid's cells.
 
@@ -222,7 +217,7 @@ This does not affect the size of the meshes. See :ref:`cell_scale<class_GridMap_
 - :ref:`int<class_int>` **collision_layer**
 
 +-----------+----------------------------+
-| *Default* | 1                          |
+| *Default* | ``1``                      |
 +-----------+----------------------------+
 | *Setter*  | set_collision_layer(value) |
 +-----------+----------------------------+
@@ -240,7 +235,7 @@ GridMaps act as static bodies, meaning they aren't affected by gravity or other 
 - :ref:`int<class_int>` **collision_mask**
 
 +-----------+---------------------------+
-| *Default* | 1                         |
+| *Default* | ``1``                     |
 +-----------+---------------------------+
 | *Setter*  | set_collision_mask(value) |
 +-----------+---------------------------+

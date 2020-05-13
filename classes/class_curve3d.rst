@@ -11,21 +11,23 @@ Curve3D
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Describes a Bézier curve in 3D space.
+
+Description
+-----------
+
+This class describes a Bézier curve in 3D space. It is mainly used to give a shape to a :ref:`Path<class_Path>`, but can be manually sampled for other purposes.
+
+It keeps a cache of precalculated points along the curve, to speed up further calculations.
 
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`bake_interval<class_Curve3D_property_bake_interval>`         | 0.2  |
-+---------------------------+--------------------------------------------------------------------+------+
-| :ref:`bool<class_bool>`   | :ref:`up_vector_enabled<class_Curve3D_property_up_vector_enabled>` | true |
-+---------------------------+--------------------------------------------------------------------+------+
++---------------------------+--------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`bake_interval<class_Curve3D_property_bake_interval>`         | ``0.2``  |
++---------------------------+--------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`   | :ref:`up_vector_enabled<class_Curve3D_property_up_vector_enabled>` | ``true`` |
++---------------------------+--------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -78,13 +80,6 @@ Methods
 | :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`tessellate<class_Curve3D_method_tessellate>` **(** :ref:`int<class_int>` max_stages=5, :ref:`float<class_float>` tolerance_degrees=4 **)** const                                                                                               |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-This class describes a Bézier curve in 3D space. It is mainly used to give a shape to a :ref:`Path<class_Path>`, but can be manually sampled for other purposes.
-
-It keeps a cache of precalculated points along the curve, to speed up further calculations.
-
 Property Descriptions
 ---------------------
 
@@ -93,7 +88,7 @@ Property Descriptions
 - :ref:`float<class_float>` **bake_interval**
 
 +-----------+--------------------------+
-| *Default* | 0.2                      |
+| *Default* | ``0.2``                  |
 +-----------+--------------------------+
 | *Setter*  | set_bake_interval(value) |
 +-----------+--------------------------+
@@ -109,7 +104,7 @@ The distance in meters between two adjacent cached points. Changing it forces th
 - :ref:`bool<class_bool>` **up_vector_enabled**
 
 +-----------+------------------------------+
-| *Default* | true                         |
+| *Default* | ``true``                     |
 +-----------+------------------------------+
 | *Setter*  | set_up_vector_enabled(value) |
 +-----------+------------------------------+

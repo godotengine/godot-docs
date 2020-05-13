@@ -11,12 +11,12 @@ XMLParser
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Low-level class for creating parsers for `XML <https://en.wikipedia.org/wiki/XML>`_ files.
+
+Description
+-----------
+
+This class can serve as base to make custom XML parsers. Since XML is a very flexible standard, this interface is low-level so it can be applied to any possible schema.
 
 Methods
 -------
@@ -91,11 +91,6 @@ enum **NodeType**:
 - **NODE_CDATA** = **5** --- CDATA content
 
 - **NODE_UNKNOWN** = **6** --- Unknown node
-
-Description
------------
-
-This class can serve as base to make custom XML parsers. Since XML is a very flexible standard, this interface is low-level so it can be applied to any possible schema.
 
 Method Descriptions
 -------------------

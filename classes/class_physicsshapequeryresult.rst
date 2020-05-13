@@ -11,12 +11,12 @@ PhysicsShapeQueryResult
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Result of a 3D shape query in :ref:`PhysicsServer<class_PhysicsServer>`.
+
+Description
+-----------
+
+The result of a 3D shape query in :ref:`PhysicsServer<class_PhysicsServer>`. See also :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>`.
 
 Methods
 -------
@@ -32,11 +32,6 @@ Methods
 +-----------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`       | :ref:`get_result_rid<class_PhysicsShapeQueryResult_method_get_result_rid>` **(** :ref:`int<class_int>` idx **)** const                   |
 +-----------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-The result of a 3D shape query in :ref:`PhysicsServer<class_PhysicsServer>`. See also :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>`.
 
 Method Descriptions
 -------------------

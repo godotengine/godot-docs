@@ -13,21 +13,16 @@ VisualShaderNodeGroupBase
 
 **Inherited By:** :ref:`VisualShaderNodeExpression<class_VisualShaderNodeExpression>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------+-------------+
-| :ref:`Array<class_Array>` | default_input_values                                               | **O:** [  ] |
-+---------------------------+--------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`   | :ref:`editable<class_VisualShaderNodeGroupBase_property_editable>` | false       |
-+---------------------------+--------------------------------------------------------------------+-------------+
++---------------------------+--------------------------------------------------------------------+-----------------+
+| :ref:`Array<class_Array>` | default_input_values                                               | **O:** ``[  ]`` |
++---------------------------+--------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`   | :ref:`editable<class_VisualShaderNodeGroupBase_property_editable>` | ``false``       |
++---------------------------+--------------------------------------------------------------------+-----------------+
 
 Methods
 -------
@@ -92,7 +87,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **editable**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_editable(value) |
 +-----------+---------------------+

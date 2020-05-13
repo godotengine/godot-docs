@@ -11,41 +11,46 @@ ReflectionProbe
 
 **Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Captures its surroundings to create reflections.
+
+Description
+-----------
+
+Capture its surroundings as a dual parabolid image, and stores versions of it with increasing levels of blur to simulate different material roughnesses.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/reflection_probes`
 
 Properties
 ----------
 
-+----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                            | :ref:`box_projection<class_ReflectionProbe_property_box_projection>`                     | false               |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                              | :ref:`cull_mask<class_ReflectionProbe_property_cull_mask>`                               | 1048575             |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                            | :ref:`enable_shadows<class_ReflectionProbe_property_enable_shadows>`                     | false               |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector3<class_Vector3>`                      | :ref:`extents<class_ReflectionProbe_property_extents>`                                   | Vector3( 1, 1, 1 )  |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                          | :ref:`intensity<class_ReflectionProbe_property_intensity>`                               | 1.0                 |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>`                          | :ref:`interior_ambient_color<class_ReflectionProbe_property_interior_ambient_color>`     | Color( 0, 0, 0, 1 ) |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                          | :ref:`interior_ambient_contrib<class_ReflectionProbe_property_interior_ambient_contrib>` | 0.0                 |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                          | :ref:`interior_ambient_energy<class_ReflectionProbe_property_interior_ambient_energy>`   | 1.0                 |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                            | :ref:`interior_enable<class_ReflectionProbe_property_interior_enable>`                   | false               |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                          | :ref:`max_distance<class_ReflectionProbe_property_max_distance>`                         | 0.0                 |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector3<class_Vector3>`                      | :ref:`origin_offset<class_ReflectionProbe_property_origin_offset>`                       | Vector3( 0, 0, 0 )  |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
-| :ref:`UpdateMode<enum_ReflectionProbe_UpdateMode>` | :ref:`update_mode<class_ReflectionProbe_property_update_mode>`                           | 0                   |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
++----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                            | :ref:`box_projection<class_ReflectionProbe_property_box_projection>`                     | ``false``               |
++----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                              | :ref:`cull_mask<class_ReflectionProbe_property_cull_mask>`                               | ``1048575``             |
++----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                            | :ref:`enable_shadows<class_ReflectionProbe_property_enable_shadows>`                     | ``false``               |
++----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Vector3<class_Vector3>`                      | :ref:`extents<class_ReflectionProbe_property_extents>`                                   | ``Vector3( 1, 1, 1 )``  |
++----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                          | :ref:`intensity<class_ReflectionProbe_property_intensity>`                               | ``1.0``                 |
++----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>`                          | :ref:`interior_ambient_color<class_ReflectionProbe_property_interior_ambient_color>`     | ``Color( 0, 0, 0, 1 )`` |
++----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                          | :ref:`interior_ambient_contrib<class_ReflectionProbe_property_interior_ambient_contrib>` | ``0.0``                 |
++----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                          | :ref:`interior_ambient_energy<class_ReflectionProbe_property_interior_ambient_energy>`   | ``1.0``                 |
++----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                            | :ref:`interior_enable<class_ReflectionProbe_property_interior_enable>`                   | ``false``               |
++----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                          | :ref:`max_distance<class_ReflectionProbe_property_max_distance>`                         | ``0.0``                 |
++----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Vector3<class_Vector3>`                      | :ref:`origin_offset<class_ReflectionProbe_property_origin_offset>`                       | ``Vector3( 0, 0, 0 )``  |
++----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`UpdateMode<enum_ReflectionProbe_UpdateMode>` | :ref:`update_mode<class_ReflectionProbe_property_update_mode>`                           | ``0``                   |
++----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
 
 Enumerations
 ------------
@@ -62,16 +67,6 @@ enum **UpdateMode**:
 
 - **UPDATE_ALWAYS** = **1**
 
-Description
------------
-
-Capture its surroundings as a dual parabolid image, and stores versions of it with increasing levels of blur to simulate different material roughnesses.
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/reflection_probes`
-
 Property Descriptions
 ---------------------
 
@@ -80,7 +75,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **box_projection**
 
 +-----------+----------------------------------+
-| *Default* | false                            |
+| *Default* | ``false``                        |
 +-----------+----------------------------------+
 | *Setter*  | set_enable_box_projection(value) |
 +-----------+----------------------------------+
@@ -96,7 +91,7 @@ If ``true``, enables box projection. This makes reflections look more correct in
 - :ref:`int<class_int>` **cull_mask**
 
 +-----------+----------------------+
-| *Default* | 1048575              |
+| *Default* | ``1048575``          |
 +-----------+----------------------+
 | *Setter*  | set_cull_mask(value) |
 +-----------+----------------------+
@@ -110,7 +105,7 @@ If ``true``, enables box projection. This makes reflections look more correct in
 - :ref:`bool<class_bool>` **enable_shadows**
 
 +-----------+---------------------------+
-| *Default* | false                     |
+| *Default* | ``false``                 |
 +-----------+---------------------------+
 | *Setter*  | set_enable_shadows(value) |
 +-----------+---------------------------+
@@ -125,13 +120,13 @@ If ``true``, computes shadows in the reflection probe. This makes the reflection
 
 - :ref:`Vector3<class_Vector3>` **extents**
 
-+-----------+--------------------+
-| *Default* | Vector3( 1, 1, 1 ) |
-+-----------+--------------------+
-| *Setter*  | set_extents(value) |
-+-----------+--------------------+
-| *Getter*  | get_extents()      |
-+-----------+--------------------+
++-----------+------------------------+
+| *Default* | ``Vector3( 1, 1, 1 )`` |
++-----------+------------------------+
+| *Setter*  | set_extents(value)     |
++-----------+------------------------+
+| *Getter*  | get_extents()          |
++-----------+------------------------+
 
 ----
 
@@ -140,7 +135,7 @@ If ``true``, computes shadows in the reflection probe. This makes the reflection
 - :ref:`float<class_float>` **intensity**
 
 +-----------+----------------------+
-| *Default* | 1.0                  |
+| *Default* | ``1.0``              |
 +-----------+----------------------+
 | *Setter*  | set_intensity(value) |
 +-----------+----------------------+
@@ -156,7 +151,7 @@ Defines the reflection intensity.
 - :ref:`Color<class_Color>` **interior_ambient_color**
 
 +-----------+-----------------------------+
-| *Default* | Color( 0, 0, 0, 1 )         |
+| *Default* | ``Color( 0, 0, 0, 1 )``     |
 +-----------+-----------------------------+
 | *Setter*  | set_interior_ambient(value) |
 +-----------+-----------------------------+
@@ -170,7 +165,7 @@ Defines the reflection intensity.
 - :ref:`float<class_float>` **interior_ambient_contrib**
 
 +-----------+------------------------------------------------+
-| *Default* | 0.0                                            |
+| *Default* | ``0.0``                                        |
 +-----------+------------------------------------------------+
 | *Setter*  | set_interior_ambient_probe_contribution(value) |
 +-----------+------------------------------------------------+
@@ -184,7 +179,7 @@ Defines the reflection intensity.
 - :ref:`float<class_float>` **interior_ambient_energy**
 
 +-----------+------------------------------------+
-| *Default* | 1.0                                |
+| *Default* | ``1.0``                            |
 +-----------+------------------------------------+
 | *Setter*  | set_interior_ambient_energy(value) |
 +-----------+------------------------------------+
@@ -198,7 +193,7 @@ Defines the reflection intensity.
 - :ref:`bool<class_bool>` **interior_enable**
 
 +-----------+------------------------+
-| *Default* | false                  |
+| *Default* | ``false``              |
 +-----------+------------------------+
 | *Setter*  | set_as_interior(value) |
 +-----------+------------------------+
@@ -212,7 +207,7 @@ Defines the reflection intensity.
 - :ref:`float<class_float>` **max_distance**
 
 +-----------+-------------------------+
-| *Default* | 0.0                     |
+| *Default* | ``0.0``                 |
 +-----------+-------------------------+
 | *Setter*  | set_max_distance(value) |
 +-----------+-------------------------+
@@ -226,7 +221,7 @@ Defines the reflection intensity.
 - :ref:`Vector3<class_Vector3>` **origin_offset**
 
 +-----------+--------------------------+
-| *Default* | Vector3( 0, 0, 0 )       |
+| *Default* | ``Vector3( 0, 0, 0 )``   |
 +-----------+--------------------------+
 | *Setter*  | set_origin_offset(value) |
 +-----------+--------------------------+
@@ -240,7 +235,7 @@ Defines the reflection intensity.
 - :ref:`UpdateMode<enum_ReflectionProbe_UpdateMode>` **update_mode**
 
 +-----------+------------------------+
-| *Default* | 0                      |
+| *Default* | ``0``                  |
 +-----------+------------------------+
 | *Setter*  | set_update_mode(value) |
 +-----------+------------------------+

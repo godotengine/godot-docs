@@ -11,12 +11,12 @@ EditorFileSystem
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Resource filesystem, as the editor sees it.
+
+Description
+-----------
+
+This object holds information of all resources in the filesystem, their types, etc.
 
 Methods
 -------
@@ -71,11 +71,6 @@ Remitted if a resource is reimported.
 - **sources_changed** **(** :ref:`bool<class_bool>` exist **)**
 
 Emitted if the source of any imported file changed.
-
-Description
------------
-
-This object holds information of all resources in the filesystem, their types, etc.
 
 Method Descriptions
 -------------------

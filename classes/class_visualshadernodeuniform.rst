@@ -13,21 +13,16 @@ VisualShaderNodeUniform
 
 **Inherited By:** :ref:`VisualShaderNodeBooleanUniform<class_VisualShaderNodeBooleanUniform>`, :ref:`VisualShaderNodeColorUniform<class_VisualShaderNodeColorUniform>`, :ref:`VisualShaderNodeScalarUniform<class_VisualShaderNodeScalarUniform>`, :ref:`VisualShaderNodeTextureUniform<class_VisualShaderNodeTextureUniform>`, :ref:`VisualShaderNodeTransformUniform<class_VisualShaderNodeTransformUniform>`, :ref:`VisualShaderNodeVec3Uniform<class_VisualShaderNodeVec3Uniform>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+-----------------------------+--------------------------------------------------------------------------+-------------+
-| :ref:`Array<class_Array>`   | default_input_values                                                     | **O:** [  ] |
-+-----------------------------+--------------------------------------------------------------------------+-------------+
-| :ref:`String<class_String>` | :ref:`uniform_name<class_VisualShaderNodeUniform_property_uniform_name>` | ""          |
-+-----------------------------+--------------------------------------------------------------------------+-------------+
++-----------------------------+--------------------------------------------------------------------------+-----------------+
+| :ref:`Array<class_Array>`   | default_input_values                                                     | **O:** ``[  ]`` |
++-----------------------------+--------------------------------------------------------------------------+-----------------+
+| :ref:`String<class_String>` | :ref:`uniform_name<class_VisualShaderNodeUniform_property_uniform_name>` | ``""``          |
++-----------------------------+--------------------------------------------------------------------------+-----------------+
 
 Property Descriptions
 ---------------------
@@ -37,7 +32,7 @@ Property Descriptions
 - :ref:`String<class_String>` **uniform_name**
 
 +-----------+-------------------------+
-| *Default* | ""                      |
+| *Default* | ``""``                  |
 +-----------+-------------------------+
 | *Setter*  | set_uniform_name(value) |
 +-----------+-------------------------+

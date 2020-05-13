@@ -11,37 +11,42 @@ AudioStreamPlayer2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Plays audio in 2D.
+
+Description
+-----------
+
+Plays audio that dampens with distance from screen center.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/audio/audio_streams`
 
 Properties
 ----------
 
-+---------------------------------------+------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`                 | :ref:`area_mask<class_AudioStreamPlayer2D_property_area_mask>`         | 1        |
-+---------------------------------------+------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`             | :ref:`attenuation<class_AudioStreamPlayer2D_property_attenuation>`     | 1.0      |
-+---------------------------------------+------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`               | :ref:`autoplay<class_AudioStreamPlayer2D_property_autoplay>`           | false    |
-+---------------------------------------+------------------------------------------------------------------------+----------+
-| :ref:`String<class_String>`           | :ref:`bus<class_AudioStreamPlayer2D_property_bus>`                     | "Master" |
-+---------------------------------------+------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`             | :ref:`max_distance<class_AudioStreamPlayer2D_property_max_distance>`   | 2000.0   |
-+---------------------------------------+------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`             | :ref:`pitch_scale<class_AudioStreamPlayer2D_property_pitch_scale>`     | 1.0      |
-+---------------------------------------+------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`               | :ref:`playing<class_AudioStreamPlayer2D_property_playing>`             | false    |
-+---------------------------------------+------------------------------------------------------------------------+----------+
-| :ref:`AudioStream<class_AudioStream>` | :ref:`stream<class_AudioStreamPlayer2D_property_stream>`               |          |
-+---------------------------------------+------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`               | :ref:`stream_paused<class_AudioStreamPlayer2D_property_stream_paused>` | false    |
-+---------------------------------------+------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`             | :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>`         | 0.0      |
-+---------------------------------------+------------------------------------------------------------------------+----------+
++---------------------------------------+------------------------------------------------------------------------+--------------+
+| :ref:`int<class_int>`                 | :ref:`area_mask<class_AudioStreamPlayer2D_property_area_mask>`         | ``1``        |
++---------------------------------------+------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`             | :ref:`attenuation<class_AudioStreamPlayer2D_property_attenuation>`     | ``1.0``      |
++---------------------------------------+------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`               | :ref:`autoplay<class_AudioStreamPlayer2D_property_autoplay>`           | ``false``    |
++---------------------------------------+------------------------------------------------------------------------+--------------+
+| :ref:`String<class_String>`           | :ref:`bus<class_AudioStreamPlayer2D_property_bus>`                     | ``"Master"`` |
++---------------------------------------+------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`             | :ref:`max_distance<class_AudioStreamPlayer2D_property_max_distance>`   | ``2000.0``   |
++---------------------------------------+------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`             | :ref:`pitch_scale<class_AudioStreamPlayer2D_property_pitch_scale>`     | ``1.0``      |
++---------------------------------------+------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`               | :ref:`playing<class_AudioStreamPlayer2D_property_playing>`             | ``false``    |
++---------------------------------------+------------------------------------------------------------------------+--------------+
+| :ref:`AudioStream<class_AudioStream>` | :ref:`stream<class_AudioStreamPlayer2D_property_stream>`               |              |
++---------------------------------------+------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`               | :ref:`stream_paused<class_AudioStreamPlayer2D_property_stream_paused>` | ``false``    |
++---------------------------------------+------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`             | :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>`         | ``0.0``      |
++---------------------------------------+------------------------------------------------------------------------+--------------+
 
 Methods
 -------
@@ -67,16 +72,6 @@ Signals
 
 Emitted when the audio stops playing.
 
-Description
------------
-
-Plays audio that dampens with distance from screen center.
-
-Tutorials
----------
-
-- :doc:`../tutorials/audio/audio_streams`
-
 Property Descriptions
 ---------------------
 
@@ -85,7 +80,7 @@ Property Descriptions
 - :ref:`int<class_int>` **area_mask**
 
 +-----------+----------------------+
-| *Default* | 1                    |
+| *Default* | ``1``                |
 +-----------+----------------------+
 | *Setter*  | set_area_mask(value) |
 +-----------+----------------------+
@@ -101,7 +96,7 @@ Areas in which this sound plays.
 - :ref:`float<class_float>` **attenuation**
 
 +-----------+------------------------+
-| *Default* | 1.0                    |
+| *Default* | ``1.0``                |
 +-----------+------------------------+
 | *Setter*  | set_attenuation(value) |
 +-----------+------------------------+
@@ -117,7 +112,7 @@ Dampens audio over distance with this as an exponent.
 - :ref:`bool<class_bool>` **autoplay**
 
 +-----------+-----------------------+
-| *Default* | false                 |
+| *Default* | ``false``             |
 +-----------+-----------------------+
 | *Setter*  | set_autoplay(value)   |
 +-----------+-----------------------+
@@ -133,7 +128,7 @@ If ``true``, audio plays when added to scene tree.
 - :ref:`String<class_String>` **bus**
 
 +-----------+----------------+
-| *Default* | "Master"       |
+| *Default* | ``"Master"``   |
 +-----------+----------------+
 | *Setter*  | set_bus(value) |
 +-----------+----------------+
@@ -149,7 +144,7 @@ Bus on which this audio is playing.
 - :ref:`float<class_float>` **max_distance**
 
 +-----------+-------------------------+
-| *Default* | 2000.0                  |
+| *Default* | ``2000.0``              |
 +-----------+-------------------------+
 | *Setter*  | set_max_distance(value) |
 +-----------+-------------------------+
@@ -165,7 +160,7 @@ Maximum distance from which audio is still hearable.
 - :ref:`float<class_float>` **pitch_scale**
 
 +-----------+------------------------+
-| *Default* | 1.0                    |
+| *Default* | ``1.0``                |
 +-----------+------------------------+
 | *Setter*  | set_pitch_scale(value) |
 +-----------+------------------------+
@@ -181,7 +176,7 @@ Changes the pitch and the tempo of the audio.
 - :ref:`bool<class_bool>` **playing**
 
 +-----------+--------------+
-| *Default* | false        |
+| *Default* | ``false``    |
 +-----------+--------------+
 | *Getter*  | is_playing() |
 +-----------+--------------+
@@ -209,12 +204,14 @@ The :ref:`AudioStream<class_AudioStream>` object to be played.
 - :ref:`bool<class_bool>` **stream_paused**
 
 +-----------+--------------------------+
-| *Default* | false                    |
+| *Default* | ``false``                |
 +-----------+--------------------------+
 | *Setter*  | set_stream_paused(value) |
 +-----------+--------------------------+
 | *Getter*  | get_stream_paused()      |
 +-----------+--------------------------+
+
+If ``true``, the playback is paused. You can resume it by setting ``stream_paused`` to ``false``.
 
 ----
 
@@ -223,7 +220,7 @@ The :ref:`AudioStream<class_AudioStream>` object to be played.
 - :ref:`float<class_float>` **volume_db**
 
 +-----------+----------------------+
-| *Default* | 0.0                  |
+| *Default* | ``0.0``              |
 +-----------+----------------------+
 | *Setter*  | set_volume_db(value) |
 +-----------+----------------------+
@@ -246,6 +243,8 @@ Returns the position in the :ref:`AudioStream<class_AudioStream>`.
 .. _class_AudioStreamPlayer2D_method_get_stream_playback:
 
 - :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **get_stream_playback** **(** **)**
+
+Returns the :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` object associated with this ``AudioStreamPlayer2D``.
 
 ----
 

@@ -11,24 +11,19 @@ AnimationNodeAdd2
 
 **Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Blends two animations additively inside of an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
-
-Properties
-----------
-
-+-------------------------+----------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`sync<class_AnimationNodeAdd2_property_sync>` | false |
-+-------------------------+----------------------------------------------------+-------+
 
 Description
 -----------
 
 A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Blends two animations additively based on an amount value in the ``[0.0, 1.0]`` range.
+
+Properties
+----------
+
++-------------------------+----------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`sync<class_AnimationNodeAdd2_property_sync>` | ``false`` |
++-------------------------+----------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
@@ -38,7 +33,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **sync**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_use_sync(value) |
 +-----------+---------------------+

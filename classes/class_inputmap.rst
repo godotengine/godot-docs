@@ -11,12 +11,17 @@ InputMap
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Singleton that manages :ref:`InputEventAction<class_InputEventAction>`.
+
+Description
+-----------
+
+Manages all :ref:`InputEventAction<class_InputEventAction>` which can be created/modified from the project settings menu **Project > Project Settings > Input Map** or in code with :ref:`add_action<class_InputMap_method_add_action>` and :ref:`action_add_event<class_InputMap_method_action_add_event>`. See :ref:`Node._input<class_Node_method__input>`.
+
+Tutorials
+---------
+
+- `#inputmap <../tutorials/inputs/inputevent.html#inputmap>`_ in :doc:`../tutorials/inputs/inputevent`
 
 Methods
 -------
@@ -46,16 +51,6 @@ Methods
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`load_from_globals<class_InputMap_method_load_from_globals>` **(** **)**                                                                                 |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Manages all :ref:`InputEventAction<class_InputEventAction>` which can be created/modified from the project settings menu **Project > Project Settings > Input Map** or in code with :ref:`add_action<class_InputMap_method_add_action>` and :ref:`action_add_event<class_InputMap_method_action_add_event>`. See :ref:`Node._input<class_Node_method__input>`.
-
-Tutorials
----------
-
-- `#inputmap <../tutorials/inputs/inputevent.html#inputmap>`_ in :doc:`../tutorials/inputs/inputevent`
 
 Method Descriptions
 -------------------
@@ -95,6 +90,8 @@ Returns ``true`` if the action has the given :ref:`InputEvent<class_InputEvent>`
 .. _class_InputMap_method_action_set_deadzone:
 
 - void **action_set_deadzone** **(** :ref:`String<class_String>` action, :ref:`float<class_float>` deadzone **)**
+
+Sets a deadzone value for the action.
 
 ----
 

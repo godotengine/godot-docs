@@ -13,43 +13,43 @@ Camera
 
 **Inherited By:** :ref:`ARVRCamera<class_ARVRCamera>`, :ref:`ClippedCamera<class_ClippedCamera>`, :ref:`InterpolatedCamera<class_InterpolatedCamera>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Camera node, displays from a point of view.
+
+Description
+-----------
+
+Camera is a special node that displays what is visible from its current location. Cameras register themselves in the nearest :ref:`Viewport<class_Viewport>` node (when ascending the tree). Only one camera can be active per viewport. If no viewport is available ascending the tree, the camera will register in the global viewport. In other words, a camera just provides 3D display capabilities to a :ref:`Viewport<class_Viewport>`, and, without one, a scene registered in that :ref:`Viewport<class_Viewport>` (or higher viewports) can't be displayed.
 
 Properties
 ----------
 
-+-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`                               | :ref:`cull_mask<class_Camera_property_cull_mask>`               | 1048575         |
-+-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                             | :ref:`current<class_Camera_property_current>`                   | false           |
-+-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
-| :ref:`DopplerTracking<enum_Camera_DopplerTracking>` | :ref:`doppler_tracking<class_Camera_property_doppler_tracking>` | 0               |
-+-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
-| :ref:`Environment<class_Environment>`               | :ref:`environment<class_Camera_property_environment>`           |                 |
-+-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                           | :ref:`far<class_Camera_property_far>`                           | 100.0           |
-+-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                           | :ref:`fov<class_Camera_property_fov>`                           | 70.0            |
-+-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>`                       | :ref:`frustum_offset<class_Camera_property_frustum_offset>`     | Vector2( 0, 0 ) |
-+-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                           | :ref:`h_offset<class_Camera_property_h_offset>`                 | 0.0             |
-+-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
-| :ref:`KeepAspect<enum_Camera_KeepAspect>`           | :ref:`keep_aspect<class_Camera_property_keep_aspect>`           | 1               |
-+-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                           | :ref:`near<class_Camera_property_near>`                         | 0.05            |
-+-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
-| :ref:`Projection<enum_Camera_Projection>`           | :ref:`projection<class_Camera_property_projection>`             | 0               |
-+-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                           | :ref:`size<class_Camera_property_size>`                         | 1.0             |
-+-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                           | :ref:`v_offset<class_Camera_property_v_offset>`                 | 0.0             |
-+-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
++-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                               | :ref:`cull_mask<class_Camera_property_cull_mask>`               | ``1048575``         |
++-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                             | :ref:`current<class_Camera_property_current>`                   | ``false``           |
++-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
+| :ref:`DopplerTracking<enum_Camera_DopplerTracking>` | :ref:`doppler_tracking<class_Camera_property_doppler_tracking>` | ``0``               |
++-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
+| :ref:`Environment<class_Environment>`               | :ref:`environment<class_Camera_property_environment>`           |                     |
++-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                           | :ref:`far<class_Camera_property_far>`                           | ``100.0``           |
++-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                           | :ref:`fov<class_Camera_property_fov>`                           | ``70.0``            |
++-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                       | :ref:`frustum_offset<class_Camera_property_frustum_offset>`     | ``Vector2( 0, 0 )`` |
++-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                           | :ref:`h_offset<class_Camera_property_h_offset>`                 | ``0.0``             |
++-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
+| :ref:`KeepAspect<enum_Camera_KeepAspect>`           | :ref:`keep_aspect<class_Camera_property_keep_aspect>`           | ``1``               |
++-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                           | :ref:`near<class_Camera_property_near>`                         | ``0.05``            |
++-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
+| :ref:`Projection<enum_Camera_Projection>`           | :ref:`projection<class_Camera_property_projection>`             | ``0``               |
++-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                           | :ref:`size<class_Camera_property_size>`                         | ``1.0``             |
++-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                           | :ref:`v_offset<class_Camera_property_v_offset>`                 | ``0.0``             |
++-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -139,11 +139,6 @@ enum **DopplerTracking**:
 
 - **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`_ by tracking positions of objects that are changed in ``_physics_process``. Changes in the relative velocity of this camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
 
-Description
------------
-
-Camera is a special node that displays what is visible from its current location. Cameras register themselves in the nearest :ref:`Viewport<class_Viewport>` node (when ascending the tree). Only one camera can be active per viewport. If no viewport is available ascending the tree, the camera will register in the global viewport. In other words, a camera just provides 3D display capabilities to a :ref:`Viewport<class_Viewport>`, and, without one, a scene registered in that :ref:`Viewport<class_Viewport>` (or higher viewports) can't be displayed.
-
 Property Descriptions
 ---------------------
 
@@ -152,7 +147,7 @@ Property Descriptions
 - :ref:`int<class_int>` **cull_mask**
 
 +-----------+----------------------+
-| *Default* | 1048575              |
+| *Default* | ``1048575``          |
 +-----------+----------------------+
 | *Setter*  | set_cull_mask(value) |
 +-----------+----------------------+
@@ -168,7 +163,7 @@ The culling mask that describes which 3D render layers are rendered by this came
 - :ref:`bool<class_bool>` **current**
 
 +-----------+--------------------+
-| *Default* | false              |
+| *Default* | ``false``          |
 +-----------+--------------------+
 | *Setter*  | set_current(value) |
 +-----------+--------------------+
@@ -184,7 +179,7 @@ If ``true``, the ancestor :ref:`Viewport<class_Viewport>` is currently using thi
 - :ref:`DopplerTracking<enum_Camera_DopplerTracking>` **doppler_tracking**
 
 +-----------+-----------------------------+
-| *Default* | 0                           |
+| *Default* | ``0``                       |
 +-----------+-----------------------------+
 | *Setter*  | set_doppler_tracking(value) |
 +-----------+-----------------------------+
@@ -214,7 +209,7 @@ The :ref:`Environment<class_Environment>` to use for this camera.
 - :ref:`float<class_float>` **far**
 
 +-----------+-----------------+
-| *Default* | 100.0           |
+| *Default* | ``100.0``       |
 +-----------+-----------------+
 | *Setter*  | set_zfar(value) |
 +-----------+-----------------+
@@ -230,7 +225,7 @@ The distance to the far culling boundary for this camera relative to its local Z
 - :ref:`float<class_float>` **fov**
 
 +-----------+----------------+
-| *Default* | 70.0           |
+| *Default* | ``70.0``       |
 +-----------+----------------+
 | *Setter*  | set_fov(value) |
 +-----------+----------------+
@@ -246,7 +241,7 @@ The camera's field of view angle (in degrees). Only applicable in perspective mo
 - :ref:`Vector2<class_Vector2>` **frustum_offset**
 
 +-----------+---------------------------+
-| *Default* | Vector2( 0, 0 )           |
+| *Default* | ``Vector2( 0, 0 )``       |
 +-----------+---------------------------+
 | *Setter*  | set_frustum_offset(value) |
 +-----------+---------------------------+
@@ -262,7 +257,7 @@ The camera's frustum offset. This can be changed from the default to create "til
 - :ref:`float<class_float>` **h_offset**
 
 +-----------+---------------------+
-| *Default* | 0.0                 |
+| *Default* | ``0.0``             |
 +-----------+---------------------+
 | *Setter*  | set_h_offset(value) |
 +-----------+---------------------+
@@ -278,7 +273,7 @@ The horizontal (X) offset of the camera viewport.
 - :ref:`KeepAspect<enum_Camera_KeepAspect>` **keep_aspect**
 
 +-----------+-----------------------------+
-| *Default* | 1                           |
+| *Default* | ``1``                       |
 +-----------+-----------------------------+
 | *Setter*  | set_keep_aspect_mode(value) |
 +-----------+-----------------------------+
@@ -294,7 +289,7 @@ The axis to lock during :ref:`fov<class_Camera_property_fov>`/:ref:`size<class_C
 - :ref:`float<class_float>` **near**
 
 +-----------+------------------+
-| *Default* | 0.05             |
+| *Default* | ``0.05``         |
 +-----------+------------------+
 | *Setter*  | set_znear(value) |
 +-----------+------------------+
@@ -310,7 +305,7 @@ The distance to the near culling boundary for this camera relative to its local 
 - :ref:`Projection<enum_Camera_Projection>` **projection**
 
 +-----------+-----------------------+
-| *Default* | 0                     |
+| *Default* | ``0``                 |
 +-----------+-----------------------+
 | *Setter*  | set_projection(value) |
 +-----------+-----------------------+
@@ -326,7 +321,7 @@ The camera's projection mode. In :ref:`PROJECTION_PERSPECTIVE<class_Camera_const
 - :ref:`float<class_float>` **size**
 
 +-----------+-----------------+
-| *Default* | 1.0             |
+| *Default* | ``1.0``         |
 +-----------+-----------------+
 | *Setter*  | set_size(value) |
 +-----------+-----------------+
@@ -342,7 +337,7 @@ The camera's size measured as 1/2 the width or height. Only applicable in orthog
 - :ref:`float<class_float>` **v_offset**
 
 +-----------+---------------------+
-| *Default* | 0.0                 |
+| *Default* | ``0.0``             |
 +-----------+---------------------+
 | *Setter*  | set_v_offset(value) |
 +-----------+---------------------+

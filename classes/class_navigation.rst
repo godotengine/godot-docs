@@ -11,19 +11,19 @@ Navigation
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Mesh-based navigation and pathfinding node.
+
+Description
+-----------
+
+Provides navigation and pathfinding within a collection of :ref:`NavigationMesh<class_NavigationMesh>`\ es. By default, these will be automatically collected from child :ref:`NavigationMeshInstance<class_NavigationMeshInstance>` nodes, but they can also be added on the fly with :ref:`navmesh_add<class_Navigation_method_navmesh_add>`. In addition to basic pathfinding, this class also assists with aligning navigation agents with the meshes they are navigating on.
 
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------+--------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`up_vector<class_Navigation_property_up_vector>` | Vector3( 0, 1, 0 ) |
-+-------------------------------+-------------------------------------------------------+--------------------+
++-------------------------------+-------------------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`up_vector<class_Navigation_property_up_vector>` | ``Vector3( 0, 1, 0 )`` |
++-------------------------------+-------------------------------------------------------+------------------------+
 
 Methods
 -------
@@ -46,11 +46,6 @@ Methods
 | void                                            | :ref:`navmesh_set_transform<class_Navigation_method_navmesh_set_transform>` **(** :ref:`int<class_int>` id, :ref:`Transform<class_Transform>` xform **)**                                                                 |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-Provides navigation and pathfinding within a collection of :ref:`NavigationMesh<class_NavigationMesh>`\ es. By default, these will be automatically collected from child :ref:`NavigationMeshInstance<class_NavigationMeshInstance>` nodes, but they can also be added on the fly with :ref:`navmesh_add<class_Navigation_method_navmesh_add>`. In addition to basic pathfinding, this class also assists with aligning navigation agents with the meshes they are navigating on.
-
 Property Descriptions
 ---------------------
 
@@ -58,13 +53,13 @@ Property Descriptions
 
 - :ref:`Vector3<class_Vector3>` **up_vector**
 
-+-----------+----------------------+
-| *Default* | Vector3( 0, 1, 0 )   |
-+-----------+----------------------+
-| *Setter*  | set_up_vector(value) |
-+-----------+----------------------+
-| *Getter*  | get_up_vector()      |
-+-----------+----------------------+
++-----------+------------------------+
+| *Default* | ``Vector3( 0, 1, 0 )`` |
++-----------+------------------------+
+| *Setter*  | set_up_vector(value)   |
++-----------+------------------------+
+| *Getter*  | get_up_vector()        |
++-----------+------------------------+
 
 Defines which direction is up. By default, this is ``(0, 1, 0)``, which is the world's "up" direction.
 

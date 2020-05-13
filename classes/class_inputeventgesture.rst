@@ -13,19 +13,14 @@ InputEventGesture
 
 **Inherited By:** :ref:`InputEventMagnifyGesture<class_InputEventMagnifyGesture>`, :ref:`InputEventPanGesture<class_InputEventPanGesture>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventGesture_property_position>` | Vector2( 0, 0 ) |
-+-------------------------------+------------------------------------------------------------+-----------------+
++-------------------------------+------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventGesture_property_position>` | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------------------+---------------------+
 
 Property Descriptions
 ---------------------
@@ -35,7 +30,7 @@ Property Descriptions
 - :ref:`Vector2<class_Vector2>` **position**
 
 +-----------+---------------------+
-| *Default* | Vector2( 0, 0 )     |
+| *Default* | ``Vector2( 0, 0 )`` |
 +-----------+---------------------+
 | *Setter*  | set_position(value) |
 +-----------+---------------------+

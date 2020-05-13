@@ -11,30 +11,25 @@ JSONParseResult
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Data class wrapper for decoded JSON.
-
-Properties
-----------
-
-+---------------------------------------+------------------------------------------------------------------+----+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`error<class_JSONParseResult_property_error>`               |    |
-+---------------------------------------+------------------------------------------------------------------+----+
-| :ref:`int<class_int>`                 | :ref:`error_line<class_JSONParseResult_property_error_line>`     | -1 |
-+---------------------------------------+------------------------------------------------------------------+----+
-| :ref:`String<class_String>`           | :ref:`error_string<class_JSONParseResult_property_error_string>` | "" |
-+---------------------------------------+------------------------------------------------------------------+----+
-| :ref:`Variant<class_Variant>`         | :ref:`result<class_JSONParseResult_property_result>`             |    |
-+---------------------------------------+------------------------------------------------------------------+----+
 
 Description
 -----------
 
 Returned by :ref:`JSON.parse<class_JSON_method_parse>`, ``JSONParseResult`` contains the decoded JSON or error information if the JSON source wasn't successfully parsed. You can check if the JSON source was successfully parsed with ``if json_result.error == OK``.
+
+Properties
+----------
+
++---------------------------------------+------------------------------------------------------------------+--------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`error<class_JSONParseResult_property_error>`               |        |
++---------------------------------------+------------------------------------------------------------------+--------+
+| :ref:`int<class_int>`                 | :ref:`error_line<class_JSONParseResult_property_error_line>`     | ``-1`` |
++---------------------------------------+------------------------------------------------------------------+--------+
+| :ref:`String<class_String>`           | :ref:`error_string<class_JSONParseResult_property_error_string>` | ``""`` |
++---------------------------------------+------------------------------------------------------------------+--------+
+| :ref:`Variant<class_Variant>`         | :ref:`result<class_JSONParseResult_property_result>`             |        |
++---------------------------------------+------------------------------------------------------------------+--------+
 
 Property Descriptions
 ---------------------
@@ -58,7 +53,7 @@ The error type if the JSON source was not successfully parsed. See the :ref:`Err
 - :ref:`int<class_int>` **error_line**
 
 +-----------+-----------------------+
-| *Default* | -1                    |
+| *Default* | ``-1``                |
 +-----------+-----------------------+
 | *Setter*  | set_error_line(value) |
 +-----------+-----------------------+
@@ -74,7 +69,7 @@ The line number where the error occurred if JSON source was not successfully par
 - :ref:`String<class_String>` **error_string**
 
 +-----------+-------------------------+
-| *Default* | ""                      |
+| *Default* | ``""``                  |
 +-----------+-------------------------+
 | *Setter*  | set_error_string(value) |
 +-----------+-------------------------+

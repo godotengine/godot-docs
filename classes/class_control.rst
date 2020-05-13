@@ -13,81 +13,100 @@ Control
 
 **Inherited By:** :ref:`BaseButton<class_BaseButton>`, :ref:`ColorRect<class_ColorRect>`, :ref:`Container<class_Container>`, :ref:`GraphEdit<class_GraphEdit>`, :ref:`ItemList<class_ItemList>`, :ref:`Label<class_Label>`, :ref:`LineEdit<class_LineEdit>`, :ref:`NinePatchRect<class_NinePatchRect>`, :ref:`Panel<class_Panel>`, :ref:`Popup<class_Popup>`, :ref:`Range<class_Range>`, :ref:`ReferenceRect<class_ReferenceRect>`, :ref:`RichTextLabel<class_RichTextLabel>`, :ref:`Separator<class_Separator>`, :ref:`Tabs<class_Tabs>`, :ref:`TextEdit<class_TextEdit>`, :ref:`TextureRect<class_TextureRect>`, :ref:`Tree<class_Tree>`, :ref:`VideoPlayer<class_VideoPlayer>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 All user interface nodes inherit from Control. A control's anchors and margins adapt its position and size relative to its parent.
+
+Description
+-----------
+
+Base class for all UI-related nodes. ``Control`` features a bounding rectangle that defines its extents, an anchor position relative to its parent control or the current viewport, and margins that represent an offset to the anchor. The margins update automatically when the node, any of its parents, or the screen size change.
+
+For more information on Godot's UI system, anchors, margins, and containers, see the related tutorials in the manual. To build flexible UIs, you'll need a mix of UI elements that inherit from ``Control`` and :ref:`Container<class_Container>` nodes.
+
+**User Interface nodes and input**
+
+Godot sends input events to the scene's root node first, by calling :ref:`Node._input<class_Node_method__input>`. :ref:`Node._input<class_Node_method__input>` forwards the event down the node tree to the nodes under the mouse cursor, or on keyboard focus. To do so, it calls :ref:`MainLoop._input_event<class_MainLoop_method__input_event>`. Call :ref:`accept_event<class_Control_method_accept_event>` so no other node receives the event. Once you accepted an input, it becomes handled so :ref:`Node._unhandled_input<class_Node_method__unhandled_input>` will not process it.
+
+Only one ``Control`` node can be in keyboard focus. Only the node in focus will receive keyboard events. To get the focus, call :ref:`grab_focus<class_Control_method_grab_focus>`. ``Control`` nodes lose focus when another node grabs it, or if you hide the node in focus.
+
+Sets :ref:`mouse_filter<class_Control_property_mouse_filter>` to :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` to tell a ``Control`` node to ignore mouse or touch events. You'll need it if you place an icon on top of a button.
+
+:ref:`Theme<class_Theme>` resources change the Control's appearance. If you change the :ref:`Theme<class_Theme>` on a ``Control`` node, it affects all of its children. To override some of the theme's parameters, call one of the ``add_*_override`` methods, like :ref:`add_font_override<class_Control_method_add_font_override>`. You can override the theme with the inspector.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/gui/index`
+
+- :doc:`../tutorials/2d/custom_drawing_in_2d`
 
 Properties
 ----------
 
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                        | :ref:`anchor_bottom<class_Control_property_anchor_bottom>`                           | 0.0             |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                        | :ref:`anchor_left<class_Control_property_anchor_left>`                               | 0.0             |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                        | :ref:`anchor_right<class_Control_property_anchor_right>`                             | 0.0             |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                        | :ref:`anchor_top<class_Control_property_anchor_top>`                                 | 0.0             |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`FocusMode<enum_Control_FocusMode>`         | :ref:`focus_mode<class_Control_property_focus_mode>`                                 | 0               |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`NodePath<class_NodePath>`                  | :ref:`focus_neighbour_bottom<class_Control_property_focus_neighbour_bottom>`         | NodePath("")    |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`NodePath<class_NodePath>`                  | :ref:`focus_neighbour_left<class_Control_property_focus_neighbour_left>`             | NodePath("")    |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`NodePath<class_NodePath>`                  | :ref:`focus_neighbour_right<class_Control_property_focus_neighbour_right>`           | NodePath("")    |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`NodePath<class_NodePath>`                  | :ref:`focus_neighbour_top<class_Control_property_focus_neighbour_top>`               | NodePath("")    |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`NodePath<class_NodePath>`                  | :ref:`focus_next<class_Control_property_focus_next>`                                 | NodePath("")    |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`NodePath<class_NodePath>`                  | :ref:`focus_previous<class_Control_property_focus_previous>`                         | NodePath("")    |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`GrowDirection<enum_Control_GrowDirection>` | :ref:`grow_horizontal<class_Control_property_grow_horizontal>`                       | 1               |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`GrowDirection<enum_Control_GrowDirection>` | :ref:`grow_vertical<class_Control_property_grow_vertical>`                           | 1               |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`String<class_String>`                      | :ref:`hint_tooltip<class_Control_property_hint_tooltip>`                             | ""              |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                        | :ref:`margin_bottom<class_Control_property_margin_bottom>`                           | 0.0             |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                        | :ref:`margin_left<class_Control_property_margin_left>`                               | 0.0             |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                        | :ref:`margin_right<class_Control_property_margin_right>`                             | 0.0             |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                        | :ref:`margin_top<class_Control_property_margin_top>`                                 | 0.0             |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`CursorShape<enum_Control_CursorShape>`     | :ref:`mouse_default_cursor_shape<class_Control_property_mouse_default_cursor_shape>` | 0               |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>`     | :ref:`mouse_filter<class_Control_property_mouse_filter>`                             | 0               |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                          | :ref:`rect_clip_content<class_Control_property_rect_clip_content>`                   | false           |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>`                    | :ref:`rect_global_position<class_Control_property_rect_global_position>`             |                 |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>`                    | :ref:`rect_min_size<class_Control_property_rect_min_size>`                           | Vector2( 0, 0 ) |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>`                    | :ref:`rect_pivot_offset<class_Control_property_rect_pivot_offset>`                   | Vector2( 0, 0 ) |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>`                    | :ref:`rect_position<class_Control_property_rect_position>`                           | Vector2( 0, 0 ) |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                        | :ref:`rect_rotation<class_Control_property_rect_rotation>`                           | 0.0             |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>`                    | :ref:`rect_scale<class_Control_property_rect_scale>`                                 | Vector2( 1, 1 ) |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>`                    | :ref:`rect_size<class_Control_property_rect_size>`                                   | Vector2( 0, 0 ) |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`                            | :ref:`size_flags_horizontal<class_Control_property_size_flags_horizontal>`           | 1               |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                        | :ref:`size_flags_stretch_ratio<class_Control_property_size_flags_stretch_ratio>`     | 1.0             |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`                            | :ref:`size_flags_vertical<class_Control_property_size_flags_vertical>`               | 1               |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`Theme<class_Theme>`                        | :ref:`theme<class_Control_property_theme>`                                           |                 |
-+--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                        | :ref:`anchor_bottom<class_Control_property_anchor_bottom>`                           | ``0.0``             |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                        | :ref:`anchor_left<class_Control_property_anchor_left>`                               | ``0.0``             |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                        | :ref:`anchor_right<class_Control_property_anchor_right>`                             | ``0.0``             |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                        | :ref:`anchor_top<class_Control_property_anchor_top>`                                 | ``0.0``             |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`FocusMode<enum_Control_FocusMode>`         | :ref:`focus_mode<class_Control_property_focus_mode>`                                 | ``0``               |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`NodePath<class_NodePath>`                  | :ref:`focus_neighbour_bottom<class_Control_property_focus_neighbour_bottom>`         | ``NodePath("")``    |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`NodePath<class_NodePath>`                  | :ref:`focus_neighbour_left<class_Control_property_focus_neighbour_left>`             | ``NodePath("")``    |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`NodePath<class_NodePath>`                  | :ref:`focus_neighbour_right<class_Control_property_focus_neighbour_right>`           | ``NodePath("")``    |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`NodePath<class_NodePath>`                  | :ref:`focus_neighbour_top<class_Control_property_focus_neighbour_top>`               | ``NodePath("")``    |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`NodePath<class_NodePath>`                  | :ref:`focus_next<class_Control_property_focus_next>`                                 | ``NodePath("")``    |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`NodePath<class_NodePath>`                  | :ref:`focus_previous<class_Control_property_focus_previous>`                         | ``NodePath("")``    |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`GrowDirection<enum_Control_GrowDirection>` | :ref:`grow_horizontal<class_Control_property_grow_horizontal>`                       | ``1``               |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`GrowDirection<enum_Control_GrowDirection>` | :ref:`grow_vertical<class_Control_property_grow_vertical>`                           | ``1``               |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`String<class_String>`                      | :ref:`hint_tooltip<class_Control_property_hint_tooltip>`                             | ``""``              |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                        | :ref:`margin_bottom<class_Control_property_margin_bottom>`                           | ``0.0``             |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                        | :ref:`margin_left<class_Control_property_margin_left>`                               | ``0.0``             |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                        | :ref:`margin_right<class_Control_property_margin_right>`                             | ``0.0``             |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                        | :ref:`margin_top<class_Control_property_margin_top>`                                 | ``0.0``             |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`CursorShape<enum_Control_CursorShape>`     | :ref:`mouse_default_cursor_shape<class_Control_property_mouse_default_cursor_shape>` | ``0``               |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>`     | :ref:`mouse_filter<class_Control_property_mouse_filter>`                             | ``0``               |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                          | :ref:`rect_clip_content<class_Control_property_rect_clip_content>`                   | ``false``           |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                    | :ref:`rect_global_position<class_Control_property_rect_global_position>`             |                     |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                    | :ref:`rect_min_size<class_Control_property_rect_min_size>`                           | ``Vector2( 0, 0 )`` |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                    | :ref:`rect_pivot_offset<class_Control_property_rect_pivot_offset>`                   | ``Vector2( 0, 0 )`` |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                    | :ref:`rect_position<class_Control_property_rect_position>`                           | ``Vector2( 0, 0 )`` |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                        | :ref:`rect_rotation<class_Control_property_rect_rotation>`                           | ``0.0``             |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                    | :ref:`rect_scale<class_Control_property_rect_scale>`                                 | ``Vector2( 1, 1 )`` |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                    | :ref:`rect_size<class_Control_property_rect_size>`                                   | ``Vector2( 0, 0 )`` |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                            | :ref:`size_flags_horizontal<class_Control_property_size_flags_horizontal>`           | ``1``               |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                        | :ref:`size_flags_stretch_ratio<class_Control_property_size_flags_stretch_ratio>`     | ``1.0``             |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                            | :ref:`size_flags_vertical<class_Control_property_size_flags_vertical>`               | ``1``               |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`Theme<class_Theme>`                        | :ref:`theme<class_Control_property_theme>`                                           |                     |
++--------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -605,30 +624,6 @@ Constants
 
 - **NOTIFICATION_SCROLL_END** = **48** --- Sent when this node is inside a :ref:`ScrollContainer<class_ScrollContainer>` which has stopped being scrolled.
 
-Description
------------
-
-Base class for all UI-related nodes. ``Control`` features a bounding rectangle that defines its extents, an anchor position relative to its parent control or the current viewport, and margins that represent an offset to the anchor. The margins update automatically when the node, any of its parents, or the screen size change.
-
-For more information on Godot's UI system, anchors, margins, and containers, see the related tutorials in the manual. To build flexible UIs, you'll need a mix of UI elements that inherit from ``Control`` and :ref:`Container<class_Container>` nodes.
-
-**User Interface nodes and input**
-
-Godot sends input events to the scene's root node first, by calling :ref:`Node._input<class_Node_method__input>`. :ref:`Node._input<class_Node_method__input>` forwards the event down the node tree to the nodes under the mouse cursor, or on keyboard focus. To do so, it calls :ref:`MainLoop._input_event<class_MainLoop_method__input_event>`. Call :ref:`accept_event<class_Control_method_accept_event>` so no other node receives the event. Once you accepted an input, it becomes handled so :ref:`Node._unhandled_input<class_Node_method__unhandled_input>` will not process it.
-
-Only one ``Control`` node can be in keyboard focus. Only the node in focus will receive keyboard events. To get the focus, call :ref:`grab_focus<class_Control_method_grab_focus>`. ``Control`` nodes lose focus when another node grabs it, or if you hide the node in focus.
-
-Sets :ref:`mouse_filter<class_Control_property_mouse_filter>` to :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` to tell a ``Control`` node to ignore mouse or touch events. You'll need it if you place an icon on top of a button.
-
-:ref:`Theme<class_Theme>` resources change the Control's appearance. If you change the :ref:`Theme<class_Theme>` on a ``Control`` node, it affects all of its children. To override some of the theme's parameters, call one of the ``add_*_override`` methods, like :ref:`add_font_override<class_Control_method_add_font_override>`. You can override the theme with the inspector.
-
-Tutorials
----------
-
-- :doc:`../tutorials/gui/index`
-
-- :doc:`../tutorials/2d/custom_drawing_in_2d`
-
 Property Descriptions
 ---------------------
 
@@ -637,7 +632,7 @@ Property Descriptions
 - :ref:`float<class_float>` **anchor_bottom**
 
 +-----------+--------------+
-| *Default* | 0.0          |
+| *Default* | ``0.0``      |
 +-----------+--------------+
 | *Getter*  | get_anchor() |
 +-----------+--------------+
@@ -651,7 +646,7 @@ Anchors the bottom edge of the node to the origin, the center, or the end of its
 - :ref:`float<class_float>` **anchor_left**
 
 +-----------+--------------+
-| *Default* | 0.0          |
+| *Default* | ``0.0``      |
 +-----------+--------------+
 | *Getter*  | get_anchor() |
 +-----------+--------------+
@@ -665,7 +660,7 @@ Anchors the left edge of the node to the origin, the center or the end of its pa
 - :ref:`float<class_float>` **anchor_right**
 
 +-----------+--------------+
-| *Default* | 0.0          |
+| *Default* | ``0.0``      |
 +-----------+--------------+
 | *Getter*  | get_anchor() |
 +-----------+--------------+
@@ -679,7 +674,7 @@ Anchors the right edge of the node to the origin, the center or the end of its p
 - :ref:`float<class_float>` **anchor_top**
 
 +-----------+--------------+
-| *Default* | 0.0          |
+| *Default* | ``0.0``      |
 +-----------+--------------+
 | *Getter*  | get_anchor() |
 +-----------+--------------+
@@ -693,7 +688,7 @@ Anchors the top edge of the node to the origin, the center or the end of its par
 - :ref:`FocusMode<enum_Control_FocusMode>` **focus_mode**
 
 +-----------+-----------------------+
-| *Default* | 0                     |
+| *Default* | ``0``                 |
 +-----------+-----------------------+
 | *Setter*  | set_focus_mode(value) |
 +-----------+-----------------------+
@@ -709,7 +704,7 @@ The focus access mode for the control (None, Click or All). Only one Control can
 - :ref:`NodePath<class_NodePath>` **focus_neighbour_bottom**
 
 +-----------+----------------------------+
-| *Default* | NodePath("")               |
+| *Default* | ``NodePath("")``           |
 +-----------+----------------------------+
 | *Setter*  | set_focus_neighbour(value) |
 +-----------+----------------------------+
@@ -725,7 +720,7 @@ Tells Godot which node it should give keyboard focus to if the user presses the 
 - :ref:`NodePath<class_NodePath>` **focus_neighbour_left**
 
 +-----------+----------------------------+
-| *Default* | NodePath("")               |
+| *Default* | ``NodePath("")``           |
 +-----------+----------------------------+
 | *Setter*  | set_focus_neighbour(value) |
 +-----------+----------------------------+
@@ -741,7 +736,7 @@ Tells Godot which node it should give keyboard focus to if the user presses the 
 - :ref:`NodePath<class_NodePath>` **focus_neighbour_right**
 
 +-----------+----------------------------+
-| *Default* | NodePath("")               |
+| *Default* | ``NodePath("")``           |
 +-----------+----------------------------+
 | *Setter*  | set_focus_neighbour(value) |
 +-----------+----------------------------+
@@ -757,7 +752,7 @@ Tells Godot which node it should give keyboard focus to if the user presses the 
 - :ref:`NodePath<class_NodePath>` **focus_neighbour_top**
 
 +-----------+----------------------------+
-| *Default* | NodePath("")               |
+| *Default* | ``NodePath("")``           |
 +-----------+----------------------------+
 | *Setter*  | set_focus_neighbour(value) |
 +-----------+----------------------------+
@@ -773,7 +768,7 @@ Tells Godot which node it should give keyboard focus to if the user presses the 
 - :ref:`NodePath<class_NodePath>` **focus_next**
 
 +-----------+-----------------------+
-| *Default* | NodePath("")          |
+| *Default* | ``NodePath("")``      |
 +-----------+-----------------------+
 | *Setter*  | set_focus_next(value) |
 +-----------+-----------------------+
@@ -791,7 +786,7 @@ If this property is not set, Godot will select a "best guess" based on surroundi
 - :ref:`NodePath<class_NodePath>` **focus_previous**
 
 +-----------+---------------------------+
-| *Default* | NodePath("")              |
+| *Default* | ``NodePath("")``          |
 +-----------+---------------------------+
 | *Setter*  | set_focus_previous(value) |
 +-----------+---------------------------+
@@ -809,7 +804,7 @@ If this property is not set, Godot will select a "best guess" based on surroundi
 - :ref:`GrowDirection<enum_Control_GrowDirection>` **grow_horizontal**
 
 +-----------+-----------------------------+
-| *Default* | 1                           |
+| *Default* | ``1``                       |
 +-----------+-----------------------------+
 | *Setter*  | set_h_grow_direction(value) |
 +-----------+-----------------------------+
@@ -825,7 +820,7 @@ Controls the direction on the horizontal axis in which the control should grow i
 - :ref:`GrowDirection<enum_Control_GrowDirection>` **grow_vertical**
 
 +-----------+-----------------------------+
-| *Default* | 1                           |
+| *Default* | ``1``                       |
 +-----------+-----------------------------+
 | *Setter*  | set_v_grow_direction(value) |
 +-----------+-----------------------------+
@@ -841,7 +836,7 @@ Controls the direction on the vertical axis in which the control should grow if 
 - :ref:`String<class_String>` **hint_tooltip**
 
 +-----------+--------------------+
-| *Default* | ""                 |
+| *Default* | ``""``             |
 +-----------+--------------------+
 | *Setter*  | set_tooltip(value) |
 +-----------+--------------------+
@@ -855,7 +850,7 @@ Changes the tooltip text. The tooltip appears when the user's mouse cursor stays
 - :ref:`float<class_float>` **margin_bottom**
 
 +-----------+-------------------+
-| *Default* | 0.0               |
+| *Default* | ``0.0``           |
 +-----------+-------------------+
 | *Setter*  | set_margin(value) |
 +-----------+-------------------+
@@ -873,7 +868,7 @@ Margins are often controlled by one or multiple parent :ref:`Container<class_Con
 - :ref:`float<class_float>` **margin_left**
 
 +-----------+-------------------+
-| *Default* | 0.0               |
+| *Default* | ``0.0``           |
 +-----------+-------------------+
 | *Setter*  | set_margin(value) |
 +-----------+-------------------+
@@ -891,7 +886,7 @@ Margins are often controlled by one or multiple parent :ref:`Container<class_Con
 - :ref:`float<class_float>` **margin_right**
 
 +-----------+-------------------+
-| *Default* | 0.0               |
+| *Default* | ``0.0``           |
 +-----------+-------------------+
 | *Setter*  | set_margin(value) |
 +-----------+-------------------+
@@ -909,7 +904,7 @@ Margins are often controlled by one or multiple parent :ref:`Container<class_Con
 - :ref:`float<class_float>` **margin_top**
 
 +-----------+-------------------+
-| *Default* | 0.0               |
+| *Default* | ``0.0``           |
 +-----------+-------------------+
 | *Setter*  | set_margin(value) |
 +-----------+-------------------+
@@ -927,7 +922,7 @@ Margins are often controlled by one or multiple parent :ref:`Container<class_Con
 - :ref:`CursorShape<enum_Control_CursorShape>` **mouse_default_cursor_shape**
 
 +-----------+---------------------------------+
-| *Default* | 0                               |
+| *Default* | ``0``                           |
 +-----------+---------------------------------+
 | *Setter*  | set_default_cursor_shape(value) |
 +-----------+---------------------------------+
@@ -945,7 +940,7 @@ The default cursor shape for this control. Useful for Godot plugins and applicat
 - :ref:`MouseFilter<enum_Control_MouseFilter>` **mouse_filter**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_mouse_filter(value) |
 +-----------+-------------------------+
@@ -961,7 +956,7 @@ Controls whether the control will be able to receive mouse button input events t
 - :ref:`bool<class_bool>` **rect_clip_content**
 
 +-----------+--------------------------+
-| *Default* | false                    |
+| *Default* | ``false``                |
 +-----------+--------------------------+
 | *Setter*  | set_clip_contents(value) |
 +-----------+--------------------------+
@@ -989,7 +984,7 @@ The node's global position, relative to the world (usually to the top-left corne
 - :ref:`Vector2<class_Vector2>` **rect_min_size**
 
 +-----------+--------------------------------+
-| *Default* | Vector2( 0, 0 )                |
+| *Default* | ``Vector2( 0, 0 )``            |
 +-----------+--------------------------------+
 | *Setter*  | set_custom_minimum_size(value) |
 +-----------+--------------------------------+
@@ -1005,7 +1000,7 @@ The minimum size of the node's bounding rectangle. If you set it to a value grea
 - :ref:`Vector2<class_Vector2>` **rect_pivot_offset**
 
 +-----------+-------------------------+
-| *Default* | Vector2( 0, 0 )         |
+| *Default* | ``Vector2( 0, 0 )``     |
 +-----------+-------------------------+
 | *Setter*  | set_pivot_offset(value) |
 +-----------+-------------------------+
@@ -1020,11 +1015,11 @@ By default, the node's pivot is its top-left corner. When you change its :ref:`r
 
 - :ref:`Vector2<class_Vector2>` **rect_position**
 
-+-----------+-----------------+
-| *Default* | Vector2( 0, 0 ) |
-+-----------+-----------------+
-| *Getter*  | get_position()  |
-+-----------+-----------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 0, 0 )`` |
++-----------+---------------------+
+| *Getter*  | get_position()      |
++-----------+---------------------+
 
 The node's position, relative to its parent. It corresponds to the rectangle's top-left corner. The property is not affected by :ref:`rect_pivot_offset<class_Control_property_rect_pivot_offset>`.
 
@@ -1035,7 +1030,7 @@ The node's position, relative to its parent. It corresponds to the rectangle's t
 - :ref:`float<class_float>` **rect_rotation**
 
 +-----------+-----------------------------+
-| *Default* | 0.0                         |
+| *Default* | ``0.0``                     |
 +-----------+-----------------------------+
 | *Setter*  | set_rotation_degrees(value) |
 +-----------+-----------------------------+
@@ -1050,13 +1045,13 @@ The node's rotation around its pivot, in degrees. See :ref:`rect_pivot_offset<cl
 
 - :ref:`Vector2<class_Vector2>` **rect_scale**
 
-+-----------+------------------+
-| *Default* | Vector2( 1, 1 )  |
-+-----------+------------------+
-| *Setter*  | set_scale(value) |
-+-----------+------------------+
-| *Getter*  | get_scale()      |
-+-----------+------------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 1, 1 )`` |
++-----------+---------------------+
+| *Setter*  | set_scale(value)    |
++-----------+---------------------+
+| *Getter*  | get_scale()         |
++-----------+---------------------+
 
 The node's scale, relative to its :ref:`rect_size<class_Control_property_rect_size>`. Change this property to scale the node around its :ref:`rect_pivot_offset<class_Control_property_rect_pivot_offset>`.
 
@@ -1066,11 +1061,11 @@ The node's scale, relative to its :ref:`rect_size<class_Control_property_rect_si
 
 - :ref:`Vector2<class_Vector2>` **rect_size**
 
-+-----------+-----------------+
-| *Default* | Vector2( 0, 0 ) |
-+-----------+-----------------+
-| *Getter*  | get_size()      |
-+-----------+-----------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 0, 0 )`` |
++-----------+---------------------+
+| *Getter*  | get_size()          |
++-----------+---------------------+
 
 The size of the node's bounding rectangle, in pixels. :ref:`Container<class_Container>` nodes update this property automatically.
 
@@ -1081,7 +1076,7 @@ The size of the node's bounding rectangle, in pixels. :ref:`Container<class_Cont
 - :ref:`int<class_int>` **size_flags_horizontal**
 
 +-----------+-------------------------+
-| *Default* | 1                       |
+| *Default* | ``1``                   |
 +-----------+-------------------------+
 | *Setter*  | set_h_size_flags(value) |
 +-----------+-------------------------+
@@ -1097,7 +1092,7 @@ Tells the parent :ref:`Container<class_Container>` nodes how they should resize 
 - :ref:`float<class_float>` **size_flags_stretch_ratio**
 
 +-----------+--------------------------+
-| *Default* | 1.0                      |
+| *Default* | ``1.0``                  |
 +-----------+--------------------------+
 | *Setter*  | set_stretch_ratio(value) |
 +-----------+--------------------------+
@@ -1113,7 +1108,7 @@ If the node and at least one of its neighbours uses the :ref:`SIZE_EXPAND<class_
 - :ref:`int<class_int>` **size_flags_vertical**
 
 +-----------+-------------------------+
-| *Default* | 1                       |
+| *Default* | ``1``                   |
 +-----------+-------------------------+
 | *Setter*  | set_v_size_flags(value) |
 +-----------+-------------------------+
@@ -1600,7 +1595,7 @@ Virtual method to be implemented by the user. Returns whether the given ``point`
 
 If not overridden, default behavior is checking if the point is within control's Rect.
 
-**Node:** If you want to check if a point is inside the control, you can use ``get_rect().has_point(point)``.
+**Note:** If you want to check if a point is inside the control, you can use ``get_rect().has_point(point)``.
 
 ----
 

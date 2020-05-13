@@ -9,27 +9,32 @@
 Plane
 =====
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Plane in hessian form.
+
+Description
+-----------
+
+Plane represents a normalized plane equation. Basically, "normal" is the normal of the plane (a,b,c normalized), and "d" is the distance from the origin to the plane (in the direction of "normal"). "Over" or "Above" the plane is considered the side of the plane towards where the normal is pointing.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
 
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------+--------------------+
-| :ref:`float<class_float>`     | :ref:`d<class_Plane_property_d>`           | 0.0                |
-+-------------------------------+--------------------------------------------+--------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`normal<class_Plane_property_normal>` | Vector3( 0, 0, 0 ) |
-+-------------------------------+--------------------------------------------+--------------------+
-| :ref:`float<class_float>`     | :ref:`x<class_Plane_property_x>`           | 0.0                |
-+-------------------------------+--------------------------------------------+--------------------+
-| :ref:`float<class_float>`     | :ref:`y<class_Plane_property_y>`           | 0.0                |
-+-------------------------------+--------------------------------------------+--------------------+
-| :ref:`float<class_float>`     | :ref:`z<class_Plane_property_z>`           | 0.0                |
-+-------------------------------+--------------------------------------------+--------------------+
++-------------------------------+--------------------------------------------+------------------------+
+| :ref:`float<class_float>`     | :ref:`d<class_Plane_property_d>`           | ``0.0``                |
++-------------------------------+--------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`normal<class_Plane_property_normal>` | ``Vector3( 0, 0, 0 )`` |
++-------------------------------+--------------------------------------------+------------------------+
+| :ref:`float<class_float>`     | :ref:`x<class_Plane_property_x>`           | ``0.0``                |
++-------------------------------+--------------------------------------------+------------------------+
+| :ref:`float<class_float>`     | :ref:`y<class_Plane_property_y>`           | ``0.0``                |
++-------------------------------+--------------------------------------------+------------------------+
+| :ref:`float<class_float>`     | :ref:`z<class_Plane_property_z>`           | ``0.0``                |
++-------------------------------+--------------------------------------------+------------------------+
 
 Methods
 -------
@@ -79,16 +84,6 @@ Constants
 
 - **PLANE_XY** = **Plane( 0, 0, 1, 0 )**
 
-Description
------------
-
-Plane represents a normalized plane equation. Basically, "normal" is the normal of the plane (a,b,c normalized), and "d" is the distance from the origin to the plane (in the direction of "normal"). "Over" or "Above" the plane is considered the side of the plane towards where the normal is pointing.
-
-Tutorials
----------
-
-- :doc:`../tutorials/math/index`
-
 Property Descriptions
 ---------------------
 
@@ -96,9 +91,9 @@ Property Descriptions
 
 - :ref:`float<class_float>` **d**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 Distance from the origin to the plane, in the direction of :ref:`normal<class_Plane_property_normal>`.
 
@@ -108,9 +103,9 @@ Distance from the origin to the plane, in the direction of :ref:`normal<class_Pl
 
 - :ref:`Vector3<class_Vector3>` **normal**
 
-+-----------+--------------------+
-| *Default* | Vector3( 0, 0, 0 ) |
-+-----------+--------------------+
++-----------+------------------------+
+| *Default* | ``Vector3( 0, 0, 0 )`` |
++-----------+------------------------+
 
 The normal of the plane. "Over" or "Above" the plane is considered the side of the plane towards where the normal is pointing.
 
@@ -120,9 +115,9 @@ The normal of the plane. "Over" or "Above" the plane is considered the side of t
 
 - :ref:`float<class_float>` **x**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 The :ref:`normal<class_Plane_property_normal>`'s X component.
 
@@ -132,9 +127,9 @@ The :ref:`normal<class_Plane_property_normal>`'s X component.
 
 - :ref:`float<class_float>` **y**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 The :ref:`normal<class_Plane_property_normal>`'s Y component.
 
@@ -144,9 +139,9 @@ The :ref:`normal<class_Plane_property_normal>`'s Y component.
 
 - :ref:`float<class_float>` **z**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 The :ref:`normal<class_Plane_property_normal>`'s Z component.
 

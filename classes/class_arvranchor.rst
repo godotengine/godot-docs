@@ -11,19 +11,23 @@ ARVRAnchor
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 An anchor point in AR space.
+
+Description
+-----------
+
+The ARVR Anchor point is a spatial node that maps a real world location identified by the AR platform to a position within the game world. For example, as long as plane detection in ARKit is on, ARKit will identify and update the position of planes (tables, floors, etc) and create anchors for them.
+
+This node is mapped to one of the anchors through its unique ID. When you receive a signal that a new anchor is available, you should add this node to your scene for that anchor. You can predefine nodes and set the ID; the nodes will simply remain on 0,0,0 until a plane is recognized.
+
+Keep in mind that, as long as plane detection is enabled, the size, placing and orientation of an anchor will be updated as the detection logic learns more about the real world out there especially if only part of the surface is in view.
 
 Properties
 ----------
 
-+-----------------------+-------------------------------------------------------+---+
-| :ref:`int<class_int>` | :ref:`anchor_id<class_ARVRAnchor_property_anchor_id>` | 1 |
-+-----------------------+-------------------------------------------------------+---+
++-----------------------+-------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`anchor_id<class_ARVRAnchor_property_anchor_id>` | ``1`` |
++-----------------------+-------------------------------------------------------+-------+
 
 Methods
 -------
@@ -49,15 +53,6 @@ Signals
 
 Emitted when the mesh associated with the anchor changes or when one becomes available. This is especially important for topology that is constantly being ``mesh_updated``.
 
-Description
------------
-
-The ARVR Anchor point is a spatial node that maps a real world location identified by the AR platform to a position within the game world. For example, as long as plane detection in ARKit is on, ARKit will identify and update the position of planes (tables, floors, etc) and create anchors for them.
-
-This node is mapped to one of the anchors through its unique ID. When you receive a signal that a new anchor is available, you should add this node to your scene for that anchor. You can predefine nodes and set the ID; the nodes will simply remain on 0,0,0 until a plane is recognized.
-
-Keep in mind that, as long as plane detection is enabled, the size, placing and orientation of an anchor will be updated as the detection logic learns more about the real world out there especially if only part of the surface is in view.
-
 Property Descriptions
 ---------------------
 
@@ -66,7 +61,7 @@ Property Descriptions
 - :ref:`int<class_int>` **anchor_id**
 
 +-----------+----------------------+
-| *Default* | 1                    |
+| *Default* | ``1``                |
 +-----------+----------------------+
 | *Setter*  | set_anchor_id(value) |
 +-----------+----------------------+

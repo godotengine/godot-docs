@@ -11,31 +11,38 @@ NetworkedMultiplayerENet
 
 **Inherits:** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 PacketPeer implementation using the `ENet <http://enet.bespin.org/index.html>`_ library.
+
+Description
+-----------
+
+A PacketPeer implementation that should be passed to :ref:`SceneTree.network_peer<class_SceneTree_property_network_peer>` after being initialized as either a client or server. Events can then be handled by connecting to :ref:`SceneTree<class_SceneTree>` signals.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/networking/high_level_multiplayer`
+
+- `http://enet.bespin.org/usergroup0.html <http://enet.bespin.org/usergroup0.html>`_
 
 Properties
 ----------
 
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                                               | :ref:`always_ordered<class_NetworkedMultiplayerENet_property_always_ordered>`     | false        |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                                                 | :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>`       | 3            |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
-| :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` | :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` | 0            |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                                               | refuse_new_connections                                                            | **O:** false |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                                               | :ref:`server_relay<class_NetworkedMultiplayerENet_property_server_relay>`         | true         |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                                                 | :ref:`transfer_channel<class_NetworkedMultiplayerENet_property_transfer_channel>` | -1           |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
-| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>`       | transfer_mode                                                                     | **O:** 2     |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`always_ordered<class_NetworkedMultiplayerENet_property_always_ordered>`     | ``false``        |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
+| :ref:`int<class_int>`                                                 | :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>`       | ``3``            |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
+| :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` | :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` | ``0``            |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`                                               | refuse_new_connections                                                            | **O:** ``false`` |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`server_relay<class_NetworkedMultiplayerENet_property_server_relay>`         | ``true``         |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
+| :ref:`int<class_int>`                                                 | :ref:`transfer_channel<class_NetworkedMultiplayerENet_property_transfer_channel>` | ``-1``           |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>`       | transfer_mode                                                                     | **O:** ``2``     |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
 
 Methods
 -------
@@ -87,18 +94,6 @@ enum **CompressionMode**:
 
 - **COMPRESS_ZSTD** = **4** --- `Zstandard <https://facebook.github.io/zstd/>`_ compression.
 
-Description
------------
-
-A PacketPeer implementation that should be passed to :ref:`SceneTree.network_peer<class_SceneTree_property_network_peer>` after being initialized as either a client or server. Events can then be handled by connecting to :ref:`SceneTree<class_SceneTree>` signals.
-
-Tutorials
----------
-
-- :doc:`../tutorials/networking/high_level_multiplayer`
-
-- `http://enet.bespin.org/usergroup0.html <http://enet.bespin.org/usergroup0.html>`_
-
 Property Descriptions
 ---------------------
 
@@ -107,7 +102,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **always_ordered**
 
 +-----------+---------------------------+
-| *Default* | false                     |
+| *Default* | ``false``                 |
 +-----------+---------------------------+
 | *Setter*  | set_always_ordered(value) |
 +-----------+---------------------------+
@@ -123,7 +118,7 @@ Enforce ordered packets when using :ref:`NetworkedMultiplayerPeer.TRANSFER_MODE_
 - :ref:`int<class_int>` **channel_count**
 
 +-----------+--------------------------+
-| *Default* | 3                        |
+| *Default* | ``3``                    |
 +-----------+--------------------------+
 | *Setter*  | set_channel_count(value) |
 +-----------+--------------------------+
@@ -139,7 +134,7 @@ The number of channels to be used by ENet. Channels are used to separate differe
 - :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` **compression_mode**
 
 +-----------+-----------------------------+
-| *Default* | 0                           |
+| *Default* | ``0``                       |
 +-----------+-----------------------------+
 | *Setter*  | set_compression_mode(value) |
 +-----------+-----------------------------+
@@ -155,7 +150,7 @@ The compression method used for network packets. These have different tradeoffs 
 - :ref:`bool<class_bool>` **server_relay**
 
 +-----------+---------------------------------+
-| *Default* | true                            |
+| *Default* | ``true``                        |
 +-----------+---------------------------------+
 | *Setter*  | set_server_relay_enabled(value) |
 +-----------+---------------------------------+
@@ -171,7 +166,7 @@ Enable or disable the server feature that notifies clients of other peers' conne
 - :ref:`int<class_int>` **transfer_channel**
 
 +-----------+-----------------------------+
-| *Default* | -1                          |
+| *Default* | ``-1``                      |
 +-----------+-----------------------------+
 | *Setter*  | set_transfer_channel(value) |
 +-----------+-----------------------------+
@@ -203,7 +198,7 @@ Create client that connects to a server at ``address`` using specified ``port``.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **create_server** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` max_clients=32, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0 **)**
 
-Create server that listens to connections via ``port``. The port needs to be an available, unused port between 0 and 65535. Note that ports below 1024 are privileged and may require elevated permissions depending on the platform. To change the interface the server listens on, use :ref:`set_bind_ip<class_NetworkedMultiplayerENet_method_set_bind_ip>`. The default IP is the wildcard ``"*"``, which listens on all available interfaces. ``max_clients`` is the maximum number of clients that are allowed at once, any number up to 4096 may be used, although the achievable number of simultaneous clients may be far lower and depends on the application. For additional details on the bandwidth parameters, see :ref:`create_client<class_NetworkedMultiplayerENet_method_create_client>`. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if a server was created, :ref:`@GlobalScope.ERR_ALREADY_IN_USE<class_@GlobalScope_constant_ERR_ALREADY_IN_USE>` if this NetworkedMultiplayerENet instance already has an open connection (in which case you need to call :ref:`close_connection<class_NetworkedMultiplayerENet_method_close_connection>` first) or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the server could not be created.
+Create server that listens to connections via ``port``. The port needs to be an available, unused port between 0 and 65535. Note that ports below 1024 are privileged and may require elevated permissions depending on the platform. To change the interface the server listens on, use :ref:`set_bind_ip<class_NetworkedMultiplayerENet_method_set_bind_ip>`. The default IP is the wildcard ``"*"``, which listens on all available interfaces. ``max_clients`` is the maximum number of clients that are allowed at once, any number up to 4095 may be used, although the achievable number of simultaneous clients may be far lower and depends on the application. For additional details on the bandwidth parameters, see :ref:`create_client<class_NetworkedMultiplayerENet_method_create_client>`. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if a server was created, :ref:`@GlobalScope.ERR_ALREADY_IN_USE<class_@GlobalScope_constant_ERR_ALREADY_IN_USE>` if this NetworkedMultiplayerENet instance already has an open connection (in which case you need to call :ref:`close_connection<class_NetworkedMultiplayerENet_method_close_connection>` first) or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the server could not be created.
 
 ----
 

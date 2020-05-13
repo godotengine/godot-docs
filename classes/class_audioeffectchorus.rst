@@ -11,71 +11,71 @@ AudioEffectChorus
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Adds a chorus audio effect.
+
+Description
+-----------
+
+Adds a chorus audio effect. The effect applies a filter with voices to duplicate the audio source and manipulate it through the filter.
 
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`dry<class_AudioEffectChorus_property_dry>`                             | 1.0    |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/1/cutoff_hz<class_AudioEffectChorus_property_voice/1/cutoff_hz>` | 8000.0 |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/1/delay_ms<class_AudioEffectChorus_property_voice/1/delay_ms>`   | 15.0   |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/1/depth_ms<class_AudioEffectChorus_property_voice/1/depth_ms>`   | 2.0    |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/1/level_db<class_AudioEffectChorus_property_voice/1/level_db>`   | 0.0    |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/1/pan<class_AudioEffectChorus_property_voice/1/pan>`             | -0.5   |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/1/rate_hz<class_AudioEffectChorus_property_voice/1/rate_hz>`     | 0.8    |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/2/cutoff_hz<class_AudioEffectChorus_property_voice/2/cutoff_hz>` | 8000.0 |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/2/delay_ms<class_AudioEffectChorus_property_voice/2/delay_ms>`   | 20.0   |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/2/depth_ms<class_AudioEffectChorus_property_voice/2/depth_ms>`   | 3.0    |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/2/level_db<class_AudioEffectChorus_property_voice/2/level_db>`   | 0.0    |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/2/pan<class_AudioEffectChorus_property_voice/2/pan>`             | 0.5    |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/2/rate_hz<class_AudioEffectChorus_property_voice/2/rate_hz>`     | 1.2    |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/3/cutoff_hz<class_AudioEffectChorus_property_voice/3/cutoff_hz>` |        |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/3/delay_ms<class_AudioEffectChorus_property_voice/3/delay_ms>`   |        |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/3/depth_ms<class_AudioEffectChorus_property_voice/3/depth_ms>`   |        |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/3/level_db<class_AudioEffectChorus_property_voice/3/level_db>`   |        |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/3/pan<class_AudioEffectChorus_property_voice/3/pan>`             |        |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/3/rate_hz<class_AudioEffectChorus_property_voice/3/rate_hz>`     |        |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/4/cutoff_hz<class_AudioEffectChorus_property_voice/4/cutoff_hz>` |        |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/4/delay_ms<class_AudioEffectChorus_property_voice/4/delay_ms>`   |        |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/4/depth_ms<class_AudioEffectChorus_property_voice/4/depth_ms>`   |        |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/4/level_db<class_AudioEffectChorus_property_voice/4/level_db>`   |        |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/4/pan<class_AudioEffectChorus_property_voice/4/pan>`             |        |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`voice/4/rate_hz<class_AudioEffectChorus_property_voice/4/rate_hz>`     |        |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`int<class_int>`     | :ref:`voice_count<class_AudioEffectChorus_property_voice_count>`             | 2      |
-+---------------------------+------------------------------------------------------------------------------+--------+
-| :ref:`float<class_float>` | :ref:`wet<class_AudioEffectChorus_property_wet>`                             | 0.5    |
-+---------------------------+------------------------------------------------------------------------------+--------+
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`dry<class_AudioEffectChorus_property_dry>`                             | ``1.0``    |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/1/cutoff_hz<class_AudioEffectChorus_property_voice/1/cutoff_hz>` | ``8000.0`` |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/1/delay_ms<class_AudioEffectChorus_property_voice/1/delay_ms>`   | ``15.0``   |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/1/depth_ms<class_AudioEffectChorus_property_voice/1/depth_ms>`   | ``2.0``    |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/1/level_db<class_AudioEffectChorus_property_voice/1/level_db>`   | ``0.0``    |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/1/pan<class_AudioEffectChorus_property_voice/1/pan>`             | ``-0.5``   |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/1/rate_hz<class_AudioEffectChorus_property_voice/1/rate_hz>`     | ``0.8``    |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/2/cutoff_hz<class_AudioEffectChorus_property_voice/2/cutoff_hz>` | ``8000.0`` |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/2/delay_ms<class_AudioEffectChorus_property_voice/2/delay_ms>`   | ``20.0``   |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/2/depth_ms<class_AudioEffectChorus_property_voice/2/depth_ms>`   | ``3.0``    |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/2/level_db<class_AudioEffectChorus_property_voice/2/level_db>`   | ``0.0``    |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/2/pan<class_AudioEffectChorus_property_voice/2/pan>`             | ``0.5``    |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/2/rate_hz<class_AudioEffectChorus_property_voice/2/rate_hz>`     | ``1.2``    |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/3/cutoff_hz<class_AudioEffectChorus_property_voice/3/cutoff_hz>` |            |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/3/delay_ms<class_AudioEffectChorus_property_voice/3/delay_ms>`   |            |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/3/depth_ms<class_AudioEffectChorus_property_voice/3/depth_ms>`   |            |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/3/level_db<class_AudioEffectChorus_property_voice/3/level_db>`   |            |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/3/pan<class_AudioEffectChorus_property_voice/3/pan>`             |            |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/3/rate_hz<class_AudioEffectChorus_property_voice/3/rate_hz>`     |            |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/4/cutoff_hz<class_AudioEffectChorus_property_voice/4/cutoff_hz>` |            |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/4/delay_ms<class_AudioEffectChorus_property_voice/4/delay_ms>`   |            |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/4/depth_ms<class_AudioEffectChorus_property_voice/4/depth_ms>`   |            |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/4/level_db<class_AudioEffectChorus_property_voice/4/level_db>`   |            |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/4/pan<class_AudioEffectChorus_property_voice/4/pan>`             |            |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`voice/4/rate_hz<class_AudioEffectChorus_property_voice/4/rate_hz>`     |            |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`int<class_int>`     | :ref:`voice_count<class_AudioEffectChorus_property_voice_count>`             | ``2``      |
++---------------------------+------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>` | :ref:`wet<class_AudioEffectChorus_property_wet>`                             | ``0.5``    |
++---------------------------+------------------------------------------------------------------------------+------------+
 
 Methods
 -------
@@ -106,11 +106,6 @@ Methods
 | void                      | :ref:`set_voice_rate_hz<class_AudioEffectChorus_method_set_voice_rate_hz>` **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` rate_hz **)**       |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-Adds a chorus audio effect. The effect applies a filter with voices to duplicate the audio source and manipulate it through the filter.
-
 Property Descriptions
 ---------------------
 
@@ -119,7 +114,7 @@ Property Descriptions
 - :ref:`float<class_float>` **dry**
 
 +-----------+----------------+
-| *Default* | 1.0            |
+| *Default* | ``1.0``        |
 +-----------+----------------+
 | *Setter*  | set_dry(value) |
 +-----------+----------------+
@@ -135,7 +130,7 @@ The effect's raw signal.
 - :ref:`float<class_float>` **voice/1/cutoff_hz**
 
 +-----------+----------------------------+
-| *Default* | 8000.0                     |
+| *Default* | ``8000.0``                 |
 +-----------+----------------------------+
 | *Setter*  | set_voice_cutoff_hz(value) |
 +-----------+----------------------------+
@@ -151,7 +146,7 @@ The voice's cutoff frequency.
 - :ref:`float<class_float>` **voice/1/delay_ms**
 
 +-----------+---------------------------+
-| *Default* | 15.0                      |
+| *Default* | ``15.0``                  |
 +-----------+---------------------------+
 | *Setter*  | set_voice_delay_ms(value) |
 +-----------+---------------------------+
@@ -167,7 +162,7 @@ The voice's signal delay.
 - :ref:`float<class_float>` **voice/1/depth_ms**
 
 +-----------+---------------------------+
-| *Default* | 2.0                       |
+| *Default* | ``2.0``                   |
 +-----------+---------------------------+
 | *Setter*  | set_voice_depth_ms(value) |
 +-----------+---------------------------+
@@ -183,7 +178,7 @@ The voice filter's depth.
 - :ref:`float<class_float>` **voice/1/level_db**
 
 +-----------+---------------------------+
-| *Default* | 0.0                       |
+| *Default* | ``0.0``                   |
 +-----------+---------------------------+
 | *Setter*  | set_voice_level_db(value) |
 +-----------+---------------------------+
@@ -199,7 +194,7 @@ The voice's volume.
 - :ref:`float<class_float>` **voice/1/pan**
 
 +-----------+----------------------+
-| *Default* | -0.5                 |
+| *Default* | ``-0.5``             |
 +-----------+----------------------+
 | *Setter*  | set_voice_pan(value) |
 +-----------+----------------------+
@@ -215,7 +210,7 @@ The voice's pan level.
 - :ref:`float<class_float>` **voice/1/rate_hz**
 
 +-----------+--------------------------+
-| *Default* | 0.8                      |
+| *Default* | ``0.8``                  |
 +-----------+--------------------------+
 | *Setter*  | set_voice_rate_hz(value) |
 +-----------+--------------------------+
@@ -231,7 +226,7 @@ The voice's filter rate.
 - :ref:`float<class_float>` **voice/2/cutoff_hz**
 
 +-----------+----------------------------+
-| *Default* | 8000.0                     |
+| *Default* | ``8000.0``                 |
 +-----------+----------------------------+
 | *Setter*  | set_voice_cutoff_hz(value) |
 +-----------+----------------------------+
@@ -247,7 +242,7 @@ The voice's cutoff frequency.
 - :ref:`float<class_float>` **voice/2/delay_ms**
 
 +-----------+---------------------------+
-| *Default* | 20.0                      |
+| *Default* | ``20.0``                  |
 +-----------+---------------------------+
 | *Setter*  | set_voice_delay_ms(value) |
 +-----------+---------------------------+
@@ -263,7 +258,7 @@ The voice's signal delay.
 - :ref:`float<class_float>` **voice/2/depth_ms**
 
 +-----------+---------------------------+
-| *Default* | 3.0                       |
+| *Default* | ``3.0``                   |
 +-----------+---------------------------+
 | *Setter*  | set_voice_depth_ms(value) |
 +-----------+---------------------------+
@@ -279,7 +274,7 @@ The voice filter's depth.
 - :ref:`float<class_float>` **voice/2/level_db**
 
 +-----------+---------------------------+
-| *Default* | 0.0                       |
+| *Default* | ``0.0``                   |
 +-----------+---------------------------+
 | *Setter*  | set_voice_level_db(value) |
 +-----------+---------------------------+
@@ -295,7 +290,7 @@ The voice's volume.
 - :ref:`float<class_float>` **voice/2/pan**
 
 +-----------+----------------------+
-| *Default* | 0.5                  |
+| *Default* | ``0.5``              |
 +-----------+----------------------+
 | *Setter*  | set_voice_pan(value) |
 +-----------+----------------------+
@@ -311,7 +306,7 @@ The voice's pan level.
 - :ref:`float<class_float>` **voice/2/rate_hz**
 
 +-----------+--------------------------+
-| *Default* | 1.2                      |
+| *Default* | ``1.2``                  |
 +-----------+--------------------------+
 | *Setter*  | set_voice_rate_hz(value) |
 +-----------+--------------------------+
@@ -495,7 +490,7 @@ The voice's filter rate.
 - :ref:`int<class_int>` **voice_count**
 
 +-----------+------------------------+
-| *Default* | 2                      |
+| *Default* | ``2``                  |
 +-----------+------------------------+
 | *Setter*  | set_voice_count(value) |
 +-----------+------------------------+
@@ -511,7 +506,7 @@ The amount of voices in the effect.
 - :ref:`float<class_float>` **wet**
 
 +-----------+----------------+
-| *Default* | 0.5            |
+| *Default* | ``0.5``        |
 +-----------+----------------+
 | *Setter*  | set_wet(value) |
 +-----------+----------------+

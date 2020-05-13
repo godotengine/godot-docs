@@ -13,12 +13,12 @@ PhysicsServer
 
 **Inherited By:** :ref:`BulletPhysicsServer<class_BulletPhysicsServer>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Server interface for low-level physics access.
+
+Description
+-----------
+
+PhysicsServer is the server responsible for all 3D physics. It can create many kinds of physics objects, but does not insert them on the node tree.
 
 Methods
 -------
@@ -873,11 +873,6 @@ enum **BodyAxis**:
 - **BODY_AXIS_ANGULAR_Y** = **16**
 
 - **BODY_AXIS_ANGULAR_Z** = **32**
-
-Description
------------
-
-PhysicsServer is the server responsible for all 3D physics. It can create many kinds of physics objects, but does not insert them on the node tree.
 
 Method Descriptions
 -------------------

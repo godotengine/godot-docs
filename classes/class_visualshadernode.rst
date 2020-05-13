@@ -13,21 +13,16 @@ VisualShaderNode
 
 **Inherited By:** :ref:`VisualShaderNodeBooleanConstant<class_VisualShaderNodeBooleanConstant>`, :ref:`VisualShaderNodeColorConstant<class_VisualShaderNodeColorConstant>`, :ref:`VisualShaderNodeColorFunc<class_VisualShaderNodeColorFunc>`, :ref:`VisualShaderNodeColorOp<class_VisualShaderNodeColorOp>`, :ref:`VisualShaderNodeCompare<class_VisualShaderNodeCompare>`, :ref:`VisualShaderNodeCubeMap<class_VisualShaderNodeCubeMap>`, :ref:`VisualShaderNodeCustom<class_VisualShaderNodeCustom>`, :ref:`VisualShaderNodeDeterminant<class_VisualShaderNodeDeterminant>`, :ref:`VisualShaderNodeDotProduct<class_VisualShaderNodeDotProduct>`, :ref:`VisualShaderNodeFaceForward<class_VisualShaderNodeFaceForward>`, :ref:`VisualShaderNodeFresnel<class_VisualShaderNodeFresnel>`, :ref:`VisualShaderNodeGroupBase<class_VisualShaderNodeGroupBase>`, :ref:`VisualShaderNodeIf<class_VisualShaderNodeIf>`, :ref:`VisualShaderNodeInput<class_VisualShaderNodeInput>`, :ref:`VisualShaderNodeIs<class_VisualShaderNodeIs>`, :ref:`VisualShaderNodeOuterProduct<class_VisualShaderNodeOuterProduct>`, :ref:`VisualShaderNodeOutput<class_VisualShaderNodeOutput>`, :ref:`VisualShaderNodeScalarClamp<class_VisualShaderNodeScalarClamp>`, :ref:`VisualShaderNodeScalarConstant<class_VisualShaderNodeScalarConstant>`, :ref:`VisualShaderNodeScalarDerivativeFunc<class_VisualShaderNodeScalarDerivativeFunc>`, :ref:`VisualShaderNodeScalarFunc<class_VisualShaderNodeScalarFunc>`, :ref:`VisualShaderNodeScalarInterp<class_VisualShaderNodeScalarInterp>`, :ref:`VisualShaderNodeScalarOp<class_VisualShaderNodeScalarOp>`, :ref:`VisualShaderNodeScalarSmoothStep<class_VisualShaderNodeScalarSmoothStep>`, :ref:`VisualShaderNodeSwitch<class_VisualShaderNodeSwitch>`, :ref:`VisualShaderNodeTexture<class_VisualShaderNodeTexture>`, :ref:`VisualShaderNodeTransformCompose<class_VisualShaderNodeTransformCompose>`, :ref:`VisualShaderNodeTransformConstant<class_VisualShaderNodeTransformConstant>`, :ref:`VisualShaderNodeTransformDecompose<class_VisualShaderNodeTransformDecompose>`, :ref:`VisualShaderNodeTransformFunc<class_VisualShaderNodeTransformFunc>`, :ref:`VisualShaderNodeTransformMult<class_VisualShaderNodeTransformMult>`, :ref:`VisualShaderNodeTransformVecMult<class_VisualShaderNodeTransformVecMult>`, :ref:`VisualShaderNodeUniform<class_VisualShaderNodeUniform>`, :ref:`VisualShaderNodeVec3Constant<class_VisualShaderNodeVec3Constant>`, :ref:`VisualShaderNodeVectorClamp<class_VisualShaderNodeVectorClamp>`, :ref:`VisualShaderNodeVectorCompose<class_VisualShaderNodeVectorCompose>`, :ref:`VisualShaderNodeVectorDecompose<class_VisualShaderNodeVectorDecompose>`, :ref:`VisualShaderNodeVectorDerivativeFunc<class_VisualShaderNodeVectorDerivativeFunc>`, :ref:`VisualShaderNodeVectorDistance<class_VisualShaderNodeVectorDistance>`, :ref:`VisualShaderNodeVectorFunc<class_VisualShaderNodeVectorFunc>`, :ref:`VisualShaderNodeVectorInterp<class_VisualShaderNodeVectorInterp>`, :ref:`VisualShaderNodeVectorLen<class_VisualShaderNodeVectorLen>`, :ref:`VisualShaderNodeVectorOp<class_VisualShaderNodeVectorOp>`, :ref:`VisualShaderNodeVectorRefract<class_VisualShaderNodeVectorRefract>`, :ref:`VisualShaderNodeVectorScalarMix<class_VisualShaderNodeVectorScalarMix>`, :ref:`VisualShaderNodeVectorScalarSmoothStep<class_VisualShaderNodeVectorScalarSmoothStep>`, :ref:`VisualShaderNodeVectorScalarStep<class_VisualShaderNodeVectorScalarStep>`, :ref:`VisualShaderNodeVectorSmoothStep<class_VisualShaderNodeVectorSmoothStep>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------------------------------------+---------------------------+
-| :ref:`Array<class_Array>` | :ref:`default_input_values<class_VisualShaderNode_property_default_input_values>`       | [ 0, Vector3( 0, 0, 0 ) ] |
-+---------------------------+-----------------------------------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`     | :ref:`output_port_for_preview<class_VisualShaderNode_property_output_port_for_preview>` | -1                        |
-+---------------------------+-----------------------------------------------------------------------------------------+---------------------------+
++---------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
+| :ref:`Array<class_Array>` | :ref:`default_input_values<class_VisualShaderNode_property_default_input_values>`       | ``[ 0, Vector3( 0, 0, 0 ) ]`` |
++---------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
+| :ref:`int<class_int>`     | :ref:`output_port_for_preview<class_VisualShaderNode_property_output_port_for_preview>` | ``-1``                        |
++---------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 
 Methods
 -------
@@ -83,9 +78,9 @@ Property Descriptions
 
 - :ref:`Array<class_Array>` **default_input_values**
 
-+-----------+---------------------------+
-| *Default* | [ 0, Vector3( 0, 0, 0 ) ] |
-+-----------+---------------------------+
++-----------+-------------------------------+
+| *Default* | ``[ 0, Vector3( 0, 0, 0 ) ]`` |
++-----------+-------------------------------+
 
 ----
 
@@ -94,7 +89,7 @@ Property Descriptions
 - :ref:`int<class_int>` **output_port_for_preview**
 
 +-----------+------------------------------------+
-| *Default* | -1                                 |
+| *Default* | ``-1``                             |
 +-----------+------------------------------------+
 | *Setter*  | set_output_port_for_preview(value) |
 +-----------+------------------------------------+

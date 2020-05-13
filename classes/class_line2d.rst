@@ -11,43 +11,43 @@ Line2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A 2D line.
+
+Description
+-----------
+
+A line through several points in 2D space.
 
 Properties
 ----------
 
-+-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`antialiased<class_Line2D_property_antialiased>`         | false                   |
-+-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`LineCapMode<enum_Line2D_LineCapMode>`         | :ref:`begin_cap_mode<class_Line2D_property_begin_cap_mode>`   | 0                       |
-+-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>`                           | :ref:`default_color<class_Line2D_property_default_color>`     | Color( 0.4, 0.5, 1, 1 ) |
-+-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`LineCapMode<enum_Line2D_LineCapMode>`         | :ref:`end_cap_mode<class_Line2D_property_end_cap_mode>`       | 0                       |
-+-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`Gradient<class_Gradient>`                     | :ref:`gradient<class_Line2D_property_gradient>`               |                         |
-+-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`LineJointMode<enum_Line2D_LineJointMode>`     | :ref:`joint_mode<class_Line2D_property_joint_mode>`           | 0                       |
-+-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>`     | :ref:`points<class_Line2D_property_points>`                   | PoolVector2Array(  )    |
-+-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`                               | :ref:`round_precision<class_Line2D_property_round_precision>` | 8                       |
-+-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                           | :ref:`sharp_limit<class_Line2D_property_sharp_limit>`         | 2.0                     |
-+-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`                       | :ref:`texture<class_Line2D_property_texture>`                 |                         |
-+-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` | :ref:`texture_mode<class_Line2D_property_texture_mode>`       | 0                       |
-+-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                           | :ref:`width<class_Line2D_property_width>`                     | 10.0                    |
-+-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`Curve<class_Curve>`                           | :ref:`width_curve<class_Line2D_property_width_curve>`         |                         |
-+-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
++-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`antialiased<class_Line2D_property_antialiased>`         | ``false``                   |
++-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
+| :ref:`LineCapMode<enum_Line2D_LineCapMode>`         | :ref:`begin_cap_mode<class_Line2D_property_begin_cap_mode>`   | ``0``                       |
++-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
+| :ref:`Color<class_Color>`                           | :ref:`default_color<class_Line2D_property_default_color>`     | ``Color( 0.4, 0.5, 1, 1 )`` |
++-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
+| :ref:`LineCapMode<enum_Line2D_LineCapMode>`         | :ref:`end_cap_mode<class_Line2D_property_end_cap_mode>`       | ``0``                       |
++-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
+| :ref:`Gradient<class_Gradient>`                     | :ref:`gradient<class_Line2D_property_gradient>`               |                             |
++-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
+| :ref:`LineJointMode<enum_Line2D_LineJointMode>`     | :ref:`joint_mode<class_Line2D_property_joint_mode>`           | ``0``                       |
++-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>`     | :ref:`points<class_Line2D_property_points>`                   | ``PoolVector2Array(  )``    |
++-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
+| :ref:`int<class_int>`                               | :ref:`round_precision<class_Line2D_property_round_precision>` | ``8``                       |
++-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
+| :ref:`float<class_float>`                           | :ref:`sharp_limit<class_Line2D_property_sharp_limit>`         | ``2.0``                     |
++-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
+| :ref:`Texture<class_Texture>`                       | :ref:`texture<class_Line2D_property_texture>`                 |                             |
++-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
+| :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` | :ref:`texture_mode<class_Line2D_property_texture_mode>`       | ``0``                       |
++-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
+| :ref:`float<class_float>`                           | :ref:`width<class_Line2D_property_width>`                     | ``10.0``                    |
++-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
+| :ref:`Curve<class_Curve>`                           | :ref:`width_curve<class_Line2D_property_width_curve>`         |                             |
++-----------------------------------------------------+---------------------------------------------------------------+-----------------------------+
 
 Methods
 -------
@@ -121,11 +121,6 @@ enum **LineTextureMode**:
 
 - **LINE_TEXTURE_STRETCH** = **2** --- Stretches the texture across the line. Import the texture with **Repeat** disabled for best results.
 
-Description
------------
-
-A line through several points in 2D space.
-
 Property Descriptions
 ---------------------
 
@@ -134,7 +129,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **antialiased**
 
 +-----------+------------------------+
-| *Default* | false                  |
+| *Default* | ``false``              |
 +-----------+------------------------+
 | *Setter*  | set_antialiased(value) |
 +-----------+------------------------+
@@ -150,7 +145,7 @@ If ``true``, the line's border will be anti-aliased.
 - :ref:`LineCapMode<enum_Line2D_LineCapMode>` **begin_cap_mode**
 
 +-----------+---------------------------+
-| *Default* | 0                         |
+| *Default* | ``0``                     |
 +-----------+---------------------------+
 | *Setter*  | set_begin_cap_mode(value) |
 +-----------+---------------------------+
@@ -165,13 +160,13 @@ Controls the style of the line's first point. Use :ref:`LineCapMode<enum_Line2D_
 
 - :ref:`Color<class_Color>` **default_color**
 
-+-----------+--------------------------+
-| *Default* | Color( 0.4, 0.5, 1, 1 )  |
-+-----------+--------------------------+
-| *Setter*  | set_default_color(value) |
-+-----------+--------------------------+
-| *Getter*  | get_default_color()      |
-+-----------+--------------------------+
++-----------+-----------------------------+
+| *Default* | ``Color( 0.4, 0.5, 1, 1 )`` |
++-----------+-----------------------------+
+| *Setter*  | set_default_color(value)    |
++-----------+-----------------------------+
+| *Getter*  | get_default_color()         |
++-----------+-----------------------------+
 
 The line's color. Will not be used if a gradient is set.
 
@@ -182,7 +177,7 @@ The line's color. Will not be used if a gradient is set.
 - :ref:`LineCapMode<enum_Line2D_LineCapMode>` **end_cap_mode**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_end_cap_mode(value) |
 +-----------+-------------------------+
@@ -212,7 +207,7 @@ The gradient is drawn through the whole line from start to finish. The default c
 - :ref:`LineJointMode<enum_Line2D_LineJointMode>` **joint_mode**
 
 +-----------+-----------------------+
-| *Default* | 0                     |
+| *Default* | ``0``                 |
 +-----------+-----------------------+
 | *Setter*  | set_joint_mode(value) |
 +-----------+-----------------------+
@@ -227,13 +222,13 @@ The style for the points between the start and the end.
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **points**
 
-+-----------+----------------------+
-| *Default* | PoolVector2Array(  ) |
-+-----------+----------------------+
-| *Setter*  | set_points(value)    |
-+-----------+----------------------+
-| *Getter*  | get_points()         |
-+-----------+----------------------+
++-----------+--------------------------+
+| *Default* | ``PoolVector2Array(  )`` |
++-----------+--------------------------+
+| *Setter*  | set_points(value)        |
++-----------+--------------------------+
+| *Getter*  | get_points()             |
++-----------+--------------------------+
 
 The points that form the lines. The line is drawn between every point set in this array.
 
@@ -244,7 +239,7 @@ The points that form the lines. The line is drawn between every point set in thi
 - :ref:`int<class_int>` **round_precision**
 
 +-----------+----------------------------+
-| *Default* | 8                          |
+| *Default* | ``8``                      |
 +-----------+----------------------------+
 | *Setter*  | set_round_precision(value) |
 +-----------+----------------------------+
@@ -260,7 +255,7 @@ The smoothness of the rounded joints and caps. This is only used if a cap or joi
 - :ref:`float<class_float>` **sharp_limit**
 
 +-----------+------------------------+
-| *Default* | 2.0                    |
+| *Default* | ``2.0``                |
 +-----------+------------------------+
 | *Setter*  | set_sharp_limit(value) |
 +-----------+------------------------+
@@ -290,7 +285,7 @@ The texture used for the line's texture. Uses ``texture_mode`` for drawing style
 - :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` **texture_mode**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_texture_mode(value) |
 +-----------+-------------------------+
@@ -306,7 +301,7 @@ The style to render the ``texture`` on the line. Use :ref:`LineTextureMode<enum_
 - :ref:`float<class_float>` **width**
 
 +-----------+------------------+
-| *Default* | 10.0             |
+| *Default* | ``10.0``         |
 +-----------+------------------+
 | *Setter*  | set_width(value) |
 +-----------+------------------+

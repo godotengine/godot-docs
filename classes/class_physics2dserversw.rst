@@ -11,11 +11,6 @@ Physics2DServerSW
 
 **Inherits:** :ref:`Physics2DServer<class_Physics2DServer>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Software implementation of :ref:`Physics2DServer<class_Physics2DServer>`.
 
 Description

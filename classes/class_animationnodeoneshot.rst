@@ -11,29 +11,24 @@ AnimationNodeOneShot
 
 **Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>`                           | false |
-+---------------------------+-----------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`autorestart_delay<class_AnimationNodeOneShot_property_autorestart_delay>`               | 1.0   |
-+---------------------------+-----------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`autorestart_random_delay<class_AnimationNodeOneShot_property_autorestart_random_delay>` | 0.0   |
-+---------------------------+-----------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`fadein_time<class_AnimationNodeOneShot_property_fadein_time>`                           | 0.1   |
-+---------------------------+-----------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`fadeout_time<class_AnimationNodeOneShot_property_fadeout_time>`                         | 0.1   |
-+---------------------------+-----------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`sync<class_AnimationNodeOneShot_property_sync>`                                         | false |
-+---------------------------+-----------------------------------------------------------------------------------------------+-------+
++---------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>`                           | ``false`` |
++---------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`autorestart_delay<class_AnimationNodeOneShot_property_autorestart_delay>`               | ``1.0``   |
++---------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`autorestart_random_delay<class_AnimationNodeOneShot_property_autorestart_random_delay>` | ``0.0``   |
++---------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`fadein_time<class_AnimationNodeOneShot_property_fadein_time>`                           | ``0.1``   |
++---------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`fadeout_time<class_AnimationNodeOneShot_property_fadeout_time>`                         | ``0.1``   |
++---------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`sync<class_AnimationNodeOneShot_property_sync>`                                         | ``false`` |
++---------------------------+-----------------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -67,7 +62,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **autorestart**
 
 +-----------+------------------------+
-| *Default* | false                  |
+| *Default* | ``false``              |
 +-----------+------------------------+
 | *Setter*  | set_autorestart(value) |
 +-----------+------------------------+
@@ -81,7 +76,7 @@ Property Descriptions
 - :ref:`float<class_float>` **autorestart_delay**
 
 +-----------+------------------------------+
-| *Default* | 1.0                          |
+| *Default* | ``1.0``                      |
 +-----------+------------------------------+
 | *Setter*  | set_autorestart_delay(value) |
 +-----------+------------------------------+
@@ -95,7 +90,7 @@ Property Descriptions
 - :ref:`float<class_float>` **autorestart_random_delay**
 
 +-----------+-------------------------------------+
-| *Default* | 0.0                                 |
+| *Default* | ``0.0``                             |
 +-----------+-------------------------------------+
 | *Setter*  | set_autorestart_random_delay(value) |
 +-----------+-------------------------------------+
@@ -109,7 +104,7 @@ Property Descriptions
 - :ref:`float<class_float>` **fadein_time**
 
 +-----------+------------------------+
-| *Default* | 0.1                    |
+| *Default* | ``0.1``                |
 +-----------+------------------------+
 | *Setter*  | set_fadein_time(value) |
 +-----------+------------------------+
@@ -123,7 +118,7 @@ Property Descriptions
 - :ref:`float<class_float>` **fadeout_time**
 
 +-----------+-------------------------+
-| *Default* | 0.1                     |
+| *Default* | ``0.1``                 |
 +-----------+-------------------------+
 | *Setter*  | set_fadeout_time(value) |
 +-----------+-------------------------+
@@ -137,7 +132,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **sync**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_use_sync(value) |
 +-----------+---------------------+

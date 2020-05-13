@@ -11,19 +11,14 @@ AnimationNodeBlendTree
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`graph_offset<class_AnimationNodeBlendTree_property_graph_offset>` | Vector2( 0, 0 ) |
-+-------------------------------+-------------------------------------------------------------------------+-----------------+
++-------------------------------+-------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`graph_offset<class_AnimationNodeBlendTree_property_graph_offset>` | ``Vector2( 0, 0 )`` |
++-------------------------------+-------------------------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -83,7 +78,7 @@ Property Descriptions
 - :ref:`Vector2<class_Vector2>` **graph_offset**
 
 +-----------+-------------------------+
-| *Default* | Vector2( 0, 0 )         |
+| *Default* | ``Vector2( 0, 0 )``     |
 +-----------+-------------------------+
 | *Setter*  | set_graph_offset(value) |
 +-----------+-------------------------+

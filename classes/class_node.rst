@@ -13,31 +13,56 @@ Node
 
 **Inherited By:** :ref:`AnimationPlayer<class_AnimationPlayer>`, :ref:`AnimationTree<class_AnimationTree>`, :ref:`AnimationTreePlayer<class_AnimationTreePlayer>`, :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`CanvasItem<class_CanvasItem>`, :ref:`CanvasLayer<class_CanvasLayer>`, :ref:`EditorFileSystem<class_EditorFileSystem>`, :ref:`EditorInterface<class_EditorInterface>`, :ref:`EditorPlugin<class_EditorPlugin>`, :ref:`EditorResourcePreview<class_EditorResourcePreview>`, :ref:`HTTPRequest<class_HTTPRequest>`, :ref:`InstancePlaceholder<class_InstancePlaceholder>`, :ref:`ResourcePreloader<class_ResourcePreloader>`, :ref:`SkeletonIK<class_SkeletonIK>`, :ref:`Spatial<class_Spatial>`, :ref:`Timer<class_Timer>`, :ref:`Tween<class_Tween>`, :ref:`Viewport<class_Viewport>`, :ref:`WorldEnvironment<class_WorldEnvironment>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for all *scene* objects.
+
+Description
+-----------
+
+Nodes are Godot's building blocks. They can be assigned as the child of another node, resulting in a tree arrangement. A given node can contain any number of nodes as children with the requirement that all siblings (direct children of a node) should have unique names.
+
+A tree of nodes is called a *scene*. Scenes can be saved to the disk and then instanced into other scenes. This allows for very high flexibility in the architecture and data model of Godot projects.
+
+**Scene tree:** The :ref:`SceneTree<class_SceneTree>` contains the active tree of nodes. When a node is added to the scene tree, it receives the :ref:`NOTIFICATION_ENTER_TREE<class_Node_constant_NOTIFICATION_ENTER_TREE>` notification and its :ref:`_enter_tree<class_Node_method__enter_tree>` callback is triggered. Child nodes are always added *after* their parent node, i.e. the :ref:`_enter_tree<class_Node_method__enter_tree>` callback of a parent node will be triggered before its child's.
+
+Once all nodes have been added in the scene tree, they receive the :ref:`NOTIFICATION_READY<class_Node_constant_NOTIFICATION_READY>` notification and their respective :ref:`_ready<class_Node_method__ready>` callbacks are triggered. For groups of nodes, the :ref:`_ready<class_Node_method__ready>` callback is called in reverse order, starting with the children and moving up to the parent nodes.
+
+This means that when adding a node to the scene tree, the following order will be used for the callbacks: :ref:`_enter_tree<class_Node_method__enter_tree>` of the parent, :ref:`_enter_tree<class_Node_method__enter_tree>` of the children, :ref:`_ready<class_Node_method__ready>` of the children and finally :ref:`_ready<class_Node_method__ready>` of the parent (recursively for the entire scene tree).
+
+**Processing:** Nodes can override the "process" state, so that they receive a callback on each frame requesting them to process (do something). Normal processing (callback :ref:`_process<class_Node_method__process>`, toggled with :ref:`set_process<class_Node_method_set_process>`) happens as fast as possible and is dependent on the frame rate, so the processing time *delta* is passed as an argument. Physics processing (callback :ref:`_physics_process<class_Node_method__physics_process>`, toggled with :ref:`set_physics_process<class_Node_method_set_physics_process>`) happens a fixed number of times per second (60 by default) and is useful for code related to the physics engine.
+
+Nodes can also process input events. When present, the :ref:`_input<class_Node_method__input>` function will be called for each input that the program receives. In many cases, this can be overkill (unless used for simple projects), and the :ref:`_unhandled_input<class_Node_method__unhandled_input>` function might be preferred; it is called when the input event was not handled by anyone else (typically, GUI :ref:`Control<class_Control>` nodes), ensuring that the node only receives the events that were meant for it.
+
+To keep track of the scene hierarchy (especially when instancing scenes into other scenes), an "owner" can be set for the node with the :ref:`owner<class_Node_property_owner>` property. This keeps track of who instanced what. This is mostly useful when writing editors and tools, though.
+
+Finally, when a node is freed with :ref:`Object.free<class_Object_method_free>` or :ref:`queue_free<class_Node_method_queue_free>`, it will also free all its children.
+
+**Groups:** Nodes can be added to as many groups as you want to be easy to manage, you could create groups like "enemies" or "collectables" for example, depending on your game. See :ref:`add_to_group<class_Node_method_add_to_group>`, :ref:`is_in_group<class_Node_method_is_in_group>` and :ref:`remove_from_group<class_Node_method_remove_from_group>`. You can then retrieve all nodes in these groups, iterate them and even call methods on groups via the methods on :ref:`SceneTree<class_SceneTree>`.
+
+**Networking with nodes:** After connecting to a server (or making one, see :ref:`NetworkedMultiplayerENet<class_NetworkedMultiplayerENet>`), it is possible to use the built-in RPC (remote procedure call) system to communicate over the network. By calling :ref:`rpc<class_Node_method_rpc>` with a method name, it will be called locally and in all connected peers (peers = clients and the server that accepts connections). To identify which node receives the RPC call, Godot will use its :ref:`NodePath<class_NodePath>` (make sure node names are the same on all peers). Also, take a look at the high-level networking tutorial and corresponding demos.
+
+Tutorials
+---------
+
+- :doc:`../getting_started/step_by_step/scenes_and_nodes`
 
 Properties
 ----------
 
-+---------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`MultiplayerAPI<class_MultiplayerAPI>` | :ref:`custom_multiplayer<class_Node_property_custom_multiplayer>` |   |
-+---------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`String<class_String>`                 | :ref:`filename<class_Node_property_filename>`                     |   |
-+---------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`MultiplayerAPI<class_MultiplayerAPI>` | :ref:`multiplayer<class_Node_property_multiplayer>`               |   |
-+---------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`String<class_String>`                 | :ref:`name<class_Node_property_name>`                             |   |
-+---------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`Node<class_Node>`                     | :ref:`owner<class_Node_property_owner>`                           |   |
-+---------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`PauseMode<enum_Node_PauseMode>`       | :ref:`pause_mode<class_Node_property_pause_mode>`                 | 0 |
-+---------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`int<class_int>`                       | :ref:`process_priority<class_Node_property_process_priority>`     | 0 |
-+---------------------------------------------+-------------------------------------------------------------------+---+
++---------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`MultiplayerAPI<class_MultiplayerAPI>` | :ref:`custom_multiplayer<class_Node_property_custom_multiplayer>` |       |
++---------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`String<class_String>`                 | :ref:`filename<class_Node_property_filename>`                     |       |
++---------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`MultiplayerAPI<class_MultiplayerAPI>` | :ref:`multiplayer<class_Node_property_multiplayer>`               |       |
++---------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`String<class_String>`                 | :ref:`name<class_Node_property_name>`                             |       |
++---------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`Node<class_Node>`                     | :ref:`owner<class_Node_property_owner>`                           |       |
++---------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`PauseMode<enum_Node_PauseMode>`       | :ref:`pause_mode<class_Node_property_pause_mode>`                 | ``0`` |
++---------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                       | :ref:`process_priority<class_Node_property_process_priority>`     | ``0`` |
++---------------------------------------------+-------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -445,36 +470,6 @@ Specific to the Android platform.
 
 Specific to the Android platform.
 
-Description
------------
-
-Nodes are Godot's building blocks. They can be assigned as the child of another node, resulting in a tree arrangement. A given node can contain any number of nodes as children with the requirement that all siblings (direct children of a node) should have unique names.
-
-A tree of nodes is called a *scene*. Scenes can be saved to the disk and then instanced into other scenes. This allows for very high flexibility in the architecture and data model of Godot projects.
-
-**Scene tree:** The :ref:`SceneTree<class_SceneTree>` contains the active tree of nodes. When a node is added to the scene tree, it receives the :ref:`NOTIFICATION_ENTER_TREE<class_Node_constant_NOTIFICATION_ENTER_TREE>` notification and its :ref:`_enter_tree<class_Node_method__enter_tree>` callback is triggered. Child nodes are always added *after* their parent node, i.e. the :ref:`_enter_tree<class_Node_method__enter_tree>` callback of a parent node will be triggered before its child's.
-
-Once all nodes have been added in the scene tree, they receive the :ref:`NOTIFICATION_READY<class_Node_constant_NOTIFICATION_READY>` notification and their respective :ref:`_ready<class_Node_method__ready>` callbacks are triggered. For groups of nodes, the :ref:`_ready<class_Node_method__ready>` callback is called in reverse order, starting with the children and moving up to the parent nodes.
-
-This means that when adding a node to the scene tree, the following order will be used for the callbacks: :ref:`_enter_tree<class_Node_method__enter_tree>` of the parent, :ref:`_enter_tree<class_Node_method__enter_tree>` of the children, :ref:`_ready<class_Node_method__ready>` of the children and finally :ref:`_ready<class_Node_method__ready>` of the parent (recursively for the entire scene tree).
-
-**Processing:** Nodes can override the "process" state, so that they receive a callback on each frame requesting them to process (do something). Normal processing (callback :ref:`_process<class_Node_method__process>`, toggled with :ref:`set_process<class_Node_method_set_process>`) happens as fast as possible and is dependent on the frame rate, so the processing time *delta* is passed as an argument. Physics processing (callback :ref:`_physics_process<class_Node_method__physics_process>`, toggled with :ref:`set_physics_process<class_Node_method_set_physics_process>`) happens a fixed number of times per second (60 by default) and is useful for code related to the physics engine.
-
-Nodes can also process input events. When present, the :ref:`_input<class_Node_method__input>` function will be called for each input that the program receives. In many cases, this can be overkill (unless used for simple projects), and the :ref:`_unhandled_input<class_Node_method__unhandled_input>` function might be preferred; it is called when the input event was not handled by anyone else (typically, GUI :ref:`Control<class_Control>` nodes), ensuring that the node only receives the events that were meant for it.
-
-To keep track of the scene hierarchy (especially when instancing scenes into other scenes), an "owner" can be set for the node with the :ref:`owner<class_Node_property_owner>` property. This keeps track of who instanced what. This is mostly useful when writing editors and tools, though.
-
-Finally, when a node is freed with :ref:`Object.free<class_Object_method_free>` or :ref:`queue_free<class_Node_method_queue_free>`, it will also free all its children.
-
-**Groups:** Nodes can be added to as many groups as you want to be easy to manage, you could create groups like "enemies" or "collectables" for example, depending on your game. See :ref:`add_to_group<class_Node_method_add_to_group>`, :ref:`is_in_group<class_Node_method_is_in_group>` and :ref:`remove_from_group<class_Node_method_remove_from_group>`. You can then retrieve all nodes in these groups, iterate them and even call methods on groups via the methods on :ref:`SceneTree<class_SceneTree>`.
-
-**Networking with nodes:** After connecting to a server (or making one, see :ref:`NetworkedMultiplayerENet<class_NetworkedMultiplayerENet>`), it is possible to use the built-in RPC (remote procedure call) system to communicate over the network. By calling :ref:`rpc<class_Node_method_rpc>` with a method name, it will be called locally and in all connected peers (peers = clients and the server that accepts connections). To identify which node receives the RPC call, Godot will use its :ref:`NodePath<class_NodePath>` (make sure node names are the same on all peers). Also, take a look at the high-level networking tutorial and corresponding demos.
-
-Tutorials
----------
-
-- :doc:`../getting_started/step_by_step/scenes_and_nodes`
-
 Property Descriptions
 ---------------------
 
@@ -551,7 +546,7 @@ The node owner. A node can have any other node as owner (as long as it is a vali
 - :ref:`PauseMode<enum_Node_PauseMode>` **pause_mode**
 
 +-----------+-----------------------+
-| *Default* | 0                     |
+| *Default* | ``0``                 |
 +-----------+-----------------------+
 | *Setter*  | set_pause_mode(value) |
 +-----------+-----------------------+
@@ -567,7 +562,7 @@ Pause mode. How the node will behave if the :ref:`SceneTree<class_SceneTree>` is
 - :ref:`int<class_int>` **process_priority**
 
 +-----------+-----------------------------+
-| *Default* | 0                           |
+| *Default* | ``0``                       |
 +-----------+-----------------------------+
 | *Setter*  | set_process_priority(value) |
 +-----------+-----------------------------+
@@ -706,6 +701,8 @@ If ``legible_unique_name`` is ``true``, the child node will have an human-readab
     if child_node.get_parent():
         child_node.get_parent().remove_child(child_node)
     add_child(child_node)
+
+**Note:** If you want a child to be persisted to a :ref:`PackedScene<class_PackedScene>`, you must set :ref:`owner<class_Node_property_owner>` in addition to calling :ref:`add_child<class_Node_method_add_child>`. This is typically relevant for `tool scripts <https://godot.readthedocs.io/en/latest/tutorials/misc/running_code_in_the_editor.html>`_ and `editor plugins <https://godot.readthedocs.io/en/latest/tutorials/plugins/editor/index.html>`_. If :ref:`add_child<class_Node_method_add_child>` is called without setting :ref:`owner<class_Node_property_owner>`, the newly added ``Node`` will not be visible in the scene tree, though it will be visible in the 2D/3D view.
 
 ----
 

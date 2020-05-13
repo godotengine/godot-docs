@@ -9,11 +9,6 @@
 @VisualScript
 =============
 
-**Category:** Core
-
-Brief Description
------------------
-
 Built-in visual script functions.
 
 Description

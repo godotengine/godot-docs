@@ -13,29 +13,29 @@ CSGShape
 
 **Inherited By:** :ref:`CSGCombiner<class_CSGCombiner>`, :ref:`CSGPrimitive<class_CSGPrimitive>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 The CSG base class.
+
+Description
+-----------
+
+This is the CSG base class that provides CSG operation support to the various CSG nodes in Godot.
 
 Properties
 ----------
 
-+-------------------------------------------+-----------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                   | :ref:`calculate_tangents<class_CSGShape_property_calculate_tangents>` | true  |
-+-------------------------------------------+-----------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                     | :ref:`collision_layer<class_CSGShape_property_collision_layer>`       | 1     |
-+-------------------------------------------+-----------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                     | :ref:`collision_mask<class_CSGShape_property_collision_mask>`         | 1     |
-+-------------------------------------------+-----------------------------------------------------------------------+-------+
-| :ref:`Operation<enum_CSGShape_Operation>` | :ref:`operation<class_CSGShape_property_operation>`                   | 0     |
-+-------------------------------------------+-----------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`                 | :ref:`snap<class_CSGShape_property_snap>`                             | 0.001 |
-+-------------------------------------------+-----------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                   | :ref:`use_collision<class_CSGShape_property_use_collision>`           | false |
-+-------------------------------------------+-----------------------------------------------------------------------+-------+
++-------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                   | :ref:`calculate_tangents<class_CSGShape_property_calculate_tangents>` | ``true``  |
++-------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                     | :ref:`collision_layer<class_CSGShape_property_collision_layer>`       | ``1``     |
++-------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                     | :ref:`collision_mask<class_CSGShape_property_collision_mask>`         | ``1``     |
++-------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`Operation<enum_CSGShape_Operation>` | :ref:`operation<class_CSGShape_property_operation>`                   | ``0``     |
++-------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                 | :ref:`snap<class_CSGShape_property_snap>`                             | ``0.001`` |
++-------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                   | :ref:`use_collision<class_CSGShape_property_use_collision>`           | ``false`` |
++-------------------------------------------+-----------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -73,11 +73,6 @@ enum **Operation**:
 
 - **OPERATION_SUBTRACTION** = **2** --- The second shape is subtracted from the first, leaving a dent with its shape.
 
-Description
------------
-
-This is the CSG base class that provides CSG operation support to the various CSG nodes in Godot.
-
 Property Descriptions
 ---------------------
 
@@ -86,7 +81,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **calculate_tangents**
 
 +-----------+-------------------------------+
-| *Default* | true                          |
+| *Default* | ``true``                      |
 +-----------+-------------------------------+
 | *Setter*  | set_calculate_tangents(value) |
 +-----------+-------------------------------+
@@ -102,7 +97,7 @@ Calculate tangents for the CSG shape which allows the use of normal maps. This i
 - :ref:`int<class_int>` **collision_layer**
 
 +-----------+----------------------------+
-| *Default* | 1                          |
+| *Default* | ``1``                      |
 +-----------+----------------------------+
 | *Setter*  | set_collision_layer(value) |
 +-----------+----------------------------+
@@ -122,7 +117,7 @@ A contact is detected if object A is in any of the layers that object B scans, o
 - :ref:`int<class_int>` **collision_mask**
 
 +-----------+---------------------------+
-| *Default* | 1                         |
+| *Default* | ``1``                     |
 +-----------+---------------------------+
 | *Setter*  | set_collision_mask(value) |
 +-----------+---------------------------+
@@ -138,7 +133,7 @@ The physics layers this CSG shape scans for collisions.
 - :ref:`Operation<enum_CSGShape_Operation>` **operation**
 
 +-----------+----------------------+
-| *Default* | 0                    |
+| *Default* | ``0``                |
 +-----------+----------------------+
 | *Setter*  | set_operation(value) |
 +-----------+----------------------+
@@ -154,7 +149,7 @@ The operation that is performed on this shape. This is ignored for the first CSG
 - :ref:`float<class_float>` **snap**
 
 +-----------+-----------------+
-| *Default* | 0.001           |
+| *Default* | ``0.001``       |
 +-----------+-----------------+
 | *Setter*  | set_snap(value) |
 +-----------+-----------------+
@@ -168,7 +163,7 @@ The operation that is performed on this shape. This is ignored for the first CSG
 - :ref:`bool<class_bool>` **use_collision**
 
 +-----------+--------------------------+
-| *Default* | false                    |
+| *Default* | ``false``                |
 +-----------+--------------------------+
 | *Setter*  | set_use_collision(value) |
 +-----------+--------------------------+

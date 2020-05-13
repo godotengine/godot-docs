@@ -11,12 +11,12 @@ HSeparator
 
 **Inherits:** :ref:`Separator<class_Separator>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Horizontal separator.
+
+Description
+-----------
+
+Horizontal separator. See :ref:`Separator<class_Separator>`. Even though it looks horizontal, it is used to separate objects vertically.
 
 Theme Properties
 ----------------
@@ -26,9 +26,4 @@ Theme Properties
 +---------------------------------+------------+---+
 | :ref:`StyleBox<class_StyleBox>` | separator  |   |
 +---------------------------------+------------+---+
-
-Description
------------
-
-Horizontal separator. See :ref:`Separator<class_Separator>`. Even though it looks horizontal, it is used to separate objects vertically.
 

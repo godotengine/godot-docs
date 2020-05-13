@@ -13,10 +13,5 @@ AudioEffectInstance
 
 **Inherited By:** :ref:`AudioEffectSpectrumAnalyzerInstance<class_AudioEffectSpectrumAnalyzerInstance>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 

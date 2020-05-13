@@ -13,10 +13,5 @@ AudioStreamPlaybackResampled
 
 **Inherited By:** :ref:`AudioStreamGeneratorPlayback<class_AudioStreamGeneratorPlayback>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 

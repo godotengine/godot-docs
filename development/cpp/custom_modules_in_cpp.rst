@@ -242,12 +242,20 @@ You can now use your newly created module from any script:
     print(s.get_total())
     s.reset()
 
-And the output will be ``60``.
+The output will be ``60``.
 
 .. seealso:: The previous Summator example is great for small, custom modules,
-  but what if you want to use a larger, external library?  Refer to
+  but what if you want to use a larger, external library? Refer to
   :ref:`doc_binding_to_external_libraries` for details about binding to
   external libraries.
+
+.. warning:: If your module is meant to be accessed from the running project
+             (not just from the editor), you must also recompile every export
+             template you plan to use, then specify the path to the custom
+             template in each export preset. Otherwise, you'll get errors when
+             running the project as the module isn't compiled in the export
+             template. See the :ref:`Compiling <toc-devel-compiling>` pages
+             for more information.
 
 Improving the build system for development
 ------------------------------------------

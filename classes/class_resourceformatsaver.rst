@@ -13,12 +13,14 @@ ResourceFormatSaver
 
 **Inherited By:** :ref:`ResourceFormatSaverCrypto<class_ResourceFormatSaverCrypto>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Saves a specific resource type to a file.
+
+Description
+-----------
+
+The engine can save resources when you do it from the editor, or when you use the :ref:`ResourceSaver<class_ResourceSaver>` singleton. This is accomplished thanks to multiple ``ResourceFormatSaver``\ s, each handling its own format and called automatically by the engine.
+
+By default, Godot saves resources as ``.tres`` (text-based), ``.res`` (binary) or another built-in format, but you can choose to create your own format by extending this class. Be sure to respect the documented return types and values. You should give it a global class name with ``class_name`` for it to be registered. Like built-in ResourceFormatSavers, it will be called automatically when saving resources of its recognized type(s). You may also implement a :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`.
 
 Methods
 -------
@@ -30,13 +32,6 @@ Methods
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`save<class_ResourceFormatSaver_method_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags **)** virtual |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-The engine can save resources when you do it from the editor, or when you use the :ref:`ResourceSaver<class_ResourceSaver>` singleton. This is accomplished thanks to multiple ``ResourceFormatSaver``\ s, each handling its own format and called automatically by the engine.
-
-By default, Godot saves resources as ``.tres`` (text-based), ``.res`` (binary) or another built-in format, but you can choose to create your own format by extending this class. Be sure to respect the documented return types and values. You should give it a global class name with ``class_name`` for it to be registered. Like built-in ResourceFormatSavers, it will be called automatically when saving resources of its recognized type(s). You may also implement a :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`.
 
 Method Descriptions
 -------------------

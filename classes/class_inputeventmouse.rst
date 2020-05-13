@@ -13,23 +13,7 @@ InputEventMouse
 
 **Inherited By:** :ref:`InputEventMouseButton<class_InputEventMouseButton>`, :ref:`InputEventMouseMotion<class_InputEventMouseMotion>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base input event type for mouse events.
-
-Properties
-----------
-
-+-------------------------------+------------------------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`         | :ref:`button_mask<class_InputEventMouse_property_button_mask>`         | 0               |
-+-------------------------------+------------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`global_position<class_InputEventMouse_property_global_position>` | Vector2( 0, 0 ) |
-+-------------------------------+------------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventMouse_property_position>`               | Vector2( 0, 0 ) |
-+-------------------------------+------------------------------------------------------------------------+-----------------+
 
 Description
 -----------
@@ -41,6 +25,17 @@ Tutorials
 
 - :doc:`../tutorials/inputs/inputevent`
 
+Properties
+----------
+
++-------------------------------+------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`         | :ref:`button_mask<class_InputEventMouse_property_button_mask>`         | ``0``               |
++-------------------------------+------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`global_position<class_InputEventMouse_property_global_position>` | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventMouse_property_position>`               | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------------------------------+---------------------+
+
 Property Descriptions
 ---------------------
 
@@ -49,7 +44,7 @@ Property Descriptions
 - :ref:`int<class_int>` **button_mask**
 
 +-----------+------------------------+
-| *Default* | 0                      |
+| *Default* | ``0``                  |
 +-----------+------------------------+
 | *Setter*  | set_button_mask(value) |
 +-----------+------------------------+
@@ -65,7 +60,7 @@ The mouse button mask identifier, one of or a bitwise combination of the :ref:`B
 - :ref:`Vector2<class_Vector2>` **global_position**
 
 +-----------+----------------------------+
-| *Default* | Vector2( 0, 0 )            |
+| *Default* | ``Vector2( 0, 0 )``        |
 +-----------+----------------------------+
 | *Setter*  | set_global_position(value) |
 +-----------+----------------------------+
@@ -81,7 +76,7 @@ The global mouse position relative to the current :ref:`Viewport<class_Viewport>
 - :ref:`Vector2<class_Vector2>` **position**
 
 +-----------+---------------------+
-| *Default* | Vector2( 0, 0 )     |
+| *Default* | ``Vector2( 0, 0 )`` |
 +-----------+---------------------+
 | *Setter*  | set_position(value) |
 +-----------+---------------------+

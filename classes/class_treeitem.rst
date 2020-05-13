@@ -11,12 +11,12 @@ TreeItem
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Control for a single item inside a :ref:`Tree<class_Tree>`.
+
+Description
+-----------
+
+Control for a single item inside a :ref:`Tree<class_Tree>`. May have child ``TreeItem``\ s and be styled as well as contain buttons.
 
 Properties
 ----------
@@ -198,11 +198,6 @@ enum **TextAlign**:
 - **ALIGN_CENTER** = **1** --- Center text. See ``set_text_align()``.
 
 - **ALIGN_RIGHT** = **2** --- Align text to the right. See ``set_text_align()``.
-
-Description
------------
-
-Control for a single item inside a :ref:`Tree<class_Tree>`. May have child ``TreeItem``\ s and be styled as well as contain buttons.
 
 Property Descriptions
 ---------------------

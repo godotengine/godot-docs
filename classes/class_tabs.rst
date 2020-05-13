@@ -11,27 +11,27 @@ Tabs
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Tabs control.
+
+Description
+-----------
+
+Simple tabs control, similar to :ref:`TabContainer<class_TabContainer>` but is only in charge of drawing tabs, not interact with children.
 
 Properties
 ----------
 
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                                               | :ref:`current_tab<class_Tabs_property_current_tab>`                             | 0     |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                             | :ref:`drag_to_rearrange_enabled<class_Tabs_property_drag_to_rearrange_enabled>` | false |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                             | :ref:`scrolling_enabled<class_Tabs_property_scrolling_enabled>`                 | true  |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-------+
-| :ref:`TabAlign<enum_Tabs_TabAlign>`                                 | :ref:`tab_align<class_Tabs_property_tab_align>`                                 | 1     |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-------+
-| :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` | :ref:`tab_close_display_policy<class_Tabs_property_tab_close_display_policy>`   | 0     |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-------+
++---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                                               | :ref:`current_tab<class_Tabs_property_current_tab>`                             | ``0``     |
++---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                             | :ref:`drag_to_rearrange_enabled<class_Tabs_property_drag_to_rearrange_enabled>` | ``false`` |
++---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                             | :ref:`scrolling_enabled<class_Tabs_property_scrolling_enabled>`                 | ``true``  |
++---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`TabAlign<enum_Tabs_TabAlign>`                                 | :ref:`tab_align<class_Tabs_property_tab_align>`                                 | ``1``     |
++---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` | :ref:`tab_close_display_policy<class_Tabs_property_tab_close_display_policy>`   | ``0``     |
++---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -124,11 +124,15 @@ Signals
 
 - **reposition_active_tab_request** **(** :ref:`int<class_int>` idx_to **)**
 
+Emitted when the active tab is rearranged via mouse drag. See :ref:`drag_to_rearrange_enabled<class_Tabs_property_drag_to_rearrange_enabled>`.
+
 ----
 
 .. _class_Tabs_signal_right_button_pressed:
 
 - **right_button_pressed** **(** :ref:`int<class_int>` tab **)**
+
+Emitted when a tab is right-clicked.
 
 ----
 
@@ -136,11 +140,15 @@ Signals
 
 - **tab_changed** **(** :ref:`int<class_int>` tab **)**
 
+Emitted when switching to another tab.
+
 ----
 
 .. _class_Tabs_signal_tab_clicked:
 
 - **tab_clicked** **(** :ref:`int<class_int>` tab **)**
+
+Emitted when a tab is clicked, even if it is the current tab.
 
 ----
 
@@ -148,11 +156,15 @@ Signals
 
 - **tab_close** **(** :ref:`int<class_int>` tab **)**
 
+Emitted when a tab is closed.
+
 ----
 
 .. _class_Tabs_signal_tab_hover:
 
 - **tab_hover** **(** :ref:`int<class_int>` tab **)**
+
+Emitted when a tab is hovered by the mouse.
 
 Enumerations
 ------------
@@ -191,18 +203,13 @@ enum **TabAlign**:
 
 enum **CloseButtonDisplayPolicy**:
 
-- **CLOSE_BUTTON_SHOW_NEVER** = **0**
+- **CLOSE_BUTTON_SHOW_NEVER** = **0** --- Never show the close buttons.
 
-- **CLOSE_BUTTON_SHOW_ACTIVE_ONLY** = **1**
+- **CLOSE_BUTTON_SHOW_ACTIVE_ONLY** = **1** --- Only show the close button on the currently active tab.
 
-- **CLOSE_BUTTON_SHOW_ALWAYS** = **2**
+- **CLOSE_BUTTON_SHOW_ALWAYS** = **2** --- Show the close button on all tabs.
 
 - **CLOSE_BUTTON_MAX** = **3** --- Represents the size of the :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` enum.
-
-Description
------------
-
-Simple tabs control, similar to :ref:`TabContainer<class_TabContainer>` but is only in charge of drawing tabs, not interact with children.
 
 Property Descriptions
 ---------------------
@@ -212,7 +219,7 @@ Property Descriptions
 - :ref:`int<class_int>` **current_tab**
 
 +-----------+------------------------+
-| *Default* | 0                      |
+| *Default* | ``0``                  |
 +-----------+------------------------+
 | *Setter*  | set_current_tab(value) |
 +-----------+------------------------+
@@ -228,7 +235,7 @@ Select tab at index ``tab_idx``.
 - :ref:`bool<class_bool>` **drag_to_rearrange_enabled**
 
 +-----------+--------------------------------------+
-| *Default* | false                                |
+| *Default* | ``false``                            |
 +-----------+--------------------------------------+
 | *Setter*  | set_drag_to_rearrange_enabled(value) |
 +-----------+--------------------------------------+
@@ -244,12 +251,14 @@ If ``true``, tabs can be rearranged with mouse drag.
 - :ref:`bool<class_bool>` **scrolling_enabled**
 
 +-----------+------------------------------+
-| *Default* | true                         |
+| *Default* | ``true``                     |
 +-----------+------------------------------+
 | *Setter*  | set_scrolling_enabled(value) |
 +-----------+------------------------------+
 | *Getter*  | get_scrolling_enabled()      |
 +-----------+------------------------------+
+
+if ``true``, the mouse's scroll wheel cab be used to navigate the scroll view.
 
 ----
 
@@ -258,14 +267,14 @@ If ``true``, tabs can be rearranged with mouse drag.
 - :ref:`TabAlign<enum_Tabs_TabAlign>` **tab_align**
 
 +-----------+----------------------+
-| *Default* | 1                    |
+| *Default* | ``1``                |
 +-----------+----------------------+
 | *Setter*  | set_tab_align(value) |
 +-----------+----------------------+
 | *Getter*  | get_tab_align()      |
 +-----------+----------------------+
 
-The alignment of all tabs. See enum ``TabAlign`` constants for details.
+The alignment of all tabs. See :ref:`TabAlign<enum_Tabs_TabAlign>` for details.
 
 ----
 
@@ -274,12 +283,14 @@ The alignment of all tabs. See enum ``TabAlign`` constants for details.
 - :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` **tab_close_display_policy**
 
 +-----------+-------------------------------------+
-| *Default* | 0                                   |
+| *Default* | ``0``                               |
 +-----------+-------------------------------------+
 | *Setter*  | set_tab_close_display_policy(value) |
 +-----------+-------------------------------------+
 | *Getter*  | get_tab_close_display_policy()      |
 +-----------+-------------------------------------+
+
+Sets when the close button will appear on the tabs. See :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` for details.
 
 Method Descriptions
 -------------------
@@ -303,6 +314,8 @@ Moves the scroll view to make the tab visible.
 .. _class_Tabs_method_get_offset_buttons_visible:
 
 - :ref:`bool<class_bool>` **get_offset_buttons_visible** **(** **)** const
+
+Returns ``true`` if the offset buttons (the ones that appear when there's not enough space for all tabs) are visible.
 
 ----
 
@@ -341,6 +354,8 @@ Returns the :ref:`Texture<class_Texture>` for the tab at index ``tab_idx`` or ``
 .. _class_Tabs_method_get_tab_offset:
 
 - :ref:`int<class_int>` **get_tab_offset** **(** **)** const
+
+Returns the number of hidden tabs offsetted to the left.
 
 ----
 

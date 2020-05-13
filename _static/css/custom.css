@@ -1,8 +1,16 @@
 /**
- * Various tweaks to the Read the Docs theme to better conform with Godot's visual identity.
+ * Various tweaks to the Read the Docs theme to better conform with Godot's
+ * visual identity. Many colors are also overridden to use CSS variables.
+ * This makes it possible to provide an automatically-used dark theme
+ * based on browser preferences.
  */
 
+ /* Default (light) theme colors */
  :root {
+    --body-color: #404040;
+    --content-wrap-background-color: #efefef;
+    --content-background-color: #fcfcfc;
+    --logo-opacity: 1.0;
     --navbar-background-color: #333f67;
     --navbar-background-color-hover: #29355c;
     --navbar-background-color-active: #212d51;
@@ -13,11 +21,112 @@
     --navbar-level-2-color: #b8d6f0;
     --navbar-level-3-color: #a3c4e1;
     --navbar-heading-color: #ff7381;
+
+    --link-color: #2980b9;
+    --link-color-hover: #3091d1;
     --link-color-active: #105078;
+    --link-color-visited: #9b59b6;
+
+    --hr-color: #e1e4e5;
+    --table-row-odd-background-color: #f3f6f6;
+    --code-background-color: #fff;
+    --code-border-color: #e1e4e5;
     --code-literal-color: #d04c60;
-    --highlight-background-color: #f5ffe1;
     --input-background-color: #fcfcfc;
     --input-focus-border-color: #5f8cff;
+
+    --highlight-background-color: #f5ffe1;
+    --highlight-comment-color: #408090;
+    --highlight-keyword-color: #007020;
+    --highlight-keyword2-color: #902000;
+    --highlight-number-color: #208050;
+    --highlight-decorator-color: #4070a0;
+    --highlight-type-color: #007020;
+    --highlight-type2-color: #0e84b5;
+    --highlight-function-color: #06287e;
+    --highlight-operator-color: #666666;
+    --highlight-string-color: #4070a0;
+
+    --admonition-note-background-color: #e7f2fa;
+    --admonition-note-color: #404040;
+    --admonition-note-title-background-color: #6ab0de;
+    --admonition-note-title-color: #fff;
+    --admonition-attention-background-color: #ffedcc;
+    --admonition-attention-color: #404040;
+    --admonition-attention-title-background-color: #f0b37e;
+    --admonition-attention-title-color: #fff;
+    --admonition-tip-background-color: #dbfaf4;
+    --admonition-tip-color: #404040;
+    --admonition-tip-title-background-color: #1abc9c;
+    --admonition-tip-title-color: #fff;
+
+    --btn-neutral-background-color: #f3f6f6;
+    --btn-neutral-hover-background-color: #e5ebeb;
+    --footer-color: #808080;
+}
+
+/* Dark theme colors */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-color: rgba(255, 255, 255, 0.85);
+        --content-wrap-background-color: #202326;
+        --content-background-color: #2e3236;
+        /* Decrease the logo opacity when using the dark theme to be less distracting */
+        --logo-opacity: 0.85;
+        --navbar-background-color: #25282b;
+        --navbar-background-color-hover: #333639;
+        --navbar-background-color-active: #111417;
+        --navbar-current-background-color: #333639;
+        --navbar-current-background-color-hover: #44474a;
+        --navbar-current-background-color-active: #222528;
+        --navbar-level-1-color: #ddd;
+        --navbar-level-2-color: #ccc;
+        --navbar-level-3-color: #bbb;
+        --navbar-heading-color: #ee7381;
+
+        --link-color: #8cf;
+        --link-color-hover: #9df;
+        --link-color-active: #6ad;
+        --link-color-visited: #cb99f6;
+
+        --hr-color: #555;
+        --table-row-odd-background-color: #3b3e41;
+        --code-background-color: #434649;
+        --code-border-color: #505356;
+        --code-literal-color: #faa;
+        --input-background-color: #333537;
+        --input-focus-border-color: #5f8cff;
+
+        /* Colors taken from the Godot script editor with the Adaptive theme */
+        --highlight-background-color: #202531;
+        --highlight-comment-color: rgba(204, 206, 211, 0.5);
+        --highlight-keyword-color: #ff7085;
+        --highlight-keyword2-color: #42ffc2;
+        --highlight-number-color: #a1ffe0;
+        --highlight-decorator-color: #abc8ff;
+        --highlight-type-color: #8effda;
+        --highlight-type2-color: #c6ffed;
+        --highlight-function-color: #57b3ff;
+        --highlight-operator-color: #abc8ff;
+        --highlight-string-color: #ffeca1;
+
+        --admonition-note-background-color: #303d4f;
+        --admonition-note-color: #bfeeff;
+        --admonition-note-title-background-color: #305070;
+        --admonition-note-title-color: #bfefff;
+        --admonition-attention-background-color: #444033;
+        --admonition-attention-color: #ffeeaf;
+        --admonition-attention-title-background-color: #665022;
+        --admonition-attention-title-color: #ffeeaf;
+        --admonition-tip-background-color: #28382d;
+        --admonition-tip-color: #dfd;
+        --admonition-tip-title-background-color: #336648;
+        --admonition-tip-title-color: #dfd;
+
+        --btn-neutral-background-color: #404040;
+        --btn-neutral-hover-background-color: #505050;
+        --footer-color: #aaa;
+    }
 }
 
 body,
@@ -65,7 +174,22 @@ article ol,
     line-height: 25px;
 }
 
+body,
+.rst-content table.docutils thead {
+    color: var(--body-color);
+}
+
+a {
+    color: var(--link-color);
+}
+
+.sphinx-tabs .sphinx-menu a.item {
+    /* Original definition has `!important` */
+    color: var(--link-color) !important;
+}
+
 a:hover {
+    color: var(--link-color-hover);
     text-decoration: underline;
 }
 
@@ -74,8 +198,69 @@ a:active {
     color: var(--link-color-active);
 }
 
+a:visited {
+    color: var(--link-color-visited);
+}
+
 a.btn:hover {
     text-decoration: none;
+}
+
+hr,
+#search-results .search li:first-child,
+#search-results .search li {
+    border-color: var(--hr-color);
+}
+
+/* Doesn't seem to be used on Read the Docs online builds, but is present when building locally */
+.rst-content dl:not(.docutils) dt {
+    background-color: var(--admonition-note-background-color);
+    border-color: var(--admonition-note-title-background-color);
+    color: var(--admonition-note-color);
+}
+
+footer,
+#search-results .context {
+    color: var(--footer-color);
+}
+
+/* Main sections */
+
+.wy-nav-content-wrap {
+    background-color: var(--content-wrap-background-color);
+}
+
+.wy-nav-content {
+    background-color: var(--content-background-color);
+}
+
+.wy-body-for-nav {
+    background-color: var(--content-wrap-background-color);
+}
+
+@media only screen and (min-width: 768px) {
+    .wy-body-for-nav {
+        /* Center the page on wide displays for better readability */
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+}
+
+/* Table display tweaks */
+
+.rst-content table.docutils,
+.wy-table-bordered-all td,
+.rst-content table.docutils td,
+.wy-table thead th,
+.rst-content table.docutils thead th,
+.rst-content table.field-list thead th {
+    border-color: var(--code-border-color);
+}
+
+.wy-table-odd td,
+.wy-table-striped tr:nth-child(2n-1) td,
+.rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td {
+    background-color: var(--table-row-odd-background-color);
 }
 
 /* Code display tweaks */
@@ -84,11 +269,17 @@ code,
 .rst-content tt,
 .rst-content code {
     font-size: 14px;
+    background-color: var(--code-background-color);
+    border: 1px solid var(--code-border-color);
 }
 
 .rst-content tt.literal,
 .rst-content code.literal {
     color: var(--code-literal-color);
+}
+
+.rst-content div[class^="highlight"] {
+    border-color: var(--code-border-color);
 }
 
 .rst-content pre.literal-block,
@@ -99,11 +290,131 @@ code,
     line-height: 1.5;
 }
 
+/* Code tab display tweaks */
+
+.ui.tabular.menu .active.item,
+.ui.segment {
+    background-color: var(--code-background-color);
+}
+
+/* Syntax highlighting */
+
 .highlight {
     background-color: var(--highlight-background-color);
 }
 
+.highlight .c1,
+.highlight .cm {
+    color: var(--highlight-comment-color);
+}
+
+.highlight .bp,
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kt,
+.highlight .ow {
+    color: var(--highlight-keyword-color);
+}
+
+.highlight .cp {
+    color: var(--highlight-keyword2-color);
+}
+
+.highlight .m,
+.highlight .mf,
+.highlight .mi {
+    color: var(--highlight-number-color);
+}
+
+.highlight .na {
+    color: var(--highlight-decorator-color);
+}
+
+.highlight .nb {
+    color: var(--highlight-type-color);
+}
+
+.highlight .nc,
+.highlight .nn,
+.highlight .nv {
+    color: var(--highlight-type2-color);
+}
+
+.highlight .nf {
+    color: var(--highlight-function-color);
+}
+
+.highlight .o {
+    color: var(--highlight-operator-color);
+}
+
+.highlight .cpf,
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .se {
+    color: var(--highlight-string-color);
+}
+
+/* Admonition tweaks */
+
+.rst-content .admonition.note,
+.rst-content .admonition.seealso {
+    background-color: var(--admonition-note-background-color);
+    color: var(--admonition-note-color);
+}
+
+.rst-content .admonition.note .admonition-title,
+.rst-content .admonition.seealso .admonition-title {
+    background-color: var(--admonition-note-title-background-color);
+    color: var(--admonition-note-title-color);
+}
+
+.rst-content .admonition.attention,
+.rst-content .admonition.warning {
+    background-color: var(--admonition-attention-background-color);
+    color: var(--admonition-attention-color);
+}
+
+.rst-content .admonition.attention .admonition-title,
+.rst-content .admonition.warning .admonition-title {
+    background-color: var(--admonition-attention-title-background-color);
+    color: var(--admonition-attention-title-color);
+}
+
+.rst-content .admonition.tip,
+.rst-content .admonition.important {
+    background-color: var(--admonition-tip-background-color);
+    color: var(--admonition-tip-color);
+}
+
+.rst-content .admonition.tip .admonition-title,
+.rst-content .admonition.important .admonition-title {
+    background-color: var(--admonition-tip-title-background-color);
+    color: var(--admonition-tip-title-color);
+}
+
+/* Buttons */
+
+.btn-neutral {
+    background-color: var(--btn-neutral-background-color) !important;
+    color: var(--body-color) !important;
+}
+
+.btn-neutral:hover {
+    background-color: var(--btn-neutral-hover-background-color) !important;
+}
+
+.btn-neutral:visited {
+    color: var(--body-color) !important;
+}
+
 /* Navigation bar logo and search */
+
+.logo {
+    opacity: var(--logo-opacity);
+}
 
 .wy-side-nav-search {
     background-color: var(--navbar-background-color);
@@ -121,6 +432,7 @@ code,
 
 .wy-side-nav-search input[type="text"] {
     background-color: var(--input-background-color);
+    color: var(--body-color);
     /* Avoid reflowing when toggling the focus state */
     border: 2px solid transparent;
     box-shadow: none;
@@ -133,10 +445,22 @@ code,
     border: 2px solid var(--input-focus-border-color);
 }
 
+.wy-side-nav-search input[type="text"]::placeholder {
+    color: var(--body-color);
+    opacity: 0.55;
+}
+
 /* Navigation bar */
 
 .wy-nav-side {
     background-color: var(--navbar-background-color);
+}
+
+@media only screen and (min-width: 768px) {
+    .wy-nav-side {
+        /* Required to center the page on wide displays */
+        left: inherit;
+    }
 }
 
 .wy-menu-vertical header,
@@ -212,6 +536,7 @@ code,
 .wy-menu-vertical li.toctree-l2.current li.toctree-l4 > a {
     background-color: var(--navbar-current-background-color);
     color: var(--navbar-level-2-color);
+    border-color: var(--navbar-current-background-color);
 }
 
 .wy-menu-vertical li.current a:hover,
@@ -232,6 +557,13 @@ code,
 
 .rst-versions {
     background-color: var(--navbar-current-background-color);
+}
+
+@media only screen and (min-width: 768px) {
+    .rst-versions {
+        /* Required to center the page on wide displays */
+        left: inherit;
+    }
 }
 
 .rst-versions a,

@@ -9,39 +9,41 @@
 Color
 =====
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Color in RGBA format with some support for ARGB format.
+
+Description
+-----------
+
+A color is represented by red, green, and blue ``(r, g, b)`` components. Additionally, ``a`` represents the alpha component, often used for transparency. Values are in floating-point and usually range from 0 to 1. Some properties (such as :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`) may accept values greater than 1.
+
+You can also create a color from standardized color names by using :ref:`@GDScript.ColorN<class_@GDScript_method_ColorN>`.
 
 Properties
 ----------
 
-+---------------------------+------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`a<class_Color_property_a>`   | 1.0 |
-+---------------------------+------------------------------------+-----+
-| :ref:`int<class_int>`     | :ref:`a8<class_Color_property_a8>` | 255 |
-+---------------------------+------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`b<class_Color_property_b>`   | 0.0 |
-+---------------------------+------------------------------------+-----+
-| :ref:`int<class_int>`     | :ref:`b8<class_Color_property_b8>` | 0   |
-+---------------------------+------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`g<class_Color_property_g>`   | 0.0 |
-+---------------------------+------------------------------------+-----+
-| :ref:`int<class_int>`     | :ref:`g8<class_Color_property_g8>` | 0   |
-+---------------------------+------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`h<class_Color_property_h>`   | 0.0 |
-+---------------------------+------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`r<class_Color_property_r>`   | 0.0 |
-+---------------------------+------------------------------------+-----+
-| :ref:`int<class_int>`     | :ref:`r8<class_Color_property_r8>` | 0   |
-+---------------------------+------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`s<class_Color_property_s>`   | 0.0 |
-+---------------------------+------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`v<class_Color_property_v>`   | 0.0 |
-+---------------------------+------------------------------------+-----+
++---------------------------+------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`a<class_Color_property_a>`   | ``1.0`` |
++---------------------------+------------------------------------+---------+
+| :ref:`int<class_int>`     | :ref:`a8<class_Color_property_a8>` | ``255`` |
++---------------------------+------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`b<class_Color_property_b>`   | ``0.0`` |
++---------------------------+------------------------------------+---------+
+| :ref:`int<class_int>`     | :ref:`b8<class_Color_property_b8>` | ``0``   |
++---------------------------+------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`g<class_Color_property_g>`   | ``0.0`` |
++---------------------------+------------------------------------+---------+
+| :ref:`int<class_int>`     | :ref:`g8<class_Color_property_g8>` | ``0``   |
++---------------------------+------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`h<class_Color_property_h>`   | ``0.0`` |
++---------------------------+------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`r<class_Color_property_r>`   | ``0.0`` |
++---------------------------+------------------------------------+---------+
+| :ref:`int<class_int>`     | :ref:`r8<class_Color_property_r8>` | ``0``   |
++---------------------------+------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`s<class_Color_property_s>`   | ``0.0`` |
++---------------------------+------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`v<class_Color_property_v>`   | ``0.0`` |
++---------------------------+------------------------------------+---------+
 
 Methods
 -------
@@ -675,13 +677,6 @@ Constants
 
 - **yellowgreen** = **Color( 0.6, 0.8, 0.2, 1 )**
 
-Description
------------
-
-A color is represented by red, green, and blue ``(r, g, b)`` components. Additionally, ``a`` represents the alpha component, often used for transparency. Values are in floating-point and usually range from 0 to 1. Some properties (such as :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`) may accept values greater than 1.
-
-You can also create a color from standardized color names by using :ref:`@GDScript.ColorN<class_@GDScript_method_ColorN>`.
-
 Property Descriptions
 ---------------------
 
@@ -689,9 +684,9 @@ Property Descriptions
 
 - :ref:`float<class_float>` **a**
 
-+-----------+-----+
-| *Default* | 1.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``1.0`` |
++-----------+---------+
 
 Alpha value (range 0 to 1).
 
@@ -701,9 +696,9 @@ Alpha value (range 0 to 1).
 
 - :ref:`int<class_int>` **a8**
 
-+-----------+-----+
-| *Default* | 255 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``255`` |
++-----------+---------+
 
 Alpha value (range 0 to 255).
 
@@ -713,9 +708,9 @@ Alpha value (range 0 to 255).
 
 - :ref:`float<class_float>` **b**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 Blue value (range 0 to 1).
 
@@ -725,9 +720,9 @@ Blue value (range 0 to 1).
 
 - :ref:`int<class_int>` **b8**
 
-+-----------+---+
-| *Default* | 0 |
-+-----------+---+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
 
 Blue value (range 0 to 255).
 
@@ -737,9 +732,9 @@ Blue value (range 0 to 255).
 
 - :ref:`float<class_float>` **g**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 Green value (range 0 to 1).
 
@@ -749,9 +744,9 @@ Green value (range 0 to 1).
 
 - :ref:`int<class_int>` **g8**
 
-+-----------+---+
-| *Default* | 0 |
-+-----------+---+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
 
 Green value (range 0 to 255).
 
@@ -761,9 +756,9 @@ Green value (range 0 to 255).
 
 - :ref:`float<class_float>` **h**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 HSV hue value (range 0 to 1).
 
@@ -773,9 +768,9 @@ HSV hue value (range 0 to 1).
 
 - :ref:`float<class_float>` **r**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 Red value (range 0 to 1).
 
@@ -785,9 +780,9 @@ Red value (range 0 to 1).
 
 - :ref:`int<class_int>` **r8**
 
-+-----------+---+
-| *Default* | 0 |
-+-----------+---+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
 
 Red value (range 0 to 255).
 
@@ -797,9 +792,9 @@ Red value (range 0 to 255).
 
 - :ref:`float<class_float>` **s**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 HSV saturation value (range 0 to 1).
 
@@ -809,9 +804,9 @@ HSV saturation value (range 0 to 1).
 
 - :ref:`float<class_float>` **v**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 HSV value (range 0 to 1).
 

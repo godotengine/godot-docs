@@ -11,12 +11,17 @@ Physics2DDirectSpaceState
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Direct access object to a space in the :ref:`Physics2DServer<class_Physics2DServer>`.
+
+Description
+-----------
+
+Direct access object to a space in the :ref:`Physics2DServer<class_Physics2DServer>`. It's used mainly to do queries against objects and areas residing in a given space.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/ray-casting`
 
 Methods
 -------
@@ -36,16 +41,6 @@ Methods
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`           | :ref:`intersect_shape<class_Physics2DDirectSpaceState_method_intersect_shape>` **(** :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` shape, :ref:`int<class_int>` max_results=32 **)**                                                                                                                                                                                                                 |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Direct access object to a space in the :ref:`Physics2DServer<class_Physics2DServer>`. It's used mainly to do queries against objects and areas residing in a given space.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/ray-casting`
 
 Method Descriptions
 -------------------

@@ -11,12 +11,12 @@ Physics2DShapeQueryResult
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Result of a 2D shape query in :ref:`Physics2DServer<class_Physics2DServer>`.
+
+Description
+-----------
+
+The result of a 2D shape query in :ref:`Physics2DServer<class_Physics2DServer>`. See also :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>`.
 
 Methods
 -------
@@ -32,11 +32,6 @@ Methods
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`       | :ref:`get_result_rid<class_Physics2DShapeQueryResult_method_get_result_rid>` **(** :ref:`int<class_int>` idx **)** const                   |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-The result of a 2D shape query in :ref:`Physics2DServer<class_Physics2DServer>`. See also :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>`.
 
 Method Descriptions
 -------------------

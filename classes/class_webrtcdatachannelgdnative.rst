@@ -11,10 +11,5 @@ WebRTCDataChannelGDNative
 
 **Inherits:** :ref:`WebRTCDataChannel<class_WebRTCDataChannel>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 

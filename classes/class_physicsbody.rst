@@ -13,21 +13,26 @@ PhysicsBody
 
 **Inherited By:** :ref:`KinematicBody<class_KinematicBody>`, :ref:`PhysicalBone<class_PhysicalBone>`, :ref:`RigidBody<class_RigidBody>`, :ref:`StaticBody<class_StaticBody>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for all objects affected by physics in 3D space.
+
+Description
+-----------
+
+PhysicsBody is an abstract base class for implementing a physics body. All \*Body types inherit from it.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/physics_introduction`
 
 Properties
 ----------
 
-+-----------------------+--------------------------------------------------------------------+---+
-| :ref:`int<class_int>` | :ref:`collision_layer<class_PhysicsBody_property_collision_layer>` | 1 |
-+-----------------------+--------------------------------------------------------------------+---+
-| :ref:`int<class_int>` | :ref:`collision_mask<class_PhysicsBody_property_collision_mask>`   | 1 |
-+-----------------------+--------------------------------------------------------------------+---+
++-----------------------+--------------------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`collision_layer<class_PhysicsBody_property_collision_layer>` | ``1`` |
++-----------------------+--------------------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`collision_mask<class_PhysicsBody_property_collision_mask>`   | ``1`` |
++-----------------------+--------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -48,16 +53,6 @@ Methods
 | void                      | :ref:`set_collision_mask_bit<class_PhysicsBody_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
 +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-PhysicsBody is an abstract base class for implementing a physics body. All \*Body types inherit from it.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/physics_introduction`
-
 Property Descriptions
 ---------------------
 
@@ -66,7 +61,7 @@ Property Descriptions
 - :ref:`int<class_int>` **collision_layer**
 
 +-----------+----------------------------+
-| *Default* | 1                          |
+| *Default* | ``1``                      |
 +-----------+----------------------------+
 | *Setter*  | set_collision_layer(value) |
 +-----------+----------------------------+
@@ -86,7 +81,7 @@ A contact is detected if object A is in any of the layers that object B scans, o
 - :ref:`int<class_int>` **collision_mask**
 
 +-----------+---------------------------+
-| *Default* | 1                         |
+| *Default* | ``1``                     |
 +-----------+---------------------------+
 | *Setter*  | set_collision_mask(value) |
 +-----------+---------------------------+

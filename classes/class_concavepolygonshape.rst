@@ -11,12 +11,12 @@ ConcavePolygonShape
 
 **Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Concave polygon shape.
+
+Description
+-----------
+
+Concave polygon shape resource, which can be set into a :ref:`PhysicsBody<class_PhysicsBody>` or area. This shape is created by feeding a list of triangles.
 
 Methods
 -------
@@ -26,11 +26,6 @@ Methods
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_faces<class_ConcavePolygonShape_method_set_faces>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` faces **)** |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Concave polygon shape resource, which can be set into a :ref:`PhysicsBody<class_PhysicsBody>` or area. This shape is created by feeding a list of triangles.
 
 Method Descriptions
 -------------------

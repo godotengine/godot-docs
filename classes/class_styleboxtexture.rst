@@ -11,47 +11,47 @@ StyleBoxTexture
 
 **Inherits:** :ref:`StyleBox<class_StyleBox>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Texture-based nine-patch :ref:`StyleBox<class_StyleBox>`.
+
+Description
+-----------
+
+Texture-based nine-patch :ref:`StyleBox<class_StyleBox>`, in a way similar to :ref:`NinePatchRect<class_NinePatchRect>`. This stylebox performs a 3×3 scaling of a texture, where only the center cell is fully stretched. This makes it possible to design bordered styles regardless of the stylebox's size.
 
 Properties
 ----------
 
-+--------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
-| :ref:`AxisStretchMode<enum_StyleBoxTexture_AxisStretchMode>` | :ref:`axis_stretch_horizontal<class_StyleBoxTexture_property_axis_stretch_horizontal>` | 0                   |
-+--------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
-| :ref:`AxisStretchMode<enum_StyleBoxTexture_AxisStretchMode>` | :ref:`axis_stretch_vertical<class_StyleBoxTexture_property_axis_stretch_vertical>`     | 0                   |
-+--------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                      | :ref:`draw_center<class_StyleBoxTexture_property_draw_center>`                         | true                |
-+--------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                                    | :ref:`expand_margin_bottom<class_StyleBoxTexture_property_expand_margin_bottom>`       | 0.0                 |
-+--------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                                    | :ref:`expand_margin_left<class_StyleBoxTexture_property_expand_margin_left>`           | 0.0                 |
-+--------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                                    | :ref:`expand_margin_right<class_StyleBoxTexture_property_expand_margin_right>`         | 0.0                 |
-+--------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                                    | :ref:`expand_margin_top<class_StyleBoxTexture_property_expand_margin_top>`             | 0.0                 |
-+--------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                                    | :ref:`margin_bottom<class_StyleBoxTexture_property_margin_bottom>`                     | 0.0                 |
-+--------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                                    | :ref:`margin_left<class_StyleBoxTexture_property_margin_left>`                         | 0.0                 |
-+--------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                                    | :ref:`margin_right<class_StyleBoxTexture_property_margin_right>`                       | 0.0                 |
-+--------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                                    | :ref:`margin_top<class_StyleBoxTexture_property_margin_top>`                           | 0.0                 |
-+--------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>`                                    | :ref:`modulate_color<class_StyleBoxTexture_property_modulate_color>`                   | Color( 1, 1, 1, 1 ) |
-+--------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>`                                | :ref:`normal_map<class_StyleBoxTexture_property_normal_map>`                           |                     |
-+--------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
-| :ref:`Rect2<class_Rect2>`                                    | :ref:`region_rect<class_StyleBoxTexture_property_region_rect>`                         | Rect2( 0, 0, 0, 0 ) |
-+--------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>`                                | :ref:`texture<class_StyleBoxTexture_property_texture>`                                 |                     |
-+--------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------+
++--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
+| :ref:`AxisStretchMode<enum_StyleBoxTexture_AxisStretchMode>` | :ref:`axis_stretch_horizontal<class_StyleBoxTexture_property_axis_stretch_horizontal>` | ``0``                   |
++--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
+| :ref:`AxisStretchMode<enum_StyleBoxTexture_AxisStretchMode>` | :ref:`axis_stretch_vertical<class_StyleBoxTexture_property_axis_stretch_vertical>`     | ``0``                   |
++--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                                      | :ref:`draw_center<class_StyleBoxTexture_property_draw_center>`                         | ``true``                |
++--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                                    | :ref:`expand_margin_bottom<class_StyleBoxTexture_property_expand_margin_bottom>`       | ``0.0``                 |
++--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                                    | :ref:`expand_margin_left<class_StyleBoxTexture_property_expand_margin_left>`           | ``0.0``                 |
++--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                                    | :ref:`expand_margin_right<class_StyleBoxTexture_property_expand_margin_right>`         | ``0.0``                 |
++--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                                    | :ref:`expand_margin_top<class_StyleBoxTexture_property_expand_margin_top>`             | ``0.0``                 |
++--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                                    | :ref:`margin_bottom<class_StyleBoxTexture_property_margin_bottom>`                     | ``0.0``                 |
++--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                                    | :ref:`margin_left<class_StyleBoxTexture_property_margin_left>`                         | ``0.0``                 |
++--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                                    | :ref:`margin_right<class_StyleBoxTexture_property_margin_right>`                       | ``0.0``                 |
++--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                                    | :ref:`margin_top<class_StyleBoxTexture_property_margin_top>`                           | ``0.0``                 |
++--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>`                                    | :ref:`modulate_color<class_StyleBoxTexture_property_modulate_color>`                   | ``Color( 1, 1, 1, 1 )`` |
++--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Texture<class_Texture>`                                | :ref:`normal_map<class_StyleBoxTexture_property_normal_map>`                           |                         |
++--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Rect2<class_Rect2>`                                    | :ref:`region_rect<class_StyleBoxTexture_property_region_rect>`                         | ``Rect2( 0, 0, 0, 0 )`` |
++--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Texture<class_Texture>`                                | :ref:`texture<class_StyleBoxTexture_property_texture>`                                 |                         |
++--------------------------------------------------------------+----------------------------------------------------------------------------------------+-------------------------+
 
 Methods
 -------
@@ -98,11 +98,6 @@ enum **AxisStretchMode**:
 
 - **AXIS_STRETCH_MODE_TILE_FIT** = **2** --- Repeats the stylebox's texture to match the stylebox's size according to the nine-patch system. Unlike :ref:`AXIS_STRETCH_MODE_TILE<class_StyleBoxTexture_constant_AXIS_STRETCH_MODE_TILE>`, the texture may be slightly stretched to make the nine-patch texture tile seamlessly.
 
-Description
------------
-
-Texture-based nine-patch :ref:`StyleBox<class_StyleBox>`, in a way similar to :ref:`NinePatchRect<class_NinePatchRect>`. This stylebox performs a 3×3 scaling of a texture, where only the center cell is fully stretched. This makes it possible to design bordered styles regardless of the stylebox's size.
-
 Property Descriptions
 ---------------------
 
@@ -111,7 +106,7 @@ Property Descriptions
 - :ref:`AxisStretchMode<enum_StyleBoxTexture_AxisStretchMode>` **axis_stretch_horizontal**
 
 +-----------+--------------------------------+
-| *Default* | 0                              |
+| *Default* | ``0``                          |
 +-----------+--------------------------------+
 | *Setter*  | set_h_axis_stretch_mode(value) |
 +-----------+--------------------------------+
@@ -127,7 +122,7 @@ Controls how the stylebox's texture will be stretched or tiled horizontally. See
 - :ref:`AxisStretchMode<enum_StyleBoxTexture_AxisStretchMode>` **axis_stretch_vertical**
 
 +-----------+--------------------------------+
-| *Default* | 0                              |
+| *Default* | ``0``                          |
 +-----------+--------------------------------+
 | *Setter*  | set_v_axis_stretch_mode(value) |
 +-----------+--------------------------------+
@@ -143,7 +138,7 @@ Controls how the stylebox's texture will be stretched or tiled vertically. See :
 - :ref:`bool<class_bool>` **draw_center**
 
 +-----------+--------------------------+
-| *Default* | true                     |
+| *Default* | ``true``                 |
 +-----------+--------------------------+
 | *Setter*  | set_draw_center(value)   |
 +-----------+--------------------------+
@@ -159,7 +154,7 @@ If ``true``, the nine-patch texture's center tile will be drawn.
 - :ref:`float<class_float>` **expand_margin_bottom**
 
 +-----------+-------------------------------+
-| *Default* | 0.0                           |
+| *Default* | ``0.0``                       |
 +-----------+-------------------------------+
 | *Setter*  | set_expand_margin_size(value) |
 +-----------+-------------------------------+
@@ -175,7 +170,7 @@ Expands the bottom margin of this style box when drawing, causing it to be drawn
 - :ref:`float<class_float>` **expand_margin_left**
 
 +-----------+-------------------------------+
-| *Default* | 0.0                           |
+| *Default* | ``0.0``                       |
 +-----------+-------------------------------+
 | *Setter*  | set_expand_margin_size(value) |
 +-----------+-------------------------------+
@@ -191,7 +186,7 @@ Expands the left margin of this style box when drawing, causing it to be drawn l
 - :ref:`float<class_float>` **expand_margin_right**
 
 +-----------+-------------------------------+
-| *Default* | 0.0                           |
+| *Default* | ``0.0``                       |
 +-----------+-------------------------------+
 | *Setter*  | set_expand_margin_size(value) |
 +-----------+-------------------------------+
@@ -207,7 +202,7 @@ Expands the right margin of this style box when drawing, causing it to be drawn 
 - :ref:`float<class_float>` **expand_margin_top**
 
 +-----------+-------------------------------+
-| *Default* | 0.0                           |
+| *Default* | ``0.0``                       |
 +-----------+-------------------------------+
 | *Setter*  | set_expand_margin_size(value) |
 +-----------+-------------------------------+
@@ -223,7 +218,7 @@ Expands the top margin of this style box when drawing, causing it to be drawn la
 - :ref:`float<class_float>` **margin_bottom**
 
 +-----------+------------------------+
-| *Default* | 0.0                    |
+| *Default* | ``0.0``                |
 +-----------+------------------------+
 | *Setter*  | set_margin_size(value) |
 +-----------+------------------------+
@@ -243,7 +238,7 @@ This is also the value used as fallback for :ref:`StyleBox.content_margin_bottom
 - :ref:`float<class_float>` **margin_left**
 
 +-----------+------------------------+
-| *Default* | 0.0                    |
+| *Default* | ``0.0``                |
 +-----------+------------------------+
 | *Setter*  | set_margin_size(value) |
 +-----------+------------------------+
@@ -263,7 +258,7 @@ This is also the value used as fallback for :ref:`StyleBox.content_margin_left<c
 - :ref:`float<class_float>` **margin_right**
 
 +-----------+------------------------+
-| *Default* | 0.0                    |
+| *Default* | ``0.0``                |
 +-----------+------------------------+
 | *Setter*  | set_margin_size(value) |
 +-----------+------------------------+
@@ -283,7 +278,7 @@ This is also the value used as fallback for :ref:`StyleBox.content_margin_right<
 - :ref:`float<class_float>` **margin_top**
 
 +-----------+------------------------+
-| *Default* | 0.0                    |
+| *Default* | ``0.0``                |
 +-----------+------------------------+
 | *Setter*  | set_margin_size(value) |
 +-----------+------------------------+
@@ -302,13 +297,13 @@ This is also the value used as fallback for :ref:`StyleBox.content_margin_top<cl
 
 - :ref:`Color<class_Color>` **modulate_color**
 
-+-----------+---------------------+
-| *Default* | Color( 1, 1, 1, 1 ) |
-+-----------+---------------------+
-| *Setter*  | set_modulate(value) |
-+-----------+---------------------+
-| *Getter*  | get_modulate()      |
-+-----------+---------------------+
++-----------+-------------------------+
+| *Default* | ``Color( 1, 1, 1, 1 )`` |
++-----------+-------------------------+
+| *Setter*  | set_modulate(value)     |
++-----------+-------------------------+
+| *Getter*  | get_modulate()          |
++-----------+-------------------------+
 
 Modulates the color of the texture when this style box is drawn.
 
@@ -332,13 +327,13 @@ The normal map to use when drawing this style box.
 
 - :ref:`Rect2<class_Rect2>` **region_rect**
 
-+-----------+------------------------+
-| *Default* | Rect2( 0, 0, 0, 0 )    |
-+-----------+------------------------+
-| *Setter*  | set_region_rect(value) |
-+-----------+------------------------+
-| *Getter*  | get_region_rect()      |
-+-----------+------------------------+
++-----------+-------------------------+
+| *Default* | ``Rect2( 0, 0, 0, 0 )`` |
++-----------+-------------------------+
+| *Setter*  | set_region_rect(value)  |
++-----------+-------------------------+
+| *Getter*  | get_region_rect()       |
++-----------+-------------------------+
 
 Species a sub-region of the texture to use.
 

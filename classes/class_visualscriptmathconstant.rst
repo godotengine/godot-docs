@@ -11,19 +11,27 @@ VisualScriptMathConstant
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Commonly used mathematical constants.
+
+Description
+-----------
+
+Provides common math constants, such as Pi, on an output Data port.
+
+**Input Ports:**
+
+none
+
+**Output Ports:**
+
+- Data (variant): ``get``
 
 Properties
 ----------
 
-+-----------------------------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` | :ref:`constant<class_VisualScriptMathConstant_property_constant>` | 0 |
-+-----------------------------------------------------------------+-------------------------------------------------------------------+---+
++-----------------------------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` | :ref:`constant<class_VisualScriptMathConstant_property_constant>` | ``0`` |
++-----------------------------------------------------------------+-------------------------------------------------------------------+-------+
 
 Enumerations
 ------------
@@ -68,19 +76,6 @@ enum **MathConstant**:
 
 - **MATH_CONSTANT_MAX** = **8** --- Represents the size of the :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` enum.
 
-Description
------------
-
-Provides common math constants, such as Pi, on an output Data port.
-
-**Input Ports:**
-
-none
-
-**Output Ports:**
-
-- Data (variant): ``get``
-
 Property Descriptions
 ---------------------
 
@@ -89,7 +84,7 @@ Property Descriptions
 - :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **constant**
 
 +-----------+--------------------------+
-| *Default* | 0                        |
+| *Default* | ``0``                    |
 +-----------+--------------------------+
 | *Setter*  | set_math_constant(value) |
 +-----------+--------------------------+

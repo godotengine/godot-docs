@@ -11,23 +11,29 @@ WebSocketServer
 
 **Inherits:** :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>` **<** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A WebSocket server implementation.
+
+Description
+-----------
+
+This class implements a WebSocket server that can also support the high-level multiplayer API.
+
+After starting the server (:ref:`listen<class_WebSocketServer_method_listen>`), you will need to :ref:`NetworkedMultiplayerPeer.poll<class_NetworkedMultiplayerPeer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`). When clients connect, disconnect, or send data, you will receive the appropriate signal.
+
+**Note:** Not available in HTML5 exports.
 
 Properties
 ----------
 
-+-----------------------------------------------+------------------------------------------------------------------------+
-| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ca_chain<class_WebSocketServer_property_ca_chain>`               |
-+-----------------------------------------------+------------------------------------------------------------------------+
-| :ref:`CryptoKey<class_CryptoKey>`             | :ref:`private_key<class_WebSocketServer_property_private_key>`         |
-+-----------------------------------------------+------------------------------------------------------------------------+
-| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>` |
-+-----------------------------------------------+------------------------------------------------------------------------+
++-----------------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`String<class_String>`                   | :ref:`bind_ip<class_WebSocketServer_property_bind_ip>`                 | ``"*"`` |
++-----------------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ca_chain<class_WebSocketServer_property_ca_chain>`               |         |
++-----------------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`CryptoKey<class_CryptoKey>`             | :ref:`private_key<class_WebSocketServer_property_private_key>`         |         |
++-----------------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>` |         |
++-----------------------------------------------+------------------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -83,17 +89,24 @@ Emitted when a new message is received.
 
 **Note:** This signal is *not* emitted when used as high-level multiplayer peer.
 
-Description
------------
-
-This class implements a WebSocket server that can also support the high-level multiplayer API.
-
-After starting the server (:ref:`listen<class_WebSocketServer_method_listen>`), you will need to :ref:`NetworkedMultiplayerPeer.poll<class_NetworkedMultiplayerPeer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`). When clients connect, disconnect, or send data, you will receive the appropriate signal.
-
-**Note:** This class will not work in HTML5 exports due to browser restrictions.
-
 Property Descriptions
 ---------------------
+
+.. _class_WebSocketServer_property_bind_ip:
+
+- :ref:`String<class_String>` **bind_ip**
+
++-----------+--------------------+
+| *Default* | ``"*"``            |
++-----------+--------------------+
+| *Setter*  | set_bind_ip(value) |
++-----------+--------------------+
+| *Getter*  | get_bind_ip()      |
++-----------+--------------------+
+
+When not set to ``*`` will restrict incoming connections to the specified IP address. Setting ``bind_ip`` to ``127.0.0.1`` will cause the server to listen only to the local host.
+
+----
 
 .. _class_WebSocketServer_property_ca_chain:
 

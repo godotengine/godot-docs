@@ -11,21 +11,7 @@ Semaphore
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A synchronization semaphore.
-
-Methods
--------
-
-+---------------------------------------+------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`post<class_Semaphore_method_post>` **(** **)** |
-+---------------------------------------+------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_Semaphore_method_wait>` **(** **)** |
-+---------------------------------------+------------------------------------------------------+
 
 Description
 -----------
@@ -36,6 +22,15 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/threads/using_multiple_threads`
+
+Methods
+-------
+
++---------------------------------------+------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`post<class_Semaphore_method_post>` **(** **)** |
++---------------------------------------+------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_Semaphore_method_wait>` **(** **)** |
++---------------------------------------+------------------------------------------------------+
 
 Method Descriptions
 -------------------

@@ -11,29 +11,29 @@ Timer
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A countdown timer.
+
+Description
+-----------
+
+Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one-shot" mode.
 
 Properties
 ----------
 
-+------------------------------------------------------+--------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                              | :ref:`autostart<class_Timer_property_autostart>`       | false |
-+------------------------------------------------------+--------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                              | :ref:`one_shot<class_Timer_property_one_shot>`         | false |
-+------------------------------------------------------+--------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                              | :ref:`paused<class_Timer_property_paused>`             |       |
-+------------------------------------------------------+--------------------------------------------------------+-------+
-| :ref:`TimerProcessMode<enum_Timer_TimerProcessMode>` | :ref:`process_mode<class_Timer_property_process_mode>` | 1     |
-+------------------------------------------------------+--------------------------------------------------------+-------+
-| :ref:`float<class_float>`                            | :ref:`time_left<class_Timer_property_time_left>`       |       |
-+------------------------------------------------------+--------------------------------------------------------+-------+
-| :ref:`float<class_float>`                            | :ref:`wait_time<class_Timer_property_wait_time>`       | 1.0   |
-+------------------------------------------------------+--------------------------------------------------------+-------+
++------------------------------------------------------+--------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                              | :ref:`autostart<class_Timer_property_autostart>`       | ``false`` |
++------------------------------------------------------+--------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                              | :ref:`one_shot<class_Timer_property_one_shot>`         | ``false`` |
++------------------------------------------------------+--------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                              | :ref:`paused<class_Timer_property_paused>`             |           |
++------------------------------------------------------+--------------------------------------------------------+-----------+
+| :ref:`TimerProcessMode<enum_Timer_TimerProcessMode>` | :ref:`process_mode<class_Timer_property_process_mode>` | ``1``     |
++------------------------------------------------------+--------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                            | :ref:`time_left<class_Timer_property_time_left>`       |           |
++------------------------------------------------------+--------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                            | :ref:`wait_time<class_Timer_property_wait_time>`       | ``1.0``   |
++------------------------------------------------------+--------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -70,11 +70,6 @@ enum **TimerProcessMode**:
 
 - **TIMER_PROCESS_IDLE** = **1** --- Update the timer during the idle time at each frame.
 
-Description
------------
-
-Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one-shot" mode.
-
 Property Descriptions
 ---------------------
 
@@ -83,7 +78,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **autostart**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_autostart(value) |
 +-----------+----------------------+
@@ -92,6 +87,8 @@ Property Descriptions
 
 If ``true``, the timer will automatically start when entering the scene tree.
 
+**Note:** This property is automatically set to ``false`` after the timer enters the scene tree and starts.
+
 ----
 
 .. _class_Timer_property_one_shot:
@@ -99,7 +96,7 @@ If ``true``, the timer will automatically start when entering the scene tree.
 - :ref:`bool<class_bool>` **one_shot**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_one_shot(value) |
 +-----------+---------------------+
@@ -129,7 +126,7 @@ If ``true``, the timer is paused and will not process until it is unpaused again
 - :ref:`TimerProcessMode<enum_Timer_TimerProcessMode>` **process_mode**
 
 +-----------+-------------------------------+
-| *Default* | 1                             |
+| *Default* | ``1``                         |
 +-----------+-------------------------------+
 | *Setter*  | set_timer_process_mode(value) |
 +-----------+-------------------------------+
@@ -150,7 +147,7 @@ Processing mode. See :ref:`TimerProcessMode<enum_Timer_TimerProcessMode>`.
 
 The timer's remaining time in seconds. Returns 0 if the timer is inactive.
 
-**Note:** You cannot set this value. To change the timer's remaining time, use :ref:`wait_time<class_Timer_property_wait_time>`.
+**Note:** You cannot set this value. To change the timer's remaining time, use :ref:`start<class_Timer_method_start>`.
 
 ----
 
@@ -159,7 +156,7 @@ The timer's remaining time in seconds. Returns 0 if the timer is inactive.
 - :ref:`float<class_float>` **wait_time**
 
 +-----------+----------------------+
-| *Default* | 1.0                  |
+| *Default* | ``1.0``              |
 +-----------+----------------------+
 | *Setter*  | set_wait_time(value) |
 +-----------+----------------------+

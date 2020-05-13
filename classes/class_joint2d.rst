@@ -13,30 +13,25 @@ Joint2D
 
 **Inherited By:** :ref:`DampedSpringJoint2D<class_DampedSpringJoint2D>`, :ref:`GrooveJoint2D<class_GrooveJoint2D>`, :ref:`PinJoint2D<class_PinJoint2D>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base node for all joint constraints in 2D physics.
-
-Properties
-----------
-
-+---------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`       | :ref:`bias<class_Joint2D_property_bias>`                           | 0.0          |
-+---------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`         | :ref:`disable_collision<class_Joint2D_property_disable_collision>` | true         |
-+---------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`node_a<class_Joint2D_property_node_a>`                       | NodePath("") |
-+---------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`node_b<class_Joint2D_property_node_b>`                       | NodePath("") |
-+---------------------------------+--------------------------------------------------------------------+--------------+
 
 Description
 -----------
 
 Base node for all joint constraints in 2D physics. Joints take 2 bodies and apply a custom constraint.
+
+Properties
+----------
+
++---------------------------------+--------------------------------------------------------------------+------------------+
+| :ref:`float<class_float>`       | :ref:`bias<class_Joint2D_property_bias>`                           | ``0.0``          |
++---------------------------------+--------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`         | :ref:`disable_collision<class_Joint2D_property_disable_collision>` | ``true``         |
++---------------------------------+--------------------------------------------------------------------+------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`node_a<class_Joint2D_property_node_a>`                       | ``NodePath("")`` |
++---------------------------------+--------------------------------------------------------------------+------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`node_b<class_Joint2D_property_node_b>`                       | ``NodePath("")`` |
++---------------------------------+--------------------------------------------------------------------+------------------+
 
 Property Descriptions
 ---------------------
@@ -46,7 +41,7 @@ Property Descriptions
 - :ref:`float<class_float>` **bias**
 
 +-----------+-----------------+
-| *Default* | 0.0             |
+| *Default* | ``0.0``         |
 +-----------+-----------------+
 | *Setter*  | set_bias(value) |
 +-----------+-----------------+
@@ -62,7 +57,7 @@ When :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D
 - :ref:`bool<class_bool>` **disable_collision**
 
 +-----------+-----------------------------------------+
-| *Default* | true                                    |
+| *Default* | ``true``                                |
 +-----------+-----------------------------------------+
 | *Setter*  | set_exclude_nodes_from_collision(value) |
 +-----------+-----------------------------------------+
@@ -78,7 +73,7 @@ If ``true``, :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class
 - :ref:`NodePath<class_NodePath>` **node_a**
 
 +-----------+-------------------+
-| *Default* | NodePath("")      |
+| *Default* | ``NodePath("")``  |
 +-----------+-------------------+
 | *Setter*  | set_node_a(value) |
 +-----------+-------------------+
@@ -94,7 +89,7 @@ The first body attached to the joint. Must derive from :ref:`PhysicsBody2D<class
 - :ref:`NodePath<class_NodePath>` **node_b**
 
 +-----------+-------------------+
-| *Default* | NodePath("")      |
+| *Default* | ``NodePath("")``  |
 +-----------+-------------------+
 | *Setter*  | set_node_b(value) |
 +-----------+-------------------+

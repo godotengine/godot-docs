@@ -9,21 +9,28 @@
 Transform
 =========
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 3D transformation (3×4 matrix).
+
+Description
+-----------
+
+Represents one or many transformations in 3D space such as translation, rotation, or scaling. It consists of a :ref:`basis<class_Transform_property_basis>` and an :ref:`origin<class_Transform_property_origin>`. It is similar to a 3×4 matrix.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
+
+- :doc:`../tutorials/3d/using_transforms`
 
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------+------------------------------------+
-| :ref:`Basis<class_Basis>`     | :ref:`basis<class_Transform_property_basis>`   | Basis( 1, 0, 0, 0, 1, 0, 0, 0, 1 ) |
-+-------------------------------+------------------------------------------------+------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`origin<class_Transform_property_origin>` | Vector3( 0, 0, 0 )                 |
-+-------------------------------+------------------------------------------------+------------------------------------+
++-------------------------------+------------------------------------------------+----------------------------------------+
+| :ref:`Basis<class_Basis>`     | :ref:`basis<class_Transform_property_basis>`   | ``Basis( 1, 0, 0, 0, 1, 0, 0, 0, 1 )`` |
++-------------------------------+------------------------------------------------+----------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`origin<class_Transform_property_origin>` | ``Vector3( 0, 0, 0 )``                 |
++-------------------------------+------------------------------------------------+----------------------------------------+
 
 Methods
 -------
@@ -81,18 +88,6 @@ Constants
 
 - **FLIP_Z** = **Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0 )** --- ``Transform`` with mirroring applied perpendicular to the XY plane.
 
-Description
------------
-
-Represents one or many transformations in 3D space such as translation, rotation, or scaling. It consists of a :ref:`basis<class_Transform_property_basis>` and an :ref:`origin<class_Transform_property_origin>`. It is similar to a 3×4 matrix.
-
-Tutorials
----------
-
-- :doc:`../tutorials/math/index`
-
-- :doc:`../tutorials/3d/using_transforms`
-
 Property Descriptions
 ---------------------
 
@@ -100,9 +95,9 @@ Property Descriptions
 
 - :ref:`Basis<class_Basis>` **basis**
 
-+-----------+------------------------------------+
-| *Default* | Basis( 1, 0, 0, 0, 1, 0, 0, 0, 1 ) |
-+-----------+------------------------------------+
++-----------+----------------------------------------+
+| *Default* | ``Basis( 1, 0, 0, 0, 1, 0, 0, 0, 1 )`` |
++-----------+----------------------------------------+
 
 The basis is a matrix containing 3 :ref:`Vector3<class_Vector3>` as its columns: X axis, Y axis, and Z axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
 
@@ -112,9 +107,9 @@ The basis is a matrix containing 3 :ref:`Vector3<class_Vector3>` as its columns:
 
 - :ref:`Vector3<class_Vector3>` **origin**
 
-+-----------+--------------------+
-| *Default* | Vector3( 0, 0, 0 ) |
-+-----------+--------------------+
++-----------+------------------------+
+| *Default* | ``Vector3( 0, 0, 0 )`` |
++-----------+------------------------+
 
 The translation offset of the transform.
 

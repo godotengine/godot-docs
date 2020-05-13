@@ -11,25 +11,7 @@ InputEventMouseButton
 
 **Inherits:** :ref:`InputEventMouse<class_InputEventMouse>` **<** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Input event type for mouse button events.
-
-Properties
-----------
-
-+---------------------------+------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`     | :ref:`button_index<class_InputEventMouseButton_property_button_index>` | 0     |
-+---------------------------+------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`doubleclick<class_InputEventMouseButton_property_doubleclick>`   | false |
-+---------------------------+------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`factor<class_InputEventMouseButton_property_factor>`             | 1.0   |
-+---------------------------+------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`pressed<class_InputEventMouseButton_property_pressed>`           | false |
-+---------------------------+------------------------------------------------------------------------+-------+
 
 Description
 -----------
@@ -41,6 +23,19 @@ Tutorials
 
 - :doc:`../tutorials/inputs/mouse_and_input_coordinates`
 
+Properties
+----------
+
++---------------------------+------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`     | :ref:`button_index<class_InputEventMouseButton_property_button_index>` | ``0``     |
++---------------------------+------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`doubleclick<class_InputEventMouseButton_property_doubleclick>`   | ``false`` |
++---------------------------+------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`factor<class_InputEventMouseButton_property_factor>`             | ``1.0``   |
++---------------------------+------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`pressed<class_InputEventMouseButton_property_pressed>`           | ``false`` |
++---------------------------+------------------------------------------------------------------------+-----------+
+
 Property Descriptions
 ---------------------
 
@@ -49,7 +44,7 @@ Property Descriptions
 - :ref:`int<class_int>` **button_index**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_button_index(value) |
 +-----------+-------------------------+
@@ -65,7 +60,7 @@ The mouse button identifier, one of the :ref:`ButtonList<enum_@GlobalScope_Butto
 - :ref:`bool<class_bool>` **doubleclick**
 
 +-----------+------------------------+
-| *Default* | false                  |
+| *Default* | ``false``              |
 +-----------+------------------------+
 | *Setter*  | set_doubleclick(value) |
 +-----------+------------------------+
@@ -81,7 +76,7 @@ If ``true``, the mouse button's state is a double-click.
 - :ref:`float<class_float>` **factor**
 
 +-----------+-------------------+
-| *Default* | 1.0               |
+| *Default* | ``1.0``           |
 +-----------+-------------------+
 | *Setter*  | set_factor(value) |
 +-----------+-------------------+
@@ -97,7 +92,7 @@ The amount (or delta) of the event. When used for high-precision scroll events, 
 - :ref:`bool<class_bool>` **pressed**
 
 +-----------+--------------------+
-| *Default* | false              |
+| *Default* | ``false``          |
 +-----------+--------------------+
 | *Setter*  | set_pressed(value) |
 +-----------+--------------------+

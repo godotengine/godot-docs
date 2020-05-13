@@ -11,21 +11,23 @@ VisualShader
 
 **Inherits:** :ref:`Shader<class_Shader>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A custom shader program with a visual editor.
+
+Description
+-----------
+
+This class allows you to define a custom shader program that can be used for various materials to render objects.
+
+The visual shader editor creates the shader.
 
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | code                                                          | **O:** "shader_type spatial;void vertex() {// Output:0}void fragment() {// Output:0}void light() {// Output:0}" |
-+-------------------------------+---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`graph_offset<class_VisualShader_property_graph_offset>` | Vector2( 0, 0 )                                                                                                 |
-+-------------------------------+---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
++-------------------------------+---------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | code                                                          | **O:** ``"shader_type spatial;void vertex() {// Output:0}void fragment() {// Output:0}void light() {// Output:0}"`` |
++-------------------------------+---------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`graph_offset<class_VisualShader_property_graph_offset>` | ``Vector2( 0, 0 )``                                                                                                 |
++-------------------------------+---------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -94,13 +96,6 @@ Constants
 
 - **NODE_ID_OUTPUT** = **0**
 
-Description
------------
-
-This class allows you to define a custom shader program that can be used for various materials to render objects.
-
-The visual shader editor creates the shader.
-
 Property Descriptions
 ---------------------
 
@@ -109,7 +104,7 @@ Property Descriptions
 - :ref:`Vector2<class_Vector2>` **graph_offset**
 
 +-----------+-------------------------+
-| *Default* | Vector2( 0, 0 )         |
+| *Default* | ``Vector2( 0, 0 )``     |
 +-----------+-------------------------+
 | *Setter*  | set_graph_offset(value) |
 +-----------+-------------------------+

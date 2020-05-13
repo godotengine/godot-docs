@@ -11,12 +11,12 @@ HScrollBar
 
 **Inherits:** :ref:`ScrollBar<class_ScrollBar>` **<** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Horizontal scroll bar.
+
+Description
+-----------
+
+Horizontal version of :ref:`ScrollBar<class_ScrollBar>`, which goes from left (min) to right (max).
 
 Theme Properties
 ----------------
@@ -40,9 +40,4 @@ Theme Properties
 +---------------------------------+---------------------+
 | :ref:`StyleBox<class_StyleBox>` | scroll_focus        |
 +---------------------------------+---------------------+
-
-Description
------------
-
-Horizontal scroll bar. See :ref:`ScrollBar<class_ScrollBar>`. This one goes from left (min) to right (max).
 

@@ -13,19 +13,24 @@ Shader
 
 **Inherited By:** :ref:`VisualShader<class_VisualShader>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A custom shader program.
+
+Description
+-----------
+
+This class allows you to define a custom shader program that can be used for various materials to render objects.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/shading/index`
 
 Properties
 ----------
 
-+-----------------------------+-----------------------------------------+----+
-| :ref:`String<class_String>` | :ref:`code<class_Shader_property_code>` | "" |
-+-----------------------------+-----------------------------------------+----+
++-----------------------------+-----------------------------------------+--------+
+| :ref:`String<class_String>` | :ref:`code<class_Shader_property_code>` | ``""`` |
++-----------------------------+-----------------------------------------+--------+
 
 Methods
 -------
@@ -59,16 +64,6 @@ enum **Mode**:
 
 - **MODE_PARTICLES** = **2**
 
-Description
------------
-
-This class allows you to define a custom shader program that can be used for various materials to render objects.
-
-Tutorials
----------
-
-- :doc:`../tutorials/shading/index`
-
 Property Descriptions
 ---------------------
 
@@ -77,7 +72,7 @@ Property Descriptions
 - :ref:`String<class_String>` **code**
 
 +-----------+-----------------+
-| *Default* | ""              |
+| *Default* | ``""``          |
 +-----------+-----------------+
 | *Setter*  | set_code(value) |
 +-----------+-----------------+

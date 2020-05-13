@@ -11,25 +11,27 @@ AnimationTreePlayer
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Animation Player that uses a node graph for blending Animations.
+
+Description
+-----------
+
+A node graph tool for blending multiple animations bound to an :ref:`AnimationPlayer<class_AnimationPlayer>`. Especially useful for animating characters or other skeleton-based rigs. It can combine several animations to form a desired pose.
+
+It takes :ref:`Animation<class_Animation>`\ s from an :ref:`AnimationPlayer<class_AnimationPlayer>` node and mixes them depending on the graph.
 
 Properties
 ----------
 
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+----------------+
-| :ref:`bool<class_bool>`                                                    | :ref:`active<class_AnimationTreePlayer_property_active>`                               | false          |
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+----------------+
-| :ref:`NodePath<class_NodePath>`                                            | :ref:`base_path<class_AnimationTreePlayer_property_base_path>`                         | NodePath("..") |
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+----------------+
-| :ref:`NodePath<class_NodePath>`                                            | :ref:`master_player<class_AnimationTreePlayer_property_master_player>`                 | NodePath("")   |
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+----------------+
-| :ref:`AnimationProcessMode<enum_AnimationTreePlayer_AnimationProcessMode>` | :ref:`playback_process_mode<class_AnimationTreePlayer_property_playback_process_mode>` | 1              |
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+----------------+
++----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------------+
+| :ref:`bool<class_bool>`                                                    | :ref:`active<class_AnimationTreePlayer_property_active>`                               | ``false``          |
++----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------------+
+| :ref:`NodePath<class_NodePath>`                                            | :ref:`base_path<class_AnimationTreePlayer_property_base_path>`                         | ``NodePath("..")`` |
++----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------------+
+| :ref:`NodePath<class_NodePath>`                                            | :ref:`master_player<class_AnimationTreePlayer_property_master_player>`                 | ``NodePath("")``   |
++----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------------+
+| :ref:`AnimationProcessMode<enum_AnimationTreePlayer_AnimationProcessMode>` | :ref:`playback_process_mode<class_AnimationTreePlayer_property_playback_process_mode>` | ``1``              |
++----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------------+
 
 Methods
 -------
@@ -211,13 +213,6 @@ enum **AnimationProcessMode**:
 
 - **ANIMATION_PROCESS_IDLE** = **1** --- Process animation during the idle process.
 
-Description
------------
-
-A node graph tool for blending multiple animations bound to an :ref:`AnimationPlayer<class_AnimationPlayer>`. Especially useful for animating characters or other skeleton-based rigs. It can combine several animations to form a desired pose.
-
-It takes :ref:`Animation<class_Animation>`\ s from an :ref:`AnimationPlayer<class_AnimationPlayer>` node and mixes them depending on the graph.
-
 Property Descriptions
 ---------------------
 
@@ -226,7 +221,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **active**
 
 +-----------+-------------------+
-| *Default* | false             |
+| *Default* | ``false``         |
 +-----------+-------------------+
 | *Setter*  | set_active(value) |
 +-----------+-------------------+
@@ -242,7 +237,7 @@ If ``true``, the ``AnimationTreePlayer`` is able to play animations.
 - :ref:`NodePath<class_NodePath>` **base_path**
 
 +-----------+----------------------+
-| *Default* | NodePath("..")       |
+| *Default* | ``NodePath("..")``   |
 +-----------+----------------------+
 | *Setter*  | set_base_path(value) |
 +-----------+----------------------+
@@ -260,7 +255,7 @@ It accesses the Bones, so it should point to the same Node the AnimationPlayer w
 - :ref:`NodePath<class_NodePath>` **master_player**
 
 +-----------+--------------------------+
-| *Default* | NodePath("")             |
+| *Default* | ``NodePath("")``         |
 +-----------+--------------------------+
 | *Setter*  | set_master_player(value) |
 +-----------+--------------------------+
@@ -278,7 +273,7 @@ Once set, Animation nodes can be added to the AnimationTreePlayer.
 - :ref:`AnimationProcessMode<enum_AnimationTreePlayer_AnimationProcessMode>` **playback_process_mode**
 
 +-----------+-----------------------------------+
-| *Default* | 1                                 |
+| *Default* | ``1``                             |
 +-----------+-----------------------------------+
 | *Setter*  | set_animation_process_mode(value) |
 +-----------+-----------------------------------+

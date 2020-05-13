@@ -13,19 +13,26 @@ InputEvent
 
 **Inherited By:** :ref:`InputEventAction<class_InputEventAction>`, :ref:`InputEventJoypadButton<class_InputEventJoypadButton>`, :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>`, :ref:`InputEventMIDI<class_InputEventMIDI>`, :ref:`InputEventScreenDrag<class_InputEventScreenDrag>`, :ref:`InputEventScreenTouch<class_InputEventScreenTouch>`, :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Generic input event
+
+Description
+-----------
+
+Base class of all sort of input event. See :ref:`Node._input<class_Node_method__input>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/inputevent`
+
+- :doc:`../tutorials/2d/2d_transforms`
 
 Properties
 ----------
 
-+-----------------------+-------------------------------------------------+---+
-| :ref:`int<class_int>` | :ref:`device<class_InputEvent_property_device>` | 0 |
-+-----------------------+-------------------------------------------------+---+
++-----------------------+-------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`device<class_InputEvent_property_device>` | ``0`` |
++-----------------------+-------------------------------------------------+-------+
 
 Methods
 -------
@@ -54,18 +61,6 @@ Methods
 | :ref:`InputEvent<class_InputEvent>` | :ref:`xformed_by<class_InputEvent_method_xformed_by>` **(** :ref:`Transform2D<class_Transform2D>` xform, :ref:`Vector2<class_Vector2>` local_ofs=Vector2( 0, 0 ) **)** const |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-Base class of all sort of input event. See :ref:`Node._input<class_Node_method__input>`.
-
-Tutorials
----------
-
-- :doc:`../tutorials/inputs/inputevent`
-
-- :doc:`../tutorials/2d/2d_transforms`
-
 Property Descriptions
 ---------------------
 
@@ -74,7 +69,7 @@ Property Descriptions
 - :ref:`int<class_int>` **device**
 
 +-----------+-------------------+
-| *Default* | 0                 |
+| *Default* | ``0``             |
 +-----------+-------------------+
 | *Setter*  | set_device(value) |
 +-----------+-------------------+

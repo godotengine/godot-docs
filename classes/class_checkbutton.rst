@@ -11,21 +11,21 @@ CheckButton
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Checkable button.
+
+Description
+-----------
+
+CheckButton is a toggle button displayed as a check field.
 
 Properties
 ----------
 
-+-----------------------------------------+-------------+-------------+
-| :ref:`TextAlign<enum_Button_TextAlign>` | align       | **O:** 0    |
-+-----------------------------------------+-------------+-------------+
-| :ref:`bool<class_bool>`                 | toggle_mode | **O:** true |
-+-----------------------------------------+-------------+-------------+
++-----------------------------------------+-------------+-----------------+
+| :ref:`TextAlign<enum_Button_TextAlign>` | align       | **O:** ``0``    |
++-----------------------------------------+-------------+-----------------+
+| :ref:`bool<class_bool>`                 | toggle_mode | **O:** ``true`` |
++-----------------------------------------+-------------+-----------------+
 
 Theme Properties
 ----------------
@@ -67,9 +67,4 @@ Theme Properties
 +---------------------------------+--------------------------+------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | pressed                  |                              |
 +---------------------------------+--------------------------+------------------------------+
-
-Description
------------
-
-CheckButton is a toggle button displayed as a check field.
 

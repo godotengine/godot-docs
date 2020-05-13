@@ -11,11 +11,6 @@ CameraServer
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 The CameraServer keeps track of different cameras accessible in Godot. These are external cameras such as webcams or the cameras on your phone.
 
 Methods

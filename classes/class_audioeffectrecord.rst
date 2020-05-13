@@ -11,19 +11,14 @@ AudioEffectRecord
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+----------------------------------------------+--------------------------------------------------------+---+
-| :ref:`Format<enum_AudioStreamSample_Format>` | :ref:`format<class_AudioEffectRecord_property_format>` | 1 |
-+----------------------------------------------+--------------------------------------------------------+---+
++----------------------------------------------+--------------------------------------------------------+-------+
+| :ref:`Format<enum_AudioStreamSample_Format>` | :ref:`format<class_AudioEffectRecord_property_format>` | ``1`` |
++----------------------------------------------+--------------------------------------------------------+-------+
 
 Methods
 -------
@@ -44,7 +39,7 @@ Property Descriptions
 - :ref:`Format<enum_AudioStreamSample_Format>` **format**
 
 +-----------+-------------------+
-| *Default* | 1                 |
+| *Default* | ``1``             |
 +-----------+-------------------+
 | *Setter*  | set_format(value) |
 +-----------+-------------------+

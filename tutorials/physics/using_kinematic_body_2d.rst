@@ -138,6 +138,21 @@ Anything you do with ``move_and_slide()`` can also be done with ``move_and_colli
 but it might take a little more code. However, as we'll see in the examples below,
 there are cases where ``move_and_slide()`` doesn't provide the response you want.
 
+In the example above, we assign the velocity that ``move_and_slide()`` returns
+back into the ``velocity`` variable. This is because when the character collides
+with the environment, the function recalculates the speed internally to reflect
+the slowdown.
+
+For example, if your character fell on the floor, you don't want it to
+accumulate vertical speed due to the effect of gravity. Instead, you want its
+vertical speed to reset to zero.
+
+``move_and_slide()`` may also recalculate the kinematic body's velocity several
+times in a loop as, to produce a smooth motion, it moves the character and
+collides up to five times by default. At the end of the process, the function
+returns the character's new velocity that we can store in our ``velocity``
+variable, and use on the next frame.
+
 Examples
 --------
 

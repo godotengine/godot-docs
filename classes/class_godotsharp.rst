@@ -11,11 +11,6 @@ GodotSharp
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Methods

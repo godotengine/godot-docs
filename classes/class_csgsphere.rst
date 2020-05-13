@@ -11,32 +11,27 @@ CSGSphere
 
 **Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A CSG Sphere shape.
-
-Properties
-----------
-
-+---------------------------------+------------------------------------------------------------------+------+
-| :ref:`Material<class_Material>` | :ref:`material<class_CSGSphere_property_material>`               |      |
-+---------------------------------+------------------------------------------------------------------+------+
-| :ref:`int<class_int>`           | :ref:`radial_segments<class_CSGSphere_property_radial_segments>` | 12   |
-+---------------------------------+------------------------------------------------------------------+------+
-| :ref:`float<class_float>`       | :ref:`radius<class_CSGSphere_property_radius>`                   | 1.0  |
-+---------------------------------+------------------------------------------------------------------+------+
-| :ref:`int<class_int>`           | :ref:`rings<class_CSGSphere_property_rings>`                     | 6    |
-+---------------------------------+------------------------------------------------------------------+------+
-| :ref:`bool<class_bool>`         | :ref:`smooth_faces<class_CSGSphere_property_smooth_faces>`       | true |
-+---------------------------------+------------------------------------------------------------------+------+
 
 Description
 -----------
 
 This node allows you to create a sphere for use with the CSG system.
+
+Properties
+----------
+
++---------------------------------+------------------------------------------------------------------+----------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CSGSphere_property_material>`               |          |
++---------------------------------+------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`           | :ref:`radial_segments<class_CSGSphere_property_radial_segments>` | ``12``   |
++---------------------------------+------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`       | :ref:`radius<class_CSGSphere_property_radius>`                   | ``1.0``  |
++---------------------------------+------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`           | :ref:`rings<class_CSGSphere_property_rings>`                     | ``6``    |
++---------------------------------+------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`         | :ref:`smooth_faces<class_CSGSphere_property_smooth_faces>`       | ``true`` |
++---------------------------------+------------------------------------------------------------------+----------+
 
 Property Descriptions
 ---------------------
@@ -60,7 +55,7 @@ The material used to render the sphere.
 - :ref:`int<class_int>` **radial_segments**
 
 +-----------+----------------------------+
-| *Default* | 12                         |
+| *Default* | ``12``                     |
 +-----------+----------------------------+
 | *Setter*  | set_radial_segments(value) |
 +-----------+----------------------------+
@@ -76,7 +71,7 @@ Number of vertical slices for the sphere.
 - :ref:`float<class_float>` **radius**
 
 +-----------+-------------------+
-| *Default* | 1.0               |
+| *Default* | ``1.0``           |
 +-----------+-------------------+
 | *Setter*  | set_radius(value) |
 +-----------+-------------------+
@@ -92,7 +87,7 @@ Radius of the sphere.
 - :ref:`int<class_int>` **rings**
 
 +-----------+------------------+
-| *Default* | 6                |
+| *Default* | ``6``            |
 +-----------+------------------+
 | *Setter*  | set_rings(value) |
 +-----------+------------------+
@@ -108,7 +103,7 @@ Number of horizontal slices for the sphere.
 - :ref:`bool<class_bool>` **smooth_faces**
 
 +-----------+-------------------------+
-| *Default* | true                    |
+| *Default* | ``true``                |
 +-----------+-------------------------+
 | *Setter*  | set_smooth_faces(value) |
 +-----------+-------------------------+

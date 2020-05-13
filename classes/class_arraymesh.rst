@@ -11,21 +11,44 @@ ArrayMesh
 
 **Inherits:** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 :ref:`Mesh<class_Mesh>` type that provides utility for constructing a surface from arrays.
+
+Description
+-----------
+
+The ``ArrayMesh`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying the attributes as arrays. The most basic example is the creation of a single triangle
+
+::
+
+    var vertices = PoolVector3Array()
+    vertices.push_back(Vector3(0, 1, 0))
+    vertices.push_back(Vector3(1, 0, 0))
+    vertices.push_back(Vector3(0, 0, 1))
+    # Initialize the ArrayMesh.
+    var arr_mesh = ArrayMesh.new()
+    var arrays = []
+    arrays.resize(ArrayMesh.ARRAY_MAX)
+    arrays[ArrayMesh.ARRAY_VERTEX] = vertices
+    # Create the Mesh.
+    arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
+    var m = MeshInstance.new()
+    m.mesh = arr_mesh
+
+The ``MeshInstance`` is ready to be added to the SceneTree to be shown.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/content/procedural_geometry/arraymesh`
 
 Properties
 ----------
 
-+-------------------------------------------------+--------------------------------------------------------------------+--------------------------+
-| :ref:`BlendShapeMode<enum_Mesh_BlendShapeMode>` | :ref:`blend_shape_mode<class_ArrayMesh_property_blend_shape_mode>` | 1                        |
-+-------------------------------------------------+--------------------------------------------------------------------+--------------------------+
-| :ref:`AABB<class_AABB>`                         | :ref:`custom_aabb<class_ArrayMesh_property_custom_aabb>`           | AABB( 0, 0, 0, 0, 0, 0 ) |
-+-------------------------------------------------+--------------------------------------------------------------------+--------------------------+
++-------------------------------------------------+--------------------------------------------------------------------+------------------------------+
+| :ref:`BlendShapeMode<enum_Mesh_BlendShapeMode>` | :ref:`blend_shape_mode<class_ArrayMesh_property_blend_shape_mode>` | ``1``                        |
++-------------------------------------------------+--------------------------------------------------------------------+------------------------------+
+| :ref:`AABB<class_AABB>`                         | :ref:`custom_aabb<class_ArrayMesh_property_custom_aabb>`           | ``AABB( 0, 0, 0, 0, 0, 0 )`` |
++-------------------------------------------------+--------------------------------------------------------------------+------------------------------+
 
 Methods
 -------
@@ -166,29 +189,6 @@ Constants
 
 - **ARRAY_WEIGHTS_SIZE** = **4** --- Amount of weights/bone indices per vertex (always 4).
 
-Description
------------
-
-The ``ArrayMesh`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying the attributes as arrays. The most basic example is the creation of a single triangle
-
-::
-
-    var vertices = PoolVector3Array()
-    vertices.push_back(Vector3(0, 1, 0))
-    vertices.push_back(Vector3(1, 0, 0))
-    vertices.push_back(Vector3(0, 0, 1))
-    # Initialize the ArrayMesh.
-    var arr_mesh = ArrayMesh.new()
-    var arrays = []
-    arrays.resize(ArrayMesh.ARRAY_MAX)
-    arrays[ArrayMesh.ARRAY_VERTEX] = vertices
-    # Create the Mesh.
-    arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
-    var m = MeshInstance.new()
-    m.mesh = arr_mesh
-
-The ``MeshInstance`` is ready to be added to the SceneTree to be shown.
-
 Property Descriptions
 ---------------------
 
@@ -197,12 +197,14 @@ Property Descriptions
 - :ref:`BlendShapeMode<enum_Mesh_BlendShapeMode>` **blend_shape_mode**
 
 +-----------+-----------------------------+
-| *Default* | 1                           |
+| *Default* | ``1``                       |
 +-----------+-----------------------------+
 | *Setter*  | set_blend_shape_mode(value) |
 +-----------+-----------------------------+
 | *Getter*  | get_blend_shape_mode()      |
 +-----------+-----------------------------+
+
+Sets the blend shape mode to one of :ref:`BlendShapeMode<enum_Mesh_BlendShapeMode>`.
 
 ----
 
@@ -210,13 +212,13 @@ Property Descriptions
 
 - :ref:`AABB<class_AABB>` **custom_aabb**
 
-+-----------+--------------------------+
-| *Default* | AABB( 0, 0, 0, 0, 0, 0 ) |
-+-----------+--------------------------+
-| *Setter*  | set_custom_aabb(value)   |
-+-----------+--------------------------+
-| *Getter*  | get_custom_aabb()        |
-+-----------+--------------------------+
++-----------+------------------------------+
+| *Default* | ``AABB( 0, 0, 0, 0, 0, 0 )`` |
++-----------+------------------------------+
+| *Setter*  | set_custom_aabb(value)       |
++-----------+------------------------------+
+| *Getter*  | get_custom_aabb()            |
++-----------+------------------------------+
 
 Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frustum culling. Especially useful to avoid unexpected culling when using a shader to offset vertices.
 

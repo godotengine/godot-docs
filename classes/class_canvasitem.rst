@@ -13,33 +13,48 @@ CanvasItem
 
 **Inherited By:** :ref:`Control<class_Control>`, :ref:`Node2D<class_Node2D>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class of anything 2D.
+
+Description
+-----------
+
+Base class of anything 2D. Canvas items are laid out in a tree; children inherit and extend their parent's transform. CanvasItem is extended by :ref:`Control<class_Control>` for anything GUI-related, and by :ref:`Node2D<class_Node2D>` for anything related to the 2D engine.
+
+Any CanvasItem can draw. For this, :ref:`update<class_CanvasItem_method_update>` must be called, then :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be received on idle time to request redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the CanvasItem are provided (see ``draw_*`` functions). However, they can only be used inside the :ref:`Object._notification<class_Object_method__notification>`, signal or :ref:`_draw<class_CanvasItem_method__draw>` virtual functions.
+
+Canvas items are drawn in tree order. By default, children are on top of their parents so a root CanvasItem will be drawn behind everything. This behavior can be changed on a per-item basis.
+
+A CanvasItem can also be hidden, which will also hide its children. It provides many ways to change parameters such as modulation (for itself and its children) and self modulation (only for itself), as well as its blend mode.
+
+Ultimately, a transform notification can be requested, which will notify the node that its global position changed in case the parent tree changed.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/2d_transforms`
+
+- :doc:`../tutorials/2d/custom_drawing_in_2d`
 
 Properties
 ----------
 
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`           | :ref:`light_mask<class_CanvasItem_property_light_mask>`                   | 1                   |
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
-| :ref:`Material<class_Material>` | :ref:`material<class_CanvasItem_property_material>`                       |                     |
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>`       | :ref:`modulate<class_CanvasItem_property_modulate>`                       | Color( 1, 1, 1, 1 ) |
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>`       | :ref:`self_modulate<class_CanvasItem_property_self_modulate>`             | Color( 1, 1, 1, 1 ) |
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`         | :ref:`show_behind_parent<class_CanvasItem_property_show_behind_parent>`   | false               |
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`         | :ref:`show_on_top<class_CanvasItem_property_show_on_top>`                 |                     |
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`         | :ref:`use_parent_material<class_CanvasItem_property_use_parent_material>` | false               |
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`         | :ref:`visible<class_CanvasItem_property_visible>`                         | true                |
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`           | :ref:`light_mask<class_CanvasItem_property_light_mask>`                   | ``1``                   |
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CanvasItem_property_material>`                       |                         |
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>`       | :ref:`modulate<class_CanvasItem_property_modulate>`                       | ``Color( 1, 1, 1, 1 )`` |
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>`       | :ref:`self_modulate<class_CanvasItem_property_self_modulate>`             | ``Color( 1, 1, 1, 1 )`` |
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`         | :ref:`show_behind_parent<class_CanvasItem_property_show_behind_parent>`   | ``false``               |
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`         | :ref:`show_on_top<class_CanvasItem_property_show_on_top>`                 |                         |
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`         | :ref:`use_parent_material<class_CanvasItem_property_use_parent_material>` | ``false``               |
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`         | :ref:`visible<class_CanvasItem_property_visible>`                         | ``true``                |
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
 
 Methods
 -------
@@ -225,26 +240,6 @@ Constants
 
 - **NOTIFICATION_EXIT_CANVAS** = **33** --- The CanvasItem has exited the canvas.
 
-Description
------------
-
-Base class of anything 2D. Canvas items are laid out in a tree; children inherit and extend their parent's transform. CanvasItem is extended by :ref:`Control<class_Control>` for anything GUI-related, and by :ref:`Node2D<class_Node2D>` for anything related to the 2D engine.
-
-Any CanvasItem can draw. For this, :ref:`update<class_CanvasItem_method_update>` must be called, then :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be received on idle time to request redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the CanvasItem are provided (see ``draw_*`` functions). However, they can only be used inside the :ref:`Object._notification<class_Object_method__notification>`, signal or :ref:`_draw<class_CanvasItem_method__draw>` virtual functions.
-
-Canvas items are drawn in tree order. By default, children are on top of their parents so a root CanvasItem will be drawn behind everything. This behavior can be changed on a per-item basis.
-
-A CanvasItem can also be hidden, which will also hide its children. It provides many ways to change parameters such as modulation (for itself and its children) and self modulation (only for itself), as well as its blend mode.
-
-Ultimately, a transform notification can be requested, which will notify the node that its global position changed in case the parent tree changed.
-
-Tutorials
----------
-
-- :doc:`../tutorials/2d/2d_transforms`
-
-- :doc:`../tutorials/2d/custom_drawing_in_2d`
-
 Property Descriptions
 ---------------------
 
@@ -253,7 +248,7 @@ Property Descriptions
 - :ref:`int<class_int>` **light_mask**
 
 +-----------+-----------------------+
-| *Default* | 1                     |
+| *Default* | ``1``                 |
 +-----------+-----------------------+
 | *Setter*  | set_light_mask(value) |
 +-----------+-----------------------+
@@ -282,13 +277,13 @@ The material applied to textures on this ``CanvasItem``.
 
 - :ref:`Color<class_Color>` **modulate**
 
-+-----------+---------------------+
-| *Default* | Color( 1, 1, 1, 1 ) |
-+-----------+---------------------+
-| *Setter*  | set_modulate(value) |
-+-----------+---------------------+
-| *Getter*  | get_modulate()      |
-+-----------+---------------------+
++-----------+-------------------------+
+| *Default* | ``Color( 1, 1, 1, 1 )`` |
++-----------+-------------------------+
+| *Setter*  | set_modulate(value)     |
++-----------+-------------------------+
+| *Getter*  | get_modulate()          |
++-----------+-------------------------+
 
 The color applied to textures on this ``CanvasItem``.
 
@@ -299,7 +294,7 @@ The color applied to textures on this ``CanvasItem``.
 - :ref:`Color<class_Color>` **self_modulate**
 
 +-----------+--------------------------+
-| *Default* | Color( 1, 1, 1, 1 )      |
+| *Default* | ``Color( 1, 1, 1, 1 )``  |
 +-----------+--------------------------+
 | *Setter*  | set_self_modulate(value) |
 +-----------+--------------------------+
@@ -315,7 +310,7 @@ The color applied to textures on this ``CanvasItem``. This is not inherited by c
 - :ref:`bool<class_bool>` **show_behind_parent**
 
 +-----------+---------------------------------+
-| *Default* | false                           |
+| *Default* | ``false``                       |
 +-----------+---------------------------------+
 | *Setter*  | set_draw_behind_parent(value)   |
 +-----------+---------------------------------+
@@ -339,7 +334,7 @@ If ``true``, the object draws on top of its parent.
 - :ref:`bool<class_bool>` **use_parent_material**
 
 +-----------+--------------------------------+
-| *Default* | false                          |
+| *Default* | ``false``                      |
 +-----------+--------------------------------+
 | *Setter*  | set_use_parent_material(value) |
 +-----------+--------------------------------+
@@ -355,7 +350,7 @@ If ``true``, the parent ``CanvasItem``'s :ref:`material<class_CanvasItem_propert
 - :ref:`bool<class_bool>` **visible**
 
 +-----------+--------------------+
-| *Default* | true               |
+| *Default* | ``true``           |
 +-----------+--------------------+
 | *Setter*  | set_visible(value) |
 +-----------+--------------------+
@@ -378,6 +373,8 @@ Called (if exists) to draw the canvas item.
 .. _class_CanvasItem_method_draw_arc:
 
 - void **draw_arc** **(** :ref:`Vector2<class_Vector2>` center, :ref:`float<class_float>` radius, :ref:`float<class_float>` start_angle, :ref:`float<class_float>` end_angle, :ref:`int<class_int>` point_count, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
+
+Draws an arc between the given angles. The larger the value of ``point_count``, the smoother the curve.
 
 ----
 

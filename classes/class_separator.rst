@@ -13,11 +13,6 @@ Separator
 
 **Inherited By:** :ref:`HSeparator<class_HSeparator>`, :ref:`VSeparator<class_VSeparator>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for separators.
 
 Description

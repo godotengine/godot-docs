@@ -11,12 +11,17 @@ EditorPlugin
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Used by the editor to extend its functionality.
+
+Description
+-----------
+
+Plugins are used by the editor to extend functionality. The most common types of plugins are those which edit a given node or resource type, import plugins and export plugins. See also :ref:`EditorScript<class_EditorScript>` to add functions to the editor.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/plugins/editor/index`
 
 Methods
 -------
@@ -256,16 +261,6 @@ enum **DockSlot**:
 - **DOCK_SLOT_RIGHT_BR** = **7**
 
 - **DOCK_SLOT_MAX** = **8** --- Represents the size of the :ref:`DockSlot<enum_EditorPlugin_DockSlot>` enum.
-
-Description
------------
-
-Plugins are used by the editor to extend functionality. The most common types of plugins are those which edit a given node or resource type, import plugins and export plugins. See also :ref:`EditorScript<class_EditorScript>` to add functions to the editor.
-
-Tutorials
----------
-
-- :doc:`../tutorials/plugins/editor/index`
 
 Method Descriptions
 -------------------

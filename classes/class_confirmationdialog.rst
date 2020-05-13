@@ -13,28 +13,7 @@ ConfirmationDialog
 
 **Inherited By:** :ref:`EditorFileDialog<class_EditorFileDialog>`, :ref:`FileDialog<class_FileDialog>`, :ref:`ScriptCreateDialog<class_ScriptCreateDialog>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Dialog for confirmation of actions.
-
-Properties
-----------
-
-+-------------------------------+---------------+----------------------------+
-| :ref:`Vector2<class_Vector2>` | rect_min_size | **O:** Vector2( 200, 70 )  |
-+-------------------------------+---------------+----------------------------+
-| :ref:`String<class_String>`   | window_title  | **O:** "Please Confirm..." |
-+-------------------------------+---------------+----------------------------+
-
-Methods
--------
-
-+-----------------------------+---------------------------------------------------------------------------+
-| :ref:`Button<class_Button>` | :ref:`get_cancel<class_ConfirmationDialog_method_get_cancel>` **(** **)** |
-+-----------------------------+---------------------------------------------------------------------------+
 
 Description
 -----------
@@ -46,6 +25,22 @@ To get cancel action, you can use:
 ::
 
     get_cancel().connect("pressed", self, "cancelled").
+
+Properties
+----------
+
++-------------------------------+---------------+--------------------------------+
+| :ref:`Vector2<class_Vector2>` | rect_min_size | **O:** ``Vector2( 200, 70 )``  |
++-------------------------------+---------------+--------------------------------+
+| :ref:`String<class_String>`   | window_title  | **O:** ``"Please Confirm..."`` |
++-------------------------------+---------------+--------------------------------+
+
+Methods
+-------
+
++-----------------------------+---------------------------------------------------------------------------+
+| :ref:`Button<class_Button>` | :ref:`get_cancel<class_ConfirmationDialog_method_get_cancel>` **(** **)** |
++-----------------------------+---------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------

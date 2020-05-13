@@ -13,25 +13,25 @@ StyleBox
 
 **Inherited By:** :ref:`StyleBoxEmpty<class_StyleBoxEmpty>`, :ref:`StyleBoxFlat<class_StyleBoxFlat>`, :ref:`StyleBoxLine<class_StyleBoxLine>`, :ref:`StyleBoxTexture<class_StyleBoxTexture>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for drawing stylized boxes for the UI.
+
+Description
+-----------
+
+StyleBox is :ref:`Resource<class_Resource>` that provides an abstract base class for drawing stylized boxes for the UI. StyleBoxes are used for drawing the styles of buttons, line edit backgrounds, tree backgrounds, etc. and also for testing a transparency mask for pointer signals. If mask test fails on a StyleBox assigned as mask to a control, clicks and motion signals will go through it to the one below.
 
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bottom>` | -1.0 |
-+---------------------------+-----------------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`content_margin_left<class_StyleBox_property_content_margin_left>`     | -1.0 |
-+---------------------------+-----------------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`content_margin_right<class_StyleBox_property_content_margin_right>`   | -1.0 |
-+---------------------------+-----------------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`content_margin_top<class_StyleBox_property_content_margin_top>`       | -1.0 |
-+---------------------------+-----------------------------------------------------------------------------+------+
++---------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bottom>` | ``-1.0`` |
++---------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`content_margin_left<class_StyleBox_property_content_margin_left>`     | ``-1.0`` |
++---------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`content_margin_right<class_StyleBox_property_content_margin_right>`   | ``-1.0`` |
++---------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`content_margin_top<class_StyleBox_property_content_margin_top>`       | ``-1.0`` |
++---------------------------+-----------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -56,11 +56,6 @@ Methods
 | :ref:`bool<class_bool>`             | :ref:`test_mask<class_StyleBox_method_test_mask>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Rect2<class_Rect2>` rect **)** const                          |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-StyleBox is :ref:`Resource<class_Resource>` that provides an abstract base class for drawing stylized boxes for the UI. StyleBoxes are used for drawing the styles of buttons, line edit backgrounds, tree backgrounds, etc. and also for testing a transparency mask for pointer signals. If mask test fails on a StyleBox assigned as mask to a control, clicks and motion signals will go through it to the one below.
-
 Property Descriptions
 ---------------------
 
@@ -69,7 +64,7 @@ Property Descriptions
 - :ref:`float<class_float>` **content_margin_bottom**
 
 +-----------+---------------------------+
-| *Default* | -1.0                      |
+| *Default* | ``-1.0``                  |
 +-----------+---------------------------+
 | *Setter*  | set_default_margin(value) |
 +-----------+---------------------------+
@@ -91,7 +86,7 @@ It is up to the code using this style box to decide what these contents are: for
 - :ref:`float<class_float>` **content_margin_left**
 
 +-----------+---------------------------+
-| *Default* | -1.0                      |
+| *Default* | ``-1.0``                  |
 +-----------+---------------------------+
 | *Setter*  | set_default_margin(value) |
 +-----------+---------------------------+
@@ -109,7 +104,7 @@ Refer to :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bott
 - :ref:`float<class_float>` **content_margin_right**
 
 +-----------+---------------------------+
-| *Default* | -1.0                      |
+| *Default* | ``-1.0``                  |
 +-----------+---------------------------+
 | *Setter*  | set_default_margin(value) |
 +-----------+---------------------------+
@@ -127,7 +122,7 @@ Refer to :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bott
 - :ref:`float<class_float>` **content_margin_top**
 
 +-----------+---------------------------+
-| *Default* | -1.0                      |
+| *Default* | ``-1.0``                  |
 +-----------+---------------------------+
 | *Setter*  | set_default_margin(value) |
 +-----------+---------------------------+
@@ -145,11 +140,17 @@ Method Descriptions
 
 - void **draw** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect **)** const
 
+Draws this stylebox using a :ref:`CanvasItem<class_CanvasItem>` with given :ref:`RID<class_RID>`.
+
+You can get a :ref:`RID<class_RID>` value using :ref:`Object.get_instance_id<class_Object_method_get_instance_id>` on a :ref:`CanvasItem<class_CanvasItem>`-derived node.
+
 ----
 
 .. _class_StyleBox_method_get_center_size:
 
 - :ref:`Vector2<class_Vector2>` **get_center_size** **(** **)** const
+
+Returns the size of this ``StyleBox`` without the margins.
 
 ----
 
@@ -157,11 +158,15 @@ Method Descriptions
 
 - :ref:`CanvasItem<class_CanvasItem>` **get_current_item_drawn** **(** **)** const
 
+Returns the :ref:`CanvasItem<class_CanvasItem>` that handles its :ref:`CanvasItem.NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` or :ref:`CanvasItem._draw<class_CanvasItem_method__draw>` callback at this moment.
+
 ----
 
 .. _class_StyleBox_method_get_default_margin:
 
 - :ref:`float<class_float>` **get_default_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+
+Returns the default value of the specified :ref:`Margin<enum_@GlobalScope_Margin>`.
 
 ----
 
@@ -169,7 +174,7 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
 
-Returns the content margin offset for the specified margin.
+Returns the content margin offset for the specified :ref:`Margin<enum_@GlobalScope_Margin>`.
 
 Positive values reduce size inwards, unlike :ref:`Control<class_Control>`'s margin values.
 
@@ -194,6 +199,8 @@ Returns the "offset" of a stylebox. This helper function returns a value equival
 .. _class_StyleBox_method_set_default_margin:
 
 - void **set_default_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`float<class_float>` offset **)**
+
+Sets the default value of the specified :ref:`Margin<enum_@GlobalScope_Margin>` to given ``offset`` in pixels.
 
 ----
 

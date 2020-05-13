@@ -11,21 +11,16 @@ NavigationMeshInstance
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+---------------------------------------------+---------------------------------------------------------------+------+
-| :ref:`bool<class_bool>`                     | :ref:`enabled<class_NavigationMeshInstance_property_enabled>` | true |
-+---------------------------------------------+---------------------------------------------------------------+------+
-| :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navmesh<class_NavigationMeshInstance_property_navmesh>` |      |
-+---------------------------------------------+---------------------------------------------------------------+------+
++---------------------------------------------+---------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                     | :ref:`enabled<class_NavigationMeshInstance_property_enabled>` | ``true`` |
++---------------------------------------------+---------------------------------------------------------------+----------+
+| :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navmesh<class_NavigationMeshInstance_property_navmesh>` |          |
++---------------------------------------------+---------------------------------------------------------------+----------+
 
 Property Descriptions
 ---------------------
@@ -35,7 +30,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **enabled**
 
 +-----------+--------------------+
-| *Default* | true               |
+| *Default* | ``true``           |
 +-----------+--------------------+
 | *Setter*  | set_enabled(value) |
 +-----------+--------------------+

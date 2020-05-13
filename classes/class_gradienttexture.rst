@@ -11,26 +11,21 @@ GradientTexture
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Gradient-filled texture.
-
-Properties
-----------
-
-+---------------------------------+----------------------------------------------------------+------+
-| :ref:`Gradient<class_Gradient>` | :ref:`gradient<class_GradientTexture_property_gradient>` |      |
-+---------------------------------+----------------------------------------------------------+------+
-| :ref:`int<class_int>`           | :ref:`width<class_GradientTexture_property_width>`       | 2048 |
-+---------------------------------+----------------------------------------------------------+------+
 
 Description
 -----------
 
 GradientTexture uses a :ref:`Gradient<class_Gradient>` to fill the texture data. The gradient will be filled from left to right using colors obtained from the gradient. This means the texture does not necessarily represent an exact copy of the gradient, but instead an interpolation of samples obtained from the gradient at fixed steps (see :ref:`width<class_GradientTexture_property_width>`).
+
+Properties
+----------
+
++---------------------------------+----------------------------------------------------------+----------+
+| :ref:`Gradient<class_Gradient>` | :ref:`gradient<class_GradientTexture_property_gradient>` |          |
++---------------------------------+----------------------------------------------------------+----------+
+| :ref:`int<class_int>`           | :ref:`width<class_GradientTexture_property_width>`       | ``2048`` |
++---------------------------------+----------------------------------------------------------+----------+
 
 Property Descriptions
 ---------------------
@@ -54,7 +49,7 @@ The :ref:`Gradient<class_Gradient>` that will be used to fill the texture.
 - :ref:`int<class_int>` **width**
 
 +-----------+------------------+
-| *Default* | 2048             |
+| *Default* | ``2048``         |
 +-----------+------------------+
 | *Setter*  | set_width(value) |
 +-----------+------------------+

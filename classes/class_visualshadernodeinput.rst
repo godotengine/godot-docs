@@ -11,21 +11,16 @@ VisualShaderNodeInput
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+-----------------------------+--------------------------------------------------------------------+-------------+
-| :ref:`Array<class_Array>`   | default_input_values                                               | **O:** [  ] |
-+-----------------------------+--------------------------------------------------------------------+-------------+
-| :ref:`String<class_String>` | :ref:`input_name<class_VisualShaderNodeInput_property_input_name>` | "[None]"    |
-+-----------------------------+--------------------------------------------------------------------+-------------+
++-----------------------------+--------------------------------------------------------------------+-----------------+
+| :ref:`Array<class_Array>`   | default_input_values                                               | **O:** ``[  ]`` |
++-----------------------------+--------------------------------------------------------------------+-----------------+
+| :ref:`String<class_String>` | :ref:`input_name<class_VisualShaderNodeInput_property_input_name>` | ``"[None]"``    |
++-----------------------------+--------------------------------------------------------------------+-----------------+
 
 Methods
 -------
@@ -49,7 +44,7 @@ Property Descriptions
 - :ref:`String<class_String>` **input_name**
 
 +-----------+-----------------------+
-| *Default* | "[None]"              |
+| *Default* | ``"[None]"``          |
 +-----------+-----------------------+
 | *Setter*  | set_input_name(value) |
 +-----------+-----------------------+

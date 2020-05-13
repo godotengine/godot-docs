@@ -11,23 +11,38 @@ UPNP
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 UPNP network functions.
+
+Description
+-----------
+
+Provides UPNP functionality to discover :ref:`UPNPDevice<class_UPNPDevice>`\ s on the local network and execute commands on them, like managing port mappings (port forwarding) and querying the local and remote network IP address. Note that methods on this class are synchronous and block the calling thread.
+
+To forward a specific port:
+
+::
+
+    const PORT = 7777
+    var upnp = UPNP.new()
+    upnp.discover(2000, 2, "InternetGatewayDevice")
+    upnp.add_port_mapping(port)
+
+To close a specific port (e.g. after you have finished using it):
+
+::
+
+    upnp.delete_port_mapping(port)
 
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`discover_ipv6<class_UPNP_property_discover_ipv6>`                 | false |
-+-----------------------------+-------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`discover_local_port<class_UPNP_property_discover_local_port>`     | 0     |
-+-----------------------------+-------------------------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`discover_multicast_if<class_UPNP_property_discover_multicast_if>` | ""    |
-+-----------------------------+-------------------------------------------------------------------------+-------+
++-----------------------------+-------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`     | :ref:`discover_ipv6<class_UPNP_property_discover_ipv6>`                 | ``false`` |
++-----------------------------+-------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`       | :ref:`discover_local_port<class_UPNP_property_discover_local_port>`     | ``0``     |
++-----------------------------+-------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>` | :ref:`discover_multicast_if<class_UPNP_property_discover_multicast_if>` | ``""``    |
++-----------------------------+-------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -179,26 +194,6 @@ enum **UPNPResult**:
 
 - **UPNP_RESULT_UNKNOWN_ERROR** = **28** --- Unknown error.
 
-Description
------------
-
-Provides UPNP functionality to discover :ref:`UPNPDevice<class_UPNPDevice>`\ s on the local network and execute commands on them, like managing port mappings (port forwarding) and querying the local and remote network IP address. Note that methods on this class are synchronous and block the calling thread.
-
-To forward a specific port:
-
-::
-
-    const PORT = 7777
-    var upnp = UPNP.new()
-    upnp.discover(2000, 2, "InternetGatewayDevice")
-    upnp.add_port_mapping(port)
-
-To close a specific port (e.g. after you have finished using it):
-
-::
-
-    upnp.delete_port_mapping(port)
-
 Property Descriptions
 ---------------------
 
@@ -207,7 +202,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **discover_ipv6**
 
 +-----------+--------------------------+
-| *Default* | false                    |
+| *Default* | ``false``                |
 +-----------+--------------------------+
 | *Setter*  | set_discover_ipv6(value) |
 +-----------+--------------------------+
@@ -223,7 +218,7 @@ If ``true``, IPv6 is used for :ref:`UPNPDevice<class_UPNPDevice>` discovery.
 - :ref:`int<class_int>` **discover_local_port**
 
 +-----------+--------------------------------+
-| *Default* | 0                              |
+| *Default* | ``0``                          |
 +-----------+--------------------------------+
 | *Setter*  | set_discover_local_port(value) |
 +-----------+--------------------------------+
@@ -239,7 +234,7 @@ If ``0``, the local port to use for discovery is chosen automatically by the sys
 - :ref:`String<class_String>` **discover_multicast_if**
 
 +-----------+----------------------------------+
-| *Default* | ""                               |
+| *Default* | ``""``                           |
 +-----------+----------------------------------+
 | *Setter*  | set_discover_multicast_if(value) |
 +-----------+----------------------------------+

@@ -13,21 +13,21 @@ WebSocketMultiplayerPeer
 
 **Inherited By:** :ref:`WebSocketClient<class_WebSocketClient>`, :ref:`WebSocketServer<class_WebSocketServer>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for WebSocket server and client.
+
+Description
+-----------
+
+Base class for WebSocket server and client, allowing them to be used as network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
 Properties
 ----------
 
-+-----------------------------------------------------------------+------------------------+--------------+
-| :ref:`bool<class_bool>`                                         | refuse_new_connections | **O:** false |
-+-----------------------------------------------------------------+------------------------+--------------+
-| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | transfer_mode          | **O:** 2     |
-+-----------------------------------------------------------------+------------------------+--------------+
++-----------------------------------------------------------------+------------------------+------------------+
+| :ref:`bool<class_bool>`                                         | refuse_new_connections | **O:** ``false`` |
++-----------------------------------------------------------------+------------------------+------------------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | transfer_mode          | **O:** ``2``     |
++-----------------------------------------------------------------+------------------------+------------------+
 
 Methods
 -------
@@ -48,11 +48,6 @@ Signals
 Emitted when a packet is received from a peer.
 
 **Note:** This signal is only emitted when the client or server is configured to use Godot multiplayer API.
-
-Description
------------
-
-Base class for WebSocket server and client, allowing them to be used as network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
 Method Descriptions
 -------------------

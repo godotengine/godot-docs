@@ -11,25 +11,20 @@ VisualShaderNodeCompare
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+--------------------------------------------------------------------+--------------------------------------------------------------------+-------------------------------------+
-| :ref:`Condition<enum_VisualShaderNodeCompare_Condition>`           | :ref:`condition<class_VisualShaderNodeCompare_property_condition>` | 0                                   |
-+--------------------------------------------------------------------+--------------------------------------------------------------------+-------------------------------------+
-| :ref:`Array<class_Array>`                                          | default_input_values                                               | **O:** [ 0, 0.0, 1, 0.0, 2, 1e-05 ] |
-+--------------------------------------------------------------------+--------------------------------------------------------------------+-------------------------------------+
-| :ref:`Function<enum_VisualShaderNodeCompare_Function>`             | :ref:`function<class_VisualShaderNodeCompare_property_function>`   | 0                                   |
-+--------------------------------------------------------------------+--------------------------------------------------------------------+-------------------------------------+
-| :ref:`ComparsionType<enum_VisualShaderNodeCompare_ComparsionType>` | :ref:`type<class_VisualShaderNodeCompare_property_type>`           | 0                                   |
-+--------------------------------------------------------------------+--------------------------------------------------------------------+-------------------------------------+
++--------------------------------------------------------------------+--------------------------------------------------------------------+-----------------------------------------+
+| :ref:`Condition<enum_VisualShaderNodeCompare_Condition>`           | :ref:`condition<class_VisualShaderNodeCompare_property_condition>` | ``0``                                   |
++--------------------------------------------------------------------+--------------------------------------------------------------------+-----------------------------------------+
+| :ref:`Array<class_Array>`                                          | default_input_values                                               | **O:** ``[ 0, 0.0, 1, 0.0, 2, 1e-05 ]`` |
++--------------------------------------------------------------------+--------------------------------------------------------------------+-----------------------------------------+
+| :ref:`Function<enum_VisualShaderNodeCompare_Function>`             | :ref:`function<class_VisualShaderNodeCompare_property_function>`   | ``0``                                   |
++--------------------------------------------------------------------+--------------------------------------------------------------------+-----------------------------------------+
+| :ref:`ComparsionType<enum_VisualShaderNodeCompare_ComparsionType>` | :ref:`type<class_VisualShaderNodeCompare_property_type>`           | ``0``                                   |
++--------------------------------------------------------------------+--------------------------------------------------------------------+-----------------------------------------+
 
 Enumerations
 ------------
@@ -106,7 +101,7 @@ Property Descriptions
 - :ref:`Condition<enum_VisualShaderNodeCompare_Condition>` **condition**
 
 +-----------+----------------------+
-| *Default* | 0                    |
+| *Default* | ``0``                |
 +-----------+----------------------+
 | *Setter*  | set_condition(value) |
 +-----------+----------------------+
@@ -120,7 +115,7 @@ Property Descriptions
 - :ref:`Function<enum_VisualShaderNodeCompare_Function>` **function**
 
 +-----------+---------------------+
-| *Default* | 0                   |
+| *Default* | ``0``               |
 +-----------+---------------------+
 | *Setter*  | set_function(value) |
 +-----------+---------------------+
@@ -134,7 +129,7 @@ Property Descriptions
 - :ref:`ComparsionType<enum_VisualShaderNodeCompare_ComparsionType>` **type**
 
 +-----------+----------------------------+
-| *Default* | 0                          |
+| *Default* | ``0``                      |
 +-----------+----------------------------+
 | *Setter*  | set_comparsion_type(value) |
 +-----------+----------------------------+

@@ -13,11 +13,6 @@ EditorSceneImporter
 
 **Inherited By:** :ref:`EditorSceneImporterAssimp<class_EditorSceneImporterAssimp>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Imports scenes from third-parties' 3D files.
 
 Methods

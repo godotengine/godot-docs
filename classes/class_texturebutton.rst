@@ -11,33 +11,35 @@ TextureButton
 
 **Inherits:** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Texture-based button. Supports Pressed, Hover, Disabled and Focused states.
+
+Description
+-----------
+
+``TextureButton`` has the same functionality as :ref:`Button<class_Button>`, except it uses sprites instead of Godot's :ref:`Theme<class_Theme>` resource. It is faster to create, but it doesn't support localization like more complex :ref:`Control<class_Control>`\ s.
+
+The "normal" state must contain a texture (:ref:`texture_normal<class_TextureButton_property_texture_normal>`); other textures are optional.
 
 Properties
 ----------
 
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                            | :ref:`expand<class_TextureButton_property_expand>`                         | false |
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`StretchMode<enum_TextureButton_StretchMode>` | :ref:`stretch_mode<class_TextureButton_property_stretch_mode>`             | 0     |
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`BitMap<class_BitMap>`                        | :ref:`texture_click_mask<class_TextureButton_property_texture_click_mask>` |       |
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_disabled<class_TextureButton_property_texture_disabled>`     |       |
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_focused<class_TextureButton_property_texture_focused>`       |       |
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_hover<class_TextureButton_property_texture_hover>`           |       |
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_normal<class_TextureButton_property_texture_normal>`         |       |
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_pressed<class_TextureButton_property_texture_pressed>`       |       |
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                            | :ref:`expand<class_TextureButton_property_expand>`                         | ``false`` |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`StretchMode<enum_TextureButton_StretchMode>` | :ref:`stretch_mode<class_TextureButton_property_stretch_mode>`             | ``0``     |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`BitMap<class_BitMap>`                        | :ref:`texture_click_mask<class_TextureButton_property_texture_click_mask>` |           |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`Texture<class_Texture>`                      | :ref:`texture_disabled<class_TextureButton_property_texture_disabled>`     |           |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`Texture<class_Texture>`                      | :ref:`texture_focused<class_TextureButton_property_texture_focused>`       |           |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`Texture<class_Texture>`                      | :ref:`texture_hover<class_TextureButton_property_texture_hover>`           |           |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`Texture<class_Texture>`                      | :ref:`texture_normal<class_TextureButton_property_texture_normal>`         |           |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`Texture<class_Texture>`                      | :ref:`texture_pressed<class_TextureButton_property_texture_pressed>`       |           |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
 
 Enumerations
 ------------
@@ -74,13 +76,6 @@ enum **StretchMode**:
 
 - **STRETCH_KEEP_ASPECT_COVERED** = **6** --- Scale the texture so that the shorter side fits the bounding rectangle. The other side clips to the node's limits.
 
-Description
------------
-
-``TextureButton`` has the same functionality as :ref:`Button<class_Button>`, except it uses sprites instead of Godot's :ref:`Theme<class_Theme>` resource. It is faster to create, but it doesn't support localization like more complex :ref:`Control<class_Control>`\ s.
-
-The "normal" state must contain a texture (:ref:`texture_normal<class_TextureButton_property_texture_normal>`); other textures are optional.
-
 Property Descriptions
 ---------------------
 
@@ -89,7 +84,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **expand**
 
 +-----------+-------------------+
-| *Default* | false             |
+| *Default* | ``false``         |
 +-----------+-------------------+
 | *Setter*  | set_expand(value) |
 +-----------+-------------------+
@@ -105,7 +100,7 @@ If ``true``, the texture stretches to the edges of the node's bounding rectangle
 - :ref:`StretchMode<enum_TextureButton_StretchMode>` **stretch_mode**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_stretch_mode(value) |
 +-----------+-------------------------+

@@ -13,19 +13,19 @@ StreamPeer
 
 **Inherited By:** :ref:`StreamPeerBuffer<class_StreamPeerBuffer>`, :ref:`StreamPeerGDNative<class_StreamPeerGDNative>`, :ref:`StreamPeerSSL<class_StreamPeerSSL>`, :ref:`StreamPeerTCP<class_StreamPeerTCP>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Abstraction and base class for stream-based protocols.
+
+Description
+-----------
+
+StreamPeer is an abstraction and base class for stream-based protocols (such as TCP or UNIX sockets). It provides an API for sending and receiving data through streams as raw data or strings.
 
 Properties
 ----------
 
-+-------------------------+---------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`big_endian<class_StreamPeer_property_big_endian>` | false |
-+-------------------------+---------------------------------------------------------+-------+
++-------------------------+---------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`big_endian<class_StreamPeer_property_big_endian>` | ``false`` |
++-------------------------+---------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -94,11 +94,6 @@ Methods
 | void                                  | :ref:`put_var<class_StreamPeer_method_put_var>` **(** :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` full_objects=false **)** |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-StreamPeer is an abstraction and base class for stream-based protocols (such as TCP or UNIX sockets). It provides an API for sending and receiving data through streams as raw data or strings.
-
 Property Descriptions
 ---------------------
 
@@ -107,7 +102,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **big_endian**
 
 +-----------+-------------------------+
-| *Default* | false                   |
+| *Default* | ``false``               |
 +-----------+-------------------------+
 | *Setter*  | set_big_endian(value)   |
 +-----------+-------------------------+

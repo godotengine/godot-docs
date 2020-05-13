@@ -13,25 +13,25 @@ AcceptDialog
 
 **Inherited By:** :ref:`ConfirmationDialog<class_ConfirmationDialog>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base dialog for user notification.
+
+Description
+-----------
+
+This dialog is useful for small notifications to the user about an event. It can only be accepted or closed, with the same result.
 
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`     | :ref:`dialog_autowrap<class_AcceptDialog_property_dialog_autowrap>`     | false           |
-+-----------------------------+-------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`     | :ref:`dialog_hide_on_ok<class_AcceptDialog_property_dialog_hide_on_ok>` | true            |
-+-----------------------------+-------------------------------------------------------------------------+-----------------+
-| :ref:`String<class_String>` | :ref:`dialog_text<class_AcceptDialog_property_dialog_text>`             | ""              |
-+-----------------------------+-------------------------------------------------------------------------+-----------------+
-| :ref:`String<class_String>` | window_title                                                            | **O:** "Alert!" |
-+-----------------------------+-------------------------------------------------------------------------+-----------------+
++-----------------------------+-------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`     | :ref:`dialog_autowrap<class_AcceptDialog_property_dialog_autowrap>`     | ``false``           |
++-----------------------------+-------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`     | :ref:`dialog_hide_on_ok<class_AcceptDialog_property_dialog_hide_on_ok>` | ``true``            |
++-----------------------------+-------------------------------------------------------------------------+---------------------+
+| :ref:`String<class_String>` | :ref:`dialog_text<class_AcceptDialog_property_dialog_text>`             | ``""``              |
++-----------------------------+-------------------------------------------------------------------------+---------------------+
+| :ref:`String<class_String>` | window_title                                                            | **O:** ``"Alert!"`` |
++-----------------------------+-------------------------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -65,11 +65,6 @@ Emitted when the dialog is accepted, i.e. the OK button is pressed.
 
 Emitted when a custom button is pressed. See :ref:`add_button<class_AcceptDialog_method_add_button>`.
 
-Description
------------
-
-This dialog is useful for small notifications to the user about an event. It can only be accepted or closed, with the same result.
-
 Property Descriptions
 ---------------------
 
@@ -78,7 +73,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **dialog_autowrap**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_autowrap(value) |
 +-----------+---------------------+
@@ -94,7 +89,7 @@ Sets autowrapping for the text in the dialog.
 - :ref:`bool<class_bool>` **dialog_hide_on_ok**
 
 +-----------+-----------------------+
-| *Default* | true                  |
+| *Default* | ``true``              |
 +-----------+-----------------------+
 | *Setter*  | set_hide_on_ok(value) |
 +-----------+-----------------------+
@@ -112,7 +107,7 @@ If ``true``, the dialog is hidden when the OK button is pressed. You can set it 
 - :ref:`String<class_String>` **dialog_text**
 
 +-----------+-----------------+
-| *Default* | ""              |
+| *Default* | ``""``          |
 +-----------+-----------------+
 | *Setter*  | set_text(value) |
 +-----------+-----------------+

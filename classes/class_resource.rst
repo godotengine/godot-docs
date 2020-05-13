@@ -13,23 +13,28 @@ Resource
 
 **Inherited By:** :ref:`Animation<class_Animation>`, :ref:`AnimationNode<class_AnimationNode>`, :ref:`AnimationNodeStateMachinePlayback<class_AnimationNodeStateMachinePlayback>`, :ref:`AnimationNodeStateMachineTransition<class_AnimationNodeStateMachineTransition>`, :ref:`AudioBusLayout<class_AudioBusLayout>`, :ref:`AudioEffect<class_AudioEffect>`, :ref:`AudioStream<class_AudioStream>`, :ref:`BakedLightmapData<class_BakedLightmapData>`, :ref:`BitMap<class_BitMap>`, :ref:`ButtonGroup<class_ButtonGroup>`, :ref:`CryptoKey<class_CryptoKey>`, :ref:`CubeMap<class_CubeMap>`, :ref:`Curve<class_Curve>`, :ref:`Curve2D<class_Curve2D>`, :ref:`Curve3D<class_Curve3D>`, :ref:`DynamicFontData<class_DynamicFontData>`, :ref:`EditorSettings<class_EditorSettings>`, :ref:`EditorSpatialGizmoPlugin<class_EditorSpatialGizmoPlugin>`, :ref:`Environment<class_Environment>`, :ref:`Font<class_Font>`, :ref:`GDNativeLibrary<class_GDNativeLibrary>`, :ref:`GIProbeData<class_GIProbeData>`, :ref:`Gradient<class_Gradient>`, :ref:`Image<class_Image>`, :ref:`InputEvent<class_InputEvent>`, :ref:`Material<class_Material>`, :ref:`Mesh<class_Mesh>`, :ref:`MeshLibrary<class_MeshLibrary>`, :ref:`MultiMesh<class_MultiMesh>`, :ref:`NavigationMesh<class_NavigationMesh>`, :ref:`NavigationPolygon<class_NavigationPolygon>`, :ref:`OccluderPolygon2D<class_OccluderPolygon2D>`, :ref:`OpenSimplexNoise<class_OpenSimplexNoise>`, :ref:`PackedDataContainer<class_PackedDataContainer>`, :ref:`PackedScene<class_PackedScene>`, :ref:`PhysicsMaterial<class_PhysicsMaterial>`, :ref:`PolygonPathFinder<class_PolygonPathFinder>`, :ref:`RichTextEffect<class_RichTextEffect>`, :ref:`Script<class_Script>`, :ref:`Shader<class_Shader>`, :ref:`Shape<class_Shape>`, :ref:`Shape2D<class_Shape2D>`, :ref:`ShortCut<class_ShortCut>`, :ref:`Skin<class_Skin>`, :ref:`Sky<class_Sky>`, :ref:`SpriteFrames<class_SpriteFrames>`, :ref:`StyleBox<class_StyleBox>`, :ref:`TextFile<class_TextFile>`, :ref:`Texture<class_Texture>`, :ref:`TextureLayered<class_TextureLayered>`, :ref:`Theme<class_Theme>`, :ref:`TileSet<class_TileSet>`, :ref:`Translation<class_Translation>`, :ref:`VideoStream<class_VideoStream>`, :ref:`VisualScriptNode<class_VisualScriptNode>`, :ref:`VisualShaderNode<class_VisualShaderNode>`, :ref:`World<class_World>`, :ref:`World2D<class_World2D>`, :ref:`X509Certificate<class_X509Certificate>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for all resources.
+
+Description
+-----------
+
+Resource is the base class for all Godot-specific resource types, serving primarily as data containers. They are reference counted and freed when no longer in use. They are also cached once loaded from disk, so that any further attempts to load a resource from a given path will return the same reference (all this in contrast to a :ref:`Node<class_Node>`, which is not reference counted and can be instanced from disk as many times as desired). Resources can be saved externally on disk or bundled into another object, such as a :ref:`Node<class_Node>` or another resource.
+
+Tutorials
+---------
+
+- :doc:`../getting_started/step_by_step/resources`
 
 Properties
 ----------
 
-+-----------------------------+---------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` | false |
-+-----------------------------+---------------------------------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`resource_name<class_Resource_property_resource_name>`                     | ""    |
-+-----------------------------+---------------------------------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`resource_path<class_Resource_property_resource_path>`                     | ""    |
-+-----------------------------+---------------------------------------------------------------------------------+-------+
++-----------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`     | :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` | ``false`` |
++-----------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>` | :ref:`resource_name<class_Resource_property_resource_name>`                     | ``""``    |
++-----------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>` | :ref:`resource_path<class_Resource_property_resource_path>`                     | ``""``    |
++-----------------------------+---------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -57,16 +62,6 @@ Signals
 
 Emitted whenever the resource changes.
 
-Description
------------
-
-Resource is the base class for all Godot-specific resource types, serving primarily as data containers. They are reference counted and freed when no longer in use. They are also cached once loaded from disk, so that any further attempts to load a resource from a given path will return the same reference (all this in contrast to a :ref:`Node<class_Node>`, which is not reference counted and can be instanced from disk as many times as desired). Resources can be saved externally on disk or bundled into another object, such as a :ref:`Node<class_Node>` or another resource.
-
-Tutorials
----------
-
-- :doc:`../getting_started/step_by_step/resources`
-
 Property Descriptions
 ---------------------
 
@@ -75,7 +70,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **resource_local_to_scene**
 
 +-----------+---------------------------+
-| *Default* | false                     |
+| *Default* | ``false``                 |
 +-----------+---------------------------+
 | *Setter*  | set_local_to_scene(value) |
 +-----------+---------------------------+
@@ -91,7 +86,7 @@ If ``true``, the resource will be made unique in each instance of its local scen
 - :ref:`String<class_String>` **resource_name**
 
 +-----------+-----------------+
-| *Default* | ""              |
+| *Default* | ``""``          |
 +-----------+-----------------+
 | *Setter*  | set_name(value) |
 +-----------+-----------------+
@@ -107,7 +102,7 @@ The name of the resource. This is an optional identifier.
 - :ref:`String<class_String>` **resource_path**
 
 +-----------+-----------------+
-| *Default* | ""              |
+| *Default* | ``""``          |
 +-----------+-----------------+
 | *Setter*  | set_path(value) |
 +-----------+-----------------+

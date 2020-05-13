@@ -11,12 +11,37 @@ Directory
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Type used to handle the filesystem.
+
+Description
+-----------
+
+Directory type. It is used to manage directories and their content (not restricted to the project folder).
+
+When creating a new ``Directory``, its default opened directory will be ``res://``. This may change in the future, so it is advised to always use :ref:`open<class_Directory_method_open>` to initialize your ``Directory`` where you want to operate, with explicit error checking.
+
+Here is an example on how to iterate through the files of a directory:
+
+::
+
+    func dir_contents(path):
+        var dir = Directory.new()
+        if dir.open(path) == OK:
+            dir.list_dir_begin()
+            var file_name = dir.get_next()
+            while (file_name != ""):
+                if dir.current_is_dir():
+                    print("Found directory: " + file_name)
+                else:
+                    print("Found file: " + file_name)
+                file_name = dir.get_next()
+        else:
+            print("An error occurred when trying to access the path.")
+
+Tutorials
+---------
+
+- :doc:`../getting_started/step_by_step/filesystem`
 
 Methods
 -------
@@ -58,34 +83,6 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`rename<class_Directory_method_rename>` **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**                                           |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Directory type. It is used to manage directories and their content (not restricted to the project folder).
-
-Here is an example on how to iterate through the files of a directory:
-
-::
-
-    func dir_contents(path):
-        var dir = Directory.new()
-        if dir.open(path) == OK:
-            dir.list_dir_begin()
-            var file_name = dir.get_next()
-            while (file_name != ""):
-                if dir.current_is_dir():
-                    print("Found directory: " + file_name)
-                else:
-                    print("Found file: " + file_name)
-                file_name = dir.get_next()
-        else:
-            print("An error occurred when trying to access the path.")
-
-Tutorials
----------
-
-- :doc:`../getting_started/step_by_step/filesystem`
 
 Method Descriptions
 -------------------

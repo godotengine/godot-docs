@@ -11,28 +11,23 @@ HeightMapShape
 
 **Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Height map shape for 3D physics (Bullet only).
-
-Properties
-----------
-
-+-------------------------------------------+-----------------------------------------------------------+-----------------------------+
-| :ref:`PoolRealArray<class_PoolRealArray>` | :ref:`map_data<class_HeightMapShape_property_map_data>`   | PoolRealArray( 0, 0, 0, 0 ) |
-+-------------------------------------------+-----------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`                     | :ref:`map_depth<class_HeightMapShape_property_map_depth>` | 2                           |
-+-------------------------------------------+-----------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`                     | :ref:`map_width<class_HeightMapShape_property_map_width>` | 2                           |
-+-------------------------------------------+-----------------------------------------------------------+-----------------------------+
 
 Description
 -----------
 
 Height map shape resource, which can be added to a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`Area<class_Area>`.
+
+Properties
+----------
+
++-------------------------------------------+-----------------------------------------------------------+---------------------------------+
+| :ref:`PoolRealArray<class_PoolRealArray>` | :ref:`map_data<class_HeightMapShape_property_map_data>`   | ``PoolRealArray( 0, 0, 0, 0 )`` |
++-------------------------------------------+-----------------------------------------------------------+---------------------------------+
+| :ref:`int<class_int>`                     | :ref:`map_depth<class_HeightMapShape_property_map_depth>` | ``2``                           |
++-------------------------------------------+-----------------------------------------------------------+---------------------------------+
+| :ref:`int<class_int>`                     | :ref:`map_width<class_HeightMapShape_property_map_width>` | ``2``                           |
++-------------------------------------------+-----------------------------------------------------------+---------------------------------+
 
 Property Descriptions
 ---------------------
@@ -41,13 +36,13 @@ Property Descriptions
 
 - :ref:`PoolRealArray<class_PoolRealArray>` **map_data**
 
-+-----------+-----------------------------+
-| *Default* | PoolRealArray( 0, 0, 0, 0 ) |
-+-----------+-----------------------------+
-| *Setter*  | set_map_data(value)         |
-+-----------+-----------------------------+
-| *Getter*  | get_map_data()              |
-+-----------+-----------------------------+
++-----------+---------------------------------+
+| *Default* | ``PoolRealArray( 0, 0, 0, 0 )`` |
++-----------+---------------------------------+
+| *Setter*  | set_map_data(value)             |
++-----------+---------------------------------+
+| *Getter*  | get_map_data()                  |
++-----------+---------------------------------+
 
 Height map data, pool array must be of :ref:`map_width<class_HeightMapShape_property_map_width>` \* :ref:`map_depth<class_HeightMapShape_property_map_depth>` size.
 
@@ -58,7 +53,7 @@ Height map data, pool array must be of :ref:`map_width<class_HeightMapShape_prop
 - :ref:`int<class_int>` **map_depth**
 
 +-----------+----------------------+
-| *Default* | 2                    |
+| *Default* | ``2``                |
 +-----------+----------------------+
 | *Setter*  | set_map_depth(value) |
 +-----------+----------------------+
@@ -74,7 +69,7 @@ Depth of the height map data. Changing this will resize the :ref:`map_data<class
 - :ref:`int<class_int>` **map_width**
 
 +-----------+----------------------+
-| *Default* | 2                    |
+| *Default* | ``2``                |
 +-----------+----------------------+
 | *Setter*  | set_map_width(value) |
 +-----------+----------------------+

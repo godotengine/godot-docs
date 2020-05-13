@@ -9,35 +9,7 @@
 NodePath
 ========
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Pre-parsed scene tree path.
-
-Methods
--------
-
-+---------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`NodePath<class_NodePath_method_NodePath>` **(** :ref:`String<class_String>` from **)**  |
-+---------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`get_as_property_path<class_NodePath_method_get_as_property_path>` **(** **)**           |
-+---------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`     | :ref:`get_concatenated_subnames<class_NodePath_method_get_concatenated_subnames>` **(** **)** |
-+---------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`     | :ref:`get_name<class_NodePath_method_get_name>` **(** :ref:`int<class_int>` idx **)**         |
-+---------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_name_count<class_NodePath_method_get_name_count>` **(** **)**                       |
-+---------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`     | :ref:`get_subname<class_NodePath_method_get_subname>` **(** :ref:`int<class_int>` idx **)**   |
-+---------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_subname_count<class_NodePath_method_get_subname_count>` **(** **)**                 |
-+---------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`is_absolute<class_NodePath_method_is_absolute>` **(** **)**                             |
-+---------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`is_empty<class_NodePath_method_is_empty>` **(** **)**                                   |
-+---------------------------------+-----------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -62,6 +34,29 @@ Some examples of NodePaths include the following:
     @"/root" # Equivalent to get_tree().get_root().
     @"/root/Main" # If your main scene's root node were named "Main".
     @"/root/MyAutoload" # If you have an autoloaded node or scene.
+
+Methods
+-------
+
++---------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`NodePath<class_NodePath_method_NodePath>` **(** :ref:`String<class_String>` from **)**  |
++---------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`get_as_property_path<class_NodePath_method_get_as_property_path>` **(** **)**           |
++---------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`     | :ref:`get_concatenated_subnames<class_NodePath_method_get_concatenated_subnames>` **(** **)** |
++---------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`     | :ref:`get_name<class_NodePath_method_get_name>` **(** :ref:`int<class_int>` idx **)**         |
++---------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`get_name_count<class_NodePath_method_get_name_count>` **(** **)**                       |
++---------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`     | :ref:`get_subname<class_NodePath_method_get_subname>` **(** :ref:`int<class_int>` idx **)**   |
++---------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`get_subname_count<class_NodePath_method_get_subname_count>` **(** **)**                 |
++---------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`is_absolute<class_NodePath_method_is_absolute>` **(** **)**                             |
++---------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`is_empty<class_NodePath_method_is_empty>` **(** **)**                                   |
++---------------------------------+-----------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------

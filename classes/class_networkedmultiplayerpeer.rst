@@ -13,21 +13,26 @@ NetworkedMultiplayerPeer
 
 **Inherited By:** :ref:`MultiplayerPeerGDNative<class_MultiplayerPeerGDNative>`, :ref:`NetworkedMultiplayerENet<class_NetworkedMultiplayerENet>`, :ref:`WebRTCMultiplayer<class_WebRTCMultiplayer>`, :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A high-level network interface to simplify multiplayer interactions.
+
+Description
+-----------
+
+Manages the connection to network peers. Assigns unique IDs to each client connected to the server.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/networking/high_level_multiplayer`
 
 Properties
 ----------
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------+
-| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_connections<class_NetworkedMultiplayerPeer_property_refuse_new_connections>` | true |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------+
-| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | :ref:`transfer_mode<class_NetworkedMultiplayerPeer_property_transfer_mode>`                   | 0    |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_connections<class_NetworkedMultiplayerPeer_property_refuse_new_connections>` | ``true`` |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | :ref:`transfer_mode<class_NetworkedMultiplayerPeer_property_transfer_mode>`                   | ``0``    |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -133,16 +138,6 @@ Constants
 
 - **TARGET_PEER_SERVER** = **1** --- Packets are sent to the server alone.
 
-Description
------------
-
-Manages the connection to network peers. Assigns unique IDs to each client connected to the server.
-
-Tutorials
----------
-
-- :doc:`../tutorials/networking/high_level_multiplayer`
-
 Property Descriptions
 ---------------------
 
@@ -151,7 +146,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **refuse_new_connections**
 
 +-----------+-----------------------------------+
-| *Default* | true                              |
+| *Default* | ``true``                          |
 +-----------+-----------------------------------+
 | *Setter*  | set_refuse_new_connections(value) |
 +-----------+-----------------------------------+
@@ -167,7 +162,7 @@ If ``true``, this ``NetworkedMultiplayerPeer`` refuses new connections.
 - :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` **transfer_mode**
 
 +-----------+--------------------------+
-| *Default* | 0                        |
+| *Default* | ``0``                    |
 +-----------+--------------------------+
 | *Setter*  | set_transfer_mode(value) |
 +-----------+--------------------------+

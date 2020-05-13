@@ -11,26 +11,21 @@ VisualScriptBasicTypeConstant
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A Visual Script node representing a constant from the base types.
-
-Properties
-----------
-
-+-----------------------------------------------------+----------------------------------------------------------------------------+---+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`basic_type<class_VisualScriptBasicTypeConstant_property_basic_type>` | 0 |
-+-----------------------------------------------------+----------------------------------------------------------------------------+---+
-| :ref:`String<class_String>`                         | :ref:`constant<class_VisualScriptBasicTypeConstant_property_constant>`     |   |
-+-----------------------------------------------------+----------------------------------------------------------------------------+---+
 
 Description
 -----------
 
 A Visual Script node representing a constant from base types, such as :ref:`Vector3.AXIS_X<class_Vector3_constant_AXIS_X>`.
+
+Properties
+----------
+
++-----------------------------------------------------+----------------------------------------------------------------------------+-------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`basic_type<class_VisualScriptBasicTypeConstant_property_basic_type>` | ``0`` |
++-----------------------------------------------------+----------------------------------------------------------------------------+-------+
+| :ref:`String<class_String>`                         | :ref:`constant<class_VisualScriptBasicTypeConstant_property_constant>`     |       |
++-----------------------------------------------------+----------------------------------------------------------------------------+-------+
 
 Property Descriptions
 ---------------------
@@ -40,7 +35,7 @@ Property Descriptions
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **basic_type**
 
 +-----------+-----------------------+
-| *Default* | 0                     |
+| *Default* | ``0``                 |
 +-----------+-----------------------+
 | *Setter*  | set_basic_type(value) |
 +-----------+-----------------------+

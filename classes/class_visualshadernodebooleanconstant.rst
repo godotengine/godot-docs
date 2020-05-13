@@ -11,21 +11,16 @@ VisualShaderNodeBooleanConstant
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`   | :ref:`constant<class_VisualShaderNodeBooleanConstant_property_constant>` | false       |
-+---------------------------+--------------------------------------------------------------------------+-------------+
-| :ref:`Array<class_Array>` | default_input_values                                                     | **O:** [  ] |
-+---------------------------+--------------------------------------------------------------------------+-------------+
++---------------------------+--------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`   | :ref:`constant<class_VisualShaderNodeBooleanConstant_property_constant>` | ``false``       |
++---------------------------+--------------------------------------------------------------------------+-----------------+
+| :ref:`Array<class_Array>` | default_input_values                                                     | **O:** ``[  ]`` |
++---------------------------+--------------------------------------------------------------------------+-----------------+
 
 Property Descriptions
 ---------------------
@@ -35,7 +30,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **constant**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_constant(value) |
 +-----------+---------------------+

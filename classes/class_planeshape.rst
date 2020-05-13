@@ -11,24 +11,19 @@ PlaneShape
 
 **Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Infinite plane shape for 3D collisions.
-
-Properties
-----------
-
-+---------------------------+-----------------------------------------------+---------------------+
-| :ref:`Plane<class_Plane>` | :ref:`plane<class_PlaneShape_property_plane>` | Plane( 0, 1, 0, 0 ) |
-+---------------------------+-----------------------------------------------+---------------------+
 
 Description
 -----------
 
 An infinite plane shape for 3D collisions. Note that the :ref:`Plane<class_Plane>`'s normal matters; anything "below" the plane will collide with it. If the ``PlaneShape`` is used in a :ref:`PhysicsBody<class_PhysicsBody>`, it will cause colliding objects placed "below" it to teleport "above" the plane.
+
+Properties
+----------
+
++---------------------------+-----------------------------------------------+-------------------------+
+| :ref:`Plane<class_Plane>` | :ref:`plane<class_PlaneShape_property_plane>` | ``Plane( 0, 1, 0, 0 )`` |
++---------------------------+-----------------------------------------------+-------------------------+
 
 Property Descriptions
 ---------------------
@@ -37,13 +32,13 @@ Property Descriptions
 
 - :ref:`Plane<class_Plane>` **plane**
 
-+-----------+---------------------+
-| *Default* | Plane( 0, 1, 0, 0 ) |
-+-----------+---------------------+
-| *Setter*  | set_plane(value)    |
-+-----------+---------------------+
-| *Getter*  | get_plane()         |
-+-----------+---------------------+
++-----------+-------------------------+
+| *Default* | ``Plane( 0, 1, 0, 0 )`` |
++-----------+-------------------------+
+| *Setter*  | set_plane(value)        |
++-----------+-------------------------+
+| *Getter*  | get_plane()             |
++-----------+-------------------------+
 
 The :ref:`Plane<class_Plane>` used by the ``PlaneShape`` for collision.
 

@@ -13,23 +13,25 @@ ARVRInterface
 
 **Inherited By:** :ref:`ARVRInterfaceGDNative<class_ARVRInterfaceGDNative>`, :ref:`MobileVRInterface<class_MobileVRInterface>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for an AR/VR interface implementation.
+
+Description
+-----------
+
+This class needs to be implemented to make an AR or VR platform available to Godot and these should be implemented as C++ modules or GDNative modules (note that for GDNative the subclass ARVRScriptInterface should be used). Part of the interface is exposed to GDScript so you can detect, enable and configure an AR or VR platform.
+
+Interfaces should be written in such a way that simply enabling them will give us a working setup. You can query the available interfaces through :ref:`ARVRServer<class_ARVRServer>`.
 
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`ar_is_anchor_detection_enabled<class_ARVRInterface_property_ar_is_anchor_detection_enabled>` | false |
-+-------------------------+----------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`interface_is_initialized<class_ARVRInterface_property_interface_is_initialized>`             | false |
-+-------------------------+----------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`interface_is_primary<class_ARVRInterface_property_interface_is_primary>`                     | false |
-+-------------------------+----------------------------------------------------------------------------------------------------+-------+
++-------------------------+----------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`ar_is_anchor_detection_enabled<class_ARVRInterface_property_ar_is_anchor_detection_enabled>` | ``false`` |
++-------------------------+----------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`interface_is_initialized<class_ARVRInterface_property_interface_is_initialized>`             | ``false`` |
++-------------------------+----------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`interface_is_primary<class_ARVRInterface_property_interface_is_primary>`                     | ``false`` |
++-------------------------+----------------------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -123,13 +125,6 @@ enum **Tracking_status**:
 
 - **ARVR_NOT_TRACKING** = **4** --- Tracking is not functional (camera not plugged in or obscured, lighthouses turned off, etc.)
 
-Description
------------
-
-This class needs to be implemented to make an AR or VR platform available to Godot and these should be implemented as C++ modules or GDNative modules (note that for GDNative the subclass ARVRScriptInterface should be used). Part of the interface is exposed to GDScript so you can detect, enable and configure an AR or VR platform.
-
-Interfaces should be written in such a way that simply enabling them will give us a working setup. You can query the available interfaces through :ref:`ARVRServer<class_ARVRServer>`.
-
 Property Descriptions
 ---------------------
 
@@ -138,7 +133,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **ar_is_anchor_detection_enabled**
 
 +-----------+----------------------------------------+
-| *Default* | false                                  |
+| *Default* | ``false``                              |
 +-----------+----------------------------------------+
 | *Setter*  | set_anchor_detection_is_enabled(value) |
 +-----------+----------------------------------------+
@@ -154,7 +149,7 @@ On an AR interface, ``true`` if anchor detection is enabled.
 - :ref:`bool<class_bool>` **interface_is_initialized**
 
 +-----------+---------------------------+
-| *Default* | false                     |
+| *Default* | ``false``                 |
 +-----------+---------------------------+
 | *Setter*  | set_is_initialized(value) |
 +-----------+---------------------------+
@@ -170,7 +165,7 @@ On an AR interface, ``true`` if anchor detection is enabled.
 - :ref:`bool<class_bool>` **interface_is_primary**
 
 +-----------+-----------------------+
-| *Default* | false                 |
+| *Default* | ``false``             |
 +-----------+-----------------------+
 | *Setter*  | set_is_primary(value) |
 +-----------+-----------------------+

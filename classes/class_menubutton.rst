@@ -11,29 +11,31 @@ MenuButton
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked.
+
+Description
+-----------
+
+Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked. 
+
+New items can be created inside this :ref:`PopupMenu<class_PopupMenu>` using ``get_popup().add_item("My Item Name")``. You can also create them directly from the editor. To do so, select the MenuButton node, then in the toolbar at the top of the 2D editor, click **Items** then click **Add** in the popup. You will be able to give each items new properties.
 
 Properties
 ----------
 
-+-----------------------------------------------+-------------------------------------------------------------------+-------------+
-| :ref:`ActionMode<enum_BaseButton_ActionMode>` | action_mode                                                       | **O:** 0    |
-+-----------------------------------------------+-------------------------------------------------------------------+-------------+
-| :ref:`FocusMode<enum_Control_FocusMode>`      | enabled_focus_mode                                                | **O:** 0    |
-+-----------------------------------------------+-------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`                       | flat                                                              | **O:** true |
-+-----------------------------------------------+-------------------------------------------------------------------+-------------+
-| :ref:`FocusMode<enum_Control_FocusMode>`      | focus_mode                                                        | **O:** 0    |
-+-----------------------------------------------+-------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`                       | :ref:`switch_on_hover<class_MenuButton_property_switch_on_hover>` | false       |
-+-----------------------------------------------+-------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`                       | toggle_mode                                                       | **O:** true |
-+-----------------------------------------------+-------------------------------------------------------------------+-------------+
++-----------------------------------------------+-------------------------------------------------------------------+-----------------+
+| :ref:`ActionMode<enum_BaseButton_ActionMode>` | action_mode                                                       | **O:** ``0``    |
++-----------------------------------------------+-------------------------------------------------------------------+-----------------+
+| :ref:`FocusMode<enum_Control_FocusMode>`      | enabled_focus_mode                                                | **O:** ``0``    |
++-----------------------------------------------+-------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                       | flat                                                              | **O:** ``true`` |
++-----------------------------------------------+-------------------------------------------------------------------+-----------------+
+| :ref:`FocusMode<enum_Control_FocusMode>`      | focus_mode                                                        | **O:** ``0``    |
++-----------------------------------------------+-------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                       | :ref:`switch_on_hover<class_MenuButton_property_switch_on_hover>` | ``false``       |
++-----------------------------------------------+-------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                       | toggle_mode                                                       | **O:** ``true`` |
++-----------------------------------------------+-------------------------------------------------------------------+-----------------+
 
 Methods
 -------
@@ -80,11 +82,6 @@ Signals
 
 Emitted when :ref:`PopupMenu<class_PopupMenu>` of this MenuButton is about to show.
 
-Description
------------
-
-Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked. That's pretty much all it does, as it's just a helper class when building GUIs.
-
 Property Descriptions
 ---------------------
 
@@ -93,7 +90,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **switch_on_hover**
 
 +-----------+----------------------------+
-| *Default* | false                      |
+| *Default* | ``false``                  |
 +-----------+----------------------------+
 | *Setter*  | set_switch_on_hover(value) |
 +-----------+----------------------------+

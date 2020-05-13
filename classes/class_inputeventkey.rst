@@ -11,32 +11,7 @@ InputEventKey
 
 **Inherits:** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Input event type for keyboard events.
-
-Properties
-----------
-
-+-------------------------+--------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`echo<class_InputEventKey_property_echo>`         | false |
-+-------------------------+--------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`pressed<class_InputEventKey_property_pressed>`   | false |
-+-------------------------+--------------------------------------------------------+-------+
-| :ref:`int<class_int>`   | :ref:`scancode<class_InputEventKey_property_scancode>` | 0     |
-+-------------------------+--------------------------------------------------------+-------+
-| :ref:`int<class_int>`   | :ref:`unicode<class_InputEventKey_property_unicode>`   | 0     |
-+-------------------------+--------------------------------------------------------+-------+
-
-Methods
--------
-
-+-----------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_scancode_with_modifiers<class_InputEventKey_method_get_scancode_with_modifiers>` **(** **)** const |
-+-----------------------+--------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -48,6 +23,26 @@ Tutorials
 
 - :doc:`../tutorials/inputs/inputevent`
 
+Properties
+----------
+
++-------------------------+--------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`echo<class_InputEventKey_property_echo>`         | ``false`` |
++-------------------------+--------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`pressed<class_InputEventKey_property_pressed>`   | ``false`` |
++-------------------------+--------------------------------------------------------+-----------+
+| :ref:`int<class_int>`   | :ref:`scancode<class_InputEventKey_property_scancode>` | ``0``     |
++-------------------------+--------------------------------------------------------+-----------+
+| :ref:`int<class_int>`   | :ref:`unicode<class_InputEventKey_property_unicode>`   | ``0``     |
++-------------------------+--------------------------------------------------------+-----------+
+
+Methods
+-------
+
++-----------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_scancode_with_modifiers<class_InputEventKey_method_get_scancode_with_modifiers>` **(** **)** const |
++-----------------------+--------------------------------------------------------------------------------------------------------------+
+
 Property Descriptions
 ---------------------
 
@@ -56,7 +51,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **echo**
 
 +-----------+-----------------+
-| *Default* | false           |
+| *Default* | ``false``       |
 +-----------+-----------------+
 | *Setter*  | set_echo(value) |
 +-----------+-----------------+
@@ -72,7 +67,7 @@ If ``true``, the key was already pressed before this event. It means the user is
 - :ref:`bool<class_bool>` **pressed**
 
 +-----------+--------------------+
-| *Default* | false              |
+| *Default* | ``false``          |
 +-----------+--------------------+
 | *Setter*  | set_pressed(value) |
 +-----------+--------------------+
@@ -88,7 +83,7 @@ If ``true``, the key's state is pressed. If ``false``, the key's state is releas
 - :ref:`int<class_int>` **scancode**
 
 +-----------+---------------------+
-| *Default* | 0                   |
+| *Default* | ``0``               |
 +-----------+---------------------+
 | *Setter*  | set_scancode(value) |
 +-----------+---------------------+
@@ -104,7 +99,7 @@ Key scancode, one of the :ref:`KeyList<enum_@GlobalScope_KeyList>` constants.
 - :ref:`int<class_int>` **unicode**
 
 +-----------+--------------------+
-| *Default* | 0                  |
+| *Default* | ``0``              |
 +-----------+--------------------+
 | *Setter*  | set_unicode(value) |
 +-----------+--------------------+

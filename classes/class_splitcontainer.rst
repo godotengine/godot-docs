@@ -13,23 +13,23 @@ SplitContainer
 
 **Inherited By:** :ref:`HSplitContainer<class_HSplitContainer>`, :ref:`VSplitContainer<class_VSplitContainer>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Container for splitting and adjusting.
+
+Description
+-----------
+
+Container for splitting two :ref:`Control<class_Control>`\ s vertically or horizontally, with a grabber that allows adjusting the split offset or ratio.
 
 Properties
 ----------
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`collapsed<class_SplitContainer_property_collapsed>`                   | false |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` | :ref:`dragger_visibility<class_SplitContainer_property_dragger_visibility>` | 0     |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                                           | :ref:`split_offset<class_SplitContainer_property_split_offset>`             | 0     |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`collapsed<class_SplitContainer_property_collapsed>`                   | ``false`` |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+| :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` | :ref:`dragger_visibility<class_SplitContainer_property_dragger_visibility>` | ``0``     |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                                           | :ref:`split_offset<class_SplitContainer_property_split_offset>`             | ``0``     |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -60,16 +60,11 @@ Enumerations
 
 enum **DraggerVisibility**:
 
-- **DRAGGER_VISIBLE** = **0** --- The split dragger is visible.
+- **DRAGGER_VISIBLE** = **0** --- The split dragger is visible when the cursor hovers it.
 
-- **DRAGGER_HIDDEN** = **1** --- The split dragger is invisible.
+- **DRAGGER_HIDDEN** = **1** --- The split dragger is never visible.
 
-- **DRAGGER_HIDDEN_COLLAPSED** = **2** --- The split dragger is invisible and collapsed.
-
-Description
------------
-
-Container for splitting two controls vertically or horizontally, with a grabber that allows adjusting the split offset or ratio.
+- **DRAGGER_HIDDEN_COLLAPSED** = **2** --- The split dragger is never visible and its space collapsed.
 
 Property Descriptions
 ---------------------
@@ -79,12 +74,14 @@ Property Descriptions
 - :ref:`bool<class_bool>` **collapsed**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_collapsed(value) |
 +-----------+----------------------+
 | *Getter*  | is_collapsed()       |
 +-----------+----------------------+
+
+If ``true``, the area of the first :ref:`Control<class_Control>` will be collapsed and the dragger will be disabled.
 
 ----
 
@@ -93,14 +90,14 @@ Property Descriptions
 - :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **dragger_visibility**
 
 +-----------+-------------------------------+
-| *Default* | 0                             |
+| *Default* | ``0``                         |
 +-----------+-------------------------------+
 | *Setter*  | set_dragger_visibility(value) |
 +-----------+-------------------------------+
 | *Getter*  | get_dragger_visibility()      |
 +-----------+-------------------------------+
 
-Determines whether the dragger is visible.
+Determines the dragger's visibility. See :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` for details.
 
 ----
 
@@ -109,12 +106,14 @@ Determines whether the dragger is visible.
 - :ref:`int<class_int>` **split_offset**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_split_offset(value) |
 +-----------+-------------------------+
 | *Getter*  | get_split_offset()      |
 +-----------+-------------------------+
+
+The initial offset of the splitting between the two :ref:`Control<class_Control>`\ s, with ``0`` being at the end of the first :ref:`Control<class_Control>`.
 
 Method Descriptions
 -------------------
@@ -122,4 +121,6 @@ Method Descriptions
 .. _class_SplitContainer_method_clamp_split_offset:
 
 - void **clamp_split_offset** **(** **)**
+
+Clamps the :ref:`split_offset<class_SplitContainer_property_split_offset>` value to not go outside the currently possible minimal and maximum values.
 

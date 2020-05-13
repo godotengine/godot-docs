@@ -13,19 +13,19 @@ Mesh
 
 **Inherited By:** :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`PrimitiveMesh<class_PrimitiveMesh>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A :ref:`Resource<class_Resource>` that contains vertex array-based geometry.
+
+Description
+-----------
+
+Mesh is a type of :ref:`Resource<class_Resource>` that contains vertex array-based geometry, divided in *surfaces*. Each surface contains a completely separate array and a material used to draw it. Design wise, a mesh with multiple surfaces is preferred to a single surface, because objects created in 3D editing software commonly contain multiple materials.
 
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`lightmap_size_hint<class_Mesh_property_lightmap_size_hint>` | Vector2( 0, 0 ) |
-+-------------------------------+-------------------------------------------------------------------+-----------------+
++-------------------------------+-------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`lightmap_size_hint<class_Mesh_property_lightmap_size_hint>` | ``Vector2( 0, 0 )`` |
++-------------------------------+-------------------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -99,9 +99,9 @@ enum **PrimitiveType**:
 
 enum **BlendShapeMode**:
 
-- **BLEND_SHAPE_MODE_NORMALIZED** = **0**
+- **BLEND_SHAPE_MODE_NORMALIZED** = **0** --- Blend shapes are normalized.
 
-- **BLEND_SHAPE_MODE_RELATIVE** = **1**
+- **BLEND_SHAPE_MODE_RELATIVE** = **1** --- Blend shapes are relative to base weight.
 
 ----
 
@@ -153,49 +153,49 @@ enum **BlendShapeMode**:
 
 enum **ArrayFormat**:
 
-- **ARRAY_FORMAT_VERTEX** = **1**
+- **ARRAY_FORMAT_VERTEX** = **1** --- Mesh array contains vertices. All meshes require a vertex array so this should always be present.
 
-- **ARRAY_FORMAT_NORMAL** = **2**
+- **ARRAY_FORMAT_NORMAL** = **2** --- Mesh array contains normals.
 
-- **ARRAY_FORMAT_TANGENT** = **4**
+- **ARRAY_FORMAT_TANGENT** = **4** --- Mesh array contains tangents.
 
-- **ARRAY_FORMAT_COLOR** = **8**
+- **ARRAY_FORMAT_COLOR** = **8** --- Mesh array contains colors.
 
-- **ARRAY_FORMAT_TEX_UV** = **16**
+- **ARRAY_FORMAT_TEX_UV** = **16** --- Mesh array contains UVs.
 
-- **ARRAY_FORMAT_TEX_UV2** = **32**
+- **ARRAY_FORMAT_TEX_UV2** = **32** --- Mesh array contains second UV.
 
-- **ARRAY_FORMAT_BONES** = **64**
+- **ARRAY_FORMAT_BONES** = **64** --- Mesh array contains bones.
 
-- **ARRAY_FORMAT_WEIGHTS** = **128**
+- **ARRAY_FORMAT_WEIGHTS** = **128** --- Mesh array contains bone weights.
 
-- **ARRAY_FORMAT_INDEX** = **256**
+- **ARRAY_FORMAT_INDEX** = **256** --- Mesh array uses indices.
 
-- **ARRAY_COMPRESS_BASE** = **9**
+- **ARRAY_COMPRESS_BASE** = **9** --- Used internally to calculate other ``ARRAY_COMPRESS_*`` enum values. Do not use.
 
-- **ARRAY_COMPRESS_VERTEX** = **512**
+- **ARRAY_COMPRESS_VERTEX** = **512** --- Flag used to mark a compressed (half float) vertex array.
 
-- **ARRAY_COMPRESS_NORMAL** = **1024**
+- **ARRAY_COMPRESS_NORMAL** = **1024** --- Flag used to mark a compressed (half float) normal array.
 
-- **ARRAY_COMPRESS_TANGENT** = **2048**
+- **ARRAY_COMPRESS_TANGENT** = **2048** --- Flag used to mark a compressed (half float) tangent array.
 
-- **ARRAY_COMPRESS_COLOR** = **4096**
+- **ARRAY_COMPRESS_COLOR** = **4096** --- Flag used to mark a compressed (half float) color array.
 
-- **ARRAY_COMPRESS_TEX_UV** = **8192**
+- **ARRAY_COMPRESS_TEX_UV** = **8192** --- Flag used to mark a compressed (half float) UV coordinates array.
 
-- **ARRAY_COMPRESS_TEX_UV2** = **16384**
+- **ARRAY_COMPRESS_TEX_UV2** = **16384** --- Flag used to mark a compressed (half float) UV coordinates array for the second UV coordinates.
 
-- **ARRAY_COMPRESS_BONES** = **32768**
+- **ARRAY_COMPRESS_BONES** = **32768** --- Flag used to mark a compressed bone array.
 
-- **ARRAY_COMPRESS_WEIGHTS** = **65536**
+- **ARRAY_COMPRESS_WEIGHTS** = **65536** --- Flag used to mark a compressed (half float) weight array.
 
-- **ARRAY_COMPRESS_INDEX** = **131072**
+- **ARRAY_COMPRESS_INDEX** = **131072** --- Flag used to mark a compressed index array.
 
-- **ARRAY_FLAG_USE_2D_VERTICES** = **262144**
+- **ARRAY_FLAG_USE_2D_VERTICES** = **262144** --- Flag used to mark that the array contains 2D vertices.
 
-- **ARRAY_FLAG_USE_16_BIT_BONES** = **524288**
+- **ARRAY_FLAG_USE_16_BIT_BONES** = **524288** --- Flag used to mark that the array uses 16-bit bones instead of 8-bit.
 
-- **ARRAY_COMPRESS_DEFAULT** = **97280**
+- **ARRAY_COMPRESS_DEFAULT** = **97280** --- Used to set flags :ref:`ARRAY_COMPRESS_VERTEX<class_Mesh_constant_ARRAY_COMPRESS_VERTEX>`, :ref:`ARRAY_COMPRESS_NORMAL<class_Mesh_constant_ARRAY_COMPRESS_NORMAL>`, :ref:`ARRAY_COMPRESS_TANGENT<class_Mesh_constant_ARRAY_COMPRESS_TANGENT>`, :ref:`ARRAY_COMPRESS_COLOR<class_Mesh_constant_ARRAY_COMPRESS_COLOR>`, :ref:`ARRAY_COMPRESS_TEX_UV<class_Mesh_constant_ARRAY_COMPRESS_TEX_UV>`, :ref:`ARRAY_COMPRESS_TEX_UV2<class_Mesh_constant_ARRAY_COMPRESS_TEX_UV2>` and :ref:`ARRAY_COMPRESS_WEIGHTS<class_Mesh_constant_ARRAY_COMPRESS_WEIGHTS>` quickly.
 
 ----
 
@@ -243,11 +243,6 @@ enum **ArrayType**:
 
 - **ARRAY_MAX** = **9** --- Represents the size of the :ref:`ArrayType<enum_Mesh_ArrayType>` enum.
 
-Description
------------
-
-Mesh is a type of :ref:`Resource<class_Resource>` that contains vertex array-based geometry, divided in *surfaces*. Each surface contains a completely separate array and a material used to draw it. Design wise, a mesh with multiple surfaces is preferred to a single surface, because objects created in 3D editing software commonly contain multiple materials.
-
 Property Descriptions
 ---------------------
 
@@ -256,12 +251,14 @@ Property Descriptions
 - :ref:`Vector2<class_Vector2>` **lightmap_size_hint**
 
 +-----------+-------------------------------+
-| *Default* | Vector2( 0, 0 )               |
+| *Default* | ``Vector2( 0, 0 )``           |
 +-----------+-------------------------------+
 | *Setter*  | set_lightmap_size_hint(value) |
 +-----------+-------------------------------+
 | *Getter*  | get_lightmap_size_hint()      |
 +-----------+-------------------------------+
+
+Sets a hint to be used for lightmap resolution in :ref:`BakedLightmap<class_BakedLightmap>`. Overrides :ref:`BakedLightmap.bake_default_texels_per_unit<class_BakedLightmap_property_bake_default_texels_per_unit>`.
 
 Method Descriptions
 -------------------

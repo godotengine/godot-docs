@@ -11,12 +11,12 @@ TCP_Server
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A TCP server.
+
+Description
+-----------
+
+A TCP server. Listens to connections on a port and returns a :ref:`StreamPeerTCP<class_StreamPeerTCP>` when it gets an incoming connection.
 
 Methods
 -------
@@ -32,11 +32,6 @@ Methods
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`StreamPeerTCP<class_StreamPeerTCP>` | :ref:`take_connection<class_TCP_Server_method_take_connection>` **(** **)**                                                        |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A TCP server. Listens to connections on a port and returns a :ref:`StreamPeerTCP<class_StreamPeerTCP>` when it gets an incoming connection.
 
 Method Descriptions
 -------------------

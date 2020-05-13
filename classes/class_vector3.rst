@@ -9,23 +9,28 @@
 Vector3
 =======
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Vector used for 3D math.
+
+Description
+-----------
+
+3-element structure that can be used to represent positions in 3D space or any other pair of numeric values.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
 
 Properties
 ----------
 
-+---------------------------+------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`x<class_Vector3_property_x>` | 0.0 |
-+---------------------------+------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`y<class_Vector3_property_y>` | 0.0 |
-+---------------------------+------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`z<class_Vector3_property_z>` | 0.0 |
-+---------------------------+------------------------------------+-----+
++---------------------------+------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`x<class_Vector3_property_x>` | ``0.0`` |
++---------------------------+------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`y<class_Vector3_property_y>` | ``0.0`` |
++---------------------------+------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`z<class_Vector3_property_z>` | ``0.0`` |
++---------------------------+------------------------------------+---------+
 
 Methods
 -------
@@ -151,16 +156,6 @@ Constants
 
 - **BACK** = **Vector3( 0, 0, 1 )** --- Back unit vector.
 
-Description
------------
-
-3-element structure that can be used to represent positions in 3D space or any other pair of numeric values.
-
-Tutorials
----------
-
-- :doc:`../tutorials/math/index`
-
 Property Descriptions
 ---------------------
 
@@ -168,9 +163,9 @@ Property Descriptions
 
 - :ref:`float<class_float>` **x**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 The vector's X component. Also accessible by using the index position ``[0]``.
 
@@ -180,9 +175,9 @@ The vector's X component. Also accessible by using the index position ``[0]``.
 
 - :ref:`float<class_float>` **y**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 The vector's Y component. Also accessible by using the index position ``[1]``.
 
@@ -192,9 +187,9 @@ The vector's Y component. Also accessible by using the index position ``[1]``.
 
 - :ref:`float<class_float>` **z**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 The vector's Z component. Also accessible by using the index position ``[2]``.
 

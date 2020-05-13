@@ -9,11 +9,6 @@
 Variant
 =======
 
-**Category:** Core
-
-Brief Description
------------------
-
 The most important data type in Godot.
 
 Description

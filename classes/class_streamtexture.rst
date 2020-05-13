@@ -11,21 +11,21 @@ StreamTexture
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A ``.stex`` texture.
+
+Description
+-----------
+
+A texture that is loaded from a ``.stex`` file.
 
 Properties
 ----------
 
-+-----------------------------+----------------------------------------------------------+----------+
-| :ref:`int<class_int>`       | flags                                                    | **O:** 0 |
-+-----------------------------+----------------------------------------------------------+----------+
-| :ref:`String<class_String>` | :ref:`load_path<class_StreamTexture_property_load_path>` | ""       |
-+-----------------------------+----------------------------------------------------------+----------+
++-----------------------------+----------------------------------------------------------+--------------+
+| :ref:`int<class_int>`       | flags                                                    | **O:** ``0`` |
++-----------------------------+----------------------------------------------------------+--------------+
+| :ref:`String<class_String>` | :ref:`load_path<class_StreamTexture_property_load_path>` | ``""``       |
++-----------------------------+----------------------------------------------------------+--------------+
 
 Methods
 -------
@@ -33,11 +33,6 @@ Methods
 +---------------------------------------+-------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load<class_StreamTexture_method_load>` **(** :ref:`String<class_String>` path **)** |
 +---------------------------------------+-------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A texture that is loaded from a ``.stex`` file.
 
 Property Descriptions
 ---------------------
@@ -47,7 +42,7 @@ Property Descriptions
 - :ref:`String<class_String>` **load_path**
 
 +-----------+-----------------+
-| *Default* | ""              |
+| *Default* | ``""``          |
 +-----------+-----------------+
 | *Setter*  | load(value)     |
 +-----------+-----------------+

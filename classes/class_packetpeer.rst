@@ -13,19 +13,21 @@ PacketPeer
 
 **Inherited By:** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`, :ref:`PacketPeerGDNative<class_PacketPeerGDNative>`, :ref:`PacketPeerStream<class_PacketPeerStream>`, :ref:`PacketPeerUDP<class_PacketPeerUDP>`, :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`, :ref:`WebSocketPeer<class_WebSocketPeer>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Abstraction and base class for packet-based protocols.
+
+Description
+-----------
+
+PacketPeer is an abstraction and base class for packet-based protocols (such as UDP). It provides an API for sending and receiving packets both as raw data or variables. This makes it easy to transfer data over a protocol, without having to encode data as low-level bytes or having to worry about network ordering.
 
 Properties
 ----------
 
-+-------------------------+-------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`allow_object_decoding<class_PacketPeer_property_allow_object_decoding>` | false |
-+-------------------------+-------------------------------------------------------------------------------+-------+
++-------------------------+---------------------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>` | :ref:`allow_object_decoding<class_PacketPeer_property_allow_object_decoding>`   | ``false``   |
++-------------------------+---------------------------------------------------------------------------------+-------------+
+| :ref:`int<class_int>`   | :ref:`encode_buffer_max_size<class_PacketPeer_property_encode_buffer_max_size>` | ``8388608`` |
++-------------------------+---------------------------------------------------------------------------------+-------------+
 
 Methods
 -------
@@ -44,11 +46,6 @@ Methods
 | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`put_var<class_PacketPeer_method_put_var>` **(** :ref:`Variant<class_Variant>` var, :ref:`bool<class_bool>` full_objects=false **)** |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-PacketPeer is an abstraction and base class for packet-based protocols (such as UDP). It provides an API for sending and receiving packets both as raw data or variables. This makes it easy to transfer data over a protocol, without having to encode data as low-level bytes or having to worry about network ordering.
-
 Property Descriptions
 ---------------------
 
@@ -57,7 +54,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **allow_object_decoding**
 
 +-----------+----------------------------------+
-| *Default* | false                            |
+| *Default* | ``false``                        |
 +-----------+----------------------------------+
 | *Setter*  | set_allow_object_decoding(value) |
 +-----------+----------------------------------+
@@ -69,6 +66,24 @@ Property Descriptions
 If ``true``, the PacketPeer will allow encoding and decoding of object via :ref:`get_var<class_PacketPeer_method_get_var>` and :ref:`put_var<class_PacketPeer_method_put_var>`.
 
 **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
+
+----
+
+.. _class_PacketPeer_property_encode_buffer_max_size:
+
+- :ref:`int<class_int>` **encode_buffer_max_size**
+
++-----------+-----------------------------------+
+| *Default* | ``8388608``                       |
++-----------+-----------------------------------+
+| *Setter*  | set_encode_buffer_max_size(value) |
++-----------+-----------------------------------+
+| *Getter*  | get_encode_buffer_max_size()      |
++-----------+-----------------------------------+
+
+Maximum buffer size allowed when encoding :ref:`Variant<class_Variant>`\ s. Raise this value to support heavier memory allocations.
+
+The :ref:`put_var<class_PacketPeer_method_put_var>` method allocates memory on the stack, and the buffer used will grow automatically to the closest power of two to match the size of the :ref:`Variant<class_Variant>`. If the :ref:`Variant<class_Variant>` is bigger than ``encode_buffer_max_size``, the method will error out with :ref:`@GlobalScope.ERR_OUT_OF_MEMORY<class_@GlobalScope_constant_ERR_OUT_OF_MEMORY>`.
 
 Method Descriptions
 -------------------

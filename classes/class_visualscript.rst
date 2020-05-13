@@ -11,12 +11,21 @@ VisualScript
 
 **Inherits:** :ref:`Script<class_Script>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A script implemented in the Visual Script programming environment.
+
+Description
+-----------
+
+A script implemented in the  Visual Script programming environment. The script extends the functionality of all objects that instance it.
+
+:ref:`Object.set_script<class_Object_method_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
+
+You are most likely to use this class via the Visual Script editor or when writing plugins for it.
+
+Tutorials
+---------
+
+- :doc:`../getting_started/scripting/visual_script/index`
 
 Methods
 -------
@@ -115,20 +124,6 @@ Signals
 - **node_ports_changed** **(** :ref:`String<class_String>` function, :ref:`int<class_int>` id **)**
 
 Emitted when the ports of a node are changed.
-
-Description
------------
-
-A script implemented in the  Visual Script programming environment. The script extends the functionality of all objects that instance it.
-
-:ref:`Object.set_script<class_Object_method_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
-
-You are most likely to use this class via the Visual Script editor or when writing plugins for it.
-
-Tutorials
----------
-
-- :doc:`../getting_started/scripting/visual_script/index`
 
 Method Descriptions
 -------------------

@@ -74,6 +74,11 @@ Godot complies with the `XDG Base Directory Specification
 on all platforms. Environment variables can be overridden as per
 the specification to change the editor (and project) data paths.
 
+.. note:: If you use
+          `Godot packaged as a Flatpak <https://flathub.org/apps/details/org.godotengine.Godot>`__,
+          the editor data paths will be located in subfolders in
+          ``~/.var/app/org.godotengine.Godot/``.
+
 Self-contained mode
 ~~~~~~~~~~~~~~~~~~~
 

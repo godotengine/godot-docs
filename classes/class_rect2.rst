@@ -9,23 +9,28 @@
 Rect2
 =====
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 2D axis-aligned bounding box.
+
+Description
+-----------
+
+Rect2 consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
 
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`end<class_Rect2_property_end>`           | Vector2( 0, 0 ) |
-+-------------------------------+------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`position<class_Rect2_property_position>` | Vector2( 0, 0 ) |
-+-------------------------------+------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_Rect2_property_size>`         | Vector2( 0, 0 ) |
-+-------------------------------+------------------------------------------------+-----------------+
++-------------------------------+------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`end<class_Rect2_property_end>`           | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`position<class_Rect2_property_position>` | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_Rect2_property_size>`         | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -62,16 +67,6 @@ Methods
 | :ref:`Rect2<class_Rect2>` | :ref:`merge<class_Rect2_method_merge>` **(** :ref:`Rect2<class_Rect2>` b **)**                                                                                                                           |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-Rect2 consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
-
-Tutorials
----------
-
-- :doc:`../tutorials/math/index`
-
 Property Descriptions
 ---------------------
 
@@ -79,9 +74,9 @@ Property Descriptions
 
 - :ref:`Vector2<class_Vector2>` **end**
 
-+-----------+-----------------+
-| *Default* | Vector2( 0, 0 ) |
-+-----------+-----------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 0, 0 )`` |
++-----------+---------------------+
 
 Ending corner.
 
@@ -91,9 +86,9 @@ Ending corner.
 
 - :ref:`Vector2<class_Vector2>` **position**
 
-+-----------+-----------------+
-| *Default* | Vector2( 0, 0 ) |
-+-----------+-----------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 0, 0 )`` |
++-----------+---------------------+
 
 Position (starting corner).
 
@@ -103,9 +98,9 @@ Position (starting corner).
 
 - :ref:`Vector2<class_Vector2>` **size**
 
-+-----------+-----------------+
-| *Default* | Vector2( 0, 0 ) |
-+-----------+-----------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 0, 0 )`` |
++-----------+---------------------+
 
 Size from position to end.
 

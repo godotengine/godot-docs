@@ -11,19 +11,14 @@ PackedDataContainer
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+-------------------------------------------+--------------------------------------------------------------+-------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`__data__<class_PackedDataContainer_property___data__>` | PoolByteArray(  ) |
-+-------------------------------------------+--------------------------------------------------------------+-------------------+
++-------------------------------------------+--------------------------------------------------------------+-----------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`__data__<class_PackedDataContainer_property___data__>` | ``PoolByteArray(  )`` |
++-------------------------------------------+--------------------------------------------------------------+-----------------------+
 
 Methods
 -------
@@ -41,9 +36,9 @@ Property Descriptions
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **__data__**
 
-+-----------+-------------------+
-| *Default* | PoolByteArray(  ) |
-+-----------+-------------------+
++-----------+-----------------------+
+| *Default* | ``PoolByteArray(  )`` |
++-----------+-----------------------+
 
 Method Descriptions
 -------------------

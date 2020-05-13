@@ -13,19 +13,7 @@ Shape
 
 **Inherited By:** :ref:`BoxShape<class_BoxShape>`, :ref:`CapsuleShape<class_CapsuleShape>`, :ref:`ConcavePolygonShape<class_ConcavePolygonShape>`, :ref:`ConvexPolygonShape<class_ConvexPolygonShape>`, :ref:`CylinderShape<class_CylinderShape>`, :ref:`HeightMapShape<class_HeightMapShape>`, :ref:`PlaneShape<class_PlaneShape>`, :ref:`RayShape<class_RayShape>`, :ref:`SphereShape<class_SphereShape>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for all 3D shape resources.
-
-Properties
-----------
-
-+---------------------------+--------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`margin<class_Shape_property_margin>` | 0.04 |
-+---------------------------+--------------------------------------------+------+
 
 Description
 -----------
@@ -37,6 +25,13 @@ Tutorials
 
 - :doc:`../tutorials/physics/physics_introduction`
 
+Properties
+----------
+
++---------------------------+--------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`margin<class_Shape_property_margin>` | ``0.04`` |
++---------------------------+--------------------------------------------+----------+
+
 Property Descriptions
 ---------------------
 
@@ -45,7 +40,7 @@ Property Descriptions
 - :ref:`float<class_float>` **margin**
 
 +-----------+-------------------+
-| *Default* | 0.04              |
+| *Default* | ``0.04``          |
 +-----------+-------------------+
 | *Setter*  | set_margin(value) |
 +-----------+-------------------+

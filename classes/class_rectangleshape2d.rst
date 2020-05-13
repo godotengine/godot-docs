@@ -11,24 +11,19 @@ RectangleShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Rectangle shape for 2D collisions.
-
-Properties
-----------
-
-+-------------------------------+---------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`extents<class_RectangleShape2D_property_extents>` | Vector2( 10, 10 ) |
-+-------------------------------+---------------------------------------------------------+-------------------+
 
 Description
 -----------
 
 Rectangle shape for 2D collisions. This shape is useful for modeling box-like 2D objects.
+
+Properties
+----------
+
++-------------------------------+---------------------------------------------------------+-----------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`extents<class_RectangleShape2D_property_extents>` | ``Vector2( 10, 10 )`` |
++-------------------------------+---------------------------------------------------------+-----------------------+
 
 Property Descriptions
 ---------------------
@@ -37,13 +32,13 @@ Property Descriptions
 
 - :ref:`Vector2<class_Vector2>` **extents**
 
-+-----------+--------------------+
-| *Default* | Vector2( 10, 10 )  |
-+-----------+--------------------+
-| *Setter*  | set_extents(value) |
-+-----------+--------------------+
-| *Getter*  | get_extents()      |
-+-----------+--------------------+
++-----------+-----------------------+
+| *Default* | ``Vector2( 10, 10 )`` |
++-----------+-----------------------+
+| *Setter*  | set_extents(value)    |
++-----------+-----------------------+
+| *Getter*  | get_extents()         |
++-----------+-----------------------+
 
 The rectangle's half extents. The width and height of this shape is twice the half extents.
 

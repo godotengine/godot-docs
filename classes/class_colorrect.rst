@@ -11,24 +11,19 @@ ColorRect
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Colored rectangle.
-
-Properties
-----------
-
-+---------------------------+----------------------------------------------+---------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_ColorRect_property_color>` | Color( 1, 1, 1, 1 ) |
-+---------------------------+----------------------------------------------+---------------------+
 
 Description
 -----------
 
 Displays a colored rectangle.
+
+Properties
+----------
+
++---------------------------+----------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_ColorRect_property_color>` | ``Color( 1, 1, 1, 1 )`` |
++---------------------------+----------------------------------------------+-------------------------+
 
 Property Descriptions
 ---------------------
@@ -37,13 +32,13 @@ Property Descriptions
 
 - :ref:`Color<class_Color>` **color**
 
-+-----------+------------------------+
-| *Default* | Color( 1, 1, 1, 1 )    |
-+-----------+------------------------+
-| *Setter*  | set_frame_color(value) |
-+-----------+------------------------+
-| *Getter*  | get_frame_color()      |
-+-----------+------------------------+
++-----------+-------------------------+
+| *Default* | ``Color( 1, 1, 1, 1 )`` |
++-----------+-------------------------+
+| *Setter*  | set_frame_color(value)  |
++-----------+-------------------------+
+| *Getter*  | get_frame_color()       |
++-----------+-------------------------+
 
 The fill color.
 

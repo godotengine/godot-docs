@@ -11,21 +11,16 @@ VisualShaderNodeScalarFunc
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+-----------------------------------------------------------+---------------------------------------------------------------------+-------------------+
-| :ref:`Array<class_Array>`                                 | default_input_values                                                | **O:** [ 0, 0.0 ] |
-+-----------------------------------------------------------+---------------------------------------------------------------------+-------------------+
-| :ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` | :ref:`function<class_VisualShaderNodeScalarFunc_property_function>` | 13                |
-+-----------------------------------------------------------+---------------------------------------------------------------------+-------------------+
++-----------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
+| :ref:`Array<class_Array>`                                 | default_input_values                                                | **O:** ``[ 0, 0.0 ]`` |
++-----------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
+| :ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` | :ref:`function<class_VisualShaderNodeScalarFunc_property_function>` | ``13``                |
++-----------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
 
 Enumerations
 ------------
@@ -170,7 +165,7 @@ Property Descriptions
 - :ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **function**
 
 +-----------+---------------------+
-| *Default* | 13                  |
+| *Default* | ``13``              |
 +-----------+---------------------+
 | *Setter*  | set_function(value) |
 +-----------+---------------------+

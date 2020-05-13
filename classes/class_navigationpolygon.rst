@@ -11,12 +11,33 @@ NavigationPolygon
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A node that has methods to draw outlines or use indices of vertices to create navigation polygons.
+
+Description
+-----------
+
+There are two ways to create polygons. Either by using the :ref:`add_outline<class_NavigationPolygon_method_add_outline>` method, or using the :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` method.
+
+Using :ref:`add_outline<class_NavigationPolygon_method_add_outline>`:
+
+::
+
+    var polygon = NavigationPolygon.new()
+    var outline = PoolVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)])
+    polygon.add_outline(outline)
+    polygon.make_polygons_from_outlines()
+    $NavigationPolygonInstance.navpoly = polygon
+
+Using :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` and indices of the vertices array.
+
+::
+
+    var polygon = NavigationPolygon.new()
+    var vertices = PoolVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)])
+    polygon.set_vertices(vertices)
+    var indices = PoolIntArray(0, 3, 1)
+    polygon.add_polygon(indices)
+    $NavigationPolygonInstance.navpoly = polygon
 
 Methods
 -------
@@ -50,32 +71,6 @@ Methods
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_vertices<class_NavigationPolygon_method_set_vertices>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` vertices **)**                                             |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-There are two ways to create polygons. Either by using the :ref:`add_outline<class_NavigationPolygon_method_add_outline>` method, or using the :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` method.
-
-Using :ref:`add_outline<class_NavigationPolygon_method_add_outline>`:
-
-::
-
-    var polygon = NavigationPolygon.new()
-    var outline = PoolVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)])
-    polygon.add_outline(outline)
-    polygon.make_polygons_from_outlines()
-    $NavigationPolygonInstance.navpoly = polygon
-
-Using :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` and indices of the vertices array.
-
-::
-
-    var polygon = NavigationPolygon.new()
-    var vertices = PoolVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)])
-    polygon.set_vertices(vertices)
-    var indices = PoolIntArray(0, 3, 1)
-    polygon.add_polygon(indices)
-    $NavigationPolygonInstance.navpoly = polygon
 
 Method Descriptions
 -------------------

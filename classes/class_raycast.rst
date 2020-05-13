@@ -11,29 +11,42 @@ RayCast
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Query the closest object intersecting a ray.
+
+Description
+-----------
+
+A RayCast represents a line from its origin to its destination position, ``cast_to``. It is used to query the 3D space in order to find the closest object along the path of the ray.
+
+RayCast can ignore some objects by adding them to the exception list via ``add_exception`` or by setting proper filtering with collision layers and masks.
+
+RayCast can be configured to report collisions with :ref:`Area<class_Area>`\ s (:ref:`collide_with_areas<class_RayCast_property_collide_with_areas>`) and/or :ref:`PhysicsBody<class_PhysicsBody>`\ s (:ref:`collide_with_bodies<class_RayCast_property_collide_with_bodies>`).
+
+Only enabled raycasts will be able to query the space and report collisions.
+
+RayCast calculates intersection every physics frame (see :ref:`Node<class_Node>`), and the result is cached so it can be used later until the next frame. If multiple queries are required between physics frames (or during the same frame), use :ref:`force_raycast_update<class_RayCast_method_force_raycast_update>` after adjusting the raycast.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/ray-casting`
 
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------------------+---------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`cast_to<class_RayCast_property_cast_to>`                         | Vector3( 0, -1, 0 ) |
-+-------------------------------+------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`       | :ref:`collide_with_areas<class_RayCast_property_collide_with_areas>`   | false               |
-+-------------------------------+------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`       | :ref:`collide_with_bodies<class_RayCast_property_collide_with_bodies>` | true                |
-+-------------------------------+------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`collision_mask<class_RayCast_property_collision_mask>`           | 1                   |
-+-------------------------------+------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`       | :ref:`enabled<class_RayCast_property_enabled>`                         | false               |
-+-------------------------------+------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`       | :ref:`exclude_parent<class_RayCast_property_exclude_parent>`           | true                |
-+-------------------------------+------------------------------------------------------------------------+---------------------+
++-------------------------------+------------------------------------------------------------------------+-------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`cast_to<class_RayCast_property_cast_to>`                         | ``Vector3( 0, -1, 0 )`` |
++-------------------------------+------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`       | :ref:`collide_with_areas<class_RayCast_property_collide_with_areas>`   | ``false``               |
++-------------------------------+------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`       | :ref:`collide_with_bodies<class_RayCast_property_collide_with_bodies>` | ``true``                |
++-------------------------------+------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`         | :ref:`collision_mask<class_RayCast_property_collision_mask>`           | ``1``                   |
++-------------------------------+------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`       | :ref:`enabled<class_RayCast_property_enabled>`                         | ``false``               |
++-------------------------------+------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`       | :ref:`exclude_parent<class_RayCast_property_exclude_parent>`           | ``true``                |
++-------------------------------+------------------------------------------------------------------------+-------------------------+
 
 Methods
 -------
@@ -66,24 +79,6 @@ Methods
 | void                          | :ref:`set_collision_mask_bit<class_RayCast_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-A RayCast represents a line from its origin to its destination position, ``cast_to``. It is used to query the 3D space in order to find the closest object along the path of the ray.
-
-RayCast can ignore some objects by adding them to the exception list via ``add_exception`` or by setting proper filtering with collision layers and masks.
-
-RayCast can be configured to report collisions with :ref:`Area<class_Area>`\ s (:ref:`collide_with_areas<class_RayCast_property_collide_with_areas>`) and/or :ref:`PhysicsBody<class_PhysicsBody>`\ s (:ref:`collide_with_bodies<class_RayCast_property_collide_with_bodies>`).
-
-Only enabled raycasts will be able to query the space and report collisions.
-
-RayCast calculates intersection every physics frame (see :ref:`Node<class_Node>`), and the result is cached so it can be used later until the next frame. If multiple queries are required between physics frames (or during the same frame), use :ref:`force_raycast_update<class_RayCast_method_force_raycast_update>` after adjusting the raycast.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/ray-casting`
-
 Property Descriptions
 ---------------------
 
@@ -91,13 +86,13 @@ Property Descriptions
 
 - :ref:`Vector3<class_Vector3>` **cast_to**
 
-+-----------+---------------------+
-| *Default* | Vector3( 0, -1, 0 ) |
-+-----------+---------------------+
-| *Setter*  | set_cast_to(value)  |
-+-----------+---------------------+
-| *Getter*  | get_cast_to()       |
-+-----------+---------------------+
++-----------+-------------------------+
+| *Default* | ``Vector3( 0, -1, 0 )`` |
++-----------+-------------------------+
+| *Setter*  | set_cast_to(value)      |
++-----------+-------------------------+
+| *Getter*  | get_cast_to()           |
++-----------+-------------------------+
 
 The ray's destination point, relative to the RayCast's ``position``.
 
@@ -108,7 +103,7 @@ The ray's destination point, relative to the RayCast's ``position``.
 - :ref:`bool<class_bool>` **collide_with_areas**
 
 +-----------+---------------------------------+
-| *Default* | false                           |
+| *Default* | ``false``                       |
 +-----------+---------------------------------+
 | *Setter*  | set_collide_with_areas(value)   |
 +-----------+---------------------------------+
@@ -124,7 +119,7 @@ If ``true``, collision with :ref:`Area<class_Area>`\ s will be reported.
 - :ref:`bool<class_bool>` **collide_with_bodies**
 
 +-----------+----------------------------------+
-| *Default* | true                             |
+| *Default* | ``true``                         |
 +-----------+----------------------------------+
 | *Setter*  | set_collide_with_bodies(value)   |
 +-----------+----------------------------------+
@@ -140,7 +135,7 @@ If ``true``, collision with :ref:`PhysicsBody<class_PhysicsBody>`\ s will be rep
 - :ref:`int<class_int>` **collision_mask**
 
 +-----------+---------------------------+
-| *Default* | 1                         |
+| *Default* | ``1``                     |
 +-----------+---------------------------+
 | *Setter*  | set_collision_mask(value) |
 +-----------+---------------------------+
@@ -156,7 +151,7 @@ The ray's collision mask. Only objects in at least one collision layer enabled i
 - :ref:`bool<class_bool>` **enabled**
 
 +-----------+--------------------+
-| *Default* | false              |
+| *Default* | ``false``          |
 +-----------+--------------------+
 | *Setter*  | set_enabled(value) |
 +-----------+--------------------+
@@ -172,7 +167,7 @@ If ``true``, collisions will be reported.
 - :ref:`bool<class_bool>` **exclude_parent**
 
 +-----------+--------------------------------+
-| *Default* | true                           |
+| *Default* | ``true``                       |
 +-----------+--------------------------------+
 | *Setter*  | set_exclude_parent_body(value) |
 +-----------+--------------------------------+

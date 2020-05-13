@@ -13,25 +13,30 @@ PhysicsBody2D
 
 **Inherited By:** :ref:`KinematicBody2D<class_KinematicBody2D>`, :ref:`RigidBody2D<class_RigidBody2D>`, :ref:`StaticBody2D<class_StaticBody2D>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for all objects affected by physics in 2D space.
+
+Description
+-----------
+
+PhysicsBody2D is an abstract base class for implementing a physics body. All \*Body2D types inherit from it.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/physics_introduction`
 
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`   | :ref:`collision_layer<class_PhysicsBody2D_property_collision_layer>` | 1            |
-+-------------------------+----------------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`   | :ref:`collision_mask<class_PhysicsBody2D_property_collision_mask>`   | 1            |
-+-------------------------+----------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>` | input_pickable                                                       | **O:** false |
-+-------------------------+----------------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`   | :ref:`layers<class_PhysicsBody2D_property_layers>`                   |              |
-+-------------------------+----------------------------------------------------------------------+--------------+
++-------------------------+----------------------------------------------------------------------+------------------+
+| :ref:`int<class_int>`   | :ref:`collision_layer<class_PhysicsBody2D_property_collision_layer>` | ``1``            |
++-------------------------+----------------------------------------------------------------------+------------------+
+| :ref:`int<class_int>`   | :ref:`collision_mask<class_PhysicsBody2D_property_collision_mask>`   | ``1``            |
++-------------------------+----------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>` | input_pickable                                                       | **O:** ``false`` |
++-------------------------+----------------------------------------------------------------------+------------------+
+| :ref:`int<class_int>`   | :ref:`layers<class_PhysicsBody2D_property_layers>`                   |                  |
++-------------------------+----------------------------------------------------------------------+------------------+
 
 Methods
 -------
@@ -52,16 +57,6 @@ Methods
 | void                      | :ref:`set_collision_mask_bit<class_PhysicsBody2D_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-PhysicsBody2D is an abstract base class for implementing a physics body. All \*Body2D types inherit from it.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/physics_introduction`
-
 Property Descriptions
 ---------------------
 
@@ -70,7 +65,7 @@ Property Descriptions
 - :ref:`int<class_int>` **collision_layer**
 
 +-----------+----------------------------+
-| *Default* | 1                          |
+| *Default* | ``1``                      |
 +-----------+----------------------------+
 | *Setter*  | set_collision_layer(value) |
 +-----------+----------------------------+
@@ -90,7 +85,7 @@ A contact is detected if object A is in any of the layers that object B scans, o
 - :ref:`int<class_int>` **collision_mask**
 
 +-----------+---------------------------+
-| *Default* | 1                         |
+| *Default* | ``1``                     |
 +-----------+---------------------------+
 | *Setter*  | set_collision_mask(value) |
 +-----------+---------------------------+

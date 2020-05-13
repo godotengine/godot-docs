@@ -11,12 +11,14 @@ SceneState
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A script interface to a scene file's data.
+
+Description
+-----------
+
+Maintains a list of resources, nodes, exported, and overridden properties, and built-in scripts associated with a scene.
+
+This class cannot be instantiated directly, it is retrieved for a given scene as the result of :ref:`PackedScene.get_state<class_PackedScene_method_get_state>`.
 
 Methods
 -------
@@ -85,13 +87,6 @@ enum **GenEditState**:
 - **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`PackedScene.instance<class_PackedScene_method_instance>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state.
 
 **Note:** Only available in editor builds.
-
-Description
------------
-
-Maintains a list of resources, nodes, exported, and overridden properties, and built-in scripts associated with a scene.
-
-This class cannot be instantiated directly, it is retrieved for a given scene as the result of :ref:`PackedScene.get_state<class_PackedScene_method_get_state>`.
 
 Method Descriptions
 -------------------

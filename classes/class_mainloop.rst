@@ -13,12 +13,49 @@ MainLoop
 
 **Inherited By:** :ref:`SceneTree<class_SceneTree>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Abstract base class for the game's main loop.
+
+Description
+-----------
+
+``MainLoop`` is the abstract base class for a Godot project's game loop. It is inherited by :ref:`SceneTree<class_SceneTree>`, which is the default game loop implementation used in Godot projects, though it is also possible to write and use one's own ``MainLoop`` subclass instead of the scene tree.
+
+Upon the application start, a ``MainLoop`` implementation must be provided to the OS; otherwise, the application will exit. This happens automatically (and a :ref:`SceneTree<class_SceneTree>` is created) unless a main :ref:`Script<class_Script>` is provided from the command line (with e.g. ``godot -s my_loop.gd``, which should then be a ``MainLoop`` implementation.
+
+Here is an example script implementing a simple ``MainLoop``:
+
+::
+
+    extends MainLoop
+    
+    var time_elapsed = 0
+    var keys_typed = []
+    var quit = false
+    
+    func _initialize():
+        print("Initialized:")
+        print("  Starting time: %s" % str(time_elapsed))
+    
+    func _idle(delta):
+        time_elapsed += delta
+        # Return true to end the main loop.
+        return quit
+    
+    func _input_event(event):
+        # Record keys.
+        if event is InputEventKey and event.pressed and !event.echo:
+            keys_typed.append(OS.get_scancode_string(event.scancode))
+            # Quit on Escape press.
+            if event.scancode == KEY_ESCAPE:
+                quit = true
+        # Quit on any mouse click.
+        if event is InputEventMouseButton:
+            quit = true
+    
+    func _finalize():
+        print("Finalized:")
+        print("  End time: %s" % str(time_elapsed))
+        print("  Keys typed: %s" % var2str(keys_typed))
 
 Methods
 -------
@@ -60,7 +97,7 @@ Signals
 
 - **on_request_permissions_result** **(** :ref:`String<class_String>` permission, :ref:`bool<class_bool>` granted **)**
 
-Emitted when an user responds to permission request.
+Emitted when a user responds to a permission request.
 
 Constants
 ---------
@@ -147,48 +184,6 @@ Specific to the Android platform.
 
 Specific to the Android platform.
 
-Description
------------
-
-``MainLoop`` is the abstract base class for a Godot project's game loop. It is inherited by :ref:`SceneTree<class_SceneTree>`, which is the default game loop implementation used in Godot projects, though it is also possible to write and use one's own ``MainLoop`` subclass instead of the scene tree.
-
-Upon the application start, a ``MainLoop`` implementation must be provided to the OS; otherwise, the application will exit. This happens automatically (and a :ref:`SceneTree<class_SceneTree>` is created) unless a main :ref:`Script<class_Script>` is provided from the command line (with e.g. ``godot -s my_loop.gd``, which should then be a ``MainLoop`` implementation.
-
-Here is an example script implementing a simple ``MainLoop``:
-
-::
-
-    extends MainLoop
-    
-    var time_elapsed = 0
-    var keys_typed = []
-    var quit = false
-    
-    func _initialize():
-        print("Initialized:")
-        print("  Starting time: %s" % str(time_elapsed))
-    
-    func _idle(delta):
-        time_elapsed += delta
-        # Return true to end the main loop.
-        return quit
-    
-    func _input_event(event):
-        # Record keys.
-        if event is InputEventKey and event.pressed and !event.echo:
-            keys_typed.append(OS.get_scancode_string(event.scancode))
-            # Quit on Escape press.
-            if event.scancode == KEY_ESCAPE:
-                quit = true
-        # Quit on any mouse click.
-        if event is InputEventMouseButton:
-            quit = true
-    
-    func _finalize():
-        print("Finalized:")
-        print("  End time: %s" % str(time_elapsed))
-        print("  Keys typed: %s" % var2str(keys_typed))
-
 Method Descriptions
 -------------------
 
@@ -211,6 +206,8 @@ Called before the program exits.
 .. _class_MainLoop_method__global_menu_action:
 
 - void **_global_menu_action** **(** :ref:`Variant<class_Variant>` id, :ref:`Variant<class_Variant>` meta **)** virtual
+
+Called when the user performs an action in the system global menu (e.g. the Mac OS menu bar).
 
 ----
 

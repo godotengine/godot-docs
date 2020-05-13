@@ -13,12 +13,22 @@ WebRTCPeerConnection
 
 **Inherited By:** :ref:`WebRTCPeerConnectionGDNative<class_WebRTCPeerConnectionGDNative>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Interface to a WebRTC peer connection.
+
+Description
+-----------
+
+A WebRTC connection between the local computer and a remote peer. Provides an interface to connect, maintain and monitor the connection.
+
+Setting up a WebRTC connection between two peers from now on) may not seem a trivial task, but it can be broken down into 3 main steps:
+
+- The peer that wants to initiate the connection (``A`` from now on) creates an offer and send it to the other peer (``B`` from now on).
+
+- ``B`` receives the offer, generate and answer, and sends it to ``A``).
+
+- ``A`` and ``B`` then generates and exchange ICE candidates with each other.
+
+After these steps, the connection should become connected. Keep on reading or look into the tutorial for more information.
 
 Methods
 -------
@@ -100,21 +110,6 @@ enum **ConnectionState**:
 - **STATE_FAILED** = **4** --- One or more of the ICE transports failed.
 
 - **STATE_CLOSED** = **5** --- The peer connection is closed (after calling :ref:`close<class_WebRTCPeerConnection_method_close>` for example).
-
-Description
------------
-
-A WebRTC connection between the local computer and a remote peer. Provides an interface to connect, maintain and monitor the connection.
-
-Setting up a WebRTC connection between two peers from now on) may not seem a trivial task, but it can be broken down into 3 main steps:
-
-- The peer that wants to initiate the connection (``A`` from now on) creates an offer and send it to the other peer (``B`` from now on).
-
-- ``B`` receives the offer, generate and answer, and sends it to ``A``).
-
-- ``A`` and ``B`` then generates and exchange ICE candidates with each other.
-
-After these steps, the connection should become connected. Keep on reading or look into the tutorial for more information.
 
 Method Descriptions
 -------------------

@@ -11,25 +11,7 @@ CollisionShape2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Node that represents collision shape data in 2D space.
-
-Properties
-----------
-
-+-------------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`       | :ref:`disabled<class_CollisionShape2D_property_disabled>`                                 | false |
-+-------------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`       | :ref:`one_way_collision<class_CollisionShape2D_property_one_way_collision>`               | false |
-+-------------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`     | :ref:`one_way_collision_margin<class_CollisionShape2D_property_one_way_collision_margin>` | 1.0   |
-+-------------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`Shape2D<class_Shape2D>` | :ref:`shape<class_CollisionShape2D_property_shape>`                                       |       |
-+-------------------------------+-------------------------------------------------------------------------------------------+-------+
 
 Description
 -----------
@@ -41,6 +23,19 @@ Tutorials
 
 - :doc:`../tutorials/physics/physics_introduction`
 
+Properties
+----------
+
++-------------------------------+-------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`       | :ref:`disabled<class_CollisionShape2D_property_disabled>`                                 | ``false`` |
++-------------------------------+-------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`       | :ref:`one_way_collision<class_CollisionShape2D_property_one_way_collision>`               | ``false`` |
++-------------------------------+-------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`     | :ref:`one_way_collision_margin<class_CollisionShape2D_property_one_way_collision_margin>` | ``1.0``   |
++-------------------------------+-------------------------------------------------------------------------------------------+-----------+
+| :ref:`Shape2D<class_Shape2D>` | :ref:`shape<class_CollisionShape2D_property_shape>`                                       |           |
++-------------------------------+-------------------------------------------------------------------------------------------+-----------+
+
 Property Descriptions
 ---------------------
 
@@ -49,7 +44,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **disabled**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_disabled(value) |
 +-----------+---------------------+
@@ -65,7 +60,7 @@ A disabled collision shape has no effect in the world.
 - :ref:`bool<class_bool>` **one_way_collision**
 
 +-----------+--------------------------------+
-| *Default* | false                          |
+| *Default* | ``false``                      |
 +-----------+--------------------------------+
 | *Setter*  | set_one_way_collision(value)   |
 +-----------+--------------------------------+
@@ -81,7 +76,7 @@ Sets whether this collision shape should only detect collision on one side (top 
 - :ref:`float<class_float>` **one_way_collision_margin**
 
 +-----------+-------------------------------------+
-| *Default* | 1.0                                 |
+| *Default* | ``1.0``                             |
 +-----------+-------------------------------------+
 | *Setter*  | set_one_way_collision_margin(value) |
 +-----------+-------------------------------------+

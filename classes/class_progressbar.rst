@@ -11,23 +11,23 @@ ProgressBar
 
 **Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 General-purpose progress bar.
+
+Description
+-----------
+
+General-purpose progress bar. Shows fill percentage from right to left.
 
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`   | :ref:`percent_visible<class_ProgressBar_property_percent_visible>` | true        |
-+---------------------------+--------------------------------------------------------------------+-------------+
-| :ref:`int<class_int>`     | size_flags_vertical                                                | **O:** 0    |
-+---------------------------+--------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | step                                                               | **O:** 0.01 |
-+---------------------------+--------------------------------------------------------------------+-------------+
++---------------------------+--------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`   | :ref:`percent_visible<class_ProgressBar_property_percent_visible>` | ``true``        |
++---------------------------+--------------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`     | size_flags_vertical                                                | **O:** ``0``    |
++---------------------------+--------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>` | step                                                               | **O:** ``0.01`` |
++---------------------------+--------------------------------------------------------------------+-----------------+
 
 Theme Properties
 ----------------
@@ -44,11 +44,6 @@ Theme Properties
 | :ref:`Color<class_Color>`       | font_color_shadow | Color( 0, 0, 0, 1 )          |
 +---------------------------------+-------------------+------------------------------+
 
-Description
------------
-
-General-purpose progress bar. Shows fill percentage from right to left.
-
 Property Descriptions
 ---------------------
 
@@ -57,7 +52,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **percent_visible**
 
 +-----------+----------------------------+
-| *Default* | true                       |
+| *Default* | ``true``                   |
 +-----------+----------------------------+
 | *Setter*  | set_percent_visible(value) |
 +-----------+----------------------------+

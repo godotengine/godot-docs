@@ -11,12 +11,12 @@ Geometry
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
+Helper node to calculate generic geometry operations.
 
-Brief Description
------------------
+Description
+-----------
 
-
+Geometry provides users with a set of helper functions to create geometric shapes, compute intersections between shapes, and process various other geometric operations.
 
 Methods
 -------

@@ -11,11 +11,6 @@ InputDefault
 
 **Inherits:** :ref:`Input<class_Input>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Default implementation of the :ref:`Input<class_Input>` class.
 
 Description

@@ -61,7 +61,7 @@ of the animation from "default" to "run".
 
 Back in the Inspector, check the box for the *Playing* property. You should
 now see the animation playing in the viewport. However, it is a bit slow. To
-fix this, change the *Speed (FPS)* setting in the SpriteFrames panel.
+fix this, change the *Speed (FPS)* setting in the SpriteFrames panel to 10.
 
 You can add additional animations by clicking the "New Animation" button and
 adding additional images.

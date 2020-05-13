@@ -11,12 +11,17 @@ MeshInstance2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Node used for displaying a :ref:`Mesh<class_Mesh>` in 2D.
+
+Description
+-----------
+
+Node used for displaying a :ref:`Mesh<class_Mesh>` in 2D. Can be constructed from an existing :ref:`Sprite<class_Sprite>` use tool in Toolbar. Select "Sprite" then "Convert to Mesh2D", select settings in popup and press "Create Mesh2D".
+
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/2d_meshes`
 
 Properties
 ----------
@@ -36,15 +41,7 @@ Signals
 
 - **texture_changed** **(** **)**
 
-Description
------------
-
-Node used for displaying a :ref:`Mesh<class_Mesh>` in 2D. Can be constructed from an existing :ref:`Sprite<class_Sprite>` use tool in Toolbar. Select "Sprite" then "Convert to Mesh2D", select settings in popup and press "Create Mesh2D".
-
-Tutorials
----------
-
-- :doc:`../tutorials/2d/2d_meshes`
+Emitted when the :ref:`texture<class_MeshInstance2D_property_texture>` is changed.
 
 Property Descriptions
 ---------------------

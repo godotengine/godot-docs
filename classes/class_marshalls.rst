@@ -11,12 +11,12 @@ Marshalls
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Data transformation (marshalling) and encoding helpers.
+
+Description
+-----------
+
+Provides data transformation and encoding utility functions.
 
 Methods
 -------
@@ -34,11 +34,6 @@ Methods
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`               | :ref:`variant_to_base64<class_Marshalls_method_variant_to_base64>` **(** :ref:`Variant<class_Variant>` variant, :ref:`bool<class_bool>` full_objects=false **)**   |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Provides data transformation and encoding utility functions.
 
 Method Descriptions
 -------------------

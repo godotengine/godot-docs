@@ -11,23 +11,7 @@ PCKPacker
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Creates packages that can be loaded into a running project.
-
-Methods
--------
-
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`add_file<class_PCKPacker_method_add_file>` **(** :ref:`String<class_String>` pck_path, :ref:`String<class_String>` source_path **)** |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`flush<class_PCKPacker_method_flush>` **(** :ref:`bool<class_bool>` verbose=false **)**                                               |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pck_start<class_PCKPacker_method_pck_start>` **(** :ref:`String<class_String>` pck_name, :ref:`int<class_int>` alignment=0 **)**     |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -42,6 +26,17 @@ The ``PCKPacker`` is used to create packages that can be loaded into a running p
     packer.flush()
 
 The above ``PCKPacker`` creates package ``test.pck``, then adds a file named ``text.txt`` at the root of the package.
+
+Methods
+-------
+
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`add_file<class_PCKPacker_method_add_file>` **(** :ref:`String<class_String>` pck_path, :ref:`String<class_String>` source_path **)** |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`flush<class_PCKPacker_method_flush>` **(** :ref:`bool<class_bool>` verbose=false **)**                                               |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pck_start<class_PCKPacker_method_pck_start>` **(** :ref:`String<class_String>` pck_name, :ref:`int<class_int>` alignment=0 **)**     |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------

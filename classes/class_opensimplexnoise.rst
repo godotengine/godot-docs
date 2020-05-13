@@ -11,48 +11,7 @@ OpenSimplexNoise
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Noise generator based on Open Simplex.
-
-Properties
-----------
-
-+---------------------------+-----------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`lacunarity<class_OpenSimplexNoise_property_lacunarity>`   | 2.0  |
-+---------------------------+-----------------------------------------------------------------+------+
-| :ref:`int<class_int>`     | :ref:`octaves<class_OpenSimplexNoise_property_octaves>`         | 3    |
-+---------------------------+-----------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`period<class_OpenSimplexNoise_property_period>`           | 64.0 |
-+---------------------------+-----------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`persistence<class_OpenSimplexNoise_property_persistence>` | 0.5  |
-+---------------------------+-----------------------------------------------------------------+------+
-| :ref:`int<class_int>`     | :ref:`seed<class_OpenSimplexNoise_property_seed>`               | 0    |
-+---------------------------+-----------------------------------------------------------------+------+
-
-Methods
--------
-
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_Image>` | :ref:`get_image<class_OpenSimplexNoise_method_get_image>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height **)**                                                                |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_noise_1d<class_OpenSimplexNoise_method_get_noise_1d>` **(** :ref:`float<class_float>` x **)**                                                                                        |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_noise_2d<class_OpenSimplexNoise_method_get_noise_2d>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**                                                           |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_noise_2dv<class_OpenSimplexNoise_method_get_noise_2dv>` **(** :ref:`Vector2<class_Vector2>` pos **)**                                                                                |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_noise_3d<class_OpenSimplexNoise_method_get_noise_3d>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)**                              |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_noise_3dv<class_OpenSimplexNoise_method_get_noise_3dv>` **(** :ref:`Vector3<class_Vector3>` pos **)**                                                                                |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_noise_4d<class_OpenSimplexNoise_method_get_noise_4d>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)** |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_Image>` | :ref:`get_seamless_image<class_OpenSimplexNoise_method_get_seamless_image>` **(** :ref:`int<class_int>` size **)**                                                                             |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -75,6 +34,42 @@ This resource allows you to configure and sample a fractal noise space. Here is 
     print(noise.get_noise_3d(0.5, 3.0, 15.0))
     print(noise.get_noise_4d(0.5, 1.9, 4.7, 0.0))
 
+Properties
+----------
+
++---------------------------+-----------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`lacunarity<class_OpenSimplexNoise_property_lacunarity>`   | ``2.0``  |
++---------------------------+-----------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`octaves<class_OpenSimplexNoise_property_octaves>`         | ``3``    |
++---------------------------+-----------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`period<class_OpenSimplexNoise_property_period>`           | ``64.0`` |
++---------------------------+-----------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`persistence<class_OpenSimplexNoise_property_persistence>` | ``0.5``  |
++---------------------------+-----------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`seed<class_OpenSimplexNoise_property_seed>`               | ``0``    |
++---------------------------+-----------------------------------------------------------------+----------+
+
+Methods
+-------
+
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Image<class_Image>` | :ref:`get_image<class_OpenSimplexNoise_method_get_image>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height **)**                                                                |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_noise_1d<class_OpenSimplexNoise_method_get_noise_1d>` **(** :ref:`float<class_float>` x **)**                                                                                        |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_noise_2d<class_OpenSimplexNoise_method_get_noise_2d>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**                                                           |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_noise_2dv<class_OpenSimplexNoise_method_get_noise_2dv>` **(** :ref:`Vector2<class_Vector2>` pos **)**                                                                                |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_noise_3d<class_OpenSimplexNoise_method_get_noise_3d>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)**                              |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_noise_3dv<class_OpenSimplexNoise_method_get_noise_3dv>` **(** :ref:`Vector3<class_Vector3>` pos **)**                                                                                |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_noise_4d<class_OpenSimplexNoise_method_get_noise_4d>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)** |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Image<class_Image>` | :ref:`get_seamless_image<class_OpenSimplexNoise_method_get_seamless_image>` **(** :ref:`int<class_int>` size **)**                                                                             |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Property Descriptions
 ---------------------
 
@@ -83,7 +78,7 @@ Property Descriptions
 - :ref:`float<class_float>` **lacunarity**
 
 +-----------+-----------------------+
-| *Default* | 2.0                   |
+| *Default* | ``2.0``               |
 +-----------+-----------------------+
 | *Setter*  | set_lacunarity(value) |
 +-----------+-----------------------+
@@ -99,7 +94,7 @@ Difference in period between :ref:`octaves<class_OpenSimplexNoise_property_octav
 - :ref:`int<class_int>` **octaves**
 
 +-----------+--------------------+
-| *Default* | 3                  |
+| *Default* | ``3``              |
 +-----------+--------------------+
 | *Setter*  | set_octaves(value) |
 +-----------+--------------------+
@@ -115,7 +110,7 @@ Number of OpenSimplex noise layers that are sampled to get the fractal noise.
 - :ref:`float<class_float>` **period**
 
 +-----------+-------------------+
-| *Default* | 64.0              |
+| *Default* | ``64.0``          |
 +-----------+-------------------+
 | *Setter*  | set_period(value) |
 +-----------+-------------------+
@@ -131,7 +126,7 @@ Period of the base octave. A lower period results in a higher-frequency noise (m
 - :ref:`float<class_float>` **persistence**
 
 +-----------+------------------------+
-| *Default* | 0.5                    |
+| *Default* | ``0.5``                |
 +-----------+------------------------+
 | *Setter*  | set_persistence(value) |
 +-----------+------------------------+
@@ -147,7 +142,7 @@ Contribution factor of the different octaves. A ``persistence`` value of 1 means
 - :ref:`int<class_int>` **seed**
 
 +-----------+-----------------+
-| *Default* | 0               |
+| *Default* | ``0``           |
 +-----------+-----------------+
 | *Setter*  | set_seed(value) |
 +-----------+-----------------+

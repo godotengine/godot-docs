@@ -11,19 +11,14 @@ SpatialVelocityTracker
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+-------------------------+-------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`track_physics_step<class_SpatialVelocityTracker_property_track_physics_step>` | false |
-+-------------------------+-------------------------------------------------------------------------------------+-------+
++-------------------------+-------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`track_physics_step<class_SpatialVelocityTracker_property_track_physics_step>` | ``false`` |
++-------------------------+-------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -44,7 +39,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **track_physics_step**
 
 +-----------+-------------------------------+
-| *Default* | false                         |
+| *Default* | ``false``                     |
 +-----------+-------------------------------+
 | *Setter*  | set_track_physics_step(value) |
 +-----------+-------------------------------+

@@ -11,21 +11,23 @@ CameraFeed
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A camera feed gives you access to a single physical camera attached to your device.
+
+Description
+-----------
+
+A camera feed gives you access to a single physical camera attached to your device. When enabled, Godot will start capturing frames from the camera which can then be used.
+
+**Note:** Many cameras will return YCbCr images which are split into two textures and need to be combined in a shader. Godot does this automatically for you if you set the environment to show the camera image in the background.
 
 Properties
 ----------
 
-+---------------------------------------+-----------------------------------------------------------------+----------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`feed_is_active<class_CameraFeed_property_feed_is_active>` | false                            |
-+---------------------------------------+-----------------------------------------------------------------+----------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`feed_transform<class_CameraFeed_property_feed_transform>` | Transform2D( 1, 0, 0, -1, 0, 1 ) |
-+---------------------------------------+-----------------------------------------------------------------+----------------------------------+
++---------------------------------------+-----------------------------------------------------------------+--------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`feed_is_active<class_CameraFeed_property_feed_is_active>` | ``false``                            |
++---------------------------------------+-----------------------------------------------------------------+--------------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`feed_transform<class_CameraFeed_property_feed_transform>` | ``Transform2D( 1, 0, 0, -1, 0, 1 )`` |
++---------------------------------------+-----------------------------------------------------------------+--------------------------------------+
 
 Methods
 -------
@@ -79,13 +81,6 @@ enum **FeedPosition**:
 
 - **FEED_BACK** = **2** --- Camera is mounted at the back of the device.
 
-Description
------------
-
-A camera feed gives you access to a single physical camera attached to your device. When enabled, Godot will start capturing frames from the camera which can then be used.
-
-**Note:** Many cameras will return YCbCr images which are split into two textures and need to be combined in a shader. Godot does this automatically for you if you set the environment to show the camera image in the background.
-
 Property Descriptions
 ---------------------
 
@@ -94,7 +89,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **feed_is_active**
 
 +-----------+-------------------+
-| *Default* | false             |
+| *Default* | ``false``         |
 +-----------+-------------------+
 | *Setter*  | set_active(value) |
 +-----------+-------------------+
@@ -109,13 +104,13 @@ If ``true``, the feed is active.
 
 - :ref:`Transform2D<class_Transform2D>` **feed_transform**
 
-+-----------+----------------------------------+
-| *Default* | Transform2D( 1, 0, 0, -1, 0, 1 ) |
-+-----------+----------------------------------+
-| *Setter*  | set_transform(value)             |
-+-----------+----------------------------------+
-| *Getter*  | get_transform()                  |
-+-----------+----------------------------------+
++-----------+--------------------------------------+
+| *Default* | ``Transform2D( 1, 0, 0, -1, 0, 1 )`` |
++-----------+--------------------------------------+
+| *Setter*  | set_transform(value)                 |
++-----------+--------------------------------------+
+| *Getter*  | get_transform()                      |
++-----------+--------------------------------------+
 
 The transform applied to the camera's image.
 

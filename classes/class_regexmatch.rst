@@ -11,23 +11,23 @@ RegExMatch
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Contains the results of a :ref:`RegEx<class_RegEx>` search.
+
+Description
+-----------
+
+Contains the results of a single :ref:`RegEx<class_RegEx>` match returned by :ref:`RegEx.search<class_RegEx_method_search>` and :ref:`RegEx.search_all<class_RegEx_method_search_all>`. It can be used to find the position and range of the match and its capturing groups, and it can extract its substring for you.
 
 Properties
 ----------
 
-+-------------------------------------+---------------------------------------------------+------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`names<class_RegExMatch_property_names>`     | {}   |
-+-------------------------------------+---------------------------------------------------+------+
-| :ref:`Array<class_Array>`           | :ref:`strings<class_RegExMatch_property_strings>` | [  ] |
-+-------------------------------------+---------------------------------------------------+------+
-| :ref:`String<class_String>`         | :ref:`subject<class_RegExMatch_property_subject>` | ""   |
-+-------------------------------------+---------------------------------------------------+------+
++-------------------------------------+---------------------------------------------------+----------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`names<class_RegExMatch_property_names>`     | ``{}``   |
++-------------------------------------+---------------------------------------------------+----------+
+| :ref:`Array<class_Array>`           | :ref:`strings<class_RegExMatch_property_strings>` | ``[  ]`` |
++-------------------------------------+---------------------------------------------------+----------+
+| :ref:`String<class_String>`         | :ref:`subject<class_RegExMatch_property_subject>` | ``""``   |
++-------------------------------------+---------------------------------------------------+----------+
 
 Methods
 -------
@@ -42,11 +42,6 @@ Methods
 | :ref:`String<class_String>` | :ref:`get_string<class_RegExMatch_method_get_string>` **(** :ref:`Variant<class_Variant>` name=0 **)** const |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-Contains the results of a single :ref:`RegEx<class_RegEx>` match returned by :ref:`RegEx.search<class_RegEx_method_search>` and :ref:`RegEx.search_all<class_RegEx_method_search_all>`. It can be used to find the position and range of the match and its capturing groups, and it can extract its substring for you.
-
 Property Descriptions
 ---------------------
 
@@ -55,7 +50,7 @@ Property Descriptions
 - :ref:`Dictionary<class_Dictionary>` **names**
 
 +-----------+-------------+
-| *Default* | {}          |
+| *Default* | ``{}``      |
 +-----------+-------------+
 | *Getter*  | get_names() |
 +-----------+-------------+
@@ -69,7 +64,7 @@ A dictionary of named groups and its corresponding group number. Only groups wit
 - :ref:`Array<class_Array>` **strings**
 
 +-----------+---------------+
-| *Default* | [  ]          |
+| *Default* | ``[  ]``      |
 +-----------+---------------+
 | *Getter*  | get_strings() |
 +-----------+---------------+
@@ -83,7 +78,7 @@ An :ref:`Array<class_Array>` of the match and its capturing groups.
 - :ref:`String<class_String>` **subject**
 
 +-----------+---------------+
-| *Default* | ""            |
+| *Default* | ``""``        |
 +-----------+---------------+
 | *Getter*  | get_subject() |
 +-----------+---------------+

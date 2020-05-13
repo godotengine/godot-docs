@@ -9,23 +9,23 @@
 Transform2D
 ===========
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 2D transformation (3×2 matrix).
+
+Description
+-----------
+
+Represents one or many transformations in 2D space such as translation, rotation, or scaling. It consists of two :ref:`x<class_Transform2D_property_x>` and :ref:`y<class_Transform2D_property_y>` :ref:`Vector2<class_Vector2>`\ s and an :ref:`origin<class_Transform2D_property_origin>`. It is similar to a 3×2 matrix.
 
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`origin<class_Transform2D_property_origin>` | Vector2( 0, 0 ) |
-+-------------------------------+--------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`x<class_Transform2D_property_x>`           | Vector2( 1, 0 ) |
-+-------------------------------+--------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`y<class_Transform2D_property_y>`           | Vector2( 0, 1 ) |
-+-------------------------------+--------------------------------------------------+-----------------+
++-------------------------------+--------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`origin<class_Transform2D_property_origin>` | ``Vector2( 0, 0 )`` |
++-------------------------------+--------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`x<class_Transform2D_property_x>`           | ``Vector2( 1, 0 )`` |
++-------------------------------+--------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`y<class_Transform2D_property_y>`           | ``Vector2( 0, 1 )`` |
++-------------------------------+--------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -83,11 +83,6 @@ Constants
 
 - **FLIP_Y** = **Transform2D( 1, 0, 0, -1, 0, 0 )** --- ``Transform2D`` with mirroring applied parallel to the Y axis.
 
-Description
------------
-
-Represents one or many transformations in 2D space such as translation, rotation, or scaling. It consists of two :ref:`x<class_Transform2D_property_x>` and :ref:`y<class_Transform2D_property_y>` :ref:`Vector2<class_Vector2>`\ s and an :ref:`origin<class_Transform2D_property_origin>`. It is similar to a 3×2 matrix.
-
 Property Descriptions
 ---------------------
 
@@ -95,9 +90,9 @@ Property Descriptions
 
 - :ref:`Vector2<class_Vector2>` **origin**
 
-+-----------+-----------------+
-| *Default* | Vector2( 0, 0 ) |
-+-----------+-----------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 0, 0 )`` |
++-----------+---------------------+
 
 The transform's translation offset.
 
@@ -107,9 +102,9 @@ The transform's translation offset.
 
 - :ref:`Vector2<class_Vector2>` **x**
 
-+-----------+-----------------+
-| *Default* | Vector2( 1, 0 ) |
-+-----------+-----------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 1, 0 )`` |
++-----------+---------------------+
 
 The X axis of 2×2 basis matrix containing 2 :ref:`Vector2<class_Vector2>`\ s as its columns: X axis and Y axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
 
@@ -119,9 +114,9 @@ The X axis of 2×2 basis matrix containing 2 :ref:`Vector2<class_Vector2>`\ s as
 
 - :ref:`Vector2<class_Vector2>` **y**
 
-+-----------+-----------------+
-| *Default* | Vector2( 0, 1 ) |
-+-----------+-----------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 0, 1 )`` |
++-----------+---------------------+
 
 The Y axis of 2×2 basis matrix containing 2 :ref:`Vector2<class_Vector2>`\ s as its columns: X axis and Y axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
 

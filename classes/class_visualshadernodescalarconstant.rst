@@ -11,21 +11,16 @@ VisualShaderNodeScalarConstant
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`constant<class_VisualShaderNodeScalarConstant_property_constant>` | 0.0         |
-+---------------------------+-------------------------------------------------------------------------+-------------+
-| :ref:`Array<class_Array>` | default_input_values                                                    | **O:** [  ] |
-+---------------------------+-------------------------------------------------------------------------+-------------+
++---------------------------+-------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>` | :ref:`constant<class_VisualShaderNodeScalarConstant_property_constant>` | ``0.0``         |
++---------------------------+-------------------------------------------------------------------------+-----------------+
+| :ref:`Array<class_Array>` | default_input_values                                                    | **O:** ``[  ]`` |
++---------------------------+-------------------------------------------------------------------------+-----------------+
 
 Property Descriptions
 ---------------------
@@ -35,7 +30,7 @@ Property Descriptions
 - :ref:`float<class_float>` **constant**
 
 +-----------+---------------------+
-| *Default* | 0.0                 |
+| *Default* | ``0.0``             |
 +-----------+---------------------+
 | *Setter*  | set_constant(value) |
 +-----------+---------------------+

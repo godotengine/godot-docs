@@ -11,12 +11,17 @@ PhysicsDirectSpaceState
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Direct access object to a space in the :ref:`PhysicsServer<class_PhysicsServer>`.
+
+Description
+-----------
+
+Direct access object to a space in the :ref:`PhysicsServer<class_PhysicsServer>`. It's used mainly to do queries against objects and areas residing in a given space.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/ray-casting`
 
 Methods
 -------
@@ -32,16 +37,6 @@ Methods
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`           | :ref:`intersect_shape<class_PhysicsDirectSpaceState_method_intersect_shape>` **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape, :ref:`int<class_int>` max_results=32 **)**                                                                                                                                             |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Direct access object to a space in the :ref:`PhysicsServer<class_PhysicsServer>`. It's used mainly to do queries against objects and areas residing in a given space.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/ray-casting`
 
 Method Descriptions
 -------------------

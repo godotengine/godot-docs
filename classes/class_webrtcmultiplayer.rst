@@ -11,21 +11,25 @@ WebRTCMultiplayer
 
 **Inherits:** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A simple interface to create a peer-to-peer mesh network composed of :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` that is compatible with the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
+
+Description
+-----------
+
+This class constructs a full mesh of :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` (one connection for each peer) that can be used as a :ref:`MultiplayerAPI.network_peer<class_MultiplayerAPI_property_network_peer>`.
+
+You can add each :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` via :ref:`add_peer<class_WebRTCMultiplayer_method_add_peer>` or remove them via :ref:`remove_peer<class_WebRTCMultiplayer_method_remove_peer>`. Peers must be added in :ref:`WebRTCPeerConnection.STATE_NEW<class_WebRTCPeerConnection_constant_STATE_NEW>` state to allow it to create the appropriate channels. This class will not create offers nor set descriptions, it will only poll them, and notify connections and disconnections.
+
+:ref:`NetworkedMultiplayerPeer.connection_succeeded<class_NetworkedMultiplayerPeer_signal_connection_succeeded>` and :ref:`NetworkedMultiplayerPeer.server_disconnected<class_NetworkedMultiplayerPeer_signal_server_disconnected>` will not be emitted unless ``server_compatibility`` is ``true`` in :ref:`initialize<class_WebRTCMultiplayer_method_initialize>`. Beside that data transfer works like in a :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`.
 
 Properties
 ----------
 
-+-----------------------------------------------------------------+------------------------+--------------+
-| :ref:`bool<class_bool>`                                         | refuse_new_connections | **O:** false |
-+-----------------------------------------------------------------+------------------------+--------------+
-| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | transfer_mode          | **O:** 2     |
-+-----------------------------------------------------------------+------------------------+--------------+
++-----------------------------------------------------------------+------------------------+------------------+
+| :ref:`bool<class_bool>`                                         | refuse_new_connections | **O:** ``false`` |
++-----------------------------------------------------------------+------------------------+------------------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | transfer_mode          | **O:** ``2``     |
++-----------------------------------------------------------------+------------------------+------------------+
 
 Methods
 -------
@@ -45,15 +49,6 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`remove_peer<class_WebRTCMultiplayer_method_remove_peer>` **(** :ref:`int<class_int>` peer_id **)**                                                                                                      |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-This class constructs a full mesh of :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` (one connection for each peer) that can be used as a :ref:`MultiplayerAPI.network_peer<class_MultiplayerAPI_property_network_peer>`.
-
-You can add each :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` via :ref:`add_peer<class_WebRTCMultiplayer_method_add_peer>` or remove them via :ref:`remove_peer<class_WebRTCMultiplayer_method_remove_peer>`. Peers must be added in :ref:`WebRTCPeerConnection.STATE_NEW<class_WebRTCPeerConnection_constant_STATE_NEW>` state to allow it to create the appropriate channels. This class will not create offers nor set descriptions, it will only poll them, and notify connections and disconnections.
-
-:ref:`NetworkedMultiplayerPeer.connection_succeeded<class_NetworkedMultiplayerPeer_signal_connection_succeeded>` and :ref:`NetworkedMultiplayerPeer.server_disconnected<class_NetworkedMultiplayerPeer_signal_server_disconnected>` will not be emitted unless ``server_compatibility`` is ``true`` in :ref:`initialize<class_WebRTCMultiplayer_method_initialize>`. Beside that data transfer works like in a :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`.
 
 Method Descriptions
 -------------------

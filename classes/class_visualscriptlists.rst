@@ -13,12 +13,12 @@ VisualScriptLists
 
 **Inherited By:** :ref:`VisualScriptComposeArray<class_VisualScriptComposeArray>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A Visual Script virtual class for in-graph editable nodes.
+
+Description
+-----------
+
+A Visual Script virtual class that defines the shape and the default behaviour of the nodes that have to be in-graph editable nodes.
 
 Methods
 -------
@@ -40,11 +40,6 @@ Methods
 +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`set_output_data_port_type<class_VisualScriptLists_method_set_output_data_port_type>` **(** :ref:`int<class_int>` index, :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type **)**                         |
 +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A Visual Script virtual class that defines the shape and the default behaviour of the nodes that have to be in-graph editable nodes.
 
 Method Descriptions
 -------------------

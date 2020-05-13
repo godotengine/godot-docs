@@ -11,19 +11,7 @@ JavaScript
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Singleton that connects the engine with the browser's JavaScript context in HTML5 export.
-
-Methods
--------
-
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`eval<class_JavaScript_method_eval>` **(** :ref:`String<class_String>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)** |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -34,6 +22,13 @@ Tutorials
 ---------
 
 - `#calling-javascript-from-script <../getting_started/workflow/export/exporting_for_web.html#calling-javascript-from-script>`_ in :doc:`../getting_started/workflow/export/exporting_for_web`
+
+Methods
+-------
+
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`eval<class_JavaScript_method_eval>` **(** :ref:`String<class_String>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)** |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------

@@ -11,77 +11,7 @@ UndoRedo
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Helper to manage undo/redo operations in the editor or custom tools.
-
-Methods
--------
-
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`add_do_method<class_UndoRedo_method_add_do_method>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, ... **)** vararg                                    |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_do_property<class_UndoRedo_method_add_do_property>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_do_reference<class_UndoRedo_method_add_do_reference>` **(** :ref:`Object<class_Object>` object **)**                                                                              |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, ... **)** vararg                                |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_undo_property<class_UndoRedo_method_add_undo_property>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)** |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_undo_reference<class_UndoRedo_method_add_undo_reference>` **(** :ref:`Object<class_Object>` object **)**                                                                          |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`clear_history<class_UndoRedo_method_clear_history>` **(** :ref:`bool<class_bool>` increase_version=true **)**                                                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`commit_action<class_UndoRedo_method_commit_action>` **(** **)**                                                                                                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`create_action<class_UndoRedo_method_create_action>` **(** :ref:`String<class_String>` name, :ref:`MergeMode<enum_UndoRedo_MergeMode>` merge_mode=0 **)**                              |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_current_action_name<class_UndoRedo_method_get_current_action_name>` **(** **)** const                                                                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_version<class_UndoRedo_method_get_version>` **(** **)** const                                                                                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`has_redo<class_UndoRedo_method_has_redo>` **(** **)**                                                                                                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`has_undo<class_UndoRedo_method_has_undo>` **(** **)**                                                                                                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_commiting_action<class_UndoRedo_method_is_commiting_action>` **(** **)** const                                                                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`redo<class_UndoRedo_method_redo>` **(** **)**                                                                                                                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`undo<class_UndoRedo_method_undo>` **(** **)**                                                                                                                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Signals
--------
-
-.. _class_UndoRedo_signal_version_changed:
-
-- **version_changed** **(** **)**
-
-Called when :ref:`undo<class_UndoRedo_method_undo>` or :ref:`redo<class_UndoRedo_method_redo>` was called.
-
-Enumerations
-------------
-
-.. _enum_UndoRedo_MergeMode:
-
-.. _class_UndoRedo_constant_MERGE_DISABLE:
-
-.. _class_UndoRedo_constant_MERGE_ENDS:
-
-.. _class_UndoRedo_constant_MERGE_ALL:
-
-enum **MergeMode**:
-
-- **MERGE_DISABLE** = **0** --- Makes "do"/"undo" operations stay in separate actions.
-
-- **MERGE_ENDS** = **1** --- Makes so that the action's "do" operation is from the first action created and the "undo" operation is from the last subsequent action with the same name.
-
-- **MERGE_ALL** = **2** --- Makes subsequent actions with the same name be merged into one.
 
 Description
 -----------
@@ -115,12 +45,77 @@ Here's an example on how to add an action to the Godot editor's own ``UndoRedo``
 
 If you don't need to register a method, you can leave :ref:`add_do_method<class_UndoRedo_method_add_do_method>` and :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>` out; the same goes for properties. You can also register more than one method/property.
 
+Methods
+-------
+
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`add_do_method<class_UndoRedo_method_add_do_method>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, ... **)** vararg                                    |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`add_do_property<class_UndoRedo_method_add_do_property>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**     |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`add_do_reference<class_UndoRedo_method_add_do_reference>` **(** :ref:`Object<class_Object>` object **)**                                                                              |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, ... **)** vararg                                |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`add_undo_property<class_UndoRedo_method_add_undo_property>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)** |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`add_undo_reference<class_UndoRedo_method_add_undo_reference>` **(** :ref:`Object<class_Object>` object **)**                                                                          |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`clear_history<class_UndoRedo_method_clear_history>` **(** :ref:`bool<class_bool>` increase_version=true **)**                                                                         |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`commit_action<class_UndoRedo_method_commit_action>` **(** **)**                                                                                                                       |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`create_action<class_UndoRedo_method_create_action>` **(** :ref:`String<class_String>` name, :ref:`MergeMode<enum_UndoRedo_MergeMode>` merge_mode=0 **)**                              |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_current_action_name<class_UndoRedo_method_get_current_action_name>` **(** **)** const                                                                                             |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`get_version<class_UndoRedo_method_get_version>` **(** **)** const                                                                                                                     |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`has_redo<class_UndoRedo_method_has_redo>` **(** **)**                                                                                                                                 |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`has_undo<class_UndoRedo_method_has_undo>` **(** **)**                                                                                                                                 |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`is_commiting_action<class_UndoRedo_method_is_commiting_action>` **(** **)** const                                                                                                     |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`redo<class_UndoRedo_method_redo>` **(** **)**                                                                                                                                         |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`undo<class_UndoRedo_method_undo>` **(** **)**                                                                                                                                         |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+.. _class_UndoRedo_signal_version_changed:
+
+- **version_changed** **(** **)**
+
+Called when :ref:`undo<class_UndoRedo_method_undo>` or :ref:`redo<class_UndoRedo_method_redo>` was called.
+
+Enumerations
+------------
+
+.. _enum_UndoRedo_MergeMode:
+
+.. _class_UndoRedo_constant_MERGE_DISABLE:
+
+.. _class_UndoRedo_constant_MERGE_ENDS:
+
+.. _class_UndoRedo_constant_MERGE_ALL:
+
+enum **MergeMode**:
+
+- **MERGE_DISABLE** = **0** --- Makes "do"/"undo" operations stay in separate actions.
+
+- **MERGE_ENDS** = **1** --- Makes so that the action's "do" operation is from the first action created and the "undo" operation is from the last subsequent action with the same name.
+
+- **MERGE_ALL** = **2** --- Makes subsequent actions with the same name be merged into one.
+
 Method Descriptions
 -------------------
 
 .. _class_UndoRedo_method_add_do_method:
 
-- :ref:`Variant<class_Variant>` **add_do_method** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, ... **)** vararg
+- void **add_do_method** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, ... **)** vararg
 
 Register a method that will be called when the action is committed.
 
@@ -144,7 +139,7 @@ Register a reference for "do" that will be erased if the "do" history is lost. T
 
 .. _class_UndoRedo_method_add_undo_method:
 
-- :ref:`Variant<class_Variant>` **add_undo_method** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, ... **)** vararg
+- void **add_undo_method** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, ... **)** vararg
 
 Register a method that will be called when the action is undone.
 

@@ -11,19 +11,21 @@ ButtonGroup
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Group of Buttons.
+
+Description
+-----------
+
+Group of :ref:`Button<class_Button>`. All direct and indirect children buttons become radios. Only one allows being pressed.
+
+:ref:`BaseButton.toggle_mode<class_BaseButton_property_toggle_mode>` should be ``true``.
 
 Properties
 ----------
 
-+-------------------------+-------------------------+-------------+
-| :ref:`bool<class_bool>` | resource_local_to_scene | **O:** true |
-+-------------------------+-------------------------+-------------+
++-------------------------+-------------------------+-----------------+
+| :ref:`bool<class_bool>` | resource_local_to_scene | **O:** ``true`` |
++-------------------------+-------------------------+-----------------+
 
 Methods
 -------
@@ -33,13 +35,6 @@ Methods
 +-------------------------------------+------------------------------------------------------------------------------------+
 | :ref:`BaseButton<class_BaseButton>` | :ref:`get_pressed_button<class_ButtonGroup_method_get_pressed_button>` **(** **)** |
 +-------------------------------------+------------------------------------------------------------------------------------+
-
-Description
------------
-
-Group of :ref:`Button<class_Button>`. All direct and indirect children buttons become radios. Only one allows being pressed.
-
-:ref:`BaseButton.toggle_mode<class_BaseButton_property_toggle_mode>` should be ``true``.
 
 Method Descriptions
 -------------------

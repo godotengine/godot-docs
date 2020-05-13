@@ -13,21 +13,21 @@ BoxContainer
 
 **Inherited By:** :ref:`ColorPicker<class_ColorPicker>`, :ref:`HBoxContainer<class_HBoxContainer>`, :ref:`VBoxContainer<class_VBoxContainer>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for box containers.
+
+Description
+-----------
+
+Arranges child controls vertically or horizontally, and rearranges the controls automatically when their minimum size changes.
 
 Properties
 ----------
 
-+-----------------------------------------------+---------------------------------------------------------+----------+
-| :ref:`AlignMode<enum_BoxContainer_AlignMode>` | :ref:`alignment<class_BoxContainer_property_alignment>` | 0        |
-+-----------------------------------------------+---------------------------------------------------------+----------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>`  | mouse_filter                                            | **O:** 1 |
-+-----------------------------------------------+---------------------------------------------------------+----------+
++-----------------------------------------------+---------------------------------------------------------+--------------+
+| :ref:`AlignMode<enum_BoxContainer_AlignMode>` | :ref:`alignment<class_BoxContainer_property_alignment>` | ``0``        |
++-----------------------------------------------+---------------------------------------------------------+--------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>`  | mouse_filter                                            | **O:** ``1`` |
++-----------------------------------------------+---------------------------------------------------------+--------------+
 
 Methods
 -------
@@ -55,11 +55,6 @@ enum **AlignMode**:
 
 - **ALIGN_END** = **2** --- Aligns children with the end of the container.
 
-Description
------------
-
-Arranges child controls vertically or horizontally, and rearranges the controls automatically when their minimum size changes.
-
 Property Descriptions
 ---------------------
 
@@ -68,7 +63,7 @@ Property Descriptions
 - :ref:`AlignMode<enum_BoxContainer_AlignMode>` **alignment**
 
 +-----------+----------------------+
-| *Default* | 0                    |
+| *Default* | ``0``                |
 +-----------+----------------------+
 | *Setter*  | set_alignment(value) |
 +-----------+----------------------+

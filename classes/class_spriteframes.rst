@@ -11,12 +11,12 @@ SpriteFrames
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Sprite frame library for AnimatedSprite.
+
+Description
+-----------
+
+Sprite frame library for :ref:`AnimatedSprite<class_AnimatedSprite>`. Contains frames and animation data for playback.
 
 Properties
 ----------
@@ -62,17 +62,14 @@ Methods
 | void                                          | :ref:`set_frame<class_SpriteFrames_method_set_frame>` **(** :ref:`String<class_String>` anim, :ref:`int<class_int>` idx, :ref:`Texture<class_Texture>` txt **)**              |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-Sprite frame library for :ref:`AnimatedSprite<class_AnimatedSprite>`. Contains frames and animation data for playback.
-
 Property Descriptions
 ---------------------
 
 .. _class_SpriteFrames_property_frames:
 
 - :ref:`Array<class_Array>` **frames**
+
+Compatibility property, always equals to an empty array.
 
 Method Descriptions
 -------------------

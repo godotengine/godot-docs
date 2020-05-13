@@ -11,27 +11,7 @@ StaticBody
 
 **Inherits:** :ref:`PhysicsBody<class_PhysicsBody>` **<** :ref:`CollisionObject<class_CollisionObject>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Static body for 3D physics.
-
-Properties
-----------
-
-+-----------------------------------------------+---------------------------------------------------------------------------------------+--------------------+
-| :ref:`float<class_float>`                     | :ref:`bounce<class_StaticBody_property_bounce>`                                       |                    |
-+-----------------------------------------------+---------------------------------------------------------------------------------------+--------------------+
-| :ref:`Vector3<class_Vector3>`                 | :ref:`constant_angular_velocity<class_StaticBody_property_constant_angular_velocity>` | Vector3( 0, 0, 0 ) |
-+-----------------------------------------------+---------------------------------------------------------------------------------------+--------------------+
-| :ref:`Vector3<class_Vector3>`                 | :ref:`constant_linear_velocity<class_StaticBody_property_constant_linear_velocity>`   | Vector3( 0, 0, 0 ) |
-+-----------------------------------------------+---------------------------------------------------------------------------------------+--------------------+
-| :ref:`float<class_float>`                     | :ref:`friction<class_StaticBody_property_friction>`                                   |                    |
-+-----------------------------------------------+---------------------------------------------------------------------------------------+--------------------+
-| :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_StaticBody_property_physics_material_override>` |                    |
-+-----------------------------------------------+---------------------------------------------------------------------------------------+--------------------+
 
 Description
 -----------
@@ -41,6 +21,21 @@ Static body for 3D physics. A static body is a simple body that is not intended 
 A static body can also be animated by using simulated motion mode. This is useful for implementing functionalities such as moving platforms. When this mode is active, the body can be animated and automatically computes linear and angular velocity to apply in that frame and to influence other bodies.
 
 Alternatively, a constant linear or angular velocity can be set for the static body, so even if it doesn't move, it affects other bodies as if it was moving (this is useful for simulating conveyor belts or conveyor wheels).
+
+Properties
+----------
+
++-----------------------------------------------+---------------------------------------------------------------------------------------+------------------------+
+| :ref:`float<class_float>`                     | :ref:`bounce<class_StaticBody_property_bounce>`                                       |                        |
++-----------------------------------------------+---------------------------------------------------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>`                 | :ref:`constant_angular_velocity<class_StaticBody_property_constant_angular_velocity>` | ``Vector3( 0, 0, 0 )`` |
++-----------------------------------------------+---------------------------------------------------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>`                 | :ref:`constant_linear_velocity<class_StaticBody_property_constant_linear_velocity>`   | ``Vector3( 0, 0, 0 )`` |
++-----------------------------------------------+---------------------------------------------------------------------------------------+------------------------+
+| :ref:`float<class_float>`                     | :ref:`friction<class_StaticBody_property_friction>`                                   |                        |
++-----------------------------------------------+---------------------------------------------------------------------------------------+------------------------+
+| :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_StaticBody_property_physics_material_override>` |                        |
++-----------------------------------------------+---------------------------------------------------------------------------------------+------------------------+
 
 Property Descriptions
 ---------------------
@@ -66,7 +61,7 @@ Deprecated, use :ref:`PhysicsMaterial.bounce<class_PhysicsMaterial_property_boun
 - :ref:`Vector3<class_Vector3>` **constant_angular_velocity**
 
 +-----------+--------------------------------------+
-| *Default* | Vector3( 0, 0, 0 )                   |
+| *Default* | ``Vector3( 0, 0, 0 )``               |
 +-----------+--------------------------------------+
 | *Setter*  | set_constant_angular_velocity(value) |
 +-----------+--------------------------------------+
@@ -82,7 +77,7 @@ The body's constant angular velocity. This does not rotate the body, but affects
 - :ref:`Vector3<class_Vector3>` **constant_linear_velocity**
 
 +-----------+-------------------------------------+
-| *Default* | Vector3( 0, 0, 0 )                  |
+| *Default* | ``Vector3( 0, 0, 0 )``              |
 +-----------+-------------------------------------+
 | *Setter*  | set_constant_linear_velocity(value) |
 +-----------+-------------------------------------+

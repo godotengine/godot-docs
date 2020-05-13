@@ -11,21 +11,7 @@ VisualScriptLocalVar
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Gets a local variable's value.
-
-Properties
-----------
-
-+-----------------------------------------------------+---------------------------------------------------------------+-------------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptLocalVar_property_type>`         | 0           |
-+-----------------------------------------------------+---------------------------------------------------------------+-------------+
-| :ref:`String<class_String>`                         | :ref:`var_name<class_VisualScriptLocalVar_property_var_name>` | "new_local" |
-+-----------------------------------------------------+---------------------------------------------------------------+-------------+
 
 Description
 -----------
@@ -40,6 +26,15 @@ none
 
 - Data (variant): ``get``
 
+Properties
+----------
+
++-----------------------------------------------------+---------------------------------------------------------------+-----------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptLocalVar_property_type>`         | ``0``           |
++-----------------------------------------------------+---------------------------------------------------------------+-----------------+
+| :ref:`String<class_String>`                         | :ref:`var_name<class_VisualScriptLocalVar_property_var_name>` | ``"new_local"`` |
++-----------------------------------------------------+---------------------------------------------------------------+-----------------+
+
 Property Descriptions
 ---------------------
 
@@ -48,7 +43,7 @@ Property Descriptions
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 
 +-----------+---------------------+
-| *Default* | 0                   |
+| *Default* | ``0``               |
 +-----------+---------------------+
 | *Setter*  | set_var_type(value) |
 +-----------+---------------------+
@@ -64,7 +59,7 @@ The local variable's type.
 - :ref:`String<class_String>` **var_name**
 
 +-----------+---------------------+
-| *Default* | "new_local"         |
+| *Default* | ``"new_local"``     |
 +-----------+---------------------+
 | *Setter*  | set_var_name(value) |
 +-----------+---------------------+

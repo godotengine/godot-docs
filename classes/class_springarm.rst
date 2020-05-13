@@ -11,25 +11,31 @@ SpringArm
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A helper node, mostly used in 3rd person cameras.
+
+Description
+-----------
+
+The SpringArm node is a node that casts a ray (or collision shape) along its z axis and moves all its direct children to the collision point, minus a margin.
+
+The most common use case for this is to make a 3rd person camera that reacts to collisions in the environment.
+
+The SpringArm will either cast a ray, or if a shape is given, it will cast the shape in the direction of its z axis.
+
+If you use the SpringArm as a camera controller for your player, you might need to exclude the player's collider from the SpringArm's collision check.
 
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------+------+
-| :ref:`int<class_int>`     | :ref:`collision_mask<class_SpringArm_property_collision_mask>` | 1    |
-+---------------------------+----------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`margin<class_SpringArm_property_margin>`                 | 0.01 |
-+---------------------------+----------------------------------------------------------------+------+
-| :ref:`Shape<class_Shape>` | :ref:`shape<class_SpringArm_property_shape>`                   |      |
-+---------------------------+----------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`spring_length<class_SpringArm_property_spring_length>`   | 1.0  |
-+---------------------------+----------------------------------------------------------------+------+
++---------------------------+----------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`collision_mask<class_SpringArm_property_collision_mask>` | ``1``    |
++---------------------------+----------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`margin<class_SpringArm_property_margin>`                 | ``0.01`` |
++---------------------------+----------------------------------------------------------------+----------+
+| :ref:`Shape<class_Shape>` | :ref:`shape<class_SpringArm_property_shape>`                   |          |
++---------------------------+----------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`spring_length<class_SpringArm_property_spring_length>`   | ``1.0``  |
++---------------------------+----------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -44,17 +50,6 @@ Methods
 | :ref:`bool<class_bool>`   | :ref:`remove_excluded_object<class_SpringArm_method_remove_excluded_object>` **(** :ref:`RID<class_RID>` RID **)** |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-The SpringArm node is a node that casts a ray (or collision shape) along its z axis and moves all its direct children to the collision point, minus a margin.
-
-The most common use case for this is to make a 3rd person camera that reacts to collisions in the environment.
-
-The SpringArm will either cast a ray, or if a shape is given, it will cast the shape in the direction of its z axis.
-
-If you use the SpringArm as a camera controller for your player, you might need to exclude the player's collider from the SpringArm's collision check.
-
 Property Descriptions
 ---------------------
 
@@ -63,7 +58,7 @@ Property Descriptions
 - :ref:`int<class_int>` **collision_mask**
 
 +-----------+---------------------------+
-| *Default* | 1                         |
+| *Default* | ``1``                     |
 +-----------+---------------------------+
 | *Setter*  | set_collision_mask(value) |
 +-----------+---------------------------+
@@ -79,7 +74,7 @@ The layers against which the collision check shall be done.
 - :ref:`float<class_float>` **margin**
 
 +-----------+-------------------+
-| *Default* | 0.01              |
+| *Default* | ``0.01``          |
 +-----------+-------------------+
 | *Setter*  | set_margin(value) |
 +-----------+-------------------+
@@ -115,7 +110,7 @@ When the shape is set, the SpringArm will cast the :ref:`Shape<class_Shape>` on 
 - :ref:`float<class_float>` **spring_length**
 
 +-----------+-------------------+
-| *Default* | 1.0               |
+| *Default* | ``1.0``           |
 +-----------+-------------------+
 | *Setter*  | set_length(value) |
 +-----------+-------------------+

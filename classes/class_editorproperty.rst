@@ -11,29 +11,29 @@ EditorProperty
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Custom control to edit properties for adding into the inspector.
+
+Description
+-----------
+
+This control allows property editing for one or multiple properties into :ref:`EditorInspector<class_EditorInspector>`. It is added via :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>`.
 
 Properties
 ----------
 
-+-----------------------------+-----------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`checkable<class_EditorProperty_property_checkable>` | false |
-+-----------------------------+-----------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`checked<class_EditorProperty_property_checked>`     | false |
-+-----------------------------+-----------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`draw_red<class_EditorProperty_property_draw_red>`   | false |
-+-----------------------------+-----------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`keying<class_EditorProperty_property_keying>`       | false |
-+-----------------------------+-----------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`label<class_EditorProperty_property_label>`         | ""    |
-+-----------------------------+-----------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`read_only<class_EditorProperty_property_read_only>` | false |
-+-----------------------------+-----------------------------------------------------------+-------+
++-----------------------------+-----------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`     | :ref:`checkable<class_EditorProperty_property_checkable>` | ``false`` |
++-----------------------------+-----------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`     | :ref:`checked<class_EditorProperty_property_checked>`     | ``false`` |
++-----------------------------+-----------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`     | :ref:`draw_red<class_EditorProperty_property_draw_red>`   | ``false`` |
++-----------------------------+-----------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`     | :ref:`keying<class_EditorProperty_property_keying>`       | ``false`` |
++-----------------------------+-----------------------------------------------------------+-----------+
+| :ref:`String<class_String>` | :ref:`label<class_EditorProperty_property_label>`         | ``""``    |
++-----------------------------+-----------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`     | :ref:`read_only<class_EditorProperty_property_read_only>` | ``false`` |
++-----------------------------+-----------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -119,11 +119,6 @@ If you want a sub-resource to be edited, emit this signal with the resource.
 
 Emitted when selected. Used internally.
 
-Description
------------
-
-This control allows property editing for one or multiple properties into :ref:`EditorInspector<class_EditorInspector>`. It is added via :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>`.
-
 Property Descriptions
 ---------------------
 
@@ -132,7 +127,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **checkable**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_checkable(value) |
 +-----------+----------------------+
@@ -148,7 +143,7 @@ Used by the inspector, set when property is checkable.
 - :ref:`bool<class_bool>` **checked**
 
 +-----------+--------------------+
-| *Default* | false              |
+| *Default* | ``false``          |
 +-----------+--------------------+
 | *Setter*  | set_checked(value) |
 +-----------+--------------------+
@@ -164,7 +159,7 @@ Used by the inspector, when the property is checked.
 - :ref:`bool<class_bool>` **draw_red**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_draw_red(value) |
 +-----------+---------------------+
@@ -180,7 +175,7 @@ Used by the inspector, when the property must draw with error color.
 - :ref:`bool<class_bool>` **keying**
 
 +-----------+-------------------+
-| *Default* | false             |
+| *Default* | ``false``         |
 +-----------+-------------------+
 | *Setter*  | set_keying(value) |
 +-----------+-------------------+
@@ -196,7 +191,7 @@ Used by the inspector, when the property can add keys for animation.
 - :ref:`String<class_String>` **label**
 
 +-----------+------------------+
-| *Default* | ""               |
+| *Default* | ``""``           |
 +-----------+------------------+
 | *Setter*  | set_label(value) |
 +-----------+------------------+
@@ -212,7 +207,7 @@ Sets this property to change the label (if you want to show one).
 - :ref:`bool<class_bool>` **read_only**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_read_only(value) |
 +-----------+----------------------+

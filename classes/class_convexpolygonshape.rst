@@ -11,24 +11,19 @@ ConvexPolygonShape
 
 **Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Convex polygon shape for 3D physics.
-
-Properties
-----------
-
-+-------------------------------------------------+---------------------------------------------------------+----------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`points<class_ConvexPolygonShape_property_points>` | PoolVector3Array(  ) |
-+-------------------------------------------------+---------------------------------------------------------+----------------------+
 
 Description
 -----------
 
 Convex polygon shape resource, which can be added to a :ref:`PhysicsBody<class_PhysicsBody>` or area.
+
+Properties
+----------
+
++-------------------------------------------------+---------------------------------------------------------+--------------------------+
+| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`points<class_ConvexPolygonShape_property_points>` | ``PoolVector3Array(  )`` |
++-------------------------------------------------+---------------------------------------------------------+--------------------------+
 
 Property Descriptions
 ---------------------
@@ -37,13 +32,13 @@ Property Descriptions
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **points**
 
-+-----------+----------------------+
-| *Default* | PoolVector3Array(  ) |
-+-----------+----------------------+
-| *Setter*  | set_points(value)    |
-+-----------+----------------------+
-| *Getter*  | get_points()         |
-+-----------+----------------------+
++-----------+--------------------------+
+| *Default* | ``PoolVector3Array(  )`` |
++-----------+--------------------------+
+| *Setter*  | set_points(value)        |
++-----------+--------------------------+
+| *Getter*  | get_points()             |
++-----------+--------------------------+
 
 The list of 3D points forming the convex polygon shape.
 

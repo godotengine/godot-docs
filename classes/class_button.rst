@@ -13,29 +13,29 @@ Button
 
 **Inherited By:** :ref:`CheckBox<class_CheckBox>`, :ref:`CheckButton<class_CheckButton>`, :ref:`ColorPickerButton<class_ColorPickerButton>`, :ref:`MenuButton<class_MenuButton>`, :ref:`OptionButton<class_OptionButton>`, :ref:`ToolButton<class_ToolButton>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Standard themed Button.
+
+Description
+-----------
+
+Button is the standard themed button. It can contain text and an icon, and will display them according to the current :ref:`Theme<class_Theme>`.
 
 Properties
 ----------
 
-+-----------------------------------------+-------------------------------------------------------+-------+
-| :ref:`TextAlign<enum_Button_TextAlign>` | :ref:`align<class_Button_property_align>`             | 1     |
-+-----------------------------------------+-------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                 | :ref:`clip_text<class_Button_property_clip_text>`     | false |
-+-----------------------------------------+-------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                 | :ref:`expand_icon<class_Button_property_expand_icon>` | false |
-+-----------------------------------------+-------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                 | :ref:`flat<class_Button_property_flat>`               | false |
-+-----------------------------------------+-------------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`           | :ref:`icon<class_Button_property_icon>`               |       |
-+-----------------------------------------+-------------------------------------------------------+-------+
-| :ref:`String<class_String>`             | :ref:`text<class_Button_property_text>`               | ""    |
-+-----------------------------------------+-------------------------------------------------------+-------+
++-----------------------------------------+-------------------------------------------------------+-----------+
+| :ref:`TextAlign<enum_Button_TextAlign>` | :ref:`align<class_Button_property_align>`             | ``1``     |
++-----------------------------------------+-------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                 | :ref:`clip_text<class_Button_property_clip_text>`     | ``false`` |
++-----------------------------------------+-------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                 | :ref:`expand_icon<class_Button_property_expand_icon>` | ``false`` |
++-----------------------------------------+-------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                 | :ref:`flat<class_Button_property_flat>`               | ``false`` |
++-----------------------------------------+-------------------------------------------------------+-----------+
+| :ref:`Texture<class_Texture>`           | :ref:`icon<class_Button_property_icon>`               |           |
++-----------------------------------------+-------------------------------------------------------+-----------+
+| :ref:`String<class_String>`             | :ref:`text<class_Button_property_text>`               | ``""``    |
++-----------------------------------------+-------------------------------------------------------+-----------+
 
 Theme Properties
 ----------------
@@ -83,11 +83,6 @@ enum **TextAlign**:
 
 - **ALIGN_RIGHT** = **2** --- Align the text to the right.
 
-Description
------------
-
-Button is the standard themed button. It can contain text and an icon, and will display them according to the current :ref:`Theme<class_Theme>`.
-
 Property Descriptions
 ---------------------
 
@@ -96,7 +91,7 @@ Property Descriptions
 - :ref:`TextAlign<enum_Button_TextAlign>` **align**
 
 +-----------+-----------------------+
-| *Default* | 1                     |
+| *Default* | ``1``                 |
 +-----------+-----------------------+
 | *Setter*  | set_text_align(value) |
 +-----------+-----------------------+
@@ -112,7 +107,7 @@ Text alignment policy for the button's text, use one of the :ref:`TextAlign<enum
 - :ref:`bool<class_bool>` **clip_text**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_clip_text(value) |
 +-----------+----------------------+
@@ -128,7 +123,7 @@ When this property is enabled, text that is too large to fit the button is clipp
 - :ref:`bool<class_bool>` **expand_icon**
 
 +-----------+------------------------+
-| *Default* | false                  |
+| *Default* | ``false``              |
 +-----------+------------------------+
 | *Setter*  | set_expand_icon(value) |
 +-----------+------------------------+
@@ -144,7 +139,7 @@ When enabled, the button's icon will expand/shrink to fit the button's size whil
 - :ref:`bool<class_bool>` **flat**
 
 +-----------+-----------------+
-| *Default* | false           |
+| *Default* | ``false``       |
 +-----------+-----------------+
 | *Setter*  | set_flat(value) |
 +-----------+-----------------+
@@ -174,7 +169,7 @@ Button's icon, if text is present the icon will be placed before the text.
 - :ref:`String<class_String>` **text**
 
 +-----------+-----------------+
-| *Default* | ""              |
+| *Default* | ``""``          |
 +-----------+-----------------+
 | *Setter*  | set_text(value) |
 +-----------+-----------------+

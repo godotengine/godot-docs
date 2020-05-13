@@ -11,12 +11,12 @@ StreamPeerTCP
 
 **Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 TCP stream peer.
+
+Description
+-----------
+
+TCP stream peer. This object can be used to connect to TCP servers, or also is returned by a TCP server.
 
 Methods
 -------
@@ -59,11 +59,6 @@ enum **Status**:
 - **STATUS_CONNECTED** = **2** --- A status representing a ``StreamPeerTCP`` that is connected to a host.
 
 - **STATUS_ERROR** = **3** --- A status representing a ``StreamPeerTCP`` in error state.
-
-Description
------------
-
-TCP stream peer. This object can be used to connect to TCP servers, or also is returned by a TCP server.
 
 Method Descriptions
 -------------------

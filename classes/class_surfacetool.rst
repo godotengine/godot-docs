@@ -11,12 +11,26 @@ SurfaceTool
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Helper tool to create geometry.
+
+Description
+-----------
+
+The ``SurfaceTool`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying vertex attributes individually. It can be used to construct a :ref:`Mesh<class_Mesh>` from a script. All properties except indices need to be added before calling :ref:`add_vertex<class_SurfaceTool_method_add_vertex>`. For example, to add vertex colors and UVs:
+
+::
+
+    var st = SurfaceTool.new()
+    st.begin(Mesh.PRIMITIVE_TRIANGLES)
+    st.add_color(Color(1, 0, 0))
+    st.add_uv(Vector2(0, 0))
+    st.add_vertex(Vector3(0, 0, 0))
+
+The above ``SurfaceTool`` now contains one vertex of a triangle which has a UV coordinate and a specified :ref:`Color<class_Color>`. If another vertex were added without calling :ref:`add_uv<class_SurfaceTool_method_add_uv>` or :ref:`add_color<class_SurfaceTool_method_add_color>`, then the last values would be used.
+
+Vertex attributes must be passed **before** calling :ref:`add_vertex<class_SurfaceTool_method_add_vertex>`. Failure to do so will result in an error when committing the vertex information to a mesh.
+
+Additionally, the attributes used before the first vertex is added determine the format of the mesh. For example, if you only add UVs to the first vertex, you cannot add color to any of the subsequent vertices.
 
 Methods
 -------
@@ -68,25 +82,6 @@ Methods
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_material<class_SurfaceTool_method_set_material>` **(** :ref:`Material<class_Material>` material **)**                                                                                                                                                                                                                                                                                                                                                                            |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-The ``SurfaceTool`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying vertex attributes individually. It can be used to construct a :ref:`Mesh<class_Mesh>` from a script. All properties except indices need to be added before calling :ref:`add_vertex<class_SurfaceTool_method_add_vertex>`. For example, to add vertex colors and UVs:
-
-::
-
-    var st = SurfaceTool.new()
-    st.begin(Mesh.PRIMITIVE_TRIANGLES)
-    st.add_color(Color(1, 0, 0))
-    st.add_uv(Vector2(0, 0))
-    st.add_vertex(Vector3(0, 0, 0))
-
-The above ``SurfaceTool`` now contains one vertex of a triangle which has a UV coordinate and a specified :ref:`Color<class_Color>`. If another vertex were added without calling :ref:`add_uv<class_SurfaceTool_method_add_uv>` or :ref:`add_color<class_SurfaceTool_method_add_color>`, then the last values would be used.
-
-Vertex attributes must be passed **before** calling :ref:`add_vertex<class_SurfaceTool_method_add_vertex>`. Failure to do so will result in an error when committing the vertex information to a mesh.
-
-Additionally, the attributes used before the first vertex is added determine the format of the mesh. For example, if you only add UVs to the first vertex, you cannot add color to any of the subsequent vertices.
 
 Method Descriptions
 -------------------

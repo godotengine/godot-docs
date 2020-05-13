@@ -11,19 +11,7 @@ RichTextEffect
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A custom effect for use with :ref:`RichTextLabel<class_RichTextLabel>`.
-
-Methods
--------
-
-+-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`_process_custom_fx<class_RichTextEffect_method__process_custom_fx>` **(** :ref:`CharFXTransform<class_CharFXTransform>` char_fx **)** virtual |
-+-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -45,6 +33,13 @@ Tutorials
 - :doc:`../tutorials/gui/bbcode_in_richtextlabel`
 
 - `https://github.com/Eoin-ONeill-Yokai/Godot-Rich-Text-Effect-Test-Project <https://github.com/Eoin-ONeill-Yokai/Godot-Rich-Text-Effect-Test-Project>`_
+
+Methods
+-------
+
++-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`_process_custom_fx<class_RichTextEffect_method__process_custom_fx>` **(** :ref:`CharFXTransform<class_CharFXTransform>` char_fx **)** virtual |
++-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------

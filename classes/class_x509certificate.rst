@@ -11,12 +11,16 @@ X509Certificate
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 An X509 certificate (e.g. for SSL).
+
+Description
+-----------
+
+The X509Certificate class represents an X509 certificate. Certificates can be loaded and saved like any other :ref:`Resource<class_Resource>`.
+
+They can be used as the server certificate in :ref:`StreamPeerSSL.accept_stream<class_StreamPeerSSL_method_accept_stream>` (along with the proper :ref:`CryptoKey<class_CryptoKey>`), and to specify the only certificate that should be accepted when connecting to an SSL server via :ref:`StreamPeerSSL.connect_to_stream<class_StreamPeerSSL_method_connect_to_stream>`.
+
+**Note:** Not available in HTML5 exports.
 
 Methods
 -------
@@ -26,13 +30,6 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save<class_X509Certificate_method_save>` **(** :ref:`String<class_String>` path **)** |
 +---------------------------------------+---------------------------------------------------------------------------------------------+
-
-Description
------------
-
-The X509Certificate class represents an X509 certificate. Certificates can be loaded and saved like any other :ref:`Resource<class_Resource>`.
-
-They can be used as the server certificate in :ref:`StreamPeerSSL.accept_stream<class_StreamPeerSSL_method_accept_stream>` (along with the proper :ref:`CryptoKey<class_CryptoKey>`), and to specify the only certificate that should be accepted when connecting to an SSL server via :ref:`StreamPeerSSL.connect_to_stream<class_StreamPeerSSL_method_connect_to_stream>`.
 
 Method Descriptions
 -------------------

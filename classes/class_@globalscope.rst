@@ -9,12 +9,14 @@
 @GlobalScope
 ============
 
-**Category:** Core
-
-Brief Description
------------------
-
 Global scope constants and variables.
+
+Description
+-----------
+
+Global scope constants and variables. This is all that resides in the globals, constants regarding error codes, scancodes, property hints, etc.
+
+Singletons are also documented here, since they can be accessed from anywhere.
 
 Properties
 ----------
@@ -39,6 +41,8 @@ Properties
 | :ref:`InputMap<class_InputMap>`                                           | :ref:`InputMap<class_@GlobalScope_property_InputMap>`                               |
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`JSON<class_JSON>`                                                   | :ref:`JSON<class_@GlobalScope_property_JSON>`                                       |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`JavaClassWrapper<class_JavaClassWrapper>`                           | :ref:`JavaClassWrapper<class_@GlobalScope_property_JavaClassWrapper>`               |
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`JavaScript<class_JavaScript>`                                       | :ref:`JavaScript<class_@GlobalScope_property_JavaScript>`                           |
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -2202,13 +2206,6 @@ Constants
 
 - **SPKEY** = **16777216** --- Scancodes with this bit applied are non-printable.
 
-Description
------------
-
-Global scope constants and variables. This is all that resides in the globals, constants regarding error codes, scancodes, property hints, etc.
-
-Singletons are also documented here, since they can be accessed from anywhere.
-
 Property Descriptions
 ---------------------
 
@@ -2292,11 +2289,23 @@ The :ref:`JSON<class_JSON>` singleton.
 
 ----
 
+.. _class_@GlobalScope_property_JavaClassWrapper:
+
+- :ref:`JavaClassWrapper<class_JavaClassWrapper>` **JavaClassWrapper**
+
+The :ref:`JavaClassWrapper<class_JavaClassWrapper>` singleton.
+
+**Note:** Only implemented on Android.
+
+----
+
 .. _class_@GlobalScope_property_JavaScript:
 
 - :ref:`JavaScript<class_JavaScript>` **JavaScript**
 
 The :ref:`JavaScript<class_JavaScript>` singleton.
+
+**Note:** Only implemented on HTML5.
 
 ----
 

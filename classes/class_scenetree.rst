@@ -11,39 +11,50 @@ SceneTree
 
 **Inherits:** :ref:`MainLoop<class_MainLoop>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Manages the game loop via a hierarchy of nodes.
+
+Description
+-----------
+
+As one of the most important classes, the ``SceneTree`` manages the hierarchy of nodes in a scene as well as scenes themselves. Nodes can be added, retrieved and removed. The whole scene tree (and thus the current scene) can be paused. Scenes can be loaded, switched and reloaded.
+
+You can also use the ``SceneTree`` to organize your nodes into groups: every node can be assigned as many groups as you want to create, e.g. a "enemy" group. You can then iterate these groups or even call methods and set properties on all the group's members at once.
+
+``SceneTree`` is the default :ref:`MainLoop<class_MainLoop>` implementation used by scenes, and is thus in charge of the game loop.
+
+Tutorials
+---------
+
+- :doc:`../getting_started/step_by_step/scene_tree`
+
+- :doc:`../tutorials/viewports/multiple_resolutions`
 
 Properties
 ----------
 
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`Node<class_Node>`                                         | :ref:`current_scene<class_SceneTree_property_current_scene>`                                   |       |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`debug_collisions_hint<class_SceneTree_property_debug_collisions_hint>`                   | false |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`debug_navigation_hint<class_SceneTree_property_debug_navigation_hint>`                   | false |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`Node<class_Node>`                                         | :ref:`edited_scene_root<class_SceneTree_property_edited_scene_root>`                           |       |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`MultiplayerAPI<class_MultiplayerAPI>`                     | :ref:`multiplayer<class_SceneTree_property_multiplayer>`                                       |       |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`multiplayer_poll<class_SceneTree_property_multiplayer_poll>`                             | true  |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` | :ref:`network_peer<class_SceneTree_property_network_peer>`                                     |       |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`paused<class_SceneTree_property_paused>`                                                 | false |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_SceneTree_property_refuse_new_network_connections>` | false |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`Viewport<class_Viewport>`                                 | :ref:`root<class_SceneTree_property_root>`                                                     |       |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`use_font_oversampling<class_SceneTree_property_use_font_oversampling>`                   | false |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`Node<class_Node>`                                         | :ref:`current_scene<class_SceneTree_property_current_scene>`                                   |           |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`debug_collisions_hint<class_SceneTree_property_debug_collisions_hint>`                   | ``false`` |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`debug_navigation_hint<class_SceneTree_property_debug_navigation_hint>`                   | ``false`` |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`Node<class_Node>`                                         | :ref:`edited_scene_root<class_SceneTree_property_edited_scene_root>`                           |           |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`MultiplayerAPI<class_MultiplayerAPI>`                     | :ref:`multiplayer<class_SceneTree_property_multiplayer>`                                       |           |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`multiplayer_poll<class_SceneTree_property_multiplayer_poll>`                             | ``true``  |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` | :ref:`network_peer<class_SceneTree_property_network_peer>`                                     |           |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`paused<class_SceneTree_property_paused>`                                                 | ``false`` |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_SceneTree_property_refuse_new_network_connections>` | ``false`` |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`Viewport<class_Viewport>`                                 | :ref:`root<class_SceneTree_property_root>`                                                     |           |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`use_font_oversampling<class_SceneTree_property_use_font_oversampling>`                   | ``false`` |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -85,7 +96,7 @@ Methods
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`queue_delete<class_SceneTree_method_queue_delete>` **(** :ref:`Object<class_Object>` obj **)**                                                                                                                                                                       |
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`quit<class_SceneTree_method_quit>` **(** **)**                                                                                                                                                                                                                       |
+| void                                        | :ref:`quit<class_SceneTree_method_quit>` **(** :ref:`int<class_int>` exit_code=-1 **)**                                                                                                                                                                                    |
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`reload_current_scene<class_SceneTree_method_reload_current_scene>` **(** **)**                                                                                                                                                                                       |
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -290,22 +301,6 @@ enum **StretchAspect**:
 
 - **STRETCH_ASPECT_EXPAND** = **4** --- Expand in both directions, retaining the same aspect ratio. This prevents distortion while avoiding black bars.
 
-Description
------------
-
-As one of the most important classes, the ``SceneTree`` manages the hierarchy of nodes in a scene as well as scenes themselves. Nodes can be added, retrieved and removed. The whole scene tree (and thus the current scene) can be paused. Scenes can be loaded, switched and reloaded.
-
-You can also use the ``SceneTree`` to organize your nodes into groups: every node can be assigned as many groups as you want to create, e.g. a "enemy" group. You can then iterate these groups or even call methods and set properties on all the group's members at once.
-
-``SceneTree`` is the default :ref:`MainLoop<class_MainLoop>` implementation used by scenes, and is thus in charge of the game loop.
-
-Tutorials
----------
-
-- :doc:`../getting_started/step_by_step/scene_tree`
-
-- :doc:`../tutorials/viewports/multiple_resolutions`
-
 Property Descriptions
 ---------------------
 
@@ -328,7 +323,7 @@ The current scene.
 - :ref:`bool<class_bool>` **debug_collisions_hint**
 
 +-----------+----------------------------------+
-| *Default* | false                            |
+| *Default* | ``false``                        |
 +-----------+----------------------------------+
 | *Setter*  | set_debug_collisions_hint(value) |
 +-----------+----------------------------------+
@@ -344,7 +339,7 @@ If ``true``, collision shapes will be visible when running the game from the edi
 - :ref:`bool<class_bool>` **debug_navigation_hint**
 
 +-----------+----------------------------------+
-| *Default* | false                            |
+| *Default* | ``false``                        |
 +-----------+----------------------------------+
 | *Setter*  | set_debug_navigation_hint(value) |
 +-----------+----------------------------------+
@@ -388,7 +383,7 @@ The default :ref:`MultiplayerAPI<class_MultiplayerAPI>` instance for this ``Scen
 - :ref:`bool<class_bool>` **multiplayer_poll**
 
 +-----------+-------------------------------------+
-| *Default* | true                                |
+| *Default* | ``true``                            |
 +-----------+-------------------------------------+
 | *Setter*  | set_multiplayer_poll_enabled(value) |
 +-----------+-------------------------------------+
@@ -420,7 +415,7 @@ The peer object to handle the RPC system (effectively enabling networking when s
 - :ref:`bool<class_bool>` **paused**
 
 +-----------+------------------+
-| *Default* | false            |
+| *Default* | ``false``        |
 +-----------+------------------+
 | *Setter*  | set_pause(value) |
 +-----------+------------------+
@@ -440,7 +435,7 @@ If ``true``, the ``SceneTree`` is paused. Doing so will have the following behav
 - :ref:`bool<class_bool>` **refuse_new_network_connections**
 
 +-----------+-------------------------------------------+
-| *Default* | false                                     |
+| *Default* | ``false``                                 |
 +-----------+-------------------------------------------+
 | *Setter*  | set_refuse_new_network_connections(value) |
 +-----------+-------------------------------------------+
@@ -468,7 +463,7 @@ The ``SceneTree``'s root :ref:`Viewport<class_Viewport>`.
 - :ref:`bool<class_bool>` **use_font_oversampling**
 
 +-----------+----------------------------------+
-| *Default* | false                            |
+| *Default* | ``false``                        |
 +-----------+----------------------------------+
 | *Setter*  | set_use_font_oversampling(value) |
 +-----------+----------------------------------+
@@ -639,9 +634,9 @@ Queues the given object for deletion, delaying the call to :ref:`Object.free<cla
 
 .. _class_SceneTree_method_quit:
 
-- void **quit** **(** **)**
+- void **quit** **(** :ref:`int<class_int>` exit_code=-1 **)**
 
-Quits the application.
+Quits the application. A process ``exit_code`` can optionally be passed as an argument. If this argument is ``0`` or greater, it will override the :ref:`OS.exit_code<class_OS_property_exit_code>` defined before quitting the application.
 
 ----
 

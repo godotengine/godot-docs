@@ -13,19 +13,19 @@ VisibilityNotifier2D
 
 **Inherited By:** :ref:`VisibilityEnabler2D<class_VisibilityEnabler2D>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Detects when the node is visible on screen.
+
+Description
+-----------
+
+The VisibilityNotifier2D detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a viewport.
 
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------+---------------------------+
-| :ref:`Rect2<class_Rect2>` | :ref:`rect<class_VisibilityNotifier2D_property_rect>` | Rect2( -10, -10, 20, 20 ) |
-+---------------------------+-------------------------------------------------------+---------------------------+
++---------------------------+-------------------------------------------------------+-------------------------------+
+| :ref:`Rect2<class_Rect2>` | :ref:`rect<class_VisibilityNotifier2D_property_rect>` | ``Rect2( -10, -10, 20, 20 )`` |
++---------------------------+-------------------------------------------------------+-------------------------------+
 
 Methods
 -------
@@ -67,11 +67,6 @@ Emitted when the VisibilityNotifier2D enters a :ref:`Viewport<class_Viewport>`'s
 
 Emitted when the VisibilityNotifier2D exits a :ref:`Viewport<class_Viewport>`'s view.
 
-Description
------------
-
-The VisibilityNotifier2D detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a viewport.
-
 Property Descriptions
 ---------------------
 
@@ -79,13 +74,13 @@ Property Descriptions
 
 - :ref:`Rect2<class_Rect2>` **rect**
 
-+-----------+---------------------------+
-| *Default* | Rect2( -10, -10, 20, 20 ) |
-+-----------+---------------------------+
-| *Setter*  | set_rect(value)           |
-+-----------+---------------------------+
-| *Getter*  | get_rect()                |
-+-----------+---------------------------+
++-----------+-------------------------------+
+| *Default* | ``Rect2( -10, -10, 20, 20 )`` |
++-----------+-------------------------------+
+| *Setter*  | set_rect(value)               |
++-----------+-------------------------------+
+| *Getter*  | get_rect()                    |
++-----------+-------------------------------+
 
 The VisibilityNotifier2D's bounding rectangle.
 
