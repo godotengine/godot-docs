@@ -49,22 +49,23 @@ if env['platform'] == '':
 if env['platform'] == "osx":
     env['target_path'] += 'osx/'
     cpp_library += '.osx'
+    env.Append(CCFLAGS=['-arch', 'x86_64'])
+    env.Append(CXXFLAGS=['-std=c++17'])
+    env.Append(LINKFLAGS=['-arch', 'x86_64'])
     if env['target'] in ('debug', 'd'):
-        env.Append(CCFLAGS=['-g', '-O2', '-arch', 'x86_64'])
-        env.Append(LINKFLAGS=['-arch', 'x86_64'])
+        env.Append(CCFLAGS=['-g', '-O2'])
     else:
-        env.Append(CCFLAGS=['-g', '-O3', '-arch', 'x86_64'])
-        env.Append(LINKFLAGS=['-arch', 'x86_64'])
+        env.Append(CCFLAGS=['-g', '-O3'])
 
 elif env['platform'] in ('linuxbsd', 'linux'):
     env['target_path'] += 'linuxbsd/'
     cpp_library += '.linux'
+    env.Append(CCFLAGS=['-fPIC'])
+    env.Append(CXXFLAGS=['-std=c++17'])
     if env['target'] in ('debug', 'd'):
-        env.Append(CCFLAGS=['-fPIC', '-g3', '-Og'])
-        env.Append(CXXFLAGS=['-std=c++17'])
+        env.Append(CCFLAGS=['-g3', '-Og'])
     else:
-        env.Append(CCFLAGS=['-fPIC', '-g', '-O3'])
-        env.Append(CXXFLAGS=['-std=c++17'])
+        env.Append(CCFLAGS=['-g', '-O3'])
 
 elif env['platform'] == "windows":
     env['target_path'] += 'win64/'
