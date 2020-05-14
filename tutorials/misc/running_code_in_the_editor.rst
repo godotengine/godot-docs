@@ -99,9 +99,11 @@ Modify  ``_process()`` to include the rotation speed.
     tool
     extends Sprite
 
-    export var speed = 1   setget set_speed
 
-    # Update speed and reset the rotation
+    export var speed = 1 setget set_speed
+
+
+    # Update speed and reset the rotation.
     func set_speed(new_speed):
     	speed = new_speed
     	rotation_degrees = 0
