@@ -773,8 +773,9 @@ under "Script Variables".
 You can assign this property's value in two ways:
 
 - Drag ``Mob.tscn`` from the "FileSystem" panel and drop it in the
-``Mob`` property .
-- Click the down arrow next to "[empty]" and choose "Load". Select ``Mob.tscn``.
+  ``Mob`` property .
+- Click the down arrow next to "[empty]" and choose "Load". Select
+  ``Mob.tscn``.
 
 Next, click on the Player and connect the ``hit`` signal. We want to make a
 new function named ``game_over``, which will handle what needs to happen when a
@@ -847,8 +848,7 @@ motion. The ``PathFollow2D`` node will automatically rotate as it
 follows the path, so we will use that to select the mob's direction as
 well as its position.
 
-Note that a new instance must be added to the scene using
-``add_child()``.
+Note that a new instance must be added to the scene using ``add_child()``.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
