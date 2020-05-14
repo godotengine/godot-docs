@@ -16,6 +16,9 @@ For compiling under macOS, the following is required:
   (or the more lightweight Command Line Tools for Xcode).
 - *Optional* - `yasm <https://yasm.tortall.net/>`_ (for WebM SIMD optimizations).
 
+If you are building the ``master`` branch:
+- Download and install the `Vulkan SDK for macOS <https://vulkan.lunarg.com/sdk/home>`__. 
+
 .. note:: If you have `Homebrew <https://brew.sh/>`_ installed, you can easily
           install SCons and yasm using the following command::
 
