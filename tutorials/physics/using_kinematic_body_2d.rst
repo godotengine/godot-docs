@@ -70,19 +70,18 @@ It is especially useful in platformers or top-down games, for example.
 In addition to the velocity vector, ``move_and_slide()`` takes a number of
 other parameters allowing you to customize the slide behavior:
 
-- ``floor_normal`` - *default value:* ``Vector2( 0, 0 )``
+- ``up_direction`` - *default value:* ``Vector2( 0, 0 )``
 
     This parameter allows you to define what surfaces the engine should consider
     being the floor. Setting this lets you use the ``is_on_floor()``, ``is_on_wall()``,
     and ``is_on_ceiling()`` methods to detect what type of surface the body is
     in contact with. The default value means that all surfaces are considered walls.
 
-- ``slope_stop_min_velocity`` - *default value:* ``5``
+- ``stop_on_slope`` - *default value:* ``false``
 
-    This parameter is the minimum velocity required to move when standing on a slope.
-    It prevents a body from sliding down when standing still.
+    This parameter prevents a body from sliding down slopes when standing still.
 
-- ``max_bounces`` - *default value:* ``4``
+- ``max_slides`` - *default value:* ``4``
 
     This parameter is the maximum number of collisions before the body stops moving. Setting
     it too low may prevent movement entirely.
@@ -91,6 +90,12 @@ other parameters allowing you to customize the slide behavior:
 
     This parameter is the maximum angle before a surface is no longer considered a "floor."
 
+- ``infinite_inertia`` - *default value:* ``true``
+
+When this parameter is ``true``, the body can push :ref:`RigidBody2D <class_RigidBody2D>`
+nodes, ignoring their mass, but won't detect collisions with them. If it's ``false``
+the body will collide with rigid bodies and stop.
+
 ``move_and_slide_with_snap``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -98,7 +103,7 @@ This method adds some additional functionality to ``move_and_slide()`` by adding
 the ``snap`` parameter. As long as this vector is in contact with the ground, the
 body will remain attached to the surface. Note that this means you must disable
 snapping when jumping, for example. You can do this either by setting ``snap``
-to ``Vector2(0, 0)`` or by using ``move_and_slide()`` instead.
+to ``Vector2.ZERO`` or by using ``move_and_slide()`` instead.
 
 
 Detecting collisions
