@@ -32,7 +32,7 @@ Godot provides tools for working with cutout rigs, and is ideal for the workflow
    means animations can control much more than just motion of objects. Textures,
    sprite sizes, pivots, opacity, color modulation, and more, can all be animated
    and blended.
--  **Combine animation styles**: AnimatedSprite allows traditional cel animation 
+-  **Combine animation styles**: AnimatedSprite allows traditional cel animation
    to be used alongside cutout animation. In cel animation different animation
    frames use entirely different drawings rather than the same pieces positioned
    differently. In an otherwise cutout-based animation, cel animation can be used

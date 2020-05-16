@@ -85,7 +85,7 @@ The "Cell/Size" property should be set to the size of your meshes. You can leave
 it at the default value for the demo. Set the "Center Y" property to "Off".
 
 Now you can start designing the level by choosing a tile from the palette and
-placing it with Left-Click in the editor window. To remove a tile, hold :kbd:`Shift` 
+placing it with Left-Click in the editor window. To remove a tile, hold :kbd:`Shift`
 and use Right-click.
 
 Click on the "GridMap" menu to see options and shortcuts. For example, pressing

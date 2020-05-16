@@ -7,4 +7,3 @@ Creating content
 
    procedural_geometry/index
    making_trees
-

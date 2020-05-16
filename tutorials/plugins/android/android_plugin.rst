@@ -6,10 +6,10 @@ Creating Android plugins (Godot 4.0+)
 Introduction
 ------------
 
-Android plugins are powerful tools to extend the capabilities of the Godot engine 
-by tapping into the functionality provided by the Android platform and ecosystem. 
+Android plugins are powerful tools to extend the capabilities of the Godot engine
+by tapping into the functionality provided by the Android platform and ecosystem.
 
-Mobile gaming monetization is one such example since it requires features 
+Mobile gaming monetization is one such example since it requires features
 and capabilities that don't belong to the core feature set of a game engine:
 
 -  Analytics
@@ -40,7 +40,7 @@ the default, rendering plugins for Godot 3.2.0 incompatible with Godot 4.0.
 
 As a prerequisite, make sure you understand how to set up a :ref:`custom build environment<doc_android_custom_build>` for Android.
 
-At its core, a Godot Android plugin is a `Android archive library <https://developer.android.com/studio/projects/android-library#aar-contents>`_ (*aar* archive file) 
+At its core, a Godot Android plugin is a `Android archive library <https://developer.android.com/studio/projects/android-library#aar-contents>`_ (*aar* archive file)
 with the following caveats:
 
 -  The library must have a dependency on the Godot engine library (``godot-lib.x.y.aar``). A stable version is made available for each Godot release.
@@ -50,7 +50,7 @@ with the following caveats:
 Building a Android plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Prerequisite:** `Android Studio <https://developer.android.com/studio>`_ is strongly recommended as the IDE to use to create Android plugins. 
+**Prerequisite:** `Android Studio <https://developer.android.com/studio>`_ is strongly recommended as the IDE to use to create Android plugins.
 The instructions below assumes that you're using Android Studio.
 
 1.  Follow `these instructions <https://developer.android.com/studio/projects/android-library>`__ to create an Android library module for your plugin.
@@ -74,17 +74,17 @@ The instructions below assumes that you're using Android Studio.
     -   Add the ``<application></application>`` tag if it's missing.
 
     -   In the ``<application>`` tag, add a ``<meta-data>`` tag setup as follow::
-        
-            <meta-data 
-                android:name="org.godotengine.plugin.v1.[PluginName]" 
+
+            <meta-data
+                android:name="org.godotengine.plugin.v1.[PluginName]"
                 android:value="[plugin.init.ClassFullName]" />
 
         Where ``PluginName`` is the name of the plugin, and ``plugin.init.ClassFullName`` is the full name (package + class name) of the plugin loading class.
 
-5.  Add the remaining logic for your plugin and run the ``gradlew build`` command to generate the plugin's ``aar`` file. 
+5.  Add the remaining logic for your plugin and run the ``gradlew build`` command to generate the plugin's ``aar`` file.
     The build will likely generate both a ``debug`` and ``release`` ``aar`` files. Depending on your need, pick only one version (usually the ``release`` one) which to provide your users with.
 
-**Note:** The plugin's ``aar`` filename must match the following pattern: ``[PluginName]*.aar`` 
+**Note:** The plugin's ``aar`` filename must match the following pattern: ``[PluginName]*.aar``
 where ``PluginName`` is the name of the plugin in camel case (e.g: ``GodotPayment.release.aar``).
 
 Loading and using a Android plugin
@@ -106,12 +106,12 @@ Bundling GDNative resources
 A Android plugin can define and provide C/C++ GDNative resources, either to provide and/or access functionality from the game logic.
 The GDNative resources can be bundled within the plugin ``aar`` file which simplifies the distribution and deployment process:
 
-    -   The shared libraries (``.so``) for the defined GDNative libraries will be automatically bundled by the ``aar`` build system. 
+    -   The shared libraries (``.so``) for the defined GDNative libraries will be automatically bundled by the ``aar`` build system.
 
-    -   Godot ``*.gdnlib`` and ``*.gdns`` resource files must be manually defined in the plugin ``assets`` directory. 
+    -   Godot ``*.gdnlib`` and ``*.gdns`` resource files must be manually defined in the plugin ``assets`` directory.
         The recommended path for these resources relative to the ``assets`` directory should be: ``godot/plugin/v1/[PluginName]/``.
 
-For GDNative libraries, the plugin singleton object must override the ``org.godotengine.godot.plugin.GodotPlugin::getPluginGDNativeLibrariesPaths()`` method, 
+For GDNative libraries, the plugin singleton object must override the ``org.godotengine.godot.plugin.GodotPlugin::getPluginGDNativeLibrariesPaths()`` method,
 and return the paths to the bundled GDNative libraries config files (``*.gdnlib``). The paths must be relative to the ``assets`` directory.
 At runtime, the plugin will provide these paths to Godot core which will use them to load and initialize the bundled GDNative libraries.
 

@@ -18,8 +18,8 @@ to use this feature:
 
 **1. Stash active action**
 
-New created action is always an active action bound to object. There are 
-several ways to place an active action into NLA track, 
+New created action is always an active action bound to object. There are
+several ways to place an active action into NLA track,
 one is of course doing it in ``NLA Editor``
 
 .. image:: img/nla_editor.jpg

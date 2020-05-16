@@ -373,7 +373,7 @@ and wider compatibility.
 
   More information about normal maps (including a coordinate order table for
   popular engines) can be found
-  `here <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details>`__. 
+  `here <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details>`__.
 
 Rim
 ~~~

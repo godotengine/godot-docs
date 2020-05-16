@@ -57,21 +57,21 @@ Select the ``Sphere_Target_Root`` node and make a new script called ``Sphere_Tar
     func damage(damage):
         if destroyed == true:
             return
-        
+
         health -= damage
-        
+
         if health <= 0:
-            
+
             get_node("CollisionShape").disabled = true
             get_node("Shpere_Target").visible = false
-            
+
             var clone = RIGID_BODY_TARGET.instance()
             add_child(clone)
             clone.global_transform = global_transform
-            
+
             destroyed = true
             set_physics_process(true)
-            
+
             get_node("AudioStreamPlayer").play()
             get_tree().root.get_node("Game").remove_sphere()
 
@@ -90,7 +90,7 @@ First, let's go through all the class variables in the script:
 * ``RIGID_BODY_TARGET``: A constant to hold the scene of the destroyed sphere target.
 
 .. note:: Feel free to check out the ``RIGID_BODY_TARGET`` scene. It is just a bunch of :ref:`RigidBody <class_RigidBody>` nodes and a broken sphere model.
-          
+
           We'll be instancing this scene so when the target is destroyed, it looks like it broke into a bunch of pieces.
 
 
@@ -107,7 +107,7 @@ do when the target has been destroyed.
 
 First this function adds time, ``delta``, to the ``destroyed_timer`` variable. It then checks to see if ``destroyed_timer`` is greater than or equal to
 ``DESTROY_WAIT_TIME``. If ``destroyed_timer`` is greater than or equal to ``DESTROY_WAIT_TIME``, then the sphere target frees/deletes itself by calling
-the ``queue_free`` function. 
+the ``queue_free`` function.
 
 ``damage`` function step-by-step explanation
 """"""""""""""""""""""""""""""""""""""""""""
@@ -195,7 +195,7 @@ node called ``Pistol`` and make a new script called ``Pistol.gd``. Add the follo
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-    
+
     extends VR_Interactable_Rigidbody
 
     var flash_mesh
@@ -213,10 +213,10 @@ node called ``Pistol`` and make a new script called ``Pistol.gd``. Add the follo
     func _ready():
         flash_mesh = get_node("Pistol_Flash")
         flash_mesh.visible = false
-        
+
         laser_sight_mesh = get_node("LaserSight")
         laser_sight_mesh.visible = false
-        
+
         raycast = get_node("RayCast")
         pistol_fire_sound = get_node("AudioStreamPlayer3D")
 
@@ -230,25 +230,25 @@ node called ``Pistol`` and make a new script called ``Pistol.gd``. Add the follo
 
     func interact():
         if flash_timer <= 0:
-            
+
             flash_timer = FLASH_TIME
             flash_mesh.visible = true
-            
+
             raycast.force_raycast_update()
             if raycast.is_colliding():
-                
+
                 var body = raycast.get_collider()
                 var direction_vector = raycast.global_transform.basis.z.normalized()
                 var raycast_distance = raycast.global_transform.origin.distance_to(raycast.get_collision_point())
-                
+
                 if body.has_method("damage"):
                     body.damage(BULLET_DAMAGE)
                 elif body is RigidBody:
                     var collision_force = (COLLISION_FORCE / raycast_distance) * body.mass
                     body.apply_impulse((raycast.global_transform.origin - body.global_transform.origin).normalized(), direction_vector * collision_force)
-            
+
             pistol_fire_sound.play()
-            
+
             if controller != null:
                 controller.rumble = 0.25
 
@@ -397,10 +397,10 @@ Let's write the code for the shotgun. Select the :ref:`RigidBody <class_RigidBod
     func _ready():
         flash_mesh = get_node("Shotgun_Flash")
         flash_mesh.visible = false
-        
+
         laser_sight_mesh = get_node("LaserSight")
         laser_sight_mesh.visible = false
-        
+
         raycasts = get_node("Raycasts")
         shotgun_fire_sound = get_node("AudioStreamPlayer3D")
 
@@ -414,33 +414,33 @@ Let's write the code for the shotgun. Select the :ref:`RigidBody <class_RigidBod
 
     func interact():
         if flash_timer <= 0:
-            
+
             flash_timer = FLASH_TIME
             flash_mesh.visible = true
-            
+
             for raycast in raycasts.get_children():
-                
+
                 if not raycast is RayCast:
                     continue
-                
+
                 raycast.rotation_degrees = Vector3(90 + rand_range(10, -10), 0, rand_range(10, -10))
-                
+
                 raycast.force_raycast_update()
                 if raycast.is_colliding():
-                    
+
                     var body = raycast.get_collider()
                     var direction_vector = raycasts.global_transform.basis.z.normalized()
                     var raycast_distance = raycasts.global_transform.origin.distance_to(raycast.get_collision_point())
-                    
+
                     if body.has_method("damage"):
                         body.damage(BULLET_DAMAGE)
-                    
+
                     if body is RigidBody:
                         var collision_force = (COLLISION_FORCE / raycast_distance) * body.mass
                         body.apply_impulse((raycast.global_transform.origin - body.global_transform.origin).normalized(), direction_vector * collision_force)
-            
+
             shotgun_fire_sound.play()
-            
+
             if controller != null:
                 controller.rumble = 0.25
 
@@ -585,73 +585,73 @@ Let's write the code for the bomb. Select the ``Bomb`` :ref:`RigidBody <class_Ri
 
 
     func _ready():
-        
+
         bomb_mesh = get_node("Bomb")
         explosion_area = get_node("Area")
         fuse_particles = get_node("Fuse_Particles")
         explosion_particles = get_node("Explosion_Particles")
         explosion_sound = get_node("AudioStreamPlayer3D")
-        
+
         set_physics_process(false)
 
 
     func _physics_process(delta):
-        
+
         if fuse_timer < FUSE_TIME:
-            
+
             fuse_timer += delta
-            
+
             if fuse_timer >= FUSE_TIME:
-                
+
                 fuse_particles.emitting = false
-                
+
                 explosion_particles.one_shot = true
                 explosion_particles.emitting = true
-                
+
                 bomb_mesh.visible = false
-                
+
                 collision_layer = 0
                 collision_mask = 0
                 mode = RigidBody.MODE_STATIC
-                
+
                 for body in explosion_area.get_overlapping_bodies():
                     if body == self:
                         pass
                     else:
                         if body.has_method("damage"):
                             body.damage(EXPLOSION_DAMAGE)
-                        
+
                         if body is RigidBody:
                             var direction_vector = body.global_transform.origin - global_transform.origin
                             var bomb_distance = direction_vector.length()
                             var collision_force = (COLLISION_FORCE / bomb_distance) * body.mass
                             body.apply_impulse(Vector3.ZERO, direction_vector.normalized() * collision_force)
-                
+
                 exploded = true
                 explosion_sound.play()
-        
-        
+
+
         if exploded:
-            
+
             explosion_timer += delta
-            
+
             if explosion_timer >= EXPLOSION_TIME:
-                
+
                 explosion_area.monitoring = false
 
                 if controller != null:
                     controller.held_object = null
                     controller.hand_mesh.visible = true
-                    
+
                     if controller.grab_mode == "RAYCAST":
                         controller.grab_raycast.visible = true
-                
+
                 queue_free()
 
 
     func interact():
         set_physics_process(true)
-        
+
         fuse_particles.emitting = true
 
 
@@ -818,23 +818,23 @@ Add the following code:
 
 
     func _physics_process(_delta):
-        
+
         var collision_results = damage_body.move_and_collide(Vector3.ZERO, true, true, true);
-        
+
         if (collision_results != null):
             if collision_results.collider.has_method("damage"):
                 collision_results.collider.damage(SWORD_DAMAGE)
-            
+
             if collision_results.collider is RigidBody:
                 if controller == null:
                     collision_results.collider.apply_impulse(
-                        collision_results.position, 
+                        collision_results.position,
                         collision_results.normal * linear_velocity * COLLISION_FORCE)
                 else:
                     collision_results.collider.apply_impulse(
                         collision_results.position,
                         collision_results.normal * controller.controller_velocity * COLLISION_FORCE)
-            
+
             sword_noise.play()
 
 Let's go over how this script works!

@@ -111,17 +111,17 @@ Examples
     export(Color, RGB) var col
     # Color given as red-green-blue-alpha value.
     export(Color, RGBA) var col
-    
+
     # Nodes
-    
+
     # Another node in the scene can be exported as a NodePath.
     export(NodePath) var node_path
     # Do take note that the node itself isn't being exported -
     # there is one more step to call the true node:
     var node = get_node(node_path)
-    
+
     # Resources
-    
+
     export(Resource) var resource
     # In the Inspector, you can then drag and drop a resource file
     # from the FileSystem dock into the variable slot.
@@ -164,7 +164,7 @@ cause them to change in all other instances. Exported arrays can have
 initializers, but they must be constant expressions.
 
 If the exported array specifies a type which inherits from Resource, the array
-values can be set in the inspector by dragging and dropping multiple files 
+values can be set in the inspector by dragging and dropping multiple files
 from the FileSystem dock at once.
 
 ::
@@ -227,7 +227,7 @@ described in :ref:`doc_accessing_data_or_logic_from_object`.
 
 .. seealso:: For binding properties using the above methods in C++, see
              :ref:`doc_binding_properties_using_set_get_property_list`.
-             
+
 .. warning:: The script must operate in the ``tool`` mode so the above methods
              can work from within the editor.
 
@@ -250,7 +250,7 @@ example of a built-in category.
             }
         )
         return properties
-        
+
 * ``name`` is the name of a category to be added to the inspector;
 
 * ``PROPERTY_USAGE_CATEGORY`` indicates that the property should be treated as a
@@ -273,7 +273,7 @@ A list of properties with similar names can be grouped.
                 usage = PROPERTY_USAGE_GROUP | PROPERTY_USAGE_SCRIPT_VARIABLE
         })
         return properties
-        
+
 * ``name`` is the name of a group which is going to be displayed as collapsible
   list of properties;
 

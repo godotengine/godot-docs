@@ -11,7 +11,7 @@ comprehensive. For a comprehensive and detailed overview of shaders in Godot see
 into the rendering pipeline.
 
 The "your first shader" tutorials walk you through the process of writing a shader
-step-by-step. 
+step-by-step.
 
 For a more general introduction into shaders and the OpenGL Shading Language, use
 `The Book of Shaders <https://thebookofshaders.com>`_.

@@ -5,21 +5,21 @@ Sky shaders
 
 Sky shaders are a special type of shader used for drawing sky backgrounds
 and for updating radiance cubemaps which are used for image-based lighting
-(IBL). Sky shaders only have one processing function, the ``fragment()`` 
+(IBL). Sky shaders only have one processing function, the ``fragment()``
 function.
 
 There are three places the sky shader is used.
 
-* First the sky shader is used to draw the sky when you have selected to use 
-  a Sky as the background in your scene. 
+* First the sky shader is used to draw the sky when you have selected to use
+  a Sky as the background in your scene.
 * Second, the sky shader is used to update the radiance cubemap
-  when using the Sky for ambient color or reflections. 
+  when using the Sky for ambient color or reflections.
 * Third, the sky shader is used to draw the lower res subpasses which can be
-  used in the high-res background or cubemap pass. 
+  used in the high-res background or cubemap pass.
 
 In total, this means the sky shader can run up
 to six times per frame, however, in practice it will be much less than that
-because the radiance cubemap does not need to be updated every frame, and 
+because the radiance cubemap does not need to be updated every frame, and
 not all subpasses will be used. You can change the behavior of the shader
 based on where it is called by checking the ``AT_*_PASS`` booleans. For
 example:
@@ -30,7 +30,7 @@ example:
 
     void fragment() {
         if (AT_CUBEMAP_PASS) {
-            // Sets the radiance cubemap to a nice shade of blue instead of doing 
+            // Sets the radiance cubemap to a nice shade of blue instead of doing
             // expensive sky calculations
             COLOR = vec3(0.2, 0.6, 1.0);
         } else {
@@ -44,15 +44,15 @@ When using the sky shader to draw a background, the shader will be called for
 all non-occluded fragments on the screen. However, for the background's
 subpasses, the shader will be called for every pixel of the subpass.
 
-When using the sky shader to update the radiance cubemap, the sky shader 
+When using the sky shader to update the radiance cubemap, the sky shader
 will be called for every pixel in the cubemap. On the other hand, the shader
-will only be called when the radiance cubemap needs to be updated. The radiance 
-cubemap needs to be updated when any of the shader parameters are updated. 
+will only be called when the radiance cubemap needs to be updated. The radiance
+cubemap needs to be updated when any of the shader parameters are updated.
 For example, if ``TIME`` is used in the shader, then the radiance cubemap
 will update every frame. The following list of changes force an update of
 the radiance cubemap:
 
-* ``TIME`` is used. 
+* ``TIME`` is used.
 * ``POSITION`` is used and the camera position changes.
 * If any ``LIGHTX_*`` properties are used and any
   :ref:`DirectionalLight3D <class_DirectionalLight>` changes.
@@ -60,7 +60,7 @@ the radiance cubemap:
 * If the screen is resized and either of the subpasses are used.
 
 Try to avoid updating the radiance cubemap needlessly. If you do need to
-update the radiance cubemap each frame, make sure your 
+update the radiance cubemap each frame, make sure your
 :ref:`Sky process mode <class_Sky_property_process_mode>` is set to
 :ref:`REALTIME <class_Sky_constant_PROCESS_MODE_REALTIME>`.
 
@@ -82,7 +82,7 @@ a lower resolution than the rest of the sky:
             vec4 color = generate_clouds(EYEDIR);
             COLOR = color.rgb;
             ALPHA = color.a;
-        } else { 
+        } else {
             // At full resolution pass, blend sky and clouds together
             vec3 color = generate_sky(EYEDIR);
             COLOR = color + HALF_RES_COLOR.rgb * HALF_RES_COLOR.a;
@@ -100,9 +100,9 @@ a lower resolution than the rest of the sky:
 Built-ins
 ^^^^^^^^^
 
-Values marked as "in" are read-only. Values marked as "out" are for optional writing and will 
-not necessarily contain sensible values. Values marked as "inout" provide a sensible default 
-value, and can optionally be written to. Samplers are not subjects of writing and they are 
+Values marked as "in" are read-only. Values marked as "out" are for optional writing and will
+not necessarily contain sensible values. Values marked as "inout" provide a sensible default
+value, and can optionally be written to. Samplers are not subjects of writing and they are
 not marked.
 
 Global built-ins

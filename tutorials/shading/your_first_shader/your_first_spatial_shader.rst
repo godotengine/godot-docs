@@ -3,9 +3,9 @@
 Your first Spatial shader
 ============================
 
-You have decided to start writing your own custom Spatial shader. Maybe you saw a cool trick 
-online that was done with shaders, or you have found that the 
-:ref:`StandardMaterial3D <class_StandardMaterial3D>` isn't quite meeting your needs. Either way, 
+You have decided to start writing your own custom Spatial shader. Maybe you saw a cool trick
+online that was done with shaders, or you have found that the
+:ref:`StandardMaterial3D <class_StandardMaterial3D>` isn't quite meeting your needs. Either way,
 you have decided to write your own and now you need figure out where to start.
 
 This tutorial will explain how to write a Spatial shader and will cover more topics than the
@@ -13,19 +13,19 @@ This tutorial will explain how to write a Spatial shader and will cover more top
 
 Spatial shaders have more built-in functionality than CanvasItem shaders. The expectation with
 spatial shaders is that Godot has already provided the functionality for common use cases and all
-the user needs to do in the shader is set the proper parameters. This is especially true for a 
+the user needs to do in the shader is set the proper parameters. This is especially true for a
 PBR (physically based rendering) workflow.
 
 This is a two-part tutorial. In this first part we are going to go through how to make a simple terrain
-using vertex displacement from a heightmap in the vertex function. In the :ref:`second part <doc_your_second_spatial_shader>` 
-we are going to take the concepts from this tutorial and walk through how to set up custom materials 
+using vertex displacement from a heightmap in the vertex function. In the :ref:`second part <doc_your_second_spatial_shader>`
+we are going to take the concepts from this tutorial and walk through how to set up custom materials
 in a fragment shader by writing an ocean water shader.
 
 .. note:: This tutorial assumes some basic shader knowledge such as types (``vec2``, ``float``,
-          ``sampler2D``), and functions. If you are uncomfortable with these concepts it is 
-          best to get a gentle introduction from `The Book of Shaders 
+          ``sampler2D``), and functions. If you are uncomfortable with these concepts it is
+          best to get a gentle introduction from `The Book of Shaders
           <https://thebookofshaders.com>`_ before completing this tutorial.
-          
+
 Where to assign my material
 ---------------------------
 
@@ -33,26 +33,26 @@ In 3D, objects are drawn using :ref:`Meshes <class_Mesh>`. Meshes are a resource
 (the shape of your object) and materials (the color and how the object reacts to light) in units called
 "surfaces". A Mesh can have multiple surfaces, or just one. Typically, you would
 import a mesh from another program (e.g. Blender). But Godot also has a few :ref:`PrimitiveMeshes <class_primitivemesh>`
-that allow you to add basic geometry to a scene without importing Meshes. 
+that allow you to add basic geometry to a scene without importing Meshes.
 
 There are multiple node types that you can use to draw a mesh. The main one is :ref:`MeshInstance <class_meshinstance>`,
 but you can also use :ref:`Particles <class_particles>`, :ref:`MultiMeshes <class_MultiMesh>` (with a
 :ref:`MultiMeshInstance <class_multimeshinstance>`), or others.
 
 Typically, a material is associated with a given surface in a mesh, but some nodes, like MeshInstance, allow
-you to override the material for a specific surface, or for all surfaces. 
+you to override the material for a specific surface, or for all surfaces.
 
-If you set a material on the surface or mesh itself, then all MeshInstances that share that mesh will share that material. 
-However, if you want to reuse the same mesh across multiple mesh instances, but have different materials for each 
+If you set a material on the surface or mesh itself, then all MeshInstances that share that mesh will share that material.
+However, if you want to reuse the same mesh across multiple mesh instances, but have different materials for each
 instance then you should set the material on the Meshinstance.
 
-For this tutorial we will set our material on the mesh itself rather than taking advantage of the MeshInstance's 
-ability to override materials. 
+For this tutorial we will set our material on the mesh itself rather than taking advantage of the MeshInstance's
+ability to override materials.
 
 Setting up
 ----------
 
-Add a new :ref:`MeshInstance <class_meshinstance>` node to your scene. 
+Add a new :ref:`MeshInstance <class_meshinstance>` node to your scene.
 
 In the inspector tab beside "Mesh" click "[empty]" and select "New PlaneMesh".
 Then click on the image of a plane that appears.
@@ -76,11 +76,11 @@ us more vertices to work with and thus allow us to add more detail.
 
 .. image:: img/plane-sub.png
 
-:ref:`PrimitiveMeshes <class_primitivemesh>`, like PlaneMesh, only have one surface, so instead of 
-an array of materials there is only one. Click beside "Material" where it says "[empty]" and 
-select "New ShaderMaterial". Then click the sphere that appears. 
+:ref:`PrimitiveMeshes <class_primitivemesh>`, like PlaneMesh, only have one surface, so instead of
+an array of materials there is only one. Click beside "Material" where it says "[empty]" and
+select "New ShaderMaterial". Then click the sphere that appears.
 
-Now click beside "Shader" where it says "[empty]" and select "New Shader". 
+Now click beside "Shader" where it says "[empty]" and select "New Shader".
 
 The shader editor should now pop up and you are ready to begin writing your first Spatial shader!
 
@@ -97,8 +97,8 @@ We set the variable ``shader_type`` to ``spatial`` because this is a spatial sha
 
   shader_type spatial;
 
-Next we will define the ``vertex()`` function. The ``vertex()`` function determines where 
-the vertices of your :ref:`Mesh<class_MeshInstance>` appear in the final scene. We will be 
+Next we will define the ``vertex()`` function. The ``vertex()`` function determines where
+the vertices of your :ref:`Mesh<class_MeshInstance>` appear in the final scene. We will be
 using it to offset the height of each vertex and make our flat plane appear like a little terrain.
 
 We define the vertex shader like so:
@@ -213,7 +213,7 @@ precedence over the value used to initialize it in the shader.
   # called from the MeshInstance
   mesh.material.set_shader_param("height_scale", 0.5)
 
-.. note:: Changing uniforms in Spatial-based nodes is different from CanvasItem-based nodes. Here, 
+.. note:: Changing uniforms in Spatial-based nodes is different from CanvasItem-based nodes. Here,
           we set the material inside the PlaneMesh resource. In other mesh resources you may
           need to first access the material by calling ``surface_get_material()``. While in
           the MeshInstance you would access the material using ``get_surface_material()`` or
@@ -250,15 +250,15 @@ First, we will add an :ref:`OmniLight<class_OmniLight>` to the scene.
 .. image:: img/light.png
 
 You can see the light affecting the terrain, but it looks odd. The problem is the light
-is affecting the terrain as if it were a flat plane. This is because the light shader uses 
-the normals from the :ref:`Mesh <class_mesh>` to calculate light. 
+is affecting the terrain as if it were a flat plane. This is because the light shader uses
+the normals from the :ref:`Mesh <class_mesh>` to calculate light.
 
-The normals are stored in the Mesh, but we are changing the shape of the Mesh in the 
-shader, so the normals are no longer correct. To fix this, we can recalculate the normals 
-in the shader or use a normal texture that corresponds to our noise. Godot makes both easy for us. 
+The normals are stored in the Mesh, but we are changing the shape of the Mesh in the
+shader, so the normals are no longer correct. To fix this, we can recalculate the normals
+in the shader or use a normal texture that corresponds to our noise. Godot makes both easy for us.
 
 You can calculate the new normal manually in the vertex function and then just set ``NORMAL``.
-With ``NORMAL`` set, Godot will do all the difficult lighting calculations for us. We will cover 
+With ``NORMAL`` set, Godot will do all the difficult lighting calculations for us. We will cover
 this method in the next part of this tutorial, for now we will read normals from a texture.
 
 Instead we will rely on the NoiseTexture again to calculate normals for us. We do that by passing in
@@ -283,11 +283,11 @@ function. The ``fragment()`` function will be explained in more detail in the ne
 
 When we have normals that correspond to a specific vertex we set ``NORMAL``, but if you have a normalmap
 that comes from a texture, set the normal using ``NORMALMAP``. This way Godot will handle the wrapping the
-texture around the mesh automatically. 
+texture around the mesh automatically.
 
 Lastly, in order to ensure that we are reading from the same places on the noise texture and the normalmap
 texture, we are going to pass the ``VERTEX.xz`` position from the ``vertex()`` function to the ``fragment()``
-function. We do that with varyings. 
+function. We do that with varyings.
 
 Above the ``vertex()`` define a ``vec2`` called ``vertex_position``. And inside the ``vertex()`` function
 assign ``VERTEX.xz`` to ``vertex_position``.
@@ -318,7 +318,7 @@ We can even drag the light around and the lighting will update automatically.
 .. image:: img/normalmap2.png
 
 Here is the full code for this tutorial. You can see it is not very long as Godot handles
-most of the difficult stuff for you. 
+most of the difficult stuff for you.
 
 .. code-block:: glsl
 
@@ -341,6 +341,6 @@ most of the difficult stuff for you.
   }
 
 That is everything for this part. Hopefully, you now understand the basics of vertex
-shaders in Godot. In the next part of this tutorial we will write a fragment function 
+shaders in Godot. In the next part of this tutorial we will write a fragment function
 to accompany this vertex function and we will cover a more advanced technique to turn
-this terrain into an ocean of moving waves. 
+this terrain into an ocean of moving waves.

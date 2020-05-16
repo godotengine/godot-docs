@@ -53,7 +53,7 @@ to issues at runtime, but lets you decide whether or not you want to
 leave the code as it is. More on that in a moment.
 
 Static types also give you better code completion options. Below, you
-can see the difference between a dynamic and a static typed completion
+can see the difference between a dynamic and a static typed completion
 options for a class called ``PlayerController``.
 
 You've probably stored a node in a variable before, and typed a dot to
@@ -240,7 +240,7 @@ You can also use your own nodes as return types:
         var item: Item = find_item(reference)
         if not item:
             item = ItemDatabase.get_instance(reference)
-            
+
         item.amount += amount
         return item
 
@@ -299,7 +299,7 @@ And the same callback, with type hints:
     func _on_area_entered(area: CollisionObject2D) -> void:
         pass
 
-You're free to replace, e.g. the ``CollisionObject2D``, with your own type,
+You're free to replace, e.g. the ``CollisionObject2D``, with your own type,
 to cast parameters automatically:
 
 ::

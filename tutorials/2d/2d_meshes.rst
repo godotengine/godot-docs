@@ -22,7 +22,7 @@ Optimizing pixels drawn
 
 This workflow is useful for optimizing 2D drawing in some situations. When drawing large images with transparency, Godot will draw the whole quad to the screen. The large transparent areas will still be drawn.
 
-This can affect performance, especially on mobile devices, when drawing very large images (generally screen sized), 
+This can affect performance, especially on mobile devices, when drawing very large images (generally screen sized),
 or layering multiple images on top of each other with large transparent areas (for example, when using ``ParallaxBackground``).
 
 Converting to a mesh will ensure that only the opaque parts will be drawn and the rest will be ignored.

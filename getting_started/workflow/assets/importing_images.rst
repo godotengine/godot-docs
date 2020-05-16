@@ -137,7 +137,7 @@ Note that RGTC compression affects the resulting normal map image. You will have
 
   More information about normal maps (including a coordinate order table for
   popular engines) can be found
-  `here <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details>`__. 
+  `here <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details>`__.
 
 Flags
 -----
