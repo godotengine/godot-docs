@@ -173,6 +173,11 @@
     }
 }
 
+html {
+    /* Hack to prevent taking the scroll bar into account when centering the main pane */
+    padding-left: calc(100vw - 100%);
+}
+
 body,
 h1,
 h2,
@@ -440,8 +445,9 @@ footer,
 
 @media only screen and (min-width: 769px) {
     .wy-body-for-nav {
-        /* Center the page on wide displays for better readability */
-        max-width: 1100px;
+        /* Center the page's main pane on wide displays for better readability */
+        /* `max-width` is (navbar width + main pane width) */
+        max-width: 1400px;
         margin: 0 auto;
     }
 }
