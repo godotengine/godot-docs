@@ -341,7 +341,7 @@ footer,
 /* Sphinx Search extension */
 /* .wy-body-for-nav is used for higher rule specificity */
 
-/* search popup body */
+/* Search popup body */
 .wy-body-for-nav .search__outer {
     background-color: var(--content-background-color);
     border: 2px solid var(--content-background-color);
@@ -364,7 +364,7 @@ footer,
     background-color: var(--hr-color);
 }
 
-/* search input */
+/* Search input */
 .wy-body-for-nav .search__outer__input {
     background-color: var(--search-input-background-color);
     background-image: none;
@@ -382,11 +382,11 @@ footer,
     display: none;
 }
 
-/* search item */
+/* Search results item */
 .wy-body-for-nav .search__result__single {
     border-bottom-color: var(--hr-color);
 }
-/* search item title */
+/* Search item title */
 .wy-body-for-nav .search__result__title {
     color: var(--link-color);
     border-bottom: none;
@@ -394,7 +394,7 @@ footer,
     font-weight: 400;
 }
 
-/* search item section */
+/* Search item section */
 .wy-body-for-nav .outer_div_page_results:hover,
 .wy-body-for-nav .search__result__box .active {
     background-color: var(--search-active-color);
@@ -408,7 +408,7 @@ footer,
     color: var(--footer-color);
 }
 
-/* search item matching substring */
+/* Search item matching substring */
 .wy-body-for-nav .search__outer .search__result__title span,
 .wy-body-for-nav .search__outer .search__result__content span {
     color: var(--search-match-color);
@@ -420,7 +420,13 @@ footer,
     border-bottom-color: var(--body-color);
 }
 
-/* search credits */
+/* Search empty results */
+/* The original styles are inlined, see https://github.com/readthedocs/readthedocs-sphinx-search/issues/48 */
+.wy-body-for-nav .search__result__box {
+    color: var(--body-color) !important;
+}
+
+/* Search footer & credits */
 .wy-body-for-nav .rtd__search__credits {
     background-color: var(--search-credits-background-color);
     border-color: var(--search-credits-background-color);
