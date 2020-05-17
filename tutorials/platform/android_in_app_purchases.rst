@@ -3,59 +3,60 @@
 Android in-app purchases
 ========================
 
-Godot engine has integrated GooglePaymentsV3 module with which we can implement in-app purchases in our game.
+Godot Engine has integrated GooglePaymentsV3 module with which we can implement in-app purchases in our game.
 
-The Godot engine demo project repository has an android-iap example project. It includes a gdscript interface for android IAP.
+The `Godot demo projects repository <https://github.com/godotengine/godot-demo-projects>`__
+has an `android_iap <https://github.com/godotengine/godot-demo-projects/tree/master/misc/android_iap>`__
+example project. It includes a GDScript interface for Android IAPs.
 
-Check the repository here https://github.com/godotengine/godot-demo-projects
-
-Find the iap.gd script in
+Find the ``iap.gd`` script in:
 
 .. code-block:: none
 
     godot-demo-projects/misc/android_iap
 
-
-Add it to the Autoload list and name it as IAP so that we can reference it anywhere in the game.
+Copy it to your project, then open the Project Settings, add it to the AutoLoad
+list and name it as IAP so that we can reference it anywhere in the game.
 
 Getting the product details
 ---------------------------
 
-When starting our game, we will need to get the item details from Google such as the product price, description and localized price string etc.
+When starting our game, we will need to get the item details from Google such as the product price, description, localized price string, etc.
 
 ::
 
-    #First listen to the sku details update callback
-    IAP.connect("sku_details_complete",self,"sku_details_complete")
+    # First, listen to the SKU details update callback.
+    IAP.connect("sku_details_complete", self, "sku_details_complete")
 
-    #Then ask google the details for these items
-    IAP.sku_details_query(["pid1","pid2"]) #pid1 and pid2 are our product ids entered in Googleplay dashboard
+    # Then ask Google the details for these items.
+    # pid1 and pid2 are our product IDs entered in the Google Play dashboard.
+    IAP.sku_details_query(["pid1", "pid2"])
 
 
-    #This will be called when sku details are retrieved successfully
+    # This will be called when SKU details are retrieved successfully.
     func sku_details_complete():
-        print(IAP.sku_details) #This will print the details as JSON format, refer the format in iap.gd
-        print(IAP.sku_details["pid1"].price) #print formatted localized price
+        print(IAP.sku_details)  # This will print the details as JSON format. Refer to the format in `iap.gd`.
+        print(IAP.sku_details["pid1"].price)  # Print formatted localized price.
 
 We can use the IAP details to display the title, price and/or description on our shop scene.
 
 Check if user purchased an item
 -------------------------------
 
-When starting our game, we can check if the user has purchased any product. YOU SHOULD DO THIS ONLY AFTER 2/3 SECONDS AFTER YOUR GAME IS LOADED. If we do this as the first thing when the game is launched, IAP might not be initialized and our game will crash on start.
+When starting our game, we can check if the user has purchased any product. **You should do this only after 2/3 seconds after your game is loaded.** If we do this as the first thing when the game is launched, IAPs might not be initialized and our game will crash on start.
 
 ::
 
-    #Add a listener first
-    IAP.connect("has_purchased",self,"iap_has_purchased")
+    # Add a listener first.
+    IAP.connect("has_purchased", self, "iap_has_purchased")
     IAP.request_purchased() #Ask Google for all purchased items
 
-    #This will call for each and every user purchased products
+    # This will call for each and every user's purchased products.
     func iap_has_purchased(item_name):
         print(item_name) #print the name of purchased items
 
 
-Google IAP policy says the game should restore the user's purchases if the user replaces their phone or reinstalls the same app. We can use the above code to check what products the user has purchased and we can make our game respond accordingly.
+The Google IAP policy says the game should restore the user's purchases if the user replaces their phone or reinstalls the same app. We can use the above code to check what products the user has purchased and we can make our game respond accordingly.
 
 Simple Purchase
 ---------------
@@ -64,38 +65,36 @@ We can put this purchase logic on a product's buy button.
 
 ::
 
-    #First listen for purchase_success callback
-    IAP.connect("purchase_success",self,"purchase_success_callback")
+    # First, listen for purchase_success callback.
+    IAP.connect("purchase_success", self, "purchase_success_callback")
 
-    #Then call purchase like this
-    IAP.purchase("pid1") #replace pid1 with your product id
-    IAP.purchase("pid2") #replace pid2 with your another product id
+    # Then call `purchase()` like this:
+    IAP.purchase("pid1")  # Replace pid1 with one of your product IDs.
+    IAP.purchase("pid2")  # Replace pid2 with another of your product IDs.
 
-    #This function will be called when the purchase is a success
+    # This function will be called when the purchase is a success.
     func purchase_success_callback(item):
         print(item + " has purchased")
 
 We can also implement other signals for the purchase flow and improve the user experience as you needed.
 
-``purchase_fail`` - When the purchase is failed due to any reason
-
-``purchase_cancel`` - When the user cancels the purchase
-
-``purchase_owned`` - When the user already bought the product earlier
-
+- ``purchase_fail``: When the purchase is failed due to any reason.
+- ``purchase_cancel``: When the user cancels the purchase.
+- ``purchase_owned``: When the user already bought the product earlier.
 
 Consumables and Non-Consumables
 -------------------------------
 
-There are two types of products - consumables and non-consumables.
-**Consumables** are purchased and used, for eg: healing potions which can be purchased again and again.
-**Non-consumables** are one time purchases, for eg: Level packs.
+There are two types of products - consumables and non-consumables:
+
+- **Consumables** are purchased and used, for example, healing potions which can be purchased again and again.
+- **Non-consumables** are one time purchases, for example, level packs.
 
 Google doesn't have this separation in their dashboard. If our product is a consumable, and if a user has purchased it, it will not be available for purchase until it is consumed. So we should call the consume method for our consumables and don't call consume for your non-consumables.
 
 ::
 
-    IAP.connect("consume_success",self,"on_consume_success")
+    IAP.connect("consume_success", self, "on_consume_success")
     IAP.consume("pid")
 
     func on_consume_success(item):
@@ -118,9 +117,9 @@ We should set the auto consume value only once when the game starts.
 Testing
 -------
 
-If we add a gmail id as a tester in Google dashboard, that tester can purchase items and they will not be charged. Another way to test IAP is using redeem codes generated by us for our game because the purchase flow is the same.
+If we add a Gmail ID as a tester in the Google Play dashboard, that tester can purchase items and they will not be charged. Another way to test IAP is using redeem codes generated by us for our game because the purchase flow is the same.
 
-Third way of testing is in development side. If we put the product ids as shown below, we will get a static fixed response according to the product id. This is a quick way of testing things before going to the dashboard.
+Third way of testing is in development side. If we put the product ids as shown below, we will get a static fixed response according to the product ID. This is a quick way of testing things before going to the dashboard.
 
 - android.test.purchased
 - android.test.canceled

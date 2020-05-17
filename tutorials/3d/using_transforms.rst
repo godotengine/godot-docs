@@ -40,7 +40,7 @@ This could be done by first rotating in *X*, then *Y* and then in *Z*. Alternati
 but depending on the order, the final orientation of the object will *not necessarily be the same*. Indeed, this means that there are several ways to construct an orientation
 from 3 different angles, depending on *the order of the rotations*.
 
-Following is a visualization of rotation axes (in X,Y,Z order) in a gimbal (from Wikipedia). As you can see, the orientation of each axis depends on the rotation of the previous one:
+Following is a visualization of rotation axes (in X, Y, Z order) in a gimbal (from Wikipedia). As you can see, the orientation of each axis depends on the rotation of the previous one:
 
 .. image:: img/transforms_gimbal.gif
 

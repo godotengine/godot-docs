@@ -23,7 +23,7 @@ Best Practices
 #1: The problem always comes first
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Many contributors are extremely creative and just enjoy the process of designing abstract data structures, creating nice user interfaces,or simply love programming. Whatever the case may be, they come up with cool ideas, which may not be actually solving any actual problems.
+Many contributors are extremely creative and just enjoy the process of designing abstract data structures, creating nice user interfaces, or simply love programming. Whatever the case may be, they come up with cool ideas, which may not be actually solving any actual problems.
 
 .. image:: img/best_practices1.png
 

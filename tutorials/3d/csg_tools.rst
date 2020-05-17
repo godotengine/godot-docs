@@ -60,7 +60,7 @@ CSGPolygon
 ~~~~~~~~~~
 
 The :ref:`CSGPolygon <class_CSGPolygon>` node extrude along a Polygon drawn in
-2D (in X,Y coordinates) in the following ways:
+2D (in X, Y coordinates) in the following ways:
 
 - **Depth:** Extruded back a given amount.
 - **Spin:** Extruded while spinning around its origin.
