@@ -16,7 +16,7 @@ resources while in the middle of performance-sensitive code.
 
 Its counterpart, the :ref:`load <class_@GDScript_method_load>` method, loads a
 resource only when it reaches the load statement. That is, it will load a
-resource in-place which can cause slowdowns then it occurs in the middle of
+resource in-place which can cause slowdowns when it occurs in the middle of
 sensitive processes. The ``load`` function is also an alias for
 :ref:`ResourceLoader.load(path) <class_ResourceLoader_method_load>` which is
 accessible to *all* scripting languages.
