@@ -125,6 +125,13 @@ Examples
     export(Resource) var resource
     # In the Inspector, you can then drag and drop a resource file
     # from the FileSystem dock into the variable slot.
+    
+    # Opening the inspector dropdown may result in an
+    # extremely long list of possible classes to create, however.
+    # Therefore, if you specify an extension of Resource such as:
+    export(AnimationNode) var resource
+    # The drop-down menu will be limited to AnimationNode and all
+    # its inherited classes.
 
 It must be noted that even if the script is not being run while in the
 editor, the exported properties are still editable. This can be used
