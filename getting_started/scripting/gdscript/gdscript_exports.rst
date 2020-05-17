@@ -126,8 +126,8 @@ Examples
     # In the Inspector, you can then drag and drop a resource file
     # from the FileSystem dock into the variable slot.
     
-    # Opening resource from the FileSystem will drop-down an
-    # extremely long lists of new classes to create, however.
+    # Opening the inspector dropdown may result in an
+    # extremely long list of possible classes to create, however.
     # Therefore, if you specify an extension of Resource such as:
     export(AnimationNode) var resource
     # The drop-down menu will be limited to AnimationNode and all
