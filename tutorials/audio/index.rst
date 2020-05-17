@@ -9,5 +9,3 @@ Audio
    audio_streams
    sync_with_audio
    recording_with_microphone
-
-

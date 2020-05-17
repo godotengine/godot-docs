@@ -3,14 +3,14 @@
 Particle shaders
 ================
 
-Particle shaders are a special type of vertex shader that runs before the 
-object is drawn. They are used for calculating material properties such as 
-color, position, and rotation. They are drawn with any regular material for 
+Particle shaders are a special type of vertex shader that runs before the
+object is drawn. They are used for calculating material properties such as
+color, position, and rotation. They are drawn with any regular material for
 CanvasItem or Spatial, depending on whether they are 2D or 3D.
 
-Particle shaders are unique because they are not used to draw the object 
-itself; they are used to calculate particle properties, which are then used 
-by the CanvasItem of Spatial shader. They contain only a vertex processor 
+Particle shaders are unique because they are not used to draw the object
+itself; they are used to calculate particle properties, which are then used
+by the CanvasItem of Spatial shader. They contain only a vertex processor
 function that outputs multiple properties (see built-ins below).
 
 Particle shaders use a transform feedback shader, which is a special type of
@@ -39,9 +39,9 @@ Render modes
 Built-ins
 ^^^^^^^^^
 
-Values marked as "in" are read-only. Values marked as "out" are for optional writing and will 
-not necessarily contain sensible values. Values marked as "inout" provide a sensible default 
-value, and can optionally be written to. Samplers are not subjects of writing and they are 
+Values marked as "in" are read-only. Values marked as "out" are for optional writing and will
+not necessarily contain sensible values. Values marked as "inout" provide a sensible default
+value, and can optionally be written to. Samplers are not subjects of writing and they are
 not marked.
 
 Global built-ins

@@ -17,7 +17,7 @@ For compiling under Windows, the following is required:
 - `MinGW-w64 <http://mingw-w64.org/>`_ with GCC can be used as an alternative to
   Visual Studio. Be sure to install/configure it to use the ``posix`` thread model.
   **Important:** When using MinGW to compile the ``master`` branch, you need GCC 9 or later. Because
-  MinGW does not officially release GCC 9 yet, you can get an alternate installer from 
+  MinGW does not officially release GCC 9 yet, you can get an alternate installer from
   `here <https://jmeubank.github.io/tdm-gcc/articles/2020-03/9.2.0-release>`_.
 - `Python 3.5+ <https://www.python.org/downloads/windows/>`_.
 - `SCons 3.0 <https://www.scons.org/>`_ build system. If using Visual Studio 2019,
@@ -36,7 +36,7 @@ For compiling under Windows, the following is required:
                   mingw-w64-x86_64-gcc mingw-w64-x86_64-yasm \
                   mingw-w64-i686-python3-pip mingw-w64-i686-gcc \
                   mingw-w64-i686-yasm make
-              
+
           For each MSYS2 MinGW subsystem, you should then run
           `pip install scons` in its shell.
 

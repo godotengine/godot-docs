@@ -132,7 +132,7 @@ To generate and compile the bindings, use this command (replacing ``<platform>``
 with ``windows``, ``linux`` or ``osx`` depending on your OS):
 
 To speed up compilation, add `-jN` at the end of the SCons command line where `N` is the number of CPU threads you have on your system. The example below uses 4 threads.
- 
+
 .. code-block:: none
 
     cd godot-cpp

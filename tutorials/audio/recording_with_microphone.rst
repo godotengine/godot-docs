@@ -29,7 +29,7 @@ An ``AudioStreamPlayer`` named ``AudioStreamRecord`` is used for recording.
 
     var effect
     var recording
-    
+
     func _ready():
         # We get the index of the "Record" bus.
         var idx = AudioServer.get_bus_index("Record")
@@ -42,7 +42,7 @@ which has three methods:
 :ref:`get_recording() <class_AudioEffectRecord_method_get_recording>`,
 :ref:`is_recording_active() <class_AudioEffectRecord_method_is_recording_active>`,
 and :ref:`set_recording_active() <class_AudioEffectRecord_method_set_recording_active>`.
-        
+
 .. tabs::
   .. code-tab:: gdscript GDScript
 

@@ -6,7 +6,7 @@ Your first CanvasItem shader
 Introduction
 ------------
 
-Shaders are special programs that execute on the GPU and are used for rendering 
+Shaders are special programs that execute on the GPU and are used for rendering
 graphics. All modern rendering is done with shaders. For a more detailed description
 of what shaders are please see :ref:`What are shaders <doc_what_are_shaders>`.
 
@@ -14,16 +14,16 @@ This tutorial will focus on the practical aspects of writing shader programs by 
 you through the process of writing a shader with both vertex and fragment functions.
 This tutorial targets absolute beginners to shaders.
 
-.. note:: If you have experience writing shaders and are just looking for 
+.. note:: If you have experience writing shaders and are just looking for
           an overview of how shaders work in Godot, see the :ref:`Shading Reference <toc-shading-reference>`.
 
 Setup
 -----
 
-:ref:`CanvasItem <doc_canvas_item_shader>` shaders are used to draw all 2D objects in Godot, 
+:ref:`CanvasItem <doc_canvas_item_shader>` shaders are used to draw all 2D objects in Godot,
 while :ref:`Spatial <doc_spatial_shader>` shaders are used to draw all 3D objects.
 
-In order to use a shader it must be attached inside a :ref:`Material <class_material>` 
+In order to use a shader it must be attached inside a :ref:`Material <class_material>`
 which must be attached to an object. Materials are a type of :ref:`Resource <doc_resources>`.
 To draw multiple objects with the same material, the material must be attached to each object.
 
@@ -54,7 +54,7 @@ In Godot, all shaders start with a line specifying what type of shader they are.
 the following format:
 
 .. code-block:: glsl
-  
+
   shader_type canvas_item;
 
 Because we are writing a CanvasItem shader, we specify ``canvas_item`` in the first line. All our code will
@@ -63,7 +63,7 @@ go beneath this declaration.
 This line tells the engine which built-in variables and functionality to supply you with.
 
 In Godot you can override three functions to control how the shader operates; ``vertex``, ``fragment``, and ``light``.
-This tutorial will walk you through writing a shader with both vertex and fragment functions. Light 
+This tutorial will walk you through writing a shader with both vertex and fragment functions. Light
 functions are significantly more complex than vertex and fragment functions and so will not be covered here.
 
 Your first fragment function
@@ -71,14 +71,14 @@ Your first fragment function
 
 The fragment function runs for every pixel in a Sprite and determines what color that pixel should be.
 
-They are restricted to the pixels covered by the Sprite, that means you cannot use one to, for example, 
-create an outline around a Sprite. 
+They are restricted to the pixels covered by the Sprite, that means you cannot use one to, for example,
+create an outline around a Sprite.
 
-The most basic fragment function does nothing except assign a single color to every pixel. 
+The most basic fragment function does nothing except assign a single color to every pixel.
 
 We do so by writing a ``vec4`` to the built-in variable ``COLOR``. ``vec4`` is shorthand for constructing
-a vector with 4 numbers. For more information about vectors see the :ref:`Vector math tutorial <doc_vector_math>` 
-``COLOR`` is both an input variable to the fragment function and the final output from it. 
+a vector with 4 numbers. For more information about vectors see the :ref:`Vector math tutorial <doc_vector_math>`
+``COLOR`` is both an input variable to the fragment function and the final output from it.
 
 .. code-block:: glsl
 
@@ -124,7 +124,7 @@ manually like in the code below.
     COLOR.b = 1.0;
   }
 
-The default fragment function reads from a texture and displays it. When you overwrite the default fragment function, 
+The default fragment function reads from a texture and displays it. When you overwrite the default fragment function,
 you lose that functionality, so you have to implement it yourself. You read from textures using the
 ``texture`` function. Certain nodes, like Sprites, have a dedicated texture variable that can be accessed in the shader
 using ``TEXTURE``. Use it together with ``UV`` and ``texture`` to draw the Sprite.
@@ -163,7 +163,7 @@ Add a uniform to change the amount of blue in our Sprite.
   }
 
 Now you can change the amount of blue in the Sprite from the editor. Look back at the Inspector
-under where you created your shader. You should see a section called "Shader Param". Unfold that 
+under where you created your shader. You should see a section called "Shader Param". Unfold that
 section and you will see the uniform you just declared. If you change the value in the editor, it
 will overwrite the default value you provided in the shader.
 
@@ -178,7 +178,7 @@ material resource. With a Sprite node, the following code can be used to set the
   var blue_value = 1.0
   material.set_shader_param("blue", blue_value)
 
-Note that the name of the uniform is a string. The string must match exactly with how it is 
+Note that the name of the uniform is a string. The string must match exactly with how it is
 written in the shader, including spelling and case.
 
 Your first vertex function
@@ -190,7 +190,7 @@ Use the vertex function to calculate where on the screen each vertex should end 
 
 The most important variable in the vertex function is ``VERTEX``. Initially, it specifies
 the vertex coordinates in your model, but you also write to it to determine where to actually
-draw those vertices. ``VERTEX`` is a ``vec2`` that is initially presented in local-space 
+draw those vertices. ``VERTEX`` is a ``vec2`` that is initially presented in local-space
 (i.e. not relative to the camera, viewport, or parent nodes).
 
 You can offset the vertices by directly adding to ``VERTEX``.
@@ -199,7 +199,7 @@ You can offset the vertices by directly adding to ``VERTEX``.
 
   void vertex() {
     VERTEX += vec2(10.0, 0.0);
-  } 
+  }
 
 Combined with the ``TIME`` built-in variable, this can be used for simple animation.
 
@@ -214,7 +214,7 @@ Conclusion
 ----------
 
 At their core, shaders do what you have seen so far, they compute ``VERTEX`` and ``COLOR``. It is
-up to you to dream up more complex mathematical strategies for assigning values to those variables. 
+up to you to dream up more complex mathematical strategies for assigning values to those variables.
 
 For inspiration, take a look at some of the more advanced shader tutorials, and look at other sites
-like `Shadertoy <https://www.shadertoy.com/results?query=&sort=popular&from=10&num=4>`_ and `The Book of Shaders <https://thebookofshaders.com>`_. 
+like `Shadertoy <https://www.shadertoy.com/results?query=&sort=popular&from=10&num=4>`_ and `The Book of Shaders <https://thebookofshaders.com>`_.

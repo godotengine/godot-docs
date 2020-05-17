@@ -35,7 +35,7 @@ project. Your project tree should looks something like this:
 
 Now you can start building the main scene, stick to the bare minimum.
 
-- Add an ARVROrigin node first. 
+- Add an ARVROrigin node first.
 - Then Add three child nodes to the origin node, one ARVRCamera and two ARVRControllers.
 - Assign controller id 1 to the first ARVRController and rename that to LeftHand.
 - Assign controller id 2 to the second ARVRController and rename that to RightHand.

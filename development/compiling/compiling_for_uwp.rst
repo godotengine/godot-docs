@@ -18,11 +18,11 @@ Requirements
 
 .. note:: The ANGLE repo by Microsoft has been discontinued and the
           ``ms_master`` branch has been cleared out.
-          
+
           As a temporary workaround however, it is still possible to
           download an older state of the source code via commit
           `c61d048 <https://github.com/microsoft/angle/tree/c61d0488abd9663e0d4d2450db7345baa2c0dfb6>`__.
-          
+
           This page will eventually be updated in the future to reflect
           the new build instructions.
 

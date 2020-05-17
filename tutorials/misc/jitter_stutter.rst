@@ -69,7 +69,7 @@ Linux
 
 Stutter may be visible on Desktop Linux, but this is usually associated with different video drivers and compositors.
 Nouveau drivers often exhibit this, while AMD or NVidia proprietary don't. Some compositors may also trigger this problem
-(e.g. KWin), so it is advised to try using a different one to rule it out as the cause. 
+(e.g. KWin), so it is advised to try using a different one to rule it out as the cause.
 
 There is no workaround for driver or compositor stuttering other than reporting it as an issue to the driver or compositor
 developers.

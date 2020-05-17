@@ -38,7 +38,7 @@ This is a variation of the previous practice. I believe most developers agree th
 
 The answer to this question is that the problem needs to *exist*. It must not be speculation or a belief. The user must be using the software as intended to create something they *need*. In this process, the user may stumble into a problem that requires a solution in order to continue, or in order to achieve greater productivity. In this case, *a solution is needed*.
 
-Believing that problems may arise in the future and that the software needs to be ready to solve them by the time they appear is called *"Future proofing"* and its characterized by lines of thought such as: 
+Believing that problems may arise in the future and that the software needs to be ready to solve them by the time they appear is called *"Future proofing"* and its characterized by lines of thought such as:
 
 - I think it would be useful for users to...
 - I think users will eventually need to...
@@ -72,16 +72,16 @@ Because of this, user proposed solutions don't always contemplate other use case
 
 .. image:: img/best_practices4.png
 
-For developers, the perspective is different. They may find the user's problem too unique to justify a solution (instead of a user workaround), or maybe they will suggest a partial (usually simpler or lower level) solution that applies to a wider range of known problems, and leave the rest of the solution up to the user. 
+For developers, the perspective is different. They may find the user's problem too unique to justify a solution (instead of a user workaround), or maybe they will suggest a partial (usually simpler or lower level) solution that applies to a wider range of known problems, and leave the rest of the solution up to the user.
 
-In any case, before attempting a contribution, it is important to discuss the actual problems with the other developers or contributors, so a better agreement on implementation can be reached. 
+In any case, before attempting a contribution, it is important to discuss the actual problems with the other developers or contributors, so a better agreement on implementation can be reached.
 
 The only exception, in this case, is when an area of code has a clear owner (agreed by the other contributors), who talks to users directly and has the most knowledge to implement a solution directly.
 
 #5: To each problem, its own solution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For programmers, it is always a most enjoyable challenge to find the most optimal solutions to problems. Things, however, may go overboard sometimes and programmers will try to come up with solutions that solve as many problems as possible. 
+For programmers, it is always a most enjoyable challenge to find the most optimal solutions to problems. Things, however, may go overboard sometimes and programmers will try to come up with solutions that solve as many problems as possible.
 
 The situation will often take a turn for the worse when, in order to make this solution appear even more fantastic and flexible, the pure speculation-based problems (as described in #2) also make their appearance on stage.
 
@@ -98,7 +98,7 @@ Big and flexible solutions also have an additional drawback which is that, over 
 
 This is a continuation of the previous point, which further explains why this way of thinking and designing software is preferred.
 
-As mentioned before (in point #2), it is very difficult for us (as human beings who design software) to actually understand all future user needs. Trying to write very flexible structures that cater to many use cases at once is often a mistake. 
+As mentioned before (in point #2), it is very difficult for us (as human beings who design software) to actually understand all future user needs. Trying to write very flexible structures that cater to many use cases at once is often a mistake.
 
 We may come up with something we believe is brilliant, but when it's actually used, we will find that users will never even use half of it, or that they will require features that don't quite accommodate our original design, forcing us to either throw it away or make it even more complex.
 
@@ -115,7 +115,7 @@ In real-life scenarios, these use cases will be at most rare and uncommon anyway
 
 When looking for a solution to a problem, be it implementing a new feature or fixing a bug, sometimes the easiest path is to add data or a new function in the core layers of code.
 
-The main problem here is, adding something to the core layers that will only be used from a single location far away will not only make the code more difficult to follow (split in two), but also make the core API larger, more complex, more difficult to understand in general. 
+The main problem here is, adding something to the core layers that will only be used from a single location far away will not only make the code more difficult to follow (split in two), but also make the core API larger, more complex, more difficult to understand in general.
 
 This is bad, because readability and cleanness of core APIs is always of extreme importance given how much code relies on it, and because it's key for new contributors as a starting point to learning the codebase.
 

@@ -63,15 +63,15 @@ Below is the generic state, from which all other states will inherit.
         func move_right():
             pass
 
-A few notes on the above script. First, this implementation uses a 
+A few notes on the above script. First, this implementation uses a
 ``setup(change_state, animated_sprite, persistent_state)`` method to assign
-references. These references will be instantiated in the parent of this state. This helps with something 
-in programming known as *cohesion*. The state of the player does not want the responsibility of creating 
-these variables, but does want to be able to use them. However, this does make the state *coupled* to the 
-state's parent. This means that the state is highly reliant on whether it has a parent which contains 
+references. These references will be instantiated in the parent of this state. This helps with something
+in programming known as *cohesion*. The state of the player does not want the responsibility of creating
+these variables, but does want to be able to use them. However, this does make the state *coupled* to the
+state's parent. This means that the state is highly reliant on whether it has a parent which contains
 these variables. So, remember that *coupling* and *cohesion* are important concepts when it comes to code management.
 
-.. note:: 
+.. note::
     See the following page for more details on cohesion and coupling:
     https://courses.cs.washington.edu/courses/cse403/96sp/coupling-cohesion.html
 
@@ -137,7 +137,7 @@ So, now that there is a base state, the two states discussed earlier can be impl
             if abs(velocity) < min_move_speed:
                  change_state.call_func("idle")
             persistent_state.velocity.x *= friction
-    
+
         func move_left():
             if animated_sprite.flip_h:
                 persistent_state.velocity += move_speed
@@ -225,20 +225,20 @@ will not change it makes sense to call this new script ``persistent_state.gd``.
             state.name = "current_state"
             add_child(state)
 
-.. note:: 
-    The ``persistent_state.gd`` script contains code for detecting input. This was to make the tutorial simple, but it is not usually 
+.. note::
+    The ``persistent_state.gd`` script contains code for detecting input. This was to make the tutorial simple, but it is not usually
     best practice to do this.
 
 Project setup
 -------------
 
-This tutorial made an assumption that the node it would be attached to contained a child node which is an :ref:`AnimatedSprite <class_AnimatedSprite>`. 
+This tutorial made an assumption that the node it would be attached to contained a child node which is an :ref:`AnimatedSprite <class_AnimatedSprite>`.
 There is also the assumption that this :ref:`AnimatedSprite <class_AnimatedSprite>` has at least two animations,
 the idle and run animations. Also, the top-level node is assumed to be a :ref:`KinematicBody2D <class_KinematicBody2D>`.
 
 .. image:: img/llama_run.gif
 
-.. note:: 
+.. note::
     The zip file of the llama used in this tutorial is :download:`here <files/llama.zip>`.
     The source was from `piskel_llama <https://www.piskelapp.com/p/agxzfnBpc2tlbC1hcHByEwsSBlBpc2tlbBiAgICfx5ygCQw/edit>`_, but
     I couldn't find the original creator information on that page though...
@@ -254,4 +254,3 @@ player, which is a :ref:`KinematicBody2D <class_KinematicBody2D>`.
 Now the player has utilized the state design pattern to implement its two different states. The nice part of this
 pattern is that if one wanted to add another state, then it would involve creating another class that need only
 focus on itself and how it changes to another state. Each state is functionally separated and instantiated dynamically.
-

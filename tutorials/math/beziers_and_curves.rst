@@ -30,7 +30,7 @@ change the value of ``t`` from 0 to 1.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _quadratic_bezier(p0: Vector2, p1: Vector2, p2: Vector2, t: float): 
+    func _quadratic_bezier(p0: Vector2, p1: Vector2, p2: Vector2, t: float):
         var q0 = p0.linear_interpolate(p1, t)
         var q1 = p1.linear_interpolate(p2, t)
 

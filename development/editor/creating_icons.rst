@@ -62,7 +62,7 @@ optimized before being added to the engine, to do so:
 
        svgcleaner --multipass svg_source.svg svg_optimized.svg
 
-The ``--multipass`` switch improves compression, so make sure to include it.
+The ``--multipass`` switch improves compression, so make sure to include it.
 The optimized icon will be saved to ``svg_optimized.svg``. You can also change
 the destination parameter to any relative or absolute path you'd like.
 

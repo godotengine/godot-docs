@@ -16,7 +16,7 @@ animate a collection of individual images. Then we will animate a sprite sheet u
 with :ref:`AnimationPlayer <class_AnimationPlayer>` and the *Animation*
 property of :ref:`Sprite <class_Sprite>`.
 
-.. note:: Art for the following examples by https://opengameart.org/users/ansimuz and by 
+.. note:: Art for the following examples by https://opengameart.org/users/ansimuz and by
                                            https://opengameart.org/users/tgfcoder
 
 Individual images with AnimatedSprite
@@ -102,7 +102,7 @@ Click on the new SpriteFrames resource.  This time, when the bottom panel appear
 
 .. image:: img/2d_animation_add_from_spritesheet.png
 
-You will be prompted to open a file.  Select your sprite sheet.  
+You will be prompted to open a file.  Select your sprite sheet.
 
 A new window will open, showing your sprite sheet.  The first thing you will need to do is to change the number of vertical and horizontal images in your sprite sheet.  In this sprite sheet, we have four images horizontally and two images vertically.
 

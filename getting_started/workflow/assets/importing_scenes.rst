@@ -22,7 +22,7 @@ Godot supports the following 3D *scene file formats*:
 
 Just copy the scene file together with the texture to the project repository, and Godot will do a full import.
 
-It is important that the mesh is not deformed by bones when exporting. Make sure that the skeleton is reset to its T-pose 
+It is important that the mesh is not deformed by bones when exporting. Make sure that the skeleton is reset to its T-pose
 or default rest pose before exporting with your favorite 3D editor.
 
 Exporting DAE files from Maya and 3DS Max
@@ -38,7 +38,7 @@ with the latest version of the software.
 Exporting glTF 2.0 files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are three ways to export glTF files from Blender. As a glTF binary (``.glb`` file), glTF embedded (``.gltf`` file), 
+There are three ways to export glTF files from Blender. As a glTF binary (``.glb`` file), glTF embedded (``.gltf`` file),
 and with textures (``gltf`` + ``.bin`` + textures).
 
 glTF binary files are the smallest of the three options. They include the mesh and textures set up in Blender.

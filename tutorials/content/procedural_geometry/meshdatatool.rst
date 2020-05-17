@@ -4,10 +4,10 @@ Using the MeshDataTool
 ======================
 
 The MeshDataTool is not used to generate geometry. But it is helpful for dynamically altering geometry, for example
-if you want to write a script to tessellate, simplify, or deform meshes. 
+if you want to write a script to tessellate, simplify, or deform meshes.
 
 The MeshDataTool is not as fast as altering arrays directly using ArrayMesh. However, it provides more information
-and tools to work with meshes than the ArrayMesh does. When the MeshDataTool 
+and tools to work with meshes than the ArrayMesh does. When the MeshDataTool
 is used, it calculates mesh data that is not available in ArrayMeshes such as faces and edges, which are necessary
 for certain mesh algorithms. If you do not need this extra information then it may be better to use an ArrayMesh.
 
