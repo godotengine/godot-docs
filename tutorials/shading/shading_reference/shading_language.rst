@@ -581,25 +581,25 @@ It's important to understand that textures that are supplied as color require hi
 
 Full list of hints below:
 
-+----------------+-----------------------------+-------------------------------------+
-| Type           | Hint                        | Description                         |
-+================+=============================+=====================================+
-| **vec4**       | hint_color                  | Used as color                       |
-+----------------+-----------------------------+-------------------------------------+
-| **int, float** | hint_range(min,max [,step]) | Used as range (with min/max/step)   |
-+----------------+-----------------------------+-------------------------------------+
-| **sampler2D**  | hint_albedo                 | Used as albedo color, default white |
-+----------------+-----------------------------+-------------------------------------+
-| **sampler2D**  | hint_black_albedo           | Used as albedo color, default black |
-+----------------+-----------------------------+-------------------------------------+
-| **sampler2D**  | hint_normal                 | Used as normalmap                   |
-+----------------+-----------------------------+-------------------------------------+
-| **sampler2D**  | hint_white                  | As value, default to white.         |
-+----------------+-----------------------------+-------------------------------------+
-| **sampler2D**  | hint_black                  | As value, default to black          |
-+----------------+-----------------------------+-------------------------------------+
-| **sampler2D**  | hint_aniso                  | As flowmap, default to right.       |
-+----------------+-----------------------------+-------------------------------------+
++----------------+------------------------------+-------------------------------------+
+| Type           | Hint                         | Description                         |
++================+==============================+=====================================+
+| **vec4**       | hint_color                   | Used as color                       |
++----------------+------------------------------+-------------------------------------+
+| **int, float** | hint_range(min, max[, step]) | Used as range (with min/max/step)   |
++----------------+------------------------------+-------------------------------------+
+| **sampler2D**  | hint_albedo                  | Used as albedo color, default white |
++----------------+------------------------------+-------------------------------------+
+| **sampler2D**  | hint_black_albedo            | Used as albedo color, default black |
++----------------+------------------------------+-------------------------------------+
+| **sampler2D**  | hint_normal                  | Used as normalmap                   |
++----------------+------------------------------+-------------------------------------+
+| **sampler2D**  | hint_white                   | As value, default to white.         |
++----------------+------------------------------+-------------------------------------+
+| **sampler2D**  | hint_black                   | As value, default to black          |
++----------------+------------------------------+-------------------------------------+
+| **sampler2D**  | hint_aniso                   | As flowmap, default to right.       |
++----------------+------------------------------+-------------------------------------+
 
 GDScript uses different variable types than GLSL does, so when passing variables from GDScript
 to shaders, Godot converts the type automatically. Below is a table of the corresponding types:

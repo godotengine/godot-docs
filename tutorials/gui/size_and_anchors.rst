@@ -26,7 +26,7 @@ the parent control or (in case there is no parent control) the viewport.
 
 .. image:: img/margin.png
 
-When horizontal (left,right) and/or vertical (top,bottom) anchors are
+When horizontal (left, right) and/or vertical (top, bottom) anchors are
 changed to 1, the margin values become relative to the bottom-right
 corner of the parent control or viewport.
 

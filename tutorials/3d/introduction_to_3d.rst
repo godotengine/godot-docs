@@ -28,9 +28,9 @@ node for everything 3D.
 
 Spatial nodes have a local transform, which is relative to the parent
 node (as long as the parent node is also of **or inherits from** the type
-Spatial). This transform can be accessed as a 4x3
+Spatial). This transform can be accessed as a 4×3
 :ref:`Transform <class_Transform>`, or as 3 :ref:`Vector3 <class_Vector3>`
-members representing location, Euler rotation (x,y and z angles) and
+members representing location, Euler rotation (X, Y and Z angles) and
 scale.
 
 .. image:: img/tuto_3d2.png
@@ -150,10 +150,10 @@ Space and manipulation gizmos
 -----------------------------
 
 Moving objects in the 3D view is done through the manipulator gizmos.
-Each axis is represented by a color: Red, Green, Blue represent X,Y,Z
+Each axis is represented by a color: Red, Green, Blue represent X, Y, Z
 respectively. This convention applies to the grid and other gizmos too
 (and also to the shader language, ordering of components for
-Vector3,Color,etc.).
+Vector3, Color, etc.).
 
 .. image:: img/tuto_3d5.png
 

@@ -215,7 +215,7 @@ before ``*``:
 ::
 
     print("%0*d" % [2, 3])
-    #output: "03"
+    # Output: "03"
 
 
 Escape sequence

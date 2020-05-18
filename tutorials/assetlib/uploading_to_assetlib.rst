@@ -159,7 +159,7 @@ be patient! You will be informed when your asset is reviewed. If it was rejected
 you will be told why that may have been, and you will be able to submit it again
 with the appropriate changes.
 You may have some luck accelerating the approval process by messaging the
-moderators/assetlib reviewers on IRC (the #godotengine-atelier channel on Freenode),
+moderators/assetlib reviewers on IRC (the ``#godotengine-atelier`` channel on Freenode),
 or the official Discord server.
 
 .. |image0| image:: ./img/assetlib_submit.png

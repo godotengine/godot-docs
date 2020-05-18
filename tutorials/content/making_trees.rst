@@ -72,7 +72,7 @@ Finally, all that's left is the fragment shader:
 .. code-block:: glsl
 
     void fragment() {
-        vec4 albedo_tex = texture(texture_albedo,UV);
+        vec4 albedo_tex = texture(texture_albedo, UV);
         ALBEDO = albedo_tex.rgb;
         ALPHA = albedo_tex.a;
         METALLIC = 0.0;

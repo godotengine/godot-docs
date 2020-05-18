@@ -495,7 +495,7 @@ Expression nodes can:
 .. image:: img/visual_script48.png
 
 
-- Use most of the existing built-in functions that are available to GDScript, such as sin(),cos(),print(), as well as constructors, such as Vector3(x,y,z),Rect2(..), etc.:
+- Use most of the existing built-in functions that are available to GDScript, such as ``sin()``, ``cos()``, ``print()``, as well as constructors, such as ``Vector3(x, y, z)``, ``Rect2(...)``, etc.:
 
 .. image:: img/visual_script49.png
 
