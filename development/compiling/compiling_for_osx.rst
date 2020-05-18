@@ -51,10 +51,23 @@ To create an ``.app`` bundle like in the official builds, you need to use the
 template located in ``misc/dist/osx_tools.app``. Typically, for an optimized
 editor binary built with ``scons p=osx target=release_debug``::
 
-    user@host:~/godot$ cp -r misc/dist/osx_tools.app ./Godot.app
-    user@host:~/godot$ mkdir -p Godot.app/Contents/MacOS
-    user@host:~/godot$ cp bin/godot.osx.tools.64 Godot.app/Contents/MacOS/Godot
-    user@host:~/godot$ chmod +x Godot.app/Contents/MacOS/Godot
+    cp -r misc/dist/osx_tools.app ./Godot.app
+    mkdir -p Godot.app/Contents/MacOS
+    cp bin/godot.osx.tools.64 Godot.app/Contents/MacOS/Godot
+    chmod +x Godot.app/Contents/MacOS/Godot
+
+Compiling a headless/server build
+---------------------------------
+
+To compile a *headless* build which provides editor functionality to export
+projects in an automated manner, use::
+
+    scons platform=server tools=yes target=release_debug --jobs=$(sysctl -n hw.logicalcpu)
+
+To compile a *server* build which is optimized to run dedicated game servers,
+use::
+
+    scons platform=server tools=no target=release --jobs=$(sysctl -n hw.logicalcpu)
 
 Cross-compiling for macOS from Linux
 ------------------------------------
@@ -68,7 +81,7 @@ Clone the `OSXCross repository <https://github.com/tpoechtrager/osxcross>`__
 somewhere on your machine (or download a ZIP file and extract it somewhere),
 e.g.::
 
-    user@host:~$ git clone --depth=1 https://github.com/tpoechtrager/osxcross.git "$HOME/osxcross"
+    git clone --depth=1 https://github.com/tpoechtrager/osxcross.git "$HOME/osxcross"
 
 1. Follow the instructions to package the SDK:
    https://github.com/tpoechtrager/osxcross#packaging-the-sdk
@@ -79,12 +92,12 @@ After that, you will need to define the ``OSXCROSS_ROOT`` as the path to
 the OSXCross installation (the same place where you cloned the
 repository/extracted the zip), e.g.::
 
-    user@host:~$ export OSXCROSS_ROOT="$HOME/osxcross"
+    export OSXCROSS_ROOT="$HOME/osxcross"
 
 Now you can compile with SCons like you normally would::
 
-    user@host:~/godot$ scons platform=osx
+    scons platform=osx
 
 If you have an OSXCross SDK version different from the one expected by the SCons buildsystem, you can specify a custom one with the ``osxcross_sdk`` argument::
 
-    user@host:~/godot$ scons platform=osx osxcross_sdk=darwin15
+    scons platform=osx osxcross_sdk=darwin15

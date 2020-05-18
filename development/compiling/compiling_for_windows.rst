@@ -219,8 +219,8 @@ To make sure you are doing things correctly, executing the following in
 the shell should result in a working compiler (the version output may
 differ based on your system)::
 
-    user@host:~$ ${MINGW32_PREFIX}gcc --version
-    i686-w64-mingw32-gcc (GCC) 6.1.0 20160427 (Mageia MinGW 6.1.0-1.mga6)
+    ${MINGW32_PREFIX}gcc --version
+    # i686-w64-mingw32-gcc (GCC) 6.1.0 20160427 (Mageia MinGW 6.1.0-1.mga6)
 
 Troubleshooting
 ~~~~~~~~~~~~~~~

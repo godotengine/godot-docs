@@ -387,8 +387,8 @@ during runtime with the ``LD_LIBRARY_PATH`` environ variable:
 
 .. code-block:: shell
 
-    user@host:~/godot$ export LD_LIBRARY_PATH=`pwd`/bin/
-    user@host:~/godot$ ./bin/godot*
+    export LD_LIBRARY_PATH=`pwd`/bin/
+    ./bin/godot*
 
 **note**: Pay attention you have to ``export`` the environ variable otherwise
 you won't be able to play your project from within the editor.
@@ -433,7 +433,7 @@ shared module as target in the SCons command:
 
 .. code-block:: shell
 
-    user@host:~/godot$ scons summator_shared=yes platform=linuxbsd bin/libsummator.linuxbsd.tools.64.so
+    scons summator_shared=yes platform=linuxbsd bin/libsummator.linuxbsd.tools.64.so
 
 Writing custom documentation
 ----------------------------
