@@ -3,9 +3,10 @@
 Documentation changelog
 =======================
 
-The documentation is continually being improved. The release of version 3.1
+The documentation is continually being improved. The release of version 3.2
 includes many new tutorials, many fixes and updates for old tutorials, and many updates
-to the class reference. Below is a list of new tutorials added since version 3.0.
+to the :ref:`class reference <toc-class-ref>`. Below is a list of new tutorials
+added since version 3.1.
 
 .. note:: This document only contains new tutorials so not all changes are reflected,
           many tutorials have been substantially updated but are not reflected in this document.
@@ -26,6 +27,7 @@ Project workflow
 Audio
 ^^^^^
 
+- :ref:`doc_recording_with_microphone`
 - :ref:`doc_sync_with_audio`
 
 Math
@@ -47,12 +49,12 @@ Internationalization
 Shading
 ^^^^^^^
 
-Your First Shader Series:
-
-- :ref:`doc_what_are_shaders`
-- :ref:`doc_your_first_canvasitem_shader`
-- :ref:`doc_your_first_spatial_shader`
-- :ref:`doc_your_second_spatial_shader`
+- Your First Shader Series:
+    - :ref:`doc_what_are_shaders`
+    - :ref:`doc_your_first_canvasitem_shader`
+    - :ref:`doc_your_first_spatial_shader`
+    - :ref:`doc_your_second_spatial_shader`
+- :ref:`doc_visual_shaders`
 
 Networking
 ^^^^^^^^^^
