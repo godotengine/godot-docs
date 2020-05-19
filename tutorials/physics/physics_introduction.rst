@@ -239,13 +239,13 @@ For example, here is the code for an "Asteroids" style spaceship:
 
     class Spaceship : RigidBody2D
     {
-        private Vector2 thrust = new Vector2(0, 250);
-        private float torque = 20000;
+        private Vector2 _thrust = new Vector2(0, 250);
+        private float _torque = 20000;
 
         public override void _IntegrateForces(Physics2DDirectBodyState state)
         {
             if (Input.IsActionPressed("ui_up"))
-                SetAppliedForce(thrust.Rotated(Rotation));
+                SetAppliedForce(_thrust.Rotated(Rotation));
             else
                 SetAppliedForce(new Vector2());
 
@@ -254,7 +254,7 @@ For example, here is the code for an "Asteroids" style spaceship:
                 rotationDir += 1;
             if (Input.IsActionPressed("ui_left"))
                 rotationDir -= 1;
-            SetAppliedTorque(rotationDir * torque);
+            SetAppliedTorque(rotationDir * _torque);
         }
     }
 
@@ -330,11 +330,11 @@ occurred:
 
     class Body : KinematicBody2D
     {
-        private Vector2 velocity = new Vector2(250, 250);
+        private Vector2 _velocity = new Vector2(250, 250);
 
         public override void _PhysicsProcess(float delta)
         {
-            var collisionInfo = MoveAndCollide(velocity * delta);
+            var collisionInfo = MoveAndCollide(_velocity * delta);
             if (collisionInfo != null)
             {
                 var collisionPoint = collisionInfo.GetPosition();
@@ -360,13 +360,13 @@ Or to bounce off of the colliding object:
 
     class Body : KinematicBody2D
     {
-        private Vector2 velocity = new Vector2(250, 250);
+        private Vector2 _velocity = new Vector2(250, 250);
 
         public override void _PhysicsProcess(float delta)
         {
-            var collisionInfo = MoveAndCollide(velocity * delta);
+            var collisionInfo = MoveAndCollide(_velocity * delta);
             if (collisionInfo != null)
-                velocity = velocity.Bounce(collisionInfo.Normal);
+                _velocity = _velocity.Bounce(collisionInfo.Normal);
         }
     }
 
@@ -419,31 +419,33 @@ the ground (including slopes) and jump when standing on the ground:
 
     class Body : KinematicBody2D
     {
-        private float runSpeed = 350;
-        private float jumpSpeed = -1000;
-        private float gravity = 2500;
+        private float _runSpeed = 350;
+        private float _jumpSpeed = -1000;
+        private float _gravity = 2500;
 
-        private Vector2 velocity = new Vector2();
+        private Vector2 _velocity = new Vector2();
 
-        private void getInput()
+        private void GetInput()
         {
-            velocity.x = 0;
+            _velocity.x = 0;
 
             var right = Input.IsActionPressed("ui_right");
             var left = Input.IsActionPressed("ui_left");
             var jump = Input.IsActionPressed("ui_select");
 
             if (IsOnFloor() && jump)
-                velocity.y = jumpSpeed;
+                _velocity.y = _jumpSpeed;
             if (right)
-                velocity.x += runSpeed;
+                _velocity.x += _runSpeed;
             if (left)
-                velocity.x -= runSpeed;
+                _velocity.x -= _runSpeed;
         }
 
         public override void _PhysicsProcess(float delta)
         {
-            velocity.y += gravity * delta;
+            _velocity.y += _gravity * delta;
+            GetInput();
+            _velocity = MoveAndSlide(velocity, new Vector2(0,-1));
         }
     }
 
