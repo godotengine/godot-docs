@@ -126,7 +126,6 @@ In the ``Game.gd`` file, add the following code:
         var VR = ARVRServer.find_interface("OpenVR")
         if VR and VR.initialize():
             get_viewport().arvr = true
-            get_viewport().hdr = false
 
             OS.vsync_enabled = false
             Engine.target_fps = 90
@@ -146,7 +145,6 @@ In the ``Game.gd`` file, add the following code:
             if (vr != null && vr.Initialize())
             {
                 GetViewport().Arvr = true;
-                GetViewport().Hdr = false;
 
                 OS.VsyncEnabled = false;
                 Engine.TargetFps = 90;
@@ -171,10 +169,7 @@ whether the OpenVR interface was able to initialize or not. If both of these con
 an ARVR viewport.
 
 If the VR interface initialized successfully, we then get the root :ref:`Viewport <class_Viewport>` and set the `arvr` property to ``true``. This will tell Godot to use the initialized
-ARVR interface to drive the :ref:`Viewport <class_Viewport>` display. After setting the ``arvr`` property to ``true``, we set the ``hdr`` property to ``false``. We do this because
-most of the VR headsets do not currently support HDR rendering.
-
-.. note:: HDR support will be available for VR in Godot 3.2.
+ARVR interface to drive the :ref:`Viewport <class_Viewport>` display.
 
 Finally, we disable VSync so the Frames Per Second (FPS) is not capped by the computer monitor. After this we tell Godot to render at ``90`` frames per second, which is the
 standard for most VR headsets. Without disabling VSync, the normal computer monitor may limit the frame rate of the VR headset to the frame rate of the computer monitor.
