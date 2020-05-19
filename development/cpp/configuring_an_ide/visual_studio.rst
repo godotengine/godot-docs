@@ -3,62 +3,66 @@
 Visual Studio
 =============
 
-Visual Studio Community is a Windows-only IDE that's free for non-commercial use.
+`Visual Studio Community <https://visualstudio.microsoft.com>`__ is a Windows-only IDE 
+by `Microsoft <https://microsoft.com>`_ that's free for non-commercial use.
 It has many useful features, such as memory view, performance view, source
-control and more. You can get it
-`from Microsoft <https://visualstudio.microsoft.com/downloads/>`__.
+control and more.
 
-Setup
------
+Importing the project
+---------------------
 
-To start developing with Visual Studio, follow these steps:
+Visual Studio requires a solution file to work on a project. While Godot does not come
+with the solution file, it can be generated using SCons.
 
-- Open the Visual Studio Installer and install the C++ package:
+- Navigate to the Godot root folder and open a Command Prompt or PowerShell window.
+- Run ``scons platform=windows vsproj=yes`` to generate the solution.
+- You can now open the project by double-clicking on the ``godot.sln`` in the project root
+  or by using the **Open a project or solution** option inside of the Visual Studio.
+- Use the **Build** top menu to build the project.
 
-.. image:: img/vs_1_install_cpp_package.png
+.. warning:: Visual Studio must be configured with the C++ package. It can be selected
+             in the intaller:
 
-- Open a Command Prompt or PowerShell window, use ``cd`` to reach the Godot source
-  directory and run ``scons platform=windows vsproj=yes``.
+             .. figure:: img/vs_1_install_cpp_package.png
+                :align: center
 
-- Now open the Godot folder by clicking **Open a project or solution** and choose
-  ``godot.sln``.
-  - You can also double-click the ``godot.sln`` file in Explorer.
-
-You can now start developing with Visual Studio.
-
-Debugging
----------
+Debugging the project
+---------------------
 
 Visual Studio features a powerful debugger. This allows the user to examine Godot's
-source code, stop at specific points in the code, make changes, and view them on the run.
+source code, stop at specific points in the code, inspect the current execution context,
+and make live changes to the codebase.
 
-.. note:: Debugging the Godot Engine inside the editor will require an extra setup step.
+You can launch the project with the debugger attached using the **Debug > Start Debugging**
+option from the top menu. However, unless you want to debug the project manager specifically,
+you'd need to configure debugging options first. This is due to the fact that when the Godot 
+project manager opens a project, the initial process is terminated and the debugger gets detached.
 
-          Because opening Godot opens the Project Manager at first instead of the project
-          you're working on, the debugger will detach as soon as you open a project.
-          This means that the debugger will stop, even though Godot is still running in
-          another process.
+- To configure the launch options to use with the debugger use **Project > Properties**
+  from the top menu:
 
-To overcome this, you need to edit the debugging command line arguments in VS. In your
-project, click **Project > Project Properties**:
+.. figure:: img/vs_2_project_properties.png
+   :align: center
 
-.. image:: img/vs_2_project_properties.png
+- Open the **Debugging** section and under **Command Arguments** add two new arguments: 
+  the ``-e`` flag opens the editor instead of the project manager, and the ``--path`` argument
+  tells the executable to open the specified project (must be provided as an *absolute* path 
+  to the project root, not the ``project.godot`` file).
 
-Then add this to the command arguments:
-
-.. image:: img/vs_3_debug_command_line.png
-
-- The ``-e`` flag is for entering the editor directly (which skips the Project Manager).
-- The ``--path`` argument should be an *absolute* path to a project directory (not a
-  `project.godot` file).
+.. figure:: img/vs_3_debug_command_line.png
+   :align: center
 
 To learn more about command line arguments, refer to the
 :ref:`command line tutorial <doc_command_line_tutorial>`.
 
-To check that everything is working, put a breakpoint in ``main.cpp`` and press F5 to
+Even if you start the project without a debugger attached it can still be connected to the running
+process using **Debug > Attach to Process...** menu.
+
+To check that everything is working, put a breakpoint in ``main.cpp`` and press :kbd:`F5` to
 start debugging.
 
-.. image:: img/vs_4_debugging_main.png
+.. figure:: img/vs_4_debugging_main.png
+   :align: center
 
 If you run into any issues, ask for help in one of
 `Godot's community channels <https://godotengine.org/community>`__.
