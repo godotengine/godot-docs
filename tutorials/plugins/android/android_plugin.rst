@@ -82,11 +82,11 @@ The instructions below assumes that you're using Android Studio.
 5.  Add the remaining logic for your plugin and run the ``gradlew build`` command to generate the plugin's ``aar`` file. 
     The build will likely generate both a ``debug`` and ``release`` ``aar`` files. Depending on your need, pick only one version (usually the ``release`` one) which to provide your users with. 
     
-    It's recommended that the ``aar`` filename matches the following pattern: ``[PluginName]*.aar`` where ``PluginName`` is the name of the plugin in camel case (e.g: ``GodotPayment.release.aar``).
+    It's recommended that the ``aar`` filename matches the following pattern: ``[PluginName]*.aar`` where ``PluginName`` is the name of the plugin in PascalCase (e.g.: ``GodotPayment.release.aar``).
     
-6.  Create a Godot Android Plugin configuration file to help the system detects and loads your plugin:
+6.  Create a Godot Android Plugin configuration file to help the system detect and load your plugin:
 
-    -   The configuration file extension must be ``gdap`` (e.g: ``MyPlugin.gdap``).
+    -   The configuration file extension must be ``gdap`` (e.g.: ``MyPlugin.gdap``).
     
     -   The configuration file format is as follow::
     
@@ -112,11 +112,11 @@ The instructions below assumes that you're using Android Studio.
             
                 -   if **binary_type** is ``local``, then this should be the filepath of the plugin ``aar`` file.
                 
-                    -   The filepath can be relative (e.g: ``MyPlugin.aar``) in which case it's relative to the ``res://android/plugins`` directory.
+                    -   The filepath can be relative (e.g.: ``MyPlugin.aar``) in which case it's relative to the ``res://android/plugins`` directory.
 
                     -   The filepath can be absolute: ``res://some_path/MyPlugin.aar``.
                     
-                -   if **binary_type** is ``remote``, then this should be a declaration for a `remote gradle binary <https://developer.android.com/studio/build/dependencies#dependency-types>`_ (e.g: ``org.godot.example:my-plugin:0.0.0``).
+                -   if **binary_type** is ``remote``, then this should be a declaration for a `remote gradle binary <https://developer.android.com/studio/build/dependencies#dependency-types>`_ (e.g.: ``org.godot.example:my-plugin:0.0.0``).
                 
         The ``dependencies`` section and fields are optional and defined as follow:
         
@@ -124,15 +124,15 @@ The instructions below assumes that you're using Android Studio.
 
             -   **remote**: contains a list of remote binary gradle dependencies for the plugin.
             
-            -   **custom_maven_repos**: contains a list of urls specifying the custom maven repos required for the plugin's dependencies
+            -   **custom_maven_repos**: contains a list of URLs specifying the custom maven repositories required for the plugin's dependencies
         
 
 Loading and using a Android plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Move the plugin configuration file (e.g: ``MyPlugin.gdap``) and, if any, its local binary (e.g: ``MyPlugin.aar``) and dependencies to the Godot project ``res://android/plugins`` directory.
+Move the plugin configuration file (e.g.: ``MyPlugin.gdap``) and, if any, its local binary (e.g.: ``MyPlugin.aar``) and dependencies to the Godot project's ``res://android/plugins`` directory.
 
-The Godot editor will automatically parse all ``.gdap`` files in the ``res://android/plugins`` directory and show a list of detected and toggable plugins in the Android export presets window under the **Plugins** section.
+The Godot editor will automatically parse all ``.gdap`` files in the ``res://android/plugins`` directory and show a list of detected and toggleable plugins in the Android export presets window under the **Plugins** section.
 
 .. image:: img/android_export_preset_plugins_section.png
 
