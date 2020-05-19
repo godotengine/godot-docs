@@ -1,7 +1,7 @@
 .. _doc_android_plugin:
 
-Creating Android plugins (Godot 4.0+)
-=====================================
+Creating Android plugins
+========================
 
 Introduction
 ------------
@@ -29,14 +29,12 @@ and capabilities that don't belong to the core feature set of a game engine:
 -  Posting to Facebook, Twitter, etc.
 -  Push notifications
 
-Making modifications to the Android export template is another use-case since using a plugin for that task allows the project
-to remain compatible with newer Godot versions.
-
 Android plugin
 --------------
 
-While introduced in Godot 3.2.0, the Android plugin system got a significant architecture update starting with Godot 3.2.2. In Godot 4.0, the new architecture became
-the default, rendering plugins for Godot 3.2.0 incompatible with Godot 4.0.
+While introduced in Godot 3.2.0, the Android plugin system got a significant architecture update starting with Godot 3.2.2. 
+The new plugin system is backward-incompatible with the previous one and in Godot 4.0, the previous system was fully deprecated and removed.
+Since we previously did not version the Android plugin systems, the new one is now labelled ``v1`` and is the starting point for the modern Godot Android ecosystem.
 
 As a prerequisite, make sure you understand how to set up a :ref:`custom build environment<doc_android_custom_build>` for Android.
 
@@ -82,15 +80,64 @@ The instructions below assumes that you're using Android Studio.
         Where ``PluginName`` is the name of the plugin, and ``plugin.init.ClassFullName`` is the full name (package + class name) of the plugin loading class.
 
 5.  Add the remaining logic for your plugin and run the ``gradlew build`` command to generate the plugin's ``aar`` file.
-    The build will likely generate both a ``debug`` and ``release`` ``aar`` files. Depending on your need, pick only one version (usually the ``release`` one) which to provide your users with.
+    The build will likely generate both a ``debug`` and ``release`` ``aar`` files. 
+    Depending on your need, pick only one version (usually the ``release`` one) which to provide your users with.
 
-**Note:** The plugin's ``aar`` filename must match the following pattern: ``[PluginName]*.aar``
-where ``PluginName`` is the name of the plugin in camel case (e.g: ``GodotPayment.release.aar``).
+    It's recommended that the ``aar`` filename matches the following pattern: ``[PluginName]*.aar`` where ``PluginName`` is the name of the plugin in PascalCase (e.g.: ``GodotPayment.release.aar``).
+
+6.  Create a Godot Android Plugin configuration file to help the system detect and load your plugin:
+
+    -   The configuration file extension must be ``gdap`` (e.g.: ``MyPlugin.gdap``).
+    
+    -   The configuration file format is as follow::
+    
+            [config]
+            
+            name="MyPlugin"
+            binary_type="local"
+            binary="MyPlugin.aar"
+            
+            [dependencies]
+            
+            local=["local_dep1.aar", "local_dep2.aar"]
+            remote=["example.plugin.android:remote-dep1:0.0.1", "example.plugin.android:remote-dep2:0.0.1"]
+            custom_maven_repos=["http://repo.mycompany.com/maven2"]
+            
+        The ``config`` section and fields are required and defined as follow:
+        
+            -   **name**: name of the plugin
+
+            -   **binary_type**: can be either ``local`` or ``remote``. The type affects the **binary** field
+
+            -   **binary**:
+            
+                -   if **binary_type** is ``local``, then this should be the filepath of the plugin ``aar`` file.
+                
+                    -   The filepath can be relative (e.g.: ``MyPlugin.aar``) in which case it's relative to the ``res://android/plugins`` directory.
+
+                    -   The filepath can be absolute: ``res://some_path/MyPlugin.aar``.
+                    
+                -   if **binary_type** is ``remote``, then this should be a declaration for a `remote gradle binary <https://developer.android.com/studio/build/dependencies#dependency-types>`_ (e.g.: ``org.godot.example:my-plugin:0.0.0``).
+                
+        The ``dependencies`` section and fields are optional and defined as follow:
+        
+            -   **local**: contains a list of filepaths to the local ``.aar`` binary files the plugin depends on. Similarly to the ``binary`` field (when the ``binary_type`` is ``local``), the local binaries' filepaths can be relative or absolute.
+
+            -   **remote**: contains a list of remote binary gradle dependencies for the plugin.
+
+            -   **custom_maven_repos**: contains a list of URLs specifying the custom maven repositories required for the plugin's dependencies
+            
+
 
 Loading and using a Android plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once you have access to the plugin ``aar`` file, move it to the Godot project ``res://android/plugins`` directory.
+Move the plugin configuration file (e.g: ``MyPlugin.gdap``) and, if any, its local binary (e.g: ``MyPlugin.aar``) and dependencies to the Godot project's ``res://android/plugins`` directory.
+
+The Godot editor will automatically parse all ``.gdap`` files in the ``res://android/plugins`` directory and show a list of detected and toggleable plugins in the Android export presets window under the **Plugins** section.
+
+.. image:: img/android_export_preset_plugins_section.png
+
 
 From your script::
 
@@ -98,8 +145,6 @@ From your script::
         var singleton = Engine.get_singleton("MyPlugin")
         print(singleton.myPluginFunction("World"))
 
-**When exporting the project**, you need to add the plugin's name to the ``Custom Template`` -> ``Plugins`` section.
-If trying to add multiple plugins, separate their names by a comma (``,``).
 
 Bundling GDNative resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -117,11 +162,11 @@ At runtime, the plugin will provide these paths to Godot core which will use the
 
 Reference implementations
 ^^^^^^^^^^^^^^^^^^^^^^^^^
--   `Godot Oculus Mobile plugin <https://github.com/m4gr3d/godot_oculus_mobile/tree/2.0>`_
+-   `Godot Oculus Mobile plugin <https://github.com/GodotVR/godot_oculus_mobile>`_
 
-    -   `Bundled gdnative resources <https://github.com/m4gr3d/godot_oculus_mobile/tree/2.0/plugin/src/main/assets/addons/godot_ovrmobile>`_
+    -   `Bundled gdnative resources <https://github.com/GodotVR/godot_oculus_mobile/tree/master/plugin/src/main/assets/addons/godot_ovrmobile>`_
 
--   `Godot Payment plugin <https://github.com/m4gr3d/godot/tree/rearch_godot_android_plugin/platform/android/java/plugins/godotpayment>`_
+-   `Godot Payment plugin <https://github.com/godotengine/godot/tree/master/platform/android/java/plugins/godotpayment>`_
 
 
 Troubleshooting
