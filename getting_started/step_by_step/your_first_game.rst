@@ -666,8 +666,10 @@ This completes the `Mob` scene.
 Main scene
 ----------
 
-Now it's time to bring it all together. Create a new scene and add a
-:ref:`Node <class_Node>` named ``Main``. Click the "Instance" button and select your
+Now it's time to bring it all together. Create a new scene, and create a
+:ref:`Node <class_Node>` as the root of the scene, it should be at the 
+top of the node list and has a white circle as an icon. Name
+the root node ``Main``. Click the "Instance" button and select your
 saved ``Player.tscn``.
 
 .. image:: img/instance_scene.png
