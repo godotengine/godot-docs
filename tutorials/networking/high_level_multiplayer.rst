@@ -430,7 +430,7 @@ a dedicated server with no GPU available. See
 
 .. note::
 
-    The code samples in this page aren't designed to run from a dedicated
+    The code samples on this page aren't designed to run on a dedicated
     server. You'll have to modify them so the server isn't considered to be a
     player. You'll also have to modify the game starting mechanism so that the
     first player who joins can start the game.
