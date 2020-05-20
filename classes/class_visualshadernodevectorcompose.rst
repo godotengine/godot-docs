@@ -11,5 +11,10 @@ VisualShaderNodeVectorCompose
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Composes a :ref:`Vector3<class_Vector3>` from three scalars within the visual shader graph.
 
+Description
+-----------
+
+Creates a ``vec3`` using three scalar values that can be provided from separate inputs.
 

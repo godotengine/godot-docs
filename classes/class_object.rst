@@ -347,7 +347,7 @@ Emits the given ``signal``. The signal must exist, so it should be a built-in si
 
 - void **free** **(** **)**
 
-Deletes the object from memory. Any pre-existing reference to the freed object will now return ``null``.
+Deletes the object from memory. Any pre-existing reference to the freed object will become invalid, e.g. ``is_instance_valid(object)`` will return ``false``.
 
 ----
 

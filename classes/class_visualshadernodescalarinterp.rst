@@ -11,5 +11,10 @@ VisualShaderNodeScalarInterp
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Linearly interpolates between two scalars within the visual shader graph.
 
+Description
+-----------
+
+Translates to ``mix(a, b, weight)`` in the shader language.
 

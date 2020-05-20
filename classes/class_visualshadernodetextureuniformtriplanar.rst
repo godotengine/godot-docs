@@ -11,5 +11,10 @@ VisualShaderNodeTextureUniformTriplanar
 
 **Inherits:** :ref:`VisualShaderNodeTextureUniform<class_VisualShaderNodeTextureUniform>` **<** :ref:`VisualShaderNodeUniform<class_VisualShaderNodeUniform>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Performs a uniform texture lookup with triplanar within the visual shader graph.
 
+Description
+-----------
+
+Performs a lookup operation on the texture provided as a uniform for the shader, with support for triplanar mapping.
 

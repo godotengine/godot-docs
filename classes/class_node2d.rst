@@ -47,6 +47,10 @@ Properties
 +---------------------------------------+-------------------------------------------------------------------------------+---------------------+
 | :ref:`Vector2<class_Vector2>`         | :ref:`scale<class_Node2D_property_scale>`                                     | ``Vector2( 1, 1 )`` |
 +---------------------------------------+-------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`             | :ref:`skew<class_Node2D_property_skew>`                                       | ``0.0``             |
++---------------------------------------+-------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`             | :ref:`skew_degrees<class_Node2D_property_skew_degrees>`                       | ``0.0``             |
++---------------------------------------+-------------------------------------------------------------------------------+---------------------+
 | :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_Node2D_property_transform>`                             |                     |
 +---------------------------------------+-------------------------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`               | :ref:`z_as_relative<class_Node2D_property_z_as_relative>`                     | ``true``            |
@@ -218,6 +222,34 @@ The node's scale. Unscaled value: ``(1, 1)``.
 
 ----
 
+.. _class_Node2D_property_skew:
+
+- :ref:`float<class_float>` **skew**
+
++-----------+-----------------+
+| *Default* | ``0.0``         |
++-----------+-----------------+
+| *Setter*  | set_skew(value) |
++-----------+-----------------+
+| *Getter*  | get_skew()      |
++-----------+-----------------+
+
+----
+
+.. _class_Node2D_property_skew_degrees:
+
+- :ref:`float<class_float>` **skew_degrees**
+
++-----------+-------------------------+
+| *Default* | ``0.0``                 |
++-----------+-------------------------+
+| *Setter*  | set_skew_degrees(value) |
++-----------+-------------------------+
+| *Getter*  | get_skew_degrees()      |
++-----------+-------------------------+
+
+----
+
 .. _class_Node2D_property_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **transform**
@@ -333,7 +365,7 @@ Applies a rotation to the node, in radians, starting from its current rotation.
 
 - :ref:`Vector2<class_Vector2>` **to_global** **(** :ref:`Vector2<class_Vector2>` local_point **)** const
 
-Converts a local point's coordinates to global coordinates.
+Transforms the provided local position into a position in global coordinate space. The input is expected to be local relative to the ``Node2D`` it is called on. e.g. Applying this method to the positions of child nodes will correctly transform their positions into the global coordinate space, but applying it to a node's own position will give an incorrect result, as it will incorporate the node's own transformation into its global position.
 
 ----
 
@@ -341,7 +373,7 @@ Converts a local point's coordinates to global coordinates.
 
 - :ref:`Vector2<class_Vector2>` **to_local** **(** :ref:`Vector2<class_Vector2>` global_point **)** const
 
-Converts a global point's coordinates to local coordinates.
+Transforms the provided global position into a position in local coordinate space. The output will be local relative to the ``Node2D`` it is called on. e.g. It is appropriate for determining the positions of child nodes, but it is not appropriate for determining its own position relative to its parent.
 
 ----
 

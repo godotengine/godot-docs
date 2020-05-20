@@ -11,5 +11,10 @@ VisualShaderNodeVectorRefract
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Returns the :ref:`Vector3<class_Vector3>` that points in the direction of refraction. For use within the visual shader graph.
 
+Description
+-----------
+
+Translated to ``refract(I, N, eta)`` in the shader language, where ``I`` is the incident vector, ``N`` is the normal vector and ``eta`` is the ratio of the indicies of the refraction.
 

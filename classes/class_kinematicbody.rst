@@ -225,7 +225,7 @@ This method should be used in :ref:`Node._physics_process<class_Node_method__phy
 
 ``up_direction`` is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of ``Vector3(0, 0, 0)``, everything is considered a wall.
 
-If ``stop_on_slope`` is ``true``, body will not slide on slopes if you include gravity in ``linear_velocity``.
+If ``stop_on_slope`` is ``true``, body will not slide on slopes when you include gravity in ``linear_velocity`` and the body is standing still.
 
 If the body collides, it will change direction a maximum of ``max_slides`` times before it stops.
 

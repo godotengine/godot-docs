@@ -11,5 +11,10 @@ VisualShaderNodeVectorLen
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Returns the length of a :ref:`Vector3<class_Vector3>` within the visual shader graph.
 
+Description
+-----------
+
+Translated to ``length(p0)`` in the shader language.
 

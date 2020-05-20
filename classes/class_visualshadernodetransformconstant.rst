@@ -11,7 +11,12 @@ VisualShaderNodeTransformConstant
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+A :ref:`Transform<class_Transform>` constant for use within the visual shader graph.
 
+Description
+-----------
+
+A constant :ref:`Transform<class_Transform>`, which can be used as an input node.
 
 Properties
 ----------
@@ -34,4 +39,6 @@ Property Descriptions
 +-----------+-----------------------------------------------------+
 | *Getter*  | get_constant()                                      |
 +-----------+-----------------------------------------------------+
+
+A :ref:`Transform<class_Transform>` constant which represents the state of this node.
 

@@ -11,5 +11,10 @@ VisualShaderNodeVec3Uniform
 
 **Inherits:** :ref:`VisualShaderNodeUniform<class_VisualShaderNodeUniform>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+A :ref:`Vector3<class_Vector3>` uniform to be used within the visual shader graph.
 
+Description
+-----------
+
+Translated to ``uniform vec3`` in the shader language.
 

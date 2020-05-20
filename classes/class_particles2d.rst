@@ -229,6 +229,8 @@ If ``true``, particles use the parent node's coordinate space. If ``false``, the
 
 Normal map to be used for the :ref:`texture<class_Particles2D_property_texture>` property.
 
+**Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`_ for a comparison of normal map coordinates expected by popular engines.
+
 ----
 
 .. _class_Particles2D_property_one_shot:

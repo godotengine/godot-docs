@@ -212,7 +212,7 @@ Rotates the transform around the given axis by the given angle (in radians), usi
 
 - :ref:`Transform<class_Transform>` **scaled** **(** :ref:`Vector3<class_Vector3>` scale **)**
 
-Scales the transform by the given scale factor, using matrix multiplication.
+Scales basis and origin of the transform by the given scale factor, using matrix multiplication.
 
 ----
 

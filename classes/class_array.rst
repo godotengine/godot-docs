@@ -35,7 +35,7 @@ Arrays can be concatenated using the ``+`` operator:
     var array2 = [3, "Four"]
     print(array1 + array2) # ["One", 2, 3, "Four"]
 
-Arrays are always passed by reference.
+**Note:** Arrays are always passed by reference. To get a copy of an array which can be modified independently of the original array, use :ref:`duplicate<class_Array_method_duplicate>`.
 
 Methods
 -------

@@ -880,7 +880,7 @@ Similar to :ref:`get_node<class_Node_method_get_node>`, but does not log an erro
 
 - :ref:`Node<class_Node>` **get_parent** **(** **)** const
 
-Returns the parent node of the current node, or an empty ``Node`` if the node lacks a parent.
+Returns the parent node of the current node, or a ``null instance`` if the node lacks a parent.
 
 ----
 

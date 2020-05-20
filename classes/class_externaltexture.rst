@@ -11,7 +11,14 @@ ExternalTexture
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-Adds support for external textures as defined by https://www.khronos.org/registry/OpenGL/extensions/OES/OES_EGL_image_external.txt
+Enable OpenGL ES external texture extension.
+
+Description
+-----------
+
+Enable support for the OpenGL ES external texture extension as defined by `OES_EGL_image_external <https://www.khronos.org/registry/OpenGL/extensions/OES/OES_EGL_image_external.txt>`_.
+
+**Note:** This is only supported for Android platforms.
 
 Properties
 ----------

@@ -11,5 +11,10 @@ VisualShaderNodeVectorDecompose
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Decomposes a :ref:`Vector3<class_Vector3>` into three scalars within the visual shader graph.
 
+Description
+-----------
+
+Takes a ``vec3`` and decomposes it into three scalar values that can be used as separate inputs.
 

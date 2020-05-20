@@ -11,5 +11,10 @@ VisualShaderNodeVectorScalarMix
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Linearly interpolates between two vectors using a scalar. For use within the visual shader graph.
 
+Description
+-----------
+
+Translates to ``mix(a, b, weight)`` in the shader language, where ``a`` and ``b`` are vectors and ``weight`` is a scalar.
 

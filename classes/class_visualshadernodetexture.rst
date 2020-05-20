@@ -11,7 +11,12 @@ VisualShaderNodeTexture
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Performs a texture lookup within the visual shader graph.
 
+Description
+-----------
+
+Performs a lookup operation on the provided texture, with support for multiple texture sources to choose from.
 
 Properties
 ----------
@@ -43,17 +48,17 @@ Enumerations
 
 enum **Source**:
 
-- **SOURCE_TEXTURE** = **0**
+- **SOURCE_TEXTURE** = **0** --- Use the texture given as an argument for this function.
 
-- **SOURCE_SCREEN** = **1**
+- **SOURCE_SCREEN** = **1** --- Use the current viewport's texture as the source.
 
-- **SOURCE_2D_TEXTURE** = **2**
+- **SOURCE_2D_TEXTURE** = **2** --- Use the texture from this shader's texture built-in (e.g. a texture of a :ref:`Sprite<class_Sprite>`).
 
-- **SOURCE_2D_NORMAL** = **3**
+- **SOURCE_2D_NORMAL** = **3** --- Use the texture from this shader's normal map built-in.
 
-- **SOURCE_DEPTH** = **4**
+- **SOURCE_DEPTH** = **4** --- Use the depth texture available for this shader.
 
-- **SOURCE_PORT** = **5**
+- **SOURCE_PORT** = **5** --- Use the texture provided in the input port for this function.
 
 ----
 
@@ -67,11 +72,11 @@ enum **Source**:
 
 enum **TextureType**:
 
-- **TYPE_DATA** = **0**
+- **TYPE_DATA** = **0** --- No hints are added to the uniform declaration.
 
-- **TYPE_COLOR** = **1**
+- **TYPE_COLOR** = **1** --- Adds ``hint_albedo`` as hint to the uniform declaration for proper sRGB to linear conversion.
 
-- **TYPE_NORMALMAP** = **2**
+- **TYPE_NORMALMAP** = **2** --- Adds ``hint_normal`` as hint to the uniform declaration, which internally converts the texture for proper usage as normal map.
 
 Property Descriptions
 ---------------------
@@ -88,6 +93,8 @@ Property Descriptions
 | *Getter*  | get_source()      |
 +-----------+-------------------+
 
+Determines the source for the lookup. See :ref:`Source<enum_VisualShaderNodeTexture_Source>` for options.
+
 ----
 
 .. _class_VisualShaderNodeTexture_property_texture:
@@ -99,6 +106,8 @@ Property Descriptions
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+The source texture, if needed for the selected :ref:`source<class_VisualShaderNodeTexture_property_source>`.
 
 ----
 
@@ -113,4 +122,6 @@ Property Descriptions
 +-----------+-------------------------+
 | *Getter*  | get_texture_type()      |
 +-----------+-------------------------+
+
+Specifies the type of the texture if :ref:`source<class_VisualShaderNodeTexture_property_source>` is set to :ref:`SOURCE_TEXTURE<class_VisualShaderNodeTexture_constant_SOURCE_TEXTURE>`. See :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` for options.
 

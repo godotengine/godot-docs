@@ -11,12 +11,12 @@ Engine
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Access to basic engine properties.
+Access to engine properties.
 
 Description
 -----------
 
-The ``Engine`` class allows you to query and modify the project's run-time parameters, such as frames per second, time scale, and others.
+The ``Engine`` singleton allows you to query and modify the project's run-time parameters, such as frames per second, time scale, and others.
 
 Properties
 ----------
@@ -258,7 +258,7 @@ Returns the fraction through the current physics tick we are at the time of rend
 
 - :ref:`Object<class_Object>` **get_singleton** **(** :ref:`String<class_String>` name **)** const
 
-Returns a global singleton with given ``name``. Often used for plugins, e.g. GodotPayments.
+Returns a global singleton with given ``name``. Often used for plugins, e.g. ``GodotPayment`` on Android.
 
 ----
 

@@ -11,5 +11,12 @@ VisualShaderNodeVectorScalarStep
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Calculates a vector Step function within the visual shader graph.
 
+Description
+-----------
+
+Translates to ``step(edge, x)`` in the shader language.
+
+Returns ``0.0`` if ``x`` is smaller than ``edge`` and ``1.0`` otherwise.
 

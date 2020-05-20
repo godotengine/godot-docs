@@ -49,7 +49,7 @@ Property Descriptions
 | *Getter* | get_direct_space_state() |
 +----------+--------------------------+
 
-The World's physics direct space state, used for making various queries. Might be used only during ``_physics_process``.
+Direct access to the world's physics 3D space state. Used for querying current and potential collisions. Must only be accessed from within ``_physics_process(delta)``.
 
 ----
 

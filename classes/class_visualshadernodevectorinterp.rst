@@ -11,5 +11,10 @@ VisualShaderNodeVectorInterp
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Linearly interpolates between two vectors within the visual shader graph.
 
+Description
+-----------
+
+Translates to ``mix(a, b, weight)`` in the shader language, where ``weight`` is a :ref:`Vector3<class_Vector3>` with weights for each component.
 

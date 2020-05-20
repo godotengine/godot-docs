@@ -11,7 +11,12 @@ VisualShaderNodeIs
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+A boolean comparison operator to be used within the visual shader graph.
 
+Description
+-----------
+
+Returns the boolean result of the comparison between ``INF`` or ``NaN`` and a scalar parameter.
 
 Properties
 ----------
@@ -31,9 +36,9 @@ Enumerations
 
 enum **Function**:
 
-- **FUNC_IS_INF** = **0**
+- **FUNC_IS_INF** = **0** --- Comparison with ``INF`` (Infinity).
 
-- **FUNC_IS_NAN** = **1**
+- **FUNC_IS_NAN** = **1** --- Comparison with ``NaN`` (Not a Number; denotes invalid numeric results, e.g. division by zero).
 
 Property Descriptions
 ---------------------
@@ -49,4 +54,6 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | get_function()      |
 +-----------+---------------------+
+
+The comparison function. See :ref:`Function<enum_VisualShaderNodeIs_Function>` for options.
 

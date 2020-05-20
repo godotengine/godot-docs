@@ -11,5 +11,10 @@ VisualShaderNodeTransformUniform
 
 **Inherits:** :ref:`VisualShaderNodeUniform<class_VisualShaderNodeUniform>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+A :ref:`Transform<class_Transform>` uniform for use within the visual shader graph.
 
+Description
+-----------
+
+Translated to ``uniform mat4`` in the shader language.
 

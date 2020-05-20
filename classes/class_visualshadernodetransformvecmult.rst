@@ -11,7 +11,12 @@ VisualShaderNodeTransformVecMult
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Multiplies a :ref:`Transform<class_Transform>` and a :ref:`Vector3<class_Vector3>` within the visual shader graph.
 
+Description
+-----------
+
+A multiplication operation on a transform (4x4 matrix) and a vector, with support for different multiplication operators.
 
 Properties
 ----------
@@ -35,13 +40,13 @@ Enumerations
 
 enum **Operator**:
 
-- **OP_AxB** = **0**
+- **OP_AxB** = **0** --- Multiplies transform ``a`` by the vector ``b``.
 
-- **OP_BxA** = **1**
+- **OP_BxA** = **1** --- Multiplies vector ``b`` by the transform ``a``.
 
-- **OP_3x3_AxB** = **2**
+- **OP_3x3_AxB** = **2** --- Multiplies transform ``a`` by the vector ``b``, skipping the last row and column of the transform.
 
-- **OP_3x3_BxA** = **3**
+- **OP_3x3_BxA** = **3** --- Multiplies vector ``b`` by the transform ``a``, skipping the last row and column of the transform.
 
 Property Descriptions
 ---------------------
@@ -57,4 +62,6 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | get_operator()      |
 +-----------+---------------------+
+
+The multiplication type to be performed. See :ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` for options.
 

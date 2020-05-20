@@ -241,6 +241,12 @@ Enumerations
 
 .. _class_Generic6DOFJoint_constant_PARAM_LINEAR_MOTOR_FORCE_LIMIT:
 
+.. _class_Generic6DOFJoint_constant_PARAM_LINEAR_SPRING_STIFFNESS:
+
+.. _class_Generic6DOFJoint_constant_PARAM_LINEAR_SPRING_DAMPING:
+
+.. _class_Generic6DOFJoint_constant_PARAM_LINEAR_SPRING_EQUILIBRIUM_POINT:
+
 .. _class_Generic6DOFJoint_constant_PARAM_ANGULAR_LOWER_LIMIT:
 
 .. _class_Generic6DOFJoint_constant_PARAM_ANGULAR_UPPER_LIMIT:
@@ -258,6 +264,12 @@ Enumerations
 .. _class_Generic6DOFJoint_constant_PARAM_ANGULAR_MOTOR_TARGET_VELOCITY:
 
 .. _class_Generic6DOFJoint_constant_PARAM_ANGULAR_MOTOR_FORCE_LIMIT:
+
+.. _class_Generic6DOFJoint_constant_PARAM_ANGULAR_SPRING_STIFFNESS:
+
+.. _class_Generic6DOFJoint_constant_PARAM_ANGULAR_SPRING_DAMPING:
+
+.. _class_Generic6DOFJoint_constant_PARAM_ANGULAR_SPRING_EQUILIBRIUM_POINT:
 
 .. _class_Generic6DOFJoint_constant_PARAM_MAX:
 
@@ -277,6 +289,12 @@ enum **Param**:
 
 - **PARAM_LINEAR_MOTOR_FORCE_LIMIT** = **6** --- The maximum force the linear motor will apply while trying to reach the velocity target.
 
+- **PARAM_LINEAR_SPRING_STIFFNESS** = **7**
+
+- **PARAM_LINEAR_SPRING_DAMPING** = **8**
+
+- **PARAM_LINEAR_SPRING_EQUILIBRIUM_POINT** = **9**
+
 - **PARAM_ANGULAR_LOWER_LIMIT** = **10** --- The minimum rotation in negative direction to break loose and rotate around the axes.
 
 - **PARAM_ANGULAR_UPPER_LIMIT** = **11** --- The minimum rotation in positive direction to break loose and rotate around the axes.
@@ -294,6 +312,12 @@ enum **Param**:
 - **PARAM_ANGULAR_MOTOR_TARGET_VELOCITY** = **17** --- Target speed for the motor at the axes.
 
 - **PARAM_ANGULAR_MOTOR_FORCE_LIMIT** = **18** --- Maximum acceleration for the motor at the axes.
+
+- **PARAM_ANGULAR_SPRING_STIFFNESS** = **19**
+
+- **PARAM_ANGULAR_SPRING_DAMPING** = **20**
+
+- **PARAM_ANGULAR_SPRING_EQUILIBRIUM_POINT** = **21**
 
 - **PARAM_MAX** = **22** --- Represents the size of the :ref:`Param<enum_Generic6DOFJoint_Param>` enum.
 

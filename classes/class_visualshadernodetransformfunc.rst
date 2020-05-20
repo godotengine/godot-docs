@@ -11,7 +11,12 @@ VisualShaderNodeTransformFunc
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Computes a :ref:`Transform<class_Transform>` function within the visual shader graph.
 
+Description
+-----------
+
+Computes an inverse or transpose function on the provided :ref:`Transform<class_Transform>`.
 
 Properties
 ----------
@@ -31,9 +36,9 @@ Enumerations
 
 enum **Function**:
 
-- **FUNC_INVERSE** = **0**
+- **FUNC_INVERSE** = **0** --- Perform the inverse operation on the :ref:`Transform<class_Transform>` matrix.
 
-- **FUNC_TRANSPOSE** = **1**
+- **FUNC_TRANSPOSE** = **1** --- Perform the transpose operation on the :ref:`Transform<class_Transform>` matrix.
 
 Property Descriptions
 ---------------------
@@ -49,4 +54,6 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | get_function()      |
 +-----------+---------------------+
+
+The function to be computed. See :ref:`Function<enum_VisualShaderNodeTransformFunc_Function>` for options.
 

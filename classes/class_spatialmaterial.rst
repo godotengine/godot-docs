@@ -1071,6 +1071,8 @@ Texture used to specify how the detail textures get blended with the base textur
 
 Texture that specifies the per-pixel normal of the detail overlay.
 
+**Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`_ for a comparison of normal map coordinates expected by popular engines.
+
 ----
 
 .. _class_SpatialMaterial_property_detail_uv_layer:
@@ -1516,6 +1518,8 @@ The strength of the normal map's effect.
 +----------+--------------------+
 
 Texture used to specify the normal at a given pixel. The ``normal_texture`` only uses the red and green channels. The normal read from ``normal_texture`` is oriented around the surface normal provided by the :ref:`Mesh<class_Mesh>`.
+
+**Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`_ for a comparison of normal map coordinates expected by popular engines.
 
 ----
 

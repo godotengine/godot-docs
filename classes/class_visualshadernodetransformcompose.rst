@@ -11,5 +11,10 @@ VisualShaderNodeTransformCompose
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Composes a :ref:`Transform<class_Transform>` from four :ref:`Vector3<class_Vector3>`\ s within the visual shader graph.
 
+Description
+-----------
+
+Creates a 4x4 transform matrix using four vectors of type ``vec3``. Each vector is one row in the matrix and the last column is a ``vec4(0, 0, 0, 1)``.
 

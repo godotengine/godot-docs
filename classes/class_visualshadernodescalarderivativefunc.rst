@@ -11,7 +11,12 @@ VisualShaderNodeScalarDerivativeFunc
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Calculates a scalar derivative within the visual shader graph.
 
+Description
+-----------
+
+This node is only available in ``Fragment`` and ``Light`` visual shaders.
 
 Properties
 ----------
@@ -33,11 +38,11 @@ Enumerations
 
 enum **Function**:
 
-- **FUNC_SUM** = **0**
+- **FUNC_SUM** = **0** --- Sum of absolute derivative in ``x`` and ``y``.
 
-- **FUNC_X** = **1**
+- **FUNC_X** = **1** --- Derivative in ``x`` using local differencing.
 
-- **FUNC_Y** = **2**
+- **FUNC_Y** = **2** --- Derivative in ``y`` using local differencing.
 
 Property Descriptions
 ---------------------
@@ -53,4 +58,6 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | get_function()      |
 +-----------+---------------------+
+
+The derivative type. See :ref:`Function<enum_VisualShaderNodeScalarDerivativeFunc_Function>` for options.
 

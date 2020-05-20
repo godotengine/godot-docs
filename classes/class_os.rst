@@ -40,6 +40,8 @@ Properties
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`ScreenOrientation<enum_OS_ScreenOrientation>` | :ref:`screen_orientation<class_OS_property_screen_orientation>`                                       | ``0``               |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`String<class_String>`                         | :ref:`tablet_driver<class_OS_property_tablet_driver>`                                                 | ``"wintab"``        |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`                             | :ref:`vsync_enabled<class_OS_property_vsync_enabled>`                                                 | ``true``            |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`                             | :ref:`vsync_via_compositor<class_OS_property_vsync_via_compositor>`                                   | ``false``           |
@@ -156,6 +158,10 @@ Methods
 | :ref:`int<class_int>`                         | :ref:`get_system_time_msecs<class_OS_method_get_system_time_msecs>` **(** **)** const                                                                                                                                                                                  |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`get_system_time_secs<class_OS_method_get_system_time_secs>` **(** **)** const                                                                                                                                                                                    |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`get_tablet_driver_count<class_OS_method_get_tablet_driver_count>` **(** **)** const                                                                                                                                                                              |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`get_tablet_driver_name<class_OS_method_get_tablet_driver_name>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                      |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`get_ticks_msec<class_OS_method_get_ticks_msec>` **(** **)** const                                                                                                                                                                                                |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -611,6 +617,22 @@ The minimum size of the window (without counting window manager decorations). Do
 +-----------+-------------------------------+
 
 The current screen orientation.
+
+----
+
+.. _class_OS_property_tablet_driver:
+
+- :ref:`String<class_String>` **tablet_driver**
+
++-----------+----------------------------------+
+| *Default* | ``"wintab"``                     |
++-----------+----------------------------------+
+| *Setter*  | set_current_tablet_driver(value) |
++-----------+----------------------------------+
+| *Getter*  | get_current_tablet_driver()      |
++-----------+----------------------------------+
+
+The current tablet drvier in use.
 
 ----
 
@@ -1241,6 +1263,26 @@ Returns the epoch time of the operating system in seconds.
 
 ----
 
+.. _class_OS_method_get_tablet_driver_count:
+
+- :ref:`int<class_int>` **get_tablet_driver_count** **(** **)** const
+
+Returns the total number of available tablet drivers.
+
+**Note:** This method is implemented on Windows.
+
+----
+
+.. _class_OS_method_get_tablet_driver_name:
+
+- :ref:`String<class_String>` **get_tablet_driver_name** **(** :ref:`int<class_int>` idx **)** const
+
+Returns the tablet driver name for the given index.
+
+**Note:** This method is implemented on Windows.
+
+----
+
 .. _class_OS_method_get_ticks_msec:
 
 - :ref:`int<class_int>` **get_ticks_msec** **(** **)** const
@@ -1736,6 +1778,8 @@ Requests the OS to open a resource with the most appropriate program. For exampl
 - ``OS.shell_open("https://godotengine.org")`` opens the default web browser on the official Godot website.
 
 - ``OS.shell_open("mailto:example@example.com")`` opens the default email client with the "To" field set to ``example@example.com``. See `Customizing ``mailto:`` Links <https://blog.escapecreative.com/customizing-mailto-links/>`_ for a list of fields that can be added.
+
+Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>` to convert a ``res://`` or ``user://`` path into a system path for use with this method.
 
 **Note:** This method is implemented on Android, iOS, HTML5, Linux, macOS and Windows.
 

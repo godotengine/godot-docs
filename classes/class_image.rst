@@ -712,7 +712,7 @@ Returns ``true`` if all the image's pixels have an alpha value of 0. Returns ``f
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
-Loads an image from file ``path``.
+Loads an image from file ``path``. See `Supported image formats <https://docs.godotengine.org/en/latest/getting_started/workflow/assets/importing_images.html#supported-image-formats>`_ for a list of supported image formats and limitations.
 
 ----
 

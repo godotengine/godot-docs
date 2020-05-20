@@ -25,13 +25,19 @@ The playback of the animation is controlled by the :ref:`fps<class_AnimatedTextu
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`     | flags                                                | ``0`` *(parent override)* |
-+---------------------------+------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>` | :ref:`fps<class_AnimatedTexture_property_fps>`       | ``4.0``                   |
-+---------------------------+------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`     | :ref:`frames<class_AnimatedTexture_property_frames>` | ``1``                     |
-+---------------------------+------------------------------------------------------+---------------------------+
++---------------------------+--------------------------------------------------------------------+---------------------------+
+| :ref:`int<class_int>`     | :ref:`current_frame<class_AnimatedTexture_property_current_frame>` |                           |
++---------------------------+--------------------------------------------------------------------+---------------------------+
+| :ref:`int<class_int>`     | flags                                                              | ``0`` *(parent override)* |
++---------------------------+--------------------------------------------------------------------+---------------------------+
+| :ref:`float<class_float>` | :ref:`fps<class_AnimatedTexture_property_fps>`                     | ``4.0``                   |
++---------------------------+--------------------------------------------------------------------+---------------------------+
+| :ref:`int<class_int>`     | :ref:`frames<class_AnimatedTexture_property_frames>`               | ``1``                     |
++---------------------------+--------------------------------------------------------------------+---------------------------+
+| :ref:`bool<class_bool>`   | :ref:`oneshot<class_AnimatedTexture_property_oneshot>`             | ``false``                 |
++---------------------------+--------------------------------------------------------------------+---------------------------+
+| :ref:`bool<class_bool>`   | :ref:`pause<class_AnimatedTexture_property_pause>`                 | ``false``                 |
++---------------------------+--------------------------------------------------------------------+---------------------------+
 
 Methods
 -------
@@ -55,6 +61,20 @@ Constants
 
 Property Descriptions
 ---------------------
+
+.. _class_AnimatedTexture_property_current_frame:
+
+- :ref:`int<class_int>` **current_frame**
+
++----------+--------------------------+
+| *Setter* | set_current_frame(value) |
++----------+--------------------------+
+| *Getter* | get_current_frame()      |
++----------+--------------------------+
+
+Sets the currently visible frame of the texture.
+
+----
 
 .. _class_AnimatedTexture_property_fps:
 
@@ -87,6 +107,38 @@ For example, an animation with 8 frames, no frame delay and a ``fps`` value of 2
 +-----------+-------------------+
 
 Number of frames to use in the animation. While you can create the frames independently with :ref:`set_frame_texture<class_AnimatedTexture_method_set_frame_texture>`, you need to set this value for the animation to take new frames into account. The maximum number of frames is :ref:`MAX_FRAMES<class_AnimatedTexture_constant_MAX_FRAMES>`.
+
+----
+
+.. _class_AnimatedTexture_property_oneshot:
+
+- :ref:`bool<class_bool>` **oneshot**
+
++-----------+--------------------+
+| *Default* | ``false``          |
++-----------+--------------------+
+| *Setter*  | set_oneshot(value) |
++-----------+--------------------+
+| *Getter*  | get_oneshot()      |
++-----------+--------------------+
+
+If ``true``, the animation will only play once and will not loop back to the first frame after reaching the end. Note that reaching the end will not set :ref:`pause<class_AnimatedTexture_property_pause>` to ``true``.
+
+----
+
+.. _class_AnimatedTexture_property_pause:
+
+- :ref:`bool<class_bool>` **pause**
+
++-----------+------------------+
+| *Default* | ``false``        |
++-----------+------------------+
+| *Setter*  | set_pause(value) |
++-----------+------------------+
+| *Getter*  | get_pause()      |
++-----------+------------------+
+
+If ``true``, the animation will pause where it currently is (i.e. at :ref:`current_frame<class_AnimatedTexture_property_current_frame>`). The animation will continue from where it was paused when changing this property to ``false``.
 
 Method Descriptions
 -------------------

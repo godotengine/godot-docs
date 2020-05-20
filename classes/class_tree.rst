@@ -31,7 +31,7 @@ Trees are built via code, using :ref:`TreeItem<class_TreeItem>` objects to creat
         var subchild1 = tree.create_item(child1)
         subchild1.set_text(0, "Subchild1")
 
-To iterate over all the :ref:`TreeItem<class_TreeItem>` objects in a ``Tree`` object, use :ref:`TreeItem.get_next<class_TreeItem_method_get_next>` and :ref:`TreeItem.get_children<class_TreeItem_method_get_children>` after getting the root through :ref:`get_root<class_Tree_method_get_root>`.
+To iterate over all the :ref:`TreeItem<class_TreeItem>` objects in a ``Tree`` object, use :ref:`TreeItem.get_next<class_TreeItem_method_get_next>` and :ref:`TreeItem.get_children<class_TreeItem_method_get_children>` after getting the root through :ref:`get_root<class_Tree_method_get_root>`. You can use :ref:`Object.free<class_Object_method_free>` on a :ref:`TreeItem<class_TreeItem>` to remove it from the ``Tree``.
 
 Properties
 ----------

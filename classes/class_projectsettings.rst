@@ -210,6 +210,8 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`display/window/size/width<class_ProjectSettings_property_display/window/size/width>`                                                                           | ``1024``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`display/window/tablet_driver<class_ProjectSettings_property_display/window/tablet_driver>`                                                                     | ``"wintab"``                                                                                    |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`display/window/vsync/use_vsync<class_ProjectSettings_property_display/window/vsync/use_vsync>`                                                                 | ``true``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`display/window/vsync/vsync_via_compositor<class_ProjectSettings_property_display/window/vsync/vsync_via_compositor>`                                           | ``false``                                                                                       |
@@ -221,6 +223,8 @@ Properties
 | :ref:`int<class_int>`                         | :ref:`gui/common/default_scroll_deadzone<class_ProjectSettings_property_gui/common/default_scroll_deadzone>`                                                         | ``0``                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`gui/common/swap_ok_cancel<class_ProjectSettings_property_gui/common/swap_ok_cancel>`                                                                           | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`gui/common/text_edit_undo_stack_max_size<class_ProjectSettings_property_gui/common/text_edit_undo_stack_max_size>`                                             | ``1024``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>`                                                                                             | ``""``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -528,13 +532,21 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                     | :ref:`rendering/gles2/batching/colored_vertex_format_threshold<class_ProjectSettings_property_rendering/gles2/batching/colored_vertex_format_threshold>`             | ``0.25``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/gles2/batching/item_reordering_lookahead<class_ProjectSettings_property_rendering/gles2/batching/item_reordering_lookahead>`                         | ``4``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/gles2/batching/light_max_join_items<class_ProjectSettings_property_rendering/gles2/batching/light_max_join_items>`                                   | ``32``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                     | :ref:`rendering/gles2/batching/light_scissor_area_threshold<class_ProjectSettings_property_rendering/gles2/batching/light_scissor_area_threshold>`                   | ``1.0``                                                                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/gles2/batching/max_join_item_commands<class_ProjectSettings_property_rendering/gles2/batching/max_join_item_commands>`                               | ``16``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/batching/single_rect_fallback<class_ProjectSettings_property_rendering/gles2/batching/single_rect_fallback>`                                   | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/batching/use_batching<class_ProjectSettings_property_rendering/gles2/batching/use_batching>`                                                   | ``true``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/debug/diagnose_frame<class_ProjectSettings_property_rendering/gles2/debug/diagnose_frame>`                                                     | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/debug/disable_half_float<class_ProjectSettings_property_rendering/gles2/debug/disable_half_float>`                                             | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/debug/flash_batching<class_ProjectSettings_property_rendering/gles2/debug/flash_batching>`                                                     | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -556,7 +568,7 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                     | :ref:`rendering/limits/time/time_rollover_secs<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`                                             | ``3600``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/2d/gles2_use_nvidia_rect_flicker_workaround<class_ProjectSettings_property_rendering/quality/2d/gles2_use_nvidia_rect_flicker_workaround>`   | ``false``                                                                                       |
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/2d/use_nvidia_rect_flicker_workaround<class_ProjectSettings_property_rendering/quality/2d/use_nvidia_rect_flicker_workaround>`               | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/2d/use_pixel_snap<class_ProjectSettings_property_rendering/quality/2d/use_pixel_snap>`                                                       | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -650,6 +662,8 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/vram_compression/import_s3tc<class_ProjectSettings_property_rendering/vram_compression/import_s3tc>`                                                 | ``true``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`world/2d/cell_size<class_ProjectSettings_property_world/2d/cell_size>`                                                                                         | ``100``                                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -697,7 +711,9 @@ Property Descriptions
 | *Default* | ``""`` |
 +-----------+--------+
 
-Comma-separated list of custom Android modules (which must have been built in the Android export templates) using their Java package path, e.g. ``org/godotengine/org/GodotPaymentV3,org/godotengine/godot/MyCustomSingleton"``.
+Comma-separated list of custom Android modules (which must have been built in the Android export templates) using their Java package path, e.g. ``"org/godotengine/godot/MyCustomSingleton,com/example/foo/FrenchFriesFactory"``.
+
+**Note:** Since Godot 3.2.2, the ``org/godotengine/godot/GodotPaymentV3`` module was deprecated and replaced by the ``GodotPayment`` plugin which should be enabled in the Android export preset under ``Plugins`` section. The singleton to access in code was also renamed to ``GodotPayment``.
 
 ----
 
@@ -1025,7 +1041,7 @@ Setting to hardcode audio delay when playing video. Best to leave this untouched
 | *Default* | ``-1`` |
 +-----------+--------+
 
-Default compression level for gzip. Affects compressed scenes and resources.
+The default compression level for gzip. Affects compressed scenes and resources. Higher levels result in smaller files at the cost of compression speed. Decompression speed is mostly unaffected by the compression level. ``-1`` uses the default gzip compression level, which is identical to ``6`` but could change in the future due to underlying zlib updates.
 
 ----
 
@@ -1037,7 +1053,7 @@ Default compression level for gzip. Affects compressed scenes and resources.
 | *Default* | ``-1`` |
 +-----------+--------+
 
-Default compression level for Zlib. Affects compressed scenes and resources.
+The default compression level for Zlib. Affects compressed scenes and resources. Higher levels result in smaller files at the cost of compression speed. Decompression speed is mostly unaffected by the compression level. ``-1`` uses the default gzip compression level, which is identical to ``6`` but could change in the future due to underlying zlib updates.
 
 ----
 
@@ -1049,7 +1065,7 @@ Default compression level for Zlib. Affects compressed scenes and resources.
 | *Default* | ``3`` |
 +-----------+-------+
 
-Default compression level for Zstandard. Affects compressed scenes and resources.
+The default compression level for Zstandard. Affects compressed scenes and resources. Higher levels result in smaller files at the cost of compression speed. Decompression speed is mostly unaffected by the compression level.
 
 ----
 
@@ -1061,7 +1077,7 @@ Default compression level for Zstandard. Affects compressed scenes and resources
 | *Default* | ``false`` |
 +-----------+-----------+
 
-Enables long-distance matching in Zstandard.
+Enables `long-distance matching <https://github.com/facebook/zstd/releases/tag/v1.3.2>`_ in Zstandard.
 
 ----
 
@@ -1073,7 +1089,7 @@ Enables long-distance matching in Zstandard.
 | *Default* | ``27`` |
 +-----------+--------+
 
-Largest size limit (in power of 2) allowed when compressing using long-distance matching with Zstandard.
+Largest size limit (in power of 2) allowed when compressing using long-distance matching with Zstandard. Higher values can result in better compression, but will require more memory when compressing and decompressing.
 
 ----
 
@@ -1801,6 +1817,18 @@ Sets the game's main viewport width. On desktop platforms, this is the default w
 
 ----
 
+.. _class_ProjectSettings_property_display/window/tablet_driver:
+
+- :ref:`String<class_String>` **display/window/tablet_driver**
+
++-----------+--------------+
+| *Default* | ``"wintab"`` |
++-----------+--------------+
+
+Specifies the tablet driver to use. If left empty, the default driver will be used.
+
+----
+
 .. _class_ProjectSettings_property_display/window/vsync/use_vsync:
 
 - :ref:`bool<class_bool>` **display/window/vsync/use_vsync**
@@ -1872,6 +1900,16 @@ Default value for :ref:`ScrollContainer.scroll_deadzone<class_ScrollContainer_pr
 +-----------+-----------+
 
 If ``true``, swaps OK and Cancel buttons in dialogs on Windows and UWP to follow interface conventions.
+
+----
+
+.. _class_ProjectSettings_property_gui/common/text_edit_undo_stack_max_size:
+
+- :ref:`int<class_int>` **gui/common/text_edit_undo_stack_max_size**
+
++-----------+----------+
+| *Default* | ``1024`` |
++-----------+----------+
 
 ----
 
@@ -3357,7 +3395,9 @@ Page size used by remote filesystem (in bytes).
 | *Default* | ``""`` |
 +-----------+--------+
 
-CA certificates bundle to use for SSL connections. If not defined, Godot's internal CA certificates are used.
+The CA certificates bundle to use for SSL connections. If this is set to a non-empty value, this will *override* Godot's default `Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt>`_. If left empty, the default certificate bundle will be used.
+
+If in doubt, leave this setting empty.
 
 ----
 
@@ -3723,6 +3763,30 @@ Including color in the vertex format has a cost, however, not including color pr
 
 ----
 
+.. _class_ProjectSettings_property_rendering/gles2/batching/item_reordering_lookahead:
+
+- :ref:`int<class_int>` **rendering/gles2/batching/item_reordering_lookahead**
+
++-----------+-------+
+| *Default* | ``4`` |
++-----------+-------+
+
+In certain circumstances, the batcher can reorder items in order to better join them. This may result in better performance. An overlap test is needed however for each item lookahead, so there is a trade off, with diminishing returns. If you are getting no benefit, setting this to 0 will switch it off.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles2/batching/light_max_join_items:
+
+- :ref:`int<class_int>` **rendering/gles2/batching/light_max_join_items**
+
++-----------+--------+
+| *Default* | ``32`` |
++-----------+--------+
+
+Lights have the potential to prevent joining items, and break many of the performance benefits of batching. This setting enables some complex logic to allow joining items if their lighting is similar, and overlap tests pass. This can significantly improve performance in some games. Set to 0 to switch off. With large values the cost of overlap tests may lead to diminishing returns.
+
+----
+
 .. _class_ProjectSettings_property_rendering/gles2/batching/light_scissor_area_threshold:
 
 - :ref:`float<class_float>` **rendering/gles2/batching/light_scissor_area_threshold**
@@ -3747,6 +3811,18 @@ Sets the number of commands to lookahead to determine whether to batch render it
 
 ----
 
+.. _class_ProjectSettings_property_rendering/gles2/batching/single_rect_fallback:
+
+- :ref:`bool<class_bool>` **rendering/gles2/batching/single_rect_fallback**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+Enabling this uses the legacy method to draw single rects, which is faster, but can cause flicker on some systems. This is best disabled unless crucial for performance.
+
+----
+
 .. _class_ProjectSettings_property_rendering/gles2/batching/use_batching:
 
 - :ref:`bool<class_bool>` **rendering/gles2/batching/use_batching**
@@ -3768,6 +3844,18 @@ Turns batching on and off. Batching increases performance by reducing the amount
 +-----------+-----------+
 
 When batching is on, this regularly prints a frame diagnosis log. Note that this will degrade performance.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles2/debug/disable_half_float:
+
+- :ref:`bool<class_bool>` **rendering/gles2/debug/disable_half_float**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+The use of half-float vertex compression may be producing rendering errors on some platforms (especially iOS). These have been seen particularly in particles. Disabling half-float may resolve these problems.
 
 ----
 
@@ -3891,9 +3979,9 @@ Shaders have a time variable that constantly increases. At some point, it needs 
 
 ----
 
-.. _class_ProjectSettings_property_rendering/quality/2d/gles2_use_nvidia_rect_flicker_workaround:
+.. _class_ProjectSettings_property_rendering/quality/2d/use_nvidia_rect_flicker_workaround:
 
-- :ref:`bool<class_bool>` **rendering/quality/2d/gles2_use_nvidia_rect_flicker_workaround**
+- :ref:`bool<class_bool>` **rendering/quality/2d/use_nvidia_rect_flicker_workaround**
 
 +-----------+-----------+
 | *Default* | ``false`` |
@@ -3901,7 +3989,7 @@ Shaders have a time variable that constantly increases. At some point, it needs 
 
 Some NVIDIA GPU drivers have a bug which produces flickering issues for the ``draw_rect`` method, especially as used in :ref:`TileMap<class_TileMap>`. Refer to `GitHub issue 9913 <https://github.com/godotengine/godot/issues/9913>`_ for details.
 
-If ``true``, this option enables a "safe" code path for such NVIDIA GPUs at the cost of performance. This option only impacts the GLES2 rendering backend (so the bug stays if you use GLES3), and only desktop platforms.
+If ``true``, this option enables a "safe" code path for such NVIDIA GPUs at the cost of performance. This option affects GLES2 and GLES3 rendering, but only on desktop platforms.
 
 ----
 
@@ -4464,6 +4552,18 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 +-----------+----------+
 
 If ``true``, the texture importer will import VRAM-compressed textures using the S3 Texture Compression algorithm. This algorithm is only supported on desktop platforms and consoles.
+
+----
+
+.. _class_ProjectSettings_property_world/2d/cell_size:
+
+- :ref:`int<class_int>` **world/2d/cell_size**
+
++-----------+---------+
+| *Default* | ``100`` |
++-----------+---------+
+
+Cell size used for the 2D hash grid that :ref:`VisibilityNotifier2D<class_VisibilityNotifier2D>` uses.
 
 Method Descriptions
 -------------------

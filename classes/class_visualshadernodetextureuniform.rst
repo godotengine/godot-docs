@@ -13,7 +13,12 @@ VisualShaderNodeTextureUniform
 
 **Inherited By:** :ref:`VisualShaderNodeCubeMapUniform<class_VisualShaderNodeCubeMapUniform>`, :ref:`VisualShaderNodeTextureUniformTriplanar<class_VisualShaderNodeTextureUniformTriplanar>`
 
+Performs a uniform texture lookup within the visual shader graph.
 
+Description
+-----------
+
+Performs a lookup operation on the texture provided as a uniform for the shader.
 
 Properties
 ----------
@@ -39,13 +44,13 @@ Enumerations
 
 enum **TextureType**:
 
-- **TYPE_DATA** = **0**
+- **TYPE_DATA** = **0** --- No hints are added to the uniform declaration.
 
-- **TYPE_COLOR** = **1**
+- **TYPE_COLOR** = **1** --- Adds ``hint_albedo`` as hint to the uniform declaration for proper sRGB to linear conversion.
 
-- **TYPE_NORMALMAP** = **2**
+- **TYPE_NORMALMAP** = **2** --- Adds ``hint_normal`` as hint to the uniform declaration, which internally converts the texture for proper usage as normal map.
 
-- **TYPE_ANISO** = **3**
+- **TYPE_ANISO** = **3** --- Adds ``hint_aniso`` as hint to the uniform declaration to use for a flowmap.
 
 ----
 
@@ -57,9 +62,9 @@ enum **TextureType**:
 
 enum **ColorDefault**:
 
-- **COLOR_DEFAULT_WHITE** = **0**
+- **COLOR_DEFAULT_WHITE** = **0** --- Defaults to white color.
 
-- **COLOR_DEFAULT_BLACK** = **1**
+- **COLOR_DEFAULT_BLACK** = **1** --- Defaults to black color.
 
 Property Descriptions
 ---------------------
@@ -76,6 +81,8 @@ Property Descriptions
 | *Getter*  | get_color_default()      |
 +-----------+--------------------------+
 
+Sets the default color if no texture is assigned to the uniform.
+
 ----
 
 .. _class_VisualShaderNodeTextureUniform_property_texture_type:
@@ -89,4 +96,6 @@ Property Descriptions
 +-----------+-------------------------+
 | *Getter*  | get_texture_type()      |
 +-----------+-------------------------+
+
+Defines the type of data provided by the source texture. See :ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>` for options.
 

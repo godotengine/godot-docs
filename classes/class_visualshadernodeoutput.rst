@@ -11,5 +11,10 @@ VisualShaderNodeOutput
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Represents the output shader parameters within the visual shader graph.
 
+Description
+-----------
+
+This visual shader node is present in all shader graphs in form of "Output" block with mutliple output value ports.
 

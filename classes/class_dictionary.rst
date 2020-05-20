@@ -20,6 +20,8 @@ You can define a dictionary by placing a comma-separated list of ``key: value`` 
 
 Erasing elements while iterating over them **is not supported** and will result in undefined behavior.
 
+**Note:** Dictionaries are always passed by reference. To get a copy of a dictionary which can be modified independently of the original dictionary, use :ref:`duplicate<class_Dictionary_method_duplicate>`.
+
 Creating a dictionary:
 
 ::

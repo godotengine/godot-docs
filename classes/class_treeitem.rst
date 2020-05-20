@@ -18,6 +18,8 @@ Description
 
 Control for a single item inside a :ref:`Tree<class_Tree>`. May have child ``TreeItem``\ s and be styled as well as contain buttons.
 
+You can remove a ``TreeItem`` by using :ref:`Object.free<class_Object_method_free>`.
+
 Properties
 ----------
 
@@ -85,6 +87,8 @@ Methods
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`             | :ref:`get_range_config<class_TreeItem_method_get_range_config>` **(** :ref:`int<class_int>` column **)**                                                                                                                                                |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                     | :ref:`get_suffix<class_TreeItem_method_get_suffix>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                                      |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                     | :ref:`get_text<class_TreeItem_method_get_text>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                                          |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`TextAlign<enum_TreeItem_TextAlign>`       | :ref:`get_text_align<class_TreeItem_method_get_text_align>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                              |
@@ -146,6 +150,8 @@ Methods
 | void                                            | :ref:`set_range_config<class_TreeItem_method_set_range_config>` **(** :ref:`int<class_int>` column, :ref:`float<class_float>` min, :ref:`float<class_float>` max, :ref:`float<class_float>` step, :ref:`bool<class_bool>` expr=false **)**              |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_selectable<class_TreeItem_method_set_selectable>` **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` selectable **)**                                                                                                                |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`set_suffix<class_TreeItem_method_set_suffix>` **(** :ref:`int<class_int>` column, :ref:`String<class_String>` text **)**                                                                                                                          |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_text<class_TreeItem_method_set_text>` **(** :ref:`int<class_int>` column, :ref:`String<class_String>` text **)**                                                                                                                              |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -451,6 +457,12 @@ If ``wrap`` is enabled, the method will wrap around to the last visible element 
 
 ----
 
+.. _class_TreeItem_method_get_suffix:
+
+- :ref:`String<class_String>` **get_suffix** **(** :ref:`int<class_int>` column **)** const
+
+----
+
 .. _class_TreeItem_method_get_text:
 
 - :ref:`String<class_String>` **get_text** **(** :ref:`int<class_int>` column **)** const
@@ -541,7 +553,7 @@ Moves this TreeItem to the top in the :ref:`Tree<class_Tree>` hierarchy.
 
 - void **remove_child** **(** :ref:`Object<class_Object>` child **)**
 
-Removes the given child TreeItem.
+Removes the given child ``TreeItem`` and all its children from the :ref:`Tree<class_Tree>`. Note that it doesn't free the item from memory, so it can be reused later. To completely remove a ``TreeItem`` use :ref:`Object.free<class_Object_method_free>`.
 
 ----
 
@@ -688,6 +700,12 @@ Sets the given column's icon's texture region.
 - void **set_selectable** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` selectable **)**
 
 If ``true``, the given column is selectable.
+
+----
+
+.. _class_TreeItem_method_set_suffix:
+
+- void **set_suffix** **(** :ref:`int<class_int>` column, :ref:`String<class_String>` text **)**
 
 ----
 

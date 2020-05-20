@@ -11,5 +11,10 @@ VisualShaderNodeTransformDecompose
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Decomposes a :ref:`Transform<class_Transform>` into four :ref:`Vector3<class_Vector3>`\ s within the visual shader graph.
 
+Description
+-----------
+
+Takes a 4x4 transform matrix and decomposes it into four ``vec3`` values, one from each row of the matrix.
 

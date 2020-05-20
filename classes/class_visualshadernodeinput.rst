@@ -13,6 +13,16 @@ VisualShaderNodeInput
 
 
 
+Description
+-----------
+
+Gives access to input variables (built-ins) available for the shader. See the shading reference for the list of available built-ins for each shader type (check ``Tutorials`` section for link).
+
+Tutorials
+---------
+
+- :doc:`../tutorials/shading/shading_reference/index`
+
 Properties
 ----------
 
@@ -48,6 +58,8 @@ Property Descriptions
 +-----------+-----------------------+
 | *Getter*  | get_input_name()      |
 +-----------+-----------------------+
+
+One of the several input constants in lower-case style like: "vertex"(``VERTEX``) or "point_size"(``POINT_SIZE``).
 
 Method Descriptions
 -------------------

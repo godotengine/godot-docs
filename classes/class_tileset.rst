@@ -693,6 +693,8 @@ Sets an offset for the tile's navigation polygon.
 
 Sets the tile's normal map texture.
 
+**Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`_ for a comparison of normal map coordinates expected by popular engines.
+
 ----
 
 .. _class_TileSet_method_tile_set_occluder_offset:

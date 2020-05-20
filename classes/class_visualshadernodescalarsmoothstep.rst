@@ -11,5 +11,12 @@ VisualShaderNodeScalarSmoothStep
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Calculates a scalar SmoothStep function within the visual shader graph.
 
+Description
+-----------
+
+Translates to ``smoothstep(edge0, edge1, x)`` in the shader language.
+
+Returns ``0.0`` if ``x`` is smaller than ``edge0`` and ``1.0`` if ``x`` is larger than ``edge1``. Otherwise the return value is interpolated between ``0.0`` and ``1.0`` using Hermite polynomials.
 

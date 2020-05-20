@@ -321,6 +321,8 @@ Modulates the color of the texture when this style box is drawn.
 
 The normal map to use when drawing this style box.
 
+**Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`_ for a comparison of normal map coordinates expected by popular engines.
+
 ----
 
 .. _class_StyleBoxTexture_property_region_rect:

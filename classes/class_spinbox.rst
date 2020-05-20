@@ -124,7 +124,7 @@ Adds the specified ``prefix`` string before the numerical value of the ``SpinBox
 | *Getter*  | get_suffix()      |
 +-----------+-------------------+
 
-Adds the specified ``prefix`` string after the numerical value of the ``SpinBox``.
+Adds the specified ``suffix`` string after the numerical value of the ``SpinBox``.
 
 Method Descriptions
 -------------------

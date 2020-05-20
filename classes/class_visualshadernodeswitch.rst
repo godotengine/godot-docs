@@ -13,5 +13,10 @@ VisualShaderNodeSwitch
 
 **Inherited By:** :ref:`VisualShaderNodeScalarSwitch<class_VisualShaderNodeScalarSwitch>`
 
+A boolean/vector function for use within the visual shader graph.
 
+Description
+-----------
+
+Returns an associated vector if the provided boolean value is ``true`` or ``false``.
 

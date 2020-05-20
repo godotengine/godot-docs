@@ -186,6 +186,8 @@ The number of columns in the sprite sheet.
 
 The normal map gives depth to the Sprite.
 
+**Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`_ for a comparison of normal map coordinates expected by popular engines.
+
 ----
 
 .. _class_Sprite_property_offset:

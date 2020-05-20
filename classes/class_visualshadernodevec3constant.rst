@@ -11,7 +11,12 @@ VisualShaderNodeVec3Constant
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+A :ref:`Vector3<class_Vector3>` constant to be used within the visual shader graph.
 
+Description
+-----------
+
+A constant :ref:`Vector3<class_Vector3>`, which can be used as an input node.
 
 Properties
 ----------
@@ -34,4 +39,6 @@ Property Descriptions
 +-----------+------------------------+
 | *Getter*  | get_constant()         |
 +-----------+------------------------+
+
+A :ref:`Vector3<class_Vector3>` constant which represents the state of this node.
 

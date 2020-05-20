@@ -11,5 +11,10 @@ VisualShaderNodeScalarSwitch
 
 **Inherits:** :ref:`VisualShaderNodeSwitch<class_VisualShaderNodeSwitch>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+A boolean/scalar function for use within the visual shader graph.
 
+Description
+-----------
+
+Returns an associated scalar if the provided boolean value is ``true`` or ``false``.
 

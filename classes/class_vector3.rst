@@ -458,7 +458,7 @@ Returns the component of the vector along a plane defined by the given normal.
 
 - :ref:`Vector3<class_Vector3>` **snapped** **(** :ref:`Vector3<class_Vector3>` by **)**
 
-Returns a copy of the vector snapped to the lowest neared multiple.
+Returns the vector snapped to a grid with the given size.
 
 ----
 

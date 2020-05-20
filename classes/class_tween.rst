@@ -34,7 +34,7 @@ Many methods require a property name, such as ``"position"`` above. You can find
 
 Many of the methods accept ``trans_type`` and ``ease_type``. The first accepts an :ref:`TransitionType<enum_Tween_TransitionType>` constant, and refers to the way the timing of the animation is handled (see `easings.net <https://easings.net/>`_ for some examples). The second accepts an :ref:`EaseType<enum_Tween_EaseType>` constant, and controls the where ``trans_type`` is applied to the interpolation (in the beginning, the end, or both). If you don't know which transition and easing to pick, you can try different :ref:`TransitionType<enum_Tween_TransitionType>` constants with :ref:`EASE_IN_OUT<class_Tween_constant_EASE_IN_OUT>`, and use the one that looks best.
 
-**`Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.png>`_**
+`Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.png>`_
 
 Properties
 ----------
