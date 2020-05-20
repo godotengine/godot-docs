@@ -158,19 +158,19 @@ of your project as either the first argument, like this:
 
 ::
 
-    user@host:~$ godot path_to_your_project/project.godot [other] [commands] [and] [args]
+    godot path_to_your_project/project.godot [other] [commands] [and] [args]
 
 Or by using the ``--path`` argument:
 
 ::
 
-    user@host:~$ godot --path path_to_your_project [other] [commands] [and] [args]
+    godot --path path_to_your_project [other] [commands] [and] [args]
 
 For example, the full command for exporting your game (as explained below) might look like this:
 
 ::
 
-    user@host:~$ godot --path path_to_your_project --export my_export_preset_name game.exe
+    godot --path path_to_your_project --export my_export_preset_name game.exe
 
 Creating a project
 ------------------
@@ -182,9 +182,9 @@ shell to the desired place and making a project.godot file.
 
 ::
 
-    user@host:~$ mkdir newgame
-    user@host:~$ cd newgame
-    user@host:~/newgame$ touch project.godot
+    mkdir newgame
+    cd newgame
+    touch project.godot
 
 
 The project can now be opened with Godot.
@@ -199,14 +199,14 @@ otherwise the command is ignored and the project manager appears.
 
 ::
 
-    user@host:~/newgame$ godot -e
+    godot -e
 
 If a scene has been created and saved, it can be edited later by running
 the same code with that scene as argument.
 
 ::
 
-    user@host:~/newgame$ godot -e scene.tscn
+    godot -e scene.tscn
 
 Erasing a scene
 ---------------
@@ -217,7 +217,7 @@ references that scene or else an error will be thrown upon opening.
 
 ::
 
-    user@host:~/newgame$ rm scene.tscn
+    rm scene.tscn
 
 Running the game
 ----------------
@@ -227,14 +227,14 @@ subdirectory.
 
 ::
 
-    user@host:~/newgame$ godot
+    godot
 
 When a specific scene needs to be tested, pass that scene to the command
 line.
 
 ::
 
-    user@host:~/newgame$ godot scene.tscn
+    godot scene.tscn
 
 Debugging
 ---------
@@ -245,11 +245,11 @@ just fly by. For this, a command line debugger is provided by adding
 
 ::
 
-    user@host:~/newgame$ godot -d
+    godot -d
 
 ::
 
-    user@host:~/newgame$ godot -d scene.tscn
+    godot -d scene.tscn
 
 .. _doc_command_line_tutorial_exporting:
 
@@ -262,8 +262,8 @@ that is headless (server build, no video) is ideal for this.
 
 ::
 
-    user@host:~/newgame$ godot --export "Linux/X11" /var/builds/project
-    user@host:~/newgame$ godot --export Android /var/builds/project.apk
+    godot --export "Linux/X11" /var/builds/project
+    godot --export Android /var/builds/project.apk
 
 The platform names recognized by the ``--export`` switch are the same as
 displayed in the export wizard of the editor. To get a list of supported
@@ -287,7 +287,7 @@ Here is a simple example of how it works:
 
 .. code-block:: python
 
-    #sayhello.gd
+    # sayhello.gd
     extends SceneTree
 
     func _init():
@@ -298,8 +298,8 @@ And how to run it:
 
 ::
 
-    user@host:~/newgame$ godot -s sayhello.gd
-    Hello!
+    # Prints "Hello!" to standard output.
+    godot -s sayhello.gd
 
 If no project.godot exists at the path, current path is assumed to be the
 current working directory (unless ``-path`` is specified).

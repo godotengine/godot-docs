@@ -62,7 +62,7 @@ It will then start building for the target platform right away.
 
 To list the available target platforms, use ``scons platform=list``::
 
-    user@host:~/godot$ scons platform=list
+    scons platform=list
     scons: Reading SConscript files ...
     The following platforms are available:
 
@@ -79,7 +79,7 @@ To build for a platform (for example, ``linuxbsd``), run with the ``platform=``
 
 ::
 
-    user@host:~/godot$ scons platform=linuxbsd
+    scons platform=linuxbsd
 
 This will start the build process, which will take a while. If you want
 SCons to build faster, use the ``-j <cores>`` parameter to specify how many
@@ -90,7 +90,7 @@ Example for using 4 cores:
 
 ::
 
-    user@host:~/godot$ scons platform=linuxbsd -j 4
+    scons platform=linuxbsd -j 4
 
 Resulting binary
 ----------------
@@ -102,7 +102,7 @@ generally with this naming convention::
 
 For the previous build attempt, the result would look like this::
 
-    user@host:~/godot$ ls bin
+    ls bin
     bin/godot.linuxbsd.tools.64
 
 This means that the binary is for Linux *or* \*BSD (*not* both), is not optimized, has tools (the
