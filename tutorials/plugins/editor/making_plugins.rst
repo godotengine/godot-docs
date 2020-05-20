@@ -28,7 +28,7 @@ The first thing you need for the editor to identify a new plugin is to
 create two files: a ``plugin.cfg`` for configuration and a tool script with the
 functionality. Plugins have a standard path like ``addons/plugin_name`` inside
 the project folder. Godot provides a dialog for generating those files and
-placing them where they need to be. 
+placing them where they need to be.
 
 In the main toolbar, click the ``Project`` dropdown. Then click
 ``Project Settings...``. Go to the ``Plugins`` tab and then click
@@ -87,7 +87,7 @@ like this:
 .. _doc_making_plugins_template_code:
 .. tabs::
  .. code-tab:: gdscript GDScript
- 
+
     tool
     extends EditorPlugin
 
@@ -100,7 +100,7 @@ like this:
         pass
 
  .. code-tab:: csharp
- 
+
     #if TOOLS
     using Godot;
     using System;
@@ -152,7 +152,7 @@ clicked. For that, we'll need a simple script that extends from
 
 .. tabs::
  .. code-tab:: gdscript GDScript
- 
+
     tool
     extends Button
 
@@ -163,7 +163,7 @@ clicked. For that, we'll need a simple script that extends from
         print("You clicked me!")
 
  .. code-tab:: csharp
- 
+
     using Godot;
     using System;
 
@@ -194,7 +194,7 @@ dialog. For that, change the ``custom_node.gd`` script to the following:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
- 
+
     tool
     extends EditorPlugin
 
@@ -209,7 +209,7 @@ dialog. For that, change the ``custom_node.gd`` script to the following:
         remove_custom_type("MyButton")
 
  .. code-tab:: csharp
- 
+
     #if TOOLS
     using Godot;
     using System;
@@ -261,7 +261,7 @@ add the following content to it:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
- 
+
     [plugin]
 
     name="My Custom Dock"
@@ -271,7 +271,7 @@ add the following content to it:
     script="custom_dock.gd"
 
  .. code-tab:: csharp
- 
+
     [plugin]
 
     name="My Custom Dock"
@@ -308,7 +308,7 @@ The script could look like this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
- 
+
     tool
     extends EditorPlugin
 
@@ -332,7 +332,7 @@ The script could look like this:
         dock.free()
 
  .. code-tab:: csharp
- 
+
     #if TOOLS
     using Godot;
     using System;
@@ -341,7 +341,7 @@ The script could look like this:
     public class CustomDock : EditorPlugin
     {
         Control dock;
-    
+
         public override void _EnterTree()
         {
             dock = (Control)GD.Load<PackedScene>("addons/my_custom_dock/my_dock.tscn").Instance();

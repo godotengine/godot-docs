@@ -52,7 +52,7 @@ as showing which vectors contribute to moving in a given direction.
 
 When we refer to a value such as `t.x.y`, that's the Y component of
 the X column vector. In other words, the bottom-left of the matrix.
-Similarly, `t.x.x` is top-left, `t.y.x` is top-right,and `t.y.y`
+Similarly, `t.x.x` is top-left, `t.y.x` is top-right, and `t.y.y`
 is bottom-right, where `t` is the Transform2D.
 
 Scaling the transformation matrix

@@ -1,9 +1,9 @@
 .. _doc_high_level_multiplayer:
 
-High level multiplayer
+High-level multiplayer
 ======================
 
-High level vs low level API
+High-level vs low-level API
 ---------------------------
 
 The following explains the differences of high- and low-level networking in Godot as well as some fundamentals. If you want to jump in head-first and add networking to your first nodes, skip to `Initializing the network`_ below. But make sure to read the rest later on!
@@ -75,7 +75,7 @@ Initializing the network
 
 The object that controls networking in Godot is the same one that controls everything tree-related: :ref:`SceneTree <class_SceneTree>`.
 
-To initialize high level networking, the SceneTree must be provided a NetworkedMultiplayerPeer object.
+To initialize high-level networking, the SceneTree must be provided a NetworkedMultiplayerPeer object.
 
 To create that object, it first has to be initialized as a server or client.
 
@@ -336,7 +336,7 @@ In most games, the goal of multiplayer networking is that the game runs synchron
 Besides supplying an RPC and remote member variable set implementation, Godot adds the concept of network masters.
 
 Network master
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 The network master of a node is the peer that has the ultimate authority over it.
 
@@ -420,3 +420,17 @@ This may not make much sense for an area-of-effect case like the bomb, but in ot
 ::
 
     rpc_id(TARGET_PEER_ID, "stun") # Only stun the target peer
+
+Exporting for dedicated servers
+-------------------------------
+
+Once you've made a multiplayer game, you may want to export it to run it on
+a dedicated server with no GPU available. See
+:ref:`doc_exporting_for_dedicated_servers` for more information.
+
+.. note::
+
+    The code samples on this page aren't designed to run on a dedicated
+    server. You'll have to modify them so the server isn't considered to be a
+    player. You'll also have to modify the game starting mechanism so that the
+    first player who joins can start the game.

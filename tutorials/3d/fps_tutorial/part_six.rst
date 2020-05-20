@@ -894,9 +894,9 @@ Now that we've finished our changes to ``SimpleAudioPlayer.gd``, we now need to 
 
     # You will need to provide your own sound files.
     var audio_clips = {
-        "Pistol_shot":null, #preload("res://path_to_your_audio_here!")
-        "Rifle_shot":null, #preload("res://path_to_your_audio_here!")
-        "Gun_cock":null, #preload("res://path_to_your_audio_here!")
+        "Pistol_shot": null, #preload("res://path_to_your_audio_here!")
+        "Rifle_shot": null, #preload("res://path_to_your_audio_here!")
+        "Gun_cock": null, #preload("res://path_to_your_audio_here!")
     }
 
     const SIMPLE_AUDIO_PLAYER_SCENE = preload("res://Simple_Audio_Player.tscn")

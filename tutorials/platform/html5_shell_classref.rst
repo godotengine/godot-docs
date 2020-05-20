@@ -3,17 +3,17 @@
 HTML5 shell class reference
 ===========================
 
-Projects exported for the Web expose the ``Engine`` class to the JavaScript environment, that allows 
+Projects exported for the Web expose the ``Engine`` class to the JavaScript environment, that allows
 fine control over the engine's start-up process.
 
-This API is built in an asynchronous manner and requires basic understanding 
+This API is built in an asynchronous manner and requires basic understanding
 of `Promises <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises>`__.
 
 Engine
 ------
 
 The ``Engine`` class provides methods for loading and starting exported projects on the Web. For default export
-settings, this is already part of the exported HTML page. To understand practical use of the ``Engine`` class, 
+settings, this is already part of the exported HTML page. To understand practical use of the ``Engine`` class,
 see :ref:`Custom HTML page for Web export <doc_customizing_html5_shell>`.
 
 Static Methods
@@ -99,7 +99,7 @@ Static Method Descriptions
 
 .. js:method:: Engine.setWebAssemblyFilenameExtension(extension)
 
-    Set an alternative filename extension for the WebAssembly module. By default 
+    Set an alternative filename extension for the WebAssembly module. By default
     it is assumed to be ``wasm``.
 
     :param string extension:
@@ -113,7 +113,7 @@ Instance Property Descriptions
 
     The runtime environment provided by Emscripten's ``Module``. For more information
     refer to the `official documentation <https://emscripten.org/docs/api_reference/module.html>`__ on Emscripten.
-    
+
 Instance Method Descriptions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -154,10 +154,10 @@ Instance Method Descriptions
 .. js:method:: engine.start([arg1, arg2, …])
 
     Start the instance of the engine, using the passed strings as
-    command line arguments. :js:meth:`engine.startGame` can be used 
+    command line arguments. :js:meth:`engine.startGame` can be used
     in typical cases instead.
-    
-    This will initialize the instance if it is not initialized. For manual 
+
+    This will initialize the instance if it is not initialized. For manual
     initialization, see :js:meth:`engine.init`. The engine must be loaded beforehand.
 
     Fails if a canvas cannot be found on the page.
@@ -172,10 +172,10 @@ Instance Method Descriptions
 
     Start the game instance using the given executable URL and main pack URL.
 
-    This will initialize the instance if it is not initialized. For manual 
+    This will initialize the instance if it is not initialized. For manual
     initialization, see :js:meth:`engine.init`.
 
-    This will load the engine if it is not loaded. The base path of the 
+    This will load the engine if it is not loaded. The base path of the
     executable URL will be used as the engine base path.
 
     :param string execName:
@@ -215,7 +215,7 @@ Instance Method Descriptions
 .. js:method:: engine.setLocale(locale)
 
     Specify a language code to select the proper localization for the game.
-    
+
     .. seealso:: Complete list of :ref:`supported locales <doc_locales>`.
 
     :param string locale:
@@ -223,7 +223,7 @@ Instance Method Descriptions
 
 .. js:method:: engine.setExecutableName(execName)
 
-    Specify the virtual filename of the executable. By default, the base name 
+    Specify the virtual filename of the executable. By default, the base name
     of the loaded engine files is used.
 
     This affects the output of :ref:`OS.get_executable_path() <class_OS_method_get_executable_path>`
@@ -246,12 +246,12 @@ Instance Method Descriptions
         multi-threading)
 
     :param function callback:
-        The callback function must accept two numeric arguments: the amount of bytes 
+        The callback function must accept two numeric arguments: the amount of bytes
         loaded so far, and the total number of bytes to load.
 
 .. js:method:: engine.setStdoutFunc(callback)
 
-    Specify a callback function for handling the standard output stream. This method 
+    Specify a callback function for handling the standard output stream. This method
     should usually only be used in debug pages. By default, ``console.log()`` is used.
 
     :param function callback:
@@ -259,7 +259,7 @@ Instance Method Descriptions
 
 .. js:method:: engine.setStderrFunc(callback)
 
-    Specify a callback function for handling the standard error stream. This method 
+    Specify a callback function for handling the standard error stream. This method
     should usually only be used in debug pages. By default, ``console.warn()`` is used.
 
     :param function callback:

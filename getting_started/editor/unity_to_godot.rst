@@ -219,7 +219,7 @@ Connections: groups and signals
 
 You can control nodes by accessing them via script and calling built-in
 or user-defined functions on them. You can also place nodes in a group
-and call functions on all nodes in this group. See more in the 
+and call functions on all nodes in this group. See more in the
 :ref:`scripting documentation <doc_scripting_continued>`.
 
 Nodes can send a signal when a specified action occurs. A signal can
@@ -246,7 +246,7 @@ Creating a script that inherits :ref:`class_Resource` will allow you to create c
 Using Godot in C++
 ------------------
 
-Godot allows you to develop your project directly in C++ by using its API, which is not possible with Unity at the moment. 
+Godot allows you to develop your project directly in C++ by using its API, which is not possible with Unity at the moment.
 As an example, you can consider Godot Engine's editor as a "game" written in C++ using the Godot API.
 
 If you are interested in using Godot in C++, you may want to start reading the :ref:`Developing in

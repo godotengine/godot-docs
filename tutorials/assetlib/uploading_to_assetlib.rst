@@ -29,17 +29,16 @@ are a few requirements your asset needs to meet to be approved.
 * The asset must work. If the asset doesn't run or otherwise doesn't
   work in the specified Godot version, then it will be rejected.
 
+* The asset must have a proper **.gitignore** file. It's important to
+  keep redundant data out of the repository.
+  `Here's a template. <https://github.com/github/gitignore/blob/master/Godot.gitignore>`_
+
 * No submodules, or any submodules must be non-essential. GitHub
   does not include submodules in the downloaded ZIP file, so if the
   asset needs the contents of the submodule, your asset won't work.
 
 * The license needs to be correct. The license listed on the asset
   library must match the license in the repository.
-
-* Do not set the download commit to "master". The asset library validates
-  all assets with a SHA256 hash, so the version hosted on GitHub needs
-  to be *exactly* the same. Instead of "master", either specify a commit
-  hash, or tag versions and specify a version number.
 
 * Use proper English for the name and description of your asset.
   This includes using correct capitalization, and using full
@@ -121,9 +120,9 @@ is required in the submission form here as well.
     from repository host to repository host, but will likely look similar to
     `https://github.com/<user>/<project>/issues`. You may leave this field empty
     if you use your provider's issue tracker, and it's part of the same repository.
-* **Download Commit/Tag**:
-    The commit or tag of the asset. For example,
-    `b1d3172f89b86e52465a74f63a74ac84c491d3e1` or `v1.0`. The site computes
+* **Download Commit**:
+    The commit of the asset. For example,
+    `b1d3172f89b86e52465a74f63a74ac84c491d3e1`. The site computes
     the actual download URL from this.
 * **Icon URL**:
     The URL to your asset's icon (which will be used as a thumbnail
@@ -160,7 +159,7 @@ be patient! You will be informed when your asset is reviewed. If it was rejected
 you will be told why that may have been, and you will be able to submit it again
 with the appropriate changes.
 You may have some luck accelerating the approval process by messaging the
-moderators/assetlib reviewers on IRC (the #godotengine-atelier channel on Freenode),
+moderators/assetlib reviewers on IRC (the ``#godotengine-atelier`` channel on Freenode),
 or the official Discord server.
 
 .. |image0| image:: ./img/assetlib_submit.png

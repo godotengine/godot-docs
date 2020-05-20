@@ -10,7 +10,7 @@ which takes up to four parameters. The first two are required, while the second 
 
 The first is the ``PrimitiveType``, this is an OpenGL concept that instructs the GPU
 how to arrange the primitive based on the vertices given whether it is triangles,
-lines, points, etc. A complete list can be found under the :ref:`Mesh <class_mesh>` 
+lines, points, etc. A complete list can be found under the :ref:`Mesh <class_mesh>`
 class reference page.
 
 The second is the actual Array that stores the mesh information. The array is a normal Godot array that
@@ -202,7 +202,7 @@ that you find online.
 
 Combined with the code above, this code will generate a sphere.
 
-When it comes to generating geometry with the ArrayMesh you need to understand what goes 
+When it comes to generating geometry with the ArrayMesh you need to understand what goes
 in each array and then you can follow tutorials for any language/engine and convert it into Godot.
 
 Saving

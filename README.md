@@ -69,7 +69,7 @@ Building the documentation requires at least 8 GB of RAM to be done without swap
 # On Linux/macOS
 make html SPHINXOPTS=-j2
 
-# On Windows
+# On Windows
 set SPHINXOPTS=-j2 && make html
 ```
 

@@ -271,6 +271,8 @@ The following is the list of supported operators and their precedence.
 +---------------------------------------------------------------+-----------------------------------------+
 | ``if x else``                                                 | Ternary if/else                         |
 +---------------------------------------------------------------+-----------------------------------------+
+| ``as``                                                        | Type casting                            |
++---------------------------------------------------------------+-----------------------------------------+
 | ``=`` ``+=`` ``-=`` ``*=`` ``/=`` ``%=`` ``&=`` ``|=``        | Assignment (lowest priority)            |
 +---------------------------------------------------------------+-----------------------------------------+
 
@@ -511,6 +513,20 @@ assign to it::
     d.waiting = 14 # Add String "waiting" as a key and assign the value 14 to it.
     d[4] = "hello" # Add integer 4 as a key and assign the String "hello" as its value.
     d["Godot"] = 3.01 # Add String "Godot" as a key and assign the value 3.01 to it.
+
+    var test = 4
+    # Prints "hello" by indexing the dictionary with a dynamic key.
+    # This is not the same as `d.test`. The bracket syntax equivalent to
+    # `d.test` is `d["test"]`.
+    print(d[test])
+
+.. note::
+
+    The bracket syntax can be used to access properties of any
+    :ref:`class_Object`, not just Dictionaries. Keep in mind it will cause a
+    script error when attempting to index a non-existing property. To avoid
+    this, use the :ref:`Object.get() <class_Object_method_get>` and
+    :ref:`Object.set() <class_Object_method_set>` methods instead.
 
 Data
 ----
@@ -844,8 +860,8 @@ Basic syntax::
 **Control flow**:
 
 The patterns are matched from top to bottom.
-If a pattern matches, the corresponding block will be executed. After that, the execution continues below the ``match`` statement.
-If you want to have a fallthrough, you can use ``continue`` to stop execution in the current block and check the ones below it.
+If a pattern matches, the first corresponding block will be executed. After that, the execution continues below the ``match`` statement.
+If you want to have a fallthrough, you can use ``continue`` to stop execution in the current block and check for an additional match in the patterns below it.
 
 There are 6 pattern types:
 
@@ -1491,7 +1507,7 @@ Remember to save the new function state, when using multiple ``yield``\s::
 
     func _ready():
         var co = co_func();
-        while co is GDScriptFunction && co.is_valid():
+        while co is GDScriptFunctionState && co.is_valid():
             co = co.resume();
 
 

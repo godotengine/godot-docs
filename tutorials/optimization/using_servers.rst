@@ -90,10 +90,10 @@ This is a simple example of how to create a sprite from code and move it using t
  .. code-tab:: gdscript GDScript
 
     extends Node2D
-    
+
     # VisualServer expects references to be kept around
     var sprite
-    
+
     func _ready():
         # Create a canvas item, child of this node.
         var ci_rid = VisualServer.canvas_item_create()
@@ -129,10 +129,10 @@ The 3D APIs are different from the 2D ones, so the instantiation API must be use
  .. code-tab:: gdscript GDScript
 
     extends Spatial
-    
+
     # VisualServer expects references to be kept around
     var mesh
-    
+
     func _ready():
         # Create a visual instance (for 3D).
         var instance = VisualServer.instance_create()
@@ -156,7 +156,7 @@ and moves a :ref:`CanvasItem <class_CanvasItem>` when the body moves.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-    
+
     # Physics2DServer expects references to be kept around
     var body
     var shape

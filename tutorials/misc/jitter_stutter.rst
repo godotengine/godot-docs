@@ -40,6 +40,12 @@ time sources (one is processed in the physics step while another is processed in
 improvements to this, from allowing kinematic bodies to be animated in the regular _process loop, to further fixes in the
 frame timer.
 
+.. note::
+
+    You can use physics interpolation to mitigate physics-related jittering.
+    See `lawnjelly's smoothing-addon <https://github.com/lawnjelly/smoothing-addon>`__
+    for an add-on that can be dropped into any project to enable physics interpolation.
+
 Stutter
 -------
 
@@ -69,7 +75,7 @@ Linux (X11)
 
 Stutter may be visible on Desktop Linux, but this is usually associated with different video drivers and compositors.
 Nouveau drivers often exhibit this, while AMD or NVidia proprietary don't. Some compositors may also trigger this problem
-(e.g. KWin), so it is advised to try using a different one to rule it out as the cause. 
+(e.g. KWin), so it is advised to try using a different one to rule it out as the cause.
 
 There is no workaround for driver or compositor stuttering other than reporting it as an issue to the driver or compositor
 developers.

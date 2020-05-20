@@ -60,9 +60,11 @@ The branches on the Git repository are organized as follows:
    As a rule of thumb, the last stable branch is maintained until the next
    major version (e.g. the ``3.0`` branch was maintained until the release of
    Godot 3.1).
-   If you want to make PRs against a maintained stable branch, you will have
-   to check if your changes are also relevant for the ``master`` branch.
--  There might be feature branches at time, usually meant to be merged into
+   If you want to make PRs against a maintained stable branch, please check
+   first if your changes are also relevant for the ``master`` branch, and if so
+   make the PR for the ``master`` branch in priority. Release managers can then
+   cherry-pick the fix to a stable branch if relevant.
+-  There might occasionally be feature branches, usually meant to be merged into
    the ``master`` branch at some time.
 
 Forking and cloning
@@ -113,9 +115,9 @@ We will start by setting up a reference to the original repository that we forke
     $ git fetch upstream
 
 This will create a reference named ``upstream`` pointing to the original
-godotengine/godot repository. This will be useful when you want to pull new
+``godotengine/godot`` repository. This will be useful when you want to pull new
 commits from its ``master`` branch to update your fork. You have another
-``remote`` reference named ``origin``, which points to your fork.
+remote reference named ``origin``, which points to your fork (``USERNAME/godot``).
 
 You only need to do the above steps once, as long as you keep that local
 ``godot`` folder (which you can move around if you want, the relevant
@@ -132,7 +134,7 @@ metadata is hidden in its ``.git`` subfolder).
           when lost, so we will give you the basic commands to know when
           working in Git.
 
-In the following, we will assume that you want to implement a feature in
+In the following, we will assume as an example that you want to implement a feature in
 Godot's project manager, which is coded in the ``editor/project_manager.cpp``
 file.
 
@@ -174,6 +176,14 @@ command:
     * better-project-manager
       master
 
+Be sure to always go back to the ``master`` branch before creating a new branch,
+as your current branch will be used as the base for the new one. Alternatively,
+you can specify a custom base branch after the new branch's name:
+
+::
+
+    $ git checkout -b my-new-feature master
+
 Updating your branch
 --------------------
 
@@ -189,40 +199,53 @@ current upstream ``master`` branch, you will have to update your branch by
 
 ::
 
-    $ git pull upstream master
-
-However, if you had local commits, this method will create a so-called "merge
-commit", and you will soon hear from fellow contributors that those are not
-wanted in PRs. To update the branch without creating a merge commit,
-you will have to use the ``--rebase`` option, so that your local commits are
-replayed on top of the updated upstream ``master`` branch. It will effectively
-modify the Git history of your branch, but that is for the greater good.
-
-Therefore, the command that you should (almost) always use is:
-
-::
-
     $ git pull --rebase upstream master
 
+The ``--rebase`` argument will ensure that any local changes that you committed
+will be re-applied *on top* of the pulled branch, which is usually what we want
+in our PR workflow. This way, when you open a pull request, your own commits will
+be the only difference with the upstream ``master`` branch.
 
-If you have already pushed the merge commit without using ``rebase``, or
-have made any other changes that have resulted in undesired history, you may
-use a hard reset to revert to a specific commit and try again:
+While rebasing, conflicts may arise if your commits modified code that has been
+changed in the upstream branch in the meantime. If that happens, Git will stop at
+the conflicting commit and will ask you to resolve the conflicts. You can do so
+with any text editor, then stage the changes (more on that later), and proceed with
+``git rebase --continue``. Repeat the operation if later commits have conflicts too,
+until the rebase operation completes.
 
-::
+If you're unsure about what is going on during a rebase and you panic (no worry,
+we all do the first few times), you can abort the rebase with ``git rebase --abort``.
+You will then be back to the original state of your branch before calling
+``git pull --rebase``.
 
-    $ git reset --hard [The ID of the last desired commit]
+.. note:: If you omit the ``--rebase`` argument, you will instead create a merge
+          commit which tells Git what to make of the two distinct branches. If any
+          conflicts arise, they would be resolved all at once via this merge commit.
 
-Once you have done this, you may run ``--rebase`` to merge master correctly.
+          While this is a valid workflow and the default behavior of ``git pull``,
+          merge commits within PRs are frowned upon in our PR workflow. We only use
+          them when merging PRs into the upstream branch.
 
-If you have already pushed the wrong commits to your remote branch,
-you will have to force push by using ``git push --force``.
+          The philosophy is that a PR should represent the final stage of the changes
+          made to the codebase, and we are not interested in mistakes and fixes that
+          would have been done in intermediate stages before merging.
+          Git gives us great tools to "rewrite the history" and make it as if we got
+          things right the first time, and we're happy to use it to ensure that
+          changes are easy to review and understand long after they have been merged.
 
-.. warning:: ``git reset --hard`` can be a dangerous operation, especially
-            if you have untracked or uncommitted changes. However, if
-            you have committed changes that you reset using ``git reset --hard``,
-            you may still be able to recover them by resetting to a commit ID
-            found with the ``git reflog`` command.
+If you have already created a merge commit without using ``rebase``, or
+have made any other changes that have resulted in undesired history, the best option
+is to use an *interactive rebase* on the upstream branch. See the :ref:`dedicated
+section <doc_pr_workflow_rebase>` for instructions.
+
+.. tip:: If at any time you want to *reset* a local branch to a given commit or branch,
+         you can do so with ``git reset --hard <commit ID>`` or
+         ``git reset --hard <remote>/<branch>`` (e.g. ``git reset --hard upstream/master``).
+
+         Be warned that this will remove any changes that you might have committed in
+         this branch. If you ever lose commits by mistake, use the ``git reflog`` command
+         to find the commit ID of the previous state that you would like to restore, and
+         use it as argument of ``git reset --hard`` to go back to that state.
 
 Making changes
 --------------
@@ -256,6 +279,9 @@ before staging it, while it is staged, and after it has been committed.
   variable or the ``core.editor`` setting in your Git configuration) to let you
   write a commit log. You can use ``git commit -m "Cool commit log"`` to
   write the log directly.
+- ``git commit --amend`` lets you amend the last commit with your currently
+  staged changes (added with ``git add``). This is the best option if you
+  want to fix a mistake in the last commit (bug, typo, style issue, etc.).
 - ``git log`` will show you the last commits of your current branch. If you
   did local commits, they should be shown at the top.
 - ``git show`` will show you the changes of the last commit. You can also
@@ -330,12 +356,12 @@ Issuing a pull request
 When you load your fork's branch on GitHub, you should see a line saying
 *"This branch is 2 commits ahead of godotengine:master."* (and potentially some
 commits behind, if your ``master`` branch was out of sync with the upstream
-``master`` branch.
+``master`` branch).
 
 .. image:: img/github_fork_make_pr.png
 
 On that line, there is a "Pull request" link. Clicking it will open a form
-that will let you issue a pull request on the godotengine/godot upstream
+that will let you issue a pull request on the ``godotengine/godot`` upstream
 repository. It should show you your two commits, and state "Able to merge".
 If not (e.g. it has way more commits, or says there are merge conflicts),
 don't create the PR, something went wrong. Go to IRC and ask for support :)
@@ -367,37 +393,84 @@ branch, push it to your fork, and the PR will be updated automatically:
     $ git commit -m "Fix a typo in the banner's title"
     $ git push origin better-project-manager
 
-That should do the trick, but...
-
-Mastering the PR workflow: the rebase
--------------------------------------
-
-On the situation outlined above, your fellow contributors who are particularly
-pedantic regarding the Git history might ask your to *rebase* your branch to
-*squash* or *meld* the last two commits together (i.e. the two related to the
-project manager), as the second commit basically fixes an issue in the first one.
-
-Once the PR is merged, it is not relevant for a changelog reader that the PR
-author made mistakes; instead, we want to keep only commits that bring from
-one working state to another working state.
-
-To squash those two commits together, we will have to *rewrite history*.
-Right, we have that power. You may read that it's a bad practice, and it's
-true when it comes to branches of the upstream repo. But in your fork, you
-can do whatever you want, and everything is allowed to get neat PRs :)
-
-We will use the *interactive rebase* ``git rebase -i`` to do this. This
-command takes a commit hash as argument, and will let you modify all commits
-between that commit hash and the last one of the branch, the so-called
-*HEAD*. In our example, we want to act on the last two commits, so we will
-do:
+However, be aware that in our PR workflow, we favor commits that bring the
+codebase from one functional state to another functional state, without having
+intermediate commits fixing up bugs in your own code or style issues. Most of
+the time, we will prefer a single commit in a given PR (unless there's a good
+reason to keep the changes separate), so instead of authoring a new commit,
+considering using ``git commit --amend`` to amend the previous commit with your
+fixes. The above example would then become:
 
 ::
 
-    # The HEAD~X syntax means X commits before HEAD
-    $ git rebase -i HEAD~2
+    # Check out your branch again if you had changed in the meantime
+    $ git checkout better-project-manager
 
-This will open a text editor with:
+    # Fix a mistake
+    $ nano editor/project_manager.cpp
+    $ git add editor/project_manager.cpp
+    # --amend will change the previous commit, so you will have the opportunity
+    # to edit its commit message if relevant.
+    $ git commit --amend
+    # As we modified the last commit, it no longer matches the one from your
+    # remote branch, so we need to force push to overwrite that branch.
+    $ git push --force origin better-project-manager
+
+.. Kept for compatibility with the previous title, linked in many PRs.
+
+.. _mastering-the-pr-workflow-the-rebase:
+
+.. _doc_pr_workflow_rebase:
+
+The interactive rebase
+----------------------
+
+If you didn't follow the above steps closely to *amend* changes into a commit
+instead of creating fixup commits, or if you authored your changes without being
+aware of our workflow and Git usage tips, reviewers might request of your to
+*rebase* your branch to *squash* some or all of the commits into one.
+
+Indeed, if some commits have been made following reviews to fix bugs, typos, etc.
+in the original commit, they are not relevant to a future changelog reader who
+would want to know what happened in the Godot codebase, or when and how a given
+file was last modified.
+
+To squash those extraneous commits into the main one, we will have to *rewrite
+history*. Right, we have that power. You may read that it's a bad practice, and
+it's true when it comes to branches of the upstream repo. But in your fork, you
+can do whatever you want, and everything is allowed to get neat PRs :)
+
+We will use the *interactive rebase* ``git rebase -i`` to do this. This
+command takes a commit ID or a branch name as argument, and will let you modify
+all commits between that commit/branch and the last one in your working branch,
+the so-called ``HEAD``.
+
+While you can give any commit ID to ``git rebase -i`` and review everything in
+between, the most common and convenient workflow involves rebasing on the
+*upstream ``master`` branch*, which you can do with:
+
+::
+
+    $ git rebase -i upstream/master
+
+.. note:: Referencing branches in Git is a bit tricky due to the distinction
+          between remote and local branches. Here, ``upstream/master`` (with a
+          `/`) is a local branch which has been pulled from the ``upstream``
+          remote's ``master`` branch.
+
+          Interactive rebases can only be done on local branches, so the `/`
+          is important here. As the upstream remote changes frequently, your
+          local ``upstream/master`` branch may become outdated, so you can
+          update it with ``git fetch upstream master``. Contrarily to
+          ``git pull --rebase upstream master`` which would update your
+          currently checked out branch, ``fetch`` will only update the
+          ``upstream/master`` reference (which is distinct from your local
+          ``master`` branch... yes it's confusing, but you'll become familiar
+          with this little by little).
+
+This will open a text editor (``vi`` by default, see
+`Git docs <https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor>__`
+to configure your favorite one) with something which may look like this:
 
 .. code-block:: text
 
@@ -421,12 +494,6 @@ Upon saving and quitting the editor, the rebase will occur. The second commit
 will be melded into the first one, and ``git log`` and ``git show`` should
 now confirm that you have only one commit with the changes from both previous
 commits.
-
-.. note:: You could have avoided this rebase by using ``git commit --amend``
-          when fixing the typo. This command will write the staged changes
-          directly into the *last* commit (``HEAD``), instead of creating a new
-          commit like we did in this example. So it is equivalent to what we
-          did with a new commit and then a rebase to mark it as "fixup".
 
 But! You rewrote the history, and now your local and remote branches have
 diverged. Indeed, commit 1b4aad7 in the above example will have changed, and
@@ -476,3 +543,6 @@ Next, to delete the remote branch on GitHub use this command:
 ::
 
     $ git push origin -d better-project-manager
+
+You can also delete the remote branch from the GitHub PR itself, a button should appear once
+it has been merged or closed.

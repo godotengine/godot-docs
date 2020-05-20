@@ -81,7 +81,7 @@ There are two types of icons required by Godot:
 
 .. seealso:: It's important to adhere to some rules when designing adaptive icons. `Google Design has provided a nice article <https://medium.com/google-design/designing-adaptive-icons-515af294c783>`_ that helps to understand those rules and some of the capabilities of adaptive icons.
 
-.. caution:: The most important adaptive icon design rule is to have your icon critical elements inside the safe zone: a centered circle with a radius of 66dp (264 pixels on ``xxxhdpi``) to avoid being clipped by the launcher.
+.. caution:: The most important adaptive icon design rule is to have your icon critical elements inside the safe zone: a centered circle with a diameter of 66dp (264 pixels on ``xxxhdpi``) to avoid being clipped by the launcher.
 
 If you don't provide some of the requested icons, Godot will replace them using a fallback chain, trying the next in line when the current one fails:
 

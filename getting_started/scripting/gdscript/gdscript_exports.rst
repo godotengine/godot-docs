@@ -111,20 +111,27 @@ Examples
     export(Color, RGB) var col
     # Color given as red-green-blue-alpha value.
     export(Color, RGBA) var col
-    
+
     # Nodes
-    
+
     # Another node in the scene can be exported as a NodePath.
     export(NodePath) var node_path
     # Do take note that the node itself isn't being exported -
     # there is one more step to call the true node:
     var node = get_node(node_path)
-    
+
     # Resources
-    
+
     export(Resource) var resource
     # In the Inspector, you can then drag and drop a resource file
     # from the FileSystem dock into the variable slot.
+    
+    # Opening the inspector dropdown may result in an
+    # extremely long list of possible classes to create, however.
+    # Therefore, if you specify an extension of Resource such as:
+    export(AnimationNode) var resource
+    # The drop-down menu will be limited to AnimationNode and all
+    # its inherited classes.
 
 It must be noted that even if the script is not being run while in the
 editor, the exported properties are still editable. This can be used
@@ -164,7 +171,7 @@ cause them to change in all other instances. Exported arrays can have
 initializers, but they must be constant expressions.
 
 If the exported array specifies a type which inherits from Resource, the array
-values can be set in the inspector by dragging and dropping multiple files 
+values can be set in the inspector by dragging and dropping multiple files
 from the FileSystem dock at once.
 
 ::
@@ -210,3 +217,77 @@ When changing an exported variable's value from a script in
 automatically. To update it, call
 :ref:`property_list_changed_notify() <class_Object_method_property_list_changed_notify>`
 after setting the exported variable's value.
+
+Advanced exports
+----------------
+
+Not every type of export can be provided on the level of the language itself to
+avoid unnecessary design complexity. The following describes some more or less
+common exporting features which can be implemented with a low-level API.
+
+Before reading further, you should get familiar with the way properties are
+handled and how they can be customized with
+:ref:`_set() <class_Object_method__get_property_list>`,
+:ref:`_get() <class_Object_method__get_property_list>`, and
+:ref:`_get_property_list() <class_Object_method__get_property_list>` methods as
+described in :ref:`doc_accessing_data_or_logic_from_object`.
+
+.. seealso:: For binding properties using the above methods in C++, see
+             :ref:`doc_binding_properties_using_set_get_property_list`.
+
+.. warning:: The script must operate in the ``tool`` mode so the above methods
+             can work from within the editor.
+
+Adding script categories
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+For better visual distinguishing of properties, a special script category can be
+embedded into the inspector to act as a separator. ``Script Variables`` is one
+example of a built-in category.
+
+::
+
+    func _get_property_list():
+        var properties = []
+        properties.append(
+            {
+                name = "Debug",
+                type = TYPE_NIL,
+                usage = PROPERTY_USAGE_CATEGORY | PROPERTY_USAGE_SCRIPT_VARIABLE
+            }
+        )
+        return properties
+
+* ``name`` is the name of a category to be added to the inspector;
+
+* ``PROPERTY_USAGE_CATEGORY`` indicates that the property should be treated as a
+  script category specifically, so the type ``TYPE_NIL`` can be ignored as it
+  won't be actually used for the scripting logic, yet it must be defined anyway.
+
+Grouping properties
+~~~~~~~~~~~~~~~~~~~
+
+A list of properties with similar names can be grouped.
+
+::
+
+    func _get_property_list():
+        var properties = []
+        properties.append({
+                name = "Rotate",
+                type = TYPE_NIL,
+                hint_string = "rotate_",
+                usage = PROPERTY_USAGE_GROUP | PROPERTY_USAGE_SCRIPT_VARIABLE
+        })
+        return properties
+
+* ``name`` is the name of a group which is going to be displayed as collapsible
+  list of properties;
+
+* every successive property added after the group property will be collapsed and
+  shortened as determined by the prefix defined via the ``hint_string`` key. For
+  instance, ``rotate_speed`` is going to be shortened to ``speed`` in this case.
+
+* ``PROPERTY_USAGE_GROUP`` indicates that the property should be treated as a
+  script group specifically, so the type ``TYPE_NIL`` can be ignored as it
+  won't be actually used for the scripting logic, yet it must be defined anyway.

@@ -167,14 +167,14 @@ to make the planet. We will be using this noise function directly from a `Shader
       vec3 i = floor(p);
       vec3 f = fract(p);
       vec3 u = f * f * (3.0 - 2.0 * f);
-      
-      return mix(mix(mix(dot(hash(i + vec3(0.0, 0.0, 0.0)), f - vec3(0.0, 0.0, 0.0)), 
+
+      return mix(mix(mix(dot(hash(i + vec3(0.0, 0.0, 0.0)), f - vec3(0.0, 0.0, 0.0)),
                          dot(hash(i + vec3(1.0, 0.0, 0.0)), f - vec3(1.0, 0.0, 0.0)), u.x),
-                     mix(dot(hash(i + vec3(0.0, 1.0, 0.0)), f - vec3(0.0, 1.0, 0.0)), 
+                     mix(dot(hash(i + vec3(0.0, 1.0, 0.0)), f - vec3(0.0, 1.0, 0.0)),
                          dot(hash(i + vec3(1.0, 1.0, 0.0)), f - vec3(1.0, 1.0, 0.0)), u.x), u.y),
-                 mix(mix(dot(hash(i + vec3(0.0, 0.0, 1.0)), f - vec3(0.0, 0.0, 1.0)), 
+                 mix(mix(dot(hash(i + vec3(0.0, 0.0, 1.0)), f - vec3(0.0, 0.0, 1.0)),
                          dot(hash(i + vec3(1.0, 0.0, 1.0)), f - vec3(1.0, 0.0, 1.0)), u.x),
-                     mix(dot(hash(i + vec3(0.0, 1.0, 1.0)), f - vec3(0.0, 1.0, 1.0)), 
+                     mix(dot(hash(i + vec3(0.0, 1.0, 1.0)), f - vec3(0.0, 1.0, 1.0)),
                          dot(hash(i + vec3(1.0, 1.0, 1.0)), f - vec3(1.0, 1.0, 1.0)), u.x), u.y), u.z );
     }
 
@@ -197,7 +197,7 @@ looks nothing like the planet you were promised. So let's move onto something mo
 Coloring the planet
 -------------------
 
-Now to make the planet colors. While there are many ways to do this, for now, we will stick 
+Now to make the planet colors. While there are many ways to do this, for now, we will stick
 with a gradient between water and land.
 
 To make a gradient in GLSL, we use the ``mix`` function. ``mix`` takes two values to interpolate

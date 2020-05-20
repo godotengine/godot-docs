@@ -72,3 +72,34 @@ using the ``load()`` and ``preload()`` methods.
 
 Ignoring a folder will also automatically hide it from the FileSystem dock,
 which can be useful to reduce clutter.
+
+Case sensitivity
+----------------
+
+Windows and recent macOS versions use case-insensitive filesystems by default,
+whereas Linux distributions use a case-sensitive filesystem by default.
+This can cause issues after exporting a project, since Godot's PCK virtual
+filesystem is case-sensitive. To avoid this, it's recommended to stick to
+``snake_case`` naming for all files in the project (and lowercase characters
+in general).
+
+.. note::
+
+    You can break this rule when style guides say otherwise (such as the
+    C# style guide). Still, be consistent to avoid mistakes.
+
+On Windows 10, to further avoid mistakes related to case sensitivity,
+you can also make the project folder case-sensitive. After enabling the Windows
+Subsystem for Linux feature, run the following command in a PowerShell window::
+
+    # To enable case-sensitivity:
+    fsutil file setcasesensitiveinfo <path to project folder> enable
+
+    # To disable case-sensitivity:
+    fsutil file setcasesensitiveinfo <path to project folder> disable
+
+If you haven't enabled the Windows Subsystem for Linux, you can enter the
+following line in a PowerShell window *running as Administrator* then reboot
+when asked::
+
+    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux

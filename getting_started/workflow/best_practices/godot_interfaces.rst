@@ -238,6 +238,8 @@ Nodes likewise have an alternative access point: the SceneTree.
         }
     };
 
+.. _doc_accessing_data_or_logic_from_object:
+
 Accessing data or logic from an object
 --------------------------------------
 

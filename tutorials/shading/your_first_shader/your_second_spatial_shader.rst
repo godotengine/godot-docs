@@ -23,16 +23,16 @@ As mentioned in the previous part of this tutorial. The standard use of the frag
 in Godot is to set up different material properties and let Godot handle the rest. In order
 to provide even more flexibility, Godot also provides things called render modes. Render
 modes are set at the top of the shader, directly below ``shader_type``, and they specify
-what sort of functionality you want the built-in aspects of the shader to have. 
+what sort of functionality you want the built-in aspects of the shader to have.
 
-For example, if you do not want to have lights affect an object, set the render mode to 
+For example, if you do not want to have lights affect an object, set the render mode to
 ``unshaded``:
 
 .. code-block:: glsl
 
   render_mode unshaded;
 
-You can also stack multiple render modes together. For example, if you want to use toon 
+You can also stack multiple render modes together. For example, if you want to use toon
 shading instead of more-realistic PBR shading, set the diffuse mode and specular mode to toon:
 
 .. code-block:: glsl
@@ -44,8 +44,8 @@ only a few parameters.
 
 For a full list of render modes see the :ref:`Spatial shader reference <doc_spatial_shader>`.
 
-In this part of the tutorial, we will walk through how to take the bumpy terrain from the 
-previous part and turn it into an ocean.  
+In this part of the tutorial, we will walk through how to take the bumpy terrain from the
+previous part and turn it into an ocean.
 
 First let's set the color of the water. We do that by setting ``ALBEDO``.
 
@@ -67,13 +67,13 @@ come from reflections from the sky.
 The PBR model that Godot uses relies on two main parameters: ``METALLIC`` and ``ROUGHNESS``.
 
 ``ROUGHNESS`` specifies how smooth/rough the surface of a material is. A low ``ROUGHNESS`` will
-make a material appear like a shiny plastic, while a high roughness makes the material appear 
+make a material appear like a shiny plastic, while a high roughness makes the material appear
 more solid in color.
 
 ``METALLIC`` specifies how much like a metal the object is. It is better set close to ``0`` or ``1``.
-Think of ``METALLIC`` as changing the balance between the reflection and the ``ALBEDO`` color. A 
+Think of ``METALLIC`` as changing the balance between the reflection and the ``ALBEDO`` color. A
 high ``METALLIC`` almost ignores ``ALBEDO`` altogether, and looks like a mirror of the sky. While
-a low ``METALLIC`` has a more equal representation of sky color and ``ALBEDO`` color. 
+a low ``METALLIC`` has a more equal representation of sky color and ``ALBEDO`` color.
 
 ``ROUGHNESS`` increases from ``0`` to ``1`` from left to right while ``METALLIC`` increase from
 ``0`` to ``1`` from top to bottom.
@@ -96,15 +96,15 @@ reflective, so we will set its ``ROUGHNESS`` property to be quite low as well.
 
 .. image:: img/plastic.png
 
-Now we have a smooth plastic looking surface. It is time to think about some particular properties of 
-water that we want to emulate. There are two main ones that will take this from a weird plastic surface 
+Now we have a smooth plastic looking surface. It is time to think about some particular properties of
+water that we want to emulate. There are two main ones that will take this from a weird plastic surface
 to nice stylized water. The first is specular reflections. Specular reflections are those bright spots
 you see from where the sun reflects directly into your eye. The second is fresnel reflectance.
-Fresnel reflectance is the property of objects to become more reflective at shallow angles. It is the 
+Fresnel reflectance is the property of objects to become more reflective at shallow angles. It is the
 reason why you can see into water below you, but farther away it reflects the sky.
 
-In order to increase the specular reflections, we will do two things. First, we will change the render 
-mode for specular to toon because the toon render mode has larger specular highlights. 
+In order to increase the specular reflections, we will do two things. First, we will change the render
+mode for specular to toon because the toon render mode has larger specular highlights.
 
 .. code-block:: glsl
 
@@ -114,13 +114,13 @@ mode for specular to toon because the toon render mode has larger specular highl
 
 Second we will
 add rim lighting. Rim lighting increases the effect of light at glancing angles. Usually it is used
-to emulate the way light passes through fabric on the edges of an object, but we will use it here to 
+to emulate the way light passes through fabric on the edges of an object, but we will use it here to
 help achieve a nice watery effect.
 
 .. code-block:: glsl
 
   void fragment() {
-    RIM = 0.2;  
+    RIM = 0.2;
     METALLIC = 0.0;
     ROUGHNESS = 0.01;
     ALBEDO = vec3(0.1, 0.3, 0.5);
@@ -140,7 +140,7 @@ when you are looking at the surface head-on or at a glancing angle.
 
   float fresnel = sqrt(1.0 - dot(NORMAL, VIEW));
 
-And mix it into both ``ROUGHNESS`` and ``ALBEDO``. This is the benefit of ShaderMaterials over 
+And mix it into both ``ROUGHNESS`` and ``ALBEDO``. This is the benefit of ShaderMaterials over
 SpatialMaterials. With SpatialMaterials, we could set these properties with a texture, or to a flat
 number. But with shaders we can set them based on any mathematical function that we can dream up.
 
@@ -149,7 +149,7 @@ number. But with shaders we can set them based on any mathematical function that
 
   void fragment() {
     float fresnel = sqrt(1.0 - dot(NORMAL, VIEW));
-    RIM = 0.2;  
+    RIM = 0.2;
     METALLIC = 0.0;
     ROUGHNESS = 0.01 * (1.0 - fresnel);
     ALBEDO = vec3(0.1, 0.3, 0.5) + (0.1 * fresnel);
@@ -158,8 +158,8 @@ number. But with shaders we can set them based on any mathematical function that
 .. image:: img/fresnel.png
 
 And now, with only 5 lines of code, you can have complex looking water. Now that we have
-lighting, this water is looking too bright. Let's darken it. This is done easily by 
-decreasing the values of the ``vec3`` we pass into ``ALBEDO``. Let's set them to 
+lighting, this water is looking too bright. Let's darken it. This is done easily by
+decreasing the values of the ``vec3`` we pass into ``ALBEDO``. Let's set them to
 ``vec3(0.01, 0.03, 0.05)``.
 
 .. image:: img/dark-water.png
@@ -169,10 +169,10 @@ Animating with ``TIME``
 
 Going back to the vertex function, we can animate the waves using the built-in variable ``TIME``.
 
-``TIME`` is a built-in variable that is accessible from the vertex and fragment functions. 
+``TIME`` is a built-in variable that is accessible from the vertex and fragment functions.
 
 
-In the last tutorial we calculated height by reading from a heightmap. For this tutorial, 
+In the last tutorial we calculated height by reading from a heightmap. For this tutorial,
 we will do the same. Put the heightmap code in a function called ``height()``.
 
 .. code-block:: glsl
@@ -181,7 +181,7 @@ we will do the same. Put the heightmap code in a function called ``height()``.
     return texture(noise, position / 10.0).x; // Scaling factor is based on mesh size (this PlaneMesh is 10×10).
   }
 
-In order to use ``TIME`` in the ``height()`` function, we need to pass it in. 
+In order to use ``TIME`` in the ``height()`` function, we need to pass it in.
 
 .. code-block:: glsl
 
@@ -198,7 +198,7 @@ And make sure to correctly pass it in inside the vertex function.
     VERTEX.y = k;
   }
 
-Instead of using a normalmap to calculate normals. We are going to compute them manually in the 
+Instead of using a normalmap to calculate normals. We are going to compute them manually in the
 ``vertex()`` function. To do so use the following line of code.
 
 .. code-block:: glsl
@@ -229,7 +229,7 @@ What makes shaders so powerful is that you can achieve complex effects by using 
 this, we are going to take our waves to the next level by modifying the ``height()`` function and
 by introducing a new function called ``wave()``.
 
-``wave()`` has one parameter, ``position``, which is the same as it is in ``height()``. 
+``wave()`` has one parameter, ``position``, which is the same as it is in ``height()``.
 
 We are going to call ``wave()`` multiple times in ``height()`` in order to fake the way waves look.
 
@@ -256,17 +256,17 @@ they won't be straight lines completely aligned with the grid.
 
 Define a wave-like function using ``sin()`` and ``position``. Normally ``sin()`` waves are very round.
 We use ``abs()`` to absolute to give them a sharp ridge and constrain them to the 0-1 range. And then we
-subtract it from ``1.0`` to put the peak on top. 
+subtract it from ``1.0`` to put the peak on top.
 
 .. code-block:: glsl
 
     return pow(1.0 - pow(wv.x * wv.y, 0.65), 4.0);
 
-Multiply the x-directional wave by the y-directional wave and raise it to a power to sharpen the peaks. 
-Then subtract that from ``1.0`` so that the ridges become peaks and raise that to a power to sharpen the 
-ridges. 
+Multiply the x-directional wave by the y-directional wave and raise it to a power to sharpen the peaks.
+Then subtract that from ``1.0`` so that the ridges become peaks and raise that to a power to sharpen the
+ridges.
 
-We can now replace the contents of our ``height()`` function with ``wave()``. 
+We can now replace the contents of our ``height()`` function with ``wave()``.
 
 .. code-block:: glsl
 
@@ -285,7 +285,7 @@ The shape of the sin wave is too obvious. So let's spread the waves out a bit. W
   float height(vec2 position, float time) {
     float h = wave(position*0.4);
   }
-  
+
 Now it looks much better.
 
 .. image:: img/wave2.png
@@ -308,14 +308,14 @@ Here is an example for how you could layer the four waves to achieve nicer looki
   }
 
 Note that we add time to two and subtract it from the other two. This makes the waves move in different directions
-creating a complex effect. Also note that the amplitudes (the number the result is multiplied by) all 
+creating a complex effect. Also note that the amplitudes (the number the result is multiplied by) all
 add up to ``1.0``. This keeps the wave in the 0-1 range.
 
 With this code you should end up with more complex looking waves and all you had
-to do was add a bit of math! 
+to do was add a bit of math!
 
 .. image:: img/wave3.png
 
-For more information about Spatial shaders read the :ref:`Shading Language <doc_shading_language>` 
-doc and the :ref:`Spatial Shaders <doc_spatial_shader>` doc. Also look at more advanced tutorials 
-in the :ref:`Shading section <toc-learn-features-shading>` and the :ref:`3D <toc-learn-features-3d>` sections. 
+For more information about Spatial shaders read the :ref:`Shading Language <doc_shading_language>`
+doc and the :ref:`Spatial Shaders <doc_spatial_shader>` doc. Also look at more advanced tutorials
+in the :ref:`Shading section <toc-learn-features-shading>` and the :ref:`3D <toc-learn-features-3d>` sections.

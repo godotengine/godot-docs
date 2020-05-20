@@ -106,13 +106,13 @@ Default integer constants are signed, so casting is always needed to convert to 
 Members
 ~~~~~~~
 
-Individual scalar members of vector types are accessed via the "x", "y", "z" and "w" members. 
-Alternatively, using "r", "g", "b" and "a" also works and is equivalent. Use whatever fits 
+Individual scalar members of vector types are accessed via the "x", "y", "z" and "w" members.
+Alternatively, using "r", "g", "b" and "a" also works and is equivalent. Use whatever fits
 best for your needs.
 
-For matrices, use the ``m[row][column]`` indexing syntax to access each scalar, or ``m[idx]`` to access 
-a vector by row index. For example, for accessing the y position of an object in a mat4 you  use 
-``m[3][1]``.  
+For matrices, use the ``m[row][column]`` indexing syntax to access each scalar, or ``m[idx]`` to access
+a vector by row index. For example, for accessing the y position of an object in a mat4 you  use
+``m[3][1]``.
 
 Constructing
 ~~~~~~~~~~~~
@@ -129,8 +129,8 @@ Construction of vector types must always pass:
     // A single scalar for the whole vector
     vec4 a = vec4(0.0);
 
-Construction of matrix types requires vectors of the same dimension as the matrix. You can 
-also build a diagonal matrix using ``matx(float)`` syntax. Accordingly, ``mat4(1.0)`` is 
+Construction of matrix types requires vectors of the same dimension as the matrix. You can
+also build a diagonal matrix using ``matx(float)`` syntax. Accordingly, ``mat4(1.0)`` is
 an identity matrix.
 
 .. code-block:: glsl
@@ -141,12 +141,12 @@ an identity matrix.
 
 Matrices can also be built from a matrix of another dimension.
 There are two rules :
-If a larger matrix is constructed from a smaller matrix, the additional rows and columns are 
-set to the values they would have in an identity matrix. If a smaller matrix is constructed 
+If a larger matrix is constructed from a smaller matrix, the additional rows and columns are
+set to the values they would have in an identity matrix. If a smaller matrix is constructed
 from a larger matrix, the top, left submatrix of the larger matrix is used.
 
 .. code-block:: glsl
-	
+
 	mat3 basis = mat3(WORLD_MATRIX);
 	mat4 m4 = mat4(basis);
 	mat2 m2 = mat2(m4);
@@ -154,7 +154,7 @@ from a larger matrix, the top, left submatrix of the larger matrix is used.
 Swizzling
 ~~~~~~~~~
 
-It is possible to obtain any combination of components in any order, as long as the result 
+It is possible to obtain any combination of components in any order, as long as the result
 is another vector type (or scalar). This is easier shown than explained:
 
 .. code-block:: glsl
@@ -183,12 +183,12 @@ It is possible to add precision modifiers to datatypes; use them for uniforms, v
 
 
 Using lower precision for some operations can speed up the math involved (at the cost of less precision).
-This is rarely needed in the vertex processor function (where full precision is needed most of the time), 
+This is rarely needed in the vertex processor function (where full precision is needed most of the time),
 but is often useful in the fragment processor.
 
-Keep in mind that some architectures (mainly mobile) benefit a lot from this, but are also restricted 
-(conversion between precisions has a cost). Please read the relevant documentation on the target architecture 
-to find out more. In all honesty though, mobile drivers are buggy, so, to stay out of trouble, make simple 
+Keep in mind that some architectures (mainly mobile) benefit a lot from this, but are also restricted
+(conversion between precisions has a cost). Please read the relevant documentation on the target architecture
+to find out more. In all honesty though, mobile drivers are buggy, so, to stay out of trouble, make simple
 shaders without specifying precision unless you *really* need to.
 
 Arrays
@@ -236,9 +236,9 @@ To access an array element, use the indexing syntax:
 .. code-block:: glsl
 
       float arr[3];
-      
+
       arr[0] = 1.0; // setter
-      
+
       COLOR.r = arr[0]; // getter
 
 Arrays also have a built-in function ``.length()`` (not to be confused with the built-in ``length()`` function). It doesn't accept any parameters and will return the array's size.
@@ -285,7 +285,7 @@ Constants can be declared both globally (outside of any function) or locally (in
 Global constants are useful when you want to have access to a value throughout your shader that does not need to be modified. Like uniforms, global constants are shared between all shader stages, but they are not accessible outside of the shader.
 
 .. code-block:: glsl
-    
+
     shader_type spatial;
 
     const float PI = 3.14159265358979323846;
@@ -392,7 +392,7 @@ It is possible to define functions in a Godot shader. They use the following syn
     }
 
 
-You can only use functions that have been defined above (higher in the editor) the function from which you are calling 
+You can only use functions that have been defined above (higher in the editor) the function from which you are calling
 them.
 
 Function arguments can have special qualifiers:
@@ -412,8 +412,8 @@ Example below:
 Varyings
 ~~~~~~~~
 
-To send data from the vertex to the fragment processor function, *varyings* are used. They are set 
-for every primitive vertex in the *vertex processor*, and the value is interpolated for every 
+To send data from the vertex to the fragment processor function, *varyings* are used. They are set
+for every primitive vertex in the *vertex processor*, and the value is interpolated for every
 pixel in the fragment processor.
 
 .. code-block:: glsl
@@ -491,7 +491,7 @@ Uniforms can't be written from within the shader.
 
 You can set uniforms in the editor in the material. Or you can set them through GDScript:
 
-:: 
+::
 
   material.set_shader_param("some_value", some_value)
 
@@ -513,25 +513,25 @@ It's important to understand that textures that are supplied as color require hi
 
 Full list of hints below:
 
-+----------------+-----------------------------+-------------------------------------+
-| Type           | Hint                        | Description                         |
-+================+=============================+=====================================+
-| **vec4**       | hint_color                  | Used as color                       |
-+----------------+-----------------------------+-------------------------------------+
-| **int, float** | hint_range(min,max [,step]) | Used as range (with min/max/step)   |
-+----------------+-----------------------------+-------------------------------------+
-| **sampler2D**  | hint_albedo                 | Used as albedo color, default white |
-+----------------+-----------------------------+-------------------------------------+
-| **sampler2D**  | hint_black_albedo           | Used as albedo color, default black |
-+----------------+-----------------------------+-------------------------------------+
-| **sampler2D**  | hint_normal                 | Used as normalmap                   |
-+----------------+-----------------------------+-------------------------------------+
-| **sampler2D**  | hint_white                  | As value, default to white.         |
-+----------------+-----------------------------+-------------------------------------+
-| **sampler2D**  | hint_black                  | As value, default to black          |
-+----------------+-----------------------------+-------------------------------------+
-| **sampler2D**  | hint_aniso                  | As flowmap, default to right.       |
-+----------------+-----------------------------+-------------------------------------+
++----------------+------------------------------+-------------------------------------+
+| Type           | Hint                         | Description                         |
++================+==============================+=====================================+
+| **vec4**       | hint_color                   | Used as color                       |
++----------------+------------------------------+-------------------------------------+
+| **int, float** | hint_range(min, max[, step]) | Used as range (with min/max/step)   |
++----------------+------------------------------+-------------------------------------+
+| **sampler2D**  | hint_albedo                  | Used as albedo color, default white |
++----------------+------------------------------+-------------------------------------+
+| **sampler2D**  | hint_black_albedo            | Used as albedo color, default black |
++----------------+------------------------------+-------------------------------------+
+| **sampler2D**  | hint_normal                  | Used as normalmap                   |
++----------------+------------------------------+-------------------------------------+
+| **sampler2D**  | hint_white                   | As value, default to white.         |
++----------------+------------------------------+-------------------------------------+
+| **sampler2D**  | hint_black                   | As value, default to black          |
++----------------+------------------------------+-------------------------------------+
+| **sampler2D**  | hint_aniso                   | As flowmap, default to right.       |
++----------------+------------------------------+-------------------------------------+
 
 GDScript uses different variable types than GLSL does, so when passing variables from GDScript
 to shaders, Godot converts the type automatically. Below is a table of the corresponding types:
@@ -574,8 +574,8 @@ Built-in functions
 A large number of built-in functions are supported, conforming to GLSL ES 3.0.
 When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature is used, it can be scalar or vector.
 
-.. note:: For a list of the functions that are not available in the GLES2 backend, please see the 
-          :ref:`Differences between GLES2 and GLES3 doc <doc_gles2_gles3_differences>`. 
+.. note:: For a list of the functions that are not available in the GLES2 backend, please see the
+          :ref:`Differences between GLES2 and GLES3 doc <doc_gles2_gles3_differences>`.
 
 +------------------------------------------------------------------------+---------------------------------------------------------------+
 | Function                                                               | Description                                                   |

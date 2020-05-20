@@ -77,7 +77,7 @@ It will connect and fetch a website.
             else:
                 # Or just plain Content-Length
                 var bl = http.get_response_body_length()
-                print("Response Length: ",bl)
+                print("Response Length: ", bl)
 
             # This method works for both anyway
 

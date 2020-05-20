@@ -311,8 +311,8 @@ during runtime with the ``LD_LIBRARY_PATH`` environ variable:
 
 .. code-block:: shell
 
-    user@host:~/godot$ export LD_LIBRARY_PATH=`pwd`/bin/
-    user@host:~/godot$ ./bin/godot*
+    export LD_LIBRARY_PATH=`pwd`/bin/
+    ./bin/godot*
 
 **note**: Pay attention you have to ``export`` the environ variable otherwise
 you won't be able to play your project from within the editor.
@@ -357,7 +357,7 @@ shared module as target in the SCons command:
 
 .. code-block:: shell
 
-    user@host:~/godot$ scons summator_shared=yes platform=x11 bin/libsummator.x11.tools.64.so
+    scons summator_shared=yes platform=x11 bin/libsummator.x11.tools.64.so
 
 Writing custom documentation
 ----------------------------
@@ -373,54 +373,87 @@ There are several steps in order to setup custom docs for the module:
 1. Make a new directory in the root of the module. The directory name can be
    anything, but we'll be using the ``doc_classes`` name throughout this section.
 
-2. Append the following code snippet to ``config.py``:
+2. Now, we need to edit ``config.py``, add the following snippet:
 
    .. code-block:: python
 
-       def get_doc_classes():
-           return [
-               "ClassName",
-           ]
+        def get_doc_path():
+            return "doc_classes"
 
-       def get_doc_path():
-           return "doc_classes"
+        def get_doc_classes():
+            return [
+                "Summator",
+            ]
 
-The ``get_doc_classes()`` method is necessary for the build system to
-know which documentation classes of the module must be merged, since the module
-may contain several classes. Replace ``ClassName`` with the name of the class
-you want to write documentation for. If you need docs for more than one class,
-append those as well.
-
-The ``get_doc_path()`` method is used by the build system to determine
-the location of the docs. In our case, they will be located in the ``doc_classes``
+The ``get_doc_path()`` function is used by the build system to determine
+the location of the docs. In this case, they will be located in the 
+``modules/summator/doc_classes`` directory. If you don't define this,
+the doc path for your module will fall back to the main ``doc/classes`` 
 directory.
 
-3. Run command:
+The ``get_doc_classes()`` method is necessary for the build system to
+know which registered classes belong to the module. You need to list all of your 
+classes here. The classes that you don't list will end up in the 
+main ``doc/classes`` directory.
 
-   .. code-block:: shell
+.. tip::
 
-      godot --doctool <path>
+    You can use git to check if you have missed some of your classes by checking the 
+    untracked files with ``git status``. For example::
 
-This will dump the engine API reference to the given ``<path>`` in XML format.
-Notice that you'll need to configure your ``PATH`` to locate Godot's executable,
-and make sure that you have write access rights. If not, you might encounter an
-error similar to the following:
+        user@host:~/godot$ git status
+
+    Example output::
+
+        Untracked files:
+            (use "git add <file>..." to include in what will be committed)
+            
+            doc/classes/MyClass2D.xml
+            doc/classes/MyClass4D.xml
+            doc/classes/MyClass5D.xml
+            doc/classes/MyClass6D.xml
+            ...
+    
+
+3. Now we can generate the documentation:
+
+We can do this via running Godot's doctool i.e. ``godot --doctool <path>``,
+which will dump the engine API reference to the given ``<path>`` in XML format.
+
+In our case we'll point it to the root of the cloned repository. You can point it
+to an another folder, and just copy over the files that you need.
+
+Run command:
+
+   ::
+
+      user@host:~/godot/bin$ ./bin/<godot_binary> --doctool .
+
+Now if you go to the ``godot/modules/summator/doc_classes`` folder, you will see 
+that it contains a ``Summator.xml`` file, or any other classes, that you referenced
+in your ``get_doc_classes`` function.
+
+Edit the file(s) following :ref:`doc_updating_the_class_reference` and recompile the engine.
+
+Once the compilation process is finished, the docs will become accessible within 
+the engine's built-in documentation system.
+
+In order to keep documentation up-to-date, all you'll have to do is simply modify
+one of the XML files and recompile the engine from now on.
+
+If you change your module's API, you can also re-extract the docs, they will contain
+the things that you previously added. Of course if you point it to your godot
+folder, make sure you don't lose work by extracting older docs from an older engine build 
+on top of the newer ones.
+
+Note that if you don't have write access rights to your supplied ``<path>``,
+you might encounter an error similar to the following:
 
 .. code-block:: console
 
     ERROR: Can't write doc file: docs/doc/classes/@GDScript.xml
        At: editor/doc/doc_data.cpp:956
 
-4. Get generated doc file from ``godot/doc/classes/ClassName.xml``
-
-5. Copy this file to ``doc_classes``, optionally edit it, then compile the engine.
-
-The build system will fetch the documentation files from the ``doc_classes`` directory
-and merge them with the base types. Once the compilation process is finished,
-the docs will become accessible within the engine's built-in documentation system.
-
-In order to keep documentation up-to-date, all you'll have to do is simply modify
-one of the ``ClassName.xml`` files and recompile the engine from now on.
 
 .. _doc_custom_module_icons:
 

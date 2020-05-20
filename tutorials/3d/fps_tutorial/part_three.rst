@@ -23,10 +23,10 @@ Changing levels
 
 Now that we have a fully working FPS, let's move to a more FPS-like level.
 
-Open up ``Space_Level.tscn`` (``assets/Space_Level_Objects/Space_Level.tscn``) 
+Open up ``Space_Level.tscn`` (``assets/Space_Level_Objects/Space_Level.tscn``)
 and/or ``Ruins_Level.tscn`` (``assets/Ruin_Level_Objects/Ruins_Level.tscn``).
 
-``Space_Level.tscn`` and ``Ruins_Level.tscn`` are complete custom FPS levels 
+``Space_Level.tscn`` and ``Ruins_Level.tscn`` are complete custom FPS levels
 created for the purpose of this tutorial. Press ``Play Current Scene`` button,
 or :kbd:`F6` on keyboard, and give each a try.
 
@@ -683,4 +683,3 @@ We're also going to add joypad support, so we can play with wired Xbox 360 contr
 .. warning:: If you ever get lost, be sure to read over the code again!
 
              You can download the finished project for this part here: :download:`Godot_FPS_Part_3.zip <files/Godot_FPS_Part_3.zip>`
-

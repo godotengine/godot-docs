@@ -30,11 +30,11 @@ Throughout the course of this tutorial, we will cover:
 .. tip:: While this tutorial can be completed by beginners, it is highly
           advised to complete :ref:`doc_your_first_game`,
           if you are new to Godot and/or game development.
-          
+
           **Some experience with making 3D games is required** before going through this tutorial series.
           This tutorial assumes you have experience with the Godot editor, GDScript, and basic 3D game development.
           A OpenVR-ready headset and two OpenVR-ready controllers are required.
-          
+
           This tutorial was written and tested using a Windows Mixed Reality headset and controllers. This project has also been tested on the HTC Vive. Code adjustments may be required
           for other VR Headsets, such as the Oculus Rift.
 
@@ -42,17 +42,17 @@ The Godot project for this tutorial is found on the `OpenVR GitHub repository <h
 section on the GitHub repository. The starter assets contain some 3D models, sounds, scripts, and scenes that are configured for this tutorial.
 
 .. note:: **Credits for the assets provided**:
-          
+
           - The sky panorama was created by `CGTuts <https://cgi.tutsplus.com/articles/freebie-8-awesome-ocean-hdris--cg-5684>`_.
-          
-          - The font used is Titillium-Regular 
+
+          - The font used is Titillium-Regular
           - - The font is licensed under the SIL Open Font License, Version 1.1
-          
-          - The audio used are from several different sources, all downloaded from the Sonniss #GameAudioGDC Bundle (`License PDF <https://sonniss.com/gdc-bundle-license/>`_) 
+
+          - The audio used are from several different sources, all downloaded from the Sonniss #GameAudioGDC Bundle (`License PDF <https://sonniss.com/gdc-bundle-license/>`_)
           - - The folders where the audio files are stored have the same name as folders in the Sonniss audio bundle.
-          
+
           - The OpenVR addon was created by `Bastiaan Olij <https://github.com/BastiaanOlij>`_ and is released under the MIT license. It can be found both on the `Godot Asset Library <https://godotengine.org/asset-library/asset/150>`_ and on `GitHub <https://github.com/GodotVR/godot-openvr-asset>`_. *3rd party code and libraries used in the OpenVR addon may be under a different license.*
-          
+
           - The initial project, 3D models, and scripts were created by `TwistedTwigleg <https://github.com/TwistedTwigleg>`_ and is released under the MIT license.
 
 .. tip:: You can find the finished project on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`_.
@@ -98,7 +98,7 @@ controller relative to the :ref:`ARVROrigin <class_ARVROrigin>` node. All of the
 An :ref:`ARVRController <class_ARVRController>` node with an ``ID`` of ``1`` represents the left VR controller, while an :ref:`ARVRController <class_ARVRController>` controller with an
 ``ID`` of ``2`` represents the right VR controller.
 
-To summerize: 
+To summarize:
 
 - The :ref:`ARVROrigin <class_ARVROrigin>` node is the center of the VR tracking system and is positioned on the floor.
 
@@ -126,7 +126,6 @@ In the ``Game.gd`` file, add the following code:
         var VR = ARVRServer.find_interface("OpenVR")
         if VR and VR.initialize():
             get_viewport().arvr = true
-            get_viewport().hdr = false
 
             OS.vsync_enabled = false
             Engine.target_fps = 90
@@ -146,7 +145,6 @@ In the ``Game.gd`` file, add the following code:
             if (vr != null && vr.Initialize())
             {
                 GetViewport().Arvr = true;
-                GetViewport().Hdr = false;
 
                 OS.VsyncEnabled = false;
                 Engine.TargetFps = 90;
@@ -171,10 +169,7 @@ whether the OpenVR interface was able to initialize or not. If both of these con
 an ARVR viewport.
 
 If the VR interface initialized successfully, we then get the root :ref:`Viewport <class_Viewport>` and set the `arvr` property to ``true``. This will tell Godot to use the initialized
-ARVR interface to drive the :ref:`Viewport <class_Viewport>` display. After setting the ``arvr`` property to ``true``, we set the ``hdr`` property to ``false``. We do this because
-most of the VR headsets do not currently support HDR rendering.
-
-.. note:: HDR support will be available for VR in Godot 3.2.
+ARVR interface to drive the :ref:`Viewport <class_Viewport>` display.
 
 Finally, we disable VSync so the Frames Per Second (FPS) is not capped by the computer monitor. After this we tell Godot to render at ``90`` frames per second, which is the
 standard for most VR headsets. Without disabling VSync, the normal computer monitor may limit the frame rate of the VR headset to the frame rate of the computer monitor.
@@ -243,7 +238,7 @@ Select the root node of the scene, either ``Right_Controller`` or ``Left_Control
 the same script, so it doesn't matter which you use first. With ``VR_Controller.gd`` opened, add the following code:
 
 .. tip:: You can copy and paste the code from this page directly into the script editor.
-         
+
          If you do this, all the code copied will be using spaces instead of tabs.
 
          To convert the spaces to tabs in the script editor, click the ``Edit`` menu and select ``Convert Indent To Tabs``.
@@ -262,7 +257,7 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
 
     var grab_area
     var grab_raycast
-    
+
     var grab_mode = "AREA"
     var grab_pos_node
 
@@ -292,26 +287,26 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
         # warning-ignore-all:return_value_discarded
 
         teleport_raycast = get_node("RayCast")
-        
+
         teleport_mesh = get_tree().root.get_node("Game/Teleport_Mesh")
-        
+
         teleport_button_down = false
         teleport_mesh.visible = false
         teleport_raycast.visible = false
-        
+
         grab_area = get_node("Area")
         grab_raycast = get_node("Grab_Cast")
         grab_pos_node = get_node("Grab_Pos")
-        
+
         grab_mode = "AREA"
         grab_raycast.visible = false
-        
+
         get_node("Sleep_Area").connect("body_entered", self, "sleep_area_entered")
         get_node("Sleep_Area").connect("body_exited", self, "sleep_area_exited")
-        
+
         hand_mesh = get_node("Hand")
         hand_pickup_drop_sound = get_node("AudioStreamPlayer3D")
-        
+
         connect("button_pressed", self, "button_pressed")
         connect("button_release", self, "button_released")
 
@@ -321,7 +316,7 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
             rumble -= delta * CONTROLLER_RUMBLE_FADE_SPEED
             if rumble < 0:
                 rumble = 0
-        
+
         if teleport_button_down == true:
             teleport_raycast.force_raycast_update()
             if teleport_raycast.is_colliding():
@@ -329,16 +324,16 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
                     if teleport_raycast.get_collision_normal().y >= 0.85:
                         teleport_pos = teleport_raycast.get_collision_point()
                         teleport_mesh.global_transform.origin = teleport_pos
-        
-        
+
+
         if get_is_active() == true:
             _physics_process_update_controller_velocity(delta)
-        
+
         if held_object != null:
             var held_scale = held_object.scale
             held_object.global_transform = grab_pos_node.global_transform
             held_object.scale = held_scale
-        
+
         _physics_process_directional_movement(delta);
 
 
@@ -348,19 +343,19 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
         if prior_controller_velocities.size() > 0:
             for vel in prior_controller_velocities:
                 controller_velocity += vel
-            
+
             controller_velocity = controller_velocity / prior_controller_velocities.size()
-        
+
         var relative_controller_position = (global_transform.origin - prior_controller_position)
-        
+
         controller_velocity += relative_controller_position
-        
+
         prior_controller_velocities.append(relative_controller_position)
-        
+
         prior_controller_position = global_transform.origin
-        
+
         controller_velocity /= delta;
-        
+
         if prior_controller_velocities.size() > 30:
             prior_controller_velocities.remove(0)
 
@@ -368,30 +363,30 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
     func _physics_process_directional_movement(delta):
         var trackpad_vector = Vector2(-get_joystick_axis(1), get_joystick_axis(0))
         var joystick_vector = Vector2(-get_joystick_axis(5), get_joystick_axis(4))
-        
+
         if trackpad_vector.length() < CONTROLLER_DEADZONE:
             trackpad_vector = Vector2(0,0)
         else:
             trackpad_vector = trackpad_vector.normalized() * ((trackpad_vector.length() - CONTROLLER_DEADZONE) / (1 - CONTROLLER_DEADZONE))
-        
+
         if joystick_vector.length() < CONTROLLER_DEADZONE:
             joystick_vector = Vector2(0,0)
         else:
             joystick_vector = joystick_vector.normalized() * ((joystick_vector.length() - CONTROLLER_DEADZONE) / (1 - CONTROLLER_DEADZONE))
-        
+
         var forward_direction = get_parent().get_node("Player_Camera").global_transform.basis.z.normalized()
         var right_direction = get_parent().get_node("Player_Camera").global_transform.basis.x.normalized()
-        
+
         # Because the trackpad and the joystick will both move the player, we can add them together and normalize
         # the result, giving the combined movement direction
         var movement_vector = (trackpad_vector + joystick_vector).normalized()
-        
+
         var movement_forward = forward_direction * movement_vector.x * delta * MOVEMENT_SPEED
         var movement_right = right_direction * movement_vector.y * delta * MOVEMENT_SPEED
-        
+
         movement_forward.y = 0
         movement_right.y = 0
-        
+
         if (movement_right.length() > 0 or movement_forward.length() > 0):
             get_parent().global_translate(movement_right + movement_forward)
             directional_movement = true
@@ -402,10 +397,10 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
     func button_pressed(button_index):
         if button_index == 15:
             _on_button_pressed_trigger()
-        
+
         if button_index == 2:
             _on_button_pressed_grab()
-            
+
         if button_index == 1:
             _on_button_pressed_menu()
 
@@ -424,18 +419,18 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
     func _on_button_pressed_grab():
         if teleport_button_down == true:
             return
-        
+
         if held_object == null:
             _pickup_rigidbody()
         else:
             _throw_rigidbody()
-        
+
         hand_pickup_drop_sound.play()
 
 
     func _pickup_rigidbody():
         var rigid_body = null
-        
+
         if grab_mode == "AREA":
             var bodies = grab_area.get_overlapping_bodies()
             if len(bodies) > 0:
@@ -444,7 +439,7 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
                         if !("NO_PICKUP" in body):
                             rigid_body = body
                             break
-        
+
         elif grab_mode == "RAYCAST":
             grab_raycast.force_raycast_update()
             if (grab_raycast.is_colliding()):
@@ -452,23 +447,23 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
                 if body is RigidBody:
                     if !("NO_PICKUP" in body):
                         rigid_body = body
-        
-        
+
+
         if rigid_body != null:
-            
+
             held_object = rigid_body
-            
+
             held_object_data["mode"] = held_object.mode
             held_object_data["layer"] = held_object.collision_layer
             held_object_data["mask"] = held_object.collision_mask
-            
+
             held_object.mode = RigidBody.MODE_STATIC
             held_object.collision_layer = 0
             held_object.collision_mask = 0
-            
+
             hand_mesh.visible = false
             grab_raycast.visible = false
-            
+
             if held_object is VR_Interactable_Rigidbody:
                 held_object.controller = self
                 held_object.picked_up()
@@ -477,20 +472,20 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
     func _throw_rigidbody():
         if held_object == null:
             return
-        
+
         held_object.mode = held_object_data["mode"]
         held_object.collision_layer = held_object_data["layer"]
         held_object.collision_mask = held_object_data["mask"]
-        
+
         held_object.apply_impulse(Vector3(0, 0, 0), controller_velocity)
-        
+
         if held_object is VR_Interactable_Rigidbody:
             held_object.dropped()
             held_object.controller = null
-        
+
         held_object = null
         hand_mesh.visible = true
-        
+
         if grab_mode == "RAYCAST":
             grab_raycast.visible = true
 
@@ -500,7 +495,7 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
             grab_mode = "RAYCAST"
             if held_object == null:
                 grab_raycast.visible = true
-        
+
         elif grab_mode == "RAYCAST":
             grab_mode = "AREA"
             grab_raycast.visible = false
@@ -513,13 +508,13 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
 
     func _on_button_released_trigger():
         if teleport_button_down == true:
-            
+
             if teleport_pos != null and teleport_mesh.visible == true:
                 var camera_offset = get_parent().get_node("Player_Camera").global_transform.origin - get_parent().global_transform.origin
                 camera_offset.y = 0
-                
+
                 get_parent().global_transform.origin = teleport_pos - camera_offset
-            
+
             teleport_button_down = false
             teleport_mesh.visible = false
             teleport_raycast.visible = false
@@ -565,7 +560,7 @@ First, let's go through all the class variables in the script:
 * ``directional_movement``: A variable to hold whether this VR controller is moving the player using the touchpad/joystick.
 
 .. note:: You can find a great article explaining all about how to handle touchpad/joystick dead zones `here <https://web.archive.org/web/20191208161810/http://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html>`__.
-          
+
           We are using a translated version of the scaled radial dead zone code provided in that article for the VR controller's joystick/touchpad.
           The article is a great read, and I highly suggest giving it a look!
 
@@ -853,7 +848,7 @@ calls the ``picked_up`` function on ``held_object``. While we haven't made ``VR_
 being held by a VR controller, where the a reference to the controller is stored in the ``controller`` variable, through calling the ``picked_up`` function.
 
 .. tip:: Don't worry, we will cover ``VR_Interactable_Rigidbody`` after this section!
-         
+
          The code should make more sense after completing part 2 of this tutorial series, where we will actually be using ``VR_Interactable_Rigidbody``.
 
 What this section of code does is that if a :ref:`RigidBody <class_RigidBody>` was found using the grab :ref:`Area <class_Area>` or :ref:`Raycast <class_Raycast>`, it sets it up so that
@@ -877,7 +872,7 @@ We then check to see if the object held extends a class called ``VR_Interactable
 can do whatever it needs to do when dropped, and we set the ``controller`` variable to ``null`` so that the :ref:`RigidBody <class_RigidBody>` knows that it is not being held.
 
 .. tip:: Don't worry, we will cover ``VR_Interactable_Rigidbody`` after this section!
-         
+
          The code should make more sense after completing part 2 of this tutorial series, where we will actually be using ``VR_Interactable_Rigidbody``.
 
 Regardless of whether ``held_object`` extends ``VR_Interactable_Rigidbody`` or not, we then set ``held_object`` to ``null`` so the VR controller knows it is no longer holding anything.
@@ -977,7 +972,7 @@ Once you have ``VR_Interactable_Rigidbody.gd`` open, add the following code:
  .. code-tab:: gdscript GDScript
     class_name VR_Interactable_Rigidbody
     extends RigidBody
-    
+
     # (Ignore the unused variable warning)
     # warning-ignore:unused_class_variable
     var controller = null
@@ -1068,27 +1063,27 @@ Add the following code:
         yield(get_tree(), "idle_frame")
         yield(get_tree(), "idle_frame")
         yield(get_tree(), "idle_frame")
-        
+
         var interface = ARVRServer.primary_interface
-        
+
         if interface == null:
             set_process(false)
             printerr("Movement_Vignette: no VR interface found!")
             return
-        
+
         rect_size = interface.get_render_targetsize()
         rect_position = Vector2(0,0)
-        
+
         controller_one = get_parent().get_node("Left_Controller")
         controller_two = get_parent().get_node("Right_Controller")
-        
+
         visible = false
 
 
     func _process(_delta):
         if (controller_one == null or controller_two == null):
             return
-        
+
         if (controller_one.directional_movement == true or controller_two.directional_movement == true):
             visible = true
         else:

@@ -37,7 +37,7 @@ Export of Cycles/EEVEE materials
 --------------------------------
 
 The exporter has a primitive support for converting Cycles/EEVEE material node tree
-to Godot Shader Material. Note that some of the Shader Node are not supported yet due to 
+to Godot Shader Material. Note that some of the Shader Node are not supported yet due to
 difficulties in implementation, which are:
 
 - all the ``noisy textures``
@@ -60,7 +60,7 @@ Generate external materials
 
 The default configuration of material exporting would keep all the materials internal to
 the ``escn`` file. There is an option which could enable generating external ``.material``
-file when the ``escn`` file opens in Godot. 
+file when the ``escn`` file opens in Godot.
 
 .. image:: img/external_mat_option.jpg
 

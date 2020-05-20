@@ -62,7 +62,7 @@ It will then start building for the target platform right away.
 
 To list the available target platforms, use ``scons platform=list``::
 
-    user@host:~/godot$ scons platform=list
+    scons platform=list
     scons: Reading SConscript files ...
     The following platforms are available:
 
@@ -79,7 +79,7 @@ To build for a platform (for example, x11), run with the ``platform=`` (or
 
 ::
 
-    user@host:~/godot$ scons platform=x11
+    scons platform=x11
 
 This will start the build process, which will take a while. If you want
 SCons to build faster, use the ``-j <cores>`` parameter to specify how many
@@ -90,7 +90,7 @@ Example for using 4 cores:
 
 ::
 
-    user@host:~/godot$ scons platform=x11 -j 4
+    scons platform=x11 -j 4
 
 Resulting binary
 ----------------
@@ -102,7 +102,7 @@ generally with this naming convention::
 
 For the previous build attempt, the result would look like this::
 
-    user@host:~/godot$ ls bin
+    ls bin
     bin/godot.x11.tools.64
 
 This means that the binary is for X11, is not optimized, has tools (the
@@ -191,6 +191,75 @@ features to include/disable.
 
 Check the output of ``scons --help`` for details about each option for
 the version you are willing to compile.
+
+.. _doc_overriding_build_options:
+
+Overriding the build options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Using a file
+^^^^^^^^^^^^
+
+The default ``custom.py`` file can be created at the root of the Godot Engine
+source to initialize any SCons build options passed via the command line:
+
+.. code-block:: python
+
+    # custom.py
+    
+    optimize = "size"
+    module_mono_enabled = "yes"
+    use_llvm = "yes"
+    extra_suffix = "game_title"
+
+You can also disable some of the builtin modules before compiling, saving some
+time it takes to build the engine, see :ref:`doc_optimizing_for_size` page for more details.
+
+Another custom file can be specified explicitly with the ``profile`` command
+line option, both overriding the default build configuration:
+
+.. code-block:: shell
+
+    scons profile=path/to/custom.py
+
+.. note:: Build options set from the file can be overridden by the command line
+          options.
+
+It's also possible to override the options conditionally:
+
+.. code-block:: python
+
+    # custom.py
+
+    import version
+
+    # Override options specific for Godot 3.x and 4.x versions.
+    if version.major == 3:
+        pass
+    elif version.major == 4:
+        pass
+
+Using the SCONSFLAGS
+^^^^^^^^^^^^^^^^^^^^
+
+``SCONSFLAGS`` is an environment variable which is used by the SCons to set the
+options automatically without having to supply them via the command line.
+
+For instance, you may want to build Godot in parallel with the aforementioned
+``-j`` option for all the future builds:
+
+.. tabs::
+ .. code-tab:: bash Linux/macOS
+
+     export SCONSFLAGS="-j4"
+
+ .. code-tab:: bat Windows (cmd)
+
+     set SCONSFLAGS=-j4
+
+ .. code-tab:: powershell Windows (powershell)
+
+     $env:SCONSFLAGS="-j4"
 
 Export templates
 ----------------

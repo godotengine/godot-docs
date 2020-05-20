@@ -7,8 +7,8 @@ Introduction
 ------------
 
 For the most common cases, Godot provides ready to use materials for
-most types of shaders, such as :ref:`SpatialMaterial <class_SpatialMaterial>`, 
-:ref:`CanvasItemMaterial <class_CanvasItemMaterial>` and :ref:`ParticlesMaterial <class_ParticlesMaterial>`. 
+most types of shaders, such as :ref:`SpatialMaterial <class_SpatialMaterial>`,
+:ref:`CanvasItemMaterial <class_CanvasItemMaterial>` and :ref:`ParticlesMaterial <class_ParticlesMaterial>`.
 They are flexible implementations that cover most use cases.
 
 Shader materials allow writing a custom shader directly, for maximum flexibility.
@@ -23,7 +23,7 @@ Examples of this are:
 -  Create custom particle code.
 -  And much more!
 
-Godot provides built in functionality to make frequent operations 
+Godot provides built in functionality to make frequent operations
 easier. Additionally, Godot's shader editor will detect errors as you
 type, so you can see your edited shaders in real-time. It is also
 possible to edit shaders using a visual, node-based graph editor.
@@ -76,6 +76,6 @@ and select the convert option.
 .. image:: img/shader_material_convert.png
 
 .. note::
-    
+
    Using the convert option will turn the SpatialMaterial into a ShaderMaterial
    with a text shader, not a visual shader.

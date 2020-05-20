@@ -35,6 +35,7 @@ Video tutorials
 - `TheBuffED <https://www.youtube.com/watch?v=ygGaN1EOQEA&list=PLvN5Z3tTxXEDfQkt4Frg6ALirespSwZd7>`_ (2D, GDScript).
 - `Code with Tom <https://www.youtube.com/playlist?list=PLiUQR4U_J9ec0k91iHPme_qtfS1nrWF3W>`_ (2D and 3D, GDScript).
 - `BornCG <https://www.youtube.com/playlist?list=PLda3VoSoc_TSBBOBYwcmlamF1UrjVtccZ>`_ (3D, GDScript).
+- `Gonkee <https://www.youtube.com/channel/UCJqCPFHdbc6443G3Sz6VYDw>`_ (2D, 3D, GDScript, Shaders).
 
 Text tutorials
 --------------
