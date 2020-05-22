@@ -3,103 +3,109 @@
 Qt Creator
 ==========
 
-Qt Creator is a free, open source IDE for all desktop platforms.
+`Qt Creator <https://doc.qt.io/qtcreator/index.html>`_ is a free, open source IDE for all desktop platforms.
 
 Importing the project
 ---------------------
 
-- Choose **New Project > Import Project > Import Existing Project**.
+- From the Qt Creator's main screen select **New Project > Import Project > Import Existing Project**.
 
-.. image:: img/qtcreator-new-project.png
+.. figure:: img/qtcreator-new-project.png
+   :figclass: figure-w480
+   :align: center
 
-- Set the path to your Godot root directory and enter the project name.
+- Under **Location** select the Godot root folder.
 
-.. image:: img/qtcreator-set-project-path.png
+.. figure:: img/qtcreator-set-project-path.png
+   :figclass: figure-w480
+   :align: center
 
-- Here you can choose which folders and files will be visible to the project.
-  C/C++ files are added automatically. Potentially useful additions:
+- Next, you can choose which folders and files will be visible to the project.
+  While C/C++ files are added automatically, other extensions can be potentially useful:
   ``*.py`` for buildsystem files, ``*.java`` for Android platform development,
-  ``*.mm`` for macOS platform development. Click **Next**.
+  ``*.mm`` for macOS platform development.
 
-.. image:: img/qtcreator-apply-import-filter.png
+.. figure:: img/qtcreator-apply-import-filter.png
+   :figclass: figure-w480
+   :align: center
 
-- Click **Finish**.
-- Add a line containing ``.`` to ``project_name.includes`` to get working
-  code completion.
+.. note:: You can change this configuration later by right-clicking on your project
+          and selecting the **Edit Files...** option.
 
-.. image:: img/qtcreator-project-name-includes.png
+          .. figure:: img/qtcreator-edit-files-menu.png
+            :figclass: figure-w480
+            :align: center
 
-Build and run
---------------
 
-Build configuration:
+- Finish the import.
+- Open the ``project_name.includes`` file and add a line containing ``.`` to it
+  to correctly enable the code completion.
 
-- Click on **Projects** and open the **Build** tab.
+.. figure:: img/qtcreator-project-name-includes.png
+   :figclass: figure-w480
+   :align: center
+
+- From the left-side menu select **Projects** and open the **Build** tab.
 - Delete the predefined ``make`` build step.
 
-.. image:: img/qtcreator-projects-build.png
+.. figure:: img/qtcreator-projects-build.png
+   :figclass: figure-w480
+   :align: center
 
--  Click **Add Build Step > Custom Process Step**.
+- Click **Add Build Step > Custom Process Step** to add a new build step 
+  with the following settings:
 
-.. image:: img/qtcreator-add-custom-process-step.png
+  +-----------+------------------------------------------------------------------------------+
+  | Command   | **scons**                                                                    |
+  +-----------+------------------------------------------------------------------------------+
+  | Arguments | See :ref:`doc_introduction_to_the_buildsystem` for a full list of arguments. |
+  +-----------+------------------------------------------------------------------------------+
 
-- Type ``scons`` in the **Command** field. If it fails with
-  ``Could not start process "scons"``, it can mean that ``scons`` is not in
-  your ``PATH`` environment variable. In this case, you'll have to specify the
-  full path to the SCons binary.
-- Fill the **Arguments** field with your compilation options
-  (e.g.: ``p=linuxbsd target=debug -j 4``).
+.. figure:: img/qtcreator-set-scons-command.png
+   :figclass: figure-w480
+   :align: center
 
-.. image:: img/qtcreator-set-scons-command.png
+.. note:: If the build fails with ``Could not start process "scons"``, it can mean that ``scons`` 
+          is not in your ``PATH`` environment variable. In this case, you'll have to specify the
+          full path to the SCons binary.
 
-Run configuration:
+Debugging the project
+---------------------
 
-- Open the **Run** tab.
-- Point the **Executable** to your compiled Godot binary
-  (e.g: ``%{buildDir}/bin/godot.linuxbsd.opt.tools.64``).
-- If you want to run a specific project, point **Working directory** to the
-  project folder.
-- If you want to run the editor, add ``-e`` to the **Command line arguments**
-  field.
+- From the left-side menu select **Projects** and open the **Run** tab.
+- Under **Executable** specify the path to your executable located in 
+  the ``<Godot root directory>/bin`` folder. The name depends on your build configuration,
+  e.g. ``godot.linuxbsd.tools.64`` for 64-bit LinuxBSD platform with ``tools`` enabled.
+  You can use ``%{buildDir}`` to reference the project root, e.g: ``%{buildDir}/bin/godot.linuxbsd.opt.tools.64``.
+- If you want to run a specific project, specify its root folder under **Working directory**.
+- If you want to run the editor, add ``-e`` to the **Command line arguments** field.
 
-.. image:: img/qtcreator-run-command.png
+.. figure:: img/qtcreator-run-command.png
+   :figclass: figure-w480
+   :align: center
 
-Updating sources after pulling latest commits
----------------------------------------------
-
-As a developer, you usually want to frequently pull the latest commits from the
-upstream Git repository or a specific fork. However, this brings a problem with
-it: as the development continues, source files (and folders) are added or
-removed. These changes need to be reflected in your project files for Qt Creator
-too, so you continue to have a nice programming experience. A simple way to
-check is to right click at your root folder in the **Projects View** and click
-on **Edit files...**.
-
-.. image:: img/qtcreator-edit-files-menu.png
-
-Now a new dialog should appear that is similar in functionality to the one in
-the third step of the *Importing the project* section above. Here, you can check
-whether you want to add/remove specific files and/or folders. You can choose by
-clicking with your mouse or just simply by clicking the **Apply Filter** button.
-Click on **OK** and you're ready to continue working.
-
-.. image:: img/qtcreator-edit-files-dialog.png
+To learn more about command line arguments, refer to the
+:ref:`command line tutorial <doc_command_line_tutorial>`.
 
 Code style configuration
 ------------------------
 
 Developers must follow the project's :ref:`code style <doc_code_style_guidelines>`
-and the IDE should help them follow it. By default, Qt Creator does use spaces
+and the IDE should help them follow it. By default, Qt Creator uses spaces
 for indentation which doesn't match the Godot code style guidelines. You can
 change this behavior by changing the **Code Style** in **Options > C++**.
 
-.. image:: img/qtcreator-options-cpp.png
+.. figure:: img/qtcreator-options-cpp.png
+   :figclass: figure-w480
+   :align: center
 
 Click on **Edit** to change the current settings, then click on
 **Copy Built-in Code Style** button to set a new code style. Set a name for it
 (e.g. Godot) and change the Tab policy to be **Tabs Only**.
 
-.. image:: img/qtcreator-edit-codestyle.png
+.. figure:: img/qtcreator-edit-codestyle.png
+   :figclass: figure-w480
+   :align: center
 
 If you run into any issues, ask for help in one of
 `Godot's community channels <https://godotengine.org/community>`__.

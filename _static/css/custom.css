@@ -212,6 +212,14 @@ legend,
     opacity: 0.75;
 }
 
+.rst-content div.figure.figure-w480 {
+    max-width: 480px;
+}
+
+.rst-content div.figure img {
+    border: 1px solid var(--body-color);
+}
+
 p,
 article ul,
 article ol,
