@@ -1145,7 +1145,7 @@ functions:
 
     public void OnMessageTimerTimeout()
     {
-        GetNode<Label>("MessageLabel").Hide();
+        GetNode<Label>("Message").Hide();
     }
 
 Connecting HUD to Main
