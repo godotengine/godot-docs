@@ -215,9 +215,11 @@ If they are the same, then we write a warning to the console and return ``true``
 Secondly, we see if :ref:`AnimationPlayer <class_AnimationPlayer>` has the animation with the name ``animation_name`` using ``has_animation``.
 If it does not, we return ``false``.
 
-Thirdly, we check whether ``current_state`` is set. If ``current_state`` is *not* currently set, then we
-set ``current_state`` to the passed in animation name and tell :ref:`AnimationPlayer <class_AnimationPlayer>` to start playing the animation with
-a blend time of ``-1`` at the speed set in ``animation_speeds`` and then we return ``true``.
+Thirdly, we check whether ``current_state`` is set. If we have a state in ``current_state``, then we get all the possible states we can transition to.
+
+If the animation name is in the list of possible transitions, we set ``current_state`` to the passed in
+animation (``animation_name``), tell :ref:`AnimationPlayer <class_AnimationPlayer>` to play the animation with
+a blend time of ``-1`` at the speed set in ``animation_speeds`` and return ``true``.
 
 .. note:: Blend time is how long to blend/mix the two animations together.
 
@@ -228,12 +230,6 @@ a blend time of ``-1`` at the speed set in ``animation_speeds`` and then we retu
           a walking animation to a running animation.
 
           We set the blend time to ``-1`` because we want to instantly change animations.
-
-If we have a state in ``current_state``, then we get all the possible states we can transition to.
-
-If the animation name is in the list of possible transitions, we set ``current_state`` to the passed
-in animation (``animation_name``), tell :ref:`AnimationPlayer <class_AnimationPlayer>` to play the animation with a blend time of ``-1`` at the speed set in
-``animation_speeds`` and return ``true``.
 
 _________
 
