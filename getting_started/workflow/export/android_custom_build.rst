@@ -47,9 +47,8 @@ Install a JDK
 
 The Android SDK doesn't come with Java, so it needs to be installed manually.
 You need to install a Java SDK (**not** just the runtime or JRE).
-`OpenJDK 8 <https://adoptopenjdk.net/index.html>`__ is recommended.
-Oracle JDK 8 should also work. Later versions may not work for
-Android development.
+`OpenJDK 8 <https://adoptopenjdk.net/index.html>`__ is required, newer
+versions won't work.
 
 Download the command-line tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

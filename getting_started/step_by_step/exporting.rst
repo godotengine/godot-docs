@@ -319,7 +319,7 @@ Before you can export your project for Android, you must download the following
 software:
 
 * Android SDK: https://developer.android.com/studio/
-* Java JDK: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+* Open JDK(version 8 is required, more recent versions won't work): https://adoptopenjdk.net/index.html
 
 When you run Android Studio for the first time, click on *Configure -> SDK Manager*
 and install "Android SDK Platform Tools". This installs the `adb` command-line
