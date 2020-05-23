@@ -60,7 +60,7 @@ Make sure to set the following preferences:
 
 - In Rider:
 
-   - Set `MSBuild version` to either bundled with Rider or .NET Core.
+   - Set ``MSBuild version`` to either bundled with Rider or .NET Core.
    - Install **Godot support** plugin.
 
 macOS and Linux
