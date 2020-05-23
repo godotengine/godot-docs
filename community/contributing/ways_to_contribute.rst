@@ -63,7 +63,7 @@ As such, everyone is entitled to modify
 modifications back to the upstream project in the form of a patch (a text file
 describing the changes in a ready-to-apply manner) or - in the modern workflow
 that we use - via a so-called "pull request" (PR), i.e. a proposal to directly
-merge one or more git commits (patches) into the main development branch.
+merge one or more Git commits (patches) into the main development branch.
 
 Contributing code changes upstream has two big advantages:
 
@@ -82,7 +82,7 @@ Contributing code changes upstream has two big advantages:
 
 To ensure good collaboration and overall quality, the Godot developers
 enforce some rules for code contributions, for example regarding the style to
-use in the C++ code (indentation, brackets, etc.) or the git and PR workflow.
+use in the C++ code (indentation, brackets, etc.) or the Git and PR workflow.
 
 A good place to start is by searching for issues tagged as `junior jobs <https://github.com/godotengine/godot/issues?q=is%3Aissue+is%3Aopen+label%3A%22junior+job%22>`_ (or `Hacktoberfest <https://github.com/godotengine/godot/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3AHacktoberfest+>`_ during October) on GitHub.
 
@@ -181,7 +181,7 @@ There are two separate resources referred to as "documentation" in Godot:
    consulted offline, directly in Godot's code editor, or online at
    :ref:`Godot API <toc-class-ref>`.
    To contribute to the class reference, you have to edit the
-   `doc/base/classes.xml` in Godot's git repository, and make a pull request.
+   `doc/base/classes.xml` in Godot's Git repository, and make a pull request.
    See :ref:`doc_updating_the_class_reference` for more details.
 
 -  **The tutorials and engine documentation and its translations.** This is the part you are reading

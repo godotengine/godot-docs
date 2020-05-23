@@ -474,7 +474,7 @@ main ``doc/classes`` directory.
 
 .. tip::
 
-    You can use git to check if you have missed some of your classes by checking the 
+    You can use Git to check if you have missed some of your classes by checking the
     untracked files with ``git status``. For example::
 
         user@host:~/godot$ git status
