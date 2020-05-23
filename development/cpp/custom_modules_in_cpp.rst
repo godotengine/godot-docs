@@ -383,11 +383,11 @@ library that will be dynamically loaded when starting our game's binary.
 Once compiled, we should end up with a ``bin`` directory containing both the
 ``godot*`` binary and our ``libsummator*.so``. However given the .so is not in
 a standard directory (like ``/usr/lib``), we have to help our binary find it
-during runtime with the ``LD_LIBRARY_PATH`` environ variable:
+during runtime with the ``LD_LIBRARY_PATH`` environment variable:
 
 .. code-block:: shell
 
-    export LD_LIBRARY_PATH=`pwd`/bin/
+    export LD_LIBRARY_PATH="$PWD/bin/"
     ./bin/godot*
 
 **note**: Pay attention you have to ``export`` the environ variable otherwise
@@ -462,19 +462,19 @@ There are several steps in order to setup custom docs for the module:
             ]
 
 The ``get_doc_path()`` function is used by the build system to determine
-the location of the docs. In this case, they will be located in the 
+the location of the docs. In this case, they will be located in the
 ``modules/summator/doc_classes`` directory. If you don't define this,
-the doc path for your module will fall back to the main ``doc/classes`` 
+the doc path for your module will fall back to the main ``doc/classes``
 directory.
 
 The ``get_doc_classes()`` method is necessary for the build system to
-know which registered classes belong to the module. You need to list all of your 
-classes here. The classes that you don't list will end up in the 
+know which registered classes belong to the module. You need to list all of your
+classes here. The classes that you don't list will end up in the
 main ``doc/classes`` directory.
 
 .. tip::
 
-    You can use git to check if you have missed some of your classes by checking the 
+    You can use git to check if you have missed some of your classes by checking the
     untracked files with ``git status``. For example::
 
         user@host:~/godot$ git status
@@ -483,13 +483,13 @@ main ``doc/classes`` directory.
 
         Untracked files:
             (use "git add <file>..." to include in what will be committed)
-            
+
             doc/classes/MyClass2D.xml
             doc/classes/MyClass4D.xml
             doc/classes/MyClass5D.xml
             doc/classes/MyClass6D.xml
             ...
-    
+
 
 3. Now we can generate the documentation:
 
@@ -505,13 +505,13 @@ Run command:
 
       user@host:~/godot/bin$ ./bin/<godot_binary> --doctool .
 
-Now if you go to the ``godot/modules/summator/doc_classes`` folder, you will see 
+Now if you go to the ``godot/modules/summator/doc_classes`` folder, you will see
 that it contains a ``Summator.xml`` file, or any other classes, that you referenced
 in your ``get_doc_classes`` function.
 
 Edit the file(s) following :ref:`doc_updating_the_class_reference` and recompile the engine.
 
-Once the compilation process is finished, the docs will become accessible within 
+Once the compilation process is finished, the docs will become accessible within
 the engine's built-in documentation system.
 
 In order to keep documentation up-to-date, all you'll have to do is simply modify
@@ -519,7 +519,7 @@ one of the XML files and recompile the engine from now on.
 
 If you change your module's API, you can also re-extract the docs, they will contain
 the things that you previously added. Of course if you point it to your godot
-folder, make sure you don't lose work by extracting older docs from an older engine build 
+folder, make sure you don't lose work by extracting older docs from an older engine build
 on top of the newer ones.
 
 Note that if you don't have write access rights to your supplied ``<path>``,
