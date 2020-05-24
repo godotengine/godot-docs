@@ -405,7 +405,7 @@ clear its content. Let's animate the ``animated_health`` value. Call the
  .. code-tab:: gdscript GDScript
 
     func update_health(new_value):
-        tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.6, Tween.TRANS_LINEAR, Tween.EASE_IN)
+        tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.6, Tween.TRANS_LINEAR)
 
  .. code-tab:: csharp
 
@@ -440,12 +440,10 @@ duration in seconds.
 
 ::
 
-    ...  0.6, Tween.TRANS_LINEAR, Tween.EASE_IN)
+    ...  0.6, Tween.TRANS_LINEAR)
 
 The last two arguments are constants from the ``Tween`` class.
-``TRANS_LINEAR`` means the animation should be linear. ``EASE_IN``
-doesn't do anything with a linear transition, but we must provide this
-last argument or we'll get an error.
+``TRANS_LINEAR`` means the animation should be linear.
 
 The animation will not play until we activated the ``Tween`` node with
 ``tween.start()``. We only have to do this once if the node is not
@@ -480,7 +478,7 @@ So far, the update\_health method looks like this:
  .. code-tab:: gdscript GDScript
 
     func update_health(new_value):
-        tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.6, Tween.TRANS_LINEAR, Tween.EASE_IN)
+        tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.6, Tween.TRANS_LINEAR)
         if not tween.is_active():
             tween.start()
 
@@ -644,7 +642,7 @@ We then have to call the ``interpolate_property`` method of the
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    tween.interpolate_property(self, "modulate", start_color, end_color, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+    tween.interpolate_property(self, "modulate", start_color, end_color, 1.0, Tween.TRANS_LINEAR)
 
  .. code-tab:: csharp
 
@@ -663,7 +661,7 @@ method:
     func _on_Player_died():
         var start_color = Color(1.0, 1.0, 1.0, 1.0)
         var end_color = Color(1.0, 1.0, 1.0, 0.0)
-        tween.interpolate_property(self, "modulate", start_color, end_color, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+        tween.interpolate_property(self, "modulate", start_color, end_color, 1.0, Tween.TRANS_LINEAR)
 
  .. code-tab:: csharp
 
