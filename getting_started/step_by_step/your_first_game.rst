@@ -1133,7 +1133,7 @@ functions:
         emit_signal("start_game")
 
     func _on_MessageTimer_timeout():
-        $MessageLabel.hide()
+        $Message.hide()
 
  .. code-tab:: csharp
 
