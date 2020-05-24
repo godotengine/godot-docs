@@ -651,8 +651,7 @@ We then have to call the ``interpolate_property`` method of the
 
 This time, we change the ``modulate`` property and have it animate from
 ``start_color`` to the ``end_color``. The duration is of one second,
-with a linear transition. Here again, because the transition is linear,
-the easing does not matter. Here's the complete ``_on_Player_died``
+with a linear transition. Here's the complete ``_on_Player_died``
 method:
 
 .. tabs::
