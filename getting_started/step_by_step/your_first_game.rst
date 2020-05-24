@@ -375,7 +375,7 @@ function:
  .. code-tab:: gdscript GDScript
 
         if velocity.x != 0:
-            $AnimatedSprite.animation = "right"
+            $AnimatedSprite.animation = "walk"
             $AnimatedSprite.flip_v = false
             # See the note below about boolean assignment
             $AnimatedSprite.flip_h = velocity.x < 0
@@ -387,7 +387,7 @@ function:
 
         if (velocity.x != 0)
         {
-            animatedSprite.Animation = "right";
+            animatedSprite.Animation = "walk";
             animatedSprite.FlipV = false;
             // See the note below about boolean assignment
             animatedSprite.FlipH = velocity.x < 0;
