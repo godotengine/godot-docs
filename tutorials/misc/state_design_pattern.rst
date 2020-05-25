@@ -79,7 +79,7 @@ Second, there are some methods in the script for moving, but no implementation. 
 just uses ``pass`` to show that it will not execute any instructions when the methods are called. This is important.
 
 Third, the ``_physics_process(delta)`` method is actually implemented here. This allows the states to have a default
-``_phyics_process(delta)`` implementation where ``velocity`` is used to move the player. The way that the states can modify
+``_physics_process(delta)`` implementation where ``velocity`` is used to move the player. The way that the states can modify
 the movement of the player is to use the ``velocity`` variable defined in their base class.
 
 Finally, this script is actually being designated as a class named ``State``. This makes refactoring the code
