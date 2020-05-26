@@ -434,11 +434,11 @@ library that will be dynamically loaded when starting our game's binary.
 Once compiled, we should end up with a ``bin`` directory containing both the
 ``godot*`` binary and our ``libsummator*.so``. However given the .so is not in
 a standard directory (like ``/usr/lib``), we have to help our binary find it
-during runtime with the ``LD_LIBRARY_PATH`` environ variable:
+during runtime with the ``LD_LIBRARY_PATH`` environment variable:
 
 .. code-block:: shell
 
-    export LD_LIBRARY_PATH=`pwd`/bin/
+    export LD_LIBRARY_PATH="$PWD/bin/"
     ./bin/godot*
 
 **note**: Pay attention you have to ``export`` the environ variable otherwise
