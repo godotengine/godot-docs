@@ -111,7 +111,7 @@ changed:
         position.y = clamp(position.y, 0, screen_size.y)
 
         if velocity.x != 0:
-            $AnimatedSprite.animation = "right"
+            $AnimatedSprite.animation = "walk"
             $AnimatedSprite.flip_v = false
             $AnimatedSprite.flip_h = velocity.x < 0
         elif velocity.y != 0:
@@ -218,7 +218,7 @@ changed:
 
             if (velocity.x != 0)
             {
-                animatedSprite.Animation = "right";
+                animatedSprite.Animation = "walk";
                 animatedSprite.FlipV = false;
                 animatedSprite.FlipH = velocity.x < 0;
             }
