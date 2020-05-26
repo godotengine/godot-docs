@@ -257,6 +257,57 @@ The output will be ``60``.
              template. See the :ref:`Compiling <toc-devel-compiling>` pages
              for more information.
 
+Compiling a module externally
+-----------------------------
+
+Compiling a module involves moving the module's sources directly under the
+engine's ``modules/`` directory. While this is the most straightforward way to
+compile a module, there are a couple of reasons as to why this might not be a
+practical thing to do:
+
+1. Having to manually copy modules sources every time you want to compile the
+   engine with or without the module, or taking additional steps needed to
+   manually disable a module during compilation with a build option similar to
+   ``module_summator_enabled=no``. Creating symbolic links may also be a solution,
+   but you may additionally need to overcome OS restrictions like needing the
+   symbolic link privilege if doing this via script.
+
+2. Depending on whether you have to work with the engine's source code, the
+   module files added directly to ``modules/`` changes the working tree to the
+   point where using a VCS (like ``git``) proves to be cumbersome as you need to
+   make sure that only the engine-related code is committed by filtering
+   changes.
+
+So if you feel like the independent structure of custom modules is needed, lets
+take our "summator" module and move it to the engine's parent directory:
+
+.. code-block:: shell
+
+    mkdir ../modules
+    mv modules/summator ../modules
+
+Compile the engine with our module by providing ``custom_modules`` build option
+which accepts a comma-separated list of directory paths containing custom C++
+modules, similar to the following:
+
+.. code-block:: shell
+
+    scons custom_modules=../modules
+
+The build system shall detect all modules under the ``../modules`` directory
+and compile them accordingly, including our "summator" module.
+
+.. warning::
+
+    Any path passed to ``custom_modules`` will be converted to an absolute path
+    internally as a way to distinguish between custom and built-in modules. It
+    means that things like generating module documentation may rely on a
+    specific path structure on your machine.
+
+.. seealso::
+
+    :ref:`Introduction to the buildsystem - Custom modules build option <doc_buildsystem_custom_modules>`.
+
 Customizing module types initialization
 ---------------------------------------
 
@@ -462,14 +513,14 @@ There are several steps in order to setup custom docs for the module:
             ]
 
 The ``get_doc_path()`` function is used by the build system to determine
-the location of the docs. In this case, they will be located in the 
+the location of the docs. In this case, they will be located in the
 ``modules/summator/doc_classes`` directory. If you don't define this,
-the doc path for your module will fall back to the main ``doc/classes`` 
+the doc path for your module will fall back to the main ``doc/classes``
 directory.
 
 The ``get_doc_classes()`` method is necessary for the build system to
-know which registered classes belong to the module. You need to list all of your 
-classes here. The classes that you don't list will end up in the 
+know which registered classes belong to the module. You need to list all of your
+classes here. The classes that you don't list will end up in the
 main ``doc/classes`` directory.
 
 .. tip::
@@ -483,13 +534,13 @@ main ``doc/classes`` directory.
 
         Untracked files:
             (use "git add <file>..." to include in what will be committed)
-            
+
             doc/classes/MyClass2D.xml
             doc/classes/MyClass4D.xml
             doc/classes/MyClass5D.xml
             doc/classes/MyClass6D.xml
             ...
-    
+
 
 3. Now we can generate the documentation:
 
@@ -505,13 +556,13 @@ Run command:
 
       user@host:~/godot/bin$ ./bin/<godot_binary> --doctool .
 
-Now if you go to the ``godot/modules/summator/doc_classes`` folder, you will see 
+Now if you go to the ``godot/modules/summator/doc_classes`` folder, you will see
 that it contains a ``Summator.xml`` file, or any other classes, that you referenced
 in your ``get_doc_classes`` function.
 
 Edit the file(s) following :ref:`doc_updating_the_class_reference` and recompile the engine.
 
-Once the compilation process is finished, the docs will become accessible within 
+Once the compilation process is finished, the docs will become accessible within
 the engine's built-in documentation system.
 
 In order to keep documentation up-to-date, all you'll have to do is simply modify
@@ -519,7 +570,7 @@ one of the XML files and recompile the engine from now on.
 
 If you change your module's API, you can also re-extract the docs, they will contain
 the things that you previously added. Of course if you point it to your godot
-folder, make sure you don't lose work by extracting older docs from an older engine build 
+folder, make sure you don't lose work by extracting older docs from an older engine build
 on top of the newer ones.
 
 Note that if you don't have write access rights to your supplied ``<path>``,
