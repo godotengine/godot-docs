@@ -592,6 +592,8 @@ variables, in that order.
 
 ::
 
+   signal spawn_player(position)
+
    enum Jobs {KNIGHT, WIZARD, ROGUE, HEALER, SHAMAN}
 
    const MAX_LIVES = 3
