@@ -187,7 +187,7 @@ architecture.
 Custom modules
 --------------
 
-It's possible to compile modules residing outside of the Godot's directory
+It's possible to compile modules residing outside of Godot's directory
 tree, along with the built-in modules.
 
 A ``custom_modules`` build option can be passed to the command line before
@@ -206,7 +206,7 @@ directory paths containing such modules:
 
     If there's any custom module with the exact directory name as a built-in
     module, the engine will only compile the custom one. This logic can be used
-    to override the built-in module's implementation altogether.
+    to override built-in module implementations.
 
 .. seealso::
 

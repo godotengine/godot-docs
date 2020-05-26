@@ -268,7 +268,7 @@ practical thing to do:
 1. Having to manually copy modules sources every time you want to compile the
    engine with or without the module, or taking additional steps needed to
    manually disable a module during compilation with a build option similar to
-   ``module_summator_enabled=no``. Making symbolic links may also be a solution,
+   ``module_summator_enabled=no``. Creating symbolic links may also be a solution,
    but you may additionally need to overcome OS restrictions like needing the
    symbolic link privilege if doing this via script.
 
