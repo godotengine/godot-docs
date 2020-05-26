@@ -257,6 +257,57 @@ The output will be ``60``.
              template. See the :ref:`Compiling <toc-devel-compiling>` pages
              for more information.
 
+Compiling a module externally
+-----------------------------
+
+Compiling a module involves moving the module's sources directly under the
+engine's ``modules/`` directory. While this is the most straightforward way to
+compile a module, there are a couple of reasons as to why this might not be a
+practical thing to do:
+
+1. Having to manually copy modules sources every time you want to compile the
+   engine with or without the module, or taking additional steps needed to
+   manually disable a module during compilation with a build option similar to
+   ``module_summator_enabled=no``. Creating symbolic links may also be a solution,
+   but you may additionally need to overcome OS restrictions like needing the
+   symbolic link privilege if doing this via script.
+
+2. Depending on whether you have to work with the engine's source code, the
+   module files added directly to ``modules/`` changes the working tree to the
+   point where using a VCS (like ``git``) proves to be cumbersome as you need to
+   make sure that only the engine-related code is committed by filtering
+   changes.
+
+So if you feel like the independent structure of custom modules is needed, lets
+take our "summator" module and move it to the engine's parent directory:
+
+.. code-block:: shell
+
+    mkdir ../modules
+    mv modules/summator ../modules
+
+Compile the engine with our module by providing ``custom_modules`` build option
+which accepts a comma-separated list of directory paths containing custom C++
+modules, similar to the following:
+
+.. code-block:: shell
+
+    scons custom_modules=../modules
+
+The build system shall detect all modules under the ``../modules`` directory
+and compile them accordingly, including our "summator" module.
+
+.. warning::
+
+    Any path passed to ``custom_modules`` will be converted to an absolute path
+    internally as a way to distinguish between custom and built-in modules. It
+    means that things like generating module documentation may rely on a
+    specific path structure on your machine.
+
+.. seealso::
+
+    :ref:`Introduction to the buildsystem - Custom modules build option <doc_buildsystem_custom_modules>`.
+
 Customizing module types initialization
 ---------------------------------------
 
@@ -474,7 +525,7 @@ main ``doc/classes`` directory.
 
 .. tip::
 
-    You can use git to check if you have missed some of your classes by checking the
+    You can use Git to check if you have missed some of your classes by checking the
     untracked files with ``git status``. For example::
 
         user@host:~/godot$ git status

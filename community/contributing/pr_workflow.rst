@@ -255,7 +255,7 @@ You would then do your changes to our example's
 (text editor, IDE, etc.).
 
 By default, those changes are *unstaged*. The staging area is a layer between
-your working directory (where you make your modifications) and the local git
+your working directory (where you make your modifications) and the local Git
 repository (the commits and all the metadata in the ``.git`` folder). To
 bring changes from the working directory to the Git repository, you need to
 *stage* them with the ``git add`` command, and then to commit them with the

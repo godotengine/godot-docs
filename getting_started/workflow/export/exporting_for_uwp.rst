@@ -8,8 +8,8 @@ installed as a Windows App or submitted to the Windows Store. Exporting UWP
 packages also works from any platform, not only from Windows.
 
 However, if you want to install and run the app, you need to sign it with a
-trusted signature. Currently, Godot does not support signing of packages, so you
-need to use external tools to do so.
+trusted signature. Godot supports automatic signing of packages with
+external tools.
 
 Also, make sure the Publisher Name you set when exporting the package matches
 the name used on the certificate.
@@ -60,10 +60,26 @@ app. Open the Command Prompt as Administrator and run the following command::
 
     Certutil -addStore TrustedPeople MyKey.cer
 
-Signing the package
--------------------
+Setting up automatic signing
+----------------------------
 
-Finally, use ``SignTool.exe`` from the Windows SDK or Visual Studio::
+To setup automatic signing on export you need to go to Editor Settings > Export > Uwp.
+From there you need to click on the folder for ``Signtool``, and navigate to
+the ``SignTool.exe`` file on your computer.
+
+.. image:: img/UWP_sign_tool.png
+
+After setting that up close the editor settings, go to Project > Export,
+and select the UWP preset. Under the ``Signing`` options click on the folder
+next to ``Certificate`` and go to the certificate file. Then enter the
+pfxPassword in the password field.
+
+.. image:: img/UWP_export_signing.png
+
+Your project will now be automatically signed on export.
+
+If you want to sign an exported app manually run ``SignTool.exe`` and use the
+following command.
 
     SignTool sign /fd SHA256 /a /f MyKey.pfx /p pfxPassword package.appx
 
