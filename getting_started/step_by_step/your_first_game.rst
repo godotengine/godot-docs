@@ -375,7 +375,7 @@ function:
  .. code-tab:: gdscript GDScript
 
         if velocity.x != 0:
-            $AnimatedSprite.animation = "right"
+            $AnimatedSprite.animation = "walk"
             $AnimatedSprite.flip_v = false
             # See the note below about boolean assignment
             $AnimatedSprite.flip_h = velocity.x < 0
@@ -387,7 +387,7 @@ function:
 
         if (velocity.x != 0)
         {
-            animatedSprite.Animation = "right";
+            animatedSprite.Animation = "walk";
             animatedSprite.FlipV = false;
             // See the note below about boolean assignment
             animatedSprite.FlipH = velocity.x < 0;
@@ -634,7 +634,7 @@ choose one of the three animation types:
 
 First, we get the list of animation names from the AnimatedSprite's ``frames``
 property. This returns an Array containing all three animation names:
-``["walk", "swim", "fly]``.
+``["walk", "swim", "fly"]``.
 
 We then need to pick a random number between ``0`` and ``2`` to select one of these
 names from the list (array indices start at ``0``). ``randi() % n`` selects a
@@ -1133,7 +1133,7 @@ functions:
         emit_signal("start_game")
 
     func _on_MessageTimer_timeout():
-        $MessageLabel.hide()
+        $Message.hide()
 
  .. code-tab:: csharp
 
@@ -1145,7 +1145,7 @@ functions:
 
     public void OnMessageTimerTimeout()
     {
-        GetNode<Label>("MessageLabel").Hide();
+        GetNode<Label>("Message").Hide();
     }
 
 Connecting HUD to Main

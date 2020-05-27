@@ -39,7 +39,7 @@ There are 5 steps to update the class reference (full guide below):
 Get started with GitHub
 -----------------------
 
-If you're new to git and GitHub, this guide will help you get started. You'll learn to:
+If you're new to Git and GitHub, this guide will help you get started. You'll learn to:
 
 - Fork and clone Godot's repository
 - Keep your fork up to date with other contributors
@@ -83,7 +83,7 @@ You can check the list of all remote servers with:
 
     git remote -v
 
-You should have two: ``origin``, your fork on GitHub, that git adds by default, and ``upstream``, that you just added:
+You should have two: ``origin``, your fork on GitHub that Git adds by default, and ``upstream``, that you just added:
 
 
 ::
@@ -119,7 +119,7 @@ Another option is to delete the branch you're working on, synchronize the master
     git pull --rebase upstream master
     git checkout -b your-new-branch-name
 
-If you're feeling lost by now, come to our `IRC channels <http://webchat.freenode.net/?channels=#godotengine>`_ and ask for help. Experienced git users will give you a hand.
+If you're feeling lost by now, come to our `IRC channels <https://webchat.freenode.net/?channels=#godotengine>`_ and ask for help. Experienced Git users will give you a hand.
 
 Updating the documentation template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

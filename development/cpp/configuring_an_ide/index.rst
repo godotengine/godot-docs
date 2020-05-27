@@ -16,8 +16,8 @@ Development Environment), here are setup instructions for some popular ones:
    clion
    kdevelop
    qt_creator
-   visual_studio_code
    visual_studio
+   visual_studio_code
    xcode
 
 It is possible to use other IDEs, but their setup is not documented yet.

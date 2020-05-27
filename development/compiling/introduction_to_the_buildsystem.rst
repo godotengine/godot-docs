@@ -182,6 +182,36 @@ This flag appends ``.32`` or ``.64`` suffixes to resulting binaries when
 relevant. If ``bits=default`` is used, the suffix will match the detected
 architecture.
 
+.. _doc_buildsystem_custom_modules:
+
+Custom modules
+--------------
+
+It's possible to compile modules residing outside of Godot's directory
+tree, along with the built-in modules.
+
+A ``custom_modules`` build option can be passed to the command line before
+compiling. The option represents a comma-separated list of directory paths
+containing a collection of independent C++ modules that can be seen as C++
+packages, just like the built-in ``modules/`` directory.
+
+For instance, it's possible to provide both relative, absolute, and user
+directory paths containing such modules:
+
+::
+
+    scons custom_modules="../modules,/abs/path/to/modules,~/src/godot_modules"
+
+.. note::
+
+    If there's any custom module with the exact directory name as a built-in
+    module, the engine will only compile the custom one. This logic can be used
+    to override built-in module implementations.
+
+.. seealso::
+
+    :ref:`doc_custom_modules_in_c++`
+
 Other build options
 -------------------
 
@@ -206,7 +236,7 @@ source to initialize any SCons build options passed via the command line:
 .. code-block:: python
 
     # custom.py
-    
+
     optimize = "size"
     module_mono_enabled = "yes"
     use_llvm = "yes"

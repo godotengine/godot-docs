@@ -3,93 +3,108 @@
 Xcode
 =====
 
-Xcode is a free macOS-only IDE. You can download it from the Mac App Store.
+`Xcode <https://developer.apple.com/xcode>`_ is a free macOS-only IDE. You can 
+download it from the Mac App Store.
 
-Project setup
--------------
+Importing the project
+---------------------
 
-- Create an Xcode external build project anywhere.
+- From Xcode's main screen create a new project using the **Other > External Build System** template.
 
-.. image:: img/xcode_1_create_external_build_project.png
+.. figure:: img/xcode_1_create_external_build_project.png
+   :figclass: figure-w480
+   :align: center
 
-Go to the build target's **Info** tab, then:
+- Open your build targets from the **Targets** section and select the **Info** tab.
+- Fill out the form with the following settings:
 
-- Set **Build Tool** to the full path to SCons.
-- Set **Arguments** to something like
-  ``platform=osx tools=yes bits=64 target=debug``.
-- Set **Directory** to the path to Godot's source folder.
-- You may uncheck **Pass build settings in environment**.
+  +------------+------------------------------------------------------------------------------+
+  | Build Tool | A full path to the **scons** executable, e.g. **/usr/local/bin/scons**       |
+  +------------+------------------------------------------------------------------------------+
+  | Arguments  | See :ref:`doc_introduction_to_the_buildsystem` for a full list of arguments. |
+  +------------+------------------------------------------------------------------------------+
+  | Directory  | A full path to the Godot root folder                                         |
+  +------------+------------------------------------------------------------------------------+
 
-.. image:: img/xcode_2_configure_scons.png
+.. figure:: img/xcode_2_configure_scons.png
+   :figclass: figure-w480
+   :align: center
 
-Add a Command Line Tool target which will be used for indexing the project:
+- Add a Command Line Tool target which will be used for indexing the project by
+  choosing **File > New > Target...**.
 
-- In Xcode's menu, choose **File > New > Target...** and add a new Xcode
-  command line tool target.
+.. figure:: img/xcode_3_add_new_target.png
+   :figclass: figure-w480
+   :align: center
 
-.. image:: img/xcode_3_add_new_target.png
+- Select **OS X > Application > Command Line Tool**.
 
-.. image:: img/xcode_4_select_command_line_target.png
+.. figure:: img/xcode_4_select_command_line_target.png
+   :figclass: figure-w480
+   :align: center
 
-- Name it something so you know not to compile with this target (e.g. ``GodotXcodeIndex``).
-- Goto the newly created target's **Build Settings** tab and look for **Header Search Paths**.
-- Set **Header Search Paths** to the absolute path to Godot's source folder.
-- Make it recursive by adding two asterisks (``**``) to the end of the path,
-  e.g. ``/Users/me/repos/godot-source/**``.
+.. note:: Name it something so you know not to compile with this target (e.g. ``GodotXcodeIndex``).
 
-Add the Godot source to the project:
+- For this target open the **Build Settings** tab and look for **Header Search Paths**.
+- Set **Header Search Paths** to the absolute path to the Godot root folder. You need to
+  include subdirectories as well. To achieve that, add two two asterisks (``**``) to the 
+  end of the path, e.g. ``/Users/me/repos/godot-source/**``.
 
-- Drag and drop Godot source into the project file browser.
+- Add the Godot source to the project by dragging and dropping it into the project file browser.
 - Uncheck **Create external build system project**.
 
-.. image:: img/xcode_5_after_add_godot_source_to_project.png
+.. figure:: img/xcode_5_after_add_godot_source_to_project.png
+   :figclass: figure-w480
+   :align: center
 
-- Click **Next**.
-- Select **Create groups**.
+- Next select **Create groups** for the **Added folders** option and check *only* 
+  your command line indexing target in the **Add to targets** section.
 
-.. image:: img/xcode_6_after_add_godot_source_to_project_2.png
+.. figure:: img/xcode_6_after_add_godot_source_to_project_2.png
+   :figclass: figure-w480
+   :align: center
 
-- Check *only* your command line indexing target in the
-  **Add to targets** section.
-- Click finish. Xcode will now index the files. This may take a few minutes.
+- Xcode will now index the files. This may take a few minutes.
 - Once Xcode is done indexing, you should have jump-to-definition,
   autocompletion, and full syntax highlighting.
 
-Scheme setup
-------------
+Debugging the project
+---------------------
 
-To enable debugging support, edit the external build target's build scheme:
+To enable debugging support you need to edit the external build target's build and run schemes.
 
 - Open the scheme editor of the external build target.
-- Expand the **Build** menu.
-- Goto **Post Actions**.
-- Add a new script run action, select your project in **Provide build settings from**
-  as this allows you to use the``${PROJECT_DIR}`` variable.
+- Locate the **Build > Post Actions** section.
+- Add a new script run action
+- Under **Provide build settings from** select your project. This allows to reference 
+  the project directory within the script.
+- Create a script that will give the binary a name that Xcode can recognize, e.g.:
 
-.. image:: img/xcode_7_setup_build_post_action.png
+.. code-block:: shell
 
-- Write a script that gives the binary a name that Xcode will recognize, such as:
-  ``ln -f ${PROJECT_DIR}/godot/bin/godot.osx.tools.64 ${PROJECT_DIR}/godot/bin/godot``
+  ln -f ${PROJECT_DIR}/godot/bin/godot.osx.tools.64 ${PROJECT_DIR}/godot/bin/godot
+
+.. figure:: img/xcode_7_setup_build_post_action.png
+   :figclass: figure-w480
+   :align: center
+
 - Build the external build target.
 
-Edit the external build target's Run scheme:
+- Open the scheme editor again and select **Run**.
 
-- Open the scheme editor again.
-- Click **Run**.
-
-.. image:: img/xcode_8_setup_run_scheme.png
+.. figure:: img/xcode_8_setup_run_scheme.png
+   :figclass: figure-w480
+   :align: center
 
 - Set the **Executable** to the file you linked in your post-build action script.
-- Check **Debug executable** if it isn't checked already.
-- You can go to **Arguments** tab and specify the full path to a
-  ``project.godot`` file to debug the editor instead of the project manager.
-  Alternatively, use ``--path`` to point to a project *folder* which will be
-  run directly (instead of opening the editor).
+- Check **Debug executable**.
+- You can add two arguments on the **Arguments** tab:
+  the ``-e`` flag opens the editor instead of the project manager, and the ``--path`` argument
+  tells the executable to open the specified project (must be provided as an *absolute* path 
+  to the project root, not the ``project.godot`` file).
 
-Test the Run scheme:
-
-- Set a breakpoint in ``platform/osx/godot_main_osx.mm``.
-- If all goes well, it should break at the specified breakpoint.
+To check that everything is working, put a breakpoint in ``platform/osx/godot_main_osx.mm`` and
+run the project.
 
 If you run into any issues, ask for help in one of
 `Godot's community channels <https://godotengine.org/community>`__.

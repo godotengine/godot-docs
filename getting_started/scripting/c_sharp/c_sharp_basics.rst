@@ -50,7 +50,7 @@ Make sure you at least have the .NET Framework 4.5 targeting pack installed, you
 Windows (JetBrains Rider)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-JetBrains Rider comes with bundled MSBuild, so you just need a recent .NET Framework Developer Pack.
+JetBrains Rider comes with bundled MSBuild, so nothing extra is required.
 Make sure to set the following preferences:
 
 - In Godot:
@@ -60,7 +60,7 @@ Make sure to set the following preferences:
 
 - In Rider:
 
-   - ``TargetFrameworkVersion`` in ``csproj`` should match the installed .NET Framework Developer Pack.
+   - Set ``MSBuild version`` to either bundled with Rider or .NET Core.
    - Install **Godot support** plugin.
 
 macOS and Linux

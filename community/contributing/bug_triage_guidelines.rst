@@ -62,7 +62,7 @@ The following labels are currently defined in the Godot repository:
 -  *Junior job*: the issue is *assumed* to be an easy one to fix, which makes
    it a great fit for junior contributors who need to become familiar with
    the code base.
--  *Needs rebase*: the issue need a git rebase to be merged.
+-  *Needs rebase*: the issue need a Git rebase to be merged.
 -  *Needs testing*: the issue/pull request could not be completely tested
    and thus need further testing. This can mean that it needs to be tested
    on different hardware/software configurations or even that the steps to

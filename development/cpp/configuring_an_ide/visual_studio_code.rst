@@ -3,47 +3,104 @@
 Visual Studio Code
 ==================
 
-Visual Studio Code is a free cross-platform IDE (not to be confused with
-:ref:`doc_configuring_an_ide_vs`). You can get it
-`from Microsoft <https://code.visualstudio.com/>`__.
+`Visual Studio Code <https://code.visualstudio.com>`_ is a free cross-platform IDE 
+by `Microsoft <https://microsoft.com>`_ (not to be confused with :ref:`doc_configuring_an_ide_vs`).
 
+Importing the project
+---------------------
 
 - Make sure the C/C++ extension is installed. You can find instructions in
-  the `documentation <https://code.visualstudio.com/docs/languages/cpp>`_.
-- Open the cloned Godot folder in Visual Studio Code with
+  the `official documentation <https://code.visualstudio.com/docs/languages/cpp>`_.
+- From the Visual Studio Code's main screen open the Godot root folder with
   **File > Open Folder...**.
+- Press :kbd:`Ctrl + Shift + P` to open the command prompt window and enter *Configure Task*.
 
-In order to build the project, you need two configuration files:
-``launch.json`` and ``tasks.json``. To create them:
+.. figure:: img/vscode_configure_task.png
+   :align: center
 
-- Open the **Debug** view by pressing :kbd:`Ctrl + Shift + D` and select the
-  cogwheel with an orange dot:
+- Select the **Create tasks.json file from template** option.
 
-.. image:: img/vscode_1_create_launch.json.png
+.. figure:: img/vscode_create_tasksjson.png
+   :align: center
 
-- Select **C++ (GDB/LLDB)** (it might be named differently on macOS or Windows).
+- Then select **Others**.
 
-- Update ``launch.json`` to match:
+.. figure:: img/vscode_create_tasksjson_others.png
+   :align: center
 
-.. image:: img/vscode_2_launch.json.png
+- Within the ``tasks.json`` file find the ``"tasks"`` array and add a new section to it:
 
-If you're following this guide on macOS or Windows, you will have to adjust
-``godot.linuxbsd.tools.64`` accordingly.
+.. code-block:: js
 
-- Create a ``tasks.json`` file by starting the Debug process with :kbd:`F5`.
-  Visual Studio Code will show a dialog with a **Configure Task** button.
-  Choose it and select **Create tasks.json file from template**, then select **Others**.
+  {
+    "label": "build",
+    "type": "shell",
+    "command": "scons",
+    "group": "build",
+    "args": [
+      "platform=x11", // Change to your current platform
+      "target=debug",
+      "-j4"
+    ],
+    "problemMatcher": "$msCompile"
+  }
 
-- Update ``tasks.json`` to match:
+.. figure:: img/vscode_3_tasks.json.png
+   :figclass: figure-w480
+   :align: center
 
-.. image:: img/vscode_3_tasks.json.png
+   An example of a filled out ``tasks.json``.
 
-If you're following this guide on macOS or Windows, you will have to adjust
-``platform=linuxbsd`` accordingly.
+Arguments are can be different based on your own setup and needs. See 
+:ref:`doc_introduction_to_the_buildsystem` for a full list of arguments.
 
-- You can now start the Debug process again to test that everything works.
-- If the build phase fails, check the console for hints. On Linux, it's most
-  likely due to missing dependencies. Check :ref:`doc_compiling_for_linuxbsd`.
+Debugging the project
+---------------------
+
+To run and debug the project you need to create a new configuration in the ``launch.json`` file.
+
+- Press :kbd:`Ctrl + Shift + D` to open the Run panel.
+- If ``launch.json`` file is missing you will be prompted to create a new one.
+
+.. figure:: img/vscode_1_create_launch.json.png
+   :align: center
+
+- Select **C++ (GDB/LLDB)**. There may be another platform specific option here. If selected,
+  adjust the configuration example provided accordingly.
+- Within the ``launch.json`` file find the ``"configurations"`` array and add a new section to it:
+
+.. code-block:: js
+
+  {
+    "name": "Launch",
+    "type": "cppdbg",
+    "request": "launch",
+    "program": "${workspaceFolder}/bin/godot.x11.tools.64",
+                                      // Change to your current platform
+    "args": [ "-e" ],
+    "stopAtEntry": false,
+    "cwd": "${workspaceFolder}",
+    "environment": [],
+    "externalConsole": true,
+    "MIMode": "gdb",
+    "setupCommands": [
+      {
+        "description": "Enable pretty-printing for gdb",
+        "text": "-enable-pretty-printing",
+        "ignoreFailures": true
+      }
+    ],
+    "preLaunchTask": "build"
+  }
+
+.. figure:: img/vscode_2_launch.json.png
+   :figclass: figure-w480
+   :align: center
+
+   An example of a filled out ``launch.json``.
+
+The name under ``program`` depends on your build configuration,
+e.g. ``godot.x11.tools.64`` for 64-bit X11 platform with ``tools`` enabled.
 
 If you run into any issues, ask for help in one of
 `Godot's community channels <https://godotengine.org/community>`__.

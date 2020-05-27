@@ -11,7 +11,7 @@ Platform support
 
 - **Linux:** `Download an official Linux server binary <https://godotengine.org/download/server>`__.
   To compile a server binary from source, follow instructions in
-  :ref:`doc_compiling_for_linuxbsd`.
+  :ref:`doc_compiling_for_x11`.
 - **macOS:** :ref:`Compile a server binary from source for macOS <doc_compiling_for_osx>`.
 - **Windows:** There is no dedicated server build for Windows yet. As an alternative,
   you can use the ``--no-window`` command-line argument to prevent Godot from

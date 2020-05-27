@@ -5,54 +5,83 @@ KDevelop
 
 `KDevelop <https://www.kdevelop.org>`_ is a free, open source IDE for all desktop platforms.
 
-Start by opening KDevelop and choosing **Open Project**.
+Importing the project
+---------------------
 
-.. image:: img/kdevelop_newproject.png
+- From the KDevelop's main screen select **Open Project**.
 
-Choose the directory where you cloned Godot.
+.. figure:: img/kdevelop_newproject.png
+   :figclass: figure-w480
+   :align: center
 
-On the next screen, choose **Custom Build System** for the **Project Manager**.
+   KDevelop's main screen.
 
-.. image:: img/kdevelop_custombuild.png
+- Navigate to the Godot root folder and select it.
+- On the next screen, choose **Custom Build System** for the **Project Manager**.
 
-Now that the project has been imported, open the project configuration.
+.. figure:: img/kdevelop_custombuild.png
+   :figclass: figure-w480
+   :align: center
 
-.. image:: img/kdevelop_openconfig.png
+- After the project has been imported, open the project configuration by right-clicking 
+  on it in the **Projects** panel and selecting **Open Configuration..** option.
 
-Add the following includes/imports:
+.. figure:: img/kdevelop_openconfig.png
+   :figclass: figure-w480
+   :align: center
 
-.. code-block:: none
+- Under **Language Support** open the **Includes/Imports** tab and add the following paths:
 
-    .  // a dot to indicate the root of the Godot project
-    core/
-    core/os/
-    core/math/
-    drivers/
-    platform/linuxbsd/  // make that platform/osx/ if you're using macOS
+  .. code-block:: none
 
-.. image:: img/kdevelop_addincludes.png
+     .  // A dot, to indicate the root of the Godot project
+     core/
+     core/os/
+     core/math/
+     drivers/
+     platform/<your_platform>/  // Replace <your_platform> with a folder 
+                                   corresponding to your current platform
 
-Apply the changes.
+.. figure:: img/kdevelop_addincludes.png
+   :figclass: figure-w480
+   :align: center
 
-Switch to the **Custom Build System** tab. Add a build configuration
-and keep the build directory blank. Enable build tools and add ``scons``
-as the executable then add ``platform=linuxbsd target=debug`` (``platform=osx``
-if you're on macOS) as the arguments.
+- Apply the changes.
+- Under **Custom Build System** add a new build configuration with the following settings:
 
-.. image:: img/kdevelop_buildconfig.png
+  +-----------------+------------------------------------------------------------------------------+
+  | Build Directory | *blank*                                                                      |
+  +-----------------+------------------------------------------------------------------------------+
+  | Enable          | **True**                                                                     |
+  +-----------------+------------------------------------------------------------------------------+
+  | Executable      | **scons**                                                                    |
+  +-----------------+------------------------------------------------------------------------------+
+  | Arguments       | See :ref:`doc_introduction_to_the_buildsystem` for a full list of arguments. |
+  +-----------------+------------------------------------------------------------------------------+
 
-Next, we need to tell KDevelop where to find the binary.
-From the **Run** menu, choose **Configure Launches**.
+.. figure:: img/kdevelop_buildconfig.png
+   :figclass: figure-w480
+   :align: center
 
-.. image:: img/kdevelop_configlaunches.png
+- Apply the changes and close the configuration window.
 
-Click **Add** if no launcher exists. Then add the path to your
-executable in the executable section. Your executable should be located
-in the ``bin/`` subdirectory and should be named something like
-``godot.linuxbsd.tools.64`` (the name could be different depending on your
-platform and build options).
+Debugging the project
+---------------------
 
-.. image:: img/kdevelop_configlaunches2.png
+- Select **Run > Configure Launches...** from the top menu.
+
+.. figure:: img/kdevelop_configlaunches.png
+   :figclass: figure-w480
+   :align: center
+
+- Click **Add** to create a new launch configuration.
+- Select **Executable** option and specify the path to your executable located in 
+  the ``<Godot root directory>/bin`` folder. The name depends on your build configuration,
+  e.g. ``godot.x11.tools.64`` for 64-bit X11 platform with ``tools`` enabled.
+
+.. figure:: img/kdevelop_configlaunches2.png
+   :figclass: figure-w480
+   :align: center
 
 If you run into any issues, ask for help in one of
 `Godot's community channels <https://godotengine.org/community>`__.
