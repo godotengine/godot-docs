@@ -95,8 +95,6 @@ Methods
 Constants
 ---------
 
-.. _class_Color_constant_gray:
-
 .. _class_Color_constant_aliceblue:
 
 .. _class_Color_constant_antiquewhite:
@@ -196,6 +194,8 @@ Constants
 .. _class_Color_constant_gold:
 
 .. _class_Color_constant_goldenrod:
+
+.. _class_Color_constant_gray:
 
 .. _class_Color_constant_green:
 
@@ -387,8 +387,6 @@ Constants
 
 .. _class_Color_constant_yellowgreen:
 
-- **gray** = **Color( 0.75, 0.75, 0.75, 1 )** --- Gray color.
-
 - **aliceblue** = **Color( 0.94, 0.97, 1, 1 )** --- Alice blue color.
 
 - **antiquewhite** = **Color( 0.98, 0.92, 0.84, 1 )** --- Antique white color.
@@ -488,6 +486,8 @@ Constants
 - **gold** = **Color( 1, 0.84, 0, 1 )** --- Gold color.
 
 - **goldenrod** = **Color( 0.85, 0.65, 0.13, 1 )** --- Goldenrod color.
+
+- **gray** = **Color( 0.75, 0.75, 0.75, 1 )** --- Gray color.
 
 - **green** = **Color( 0, 1, 0, 1 )** --- Green color.
 
