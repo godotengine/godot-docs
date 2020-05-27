@@ -158,6 +158,13 @@ has value 4 and ``Wind`` corresponds to value 8. Usually, constants
 should be defined accordingly (e.g. ``const ELEMENT_WIND = 8`` and so
 on).
 
+Export hints are also provided for the physics and render layers defined in the project settings::
+
+    export(int, LAYERS_2D_PHYSICS) var layers_2d_physics
+    export(int, LAYERS_2D_RENDER) var layers_2d_render
+    export(int, LAYERS_3D_PHYSICS) var layers_3d_physics
+    export(int, LAYERS_3D_RENDER) var layers_3d_render
+
 Using bit flags requires some understanding of bitwise operations. If in
 doubt, boolean variables should be exported instead.
 
