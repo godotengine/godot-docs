@@ -405,7 +405,7 @@ clear its content. Let's animate the ``animated_health`` value. Call the
  .. code-tab:: gdscript GDScript
 
     func update_health(new_value):
-        tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.6, Tween.TRANS_LINEAR)
+        tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.6)
 
  .. code-tab:: csharp
 
@@ -437,13 +437,6 @@ code this part, but it's going to be ``animated_health``. The end point
 of the animation is the ``Player``'s ``health`` after the
 ``health_changed``: that's ``new_value``. And ``0.6`` is the animation's
 duration in seconds.
-
-::
-
-    ...  0.6, Tween.TRANS_LINEAR)
-
-The last two arguments are constants from the ``Tween`` class.
-``TRANS_LINEAR`` means the animation should be linear.
 
 The animation will not play until we activated the ``Tween`` node with
 ``tween.start()``. We only have to do this once if the node is not
@@ -478,7 +471,7 @@ So far, the update\_health method looks like this:
  .. code-tab:: gdscript GDScript
 
     func update_health(new_value):
-        tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.6, Tween.TRANS_LINEAR)
+        tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.6)
         if not tween.is_active():
             tween.start()
 
@@ -642,7 +635,7 @@ We then have to call the ``interpolate_property`` method of the
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    tween.interpolate_property(self, "modulate", start_color, end_color, 1.0, Tween.TRANS_LINEAR)
+    tween.interpolate_property(self, "modulate", start_color, end_color, 1.0)
 
  .. code-tab:: csharp
 
@@ -660,7 +653,7 @@ method:
     func _on_Player_died():
         var start_color = Color(1.0, 1.0, 1.0, 1.0)
         var end_color = Color(1.0, 1.0, 1.0, 0.0)
-        tween.interpolate_property(self, "modulate", start_color, end_color, 1.0, Tween.TRANS_LINEAR)
+        tween.interpolate_property(self, "modulate", start_color, end_color, 1.0)
 
  .. code-tab:: csharp
 
