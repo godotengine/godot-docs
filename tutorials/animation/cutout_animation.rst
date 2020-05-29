@@ -42,7 +42,7 @@ Godot provides tools for working with cutout rigs, and is ideal for the workflow
    :ref:`Polygon2D <class_Polygon2D>`
    allowing UV animation, deformations, etc.
 -  **Particle Systems**: A cutout animation rig can be combined with particle
-   systems. This can useful for magic effects, jetpacks, etc.
+   systems. This can be useful for magic effects, jetpacks, etc.
 -  **Custom Colliders**: Set colliders and influence areas in different
    parts of the skeletons, great for bosses and fighting games.
 -  **Animation Tree**: Allows complex combinations and blending between
@@ -121,7 +121,7 @@ their parents:
 We want the left arm to appear *behind*
 the hip and the torso. We could move the left arm nodes behind the hip (above
 the hip node in the scene hierarchy), but then the left arm is no longer in its
-proper place in the hierarchy. This means it wouldn't be affected the movement
+proper place in the hierarchy. This means it wouldn't be affected by the movement
 of the torso. We'll fix this problem with ``RemoteTransform2D`` nodes.
 
 .. note:: You can also fix depth ordering problems by adjusting the Z property
@@ -353,12 +353,12 @@ and/or RemoteTransform2D nodes. They provide overlapping functionality.
 Setting easing curves for multiple keys
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To apply the same the easing curve to multiple keyframes at once:
+To apply the same easing curve to multiple keyframes at once:
 
 1. Select the relevant keys.
-2. Click on the pencil icon in the bottom right of the animation panel, this
+2. Click on the pencil icon in the bottom right of the animation panel. This
    will open the transition editor.
-3. In the transition editor click on the desired curve to apply it.
+3. In the transition editor, click on the desired curve to apply it.
 
 .. image:: img/tuto_cutout24.png
 
