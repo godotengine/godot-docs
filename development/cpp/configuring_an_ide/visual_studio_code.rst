@@ -77,7 +77,7 @@ To run and debug the project you need to create a new configuration in the ``lau
     "request": "launch",
     "program": "${workspaceFolder}/bin/godot.linuxbsd.tools.64",
                                       // Change to your current platform
-    "args": [ "-e" ],
+    "args": [ "-e", "--path", "path-to-your-godot-project-folder" ], // Change to the project you want to test with
     "stopAtEntry": false,
     "cwd": "${workspaceFolder}",
     "environment": [],
