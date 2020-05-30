@@ -3,7 +3,7 @@
 Visual Studio Code
 ==================
 
-`Visual Studio Code <https://code.visualstudio.com>`_ is a free cross-platform IDE 
+`Visual Studio Code <https://code.visualstudio.com>`_ is a free cross-platform IDE
 by `Microsoft <https://microsoft.com>`_ (not to be confused with :ref:`doc_configuring_an_ide_vs`).
 
 Importing the project
@@ -51,7 +51,7 @@ Importing the project
 
    An example of a filled out ``tasks.json``.
 
-Arguments are can be different based on your own setup and needs. See 
+Arguments are can be different based on your own setup and needs. See
 :ref:`doc_introduction_to_the_buildsystem` for a full list of arguments.
 
 Debugging the project
@@ -75,9 +75,11 @@ To run and debug the project you need to create a new configuration in the ``lau
     "name": "Launch",
     "type": "cppdbg",
     "request": "launch",
+    // Change the path below to match your current platform.
     "program": "${workspaceFolder}/bin/godot.linuxbsd.tools.64",
-                                      // Change to your current platform
-    "args": [ "-e", "--path", "path-to-your-godot-project-folder" ], // Change to the project you want to test with
+    // Change the arguments below for the project you want to test with.
+    // To run the project instead of editing it, remove the "--editor" argument.
+    "args": [ "--editor", "--path", "path-to-your-godot-project-folder" ],
     "stopAtEntry": false,
     "cwd": "${workspaceFolder}",
     "environment": [],
