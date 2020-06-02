@@ -55,7 +55,7 @@ The instructions below assumes that you're using Android Studio.
 
 2.  Add the Godot engine library as a dependency to your plugin module:
 
-    -  Download the Godot engine library (``godot-lib.<version>.<status>.aar``) from the `Godot download page <https://godotengine.org/download>`_ (e.g: ``godot-lib.4.0.0.stable.aar``).
+    -  Download the Godot engine library (``godot-lib.<version>.<status>.aar``) from the `Godot download page <https://godotengine.org/download>`_ (e.g: ``godot-lib.4.0.stable.aar``).
 
     -   Follow `these instructions <https://developer.android.com/studio/projects/android-library#AddDependency>`__ to add
         the Godot engine library as a dependency for your plugin.
