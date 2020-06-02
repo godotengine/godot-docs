@@ -51,7 +51,7 @@ Importing the project
 
    An example of a filled out ``tasks.json``.
 
-Arguments are can be different based on your own setup and needs. See
+Arguments can be different based on your own setup and needs. See
 :ref:`doc_introduction_to_the_buildsystem` for a full list of arguments.
 
 Debugging the project
