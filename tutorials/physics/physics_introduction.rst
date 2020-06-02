@@ -84,7 +84,16 @@ may not be accurate for the current frame.
 In order to avoid this inaccuracy, any code that needs to access a body's properties should
 be run in the :ref:`Node._physics_process() <class_Node_method__physics_process>`
 callback, which is called before each physics step at a constant frame rate
-(60 times per second by default).
+(60 times per second by default). This method will be passed a ``delta``
+parameter, which is a floating-point number equal to the time passed in
+*seconds* since the last step. When using the default 60 Hz physics update rate,
+it will typically be equal to ``0.01666...`` (but not always, see below).
+
+.. note::
+
+    It's recommended to always use the ``delta`` parameter when relevant in your
+    physics calculations, so that the game behaves correctly if you change the
+    physics update rate or if the player's device can't keep up.
 
 Collision layers and masks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
