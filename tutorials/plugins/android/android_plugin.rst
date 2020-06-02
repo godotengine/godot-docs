@@ -41,7 +41,7 @@ As a prerequisite, make sure you understand how to set up a :ref:`custom build e
 At its core, a Godot Android plugin is a `Android archive library <https://developer.android.com/studio/projects/android-library#aar-contents>`_ (*aar* archive file)
 with the following caveats:
 
--  The library must have a dependency on the Godot engine library (``godot-lib.x.y.aar``). A stable version is made available for each Godot release.
+-  The library must have a dependency on the Godot engine library (``godot-lib.<version>.<status>.aar``). A stable version is made available for each Godot release on the `Godot download page <https://godotengine.org/download>`_.
 
 -  The library must include a specifically configured ``<meta-data>`` tag in its manifest file.
 
@@ -55,7 +55,7 @@ The instructions below assumes that you're using Android Studio.
 
 2.  Add the Godot engine library as a dependency to your plugin module:
 
-    -  Download the Godot engine library (godot-lib.x.y.aar)
+    -  Download the Godot engine library (``godot-lib.<version>.<status>.aar``) from the `Godot download page <https://godotengine.org/download>`_ (e.g: ``godot-lib.4.0.0.stable.aar``).
 
     -   Follow `these instructions <https://developer.android.com/studio/projects/android-library#AddDependency>`__ to add
         the Godot engine library as a dependency for your plugin.
