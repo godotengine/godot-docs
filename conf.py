@@ -13,12 +13,23 @@ needs_sphinx = "1.3"
 # Sphinx extension module names and templates location
 sys.path.append(os.path.abspath("_extensions"))
 extensions = [
-    "gdscript",
-    "godot_descriptions",
-    "sphinx_search.extension",
     "sphinx_tabs.tabs",
     "sphinx.ext.imgmath",
 ]
+
+# Warning when the Sphinx Tabs extension is used with unknown
+# builders (like the dummy builder) - as it doesn't cause errors,
+# we can ignore this so we still can treat other warnings as errors.
+sphinx_tabs_nowarn = True
+
+if not os.getenv("SPHINX_NO_GDSCRIPT"):
+    extensions.append("gdscript")
+
+if not os.getenv("SPHINX_NO_SEARCH"):
+    extensions.append("sphinx_search.extension")
+
+if not os.getenv("SPHINX_NO_DESCRIPTIONS"):
+    extensions.append("godot_descriptions")
 
 templates_path = ["_templates"]
 
