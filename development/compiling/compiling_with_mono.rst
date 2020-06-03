@@ -11,16 +11,18 @@ Requirements
 - Mono 5.12.0 or greater
 - MSBuild
 - NuGet
-- pkg-config
+- **On Linux/macOS only:** pkg-config
 
 You may need to import necessary certificates for NuGet to perform HTTPS
 requests.
 
 The recommended method is to use **curl**'s CA (Certificate Autorities) certificate bundle.
 
-Run the following commands to download and import it.
-On Windows, you can run it from the Mono command line prompt (or the regular prompt if you added Mono's ``bin`` directory to your ``PATH`` environment variable)::
+Run the following commands to download and import it. On Windows, you can run it
+from the Mono command line prompt (or the regular prompt if you added Mono's
+``bin`` directory to your ``PATH`` environment variable)::
 
+    # If using PowerShell, replace `curl` with `curl.exe` below.
     curl -LO https://curl.haxx.se/ca/cacert.pem
     cert-sync --user cacert.pem
 
@@ -45,7 +47,7 @@ By default, the Mono module is disabled when building. To enable it, add the
 option ``module_mono_enabled=yes`` to the SCons command line.
 
 Generate the glue
--------------------
+-----------------
 
 Glue sources are the wrapper functions that will be called by managed methods.
 These source files must be generated before building your final binaries. In
@@ -76,6 +78,7 @@ generate the Mono glue.
 
 Notes
 ^^^^^
+
 - **Do not build your final binaries with** ``mono_glue=no``.
   This disables C# scripting. This option must be used only for the temporary
   binary that will generate the glue. Godot will print a warning at startup if
@@ -121,6 +124,7 @@ Examples
 
 Example (Windows)
 ^^^^^^^^^^^^^^^^^
+
 ::
 
     # Build temporary binary
@@ -137,6 +141,7 @@ Example (Windows)
 
 Example (Linux, \*BSD)
 ^^^^^^^^^^^^^^^^^^^^^^
+
 ::
 
     # Build temporary binary
@@ -188,7 +193,7 @@ inside the ZIP archive:
 +-------------------------------------------------------+---------------------------------------------------------------+
 
 Editor
-^^^^^^^^
+^^^^^^
 
 The name of the data directory for the Godot editor will always be
 ``GodotSharp``. The contents of this directory are the following:
