@@ -18,6 +18,9 @@ Find the ``iap.gd`` script in:
 Copy it to your project, then open the Project Settings, add it to the AutoLoad
 list and name it as IAP so that we can reference it anywhere in the game.
 
+Since the introduction of the android module system, you now also need to add ``org/godotengine/godot/GodotPaymentV3`` to your list of selected android modules.
+This list is found under the Android section of the Project Settings. It is called Modules, and is a comma-separated list of modules that will be built into your android apk.
+
 Getting the product details
 ---------------------------
 
