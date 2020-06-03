@@ -17,7 +17,7 @@ shut down in the editor under Project > Version Control.
 Official Git plugin
 -------------------
 
-Git is supported with an official plugin. You can find the latest
+Using Git from inside the editor is supported with an official plugin. You can find the latest
 releases `here <https://github.com/godotengine/godot-git-plugin/releases>`_ 
 (it is not available in the asset library). Documentation on how
 to use the Git plugin can be found `here <https://github.com/godotengine/godot-git-plugin/wiki>`_.
