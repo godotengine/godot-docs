@@ -181,8 +181,41 @@ linkcheck_timeout = 10
 
 # -- I18n settings --------------------------------------------------------
 
+# Godot localization is handled via https://github.com/godotengine/godot-docs-l10n
+# where the main docs repo is a submodule. Therefore the translated material is
+# actually in the parent folder of this conf.py, hence the "../".
+
 locale_dirs = ["../sphinx/po/"]
 gettext_compact = False
+
+# We want to host the localized images in godot-docs-l10n, but Sphinx does not provide
+# the necessary feature to do so. `figure_language_filename` has `{root}` and `{path}`,
+# but they resolve to (host) absolute paths, so we can't use them as is to access "../".
+# However, Python is glorious and lets us redefine Sphinx's internal method that handles
+# `figure_language_filename`, so we do our own post-processing to fix the absolute path
+# and point to the parallel folder structure in godot-docs-l10n.
+# Note: Sphinx's handling of `figure_language_filename` may change in the future, monitor
+# https://github.com/sphinx-doc/sphinx/issues/7768 to see what would be relevant for us.
+figure_language_filename = "{root}.{language}{ext}"
+
+import sphinx
+cwd = os.getcwd()
+
+sphinx_original_get_image_filename_for_language = sphinx.util.i18n.get_image_filename_for_language
+
+def godot_get_image_filename_for_language(filename, env):
+    """
+    Hack the absolute path returned by Sphinx based on `figure_language_filename`
+    to insert our `../images` relative path to godot-docs-l10n's images folder,
+    which mirrors the folder structure of the docs repository.
+    The returned string should also be absolute so that `os.path.exists` can properly
+    resolve it when trying to concatenate with the original doc folder.
+    """
+    path = sphinx_original_get_image_filename_for_language(filename, env)
+    path = os.path.abspath(os.path.join("../images/", os.path.relpath(path, cwd)))
+    return path
+
+sphinx.util.i18n.get_image_filename_for_language = godot_get_image_filename_for_language
 
 # Couldn't find a way to retrieve variables nor do advanced string
 # concat from reST, so had to hardcode this in the "epilog" added to
