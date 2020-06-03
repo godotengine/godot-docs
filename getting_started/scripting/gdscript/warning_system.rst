@@ -11,7 +11,7 @@ to runtime errors.
 You can configure warnings in the Project Settings under the section
 called **Gdscript**:
 
-.. figure:: ./img/typed_gdscript_warning_system_settings.png
+.. figure:: img/typed_gdscript_warning_system_settings.png
    :alt: Warning system project settings
 
    Warning system project settings
@@ -19,7 +19,7 @@ called **Gdscript**:
 You can find a list of warnings for the active GDScript file in the
 script editor's status bar. The example below has 3 warnings:
 
-.. figure:: ./img/typed_gdscript_warning_example.png
+.. figure:: img/typed_gdscript_warning_example.png
    :alt: Warning system example
 
    Warning system example
@@ -30,7 +30,7 @@ right of the warning's description. Godot will add a comment above the
 corresponding line and the code won't trigger the corresponding warning
 anymore:
 
-.. figure:: ./img/typed_gdscript_warning_system_ignore.png
+.. figure:: img/typed_gdscript_warning_system_ignore.png
    :alt: Warning system ignore example
 
    Warning system ignore example
@@ -45,7 +45,7 @@ all warnings. Head to the ``GDScript`` section of the Project Settings to
 turn on this option. Here's the same file as the previous example with
 warnings as errors turned on:
 
-.. figure:: ./img/typed_gdscript_warning_system_errors.png
+.. figure:: img/typed_gdscript_warning_system_errors.png
    :alt: Warnings as errors
 
    Warnings as errors
