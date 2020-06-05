@@ -48,6 +48,7 @@
     --search-credits-link-color: #4392c5; /* derived from --link-color */
 
     --highlight-background-color: #f5ffe1;
+    --highlight-background-emph-color: #dbe6c3;
     --highlight-default-color: #404040;
     --highlight-comment-color: #408090;
     --highlight-keyword-color: #007020;
@@ -133,6 +134,7 @@
 
         /* Colors taken from the Godot script editor with the Adaptive theme */
         --highlight-background-color: #202531;
+        --highlight-background-emph-color: #2d3444;
         --highlight-default-color: rgba(255, 255, 255, 0.85);
         --highlight-comment-color: rgba(204, 206, 211, 0.5);
         --highlight-keyword-color: #ff7085;
@@ -190,7 +192,7 @@ legend,
 .rst-content .toctree-wrapper p.caption,
 .rst-versions {
     /* Use a system font stack for better performance (no Web fonts required) */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 h1,
@@ -534,6 +536,11 @@ code,
 
 .highlight {
     background-color: var(--highlight-background-color);
+}
+
+/* Emphasized lines */
+.highlight .hll {
+    background-color: var(--highlight-background-emph-color);
 }
 
 .highlight .gh /* Generic.Heading */,

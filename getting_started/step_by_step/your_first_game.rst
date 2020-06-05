@@ -629,6 +629,7 @@ choose one of the three animation types:
 
     public override void _Ready()
     {
+        var _mobTypes = GetNode<AnimatedSprite>("AnimatedSprite").Frames.GetAnimationNames();
         GetNode<AnimatedSprite>("AnimatedSprite").Animation = _mobTypes[_random.Next(0, _mobTypes.Length)];
     }
 
@@ -1094,6 +1095,7 @@ temporarily, such as "Get Ready".
         message.Text = "Dodge the\nCreeps!";
         message.Show();
 
+        await ToSignal(GetTree().CreateTimer(1), "timeout");
         GetNode<Button>("StartButton").Show();
     }
 

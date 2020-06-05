@@ -91,7 +91,7 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
             // Set the transform of the instances.
             for (int i = 0; i < multimesh.VisibleInstanceCount; i++)
             {
-                multimesh.SetInstanceTransform(i, new Transform(new Basis(), new Vector3(i * 20, 0, 0)));
+                multimesh.SetInstanceTransform(i, new Transform(Basis.Identity, new Vector3(i * 20, 0, 0)));
             }
         }
     }

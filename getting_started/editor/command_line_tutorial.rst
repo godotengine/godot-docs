@@ -277,11 +277,11 @@ instead of ``--export``. Their parameters and usage are the same.
 Running a script
 ----------------
 
-It is possible to run a simple .gd script from the command line. This
-feature is especially useful in large projects, for batch
+It is possible to run a simple ``.gd`` script from the command line.
+This feature is especially useful in large projects, e.g. for batch
 conversion of assets or custom import/export.
 
-The script must inherit from SceneTree or MainLoop.
+The script must inherit from ``SceneTree`` or ``MainLoop``.
 
 Here is a simple example of how it works:
 
@@ -301,5 +301,5 @@ And how to run it:
     # Prints "Hello!" to standard output.
     godot -s sayhello.gd
 
-If no project.godot exists at the path, current path is assumed to be the
-current working directory (unless ``-path`` is specified).
+If no ``project.godot`` exists at the path, current path is assumed to be the
+current working directory (unless ``--path`` is specified).

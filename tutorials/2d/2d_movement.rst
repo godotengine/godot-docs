@@ -13,6 +13,8 @@ the movement in most 2D games is based on a small number of designs.
 We'll use :ref:`KinematicBody2D <class_KinematicBody2D>` for these examples,
 but the principles will apply to other node types (Area2D, RigidBody2D) as well.
 
+.. _doc_2d_movement_setup:
+
 Setup
 -----
 
@@ -98,7 +100,7 @@ Add a script to the kinematic body and add the following code:
         }
     }
 
-In the ``get_input()`` function we check for the four key events and sum them
+In the ``get_input()`` function, we check for the four key events and sum them
 up to get the velocity vector. This has the benefit of making two opposite keys
 cancel each other out, but will also result in diagonal movement being faster
 due to the two directions being added together.
@@ -108,6 +110,12 @@ its *length* to ``1``, and multiply by the desired speed.
 
 .. tip:: If you've never used vector math before, or need a refresher,
          you can see an explanation of vector usage in Godot at :ref:`doc_vector_math`.
+
+.. note::
+
+    If the code above does nothing when you press the keys, double-check that
+    you've set up input actions correctly as described in the
+    :ref:`doc_2d_movement_setup` part of this tutorial.
 
 Rotation + movement
 -------------------

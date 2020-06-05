@@ -170,9 +170,9 @@ base unit for 2D scenes is pixels.** Even though the engines are
 separate, you can render 2D in 3D, 3D in 2D, and overlay 2D sprites and
 interfaces over your 3D world.
 
-.. |image0| image:: ./img/engine_design_01.png
-.. |image1| image:: ./img/engine_design_02.png
-.. |image2| image:: ./img/engine_design_03.png
-.. |image3| image:: ./img/engine_design_visual_script.png
-.. |image4| image:: ./img/engine_design_fsm_plugin.png
-.. |image5| image:: ./img/engine_design_rpg_in_a_box.png
+.. |image0| image:: img/engine_design_01.png
+.. |image1| image:: img/engine_design_02.png
+.. |image2| image:: img/engine_design_03.png
+.. |image3| image:: img/engine_design_visual_script.png
+.. |image4| image:: img/engine_design_fsm_plugin.png
+.. |image5| image:: img/engine_design_rpg_in_a_box.png

@@ -1,12 +1,12 @@
 os: linux
 dist: bionic
-language: python
+language: python - "3.8"
 
-python:
-  - "3.8"
-
-stages:
-  - build
+env:
+  global:
+    - SPHINX_NO_GDSCRIPT=1
+    - SPHINX_NO_SEARCH=1
+    - SPHINX_NO_DESCRIPTIONS=1
 
 matrix:
   include:
@@ -18,16 +18,17 @@ matrix:
           packages:
             - dos2unix
             - recode
-            - texlive-full
+
+install:
+  - pip install -r requirements.txt
+  - pip install codespell
 
 script:
-  - bash ./format.sh
+  - bash _tools/format.sh
 
   # Check for possible typos
-  - pip install codespell
-  - codespell -I codespell-ignore.txt {about,community,development,getting_started,tutorials}/**/*.rst
+  - codespell -I _tools/codespell-ignore.txt {about,community,development,getting_started,tutorials}/**/*.rst
 
-  - pip install -r requirements.txt
   # TODO: Add `-W` to turn warnings into errors.
   # This can only be done once all warnings have been fixed.
-  - sphinx-build --color -b html -d _build/doctrees . _build/html
+  - sphinx-build --color -b dummy -d _build/doctrees . _build/html

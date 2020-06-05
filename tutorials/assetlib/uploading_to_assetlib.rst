@@ -162,4 +162,4 @@ You may have some luck accelerating the approval process by messaging the
 moderators/assetlib reviewers on IRC (the ``#godotengine-atelier`` channel on Freenode),
 or the official Discord server.
 
-.. |image0| image:: ./img/assetlib_submit.png
+.. |image0| image:: img/assetlib_submit.png

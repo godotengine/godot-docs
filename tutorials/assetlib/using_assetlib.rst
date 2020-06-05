@@ -171,18 +171,18 @@ which will take you through the same package installation procedure as with the
 assets downloaded directly via Godot that we just covered.
 
 
-.. |image0| image:: ./img/assetlib_website.png
-.. |image1| image:: ./img/assetlib_search.png
-.. |image2| image:: ./img/assetlib_asset.png
-.. |image3| image:: ./img/assetlib_register-login.png
-.. |image4| image:: ./img/assetlib_register.png
-.. |image5| image:: ./img/assetlib_login.png
-.. |image6| image:: ./img/assetlib_login_header.png
-.. |image7| image:: ./img/assetlib_editor_workspace.png
-.. |image8| image:: ./img/assetlib_editor.png
-.. |image9| image:: ./img/assetlib_editor_asset.png
-.. |image10| image:: ./img/assetlib_editor_download.png
-.. |image11| image:: ./img/assetlib_editor_installer.png
-.. |image12| image:: ./img/assetlib_editor_installer_error.png
-.. |image13| image:: ./img/assetlib_editor_installer_success.png
-.. |image14| image:: ./img/assetlib_editor_projects.png
+.. |image0| image:: img/assetlib_website.png
+.. |image1| image:: img/assetlib_search.png
+.. |image2| image:: img/assetlib_asset.png
+.. |image3| image:: img/assetlib_register-login.png
+.. |image4| image:: img/assetlib_register.png
+.. |image5| image:: img/assetlib_login.png
+.. |image6| image:: img/assetlib_login_header.png
+.. |image7| image:: img/assetlib_editor_workspace.png
+.. |image8| image:: img/assetlib_editor.png
+.. |image9| image:: img/assetlib_editor_asset.png
+.. |image10| image:: img/assetlib_editor_download.png
+.. |image11| image:: img/assetlib_editor_installer.png
+.. |image12| image:: img/assetlib_editor_installer_error.png
+.. |image13| image:: img/assetlib_editor_installer_success.png
+.. |image14| image:: img/assetlib_editor_projects.png

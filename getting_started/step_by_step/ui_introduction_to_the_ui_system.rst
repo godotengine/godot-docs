@@ -216,7 +216,7 @@ right and bottom edges. On the other hand, margins represent a distance
 to the anchor position in pixels, while anchors are relative to the
 parent container's size.
 
-.. figure:: ./img/ui_anchor_and_margins.png
+.. figure:: img/ui_anchor_and_margins.png
 
    Margins are relative to the anchor position, which is relative to the
    anchors. In practice, you'll often let the container update margins
