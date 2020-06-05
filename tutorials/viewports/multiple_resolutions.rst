@@ -46,7 +46,7 @@ As an example, Steam shows that the most common *primary display resolution* is
 1920×1080, so a sensible approach is to develop a game for this resolution, then
 handle scaling for different sizes and aspect ratios.
 
-Godot provides a several useful tools to do this easily.
+Godot provides several useful tools to do this easily.
 
 Base size
 ---------
@@ -87,7 +87,7 @@ project settings to handle multiple resolutions.
 Stretch settings
 ----------------
 
-Stretch settings are located in the project settings, it's just a bunch
+Stretch settings are located in the project settings. They're just a bunch
 of configuration variables that provide several options:
 
 .. image:: img/stretchsettings.png
