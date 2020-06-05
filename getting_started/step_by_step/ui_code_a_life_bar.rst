@@ -25,8 +25,8 @@ You will learn:
 If you want to learn how to set up the interface instead, check out the
 step-by-step UI tutorials:
 
--  Create a main menu screen
--  Create a game user interface
+-  :doc:`ui_main_menu`
+-  :doc:`ui_game_user_interface`
 
 
 When you code a game, you want to build the core gameplay first: the
