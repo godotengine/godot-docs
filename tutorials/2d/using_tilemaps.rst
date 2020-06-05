@@ -81,8 +81,8 @@ TileSet".
 
 .. image:: img/tilemap_add_tileset.png
 
-When you do this, the "TileSet" panel will open at the bottom of the editor
-window:
+Click on the TileSet property, and the "TileSet" panel will open at the bottom
+of the editor window:
 
 .. image:: img/tilemap_tool.png
 
