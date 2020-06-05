@@ -90,14 +90,8 @@ Run the scene again and all of the balls will fall.
 Editing instances
 -----------------
 
-Open the ``Ball`` scene and add a ``PhysicsMaterial`` by opening the "Physics
-Material Override" dropdown in the Inspector dock and selecting "New
-PhysicsMaterial".
-
-.. image:: img/instancing_physicsmat1.png
-
-Then, expand the material by clicking on it, and set the ``Bounce`` property
-to ``1``.
+Open the ``Ball`` scene, expand the ``PhysicsMaterial`` by clicking on it,
+and set the ``Bounce`` property to ``1``.
 
 .. image:: img/instancing_physicsmat2.png
 
