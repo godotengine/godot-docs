@@ -36,3 +36,7 @@ ehthumbs_vista.db
 $RECYCLE.BIN/
 logo.h
 *.autosave
+
+# Output of list-unused-images.sh tool
+tmp-unused-images
+tmp-unused-images-history

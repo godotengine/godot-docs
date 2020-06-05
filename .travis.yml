@@ -24,10 +24,10 @@ install:
   - pip install codespell
 
 script:
-  - bash ./format.sh
+  - bash _tools/format.sh
 
   # Check for possible typos
-  - codespell -I codespell-ignore.txt {about,community,development,getting_started,tutorials}/**/*.rst
+  - codespell -I _tools/codespell-ignore.txt {about,community,development,getting_started,tutorials}/**/*.rst
 
   # TODO: Add `-W` to turn warnings into errors.
   # This can only be done once all warnings have been fixed.
