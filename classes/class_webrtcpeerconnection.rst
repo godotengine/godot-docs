@@ -215,7 +215,7 @@ Call this method frequently (e.g. in :ref:`Node._process<class_Node_method__proc
 
 Sets the SDP description of the local peer. This should be called in response to :ref:`session_description_created<class_WebRTCPeerConnection_signal_session_description_created>`.
 
-If ``type`` is ``answer`` the peer will start emitting :ref:`ice_candidate_created<class_WebRTCPeerConnection_signal_ice_candidate_created>`.
+After calling this function the peer will start emitting :ref:`ice_candidate_created<class_WebRTCPeerConnection_signal_ice_candidate_created>` (unless an :ref:`Error<enum_@GlobalScope_Error>` different from :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` is returned).
 
 ----
 

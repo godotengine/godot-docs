@@ -47,8 +47,6 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`create_from_fnt<class_BitmapFont_method_create_from_fnt>` **(** :ref:`String<class_String>` path **)**                                                                                                                                            |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`get_char_size<class_BitmapFont_method_get_char_size>` **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0 **)** const                                                                                                                  |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                 | :ref:`get_kerning_pair<class_BitmapFont_method_get_kerning_pair>` **(** :ref:`int<class_int>` char_a, :ref:`int<class_int>` char_b **)** const                                                                                                          |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_Texture>`         | :ref:`get_texture<class_BitmapFont_method_get_texture>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                     |
@@ -159,14 +157,6 @@ Clears all the font data and settings.
 - :ref:`Error<enum_@GlobalScope_Error>` **create_from_fnt** **(** :ref:`String<class_String>` path **)**
 
 Creates a BitmapFont from the ``*.fnt`` file at ``path``.
-
-----
-
-.. _class_BitmapFont_method_get_char_size:
-
-- :ref:`Vector2<class_Vector2>` **get_char_size** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0 **)** const
-
-Returns the size of a character, optionally taking kerning into account if the next character is provided.
 
 ----
 

@@ -534,6 +534,8 @@ If ``true``, the GUI controls on the viewport will lay pixel perfectly.
 
 If ``true``, the viewport rendering will receive benefits from High Dynamic Range algorithm. High Dynamic Range allows the viewport to receive values that are outside the 0-1 range. In Godot HDR uses 16 bits, meaning it does not store the full range of a floating point number.
 
+**Note:** Requires :ref:`usage<class_Viewport_property_usage>` to be set to :ref:`USAGE_3D<class_Viewport_constant_USAGE_3D>` or :ref:`USAGE_3D_NO_EFFECTS<class_Viewport_constant_USAGE_3D_NO_EFFECTS>`, since HDR is not supported for 2D.
+
 ----
 
 .. _class_Viewport_property_keep_3d_linear:

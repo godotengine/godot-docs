@@ -63,7 +63,7 @@ Property Descriptions
 | *Getter*  | is_antialiased()       |
 +-----------+------------------------+
 
-If ``true``, the font is rendered with anti-aliasing.
+If ``true``, the font is rendered with anti-aliasing. This property applies both to the main font and its outline (if it has one).
 
 ----
 

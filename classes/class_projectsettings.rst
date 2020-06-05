@@ -4689,7 +4689,7 @@ Saves the configuration to the ``project.godot`` file.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save_custom** **(** :ref:`String<class_String>` file **)**
 
-Saves the configuration to a custom file.
+Saves the configuration to a custom file. The file extension must be ``.godot`` (to save in text-based :ref:`ConfigFile<class_ConfigFile>` format) or ``.binary`` (to save in binary format).
 
 ----
 

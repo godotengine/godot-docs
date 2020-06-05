@@ -20,6 +20,13 @@ EditorInterface gives you control over Godot editor's window. It allows customiz
 
 **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorPlugin.get_editor_interface<class_EditorPlugin_method_get_editor_interface>`.
 
+Properties
+----------
+
++-------------------------+------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`distraction_free_mode<class_EditorInterface_property_distraction_free_mode>` |
++-------------------------+------------------------------------------------------------------------------------+
+
 Methods
 -------
 
@@ -68,12 +75,23 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`select_file<class_EditorInterface_method_select_file>` **(** :ref:`String<class_String>` file **)**                                                      |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`set_distraction_free_mode<class_EditorInterface_method_set_distraction_free_mode>` **(** :ref:`bool<class_bool>` enter **)**                             |
-+-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`set_main_screen_editor<class_EditorInterface_method_set_main_screen_editor>` **(** :ref:`String<class_String>` name **)**                                |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`set_plugin_enabled<class_EditorInterface_method_set_plugin_enabled>` **(** :ref:`String<class_String>` plugin, :ref:`bool<class_bool>` enabled **)**     |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Property Descriptions
+---------------------
+
+.. _class_EditorInterface_property_distraction_free_mode:
+
+- :ref:`bool<class_bool>` **distraction_free_mode**
+
++----------+------------------------------------+
+| *Setter* | set_distraction_free_mode(value)   |
++----------+------------------------------------+
+| *Getter* | is_distraction_free_mode_enabled() |
++----------+------------------------------------+
 
 Method Descriptions
 -------------------
@@ -243,12 +261,6 @@ Saves the scene as a file at ``path``.
 - void **select_file** **(** :ref:`String<class_String>` file **)**
 
 Selects the file, with the path provided by ``file``, in the FileSystem dock.
-
-----
-
-.. _class_EditorInterface_method_set_distraction_free_mode:
-
-- void **set_distraction_free_mode** **(** :ref:`bool<class_bool>` enter **)**
 
 ----
 

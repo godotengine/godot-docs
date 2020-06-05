@@ -61,11 +61,11 @@ Enumerations
 
 enum **ShadowMode**:
 
-- **SHADOW_ORTHOGONAL** = **0** --- Renders the entire scene's shadow map from an orthogonal point of view. May result in blockier shadows on close objects.
+- **SHADOW_ORTHOGONAL** = **0** --- Renders the entire scene's shadow map from an orthogonal point of view. This is the fastest directional shadow mode. May result in blurrier shadows on close objects.
 
-- **SHADOW_PARALLEL_2_SPLITS** = **1** --- Splits the view frustum in 2 areas, each with its own shadow map.
+- **SHADOW_PARALLEL_2_SPLITS** = **1** --- Splits the view frustum in 2 areas, each with its own shadow map. This shadow mode is a compromise between :ref:`SHADOW_ORTHOGONAL<class_DirectionalLight_constant_SHADOW_ORTHOGONAL>` and :ref:`SHADOW_PARALLEL_4_SPLITS<class_DirectionalLight_constant_SHADOW_PARALLEL_4_SPLITS>` in terms of performance.
 
-- **SHADOW_PARALLEL_4_SPLITS** = **2** --- Splits the view frustum in 4 areas, each with its own shadow map.
+- **SHADOW_PARALLEL_4_SPLITS** = **2** --- Splits the view frustum in 4 areas, each with its own shadow map. This is the slowest directional shadow mode.
 
 ----
 
@@ -79,7 +79,7 @@ enum **ShadowDepthRange**:
 
 - **SHADOW_DEPTH_RANGE_STABLE** = **0** --- Keeps the shadow stable when the camera moves, at the cost of lower effective shadow resolution.
 
-- **SHADOW_DEPTH_RANGE_OPTIMIZED** = **1** --- Tries to achieve maximum shadow resolution. May result in saw effect on shadow edges.
+- **SHADOW_DEPTH_RANGE_OPTIMIZED** = **1** --- Tries to achieve maximum shadow resolution. May result in saw effect on shadow edges. This mode typically works best in games where the camera will often move at high speeds, such as most racing games.
 
 Property Descriptions
 ---------------------
