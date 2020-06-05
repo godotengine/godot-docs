@@ -211,10 +211,9 @@ Changing the `origin` vector is called a *translating* the transformation
 matrix. Translating is basically a technical term for "moving" the
 object, but it explicitly does not involve any rotation.
 
-This should be fairly common sense, assuming that you read and
-understood the vector tutorial, but let's work through an example.
-Again, we'll start with the identity transform, but this time we'll
-also keep track of the origin vector:
+Let's work through an example to help understand this. We will start
+with the identity transform like last time, except we will keep track
+of the origin vector this time.
 
 .. image:: img/matrices_and_transforms/identity-origin.png
 
@@ -236,7 +235,8 @@ Putting it all together
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 We're going to apply everything we mentioned so far onto one transform.
-To follow along, get a simple project with a Sprite set to the Godot logo.
+To follow along, create a simple project with a Sprite node and use the 
+Godot logo for the texture resource.
 
 Let's set the translation to (350, 150), rotate by -0.5 rad, and scale by 3.
 I've posted a screenshot, and the code to reproduce it, but I encourage
