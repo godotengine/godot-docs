@@ -1095,6 +1095,7 @@ temporarily, such as "Get Ready".
         message.Text = "Dodge the\nCreeps!";
         message.Show();
 
+        await ToSignal(GetTree().CreateTimer(1), "timeout");
         GetNode<Button>("StartButton").Show();
     }
 
