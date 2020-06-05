@@ -87,8 +87,7 @@ project settings to handle multiple resolutions.
 Stretch settings
 ----------------
 
-Stretch settings are located in the project settings. They're just a bunch
-of configuration variables that provide several options:
+Stretch settings are located in the project settings and provide several options:
 
 .. image:: img/stretchsettings.png
 
