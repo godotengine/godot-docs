@@ -13,12 +13,12 @@ How to build relationships effectively
 When Godot users begin crafting their own scenes, they often run into the
 following problem:
 
-They create their first scene and fill it with content before the creeping
-sense that they need to split it up into re-usable pieces haunts them. They
-save branches of their scene into their own scene. However, they then notice
-that the hard references they were able to rely on before are no longer
+They create their first scene and fill it with content only to eventually end
+up saving branches of their scene into separate scenes as the nagging feeling
+that they should split things up starts to accumulate. However, they then
+notice that the hard references they were able to rely on before are no longer
 possible. Re-using the scene in multiple places creates issues because the
-node paths do not find their targets. Signal connections established in the
+node paths do not find their targets and signal connections established in the
 editor break.
 
 To fix these problems, one must instantiate the sub-scenes without them
@@ -30,10 +30,9 @@ One of the biggest things to consider in OOP is maintaining
 focused, singular-purpose classes with
 `loose coupling <https://en.wikipedia.org/wiki/Loose_coupling>`_
 to other parts of the codebase. This keeps the size of objects small (for
-maintainability) and improves their reusability so that re-writing completed
-logic is unnecessary.
+maintainability) and improves their reusability.
 
-These OOP best practices have *several* ramifications for the best practices
+These OOP best practices have *several* implications for best practices
 in scene structure and script usage.
 
 **If at all possible, one should design scenes to have no dependencies.**
@@ -50,7 +49,7 @@ environment can inadvertently trigger bugs and unexpected behavior.
 To do this, one must expose data and then rely on a parent context to
 initialize it:
 
-1. Connect to a signal. Extremely safe, but should use only to "respond" to
+1. Connect to a signal. Extremely safe, but should be used only to "respond" to
    behavior, not start it. Note that signal names are usually past-tense verbs
    like "entered", "skill_activated", or "item_collected".
 
@@ -148,7 +147,7 @@ initialize it:
        // Child
        GetNode(TargetPath); // Use parent-defined NodePath.
 
-These options hide the source of accesses from the child node. This in turn
+These options hide the points of access from the child node. This in turn
 keeps the child **loosely coupled** to its environment. One can re-use it
 in another context without any extra changes to its API.
 
@@ -234,12 +233,14 @@ in another context without any extra changes to its API.
 
 So, why do all this complex switcharoo work? Well, because scenes operate
 best when they operate alone. If unable to work alone, then working with
-others anonymously (with minimal hard dependencies, i.e. loose coupling).
-If the inevitable changes made to a class cause it to interact with other
-scenes in unforeseen ways, then things break down. A change to one class could
-result in damaging effects to other classes.
+others anonymously (with minimal hard dependencies, i.e. loose coupling)
+is the next best thing. Inevitably, changes may need to be made to a class and
+if these changes cause it to interact with other scenes in unforeseen ways,
+then things will start to break down. The whole point of all this indirection
+is to avoid ending up in a situation where changing one class results in
+adversely effecting other classes.
 
-Scripts and scenes, as extensions of engine classes should abide
+Scripts and scenes, as extensions of engine classes, should abide
 by *all* OOP principles. Examples include...
 
 - `SOLID <https://en.wikipedia.org/wiki/SOLID>`_
@@ -259,7 +260,7 @@ a decent structure to start with.
 
 A game should always have a sort of "entry point"; somewhere the developer can
 definitively track where things begin so that they can follow the logic as it
-continues elsewhere. This place also serves as a bird's eye view to all of the
+continues elsewhere. This place also serves as a bird's eye view of all of the
 other data and logic in the program. For traditional applications, this would
 be the "main" function. In this case, it would be a Main node.
 
@@ -298,7 +299,7 @@ If one has a system that...
   the "World" as the main game node.
 
   Any GUI would need to also be a
-  singleton, be transitory parts of the "World", or be manually added as a
+  singleton; be a transitory part of the "World"; or be manually added as a
   direct child of the root. Otherwise, the GUI nodes would also delete
   themselves during scene transitions.
 
@@ -328,9 +329,9 @@ own place in the hierarchy as a sibling or some other relation.
   2. A group, to easily pull a reference to the desired node (assuming there
      will only ever be one of the targets).
 
-  When should one do this? Well, it's up to them to decide. The dilemma
-  arises when one must micro-manage when a node must move around the SceneTree
-  to preserve itself. For example...
+  When should one do this? Well, this is subjective. The dilemma arises when
+  one must micro-manage when a node must move around the SceneTree to preserve
+  itself. For example...
 
   - Add a "player" node to a "room".
   - Need to change rooms, so one must delete the current room.
@@ -348,7 +349,7 @@ own place in the hierarchy as a sibling or some other relation.
     - Instantiate and add the new room.
     - Re-add the player.
 
-  The issue is that the player here is a "special case", one where the
+  The issue is that the player here is a "special case"; one where the
   developers must *know* that they need to handle the player this way for the
   project. As such, the only way to reliably share this information as a team
   is to *document* it. Keeping implementation details in documentation however
@@ -356,7 +357,7 @@ own place in the hierarchy as a sibling or some other relation.
   the intellectual content of a project unnecessarily.
 
   In a more complex game with larger assets, it can be a better idea to simply
-  keep the player somewhere else in the SceneTree entirely. This involves...
+  keep the player somewhere else in the SceneTree entirely. This results in:
 
   1. More consistency.
   2. No "special cases" that must be documented and maintained somewhere.
@@ -384,10 +385,10 @@ own place in the hierarchy as a sibling or some other relation.
   of game connections and the like.
 
 The key to scene organization is to consider the SceneTree in relational terms
-rather than spatial terms. Do the nodes need to be dependent on their parent's
-existence? If not, then they can thrive all by themselves somewhere else.
-If so, then it stands to reason they should be children of that parent (and
-likely part of that parent's scene if they aren't already).
+rather than spatial terms. Are the nodes dependent on their parent's existance?
+If not, then they can thrive all by themselves somewhere else.
+If they are dependent, then it stands to reason that they should be children of
+that parent (and likely part of that parent's scene if they aren't already).
 
 Does this mean nodes themselves are components? Not at all.
 Godot's node trees form an aggregation relationship, not one of composition.
