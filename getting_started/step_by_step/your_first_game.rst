@@ -629,8 +629,9 @@ choose one of the three animation types:
 
     public override void _Ready()
     {
-        var _mobTypes = GetNode<AnimatedSprite>("AnimatedSprite").Frames.GetAnimationNames();
-        GetNode<AnimatedSprite>("AnimatedSprite").Animation = _mobTypes[_random.Next(0, _mobTypes.Length)];
+        var animSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+        var mobTypes = animSprite.Frames.GetAnimationNames();
+        animSprite.Animation = mobTypes[_random.Next(0, mobTypes.Length)];
     }
 
 First, we get the list of animation names from the AnimatedSprite's ``frames``
