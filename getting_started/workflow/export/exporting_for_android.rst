@@ -14,12 +14,11 @@ Download and install the Android SDK from
 
 If you install Android Studio, you need to run it once to complete the SDK setup.
 
-Install OpenJDK or Oracle JDK
------------------------------
+Install OpenJDK 8
+-----------------
 
-Download and install  `OpenJDK <https://github.com/ojdkbuild/ojdkbuild>`__ or `Oracle JDK <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`__. Versions below JDK 8 may not work; some users have reported issues with the jarsigner (used to sign the APKs) in JDK 7.
-
-If you install OpenJDK, choose ``1.8``. Don't choose the ``openjdk-jre`` files as that only contains the JRE, not the JDK which is required here.
+Download and install  `OpenJDK 8 <https://adoptopenjdk.net/index.html?variant=openjdk8&jvmVariant=hotspot>`__,
+newer versions do not work.
 
 Create a debug.keystore
 -----------------------
