@@ -863,7 +863,7 @@ Basic syntax::
 
 The patterns are matched from top to bottom.
 If a pattern matches, the first corresponding block will be executed. After that, the execution continues below the ``match`` statement.
-If you want to have a fallthrough, you can use ``continue`` to stop execution in the current block and check for an additional match in the patterns below it.
+You can use ``continue`` to stop execution in the current block and check for an additional match in the patterns below it.
 
 There are 6 pattern types:
 
