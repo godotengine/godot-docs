@@ -107,28 +107,16 @@ Export mode
 When exporting, Godot makes a list of all the files to export and then
 creates the package. There are 3 different modes for exporting:
 
--  Export every single file in the project
--  Export only resources (+ custom filter), this is the default.
--  Export only selected resources (+ custom filter)
+-  Export all resources in the project
+-  Export selected scenes (and dependencies)
+-  Export selected resources (and dependencies)
 
 .. image:: img/expres.png
 
--  **Export every single file** - This mode exports every single file in
-   the project. This is good to test if something is being forgotten,
-   but developers often have a lot of unrelated stuff around in the project
-   directory, which makes it a bad idea.
-
--  **Export only resources** - Only resources are exported. For most
-   projects, this is enough. However many developers like to use custom
-   datafiles in their games. To compensate for this, filters can be
-   added for extra extensions (for instance, ``*.txt,*.csv``).
-
--  **Export only selected resources** - Only select resources from a
-   list are exported. This is probably overkill for most projects, but
-   in some cases it is justified (usually huge projects). This mode
-   offers total control of what is exported. Individual resources can be
-   selected and dependency detection is performed to ensure that
-   everything needed is added.
+**Export all resources in the project** will export every resource in the
+project. **Export selected scenes** and **Export selected resources** gives
+you a list of the scenes or resources in the project, and you have to
+select every scene or resource you want to export.
 
 .. image:: img/expselected.png
 
