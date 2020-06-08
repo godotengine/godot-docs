@@ -437,6 +437,11 @@ Godot Shading language supports the most common types of flow control:
 Keep in mind that, in modern GPUs, an infinite loop can exist and can freeze your application (including editor).
 Godot can't protect you from this, so be careful not to make this mistake!
 
+.. warning::
+
+    When exporting a GLES2 project to HTML5, WebGL 1.0 will be used. WebGL 1.0
+    doesn't support dynamic loops, so shaders using those won't work there.
+
 Discarding
 ----------
 
