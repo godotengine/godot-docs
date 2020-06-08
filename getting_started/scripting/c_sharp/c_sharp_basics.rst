@@ -141,29 +141,6 @@ version control system. ``.mono`` can be safely added to the ignore list of your
 When troubleshooting, it can sometimes help to delete the ``.mono`` folder
 and let it regenerate.
 
-Note that currently, there are some issues where Godot and the C# project
-don't stay in sync; if you delete, rename or move a C# script, the change
-may not be reflected in the C# project file.
-In cases like this, you will have to edit the C# project file manually.
-
-For example, if you created a script (e.g. ``Test.cs``) and delete it in Godot,
-compilation will fail because the missing file is still expected to be there
-by the C# project file. For now, you can simply open up the ``.csproj`` file
-and look for the ``ItemGroup``, there should be a line included
-like the following:
-
-.. code-block:: xml
-    :emphasize-lines: 2
-
-    <ItemGroup>
-        <Compile Include="Test.cs" />
-        <Compile Include="AnotherTest.cs" />
-    </ItemGroup>
-
-Simply remove that line and your project should build correctly again.
-Same for renaming and moving things, simply rename and move them
-in the project file if needed.
-
 Example
 -------
 
@@ -224,15 +201,9 @@ you should be aware of when diving into C# in Godot, but if in doubt, also
 take a look over the official
 `issue tracker for Mono issues <https://github.com/godotengine/godot/labels/topic%3Amono>`_.
 
-- As explained above, the C# project isn't always kept in sync automatically
-  when things are deleted, renamed or moved in Godot
-  (`#12917 <https://github.com/godotengine/godot/issues/12917>`_).
 - Writing editor plugins is possible, but it is currently quite convoluted.
 - State is currently not saved and restored when hot-reloading,
   with the exception of exported variables.
-- Exporting Mono projects is supported for desktop platforms
-  (Linux, Windows and macOS), Android, HTML5, and iOS. UWP is not currently supported.
-  (`#20271 <https://github.com/godotengine/godot/issues/20271>`_).
 - Attached C# scripts should refer to a class that has a class name
   that matches the file name.
 - There are some methods such as ``Get()``/``Set()``, ``Call()``/``CallDeferred()``
@@ -241,6 +212,11 @@ take a look over the official
   So when using e.g. ``CallDeferred("AddChild")``, ``AddChild`` will not work because
   the API is expecting the original ``snake_case`` version ``add_child``. However, you
   can use any custom properties or methods without this limitation.
+
+
+As of Godot 3.2.2, exporting Mono projects is supported for desktop platforms
+(Linux, Windows and macOS), Android, HTML5, and iOS. The only platform not
+supported yet is UWP.
 
 Performance of C# in Godot
 --------------------------
