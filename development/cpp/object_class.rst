@@ -66,13 +66,13 @@ Registering functions is one:
 
 .. code-block:: cpp
 
-    ClassDB::register_method(D_METHOD("methodname", "arg1name", "arg2name"), &MyCustomMethod);
+    ClassDB::bind_method(D_METHOD("methodname", "arg1name", "arg2name"), &MyCustomMethod);
 
 Default values for arguments can be passed in reverse order:
 
 .. code-block:: cpp
 
-    ClassDB::register_method(D_METHOD("methodname", "arg1name", "arg2name"), &MyCustomType::method, DEFVAL(-1)); // default value for arg2name
+    ClassDB::bind_method(D_METHOD("methodname", "arg1name", "arg2name"), &MyCustomType::method, DEFVAL(-1)); // default value for arg2name
 
 ``D_METHOD`` is a macro that converts "methodname" to a StringName for more
 efficiency. Argument names are used for introspection, but when
@@ -223,7 +223,7 @@ languages). Connecting to them is rather easy:
     obj->connect("enter_tree", this, "_node_entered_tree")
 
 The method ``_node_entered_tree`` must be registered to the class using
-``ClassDB::register_method`` (explained before).
+``ClassDB::bind_method`` (explained before).
 
 Adding signals to a class is done in ``_bind_methods``, using the
 ``ADD_SIGNAL`` macro, for example:
