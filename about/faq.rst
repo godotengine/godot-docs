@@ -349,8 +349,10 @@ engine instead. Keep in mind rendering engines usually have smaller communities
 compared to Godot. This will make it more difficult to find answers to your
 questions.
 
-Why does Godot not use STL (Standard Template Library)
-------------------------------------------------------
+.. _doc_faq_why_not_stl:
+
+Why does Godot not use the STL (Standard Template Library)?
+-----------------------------------------------------------
 
 Like many other libraries (Qt as an example), Godot does not make use of
 STL. We believe STL is a great general purpose library, but we had special
@@ -394,7 +396,7 @@ removed at run-time to dynamically add and remove behaviors.
 More information about Godot's design choices can be found in
 `this article <https://godotengine.org/article/why-isnt-godot-ecs-based-game-engine>`__.
 
-Why does Godot not force users to implement DoD (Data oriented Design)?
+Why does Godot not force users to implement DoD (Data-oriented Design)?
 -----------------------------------------------------------------------
 
 While Godot internally for a lot of the heavy performance tasks attempts

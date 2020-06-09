@@ -38,8 +38,9 @@ about the code style, the contribution workflow, and more.
    best_practices_for_engine_contributors
    pr_workflow
    bisecting_regressions
-   code_style_guidelines
    bug_triage_guidelines
+   code_style_guidelines
+   cpp_usage_guidelines
 
 .. _doc_community_writing_documentation:
 
