@@ -629,8 +629,9 @@ choose one of the three animation types:
 
     public override void _Ready()
     {
-        var _mobTypes = GetNode<AnimatedSprite>("AnimatedSprite").Frames.GetAnimationNames();
-        GetNode<AnimatedSprite>("AnimatedSprite").Animation = _mobTypes[_random.Next(0, _mobTypes.Length)];
+        var animSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+        var mobTypes = animSprite.Frames.GetAnimationNames();
+        animSprite.Animation = mobTypes[_random.Next(0, mobTypes.Length)];
     }
 
 First, we get the list of animation names from the AnimatedSprite's ``frames``
@@ -877,7 +878,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
     {
         // Choose a random location on Path2D.
         var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
-        mobSpawnLocation.SetOffset(_random.Next());
+        mobSpawnLocation.Offset = _random.Next();
 
         // Create a Mob instance and add it to the scene.
         var mobInstance = (RigidBody2D)Mob.Instance();
@@ -894,7 +895,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
         mobInstance.Rotation = direction;
 
         // Choose the velocity.
-        mobInstance.SetLinearVelocity(new Vector2(RandRange(150f, 250f), 0).Rotated(direction));
+        mobInstance.LinearVelocity = new Vector2(RandRange(150f, 250f), 0).Rotated(direction);
     }
 
 .. important:: Why ``PI``? In functions requiring angles, GDScript uses *radians*,
