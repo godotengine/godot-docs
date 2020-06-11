@@ -6,3 +6,4 @@ Editor development
    :name: toc-devel-editor
 
    creating_icons
+   editor_style_guide
