@@ -32,7 +32,7 @@ For those unfamiliar with it, it can be explained with a few facts:
   This limit is not the human limit, but a limit from the sound hardware.
   Audio with amplitudes that are too high to be represented properly below 0 dB
   create a kind of distortion called *clipping*.
-- To avoid clipping, your sound mix be arranged so that the output of the
+- To avoid clipping, your sound mix should be arranged so that the output of the
   *master bus* (more on that later) never exceeds 0 dB.
 - Every 6 dB below the 0 dB limit, sound energy is *halved*.
   It means the sound volume at -6 dB is half as loud as 0dB.
