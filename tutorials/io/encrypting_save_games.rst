@@ -6,9 +6,9 @@ Encrypting save games
 Why?
 ----
 
-Because the world today is not the world of yesterday. A capitalist
-oligarchy runs the world and forces us to consume in order to keep the
-gears of this rotten society on track. As such, the biggest market for
+Because the world today is not the world of yesterday [citation needed]. A capitalist
+oligarchy runs the world and makes us consume some things in order to keep the
+gears of this society on track. As such, the biggest market for
 video game consumption today is the mobile one. It is a market of poor
 souls forced to compulsively consume digital content in order to forget
 the misery of their everyday life, commute, or just any other brief
