@@ -37,7 +37,7 @@ Errors
 
 This is where error and warning messages are printed while running the game.
 
-You can disable specific warnings in **Project Settings > Debug  > GDScript**
+You can disable specific warnings in **Project Settings > Debug > GDScript**.
 
 Profiler
 ++++++++
