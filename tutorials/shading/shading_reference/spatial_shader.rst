@@ -298,6 +298,13 @@ Below is an example of a custom light function using a Lambertian lighting model
 
 If you want the lights to add together, add the light contribution to ``DIFFUSE_LIGHT`` using ``+=``, rather than overwriting it.
 
+.. warning::
+
+    The ``light()`` function won't be run if the ``vertex_lighting`` render mode
+    is enabled, or if
+    **Rendering > Quality > Shading > Force Vertex Shading** is enabled in the
+    Project Settings. (It's enabled by default on mobile platforms.)
+
 +-----------------------------------+-----------------------------------------------------+
 | Built-in                          | Description                                         |
 +===================================+=====================================================+
