@@ -90,7 +90,14 @@ between the vertices to provide the values for the ``fragment()`` function.
 The ``light()`` function runs for every pixel and for every light. It takes variables from the
 ``fragment()`` function and from previous runs of itself.
 
-For more information about how shaders operate specifically in Godot see the :ref:`Shaders <doc_shaders>` doc.
+For more information about how shaders operate specifically in Godot, see the :ref:`Shaders <doc_shaders>` doc.
+
+.. warning::
+
+    The ``light()`` function won't be run if the ``vertex_lighting`` render mode
+    is enabled, or if
+    **Rendering > Quality > Shading > Force Vertex Shading** is enabled in the
+    Project Settings. (It's enabled by default on mobile platforms.)
 
 Technical overview
 ------------------
