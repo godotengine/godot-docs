@@ -1,7 +1,7 @@
 .. _doc_c_sharp_differences:
 
-API differences to GDScript
-===========================
+C# API differences to GDScript
+==============================
 
 This is a (incomplete) list of API differences between C# and GDScript.
 
