@@ -518,7 +518,7 @@ The space in which an object's position is the origin of the universe. Because t
 of the origin can be at ``N`` many locations, the values derived from local space change
 with the position of the origin.
 
-.. note:: This stack overflow question has a much better explanation of world space and local space.
+.. note:: This question from gamedev Stack Exchange has a much better explanation of world space and local space.
 
           https://gamedev.stackexchange.com/questions/65783/what-are-world-space-and-eye-space-in-game-development
           (Local space and eye space are essentially the same thing in this context)
