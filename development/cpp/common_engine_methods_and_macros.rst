@@ -89,7 +89,8 @@ To insert placeholders in localizable strings, wrap the localization macro in a
 
 .. code-block:: cpp
 
-    vformat(TTR("Couldn't open \"%s\" for reading."));
+    String file_path = "example.txt";
+    vformat(TTR("Couldn't open \"%s\" for reading."), file_path);
 
 .. note::
 
