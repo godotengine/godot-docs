@@ -19,7 +19,7 @@ Here is a quick example, closing your game if the escape key is hit:
 
     func _unhandled_input(event):
         if event is InputEventKey:
-            if event.pressed and event.scancode == KEY_ESCAPE:
+            if event.pressed and event.keycode == KEY_ESCAPE:
                 get_tree().quit()
 
  .. code-tab:: csharp
@@ -27,7 +27,7 @@ Here is a quick example, closing your game if the escape key is hit:
     public override void _UnhandledInput(InputEvent @event)
     {
         if (@event is InputEventKey eventKey)
-            if (eventKey.Pressed && eventKey.Scancode == (int)KeyList.Escape)
+            if (eventKey.Pressed && eventKey.Keycode == (int)KeyList.Escape)
                 GetTree().Quit();
     }
 
@@ -131,7 +131,7 @@ There are several specialized types of InputEvent, described in the table below:
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
 | :ref:`InputEvent <class_InputEvent>`                              | NONE               | Empty Input Event.                      |
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
-| :ref:`InputEventKey <class_InputEventKey>`                        | KEY                | Contains a scancode and Unicode value,  |
+| :ref:`InputEventKey <class_InputEventKey>`                        | KEY                | Contains a keycode and Unicode value,   |
 |                                                                   |                    | as well as modifiers.                   |
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
 | :ref:`InputEventMouseButton <class_InputEventMouseButton>`        | MOUSE_BUTTON       | Contains click information, such as     |
