@@ -75,7 +75,12 @@ need to be created:
     register_types.h
     register_types.cpp
 
-With the following contents:
+.. note::
+    **Important:** These files must be in the top level folder of your module
+    (next to your ``SCsub`` and ``config.py`` files) in order for the module
+    to be registered properly.
+
+These files should contain the following:
 
 .. code-block:: cpp
 
