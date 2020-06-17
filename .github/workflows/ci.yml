@@ -10,6 +10,9 @@ jobs:
 
       - name: Lint and build documentation
         run: |
+          # Install tools used by `_tools/format.sh`.
+          sudo apt-get update -qq
+          sudo apt-get install -qq dos2unix recode
           # Append the `PATH` so we can run `codespell`.
           export PATH="$HOME/.local/bin:$PATH"
           pip3 install -r requirements.txt
