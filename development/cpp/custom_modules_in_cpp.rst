@@ -119,10 +119,9 @@ need to be created:
     register_types.h
     register_types.cpp
 
-.. note::
-    **Important:** These files must be in the top level folder of your module
-    (next to your ``SCsub`` and ``config.py`` files) in order for the module
-    to be registered properly.
+.. important::
+    These files must be in the top-level folder of your module (next to your
+    ``SCsub`` and ``config.py`` files) for the module to be registered properly.
 
 These files should contain the following:
 
@@ -446,8 +445,9 @@ during runtime with the ``LD_LIBRARY_PATH`` environment variable:
     export LD_LIBRARY_PATH="$PWD/bin/"
     ./bin/godot*
 
-**note**: Pay attention you have to ``export`` the environ variable otherwise
-you won't be able to play your project from within the editor.
+.. note::
+  You have to ``export`` the environment variable otherwise
+  you won't be able to play your project from within the editor.
 
 On top of that, it would be nice to be able to select whether to compile our
 module as shared library (for development) or as a part of the Godot binary
