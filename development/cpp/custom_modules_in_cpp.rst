@@ -427,7 +427,7 @@ library that will be dynamically loaded when starting our game's binary.
     # next to the Godot binary.
     shared_lib = module_env.SharedLibrary(target='#bin/summator', source=sources)
 
-    # Finally, notify the main env it has our shared lirary as a new dependency.
+    # Finally, notify the main env it has our shared library as a new dependency.
     # To do so, SCons wants the name of the lib with it custom suffixes
     # (e.g. ".linuxbsd.tools.64") but without the final ".so".
     # We pass this along with the directory of our library to the main env.
