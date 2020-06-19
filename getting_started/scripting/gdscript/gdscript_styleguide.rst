@@ -118,9 +118,6 @@ Each indent level should be one greater than the block containing it.
 ::
 
     for i in range(10):
-      print("hello")
-
-    for i in range(10):
             print("hello")
 
 Use 2 indent levels to distinguish continuation lines from
