@@ -119,7 +119,11 @@ need to be created:
     register_types.h
     register_types.cpp
 
-With the following contents:
+.. important::
+    These files must be in the top-level folder of your module (next to your
+    ``SCsub`` and ``config.py`` files) for the module to be registered properly.
+
+These files should contain the following:
 
 .. code-block:: cpp
 
@@ -423,7 +427,7 @@ library that will be dynamically loaded when starting our game's binary.
     # next to the Godot binary.
     shared_lib = module_env.SharedLibrary(target='#bin/summator', source=sources)
 
-    # Finally, notify the main env it has our shared lirary as a new dependency.
+    # Finally, notify the main env it has our shared library as a new dependency.
     # To do so, SCons wants the name of the lib with it custom suffixes
     # (e.g. ".linuxbsd.tools.64") but without the final ".so".
     # We pass this along with the directory of our library to the main env.
@@ -441,8 +445,9 @@ during runtime with the ``LD_LIBRARY_PATH`` environment variable:
     export LD_LIBRARY_PATH="$PWD/bin/"
     ./bin/godot*
 
-**note**: Pay attention you have to ``export`` the environ variable otherwise
-you won't be able to play your project from within the editor.
+.. note::
+  You have to ``export`` the environment variable otherwise
+  you won't be able to play your project from within the editor.
 
 On top of that, it would be nice to be able to select whether to compile our
 module as shared library (for development) or as a part of the Godot binary

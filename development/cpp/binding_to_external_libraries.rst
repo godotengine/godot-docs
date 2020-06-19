@@ -75,7 +75,11 @@ need to be created:
     register_types.h
     register_types.cpp
 
-With the following contents:
+.. important::
+    These files must be in the top-level folder of your module (next to your
+    ``SCsub`` and ``config.py`` files) for the module to be registered properly.
+
+These files should contain the following:
 
 .. code-block:: cpp
 
@@ -124,8 +128,8 @@ installation commands for Linux below, for reference.
     apt-cache search festvox-* <-- Displays list of voice packages
     sudo apt-get install festvox-don festvox-rablpc16k festvox-kallpc16k festvox-kdlpc16k <-- Installs voices
 
-.. note::
-    **Important:** The voices that Festival uses (and any other potential external/3rd-party
+.. important::
+    The voices that Festival uses (and any other potential external/3rd-party
     resource) all have varying licenses and terms of use; some (if not most) of them may be
     be problematic with Godot, even if the Festival Library itself is MIT License compatible.
     Please be sure to check the licenses and terms of use.
@@ -148,8 +152,8 @@ can link to them instead by adding them as submodules (from within the modules/t
     git submodule add https://github.com/festvox/festival
     git submodule add https://github.com/festvox/speech_tools
 
-.. note::
-    **Important:** Please note that Git submodules are not used in the Godot repository.  If
+.. important::
+    Please note that Git submodules are not used in the Godot repository.  If
     you are developing a module to be merged into the main Godot repository, you should not
     use submodules.  If your module doesn't get merged in, you can always try to implement
     the external library as a GDNative C++ plugin.
