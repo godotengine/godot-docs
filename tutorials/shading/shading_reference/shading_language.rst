@@ -195,13 +195,12 @@ Arrays
 ------
 
 Arrays are containers for multiple variables of a similar type.
-Note: As of Godot 3.2, only local and varying arrays have been implemented.
 
 Local arrays
 ~~~~~~~~~~~~
 
 Local arrays are declared in functions. They can use all of the allowed datatypes, except samplers.
-The array declaration follows a C-style syntax: ``typename + identifier + [array size]``.
+The array declaration follows a C-style syntax: ``[const] + [precision] + typename + identifier + [array size]``.
 
 .. code-block:: glsl
 
@@ -251,6 +250,23 @@ Arrays also have a built-in function ``.length()`` (not to be confused with the 
     }
 
 Note: If you use an index below 0 or greater than array size - the shader will crash and break rendering. To prevent this, use ``length()``, ``if``, or ``clamp()`` functions to ensure the index is between 0 and the array's length. Always carefully test and check your code. If you pass a constant expression or a simple number, the editor will check its bounds to prevent this crash.
+
+Global arrays
+~~~~~~~~~~~~~
+
+You can declare arrays at global space like:
+
+.. code-block:: glsl
+    shader_type spatial;
+
+    const lowp vec3 v[1] = lowp vec3[1] ( vec3(0, 0, 1) );
+
+    void fragment() {
+      ALBEDO = v[0]; 
+    }
+
+.. note::
+    Global arrays have to be declared as global constants, otherwise they can be declared the same as local arrays.
 
 Constants
 ---------
@@ -555,6 +571,9 @@ Uniforms
 Passing values to shaders is possible. These are global to the whole shader and are called *uniforms*.
 When a shader is later assigned to a material, the uniforms will appear as editable parameters in it.
 Uniforms can't be written from within the shader.
+
+.. note::
+    Uniform arrays are not implemented yet.
 
 .. code-block:: glsl
 
