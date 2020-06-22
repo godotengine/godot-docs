@@ -1,7 +1,10 @@
 .. _doc_c_sharp:
 
+C# basics
+=========
+
 Introduction
-============
+------------
 
 .. warning:: C# support is a new feature available since Godot 3.0.
              As such, you may still run into some issues, or find spots

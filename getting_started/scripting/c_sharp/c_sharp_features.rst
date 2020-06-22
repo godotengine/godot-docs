@@ -1,7 +1,7 @@
 .. _doc_c_sharp_features:
 
-Features
-========
+C# features
+===========
 
 This page provides an overview of the commonly used features of both C# and Godot
 and how they are used together.
