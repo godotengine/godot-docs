@@ -14,6 +14,7 @@ Development Environment), here are setup instructions for some popular ones:
 
    android_studio
    clion
+   code_blocks
    kdevelop
    qt_creator
    visual_studio
