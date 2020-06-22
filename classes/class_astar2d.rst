@@ -162,7 +162,9 @@ Returns the next available point ID with no point associated to it.
 
 - :ref:`int<class_int>` **get_closest_point** **(** :ref:`Vector2<class_Vector2>` to_position, :ref:`bool<class_bool>` include_disabled=false **)** const
 
-Returns the ID of the closest point to ``to_position``, optionally taking disabled points into account. Returns -1 if there are no points in the points pool.
+Returns the ID of the closest point to ``to_position``, optionally taking disabled points into account. Returns ``-1`` if there are no points in the points pool.
+
+**Note:** If several points are the closest to ``to_position``, the one with the smallest ID will be returned, ensuring a deterministic result.
 
 ----
 

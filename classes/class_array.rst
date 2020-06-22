@@ -245,7 +245,7 @@ Removes the first occurrence of a value from the array.
 
 - :ref:`int<class_int>` **find** **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` from=0 **)**
 
-Searches the array for a value and returns its index or -1 if not found. Optionally, the initial search index can be passed.
+Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
 
 ----
 
@@ -253,7 +253,7 @@ Searches the array for a value and returns its index or -1 if not found. Optiona
 
 - :ref:`int<class_int>` **find_last** **(** :ref:`Variant<class_Variant>` value **)**
 
-Searches the array in reverse order for a value and returns its index or -1 if not found.
+Searches the array in reverse order for a value and returns its index or ``-1`` if not found.
 
 ----
 
@@ -277,6 +277,14 @@ Returns ``true`` if the array contains the given value.
     ["inside", 7].has("outside") == false
     ["inside", 7].has(7) == true
     ["inside", 7].has("7") == false
+
+**Note:** This is equivalent to using the ``in`` operator as follows:
+
+::
+
+    # Will evaluate to `true`.
+    if 2 in [2, 4, 6, 8]:
+        pass
 
 ----
 

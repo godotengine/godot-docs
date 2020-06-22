@@ -239,7 +239,7 @@ Returns ``true`` if the file exists in the given path.
 
 - :ref:`int<class_int>` **get_16** **(** **)** const
 
-Returns the next 16 bits from the file as an integer.
+Returns the next 16 bits from the file as an integer. See :ref:`store_16<class_File_method_store_16>` for details on what values can be stored and retrieved this way.
 
 ----
 
@@ -247,7 +247,7 @@ Returns the next 16 bits from the file as an integer.
 
 - :ref:`int<class_int>` **get_32** **(** **)** const
 
-Returns the next 32 bits from the file as an integer.
+Returns the next 32 bits from the file as an integer. See :ref:`store_32<class_File_method_store_32>` for details on what values can be stored and retrieved this way.
 
 ----
 
@@ -255,7 +255,7 @@ Returns the next 32 bits from the file as an integer.
 
 - :ref:`int<class_int>` **get_64** **(** **)** const
 
-Returns the next 64 bits from the file as an integer.
+Returns the next 64 bits from the file as an integer. See :ref:`store_64<class_File_method_store_64>` for details on what values can be stored and retrieved this way.
 
 ----
 
@@ -263,7 +263,7 @@ Returns the next 64 bits from the file as an integer.
 
 - :ref:`int<class_int>` **get_8** **(** **)** const
 
-Returns the next 8 bits from the file as an integer.
+Returns the next 8 bits from the file as an integer. See :ref:`store_8<class_File_method_store_8>` for details on what values can be stored and retrieved this way.
 
 ----
 
@@ -477,7 +477,28 @@ Changes the file reading/writing cursor to the specified position (in bytes from
 
 Stores an integer as 16 bits in the file.
 
-**Note:** The ``value`` should lie in the interval ``[0, 2^16 - 1]``.
+**Note:** The ``value`` should lie in the interval ``[0, 2^16 - 1]``. Any other value will overflow and wrap around.
+
+To store a signed integer, use :ref:`store_64<class_File_method_store_64>` or store a signed integer from the interval ``[-2^15, 2^15 - 1]`` (i.e. keeping one bit for the signedness) and compute its sign manually when reading. For example:
+
+::
+
+    const MAX_15B = 1 << 15
+    const MAX_16B = 1 << 16
+    
+    func unsigned16_to_signed(unsigned):
+        return (unsigned + MAX_15B) % MAX_16B - MAX_15B
+    
+    func _ready():
+        var f = File.new()
+        f.open("user://file.dat", File.WRITE_READ)
+        f.store_16(-42) # This wraps around and stores 65494 (2^16 - 42).
+        f.store_16(121) # In bounds, will store 121.
+        f.seek(0) # Go back to start to read the stored value.
+        var read1 = f.get_16() # 65494
+        var read2 = f.get_16() # 121
+        var converted1 = unsigned16_to_signed(read1) # -42
+        var converted2 = unsigned16_to_signed(read2) # 121
 
 ----
 
@@ -487,7 +508,9 @@ Stores an integer as 16 bits in the file.
 
 Stores an integer as 32 bits in the file.
 
-**Note:** The ``value`` should lie in the interval ``[0, 2^32 - 1]``.
+**Note:** The ``value`` should lie in the interval ``[0, 2^32 - 1]``. Any other value will overflow and wrap around.
+
+To store a signed integer, use :ref:`store_64<class_File_method_store_64>`, or convert it manually (see :ref:`store_16<class_File_method_store_16>` for an example).
 
 ----
 
@@ -507,7 +530,9 @@ Stores an integer as 64 bits in the file.
 
 Stores an integer as 8 bits in the file.
 
-**Note:** The ``value`` should lie in the interval ``[0, 255]``.
+**Note:** The ``value`` should lie in the interval ``[0, 255]``. Any other value will overflow and wrap around.
+
+To store a signed integer, use :ref:`store_64<class_File_method_store_64>`, or convert it manually (see :ref:`store_16<class_File_method_store_16>` for an example).
 
 ----
 

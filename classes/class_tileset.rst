@@ -259,6 +259,10 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_is_tile_bound** **(** :ref:`int<class_int>` drawn_id, :ref:`int<class_int>` neighbor_id **)** virtual
 
+Determines when the auto-tiler should consider two different auto-tile IDs to be bound together.
+
+**Note:** ``neighbor_id`` will be ``-1`` (:ref:`TileMap.INVALID_CELL<class_TileMap_constant_INVALID_CELL>`) when checking a tile against an empty neighbor tile.
+
 ----
 
 .. _class_TileSet_method_autotile_clear_bitmask_map:

@@ -16,6 +16,8 @@ Description
 
 3-element structure that can be used to represent positions in 3D space or any other pair of numeric values.
 
+**Note:** In a boolean context, a Vector3 will evaluate to ``false`` if it's equal to ``Vector3(0, 0, 0)``. Otherwise, a Vector3 will always evaluate to ``true``.
+
 Tutorials
 ---------
 

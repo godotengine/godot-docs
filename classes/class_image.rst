@@ -522,7 +522,7 @@ Creates an empty image of given size and format. See :ref:`Format<enum_Image_For
 
 - void **create_from_data** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_Image_Format>` format, :ref:`PoolByteArray<class_PoolByteArray>` data **)**
 
-Creates a new image of given size and format. See :ref:`Format<enum_Image_Format>` constants. Fills the image with the given raw data. If ``use_mipmaps`` is ``true`` then generate mipmaps for this image. See the :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
+Creates a new image of given size and format. See :ref:`Format<enum_Image_Format>` constants. Fills the image with the given raw data. If ``use_mipmaps`` is ``true`` then loads mipmaps for this image from ``data``. See :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
 
 ----
 

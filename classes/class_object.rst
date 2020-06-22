@@ -34,6 +34,8 @@ Property membership can be tested directly in GDScript using ``in``:
     print("position" in n) # Prints "True".
     print("other_property" in n) # Prints "False".
 
+The ``in`` operator will evaluate to ``true`` as long as the key exists, even if the value is ``null``.
+
 Objects also receive notifications. Notifications are a simple way to notify the object about different events, so they can all be handled together. See :ref:`_notification<class_Object_method__notification>`.
 
 Methods

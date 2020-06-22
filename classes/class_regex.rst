@@ -55,8 +55,7 @@ If you need to process multiple results, :ref:`search_all<class_RegEx_method_sea
 
     for result in regex.search_all("d01, d03, d0c, x3f and x42"):
         print(result.get_string("digit"))
-    # Would print 01 03 3f 42
-    # Note that d0c would not match
+    # Would print 01 03 0 3f 42
 
 **Note:** Godot's regex implementation is based on the `PCRE2 <https://www.pcre.org/>`_ library. You can view the full pattern reference `here <https://www.pcre.org/current/doc/html/pcre2pattern.html>`_.
 

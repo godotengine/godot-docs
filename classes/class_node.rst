@@ -618,6 +618,8 @@ To consume the input event and stop it propagating further to other nodes, :ref:
 
 For gameplay input, :ref:`_unhandled_input<class_Node_method__unhandled_input>` and :ref:`_unhandled_key_input<class_Node_method__unhandled_key_input>` are usually a better fit as they allow the GUI to intercept the events first.
 
+**Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
+
 ----
 
 .. _class_Node_method__physics_process:
@@ -630,6 +632,8 @@ It is only called if physics processing is enabled, which is done automatically 
 
 Corresponds to the :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` notification in :ref:`Object._notification<class_Object_method__notification>`.
 
+**Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
+
 ----
 
 .. _class_Node_method__process:
@@ -641,6 +645,8 @@ Called during the processing step of the main loop. Processing happens at every 
 It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_process<class_Node_method_set_process>`.
 
 Corresponds to the :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>` notification in :ref:`Object._notification<class_Object_method__notification>`.
+
+**Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
 
 ----
 
@@ -670,6 +676,8 @@ To consume the input event and stop it propagating further to other nodes, :ref:
 
 For gameplay input, this and :ref:`_unhandled_key_input<class_Node_method__unhandled_key_input>` are usually a better fit than :ref:`_input<class_Node_method__input>` as they allow the GUI to intercept the events first.
 
+**Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
+
 ----
 
 .. _class_Node_method__unhandled_key_input:
@@ -683,6 +691,8 @@ It is only called if unhandled key input processing is enabled, which is done au
 To consume the input event and stop it propagating further to other nodes, :ref:`SceneTree.set_input_as_handled<class_SceneTree_method_set_input_as_handled>` can be called.
 
 For gameplay input, this and :ref:`_unhandled_input<class_Node_method__unhandled_input>` are usually a better fit than :ref:`_input<class_Node_method__input>` as they allow the GUI to intercept the events first.
+
+**Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
 
 ----
 

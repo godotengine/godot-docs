@@ -99,5 +99,5 @@ The spotlight's light energy attenuation curve.
 | *Getter*  | get_param()      |
 +-----------+------------------+
 
-The maximal range that can be reached by the spotlight.
+The maximal range that can be reached by the spotlight. Note that the effectively lit area may appear to be smaller depending on the :ref:`spot_attenuation<class_SpotLight_property_spot_attenuation>` in use. No matter the :ref:`spot_attenuation<class_SpotLight_property_spot_attenuation>` in use, the light will never reach anything outside this range.
 

@@ -11,7 +11,19 @@ CSharpScript
 
 **Inherits:** :ref:`Script<class_Script>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+A script implemented in the C# programming language (Mono-enabled builds only).
 
+Description
+-----------
+
+This class represents a C# script. It is the C# equivalent of the :ref:`GDScript<class_GDScript>` class and is only available in Mono-enabled Godot builds.
+
+See also :ref:`GodotSharp<class_GodotSharp>`.
+
+Tutorials
+---------
+
+- :doc:`../getting_started/scripting/c_sharp/index`
 
 Methods
 -------
@@ -26,4 +38,6 @@ Method Descriptions
 .. _class_CSharpScript_method_new:
 
 - :ref:`Object<class_Object>` **new** **(** ... **)** vararg
+
+Returns a new instance of the script.
 

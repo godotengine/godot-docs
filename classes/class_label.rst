@@ -225,7 +225,7 @@ Limits the lines of text the node shows on screen.
 | *Getter*  | get_percent_visible()      |
 +-----------+----------------------------+
 
-Limits the count of visible characters. If you set ``percent_visible`` to 50, only up to half of the text's characters will display on screen. Useful to animate the text in a dialog box.
+Limits the amount of visible characters. If you set ``percent_visible`` to 0.5, only up to half of the text's characters will display on screen. Useful to animate the text in a dialog box.
 
 ----
 

@@ -55,7 +55,7 @@ Property Descriptions
 | *Getter*  | get_names() |
 +-----------+-------------+
 
-A dictionary of named groups and its corresponding group number. Only groups with that were matched are included. If multiple groups have the same name, that name would refer to the first matching one.
+A dictionary of named groups and its corresponding group number. Only groups that were matched are included. If multiple groups have the same name, that name would refer to the first matching one.
 
 ----
 

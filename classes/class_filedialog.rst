@@ -16,7 +16,7 @@ Dialog for selecting files or directories in the filesystem.
 Description
 -----------
 
-FileDialog is a preset dialog used to choose files and directories in the filesystem. It supports filter masks.
+FileDialog is a preset dialog used to choose files and directories in the filesystem. It supports filter masks. The FileDialog automatically sets its window title according to the :ref:`mode<class_FileDialog_property_mode>`. If you want to use a custom title, disable this by setting :ref:`mode_overrides_title<class_FileDialog_property_mode_overrides_title>` to ``false``.
 
 Properties
 ----------
@@ -63,6 +63,10 @@ Methods
 Theme Properties
 ----------------
 
++-------------------------------+----------------------+-----------------------+
+| :ref:`Texture<class_Texture>` | file                 |                       |
++-------------------------------+----------------------+-----------------------+
+| :ref:`Color<class_Color>`     | file_icon_modulate   | Color( 1, 1, 1, 1 )   |
 +-------------------------------+----------------------+-----------------------+
 | :ref:`Color<class_Color>`     | files_disabled       | Color( 0, 0, 0, 0.7 ) |
 +-------------------------------+----------------------+-----------------------+

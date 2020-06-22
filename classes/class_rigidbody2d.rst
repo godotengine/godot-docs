@@ -135,7 +135,9 @@ Emitted when a body shape exits contact with this one. Reports colliding shape i
 
 - **sleeping_state_changed** **(** **)**
 
-Emitted when :ref:`sleeping<class_RigidBody2D_property_sleeping>` changes.
+Emitted when the physics engine changes the body's sleeping state.
+
+**Note:** Changing the value :ref:`sleeping<class_RigidBody2D_property_sleeping>` will not trigger this signal. It is only emitted if the sleeping state is changed by the physics engine or ``emit_signal("sleeping_state_changed")`` is used.
 
 Enumerations
 ------------
@@ -273,7 +275,7 @@ Deprecated, use :ref:`PhysicsMaterial.bounce<class_PhysicsMaterial_property_boun
 | *Getter*  | is_able_to_sleep()   |
 +-----------+----------------------+
 
-If ``true``, the body will not calculate forces and will act as a static body if there is no movement. The body will wake up when other forces are applied via collisions or by using :ref:`apply_impulse<class_RigidBody2D_method_apply_impulse>` or :ref:`add_force<class_RigidBody2D_method_add_force>`.
+If ``true``, the body can enter sleep mode when there is no movement. See :ref:`sleeping<class_RigidBody2D_property_sleeping>`.
 
 ----
 
@@ -481,7 +483,7 @@ If a material is assigned to this property, it will be used instead of any other
 | *Getter*  | is_sleeping()       |
 +-----------+---------------------+
 
-If ``true``, the body is sleeping and will not calculate forces until woken up by a collision or by using :ref:`apply_impulse<class_RigidBody2D_method_apply_impulse>` or :ref:`add_force<class_RigidBody2D_method_add_force>`.
+If ``true``, the body will not move and will not calculate forces until woken up by another body through, for example, a collision, or by using the :ref:`apply_impulse<class_RigidBody2D_method_apply_impulse>` or :ref:`add_force<class_RigidBody2D_method_add_force>` methods.
 
 ----
 

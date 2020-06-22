@@ -219,6 +219,16 @@ Methods
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_window_focused<class_OS_method_is_window_focused>` **(** **)** const                                                                                                                                                                                          |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`keyboard_get_current_layout<class_OS_method_keyboard_get_current_layout>` **(** **)** const                                                                                                                                                                      |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`keyboard_get_layout_count<class_OS_method_keyboard_get_layout_count>` **(** **)** const                                                                                                                                                                          |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`keyboard_get_layout_language<class_OS_method_keyboard_get_layout_language>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                        |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`keyboard_get_layout_name<class_OS_method_keyboard_get_layout_name>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                                |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`keyboard_set_current_layout<class_OS_method_keyboard_set_current_layout>` **(** :ref:`int<class_int>` index **)**                                                                                                                                                |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`kill<class_OS_method_kill>` **(** :ref:`int<class_int>` pid **)**                                                                                                                                                                                                |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`move_window_to_foreground<class_OS_method_move_window_to_foreground>` **(** **)**                                                                                                                                                                                |
@@ -1098,7 +1108,7 @@ Returns the model name of the current device.
 
 - :ref:`String<class_String>` **get_name** **(** **)** const
 
-Returns the name of the host OS. Possible values are: ``"Android"``, ``"Haiku"``, ``"iOS"``, ``"HTML5"``, ``"OSX"``, ``"Server"``, ``"Windows"``, ``"UWP"``, ``"X11"``.
+Returns the name of the host OS. Possible values are: ``"Android"``, ``"iOS"``, ``"HTML5"``, ``"OSX"``, ``"Server"``, ``"Windows"``, ``"UWP"``, ``"X11"``.
 
 ----
 
@@ -1534,6 +1544,56 @@ Returns ``true`` if the window should always be on top of other windows.
 Returns ``true`` if the window is currently focused.
 
 **Note:** Only implemented on desktop platforms. On other platforms, it will always return ``true``.
+
+----
+
+.. _class_OS_method_keyboard_get_current_layout:
+
+- :ref:`int<class_int>` **keyboard_get_current_layout** **(** **)** const
+
+Returns active keyboard layout index.
+
+**Note:** This method is implemented on Linux, macOS and Windows.
+
+----
+
+.. _class_OS_method_keyboard_get_layout_count:
+
+- :ref:`int<class_int>` **keyboard_get_layout_count** **(** **)** const
+
+Returns the number of keyboard layouts.
+
+**Note:** This method is implemented on Linux, macOS and Windows.
+
+----
+
+.. _class_OS_method_keyboard_get_layout_language:
+
+- :ref:`String<class_String>` **keyboard_get_layout_language** **(** :ref:`int<class_int>` index **)** const
+
+Returns the ISO-639/BCP-47 language code of the keyboard layout at position ``index``.
+
+**Note:** This method is implemented on Linux, macOS and Windows.
+
+----
+
+.. _class_OS_method_keyboard_get_layout_name:
+
+- :ref:`String<class_String>` **keyboard_get_layout_name** **(** :ref:`int<class_int>` index **)** const
+
+Returns the localized name of the keyboard layout at position ``index``.
+
+**Note:** This method is implemented on Linux, macOS and Windows.
+
+----
+
+.. _class_OS_method_keyboard_set_current_layout:
+
+- void **keyboard_set_current_layout** **(** :ref:`int<class_int>` index **)**
+
+Sets active keyboard layout.
+
+**Note:** This method is implemented on Linux, macOS and Windows.
 
 ----
 

@@ -64,7 +64,7 @@ When :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D
 | *Getter*  | get_exclude_nodes_from_collision()      |
 +-----------+-----------------------------------------+
 
-If ``true``, :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` can collide.
+If ``true``, :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` can not collide.
 
 ----
 

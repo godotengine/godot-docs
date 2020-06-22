@@ -96,7 +96,7 @@ The light's attenuation (drop-off) curve. A number of presets are available in t
 | *Getter*  | get_param()      |
 +-----------+------------------+
 
-The light's radius.
+The light's radius. Note that the effectively lit area may appear to be smaller depending on the :ref:`omni_attenuation<class_OmniLight_property_omni_attenuation>` in use. No matter the :ref:`omni_attenuation<class_OmniLight_property_omni_attenuation>` in use, the light will never reach anything outside this radius.
 
 ----
 

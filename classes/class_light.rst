@@ -18,7 +18,7 @@ Provides a base class for different kinds of light nodes.
 Description
 -----------
 
-Light is the abstract base class for light nodes, so it shouldn't be used directly (it can't be instanced). Other types of light nodes inherit from it. Light contains the common variables and parameters used for lighting.
+Light is the *abstract* base class for light nodes. As it can't be instanced, it shouldn't be used directly. Other types of light nodes inherit from it. Light contains the common variables and parameters used for lighting.
 
 Tutorials
 ---------
@@ -205,7 +205,7 @@ The light's bake mode. See :ref:`BakeMode<enum_Light_BakeMode>`.
 | *Getter*  | get_color()             |
 +-----------+-------------------------+
 
-The light's color.
+The light's color. An *overbright* color can be used to achieve a result equivalent to increasing the light's :ref:`light_energy<class_Light_property_light_energy>`.
 
 ----
 
@@ -237,7 +237,7 @@ The light will affect objects in the selected layers.
 | *Getter*  | get_param()      |
 +-----------+------------------+
 
-The light's strength multiplier.
+The light's strength multiplier (this is not a physical unit). For :ref:`OmniLight<class_OmniLight>` and :ref:`SpotLight<class_SpotLight>`, changing this value will only change the light color's intensity, not the light's radius.
 
 ----
 
@@ -285,7 +285,7 @@ If ``true``, the light's effect is reversed, darkening areas and casting bright 
 | *Getter*  | get_param()      |
 +-----------+------------------+
 
-The intensity of the specular blob in objects affected by the light. At ``0`` the light becomes a pure diffuse light.
+The intensity of the specular blob in objects affected by the light. At ``0``, the light becomes a pure diffuse light. When not baking emission, this can be used to avoid unrealistic reflections when placing lights above an emissive surface.
 
 ----
 
@@ -301,7 +301,7 @@ The intensity of the specular blob in objects affected by the light. At ``0`` th
 | *Getter*  | get_param()      |
 +-----------+------------------+
 
-Used to adjust shadow appearance. Too small a value results in self-shadowing, while too large a value causes shadows to separate from casters. Adjust as needed.
+Used to adjust shadow appearance. Too small a value results in self-shadowing ("shadow acne"), while too large a value causes shadows to separate from casters ("peter-panning"). Adjust as needed.
 
 ----
 

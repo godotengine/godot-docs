@@ -35,6 +35,8 @@ Properties
 +-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
 | :ref:`Array<class_Array>`   | :ref:`custom_effects<class_RichTextLabel_property_custom_effects>`                             | ``[  ]``                     |
 +-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`fit_content_height<class_RichTextLabel_property_fit_content_height>`                     | ``false``                    |
++-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
 | :ref:`bool<class_bool>`     | :ref:`meta_underlined<class_RichTextLabel_property_meta_underlined>`                           | ``true``                     |
 +-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
 | :ref:`bool<class_bool>`     | :ref:`override_selected_font_color<class_RichTextLabel_property_override_selected_font_color>` | ``false``                    |
@@ -68,7 +70,7 @@ Methods
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`clear<class_RichTextLabel_method_clear>` **(** **)**                                                                                                                               |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_content_height<class_RichTextLabel_method_get_content_height>` **(** **)**                                                                                                     |
+| :ref:`int<class_int>`                 | :ref:`get_content_height<class_RichTextLabel_method_get_content_height>` **(** **)** const                                                                                               |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                 | :ref:`get_line_count<class_RichTextLabel_method_get_line_count>` **(** **)** const                                                                                                       |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -367,6 +369,24 @@ To add a custom effect, it's more convenient to use :ref:`install_effect<class_R
 
 ----
 
+.. _class_RichTextLabel_property_fit_content_height:
+
+- :ref:`bool<class_bool>` **fit_content_height**
+
++-----------+---------------------------------+
+| *Default* | ``false``                       |
++-----------+---------------------------------+
+| *Setter*  | set_fit_content_height(value)   |
++-----------+---------------------------------+
+| *Getter*  | is_fit_content_height_enabled() |
++-----------+---------------------------------+
+
+If ``true``, the label's height will be automatically updated to fit its content.
+
+**Note:** This property is used as a workaround to fix issues with ``RichTextLabel`` in :ref:`Container<class_Container>`\ s, but it's unreliable in some cases and will be removed in future versions.
+
+----
+
 .. _class_RichTextLabel_property_meta_underlined:
 
 - :ref:`bool<class_bool>` **meta_underlined**
@@ -552,7 +572,7 @@ Clears the tag stack and sets :ref:`bbcode_text<class_RichTextLabel_property_bbc
 
 .. _class_RichTextLabel_method_get_content_height:
 
-- :ref:`int<class_int>` **get_content_height** **(** **)**
+- :ref:`int<class_int>` **get_content_height** **(** **)** const
 
 Returns the height of the content.
 

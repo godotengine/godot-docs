@@ -152,7 +152,9 @@ This signal not only receives the body that stopped colliding with this one, but
 
 - **sleeping_state_changed** **(** **)**
 
-Emitted when the body changes its sleeping state. Either by sleeping or waking up.
+Emitted when the physics engine changes the body's sleeping state.
+
+**Note:** Changing the value :ref:`sleeping<class_RigidBody_property_sleeping>` will not trigger this signal. It is only emitted if the sleeping state is changed by the physics engine or ``emit_signal("sleeping_state_changed")`` is used.
 
 Enumerations
 ------------
@@ -336,7 +338,7 @@ Deprecated, use :ref:`PhysicsMaterial.bounce<class_PhysicsMaterial_property_boun
 | *Getter*  | is_able_to_sleep()   |
 +-----------+----------------------+
 
-If ``true``, the RigidBody will not calculate forces and will act as a static body while there is no movement. It will wake up when forces are applied through other collisions or when the ``apply_impulse`` method is used.
+If ``true``, the body can enter sleep mode when there is no movement. See :ref:`sleeping<class_RigidBody_property_sleeping>`.
 
 ----
 
@@ -530,7 +532,7 @@ If a material is assigned to this property, it will be used instead of any other
 | *Getter*  | is_sleeping()       |
 +-----------+---------------------+
 
-If ``true``, the body is sleeping and will not calculate forces until woken up by a collision or the ``apply_impulse`` method.
+If ``true``, the body will not move and will not calculate forces until woken up by another body through, for example, a collision, or by using the :ref:`apply_impulse<class_RigidBody_method_apply_impulse>` or :ref:`add_force<class_RigidBody_method_add_force>` methods.
 
 ----
 

@@ -524,33 +524,37 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                     | :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>`                                                           | ``0.5``                                                                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/batching/debug/diagnose_frame<class_ProjectSettings_property_rendering/batching/debug/diagnose_frame>`                                               | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/batching/debug/flash_batching<class_ProjectSettings_property_rendering/batching/debug/flash_batching>`                                               | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/batching/lights/max_join_items<class_ProjectSettings_property_rendering/batching/lights/max_join_items>`                                             | ``32``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`rendering/batching/lights/scissor_area_threshold<class_ProjectSettings_property_rendering/batching/lights/scissor_area_threshold>`                             | ``1.0``                                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/batching/options/single_rect_fallback<class_ProjectSettings_property_rendering/batching/options/single_rect_fallback>`                               | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/batching/options/use_batching<class_ProjectSettings_property_rendering/batching/options/use_batching>`                                               | ``true``                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/batching/options/use_batching_in_editor<class_ProjectSettings_property_rendering/batching/options/use_batching_in_editor>`                           | ``true``                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/batching/parameters/batch_buffer_size<class_ProjectSettings_property_rendering/batching/parameters/batch_buffer_size>`                               | ``16384``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`rendering/batching/parameters/colored_vertex_format_threshold<class_ProjectSettings_property_rendering/batching/parameters/colored_vertex_format_threshold>`   | ``0.25``                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/batching/parameters/item_reordering_lookahead<class_ProjectSettings_property_rendering/batching/parameters/item_reordering_lookahead>`               | ``4``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/batching/parameters/max_join_item_commands<class_ProjectSettings_property_rendering/batching/parameters/max_join_item_commands>`                     | ``16``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/batching/precision/uv_contract<class_ProjectSettings_property_rendering/batching/precision/uv_contract>`                                             | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/batching/precision/uv_contract_amount<class_ProjectSettings_property_rendering/batching/precision/uv_contract_amount>`                               | ``100``                                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`                     | :ref:`rendering/environment/default_clear_color<class_ProjectSettings_property_rendering/environment/default_clear_color>`                                           | ``Color( 0.3, 0.3, 0.3, 1 )``                                                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`rendering/environment/default_environment<class_ProjectSettings_property_rendering/environment/default_environment>`                                           | ``""``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`rendering/gles2/batching/batch_buffer_size<class_ProjectSettings_property_rendering/gles2/batching/batch_buffer_size>`                                         | ``16384``                                                                                       |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`rendering/gles2/batching/colored_vertex_format_threshold<class_ProjectSettings_property_rendering/gles2/batching/colored_vertex_format_threshold>`             | ``0.25``                                                                                        |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`rendering/gles2/batching/item_reordering_lookahead<class_ProjectSettings_property_rendering/gles2/batching/item_reordering_lookahead>`                         | ``4``                                                                                           |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`rendering/gles2/batching/light_max_join_items<class_ProjectSettings_property_rendering/gles2/batching/light_max_join_items>`                                   | ``32``                                                                                          |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`rendering/gles2/batching/light_scissor_area_threshold<class_ProjectSettings_property_rendering/gles2/batching/light_scissor_area_threshold>`                   | ``1.0``                                                                                         |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`rendering/gles2/batching/max_join_item_commands<class_ProjectSettings_property_rendering/gles2/batching/max_join_item_commands>`                               | ``16``                                                                                          |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/batching/single_rect_fallback<class_ProjectSettings_property_rendering/gles2/batching/single_rect_fallback>`                                   | ``false``                                                                                       |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/batching/use_batching<class_ProjectSettings_property_rendering/gles2/batching/use_batching>`                                                   | ``true``                                                                                        |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/debug/diagnose_frame<class_ProjectSettings_property_rendering/gles2/debug/diagnose_frame>`                                                     | ``false``                                                                                       |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/debug/disable_half_float<class_ProjectSettings_property_rendering/gles2/debug/disable_half_float>`                                             | ``false``                                                                                       |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/debug/flash_batching<class_ProjectSettings_property_rendering/gles2/debug/flash_batching>`                                                     | ``false``                                                                                       |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/debug/use_batching_in_editor<class_ProjectSettings_property_rendering/gles2/debug/use_batching_in_editor>`                                     | ``true``                                                                                        |
+| :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/compatibility/disable_half_float<class_ProjectSettings_property_rendering/gles2/compatibility/disable_half_float>`                             | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/limits/buffers/blend_shape_max_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/blend_shape_max_buffer_size_kb>`               | ``4096``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -3715,6 +3719,166 @@ Fix to improve physics jitter, specially on monitors where refresh rate is diffe
 
 ----
 
+.. _class_ProjectSettings_property_rendering/batching/debug/diagnose_frame:
+
+- :ref:`bool<class_bool>` **rendering/batching/debug/diagnose_frame**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+When batching is on, this regularly prints a frame diagnosis log. Note that this will degrade performance.
+
+----
+
+.. _class_ProjectSettings_property_rendering/batching/debug/flash_batching:
+
+- :ref:`bool<class_bool>` **rendering/batching/debug/flash_batching**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+**Experimental** For regression testing against the old renderer. If this is switched on, and ``use_batching`` is set, the renderer will swap alternately between using the old renderer, and the batched renderer, on each frame. This makes it easy to identify visual differences. Performance will be degraded.
+
+----
+
+.. _class_ProjectSettings_property_rendering/batching/lights/max_join_items:
+
+- :ref:`int<class_int>` **rendering/batching/lights/max_join_items**
+
++-----------+--------+
+| *Default* | ``32`` |
++-----------+--------+
+
+Lights have the potential to prevent joining items, and break many of the performance benefits of batching. This setting enables some complex logic to allow joining items if their lighting is similar, and overlap tests pass. This can significantly improve performance in some games. Set to 0 to switch off. With large values the cost of overlap tests may lead to diminishing returns.
+
+----
+
+.. _class_ProjectSettings_property_rendering/batching/lights/scissor_area_threshold:
+
+- :ref:`float<class_float>` **rendering/batching/lights/scissor_area_threshold**
+
++-----------+---------+
+| *Default* | ``1.0`` |
++-----------+---------+
+
+Sets the proportion of the total screen area (in pixels) that must be saved by a scissor operation in order to activate light scissoring. This can prevent parts of items being rendered outside the light area. Lower values scissor more aggressively. A value of 1 scissors none of the items, a value of 0 scissors every item. The power of 4 of the value is used, in order to emphasize the lower range, and multiplied by the total screen area in pixels to give the threshold. This can reduce fill rate requirements in scenes with a lot of lighting.
+
+----
+
+.. _class_ProjectSettings_property_rendering/batching/options/single_rect_fallback:
+
+- :ref:`bool<class_bool>` **rendering/batching/options/single_rect_fallback**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+Enabling this setting uses the legacy method to draw batches containing only one rect. The legacy method is faster (approx twice as fast), but can cause flicker on some systems. In order to directly compare performance with the non-batching renderer you can set this to true, but it is recommended to turn this off unless you can guarantee your target hardware will work with this method.
+
+----
+
+.. _class_ProjectSettings_property_rendering/batching/options/use_batching:
+
+- :ref:`bool<class_bool>` **rendering/batching/options/use_batching**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+Turns batching on and off. Batching increases performance by reducing the amount of graphics API drawcalls.
+
+----
+
+.. _class_ProjectSettings_property_rendering/batching/options/use_batching_in_editor:
+
+- :ref:`bool<class_bool>` **rendering/batching/options/use_batching_in_editor**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+Switches on batching within the editor.
+
+----
+
+.. _class_ProjectSettings_property_rendering/batching/parameters/batch_buffer_size:
+
+- :ref:`int<class_int>` **rendering/batching/parameters/batch_buffer_size**
+
++-----------+-----------+
+| *Default* | ``16384`` |
++-----------+-----------+
+
+Size of buffer reserved for batched vertices. Larger size enables larger batches, but there are diminishing returns for the memory used. This should only have a minor effect on performance.
+
+----
+
+.. _class_ProjectSettings_property_rendering/batching/parameters/colored_vertex_format_threshold:
+
+- :ref:`float<class_float>` **rendering/batching/parameters/colored_vertex_format_threshold**
+
++-----------+----------+
+| *Default* | ``0.25`` |
++-----------+----------+
+
+Including color in the vertex format has a cost, however, not including color prevents batching across color changes. This threshold determines the ratio of ``number of vertex color changes / total number of vertices`` above which vertices will be translated to colored format. A value of 0 will always use colored vertices, 1 will never use colored vertices.
+
+----
+
+.. _class_ProjectSettings_property_rendering/batching/parameters/item_reordering_lookahead:
+
+- :ref:`int<class_int>` **rendering/batching/parameters/item_reordering_lookahead**
+
++-----------+-------+
+| *Default* | ``4`` |
++-----------+-------+
+
+In certain circumstances, the batcher can reorder items in order to better join them. This may result in better performance. An overlap test is needed however for each item lookahead, so there is a trade off, with diminishing returns. If you are getting no benefit, setting this to 0 will switch it off.
+
+----
+
+.. _class_ProjectSettings_property_rendering/batching/parameters/max_join_item_commands:
+
+- :ref:`int<class_int>` **rendering/batching/parameters/max_join_item_commands**
+
++-----------+--------+
+| *Default* | ``16`` |
++-----------+--------+
+
+Sets the number of commands to lookahead to determine whether to batch render items. A value of 1 can join items consisting of single commands, 0 turns off joining. Higher values are in theory more likely to join, however this has diminishing returns and has a runtime cost so a small value is recommended.
+
+----
+
+.. _class_ProjectSettings_property_rendering/batching/precision/uv_contract:
+
+- :ref:`bool<class_bool>` **rendering/batching/precision/uv_contract**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+On some platforms (especially mobile), precision issues in shaders can lead to reading 1 texel outside of bounds, particularly where rects are scaled. This can particularly lead to border artifacts around tiles in tilemaps.
+
+This adjustment corrects for this by making a small contraction to the UV coordinates used. Note that this can result in a slight squashing of border texels.
+
+----
+
+.. _class_ProjectSettings_property_rendering/batching/precision/uv_contract_amount:
+
+- :ref:`int<class_int>` **rendering/batching/precision/uv_contract_amount**
+
++-----------+---------+
+| *Default* | ``100`` |
++-----------+---------+
+
+The amount of UV contraction. This figure is divided by 1000000, and is a proportion of the total texture dimensions, where the width and height are both ranged from 0.0 to 1.0.
+
+Use the default unless correcting for a problem on particular hardware.
+
+----
+
 .. _class_ProjectSettings_property_rendering/environment/default_clear_color:
 
 - :ref:`Color<class_Color>` **rendering/environment/default_clear_color**
@@ -3739,147 +3903,15 @@ Default background clear color. Overridable per :ref:`Viewport<class_Viewport>` 
 
 ----
 
-.. _class_ProjectSettings_property_rendering/gles2/batching/batch_buffer_size:
+.. _class_ProjectSettings_property_rendering/gles2/compatibility/disable_half_float:
 
-- :ref:`int<class_int>` **rendering/gles2/batching/batch_buffer_size**
-
-+-----------+-----------+
-| *Default* | ``16384`` |
-+-----------+-----------+
-
-Size of buffer reserved for batched vertices. Larger size enables larger batches, but there are diminishing returns for the memory used.
-
-----
-
-.. _class_ProjectSettings_property_rendering/gles2/batching/colored_vertex_format_threshold:
-
-- :ref:`float<class_float>` **rendering/gles2/batching/colored_vertex_format_threshold**
-
-+-----------+----------+
-| *Default* | ``0.25`` |
-+-----------+----------+
-
-Including color in the vertex format has a cost, however, not including color prevents batching across color changes. This threshold determines the ratio of ``number of vertex color changes / total number of vertices`` above which vertices will be translated to colored format. A value of 0 will always use colored vertices, 1 will never use colored vertices.
-
-----
-
-.. _class_ProjectSettings_property_rendering/gles2/batching/item_reordering_lookahead:
-
-- :ref:`int<class_int>` **rendering/gles2/batching/item_reordering_lookahead**
-
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
-
-In certain circumstances, the batcher can reorder items in order to better join them. This may result in better performance. An overlap test is needed however for each item lookahead, so there is a trade off, with diminishing returns. If you are getting no benefit, setting this to 0 will switch it off.
-
-----
-
-.. _class_ProjectSettings_property_rendering/gles2/batching/light_max_join_items:
-
-- :ref:`int<class_int>` **rendering/gles2/batching/light_max_join_items**
-
-+-----------+--------+
-| *Default* | ``32`` |
-+-----------+--------+
-
-Lights have the potential to prevent joining items, and break many of the performance benefits of batching. This setting enables some complex logic to allow joining items if their lighting is similar, and overlap tests pass. This can significantly improve performance in some games. Set to 0 to switch off. With large values the cost of overlap tests may lead to diminishing returns.
-
-----
-
-.. _class_ProjectSettings_property_rendering/gles2/batching/light_scissor_area_threshold:
-
-- :ref:`float<class_float>` **rendering/gles2/batching/light_scissor_area_threshold**
-
-+-----------+---------+
-| *Default* | ``1.0`` |
-+-----------+---------+
-
-Sets the proportion of the screen area that must be saved by a scissor operation in order to activate light scissoring. This can prevent parts of items being rendered outside the light area. Lower values scissor more aggressively. A value of 1 scissors none of the items, a value of 0 scissors every item. This can reduce fill rate requirements in scenes with a lot of lighting.
-
-----
-
-.. _class_ProjectSettings_property_rendering/gles2/batching/max_join_item_commands:
-
-- :ref:`int<class_int>` **rendering/gles2/batching/max_join_item_commands**
-
-+-----------+--------+
-| *Default* | ``16`` |
-+-----------+--------+
-
-Sets the number of commands to lookahead to determine whether to batch render items. A value of 1 can join items consisting of single commands, 0 turns off joining. Higher values are in theory more likely to join, however this has diminishing returns and has a runtime cost so a small value is recommended.
-
-----
-
-.. _class_ProjectSettings_property_rendering/gles2/batching/single_rect_fallback:
-
-- :ref:`bool<class_bool>` **rendering/gles2/batching/single_rect_fallback**
-
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
-
-Enabling this uses the legacy method to draw single rects, which is faster, but can cause flicker on some systems. This is best disabled unless crucial for performance.
-
-----
-
-.. _class_ProjectSettings_property_rendering/gles2/batching/use_batching:
-
-- :ref:`bool<class_bool>` **rendering/gles2/batching/use_batching**
-
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
-
-Turns batching on and off. Batching increases performance by reducing the amount of graphics API drawcalls.
-
-----
-
-.. _class_ProjectSettings_property_rendering/gles2/debug/diagnose_frame:
-
-- :ref:`bool<class_bool>` **rendering/gles2/debug/diagnose_frame**
-
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
-
-When batching is on, this regularly prints a frame diagnosis log. Note that this will degrade performance.
-
-----
-
-.. _class_ProjectSettings_property_rendering/gles2/debug/disable_half_float:
-
-- :ref:`bool<class_bool>` **rendering/gles2/debug/disable_half_float**
+- :ref:`bool<class_bool>` **rendering/gles2/compatibility/disable_half_float**
 
 +-----------+-----------+
 | *Default* | ``false`` |
 +-----------+-----------+
 
 The use of half-float vertex compression may be producing rendering errors on some platforms (especially iOS). These have been seen particularly in particles. Disabling half-float may resolve these problems.
-
-----
-
-.. _class_ProjectSettings_property_rendering/gles2/debug/flash_batching:
-
-- :ref:`bool<class_bool>` **rendering/gles2/debug/flash_batching**
-
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
-
-**Experimental** For regression testing against the old renderer. If this is switched on, and ``use_batching`` is set, the renderer will swap alternately between using the old renderer, and the batched renderer, on each frame. This makes it easy to identify visual differences. Performance will be degraded.
-
-----
-
-.. _class_ProjectSettings_property_rendering/gles2/debug/use_batching_in_editor:
-
-- :ref:`bool<class_bool>` **rendering/gles2/debug/use_batching_in_editor**
-
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
-
-**Experimental** Switches on batching within the editor. Use with caution - note that if your editor does not render correctly you may need to edit your ``project.godot`` and remove the use_batching_in_editor setting manually.
 
 ----
 
@@ -4002,6 +4034,8 @@ If ``true``, this option enables a "safe" code path for such NVIDIA GPUs at the 
 +-----------+-----------+
 
 If ``true``, forces snapping of polygons to pixels in 2D rendering. May help in some pixel art styles.
+
+Consider using the project setting :ref:`rendering/batching/precision/uv_contract<class_ProjectSettings_property_rendering/batching/precision/uv_contract>` to prevent artifacts.
 
 ----
 

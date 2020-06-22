@@ -44,6 +44,8 @@ Methods
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>` | :ref:`collide_with_motion_and_get_contacts<class_Shape2D_method_collide_with_motion_and_get_contacts>` **(** :ref:`Transform2D<class_Transform2D>` local_xform, :ref:`Vector2<class_Vector2>` local_motion, :ref:`Shape2D<class_Shape2D>` with_shape, :ref:`Transform2D<class_Transform2D>` shape_xform, :ref:`Vector2<class_Vector2>` shape_motion **)** |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`draw<class_Shape2D_method_draw>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Color<class_Color>` color **)**                                                                                                                                                                                                                                     |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -102,4 +104,12 @@ This method needs the transformation matrix for this shape (``local_xform``), th
 Returns a list of the points where this shape would touch another, if a given movement was applied. If there are no collisions the list is empty.
 
 This method needs the transformation matrix for this shape (``local_xform``), the movement to test on this shape (``local_motion``), the shape to check collisions with (``with_shape``), the transformation matrix of that shape (``shape_xform``), and the movement to test onto the other object (``shape_motion``).
+
+----
+
+.. _class_Shape2D_method_draw:
+
+- void **draw** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Color<class_Color>` color **)**
+
+Draws a solid shape onto a :ref:`CanvasItem<class_CanvasItem>` with the :ref:`VisualServer<class_VisualServer>` API filled with the specified ``color``. The exact drawing method is specific for each shape and cannot be configured.
 

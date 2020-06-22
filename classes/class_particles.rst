@@ -402,6 +402,8 @@ Speed scaling ratio. A value of ``0`` can be used to pause the particles.
 
 The :ref:`AABB<class_AABB>` that determines the area of the world part of which needs to be visible on screen for the particle system to be active.
 
+**Note:** If the :ref:`ParticlesMaterial<class_ParticlesMaterial>` in use is configured to cast shadows, you may want to enlarge this AABB to ensure the shadow is updated when particles are off-screen.
+
 Method Descriptions
 -------------------
 

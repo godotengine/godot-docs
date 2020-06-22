@@ -46,6 +46,8 @@ Property Descriptions
 | *Getter*  | is_absorbent()       |
 +-----------+----------------------+
 
+If ``true``, subtracts the bounciness from the colliding object's bounciness instead of adding it.
+
 ----
 
 .. _class_PhysicsMaterial_property_bounce:
@@ -91,4 +93,6 @@ The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum fr
 +-----------+------------------+
 | *Getter*  | is_rough()       |
 +-----------+------------------+
+
+If ``true``, the physics engine will use the friction of the object marked as "rough" when two objects collide. If ``false``, the physics engine will use the lowest friction of all colliding objects instead. If ``true`` for both colliding objects, the physics engine will use the highest friction.
 

@@ -14,9 +14,9 @@ Boolean built-in type.
 Description
 -----------
 
-Boolean is a built-in type. It can represent any data type that is either a true or false value. You can think of it as an switch with on or off (1 or 0) setting. It's often used as part of programming logic in condition statements like ``if`` statements.
+Boolean is a built-in type. There are two boolean values: ``true`` and ``false``. You can think of it as an switch with on or off (1 or 0) setting. Booleans are used in programming for logic in condition statements, like ``if`` statements.
 
-**Note:** In a code below ``if can_shoot`` is equivalent of ``if can_shoot == true``. It is good practice to follow the natural spoken language structure when possible. Use ``if can_shoot`` rather than ``if can_shoot == true`` and use ``if not can_shoot`` rather than ``if can_shoot == false``.
+Booleans can be directly used in ``if`` statements. The code below demonstrates this on the ``if can_shoot:`` line. You don't need to use ``== true``, you only need ``if can_shoot:``. Similarly, use ``if not can_shoot:`` rather than ``== false``.
 
 ::
 
@@ -24,7 +24,7 @@ Boolean is a built-in type. It can represent any data type that is either a true
     
     func shoot():
         if can_shoot:
-            # Perform shooting actions here.
+            pass # Perform shooting actions here.
 
 The following code will only create a bullet if both conditions are met: action "shoot" is pressed and if ``can_shoot`` is ``true``.
 
@@ -72,17 +72,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **bool** **(** :ref:`int<class_int>` from **)**
 
-Cast an :ref:`int<class_int>` value to a boolean value, this method will return ``true`` if called with an integer value different to 0 and ``false`` in other case.
+Cast an :ref:`int<class_int>` value to a boolean value, this method will return ``false`` if ``0`` is passed in, and ``true`` for all other ints.
 
 ----
 
 - :ref:`bool<class_bool>` **bool** **(** :ref:`float<class_float>` from **)**
 
-Cast a :ref:`float<class_float>` value to a boolean value, this method will return ``true`` if called with a floating-point value different to 0 and ``false`` in other case.
+Cast a :ref:`float<class_float>` value to a boolean value, this method will return ``false`` if ``0.0`` is passed in, and ``true`` for all other floats.
 
 ----
 
 - :ref:`bool<class_bool>` **bool** **(** :ref:`String<class_String>` from **)**
 
-Cast a :ref:`String<class_String>` value to a boolean value, this method will return ``true`` if called with a non-empty string and ``false`` in other case. Examples: ``bool("False")`` returns ``true``, ``bool("")`` returns ``false``.
+Cast a :ref:`String<class_String>` value to a boolean value, this method will return ``false`` if ``""`` is passed in, and ``true`` for all non-empty strings.
+
+Examples: ``bool("False")`` returns ``true``, ``bool("")`` returns ``false``.
 

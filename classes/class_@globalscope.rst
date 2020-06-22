@@ -34,6 +34,8 @@ Properties
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`Geometry<class_Geometry>`                                           | :ref:`Geometry<class_@GlobalScope_property_Geometry>`                               |
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`GodotSharp<class_GodotSharp>`                                       | :ref:`GodotSharp<class_@GlobalScope_property_GodotSharp>`                           |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`IP<class_IP>`                                                       | :ref:`IP<class_@GlobalScope_property_IP>`                                           |
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`Input<class_Input>`                                                 | :ref:`Input<class_@GlobalScope_property_Input>`                                     |
@@ -2254,6 +2256,14 @@ The :ref:`Engine<class_Engine>` singleton.
 - :ref:`Geometry<class_Geometry>` **Geometry**
 
 The :ref:`Geometry<class_Geometry>` singleton.
+
+----
+
+.. _class_@GlobalScope_property_GodotSharp:
+
+- :ref:`GodotSharp<class_GodotSharp>` **GodotSharp**
+
+The :ref:`GodotSharp<class_GodotSharp>` singleton.
 
 ----
 

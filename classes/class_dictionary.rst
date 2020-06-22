@@ -181,6 +181,16 @@ Returns the current value for the specified key in the ``Dictionary``. If the ke
 
 Returns ``true`` if the dictionary has a given key.
 
+**Note:** This is equivalent to using the ``in`` operator as follows:
+
+::
+
+    # Will evaluate to `true`.
+    if "godot" in {"godot": "engine"}:
+        pass
+
+This method (like the ``in`` operator) will evaluate to ``true`` as long as the key exists, even if the associated value is ``null``.
+
 ----
 
 .. _class_Dictionary_method_has_all:
@@ -203,6 +213,8 @@ Returns a hashed integer value representing the dictionary contents. This can be
     var dict2 = {0: 10}
     # The line below prints `true`, whereas it would have printed `false` if both variables were compared directly.
     print(dict1.hash() == dict2.hash())
+
+**Note:** Dictionaries with the same keys/values but in a different order will have a different hash.
 
 ----
 

@@ -483,7 +483,15 @@ Erases ``chars`` characters from the string starting from ``position``.
 
 - :ref:`int<class_int>` **find** **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0 **)**
 
-Finds the first occurrence of a substring. Returns the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
+Finds the first occurrence of a substring. Returns the starting position of the substring or ``-1`` if not found. Optionally, the initial search index can be passed.
+
+**Note:** If you just want to know whether a string contains a substring, use the ``in`` operator as follows:
+
+::
+
+    # Will evaluate to `false`.
+    if "i" in "team":
+        pass
 
 ----
 
@@ -491,7 +499,7 @@ Finds the first occurrence of a substring. Returns the starting position of the 
 
 - :ref:`int<class_int>` **find_last** **(** :ref:`String<class_String>` what **)**
 
-Finds the last occurrence of a substring. Returns the starting position of the substring or -1 if not found.
+Finds the last occurrence of a substring. Returns the starting position of the substring or ``-1`` if not found.
 
 ----
 
@@ -499,7 +507,7 @@ Finds the last occurrence of a substring. Returns the starting position of the s
 
 - :ref:`int<class_int>` **findn** **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0 **)**
 
-Finds the first occurrence of a substring, ignoring case. Returns the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
+Finds the first occurrence of a substring, ignoring case. Returns the starting position of the substring or ``-1`` if not found. Optionally, the initial search index can be passed.
 
 ----
 
@@ -987,7 +995,7 @@ Returns a copy of the string stripped of any escape character. These include all
 
 - :ref:`String<class_String>` **substr** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` len=-1 **)**
 
-Returns part of the string from the position ``from`` with length ``len``. Argument ``len`` is optional and using -1 will return remaining characters from given position.
+Returns part of the string from the position ``from`` with length ``len``. Argument ``len`` is optional and using ``-1`` will return remaining characters from given position.
 
 ----
 
