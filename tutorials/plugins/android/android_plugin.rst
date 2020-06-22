@@ -32,7 +32,7 @@ and capabilities that don't belong to the core feature set of a game engine:
 Android plugin
 --------------
 
-While introduced in Godot 3.2.0, the Android plugin system got a significant architecture update starting with Godot 3.2.2. 
+While introduced in Godot 3.2, the Android plugin system got a significant architecture update starting with Godot 3.2.2.
 The new plugin system is backward-incompatible with the previous one and in Godot 4.0, the previous system was fully deprecated and removed.
 Since we previously did not version the Android plugin systems, the new one is now labelled ``v1`` and is the starting point for the modern Godot Android ecosystem.
 
@@ -45,8 +45,8 @@ with the following caveats:
 
 -  The library must include a specifically configured ``<meta-data>`` tag in its manifest file.
 
-Building a Android plugin
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Building an Android plugin
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Prerequisite:** `Android Studio <https://developer.android.com/studio>`_ is strongly recommended as the IDE to use to create Android plugins.
 The instructions below assumes that you're using Android Studio.
@@ -129,8 +129,8 @@ The instructions below assumes that you're using Android Studio.
             
 
 
-Loading and using a Android plugin
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Loading and using an Android plugin
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Move the plugin configuration file (e.g: ``MyPlugin.gdap``) and, if any, its local binary (e.g: ``MyPlugin.aar``) and dependencies to the Godot project's ``res://android/plugins`` directory.
 
@@ -148,7 +148,8 @@ From your script::
 
 Bundling GDNative resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A Android plugin can define and provide C/C++ GDNative resources, either to provide and/or access functionality from the game logic.
+
+An Android plugin can define and provide C/C++ GDNative resources, either to provide and/or access functionality from the game logic.
 The GDNative resources can be bundled within the plugin ``aar`` file which simplifies the distribution and deployment process:
 
     -   The shared libraries (``.so``) for the defined GDNative libraries will be automatically bundled by the ``aar`` build system.
@@ -162,11 +163,12 @@ At runtime, the plugin will provide these paths to Godot core which will use the
 
 Reference implementations
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
 -   `Godot Oculus Mobile plugin <https://github.com/GodotVR/godot_oculus_mobile>`_
 
     -   `Bundled gdnative resources <https://github.com/GodotVR/godot_oculus_mobile/tree/master/plugin/src/main/assets/addons/godot_ovrmobile>`_
 
--   `Godot Payment plugin <https://github.com/godotengine/godot/tree/master/platform/android/java/plugins/godotpayment>`_
+-   `Godot Google Play Billing plugin <https://github.com/godotengine/godot-google-play-billing>`_
 
 
 Troubleshooting
