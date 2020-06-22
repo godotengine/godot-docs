@@ -8,6 +8,7 @@ About
    introduction
    faq
    docs_changelog
+   release_policy
 
 .. history
 .. authors
