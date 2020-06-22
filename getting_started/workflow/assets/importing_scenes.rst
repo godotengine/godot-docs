@@ -61,7 +61,8 @@ Blender has built-in COLLADA support, but it does not work properly for the need
 and should not be used as is.
 
 Godot provides a `Blender plugin <https://github.com/godotengine/collada-exporter>`_
-that will correctly export COLLADA scenes for use in Godot.
+that will correctly export COLLADA scenes for use in Godot. It does not work in Blender 2.8 or
+newer, but there are plans to update it in the future.
 
 Exporting ESCN files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,7 +70,8 @@ Exporting ESCN files from Blender
 The most powerful one, called `godot-blender-exporter
 <https://github.com/godotengine/godot-blender-exporter>`__.
 It uses a .escn file, which is kind of another name for a .tscn file (Godot scene file);
-it keeps as much information as possible from a Blender scene.
+it keeps as much information as possible from a Blender scene. However, it is considered
+experimental.
 
 The ESCN exporter has a detailed `document <escn_exporter/index.html>`__ describing
 its functionality and usage.

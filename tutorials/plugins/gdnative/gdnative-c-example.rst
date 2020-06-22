@@ -510,6 +510,12 @@ select our ``.gdnlib`` file by clicking on *Library* and selecting *Load*:
 
 .. image:: img/nativescript_library.png
 
+.. note::
+
+    The *Class Name* must have the same spelling as the one given in ``godot_nativescript_init``
+    when registering the class.
+
+   
 Finally, click on the save icon and save this as ``bin/simple.gdns``:
 
 .. image:: img/save_gdns.gif

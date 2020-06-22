@@ -201,7 +201,7 @@ Local arrays
 ~~~~~~~~~~~~
 
 Local arrays are declared in functions. They can use all of the allowed datatypes, except samplers.
-The array declaration follows a C-style syntax: ``typename + identifier + [array size]``.
+The array declaration follows a C-style syntax: ``[const] + [precision] + typename + identifier + [array size]``.
 
 .. code-block:: glsl
 
@@ -368,6 +368,11 @@ Godot Shading language supports the most common types of flow control:
 
 Keep in mind that, in modern GPUs, an infinite loop can exist and can freeze your application (including editor).
 Godot can't protect you from this, so be careful not to make this mistake!
+
+.. warning::
+
+    When exporting a GLES2 project to HTML5, WebGL 1.0 will be used. WebGL 1.0
+    doesn't support dynamic loops, so shaders using those won't work there.
 
 Discarding
 ----------

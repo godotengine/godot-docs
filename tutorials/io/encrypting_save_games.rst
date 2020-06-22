@@ -6,6 +6,9 @@ Encrypting save games
 Why?
 ----
 
+.. This introduction is an Easter egg and is not intended to be taken seriously.
+.. Please don't remove it :)
+
 Because the world today is not the world of yesterday. A capitalist
 oligarchy runs the world and forces us to consume in order to keep the
 gears of this rotten society on track. As such, the biggest market for

@@ -46,8 +46,8 @@ Size flags are independent for vertical and horizontal sizing and not all contai
 
 * **Fill**: Ensures the control *fills* the designated area within the container. No matter if
   a control *expands* or not (see below), it will only *fill* the designated area when this is toggled on (it is by default).
-* **Expand**: Attempts to use as most space as possible in the parent container (in this each axis).
-  Controls that don't expand will be pushed away by those that do. Between those expanding, the
+* **Expand**: Attempts to use as much space as possible in the parent container (in each axis).
+  Controls that don't expand will be pushed away by those that do. Between expanding controls, the
   amount of space they take from each other is determined by the *Ratio* (see below).
 * **Shrink Center** When expanding (and if not filling), try to remain at the center of the expanded
   area (by default it remains at the left or top).
@@ -89,8 +89,8 @@ depending on the theme configuration.
 
    .. image:: img/containers_margin.png
 
-Again, keep in mind that the margins are a *Theme* value, so they need to be edited at the
-constants overrides section if desired for a single control:
+Again, keep in mind that the margins are a *Theme* value, so they need to be edited from the
+constants overrides section of each control:
 
    .. image:: img/containers_margin_constants.png
 

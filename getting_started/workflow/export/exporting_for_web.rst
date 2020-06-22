@@ -108,6 +108,12 @@ The default HTML page does not display the boot splash while loading. However,
 the image is exported as a PNG file, so :ref:`custom HTML pages <doc_customizing_html5_shell>`
 can display it.
 
+Shader language limitations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When exporting a GLES2 project to HTML5, WebGL 1.0 will be used. WebGL 1.0
+doesn't support dynamic loops, so shaders using those won't work there.
+
 Unimplemented functionality
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

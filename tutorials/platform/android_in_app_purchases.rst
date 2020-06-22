@@ -3,125 +3,151 @@
 Android in-app purchases
 ========================
 
-Godot Engine has integrated GooglePaymentsV3 module with which we can implement in-app purchases in our game.
+Godot offers a first-party ``GodotGooglePlayBilling`` Android plugin since Godot 3.2.2.
+The new plugin uses the `Google Play Billing library <https://developer.android.com/google/play/billing>`__
+instead of the now deprecated AIDL IAP implementation.
 
-The `Godot demo projects repository <https://github.com/godotengine/godot-demo-projects>`__
-has an `android_iap <https://github.com/godotengine/godot-demo-projects/tree/master/misc/android_iap>`__
-example project. It includes a GDScript interface for Android IAPs.
-
-Find the ``iap.gd`` script in:
-
-.. code-block:: none
-
-    godot-demo-projects/misc/android_iap
-
-Copy it to your project, then open the Project Settings, add it to the AutoLoad
-list and name it as IAP so that we can reference it anywhere in the game.
-
-Getting the product details
----------------------------
-
-When starting our game, we will need to get the item details from Google such as the product price, description, localized price string, etc.
-
-::
-
-    # First, listen to the SKU details update callback.
-    IAP.connect("sku_details_complete", self, "sku_details_complete")
-
-    # Then ask Google the details for these items.
-    # pid1 and pid2 are our product IDs entered in the Google Play dashboard.
-    IAP.sku_details_query(["pid1", "pid2"])
+If you learn better by looking at an example, you can find the demo project
+`here <https://github.com/godotengine/godot-demo-projects/tree/master/misc/android_iap>`__.
 
 
-    # This will be called when SKU details are retrieved successfully.
-    func sku_details_complete():
-        print(IAP.sku_details)  # This will print the details as JSON format. Refer to the format in `iap.gd`.
-        print(IAP.sku_details["pid1"].price)  # Print formatted localized price.
+Migrating from Godot 3.2.1 and lower (GodotPaymentsV3)
+------------------------------------------------------
 
-We can use the IAP details to display the title, price and/or description on our shop scene.
+The new ``GodotGooglePlayBilling`` API is not compatible with its predecessor ``GodotPaymentsV3``.
 
-Check if user purchased an item
--------------------------------
+Changes
+*******
 
-When starting our game, we can check if the user has purchased any product. **You should do this only after 2/3 seconds after your game is loaded.** If we do this as the first thing when the game is launched, IAPs might not be initialized and our game will crash on start.
-
-::
-
-    # Add a listener first.
-    IAP.connect("has_purchased", self, "iap_has_purchased")
-    IAP.request_purchased() #Ask Google for all purchased items
-
-    # This will call for each and every user's purchased products.
-    func iap_has_purchased(item_name):
-        print(item_name) #print the name of purchased items
+- You need to enable the Custom Build option in your Android export settings and install
+  the ``GodotGooglePlayBilling`` plugin manually (see below for details)
+- All purchases have to be acknowledged by your app. This is a
+  `requirement from Google <https://developer.android.com/google/play/billing/integrate#process>`__.
+  Purchases that are not acknowledged by your app will be refunded.
+- Support for subscriptions
+- Signals (no polling or callback objects)
 
 
-The Google IAP policy says the game should restore the user's purchases if the user replaces their phone or reinstalls the same app. We can use the above code to check what products the user has purchased and we can make our game respond accordingly.
+Usage
+-----
 
-Simple Purchase
----------------
+Getting started
+***************
 
-We can put this purchase logic on a product's buy button.
+If not already done, make sure you have enabled and successfully set up :ref:`Android Custom Builds <doc_android_custom_build>`.
+Grab the``GodotGooglePlayBilling`` plugin binary and config from the `releases page <https://github.com/godotengine/godot-google-play-billing/releases>`__
+and put both into `res://android/plugins`.
+The plugin should now show up in the Android export settings, where you can enable it.
+
+
+Getting started
+***************
+
+To use the ``GodotGooglePlayBilling`` API you first have to get the ``GodotGooglePlayBilling``
+singleton and start the connection:
 
 ::
 
-    # First, listen for purchase_success callback.
-    IAP.connect("purchase_success", self, "purchase_success_callback")
+    var payment
 
-    # Then call `purchase()` like this:
-    IAP.purchase("pid1")  # Replace pid1 with one of your product IDs.
-    IAP.purchase("pid2")  # Replace pid2 with another of your product IDs.
+    func _ready():
+        if Engine.has_singleton("GodotGooglePlayBilling"):
+            payment = Engine.get_singleton("GodotGooglePlayBilling")
+            
+            # These are all signals supported by the API
+            # You can drop some of these based on your needs
+            payment.connect("connected", self, "_on_connected") # No params
+            payment.connect("disconnected", self, "_on_disconnected") # No params
+            payment.connect("connect_error", self, "_on_connect_error") # Response ID (int), Debug message (string)
+            payment.connect("purchases_updated", self, "_on_purchases_updated") # Purchases (Dictionary[])
+            payment.connect("purchase_error", self, "_on_purchase_error") # Response ID (int), Debug message (string)
+            payment.connect("sku_details_query_completed", self, "_on_sku_details_query_completed") # SKUs (Dictionary[])
+            payment.connect("sku_details_query_error", self, "_on_sku_details_query_error") # Response ID (int), Debug message (string), Queried SKUs (string[])
+            payment.connect("purchase_acknowledged", self, "_on_purchase_acknowledged") # Purchase token (string)
+            payment.connect("purchase_acknowledgement_error", self, "_on_purchase_acknowledgement_error") # Response ID (int), Debug message (string), Purchase token (string)
+            payment.connect("purchase_consumed", self, "_on_purchase_consumed") # Purchase token (string)
+            payment.connect("purchase_consumption_error", self, "_on_purchase_consumption_error") # Response ID (int), Debug message (string), Purchase token (string)
+            
+            payment.startConnection()
+        else:
+            print("Android IAP support is not enabled. Make sure you have enabled 'Custom Build' and the GodotGooglePlayBilling plugin in your Android export settings! IAP will not work.")
 
-    # This function will be called when the purchase is a success.
-    func purchase_success_callback(item):
-        print(item + " has purchased")
+All API methods only work if the API is connected. You can use ``payment.isReady()`` to check the connection status.
 
-We can also implement other signals for the purchase flow and improve the user experience as you needed.
 
-- ``purchase_fail``: When the purchase is failed due to any reason.
-- ``purchase_cancel``: When the user cancels the purchase.
-- ``purchase_owned``: When the user already bought the product earlier.
+Querying available items
+************************
 
-Consumables and Non-Consumables
--------------------------------
+As soon as the API is connected, you can query SKUs using ``querySkuDetails``.
 
-There are two types of products - consumables and non-consumables:
-
-- **Consumables** are purchased and used, for example, healing potions which can be purchased again and again.
-- **Non-consumables** are one time purchases, for example, level packs.
-
-Google doesn't have this separation in their dashboard. If our product is a consumable, and if a user has purchased it, it will not be available for purchase until it is consumed. So we should call the consume method for our consumables and don't call consume for your non-consumables.
-
-::
-
-    IAP.connect("consume_success", self, "on_consume_success")
-    IAP.consume("pid")
-
-    func on_consume_success(item):
-        print(item + " consumed")
-
-If our game has only consumables, we don't have to do this. We can set it to consume the item automatically after a purchase.
+Full example:
 
 ::
 
-    IAP.set_auto_consume(true)
+    func _on_connected():
+      payment.querySkuDetails(["my_iap_item"], "inapp") # "subs" for subscriptions
 
-If our game has only non-consumables, we can
+    func _on_sku_details_query_completed(sku_details):
+      for available_sku in sku_details:
+        print(available_sku)
+
+
+Purchase an item
+****************
+
+To initiate the purchase flow for an item, call ``purchase``.
+You **must** query the SKU details for an item before you can
+initiate the purchase flow for it.
 
 ::
 
-    IAP.set_auto_consume(false)
+    payment.purchase("my_iap_item")
 
-We should set the auto consume value only once when the game starts.
 
-Testing
--------
 
-If we add a Gmail ID as a tester in the Google Play dashboard, that tester can purchase items and they will not be charged. Another way to test IAP is using redeem codes generated by us for our game because the purchase flow is the same.
+Check if the user purchased an item
+***********************************
 
-Third way of testing is in development side. If we put the product ids as shown below, we will get a static fixed response according to the product ID. This is a quick way of testing things before going to the dashboard.
+To get all purchases, call ``queryPurchases``. Unlike most of the other functions, ``queryPurchases`` is
+a synchronous operation and returns a :ref:`Dictionary <class_Dictionary>` with a status code
+and either an array of purchases or an error message.
 
-- android.test.purchased
-- android.test.canceled
-- android.test.refunded
-- android.test.item_unavailable
+Full example:
+
+::
+
+    var query = payment.queryPurchases()
+    if query.status == OK:
+        for purchase in query.purchases:
+            if purchase.sku == "my_iap_item":
+                premium = true # Entitle the user to the content they bought
+                if !purchase.is_acknowledged:
+                    payment.acknowledgePurchase(purchase.purchase_token)
+
+
+Consumables
+***********
+
+If your in-app item is not a one-time purchase but a consumable item (e.g. coins) which can be purchased
+multiple times, you can consume an item by calling ``consumePurchase`` with a purchase token.
+Call ``queryPurchases`` to get the purchase token. Calling ``consumePurchase`` automatically
+acknowledges a purchase.
+
+::
+
+    var query = payment.queryPurchases()
+    if query.status == OK:
+        for purchase in query.purchases:
+            if purchase.sku == "my_consumable_iap_item":
+                if !purchase.is_acknowledged:
+                    payment.consumePurchase(purchase.purchase_token)
+                    # Check the _on_purchase_consumed callback and give the user what they bought
+
+
+Subscriptions
+*************
+
+Subscriptions don't work much different from regular in-app items. Just use ``"subs"`` as second
+argument to ``querySkuDetails`` to get subscription details.
+Check ``is_auto_renewing`` in the results of ``queryPurchases()`` to see if a
+user has cancelled an auto-renewing subscription
