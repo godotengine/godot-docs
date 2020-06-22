@@ -38,11 +38,11 @@ for each Godot version:
 | Godot 3.2   | January 2020      | |supported| Backwards-compatible new features (backported from the       |
 |             |                   | ``master`` branch) as well as bug, security, and platform support fixes. |
 +-------------+-------------------+--------------------------------------------------------------------------+
-| Godot 3.1   | March 2019        | |partial| Only security and platform support fixes.                      |
+| Godot 3.1   | March 2019        | |partial| Only critical, security and platform support fixes.            |
 +-------------+-------------------+--------------------------------------------------------------------------+
-| Godot 3.0   | January 2018      | |partial| Only security and platform support fixes.                      |
+| Godot 3.0   | January 2018      | |partial| Only critical, security and platform support fixes.            |
 +-------------+-------------------+--------------------------------------------------------------------------+
-| Godot 2.1   | July 2016         | |partial| Only security and platform support fixes.                      |
+| Godot 2.1   | July 2016         | |partial| Only critical, security and platform support fixes.            |
 +-------------+-------------------+--------------------------------------------------------------------------+
 | Godot 2.0   | February 2016     | |eol| No longer supported.                                               |
 +-------------+-------------------+--------------------------------------------------------------------------+
