@@ -212,33 +212,33 @@ They can be initialized at the beginning like:
 
 .. code-block:: glsl
 
-      float float_arr[3] = float[3] (1.0, 0.5, 0.0); // first constructor
+    float float_arr[3] = float[3] (1.0, 0.5, 0.0); // first constructor
 
-      int int_arr[3] = int[] (2, 1, 0); // second constructor
+    int int_arr[3] = int[] (2, 1, 0); // second constructor
 
-      vec2 vec2_arr[3] = { vec2(1.0, 1.0), vec2(0.5, 0.5), vec2(0.0, 0.0) }; // third constructor
+    vec2 vec2_arr[3] = { vec2(1.0, 1.0), vec2(0.5, 0.5), vec2(0.0, 0.0) }; // third constructor
 
-      bool bool_arr[] = { true, true, false }; // fourth constructor - size is defined automatically from the element count
+    bool bool_arr[] = { true, true, false }; // fourth constructor - size is defined automatically from the element count
 
 You can declare multiple arrays (even with different sizes) in one expression:
 
 .. code-block:: glsl
 
-      float a[3] = float[3] (1.0, 0.5, 0.0),
-       b[2] = { 1.0, 0.5 },
-       c[] = { 0.7 },
-       d = 0.0,
-       e[5];
+    float a[3] = float[3] (1.0, 0.5, 0.0),
+    b[2] = { 1.0, 0.5 },
+    c[] = { 0.7 },
+    d = 0.0,
+    e[5];
 
 To access an array element, use the indexing syntax:
 
 .. code-block:: glsl
 
-      float arr[3];
+    float arr[3];
 
-      arr[0] = 1.0; // setter
+    arr[0] = 1.0; // setter
 
-      COLOR.r = arr[0]; // getter
+    COLOR.r = arr[0]; // getter
 
 Arrays also have a built-in function ``.length()`` (not to be confused with the built-in ``length()`` function). It doesn't accept any parameters and will return the array's size.
 
@@ -249,7 +249,9 @@ Arrays also have a built-in function ``.length()`` (not to be confused with the 
         // ...
     }
 
-Note: If you use an index below 0 or greater than array size - the shader will crash and break rendering. To prevent this, use ``length()``, ``if``, or ``clamp()`` functions to ensure the index is between 0 and the array's length. Always carefully test and check your code. If you pass a constant expression or a simple number, the editor will check its bounds to prevent this crash.
+.. note::
+
+    If you use an index below 0 or greater than array size - the shader will crash and break rendering. To prevent this, use ``length()``, ``if``, or ``clamp()`` functions to ensure the index is between 0 and the array's length. Always carefully test and check your code. If you pass a constant expression or a simple number, the editor will check its bounds to prevent this crash.
 
 Global arrays
 ~~~~~~~~~~~~~
@@ -257,6 +259,7 @@ Global arrays
 You can declare arrays at global space like:
 
 .. code-block:: glsl
+
     shader_type spatial;
 
     const lowp vec3 v[1] = lowp vec3[1] ( vec3(0, 0, 1) );
@@ -266,6 +269,7 @@ You can declare arrays at global space like:
     }
 
 .. note::
+
     Global arrays have to be declared as global constants, otherwise they can be declared the same as local arrays.
 
 Constants
