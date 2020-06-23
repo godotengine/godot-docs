@@ -804,7 +804,7 @@ for
 
 To iterate through a range, such as an array or table, a *for* loop is
 used. When iterating over an array, the current array element is stored in
-the loop variable. When iterating over a dictionary, the *index* is stored
+the loop variable. When iterating over a dictionary, the *key* is stored
 in the loop variable.
 
 ::
