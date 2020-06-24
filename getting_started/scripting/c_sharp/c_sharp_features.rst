@@ -222,10 +222,12 @@ Full list of defines
 
 * One of ``GODOT_64`` or ``GODOT_32`` is defined depending on if the architecture is 64-bit or 32-bit.
 
-* One of ``GODOT_LINUXBSD``, ``GODOT_WINDOWS``, ``GODOT_OSX``, ``GODOT_ANDROID``, ``GODOT_HTML5``,
-  or ``GODOT_SERVER`` depending on the OS. These names may change in the future.
-  These are created from the ``get_name()`` method of the :ref:``OS <class_OS>`` singleton,
-  but not every possible OS the method returns is an OS that Godot with Mono runs on.
+* One of ``GODOT_LINUXBSD``, ``GODOT_WINDOWS``, ``GODOT_OSX``,
+  ``GODOT_ANDROID``, ``GODOT_IOS``, ``GODOT_HTML5``, or ``GODOT_SERVER``
+  depending on the OS. These names may change in the future.
+  These are created from the ``get_name()`` method of the
+  :ref:``OS <class_OS>`` singleton, but not every possible OS
+  the method returns is an OS that Godot with Mono runs on.
 
 When **exporting**, the following may also be defined depending on the export features:
 
@@ -233,6 +235,11 @@ When **exporting**, the following may also be defined depending on the export fe
 
 * One of ``GODOT_ARM64_V8A`` or ``GODOT_ARMEABI_V7A`` on Android only depending on the architecture.
 
-* One of ``GODOT_S3TC``, ``GODOT_ETC``, or ``GODOT_ETC2`` depending on the texture compression type.
+* One of ``GODOT_ARM64`` or ``GODOT_ARMV7`` on iOS only depending on the architecture.
+
+* Any of ``GODOT_S3TC``, ``GODOT_ETC``, and ``GODOT_ETC2`` depending on the texture compression type.
 
 * Any custom features added in the export menu will be capitalized and prefixed: ``foo`` -> ``GODOT_FOO``.
+
+To see an example project, see the OS testing demo:
+https://github.com/godotengine/godot-demo-projects/tree/master/misc/os_test
