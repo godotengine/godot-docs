@@ -29,8 +29,9 @@ your use case best:
   This format works well for music, long sound effect sequences, and voice
   at relatively low bitrates.
 
-Keep in mind Ogg Vorbis files don't contain looping information. If looping an
-Ogg Vorbis file is desired, it must be set up using the import options:
+Keep in mind that WAV files may contain looping information in its metadata, 
+while Ogg Vorbis files do not. If looping an Ogg Vorbis file is desired, 
+it must be set up using the import options:
 
 .. image:: img/audio_stream_import.png
 
