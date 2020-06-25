@@ -8,8 +8,8 @@ Modules
 
 The Summator example in :ref:`doc_custom_modules_in_c++` is great for small,
 custom modules, but what if you want to use a larger, external library?
-Let's look at an example using Festival, a speech synthesis (text-to-speech)
-library written in C++.
+Let's look at an example using `Festival <http://www.cstr.ed.ac.uk/projects/festival/>`_,
+a speech synthesis (text-to-speech) library written in C++.
 
 To bind to an external library, set up a module directory similar to the Summator example:
 
@@ -163,11 +163,20 @@ environment's paths:
 
 .. code-block:: python
 
-    env_tts.Append(CPPPATH=["speech_tools/include", "festival/src/include"]) # this is a path relative to /modules/tts/
-    # http://www.cstr.ed.ac.uk/projects/festival/manual/festival_28.html#SEC132 <-- Festival library documentation
-    env_tts.Append(LIBPATH=['libpath']) # this is a path relative to /modules/tts/ where your .a library files reside
-    # You should check with the documentation of the external library to see which library files should be included/linked
-    env_tts.Append(LIBS=['Festival', 'estools', 'estbase', 'eststring'])
+    # These paths are relative to /modules/tts/
+    env_tts.Append(CPPPATH=["speech_tools/include", "festival/src/include"])
+
+    # LIBPATH and LIBS need to be set on the real "env" (not the clone) in order
+    # to link the specified libs to the godot executable.
+
+    # This is a path relative to /modules/tts/ where your .a libraries reside.
+    # If you are compiling the module externally (not in the godot source tree),
+    # these will need to be full paths.
+    env.Append(LIBPATH=['libpath'])
+
+    # Check with the documentation of the external library to see which library
+    # files should be included/linked
+    env.Append(LIBS=['Festival', 'estools', 'estbase', 'eststring'])
 
 If you want to add custom compiler flags when building your module, you need to clone
 `env` first, so it won't add those flags to whole Godot build (which can cause errors).
