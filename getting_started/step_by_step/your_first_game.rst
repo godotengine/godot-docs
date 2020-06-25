@@ -779,10 +779,16 @@ You can assign this property's value in two ways:
 - Click the down arrow next to "[empty]" and choose "Load". Select
   ``Mob.tscn``.
 
-Next, click on the Player and connect the ``hit`` signal. We want to make a
-new function named ``game_over``, which will handle what needs to happen when a
-game ends. Type "game_over" in the "Receiver Method" box at the bottom of the
-"Connect a Signal" window and click "Connect". Add the following code to the
+Next, select the ``Player`` node in the Scene dock, and access the Node dock on
+the sidebar. Make sure to have the Signals tab selected in the Node dock.
+
+You should see a list of the signals for the ``Player`` node. Find and
+double-click the ``hit`` signal in the list (or right-click it and select
+"Connect..."). This will open the signal connection dialog. We want to make
+a new function named ``game_over``, which will handle what needs to happen when
+a game ends.
+Type "game_over" in the "Receiver Method" box at the bottom of the
+signal connection dialog and click "Connect". Add the following code to the
 new function, as well as a ``new_game`` function that will set everything up
 for a new game:
 
