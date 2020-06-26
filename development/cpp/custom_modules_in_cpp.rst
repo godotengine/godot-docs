@@ -422,7 +422,7 @@ library that will be dynamically loaded when starting our game's binary.
     # Position independent code is required for a shared library.
     module_env.Append(CCFLAGS=['-fPIC'])
 
-    # Don't inject godot's dependencies into our shared library.
+    # Don't inject Godot's dependencies into our shared library.
     module_env['LIBS'] = []
 
     # Define the shared library. By default it would be built in the module's
