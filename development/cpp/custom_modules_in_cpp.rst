@@ -425,7 +425,7 @@ library that will be dynamically loaded when starting our game's binary.
     # Don't inject Godot's dependencies into our shared library.
     module_env['LIBS'] = []
 
-    # Define the shared library. By default it would be built in the module's
+    # Define the shared library. By default, it would be built in the module's
     # folder, however it's better to output it into `bin` next to the
     # Godot binary.
     shared_lib = module_env.SharedLibrary(target='#bin/summator', source=sources)
