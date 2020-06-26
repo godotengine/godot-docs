@@ -419,7 +419,7 @@ library that will be dynamically loaded when starting our game's binary.
     # First, create a custom env for the shared library.
     module_env = env.Clone()
 
-    # Position independent code is required for a shared library.
+    # Position-independent code is required for a shared library.
     module_env.Append(CCFLAGS=['-fPIC'])
 
     # Don't inject Godot's dependencies into our shared library.
