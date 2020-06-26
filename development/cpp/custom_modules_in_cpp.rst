@@ -433,8 +433,8 @@ library that will be dynamically loaded when starting our game's binary.
     # Finally, notify the main build environment it now has our shared library
     # as a new dependency.
 
-    # LIBPATH and LIBS need to be set on the real "env" (not the clone) in order
-    # to link the specified libs to the godot executable.
+    # LIBPATH and LIBS need to be set on the real "env" (not the clone)
+    # to link the specified libraries to the Godot executable.
 
     env.Append(LIBPATH=['#bin'])
 

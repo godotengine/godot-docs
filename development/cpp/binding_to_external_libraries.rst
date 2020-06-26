@@ -166,8 +166,8 @@ environment's paths:
     # These paths are relative to /modules/tts/
     env_tts.Append(CPPPATH=["speech_tools/include", "festival/src/include"])
 
-    # LIBPATH and LIBS need to be set on the real "env" (not the clone) in order
-    # to link the specified libs to the godot executable.
+    # LIBPATH and LIBS need to be set on the real "env" (not the clone)
+    # to link the specified libraries to the Godot executable.
 
     # This is a path relative to /modules/tts/ where your .a libraries reside.
     # If you are compiling the module externally (not in the godot source tree),
@@ -175,7 +175,7 @@ environment's paths:
     env.Append(LIBPATH=['libpath'])
 
     # Check with the documentation of the external library to see which library
-    # files should be included/linked
+    # files should be included/linked.
     env.Append(LIBS=['Festival', 'estools', 'estbase', 'eststring'])
 
 If you want to add custom compiler flags when building your module, you need to clone
