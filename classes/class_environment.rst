@@ -26,6 +26,8 @@ Resource for environment nodes (like :ref:`WorldEnvironment<class_WorldEnvironme
 
 - Adjustments
 
+These effects will only apply when the :ref:`Viewport<class_Viewport>`'s intended usage is "3D" or "3D Without Effects". This can be configured for the root Viewport with :ref:`ProjectSettings.rendering/quality/intended_usage/framebuffer_allocation<class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation>`, or for specific Viewports via the :ref:`Viewport.usage<class_Viewport_property_usage>` property.
+
 Tutorials
 ---------
 

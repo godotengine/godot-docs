@@ -459,7 +459,7 @@ Returns a copy of the string with indentation (leading tabs and spaces) removed.
 
 - :ref:`bool<class_bool>` **empty** **(** **)**
 
-Returns ``true`` if the string is empty.
+Returns ``true`` if the length of the string equals ``0``.
 
 ----
 
