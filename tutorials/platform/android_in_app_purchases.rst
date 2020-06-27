@@ -116,7 +116,7 @@ Full example:
 
 ::
 
-    var query = payment.queryPurchases()
+    var query = payment.queryPurchases("inapp") # Or "subs" for subscriptions
     if query.status == OK:
         for purchase in query.purchases:
             if purchase.sku == "my_iap_item":
@@ -135,7 +135,7 @@ acknowledges a purchase.
 
 ::
 
-    var query = payment.queryPurchases()
+    var query = payment.queryPurchases("inapp") # Or "subs" for subscriptions
     if query.status == OK:
         for purchase in query.purchases:
             if purchase.sku == "my_consumable_iap_item":
