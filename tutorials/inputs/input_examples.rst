@@ -194,7 +194,7 @@ the :kbd:`T`:
     {
         if (inputEvent is InputEventKey keyEvent && keyEvent.Pressed)
         {
-            if ((Keylist)keyEvent.Scancode == KeyList.T)
+            if ((KeyList)keyEvent.Scancode == KeyList.T)
             {
                 GD.Print("T was pressed");
             }
