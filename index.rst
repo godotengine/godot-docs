@@ -26,7 +26,7 @@ Godot Docs – *master* branch
             the "latest" (development) branch, but should be suitable to learn
             how to use stable Godot releases nevertheless.
 
-Welcome to the official documentation of `Godot Engine <https://godotengine.org>`__,
+Welcome to the official documentation of the `Godot Engine <https://godotengine.org>`__,
 the free and open source community-driven 2D and 3D game engine! If you are new
 to this documentation, we recommend that you read the
 :ref:`introduction page <doc_about_intro>` to get an overview of what this
@@ -36,7 +36,7 @@ The table of contents below and in the sidebar should let you easily access the
 documentation for your topic of interest. You can also use the search function
 in the top left corner.
 
-.. note:: Godot Engine is an open source project developed by a community of
+.. note:: The Godot Engine is an open source project developed by a community of
           volunteers. The documentation team can always use your
           feedback and help to improve the tutorials and class reference. If
           you don't understand something, or cannot find what you
