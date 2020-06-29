@@ -1573,7 +1573,7 @@ multiple times, you can yield to the ``completed`` signal conditionally:
         return result
 
 This ensures that the function returns whatever it was supposed to return
-irregardless of whether coroutines were used internally. Note that using
+regardless of whether coroutines were used internally. Note that using
 ``while`` would be redundant here as the ``completed`` signal is only emitted
 when the function didn't yield anymore.
 
