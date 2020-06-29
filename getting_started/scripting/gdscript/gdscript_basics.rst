@@ -631,7 +631,7 @@ expressions and must be assigned on initialization.
     const E = [1, 2, 3, 4][0] # Constant expression: 1.
     const F = sin(20) # 'sin()' can be used in constant expressions.
     const G = x + 20 # Invalid; this is not a constant expression!
-    const H = A + 20 # Constant expression: 25.
+    const H = A + 20 # Constant expression: 25 (`A` is a constant).
 
 Although the type of constants is inferred from the assigned value, it's also
 possible to add explicit type specification::
@@ -640,6 +640,12 @@ possible to add explicit type specification::
     const B: Vector2 = Vector2()
 
 Assigning a value of an incompatible type will raise an error.
+
+.. note::
+
+    Since arrays and dictionaries are passed by reference, constants are "flat".
+    This means that if you declare a constant array or dictionary, it can still
+    be modified afterwards. They can't be reassigned with another value though.
 
 Enums
 ^^^^^
