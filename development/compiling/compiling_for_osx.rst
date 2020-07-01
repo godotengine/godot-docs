@@ -33,9 +33,19 @@ If you are building the ``master`` branch:
 Compiling
 ---------
 
-Start a terminal, go to the root directory of the engine source code and type::
+Start a terminal, go to the root directory of the engine source code.
 
-    scons platform=osx --jobs=$(sysctl -n hw.logicalcpu)
+To compile for Intel (x86-64) powered Macs, use::
+
+    scons platform=osx arch=x86_64 --jobs=$(sysctl -n hw.logicalcpu)
+
+To compile for Apple Silicon (ARM64) powered Macs, use::
+
+    scons platform=osx arch=arm64 --jobs=$(sysctl -n hw.logicalcpu)
+
+To support both architectures in a single "Universal 2" binary, run the above two commands and then use ``lipo`` to bundle them together::
+
+    lipo -create bin/godot.osx.tools.x86_64 bin/godot.osx.tools.arm64 -output bin/godot.osx.tools.universal
 
 If all goes well, the resulting binary executable will be placed in the
 ``bin/`` subdirectory. This executable file contains the whole engine and
@@ -49,12 +59,17 @@ manager.
 
 To create an ``.app`` bundle like in the official builds, you need to use the
 template located in ``misc/dist/osx_tools.app``. Typically, for an optimized
-editor binary built with ``scons p=osx target=release_debug``::
+editor binary built with ``target=release_debug``::
 
     cp -r misc/dist/osx_tools.app ./Godot.app
     mkdir -p Godot.app/Contents/MacOS
-    cp bin/godot.osx.tools.64 Godot.app/Contents/MacOS/Godot
+    cp bin/godot.osx.opt.tools.universal Godot.app/Contents/MacOS/Godot
     chmod +x Godot.app/Contents/MacOS/Godot
+
+If you are building the ``master`` branch, additionally copy the Vulkan library:
+
+    mkdir -p Godot.app/Contents/Frameworks
+    cp <Vulkan SDK path>/macOS/libs/libMoltenVK.dylib Godot.app/Contents/Frameworks/libMoltenVK.dylib
 
 Compiling a headless/server build
 ---------------------------------
