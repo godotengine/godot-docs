@@ -67,12 +67,6 @@ In GLSL, each shader program looks like a self-contained C-style program. Accord
 is ``main``. If you are copying a vertex shader, rename ``main`` to ``vertex`` and if you are copying a
 fragment shader, rename ``main`` to ``fragment``.
 
-Constants
-^^^^^^^^^
-
-Godot currently does not support constants. You can fake the functionality by using a uniform initialized
-to the value, but you will not benefit from the increased speed from using a constant.
-
 Macros
 ^^^^^^
 
