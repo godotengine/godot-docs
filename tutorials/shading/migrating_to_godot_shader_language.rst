@@ -127,7 +127,7 @@ Types
 ^^^^^
 
 Shadertoy uses the webgl spec, so it runs a slightly different version of GLSL. However, it still
-has the regular types, including `Constants`_ and macros.
+has the regular types, including constants and macros.
 
 mainImage
 ^^^^^^^^^
@@ -194,7 +194,7 @@ Types
 ^^^^^
 
 The Book of Shaders uses the webgl spec, so it runs a slightly different version of GLSL. However, it still
-has the regular types, including `Constants`_ and macros.
+has the regular types, including constants and macros.
 
 Main
 ^^^^
