@@ -493,6 +493,7 @@ Function arguments can have special qualifiers:
 * **in**: Means the argument is only for reading (default).
 * **out**: Means the argument is only for writing.
 * **inout**: Means the argument is fully passed via reference.
+* **const**: Means the argument is a constant and cannot be changed, may be combined with **in** qualifier.
 
 Example below:
 
