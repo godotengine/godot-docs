@@ -222,6 +222,18 @@ features to include/disable.
 Check the output of ``scons --help`` for details about each option for
 the version you are willing to compile.
 
+Cleaning generated files
+------------------------
+
+Sometimes, you may encounter an error due to generated files being present. You
+can remove them by using ``scons --clean <options>``, where ``<options>`` is the
+list of build options you've used to build Godot previously.
+
+Alternatively, you can use ``git clean -fixd`` which will clean build artifacts
+for all platforms and configurations. Beware, as this will remove all untracked
+and ignored files in the repository. Don't run this command if you have
+uncommitted work!
+
 .. _doc_overriding_build_options:
 
 Overriding the build options
