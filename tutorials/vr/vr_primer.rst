@@ -127,6 +127,9 @@ in the `GodotVR Repository <https://github.com/GodotVR>`_.
   (desktop headsets only).
 * `Godot OpenHMD <https://github.com/GodotVR/godot_openhmd>`_ supports OpenHMD, an open source
   API and drivers for headsets.
+* `Godot OpenXR <https://github.com/GodotVR/godot_openxr>`_ Supports OpenXR, an open standard
+for VR and AR software. This plugin is early in development, only supports Linux and requires
+extra setup described in the repository.
 
 These plugins can be downloaded from GitHub or the Godot Asset Library.
 
