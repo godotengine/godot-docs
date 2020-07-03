@@ -212,16 +212,6 @@ directory paths containing such modules:
 
     :ref:`doc_custom_modules_in_c++`
 
-Other build options
--------------------
-
-There are several other build options that you can use to configure the
-way Godot should be built (compiler, debug options, etc.) as well as the
-features to include/disable.
-
-Check the output of ``scons --help`` for details about each option for
-the version you are willing to compile.
-
 Cleaning generated files
 ------------------------
 
@@ -233,6 +223,16 @@ Alternatively, you can use ``git clean -fixd`` which will clean build artifacts
 for all platforms and configurations. Beware, as this will remove all untracked
 and ignored files in the repository. Don't run this command if you have
 uncommitted work!
+
+Other build options
+-------------------
+
+There are several other build options that you can use to configure the
+way Godot should be built (compiler, debug options, etc.) as well as the
+features to include/disable.
+
+Check the output of ``scons --help`` for details about each option for
+the version you are willing to compile.
 
 .. _doc_overriding_build_options:
 
