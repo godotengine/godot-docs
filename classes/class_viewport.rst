@@ -648,7 +648,7 @@ If ``true``, renders the Viewport directly to the screen instead of to the root 
 | *Getter*  | get_clear_mode()      |
 +-----------+-----------------------+
 
-The clear mode when viewport used as a render target.
+The clear mode when viewport used as a render target. Please note that this is intended for 2d usage only.
 
 ----
 
