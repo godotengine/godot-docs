@@ -70,7 +70,7 @@ Internationalize a string
 There are two types of internationalization in Godot's codebase:
 
 - ``TTR()``: **Editor ("tools") translations** will only be processed in the
-  editor. If an user uses the same text in one of their projects, it won't be
+  editor. If a user uses the same text in one of their projects, it won't be
   translated if they provide a translation for it. When contributing to the
   engine, this is generally the macro you should use for localizable strings.
 - ``RTR()``: **Run-time translations** will be automatically localized in
@@ -102,7 +102,7 @@ To insert placeholders in localizable strings, wrap the localization macro in a
 Clamp a value
 -------------
 
-Godot has provides macros for clamping a value with a lower bound (``MAX``), an
+Godot provides macros for clamping a value with a lower bound (``MAX``), an
 upper bound (``MIN``) or both (``CLAMP``):
 
 .. code-block:: cpp
