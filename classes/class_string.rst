@@ -419,7 +419,7 @@ Returns a copy of the string with escaped characters replaced by their meanings 
 
 - :ref:`String<class_String>` **capitalize** **(** **)**
 
-Changes the case of some letters. Replaces underscores with spaces, converts all letters to lowercase, then capitalizes first and every letter following the space character. For ``capitalize camelCase mixed_with_underscores``, it will return ``Capitalize Camelcase Mixed With Underscores``.
+Changes the case of some letters. Replaces underscores with spaces, adds spaces before in-word uppercase characters, converts all letters to lowercase, then capitalizes the first letter and every letter following a space character. For ``capitalize camelCase mixed_with_underscores``, it will return ``Capitalize Camel Case Mixed With Underscores``.
 
 ----
 

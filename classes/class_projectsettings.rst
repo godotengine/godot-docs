@@ -78,6 +78,8 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`audio/output_latency<class_ProjectSettings_property_audio/output_latency>`                                                                                     | ``15``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`audio/output_latency.web<class_ProjectSettings_property_audio/output_latency.web>`                                                                             | ``50``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`audio/video_delay_compensation_ms<class_ProjectSettings_property_audio/video_delay_compensation_ms>`                                                           | ``0``                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`compression/formats/gzip/compression_level<class_ProjectSettings_property_compression/formats/gzip/compression_level>`                                         | ``-1``                                                                                          |
@@ -1022,6 +1024,18 @@ Mixing rate used for audio. In general, it's better to not touch this and leave 
 +-----------+--------+
 
 Output latency in milliseconds for audio. Lower values will result in lower audio latency at the cost of increased CPU usage. Low values may result in audible cracking on slower hardware.
+
+----
+
+.. _class_ProjectSettings_property_audio/output_latency.web:
+
+- :ref:`int<class_int>` **audio/output_latency.web**
+
++-----------+--------+
+| *Default* | ``50`` |
++-----------+--------+
+
+Safer override for :ref:`audio/output_latency<class_ProjectSettings_property_audio/output_latency>` in the Web platform, to avoid audio issues especially on mobile devices.
 
 ----
 

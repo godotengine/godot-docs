@@ -814,14 +814,14 @@ Converts from linear energy to decibels (audio). This can be used to implement v
 
 - :ref:`Resource<class_Resource>` **load** **(** :ref:`String<class_String>` path **)**
 
-Loads a resource from the filesystem located at ``path``.
+Loads a resource from the filesystem located at ``path``. The resource is loaded on the method call (unless it's referenced already elsewhere, e.g. in another script or in the scene), which might cause slight delay, especially when loading scenes. To avoid unnecessary delays when loading something multiple times, either store the resource in a variable or use :ref:`preload<class_@GDScript_method_preload>`.
 
-**Note:** Resource paths can be obtained by right-clicking on a resource in the FileSystem dock and choosing **Copy Path**.
+**Note:** Resource paths can be obtained by right-clicking on a resource in the FileSystem dock and choosing "Copy Path" or by dragging the file from the FileSystem dock into the script.
 
 ::
 
-    # Load a scene called main located in the root of the project directory.
-    var main = load("res://main.tscn")
+    # Load a scene called main located in the root of the project directory and cache it in a variable.
+    var main = load("res://main.tscn") # main will contain a PackedScene resource.
 
 **Important:** The path must be absolute, a local path will just return ``null``.
 
@@ -986,14 +986,14 @@ Returns the result of ``x`` raised to the power of ``y``.
 
 - :ref:`Resource<class_Resource>` **preload** **(** :ref:`String<class_String>` path **)**
 
-Returns a resource from the filesystem that is loaded during script parsing.
+Returns a :ref:`Resource<class_Resource>` from the filesystem located at ``path``. The resource is loaded during script parsing, i.e. is loaded with the script and :ref:`preload<class_@GDScript_method_preload>` effectively acts as a reference to that resource. Note that the method requires a constant path. If you want to load a resource from a dynamic/variable path, use :ref:`load<class_@GDScript_method_load>`.
 
-**Note:** Resource paths can be obtained by right clicking on a resource in the Assets Panel and choosing "Copy Path".
+**Note:** Resource paths can be obtained by right clicking on a resource in the Assets Panel and choosing "Copy Path" or by dragging the file from the FileSystem dock into the script.
 
 ::
 
-    # Load a scene called main located in the root of the project directory.
-    var main = preload("res://main.tscn")
+    # Instance a scene.
+    var diamond = preload("res://diamond.tscn").instance()
 
 ----
 

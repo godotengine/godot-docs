@@ -582,6 +582,8 @@ If ``true``, the line containing the cursor is highlighted.
 | *Getter*  | is_drawing_minimap() |
 +-----------+----------------------+
 
+If ``true``, a minimap is shown, providing an outline of your source code.
+
 ----
 
 .. _class_TextEdit_property_minimap_width:
@@ -595,6 +597,8 @@ If ``true``, the line containing the cursor is highlighted.
 +-----------+--------------------------+
 | *Getter*  | get_minimap_width()      |
 +-----------+--------------------------+
+
+The width, in pixels, of the minimap.
 
 ----
 
@@ -674,6 +678,10 @@ The current vertical scroll value.
 | *Getter*  | is_selecting_enabled()       |
 +-----------+------------------------------+
 
+If ``true``, text can be selected.
+
+If ``false``, text can not be selected by the user or by the :ref:`select<class_TextEdit_method_select>` or :ref:`select_all<class_TextEdit_method_select_all>` methods.
+
 ----
 
 .. _class_TextEdit_property_shortcut_keys_enabled:
@@ -687,6 +695,8 @@ The current vertical scroll value.
 +-----------+----------------------------------+
 | *Getter*  | is_shortcut_keys_enabled()       |
 +-----------+----------------------------------+
+
+If ``true``, shortcut keys for context menu items are enabled, even if the context menu is disabled.
 
 ----
 
@@ -814,6 +824,8 @@ Returns if the given line is foldable, that is, it has indented lines right belo
 .. _class_TextEdit_method_center_viewport_to_cursor:
 
 - void **center_viewport_to_cursor** **(** **)**
+
+Centers the viewport on the line the editing cursor is at. This also resets the :ref:`scroll_horizontal<class_TextEdit_property_scroll_horizontal>` value to ``0``.
 
 ----
 
@@ -1095,6 +1107,8 @@ Returns an empty ``PoolIntArray`` if no result was found. Otherwise, the result 
 
 Perform selection, from line/column to line/column.
 
+If :ref:`selecting_enabled<class_TextEdit_property_selecting_enabled>` is ``false``, no selection will occur.
+
 ----
 
 .. _class_TextEdit_method_select_all:
@@ -1102,6 +1116,8 @@ Perform selection, from line/column to line/column.
 - void **select_all** **(** **)**
 
 Select all the text.
+
+If :ref:`selecting_enabled<class_TextEdit_property_selecting_enabled>` is ``false``, no selection will occur.
 
 ----
 

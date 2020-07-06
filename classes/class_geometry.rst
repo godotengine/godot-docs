@@ -367,6 +367,15 @@ Each polygon's vertices will be rounded as determined by ``join_type``, see :ref
 
 The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
 
+**Note:** To translate the polygon's vertices specifically, use the :ref:`Transform2D.xform<class_Transform2D_method_xform>` method:
+
+::
+
+    var polygon = PoolVector2Array([Vector2(0, 0), Vector2(100, 0), Vector2(100, 100), Vector2(0, 100)])
+    var offset = Vector2(50, 50)
+    polygon = Transform2D(0, offset).xform(polygon)
+    print(polygon) # prints [Vector2(50, 50), Vector2(150, 50), Vector2(150, 150), Vector2(50, 150)]
+
 ----
 
 .. _class_Geometry_method_offset_polyline_2d:

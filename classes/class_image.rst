@@ -105,6 +105,8 @@ Methods
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`load_png_from_buffer<class_Image_method_load_png_from_buffer>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**                                                                                                                                |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`load_tga_from_buffer<class_Image_method_load_tga_from_buffer>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**                                                                                                                                |
++-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`load_webp_from_buffer<class_Image_method_load_webp_from_buffer>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**                                                                                                                              |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`lock<class_Image_method_lock>` **(** **)**                                                                                                                                                                                                                 |
@@ -731,6 +733,14 @@ Loads an image from the binary contents of a JPEG file.
 - :ref:`Error<enum_@GlobalScope_Error>` **load_png_from_buffer** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**
 
 Loads an image from the binary contents of a PNG file.
+
+----
+
+.. _class_Image_method_load_tga_from_buffer:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **load_tga_from_buffer** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**
+
+Loads an image from the binary contents of a TGA file.
 
 ----
 

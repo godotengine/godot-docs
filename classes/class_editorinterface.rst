@@ -93,6 +93,8 @@ Property Descriptions
 | *Getter* | is_distraction_free_mode_enabled() |
 +----------+------------------------------------+
 
+If ``true``, enables distraction-free mode which hides side docks to increase the space available for the main view.
+
 Method Descriptions
 -------------------
 

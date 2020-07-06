@@ -194,7 +194,7 @@ Returns a new vector with all components in absolute values (i.e. positive).
 
 Returns the vector's angle in radians with respect to the X axis, or ``(1, 0)`` vector.
 
-Equivalent to the result of :ref:`@GDScript.atan2<class_@GDScript_method_atan2>` when called with the vector's :ref:`x<class_Vector2_property_x>` and :ref:`y<class_Vector2_property_y>` as parameters: ``atan2(x, y)``.
+Equivalent to the result of :ref:`@GDScript.atan2<class_@GDScript_method_atan2>` when called with the vector's :ref:`y<class_Vector2_property_y>` and :ref:`x<class_Vector2_property_x>` as parameters: ``atan2(y, x)``.
 
 ----
 
