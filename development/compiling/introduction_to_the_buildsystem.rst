@@ -212,6 +212,18 @@ directory paths containing such modules:
 
     :ref:`doc_custom_modules_in_c++`
 
+Cleaning generated files
+------------------------
+
+Sometimes, you may encounter an error due to generated files being present. You
+can remove them by using ``scons --clean <options>``, where ``<options>`` is the
+list of build options you've used to build Godot previously.
+
+Alternatively, you can use ``git clean -fixd`` which will clean build artifacts
+for all platforms and configurations. Beware, as this will remove all untracked
+and ignored files in the repository. Don't run this command if you have
+uncommitted work!
+
 Other build options
 -------------------
 

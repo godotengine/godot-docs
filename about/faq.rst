@@ -289,6 +289,18 @@ developer experiences as a whole.
 Bonus points for bringing screenshots, concrete numbers, test cases, or example
 projects (if applicable).
 
+Is it possible to use Godot as a library?
+-----------------------------------------
+
+Godot is meant to be used with its editor. We recommend you give it a try, as it
+will most likely save you time in the long term. There are no plans to make
+Godot usable as a library, as it would make the rest of the engine more
+convoluted and difficult to use for casual users.
+
+If you want to use a rendering library, look into using an established rendering
+engine instead. Keep in mind rendering engines usually have smaller communities
+compared to Godot. This will make it more difficult to find answers to your
+questions.
 
 Why does Godot not use STL (Standard Template Library)
 ------------------------------------------------------

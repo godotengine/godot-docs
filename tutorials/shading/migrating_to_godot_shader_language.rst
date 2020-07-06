@@ -70,8 +70,8 @@ fragment shader, rename ``main`` to ``fragment``.
 Constants
 ^^^^^^^^^
 
-Godot currently does not support constants. You can fake the functionality by using a uniform initialized
-to the value, but you will not benefit from the increased speed from using a constant.
+Global array constants are not supported in Godot 3.2.x. You can fake the functionality by using a uniform
+initialized to the value, but you will not benefit from the increased speed from using a constant.
 
 Macros
 ^^^^^^
@@ -133,7 +133,7 @@ Types
 ^^^^^
 
 Shadertoy uses the webgl spec, so it runs a slightly different version of GLSL. However, it still
-has the regular types, including `Constants`_ and macros.
+has the regular types, including constants and macros.
 
 mainImage
 ^^^^^^^^^
@@ -200,7 +200,7 @@ Types
 ^^^^^
 
 The Book of Shaders uses the webgl spec, so it runs a slightly different version of GLSL. However, it still
-has the regular types, including `Constants`_ and macros.
+has the regular types, including constants and macros.
 
 Main
 ^^^^

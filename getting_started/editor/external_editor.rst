@@ -3,6 +3,10 @@
 Using an external text editor
 ==============================
 
+.. warning::
+
+    `External editors are currently incompatible with Godot's "Sync Script Changes" feature. <https://github.com/godotengine/godot/issues/10946>`__
+
 Godot can be used with an external text editor, such as Sublime Text or Visual Studio Code.
 To enable an external text editor, browse to the relevant editor settings via:
 ``Editor -> Editor Settings -> Text Editor -> External``

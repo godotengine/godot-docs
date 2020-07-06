@@ -342,22 +342,30 @@ library that will be dynamically loaded when starting our game's binary.
 
     # First, create a custom env for the shared library.
     module_env = env.Clone()
-    module_env.Append(CCFLAGS=['-fPIC'])  # Needed to compile shared library
-    # We don't want godot's dependencies to be injected into our shared library.
+
+    # Position-independent code is required for a shared library.
+    module_env.Append(CCFLAGS=['-fPIC'])
+
+    # Don't inject Godot's dependencies into our shared library.
     module_env['LIBS'] = []
 
-    # Now define the shared library. Note that by default it would be built
-    # into the module's folder, however it's better to output it into `bin`
-    # next to the Godot binary.
+    # Define the shared library. By default, it would be built in the module's
+    # folder, however it's better to output it into `bin` next to the
+    # Godot binary.
     shared_lib = module_env.SharedLibrary(target='#bin/summator', source=sources)
 
-    # Finally, notify the main env it has our shared library as a new dependency.
-    # To do so, SCons wants the name of the lib with it custom suffixes
+    # Finally, notify the main build environment it now has our shared library
+    # as a new dependency.
+
+    # LIBPATH and LIBS need to be set on the real "env" (not the clone)
+    # to link the specified libraries to the Godot executable.
+
+    env.Append(LIBPATH=['#bin'])
+
+    # SCons wants the name of the library with it custom suffixes
     # (e.g. ".x11.tools.64") but without the final ".so".
-    # We pass this along with the directory of our library to the main env.
     shared_lib_shim = shared_lib[0].name.rsplit('.', 1)[0]
     env.Append(LIBS=[shared_lib_shim])
-    env.Append(LIBPATH=['#bin'])
 
 Once compiled, we should end up with a ``bin`` directory containing both the
 ``godot*`` binary and our ``libsummator*.so``. However given the .so is not in

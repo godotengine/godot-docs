@@ -178,7 +178,7 @@ good practice to use an enum so you can refer to them using names.
     tool
     extends EditorImportPlugin
 
-    enum Presets { PRESET_DEFAULT }
+    enum Presets { DEFAULT }
 
     ...
 
@@ -199,7 +199,7 @@ now, but we can make this method future-proof by returning the size of our
 
     func get_preset_name(preset):
         match preset:
-            PRESET_DEFAULT:
+            Presets.DEFAULT:
                 return "Default"
             _:
                 return "Unknown"
@@ -222,7 +222,7 @@ you do this you have to be careful when you add more presets.
 
     func get_import_options(preset):
         match preset:
-            PRESET_DEFAULT:
+            Presets.DEFAULT:
                 return [{
                            "name": "use_red_anyway",
                            "default_value": false
