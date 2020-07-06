@@ -101,6 +101,8 @@ from sphinx.highlighting import lexers
 lexers["gdscript"] = GDScriptLexer()
 # fmt: on
 
+smartquotes = False
+
 # Pygments (syntax highlighting) style to use
 pygments_style = "sphinx"
 highlight_language = "gdscript"
