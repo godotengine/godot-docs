@@ -76,6 +76,7 @@ supported_languages = {
     "ru": "Документация Godot Engine (%s) на русском языке",
     "uk": "Документація до Godot Engine (%s) українською мовою",
     "zh_CN": "Godot Engine (%s) 简体中文文档",
+    "zh_TW": "Godot Engine (%s) 正體中文 (台灣) 文件",
 }
 
 language = os.getenv("READTHEDOCS_LANGUAGE", "en")
