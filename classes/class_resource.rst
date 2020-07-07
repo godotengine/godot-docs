@@ -126,7 +126,7 @@ Virtual function which can be overridden to customize the behavior value of :ref
 
 - :ref:`Resource<class_Resource>` **duplicate** **(** :ref:`bool<class_bool>` subresources=false **)** const
 
-Duplicates the resource, returning a new resource. By default, sub-resources are shared between resource copies for efficiency, this can be changed by passing ``true`` to the ``subresources`` argument.
+Duplicates the resource, returning a new resource. By default, sub-resources are shared between resource copies for efficiency, this can be changed by passing ``true`` to the ``subresources`` argument which will copy the subresources.  In the case of ``subresources`` being ``true`` duplicate does not perform a deep copy - nested resources within subresources will not be duplicated and will still be shared.
 
 ----
 
