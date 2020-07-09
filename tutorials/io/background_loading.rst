@@ -99,6 +99,7 @@ with the main scene of the game:
     var time_max = 100 # msec
     var current_scene
 
+
     func _ready():
         var root = get_tree().get_root()
         current_scene = root.get_child(root.get_child_count() -1)
@@ -111,16 +112,16 @@ progress bar or loading screen.
 
 ::
 
-    func goto_scene(path): # game requests to switch to this scene
+    func goto_scene(path): # Game requests to switch to this scene.
         loader = ResourceLoader.load_interactive(path)
-        if loader == null: # check for errors
+        if loader == null: # Check for errors.
             show_error()
             return
         set_process(true)
 
-        current_scene.queue_free() # get rid of the old scene
+        current_scene.queue_free() # Get rid of the old scene.
 
-        # start your "loading..." animation
+        # Start your "loading..." animation.
         get_node("animation").play("loading")
 
         wait_frames = 1
@@ -145,14 +146,15 @@ precise control over the timings.
             set_process(false)
             return
 
-        if wait_frames > 0: # wait for frames to let the "loading" animation show up
+        # Wait for frames to let the "loading" animation show up.
+        if wait_frames > 0:
             wait_frames -= 1
             return
 
         var t = OS.get_ticks_msec()
-        while OS.get_ticks_msec() < t + time_max: # use "time_max" to control for how long we block this thread
-
-            # poll your loader
+        # Use "time_max" to control for how long we block this thread.
+        while OS.get_ticks_msec() < t + time_max:
+            # Poll your loader.
             var err = loader.poll()
 
             if err == ERR_FILE_EOF: # Finished loading.
@@ -162,7 +164,7 @@ precise control over the timings.
                 break
             elif err == OK:
                 update_progress()
-            else: # error during loading
+            else: # Error during loading.
                 show_error()
                 loader = null
                 break
@@ -181,11 +183,13 @@ loader.
         # Update your progress bar?
         get_node("progress").set_progress(progress)
 
-        # ... or update a progress animation?
+        # ...or update a progress animation?
         var length = get_node("animation").get_current_animation_length()
 
-        # Call this on a paused animation. Use "true" as the second argument to force the animation to update.
+        # Call this on a paused animation. Use "true" as the second argument to
+        # force the animation to update.
         get_node("animation").seek(progress * length, true)
+
 
     func set_new_scene(scene_resource):
         current_scene = scene_resource.instance()
@@ -273,8 +277,10 @@ Example:
     queue = preload("res://resource_queue.gd").new()
     queue.start()
 
-    # Suppose your game starts with a 10 second cutscene, during which the user can't interact with the game.
-    # For that time, we know they won't use the pause menu, so we can queue it to load during the cutscene:
+    # Suppose your game starts with a 10 second cutscene, during which the user
+    # can't interact with the game.
+    # For that time, we know they won't use the pause menu, so we can queue it
+    # to load during the cutscene:
     queue.queue_resource("res://pause_menu.tres")
     start_cutscene()
 
@@ -282,17 +288,18 @@ Example:
     pause_menu = queue.get_resource("res://pause_menu.tres").instance()
     pause_menu.show()
 
-    # when you need a new scene:
-    queue.queue_resource("res://level_1.tscn", true) # Use "true" as the second argument to put it at the front
-                                                     # of the queue, pausing the load of any other resource.
+    # When you need a new scene:
+    queue.queue_resource("res://level_1.tscn", true)
+    # Use "true" as the second argument to put it at the front of the queue,
+    # pausing the load of any other resource.
 
-    # to check progress
+    # To check progress.
     if queue.is_ready("res://level_1.tscn"):
         show_new_level(queue.get_resource("res://level_1.tscn"))
     else:
         update_progress(queue.get_progress("res://level_1.tscn"))
 
-    # when the user walks away from the trigger zone in your Metroidvania game:
+    # When the user walks away from the trigger zone in your Metroidvania game:
     queue.cancel_resource("res://zone_2.tscn")
 
 **Note**: this code, in its current form, is not tested in real world

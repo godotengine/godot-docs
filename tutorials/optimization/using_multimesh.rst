@@ -55,6 +55,7 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
 
     extends MultiMeshInstance
 
+
     func _ready():
         # Create the multimesh.
         multimesh = MultiMesh.new()
@@ -66,6 +67,7 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
         multimesh.instance_count = 10000
         # Maybe not all of them should be visible at first.
         multimesh.visible_instance_count = 1000
+
         # Set the transform of the instances.
         for i in multimesh.visible_instance_count:
             multimesh.set_instance_transform(i, Transform(Basis(), Vector3(i * 20, 0, 0)))
@@ -88,6 +90,7 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
             multimesh.InstanceCount = 1000;
             // Maybe not all of them should be visible at first.
             multimesh.VisibleInstanceCount = 1000;
+
             // Set the transform of the instances.
             for (int i = 0; i < multimesh.VisibleInstanceCount; i++)
             {

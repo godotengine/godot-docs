@@ -137,26 +137,26 @@ way to pull the data out of the file as well.
     # Note: This can be called from anywhere inside the tree. This function is
     # path independent.
     # Go through everything in the persist category and ask them to return a
-    # dict of relevant variables
+    # dict of relevant variables.
     func save_game():
         var save_game = File.new()
         save_game.open("user://savegame.save", File.WRITE)
         var save_nodes = get_tree().get_nodes_in_group("Persist")
         for node in save_nodes:
-            # Check the node is an instanced scene so it can be instanced again during load
+            # Check the node is an instanced scene so it can be instanced again during load.
             if node.filename.empty():
                 print("persistent node '%s' is not an instanced scene, skipped" % node.name)
                 continue
 
-            # Check the node has a save function
+            # Check the node has a save function.
             if !node.has_method("save"):
                 print("persistent node '%s' is missing a save() function, skipped" % node.name)
                 continue
 
-            # Call the node's save function
+            # Call the node's save function.
             var node_data = node.call("save")
 
-            # Store the save dictionary as a new line in the save file
+            # Store the save dictionary as a new line in the save file.
             save_game.store_line(to_json(node_data))
         save_game.close()
 
@@ -165,7 +165,7 @@ way to pull the data out of the file as well.
     // Note: This can be called from anywhere inside the tree. This function is
     // path independent.
     // Go through everything in the persist category and ask them to return a
-    // dict of relevant variables
+    // dict of relevant variables.
     public void SaveGame()
     {
         var saveGame = new File();
@@ -174,24 +174,24 @@ way to pull the data out of the file as well.
         var saveNodes = GetTree().GetNodesInGroup("Persist");
         foreach (Node saveNode in saveNodes)
         {
-            // Check the node is an instanced scene so it can be instanced again during load
+            // Check the node is an instanced scene so it can be instanced again during load.
             if (saveNode.Filename.Empty())
             {
                 GD.Print(String.Format("persistent node '{0}' is not an instanced scene, skipped", saveNode.Name));
                 continue;
             }
 
-            // Check the node has a save function
+            // Check the node has a save function.
             if (!saveNode.HasMethod("Save"))
             {
                 GD.Print(String.Format("persistent node '{0}' is missing a Save() function, skipped", saveNode.Name));
                 continue;
             }
 
-            // Call the node's save function
+            // Call the node's save function.
             var nodeData = saveNode.Call("Save");
 
-            // Store the save dictionary as a new line in the save file
+            // Store the save dictionary as a new line in the save file.
             saveGame.StoreLine(JSON.Print(nodeData));
         }
 
@@ -240,6 +240,7 @@ load function:
                 if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
                     continue
                 new_object.set(i, node_data[i])
+
         save_game.close()
 
  .. code-tab:: csharp

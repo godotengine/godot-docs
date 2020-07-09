@@ -35,6 +35,7 @@ Examples:
         if event.is_action_pressed("jump"):
             jump()
 
+
     func _physics_process(delta):
         if Input.is_action_pressed("move_right"):
             # Move as long as the key/button is pressed.
@@ -77,6 +78,7 @@ attach the following script:
  .. code-tab:: gdscript GDScript
 
     extends Node
+
 
     func _input(event):
         print(event.as_text())
@@ -302,17 +304,19 @@ node:
 
     extends Node
 
+
     var dragging = false
-    var click_radius = 32  # Size of the sprite
+    var click_radius = 32 # Size of the sprite.
+
 
     func _input(event):
         if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
             if (event.position - $Sprite.position).length() < click_radius:
                 # Start dragging if the click is on the sprite.
-                if !dragging and event.pressed:
+                if not dragging and event.pressed:
                     dragging = true
             # Stop dragging if the button is released.
-            if dragging and !event.pressed:
+            if dragging and not event.pressed:
                 dragging = false
 
         if event is InputEventMouseMotion and dragging:

@@ -29,8 +29,8 @@ This would be a basic setup:
 ::
 
     # MyCustomGizmoPlugin.gd
-
     extends EditorSpatialGizmoPlugin
+
 
     func get_name():
         return "CustomNode"
@@ -39,16 +39,18 @@ This would be a basic setup:
 ::
 
     # MyCustomEditorPlugin.gd
-
     tool
     extends EditorPlugin
+
 
     const MyCustomGizmoPlugin = preload("res://addons/my-addon/MyCustomGizmoPlugin.gd")
 
     var gizmo_plugin = MyCustomGizmoPlugin.new()
 
+
     func _enter_tree():
         add_spatial_gizmo_plugin(gizmo_plugin)
+
 
     func _exit_tree():
         remove_spatial_gizmo_plugin(gizmo_plugin)
@@ -69,8 +71,11 @@ method so that it returns ``true`` when the spatial parameter is of our target t
 
     # ...
 
+
     func has_gizmo(spatial):
         return spatial is MyCustomSpatial
+
+
     # ...
 
 Then we can override methods like :ref:`redraw()<class_EditorSpatialGizmoPlugin_method_redraw>`
@@ -80,9 +85,11 @@ or all the handle related ones.
 
     # ...
 
+
     func _init():
         create_material("main", Color(1, 0, 0))
         create_handle_material("handles")
+
 
     func redraw(gizmo):
         gizmo.clear()
@@ -101,6 +108,7 @@ or all the handle related ones.
 
         gizmo.add_lines(lines, get_material("main", gizmo), false)
         gizmo.add_handles(handles, get_material("handles", gizmo))
+
 
     # ...
 
@@ -115,14 +123,18 @@ So the final plugin would look somewhat like this:
 
     extends EditorSpatialGizmoPlugin
 
+
     const MyCustomSpatial = preload("res://addons/my-addon/MyCustomSpatial.gd")
+
 
     func _init():
         create_material("main", Color(1,0,0))
         create_handle_material("handles")
 
+
     func has_gizmo(spatial):
         return spatial is MyCustomSpatial
+
 
     func redraw(gizmo):
         gizmo.clear()
@@ -142,8 +154,9 @@ So the final plugin would look somewhat like this:
         gizmo.add_lines(lines, get_material("main", gizmo), false)
         gizmo.add_handles(handles, get_material("handles", gizmo))
 
-    # you should implement the rest of handle-related callbacks
-    # (get_handle_name(), get_handle_value(), commit_handle()...)
+
+    # You should implement the rest of handle-related callbacks
+    # (get_handle_name(), get_handle_value(), commit_handle()...).
 
 Note that we just added some handles in the redraw method, but we still need to implement
 the rest of handle-related callbacks in :ref:`EditorSpatialGizmoPlugin <class_EditorSpatialGizmoPlugin>`
@@ -165,12 +178,15 @@ for the Spatial nodes we want to target.
     # MyCustomGizmoPlugin.gd
     extends EditorSpatialGizmoPlugin
 
+
     const MyCustomSpatial = preload("res://addons/my-addon/MyCustomSpatial.gd")
     const MyCustomGizmo = preload("res://addons/my-addon/MyCustomGizmo.gd")
+
 
     func _init():
         create_material("main", Color(1, 0, 0))
         create_handle_material("handles")
+
 
     func create_gizmo(spatial):
         if spatial is MyCustomSpatial:
@@ -184,11 +200,12 @@ This way all the gizmo logic and drawing methods can be implemented in a new cla
 ::
 
     # MyCustomGizmo.gd
-
     extends EditorSpatialGizmo
 
-    # You can store data in the gizmo itself (more useful when working with handles)
+
+    # You can store data in the gizmo itself (more useful when working with handles).
     var gizmo_size = 3.0
+
 
     func redraw():
         clear()
@@ -211,8 +228,9 @@ This way all the gizmo logic and drawing methods can be implemented in a new cla
         var handles_material = get_plugin().get_material("handles", self)
         add_handles(handles, handles_material)
 
-    # you should implement the rest of handle-related callbacks
-    # (get_handle_name(), get_handle_value(), commit_handle()...)
+
+    # You should implement the rest of handle-related callbacks
+    # (get_handle_name(), get_handle_value(), commit_handle()...).
 
 Note that we just added some handles in the redraw method, but we still need to implement
 the rest of handle-related callbacks in :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>`

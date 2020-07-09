@@ -91,12 +91,14 @@ like this:
     tool
     extends EditorPlugin
 
+
     func _enter_tree():
-        # Initialization of the plugin goes here
+        # Initialization of the plugin goes here.
         pass
 
+
     func _exit_tree():
-        # Clean-up of the plugin goes here
+        # Clean-up of the plugin goes here.
         pass
 
  .. code-tab:: csharp
@@ -110,12 +112,12 @@ like this:
     {
         public override void _EnterTree()
         {
-            // Initialization of the plugin goes here
+            // Initialization of the plugin goes here.
         }
 
         public override void _ExitTree()
         {
-            // Clean-up of the plugin goes here
+            // Clean-up of the plugin goes here.
         }
     }
     #endif
@@ -156,8 +158,10 @@ clicked. For that, we'll need a simple script that extends from
     tool
     extends Button
 
+
     func _enter_tree():
         connect("pressed", self, "clicked")
+
 
     func clicked():
         print("You clicked me!")
@@ -198,14 +202,16 @@ dialog. For that, change the ``custom_node.gd`` script to the following:
     tool
     extends EditorPlugin
 
+
     func _enter_tree():
-        # Initialization of the plugin goes here
-        # Add the new type with a name, a parent type, a script and an icon
+        # Initialization of the plugin goes here.
+        # Add the new type with a name, a parent type, a script and an icon.
         add_custom_type("MyButton", "Button", preload("my_button.gd"), preload("icon.png"))
 
+
     func _exit_tree():
-        # Clean-up of the plugin goes here
-        # Always remember to remove it from the engine when deactivated
+        # Clean-up of the plugin goes here.
+        # Always remember to remove it from the engine when deactivated.
         remove_custom_type("MyButton")
 
  .. code-tab:: csharp
@@ -219,8 +225,8 @@ dialog. For that, change the ``custom_node.gd`` script to the following:
     {
         public override void _EnterTree()
         {
-            // Initialization of the plugin goes here
-            // Add the new type with a name, a parent type, a script and an icon
+            // Initialization of the plugin goes here.
+            // Add the new type with a name, a parent type, a script and an icon.
             var script = GD.Load<Script>("MyButton.cs");
             var texture = GD.Load<Texture>("icon.png");
             AddCustomType("MyButton", "Button", script, texture);
@@ -228,8 +234,8 @@ dialog. For that, change the ``custom_node.gd`` script to the following:
 
         public override void _ExitTree()
         {
-            // Clean-up of the plugin goes here
-            // Always remember to remove it from the engine when deactivated
+            // Clean-up of the plugin goes here.
+            // Always remember to remove it from the engine when deactivated.
             RemoveCustomType("MyButton");
         }
     }
@@ -312,23 +318,26 @@ The script could look like this:
     tool
     extends EditorPlugin
 
-    # A class member to hold the dock during the plugin life cycle
+
+    # A class member to hold the dock during the plugin life cycle.
     var dock
 
+
     func _enter_tree():
-        # Initialization of the plugin goes here
-        # Load the dock scene and instance it
+        # Initialization of the plugin goes here.
+        # Load the dock scene and instance it.
         dock = preload("res://addons/my_custom_dock/my_dock.tscn").instance()
 
-        # Add the loaded scene to the docks
+        # Add the loaded scene to the docks.
         add_control_to_dock(DOCK_SLOT_LEFT_UL, dock)
-        # Note that LEFT_UL means the left of the editor, upper-left dock
+        # Note that LEFT_UL means the left of the editor, upper-left dock.
+
 
     func _exit_tree():
-        # Clean-up of the plugin goes here
-        # Remove the dock
+        # Clean-up of the plugin goes here.
+        # Remove the dock.
         remove_control_from_docks(dock)
-         # Erase the control from the memory
+        # Erase the control from the memory.
         dock.free()
 
  .. code-tab:: csharp
@@ -350,10 +359,10 @@ The script could look like this:
 
         public override void _ExitTree()
         {
-            // Clean-up of the plugin goes here
-            // Remove the dock
+            // Clean-up of the plugin goes here.
+            // Remove the dock.
             RemoveControlFromDocks(dock);
-            // Erase the control from the memory
+            // Erase the control from the memory.
             dock.Free();
         }
     }
