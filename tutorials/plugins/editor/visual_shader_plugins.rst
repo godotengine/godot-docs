@@ -33,25 +33,30 @@ all you need to initialize your plugin.
 ::
 
     # PerlinNoise3D.gd
-
     tool
     extends VisualShaderNodeCustom
     class_name VisualShaderNodePerlinNoise3D
 
+
     func _get_name():
         return "PerlinNoise3D"
+
 
     func _get_category():
         return "MyShaderNodes"
 
+
     func _get_description():
         return "Classic Perlin-Noise-3D function (by Curly-Brace)"
+
 
     func _get_return_icon_type():
         return VisualShaderNode.PORT_TYPE_SCALAR
 
+
     func _get_input_port_count():
         return 4
+
 
     func _get_input_port_name(port):
         match port:
@@ -64,6 +69,7 @@ all you need to initialize your plugin.
             3:
                 return "time"
 
+
     func _get_input_port_type(port):
         match port:
             0:
@@ -75,14 +81,18 @@ all you need to initialize your plugin.
             3:
                 return VisualShaderNode.PORT_TYPE_SCALAR
 
+
     func _get_output_port_count():
         return 1
+
 
     func _get_output_port_name(port):
         return "result"
 
+
     func _get_output_port_type(port):
         return VisualShaderNode.PORT_TYPE_SCALAR
+
 
     func _get_global_code(mode):
         return """
@@ -106,7 +116,7 @@ all you need to initialize your plugin.
                 return t * t * t * (t * (t * 6.0 - 15.0) + 10.0);
             }
 
-            // Classic Perlin noise
+            // Classic Perlin noise.
             float cnoise(vec3 P) {
                 vec3 Pi0 = floor(P); // Integer part for indexing.
                 vec3 Pi1 = Pi0 + vec3(1.0); // Integer part + 1.
@@ -175,6 +185,7 @@ all you need to initialize your plugin.
                 return 2.2 * n_xyz;
             }
         """
+
 
     func _get_code(input_vars, output_vars, mode, type):
         return output_vars[0] + " = cnoise(vec3((%s.xy + %s.xy) * %s, %s)) * 0.5 + 0.5" % [input_vars[0], input_vars[1], input_vars[2], input_vars[3]]
