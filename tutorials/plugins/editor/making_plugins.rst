@@ -138,7 +138,7 @@ custom behavior.
   Nodes added via an EditorPlugin are "CustomType" nodes. While they work
   with any scripting language, they have fewer features than
   :ref:`the Script Class system <doc_scripting_continued_class_name>`. If you
-  are writing GDScript or NativeScript, we recommend using them instead.
+  are writing GDScript or NativeScript, we recommend using Script Classes instead.
 
 To create a new node type, you can use the function
 :ref:`add_custom_type() <class_EditorPlugin_method_add_custom_type>` from the
