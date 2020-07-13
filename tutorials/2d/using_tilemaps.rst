@@ -211,25 +211,80 @@ can test for.
 2x2 mode can only match cells that are part of a 2-by-2 block - cells with no
 neighbors and lines only one cell wide are not supported.
 
+**Template - Generic:**
+
+This template can be used for sideways or fully top-down perspectives.
+It's designed for a TileMap cell size of 64x64.
+
+Key:
+
+- Red: "on"
+- White: "off"
+
+.. image:: img/autotile_template_2x2.png
+
 3x3 (minimal)
 ~~~~~~~~~~~~~
 
 In 3x3 (minimal) mode, each bitmask contains 9 bits (4 corners, 4 edges,
-1 center).
-
-The 4 corner bits work the same as in 2x2 mode.
+1 center). The 4 corner bits work the same as in 2x2 mode.
 
 When an edge bit is "on", the cell which shares that edge must be filled.
 When an edge bit is "off", the cell which shares that edge must be empty.
 
-The center bit should be "on" for any tile you wish to use.
-
-Note that in this mode, it makes no sense for a corner bit to be "on" when
-either edge bit adjacent to it is not "on".
+The center bit should be "on" for any tile you wish to use. Note that in this
+mode, it makes no sense for a corner bit to be "on" when either edge bit
+adjacent to it is not "on".
 
 A total of 47 tiles would be needed to provide exactly one bitmask for each
 arrangement that this mode can test for.
 
+.. note::
+
+    Right-click an image and choose **Save image as…** to save it.
+
+**Template - Generic:**
+
+This template can be used for sideways or fully top-down perspectives.
+All templates below are designed for a TileMap cell size of 64x64, but you may
+have to use different subtile sizes for top-down templates as described below.
+
+Key:
+
+- Red: "on"
+- White: "off"
+
+.. image:: img/autotile_template_3x3_minimal.png
+
+
+**Template - Top-down floor in 3/4 perspective:**
+
+Key (applies to the four templates below):
+
+- Green: floor
+- Cyan: wall
+- Yellow: top of wall
+- Transparent: air
+
+.. image:: img/autotile_template_3x3_minimal_topdown_floor.png
+
+**Template - Top-down wall in 3/4 perspective:**
+
+.. image:: img/autotile_template_3x3_minimal_topdown_walls.png
+
+**Template - Top-down wall in 3/4 perspective (thick walls):**
+
+When using this template, set the TileSet subtile size to ``Vector2(64, 88)``.
+
+.. image:: img/autotile_template_3x3_minimal_topdown_walls_thick.png
+
+**Template - Top-down wall in 3/4 perspective (tall walls):**
+
+When using this template, set the "Snap Options" Step to ``Vector2(64, 184)``
+and the "Selected Tile" Texture offset to height minus the cell size.
+This means the texture offset should be ``Vector2(0, -120)``:
+
+.. image:: img/autotile_template_3x3_minimal_topdown_walls_tall.png
 
 3x3
 ~~~
