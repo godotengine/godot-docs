@@ -1,7 +1,7 @@
 .. _doc_updating_the_class_reference:
 
-Contribute to the Class Reference
-=================================
+Contributing to the class reference
+===================================
 
 .. highlight:: shell
 
@@ -166,7 +166,7 @@ How to edit class XML
 
 Edit the file for your chosen class in ``doc/classes/`` to update the class reference. The folder contains an XML file for each class. The XML lists the constants and methods you'll find in the class reference. Godot generates and updates the XML automatically.
 
-Edit it using your favorite text editor. If you use a code editor, make sure that it doesn't change the indent style: tabs for the XML, and 4 spaces inside BBcode-style blocks. More on that below.
+Edit it using your favorite text editor. If you use a code editor, make sure that it doesn't change the indent style: tabs for the XML, and 4 spaces inside BBCode-style blocks. More on that below.
 
 If you need to check that the modifications you've made are correct in the generated documentation, build Godot as described :ref:`here <toc-devel-compiling>`, run the editor and open the help for the page you modified.
 
@@ -227,11 +227,12 @@ Here's how a class looks like in XML:
 
 Use a code editor like Vim, Atom, Code, Notepad++ or anything similar to edit the file quickly. Use the search function to find classes fast.
 
+.. _doc_updating_the_class_reference_bbcode:
 
-Improve formatting with BBcode style tags
+Improve formatting with BBCode style tags
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Godot's class reference supports BBcode-like tags. They add nice formatting to the text. Here's the list of available tags:
+Godot's class reference supports BBCode-like tags. They add nice formatting to the text. Here's the list of available tags:
 
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
 | Tag                       | Effect                         | Usage                             | Result                                            |

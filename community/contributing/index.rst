@@ -14,3 +14,4 @@ Contributing
    documentation_guidelines
    docs_writing_guidelines
    updating_the_class_reference
+   editor_and_docs_localization
