@@ -76,25 +76,25 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
     using Godot;
     using System;
 
-    public class MultiMeshInstance : Godot.MultiMeshInstance
+    public class YourClassName : MultiMeshInstance
     {
         public override void _Ready()
         {
             // Create the multimesh.
-            var multimesh = new MultiMesh();
+            Multimesh = new MultiMesh();
             // Set the format first.
-            multimesh.TransformFormat = MultiMesh.TransformFormatEnum.Transform3d;
-            multimesh.ColorFormat = MultiMesh.ColorFormatEnum.None;
-            multimesh.CustomDataFormat = MultiMesh.CustomDataFormatEnum.None;
+            Multimesh.TransformFormat = MultiMesh.TransformFormatEnum.Transform3d;
+            Multimesh.ColorFormat = MultiMesh.ColorFormatEnum.None;
+            Multimesh.CustomDataFormat = MultiMesh.CustomDataFormatEnum.None;
             // Then resize (otherwise, changing the format is not allowed)
-            multimesh.InstanceCount = 1000;
+            Multimesh.InstanceCount = 1000;
             // Maybe not all of them should be visible at first.
-            multimesh.VisibleInstanceCount = 1000;
+            Multimesh.VisibleInstanceCount = 1000;
 
             // Set the transform of the instances.
-            for (int i = 0; i < multimesh.VisibleInstanceCount; i++)
+            for (int i = 0; i < Multimesh.VisibleInstanceCount; i++)
             {
-                multimesh.SetInstanceTransform(i, new Transform(Basis.Identity, new Vector3(i * 20, 0, 0)));
+                Multimesh.SetInstanceTransform(i, new Transform(Basis.Identity, new Vector3(i * 20, 0, 0)));
             }
         }
     }
