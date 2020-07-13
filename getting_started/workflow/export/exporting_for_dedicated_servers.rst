@@ -35,15 +35,28 @@ offers two kinds of binaries with several differences.
 Exporting a PCK file
 --------------------
 
-Once you've downloaded a server binary, you should export a PCK file containing
-your project data. It's recommended to create a Linux export preset for this
-purpose. After creating the export preset, click **Export PCK/ZIP** at the
-bottom of the Export dialog then choose a destination path.
+There are two ways to export a project for a server:
 
+- Create a Linux/X11 export preset, define a custom Release export template
+  that points to the server binary then export the project as usual.
+- Export a PCK file only, preferably from a Linux/X11 export preset.
+
+Both methods should result in identical output. The text below describes the PCK
+file approach.
+
+Once you've downloaded a server binary, you should export a PCK file containing
+your project data. After creating the export preset, click **Export PCK/ZIP** at
+the bottom of the Export dialog then choose a destination path.
 The **Export With Debug** checkbox in the file dialog has no bearing on the
 final PCK file, so you can leave it as-is.
 
 See :ref:`doc_exporting_projects` for more information.
+
+.. note::
+
+    If you're exporting the project from a headless editor, call the headless
+    editor with the `--export-pack` option while in the project folder to export
+    only a PCK file.
 
 .. note::
 
