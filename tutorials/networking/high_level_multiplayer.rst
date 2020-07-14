@@ -388,7 +388,7 @@ Example bomb code:
 ::
 
     for p in bodies_in_area:
-        if p.has_method("exploded"):
+        if p.is_network_master():
             p.rpc("exploded", bomb_owner)
 
 Example player code:
