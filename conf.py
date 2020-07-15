@@ -14,7 +14,6 @@ needs_sphinx = "1.3"
 sys.path.append(os.path.abspath("_extensions"))
 extensions = [
     "sphinx_tabs.tabs",
-    "sphinx.ext.imgmath",
 ]
 
 # Warning when the Sphinx Tabs extension is used with unknown
