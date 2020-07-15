@@ -198,4 +198,5 @@ To make Godot accessible to everyone, including users who may prefer resources
 in their native language instead of English, our community helps translate both
 the Godot editor and its documentation in many languages.
 
-See :ref:`doc_editor_and_docs_localization` for more details.
+See :ref:`Editor and docs localization <doc_editor_and_docs_localization>` for
+more details.
