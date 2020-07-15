@@ -249,7 +249,7 @@ or a city; explore its limitations when designing your game.
 Using prototype textures
 ------------------------
 
-Godot's :ref:`doc_spatial_material` supports *triplanar mapping*, which can be
+Godot's :ref:`doc_standard_material_3d` supports *triplanar mapping*, which can be
 used to automatically apply a texture to arbitrary objects without distortion.
 This is handy when using CSG as Godot doesn't support editing UV maps on CSG
 nodes yet. Triplanar mapping is relatively slow, which usually restricts its
