@@ -85,9 +85,15 @@ attach the following script:
 
  .. code-tab:: csharp
 
-    public override void _Input(InputEvent inputEvent)
+    using Godot;
+    using System;
+
+    public class Node : Godot.Node
     {
-        GD.Print(inputEvent.AsText());
+        public override void _Input(InputEvent inputEvent)
+        {
+            GD.Print(inputEvent.AsText());
+        }
     }
 
 As you press keys, move the mouse, and perform other inputs, you'll see each
@@ -96,16 +102,17 @@ event scroll by in the output window. Here's an example of the output:
 ::
 
     A
-    InputEventMouseMotion : button_mask=0, position=(551, 338), relative=(-85, 47), speed=(0, 0)
-    InputEventMouseButton : button_index=BUTTON_LEFT, pressed=true, position=(551, 338), button_mask=1, doubleclick=false
-    InputEventMouseButton : button_index=BUTTON_LEFT, pressed=false, position=(551, 338), button_mask=0, doubleclick=false
+    InputEventMouseMotion : button_mask=0, position=(108, 108), relative=(26, 1), speed=(164.152496, 159.119843), pressure=(0), tilt=(0, 0)
+    InputEventMouseButton : button_index=BUTTON_LEFT, pressed=true, position=(108, 107), button_mask=1, doubleclick=false
+    InputEventMouseButton : button_index=BUTTON_LEFT, pressed=false, position=(108, 107), button_mask=0, doubleclick=false
     S
     F
-    InputEventMouseMotion : button_mask=0, position=(547, 338), relative=(-1, 0), speed=(0, 0)
-    InputEventMouseMotion : button_mask=0, position=(542, 338), relative=(-4, 0), speed=(0, 0)
+    Alt
+    InputEventMouseMotion : button_mask=0, position=(108, 107), relative=(0, -1), speed=(164.152496, 159.119843), pressure=(0), tilt=(0, 0)
 
 As you can see, the results are very different for the different types of
-input. Key events are even printed as their key symbols. For example, let's consider :ref:`InputEventMouseButton <class_InputEventMouseButton>`.
+input. Key events are even printed as their key symbols. For example, let's
+consider :ref:`InputEventMouseButton <class_InputEventMouseButton>`.
 It inherits from the following classes:
 
 - :ref:`InputEvent <class_InputEvent>` - the base class for all input events
@@ -325,32 +332,45 @@ node:
 
  .. code-tab:: csharp
 
-    public override void _Input(InputEvent inputEvent)
-    {
-        var sprite = GetNodeOrNull<Sprite>("Sprite");
-        if (sprite == null)
-            return;// No suitable node was found.
+    using Godot;
+    using System;
 
-        if (inputEvent is InputEventMouseButton mouseEvent && (ButtonList)mouseEvent.ButtonIndex == ButtonList.Left)
+    public class Node2D : Godot.Node2D
+    {
+        private bool dragging = false;
+        private int clickRadius = 32; // Size of the sprite.
+
+        public override void _Input(InputEvent inputEvent)
         {
-            if ((mouseEvent.Position - sprite.Position).Length() < clickRadius)
+            Sprite sprite = GetNodeOrNull<Sprite>("Sprite");
+            if (sprite == null)
             {
-                // Start dragging if the click is on the sprite.
-                if (!dragging && mouseEvent.Pressed)
-                    dragging = !dragging;
+                return; // No suitable node was found.
             }
-            // Stop dragging if the button is released.
-            if (dragging && !mouseEvent.Pressed)
+
+            if (inputEvent is InputEventMouseButton mouseEvent && (ButtonList)mouseEvent.ButtonIndex == ButtonList.Left)
             {
-                dragging = false;
+                if ((mouseEvent.Position - sprite.Position).Length() < clickRadius)
+                {
+                    // Start dragging if the click is on the sprite.
+                    if (!dragging && mouseEvent.Pressed)
+                    {
+                        dragging = true;
+                    }
+                }
+                // Stop dragging if the button is released.
+                if (dragging && !mouseEvent.Pressed)
+                {
+                    dragging = false;
+                }
             }
-        }
-        else
-        {
-            if (inputEvent is InputEventMouseMotion motionEvent)
+            else
             {
-                // While dragging, move the sprite with the mouse.
-                sprite.Position = motionEvent.Position;
+                if (inputEvent is InputEventMouseMotion motionEvent && dragging)
+                {
+                    // While dragging, move the sprite with the mouse.
+                    sprite.Position = motionEvent.Position;
+                }
             }
         }
     }
