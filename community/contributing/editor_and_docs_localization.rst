@@ -1,9 +1,9 @@
 .. _doc_editor_and_docs_localization:
 
-.. highlight:: none
-
 Editor and docs localization
 ============================
+
+.. highlight:: none
 
 Godot aims to make game development available to everyone, including people who
 may not know or be comfortable with English. Therefore, we do our best to make
