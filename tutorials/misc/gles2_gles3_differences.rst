@@ -89,7 +89,11 @@ That means that in GLES2 environments you can only set:
 GIProbes
 --------
 
-:ref:`GIProbes <class_GIProbe>` do not work in GLES2. Instead use :ref:`Baked Lightmaps <class_BakedLightmap>`.
+.. FIXME: Removed reference to class_BakedLightmap in master/4.0 version to
+   silence warning, but the whole page will likely end up rewritten or removed
+   in 4.0.
+
+:ref:`GIProbes <class_GIProbe>` do not work in GLES2. Instead use Baked Lightmaps.
 For a description of how baked lightmaps work see the :ref:`Baked Lightmaps tutorial <doc_baked_lightmaps>`.
 
 Contact shadows
