@@ -63,7 +63,7 @@ editor binary built with ``target=release_debug``::
 
     cp -r misc/dist/osx_tools.app ./Godot.app
     mkdir -p Godot.app/Contents/MacOS
-    cp bin/godot.osx.tools.universal Godot.app/Contents/MacOS/Godot
+    cp bin/godot.osx.opt.tools.universal Godot.app/Contents/MacOS/Godot
     chmod +x Godot.app/Contents/MacOS/Godot
 
 If you are building the ``master`` branch, additionally copy the Vulkan library::
