@@ -61,7 +61,7 @@ In that screen, the path to 3 files needs to be set:
   - It can usually be found at ``%LOCALAPPDATA%\Android\Sdk\platform-tools\adb.exe``.
 
 - The ``jarsigner`` executable (from JDK 6 or 8)
-  - On Windows, OpenJDK installs to a dir like ``%PROGRAMFILES%\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-2\bin``. On Linux, it typically installs to a dir like ``/usr/bin/jarsigner``. The exact path may vary depending on the OpenJDK update you've installed and your machine's operating system.
+  - On Windows, OpenJDK installs to a dir like ``%PROGRAMFILES%\AdoptOpenJDK\jdk-8.0.252.09-hotspot\bin``. On Linux, it typically installs to a dir like ``/usr/bin/jarsigner``. The exact path may vary depending on the OpenJDK update you've installed and your machine's operating system.
 
 - The debug ``.keystore`` file
   - It can be found in the folder where you put the ``debug.keystore`` file you created above.
