@@ -102,7 +102,7 @@ If the body is at least this close to another body, this body will consider them
 | *Getter*  | get_axis_lock()      |
 +-----------+----------------------+
 
-Lock the body's X axis movement.
+Note: not currently implemented. Lock the body's X axis movement.
 
 ----
 
@@ -118,7 +118,7 @@ Lock the body's X axis movement.
 | *Getter*  | get_axis_lock()      |
 +-----------+----------------------+
 
-Lock the body's Y axis movement.
+Note: not currently implemented. Lock the body's Y axis movement.
 
 ----
 
@@ -134,7 +134,7 @@ Lock the body's Y axis movement.
 | *Getter*  | get_axis_lock()      |
 +-----------+----------------------+
 
-Lock the body's Z axis movement.
+Note: not currently implemented. Lock the body's Z axis movement.
 
 Method Descriptions
 -------------------
@@ -251,7 +251,7 @@ As long as the ``snap`` vector is in contact with the ground, the body will rema
 
 - void **set_axis_lock** **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis, :ref:`bool<class_bool>` lock **)**
 
-Locks or unlocks the specified ``axis`` depending on the value of ``lock``. See also :ref:`move_lock_x<class_KinematicBody_property_move_lock_x>`, :ref:`move_lock_y<class_KinematicBody_property_move_lock_y>` and :ref:`move_lock_z<class_KinematicBody_property_move_lock_z>`.
+Note: not currently implemented. Locks or unlocks the specified ``axis`` depending on the value of ``lock``. See also :ref:`move_lock_x<class_KinematicBody_property_move_lock_x>`, :ref:`move_lock_y<class_KinematicBody_property_move_lock_y>` and :ref:`move_lock_z<class_KinematicBody_property_move_lock_z>`.
 
 ----
 
