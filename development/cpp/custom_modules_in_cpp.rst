@@ -439,7 +439,7 @@ library that will be dynamically loaded when starting our game's binary.
     env.Append(LIBPATH=['#bin'])
 
     # SCons wants the name of the library with it custom suffixes
-    # (e.g. ".linuxbsd.tools.64") but without the final ".so".
+    # (e.g. ".x11.tools.64") but without the final ".so".
     shared_lib_shim = shared_lib[0].name.rsplit('.', 1)[0]
     env.Append(LIBS=[shared_lib_shim])
 
@@ -497,7 +497,7 @@ shared module as target in the SCons command:
 
 .. code-block:: shell
 
-    scons summator_shared=yes platform=linuxbsd bin/libsummator.linuxbsd.tools.64.so
+    scons summator_shared=yes platform=x11 bin/libsummator.x11.tools.64.so
 
 Writing custom documentation
 ----------------------------

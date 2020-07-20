@@ -77,7 +77,7 @@ Debugging the project
 - Click **Add** to create a new launch configuration.
 - Select **Executable** option and specify the path to your executable located in 
   the ``<Godot root directory>/bin`` folder. The name depends on your build configuration,
-  e.g. ``godot.linuxbsd.tools.64`` for 64-bit LinuxBSD platform with ``tools`` enabled.
+  e.g. ``godot.x11.tools.64`` for 64-bit LinuxBSD platform with ``tools`` enabled.
 
 .. figure:: img/kdevelop_configlaunches2.png
    :figclass: figure-w480

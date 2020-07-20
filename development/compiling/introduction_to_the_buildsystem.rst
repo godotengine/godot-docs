@@ -68,29 +68,33 @@ To list the available target platforms, use ``scons platform=list``::
 
         android
         javascript
-        linuxbsd
+        x11
         server
         windows
 
     Please run SCons again and select a valid platform: platform=<string>
 
-To build for a platform (for example, ``linuxbsd``), run with the ``platform=``
+To build for a platform (for example, ``x11``), run with the ``platform=``
 (or ``p=`` to make it short) argument:
 
 ::
 
-    scons platform=linuxbsd
+    scons platform=x11
 
 This will start the build process, which will take a while. If you want
-SCons to build faster, use the ``-j <cores>`` parameter to specify how many
-cores will be used for the build. Or leave it using one core, so you
+SCons to build faster, use the ``-j <processes>`` parameter to specify how many
+processes that will be used for the build. Or leave it using one process, so you
 can use your computer for something else :)
 
-Example for using 4 cores:
+The number of parallel processes are usually set to the number of cores that
+your system has, or one or two more. For instance, on a quadcore system, four 
+to six parallel processes usually makes sense.
+
+Example for using 4 parallel processes:
 
 ::
 
-    scons platform=linuxbsd -j 4
+    scons platform=x11 -j 4
 
 Resulting binary
 ----------------
@@ -103,7 +107,7 @@ generally with this naming convention::
 For the previous build attempt, the result would look like this::
 
     ls bin
-    bin/godot.linuxbsd.tools.64
+    bin/godot.x11.tools.64
 
 This means that the binary is for Linux *or* \*BSD (*not* both), is not optimized, has tools (the
 whole editor) compiled in, and is meant for 64 bits.

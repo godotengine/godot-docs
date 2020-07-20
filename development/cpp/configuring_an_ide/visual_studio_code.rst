@@ -38,7 +38,7 @@ Importing the project
     "command": "scons",
     "group": "build",
     "args": [
-      "platform=linuxbsd", // Change to your current platform
+      "platform=x11", // Change to your current platform
       "target=debug",
       "-j4"
     ],
@@ -76,7 +76,7 @@ To run and debug the project you need to create a new configuration in the ``lau
     "type": "cppdbg",
     "request": "launch",
     // Change the path below to match your current platform.
-    "program": "${workspaceFolder}/bin/godot.linuxbsd.tools.64",
+    "program": "${workspaceFolder}/bin/godot.x11.tools.64",
     // Change the arguments below for the project you want to test with.
     // To run the project instead of editing it, remove the "--editor" argument.
     "args": [ "--editor", "--path", "path-to-your-godot-project-folder" ],
@@ -102,7 +102,7 @@ To run and debug the project you need to create a new configuration in the ``lau
    An example of a filled out ``launch.json``.
 
 The name under ``program`` depends on your build configuration,
-e.g. ``godot.linuxbsd.tools.64`` for 64-bit LinuxBSD platform with ``tools`` enabled.
+e.g. ``godot.x11.tools.64`` for 64-bit LinuxBSD platform with ``tools`` enabled.
 
 If you run into any issues, ask for help in one of
 `Godot's community channels <https://godotengine.org/community>`__.
