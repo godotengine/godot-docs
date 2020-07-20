@@ -165,11 +165,7 @@ If in doubt, use boolean variables instead.
 Exporting arrays
 ----------------
 
-Exporting arrays works, but with an important caveat: while regular
-arrays are created local to every class instance, exported arrays are *shared*
-between all instances. This means that editing them in one instance will
-cause them to change in all other instances. Exported arrays can have
-initializers, but they must be constant expressions.
+Exported arrays can have initializers, but they must be constant expressions.
 
 If the exported array specifies a type which inherits from Resource, the array
 values can be set in the inspector by dragging and dropping multiple files
@@ -177,7 +173,6 @@ from the FileSystem dock at once.
 
 ::
 
-    # Exported array, shared between all instances.
     # Default value must be a constant expression.
 
     export var a = [1, 2, 3]
@@ -204,7 +199,6 @@ from the FileSystem dock at once.
     export var vector3s = PackedVector3Array()
     export var strings = PackedStringArray()
 
-    # Regular array, created local for every instance.
     # Default value can include run-time values, but can't
     # be exported.
 
