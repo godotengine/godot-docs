@@ -98,6 +98,12 @@ A good rule of thumb for the ``-j`` (*jobs*) flag, is to have at least as many
 threads compiling Godot as you have cores in your CPU, if not one or two more.
 Feel free to add the ``-j`` option to any SCons command you see below.
 
+.. note::
+
+    Prior to Godot 4.0, the Linux/\*BSD target was called ``x11`` instead of
+    ``linuxbsd``. If you are looking to compile Godot 3.2, make sure to use the
+    `3.2 branch of this documentation <https://docs.godotengine.org/en/3.2/development/compiling/compiling_for_x11.html>`__.
+
 If all goes well, the resulting binary executable will be placed in the
 "bin" subdirectory. This executable file contains the whole engine and
 runs without any dependencies. Executing it will bring up the project
