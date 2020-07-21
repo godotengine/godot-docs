@@ -10,13 +10,13 @@ Godot has a simple serialization API based on Variant. It's used for
 converting data types to an array of bytes efficiently. This API is used
 in the functions ``get_var`` and ``store_var`` of :ref:`class_File`
 as well as the packet APIs for :ref:`class_PacketPeer`. This format
-is not used for binary scenes and resources.
+is *not* used for binary scenes and resources.
 
 Packet specification
 --------------------
 
 The packet is designed to be always padded to 4 bytes. All values are
-little endian encoded. All packets have a 4 byte header representing an
+little-endian-encoded. All packets have a 4-byte header representing an
 integer, specifying the type of data:
 
 +--------+--------------------------+
@@ -83,11 +83,12 @@ integer, specifying the type of data:
 | 29     | max                      |
 +--------+--------------------------+
 
-Following this is the actual packet contents, which varies for each type
-of packet. Note that this assumes Godot is compiled with single precision
-floats. If instead doubles are used, the length of "Float" fields within
-data structures should be 8, and the offset should be (offset - 4) * 2 + 4.
-The "float" type itself is always double precision.
+Following this is the actual packet contents, which varies for each type of
+packet. Note that this assumes Godot is compiled with single-precision floats,
+which is the default. If Godot was compiled with double-precision floats, the
+length of "Float" fields within data structures should be 8, and the offset
+should be ``(offset - 4) * 2 + 4``. The "float" type itself always uses double
+precision.
 
 0: null
 ~~~~~~~
@@ -107,7 +108,7 @@ The "float" type itself is always double precision.
 +----------+-------+-----------+--------------------------+
 | Offset   | Len   | Type      | Description              |
 +==========+=======+===========+==========================+
-| 4        | 8     | Integer   | Signed, 64-bit Integer   |
+| 4        | 8     | Integer   | 64-bit signed integer    |
 +----------+-------+-----------+--------------------------+
 
 3: :ref:`float<class_float>`
@@ -116,7 +117,7 @@ The "float" type itself is always double precision.
 +----------+-------+---------+-----------------------------------+
 | Offset   | Len   | Type    | Description                       |
 +==========+=======+=========+===================================+
-| 4        | 8     | Float   | IEEE 754 Double-precision Float   |
+| 4        | 8     | Float   | IEEE 754 double-precision float   |
 +----------+-------+---------+-----------------------------------+
 
 4: :ref:`String<class_string>`
@@ -125,9 +126,9 @@ The "float" type itself is always double precision.
 +----------+-------+-----------+----------------------------+
 | Offset   | Len   | Type      | Description                |
 +==========+=======+===========+============================+
-| 4        | 4     | Integer   | String Length (in Bytes)   |
+| 4        | 4     | Integer   | String length (in bytes)   |
 +----------+-------+-----------+----------------------------+
-| 8        | X     | Bytes     | UTF-8 Encoded String       |
+| 8        | X     | Bytes     | UTF-8 encoded string       |
 +----------+-------+-----------+----------------------------+
 
 This field is padded to 4 bytes.
@@ -138,9 +139,9 @@ This field is padded to 4 bytes.
 +----------+-------+---------+----------------+
 | Offset   | Len   | Type    | Description    |
 +==========+=======+=========+================+
-| 4        | 4     | Float   | X Coordinate   |
+| 4        | 4     | Float   | X coordinate   |
 +----------+-------+---------+----------------+
-| 8        | 4     | Float   | Y Coordinate   |
+| 8        | 4     | Float   | Y coordinate   |
 +----------+-------+---------+----------------+
 
 6: :ref:`Rect2<class_rect2>`
@@ -149,13 +150,13 @@ This field is padded to 4 bytes.
 +----------+-------+---------+----------------+
 | Offset   | Len   | Type    | Description    |
 +==========+=======+=========+================+
-| 4        | 4     | Float   | X Coordinate   |
+| 4        | 4     | Float   | X coordinate   |
 +----------+-------+---------+----------------+
-| 8        | 4     | Float   | Y Coordinate   |
+| 8        | 4     | Float   | Y coordinate   |
 +----------+-------+---------+----------------+
-| 12       | 4     | Float   | X Size         |
+| 12       | 4     | Float   | X size         |
 +----------+-------+---------+----------------+
-| 16       | 4     | Float   | Y Size         |
+| 16       | 4     | Float   | Y size         |
 +----------+-------+---------+----------------+
 
 7: :ref:`Vector3<class_vector3>`
@@ -164,11 +165,11 @@ This field is padded to 4 bytes.
 +----------+-------+---------+----------------+
 | Offset   | Len   | Type    | Description    |
 +==========+=======+=========+================+
-| 4        | 4     | Float   | X Coordinate   |
+| 4        | 4     | Float   | X coordinate   |
 +----------+-------+---------+----------------+
-| 8        | 4     | Float   | Y Coordinate   |
+| 8        | 4     | Float   | Y coordinate   |
 +----------+-------+---------+----------------+
-| 12       | 4     | Float   | Z Coordinate   |
+| 12       | 4     | Float   | Z coordinate   |
 +----------+-------+---------+----------------+
 
 8: :ref:`Transform2D<class_transform2d>`
@@ -226,17 +227,17 @@ This field is padded to 4 bytes.
 +----------+-------+---------+----------------+
 | Offset   | Len   | Type    | Description    |
 +==========+=======+=========+================+
-| 4        | 4     | Float   | X Coordinate   |
+| 4        | 4     | Float   | X coordinate   |
 +----------+-------+---------+----------------+
-| 8        | 4     | Float   | Y Coordinate   |
+| 8        | 4     | Float   | Y coordinate   |
 +----------+-------+---------+----------------+
-| 12       | 4     | Float   | Z Coordinate   |
+| 12       | 4     | Float   | Z coordinate   |
 +----------+-------+---------+----------------+
-| 16       | 4     | Float   | X Size         |
+| 16       | 4     | Float   | X size         |
 +----------+-------+---------+----------------+
-| 20       | 4     | Float   | Y Size         |
+| 20       | 4     | Float   | Y size         |
 +----------+-------+---------+----------------+
-| 24       | 4     | Float   | Z Size         |
+| 24       | 4     | Float   | Z size         |
 +----------+-------+---------+----------------+
 
 12: :ref:`Basis<class_basis>`
@@ -298,17 +299,17 @@ This field is padded to 4 bytes.
 14: :ref:`Color<class_color>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------+-------+---------+----------------+
-| Offset   | Len   | Type    | Description    |
-+==========+=======+=========+================+
-| 4        | 4     | Float   | Red (0..1)     |
-+----------+-------+---------+----------------+
-| 8        | 4     | Float   | Green (0..1)   |
-+----------+-------+---------+----------------+
-| 12       | 4     | Float   | Blue (0..1)    |
-+----------+-------+---------+----------------+
-| 16       | 4     | Float   | Alpha (0..1)   |
-+----------+-------+---------+----------------+
++----------+-------+---------+--------------------------------------------------------------+
+| Offset   | Len   | Type    | Description                                                  |
++==========+=======+=========+==============================================================+
+| 4        | 4     | Float   | Red (typically 0..1, can be above 1 for overbright colors)   |
++----------+-------+---------+--------------------------------------------------------------+
+| 8        | 4     | Float   | Green (typically 0..1, can be above 1 for overbright colors) |
++----------+-------+---------+--------------------------------------------------------------+
+| 12       | 4     | Float   | Blue (typically 0..1, can be above 1 for overbright colors)  |
++----------+-------+---------+--------------------------------------------------------------+
+| 16       | 4     | Float   | Alpha (0..1)                                                 |
++----------+-------+---------+--------------------------------------------------------------+
 
 15: :ref:`NodePath<class_nodepath>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -316,7 +317,7 @@ This field is padded to 4 bytes.
 +----------+-------+-----------+-----------------------------------------------------------------------------------------+
 | Offset   | Len   | Type      | Description                                                                             |
 +==========+=======+===========+=========================================================================================+
-| 4        | 4     | Integer   | String Length, or New Format (val&0x80000000!=0 and NameCount=val&0x7FFFFFFF)           |
+| 4        | 4     | Integer   | String length, or new format (val&0x80000000!=0 and NameCount=val&0x7FFFFFFF)           |
 +----------+-------+-----------+-----------------------------------------------------------------------------------------+
 
 For old format:
@@ -325,7 +326,7 @@ For old format:
 +----------+-------+---------+------------------------+
 | Offset   | Len   | Type    | Description            |
 +==========+=======+=========+========================+
-| 8        | X     | Bytes   | UTF-8 Encoded String   |
+| 8        | X     | Bytes   | UTF-8 encoded string   |
 +----------+-------+---------+------------------------+
 
 Padded to 4 bytes.
@@ -336,7 +337,7 @@ For new format:
 +----------+-------+-----------+-------------------------------------+
 | Offset   | Len   | Type      | Description                         |
 +==========+=======+===========+=====================================+
-| 4        | 4     | Integer   | Sub-Name Count                      |
+| 4        | 4     | Integer   | Sub-name count                      |
 +----------+-------+-----------+-------------------------------------+
 | 8        | 4     | Integer   | Flags (absolute: val&1 != 0 )       |
 +----------+-------+-----------+-------------------------------------+
@@ -346,9 +347,9 @@ For each Name and Sub-Name
 +----------+-------+-----------+------------------------+
 | Offset   | Len   | Type      | Description            |
 +==========+=======+===========+========================+
-| X+0      | 4     | Integer   | String Length          |
+| X+0      | 4     | Integer   | String length          |
 +----------+-------+-----------+------------------------+
-| X+4      | X     | Bytes     | UTF-8 Encoded String   |
+| X+4      | X     | Bytes     | UTF-8 encoded string   |
 +----------+-------+-----------+------------------------+
 
 Every name string is padded to 4 bytes.
@@ -389,7 +390,7 @@ other, using this same format.
 +---------------+-------+-----------+------------------------+
 | Offset        | Len   | Type      | Description            |
 +===============+=======+===========+========================+
-| 4             | 4     | Integer   | Array Length (Bytes)   |
+| 4             | 4     | Integer   | Array length (Bytes)   |
 +---------------+-------+-----------+------------------------+
 | 8..8+length   | 1     | Byte      | Byte (0..255)          |
 +---------------+-------+-----------+------------------------+
@@ -402,9 +403,9 @@ The array data is padded to 4 bytes.
 +------------------+-------+-----------+---------------------------+
 | Offset           | Len   | Type      | Description               |
 +==================+=======+===========+===========================+
-| 4                | 4     | Integer   | Array Length (Integers)   |
+| 4                | 4     | Integer   | Array length (Integers)   |
 +------------------+-------+-----------+---------------------------+
-| 8..8+length\*4   | 4     | Integer   | 32 Bits Signed Integer    |
+| 8..8+length\*4   | 4     | Integer   | 32-bit signed integer     |
 +------------------+-------+-----------+---------------------------+
 
 22: :ref:`PackedInt64Array<class_PackedInt64Array>`
@@ -413,9 +414,9 @@ The array data is padded to 4 bytes.
 +------------------+-------+-----------+---------------------------+
 | Offset           | Len   | Type      | Description               |
 +==================+=======+===========+===========================+
-| 4                | 8     | Integer   | Array Length (Integers)   |
+| 4                | 8     | Integer   | Array length (Integers)   |
 +------------------+-------+-----------+---------------------------+
-| 8..8+length\*8   | 8     | Integer   | 64 Bits Signed Integer    |
+| 8..8+length\*8   | 8     | Integer   | 64-bit signed integer     |
 +------------------+-------+-----------+---------------------------+
 
 23: :ref:`PackedFloat32Array<class_PackedFloat32Array>`
@@ -424,9 +425,9 @@ The array data is padded to 4 bytes.
 +------------------+-------+-----------+-------------------------------------------+
 | Offset           | Len   | Type      | Description                               |
 +==================+=======+===========+===========================================+
-| 4                | 4     | Integer   | Array Length (Floats)                     |
+| 4                | 4     | Integer   | Array length (Floats)                     |
 +------------------+-------+-----------+-------------------------------------------+
-| 8..8+length\*4   | 4     | Integer   | 32 Bits IEEE 754 Single-precision float   |
+| 8..8+length\*4   | 4     | Integer   | 32-bit IEEE 754 single-precision float    |
 +------------------+-------+-----------+-------------------------------------------+
 
 24: :ref:`PackedFloat64Array<class_PackedFloat64Array>`
@@ -435,9 +436,9 @@ The array data is padded to 4 bytes.
 +------------------+-------+-----------+-------------------------------------------+
 | Offset           | Len   | Type      | Description                               |
 +==================+=======+===========+===========================================+
-| 4                | 4     | Integer   | Array Length (Floats)                     |
+| 4                | 4     | Integer   | Array length (Floats)                     |
 +------------------+-------+-----------+-------------------------------------------+
-| 8..8+length\*8   | 8     | Integer   | 64 Bits IEEE 754 Double-precision float   |
+| 8..8+length\*8   | 8     | Integer   | 64-bit IEEE 754 double-precision float    |
 +------------------+-------+-----------+-------------------------------------------+
 
 25: :ref:`PackedStringArray<class_PackedStringArray>`
@@ -446,7 +447,7 @@ The array data is padded to 4 bytes.
 +----------+-------+-----------+--------------------------+
 | Offset   | Len   | Type      | Description              |
 +==========+=======+===========+==========================+
-| 4        | 4     | Integer   | Array Length (Strings)   |
+| 4        | 4     | Integer   | Array length (Strings)   |
 +----------+-------+-----------+--------------------------+
 
 For each String:
@@ -454,9 +455,9 @@ For each String:
 +----------+-------+-----------+------------------------+
 | Offset   | Len   | Type      | Description            |
 +==========+=======+===========+========================+
-| X+0      | 4     | Integer   | String Length          |
+| X+0      | 4     | Integer   | String length          |
 +----------+-------+-----------+------------------------+
-| X+4      | X     | Bytes     | UTF-8 Encoded String   |
+| X+4      | X     | Bytes     | UTF-8 encoded string   |
 +----------+-------+-----------+------------------------+
 
 Every string is padded to 4 bytes.
@@ -467,11 +468,11 @@ Every string is padded to 4 bytes.
 +-------------------+-------+-----------+----------------+
 | Offset            | Len   | Type      | Description    |
 +===================+=======+===========+================+
-| 4                 | 4     | Integer   | Array Length   |
+| 4                 | 4     | Integer   | Array length   |
 +-------------------+-------+-----------+----------------+
-| 8..8+length\*8    | 4     | Float     | X Coordinate   |
+| 8..8+length\*8    | 4     | Float     | X coordinate   |
 +-------------------+-------+-----------+----------------+
-| 8..12+length\*8   | 4     | Float     | Y Coordinate   |
+| 8..12+length\*8   | 4     | Float     | Y coordinate   |
 +-------------------+-------+-----------+----------------+
 
 27: :ref:`PackedVector3Array<class_PackedVector3Array>`
@@ -480,28 +481,28 @@ Every string is padded to 4 bytes.
 +--------------------+-------+-----------+----------------+
 | Offset             | Len   | Type      | Description    |
 +====================+=======+===========+================+
-| 4                  | 4     | Integer   | Array Length   |
+| 4                  | 4     | Integer   | Array length   |
 +--------------------+-------+-----------+----------------+
-| 8..8+length\*12    | 4     | Float     | X Coordinate   |
+| 8..8+length\*12    | 4     | Float     | X coordinate   |
 +--------------------+-------+-----------+----------------+
-| 8..12+length\*12   | 4     | Float     | Y Coordinate   |
+| 8..12+length\*12   | 4     | Float     | Y coordinate   |
 +--------------------+-------+-----------+----------------+
-| 8..16+length\*12   | 4     | Float     | Z Coordinate   |
+| 8..16+length\*12   | 4     | Float     | Z coordinate   |
 +--------------------+-------+-----------+----------------+
 
 28: :ref:`PackedColorArray<class_PackedColorArray>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------+-------+-----------+----------------+
-| Offset             | Len   | Type      | Description    |
-+====================+=======+===========+================+
-| 4                  | 4     | Integer   | Array Length   |
-+--------------------+-------+-----------+----------------+
-| 8..8+length\*16    | 4     | Float     | Red (0..1)     |
-+--------------------+-------+-----------+----------------+
-| 8..12+length\*16   | 4     | Float     | Green (0..1)   |
-+--------------------+-------+-----------+----------------+
-| 8..16+length\*16   | 4     | Float     | Blue (0..1)    |
-+--------------------+-------+-----------+----------------+
-| 8..20+length\*16   | 4     | Float     | Alpha (0..1)   |
-+--------------------+-------+-----------+----------------+
++--------------------+-------+-----------+--------------------------------------------------------------+
+| Offset             | Len   | Type      | Description                                                  |
++====================+=======+===========+==============================================================+
+| 4                  | 4     | Integer   | Array length                                                 |
++--------------------+-------+-----------+--------------------------------------------------------------+
+| 8..8+length\*16    | 4     | Float     | Red (typically 0..1, can be above 1 for overbright colors)   |
++--------------------+-------+-----------+--------------------------------------------------------------+
+| 8..12+length\*16   | 4     | Float     | Green (typically 0..1, can be above 1 for overbright colors) |
++--------------------+-------+-----------+--------------------------------------------------------------+
+| 8..16+length\*16   | 4     | Float     | Blue (typically 0..1, can be above 1 for overbright colors)  |
++--------------------+-------+-----------+--------------------------------------------------------------+
+| 8..20+length\*16   | 4     | Float     | Alpha (0..1)                                                 |
++--------------------+-------+-----------+--------------------------------------------------------------+
