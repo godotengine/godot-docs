@@ -367,7 +367,7 @@ Node names that have this suffix will be removed at import time, no
 matter what their type is. They will not appear in the imported scene.
 
 Create collisions (-col, -convcol, -colonly, -convcolonly)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Option "-col" will work only for Mesh nodes. If it is detected, a child
 static collision node will be added, using the same geometry as the mesh.
