@@ -6,8 +6,8 @@
 sphinx==1.8.5  # pyup: <2.0.0
 sphinx_rtd_theme==0.4.3
 
-# Code tabs extension for GDScript/C#
-sphinx-tabs==1.1.13
+# Code tabs extension for GDScript/C# with collapse support
+https://github.com/HaSa1002/sphinx-tabs/releases/download/v1.1.13-collapse/sphinx-tabs-1.1.13-collapse.tar.gz
 
 # Full-page search UI for RTD: https://readthedocs-sphinx-search.readthedocs.io
 git+https://github.com/readthedocs/readthedocs-sphinx-search@faa85a9dabb71e53bb01832edc9a3be07d22bd5a
