@@ -327,7 +327,7 @@ Here's the list of available annotations:
 +------------------------------+---------------------------------------------------------------------------------------------------+
 | ``@onready``                 | Defer initialization of variable until the node is in the tree, See `Onready annotation`_).       |
 +------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@icon(path)``              | Set the class icon to show in editor.                                                             |
+| ``@icon(path)``              | Set the class icon to show in editor. To be used together with the ``class_name`` keyword         |
 +------------------------------+---------------------------------------------------------------------------------------------------+
 | ``@master``                  | RPC modifiers. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
 |                              |                                                                                                   |
@@ -1304,7 +1304,7 @@ The class constructor, called on class instantiation, is named ``_init``. If you
 want to call the base class constructor, you can also use the ``super`` syntax.
 Note that every class has an implicit constructor that it's always called
 (defining the default values of class variables). ``super`` is used to call the
-explicit constructor.
+explicit constructor::
 
     func _init(arg):
        super("some_default", arg) # Call the custom base constructor.
@@ -1404,6 +1404,55 @@ Exports
     Documentation about exports has been moved to :ref:`doc_gdscript_exports`.
 
 .. _doc_gdscript_tool_mode:
+
+
+Properties
+~~~~~~~~~~
+
+Sometimes you want a class' member variable to do more than just hold data and actually perform
+some validation or computation whenever its value change. It may also be desired to
+encapsulate its access in some way.
+
+For this, GDScript provides a special syntax to define properties using the ``set`` and ``get``
+keywords after a variable declaration. Then you can define a code block that will be executed
+when the variable is accessed or assigned.
+
+Example::
+
+    var milliseconds: int = 0
+    var seconds: int:
+        get:
+            return milliseconds / 1000
+        set(value):
+            milliseconds = value * 1000
+
+Using the variable name inside its own setter or getter will directly access the underlying member, so it
+won't generate infinite recursion and saves you from explicitly declaring another variable::
+
+    signal changed(new_value)
+    var warns_when_changed = "some value":
+        get:
+            return warns_when_changed
+        set(value):
+            changed.emit(value)
+            warns_when_changed = value
+
+This backing member variable is not created if you don't use it.
+
+.. note::
+
+    Unlike ``setget`` in previous Godot versions, the properties setter and getter are **always** called,
+    even when accessed inside the same class (with or without prefixing with ``self.``). This makes the behavior
+    consistent. If you need direct access to the value, use another variable for direct access and make the property
+    code use that name.
+
+In case you want to split the code from the variable declaration or you need to share the code across multiple properties,
+you can use a different notation to use existing class functions::
+
+    var my_prop:
+        get = get_my_prop, set = set_my_prop
+
+This can also be done in the same line.
 
 Tool mode
 ~~~~~~~~~
