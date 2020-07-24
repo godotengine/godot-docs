@@ -335,9 +335,9 @@ Here's the list of available annotations:
 +------------------------------+---------------------------------------------------------------------------------------------------+
 | ``@tool``                    | Enable the `Tool mode`_.                                                                          |
 +------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@onready``                 | Defer initialization of variable until the node is in the tree, See `Onready annotation`_).       |
+| ``@onready``                 | Defer initialization of variable until the node is in the tree. See `Onready annotation`_.        |
 +------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@icon(path)``              | Set the class icon to show in editor. To be used together with the ``class_name`` keyword         |
+| ``@icon(path)``              | Set the class icon to show in editor. To be used together with the ``class_name`` keyword.        |
 +------------------------------+---------------------------------------------------------------------------------------------------+
 | ``@master``                  | RPC modifiers. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
 |                              |                                                                                                   |
@@ -480,9 +480,9 @@ GDScript also supports :ref:`doc_gdscript_printf`.
 :ref:`StringName <class_StringName>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Immutable strings that allows only one instance of each name. They are slower to
-create and may result in waiting for locks when multithreading. But they are
-very fast to compare which makes good candidates for dictionary keys.
+An immutable string that allows only one instance of each name. They are slower to
+create and may result in waiting for locks when multithreading. In exchange, they're
+very fast to compare, which makes them good candidates for dictionary keys.
 
 :ref:`NodePath <class_NodePath>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -503,7 +503,7 @@ accessed as an array.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Same as a Vector2 but the components are integers. Useful for representing
-items in a grid.
+items in a 2D grid.
 
 :ref:`Rect2 <class_Rect2>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
