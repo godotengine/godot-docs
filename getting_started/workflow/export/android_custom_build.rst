@@ -84,17 +84,15 @@ an empty directory). On Windows, the following path is usually good enough:
     If you already have an android-sdk folder, normally located in ``%LOCALAPPDATA%\Android\Sdk``, 
     then use this folder instead of creating an empty ``android-sdk`` folder. 
 
-Unzip the Android SDK ZIP file into the ``android-sdk`` folder. This folder should 
-now contain the unzipped folder called ``tools``. Rename ``tools`` to ``latest``. 
-Finally, create an empty folder named ``cmdline-tools`` and place ``latest`` into it. 
+Unzip the Android SDK ZIP file into ``andriod-sdk`` folder. This folder should
+now contain the unzipped folder called ``tools``.
 Your final directory structure should look like this :
 
 .. code-block:: none
 
   android-sdk/
-  android-sdk/cmdline-tools/
-  android-sdk/cmdline-tools/latest
-  android-sdk/cmdline-tools/latest/allTheOtherFiles
+  android-sdk/tools/
+  android-sdk/tools/allTheOtherFiles
   
 We need to setup the directory structure this way for the sdkmanager (inside the bin folder) to work.
 
