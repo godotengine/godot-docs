@@ -112,6 +112,10 @@ The progressive forms describe continuous actions. E.g. "is calling",
     Vector2 move ( Vector2 rel_vec )
     Moves the body in the vector's direction. The body **stops** if it collides with an obstacle. [...]
 
+Exception: If the subject is not clear, replacing "ing" verbs is not an
+improvement. For example, in the previous sentence, "it replaces"
+would not make much sense where "replacing" currently is.
+
 You may use the progressive tense to describe actions that are
 continuous in time. Anything like animation or coroutines.
 
