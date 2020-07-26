@@ -151,3 +151,11 @@ Subscriptions don't work much different from regular in-app items. Just use ``"s
 argument to ``querySkuDetails`` to get subscription details.
 Check ``is_auto_renewing`` in the results of ``queryPurchases()`` to see if a
 user has cancelled an auto-renewing subscription
+
+
+Export
+******
+
+Before export, to enable ``In-app products`` on Google Play Console you have to configure one Custom Permissions with the value ``com.android.vending.BILLING``
+
+.. image:: img/android_export_custom_permission_iap.png
