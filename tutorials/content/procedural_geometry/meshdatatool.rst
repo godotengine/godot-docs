@@ -46,7 +46,7 @@ To access information from these arrays you use a function of the form ``get_***
     mdt.get_vertex_count() # Returns number of vertices in vertex array.
     mdt.get_vertex_faces(0) # Returns array of faces that contain vertex[0].
     mdt.get_face_normal(1) # Calculates and returns face normal.
-    mdt.get_edge_vertex(10, 1) # Returns the second vertex comprsing edge at index 10.
+    mdt.get_edge_vertex(10, 1) # Returns the second vertex comprising the edge at index 10.
 
 What you choose to do with these functions is up to you. A common use case is to iterate over all vertices
 and transform them in some way:
