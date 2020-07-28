@@ -150,4 +150,4 @@ If you are using :ref:`EditorScript<class_EditorScript>`:
         parent.add_child(node)
         node.set_owner(get_scene())
 
-.. warning:: Using ``tool`` improperly can yield many errors. It is advised to first write the code how you want it, and only then add the ``tool`` keyword to the top. Also make sure to separate code that runs in-editor and code that runs in-game. This way you can find bugs more easily.
+.. warning:: Using ``tool`` improperly can yield many errors. It is advised to first write the code how you want it, and only then add the ``tool`` keyword to the top. Also make sure to separate code that runs in-editor and code that runs in-game. This way, you can find bugs more easily.
