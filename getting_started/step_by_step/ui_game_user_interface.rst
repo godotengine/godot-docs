@@ -286,13 +286,13 @@ the size of the ``Background``.
 
 Let's change the ``Number``'s align properties to move it to the left
 and center of the ``Background``. Select the ``Number`` node, change its
-``Align`` property to left and the ``Valign`` property to centre. Then
+``Align`` property to left and the ``Valign`` property to center. Then
 resize its left edge a bit to add some padding between the left
 edge of the ``Background`` and the text.
 
 .. figure:: img/ui_gui_step_tutorial_counter_design_3.png
 
-   The Number node aligned to the left and centre
+   The Number node aligned to the left and center
 
 To overlap the Icon and the background, we need a few tweaks. First, our
 background is a bit too tall. It's because it's inside a margin
