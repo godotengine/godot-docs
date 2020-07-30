@@ -79,7 +79,7 @@ An example usage:
  .. code-tab:: gdscript GDScript
 
     var theme = Theme.new()
-    ttheme.set_color("font_color", "Label", Color.red)
+    theme.set_color("font_color", "Label", Color.red)
 
     var label = Label.new()
     label.theme = theme
