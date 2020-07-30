@@ -64,6 +64,8 @@ Method Descriptions
 
 - void **add_collision_segments** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` segments **)**
 
+Adds the specified ``segments`` to the gizmo's collision shape for picking. Call this function during :ref:`redraw<class_EditorSpatialGizmo_method_redraw>`.
+
 ----
 
 .. _class_EditorSpatialGizmo_method_add_collision_triangles:
@@ -96,6 +98,8 @@ Adds lines to the gizmo (as sets of 2 points), with a given material. The lines 
 
 - void **add_mesh** **(** :ref:`ArrayMesh<class_ArrayMesh>` mesh, :ref:`bool<class_bool>` billboard=false, :ref:`SkinReference<class_SkinReference>` skeleton=null, :ref:`Material<class_Material>` material=null **)**
 
+Adds a mesh to the gizmo with the specified ``billboard`` state, ``skeleton`` and ``material``. If ``billboard`` is ``true``, the mesh will rotate to always face the camera. Call this function during :ref:`redraw<class_EditorSpatialGizmo_method_redraw>`.
+
 ----
 
 .. _class_EditorSpatialGizmo_method_add_unscaled_billboard:
@@ -109,6 +113,8 @@ Adds an unscaled billboard for visualization. Call this function during :ref:`re
 .. _class_EditorSpatialGizmo_method_clear:
 
 - void **clear** **(** **)**
+
+Removes everything in the gizmo including meshes, collisions and handles.
 
 ----
 
@@ -160,7 +166,7 @@ Returns the Spatial node associated with this gizmo.
 
 - :ref:`bool<class_bool>` **is_handle_highlighted** **(** :ref:`int<class_int>` index **)** virtual
 
-Gets whether a handle is highlighted or not.
+Returns ``true`` if the handle at index ``index`` is highlighted by being hovered with the mouse.
 
 ----
 
@@ -168,7 +174,7 @@ Gets whether a handle is highlighted or not.
 
 - void **redraw** **(** **)** virtual
 
-This function is called when the Spatial this gizmo refers to changes (the :ref:`Spatial.update_gizmo<class_Spatial_method_update_gizmo>` is called).
+This function is called when the :ref:`Spatial<class_Spatial>` this gizmo refers to changes (the :ref:`Spatial.update_gizmo<class_Spatial_method_update_gizmo>` is called).
 
 ----
 
@@ -186,9 +192,13 @@ The :ref:`Camera<class_Camera>` is also provided so screen coordinates can be co
 
 - void **set_hidden** **(** :ref:`bool<class_bool>` hidden **)**
 
+Sets the gizmo's hidden state. If ``true``, the gizmo will be hidden. If ``false``, it will be shown.
+
 ----
 
 .. _class_EditorSpatialGizmo_method_set_spatial_node:
 
 - void **set_spatial_node** **(** :ref:`Node<class_Node>` node **)**
+
+Sets the reference :ref:`Spatial<class_Spatial>` node for the gizmo. ``node`` must inherit from :ref:`Spatial<class_Spatial>`.
 

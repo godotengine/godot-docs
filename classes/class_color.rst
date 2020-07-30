@@ -9,12 +9,12 @@
 Color
 =====
 
-Color in RGBA format with some support for ARGB format.
+Color in RGBA format using floats on the range of 0 to 1.
 
 Description
 -----------
 
-A color is represented by red, green, and blue ``(r, g, b)`` components. Additionally, ``a`` represents the alpha component, often used for transparency. Values are in floating-point and usually range from 0 to 1. Some properties (such as :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`) may accept values greater than 1.
+A color represented by red, green, blue, and alpha (RGBA) components. The alpha component is often used for transparency. Values are in floating-point and usually range from 0 to 1. Some properties (such as CanvasItem.modulate) may accept values greater than 1 (overbright or HDR colors).
 
 You can also create a color from standardized color names by using :ref:`@GDScript.ColorN<class_@GDScript_method_ColorN>` or directly using the color constants defined here. The standardized color set is based on the `X11 color names <https://en.wikipedia.org/wiki/X11_color_names>`_.
 
@@ -692,7 +692,7 @@ Property Descriptions
 | *Default* | ``1.0`` |
 +-----------+---------+
 
-Alpha value (range 0 to 1).
+The color's alpha (transparency) component, typically on the range of 0 to 1.
 
 ----
 
@@ -704,7 +704,7 @@ Alpha value (range 0 to 1).
 | *Default* | ``255`` |
 +-----------+---------+
 
-Alpha value (range 0 to 255).
+Wrapper for :ref:`a<class_Color_property_a>` that uses the range 0 to 255 instead of 0 to 1.
 
 ----
 
@@ -716,7 +716,7 @@ Alpha value (range 0 to 255).
 | *Default* | ``0.0`` |
 +-----------+---------+
 
-Blue value (range 0 to 1).
+The color's blue component, typically on the range of 0 to 1.
 
 ----
 
@@ -728,7 +728,7 @@ Blue value (range 0 to 1).
 | *Default* | ``0`` |
 +-----------+-------+
 
-Blue value (range 0 to 255).
+Wrapper for :ref:`b<class_Color_property_b>` that uses the range 0 to 255 instead of 0 to 1.
 
 ----
 
@@ -740,7 +740,7 @@ Blue value (range 0 to 255).
 | *Default* | ``0.0`` |
 +-----------+---------+
 
-Green value (range 0 to 1).
+The color's green component, typically on the range of 0 to 1.
 
 ----
 
@@ -752,7 +752,7 @@ Green value (range 0 to 1).
 | *Default* | ``0`` |
 +-----------+-------+
 
-Green value (range 0 to 255).
+Wrapper for :ref:`g<class_Color_property_g>` that uses the range 0 to 255 instead of 0 to 1.
 
 ----
 
@@ -764,7 +764,7 @@ Green value (range 0 to 255).
 | *Default* | ``0.0`` |
 +-----------+---------+
 
-HSV hue value (range 0 to 1).
+The HSV hue of this color, on the range 0 to 1.
 
 ----
 
@@ -776,7 +776,7 @@ HSV hue value (range 0 to 1).
 | *Default* | ``0.0`` |
 +-----------+---------+
 
-Red value (range 0 to 1).
+The color's red component, typically on the range of 0 to 1.
 
 ----
 
@@ -788,7 +788,7 @@ Red value (range 0 to 1).
 | *Default* | ``0`` |
 +-----------+-------+
 
-Red value (range 0 to 255).
+Wrapper for :ref:`r<class_Color_property_r>` that uses the range 0 to 255 instead of 0 to 1.
 
 ----
 
@@ -800,7 +800,7 @@ Red value (range 0 to 255).
 | *Default* | ``0.0`` |
 +-----------+---------+
 
-HSV saturation value (range 0 to 1).
+The HSV saturation of this color, on the range 0 to 1.
 
 ----
 
@@ -812,7 +812,7 @@ HSV saturation value (range 0 to 1).
 | *Default* | ``0.0`` |
 +-----------+---------+
 
-HSV value (range 0 to 1).
+The HSV value (brightness) of this color, on the range 0 to 1.
 
 Method Descriptions
 -------------------

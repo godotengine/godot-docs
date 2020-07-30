@@ -56,6 +56,8 @@ Method Descriptions
 
 Draw ``string`` into a canvas item using the font at a given position, with ``modulate`` color, and optionally clipping the width. ``position`` specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis.
 
+See also :ref:`CanvasItem.draw_string<class_CanvasItem_method_draw_string>`.
+
 ----
 
 .. _class_Font_method_draw_char:

@@ -1250,6 +1250,8 @@ enum **ButtonList**:
 
 .. _enum_@GlobalScope_JoystickList:
 
+.. _class_@GlobalScope_constant_JOY_INVALID_OPTION:
+
 .. _class_@GlobalScope_constant_JOY_BUTTON_0:
 
 .. _class_@GlobalScope_constant_JOY_BUTTON_1:
@@ -1389,6 +1391,8 @@ enum **ButtonList**:
 .. _class_@GlobalScope_constant_JOY_OPENVR_TOUCHPADY:
 
 enum **JoystickList**:
+
+- **JOY_INVALID_OPTION** = **-1** --- Invalid button or axis.
 
 - **JOY_BUTTON_0** = **0** --- Gamepad button 0.
 

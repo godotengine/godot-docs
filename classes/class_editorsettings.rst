@@ -18,13 +18,19 @@ Description
 
 Object that holds the project-independent editor settings. These settings are generally visible in the **Editor > Editor Settings** menu.
 
-Accessing the settings is done by using the regular :ref:`Object<class_Object>` API, such as:
+Property names use slash delimiters to distinguish sections. Setting values can be of any :ref:`Variant<class_Variant>` type. It's recommended to use ``snake_case`` for editor settings to be consistent with the Godot editor itself.
+
+Accessing the settings can be done using the following methods, such as:
 
 ::
 
-    settings.set(prop,value)
-    settings.get(prop)
-    list_of_settings = settings.get_property_list()
+    # `settings.set("some/property", value)` also works as this class overrides `_set()` internally.
+    settings.set_setting("some/property",value)
+    
+    # `settings.get("some/property", value)` also works as this class overrides `_get()` internally.
+    settings.get_setting("some/property")
+    
+    var list_of_settings = settings.get_property_list()
 
 **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_editor_settings<class_EditorInterface_method_get_editor_settings>`.
 
@@ -72,14 +78,14 @@ Signals
 
 - **settings_changed** **(** **)**
 
-Emitted when editor settings change.
+Emitted after any editor setting has changed.
 
 Constants
 ---------
 
 .. _class_EditorSettings_constant_NOTIFICATION_EDITOR_SETTINGS_CHANGED:
 
-- **NOTIFICATION_EDITOR_SETTINGS_CHANGED** = **10000** --- Emitted when editor settings change. It used by various editor plugins to update their visuals on theme changes or logic on configuration changes.
+- **NOTIFICATION_EDITOR_SETTINGS_CHANGED** = **10000** --- Emitted after any editor setting has changed. It's used by various editor plugins to update their visuals on theme changes or logic on configuration changes.
 
 Method Descriptions
 -------------------
@@ -117,7 +123,7 @@ Adds a custom property info to a property. The dictionary must contain:
 
 - void **erase** **(** :ref:`String<class_String>` property **)**
 
-Erase a given setting (pass full property path).
+Erases the setting whose name is specified by ``property``.
 
 ----
 
@@ -125,7 +131,7 @@ Erase a given setting (pass full property path).
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_favorites** **(** **)** const
 
-Gets the list of favorite files and directories for this project.
+Returns the list of favorite files and directories for this project.
 
 ----
 
@@ -133,13 +139,15 @@ Gets the list of favorite files and directories for this project.
 
 - :ref:`Variant<class_Variant>` **get_project_metadata** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** const
 
+Returns project-specific metadata for the ``section`` and ``key`` specified. If the metadata doesn't exist, ``default`` will be returned instead. See also :ref:`set_project_metadata<class_EditorSettings_method_set_project_metadata>`.
+
 ----
 
 .. _class_EditorSettings_method_get_project_settings_dir:
 
 - :ref:`String<class_String>` **get_project_settings_dir** **(** **)** const
 
-Gets the specific project settings path. Projects all have a unique sub-directory inside the settings path where project specific settings are saved.
+Returns the project-specific settings path. Projects all have a unique subdirectory inside the settings path where project-specific settings are saved.
 
 ----
 
@@ -147,13 +155,15 @@ Gets the specific project settings path. Projects all have a unique sub-director
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_recent_dirs** **(** **)** const
 
-Gets the list of recently visited folders in the file dialog for this project.
+Returns the list of recently visited folders in the file dialog for this project.
 
 ----
 
 .. _class_EditorSettings_method_get_setting:
 
 - :ref:`Variant<class_Variant>` **get_setting** **(** :ref:`String<class_String>` name **)** const
+
+Returns the value of the setting specified by ``name``. This is equivalent to using :ref:`Object.get<class_Object_method_get>` on the EditorSettings instance.
 
 ----
 
@@ -173,17 +183,23 @@ Gets the global settings path for the engine. Inside this path, you can find som
 
 - :ref:`bool<class_bool>` **has_setting** **(** :ref:`String<class_String>` name **)** const
 
+Returns ``true`` if the setting specified by ``name`` exists, ``false`` otherwise.
+
 ----
 
 .. _class_EditorSettings_method_property_can_revert:
 
 - :ref:`bool<class_bool>` **property_can_revert** **(** :ref:`String<class_String>` name **)**
 
+Returns ``true`` if the setting specified by ``name`` can have its value reverted to the default value, ``false`` otherwise. When this method returns ``true``, a Revert button will display next to the setting in the Editor Settings.
+
 ----
 
 .. _class_EditorSettings_method_property_get_revert:
 
 - :ref:`Variant<class_Variant>` **property_get_revert** **(** :ref:`String<class_String>` name **)**
+
+Returns the default value of the setting specified by ``name``. This is the value that would be applied when clicking the Revert button in the Editor Settings.
 
 ----
 
@@ -199,11 +215,15 @@ Sets the list of favorite files and directories for this project.
 
 - void **set_initial_value** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` update_current **)**
 
+Sets the initial value of the setting specified by ``name`` to ``value``. This is used to provide a value for the Revert button in the Editor Settings. If ``update_current`` is true, the current value of the setting will be set to ``value`` as well.
+
 ----
 
 .. _class_EditorSettings_method_set_project_metadata:
 
 - void **set_project_metadata** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` data **)**
+
+Sets project-specific metadata with the ``section``, ``key`` and ``data`` specified. This metadata is stored outside the project folder and therefore won't be checked into version control. See also :ref:`get_project_metadata<class_EditorSettings_method_get_project_metadata>`.
 
 ----
 
@@ -218,4 +238,6 @@ Sets the list of recently visited folders in the file dialog for this project.
 .. _class_EditorSettings_method_set_setting:
 
 - void **set_setting** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**
+
+Sets the ``value`` of the setting specified by ``name``. This is equivalent to using :ref:`Object.set<class_Object_method_set>` on the EditorSettings instance.
 

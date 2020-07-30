@@ -20,6 +20,8 @@ This node implements all the physics logic needed to simulate a car. It is based
 
 **Note:** The origin point of your VehicleBody will determine the center of gravity of your vehicle so it is better to keep this low and move the :ref:`CollisionShape<class_CollisionShape>` and :ref:`MeshInstance<class_MeshInstance>` upwards.
 
+**Note:** This class has known issues and isn't designed to provide realistic 3D vehicle physics. If you want advanced vehicle physics, you will probably have to write your own physics integration using another :ref:`PhysicsBody<class_PhysicsBody>` class.
+
 Properties
 ----------
 

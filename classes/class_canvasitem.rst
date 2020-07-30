@@ -359,7 +359,9 @@ If ``true``, the parent ``CanvasItem``'s :ref:`material<class_CanvasItem_propert
 | *Getter*  | is_visible()       |
 +-----------+--------------------+
 
-If ``true``, this ``CanvasItem`` is drawn. For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
+If ``true``, this ``CanvasItem`` is drawn. The node is only visible if all of its antecedents are visible as well (in other words, :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>` must return ``true``).
+
+**Note:** For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
 
 Method Descriptions
 -------------------
@@ -424,7 +426,9 @@ Draws a :ref:`Mesh<class_Mesh>` in 2D, using the provided texture. See :ref:`Mes
 
 - void **draw_multiline** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draws multiple, parallel lines with a uniform ``color``. ``width`` and ``antialiased`` are currently not implemented and have no effect.
+Draws multiple, parallel lines with a uniform ``color``.
+
+**Note:** ``width`` and ``antialiased`` are currently not implemented and have no effect.
 
 ----
 
@@ -432,7 +436,9 @@ Draws multiple, parallel lines with a uniform ``color``. ``width`` and ``antiali
 
 - void **draw_multiline_colors** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draws multiple, parallel lines with a uniform ``width``, segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between ``points`` and ``colors``.
+Draws multiple, parallel lines with a uniform ``width`` and segment-by-segment coloring. Colors assigned to line segments match by index between ``points`` and ``colors``.
+
+**Note:** ``width`` and ``antialiased`` are currently not implemented and have no effect.
 
 ----
 
@@ -506,7 +512,19 @@ Sets a custom transform for drawing via matrix. Anything drawn afterwards will b
 
 - void **draw_string** **(** :ref:`Font<class_Font>` font, :ref:`Vector2<class_Vector2>` position, :ref:`String<class_String>` text, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`int<class_int>` clip_w=-1 **)**
 
-Draws a string using a custom font.
+Draws ``text`` using the specified ``font`` at the ``position`` (top-left corner). The text will have its color multiplied by ``modulate``. If ``clip_w`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
+
+**Example using the default project font:**
+
+::
+
+    # If using this method in a script that redraws constantly, move the
+    # `default_font` declaration to a member variable assigned in `_ready()`
+    # so the Control is only created once.
+    var default_font = Control.new().get_font("font")
+    draw_string(default_font, Vector2(64, 64), "Hello world")
+
+See also :ref:`Font.draw<class_Font_method_draw>`.
 
 ----
 
@@ -674,7 +692,7 @@ Returns ``true`` if global transform notifications are communicated to children.
 
 - :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** const
 
-Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and its inherited visibility is also ``true``.
+Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and all its antecedents are also visible. If any antecedent is hidden, this node will not be visible in the scene tree.
 
 ----
 

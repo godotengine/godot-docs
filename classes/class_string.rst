@@ -14,7 +14,7 @@ Built-in string class.
 Description
 -----------
 
-This is the built-in string class (and the one used by GDScript). It supports Unicode and provides all necessary means for string handling. Strings are reference counted and use a copy-on-write approach, so passing them around is cheap in resources.
+This is the built-in string class (and the one used by GDScript). It supports Unicode and provides all necessary means for string handling. Strings are reference-counted and use a copy-on-write approach, so passing them around is cheap in resources.
 
 Tutorials
 ---------
@@ -411,7 +411,9 @@ Returns a copy of the string with special characters escaped using the C languag
 
 - :ref:`String<class_String>` **c_unescape** **(** **)**
 
-Returns a copy of the string with escaped characters replaced by their meanings according to the C language standard.
+Returns a copy of the string with escaped characters replaced by their meanings. Supported escape sequences are ``\'``, ``\"``, ``\?``, ``\\``, ``\a``, ``\b``, ``\f``, ``\n``, ``\r``, ``\t``, ``\v``.
+
+**Note:** Unlike the GDScript parser, this method doesn't support the ``\uXXXX`` escape sequence.
 
 ----
 
@@ -949,9 +951,9 @@ Returns the similarity index of the text compared to this string. 1 means totall
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **split** **(** :ref:`String<class_String>` delimiter, :ref:`bool<class_bool>` allow_empty=true, :ref:`int<class_int>` maxsplit=0 **)**
 
-Splits the string by a ``delimiter`` string and returns an array of the substrings.
+Splits the string by a ``delimiter`` string and returns an array of the substrings. The ``delimiter`` can be of any length.
 
-If ``maxsplit`` is specified, it defines the number of splits to do from the left up to ``maxsplit``. The default value of 0 means that all items are split.
+If ``maxsplit`` is specified, it defines the number of splits to do from the left up to ``maxsplit``. The default value of ``0`` means that all items are split.
 
 Example:
 
@@ -962,6 +964,8 @@ Example:
     print(some_array.size()) # Prints 2
     print(some_array[0]) # Prints "One"
     print(some_array[1]) # Prints "Two,Three,Four"
+
+If you need to split strings with more complex rules, use the :ref:`RegEx<class_RegEx>` class instead.
 
 ----
 

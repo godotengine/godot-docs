@@ -128,6 +128,19 @@ Gets the unique name of the importer.
 
 - :ref:`bool<class_bool>` **get_option_visibility** **(** :ref:`String<class_String>` option, :ref:`Dictionary<class_Dictionary>` options **)** virtual
 
+This method can be overridden to hide specific import options if conditions are met. This is mainly useful for hiding options that depend on others if one of them is disabled. For example:
+
+::
+
+    func get_option_visibility(option, options):
+        # Only show the lossy quality setting if the compression mode is set to "Lossy".
+        if option == "compress/lossy_quality" and options.has("compress/mode"):
+            return int(options["compress/mode"]) == COMPRESS_LOSSY
+    
+        return true
+
+Return ``true`` to make all options always visible.
+
 ----
 
 .. _class_EditorImportPlugin_method_get_preset_count:
@@ -189,4 +202,8 @@ Gets the name to display in the import window.
 .. _class_EditorImportPlugin_method_import:
 
 - :ref:`int<class_int>` **import** **(** :ref:`String<class_String>` source_file, :ref:`String<class_String>` save_path, :ref:`Dictionary<class_Dictionary>` options, :ref:`Array<class_Array>` platform_variants, :ref:`Array<class_Array>` gen_files **)** virtual
+
+Imports ``source_file`` into ``save_path`` with the import ``options`` specified. The ``platform_variants`` and ``gen_files`` arrays will be modified by this function.
+
+This method must be overridden to do the actual importing work. See this class' description for an example of overriding this method.
 

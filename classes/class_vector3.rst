@@ -140,23 +140,23 @@ Constants
 
 - **AXIS_Z** = **2** --- Enumerated value for the Z axis. Returned by :ref:`max_axis<class_Vector3_method_max_axis>` and :ref:`min_axis<class_Vector3_method_min_axis>`.
 
-- **ZERO** = **Vector3( 0, 0, 0 )** --- Zero vector.
+- **ZERO** = **Vector3( 0, 0, 0 )** --- Zero vector, a vector with all components set to ``0``.
 
-- **ONE** = **Vector3( 1, 1, 1 )** --- One vector.
+- **ONE** = **Vector3( 1, 1, 1 )** --- One vector, a vector with all components set to ``1``.
 
-- **INF** = **Vector3( inf, inf, inf )** --- Infinity vector.
+- **INF** = **Vector3( inf, inf, inf )** --- Infinity vector, a vector with all components set to :ref:`@GDScript.INF<class_@GDScript_constant_INF>`.
 
-- **LEFT** = **Vector3( -1, 0, 0 )** --- Left unit vector.
+- **LEFT** = **Vector3( -1, 0, 0 )** --- Left unit vector. Represents the local direction of left, and the global direction of west.
 
-- **RIGHT** = **Vector3( 1, 0, 0 )** --- Right unit vector.
+- **RIGHT** = **Vector3( 1, 0, 0 )** --- Right unit vector. Represents the local direction of right, and the global direction of east.
 
 - **UP** = **Vector3( 0, 1, 0 )** --- Up unit vector.
 
 - **DOWN** = **Vector3( 0, -1, 0 )** --- Down unit vector.
 
-- **FORWARD** = **Vector3( 0, 0, -1 )** --- Forward unit vector.
+- **FORWARD** = **Vector3( 0, 0, -1 )** --- Forward unit vector. Represents the local direction of forward, and the global direction of north.
 
-- **BACK** = **Vector3( 0, 0, 1 )** --- Back unit vector.
+- **BACK** = **Vector3( 0, 0, 1 )** --- Back unit vector. Represents the local direction of back, and the global direction of south.
 
 Property Descriptions
 ---------------------
@@ -218,7 +218,7 @@ Returns a new vector with all components in absolute values (i.e. positive).
 
 - :ref:`float<class_float>` **angle_to** **(** :ref:`Vector3<class_Vector3>` to **)**
 
-Returns the minimum angle to the given vector.
+Returns the minimum angle to the given vector, in radians.
 
 ----
 
@@ -234,7 +234,7 @@ Returns the vector "bounced off" from a plane defined by the given normal.
 
 - :ref:`Vector3<class_Vector3>` **ceil** **(** **)**
 
-Returns a new vector with all components rounded up.
+Returns a new vector with all components rounded up (towards positive infinity).
 
 ----
 
@@ -242,7 +242,7 @@ Returns a new vector with all components rounded up.
 
 - :ref:`Vector3<class_Vector3>` **cross** **(** :ref:`Vector3<class_Vector3>` b **)**
 
-Returns the cross product with ``b``.
+Returns the cross product of this vector and ``b``.
 
 ----
 
@@ -250,7 +250,7 @@ Returns the cross product with ``b``.
 
 - :ref:`Vector3<class_Vector3>` **cubic_interpolate** **(** :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` pre_a, :ref:`Vector3<class_Vector3>` post_b, :ref:`float<class_float>` t **)**
 
-Performs a cubic interpolation between vectors ``pre_a``, ``a``, ``b``, ``post_b`` (``a`` is current), by the given amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
+Performs a cubic interpolation between vectors ``pre_a``, ``a``, ``b``, ``post_b`` (``a`` is current), by the given amount ``t``. ``t`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
 ----
 
@@ -266,7 +266,9 @@ Returns the normalized vector pointing from this vector to ``b``.
 
 - :ref:`float<class_float>` **distance_squared_to** **(** :ref:`Vector3<class_Vector3>` b **)**
 
-Returns the squared distance to ``b``. Prefer this function over :ref:`distance_to<class_Vector3_method_distance_to>` if you need to sort vectors or need the squared distance for some formula.
+Returns the squared distance between this vector and ``b``.
+
+This method runs faster than :ref:`distance_to<class_Vector3_method_distance_to>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
 
 ----
 
@@ -274,7 +276,7 @@ Returns the squared distance to ``b``. Prefer this function over :ref:`distance_
 
 - :ref:`float<class_float>` **distance_to** **(** :ref:`Vector3<class_Vector3>` b **)**
 
-Returns the distance to ``b``.
+Returns the distance between this vector and ``b``.
 
 ----
 
@@ -282,7 +284,13 @@ Returns the distance to ``b``.
 
 - :ref:`float<class_float>` **dot** **(** :ref:`Vector3<class_Vector3>` b **)**
 
-Returns the dot product with ``b``.
+Returns the dot product of this vector and ``b``. This can be used to compare the angle between two vectors. For example, this can be used to determine whether an enemy is facing the player.
+
+The dot product will be ``0`` for a straight angle (90 degrees), greater than 0 for angles narrower than 90 degrees and lower than 0 for angles wider than 90 degrees.
+
+When using unit (normalized) vectors, the result will always be between ``-1.0`` (180 degree angle) when the vectors are facing opposite directions, and ``1.0`` (0 degree angle) when the vectors are aligned.
+
+**Note:** ``a.dot(b)`` is equivalent to ``b.dot(a)``.
 
 ----
 
@@ -290,7 +298,7 @@ Returns the dot product with ``b``.
 
 - :ref:`Vector3<class_Vector3>` **floor** **(** **)**
 
-Returns a new vector with all components rounded down.
+Returns a new vector with all components rounded down (towards negative infinity).
 
 ----
 
@@ -314,7 +322,7 @@ Returns ``true`` if this vector and ``v`` are approximately equal, by running :r
 
 - :ref:`bool<class_bool>` **is_normalized** **(** **)**
 
-Returns ``true`` if the vector is normalized.
+Returns ``true`` if the vector is normalized, and false otherwise.
 
 ----
 
@@ -322,7 +330,7 @@ Returns ``true`` if the vector is normalized.
 
 - :ref:`float<class_float>` **length** **(** **)**
 
-Returns the vector's length.
+Returns the length (magnitude) of this vector.
 
 ----
 
@@ -330,7 +338,9 @@ Returns the vector's length.
 
 - :ref:`float<class_float>` **length_squared** **(** **)**
 
-Returns the vector's length squared. Prefer this function over :ref:`length<class_Vector3_method_length>` if you need to sort vectors or need the squared length for some formula.
+Returns the squared length (squared magnitude) of this vector.
+
+This method runs faster than :ref:`length<class_Vector3_method_length>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
 
 ----
 
@@ -338,7 +348,7 @@ Returns the vector's length squared. Prefer this function over :ref:`length<clas
 
 - :ref:`Vector3<class_Vector3>` **linear_interpolate** **(** :ref:`Vector3<class_Vector3>` b, :ref:`float<class_float>` t **)**
 
-Returns the result of the linear interpolation between this vector and ``b`` by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation..
+Returns the result of the linear interpolation between this vector and ``b`` by amount ``t``. ``t`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
 ----
 
@@ -346,7 +356,7 @@ Returns the result of the linear interpolation between this vector and ``b`` by 
 
 - :ref:`int<class_int>` **max_axis** **(** **)**
 
-Returns the axis of the vector's largest value. See ``AXIS_*`` constants.
+Returns the axis of the vector's largest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_X<class_Vector3_constant_AXIS_X>`.
 
 ----
 
@@ -354,7 +364,7 @@ Returns the axis of the vector's largest value. See ``AXIS_*`` constants.
 
 - :ref:`int<class_int>` **min_axis** **(** **)**
 
-Returns the axis of the vector's smallest value. See ``AXIS_*`` constants.
+Returns the axis of the vector's smallest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_Z<class_Vector3_constant_AXIS_Z>`.
 
 ----
 
@@ -362,7 +372,7 @@ Returns the axis of the vector's smallest value. See ``AXIS_*`` constants.
 
 - :ref:`Vector3<class_Vector3>` **move_toward** **(** :ref:`Vector3<class_Vector3>` to, :ref:`float<class_float>` delta **)**
 
-Moves the vector toward ``to`` by the fixed ``delta`` amount.
+Moves this vector toward ``to`` by the fixed ``delta`` amount.
 
 ----
 
@@ -386,7 +396,7 @@ Returns the outer product with ``b``.
 
 - :ref:`Vector3<class_Vector3>` **posmod** **(** :ref:`float<class_float>` mod **)**
 
-Returns a vector composed of the ``fposmod`` of this vector's components and ``mod``.
+Returns a vector composed of the :ref:`@GDScript.fposmod<class_@GDScript_method_fposmod>` of this vector's components and ``mod``.
 
 ----
 
@@ -394,7 +404,7 @@ Returns a vector composed of the ``fposmod`` of this vector's components and ``m
 
 - :ref:`Vector3<class_Vector3>` **posmodv** **(** :ref:`Vector3<class_Vector3>` modv **)**
 
-Returns a vector composed of the ``fposmod`` of this vector's components and ``modv``'s components.
+Returns a vector composed of the :ref:`@GDScript.fposmod<class_@GDScript_method_fposmod>` of this vector's components and ``modv``'s components.
 
 ----
 
@@ -402,7 +412,7 @@ Returns a vector composed of the ``fposmod`` of this vector's components and ``m
 
 - :ref:`Vector3<class_Vector3>` **project** **(** :ref:`Vector3<class_Vector3>` b **)**
 
-Returns the vector projected onto the vector ``b``.
+Returns this vector projected onto another vector ``b``.
 
 ----
 
@@ -410,7 +420,7 @@ Returns the vector projected onto the vector ``b``.
 
 - :ref:`Vector3<class_Vector3>` **reflect** **(** :ref:`Vector3<class_Vector3>` n **)**
 
-Returns the vector reflected from a plane defined by the given normal.
+Returns this vector reflected from a plane defined by the given normal.
 
 ----
 
@@ -418,7 +428,7 @@ Returns the vector reflected from a plane defined by the given normal.
 
 - :ref:`Vector3<class_Vector3>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**
 
-Rotates the vector around a given axis by ``phi`` radians. The axis must be a normalized vector.
+Rotates this vector around a given axis by ``phi`` radians. The axis must be a normalized vector.
 
 ----
 
@@ -426,7 +436,7 @@ Rotates the vector around a given axis by ``phi`` radians. The axis must be a no
 
 - :ref:`Vector3<class_Vector3>` **round** **(** **)**
 
-Returns the vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
+Returns this vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
 
 ----
 
@@ -434,7 +444,7 @@ Returns the vector with all components rounded to the nearest integer, with half
 
 - :ref:`Vector3<class_Vector3>` **sign** **(** **)**
 
-Returns the vector with each component set to one or negative one, depending on the signs of the components.
+Returns a vector with each component set to one or negative one, depending on the signs of this vector's components, or zero if the component is zero, by calling :ref:`@GDScript.sign<class_@GDScript_method_sign>` on each component.
 
 ----
 
@@ -442,7 +452,7 @@ Returns the vector with each component set to one or negative one, depending on 
 
 - :ref:`Vector3<class_Vector3>` **slerp** **(** :ref:`Vector3<class_Vector3>` b, :ref:`float<class_float>` t **)**
 
-Returns the result of spherical linear interpolation between this vector and ``b``, by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
+Returns the result of spherical linear interpolation between this vector and ``b``, by amount ``t``. ``t`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
 **Note:** Both vectors must be normalized.
 
@@ -452,7 +462,7 @@ Returns the result of spherical linear interpolation between this vector and ``b
 
 - :ref:`Vector3<class_Vector3>` **slide** **(** :ref:`Vector3<class_Vector3>` n **)**
 
-Returns the component of the vector along a plane defined by the given normal.
+Returns this vector slid along a plane defined by the given normal.
 
 ----
 
@@ -460,7 +470,7 @@ Returns the component of the vector along a plane defined by the given normal.
 
 - :ref:`Vector3<class_Vector3>` **snapped** **(** :ref:`Vector3<class_Vector3>` by **)**
 
-Returns the vector snapped to a grid with the given size.
+Returns this vector with each component snapped to the nearest multiple of ``step``. This can also be used to round to an arbitrary number of decimals.
 
 ----
 
@@ -469,4 +479,6 @@ Returns the vector snapped to a grid with the given size.
 - :ref:`Basis<class_Basis>` **to_diagonal_matrix** **(** **)**
 
 Returns a diagonal matrix with the vector as main diagonal.
+
+This is equivalent to a Basis with no rotation or shearing and this vector's components set as the scale.
 

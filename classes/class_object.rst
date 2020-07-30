@@ -38,6 +38,13 @@ The ``in`` operator will evaluate to ``true`` as long as the key exists, even if
 
 Objects also receive notifications. Notifications are a simple way to notify the object about different events, so they can all be handled together. See :ref:`_notification<class_Object_method__notification>`.
 
+**Note:** Unlike references to a :ref:`Reference<class_Reference>`, references to an Object stored in a variable can become invalid without warning. Therefore, it's recommended to use :ref:`Reference<class_Reference>` for data classes instead of ``Object``.
+
+Tutorials
+---------
+
+- :doc:`../getting_started/workflow/best_practices/node_alternatives`
+
 Methods
 -------
 
@@ -167,7 +174,7 @@ enum **ConnectFlags**:
 
 - **CONNECT_ONESHOT** = **4** --- One-shot connections disconnect themselves after emission.
 
-- **CONNECT_REFERENCE_COUNTED** = **8** --- Connect a signal as reference counted. This means that a given signal can be connected several times to the same target, and will only be fully disconnected once no references are left.
+- **CONNECT_REFERENCE_COUNTED** = **8** --- Connect a signal as reference-counted. This means that a given signal can be connected several times to the same target, and will only be fully disconnected once no references are left.
 
 Constants
 ---------
@@ -259,6 +266,8 @@ Calls the ``method`` on the object and returns the result. This method supports 
 
     call("set", "position", Vector2(42.0, 0.0))
 
+**Note:** In C#, the method name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined methods where you should use the same convention as in the C# source (typically PascalCase).
+
 ----
 
 .. _class_Object_method_call_deferred:
@@ -270,6 +279,8 @@ Calls the ``method`` on the object during idle time. This method supports a vari
 ::
 
     call_deferred("set", "position", Vector2(42.0, 0.0))
+
+**Note:** In C#, the method name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined methods where you should use the same convention as in the C# source (typically PascalCase).
 
 ----
 
@@ -358,6 +369,8 @@ Deletes the object from memory. Any pre-existing reference to the freed object w
 - :ref:`Variant<class_Variant>` **get** **(** :ref:`String<class_String>` property **)** const
 
 Returns the :ref:`Variant<class_Variant>` value of the given ``property``. If the ``property`` doesn't exist, this will return ``null``.
+
+**Note:** In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
 
 ----
 
@@ -557,6 +570,8 @@ Removes a given entry from the object's metadata.
 
 Assigns a new value to the given property. If the ``property`` does not exist, nothing will happen.
 
+**Note:** In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
+
 ----
 
 .. _class_Object_method_set_block_signals:
@@ -572,6 +587,8 @@ If set to ``true``, signal emission is blocked.
 - void **set_deferred** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
 
 Assigns a new value to the given property, after the current frame's physics step. This is equivalent to calling :ref:`set<class_Object_method_set>` via :ref:`call_deferred<class_Object_method_call_deferred>`, i.e. ``call_deferred("set", property, value)``.
+
+**Note:** In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
 
 ----
 

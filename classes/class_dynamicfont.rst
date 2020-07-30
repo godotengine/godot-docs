@@ -60,6 +60,8 @@ Methods
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`add_fallback<class_DynamicFont_method_add_fallback>` **(** :ref:`DynamicFontData<class_DynamicFontData>` data **)**                            |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`get_available_chars<class_DynamicFont_method_get_available_chars>` **(** **)** const                                                           |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`DynamicFontData<class_DynamicFontData>` | :ref:`get_fallback<class_DynamicFont_method_get_fallback>` **(** :ref:`int<class_int>` idx **)** const                                               |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`get_fallback_count<class_DynamicFont_method_get_fallback_count>` **(** **)** const                                                             |
@@ -265,6 +267,16 @@ Method Descriptions
 - void **add_fallback** **(** :ref:`DynamicFontData<class_DynamicFontData>` data **)**
 
 Adds a fallback font.
+
+----
+
+.. _class_DynamicFont_method_get_available_chars:
+
+- :ref:`String<class_String>` **get_available_chars** **(** **)** const
+
+Returns a string containing all the characters available in the main and all the fallback fonts.
+
+If a given character is included in more than one font, it appears only once in the returned string.
 
 ----
 

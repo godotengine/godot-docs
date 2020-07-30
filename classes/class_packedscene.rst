@@ -22,6 +22,15 @@ Can be used to save a node to a file. When saving, the node as well as all the n
 
 **Note:** The node doesn't need to own itself.
 
+**Example of loading a saved scene:**
+
+::
+
+    # Use `load()` instead of `preload()` if the path isn't known at compile-time.
+    var scene = preload("res://scene.tscn").instance()
+    # Add the node as a child of the node the script is attached to.
+    add_child(scene)
+
 **Example of saving a node with different owners:** The following example creates 3 objects: ``Node2D`` (``node``), ``RigidBody2D`` (``rigid``) and ``CollisionObject2D`` (``collision``). ``collision`` is a child of ``rigid`` which is a child of ``node``. Only ``rigid`` is owned by ``node`` and ``pack`` will therefore only save those two nodes, but not ``collision``.
 
 ::

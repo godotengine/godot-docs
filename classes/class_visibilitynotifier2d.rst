@@ -20,7 +20,9 @@ Description
 
 The VisibilityNotifier2D detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a viewport.
 
-**Note:** For performance reasons, VisibilityNotifier2D uses an approximate heuristic with precision determined by :ref:`ProjectSettings.world/2d/cell_size<class_ProjectSettings_property_world/2d/cell_size>`. If you need exact visibility checking, use another method such as adding an :ref:`Area2D<class_Area2D>` node as a child of a :ref:`Camera2D<class_Camera2D>` node.
+If you want nodes to be disabled automatically when they exit the screen, use :ref:`VisibilityEnabler2D<class_VisibilityEnabler2D>` instead.
+
+**Note:** For performance reasons, VisibilityNotifier2D uses an approximate heuristic with precision determined by :ref:`ProjectSettings.world/2d/cell_size<class_ProjectSettings_property_world/2d/cell_size>`. If you need precise visibility checking, use another method such as adding an :ref:`Area2D<class_Area2D>` node as a child of a :ref:`Camera2D<class_Camera2D>` node.
 
 Properties
 ----------

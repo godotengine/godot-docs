@@ -133,7 +133,7 @@ Enforce ordered packets when using :ref:`NetworkedMultiplayerPeer.TRANSFER_MODE_
 | *Getter*  | get_channel_count()      |
 +-----------+--------------------------+
 
-The number of channels to be used by ENet. Channels are used to separate different kinds of data. In reliable or ordered mode, for example, the packet delivery order is ensured on a per channel basis.
+The number of channels to be used by ENet. Channels are used to separate different kinds of data. In reliable or ordered mode, for example, the packet delivery order is ensured on a per-channel basis. This is done to combat latency and reduces ordering restrictions on packets. The delivery status of a packet in one channel won't stall the delivery of other packets in another channel.
 
 ----
 
@@ -197,7 +197,7 @@ Enable or disable the server feature that notifies clients of other peers' conne
 | *Getter*  | get_transfer_channel()      |
 +-----------+-----------------------------+
 
-Set the default channel to be used to transfer data. By default, this value is ``-1`` which means that ENet will only use 2 channels, one for reliable and one for unreliable packets. Channel ``0`` is reserved, and cannot be used. Setting this member to any value between ``0`` and :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>` (excluded) will force ENet to use that channel for sending data.
+Set the default channel to be used to transfer data. By default, this value is ``-1`` which means that ENet will only use 2 channels: one for reliable packets, and one for unreliable packets. The channel ``0`` is reserved and cannot be used. Setting this member to any value between ``0`` and :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>` (excluded) will force ENet to use that channel for sending data. See :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>` for more information about ENet channels.
 
 ----
 

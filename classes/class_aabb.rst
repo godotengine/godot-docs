@@ -38,6 +38,8 @@ Methods
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AABB<class_AABB>`       | :ref:`AABB<class_AABB_method_AABB>` **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` size **)**                       |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`AABB<class_AABB>`       | :ref:`abs<class_AABB_method_abs>` **(** **)**                                                                                                    |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`encloses<class_AABB_method_encloses>` **(** :ref:`AABB<class_AABB>` with **)**                                                             |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AABB<class_AABB>`       | :ref:`expand<class_AABB_method_expand>` **(** :ref:`Vector3<class_Vector3>` to_point **)**                                                       |
@@ -92,7 +94,7 @@ Property Descriptions
 | *Default* | ``Vector3( 0, 0, 0 )`` |
 +-----------+------------------------+
 
-Ending corner. This is calculated as ``position + size``. Changing this property changes :ref:`size<class_AABB_property_size>` accordingly.
+Ending corner. This is calculated as ``position + size``. Setting this value will change the size.
 
 ----
 
@@ -104,7 +106,7 @@ Ending corner. This is calculated as ``position + size``. Changing this property
 | *Default* | ``Vector3( 0, 0, 0 )`` |
 +-----------+------------------------+
 
-Beginning corner.
+Beginning corner. Typically has values lower than :ref:`end<class_AABB_property_end>`.
 
 ----
 
@@ -116,7 +118,9 @@ Beginning corner.
 | *Default* | ``Vector3( 0, 0, 0 )`` |
 +-----------+------------------------+
 
-Size from position to end.
+Size from :ref:`position<class_AABB_property_position>` to :ref:`end<class_AABB_property_end>`. Typically all components are positive.
+
+If the size is negative, you can use :ref:`abs<class_AABB_method_abs>` to fix it.
 
 Method Descriptions
 -------------------
@@ -125,7 +129,15 @@ Method Descriptions
 
 - :ref:`AABB<class_AABB>` **AABB** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` size **)**
 
-Optional constructor, accepts position and size.
+Constructs an ``AABB`` from a position and size.
+
+----
+
+.. _class_AABB_method_abs:
+
+- :ref:`AABB<class_AABB>` **abs** **(** **)**
+
+Returns an AABB with equivalent position and size, modified so that the most-negative corner is the origin and the size is positive.
 
 ----
 

@@ -106,11 +106,15 @@ Returns the path to the file at index ``idx``.
 
 - :ref:`String<class_String>` **get_file_script_class_extends** **(** :ref:`int<class_int>` idx **)** const
 
+Returns the base class of the script class defined in the file at index ``idx``. If the file doesn't define a script class using the ``class_name`` syntax, this will return an empty string.
+
 ----
 
 .. _class_EditorFileSystemDirectory_method_get_file_script_class_name:
 
 - :ref:`String<class_String>` **get_file_script_class_name** **(** :ref:`int<class_int>` idx **)** const
+
+Returns the name of the script class defined in the file at index ``idx``. If the file doesn't define a script class using the ``class_name`` syntax, this will return an empty string.
 
 ----
 

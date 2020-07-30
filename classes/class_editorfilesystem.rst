@@ -66,6 +66,8 @@ Remitted if a resource is reimported.
 
 - **resources_reload** **(** :ref:`PoolStringArray<class_PoolStringArray>` resources **)**
 
+Emitted if at least one resource is reloaded when the filesystem is scanned.
+
 ----
 
 .. _class_EditorFileSystem_signal_sources_changed:

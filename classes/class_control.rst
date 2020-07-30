@@ -1053,7 +1053,11 @@ The node's rotation around its pivot, in degrees. See :ref:`rect_pivot_offset<cl
 | *Getter*  | get_scale()         |
 +-----------+---------------------+
 
-The node's scale, relative to its :ref:`rect_size<class_Control_property_rect_size>`. Change this property to scale the node around its :ref:`rect_pivot_offset<class_Control_property_rect_pivot_offset>`.
+The node's scale, relative to its :ref:`rect_size<class_Control_property_rect_size>`. Change this property to scale the node around its :ref:`rect_pivot_offset<class_Control_property_rect_pivot_offset>`. The Control's :ref:`hint_tooltip<class_Control_property_hint_tooltip>` will also scale according to this value.
+
+**Note:** This property is mainly intended to be used for animation purposes. Text inside the Control will look pixelated or blurry when the Control is scaled. To support multiple resolutions in your project, use an appropriate viewport stretch mode as described in the `documentation <https://docs.godotengine.org/en/latest/tutorials/viewports/multiple_resolutions.html>`_ instead of scaling Controls individually.
+
+**Note:** If the Control node is a child of a :ref:`Container<class_Container>` node, the scale will be reset to ``Vector2(1, 1)`` when the scene is instanced. To set the Control's scale when it's instanced, wait for one frame using ``yield(get_tree(), "idle_frame")`` then set its :ref:`rect_scale<class_Control_property_rect_scale>` property.
 
 ----
 

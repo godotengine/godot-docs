@@ -271,7 +271,7 @@ Sets the bone index ``parent_idx`` as the parent of the bone at ``bone_idx``. If
 
 - void **set_bone_pose** **(** :ref:`int<class_int>` bone_idx, :ref:`Transform<class_Transform>` pose **)**
 
-Returns the pose transform for bone ``bone_idx``.
+Sets the pose transform for bone ``bone_idx``.
 
 ----
 

@@ -23,6 +23,8 @@ Tutorials
 
 - :doc:`../tutorials/threads/using_multiple_threads`
 
+- :doc:`../tutorials/threads/thread_safe_apis`
+
 Methods
 -------
 

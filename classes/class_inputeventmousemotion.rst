@@ -18,6 +18,8 @@ Description
 
 Contains mouse and pen motion information. Supports relative, absolute positions and speed. See :ref:`Node._input<class_Node_method__input>`.
 
+**Note:** By default, this event is only emitted once per frame rendered at most. If you need more precise input reporting, call :ref:`Input.set_use_accumulated_input<class_Input_method_set_use_accumulated_input>` with ``false`` to make events emitted as often as possible. If you use InputEventMouseMotion to draw lines, consider implementing `Bresenham's line algorithm <https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm>`_ as well to avoid visible gaps in lines if the user is moving the mouse quickly.
+
 Tutorials
 ---------
 
@@ -67,7 +69,7 @@ Represents the pressure the user puts on the pen. Ranges from ``0.0`` to ``1.0``
 | *Getter*  | get_relative()      |
 +-----------+---------------------+
 
-The mouse position relative to the previous position (position at the last frame). 
+The mouse position relative to the previous position (position at the last frame).
 
 **Note:** Since ``InputEventMouseMotion`` is only emitted when the mouse moves, the last event won't have a relative position of ``Vector2(0, 0)`` when the user stops moving the mouse.
 

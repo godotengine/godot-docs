@@ -18,7 +18,9 @@ Description
 
 The VisibilityEnabler2D will disable :ref:`RigidBody2D<class_RigidBody2D>`, :ref:`AnimationPlayer<class_AnimationPlayer>`, and other nodes when they are not visible. It will only affect nodes with the same root node as the VisibilityEnabler2D, and the root node itself.
 
-**Note:** For performance reasons, VisibilityEnabler2D uses an approximate heuristic with precision determined by :ref:`ProjectSettings.world/2d/cell_size<class_ProjectSettings_property_world/2d/cell_size>`. If you need exact visibility checking, use another method such as adding an :ref:`Area2D<class_Area2D>` node as a child of a :ref:`Camera2D<class_Camera2D>` node.
+If you just want to receive notifications, use :ref:`VisibilityNotifier2D<class_VisibilityNotifier2D>` instead.
+
+**Note:** For performance reasons, VisibilityEnabler2D uses an approximate heuristic with precision determined by :ref:`ProjectSettings.world/2d/cell_size<class_ProjectSettings_property_world/2d/cell_size>`. If you need precise visibility checking, use another method such as adding an :ref:`Area2D<class_Area2D>` node as a child of a :ref:`Camera2D<class_Camera2D>` node.
 
 **Note:** VisibilityEnabler2D will not affect nodes added after scene initialization.
 

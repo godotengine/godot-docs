@@ -30,8 +30,16 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         add_child(http_request)
         http_request.connect("request_completed", self, "_http_request_completed")
     
-        # Perform the HTTP request. The URL below returns some JSON as of writing.
+        # Perform a GET request. The URL below returns JSON as of writing.
         var error = http_request.request("https://httpbin.org/get")
+        if error != OK:
+            push_error("An error occurred in the HTTP request.")
+    
+        # Perform a POST request. The URL below returns JSON as of writing.
+        # Note: Don't make simultaneous requests using a single HTTPRequest node.
+        # The snippet below is provided for reference only.
+        var body = {"name": "Godette"}
+        var error = http_request.request("https://httpbin.org/post", [], true, HTTPClient.METHOD_POST, body)
         if error != OK:
             push_error("An error occurred in the HTTP request.")
     
@@ -73,6 +81,8 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         var texture_rect = TextureRect.new()
         add_child(texture_rect)
         texture_rect.texture = texture
+
+**Note:** When performing HTTP requests from a project exported to HTML5, keep in mind the remote server may not allow requests from foreign origins due to `CORS <https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS>`_. If you host the server in question, you should modify its backend to allow requests from foreign origins by adding the ``Access-Control-Allow-Origin: *`` HTTP header.
 
 Tutorials
 ---------

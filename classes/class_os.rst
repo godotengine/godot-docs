@@ -143,7 +143,11 @@ Methods
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`get_screen_dpi<class_OS_method_get_screen_dpi>` **(** :ref:`int<class_int>` screen=-1 **)** const                                                                                                                                                                |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`get_screen_max_scale<class_OS_method_get_screen_max_scale>` **(** **)** const                                                                                                                                                                                    |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                 | :ref:`get_screen_position<class_OS_method_get_screen_position>` **(** :ref:`int<class_int>` screen=-1 **)** const                                                                                                                                                      |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`get_screen_scale<class_OS_method_get_screen_scale>` **(** :ref:`int<class_int>` screen=-1 **)** const                                                                                                                                                            |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                 | :ref:`get_screen_size<class_OS_method_get_screen_size>` **(** :ref:`int<class_int>` screen=-1 **)** const                                                                                                                                                              |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -277,7 +281,7 @@ Methods
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`shell_open<class_OS_method_shell_open>` **(** :ref:`String<class_String>` uri **)**                                                                                                                                                                              |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`show_virtual_keyboard<class_OS_method_show_virtual_keyboard>` **(** :ref:`String<class_String>` existing_text="" **)**                                                                                                                                           |
+| void                                          | :ref:`show_virtual_keyboard<class_OS_method_show_virtual_keyboard>` **(** :ref:`String<class_String>` existing_text="", :ref:`bool<class_bool>` multiline=false **)**                                                                                                  |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
@@ -966,7 +970,23 @@ Returns the audio driver name for the given index.
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_cmdline_args** **(** **)**
 
-Returns the command line arguments passed to the engine.
+Returns the command-line arguments passed to the engine.
+
+Command-line arguments can be written in any form, including both ``--key value`` and ``--key=value`` forms so they can be properly parsed, as long as custom command-line arguments do not conflict with engine arguments.
+
+You can also incorporate environment variables using the :ref:`get_environment<class_OS_method_get_environment>` method.
+
+You can set ``editor/main_run_args`` in the Project Settings to define command-line arguments to be passed by the editor when running the project.
+
+Here's a minimal example on how to parse command-line arguments into a dictionary using the ``--key=value`` form for arguments:
+
+::
+
+    var arguments = {}
+    for argument in OS.get_cmdline_args():
+        if argument.find("=") > -1:
+            var key_value = argument.split("=")
+            arguments[key_value[0].lstrip("--")] = key_value[1]
 
 ----
 
@@ -1207,11 +1227,35 @@ On Android devices, the actual screen densities are grouped into six generalized
 
 ----
 
+.. _class_OS_method_get_screen_max_scale:
+
+- :ref:`float<class_float>` **get_screen_max_scale** **(** **)** const
+
+Return the greatest scale factor of all screens.
+
+**Note:** On macOS returned value is ``2.0`` if there is at least one hiDPI (Retina) screen in the system, and ``1.0`` in all other cases.
+
+**Note:** This method is implemented on macOS.
+
+----
+
 .. _class_OS_method_get_screen_position:
 
 - :ref:`Vector2<class_Vector2>` **get_screen_position** **(** :ref:`int<class_int>` screen=-1 **)** const
 
 Returns the position of the specified screen by index. If ``screen`` is ``-1`` (the default value), the current screen will be used.
+
+----
+
+.. _class_OS_method_get_screen_scale:
+
+- :ref:`float<class_float>` **get_screen_scale** **(** :ref:`int<class_int>` screen=-1 **)** const
+
+Return the scale factor of the specified screen by index. If ``screen`` is ``-1`` (the default value), the current screen will be used.
+
+**Note:** On macOS returned value is ``2.0`` for hiDPI (Retina) screen, and ``1.0`` for all other cases.
+
+**Note:** This method is implemented on macOS.
 
 ----
 
@@ -1847,9 +1891,13 @@ Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_
 
 .. _class_OS_method_show_virtual_keyboard:
 
-- void **show_virtual_keyboard** **(** :ref:`String<class_String>` existing_text="" **)**
+- void **show_virtual_keyboard** **(** :ref:`String<class_String>` existing_text="", :ref:`bool<class_bool>` multiline=false **)**
 
-Shows the virtual keyboard if the platform has one. The ``existing_text`` parameter is useful for implementing your own LineEdit, as it tells the virtual keyboard what text has already been typed (the virtual keyboard uses it for auto-correct and predictions).
+Shows the virtual keyboard if the platform has one.
+
+The ``existing_text`` parameter is useful for implementing your own :ref:`LineEdit<class_LineEdit>` or :ref:`TextEdit<class_TextEdit>`, as it tells the virtual keyboard what text has already been typed (the virtual keyboard uses it for auto-correct and predictions).
+
+The ``multiline`` parameter needs to be set to ``true`` to be able to enter multiple lines of text, as in :ref:`TextEdit<class_TextEdit>`.
 
 **Note:** This method is implemented on Android, iOS and UWP.
 

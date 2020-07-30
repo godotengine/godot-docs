@@ -103,7 +103,7 @@ Signals
 
 - **body_entered** **(** :ref:`Node<class_Node>` body **)**
 
-Emitted when a body enters into contact with this one. :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` must be ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` greater than ``0``.
+Emitted when a body enters into contact with this one. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` to be set high enough to detect all the collisions.
 
 ----
 
@@ -111,7 +111,7 @@ Emitted when a body enters into contact with this one. :ref:`contact_monitor<cla
 
 - **body_exited** **(** :ref:`Node<class_Node>` body **)**
 
-Emitted when a body exits contact with this one. :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` must be ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` greater than ``0``.
+Emitted when a body exits contact with this one. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` to be set high enough to detect all the collisions.
 
 ----
 
@@ -119,7 +119,7 @@ Emitted when a body exits contact with this one. :ref:`contact_monitor<class_Rig
 
 - **body_shape_entered** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
 
-Emitted when a body enters into contact with this one. Reports colliding shape information. See :ref:`CollisionObject2D<class_CollisionObject2D>` for shape index information. :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` must be ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` greater than ``0``.
+Emitted when a body enters into contact with this one. Reports colliding shape information. See :ref:`CollisionObject2D<class_CollisionObject2D>` for shape index information. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` to be set high enough to detect all the collisions.
 
 ----
 
@@ -127,7 +127,7 @@ Emitted when a body enters into contact with this one. Reports colliding shape i
 
 - **body_shape_exited** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
 
-Emitted when a body shape exits contact with this one. Reports colliding shape information. See :ref:`CollisionObject2D<class_CollisionObject2D>` for shape index information. :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` must be ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` greater than ``0``.
+Emitted when a body shape exits contact with this one. Reports colliding shape information. See :ref:`CollisionObject2D<class_CollisionObject2D>` for shape index information. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` to be set high enough to detect all the collisions.
 
 ----
 
@@ -307,7 +307,9 @@ If ``true``, the body will emit signals when it collides with another RigidBody2
 | *Getter*  | get_max_contacts_reported()      |
 +-----------+----------------------------------+
 
-The maximum number of contacts to report.
+The maximum number of contacts that will be recorded. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true``.
+
+**Note:** The number of contacts is different from the number of collisions. Collisions between parallel edges will result in two contacts (one at each end), and collisions between parallel faces will result in four contacts (one at each corner).
 
 ----
 
@@ -564,7 +566,7 @@ Applies a rotational impulse to the body.
 
 - :ref:`Array<class_Array>` **get_colliding_bodies** **(** **)** const
 
-Returns a list of the bodies colliding with this one. Use :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` to set the maximum number reported. You must also set :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to ``true``.
+Returns a list of the bodies colliding with this one. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` to be set high enough to detect all the collisions.
 
 **Note:** The result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
 

@@ -144,7 +144,7 @@ Clears the list of :ref:`PhysicsBody<class_PhysicsBody>` objects excluded from t
 
 - :ref:`float<class_float>` **get_hit_length** **(** **)**
 
-Returns the proportion between the current arm length (after checking for collisions) and the :ref:`spring_length<class_SpringArm_property_spring_length>`. Ranges from 0 to 1.
+Returns the spring arm's current length.
 
 ----
 

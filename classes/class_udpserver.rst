@@ -18,6 +18,8 @@ Description
 
 A simple server that opens a UDP socket and returns connected :ref:`PacketPeerUDP<class_PacketPeerUDP>` upon receiving new packets. See also :ref:`PacketPeerUDP.connect_to_host<class_PacketPeerUDP_method_connect_to_host>`.
 
+After starting the server (:ref:`listen<class_UDPServer_method_listen>`), you will need to :ref:`poll<class_UDPServer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`) for it to process new packets, delivering them to the appropriate :ref:`PacketPeerUDP<class_PacketPeerUDP>`, and taking new connections.
+
 Below a small example of how it can be used:
 
 ::
@@ -32,6 +34,7 @@ Below a small example of how it can be used:
         server.listen(4242)
     
     func _process(delta):
+        server.poll() # Important!
         if server.is_connection_available():
             var peer : PacketPeerUDP = server.take_connection()
             var pkt = peer.get_packet()
@@ -65,6 +68,13 @@ Below a small example of how it can be used:
             print("Connected: %s" % udp.get_packet().get_string_from_utf8())
             connected = true
 
+Properties
+----------
+
++-----------------------+----------------------------------------------------------------------------------+--------+
+| :ref:`int<class_int>` | :ref:`max_pending_connections<class_UDPServer_property_max_pending_connections>` | ``16`` |
++-----------------------+----------------------------------------------------------------------------------+--------+
+
 Methods
 -------
 
@@ -75,10 +85,29 @@ Methods
 +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`listen<class_UDPServer_method_listen>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*" **)** |
 +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`poll<class_UDPServer_method_poll>` **(** **)**                                                                              |
++-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`stop<class_UDPServer_method_stop>` **(** **)**                                                                              |
 +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PacketPeerUDP<class_PacketPeerUDP>` | :ref:`take_connection<class_UDPServer_method_take_connection>` **(** **)**                                                        |
 +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+
+Property Descriptions
+---------------------
+
+.. _class_UDPServer_property_max_pending_connections:
+
+- :ref:`int<class_int>` **max_pending_connections**
+
++-----------+------------------------------------+
+| *Default* | ``16``                             |
++-----------+------------------------------------+
+| *Setter*  | set_max_pending_connections(value) |
++-----------+------------------------------------+
+| *Getter*  | get_max_pending_connections()      |
++-----------+------------------------------------+
+
+Define the maximum number of pending connections, during :ref:`poll<class_UDPServer_method_poll>`, any new pending connection exceeding that value will be automatically dropped. Setting this value to ``0`` effectively prevents any new pending connection to be accepted (e.g. when all your players have connected).
 
 Method Descriptions
 -------------------
@@ -87,7 +116,7 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **is_connection_available** **(** **)** const
 
-Returns ``true`` if a packet with a new address/port combination is received on the socket.
+Returns ``true`` if a packet with a new address/port combination was received on the socket.
 
 ----
 
@@ -107,11 +136,19 @@ Starts the server by opening a UDP socket listening on the given port. You can o
 
 ----
 
+.. _class_UDPServer_method_poll:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
+
+Call this method at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`) to process new packets. And packet from known address/port pair will be delivered to the appropriate :ref:`PacketPeerUDP<class_PacketPeerUDP>`, any packet received from an unknown address/port pair will be added as a pending connection (see :ref:`is_connection_available<class_UDPServer_method_is_connection_available>`, :ref:`take_connection<class_UDPServer_method_take_connection>`). The maximum number of pending connection is defined via :ref:`max_pending_connections<class_UDPServer_property_max_pending_connections>`.
+
+----
+
 .. _class_UDPServer_method_stop:
 
 - void **stop** **(** **)**
 
-Stops the server, closing the UDP socket if open. Will not disconnect any connected :ref:`PacketPeerUDP<class_PacketPeerUDP>`.
+Stops the server, closing the UDP socket if open. Will close all connected :ref:`PacketPeerUDP<class_PacketPeerUDP>` accepted via :ref:`take_connection<class_UDPServer_method_take_connection>` (remote peers will not be notified).
 
 ----
 
@@ -119,5 +156,5 @@ Stops the server, closing the UDP socket if open. Will not disconnect any connec
 
 - :ref:`PacketPeerUDP<class_PacketPeerUDP>` **take_connection** **(** **)**
 
-Returns a :ref:`PacketPeerUDP<class_PacketPeerUDP>` connected to the address/port combination of the first packet in queue. Will return ``null`` if no packet is in queue. See also :ref:`PacketPeerUDP.connect_to_host<class_PacketPeerUDP_method_connect_to_host>`.
+Returns the first pending connection (connected to the appropriate address/port). Will return ``null`` if no new connection is available. See also :ref:`is_connection_available<class_UDPServer_method_is_connection_available>`, :ref:`PacketPeerUDP.connect_to_host<class_PacketPeerUDP_method_connect_to_host>`.
 

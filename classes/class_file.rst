@@ -35,6 +35,8 @@ Here's a sample on how to write and read from a file:
         file.close()
         return content
 
+In the example above, the file will be saved in the user data folder as specified in the `Data paths <https://docs.godotengine.org/en/latest/tutorials/io/data_paths.html>`_ documentation.
+
 Tutorials
 ---------
 

@@ -607,7 +607,19 @@ Returns the :ref:`Transform2D<class_Transform2D>` of a tile's shape.
 
 - :ref:`Array<class_Array>` **tile_get_shapes** **(** :ref:`int<class_int>` id **)** const
 
-Returns an array of the tile's shapes.
+Returns an array of dictionaries describing the tile's shapes.
+
+**Dictionary structure in the array returned by this method:**
+
+::
+
+    {
+        "autotile_coord": Vector2,
+        "one_way": bool,
+        "one_way_margin": int,
+        "shape": CollisionShape2D,
+        "shape_transform": Transform2D,
+    }
 
 ----
 

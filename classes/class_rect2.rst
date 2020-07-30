@@ -78,7 +78,7 @@ Property Descriptions
 | *Default* | ``Vector2( 0, 0 )`` |
 +-----------+---------------------+
 
-Ending corner.
+Ending corner. This is calculated as ``position + size``. Setting this value will change the size.
 
 ----
 
@@ -90,7 +90,7 @@ Ending corner.
 | *Default* | ``Vector2( 0, 0 )`` |
 +-----------+---------------------+
 
-Position (starting corner).
+Beginning corner. Typically has values lower than :ref:`end<class_Rect2_property_end>`.
 
 ----
 
@@ -102,7 +102,9 @@ Position (starting corner).
 | *Default* | ``Vector2( 0, 0 )`` |
 +-----------+---------------------+
 
-Size from position to end.
+Size from :ref:`position<class_Rect2_property_position>` to :ref:`end<class_Rect2_property_end>`. Typically all components are positive.
+
+If the size is negative, you can use :ref:`abs<class_Rect2_method_abs>` to fix it.
 
 Method Descriptions
 -------------------

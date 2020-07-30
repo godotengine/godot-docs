@@ -1049,7 +1049,7 @@ enum **ArrayFormat**:
 
 - **ARRAY_FLAG_USE_16_BIT_BONES** = **524288** --- Flag used to mark that the array uses 16-bit bones instead of 8-bit.
 
-- **ARRAY_COMPRESS_DEFAULT** = **97280** --- Used to set flags :ref:`ARRAY_COMPRESS_VERTEX<class_VisualServer_constant_ARRAY_COMPRESS_VERTEX>`, :ref:`ARRAY_COMPRESS_NORMAL<class_VisualServer_constant_ARRAY_COMPRESS_NORMAL>`, :ref:`ARRAY_COMPRESS_TANGENT<class_VisualServer_constant_ARRAY_COMPRESS_TANGENT>`, :ref:`ARRAY_COMPRESS_COLOR<class_VisualServer_constant_ARRAY_COMPRESS_COLOR>`, :ref:`ARRAY_COMPRESS_TEX_UV<class_VisualServer_constant_ARRAY_COMPRESS_TEX_UV>`, :ref:`ARRAY_COMPRESS_TEX_UV2<class_VisualServer_constant_ARRAY_COMPRESS_TEX_UV2>` and :ref:`ARRAY_COMPRESS_WEIGHTS<class_VisualServer_constant_ARRAY_COMPRESS_WEIGHTS>` quickly.
+- **ARRAY_COMPRESS_DEFAULT** = **97280** --- Used to set flags :ref:`ARRAY_COMPRESS_NORMAL<class_VisualServer_constant_ARRAY_COMPRESS_NORMAL>`, :ref:`ARRAY_COMPRESS_TANGENT<class_VisualServer_constant_ARRAY_COMPRESS_TANGENT>`, :ref:`ARRAY_COMPRESS_COLOR<class_VisualServer_constant_ARRAY_COMPRESS_COLOR>`, :ref:`ARRAY_COMPRESS_TEX_UV<class_VisualServer_constant_ARRAY_COMPRESS_TEX_UV>`, :ref:`ARRAY_COMPRESS_TEX_UV2<class_VisualServer_constant_ARRAY_COMPRESS_TEX_UV2>` and :ref:`ARRAY_COMPRESS_WEIGHTS<class_VisualServer_constant_ARRAY_COMPRESS_WEIGHTS>` quickly.
 
 ----
 

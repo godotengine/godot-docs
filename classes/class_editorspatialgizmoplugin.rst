@@ -157,6 +157,10 @@ Override this method to provide the name that will appear in the gizmo visibilit
 
 - :ref:`String<class_String>` **get_priority** **(** **)** virtual
 
+Override this method to set the gizmo's priority. Higher values correspond to higher priority. If a gizmo with higher priority conflicts with another gizmo, only the gizmo with higher priority will be used.
+
+All built-in editor gizmos return a priority of ``-1``. If not overridden, this method will return ``0``, which means custom gizmos will automatically override built-in gizmos.
+
 ----
 
 .. _class_EditorSpatialGizmoPlugin_method_has_gizmo:

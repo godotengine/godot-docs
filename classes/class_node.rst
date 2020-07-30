@@ -720,7 +720,7 @@ If ``legible_unique_name`` is ``true``, the child node will have an human-readab
 
 - void **add_child_below_node** **(** :ref:`Node<class_Node>` node, :ref:`Node<class_Node>` child_node, :ref:`bool<class_bool>` legible_unique_name=false **)**
 
-Adds a child node. The child is placed below the given node in the list of children.
+Adds ``child_node`` as a child. The child is placed below the given ``node`` in the list of children.
 
 If ``legible_unique_name`` is ``true``, the child node will have an human-readable name based on the name of the node being instanced instead of its type.
 

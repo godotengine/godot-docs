@@ -436,9 +436,11 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`logging/file_logging/enable_file_logging<class_ProjectSettings_property_logging/file_logging/enable_file_logging>`                                             | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`logging/file_logging/log_path<class_ProjectSettings_property_logging/file_logging/log_path>`                                                                   | ``"user://logs/log.txt"``                                                                       |
+| :ref:`bool<class_bool>`                       | :ref:`logging/file_logging/enable_file_logging.pc<class_ProjectSettings_property_logging/file_logging/enable_file_logging.pc>`                                       | ``true``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`logging/file_logging/max_log_files<class_ProjectSettings_property_logging/file_logging/max_log_files>`                                                         | ``10``                                                                                          |
+| :ref:`String<class_String>`                   | :ref:`logging/file_logging/log_path<class_ProjectSettings_property_logging/file_logging/log_path>`                                                                   | ``"user://logs/godot.log"``                                                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`logging/file_logging/max_log_files<class_ProjectSettings_property_logging/file_logging/max_log_files>`                                                         | ``5``                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`memory/limits/message_queue/max_size_kb<class_ProjectSettings_property_memory/limits/message_queue/max_size_kb>`                                               | ``1024``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -557,6 +559,8 @@ Properties
 | :ref:`String<class_String>`                   | :ref:`rendering/environment/default_environment<class_ProjectSettings_property_rendering/environment/default_environment>`                                           | ``""``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/compatibility/disable_half_float<class_ProjectSettings_property_rendering/gles2/compatibility/disable_half_float>`                             | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/compatibility/enable_high_float.Android<class_ProjectSettings_property_rendering/gles2/compatibility/enable_high_float.Android>`               | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/limits/buffers/blend_shape_max_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/blend_shape_max_buffer_size_kb>`               | ``4096``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -3153,13 +3157,23 @@ If ``true``, logs all output to files.
 
 ----
 
+.. _class_ProjectSettings_property_logging/file_logging/enable_file_logging.pc:
+
+- :ref:`bool<class_bool>` **logging/file_logging/enable_file_logging.pc**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+----
+
 .. _class_ProjectSettings_property_logging/file_logging/log_path:
 
 - :ref:`String<class_String>` **logging/file_logging/log_path**
 
-+-----------+---------------------------+
-| *Default* | ``"user://logs/log.txt"`` |
-+-----------+---------------------------+
++-----------+-----------------------------+
+| *Default* | ``"user://logs/godot.log"`` |
++-----------+-----------------------------+
 
 Path to logs within the project. Using an ``user://`` path is recommended.
 
@@ -3169,9 +3183,9 @@ Path to logs within the project. Using an ``user://`` path is recommended.
 
 - :ref:`int<class_int>` **logging/file_logging/max_log_files**
 
-+-----------+--------+
-| *Default* | ``10`` |
-+-----------+--------+
++-----------+-------+
+| *Default* | ``5`` |
++-----------+-------+
 
 Specifies the maximum amount of log files allowed (used for rotation).
 
@@ -3926,6 +3940,20 @@ Default background clear color. Overridable per :ref:`Viewport<class_Viewport>` 
 +-----------+-----------+
 
 The use of half-float vertex compression may be producing rendering errors on some platforms (especially iOS). These have been seen particularly in particles. Disabling half-float may resolve these problems.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles2/compatibility/enable_high_float.Android:
+
+- :ref:`bool<class_bool>` **rendering/gles2/compatibility/enable_high_float.Android**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+If ``true`` and available on the target device, enables high floating point precision for all shader computations in GLES2.
+
+**Warning:** High floating point precision can be extremely slow on older devices and is often not available at all. Use with caution.
 
 ----
 

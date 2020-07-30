@@ -130,19 +130,19 @@ Constants
 
 - **AXIS_Y** = **1** --- Enumerated value for the Y axis.
 
-- **ZERO** = **Vector2( 0, 0 )** --- Zero vector.
+- **ZERO** = **Vector2( 0, 0 )** --- Zero vector, a vector with all components set to ``0``.
 
-- **ONE** = **Vector2( 1, 1 )** --- One vector.
+- **ONE** = **Vector2( 1, 1 )** --- One vector, a vector with all components set to ``1``.
 
-- **INF** = **Vector2( inf, inf )** --- Infinity vector.
+- **INF** = **Vector2( inf, inf )** --- Infinity vector, a vector with all components set to :ref:`@GDScript.INF<class_@GDScript_constant_INF>`.
 
-- **LEFT** = **Vector2( -1, 0 )** --- Left unit vector.
+- **LEFT** = **Vector2( -1, 0 )** --- Left unit vector. Represents the direction of left.
 
-- **RIGHT** = **Vector2( 1, 0 )** --- Right unit vector.
+- **RIGHT** = **Vector2( 1, 0 )** --- Right unit vector. Represents the direction of right.
 
-- **UP** = **Vector2( 0, -1 )** --- Up unit vector.
+- **UP** = **Vector2( 0, -1 )** --- Up unit vector. Y is down in 2D, so this vector points -Y.
 
-- **DOWN** = **Vector2( 0, 1 )** --- Down unit vector.
+- **DOWN** = **Vector2( 0, 1 )** --- Down unit vector. Y is down in 2D, so this vector points +Y.
 
 Property Descriptions
 ---------------------
@@ -192,7 +192,7 @@ Returns a new vector with all components in absolute values (i.e. positive).
 
 - :ref:`float<class_float>` **angle** **(** **)**
 
-Returns the vector's angle in radians with respect to the X axis, or ``(1, 0)`` vector.
+Returns this vector's angle with respect to the X axis, or ``(1, 0)`` vector, in radians.
 
 Equivalent to the result of :ref:`@GDScript.atan2<class_@GDScript_method_atan2>` when called with the vector's :ref:`y<class_Vector2_property_y>` and :ref:`x<class_Vector2_property_x>` as parameters: ``atan2(y, x)``.
 
@@ -202,7 +202,7 @@ Equivalent to the result of :ref:`@GDScript.atan2<class_@GDScript_method_atan2>`
 
 - :ref:`float<class_float>` **angle_to** **(** :ref:`Vector2<class_Vector2>` to **)**
 
-Returns the angle in radians between the two vectors.
+Returns the angle to the given vector, in radians.
 
 ----
 
@@ -210,7 +210,7 @@ Returns the angle in radians between the two vectors.
 
 - :ref:`float<class_float>` **angle_to_point** **(** :ref:`Vector2<class_Vector2>` to **)**
 
-Returns the angle in radians between the line connecting the two points and the X coordinate.
+Returns the angle between the line connecting the two points and the X axis, in radians.
 
 ----
 
@@ -218,7 +218,7 @@ Returns the angle in radians between the line connecting the two points and the 
 
 - :ref:`float<class_float>` **aspect** **(** **)**
 
-Returns the ratio of :ref:`x<class_Vector2_property_x>` to :ref:`y<class_Vector2_property_y>`.
+Returns the aspect ratio of this vector, the ratio of :ref:`x<class_Vector2_property_x>` to :ref:`y<class_Vector2_property_y>`.
 
 ----
 
@@ -234,7 +234,7 @@ Returns the vector "bounced off" from a plane defined by the given normal.
 
 - :ref:`Vector2<class_Vector2>` **ceil** **(** **)**
 
-Returns the vector with all components rounded up.
+Returns the vector with all components rounded up (towards positive infinity).
 
 ----
 
@@ -242,7 +242,7 @@ Returns the vector with all components rounded up.
 
 - :ref:`Vector2<class_Vector2>` **clamped** **(** :ref:`float<class_float>` length **)**
 
-Returns the vector with a maximum length.
+Returns the vector with a maximum length by limiting its length to ``length``.
 
 ----
 
@@ -250,7 +250,7 @@ Returns the vector with a maximum length.
 
 - :ref:`float<class_float>` **cross** **(** :ref:`Vector2<class_Vector2>` with **)**
 
-Returns the 2-dimensional analog of the cross product with the given vector.
+Returns the cross product of this vector and ``with``.
 
 ----
 
@@ -258,7 +258,7 @@ Returns the 2-dimensional analog of the cross product with the given vector.
 
 - :ref:`Vector2<class_Vector2>` **cubic_interpolate** **(** :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` pre_a, :ref:`Vector2<class_Vector2>` post_b, :ref:`float<class_float>` t **)**
 
-Cubically interpolates between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
+Cubically interpolates between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``t``. ``t`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
 ----
 
@@ -274,7 +274,9 @@ Returns the normalized vector pointing from this vector to ``b``.
 
 - :ref:`float<class_float>` **distance_squared_to** **(** :ref:`Vector2<class_Vector2>` to **)**
 
-Returns the squared distance to vector ``b``. Prefer this function over :ref:`distance_to<class_Vector2_method_distance_to>` if you need to sort vectors or need the squared distance for some formula.
+Returns the squared distance between this vector and ``b``.
+
+This method runs faster than :ref:`distance_to<class_Vector2_method_distance_to>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
 
 ----
 
@@ -282,7 +284,7 @@ Returns the squared distance to vector ``b``. Prefer this function over :ref:`di
 
 - :ref:`float<class_float>` **distance_to** **(** :ref:`Vector2<class_Vector2>` to **)**
 
-Returns the distance to vector ``b``.
+Returns the distance between this vector and ``to``.
 
 ----
 
@@ -290,7 +292,13 @@ Returns the distance to vector ``b``.
 
 - :ref:`float<class_float>` **dot** **(** :ref:`Vector2<class_Vector2>` with **)**
 
-Returns the dot product with vector ``b``.
+Returns the dot product of this vector and ``with``. This can be used to compare the angle between two vectors. For example, this can be used to determine whether an enemy is facing the player.
+
+The dot product will be ``0`` for a straight angle (90 degrees), greater than 0 for angles narrower than 90 degrees and lower than 0 for angles wider than 90 degrees.
+
+When using unit (normalized) vectors, the result will always be between ``-1.0`` (180 degree angle) when the vectors are facing opposite directions, and ``1.0`` (0 degree angle) when the vectors are aligned.
+
+**Note:** ``a.dot(b)`` is equivalent to ``b.dot(a)``.
 
 ----
 
@@ -298,7 +306,7 @@ Returns the dot product with vector ``b``.
 
 - :ref:`Vector2<class_Vector2>` **floor** **(** **)**
 
-Returns the vector with all components rounded down.
+Returns the vector with all components rounded down (towards negative infinity).
 
 ----
 
@@ -314,7 +322,7 @@ Returns ``true`` if this vector and ``v`` are approximately equal, by running :r
 
 - :ref:`bool<class_bool>` **is_normalized** **(** **)**
 
-Returns ``true`` if the vector is normalized.
+Returns ``true`` if the vector is normalized, and false otherwise.
 
 ----
 
@@ -322,7 +330,7 @@ Returns ``true`` if the vector is normalized.
 
 - :ref:`float<class_float>` **length** **(** **)**
 
-Returns the vector's length.
+Returns the length (magnitude) of this vector.
 
 ----
 
@@ -330,7 +338,9 @@ Returns the vector's length.
 
 - :ref:`float<class_float>` **length_squared** **(** **)**
 
-Returns the vector's length squared. Prefer this method over :ref:`length<class_Vector2_method_length>` if you need to sort vectors or need the squared length for some formula.
+Returns the squared length (squared magnitude) of this vector.
+
+This method runs faster than :ref:`length<class_Vector2_method_length>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
 
 ----
 
@@ -338,7 +348,7 @@ Returns the vector's length squared. Prefer this method over :ref:`length<class_
 
 - :ref:`Vector2<class_Vector2>` **linear_interpolate** **(** :ref:`Vector2<class_Vector2>` b, :ref:`float<class_float>` t **)**
 
-Returns the result of the linear interpolation between this vector and ``b`` by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
+Returns the result of the linear interpolation between this vector and ``b`` by amount ``t``. ``t`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
 ----
 
@@ -362,7 +372,7 @@ Returns the vector scaled to unit length. Equivalent to ``v / v.length()``.
 
 - :ref:`Vector2<class_Vector2>` **posmod** **(** :ref:`float<class_float>` mod **)**
 
-Returns a vector composed of the ``fposmod`` of this vector's components and ``mod``.
+Returns a vector composed of the :ref:`@GDScript.fposmod<class_@GDScript_method_fposmod>` of this vector's components and ``mod``.
 
 ----
 
@@ -370,7 +380,7 @@ Returns a vector composed of the ``fposmod`` of this vector's components and ``m
 
 - :ref:`Vector2<class_Vector2>` **posmodv** **(** :ref:`Vector2<class_Vector2>` modv **)**
 
-Returns a vector composed of the ``fposmod`` of this vector's components and ``modv``'s components.
+Returns a vector composed of the :ref:`@GDScript.fposmod<class_@GDScript_method_fposmod>` of this vector's components and ``modv``'s components.
 
 ----
 
@@ -410,7 +420,7 @@ Returns the vector with all components rounded to the nearest integer, with half
 
 - :ref:`Vector2<class_Vector2>` **sign** **(** **)**
 
-Returns the vector with each component set to one or negative one, depending on the signs of the components.
+Returns the vector with each component set to one or negative one, depending on the signs of the components, or zero if the component is zero, by calling :ref:`@GDScript.sign<class_@GDScript_method_sign>` on each component.
 
 ----
 
@@ -418,7 +428,7 @@ Returns the vector with each component set to one or negative one, depending on 
 
 - :ref:`Vector2<class_Vector2>` **slerp** **(** :ref:`Vector2<class_Vector2>` b, :ref:`float<class_float>` t **)**
 
-Returns the result of spherical linear interpolation between this vector and ``b``, by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
+Returns the result of spherical linear interpolation between this vector and ``b``, by amount ``t``. ``t`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
 **Note:** Both vectors must be normalized.
 
@@ -428,7 +438,7 @@ Returns the result of spherical linear interpolation between this vector and ``b
 
 - :ref:`Vector2<class_Vector2>` **slide** **(** :ref:`Vector2<class_Vector2>` n **)**
 
-Returns the component of the vector along a plane defined by the given normal.
+Returns this vector slid along a plane defined by the given normal.
 
 ----
 
@@ -436,7 +446,7 @@ Returns the component of the vector along a plane defined by the given normal.
 
 - :ref:`Vector2<class_Vector2>` **snapped** **(** :ref:`Vector2<class_Vector2>` by **)**
 
-Returns the vector snapped to a grid with the given size.
+Returns this vector with each component snapped to the nearest multiple of ``step``. This can also be used to round to an arbitrary number of decimals.
 
 ----
 
@@ -444,5 +454,5 @@ Returns the vector snapped to a grid with the given size.
 
 - :ref:`Vector2<class_Vector2>` **tangent** **(** **)**
 
-Returns a perpendicular vector.
+Returns a perpendicular vector rotated 90 degrees counter-clockwise compared to the original, with the same length.
 

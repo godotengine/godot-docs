@@ -20,9 +20,14 @@ Description
 
 Base class for any object that keeps a reference count. :ref:`Resource<class_Resource>` and many other helper objects inherit this class.
 
-References keep an internal reference counter so that they are automatically released when no longer in use, and only then. References therefore do not need to be freed manually with :ref:`Object.free<class_Object_method_free>`.
+Unlike :ref:`Object<class_Object>`\ s, References keep an internal reference counter so that they are automatically released when no longer in use, and only then. References therefore do not need to be freed manually with :ref:`Object.free<class_Object_method_free>`.
 
 In the vast majority of use cases, instantiating and using ``Reference``-derived types is all you need to do. The methods provided in this class are only for advanced users, and can cause issues if misused.
+
+Tutorials
+---------
+
+- :doc:`../getting_started/workflow/best_practices/node_alternatives`
 
 Methods
 -------

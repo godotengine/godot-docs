@@ -14,12 +14,18 @@ Basis
 Description
 -----------
 
-3×3 matrix used for 3D rotation and scale. Contains 3 vector fields X, Y and Z as its columns, which can be interpreted as the local basis vectors of a transformation. Can also be accessed as array of 3D vectors. These vectors are orthogonal to each other, but are not necessarily normalized (due to scaling). Almost always used as an orthogonal basis for a :ref:`Transform<class_Transform>`.
+3×3 matrix used for 3D rotation and scale. Almost always used as an orthogonal basis for a Transform.
 
-For such use, it is composed of a scaling and a rotation matrix, in that order (M = R.S).
+Contains 3 vector fields X, Y and Z as its columns, which are typically interpreted as the local basis vectors of a transformation. For such use, it is composed of a scaling and a rotation matrix, in that order (M = R.S).
+
+Can also be accessed as array of 3D vectors. These vectors are normally orthogonal to each other, but are not necessarily normalized (due to scaling).
+
+For more information, read the "Matrices and transforms" documentation article.
 
 Tutorials
 ---------
+
+- :doc:`../tutorials/math/matrices_and_transforms`
 
 - :doc:`../tutorials/3d/using_transforms`
 
@@ -92,7 +98,9 @@ Constants
 
 .. _class_Basis_constant_FLIP_Z:
 
-- **IDENTITY** = **Basis( 1, 0, 0, 0, 1, 0, 0, 0, 1 )** --- The identity basis. This is identical to calling ``Basis()`` without any parameters. This constant can be used to make your code clearer.
+- **IDENTITY** = **Basis( 1, 0, 0, 0, 1, 0, 0, 0, 1 )** --- The identity basis, with no rotation or scaling applied.
+
+This is identical to calling ``Basis()`` without any parameters. This constant can be used to make your code clearer, and for consistency with C#.
 
 - **FLIP_X** = **Basis( -1, 0, 0, 0, 1, 0, 0, 0, 1 )** --- The basis that will flip something along the X axis when used in a transformation.
 
@@ -111,7 +119,7 @@ Property Descriptions
 | *Default* | ``Vector3( 1, 0, 0 )`` |
 +-----------+------------------------+
 
-The basis matrix's X vector.
+The basis matrix's X vector (column 0). Equivalent to array index ``0``.
 
 ----
 
@@ -123,7 +131,7 @@ The basis matrix's X vector.
 | *Default* | ``Vector3( 0, 1, 0 )`` |
 +-----------+------------------------+
 
-The basis matrix's Y vector.
+The basis matrix's Y vector (column 1). Equivalent to array index ``1``.
 
 ----
 
@@ -135,7 +143,7 @@ The basis matrix's Y vector.
 | *Default* | ``Vector3( 0, 0, 1 )`` |
 +-----------+------------------------+
 
-The basis matrix's Z vector.
+The basis matrix's Z vector (column 2). Equivalent to array index ``2``.
 
 Method Descriptions
 -------------------
@@ -144,25 +152,27 @@ Method Descriptions
 
 - :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Quat<class_Quat>` from **)**
 
-Create a rotation matrix from the given quaternion.
+Constructs a pure rotation basis matrix from the given quaternion.
 
 ----
 
 - :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` from **)**
 
-Create a rotation matrix (in the YXZ convention: first Z, then X, and Y last) from the specified Euler angles, given in the vector format as (X angle, Y angle, Z angle).
+Constructs a pure rotation basis matrix from the given Euler angles (in the YXZ convention: when \*composing\*, first Y, then X, and Z last), given in the vector format as (X angle, Y angle, Z angle).
+
+Consider using the :ref:`Quat<class_Quat>` constructor instead, which uses a quaternion instead of Euler angles.
 
 ----
 
 - :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**
 
-Create a rotation matrix which rotates around the given axis by the specified angle, in radians. The axis must be a normalized vector.
+Constructs a pure rotation basis matrix, rotated around the given ``axis`` by ``phi``, in radians. The axis must be a normalized vector.
 
 ----
 
 - :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` x_axis, :ref:`Vector3<class_Vector3>` y_axis, :ref:`Vector3<class_Vector3>` z_axis **)**
 
-Create a matrix from 3 axis vectors.
+Constructs a basis matrix from 3 axis vectors (matrix columns).
 
 ----
 
@@ -170,7 +180,9 @@ Create a matrix from 3 axis vectors.
 
 - :ref:`float<class_float>` **determinant** **(** **)**
 
-Returns the determinant of the matrix.
+Returns the determinant of the basis matrix. If the basis is uniformly scaled, its determinant is the square of the scale.
+
+A negative determinant means the basis has a negative scale. A zero determinant means the basis isn't invertible, and is usually considered invalid.
 
 ----
 
@@ -178,7 +190,9 @@ Returns the determinant of the matrix.
 
 - :ref:`Vector3<class_Vector3>` **get_euler** **(** **)**
 
-Returns the basis's rotation in the form of Euler angles (in the YXZ convention: first Z, then X, and Y last). The returned vector contains the rotation angles in the format (X angle, Y angle, Z angle). See :ref:`get_rotation_quat<class_Basis_method_get_rotation_quat>` if you need a quaternion instead.
+Returns the basis's rotation in the form of Euler angles (in the YXZ convention: when decomposing, first Z, then X, and Y last). The returned vector contains the rotation angles in the format (X angle, Y angle, Z angle).
+
+Consider using the :ref:`get_rotation_quat<class_Basis_method_get_rotation_quat>` method instead, which returns a :ref:`Quat<class_Quat>` quaternion instead of Euler angles.
 
 ----
 
@@ -186,7 +200,7 @@ Returns the basis's rotation in the form of Euler angles (in the YXZ convention:
 
 - :ref:`int<class_int>` **get_orthogonal_index** **(** **)**
 
-This function considers a discretization of rotations into 24 points on unit sphere, lying along the vectors (x,y,z) with each component being either -1, 0, or 1, and returns the index of the point best representing the orientation of the object. It is mainly used by the grid map editor. For further details, refer to the Godot source code.
+This function considers a discretization of rotations into 24 points on unit sphere, lying along the vectors (x,y,z) with each component being either -1, 0, or 1, and returns the index of the point best representing the orientation of the object. It is mainly used by the :ref:`GridMap<class_GridMap>` editor. For further details, refer to the Godot source code.
 
 ----
 
@@ -298,7 +312,7 @@ Returns a vector transformed (multiplied) by the matrix.
 
 - :ref:`Vector3<class_Vector3>` **xform_inv** **(** :ref:`Vector3<class_Vector3>` v **)**
 
-Returns a vector transformed (multiplied) by the transposed matrix.
+Returns a vector transformed (multiplied) by the transposed basis matrix.
 
 **Note:** This results in a multiplication by the inverse of the matrix only if it represents a rotation-reflection.
 

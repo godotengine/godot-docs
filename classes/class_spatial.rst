@@ -274,7 +274,7 @@ Local translation of this node.
 | *Getter*  | is_visible()       |
 +-----------+--------------------+
 
-If ``true``, this node is drawn.
+If ``true``, this node is drawn. The node is only visible if all of its antecedents are visible as well (in other words, :ref:`is_visible_in_tree<class_Spatial_method_is_visible_in_tree>` must return ``true``).
 
 Method Descriptions
 -------------------
@@ -371,7 +371,7 @@ Returns whether the node notifies about its global and local transformation chan
 
 - :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** const
 
-Returns whether the node is visible, taking into consideration that its parents visibility.
+Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_Spatial_property_visible>` property is ``true`` and all its antecedents are also visible. If any antecedent is hidden, this node will not be visible in the scene tree.
 
 ----
 

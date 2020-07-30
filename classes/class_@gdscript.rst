@@ -218,15 +218,13 @@ Constants
 
 .. _class_@GDScript_constant_NAN:
 
-- **PI** = **3.141593** --- Constant that represents how many times the diameter of a circle fits around its perimeter.
+- **PI** = **3.141593** --- Constant that represents how many times the diameter of a circle fits around its perimeter. This is equivalent to ``TAU / 2``.
 
-- **TAU** = **6.283185** --- The circle constant, the circumference of the unit circle.
+- **TAU** = **6.283185** --- The circle constant, the circumference of the unit circle in radians.
 
-- **INF** = **inf** --- A positive infinity. (For negative infinity, use -INF).
+- **INF** = **inf** --- Positive infinity. For negative infinity, use -INF.
 
-- **NAN** = **nan** --- Macro constant that expands to an expression of type float that represents a NaN.
-
-The NaN values are used to identify undefined or non-representable values for floating-point elements, such as the square root of negative numbers or the result of 0/0.
+- **NAN** = **nan** --- "Not a Number", an invalid value. ``NaN`` has special properties, including that it is not equal to itself. It is output by some invalid operations, such as dividing zero by zero.
 
 Method Descriptions
 -------------------
@@ -269,7 +267,7 @@ Supported color names are the same as the constants defined in :ref:`Color<class
 
 - :ref:`float<class_float>` **abs** **(** :ref:`float<class_float>` s **)**
 
-Returns the absolute value of parameter ``s`` (i.e. unsigned value, works for integer and float).
+Returns the absolute value of parameter ``s`` (i.e. positive value).
 
 ::
 
@@ -329,7 +327,7 @@ The optional ``message`` argument, if given, is shown in addition to the generic
 
 Returns the arc tangent of ``s`` in radians. Use it to get the angle from an angle's tangent in trigonometry: ``atan(tan(angle)) == angle``.
 
-The method cannot know in which quadrant the angle should fall. See :ref:`atan2<class_@GDScript_method_atan2>` if you always want an exact angle.
+The method cannot know in which quadrant the angle should fall. See :ref:`atan2<class_@GDScript_method_atan2>` if you have both ``y`` and ``x``.
 
 ::
 
@@ -342,6 +340,8 @@ The method cannot know in which quadrant the angle should fall. See :ref:`atan2<
 - :ref:`float<class_float>` **atan2** **(** :ref:`float<class_float>` y, :ref:`float<class_float>` x **)**
 
 Returns the arc tangent of ``y/x`` in radians. Use to get the angle of tangent ``y/x``. To compute the value, the method takes into account the sign of both arguments in order to determine the quadrant.
+
+Important note: The Y coordinate comes first, by convention.
 
 ::
 
@@ -371,7 +371,7 @@ Converts a 2D point expressed in the cartesian coordinate system (X and Y axis) 
 
 - :ref:`float<class_float>` **ceil** **(** :ref:`float<class_float>` s **)**
 
-Rounds ``s`` upward, returning the smallest integral value that is not less than ``s``.
+Rounds ``s`` upward (towards positive infinity), returning the smallest whole number that is not less than ``s``.
 
 ::
 
@@ -491,7 +491,7 @@ Returns the result of ``value`` decreased by ``step`` \* ``amount``.
 
 - :ref:`float<class_float>` **deg2rad** **(** :ref:`float<class_float>` deg **)**
 
-Returns degrees converted to radians.
+Converts an angle expressed in degrees to radians.
 
 ::
 
@@ -512,7 +512,7 @@ Converts a previously converted instance to a dictionary, back into an instance.
 
 - :ref:`float<class_float>` **ease** **(** :ref:`float<class_float>` s, :ref:`float<class_float>` curve **)**
 
-Easing function, based on exponent. 0 is constant, 1 is linear, 0 to 1 is ease-in, 1+ is ease out. Negative values are in-out/out in.
+Easing function, based on exponent. The curve values are: 0 is constant, 1 is linear, 0 to 1 is ease-in, 1+ is ease out. Negative values are in-out/out in.
 
 ----
 
@@ -536,7 +536,7 @@ For exponents to other bases use the method :ref:`pow<class_@GDScript_method_pow
 
 - :ref:`float<class_float>` **floor** **(** :ref:`float<class_float>` s **)**
 
-Rounds ``s`` to the closest smaller integer and returns it.
+Rounds ``s`` downward (towards negative infinity), returning the largest whole number that is not more than ``s``.
 
 ::
 
@@ -731,7 +731,7 @@ Returns whether ``instance`` is a valid object (e.g. has not been deleted from m
 
 - :ref:`bool<class_bool>` **is_nan** **(** :ref:`float<class_float>` s **)**
 
-Returns whether ``s`` is a NaN (Not-A-Number) value.
+Returns whether ``s`` is a NaN ("Not a Number" or invalid) value.
 
 ----
 
@@ -740,6 +740,8 @@ Returns whether ``s`` is a NaN (Not-A-Number) value.
 - :ref:`bool<class_bool>` **is_zero_approx** **(** :ref:`float<class_float>` s **)**
 
 Returns ``true`` if ``s`` is zero or almost zero.
+
+This method is faster than using :ref:`is_equal_approx<class_@GDScript_method_is_equal_approx>` with one value as zero.
 
 ----
 
@@ -1112,7 +1114,7 @@ Pushes a warning message to Godot's built-in debugger and to the OS terminal.
 
 - :ref:`float<class_float>` **rad2deg** **(** :ref:`float<class_float>` rad **)**
 
-Converts from radians to degrees.
+Converts an angle expressed in radians to degrees.
 
 ::
 
@@ -1230,7 +1232,7 @@ Maps a ``value`` from range ``[istart, istop]`` to ``[ostart, ostop]``.
 
 - :ref:`float<class_float>` **round** **(** :ref:`float<class_float>` s **)**
 
-Returns the integral value that is nearest to ``s``, with halfway cases rounded away from zero.
+Rounds ``s`` to the nearest whole number, with halfway cases rounded away from zero.
 
 ::
 
@@ -1308,11 +1310,13 @@ Returns a number smoothly interpolated between the ``from`` and ``to``, based on
 
 - :ref:`float<class_float>` **sqrt** **(** :ref:`float<class_float>` s **)**
 
-Returns the square root of ``s``.
+Returns the square root of ``s``, where ``s`` is a non-negative number.
 
 ::
 
     sqrt(9) # Returns 3
+
+If you need negative inputs, use ``System.Numerics.Complex`` in C#.
 
 ----
 
@@ -1510,32 +1514,22 @@ Usable for creating loop-alike behavior or infinite surfaces.
 
 ::
 
-    # a is 0.5
-    a = wrapf(10.5, 0.0, 10.0)
-
-::
-
-    # a is 9.5
-    a = wrapf(-0.5, 0.0, 10.0)
-
-::
-
-    # Infinite loop between 0.0 and 0.99
-    f = wrapf(f + 0.1, 0.0, 1.0)
+    # Infinite loop between 5.0 and 9.9
+    value = wrapf(value + 0.1, 5.0, 10.0)
 
 ::
 
     # Infinite rotation (in radians)
     angle = wrapf(angle + 0.1, 0.0, TAU)
 
-**Note:** If you just want to wrap between 0.0 and ``n`` (where ``n`` is a positive floating-point value), it is better for performance to use the :ref:`fmod<class_@GDScript_method_fmod>` method like ``fmod(number, n)``.
-
-``wrapf`` is more flexible than using the :ref:`fmod<class_@GDScript_method_fmod>` approach by giving the user a simple control over the minimum value. It also fully supports negative numbers, e.g.
-
 ::
 
     # Infinite rotation (in radians)
     angle = wrapf(angle + 0.1, -PI, PI)
+
+**Note:** If ``min`` is ``0``, this is equivalent to :ref:`fposmod<class_@GDScript_method_fposmod>`, so prefer using that instead.
+
+``wrapf`` is more flexible than using the :ref:`fposmod<class_@GDScript_method_fposmod>` approach by giving the user control over the minimum value.
 
 ----
 
@@ -1549,27 +1543,17 @@ Usable for creating loop-alike behavior or infinite surfaces.
 
 ::
 
-    # a is 0
-    a = wrapi(10, 0, 10)
-
-::
-
-    # a is 9
-    a = wrapi(-1, 0, 10)
-
-::
-
-    # Infinite loop between 0 and 9
-    frame = wrapi(frame + 1, 0, 10)
-
-**Note:** If you just want to wrap between 0 and ``n`` (where ``n`` is a positive integer value), it is better for performance to use the modulo operator like ``number % n``.
-
-``wrapi`` is more flexible than using the modulo approach by giving the user a simple control over the minimum value. It also fully supports negative numbers, e.g.
+    # Infinite loop between 5 and 9
+    frame = wrapi(frame + 1, 5, 10)
 
 ::
 
     # result is -2
     var result = wrapi(-6, -5, -1)
+
+**Note:** If ``min`` is ``0``, this is equivalent to :ref:`posmod<class_@GDScript_method_posmod>`, so prefer using that instead.
+
+``wrapi`` is more flexible than using the :ref:`posmod<class_@GDScript_method_posmod>` approach by giving the user control over the minimum value.
 
 ----
 

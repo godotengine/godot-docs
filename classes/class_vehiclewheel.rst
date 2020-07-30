@@ -18,6 +18,8 @@ Description
 
 This node needs to be used as a child node of :ref:`VehicleBody<class_VehicleBody>` and simulates the behavior of one of its wheels. This node also acts as a collider to detect if the wheel is touching a surface.
 
+**Note:** This class has known issues and isn't designed to provide realistic 3D vehicle physics. If you want advanced vehicle physics, you will probably have to write your own physics integration using another :ref:`PhysicsBody<class_PhysicsBody>` class.
+
 Properties
 ----------
 

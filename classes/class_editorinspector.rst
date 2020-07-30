@@ -41,11 +41,15 @@ Signals
 
 - **object_id_selected** **(** :ref:`int<class_int>` id **)**
 
+Emitted when the Edit button of an :ref:`Object<class_Object>` has been pressed in the inspector. This is mainly used in the remote scene tree inspector.
+
 ----
 
 .. _class_EditorInspector_signal_property_edited:
 
 - **property_edited** **(** :ref:`String<class_String>` property **)**
+
+Emitted when a property is edited in the inspector.
 
 ----
 
@@ -53,11 +57,15 @@ Signals
 
 - **property_keyed** **(** :ref:`String<class_String>` property **)**
 
+Emitted when a property is keyed in the inspector. Properties can be keyed by clicking the "key" icon next to a property when the Animation panel is toggled.
+
 ----
 
 .. _class_EditorInspector_signal_property_selected:
 
 - **property_selected** **(** :ref:`String<class_String>` property **)**
+
+Emitted when a property is selected in the inspector.
 
 ----
 
@@ -65,11 +73,17 @@ Signals
 
 - **property_toggled** **(** :ref:`String<class_String>` property, :ref:`bool<class_bool>` checked **)**
 
+Emitted when a boolean property is toggled in the inspector.
+
+**Note:** This signal is never emitted if the internal ``autoclear`` property enabled. Since this property is always enabled in the editor inspector, this signal is never emitted by the editor itself.
+
 ----
 
 .. _class_EditorInspector_signal_resource_selected:
 
 - **resource_selected** **(** :ref:`Object<class_Object>` res, :ref:`String<class_String>` prop **)**
+
+Emitted when a resource is selected in the inspector.
 
 ----
 
@@ -77,10 +91,16 @@ Signals
 
 - **restart_requested** **(** **)**
 
+Emitted when a property that requires a restart to be applied is edited in the inspector. This is only used in the Project Settings and Editor Settings.
+
 Method Descriptions
 -------------------
 
 .. _class_EditorInspector_method_refresh:
 
 - void **refresh** **(** **)**
+
+Refreshes the inspector.
+
+**Note:** To save on CPU resources, calling this method will do nothing if the time specified in ``docks/property_editor/auto_refresh_interval`` editor setting hasn't passed yet since this method was last called. (By default, this interval is set to 0.3 seconds.)
 

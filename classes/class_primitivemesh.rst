@@ -94,5 +94,11 @@ Method Descriptions
 
 - :ref:`Array<class_Array>` **get_mesh_arrays** **(** **)** const
 
-Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. Mesh arrays can be used with :ref:`ArrayMesh<class_ArrayMesh>` to create new surfaces.
+Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. The result can be passed to :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>` to create a new surface. For example:
+
+::
+
+    var c := CylinderMesh.new()
+    var arr_mesh := ArrayMesh.new()
+    arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, c.get_mesh_arrays())
 

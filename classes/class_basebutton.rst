@@ -85,6 +85,8 @@ Emitted when the button stops being held down.
 
 Emitted when the button is toggled or pressed. This is on :ref:`button_down<class_BaseButton_signal_button_down>` if :ref:`action_mode<class_BaseButton_property_action_mode>` is :ref:`ACTION_MODE_BUTTON_PRESS<class_BaseButton_constant_ACTION_MODE_BUTTON_PRESS>` and on :ref:`button_up<class_BaseButton_signal_button_up>` otherwise.
 
+If you need to know the button's pressed state (and :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is active), use :ref:`toggled<class_BaseButton_signal_toggled>` instead.
+
 ----
 
 .. _class_BaseButton_signal_toggled:
@@ -302,7 +304,7 @@ Method Descriptions
 
 - void **_pressed** **(** **)** virtual
 
-Called when the button is pressed.
+Called when the button is pressed. If you need to know the button's pressed state (and :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is active), use :ref:`_toggled<class_BaseButton_method__toggled>` instead.
 
 ----
 

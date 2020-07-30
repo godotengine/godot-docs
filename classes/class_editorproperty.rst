@@ -134,7 +134,7 @@ Property Descriptions
 | *Getter*  | is_checkable()       |
 +-----------+----------------------+
 
-Used by the inspector, set when property is checkable.
+Used by the inspector, set to ``true`` when the property is checkable.
 
 ----
 
@@ -150,7 +150,7 @@ Used by the inspector, set when property is checkable.
 | *Getter*  | is_checked()       |
 +-----------+--------------------+
 
-Used by the inspector, when the property is checked.
+Used by the inspector, set to ``true`` when the property is checked.
 
 ----
 
@@ -166,7 +166,7 @@ Used by the inspector, when the property is checked.
 | *Getter*  | is_draw_red()       |
 +-----------+---------------------+
 
-Used by the inspector, when the property must draw with error color.
+Used by the inspector, set to ``true`` when the property must draw with error color. This is used for editable children's properties.
 
 ----
 
@@ -182,7 +182,7 @@ Used by the inspector, when the property must draw with error color.
 | *Getter*  | is_keying()       |
 +-----------+-------------------+
 
-Used by the inspector, when the property can add keys for animation.
+Used by the inspector, set to ``true`` when the property can add keys for animation.
 
 ----
 
@@ -198,7 +198,7 @@ Used by the inspector, when the property can add keys for animation.
 | *Getter*  | get_label()      |
 +-----------+------------------+
 
-Sets this property to change the label (if you want to show one).
+Set this property to change the label (if you want to show one).
 
 ----
 
@@ -214,7 +214,7 @@ Sets this property to change the label (if you want to show one).
 | *Getter*  | is_read_only()       |
 +-----------+----------------------+
 
-Used by the inspector, when the property is read-only.
+Used by the inspector, set to ``true`` when the property is read-only.
 
 Method Descriptions
 -------------------

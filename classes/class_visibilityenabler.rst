@@ -18,7 +18,9 @@ Description
 
 The VisibilityEnabler will disable :ref:`RigidBody<class_RigidBody>` and :ref:`AnimationPlayer<class_AnimationPlayer>` nodes when they are not visible. It will only affect other nodes within the same scene as the VisibilityEnabler itself.
 
-**Note:** VisibilityEnabler uses an approximate heuristic for performance reasons. It doesn't take walls and other occlusion into account. If you need exact visibility checking, use another method such as adding an :ref:`Area<class_Area>` node as a child of a :ref:`Camera<class_Camera>` node.
+If you just want to receive notifications, use :ref:`VisibilityNotifier<class_VisibilityNotifier>` instead.
+
+**Note:** VisibilityEnabler uses an approximate heuristic for performance reasons. It doesn't take walls and other occlusion into account. The heuristic is an implementation detail and may change in future versions. If you need precise visibility checking, use another method such as adding an :ref:`Area<class_Area>` node as a child of a :ref:`Camera<class_Camera>` node and/or :ref:`Vector3.dot<class_Vector3_method_dot>`.
 
 **Note:** VisibilityEnabler will not affect nodes added after scene initialization.
 

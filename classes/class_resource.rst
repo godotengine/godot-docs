@@ -18,12 +18,14 @@ Base class for all resources.
 Description
 -----------
 
-Resource is the base class for all Godot-specific resource types, serving primarily as data containers. They are reference counted and freed when no longer in use. They are also cached once loaded from disk, so that any further attempts to load a resource from a given path will return the same reference (all this in contrast to a :ref:`Node<class_Node>`, which is not reference counted and can be instanced from disk as many times as desired). Resources can be saved externally on disk or bundled into another object, such as a :ref:`Node<class_Node>` or another resource.
+Resource is the base class for all Godot-specific resource types, serving primarily as data containers. Unlike :ref:`Object<class_Object>`\ s, they are reference-counted and freed when no longer in use. They are also cached once loaded from disk, so that any further attempts to load a resource from a given path will return the same reference (all this in contrast to a :ref:`Node<class_Node>`, which is not reference-counted and can be instanced from disk as many times as desired). Resources can be saved externally on disk or bundled into another object, such as a :ref:`Node<class_Node>` or another resource.
 
 Tutorials
 ---------
 
 - :doc:`../getting_started/step_by_step/resources`
+
+- :doc:`../getting_started/workflow/best_practices/node_alternatives`
 
 Properties
 ----------
@@ -126,7 +128,9 @@ Virtual function which can be overridden to customize the behavior value of :ref
 
 - :ref:`Resource<class_Resource>` **duplicate** **(** :ref:`bool<class_bool>` subresources=false **)** const
 
-Duplicates the resource, returning a new resource. By default, sub-resources are shared between resource copies for efficiency, this can be changed by passing ``true`` to the ``subresources`` argument.
+Duplicates the resource, returning a new resource. By default, sub-resources are shared between resource copies for efficiency. This can be changed by passing ``true`` to the ``subresources`` argument which will copy the subresources.
+
+**Note:** If ``subresources`` is ``true``, this method will only perform a shallow copy. Nested resources within subresources will not be duplicated and will still be shared.
 
 ----
 

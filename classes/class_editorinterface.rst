@@ -49,6 +49,8 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                                 | :ref:`get_open_scenes<class_EditorInterface_method_get_open_scenes>` **(** **)** const                                                                         |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                               | :ref:`get_playing_scene<class_EditorInterface_method_get_playing_scene>` **(** **)** const                                                                     |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorFileSystem<class_EditorFileSystem>`           | :ref:`get_resource_filesystem<class_EditorInterface_method_get_resource_filesystem>` **(** **)**                                                               |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorResourcePreview<class_EditorResourcePreview>` | :ref:`get_resource_previewer<class_EditorInterface_method_get_resource_previewer>` **(** **)**                                                                 |
@@ -61,11 +63,19 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`inspect_object<class_EditorInterface_method_inspect_object>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` for_property="" **)** |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                   | :ref:`is_playing_scene<class_EditorInterface_method_is_playing_scene>` **(** **)** const                                                                       |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                   | :ref:`is_plugin_enabled<class_EditorInterface_method_is_plugin_enabled>` **(** :ref:`String<class_String>` plugin **)** const                                  |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                                 | :ref:`make_mesh_previews<class_EditorInterface_method_make_mesh_previews>` **(** :ref:`Array<class_Array>` meshes, :ref:`int<class_int>` preview_size **)**    |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`open_scene_from_path<class_EditorInterface_method_open_scene_from_path>` **(** :ref:`String<class_String>` scene_filepath **)**                          |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`play_current_scene<class_EditorInterface_method_play_current_scene>` **(** **)**                                                                         |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`play_custom_scene<class_EditorInterface_method_play_custom_scene>` **(** :ref:`String<class_String>` scene_filepath **)**                                |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`play_main_scene<class_EditorInterface_method_play_main_scene>` **(** **)**                                                                               |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`reload_scene_from_path<class_EditorInterface_method_reload_scene_from_path>` **(** :ref:`String<class_String>` scene_filepath **)**                      |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -78,6 +88,8 @@ Methods
 | void                                                      | :ref:`set_main_screen_editor<class_EditorInterface_method_set_main_screen_editor>` **(** :ref:`String<class_String>` name **)**                                |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`set_plugin_enabled<class_EditorInterface_method_set_plugin_enabled>` **(** :ref:`String<class_String>` plugin, :ref:`bool<class_bool>` enabled **)**     |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`stop_playing_scene<class_EditorInterface_method_stop_playing_scene>` **(** **)**                                                                         |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
@@ -110,13 +122,15 @@ Edits the given :ref:`Resource<class_Resource>`.
 
 - :ref:`Control<class_Control>` **get_base_control** **(** **)**
 
-Returns the main container of Godot editor's window. You can use it, for example, to retrieve the size of the container and place your controls accordingly.
+Returns the main container of Godot editor's window. For example, you can use it to retrieve the size of the container and place your controls accordingly.
 
 ----
 
 .. _class_EditorInterface_method_get_current_path:
 
 - :ref:`String<class_String>` **get_current_path** **(** **)** const
+
+Returns the current path being viewed in the :ref:`FileSystemDock<class_FileSystemDock>`.
 
 ----
 
@@ -132,7 +146,7 @@ Returns the edited (current) scene's root :ref:`Node<class_Node>`.
 
 - :ref:`EditorSettings<class_EditorSettings>` **get_editor_settings** **(** **)**
 
-Returns the :ref:`EditorSettings<class_EditorSettings>`.
+Returns the editor's :ref:`EditorSettings<class_EditorSettings>` instance.
 
 ----
 
@@ -140,7 +154,9 @@ Returns the :ref:`EditorSettings<class_EditorSettings>`.
 
 - :ref:`Control<class_Control>` **get_editor_viewport** **(** **)**
 
-Returns the editor :ref:`Viewport<class_Viewport>`.
+Returns the main editor control. Use this as a parent for main screens.
+
+**Note:** This returns the main editor control containing the whole editor, not the 2D or 3D viewports specifically.
 
 ----
 
@@ -148,11 +164,15 @@ Returns the editor :ref:`Viewport<class_Viewport>`.
 
 - :ref:`FileSystemDock<class_FileSystemDock>` **get_file_system_dock** **(** **)**
 
+Returns the editor's :ref:`FileSystemDock<class_FileSystemDock>` instance.
+
 ----
 
 .. _class_EditorInterface_method_get_inspector:
 
 - :ref:`EditorInspector<class_EditorInspector>` **get_inspector** **(** **)** const
+
+Returns the editor's :ref:`EditorInspector<class_EditorInspector>` instance.
 
 ----
 
@@ -164,11 +184,19 @@ Returns an :ref:`Array<class_Array>` with the file paths of the currently opened
 
 ----
 
+.. _class_EditorInterface_method_get_playing_scene:
+
+- :ref:`String<class_String>` **get_playing_scene** **(** **)** const
+
+Returns the name of the scene that is being played. If no scene is currently being played, returns an empty string.
+
+----
+
 .. _class_EditorInterface_method_get_resource_filesystem:
 
 - :ref:`EditorFileSystem<class_EditorFileSystem>` **get_resource_filesystem** **(** **)**
 
-Returns the :ref:`EditorFileSystem<class_EditorFileSystem>`.
+Returns the editor's :ref:`EditorFileSystem<class_EditorFileSystem>` instance.
 
 ----
 
@@ -176,7 +204,7 @@ Returns the :ref:`EditorFileSystem<class_EditorFileSystem>`.
 
 - :ref:`EditorResourcePreview<class_EditorResourcePreview>` **get_resource_previewer** **(** **)**
 
-Returns the :ref:`EditorResourcePreview<class_EditorResourcePreview>`.
+Returns the editor's :ref:`EditorResourcePreview<class_EditorResourcePreview>` instance.
 
 ----
 
@@ -184,7 +212,7 @@ Returns the :ref:`EditorResourcePreview<class_EditorResourcePreview>`.
 
 - :ref:`ScriptEditor<class_ScriptEditor>` **get_script_editor** **(** **)**
 
-Returns the :ref:`ScriptEditor<class_ScriptEditor>`.
+Returns the editor's :ref:`ScriptEditor<class_ScriptEditor>` instance.
 
 ----
 
@@ -192,13 +220,15 @@ Returns the :ref:`ScriptEditor<class_ScriptEditor>`.
 
 - :ref:`String<class_String>` **get_selected_path** **(** **)** const
 
+Returns the path of the directory currently selected in the :ref:`FileSystemDock<class_FileSystemDock>`. If a file is selected, its base directory will be returned using :ref:`String.get_base_dir<class_String_method_get_base_dir>` instead.
+
 ----
 
 .. _class_EditorInterface_method_get_selection:
 
 - :ref:`EditorSelection<class_EditorSelection>` **get_selection** **(** **)**
 
-Returns the :ref:`EditorSelection<class_EditorSelection>`.
+Returns the editor's :ref:`EditorSelection<class_EditorSelection>` instance.
 
 ----
 
@@ -206,7 +236,15 @@ Returns the :ref:`EditorSelection<class_EditorSelection>`.
 
 - void **inspect_object** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` for_property="" **)**
 
-Shows the given property on the given ``object`` in the Editor's Inspector dock.
+Shows the given property on the given ``object`` in the editor's Inspector dock.
+
+----
+
+.. _class_EditorInterface_method_is_playing_scene:
+
+- :ref:`bool<class_bool>` **is_playing_scene** **(** **)** const
+
+Returns ``true`` if a scene is currently being played, ``false`` otherwise. Paused scenes are considered as being played.
 
 ----
 
@@ -214,7 +252,7 @@ Shows the given property on the given ``object`` in the Editor's Inspector dock.
 
 - :ref:`bool<class_bool>` **is_plugin_enabled** **(** :ref:`String<class_String>` plugin **)** const
 
-Returns the enabled status of a plugin. The plugin name is the same as its directory name.
+Returns ``true`` if the specified ``plugin`` is enabled. The plugin name is the same as its directory name.
 
 ----
 
@@ -231,6 +269,30 @@ Returns mesh previews rendered at the given size as an :ref:`Array<class_Array>`
 - void **open_scene_from_path** **(** :ref:`String<class_String>` scene_filepath **)**
 
 Opens the scene at the given path.
+
+----
+
+.. _class_EditorInterface_method_play_current_scene:
+
+- void **play_current_scene** **(** **)**
+
+Plays the currently active scene.
+
+----
+
+.. _class_EditorInterface_method_play_custom_scene:
+
+- void **play_custom_scene** **(** :ref:`String<class_String>` scene_filepath **)**
+
+Plays the scene specified by its filepath.
+
+----
+
+.. _class_EditorInterface_method_play_main_scene:
+
+- void **play_main_scene** **(** **)**
+
+Plays the main scene.
 
 ----
 
@@ -270,6 +332,8 @@ Selects the file, with the path provided by ``file``, in the FileSystem dock.
 
 - void **set_main_screen_editor** **(** :ref:`String<class_String>` name **)**
 
+Sets the editor's current main screen to the one specified in ``name``. ``name`` must match the text of the tab in question exactly (``2D``, ``3D``, ``Script``, ``AssetLib``).
+
 ----
 
 .. _class_EditorInterface_method_set_plugin_enabled:
@@ -277,4 +341,12 @@ Selects the file, with the path provided by ``file``, in the FileSystem dock.
 - void **set_plugin_enabled** **(** :ref:`String<class_String>` plugin, :ref:`bool<class_bool>` enabled **)**
 
 Sets the enabled status of a plugin. The plugin name is the same as its directory name.
+
+----
+
+.. _class_EditorInterface_method_stop_playing_scene:
+
+- void **stop_playing_scene** **(** **)**
+
+Stops the scene that is currently playing.
 

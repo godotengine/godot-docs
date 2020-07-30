@@ -14,12 +14,16 @@ Transform
 Description
 -----------
 
-Represents one or many transformations in 3D space such as translation, rotation, or scaling. It consists of a :ref:`basis<class_Transform_property_basis>` and an :ref:`origin<class_Transform_property_origin>`. It is similar to a 3×4 matrix.
+3×4 matrix (3 rows, 4 columns) used for 3D linear transformations. It can represent transformations such as translation, rotation, or scaling. It consists of a :ref:`basis<class_Transform_property_basis>` (first 3 columns) and a :ref:`Vector3<class_Vector3>` for the :ref:`origin<class_Transform_property_origin>` (last column).
+
+For more information, read the "Matrices and transforms" documentation article.
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/math/index`
+
+- :doc:`../tutorials/math/matrices_and_transforms`
 
 - :doc:`../tutorials/3d/using_transforms`
 
@@ -111,7 +115,7 @@ The basis is a matrix containing 3 :ref:`Vector3<class_Vector3>` as its columns:
 | *Default* | ``Vector3( 0, 0, 0 )`` |
 +-----------+------------------------+
 
-The translation offset of the transform.
+The translation offset of the transform (column 3, the fourth column). Equivalent to array index ``3``.
 
 Method Descriptions
 -------------------
@@ -120,25 +124,25 @@ Method Descriptions
 
 - :ref:`Transform<class_Transform>` **Transform** **(** :ref:`Vector3<class_Vector3>` x_axis, :ref:`Vector3<class_Vector3>` y_axis, :ref:`Vector3<class_Vector3>` z_axis, :ref:`Vector3<class_Vector3>` origin **)**
 
-Constructs the Transform from four :ref:`Vector3<class_Vector3>`. Each axis corresponds to local basis vectors (some of which may be scaled).
+Constructs a Transform from four :ref:`Vector3<class_Vector3>` values (matrix columns). Each axis corresponds to local basis vectors (some of which may be scaled).
 
 ----
 
 - :ref:`Transform<class_Transform>` **Transform** **(** :ref:`Basis<class_Basis>` basis, :ref:`Vector3<class_Vector3>` origin **)**
 
-Constructs the Transform from a :ref:`Basis<class_Basis>` and :ref:`Vector3<class_Vector3>`.
+Constructs a Transform from a :ref:`Basis<class_Basis>` and :ref:`Vector3<class_Vector3>`.
 
 ----
 
 - :ref:`Transform<class_Transform>` **Transform** **(** :ref:`Transform2D<class_Transform2D>` from **)**
 
-Constructs the Transform from a :ref:`Transform2D<class_Transform2D>`.
+Constructs a Transform from a :ref:`Transform2D<class_Transform2D>`.
 
 ----
 
 - :ref:`Transform<class_Transform>` **Transform** **(** :ref:`Quat<class_Quat>` from **)**
 
-Constructs the Transform from a :ref:`Quat<class_Quat>`. The origin will be Vector3(0, 0, 0).
+Constructs a Transform from a :ref:`Quat<class_Quat>`. The origin will be ``Vector3(0, 0, 0)``.
 
 ----
 
@@ -160,7 +164,7 @@ Returns the inverse of the transform, under the assumption that the transformati
 
 - :ref:`Transform<class_Transform>` **interpolate_with** **(** :ref:`Transform<class_Transform>` transform, :ref:`float<class_float>` weight **)**
 
-Interpolates the transform to other Transform by weight amount (0-1).
+Interpolates the transform to other Transform by weight amount (on the range of 0.0 to 1.0).
 
 ----
 

@@ -78,11 +78,11 @@ Constants
 
 .. _class_Plane_constant_PLANE_XY:
 
-- **PLANE_YZ** = **Plane( 1, 0, 0, 0 )** --- A plane that extends in the Y and Z axes.
+- **PLANE_YZ** = **Plane( 1, 0, 0, 0 )** --- A plane that extends in the Y and Z axes (normal vector points +X).
 
-- **PLANE_XZ** = **Plane( 0, 1, 0, 0 )** --- A plane that extends in the X and Z axes.
+- **PLANE_XZ** = **Plane( 0, 1, 0, 0 )** --- A plane that extends in the X and Z axes (normal vector points +Y).
 
-- **PLANE_XY** = **Plane( 0, 0, 1, 0 )** --- A plane that extends in the X and Y axes.
+- **PLANE_XY** = **Plane( 0, 0, 1, 0 )** --- A plane that extends in the X and Y axes (normal vector points +Z).
 
 Property Descriptions
 ---------------------
@@ -95,7 +95,9 @@ Property Descriptions
 | *Default* | ``0.0`` |
 +-----------+---------+
 
-Distance from the origin to the plane, in the direction of :ref:`normal<class_Plane_property_normal>`.
+The distance from the origin to the plane, in the direction of :ref:`normal<class_Plane_property_normal>`. This value is typically non-negative.
+
+In the scalar equation of the plane ``ax + by + cz = d``, this is ``d``, while the ``(a, b, c)`` coordinates are represented by the :ref:`normal<class_Plane_property_normal>` property.
 
 ----
 
@@ -107,7 +109,9 @@ Distance from the origin to the plane, in the direction of :ref:`normal<class_Pl
 | *Default* | ``Vector3( 0, 0, 0 )`` |
 +-----------+------------------------+
 
-The normal of the plane. "Over" or "Above" the plane is considered the side of the plane towards where the normal is pointing.
+The normal of the plane, which must be normalized.
+
+In the scalar equation of the plane ``ax + by + cz = d``, this is the vector ``(a, b, c)``, where ``d`` is the :ref:`d<class_Plane_property_d>` property.
 
 ----
 
@@ -119,7 +123,7 @@ The normal of the plane. "Over" or "Above" the plane is considered the side of t
 | *Default* | ``0.0`` |
 +-----------+---------+
 
-The :ref:`normal<class_Plane_property_normal>`'s X component.
+The X component of the plane's :ref:`normal<class_Plane_property_normal>` vector.
 
 ----
 
@@ -131,7 +135,7 @@ The :ref:`normal<class_Plane_property_normal>`'s X component.
 | *Default* | ``0.0`` |
 +-----------+---------+
 
-The :ref:`normal<class_Plane_property_normal>`'s Y component.
+The Y component of the plane's :ref:`normal<class_Plane_property_normal>` vector.
 
 ----
 
@@ -143,7 +147,7 @@ The :ref:`normal<class_Plane_property_normal>`'s Y component.
 | *Default* | ``0.0`` |
 +-----------+---------+
 
-The :ref:`normal<class_Plane_property_normal>`'s Z component.
+The Z component of the plane's :ref:`normal<class_Plane_property_normal>` vector.
 
 Method Descriptions
 -------------------
@@ -188,7 +192,9 @@ Returns the shortest distance from the plane to the position ``point``.
 
 - :ref:`Vector3<class_Vector3>` **get_any_point** **(** **)**
 
-Returns a point on the plane.
+Returns the center of the plane.
+
+This method is deprecated, please use :ref:`center<class_Plane_method_center>` instead.
 
 ----
 
@@ -196,7 +202,7 @@ Returns a point on the plane.
 
 - :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_Vector3>` point, :ref:`float<class_float>` epsilon=1e-05 **)**
 
-Returns ``true`` if ``point`` is inside the plane (by a very minimum ``epsilon`` threshold).
+Returns ``true`` if ``point`` is inside the plane. Comparison uses a custom minimum ``epsilon`` threshold.
 
 ----
 
@@ -252,5 +258,5 @@ Returns a copy of the plane, normalized.
 
 - :ref:`Vector3<class_Vector3>` **project** **(** :ref:`Vector3<class_Vector3>` point **)**
 
-Returns the orthogonal projection of point ``p`` into a point in the plane.
+Returns the orthogonal projection of ``point`` into a point in the plane.
 

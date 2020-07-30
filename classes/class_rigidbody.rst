@@ -104,6 +104,8 @@ Methods
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>` | :ref:`get_colliding_bodies<class_RigidBody_method_get_colliding_bodies>` **(** **)** const                                                               |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Basis<class_Basis>` | :ref:`get_inverse_inertia_tensor<class_RigidBody_method_get_inverse_inertia_tensor>` **(** **)**                                                         |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_axis_lock<class_RigidBody_method_set_axis_lock>` **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis, :ref:`bool<class_bool>` lock **)**   |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_axis_velocity<class_RigidBody_method_set_axis_velocity>` **(** :ref:`Vector3<class_Vector3>` axis_velocity **)**                               |
@@ -116,7 +118,7 @@ Signals
 
 - **body_entered** **(** :ref:`Node<class_Node>` body **)**
 
-Emitted when a body enters into contact with this one. Contact monitor and contacts reported must be enabled for this to work.
+Emitted when a body enters into contact with this one. Requires :ref:`contact_monitor<class_RigidBody_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody_property_contacts_reported>` to be set high enough to detect all the collisions.
 
 ----
 
@@ -124,7 +126,7 @@ Emitted when a body enters into contact with this one. Contact monitor and conta
 
 - **body_exited** **(** :ref:`Node<class_Node>` body **)**
 
-Emitted when a body shape exits contact with this one. Contact monitor and contacts reported must be enabled for this to work.
+Emitted when a body shape exits contact with this one. Requires :ref:`contact_monitor<class_RigidBody_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody_property_contacts_reported>` to be set high enough to detect all the collisions.
 
 ----
 
@@ -132,7 +134,7 @@ Emitted when a body shape exits contact with this one. Contact monitor and conta
 
 - **body_shape_entered** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
 
-Emitted when a body enters into contact with this one. Contact monitor and contacts reported must be enabled for this to work.
+Emitted when a body enters into contact with this one. Requires :ref:`contact_monitor<class_RigidBody_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody_property_contacts_reported>` to be set high enough to detect all the collisions.
 
 This signal not only receives the body that collided with this one, but also its :ref:`RID<class_RID>` (``body_id``), the shape index from the colliding body (``body_shape``), and the shape index from this body (``local_shape``) the other body collided with.
 
@@ -142,7 +144,7 @@ This signal not only receives the body that collided with this one, but also its
 
 - **body_shape_exited** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
 
-Emitted when a body shape exits contact with this one. Contact monitor and contacts reported must be enabled for this to work.
+Emitted when a body shape exits contact with this one. Requires :ref:`contact_monitor<class_RigidBody_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody_property_contacts_reported>` to be set high enough to detect all the collisions.
 
 This signal not only receives the body that stopped colliding with this one, but also its :ref:`RID<class_RID>` (``body_id``), the shape index from the colliding body (``body_shape``), and the shape index from this body (``local_shape``) the other body stopped colliding with.
 
@@ -354,7 +356,7 @@ If ``true``, the body can enter sleep mode when there is no movement. See :ref:`
 | *Getter*  | is_contact_monitor_enabled() |
 +-----------+------------------------------+
 
-If ``true``, the RigidBody will emit signals when it collides with another RigidBody.
+If ``true``, the RigidBody will emit signals when it collides with another RigidBody. See also :ref:`contacts_reported<class_RigidBody_property_contacts_reported>`.
 
 ----
 
@@ -370,7 +372,9 @@ If ``true``, the RigidBody will emit signals when it collides with another Rigid
 | *Getter*  | get_max_contacts_reported()      |
 +-----------+----------------------------------+
 
-The maximum contacts to report. Bodies can keep a log of the contacts with other bodies, this is enabled by setting the maximum amount of contacts reported to a number greater than 0.
+The maximum number of contacts that will be recorded. Requires :ref:`contact_monitor<class_RigidBody_property_contact_monitor>` to be set to ``true``.
+
+**Note:** The number of contacts is different from the number of collisions. Collisions between parallel edges will result in two contacts (one at each end), and collisions between parallel faces will result in four contacts (one at each corner).
 
 ----
 
@@ -627,9 +631,17 @@ Returns ``true`` if the specified linear or rotational axis is locked.
 
 - :ref:`Array<class_Array>` **get_colliding_bodies** **(** **)** const
 
-Returns a list of the bodies colliding with this one. By default, number of max contacts reported is at 0, see the :ref:`contacts_reported<class_RigidBody_property_contacts_reported>` property to increase it.
+Returns a list of the bodies colliding with this one. Requires :ref:`contact_monitor<class_RigidBody_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody_property_contacts_reported>` to be set high enough to detect all the collisions.
 
 **Note:** The result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
+
+----
+
+.. _class_RigidBody_method_get_inverse_inertia_tensor:
+
+- :ref:`Basis<class_Basis>` **get_inverse_inertia_tensor** **(** **)**
+
+Returns the inverse inertia tensor basis. This is used to calculate the angular acceleration resulting from a torque applied to the RigidBody.
 
 ----
 

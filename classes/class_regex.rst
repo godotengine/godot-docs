@@ -27,7 +27,7 @@ To begin, the RegEx object needs to be compiled with the search pattern using :r
 
 The search pattern must be escaped first for GDScript before it is escaped for the expression. For example, ``compile("\\d+")`` would be read by RegEx as ``\d+``. Similarly, ``compile("\"(?:\\\\.|[^\"])*\"")`` would be read as ``"(?:\\.|[^"])*"``.
 
-Using :ref:`search<class_RegEx_method_search>` you can find the pattern within the given text. If a pattern is found, :ref:`RegExMatch<class_RegExMatch>` is returned and you can retrieve details of the results using functions such as :ref:`RegExMatch.get_string<class_RegExMatch_method_get_string>` and :ref:`RegExMatch.get_start<class_RegExMatch_method_get_start>`.
+Using :ref:`search<class_RegEx_method_search>`, you can find the pattern within the given text. If a pattern is found, :ref:`RegExMatch<class_RegExMatch>` is returned and you can retrieve details of the results using methods such as :ref:`RegExMatch.get_string<class_RegExMatch_method_get_string>` and :ref:`RegExMatch.get_start<class_RegExMatch_method_get_start>`.
 
 ::
 
@@ -37,7 +37,7 @@ Using :ref:`search<class_RegEx_method_search>` you can find the pattern within t
     if result:
         print(result.get_string()) # Would print n-0123
 
-The results of capturing groups ``()`` can be retrieved by passing the group number to the various functions in :ref:`RegExMatch<class_RegExMatch>`. Group 0 is the default and will always refer to the entire pattern. In the above example, calling ``result.get_string(1)`` would give you ``0123``.
+The results of capturing groups ``()`` can be retrieved by passing the group number to the various methods in :ref:`RegExMatch<class_RegExMatch>`. Group 0 is the default and will always refer to the entire pattern. In the above example, calling ``result.get_string(1)`` would give you ``0123``.
 
 This version of RegEx also supports named capturing groups, and the names can be used to retrieve the results. If two or more groups have the same name, the name would only refer to the first one with a match.
 
@@ -56,6 +56,17 @@ If you need to process multiple results, :ref:`search_all<class_RegEx_method_sea
     for result in regex.search_all("d01, d03, d0c, x3f and x42"):
         print(result.get_string("digit"))
     # Would print 01 03 0 3f 42
+
+**Example of splitting a string using a RegEx:**
+
+::
+
+    var regex = RegEx.new()
+    regex.compile("\\S+") # Negated whitespace character class.
+    var results = []
+    for match in regex.search_all("One  Two \n\tThree"):
+        results.push_back(match.get_string())
+    # The `results` array now contains "One", "Two", "Three".
 
 **Note:** Godot's regex implementation is based on the `PCRE2 <https://www.pcre.org/>`_ library. You can view the full pattern reference `here <https://www.pcre.org/current/doc/html/pcre2pattern.html>`_.
 

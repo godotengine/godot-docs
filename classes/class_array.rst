@@ -273,10 +273,10 @@ Returns ``true`` if the array contains the given value.
 
 ::
 
-    ["inside", 7].has("inside") == true
-    ["inside", 7].has("outside") == false
-    ["inside", 7].has(7) == true
-    ["inside", 7].has("7") == false
+    ["inside", 7].has("inside") # True
+    ["inside", 7].has("outside") # False
+    ["inside", 7].has(7) # True
+    ["inside", 7].has("7") # False
 
 **Note:** This is equivalent to using the ``in`` operator as follows:
 
