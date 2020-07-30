@@ -2,7 +2,7 @@ Optimization
 =============
 
 Introduction
-~~~~~~~~~~~~
+------------
 
 Godot follows a balanced performance philosophy. In the performance world, there
 are always trade-offs, which consist of trading speed for usability and
@@ -37,39 +37,49 @@ With this clear, the aim of this tutorial section is to explain how to get the
 maximum performance out of Godot. While the tutorials can be read in any order,
 it is a good idea to start from :ref:`doc_general_optimization`.
 
+Common
+------
+
 .. toctree::
    :maxdepth: 1
-   :caption: Common
    :name: toc-learn-features-general-optimization
 
    general_optimization
    using_servers
 
+CPU
+---
+
 .. toctree::
    :maxdepth: 1
-   :caption: CPU
    :name: toc-learn-features-cpu-optimization
 
    cpu_optimization
 
+GPU
+---
+
 .. toctree::
    :maxdepth: 1
-   :caption: GPU
    :name: toc-learn-features-gpu-optimization
 
    gpu_optimization
    using_multimesh
 
+2D
+--
+
 .. toctree::
    :maxdepth: 1
-   :caption: 2D
    :name: toc-learn-features-2d-optimization
 
    batching
 
+3D
+--
+
 .. toctree::
    :maxdepth: 1
-   :caption: 3D
    :name: toc-learn-features-3d-optimization
 
    optimizing_3d_performance

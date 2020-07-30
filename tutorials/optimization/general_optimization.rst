@@ -45,7 +45,7 @@ reality, there are several different kinds of performance problem:
 
 Each of these are annoying to the user, but in different ways.
 
-Measuring Performance
+Measuring performance
 =====================
 
 Probably the most important tool for optimization is the ability to measure
