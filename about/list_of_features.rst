@@ -146,7 +146,7 @@ Editor
 - *GLES3:* Proximity fade (soft particles).
 - Distance fade which can use alpha blending or dithering to avoid going through
   the transparent pipeline.
-   - Dithering can be determined on a per-pixel or per-object basis.
+- Dithering can be determined on a per-pixel or per-object basis.
 
 **Real-time lighting:**
 

@@ -170,7 +170,7 @@ changed:
             // Move towards the target and stop when close.
             if (Position.DistanceTo(_target) > 10)
             {
-                velocity = _target - Position
+                velocity = _target - Position;
             }
 
             // Remove keyboard controls.

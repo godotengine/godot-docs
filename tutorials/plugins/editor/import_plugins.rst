@@ -51,11 +51,14 @@ when needed:
     tool
     extends EditorPlugin
 
+
     var import_plugin
+
 
     func _enter_tree():
         import_plugin = preload("import_plugin.gd").new()
         add_import_plugin(import_plugin)
+
 
     func _exit_tree():
         remove_import_plugin(import_plugin)
@@ -89,6 +92,7 @@ Let's begin to code our plugin, one method at time:
     # import_plugin.gd
     tool
     extends EditorImportPlugin
+
 
     func get_importer_name():
         return "demos.sillymaterial"
@@ -178,7 +182,9 @@ good practice to use an enum so you can refer to them using names.
     tool
     extends EditorImportPlugin
 
+
     enum Presets { DEFAULT }
+
 
     ...
 

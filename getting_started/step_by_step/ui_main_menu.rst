@@ -120,6 +120,16 @@ center the illustration with a ``CenterContainer``.
 Prepare the Main Menu scene
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. note::
+
+    This tutorial is based on a window size of 1366×768. To change the project's
+    base window size, open **Project > Project Settings** at the top of the
+    editor then change **Display > Window > Size > Width** to ``1366`` and
+    **Display > Window > Size > Height** to ``768``.
+
+    If you forget to change the window size, anchors and containers may not
+    behave as expected.
+
 Let's create the main menu. We'll build it in a single scene. To create
 an empty scene, click on **Scene > New Scene**.
 

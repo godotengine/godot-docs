@@ -58,14 +58,14 @@ shader resource to it. You can access your rendered ``Viewport`` with the built-
 
     .. code-block:: glsl
 
-      // Inside the Shader
+      // Inside the Shader.
       uniform sampler2D ViewportTexture;
 
     And you can pass the texture into the shader from GDScript like so:
 
     ::
 
-      # In GDScript
+      # In GDScript.
       func _ready():
         $Sprite.material.set_shader_param("ViewportTexture", $Viewport.get_texture())
 
@@ -133,7 +133,7 @@ does not matter:
 
   shader_type canvas_item;
 
-  //Blurs the screen in the X-direction.
+  // Blurs the screen in the X-direction.
   void fragment() {
       vec3 col = texture(TEXTURE, SCREEN_UV).xyz * 0.16;
       col += texture(TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.15;
@@ -151,7 +151,7 @@ does not matter:
 
   shader_type canvas_item;
 
-  //Blurs the screen in the Y-direction.
+  // Blurs the screen in the Y-direction.
   void fragment() {
       vec3 col = texture(TEXTURE, SCREEN_UV).xyz * 0.16;
       col += texture(TEXTURE, SCREEN_UV + vec2(0.0, SCREEN_PIXEL_SIZE.y)).xyz * 0.15;

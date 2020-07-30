@@ -63,6 +63,12 @@ library a better place for all users.
   if other people wish to contribute to your asset. See: the
   :ref:`doc_gdscript_styleguide` or the :ref:`doc_c_sharp_styleguide`.
 
+* If you have screenshots in your repo, place them in their own subfolder
+  and add a **.gdignore** file in the same folder (note: **gd**, not **git**).
+  This prevents Godot from importing your screenshots.
+  On Windows, open a command prompt in the project folder and run
+  ``type nul > .gdignore`` to create a file whose name starts with a period.
+
 * If your asset is a library for working with other files,
   consider including example files in the asset.
 

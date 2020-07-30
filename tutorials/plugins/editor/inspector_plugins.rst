@@ -20,15 +20,18 @@ getting a ``plugin.cfg`` file created, and start with our
 .. tabs::
   .. code-tab:: gdscript GDScript
     # MyEditorPlugin.gd
+    tool
+    extends EditorPlugin
 
-    tool extends EditorPlugin
 
-    var plugin: EditorInspectorPlugin
+    var plugin
+
 
     func _enter_tree():
         # EditorInspectorPlugin is a resource, so we use `new()` instead of `instance()`.
         plugin = preload("res://addons/MyPlugin/MyInspectorPlugin.gd").new()
         add_inspector_plugin(plugin)
+
 
     func _exit_tree():
         remove_inspector_plugin(plugin)
@@ -53,8 +56,8 @@ overriding or changing existing property editors.
  .. code-tab:: gdscript GDScript
 
     # MyInspectorPlugin.gd
-
     extends EditorInspectorPlugin
+
 
     func can_handle(object):
         # Here you can specify which object types (classes) should be handled by
@@ -63,6 +66,7 @@ overriding or changing existing property editors.
         # `return object is MyPlayer`
         # In this example we'll support all objects, so:
         return true
+
 
     func parse_property(object, type, path, hint, hint_text, usage):
         # We will handle properties of type integer.
@@ -91,8 +95,10 @@ the inspector.
     extends EditorProperty
     class_name MyIntEditor
 
+
     var updating = false
     var spin = EditorSpinSlider.new()
+
 
     func _init():
        # We'll add an EditorSpinSlider control, which is the same that the
@@ -108,10 +114,12 @@ the inspector.
        spin.set_max(1000)
        spin.connect("value_changed", self, "_spin_changed")
 
+
     func _spin_changed(value):
         if (updating):
             return
         emit_changed(get_edited_property(), value)
+
 
     func update_property():
         var new_value = get_edited_object()[get_edited_property()]

@@ -125,7 +125,7 @@ Examples
     export(Resource) var resource
     # In the Inspector, you can then drag and drop a resource file
     # from the FileSystem dock into the variable slot.
-    
+
     # Opening the inspector dropdown may result in an
     # extremely long list of possible classes to create, however.
     # Therefore, if you specify an extension of Resource such as:
@@ -141,22 +141,16 @@ Exporting bit flags
 -------------------
 
 Integers used as bit flags can store multiple ``true``/``false`` (boolean)
-values in one property. By using the export hint ``int, FLAGS``, they
+values in one property. By using the export hint ``int, FLAGS, ...``, they
 can be set from the editor::
-
-    # Individually edit the bits of an integer.
-    export(int, FLAGS) var spell_elements = ELEMENT_WIND | ELEMENT_WATER
-
-Restricting the flags to a certain number of named flags is also
-possible. The syntax is similar to the enumeration syntax::
 
     # Set any of the given flags from the editor.
     export(int, FLAGS, "Fire", "Water", "Earth", "Wind") var spell_elements = 0
 
-In this example, ``Fire`` has value 1, ``Water`` has value 2, ``Earth``
-has value 4 and ``Wind`` corresponds to value 8. Usually, constants
-should be defined accordingly (e.g. ``const ELEMENT_WIND = 8`` and so
-on).
+You must provide a string description for each flag. In this example, ``Fire``
+has value 1, ``Water`` has value 2, ``Earth`` has value 4 and ``Wind``
+corresponds to value 8. Usually, constants should be defined accordingly (e.g.
+``const ELEMENT_WIND = 8`` and so on).
 
 Export hints are also provided for the physics and render layers defined in the project settings::
 
@@ -165,17 +159,13 @@ Export hints are also provided for the physics and render layers defined in the 
     export(int, LAYERS_3D_PHYSICS) var layers_3d_physics
     export(int, LAYERS_3D_RENDER) var layers_3d_render
 
-Using bit flags requires some understanding of bitwise operations. If in
-doubt, boolean variables should be exported instead.
+Using bit flags requires some understanding of bitwise operations.
+If in doubt, use boolean variables instead.
 
 Exporting arrays
 ----------------
 
-Exporting arrays works, but with an important caveat: while regular
-arrays are created local to every class instance, exported arrays are *shared*
-between all instances. This means that editing them in one instance will
-cause them to change in all other instances. Exported arrays can have
-initializers, but they must be constant expressions.
+Exported arrays can have initializers, but they must be constant expressions.
 
 If the exported array specifies a type which inherits from Resource, the array
 values can be set in the inspector by dragging and dropping multiple files
@@ -183,7 +173,6 @@ from the FileSystem dock at once.
 
 ::
 
-    # Exported array, shared between all instances.
     # Default value must be a constant expression.
 
     export var a = [1, 2, 3]
@@ -210,7 +199,6 @@ from the FileSystem dock at once.
     export var vector3s = PoolVector3Array()
     export var strings = PoolStringArray()
 
-    # Regular array, created local for every instance.
     # Default value can include run-time values, but can't
     # be exported.
 

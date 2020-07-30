@@ -354,8 +354,35 @@ PoolRealArray store 32-bit single-precision "float" values.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A sequence of characters in `Unicode format <https://en.wikipedia.org/wiki/Unicode>`_.
-Strings can contain
-`standard C escape sequences <https://en.wikipedia.org/wiki/Escape_sequences_in_C>`_.
+Strings can contain the following escape sequences:
+
++---------------------+---------------------------------+
+| **Escape sequence** | **Expands to**                  |
++---------------------+---------------------------------+
+| ``\n``              | Newline (line feed)             |
++---------------------+---------------------------------+
+| ``\t``              | Horizontal tab character        |
++---------------------+---------------------------------+
+| ``\r``              | Carriage return                 |
++---------------------+---------------------------------+
+| ``\a``              | Alert (beep/bell)               |
++---------------------+---------------------------------+
+| ``\b``              | Backspace                       |
++---------------------+---------------------------------+
+| ``\f``              | Formfeed page break             |
++---------------------+---------------------------------+
+| ``\v``              | Vertical tab character          |
++---------------------+---------------------------------+
+| ``\"``              | Double quote                    |
++---------------------+---------------------------------+
+| ``\'``              | Single quote                    |
++---------------------+---------------------------------+
+| ``\\``              | Backslash                       |
++---------------------+---------------------------------+
+| ``\uXXXX``          | Unicode codepoint ``XXXX``      |
+|                     | (hexadecimal, case-insensitive) |
++---------------------+---------------------------------+
+
 GDScript also supports :ref:`doc_gdscript_printf`.
 
 Vector built-in types

@@ -331,7 +331,7 @@ Also, remember that nodes are referenced by name, not by type.
 
 .. note::
 
-    The right-hand panel of the connect dialogue is for binding specific
+    The 'advanced' panel of the connect dialogue is for binding specific
     values to the connected function's parameters. You can add and remove
     values of different types.
 

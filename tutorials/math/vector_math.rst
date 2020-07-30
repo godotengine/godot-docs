@@ -257,15 +257,11 @@ direction, a scalar value has only magnitude.
 
 The formula for dot product takes two common forms:
 
-.. math::
-
-    A \cdot B = \left \| A \right \|\left \| B \right \|\cos \Theta
+.. image:: img/vector_dot1.png
 
 and
 
-.. math::
-
-    A \cdot B = A_{x}B_{x} + A_{y}B_{y}
+.. image:: img/vector_dot2.png
 
 However, in most cases it is easiest to use the built-in method. Note that
 the order of the two vectors does not matter:
@@ -332,11 +328,9 @@ However, the result of the cross product is a vector with a direction
 that is perpendicular to both. Its magnitude depends on their relative angle.
 If two vectors are parallel, the result of their cross product will be a null vector.
 
-.. math::
+.. image:: img/vector_cross1.png
 
-    \left \|a \times b  \right \| = \left \| a \right \|\left \| b \right \|\ |\sin(a,b)|
-
-.. image:: img/tutovec16.png
+.. image:: img/vector_cross2.png
 
 The cross product is calculated like this:
 

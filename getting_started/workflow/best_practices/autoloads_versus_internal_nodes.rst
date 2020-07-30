@@ -12,7 +12,7 @@ In this guide, you will learn when to use the Autoload feature, and techniques
 you can use to avoid it.
 
 The cutting audio issue
-=======================
+-----------------------
 
 Other engines can encourage the use of creating manager classes, singletons that
 organize a lot of functionality into a globally accessible object. Godot offers
@@ -61,7 +61,7 @@ needs within itself and all these problems go away:
 3. Each scene allocates exactly the amount of resources it needs.
 
 Managing shared functionality or data
-=====================================
+-------------------------------------
 
 Another reason to use an Autoload can be that you want to reuse the same method
 or data across many scenes.
@@ -78,7 +78,7 @@ When it comes to data, you can either:
    the ``owner`` property to access the scene's root node.
 
 When you should use an Autoload
-===============================
+-------------------------------
 
 Auto-loaded nodes can simplify your code in some cases:
 

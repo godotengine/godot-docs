@@ -8,16 +8,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Lint and build documentation
+      - name: Install dependencies
         run: |
           # Install tools used by `_tools/format.sh`.
-          sudo apt-get update -qq
-          sudo apt-get install -qq dos2unix recode
-          # Append the `PATH` so we can run `codespell`.
-          export PATH="$HOME/.local/bin:$PATH"
-          pip3 install -r requirements.txt
-          pip3 install codespell
+          sudo apt-get -qq update
+          sudo apt-get -qq install dos2unix recode
+          sudo pip3 install -r requirements.txt
+          sudo pip3 install codespell
+
+      - name: Linter checks
+        run: |
           bash _tools/format.sh
           codespell -I _tools/codespell-ignore.txt {about,community,development,getting_started,tutorials}/**/*.rst
+
+      - name: Sphinx build
+        run: |
           # Use dummy builder to improve performance.
-          sphinx-build --color -b dummy -d _build/doctrees . _build/html
+          sphinx-build --color -b dummy -d _build/doctrees -W . _build/html

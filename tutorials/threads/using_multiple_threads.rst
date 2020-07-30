@@ -30,6 +30,7 @@ Creating a thread is very simple, just use the following code:
         # Third argument is optional userdata, it can be any variable.
         thread.start(self, "_thread_function", "Wafflecopter")
 
+
     # Run here and exit.
     # The argument is the userdata passed from start().
     # If no argument was passed, this one still needs to
@@ -76,6 +77,7 @@ Here is an example of using a Mutex:
     var mutex
     var thread
 
+
     # The thread will start here.
     func _ready():
         mutex = Mutex.new()
@@ -87,11 +89,13 @@ Here is an example of using a Mutex:
         counter += 1
         mutex.unlock()
 
+
     # Increment the value from the thread, too.
     func _thread_function(userdata):
         mutex.lock()
         counter += 1
         mutex.unlock()
+
 
     # Thread must be disposed (or "joined"), for portability.
     func _exit_tree():
@@ -120,6 +124,7 @@ ready to be processed:
     var thread
     var exit_thread = false
 
+
     # The thread will start here.
     func _ready():
         mutex = Mutex.new()
@@ -128,6 +133,7 @@ ready to be processed:
 
         thread = Thread.new()
         thread.start(self, "_thread_function")
+
 
     func _thread_function(userdata):
         while true:
@@ -144,8 +150,10 @@ ready to be processed:
             counter += 1 # Increment counter, protect with Mutex.
             mutex.unlock()
 
+
     func increment_counter():
         semaphore.post() # Make the thread process.
+
 
     func get_counter():
         mutex.lock()
@@ -153,6 +161,7 @@ ready to be processed:
         var counter_value = counter
         mutex.unlock()
         return counter_value
+
 
     # Thread must be disposed (or "joined"), for portability.
     func _exit_tree():

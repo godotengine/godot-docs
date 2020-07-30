@@ -97,7 +97,7 @@ different from the one specified in size, by calling:
 
 ::
 
-    viewport.set_size_override(true, Vector2(width, height)) # Custom size for 2D
+    viewport.set_size_override(true, Vector2(width, height)) # Custom size for 2D.
     viewport.set_size_override_stretch(true) # Enable stretch for custom size.
 
 The root :ref:`Viewport <class_Viewport>` uses this for the stretch options in the project
@@ -155,7 +155,7 @@ it using (for example):
 
 ::
 
-   # Wait until the frame has finished before getting the texture
+   # Wait until the frame has finished before getting the texture.
    yield(VisualServer, "frame_post_draw")
    # You can get the image after this.
 

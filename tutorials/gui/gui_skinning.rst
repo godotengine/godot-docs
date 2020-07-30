@@ -43,6 +43,14 @@ hierarchy, towards the root. If nothing was found, the default theme is
 used. This system allows for flexible overriding of themes in complex
 user interfaces.
 
+.. attention::
+   
+   Don't use the custom theme option in the Project Settings, as there
+   are known bugs with theme propagation. Instead, apply your theme to the
+   root Control node's Theme property. It will propagate to instanced scenes
+   automatically. To get correct theming in the editor for instanced scenes,
+   you can apply the theme resource to the instanced scene's root node as well.
+
 Theme options
 -------------
 
@@ -70,23 +78,23 @@ An example usage:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var t = Theme.new()
-    t.set_color("font_color", "Label", Color(1.0, 1.0, 1.0))
+    var theme = Theme.new()
+    theme.set_color("font_color", "Label", Color.red)
 
-    var l = Label.new()
-    l.set_theme(t)
+    var label = Label.new()
+    label.theme = theme
 
  .. code-tab:: csharp
 
-    var t = new Theme();
-    t.SetColor("fontColor", "Label", new Color(1.0f, 1.0f, 1.0f));
+    var theme = new Theme();
+    theme.SetColor("fontColor", "Label", new Color(1.0f, 0.0f, 0.0f));
 
-    var l = new Label();
-    l.SetTheme(t);
+    var label = new Label();
+    label.Theme = theme;
 
 In the example above, a new theme is created. The "font_color" option
-is changed and then applied to a label. As a result, the label (and all
-children and grandchildren labels) will use that color.
+is changed and then applied to a label. Therefore, the label's text (and all
+children and grandchildren labels) will be red.
 
 It is possible to override those options without using the theme
 directly, and only for a specific control, by using the override API in
@@ -95,15 +103,15 @@ directly, and only for a specific control, by using the override API in
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var l = Label.new()
-    l.add_color_override("font_color", Color(1.0, 1.0, 1.0))
+    var label = Label.new()
+    label.add_color_override("font_color", Color.red)
 
  .. code-tab:: csharp
 
-    var l = new Label();
-    l.AddColorOverride("fontColor", new Color(1.0f, 1.0f, 1.0f));
+    var label = new Label();
+    label.AddColorOverride("fontColor", new Color(1.0f, 0.0f, 0.0f));
 
-In the inline help of Godot (in the script tab) you can check which theme options
+In the inline help of Godot (in the Script tab), you can check which theme options
 are overridable, or check the :ref:`Control <class_Control>` class reference.
 
 Customizing a control
@@ -152,9 +160,9 @@ editor, where they can be edited:
 
 From ``Styles``, open the "Normal" drop-down menu next to where it probably
 says "null" and create a "New StyleBoxTexture", then
-edit it. A texture stylebox basically contains a texture and the size of
-the margins that will not stretch when the texture is stretched. This is
-called "3x3" stretching:
+edit it. A texture stylebox contains a texture and the size of the margins
+that will not stretch when the texture is stretched.
+This is called nine-patch or "3x3" stretching:
 
 .. image:: img/sb1.png
 

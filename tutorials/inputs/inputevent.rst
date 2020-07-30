@@ -44,7 +44,7 @@ You can set up your InputMap under **Project > Project Settings > Input Map** an
 
     func _process(delta):
         if Input.is_action_pressed("ui_right"):
-            # Move right
+            # Move right.
 
  .. code-tab:: csharp
 
@@ -52,7 +52,7 @@ You can set up your InputMap under **Project > Project Settings > Input Map** an
     {
         if (Input.IsActionPressed("ui_right"))
         {
-            // Move right
+            // Move right.
         }
     }
 
@@ -184,19 +184,19 @@ The Input singleton has a method for this:
  .. code-tab:: gdscript GDScript
 
     var ev = InputEventAction.new()
-    # set as move_left, pressed
+    # Set as move_left, pressed.
     ev.action = "move_left"
     ev.pressed = true
-    # feedback
+    # Feedback.
     Input.parse_input_event(ev)
 
  .. code-tab:: csharp
 
     var ev = new InputEventAction();
-    // set as move_left, pressed
+    // Set as move_left, pressed.
     ev.SetAction("move_left");
     ev.SetPressed(true);
-    // feedback
+    // Feedback.
     Input.ParseInputEvent(ev);
 
 InputMap

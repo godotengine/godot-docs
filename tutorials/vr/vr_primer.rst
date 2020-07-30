@@ -120,7 +120,8 @@ need a plugin for the specific SDK you want to use. There are several official p
 in the `GodotVR Repository <https://github.com/GodotVR>`_.
 
 * `Godot Oculus Mobile <https://github.com/GodotVR/godot_oculus_mobile>`_ provides support for
-  the Oculus Go and Oculus Quest. The Quest will require additional setup documented `here <doc_developing_for_oculus_quest>`_.
+  the Oculus Go and Oculus Quest. The Quest will require additional setup documented in
+  :ref:`doc_developing_for_oculus_quest`.
 * `Godot OpenVR <https://github.com/GodotVR/godot_openvr>`_ (not to be confused with OpenXR)
   supports the OpenVR SDK used by Steam.
 * `Godot Oculus <https://github.com/GodotVR/godot_oculus>`_ supports the Oculus SDK
@@ -137,7 +138,7 @@ In addition to the plugins, there are several official demos.
 
 * `Godot Oculus Demo <https://github.com/GodotVR/godot-oculus-demo>`_.
 * `Godot OpenVR FPS <https://github.com/GodotVR/godot_openvr_fps>`_ (the tutorial for this project
-  is `here <doc_vr_starter_tutorial_part_one>`_)
+  is :ref:`doc_vr_starter_tutorial_part_one`).
 * `Godot XR tools <https://github.com/GodotVR/godot-xr-tools>`_, which shows implementations for VR
   features such as movement and picking up objects. 
 
