@@ -291,7 +291,8 @@ every peer and RPC will work great! Here is an example:
             get_node("/root/world/players").add_child(player)
 
         # Tell server (remember, server is always ID=1) that this peer is done pre-configuring.
-        rpc_id(1, "done_preconfiguring", selfPeerID)
+        # The server can call get_tree().get_rpc_sender_id() to find out who said they were done.
+        rpc_id(1, "done_preconfiguring")
 
 
 .. note:: Depending on when you execute pre_configure_game(), you may need to change any calls to ``add_child()``
@@ -314,7 +315,8 @@ When the server gets the OK from all the peers, it can tell them to start, as fo
 ::
 
     var players_done = []
-    remote func done_preconfiguring(who):
+    remote func done_preconfiguring():
+        var who = get_tree().get_rpc_sender_id()
         # Here are some checks you can do, for example
         assert(get_tree().is_network_server())
         assert(who in player_info) # Exists
@@ -326,8 +328,10 @@ When the server gets the OK from all the peers, it can tell them to start, as fo
             rpc("post_configure_game")
 
     remote func post_configure_game():
-        get_tree().set_pause(false)
-        # Game starts now!
+        # Only the server is allowed to tell a client to unpause
+        if 1 == get_tree().get_rpc_sender_id():
+            get_tree().set_pause(false)
+            # Game starts now!
 
 Synchronizing the game
 ----------------------
@@ -403,19 +407,43 @@ Example player code:
             return # Already stunned
 
         rpc("stun")
-        stun() # Stun myself, could have used remotesync keyword too.
+        
+        # Stun this player instance for myself as well; could instead have used
+        # the remotesync keyword above (in place of puppet) to achieve this.
+        stun()
 
-In the above example, a bomb explodes somewhere (likely managed by whoever is master). The bomb knows the bodies in the area, so it checks them
-and checks that they contain an ``exploded`` function.
+In the above example, a bomb explodes somewhere (likely managed by whoever is the master of this bomb-node, e.g. the host).
+The bomb knows the bodies (player nodes) in the area, so it checks that they contain an ``exploded`` method before calling it.
 
-If they do, the bomb calls ``exploded`` on it. However, the ``exploded`` method in the player has a ``master`` keyword. This means that only the player
-who is master for that instance will actually get the function.
+Recall that each peer has a complete set of instances of player nodes, one instance for each peer (including itself and the host).
+Each peer has set itself as the master of the instance corresponding to itself, and it has set a different peer as the master for
+each of the other instances.
 
-This instance, then, calls the ``stun`` method in the same instances of that same player (but in different peers), and only those which are set as puppet,
-making the player look stunned in all the peers (as well as the current, master one).
+Now, going back to the call to the ``exploded`` method, the bomb on the host has called it remotely on all bodies in the area
+that have the method. However, this method is in a player node and has a ``master`` keyword.
+
+The ``master`` keyword on the ``exploded`` method in the player node means two things for how this call is made.
+Firstly, from the perspective of the calling peer (the host), the calling peer will only attempt to remotely call the
+method on the peer that it has set as the network master of the player node in question.
+Secondly, from the perspective of the peer the host is sending the call to, the peer will only accept the call if it
+set itself as the network master of the player node with the method being called (which has the ``master`` keyword).
+This works well as long as all peers agree on who is the master of what.
+
+The above setup means that only the peer who owns the affected body will be responsible for telling all the other peers that its body
+was stunned, after being remotely instructed to do so by the host's bomb.
+The owning peer therefore (still in the ``exploded`` method) tells all the other peers that its player node was stunned.
+The peer does this by remotely calling the ``stun`` method on all instances of that player node (on the other peers).
+Because the ``stun`` method has the ``puppet`` keyword, only peers who did not set themselves as the network master of the node will
+call it (in other words, those peers are set as puppets for that node by virtue of not being the network master of it).
+
+The result of this call to ``stun`` is to make the player look stunned on the screen of all the peers, including the current
+network master peer (due to the local call to ``stun`` after ``rpc("stun")``).
+
+The master of the bomb (the host) repeats the above steps for each of the bodies in the area, such that all the instances of
+any player in the bomb area get stunned on the screens of all the peers.
 
 Note that you could also send the ``stun()`` message only to a specific player by using ``rpc_id(<id>, "exploded", bomb_owner)``.
-This may not make much sense for an area-of-effect case like the bomb, but in other cases, like single target damage.
+This may not make much sense for an area-of-effect case like the bomb, but might in other cases, like single target damage.
 
 ::
 
@@ -434,3 +462,12 @@ a dedicated server with no GPU available. See
     server. You'll have to modify them so the server isn't considered to be a
     player. You'll also have to modify the game starting mechanism so that the
     first player who joins can start the game.
+
+.. note::
+
+    The bomberman example here is largely for illustrational purposes, and does not
+    do anything on the host-side to handle the case where a peer uses a custom client
+    to cheat by for example refusing to to stun itself. In the current implementation
+    such cheating is perfectly possible because each client is the network master of
+    its own player, and the network master of a player is the one which decides whether
+    to call the I-was-stunned method (``stun``) on all of the other peers and itself.
