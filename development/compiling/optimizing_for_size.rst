@@ -41,7 +41,7 @@ Disabling advanced GUI nodes
 ----------------------------
 
 Most small games don't require complex GUI controls such as Tree, ItemList,
-TextEditor or GraphEdit. They can be disabled using a build flag:
+TextEdit or GraphEdit. They can be disabled using a build flag:
 
 ::
 
