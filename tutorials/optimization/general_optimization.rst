@@ -52,7 +52,8 @@ Probably the most important tool for optimization is the ability to measure
 performance - to identify where bottlenecks are, and to measure the success of
 our attempts to speed them up.
 
-There are several methods of measuring performance, including :
+There are several methods of measuring performance, including:
+
 * Putting a start / stop timer around code of interest
 * Using the Godot profiler
 * Using external third party profilers
