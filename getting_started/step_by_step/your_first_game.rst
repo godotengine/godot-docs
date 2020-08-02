@@ -1139,6 +1139,7 @@ functions:
 
     func _on_StartButton_pressed():
         $StartButton.hide()
+        $Message.hide()
         emit_signal("start_game")
 
     func _on_MessageTimer_timeout():
