@@ -7,6 +7,8 @@ This tutorial will run you through Godot's interface. We're going to
 look at the **Project Manager, docks, workspaces** and everything you
 need to know to get started with the engine.
 
+You can `download Godot Engine here <https://godotengine.org/download/>`_.
+
 Project manager
 ---------------
 
