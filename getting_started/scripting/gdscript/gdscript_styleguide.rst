@@ -640,7 +640,7 @@ Start with the ``_init()`` callback method, that the engine will call upon
 creating the object in memory. Follow with the ``_ready()`` callback, that Godot
 calls when it adds a node to the scene tree.
 
-These function should come first because they show how the object is
+These functions should come first because they show how the object is
 initialized.
 
 Other built-in virtual callbacks, like ``_unhandled_input()`` and
