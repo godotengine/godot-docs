@@ -218,3 +218,4 @@ Removes a collision exception with the specified :ref:`RID<class_RID>`.
 Sets the specified bit index to the ``value``.
 
 **Note:** Bit indices range from 0-19.
+

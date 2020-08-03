@@ -284,3 +284,4 @@ Removes a collision exception so the ray does report collisions with the specifi
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Sets or clears individual bits on the collision mask. This makes selecting the areas scanned easier.
+

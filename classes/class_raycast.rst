@@ -290,3 +290,4 @@ Removes a collision exception so the ray does report collisions with the specifi
 Sets the bit index passed to the ``value`` passed.
 
 **Note:** Bit indexes range from 0-19.
+

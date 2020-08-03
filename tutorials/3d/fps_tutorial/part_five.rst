@@ -533,10 +533,12 @@ Then we check to see if we got a result back from the ray. If no object has coll
 
 If the ray collided with a :ref:`RigidBody <class_RigidBody>`, we set ``grabbed_object`` to the collider the ray collided with. We then set the mode on
 the :ref:`RigidBody <class_RigidBody>` we collided with to ``MODE_STATIC`` so it doesn't move in our hands.
+
 Finally, we set the grabbed :ref:`RigidBody <class_RigidBody>`'s collision layer and collision mask to ``0``.
 This will make the grabbed :ref:`RigidBody <class_RigidBody>` have no collision layer or mask, which means it will not be able to collide with anything as long as we are holding it.
 
-.. note:: See :ref:`physics_introduction_collision_layer_code_example` for more information on Godot collision masks.
+.. note:: See :ref:`doc_physics_introduction_collision_layer_code_example` for more information on Godot collision masks.
+
 ______
 
 If ``grabbed_object`` is not ``null``, then we need to throw the :ref:`RigidBody <class_RigidBody>` the player is holding.
