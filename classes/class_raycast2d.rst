@@ -143,6 +143,7 @@ If ``true``, collision with :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s will be
 +-----------+---------------------------+
 
 The ray's collision mask. Only objects in at least one collision layer enabled in the mask will be detected.
+See :ref:`physics_introduction_collision_layer_code_example` for details on how to set the collision mask.
 
 ----
 

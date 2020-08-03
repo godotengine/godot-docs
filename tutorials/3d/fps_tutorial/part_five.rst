@@ -521,7 +521,7 @@ If ``grabbed_object`` is ``null``, we want to see if we can pick up a :ref:`Rigi
 We first get the direct space state from the current :ref:`World <class_World>`. This is so we can cast a ray entirely from code, instead of having to
 use a :ref:`Raycast <class_Raycast>` node.
 
-.. note:: see :ref:`Ray-casting <doc_ray-casting>` for more information on raycasting in Godot.
+.. note:: See :ref:`Ray-casting <doc_ray-casting>` for more information on raycasting in Godot.
 
 Then we get the center of the screen by dividing the current :ref:`Viewport <class_Viewport>` size in half. We then get the ray's origin point and end point using
 ``project_ray_origin`` and ``project_ray_normal`` from the camera. If you want to know more about how these functions work, see :ref:`Ray-casting <doc_ray-casting>`.
@@ -533,10 +533,10 @@ Then we check to see if we got a result back from the ray. If no object has coll
 
 If the ray collided with a :ref:`RigidBody <class_RigidBody>`, we set ``grabbed_object`` to the collider the ray collided with. We then set the mode on
 the :ref:`RigidBody <class_RigidBody>` we collided with to ``MODE_STATIC`` so it doesn't move in our hands.
-
 Finally, we set the grabbed :ref:`RigidBody <class_RigidBody>`'s collision layer and collision mask to ``0``.
 This will make the grabbed :ref:`RigidBody <class_RigidBody>` have no collision layer or mask, which means it will not be able to collide with anything as long as we are holding it.
 
+.. note:: See :ref:`physics_introduction_collision_layer_code_example` for more information on Godot collision masks.
 ______
 
 If ``grabbed_object`` is not ``null``, then we need to throw the :ref:`RigidBody <class_RigidBody>` the player is holding.

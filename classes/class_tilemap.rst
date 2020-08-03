@@ -370,6 +370,7 @@ Friction value for static body collisions (see ``collision_use_kinematic``).
 +-----------+----------------------------+
 
 The collision layer(s) for all colliders in the TileMap.
+See :ref:`physics_introduction_collision_layer_code_example` for details on how to set the collision layer.
 
 ----
 
