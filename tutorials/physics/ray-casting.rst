@@ -221,7 +221,7 @@ member variable:
         }
     }
 
-See :ref:`physics_introduction_collision_layer_code_example` for details on how to set the collision mask.
+See :ref:`doc_physics_introduction_collision_layer_code_example` for details on how to set the collision mask.
 
 3D ray casting from screen
 --------------------------

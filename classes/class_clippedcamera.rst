@@ -117,7 +117,6 @@ If ``true``, the camera stops on contact with :ref:`PhysicsBody<class_PhysicsBod
 +-----------+---------------------------+
 
 The camera's collision mask. Only objects in at least one collision layer matching the mask will be detected.
-See :ref:`physics_introduction_collision_layer_code_example` for details on how to set the collision mask.
 
 ----
 
@@ -219,4 +218,3 @@ Removes a collision exception with the specified :ref:`RID<class_RID>`.
 Sets the specified bit index to the ``value``.
 
 **Note:** Bit indices range from 0-19.
-

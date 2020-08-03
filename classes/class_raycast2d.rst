@@ -143,7 +143,6 @@ If ``true``, collision with :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s will be
 +-----------+---------------------------+
 
 The ray's collision mask. Only objects in at least one collision layer enabled in the mask will be detected.
-See :ref:`physics_introduction_collision_layer_code_example` for details on how to set the collision mask.
 
 ----
 
@@ -285,4 +284,3 @@ Removes a collision exception so the ray does report collisions with the specifi
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Sets or clears individual bits on the collision mask. This makes selecting the areas scanned easier.
-

@@ -143,7 +143,6 @@ If ``true``, collision with :ref:`PhysicsBody<class_PhysicsBody>`\ s will be rep
 +-----------+---------------------------+
 
 The ray's collision mask. Only objects in at least one collision layer enabled in the mask will be detected.
-See :ref:`physics_introduction_collision_layer_code_example` for details on how to set the collision mask.
 
 ----
 
@@ -291,4 +290,3 @@ Removes a collision exception so the ray does report collisions with the specifi
 Sets the bit index passed to the ``value`` passed.
 
 **Note:** Bit indexes range from 0-19.
-
