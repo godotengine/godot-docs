@@ -537,7 +537,10 @@ the :ref:`RigidBody <class_RigidBody>` we collided with to ``MODE_STATIC`` so it
 Finally, we set the grabbed :ref:`RigidBody <class_RigidBody>`'s collision layer and collision mask to ``0``.
 This will make the grabbed :ref:`RigidBody <class_RigidBody>` have no collision layer or mask, which means it will not be able to collide with anything as long as we are holding it.
 
-.. note:: See :ref:`doc_physics_introduction_collision_layer_code_example` for more information on Godot collision masks.
+.. note::
+
+    See :ref:`Physics introduction <doc_physics_introduction_collision_layer_code_example>`
+    for more information on Godot collision masks.
 
 ______
 

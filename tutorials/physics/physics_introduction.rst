@@ -125,7 +125,8 @@ be assigned in Project Settings -> Layer Names.
 
 .. image:: img/physics_layer_names.png
 
-**GUI example:**
+GUI example
+^^^^^^^^^^^
 
 You have four node types in your game: Walls, Player, Enemy, and Coin. Both
 Player and Enemy should collide with Walls. The Player node should detect
@@ -140,7 +141,10 @@ interact with. For example, the Player's settings would look like this:
 .. image:: img/player_collision_layers.png
 .. image:: img/player_collision_mask.png
 
-**Code example:**
+.. _doc_physics_introduction_collision_layer_code_example:
+
+Code example
+^^^^^^^^^^^^
 
 In function calls, layers are specified as a bitmask. Where a function enables
 all layers by default, the layer mask will be given as ``0x7fffffff``. Your code
@@ -148,9 +152,7 @@ can use binary, hexadecimal, or decimal notation for layer masks, depending
 on your preference.
 
 The code equivalent of the above example where layers 1, 3 and 4 were enabled
-would be as follows:
-
-.. _doc_physics_introduction_collision_layer_code_example:
+would be as follows::
 
     # Example: Setting mask value for enabling layers 1, 3 and 4
 
