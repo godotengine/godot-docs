@@ -325,7 +325,7 @@ of characters for example). While you can create your own data types to
 describe your data, Godot has a set of built-in types as described 
 below for you to useful.
 
-Advanced note : Built-in types are stack-allocated. They are passed as values. 
+*Advanced note:* Built-in types are stack-allocated. They are passed as values. 
 This means a copy is created on each assignment or when passing them as 
 arguments to functions. The only exceptions are ``Arrays`` and 
 ``Dictionaries``, which are passed by reference so they are shared. (Pooled 
