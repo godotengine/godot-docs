@@ -576,8 +576,8 @@ Data
 Variables
 ~~~~~~~~~
 
-A variable is some data that is stored with an associated label. For example
-you could store a variable "fruit" which contained the contents "apple".
+A variable is some data that is stored with an associated label. For example,
+you could store a variable called ``fruit`` which contains the string ``"apple"``.
 Variables can exist as class members or local to functions. They are
 created with the ``var`` keyword and may, optionally, be assigned a
 value upon initialization.
@@ -1046,4 +1046,3 @@ There are 6 pattern types:
                 print("It's 1 - 3")
             "Sword", "Splash potion", "Fist":
                 print("Yep, you've taken damage")
-
