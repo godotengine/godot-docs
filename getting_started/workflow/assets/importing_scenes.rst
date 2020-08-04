@@ -52,7 +52,10 @@ text based format and the binary data in a separate binary file. This can be use
 changes in a text based format. The second is you need the texture files separate from the material file. If you don't need
 either of those glTF binary files are fine.
 
-.. note:: Blender does not export emissive textures with the glTF file. If your model uses one it must be brought in separately.
+.. note::
+
+    Blender does not export emissive textures with the glTF file. If your model
+    uses one, it must be brought in separately.
 
 Exporting DAE files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -352,79 +355,103 @@ Import hints
 
 Many times, when editing a scene, there are common tasks that need to be done after exporting:
 
-* Adding collision detection to objects
-* Setting objects as navigation meshes
-* Deleting nodes that are not used in the game engine (like specific lights used for modelling)
+- Adding collision detection to objects.
+- Setting objects as navigation meshes.
+- Deleting nodes that are not used in the game engine (like specific lights used for modelling).
 
-To simplify this workflow, Godot offers a few suffixes that can be added to the names of the
-objects in your 3D modelling software. When imported, Godot will detect them and perform
-actions automatically:
+To simplify this workflow, Godot offers several suffixes that can be added to
+the names of the objects in your 3D modelling software. When imported, Godot
+will detect suffixes in object names and will perform actions automatically.
+
+.. note::
+
+    All the suffixes described below are *case-sensitive*.
 
 Remove nodes (-noimp)
 ~~~~~~~~~~~~~~~~~~~~~
 
-Node names that have this suffix will be removed at import time, no
-matter what their type is. They will not appear in the imported scene.
+Objects that have the ``-noimp`` suffix will be removed at import-time no matter
+what their type is. They will not appear in the imported scene.
 
 Create collisions (-col, -convcol, -colonly, -convcolonly)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Option "-col" will work only for Mesh nodes. If it is detected, a child
-static collision node will be added, using the same geometry as the mesh.
+The option ``-col`` will work only for Mesh objects. If it is detected, a child
+static collision node will be added, using the same geometry as the mesh. This
+will create a triangle mesh collision shape, which is a slow, but accurate
+option for collision detection. This option is usually what you want for level
+geometry (but see also ``-colonly`` below).
 
-Option "-convcol" will create a :ref:`class_convexpolygonshape` instead of a :ref:`class_concavepolygonshape`.
+The option ``-convcol`` will create a :ref:`class_convexpolygonshape` instead of
+a :ref:`class_concavepolygonshape`. Unlike triangle meshes which can be concave,
+a convex shape can only accurately represent a shape that doesn't have any
+concave angles (a pyramid is convex, but a hollow box is concave). Due to this,
+convex collision shapes are generally not suited for level geometry. When
+representing simple enough meshes, convex collision shapes can result in better
+performance compared to a triangle collision shape. This option is ideal for
+simple or dynamic objects that require mostly-accurate collision detection.
 
-However, it is often the case that the visual geometry is too complex or
-too un-smooth for collisions, which ends up not working well.
+However, in both cases, the visual geometry may be too complex or not smooth
+enough for collisions. This can create physics glitches and slow down the engine
+unneccesarily.
 
-To solve this, the "-colonly" modifier exists, which will remove the mesh upon
-import and create a :ref:`class_staticbody` collision instead.
+To solve this, the ``-colonly`` modifier exists. It will remove the mesh upon
+importing and will create a :ref:`class_staticbody` collision instead.
 This helps the visual mesh and actual collision to be separated.
 
-Option "-convcolonly" works in a similar way but will create a :ref:`class_convexpolygonshape` instead.
+The option ``-convcolonly`` works in a similar way, but will create a :ref:`class_convexpolygonshape` instead.
 
-Option "-colonly" can also be used with Blender's empty objects.
+The option ``-colonly`` can also be used with Blender's empty objects.
 On import, it will create a :ref:`class_staticbody` with
 a collision node as a child. The collision node will have one of a number of predefined shapes,
 depending on Blender's empty draw type:
 
 .. image:: img/3dimp_BlenderEmptyDrawTypes.png
 
--  Single arrow will create a :ref:`class_rayshape`
--  Cube will create a :ref:`class_boxshape`
--  Image will create a :ref:`class_worldmarginshape`
--  Sphere (and the others not listed) will create a :ref:`class_sphereshape`
+-  Single arrow will create a :ref:`class_rayshape`.
+-  Cube will create a :ref:`class_boxshape`.
+-  Image will create a :ref:`class_worldmarginshape`.
+-  Sphere (and the others not listed) will create a :ref:`class_sphereshape`.
 
-For better visibility in Blender's editor, the user can set "X-Ray" option on collision
-empties and set some distinct color for them in User Preferences / Themes / 3D View / Empty.
+When possible, **try to use a few primitive collision shapes** instead of triangle
+mesh or convex shapes. Primitive shapes often have the best performance and
+reliability.
+
+.. note::
+
+    For better visibility in Blender's editor, you can set the "X-Ray" option
+    on collision empties and set some distinct color for them in Blender's
+    **User Preferences > Themes > 3D View > Empty**.
 
 Create navigation (-navmesh)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A mesh node with this suffix will be converted to a navigation mesh. Original Mesh node will be
-removed.
+A mesh node with the ``-navmesh`` suffix will be converted to a navigation mesh.
+The original Mesh object will be removed at import-time.
 
 Create a VehicleBody (-vehicle)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A mesh node with this suffix will be imported as a child to a :ref:`VehicleBody <class_VehicleBody>` node.
+A mesh node with the ``-vehicle`` suffix will be imported as a child to a
+:ref:`class_VehicleBody` node.
 
 Create a VehicleWheel (-wheel)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A mesh node with this suffix will be imported as a child to a :ref:`VehicleWheel <class_VehicleWheel>` node.
+A mesh node with the ``-wheel`` suffix will be imported as a child to a
+:ref:`class_VehicleWheel` node.
 
 Rigid Body (-rigid)
 ~~~~~~~~~~~~~~~~~~~
 
-Creates a rigid body from this mesh.
+A mesh node with the ``-rigid`` suffix will be imported as a :ref:`class_RigidBody`.
 
 Animation loop (-loop, -cycle)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Animation clips in the COLLADA document that start or end with the token "loop" or "cycle"
-will be imported as a Godot Animation with the loop flag set. This is case-sensitive and
-does not require a hyphen.
+Animation clips in the COLLADA document that start or end with the token ``loop`` or ``cycle``
+will be imported as a Godot Animation with the loop flag set.
+**Unlike the other suffixes described above, this does not require a hyphen.**
 
-In Blender, this requires using the NLA Editor and naming the Action with the "loop" or
-"cycle" prefix or suffix.
+In Blender, this requires using the NLA Editor and naming the Action with the ``loop`` or
+``cycle`` prefix or suffix.
