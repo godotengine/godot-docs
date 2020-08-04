@@ -327,7 +327,7 @@ below for you to useful.
 
 Advanced note : Built-in types are stack-allocated. They are passed as values. 
 This means a copy is created on each assignment or when passing them as 
-arguments to functions. The only exceptions are ``Array``\ s and 
+arguments to functions. The only exceptions are ``Arrays`` and 
 ``Dictionaries``, which are passed by reference so they are shared. (Pooled 
 arrays such as ``PackedByteArray`` are still passed as values.)
 
@@ -744,7 +744,24 @@ argument, unlike Python).
         print(b)
         return a + b  # Return is optional; without it 'null' is returned.
 
-A function can ``return`` at any point. The default return value is ``null``.
+
+A function can ``return`` at any point, stopping the function 
+and passing control back to the code that called the function. Functions can
+optionally return a value - the default return value is ``null``.
+In the following example, "result" will be set to whatever the function
+"my_function" returns. As the function "my_function" is passed the 
+parameters "5" and "3", and returns the sum of the two parameters, the 
+value 8 will be assigned to the variable "result".
+
+::
+
+    func my_function(a, b):
+         return a + b  
+
+    var result=my_function(5, 3)  
+
+In the event that a function is required but you do not wish it to execute any
+code, the keyword ``pass`` can be used to tell the function not to do anything.
 
 Functions can also have type specification for the arguments and for the return
 value. Types for arguments can be added in a similar way to variables::
@@ -778,8 +795,6 @@ return early with the ``return`` keyword, but they can't return any value.
           inside an ``if`` block but not after it, the editor will raise an
           error because if the block is not executed, the function won't have a
           valid value to return.
-
-TALK ABOUT PASS
 
 Referencing functions
 ^^^^^^^^^^^^^^^^^^^^^
