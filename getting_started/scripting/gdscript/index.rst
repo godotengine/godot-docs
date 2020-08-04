@@ -6,6 +6,7 @@ GDScript
    :name: toc-learn-scripting-gdscript
 
    gdscript_basics
+   gdscript_basics_part2
    gdscript_advanced
    gdscript_exports
    gdscript_styleguide

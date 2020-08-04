@@ -87,7 +87,8 @@ respect the following rules (and the ones on the repo).
 Titles
 ------
 
-Always begin pages with their title and a Sphinx reference name:
+Always begin pages with their title and a Sphinx reference name. The Godot
+convention is to prefix Sphinx reference names with "_doc":
 
 ::
 
