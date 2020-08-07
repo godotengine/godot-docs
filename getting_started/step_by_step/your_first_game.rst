@@ -788,9 +788,8 @@ double-click the ``hit`` signal in the list (or right-click it and select
 a new function named ``game_over``, which will handle what needs to happen when
 a game ends.
 Type "game_over" in the "Receiver Method" box at the bottom of the
-signal connection dialog and click "Connect". Add the following code to the
-new function, as well as a ``new_game`` function that will set everything up
-for a new game:
+signal connection dialog and click "Connect". Replace the new functions'
+placeholder code with the folling code.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -799,10 +798,6 @@ for a new game:
         $ScoreTimer.stop()
         $MobTimer.stop()
 
-    func new_game():
-        score = 0
-        $Player.start($StartPosition.position)
-        $StartTimer.start()
 
  .. code-tab:: csharp
 
@@ -812,20 +807,12 @@ for a new game:
         GetNode<Timer>("ScoreTimer").Stop();
     }
 
-    public void NewGame()
-    {
-        _score = 0;
+    
 
-        var player = GetNode<Player>("Player");
-        var startPosition = GetNode<Position2D>("StartPosition");
-        player.Start(startPosition.Position);
-
-        GetNode<Timer>("StartTimer").Start();
-    }
-
-Now connect the ``timeout()`` signal of each of the Timer nodes (``StartTimer``,
+Now, connect the ``timeout()`` signal of each of the Timer nodes (``StartTimer``,
 ``ScoreTimer`` , and ``MobTimer``) to the main script. ``StartTimer`` will start
-the other two timers. ``ScoreTimer`` will increment the score by 1.
+the other two timers. ``ScoreTimer`` will increment the score by 1. Lastly, also
+in the main script we add code to run a new instance of the game.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -836,6 +823,11 @@ the other two timers. ``ScoreTimer`` will increment the score by 1.
 
     func _on_ScoreTimer_timeout():
         score += 1
+    
+    func new_game():
+        score = 0
+        $Player.start($StartPosition.position)
+        $StartTimer.start()
 
  .. code-tab:: csharp
 
@@ -848,6 +840,16 @@ the other two timers. ``ScoreTimer`` will increment the score by 1.
     public void OnScoreTimerTimeout()
     {
         _score++;
+    }
+    public void NewGame()
+    {
+        _score = 0;
+
+        var player = GetNode<Player>("Player");
+        var startPosition = GetNode<Position2D>("StartPosition");
+        player.Start(startPosition.Position);
+
+        GetNode<Timer>("StartTimer").Start();
     }
 
 In ``_on_MobTimer_timeout()``, we will create a mob instance, pick a
