@@ -207,10 +207,10 @@ will not change it makes sense to call this new script ``persistent_state.gd``.
 
         # Input code was placed here for tutorial purposes.
         func _process(_delta):
-        if Input.is_action_pressed("ui_left"):
-            move_left()
-        elif Input.is_action_pressed("ui_right"):
-            move_right()
+            if Input.is_action_pressed("ui_left"):
+                move_left()
+            elif Input.is_action_pressed("ui_right"):
+                move_right()
 
         func move_left():
             state.move_left()
