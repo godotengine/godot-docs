@@ -1,7 +1,7 @@
 .. _doc_localization_using_gettext:
 
-Localization using gettext
-==========================
+Localization using gettext (PO files)
+=====================================
 
 In addition to importing translations in
 :ref:`CSV format <doc_localization_using_spreadsheets>`, Godot also
@@ -13,27 +13,35 @@ supports loading translation files written in the GNU gettext format
           It's written with C projects in mind, but much of the advice
           also applies to Godot (with the exception of ``xgettext``).
 
+          For the complete documentation, see `GNU Gettext <https://www.gnu.org/software/gettext/manual/gettext.html>`_.
+
 Advantages
 ----------
 
 - gettext is a standard format, which can be edited using any text editor
-  or GUI editors such as `Poedit <https://poedit.net/>`_.
+  or GUI editors such as `Poedit <https://poedit.net/>`_. This can be significant
+  as it provides a lot of tools for translators, such as marking outdated
+  strings, finding strings that haven't been translated etc. 
+- gettext supports plurals and context.
 - gettext is supported by translation platforms such as
   `Transifex <https://www.transifex.com/>`_ and `Weblate <https://weblate.org/>`_,
   which makes it easier for people to collaborate to localization.
-- Compared to CSV, gettext works better with version control systems like Git,
+- Compared to CSV, gettext files work better with version control systems like Git,
   as each locale has its own messages file.
-- Multiline strings are more convenient to edit in gettext files compared
+- Multiline strings are more convenient to edit in gettext PO files compared
   to CSV files.
 
 Disadvantages
 -------------
 
-- gettext is a more complex format than CSV and can be harder to grasp for
+- gettext PO files have a more complex format than CSV and can be harder to grasp for
   people new to software localization.
 - People who maintain localization files will have to install gettext tools
   on their system. However, as Godot supports using text-based message files
   (``.po``), translators can test their work without having to install gettext tools.
+- gettext PO files usually use English as the base language. Translators will use 
+  this base language to translate to other languages. You could still user other 
+  languages as the base language, but this is not common.
 
 Installing gettext tools
 ------------------------
@@ -52,6 +60,9 @@ install them.
   ``sudo port install gettext`` command.
 - **Linux:** On most distributions, install the ``gettext`` package from
   your distribution's package manager.
+
+For a GUI tool you can get Poedit from its `Official website <https://poedit.net/>`_.
+The basic version is open source and available under the MIT license.
 
 Creating the PO template
 ------------------------
@@ -193,8 +204,10 @@ saved as ``fr.po~`` in this example), remove the ``--backup=none`` argument.
 Checking the validity of a PO file or template
 ----------------------------------------------
 
-It is possible to check whether a gettext file's syntax is valid by running
-the command below:
+It is possible to check whether a gettext file's syntax is valid.
+
+If you open with Poeditor, it will display the appropriate warnings if there's some
+syntax errors. You can also verify by running the gettext command below:
 
 .. code-block:: shell
 
@@ -266,3 +279,46 @@ These comments must be placed either on the same line as the recognized pattern 
     # TRANSLATORS: This is a reference to Lewis Carroll's poem "Jabberwocky",
     # make sure to keep this as it is important to the plot.
     say(tr("He took his vorpal sword in hand. The end?"))
+
+Using context
+-------------
+
+The ``context`` parameter can be used to differentiate the situation where a translation
+is used, or to differentiate polysemic words (words with multiple meanings).
+
+For example: 
+
+::
+
+    tr("Start", "Main Menu")
+    tr("End", "Main Menu")
+    tr("Shop", "Main Menu")
+    tr("Shop", "In Game")
+
+Updating PO files
+-----------------
+
+Some time or later, you'll add new content to our game, and there will be new strings that need to be translated. When this happens, you'll
+need to update the existing PO files to include the new strings.
+
+First, generate a new POT file containing all the existing strings plus the newly added strings. After that, merge the existing 
+PO files with the new POT file. There are two ways to do this:
+
+- Use a gettext editor, and it should have an option to update a PO file from a POT file.
+
+- Use the gettext ``msgmerge`` tool:
+
+.. code-block:: shell
+
+    # The order matters: specify the message file *then* the PO template!
+    msgmerge --update --backup=none fr.po messages.pot
+
+If you want to keep a backup of the original message file (which would be saved as ``fr.po~`` in this example), 
+remove the ``--backup=none`` argument.
+
+POT generation custom plugin
+----------------------------
+
+If you have any extra file format to deal with, you could write a custom plugin to parse and and extract the strings from the custom file. 
+This custom plugin will extract the strings and write into the POT file when you hit **Generate POT**. To learn more about how to
+create the translation parser plugin, see :ref:`EditorTranslationParserPlugin <class_EditorTranslationParserPlugin>`.
