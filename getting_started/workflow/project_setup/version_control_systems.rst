@@ -35,3 +35,13 @@ There are some folders Godot creates you should have your VCS ignore:
   project, including sensitive information such as Android keystore credentials.
 - ``.mono/``: This folder stores automatically-generated Mono files. It only exists
   in projects that use the Mono version of Godot.
+
+Working with Git on Windows
+---------------------------
+
+Most Git for Windows clients are configured with the `core.autocrlf` set to `true`.
+This can lead to weird git status and warnings in the diff output. It is better to set this
+option as:
+::
+
+  git config core.autocrlf input
