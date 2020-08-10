@@ -32,7 +32,7 @@ Jitter
 There can be many causes of jitter, the most typical one happens when the game *physics frequency* (usually 60 Hz) runs
 at a different resolution than the monitor refresh rate. Check whether your monitor refresh rate is different from 60 Hz.
 
-This is generally not a problem, given that refresh rates higher than 60 Hz are barely visible to the human eye, and
+This is generally not a problem, given that most monitors are 60 Hz, and
 starting with Godot 3.1, a frame timer was introduced that tries to synchronize with refresh as well as possible.
 
 Sometimes only some objects appear to jitter (character or background). This happens when they are processed in different
