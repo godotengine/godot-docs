@@ -30,6 +30,7 @@
     --link-color-hover: #3091d1;
     --link-color-active: #105078;
     --link-color-visited: #9b59b6;
+    --external-reference-icon: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjEyIiB3aWR0aD0iMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjk4MGI5Ij48cGF0aCBkPSJtNy41IDcuMXYzLjRoLTZ2LTZoMy40Ii8+PHBhdGggZD0ibTUuNzY1IDFoNS4yMzV2NS4zOWwtMS41NzMgMS41NDctMS4zMS0xLjMxLTIuNzI0IDIuNzIzLTIuNjktMi42ODggMi44MS0yLjgwOC0xLjMxMy0xLjMxeiIvPjwvZz48L3N2Zz4K");
 
     --hr-color: #e1e4e5;
     --table-row-odd-background-color: #f3f6f6;
@@ -115,6 +116,7 @@
         --link-color-hover: #9df;
         --link-color-active: #6ad;
         --link-color-visited: #cb99f6;
+        --external-reference-icon: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjEyIiB3aWR0aD0iMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGNmIj48cGF0aCBkPSJtNy41IDcuMXYzLjRoLTZ2LTZoMy40Ii8+PHBhdGggZD0ibTUuNzY1IDFoNS4yMzV2NS4zOWwtMS41NzMgMS41NDctMS4zMS0xLjMxLTIuNzI0IDIuNzIzLTIuNjktMi42ODggMi44MS0yLjgwOC0xLjMxMy0xLjMxeiIvPjwvZz48L3N2Zz4K");
 
         --hr-color: #555;
         --table-row-odd-background-color: #3b3e41;
@@ -265,6 +267,14 @@ a:visited {
 
 a.btn:hover {
     text-decoration: none;
+}
+
+/* Style external links differently to make them easier to distinguish from internal links. */
+.reference.external {
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-image: var(--external-reference-icon);
+    padding-right: 13px;
 }
 
 hr,
