@@ -20,33 +20,42 @@ own limitations:
    that require it, but frequently saving and loading data is cumbersome and
    may be slow.
 
-The `Singleton Pattern <https://en.wikipedia.org/wiki/Singleton_pattern>`_ is
+The `Singleton pattern <https://en.wikipedia.org/wiki/Singleton_pattern>`_ is
 a useful tool for solving the common use case where you need to store
-persistent information between scenes. In our case it is possible re-use the
-same scene or class for multiple singletons, so long as they have different
+persistent information between scenes. In our case, it's possible to reuse the
+same scene or class for multiple singletons as long as they have different
 names.
 
 Using this concept, you can create objects that:
 
--  Are always loaded, no matter which scene is currently running
--  Can store global variables, such as player information
--  Can handle switching scenes and between-scene transitions
--  Act like a singleton, since GDScript does not support global variables by design
+- Are always loaded, no matter which scene is currently running.
+- Can store global variables such as player information.
+- Can handle switching scenes and between-scene transitions.
+- *Act* like a singleton, since GDScript does not support global variables by design.
 
 Autoloading nodes and scripts can give us these characteristics.
+
+.. note::
+
+    Godot won't make an AutoLoad a "true" singleton as per the singleton design
+    pattern. It may still be instanced more than once by the user if desired.
 
 AutoLoad
 --------
 
-You can use AutoLoad to load a scene or a script that inherits from
-:ref:`Node <class_Node>`. Note: when autoloading a script, a Node will be
-created and the script will be attached to it. This node will be added to the
-root viewport before any other scenes are loaded.
+You can create an AutoLoad to load a scene or a script that inherits from
+:ref:`class_Node`.
+
+.. note::
+
+    When autoloading a script, a :ref:`class_Node` will be created and the script will be
+    attached to it. This node will be added to the root viewport before any
+    other scenes are loaded.
 
 .. image:: img/singleton.png
 
-To autoload a scene or script, select ``Project -> Project Settings`` from the
-menu and switch to the "AutoLoad" tab.
+To autoload a scene or script, select **Project > Project Settings** from the
+menu and switch to the **AutoLoad** tab.
 
 .. image:: img/autoload_tab.png
 
@@ -70,8 +79,8 @@ This means that any node can access a singleton named "PlayerVariables" with:
     var playerVariables = (PlayerVariables)GetNode("/root/PlayerVariables");
     playerVariables.Health -= 10; // Instance field.
 
-If the "Enable" column is checked (default ``true``) then the singleton can simply
-be accessed directly:
+If the **Enable** column is checked (which is the default), then the singleton can
+be accessed directly without requiring ``get_node()``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -92,8 +101,8 @@ you'll see the autoloaded nodes appear:
 Custom scene switcher
 ---------------------
 
-This tutorial will demonstrate building a scene switcher using autoload. For
-basic scene switching, you can use the
+This tutorial will demonstrate building a scene switcher using autoloads.
+For basic scene switching, you can use the
 :ref:`SceneTree.change_scene() <class_SceneTree_method_change_scene>`
 method (see :ref:`doc_scene_tree` for details). However, if you need more
 complex behavior when changing scenes, this method provides more functionality.
@@ -109,15 +118,15 @@ scene contains a label displaying the scene name and a button with its
 Global.gd
 ~~~~~~~~~
 
-Switch to the "Script" tab and create a new script called Global.gd. Make sure
-it inherits from ``Node``:
+Switch to the **Script** tab and create a new script called ``Global.gd``.
+Make sure it inherits from ``Node``:
 
 .. image:: img/autoload_script.png
 
 The next step is to add this script to the autoLoad list. Open
-``Project > Project Settings`` from the menu, switch to the "AutoLoad" tab and
+**Project > Project Settings** from the menu, switch to the **AutoLoad** tab and
 select the script by clicking the browse button or typing its path:
-``res://Global.gd``. Press "Add" to add it to the autoload list:
+``res://Global.gd``. Press **Add** to add it to the autoload list:
 
 .. image:: img/autoload_tutorial1.png
 
@@ -125,7 +134,7 @@ Now whenever we run any scene in the project, this script will always be loaded.
 
 Returning to the script, it needs to fetch the current scene in the
 `_ready()` function. Both the current scene (the one with the button) and
-``global.gd`` are children of root, but autoloaded nodes are always first. This
+``Global.gd`` are children of root, but autoloaded nodes are always first. This
 means that the last child of root is always the loaded scene.
 
 .. tabs::
@@ -272,6 +281,13 @@ and
 Run the project and test that you can switch between scenes by pressing
 the button.
 
-Note: When scenes are small, the transition is instantaneous. However, if your
-scenes are more complex, they may take a noticeable amount of time to appear. To
-learn how to handle this, see the next tutorial: :ref:`doc_background_loading`
+.. note::
+
+    When scenes are small, the transition is instantaneous. However, if your
+    scenes are more complex, they may take a noticeable amount of time to appear.
+    To learn how to handle this, see the next tutorial: :ref:`doc_background_loading`.
+
+    Alternatively, if the loading time is relatively short (less than 3 seconds or so),
+    you can display a "loading plaque" by showing some kind of 2D element just before
+    changing the scene. You can then hide it just after the scene is changed. This can
+    be used to indicate to the player that a scene is being loaded.
