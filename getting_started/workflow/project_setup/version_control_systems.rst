@@ -43,4 +43,4 @@ Most Git for Windows clients are configured with the ``core.autocrlf`` set to ``
 This can lead to files unnecessarily being marked as modified by Git due to their line endings being converted automatically.
 It is better to set this option as::
 
-    git config core.autocrlf input
+    git config --global core.autocrlf input
