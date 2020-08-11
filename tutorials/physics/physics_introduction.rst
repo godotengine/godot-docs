@@ -95,6 +95,8 @@ it will typically be equal to ``0.01666...`` (but not always, see below).
     physics calculations, so that the game behaves correctly if you change the
     physics update rate or if the player's device can't keep up.
 
+.. _doc_physics_introduction_collision_layers_and_masks:
+
 Collision layers and masks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -123,7 +125,8 @@ be assigned in Project Settings -> Layer Names.
 
 .. image:: img/physics_layer_names.png
 
-**Example:**
+GUI example
+^^^^^^^^^^^
 
 You have four node types in your game: Walls, Player, Enemy, and Coin. Both
 Player and Enemy should collide with Walls. The Player node should detect
@@ -137,6 +140,35 @@ interact with. For example, the Player's settings would look like this:
 
 .. image:: img/player_collision_layers.png
 .. image:: img/player_collision_mask.png
+
+.. _doc_physics_introduction_collision_layer_code_example:
+
+Code example
+^^^^^^^^^^^^
+
+In function calls, layers are specified as a bitmask. Where a function enables
+all layers by default, the layer mask will be given as ``0x7fffffff``. Your code
+can use binary, hexadecimal, or decimal notation for layer masks, depending
+on your preference.
+
+The code equivalent of the above example where layers 1, 3 and 4 were enabled
+would be as follows::
+
+    # Example: Setting mask value for enabling layers 1, 3 and 4
+
+    # Binary - set the bit corresponding to the layers you want to enable (1, 3, and 4) to 1, set all other bits to 0.
+    # Note: Layer 20 is the first bit, layer 1 is the last. The mask for layers 4,3 and 1 is therefore
+    0b00000000000000001101
+    # (This can be shortened to 0b1101)
+
+    # Hexadecimal equivalent (1101 binary converted to hexadecimal)
+    0x000d
+    # (This value can be shortened to 0xd)
+
+    # Decimal - Add the results of 2 to the power of (layer be enabled-1).
+    # (2^(1-1)) + (2^(3-1)) + (2^(4-1)) = 1 + 4 + 8 = 13
+    pow(2, 1) + pow(2, 3) + pow(2, 4)
+
 
 Area2D
 ------

@@ -1315,7 +1315,7 @@ If a class inherits from :ref:`class_Reference`, then instances will be
 freed when no longer in use. No garbage collector exists, just
 reference counting. By default, all classes that don't define
 inheritance extend **Reference**. If this is not desired, then a class
-must inherit :ref:`class_Object` manually and must call instance.free(). To
+must inherit :ref:`class_Object` manually and must call ``instance.free()``. To
 avoid reference cycles that can't be freed, a ``weakref`` function is
 provided for creating weak references.
 

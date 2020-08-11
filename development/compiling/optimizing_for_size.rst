@@ -17,6 +17,13 @@ This tutorial aims to give an overview on different methods to create
 a smaller binary. Before continuing, it is recommended to read the previous tutorials
 on compiling Godot for each platform.
 
+.. seealso::
+
+    You can use the online
+    `Godot build options generator <https://godot-build-options-generator.github.io/>`__
+    to generate a ``custom.py`` file containing SCons options.
+    You can then save this file and place it at the root of your Godot source directory.
+
 Disabling 3D
 ------------
 
@@ -34,7 +41,7 @@ Disabling advanced GUI nodes
 ----------------------------
 
 Most small games don't require complex GUI controls such as Tree, ItemList,
-TextEditor or GraphEdit. They can be disabled using a build flag:
+TextEdit or GraphEdit. They can be disabled using a build flag:
 
 ::
 
@@ -70,7 +77,7 @@ following:
 .. code-block:: python
 
     # custom.py
-    
+
     module_arkit_enabled = "no"
     module_assimp_enabled = "no"
     module_bmp_enabled = "no"
@@ -104,7 +111,7 @@ following:
     module_webrtc_enabled = "no"
     module_websocket_enabled = "no"
     module_xatlas_unwrap_enabled = "no"
-    
+
 .. seealso::
 
     :ref:`doc_overriding_build_options`.

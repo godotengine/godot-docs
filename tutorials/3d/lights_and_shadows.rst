@@ -1,7 +1,7 @@
 .. _doc_lights_and_shadows:
 
-Lights and shadows
-==================
+3D lights and shadows
+=====================
 
 Introduction
 ------------

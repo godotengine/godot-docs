@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: Godot community channels
+    url: https://godotengine.org/community
+    about: Please ask for technical support on one of the other community channels, not here.

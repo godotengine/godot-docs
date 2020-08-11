@@ -248,7 +248,7 @@ Typed or dynamic: stick to one style
 ------------------------------------
 
 Typed GDScript and dynamic GDScript can coexist in the same project. But
-I recommended to stick to either style for consistency in your codebase,
+I recommend to stick to either style for consistency in your codebase,
 and for your peers. It's easier for everyone to work together if you
 follow the same guidelines, and faster to read and understand other
 people's code.

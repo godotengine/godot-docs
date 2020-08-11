@@ -78,7 +78,7 @@ otherwise it returns true.
 
 For more advanced type checking, you can look into `Pattern Matching <https://docs.microsoft.com/en-us/dotnet/csharp/pattern-matching>`_.
 
-.. _c_sharp_signals:
+.. _doc_c_sharp_signals:
 
 C# signals
 ----------

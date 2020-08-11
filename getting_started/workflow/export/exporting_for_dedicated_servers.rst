@@ -15,7 +15,8 @@ Platform support
 - **macOS:** :ref:`Compile a server binary from source for macOS <doc_compiling_for_osx>`.
 - **Windows:** There is no dedicated server build for Windows yet. As an alternative,
   you can use the ``--no-window`` command-line argument to prevent Godot from
-  spawning a window.
+  spawning a window. Note that even with the ``--no-window`` command-line argument,
+  you'll need to have OpenGL support available on the Windows machine.
 
 If your project uses C#, you'll have to use a Mono-enabled server binary.
 

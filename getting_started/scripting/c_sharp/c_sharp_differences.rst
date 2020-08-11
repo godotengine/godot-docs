@@ -121,7 +121,7 @@ This attribute should be used on a `delegate`, whose name signature will be used
     [Signal]
     delegate void MySignal(string willSendsAString);
 
-See also: :ref:`c_sharp_signals`
+See also: :ref:`doc_c_sharp_signals`.
 
 Singletons
 ----------

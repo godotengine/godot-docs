@@ -97,9 +97,9 @@ demonstrate:
 - Hooking up UI elements via signals.
 - Writing a script that can access other nodes in the scene.
 
-Before continuing, please make sure to read the :ref:`GDScript<doc_gdscript>` reference.
-It's a language designed to be simple, and the reference is short, so it will not take more
-than a few minutes to get an overview of the concepts.
+Before continuing, make sure to skim and bookmark the :ref:`GDScript<doc_gdscript>` reference.
+It's a language designed to be simple, and the reference is structured into sections to make it
+easier to get an overview of the concepts.
 
 Scene setup
 ~~~~~~~~~~~

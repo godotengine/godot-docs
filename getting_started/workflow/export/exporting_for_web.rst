@@ -17,7 +17,7 @@ in the user's browser.
                ``file://`` protocol. To get around this, use a local server.
 
                .. tip:: Python offers an easy method to start a local server.
-                        Use ``python -m http.server`` with Python 3 to serve the
+                        Use ``python -m http.server 8000 --bind 127.0.0.1`` with Python 3 to serve the
                         current working directory at ``http://localhost:8000``.
 
 .. attention:: `There are significant bugs when running HTML5 projects on iOS <https://github.com/godotengine/godot/issues/26554>`__

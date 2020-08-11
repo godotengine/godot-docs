@@ -179,7 +179,7 @@ from the FileSystem dock at once.
 
     # Exported arrays can specify type (using the same hints as before).
 
-    export(Array, int) var ints = [1,2,3]
+    export(Array, int) var ints = [1, 2, 3]
     export(Array, int, "Red", "Green", "Blue") var enums = [2, 1, 0]
     export(Array, Array, float) var two_dimensional = [[1.0, 2.0], [3.0, 4.0]]
 
