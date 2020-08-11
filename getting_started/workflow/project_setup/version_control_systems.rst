@@ -39,7 +39,7 @@ There are some folders Godot creates you should have your VCS ignore:
 Working with Git on Windows
 ---------------------------
 
-Most Git for Windows clients are configured with the `core.autocrlf` set to `true`.
+Most Git for Windows clients are configured with the ``core.autocrlf`` set to ``true``.
 This can lead to files unnecessarily being marked as modified by Git due to their line endings being converted automatically.
 It is better to set this option as::
 
