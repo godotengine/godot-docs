@@ -200,7 +200,7 @@ Godot features many error macros to make error reporting more convenient.
 
     // Conditionally prints an error message and returns from the function.
     // Use this in methods which don't return a value.
-    ERR_FAIL_COND_MSG(!mesh.is_valid(), vformat("Couldn't load mesh at: %s", path));
+    ERR_FAIL_COND_MSG(mesh.is_null(), vformat("Couldn't load mesh at: %s", path));
 
     // Conditionally prints an error message and returns `0` from the function.
     // Use this in methods which must return a value.
