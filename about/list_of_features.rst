@@ -22,6 +22,7 @@ Platforms
 - Windows 7 and later (64-bit and 32-bit).
 - macOS 10.12 and later (64-bit, x86 and ARM).
 - Linux (64-bit, x86 and ARM).
+
    - Binaries are statically linked and can run on any distribution if compiled
      on an old enough base distribution.
    - Official binaries are compiled on Ubuntu 14.04.
@@ -47,16 +48,23 @@ Editor
 - Support for :ref:`external script editors <doc_external_editor>` such as
   Visual Studio Code or Vim.
 - GDScript :ref:`debugger <doc_debugger_panel>`.
+
    - No support for debugging in threads yet.
 - Visual profiler with CPU and GPU time indications.
 - Performance monitoring tools.
 - Live script reloading.
 - Live scene editing.
+
    - Changes will reflect in the editor and will be kept after closing the running project.
+
 - Remote inspector.
+
    - Changes won't reflect in the editor and won't be kept after closing the running project.
+
 - Live camera replication.
+
    - Move the in-editor camera and see the result in the running project.
+
 - Use the editor in dozens of languages contributed by the community.
 
 **Plugins:**
@@ -72,18 +80,26 @@ Editor
 Vulkan renderer.
 
 - Sprite, polygon and line rendering.
+
    - High-level tools to draw lines and polygons such as Polygon2D and Line2D.
+
 - AnimatedSprite as a helper for creating animated sprites.
 - Parallax layers.
+
    - Pseudo-3D support by automatically duplicating a layer several times.
+
 - 2D lighting with normal maps and specular maps.
+
    - Hard or soft shadows.
+
 - Font rendering using bitmaps (BitmapFont) or rasterization using FreeType (DynamicFont).
+
    - Bitmap fonts can be exported using tools like BMFont.
    - DynamicFont supports monochrome fonts as well as colored fonts.
      Supported formats are TTF and OTF.
    - DynamicFont supports optional font outlines with adjustable width and color.
    - Support for font oversampling to keep fonts sharp at higher resolutions.
+
 - GPU-based particles with support for custom particle shaders.
 - CPU-based particles.
 
@@ -92,8 +108,10 @@ Vulkan renderer.
 
 - 2D camera with built-in smoothing and drag margins.
 - Path2D node to represent a path in 2D space.
+
    - Can be drawn in the editor or generated procedurally.
    - PathFollow2D node to make nodes follow a Path2D.
+
 - 2D geometry helper class.
 - Line2D node to draw textured 2D lines.
 
@@ -157,7 +175,9 @@ Vulkan renderer.
 **Global illumination with indirect lighting:**
 
 - Baked lightmaps (fast, but can't be updated at run-time).
+
    - Lightmaps are baked on the GPU using compute shaders.
+
 - GI probes (slower, fully real-time). Supports reflections.
 - Signed distance field GI (intermediate, supports dynamic lights but not
   dynamic occluders). Supports reflections.
@@ -230,8 +250,10 @@ improve quality. This can be helpful when using Godot for offline rendering.
 - Tools for :ref:`procedural geometry generation <doc_procedural_geometry>`.
 - :ref:`Constructive solid geometry <doc_csg_tools>` (intended for prototyping).
 - Path3D node to represent a path in 3D space.
+
    - Can be drawn in the editor or generated procedurally.
    - PathFollow3D node to make nodes follow a Path3D.
+
 - 3D geometry helper class.
 
 3D physics
@@ -261,6 +283,7 @@ Shaders
 - *3D:* Custom vertex, fragment, light, and sky shaders.
 - Text-based shaders using a `shader language inspired by GLSL <doc_shading_language>`.
 - Visual shader editor.
+
    - Support for visual shader plugins.
 
 Scripting
@@ -286,7 +309,9 @@ Scripting
 
 - Packaged in a separate binary to keep file sizes and dependencies down.
 - Uses Mono 6.x.
+
    - Full support for the C# 8.0 syntax and features.
+
 - Supports all platforms.
 - Using an external editor is recommended to benefit from IDE functionality.
 
@@ -299,10 +324,14 @@ Scripting
 **GDNative (C, C++, Rust, D, ...):**
 
 - When you need it, link to native libraries for higher performance and third-party integrations.
+
    - For scripting game logic, GDScript or C# are recommended if their
      performance is suitable.
+
 - Official bindings for C and C++.
+
    - Use any build system and language features you wish.
+
 - Maintained D, Kotlin, Python, Nim, and Rust bindings provided by the community.
 
 Audio
@@ -312,12 +341,15 @@ Audio
 
 - Mono, stereo, 5.1 and 7.1 output.
 - Non-positional and positional playback in 2D and 3D.
+
    - Optional Doppler effect in 2D and 3D.
-- Support for re-routable :ref:`audio buses <doc_audio_buses>` and effects.
-   - Dozens of effects included.
+
+- Support for re-routable :ref:`audio buses <doc_audio_buses>` and effects
+  with dozens of effects included.
 - Listener3D node to listen from a position different than the camera in 3D.
 - Audio input to record microphones.
 - MIDI input.
+
    - No support for MIDI output yet.
 
 **APIs used:**
@@ -335,9 +367,12 @@ Import
 
 - *Images:* See :ref:`doc_importing_images_supported_formats`.
 - *Audio:*
+
    - WAV with optional IMA-ADPCM compression.
    - Ogg Vorbis.
+
 - *3D scenes:*
+
    - glTF 2.0 *(recommended)*.
    - `ESCN <https://github.com/godotengine/godot-blender-exporter>`__
      (direct export from Blender).
@@ -349,14 +384,20 @@ Input
 ^^^^^
 
 - Input mapping system using hardcoded input events or remappable input actions.
+
    - Axis values can be mapped to two different actions with a configurable deadzone.
    - Use the same code to support both keyboards and gamepads.
+
 - Keyboard input.
+
    - Keys can be mapped in "physical" mode to be independent of the keyboard layout.
+
 - Mouse input.
+
    - The mouse cursor can be visible, hidden, captured or confined within the window.
    - When captured, raw input will be used on Windows and Linux to
      sidestep the OS' mouse acceleration settings.
+
 - Gamepad input (up to 8 simulatenous controllers).
 - Pen/tablet input with pressure support.
 
@@ -374,10 +415,14 @@ Networking
 - Low-level UDP networking using PacketPeer and UDPServer.
 - Low-level HTTP requests using HTTPClient.
 - High-level HTTP requests using HTTPRequest.
+
    - Supports HTTPS out of the box using bundled certificates.
+
 - High-level multiplayer API using UDP and ENet.
+
    - Automatic replication using remote procedure calls (RPCs).
    - Supports unreliable, reliable and ordered transfers.
+
 - WebSocket client and server, available on all platforms.
 - WebRTC client and server, available on all platforms.
 - Support for UPnP to sidestep the requirement to forward ports when hosting
@@ -400,8 +445,10 @@ Windowing and OS integration
 - Change the window title and icon.
 - Request attention (will cause the title bar to blink on most platforms).
 - Fullscreen mode.
+
    - Doesn't use exclusive fullscreen, so the screen resolution can't be changed this way.
      Use a Viewport with a different resolution instead.
+
 - Borderless windows (fullscreen or non-fullscreen).
 - Ability to keep a window always on top.
 - Transparent windows with per-pixel transparency.
@@ -446,20 +493,26 @@ The editor UI can easily be extended in many ways using add-ons.
 
 - Anchors to keep GUI elements in a specific corner, edge or centered.
 - Containers to place GUI elements automatically following certain rules.
+
    - :ref:`Stack <class_BoxContainer>` layouts.
    - :ref:`Grid <class_GridContainer>` layouts.
    - :ref:`Margin <class_MarginContainer>` and :ref:`centered <class_CenterContainer>`
      layouts.
    - :ref:`Draggable splitter <class_SplitContainer>` layouts.
+
 - Scale to multiple resolutions using the ``2d`` or ``viewport`` stretch modes.
 - Support any aspect ratio using anchors and the ``expand`` stretch aspect.
 
 **Theming:**
 
 - Built-in theme editor.
+
    - Generate a theme based on the current editor theme settings.
+
 - Procedural vector-based theming using :ref:`class_StyleBoxFlat`.
+
    - Supports rounded/beveled corners, drop shadows and per-border widths.
+
 - Texture-based theming using :ref:`class_StyleBoxTexture`.
 
 Godot's small distribution size can make it a suitable alternative to frameworks
@@ -478,13 +531,19 @@ Formats
 ^^^^^^^
 
 - Scenes and resources can be saved in :ref:`text-based <doc_tscn_file_format>` or binary formats.
+
    - Text-based formats are human-readable and more friendly to version control.
    - Binary formats are faster to save/load for large scenes/resources.
+
 - Read and write text or binary files using :ref:`class_File`.
+
    - Can optionally be compressed or encrypted.
+
 - Read and write :ref:`class_JSON` files.
 - Read and write INI-style configuration files using :ref:`class_ConfigFile`.
+
    - Can (de)serialize any Godot datatype, including Vector, Color, ...
+
 - Read XML files using :ref:`class_XMLParser`.
 - Pack game data into a PCK file (custom format optimized for fast seeking),
   into a ZIP archive, or directly into the executable for single-file distribution.
@@ -497,18 +556,23 @@ Miscellaneous
 - :ref:`Low-level access to servers <doc_using_servers>` which allows bypassing
   the scene tree's overhead when needed.
 - Command line interface for automation.
+
    - Export and deploy projects using continuous integration platforms.
    - `Completion scripts <https://github.com/godotengine/godot/tree/master/misc/dist/shell>`__
      are available for Bash, zsh and fish.
+
 - Support for :ref:`C++ modules <doc_custom_modules_in_c++>` statically linked
   into the engine binary.
 - Engine and editor written in C++17.
+
    - Can be :ref:`compiled <doc_introduction_to_the_buildsystem>` using GCC,
      Clang and MSVC. MinGW is also supported.
-   - Friendly towards packagers: in most cases, system libraries can be used
+   - Friendly towards packagers. In most cases, system libraries can be used
      instead of the ones provided by Godot. The build system doesn't download anything.
      Builds can be fully reproducible.
+
 - Licensed under the permissive MIT license.
+
    - Open developement process with :ref:`contributions welcome <doc_ways_to_contribute>`.
 
 .. seealso::
