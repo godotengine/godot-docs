@@ -66,18 +66,24 @@ Make sure to set the following preferences:
    - Set **MSBuild version** to either **Bundled with Rider** or **.NET Core**.
    - Install the **Godot support** plugin.
 
+.. _set-up-csharp-on-linux:
+
 macOS and Linux
 ~~~~~~~~~~~~~~~
 
-Download and install the latest version of the
-`Mono SDK <http://www.mono-project.com/download/>`_. As of Godot 3.1 beta 3,
-the version number doesn't matter since Godot bundles its own Mono 5.18
-installation. We only need the Mono installation for NuGet and MSBuild
-which are required to use C# in Godot.
+Download and install the version 6.12 or above of the
+`Mono SDK <https://www.mono-project.com/download/preview/>`_. 
 
-.. note:: To download Mono on macOS, use the "Stable Channel" link
-          from the `Mono Downloads Page <http://www.mono-project.com/download/>`_.
-          The Visual Studio channel is an earlier version of Mono and
+.. warning:: As of 08-2020, 6.12 is the preview version.
+
+.. note:: MSBuild is necessary to use NuGet packages. The mono installation has to include MSBuild: 
+             in mono's installation instructions, replace ``mono-devel`` with ``mono-complete msbuild``
+
+As of Godot 3.1 beta 3, Godot bundles its own Mono 5.18
+installation. We only need the Mono installation for NuGet and MSBuild
+which are required to use C# and NuGet packages in Godot.
+
+.. note:: The Visual Studio channel is an earlier version of Mono and
           will not work.
 
 Additional notes
@@ -120,7 +126,6 @@ external editors:
 
     If you are using Visual Studio 2019, you must follow the instructions found
     in the `:ref:doc_c_sharp_configuring_vs_2019_for_debugging` section below.
-
 
 Creating a C# script
 --------------------
@@ -268,7 +273,15 @@ the ``.csproj`` file located in the project root:
     By default, tools like NuGet put ``Version`` as an attribute of the ```PackageReference``` Node. **You must manually create a Version node as shown above.**  This is because the version of MSBuild used requires this. (This will be fixed in Godot 4.0.)
 
 Whenever packages are added or modified, run ``nuget restore`` (*not* ``dotnet restore``) in the root of the
-project directory. To ensure that NuGet packages will be available for
+project directory. 
+
+.. note:: On linux and MacOS, `follow these instructions to install nuget <https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools#macoslinux>`_
+
+.. note:: if ``nuget restore`` returns the error ``MSBUILD: error MSBUILD0004: Too many project files specified``,
+          check that the installed mono version is 6.12 or above and that msbuild has been included
+          (see :ref:`C# setup - MacOS and Linux <set-up-csharp-on-linux>`).
+
+To ensure that NuGet packages will be available for
 msbuild to use, run:
 
 .. code-block:: none
