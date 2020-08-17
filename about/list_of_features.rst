@@ -164,7 +164,7 @@ Vulkan renderer.
 
 - *DirectionalLight:* Orthogonal (fastest), PSSM 2-split and 4-split.
   Supports blending between splits.
-- *OmniLight:* Dual parabolid (fast) or cubemap (slower but more accurate).
+- *OmniLight:* Dual paraboloid (fast) or cubemap (slower but more accurate).
   Supports colored projector textures in the form of panoramas.
 - *SpotLight:* Single texture. Supports colored projector textures.
 - Shadow pancaking to decrease the amount of visible shadow acne and peter-panning.
