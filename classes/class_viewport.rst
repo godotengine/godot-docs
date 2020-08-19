@@ -337,7 +337,7 @@ enum **MSAA**:
 
 enum **Usage**:
 
-- **USAGE_2D** = **0** --- Allocates all buffers needed for drawing 2D scenes. This takes less VRAM than the 3D usage modes.
+- **USAGE_2D** = **0** --- Allocates all buffers needed for drawing 2D scenes. This takes less VRAM than the 3D usage modes. Note that 3D rendering effects such as glow, HDR, SSAO, etc. are not available. 
 
 - **USAGE_2D_NO_SAMPLING** = **1** --- Allocates buffers needed for 2D scenes without allocating a buffer for screen copy. Accordingly, you cannot read from the screen. Of the :ref:`Usage<enum_Viewport_Usage>` types, this requires the least VRAM.
 
