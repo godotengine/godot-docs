@@ -519,13 +519,17 @@ connections.
 
 When you need to highlight an area of the editor to show something, like a
 button or option, use a 2 pixel-thick yellow outline without a bevel. If the
-outline is on a dark background, the outline should be yellow (*not* red) so it
-can be easily seen by colorblind people.
+outline is on a dark background, the outline should be yellow so it can be
+easily seen by colorblind people. Please do not use red as it won't be visible
+for some users.
 
 Before you add or replace any images in the documentation, they should be run
 through a PNG compressor to save size. You can use the lossless OxiPNG
-compressor included in `Squoosh <https://squoosh.app/>`__ for this purpose.
-For heavier images, also look into using a lossy compressor, such as
-`pngquant <https://pngquant.org/>`_ where almost no image quality is lost
-during compression. (This compressor must be installed locally as it's
-not available in Squoosh.)
+compressor included in `Squoosh <https://squoosh.app/>`__ for this purpose. For
+heavier images, consider using a lossy compressor like `pngquant
+<https://pngquant.org/>`_. With it, almost no image quality is lost during
+compression.
+
+.. note::
+
+    The program pngquant must be installed locally as it's not available in Squoosh.
