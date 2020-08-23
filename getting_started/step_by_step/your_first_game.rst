@@ -897,7 +897,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
         mobInstance.Position = mobSpawnLocation.Position;
 
         // Add some randomness to the direction.
-        direction += GD. RandRange(-Mathf.Pi / 4, Mathf.Pi / 4);
+        direction += GD.RandRange(-Mathf.Pi / 4, Mathf.Pi / 4);
         mobInstance.Rotation = direction;
 
         // Choose the velocity.
