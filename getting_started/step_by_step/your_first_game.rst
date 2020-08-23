@@ -897,11 +897,11 @@ Note that a new instance must be added to the scene using ``add_child()``.
         mobInstance.Position = mobSpawnLocation.Position;
 
         // Add some randomness to the direction.
-        direction += RandRange(-Mathf.Pi / 4, Mathf.Pi / 4);
+        direction += GD. RandRange(-Mathf.Pi / 4, Mathf.Pi / 4);
         mobInstance.Rotation = direction;
 
         // Choose the velocity.
-        mobInstance.LinearVelocity = new Vector2(RandRange(150f, 250f), 0).Rotated(direction);
+        mobInstance.LinearVelocity = new Vector2(GD.RandRange(150f, 250f), 0).Rotated(direction);
     }
 
 .. important:: Why ``PI``? In functions requiring angles, GDScript uses *radians*,
