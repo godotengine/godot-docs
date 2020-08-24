@@ -26,6 +26,13 @@ Click on the folder icon and select your desired icon.
 Changing the file icon
 ----------------------
 
+.. warning::
+
+    There are `known issues <https://github.com/godotengine/godot/issues/33466>`__
+    when changing the application icon in executables that embed a PCK file.
+    It's recommended to avoid using rcedit for now if you choose to enable the
+    **Embed Pck** option for your Windows export preset in the Export dialog.
+
 The file icon is the icon of the executable that you click on to start
 the project.
 
