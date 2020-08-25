@@ -188,7 +188,7 @@ the default settings particles will go straight down.
 .. image:: img/direction1.png
 
 For this property to be noticeable you need an *initial velocity* greater
-than 0. Here, we set the initial velocity to 40, you'll notice that
+than 0. Here, we set the initial velocity to 40. You'll notice that
 particles emit toward the right, then go down because of gravity.
 
 .. image:: img/direction2.png
