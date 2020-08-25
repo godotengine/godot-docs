@@ -182,8 +182,8 @@ Direction
 ~~~~~~~~~
 
 This is the base direction at which particles emit. The default is
-``Vector3(1, 0, 0)`` which makes particles emit to the right. However with
-the default settings particles will go straight down.
+``Vector3(1, 0, 0)`` which makes particles emit to the right. However,
+with the default gravity settings, particles will go straight down.
 
 .. image:: img/direction1.png
 
