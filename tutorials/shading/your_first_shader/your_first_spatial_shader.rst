@@ -332,7 +332,7 @@ most of the difficult stuff for you.
 
   void vertex() {
     vertex_position = VERTEX.xz / 2.0;
-    float height = texture(noise, vertex_position).x * height_scale;
+    float height = texture(noise, vertex_position).x;
     VERTEX.y += height * height_scale;
   }
 
