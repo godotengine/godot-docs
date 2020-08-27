@@ -169,13 +169,15 @@ Once you set it up and should look like this.
 
 Now, access the noise texture using the ``texture()`` function. ``texture()`` takes a texture as the first
 argument and a ``vec2`` for the position on the texture as the second argument. We use the ``x`` and ``z``
-channels of ``VERTEX`` to determine where on the texture to look up. ``texture()`` returns a ``vec4`` of the
+channels of ``VERTEX`` to determine where on the texture to look up. Note that the PlaneMesh coordinates are
+within the [-1,1] range (for a size of 2), while the texture coordinates are within [0,1], so to normalize
+we divide by the size of the PlaneMesh 2.0 and add 0.5. ``texture()`` returns a ``vec4`` of the
 ``r, g, b, a`` channels at the position. Since the noise texture is grayscale, all of the values are the same,
 so we can use any one of the channels as the height. In this case we'll use the ``r``, or ``x`` channel.
 
 .. code-block:: glsl
 
-  float height = texture(noise, VERTEX.xz / 2.0 + 0.5).x; // divide by the size of the PlaneMesh
+  float height = texture(noise, VERTEX.xz / 2.0 + 0.5).x;
   VERTEX.y += height;
 
 Note: ``xyzw`` is the same as ``rgba`` in GLSL, so instead of ``texture().x`` above, we could use ``texture().r``.
