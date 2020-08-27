@@ -265,7 +265,7 @@ load function:
         // it represents.
         saveGame.Open("user://savegame.save", (int)File.ModeFlags.Read);
 
-        while (saveGame.GetPosition() < save_game.GetLen())
+        while (saveGame.GetPosition() < saveGame.GetLen())
         {
             // Get the saved dictionary from the next line in the save file
             var nodeData = new Godot.Collections.Dictionary<string, object>((Godot.Collections.Dictionary)JSON.Parse(saveGame.GetLine()).Result);
