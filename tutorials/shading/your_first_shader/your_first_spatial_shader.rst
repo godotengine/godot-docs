@@ -175,7 +175,7 @@ so we can use any one of the channels as the height. In this case we'll use the 
 
 .. code-block:: glsl
 
-  float height = texture(noise, VERTEX.xz / 2.0 ).x; //divide by the size of the PlaneMesh
+  float height = texture(noise, VERTEX.xz / 2.0 + 0.5).x; // divide by the size of the PlaneMesh
   VERTEX.y += height;
 
 Note: ``xyzw`` is the same as ``rgba`` in GLSL, so instead of ``texture().x`` above, we could use ``texture().r``.
@@ -289,16 +289,18 @@ Lastly, in order to ensure that we are reading from the same places on the noise
 texture, we are going to pass the ``VERTEX.xz`` position from the ``vertex()`` function to the ``fragment()``
 function. We do that with varyings.
 
-Above the ``vertex()`` define a ``vec2`` called ``vertex_position``. And inside the ``vertex()`` function
-assign ``VERTEX.xz`` to ``vertex_position``.
+Above the ``vertex()`` define a ``vec2`` called ``tex_position``. And inside the ``vertex()`` function
+assign ``VERTEX.xz`` to ``tex_position``.
 
 .. code-block:: glsl
 
-  varying vec2 vertex_position;
+  varying vec2 tex_position;
 
   void vertex() {
     ...
-    vertex_position = VERTEX.xz / 2.0;
+    tex_position = VERTEX.xz / 2.0 + 0.5;
+    float height = texture(noise, tex_position).x;
+    ...
   }
 
 And now we can access ``vertex_position`` from the ``fragment()`` function.
@@ -328,16 +330,16 @@ most of the difficult stuff for you.
   uniform sampler2D noise;
   uniform sampler2D normalmap;
 
-  varying vec2 vertex_position;
+  varying vec2 tex_position;
 
   void vertex() {
-    vertex_position = VERTEX.xz / 2.0;
-    float height = texture(noise, vertex_position).x;
+    tex_position = VERTEX.xz / 2.0 + 0.5;
+    float height = texture(noise, tex_position).x;
     VERTEX.y += height * height_scale;
   }
 
   void fragment() {
-    NORMALMAP = texture(normalmap, vertex_position).xyz;
+    NORMALMAP = texture(normalmap, tex_position).xyz;
   }
 
 That is everything for this part. Hopefully, you now understand the basics of vertex
