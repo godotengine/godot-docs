@@ -267,7 +267,7 @@ These are nodes you can use as temporary storage for your graphs. Make sure they
 .. image:: img/visual_script41.png
 
 
-As it can be seen above, there are two nodes available: A simple getter, and a sequenced getter (setting requires a sequence port).
+As it can be seen above, there are two nodes available: A simple getter, and a sequenced setter (setting requires a sequence port).
 
 
 Scene Node
