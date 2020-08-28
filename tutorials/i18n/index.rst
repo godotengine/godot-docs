@@ -6,5 +6,6 @@ Internationalization
    :name: toc-learn-features-i18n
 
    internationalizing_games
+   localization_using_csv
    localization_using_gettext
    locales

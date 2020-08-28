@@ -14,27 +14,41 @@ often require localization. Godot offers many tools to make this process
 more straightforward, so this tutorial is more like a collection of
 tips and tricks.
 
-Localization is usually done by specific studios hired for the job and,
-despite the huge amount of software and file formats available for this,
-the most common way to do localization to this day is still with
-spreadsheets. The process of creating the spreadsheets and importing
-them is already covered in the :ref:`doc_importing_translations` tutorial,
-so this one could be seen more like a follow-up to that one.
-
-
 .. note:: We will be using the official demo as an example; you can
           `download it from the Asset Library <https://godotengine.org/asset-library/asset/134>`_.
 
-Configuring the imported translation
-------------------------------------
+Localizing texts
+----------------
 
-Translations can get updated and re-imported when they change, but
-they still have to be added to the project. This is done in
-**Project → Project Settings → Localization**:
+The most common topic in localization is text translation. 
 
-.. image:: img/localization_dialog.png
+Godot offers two ways to localize text, by using CSV files or gettext 
+PO files. These files contain the translation data needed to translate 
+the texts in a game. Both formats have their own advantage and disadvantage, 
+which you can learn in detail in the tutorials :ref:`doc_localization_using_csv` 
+and :ref:`doc_localization_using_gettext`. In this section, we'll provide a quick 
+overview of text translation.
 
-The above dialog is used to add or remove translations project-wide.
+Some controls, such as :ref:`Button <class_Button>` and :ref:`Label <class_Label>`,
+will automatically fetch a translation if their text matches a key. 
+The keys are imported from a CSV file or gettext PO files.
+For example, if a label's text is "MAIN_SCREEN_GREETING1" and that key exists, 
+then the text will automatically be translated.
+
+In ``GDScript``, the :ref:`Object.tr() <class_Object_method_tr>` and 
+:ref:`Object.tr_n() <class_Object_method_tr_n>` functions are used with keys to provide
+translation. These two functions will look up the key in the imported translations 
+and convert it into the translated text if found:
+
+::
+
+    # Text localization using keys (CSV method).
+    level.set_text(tr("LEVEL_5_NAME"))
+    status.set_text(tr("GAME_STATUS_" + str(status_index)))
+    
+    # Text localization using source strings as keys (gettext PO method).
+    level.set_text(tr("Level 5: The Infinite Void"))
+    status.set_text(tr("Game status: " + str(status_index)))
 
 Localizing resources
 --------------------
@@ -47,23 +61,6 @@ can be used for this:
 
 Select the resource to be remapped, then add some alternatives for each
 locale.
-
-Converting keys to text
------------------------
-
-Some controls, such as :ref:`Button <class_Button>` and :ref:`Label <class_Label>`,
-will automatically fetch a translation if their text matches a translation key.
-For example, if a label's text is "MAIN_SCREEN_GREETING1" and that key exists
-in the current translation, then the text will automatically be translated.
-
-In code, the :ref:`Object.tr() <class_Object_method_tr>`
-function can be used. This will just look up the text in the
-translations and convert it if found:
-
-::
-
-    level.set_text(tr("LEVEL_5_NAME"))
-    status.set_text(tr("GAME_STATUS_" + str(status_index)))
 
 Making controls resizable
 --------------------------
