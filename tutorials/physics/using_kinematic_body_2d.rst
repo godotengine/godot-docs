@@ -130,6 +130,8 @@ and ``get_slide_collision()``:
         var collision = get_slide_collision(i)
         print("I collided with ", collision.collider.name)
 
+.. note:: `get_slide_count()` only counts times the body has collided and changed direction.      
+
 See :ref:`KinematicCollision2D <class_KinematicCollision2D>` for details on what
 collision data is returned.
 
