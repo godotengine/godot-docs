@@ -90,6 +90,12 @@ The **Keep Debugger Open** option keeps the debugger open after a scene
 has been closed. And the **Debug with External Editor** option lets you
 debug your game with an external editor.
 
+.. warning::
+
+    Breakpoints won't break on code if it's
+    :ref:`running in a thread <doc_using_multiple_threads>`.
+    This is a current limitation of the GDScript debugger.
+
 Debug project settings
 ----------------------
 
