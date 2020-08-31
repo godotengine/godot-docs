@@ -280,6 +280,30 @@ Will display as:
         var sprite = get_node("Sprite")
         print(sprite.get_pos())
 
+To denote important information, add a paragraph starting with "[b]Note:[/b]" at
+the end of the description:
+
+.. code-block:: none
+
+    [b]Note:[/b] Only available when using the Vulkan renderer.
+
+To denote crucial information that could cause security issues or loss of data
+if not followed carefully, add a paragraph starting with "[b]Warning:[/b] at the
+end of the description:
+
+.. code-block:: none
+
+    [b]Warning:[/b] If this property is set to [code]true[/code], it allows clients to execute arbitrary code on the server.
+
+For deprecated properties, add a paragraph starting with "[i]Deprecated.[/i]".
+Notice the use of italics instead of bold:
+
+.. code-block:: none
+
+    [i]Deprecated.[/i] This property has been replaced by [member other_property].
+
+In all the paragraphs described above, make sure the punctuation is part of the
+BBCode tags for consistency.
 
 I don't know what this method does!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
