@@ -234,3 +234,12 @@ link libraries dynamically. Instead, we bundle them in our source tree.
 As a result, we are very picky with what goes in, and we tend to prefer smaller
 libraries (in fact, single header ones are our favorite). Only in cases where
 there is no other choice we end up bundling something larger.
+
+Also, libraries must use a permissive enough license to be included into Godot.
+Some examples of acceptable licenses are Apache 2.0, BSD, MIT, ISC, and MPL 2.0.
+In particular, we cannot accept libraries licensed under the GPL or LGPL since
+these licenses effectively disallow static linking in proprietary software
+(which Godot is distributed as in most exported projects). This requirement also
+applies to the editor, since we may want to run it on iOS in the long term.
+Since iOS doesn't support dynamic linking, static linking the only option on
+that platform.
