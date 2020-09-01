@@ -12,3 +12,8 @@ export system. When exporting for PC (Linux, Windows, macOS), the exporter
 takes all the project files and creates a ``data.pck`` file. This file is
 bundled with a specially optimized binary that is smaller, faster and
 does not contain the editor and debugger.
+
+.. warning::
+
+    If you export for Windows with embedded PCK files, you will not be able to
+    sign the program, it will break.
