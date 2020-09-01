@@ -35,13 +35,24 @@ Compiling
 
 Start a terminal, go to the root directory of the engine source code.
 
+You have 3 target options when compiling.
+
+- ``debug``, Performance will be worse and the executable will be larger.
+  However you can debug Godot and it compiles the fastest.
+- ``release_debug``. Godot will have normal performance and file size, and you
+  can debug it.
+- ``release``. Godot will have normal performance and file size, but Godot
+  cannot be debugged.
+
+If you do not specify a target ``debug`` will be used.
+
 To compile for Intel (x86-64) powered Macs, use::
 
-    scons platform=osx arch=x86_64 --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=osx arch=x86_64 target=release_debug --jobs=$(sysctl -n hw.logicalcpu)
 
 To compile for Apple Silicon (ARM64) powered Macs, use::
 
-    scons platform=osx arch=arm64 --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=osx arch=arm64 target=release_debug --jobs=$(sysctl -n hw.logicalcpu)
 
 To support both architectures in a single "Universal 2" binary, run the above two commands and then use ``lipo`` to bundle them together::
 

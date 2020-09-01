@@ -126,6 +126,20 @@ option to any SCons command you see below.
 .. note:: When compiling with multiple CPU threads, SCons may warn about
           pywin32 being missing. You can safely ignore this warning.
 
+Finally you have 3 target options when compiling.
+
+- ``debug``, Performance will be worse and the executable will be larger.
+  However you can debug Godot and it compiles the fastest.
+- ``release_debug``. Godot will have normal performance and file size, and you
+  can debug it.
+- ``release``. Godot will have normal performance and file size, but Godot
+  cannot be debugged.
+
+If you do not specify a target ``debug`` will be used. The target can be
+specified like this::
+
+    C:\godot> scons -j4 platform=windows target=release_debug
+
 If all goes well, the resulting binary executable will be placed in
 ``C:\godot\bin\`` with the name ``godot.windows.tools.32.exe`` or
 ``godot.windows.tools.64.exe``. By default, SCons will build a binary matching
@@ -135,11 +149,7 @@ your CPU architecture, but this can be overridden using ``bits=64`` or
 This executable file contains the whole engine and runs without any
 dependencies. Running it will bring up the Project Manager.
 
-.. note:: If you are compiling Godot for production use, then you can
-          make the final executable smaller and faster by adding the
-          SCons option ``target=release_debug``.
-
-          If you are compiling Godot with MinGW, you can make the binary
+.. note:: If you are compiling Godot with MinGW, you can make the binary
           even smaller and faster by adding the SCons option ``use_lto=yes``.
           As link-time optimization is a memory-intensive process,
           this will require about 3 GB of available RAM while compiling.

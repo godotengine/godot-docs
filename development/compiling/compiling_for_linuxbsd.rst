@@ -92,11 +92,22 @@ Start a terminal, go to the root dir of the engine source code and type:
 
 ::
 
-    scons -j8 platform=linuxbsd
+    scons -j8 platform=linuxbsd target=release_debug
 
 A good rule of thumb for the ``-j`` (*jobs*) flag, is to have at least as many
 threads compiling Godot as you have cores in your CPU, if not one or two more.
 Feel free to add the ``-j`` option to any SCons command you see below.
+
+You have 3 target options when compiling.
+
+- ``debug``, Performance will be worse and the executable will be larger.
+  However you can debug Godot and it compiles the fastest.
+- ``release_debug``. Godot will have normal performance and file size, and you
+  can debug it.
+- ``release``. Godot will have normal performance and file size, but Godot
+  cannot be debugged.
+
+If you do not specify a target ``debug`` will be used.
 
 .. note::
 
@@ -119,12 +130,8 @@ manager.
 
     Using Clang appears to be a requirement for OpenBSD, otherwise fonts
     would not build.
-
-.. note:: If you are compiling Godot for production use, then you can
-          make the final executable smaller and faster by adding the
-          SCons option ``target=release_debug``.
-
-          If you are compiling Godot with GCC, you can make the binary
+ 
+.. note:: If you are compiling Godot with GCC, you can make the binary
           even smaller and faster by adding the SCons option ``use_lto=yes``.
           As link-time optimization is a memory-intensive process,
           this will require about 3 GB of available RAM while compiling.
