@@ -7,7 +7,7 @@ This series is a collection of best practices to help you work efficiently with
 Godot.
 
 Godot allows for a great amount of flexibility in how you structure a project's
-codebase and break it down into scenes. Each approach has its own pros and
+codebase and break it down into scenes. Each approach has its pros and
 cons, and they can be hard to weigh until you've worked with the engine for long enough.
 
 There are always many ways to structure your code and solve specific programming
