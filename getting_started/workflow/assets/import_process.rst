@@ -11,20 +11,27 @@ of a separate directory with source assets. Without doing this, it was
 impossible to specify how to convert and change import flags for
 textures, audio files, scenes, etc.
 
-In Godot 3.0, we use a more modern approach to importing: Simply drop
+In Godot 3.0+, we use a more modern approach to importing: Simply drop
 your assets (image files, scenes, audio files, fonts, etc) directly in the
 project folder (copy them manually with your OS file explorer).
 Godot will automatically import these files internally
 and keep the imported resources hidden in a res://.import folder.
 
-This allows changing all the import parameters transparently.
+This means that when trying to access imported assets through code you
+need to use the :ref:`Resource Loader<class_ResourceLoader>` as it will
+automatically take into account where the internal files are saved. If you
+try and access an imported asset using the :ref:`File <class_File>` class
+it will work in the editor, but break in the exported project.
+
+However, the :ref:`Resource Loader<class_ResourceLoader>` cannot access
+non imported files, only the :ref:`File <class_File>` class can.
 
 Changing import parameters
 --------------------------
 
-Changing the import parameters of an asset in Godot (again, keep in mind
-import parameters are only present in non-native Godot resource types) is
-easy. Select the relevant resource in the filesystem dock:
+To change the import parameters of an asset in Godot (again, keep in mind
+import parameters are only present in non-native Godot resource types)
+select the relevant resource in the filesystem dock:
 
 .. image:: img/asset_workflow1.png
 
@@ -34,6 +41,22 @@ will only be used for this asset and on future reimports.
 Changing the import parameters of several assets at the same time is also
 possible. Simply select all of them together in the resources dock and the
 exposed parameters will apply to all of them when reimporting.
+
+Reimporting multiple assets
+---------------------------
+
+While working on a project you may find that several assets need to have
+the same parameters changed, such as enabling mipmaps, but you only want
+those specific parameters changed. To do this, select every asset you want
+to reimport in the file system. In the import tab there will now be a
+checkbox to the left of every import parameter.
+
+.. image:: img/reimport_multiple.png
+
+Select the checkbox of the parameters you want to change on your imported
+assets, then change the parameters normally. Finally, click the reimport
+button and every selected asset will be reimported with only those
+parameters changed.
 
 Automatic reimport
 ------------------
