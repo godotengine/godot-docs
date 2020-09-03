@@ -18,7 +18,8 @@ Description
 
 This resource allows you to configure and sample a fractal noise space. Here is a brief usage example that configures an OpenSimplexNoise and gets samples at various positions and dimensions:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var noise = OpenSimplexNoise.new()
     
@@ -33,6 +34,23 @@ This resource allows you to configure and sample a fractal noise space. Here is 
     print(noise.get_noise_2d(1.0, 1.0))
     print(noise.get_noise_3d(0.5, 3.0, 15.0))
     print(noise.get_noise_4d(0.5, 1.9, 4.7, 0.0))
+
+ .. code-tab:: csharp
+
+    OpenSimplexNoise noise = new OpenSimplexNoise();
+
+    // Configure
+    System.Random random = new System.Random(); 
+    noise.Seed = random.Next(); 
+    noise.Octaves = 4;
+    noise.Period = 20.0f;
+    noise.Persistence = 0.8f;
+
+    // Sample
+    GD.Print("Values:");
+    GD.Print(noise.GetNoise2d(1.0f, 1.0f));
+    GD.Print(noise.GetNoise3d(0.5f, 3.0f, 15.0f));
+    GD.Print(noise.GetNoise4d(0.5f, 1.9f, 4.7f, 0.0f));
 
 Properties
 ----------
