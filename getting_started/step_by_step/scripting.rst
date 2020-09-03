@@ -104,6 +104,8 @@ easier to get an overview of the concepts.
 Scene setup
 ~~~~~~~~~~~
 
+If you still have the "instancing" project open from the previous tutorial, then close that out (Project -> Quit to Project List) and create a New Project.
+
 Use the "Add Child Node" dialogue accessed from the Scene tab (or by pressing :kbd:`Ctrl + A`) to create a hierarchy with the following
 nodes:
 
