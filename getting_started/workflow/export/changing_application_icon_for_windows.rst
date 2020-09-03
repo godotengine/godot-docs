@@ -7,6 +7,25 @@ By default, the exported project's icon will be the Godot icon.
 You will most likely want to change that for your project. There are two types
 of icons that can be changed on Windows: the file icon and the taskbar icon.
 
+Creating an ICO file
+--------------------
+
+Windows does not use formats such as png or jpg for application icons. Instead,
+it uses a Windows-only format called ICO. You can create your application icon
+in any program but you will have to convert it to an ICO file using a program such 
+as GIMP.
+
+`This video tutorial <https://www.youtube.com/watch?v=uqV3UfM-n5Y>`_ goes over how to
+export an ICO file with GIMP.
+
+It is also possible to convert a PNG image to an hiDPI-friendly ICO file
+using this `ImageMagick <https://www.imagemagick.org/>`_ command:
+
+.. code-block:: none
+
+    magick convert icon.png -define icon:auto-resize=256,128,64,48,32,16 icon.ico
+
+
 Changing the taskbar icon
 -------------------------
 
@@ -16,12 +35,14 @@ is running.
 .. image:: img/icon_taskbar_icon.png
 
 To change the taskbar icon, go to
-**Project → Project Settings → Application → Config → Icon**.
-Click on the folder icon and select your desired icon.
-
-.. note:: This is also the icon that gets displayed in the Godot project list.
+**Project → Project Settings → Application → Config → Windows Native Icon**.
+Click on the folder icon and select your ICO file.
 
 .. image:: img/icon_project_settings.png
+
+This setting only changes the icon for your exported game on Windows. 
+To set the icon for macOS, use ``Macos Native Icon``. And for any other platform,
+use the ``Icon`` setting.
 
 Changing the file icon
 ----------------------
@@ -59,10 +80,6 @@ Go to **Project → Export**. Assuming you have already created
 a Windows Desktop preset, select your icon in ICO format in
 the **Application → Icon** field.
 
-.. note:: You can use software such as GIMP to export an ICO image.
-          For more information, please refer to
-          `this tutorial <http://skyboygames.com/easily-create-a-windows-app-icon-with-gimp/>`_.
-
 .. image:: img/icon_export_settings.png
 
 Testing the result
@@ -72,28 +89,6 @@ You can now export the project. If it worked correctly, you should see this:
 
 .. image:: img/icon_result.png
 
-ICO file requirements
----------------------
-
-Regardless of which program you use to create your
-`ICO file <https://en.wikipedia.org/wiki/ICO_(file_format)>`_, there are
-some requirements to ensure the icon (and your executable) works on Windows.
-
-This is a bit tricky, as can be seen in the following Stack Overflow threads:
-`one <https://stackoverflow.com/q/3236115/>`_,
-`two <https://stackoverflow.com/q/40749785/>`_.
-
-Your ICO file should at least contain icons in the following resolutions:
-16×16, 48×48 and 256×256.
-
-If you want to fully support high-DPI screens, this is the full list of
-supported icon sizes on Windows 10:
-16, 20, 24, 28, 30, 31, 32, 40, 42, 47, 48, 56, 60, 63, 84
-and one larger than 255 pixels (such as 256, 512 or 1024).
-
-It is also possible to convert a PNG image to an hiDPI-friendly ICO file
-using this `ImageMagick <https://www.imagemagick.org/>`_ command:
-
-.. code-block:: none
-
-    magick convert icon.png -define icon:auto-resize=256,128,64,48,32,16 icon.ico
+.. note:: if your icon isn't showing up properly, on Windows 10, try clearing 
+             the icon cache. To do so, open `Run` and call the command 
+             ``ie4uinit.exe -ClearIconCache`` or ``ie4uinit.exe -show``.
