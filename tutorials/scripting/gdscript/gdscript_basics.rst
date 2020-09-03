@@ -82,7 +82,8 @@ here's a simple example of how GDScript looks.
             param2 -= 1
 
         match param3:
-            3: print("param3 is 3!")
+            3:
+                print("param3 is 3!")
             _:
                 print("param3 is not 3!")
 
