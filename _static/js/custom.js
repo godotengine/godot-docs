@@ -115,7 +115,7 @@ const registerOnScrollEvent = (function(){
 
       $menu.scroll(function() {
         handleSidebarScroll();
-      })
+      });
 
       handleMainScroll(window.scrollY);
       handleSidebarScroll();
