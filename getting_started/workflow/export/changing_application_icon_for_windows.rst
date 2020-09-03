@@ -10,12 +10,12 @@ of icons that can be changed on Windows: the file icon and the taskbar icon.
 Creating an ICO file
 --------------------
 
-Windows does not use formats such as png or jpg for application icons, instead
-it uses a windows only format called ICO. You can create your application icon
-in any program, as long as you can bring that file into a program, such as GIMP,
-which can export an ICO file.
+Windows does not use formats such as png or jpg for application icons. Instead,
+it uses a Windows-only format called ICO. You can create your application icon
+in any program but you will have to convert it to an ICO file using a program such 
+as GIMP.
 
-`This tutorial <https://www.youtube.com/watch?v=uqV3UfM-n5Y>`_ goes over how to
+`This video tutorial <https://www.youtube.com/watch?v=uqV3UfM-n5Y>`_ goes over how to
 export an ICO file with GIMP.
 
 It is also possible to convert a PNG image to an hiDPI-friendly ICO file
@@ -40,9 +40,9 @@ Click on the folder icon and select your ICO file.
 
 .. image:: img/icon_project_settings.png
 
-Doing this will only change the icon for windows. ``Macos Native Icon`` sets
-the icon for Mac. ``Icon`` sets the icon for everything else and the project
-manager.
+This setting only changes the icon for your exported game on Windows. 
+To set the icon for macOS, use ``Macos Native Icon``. And for any other platform,
+use the ``Icon`` setting.
 
 Changing the file icon
 ----------------------
@@ -89,6 +89,6 @@ You can now export the project. If it worked correctly, you should see this:
 
 .. image:: img/icon_result.png
 
-.. note:: if your icon isn't showing up properly try clearing the icon cache
-          by opening `Run` and using the command ``ie4uinit.exe -ClearIconCache``
-          or ``ie4uinit.exe -show`` on Windows 10
+.. note:: if your icon isn't showing up properly, on Windows 10, try clearing 
+             the icon cache. To do so, open `Run` and call the command 
+             ``ie4uinit.exe -ClearIconCache`` or ``ie4uinit.exe -show``.
