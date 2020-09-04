@@ -234,33 +234,39 @@ Improve formatting with BBCode style tags
 
 Godot's class reference supports BBCode-like tags. They add nice formatting to the text. Here's the list of available tags:
 
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| Tag                       | Effect                         | Usage                             | Result                                            |
-+===========================+================================+===================================+===================================================+
-| [Class]                   | Link a class                   | Move the [Sprite].                | Move the :ref:`class_sprite`.                     |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [method methodname]       | Link to a method in this class | Call [method hide].               | See :ref:`hide <class_spatial_method_hide>`.      |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [method Class.methodname] | Link to another class's method | Call [method Spatial.hide].       | See :ref:`hide <class_spatial_method_hide>`.      |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [member membername]       | Link to a member in this class | Get [member scale].               | Get :ref:`scale <class_node2d_property_scale>`.   |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [member Class.membername] | Link to another class's member | Get [member Node2D.scale].        | Get :ref:`scale <class_node2d_property_scale>`.   |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [signal signalname]       | Link to a signal in this class | Emit [signal renamed].            | Emit :ref:`renamed <class_node_signal_renamed>`.  |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [signal Class.signalname] | Link to another class's signal | Emit [signal Node.renamed].       | Emit :ref:`renamed <class_node_signal_renamed>`.  |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [b] [/b]                  | Bold                           | Some [b]bold[/b] text.            | Some **bold** text.                               |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [i] [/i]                  | Italic                         | Some [i]italic[/i] text.          | Some *italic* text.                               |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [code] [/code]            | Monospace                      | Some [code]monospace[/code] text. | Some ``monospace`` text.                          |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [kbd] [/kbd]              | Keyboard/mouse shortcut        | Some [kbd]Ctrl + C[/kbd] key.     | Some :kbd:`Ctrl + C` key.                         |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [codeblock] [/codeblock]  | Multiline preformatted block   | *See below.*                      | *See below.*                                      |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| Tag                        | Effect                               | Usage                             | Result                                            |
++============================+======================================+===================================+===================================================+
+| [Class]                    | Link a class                         | Move the [Sprite].                | Move the :ref:`class_sprite`.                     |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [method methodname]        | Link to a method in this class       | Call [method hide].               | See :ref:`hide <class_spatial_method_hide>`.      |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [method Class.methodname]  | Link to another class's method       | Call [method Spatial.hide].       | See :ref:`hide <class_spatial_method_hide>`.      |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [member membername]        | Link to a member in this class       | Get [member scale].               | Get :ref:`scale <class_node2d_property_scale>`.   |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [member Class.membername]  | Link to another class's member       | Get [member Node2D.scale].        | Get :ref:`scale <class_node2d_property_scale>`.   |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [signal signalname]        | Link to a signal in this class       | Emit [signal renamed].            | Emit :ref:`renamed <class_node_signal_renamed>`.  |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [signal Class.signalname]  | Link to another class's signal       | Emit [signal Node.renamed].       | Emit :ref:`renamed <class_node_signal_renamed>`.  |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [b] [/b]                   | Bold                                 | Some [b]bold[/b] text.            | Some **bold** text.                               |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [i] [/i]                   | Italic                               | Some [i]italic[/i] text.          | Some *italic* text.                               |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [code] [/code]             | Monospace                            | Some [code]monospace[/code] text. | Some ``monospace`` text.                          |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [kbd] [/kbd]               | Keyboard/mouse shortcut              | Some [kbd]Ctrl + C[/kbd] key.     | Some :kbd:`Ctrl + C` key.                         |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [codeblock] [/codeblock]   | Multiline preformatted block         | *See below.*                      | *See below.*                                      |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [codeblocks] [/codeblocks] | [codeblock] for multiple languages   | *See below.*                      | *See below.*                                      |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [gdscript] [/gdscript]     | GDScript codeblock tab in codeblocks | *See below.*                      | *See below.*                                      |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [csharp] [/csharp]         | C# codeblock tab in codeblocks       | *See below.*                      | *See below.*                                      |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
 
 Use ``[codeblock]`` for pre-formatted code blocks. Inside ``[codeblock]``, always use **four spaces** for indentation (the parser will delete tabs). Example:
 
@@ -279,6 +285,43 @@ Will display as:
     func _ready():
         var sprite = get_node("Sprite")
         print(sprite.get_pos())
+
+If you need to have different code version in GDScript and C#, use ``[codeblocks]`` instead. If you use ``[codeblocks]``, you also need to have at least one of the language specific tags (``[gdscript]`` and ``[csharp]``). Always write GDScript code examples first! You can use this `experimental code translation tool <https://github.com/HaSa1002/codetranslator>`_ to speed up your workflow.
+
+.. code-block:: none
+
+    [codeblocks]
+    [gdscript]
+    func _ready():
+        var sprite = get_node("Sprite")
+        print(sprite.get_pos())
+    [/gdscript]
+    [csharp]
+    public override void _Ready()
+    {
+        var sprite = GetNode("Sprite");
+        GD.Print(sprite.GetPos());
+    }
+    [/csharp]
+    [/codeblocks]
+
+Will display as:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _ready():
+        var sprite = get_node("Sprite")
+        print(sprite.get_pos())
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        var sprite = GetNode("Sprite");
+        GD.Print(sprite.GetPos());
+    }
+
 
 To denote important information, add a paragraph starting with "[b]Note:[/b]" at
 the end of the description:
