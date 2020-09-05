@@ -1,7 +1,7 @@
 .. _doc_high_dynamic_range:
 
-Light transport in game engines
-===============================
+High dynamic range lighting
+===========================
 
 Introduction
 ------------
@@ -31,6 +31,14 @@ easily understood if we consider virtually photographing our game engine scene
 through a virtual camera. Here, our virtual camera would apply a particular
 camera rendering transform to the scene data, and the output would be ready
 for display on a particular display type.
+
+.. note::
+
+    Godot does not support high dynamic range *output* yet. It can only perform
+    lighting in HDR and tonemap the result to a low dynamic range image.
+
+    For advanced users, it is still possible to get a non-tonemapped image
+    of the viewport with full HDR data, which can then be saved to an OpenEXR file.
 
 Computer displays
 -----------------
@@ -88,7 +96,7 @@ The GPU will do the conversion after reading the texel using floating-point.
 This works fine on PC and consoles, but most mobile devices don't support it,
 or they don't support it on compressed texture formats (iOS for example).
 
-Scene linear to display referred nonlinear
+Scene linear to display-referred nonlinear
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After all the rendering is done, the scene linear render requires transforming
