@@ -1,7 +1,7 @@
 .. _doc_csg_tools:
 
-CSG
-===
+Prototyping levels with CSG
+===========================
 
 CSG stands for **Constructive Solid Geometry**, and is a tool to combine basic
 shapes or custom meshes to create more complex shapes. In 3D modelling software,
