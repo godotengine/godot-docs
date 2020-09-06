@@ -63,7 +63,7 @@ The content of a scene helps to define:
 - What signal connections they have with each other
 
 Why is any of this important to scene organization? Because instances of scenes *are* objects. As a
-result, many Object-Oriented principles that apply to written code also apply to scenes: single
+result, many object-oriented principles that apply to written code also apply to scenes: single
 responsibility, encapsulation, and others.
 
 The scene is *always an extension of the script attached to its root node*, so you can interpret it

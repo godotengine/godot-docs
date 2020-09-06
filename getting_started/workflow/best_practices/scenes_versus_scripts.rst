@@ -186,7 +186,7 @@ with it, and finally adds it as a child of the ``Main`` node:
         {
             Child = new Node();
             Child.Name = "Child";
-            Child.Script = (Script)ResourceLoader.Load("child.gd");
+            Child.Script = ResourceLoader.Load<Script>("child.gd");
             Child.Owner = this;
             AddChild(Child);
         }
