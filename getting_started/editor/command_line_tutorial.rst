@@ -137,6 +137,9 @@ Command line reference
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--test <test>``                      | Run a unit test. Use ``--help`` first to display the list of tests. (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                                    |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--export-pack <preset> <path>``      | Like ``--export``, but only export the game pack for the given preset. The <path> extension determines whether it will be in PCK or ZIP format. |
+|                                        | (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                                                                     |
 
 Path
 ----
@@ -273,6 +276,10 @@ will be shown.
 
 To export a debug version of the game, use the ``--export-debug`` switch
 instead of ``--export``. Their parameters and usage are the same.
+
+To export only a PCK file, use the ``--export-pack`` option followed by the 
+preset name and output path, with the file extension, instead of ``--export``.
+The output path extension determines the package's format, either PCK or ZIP.
 
 Running a script
 ----------------
