@@ -11,19 +11,14 @@ VisualShaderNodeVectorOp
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+---------------------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`Operator<enum_VisualShaderNodeVectorOp_Operator>` | :ref:`operator<class_VisualShaderNodeVectorOp_property_operator>` | 0 |
-+---------------------------------------------------------+-------------------------------------------------------------------+---+
++---------------------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`Operator<enum_VisualShaderNodeVectorOp_Operator>` | :ref:`operator<class_VisualShaderNodeVectorOp_property_operator>` | ``0`` |
++---------------------------------------------------------+-------------------------------------------------------------------+-------+
 
 Enumerations
 ------------
@@ -88,7 +83,7 @@ Property Descriptions
 - :ref:`Operator<enum_VisualShaderNodeVectorOp_Operator>` **operator**
 
 +-----------+---------------------+
-| *Default* | 0                   |
+| *Default* | ``0``               |
 +-----------+---------------------+
 | *Setter*  | set_operator(value) |
 +-----------+---------------------+

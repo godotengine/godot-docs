@@ -11,23 +11,7 @@ VehicleBody
 
 **Inherits:** :ref:`RigidBody<class_RigidBody>` **<** :ref:`PhysicsBody<class_PhysicsBody>` **<** :ref:`CollisionObject<class_CollisionObject>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Physics body that simulates the behavior of a car.
-
-Properties
-----------
-
-+---------------------------+--------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`brake<class_VehicleBody_property_brake>`               | 0.0 |
-+---------------------------+--------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`engine_force<class_VehicleBody_property_engine_force>` | 0.0 |
-+---------------------------+--------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`steering<class_VehicleBody_property_steering>`         | 0.0 |
-+---------------------------+--------------------------------------------------------------+-----+
 
 Description
 -----------
@@ -35,6 +19,21 @@ Description
 This node implements all the physics logic needed to simulate a car. It is based on the raycast vehicle system commonly found in physics engines. You will need to add a :ref:`CollisionShape<class_CollisionShape>` for the main body of your vehicle and add :ref:`VehicleWheel<class_VehicleWheel>` nodes for the wheels. You should also add a :ref:`MeshInstance<class_MeshInstance>` to this node for the 3D model of your car but this model should not include meshes for the wheels. You should control the vehicle by using the :ref:`brake<class_VehicleBody_property_brake>`, :ref:`engine_force<class_VehicleBody_property_engine_force>`, and :ref:`steering<class_VehicleBody_property_steering>` properties and not change the position or orientation of this node directly.
 
 **Note:** The origin point of your VehicleBody will determine the center of gravity of your vehicle so it is better to keep this low and move the :ref:`CollisionShape<class_CollisionShape>` and :ref:`MeshInstance<class_MeshInstance>` upwards.
+
+Properties
+----------
+
++---------------------------+--------------------------------------------------------------+------------------+
+| :ref:`float<class_float>` | :ref:`brake<class_VehicleBody_property_brake>`               | ``0.0``          |
++---------------------------+--------------------------------------------------------------+------------------+
+| :ref:`float<class_float>` | :ref:`engine_force<class_VehicleBody_property_engine_force>` | ``0.0``          |
++---------------------------+--------------------------------------------------------------+------------------+
+| :ref:`float<class_float>` | mass                                                         | **O:** ``40.0``  |
++---------------------------+--------------------------------------------------------------+------------------+
+| :ref:`float<class_float>` | :ref:`steering<class_VehicleBody_property_steering>`         | ``0.0``          |
++---------------------------+--------------------------------------------------------------+------------------+
+| :ref:`float<class_float>` | weight                                                       | **O:** ``392.0`` |
++---------------------------+--------------------------------------------------------------+------------------+
 
 Property Descriptions
 ---------------------
@@ -44,7 +43,7 @@ Property Descriptions
 - :ref:`float<class_float>` **brake**
 
 +-----------+------------------+
-| *Default* | 0.0              |
+| *Default* | ``0.0``          |
 +-----------+------------------+
 | *Setter*  | set_brake(value) |
 +-----------+------------------+
@@ -53,12 +52,14 @@ Property Descriptions
 
 Slows down the vehicle by applying a braking force. The vehicle is only slowed down if the wheels are in contact with a surface. The force you need to apply to adequately slow down your vehicle depends on the :ref:`RigidBody.mass<class_RigidBody_property_mass>` of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 30 range for hard braking.
 
+----
+
 .. _class_VehicleBody_property_engine_force:
 
 - :ref:`float<class_float>` **engine_force**
 
 +-----------+-------------------------+
-| *Default* | 0.0                     |
+| *Default* | ``0.0``                 |
 +-----------+-------------------------+
 | *Setter*  | set_engine_force(value) |
 +-----------+-------------------------+
@@ -71,12 +72,14 @@ Accelerates the vehicle by applying an engine force. The vehicle is only speed u
 
 A negative value will result in the vehicle reversing.
 
+----
+
 .. _class_VehicleBody_property_steering:
 
 - :ref:`float<class_float>` **steering**
 
 +-----------+---------------------+
-| *Default* | 0.0                 |
+| *Default* | ``0.0``             |
 +-----------+---------------------+
 | *Setter*  | set_steering(value) |
 +-----------+---------------------+

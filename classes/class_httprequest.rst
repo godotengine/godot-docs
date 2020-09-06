@@ -11,49 +11,114 @@ HTTPRequest
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+A node with the ability to send HTTP(S) requests.
 
-Brief Description
------------------
+Description
+-----------
 
-A node with the ability to send HTTP requests.
+A node with the ability to send HTTP requests. Uses :ref:`HTTPClient<class_HTTPClient>` internally.
+
+Can be used to make HTTP requests, i.e. download or upload files or web content via HTTP.
+
+**Example of contacting a REST API and printing one of its returned fields:**
+
+::
+
+    func _ready():
+        # Create an HTTP request node and connect its completion signal.
+        var http_request = HTTPRequest.new()
+        add_child(http_request)
+        http_request.connect("request_completed", self, "_http_request_completed")
+    
+        # Perform the HTTP request. The URL below returns some JSON as of writing.
+        var error = http_request.request("https://httpbin.org/get")
+        if error != OK:
+            push_error("An error occurred in the HTTP request.")
+    
+    
+    # Called when the HTTP request is completed.
+    func _http_request_completed(result, response_code, headers, body):
+        var response = parse_json(body.get_string_from_utf8())
+    
+        # Will print the user agent string used by the HTTPRequest node (as recognized by httpbin.org).
+        print(response.headers["User-Agent"])
+
+**Example of loading and displaying an image using HTTPRequest:**
+
+::
+
+    func _ready():
+        # Create an HTTP request node and connect its completion signal.
+        var http_request = HTTPRequest.new()
+        add_child(http_request)
+        http_request.connect("request_completed", self, "_http_request_completed")
+    
+        # Perform the HTTP request. The URL below returns a PNG image as of writing.
+        var error = http_request.request("https://via.placeholder.com/512")
+        if error != OK:
+            push_error("An error occurred in the HTTP request.")
+    
+    
+    # Called when the HTTP request is completed.
+    func _http_request_completed(result, response_code, headers, body):
+        var image = Image.new()
+        var error = image.load_png_from_buffer(body)
+        if error != OK:
+            push_error("Couldn't load the image.")
+    
+        var texture = ImageTexture.new()
+        texture.create_from_image(image)
+    
+        # Display the image in a TextureRect node.
+        var texture_rect = TextureRect.new()
+        add_child(texture_rect)
+        texture_rect.texture = texture
+
+Tutorials
+---------
+
+- :doc:`../tutorials/networking/http_request_class`
+
+- :doc:`../tutorials/networking/ssl_certificates`
 
 Properties
 ----------
 
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`body_size_limit<class_HTTPRequest_property_body_size_limit>` | -1    |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`download_file<class_HTTPRequest_property_download_file>`     | ""    |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`max_redirects<class_HTTPRequest_property_max_redirects>`     | 8     |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`timeout<class_HTTPRequest_property_timeout>`                 | 0     |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`use_threads<class_HTTPRequest_property_use_threads>`         | false |
-+-----------------------------+--------------------------------------------------------------------+-------+
++-----------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`       | :ref:`body_size_limit<class_HTTPRequest_property_body_size_limit>`         | ``-1``    |
++-----------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`       | :ref:`download_chunk_size<class_HTTPRequest_property_download_chunk_size>` | ``4096``  |
++-----------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>` | :ref:`download_file<class_HTTPRequest_property_download_file>`             | ``""``    |
++-----------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`       | :ref:`max_redirects<class_HTTPRequest_property_max_redirects>`             | ``8``     |
++-----------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`       | :ref:`timeout<class_HTTPRequest_property_timeout>`                         | ``0``     |
++-----------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`     | :ref:`use_threads<class_HTTPRequest_property_use_threads>`                 | ``false`` |
++-----------------------------+----------------------------------------------------------------------------+-----------+
 
 Methods
 -------
 
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`cancel_request<class_HTTPRequest_method_cancel_request>` **(** **)**                                                                                                                                                                                                                                                    |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_body_size<class_HTTPRequest_method_get_body_size>` **(** **)** const                                                                                                                                                                                                                                                |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_downloaded_bytes<class_HTTPRequest_method_get_downloaded_bytes>` **(** **)** const                                                                                                                                                                                                                                  |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Status<enum_HTTPClient_Status>` | :ref:`get_http_client_status<class_HTTPRequest_method_get_http_client_status>` **(** **)** const                                                                                                                                                                                                                              |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`request<class_HTTPRequest_method_request>` **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` custom_headers=PoolStringArray(  ), :ref:`bool<class_bool>` ssl_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)** |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`cancel_request<class_HTTPRequest_method_cancel_request>` **(** **)**                                                                                                                                                                                                                                                          |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`get_body_size<class_HTTPRequest_method_get_body_size>` **(** **)** const                                                                                                                                                                                                                                                      |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`get_downloaded_bytes<class_HTTPRequest_method_get_downloaded_bytes>` **(** **)** const                                                                                                                                                                                                                                        |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Status<enum_HTTPClient_Status>` | :ref:`get_http_client_status<class_HTTPRequest_method_get_http_client_status>` **(** **)** const                                                                                                                                                                                                                                    |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`request<class_HTTPRequest_method_request>` **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(  ), :ref:`bool<class_bool>` ssl_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)** |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
 .. _class_HTTPRequest_signal_request_completed:
 
-- **request_completed** **(** :ref:`int<class_int>` result, :ref:`int<class_int>` response_code, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`PoolByteArray<class_PoolByteArray>` body **)**
+- **request_completed** **(** :ref:`int<class_int>` result, :ref:`int<class_int>` response_code, :ref:`PackedStringArray<class_PackedStringArray>` headers, :ref:`PackedByteArray<class_PackedByteArray>` body **)**
 
 Emitted when a request is completed.
 
@@ -106,7 +171,7 @@ enum **Result**:
 
 - **RESULT_BODY_SIZE_LIMIT_EXCEEDED** = **7** --- Request exceeded its maximum size limit, see :ref:`body_size_limit<class_HTTPRequest_property_body_size_limit>`.
 
-- **RESULT_REQUEST_FAILED** = **8** --- Request failed. (Unused)
+- **RESULT_REQUEST_FAILED** = **8** --- Request failed (currently unused).
 
 - **RESULT_DOWNLOAD_FILE_CANT_OPEN** = **9** --- HTTPRequest couldn't open the download file.
 
@@ -116,18 +181,6 @@ enum **Result**:
 
 - **RESULT_TIMEOUT** = **12**
 
-Description
------------
-
-A node with the ability to send HTTP requests. Uses :ref:`HTTPClient<class_HTTPClient>` internally.
-
-Can be used to make HTTP requests, i.e. download or upload files or web content via HTTP.
-
-Tutorials
----------
-
-- :doc:`../tutorials/networking/ssl_certificates`
-
 Property Descriptions
 ---------------------
 
@@ -136,7 +189,7 @@ Property Descriptions
 - :ref:`int<class_int>` **body_size_limit**
 
 +-----------+----------------------------+
-| *Default* | -1                         |
+| *Default* | ``-1``                     |
 +-----------+----------------------------+
 | *Setter*  | set_body_size_limit(value) |
 +-----------+----------------------------+
@@ -145,12 +198,32 @@ Property Descriptions
 
 Maximum allowed size for response bodies.
 
+----
+
+.. _class_HTTPRequest_property_download_chunk_size:
+
+- :ref:`int<class_int>` **download_chunk_size**
+
++-----------+--------------------------------+
+| *Default* | ``4096``                       |
++-----------+--------------------------------+
+| *Setter*  | set_download_chunk_size(value) |
++-----------+--------------------------------+
+| *Getter*  | get_download_chunk_size()      |
++-----------+--------------------------------+
+
+The size of the buffer used and maximum bytes to read per iteration. See :ref:`HTTPClient.read_chunk_size<class_HTTPClient_property_read_chunk_size>`.
+
+Set this to a higher value (e.g. 65536 for 64 KiB) when downloading large files to achieve better speeds at the cost of memory.
+
+----
+
 .. _class_HTTPRequest_property_download_file:
 
 - :ref:`String<class_String>` **download_file**
 
 +-----------+--------------------------+
-| *Default* | ""                       |
+| *Default* | ``""``                   |
 +-----------+--------------------------+
 | *Setter*  | set_download_file(value) |
 +-----------+--------------------------+
@@ -159,12 +232,14 @@ Maximum allowed size for response bodies.
 
 The file to download into. Will output any received file into it.
 
+----
+
 .. _class_HTTPRequest_property_max_redirects:
 
 - :ref:`int<class_int>` **max_redirects**
 
 +-----------+--------------------------+
-| *Default* | 8                        |
+| *Default* | ``8``                    |
 +-----------+--------------------------+
 | *Setter*  | set_max_redirects(value) |
 +-----------+--------------------------+
@@ -173,24 +248,28 @@ The file to download into. Will output any received file into it.
 
 Maximum number of allowed redirects.
 
+----
+
 .. _class_HTTPRequest_property_timeout:
 
 - :ref:`int<class_int>` **timeout**
 
 +-----------+--------------------+
-| *Default* | 0                  |
+| *Default* | ``0``              |
 +-----------+--------------------+
 | *Setter*  | set_timeout(value) |
 +-----------+--------------------+
 | *Getter*  | get_timeout()      |
 +-----------+--------------------+
 
+----
+
 .. _class_HTTPRequest_property_use_threads:
 
 - :ref:`bool<class_bool>` **use_threads**
 
 +-----------+------------------------+
-| *Default* | false                  |
+| *Default* | ``false``              |
 +-----------+------------------------+
 | *Setter*  | set_use_threads(value) |
 +-----------+------------------------+
@@ -208,11 +287,17 @@ Method Descriptions
 
 Cancels the current request.
 
+----
+
 .. _class_HTTPRequest_method_get_body_size:
 
 - :ref:`int<class_int>` **get_body_size** **(** **)** const
 
 Returns the response body length.
+
+**Note:** Some Web servers may not send a body length. In this case, the value returned will be ``-1``. If using chunked transfer encoding, the body length will also be ``-1``.
+
+----
 
 .. _class_HTTPRequest_method_get_downloaded_bytes:
 
@@ -220,15 +305,19 @@ Returns the response body length.
 
 Returns the amount of bytes this HTTPRequest downloaded.
 
+----
+
 .. _class_HTTPRequest_method_get_http_client_status:
 
 - :ref:`Status<enum_HTTPClient_Status>` **get_http_client_status** **(** **)** const
 
-Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`. See ``STATUS_*`` enum on :ref:`HTTPClient<class_HTTPClient>`.
+Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`. See :ref:`Status<enum_HTTPClient_Status>`.
+
+----
 
 .. _class_HTTPRequest_method_request:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **request** **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` custom_headers=PoolStringArray(  ), :ref:`bool<class_bool>` ssl_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **request** **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(  ), :ref:`bool<class_bool>` ssl_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)**
 
 Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>`. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host<class_HTTPClient_method_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request<class_HTTPClient_method_request>`.
 

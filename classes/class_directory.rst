@@ -11,12 +11,37 @@ Directory
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Type used to handle the filesystem.
+
+Description
+-----------
+
+Directory type. It is used to manage directories and their content (not restricted to the project folder).
+
+When creating a new ``Directory``, its default opened directory will be ``res://``. This may change in the future, so it is advised to always use :ref:`open<class_Directory_method_open>` to initialize your ``Directory`` where you want to operate, with explicit error checking.
+
+Here is an example on how to iterate through the files of a directory:
+
+::
+
+    func dir_contents(path):
+        var dir = Directory.new()
+        if dir.open(path) == OK:
+            dir.list_dir_begin()
+            var file_name = dir.get_next()
+            while file_name != "":
+                if dir.current_is_dir():
+                    print("Found directory: " + file_name)
+                else:
+                    print("Found file: " + file_name)
+                file_name = dir.get_next()
+        else:
+            print("An error occurred when trying to access the path.")
+
+Tutorials
+---------
+
+- :doc:`../getting_started/step_by_step/filesystem`
 
 Methods
 -------
@@ -59,34 +84,6 @@ Methods
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`rename<class_Directory_method_rename>` **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**                                           |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-Directory type. It is used to manage directories and their content (not restricted to the project folder).
-
-Here is an example on how to iterate through the files of a directory:
-
-::
-
-    func dir_contents(path):
-        var dir = Directory.new()
-        if dir.open(path) == OK:
-            dir.list_dir_begin()
-            var file_name = dir.get_next()
-            while (file_name != ""):
-                if dir.current_is_dir():
-                    print("Found directory: " + file_name)
-                else:
-                    print("Found file: " + file_name)
-                file_name = dir.get_next()
-        else:
-            print("An error occurred when trying to access the path.")
-
-Tutorials
----------
-
-- :doc:`../getting_started/step_by_step/filesystem`
-
 Method Descriptions
 -------------------
 
@@ -96,7 +93,9 @@ Method Descriptions
 
 Changes the currently opened directory to the one passed as an argument. The argument can be relative to the current directory (e.g. ``newdir`` or ``../newdir``), or an absolute path (e.g. ``/tmp/newdir`` or ``res://somedir/newdir``).
 
-The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``OK`` or ``ERR_*``).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
+
+----
 
 .. _class_Directory_method_copy:
 
@@ -104,7 +103,9 @@ The method returns one of the error code constants defined in :ref:`@GlobalScope
 
 Copies the ``from`` file to the ``to`` destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
 
-Returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``OK``, ``FAILED`` or ``ERR_*``).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
+
+----
 
 .. _class_Directory_method_current_is_dir:
 
@@ -112,11 +113,15 @@ Returns one of the error code constants defined in :ref:`@GlobalScope<class_@Glo
 
 Returns whether the current item processed with the last :ref:`get_next<class_Directory_method_get_next>` call is a directory (``.`` and ``..`` are considered directories).
 
+----
+
 .. _class_Directory_method_dir_exists:
 
 - :ref:`bool<class_bool>` **dir_exists** **(** :ref:`String<class_String>` path **)**
 
 Returns whether the target directory exists. The argument can be relative to the current directory, or an absolute path.
+
+----
 
 .. _class_Directory_method_file_exists:
 
@@ -124,11 +129,15 @@ Returns whether the target directory exists. The argument can be relative to the
 
 Returns whether the target file exists. The argument can be relative to the current directory, or an absolute path.
 
+----
+
 .. _class_Directory_method_get_current_dir:
 
 - :ref:`String<class_String>` **get_current_dir** **(** **)**
 
 Returns the absolute path to the currently opened directory (e.g. ``res://folder`` or ``C:\tmp\folder``).
+
+----
 
 .. _class_Directory_method_get_current_drive:
 
@@ -136,17 +145,23 @@ Returns the absolute path to the currently opened directory (e.g. ``res://folder
 
 Returns the currently opened directory's drive index. See :ref:`get_drive<class_Directory_method_get_drive>` to convert returned index to the name of the drive.
 
+----
+
 .. _class_Directory_method_get_drive:
 
 - :ref:`String<class_String>` **get_drive** **(** :ref:`int<class_int>` idx **)**
 
 On Windows, returns the name of the drive (partition) passed as an argument (e.g. ``C:``). On other platforms, or if the requested drive does not existed, the method returns an empty String.
 
+----
+
 .. _class_Directory_method_get_drive_count:
 
 - :ref:`int<class_int>` **get_drive_count** **(** **)**
 
 On Windows, returns the number of drives (partitions) mounted on the current filesystem. On other platforms, the method returns 0.
+
+----
 
 .. _class_Directory_method_get_next:
 
@@ -156,11 +171,15 @@ Returns the next element (file or directory) in the current directory (including
 
 The name of the file or directory is returned (and not its full path). Once the stream has been fully processed, the method returns an empty String and closes the stream automatically (i.e. :ref:`list_dir_end<class_Directory_method_list_dir_end>` would not be mandatory in such a case).
 
+----
+
 .. _class_Directory_method_get_space_left:
 
 - :ref:`int<class_int>` **get_space_left** **(** **)**
 
 On UNIX desktop systems, returns the available space on the current directory's disk. On other platforms, this information is not available and the method returns 0 or -1.
+
+----
 
 .. _class_Directory_method_list_dir_begin:
 
@@ -172,11 +191,15 @@ If ``skip_navigational`` is ``true``, ``.`` and ``..`` are filtered out.
 
 If ``skip_hidden`` is ``true``, hidden files are filtered out.
 
+----
+
 .. _class_Directory_method_list_dir_end:
 
 - void **list_dir_end** **(** **)**
 
 Closes the current stream opened with :ref:`list_dir_begin<class_Directory_method_list_dir_begin>` (whether it has been fully processed with :ref:`get_next<class_Directory_method_get_next>` or not does not matter).
+
+----
 
 .. _class_Directory_method_make_dir:
 
@@ -184,7 +207,9 @@ Closes the current stream opened with :ref:`list_dir_begin<class_Directory_metho
 
 Creates a directory. The argument can be relative to the current directory, or an absolute path. The target directory should be placed in an already existing directory (to create the full path recursively, see :ref:`make_dir_recursive<class_Directory_method_make_dir_recursive>`).
 
-The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``OK``, ``FAILED`` or ``ERR_*``).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
+
+----
 
 .. _class_Directory_method_make_dir_recursive:
 
@@ -192,7 +217,9 @@ The method returns one of the error code constants defined in :ref:`@GlobalScope
 
 Creates a target directory and all necessary intermediate directories in its path, by calling :ref:`make_dir<class_Directory_method_make_dir>` recursively. The argument can be relative to the current directory, or an absolute path.
 
-Returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``0K``, ``FAILED`` or ``ERR_*``).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
+
+----
 
 .. _class_Directory_method_open:
 
@@ -200,7 +227,9 @@ Returns one of the error code constants defined in :ref:`@GlobalScope<class_@Glo
 
 Opens an existing directory of the filesystem. The ``path`` argument can be within the project tree (``res://folder``), the user directory (``user://folder``) or an absolute path of the user filesystem (e.g. ``/tmp/folder`` or ``C:\tmp\folder``).
 
-The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``OK`` or ``ERR_*``).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
+
+----
 
 .. _class_Directory_method_remove:
 
@@ -208,7 +237,9 @@ The method returns one of the error code constants defined in :ref:`@GlobalScope
 
 Deletes the target file or an empty directory. The argument can be relative to the current directory, or an absolute path. If the target directory is not empty, the operation will fail.
 
-Returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``OK`` or ``FAILED``).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
+
+----
 
 .. _class_Directory_method_rename:
 
@@ -216,5 +247,5 @@ Returns one of the error code constants defined in :ref:`@GlobalScope<class_@Glo
 
 Renames (move) the ``from`` file to the ``to`` destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
 
-Returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``OK`` or ``FAILED``).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 

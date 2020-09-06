@@ -11,23 +11,7 @@ EditorScenePostImport
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Post-processes scenes after import.
-
-Methods
--------
-
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_source_file<class_EditorScenePostImport_method_get_source_file>` **(** **)** const                             |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_source_folder<class_EditorScenePostImport_method_get_source_folder>` **(** **)** const                         |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>` | :ref:`post_import<class_EditorScenePostImport_method_post_import>` **(** :ref:`Object<class_Object>` scene **)** virtual |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -60,6 +44,17 @@ Tutorials
 
 - `#custom-script <../getting_started/workflow/assets/importing_scenes.html#custom-script>`_ in :doc:`../getting_started/workflow/assets/importing_scenes`
 
+Methods
+-------
+
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_source_file<class_EditorScenePostImport_method_get_source_file>` **(** **)** const                             |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_source_folder<class_EditorScenePostImport_method_get_source_folder>` **(** **)** const                         |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>` | :ref:`post_import<class_EditorScenePostImport_method_post_import>` **(** :ref:`Object<class_Object>` scene **)** virtual |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+
 Method Descriptions
 -------------------
 
@@ -69,11 +64,15 @@ Method Descriptions
 
 Returns the source file path which got imported (e.g. ``res://scene.dae``).
 
+----
+
 .. _class_EditorScenePostImport_method_get_source_folder:
 
 - :ref:`String<class_String>` **get_source_folder** **(** **)** const
 
 Returns the resource folder the imported scene file is located in.
+
+----
 
 .. _class_EditorScenePostImport_method_post_import:
 

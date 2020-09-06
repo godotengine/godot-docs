@@ -11,29 +11,29 @@ UPNPDevice
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 UPNP device.
+
+Description
+-----------
+
+UPNP device. See :ref:`UPNP<class_UPNP>` for UPNP discovery and utility functions. Provides low-level access to UPNP control commands. Allows to manage port mappings (port forwarding) and to query network information of the device (like local and external IP address and status). Note that methods on this class are synchronous and block the calling thread.
 
 Properties
 ----------
 
-+---------------------------------------------+---------------------------------------------------------------------+----+
-| :ref:`String<class_String>`                 | :ref:`description_url<class_UPNPDevice_property_description_url>`   | "" |
-+---------------------------------------------+---------------------------------------------------------------------+----+
-| :ref:`String<class_String>`                 | :ref:`igd_control_url<class_UPNPDevice_property_igd_control_url>`   | "" |
-+---------------------------------------------+---------------------------------------------------------------------+----+
-| :ref:`String<class_String>`                 | :ref:`igd_our_addr<class_UPNPDevice_property_igd_our_addr>`         | "" |
-+---------------------------------------------+---------------------------------------------------------------------+----+
-| :ref:`String<class_String>`                 | :ref:`igd_service_type<class_UPNPDevice_property_igd_service_type>` | "" |
-+---------------------------------------------+---------------------------------------------------------------------+----+
-| :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` | :ref:`igd_status<class_UPNPDevice_property_igd_status>`             | 9  |
-+---------------------------------------------+---------------------------------------------------------------------+----+
-| :ref:`String<class_String>`                 | :ref:`service_type<class_UPNPDevice_property_service_type>`         | "" |
-+---------------------------------------------+---------------------------------------------------------------------+----+
++---------------------------------------------+---------------------------------------------------------------------+--------+
+| :ref:`String<class_String>`                 | :ref:`description_url<class_UPNPDevice_property_description_url>`   | ``""`` |
++---------------------------------------------+---------------------------------------------------------------------+--------+
+| :ref:`String<class_String>`                 | :ref:`igd_control_url<class_UPNPDevice_property_igd_control_url>`   | ``""`` |
++---------------------------------------------+---------------------------------------------------------------------+--------+
+| :ref:`String<class_String>`                 | :ref:`igd_our_addr<class_UPNPDevice_property_igd_our_addr>`         | ``""`` |
++---------------------------------------------+---------------------------------------------------------------------+--------+
+| :ref:`String<class_String>`                 | :ref:`igd_service_type<class_UPNPDevice_property_igd_service_type>` | ``""`` |
++---------------------------------------------+---------------------------------------------------------------------+--------+
+| :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` | :ref:`igd_status<class_UPNPDevice_property_igd_status>`             | ``9``  |
++---------------------------------------------+---------------------------------------------------------------------+--------+
+| :ref:`String<class_String>`                 | :ref:`service_type<class_UPNPDevice_property_service_type>`         | ``""`` |
++---------------------------------------------+---------------------------------------------------------------------+--------+
 
 Methods
 -------
@@ -95,11 +95,6 @@ enum **IGDStatus**:
 
 - **IGD_STATUS_UNKNOWN_ERROR** = **9** --- Unknown error.
 
-Description
------------
-
-UPNP device. See :ref:`UPNP<class_UPNP>` for UPNP discovery and utility functions. Provides low-level access to UPNP control commands. Allows to manage port mappings (port forwarding) and to query network information of the device (like local and external IP address and status). Note that methods on this class are synchronous and block the calling thread.
-
 Property Descriptions
 ---------------------
 
@@ -108,7 +103,7 @@ Property Descriptions
 - :ref:`String<class_String>` **description_url**
 
 +-----------+----------------------------+
-| *Default* | ""                         |
+| *Default* | ``""``                     |
 +-----------+----------------------------+
 | *Setter*  | set_description_url(value) |
 +-----------+----------------------------+
@@ -117,12 +112,14 @@ Property Descriptions
 
 URL to the device description.
 
+----
+
 .. _class_UPNPDevice_property_igd_control_url:
 
 - :ref:`String<class_String>` **igd_control_url**
 
 +-----------+----------------------------+
-| *Default* | ""                         |
+| *Default* | ``""``                     |
 +-----------+----------------------------+
 | *Setter*  | set_igd_control_url(value) |
 +-----------+----------------------------+
@@ -131,12 +128,14 @@ URL to the device description.
 
 IDG control URL.
 
+----
+
 .. _class_UPNPDevice_property_igd_our_addr:
 
 - :ref:`String<class_String>` **igd_our_addr**
 
 +-----------+-------------------------+
-| *Default* | ""                      |
+| *Default* | ``""``                  |
 +-----------+-------------------------+
 | *Setter*  | set_igd_our_addr(value) |
 +-----------+-------------------------+
@@ -145,12 +144,14 @@ IDG control URL.
 
 Address of the local machine in the network connecting it to this ``UPNPDevice``.
 
+----
+
 .. _class_UPNPDevice_property_igd_service_type:
 
 - :ref:`String<class_String>` **igd_service_type**
 
 +-----------+-----------------------------+
-| *Default* | ""                          |
+| *Default* | ``""``                      |
 +-----------+-----------------------------+
 | *Setter*  | set_igd_service_type(value) |
 +-----------+-----------------------------+
@@ -159,12 +160,14 @@ Address of the local machine in the network connecting it to this ``UPNPDevice``
 
 IGD service type.
 
+----
+
 .. _class_UPNPDevice_property_igd_status:
 
 - :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` **igd_status**
 
 +-----------+-----------------------+
-| *Default* | 9                     |
+| *Default* | ``9``                 |
 +-----------+-----------------------+
 | *Setter*  | set_igd_status(value) |
 +-----------+-----------------------+
@@ -173,12 +176,14 @@ IGD service type.
 
 IGD status. See :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>`.
 
+----
+
 .. _class_UPNPDevice_property_service_type:
 
 - :ref:`String<class_String>` **service_type**
 
 +-----------+-------------------------+
-| *Default* | ""                      |
+| *Default* | ``""``                  |
 +-----------+-------------------------+
 | *Setter*  | set_service_type(value) |
 +-----------+-------------------------+
@@ -196,17 +201,23 @@ Method Descriptions
 
 Adds a port mapping to forward the given external port on this ``UPNPDevice`` for the given protocol to the local machine. See :ref:`UPNP.add_port_mapping<class_UPNP_method_add_port_mapping>`.
 
+----
+
 .. _class_UPNPDevice_method_delete_port_mapping:
 
 - :ref:`int<class_int>` **delete_port_mapping** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` proto="UDP" **)** const
 
 Deletes the port mapping identified by the given port and protocol combination on this device. See :ref:`UPNP.delete_port_mapping<class_UPNP_method_delete_port_mapping>`.
 
+----
+
 .. _class_UPNPDevice_method_is_valid_gateway:
 
 - :ref:`bool<class_bool>` **is_valid_gateway** **(** **)** const
 
 Returns ``true`` if this is a valid IGD (InternetGatewayDevice) which potentially supports port forwarding.
+
+----
 
 .. _class_UPNPDevice_method_query_external_address:
 

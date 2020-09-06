@@ -11,29 +11,34 @@ AnimationNodeOneShot
 
 **Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+Plays an animation once in :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
-Brief Description
------------------
+Description
+-----------
 
+A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. This node will execute a sub-animation and return once it finishes. Blend times for fading in and out can be customized, as well as filters.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/animation_tree`
 
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>`                           | false |
-+---------------------------+-----------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`autorestart_delay<class_AnimationNodeOneShot_property_autorestart_delay>`               | 1.0   |
-+---------------------------+-----------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`autorestart_random_delay<class_AnimationNodeOneShot_property_autorestart_random_delay>` | 0.0   |
-+---------------------------+-----------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`fadein_time<class_AnimationNodeOneShot_property_fadein_time>`                           | 0.1   |
-+---------------------------+-----------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`fadeout_time<class_AnimationNodeOneShot_property_fadeout_time>`                         | 0.1   |
-+---------------------------+-----------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`sync<class_AnimationNodeOneShot_property_sync>`                                         | false |
-+---------------------------+-----------------------------------------------------------------------------------------------+-------+
++---------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>`                           | ``false`` |
++---------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`autorestart_delay<class_AnimationNodeOneShot_property_autorestart_delay>`               | ``1.0``   |
++---------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`autorestart_random_delay<class_AnimationNodeOneShot_property_autorestart_random_delay>` | ``0.0``   |
++---------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`fadein_time<class_AnimationNodeOneShot_property_fadein_time>`                           | ``0.1``   |
++---------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`fadeout_time<class_AnimationNodeOneShot_property_fadeout_time>`                         | ``0.1``   |
++---------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`sync<class_AnimationNodeOneShot_property_sync>`                                         | ``false`` |
++---------------------------+-----------------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -67,67 +72,83 @@ Property Descriptions
 - :ref:`bool<class_bool>` **autorestart**
 
 +-----------+------------------------+
-| *Default* | false                  |
+| *Default* | ``false``              |
 +-----------+------------------------+
 | *Setter*  | set_autorestart(value) |
 +-----------+------------------------+
 | *Getter*  | has_autorestart()      |
 +-----------+------------------------+
 
+If ``true``, the sub-animation will restart automatically after finishing.
+
+----
+
 .. _class_AnimationNodeOneShot_property_autorestart_delay:
 
 - :ref:`float<class_float>` **autorestart_delay**
 
 +-----------+------------------------------+
-| *Default* | 1.0                          |
+| *Default* | ``1.0``                      |
 +-----------+------------------------------+
 | *Setter*  | set_autorestart_delay(value) |
 +-----------+------------------------------+
 | *Getter*  | get_autorestart_delay()      |
 +-----------+------------------------------+
 
+The delay after which the automatic restart is triggered, in seconds.
+
+----
+
 .. _class_AnimationNodeOneShot_property_autorestart_random_delay:
 
 - :ref:`float<class_float>` **autorestart_random_delay**
 
 +-----------+-------------------------------------+
-| *Default* | 0.0                                 |
+| *Default* | ``0.0``                             |
 +-----------+-------------------------------------+
 | *Setter*  | set_autorestart_random_delay(value) |
 +-----------+-------------------------------------+
 | *Getter*  | get_autorestart_random_delay()      |
 +-----------+-------------------------------------+
 
+If :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>` is ``true``, a random additional delay (in seconds) between 0 and this value will be added to :ref:`autorestart_delay<class_AnimationNodeOneShot_property_autorestart_delay>`.
+
+----
+
 .. _class_AnimationNodeOneShot_property_fadein_time:
 
 - :ref:`float<class_float>` **fadein_time**
 
 +-----------+------------------------+
-| *Default* | 0.1                    |
+| *Default* | ``0.1``                |
 +-----------+------------------------+
 | *Setter*  | set_fadein_time(value) |
 +-----------+------------------------+
 | *Getter*  | get_fadein_time()      |
 +-----------+------------------------+
 
+----
+
 .. _class_AnimationNodeOneShot_property_fadeout_time:
 
 - :ref:`float<class_float>` **fadeout_time**
 
 +-----------+-------------------------+
-| *Default* | 0.1                     |
+| *Default* | ``0.1``                 |
 +-----------+-------------------------+
 | *Setter*  | set_fadeout_time(value) |
 +-----------+-------------------------+
 | *Getter*  | get_fadeout_time()      |
 +-----------+-------------------------+
 
+----
+
 .. _class_AnimationNodeOneShot_property_sync:
 
 - :ref:`bool<class_bool>` **sync**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_use_sync(value) |
 +-----------+---------------------+
@@ -140,6 +161,8 @@ Method Descriptions
 .. _class_AnimationNodeOneShot_method_get_mix_mode:
 
 - :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **get_mix_mode** **(** **)** const
+
+----
 
 .. _class_AnimationNodeOneShot_method_set_mix_mode:
 

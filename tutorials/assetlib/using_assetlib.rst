@@ -1,7 +1,7 @@
 .. _doc_using_assetlib:
 
-Using the AssetLib
-==================
+Using the Asset Library
+=======================
 
 On the website
 --------------
@@ -9,9 +9,9 @@ On the website
 Overview
 ~~~~~~~~
 
-As mentioned before, you can access the web frontend of the AssetLib
-on `Godot's official website <https://godotengine.org/asset-library/asset>`_, and this
-is what it looks like when you first visit it:
+As mentioned before, you can access the web frontend of the Asset Library on
+`Godot's official website <https://godotengine.org/asset-library/asset>`_.
+This is what it looks like when you first visit it:
 
 |image0|
 
@@ -60,15 +60,13 @@ Now let's take a look at what an asset's page looks like and what it contains.
 1. Asset's thumbnail/icon.
 2. Asset's name.
 3. Current version number of the asset.
-4. Asset's average rating, displayed in stars. (This is currently unimplemented.)
-5. Asset's category, Godot version, and support status.
-6. Asset's original author/submitter.
-7. The license the asset is distributed under.
-8. The date of the asset's latest edit/update.
-9. A textual description of the asset.
-10. Links related to the asset (download link, file list, issue tracker).
-11. A SHA-256 hash of the asset, for download validation purposes.
-12. Images and videos showcasing the asset.
+4. Asset's category, Godot version, and support status.
+5. Asset's original author/submitter.
+6. The license the asset is distributed under.
+7. The date of the asset's latest edit/update.
+8. A textual description of the asset.
+9. Links related to the asset (download link, file list, issue tracker).
+10. Images and videos showcasing the asset.
 
 Registering and logging in
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,9 +122,9 @@ Similarly to the web version of the AssetLib, here you can search
 for assets by category, name, and sort them by factors such as name or edit date.
 
 Notably, you can only fetch assets for the current version of Godot you are running.
-Also, you can only download Projects, Demos and Templates from the Project Manager
-view of the AssetLib, while Addons (tools, scripts, materials etc.) can only be
-downloaded from the in-project AssetLib.
+Projects, Demos and Templates can be downloaded from from the Project Manager
+view of the AssetLib. Addons (tools, scripts, materials etc.) can be downloaded from
+the in-project AssetLib and added to the current project.
 In addition, unlike when using the web frontend, the search results are updated
 in real-time (you do not have to press Search after every change to your search
 query for the changes to take place).
@@ -173,18 +171,18 @@ which will take you through the same package installation procedure as with the
 assets downloaded directly via Godot that we just covered.
 
 
-.. |image0| image:: ./img/assetlib_website.png
-.. |image1| image:: ./img/assetlib_search.png
-.. |image2| image:: ./img/assetlib_asset.png
-.. |image3| image:: ./img/assetlib_register-login.png
-.. |image4| image:: ./img/assetlib_register.png
-.. |image5| image:: ./img/assetlib_login.png
-.. |image6| image:: ./img/assetlib_login_header.png
-.. |image7| image:: ./img/assetlib_editor_workspace.png
-.. |image8| image:: ./img/assetlib_editor.png
-.. |image9| image:: ./img/assetlib_editor_asset.png
-.. |image10| image:: ./img/assetlib_editor_download.png
-.. |image11| image:: ./img/assetlib_editor_installer.png
-.. |image12| image:: ./img/assetlib_editor_installer_error.png
-.. |image13| image:: ./img/assetlib_editor_installer_success.png
-.. |image14| image:: ./img/assetlib_editor_projects.png
+.. |image0| image:: img/assetlib_website.png
+.. |image1| image:: img/assetlib_search.png
+.. |image2| image:: img/assetlib_asset.png
+.. |image3| image:: img/assetlib_register-login.png
+.. |image4| image:: img/assetlib_register.png
+.. |image5| image:: img/assetlib_login.png
+.. |image6| image:: img/assetlib_login_header.png
+.. |image7| image:: img/assetlib_editor_workspace.png
+.. |image8| image:: img/assetlib_editor.png
+.. |image9| image:: img/assetlib_editor_asset.png
+.. |image10| image:: img/assetlib_editor_download.png
+.. |image11| image:: img/assetlib_editor_installer.png
+.. |image12| image:: img/assetlib_editor_installer_error.png
+.. |image13| image:: img/assetlib_editor_installer_success.png
+.. |image14| image:: img/assetlib_editor_projects.png

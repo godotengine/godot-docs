@@ -11,26 +11,21 @@ ReferenceRect
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Reference frame for GUI.
-
-Properties
-----------
-
-+---------------------------+----------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>` | :ref:`border_color<class_ReferenceRect_property_border_color>` | Color( 1, 0, 0, 1 ) |
-+---------------------------+----------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`   | :ref:`editor_only<class_ReferenceRect_property_editor_only>`   | true                |
-+---------------------------+----------------------------------------------------------------+---------------------+
 
 Description
 -----------
 
 A rectangle box that displays only a :ref:`border_color<class_ReferenceRect_property_border_color>` border color around its rectangle. ``ReferenceRect`` has no fill :ref:`Color<class_Color>`.
+
+Properties
+----------
+
++---------------------------+----------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>` | :ref:`border_color<class_ReferenceRect_property_border_color>` | ``Color( 1, 0, 0, 1 )`` |
++---------------------------+----------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`   | :ref:`editor_only<class_ReferenceRect_property_editor_only>`   | ``true``                |
++---------------------------+----------------------------------------------------------------+-------------------------+
 
 Property Descriptions
 ---------------------
@@ -40,7 +35,7 @@ Property Descriptions
 - :ref:`Color<class_Color>` **border_color**
 
 +-----------+-------------------------+
-| *Default* | Color( 1, 0, 0, 1 )     |
+| *Default* | ``Color( 1, 0, 0, 1 )`` |
 +-----------+-------------------------+
 | *Setter*  | set_border_color(value) |
 +-----------+-------------------------+
@@ -49,12 +44,14 @@ Property Descriptions
 
 Sets the border :ref:`Color<class_Color>` of the ``ReferenceRect``.
 
+----
+
 .. _class_ReferenceRect_property_editor_only:
 
 - :ref:`bool<class_bool>` **editor_only**
 
 +-----------+------------------------+
-| *Default* | true                   |
+| *Default* | ``true``               |
 +-----------+------------------------+
 | *Setter*  | set_editor_only(value) |
 +-----------+------------------------+

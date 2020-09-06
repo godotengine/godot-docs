@@ -11,26 +11,21 @@ AudioStreamGenerator
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
 
-Brief Description
------------------
-
-
-
-Properties
-----------
-
-+---------------------------+-------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`buffer_length<class_AudioStreamGenerator_property_buffer_length>` | 0.5     |
-+---------------------------+-------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`mix_rate<class_AudioStreamGenerator_property_mix_rate>`           | 44100.0 |
-+---------------------------+-------------------------------------------------------------------------+---------+
 
 Tutorials
 ---------
 
 - `https://github.com/godotengine/godot-demo-projects/tree/master/audio/generator <https://github.com/godotengine/godot-demo-projects/tree/master/audio/generator>`_
+
+Properties
+----------
+
++---------------------------+-------------------------------------------------------------------------+-------------+
+| :ref:`float<class_float>` | :ref:`buffer_length<class_AudioStreamGenerator_property_buffer_length>` | ``0.5``     |
++---------------------------+-------------------------------------------------------------------------+-------------+
+| :ref:`float<class_float>` | :ref:`mix_rate<class_AudioStreamGenerator_property_mix_rate>`           | ``44100.0`` |
++---------------------------+-------------------------------------------------------------------------+-------------+
 
 Property Descriptions
 ---------------------
@@ -40,19 +35,21 @@ Property Descriptions
 - :ref:`float<class_float>` **buffer_length**
 
 +-----------+--------------------------+
-| *Default* | 0.5                      |
+| *Default* | ``0.5``                  |
 +-----------+--------------------------+
 | *Setter*  | set_buffer_length(value) |
 +-----------+--------------------------+
 | *Getter*  | get_buffer_length()      |
 +-----------+--------------------------+
 
+----
+
 .. _class_AudioStreamGenerator_property_mix_rate:
 
 - :ref:`float<class_float>` **mix_rate**
 
 +-----------+---------------------+
-| *Default* | 44100.0             |
+| *Default* | ``44100.0``         |
 +-----------+---------------------+
 | *Setter*  | set_mix_rate(value) |
 +-----------+---------------------+

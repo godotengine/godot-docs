@@ -11,25 +11,7 @@ SpotLight
 
 **Inherits:** :ref:`Light<class_Light>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A spotlight, such as a reflector spotlight or a lantern.
-
-Properties
-----------
-
-+---------------------------+--------------------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`spot_angle<class_SpotLight_property_spot_angle>`                         | 45.0 |
-+---------------------------+--------------------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`spot_angle_attenuation<class_SpotLight_property_spot_angle_attenuation>` | 1.0  |
-+---------------------------+--------------------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`spot_attenuation<class_SpotLight_property_spot_attenuation>`             | 1.0  |
-+---------------------------+--------------------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`spot_range<class_SpotLight_property_spot_range>`                         | 5.0  |
-+---------------------------+--------------------------------------------------------------------------------+------+
 
 Description
 -----------
@@ -41,6 +23,19 @@ Tutorials
 
 - :doc:`../tutorials/3d/lights_and_shadows`
 
+Properties
+----------
+
++---------------------------+--------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`spot_angle<class_SpotLight_property_spot_angle>`                         | ``45.0`` |
++---------------------------+--------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`spot_angle_attenuation<class_SpotLight_property_spot_angle_attenuation>` | ``1.0``  |
++---------------------------+--------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`spot_attenuation<class_SpotLight_property_spot_attenuation>`             | ``1.0``  |
++---------------------------+--------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`spot_range<class_SpotLight_property_spot_range>`                         | ``5.0``  |
++---------------------------+--------------------------------------------------------------------------------+----------+
+
 Property Descriptions
 ---------------------
 
@@ -49,7 +44,7 @@ Property Descriptions
 - :ref:`float<class_float>` **spot_angle**
 
 +-----------+------------------+
-| *Default* | 45.0             |
+| *Default* | ``45.0``         |
 +-----------+------------------+
 | *Setter*  | set_param(value) |
 +-----------+------------------+
@@ -58,12 +53,14 @@ Property Descriptions
 
 The spotlight's angle in degrees.
 
+----
+
 .. _class_SpotLight_property_spot_angle_attenuation:
 
 - :ref:`float<class_float>` **spot_angle_attenuation**
 
 +-----------+------------------+
-| *Default* | 1.0              |
+| *Default* | ``1.0``          |
 +-----------+------------------+
 | *Setter*  | set_param(value) |
 +-----------+------------------+
@@ -72,12 +69,14 @@ The spotlight's angle in degrees.
 
 The spotlight's angular attenuation curve.
 
+----
+
 .. _class_SpotLight_property_spot_attenuation:
 
 - :ref:`float<class_float>` **spot_attenuation**
 
 +-----------+------------------+
-| *Default* | 1.0              |
+| *Default* | ``1.0``          |
 +-----------+------------------+
 | *Setter*  | set_param(value) |
 +-----------+------------------+
@@ -86,12 +85,14 @@ The spotlight's angular attenuation curve.
 
 The spotlight's light energy attenuation curve.
 
+----
+
 .. _class_SpotLight_property_spot_range:
 
 - :ref:`float<class_float>` **spot_range**
 
 +-----------+------------------+
-| *Default* | 5.0              |
+| *Default* | ``5.0``          |
 +-----------+------------------+
 | *Setter*  | set_param(value) |
 +-----------+------------------+

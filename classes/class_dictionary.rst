@@ -9,12 +9,88 @@
 Dictionary
 ==========
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Dictionary type.
+
+Description
+-----------
+
+Dictionary type. Associative container which contains values referenced by unique keys. Dictionary are composed of pairs of keys (which must be unique) and values. You can define a dictionary by placing a comma separated list of ``key: value`` pairs in curly braces ``{}``.
+
+Erasing elements while iterating over them **is not supported**.
+
+Creating a dictionary:
+
+::
+
+    var my_dir = {} # Creates an empty dictionary.
+    var points_dir = {"White": 50, "Yellow": 75, "Orange": 100}
+    var my_dir = {
+        key1: value1,
+        key2: value2,
+        key3: value3,
+    }
+
+You can access values of a dictionary by referencing appropriate key in above example ``points_dir["White"]`` would return value of 50.
+
+::
+
+    export(String, "White", "Yellow", "Orange") var my_color
+    var points_dir = {"White": 50, "Yellow": 75, "Orange": 100}
+    
+    func _ready():
+        var points = points_dir[my_color]
+
+In the above code ``points`` will be assigned the value that is paired with the appropriate color selected in ``my_color``.
+
+Dictionaries can contain more complex data:
+
+::
+
+    my_dir = {"First Array": [1, 2, 3, 4]} # Assigns an Array to a String key.
+
+To add a key to an existing dictionary, access it like an existing key and assign to it:
+
+::
+
+    var points_dir = {"White": 50, "Yellow": 75, "Orange": 100}
+    var points_dir["Blue"] = 150 # Add "Blue" as a key and assign 150 as its value.
+
+Finally, dictionaries can contain different types of keys and values in the same dictionary:
+
+::
+
+    var my_dir = {"String Key": 5, 4: [1, 2, 3], 7: "Hello"} # This is a valid dictionary.
+
+**Note:** Unlike :ref:`Array<class_Array>`\ s you can't compare dictionaries directly:
+
+::
+
+    array1 = [1, 2, 3]
+    array2 = [1, 2, 3]
+    
+    func compare_arrays():
+        print(array1 == array2) # Will print true.
+    
+    dir1 = {"a": 1, "b": 2, "c": 3}
+    dir2 = {"a": 1, "b": 2, "c": 3}
+    
+    func compare_dictionaries():
+        print(dir1 == dir2) # Will NOT print true.
+
+You need to first calculate the dictionary's hash with :ref:`hash<class_Dictionary_method_hash>` before you can compare them:
+
+::
+
+    dir1 = {"a": 1, "b": 2, "c": 3}
+    dir2 = {"a": 1, "b": 2, "c": 3}
+    
+    func compare_dictionaries():
+        print(dir1.hash() == dir2.hash()) # Will print true.
+
+Tutorials
+---------
+
+- `#dictionary <../getting_started/scripting/gdscript/gdscript_basics.html#dictionary>`_ in :doc:`../getting_started/scripting/gdscript/gdscript_basics`
 
 Methods
 -------
@@ -22,13 +98,13 @@ Methods
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                                | :ref:`clear<class_Dictionary_method_clear>` **(** **)**                                                                           |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`duplicate<class_Dictionary_method_duplicate>` **(** :ref:`bool<class_bool>` deep=False **)**                                |
+| :ref:`Dictionary<class_Dictionary>` | :ref:`duplicate<class_Dictionary_method_duplicate>` **(** :ref:`bool<class_bool>` deep=false **)**                                |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`empty<class_Dictionary_method_empty>` **(** **)**                                                                           |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`erase<class_Dictionary_method_erase>` **(** :ref:`Variant<class_Variant>` key **)**                                         |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`       | :ref:`get<class_Dictionary_method_get>` **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=Null **)** |
+| :ref:`Variant<class_Variant>`       | :ref:`get<class_Dictionary_method_get>` **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=null **)** |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`has<class_Dictionary_method_has>` **(** :ref:`Variant<class_Variant>` key **)**                                             |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
@@ -43,31 +119,6 @@ Methods
 | :ref:`Array<class_Array>`           | :ref:`values<class_Dictionary_method_values>` **(** **)**                                                                         |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-Dictionary type. Associative container which contains values referenced by unique keys. Dictionaries are always passed by reference.
-
-Erasing elements while iterating over them **is not supported**.
-
-Creating a dictionary:
-
-::
-
-    var d = {4: 5, "A key": "A value", 28: [1, 2, 3]}
-
-To add a key to an existing dictionary, access it like an existing key and assign to it:
-
-::
-
-    d[4] = "hello"  # Add integer 4 as a key and assign the String "hello" as its value.
-    d["Godot"] = 3.01  # Add String "Godot" as a key and assign the value 3.01 to it.
-
-Tutorials
----------
-
-- `#dictionary <../getting_started/scripting/gdscript/gdscript_basics.html#dictionary>`_ in :doc:`../getting_started/scripting/gdscript/gdscript_basics`
-
 Method Descriptions
 -------------------
 
@@ -77,11 +128,15 @@ Method Descriptions
 
 Clear the dictionary, removing all key/value pairs.
 
+----
+
 .. _class_Dictionary_method_duplicate:
 
-- :ref:`Dictionary<class_Dictionary>` **duplicate** **(** :ref:`bool<class_bool>` deep=False **)**
+- :ref:`Dictionary<class_Dictionary>` **duplicate** **(** :ref:`bool<class_bool>` deep=false **)**
 
 Creates a copy of the dictionary, and returns it.
+
+----
 
 .. _class_Dictionary_method_empty:
 
@@ -89,17 +144,23 @@ Creates a copy of the dictionary, and returns it.
 
 Returns ``true`` if the dictionary is empty.
 
+----
+
 .. _class_Dictionary_method_erase:
 
 - :ref:`bool<class_bool>` **erase** **(** :ref:`Variant<class_Variant>` key **)**
 
 Erase a dictionary key/value pair by key. Returns ``true`` if the given key was present in the dictionary, ``false`` otherwise. Does not erase elements while iterating over the dictionary.
 
+----
+
 .. _class_Dictionary_method_get:
 
-- :ref:`Variant<class_Variant>` **get** **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=Null **)**
+- :ref:`Variant<class_Variant>` **get** **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=null **)**
 
 Returns the current value for the specified key in the ``Dictionary``. If the key does not exist, the method returns the value of the optional default argument, or ``null`` if it is omitted.
+
+----
 
 .. _class_Dictionary_method_has:
 
@@ -107,17 +168,30 @@ Returns the current value for the specified key in the ``Dictionary``. If the ke
 
 Returns ``true`` if the dictionary has a given key.
 
+----
+
 .. _class_Dictionary_method_has_all:
 
 - :ref:`bool<class_bool>` **has_all** **(** :ref:`Array<class_Array>` keys **)**
 
 Returns ``true`` if the dictionary has all of the keys in the given array.
 
+----
+
 .. _class_Dictionary_method_hash:
 
 - :ref:`int<class_int>` **hash** **(** **)**
 
-Returns a hashed integer value representing the dictionary contents.
+Returns a hashed integer value representing the dictionary contents. This can be used to compare dictionaries by value:
+
+::
+
+    var dict1 = {0: 10}
+    var dict2 = {0: 10}
+    # The line below prints `true`, whereas it would have printed `false` if both variables were compared directly.
+    print(dict1.hash() == dict2.hash())
+
+----
 
 .. _class_Dictionary_method_keys:
 
@@ -125,11 +199,15 @@ Returns a hashed integer value representing the dictionary contents.
 
 Returns the list of keys in the ``Dictionary``.
 
+----
+
 .. _class_Dictionary_method_size:
 
 - :ref:`int<class_int>` **size** **(** **)**
 
 Returns the size of the dictionary (in pairs).
+
+----
 
 .. _class_Dictionary_method_values:
 

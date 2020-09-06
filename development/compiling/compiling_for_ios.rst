@@ -8,9 +8,14 @@ Compiling for iOS
 Requirements
 ------------
 
--  SCons (you can get it from macports, you should be able to run
-   ``scons`` in a terminal when installed)
+-  SCons 3.0+ (you can install it via Homebrew or Macports, you should be able
+   to run ``scons`` in a terminal when installed).
 -  Xcode 10.0 (or later) with the iOS (10.0) SDK and the command line tools.
+
+If you are building the ``master`` branch:
+
+-  Download and follow README instructions to build a static ``.a`` library
+   from the `MoltenVK SDK <https://github.com/KhronosGroup/MoltenVK#fetching-moltenvk-source-code>`__.
 
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
@@ -51,7 +56,9 @@ All those steps can be performed with following commands:
 
     $ scons p=iphone tools=no target=release arch=arm
     $ scons p=iphone tools=no target=release arch=arm64
-    $ lipo bin/libgodot.iphone.opt.arm.a bin/libgodot.iphone.opt.arm64.a -output bin/godot.iphone.opt.universal.a
+    $ lipo -create bin/libgodot.iphone.opt.arm.a bin/libgodot.iphone.opt.arm64.a -output bin/libgodot.iphone.release.fat.a
+    $ lipo -create bin/libgodot_camera_module.iphone.opt.arm.a bin/libgodot_camera_module.iphone.opt.arm64.a -output bin/libgodot_camera_module.iphone.release.fat.a
+    $ lipo -create bin/libgodot_arkit_module.iphone.opt.arm.a bin/libgodot_arkit_module.iphone.opt.arm64.a -output bin/libgodot_arkit_module.iphone.release.fat.a
 
 If you also want to provide a simulator build (reduces the chance of any linker errors with dependencies), you'll need to build and lipo the ``x86_64`` architecture as well.
 
@@ -60,7 +67,9 @@ If you also want to provide a simulator build (reduces the chance of any linker 
     $ scons p=iphone tools=no target=release arch=arm
     $ scons p=iphone tools=no target=release arch=arm64
     $ scons p=iphone tools=no target=release arch=x86_64
-    $ lipo -create bin/libgodot.iphone.opt.arm.a bin/libgodot.iphone.opt.arm64.a bin/libgodot.iphone.opt.x86_64.a -output bin/godot.iphone.opt.universal.simulator.a
+    $ lipo -create bin/libgodot.iphone.opt.arm.a bin/libgodot.iphone.opt.arm64.a bin/libgodot.iphone.opt.x86_64.a -output bin/libgodot.iphone.release.fat.a
+    $ lipo -create bin/libgodot_camera_module.iphone.opt.arm.a bin/libgodot_camera_module.iphone.opt.arm64.a bin/libgodot_camera_module.iphone.opt.x86_64.a -output bin/libgodot_camera_module.iphone.release.fat.a
+    $ lipo -create bin/libgodot_arkit_module.iphone.opt.arm.a bin/libgodot_arkit_module.iphone.opt.arm64.a bin/libgodot_arkit_module.iphone.opt.x86_64.a -output bin/libgodot_arkit_module.iphone.release.fat.a
 
 Run
 ---

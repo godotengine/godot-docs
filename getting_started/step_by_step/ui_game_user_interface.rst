@@ -8,7 +8,7 @@ game Graphical User Interface (GUI) with reusable UI components: a life bar, an
 energy bar, and bomb and emerald counters. By the end of this tutorial,
 you'll have a game GUI, ready to control with GDscript or VisualScript:
 
-.. figure:: ./img/ui_gui_design_final_result.png
+.. figure:: img/ui_gui_design_final_result.png
 
    The final result
 
@@ -22,7 +22,7 @@ Download the project files: :download:`ui_gui_design.zip <files/ui_gui_design.zi
 
 .. note::
 
-    You can watch this tutorial as a `video on Youtube <https://www.youtube.com/watch?v=y1E_y9AIqow>`_.
+    You can watch this tutorial as a `video on YouTube <https://www.youtube.com/watch?v=y1E_y9AIqow>`_.
 
 Breaking down the UI
 --------------------
@@ -48,7 +48,7 @@ of one another inside a ``VBoxContainer``. And we'll need a last
 ``HBoxContainer`` in the right column to place the bomb and emerald
 counters side-by-side.
 
-.. figure:: ./img/ui_gui_step_tutorial_containers_structure.png
+.. figure:: img/ui_gui_step_tutorial_containers_structure.png
 
    We get a clean UI layout with only 4 containers
 
@@ -90,7 +90,7 @@ Add a ``VBoxContainer`` as a child of ``HBoxContainer`` and name it ``Bars``. Se
 ``HBoxContainer`` again and this time, add another ``HBoxContainer`` as a child of it.
 Call it ``Counters``. With these four containers, we have the base for our GUI scene.
 
-.. figure:: ./img/ui_gui_containers_structure_in_godot.png
+.. figure:: img/ui_gui_containers_structure_in_godot.png
 
    You should have 4 containers that look like this
 
@@ -127,7 +127,7 @@ Name it ``Count``. Inside of it, add three nodes:
 
 To add the nodes as siblings, always select the ``Count`` node first.
 
-.. figure:: ./img/ui_gui_step_tutorial_bar_template_1.png
+.. figure:: img/ui_gui_step_tutorial_bar_template_1.png
 
    Your scene tree should look like this. We're ready to throw in some
    textures
@@ -136,7 +136,7 @@ Our scene is still empty. It's time to throw in some textures. To load
 the textures, head to the FileSystem dock to the left of the viewport.
 Browse down to the res://assets/GUI folder.
 
-.. figure:: ./img/ui_gui_step_tutorial_textures_in_FileSystem_tab.png
+.. figure:: img/ui_gui_step_tutorial_textures_in_FileSystem_tab.png
 
    You should see a list of textures that we'll use to skin our
    interface.
@@ -156,14 +156,14 @@ the ``Text`` property and type ``10``. This way, we can see both nodes
 in the viewport. They should stack up in the top-left corner of their
 parent ``MarginContainer``.
 
-.. figure:: ./img/ui_gui_step_tutorial_bar_label_stacked.png
+.. figure:: img/ui_gui_step_tutorial_bar_label_stacked.png
 
    If you select both nodes, you should see something like this
 
 As they have a container as their direct parent, we cannot move them
 freely: the ``Count`` node will always reset their anchors, their size
 and position. Try to move and resize the nodes in the viewport. Then,
-select any of the three textures and press Ctrl Up or Ctrl Down to
+select any of the three textures and press :kbd:`Ctrl + Up` or :kbd:`Ctrl + Down` to
 reorder them in the Scene dock. They'll snap back to their previous size
 and position.
 
@@ -174,7 +174,7 @@ them inside a regular Control or another UI element. We'll use the
 the ``Title`` and ``Number``, and drag and drop them onto
 ``Background``.
 
-.. figure:: ./img/ui_gui_step_tutorial_bar_nesting_inside_background.png
+.. figure:: img/ui_gui_step_tutorial_bar_nesting_inside_background.png
 
    By using the Background node as the two textures' parent, we take
    control away from the Count MarginContainer
@@ -185,12 +185,12 @@ change the ``Size`` property to (50, 40) so it only takes the left half of
 the background.  Next, select the ``Number`` node. In the viewport, click the
 ``Layout`` menu and click ``Full Rect``. The node will resize to fit
 the ``Background``. Head to the Inspector and change its ``Align``
-property to ``Right``, and the ``VAlign`` property to ``Center``. The
+property to ``Right``, and the ``Valign`` property to ``Center``. The
 text should snap to the center of the ``Background``'s right edge.
 Resize the node horizontally, so it takes the right half of the
 ``Background`` and there's a bit of padding with the right edge.
 
-.. figure:: ./img/ui_gui_step_tutorial_bar_placed_title_and_label.png
+.. figure:: img/ui_gui_step_tutorial_bar_placed_title_and_label.png
 
    Here's how the nodes' bounding boxes should look in the viewport.
    Keep it rough, you don't need to place them too precisely for now.
@@ -217,12 +217,12 @@ the HP texture on the left. To do so, still in the ``DynamicFont``
 resource, you can tweak the ``Bottom`` property under the
 ``Extra Spacing`` category. It adds some bottom padding to the text.
 Click the ``Number`` node in the Scene tab to go back to the node's
-properties and change the ``VAlign`` to ``Bottom``. To adjust the text's
+properties and change the ``Valign`` to ``Bottom``. To adjust the text's
 baseline, click on the font field under the ``Custom Font`` category
 again and tweak the ``Bottom`` property until the text aligns with the
 ``Title`` node. I used a value of ``2`` pixels.
 
-.. figure:: ./img/ui_gui_step_tutorial_number_baseline.png
+.. figure:: img/ui_gui_step_tutorial_number_baseline.png
 
    With a Bottom value of 2 pixels, the Number aligns with the Title
 
@@ -245,7 +245,7 @@ up.
 
 With only five ``Control`` nodes, our first bar is ready to use.
 
-.. figure:: ./img/ui_gui_step_tutorial_bar_final.png
+.. figure:: img/ui_gui_step_tutorial_bar_final.png
 
    That's it, our life bar is ready. This last part was quick, wasn't
    it? That's thanks to our robust container setup.
@@ -256,7 +256,7 @@ Design the bomb and emerald counters
 The bomb and emerald counters are like the bar's ``Count`` node. So we'll
 duplicate it and use it as a template.
 
-Under the ``Bar`` node, select ``Count`` and press Ctrl D to duplicate
+Under the ``Bar`` node, select ``Count`` and press :kbd:`Ctrl + D` to duplicate
 it. Drag and drop the new node under the ``Counters`` ``HBoxContainer``
 at the bottom of the scene tree. You should see it resize automatically.
 Don't worry about this for now, we'll fix the size soon.
@@ -268,7 +268,7 @@ number nodes. The ``Title`` node is a ``TextureRect``, so it's what we
 need to display the icon. In the scene tree, select the ``Title`` node,
 and rename it to ``Icon``.
 
-.. figure:: ./img/ui_gui_step_tutorial_counter_design_1.png
+.. figure:: img/ui_gui_step_tutorial_counter_design_1.png
 
    Here's how your node tree should look so far
 
@@ -280,19 +280,19 @@ nodes. Click the Layout menu in the toolbar at the top of the viewport
 and select ``Full Rect``. Both nodes will update to fit
 the size of the ``Background``.
 
-.. figure:: ./img/ui_gui_step_tutorial_counter_design_2.png
+.. figure:: img/ui_gui_step_tutorial_counter_design_2.png
 
    The nodes anchor to the entire Background, but their position is off
 
 Let's change the ``Number``'s align properties to move it to the left
 and center of the ``Background``. Select the ``Number`` node, change its
-``Align`` property to left and the ``VAlign`` property to centre. Then
-resize its left edge a little bit to add some padding between the left
+``Align`` property to left and the ``Valign`` property to center. Then
+resize its left edge a bit to add some padding between the left
 edge of the ``Background`` and the text.
 
-.. figure:: ./img/ui_gui_step_tutorial_counter_design_3.png
+.. figure:: img/ui_gui_step_tutorial_counter_design_3.png
 
-   The Number node aligned to the left and centre
+   The Number node aligned to the left and center
 
 To overlap the Icon and the background, we need a few tweaks. First, our
 background is a bit too tall. It's because it's inside a margin
@@ -308,7 +308,7 @@ the ``Background``'s right edge. Open the Layout menu again and select
 ``Center Right``. Move the icon up so it is centered vertically with the
 ``Background``.
 
-.. figure:: ./img/ui_gui_step_tutorial_counter_design_4.png
+.. figure:: img/ui_gui_step_tutorial_counter_design_4.png
 
    The bomb icon anchors to the Background's right edge. Resize the
    Counter container to see the Icon node stick to its right side
@@ -326,7 +326,7 @@ can. Select the ``Bars`` node and scroll down to the ``Size Flags`` category. In
 the ``Horizontal`` category, check the ``Expand`` value. The ``Bars`` node
 should resize and push the counter to the right side of the screen.
 
-.. figure:: ./img/ui_gui_step_tutorial_counter_design_5.png
+.. figure:: img/ui_gui_step_tutorial_counter_design_5.png
 
    An expanding container eats all the space it can from its parent,
    pushing everything else along the way
@@ -365,7 +365,7 @@ the one next to ``Bar`` to open the corresponding scene. Resize the
 and placed the Control nodes, we're ready to inherit this template and
 create the life bar. It's the same for the ``Counter``.
 
-.. figure:: ./img/ui_gui_step_tutorial_bar_template_scene.png
+.. figure:: img/ui_gui_step_tutorial_bar_template_scene.png
 
    With no extra changes, our Bar is ready to use
 
@@ -408,7 +408,7 @@ Inherit the Bar Scene to build the LifeBar
 Go to ``Scene -> New Inherited Scene`` to create a new type of ``Bar``.
 Select the Bar scene and open it. You should see a new [unsaved] tab,
 that's like your ``Bar``, but with all nodes except the root in grey.
-Press ``Meta+S`` to save the new inherited scene and name it
+Press :kbd:`Ctrl + S` (:kbd:`Cmd + S` on macOS) to save the new inherited scene and name it
 ``LifeBar``.
 
 .. figure:: img/ui_gui_step_tutorial_inherited_scene_parent.png
@@ -456,7 +456,7 @@ will be affected by any property we change. You can try to change the
 size to a huge value like ``40`` and switch back to the ``LifeBar`` or
 the ``Bar`` scenes. You will see the text increased in size.
 
-.. figure:: ./img/ui_gui_step_tutorial_design_EnergyBar_1.png
+.. figure:: img/ui_gui_step_tutorial_design_EnergyBar_1.png
 
    If we change the font resource, all the nodes that use it are
    affected
@@ -467,14 +467,14 @@ and screwdriver icon on the top right of the inspector. In the drop-down
 menu, select the ``Make Sub-Resources Unique`` option. Godot will find
 all the resources this node uses and create unique copies for us.
 
-.. figure:: ./img/ui_gui_step_tutorial_design_EnergyBar_2.png
+.. figure:: img/ui_gui_step_tutorial_design_EnergyBar_2.png
 
    Use this option to create unique copies of the resources for one node
 
 .. tip::
 
     When you duplicate a node from the Scene tree, with
-    ``Meta+D``, it shares its resources with the original node. You
+    :kbd:`Ctrl + D` (:kbd:`Cmd + D` on macOS), it shares its resources with the original node. You
     need to use ``Make Sub-Resources Unique`` before you can tweak the
     resources without affecting the source node.
 
@@ -483,7 +483,7 @@ Scroll down to the ``Custom Font`` section and open ``Font``. Lower the
 adjust the ``Bottom`` spacing value to align the text's baseline with
 the EP label on the left.
 
-.. figure:: ./img/ui_gui_step_tutorial_design_EnergyBar_3.png
+.. figure:: img/ui_gui_step_tutorial_design_EnergyBar_3.png
 
    The EP Count widget, with a smaller font than its HP counterpart
 
@@ -504,7 +504,7 @@ makes it a bit large. Select it and in the ``Rect`` section, change the
 automatically and the ``Title`` and ``Number`` nodes should reposition
 as well.
 
-.. figure:: ./img/ui_gui_step_tutorial_design_EnergyBar_4.png
+.. figure:: img/ui_gui_step_tutorial_design_EnergyBar_4.png
 
    The Count looks better now it's a bit smaller
 
@@ -524,7 +524,7 @@ Let us now take care of the counters. Go to
 base. Rename the root node as ``BombCounter`` too.
 Save the new scene as ``BombCounter.tscn``. That's all for this scene.
 
-.. figure:: ./img/ui_gui_step_tutorial_design_counters_1.png
+.. figure:: img/ui_gui_step_tutorial_design_counters_1.png
 
    The bomb counter is the same as the original Counter scene
 
@@ -535,11 +535,11 @@ with the emerald icon. In the FileSystem tab, drag the ``emeralds_icon.png``
 onto the ``Icon`` node's ``Texture`` slot. ``Icon`` already anchors to
 the right edge of the ``Background`` node so we can change its position
 and it will scale and reposition with the ``EmeraldCounter`` container.
-Shift the emerald icon a little bit to the right and down. Use the Arrow
+Shift the emerald icon a bit to the right and down. Use the Arrow
 Keys on the keyboard to nudge its position. Save, and we're done with
 all the UI elements.
 
-.. figure:: ./img/ui_gui_step_tutorial_design_counters_2.png
+.. figure:: img/ui_gui_step_tutorial_design_counters_2.png
 
    The emerald counter should look something like this
 
@@ -552,14 +552,14 @@ In the FileSystem dock, find the ``LifeBar.tscn`` and drag and drop it
 onto the ``Bars`` container in the scene tree. Do the same for the
 ``EnergyBar``. You should see them align vertically.
 
-.. figure:: ./img/ui_gui_step_tutorial_assemble_final_gui_1.png
+.. figure:: img/ui_gui_step_tutorial_assemble_final_gui_1.png
 
    The LifeBar and the EnergyBar align automatically
 
 Now, drag and drop the ``BombCounter.tscn`` and ``EmeraldCounter.tscn`` scenes onto the
 ``Counters`` node. They'll resize automatically.
 
-.. figure:: ./img/ui_gui_step_tutorial_assemble_final_gui_2.png
+.. figure:: img/ui_gui_step_tutorial_assemble_final_gui_2.png
 
    The nodes resize to take all the available vertical space
 
@@ -570,7 +570,7 @@ in ``Counter.tscn``, we need to change the ``Size Flags`` on the
 the ``Vertical`` property, and check ``Shrink Center`` so the container
 centers inside the ``HBoxContainer``.
 
-.. figure:: ./img/ui_gui_step_tutorial_assemble_final_gui_3.png
+.. figure:: img/ui_gui_step_tutorial_assemble_final_gui_3.png
 
    Now both counters have a decent size
 
@@ -588,7 +588,7 @@ value as on the LifeBar. The ``Count`` should now have some margin on
 the left. If you save and go back to the GUI scene, it will be aligned
 vertically with the ``LifeBar``.
 
-.. figure:: ./img/ui_gui_step_tutorial_assemble_final_gui_4.png
+.. figure:: img/ui_gui_step_tutorial_assemble_final_gui_4.png
 
    The 2 bars align perfectly
 
@@ -616,7 +616,7 @@ the context of the game.
 Congratulations for getting to the end of this long tutorial. You can
 find the final project here: :download:`ui_gui_design.zip <files/ui_gui_design.zip>`.
 
-.. figure:: ./img/ui_gui_design_final_result.png
+.. figure:: img/ui_gui_design_final_result.png
 
    The final result
 
@@ -625,9 +625,9 @@ find the final project here: :download:`ui_gui_design.zip <files/ui_gui_design.z
     **A final note about Responsive Design**. If you resize the
     GUI, you'll see the nodes move, but the textures and text won't scale.
     The GUI also has a minimum size, based on the textures inside of it. In
-    games, we don’t need the interface to be as flexible as that of a
+    games, we don't need the interface to be as flexible as that of a
     website. You almost never want to support both landscape and portrait
-    screen orientations. It’s one or the other. In landscape orientation,
+    screen orientations. It's one or the other. In landscape orientation,
     the most common ratios range from 4:3 to 16:9. They are close to one
-    another. That's why it’s enough for the GUI elements to only move
+    another. That's why it's enough for the GUI elements to only move
     horizontally when we change the window size.

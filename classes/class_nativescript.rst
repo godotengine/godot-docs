@@ -11,40 +11,35 @@ NativeScript
 
 **Inherits:** :ref:`Script<class_Script>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------------+----+
-| :ref:`String<class_String>`                   | :ref:`class_name<class_NativeScript_property_class_name>`                         | "" |
-+-----------------------------------------------+-----------------------------------------------------------------------------------+----+
-| :ref:`GDNativeLibrary<class_GDNativeLibrary>` | :ref:`library<class_NativeScript_property_library>`                               |    |
-+-----------------------------------------------+-----------------------------------------------------------------------------------+----+
-| :ref:`String<class_String>`                   | :ref:`script_class_icon_path<class_NativeScript_property_script_class_icon_path>` | "" |
-+-----------------------------------------------+-----------------------------------------------------------------------------------+----+
-| :ref:`String<class_String>`                   | :ref:`script_class_name<class_NativeScript_property_script_class_name>`           | "" |
-+-----------------------------------------------+-----------------------------------------------------------------------------------+----+
++-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
+| :ref:`String<class_String>`                   | :ref:`class_name<class_NativeScript_property_class_name>`                         | ``""`` |
++-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
+| :ref:`GDNativeLibrary<class_GDNativeLibrary>` | :ref:`library<class_NativeScript_property_library>`                               |        |
++-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
+| :ref:`String<class_String>`                   | :ref:`script_class_icon_path<class_NativeScript_property_script_class_icon_path>` | ``""`` |
++-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
+| :ref:`String<class_String>`                   | :ref:`script_class_name<class_NativeScript_property_script_class_name>`           | ``""`` |
++-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
 
 Methods
 -------
 
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_class_documentation<class_NativeScript_method_get_class_documentation>` **(** **)** const                                           |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_method_documentation<class_NativeScript_method_get_method_documentation>` **(** :ref:`String<class_String>` method **)** const      |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_property_documentation<class_NativeScript_method_get_property_documentation>` **(** :ref:`String<class_String>` path **)** const    |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_signal_documentation<class_NativeScript_method_get_signal_documentation>` **(** :ref:`String<class_String>` signal_name **)** const |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`new<class_NativeScript_method_new>` **(** ... **)** vararg                                                                              |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`get_class_documentation<class_NativeScript_method_get_class_documentation>` **(** **)** const                                                   |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`get_method_documentation<class_NativeScript_method_get_method_documentation>` **(** :ref:`StringName<class_StringName>` method **)** const      |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`get_property_documentation<class_NativeScript_method_get_property_documentation>` **(** :ref:`StringName<class_StringName>` path **)** const    |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`get_signal_documentation<class_NativeScript_method_get_signal_documentation>` **(** :ref:`StringName<class_StringName>` signal_name **)** const |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`new<class_NativeScript_method_new>` **(** ... **)** vararg                                                                                      |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -54,12 +49,14 @@ Property Descriptions
 - :ref:`String<class_String>` **class_name**
 
 +-----------+-----------------------+
-| *Default* | ""                    |
+| *Default* | ``""``                |
 +-----------+-----------------------+
 | *Setter*  | set_class_name(value) |
 +-----------+-----------------------+
 | *Getter*  | get_class_name()      |
 +-----------+-----------------------+
+
+----
 
 .. _class_NativeScript_property_library:
 
@@ -71,24 +68,28 @@ Property Descriptions
 | *Getter* | get_library()      |
 +----------+--------------------+
 
+----
+
 .. _class_NativeScript_property_script_class_icon_path:
 
 - :ref:`String<class_String>` **script_class_icon_path**
 
 +-----------+-----------------------------------+
-| *Default* | ""                                |
+| *Default* | ``""``                            |
 +-----------+-----------------------------------+
 | *Setter*  | set_script_class_icon_path(value) |
 +-----------+-----------------------------------+
 | *Getter*  | get_script_class_icon_path()      |
 +-----------+-----------------------------------+
 
+----
+
 .. _class_NativeScript_property_script_class_name:
 
 - :ref:`String<class_String>` **script_class_name**
 
 +-----------+------------------------------+
-| *Default* | ""                           |
+| *Default* | ``""``                       |
 +-----------+------------------------------+
 | *Setter*  | set_script_class_name(value) |
 +-----------+------------------------------+
@@ -104,23 +105,31 @@ Method Descriptions
 
 Returns the documentation string that was previously set with ``godot_nativescript_set_class_documentation``.
 
+----
+
 .. _class_NativeScript_method_get_method_documentation:
 
-- :ref:`String<class_String>` **get_method_documentation** **(** :ref:`String<class_String>` method **)** const
+- :ref:`String<class_String>` **get_method_documentation** **(** :ref:`StringName<class_StringName>` method **)** const
 
 Returns the documentation string that was previously set with ``godot_nativescript_set_method_documentation``.
 
+----
+
 .. _class_NativeScript_method_get_property_documentation:
 
-- :ref:`String<class_String>` **get_property_documentation** **(** :ref:`String<class_String>` path **)** const
+- :ref:`String<class_String>` **get_property_documentation** **(** :ref:`StringName<class_StringName>` path **)** const
 
 Returns the documentation string that was previously set with ``godot_nativescript_set_property_documentation``.
 
+----
+
 .. _class_NativeScript_method_get_signal_documentation:
 
-- :ref:`String<class_String>` **get_signal_documentation** **(** :ref:`String<class_String>` signal_name **)** const
+- :ref:`String<class_String>` **get_signal_documentation** **(** :ref:`StringName<class_StringName>` signal_name **)** const
 
 Returns the documentation string that was previously set with ``godot_nativescript_set_signal_documentation``.
+
+----
 
 .. _class_NativeScript_method_new:
 

@@ -35,7 +35,7 @@ Using WebRTC in Godot
 
 WebRTC is implemented in Godot via two main classes :ref:`WebRTCPeerConnection <class_WebRTCPeerConnection>` and :ref:`WebRTCDataChannel <class_WebRTCDataChannel>`, plus the multiplayer API implementation :ref:`WebRTCMultiplayer <class_WebRTCMultiplayer>`. See section on :ref:`high-level multiplayer <doc_high_level_multiplayer>` for more details.
 
-.. note:: These classes are available automatically in HTML5, but **require an external GDNative plugin on native (non-HTML5) plaftorms**. Check out the `webrtc-native plugin repository <https://github.com/godotengine/webrtc-native>`__ for instructions and to get the latest `release <https://github.com/godotengine/webrtc-native/releases>`__.
+.. note:: These classes are available automatically in HTML5, but **require an external GDNative plugin on native (non-HTML5) platforms**. Check out the `webrtc-native plugin repository <https://github.com/godotengine/webrtc-native>`__ for instructions and to get the latest `release <https://github.com/godotengine/webrtc-native/releases>`__.
 
 Minimal connection example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -188,12 +188,12 @@ Then you can use it like this:
         var p2 = Chat.new()
         add_child(p1)
         add_child(p2)
-        get_tree().create_timer(1), "timeout")
-        p1.send_message("Hi from %s" % p1.path())
+        yield(get_tree().create_timer(1), "timeout")
+        p1.send_message("Hi from %s" % p1.get_path())
 
         # Wait a second and send message from P2
         yield(get_tree().create_timer(1), "timeout")
-        p2.send_message("Hi from %s" % p2.path())
+        p2.send_message("Hi from %s" % p2.get_path())
 
 This will print something similar to this:
 

@@ -10,7 +10,7 @@ while scripts can contain `imperative code
 <https://en.wikipedia.org/wiki/Imperative_programming>`_.
 
 As a result, many best practices in Godot boil down to applying Object-Oriented
-design principles to the scenes, nodes, or script that make up your game.
+design principles to the scenes, nodes, or scripts that make up your game.
 
 This guide explains how scripts and scenes work in the engine's core, to help
 you get a sense of how Godot works under the hood, and to help you better
@@ -127,7 +127,7 @@ The content of a scene helps to define:
 
 - What nodes are available to the script
 - How they are organized
-- How are they initialized
+- How they are initialized
 - What signal connections they have with each other
 
 Many Object-Oriented principles which apply to written code *also* apply to

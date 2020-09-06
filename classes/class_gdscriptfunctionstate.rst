@@ -11,12 +11,12 @@ GDScriptFunctionState
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 State of a function call after yielding.
+
+Description
+-----------
+
+Calling :ref:`@GDScript.yield<class_@GDScript_method_yield>` within a function will cause that function to yield and return its current state as an object of this type. The yielded function call can then be resumed later by calling :ref:`resume<class_GDScriptFunctionState_method_resume>` on this state object.
 
 Methods
 -------
@@ -32,12 +32,7 @@ Signals
 
 .. _class_GDScriptFunctionState_signal_completed:
 
-- **completed** **(** :ref:`Nil<class_Nil>` result **)**
-
-Description
------------
-
-Calling :ref:`@GDScript.yield<class_@GDScript_method_yield>` within a function will cause that function to yield and return its current state as an object of this type. The yielded function call can then be resumed later by calling :ref:`resume<class_GDScriptFunctionState_method_resume>` on this state object.
+- **completed** **(** :ref:`Variant<class_Variant>` result **)**
 
 Method Descriptions
 -------------------
@@ -49,6 +44,8 @@ Method Descriptions
 Check whether the function call may be resumed. This is not the case if the function state was already resumed.
 
 If ``extended_check`` is enabled, it also checks if the associated script and object still exist. The extended check is done in debug mode as part of :ref:`resume<class_GDScriptFunctionState_method_resume>`, but you can use this if you know you may be trying to resume without knowing for sure the object and/or script have survived up to that point.
+
+----
 
 .. _class_GDScriptFunctionState_method_resume:
 

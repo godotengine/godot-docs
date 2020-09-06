@@ -30,6 +30,7 @@ Creating a thread is very simple, just use the following code:
         # Third argument is optional userdata, it can be any variable.
         thread.start(self, "_thread_function", "Wafflecopter")
 
+
     # Run here and exit.
     # The argument is the userdata passed from start().
     # If no argument was passed, this one still needs to
@@ -50,9 +51,10 @@ wait until the thread is done (if not done yet), then properly dispose of it.
 Mutexes
 -------
 
-Accessing objects or data from multiple threads is not always supported (if you do it, it will
-cause unexpected behaviors or crashes). Read the :ref:`Thread safe APIs<doc_thread_safe_apis>`
-to understand which engine APIs support multiple thread access.
+Accessing objects or data from multiple threads is not always supported (if you
+do it, it will cause unexpected behaviors or crashes). Read the
+:ref:`doc_thread_safe_apis` documentation to understand which engine APIs
+support multiple thread access.
 
 When processing your own data or calling your own functions, as a rule, try to
 avoid accessing the same data directly from different threads. You may run into
@@ -75,6 +77,7 @@ Here is an example of using a Mutex:
     var mutex
     var thread
 
+
     # The thread will start here.
     func _ready():
         mutex = Mutex.new()
@@ -86,11 +89,13 @@ Here is an example of using a Mutex:
         counter += 1
         mutex.unlock()
 
+
     # Increment the value from the thread, too.
     func _thread_function(userdata):
         mutex.lock()
         counter += 1
         mutex.unlock()
+
 
     # Thread must be disposed (or "joined"), for portability.
     func _exit_tree():
@@ -119,6 +124,7 @@ ready to be processed:
     var thread
     var exit_thread = false
 
+
     # The thread will start here.
     func _ready():
         mutex = Mutex.new()
@@ -127,6 +133,7 @@ ready to be processed:
 
         thread = Thread.new()
         thread.start(self, "_thread_function")
+
 
     func _thread_function(userdata):
         while true:
@@ -143,8 +150,10 @@ ready to be processed:
             counter += 1 # Increment counter, protect with Mutex.
             mutex.unlock()
 
+
     func increment_counter():
         semaphore.post() # Make the thread process.
+
 
     func get_counter():
         mutex.lock()
@@ -152,6 +161,7 @@ ready to be processed:
         var counter_value = counter
         mutex.unlock()
         return counter_value
+
 
     # Thread must be disposed (or "joined"), for portability.
     func _exit_tree():

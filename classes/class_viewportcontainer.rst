@@ -11,26 +11,21 @@ ViewportContainer
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Control for holding :ref:`Viewport<class_Viewport>`\ s.
-
-Properties
-----------
-
-+-------------------------+------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`stretch<class_ViewportContainer_property_stretch>`               | false |
-+-------------------------+------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`   | :ref:`stretch_shrink<class_ViewportContainer_property_stretch_shrink>` | 1     |
-+-------------------------+------------------------------------------------------------------------+-------+
 
 Description
 -----------
 
 A :ref:`Container<class_Container>` node that holds a :ref:`Viewport<class_Viewport>`, automatically setting its size.
+
+Properties
+----------
+
++-------------------------+------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`stretch<class_ViewportContainer_property_stretch>`               | ``false`` |
++-------------------------+------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`   | :ref:`stretch_shrink<class_ViewportContainer_property_stretch_shrink>` | ``1``     |
++-------------------------+------------------------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
@@ -40,7 +35,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **stretch**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_stretch(value)   |
 +-----------+----------------------+
@@ -49,15 +44,23 @@ Property Descriptions
 
 If ``true``, the viewport will be scaled to the control's size.
 
+----
+
 .. _class_ViewportContainer_property_stretch_shrink:
 
 - :ref:`int<class_int>` **stretch_shrink**
 
 +-----------+---------------------------+
-| *Default* | 1                         |
+| *Default* | ``1``                     |
 +-----------+---------------------------+
 | *Setter*  | set_stretch_shrink(value) |
 +-----------+---------------------------+
 | *Getter*  | get_stretch_shrink()      |
 +-----------+---------------------------+
+
+Divides the viewport's effective resolution by this value while preserving its scale. This can be used to speed up rendering.
+
+For example, a 1280×720 viewport with :ref:`stretch_shrink<class_ViewportContainer_property_stretch_shrink>` set to ``2`` will be rendered at 640×360 while occupying the same size in the container.
+
+**Note:** :ref:`stretch<class_ViewportContainer_property_stretch>` must be ``true`` for this property to work.
 

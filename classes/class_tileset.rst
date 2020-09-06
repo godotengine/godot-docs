@@ -11,12 +11,14 @@ TileSet
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Tile library for tilemaps.
+
+Description
+-----------
+
+A TileSet is a library of tiles for a :ref:`TileMap<class_TileMap>`. It contains a list of tiles, each consisting of a sprite and optional collision shapes.
+
+Tiles are referenced by a unique integer ID.
 
 Methods
 -------
@@ -92,7 +94,7 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                     | :ref:`tile_get_navigation_polygon_offset<class_TileSet_method_tile_get_navigation_polygon_offset>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                    |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                     | :ref:`tile_get_normal_map<class_TileSet_method_tile_get_normal_map>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                  |
+| :ref:`Texture2D<class_Texture2D>`                 | :ref:`tile_get_normal_map<class_TileSet_method_tile_get_normal_map>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                  |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                     | :ref:`tile_get_occluder_offset<class_TileSet_method_tile_get_occluder_offset>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -112,7 +114,7 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                         | :ref:`tile_get_shapes<class_TileSet_method_tile_get_shapes>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                          |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                     | :ref:`tile_get_texture<class_TileSet_method_tile_get_texture>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                        |
+| :ref:`Texture2D<class_Texture2D>`                 | :ref:`tile_get_texture<class_TileSet_method_tile_get_texture>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                     | :ref:`tile_get_texture_offset<class_TileSet_method_tile_get_texture_offset>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                          |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -132,7 +134,7 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`tile_set_navigation_polygon_offset<class_TileSet_method_tile_set_navigation_polygon_offset>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` navigation_polygon_offset **)**                                                                                                 |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`tile_set_normal_map<class_TileSet_method_tile_set_normal_map>` **(** :ref:`int<class_int>` id, :ref:`Texture<class_Texture>` normal_map **)**                                                                                                                                              |
+| void                                              | :ref:`tile_set_normal_map<class_TileSet_method_tile_set_normal_map>` **(** :ref:`int<class_int>` id, :ref:`Texture2D<class_Texture2D>` normal_map **)**                                                                                                                                          |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`tile_set_occluder_offset<class_TileSet_method_tile_set_occluder_offset>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` occluder_offset **)**                                                                                                                               |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -150,7 +152,7 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`tile_set_shapes<class_TileSet_method_tile_set_shapes>` **(** :ref:`int<class_int>` id, :ref:`Array<class_Array>` shapes **)**                                                                                                                                                              |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`tile_set_texture<class_TileSet_method_tile_set_texture>` **(** :ref:`int<class_int>` id, :ref:`Texture<class_Texture>` texture **)**                                                                                                                                                       |
+| void                                              | :ref:`tile_set_texture<class_TileSet_method_tile_set_texture>` **(** :ref:`int<class_int>` id, :ref:`Texture2D<class_Texture2D>` texture **)**                                                                                                                                                   |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`tile_set_texture_offset<class_TileSet_method_tile_set_texture_offset>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` texture_offset **)**                                                                                                                                  |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -178,6 +180,8 @@ enum **BitmaskMode**:
 
 - **BITMASK_3X3** = **2**
 
+----
+
 .. _enum_TileSet_AutotileBindings:
 
 .. _class_TileSet_constant_BIND_TOPLEFT:
@@ -187,6 +191,8 @@ enum **BitmaskMode**:
 .. _class_TileSet_constant_BIND_TOPRIGHT:
 
 .. _class_TileSet_constant_BIND_LEFT:
+
+.. _class_TileSet_constant_BIND_CENTER:
 
 .. _class_TileSet_constant_BIND_RIGHT:
 
@@ -206,6 +212,8 @@ enum **AutotileBindings**:
 
 - **BIND_LEFT** = **8**
 
+- **BIND_CENTER** = **16**
+
 - **BIND_RIGHT** = **32**
 
 - **BIND_BOTTOMLEFT** = **64**
@@ -213,6 +221,8 @@ enum **AutotileBindings**:
 - **BIND_BOTTOM** = **128**
 
 - **BIND_BOTTOMRIGHT** = **256**
+
+----
 
 .. _enum_TileSet_TileMode:
 
@@ -230,13 +240,6 @@ enum **TileMode**:
 
 - **ATLAS_TILE** = **2**
 
-Description
------------
-
-A TileSet is a library of tiles for a :ref:`TileMap<class_TileMap>`. It contains a list of tiles, each consisting of a sprite and optional collision shapes.
-
-Tiles are referenced by a unique integer ID.
-
 Method Descriptions
 -------------------
 
@@ -244,19 +247,27 @@ Method Descriptions
 
 - :ref:`Vector2<class_Vector2>` **_forward_atlas_subtile_selection** **(** :ref:`int<class_int>` atlastile_id, :ref:`Object<class_Object>` tilemap, :ref:`Vector2<class_Vector2>` tile_location **)** virtual
 
+----
+
 .. _class_TileSet_method__forward_subtile_selection:
 
 - :ref:`Vector2<class_Vector2>` **_forward_subtile_selection** **(** :ref:`int<class_int>` autotile_id, :ref:`int<class_int>` bitmask, :ref:`Object<class_Object>` tilemap, :ref:`Vector2<class_Vector2>` tile_location **)** virtual
 
+----
+
 .. _class_TileSet_method__is_tile_bound:
 
 - :ref:`bool<class_bool>` **_is_tile_bound** **(** :ref:`int<class_int>` drawn_id, :ref:`int<class_int>` neighbor_id **)** virtual
+
+----
 
 .. _class_TileSet_method_autotile_clear_bitmask_map:
 
 - void **autotile_clear_bitmask_map** **(** :ref:`int<class_int>` id **)**
 
 Clears all bitmask information of the autotile.
+
+----
 
 .. _class_TileSet_method_autotile_get_bitmask:
 
@@ -266,11 +277,15 @@ Returns the bitmask of the subtile from an autotile given its coordinates.
 
 The value is the sum of the values in :ref:`AutotileBindings<enum_TileSet_AutotileBindings>` present in the subtile (e.g. a value of 5 means the bitmask has bindings in both the top left and top right).
 
+----
+
 .. _class_TileSet_method_autotile_get_bitmask_mode:
 
 - :ref:`BitmaskMode<enum_TileSet_BitmaskMode>` **autotile_get_bitmask_mode** **(** :ref:`int<class_int>` id **)** const
 
 Returns the :ref:`BitmaskMode<enum_TileSet_BitmaskMode>` of the autotile.
+
+----
 
 .. _class_TileSet_method_autotile_get_icon_coordinate:
 
@@ -280,11 +295,15 @@ Returns the subtile that's being used as an icon in an atlas/autotile given its 
 
 The subtile defined as the icon will be used as a fallback when the atlas/autotile's bitmask information is incomplete. It will also be used to represent it in the TileSet editor.
 
+----
+
 .. _class_TileSet_method_autotile_get_light_occluder:
 
 - :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **autotile_get_light_occluder** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)** const
 
 Returns the light occluder of the subtile from an atlas/autotile given its coordinates.
+
+----
 
 .. _class_TileSet_method_autotile_get_navigation_polygon:
 
@@ -292,17 +311,23 @@ Returns the light occluder of the subtile from an atlas/autotile given its coord
 
 Returns the navigation polygon of the subtile from an atlas/autotile given its coordinates.
 
+----
+
 .. _class_TileSet_method_autotile_get_size:
 
 - :ref:`Vector2<class_Vector2>` **autotile_get_size** **(** :ref:`int<class_int>` id **)** const
 
 Returns the size of the subtiles in an atlas/autotile.
 
+----
+
 .. _class_TileSet_method_autotile_get_spacing:
 
 - :ref:`int<class_int>` **autotile_get_spacing** **(** :ref:`int<class_int>` id **)** const
 
 Returns the spacing between subtiles of the atlas/autotile.
+
+----
 
 .. _class_TileSet_method_autotile_get_subtile_priority:
 
@@ -312,11 +337,15 @@ Returns the priority of the subtile from an autotile given its coordinates.
 
 When more than one subtile has the same bitmask value, one of them will be picked randomly for drawing. Its priority will define how often it will be picked.
 
+----
+
 .. _class_TileSet_method_autotile_get_z_index:
 
 - :ref:`int<class_int>` **autotile_get_z_index** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)**
 
 Returns the drawing index of the subtile from an atlas/autotile given its coordinates.
+
+----
 
 .. _class_TileSet_method_autotile_set_bitmask:
 
@@ -326,11 +355,15 @@ Sets the bitmask of the subtile from an autotile given its coordinates.
 
 The value is the sum of the values in :ref:`AutotileBindings<enum_TileSet_AutotileBindings>` present in the subtile (e.g. a value of 5 means the bitmask has bindings in both the top left and top right).
 
+----
+
 .. _class_TileSet_method_autotile_set_bitmask_mode:
 
 - void **autotile_set_bitmask_mode** **(** :ref:`int<class_int>` id, :ref:`BitmaskMode<enum_TileSet_BitmaskMode>` mode **)**
 
 Sets the :ref:`BitmaskMode<enum_TileSet_BitmaskMode>` of the autotile.
+
+----
 
 .. _class_TileSet_method_autotile_set_icon_coordinate:
 
@@ -340,11 +373,15 @@ Sets the subtile that will be used as an icon in an atlas/autotile given its coo
 
 The subtile defined as the icon will be used as a fallback when the atlas/autotile's bitmask information is incomplete. It will also be used to represent it in the TileSet editor.
 
+----
+
 .. _class_TileSet_method_autotile_set_light_occluder:
 
 - void **autotile_set_light_occluder** **(** :ref:`int<class_int>` id, :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` light_occluder, :ref:`Vector2<class_Vector2>` coord **)**
 
 Sets the light occluder of the subtile from an atlas/autotile given its coordinates.
+
+----
 
 .. _class_TileSet_method_autotile_set_navigation_polygon:
 
@@ -352,17 +389,23 @@ Sets the light occluder of the subtile from an atlas/autotile given its coordina
 
 Sets the navigation polygon of the subtile from an atlas/autotile given its coordinates.
 
+----
+
 .. _class_TileSet_method_autotile_set_size:
 
 - void **autotile_set_size** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` size **)**
 
 Sets the size of the subtiles in an atlas/autotile.
 
+----
+
 .. _class_TileSet_method_autotile_set_spacing:
 
 - void **autotile_set_spacing** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` spacing **)**
 
 Sets the spacing between subtiles of the atlas/autotile.
+
+----
 
 .. _class_TileSet_method_autotile_set_subtile_priority:
 
@@ -372,11 +415,15 @@ Sets the priority of the subtile from an autotile given its coordinates.
 
 When more than one subtile has the same bitmask value, one of them will be picked randomly for drawing. Its priority will define how often it will be picked.
 
+----
+
 .. _class_TileSet_method_autotile_set_z_index:
 
 - void **autotile_set_z_index** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord, :ref:`int<class_int>` z_index **)**
 
 Sets the drawing index of the subtile from an atlas/autotile given its coordinates.
+
+----
 
 .. _class_TileSet_method_clear:
 
@@ -384,11 +431,15 @@ Sets the drawing index of the subtile from an atlas/autotile given its coordinat
 
 Clears all tiles.
 
+----
+
 .. _class_TileSet_method_create_tile:
 
 - void **create_tile** **(** :ref:`int<class_int>` id **)**
 
 Creates a new tile with the given ID.
+
+----
 
 .. _class_TileSet_method_find_tile_by_name:
 
@@ -396,11 +447,15 @@ Creates a new tile with the given ID.
 
 Returns the first tile matching the given name.
 
+----
+
 .. _class_TileSet_method_get_last_unused_tile_id:
 
 - :ref:`int<class_int>` **get_last_unused_tile_id** **(** **)** const
 
 Returns the ID following the last currently used ID, useful when creating a new tile.
+
+----
 
 .. _class_TileSet_method_get_tiles_ids:
 
@@ -408,11 +463,15 @@ Returns the ID following the last currently used ID, useful when creating a new 
 
 Returns an array of all currently used tile IDs.
 
+----
+
 .. _class_TileSet_method_remove_tile:
 
 - void **remove_tile** **(** :ref:`int<class_int>` id **)**
 
 Removes the given tile ID.
+
+----
 
 .. _class_TileSet_method_tile_add_shape:
 
@@ -420,11 +479,15 @@ Removes the given tile ID.
 
 Adds a shape to the tile.
 
+----
+
 .. _class_TileSet_method_tile_get_light_occluder:
 
 - :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **tile_get_light_occluder** **(** :ref:`int<class_int>` id **)** const
 
 Returns the tile's light occluder.
+
+----
 
 .. _class_TileSet_method_tile_get_material:
 
@@ -432,11 +495,15 @@ Returns the tile's light occluder.
 
 Returns the tile's material.
 
+----
+
 .. _class_TileSet_method_tile_get_modulate:
 
 - :ref:`Color<class_Color>` **tile_get_modulate** **(** :ref:`int<class_int>` id **)** const
 
 Returns the tile's modulation color.
+
+----
 
 .. _class_TileSet_method_tile_get_name:
 
@@ -444,11 +511,15 @@ Returns the tile's modulation color.
 
 Returns the tile's name.
 
+----
+
 .. _class_TileSet_method_tile_get_navigation_polygon:
 
 - :ref:`NavigationPolygon<class_NavigationPolygon>` **tile_get_navigation_polygon** **(** :ref:`int<class_int>` id **)** const
 
 Returns the navigation polygon of the tile.
+
+----
 
 .. _class_TileSet_method_tile_get_navigation_polygon_offset:
 
@@ -456,11 +527,15 @@ Returns the navigation polygon of the tile.
 
 Returns the offset of the tile's navigation polygon.
 
+----
+
 .. _class_TileSet_method_tile_get_normal_map:
 
-- :ref:`Texture<class_Texture>` **tile_get_normal_map** **(** :ref:`int<class_int>` id **)** const
+- :ref:`Texture2D<class_Texture2D>` **tile_get_normal_map** **(** :ref:`int<class_int>` id **)** const
 
 Returns the tile's normal map texture.
+
+----
 
 .. _class_TileSet_method_tile_get_occluder_offset:
 
@@ -468,11 +543,15 @@ Returns the tile's normal map texture.
 
 Returns the offset of the tile's light occluder.
 
+----
+
 .. _class_TileSet_method_tile_get_region:
 
 - :ref:`Rect2<class_Rect2>` **tile_get_region** **(** :ref:`int<class_int>` id **)** const
 
 Returns the tile sub-region in the texture.
+
+----
 
 .. _class_TileSet_method_tile_get_shape:
 
@@ -480,11 +559,15 @@ Returns the tile sub-region in the texture.
 
 Returns a tile's given shape.
 
+----
+
 .. _class_TileSet_method_tile_get_shape_count:
 
 - :ref:`int<class_int>` **tile_get_shape_count** **(** :ref:`int<class_int>` id **)** const
 
 Returns the number of shapes assigned to a tile.
+
+----
 
 .. _class_TileSet_method_tile_get_shape_offset:
 
@@ -492,15 +575,21 @@ Returns the number of shapes assigned to a tile.
 
 Returns the offset of a tile's shape.
 
+----
+
 .. _class_TileSet_method_tile_get_shape_one_way:
 
 - :ref:`bool<class_bool>` **tile_get_shape_one_way** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const
 
 Returns the one-way collision value of a tile's shape.
 
+----
+
 .. _class_TileSet_method_tile_get_shape_one_way_margin:
 
 - :ref:`float<class_float>` **tile_get_shape_one_way_margin** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const
+
+----
 
 .. _class_TileSet_method_tile_get_shape_transform:
 
@@ -508,17 +597,23 @@ Returns the one-way collision value of a tile's shape.
 
 Returns the :ref:`Transform2D<class_Transform2D>` of a tile's shape.
 
+----
+
 .. _class_TileSet_method_tile_get_shapes:
 
 - :ref:`Array<class_Array>` **tile_get_shapes** **(** :ref:`int<class_int>` id **)** const
 
 Returns an array of the tile's shapes.
 
+----
+
 .. _class_TileSet_method_tile_get_texture:
 
-- :ref:`Texture<class_Texture>` **tile_get_texture** **(** :ref:`int<class_int>` id **)** const
+- :ref:`Texture2D<class_Texture2D>` **tile_get_texture** **(** :ref:`int<class_int>` id **)** const
 
 Returns the tile's texture.
+
+----
 
 .. _class_TileSet_method_tile_get_texture_offset:
 
@@ -526,11 +621,15 @@ Returns the tile's texture.
 
 Returns the texture offset of the tile.
 
+----
+
 .. _class_TileSet_method_tile_get_tile_mode:
 
 - :ref:`TileMode<enum_TileSet_TileMode>` **tile_get_tile_mode** **(** :ref:`int<class_int>` id **)** const
 
 Returns the tile's :ref:`TileMode<enum_TileSet_TileMode>`.
+
+----
 
 .. _class_TileSet_method_tile_get_z_index:
 
@@ -538,11 +637,15 @@ Returns the tile's :ref:`TileMode<enum_TileSet_TileMode>`.
 
 Returns the tile's Z index (drawing layer).
 
+----
+
 .. _class_TileSet_method_tile_set_light_occluder:
 
 - void **tile_set_light_occluder** **(** :ref:`int<class_int>` id, :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` light_occluder **)**
 
 Sets a light occluder for the tile.
+
+----
 
 .. _class_TileSet_method_tile_set_material:
 
@@ -550,11 +653,15 @@ Sets a light occluder for the tile.
 
 Sets the tile's material.
 
+----
+
 .. _class_TileSet_method_tile_set_modulate:
 
 - void **tile_set_modulate** **(** :ref:`int<class_int>` id, :ref:`Color<class_Color>` color **)**
 
 Sets the tile's modulation color.
+
+----
 
 .. _class_TileSet_method_tile_set_name:
 
@@ -562,11 +669,15 @@ Sets the tile's modulation color.
 
 Sets the tile's name.
 
+----
+
 .. _class_TileSet_method_tile_set_navigation_polygon:
 
 - void **tile_set_navigation_polygon** **(** :ref:`int<class_int>` id, :ref:`NavigationPolygon<class_NavigationPolygon>` navigation_polygon **)**
 
 Sets the tile's navigation polygon.
+
+----
 
 .. _class_TileSet_method_tile_set_navigation_polygon_offset:
 
@@ -574,11 +685,15 @@ Sets the tile's navigation polygon.
 
 Sets an offset for the tile's navigation polygon.
 
+----
+
 .. _class_TileSet_method_tile_set_normal_map:
 
-- void **tile_set_normal_map** **(** :ref:`int<class_int>` id, :ref:`Texture<class_Texture>` normal_map **)**
+- void **tile_set_normal_map** **(** :ref:`int<class_int>` id, :ref:`Texture2D<class_Texture2D>` normal_map **)**
 
 Sets the tile's normal map texture.
+
+----
 
 .. _class_TileSet_method_tile_set_occluder_offset:
 
@@ -586,11 +701,15 @@ Sets the tile's normal map texture.
 
 Sets an offset for the tile's light occluder.
 
+----
+
 .. _class_TileSet_method_tile_set_region:
 
 - void **tile_set_region** **(** :ref:`int<class_int>` id, :ref:`Rect2<class_Rect2>` region **)**
 
 Sets the tile's sub-region in the texture. This is common in texture atlases.
+
+----
 
 .. _class_TileSet_method_tile_set_shape:
 
@@ -598,11 +717,15 @@ Sets the tile's sub-region in the texture. This is common in texture atlases.
 
 Sets a shape for the tile, enabling collision.
 
+----
+
 .. _class_TileSet_method_tile_set_shape_offset:
 
 - void **tile_set_shape_offset** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id, :ref:`Vector2<class_Vector2>` shape_offset **)**
 
 Sets the offset of a tile's shape.
+
+----
 
 .. _class_TileSet_method_tile_set_shape_one_way:
 
@@ -610,9 +733,13 @@ Sets the offset of a tile's shape.
 
 Enables one-way collision on a tile's shape.
 
+----
+
 .. _class_TileSet_method_tile_set_shape_one_way_margin:
 
 - void **tile_set_shape_one_way_margin** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id, :ref:`float<class_float>` one_way **)**
+
+----
 
 .. _class_TileSet_method_tile_set_shape_transform:
 
@@ -620,17 +747,23 @@ Enables one-way collision on a tile's shape.
 
 Sets a :ref:`Transform2D<class_Transform2D>` on a tile's shape.
 
+----
+
 .. _class_TileSet_method_tile_set_shapes:
 
 - void **tile_set_shapes** **(** :ref:`int<class_int>` id, :ref:`Array<class_Array>` shapes **)**
 
 Sets an array of shapes for the tile, enabling collision.
 
+----
+
 .. _class_TileSet_method_tile_set_texture:
 
-- void **tile_set_texture** **(** :ref:`int<class_int>` id, :ref:`Texture<class_Texture>` texture **)**
+- void **tile_set_texture** **(** :ref:`int<class_int>` id, :ref:`Texture2D<class_Texture2D>` texture **)**
 
 Sets the tile's texture.
+
+----
 
 .. _class_TileSet_method_tile_set_texture_offset:
 
@@ -638,11 +771,15 @@ Sets the tile's texture.
 
 Sets the tile's texture offset.
 
+----
+
 .. _class_TileSet_method_tile_set_tile_mode:
 
 - void **tile_set_tile_mode** **(** :ref:`int<class_int>` id, :ref:`TileMode<enum_TileSet_TileMode>` tilemode **)**
 
 Sets the tile's :ref:`TileMode<enum_TileSet_TileMode>`.
+
+----
 
 .. _class_TileSet_method_tile_set_z_index:
 

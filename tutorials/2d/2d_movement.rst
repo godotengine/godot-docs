@@ -13,6 +13,8 @@ the movement in most 2D games is based on a small number of designs.
 We'll use :ref:`KinematicBody2D <class_KinematicBody2D>` for these examples,
 but the principles will apply to other node types (Area2D, RigidBody2D) as well.
 
+.. _doc_2d_movement_setup:
+
 Setup
 -----
 
@@ -68,9 +70,9 @@ Add a script to the kinematic body and add the following code:
 
     public class Movement : KinematicBody2D
     {
-        [Export] public int Speed = 200;
+        [Export] public int speed = 200;
 
-        Vector2 velocity = new Vector2();
+        public Vector2 velocity = new Vector2();
 
         public void GetInput()
         {
@@ -88,7 +90,7 @@ Add a script to the kinematic body and add the following code:
             if (Input.IsActionPressed("up"))
                 velocity.y -= 1;
 
-            velocity = velocity.Normalized() * Speed;
+            velocity = velocity.Normalized() * speed;
         }
 
         public override void _PhysicsProcess(float delta)
@@ -98,7 +100,7 @@ Add a script to the kinematic body and add the following code:
         }
     }
 
-In the ``get_input()`` function we check for the four key events and sum them
+In the ``get_input()`` function, we check for the four key events and sum them
 up to get the velocity vector. This has the benefit of making two opposite keys
 cancel each other out, but will also result in diagonal movement being faster
 due to the two directions being added together.
@@ -108,6 +110,12 @@ its *length* to ``1``, and multiply by the desired speed.
 
 .. tip:: If you've never used vector math before, or need a refresher,
          you can see an explanation of vector usage in Godot at :ref:`doc_vector_math`.
+
+.. note::
+
+    If the code above does nothing when you press the keys, double-check that
+    you've set up input actions correctly as described in the
+    :ref:`doc_2d_movement_setup` part of this tutorial.
 
 Rotation + movement
 -------------------
@@ -153,11 +161,11 @@ while up/down moves it forward or backward in whatever direction it's facing.
 
     public class Movement : KinematicBody2D
     {
-        [Export] public int Speed = 200;
-        [Export] public float RotationSpeed = 1.5f;
+        [Export] public int speed = 200;
+        [Export] public float rotationSpeed = 1.5f;
 
-        Vector2 velocity = new Vector2();
-        int rotationDir = 0;
+        public Vector2 velocity = new Vector2();
+        public int rotationDir = 0;
 
         public void GetInput()
         {
@@ -171,18 +179,18 @@ while up/down moves it forward or backward in whatever direction it's facing.
                 rotationDir -= 1;
 
             if (Input.IsActionPressed("down"))
-                velocity = new Vector2(-Speed, 0).Rotated(Rotation);
+                velocity = new Vector2(-speed, 0).Rotated(Rotation);
 
             if (Input.IsActionPressed("up"))
-                velocity = new Vector2(Speed, 0).Rotated(Rotation);
+                velocity = new Vector2(speed, 0).Rotated(Rotation);
 
-            velocity = velocity.Normalized() * Speed;
+            velocity = velocity.Normalized() * speed;
         }
 
         public override void _PhysicsProcess(float delta)
         {
             GetInput();
-            Rotation += rotationDir * RotationSpeed * delta;
+            Rotation += rotationDir * rotationSpeed * delta;
             velocity = MoveAndSlide(velocity);
         }
     }
@@ -233,9 +241,9 @@ is set by the mouse position instead of the keyboard. The character will always
 
     public class Movement : KinematicBody2D
     {
-        [Export] public int Speed = 200;
+        [Export] public int speed = 200;
 
-        Vector2 velocity = new Vector2();
+        public Vector2 velocity = new Vector2();
 
         public void GetInput()
         {
@@ -243,12 +251,12 @@ is set by the mouse position instead of the keyboard. The character will always
             velocity = new Vector2();
 
             if (Input.IsActionPressed("down"))
-                velocity = new Vector2(-Speed, 0).Rotated(Rotation);
+                velocity = new Vector2(-speed, 0).Rotated(Rotation);
 
             if (Input.IsActionPressed("up"))
-                velocity = new Vector2(Speed, 0).Rotated(Rotation);
+                velocity = new Vector2(speed, 0).Rotated(Rotation);
 
-            velocity = velocity.Normalized() * Speed;
+            velocity = velocity.Normalized() * speed;
         }
 
         public override void _PhysicsProcess(float delta)
@@ -295,9 +303,9 @@ on the screen will cause the player to move to the target location.
             target = get_global_mouse_position()
 
     func _physics_process(delta):
-        velocity = (target - position).normalized() * speed
-        # rotation = velocity.angle()
-        if (target - position).length() > 5:
+        velocity = position.direction_to(target) * speed
+        # look_at(target)
+        if position.distance_to(target) > 5:
             velocity = move_and_slide(velocity)
 
  .. code-tab:: csharp
@@ -307,10 +315,10 @@ on the screen will cause the player to move to the target location.
 
     public class Movement : KinematicBody2D
     {
-        [Export] public int Speed = 200;
+        [Export] public int speed = 200;
 
-        Vector2 target = new Vector2();
-        Vector2 velocity = new Vector2();
+        public Vector2 target = new Vector2();
+        public Vector2 velocity = new Vector2();
 
         public override void _Input(InputEvent @event)
         {
@@ -322,9 +330,9 @@ on the screen will cause the player to move to the target location.
 
         public override void _PhysicsProcess(float delta)
         {
-            velocity = (target - Position).Normalized() * Speed;
-            // Rotation = velocity.Angle();
-            if ((target - Position).Length() > 5)
+            velocity = Position.DirectionTo(target) * speed;
+            // LookAt(target);
+            if (Position.DistanceTo(target) > 5)
             {
                 velocity = MoveAndSlide(velocity);
             }
@@ -332,12 +340,12 @@ on the screen will cause the player to move to the target location.
     }
 
 
-Note the ``length()`` check we make prior to movement. Without this test,
+Note the ``distance_to()`` check we make prior to movement. Without this test,
 the body would "jitter" upon reaching the target position, as it moves
 slightly past the position and tries to move back, only to move too far and
 repeat.
 
-Uncommenting the ``rotation`` line will also turn the body to point in its
+Uncommenting the ``look_at()`` line will also turn the body to point in its
 direction of motion if you prefer.
 
 .. tip:: This technique can also be used as the basis of a "following" character.

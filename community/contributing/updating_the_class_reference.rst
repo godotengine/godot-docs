@@ -1,7 +1,11 @@
 .. _doc_updating_the_class_reference:
 
-Contribute to the Class Reference
-=================================
+Contributing to the class reference
+===================================
+
+.. highlight:: shell
+
+.. note:: This guide also is available as a `video tutorial on YouTube <https://www.youtube.com/watch?v=5jeHXxeX-JY>`_.
 
 Godot ships with many nodes and singletons to help you develop your games. Each is a class, documented in the :ref:`class reference <toc-class-ref>`.
 This reference is essential for anyone learning the engine: it is available both online and in the engine.
@@ -12,8 +16,10 @@ The developers can't write the entire reference on their own. Godot needs you, a
 **Important:** If you are planning to make larger changes or a more substantial contribution, it is usually a good idea
 to create an issue (or a comment in an existing one) to let others know so they don't start working on the same thing too.
 
-.. note:: This guide is available as a `video tutorial on YouTube <https://www.youtube.com/watch?v=5jeHXxeX-JY>`_.
+.. seealso::
 
+    Not sure where to start contributing? Take a look at the current class reference
+    completion status `here <https://godotengine.github.io/doc-status/>`__.
 
 How to contribute
 -----------------
@@ -33,13 +39,13 @@ There are 5 steps to update the class reference (full guide below):
 Get started with GitHub
 -----------------------
 
-If you're new to git and GitHub, this guide will help you get started. You'll learn to:
+If you're new to Git and GitHub, this guide will help you get started. You'll learn to:
 
 - Fork and clone Godot's repository
 - Keep your fork up to date with other contributors
 - Create a pull request so your improvements end in the official docs
 
-.. note:: If you're new to git, the version-control system Godot uses, go through `GitHub's interactive guide <https://try.github.io/levels/1/challenges/1>`_. You'll learn some essential vocabulary and get a sense for the tool.
+.. note:: If you're new to Git, the version control system Godot uses, go through `GitHub's interactive guide <https://try.github.io/levels/1/challenges/1>`_. You'll learn some essential vocabulary and get a sense for the tool.
 
 Fork Godot
 ~~~~~~~~~~
@@ -52,7 +58,7 @@ Clone the repository on your computer:
 
     git clone https://github.com/your_name/godot.git
 
-Create a new branch to make your changes. It makes it a lot easier to sync your improvements with other docs writers, and it's easier to cleanup your repository clean if you have any issues with git.
+Create a new branch to make your changes. It makes it a lot easier to sync your improvements with other docs writers. It's also easier to clean up your repository if you run into any issues with Git.
 
 ::
 
@@ -77,7 +83,7 @@ You can check the list of all remote servers with:
 
     git remote -v
 
-You should have two: ``origin``, your fork on github, that git adds by default, and ``upstream``, that you just added:
+You should have two: ``origin``, your fork on GitHub that Git adds by default, and ``upstream``, that you just added:
 
 
 ::
@@ -104,7 +110,7 @@ If you made changes you don't want to keep in your local branch, use the followi
 
 **Warning:** The above command will reset your branch to the state of the ``upstream master`` branch. It will discard all local changes. Make sure to only run this *before* you make important changes.
 
-Another option is to delete the branch you're working on, synchronize the master branch with the Godot repository, and create a brand new branch:
+Another option is to delete the branch you're working on, synchronize the master branch with the Godot repository, and create a new branch:
 
 ::
 
@@ -113,7 +119,7 @@ Another option is to delete the branch you're working on, synchronize the master
     git pull --rebase upstream master
     git checkout -b your-new-branch-name
 
-If you're feeling lost by now, come to our `IRC channels <http://webchat.freenode.net/?channels=#godotengine>`_ and ask for help. Experienced git users will give you a hand.
+If you're feeling lost by now, come to our `IRC channels <https://webchat.freenode.net/?channels=#godotengine>`_ and ask for help. Experienced Git users will give you a hand.
 
 Updating the documentation template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -122,9 +128,9 @@ When classes are modified in the source code, the documentation template might b
 
 ::
 
-    ./bin/godot.x11.tools.64 --doctool .
+    ./bin/godot.linuxbsd.tools.64 --doctool .
 
-The xml files in doc/classes should then be up-to-date with current Godot Engine features. You can then check what changed using the ``git diff`` command. If there are changes to other classes than the one you are planning to document, please commit those changes first before starting to edit the template:
+The XML files in doc/classes should then be up-to-date with current Godot Engine features. You can then check what changed using the ``git diff`` command. If there are changes to other classes than the one you are planning to document, please commit those changes first before starting to edit the template:
 
 ::
 
@@ -151,7 +157,7 @@ When it's done, you can ask for a Pull Request via the GitHub UI of your Godot f
 
 .. warning::
 
-    Although you can edit files on GitHub, it's not recommended. As hundreds of contributors work on Godot, the git history must stay clean. Each commit should bundle all related improvements you make to the class reference, a new feature, bug fixes... When you edit from GitHub, it will create a new branch and a Pull Request every time you want to save it. If a few days pass before your changes get a review, you won't be able to update to the latest version of the repository cleanly. Also, it's harder to keep clean indents from GitHub. And they're very important in the docs.
+    Although you can edit files on GitHub, it's not recommended. As hundreds of contributors work on Godot, the Git history must stay clean. Each commit should bundle all related improvements you make to the class reference, a new feature, bug fixes... When you edit from GitHub, it will create a new branch and a Pull Request every time you want to save it. If a few days pass before your changes get a review, you won't be able to update to the latest version of the repository cleanly. Also, it's harder to keep clean indents from GitHub. And they're very important in the docs.
 
     TL;DR: If you don't know what you're doing exactly, do not edit files from GitHub.
 
@@ -160,7 +166,7 @@ How to edit class XML
 
 Edit the file for your chosen class in ``doc/classes/`` to update the class reference. The folder contains an XML file for each class. The XML lists the constants and methods you'll find in the class reference. Godot generates and updates the XML automatically.
 
-Edit it using your favourite text editor. If you use a code editor, make sure that it doesn't change the indent style: tabs for the XML, and 4 spaces inside BBcode-style blocks. More on that below.
+Edit it using your favorite text editor. If you use a code editor, make sure that it doesn't change the indent style: tabs for the XML, and 4 spaces inside BBCode-style blocks. More on that below.
 
 If you need to check that the modifications you've made are correct in the generated documentation, build Godot as described :ref:`here <toc-devel-compiling>`, run the editor and open the help for the page you modified.
 
@@ -182,21 +188,21 @@ Write in a clear and simple language. Always follow the :ref:`writing guidelines
 
 Here's how a class looks like in XML:
 
-.. code:: xml
+.. code-block:: xml
 
     <class name="Node2D" inherits="CanvasItem" category="Core">
         <brief_description>
-        Base node for 2D system.
+            Base node for 2D system.
         </brief_description>
         <description>
-        Base node for 2D system. Node2D contains a position, rotation and scale, which is used to position and animate. It can alternatively be used with a custom 2D transform ([Matrix32]). A tree of Node2Ds allows complex hierarchies for animation and positioning.
+            Base node for 2D system. Node2D contains a position, rotation and scale, which is used to position and animate. It can alternatively be used with a custom 2D transform ([Matrix32]). A tree of Node2Ds allows complex hierarchies for animation and positioning.
         </description>
         <methods>
             <method name="set_pos">
                 <argument index="0" name="pos" type="Vector2">
                 </argument>
                 <description>
-                Set the position of the 2d node.
+                    Sets the position of the 2D node.
                 </description>
             </method>
             [...]
@@ -221,11 +227,12 @@ Here's how a class looks like in XML:
 
 Use a code editor like Vim, Atom, Code, Notepad++ or anything similar to edit the file quickly. Use the search function to find classes fast.
 
+.. _doc_updating_the_class_reference_bbcode:
 
-Improve formatting with BBcode style tags
+Improve formatting with BBCode style tags
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Godot's class reference supports BBcode-like tags. They add nice formatting to the text. Here's the list of available tags:
+Godot's class reference supports BBCode-like tags. They add nice formatting to the text. Here's the list of available tags:
 
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
 | Tag                       | Effect                         | Usage                             | Result                                            |
@@ -250,12 +257,14 @@ Godot's class reference supports BBcode-like tags. They add nice formatting to t
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
 | [code] [/code]            | Monospace                      | Some [code]monospace[/code] text. | Some ``monospace`` text.                          |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [kbd] [/kbd]              | Keyboard/mouse shortcut        | Some [kbd]Ctrl + C[/kbd] key.     | Some :kbd:`Ctrl + C` key.                         |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
 | [codeblock] [/codeblock]  | Multiline preformatted block   | *See below.*                      | *See below.*                                      |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
 
 Use ``[codeblock]`` for pre-formatted code blocks. Inside ``[codeblock]``, always use **four spaces** for indentation (the parser will delete tabs). Example:
 
-.. code:: xml
+.. code-block:: none
 
     [codeblock]
     func _ready():
@@ -265,12 +274,36 @@ Use ``[codeblock]`` for pre-formatted code blocks. Inside ``[codeblock]``, alway
 
 Will display as:
 
-::
+.. code-block:: gdscript
 
     func _ready():
         var sprite = get_node("Sprite")
         print(sprite.get_pos())
 
+To denote important information, add a paragraph starting with "[b]Note:[/b]" at
+the end of the description:
+
+.. code-block:: none
+
+    [b]Note:[/b] Only available when using the Vulkan renderer.
+
+To denote crucial information that could cause security issues or loss of data
+if not followed carefully, add a paragraph starting with "[b]Warning:[/b] at the
+end of the description:
+
+.. code-block:: none
+
+    [b]Warning:[/b] If this property is set to [code]true[/code], it allows clients to execute arbitrary code on the server.
+
+For deprecated properties, add a paragraph starting with "[i]Deprecated.[/i]".
+Notice the use of italics instead of bold:
+
+.. code-block:: none
+
+    [i]Deprecated.[/i] This property has been replaced by [member other_property].
+
+In all the paragraphs described above, make sure the punctuation is part of the
+BBCode tags for consistency.
 
 I don't know what this method does!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

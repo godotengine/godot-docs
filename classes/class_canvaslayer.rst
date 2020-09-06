@@ -13,42 +13,7 @@ CanvasLayer
 
 **Inherited By:** :ref:`ParallaxBackground<class_ParallaxBackground>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Canvas drawing layer.
-
-Properties
-----------
-
-+---------------------------------------+----------------------------------------------------------------------------------+---------------------------------+
-| :ref:`Node<class_Node>`               | :ref:`custom_viewport<class_CanvasLayer_property_custom_viewport>`               |                                 |
-+---------------------------------------+----------------------------------------------------------------------------------+---------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`follow_viewport_enable<class_CanvasLayer_property_follow_viewport_enable>` | false                           |
-+---------------------------------------+----------------------------------------------------------------------------------+---------------------------------+
-| :ref:`float<class_float>`             | :ref:`follow_viewport_scale<class_CanvasLayer_property_follow_viewport_scale>`   | 1.0                             |
-+---------------------------------------+----------------------------------------------------------------------------------+---------------------------------+
-| :ref:`int<class_int>`                 | :ref:`layer<class_CanvasLayer_property_layer>`                                   | 1                               |
-+---------------------------------------+----------------------------------------------------------------------------------+---------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`offset<class_CanvasLayer_property_offset>`                                 | Vector2( 0, 0 )                 |
-+---------------------------------------+----------------------------------------------------------------------------------+---------------------------------+
-| :ref:`float<class_float>`             | :ref:`rotation<class_CanvasLayer_property_rotation>`                             | 0.0                             |
-+---------------------------------------+----------------------------------------------------------------------------------+---------------------------------+
-| :ref:`float<class_float>`             | :ref:`rotation_degrees<class_CanvasLayer_property_rotation_degrees>`             | 0.0                             |
-+---------------------------------------+----------------------------------------------------------------------------------+---------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`scale<class_CanvasLayer_property_scale>`                                   | Vector2( 1, 1 )                 |
-+---------------------------------------+----------------------------------------------------------------------------------+---------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_CanvasLayer_property_transform>`                           | Transform2D( 1, 0, 0, 1, 0, 0 ) |
-+---------------------------------------+----------------------------------------------------------------------------------+---------------------------------+
-
-Methods
--------
-
-+-----------------------+--------------------------------------------------------------------------+
-| :ref:`RID<class_RID>` | :ref:`get_canvas<class_CanvasLayer_method_get_canvas>` **(** **)** const |
-+-----------------------+--------------------------------------------------------------------------+
 
 Description
 -----------
@@ -61,6 +26,36 @@ Tutorials
 - :doc:`../tutorials/2d/2d_transforms`
 
 - :doc:`../tutorials/2d/canvas_layers`
+
+Properties
+----------
+
++---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Node<class_Node>`               | :ref:`custom_viewport<class_CanvasLayer_property_custom_viewport>`               |                                     |
++---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`follow_viewport_enable<class_CanvasLayer_property_follow_viewport_enable>` | ``false``                           |
++---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`float<class_float>`             | :ref:`follow_viewport_scale<class_CanvasLayer_property_follow_viewport_scale>`   | ``1.0``                             |
++---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`layer<class_CanvasLayer_property_layer>`                                   | ``1``                               |
++---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`offset<class_CanvasLayer_property_offset>`                                 | ``Vector2( 0, 0 )``                 |
++---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`float<class_float>`             | :ref:`rotation<class_CanvasLayer_property_rotation>`                             | ``0.0``                             |
++---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`float<class_float>`             | :ref:`rotation_degrees<class_CanvasLayer_property_rotation_degrees>`             | ``0.0``                             |
++---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`scale<class_CanvasLayer_property_scale>`                                   | ``Vector2( 1, 1 )``                 |
++---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_CanvasLayer_property_transform>`                           | ``Transform2D( 1, 0, 0, 1, 0, 0 )`` |
++---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
+
+Methods
+-------
+
++-----------------------+--------------------------------------------------------------------------+
+| :ref:`RID<class_RID>` | :ref:`get_canvas<class_CanvasLayer_method_get_canvas>` **(** **)** const |
++-----------------------+--------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -77,36 +72,46 @@ Property Descriptions
 
 The custom :ref:`Viewport<class_Viewport>` node assigned to the ``CanvasLayer``. If ``null``, uses the default viewport instead.
 
+----
+
 .. _class_CanvasLayer_property_follow_viewport_enable:
 
 - :ref:`bool<class_bool>` **follow_viewport_enable**
 
 +-----------+----------------------------+
-| *Default* | false                      |
+| *Default* | ``false``                  |
 +-----------+----------------------------+
 | *Setter*  | set_follow_viewport(value) |
 +-----------+----------------------------+
 | *Getter*  | is_following_viewport()    |
 +-----------+----------------------------+
 
+Sets the layer to follow the viewport in order to simulate a pseudo 3D effect.
+
+----
+
 .. _class_CanvasLayer_property_follow_viewport_scale:
 
 - :ref:`float<class_float>` **follow_viewport_scale**
 
 +-----------+----------------------------------+
-| *Default* | 1.0                              |
+| *Default* | ``1.0``                          |
 +-----------+----------------------------------+
 | *Setter*  | set_follow_viewport_scale(value) |
 +-----------+----------------------------------+
 | *Getter*  | get_follow_viewport_scale()      |
 +-----------+----------------------------------+
 
+Scales the layer when using :ref:`follow_viewport_enable<class_CanvasLayer_property_follow_viewport_enable>`. Layers moving into the foreground should have increasing scales, while layers moving into the background should have decreasing scales.
+
+----
+
 .. _class_CanvasLayer_property_layer:
 
 - :ref:`int<class_int>` **layer**
 
 +-----------+------------------+
-| *Default* | 1                |
+| *Default* | ``1``            |
 +-----------+------------------+
 | *Setter*  | set_layer(value) |
 +-----------+------------------+
@@ -115,26 +120,30 @@ The custom :ref:`Viewport<class_Viewport>` node assigned to the ``CanvasLayer``.
 
 Layer index for draw order. Lower values are drawn first.
 
+----
+
 .. _class_CanvasLayer_property_offset:
 
 - :ref:`Vector2<class_Vector2>` **offset**
 
-+-----------+-------------------+
-| *Default* | Vector2( 0, 0 )   |
-+-----------+-------------------+
-| *Setter*  | set_offset(value) |
-+-----------+-------------------+
-| *Getter*  | get_offset()      |
-+-----------+-------------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 0, 0 )`` |
++-----------+---------------------+
+| *Setter*  | set_offset(value)   |
++-----------+---------------------+
+| *Getter*  | get_offset()        |
++-----------+---------------------+
 
 The layer's base offset.
+
+----
 
 .. _class_CanvasLayer_property_rotation:
 
 - :ref:`float<class_float>` **rotation**
 
 +-----------+---------------------+
-| *Default* | 0.0                 |
+| *Default* | ``0.0``             |
 +-----------+---------------------+
 | *Setter*  | set_rotation(value) |
 +-----------+---------------------+
@@ -143,12 +152,14 @@ The layer's base offset.
 
 The layer's rotation in radians.
 
+----
+
 .. _class_CanvasLayer_property_rotation_degrees:
 
 - :ref:`float<class_float>` **rotation_degrees**
 
 +-----------+-----------------------------+
-| *Default* | 0.0                         |
+| *Default* | ``0.0``                     |
 +-----------+-----------------------------+
 | *Setter*  | set_rotation_degrees(value) |
 +-----------+-----------------------------+
@@ -157,31 +168,35 @@ The layer's rotation in radians.
 
 The layer's rotation in degrees.
 
+----
+
 .. _class_CanvasLayer_property_scale:
 
 - :ref:`Vector2<class_Vector2>` **scale**
 
-+-----------+------------------+
-| *Default* | Vector2( 1, 1 )  |
-+-----------+------------------+
-| *Setter*  | set_scale(value) |
-+-----------+------------------+
-| *Getter*  | get_scale()      |
-+-----------+------------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 1, 1 )`` |
++-----------+---------------------+
+| *Setter*  | set_scale(value)    |
++-----------+---------------------+
+| *Getter*  | get_scale()         |
++-----------+---------------------+
 
 The layer's scale.
+
+----
 
 .. _class_CanvasLayer_property_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **transform**
 
-+-----------+---------------------------------+
-| *Default* | Transform2D( 1, 0, 0, 1, 0, 0 ) |
-+-----------+---------------------------------+
-| *Setter*  | set_transform(value)            |
-+-----------+---------------------------------+
-| *Getter*  | get_transform()                 |
-+-----------+---------------------------------+
++-----------+-------------------------------------+
+| *Default* | ``Transform2D( 1, 0, 0, 1, 0, 0 )`` |
++-----------+-------------------------------------+
+| *Setter*  | set_transform(value)                |
++-----------+-------------------------------------+
+| *Getter*  | get_transform()                     |
++-----------+-------------------------------------+
 
 The layer's transform.
 

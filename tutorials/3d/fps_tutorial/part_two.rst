@@ -215,9 +215,11 @@ If they are the same, then we write a warning to the console and return ``true``
 Secondly, we see if :ref:`AnimationPlayer <class_AnimationPlayer>` has the animation with the name ``animation_name`` using ``has_animation``.
 If it does not, we return ``false``.
 
-Thirdly, we check whether ``current_state`` is set. If ``current_state`` is *not* currently set, then we
-set ``current_state`` to the passed in animation name and tell :ref:`AnimationPlayer <class_AnimationPlayer>` to start playing the animation with
-a blend time of ``-1`` at the speed set in ``animation_speeds`` and then we return ``true``.
+Thirdly, we check whether ``current_state`` is set. If we have a state in ``current_state``, then we get all the possible states we can transition to.
+
+If the animation name is in the list of possible transitions, we set ``current_state`` to the passed in
+animation (``animation_name``), tell :ref:`AnimationPlayer <class_AnimationPlayer>` to play the animation with
+a blend time of ``-1`` at the speed set in ``animation_speeds`` and return ``true``.
 
 .. note:: Blend time is how long to blend/mix the two animations together.
 
@@ -228,12 +230,6 @@ a blend time of ``-1`` at the speed set in ``animation_speeds`` and then we retu
           a walking animation to a running animation.
 
           We set the blend time to ``-1`` because we want to instantly change animations.
-
-If we have a state in ``current_state``, then we get all the possible states we can transition to.
-
-If the animation name is in the list of possible transitions, we set ``current_state`` to the passed
-in animation (``animation_name``), tell :ref:`AnimationPlayer <class_AnimationPlayer>` to play the animation with a blend time of ``-1`` at the speed set in
-``animation_speeds`` and return ``true``.
 
 _________
 
@@ -292,6 +288,10 @@ reach the point where the muzzle starts to flash.
 .. note:: The timeline is the window where all the points in our animation are stored. Each of the little
           points represents a point of animation data.
 
+          To actually preview the "Pistol_fire" animation, select the :ref:`Camera <class_Camera>` node
+          underneath Rotation Helper and check the "Preview" box underneath Perspective in the top-left corner.
+
+
           Scrubbing the timeline means moving ourselves through the animation. So when we say "scrub the timeline
           until you reach a point", what we mean is move through the animation window until you reach the point
           on the timeline.
@@ -300,13 +300,13 @@ reach the point where the muzzle starts to flash.
           light that escapes the muzzle when a bullet is fired. The muzzle is also sometimes referred to as the
           barrel of the gun.
 
-.. tip:: For finer control when scrubbing the timeline, press ``control`` and scroll forward with the mouse wheel to zoom in.
+.. tip:: For finer control when scrubbing the timeline, press :kbd:`Ctrl` and scroll forward with the mouse wheel to zoom in.
          Scrolling backwards will zoom out.
 
          You can also change how the timeline scrubbing snaps by changing the value in ``Step (s)`` to a lower/higher value.
 
-Once you get to a point you like, right click on the row for "Animation Player" and press insert key.
-In the empty name field, enter ``animation_callback`` and press ``enter``.
+Once you get to a point you like, right click on the row for "Animation Player" and press ``Insert Key``.
+In the empty name field, enter ``animation_callback`` and press :kbd:`Enter`.
 
 .. image:: img/AnimationPlayerInsertKey.png
 
@@ -324,7 +324,7 @@ Go to the "Rifle_fire" animation from the animation drop down. Add the call meth
 animation track list by clicking the "Add Track" button above the list. Find the point where the muzzle starts
 to flash and right click and press ``Insert Key`` to add a call method track point at that position on the track.
 
-Type "animation_callback" into the name field of the pop up which opened and press ``enter``.
+Type "animation_callback" into the name field of the pop up which opened and press :kbd:`Enter`.
 
 Now we need to apply the callback method track to the knife animation. Select the "Knife_fire" animation and scroll to the bottom of the
 animation tracks. Click the "Add Track" button above the list and add a method track.
@@ -334,7 +334,7 @@ Next find a point around the first third of the animation to place the animation
          For this tutorial we are reusing the gun firing logic for our knife, so the animation has been named in a style that
          is consistent with the other animations.
 
-From there right click on the timeline and click "Insert Key". Put "animation_callback" into the name field and press ``enter``.
+From there right click on the timeline and click "Insert Key". Put "animation_callback" into the name field and press :kbd:`Enter`.
 
 .. tip:: Be sure to save your work!
 
@@ -354,7 +354,7 @@ its own collision code. In this method we create/spawn a bullet object in the di
 it travels forward.
 
 There are several advantages to this method. The first being we do not have to store the bullets in our player. We can simply create the bullet
-and then move on, and the bullet itself with handle checking for collisions, sending the proper signal(s) to the object it collides with, and destroying itself.
+and then move on, and the bullet itself will handle checking for collisions, sending the proper signal(s) to the object it collides with, and destroying itself.
 
 Another advantage is we can have more complex bullet movement. If we want to make the bullet fall ever so slightly as time goes on, we can make the bullet
 controlling script slowly push the bullet towards the ground. Using an object also makes the bullet take time to reach its target, it doesn't instantly
@@ -694,9 +694,9 @@ If the currently loaded/open scene is ``Testing_Area.tscn``, we'd be adding our 
 .. warning:: As mentioned later below in the section on adding sounds, this method makes an assumption. This will be explained later
              in the section on adding sounds in :ref:`doc_fps_tutorial_part_three`
 
-Next we set the global transform of the clone to the ``Pistol_Aim_Point``'s global transform. The reason we do this is so the bullet is spawned at the end of the pistol.
+Next we set the global transform of the clone to the ``Pistol_Point``'s global transform. The reason we do this is so the bullet is spawned at the end of the pistol.
 
-You can see that ``Pistol_Aim_Point`` is positioned right at the end of the pistol by clicking the :ref:`AnimationPlayer <class_AnimationPlayer>` and
+You can see that ``Pistol_Point`` is positioned right at the end of the pistol by clicking the :ref:`AnimationPlayer <class_AnimationPlayer>` and
 scrolling through ``Pistol_fire``. You'll find the position is more or less at the end of the pistol when it fires.
 
 Next we scale it up by a factor of ``4`` because the bullet scene is a little too small by default.
@@ -1055,13 +1055,13 @@ the player has and it ensures ``weapon_change_number`` is ``0`` or more.
 
 Then we check to make sure the player is not already changing weapons. If the player is not, we then check to see if the weapon the player wants to change to
 is a new weapon and not the weapon the player is currently using. If the weapon the player is wanting to change to is a new weapon, we then set ``changing_weapon_name`` to
-the weapon at ``weapon_change_number`` and set ``changing_weapon`` to true.
+the weapon at ``weapon_change_number`` and set ``changing_weapon`` to ``true``.
 
 For firing the weapon we first check to see if the ``fire`` action is pressed.
 Then we check to make sure the player is not changing weapons.
 Next we get the weapon node for the current weapon.
 
-If the current weapon node does not equal null, and the player is in its ``IDLE_ANIM_NAME`` state, we set the player's animation
+If the current weapon node does not equal ``null``, and the player is in its ``IDLE_ANIM_NAME`` state, we set the player's animation
 to the current weapon's ``FIRE_ANIM_NAME``.
 
 _________
@@ -1164,7 +1164,7 @@ Then we tell the current weapon the player is using to fire by calling its ``fir
 
 _______
 
-Before we are ready to test our new weapons, we still have a little bit of work to do.
+Before we are ready to test our new weapons, we still have a bit of work to do.
 
 Creating some test subjects
 ---------------------------
@@ -1216,7 +1216,7 @@ Now we need to attach this script to all of the :ref:`RigidBody <class_RigidBody
 
 Open up ``Testing_Area.tscn`` and select all the cubes parented to the ``Cubes`` node.
 
-.. tip:: If you select the top cube, and then hold down ``shift`` and select the last cube, Godot will
+.. tip:: If you select the top cube, and then hold down :kbd:`Shift` and select the last cube, Godot will
          select all the cubes in-between!
 
 Once you have all the cubes selected, scroll down in the inspector until you get to

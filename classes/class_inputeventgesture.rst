@@ -13,19 +13,14 @@ InputEventGesture
 
 **Inherited By:** :ref:`InputEventMagnifyGesture<class_InputEventMagnifyGesture>`, :ref:`InputEventPanGesture<class_InputEventPanGesture>`
 
-**Category:** Core
-
-Brief Description
------------------
-
-
+Base class for touch control gestures.
 
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventGesture_property_position>` | Vector2( 0, 0 ) |
-+-------------------------------+------------------------------------------------------------+-----------------+
++-------------------------------+------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventGesture_property_position>` | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------------------+---------------------+
 
 Property Descriptions
 ---------------------
@@ -35,10 +30,12 @@ Property Descriptions
 - :ref:`Vector2<class_Vector2>` **position**
 
 +-----------+---------------------+
-| *Default* | Vector2( 0, 0 )     |
+| *Default* | ``Vector2( 0, 0 )`` |
 +-----------+---------------------+
 | *Setter*  | set_position(value) |
 +-----------+---------------------+
 | *Getter*  | get_position()      |
 +-----------+---------------------+
+
+The local gesture position relative to the :ref:`Viewport<class_Viewport>`. If used in :ref:`Control._gui_input<class_Control_method__gui_input>`, the position is relative to the current :ref:`Control<class_Control>` that received this gesture.
 

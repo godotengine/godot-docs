@@ -11,27 +11,29 @@ TextureRect
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Control for drawing textures.
+
+Description
+-----------
+
+Used to draw icons and sprites in a user interface. The texture's placement can be controlled with the :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` property. It can scale, tile, or stay centered inside its bounding rectangle.
 
 Properties
 ----------
 
-+--------------------------------------------------+--------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                          | :ref:`expand<class_TextureRect_property_expand>`             | false |
-+--------------------------------------------------+--------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                          | :ref:`flip_h<class_TextureRect_property_flip_h>`             | false |
-+--------------------------------------------------+--------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                          | :ref:`flip_v<class_TextureRect_property_flip_v>`             | false |
-+--------------------------------------------------+--------------------------------------------------------------+-------+
-| :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` | 0     |
-+--------------------------------------------------+--------------------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`                    | :ref:`texture<class_TextureRect_property_texture>`           |       |
-+--------------------------------------------------+--------------------------------------------------------------+-------+
++--------------------------------------------------+--------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                          | :ref:`expand<class_TextureRect_property_expand>`             | ``false``    |
++--------------------------------------------------+--------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                          | :ref:`flip_h<class_TextureRect_property_flip_h>`             | ``false``    |
++--------------------------------------------------+--------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                          | :ref:`flip_v<class_TextureRect_property_flip_v>`             | ``false``    |
++--------------------------------------------------+--------------------------------------------------------------+--------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>`     | mouse_filter                                                 | **O:** ``1`` |
++--------------------------------------------------+--------------------------------------------------------------+--------------+
+| :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` | ``0``        |
++--------------------------------------------------+--------------------------------------------------------------+--------------+
+| :ref:`Texture2D<class_Texture2D>`                | :ref:`texture<class_TextureRect_property_texture>`           |              |
++--------------------------------------------------+--------------------------------------------------------------+--------------+
 
 Enumerations
 ------------
@@ -72,11 +74,6 @@ enum **StretchMode**:
 
 - **STRETCH_KEEP_ASPECT_COVERED** = **7** --- Scale the texture so that the shorter side fits the bounding rectangle. The other side clips to the node's limits.
 
-Description
------------
-
-Used to draw icons and sprites in a user interface. The texture's placement can be controlled with the :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` property. It can scale, tile, or stay centered inside its bounding rectangle.
-
 Property Descriptions
 ---------------------
 
@@ -85,7 +82,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **expand**
 
 +-----------+-------------------+
-| *Default* | false             |
+| *Default* | ``false``         |
 +-----------+-------------------+
 | *Setter*  | set_expand(value) |
 +-----------+-------------------+
@@ -94,12 +91,14 @@ Property Descriptions
 
 If ``true``, the texture scales to fit its bounding rectangle.
 
+----
+
 .. _class_TextureRect_property_flip_h:
 
 - :ref:`bool<class_bool>` **flip_h**
 
 +-----------+-------------------+
-| *Default* | false             |
+| *Default* | ``false``         |
 +-----------+-------------------+
 | *Setter*  | set_flip_h(value) |
 +-----------+-------------------+
@@ -108,12 +107,14 @@ If ``true``, the texture scales to fit its bounding rectangle.
 
 If ``true``, texture is flipped horizontally.
 
+----
+
 .. _class_TextureRect_property_flip_v:
 
 - :ref:`bool<class_bool>` **flip_v**
 
 +-----------+-------------------+
-| *Default* | false             |
+| *Default* | ``false``         |
 +-----------+-------------------+
 | *Setter*  | set_flip_v(value) |
 +-----------+-------------------+
@@ -122,12 +123,14 @@ If ``true``, texture is flipped horizontally.
 
 If ``true``, texture is flipped vertically.
 
+----
+
 .. _class_TextureRect_property_stretch_mode:
 
 - :ref:`StretchMode<enum_TextureRect_StretchMode>` **stretch_mode**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_stretch_mode(value) |
 +-----------+-------------------------+
@@ -136,9 +139,11 @@ If ``true``, texture is flipped vertically.
 
 Controls the texture's behavior when resizing the node's bounding rectangle. See :ref:`StretchMode<enum_TextureRect_StretchMode>`.
 
+----
+
 .. _class_TextureRect_property_texture:
 
-- :ref:`Texture<class_Texture>` **texture**
+- :ref:`Texture2D<class_Texture2D>` **texture**
 
 +----------+--------------------+
 | *Setter* | set_texture(value) |
@@ -146,5 +151,5 @@ Controls the texture's behavior when resizing the node's bounding rectangle. See
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-The node's :ref:`Texture<class_Texture>` resource.
+The node's :ref:`Texture2D<class_Texture2D>` resource.
 

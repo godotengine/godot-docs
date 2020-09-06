@@ -1,7 +1,7 @@
 .. _doc_c_sharp_differences:
 
-API differences to GDScript
-===========================
+C# API differences to GDScript
+==============================
 
 This is a (incomplete) list of API differences between C# and GDScript.
 
@@ -86,6 +86,8 @@ Export keyword
 --------------
 
 Use the ``[Export]`` attribute instead of the GDScript ``export`` keyword.
+This attribute can also be provided with optional :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` and ``hintString`` parameters.
+Default values can be set by assigning a value.
 
 Example:
 
@@ -96,7 +98,16 @@ Example:
     public class MyNode : Node
     {
         [Export]
-        NodePath _nodePath;
+        private NodePath _nodePath;
+
+        [Export]
+        private string _name = "default";
+
+        [Export(PropertyHint.Range, "0,100000,1000,or_greater")]
+        private int _income;
+
+        [Export(PropertyHint.File, "*.png,*.jpg")]
+        private string _icon;
     }
 
 Signal keyword
@@ -110,7 +121,7 @@ This attribute should be used on a `delegate`, whose name signature will be used
     [Signal]
     delegate void MySignal(string willSendsAString);
 
-See also: :ref:`c_sharp_signals`
+See also: :ref:`doc_c_sharp_signals`.
 
 Singletons
 ----------
@@ -255,20 +266,22 @@ GDScript               C#
 Array
 -----
 
-*This is temporary. PoolArrays will need their own types to be used the way they are meant to.*
+*This is temporary. PackedArrays will need their own types to be used the way they are meant to.*
 
-=====================  ==============================================================
-GDScript               C#
-=====================  ==============================================================
-``Array``              ``Godot.Collections.Array``
-``PoolIntArray``       ``int[]``
-``PoolByteArray``      ``byte[]``
-``PoolFloatArray``     ``float[]``
-``PoolStringArray``    ``String[]``
-``PoolColorArray``     ``Color[]``
-``PoolVector2Array``   ``Vector2[]``
-``PoolVector3Array``   ``Vector3[]``
-=====================  ==============================================================
+======================  ==============================================================
+GDScript                C#
+======================  ==============================================================
+``Array``                ``Godot.Collections.Array``
+``PackedInt32Array``     ``int[]``
+``PackedInt64Array``     ``long[]``
+``PackedByteArray``      ``byte[]``
+``PackedFloat32Array``   ``float[]``
+``PackedFloat64Array``   ``double[]``
+``PackedStringArray``    ``String[]``
+``PackedColorArray``     ``Color[]``
+``PackedVector2Array``   ``Vector2[]``
+``PackedVector3Array``   ``Vector3[]``
+======================  ==============================================================
 
 ``Godot.Collections.Array<T>`` is a type-safe wrapper around ``Godot.Collections.Array``.
 Use the ``Godot.Collections.Array<T>(Godot.Collections.Array)`` constructor to create one.
@@ -289,10 +302,7 @@ Variant
 Communicating with other scripting languages
 --------------------------------------------
 
-The methods ``object Object.Call(string method, params object[] args)``,
-``object Object.Get(string field)`` and ``object Object.Set(string field, object value)``
-are provided to communicate with instances of other
-scripting languages via the Variant API.
+This is explained extensively in :ref:`doc_cross_language_scripting`.
 
 Yield
 -----

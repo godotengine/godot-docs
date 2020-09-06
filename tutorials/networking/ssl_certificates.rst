@@ -13,13 +13,13 @@ which can take a regular connection and add security around it. The
 :ref:`HTTPClient <class_HTTPClient>`
 class also supports HTTPS by using this same wrapper.
 
-For SSL to work, certificates need to be provided. A .crt file must be
-specified in the project settings:
+Godot includes SSL certificates from Mozilla, but you can provide your own
+with a .crt file in the project settings:
 
 .. image:: img/ssl_certs.png
 
 This file should contain any number of public certificates in
-https://en.wikipedia.org/wiki/Privacy-enhanced_Electronic_Mail format.
+`PEM format <https://en.wikipedia.org/wiki/Privacy-enhanced_Electronic_Mail>`__.
 
 Of course, remember to add .crt as filter so the exporter recognizes
 this when exporting your project.
@@ -32,8 +32,8 @@ Approach 1: self signed cert
 ----------------------------
 
 The first approach is the simplest: generate a private and public
-key pair, and put the public pair in the .crt file (again, in PEM
-format). The private key should go to your server.
+key pair and add the public key (in PEM format) to the .crt file.
+The private key should go to your server.
 
 OpenSSL has `some
 documentation <https://raw.githubusercontent.com/openssl/openssl/master/doc/HOWTO/keys.txt>`__ about
@@ -61,7 +61,7 @@ and it will work.
 If you are using Linux, you can use the supplied certs file, generally
 located in:
 
-::
+.. code-block:: none
 
     /etc/ssl/certs/ca-certificates.crt
 

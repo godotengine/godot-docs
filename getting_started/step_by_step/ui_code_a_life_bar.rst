@@ -25,8 +25,8 @@ You will learn:
 If you want to learn how to set up the interface instead, check out the
 step-by-step UI tutorials:
 
--  Create a main menu screen
--  Create a game user interface
+-  :doc:`ui_main_menu`
+-  :doc:`ui_game_user_interface`
 
 
 When you code a game, you want to build the core gameplay first: the
@@ -110,7 +110,7 @@ scene:
 
 .. note::
 
-    The project uses a simple organisation that works for game jams and tiny games.
+    The project uses a simple organization that works for game jams and tiny games.
 
     At the root of the project, in the `res://` folder, you will find the `LevelMockup`. That's the main game scene and the one we will work with. All the components that make up the game are in the `scenes/` folder. The `assets/` folder contains the game sprites and the font for the HP counter. In the `scripts/` folder you will find the enemy, the player, and the GUI controller scripts.
 
@@ -213,8 +213,8 @@ of information. And you will update the state of your connected node
 .. note::
 
     The Observer pattern, that signals derive from, still adds a bit of coupling between node branches. But it's generally lighter and more secure than accessing nodes directly to communicate between two separate classes. It can be okay for a parent node to get values from its children. But you'll want to favor signals if you're working with two separate branches.
-    Read Game Programming Patterns for more information on the `Observer pattern <http://gameprogrammingpatterns.com/observer.html>`_.
-    The `full book <http://gameprogrammingpatterns.com/contents.html>`_ is available online for free.
+    Read Game Programming Patterns for more information on the `Observer pattern <https://gameprogrammingpatterns.com/observer.html>`_.
+    The `full book <https://gameprogrammingpatterns.com/contents.html>`_ is available online for free.
 
 With this in mind, let's connect the ``GUI`` to the ``Player``. Click on
 the ``Player`` node in the scene dock to select it. Head down to the
@@ -353,7 +353,7 @@ This method needs to:
 
 Also call ``update_health`` at the end of the ``_ready`` function to
 initialize the ``Number`` node's ``text`` with the right value at the
-start of the game. Press F5 to test the game: the life bar updates with
+start of the game. Press :kbd:`F5` to test the game: the life bar updates with
 every attack!
 
 .. figure:: img/lifebar_tutorial_LifeBar_health_update_no_anim.gif
@@ -405,7 +405,7 @@ clear its content. Let's animate the ``animated_health`` value. Call the
  .. code-tab:: gdscript GDScript
 
     func update_health(new_value):
-        tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.6, Tween.TRANS_LINEAR, Tween.EASE_IN)
+        tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.6)
 
  .. code-tab:: csharp
 
@@ -437,15 +437,6 @@ code this part, but it's going to be ``animated_health``. The end point
 of the animation is the ``Player``'s ``health`` after the
 ``health_changed``: that's ``new_value``. And ``0.6`` is the animation's
 duration in seconds.
-
-::
-
-    ...  0.6, tween.TRANS_LINEAR, Tween.EASE_IN)
-
-The last two arguments are constants from the ``Tween`` class.
-``TRANS_LINEAR`` means the animation should be linear. ``EASE_IN``
-doesn't do anything with a linear transition, but we must provide this
-last argument or we'll get an error.
 
 The animation will not play until we activated the ``Tween`` node with
 ``tween.start()``. We only have to do this once if the node is not
@@ -480,7 +471,7 @@ So far, the update\_health method looks like this:
  .. code-tab:: gdscript GDScript
 
     func update_health(new_value):
-        tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.6, Tween.TRANS_LINEAR, Tween.EASE_IN)
+        tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.6)
         if not tween.is_active():
             tween.start()
 
@@ -644,7 +635,7 @@ We then have to call the ``interpolate_property`` method of the
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    tween.interpolate_property(self, "modulate", start_color, end_color, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+    tween.interpolate_property(self, "modulate", start_color, end_color, 1.0)
 
  .. code-tab:: csharp
 
@@ -653,8 +644,7 @@ We then have to call the ``interpolate_property`` method of the
 
 This time, we change the ``modulate`` property and have it animate from
 ``start_color`` to the ``end_color``. The duration is of one second,
-with a linear transition. Here again, because the transition is linear,
-the easing does not matter. Here's the complete ``_on_Player_died``
+with a linear transition. Here's the complete ``_on_Player_died``
 method:
 
 .. tabs::
@@ -663,7 +653,7 @@ method:
     func _on_Player_died():
         var start_color = Color(1.0, 1.0, 1.0, 1.0)
         var end_color = Color(1.0, 1.0, 1.0, 0.0)
-        tween.interpolate_property(self, "modulate", start_color, end_color, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+        tween.interpolate_property(self, "modulate", start_color, end_color, 1.0)
 
  .. code-tab:: csharp
 

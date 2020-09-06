@@ -31,7 +31,7 @@ with extension ``.pck``).
 - offer mod support
 - no source code disclosure needed for mods
 - more modular project structure
-- users don’t have to replace the entire game
+- users don't have to replace the entire game
 
 The first part of using them involves exporting and delivering the project to
 players. Then, when one wants to add functionality or content later on, they
@@ -114,11 +114,19 @@ file in the directory of the games executable. The PCK file contains a
 
 .. warning::
 
-    If you import a file with the same file path/name as one you already have in your
+    By default, if you import a file with the same file path/name as one you already have in your
     project, the imported one will replace it. This is something to watch out for when
     creating DLC or mods (solved easily with a tool isolating mods to a specific mods
     subfolder). However, it is also a way of creating patches for one's own game. A
     PCK file of this kind can fix the content of a previously loaded PCK.
+
+    To opt out of this behavior, pass ``false`` as the second argument to
+    :ref:`ProjectSettings.load_resource_pack() <class_ProjectSettings_method_load_resource_pack>`.
+
+.. note::
+    For a C# project, you need to build the DLL and place it in the project directory first.
+    Then, before loading the resource pack, you need to load its DLL as follows:
+    ``Assembly.LoadFile("mod.dll")``
 
 Summary
 -------

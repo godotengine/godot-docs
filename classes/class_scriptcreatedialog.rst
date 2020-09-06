@@ -11,28 +11,7 @@ ScriptCreateDialog
 
 **Inherits:** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`WindowDialog<class_WindowDialog>` **<** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 The Editor's popup dialog for creating new :ref:`Script<class_Script>` files.
-
-Methods
--------
-
-+------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`config<class_ScriptCreateDialog_method_config>` **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path, :ref:`bool<class_bool>` built_in_enabled=true **)** |
-+------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Signals
--------
-
-.. _class_ScriptCreateDialog_signal_script_created:
-
-- **script_created** **(** :ref:`Script<class_Script>` script **)**
-
-Emitted when the user clicks the OK button.
 
 Description
 -----------
@@ -46,12 +25,43 @@ The ``ScriptCreateDialog`` creates script files according to a given template fo
         dialog.config("\"res://base_node.gd\"", "res://derived_node.gd") # For script types
         dialog.popup_centered()
 
+Properties
+----------
+
++-------------------------------+-------------------+---------------------------------+
+| :ref:`bool<class_bool>`       | dialog_hide_on_ok | **O:** ``false``                |
++-------------------------------+-------------------+---------------------------------+
+| :ref:`float<class_float>`     | margin_bottom     | **O:** ``232.0``                |
++-------------------------------+-------------------+---------------------------------+
+| :ref:`float<class_float>`     | margin_right      | **O:** ``361.0``                |
++-------------------------------+-------------------+---------------------------------+
+| :ref:`Vector2<class_Vector2>` | rect_size         | **O:** ``Vector2( 361, 232 )``  |
++-------------------------------+-------------------+---------------------------------+
+| :ref:`String<class_String>`   | window_title      | **O:** ``"Attach Node Script"`` |
++-------------------------------+-------------------+---------------------------------+
+
+Methods
+-------
+
++------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`config<class_ScriptCreateDialog_method_config>` **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path, :ref:`bool<class_bool>` built_in_enabled=true, :ref:`bool<class_bool>` load_enabled=true **)** |
++------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+.. _class_ScriptCreateDialog_signal_script_created:
+
+- **script_created** **(** :ref:`Script<class_Script>` script **)**
+
+Emitted when the user clicks the OK button.
+
 Method Descriptions
 -------------------
 
 .. _class_ScriptCreateDialog_method_config:
 
-- void **config** **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path, :ref:`bool<class_bool>` built_in_enabled=true **)**
+- void **config** **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path, :ref:`bool<class_bool>` built_in_enabled=true, :ref:`bool<class_bool>` load_enabled=true **)**
 
 Prefills required fields to configure the ScriptCreateDialog for use.
 

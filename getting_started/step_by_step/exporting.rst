@@ -29,17 +29,21 @@ be treated the same as a touch event, we'll convert the game to a click-and-move
 input style.
 
 By default Godot emulates mouse input from touch input. That means if anything
-is coded to happen on a mouse event, touch will trigger it as well. If you wish to
-disable that for whatever reason, or emulate touch from mouse input, you can do that
-in the "Project Settings" under *Input Devices* and *Pointing*
+is coded to happen on a mouse event, touch will trigger it as well. Godot can also
+emulate touch input from mouse clicks, which we will need to be able to keep playing
+our game on our computer after we switch to touch input. In the "Project Settings"
+under *Input Devices* and *Pointing*, set *Emulate Touch From Mouse* to "On".
 
 .. image:: img/export_touchsettings.png
 
-Before we change the input method, in the project settings go to *Display*,
-then click on *Window*. In the *Stretch* options, set *Mode* to "2d" and *Aspect* to 
-"keep". This ensures that the game scales consistently on different sized screens.
+We also want to ensure that the game scales consistently on different-sized screens,
+so in the project settings go to *Display*, then click on *Window*. In the *Stretch*
+options, set *Mode* to "2d" and *Aspect* to "keep".
 
-.. image:: img/export_stretchsettings.png
+Since we are already in the *Window* settings, we should also set under *Handheld*
+the *Orientation* to "portrait".
+
+.. image:: img/export_handheld_stretchsettings.png
 
 Next, we need to modify the ``Player.gd`` script to change the input method.
 We'll remove the key inputs and make the player move towards a "target" that's
@@ -56,7 +60,6 @@ changed:
     signal hit
 
     export var speed = 400
-    var velocity = Vector2()
     var screen_size
     # Add this variable to hold the clicked position.
     var target = Vector2()
@@ -78,11 +81,10 @@ changed:
             target = event.position
 
     func _process(delta):
+        var velocity = Vector2()
         # Move towards the target and stop when close.
         if position.distance_to(target) > 10:
-            velocity = (target - position).normalized() * speed
-        else:
-            velocity = Vector2()
+            velocity = target - position
 
     # Remove keyboard controls.
     #    if Input.is_action_pressed("ui_right"):
@@ -101,13 +103,15 @@ changed:
             $AnimatedSprite.stop()
 
         position += velocity * delta
-        # We don't need to clamp the player's position
-        # because you can't click outside the screen.
-        # position.x = clamp(position.x, 0, screensize.x)
-        # position.y = clamp(position.y, 0, screensize.y)
+        # We still need to clamp the player's position here because on devices that don't
+        # match your game's aspect ratio, Godot will try to maintain it as much as possible
+        # by creating black borders, if necessary.
+        # Without clamp(), the player would be able to move under those borders.
+        position.x = clamp(position.x, 0, screen_size.x)
+        position.y = clamp(position.y, 0, screen_size.y)
 
         if velocity.x != 0:
-            $AnimatedSprite.animation = "right"
+            $AnimatedSprite.animation = "walk"
             $AnimatedSprite.flip_v = false
             $AnimatedSprite.flip_h = velocity.x < 0
         elif velocity.y != 0:
@@ -118,6 +122,126 @@ changed:
         hide()
         emit_signal("hit")
         $CollisionShape2D.set_deferred("disabled", true)
+
+ .. code-tab:: csharp
+
+    using Godot;
+    using System;
+
+    public class Player : Area2D
+    {
+        [Signal]
+        public delegate void Hit();
+
+        [Export]
+        public int Speed = 400;
+
+        private Vector2 _screenSize;
+        // Add this variable to hold the clicked position.
+        private Vector2 _target;
+
+        public override void _Ready()
+        {
+            Hide();
+            _screenSize = GetViewport().Size;
+        }
+
+        public void Start(Vector2 pos)
+        {
+            Position = pos;
+            // Initial target us the start position.
+            _target = pos;
+            Show();
+            GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
+        }
+
+        // Change the target whenever a touch event happens.
+        public override void _Input(InputEvent @event)
+        {
+            if (@event is InputEventScreenTouch eventMouseButton && eventMouseButton.Pressed)
+            {
+                _target = (@event as InputEventScreenTouch).Position;
+            }
+        }
+
+        public override void _Process(float delta)
+        {
+            var velocity = new Vector2();
+            // Move towards the target and stop when close.
+            if (Position.DistanceTo(_target) > 10)
+            {
+                velocity = _target - Position;
+            }
+
+            // Remove keyboard controls.
+            //if (Input.IsActionPressed("ui_right"))
+            //{
+            //    velocity.x += 1;
+            //}
+
+            //if (Input.IsActionPressed("ui_left"))
+            //{
+            //    velocity.x -= 1;
+            //}
+
+            //if (Input.IsActionPressed("ui_down"))
+            //{
+            //    velocity.y += 1;
+            //}
+
+            //if (Input.IsActionPressed("ui_up"))
+            //{
+            //    velocity.y -= 1;
+            //}
+
+            var animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+
+            if (velocity.Length() > 0)
+            {
+                velocity = velocity.Normalized() * Speed;
+                animatedSprite.Play();
+            }
+            else
+            {
+                animatedSprite.Stop();
+            }
+
+            Position += velocity * delta;
+            // We still need to clamp the player's position here because on devices that don't
+            // match your game's aspect ratio, Godot will try to maintain it as much as possible
+            // by creating black borders, if necessary.
+            // Without clamp(), the player would be able to move under those borders.
+            Position = new Vector2(
+                x: Mathf.Clamp(Position.x, 0, _screenSize.x),
+                y: Mathf.Clamp(Position.y, 0, _screenSize.y)
+            );
+
+            if (velocity.x != 0)
+            {
+                animatedSprite.Animation = "walk";
+                animatedSprite.FlipV = false;
+                animatedSprite.FlipH = velocity.x < 0;
+            }
+            else if(velocity.y != 0)
+            {
+                animatedSprite.Animation = "up";
+                animatedSprite.FlipV = velocity.y > 0;
+            }
+        }
+        public void OnPlayerBodyEntered(PhysicsBody2D body)
+        {
+            Hide(); // Player disappears after being hit.
+            EmitSignal("Hit");
+            GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
+        }
+    }
+
+Setting a main scene
+--------------------
+
+The main scene is the one that your game will start in. In *Project -> Project
+Settings -> Application -> Run*, set *Main Scene* to "Main.tscn" by clicking
+the folder icon and selecting it.
 
 Export templates
 ----------------
@@ -140,12 +264,12 @@ version that matches your version of Godot.
 Export presets
 --------------
 
-Next, you can configure the export settings by clicking on *Project -> Export*:
-
-.. image:: img/export_presets_window.png
+Next, you can configure the export settings by clicking on *Project -> Export*.
 
 Create a new export preset by clicking "Add..." and selecting a platform. You
 can make as many presets as you like with different settings.
+
+.. image:: img/export_presets_window.png
 
 At the bottom of the window are two buttons. "Export PCK/ZIP" only creates
 a packed version of your project's data. This doesn't include an executable
@@ -195,7 +319,7 @@ Before you can export your project for Android, you must download the following
 software:
 
 * Android SDK: https://developer.android.com/studio/
-* Java JDK: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+* Open JDK(version 8 is required, more recent versions won't work): https://adoptopenjdk.net/index.html
 
 When you run Android Studio for the first time, click on *Configure -> SDK Manager*
 and install "Android SDK Platform Tools". This installs the `adb` command-line
@@ -204,7 +328,7 @@ tool that Godot uses to communicate with your device.
 Next, create a debug keystore by running the following command on your
 system's command line:
 
-::
+.. code-block:: shell
 
     keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999
 
@@ -215,12 +339,13 @@ your system and the location of the keystore you just created.
 .. image:: img/export_editor_android_settings.png
 
 Now you're ready to export. Click on *Project -> Export* and add a preset
-for Android (see above).
+for Android (see above). Select the Android Presets and under *Options* go to
+*Screen* and set *Orientation* to "Portrait".
 
 Click the "Export Project" button and Godot will build an APK you can download
 on your device. To do this on the command line, use the following:
 
-::
+.. code-block:: shell
 
     adb install dodge.apk
 
@@ -273,7 +398,7 @@ files:
 
 Viewing the `.html` file in your browser lets you play the game. However, you
 can't open the file directly, it needs to be served by a web server. If you don't
-have one set up on your computer, you can use Google to find suggestions for
+have one set up on your computer, you can search online to find suggestions for
 your specific OS.
 
 Point your browser at the URL where you've placed the html file. You may have
@@ -284,7 +409,10 @@ to wait a few moments while the game loads before you see the start screen.
 The console window beneath the game tells you if anything goes wrong. You can
 disable it by setting "Export With Debug" off when you export the project.
 
-.. note:: Browser support for WASM is not very widespread. Firefox and Chrome
-          both support it, but you may still find some things that don't work.
-          Make sure you have updated your browser to the most recent version,
-          and report any bugs you find at the `Godot Github repository <https://github.com/godotengine/godot/issues>`_.
+.. image:: img/export_web_export_with_debug_disabled.png
+
+.. note:: While WASM is supported in all major browsers, it is still an emerging
+          technology and you may find some things that don't work. Make sure
+          you have updated your browser to the most recent version, and report
+          any bugs you find at the `Godot GitHub repository
+          <https://github.com/godotengine/godot/issues>`_.

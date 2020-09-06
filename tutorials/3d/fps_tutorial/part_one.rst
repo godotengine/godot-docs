@@ -290,7 +290,7 @@ Add the following code to ``Player.gd``:
             //  -------------------------------------------------------------------
             //  Walking
             _dir = new Vector3();
-            Transform camXform = _camera.GetGlobalTransform();
+            Transform camXform = _camera.GlobalTransform;
 
             Vector2 inputMovementVector = new Vector2();
 
@@ -377,7 +377,7 @@ This is a lot of code, so let's break it down function by function:
 .. tip:: While copy and pasting code is ill advised, as you can learn a lot from manually typing the code in, you can
          copy and paste the code from this page directly into the script editor.
 
-         If you do this, all of the code copied will be using spaces instead of tabs.
+         If you do this, all the code copied will be using spaces instead of tabs.
 
          To convert the spaces to tabs in the script editor, click the "edit" menu and select "Convert Indent To Tabs".
          This will convert all the spaces into tabs. You can select "Convert Indent To Spaces" to convert tabs back into spaces.
@@ -427,7 +427,7 @@ The second reason is because we do not want the cursor to leave the game window.
 the game window there could be instances where the player clicks outside the window, and then the game
 would lose focus. To assure neither of these issues happens, we capture the mouse cursor.
 
-.. note:: see :ref:`Input documentation <class_Input>` for the various mouse modes. We will only be using
+.. note:: See :ref:`Input documentation <class_Input>` for the various mouse modes. We will only be using
           ``MOUSE_MODE_CAPTURED`` and ``MOUSE_MODE_VISIBLE`` in this tutorial series.
 
 _________
@@ -482,9 +482,9 @@ If you want to move using the world space directional vectors, you'd do somethin
         node.translate(Vector3(1, 0, 0))
     if Input.is_action_pressed("movement_right"):
         node.translate(Vector3(-1, 0, 0))
-        
+
  .. code-tab:: csharp
- 
+
     if (Input.IsActionPressed("movement_forward"))
         node.Translate(new Vector3(0, 0, 1));
     if (Input.IsActionPressed("movement_backward"))
@@ -518,7 +518,7 @@ The space in which an object's position is the origin of the universe. Because t
 of the origin can be at ``N`` many locations, the values derived from local space change
 with the position of the origin.
 
-.. note:: This stack overflow question has a much better explanation of world space and local space.
+.. note:: This question from Game Development Stack Exchange has a much better explanation of world space and local space.
 
           https://gamedev.stackexchange.com/questions/65783/what-are-world-space-and-eye-space-in-game-development
           (Local space and eye space are essentially the same thing in this context)
@@ -542,9 +542,9 @@ To use the :ref:`Spatial <class_Spatial>` node's local directional vectors, we u
         node.translate(node.global_transform.basis.x.normalized())
     if Input.is_action_pressed("movement_right"):
         node.translate(-node.global_transform.basis.x.normalized())
-        
+
  .. code-tab:: csharp
-        
+
     if (Input.IsActionPressed("movement_forward"))
         node.Translate(node.GlobalTransform.basis.z.Normalized());
     if (Input.IsActionPressed("movement_backward"))
@@ -566,7 +566,7 @@ Here is what the :ref:`Spatial <class_Spatial>` gizmo shows when you are using l
 Notice how the arrows follow the rotation of the object on the left, which looks exactly
 the same as the 3D example for local space.
 
-.. note:: You can change between local and world space modes by pressing T or the little cube button
+.. note:: You can change between local and world space modes by pressing :kbd:`T` or the little cube button
           when you have a :ref:`Spatial <class_Spatial>` based node selected.
 
 .. image:: img/LocalSpaceExampleGizmo.png
@@ -642,7 +642,7 @@ our ``DEACCEL`` constant so the player will decelerate.
 Then we interpolate the horizontal velocity, set the player's ``X`` and ``Z`` velocity to the interpolated horizontal velocity,
 and call ``move_and_slide`` to let the :ref:`KinematicBody <class_KinematicBody>` handle moving the player through the physics world.
 
-.. tip:: All of the code in ``process_movement`` is exactly the same as the movement code from the Kinematic Character demo!
+.. tip:: All the code in ``process_movement`` is exactly the same as the movement code from the Kinematic Character demo!
 
 _________
 
@@ -680,8 +680,8 @@ _________
 To test the code, open up the scene named ``Testing_Area.tscn``, if it's not already opened up. We will be using
 this scene as we go through the next few tutorial parts, so be sure to keep it open in one of your scene tabs.
 
-Go ahead and test your code either by pressing ``F6`` with ``Testing_Area.tscn`` as the open tab, by pressing the
-play button in the top right corner, or by pressing ``F5``.
+Go ahead and test your code either by pressing :kbd:`F6` with ``Testing_Area.tscn`` as the open tab, by pressing the
+play button in the top right corner, or by pressing :kbd:`F5`.
 You should now be able to walk around, jump in the air, and look around using the mouse.
 
 
@@ -711,7 +711,7 @@ First we need a few more class variables in our player script:
     [Export]
     public float SprintAccel = 18.0f;
     private bool _isSprinting = false;
-    
+
     private SpotLight _flashlight;
 
 All the sprinting variables work exactly the same as the non sprinting variables with
@@ -728,7 +728,7 @@ Now we need to add a few lines of code, starting in ``_ready``. Add the followin
     flashlight = $Rotation_Helper/Flashlight
 
  .. code-tab:: csharp
- 
+
     _flashlight = GetNode<SpotLight>("Rotation_Helper/Flashlight");
 
 This gets the ``Flashlight`` node and assigns it to the ``flashlight`` variable.
@@ -758,7 +758,7 @@ Now we need to change some of the code in ``process_input``. Add the following s
     # ----------------------------------
 
  .. code-tab:: csharp
- 
+
     //  -------------------------------------------------------------------
     //  Sprinting
     if (Input.IsActionPressed("movement_sprint"))
@@ -779,7 +779,7 @@ Now we need to change some of the code in ``process_input``. Add the following s
 
 Let's go over the additions:
 
-We set ``is_sprinting`` to true when the player is holding down the ``movement_sprint`` action, and false
+We set ``is_sprinting`` to ``true`` when the player is holding down the ``movement_sprint`` action, and ``false``
 when the ``movement_sprint`` action is released. In ``process_movement`` we'll add the code that makes the player faster when
 they sprint. Here in ``process_input`` we are just going to change the ``is_sprinting`` variable.
 
@@ -799,12 +799,12 @@ Now we need to change a couple things in ``process_movement``. First, replace ``
         target *= MAX_SPEED
 
  .. code-tab:: csharp
- 
+
     if (_isSprinting)
-        target *= MaxSprintSpeed;    
+        target *= MaxSprintSpeed;
     else
         target *= MaxSpeed;
-            
+
 Now instead of always multiplying ``target`` by ``MAX_SPEED``, we first check to see if the player is sprinting or not.
 If the player is sprinting, we instead multiply ``target`` by ``MAX_SPRINT_SPEED``.
 
@@ -819,7 +819,7 @@ Now all that's left is to change the acceleration when sprinting. Change ``accel
         accel = ACCEL
 
  .. code-tab:: csharp
- 
+
     if (_isSprinting)
         accel = SprintAccel;
     else
@@ -829,7 +829,7 @@ Now, when the player is sprinting, we'll use ``SPRINT_ACCEL`` instead of ``ACCEL
 
 _________
 
-You should now be able to sprint if you press the ``shift`` button, and can toggle the flash light on and off by pressing the ``F`` button!
+You should now be able to sprint if you press :kbd:`Shift`, and can toggle the flash light on and off by pressing :kbd:`F`!
 
 Go try it out! You can change the sprint-related class variables to make the player faster or slower when sprinting!
 

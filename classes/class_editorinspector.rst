@@ -11,12 +11,19 @@ EditorInspector
 
 **Inherits:** :ref:`ScrollContainer<class_ScrollContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+A tab used to edit properties of the selected node.
 
-Brief Description
------------------
+Description
+-----------
 
+The editor inspector is by default located on the right-hand side of the editor. It's used to edit the properties of the selected node. For example, you can select a node such as the Sprite2D then edit its transform through the inspector tool. The editor inspector is an essential tool in the game development workflow.
 
+Properties
+----------
+
++-------------------------+---------------------------+------------------+
+| :ref:`bool<class_bool>` | scroll_horizontal_enabled | **O:** ``false`` |
++-------------------------+---------------------------+------------------+
 
 Methods
 -------
@@ -32,25 +39,37 @@ Signals
 
 - **object_id_selected** **(** :ref:`int<class_int>` id **)**
 
+----
+
 .. _class_EditorInspector_signal_property_edited:
 
 - **property_edited** **(** :ref:`String<class_String>` property **)**
+
+----
 
 .. _class_EditorInspector_signal_property_keyed:
 
 - **property_keyed** **(** :ref:`String<class_String>` property **)**
 
+----
+
 .. _class_EditorInspector_signal_property_selected:
 
 - **property_selected** **(** :ref:`String<class_String>` property **)**
+
+----
 
 .. _class_EditorInspector_signal_property_toggled:
 
 - **property_toggled** **(** :ref:`String<class_String>` property, :ref:`bool<class_bool>` checked **)**
 
+----
+
 .. _class_EditorInspector_signal_resource_selected:
 
 - **resource_selected** **(** :ref:`Object<class_Object>` res, :ref:`String<class_String>` prop **)**
+
+----
 
 .. _class_EditorInspector_signal_restart_requested:
 

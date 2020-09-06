@@ -57,19 +57,19 @@ assignment. Example:
 
 Static:
 
-.. code:: cpp
+.. code-block:: cpp
 
-    int a; // Value uninitialized
-    a = 5; // This is valid
-    a = "Hi!"; // This is invalid
+    int a; // Value uninitialized.
+    a = 5; // This is valid.
+    a = "Hi!"; // This is invalid.
 
 Dynamic:
 
 ::
 
-    var a # null by default
-    a = 5 # Valid, 'a' becomes an integer
-    a = "Hi!" # Valid, 'a' changed to a string
+    var a # 'null' by default.
+    a = 5 # Valid, 'a' becomes an integer.
+    a = "Hi!" # Valid, 'a' changed to a string.
 
 As function arguments:
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -79,7 +79,7 @@ different arguments, for example:
 
 Static:
 
-.. code:: cpp
+.. code-block:: cpp
 
     void print_value(int value) {
 
@@ -88,8 +88,8 @@ Static:
 
     [..]
 
-    print_value(55); // Valid
-    print_value("Hello"); // Invalid
+    print_value(55); // Valid.
+    print_value("Hello"); // Invalid.
 
 Dynamic:
 
@@ -100,8 +100,8 @@ Dynamic:
 
     [..]
 
-    print_value(55) # Valid
-    print_value("Hello") # Valid
+    print_value(55) # Valid.
+    print_value("Hello") # Valid.
 
 Pointers & referencing:
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -119,7 +119,7 @@ too. Some Examples:
 
 -  C++:
 
-.. code:: cpp
+.. code-block:: cpp
 
     void use_class(SomeClass *instance) {
 
@@ -128,14 +128,14 @@ too. Some Examples:
 
     void do_something() {
 
-        SomeClass *instance = new SomeClass; // Created as pointer
-        use_class(instance); // Passed as pointer
-        delete instance; // Otherwise it will leak memory
+        SomeClass *instance = new SomeClass; // Created as pointer.
+        use_class(instance); // Passed as pointer.
+        delete instance; // Otherwise it will leak memory.
     }
 
 -  Java:
 
-.. code:: java
+.. code-block:: java
 
     @Override
     public final void use_class(SomeClass instance) {
@@ -145,23 +145,23 @@ too. Some Examples:
 
     public final void do_something() {
 
-        SomeClass instance = new SomeClass(); // Created as reference
-        use_class(instance); // Passed as reference
+        SomeClass instance = new SomeClass(); // Created as reference.
+        use_class(instance); // Passed as reference.
         // Garbage collector will get rid of it when not in
-        // use and freeze your game randomly for a second
+        // use and freeze your game randomly for a second.
     }
 
 -  GDScript:
 
 ::
 
-    func use_class(instance); # Does not care about class type
+    func use_class(instance): # Does not care about class type
         instance.use() # Will work with any class that has a ".use()" method.
 
     func do_something():
-        var instance = SomeClass.new() # Created as reference
-        use_class(instance) # Passed as reference
-        # Will be unreferenced and deleted
+        var instance = SomeClass.new() # Created as reference.
+        use_class(instance) # Passed as reference.
+        # Will be unreferenced and deleted.
 
 In GDScript, only base types (int, float, string and the vector types)
 are passed by value to functions (value is copied). Everything else
@@ -177,37 +177,37 @@ Arrays in dynamically typed languages can contain many different mixed
 datatypes inside and are always dynamic (can be resized at any time).
 Compare for example arrays in statically typed languages:
 
-.. code:: cpp
+.. code-block:: cpp
 
-    int *array = new int[4]; // Create array
-    array[0] = 10; // Initialize manually
-    array[1] = 20; // Can't mix types
+    int *array = new int[4]; // Create array.
+    array[0] = 10; // Initialize manually.
+    array[1] = 20; // Can't mix types.
     array[2] = 40;
     array[3] = 60;
-    // Can't resize
-    use_array(array); // Passed as pointer
-    delete[] array; // Must be freed
+    // Can't resize.
+    use_array(array); // Passed as pointer.
+    delete[] array; // Must be freed.
 
     // or
 
     std::vector<int> array;
     array.resize(4);
-    array[0] = 10; // Initialize manually
-    array[1] = 20; // Can't mix types
+    array[0] = 10; // Initialize manually.
+    array[1] = 20; // Can't mix types.
     array[2] = 40;
     array[3] = 60;
-    array.resize(3); // Can be resized
-    use_array(array); // Passed reference or value
-    // Freed when stack ends
+    array.resize(3); // Can be resized.
+    use_array(array); // Passed reference or value.
+    // Freed when stack ends.
 
 And in GDScript:
 
 ::
 
-    var array = [10, "hello", 40, 60] # Simple, and can mix types
-    array.resize(3) # Can be resized
-    use_array(array) # Passed as reference
-    # Freed when no longer in use
+    var array = [10, "hello", 40, 60] # Simple, and can mix types.
+    array.resize(3) # Can be resized.
+    use_array(array) # Passed as reference.
+    # Freed when no longer in use.
 
 In dynamically typed languages, arrays can also double as other
 datatypes, such as lists:
@@ -246,7 +246,7 @@ Example of Dictionary:
 
 ::
 
-    var d = {"name": "John", "age": 22} # Simple syntax
+    var d = {"name": "John", "age": 22} # Simple syntax.
     print("Name: ", d["name"], " Age: ", d["age"])
 
 Dictionaries are also dynamic, keys can be added or removed at any point
@@ -254,16 +254,16 @@ at little cost:
 
 ::
 
-    d["mother"] = "Rebecca" # Addition
-    d["age"] = 11 # Modification
-    d.erase("name") # Removal
+    d["mother"] = "Rebecca" # Addition.
+    d["age"] = 11 # Modification.
+    d.erase("name") # Removal.
 
 In most cases, two-dimensional arrays can often be implemented more
 easily with dictionaries. Here's a simple battleship game example:
 
 ::
 
-    # Battleship game
+    # Battleship Game
 
     const SHIP = 0
     const SHIP_HIT = 1
@@ -277,12 +277,12 @@ easily with dictionaries. Here's a simple battleship game example:
         board[Vector2(1, 3)] = SHIP
 
     func missile(pos):
-        if pos in board: # Something at that pos
-            if board[pos] == SHIP: # There was a ship! hit it
+        if pos in board: # Something at that position.
+            if board[pos] == SHIP: # There was a ship! hit it.
                 board[pos] = SHIP_HIT
             else:
-                print("Already hit here!") # Hey dude you already hit here
-        else: # Nothing, mark as water
+                print("Already hit here!") # Hey dude you already hit here.
+        else: # Nothing, mark as water.
             board[pos] = WATER_HIT
 
     func game():
@@ -299,34 +299,34 @@ states and quick structs:
 ::
 
     # Same example, lua-style support.
-    # This syntax is a lot more readable and usable
-    # Like any GDScript identifier, keys written in this form cannot start with a digit.
+    # This syntax is a lot more readable and usable.
+    # Like any GDScript identifier, keys written in this form cannot start
+    # with a digit.
 
     var d = {
         name = "John",
         age = 22
     }
 
-    print("Name: ", d.name, " Age: ", d.age) # Used "." based indexing
+    print("Name: ", d.name, " Age: ", d.age) # Used "." based indexing.
 
     # Indexing
 
     d["mother"] = "Rebecca"
-    d.mother = "Caroline" # This would work too to create a new key
+    d.mother = "Caroline" # This would work too to create a new key.
 
 For & while
 -----------
 
 Iterating in some statically typed languages can be quite complex:
 
-.. code:: cpp
+.. code-block:: cpp
 
     const char* strings = new const char*[50];
 
     [..]
 
-    for (int i = 0; i < 50; i++)
-    {
+    for (int i = 0; i < 50; i++) {
 
         printf("Value: %s\n", i, strings[i]);
     }
@@ -364,13 +364,13 @@ The range() function can take 3 arguments:
 
 ::
 
-    range(n) # Will go from 0 to n-1
-    range(b, n) # Will go from b to n-1
-    range(b, n, s) # Will go from b to n-1, in steps of s
+    range(n) # Will go from 0 to n-1.
+    range(b, n) # Will go from b to n-1.
+    range(b, n, s) # Will go from b to n-1, in steps of s.
 
 Some statically typed programming language examples:
 
-.. code:: cpp
+.. code-block:: cpp
 
     for (int i = 0; i < 10; i++) {}
 
@@ -457,7 +457,7 @@ And it can be used like any other iterator:
 
     var itr = ForwardIterator.new(0, 6, 2)
     for i in itr:
-        print(i) # Will print 0, 2, and 4
+        print(i) # Will print 0, 2, and 4.
 
 Make sure to reset the state of the iterator in ``_iter_init``, otherwise nested
 for-loops that use custom iterators will not work as expected.
@@ -474,7 +474,7 @@ As an example, imagine a situation where a big rock is falling down a
 tunnel, smashing everything on its way. The code for the rock, in a
 statically typed language would be something like:
 
-.. code:: cpp
+.. code-block:: cpp
 
     void BigRollingRock::on_object_hit(Smashable *entity) {
 

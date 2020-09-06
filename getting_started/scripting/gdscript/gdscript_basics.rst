@@ -16,34 +16,10 @@ flexibility for content creation and integration.
 History
 ~~~~~~~
 
-In the early days, the engine used the `Lua <https://www.lua.org>`__
-scripting language. Lua is fast, but creating bindings to an object
-oriented system (by using fallbacks) was complex and slow and took an
-enormous amount of code. After some experiments with
-`Python <https://www.python.org>`__, it also proved difficult to embed.
+.. note::
 
-The last third party scripting language that was used for shipped games
-was `Squirrel <http://squirrel-lang.org>`__, but it was dropped as well.
-At that point, it became evident that a custom scripting language could
-more optimally make use of Godot's particular architecture:
-
--  Godot embeds scripts in nodes. Most languages are not designed with
-   this in mind.
--  Godot uses several built-in data types for 2D and 3D math. Script
-   languages do not provide this, and binding them is inefficient.
--  Godot uses threads heavily for lifting and initializing data from the
-   net or disk. Script interpreters for common languages are not
-   friendly to this.
--  Godot already has a memory management model for resources, most
-   script languages provide their own, which results in duplicate
-   effort and bugs.
--  Binding code is always messy and results in several failure points,
-   unexpected bugs and generally low maintainability.
-
-The result of these considerations is *GDScript*. The language and
-interpreter for GDScript ended up being smaller than the binding code itself
-for Lua and Squirrel, while having equal functionality. With time, having a
-built-in language has proven to be a huge advantage.
+    Documentation about GDScript's history has been moved to the
+    :ref:`Frequently Asked Questions <doc_faq_what_is_gdscript>`.
 
 Example of GDScript
 ~~~~~~~~~~~~~~~~~~~
@@ -62,6 +38,7 @@ here's a simple example of how GDScript looks.
     # (optional) class definition with a custom icon
 
     class_name MyClass, "res://path/to/optional/icon.svg"
+
 
     # Member variables
 
@@ -87,6 +64,7 @@ here's a simple example of how GDScript looks.
     var v2 = Vector2(1, 2)
     var v3 = Vector3(1, 2, 3)
 
+
     # Function
 
     func some_function(param1, param2):
@@ -108,16 +86,19 @@ here's a simple example of how GDScript looks.
         var local_var2 = param1 + 3
         return local_var2
 
+
     # Functions override functions with the same name on the base/parent class.
     # If you still want to call them, use '.' (like 'super' in other languages).
 
     func something(p1, p2):
         .something(p1, p2)
 
+
     # Inner class
 
     class Something:
         var a = 10
+
 
     # Constructor
 
@@ -250,6 +231,8 @@ The following is the list of supported operators and their precedence.
 +---------------------------------------------------------------+-----------------------------------------+
 | ``x.attribute``                                               | Attribute reference                     |
 +---------------------------------------------------------------+-----------------------------------------+
+| ``foo()``                                                     | Function call                           |
++---------------------------------------------------------------+-----------------------------------------+
 | ``is``                                                        | Instance type checker                   |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``~``                                                         | Bitwise NOT                             |
@@ -288,6 +271,8 @@ The following is the list of supported operators and their precedence.
 +---------------------------------------------------------------+-----------------------------------------+
 | ``if x else``                                                 | Ternary if/else                         |
 +---------------------------------------------------------------+-----------------------------------------+
+| ``as``                                                        | Type casting                            |
++---------------------------------------------------------------+-----------------------------------------+
 | ``=`` ``+=`` ``-=`` ``*=`` ``/=`` ``%=`` ``&=`` ``|=``        | Assignment (lowest priority)            |
 +---------------------------------------------------------------+-----------------------------------------+
 
@@ -299,7 +284,7 @@ Literals
 +--------------------------+----------------------------------------+
 | ``45``                   | Base 10 integer                        |
 +--------------------------+----------------------------------------+
-| ``0x8F51``               | Base 16 (hexadecimal) integer          |
+| ``0x8f51``               | Base 16 (hexadecimal) integer          |
 +--------------------------+----------------------------------------+
 | ``0b101010``             | Base 2 (binary) integer                |
 +--------------------------+----------------------------------------+
@@ -313,6 +298,14 @@ Literals
 +--------------------------+----------------------------------------+
 | ``$NodePath``            | Shorthand for ``get_node("NodePath")`` |
 +--------------------------+----------------------------------------+
+
+Integers and floats can have their numbers separated with ``_`` to make them more readable.
+The following ways to write numbers are all valid::
+
+    12_345_678  # Equal to 12345678.
+    3.141_592_7  # Equal to 3.1415927.
+    0x8080_0000_ffff  # Equal to 0x80800000ffff.
+    0b11_00_11_00  # Equal to 0b11001100.
 
 Comments
 ~~~~~~~~
@@ -332,7 +325,7 @@ Built-in types
 Built-in types are stack-allocated. They are passed as values. This means a copy
 is created on each assignment or when passing them as arguments to functions.
 The only exceptions are ``Array``\ s and ``Dictionaries``, which are passed by
-reference so they are shared. (Pooled arrays such as ``PoolByteArray`` are still
+reference so they are shared. (Pooled arrays such as ``PackedByteArray`` are still
 passed as values.)
 
 Basic built-in types
@@ -346,31 +339,58 @@ null
 ``null`` is an empty data type that contains no information and can not
 be assigned any other value.
 
-bool
-^^^^
+:ref:`bool <class_bool>`
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Short for "boolean", it can only contain ``true`` or ``false``.
 
-int
-^^^
+:ref:`int <class_int>`
+^^^^^^^^^^^^^^^^^^^^^^
 
 Short for "integer", it stores whole numbers (positive and negative).
 It is stored as a 64-bit value, equivalent to "int64_t" in C++.
 
-float
-^^^^^
+:ref:`float <class_float>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Stores real numbers, including decimals, using floating-point values.
 It is stored as a 64-bit value, equivalent to "double" in C++.
 Note: Currently, data structures such as Vector2, Vector3, and
-PoolRealArray store 32-bit single-precision "float" values.
+PackedFloat32Array store 32-bit single-precision "float" values.
 
 :ref:`String <class_String>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A sequence of characters in `Unicode format <https://en.wikipedia.org/wiki/Unicode>`_.
-Strings can contain
-`standard C escape sequences <https://en.wikipedia.org/wiki/Escape_sequences_in_C>`_.
+Strings can contain the following escape sequences:
+
++---------------------+---------------------------------+
+| **Escape sequence** | **Expands to**                  |
++---------------------+---------------------------------+
+| ``\n``              | Newline (line feed)             |
++---------------------+---------------------------------+
+| ``\t``              | Horizontal tab character        |
++---------------------+---------------------------------+
+| ``\r``              | Carriage return                 |
++---------------------+---------------------------------+
+| ``\a``              | Alert (beep/bell)               |
++---------------------+---------------------------------+
+| ``\b``              | Backspace                       |
++---------------------+---------------------------------+
+| ``\f``              | Formfeed page break             |
++---------------------+---------------------------------+
+| ``\v``              | Vertical tab character          |
++---------------------+---------------------------------+
+| ``\"``              | Double quote                    |
++---------------------+---------------------------------+
+| ``\'``              | Single quote                    |
++---------------------+---------------------------------+
+| ``\\``              | Backslash                       |
++---------------------+---------------------------------+
+| ``\uXXXX``          | Unicode codepoint ``XXXX``      |
+|                     | (hexadecimal, case-insensitive) |
++---------------------+---------------------------------+
+
 GDScript also supports :ref:`doc_gdscript_printf`.
 
 Vector built-in types
@@ -380,7 +400,7 @@ Vector built-in types
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2D vector type containing ``x`` and ``y`` fields. Can also be
-accessed as array.
+accessed as an array.
 
 :ref:`Rect2 <class_Rect2>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -483,13 +503,15 @@ arrays are available. These only accept a single data type. They avoid memory
 fragmentation and use less memory, but are atomic and tend to run slower than generic
 arrays. They are therefore only recommended to use for large data sets:
 
-- :ref:`PoolByteArray <class_PoolByteArray>`: An array of bytes (integers from 0 to 255).
-- :ref:`PoolIntArray <class_PoolIntArray>`: An array of integers.
-- :ref:`PoolRealArray <class_PoolRealArray>`: An array of floats.
-- :ref:`PoolStringArray <class_PoolStringArray>`: An array of strings.
-- :ref:`PoolVector2Array <class_PoolVector2Array>`: An array of :ref:`Vector2 <class_Vector2>` objects.
-- :ref:`PoolVector3Array <class_PoolVector3Array>`: An array of :ref:`Vector3 <class_Vector3>` objects.
-- :ref:`PoolColorArray <class_PoolColorArray>`: An array of :ref:`Color <class_Color>` objects.
+- :ref:`PackedByteArray <class_PackedByteArray>`: An array of bytes (integers from 0 to 255).
+- :ref:`PackedInt32Array <class_PackedInt32Array>`: An array of 32-bit integers.
+- :ref:`PackedInt64Array <class_PackedInt64Array>`: An array of 64-bit integers.
+- :ref:`PackedFloat32Array <class_PackedFloat32Array>`: An array of 32-bit floats.
+- :ref:`PackedFloat64Array <class_PackedFloat64Array>`: An array of 64-bit floats.
+- :ref:`PackedStringArray <class_PackedStringArray>`: An array of strings.
+- :ref:`PackedVector2Array <class_PackedVector2Array>`: An array of :ref:`Vector2 <class_Vector2>` objects.
+- :ref:`PackedVector3Array <class_PackedVector3Array>`: An array of :ref:`Vector3 <class_Vector3>` objects.
+- :ref:`PackedColorArray <class_PackedColorArray>`: An array of :ref:`Color <class_Color>` objects.
 
 :ref:`Dictionary <class_Dictionary>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -509,8 +531,8 @@ Associative container which contains values referenced by unique keys.
 
 Lua-style table syntax is also supported. Lua-style uses ``=`` instead of ``:``
 and doesn't use quotes to mark string keys (making for slightly less to write).
-Note however that like any GDScript identifier, keys written in this form cannot
-start with a digit.
+However, keys written in this form can't start with a digit (like any GDScript
+identifier).
 
 ::
 
@@ -528,6 +550,20 @@ assign to it::
     d.waiting = 14 # Add String "waiting" as a key and assign the value 14 to it.
     d[4] = "hello" # Add integer 4 as a key and assign the String "hello" as its value.
     d["Godot"] = 3.01 # Add String "Godot" as a key and assign the value 3.01 to it.
+
+    var test = 4
+    # Prints "hello" by indexing the dictionary with a dynamic key.
+    # This is not the same as `d.test`. The bracket syntax equivalent to
+    # `d.test` is `d["test"]`.
+    print(d[test])
+
+.. note::
+
+    The bracket syntax can be used to access properties of any
+    :ref:`class_Object`, not just Dictionaries. Keep in mind it will cause a
+    script error when attempting to index a non-existing property. To avoid
+    this, use the :ref:`Object.get() <class_Object_method_get>` and
+    :ref:`Object.set() <class_Object_method_set>` methods instead.
 
 Data
 ----
@@ -561,8 +597,8 @@ after the variable name, followed by the type.
 If the variable is initialized within the declaration, the type can be inferred, so
 it's possible to omit the type name::
 
-    var my_vector2 := Vector2() # 'my_vector2' is of type 'Vector2'
-    var my_node := Sprite.new() # 'my_node' is of type 'Sprite'
+    var my_vector2 := Vector2() # 'my_vector2' is of type 'Vector2'.
+    var my_node := Sprite.new() # 'my_node' is of type 'Sprite'.
 
 Type inference is only possible if the assigned value has a defined type, otherwise
 it will raise an error.
@@ -588,14 +624,14 @@ same type or a subtype of the cast type.
 ::
 
     var my_node2D: Node2D
-    my_node2D = $Sprite as Node2D # Works since Sprite is a subtype of Node2D
+    my_node2D = $Sprite as Node2D # Works since Sprite is a subtype of Node2D.
 
 If the value is not a subtype, the casting operation will result in a ``null`` value.
 
 ::
 
     var my_node2D: Node2D
-    my_node2D = $Button as Node2D # Results in 'null' since a Button is not a subtype of Node2D
+    my_node2D = $Button as Node2D # Results in 'null' since a Button is not a subtype of Node2D.
 
 For built-in types, they will be forcibly converted if possible, otherwise the
 engine will raise an error.
@@ -603,8 +639,8 @@ engine will raise an error.
 ::
 
     var my_int: int
-    my_int = "123" as int # The string can be converted to int
-    my_int = Vector2() as int # A Vector2 can't be converted to int, this will cause an error
+    my_int = "123" as int # The string can be converted to int.
+    my_int = Vector2() as int # A Vector2 can't be converted to int, this will cause an error.
 
 Casting is also useful to have better type-safe variables when interacting with
 the scene tree::
@@ -630,7 +666,7 @@ expressions and must be assigned on initialization.
     const E = [1, 2, 3, 4][0] # Constant expression: 1.
     const F = sin(20) # 'sin()' can be used in constant expressions.
     const G = x + 20 # Invalid; this is not a constant expression!
-    const H = A + 20 # Constant expression: 25.
+    const H = A + 20 # Constant expression: 25 (`A` is a constant).
 
 Although the type of constants is inferred from the assigned value, it's also
 possible to add explicit type specification::
@@ -639,6 +675,12 @@ possible to add explicit type specification::
     const B: Vector2 = Vector2()
 
 Assigning a value of an incompatible type will raise an error.
+
+.. note::
+
+    Since arrays and dictionaries are passed by reference, constants are "flat".
+    This means that if you declare a constant array or dictionary, it can still
+    be modified afterwards. They can't be reassigned with another value though.
 
 Enums
 ^^^^^
@@ -649,9 +691,9 @@ want to assign consecutive integers to some constant.
 If you pass a name to the enum, it will put all the keys inside a constant
 dictionary of that name.
 
-.. important: In Godot 3.1 and later, keys in a named enum are not registered
-              as global constants. They should be accessed prefixed by the
-              enum's name (``Name.KEY``); see an example below.
+.. important:: In Godot 3.1 and later, keys in a named enum are not registered
+               as global constants. They should be accessed prefixed by the
+               enum's name (``Name.KEY``); see an example below.
 
 ::
 
@@ -803,7 +845,7 @@ for
 
 To iterate through a range, such as an array or table, a *for* loop is
 used. When iterating over an array, the current array element is stored in
-the loop variable. When iterating over a dictionary, the *index* is stored
+the loop variable. When iterating over a dictionary, the *key* is stored
 in the loop variable.
 
 ::
@@ -861,8 +903,8 @@ Basic syntax::
 **Control flow**:
 
 The patterns are matched from top to bottom.
-If a pattern matches, the corresponding block will be executed. After that, the execution continues below the ``match`` statement.
-If you want to have a fallthrough, you can use ``continue`` to stop execution in the current block and check the ones below it.
+If a pattern matches, the first corresponding block will be executed. After that, the execution continues below the ``match`` statement.
+You can use ``continue`` to stop execution in the current block and check for an additional match in the patterns below it.
 
 There are 6 pattern types:
 
@@ -985,11 +1027,11 @@ By default, all script files are unnamed classes. In this case, you can only
 reference them using the file's path, using either a relative or an absolute
 path. For example, if you name a script file ``character.gd``::
 
-   # Inherit from Character.gd
+   # Inherit from 'Character.gd'.
 
-   extends res://path/to/character.gd
+   extends "res://path/to/character.gd"
 
-   # Load character.gd and create a new node instance from it
+   # Load character.gd and create a new node instance from it.
 
    var Character = load("res://path/to/character.gd")
    var character_node = Character.new()
@@ -1002,7 +1044,6 @@ will then appear with its new icon in the editor::
    # Item.gd
 
    extends Node
-
    class_name Item, "res://interface/icons/item.png"
 
 .. image:: img/class_name_editor_register_example.png
@@ -1015,10 +1056,13 @@ Here's a class file example:
 
     class_name Character
 
+
     var health = 5
+
 
     func print_health():
         print(health)
+
 
     func print_this_script_three_times():
         print(get_script())
@@ -1065,7 +1109,7 @@ the ``is`` keyword can be used::
     # [...]
 
     # Use 'is' to check inheritance.
-    if (entity is Enemy):
+    if entity is Enemy:
         entity.apply_damage()
 
 To call a function in a *parent class* (i.e. one ``extend``-ed in your current
@@ -1108,8 +1152,10 @@ This is better explained through examples. Consider this scenario::
     var entity = null
     var message = null
 
+
     func _init(e=null):
         entity = e
+
 
     func enter(m):
         message = m
@@ -1117,6 +1163,7 @@ This is better explained through examples. Consider this scenario::
 
     # Idle.gd (inheriting class)
     extends "State.gd"
+
 
     func _init(e=null, m=null).(e):
         # Do something with 'e'.
@@ -1153,13 +1200,18 @@ function.
     # An inner class in this class file.
     class SomeInnerClass:
         var a = 5
+
+
         func print_value_of_a():
             print(a)
+
 
     # This is the constructor of the class file's main class.
     func _init():
         var c = SomeInnerClass.new()
         c.print_value_of_a()
+
+.. _doc_gdscript_classes_as_resources:
 
 Classes as resources
 ^^^^^^^^^^^^^^^^^^^^
@@ -1174,6 +1226,7 @@ class resource is done by calling the ``new`` function on the class object::
 
     # Preload the class only once at compile time.
     const MyClass = preload("myclass.gd")
+
 
     func _init():
         var a = MyClass.new()
@@ -1207,8 +1260,10 @@ with the new value. Vice versa, when ``variable`` is accessed, the *getter* func
 
     var my_var setget my_var_set, my_var_get
 
+
     func my_var_set(new_value):
         my_var = new_value
+
 
     func my_var_get():
         return my_var # Getter must return a value.
@@ -1251,8 +1306,12 @@ placed at the top of the file::
     tool
     extends Button
 
+
     func _ready():
         print("Hello")
+
+
+See :ref:`doc_running_code_in_the_editor` for more information.
 
 .. warning:: Be cautious when freeing nodes with ``queue_free()`` or ``free()``
              in a tool script (especially the script's owner itself). As tool
@@ -1266,7 +1325,7 @@ If a class inherits from :ref:`class_Reference`, then instances will be
 freed when no longer in use. No garbage collector exists, just
 reference counting. By default, all classes that don't define
 inheritance extend **Reference**. If this is not desired, then a class
-must inherit :ref:`class_Object` manually and must call instance.free(). To
+must inherit :ref:`class_Object` manually and must call ``instance.free()``. To
 avoid reference cycles that can't be freed, a ``weakref`` function is
 provided for creating weak references.
 
@@ -1286,7 +1345,8 @@ to. To create custom signals for a class, use the ``signal`` keyword.
 
    extends Node
 
-   # A signal named health_depleted
+
+   # A signal named health_depleted.
    signal health_depleted
 
 .. note::
@@ -1305,14 +1365,15 @@ In the example below, we connect the ``health_depleted`` signal from a
 ``Character`` node to a ``Game`` node. When the ``Character`` node emits the
 signal, the game node's ``_on_Character_health_depleted`` is called::
 
-   # Game.gd
+    # Game.gd
 
-   func _ready():
-      var character_node = get_node('Character')
-      character_node.connect("health_depleted", self, "_on_Character_health_depleted")
+    func _ready():
+        var character_node = get_node('Character')
+        character_node.connect("health_depleted", self, "_on_Character_health_depleted")
 
-   func _on_Character_health_depleted():
-      get_tree().reload_current_scene()
+
+    func _on_Character_health_depleted():
+        get_tree().reload_current_scene()
 
 You can emit as many arguments as you want along with a signal.
 
@@ -1330,12 +1391,13 @@ the :ref:`Object.connect() <class_Object_method_connect>` method::
     ...
     signal health_changed
 
+
     func take_damage(amount):
         var old_health = health
         health -= amount
 
         # We emit the health_changed signal every time the
-        # character takes damage
+        # character takes damage.
         emit_signal("health_changed", old_health, health)
     ...
 
@@ -1344,7 +1406,7 @@ the :ref:`Object.connect() <class_Object_method_connect>` method::
     # Lifebar.gd
 
     # Here, we define a function to use as a callback when the
-    # character's health_changed signal is emitted
+    # character's health_changed signal is emitted.
 
     ...
     func _on_Character_health_changed(old_value, new_value):
@@ -1354,7 +1416,7 @@ the :ref:`Object.connect() <class_Object_method_connect>` method::
             progress_bar.modulate = Color.green
 
         # Imagine that `animate` is a user-defined function that animates the
-        # bar filling up or emptying itself
+        # bar filling up or emptying itself.
         progress_bar.animate(old_value, new_value)
     ...
 
@@ -1369,13 +1431,13 @@ node in this case.
 
 ::
 
-   # Game.gd
+    # Game.gd
 
-   func _ready():
-      var character_node = get_node('Character')
-      var lifebar_node = get_node('UserInterface/Lifebar')
+    func _ready():
+        var character_node = get_node('Character')
+        var lifebar_node = get_node('UserInterface/Lifebar')
 
-      character_node.connect("health_changed", lifebar_node, "_on_Character_health_changed")
+        character_node.connect("health_changed", lifebar_node, "_on_Character_health_changed")
 
 This allows the ``Lifebar`` to react to health changes without coupling it to
 the ``Character`` node.
@@ -1383,8 +1445,8 @@ the ``Character`` node.
 You can write optional argument names in parentheses after the signal's
 definition::
 
-   # Defining a signal that forwards two arguments
-   signal health_changed(old_value, new_value)
+    # Defining a signal that forwards two arguments.
+    signal health_changed(old_value, new_value)
 
 These arguments show up in the editor's node dock, and Godot can use them to
 generate callback functions for you. However, you can still emit any number of
@@ -1407,23 +1469,24 @@ taken by each character on the screen, like ``Player1 took 22 damage.``. The
 damage. So when we connect the signal to the in-game console, we can add the
 character's name in the binds array argument::
 
-   # Game.gd
+    # Game.gd
 
-   func _ready():
-      var character_node = get_node('Character')
-      var battle_log_node = get_node('UserInterface/BattleLog')
+    func _ready():
+        var character_node = get_node('Character')
+        var battle_log_node = get_node('UserInterface/BattleLog')
 
-      character_node.connect("health_changed", battle_log_node, "_on_Character_health_changed", [character_node.name])
+        character_node.connect("health_changed", battle_log_node, "_on_Character_health_changed", [character_node.name])
 
 Our ``BattleLog`` node receives each element in the binds array as an extra argument::
 
-   # BattleLog.gd
+    # BattleLog.gd
 
-   func _on_Character_health_changed(old_value, new_value, character_name):
-      if not new_value <= old_value:
-         return
-      var damage = old_value - new_value
-      label.text += character_name + " took " + str(damage) + " damage."
+    func _on_Character_health_changed(old_value, new_value, character_name):
+        if not new_value <= old_value:
+            return
+
+        var damage = old_value - new_value
+        label.text += character_name + " took " + str(damage) + " damage."
 
 
 Coroutines with yield
@@ -1438,9 +1501,10 @@ function returns. Once resumed, the state object becomes invalid. Here is
 an example::
 
     func my_func():
-       print("Hello")
-       yield()
-       print("world")
+        print("Hello")
+        yield()
+        print("world")
+
 
     func _ready():
         var y = my_func()
@@ -1459,9 +1523,10 @@ It is also possible to pass values between ``yield()`` and ``resume()``,
 for example::
 
     func my_func():
-       print("Hello")
-       print(yield())
-       return "cheers!"
+        print("Hello")
+        print(yield())
+        return "cheers!"
+
 
     func _ready():
         var y = my_func()
@@ -1475,6 +1540,20 @@ Will print::
     world
     cheers!
 
+Remember to save the new function state, when using multiple ``yield``\s::
+
+    func co_func():
+        for i in range(1, 5):
+            print("Turn %d" % i)
+            yield();
+
+
+    func _ready():
+        var co = co_func();
+        while co is GDScriptFunctionState && co.is_valid():
+            co = co.resume();
+
+
 Coroutines & signals
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -1486,7 +1565,7 @@ signal is received, execution will recommence. Here are some examples::
     yield(get_tree(), "idle_frame")
 
     # Resume execution when animation is done playing.
-    yield(get_node("AnimationPlayer"), "finished")
+    yield(get_node("AnimationPlayer"), "animation_finished")
 
     # Wait 5 seconds, then resume execution.
     yield(get_tree().create_timer(5.0), "timeout")
@@ -1498,11 +1577,46 @@ into an invalid state, for example::
         yield(button_func(), "completed")
         print("All buttons were pressed, hurray!")
 
+
     func button_func():
         yield($Button0, "pressed")
         yield($Button1, "pressed")
 
 ``my_func`` will only continue execution once both buttons have been pressed.
+
+You can also get the signal's argument once it's emitted by an object:
+
+::
+
+    # Wait for when any node is added to the scene tree.
+    var node = yield(get_tree(), "node_added")
+
+If you're unsure whether a function may yield or not, or whether it may yield
+multiple times, you can yield to the ``completed`` signal conditionally:
+
+::
+
+    func generate():
+        var result = rand_range(-1.0, 1.0)
+
+        if result < 0.0:
+            yield(get_tree(), "idle_frame")
+
+        return result
+
+
+    func make():
+        var result = generate()
+
+        if result is GDScriptFunctionState: # Still working.
+            result = yield(result, "completed")
+
+        return result
+
+This ensures that the function returns whatever it was supposed to return
+regardless of whether coroutines were used internally. Note that using
+``while`` would be redundant here as the ``completed`` signal is only emitted
+when the function didn't yield anymore.
 
 Onready keyword
 ~~~~~~~~~~~~~~~
@@ -1515,6 +1629,7 @@ be obtained when a call to ``Node._ready()`` is made.
 ::
 
     var my_label
+
 
     func _ready():
         my_label = get_node("MyLabel")

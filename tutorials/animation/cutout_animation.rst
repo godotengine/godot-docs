@@ -32,7 +32,7 @@ Godot provides tools for working with cutout rigs, and is ideal for the workflow
    means animations can control much more than just motion of objects. Textures,
    sprite sizes, pivots, opacity, color modulation, and more, can all be animated
    and blended.
--  **Combine animation styles**: AnimatedSprite allows traditional cel animation 
+-  **Combine animation styles**: AnimatedSprite allows traditional cel animation
    to be used alongside cutout animation. In cel animation different animation
    frames use entirely different drawings rather than the same pieces positioned
    differently. In an otherwise cutout-based animation, cel animation can be used
@@ -42,7 +42,7 @@ Godot provides tools for working with cutout rigs, and is ideal for the workflow
    :ref:`Polygon2D <class_Polygon2D>`
    allowing UV animation, deformations, etc.
 -  **Particle Systems**: A cutout animation rig can be combined with particle
-   systems. This can useful for magic effects, jetpacks, etc.
+   systems. This can be useful for magic effects, jetpacks, etc.
 -  **Custom Colliders**: Set colliders and influence areas in different
    parts of the skeletons, great for bosses and fighting games.
 -  **Animation Tree**: Allows complex combinations and blending between
@@ -80,8 +80,8 @@ create a child sprite and load the torso texture, later accommodate it properly:
 .. image:: img/tuto_cutout3.png
 
 This looks good. Let's see if our hierarchy works as a skeleton by
-rotating the torso. We can do this be pressing ``E`` to enter rotate mode,
-and dragging with the left mouse button. To exit rotate mode hit ``ESC``.
+rotating the torso. We can do this be pressing :kbd:`E` to enter rotate mode,
+and dragging with the left mouse button. To exit rotate mode hit :kbd:`ESC`.
 
 .. image:: img/tutovec_torso1.gif
 
@@ -101,7 +101,7 @@ Sprite:
 .. image:: img/tuto_cutout5.png
 
 The pivot can also be adjusted *visually*. While hovering over the
-desired pivot point,  press the "v" key to move the pivot there for the
+desired pivot point,  press :kbd:`V` to move the pivot there for the
 selected Sprite. There is also a tool in the tool bar that has a
 similar function.
 
@@ -121,7 +121,7 @@ their parents:
 We want the left arm to appear *behind*
 the hip and the torso. We could move the left arm nodes behind the hip (above
 the hip node in the scene hierarchy), but then the left arm is no longer in its
-proper place in the hierarchy. This means it wouldn't be affected the movement
+proper place in the hierarchy. This means it wouldn't be affected by the movement
 of the torso. We'll fix this problem with ``RemoteTransform2D`` nodes.
 
 .. note:: You can also fix depth ordering problems by adjusting the Z property
@@ -134,7 +134,7 @@ The :ref:`RemoteTransform2D <class_RemoteTransform2D>` node transforms nodes
 somewhere else in the hierarchy. This node applies its own transform (including
 any transformation it inherits from its parents) to the remote node it targets.
 
-This allows us to correct the visibility order of our elements independent from
+This allows us to correct the visibility order of our elements, independently of
 the locations of those parts in the cutout hierarchy.
 
 Create a ``RemoteTransform2D`` node as a child of the torso. Call it ``remote_arm_l``.
@@ -353,12 +353,12 @@ and/or RemoteTransform2D nodes. They provide overlapping functionality.
 Setting easing curves for multiple keys
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To apply the same the easing curve to multiple keyframes at once:
+To apply the same easing curve to multiple keyframes at once:
 
 1. Select the relevant keys.
-2. Click on the pencil icon in the bottom right of the animation panel, this
+2. Click on the pencil icon in the bottom right of the animation panel. This
    will open the transition editor.
-3. In the transition editor click on the desired curve to apply it.
+3. In the transition editor, click on the desired curve to apply it.
 
 .. image:: img/tuto_cutout24.png
 
@@ -369,4 +369,3 @@ Skeletal deform can be used to augment a cutout rig, allowing single pieces to
 deform organically (e.g. antennae that wobble as an insect character walks).
 
 This process is described in a :ref:`separate tutorial <doc_2d_skeletons>`.
-

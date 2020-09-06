@@ -9,12 +9,31 @@
 NodePath
 ========
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Pre-parsed scene tree path.
+
+Description
+-----------
+
+A pre-parsed relative or absolute path in a scene tree, for use with :ref:`Node.get_node<class_Node_method_get_node>` and similar functions. It can reference a node, a resource within a node, or a property of a node or resource. For instance, ``"Path2D/PathFollow2D/Sprite:texture:size"`` would refer to the ``size`` property of the ``texture`` resource on the node named ``"Sprite"`` which is a child of the other named nodes in the path.
+
+You will usually just pass a string to :ref:`Node.get_node<class_Node_method_get_node>` and it will be automatically converted, but you may occasionally want to parse a path ahead of time with ``NodePath`` or the literal syntax ``@"path"``. Exporting a ``NodePath`` variable will give you a node selection widget in the properties panel of the editor, which can often be useful.
+
+A ``NodePath`` is composed of a list of slash-separated node names (like a filesystem path) and an optional colon-separated list of "subnames" which can be resources or properties.
+
+Some examples of NodePaths include the following:
+
+::
+
+    # No leading slash means it is relative to the current node.
+    @"A" # Immediate child A
+    @"A/B" # A's child B
+    @"." # The current node.
+    @".." # The parent node.
+    @"../C" # A sibling node C.
+    # A leading slash means it is absolute from the SceneTree.
+    @"/root" # Equivalent to get_tree().get_root().
+    @"/root/Main" # If your main scene's root node were named "Main".
+    @"/root/MyAutoload" # If you have an autoloaded node or scene.
 
 Methods
 -------
@@ -38,15 +57,6 @@ Methods
 +---------------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`         | :ref:`is_empty<class_NodePath_method_is_empty>` **(** **)**                                   |
 +---------------------------------+-----------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A pre-parsed relative or absolute path in a scene tree, for use with :ref:`Node.get_node<class_Node_method_get_node>` and similar functions. It can reference a node, a resource within a node, or a property of a node or resource. For instance, ``"Path2D/PathFollow2D/Sprite:texture:size"`` would refer to the ``size`` property of the ``texture`` resource on the node named ``"Sprite"`` which is a child of the other named nodes in the path.
-
-You will usually just pass a string to :ref:`Node.get_node<class_Node_method_get_node>` and it will be automatically converted, but you may occasionally want to parse a path ahead of time with ``NodePath`` or the literal syntax ``@"path"``. Exporting a ``NodePath`` variable will give you a node selection widget in the properties panel of the editor, which can often be useful.
-
-A ``NodePath`` is composed of a list of slash-separated node names (like a filesystem path) and an optional colon-separated list of "subnames" which can be resources or properties.
 
 Method Descriptions
 -------------------
@@ -76,6 +86,8 @@ Examples of valid NodePaths (assuming that those nodes exist and have the refere
     # Absolute path (from "root")
     "/root/Level/Path2D"
 
+----
+
 .. _class_NodePath_method_get_as_property_path:
 
 - :ref:`NodePath<class_NodePath>` **get_as_property_path** **(** **)**
@@ -90,6 +102,8 @@ Returns a node path with a colon character (``:``) prepended, transforming it to
     var property_path = node_path.get_as_property_path()
     print(property_path) # :position:x
 
+----
+
 .. _class_NodePath_method_get_concatenated_subnames:
 
 - :ref:`String<class_String>` **get_concatenated_subnames** **(** **)**
@@ -100,6 +114,8 @@ Returns all subnames concatenated with a colon character (``:``) as separator, i
 
     var nodepath = NodePath("Path2D/PathFollow2D/Sprite:texture:load_path")
     print(nodepath.get_concatenated_subnames()) # texture:load_path
+
+----
 
 .. _class_NodePath_method_get_name:
 
@@ -114,6 +130,8 @@ Gets the node name indicated by ``idx`` (0 to :ref:`get_name_count<class_NodePat
     print(node_path.get_name(1)) # PathFollow2D
     print(node_path.get_name(2)) # Sprite
 
+----
+
 .. _class_NodePath_method_get_name_count:
 
 - :ref:`int<class_int>` **get_name_count** **(** **)**
@@ -121,6 +139,8 @@ Gets the node name indicated by ``idx`` (0 to :ref:`get_name_count<class_NodePat
 Gets the number of node names which make up the path. Subnames (see :ref:`get_subname_count<class_NodePath_method_get_subname_count>`) are not included.
 
 For example, ``"Path2D/PathFollow2D/Sprite"`` has 3 names.
+
+----
 
 .. _class_NodePath_method_get_subname:
 
@@ -134,6 +154,8 @@ Gets the resource or property name indicated by ``idx`` (0 to :ref:`get_subname_
     print(node_path.get_subname(0)) # texture
     print(node_path.get_subname(1)) # load_path
 
+----
+
 .. _class_NodePath_method_get_subname_count:
 
 - :ref:`int<class_int>` **get_subname_count** **(** **)**
@@ -142,11 +164,15 @@ Gets the number of resource or property names ("subnames") in the path. Each sub
 
 For example, ``"Path2D/PathFollow2D/Sprite:texture:load_path"`` has 2 subnames.
 
+----
+
 .. _class_NodePath_method_is_absolute:
 
 - :ref:`bool<class_bool>` **is_absolute** **(** **)**
 
 Returns ``true`` if the node path is absolute (as opposed to relative), which means that it starts with a slash character (``/``). Absolute node paths can be used to access the root node (``"/root"``) or autoloads (e.g. ``"/global"`` if a "global" autoload was registered).
+
+----
 
 .. _class_NodePath_method_is_empty:
 

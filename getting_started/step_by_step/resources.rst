@@ -16,8 +16,8 @@ another datatype that is just as important:
 arrange user interfaces, etc. **Resources** are **data containers**. They don't
 do anything on their own: instead, nodes use the data contained in resources.
 
-Anything Godot saves or loads from disk is a resource. Be it a scene (a .tscn or
-an .scn file), an image, a script... Here are some ``Resource`` examples:
+Anything Godot saves or loads from disk is a resource. Be it a scene (a ``.tscn``
+or an ``.scn`` file), an image, a script... Here are some ``Resource`` examples:
 :ref:`Texture <class_Texture>`, :ref:`Script <class_Script>`, :ref:`Mesh
 <class_Mesh>`, :ref:`Animation <class_Animation>`, :ref:`AudioStream
 <class_AudioStream>`, :ref:`Font <class_Font>`, :ref:`Translation
@@ -41,7 +41,7 @@ External vs built-in
 There are two ways to save resources. They can be:
 
 1. **External** to a scene, saved on the disk as individual files.
-2. **Built-in**, saved inside the \*.tscn or the \*.scn file they're attached to.
+2. **Built-in**, saved inside the ``.tscn`` or the ``.scn`` file they're attached to.
 
 To be more specific, here's a :ref:`Texture <class_Texture>`
 in a :ref:`Sprite <class_Sprite>` node:
@@ -58,8 +58,8 @@ this, it is an external resource. If you erase the path or this path is empty,
 it becomes a built-in resource.
 
 The switch between built-in and external resources happens when you save the
-scene. In the example above, if you erase the path \`"res://robi.png"\` and
-save, Godot will save the image inside the .tscn scene file.
+scene. In the example above, if you erase the path ``"res://robi.png"`` and
+save, Godot will save the image inside the ``.tscn`` scene file.
 
 .. note::
 
@@ -152,7 +152,7 @@ Creating your own resources
 
 Like any Object in Godot, users can also script Resources. Resource scripts
 inherit the ability to freely translate between object properties and serialized
-text or binary data (/*.tres, /*.res). They also inherit the reference-counting
+text or binary data (\*.tres, \*.res). They also inherit the reference-counting
 memory management from the Reference type.
 
 This comes with many distinct advantages over alternative data
@@ -179,38 +179,6 @@ and :ref:`Resource <class_Resource>` features:
 - Godot Engine's Inspector renders and edits Resource files out-of-the-box. As such, users often do not need to implement custom logic to visualize or edit their data. To do so, double-click the resource file in the FileSystem dock or click the folder icon in the Inspector and open the file in the dialog.
 
 - They can extend **other** resource types besides just the base Resource.
-
-.. warning::
-
-    Resources and Dictionaries are both passed by reference, but only Resources are
-    reference-counted. This means that if a Dictionary is passed between objects and
-    the first object is deleted, all other objects' references to the Dictionary will
-    be invalidated. Conversely, Resources will not be freed from memory until *all* the 
-    objects are deleted.
-
-    .. tabs::
-      .. code-tab:: gdscript GDScript
-
-        extends Node
-
-        class MyObject:
-            extends Object
-            var dict = {}
-
-        func _ready():
-            var obj1 = MyObject.new()
-            var obj2 = MyObject.new()
-            obj1.dict.greeting = "hello"
-            obj2.dict = obj1.dict             # 'obj2.dict' now references 'obj1's Dictionary.
-            obj1.free()                       # 'obj1' is freed and the Dictionary too!
-            print(obj2.dict.greeting)         # Error! 'greeting' index accessed on null instance!
-
-            # To avoid this, we must manually duplicate the Dictionary.
-            obj1 = MyObject.new()
-            obj1.dict.greeting = "hello"
-            obj2.dict = obj1.dict.duplicate() # Now we are passing a copy, not a reference.
-            obj1.free()                       # obj2's Dictionary still exists.
-            print(obj2.dict.greeting)         # Prints 'hello'.
 
 Godot makes it easy to create custom Resources in the Inspector.
 

@@ -129,12 +129,14 @@ Place the resulting ``api.json`` file in the project folder and add
 below.
 
 To generate and compile the bindings, use this command (replacing ``<platform>``
-with ``windows``, ``x11`` or ``osx`` depending on your OS):
+with ``windows``, ``linux`` or ``osx`` depending on your OS):
+
+To speed up compilation, add `-jN` at the end of the SCons command line where `N` is the number of CPU threads you have on your system. The example below uses 4 threads.
 
 .. code-block:: none
 
     cd godot-cpp
-    scons platform=<platform> generate_bindings=yes
+    scons platform=<platform> generate_bindings=yes -j4
     cd ..
 
 This step will take a while. When it is completed, you should have static
@@ -418,13 +420,13 @@ loaded for each platform and is called ``gdexample.gdnlib``.
 
     [entry]
 
-    X11.64="res://bin/x11/libgdexample.so"
+    Linux.64="res://bin/linux/libgdexample.so"
     Windows.64="res://bin/win64/libgdexample.dll"
     OSX.64="res://bin/osx/libgdexample.dylib"
 
     [dependencies]
 
-    X11.64=[]
+    Linux.64=[]
     Windows.64=[]
     OSX.64=[]
 
@@ -465,7 +467,6 @@ NativeScript.
     resource_name = "gdexample"
     class_name = "GDExample"
     library = ExtResource( 1 )
-    _sections_unfolded = [ "Resource" ]
 
 This is a standard Godot resource; you could just create it directly in your
 scene, but saving it to a file makes it much easier to reuse it in other places.
@@ -761,7 +762,7 @@ as follows:
 
 Here we see a nice improvement in the latest version of godot-cpp where our
 ``register_signal`` method can be a single call first taking the signals name,
-then having pairs of values specificying the parameter name and type of each
+then having pairs of values specifying the parameter name and type of each
 parameter we'll send along with this signal.
 
 For NativeScript 1.0 we first build a dictionary in which we tell Godot about

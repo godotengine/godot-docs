@@ -11,34 +11,34 @@ AnimationNodeAnimation
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Input animation to use in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
-
-Properties
-----------
-
-+-----------------------------+-------------------------------------------------------------------+----+
-| :ref:`String<class_String>` | :ref:`animation<class_AnimationNodeAnimation_property_animation>` | "" |
-+-----------------------------+-------------------------------------------------------------------+----+
 
 Description
 -----------
 
 A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Only features one output set using the :ref:`animation<class_AnimationNodeAnimation_property_animation>` property. Use it as an input for :ref:`AnimationNode<class_AnimationNode>` that blend animations together.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/animation_tree`
+
+Properties
+----------
+
++-------------------------------------+-------------------------------------------------------------------+---------+
+| :ref:`StringName<class_StringName>` | :ref:`animation<class_AnimationNodeAnimation_property_animation>` | ``@""`` |
++-------------------------------------+-------------------------------------------------------------------+---------+
+
 Property Descriptions
 ---------------------
 
 .. _class_AnimationNodeAnimation_property_animation:
 
-- :ref:`String<class_String>` **animation**
+- :ref:`StringName<class_StringName>` **animation**
 
 +-----------+----------------------+
-| *Default* | ""                   |
+| *Default* | ``@""``              |
 +-----------+----------------------+
 | *Setter*  | set_animation(value) |
 +-----------+----------------------+

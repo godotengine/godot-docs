@@ -11,12 +11,26 @@ EditorScript
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base script that can be used to add extension functions to the editor.
+
+Description
+-----------
+
+Scripts extending this class and implementing its :ref:`_run<class_EditorScript_method__run>` method can be executed from the Script Editor's **File > Run** menu option (or by pressing ``Ctrl+Shift+X``) while the editor is running. This is useful for adding custom in-editor functionality to Godot. For more complex additions, consider using :ref:`EditorPlugin<class_EditorPlugin>`\ s instead.
+
+**Note:** Extending scripts need to have ``tool`` mode enabled.
+
+**Example script:**
+
+::
+
+    tool
+    extends EditorScript
+    
+    func _run():
+        print("Hello from the Godot Editor!")
+
+**Note:** The script is run in the Editor context, which means the output is visible in the console window started with the Editor (stdout) instead of the usual Godot **Output** dock.
 
 Methods
 -------
@@ -31,25 +45,6 @@ Methods
 | :ref:`Node<class_Node>`                       | :ref:`get_scene<class_EditorScript_method_get_scene>` **(** **)**                                      |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-Scripts extending this class and implementing its :ref:`_run<class_EditorScript_method__run>` method can be executed from the Script Editor's **File > Run** menu option (or by pressing ``Ctrl+Shift+X``) while the editor is running. This is useful for adding custom in-editor functionality to Godot. For more complex additions, consider using :ref:`EditorPlugin<class_EditorPlugin>`\ s instead.
-
-**Note:** Extending scripts need to have ``tool mode`` enabled.
-
-**Example script:**
-
-::
-
-    tool
-    extends EditorScript
-    
-    func _run():
-        print("Hello from the Godot Editor!")
-
-**Note:** The script is run in the Editor context, which means the output is visible in the console window started with the Editor (stdout) instead of the usual Godot **Output** dock.
-
 Method Descriptions
 -------------------
 
@@ -59,6 +54,8 @@ Method Descriptions
 
 This method is executed by the Editor when **File > Run** is used.
 
+----
+
 .. _class_EditorScript_method_add_root_node:
 
 - void **add_root_node** **(** :ref:`Node<class_Node>` node **)**
@@ -67,11 +64,15 @@ Adds ``node`` as a child of the root node in the editor context.
 
 **Warning:** The implementation of this method is currently disabled.
 
+----
+
 .. _class_EditorScript_method_get_editor_interface:
 
 - :ref:`EditorInterface<class_EditorInterface>` **get_editor_interface** **(** **)**
 
 Returns the :ref:`EditorInterface<class_EditorInterface>` singleton instance.
+
+----
 
 .. _class_EditorScript_method_get_scene:
 

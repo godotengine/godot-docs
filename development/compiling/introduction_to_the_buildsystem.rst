@@ -3,7 +3,7 @@
 Introduction to the buildsystem
 ===============================
 
-.. highlight:: none
+.. highlight:: shell
 
 SCons
 -----
@@ -40,9 +40,9 @@ Setup
 -----
 
 Please refer to the documentation for :ref:`doc_compiling_for_android`,
-:ref:`doc_compiling_for_ios`, :ref:`doc_compiling_for_osx`,
-:ref:`doc_compiling_for_uwp`, :ref:`doc_compiling_for_web`,
-:ref:`doc_compiling_for_windows` and :ref:`doc_compiling_for_x11`.
+:ref:`doc_compiling_for_ios`,  :ref:`doc_compiling_for_linuxbsd`,
+:ref:`doc_compiling_for_osx`, :ref:`doc_compiling_for_uwp`,
+:ref:`doc_compiling_for_web`, and :ref:`doc_compiling_for_windows`.
 
 Note that for **Windows/Visual Studio**, you need to use ``x86_x64 Cross Tools
 Command Prompt for VS 2017`` or similar, depending on your install, instead of
@@ -62,24 +62,24 @@ It will then start building for the target platform right away.
 
 To list the available target platforms, use ``scons platform=list``::
 
-    user@host:~/godot$ scons platform=list
+    scons platform=list
     scons: Reading SConscript files ...
     The following platforms are available:
 
         android
         javascript
+        linuxbsd
         server
         windows
-        x11
 
     Please run SCons again and select a valid platform: platform=<string>
 
-To build for a platform (for example, x11), run with the ``platform=`` (or
-``p=`` to make it short) argument:
+To build for a platform (for example, ``linuxbsd``), run with the ``platform=``
+(or ``p=`` to make it short) argument:
 
 ::
 
-    user@host:~/godot$ scons platform=x11
+    scons platform=linuxbsd
 
 This will start the build process, which will take a while. If you want
 SCons to build faster, use the ``-j <cores>`` parameter to specify how many
@@ -90,7 +90,7 @@ Example for using 4 cores:
 
 ::
 
-    user@host:~/godot$ scons platform=x11 -j 4
+    scons platform=linuxbsd -j 4
 
 Resulting binary
 ----------------
@@ -102,13 +102,15 @@ generally with this naming convention::
 
 For the previous build attempt, the result would look like this::
 
-    user@host:~/godot$ ls bin
-    bin/godot.x11.tools.64
+    ls bin
+    bin/godot.linuxbsd.tools.64
 
-This means that the binary is for X11, is not optimized, has tools (the
+This means that the binary is for Linux *or* \*BSD (*not* both), is not optimized, has tools (the
 whole editor) compiled in, and is meant for 64 bits.
 
-A Windows binary with the same configuration will look like this::
+A Windows binary with the same configuration will look like this:
+
+.. code-block:: console
 
     C:\godot> dir bin/
     godot.windows.tools.64.exe
@@ -122,6 +124,8 @@ you can build them yourself).
 Aside from that, there are a few standard options that can be set in all
 build targets, and which will be explained below.
 
+.. _doc_introduction_to_the_buildsystem_tools:
+
 Tools
 -----
 
@@ -133,6 +137,8 @@ manager.
 ::
 
     scons platform=<platform> tools=yes/no
+
+.. _doc_introduction_to_the_buildsystem_target:
 
 Target
 ------
@@ -176,6 +182,48 @@ This flag appends ``.32`` or ``.64`` suffixes to resulting binaries when
 relevant. If ``bits=default`` is used, the suffix will match the detected
 architecture.
 
+.. _doc_buildsystem_custom_modules:
+
+Custom modules
+--------------
+
+It's possible to compile modules residing outside of Godot's directory
+tree, along with the built-in modules.
+
+A ``custom_modules`` build option can be passed to the command line before
+compiling. The option represents a comma-separated list of directory paths
+containing a collection of independent C++ modules that can be seen as C++
+packages, just like the built-in ``modules/`` directory.
+
+For instance, it's possible to provide both relative, absolute, and user
+directory paths containing such modules:
+
+::
+
+    scons custom_modules="../modules,/abs/path/to/modules,~/src/godot_modules"
+
+.. note::
+
+    If there's any custom module with the exact directory name as a built-in
+    module, the engine will only compile the custom one. This logic can be used
+    to override built-in module implementations.
+
+.. seealso::
+
+    :ref:`doc_custom_modules_in_c++`
+
+Cleaning generated files
+------------------------
+
+Sometimes, you may encounter an error due to generated files being present. You
+can remove them by using ``scons --clean <options>``, where ``<options>`` is the
+list of build options you've used to build Godot previously.
+
+Alternatively, you can use ``git clean -fixd`` which will clean build artifacts
+for all platforms and configurations. Beware, as this will remove all untracked
+and ignored files in the repository. Don't run this command if you have
+uncommitted work!
+
 Other build options
 -------------------
 
@@ -185,6 +233,75 @@ features to include/disable.
 
 Check the output of ``scons --help`` for details about each option for
 the version you are willing to compile.
+
+.. _doc_overriding_build_options:
+
+Overriding the build options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Using a file
+^^^^^^^^^^^^
+
+The default ``custom.py`` file can be created at the root of the Godot Engine
+source to initialize any SCons build options passed via the command line:
+
+.. code-block:: python
+
+    # custom.py
+
+    optimize = "size"
+    module_mono_enabled = "yes"
+    use_llvm = "yes"
+    extra_suffix = "game_title"
+
+You can also disable some of the builtin modules before compiling, saving some
+time it takes to build the engine, see :ref:`doc_optimizing_for_size` page for more details.
+
+Another custom file can be specified explicitly with the ``profile`` command
+line option, both overriding the default build configuration:
+
+.. code-block:: shell
+
+    scons profile=path/to/custom.py
+
+.. note:: Build options set from the file can be overridden by the command line
+          options.
+
+It's also possible to override the options conditionally:
+
+.. code-block:: python
+
+    # custom.py
+
+    import version
+
+    # Override options specific for Godot 3.x and 4.x versions.
+    if version.major == 3:
+        pass
+    elif version.major == 4:
+        pass
+
+Using the SCONSFLAGS
+^^^^^^^^^^^^^^^^^^^^
+
+``SCONSFLAGS`` is an environment variable which is used by the SCons to set the
+options automatically without having to supply them via the command line.
+
+For instance, you may want to build Godot in parallel with the aforementioned
+``-j`` option for all the future builds:
+
+.. tabs::
+ .. code-tab:: bash Linux/macOS
+
+     export SCONSFLAGS="-j4"
+
+ .. code-tab:: bat Windows (cmd)
+
+     set SCONSFLAGS=-j4
+
+ .. code-tab:: powershell Windows (powershell)
+
+     $env:SCONSFLAGS="-j4"
 
 Export templates
 ----------------
@@ -198,12 +315,12 @@ If you download the official export templates package and unzip it, you
 will notice that most files are optimized binaries or packages for each
 platform:
 
-::
+.. code-block:: none
 
     android_debug.apk
     android_release.apk
-    javascript_debug.zip
-    javascript_release.zip
+    webassembly_debug.zip
+    webassembly_release.zip
     linux_server_32
     linux_server_64
     linux_x11_32_debug

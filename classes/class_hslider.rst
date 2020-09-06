@@ -11,38 +11,27 @@ HSlider
 
 **Inherits:** :ref:`Slider<class_Slider>` **<** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Horizontal slider.
-
-Theme Properties
-----------------
-
-+---------------------------------+-------------------+
-| :ref:`StyleBox<class_StyleBox>` | focus             |
-+---------------------------------+-------------------+
-| :ref:`Texture<class_Texture>`   | grabber           |
-+---------------------------------+-------------------+
-| :ref:`StyleBox<class_StyleBox>` | grabber_area      |
-+---------------------------------+-------------------+
-| :ref:`Texture<class_Texture>`   | grabber_disabled  |
-+---------------------------------+-------------------+
-| :ref:`StyleBox<class_StyleBox>` | grabber_disabled  |
-+---------------------------------+-------------------+
-| :ref:`Texture<class_Texture>`   | grabber_highlight |
-+---------------------------------+-------------------+
-| :ref:`StyleBox<class_StyleBox>` | grabber_highlight |
-+---------------------------------+-------------------+
-| :ref:`StyleBox<class_StyleBox>` | slider            |
-+---------------------------------+-------------------+
-| :ref:`Texture<class_Texture>`   | tick              |
-+---------------------------------+-------------------+
 
 Description
 -----------
 
 Horizontal slider. See :ref:`Slider<class_Slider>`. This one goes from left (min) to right (max).
+
+Theme Properties
+----------------
+
++-----------------------------------+-------------------+
+| :ref:`Texture2D<class_Texture2D>` | grabber           |
++-----------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>`   | grabber_area      |
++-----------------------------------+-------------------+
+| :ref:`Texture2D<class_Texture2D>` | grabber_disabled  |
++-----------------------------------+-------------------+
+| :ref:`Texture2D<class_Texture2D>` | grabber_highlight |
++-----------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>`   | slider            |
++-----------------------------------+-------------------+
+| :ref:`Texture2D<class_Texture2D>` | tick              |
++-----------------------------------+-------------------+
 

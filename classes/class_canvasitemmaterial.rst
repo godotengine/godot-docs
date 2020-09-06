@@ -11,29 +11,29 @@ CanvasItemMaterial
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A material for :ref:`CanvasItem<class_CanvasItem>`\ s.
+
+Description
+-----------
+
+``CanvasItemMaterial``\ s provide a means of modifying the textures associated with a CanvasItem. They specialize in describing blend and lighting behaviors for textures. Use a :ref:`ShaderMaterial<class_ShaderMaterial>` to more fully customize a material's interactions with a :ref:`CanvasItem<class_CanvasItem>`.
 
 Properties
 ----------
 
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` | :ref:`blend_mode<class_CanvasItemMaterial_property_blend_mode>`                           | 0     |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`LightMode<enum_CanvasItemMaterial_LightMode>` | :ref:`light_mode<class_CanvasItemMaterial_property_light_mode>`                           | 0     |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                               | :ref:`particles_anim_h_frames<class_CanvasItemMaterial_property_particles_anim_h_frames>` |       |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                             | :ref:`particles_anim_loop<class_CanvasItemMaterial_property_particles_anim_loop>`         |       |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                               | :ref:`particles_anim_v_frames<class_CanvasItemMaterial_property_particles_anim_v_frames>` |       |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                             | :ref:`particles_animation<class_CanvasItemMaterial_property_particles_animation>`         | false |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------+-------+
++-----------------------------------------------------+-------------------------------------------------------------------------------------------+-----------+
+| :ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` | :ref:`blend_mode<class_CanvasItemMaterial_property_blend_mode>`                           | ``0``     |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------+-----------+
+| :ref:`LightMode<enum_CanvasItemMaterial_LightMode>` | :ref:`light_mode<class_CanvasItemMaterial_property_light_mode>`                           | ``0``     |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                               | :ref:`particles_anim_h_frames<class_CanvasItemMaterial_property_particles_anim_h_frames>` |           |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                             | :ref:`particles_anim_loop<class_CanvasItemMaterial_property_particles_anim_loop>`         |           |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                               | :ref:`particles_anim_v_frames<class_CanvasItemMaterial_property_particles_anim_v_frames>` |           |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                             | :ref:`particles_animation<class_CanvasItemMaterial_property_particles_animation>`         | ``false`` |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------+-----------+
 
 Enumerations
 ------------
@@ -62,6 +62,8 @@ enum **BlendMode**:
 
 - **BLEND_MODE_PREMULT_ALPHA** = **4** --- Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.
 
+----
+
 .. _enum_CanvasItemMaterial_LightMode:
 
 .. _class_CanvasItemMaterial_constant_LIGHT_MODE_NORMAL:
@@ -78,11 +80,6 @@ enum **LightMode**:
 
 - **LIGHT_MODE_LIGHT_ONLY** = **2** --- Render the material as if there were only light.
 
-Description
------------
-
-``CanvasItemMaterial``\ s provide a means of modifying the textures associated with a CanvasItem. They specialize in describing blend and lighting behaviors for textures. Use a :ref:`ShaderMaterial<class_ShaderMaterial>` to more fully customize a material's interactions with a :ref:`CanvasItem<class_CanvasItem>`.
-
 Property Descriptions
 ---------------------
 
@@ -91,7 +88,7 @@ Property Descriptions
 - :ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` **blend_mode**
 
 +-----------+-----------------------+
-| *Default* | 0                     |
+| *Default* | ``0``                 |
 +-----------+-----------------------+
 | *Setter*  | set_blend_mode(value) |
 +-----------+-----------------------+
@@ -100,12 +97,14 @@ Property Descriptions
 
 The manner in which a material's rendering is applied to underlying textures.
 
+----
+
 .. _class_CanvasItemMaterial_property_light_mode:
 
 - :ref:`LightMode<enum_CanvasItemMaterial_LightMode>` **light_mode**
 
 +-----------+-----------------------+
-| *Default* | 0                     |
+| *Default* | ``0``                 |
 +-----------+-----------------------+
 | *Setter*  | set_light_mode(value) |
 +-----------+-----------------------+
@@ -113,6 +112,8 @@ The manner in which a material's rendering is applied to underlying textures.
 +-----------+-----------------------+
 
 The manner in which material reacts to lighting.
+
+----
 
 .. _class_CanvasItemMaterial_property_particles_anim_h_frames:
 
@@ -124,6 +125,12 @@ The manner in which material reacts to lighting.
 | *Getter* | get_particles_anim_h_frames()      |
 +----------+------------------------------------+
 
+The number of columns in the spritesheet assigned as :ref:`Texture2D<class_Texture2D>` for a :ref:`Particles2D<class_Particles2D>` or :ref:`CPUParticles2D<class_CPUParticles2D>`.
+
+**Note:** This property is only used and visible in the editor if :ref:`particles_animation<class_CanvasItemMaterial_property_particles_animation>` is ``true``.
+
+----
+
 .. _class_CanvasItemMaterial_property_particles_anim_loop:
 
 - :ref:`bool<class_bool>` **particles_anim_loop**
@@ -133,6 +140,12 @@ The manner in which material reacts to lighting.
 +----------+--------------------------------+
 | *Getter* | get_particles_anim_loop()      |
 +----------+--------------------------------+
+
+If ``true``, the particles animation will loop.
+
+**Note:** This property is only used and visible in the editor if :ref:`particles_animation<class_CanvasItemMaterial_property_particles_animation>` is ``true``.
+
+----
 
 .. _class_CanvasItemMaterial_property_particles_anim_v_frames:
 
@@ -144,15 +157,25 @@ The manner in which material reacts to lighting.
 | *Getter* | get_particles_anim_v_frames()      |
 +----------+------------------------------------+
 
+The number of rows in the spritesheet assigned as :ref:`Texture2D<class_Texture2D>` for a :ref:`Particles2D<class_Particles2D>` or :ref:`CPUParticles2D<class_CPUParticles2D>`.
+
+**Note:** This property is only used and visible in the editor if :ref:`particles_animation<class_CanvasItemMaterial_property_particles_animation>` is ``true``.
+
+----
+
 .. _class_CanvasItemMaterial_property_particles_animation:
 
 - :ref:`bool<class_bool>` **particles_animation**
 
 +-----------+--------------------------------+
-| *Default* | false                          |
+| *Default* | ``false``                      |
 +-----------+--------------------------------+
 | *Setter*  | set_particles_animation(value) |
 +-----------+--------------------------------+
 | *Getter*  | get_particles_animation()      |
 +-----------+--------------------------------+
+
+If ``true``, enable spritesheet-based animation features when assigned to :ref:`Particles2D<class_Particles2D>` and :ref:`CPUParticles2D<class_CPUParticles2D>` nodes. The :ref:`ParticlesMaterial.anim_speed<class_ParticlesMaterial_property_anim_speed>` or :ref:`CPUParticles2D.anim_speed<class_CPUParticles2D_property_anim_speed>` should also be set to a positive value for the animation to play.
+
+This property (and other ``particles_anim_*`` properties that depend on it) has no effect on other types of nodes.
 

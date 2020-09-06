@@ -11,25 +11,7 @@ MarginContainer
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Simple margin container.
-
-Theme Properties
-----------------
-
-+-----------------------+---------------+---+
-| :ref:`int<class_int>` | margin_bottom | 0 |
-+-----------------------+---------------+---+
-| :ref:`int<class_int>` | margin_left   | 0 |
-+-----------------------+---------------+---+
-| :ref:`int<class_int>` | margin_right  | 0 |
-+-----------------------+---------------+---+
-| :ref:`int<class_int>` | margin_top    | 0 |
-+-----------------------+---------------+---+
 
 Description
 -----------
@@ -45,4 +27,17 @@ Adds a top, left, bottom, and right margin to all :ref:`Control<class_Control>` 
     set("custom_constants/margin_left", margin_value)
     set("custom_constants/margin_bottom", margin_value)
     set("custom_constants/margin_right", margin_value)
+
+Theme Properties
+----------------
+
++-----------------------+---------------+---+
+| :ref:`int<class_int>` | margin_bottom | 0 |
++-----------------------+---------------+---+
+| :ref:`int<class_int>` | margin_left   | 0 |
++-----------------------+---------------+---+
+| :ref:`int<class_int>` | margin_right  | 0 |
++-----------------------+---------------+---+
+| :ref:`int<class_int>` | margin_top    | 0 |
++-----------------------+---------------+---+
 

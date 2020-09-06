@@ -11,21 +11,7 @@ LightOccluder2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Occludes light cast by a Light2D, casting shadows.
-
-Properties
-----------
-
-+---------------------------------------------------+--------------------------------------------------------------+---+
-| :ref:`int<class_int>`                             | :ref:`light_mask<class_LightOccluder2D_property_light_mask>` | 1 |
-+---------------------------------------------------+--------------------------------------------------------------+---+
-| :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` | :ref:`occluder<class_LightOccluder2D_property_occluder>`     |   |
-+---------------------------------------------------+--------------------------------------------------------------+---+
 
 Description
 -----------
@@ -37,6 +23,15 @@ Tutorials
 
 - :doc:`../tutorials/2d/2d_lights_and_shadows`
 
+Properties
+----------
+
++---------------------------------------------------+--------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                             | :ref:`light_mask<class_LightOccluder2D_property_light_mask>` | ``1`` |
++---------------------------------------------------+--------------------------------------------------------------+-------+
+| :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` | :ref:`occluder<class_LightOccluder2D_property_occluder>`     |       |
++---------------------------------------------------+--------------------------------------------------------------+-------+
+
 Property Descriptions
 ---------------------
 
@@ -45,7 +40,7 @@ Property Descriptions
 - :ref:`int<class_int>` **light_mask**
 
 +-----------+--------------------------------+
-| *Default* | 1                              |
+| *Default* | ``1``                          |
 +-----------+--------------------------------+
 | *Setter*  | set_occluder_light_mask(value) |
 +-----------+--------------------------------+
@@ -53,6 +48,8 @@ Property Descriptions
 +-----------+--------------------------------+
 
 The LightOccluder2D's light mask. The LightOccluder2D will cast shadows only from Light2D(s) that have the same light mask(s).
+
+----
 
 .. _class_LightOccluder2D_property_occluder:
 

@@ -9,7 +9,7 @@ The basic idea is that you want to transition from A to B. A value ``t``, repres
 
 As an example if ``t`` is 0, then the state is A. If ``t`` is 1, then the state is B. Anything in-between is an *interpolation*.
 
-Between two real (floating point) numbers, a simple interpolation is usually described as:
+Between two real (floating-point) numbers, a simple interpolation is usually described as:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -22,8 +22,6 @@ And often simplified to:
  .. code-tab:: gdscript GDScript
 
     interpolation = A + (B - A) * t
-
-which is exactly the same.
 
 The name of this type of interpolation, which transforms a value into another at *constant speed* is *"linear"*. So, when you hear about *Linear Interpolation*, you know they are referring to this simple formula.
 

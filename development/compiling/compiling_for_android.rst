@@ -21,21 +21,24 @@ Requirements
 
 For compiling under Windows, Linux or macOS, the following is required:
 
--  `Python 2.7+ or Python 3.5+ <https://www.python.org/downloads/>`_
--  `SCons <https://scons.org/pages/download.html>`_ build system
--  `Android SDK <https://developer.android.com/studio/#command-tools>`_ (command-line tools are sufficient)
+-  `Python 3.5+ <https://www.python.org/downloads/>`_.
+-  `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system.
+-  `Android SDK <https://developer.android.com/studio/#command-tools>`_
+   (command-line tools are sufficient).
 
-   -  Required SDK components will be automatically installed by Gradle (except the NDK)
+   -  Required SDK components will be automatically installed by Gradle (except the NDK).
 
--  `Android NDK <https://developer.android.com/ndk/downloads/>`_ r17 or later
--  Gradle (will be downloaded and installed automatically if missing)
--  JDK 8 (either OpenJDK or Oracle JDK)
+-  `Android NDK <https://developer.android.com/ndk/downloads/>`_ r17 or later.
+-  Gradle (will be downloaded and installed automatically if missing).
+-  JDK 8 (either OpenJDK or Oracle JDK).
 
-   -  JDK 9 or later are not currently supported
-   -  You can download a build from `ojdkbuild <https://github.com/ojdkbuild/ojdkbuild>`_
+   -  JDK 9 or later are not currently supported.
+   -  You can download a build from `ojdkbuild <https://github.com/ojdkbuild/ojdkbuild>`_.
 
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
+
+.. _doc_android_setting_up_the_buildsystem:
 
 Setting up the buildsystem
 --------------------------
@@ -60,7 +63,7 @@ to the same path, especially if you are using custom Android modules,
 since some Gradle plugins rely on the NDK and use this variable to
 determine its location.
 
-To set those environment variables on Windows, press **Windows + R**, type
+To set those environment variables on Windows, press :kbd:`Windows + R`, type
 "control system", then click on **Advanced system settings** in the left
 pane, then click on **Environment variables** on the window that
 appears.
@@ -80,8 +83,8 @@ As Google will require all APKs to include ARMv8 (64-bit) libraries starting
 from August 2019, the commands below will build an APK containing both
 ARMv7 and ARMv8 libraries.
 
-Compiling the standard export templates is done by calling SCons with
-the following arguments:
+Compiling the standard export templates is done by calling SCons from the Godot
+root directory with the following arguments:
 
 -  Release template (used when exporting with **Debugging Enabled** unchecked)
 
@@ -91,9 +94,9 @@ the following arguments:
     scons platform=android target=release android_arch=arm64v8
     cd platform/android/java
     # On Windows
-    .\gradlew build
+    .\gradlew generateGodotTemplates
     # On Linux and macOS
-    ./gradlew build
+    ./gradlew generateGodotTemplates
 
 
 The resulting APK will be located at ``bin/android_release.apk``.
@@ -106,9 +109,9 @@ The resulting APK will be located at ``bin/android_release.apk``.
     scons platform=android target=release_debug android_arch=arm64v8
     cd platform/android/java
     # On Windows
-    .\gradlew build
+    .\gradlew generateGodotTemplates
     # On Linux and macOS
-    ./gradlew build
+    ./gradlew generateGodotTemplates
 
 
 The resulting APK will be located at ``bin/android_debug.apk``.
@@ -116,26 +119,42 @@ The resulting APK will be located at ``bin/android_debug.apk``.
 Adding support for x86 devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you also want to include support for x86 devices, run the SCons command
-a third time with the ``android_arch=x86`` argument before building the APK
-with Gradle. For example, for the release template:
+If you also want to include support for x86 and x86-64 devices, run the SCons
+command a third and fourth time with the ``android_arch=x86``, and
+``android_arch=x86_64`` arguments before building the APK with Gradle. For
+example, for the release template:
 
 ::
 
     scons platform=android target=release android_arch=armv7
     scons platform=android target=release android_arch=arm64v8
     scons platform=android target=release android_arch=x86
+    scons platform=android target=release android_arch=x86_64
     cd platform/android/java
     # On Windows
-    .\gradlew build
+    .\gradlew generateGodotTemplates
     # On Linux and macOS
-    ./gradlew build
+    ./gradlew generateGodotTemplates
 
 
 This will create a fat binary that works on all platforms.
 The final APK size of exported projects will depend on the platforms you choose
 to support when exporting; in other words, unused platforms will be removed from
 the APK.
+
+Cleaning the generated export templates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can use the following commands to remove the generated export templates:
+
+::
+
+    cd platform/android/java
+    # On Windows
+    .\gradlew cleanGodotTemplates
+    # On Linux and macOS
+    ./gradlew cleanGodotTemplates
+
 
 Using the export templates
 --------------------------
@@ -179,6 +198,15 @@ referenced.
 
 Troubleshooting
 ---------------
+
+Platform doesn't appear in SCons
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Double-check that you've set both the ``ANDROID_HOME`` and ``ANDROID_NDK_ROOT``
+environment variables. This is required for the platform to appear in SCons'
+list of detected platforms.
+See :ref:`Setting up the buildsystem <doc_android_setting_up_the_buildsystem>`
+for more information.
 
 Application not installed
 ~~~~~~~~~~~~~~~~~~~~~~~~~

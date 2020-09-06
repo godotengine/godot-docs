@@ -37,14 +37,14 @@ you can define multiple keys for the same action (e.g. they keyboard escape key 
 You can then more easily change this mapping in the project settings without updating your code,
 and even build a key mapping feature on top of it to allow your game to change the key mapping at runtime!
 
-You can setup your InputMap under **Project > Project Settings > Input Map** and then use those actions like this:
+You can set up your InputMap under **Project > Project Settings > Input Map** and then use those actions like this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _process(delta):
         if Input.is_action_pressed("ui_right"):
-            # Move right
+            # Move right.
 
  .. code-tab:: csharp
 
@@ -52,7 +52,7 @@ You can setup your InputMap under **Project > Project Settings > Input Map** and
     {
         if (Input.IsActionPressed("ui_right"))
         {
-            // Move right
+            // Move right.
         }
     }
 
@@ -115,7 +115,7 @@ specific Controls, only direct ancestors of the targeted Control node receive th
 In accordance with Godot's node-based design, this enables
 specialized child nodes to handle and consume particular events, while
 their ancestors, and ultimately the scene root, can provide more
-generalized behaviour if needed.
+generalized behavior if needed.
 
 Anatomy of an InputEvent
 ------------------------
@@ -124,14 +124,14 @@ Anatomy of an InputEvent
 anything and only contains some basic information, such as event ID
 (which is increased for each event), device index, etc.
 
-There are several specialised types of InputEvent, described in the table below:
+There are several specialized types of InputEvent, described in the table below:
 
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
 | Event                                                             | Type Index         | Description                             |
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
 | :ref:`InputEvent <class_InputEvent>`                              | NONE               | Empty Input Event.                      |
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
-| :ref:`InputEventKey <class_InputEventKey>`                        | KEY                | Contains a scancode and unicode value,  |
+| :ref:`InputEventKey <class_InputEventKey>`                        | KEY                | Contains a scancode and Unicode value,  |
 |                                                                   |                    | as well as modifiers.                   |
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
 | :ref:`InputEventMouseButton <class_InputEventMouseButton>`        | MOUSE_BUTTON       | Contains click information, such as     |
@@ -184,19 +184,19 @@ The Input singleton has a method for this:
  .. code-tab:: gdscript GDScript
 
     var ev = InputEventAction.new()
-    # set as move_left, pressed
+    # Set as move_left, pressed.
     ev.action = "move_left"
     ev.pressed = true
-    # feedback
+    # Feedback.
     Input.parse_input_event(ev)
 
  .. code-tab:: csharp
 
     var ev = new InputEventAction();
-    // set as move_left, pressed
+    // Set as move_left, pressed.
     ev.SetAction("move_left");
     ev.SetPressed(true);
-    // feedback
+    // Feedback.
     Input.ParseInputEvent(ev);
 
 InputMap

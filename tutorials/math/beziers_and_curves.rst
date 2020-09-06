@@ -30,7 +30,7 @@ change the value of ``t`` from 0 to 1.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _quadratic_bezier(p0: Vector2, p1: Vector2, p2: Vector2, t: float): 
+    func _quadratic_bezier(p0: Vector2, p1: Vector2, p2: Vector2, t: float):
         var q0 = p0.linear_interpolate(p1, t)
         var q1 = p1.linear_interpolate(p2, t)
 
@@ -180,7 +180,7 @@ The reason is that some sections of a curve (specifically, corners) may require 
 
 Additionally, if both control points were ``0, 0`` (remember they are relative vectors), the Bezier curve would just be a straight line (so drawing a high amount of points would be wasteful).
 
-Before drawing Bezier curves, *tesselation* is required. This is often done with a recursive or divide and conquer function that splits the curve until the curvature amount becomes less than a certain threshold.
+Before drawing Bezier curves, *tessellation* is required. This is often done with a recursive or divide and conquer function that splits the curve until the curvature amount becomes less than a certain threshold.
 
 The *Curve* classes provide this via the
 :ref:`Curve2D.tessellate() <class_Curve2D_method_tessellate>` function (which receives optional ``stages`` of recursion and angle ``tolerance`` arguments). This way, drawing something based on a curve is easier.

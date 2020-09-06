@@ -7,7 +7,7 @@ Introduction
 ------------
 
 Godot implements multi-threading as servers. Servers are daemons which
-manages data, processes, and pushes the result. Servers implement the
+manage data, process it, and push the result. Servers implement the
 mediator pattern which interprets resource ID and process data for the
 engine and other modules. In addition, the server claims ownership for
 its RID allocations.
@@ -38,7 +38,7 @@ Creating a Godot server
 At minimum, a server must have a static instance, a sleep timer, a thread loop,
 an initialization state and a cleanup procedure.
 
-.. code:: cpp
+.. code-block:: cpp
 
 	#ifndef HILBERT_HOTEL_H
 	#define HILBERT_HOTEL_H
@@ -92,7 +92,7 @@ an initialization state and a cleanup procedure.
 
 	#endif
 
-.. code:: cpp
+.. code-block:: cpp
 
 	#include "hilbert_hotel.h"
 
@@ -236,7 +236,7 @@ an initialization state and a cleanup procedure.
 		singleton = this;
 	}
 
-.. code:: cpp
+.. code-block:: cpp
 
 	/* prime_225.h */
 
@@ -278,7 +278,7 @@ Godot servers implement a mediator pattern. All data types inherit ``RID_Data``.
 RID_Owner maintains a list of RIDs. In practice, RIDs are similar to writing
 object-oriented C code.
 
-.. code:: cpp
+.. code-block:: cpp
 
 	class InfiniteBus : public RID_Data {
 		RID self;
@@ -332,7 +332,7 @@ class must be created to reference the proper Godot server.
 In ``register_server_types()``, ``Engine::get_singleton()->add_singleton``
 is used to register the dummy class in GDScript.
 
-.. code:: cpp
+.. code-block:: cpp
 
 	/* register_types.cpp */
 
@@ -365,7 +365,7 @@ is used to register the dummy class in GDScript.
 		}
 	}
 
-.. code:: cpp
+.. code-block:: cpp
 
 	/* register_types.h */
 
@@ -380,7 +380,7 @@ Bind methods
 
 The dummy class binds singleton methods to GDScript. In most cases, the dummy class methods wraps around.
 
-.. code:: cpp
+.. code-block:: cpp
 
 	Variant _HilbertHotel::get_bus_info(RID id) {
 		return HilbertHotel::get_singleton()->get_bus_info(id);
@@ -390,13 +390,13 @@ Binding Signals
 
 It is possible to emit signals to GDScript by calling the GDScript dummy object.
 
-.. code:: cpp
+.. code-block:: cpp
 
 	void HilbertHotel::_emit_occupy_room(uint64_t room, RID rid) {
 		_HilbertHotel::get_singleton()->_occupy_room(room, rid);
 	}
 
-.. code:: cpp
+.. code-block:: cpp
 
 	class _HilbertHotel : public Object {
 		GDCLASS(_HilbertHotel, Object);
@@ -412,7 +412,7 @@ It is possible to emit signals to GDScript by calling the GDScript dummy object.
 
 	public:
 		RID create_bus();
-		void connect_singals();
+		void connect_signals();
 		bool delete_bus(RID id);
 		static _HilbertHotel *get_singleton();
 		Variant get_bus_info(RID id);
@@ -423,7 +423,7 @@ It is possible to emit signals to GDScript by calling the GDScript dummy object.
 
 	#endif
 
-.. code:: cpp
+.. code-block:: cpp
 
 	_HilbertHotel *_HilbertHotel::singleton = NULL;
 	_HilbertHotel *_HilbertHotel::get_singleton() { return singleton; }
@@ -451,7 +451,7 @@ It is possible to emit signals to GDScript by calling the GDScript dummy object.
 		ADD_SIGNAL(MethodInfo("occupy_room", PropertyInfo(Variant::INT, "room_number"), PropertyInfo(Variant::_RID, "r_id")));
 	}
 
-	void _HilbertHotel::connect_singals() {
+	void _HilbertHotel::connect_signals() {
 		HilbertHotel::get_singleton()->connect("occupy_room", _HilbertHotel::get_singleton(), "_occupy_room");
 	}
 
@@ -481,7 +481,7 @@ Summing it up
 
 Here is the GDScript sample code:
 
-.. code::
+::
 
     extends Node
 

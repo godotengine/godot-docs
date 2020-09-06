@@ -93,7 +93,7 @@ for example:
         return new Vector2(20, 20);
     }
 
-Or alternatively, set it via function:
+Alternatively, set it using a function:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -181,7 +181,7 @@ exists, but which can be checked with the _notification callback:
             NOTIFICATION_RESIZED:
                 pass # Control changed size; check new size
                 # with get_size().
-            NOTIFICATION_MODAL_CLOSED):
+            NOTIFICATION_MODAL_CLOSE:
                 pass # For modal pop-ups, notification
                 # that the pop-up was closed.
 

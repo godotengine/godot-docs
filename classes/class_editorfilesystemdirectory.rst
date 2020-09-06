@@ -11,12 +11,12 @@ EditorFileSystemDirectory
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A directory for the resource filesystem.
+
+Description
+-----------
+
+A more generalized, low-level variation of the directory concept.
 
 Methods
 -------
@@ -38,7 +38,7 @@ Methods
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                       | :ref:`get_file_script_class_name<class_EditorFileSystemDirectory_method_get_file_script_class_name>` **(** :ref:`int<class_int>` idx **)** const       |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                       | :ref:`get_file_type<class_EditorFileSystemDirectory_method_get_file_type>` **(** :ref:`int<class_int>` idx **)** const                                 |
+| :ref:`StringName<class_StringName>`                               | :ref:`get_file_type<class_EditorFileSystemDirectory_method_get_file_type>` **(** :ref:`int<class_int>` idx **)** const                                 |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                       | :ref:`get_name<class_EditorFileSystemDirectory_method_get_name>` **(** **)**                                                                           |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -51,11 +51,6 @@ Methods
 | :ref:`int<class_int>`                                             | :ref:`get_subdir_count<class_EditorFileSystemDirectory_method_get_subdir_count>` **(** **)** const                                                     |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-A more generalized, low-level variation of the directory concept.
-
 Method Descriptions
 -------------------
 
@@ -65,11 +60,15 @@ Method Descriptions
 
 Returns the index of the directory with name ``name`` or ``-1`` if not found.
 
+----
+
 .. _class_EditorFileSystemDirectory_method_find_file_index:
 
 - :ref:`int<class_int>` **find_file_index** **(** :ref:`String<class_String>` name **)** const
 
 Returns the index of the file with name ``name`` or ``-1`` if not found.
+
+----
 
 .. _class_EditorFileSystemDirectory_method_get_file:
 
@@ -77,11 +76,15 @@ Returns the index of the file with name ``name`` or ``-1`` if not found.
 
 Returns the name of the file at index ``idx``.
 
+----
+
 .. _class_EditorFileSystemDirectory_method_get_file_count:
 
 - :ref:`int<class_int>` **get_file_count** **(** **)** const
 
 Returns the number of files in this directory.
+
+----
 
 .. _class_EditorFileSystemDirectory_method_get_file_import_is_valid:
 
@@ -89,25 +92,35 @@ Returns the number of files in this directory.
 
 Returns ``true`` if the file at index ``idx`` imported properly.
 
+----
+
 .. _class_EditorFileSystemDirectory_method_get_file_path:
 
 - :ref:`String<class_String>` **get_file_path** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the path to the file at index ``idx``.
 
+----
+
 .. _class_EditorFileSystemDirectory_method_get_file_script_class_extends:
 
 - :ref:`String<class_String>` **get_file_script_class_extends** **(** :ref:`int<class_int>` idx **)** const
+
+----
 
 .. _class_EditorFileSystemDirectory_method_get_file_script_class_name:
 
 - :ref:`String<class_String>` **get_file_script_class_name** **(** :ref:`int<class_int>` idx **)** const
 
+----
+
 .. _class_EditorFileSystemDirectory_method_get_file_type:
 
-- :ref:`String<class_String>` **get_file_type** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`StringName<class_StringName>` **get_file_type** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the file extension of the file at index ``idx``.
+
+----
 
 .. _class_EditorFileSystemDirectory_method_get_name:
 
@@ -115,11 +128,15 @@ Returns the file extension of the file at index ``idx``.
 
 Returns the name of this directory.
 
+----
+
 .. _class_EditorFileSystemDirectory_method_get_parent:
 
 - :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` **get_parent** **(** **)**
 
 Returns the parent directory for this directory or ``null`` if called on a directory at ``res://`` or ``user://``.
+
+----
 
 .. _class_EditorFileSystemDirectory_method_get_path:
 
@@ -127,11 +144,15 @@ Returns the parent directory for this directory or ``null`` if called on a direc
 
 Returns the path to this directory.
 
+----
+
 .. _class_EditorFileSystemDirectory_method_get_subdir:
 
 - :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` **get_subdir** **(** :ref:`int<class_int>` idx **)**
 
 Returns the subdirectory at index ``idx``.
+
+----
 
 .. _class_EditorFileSystemDirectory_method_get_subdir_count:
 

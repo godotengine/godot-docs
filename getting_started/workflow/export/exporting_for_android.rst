@@ -3,19 +3,22 @@
 Exporting for Android
 =====================
 
-Exporting for Android has fewer requirements than compiling Godot for it. The
-following steps detail what is needed to setup the SDK and the engine.
+Exporting for Android has fewer requirements than compiling Godot for it.
+The following steps detail what is needed to setup the SDK and the engine.
 
 Download the Android SDK
 ------------------------
 
 Download and install the Android SDK from
-https://developer.android.com/studio/
+`developer.android.com <https://developer.android.com/studio/>`__.
 
-Install OpenJDK or Oracle JDK
------------------------------
+If you install Android Studio, you need to run it once to complete the SDK setup.
 
-Download and install  `OpenJDK <https://github.com/ojdkbuild/ojdkbuild>`__ or `Oracle JDK <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`__. Versions below JDK 8 may not work; some users have reported issues with the jarsigner (used to sign the APKs) in JDK 7.
+Install OpenJDK 8
+-----------------
+
+Download and install  `OpenJDK 8 <https://adoptopenjdk.net/index.html?variant=openjdk8&jvmVariant=hotspot>`__,
+newer versions do not work.
 
 Create a debug.keystore
 -----------------------
@@ -26,16 +29,16 @@ projects, ant or eclipse probably generated one for you (on Linux and
 macOS, you can find it in the ``~/.android`` directory).
 
 If you can't find it or need to generate one, the keytool command from
-the JDK can be used for this purpose:
+the JDK can be used for this purpose::
 
-::
+    keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12
 
-    keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999
+This will create a ``debug.keystore`` file in your current directory. You should move it to a memorable location such as ``%USERPROFILE%\.android\``, because you will need its location in a later step. For more information on ``keytool`` usage, see `this Q&A article <https://godotengine.org/qa/21349/jdk-android-file-missing>`__.
 
 Make sure you have adb
 ----------------------
 
-Android Debug Bridge (adb) is the command line tool used to communicate with
+Android Debug Bridge (``adb``) is the command line tool used to communicate with
 Android devices. It's installed with the SDK, but you may need to install one
 (any) of the Android API levels for it to be installed in the SDK directory.
 
@@ -43,7 +46,7 @@ Setting it up in Godot
 ----------------------
 
 Enter the Editor Settings screen. This screen contains the editor
-settings for the user account in the computer (it's independent from the
+settings for the user account in the computer (it's independent of the
 project).
 
 .. image:: img/editorsettings.png
@@ -54,11 +57,38 @@ Scroll down to the section where the Android settings are located:
 
 In that screen, the path to 3 files needs to be set:
 
--  The *adb* executable (adb.exe on Windows)
--  The *jarsigner* executable (from JDK 6 or 8)
--  The debug *keystore*
+- The ``adb`` executable (``adb.exe`` on Windows)
+  - It can usually be found at ``%LOCALAPPDATA%\Android\Sdk\platform-tools\adb.exe``.
+
+- The ``jarsigner`` executable (from JDK 6 or 8)
+  - On Windows, OpenJDK installs to a directory like ``%PROGRAMFILES%\AdoptOpenJDK\jdk-8.0.252.09-hotspot\bin``. On Linux, it typically installs to a directory like ``/usr/bin/jarsigner``. The exact path may vary depending on the OpenJDK update you've installed and your machine's operating system.
+
+- The debug ``.keystore`` file
+  - It can be found in the folder where you put the ``debug.keystore`` file you created above.
 
 Once that is configured, everything is ready to export to Android!
+
+Providing launcher icons
+------------------------
+
+Launcher icons are used by Android launcher apps to represent your application to users. Godot only requires high-resolution icons (for ``xxxhdpi`` density screens) and will automatically generate lower-resolution variants.
+
+There are two types of icons required by Godot:
+
+- **Main Icon:** The "classic" icon. This will be used on all Android versions up to Android 8 (Oreo), exclusive. Must be at least 192×192 px.
+- **Adaptive Icons:** Starting from Android 8 (inclusive), `Adaptive Icons <https://developer.android.com/guide/practices/ui_guidelines/icon_design_adaptive>`_ were introduced. Applications will need to include separate background and foreground icons to have a native look. The user's launcher application will control the icon's animation and masking. Must be at least 432×432 px.
+
+.. seealso:: It's important to adhere to some rules when designing adaptive icons. `Google Design has provided a nice article <https://medium.com/google-design/designing-adaptive-icons-515af294c783>`_ that helps to understand those rules and some of the capabilities of adaptive icons.
+
+.. caution:: The most important adaptive icon design rule is to have your icon critical elements inside the safe zone: a centered circle with a diameter of 66dp (264 pixels on ``xxxhdpi``) to avoid being clipped by the launcher.
+
+If you don't provide some of the requested icons, Godot will replace them using a fallback chain, trying the next in line when the current one fails:
+
+- **Main Icon:** Provided main icon -> Project icon -> Default Godot main icon.
+- **Adaptive Icon Foreground:** Provided foreground icon -> Provided main icon -> Project icon -> Default Godot foreground icon.
+- **Adaptive Icon Background:** Provided background icon -> Default Godot background icon.
+
+It's highly recommended to provide all requested icons, and at least with the specified resolutions. Only this way your application will look great on all Android devices and versions.
 
 Exporting for Google Play Store
 -------------------------------
@@ -66,7 +96,7 @@ Exporting for Google Play Store
 Uploading an APK to Google's Play Store requires you to sign using a non-debug
 keystore file; such file can be generated like this:
 
-::
+.. code-block:: shell
 
     keytool -v -genkey -v -keystore mygame.keystore -alias mygame -keyalg RSA -validity 10000
 

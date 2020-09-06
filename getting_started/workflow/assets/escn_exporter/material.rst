@@ -13,7 +13,7 @@ To do this, the exporter attempts to find Godot materials with names that match
 those of the material name in Blender. So if you export an object in Blender
 with the material name ``PurpleDots`` then the exporter will search for the
 file ``PurpleDots.tres`` and assign it to the object. If this file is not a
-``SpatialMaterial`` or ``ShaderMaterial`` or if it cannot be found, then the
+``StandardMaterial3D`` or ``ShaderMaterial`` or if it cannot be found, then the
 exporter will fall back to exporting the material from Blender.
 
 
@@ -37,7 +37,7 @@ Export of Cycles/EEVEE materials
 --------------------------------
 
 The exporter has a primitive support for converting Cycles/EEVEE material node tree
-to Godot Shader Material. Note that some of the Shader Node are not supported yet due to 
+to Godot Shader Material. Note that some of the Shader Node are not supported yet due to
 difficulties in implementation, which are:
 
 - all the ``noisy textures``
@@ -46,8 +46,9 @@ difficulties in implementation, which are:
 - shader nodes except ``PrincipledBSDF``, ``Diffuse``, ``Glossy``, ``Glass``, ``add shader`` and ``mix shader``
 
 .. warning::
-  If possible try to use PrincipledBSDF node with GGX distribution as the output shader
-  node, it is the only one guarantee to be exactly correctly. Others are just based on approximation.
+
+    If possible, try to use PrincipledBSDF node with GGX distribution as the output shader
+    node, it is the only one guaranteed to be exactly correct. Others are just based on approximation.
 
 Sometimes materials may not be valid for exporting (e.g. has some unsupported node) or it
 is using Blender Internal Engine, only the diffuse color and a few flags (e.g. unshaded) are
@@ -59,7 +60,7 @@ Generate external materials
 
 The default configuration of material exporting would keep all the materials internal to
 the ``escn`` file. There is an option which could enable generating external ``.material``
-file when the ``escn`` file opens in Godot. 
+file when the ``escn`` file opens in Godot.
 
 .. image:: img/external_mat_option.jpg
 

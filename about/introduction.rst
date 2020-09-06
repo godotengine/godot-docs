@@ -76,14 +76,14 @@ attribution to "Juan Linietsky, Ariel Manzur and the Godot Engine community".
 Organization of the documentation
 ---------------------------------
 
-This documentation is organised in five sections with an impressively
+This documentation is organized in five sections with an impressively
 unbalanced distribution of contents – but the way it is split up should be
 relatively intuitive:
 
 - The :ref:`sec-general` section contains this introduction as well as
   information about the engine, its history, its licensing, authors, etc. It
   also contains the :ref:`doc_faq`.
-- The :ref:`sec-learn` section is the main *raison d'être* of this
+- The :ref:`sec-learn` section is the *raison d'être* of this
   documentation, as it contains all the necessary information on using the
   engine to make games. It starts with the :ref:`Step by step
   <toc-learn-step_by_step>` tutorial which should be the entry point for all

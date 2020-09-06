@@ -11,21 +11,27 @@ LinkButton
 
 **Inherits:** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Simple button used to represent a link to some resource.
+
+Description
+-----------
+
+This kind of button is primarily used when the interaction with the button causes a context change (like linking to a web page).
 
 Properties
 ----------
 
-+-----------------------------------------------------+-------------------------------------------------------+----+
-| :ref:`String<class_String>`                         | :ref:`text<class_LinkButton_property_text>`           | "" |
-+-----------------------------------------------------+-------------------------------------------------------+----+
-| :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` | :ref:`underline<class_LinkButton_property_underline>` | 0  |
-+-----------------------------------------------------+-------------------------------------------------------+----+
++-----------------------------------------------------+-------------------------------------------------------+--------------+
+| :ref:`FocusMode<enum_Control_FocusMode>`            | enabled_focus_mode                                    | **O:** ``0`` |
++-----------------------------------------------------+-------------------------------------------------------+--------------+
+| :ref:`FocusMode<enum_Control_FocusMode>`            | focus_mode                                            | **O:** ``0`` |
++-----------------------------------------------------+-------------------------------------------------------+--------------+
+| :ref:`CursorShape<enum_Control_CursorShape>`        | mouse_default_cursor_shape                            | **O:** ``2`` |
++-----------------------------------------------------+-------------------------------------------------------+--------------+
+| :ref:`String<class_String>`                         | :ref:`text<class_LinkButton_property_text>`           | ``""``       |
++-----------------------------------------------------+-------------------------------------------------------+--------------+
+| :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` | :ref:`underline<class_LinkButton_property_underline>` | ``0``        |
++-----------------------------------------------------+-------------------------------------------------------+--------------+
 
 Theme Properties
 ----------------
@@ -63,11 +69,6 @@ enum **UnderlineMode**:
 
 - **UNDERLINE_MODE_NEVER** = **2** --- The LinkButton will never show an underline at the bottom of its text.
 
-Description
------------
-
-This kind of button is primarily used when the interaction with the button causes a context change (like linking to a web page).
-
 Property Descriptions
 ---------------------
 
@@ -76,22 +77,28 @@ Property Descriptions
 - :ref:`String<class_String>` **text**
 
 +-----------+-----------------+
-| *Default* | ""              |
+| *Default* | ``""``          |
 +-----------+-----------------+
 | *Setter*  | set_text(value) |
 +-----------+-----------------+
 | *Getter*  | get_text()      |
 +-----------+-----------------+
 
+The button's text that will be displayed inside the button's area.
+
+----
+
 .. _class_LinkButton_property_underline:
 
 - :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **underline**
 
 +-----------+---------------------------+
-| *Default* | 0                         |
+| *Default* | ``0``                     |
 +-----------+---------------------------+
 | *Setter*  | set_underline_mode(value) |
 +-----------+---------------------------+
 | *Getter*  | get_underline_mode()      |
 +-----------+---------------------------+
+
+Determines when to show the underline. See :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` for options.
 

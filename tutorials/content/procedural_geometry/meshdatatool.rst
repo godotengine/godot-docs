@@ -3,11 +3,11 @@
 Using the MeshDataTool
 ======================
 
-The MeshDataTool is not used to generate geometry. But it is helpful for dynamically altering geometry, for example
-if you want to write a script to tessellate, simplify, or deform meshes. 
+The :ref:`MeshDataTool <class_meshdatatool>` is not used to generate geometry. But it is helpful for dynamically altering geometry, for example
+if you want to write a script to tessellate, simplify, or deform meshes.
 
 The MeshDataTool is not as fast as altering arrays directly using ArrayMesh. However, it provides more information
-and tools to work with meshes than the ArrayMesh does. When the MeshDataTool 
+and tools to work with meshes than the ArrayMesh does. When the MeshDataTool
 is used, it calculates mesh data that is not available in ArrayMeshes such as faces and edges, which are necessary
 for certain mesh algorithms. If you do not need this extra information then it may be better to use an ArrayMesh.
 
@@ -46,7 +46,7 @@ To access information from these arrays you use a function of the form ``get_***
     mdt.get_vertex_count() # Returns number of vertices in vertex array.
     mdt.get_vertex_faces(0) # Returns array of faces that contain vertex[0].
     mdt.get_face_normal(1) # Calculates and returns face normal.
-    mdt.get_edge_vertex(10, 1) # Returns the second vertex comprsing edge at index 10.
+    mdt.get_edge_vertex(10, 1) # Returns the second vertex comprising the edge at index 10.
 
 What you choose to do with these functions is up to you. A common use case is to iterate over all vertices
 and transform them in some way:

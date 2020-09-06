@@ -11,12 +11,12 @@ Physics2DShapeQueryResult
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+Result of a 2D shape query in :ref:`Physics2DServer<class_Physics2DServer>`.
 
-Brief Description
------------------
+Description
+-----------
 
-
+The result of a 2D shape query in :ref:`Physics2DServer<class_Physics2DServer>`. See also :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>`.
 
 Methods
 -------
@@ -40,19 +40,37 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_result_count** **(** **)** const
 
+Returns the number of objects that intersected with the shape.
+
+----
+
 .. _class_Physics2DShapeQueryResult_method_get_result_object:
 
 - :ref:`Object<class_Object>` **get_result_object** **(** :ref:`int<class_int>` idx **)** const
+
+Returns the :ref:`Object<class_Object>` that intersected with the shape at index ``idx``.
+
+----
 
 .. _class_Physics2DShapeQueryResult_method_get_result_object_id:
 
 - :ref:`int<class_int>` **get_result_object_id** **(** :ref:`int<class_int>` idx **)** const
 
+Returns the instance ID of the :ref:`Object<class_Object>` that intersected with the shape at index ``idx``.
+
+----
+
 .. _class_Physics2DShapeQueryResult_method_get_result_object_shape:
 
 - :ref:`int<class_int>` **get_result_object_shape** **(** :ref:`int<class_int>` idx **)** const
 
+Returns the child index of the object's :ref:`Shape<class_Shape>` that intersected with the shape at index ``idx``.
+
+----
+
 .. _class_Physics2DShapeQueryResult_method_get_result_rid:
 
 - :ref:`RID<class_RID>` **get_result_rid** **(** :ref:`int<class_int>` idx **)** const
+
+Returns the :ref:`RID<class_RID>` of the object that intersected with the shape at index ``idx``.
 

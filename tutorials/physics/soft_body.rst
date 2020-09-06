@@ -23,7 +23,7 @@ Set the parameters to obtain the type of soft body you aim for. Try to keep the 
 
 .. note:: Handle some parameters with care, as some value can lead to strange results. For example, if the shape is not completely closed and you set pressure to more than 0, the softbody will fly around like a plastic bag under strong wind.
 
-Play the scene to view the simulation. 
+Play the scene to view the simulation.
 
 .. tip:: To improve the simulation's result, increase the ``Simulation Precision``, this will give significant improvement at the cost of performance.
 
@@ -64,6 +64,4 @@ Play the scene and the cloak should simulate correctly.
 
 .. image:: img/softbody_cloak_finish.png
 
-This covers the basic settings of softbody, experiment with the parameters to achieve the effect you are aiming for when making your game. 
-
-
+This covers the basic settings of softbody, experiment with the parameters to achieve the effect you are aiming for when making your game.

@@ -11,23 +11,49 @@ HashingContext
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+Context to compute cryptographic hashes over multiple iterations.
 
-Brief Description
------------------
+Description
+-----------
 
+The HashingContext class provides an interface for computing cryptographic hashes over multiple iterations. This is useful for example when computing hashes of big files (so you don't have to load them all in memory), network streams, and data streams in general (so you don't have to hold buffers).
 
+The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashing algorithms.
+
+::
+
+    const CHUNK_SIZE = 1024
+    
+    func hash_file(path):
+        var ctx = HashingContext.new()
+        var file = File.new()
+        # Start a SHA-256 context.
+        ctx.start(HashingContext.HASH_SHA256)
+        # Check that file exists.
+        if not file.file_exists(path):
+            return
+        # Open the file to hash.
+        file.open(path, File.READ)
+        # Update the context after reading each chunk.
+        while not file.eof_reached():
+            ctx.update(file.get_buffer(CHUNK_SIZE))
+        # Get the computed hash.
+        var res = ctx.finish()
+        # Print the result as hex string and array.
+        printt(res.hex_encode(), Array(res))
+
+**Note:** Not available in HTML5 exports.
 
 Methods
 -------
 
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`finish<class_HashingContext_method_finish>` **(** **)**                                                  |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`start<class_HashingContext_method_start>` **(** :ref:`HashType<enum_HashingContext_HashType>` type **)** |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`update<class_HashingContext_method_update>` **(** :ref:`PoolByteArray<class_PoolByteArray>` chunk **)**  |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`finish<class_HashingContext_method_finish>` **(** **)**                                                     |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`start<class_HashingContext_method_start>` **(** :ref:`HashType<enum_HashingContext_HashType>` type **)**    |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`update<class_HashingContext_method_update>` **(** :ref:`PackedByteArray<class_PackedByteArray>` chunk **)** |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -42,24 +68,34 @@ Enumerations
 
 enum **HashType**:
 
-- **HASH_MD5** = **0**
+- **HASH_MD5** = **0** --- Hashing algorithm: MD5.
 
-- **HASH_SHA1** = **1**
+- **HASH_SHA1** = **1** --- Hashing algorithm: SHA-1.
 
-- **HASH_SHA256** = **2**
+- **HASH_SHA256** = **2** --- Hashing algorithm: SHA-256.
 
 Method Descriptions
 -------------------
 
 .. _class_HashingContext_method_finish:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **finish** **(** **)**
+- :ref:`PackedByteArray<class_PackedByteArray>` **finish** **(** **)**
+
+Closes the current context, and return the computed hash.
+
+----
 
 .. _class_HashingContext_method_start:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`HashType<enum_HashingContext_HashType>` type **)**
 
+Starts a new hash computation of the given ``type`` (e.g. :ref:`HASH_SHA256<class_HashingContext_constant_HASH_SHA256>` to start computation of a SHA-256).
+
+----
+
 .. _class_HashingContext_method_update:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **update** **(** :ref:`PoolByteArray<class_PoolByteArray>` chunk **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **update** **(** :ref:`PackedByteArray<class_PackedByteArray>` chunk **)**
+
+Updates the computation with the given ``chunk`` of data.
 

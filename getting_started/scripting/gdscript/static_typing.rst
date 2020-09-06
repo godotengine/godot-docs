@@ -23,26 +23,27 @@ A brief look at static typing
 -----------------------------
 
 With typed GDScript, Godot can detect even more errors as you write
-code! It gives you and your teammates more information as you’re
-working, as the arguments’ types show up when you call a method.
+code! It gives you and your teammates more information as you're
+working, as the arguments' types show up when you call a method.
 
-Imagine you’re programming an inventory system. You code an ``Item``
+Imagine you're programming an inventory system. You code an ``Item``
 node, then an ``Inventory``. To add items to the inventory, the people
 who work with your code should always pass an ``Item`` to the
 ``Inventory.add`` method. With types, you can enforce this:
 
 ::
 
-    # In Item.gd
+    # In 'Item.gd'.
     class_name Item
-
-    # In Inventory.gd
+    # In 'Inventory.gd'.
     class_name Inventory
+
 
     func add(reference: Item, amount: int = 1):
         var item = find_item(reference)
         if not item:
             item = _instance_item_from_db(reference)
+
         item.amount += amount
 
 Another significant advantage of typed GDScript is the new **warning
@@ -52,20 +53,20 @@ to issues at runtime, but lets you decide whether or not you want to
 leave the code as it is. More on that in a moment.
 
 Static types also give you better code completion options. Below, you
-can see the difference between a dynamic and a static typed completion
+can see the difference between a dynamic and a static typed completion
 options for a class called ``PlayerController``.
 
-You’ve probably stored a node in a variable before, and typed a dot to
+You've probably stored a node in a variable before, and typed a dot to
 be left with no autocomplete suggestions:
 
-.. figure:: ./img/typed_gdscript_code_completion_dynamic.png
+.. figure:: img/typed_gdscript_code_completion_dynamic.png
    :alt: code completion options for dynamic
 
 This is due to dynamic code. Godot cannot know what node or value type
-you’re passing to the function. If you write the type explicitly
+you're passing to the function. If you write the type explicitly
 however, you will get all public methods and variables from the node:
 
-.. figure:: ./img/typed_gdscript_code_completion_typed.png
+.. figure:: img/typed_gdscript_code_completion_typed.png
    :alt: code completion options for typed
 
 In the future, typed GDScript will also increase code performance:
@@ -74,9 +75,9 @@ on the roadmap!
 
 Overall, typed programming gives you a more structured experience. It
 helps prevent errors and improves the self-documenting aspect of your
-scripts. This is especially helpful when you’re working in a team or on
+scripts. This is especially helpful when you're working in a team or on
 a long-term project: studies have shown that developers spend most of
-their time reading other people’s code, or scripts they wrote in the
+their time reading other people's code, or scripts they wrote in the
 past and forgot about. The clearer and the more structured the code, the
 faster it is to understand, the faster you can move forward.
 
@@ -84,7 +85,7 @@ How to use static typing
 ------------------------
 
 To define the type of a variable or a constant, write a colon after the
-variable’s name, followed by its type. E.g. ``var health: int``. This
+variable's name, followed by its type. E.g. ``var health: int``. This
 forces the variable's type to always stay the same:
 
 ::
@@ -122,7 +123,7 @@ script you want to use as a type in a constant:
 
 ::
 
-    const Rifle = preload('res://player/weapons/Rifle.gd')
+    const Rifle = preload("res://player/weapons/Rifle.gd")
     var my_rifle: Rifle
 
 The second method is to use the ``class_name`` keyword when you create.
@@ -165,9 +166,10 @@ to use this type. This forces the variable to stick to the
         var player := body as PlayerController
         if not player:
             return
+
         player.damage()
 
-As we’re dealing with a custom type, if the ``body`` doesn’t extend
+As we're dealing with a custom type, if the ``body`` doesn't extend
 ``PlayerController``, the ``player``\ variable will be set to ``null``.
 We can use this to check if the body is the player or not. We will also
 get full autocompletion on the player variable thanks to that cast.
@@ -182,15 +184,15 @@ Safe lines
 You can also use casting to ensure safe lines. Safe lines are a new
 tool in Godot 3.1 to tell you when ambiguous lines of code are
 type-safe. As you can mix and match typed and dynamic code, at times,
-Godot doesn’t have enough information to know if an instruction will trigger
+Godot doesn't have enough information to know if an instruction will trigger
 an error or not at runtime.
 
-This happens when you get a child node. Let’s take a timer for example:
+This happens when you get a child node. Let's take a timer for example:
 with dynamic code, you can get the node with ``$Timer``. GDScript
 supports `duck-typing <https://stackoverflow.com/a/4205163/8125343>`__,
 so even if your timer is of type ``Timer``, it is also a ``Node`` and an
 ``Object``, two classes it extends. With dynamic GDScript, you also
-don’t care about the node’s type as long as it has the methods you need
+don't care about the node's type as long as it has the methods you need
 to call.
 
 You can use casting to tell Godot the type you expect when you get a
@@ -198,10 +200,10 @@ node: ``($Timer as Timer)``, ``($Player as KinematicBody2D)``, etc.
 Godot will ensure the type works and if so, the line number will turn
 green at the left of the script editor.
 
-.. figure:: ./img/typed_gdscript_safe_unsafe_line.png
-   :alt: Safe vs Unsafe Line
+.. figure:: img/typed_gdscript_safe_unsafe_line.png
+   :alt: Unsafe vs Safe Line
 
-   Safe vs Unsafe Line
+   Unsafe line (line 7) vs Safe Lines (line 6 and 8)
 
 .. note::
 
@@ -238,6 +240,7 @@ You can also use your own nodes as return types:
         var item: Item = find_item(reference)
         if not item:
             item = ItemDatabase.get_instance(reference)
+
         item.amount += amount
         return item
 
@@ -245,35 +248,43 @@ Typed or dynamic: stick to one style
 ------------------------------------
 
 Typed GDScript and dynamic GDScript can coexist in the same project. But
-I recommended to stick to either style for consistency in your codebase,
-and for your peers. It’s easier for everyone to work together if you
+I recommend to stick to either style for consistency in your codebase,
+and for your peers. It's easier for everyone to work together if you
 follow the same guidelines, and faster to read and understand other
-people’s code.
+people's code.
 
 Typed code takes a little more writing, but you get the benefits we
-discussed above. Here’s an example of the same, empty script, in a
+discussed above. Here's an example of the same, empty script, in a
 dynamic style:
 
 ::
 
     extends Node
-        func _ready():
-            pass
-        func _process(delta):
-            pass
+
+
+    func _ready():
+        pass
+
+
+    func _process(delta):
+        pass
 
 And with static typing:
 
 ::
 
     extends Node
-        func _ready() -> void:
-            pass
-        func _process(delta: float) -> void:
-            pass
 
-As you can see, you can also use types with the engine’s virtual
-methods. Signal callbacks, like any methods, can also use types. Here’s
+
+    func _ready() -> void:
+        pass
+
+
+    func _process(delta: float) -> void:
+        pass
+
+As you can see, you can also use types with the engine's virtual
+methods. Signal callbacks, like any methods, can also use types. Here's
 a ``body_entered`` signal in a dynamic style:
 
 ::
@@ -288,7 +299,7 @@ And the same callback, with type hints:
     func _on_area_entered(area: CollisionObject2D) -> void:
         pass
 
-You’re free to replace, e.g. the ``CollisionObject2D``, with your own type,
+You're free to replace, e.g. the ``CollisionObject2D``, with your own type,
 to cast parameters automatically:
 
 ::
@@ -296,103 +307,71 @@ to cast parameters automatically:
     func _on_area_entered(bullet: Bullet) -> void:
         if not bullet:
             return
+
         take_damage(bullet.damage)
 
 The ``bullet`` variable could hold any ``CollisionObject2D`` here, but
 we make sure it is our ``Bullet``, a node we created for our project. If
-it’s anything else, like an ``Area2D``, or any node that doesn’t extend
+it's anything else, like an ``Area2D``, or any node that doesn't extend
 ``Bullet``, the ``bullet`` variable will be ``null``.
 
 Warning system
 --------------
 
-The warning system complements typed GDScript. It’s here to help you
-avoid mistakes that are hard to spot during development, and that may
-lead to runtime errors.
+.. note::
 
-You can configure warnings in the Project Settings under a new section
-called ``GDScript``:
+    Documentation about the GDScript warning system has been moved to
+    :ref:`doc_gdscript_warning_system`.
 
-.. figure:: ./img/typed_gdscript_warning_system_settings.png
-   :alt: warning system project settings
-
-   warning system project settings
-
-You can find a list of warnings for the active GDScript file in the
-script editor’s status bar. The example below has 3 warnings:
-
-.. figure:: ./img/typed_gdscript_warning_example.png
-   :alt: warning system example
-
-   warning system example
-
-To ignore specific warnings in one file, insert a special comment of the
-form ``#warning-ignore:warning-id``, or click on the ignore link to the
-right of the warning’s description. Godot will add a comment above the
-corresponding line and the code won’t trigger the corresponding warning
-anymore:
-
-.. figure:: ./img/typed_gdscript_warning_system_ignore.png
-   :alt: warning system ignore example
-
-   warning system ignore example
-
-Warnings won’t prevent the game from running, but you can turn them into
-errors if you’d like. This way your game won’t compile unless you fix
-all warnings. Head to the ``GDScript`` section of the Project Settings to
-turn on this option. Here’s the same file as the previous example with
-warnings as errors turned on:
-
-.. figure:: ./img/typed_gdscript_warning_system_errors.png
-   :alt: warnings as errors
-
-   warnings as errors
-
-Cases where you can’t specify types
+Cases where you can't specify types
 -----------------------------------
 
-To wrap up this introduction, let’s cover a few cases where you can’t
+To wrap up this introduction, let's cover a few cases where you can't
 use type hints. All the examples below **will trigger errors**.
 
-You can’t use Enums as types:
+You can't use Enums as types:
 
 ::
 
     enum MoveDirection {UP, DOWN, LEFT, RIGHT}
     var current_direction: MoveDirection
 
-You can’t specify the type of individual members in an array. This will
+You can't specify the type of individual members in an array. This will
 give you an error:
 
 ::
 
     var enemies: Array = [$Goblin: Enemy, $Zombie: Enemy]
 
-You can’t force the assignment of types in a ``for`` loop, as each
+You can't force the assignment of types in a ``for`` loop, as each
 element the ``for`` keyword loops over already has a different type. So you
 **cannot** write:
 
 ::
 
-    var names = ['John', 'Marta', 'Samantha', 'Jimmy']
+    var names = ["John", "Marta", "Samantha", "Jimmy"]
     for name: String in names:
         pass
 
-Two scripts can’t depend on each other in a cyclic fashion:
+Two scripts can't depend on each other in a cyclic fashion:
 
 ::
 
     # Player.gd
+
     extends Area2D
     class_name Player
+
 
     var rifle: Rifle
 
 ::
 
     # Rifle.gd
+
     extends Area2D
     class_name Rifle
+
 
     var player: Player
 

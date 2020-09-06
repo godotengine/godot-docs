@@ -11,23 +11,18 @@ VisualShaderNodeTexture
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+--------------------------------------------------------------+--------------------------------------------------------------------------+---+
-| :ref:`Source<enum_VisualShaderNodeTexture_Source>`           | :ref:`source<class_VisualShaderNodeTexture_property_source>`             | 0 |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+---+
-| :ref:`Texture<class_Texture>`                                | :ref:`texture<class_VisualShaderNodeTexture_property_texture>`           |   |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+---+
-| :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` | :ref:`texture_type<class_VisualShaderNodeTexture_property_texture_type>` | 0 |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+---+
++--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
+| :ref:`Source<enum_VisualShaderNodeTexture_Source>`           | :ref:`source<class_VisualShaderNodeTexture_property_source>`             | ``0`` |
++--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
+| :ref:`Texture2D<class_Texture2D>`                            | :ref:`texture<class_VisualShaderNodeTexture_property_texture>`           |       |
++--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
+| :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` | :ref:`texture_type<class_VisualShaderNodeTexture_property_texture_type>` | ``0`` |
++--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
 
 Enumerations
 ------------
@@ -44,6 +39,8 @@ Enumerations
 
 .. _class_VisualShaderNodeTexture_constant_SOURCE_DEPTH:
 
+.. _class_VisualShaderNodeTexture_constant_SOURCE_PORT:
+
 enum **Source**:
 
 - **SOURCE_TEXTURE** = **0**
@@ -55,6 +52,10 @@ enum **Source**:
 - **SOURCE_2D_NORMAL** = **3**
 
 - **SOURCE_DEPTH** = **4**
+
+- **SOURCE_PORT** = **5**
+
+----
 
 .. _enum_VisualShaderNodeTexture_TextureType:
 
@@ -80,16 +81,18 @@ Property Descriptions
 - :ref:`Source<enum_VisualShaderNodeTexture_Source>` **source**
 
 +-----------+-------------------+
-| *Default* | 0                 |
+| *Default* | ``0``             |
 +-----------+-------------------+
 | *Setter*  | set_source(value) |
 +-----------+-------------------+
 | *Getter*  | get_source()      |
 +-----------+-------------------+
 
+----
+
 .. _class_VisualShaderNodeTexture_property_texture:
 
-- :ref:`Texture<class_Texture>` **texture**
+- :ref:`Texture2D<class_Texture2D>` **texture**
 
 +----------+--------------------+
 | *Setter* | set_texture(value) |
@@ -97,12 +100,14 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
+----
+
 .. _class_VisualShaderNodeTexture_property_texture_type:
 
 - :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` **texture_type**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_texture_type(value) |
 +-----------+-------------------------+

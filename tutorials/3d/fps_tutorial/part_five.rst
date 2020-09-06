@@ -271,7 +271,7 @@ If the body the sticky grenade has collided with is indeed ``player_body``, we i
 
 Next, we check if the sticky grenade has attached to something already or not.
 
-If the sticky grenade is not attached, we then set ``attached`` to true so we know the sticky grenade has attached to something.
+If the sticky grenade is not attached, we then set ``attached`` to ``true`` so we know the sticky grenade has attached to something.
 
 We then make a new :ref:`Spatial <class_Spatial>` node, and make it a child of the body the sticky grenade collided with. We then set the :ref:`Spatial <class_Spatial>`'s position
 to the sticky grenade's current global position.
@@ -475,7 +475,7 @@ With that done, all we need to do is add some code to ``process_input``:
     # ----------------------------------
     # Grabbing and throwing objects
 
-    if Input.is_action_just_pressed("fire") and current_weapon_name == "UNARMED":
+    if Input.is_action_just_pressed("fire_grenade") and current_weapon_name == "UNARMED":
         if grabbed_object == null:
             var state = get_world().direct_space_state
 
@@ -484,7 +484,7 @@ With that done, all we need to do is add some code to ``process_input``:
             var ray_to = ray_from + camera.project_ray_normal(center_position) * OBJECT_GRAB_RAY_DISTANCE
 
             var ray_result = state.intersect_ray(ray_from, ray_to, [self, $Rotation_Helper/Gun_Fire_Points/Knife_Point/Area])
-            if ray_result != null:
+            if !ray_result.empty():
                 if ray_result["collider"] is RigidBody:
                     grabbed_object = ray_result["collider"]
                     grabbed_object.mode = RigidBody.MODE_STATIC
@@ -521,7 +521,7 @@ If ``grabbed_object`` is ``null``, we want to see if we can pick up a :ref:`Rigi
 We first get the direct space state from the current :ref:`World <class_World>`. This is so we can cast a ray entirely from code, instead of having to
 use a :ref:`Raycast <class_Raycast>` node.
 
-.. note:: see :ref:`Ray-casting <doc_ray-casting>` for more information on raycasting in Godot.
+.. note:: See :ref:`Ray-casting <doc_ray-casting>` for more information on raycasting in Godot.
 
 Then we get the center of the screen by dividing the current :ref:`Viewport <class_Viewport>` size in half. We then get the ray's origin point and end point using
 ``project_ray_origin`` and ``project_ray_normal`` from the camera. If you want to know more about how these functions work, see :ref:`Ray-casting <doc_ray-casting>`.
@@ -529,13 +529,18 @@ Then we get the center of the screen by dividing the current :ref:`Viewport <cla
 Next we send the ray into the space state and see if it gets a result. We add the player and the knife's :ref:`Area <class_Area>` as two exceptions so the player cannot carry
 themselves or the knife's collision :ref:`Area <class_Area>`.
 
-Then we check to see if we got a result back from the ray. If we have, we then see if the collider the ray collided with is a :ref:`RigidBody <class_RigidBody>`.
+Then we check to see if we got a result back from the ray. If no object has collided with the ray, an empty Dictionary will be returned. If the Dictionary is not empty (i.e. at least one object has collided), we then see if the collider the ray collided with is a :ref:`RigidBody <class_RigidBody>`.
 
 If the ray collided with a :ref:`RigidBody <class_RigidBody>`, we set ``grabbed_object`` to the collider the ray collided with. We then set the mode on
 the :ref:`RigidBody <class_RigidBody>` we collided with to ``MODE_STATIC`` so it doesn't move in our hands.
 
 Finally, we set the grabbed :ref:`RigidBody <class_RigidBody>`'s collision layer and collision mask to ``0``.
 This will make the grabbed :ref:`RigidBody <class_RigidBody>` have no collision layer or mask, which means it will not be able to collide with anything as long as we are holding it.
+
+.. note::
+
+    See :ref:`Physics introduction <doc_physics_introduction_collision_layer_code_example>`
+    for more information on Godot collision masks.
 
 ______
 

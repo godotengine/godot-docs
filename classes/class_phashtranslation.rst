@@ -11,12 +11,12 @@ PHashTranslation
 
 **Inherits:** :ref:`Translation<class_Translation>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Optimized translation.
+
+Description
+-----------
+
+Optimized translation. Uses real-time compressed translations, which results in very small dictionaries.
 
 Methods
 -------
@@ -24,11 +24,6 @@ Methods
 +------+----------------------------------------------------------------------------------------------------------------+
 | void | :ref:`generate<class_PHashTranslation_method_generate>` **(** :ref:`Translation<class_Translation>` from **)** |
 +------+----------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Optimized translation. Uses real-time compressed translations, which results in very small dictionaries.
 
 Method Descriptions
 -------------------

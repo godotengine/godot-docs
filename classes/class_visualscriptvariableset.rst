@@ -11,19 +11,7 @@ VisualScriptVariableSet
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Changes a variable's value.
-
-Properties
-----------
-
-+-----------------------------+------------------------------------------------------------------+----+
-| :ref:`String<class_String>` | :ref:`var_name<class_VisualScriptVariableSet_property_var_name>` | "" |
-+-----------------------------+------------------------------------------------------------------+----+
 
 Description
 -----------
@@ -40,15 +28,22 @@ Changes a variable's value to the given input.
 
 - Sequence
 
+Properties
+----------
+
++-------------------------------------+------------------------------------------------------------------+---------+
+| :ref:`StringName<class_StringName>` | :ref:`var_name<class_VisualScriptVariableSet_property_var_name>` | ``@""`` |
++-------------------------------------+------------------------------------------------------------------+---------+
+
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptVariableSet_property_var_name:
 
-- :ref:`String<class_String>` **var_name**
+- :ref:`StringName<class_StringName>` **var_name**
 
 +-----------+---------------------+
-| *Default* | ""                  |
+| *Default* | ``@""``             |
 +-----------+---------------------+
 | *Setter*  | set_variable(value) |
 +-----------+---------------------+

@@ -13,29 +13,29 @@ CSGShape
 
 **Inherited By:** :ref:`CSGCombiner<class_CSGCombiner>`, :ref:`CSGPrimitive<class_CSGPrimitive>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 The CSG base class.
+
+Description
+-----------
+
+This is the CSG base class that provides CSG operation support to the various CSG nodes in Godot.
 
 Properties
 ----------
 
-+-------------------------------------------+-----------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                   | :ref:`calculate_tangents<class_CSGShape_property_calculate_tangents>` | true  |
-+-------------------------------------------+-----------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                     | :ref:`collision_layer<class_CSGShape_property_collision_layer>`       | 1     |
-+-------------------------------------------+-----------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                     | :ref:`collision_mask<class_CSGShape_property_collision_mask>`         | 1     |
-+-------------------------------------------+-----------------------------------------------------------------------+-------+
-| :ref:`Operation<enum_CSGShape_Operation>` | :ref:`operation<class_CSGShape_property_operation>`                   | 0     |
-+-------------------------------------------+-----------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`                 | :ref:`snap<class_CSGShape_property_snap>`                             | 0.001 |
-+-------------------------------------------+-----------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                   | :ref:`use_collision<class_CSGShape_property_use_collision>`           | false |
-+-------------------------------------------+-----------------------------------------------------------------------+-------+
++-------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                   | :ref:`calculate_tangents<class_CSGShape_property_calculate_tangents>` | ``true``  |
++-------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                     | :ref:`collision_layer<class_CSGShape_property_collision_layer>`       | ``1``     |
++-------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                     | :ref:`collision_mask<class_CSGShape_property_collision_mask>`         | ``1``     |
++-------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`Operation<enum_CSGShape_Operation>` | :ref:`operation<class_CSGShape_property_operation>`                   | ``0``     |
++-------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                 | :ref:`snap<class_CSGShape_property_snap>`                             | ``0.001`` |
++-------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                   | :ref:`use_collision<class_CSGShape_property_use_collision>`           | ``false`` |
++-------------------------------------------+-----------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -73,11 +73,6 @@ enum **Operation**:
 
 - **OPERATION_SUBTRACTION** = **2** --- The second shape is subtracted from the first, leaving a dent with its shape.
 
-Description
------------
-
-This is the CSG base class that provides CSG operation support to the various CSG nodes in Godot.
-
 Property Descriptions
 ---------------------
 
@@ -86,7 +81,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **calculate_tangents**
 
 +-----------+-------------------------------+
-| *Default* | true                          |
+| *Default* | ``true``                      |
 +-----------+-------------------------------+
 | *Setter*  | set_calculate_tangents(value) |
 +-----------+-------------------------------+
@@ -95,12 +90,14 @@ Property Descriptions
 
 Calculate tangents for the CSG shape which allows the use of normal maps. This is only applied on the root shape, this setting is ignored on any child.
 
+----
+
 .. _class_CSGShape_property_collision_layer:
 
 - :ref:`int<class_int>` **collision_layer**
 
 +-----------+----------------------------+
-| *Default* | 1                          |
+| *Default* | ``1``                      |
 +-----------+----------------------------+
 | *Setter*  | set_collision_layer(value) |
 +-----------+----------------------------+
@@ -113,12 +110,14 @@ Collidable objects can exist in any of 32 different layers. These layers work li
 
 A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A.
 
+----
+
 .. _class_CSGShape_property_collision_mask:
 
 - :ref:`int<class_int>` **collision_mask**
 
 +-----------+---------------------------+
-| *Default* | 1                         |
+| *Default* | ``1``                     |
 +-----------+---------------------------+
 | *Setter*  | set_collision_mask(value) |
 +-----------+---------------------------+
@@ -127,12 +126,14 @@ A contact is detected if object A is in any of the layers that object B scans, o
 
 The physics layers this CSG shape scans for collisions.
 
+----
+
 .. _class_CSGShape_property_operation:
 
 - :ref:`Operation<enum_CSGShape_Operation>` **operation**
 
 +-----------+----------------------+
-| *Default* | 0                    |
+| *Default* | ``0``                |
 +-----------+----------------------+
 | *Setter*  | set_operation(value) |
 +-----------+----------------------+
@@ -141,24 +142,30 @@ The physics layers this CSG shape scans for collisions.
 
 The operation that is performed on this shape. This is ignored for the first CSG child node as the operation is between this node and the previous child of this nodes parent.
 
+----
+
 .. _class_CSGShape_property_snap:
 
 - :ref:`float<class_float>` **snap**
 
 +-----------+-----------------+
-| *Default* | 0.001           |
+| *Default* | ``0.001``       |
 +-----------+-----------------+
 | *Setter*  | set_snap(value) |
 +-----------+-----------------+
 | *Getter*  | get_snap()      |
 +-----------+-----------------+
 
+Snap makes the mesh snap to a given distance so that the faces of two meshes can be perfectly aligned. A lower value results in greater precision but may be harder to adjust.
+
+----
+
 .. _class_CSGShape_property_use_collision:
 
 - :ref:`bool<class_bool>` **use_collision**
 
 +-----------+--------------------------+
-| *Default* | false                    |
+| *Default* | ``false``                |
 +-----------+--------------------------+
 | *Setter*  | set_use_collision(value) |
 +-----------+--------------------------+
@@ -176,15 +183,23 @@ Method Descriptions
 
 Returns an individual bit on the collision mask.
 
+----
+
 .. _class_CSGShape_method_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
 Returns an individual bit on the collision mask.
 
+----
+
 .. _class_CSGShape_method_get_meshes:
 
 - :ref:`Array<class_Array>` **get_meshes** **(** **)** const
+
+Returns an :ref:`Array<class_Array>` with two elements, the first is the :ref:`Transform<class_Transform>` of this node and the second is the root :ref:`Mesh<class_Mesh>` of this node. Only works when this node is the root shape.
+
+----
 
 .. _class_CSGShape_method_is_root_shape:
 
@@ -192,11 +207,15 @@ Returns an individual bit on the collision mask.
 
 Returns ``true`` if this is a root shape and is thus the object that is rendered.
 
+----
+
 .. _class_CSGShape_method_set_collision_layer_bit:
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Sets individual bits on the layer mask. Use this if you only need to change one layer's value.
+
+----
 
 .. _class_CSGShape_method_set_collision_mask_bit:
 

@@ -25,7 +25,7 @@ locally (no internet connection, API incorrectly configured, etc). If
 the error value is 'OK', a response event will be produced and added to
 the 'pending events' queue. Example:
 
-.. code:: python
+::
 
     func on_purchase_pressed():
         var result = InAppStore.purchase( { "product_id": "my_product" } )
@@ -176,8 +176,9 @@ Game Center
 Implemented in ``platform/iphone/game_center.mm``.
 
 The Game Center API is available through the "GameCenter" singleton. It
-has 8 methods:
+has 9 methods:
 
+-  ``Error authenticate();``
 -  ``bool is_authenticated();``
 -  ``Error post_score(Variant p_score);``
 -  ``Error award_achievement(Variant p_params);``
@@ -188,6 +189,37 @@ has 8 methods:
 -  ``Error request_identity_verification_signature();``
 
 plus the standard pending event interface.
+
+authenticate
+~~~~~~~~~~~~
+
+Authenticates a user in Game Center.
+
+Response event
+^^^^^^^^^^^^^^
+
+The response event will be a dictionary with the following fields:
+
+On error:
+
+::
+
+    {
+      "type": "authentication",
+      "result": "error",
+      "error_code": the value from NSError::code,
+      "error_description": the value from NSError::localizedDescription,
+    }
+
+On success:
+
+::
+
+    {
+      "type": "authentication",
+      "result": "ok",
+      "player_id": the value from GKLocalPlayer::playerID,
+    }
 
 post_score
 ~~~~~~~~~~
@@ -428,7 +460,7 @@ you need inside a conditional block, you need to also define them as
 valid identifiers (local variable or class member). This is an example
 of how to work around this in a class:
 
-.. code:: python
+::
 
     var GameCenter = null # define it as a class member
 

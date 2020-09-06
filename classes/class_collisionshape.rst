@@ -11,30 +11,7 @@ CollisionShape
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Node that represents collision shape data in 3D space.
-
-Properties
-----------
-
-+---------------------------+---------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`disabled<class_CollisionShape_property_disabled>` | false |
-+---------------------------+---------------------------------------------------------+-------+
-| :ref:`Shape<class_Shape>` | :ref:`shape<class_CollisionShape_property_shape>`       |       |
-+---------------------------+---------------------------------------------------------+-------+
-
-Methods
--------
-
-+------+----------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`make_convex_from_brothers<class_CollisionShape_method_make_convex_from_brothers>` **(** **)**                        |
-+------+----------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`resource_changed<class_CollisionShape_method_resource_changed>` **(** :ref:`Resource<class_Resource>` resource **)** |
-+------+----------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -46,6 +23,24 @@ Tutorials
 
 - :doc:`../tutorials/physics/physics_introduction`
 
+Properties
+----------
+
++---------------------------+---------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`disabled<class_CollisionShape_property_disabled>` | ``false`` |
++---------------------------+---------------------------------------------------------+-----------+
+| :ref:`Shape<class_Shape>` | :ref:`shape<class_CollisionShape_property_shape>`       |           |
++---------------------------+---------------------------------------------------------+-----------+
+
+Methods
+-------
+
++------+----------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`make_convex_from_brothers<class_CollisionShape_method_make_convex_from_brothers>` **(** **)**                        |
++------+----------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`resource_changed<class_CollisionShape_method_resource_changed>` **(** :ref:`Resource<class_Resource>` resource **)** |
++------+----------------------------------------------------------------------------------------------------------------------------+
+
 Property Descriptions
 ---------------------
 
@@ -54,7 +49,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **disabled**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_disabled(value) |
 +-----------+---------------------+
@@ -62,6 +57,8 @@ Property Descriptions
 +-----------+---------------------+
 
 A disabled collision shape has no effect in the world.
+
+----
 
 .. _class_CollisionShape_property_shape:
 
@@ -83,6 +80,8 @@ Method Descriptions
 - void **make_convex_from_brothers** **(** **)**
 
 Sets the collision shape's shape to the addition of all its convexed :ref:`MeshInstance<class_MeshInstance>` siblings geometry.
+
+----
 
 .. _class_CollisionShape_method_resource_changed:
 

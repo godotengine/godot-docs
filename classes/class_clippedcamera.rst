@@ -11,27 +11,27 @@ ClippedCamera
 
 **Inherits:** :ref:`Camera<class_Camera>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+A :ref:`Camera<class_Camera>` that includes collision.
 
-Brief Description
------------------
+Description
+-----------
 
-
+This node extends :ref:`Camera<class_Camera>` to add collisions with :ref:`Area<class_Area>` and/or :ref:`PhysicsBody<class_PhysicsBody>` nodes. The camera cannot move through colliding objects.
 
 Properties
 ----------
 
-+----------------------------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                            | :ref:`clip_to_areas<class_ClippedCamera_property_clip_to_areas>`   | false |
-+----------------------------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                            | :ref:`clip_to_bodies<class_ClippedCamera_property_clip_to_bodies>` | true  |
-+----------------------------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                              | :ref:`collision_mask<class_ClippedCamera_property_collision_mask>` | 1     |
-+----------------------------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`                          | :ref:`margin<class_ClippedCamera_property_margin>`                 | 0.0   |
-+----------------------------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`ProcessMode<enum_ClippedCamera_ProcessMode>` | :ref:`process_mode<class_ClippedCamera_property_process_mode>`     | 0     |
-+----------------------------------------------------+--------------------------------------------------------------------+-------+
++----------------------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                            | :ref:`clip_to_areas<class_ClippedCamera_property_clip_to_areas>`   | ``false`` |
++----------------------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                            | :ref:`clip_to_bodies<class_ClippedCamera_property_clip_to_bodies>` | ``true``  |
++----------------------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                              | :ref:`collision_mask<class_ClippedCamera_property_collision_mask>` | ``1``     |
++----------------------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                          | :ref:`margin<class_ClippedCamera_property_margin>`                 | ``0.0``   |
++----------------------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`ProcessMode<enum_ClippedCamera_ProcessMode>` | :ref:`process_mode<class_ClippedCamera_property_process_mode>`     | ``0``     |
++----------------------------------------------------+--------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -65,9 +65,9 @@ Enumerations
 
 enum **ProcessMode**:
 
-- **CLIP_PROCESS_PHYSICS** = **0**
+- **CLIP_PROCESS_PHYSICS** = **0** --- The camera updates with the ``_physics_process`` callback.
 
-- **CLIP_PROCESS_IDLE** = **1**
+- **CLIP_PROCESS_IDLE** = **1** --- The camera updates with the ``_process`` callback.
 
 Property Descriptions
 ---------------------
@@ -77,60 +77,78 @@ Property Descriptions
 - :ref:`bool<class_bool>` **clip_to_areas**
 
 +-----------+----------------------------+
-| *Default* | false                      |
+| *Default* | ``false``                  |
 +-----------+----------------------------+
 | *Setter*  | set_clip_to_areas(value)   |
 +-----------+----------------------------+
 | *Getter*  | is_clip_to_areas_enabled() |
 +-----------+----------------------------+
 
+If ``true``, the camera stops on contact with :ref:`Area<class_Area>`\ s.
+
+----
+
 .. _class_ClippedCamera_property_clip_to_bodies:
 
 - :ref:`bool<class_bool>` **clip_to_bodies**
 
 +-----------+-----------------------------+
-| *Default* | true                        |
+| *Default* | ``true``                    |
 +-----------+-----------------------------+
 | *Setter*  | set_clip_to_bodies(value)   |
 +-----------+-----------------------------+
 | *Getter*  | is_clip_to_bodies_enabled() |
 +-----------+-----------------------------+
 
+If ``true``, the camera stops on contact with :ref:`PhysicsBody<class_PhysicsBody>`\ s.
+
+----
+
 .. _class_ClippedCamera_property_collision_mask:
 
 - :ref:`int<class_int>` **collision_mask**
 
 +-----------+---------------------------+
-| *Default* | 1                         |
+| *Default* | ``1``                     |
 +-----------+---------------------------+
 | *Setter*  | set_collision_mask(value) |
 +-----------+---------------------------+
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
+The camera's collision mask. Only objects in at least one collision layer matching the mask will be detected.
+
+----
+
 .. _class_ClippedCamera_property_margin:
 
 - :ref:`float<class_float>` **margin**
 
 +-----------+-------------------+
-| *Default* | 0.0               |
+| *Default* | ``0.0``           |
 +-----------+-------------------+
 | *Setter*  | set_margin(value) |
 +-----------+-------------------+
 | *Getter*  | get_margin()      |
 +-----------+-------------------+
 
+The camera's collision margin. The camera can't get closer than this distance to a colliding object.
+
+----
+
 .. _class_ClippedCamera_property_process_mode:
 
 - :ref:`ProcessMode<enum_ClippedCamera_ProcessMode>` **process_mode**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_process_mode(value) |
 +-----------+-------------------------+
 | *Getter*  | get_process_mode()      |
 +-----------+-------------------------+
+
+The camera's process callback. See :ref:`ProcessMode<enum_ClippedCamera_ProcessMode>`.
 
 Method Descriptions
 -------------------
@@ -139,31 +157,65 @@ Method Descriptions
 
 - void **add_exception** **(** :ref:`Object<class_Object>` node **)**
 
+Adds a collision exception so the camera does not collide with the specified node.
+
+----
+
 .. _class_ClippedCamera_method_add_exception_rid:
 
 - void **add_exception_rid** **(** :ref:`RID<class_RID>` rid **)**
+
+Adds a collision exception so the camera does not collide with the specified :ref:`RID<class_RID>`.
+
+----
 
 .. _class_ClippedCamera_method_clear_exceptions:
 
 - void **clear_exceptions** **(** **)**
 
+Removes all collision exceptions.
+
+----
+
 .. _class_ClippedCamera_method_get_clip_offset:
 
 - :ref:`float<class_float>` **get_clip_offset** **(** **)** const
+
+Returns the distance the camera has been offset due to a collision.
+
+----
 
 .. _class_ClippedCamera_method_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
+Returns ``true`` if the specified bit index is on.
+
+**Note:** Bit indices range from 0-19.
+
+----
+
 .. _class_ClippedCamera_method_remove_exception:
 
 - void **remove_exception** **(** :ref:`Object<class_Object>` node **)**
+
+Removes a collision exception with the specified node.
+
+----
 
 .. _class_ClippedCamera_method_remove_exception_rid:
 
 - void **remove_exception_rid** **(** :ref:`RID<class_RID>` rid **)**
 
+Removes a collision exception with the specified :ref:`RID<class_RID>`.
+
+----
+
 .. _class_ClippedCamera_method_set_collision_mask_bit:
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
+
+Sets the specified bit index to the ``value``.
+
+**Note:** Bit indices range from 0-19.
 

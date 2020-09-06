@@ -46,7 +46,7 @@ As an example, Steam shows that the most common *primary display resolution* is
 1920×1080, so a sensible approach is to develop a game for this resolution, then
 handle scaling for different sizes and aspect ratios.
 
-Godot provides a several useful tools to do this easily.
+Godot provides several useful tools to do this easily.
 
 Base size
 ---------
@@ -87,8 +87,7 @@ project settings to handle multiple resolutions.
 Stretch settings
 ----------------
 
-Stretch settings are located in the project settings, it's just a bunch
-of configuration variables that provide several options:
+Stretch settings are located in the project settings and provide several options:
 
 .. image:: img/stretchsettings.png
 
@@ -232,25 +231,22 @@ From scripts
 ^^^^^^^^^^^^
 
 To configure stretching at runtime from a script, use the
-``get_tree().set_screen_stretch()`` function (see
+``get_tree().set_screen_stretch()`` method (see
 :ref:`SceneTree.set_screen_stretch() <class_SceneTree_method_set_screen_stretch>`).
 
 Reducing aliasing on downsampling
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------
 
 If the game has a very high base resolution (e.g. 3840×2160), aliasing might
 appear when downsampling to something considerably lower like 1280×720.
 Aliasing can be made less visible by shrinking all images by a factor of 2
 upon loading. This can be done by calling the method below before
-the game data is loaded:
-
-::
+the game data is loaded::
 
     VisualServer.texture_set_shrink_all_x2_on_set_data(true)
 
-
 Handling aspect ratios
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 Once scaling for different resolutions is accounted for, make sure that
 your *user interface* also scales for different aspect ratios. This can be
@@ -258,7 +254,7 @@ done using :ref:`anchors <doc_size_and_anchors>` and/or :ref:`containers
 <doc_gui_containers>`.
 
 Field of view scaling
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 The 3D Camera node's **Keep Aspect** property defaults to the **Keep Height**
 scaling mode (also called *Hor+*). This is usually the best value for desktop
@@ -269,3 +265,22 @@ However, if your 3D game is intended to be played in portrait mode, it may make
 more sense to use **Keep Width** instead (also called *Vert-*). This way,
 smartphones with an aspect ratio taller than 16:9 (e.g. 19:9) will use a
 *taller* field of view, which is more logical here.
+
+Scaling 2D and 3D elements differently using Viewports
+------------------------------------------------------
+
+Using multiple Viewport nodes, you can have different scales for various
+elements. For instance, you can use this to render the 3D world at a low
+resolution while keeping 2D elements at the native resolution. This can improve
+performance significantly while keeping the HUD and other 2D elements crisp.
+
+This is done by using the root Viewport node only for 2D elements, then creating
+a Viewport node to display the 3D world and displaying it using a
+ViewportContainer or TextureRect node. There will effectively be two viewports
+in the final project. One upside of using TextureRect over ViewportContainer is
+that it allows enable linear filtering. This makes scaled 3D viewports look
+better in many cases.
+
+See the
+`3D viewport scaling demo <https://github.com/godotengine/godot-demo-projects/tree/master/viewport/3d_scaling>`__
+for examples.

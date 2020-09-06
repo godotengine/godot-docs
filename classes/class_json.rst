@@ -11,12 +11,12 @@ JSON
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Helper class for parsing JSON data.
+
+Description
+-----------
+
+Helper class for parsing JSON data. For usage example and other important hints, see :ref:`JSONParseResult<class_JSONParseResult>`.
 
 Methods
 -------
@@ -27,11 +27,6 @@ Methods
 | :ref:`String<class_String>`                   | :ref:`print<class_JSON_method_print>` **(** :ref:`Variant<class_Variant>` value, :ref:`String<class_String>` indent="", :ref:`bool<class_bool>` sort_keys=false **)** |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-Helper class for parsing JSON data. For usage example and other important hints, see :ref:`JSONParseResult<class_JSONParseResult>`.
-
 Method Descriptions
 -------------------
 
@@ -40,6 +35,8 @@ Method Descriptions
 - :ref:`JSONParseResult<class_JSONParseResult>` **parse** **(** :ref:`String<class_String>` json **)**
 
 Parses a JSON encoded string and returns a :ref:`JSONParseResult<class_JSONParseResult>` containing the result.
+
+----
 
 .. _class_JSON_method_print:
 

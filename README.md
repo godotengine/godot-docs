@@ -2,13 +2,24 @@
 
 This repository contains the source files of [Godot Engine](https://godotengine.org)'s documentation, in reStructuredText markup language (reST).
 
-They are meant to be parsed with the [Sphinx](https://sphinx-doc.org/) documentation builder to build the HTML documentation on [Godot's website](https://docs.godotengine.org).
+They are meant to be parsed with the [Sphinx](https://www.sphinx-doc.org/) documentation builder to build the HTML documentation on [Godot's website](https://docs.godotengine.org).
+
+## Theming
+
+The Godot documentation uses the default ``sphinx_rtd_theme`` with many
+[customizations](_static/) applied on top. It will automatically switch between
+the light and dark theme depending on your browser/OS' theming preference.
+
+If you use Firefox and wish to use the dark theme regardless of your OS
+configuration, you can install the
+[Dark Website Forcer](https://addons.mozilla.org/en-US/firefox/addon/dark-mode-website-switcher/)
+add-on.
 
 ## Contributing changes
 
 **Pull Requests should use the `master` branch by default. Only make Pull Requests against other branches (e.g. `2.1` or `3.0`) if your changes only apply to that specific version of Godot.**
 
-Though arguably less convenient to edit than a wiki, this git repository is meant to receive pull requests to always improve the documentation, add new pages, etc. Having direct access to the source files in a revision control system is a big plus to ensure the quality of our documentation.
+Though arguably less convenient to edit than a wiki, this Git repository is meant to receive pull requests to always improve the documentation, add new pages, etc. Having direct access to the source files in a revision control system is a big plus to ensure the quality of our documentation.
 
 ### Editing existing pages
 
@@ -42,13 +53,13 @@ Similarly, you can include attachments (like assets as support material for a tu
 
 ## Building with Sphinx
 
-To build the HTML website (or any other format supported by Sphinx, like PDF, EPUB or LaTeX), you need to install [Sphinx](https://sphinx-doc.org/) >= 1.3 as well as (for the HTML) the [readthedocs.org theme](https://github.com/snide/sphinx_rtd_theme). Only the Python 3 flavor was tested, though the Python 2 versions might work too.
+To build the HTML website (or any other format supported by Sphinx, like PDF, EPUB or LaTeX), you need to install [Sphinx](https://www.sphinx-doc.org/) >= 1.3 as well as (for the HTML) the [readthedocs.org theme](https://github.com/snide/sphinx_rtd_theme).
+You also need to install the Sphinx extensions defined in `requirements.txt`.
 
 Those tools are best installed using [pip](https://pip.pypa.io), Python's module installer. The Python 3 version might be provided (on Linux distros) as `pip3` or `python3-pip`. You can then run:
 
 ```sh
-pip3 install sphinx
-pip3 install sphinx_rtd_theme
+pip install -r requirements.txt
 ```
 
 You can then build the HTML documentation from the root folder of this repository with:
@@ -63,7 +74,20 @@ or:
 make SPHINXBUILD=~/.local/bin/sphinx-build html
 ```
 
+Building the documentation requires at least 8 GB of RAM to be done without swapping. If you have at least 16 GB of RAM, you can speed up compilation by using:
+
+```bash
+# On Linux/macOS
+make html SPHINXOPTS=-j2
+
+# On Windows
+set SPHINXOPTS=-j2 && make html
+```
+
 The compilation might take some time as the `classes/` folder contains many files to parse.
+
+In case of a `MemoryError` or `EOFError`, you can remove the `classes/` folder and run `make` again. This will drop the class references from the final HTML documentation but will keep the rest intact. Make sure to avoid using `git add .` in this case when working on a pull request, or the whole `classes/` folder will be removed when you make a commit. See [#3157](https://github.com/godotengine/godot-docs/issues/3157) for more details.
+
 You can then test the changes live by opening `_build/html/index.html` in your favorite browser.
 
 ### Building with Sphinx on Windows
@@ -96,8 +120,7 @@ Execute this from the root folder of this repository:
 ```sh
 virtualenv --system-site-packages env/
 . env/bin/activate
-pip3 install sphinx
-pip3 install sphinx_rtd_theme
+pip install -r requirements.txt
 ```
 
 Then do `make html` like above.

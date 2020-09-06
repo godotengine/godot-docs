@@ -11,11 +11,6 @@ VisualScriptEditor
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Methods
@@ -44,6 +39,8 @@ Method Descriptions
 - void **add_custom_node** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` category, :ref:`Script<class_Script>` script **)**
 
 Add a custom Visual Script node to the editor. It'll be placed under "Custom Nodes" with the ``category`` as the parameter.
+
+----
 
 .. _class_VisualScriptEditor_method_remove_custom_node:
 

@@ -11,30 +11,25 @@ CSGBox
 
 **Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A CSG Box shape.
-
-Properties
-----------
-
-+---------------------------------+-------------------------------------------------+-----+
-| :ref:`float<class_float>`       | :ref:`depth<class_CSGBox_property_depth>`       | 2.0 |
-+---------------------------------+-------------------------------------------------+-----+
-| :ref:`float<class_float>`       | :ref:`height<class_CSGBox_property_height>`     | 2.0 |
-+---------------------------------+-------------------------------------------------+-----+
-| :ref:`Material<class_Material>` | :ref:`material<class_CSGBox_property_material>` |     |
-+---------------------------------+-------------------------------------------------+-----+
-| :ref:`float<class_float>`       | :ref:`width<class_CSGBox_property_width>`       | 2.0 |
-+---------------------------------+-------------------------------------------------+-----+
 
 Description
 -----------
 
 This node allows you to create a box for use with the CSG system.
+
+Properties
+----------
+
++---------------------------------+-------------------------------------------------+---------+
+| :ref:`float<class_float>`       | :ref:`depth<class_CSGBox_property_depth>`       | ``2.0`` |
++---------------------------------+-------------------------------------------------+---------+
+| :ref:`float<class_float>`       | :ref:`height<class_CSGBox_property_height>`     | ``2.0`` |
++---------------------------------+-------------------------------------------------+---------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CSGBox_property_material>` |         |
++---------------------------------+-------------------------------------------------+---------+
+| :ref:`float<class_float>`       | :ref:`width<class_CSGBox_property_width>`       | ``2.0`` |
++---------------------------------+-------------------------------------------------+---------+
 
 Property Descriptions
 ---------------------
@@ -44,7 +39,7 @@ Property Descriptions
 - :ref:`float<class_float>` **depth**
 
 +-----------+------------------+
-| *Default* | 2.0              |
+| *Default* | ``2.0``          |
 +-----------+------------------+
 | *Setter*  | set_depth(value) |
 +-----------+------------------+
@@ -53,12 +48,14 @@ Property Descriptions
 
 Depth of the box measured from the center of the box.
 
+----
+
 .. _class_CSGBox_property_height:
 
 - :ref:`float<class_float>` **height**
 
 +-----------+-------------------+
-| *Default* | 2.0               |
+| *Default* | ``2.0``           |
 +-----------+-------------------+
 | *Setter*  | set_height(value) |
 +-----------+-------------------+
@@ -66,6 +63,8 @@ Depth of the box measured from the center of the box.
 +-----------+-------------------+
 
 Height of the box measured from the center of the box.
+
+----
 
 .. _class_CSGBox_property_material:
 
@@ -79,12 +78,14 @@ Height of the box measured from the center of the box.
 
 The material used to render the box.
 
+----
+
 .. _class_CSGBox_property_width:
 
 - :ref:`float<class_float>` **width**
 
 +-----------+------------------+
-| *Default* | 2.0              |
+| *Default* | ``2.0``          |
 +-----------+------------------+
 | *Setter*  | set_width(value) |
 +-----------+------------------+

@@ -13,6 +13,72 @@ As mentioned in the :ref:`doc_using_assetlib` document, in order to be able to
 submit assets to the AssetLib, you need to have a registered account, and be
 logged in.
 
+Submission guidelines
+---------------------
+
+Before submitting your asset, please ensure it follows all of the
+requirements, and also consider following the recommendations.
+
+Requirements
+~~~~~~~~~~~~
+
+Generally speaking, most assets people submit to the asset library
+are accepted. However, in order for your asset to be accepted, there
+are a few requirements your asset needs to meet to be approved.
+
+* The asset must work. If the asset doesn't run or otherwise doesn't
+  work in the specified Godot version, then it will be rejected.
+
+* The asset must have a proper **.gitignore** file. It's important to
+  keep redundant data out of the repository.
+  `Here's a template. <https://github.com/github/gitignore/blob/master/Godot.gitignore>`_
+
+* No submodules, or any submodules must be non-essential. GitHub
+  does not include submodules in the downloaded ZIP file, so if the
+  asset needs the contents of the submodule, your asset won't work.
+
+* The license needs to be correct. The license listed on the asset
+  library must match the license in the repository.
+
+* Use proper English for the name and description of your asset.
+  This includes using correct capitalization, and using full
+  sentences in the description.
+
+* The icon link must be a direct link. For icons hosted on GitHub, the
+  link must start with "raw.githubusercontent.com", not "github.com".
+
+Recommendations
+~~~~~~~~~~~~~~~
+
+These things are not required for your asset to be approved, but
+if you follow these recommendations, you can help make the asset
+library a better place for all users.
+
+* Fix or suppress all script warnings. The warning system is there to
+  help identify issues with your code, but people using your asset
+  don't need to see them.
+
+* Make your code conform to the official style guides. Having a
+  consistent style helps other people read your code, and it also helps
+  if other people wish to contribute to your asset. See: the
+  :ref:`doc_gdscript_styleguide` or the :ref:`doc_c_sharp_styleguide`.
+
+* If you have screenshots in your repo, place them in their own subfolder
+  and add a **.gdignore** file in the same folder (note: **gd**, not **git**).
+  This prevents Godot from importing your screenshots.
+  On Windows, open a command prompt in the project folder and run
+  ``type nul > .gdignore`` to create a file whose name starts with a period.
+
+* If your asset is a library for working with other files,
+  consider including example files in the asset.
+
+* The icon should be a square, its aspect ratio should be 1:1. It should
+  also ideally have a minimum resolution of 64x64 pixels.
+
+* While the asset library allows more than just GitHub, consider
+  hosting your asset's source code on GitHub. Other services may not
+  work reliably, and a lack of familiarity can be a barrier to contributors.
+
 Submitting
 ----------
 
@@ -60,9 +126,9 @@ is required in the submission form here as well.
     from repository host to repository host, but will likely look similar to
     `https://github.com/<user>/<project>/issues`. You may leave this field empty
     if you use your provider's issue tracker, and it's part of the same repository.
-* **Download Commit/Tag**:
-    The commit or tag of the asset. For example,
-    `b1d3172f89b86e52465a74f63a74ac84c491d3e1` or `v1.0`. The site computes
+* **Download Commit**:
+    The commit of the asset. For example,
+    `b1d3172f89b86e52465a74f63a74ac84c491d3e1`. The site computes
     the actual download URL from this.
 * **Icon URL**:
     The URL to your asset's icon (which will be used as a thumbnail
@@ -99,12 +165,7 @@ be patient! You will be informed when your asset is reviewed. If it was rejected
 you will be told why that may have been, and you will be able to submit it again
 with the appropriate changes.
 You may have some luck accelerating the approval process by messaging the
-moderators/assetlib reviewers on IRC (the #godotengine-atelier channel on Freenode),
+moderators/assetlib reviewers on IRC (the ``#godotengine-atelier`` channel on Freenode),
 or the official Discord server.
 
-Submission guidelines
----------------------
-
-[TODO]
-
-.. |image0| image:: ./img/assetlib_submit.png
+.. |image0| image:: img/assetlib_submit.png

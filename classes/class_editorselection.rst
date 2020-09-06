@@ -11,12 +11,12 @@ EditorSelection
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Manages the SceneTree selection in the editor.
+
+Description
+-----------
+
+This object manages the SceneTree selection in the editor.
 
 Methods
 -------
@@ -42,11 +42,6 @@ Signals
 
 Emitted when the selection changes.
 
-Description
------------
-
-This object manages the SceneTree selection in the editor.
-
 Method Descriptions
 -------------------
 
@@ -56,11 +51,15 @@ Method Descriptions
 
 Adds a node to the selection.
 
+----
+
 .. _class_EditorSelection_method_clear:
 
 - void **clear** **(** **)**
 
 Clear the selection.
+
+----
 
 .. _class_EditorSelection_method_get_selected_nodes:
 
@@ -68,11 +67,15 @@ Clear the selection.
 
 Gets the list of selected nodes.
 
+----
+
 .. _class_EditorSelection_method_get_transformable_selected_nodes:
 
 - :ref:`Array<class_Array>` **get_transformable_selected_nodes** **(** **)**
 
 Gets the list of selected nodes, optimized for transform operations (i.e. moving them, rotating, etc). This list avoids situations where a node is selected and also child/grandchild.
+
+----
 
 .. _class_EditorSelection_method_remove_node:
 

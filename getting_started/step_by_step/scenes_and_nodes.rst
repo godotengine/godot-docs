@@ -73,28 +73,11 @@ Basically, the Godot editor is a **scene editor**. It has plenty of tools for
 editing 2D and 3D scenes as well as user interfaces, but the editor is based on
 the concept of editing a scene and the nodes that compose it.
 
-Creating a new project
-----------------------
-
-Let's make these abstract concepts more concrete with an example. Following a
-long tradition in tutorials, we'll start with a "Hello World" project.
-This will introduce us to using the editor.
-
-If you run the Godot executable outside of a project, the Project Manager
-appears. This helps developers manage their projects.
-
-.. image:: img/project_manager.png
-
-To create a new project, click the "New Project" option. Choose and create a
-path for the project and specify the project name "New Project":
-
-.. image:: img/create_new_project.png
-
 Editor
 ------
 
-Once you've created the "New Project", then open it. This will open the Godot
-editor:
+Open the project you made in :ref:`doc_intro_to_the_editor_interface`, or create a new one. This will
+open the Godot editor:
 
 .. image:: img/empty_editor.png
 
@@ -103,7 +86,30 @@ kitchen, so let's open the refrigerator and add some fresh nodes to the
 project. We'll begin with a "Hello World" message that we'll put on the
 screen.
 
-To do this, press the "New Node" button (which looks like a plus symbol):
+To do this we need to add a Label node. Press the "Add Child Node" button
+at the top left of the scene dock (the icon represents a plus symbol).
+This button is the main way to add new nodes to a scene, and will always
+add the chosen node as a child of the currently selected node (or, in an
+empty scene, as the "root" node).
+
+.. note::
+
+    In an empty scene (without root node), the scene dock shows several
+    options to quickly add a root node to the scene. "2D Scene" adds a
+    Node2D node, "3D Scene" adds a Spatial node, "User Interface" adds a
+    Control node, and "Other Node" which lets you select any node (so it
+    is equivalent to pressing the "Add Child Node" button). You can also
+    press the star-shaped icon to toggle the display of your favorited
+    nodes.
+
+    Note that these presets are here for convenience and are not mandatory
+    for the different types of scenes. Not every 3D scene needs a Spatial
+    node as its root node, likewise not every GUI or 2D scene needs a Control
+    node or Node2D as their root node.
+
+Now, to add a label node to this scene you can click on the Other Node
+button or the Add Node button at the top. In scenes that aren't empty you
+use the add node button to create every child node.
 
 .. image:: img/newnode_button.png
 
@@ -124,9 +130,8 @@ And finally, create the Label! A lot happens when Create is pressed:
 First of all, the scene changes to the 2D editor (because Label is a 2D Node
 type), and the Label appears, selected, at the top left corner of the viewport.
 
-The node appears in the scene tree editor (box in the top right
-corner), and the label properties appear in the Inspector (box in the
-bottom right corner).
+The node appears in the scene tree editor in the Scene dock, and the label
+properties appear in the Inspector dock.
 
 The next step will be to change the "Text" Property of the label. Let's
 change it to "Hello World":
@@ -134,7 +139,7 @@ change it to "Hello World":
 .. image:: img/hw.png
 
 Ok, everything's ready to run the scene! Press the PLAY SCENE Button on
-the top bar (or hit F6):
+the top bar (or hit :kbd:`F6`):
 
 .. image:: img/playscene.png
 
@@ -149,9 +154,9 @@ Hello.tscn in Scene -> Save:
 
 And here's when something funny happens. The file dialog is a special
 file dialog, and only allows you to save inside the project. The project
-root is "res://" which means "resource path". This means that files can
+root is ``res://`` which means "resource path". This means that files can
 only be saved inside the project. For the future, when doing file
-operations in Godot, remember that "res://" is the resource path, and no
+operations in Godot, remember that ``res://`` is the resource path, and no
 matter the platform or install location, it is the way to locate where
 resource files are from inside the game.
 

@@ -11,33 +11,42 @@ VScrollBar
 
 **Inherits:** :ref:`ScrollBar<class_ScrollBar>` **<** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+Vertical scroll bar.
 
-Brief Description
------------------
+Description
+-----------
 
-Vertical version of :ref:`ScrollBar<class_ScrollBar>`, which goes from left (min) to right (max).
+Vertical version of :ref:`ScrollBar<class_ScrollBar>`, which goes from top (min) to bottom (max).
+
+Properties
+----------
+
++-----------------------+-----------------------+--------------+
+| :ref:`int<class_int>` | size_flags_horizontal | **O:** ``0`` |
++-----------------------+-----------------------+--------------+
+| :ref:`int<class_int>` | size_flags_vertical   | **O:** ``1`` |
++-----------------------+-----------------------+--------------+
 
 Theme Properties
 ----------------
 
-+---------------------------------+---------------------+
-| :ref:`Texture<class_Texture>`   | decrement           |
-+---------------------------------+---------------------+
-| :ref:`Texture<class_Texture>`   | decrement_highlight |
-+---------------------------------+---------------------+
-| :ref:`StyleBox<class_StyleBox>` | grabber             |
-+---------------------------------+---------------------+
-| :ref:`StyleBox<class_StyleBox>` | grabber_highlight   |
-+---------------------------------+---------------------+
-| :ref:`StyleBox<class_StyleBox>` | grabber_pressed     |
-+---------------------------------+---------------------+
-| :ref:`Texture<class_Texture>`   | increment           |
-+---------------------------------+---------------------+
-| :ref:`Texture<class_Texture>`   | increment_highlight |
-+---------------------------------+---------------------+
-| :ref:`StyleBox<class_StyleBox>` | scroll              |
-+---------------------------------+---------------------+
-| :ref:`StyleBox<class_StyleBox>` | scroll_focus        |
-+---------------------------------+---------------------+
++-----------------------------------+---------------------+
+| :ref:`Texture2D<class_Texture2D>` | decrement           |
++-----------------------------------+---------------------+
+| :ref:`Texture2D<class_Texture2D>` | decrement_highlight |
++-----------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>`   | grabber             |
++-----------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>`   | grabber_highlight   |
++-----------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>`   | grabber_pressed     |
++-----------------------------------+---------------------+
+| :ref:`Texture2D<class_Texture2D>` | increment           |
++-----------------------------------+---------------------+
+| :ref:`Texture2D<class_Texture2D>` | increment_highlight |
++-----------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>`   | scroll              |
++-----------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>`   | scroll_focus        |
++-----------------------------------+---------------------+
 

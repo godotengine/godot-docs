@@ -80,7 +80,7 @@ API Bridge.
 
 This language is the best choice for performance and does not need to be
 used throughout an entire game, as other parts can be written in GDScript or Visual
-Script. However the API is clear and easy to use as it resembles, mostly,
+Script. However, the API is clear and easy to use as it resembles, mostly,
 Godot's actual C++ API.
 
 More languages can be made available through the GDNative interface, but keep in mind
@@ -97,14 +97,16 @@ demonstrate:
 - Hooking up UI elements via signals.
 - Writing a script that can access other nodes in the scene.
 
-Before continuing, please make sure to read the :ref:`GDScript<doc_gdscript>` reference.
-It's a language designed to be simple, and the reference is short, so it will not take more
-than a few minutes to get an overview of the concepts.
+Before continuing, make sure to skim and bookmark the :ref:`GDScript<doc_gdscript>` reference.
+It's a language designed to be simple, and the reference is structured into sections to make it
+easier to get an overview of the concepts.
 
 Scene setup
 ~~~~~~~~~~~
 
-Use the "Add Child Node" dialogue accessed from the Scene tab (or by pressing ``Ctrl+A``) to create a hierarchy with the following
+If you still have the "instancing" project open from the previous tutorial, then close that out (Project -> Quit to Project List) and create a New Project.
+
+Use the "Add Child Node" dialogue accessed from the Scene tab (or by pressing :kbd:`Ctrl + A`) to create a hierarchy with the following
 nodes:
 
 - Panel
@@ -170,7 +172,7 @@ as well as how it interacts with other nodes: children, parent, siblings,
 and so on. The local scope of the script is the node. In other words, the script
 inherits the functions provided by that node.
 
-.. image:: /img/brainslug.jpg
+.. image:: img/brainslug.jpg
 
 
 .. _doc_scripting_handling_a_signal:
@@ -201,19 +203,12 @@ button in the bottom right, you'll open up the connection creation dialogue.
 
 .. image:: img/connect_dialogue.png
 
-In the bottom-left are the key things you need to create a connection: a node
-which implements the method you want to trigger (represented here as a
-NodePath) and the name of the method to trigger.
+The top of the dialogue displays a list of your scene's nodes with the emitting
+node's name highlighted in blue. Select the "Panel" node here.
 
-The top-left section displays a list of your scene's nodes with the emitting
-node's name highlighted in red. Select the "Panel" node here. When you select
-a node, the NodePath at the bottom will automatically update to point to a
-relative path from the emitting node to the selected node.
-
+The bottom of the dialogue shows the name of the method that will be created.
 By default, the method name will contain the emitting node's name ("Button" in
-this case), resulting in ``_on_[EmitterNode]_[signal_name]``. If you do have the
-"Make Function" check button checked, then the editor will generate the function
-for you before setting up the connection.
+this case), resulting in ``_on_[EmitterNode]_[signal_name]``.
 
 And that concludes the guide on how to use the visual interface. However, this
 is a scripting tutorial, so for the sake of learning, let's dive into the
@@ -259,14 +254,14 @@ Next, write a function which will be called when the button is pressed:
         GetNode<Label>("Label").Text = "HELLO!";
     }
 
-Finally, connect the button's "pressed" signal to ``_ready()`` by
+Finally, connect the button's "pressed" signal to ``_on_Button_pressed()`` by
 using :ref:`Object.connect() <class_Object_method_connect>`.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        get_node("Button").connect("pressed", self, "_on_Button_pressed")
+        get_node("Button").connect("pressed", self._on_Button_pressed)
 
  .. code-tab:: csharp
 
@@ -283,7 +278,7 @@ The final script should look like this:
     extends Panel
 
     func _ready():
-        get_node("Button").connect("pressed", self, "_on_Button_pressed")
+        get_node("Button").connect("pressed", self._on_Button_pressed)
 
     func _on_Button_pressed():
         get_node("Label").text = "HELLO!"
@@ -338,7 +333,7 @@ Also, remember that nodes are referenced by name, not by type.
 
 .. note::
 
-    The right-hand panel of the connect dialogue is for binding specific
+    The 'advanced' panel of the connect dialogue is for binding specific
     values to the connected function's parameters. You can add and remove
     values of different types.
 

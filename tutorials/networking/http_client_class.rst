@@ -10,7 +10,7 @@ which has a tutorial available :ref:`here <doc_http_request_class>`.
 Here's an example of using the :ref:`HTTPClient <class_HTTPClient>`
 class. It's just a script, so it can be run by executing:
 
-::
+.. code-block:: console
 
     c:\godot> godot -s http_test.gd
 
@@ -77,11 +77,11 @@ It will connect and fetch a website.
             else:
                 # Or just plain Content-Length
                 var bl = http.get_response_body_length()
-                print("Response Length: ",bl)
+                print("Response Length: ", bl)
 
             # This method works for both anyway
 
-            var rb = PoolByteArray() # Array that will hold the data.
+            var rb = PackedByteArray() # Array that will hold the data.
 
             while http.get_status() == HTTPClient.STATUS_BODY:
                 # While there is body left to be read

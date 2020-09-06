@@ -11,36 +11,36 @@ AnimatedSprite3D
 
 **Inherits:** :ref:`SpriteBase3D<class_SpriteBase3D>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 2D sprite node in 3D world, that can use multiple 2D textures for animation.
+
+Description
+-----------
+
+Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource, which can be configured in the editor via the SpriteFrames panel.
 
 Properties
 ----------
 
-+-----------------------------------------+-------------------------------------------------------------+-----------+
-| :ref:`String<class_String>`             | :ref:`animation<class_AnimatedSprite3D_property_animation>` | "default" |
-+-----------------------------------------+-------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`                   | :ref:`frame<class_AnimatedSprite3D_property_frame>`         | 0         |
-+-----------------------------------------+-------------------------------------------------------------+-----------+
-| :ref:`SpriteFrames<class_SpriteFrames>` | :ref:`frames<class_AnimatedSprite3D_property_frames>`       |           |
-+-----------------------------------------+-------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                 | :ref:`playing<class_AnimatedSprite3D_property_playing>`     | false     |
-+-----------------------------------------+-------------------------------------------------------------+-----------+
++-----------------------------------------+-------------------------------------------------------------+----------------+
+| :ref:`StringName<class_StringName>`     | :ref:`animation<class_AnimatedSprite3D_property_animation>` | ``@"default"`` |
++-----------------------------------------+-------------------------------------------------------------+----------------+
+| :ref:`int<class_int>`                   | :ref:`frame<class_AnimatedSprite3D_property_frame>`         | ``0``          |
++-----------------------------------------+-------------------------------------------------------------+----------------+
+| :ref:`SpriteFrames<class_SpriteFrames>` | :ref:`frames<class_AnimatedSprite3D_property_frames>`       |                |
++-----------------------------------------+-------------------------------------------------------------+----------------+
+| :ref:`bool<class_bool>`                 | :ref:`playing<class_AnimatedSprite3D_property_playing>`     | ``false``      |
++-----------------------------------------+-------------------------------------------------------------+----------------+
 
 Methods
 -------
 
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_playing<class_AnimatedSprite3D_method_is_playing>` **(** **)** const                   |
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| void                    | :ref:`play<class_AnimatedSprite3D_method_play>` **(** :ref:`String<class_String>` anim="" **)** |
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| void                    | :ref:`stop<class_AnimatedSprite3D_method_stop>` **(** **)**                                     |
-+-------------------------+-------------------------------------------------------------------------------------------------+
++-------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`is_playing<class_AnimatedSprite3D_method_is_playing>` **(** **)** const                            |
++-------------------------+----------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`play<class_AnimatedSprite3D_method_play>` **(** :ref:`StringName<class_StringName>` anim=@"" **)** |
++-------------------------+----------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`stop<class_AnimatedSprite3D_method_stop>` **(** **)**                                              |
++-------------------------+----------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -51,20 +51,15 @@ Signals
 
 Emitted when :ref:`frame<class_AnimatedSprite3D_property_frame>` changed.
 
-Description
------------
-
-Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource, which can be configured in the editor via the SpriteFrames panel.
-
 Property Descriptions
 ---------------------
 
 .. _class_AnimatedSprite3D_property_animation:
 
-- :ref:`String<class_String>` **animation**
+- :ref:`StringName<class_StringName>` **animation**
 
 +-----------+----------------------+
-| *Default* | "default"            |
+| *Default* | ``@"default"``       |
 +-----------+----------------------+
 | *Setter*  | set_animation(value) |
 +-----------+----------------------+
@@ -73,12 +68,14 @@ Property Descriptions
 
 The current animation from the ``frames`` resource. If this value changes, the ``frame`` counter is reset.
 
+----
+
 .. _class_AnimatedSprite3D_property_frame:
 
 - :ref:`int<class_int>` **frame**
 
 +-----------+------------------+
-| *Default* | 0                |
+| *Default* | ``0``            |
 +-----------+------------------+
 | *Setter*  | set_frame(value) |
 +-----------+------------------+
@@ -86,6 +83,8 @@ The current animation from the ``frames`` resource. If this value changes, the `
 +-----------+------------------+
 
 The displayed animation frame's index.
+
+----
 
 .. _class_AnimatedSprite3D_property_frames:
 
@@ -99,13 +98,15 @@ The displayed animation frame's index.
 
 The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s).
 
+----
+
 .. _class_AnimatedSprite3D_property_playing:
 
 - :ref:`bool<class_bool>` **playing**
 
-+-----------+-------+
-| *Default* | false |
-+-----------+-------+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
 
 If ``true``, the :ref:`animation<class_AnimatedSprite3D_property_animation>` is currently playing.
 
@@ -118,11 +119,15 @@ Method Descriptions
 
 Returns ``true`` if an animation is currently being played.
 
+----
+
 .. _class_AnimatedSprite3D_method_play:
 
-- void **play** **(** :ref:`String<class_String>` anim="" **)**
+- void **play** **(** :ref:`StringName<class_StringName>` anim=@"" **)**
 
 Plays the animation named ``anim``. If no ``anim`` is provided, the current animation is played.
+
+----
 
 .. _class_AnimatedSprite3D_method_stop:
 

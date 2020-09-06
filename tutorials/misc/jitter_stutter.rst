@@ -32,13 +32,19 @@ Jitter
 There can be many causes of jitter, the most typical one happens when the game *physics frequency* (usually 60 Hz) runs
 at a different resolution than the monitor refresh rate. Check whether your monitor refresh rate is different from 60 Hz.
 
-This is generally not a problem, given that refresh rates higher than 60 Hz are barely visible to the human eye, and
-starting with Godot 3.1, a frame timer was introduced that tries to synchronize with refresh as best as possible.
+This is generally not a problem, given that most monitors are 60 Hz, and
+starting with Godot 3.1, a frame timer was introduced that tries to synchronize with refresh as well as possible.
 
 Sometimes only some objects appear to jitter (character or background). This happens when they are processed in different
 time sources (one is processed in the physics step while another is processed in the idle step). Godot 3.1 does some
 improvements to this, from allowing kinematic bodies to be animated in the regular _process loop, to further fixes in the
 frame timer.
+
+.. note::
+
+    You can use physics interpolation to mitigate physics-related jittering.
+    See `lawnjelly's smoothing-addon <https://github.com/lawnjelly/smoothing-addon>`__
+    for an add-on that can be dropped into any project to enable physics interpolation.
 
 Stutter
 -------
@@ -59,17 +65,17 @@ stutter.
 
 Eliminating this completely requires giving your game full privileges to become "time critical", which is not advised.
 Some games may do it, but it is advised to learn to live with this problem, as it is common for Windows games and most users
-won't play games windowed (games that are played in a window, e.g. puzzle games, will usaully not exhibit this problem anyway).
+won't play games windowed (games that are played in a window, e.g. puzzle games, will usually not exhibit this problem anyway).
 
 For fullscreen, Windows gives special priority to the game so stutter is no longer visible and very rare.
 This is how most games are played.
 
-Linux (X11)
-^^^^^^^^^^^
+Linux
+^^^^^
 
 Stutter may be visible on Desktop Linux, but this is usually associated with different video drivers and compositors.
 Nouveau drivers often exhibit this, while AMD or NVidia proprietary don't. Some compositors may also trigger this problem
-(e.g. KWin), so it is advised to try using a different one to rule it out as the cause. 
+(e.g. KWin), so it is advised to try using a different one to rule it out as the cause.
 
 There is no workaround for driver or compositor stuttering other than reporting it as an issue to the driver or compositor
 developers.

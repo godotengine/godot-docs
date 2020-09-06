@@ -54,7 +54,7 @@ to each other.
   array object in traditional C++ libraries. It is a "templated"
   type, meaning that its records can only contain a particular type (denoted
   by angled brackets). So, for example, a
-  :ref:`PoolStringArray <class_PoolStringArray>` would be something like
+  :ref:`PackedStringArray <class_PackedStringArray>` would be something like
   a ``Vector<String>``.
 
 Contiguous memory stores imply the following operation performance:
@@ -103,11 +103,12 @@ Contiguous memory stores imply the following operation performance:
       ordered-aware search algorithm.
 
 Godot implements Dictionary as an ``OrderedHashMap<Variant, Variant>``. The engine
-stores a giant array (initialized to 1000 records) of key-value pairs. When
+stores a small array (initialized to 2^3 or 8 records) of key-value pairs. When
 one attempts to access a value, they provide it a key. It then *hashes* the
-key, i.e. converts it into a number. The "hash" becomes the index into the
-array, giving the OHM a quick lookup for the value within the conceptual
-"table" of keys mapped to values.
+key, i.e. converts it into a number. The "hash" is used to calculate the index
+into the array. As an array, the OHM then has a quick lookup within the "table"
+of keys mapped to values. When the HashMap becomes too full, it increases to
+the next power of 2 (so, 16 records, then 32, etc.) and rebuilds the structure.
 
 Hashes are to reduce the chance of a key collision. If one occurs, the table
 must recalculate another index for the value that takes the previous position
@@ -121,14 +122,15 @@ the expense of memory and some minor operational efficiency.
       too dependent on the density of the table, things will stay fast.
       Which leads to...
 
-2. Maintaining a huge size for the table.
+2. Maintaining an ever-growing size for the table.
 
-    - The reason it starts with 1000 records, and the reason it forces
-      large gaps of unused memory interspersed in the table is to
-      minimize hash collisions and maintain the speed of the accesses.
+    - HashMaps maintain gaps of unused memory interspersed in the table
+      on purpose to reduce hash collisions and maintain the speed of
+      accesses. This is why it constantly increases in size quadratically by
+      powers of 2.
 
 As one might be able to tell, Dictionaries specialize in tasks that Arrays
-aren't. An overview of their operational details is as follows:
+do not. An overview of their operational details is as follows:
 
 - **Iterate:** Fast.
 
@@ -273,10 +275,10 @@ limited only by their imagination.
 Enumerations: int vs. string
 ----------------------------
 
-Most languages offer an enumeration type option. GDScript is no different,
-but unlike most other languages, it allows one to use either integers or
-strings for the enum values. The question then arises, "which should one
-use?"
+Most languages offer an enumeration type option. GDScript is no different, but
+unlike most other languages, it allows one to use either integers or strings for
+the enum values (the latter only when using the ``export`` keyword in GDScript).
+The question then arises, "which should one use?"
 
 The short answer is, "whichever you are more comfortable with." This
 is a feature specific to GDScript and not Godot scripting in general;

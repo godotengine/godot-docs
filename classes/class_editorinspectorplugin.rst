@@ -11,12 +11,24 @@ EditorInspectorPlugin
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Plugin for adding custom property editors on inspector.
+
+Description
+-----------
+
+This plugins allows adding custom property editors to :ref:`EditorInspector<class_EditorInspector>`.
+
+Plugins are registered via :ref:`EditorPlugin.add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>`.
+
+When an object is edited, the :ref:`can_handle<class_EditorInspectorPlugin_method_can_handle>` function is called and must return ``true`` if the object type is supported.
+
+If supported, the function :ref:`parse_begin<class_EditorInspectorPlugin_method_parse_begin>` will be called, allowing to place custom controls at the beginning of the class.
+
+Subsequently, the :ref:`parse_category<class_EditorInspectorPlugin_method_parse_category>` and :ref:`parse_property<class_EditorInspectorPlugin_method_parse_property>` are called for every category and property. They offer the ability to add custom controls to the inspector too.
+
+Finally :ref:`parse_end<class_EditorInspectorPlugin_method_parse_end>` will be called.
+
+On each of these calls, the "add" functions can be called.
 
 Methods
 -------
@@ -26,7 +38,7 @@ Methods
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`add_property_editor<class_EditorInspectorPlugin_method_add_property_editor>` **(** :ref:`String<class_String>` property, :ref:`Control<class_Control>` editor **)**                                                                                                                     |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`add_property_editor_for_multiple_properties<class_EditorInspectorPlugin_method_add_property_editor_for_multiple_properties>` **(** :ref:`String<class_String>` label, :ref:`PoolStringArray<class_PoolStringArray>` properties, :ref:`Control<class_Control>` editor **)**              |
+| void                    | :ref:`add_property_editor_for_multiple_properties<class_EditorInspectorPlugin_method_add_property_editor_for_multiple_properties>` **(** :ref:`String<class_String>` label, :ref:`PackedStringArray<class_PackedStringArray>` properties, :ref:`Control<class_Control>` editor **)**          |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`can_handle<class_EditorInspectorPlugin_method_can_handle>` **(** :ref:`Object<class_Object>` object **)** virtual                                                                                                                                                                       |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -39,23 +51,6 @@ Methods
 | :ref:`bool<class_bool>` | :ref:`parse_property<class_EditorInspectorPlugin_method_parse_property>` **(** :ref:`Object<class_Object>` object, :ref:`int<class_int>` type, :ref:`String<class_String>` path, :ref:`int<class_int>` hint, :ref:`String<class_String>` hint_text, :ref:`int<class_int>` usage **)** virtual |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-This plugins allows adding custom property editors to :ref:`EditorInspector<class_EditorInspector>`.
-
-Plugins are registered via :ref:`EditorPlugin.add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>`.
-
-When an object is edited, the :ref:`can_handle<class_EditorInspectorPlugin_method_can_handle>` function is called and must return true if the object type is supported.
-
-If supported, the function :ref:`parse_begin<class_EditorInspectorPlugin_method_parse_begin>` will be called, allowing to place custom controls at the beginning of the class.
-
-Subsequently, the :ref:`parse_category<class_EditorInspectorPlugin_method_parse_category>` and :ref:`parse_property<class_EditorInspectorPlugin_method_parse_property>` are called for every category and property. They offer the ability to add custom controls to the inspector too.
-
-Finally :ref:`parse_end<class_EditorInspectorPlugin_method_parse_end>` will be called.
-
-On each of these calls, the "add" functions can be called.
-
 Method Descriptions
 -------------------
 
@@ -65,23 +60,31 @@ Method Descriptions
 
 Adds a custom control, not necessarily a property editor.
 
+----
+
 .. _class_EditorInspectorPlugin_method_add_property_editor:
 
 - void **add_property_editor** **(** :ref:`String<class_String>` property, :ref:`Control<class_Control>` editor **)**
 
 Adds a property editor, this must inherit :ref:`EditorProperty<class_EditorProperty>`.
 
+----
+
 .. _class_EditorInspectorPlugin_method_add_property_editor_for_multiple_properties:
 
-- void **add_property_editor_for_multiple_properties** **(** :ref:`String<class_String>` label, :ref:`PoolStringArray<class_PoolStringArray>` properties, :ref:`Control<class_Control>` editor **)**
+- void **add_property_editor_for_multiple_properties** **(** :ref:`String<class_String>` label, :ref:`PackedStringArray<class_PackedStringArray>` properties, :ref:`Control<class_Control>` editor **)**
 
 Adds an editor that allows modifying multiple properties, this must inherit :ref:`EditorProperty<class_EditorProperty>`.
+
+----
 
 .. _class_EditorInspectorPlugin_method_can_handle:
 
 - :ref:`bool<class_bool>` **can_handle** **(** :ref:`Object<class_Object>` object **)** virtual
 
-Returns true if this object can be handled by this plugin.
+Returns ``true`` if this object can be handled by this plugin.
+
+----
 
 .. _class_EditorInspectorPlugin_method_parse_begin:
 
@@ -89,11 +92,15 @@ Returns true if this object can be handled by this plugin.
 
 Called to allow adding controls at the beginning of the list.
 
+----
+
 .. _class_EditorInspectorPlugin_method_parse_category:
 
 - void **parse_category** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` category **)** virtual
 
 Called to allow adding controls at the beginning of the category.
+
+----
 
 .. _class_EditorInspectorPlugin_method_parse_end:
 
@@ -101,9 +108,11 @@ Called to allow adding controls at the beginning of the category.
 
 Called to allow adding controls at the end of the list.
 
+----
+
 .. _class_EditorInspectorPlugin_method_parse_property:
 
 - :ref:`bool<class_bool>` **parse_property** **(** :ref:`Object<class_Object>` object, :ref:`int<class_int>` type, :ref:`String<class_String>` path, :ref:`int<class_int>` hint, :ref:`String<class_String>` hint_text, :ref:`int<class_int>` usage **)** virtual
 
-Called to allow adding property specific editors to the inspector. Usually these inherit :ref:`EditorProperty<class_EditorProperty>`
+Called to allow adding property specific editors to the inspector. Usually these inherit :ref:`EditorProperty<class_EditorProperty>`. Returning ``true`` removes the built-in editor for this property, otherwise allows to insert a custom editor before the built-in one.
 

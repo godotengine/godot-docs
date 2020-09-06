@@ -11,23 +11,23 @@ Material
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`, :ref:`ParticlesMaterial<class_ParticlesMaterial>`, :ref:`ShaderMaterial<class_ShaderMaterial>`, :ref:`SpatialMaterial<class_SpatialMaterial>`
-
-**Category:** Core
-
-Brief Description
------------------
+**Inherited By:** :ref:`BaseMaterial3D<class_BaseMaterial3D>`, :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`, :ref:`PanoramaSkyMaterial<class_PanoramaSkyMaterial>`, :ref:`ParticlesMaterial<class_ParticlesMaterial>`, :ref:`PhysicalSkyMaterial<class_PhysicalSkyMaterial>`, :ref:`ProceduralSkyMaterial<class_ProceduralSkyMaterial>`, :ref:`ShaderMaterial<class_ShaderMaterial>`
 
 Abstract base :ref:`Resource<class_Resource>` for coloring and shading geometry.
+
+Description
+-----------
+
+Material is a base :ref:`Resource<class_Resource>` used for coloring and shading geometry. All materials inherit from it and almost all :ref:`VisualInstance<class_VisualInstance>` derived nodes carry a Material. A few flags and parameters are shared between all material types and are configured here.
 
 Properties
 ----------
 
-+---------------------------------+-----------------------------------------------------------------+---+
-| :ref:`Material<class_Material>` | :ref:`next_pass<class_Material_property_next_pass>`             |   |
-+---------------------------------+-----------------------------------------------------------------+---+
-| :ref:`int<class_int>`           | :ref:`render_priority<class_Material_property_render_priority>` | 0 |
-+---------------------------------+-----------------------------------------------------------------+---+
++---------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`Material<class_Material>` | :ref:`next_pass<class_Material_property_next_pass>`             |       |
++---------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`int<class_int>`           | :ref:`render_priority<class_Material_property_render_priority>` | ``0`` |
++---------------------------------+-----------------------------------------------------------------+-------+
 
 Constants
 ---------
@@ -39,11 +39,6 @@ Constants
 - **RENDER_PRIORITY_MAX** = **127** --- Maximum value for the :ref:`render_priority<class_Material_property_render_priority>` parameter.
 
 - **RENDER_PRIORITY_MIN** = **-128** --- Minimum value for the :ref:`render_priority<class_Material_property_render_priority>` parameter.
-
-Description
------------
-
-Material is a base :ref:`Resource<class_Resource>` used for coloring and shading geometry. All materials inherit from it and almost all :ref:`VisualInstance<class_VisualInstance>` derived nodes carry a Material. A few flags and parameters are shared between all material types and are configured here.
 
 Property Descriptions
 ---------------------
@@ -58,15 +53,25 @@ Property Descriptions
 | *Getter* | get_next_pass()      |
 +----------+----------------------+
 
+Sets the ``Material`` to be used for the next pass. This renders the object again using a different material.
+
+**Note:** only applies to :ref:`StandardMaterial3D<class_StandardMaterial3D>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
+
+----
+
 .. _class_Material_property_render_priority:
 
 - :ref:`int<class_int>` **render_priority**
 
 +-----------+----------------------------+
-| *Default* | 0                          |
+| *Default* | ``0``                      |
 +-----------+----------------------------+
 | *Setter*  | set_render_priority(value) |
 +-----------+----------------------------+
 | *Getter*  | get_render_priority()      |
 +-----------+----------------------------+
+
+Sets the render priority for transparent objects in 3D scenes. Higher priority objects will be sorted in front of lower priority objects.
+
+**Note:** this only applies to sorting of transparent objects. This will not impact how transparent objects are sorted relative to opaque objects. This is because opaque objects are sorted based on depth, while transparent objects are sorted from back to front (subject to priority).
 

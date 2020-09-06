@@ -9,28 +9,23 @@
 ProxyTexture
 ============
 
-**Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
-
-**Category:** Core
-
-Brief Description
------------------
+**Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 
 
 Properties
 ----------
 
-+-------------------------------+-----------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`base<class_ProxyTexture_property_base>` |
-+-------------------------------+-----------------------------------------------+
++-----------------------------------+-----------------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`base<class_ProxyTexture_property_base>` |
++-----------------------------------+-----------------------------------------------+
 
 Property Descriptions
 ---------------------
 
 .. _class_ProxyTexture_property_base:
 
-- :ref:`Texture<class_Texture>` **base**
+- :ref:`Texture2D<class_Texture2D>` **base**
 
 +----------+-----------------+
 | *Setter* | set_base(value) |

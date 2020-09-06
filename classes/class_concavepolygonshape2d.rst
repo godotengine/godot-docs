@@ -11,19 +11,7 @@ ConcavePolygonShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Concave polygon 2D shape resource for physics.
-
-Properties
-----------
-
-+-------------------------------------------------+----------------------------------------------------------------+----------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`segments<class_ConcavePolygonShape2D_property_segments>` | PoolVector2Array(  ) |
-+-------------------------------------------------+----------------------------------------------------------------+----------------------+
 
 Description
 -----------
@@ -32,20 +20,27 @@ Concave polygon 2D shape resource for physics. It is made out of segments and is
 
 The main difference between a :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>` and a ``ConcavePolygonShape2D`` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex in order to speed up collision detection.
 
+Properties
+----------
+
++-----------------------------------------------------+----------------------------------------------------------------+----------------------------+
+| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`segments<class_ConcavePolygonShape2D_property_segments>` | ``PackedVector2Array(  )`` |
++-----------------------------------------------------+----------------------------------------------------------------+----------------------------+
+
 Property Descriptions
 ---------------------
 
 .. _class_ConcavePolygonShape2D_property_segments:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **segments**
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **segments**
 
-+-----------+----------------------+
-| *Default* | PoolVector2Array(  ) |
-+-----------+----------------------+
-| *Setter*  | set_segments(value)  |
-+-----------+----------------------+
-| *Getter*  | get_segments()       |
-+-----------+----------------------+
++-----------+----------------------------+
+| *Default* | ``PackedVector2Array(  )`` |
++-----------+----------------------------+
+| *Setter*  | set_segments(value)        |
++-----------+----------------------------+
+| *Getter*  | get_segments()             |
++-----------+----------------------------+
 
 The array of points that make up the ``ConcavePolygonShape2D``'s line segments.
 

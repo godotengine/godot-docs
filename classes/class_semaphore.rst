@@ -11,39 +11,51 @@ Semaphore
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A synchronization semaphore.
-
-Methods
--------
-
-+---------------------------------------+------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`post<class_Semaphore_method_post>` **(** **)** |
-+---------------------------------------+------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_Semaphore_method_wait>` **(** **)** |
-+---------------------------------------+------------------------------------------------------+
 
 Description
 -----------
 
 A synchronization semaphore which can be used to synchronize multiple :ref:`Thread<class_Thread>`\ s. Initialized to zero on creation. Be careful to avoid deadlocks. For a binary version, see :ref:`Mutex<class_Mutex>`.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/threads/using_multiple_threads`
+
+Methods
+-------
+
++---------------------------------------+--------------------------------------------------------------+
+| void                                  | :ref:`post<class_Semaphore_method_post>` **(** **)**         |
++---------------------------------------+--------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`try_wait<class_Semaphore_method_try_wait>` **(** **)** |
++---------------------------------------+--------------------------------------------------------------+
+| void                                  | :ref:`wait<class_Semaphore_method_wait>` **(** **)**         |
++---------------------------------------+--------------------------------------------------------------+
+
 Method Descriptions
 -------------------
 
 .. _class_Semaphore_method_post:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **post** **(** **)**
+- void **post** **(** **)**
 
-Lowers the ``Semaphore``, allowing one more thread in. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` otherwise.
+Lowers the ``Semaphore``, allowing one more thread in.
+
+----
+
+.. _class_Semaphore_method_try_wait:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **try_wait** **(** **)**
+
+Like :ref:`wait<class_Semaphore_method_wait>`, but won't block, so if the value is zero, fails immediately and returns :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>`. If non-zero, it returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` to report success.
+
+----
 
 .. _class_Semaphore_method_wait:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **wait** **(** **)**
+- void **wait** **(** **)**
 
-Tries to wait for the ``Semaphore``, if its value is zero, blocks until non-zero. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` otherwise.
+Waits for the ``Semaphore``, if its value is zero, blocks until non-zero.
 

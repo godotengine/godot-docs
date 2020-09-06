@@ -18,8 +18,8 @@ to use this feature:
 
 **1. Stash active action**
 
-New created action is always an active action binded to object. There are 
-several ways to place an active action into NLA track, 
+New created action is always an active action bound to object. There are
+several ways to place an active action into NLA track,
 one is of course doing it in ``NLA Editor``
 
 .. image:: img/nla_editor.jpg
@@ -81,7 +81,7 @@ are placed in just one AnimationPlayer in the scene root.
 
 **Mode 'Animation as Action with Squash'**
 
-This mode has very similar behaviour of mode 'Animation as Action', but it
+This mode has very similar behavior of mode 'Animation as Action', but it
 can generate fewer AnimationPlayers; objects in parent-children relationship would
 share their AnimationPlayer. It is useful when you have several rigs, and each
 Skeleton and Mesh has actions; then one rig would have just one AnimationPlayer.

@@ -17,8 +17,8 @@ In this guide you learn to:
 -  Call functions with the powerful Call Function Tracks
 
 In Godot, you can animate anything available in the Inspector, such as
-Node transforms, sprites, UI elements, particles, visibility and color 
-of materials, and so on. You can also modify values of script variables 
+Node transforms, sprites, UI elements, particles, visibility and color
+of materials, and so on. You can also modify values of script variables
 and call any function.
 
 Create an AnimationPlayer node
@@ -56,9 +56,6 @@ It consists of four parts:
 -  The timeline with keyframes
 -  The timeline and track controls, where you can zoom the timeline and
    edit tracks for example.
-
-See the `animation panel reference <#animation-panel-reference>`__ below
-for details.
 
 Computer animation relies on keyframes
 --------------------------------------
@@ -102,8 +99,8 @@ to the node and the affected property.
 
    If you animate the wrong property, you can edit a track's path anytime.
    Double click on it and type the new path. Play the animation using the
-   "Play from beginning" button |Play from beginning| (Default shortcut:
-   Shift+D) to see the changes instantly.
+   "Play from beginning" button |Play from beginning| (or pressing
+   :kbd:`Shift + D` on keyboard) to see the changes instantly.
 
 Tutorial: Creating a simple animation
 -------------------------------------
@@ -111,17 +108,17 @@ Tutorial: Creating a simple animation
 Scene setup
 ~~~~~~~~~~~
 
-For this tutorial, we'll going to create an AnimationPlayer node and a
-sprite node as its child.
+For this tutorial, we'll create an AnimationPlayer node and a sprite node as its
+child.
 
 .. figure:: img/animation_animation_player_tree.png
    :alt: Our scene setup
 
    Our scene setup
 
-The sprite holds an image texture and we animate that sprite to move
-between two points on the screen. For this tutorial use the default Godot
-Icon as the sprites' texture. As a starting point, move the sprite
+The sprite holds an image texture. We animate that sprite to move
+between two points on the screen. For this tutorial, use the default Godot
+icon as the sprite's texture. As a starting point, move the sprite
 to a left position on the screen.
 
 .. tip::
@@ -158,8 +155,7 @@ Deselect rotation, because we are only interested in the location of our
 sprite for this tutorial and click on the key button.
 
 As we don't have a track already set up for the transform/location
-property, Godot asks, whether it should set it up for us. Click on
-"Create".
+property, Godot asks whether it should set it up for us. Click **Create**.
 
 This creates a new track and our first keyframe at the beginning of
 the timeline:
@@ -168,21 +164,6 @@ the timeline:
    :alt: The sprite track
 
    The sprite track
-
-The track name consists of a Node Path, followed by a colon, followed by
-a reference to its property, that we would like to modify.
-
-In our example, the path is ``AnimationPlayer/Sprite`` and the property
-is ``position``.
-
-The path always starts at the AnimationPlayer node's parent (so paths
-always have to include the AnimationPlayer node itself).
-
-.. note::
-
-   Don't worry if you change the names of nodes in the Scene Tree, that you
-   already have tracks for. Godot automatically updates the paths in the
-   tracks.
 
 The second keyframe
 ~~~~~~~~~~~~~~~~~~~
@@ -199,7 +180,7 @@ the timeline controls in animation panel's lower panel to 2.
 
    Animation length
 
-Click on the timeline header near the 2 second mark and move the sprite
+Click on the timeline header near the 2-second mark and move the sprite
 to the target destination on the right side.
 
 Again, click the key button in the toolbar. This creates our second
@@ -231,7 +212,7 @@ the end.
    Animation loop
 
 If you set the animation length to 4 seconds now, the animation moves
-back and forth. You can change this behaviour if you change the track's
+back and forth. You can change this behavior if you change the track's
 loop mode. This is covered in the next chapter.
 
 Track settings
@@ -302,7 +283,7 @@ Godot doesn't restrict you to only edit transform properties. Every
 property can be used as a track where you can set keyframes.
 
 If you select your sprite while the animation panel is visible, you get
-a small keyframe button for all of the sprite's properties. Click on
+a small keyframe button for all the sprite's properties. Click on
 this button and Godot automatically adds a track and keyframe to the
 current animation.
 
@@ -378,16 +359,16 @@ click the "Insert Key" option. This will bring up a list of methods
 that can be called for the AudioStreamPlayer node. Select the first
 one.
 
-.. image:: img/animation_method_list.png
+.. image:: img/animation_method_options.png
 
 When Godot reaches the keyframe, Godot calls the
-:ref:`class_AnimationPlayer` node's "play" function and the stream
+:ref:`class_AudioStreamPlayer` node's "play" function and the stream
 plays.
 
 You can change its position by dragging it on the timeline, you can also
 click on the keyframe and use the keyframe settings in the inspector.
 
-.. img:: img/animation_call_method_keyframe.png
+.. image:: img/animation_call_method_keyframe.png
 
 .. |Play from beginning| image:: img/animation_play_from_beginning.png
 .. |Add Animation| image:: img/animation_add.png

@@ -23,7 +23,7 @@ The following export options are required. Leaving any blank will cause the
 exporter to throw an error:
 
   * In the **Application** category
-    * **App Store Team ID**
+    * **App Store Team ID** and (Bundle) **Identifier**
   * Everything in the **Required Icons** category
   * Everything in the **Landscape Launch Screens** category
   * Everything in the **Portrait Launch Screens** category
@@ -62,6 +62,9 @@ In the following example:
 
   * **exported_xcode_project_name** is the name of the exported iOS application (as above).
   * **godot_project_to_export** is the name of the Godot project.
+
+.. note:: **godot_project_to_export** must not be the same as **exported_xcode_project_name**
+          to prevent signing issues in Xcode.
 
 Steps to link a Godot project folder to Xcode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

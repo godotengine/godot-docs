@@ -32,15 +32,7 @@ This delay can't be avoided but it can be estimated by calling :ref:`AudioServer
 
 The output latency (what happens after the mix) can also be estimated by calling :ref:`AudioServer.get_output_latency()<class_AudioServer_method_get_output_latency>`.
 
-Add these two and it's possible to guess almost exactly when sound or music will begin playing in the speakers:
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    var actual_play_time = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
-    $Song.play()
-
-This way, obtaining the actual playback position during *_process()* is possible:
+Add these two and it's possible to guess almost exactly when sound or music will begin playing in the speakers during *_process()*:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -48,17 +40,19 @@ This way, obtaining the actual playback position during *_process()* is possible
     var time_begin
     var time_delay
 
+
     func _ready()
         time_begin = OS.get_ticks_usec()
         time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
         $Player.play()
+
 
     func _process(delta):
         # Obtain from ticks.
         var time = (OS.get_ticks_usec() - time_begin) / 1000000.0
         # Compensate for latency.
         time -= time_delay
-        # May be below 0 (did not being yet).
+        # May be below 0 (did not begin yet).
         time = max(0, time)
         print("Time is: ", time)
 
@@ -82,7 +76,7 @@ Adding the return value from this function to *get_playback_position()* increase
 
     var time = $Player.get_playback_position() + AudioServer.get_time_since_last_mix()
 
-To increase precision, substract the latency information (how much it takes for the audio to be heard after it was mixed):
+To increase precision, subtract the latency information (how much it takes for the audio to be heard after it was mixed):
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -99,6 +93,7 @@ Here is the same code as before using this approach:
 
     func _ready()
         $Player.play()
+
 
     func _process(delta):
         var time = $Player.get_playback_position() + AudioServer.get_time_since_last_mix()

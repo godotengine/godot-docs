@@ -8,4 +8,4 @@ VisualScript
    what_is_visual_scripting
    getting_started
    nodes_purposes
-
+   custom_visualscript_nodes

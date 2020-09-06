@@ -11,21 +11,16 @@ VisualScriptTypeCast
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+-----------------------------+---------------------------------------------------------------------+----------+
-| :ref:`String<class_String>` | :ref:`base_script<class_VisualScriptTypeCast_property_base_script>` | ""       |
-+-----------------------------+---------------------------------------------------------------------+----------+
-| :ref:`String<class_String>` | :ref:`base_type<class_VisualScriptTypeCast_property_base_type>`     | "Object" |
-+-----------------------------+---------------------------------------------------------------------+----------+
++-------------------------------------+---------------------------------------------------------------------+---------------+
+| :ref:`String<class_String>`         | :ref:`base_script<class_VisualScriptTypeCast_property_base_script>` | ``""``        |
++-------------------------------------+---------------------------------------------------------------------+---------------+
+| :ref:`StringName<class_StringName>` | :ref:`base_type<class_VisualScriptTypeCast_property_base_type>`     | ``@"Object"`` |
++-------------------------------------+---------------------------------------------------------------------+---------------+
 
 Property Descriptions
 ---------------------
@@ -35,19 +30,21 @@ Property Descriptions
 - :ref:`String<class_String>` **base_script**
 
 +-----------+------------------------+
-| *Default* | ""                     |
+| *Default* | ``""``                 |
 +-----------+------------------------+
 | *Setter*  | set_base_script(value) |
 +-----------+------------------------+
 | *Getter*  | get_base_script()      |
 +-----------+------------------------+
 
+----
+
 .. _class_VisualScriptTypeCast_property_base_type:
 
-- :ref:`String<class_String>` **base_type**
+- :ref:`StringName<class_StringName>` **base_type**
 
 +-----------+----------------------+
-| *Default* | "Object"             |
+| *Default* | ``@"Object"``        |
 +-----------+----------------------+
 | *Setter*  | set_base_type(value) |
 +-----------+----------------------+

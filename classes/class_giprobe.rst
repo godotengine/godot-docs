@@ -11,37 +11,30 @@ GIProbe
 
 **Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+Real-time global illumination (GI) probe.
 
-Brief Description
------------------
+Description
+-----------
 
+``GIProbe``\ s are used to provide high-quality real-time indirect light to scenes. They precompute the effect of objects that emit light and the effect of static geometry to simulate the behavior of complex light in real-time. ``GIProbe``\ s need to be baked before using, however, once baked, dynamic objects will receive light from them. Further, lights can be fully dynamic or baked.
 
+Having ``GIProbe``\ s in a scene can be expensive, the quality of the probe can be turned down in exchange for better performance in the :ref:`ProjectSettings<class_ProjectSettings>` using :ref:`ProjectSettings.rendering/quality/gi_probes/quality<class_ProjectSettings_property_rendering/quality/gi_probes/quality>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/gi_probes`
 
 Properties
 ----------
 
-+---------------------------------------+------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`             | :ref:`bias<class_GIProbe_property_bias>`                   | 1.5                   |
-+---------------------------------------+------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`               | :ref:`compress<class_GIProbe_property_compress>`           | false                 |
-+---------------------------------------+------------------------------------------------------------+-----------------------+
-| :ref:`GIProbeData<class_GIProbeData>` | :ref:`data<class_GIProbe_property_data>`                   |                       |
-+---------------------------------------+------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`                 | :ref:`dynamic_range<class_GIProbe_property_dynamic_range>` | 4                     |
-+---------------------------------------+------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`             | :ref:`energy<class_GIProbe_property_energy>`               | 1.0                   |
-+---------------------------------------+------------------------------------------------------------+-----------------------+
-| :ref:`Vector3<class_Vector3>`         | :ref:`extents<class_GIProbe_property_extents>`             | Vector3( 10, 10, 10 ) |
-+---------------------------------------+------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`               | :ref:`interior<class_GIProbe_property_interior>`           | false                 |
-+---------------------------------------+------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`             | :ref:`normal_bias<class_GIProbe_property_normal_bias>`     | 0.0                   |
-+---------------------------------------+------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`             | :ref:`propagation<class_GIProbe_property_propagation>`     | 0.7                   |
-+---------------------------------------+------------------------------------------------------------+-----------------------+
-| :ref:`Subdiv<enum_GIProbe_Subdiv>`    | :ref:`subdiv<class_GIProbe_property_subdiv>`               | 1                     |
-+---------------------------------------+------------------------------------------------------------+-----------------------+
++---------------------------------------+------------------------------------------------+---------------------------+
+| :ref:`GIProbeData<class_GIProbeData>` | :ref:`data<class_GIProbe_property_data>`       |                           |
++---------------------------------------+------------------------------------------------+---------------------------+
+| :ref:`Vector3<class_Vector3>`         | :ref:`extents<class_GIProbe_property_extents>` | ``Vector3( 10, 10, 10 )`` |
++---------------------------------------+------------------------------------------------+---------------------------+
+| :ref:`Subdiv<enum_GIProbe_Subdiv>`    | :ref:`subdiv<class_GIProbe_property_subdiv>`   | ``1``                     |
++---------------------------------------+------------------------------------------------+---------------------------+
 
 Methods
 -------
@@ -69,47 +62,18 @@ Enumerations
 
 enum **Subdiv**:
 
-- **SUBDIV_64** = **0**
+- **SUBDIV_64** = **0** --- Use 64 subdivisions. This is the lowest quality setting, but the fastest. Use it if you can, but especially use it on lower-end hardware.
 
-- **SUBDIV_128** = **1**
+- **SUBDIV_128** = **1** --- Use 128 subdivisions. This is the default quality setting.
 
-- **SUBDIV_256** = **2**
+- **SUBDIV_256** = **2** --- Use 256 subdivisions.
 
-- **SUBDIV_512** = **3**
+- **SUBDIV_512** = **3** --- Use 512 subdivisions. This is the highest quality setting, but the slowest. On lower-end hardware this could cause the GPU to stall.
 
 - **SUBDIV_MAX** = **4** --- Represents the size of the :ref:`Subdiv<enum_GIProbe_Subdiv>` enum.
 
-Tutorials
----------
-
-- :doc:`../tutorials/3d/gi_probes`
-
 Property Descriptions
 ---------------------
-
-.. _class_GIProbe_property_bias:
-
-- :ref:`float<class_float>` **bias**
-
-+-----------+-----------------+
-| *Default* | 1.5             |
-+-----------+-----------------+
-| *Setter*  | set_bias(value) |
-+-----------+-----------------+
-| *Getter*  | get_bias()      |
-+-----------+-----------------+
-
-.. _class_GIProbe_property_compress:
-
-- :ref:`bool<class_bool>` **compress**
-
-+-----------+---------------------+
-| *Default* | false               |
-+-----------+---------------------+
-| *Setter*  | set_compress(value) |
-+-----------+---------------------+
-| *Getter*  | is_compressed()     |
-+-----------+---------------------+
 
 .. _class_GIProbe_property_data:
 
@@ -121,89 +85,39 @@ Property Descriptions
 | *Getter* | get_probe_data()      |
 +----------+-----------------------+
 
-.. _class_GIProbe_property_dynamic_range:
+The :ref:`GIProbeData<class_GIProbeData>` resource that holds the data for this ``GIProbe``.
 
-- :ref:`int<class_int>` **dynamic_range**
-
-+-----------+--------------------------+
-| *Default* | 4                        |
-+-----------+--------------------------+
-| *Setter*  | set_dynamic_range(value) |
-+-----------+--------------------------+
-| *Getter*  | get_dynamic_range()      |
-+-----------+--------------------------+
-
-.. _class_GIProbe_property_energy:
-
-- :ref:`float<class_float>` **energy**
-
-+-----------+-------------------+
-| *Default* | 1.0               |
-+-----------+-------------------+
-| *Setter*  | set_energy(value) |
-+-----------+-------------------+
-| *Getter*  | get_energy()      |
-+-----------+-------------------+
+----
 
 .. _class_GIProbe_property_extents:
 
 - :ref:`Vector3<class_Vector3>` **extents**
 
-+-----------+-----------------------+
-| *Default* | Vector3( 10, 10, 10 ) |
-+-----------+-----------------------+
-| *Setter*  | set_extents(value)    |
-+-----------+-----------------------+
-| *Getter*  | get_extents()         |
-+-----------+-----------------------+
++-----------+---------------------------+
+| *Default* | ``Vector3( 10, 10, 10 )`` |
++-----------+---------------------------+
+| *Setter*  | set_extents(value)        |
++-----------+---------------------------+
+| *Getter*  | get_extents()             |
++-----------+---------------------------+
 
-.. _class_GIProbe_property_interior:
+The size of the area covered by the ``GIProbe``. If you make the extents larger without increasing the subdivisions with :ref:`subdiv<class_GIProbe_property_subdiv>`, the size of each cell will increase and result in lower detailed lighting.
 
-- :ref:`bool<class_bool>` **interior**
-
-+-----------+---------------------+
-| *Default* | false               |
-+-----------+---------------------+
-| *Setter*  | set_interior(value) |
-+-----------+---------------------+
-| *Getter*  | is_interior()       |
-+-----------+---------------------+
-
-.. _class_GIProbe_property_normal_bias:
-
-- :ref:`float<class_float>` **normal_bias**
-
-+-----------+------------------------+
-| *Default* | 0.0                    |
-+-----------+------------------------+
-| *Setter*  | set_normal_bias(value) |
-+-----------+------------------------+
-| *Getter*  | get_normal_bias()      |
-+-----------+------------------------+
-
-.. _class_GIProbe_property_propagation:
-
-- :ref:`float<class_float>` **propagation**
-
-+-----------+------------------------+
-| *Default* | 0.7                    |
-+-----------+------------------------+
-| *Setter*  | set_propagation(value) |
-+-----------+------------------------+
-| *Getter*  | get_propagation()      |
-+-----------+------------------------+
+----
 
 .. _class_GIProbe_property_subdiv:
 
 - :ref:`Subdiv<enum_GIProbe_Subdiv>` **subdiv**
 
 +-----------+-------------------+
-| *Default* | 1                 |
+| *Default* | ``1``             |
 +-----------+-------------------+
 | *Setter*  | set_subdiv(value) |
 +-----------+-------------------+
 | *Getter*  | get_subdiv()      |
 +-----------+-------------------+
+
+Number of times to subdivide the grid that the ``GIProbe`` operates on. A higher number results in finer detail and thus higher visual quality, while lower numbers result in better performance.
 
 Method Descriptions
 -------------------
@@ -212,7 +126,13 @@ Method Descriptions
 
 - void **bake** **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)**
 
+Bakes the effect from all :ref:`GeometryInstance<class_GeometryInstance>`\ s marked with :ref:`GeometryInstance.use_in_baked_light<class_GeometryInstance_property_use_in_baked_light>` and :ref:`Light<class_Light>`\ s marked with either :ref:`Light.BAKE_INDIRECT<class_Light_constant_BAKE_INDIRECT>` or :ref:`Light.BAKE_ALL<class_Light_constant_BAKE_ALL>`. If ``create_visual_debug`` is ``true``, after baking the light, this will generate a :ref:`MultiMesh<class_MultiMesh>` that has a cube representing each solid cell with each cube colored to the cell's albedo color. This can be used to visualize the ``GIProbe``'s data and debug any issues that may be occurring.
+
+----
+
 .. _class_GIProbe_method_debug_bake:
 
 - void **debug_bake** **(** **)**
+
+Calls :ref:`bake<class_GIProbe_method_bake>` with ``create_visual_debug`` enabled.
 

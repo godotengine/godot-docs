@@ -23,21 +23,21 @@ promote the kinematic one.
 So, what is the difference?:
 
 -  A **dynamic character controller** uses a rigid body with an infinite
-   inertia tensor. Basically, it's a rigid body that can't rotate.
-   Physics engines always let objects collide, then solve their
+   inertia tensor. It's a rigid body that can't rotate.
+   Physics engines always let objects move and collide, then solve their
    collisions all together. This makes dynamic character controllers
-   able to interact with other physics objects seamlessly (as seen in
-   the platformer demo), however these interactions are not always
-   predictable. Collisions can also take more than one frame to be
+   able to interact with other physics objects seamlessly, as seen in
+   the platformer demo. However, these interactions are not always
+   predictable. Collisions can take more than one frame to be
    solved, so a few collisions may seem to displace a tiny bit. Those
    problems can be fixed, but require a certain amount of skill.
 -  A **kinematic character controller** is assumed to always begin in a
-   non-colliding state, and will always move to a non colliding state.
-   If it starts in a colliding state, it will try to free itself (like
-   rigid bodies do), but this is the exception, not the rule. This makes
+   non-colliding state, and will always move to a non-colliding state.
+   If it starts in a colliding state, it will try to free itself like
+   rigid bodies do, but this is the exception, not the rule. This makes
    their control and motion a lot more predictable and easier to
    program. However, as a downside, they can't directly interact with
-   other physics objects (unless done by hand in code).
+   other physics objects, unless done by hand in code.
 
 This short tutorial will focus on the kinematic character controller.
 Basically, the old-school way of handling collisions (which is not

@@ -11,31 +11,7 @@ MobileVRInterface
 
 **Inherits:** :ref:`ARVRInterface<class_ARVRInterface>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Generic mobile VR implementation.
-
-Properties
-----------
-
-+---------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`display_to_lens<class_MobileVRInterface_property_display_to_lens>` | 4.0   |
-+---------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`display_width<class_MobileVRInterface_property_display_width>`     | 14.5  |
-+---------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`eye_height<class_MobileVRInterface_property_eye_height>`           | 1.85  |
-+---------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`iod<class_MobileVRInterface_property_iod>`                         | 6.0   |
-+---------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`k1<class_MobileVRInterface_property_k1>`                           | 0.215 |
-+---------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`k2<class_MobileVRInterface_property_k2>`                           | 0.215 |
-+---------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`oversample<class_MobileVRInterface_property_oversample>`           | 1.5   |
-+---------------------------+--------------------------------------------------------------------------+-------+
 
 Description
 -----------
@@ -52,6 +28,25 @@ You can initialise this interface as follows:
     if interface and interface.initialize():
         get_viewport().arvr = true
 
+Properties
+----------
+
++---------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`display_to_lens<class_MobileVRInterface_property_display_to_lens>` | ``4.0``   |
++---------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`display_width<class_MobileVRInterface_property_display_width>`     | ``14.5``  |
++---------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`eye_height<class_MobileVRInterface_property_eye_height>`           | ``1.85``  |
++---------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`iod<class_MobileVRInterface_property_iod>`                         | ``6.0``   |
++---------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`k1<class_MobileVRInterface_property_k1>`                           | ``0.215`` |
++---------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`k2<class_MobileVRInterface_property_k2>`                           | ``0.215`` |
++---------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`oversample<class_MobileVRInterface_property_oversample>`           | ``1.5``   |
++---------------------------+--------------------------------------------------------------------------+-----------+
+
 Property Descriptions
 ---------------------
 
@@ -60,7 +55,7 @@ Property Descriptions
 - :ref:`float<class_float>` **display_to_lens**
 
 +-----------+----------------------------+
-| *Default* | 4.0                        |
+| *Default* | ``4.0``                    |
 +-----------+----------------------------+
 | *Setter*  | set_display_to_lens(value) |
 +-----------+----------------------------+
@@ -69,12 +64,14 @@ Property Descriptions
 
 The distance between the display and the lenses inside of the device in centimeters.
 
+----
+
 .. _class_MobileVRInterface_property_display_width:
 
 - :ref:`float<class_float>` **display_width**
 
 +-----------+--------------------------+
-| *Default* | 14.5                     |
+| *Default* | ``14.5``                 |
 +-----------+--------------------------+
 | *Setter*  | set_display_width(value) |
 +-----------+--------------------------+
@@ -83,12 +80,14 @@ The distance between the display and the lenses inside of the device in centimet
 
 The width of the display in centimeters.
 
+----
+
 .. _class_MobileVRInterface_property_eye_height:
 
 - :ref:`float<class_float>` **eye_height**
 
 +-----------+-----------------------+
-| *Default* | 1.85                  |
+| *Default* | ``1.85``              |
 +-----------+-----------------------+
 | *Setter*  | set_eye_height(value) |
 +-----------+-----------------------+
@@ -97,12 +96,14 @@ The width of the display in centimeters.
 
 The height at which the camera is placed in relation to the ground (i.e. :ref:`ARVROrigin<class_ARVROrigin>` node).
 
+----
+
 .. _class_MobileVRInterface_property_iod:
 
 - :ref:`float<class_float>` **iod**
 
 +-----------+----------------+
-| *Default* | 6.0            |
+| *Default* | ``6.0``        |
 +-----------+----------------+
 | *Setter*  | set_iod(value) |
 +-----------+----------------+
@@ -111,12 +112,14 @@ The height at which the camera is placed in relation to the ground (i.e. :ref:`A
 
 The interocular distance, also known as the interpupillary distance. The distance between the pupils of the left and right eye.
 
+----
+
 .. _class_MobileVRInterface_property_k1:
 
 - :ref:`float<class_float>` **k1**
 
 +-----------+---------------+
-| *Default* | 0.215         |
+| *Default* | ``0.215``     |
 +-----------+---------------+
 | *Setter*  | set_k1(value) |
 +-----------+---------------+
@@ -125,12 +128,14 @@ The interocular distance, also known as the interpupillary distance. The distanc
 
 The k1 lens factor is one of the two constants that define the strength of the lens used and directly influences the lens distortion effect.
 
+----
+
 .. _class_MobileVRInterface_property_k2:
 
 - :ref:`float<class_float>` **k2**
 
 +-----------+---------------+
-| *Default* | 0.215         |
+| *Default* | ``0.215``     |
 +-----------+---------------+
 | *Setter*  | set_k2(value) |
 +-----------+---------------+
@@ -139,12 +144,14 @@ The k1 lens factor is one of the two constants that define the strength of the l
 
 The k2 lens factor, see k1.
 
+----
+
 .. _class_MobileVRInterface_property_oversample:
 
 - :ref:`float<class_float>` **oversample**
 
 +-----------+-----------------------+
-| *Default* | 1.5                   |
+| *Default* | ``1.5``               |
 +-----------+-----------------------+
 | *Setter*  | set_oversample(value) |
 +-----------+-----------------------+

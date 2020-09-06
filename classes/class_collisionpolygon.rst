@@ -11,28 +11,23 @@ CollisionPolygon
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Editor-only class for defining a collision polygon in 3D space.
-
-Properties
-----------
-
-+-------------------------------------------------+-----------------------------------------------------------+----------------------+
-| :ref:`float<class_float>`                       | :ref:`depth<class_CollisionPolygon_property_depth>`       | 1.0                  |
-+-------------------------------------------------+-----------------------------------------------------------+----------------------+
-| :ref:`bool<class_bool>`                         | :ref:`disabled<class_CollisionPolygon_property_disabled>` | false                |
-+-------------------------------------------------+-----------------------------------------------------------+----------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`polygon<class_CollisionPolygon_property_polygon>`   | PoolVector2Array(  ) |
-+-------------------------------------------------+-----------------------------------------------------------+----------------------+
 
 Description
 -----------
 
 Allows editing a collision polygon's vertices on a selected plane. Can also set a depth perpendicular to that plane. This class is only available in the editor. It will not appear in the scene tree at run-time. Creates a :ref:`Shape<class_Shape>` for gameplay. Properties modified during gameplay will have no effect.
+
+Properties
+----------
+
++-----------------------------------------------------+-----------------------------------------------------------+----------------------------+
+| :ref:`float<class_float>`                           | :ref:`depth<class_CollisionPolygon_property_depth>`       | ``1.0``                    |
++-----------------------------------------------------+-----------------------------------------------------------+----------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`disabled<class_CollisionPolygon_property_disabled>` | ``false``                  |
++-----------------------------------------------------+-----------------------------------------------------------+----------------------------+
+| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`polygon<class_CollisionPolygon_property_polygon>`   | ``PackedVector2Array(  )`` |
++-----------------------------------------------------+-----------------------------------------------------------+----------------------------+
 
 Property Descriptions
 ---------------------
@@ -42,7 +37,7 @@ Property Descriptions
 - :ref:`float<class_float>` **depth**
 
 +-----------+------------------+
-| *Default* | 1.0              |
+| *Default* | ``1.0``          |
 +-----------+------------------+
 | *Setter*  | set_depth(value) |
 +-----------+------------------+
@@ -51,12 +46,14 @@ Property Descriptions
 
 Length that the resulting collision extends in either direction perpendicular to its polygon.
 
+----
+
 .. _class_CollisionPolygon_property_disabled:
 
 - :ref:`bool<class_bool>` **disabled**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_disabled(value) |
 +-----------+---------------------+
@@ -65,17 +62,19 @@ Length that the resulting collision extends in either direction perpendicular to
 
 If ``true``, no collision will be produced.
 
+----
+
 .. _class_CollisionPolygon_property_polygon:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **polygon**
 
-+-----------+----------------------+
-| *Default* | PoolVector2Array(  ) |
-+-----------+----------------------+
-| *Setter*  | set_polygon(value)   |
-+-----------+----------------------+
-| *Getter*  | get_polygon()        |
-+-----------+----------------------+
++-----------+----------------------------+
+| *Default* | ``PackedVector2Array(  )`` |
++-----------+----------------------------+
+| *Setter*  | set_polygon(value)         |
++-----------+----------------------------+
+| *Getter*  | get_polygon()              |
++-----------+----------------------------+
 
 Array of vertices which define the polygon.
 

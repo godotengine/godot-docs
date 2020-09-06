@@ -11,12 +11,14 @@ CameraServer
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
+Server keeping track of different cameras accessible in Godot.
 
-Brief Description
------------------
+Description
+-----------
 
-The CameraServer keeps track of different cameras accessible in Godot. These are external cameras such as webcams or the cameras on your phone.
+The ``CameraServer`` keeps track of different cameras accessible in Godot. These are external cameras such as webcams or the cameras on your phone.
+
+It is notably used to provide AR modules with a video feed from the camera.
 
 Methods
 -------
@@ -40,13 +42,15 @@ Signals
 
 - **camera_feed_added** **(** :ref:`int<class_int>` id **)**
 
-Emitted when a :ref:`CameraFeed<class_CameraFeed>` is added (webcam is plugged in).
+Emitted when a :ref:`CameraFeed<class_CameraFeed>` is added (e.g. webcam is plugged in).
+
+----
 
 .. _class_CameraServer_signal_camera_feed_removed:
 
 - **camera_feed_removed** **(** :ref:`int<class_int>` id **)**
 
-Emitted when a :ref:`CameraFeed<class_CameraFeed>` is removed (webcam is removed).
+Emitted when a :ref:`CameraFeed<class_CameraFeed>` is removed (e.g. webcam is unplugged).
 
 Enumerations
 ------------
@@ -80,11 +84,15 @@ Method Descriptions
 
 Adds a camera feed to the camera server.
 
+----
+
 .. _class_CameraServer_method_feeds:
 
 - :ref:`Array<class_Array>` **feeds** **(** **)**
 
 Returns an array of :ref:`CameraFeed<class_CameraFeed>`\ s.
+
+----
 
 .. _class_CameraServer_method_get_feed:
 
@@ -92,11 +100,15 @@ Returns an array of :ref:`CameraFeed<class_CameraFeed>`\ s.
 
 Returns the :ref:`CameraFeed<class_CameraFeed>` with this id.
 
+----
+
 .. _class_CameraServer_method_get_feed_count:
 
 - :ref:`int<class_int>` **get_feed_count** **(** **)**
 
 Returns the number of :ref:`CameraFeed<class_CameraFeed>`\ s registered.
+
+----
 
 .. _class_CameraServer_method_remove_feed:
 

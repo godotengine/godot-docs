@@ -11,26 +11,7 @@ ConvexPolygonShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Convex polygon shape for 2D physics.
-
-Properties
-----------
-
-+-------------------------------------------------+-----------------------------------------------------------+----------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`points<class_ConvexPolygonShape2D_property_points>` | PoolVector2Array(  ) |
-+-------------------------------------------------+-----------------------------------------------------------+----------------------+
-
-Methods
--------
-
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_point_cloud<class_ConvexPolygonShape2D_method_set_point_cloud>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` point_cloud **)** |
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -39,20 +20,34 @@ Convex polygon shape for 2D physics. A convex polygon, whatever its shape, is in
 
 The main difference between a ``ConvexPolygonShape2D`` and a :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex in order to speed up collision detection.
 
+Properties
+----------
+
++-----------------------------------------------------+-----------------------------------------------------------+----------------------------+
+| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`points<class_ConvexPolygonShape2D_property_points>` | ``PackedVector2Array(  )`` |
++-----------------------------------------------------+-----------------------------------------------------------+----------------------------+
+
+Methods
+-------
+
++------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`set_point_cloud<class_ConvexPolygonShape2D_method_set_point_cloud>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` point_cloud **)** |
++------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Property Descriptions
 ---------------------
 
 .. _class_ConvexPolygonShape2D_property_points:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **points**
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **points**
 
-+-----------+----------------------+
-| *Default* | PoolVector2Array(  ) |
-+-----------+----------------------+
-| *Setter*  | set_points(value)    |
-+-----------+----------------------+
-| *Getter*  | get_points()         |
-+-----------+----------------------+
++-----------+----------------------------+
+| *Default* | ``PackedVector2Array(  )`` |
++-----------+----------------------------+
+| *Setter*  | set_points(value)          |
++-----------+----------------------------+
+| *Getter*  | get_points()               |
++-----------+----------------------------+
 
 The polygon's list of vertices. Can be in either clockwise or counterclockwise order.
 
@@ -61,7 +56,7 @@ Method Descriptions
 
 .. _class_ConvexPolygonShape2D_method_set_point_cloud:
 
-- void **set_point_cloud** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` point_cloud **)**
+- void **set_point_cloud** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` point_cloud **)**
 
 Based on the set of points provided, this creates and assigns the :ref:`points<class_ConvexPolygonShape2D_property_points>` property using the convex hull algorithm. Removing all unneeded points. See :ref:`Geometry.convex_hull_2d<class_Geometry_method_convex_hull_2d>` for details.
 

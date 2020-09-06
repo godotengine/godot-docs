@@ -11,12 +11,12 @@ StreamPeerTCP
 
 **Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 TCP stream peer.
+
+Description
+-----------
+
+TCP stream peer. This object can be used to connect to TCP servers, or also is returned by a TCP server.
 
 Methods
 -------
@@ -60,11 +60,6 @@ enum **Status**:
 
 - **STATUS_ERROR** = **3** --- A status representing a ``StreamPeerTCP`` in error state.
 
-Description
------------
-
-TCP stream peer. This object can be used to connect to TCP servers, or also is returned by a TCP server.
-
 Method Descriptions
 -------------------
 
@@ -74,11 +69,15 @@ Method Descriptions
 
 Connects to the specified ``host:port`` pair. A hostname will be resolved if valid. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success or :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` on failure.
 
+----
+
 .. _class_StreamPeerTCP_method_disconnect_from_host:
 
 - void **disconnect_from_host** **(** **)**
 
 Disconnects from host.
+
+----
 
 .. _class_StreamPeerTCP_method_get_connected_host:
 
@@ -86,11 +85,15 @@ Disconnects from host.
 
 Returns the IP of this peer.
 
+----
+
 .. _class_StreamPeerTCP_method_get_connected_port:
 
 - :ref:`int<class_int>` **get_connected_port** **(** **)** const
 
 Returns the port of this peer.
+
+----
 
 .. _class_StreamPeerTCP_method_get_status:
 
@@ -98,11 +101,15 @@ Returns the port of this peer.
 
 Returns the status of the connection, see :ref:`Status<enum_StreamPeerTCP_Status>`.
 
+----
+
 .. _class_StreamPeerTCP_method_is_connected_to_host:
 
 - :ref:`bool<class_bool>` **is_connected_to_host** **(** **)** const
 
 Returns ``true`` if this peer is currently connected to a host, ``false`` otherwise.
+
+----
 
 .. _class_StreamPeerTCP_method_set_no_delay:
 

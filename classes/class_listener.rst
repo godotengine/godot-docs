@@ -11,12 +11,14 @@ Listener
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+Overrides the location sounds are heard from.
 
-Brief Description
------------------
+Description
+-----------
 
+Once added to the scene tree and enabled using :ref:`make_current<class_Listener_method_make_current>`, this node will override the location sounds are heard from. This can be used to listen from a location different from the :ref:`Camera<class_Camera>`.
 
+**Note:** There is no 2D equivalent for this node yet.
 
 Methods
 -------
@@ -38,15 +40,31 @@ Method Descriptions
 
 - void **clear_current** **(** **)**
 
+Disables the listener to use the current camera's listener instead.
+
+----
+
 .. _class_Listener_method_get_listener_transform:
 
 - :ref:`Transform<class_Transform>` **get_listener_transform** **(** **)** const
+
+Returns the listener's global orthonormalized :ref:`Transform<class_Transform>`.
+
+----
 
 .. _class_Listener_method_is_current:
 
 - :ref:`bool<class_bool>` **is_current** **(** **)** const
 
+Returns ``true`` if the listener was made current using :ref:`make_current<class_Listener_method_make_current>`, ``false`` otherwise.
+
+**Note:** There may be more than one Listener marked as "current" in the scene tree, but only the one that was made current last will be used.
+
+----
+
 .. _class_Listener_method_make_current:
 
 - void **make_current** **(** **)**
+
+Enables the listener. This will override the current camera's listener.
 

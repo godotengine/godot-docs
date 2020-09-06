@@ -13,46 +13,7 @@ InputEvent
 
 **Inherited By:** :ref:`InputEventAction<class_InputEventAction>`, :ref:`InputEventJoypadButton<class_InputEventJoypadButton>`, :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>`, :ref:`InputEventMIDI<class_InputEventMIDI>`, :ref:`InputEventScreenDrag<class_InputEventScreenDrag>`, :ref:`InputEventScreenTouch<class_InputEventScreenTouch>`, :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`
 
-**Category:** Core
-
-Brief Description
------------------
-
-Generic input event
-
-Properties
-----------
-
-+-----------------------+-------------------------------------------------+---+
-| :ref:`int<class_int>` | :ref:`device<class_InputEvent_property_device>` | 0 |
-+-----------------------+-------------------------------------------------+---+
-
-Methods
--------
-
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`accumulate<class_InputEvent_method_accumulate>` **(** :ref:`InputEvent<class_InputEvent>` with_event **)**                                                             |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`as_text<class_InputEvent_method_as_text>` **(** **)** const                                                                                                            |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`get_action_strength<class_InputEvent_method_get_action_strength>` **(** :ref:`String<class_String>` action **)** const                                                 |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`is_action<class_InputEvent_method_is_action>` **(** :ref:`String<class_String>` action **)** const                                                                     |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`is_action_pressed<class_InputEvent_method_is_action_pressed>` **(** :ref:`String<class_String>` action **)** const                                                     |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`is_action_released<class_InputEvent_method_is_action_released>` **(** :ref:`String<class_String>` action **)** const                                                   |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`is_action_type<class_InputEvent_method_is_action_type>` **(** **)** const                                                                                              |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`is_echo<class_InputEvent_method_is_echo>` **(** **)** const                                                                                                            |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`is_pressed<class_InputEvent_method_is_pressed>` **(** **)** const                                                                                                      |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`shortcut_match<class_InputEvent_method_shortcut_match>` **(** :ref:`InputEvent<class_InputEvent>` event **)** const                                                    |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`InputEvent<class_InputEvent>` | :ref:`xformed_by<class_InputEvent_method_xformed_by>` **(** :ref:`Transform2D<class_Transform2D>` xform, :ref:`Vector2<class_Vector2>` local_ofs=Vector2( 0, 0 ) **)** const |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Generic input event.
 
 Description
 -----------
@@ -66,6 +27,40 @@ Tutorials
 
 - :doc:`../tutorials/2d/2d_transforms`
 
+Properties
+----------
+
++-----------------------+-------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`device<class_InputEvent_property_device>` | ``0`` |
++-----------------------+-------------------------------------------------+-------+
+
+Methods
+-------
+
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`accumulate<class_InputEvent_method_accumulate>` **(** :ref:`InputEvent<class_InputEvent>` with_event **)**                                                             |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`as_text<class_InputEvent_method_as_text>` **(** **)** const                                                                                                            |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | :ref:`get_action_strength<class_InputEvent_method_get_action_strength>` **(** :ref:`StringName<class_StringName>` action **)** const                                         |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`is_action<class_InputEvent_method_is_action>` **(** :ref:`StringName<class_StringName>` action **)** const                                                             |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`is_action_pressed<class_InputEvent_method_is_action_pressed>` **(** :ref:`StringName<class_StringName>` action, :ref:`bool<class_bool>` allow_echo=false **)** const   |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`is_action_released<class_InputEvent_method_is_action_released>` **(** :ref:`StringName<class_StringName>` action **)** const                                           |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`is_action_type<class_InputEvent_method_is_action_type>` **(** **)** const                                                                                              |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`is_echo<class_InputEvent_method_is_echo>` **(** **)** const                                                                                                            |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`is_pressed<class_InputEvent_method_is_pressed>` **(** **)** const                                                                                                      |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`shortcut_match<class_InputEvent_method_shortcut_match>` **(** :ref:`InputEvent<class_InputEvent>` event **)** const                                                    |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`InputEvent<class_InputEvent>` | :ref:`xformed_by<class_InputEvent_method_xformed_by>` **(** :ref:`Transform2D<class_Transform2D>` xform, :ref:`Vector2<class_Vector2>` local_ofs=Vector2( 0, 0 ) **)** const |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Property Descriptions
 ---------------------
 
@@ -74,7 +69,7 @@ Property Descriptions
 - :ref:`int<class_int>` **device**
 
 +-----------+-------------------+
-| *Default* | 0                 |
+| *Default* | ``0``             |
 +-----------+-------------------+
 | *Setter*  | set_device(value) |
 +-----------+-------------------+
@@ -82,6 +77,8 @@ Property Descriptions
 +-----------+-------------------+
 
 The event's device ID.
+
+**Note:** This device ID will always be ``-1`` for emulated mouse input from a touchscreen. This can be used to distinguish emulated mouse input from physical mouse input.
 
 Method Descriptions
 -------------------
@@ -94,35 +91,47 @@ Returns ``true`` if the given input event and this input event can be added toge
 
 The given input event's position, global position and speed will be copied. The resulting ``relative`` is a sum of both events. Both events' modifiers have to be identical.
 
+----
+
 .. _class_InputEvent_method_as_text:
 
 - :ref:`String<class_String>` **as_text** **(** **)** const
 
 Returns a :ref:`String<class_String>` representation of the event.
 
+----
+
 .. _class_InputEvent_method_get_action_strength:
 
-- :ref:`float<class_float>` **get_action_strength** **(** :ref:`String<class_String>` action **)** const
+- :ref:`float<class_float>` **get_action_strength** **(** :ref:`StringName<class_StringName>` action **)** const
 
 Returns a value between 0.0 and 1.0 depending on the given actions' state. Useful for getting the value of events of type :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>`.
 
+----
+
 .. _class_InputEvent_method_is_action:
 
-- :ref:`bool<class_bool>` **is_action** **(** :ref:`String<class_String>` action **)** const
+- :ref:`bool<class_bool>` **is_action** **(** :ref:`StringName<class_StringName>` action **)** const
 
 Returns ``true`` if this input event matches a pre-defined action of any type.
 
+----
+
 .. _class_InputEvent_method_is_action_pressed:
 
-- :ref:`bool<class_bool>` **is_action_pressed** **(** :ref:`String<class_String>` action **)** const
+- :ref:`bool<class_bool>` **is_action_pressed** **(** :ref:`StringName<class_StringName>` action, :ref:`bool<class_bool>` allow_echo=false **)** const
 
-Returns ``true`` if the given action is being pressed (and is not an echo event for :ref:`InputEventKey<class_InputEventKey>` events). Not relevant for events of type :ref:`InputEventMouseMotion<class_InputEventMouseMotion>` or :ref:`InputEventScreenDrag<class_InputEventScreenDrag>`.
+Returns ``true`` if the given action is being pressed (and is not an echo event for :ref:`InputEventKey<class_InputEventKey>` events, unless ``allow_echo`` is ``true``). Not relevant for events of type :ref:`InputEventMouseMotion<class_InputEventMouseMotion>` or :ref:`InputEventScreenDrag<class_InputEventScreenDrag>`.
+
+----
 
 .. _class_InputEvent_method_is_action_released:
 
-- :ref:`bool<class_bool>` **is_action_released** **(** :ref:`String<class_String>` action **)** const
+- :ref:`bool<class_bool>` **is_action_released** **(** :ref:`StringName<class_StringName>` action **)** const
 
 Returns ``true`` if the given action is released (i.e. not pressed). Not relevant for events of type :ref:`InputEventMouseMotion<class_InputEventMouseMotion>` or :ref:`InputEventScreenDrag<class_InputEventScreenDrag>`.
+
+----
 
 .. _class_InputEvent_method_is_action_type:
 
@@ -130,11 +139,15 @@ Returns ``true`` if the given action is released (i.e. not pressed). Not relevan
 
 Returns ``true`` if this input event's type is one that can be assigned to an input action.
 
+----
+
 .. _class_InputEvent_method_is_echo:
 
 - :ref:`bool<class_bool>` **is_echo** **(** **)** const
 
 Returns ``true`` if this input event is an echo event (only for events of type :ref:`InputEventKey<class_InputEventKey>`).
+
+----
 
 .. _class_InputEvent_method_is_pressed:
 
@@ -142,11 +155,15 @@ Returns ``true`` if this input event is an echo event (only for events of type :
 
 Returns ``true`` if this input event is pressed. Not relevant for events of type :ref:`InputEventMouseMotion<class_InputEventMouseMotion>` or :ref:`InputEventScreenDrag<class_InputEventScreenDrag>`.
 
+----
+
 .. _class_InputEvent_method_shortcut_match:
 
 - :ref:`bool<class_bool>` **shortcut_match** **(** :ref:`InputEvent<class_InputEvent>` event **)** const
 
 Returns ``true`` if the given input event is checking for the same key (:ref:`InputEventKey<class_InputEventKey>`), button (:ref:`InputEventJoypadButton<class_InputEventJoypadButton>`) or action (:ref:`InputEventAction<class_InputEventAction>`).
+
+----
 
 .. _class_InputEvent_method_xformed_by:
 

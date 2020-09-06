@@ -35,9 +35,9 @@ Cleaning up the skeleton
 
 Each ``PhysicalBone`` the engine needs to simulate has a performance cost, so you want to remove every bone that is too small to make a difference in the simulation, as well as all utility bones.
 
-For example, if we take a humanoid, you do not want to have physical bones for each finger. you can use a single bone for the entire hand instead, or one for the palm, one for the thumb, and a last one for the other four fingers.
+For example, if we take a humanoid, you do not want to have physical bones for each finger. You can use a single bone for the entire hand instead, or one for the palm, one for the thumb, and a last one for the other four fingers.
 
-Remove these physical bones : ``MASTER``, ``waist``, ``neck``, ``headtracker``. This gives us an optimized skeleton and makes it easier to control the ragdoll.
+Remove these physical bones: ``MASTER``, ``waist``, ``neck``, ``headtracker``. This gives us an optimized skeleton and makes it easier to control the ragdoll.
 
 Collision shape adjustment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -83,4 +83,4 @@ Make sure to set up your collision layers and masks properly so the ``KinematicB
 
 .. image:: img/ragdoll_layer.png
 
-For more information, read :ref:`doc_physics_introduction`
+For more information, read :ref:`doc_physics_introduction_collision_layers_and_masks`.

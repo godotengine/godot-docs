@@ -118,16 +118,15 @@ structure that looks along those lines:
           - libsimple.dll/so/dylib
           - libsimple.gdnlib
           - simple.gdns
-        + src
-          - .gdignore
-          - simple.c
         main.tscn
         project.godot
+      + src
+        - simple.c
 
 Open up Godot and create a new project called "simple" alongside your
 ``godot_headers`` Git clone. This will create the ``simple`` folder and
-``project.godot`` file. Then manually create ``bin`` and ``src`` subfolders in
-this folder.
+``project.godot`` file. Then manually create a ``src`` folder alongside the
+``simple`` folder, and a ``bin`` subfolder in the ``simple`` folder.
 
 We're going to start by having a look at what our ``simple.c`` file contains.
 Now, for our example here we're making a single C source file without a header
@@ -216,7 +215,7 @@ to clear our API pointers.
         nativescript_api = NULL;
     }
 
-Finally we have ``nativescript_init`` which is the most important function we'll
+Finally, we have ``nativescript_init`` which is the most important function we'll
 need today. This function will be called by Godot as part of loading a GDNative
 library and communicates back to the engine what objects we make available.
 
@@ -361,22 +360,22 @@ On Linux:
 
 .. code-block:: none
 
-    gcc -std=c11 -fPIC -c -I../../godot_headers simple.c -o simple.os
-    gcc -shared simple.os -o ../bin/libsimple.so
+    gcc -std=c11 -fPIC -c -I../godot_headers simple.c -o simple.o
+    gcc -rdynamic -shared simple.o -o ../simple/bin/libsimple.so
 
 On macOS:
 
 .. code-block:: none
 
-    clang -std=c11 -fPIC -c -I../../godot_headers simple.c -o simple.os
-    clang -dynamiclib simple.os -o ../bin/libsimple.dylib
+    clang -std=c11 -fPIC -c -I../godot_headers simple.c -o simple.os
+    clang -dynamiclib simple.os -o ../simple/bin/libsimple.dylib
 
 On Windows:
 
 .. code-block:: none
 
-    cl /Fosimple.obj /c simple.c /nologo -EHsc -DNDEBUG /MD /I. /I..\..\godot_headers
-    link /nologo /dll /out:..\bin\libsimple.dll /implib:..\bin\libsimple.lib simple.obj
+    cl /Fosimple.obj /c simple.c /nologo -EHsc -DNDEBUG /MD /I. /I..\godot_headers
+    link /nologo /dll /out:..\simple\bin\libsimple.dll /implib:..\simple\bin\libsimple.lib simple.obj
 
 .. note::
 
@@ -384,13 +383,6 @@ On Windows:
     is a library that you can compile into a project to provide access to the
     DLL. We get it as a byproduct and we do not need it :)
     When exporting your game for release this file will be ignored.
-
-.. tip::
-
-    If you add a blank ``.gdignore`` file to the ``src`` folder, Godot will not
-    try to import the compiler-generated files. This is necessary on Windows
-    were compiled objects have the ``.obj`` extension, which is also a 3D model
-    format supported by the engine.
 
 Creating the GDNativeLibrary (``.gdnlib``) file
 -----------------------------------------------
@@ -429,7 +421,7 @@ globally will be accessible from any instance of your object you create. If
 time a script accesses the library.
 
 If *Singleton* is enabled, our library is automatically loaded and a function
-called ``godot_singleton_init`` is called. We'll leave that for another
+called ``godot_gdnative_singleton`` is called. We'll leave that for another
 tutorial.
 
 The *Symbol Prefix* is a prefix for our core functions, such as ``godot_`` in
@@ -487,17 +479,17 @@ this:
 
     [entry]
 
+    Linux.64="res://bin/libsimple.so"
     OSX.64="res://bin/libsimple.dylib"
     OSX.32="res://bin/libsimple.dylib"
     Windows.64="res://bin/libsimple.dll"
-    X11.64="res://bin/libsimple.so"
 
     [dependencies]
 
+    Linux.64=[  ]
     OSX.64=[  ]
     OSX.32=[  ]
     Windows.64=[  ]
-    X11.64=[  ]
 
 Creating the NativeScript (``.gdns``) file
 ------------------------------------------
@@ -518,7 +510,13 @@ select our ``.gdnlib`` file by clicking on *Library* and selecting *Load*:
 
 .. image:: img/nativescript_library.png
 
-Finally click on the save icon and save this as ``bin/simple.gdns``:
+.. note::
+
+    The *Class Name* must have the same spelling as the one given in ``godot_nativescript_init``
+    when registering the class.
+
+   
+Finally, click on the save icon and save this as ``bin/simple.gdns``:
 
 .. image:: img/save_gdns.gif
 

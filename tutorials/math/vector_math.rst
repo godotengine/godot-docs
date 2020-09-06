@@ -77,7 +77,8 @@ Godot supports both :ref:`Vector2 <class_Vector2>` and
 :ref:`Vector3 <class_Vector3>` for 2D and 3D usage, respectively. The same
 mathematical rules discussed in this article apply to both types.
 
-- Member access
+Member access
+-------------
 
 The individual components of the vector can be accessed directly by name.
 
@@ -100,7 +101,8 @@ The individual components of the vector can be accessed directly by name.
     b.x = 3;
     b.y = 1;
 
-- Adding vectors
+Adding vectors
+--------------
 
 When adding or subtracting two vectors, the corresponding components are added:
 
@@ -120,7 +122,8 @@ the first:
 
 Note that adding ``a + b`` gives the same result as ``b + a``.
 
-- Scalar multiplication
+Scalar multiplication
+---------------------
 
 .. note:: Vectors represent both direction and magnitude. A value
           representing only magnitude is called a **scalar**.
@@ -148,7 +151,8 @@ Practical applications
 
 Let's look at two common uses for vector addition and subtraction.
 
-- Movement
+Movement
+--------
 
 A vector can represent **any** quantity with a magnitude and direction. Typical examples are: position, velocity, acceleration, and force. In
 this image, the spaceship at step 1 has a position vector of ``(1,3)`` and
@@ -161,7 +165,8 @@ the velocity to the current position.
 .. tip:: Velocity measures the **change** in position per unit of time. The
          new position is found by adding velocity to the previous position.
 
-- Pointing toward a target
+Pointing toward a target
+------------------------
 
 In this scenario, you have a tank that wishes to point its turret at a
 robot. Subtracting the tank's position from the robot's position gives the
@@ -183,25 +188,8 @@ Normalization
 
 **Normalizing** a vector means reducing its length to ``1`` while
 preserving its direction. This is done by dividing each of its components
-by its magnitude:
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    var a = Vector2(2, 4)
-    var m = sqrt(a.x*a.x + a.y*a.y)  # get magnitude "m" using the Pythagorean theorem
-    a.x /= m
-    a.y /= m
-
- .. code-tab:: csharp
-
-    var a = new Vector2(2, 4);
-    var m = Mathf.Sqrt(a.x*a.x + a.y*a.y);  // get magnitude "m" using the Pythagorean theorem
-    a.x /= m;
-    a.y /= m;
-
-Because this is such a common operation, ``Vector2`` and ``Vector3`` provide
-a method for normalizing:
+by its magnitude. Because this is such a common operation,
+``Vector2`` and ``Vector3`` provide a method for normalizing:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -269,15 +257,11 @@ direction, a scalar value has only magnitude.
 
 The formula for dot product takes two common forms:
 
-.. math::
-
-    A \cdot B = \left \| A \right \|\left \| B \right \|\cos \Theta
+.. image:: img/vector_dot1.png
 
 and
 
-.. math::
-
-    A \cdot B = A_{x}B_{x} + A_{y}B_{y}
+.. image:: img/vector_dot2.png
 
 However, in most cases it is easiest to use the built-in method. Note that
 the order of the two vectors does not matter:
@@ -286,12 +270,12 @@ the order of the two vectors does not matter:
  .. code-tab:: gdscript GDScript
 
     var c = a.dot(b)
-    var d = b.dot(a)  # these are equivalent
+    var d = b.dot(a) # These are equivalent.
 
  .. code-tab:: csharp
 
     float c = a.Dot(b);
-    float d = b.Dot(a);  // these are equivalent
+    float d = b.Dot(a); // These are equivalent.
 
 The dot product is most useful when used with unit vectors, making the
 first formula reduce to just ``cosθ``. This means we can use the dot
@@ -314,7 +298,8 @@ zombies ``A`` and ``B``. Assuming a zombie's field of view is **180°**, can the
 The green arrows ``fA`` and ``fB`` are **unit vectors** representing the
 zombies' facing directions and the blue semicircle represents its field of
 view. For zombie ``A``, we find the direction vector ``AP`` pointing to
-the player using ``P - A`` and normalize it. If the angle between this
+the player using ``P - A`` and normalize it, however, Godot has a helper
+method to do this called ``direction_to``. If the angle between this
 vector and the facing vector is less than 90°, then the zombie can see
 the player.
 
@@ -323,13 +308,13 @@ In code it would look like this:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var AP = (P - A).normalized()
+    var AP = A.direction_to(P)
     if AP.dot(fA) > 0:
         print("A sees P!")
 
  .. code-tab:: csharp
 
-    var AP = (P - A).Normalized();
+    var AP = A.DirectionTo(P);
     if (AP.Dot(fA) > 0)
     {
         GD.Print("A sees P!");
@@ -343,11 +328,9 @@ However, the result of the cross product is a vector with a direction
 that is perpendicular to both. Its magnitude depends on their relative angle.
 If two vectors are parallel, the result of their cross product will be a null vector.
 
-.. math::
+.. image:: img/vector_cross1.png
 
-    \left \|a \times b  \right \| = \left \| a \right \|\left \| b \right \|\ |\sin(a,b)|
-
-.. image:: img/tutovec16.png
+.. image:: img/vector_cross2.png
 
 The cross product is calculated like this:
 

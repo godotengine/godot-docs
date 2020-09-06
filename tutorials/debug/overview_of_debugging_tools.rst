@@ -3,16 +3,30 @@
 Overview of debugging tools
 ===========================
 
-Introduction
-------------
+This guide will give you an overview of the available debugging tools in the
+engine.
 
-When developing your game, you would want to test your game and debug when problems occurred. Godot provides several debugging options and tools which aid your debugging process.
+Godot comes with a powerful debugger and profilers to track down bugs, inspect
+your game at runtime, monitor essential metrics, and measure performances.
+It also offers options to visualize collision boxes and navigation polygons
+in the running game.
 
-Debug options
--------------
+Finally, you have options to debug the game running on a remote device
+and to reload changes to your scenes or your code while the game is running.
 
-There are a few options that you can enable when running your game in the editor which can help you in debugging your game.
-These options are located in ``DEBUG`` in the main menus.
+Debugger Panel
+--------------
+
+Many of Godot's debugging tools are part of the Debugger panel, which you can
+find information about in :ref:`doc_debugger_panel`.
+
+Debug menu options
+------------------
+
+There are a few common debug options you can toggle on or off when running
+your game in the editor, which can help you in debugging your game.
+
+You can find these options in the **Debug** editor menu.
 
 .. image:: img/overview_debug.png
 
@@ -21,18 +35,24 @@ Here are the descriptions of the options:
 Deploy with Remote Debug
 ++++++++++++++++++++++++
 
-When exporting and deploying, the resulting executable will attempt to connect to the IP of your computer, in order to be debugged.
+When exporting and deploying, the resulting executable will attempt to connect
+to the IP of your computer for debugging.
 
 Small Deploy with Network FS
 ++++++++++++++++++++++++++++
 
-Export or deploy will produce minimal executable. The filesystem will be provided from the project by the editor over the network.
-On Android, deploy will use the USB cable for faster performance. This option speeds up testing for games with a large footprint.
+This option speeds up testing for games with a large footprint on remote devices.
+
+When **Small Deploy with Network FS** is on, instead of exporting the full game,
+deploying the game builds a minimal executable. The editor then provides files
+from the project over the network.
+
+Also, on Android, the game is deployed using the USB cable to speed up deployment.
 
 Visible Collision Shapes
 ++++++++++++++++++++++++
 
-Collision shapes and raycast nodes(for 2D and 3D) will be visible on the running game.
+This option makes collision shapes and raycast nodes visible in the running game.
 
 Visible Navigation
 ++++++++++++++++++
@@ -42,65 +62,73 @@ Navigation meshes and polygons will be visible on the running game.
 Sync Scene Changes
 ++++++++++++++++++
 
-Any changes made to the scene in the editor will be replicated in the running game.
-When used remotely on a device, this is more efficient with network filesystem.
+With this option, any change you make to a scene in the editor at runtime
+appears instantly. When used remotely on a device, this is more efficient
+with the network filesystem.
 
 Sync Script Changes
 +++++++++++++++++++
 
-Any script that is saved will be reloaded on the running game.
-When used remotely on a device, this is more efficient with network filesystem.
+Any script that is saved will be reloaded on the running game. When used
+remotely on a device, this is more efficient with the network filesystem.
 
-Debugging tools
----------------
+Script editor debug tools and options
+-------------------------------------
 
-The ``Debugger`` is the second option in the bottom panel. Click on it and a new panel occurs.
+The script editor has its own set of debug tools for use with breakpoints and
+two options. The breakpoint tools can also be found in the **Debugger** tab
+of the debugger.
 
-.. image:: img/overview_debugger.png
+.. image:: img/overview_script_editor.png
 
-The ``Debugger`` provides certain tools under different tabs.
+The **Break** button causes a break in the script like a breakpoint would.
+**Continue** makes the game continue after pausing at a breakpoint.
+**Step Over** goes to the next line of code, and **Step Into** goes into
+a function if possible. Otherwise, it does the same thing as **Step Over**.
 
-Here are some brief descriptions of the tools:
+The **Keep Debugger Open** option keeps the debugger open after a scene
+has been closed. And the **Debug with External Editor** option lets you
+debug your game with an external editor.
 
-Debugger
+.. warning::
+
+    Breakpoints won't break on code if it's
+    :ref:`running in a thread <doc_using_multiple_threads>`.
+    This is a current limitation of the GDScript debugger.
+
+Debug project settings
+----------------------
+
+In the project settings, there is a **Debug** category with three subcategories
+which control different things.
+
+Settings
 ++++++++
 
-Monitor the game running process.
+These are some general settings such as printing the current FPS
+to the **Output** panel, the maximum amount of functions when profiling
+and others.
 
-Errors
+GDScript
+++++++++
+
+These settings allow you to toggle specific GDScript warnings, such as for
+unused variables. You can also turn off warnings completely.
+
+Shapes
 ++++++
 
-Print out errors when running the game.
+Shapes are where you can adjust the color of shapes that only appear for
+debugging purposes, such as collision and navigation shapes.
 
-Profiler
-++++++++
-
-Profiling the performance of the any function call in the running game.
-
-Monitors
-++++++++
-
-Monitors the performance of the running game, such as the fps and physics collisions.
-
-Video Mem
-+++++++++
-
-Listing the video memory usage of the running game.
-
-Misc
-++++
-
-Miscellaneous options for debug.
-
-
-Remote in Scene dock
+Remote in scene dock
 --------------------
 
-When running your game, a bar will occur at the top of the ``Scene`` dock. You can switch to ``Remote`` and inspect or change the nodes' parameters in the running game.
+When running a game in the editor two options appear at the top of the **Scene**
+dock, **Remote** and **Local**. While using **Remote** you can inspect or change
+the nodes' parameters in the running project.
 
 .. image:: img/overview_remote.png
 
-.. note:: Some editor settings related to debugging can be found inside the ``Editor Settings``, under Network>Debug and Debugger sections.
-
-
-
+.. note:: Some editor settings related to debugging can be found inside
+          the **Editor Settings**, under the **Network > Debug** and **Debugger** sections.

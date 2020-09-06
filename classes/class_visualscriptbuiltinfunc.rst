@@ -11,19 +11,21 @@ VisualScriptBuiltinFunc
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A Visual Script node used to call built-in functions.
+
+Description
+-----------
+
+A built-in function used inside a :ref:`VisualScript<class_VisualScript>`. It is usually a math function or an utility function.
+
+See also :ref:`@GDScript<class_@GDScript>`, for the same functions in the GDScript language.
 
 Properties
 ----------
 
-+--------------------------------------------------------------+------------------------------------------------------------------+---+
-| :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` | :ref:`function<class_VisualScriptBuiltinFunc_property_function>` | 0 |
-+--------------------------------------------------------------+------------------------------------------------------------------+---+
++--------------------------------------------------------------+------------------------------------------------------------------+-------+
+| :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` | :ref:`function<class_VisualScriptBuiltinFunc_property_function>` | ``0`` |
++--------------------------------------------------------------+------------------------------------------------------------------+-------+
 
 Enumerations
 ------------
@@ -78,7 +80,7 @@ Enumerations
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_EASE:
 
-.. _class_VisualScriptBuiltinFunc_constant_MATH_DECIMALS:
+.. _class_VisualScriptBuiltinFunc_constant_MATH_STEP_DECIMALS:
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_STEPIFY:
 
@@ -164,6 +166,8 @@ Enumerations
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_LERP_ANGLE:
 
+.. _class_VisualScriptBuiltinFunc_constant_TEXT_ORD:
+
 .. _class_VisualScriptBuiltinFunc_constant_FUNC_MAX:
 
 enum **BuiltinFunc**:
@@ -216,7 +220,7 @@ enum **BuiltinFunc**:
 
 - **MATH_EASE** = **23** --- Easing function, based on exponent. 0 is constant, 1 is linear, 0 to 1 is ease-in, 1+ is ease out. Negative values are in-out/out in.
 
-- **MATH_DECIMALS** = **24** --- Return the number of digit places after the decimal that the first non-zero digit occurs.
+- **MATH_STEP_DECIMALS** = **24** --- Return the number of digit places after the decimal that the first non-zero digit occurs.
 
 - **MATH_STEPIFY** = **25** --- Return the input snapped to a given step.
 
@@ -290,11 +294,11 @@ enum **BuiltinFunc**:
 
 - **STR_TO_VAR** = **60** --- Deserialize a :ref:`Variant<class_Variant>` from a string serialized using :ref:`VAR_TO_STR<class_VisualScriptBuiltinFunc_constant_VAR_TO_STR>`.
 
-- **VAR_TO_BYTES** = **61** --- Serialize a :ref:`Variant<class_Variant>` to a :ref:`PoolByteArray<class_PoolByteArray>`.
+- **VAR_TO_BYTES** = **61** --- Serialize a :ref:`Variant<class_Variant>` to a :ref:`PackedByteArray<class_PackedByteArray>`.
 
-- **BYTES_TO_VAR** = **62** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PoolByteArray<class_PoolByteArray>` serialized using :ref:`VAR_TO_BYTES<class_VisualScriptBuiltinFunc_constant_VAR_TO_BYTES>`.
+- **BYTES_TO_VAR** = **62** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PackedByteArray<class_PackedByteArray>` serialized using :ref:`VAR_TO_BYTES<class_VisualScriptBuiltinFunc_constant_VAR_TO_BYTES>`.
 
-- **COLORN** = **63** --- Return the :ref:`Color<class_Color>` with the given name and alpha ranging from 0 to 1
+- **COLORN** = **63** --- Return the :ref:`Color<class_Color>` with the given name and alpha ranging from 0 to 1.
 
 **Note:** Names are defined in ``color_names.inc``.
 
@@ -309,14 +313,9 @@ enum **BuiltinFunc**:
 
 - **MATH_LERP_ANGLE** = **66**
 
-- **FUNC_MAX** = **67** --- Represents the size of the :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` enum.
+- **TEXT_ORD** = **67**
 
-Description
------------
-
-A built-in function used inside a :ref:`VisualScript<class_VisualScript>`. It is usually a math function or an utility function.
-
-See also :ref:`@GDScript<class_@GDScript>`, for the same functions in the GDScript language.
+- **FUNC_MAX** = **68** --- Represents the size of the :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` enum.
 
 Property Descriptions
 ---------------------
@@ -326,7 +325,7 @@ Property Descriptions
 - :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **function**
 
 +-----------+-----------------+
-| *Default* | 0               |
+| *Default* | ``0``           |
 +-----------+-----------------+
 | *Setter*  | set_func(value) |
 +-----------+-----------------+

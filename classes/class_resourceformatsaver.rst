@@ -13,23 +13,7 @@ ResourceFormatSaver
 
 **Inherited By:** :ref:`ResourceFormatSaverCrypto<class_ResourceFormatSaverCrypto>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Saves a specific resource type to a file.
-
-Methods
--------
-
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_recognized_extensions<class_ResourceFormatSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` resource **)** virtual                      |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`recognize<class_ResourceFormatSaver_method_recognize>` **(** :ref:`Resource<class_Resource>` resource **)** virtual                                                      |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`save<class_ResourceFormatSaver_method_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags **)** virtual |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -38,20 +22,35 @@ The engine can save resources when you do it from the editor, or when you use th
 
 By default, Godot saves resources as ``.tres`` (text-based), ``.res`` (binary) or another built-in format, but you can choose to create your own format by extending this class. Be sure to respect the documented return types and values. You should give it a global class name with ``class_name`` for it to be registered. Like built-in ResourceFormatSavers, it will be called automatically when saving resources of its recognized type(s). You may also implement a :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`.
 
+Methods
+-------
+
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_recognized_extensions<class_ResourceFormatSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` resource **)** virtual                      |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`recognize<class_ResourceFormatSaver_method_recognize>` **(** :ref:`Resource<class_Resource>` resource **)** virtual                                                      |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`save<class_ResourceFormatSaver_method_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags **)** virtual |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Method Descriptions
 -------------------
 
 .. _class_ResourceFormatSaver_method_get_recognized_extensions:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` resource **)** virtual
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` resource **)** virtual
 
 Returns the list of extensions available for saving the resource object, provided it is recognized (see :ref:`recognize<class_ResourceFormatSaver_method_recognize>`).
+
+----
 
 .. _class_ResourceFormatSaver_method_recognize:
 
 - :ref:`bool<class_bool>` **recognize** **(** :ref:`Resource<class_Resource>` resource **)** virtual
 
 Returns whether the given resource object can be saved by this saver.
+
+----
 
 .. _class_ResourceFormatSaver_method_save:
 

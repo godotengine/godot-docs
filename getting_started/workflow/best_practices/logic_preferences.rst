@@ -16,7 +16,7 @@ resources while in the middle of performance-sensitive code.
 
 Its counterpart, the :ref:`load <class_@GDScript_method_load>` method, loads a
 resource only when it reaches the load statement. That is, it will load a
-resource in-place which can cause slowdowns then it occurs in the middle of
+resource in-place which can cause slowdowns when it occurs in the middle of
 sensitive processes. The ``load`` function is also an alias for
 :ref:`ResourceLoader.load(path) <class_ResourceLoader_method_load>` which is
 accessible to *all* scripting languages.
@@ -48,7 +48,7 @@ either? Let's see an example:
     #    such, preloading the value here actually does not benefit anyone.
     #
     # 3. Because the user exports the value, if this script stored on
-    #    a node in a scene file, the scene instantation code will overwrite the
+    #    a node in a scene file, the scene instantiation code will overwrite the
     #    preloaded initial value anyway (wasting it). It's usually better to
     #    provide null, empty, or otherwise invalid default values for exports.
     #

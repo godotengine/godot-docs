@@ -11,40 +11,35 @@ AudioEffectReverb
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Adds a reverberation audio effect to an Audio bus.
 
 Simulates the sound of acoustic environments such as rooms, concert halls, caverns, or an open spaces.
-
-Properties
-----------
-
-+---------------------------+------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`damping<class_AudioEffectReverb_property_damping>`                     | 0.5   |
-+---------------------------+------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`dry<class_AudioEffectReverb_property_dry>`                             | 1.0   |
-+---------------------------+------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`hipass<class_AudioEffectReverb_property_hipass>`                       | 0.0   |
-+---------------------------+------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`predelay_feedback<class_AudioEffectReverb_property_predelay_feedback>` | 0.4   |
-+---------------------------+------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`predelay_msec<class_AudioEffectReverb_property_predelay_msec>`         | 150.0 |
-+---------------------------+------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`room_size<class_AudioEffectReverb_property_room_size>`                 | 0.8   |
-+---------------------------+------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`spread<class_AudioEffectReverb_property_spread>`                       | 1.0   |
-+---------------------------+------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`wet<class_AudioEffectReverb_property_wet>`                             | 0.5   |
-+---------------------------+------------------------------------------------------------------------------+-------+
 
 Description
 -----------
 
 Simulates rooms of different sizes. Its parameters can be adjusted to simulate the sound of a specific room.
+
+Properties
+----------
+
++---------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`damping<class_AudioEffectReverb_property_damping>`                     | ``0.5``   |
++---------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`dry<class_AudioEffectReverb_property_dry>`                             | ``1.0``   |
++---------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`hipass<class_AudioEffectReverb_property_hipass>`                       | ``0.0``   |
++---------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`predelay_feedback<class_AudioEffectReverb_property_predelay_feedback>` | ``0.4``   |
++---------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`predelay_msec<class_AudioEffectReverb_property_predelay_msec>`         | ``150.0`` |
++---------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`room_size<class_AudioEffectReverb_property_room_size>`                 | ``0.8``   |
++---------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`spread<class_AudioEffectReverb_property_spread>`                       | ``1.0``   |
++---------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`wet<class_AudioEffectReverb_property_wet>`                             | ``0.5``   |
++---------------------------+------------------------------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
@@ -54,7 +49,7 @@ Property Descriptions
 - :ref:`float<class_float>` **damping**
 
 +-----------+--------------------+
-| *Default* | 0.5                |
+| *Default* | ``0.5``            |
 +-----------+--------------------+
 | *Setter*  | set_damping(value) |
 +-----------+--------------------+
@@ -63,12 +58,14 @@ Property Descriptions
 
 Defines how reflective the imaginary room's walls are. Value can range from 0 to 1.
 
+----
+
 .. _class_AudioEffectReverb_property_dry:
 
 - :ref:`float<class_float>` **dry**
 
 +-----------+----------------+
-| *Default* | 1.0            |
+| *Default* | ``1.0``        |
 +-----------+----------------+
 | *Setter*  | set_dry(value) |
 +-----------+----------------+
@@ -77,12 +74,14 @@ Defines how reflective the imaginary room's walls are. Value can range from 0 to
 
 Output percent of original sound. At 0, only modified sound is outputted. Value can range from 0 to 1.
 
+----
+
 .. _class_AudioEffectReverb_property_hipass:
 
 - :ref:`float<class_float>` **hipass**
 
 +-----------+----------------+
-| *Default* | 0.0            |
+| *Default* | ``0.0``        |
 +-----------+----------------+
 | *Setter*  | set_hpf(value) |
 +-----------+----------------+
@@ -91,12 +90,14 @@ Output percent of original sound. At 0, only modified sound is outputted. Value 
 
 High-pass filter passes signals with a frequency higher than a certain cutoff frequency and attenuates signals with frequencies lower than the cutoff frequency. Value can range from 0 to 1.
 
+----
+
 .. _class_AudioEffectReverb_property_predelay_feedback:
 
 - :ref:`float<class_float>` **predelay_feedback**
 
 +-----------+------------------------------+
-| *Default* | 0.4                          |
+| *Default* | ``0.4``                      |
 +-----------+------------------------------+
 | *Setter*  | set_predelay_feedback(value) |
 +-----------+------------------------------+
@@ -105,12 +106,14 @@ High-pass filter passes signals with a frequency higher than a certain cutoff fr
 
 Output percent of predelay. Value can range from 0 to 1.
 
+----
+
 .. _class_AudioEffectReverb_property_predelay_msec:
 
 - :ref:`float<class_float>` **predelay_msec**
 
 +-----------+--------------------------+
-| *Default* | 150.0                    |
+| *Default* | ``150.0``                |
 +-----------+--------------------------+
 | *Setter*  | set_predelay_msec(value) |
 +-----------+--------------------------+
@@ -119,12 +122,14 @@ Output percent of predelay. Value can range from 0 to 1.
 
 Time between the original signal and the early reflections of the reverb signal, in milliseconds.
 
+----
+
 .. _class_AudioEffectReverb_property_room_size:
 
 - :ref:`float<class_float>` **room_size**
 
 +-----------+----------------------+
-| *Default* | 0.8                  |
+| *Default* | ``0.8``              |
 +-----------+----------------------+
 | *Setter*  | set_room_size(value) |
 +-----------+----------------------+
@@ -133,12 +138,14 @@ Time between the original signal and the early reflections of the reverb signal,
 
 Dimensions of simulated room. Bigger means more echoes. Value can range from 0 to 1.
 
+----
+
 .. _class_AudioEffectReverb_property_spread:
 
 - :ref:`float<class_float>` **spread**
 
 +-----------+-------------------+
-| *Default* | 1.0               |
+| *Default* | ``1.0``           |
 +-----------+-------------------+
 | *Setter*  | set_spread(value) |
 +-----------+-------------------+
@@ -147,12 +154,14 @@ Dimensions of simulated room. Bigger means more echoes. Value can range from 0 t
 
 Widens or narrows the stereo image of the reverb tail. 1 means fully widens. Value can range from 0 to 1.
 
+----
+
 .. _class_AudioEffectReverb_property_wet:
 
 - :ref:`float<class_float>` **wet**
 
 +-----------+----------------+
-| *Default* | 0.5            |
+| *Default* | ``0.5``        |
 +-----------+----------------+
 | *Setter*  | set_wet(value) |
 +-----------+----------------+

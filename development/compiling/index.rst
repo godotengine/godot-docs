@@ -8,7 +8,7 @@ Compiling
    getting_source
    introduction_to_the_buildsystem
    compiling_for_windows
-   compiling_for_x11
+   compiling_for_linuxbsd
    compiling_for_osx
    compiling_for_android
    compiling_for_ios

@@ -13,21 +13,26 @@ PhysicsBody
 
 **Inherited By:** :ref:`KinematicBody<class_KinematicBody>`, :ref:`PhysicalBone<class_PhysicalBone>`, :ref:`RigidBody<class_RigidBody>`, :ref:`StaticBody<class_StaticBody>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for all objects affected by physics in 3D space.
+
+Description
+-----------
+
+PhysicsBody is an abstract base class for implementing a physics body. All \*Body types inherit from it.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/physics_introduction`
 
 Properties
 ----------
 
-+-----------------------+--------------------------------------------------------------------+---+
-| :ref:`int<class_int>` | :ref:`collision_layer<class_PhysicsBody_property_collision_layer>` | 1 |
-+-----------------------+--------------------------------------------------------------------+---+
-| :ref:`int<class_int>` | :ref:`collision_mask<class_PhysicsBody_property_collision_mask>`   | 1 |
-+-----------------------+--------------------------------------------------------------------+---+
++-----------------------+--------------------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`collision_layer<class_PhysicsBody_property_collision_layer>` | ``1`` |
++-----------------------+--------------------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`collision_mask<class_PhysicsBody_property_collision_mask>`   | ``1`` |
++-----------------------+--------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -48,16 +53,6 @@ Methods
 | void                      | :ref:`set_collision_mask_bit<class_PhysicsBody_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
 +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-PhysicsBody is an abstract base class for implementing a physics body. All \*Body types inherit from it.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/physics_introduction`
-
 Property Descriptions
 ---------------------
 
@@ -66,7 +61,7 @@ Property Descriptions
 - :ref:`int<class_int>` **collision_layer**
 
 +-----------+----------------------------+
-| *Default* | 1                          |
+| *Default* | ``1``                      |
 +-----------+----------------------------+
 | *Setter*  | set_collision_layer(value) |
 +-----------+----------------------------+
@@ -79,12 +74,14 @@ Collidable objects can exist in any of 32 different layers. These layers work li
 
 A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A.
 
+----
+
 .. _class_PhysicsBody_property_collision_mask:
 
 - :ref:`int<class_int>` **collision_mask**
 
 +-----------+---------------------------+
-| *Default* | 1                         |
+| *Default* | ``1``                     |
 +-----------+---------------------------+
 | *Setter*  | set_collision_mask(value) |
 +-----------+---------------------------+
@@ -102,11 +99,15 @@ Method Descriptions
 
 Adds a body to the list of bodies that this body can't collide with.
 
+----
+
 .. _class_PhysicsBody_method_get_collision_exceptions:
 
 - :ref:`Array<class_Array>` **get_collision_exceptions** **(** **)**
 
 Returns an array of nodes that were added as collision exceptions for this body.
+
+----
 
 .. _class_PhysicsBody_method_get_collision_layer_bit:
 
@@ -114,11 +115,15 @@ Returns an array of nodes that were added as collision exceptions for this body.
 
 Returns an individual bit on the :ref:`collision_layer<class_PhysicsBody_property_collision_layer>`.
 
+----
+
 .. _class_PhysicsBody_method_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
 Returns an individual bit on the :ref:`collision_mask<class_PhysicsBody_property_collision_mask>`.
+
+----
 
 .. _class_PhysicsBody_method_remove_collision_exception_with:
 
@@ -126,11 +131,15 @@ Returns an individual bit on the :ref:`collision_mask<class_PhysicsBody_property
 
 Removes a body from the list of bodies that this body can't collide with.
 
+----
+
 .. _class_PhysicsBody_method_set_collision_layer_bit:
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Sets individual bits on the :ref:`collision_layer<class_PhysicsBody_property_collision_layer>` bitmask. Use this if you only need to change one layer's value.
+
+----
 
 .. _class_PhysicsBody_method_set_collision_mask_bit:
 

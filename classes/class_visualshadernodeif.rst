@@ -11,10 +11,10 @@ VisualShaderNodeIf
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+Compares two floating-point numbers in order to return a required vector within the visual shader graph.
 
-Brief Description
------------------
+Description
+-----------
 
-
+First two ports are scalar floatin-point numbers to compare, third is tolerance comparison amount and last three ports represents a vectors returned if ``a == b``, ``a > b`` and ``a < b`` respectively.
 

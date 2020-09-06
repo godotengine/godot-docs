@@ -13,12 +13,21 @@ Container
 
 **Inherited By:** :ref:`BoxContainer<class_BoxContainer>`, :ref:`CenterContainer<class_CenterContainer>`, :ref:`EditorProperty<class_EditorProperty>`, :ref:`GraphNode<class_GraphNode>`, :ref:`GridContainer<class_GridContainer>`, :ref:`MarginContainer<class_MarginContainer>`, :ref:`PanelContainer<class_PanelContainer>`, :ref:`ScrollContainer<class_ScrollContainer>`, :ref:`SplitContainer<class_SplitContainer>`, :ref:`TabContainer<class_TabContainer>`, :ref:`ViewportContainer<class_ViewportContainer>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base node for containers.
+
+Description
+-----------
+
+Base node for containers. A ``Container`` contains other controls and automatically arranges them in a certain way.
+
+A Control can inherit this to create custom container classes.
+
+Properties
+----------
+
++----------------------------------------------+--------------+--------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter | **O:** ``1`` |
++----------------------------------------------+--------------+--------------+
 
 Methods
 -------
@@ -45,13 +54,6 @@ Constants
 
 - **NOTIFICATION_SORT_CHILDREN** = **50** --- Notification for when sorting the children, it must be obeyed immediately.
 
-Description
------------
-
-Base node for containers. A ``Container`` contains other controls and automatically arranges them in a certain way.
-
-A Control can inherit this to create custom container classes.
-
 Method Descriptions
 -------------------
 
@@ -60,6 +62,8 @@ Method Descriptions
 - void **fit_child_in_rect** **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)**
 
 Fit a child control in a given rect. This is mainly a helper for creating custom container classes.
+
+----
 
 .. _class_Container_method_queue_sort:
 

@@ -11,25 +11,28 @@ OmniLight
 
 **Inherits:** :ref:`Light<class_Light>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Omnidirectional light, such as a light bulb or a candle.
+
+Description
+-----------
+
+An Omnidirectional light is a type of :ref:`Light<class_Light>` that emits light in all directions. The light is attenuated by distance and this attenuation can be configured by changing its energy, radius, and attenuation parameters.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/lights_and_shadows`
 
 Properties
 ----------
 
-+--------------------------------------------------+------------------------------------------------------------------------+-----+
-| :ref:`float<class_float>`                        | :ref:`omni_attenuation<class_OmniLight_property_omni_attenuation>`     | 1.0 |
-+--------------------------------------------------+------------------------------------------------------------------------+-----+
-| :ref:`float<class_float>`                        | :ref:`omni_range<class_OmniLight_property_omni_range>`                 | 5.0 |
-+--------------------------------------------------+------------------------------------------------------------------------+-----+
-| :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` | :ref:`omni_shadow_detail<class_OmniLight_property_omni_shadow_detail>` | 1   |
-+--------------------------------------------------+------------------------------------------------------------------------+-----+
-| :ref:`ShadowMode<enum_OmniLight_ShadowMode>`     | :ref:`omni_shadow_mode<class_OmniLight_property_omni_shadow_mode>`     | 1   |
-+--------------------------------------------------+------------------------------------------------------------------------+-----+
++----------------------------------------------+--------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`                    | :ref:`omni_attenuation<class_OmniLight_property_omni_attenuation>` | ``1.0`` |
++----------------------------------------------+--------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`                    | :ref:`omni_range<class_OmniLight_property_omni_range>`             | ``5.0`` |
++----------------------------------------------+--------------------------------------------------------------------+---------+
+| :ref:`ShadowMode<enum_OmniLight_ShadowMode>` | :ref:`omni_shadow_mode<class_OmniLight_property_omni_shadow_mode>` | ``1``   |
++----------------------------------------------+--------------------------------------------------------------------+---------+
 
 Enumerations
 ------------
@@ -46,28 +49,6 @@ enum **ShadowMode**:
 
 - **SHADOW_CUBE** = **1** --- Shadows are rendered to a cubemap. Slower than :ref:`SHADOW_DUAL_PARABOLOID<class_OmniLight_constant_SHADOW_DUAL_PARABOLOID>`, but higher-quality.
 
-.. _enum_OmniLight_ShadowDetail:
-
-.. _class_OmniLight_constant_SHADOW_DETAIL_VERTICAL:
-
-.. _class_OmniLight_constant_SHADOW_DETAIL_HORIZONTAL:
-
-enum **ShadowDetail**:
-
-- **SHADOW_DETAIL_VERTICAL** = **0**
-
-- **SHADOW_DETAIL_HORIZONTAL** = **1**
-
-Description
------------
-
-An Omnidirectional light is a type of :ref:`Light<class_Light>` that emits light in all directions. The light is attenuated by distance and this attenuation can be configured by changing its energy, radius, and attenuation parameters.
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/lights_and_shadows`
-
 Property Descriptions
 ---------------------
 
@@ -76,7 +57,7 @@ Property Descriptions
 - :ref:`float<class_float>` **omni_attenuation**
 
 +-----------+------------------+
-| *Default* | 1.0              |
+| *Default* | ``1.0``          |
 +-----------+------------------+
 | *Setter*  | set_param(value) |
 +-----------+------------------+
@@ -85,12 +66,14 @@ Property Descriptions
 
 The light's attenuation (drop-off) curve. A number of presets are available in the **Inspector** by right-clicking the curve.
 
+----
+
 .. _class_OmniLight_property_omni_range:
 
 - :ref:`float<class_float>` **omni_range**
 
 +-----------+------------------+
-| *Default* | 5.0              |
+| *Default* | ``5.0``          |
 +-----------+------------------+
 | *Setter*  | set_param(value) |
 +-----------+------------------+
@@ -99,26 +82,14 @@ The light's attenuation (drop-off) curve. A number of presets are available in t
 
 The light's radius.
 
-.. _class_OmniLight_property_omni_shadow_detail:
-
-- :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` **omni_shadow_detail**
-
-+-----------+--------------------------+
-| *Default* | 1                        |
-+-----------+--------------------------+
-| *Setter*  | set_shadow_detail(value) |
-+-----------+--------------------------+
-| *Getter*  | get_shadow_detail()      |
-+-----------+--------------------------+
-
-See :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>`.
+----
 
 .. _class_OmniLight_property_omni_shadow_mode:
 
 - :ref:`ShadowMode<enum_OmniLight_ShadowMode>` **omni_shadow_mode**
 
 +-----------+------------------------+
-| *Default* | 1                      |
+| *Default* | ``1``                  |
 +-----------+------------------------+
 | *Setter*  | set_shadow_mode(value) |
 +-----------+------------------------+

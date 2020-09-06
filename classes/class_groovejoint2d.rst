@@ -11,26 +11,21 @@ GrooveJoint2D
 
 **Inherits:** :ref:`Joint2D<class_Joint2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Groove constraint for 2D physics.
-
-Properties
-----------
-
-+---------------------------+--------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`initial_offset<class_GrooveJoint2D_property_initial_offset>` | 25.0 |
-+---------------------------+--------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`length<class_GrooveJoint2D_property_length>`                 | 50.0 |
-+---------------------------+--------------------------------------------------------------------+------+
 
 Description
 -----------
 
 Groove constraint for 2D physics. This is useful for making a body "slide" through a segment placed in another.
+
+Properties
+----------
+
++---------------------------+--------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`initial_offset<class_GrooveJoint2D_property_initial_offset>` | ``25.0`` |
++---------------------------+--------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`length<class_GrooveJoint2D_property_length>`                 | ``50.0`` |
++---------------------------+--------------------------------------------------------------------+----------+
 
 Property Descriptions
 ---------------------
@@ -40,7 +35,7 @@ Property Descriptions
 - :ref:`float<class_float>` **initial_offset**
 
 +-----------+---------------------------+
-| *Default* | 25.0                      |
+| *Default* | ``25.0``                  |
 +-----------+---------------------------+
 | *Setter*  | set_initial_offset(value) |
 +-----------+---------------------------+
@@ -49,12 +44,14 @@ Property Descriptions
 
 The body B's initial anchor position defined by the joint's origin and a local offset :ref:`initial_offset<class_GrooveJoint2D_property_initial_offset>` along the joint's Y axis (along the groove).
 
+----
+
 .. _class_GrooveJoint2D_property_length:
 
 - :ref:`float<class_float>` **length**
 
 +-----------+-------------------+
-| *Default* | 50.0              |
+| *Default* | ``50.0``          |
 +-----------+-------------------+
 | *Setter*  | set_length(value) |
 +-----------+-------------------+

@@ -11,19 +11,27 @@ VisualScriptMathConstant
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Commonly used mathematical constants.
+
+Description
+-----------
+
+Provides common math constants, such as Pi, on an output Data port.
+
+**Input Ports:**
+
+none
+
+**Output Ports:**
+
+- Data (variant): ``get``
 
 Properties
 ----------
 
-+-----------------------------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` | :ref:`constant<class_VisualScriptMathConstant_property_constant>` | 0 |
-+-----------------------------------------------------------------+-------------------------------------------------------------------+---+
++-----------------------------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` | :ref:`constant<class_VisualScriptMathConstant_property_constant>` | ``0`` |
++-----------------------------------------------------------------+-------------------------------------------------------------------+-------+
 
 Enumerations
 ------------
@@ -50,36 +58,23 @@ Enumerations
 
 enum **MathConstant**:
 
-- **MATH_CONSTANT_ONE** = **0** --- Unity: ``1``
+- **MATH_CONSTANT_ONE** = **0** --- Unity: ``1``.
 
-- **MATH_CONSTANT_PI** = **1** --- Pi: ``3.141593``
+- **MATH_CONSTANT_PI** = **1** --- Pi: ``3.141593``.
 
-- **MATH_CONSTANT_HALF_PI** = **2** --- Pi divided by two: ``1.570796``
+- **MATH_CONSTANT_HALF_PI** = **2** --- Pi divided by two: ``1.570796``.
 
-- **MATH_CONSTANT_TAU** = **3** --- Tau: ``6.283185``
+- **MATH_CONSTANT_TAU** = **3** --- Tau: ``6.283185``.
 
-- **MATH_CONSTANT_E** = **4** --- Mathematical constant ``e``, the natural log base: ``2.718282``
+- **MATH_CONSTANT_E** = **4** --- Mathematical constant ``e``, the natural log base: ``2.718282``.
 
-- **MATH_CONSTANT_SQRT2** = **5** --- Square root of two: ``1.414214``
+- **MATH_CONSTANT_SQRT2** = **5** --- Square root of two: ``1.414214``.
 
-- **MATH_CONSTANT_INF** = **6** --- Infinity: ``inf``
+- **MATH_CONSTANT_INF** = **6** --- Infinity: ``inf``.
 
-- **MATH_CONSTANT_NAN** = **7** --- Not a number: ``nan``
+- **MATH_CONSTANT_NAN** = **7** --- Not a number: ``nan``.
 
 - **MATH_CONSTANT_MAX** = **8** --- Represents the size of the :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` enum.
-
-Description
------------
-
-Provides common math constants, such as Pi, on an output Data port.
-
-**Input Ports:**
-
-none
-
-**Output Ports:**
-
-- Data (variant): ``get``
 
 Property Descriptions
 ---------------------
@@ -89,7 +84,7 @@ Property Descriptions
 - :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **constant**
 
 +-----------+--------------------------+
-| *Default* | 0                        |
+| *Default* | ``0``                    |
 +-----------+--------------------------+
 | *Setter*  | set_math_constant(value) |
 +-----------+--------------------------+

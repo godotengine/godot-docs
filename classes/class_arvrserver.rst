@@ -11,21 +11,26 @@ ARVRServer
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
+Server for AR and VR features.
 
-Brief Description
------------------
+Description
+-----------
 
-The AR/VR server.
+The AR/VR server is the heart of our Advanced and Virtual Reality solution and handles all the processing.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/vr/index`
 
 Properties
 ----------
 
-+-------------------------------------------+-----------------------------------------------------------------------+-----+
-| :ref:`ARVRInterface<class_ARVRInterface>` | :ref:`primary_interface<class_ARVRServer_property_primary_interface>` |     |
-+-------------------------------------------+-----------------------------------------------------------------------+-----+
-| :ref:`float<class_float>`                 | :ref:`world_scale<class_ARVRServer_property_world_scale>`             | 1.0 |
-+-------------------------------------------+-----------------------------------------------------------------------+-----+
++-------------------------------------------+-----------------------------------------------------------------------+---------+
+| :ref:`ARVRInterface<class_ARVRInterface>` | :ref:`primary_interface<class_ARVRServer_property_primary_interface>` |         |
++-------------------------------------------+-----------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`                 | :ref:`world_scale<class_ARVRServer_property_world_scale>`             | ``1.0`` |
++-------------------------------------------+-----------------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -61,25 +66,31 @@ Signals
 
 .. _class_ARVRServer_signal_interface_added:
 
-- **interface_added** **(** :ref:`String<class_String>` interface_name **)**
+- **interface_added** **(** :ref:`StringName<class_StringName>` interface_name **)**
 
 Emitted when a new interface has been added.
 
+----
+
 .. _class_ARVRServer_signal_interface_removed:
 
-- **interface_removed** **(** :ref:`String<class_String>` interface_name **)**
+- **interface_removed** **(** :ref:`StringName<class_StringName>` interface_name **)**
 
 Emitted when an interface is removed.
 
+----
+
 .. _class_ARVRServer_signal_tracker_added:
 
-- **tracker_added** **(** :ref:`String<class_String>` tracker_name, :ref:`int<class_int>` type, :ref:`int<class_int>` id **)**
+- **tracker_added** **(** :ref:`StringName<class_StringName>` tracker_name, :ref:`int<class_int>` type, :ref:`int<class_int>` id **)**
 
 Emitted when a new tracker has been added. If you don't use a fixed number of controllers or if you're using :ref:`ARVRAnchor<class_ARVRAnchor>`\ s for an AR solution, it is important to react to this signal to add the appropriate :ref:`ARVRController<class_ARVRController>` or :ref:`ARVRAnchor<class_ARVRAnchor>` nodes related to this new tracker.
 
+----
+
 .. _class_ARVRServer_signal_tracker_removed:
 
-- **tracker_removed** **(** :ref:`String<class_String>` tracker_name, :ref:`int<class_int>` type, :ref:`int<class_int>` id **)**
+- **tracker_removed** **(** :ref:`StringName<class_StringName>` tracker_name, :ref:`int<class_int>` type, :ref:`int<class_int>` id **)**
 
 Emitted when a tracker is removed. You should remove any :ref:`ARVRController<class_ARVRController>` or :ref:`ARVRAnchor<class_ARVRAnchor>` points if applicable. This is not mandatory, the nodes simply become inactive and will be made active again when a new tracker becomes available (i.e. a new controller is switched on that takes the place of the previous one).
 
@@ -114,6 +125,8 @@ enum **TrackerType**:
 
 - **TRACKER_ANY** = **255** --- Used internally to select all trackers.
 
+----
+
 .. _enum_ARVRServer_RotationMode:
 
 .. _class_ARVRServer_constant_RESET_FULL_ROTATION:
@@ -130,11 +143,6 @@ enum **RotationMode**:
 
 - **DONT_RESET_ROTATION** = **2** --- Does not reset the orientation of the HMD, only the position of the player gets centered.
 
-Description
------------
-
-The AR/VR server is the heart of our AR/VR solution and handles all the processing.
-
 Property Descriptions
 ---------------------
 
@@ -148,12 +156,16 @@ Property Descriptions
 | *Getter* | get_primary_interface()      |
 +----------+------------------------------+
 
+The primary :ref:`ARVRInterface<class_ARVRInterface>` currently bound to the ``ARVRServer``.
+
+----
+
 .. _class_ARVRServer_property_world_scale:
 
 - :ref:`float<class_float>` **world_scale**
 
 +-----------+------------------------+
-| *Default* | 1.0                    |
+| *Default* | ``1.0``                |
 +-----------+------------------------+
 | *Setter*  | set_world_scale(value) |
 +-----------+------------------------+
@@ -181,11 +193,15 @@ For this method to produce usable results, tracking information must be availabl
 
 You should call this method after a few seconds have passed. For instance, when the user requests a realignment of the display holding a designated button on a controller for a short period of time, or when implementing a teleport mechanism.
 
+----
+
 .. _class_ARVRServer_method_find_interface:
 
 - :ref:`ARVRInterface<class_ARVRInterface>` **find_interface** **(** :ref:`String<class_String>` name **)** const
 
 Finds an interface by its name. For instance, if your project uses capabilities of an AR/VR platform, you can find the interface for that platform by name and initialize it.
+
+----
 
 .. _class_ARVRServer_method_get_hmd_transform:
 
@@ -193,17 +209,23 @@ Finds an interface by its name. For instance, if your project uses capabilities 
 
 Returns the primary interface's transformation.
 
+----
+
 .. _class_ARVRServer_method_get_interface:
 
 - :ref:`ARVRInterface<class_ARVRInterface>` **get_interface** **(** :ref:`int<class_int>` idx **)** const
 
-Gets the interface registered at a given index in our list of interfaces.
+Returns the interface registered at a given index in our list of interfaces.
+
+----
 
 .. _class_ARVRServer_method_get_interface_count:
 
 - :ref:`int<class_int>` **get_interface_count** **(** **)** const
 
-Gets the number of interfaces currently registered with the AR/VR server. If your project supports multiple AR/VR platforms, you can look through the available interface, and either present the user with a selection or simply try to initialize each interface and use the first one that returns ``true``.
+Returns the number of interfaces currently registered with the AR/VR server. If your project supports multiple AR/VR platforms, you can look through the available interface, and either present the user with a selection or simply try to initialize each interface and use the first one that returns ``true``.
+
+----
 
 .. _class_ARVRServer_method_get_interfaces:
 
@@ -211,33 +233,51 @@ Gets the number of interfaces currently registered with the AR/VR server. If you
 
 Returns a list of available interfaces the ID and name of each interface.
 
+----
+
 .. _class_ARVRServer_method_get_last_commit_usec:
 
 - :ref:`int<class_int>` **get_last_commit_usec** **(** **)**
+
+Returns the absolute timestamp (in μs) of the last ``ARVRServer`` commit of the AR/VR eyes to :ref:`VisualServer<class_VisualServer>`. The value comes from an internal call to :ref:`OS.get_ticks_usec<class_OS_method_get_ticks_usec>`.
+
+----
 
 .. _class_ARVRServer_method_get_last_frame_usec:
 
 - :ref:`int<class_int>` **get_last_frame_usec** **(** **)**
 
+Returns the duration (in μs) of the last frame. This is computed as the difference between :ref:`get_last_commit_usec<class_ARVRServer_method_get_last_commit_usec>` and :ref:`get_last_process_usec<class_ARVRServer_method_get_last_process_usec>` when committing.
+
+----
+
 .. _class_ARVRServer_method_get_last_process_usec:
 
 - :ref:`int<class_int>` **get_last_process_usec** **(** **)**
+
+Returns the absolute timestamp (in μs) of the last ``ARVRServer`` process callback. The value comes from an internal call to :ref:`OS.get_ticks_usec<class_OS_method_get_ticks_usec>`.
+
+----
 
 .. _class_ARVRServer_method_get_reference_frame:
 
 - :ref:`Transform<class_Transform>` **get_reference_frame** **(** **)** const
 
-Gets the reference frame transform. Mostly used internally and exposed for GDNative build interfaces.
+Returns the reference frame transform. Mostly used internally and exposed for GDNative build interfaces.
+
+----
 
 .. _class_ARVRServer_method_get_tracker:
 
 - :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` **get_tracker** **(** :ref:`int<class_int>` idx **)** const
 
-Gets the positional tracker at the given ID.
+Returns the positional tracker at the given ID.
+
+----
 
 .. _class_ARVRServer_method_get_tracker_count:
 
 - :ref:`int<class_int>` **get_tracker_count** **(** **)** const
 
-Gets the number of trackers currently registered.
+Returns the number of trackers currently registered.
 

@@ -13,10 +13,5 @@ ResourceImporter
 
 **Inherited By:** :ref:`EditorImportPlugin<class_EditorImportPlugin>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 

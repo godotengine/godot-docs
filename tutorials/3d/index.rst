@@ -7,8 +7,9 @@
 
    introduction_to_3d
    using_transforms
-   3d_performance_and_limitations
-   spatial_material
+   optimizing_3d_performance
+   3d_rendering_limitations
+   standard_material_3d
    lights_and_shadows
    reflection_probes
    gi_probes

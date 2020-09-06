@@ -13,21 +13,26 @@ NetworkedMultiplayerPeer
 
 **Inherited By:** :ref:`MultiplayerPeerGDNative<class_MultiplayerPeerGDNative>`, :ref:`NetworkedMultiplayerENet<class_NetworkedMultiplayerENet>`, :ref:`WebRTCMultiplayer<class_WebRTCMultiplayer>`, :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A high-level network interface to simplify multiplayer interactions.
+
+Description
+-----------
+
+Manages the connection to network peers. Assigns unique IDs to each client connected to the server.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/networking/high_level_multiplayer`
 
 Properties
 ----------
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------+
-| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_connections<class_NetworkedMultiplayerPeer_property_refuse_new_connections>` | true |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------+
-| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | :ref:`transfer_mode<class_NetworkedMultiplayerPeer_property_transfer_mode>`                   | 0    |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_connections<class_NetworkedMultiplayerPeer_property_refuse_new_connections>` | ``true`` |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | :ref:`transfer_mode<class_NetworkedMultiplayerPeer_property_transfer_mode>`                   | ``0``    |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -53,11 +58,15 @@ Signals
 
 Emitted when a connection attempt fails.
 
+----
+
 .. _class_NetworkedMultiplayerPeer_signal_connection_succeeded:
 
 - **connection_succeeded** **(** **)**
 
 Emitted when a connection attempt succeeds.
+
+----
 
 .. _class_NetworkedMultiplayerPeer_signal_peer_connected:
 
@@ -65,11 +74,15 @@ Emitted when a connection attempt succeeds.
 
 Emitted by the server when a client connects.
 
+----
+
 .. _class_NetworkedMultiplayerPeer_signal_peer_disconnected:
 
 - **peer_disconnected** **(** :ref:`int<class_int>` id **)**
 
 Emitted by the server when a client disconnects.
+
+----
 
 .. _class_NetworkedMultiplayerPeer_signal_server_disconnected:
 
@@ -95,6 +108,8 @@ enum **TransferMode**:
 - **TRANSFER_MODE_UNRELIABLE_ORDERED** = **1** --- Packets are not acknowledged, no resend attempts are made for lost packets. Packets are received in the order they were sent in. Potentially faster than :ref:`TRANSFER_MODE_RELIABLE<class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_RELIABLE>`. Use for non-critical data or data that would be outdated if received late due to resend attempt(s) anyway, for example movement and positional data.
 
 - **TRANSFER_MODE_RELIABLE** = **2** --- Packets must be received and resend attempts should be made until the packets are acknowledged. Packets must be received in the order they were sent in. Most reliable transfer mode, but potentially the slowest due to the overhead. Use for critical data that must be transmitted and arrive in order, for example an ability being triggered or a chat message. Consider carefully if the information really is critical, and use sparingly.
+
+----
 
 .. _enum_NetworkedMultiplayerPeer_ConnectionStatus:
 
@@ -123,16 +138,6 @@ Constants
 
 - **TARGET_PEER_SERVER** = **1** --- Packets are sent to the server alone.
 
-Description
------------
-
-Manages the connection to network peers. Assigns unique IDs to each client connected to the server.
-
-Tutorials
----------
-
-- :doc:`../tutorials/networking/high_level_multiplayer`
-
 Property Descriptions
 ---------------------
 
@@ -141,7 +146,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **refuse_new_connections**
 
 +-----------+-----------------------------------+
-| *Default* | true                              |
+| *Default* | ``true``                          |
 +-----------+-----------------------------------+
 | *Setter*  | set_refuse_new_connections(value) |
 +-----------+-----------------------------------+
@@ -150,12 +155,14 @@ Property Descriptions
 
 If ``true``, this ``NetworkedMultiplayerPeer`` refuses new connections.
 
+----
+
 .. _class_NetworkedMultiplayerPeer_property_transfer_mode:
 
 - :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` **transfer_mode**
 
 +-----------+--------------------------+
-| *Default* | 0                        |
+| *Default* | ``0``                    |
 +-----------+--------------------------+
 | *Setter*  | set_transfer_mode(value) |
 +-----------+--------------------------+
@@ -173,11 +180,15 @@ Method Descriptions
 
 Returns the current state of the connection. See :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>`.
 
+----
+
 .. _class_NetworkedMultiplayerPeer_method_get_packet_peer:
 
 - :ref:`int<class_int>` **get_packet_peer** **(** **)** const
 
 Returns the ID of the ``NetworkedMultiplayerPeer`` who sent the most recent packet.
+
+----
 
 .. _class_NetworkedMultiplayerPeer_method_get_unique_id:
 
@@ -185,11 +196,15 @@ Returns the ID of the ``NetworkedMultiplayerPeer`` who sent the most recent pack
 
 Returns the ID of this ``NetworkedMultiplayerPeer``.
 
+----
+
 .. _class_NetworkedMultiplayerPeer_method_poll:
 
 - void **poll** **(** **)**
 
 Waits up to 1 second to receive a new network event.
+
+----
 
 .. _class_NetworkedMultiplayerPeer_method_set_target_peer:
 

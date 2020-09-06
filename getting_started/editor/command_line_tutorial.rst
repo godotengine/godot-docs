@@ -11,6 +11,152 @@ entirely from the command line. Given the engine relies on almost no
 external libraries, initialization times are pretty fast, making it
 suitable for this workflow.
 
+Command line reference
+----------------------
+
+**General options**
+
++----------------------------+----------------------------------------------------------------------+
+| Command                    | Description                                                          |
++----------------------------+----------------------------------------------------------------------+
+| ``-h``, ``--help``, ``/?`` | Display the list of command line options.                            |
++----------------------------+----------------------------------------------------------------------+
+| ``--version``              | Display the version string.                                          |
++----------------------------+----------------------------------------------------------------------+
+| ``-v``, ``--verbose``      | Use verbose stdout mode.                                             |
++----------------------------+----------------------------------------------------------------------+
+| ``--quiet``                | Quiet mode, silences stdout messages. Errors are still displayed.    |
++----------------------------+----------------------------------------------------------------------+
+
+**Run options**
+
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Command                                  | Description                                                                                                                                                  |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``-e``, ``--editor``                     | Start the editor instead of running the scene (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                                    |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``-p``, ``--project-manager``            | Start the project manager, even if a project is auto-detected (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                    |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``-q``, ``--quit``                       | Quit after the first iteration.                                                                                                                              |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``-l <locale>``, ``--language <locale>`` | Use a specific locale (<locale> being a two-letter code). See :ref:`doc_locales` for more details.                                                           |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--path <directory>``                   | Path to a project (<directory> must contain a 'project.godot' file).                                                                                         |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``-u``, ``--upwards``                    | Scan folders upwards for 'project.godot' file.                                                                                                               |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--main-pack <file>``                   | Path to a pack (.pck) file to load.                                                                                                                          |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--render-thread <mode>``               | Render thread mode ('unsafe', 'safe', 'separate'). See :ref:`Thread Model <class_ProjectSettings_property_rendering/threads/thread_model>` for more details. |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--remote-fs <address>``                | Remote filesystem (``<host/IP>[:<port>]`` address).                                                                                                          |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--remote-fs-password <password>``      | Password for remote filesystem.                                                                                                                              |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--audio-driver <driver>``              | Audio driver. Use ``--help`` first to display the list of available drivers.                                                                                 |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--display-driver <driver>``            | Display driver (and rendering driver). Use ``--help`` first to display the list of available drivers.                                                        |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--rendering-driver <driver>``          | Rendering driver (depends on display driver). Use ``--help`` first to display the list of available drivers.                                                 |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+**Display options**
+
++------------------------------------+----------------------------------------------------------------------------+
+| Command                            | Description                                                                |
++------------------------------------+----------------------------------------------------------------------------+
+| ``-f``, ``--fullscreen``           | Request fullscreen mode.                                                   |
++------------------------------------+----------------------------------------------------------------------------+
+| ``-m``, ``--maximized``            | Request a maximized window.                                                |
++------------------------------------+----------------------------------------------------------------------------+
+| ``-w``, ``--windowed``             | Request windowed mode.                                                     |
++------------------------------------+----------------------------------------------------------------------------+
+| ``-t``, ``--always-on-top``        | Request an always-on-top window.                                           |
++------------------------------------+----------------------------------------------------------------------------+
+| ``--resolution <W>x<H>``           | Request window resolution.                                                 |
++------------------------------------+----------------------------------------------------------------------------+
+| ``--position <X>,<Y>``             | Request window position.                                                   |
++------------------------------------+----------------------------------------------------------------------------+
+| ``--low-dpi``                      | Force low-DPI mode (macOS and Windows only).                               |
++------------------------------------+----------------------------------------------------------------------------+
+| ``--no-window``                    | Disable window creation (Windows only). Useful together with ``--script``. |
++------------------------------------+----------------------------------------------------------------------------+
+| ``--enable-vsync-via-compositor``  | When vsync is enabled, vsync via the OS' window compositor (Windows only). |
++------------------------------------+----------------------------------------------------------------------------+
+| ``--disable-vsync-via-compositor`` | Disable vsync via the OS' window compositor (Windows only).                |
++------------------------------------+----------------------------------------------------------------------------+
+| ``--single-window``                | Use a single window (no separate subwindows).                              |
++------------------------------------+----------------------------------------------------------------------------+
+| ``--tablet-driver``                | Tablet input driver (Windows only).                                        |
++------------------------------------+----------------------------------------------------------------------------+
+
+**Debug options**
+
+.. note::
+
+    Debug options are only available in the editor and debug export templates
+    (they require ``debug`` or ``release_debug`` build targets, see
+    :ref:`doc_introduction_to_the_buildsystem_target` for more details).
+
++------------------------------+---------------------------------------------------------------------------------------------------------+
+| Command                      | Description                                                                                             |
++------------------------------+---------------------------------------------------------------------------------------------------------+
+| ``-d``, ``--debug``          | Debug (local stdout debugger).                                                                          |
++------------------------------+---------------------------------------------------------------------------------------------------------+
+| ``-b``, ``--breakpoints``    | Breakpoint list as source::line comma-separated pairs, no spaces (use %%20 instead).                    |
++------------------------------+---------------------------------------------------------------------------------------------------------+
+| ``--profiling``              | Enable profiling in the script debugger.                                                                |
++------------------------------+---------------------------------------------------------------------------------------------------------+
+| ``--gpu-abort``              | Abort on GPU errors (usually validation layer errors), may help see the problem if your system freezes. |
++------------------------------+---------------------------------------------------------------------------------------------------------+
+| ``--remote-debug <address>`` | Remote debug (<protocol>://<host/IP>[:<port>], e.g. tcp://127.0.0.1:6007).                              |
++------------------------------+---------------------------------------------------------------------------------------------------------+
+| ``--debug-collisions``       | Show collision shapes when running the scene.                                                           |
++------------------------------+---------------------------------------------------------------------------------------------------------+
+| ``--debug-navigation``       | Show navigation polygons when running the scene.                                                        |
++------------------------------+---------------------------------------------------------------------------------------------------------+
+| ``--frame-delay <ms>``       | Simulate high CPU load (delay each frame by <ms> milliseconds).                                         |
++------------------------------+---------------------------------------------------------------------------------------------------------+
+| ``--time-scale <scale>``     | Force time scale (higher values are faster, 1.0 is normal speed).                                       |
++------------------------------+---------------------------------------------------------------------------------------------------------+
+| ``--disable-render-loop``    | Disable render loop so rendering only occurs when called explicitly from script.                        |
++------------------------------+---------------------------------------------------------------------------------------------------------+
+| ``--disable-crash-handler``  | Disable crash handler when supported by the platform code.                                              |
++------------------------------+---------------------------------------------------------------------------------------------------------+
+| ``--fixed-fps <fps>``        | Force a fixed number of frames per second. This setting disables real-time synchronization.             |
++------------------------------+---------------------------------------------------------------------------------------------------------+
+| ``--print-fps``              | Print the frames per second to the stdout.                                                              |
++------------------------------+---------------------------------------------------------------------------------------------------------+
+
+**Standalone tools**
+
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| Command                                | Description                                                                                                                                     |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``-s <script>``, ``--script <script>`` | Run a script.                                                                                                                                   |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--check-only``                       | Only parse for errors and quit (use with ``--script``).                                                                                         |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--export <preset> <path>``           | Export the project using the given export target. Export only main pack if path ends with .pck or .zip                                          |
+|                                        | (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                                                                     |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--export-debug <preset> <path>``     | Like ``--export``, but use debug template (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                           |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--export-pack <preset> <path>``      | Like ``--export``, but only export the game pack for the given preset. The <path> extension determines whether it will be in PCK or ZIP format. |
+|                                        | (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                                                                     |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--doctool <path>``                   | Dump the engine API reference to the given <path> in XML format, merging if existing files are found                                            |
+|                                        | (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                                                                     |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--no-docbase``                       | Disallow dumping the base types (used with ``--doctool``, :ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).            |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--build-solutions``                  | Build the scripting solutions (e.g. for C# projects, :ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                 |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--gdnative-generate-json-api``       | Generate JSON dump of the Godot API for GDNative bindings (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).           |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--test <test>``                      | Run a unit test. Use ``--help`` first to display the list of tests. (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled). |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Path
 ----
 
@@ -31,19 +177,19 @@ of your project as either the first argument, like this:
 
 ::
 
-    user@host:~$ godot path_to_your_project/project.godot [other] [commands] [and] [args]
+    godot path_to_your_project/project.godot [other] [commands] [and] [args]
 
 Or by using the ``--path`` argument:
 
 ::
 
-    user@host:~$ godot --path path_to_your_project [other] [commands] [and] [args]
+    godot --path path_to_your_project [other] [commands] [and] [args]
 
 For example, the full command for exporting your game (as explained below) might look like this:
 
 ::
 
-    user@host:~$ godot --path path_to_your_project --export my_export_preset_name game.exe
+    godot --path path_to_your_project --export my_export_preset_name game.exe
 
 Creating a project
 ------------------
@@ -55,9 +201,9 @@ shell to the desired place and making a project.godot file.
 
 ::
 
-    user@host:~$ mkdir newgame
-    user@host:~$ cd newgame
-    user@host:~/newgame$ touch project.godot
+    mkdir newgame
+    cd newgame
+    touch project.godot
 
 
 The project can now be opened with Godot.
@@ -72,14 +218,14 @@ otherwise the command is ignored and the project manager appears.
 
 ::
 
-    user@host:~/newgame$ godot -e
+    godot -e
 
 If a scene has been created and saved, it can be edited later by running
 the same code with that scene as argument.
 
 ::
 
-    user@host:~/newgame$ godot -e scene.tscn
+    godot -e scene.tscn
 
 Erasing a scene
 ---------------
@@ -90,7 +236,7 @@ references that scene or else an error will be thrown upon opening.
 
 ::
 
-    user@host:~/newgame$ rm scene.tscn
+    rm scene.tscn
 
 Running the game
 ----------------
@@ -100,14 +246,14 @@ subdirectory.
 
 ::
 
-    user@host:~/newgame$ godot
+    godot
 
 When a specific scene needs to be tested, pass that scene to the command
 line.
 
 ::
 
-    user@host:~/newgame$ godot scene.tscn
+    godot scene.tscn
 
 Debugging
 ---------
@@ -118,11 +264,11 @@ just fly by. For this, a command line debugger is provided by adding
 
 ::
 
-    user@host:~/newgame$ godot -d
+    godot -d
 
 ::
 
-    user@host:~/newgame$ godot -d scene.tscn
+    godot -d scene.tscn
 
 .. _doc_command_line_tutorial_exporting:
 
@@ -135,8 +281,8 @@ that is headless (server build, no video) is ideal for this.
 
 ::
 
-    user@host:~/newgame$ godot --export "Linux/X11" /var/builds/project
-    user@host:~/newgame$ godot --export Android /var/builds/project.apk
+    godot --export "Linux/X11" /var/builds/project
+    godot --export Android /var/builds/project.apk
 
 The platform names recognized by the ``--export`` switch are the same as
 displayed in the export wizard of the editor. To get a list of supported
@@ -147,20 +293,24 @@ will be shown.
 To export a debug version of the game, use the ``--export-debug`` switch
 instead of ``--export``. Their parameters and usage are the same.
 
+To export only a PCK file, use the ``--export-pack`` option followed by the 
+preset name and output path, with the file extension, instead of ``--export``.
+The output path extension determines the package's format, either PCK or ZIP.
+
 Running a script
 ----------------
 
-It is possible to run a simple .gd script from the command line. This
-feature is especially useful in large projects, for batch
+It is possible to run a simple ``.gd`` script from the command line.
+This feature is especially useful in large projects, e.g. for batch
 conversion of assets or custom import/export.
 
-The script must inherit from SceneTree or MainLoop.
+The script must inherit from ``SceneTree`` or ``MainLoop``.
 
 Here is a simple example of how it works:
 
-.. code:: python
+.. code-block:: python
 
-    #sayhello.gd
+    # sayhello.gd
     extends SceneTree
 
     func _init():
@@ -171,8 +321,8 @@ And how to run it:
 
 ::
 
-    user@host:~/newgame$ godot -s sayhello.gd
-    Hello!
+    # Prints "Hello!" to standard output.
+    godot -s sayhello.gd
 
-If no project.godot exists at the path, current path is assumed to be the
-current working directory (unless ``-path`` is specified).
+If no ``project.godot`` exists at the path, current path is assumed to be the
+current working directory (unless ``--path`` is specified).

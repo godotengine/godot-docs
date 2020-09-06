@@ -111,7 +111,7 @@ Very simple state machine (when you don't want to cope with a ``StateMachine`` n
 BlendSpace2D
 ^^^^^^^^^^^^
 
-``BlendSpace2D`` is a node to do advanced blending in two dimensions. Points are added to a two dimensional space and then a position
+``BlendSpace2D`` is a node to do advanced blending in two dimensions. Points are added to a two-dimensional space and then a position
 can be controlled to determine blending:
 
 .. image:: img/animtree7.gif
@@ -149,7 +149,7 @@ There are many types of transitions:
 
 .. image:: img/animtree12.png
 
-* *Immeditate*: Will switch to the next state immediately. The current state will end and blend into the beginning of the new one.
+* *Immediate*: Will switch to the next state immediately. The current state will end and blend into the beginning of the new one.
 * *Sync*: Will switch to the next state immediately, but will seek the new state to the playback position of the old state.
 * *At End*: Will wait for the current state playback to end, then switch to the beginning of the next state animation.
 
@@ -212,7 +212,7 @@ Check the "Parameters" section of the ``AnimationTree`` node to see all the para
 .. image:: img/animtree16.png
 
 This is handy because it makes it possible to animate them from an ``AnimationPlayer``, or even the ``AnimationTree`` itself,
-allowing the realisation of very complex animation logic.
+allowing the realization of very complex animation logic.
 
 To modify these values from code, the property path must be obtained. This is done easily by hovering the mouse over any of the parameters:
 
@@ -245,11 +245,11 @@ object from the ``AnimationTree`` node (it is exported as a property).
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var state_machine = anim_tree["parameters/StateMachine/playback"]
+    var state_machine = anim_tree["parameters/playback"]
 
  .. code-tab:: csharp
 
-    AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)animTree.Get("parameters/StateMachine/playback");
+    AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)animTree.Get("parameters/playback");
 
 Once retrieved, it can be used by calling one of the many functions it offers:
 

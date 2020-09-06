@@ -32,8 +32,8 @@ There are 3 rules to describe classes:
     the smallest and clearest sentences possible. These guidelines will help
     you work towards that goal.
 
-7 rules for a clear english
----------------------------
+7 rules for clear English
+-------------------------
 
 Use the direct voice
 ~~~~~~~~~~~~~~~~~~~~
@@ -111,6 +111,10 @@ The progressive forms describe continuous actions. E.g. "is calling",
 
     Vector2 move ( Vector2 rel_vec )
     Moves the body in the vector's direction. The body **stops** if it collides with an obstacle. [...]
+
+Exception: If the subject is not clear, replacing "ing" verbs is not an
+improvement. For example, in the previous sentence, "it replaces"
+would not make much sense where "replacing" currently is.
 
 You may use the progressive tense to describe actions that are
 continuous in time. Anything like animation or coroutines.
@@ -274,6 +278,96 @@ element of a list with more than two elements.
 How to write methods and classes
 --------------------------------
 
+Dynamic vs static typing
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The code examples in the documentation should follow a consistent style not to
+confuse users. As static type hints are an optional feature of GDScript, we
+chose to stick to writing dynamic code. This leads to writing GDScript that is
+concise and accessible.
+
+The exception is topics that explain static typing concepts to users.
+
+**Don't** add a type hint with a colon or by casting:
+
+::
+
+    const MainAttack := preload("res://fire_attack.gd")
+    var hit_points := 5
+    var name: String = "Bob"
+    var body_sprite := $Sprite as Sprite
+
+
+**Do** write constants and variables with dynamic typing:
+
+::
+
+    const MainAttack = preload("res://fire_attack.gd")
+    var hit_points = 5
+    var name = "Bob"
+    var body_sprite = $Sprite
+
+
+**Don't** write functions with inferred arguments or return types:
+
+::
+
+    func choose(arguments: PackedStringArray) -> String:
+        # Chooses one of the arguments from array with equal chances
+        randomize()
+        var size := arguments.size()
+        var choice: int = randi() % size
+        return arguments[choice]
+
+**Do** write functions using dynamic typing:
+
+::
+
+    func choose(arguments):
+        # Chooses one of the arguments from array with equal chances
+        randomize()
+        var size = arguments.size()
+        var choice = randi() % size
+        return arguments[choice]
+
+Use real-world code examples where appropriate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Real-world examples are more accessible to beginners than abstract ``foos`` and
+``bars``. You can also copy them directly from your game projects, ensuring that
+any code snippet compiles without errors.
+
+Writing ``var speed = 10`` rather than ``var my_var = 10`` allows beginners to
+understand code better. It gives them a frame of reference as to where they
+could use the code snippets in a live project.
+
+**Don't** write made-up examples:
+
+::
+
+    onready var a = preload("res://MyPath")
+    onready var my_node = $MyNode
+
+
+    func foo():
+        # Do stuff
+
+**Do** write concrete examples:
+
+::
+
+    onready var sfx_player_gun = preload("res://Assets/Sound/SFXPlayerGun.ogg")
+    onready var audio_player = $Audio/AudioStreamPlayer
+
+
+    func play_shooting_sound():
+        audio_player.stream = sfx_player_gun
+        audio_player.play()
+
+Of course, there are times when using real-world examples is impractical. In
+those situations, you should still avoid using names such as ``my_var``,
+``foo()`` or ``my_func()`` and consider more meaningful names for your examples.
+
 Give an overview of the node in the brief description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -298,7 +392,7 @@ functionality, in up to 200 characters.
 ::
 
     **Node2D**
-    2D game object, parent of all 2D related nodes. Has a position, rotation, scale and z-index.
+    A 2D game object, inherited by all 2D-related nodes. Has a position, rotation, scale, and Z index.
 
 Use the node's full description to provide more information, and a code
 example, if possible.
@@ -335,24 +429,27 @@ For boolean member variables, always use ``if true`` and/or
 ``if false``, to stay explicit. ``Controls whether or not`` may be
 ambiguous and won't work for every member variable.
 
-Also surround boolean values, variable names and methods with ``[code][/code]``.
+Also, surround boolean values, variable names and methods with ``[code][/code]``.
 
 **Do** start with "if true":
 
 ::
 
     Timer.autostart
-    If [code]true[/code] the timer will automatically start when it enters the scene tree. Default value: [code]false[/code].
+    If [code]true[/code], the timer will automatically start when entering the scene tree.
 
 
 Use ``[code]`` around arguments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the class reference, always surround arguments with ``[code][/code]``. In the documentation and in Godot, it will display like ``this``. When you edit XML files in the Godot repository, replace existing arguments written like 'this' or \`this\` with ``[code]this[/code]``.
+In the class reference, always surround arguments with ``[code][/code]``. In the
+documentation and in Godot, it will display like ``this``. When you edit XML
+files in the Godot repository, replace existing arguments written like 'this' or
+\`this\` with ``[code]this[/code]``.
 
 
-Common vocabulary to use in godot's docs
-----------------------------------------
+Common vocabulary to use in Godot's documentation
+-------------------------------------------------
 
 The developers chose some specific words to refer to areas of the
 interface. They're used in the sources, in the documentation, and you
@@ -385,23 +482,54 @@ class names, which you can't fold, are ``Classes`` e.g. the
 ``properties``. E.g. ``position`` or ``modulate color`` are both
 ``properties``.
 
+Keyboard shortcut guidelines
+----------------------------
+
+Keyboard and mouse shortcuts should make use of the ``:kbd:`` tag, which allows
+shortcuts to stand out from the rest of the text and inline code. Use the
+compact form for modifier keys (:kbd:`Ctrl`/:kbd:`Cmd`) instead of their spelled
+out form (:kbd:`Control`/:kbd:`Command`). For combinations, use the ``+`` symbol
+with a space on either side of the symbol.
+
+Make sure to mention shortcuts that differ on macOS compared to other platforms.
+On macOS, ``Cmd`` often replaces ``Ctrl`` in keyboard shortcuts.
+
+Try to integrate the shortcut into sentences the best you can. Here are some
+examples with the ``:kbd:`` tag left as-is for better visibility:
+
+- Press ``:kbd:`Ctrl + Alt + T``` to toggle the panel (``:kbd:`Cmd + Alt + T``` on macOS).
+- Press ``:kbd:`Space``` and hold the left mouse button to pan in the 2D editor.
+- Press ``:kbd:`Shift + Up Arrow``` to move the node upwards by 8 pixels.
+
 Image contribution guidelines
 -----------------------------
 
-A significant part of the documentation is images, and there are several important
-guidelines to follow.
+A significant part of the documentation is images, and there are several
+important guidelines to follow.
 
-First, you should always be using the default editor theme and text when taking screenshots.
+First, you should always be using the default editor theme and text when taking
+screenshots.
 
-For 3D screenshots use 4xMSAA, enable anisotropic filtering on the projects textures,
-and set the anisotropic filter quality to 16x in Project Settings
+To improve the appearance of 3D screenshots, use 4× MSAA, enable anisotropic
+filtering on the project's textures, and set the anisotropic filter quality to
+16× in Project Settings.
 
-Screenshot size should not exceed 1920x1080.
+Screenshot sizes should not exceed 1920×1080 to ensure fast loading on slower
+connections.
 
 When you need to highlight an area of the editor to show something, like a
-button or option, use a 2 pixel thick outline without a bevel.
+button or option, use a 2 pixel-thick yellow outline without a bevel. If the
+outline is on a dark background, the outline should be yellow so it can be
+easily seen by colorblind people. Please do not use red as it won't be visible
+for some users.
 
-Before you add or replace any images in the documentation, they should be run through
-a png compressor to save size. The built in lossless compressor in programs like Krita
-or Photoshop should be done. However you should also use a lossy one, such as `pngquant <https://pngquant.org/>`_
-where almost no image quality is lost during compression.
+Before you add or replace any images in the documentation, they should be run
+through a PNG compressor to save size. You can use the lossless OxiPNG
+compressor included in `Squoosh <https://squoosh.app/>`__ for this purpose. For
+heavier images, consider using a lossy compressor like `pngquant
+<https://pngquant.org/>`_. With it, almost no image quality is lost during
+compression.
+
+.. note::
+
+    The program pngquant must be installed locally as it's not available in Squoosh.

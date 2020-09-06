@@ -11,55 +11,60 @@ AudioStreamPlayer3D
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Plays 3D sound in 3D space.
+
+Description
+-----------
+
+Plays a sound effect with directed sound effects, dampens with distance if needed, generates effect of hearable position in space.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/audio/audio_streams`
 
 Properties
 ----------
 
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`                                              | :ref:`area_mask<class_AudioStreamPlayer3D_property_area_mask>`                                                       | 1        |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                                          | :ref:`attenuation_filter_cutoff_hz<class_AudioStreamPlayer3D_property_attenuation_filter_cutoff_hz>`                 | 5000.0   |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                                          | :ref:`attenuation_filter_db<class_AudioStreamPlayer3D_property_attenuation_filter_db>`                               | -24.0    |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` | :ref:`attenuation_model<class_AudioStreamPlayer3D_property_attenuation_model>`                                       | 0        |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                                            | :ref:`autoplay<class_AudioStreamPlayer3D_property_autoplay>`                                                         | false    |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`String<class_String>`                                        | :ref:`bus<class_AudioStreamPlayer3D_property_bus>`                                                                   | "Master" |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`DopplerTracking<enum_AudioStreamPlayer3D_DopplerTracking>`   | :ref:`doppler_tracking<class_AudioStreamPlayer3D_property_doppler_tracking>`                                         | 0        |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                                          | :ref:`emission_angle_degrees<class_AudioStreamPlayer3D_property_emission_angle_degrees>`                             | 45.0     |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                                            | :ref:`emission_angle_enabled<class_AudioStreamPlayer3D_property_emission_angle_enabled>`                             | false    |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                                          | :ref:`emission_angle_filter_attenuation_db<class_AudioStreamPlayer3D_property_emission_angle_filter_attenuation_db>` | -12.0    |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                                          | :ref:`max_db<class_AudioStreamPlayer3D_property_max_db>`                                                             | 3.0      |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                                          | :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>`                                                 | 0.0      |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`OutOfRangeMode<enum_AudioStreamPlayer3D_OutOfRangeMode>`     | :ref:`out_of_range_mode<class_AudioStreamPlayer3D_property_out_of_range_mode>`                                       | 0        |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                                          | :ref:`pitch_scale<class_AudioStreamPlayer3D_property_pitch_scale>`                                                   | 1.0      |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                                            | :ref:`playing<class_AudioStreamPlayer3D_property_playing>`                                                           | false    |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`AudioStream<class_AudioStream>`                              | :ref:`stream<class_AudioStreamPlayer3D_property_stream>`                                                             |          |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                                            | :ref:`stream_paused<class_AudioStreamPlayer3D_property_stream_paused>`                                               | false    |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                                          | :ref:`unit_db<class_AudioStreamPlayer3D_property_unit_db>`                                                           | 0.0      |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                                          | :ref:`unit_size<class_AudioStreamPlayer3D_property_unit_size>`                                                       | 1.0      |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------+
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`int<class_int>`                                              | :ref:`area_mask<class_AudioStreamPlayer3D_property_area_mask>`                                                       | ``1``         |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`                                          | :ref:`attenuation_filter_cutoff_hz<class_AudioStreamPlayer3D_property_attenuation_filter_cutoff_hz>`                 | ``5000.0``    |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`                                          | :ref:`attenuation_filter_db<class_AudioStreamPlayer3D_property_attenuation_filter_db>`                               | ``-24.0``     |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` | :ref:`attenuation_model<class_AudioStreamPlayer3D_property_attenuation_model>`                                       | ``0``         |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`bool<class_bool>`                                            | :ref:`autoplay<class_AudioStreamPlayer3D_property_autoplay>`                                                         | ``false``     |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`StringName<class_StringName>`                                | :ref:`bus<class_AudioStreamPlayer3D_property_bus>`                                                                   | ``@"Master"`` |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`DopplerTracking<enum_AudioStreamPlayer3D_DopplerTracking>`   | :ref:`doppler_tracking<class_AudioStreamPlayer3D_property_doppler_tracking>`                                         | ``0``         |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`                                          | :ref:`emission_angle_degrees<class_AudioStreamPlayer3D_property_emission_angle_degrees>`                             | ``45.0``      |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`bool<class_bool>`                                            | :ref:`emission_angle_enabled<class_AudioStreamPlayer3D_property_emission_angle_enabled>`                             | ``false``     |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`                                          | :ref:`emission_angle_filter_attenuation_db<class_AudioStreamPlayer3D_property_emission_angle_filter_attenuation_db>` | ``-12.0``     |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`                                          | :ref:`max_db<class_AudioStreamPlayer3D_property_max_db>`                                                             | ``3.0``       |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`                                          | :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>`                                                 | ``0.0``       |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`OutOfRangeMode<enum_AudioStreamPlayer3D_OutOfRangeMode>`     | :ref:`out_of_range_mode<class_AudioStreamPlayer3D_property_out_of_range_mode>`                                       | ``0``         |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`                                          | :ref:`pitch_scale<class_AudioStreamPlayer3D_property_pitch_scale>`                                                   | ``1.0``       |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`bool<class_bool>`                                            | :ref:`playing<class_AudioStreamPlayer3D_property_playing>`                                                           | ``false``     |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`AudioStream<class_AudioStream>`                              | :ref:`stream<class_AudioStreamPlayer3D_property_stream>`                                                             |               |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`bool<class_bool>`                                            | :ref:`stream_paused<class_AudioStreamPlayer3D_property_stream_paused>`                                               | ``false``     |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`                                          | :ref:`unit_db<class_AudioStreamPlayer3D_property_unit_db>`                                                           | ``0.0``       |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`                                          | :ref:`unit_size<class_AudioStreamPlayer3D_property_unit_size>`                                                       | ``1.0``       |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
 
 Methods
 -------
@@ -108,6 +113,8 @@ enum **AttenuationModel**:
 
 - **ATTENUATION_DISABLED** = **3** --- No dampening of loudness according to distance.
 
+----
+
 .. _enum_AudioStreamPlayer3D_OutOfRangeMode:
 
 .. _class_AudioStreamPlayer3D_constant_OUT_OF_RANGE_MIX:
@@ -119,6 +126,8 @@ enum **OutOfRangeMode**:
 - **OUT_OF_RANGE_MIX** = **0** --- Mix this audio in, even when it's out of range.
 
 - **OUT_OF_RANGE_PAUSE** = **1** --- Pause this audio when it gets out of range.
+
+----
 
 .. _enum_AudioStreamPlayer3D_DopplerTracking:
 
@@ -136,16 +145,6 @@ enum **DopplerTracking**:
 
 - **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Executes doppler tracking in physics step.
 
-Description
------------
-
-Plays a sound effect with directed sound effects, dampens with distance if needed, generates effect of hearable position in space.
-
-Tutorials
----------
-
-- :doc:`../tutorials/audio/audio_streams`
-
 Property Descriptions
 ---------------------
 
@@ -154,7 +153,7 @@ Property Descriptions
 - :ref:`int<class_int>` **area_mask**
 
 +-----------+----------------------+
-| *Default* | 1                    |
+| *Default* | ``1``                |
 +-----------+----------------------+
 | *Setter*  | set_area_mask(value) |
 +-----------+----------------------+
@@ -163,12 +162,14 @@ Property Descriptions
 
 Areas in which this sound plays.
 
+----
+
 .. _class_AudioStreamPlayer3D_property_attenuation_filter_cutoff_hz:
 
 - :ref:`float<class_float>` **attenuation_filter_cutoff_hz**
 
 +-----------+-----------------------------------------+
-| *Default* | 5000.0                                  |
+| *Default* | ``5000.0``                              |
 +-----------+-----------------------------------------+
 | *Setter*  | set_attenuation_filter_cutoff_hz(value) |
 +-----------+-----------------------------------------+
@@ -177,12 +178,14 @@ Areas in which this sound plays.
 
 Dampens audio above this frequency, in Hz.
 
+----
+
 .. _class_AudioStreamPlayer3D_property_attenuation_filter_db:
 
 - :ref:`float<class_float>` **attenuation_filter_db**
 
 +-----------+----------------------------------+
-| *Default* | -24.0                            |
+| *Default* | ``-24.0``                        |
 +-----------+----------------------------------+
 | *Setter*  | set_attenuation_filter_db(value) |
 +-----------+----------------------------------+
@@ -191,12 +194,14 @@ Dampens audio above this frequency, in Hz.
 
 Amount how much the filter affects the loudness, in dB.
 
+----
+
 .. _class_AudioStreamPlayer3D_property_attenuation_model:
 
 - :ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` **attenuation_model**
 
 +-----------+------------------------------+
-| *Default* | 0                            |
+| *Default* | ``0``                        |
 +-----------+------------------------------+
 | *Setter*  | set_attenuation_model(value) |
 +-----------+------------------------------+
@@ -205,12 +210,14 @@ Amount how much the filter affects the loudness, in dB.
 
 Decides if audio should get quieter with distance linearly, quadratically, logarithmically, or not be affected by distance, effectively disabling attenuation.
 
+----
+
 .. _class_AudioStreamPlayer3D_property_autoplay:
 
 - :ref:`bool<class_bool>` **autoplay**
 
 +-----------+-----------------------+
-| *Default* | false                 |
+| *Default* | ``false``             |
 +-----------+-----------------------+
 | *Setter*  | set_autoplay(value)   |
 +-----------+-----------------------+
@@ -219,12 +226,14 @@ Decides if audio should get quieter with distance linearly, quadratically, logar
 
 If ``true``, audio plays when added to scene tree.
 
+----
+
 .. _class_AudioStreamPlayer3D_property_bus:
 
-- :ref:`String<class_String>` **bus**
+- :ref:`StringName<class_StringName>` **bus**
 
 +-----------+----------------+
-| *Default* | "Master"       |
+| *Default* | ``@"Master"``  |
 +-----------+----------------+
 | *Setter*  | set_bus(value) |
 +-----------+----------------+
@@ -233,12 +242,14 @@ If ``true``, audio plays when added to scene tree.
 
 Bus on which this audio is playing.
 
+----
+
 .. _class_AudioStreamPlayer3D_property_doppler_tracking:
 
 - :ref:`DopplerTracking<enum_AudioStreamPlayer3D_DopplerTracking>` **doppler_tracking**
 
 +-----------+-----------------------------+
-| *Default* | 0                           |
+| *Default* | ``0``                       |
 +-----------+-----------------------------+
 | *Setter*  | set_doppler_tracking(value) |
 +-----------+-----------------------------+
@@ -247,12 +258,14 @@ Bus on which this audio is playing.
 
 Decides in which step the Doppler effect should be calculated.
 
+----
+
 .. _class_AudioStreamPlayer3D_property_emission_angle_degrees:
 
 - :ref:`float<class_float>` **emission_angle_degrees**
 
 +-----------+---------------------------+
-| *Default* | 45.0                      |
+| *Default* | ``45.0``                  |
 +-----------+---------------------------+
 | *Setter*  | set_emission_angle(value) |
 +-----------+---------------------------+
@@ -261,12 +274,14 @@ Decides in which step the Doppler effect should be calculated.
 
 The angle in which the audio reaches cameras undampened.
 
+----
+
 .. _class_AudioStreamPlayer3D_property_emission_angle_enabled:
 
 - :ref:`bool<class_bool>` **emission_angle_enabled**
 
 +-----------+-----------------------------------+
-| *Default* | false                             |
+| *Default* | ``false``                         |
 +-----------+-----------------------------------+
 | *Setter*  | set_emission_angle_enabled(value) |
 +-----------+-----------------------------------+
@@ -275,12 +290,14 @@ The angle in which the audio reaches cameras undampened.
 
 If ``true``, the audio should be dampened according to the direction of the sound.
 
+----
+
 .. _class_AudioStreamPlayer3D_property_emission_angle_filter_attenuation_db:
 
 - :ref:`float<class_float>` **emission_angle_filter_attenuation_db**
 
 +-----------+-------------------------------------------------+
-| *Default* | -12.0                                           |
+| *Default* | ``-12.0``                                       |
 +-----------+-------------------------------------------------+
 | *Setter*  | set_emission_angle_filter_attenuation_db(value) |
 +-----------+-------------------------------------------------+
@@ -289,12 +306,14 @@ If ``true``, the audio should be dampened according to the direction of the soun
 
 Dampens audio if camera is outside of :ref:`emission_angle_degrees<class_AudioStreamPlayer3D_property_emission_angle_degrees>` and :ref:`emission_angle_enabled<class_AudioStreamPlayer3D_property_emission_angle_enabled>` is set by this factor, in dB.
 
+----
+
 .. _class_AudioStreamPlayer3D_property_max_db:
 
 - :ref:`float<class_float>` **max_db**
 
 +-----------+-------------------+
-| *Default* | 3.0               |
+| *Default* | ``3.0``           |
 +-----------+-------------------+
 | *Setter*  | set_max_db(value) |
 +-----------+-------------------+
@@ -303,12 +322,14 @@ Dampens audio if camera is outside of :ref:`emission_angle_degrees<class_AudioSt
 
 Sets the absolute maximum of the soundlevel, in dB.
 
+----
+
 .. _class_AudioStreamPlayer3D_property_max_distance:
 
 - :ref:`float<class_float>` **max_distance**
 
 +-----------+-------------------------+
-| *Default* | 0.0                     |
+| *Default* | ``0.0``                 |
 +-----------+-------------------------+
 | *Setter*  | set_max_distance(value) |
 +-----------+-------------------------+
@@ -317,12 +338,14 @@ Sets the absolute maximum of the soundlevel, in dB.
 
 Sets the distance from which the :ref:`out_of_range_mode<class_AudioStreamPlayer3D_property_out_of_range_mode>` takes effect. Has no effect if set to 0.
 
+----
+
 .. _class_AudioStreamPlayer3D_property_out_of_range_mode:
 
 - :ref:`OutOfRangeMode<enum_AudioStreamPlayer3D_OutOfRangeMode>` **out_of_range_mode**
 
 +-----------+------------------------------+
-| *Default* | 0                            |
+| *Default* | ``0``                        |
 +-----------+------------------------------+
 | *Setter*  | set_out_of_range_mode(value) |
 +-----------+------------------------------+
@@ -331,12 +354,14 @@ Sets the distance from which the :ref:`out_of_range_mode<class_AudioStreamPlayer
 
 Decides if audio should pause when source is outside of :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>` range.
 
+----
+
 .. _class_AudioStreamPlayer3D_property_pitch_scale:
 
 - :ref:`float<class_float>` **pitch_scale**
 
 +-----------+------------------------+
-| *Default* | 1.0                    |
+| *Default* | ``1.0``                |
 +-----------+------------------------+
 | *Setter*  | set_pitch_scale(value) |
 +-----------+------------------------+
@@ -345,17 +370,21 @@ Decides if audio should pause when source is outside of :ref:`max_distance<class
 
 Changes the pitch and the tempo of the audio.
 
+----
+
 .. _class_AudioStreamPlayer3D_property_playing:
 
 - :ref:`bool<class_bool>` **playing**
 
 +-----------+--------------+
-| *Default* | false        |
+| *Default* | ``false``    |
 +-----------+--------------+
 | *Getter*  | is_playing() |
 +-----------+--------------+
 
 If ``true``, audio is playing.
+
+----
 
 .. _class_AudioStreamPlayer3D_property_stream:
 
@@ -369,24 +398,30 @@ If ``true``, audio is playing.
 
 The :ref:`AudioStream<class_AudioStream>` object to be played.
 
+----
+
 .. _class_AudioStreamPlayer3D_property_stream_paused:
 
 - :ref:`bool<class_bool>` **stream_paused**
 
 +-----------+--------------------------+
-| *Default* | false                    |
+| *Default* | ``false``                |
 +-----------+--------------------------+
 | *Setter*  | set_stream_paused(value) |
 +-----------+--------------------------+
 | *Getter*  | get_stream_paused()      |
 +-----------+--------------------------+
 
+If ``true``, the playback is paused. You can resume it by setting ``stream_paused`` to ``false``.
+
+----
+
 .. _class_AudioStreamPlayer3D_property_unit_db:
 
 - :ref:`float<class_float>` **unit_db**
 
 +-----------+--------------------+
-| *Default* | 0.0                |
+| *Default* | ``0.0``            |
 +-----------+--------------------+
 | *Setter*  | set_unit_db(value) |
 +-----------+--------------------+
@@ -395,12 +430,14 @@ The :ref:`AudioStream<class_AudioStream>` object to be played.
 
 Base sound level unaffected by dampening, in dB.
 
+----
+
 .. _class_AudioStreamPlayer3D_property_unit_size:
 
 - :ref:`float<class_float>` **unit_size**
 
 +-----------+----------------------+
-| *Default* | 1.0                  |
+| *Default* | ``1.0``              |
 +-----------+----------------------+
 | *Setter*  | set_unit_size(value) |
 +-----------+----------------------+
@@ -418,9 +455,15 @@ Method Descriptions
 
 Returns the position in the :ref:`AudioStream<class_AudioStream>`.
 
+----
+
 .. _class_AudioStreamPlayer3D_method_get_stream_playback:
 
 - :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **get_stream_playback** **(** **)**
+
+Returns the :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` object associated with this ``AudioStreamPlayer3D``.
+
+----
 
 .. _class_AudioStreamPlayer3D_method_play:
 
@@ -428,11 +471,15 @@ Returns the position in the :ref:`AudioStream<class_AudioStream>`.
 
 Plays the audio from the given position ``from_position``, in seconds.
 
+----
+
 .. _class_AudioStreamPlayer3D_method_seek:
 
 - void **seek** **(** :ref:`float<class_float>` to_position **)**
 
 Sets the position from which audio will be played, in seconds.
+
+----
 
 .. _class_AudioStreamPlayer3D_method_stop:
 

@@ -268,7 +268,7 @@ ______
 
 In ``_ready``, we set the ``OS_Label``'s text to the name provided by :ref:`OS <class_OS>` using the ``get_name`` function. This will return the
 name of the OS (or Operating System) for which Godot was compiled. For example, when you are running Windows, it will return ``Windows``, while when you
-are running Linux, it will return ``X11``.
+are running Linux, it will return ``Linux``.
 
 Then, we set the ``Engine_Label``'s text to the version info provided by ``Engine.get_version_info``. ``Engine.get_version_info`` returns a dictionary full
 of useful information about the version of Godot which is currently running. We only care about the string version, for this label at least, so we get the string
@@ -894,9 +894,9 @@ Now that we've finished our changes to ``SimpleAudioPlayer.gd``, we now need to 
 
     # You will need to provide your own sound files.
     var audio_clips = {
-        "Pistol_shot":null, #preload("res://path_to_your_audio_here!")
-        "Rifle_shot":null, #preload("res://path_to_your_audio_here!")
-        "Gun_cock":null, #preload("res://path_to_your_audio_here!")
+        "Pistol_shot": null, #preload("res://path_to_your_audio_here!")
+        "Rifle_shot": null, #preload("res://path_to_your_audio_here!")
+        "Gun_cock": null, #preload("res://path_to_your_audio_here!")
     }
 
     const SIMPLE_AUDIO_PLAYER_SCENE = preload("res://Simple_Audio_Player.tscn")
@@ -947,6 +947,8 @@ If ``Globals.gd`` has an audio clip with the name ``sound_name``, we then instan
 We then set ``should_loop``, and add ``new_audio`` as a child of ``Globals.gd``.
 
 .. note:: Remember, we have to be careful adding nodes to a singleton, since these nodes will not be destroyed when changing scenes.
+
+We add the ``new_audio`` into the ``created_audio`` list to hold all created audios.
 
 We then call ``play_sound``, passing in the audio clip associated with ``sound_name`` and the sound position.
 
@@ -1012,9 +1014,9 @@ At this point, you have a good base to build more complicated FPS games.
           Other than that, the source is exactly the same, just with helpful comments explaining what
           each part does.
 
-.. tip:: The finished project source is hosted on Github as well: https://github.com/TwistedTwigleg/Godot_FPS_Tutorial
+.. tip:: The finished project source is hosted on GitHub as well: https://github.com/TwistedTwigleg/Godot_FPS_Tutorial
 
-         **Please note that the code in Github may or may not be in sync with the tutorial in the documentation**.
+         **Please note that the code in GitHub may or may not be in sync with the tutorial in the documentation**.
 
          The code in the documentation is likely better managed and/or more up to date.
          If you are unsure of which to use, use the project(s) provided in the documentation, as they are maintained by the Godot community.
@@ -1036,4 +1038,3 @@ The skybox was converted to a 360 equirectangular image using this tool: https:/
 While no sounds are provided, you can find many game ready sounds at https://gamesounds.xyz/
 
 .. warning:: **OpenGameArt.org, 360toolkit.co, the creator(s) of Titillium-Regular, StumpyStrust, and GameSounds.xyz are in no way involved in this tutorial.**
-

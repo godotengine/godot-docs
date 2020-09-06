@@ -13,19 +13,19 @@ BoxContainer
 
 **Inherited By:** :ref:`ColorPicker<class_ColorPicker>`, :ref:`HBoxContainer<class_HBoxContainer>`, :ref:`VBoxContainer<class_VBoxContainer>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for box containers.
+
+Description
+-----------
+
+Arranges child :ref:`Control<class_Control>` nodes vertically or horizontally, and rearranges them automatically when their minimum size changes.
 
 Properties
 ----------
 
-+-----------------------------------------------+---------------------------------------------------------+---+
-| :ref:`AlignMode<enum_BoxContainer_AlignMode>` | :ref:`alignment<class_BoxContainer_property_alignment>` | 0 |
-+-----------------------------------------------+---------------------------------------------------------+---+
++-----------------------------------------------+---------------------------------------------------------+-------+
+| :ref:`AlignMode<enum_BoxContainer_AlignMode>` | :ref:`alignment<class_BoxContainer_property_alignment>` | ``0`` |
++-----------------------------------------------+---------------------------------------------------------+-------+
 
 Methods
 -------
@@ -53,11 +53,6 @@ enum **AlignMode**:
 
 - **ALIGN_END** = **2** --- Aligns children with the end of the container.
 
-Description
------------
-
-Arranges child controls vertically or horizontally, and rearranges the controls automatically when their minimum size changes.
-
 Property Descriptions
 ---------------------
 
@@ -66,14 +61,14 @@ Property Descriptions
 - :ref:`AlignMode<enum_BoxContainer_AlignMode>` **alignment**
 
 +-----------+----------------------+
-| *Default* | 0                    |
+| *Default* | ``0``                |
 +-----------+----------------------+
 | *Setter*  | set_alignment(value) |
 +-----------+----------------------+
 | *Getter*  | get_alignment()      |
 +-----------+----------------------+
 
-The alignment of the container's children (must be one of :ref:`ALIGN_BEGIN<class_BoxContainer_constant_ALIGN_BEGIN>`, :ref:`ALIGN_CENTER<class_BoxContainer_constant_ALIGN_CENTER>` or :ref:`ALIGN_END<class_BoxContainer_constant_ALIGN_END>`).
+The alignment of the container's children (must be one of :ref:`ALIGN_BEGIN<class_BoxContainer_constant_ALIGN_BEGIN>`, :ref:`ALIGN_CENTER<class_BoxContainer_constant_ALIGN_CENTER>`, or :ref:`ALIGN_END<class_BoxContainer_constant_ALIGN_END>`).
 
 Method Descriptions
 -------------------
@@ -82,5 +77,5 @@ Method Descriptions
 
 - void **add_spacer** **(** :ref:`bool<class_bool>` begin **)**
 
-Adds a control to the box as a spacer. If ``true``, ``begin`` will insert the spacer control in front of other children.
+Adds a :ref:`Control<class_Control>` node to the box as a spacer. If ``begin`` is ``true``, it will insert the :ref:`Control<class_Control>` node in front of all other children.
 

@@ -11,19 +11,19 @@ VisualShaderNodeColorOp
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+A :ref:`Color<class_Color>` operator to be used within the visual shader graph.
 
-Brief Description
------------------
+Description
+-----------
 
-
+Applies :ref:`operator<class_VisualShaderNodeColorOp_property_operator>` to two color inputs.
 
 Properties
 ----------
 
-+--------------------------------------------------------+------------------------------------------------------------------+---+
-| :ref:`Operator<enum_VisualShaderNodeColorOp_Operator>` | :ref:`operator<class_VisualShaderNodeColorOp_property_operator>` | 0 |
-+--------------------------------------------------------+------------------------------------------------------------------+---+
++--------------------------------------------------------+------------------------------------------------------------------+-------+
+| :ref:`Operator<enum_VisualShaderNodeColorOp_Operator>` | :ref:`operator<class_VisualShaderNodeColorOp_property_operator>` | ``0`` |
++--------------------------------------------------------+------------------------------------------------------------------+-------+
 
 Enumerations
 ------------
@@ -50,23 +50,83 @@ Enumerations
 
 enum **Operator**:
 
-- **OP_SCREEN** = **0**
+- **OP_SCREEN** = **0** --- Produce a screen effect with the following formula:
 
-- **OP_DIFFERENCE** = **1**
+::
 
-- **OP_DARKEN** = **2**
+    result = vec3(1.0) - (vec3(1.0) - a) * (vec3(1.0) - b);
 
-- **OP_LIGHTEN** = **3**
+- **OP_DIFFERENCE** = **1** --- Produce a difference effect with the following formula:
 
-- **OP_OVERLAY** = **4**
+::
 
-- **OP_DODGE** = **5**
+    result = abs(a - b);
 
-- **OP_BURN** = **6**
+- **OP_DARKEN** = **2** --- Produce a darken effect with the following formula:
 
-- **OP_SOFT_LIGHT** = **7**
+::
 
-- **OP_HARD_LIGHT** = **8**
+    result = min(a, b);
+
+- **OP_LIGHTEN** = **3** --- Produce a lighten effect with the following formula:
+
+::
+
+    result = max(a, b);
+
+- **OP_OVERLAY** = **4** --- Produce an overlay effect with the following formula:
+
+::
+
+    for (int i = 0; i < 3; i++) {
+        float base = a[i];
+        float blend = b[i];
+        if (base < 0.5) {
+            result[i] = 2.0 * base * blend;
+        } else {
+            result[i] = 1.0 - 2.0 * (1.0 - blend) * (1.0 - base);
+        }
+    }
+
+- **OP_DODGE** = **5** --- Produce a dodge effect with the following formula:
+
+::
+
+    result = a / (vec3(1.0) - b);
+
+- **OP_BURN** = **6** --- Produce a burn effect with the following formula:
+
+::
+
+    result = vec3(1.0) - (vec3(1.0) - a) / b;
+
+- **OP_SOFT_LIGHT** = **7** --- Produce a soft light effect with the following formula:
+
+::
+
+    for (int i = 0; i < 3; i++) {
+        float base = a[i];
+        float blend = b[i];
+        if (base < 0.5) {
+            result[i] = base * (blend + 0.5);
+        } else {
+            result[i] = 1.0 - (1.0 - base) * (1.0 - (blend - 0.5));
+        }
+    }
+
+- **OP_HARD_LIGHT** = **8** --- Produce a hard light effect with the following formula:
+
+::
+
+    for (int i = 0; i < 3; i++) {
+        float base = a[i];
+        float blend = b[i];
+        if (base < 0.5) {
+            result[i] = base * (2.0 * blend);
+        } else {
+            result[i] = 1.0 - (1.0 - base) * (1.0 - 2.0 * (blend - 0.5));
+        }
+    }
 
 Property Descriptions
 ---------------------
@@ -76,10 +136,12 @@ Property Descriptions
 - :ref:`Operator<enum_VisualShaderNodeColorOp_Operator>` **operator**
 
 +-----------+---------------------+
-| *Default* | 0                   |
+| *Default* | ``0``               |
 +-----------+---------------------+
 | *Setter*  | set_operator(value) |
 +-----------+---------------------+
 | *Getter*  | get_operator()      |
 +-----------+---------------------+
+
+An operator to be applied to the inputs. See :ref:`Operator<enum_VisualShaderNodeColorOp_Operator>` for options.
 

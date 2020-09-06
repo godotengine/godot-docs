@@ -11,27 +11,19 @@ When dealing with 3D assets, Godot has a flexible and configurable importer.
 Godot works with *scenes*. This means that the entire scene being worked on in your favorite 3D DCC will be
 transferred as close as possible.
 
-Godot supports the following 3D *scene file fomats*:
+Godot supports the following 3D *scene file formats*:
 
-* DAE (COLLADA), which is currently the most mature workflow.
-* glTF 2.0. Both text and binary formats are supported. Godot has full support for it, but the format is new and gaining traction.
+* glTF 2.0. Godot has full support for text and binary formats.
+* DAE (COLLADA), an older format that is fully supported.
 * OBJ (Wavefront) formats. It is also fully supported, but pretty limited (no support for pivots, skeletons, etc).
 * ESCN, a Godot specific format that Blender can export with a plugin.
+* FBX, supported via the Open Asset Import library. However, FBX is proprietary, so we recommend using other formats
+  listed above, if suitable for your workflow.
 
 Just copy the scene file together with the texture to the project repository, and Godot will do a full import.
 
-It is important that the mesh is not deformed by bones when exporting. Make sure that the skeleton is reset to its T-pose 
+It is important that the mesh is not deformed by bones when exporting. Make sure that the skeleton is reset to its T-pose
 or default rest pose before exporting with your favorite 3D editor.
-
-Why not FBX?
-~~~~~~~~~~~~
-
-Most game engines use the FBX format for importing 3D scenes, which is
-definitely one of the most standardized in the industry. However, this
-format requires the use of a closed library from Autodesk, which is
-distributed with more restrictive licensing terms than Godot.
-
-The plan is, sometime in the future, to offer a binary plug-in using GDNative.
 
 Exporting DAE files from Maya and 3DS Max
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -43,20 +35,10 @@ is by using the
 plugins. They work well, although they are not always up-to date
 with the latest version of the software.
 
-Exporting DAE files from Blender
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Blender has built-in COLLADA support too, but it's also broken and
-should not be used.
-
-Godot provides a `Python
-Plugin <https://github.com/godotengine/collada-exporter>`__
-that will do a much better job of exporting the scenes.
-
 Exporting glTF 2.0 files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are three ways to export glTF files from Blender. As a glTF binary (``.glb`` file), glTF embedded (``.gltf`` file), 
+There are three ways to export glTF files from Blender. As a glTF binary (``.glb`` file), glTF embedded (``.gltf`` file),
 and with textures (``gltf`` + ``.bin`` + textures).
 
 glTF binary files are the smallest of the three options. They include the mesh and textures set up in Blender.
@@ -70,7 +52,20 @@ text based format and the binary data in a separate binary file. This can be use
 changes in a text based format. The second is you need the texture files separate from the material file. If you don't need
 either of those glTF binary files are fine.
 
-.. note:: Blender does not export emissive textures with the glTF file. If your model uses one it must be brought in separately.
+.. note::
+
+    Blender does not export emissive textures with the glTF file. If your model
+    uses one, it must be brought in separately.
+
+Exporting DAE files from Blender
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Blender has built-in COLLADA support, but it does not work properly for the needs of game engines
+and should not be used as is.
+
+Godot provides a `Blender plugin <https://github.com/godotengine/collada-exporter>`_
+that will correctly export COLLADA scenes for use in Godot. It does not work in Blender 2.8 or
+newer, but there are plans to update it in the future.
 
 Exporting ESCN files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,7 +73,8 @@ Exporting ESCN files from Blender
 The most powerful one, called `godot-blender-exporter
 <https://github.com/godotengine/godot-blender-exporter>`__.
 It uses a .escn file, which is kind of another name for a .tscn file (Godot scene file);
-it keeps as much information as possible from a Blender scene.
+it keeps as much information as possible from a Blender scene. However, it is considered
+experimental.
 
 The ESCN exporter has a detailed `document <escn_exporter/index.html>`__ describing
 its functionality and usage.
@@ -135,12 +131,13 @@ Create a script like this:
 
 ::
 
-    tool # needed so it runs in the editor
+    tool # Needed so it runs in the editor.
     extends EditorScenePostImport
 
+
     func post_import(scene):
-      # do your stuff here
-      return scene # remember to return the imported scene
+        # Do your stuff here.
+        return scene # remember to return the imported scene
 
 The ``post_import`` function takes the imported scene as argument (the
 parameter is actually the root node of the scene). The scene that
@@ -269,7 +266,48 @@ Filter Script
 ~~~~~~~~~~~~~
 
 It is possible to specify a filter script in a special syntax to decide which tracks from which
-animations should be kept. (@TODO this needs documentation)
+animations should be kept.
+
+The filter script is executed against each imported animation. The syntax consists of two types of
+statements, the first for choosing which animations to filter, and the second for filtering
+individual tracks within the matched animation. All name patterns are performed using a case
+insensitive expression match, using ``?`` and ``*`` wildcards (using ``String.matchn()`` under the
+hood).
+
+The script must start with an animation filter statement (as denoted by the line beginning with an
+``@``). For example, if we would like to apply filters to all imported animations which have a name
+ending in ``"_Loop"``::
+
+    @+*_Loop
+
+Similarly, additional patterns can be added to the same line, separated by commas. Here is a
+modified example to additionally *include* all animations with names that begin with ``"Arm_Left"``,
+but also *exclude* all animations which have names ending in ``"Attack"``::
+
+    @+*_Loop, +Arm_Left*, -*Attack
+
+Following the animation selection filter statement, we add track filtering patterns to indicate
+which animation tracks should be kept or discarded. If no track filter patterns are specified, then
+all tracks within the matched animations will be discarded!
+
+It's important to note that track filter statements are applied in order for each track within the
+animation, this means that one line may include a track, a later rule can still discard it.
+Similarly, a track excluded by an early rule may then be re-included once again by a filter rule
+further down in the filter script.
+
+For example: include all tracks in animations with names ending in ``"_Loop"``, but discard any
+tracks affecting a ``"Skeleton"`` which end in ``"Control"``, unless they have ``"Arm"`` in their
+name::
+
+    @+*_Loop
+    +*
+    -Skeleton:*Control
+    +*Arm*
+
+In the above example, tracks like ``"Skeleton:Leg_Control"`` would be discarded, while tracks such
+as ``"Skeleton:Head"`` or ``"Skeleton:Arm_Left_Control"`` would be retained.
+
+Any track filter lines that do not begin with a ``+`` or ``-`` are ignored.
 
 Storage
 ~~~~~~~
@@ -286,8 +324,13 @@ In general, this should always be turned on unless you suspect that an animation
 Clips
 ~~~~~
 
-It is possible to specify multiple animations from a single timeline as clips. Specify from which frame to which frame each
-clip must be taken (and, of course, don't forget to specify the FPS option above).
+It is possible to specify multiple animations from a single timeline as clips. For this to work, the model
+must have only one animation that is named ``default``. To create clips, change the clip amount to something
+greater than zero. You can then name a clip, specify which frames it starts and stops on, and choose whether
+the animation loops or not.
+
+.. If this PR (https://github.com/godotengine/godot/pull/36709) is merged for Godot 4.0 this section must
+   be updated to reflect that for the 4.0 documentation.
 
 Scene inheritance
 -----------------
@@ -312,77 +355,103 @@ Import hints
 
 Many times, when editing a scene, there are common tasks that need to be done after exporting:
 
-* Adding collision detection to objects
-* Setting objects as navigation meshes
-* Deleting nodes that are not used in the game engine (like specific lights used for modelling)
+- Adding collision detection to objects.
+- Setting objects as navigation meshes.
+- Deleting nodes that are not used in the game engine (like specific lights used for modelling).
 
-To simplify this workflow, Godot offers a few suffixes that can be added to the names of the
-objects in your 3D modelling software. When imported, Godot will detect them and perform
-actions automatically:
+To simplify this workflow, Godot offers several suffixes that can be added to
+the names of the objects in your 3D modelling software. When imported, Godot
+will detect suffixes in object names and will perform actions automatically.
+
+.. note::
+
+    All the suffixes described below are *case-sensitive*.
 
 Remove nodes (-noimp)
 ~~~~~~~~~~~~~~~~~~~~~
 
-Node names that have this suffix will be removed at import time, no
-matter what their type is. They will not appear in the imported scene.
+Objects that have the ``-noimp`` suffix will be removed at import-time no matter
+what their type is. They will not appear in the imported scene.
 
-Create collisions (-col, -colonly, -convcolonly)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create collisions (-col, -convcol, -colonly, -convcolonly)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Option "-col" will work only for Mesh nodes. If it is detected, a child
-static collision node will be added, using the same geometry as the mesh.
+The option ``-col`` will work only for Mesh objects. If it is detected, a child
+static collision node will be added, using the same geometry as the mesh. This
+will create a triangle mesh collision shape, which is a slow, but accurate
+option for collision detection. This option is usually what you want for level
+geometry (but see also ``-colonly`` below).
 
-However, it is often the case that the visual geometry is too complex or
-too un-smooth for collisions, which ends up not working well.
+The option ``-convcol`` will create a :ref:`class_convexpolygonshape` instead of
+a :ref:`class_concavepolygonshape`. Unlike triangle meshes which can be concave,
+a convex shape can only accurately represent a shape that doesn't have any
+concave angles (a pyramid is convex, but a hollow box is concave). Due to this,
+convex collision shapes are generally not suited for level geometry. When
+representing simple enough meshes, convex collision shapes can result in better
+performance compared to a triangle collision shape. This option is ideal for
+simple or dynamic objects that require mostly-accurate collision detection.
 
-To solve this, the "-colonly" modifier exists, which will remove the mesh upon
-import and create a :ref:`class_staticbody` collision instead.
+However, in both cases, the visual geometry may be too complex or not smooth
+enough for collisions. This can create physics glitches and slow down the engine
+unneccesarily.
+
+To solve this, the ``-colonly`` modifier exists. It will remove the mesh upon
+importing and will create a :ref:`class_staticbody` collision instead.
 This helps the visual mesh and actual collision to be separated.
 
-Option "-convcolonly" will create a :ref:`class_convexpolygonshape` instead of a :ref:`class_concavepolygonshape`.
+The option ``-convcolonly`` works in a similar way, but will create a :ref:`class_convexpolygonshape` instead.
 
-Option "-colonly" can also be used with Blender's empty objects.
+The option ``-colonly`` can also be used with Blender's empty objects.
 On import, it will create a :ref:`class_staticbody` with
 a collision node as a child. The collision node will have one of a number of predefined shapes,
 depending on Blender's empty draw type:
 
 .. image:: img/3dimp_BlenderEmptyDrawTypes.png
 
--  Single arrow will create a :ref:`class_rayshape`
--  Cube will create a :ref:`class_boxshape`
--  Image will create a :ref:`class_planeshape`
--  Sphere (and the others not listed) will create a :ref:`class_sphereshape`
+-  Single arrow will create a :ref:`class_rayshape`.
+-  Cube will create a :ref:`class_boxshape`.
+-  Image will create a :ref:`class_worldmarginshape`.
+-  Sphere (and the others not listed) will create a :ref:`class_sphereshape`.
 
-For better visibility in Blender's editor, the user can set "X-Ray" option on collision
-empties and set some distinct color for them in User Preferences / Themes / 3D View / Empty.
+When possible, **try to use a few primitive collision shapes** instead of triangle
+mesh or convex shapes. Primitive shapes often have the best performance and
+reliability.
+
+.. note::
+
+    For better visibility in Blender's editor, you can set the "X-Ray" option
+    on collision empties and set some distinct color for them in Blender's
+    **User Preferences > Themes > 3D View > Empty**.
 
 Create navigation (-navmesh)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A mesh node with this suffix will be converted to a navigation mesh. Original Mesh node will be
-removed.
+A mesh node with the ``-navmesh`` suffix will be converted to a navigation mesh.
+The original Mesh object will be removed at import-time.
 
 Create a VehicleBody (-vehicle)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A mesh node with this suffix will be imported as a child to a :ref:`VehicleBody <class_VehicleBody>` node.
+A mesh node with the ``-vehicle`` suffix will be imported as a child to a
+:ref:`class_VehicleBody` node.
 
 Create a VehicleWheel (-wheel)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A mesh node with this suffix will be imported as a child to a :ref:`VehicleWheel <class_VehicleWheel>` node.
+A mesh node with the ``-wheel`` suffix will be imported as a child to a
+:ref:`class_VehicleWheel` node.
 
 Rigid Body (-rigid)
 ~~~~~~~~~~~~~~~~~~~
 
-Creates a rigid body from this mesh.
+A mesh node with the ``-rigid`` suffix will be imported as a :ref:`class_RigidBody`.
 
 Animation loop (-loop, -cycle)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Animation clips in the COLLADA document that start or end with the token "loop" or "cycle"
-will be imported as a Godot Animation with the loop flag set. This is case-sensitive and
-does not require a hyphen.
+Animation clips in the COLLADA document that start or end with the token ``loop`` or ``cycle``
+will be imported as a Godot Animation with the loop flag set.
+**Unlike the other suffixes described above, this does not require a hyphen.**
 
-In Blender, this requires using the NLA Editor and naming the Action with the "loop" or
-"cycle" prefix or suffix.
+In Blender, this requires using the NLA Editor and naming the Action with the ``loop`` or
+``cycle`` prefix or suffix.

@@ -13,19 +13,7 @@ AudioStream
 
 **Inherited By:** :ref:`AudioStreamGenerator<class_AudioStreamGenerator>`, :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`, :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>`, :ref:`AudioStreamRandomPitch<class_AudioStreamRandomPitch>`, :ref:`AudioStreamSample<class_AudioStreamSample>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for audio streams.
-
-Methods
--------
-
-+---------------------------+--------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_length<class_AudioStream_method_get_length>` **(** **)** const |
-+---------------------------+--------------------------------------------------------------------------+
 
 Description
 -----------
@@ -36,6 +24,13 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/audio/audio_streams`
+
+Methods
+-------
+
++---------------------------+--------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_length<class_AudioStream_method_get_length>` **(** **)** const |
++---------------------------+--------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------

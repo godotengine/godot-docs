@@ -11,34 +11,7 @@ RemoteTransform
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 RemoteTransform pushes its own :ref:`Transform<class_Transform>` to another :ref:`Spatial<class_Spatial>` derived Node in the scene.
-
-Properties
-----------
-
-+---------------------------------+--------------------------------------------------------------------------------------+--------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`remote_path<class_RemoteTransform_property_remote_path>`                       | NodePath("") |
-+---------------------------------+--------------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`         | :ref:`update_position<class_RemoteTransform_property_update_position>`               | true         |
-+---------------------------------+--------------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`         | :ref:`update_rotation<class_RemoteTransform_property_update_rotation>`               | true         |
-+---------------------------------+--------------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`         | :ref:`update_scale<class_RemoteTransform_property_update_scale>`                     | true         |
-+---------------------------------+--------------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`         | :ref:`use_global_coordinates<class_RemoteTransform_property_use_global_coordinates>` | true         |
-+---------------------------------+--------------------------------------------------------------------------------------+--------------+
-
-Methods
--------
-
-+------+----------------------------------------------------------------------------------------+
-| void | :ref:`force_update_cache<class_RemoteTransform_method_force_update_cache>` **(** **)** |
-+------+----------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -46,6 +19,28 @@ Description
 RemoteTransform pushes its own :ref:`Transform<class_Transform>` to another :ref:`Spatial<class_Spatial>` derived Node (called the remote node) in the scene.
 
 It can be set to update another Node's position, rotation and/or scale. It can use either global or local coordinates.
+
+Properties
+----------
+
++---------------------------------+--------------------------------------------------------------------------------------+------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`remote_path<class_RemoteTransform_property_remote_path>`                       | ``NodePath("")`` |
++---------------------------------+--------------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`         | :ref:`update_position<class_RemoteTransform_property_update_position>`               | ``true``         |
++---------------------------------+--------------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`         | :ref:`update_rotation<class_RemoteTransform_property_update_rotation>`               | ``true``         |
++---------------------------------+--------------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`         | :ref:`update_scale<class_RemoteTransform_property_update_scale>`                     | ``true``         |
++---------------------------------+--------------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`         | :ref:`use_global_coordinates<class_RemoteTransform_property_use_global_coordinates>` | ``true``         |
++---------------------------------+--------------------------------------------------------------------------------------+------------------+
+
+Methods
+-------
+
++------+----------------------------------------------------------------------------------------+
+| void | :ref:`force_update_cache<class_RemoteTransform_method_force_update_cache>` **(** **)** |
++------+----------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -55,7 +50,7 @@ Property Descriptions
 - :ref:`NodePath<class_NodePath>` **remote_path**
 
 +-----------+------------------------+
-| *Default* | NodePath("")           |
+| *Default* | ``NodePath("")``       |
 +-----------+------------------------+
 | *Setter*  | set_remote_node(value) |
 +-----------+------------------------+
@@ -64,12 +59,14 @@ Property Descriptions
 
 The :ref:`NodePath<class_NodePath>` to the remote node, relative to the RemoteTransform's position in the scene.
 
+----
+
 .. _class_RemoteTransform_property_update_position:
 
 - :ref:`bool<class_bool>` **update_position**
 
 +-----------+----------------------------+
-| *Default* | true                       |
+| *Default* | ``true``                   |
 +-----------+----------------------------+
 | *Setter*  | set_update_position(value) |
 +-----------+----------------------------+
@@ -78,12 +75,14 @@ The :ref:`NodePath<class_NodePath>` to the remote node, relative to the RemoteTr
 
 If ``true``, the remote node's position is updated.
 
+----
+
 .. _class_RemoteTransform_property_update_rotation:
 
 - :ref:`bool<class_bool>` **update_rotation**
 
 +-----------+----------------------------+
-| *Default* | true                       |
+| *Default* | ``true``                   |
 +-----------+----------------------------+
 | *Setter*  | set_update_rotation(value) |
 +-----------+----------------------------+
@@ -92,12 +91,14 @@ If ``true``, the remote node's position is updated.
 
 If ``true``, the remote node's rotation is updated.
 
+----
+
 .. _class_RemoteTransform_property_update_scale:
 
 - :ref:`bool<class_bool>` **update_scale**
 
 +-----------+-------------------------+
-| *Default* | true                    |
+| *Default* | ``true``                |
 +-----------+-------------------------+
 | *Setter*  | set_update_scale(value) |
 +-----------+-------------------------+
@@ -106,12 +107,14 @@ If ``true``, the remote node's rotation is updated.
 
 If ``true``, the remote node's scale is updated.
 
+----
+
 .. _class_RemoteTransform_property_use_global_coordinates:
 
 - :ref:`bool<class_bool>` **use_global_coordinates**
 
 +-----------+-----------------------------------+
-| *Default* | true                              |
+| *Default* | ``true``                          |
 +-----------+-----------------------------------+
 | *Setter*  | set_use_global_coordinates(value) |
 +-----------+-----------------------------------+

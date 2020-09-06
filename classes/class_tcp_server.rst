@@ -11,12 +11,12 @@ TCP_Server
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A TCP server.
+
+Description
+-----------
+
+A TCP server. Listens to connections on a port and returns a :ref:`StreamPeerTCP<class_StreamPeerTCP>` when it gets an incoming connection.
 
 Methods
 -------
@@ -33,11 +33,6 @@ Methods
 | :ref:`StreamPeerTCP<class_StreamPeerTCP>` | :ref:`take_connection<class_TCP_Server_method_take_connection>` **(** **)**                                                        |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-A TCP server. Listens to connections on a port and returns a :ref:`StreamPeerTCP<class_StreamPeerTCP>` when it gets an incoming connection.
-
 Method Descriptions
 -------------------
 
@@ -47,11 +42,15 @@ Method Descriptions
 
 Returns ``true`` if a connection is available for taking.
 
+----
+
 .. _class_TCP_Server_method_is_listening:
 
 - :ref:`bool<class_bool>` **is_listening** **(** **)** const
 
 Returns ``true`` if the server is currently listening for connections.
+
+----
 
 .. _class_TCP_Server_method_listen:
 
@@ -65,11 +64,15 @@ If ``bind_address`` is set as ``"0.0.0.0"`` (for IPv4) or ``"::"`` (for IPv6), t
 
 If ``bind_address`` is set to any valid address (e.g. ``"192.168.1.101"``, ``"::1"``, etc), the server will only listen on the interface with that addresses (or fail if no interface with the given address exists).
 
+----
+
 .. _class_TCP_Server_method_stop:
 
 - void **stop** **(** **)**
 
 Stops listening.
+
+----
 
 .. _class_TCP_Server_method_take_connection:
 

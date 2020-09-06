@@ -13,19 +13,19 @@ VisibilityNotifier
 
 **Inherited By:** :ref:`VisibilityEnabler<class_VisibilityEnabler>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Detects when the node is visible on screen.
+
+Description
+-----------
+
+The VisibilityNotifier detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a :ref:`Camera<class_Camera>`'s view.
 
 Properties
 ----------
 
-+-------------------------+-----------------------------------------------------+-----------------------------+
-| :ref:`AABB<class_AABB>` | :ref:`aabb<class_VisibilityNotifier_property_aabb>` | AABB( -1, -1, -1, 2, 2, 2 ) |
-+-------------------------+-----------------------------------------------------+-----------------------------+
++-------------------------+-----------------------------------------------------+---------------------------------+
+| :ref:`AABB<class_AABB>` | :ref:`aabb<class_VisibilityNotifier_property_aabb>` | ``AABB( -1, -1, -1, 2, 2, 2 )`` |
++-------------------------+-----------------------------------------------------+---------------------------------+
 
 Methods
 -------
@@ -43,11 +43,15 @@ Signals
 
 Emitted when the VisibilityNotifier enters a :ref:`Camera<class_Camera>`'s view.
 
+----
+
 .. _class_VisibilityNotifier_signal_camera_exited:
 
 - **camera_exited** **(** :ref:`Camera<class_Camera>` camera **)**
 
 Emitted when the VisibilityNotifier exits a :ref:`Camera<class_Camera>`'s view.
+
+----
 
 .. _class_VisibilityNotifier_signal_screen_entered:
 
@@ -55,16 +59,13 @@ Emitted when the VisibilityNotifier exits a :ref:`Camera<class_Camera>`'s view.
 
 Emitted when the VisibilityNotifier enters the screen.
 
+----
+
 .. _class_VisibilityNotifier_signal_screen_exited:
 
 - **screen_exited** **(** **)**
 
 Emitted when the VisibilityNotifier exits the screen.
-
-Description
------------
-
-The VisibilityNotifier detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a :ref:`Camera<class_Camera>`'s view.
 
 Property Descriptions
 ---------------------
@@ -73,13 +74,13 @@ Property Descriptions
 
 - :ref:`AABB<class_AABB>` **aabb**
 
-+-----------+-----------------------------+
-| *Default* | AABB( -1, -1, -1, 2, 2, 2 ) |
-+-----------+-----------------------------+
-| *Setter*  | set_aabb(value)             |
-+-----------+-----------------------------+
-| *Getter*  | get_aabb()                  |
-+-----------+-----------------------------+
++-----------+---------------------------------+
+| *Default* | ``AABB( -1, -1, -1, 2, 2, 2 )`` |
++-----------+---------------------------------+
+| *Setter*  | set_aabb(value)                 |
++-----------+---------------------------------+
+| *Getter*  | get_aabb()                      |
++-----------+---------------------------------+
 
 The VisibilityNotifier's bounding box.
 

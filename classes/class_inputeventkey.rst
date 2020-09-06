@@ -11,32 +11,7 @@ InputEventKey
 
 **Inherits:** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Input event type for keyboard events.
-
-Properties
-----------
-
-+-------------------------+--------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`echo<class_InputEventKey_property_echo>`         | false |
-+-------------------------+--------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`pressed<class_InputEventKey_property_pressed>`   | false |
-+-------------------------+--------------------------------------------------------+-------+
-| :ref:`int<class_int>`   | :ref:`scancode<class_InputEventKey_property_scancode>` | 0     |
-+-------------------------+--------------------------------------------------------+-------+
-| :ref:`int<class_int>`   | :ref:`unicode<class_InputEventKey_property_unicode>`   | 0     |
-+-------------------------+--------------------------------------------------------+-------+
-
-Methods
--------
-
-+-----------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_scancode_with_modifiers<class_InputEventKey_method_get_scancode_with_modifiers>` **(** **)** const |
-+-----------------------+--------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -48,6 +23,30 @@ Tutorials
 
 - :doc:`../tutorials/inputs/inputevent`
 
+Properties
+----------
+
++-------------------------+------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`echo<class_InputEventKey_property_echo>`                         | ``false`` |
++-------------------------+------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`   | :ref:`keycode<class_InputEventKey_property_keycode>`                   | ``0``     |
++-------------------------+------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`   | :ref:`physical_keycode<class_InputEventKey_property_physical_keycode>` | ``0``     |
++-------------------------+------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`pressed<class_InputEventKey_property_pressed>`                   | ``false`` |
++-------------------------+------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`   | :ref:`unicode<class_InputEventKey_property_unicode>`                   | ``0``     |
++-------------------------+------------------------------------------------------------------------+-----------+
+
+Methods
+-------
+
++-----------------------+------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_keycode_with_modifiers<class_InputEventKey_method_get_keycode_with_modifiers>` **(** **)** const                   |
++-----------------------+------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_physical_keycode_with_modifiers<class_InputEventKey_method_get_physical_keycode_with_modifiers>` **(** **)** const |
++-----------------------+------------------------------------------------------------------------------------------------------------------------------+
+
 Property Descriptions
 ---------------------
 
@@ -56,7 +55,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **echo**
 
 +-----------+-----------------+
-| *Default* | false           |
+| *Default* | ``false``       |
 +-----------+-----------------+
 | *Setter*  | set_echo(value) |
 +-----------+-----------------+
@@ -65,12 +64,50 @@ Property Descriptions
 
 If ``true``, the key was already pressed before this event. It means the user is holding the key down.
 
+----
+
+.. _class_InputEventKey_property_keycode:
+
+- :ref:`int<class_int>` **keycode**
+
++-----------+--------------------+
+| *Default* | ``0``              |
++-----------+--------------------+
+| *Setter*  | set_keycode(value) |
++-----------+--------------------+
+| *Getter*  | get_keycode()      |
++-----------+--------------------+
+
+The key keycode, which corresponds to one of the :ref:`KeyList<enum_@GlobalScope_KeyList>` constants. Represent key in the current keyboard layout.
+
+To get a human-readable representation of the ``InputEventKey``, use ``OS.get_keycode_string(event.keycode)`` where ``event`` is the ``InputEventKey``.
+
+----
+
+.. _class_InputEventKey_property_physical_keycode:
+
+- :ref:`int<class_int>` **physical_keycode**
+
++-----------+-----------------------------+
+| *Default* | ``0``                       |
++-----------+-----------------------------+
+| *Setter*  | set_physical_keycode(value) |
++-----------+-----------------------------+
+| *Getter*  | get_physical_keycode()      |
++-----------+-----------------------------+
+
+Key physical keycode, which corresponds to one of the :ref:`KeyList<enum_@GlobalScope_KeyList>` constants. Represent the physical location of a key on the 101/102-key US QWERTY keyboard.
+
+To get a human-readable representation of the ``InputEventKey``, use ``OS.get_keycode_string(event.keycode)`` where ``event`` is the ``InputEventKey``.
+
+----
+
 .. _class_InputEventKey_property_pressed:
 
 - :ref:`bool<class_bool>` **pressed**
 
 +-----------+--------------------+
-| *Default* | false              |
+| *Default* | ``false``          |
 +-----------+--------------------+
 | *Setter*  | set_pressed(value) |
 +-----------+--------------------+
@@ -79,40 +116,40 @@ If ``true``, the key was already pressed before this event. It means the user is
 
 If ``true``, the key's state is pressed. If ``false``, the key's state is released.
 
-.. _class_InputEventKey_property_scancode:
-
-- :ref:`int<class_int>` **scancode**
-
-+-----------+---------------------+
-| *Default* | 0                   |
-+-----------+---------------------+
-| *Setter*  | set_scancode(value) |
-+-----------+---------------------+
-| *Getter*  | get_scancode()      |
-+-----------+---------------------+
-
-Key scancode, one of the :ref:`KeyList<enum_@GlobalScope_KeyList>` constants.
+----
 
 .. _class_InputEventKey_property_unicode:
 
 - :ref:`int<class_int>` **unicode**
 
 +-----------+--------------------+
-| *Default* | 0                  |
+| *Default* | ``0``              |
 +-----------+--------------------+
 | *Setter*  | set_unicode(value) |
 +-----------+--------------------+
 | *Getter*  | get_unicode()      |
 +-----------+--------------------+
 
-Key Unicode identifier when relevant. Unicode identifiers for the composite characters and complex scripts may not be available unless IME input mode is active. See :ref:`OS.set_ime_active<class_OS_method_set_ime_active>` for more information.
+The key Unicode identifier (when relevant). Unicode identifiers for the composite characters and complex scripts may not be available unless IME input mode is active. See :ref:`OS.set_ime_active<class_OS_method_set_ime_active>` for more information.
 
 Method Descriptions
 -------------------
 
-.. _class_InputEventKey_method_get_scancode_with_modifiers:
+.. _class_InputEventKey_method_get_keycode_with_modifiers:
 
-- :ref:`int<class_int>` **get_scancode_with_modifiers** **(** **)** const
+- :ref:`int<class_int>` **get_keycode_with_modifiers** **(** **)** const
 
-Returns the scancode combined with modifier keys such as ``Shift`` or ``Alt``. See also :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`.
+Returns the keycode combined with modifier keys such as ``Shift`` or ``Alt``. See also :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`.
+
+To get a human-readable representation of the ``InputEventKey`` with modifiers, use ``OS.get_keycode_string(event.get_keycode_with_modifiers())`` where ``event`` is the ``InputEventKey``.
+
+----
+
+.. _class_InputEventKey_method_get_physical_keycode_with_modifiers:
+
+- :ref:`int<class_int>` **get_physical_keycode_with_modifiers** **(** **)** const
+
+Returns the physical keycode combined with modifier keys such as ``Shift`` or ``Alt``. See also :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`.
+
+To get a human-readable representation of the ``InputEventKey`` with modifiers, use ``OS.get_keycode_string(event.get_physical_keycode_with_modifiers())`` where ``event`` is the ``InputEventKey``.
 

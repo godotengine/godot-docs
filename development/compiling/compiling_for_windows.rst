@@ -11,28 +11,51 @@ Requirements
 For compiling under Windows, the following is required:
 
 - `Visual Studio Community <https://www.visualstudio.com/vs/community/>`_,
-  version 2015 (14.0) or later.
+  version 2017 or later. VS 2019 is recommended.
   **Make sure to read "Installing Visual Studio caveats" below or you
   will have to run/download the installer again.**
-- MinGW-w64 can be used as an alternative to Visual Studio.
-- `Python 3.5+ (recommended) or Python 2.7+. <https://www.python.org/downloads/windows/>`_
-- `SCons <https://www.scons.org>`_ build system.
+- `MinGW-w64 <http://mingw-w64.org/>`_ with GCC can be used as an alternative to
+  Visual Studio. Be sure to install/configure it to use the ``posix`` thread model.
+  **Important:** When using MinGW to compile the ``master`` branch, you need GCC 9 or later. Because
+  MinGW does not officially release GCC 9 yet, you can get an alternate installer from
+  `here <https://jmeubank.github.io/tdm-gcc/articles/2020-03/9.2.0-release>`_.
+- `Python 3.5+ <https://www.python.org/downloads/windows/>`_.
+- `SCons 3.0 <https://www.scons.org/>`_ build system. If using Visual Studio 2019,
+  you need at least SCons 3.1.1.
 - *Optional* - `yasm <https://yasm.tortall.net/>`_ (for WebM SIMD optimizations)
 
 .. note:: If you have `Scoop <https://scoop.sh/>`_ installed, you can easily
           install MinGW and other dependencies using the following command::
 
-              scoop install gcc python scons
+              scoop install gcc python scons yasm make
+
+.. note:: If you have `MSYS2 <https://www.msys2.org/>`_ installed, you can easily
+          install MinGW and other dependencies using the following command::
+
+              pacman -S mingw-w64-x86_64-python3-pip \
+                  mingw-w64-x86_64-gcc mingw-w64-x86_64-yasm \
+                  mingw-w64-i686-python3-pip mingw-w64-i686-gcc \
+                  mingw-w64-i686-yasm make
+
+          For each MSYS2 MinGW subsystem, you should then run
+          `pip install scons` in its shell.
 
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
 
+Setting up Python
+-----------------
+
+First you need to install Python 3.5 or newer. Make sure to enable the option
+to add Python to the ``PATH`` in the Python installer. The SCons installer
+should then detect and use the existing Python installation.
+
 Setting up SCons
 ----------------
 
-First, make sure to enable the option to add Python to the ``PATH`` in
-the Python installer. The SCons installer should then detect and use
-the existing Python installation.
+To install SCons open the command prompt and run the following command.
+
+``python -m pip install scons``
 
 To check whether you have installed Python and SCons correctly, you can
 type ``python --version`` and ``scons --version`` into a command prompt
@@ -96,19 +119,18 @@ You can specify a number of CPU threads to use to speed up the build::
 
     C:\godot> scons -j6 platform=windows
 
-In general, it is OK to have at least as many threads compiling Godot as
-you have cores in your CPU, if not one or two more. Feel free to add the
--j option to any SCons command you see below.
+In general, it is OK to have at least as many threads compiling Godot as you
+have cores in your CPU, if not one or two more. Feel free to add the ``-j``
+option to any SCons command you see below.
 
 .. note:: When compiling with multiple CPU threads, SCons may warn about
           pywin32 being missing. You can safely ignore this warning.
 
 If all goes well, the resulting binary executable will be placed in
 ``C:\godot\bin\`` with the name ``godot.windows.tools.32.exe`` or
-``godot.windows.tools.64.exe``.
-
-.. note:: By default, SCons will build a binary matching your CPU architecture,
-          but this can be overriden using ``bits=64`` or ``bits=32``.
+``godot.windows.tools.64.exe``. By default, SCons will build a binary matching
+your CPU architecture, but this can be overridden using ``bits=64`` or
+``bits=32``.
 
 This executable file contains the whole engine and runs without any
 dependencies. Running it will bring up the Project Manager.
@@ -121,6 +143,11 @@ dependencies. Running it will bring up the Project Manager.
           even smaller and faster by adding the SCons option ``use_lto=yes``.
           As link-time optimization is a memory-intensive process,
           this will require about 3 GB of available RAM while compiling.
+
+.. note:: If you want to use separate editor settings for your own Godot builds
+          and official releases, you can enable
+          :ref:`doc_data_paths_self_contained_mode` by creating a file called
+          ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
 
 Development in Visual Studio or other IDEs
 ------------------------------------------
@@ -147,7 +174,7 @@ Cross-compiling for Windows from other operating systems
 --------------------------------------------------------
 
 If you are a Linux or macOS user, you need to install
-`MinGW-w64 <https://mingw-w64.org/doku.php>`_, which typically comes in 32-bit
+`MinGW-w64 <https://mingw-w64.org/doku.php>`__, which typically comes in 32-bit
 and 64-bit variants. The package names may differ based on your distribution,
 here are some known ones:
 
@@ -192,8 +219,8 @@ To make sure you are doing things correctly, executing the following in
 the shell should result in a working compiler (the version output may
 differ based on your system)::
 
-    user@host:~$ ${MINGW32_PREFIX}gcc --version
-    i686-w64-mingw32-gcc (GCC) 6.1.0 20160427 (Mageia MinGW 6.1.0-1.mga6)
+    ${MINGW32_PREFIX}gcc --version
+    # i686-w64-mingw32-gcc (GCC) 6.1.0 20160427 (Mageia MinGW 6.1.0-1.mga6)
 
 Troubleshooting
 ~~~~~~~~~~~~~~~

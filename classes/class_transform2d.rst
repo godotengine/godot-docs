@@ -9,23 +9,23 @@
 Transform2D
 ===========
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 2D transformation (3×2 matrix).
+
+Description
+-----------
+
+Represents one or many transformations in 2D space such as translation, rotation, or scaling. It consists of two :ref:`x<class_Transform2D_property_x>` and :ref:`y<class_Transform2D_property_y>` :ref:`Vector2<class_Vector2>`\ s and an :ref:`origin<class_Transform2D_property_origin>`. It is similar to a 3×2 matrix.
 
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`origin<class_Transform2D_property_origin>` | Vector2( 0, 0 ) |
-+-------------------------------+--------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`x<class_Transform2D_property_x>`           | Vector2( 1, 0 ) |
-+-------------------------------+--------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`y<class_Transform2D_property_y>`           | Vector2( 0, 1 ) |
-+-------------------------------+--------------------------------------------------+-----------------+
++-------------------------------+--------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`origin<class_Transform2D_property_origin>` | ``Vector2( 0, 0 )`` |
++-------------------------------+--------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`x<class_Transform2D_property_x>`           | ``Vector2( 1, 0 )`` |
++-------------------------------+--------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`y<class_Transform2D_property_y>`           | ``Vector2( 0, 1 )`` |
++-------------------------------+--------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -52,6 +52,8 @@ Methods
 | :ref:`Transform2D<class_Transform2D>` | :ref:`interpolate_with<class_Transform2D_method_interpolate_with>` **(** :ref:`Transform2D<class_Transform2D>` transform, :ref:`float<class_float>` weight **)**                      |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_Transform2D>` | :ref:`inverse<class_Transform2D_method_inverse>` **(** **)**                                                                                                                          |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`is_equal_approx<class_Transform2D_method_is_equal_approx>` **(** :ref:`Transform2D<class_Transform2D>` transform **)**                                                          |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_Transform2D>` | :ref:`orthonormalized<class_Transform2D_method_orthonormalized>` **(** **)**                                                                                                          |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -81,11 +83,6 @@ Constants
 
 - **FLIP_Y** = **Transform2D( 1, 0, 0, -1, 0, 0 )** --- ``Transform2D`` with mirroring applied parallel to the Y axis.
 
-Description
------------
-
-Represents one or many transformations in 2D space such as translation, rotation, or scaling. It consists of two :ref:`x<class_Transform2D_property_x>` and :ref:`y<class_Transform2D_property_y>` :ref:`Vector2<class_Vector2>`\ s and an :ref:`origin<class_Transform2D_property_origin>`. It is similar to a 3×2 matrix.
-
 Property Descriptions
 ---------------------
 
@@ -93,29 +90,33 @@ Property Descriptions
 
 - :ref:`Vector2<class_Vector2>` **origin**
 
-+-----------+-----------------+
-| *Default* | Vector2( 0, 0 ) |
-+-----------+-----------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 0, 0 )`` |
++-----------+---------------------+
 
 The transform's translation offset.
+
+----
 
 .. _class_Transform2D_property_x:
 
 - :ref:`Vector2<class_Vector2>` **x**
 
-+-----------+-----------------+
-| *Default* | Vector2( 1, 0 ) |
-+-----------+-----------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 1, 0 )`` |
++-----------+---------------------+
 
 The X axis of 2×2 basis matrix containing 2 :ref:`Vector2<class_Vector2>`\ s as its columns: X axis and Y axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
+
+----
 
 .. _class_Transform2D_property_y:
 
 - :ref:`Vector2<class_Vector2>` **y**
 
-+-----------+-----------------+
-| *Default* | Vector2( 0, 1 ) |
-+-----------+-----------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 0, 1 )`` |
++-----------+---------------------+
 
 The Y axis of 2×2 basis matrix containing 2 :ref:`Vector2<class_Vector2>`\ s as its columns: X axis and Y axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
 
@@ -128,13 +129,19 @@ Method Descriptions
 
 Constructs the transform from a 3D :ref:`Transform<class_Transform>`.
 
+----
+
 - :ref:`Transform2D<class_Transform2D>` **Transform2D** **(** :ref:`Vector2<class_Vector2>` x_axis, :ref:`Vector2<class_Vector2>` y_axis, :ref:`Vector2<class_Vector2>` origin **)**
 
 Constructs the transform from 3 :ref:`Vector2<class_Vector2>`\ s representing x, y, and origin.
 
+----
+
 - :ref:`Transform2D<class_Transform2D>` **Transform2D** **(** :ref:`float<class_float>` rotation, :ref:`Vector2<class_Vector2>` position **)**
 
 Constructs the transform from a given angle (in radians) and position.
+
+----
 
 .. _class_Transform2D_method_affine_inverse:
 
@@ -142,11 +149,15 @@ Constructs the transform from a given angle (in radians) and position.
 
 Returns the inverse of the matrix.
 
+----
+
 .. _class_Transform2D_method_basis_xform:
 
 - :ref:`Vector2<class_Vector2>` **basis_xform** **(** :ref:`Vector2<class_Vector2>` v **)**
 
 Transforms the given vector by this transform's basis (no translation).
+
+----
 
 .. _class_Transform2D_method_basis_xform_inv:
 
@@ -154,11 +165,15 @@ Transforms the given vector by this transform's basis (no translation).
 
 Inverse-transforms the given vector by this transform's basis (no translation).
 
+----
+
 .. _class_Transform2D_method_get_origin:
 
 - :ref:`Vector2<class_Vector2>` **get_origin** **(** **)**
 
 Returns the transform's origin (translation).
+
+----
 
 .. _class_Transform2D_method_get_rotation:
 
@@ -166,11 +181,15 @@ Returns the transform's origin (translation).
 
 Returns the transform's rotation (in radians).
 
+----
+
 .. _class_Transform2D_method_get_scale:
 
 - :ref:`Vector2<class_Vector2>` **get_scale** **(** **)**
 
 Returns the scale.
+
+----
 
 .. _class_Transform2D_method_interpolate_with:
 
@@ -178,11 +197,23 @@ Returns the scale.
 
 Returns a transform interpolated between this transform and another by a given weight (0-1).
 
+----
+
 .. _class_Transform2D_method_inverse:
 
 - :ref:`Transform2D<class_Transform2D>` **inverse** **(** **)**
 
 Returns the inverse of the transform, under the assumption that the transformation is composed of rotation and translation (no scaling, use affine_inverse for transforms with scaling).
+
+----
+
+.. _class_Transform2D_method_is_equal_approx:
+
+- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Transform2D<class_Transform2D>` transform **)**
+
+Returns ``true`` if this transform and ``transform`` are approximately equal, by calling ``is_equal_approx`` on each component.
+
+----
 
 .. _class_Transform2D_method_orthonormalized:
 
@@ -190,33 +221,45 @@ Returns the inverse of the transform, under the assumption that the transformati
 
 Returns the transform with the basis orthogonal (90 degrees), and normalized axis vectors.
 
+----
+
 .. _class_Transform2D_method_rotated:
 
 - :ref:`Transform2D<class_Transform2D>` **rotated** **(** :ref:`float<class_float>` phi **)**
 
-Rotates the transform by the given angle (in radians).
+Rotates the transform by the given angle (in radians), using matrix multiplication.
+
+----
 
 .. _class_Transform2D_method_scaled:
 
 - :ref:`Transform2D<class_Transform2D>` **scaled** **(** :ref:`Vector2<class_Vector2>` scale **)**
 
-Scales the transform by the given factor.
+Scales the transform by the given scale factor, using matrix multiplication.
+
+----
 
 .. _class_Transform2D_method_translated:
 
 - :ref:`Transform2D<class_Transform2D>` **translated** **(** :ref:`Vector2<class_Vector2>` offset **)**
 
-Translates the transform by the given offset.
+Translates the transform by the given offset, relative to the transform's basis vectors.
+
+Unlike :ref:`rotated<class_Transform2D_method_rotated>` and :ref:`scaled<class_Transform2D_method_scaled>`, this does not use matrix multiplication.
+
+----
 
 .. _class_Transform2D_method_xform:
 
 - :ref:`Variant<class_Variant>` **xform** **(** :ref:`Variant<class_Variant>` v **)**
 
-Transforms the given :ref:`Vector2<class_Vector2>`, :ref:`Rect2<class_Rect2>`, or :ref:`PoolVector2Array<class_PoolVector2Array>` by this transform.
+Transforms the given :ref:`Vector2<class_Vector2>`, :ref:`Rect2<class_Rect2>`, or :ref:`PackedVector2Array<class_PackedVector2Array>` by this transform.
+
+----
 
 .. _class_Transform2D_method_xform_inv:
 
 - :ref:`Variant<class_Variant>` **xform_inv** **(** :ref:`Variant<class_Variant>` v **)**
 
-Inverse-transforms the given :ref:`Vector2<class_Vector2>`, :ref:`Rect2<class_Rect2>`, or :ref:`PoolVector2Array<class_PoolVector2Array>` by this transform.
+Inverse-transforms the given :ref:`Vector2<class_Vector2>`, :ref:`Rect2<class_Rect2>`, or :ref:`PackedVector2Array<class_PackedVector2Array>` by this transform.
 

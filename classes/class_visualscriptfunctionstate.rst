@@ -11,11 +11,6 @@ VisualScriptFunctionState
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Methods
@@ -36,9 +31,13 @@ Method Descriptions
 
 - void **connect_to_signal** **(** :ref:`Object<class_Object>` obj, :ref:`String<class_String>` signals, :ref:`Array<class_Array>` args **)**
 
+----
+
 .. _class_VisualScriptFunctionState_method_is_valid:
 
 - :ref:`bool<class_bool>` **is_valid** **(** **)** const
+
+----
 
 .. _class_VisualScriptFunctionState_method_resume:
 

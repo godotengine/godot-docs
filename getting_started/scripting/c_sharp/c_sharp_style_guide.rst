@@ -27,16 +27,21 @@ later.
 For detailed information on C# features in different versions, please see
 `What's New in C# <https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/>`_.
 
-Formatting conventions
-----------------------
+Formatting
+----------
+
+General guidelines
+~~~~~~~~~~~~~~~~~~
 
 * Use line feed (**LF**) characters to break lines, not CRLF or CR.
+* Use one line feed character at the end of each file, except for `csproj` files.
 * Use **UTF-8** encoding without a `byte order mark <https://en.wikipedia.org/wiki/Byte_order_mark>`_.
 * Use **4 spaces** instead of tabs for indentation (which is referred to as "soft tabs").
 * Consider breaking a line into several if it's longer than 100 characters.
 
+
 Line breaks and blank lines
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For a general indentation rule, follow `the "Allman Style" <https://en.wikipedia.org/wiki/Indentation_style#Allman_style>`_
 which recommends placing the brace associated with a control statement on the next line, indented to
@@ -132,8 +137,9 @@ Avoid inserting a blank line:
         }
     }
 
+
 Using spaces
-------------
+~~~~~~~~~~~~
 
 Insert a space:
 
@@ -257,6 +263,20 @@ Rather than:
 .. code-block:: csharp
 
     FindNode()?.Change(wpnDmg);
+
+Member variables
+----------------
+
+Don't declare member variables if they are only used locally in a method, as it
+makes the code more difficult to follow. Instead, declare them as local
+variables in the method's body.
+
+Local variables
+---------------
+
+Declare local variables as close as possible to their first use. This makes it
+easier to follow the code, without having to scroll too much to find where the
+variable was declared.
 
 Implicitly typed local variables
 --------------------------------

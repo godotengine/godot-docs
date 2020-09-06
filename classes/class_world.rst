@@ -11,16 +11,23 @@ World
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Class that has everything pertaining to a world.
+
+Description
+-----------
+
+Class that has everything pertaining to a world. A physics space, a visual scenario and a sound space. Spatial nodes register their resources into the current world.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/ray-casting`
 
 Properties
 ----------
 
++---------------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`CameraEffects<class_CameraEffects>`                     | :ref:`camera_effects<class_World_property_camera_effects>`             |
 +---------------------------------------------------------------+------------------------------------------------------------------------+
 | :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>` | :ref:`direct_space_state<class_World_property_direct_space_state>`     |
 +---------------------------------------------------------------+------------------------------------------------------------------------+
@@ -33,18 +40,20 @@ Properties
 | :ref:`RID<class_RID>`                                         | :ref:`space<class_World_property_space>`                               |
 +---------------------------------------------------------------+------------------------------------------------------------------------+
 
-Description
------------
-
-Class that has everything pertaining to a world. A physics space, a visual scenario and a sound space. Spatial nodes register their resources into the current world.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/ray-casting`
-
 Property Descriptions
 ---------------------
+
+.. _class_World_property_camera_effects:
+
+- :ref:`CameraEffects<class_CameraEffects>` **camera_effects**
+
++----------+---------------------------+
+| *Setter* | set_camera_effects(value) |
++----------+---------------------------+
+| *Getter* | get_camera_effects()      |
++----------+---------------------------+
+
+----
 
 .. _class_World_property_direct_space_state:
 
@@ -55,6 +64,8 @@ Property Descriptions
 +----------+--------------------------+
 
 The World's physics direct space state, used for making various queries. Might be used only during ``_physics_process``.
+
+----
 
 .. _class_World_property_environment:
 
@@ -68,6 +79,8 @@ The World's physics direct space state, used for making various queries. Might b
 
 The World's :ref:`Environment<class_Environment>`.
 
+----
+
 .. _class_World_property_fallback_environment:
 
 - :ref:`Environment<class_Environment>` **fallback_environment**
@@ -80,6 +93,8 @@ The World's :ref:`Environment<class_Environment>`.
 
 The World's fallback_environment will be used if the World's :ref:`Environment<class_Environment>` fails or is missing.
 
+----
+
 .. _class_World_property_scenario:
 
 - :ref:`RID<class_RID>` **scenario**
@@ -89,6 +104,8 @@ The World's fallback_environment will be used if the World's :ref:`Environment<c
 +----------+----------------+
 
 The World's visual scenario.
+
+----
 
 .. _class_World_property_space:
 

@@ -13,10 +13,10 @@ VideoStream
 
 **Inherited By:** :ref:`VideoStreamGDNative<class_VideoStreamGDNative>`, :ref:`VideoStreamTheora<class_VideoStreamTheora>`, :ref:`VideoStreamWebm<class_VideoStreamWebm>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base resource for video streams.
+
+Description
+-----------
+
+Base resource type for all video streams. Classes that derive from ``VideoStream`` can all be used as resource types to play back videos in :ref:`VideoPlayer<class_VideoPlayer>`.
 

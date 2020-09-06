@@ -47,7 +47,7 @@ Collision geometry only
 -----------------------
 
 Frequently you want different geometry for your collision meshes and your
-graphical meshes, but by default the exporter will export a mesh along with the
+graphical meshes, but by default, the exporter will export a mesh along with the
 collision shape. To only export the collision shape, set the object's maximum
 draw type to Wire:
 

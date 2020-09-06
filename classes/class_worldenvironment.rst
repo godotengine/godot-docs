@@ -11,19 +11,7 @@ WorldEnvironment
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Default environment properties for the entire scene (post-processing effects, lighting and background settings).
-
-Properties
-----------
-
-+---------------------------------------+-----------------------------------------------------------------+
-| :ref:`Environment<class_Environment>` | :ref:`environment<class_WorldEnvironment_property_environment>` |
-+---------------------------------------+-----------------------------------------------------------------+
 
 Description
 -----------
@@ -39,8 +27,29 @@ Tutorials
 
 - :doc:`../tutorials/3d/environment_and_post_processing`
 
+Properties
+----------
+
++-------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`CameraEffects<class_CameraEffects>` | :ref:`camera_effects<class_WorldEnvironment_property_camera_effects>` |
++-------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`Environment<class_Environment>`     | :ref:`environment<class_WorldEnvironment_property_environment>`       |
++-------------------------------------------+-----------------------------------------------------------------------+
+
 Property Descriptions
 ---------------------
+
+.. _class_WorldEnvironment_property_camera_effects:
+
+- :ref:`CameraEffects<class_CameraEffects>` **camera_effects**
+
++----------+---------------------------+
+| *Setter* | set_camera_effects(value) |
++----------+---------------------------+
+| *Getter* | get_camera_effects()      |
++----------+---------------------------+
+
+----
 
 .. _class_WorldEnvironment_property_environment:
 

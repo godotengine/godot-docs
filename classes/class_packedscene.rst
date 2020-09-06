@@ -11,19 +11,45 @@ PackedScene
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 An abstraction of a serialized scene.
+
+Description
+-----------
+
+A simplified interface to a scene file. Provides access to operations and checks that can be performed on the scene resource itself.
+
+Can be used to save a node to a file. When saving, the node as well as all the node it owns get saved (see ``owner`` property on :ref:`Node<class_Node>`).
+
+**Note:** The node doesn't need to own itself.
+
+**Example of saving a node with different owners:** The following example creates 3 objects: ``Node2D`` (``node``), ``RigidBody2D`` (``rigid``) and ``CollisionObject2D`` (``collision``). ``collision`` is a child of ``rigid`` which is a child of ``node``. Only ``rigid`` is owned by ``node`` and ``pack`` will therefore only save those two nodes, but not ``collision``.
+
+::
+
+    # Create the objects
+    var node = Node2D.new()
+    var rigid = RigidBody2D.new()
+    var collision = CollisionShape2D.new()
+    
+    # Create the object hierarchy
+    rigid.add_child(collision)
+    node.add_child(rigid)
+    
+    # Change owner of rigid, but not of collision
+    rigid.owner = node
+    
+    var scene = PackedScene.new()
+    # Only node and rigid are now packed
+    var result = scene.pack(node)
+    if result == OK:
+        ResourceSaver.save("res://path/name.scn", scene) # Or "user://..."
 
 Properties
 ----------
 
-+-------------------------------------+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`_bundled<class_PackedScene_property__bundled>` | {"conn_count": 0,"conns": PoolIntArray(  ),"editable_instances": [  ],"names": PoolStringArray(  ),"node_count": 0,"node_paths": [  ],"nodes": PoolIntArray(  ),"variants": [  ],"version": 2} |
-+-------------------------------------+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------+------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`_bundled<class_PackedScene_property__bundled>` | ``{"conn_count": 0,"conns": PackedInt32Array(  ),"editable_instances": [  ],"names": PackedStringArray(  ),"node_count": 0,"node_paths": [  ],"nodes": PackedInt32Array(  ),"variants": [  ],"version": 2}`` |
++-------------------------------------+------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -61,37 +87,6 @@ enum **GenEditState**:
 
 **Note:** Only available in editor builds.
 
-Description
------------
-
-A simplified interface to a scene file. Provides access to operations and checks that can be performed on the scene resource itself.
-
-Can be used to save a node to a file. When saving, the node as well as all the node it owns get saved (see ``owner`` property on :ref:`Node<class_Node>`).
-
-**Note:** The node doesn't need to own itself.
-
-**Example of saving a node with different owners:** The following example creates 3 objects: ``Node2D`` (``node``), ``RigidBody2D`` (``rigid``) and ``CollisionObject2D`` (``collision``). ``collision`` is a child of ``rigid`` which is a child of ``node``. Only ``rigid`` is owned by ``node`` and ``pack`` will therefore only save those two nodes, but not ``collision``.
-
-::
-
-    # Create the objects
-    var node = Node2D.new()
-    var rigid = RigidBody2D.new()
-    var collision = CollisionShape2D.new()
-    
-    # Create the object hierarchy
-    rigid.add_child(collision)
-    node.add_child(rigid)
-    
-    # Change owner of rigid, but not of collision
-    rigid.owner = node
-    
-    var scene = PackedScene.new()
-    # Only node and rigid are now packed
-    var result = scene.pack(node)
-    if result == OK:
-        ResourceSaver.save("res://path/name.scn", scene) # Or "user://..."
-
 Property Descriptions
 ---------------------
 
@@ -99,9 +94,9 @@ Property Descriptions
 
 - :ref:`Dictionary<class_Dictionary>` **_bundled**
 
-+-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| *Default* | {"conn_count": 0,"conns": PoolIntArray(  ),"editable_instances": [  ],"names": PoolStringArray(  ),"node_count": 0,"node_paths": [  ],"nodes": PoolIntArray(  ),"variants": [  ],"version": 2} |
-+-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| *Default* | ``{"conn_count": 0,"conns": PackedInt32Array(  ),"editable_instances": [  ],"names": PackedStringArray(  ),"node_count": 0,"node_paths": [  ],"nodes": PackedInt32Array(  ),"variants": [  ],"version": 2}`` |
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 A dictionary representation of the scene contents.
 
@@ -116,17 +111,23 @@ Method Descriptions
 
 Returns ``true`` if the scene file has nodes.
 
+----
+
 .. _class_PackedScene_method_get_state:
 
 - :ref:`SceneState<class_SceneState>` **get_state** **(** **)**
 
 Returns the ``SceneState`` representing the scene file contents.
 
+----
+
 .. _class_PackedScene_method_instance:
 
 - :ref:`Node<class_Node>` **instance** **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** const
 
 Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers a :ref:`Node.NOTIFICATION_INSTANCED<class_Node_constant_NOTIFICATION_INSTANCED>` notification on the root node.
+
+----
 
 .. _class_PackedScene_method_pack:
 

@@ -19,7 +19,7 @@ This guide will get you started with UI design. You will learn:
 -  How to work with the anchor of UI elements
 -  How to efficiently place and arrange your user interface using
    containers
--  The five most common containers (at a later time, you can learn more about containers in
+-  The five most common containers (you can learn more about containers in
    the :ref:`GUI Containers <doc_gui_containers>` documentation page).
 
 To learn how to control the interface and connect it to other scripts,
@@ -97,11 +97,11 @@ the ``Modulate`` property and use the color picker.
 TextureButton
 ~~~~~~~~~~~~~
 
-**TextureButton** is like TextureRect, except it has 5 texture slots:
+**TextureButton** is like TextureRect, except it has 6 texture slots:
 one for each of the button's states. Most of the time, you'll use the
 Normal, Pressed, and Hover textures. Focused is useful if your interface
 listens to the keyboard's input. The sixth image slot, the Click Mask,
-lets you define the clickable area using a 2-bit, pure black and white
+lets you define the clickable area using a 1-bit, pure black and white
 image.
 
 In the Base Button section, you'll find a few checkboxes that change how
@@ -216,7 +216,7 @@ right and bottom edges. On the other hand, margins represent a distance
 to the anchor position in pixels, while anchors are relative to the
 parent container's size.
 
-.. figure:: ./img/ui_anchor_and_margins.png
+.. figure:: img/ui_anchor_and_margins.png
 
    Margins are relative to the anchor position, which is relative to the
    anchors. In practice, you'll often let the container update margins

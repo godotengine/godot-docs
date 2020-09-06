@@ -11,21 +11,30 @@ ARVRController
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A spatial node representing a spatially-tracked controller.
+
+Description
+-----------
+
+This is a helper spatial node that is linked to the tracking of controllers. It also offers several handy passthroughs to the state of buttons and such on the controllers.
+
+Controllers are linked by their ID. You can create controller nodes before the controllers are available. If your game always uses two controllers (one for each hand), you can predefine the controllers with ID 1 and 2; they will become active as soon as the controllers are identified. If you expect additional controllers to be used, you should react to the signals and add ARVRController nodes to your scene.
+
+The position of the controller node is automatically updated by the :ref:`ARVRServer<class_ARVRServer>`. This makes this node ideal to add child nodes to visualize the controller.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/vr/index`
 
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------------------+-----+
-| :ref:`int<class_int>`     | :ref:`controller_id<class_ARVRController_property_controller_id>` | 1   |
-+---------------------------+-------------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`rumble<class_ARVRController_property_rumble>`               | 0.0 |
-+---------------------------+-------------------------------------------------------------------+-----+
++---------------------------+-------------------------------------------------------------------+---------+
+| :ref:`int<class_int>`     | :ref:`controller_id<class_ARVRController_property_controller_id>` | ``1``   |
++---------------------------+-------------------------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`rumble<class_ARVRController_property_rumble>`               | ``0.0`` |
++---------------------------+-------------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -43,7 +52,7 @@ Methods
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Mesh<class_Mesh>`                                    | :ref:`get_mesh<class_ARVRController_method_get_mesh>` **(** **)** const                                                |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`is_button_pressed<class_ARVRController_method_is_button_pressed>` **(** :ref:`int<class_int>` button **)** const |
+| :ref:`bool<class_bool>`                                    | :ref:`is_button_pressed<class_ARVRController_method_is_button_pressed>` **(** :ref:`int<class_int>` button **)** const |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -55,26 +64,21 @@ Signals
 
 Emitted when a button on this controller is pressed.
 
+----
+
 .. _class_ARVRController_signal_button_release:
 
 - **button_release** **(** :ref:`int<class_int>` button **)**
 
 Emitted when a button on this controller is released.
 
+----
+
 .. _class_ARVRController_signal_mesh_updated:
 
 - **mesh_updated** **(** :ref:`Mesh<class_Mesh>` mesh **)**
 
 Emitted when the mesh associated with the controller changes or when one becomes available. Generally speaking this will be a static mesh after becoming available.
-
-Description
------------
-
-This is a helper spatial node that is linked to the tracking of controllers. It also offers several handy passthroughs to the state of buttons and such on the controllers.
-
-Controllers are linked by their ID. You can create controller nodes before the controllers are available. If your game always uses two controllers (one for each hand), you can predefine the controllers with ID 1 and 2; they will become active as soon as the controllers are identified. If you expect additional controllers to be used, you should react to the signals and add ARVRController nodes to your scene.
-
-The position of the controller node is automatically updated by the :ref:`ARVRServer<class_ARVRServer>`. This makes this node ideal to add child nodes to visualize the controller.
 
 Property Descriptions
 ---------------------
@@ -84,7 +88,7 @@ Property Descriptions
 - :ref:`int<class_int>` **controller_id**
 
 +-----------+--------------------------+
-| *Default* | 1                        |
+| *Default* | ``1``                    |
 +-----------+--------------------------+
 | *Setter*  | set_controller_id(value) |
 +-----------+--------------------------+
@@ -99,19 +103,23 @@ For any other controller that the :ref:`ARVRServer<class_ARVRServer>` detects, w
 
 When a controller is turned off, its slot is freed. This ensures controllers will keep the same ID even when controllers with lower IDs are turned off.
 
+----
+
 .. _class_ARVRController_property_rumble:
 
 - :ref:`float<class_float>` **rumble**
 
 +-----------+-------------------+
-| *Default* | 0.0               |
+| *Default* | ``0.0``           |
 +-----------+-------------------+
 | *Setter*  | set_rumble(value) |
 +-----------+-------------------+
 | *Getter*  | get_rumble()      |
 +-----------+-------------------+
 
-The degree to which the tracker rumbles. Ranges from ``0.0`` to ``1.0`` with precision ``.01``. If changed, updates :ref:`ARVRPositionalTracker.rumble<class_ARVRPositionalTracker_property_rumble>` accordingly.
+The degree to which the controller vibrates. Ranges from ``0.0`` to ``1.0`` with precision ``.01``. If changed, updates :ref:`ARVRPositionalTracker.rumble<class_ARVRPositionalTracker_property_rumble>` accordingly.
+
+This is a useful property to animate if you want the controller to vibrate for a limited duration.
 
 Method Descriptions
 -------------------
@@ -122,11 +130,15 @@ Method Descriptions
 
 If active, returns the name of the associated controller if provided by the AR/VR SDK used.
 
+----
+
 .. _class_ARVRController_method_get_hand:
 
 - :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>` **get_hand** **(** **)** const
 
-Returns the hand holding this controller, if known. See ``TRACKER_*`` constants in :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>`.
+Returns the hand holding this controller, if known. See :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>`.
+
+----
 
 .. _class_ARVRController_method_get_is_active:
 
@@ -134,11 +146,15 @@ Returns the hand holding this controller, if known. See ``TRACKER_*`` constants 
 
 Returns ``true`` if the bound controller is active. ARVR systems attempt to track active controllers.
 
+----
+
 .. _class_ARVRController_method_get_joystick_axis:
 
 - :ref:`float<class_float>` **get_joystick_axis** **(** :ref:`int<class_int>` axis **)** const
 
 Returns the value of the given axis for things like triggers, touchpads, etc. that are embedded into the controller.
+
+----
 
 .. _class_ARVRController_method_get_joystick_id:
 
@@ -146,15 +162,19 @@ Returns the value of the given axis for things like triggers, touchpads, etc. th
 
 Returns the ID of the joystick object bound to this. Every controller tracked by the :ref:`ARVRServer<class_ARVRServer>` that has buttons and axis will also be registered as a joystick within Godot. This means that all the normal joystick tracking and input mapping will work for buttons and axis found on the AR/VR controllers. This ID is purely offered as information so you can link up the controller with its joystick entry.
 
+----
+
 .. _class_ARVRController_method_get_mesh:
 
 - :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)** const
 
 If provided by the :ref:`ARVRInterface<class_ARVRInterface>`, this returns a mesh associated with the controller. This can be used to visualize the controller.
 
+----
+
 .. _class_ARVRController_method_is_button_pressed:
 
-- :ref:`int<class_int>` **is_button_pressed** **(** :ref:`int<class_int>` button **)** const
+- :ref:`bool<class_bool>` **is_button_pressed** **(** :ref:`int<class_int>` button **)** const
 
-Returns ``true`` if the button at index ``button`` is pressed.
+Returns ``true`` if the button at index ``button`` is pressed. See :ref:`JoystickList<enum_@GlobalScope_JoystickList>`, in particular the ``JOY_VR_*`` constants.
 

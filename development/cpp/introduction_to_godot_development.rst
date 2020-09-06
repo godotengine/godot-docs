@@ -14,7 +14,7 @@ The following diagram describes the architecture used by Godot, from the
 core components down to the abstracted drivers, via the scene
 structure and the servers.
 
-.. image:: /img/architecture_diagram.jpg
+.. image:: img/architecture_diagram.jpg
 
 Debugging the editor with gdb
 -----------------------------
@@ -26,7 +26,7 @@ project. To launch a project directly, you need to run the editor by
 passing the ``-e`` argument to Godot Engine's binary from within your
 project's folder. Typically:
 
-.. code:: bash
+.. code-block:: none
 
     $ cd ~/myproject
     $ gdb godot
@@ -34,7 +34,7 @@ project's folder. Typically:
 
 Or:
 
-.. code:: bash
+.. code-block:: none
 
     $ gdb godot
     > run -e --path ~/myproject

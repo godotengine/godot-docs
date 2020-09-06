@@ -6,12 +6,12 @@ Using KinematicBody2D
 Introduction
 ------------
 
-Godot offers a number of collision objects to provide both collision detection
+Godot offers several collision objects to provide both collision detection
 and response. Trying to decide which one to use for your project can be confusing.
 You can avoid problems and simplify development if you understand how each of them
 works and what their pros and cons are. In this tutorial, we'll look at the
 :ref:`KinematicBody2D <class_KinematicBody2D>` node and show some examples
-of how it can be used.
+of how to use it.
 
 .. note:: This document assumes you're familiar with Godot's various physics
           bodies. Please read :ref:`doc_physics_introduction` first.
@@ -19,8 +19,8 @@ of how it can be used.
 What is a kinematic body?
 -------------------------
 
-``KinematicBody2D`` is for implementing bodies that are to be controlled via code.
-They detect collisions with other bodies when moving, but are not affected by
+``KinematicBody2D`` is for implementing bodies that are controlled via code.
+Kinematic bodies detect collisions with other bodies when moving, but are not affected by
 engine physics properties, like gravity or friction. While this means that you
 have to write some code to create their behavior, it also means you have more
 precise control over how they move and react.
@@ -34,11 +34,11 @@ Movement and collision
 
 When moving a ``KinematicBody2D``, you should not set its ``position`` property
 directly. Instead, you use the ``move_and_collide()`` or ``move_and_slide()`` methods.
-These methods move the body along a given vector and will instantly stop if
+These methods move the body along a given vector and instantly stop if
 a collision is detected with another body. After a KinematicBody2D has collided,
 any *collision response* must be coded manually.
 
-.. warning:: Kinematic body movement should only be done in the ``_physics_process()`` callback.
+.. warning:: You should only do Kinematic body movement in the ``_physics_process()`` callback.
 
 The two movement methods serve different purposes, and later in this tutorial, you'll
 see examples of how they work.
@@ -61,7 +61,7 @@ response.
 
 The ``move_and_slide()`` method is intended to simplify the collision
 response in the common case where you want one body to slide along the other.
-This is especially useful in platformers or top-down games, for example.
+It is especially useful in platformers or top-down games, for example.
 
 .. tip:: ``move_and_slide()`` automatically calculates frame-based movement
          using ``delta``. Do *not* multiply your velocity vector by ``delta``
@@ -70,26 +70,31 @@ This is especially useful in platformers or top-down games, for example.
 In addition to the velocity vector, ``move_and_slide()`` takes a number of
 other parameters allowing you to customize the slide behavior:
 
-- ``floor_normal`` - *default value:* ``Vector2( 0, 0 )``
+- ``up_direction`` - *default value:* ``Vector2( 0, 0 )``
 
     This parameter allows you to define what surfaces the engine should consider
-    to be the floor. Setting this lets you use the ``is_on_floor()``, ``is_on_wall()``,
+    being the floor. Setting this lets you use the ``is_on_floor()``, ``is_on_wall()``,
     and ``is_on_ceiling()`` methods to detect what type of surface the body is
     in contact with. The default value means that all surfaces are considered walls.
 
-- ``slope_stop_min_velocity`` - *default value:* ``5``
+- ``stop_on_slope`` - *default value:* ``false``
 
-    This is the minimum velocity when standing on a slope. This prevents a body
-    from sliding down a slope when standing still.
+    This parameter prevents a body from sliding down slopes when standing still.
 
-- ``max_bounces`` - *default value:* ``4``
+- ``max_slides`` - *default value:* ``4``
 
-    This is the maximum number of collisions before the body stops moving. Setting
-    this too low may prevent movement entirely.
+    This parameter is the maximum number of collisions before the body stops moving. Setting
+    it too low may prevent movement entirely.
 
 - ``floor_max_angle`` - *default value:* ``0.785398`` (in radians, equivalent to ``45`` degrees)
 
-    This is the maximum angle before a surface is no longer considered a "floor".
+    This parameter is the maximum angle before a surface is no longer considered a "floor."
+
+- ``infinite_inertia`` - *default value:* ``true``
+
+When this parameter is ``true``, the body can push :ref:`RigidBody2D <class_RigidBody2D>`
+nodes, ignoring their mass, but won't detect collisions with them. If it's ``false``
+the body will collide with rigid bodies and stop.
 
 ``move_and_slide_with_snap``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -98,14 +103,44 @@ This method adds some additional functionality to ``move_and_slide()`` by adding
 the ``snap`` parameter. As long as this vector is in contact with the ground, the
 body will remain attached to the surface. Note that this means you must disable
 snapping when jumping, for example. You can do this either by setting ``snap``
-to ``Vector2(0, 0)`` or by using ``move_and_slide()`` instead.
+to ``Vector2.ZERO`` or by using ``move_and_slide()`` instead.
+
+
+Detecting collisions
+--------------------
+
+When using ``move_and_collide()`` the function returns a ``KinematicCollision2D``
+directly, and you can use this in your code.
+
+When using ``move_and_slide()`` it's possible to have multiple collisions occur,
+as the slide response is calculated. To process these collisions, use ``get_slide_count()``
+and ``get_slide_collision()``:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # Using move_and_collide.
+    var collision = move_and_collide(velocity * delta)
+    if collision:
+        print("I collided with ", collision.collider.name)
+
+    # Using move_and_slide.
+    velocity = move_and_slide(velocity)
+    for i in get_slide_count():
+        var collision = get_slide_collision(i)
+        print("I collided with ", collision.collider.name)
+
+.. note:: `get_slide_count()` only counts times the body has collided and changed direction.      
+
+See :ref:`KinematicCollision2D <class_KinematicCollision2D>` for details on what
+collision data is returned.
 
 Which movement method to use?
 -----------------------------
 
 A common question from new Godot users is: "How do you decide which movement
 function to use?" Often, the response is to use ``move_and_slide()`` because
-it's "simpler", but this is not necessarily the case. One way to think of it
+it's "simpler," but this is not necessarily the case. One way to think of it
 is that ``move_and_slide()`` is a special case, and ``move_and_collide()``
 is more general. For example, the following two code snippets result in
 the same collision response:
@@ -137,6 +172,21 @@ the same collision response:
 Anything you do with ``move_and_slide()`` can also be done with ``move_and_collide()``,
 but it might take a little more code. However, as we'll see in the examples below,
 there are cases where ``move_and_slide()`` doesn't provide the response you want.
+
+In the example above, we assign the velocity that ``move_and_slide()`` returns
+back into the ``velocity`` variable. This is because when the character collides
+with the environment, the function recalculates the speed internally to reflect
+the slowdown.
+
+For example, if your character fell on the floor, you don't want it to
+accumulate vertical speed due to the effect of gravity. Instead, you want its
+vertical speed to reset to zero.
+
+``move_and_slide()`` may also recalculate the kinematic body's velocity several
+times in a loop as, to produce a smooth motion, it moves the character and
+collides up to five times by default. At the end of the process, the function
+returns the character's new velocity that we can store in our ``velocity``
+variable, and use on the next frame.
 
 Examples
 --------
@@ -304,11 +354,11 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
             _velocity = new Vector2();
             if (Input.IsActionPressed("backward"))
             {
-                _velocity = new Vector2(-speed/3, 0).Rotated(Rotation);
+                _velocity = new Vector2(-Speed/3, 0).Rotated(Rotation);
             }
             if (Input.IsActionPressed("forward"))
             {
-                _velocity = new Vector2(speed, 0).Rotated(Rotation);
+                _velocity = new Vector2(Speed, 0).Rotated(Rotation);
             }
             if (Input.IsActionPressed("mouse_click"))
             {
@@ -382,13 +432,13 @@ And the code for the Bullet:
 
         public override void _PhysicsProcess(float delta)
         {
-            var collsion = MoveAndCollide(_velocity * delta);
-            if (collsion != null)
+            var collision = MoveAndCollide(_velocity * delta);
+            if (collision != null)
             {
-                _velocity = _velocity.Bounce(collsion.Normal);
-                if (collsion.Collider.HasMethod("Hit"))
+                _velocity = _velocity.Bounce(collision.Normal);
+                if (collision.Collider.HasMethod("Hit"))
                 {
-                    collsion.Collider.Hit();
+                    collision.Collider.Call("Hit");
                 }
             }
         }
@@ -507,17 +557,17 @@ Here's the code for the player body:
 
 When using ``move_and_slide()``, the function returns a vector representing the
 movement that remained after the slide collision occurred. Setting that value back
-to the character's ``velocity`` allows us to smoothly move up and down slopes. Try
+to the character's ``velocity`` allows us to move up and down slopes smoothly. Try
 removing ``velocity =`` and see what happens if you don't do this.
 
-Also note that we've added ``Vector2(0, -1)`` as the floor normal. This is a vector
-pointing straight upward. This means that if the character collides with an object
+Also note that we've added ``Vector2(0, -1)`` as the floor normal. This vector points
+straight upward. As a result, if the character collides with an object
 that has this normal, it will be considered a floor.
 
-Using the floor normal allows us to make jumping work, using ``is_on_floor()``. This
-function will only return ``true`` after a ``move_and_slide()`` collision where the
-colliding body's normal is within 45 degrees of the given floor vector (this can
-be adjusted by setting ``floor_max_angle``).
+Using the floor normal allows us to make jumping work, using ``is_on_floor()``.
+This function will only return ``true`` after a ``move_and_slide()`` collision
+where the colliding body's normal is within 45 degrees of the given floor
+vector. You can control the maximum angle by setting ``floor_max_angle``.
 
-This also allows you to implement other features (like wall jumps) using ``is_on_wall()``,
-for example.
+This angle also allows you to implement other features like wall jumps using
+``is_on_wall()``, for example.

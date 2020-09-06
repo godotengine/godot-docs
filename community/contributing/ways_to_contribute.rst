@@ -39,9 +39,9 @@ positive to the engine, regardless of their skill set:
 
 -  **Donate.** Godot is a non-profit project, but it can still benefit from
    user donations for many things. Apart from usual expenses such as hosting
-   costs or promotion material on events, we also use donation money to
+   costs or promotional material on events, we also use donation money to
    acquire hardware when necessary (e.g. we used donation money to buy a
-   Macbook Pro to implement Retina/HiDPI support and various other
+   MacBook Pro to implement Retina/HiDPI support and various other
    macOS-related features).
    Most importantly, we also used donation money to hire core developers so they
    can work full-time on the engine. Even with a low
@@ -63,7 +63,7 @@ As such, everyone is entitled to modify
 modifications back to the upstream project in the form of a patch (a text file
 describing the changes in a ready-to-apply manner) or - in the modern workflow
 that we use - via a so-called "pull request" (PR), i.e. a proposal to directly
-merge one or more git commits (patches) into the main development branch.
+merge one or more Git commits (patches) into the main development branch.
 
 Contributing code changes upstream has two big advantages:
 
@@ -77,12 +77,12 @@ Contributing code changes upstream has two big advantages:
 
 -  The whole community will benefit from your work, and other contributors will
    behave the same way, contributing code that will be beneficial to you. At
-   the time of this writing, more than 300 developers have contributed code
+   the time of this writing, more than 1000 developers have contributed code
    changes to the engine!
 
 To ensure good collaboration and overall quality, the Godot developers
 enforce some rules for code contributions, for example regarding the style to
-use in the C++ code (indentation, brackets, etc.) or the git and PR workflow.
+use in the C++ code (indentation, brackets, etc.) or the Git and PR workflow.
 
 A good place to start is by searching for issues tagged as `junior jobs <https://github.com/godotengine/godot/issues?q=is%3Aissue+is%3Aopen+label%3A%22junior+job%22>`_ (or `Hacktoberfest <https://github.com/godotengine/godot/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3AHacktoberfest+>`_ during October) on GitHub.
 
@@ -181,7 +181,7 @@ There are two separate resources referred to as "documentation" in Godot:
    consulted offline, directly in Godot's code editor, or online at
    :ref:`Godot API <toc-class-ref>`.
    To contribute to the class reference, you have to edit the
-   `doc/base/classes.xml` in Godot's git repository, and make a pull request.
+   `doc/base/classes.xml` in Godot's Git repository, and make a pull request.
    See :ref:`doc_updating_the_class_reference` for more details.
 
 -  **The tutorials and engine documentation and its translations.** This is the part you are reading
@@ -190,3 +190,12 @@ There are two separate resources referred to as "documentation" in Godot:
    to which you can contribute via pull requests on the
    `godot-docs <https://github.com/godotengine/godot-docs>`_ GitHub repository.
    See :ref:`doc_documentation_guidelines` for more details.
+
+Contributing translations
+-------------------------
+
+To make Godot accessible to everyone, including users who may prefer resources
+in their native language instead of English, our community helps translate both
+the Godot editor and its documentation in many languages.
+
+See :ref:`doc_editor_and_docs_localization` for more details.

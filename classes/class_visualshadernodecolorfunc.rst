@@ -11,19 +11,19 @@ VisualShaderNodeColorFunc
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+A :ref:`Color<class_Color>` function to be used within the visual shader graph.
 
-Brief Description
------------------
+Description
+-----------
 
-
+Accept a :ref:`Color<class_Color>` to the input port and transform it according to :ref:`function<class_VisualShaderNodeColorFunc_property_function>`.
 
 Properties
 ----------
 
-+----------------------------------------------------------+--------------------------------------------------------------------+---+
-| :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` | :ref:`function<class_VisualShaderNodeColorFunc_property_function>` | 0 |
-+----------------------------------------------------------+--------------------------------------------------------------------+---+
++----------------------------------------------------------+--------------------------------------------------------------------+-------+
+| :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` | :ref:`function<class_VisualShaderNodeColorFunc_property_function>` | ``0`` |
++----------------------------------------------------------+--------------------------------------------------------------------+-------+
 
 Enumerations
 ------------
@@ -36,9 +36,25 @@ Enumerations
 
 enum **Function**:
 
-- **FUNC_GRAYSCALE** = **0**
+- **FUNC_GRAYSCALE** = **0** --- Converts the color to grayscale using the following formula:
 
-- **FUNC_SEPIA** = **1**
+::
+
+    vec3 c = input;
+    float max1 = max(c.r, c.g);
+    float max2 = max(max1, c.b);
+    float max3 = max(max1, max2);
+    return vec3(max3, max3, max3);
+
+- **FUNC_SEPIA** = **1** --- Applies sepia tone effect using the following formula:
+
+::
+
+    vec3 c = input;
+    float r = (c.r * 0.393) + (c.g * 0.769) + (c.b * 0.189);
+    float g = (c.r * 0.349) + (c.g * 0.686) + (c.b * 0.168);
+    float b = (c.r * 0.272) + (c.g * 0.534) + (c.b * 0.131);
+    return vec3(r, g, b);
 
 Property Descriptions
 ---------------------
@@ -48,10 +64,12 @@ Property Descriptions
 - :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` **function**
 
 +-----------+---------------------+
-| *Default* | 0                   |
+| *Default* | ``0``               |
 +-----------+---------------------+
 | *Setter*  | set_function(value) |
 +-----------+---------------------+
 | *Getter*  | get_function()      |
 +-----------+---------------------+
+
+A function to be applied to the input color. See :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` for options.
 

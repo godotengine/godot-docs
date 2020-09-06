@@ -6,8 +6,8 @@ CanvasItem shaders
 CanvasItem shaders are used to draw all 2D elements in Godot. These include
 all nodes that inherit from CanvasItems, and all GUI elements.
 
-CanvasItem shaders contain less built-in variables and functionality than Spatial 
-shaders, but they maintain the same basic structure with vertex, fragment, and 
+CanvasItem shaders contain less built-in variables and functionality than Spatial
+shaders, but they maintain the same basic structure with vertex, fragment, and
 light processor functions.
 
 Render modes
@@ -35,18 +35,33 @@ Render modes
 | **skip_vertex_transform**       | VERTEX/NORMAL/etc need to be transformed manually in vertex function.|
 +---------------------------------+----------------------------------------------------------------------+
 
-Vertex built-ins
+Built-ins
+^^^^^^^^^
+
+Values marked as "in" are read-only. Values marked as "out" are for optional writing and will
+not necessarily contain sensible values. Values marked as "inout" provide a sensible default
+value, and can optionally be written to. Samplers are not subjects of writing and they are
+not marked.
+
+Global built-ins
 ^^^^^^^^^^^^^^^^
 
-Values marked as "in" are read-only. Values marked as "out" are for optional writing and will 
-not necessarily contain sensible values. Values marked as "inout" provide a sensible default 
-value, and can optionally be written to. Samplers are not subjects of writing and they are 
-not marked.
+Global built-ins are available everywhere, including custom functions.
+
++-------------------+-----------------------------------------------------------------------------+
+| Built-in          | Description                                                                 |
++===================+=============================================================================+
+| in float **TIME** | Global time, in seconds.                                                    |
+|                   | It's subject to the rollover setting (which is 3,600 -1 hour- by default).  |
++-------------------+-----------------------------------------------------------------------------+
+
+Vertex built-ins
+^^^^^^^^^^^^^^^^
 
 Vertex data (``VERTEX``) is presented in local space (pixel coordinates, relative to the camera).
 If not written to, these values will not be modified and be passed through as they came.
 
-The user can disable the built-in modelview transform (projection will still happen later) and do 
+The user can disable the built-in modelview transform (projection will still happen later) and do
 it manually with the following code:
 
 .. code-block:: glsl
@@ -65,22 +80,22 @@ it manually with the following code:
 In order to get the world space coordinates of a vertex, you have to pass in a custom uniform like so:
 
 ::
-  
+
     material.set_shader_param("global_transform", get_global_transform())
 
 
 Then, in your vertex shader:
 
-.. code-block:: glsl 
-  
+.. code-block:: glsl
+
     uniform mat4 global_transform;
     varying vec2 world_position;
-  
+
     void vertex(){
         world_position = (global_transform * vec4(VERTEX, 0.0, 1.0)).xy;
     }
 
-``world_position`` can then be used in either the vertex or fragment functions. 
+``world_position`` can then be used in either the vertex or fragment functions.
 
 Other built-ins, such as UV and COLOR, are also passed through to the fragment function if not modified.
 
@@ -100,11 +115,9 @@ is usually:
 +--------------------------------+----------------------------------------------------------------+
 | in mat4 **PROJECTION_MATRIX**  | View space to clip space transform.                            |
 +--------------------------------+----------------------------------------------------------------+
-| in float **TIME**              | Global time, in seconds.                                       |
-+--------------------------------+----------------------------------------------------------------+
 | in vec4 **INSTANCE_CUSTOM**    | Instance custom data.                                          |
 +--------------------------------+----------------------------------------------------------------+
-| in bool **AT_LIGHT_PASS**      | True if this is a light pass.                                  |
+| in bool **AT_LIGHT_PASS**      | ``true`` if this is a light pass.                              |
 +--------------------------------+----------------------------------------------------------------+
 | inout vec2 **VERTEX**          | Vertex, in image space.                                        |
 +--------------------------------+----------------------------------------------------------------+
@@ -112,7 +125,7 @@ is usually:
 |                                | For a Sprite with a texture of size 64x32px,                   |
 |                                | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)`              |
 +--------------------------------+----------------------------------------------------------------+
-| inout vec2 **UV**              | UV.                                                            |
+| inout vec2 **UV**              | Texture coordinates.                                           |
 +--------------------------------+----------------------------------------------------------------+
 | inout vec4 **COLOR**           | Color from vertex primitive.                                   |
 +--------------------------------+----------------------------------------------------------------+
@@ -122,16 +135,16 @@ is usually:
 Fragment built-ins
 ^^^^^^^^^^^^^^^^^^
 
-Certain Nodes (for example, :ref:`Sprites <class_Sprite>`) display a texture by default. However, 
-when a custom fragment function is attached to these nodes, the texture lookup needs to be done 
-manually. Godot does not provide the texture color in the ``COLOR`` built-in variable; to read 
+Certain Nodes (for example, :ref:`Sprites <class_Sprite>`) display a texture by default. However,
+when a custom fragment function is attached to these nodes, the texture lookup needs to be done
+manually. Godot does not provide the texture color in the ``COLOR`` built-in variable; to read
 the texture color for such nodes, use:
 
 .. code-block:: glsl
 
   COLOR = texture(TEXTURE, UV);
 
-This differs from the behaviour of the built-in normal map. If a normal map is attached, Godot uses
+This differs from the behavior of the built-in normal map. If a normal map is attached, Godot uses
 it by default and assigns its value to the built-in ``NORMAL`` variable. If you are using a normal
 map meant for use in 3D, it will appear inverted. In order to use it in your shader, you must assign
 it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D and overwriting ``NORMAL``.
@@ -150,7 +163,7 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 | inout vec3 **NORMAL**            | Normal read from **NORMAL_TEXTURE**. Writable.                 |
 +----------------------------------+----------------------------------------------------------------+
 | out vec3 **NORMALMAP**           | Configures normal maps meant for 3D for use in 2D. If used,    |
-|                                  | overwrites **NORMAL**.                                         | 
+|                                  | overwrites **NORMAL**.                                         |
 +----------------------------------+----------------------------------------------------------------+
 | inout float **NORMALMAP_DEPTH**  | Normalmap depth for scaling.                                   |
 +----------------------------------+----------------------------------------------------------------+
@@ -173,9 +186,7 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 +----------------------------------+----------------------------------------------------------------+
 | in vec2 **POINT_COORD**          | Coordinate for drawing points.                                 |
 +----------------------------------+----------------------------------------------------------------+
-| in float **TIME**                | Global time in seconds.                                        |
-+----------------------------------+----------------------------------------------------------------+
-| in bool **AT_LIGHT_PASS**        | True if this is a light pass.                                  |
+| in bool **AT_LIGHT_PASS**        | ``true`` if this is a light pass.                              |
 +----------------------------------+----------------------------------------------------------------+
 | in sampler2D **SCREEN_TEXTURE**  | Screen texture, mipmaps contain gaussian blurred versions.     |
 +----------------------------------+----------------------------------------------------------------+
@@ -183,11 +194,11 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 Light built-ins
 ^^^^^^^^^^^^^^^
 
-Light processor functions work differently in 2D than they do in 3D. In CanvasItem shaders, the 
-shader is called once for the object being drawn, and then once for each light touching that 
+Light processor functions work differently in 2D than they do in 3D. In CanvasItem shaders, the
+shader is called once for the object being drawn, and then once for each light touching that
 object in the scene. Use render_mode ``unshaded`` if you do not want any light passes to occur
 for that object. Use render_mode ``light_only`` if you only want light passes to occur for
-that object; this can be useful when you only want the object visible where it is covered by light. 
+that object; this can be useful when you only want the object visible where it is covered by light.
 
 When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``true``.
 
@@ -216,9 +227,11 @@ When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``tru
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in vec2 **POINT_COORD**             | UV for Point Sprite.                                                          |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| in float **TIME**                   | Global time in seconds.                                                       |
+| inout vec2 **LIGHT_VEC**            | Vector from light to fragment in local coordinates. It can be modified to     |
+|                                     | alter illumination direction when normal maps are used.                       |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| inout vec2 **LIGHT_VEC**            | Vector from light to fragment, can be modified to alter shadow computation.   |
+| inout vec2 **SHADOW_VEC**           | Vector from light to fragment in local coordinates. It can be modified to     |
+|                                     | alter shadow computation.                                                     |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | inout float **LIGHT_HEIGHT**        | Height of Light. Only effective when normals are used.                        |
 +-------------------------------------+-------------------------------------------------------------------------------+

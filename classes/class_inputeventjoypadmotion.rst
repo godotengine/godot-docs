@@ -11,21 +11,7 @@ InputEventJoypadMotion
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Input event type for gamepad joysticks and other motions. For buttons, see ``InputEventJoypadButton``.
-
-Properties
-----------
-
-+---------------------------+---------------------------------------------------------------------+-----+
-| :ref:`int<class_int>`     | :ref:`axis<class_InputEventJoypadMotion_property_axis>`             | 0   |
-+---------------------------+---------------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`axis_value<class_InputEventJoypadMotion_property_axis_value>` | 0.0 |
-+---------------------------+---------------------------------------------------------------------+-----+
 
 Description
 -----------
@@ -37,6 +23,15 @@ Tutorials
 
 - :doc:`../tutorials/inputs/inputevent`
 
+Properties
+----------
+
++---------------------------+---------------------------------------------------------------------+---------+
+| :ref:`int<class_int>`     | :ref:`axis<class_InputEventJoypadMotion_property_axis>`             | ``0``   |
++---------------------------+---------------------------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`axis_value<class_InputEventJoypadMotion_property_axis_value>` | ``0.0`` |
++---------------------------+---------------------------------------------------------------------+---------+
+
 Property Descriptions
 ---------------------
 
@@ -45,7 +40,7 @@ Property Descriptions
 - :ref:`int<class_int>` **axis**
 
 +-----------+-----------------+
-| *Default* | 0               |
+| *Default* | ``0``           |
 +-----------+-----------------+
 | *Setter*  | set_axis(value) |
 +-----------+-----------------+
@@ -54,12 +49,14 @@ Property Descriptions
 
 Axis identifier. Use one of the :ref:`JoystickList<enum_@GlobalScope_JoystickList>` axis constants.
 
+----
+
 .. _class_InputEventJoypadMotion_property_axis_value:
 
 - :ref:`float<class_float>` **axis_value**
 
 +-----------+-----------------------+
-| *Default* | 0.0                   |
+| *Default* | ``0.0``               |
 +-----------+-----------------------+
 | *Setter*  | set_axis_value(value) |
 +-----------+-----------------------+

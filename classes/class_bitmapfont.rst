@@ -11,25 +11,27 @@ BitmapFont
 
 **Inherits:** :ref:`Font<class_Font>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+Renders text using fonts under the `BMFont <https://www.angelcode.com/products/bmfont/>`_ format.
 
-Brief Description
------------------
+Handles files with the ``.fnt`` extension.
 
-Renders text using ``*.fnt`` fonts.
+Description
+-----------
+
+Renders text using ``*.fnt`` fonts containing texture atlases. Supports distance fields. For using vector font files like TTF directly, see :ref:`DynamicFont<class_DynamicFont>`.
 
 Properties
 ----------
 
-+-------------------------------------+-----------------------------------------------------------------+-------+
-| :ref:`float<class_float>`           | :ref:`ascent<class_BitmapFont_property_ascent>`                 | 0.0   |
-+-------------------------------------+-----------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`             | :ref:`distance_field<class_BitmapFont_property_distance_field>` | false |
-+-------------------------------------+-----------------------------------------------------------------+-------+
-| :ref:`BitmapFont<class_BitmapFont>` | :ref:`fallback<class_BitmapFont_property_fallback>`             |       |
-+-------------------------------------+-----------------------------------------------------------------+-------+
-| :ref:`float<class_float>`           | :ref:`height<class_BitmapFont_property_height>`                 | 1.0   |
-+-------------------------------------+-----------------------------------------------------------------+-------+
++-------------------------------------+-----------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`           | :ref:`ascent<class_BitmapFont_property_ascent>`                 | ``0.0``   |
++-------------------------------------+-----------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`             | :ref:`distance_field<class_BitmapFont_property_distance_field>` | ``false`` |
++-------------------------------------+-----------------------------------------------------------------+-----------+
+| :ref:`BitmapFont<class_BitmapFont>` | :ref:`fallback<class_BitmapFont_property_fallback>`             |           |
++-------------------------------------+-----------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`           | :ref:`height<class_BitmapFont_property_height>`                 | ``1.0``   |
++-------------------------------------+-----------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -39,7 +41,7 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`add_kerning_pair<class_BitmapFont_method_add_kerning_pair>` **(** :ref:`int<class_int>` char_a, :ref:`int<class_int>` char_b, :ref:`int<class_int>` kerning **)**                                                                                 |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`add_texture<class_BitmapFont_method_add_texture>` **(** :ref:`Texture<class_Texture>` texture **)**                                                                                                                                               |
+| void                                  | :ref:`add_texture<class_BitmapFont_method_add_texture>` **(** :ref:`Texture2D<class_Texture2D>` texture **)**                                                                                                                                           |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`clear<class_BitmapFont_method_clear>` **(** **)**                                                                                                                                                                                                 |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -49,15 +51,10 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                 | :ref:`get_kerning_pair<class_BitmapFont_method_get_kerning_pair>` **(** :ref:`int<class_int>` char_a, :ref:`int<class_int>` char_b **)** const                                                                                                          |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`         | :ref:`get_texture<class_BitmapFont_method_get_texture>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                     |
+| :ref:`Texture2D<class_Texture2D>`     | :ref:`get_texture<class_BitmapFont_method_get_texture>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                     |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                 | :ref:`get_texture_count<class_BitmapFont_method_get_texture_count>` **(** **)** const                                                                                                                                                                   |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Renders text using ``*.fnt`` fonts containing texture atlases. Supports distance fields. For using vector font files like TTF directly, see :ref:`DynamicFont<class_DynamicFont>`.
 
 Property Descriptions
 ---------------------
@@ -67,7 +64,7 @@ Property Descriptions
 - :ref:`float<class_float>` **ascent**
 
 +-----------+-------------------+
-| *Default* | 0.0               |
+| *Default* | ``0.0``           |
 +-----------+-------------------+
 | *Setter*  | set_ascent(value) |
 +-----------+-------------------+
@@ -76,12 +73,14 @@ Property Descriptions
 
 Ascent (number of pixels above the baseline).
 
+----
+
 .. _class_BitmapFont_property_distance_field:
 
 - :ref:`bool<class_bool>` **distance_field**
 
 +-----------+--------------------------------+
-| *Default* | false                          |
+| *Default* | ``false``                      |
 +-----------+--------------------------------+
 | *Setter*  | set_distance_field_hint(value) |
 +-----------+--------------------------------+
@@ -89,6 +88,8 @@ Ascent (number of pixels above the baseline).
 +-----------+--------------------------------+
 
 If ``true``, distance field hint is enabled.
+
+----
 
 .. _class_BitmapFont_property_fallback:
 
@@ -102,12 +103,14 @@ If ``true``, distance field hint is enabled.
 
 The fallback font.
 
+----
+
 .. _class_BitmapFont_property_height:
 
 - :ref:`float<class_float>` **height**
 
 +-----------+-------------------+
-| *Default* | 1.0               |
+| *Default* | ``1.0``           |
 +-----------+-------------------+
 | *Setter*  | set_height(value) |
 +-----------+-------------------+
@@ -125,17 +128,23 @@ Method Descriptions
 
 Adds a character to the font, where ``character`` is the Unicode value, ``texture`` is the texture index, ``rect`` is the region in the texture (in pixels!), ``align`` is the (optional) alignment for the character and ``advance`` is the (optional) advance.
 
+----
+
 .. _class_BitmapFont_method_add_kerning_pair:
 
 - void **add_kerning_pair** **(** :ref:`int<class_int>` char_a, :ref:`int<class_int>` char_b, :ref:`int<class_int>` kerning **)**
 
 Adds a kerning pair to the ``BitmapFont`` as a difference. Kerning pairs are special cases where a typeface advance is determined by the next character.
 
+----
+
 .. _class_BitmapFont_method_add_texture:
 
-- void **add_texture** **(** :ref:`Texture<class_Texture>` texture **)**
+- void **add_texture** **(** :ref:`Texture2D<class_Texture2D>` texture **)**
 
 Adds a texture to the ``BitmapFont``.
+
+----
 
 .. _class_BitmapFont_method_clear:
 
@@ -143,11 +152,15 @@ Adds a texture to the ``BitmapFont``.
 
 Clears all the font data and settings.
 
+----
+
 .. _class_BitmapFont_method_create_from_fnt:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **create_from_fnt** **(** :ref:`String<class_String>` path **)**
 
 Creates a BitmapFont from the ``*.fnt`` file at ``path``.
+
+----
 
 .. _class_BitmapFont_method_get_char_size:
 
@@ -155,17 +168,23 @@ Creates a BitmapFont from the ``*.fnt`` file at ``path``.
 
 Returns the size of a character, optionally taking kerning into account if the next character is provided.
 
+----
+
 .. _class_BitmapFont_method_get_kerning_pair:
 
 - :ref:`int<class_int>` **get_kerning_pair** **(** :ref:`int<class_int>` char_a, :ref:`int<class_int>` char_b **)** const
 
 Returns a kerning pair as a difference.
 
+----
+
 .. _class_BitmapFont_method_get_texture:
 
-- :ref:`Texture<class_Texture>` **get_texture** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the font atlas texture at index ``idx``.
+
+----
 
 .. _class_BitmapFont_method_get_texture_count:
 

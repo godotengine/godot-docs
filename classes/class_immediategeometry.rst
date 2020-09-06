@@ -11,12 +11,12 @@ ImmediateGeometry
 
 **Inherits:** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Draws simple geometry from code.
+
+Description
+-----------
+
+Draws simple geometry from code. Uses a drawing mode similar to OpenGL 1.x.
 
 Methods
 -------
@@ -26,7 +26,7 @@ Methods
 +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`add_vertex<class_ImmediateGeometry_method_add_vertex>` **(** :ref:`Vector3<class_Vector3>` position **)**                                                                                        |
 +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`begin<class_ImmediateGeometry_method_begin>` **(** :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` primitive, :ref:`Texture<class_Texture>` texture=null **)**                                     |
+| void | :ref:`begin<class_ImmediateGeometry_method_begin>` **(** :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` primitive, :ref:`Texture2D<class_Texture2D>` texture=null **)**                                 |
 +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`clear<class_ImmediateGeometry_method_clear>` **(** **)**                                                                                                                                         |
 +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -43,11 +43,6 @@ Methods
 | void | :ref:`set_uv2<class_ImmediateGeometry_method_set_uv2>` **(** :ref:`Vector2<class_Vector2>` uv **)**                                                                                                    |
 +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-Draws simple geometry from code. Uses a drawing mode similar to OpenGL 1.x.
-
 Method Descriptions
 -------------------
 
@@ -57,19 +52,25 @@ Method Descriptions
 
 Simple helper to draw an UV sphere with given latitude, longitude and radius.
 
+----
+
 .. _class_ImmediateGeometry_method_add_vertex:
 
 - void **add_vertex** **(** :ref:`Vector3<class_Vector3>` position **)**
 
-Adds a vertex with the currently set color/uv/etc.
+Adds a vertex in local coordinate space with the currently set color/uv/etc.
+
+----
 
 .. _class_ImmediateGeometry_method_begin:
 
-- void **begin** **(** :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` primitive, :ref:`Texture<class_Texture>` texture=null **)**
+- void **begin** **(** :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` primitive, :ref:`Texture2D<class_Texture2D>` texture=null **)**
 
-Begin drawing (And optionally pass a texture override). When done call end(). For more information on how this works, search for glBegin() glEnd() references.
+Begin drawing (and optionally pass a texture override). When done call :ref:`end<class_ImmediateGeometry_method_end>`. For more information on how this works, search for ``glBegin()`` and ``glEnd()`` references.
 
-For the type of primitive, use the :ref:`Mesh<class_Mesh>`.``PRIMITIVE_*`` enumerations.
+For the type of primitive, see the :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` enum.
+
+----
 
 .. _class_ImmediateGeometry_method_clear:
 
@@ -77,11 +78,15 @@ For the type of primitive, use the :ref:`Mesh<class_Mesh>`.``PRIMITIVE_*`` enume
 
 Clears everything that was drawn using begin/end.
 
+----
+
 .. _class_ImmediateGeometry_method_end:
 
 - void **end** **(** **)**
 
 Ends a drawing context and displays the results.
+
+----
 
 .. _class_ImmediateGeometry_method_set_color:
 
@@ -89,11 +94,15 @@ Ends a drawing context and displays the results.
 
 The current drawing color.
 
+----
+
 .. _class_ImmediateGeometry_method_set_normal:
 
 - void **set_normal** **(** :ref:`Vector3<class_Vector3>` normal **)**
 
 The next vertex's normal.
+
+----
 
 .. _class_ImmediateGeometry_method_set_tangent:
 
@@ -101,11 +110,15 @@ The next vertex's normal.
 
 The next vertex's tangent (and binormal facing).
 
+----
+
 .. _class_ImmediateGeometry_method_set_uv:
 
 - void **set_uv** **(** :ref:`Vector2<class_Vector2>` uv **)**
 
 The next vertex's UV.
+
+----
 
 .. _class_ImmediateGeometry_method_set_uv2:
 

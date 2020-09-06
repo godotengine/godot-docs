@@ -9,27 +9,36 @@
 Vector3
 =======
 
-**Category:** Built-In Types
+Vector used for 3D math using floating point coordinates.
 
-Brief Description
------------------
+Description
+-----------
 
-Vector used for 3D math.
+3-element structure that can be used to represent positions in 3D space or any other pair of numeric values.
+
+It uses floating point coordinates.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
 
 Properties
 ----------
 
-+---------------------------+------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`x<class_Vector3_property_x>` | 0.0 |
-+---------------------------+------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`y<class_Vector3_property_y>` | 0.0 |
-+---------------------------+------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`z<class_Vector3_property_z>` | 0.0 |
-+---------------------------+------------------------------------+-----+
++---------------------------+------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`x<class_Vector3_property_x>` | ``0.0`` |
++---------------------------+------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`y<class_Vector3_property_y>` | ``0.0`` |
++---------------------------+------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`z<class_Vector3_property_z>` | ``0.0`` |
++---------------------------+------------------------------------+---------+
 
 Methods
 -------
 
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`Vector3<class_Vector3_method_Vector3>` **(** :ref:`Vector3i<class_Vector3i>` from **)**                                                                                                                        |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`Vector3<class_Vector3_method_Vector3>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)**                                                                       |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -56,6 +65,8 @@ Methods
 | :ref:`Vector3<class_Vector3>` | :ref:`floor<class_Vector3_method_floor>` **(** **)**                                                                                                                                                                 |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`inverse<class_Vector3_method_inverse>` **(** **)**                                                                                                                                                             |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Vector3_method_is_equal_approx>` **(** :ref:`Vector3<class_Vector3>` v **)**                                                                                                             |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`is_normalized<class_Vector3_method_is_normalized>` **(** **)**                                                                                                                                                 |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -149,16 +160,6 @@ Constants
 
 - **BACK** = **Vector3( 0, 0, 1 )** --- Back unit vector.
 
-Description
------------
-
-3-element structure that can be used to represent positions in 3D space or any other pair of numeric values.
-
-Tutorials
----------
-
-- :doc:`../tutorials/math/index`
-
 Property Descriptions
 ---------------------
 
@@ -166,29 +167,33 @@ Property Descriptions
 
 - :ref:`float<class_float>` **x**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 The vector's X component. Also accessible by using the index position ``[0]``.
+
+----
 
 .. _class_Vector3_property_y:
 
 - :ref:`float<class_float>` **y**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 The vector's Y component. Also accessible by using the index position ``[1]``.
+
+----
 
 .. _class_Vector3_property_z:
 
 - :ref:`float<class_float>` **z**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 The vector's Z component. Also accessible by using the index position ``[2]``.
 
@@ -197,9 +202,17 @@ Method Descriptions
 
 .. _class_Vector3_method_Vector3:
 
+- :ref:`Vector3<class_Vector3>` **Vector3** **(** :ref:`Vector3i<class_Vector3i>` from **)**
+
+Constructs a new ``Vector3`` from :ref:`Vector3i<class_Vector3i>`.
+
+----
+
 - :ref:`Vector3<class_Vector3>` **Vector3** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)**
 
-Returns a Vector3 with the given components.
+Returns a ``Vector3`` with the given components.
+
+----
 
 .. _class_Vector3_method_abs:
 
@@ -207,11 +220,15 @@ Returns a Vector3 with the given components.
 
 Returns a new vector with all components in absolute values (i.e. positive).
 
+----
+
 .. _class_Vector3_method_angle_to:
 
 - :ref:`float<class_float>` **angle_to** **(** :ref:`Vector3<class_Vector3>` to **)**
 
 Returns the minimum angle to the given vector.
+
+----
 
 .. _class_Vector3_method_bounce:
 
@@ -219,11 +236,15 @@ Returns the minimum angle to the given vector.
 
 Returns the vector "bounced off" from a plane defined by the given normal.
 
+----
+
 .. _class_Vector3_method_ceil:
 
 - :ref:`Vector3<class_Vector3>` **ceil** **(** **)**
 
 Returns a new vector with all components rounded up.
+
+----
 
 .. _class_Vector3_method_cross:
 
@@ -231,11 +252,15 @@ Returns a new vector with all components rounded up.
 
 Returns the cross product with ``b``.
 
+----
+
 .. _class_Vector3_method_cubic_interpolate:
 
 - :ref:`Vector3<class_Vector3>` **cubic_interpolate** **(** :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` pre_a, :ref:`Vector3<class_Vector3>` post_b, :ref:`float<class_float>` t **)**
 
 Performs a cubic interpolation between vectors ``pre_a``, ``a``, ``b``, ``post_b`` (``a`` is current), by the given amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
+
+----
 
 .. _class_Vector3_method_direction_to:
 
@@ -243,11 +268,15 @@ Performs a cubic interpolation between vectors ``pre_a``, ``a``, ``b``, ``post_b
 
 Returns the normalized vector pointing from this vector to ``b``.
 
+----
+
 .. _class_Vector3_method_distance_squared_to:
 
 - :ref:`float<class_float>` **distance_squared_to** **(** :ref:`Vector3<class_Vector3>` b **)**
 
 Returns the squared distance to ``b``. Prefer this function over :ref:`distance_to<class_Vector3_method_distance_to>` if you need to sort vectors or need the squared distance for some formula.
+
+----
 
 .. _class_Vector3_method_distance_to:
 
@@ -255,11 +284,15 @@ Returns the squared distance to ``b``. Prefer this function over :ref:`distance_
 
 Returns the distance to ``b``.
 
+----
+
 .. _class_Vector3_method_dot:
 
 - :ref:`float<class_float>` **dot** **(** :ref:`Vector3<class_Vector3>` b **)**
 
 Returns the dot product with ``b``.
+
+----
 
 .. _class_Vector3_method_floor:
 
@@ -267,11 +300,23 @@ Returns the dot product with ``b``.
 
 Returns a new vector with all components rounded down.
 
+----
+
 .. _class_Vector3_method_inverse:
 
 - :ref:`Vector3<class_Vector3>` **inverse** **(** **)**
 
 Returns the inverse of the vector. This is the same as ``Vector3( 1.0 / v.x, 1.0 / v.y, 1.0 / v.z )``.
+
+----
+
+.. _class_Vector3_method_is_equal_approx:
+
+- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Vector3<class_Vector3>` v **)**
+
+Returns ``true`` if this vector and ``v`` are approximately equal, by running :ref:`@GDScript.is_equal_approx<class_@GDScript_method_is_equal_approx>` on each component.
+
+----
 
 .. _class_Vector3_method_is_normalized:
 
@@ -279,11 +324,15 @@ Returns the inverse of the vector. This is the same as ``Vector3( 1.0 / v.x, 1.0
 
 Returns ``true`` if the vector is normalized.
 
+----
+
 .. _class_Vector3_method_length:
 
 - :ref:`float<class_float>` **length** **(** **)**
 
 Returns the vector's length.
+
+----
 
 .. _class_Vector3_method_length_squared:
 
@@ -291,11 +340,15 @@ Returns the vector's length.
 
 Returns the vector's length squared. Prefer this function over :ref:`length<class_Vector3_method_length>` if you need to sort vectors or need the squared length for some formula.
 
+----
+
 .. _class_Vector3_method_linear_interpolate:
 
 - :ref:`Vector3<class_Vector3>` **linear_interpolate** **(** :ref:`Vector3<class_Vector3>` b, :ref:`float<class_float>` t **)**
 
 Returns the result of the linear interpolation between this vector and ``b`` by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation..
+
+----
 
 .. _class_Vector3_method_max_axis:
 
@@ -303,11 +356,15 @@ Returns the result of the linear interpolation between this vector and ``b`` by 
 
 Returns the axis of the vector's largest value. See ``AXIS_*`` constants.
 
+----
+
 .. _class_Vector3_method_min_axis:
 
 - :ref:`int<class_int>` **min_axis** **(** **)**
 
 Returns the axis of the vector's smallest value. See ``AXIS_*`` constants.
+
+----
 
 .. _class_Vector3_method_move_toward:
 
@@ -315,11 +372,15 @@ Returns the axis of the vector's smallest value. See ``AXIS_*`` constants.
 
 Moves the vector toward ``to`` by the fixed ``delta`` amount.
 
+----
+
 .. _class_Vector3_method_normalized:
 
 - :ref:`Vector3<class_Vector3>` **normalized** **(** **)**
 
 Returns the vector scaled to unit length. Equivalent to ``v / v.length()``.
+
+----
 
 .. _class_Vector3_method_outer:
 
@@ -327,11 +388,15 @@ Returns the vector scaled to unit length. Equivalent to ``v / v.length()``.
 
 Returns the outer product with ``b``.
 
+----
+
 .. _class_Vector3_method_posmod:
 
 - :ref:`Vector3<class_Vector3>` **posmod** **(** :ref:`float<class_float>` mod **)**
 
 Returns a vector composed of the ``fposmod`` of this vector's components and ``mod``.
+
+----
 
 .. _class_Vector3_method_posmodv:
 
@@ -339,11 +404,15 @@ Returns a vector composed of the ``fposmod`` of this vector's components and ``m
 
 Returns a vector composed of the ``fposmod`` of this vector's components and ``modv``'s components.
 
+----
+
 .. _class_Vector3_method_project:
 
 - :ref:`Vector3<class_Vector3>` **project** **(** :ref:`Vector3<class_Vector3>` b **)**
 
 Returns the vector projected onto the vector ``b``.
+
+----
 
 .. _class_Vector3_method_reflect:
 
@@ -351,11 +420,15 @@ Returns the vector projected onto the vector ``b``.
 
 Returns the vector reflected from a plane defined by the given normal.
 
+----
+
 .. _class_Vector3_method_rotated:
 
 - :ref:`Vector3<class_Vector3>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**
 
 Rotates the vector around a given axis by ``phi`` radians. The axis must be a normalized vector.
+
+----
 
 .. _class_Vector3_method_round:
 
@@ -363,11 +436,15 @@ Rotates the vector around a given axis by ``phi`` radians. The axis must be a no
 
 Returns the vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
 
+----
+
 .. _class_Vector3_method_sign:
 
 - :ref:`Vector3<class_Vector3>` **sign** **(** **)**
 
 Returns the vector with each component set to one or negative one, depending on the signs of the components.
+
+----
 
 .. _class_Vector3_method_slerp:
 
@@ -377,17 +454,23 @@ Returns the result of spherical linear interpolation between this vector and ``b
 
 **Note:** Both vectors must be normalized.
 
+----
+
 .. _class_Vector3_method_slide:
 
 - :ref:`Vector3<class_Vector3>` **slide** **(** :ref:`Vector3<class_Vector3>` n **)**
 
 Returns the component of the vector along a plane defined by the given normal.
 
+----
+
 .. _class_Vector3_method_snapped:
 
 - :ref:`Vector3<class_Vector3>` **snapped** **(** :ref:`Vector3<class_Vector3>` by **)**
 
 Returns a copy of the vector snapped to the lowest neared multiple.
+
+----
 
 .. _class_Vector3_method_to_diagonal_matrix:
 

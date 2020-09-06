@@ -67,12 +67,6 @@ In GLSL, each shader program looks like a self-contained C-style program. Accord
 is ``main``. If you are copying a vertex shader, rename ``main`` to ``vertex`` and if you are copying a
 fragment shader, rename ``main`` to ``fragment``.
 
-Constants
-^^^^^^^^^
-
-Godot currently does not support constants. You can fake the functionality by using a uniform initialized
-to the value, but you will not benefit from the increased speed from using a constant.
-
 Macros
 ^^^^^^
 
@@ -123,7 +117,7 @@ more information, see the :ref:`Shading Language <doc_shading_language>` referen
 Shadertoy
 ---------
 
-`Shadertoy <https://www.shadertoy.com>`_ is a website that makes it easy to write fragment shaders and
+`Shadertoy <https://www.shadertoy.com/results?query=&sort=popular&from=10&num=4>`_ is a website that makes it easy to write fragment shaders and
 create `pure magic <https://www.shadertoy.com/view/4tjGRh>`_.
 
 Shadertoy does not give the user full control over the shader. It handles all
@@ -133,7 +127,7 @@ Types
 ^^^^^
 
 Shadertoy uses the webgl spec, so it runs a slightly different version of GLSL. However, it still
-has the regular types, including `Constants`_ and macros.
+has the regular types, including constants and macros.
 
 mainImage
 ^^^^^^^^^
@@ -151,8 +145,8 @@ In order to make writing fragment shaders straightforward and easy, Shadertoy ha
 of helpful information from the main program into the fragment shader for you. A few of these
 have no equivalents in Godot because Godot has chosen not to make them available by default.
 This is okay because Godot gives you the ability to make your own uniforms. For variables whose
-equivalents are listed as "Provide with Uniform", the user is responsible for creating that
-uniform themself. The description gives the reader a hint about what they can pass in as a substitute.
+equivalents are listed as "Provide with Uniform", users are responsible for creating that
+uniform themselves. The description gives the reader a hint about what they can pass in as a substitute.
 
 +---------------------+---------+------------------------+-----------------------------------------------------+
 |Variable             |Type     |Equivalent              |Description                                          |
@@ -200,7 +194,7 @@ Types
 ^^^^^
 
 The Book of Shaders uses the webgl spec, so it runs a slightly different version of GLSL. However, it still
-has the regular types, including `Constants`_ and macros.
+has the regular types, including constants and macros.
 
 Main
 ^^^^

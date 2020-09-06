@@ -11,23 +11,23 @@ Curve
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A mathematic curve.
+
+Description
+-----------
+
+A curve that can be saved and re-used for other objects. By default, it ranges between ``0`` and ``1`` on the Y axis and positions points relative to the ``0.5`` Y position.
 
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------+-----+
-| :ref:`int<class_int>`     | :ref:`bake_resolution<class_Curve_property_bake_resolution>` | 100 |
-+---------------------------+--------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`max_value<class_Curve_property_max_value>`             | 1.0 |
-+---------------------------+--------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`min_value<class_Curve_property_min_value>`             | 0.0 |
-+---------------------------+--------------------------------------------------------------+-----+
++---------------------------+--------------------------------------------------------------+---------+
+| :ref:`int<class_int>`     | :ref:`bake_resolution<class_Curve_property_bake_resolution>` | ``100`` |
++---------------------------+--------------------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`max_value<class_Curve_property_max_value>`             | ``1.0`` |
++---------------------------+--------------------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`min_value<class_Curve_property_min_value>`             | ``0.0`` |
++---------------------------+--------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -100,11 +100,6 @@ enum **TangentMode**:
 
 - **TANGENT_MODE_COUNT** = **2** --- The total number of available tangent modes.
 
-Description
------------
-
-A curve that can be saved and re-used for other objects. By default, it ranges between ``0`` and ``1`` on the Y axis and positions points relative to the ``0.5`` Y position.
-
 Property Descriptions
 ---------------------
 
@@ -113,7 +108,7 @@ Property Descriptions
 - :ref:`int<class_int>` **bake_resolution**
 
 +-----------+----------------------------+
-| *Default* | 100                        |
+| *Default* | ``100``                    |
 +-----------+----------------------------+
 | *Setter*  | set_bake_resolution(value) |
 +-----------+----------------------------+
@@ -122,12 +117,14 @@ Property Descriptions
 
 The number of points to include in the baked (i.e. cached) curve data.
 
+----
+
 .. _class_Curve_property_max_value:
 
 - :ref:`float<class_float>` **max_value**
 
 +-----------+----------------------+
-| *Default* | 1.0                  |
+| *Default* | ``1.0``              |
 +-----------+----------------------+
 | *Setter*  | set_max_value(value) |
 +-----------+----------------------+
@@ -136,12 +133,14 @@ The number of points to include in the baked (i.e. cached) curve data.
 
 The maximum value the curve can reach.
 
+----
+
 .. _class_Curve_property_min_value:
 
 - :ref:`float<class_float>` **min_value**
 
 +-----------+----------------------+
-| *Default* | 0.0                  |
+| *Default* | ``0.0``              |
 +-----------+----------------------+
 | *Setter*  | set_min_value(value) |
 +-----------+----------------------+
@@ -159,11 +158,15 @@ Method Descriptions
 
 Adds a point to the curve. For each side, if the ``*_mode`` is :ref:`TANGENT_LINEAR<class_Curve_constant_TANGENT_LINEAR>`, the ``*_tangent`` angle (in degrees) uses the slope of the curve halfway to the adjacent point. Allows custom assignments to the ``*_tangent`` angle if ``*_mode`` is set to :ref:`TANGENT_FREE<class_Curve_constant_TANGENT_FREE>`.
 
+----
+
 .. _class_Curve_method_bake:
 
 - void **bake** **(** **)**
 
 Recomputes the baked cache of points for the curve.
+
+----
 
 .. _class_Curve_method_clean_dupes:
 
@@ -171,11 +174,15 @@ Recomputes the baked cache of points for the curve.
 
 Removes points that are closer than ``CMP_EPSILON`` (0.00001) units to their neighbor on the curve.
 
+----
+
 .. _class_Curve_method_clear_points:
 
 - void **clear_points** **(** **)**
 
 Removes all points from the curve.
+
+----
 
 .. _class_Curve_method_get_point_count:
 
@@ -183,11 +190,15 @@ Removes all points from the curve.
 
 Returns the number of points describing the curve.
 
+----
+
 .. _class_Curve_method_get_point_left_mode:
 
 - :ref:`TangentMode<enum_Curve_TangentMode>` **get_point_left_mode** **(** :ref:`int<class_int>` index **)** const
 
 Returns the left :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index``.
+
+----
 
 .. _class_Curve_method_get_point_left_tangent:
 
@@ -195,11 +206,15 @@ Returns the left :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``i
 
 Returns the left tangent angle (in degrees) for the point at ``index``.
 
+----
+
 .. _class_Curve_method_get_point_position:
 
 - :ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` index **)** const
 
 Returns the curve coordinates for the point at ``index``.
+
+----
 
 .. _class_Curve_method_get_point_right_mode:
 
@@ -207,11 +222,15 @@ Returns the curve coordinates for the point at ``index``.
 
 Returns the right :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index``.
 
+----
+
 .. _class_Curve_method_get_point_right_tangent:
 
 - :ref:`float<class_float>` **get_point_right_tangent** **(** :ref:`int<class_int>` index **)** const
 
 Returns the right tangent angle (in degrees) for the point at ``index``.
+
+----
 
 .. _class_Curve_method_interpolate:
 
@@ -219,11 +238,15 @@ Returns the right tangent angle (in degrees) for the point at ``index``.
 
 Returns the Y value for the point that would exist at the X position ``offset`` along the curve.
 
+----
+
 .. _class_Curve_method_interpolate_baked:
 
 - :ref:`float<class_float>` **interpolate_baked** **(** :ref:`float<class_float>` offset **)**
 
 Returns the Y value for the point that would exist at the X position ``offset`` along the curve using the baked cache. Bakes the curve's points if not already baked.
+
+----
 
 .. _class_Curve_method_remove_point:
 
@@ -231,11 +254,15 @@ Returns the Y value for the point that would exist at the X position ``offset`` 
 
 Removes the point at ``index`` from the curve.
 
+----
+
 .. _class_Curve_method_set_point_left_mode:
 
 - void **set_point_left_mode** **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_Curve_TangentMode>` mode **)**
 
 Sets the left :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index`` to ``mode``.
+
+----
 
 .. _class_Curve_method_set_point_left_tangent:
 
@@ -243,11 +270,15 @@ Sets the left :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``inde
 
 Sets the left tangent angle for the point at ``index`` to ``tangent``.
 
+----
+
 .. _class_Curve_method_set_point_offset:
 
 - :ref:`int<class_int>` **set_point_offset** **(** :ref:`int<class_int>` index, :ref:`float<class_float>` offset **)**
 
 Sets the offset from ``0.5``.
+
+----
 
 .. _class_Curve_method_set_point_right_mode:
 
@@ -255,11 +286,15 @@ Sets the offset from ``0.5``.
 
 Sets the right :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index`` to ``mode``.
 
+----
+
 .. _class_Curve_method_set_point_right_tangent:
 
 - void **set_point_right_tangent** **(** :ref:`int<class_int>` index, :ref:`float<class_float>` tangent **)**
 
 Sets the right tangent angle for the point at ``index`` to ``tangent``.
+
+----
 
 .. _class_Curve_method_set_point_value:
 

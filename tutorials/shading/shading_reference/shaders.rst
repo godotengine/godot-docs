@@ -26,8 +26,8 @@ reference of the shading language in Godot see the :ref:`Godot shading language 
 Shader types
 ------------
 
-Instead of supplying a general purpose configuration for all uses (2D, 3D, particles), 
-Godot shaders must specify what they are intended for. Different types support different 
+Instead of supplying a general purpose configuration for all uses (2D, 3D, particles),
+Godot shaders must specify what they are intended for. Different types support different
 render modes, built-in variables, and processing functions.
 
 All shaders need to specify their type in the first line, in the following format:
@@ -41,6 +41,7 @@ Valid types are:
 * :ref:`spatial <doc_spatial_shader>`: For 3D rendering.
 * :ref:`canvas_item <doc_canvas_item_shader>`: For 2D rendering.
 * :ref:`particles <doc_particle_shader>`: For particle systems.
+* :ref:`sky <doc_sky_shader>`: For rendering :ref:`Skies <class_Sky>`.
 
 For detailed information on each shading type, see the corresponding reference document.
 
@@ -60,7 +61,7 @@ Render modes are specified underneath the shader type:
     render_mode unshaded, cull_disabled;
 
 Each shader type has a different list of render modes available. See the document for each shader
-type for a complete list of render modes. 
+type for a complete list of render modes.
 
 Processor functions
 -------------------
@@ -72,41 +73,41 @@ For "particles", only ``vertex`` can be overridden.
 Vertex processor
 ^^^^^^^^^^^^^^^^
 
-The ``vertex`` processing function is called once for every vertex in "spatial" and "canvas_item" shaders. 
+The ``vertex`` processing function is called once for every vertex in "spatial" and "canvas_item" shaders.
 For "particles" shaders, it is called once for every particle.
 
-The ``vertex`` function is used to modify per-vertex information that will be passed on to the fragment 
-function. It can also be used to establish variables that will be sent to the fragment function by using 
+The ``vertex`` function is used to modify per-vertex information that will be passed on to the fragment
+function. It can also be used to establish variables that will be sent to the fragment function by using
 varyings(see other doc).
 
 By default, Godot will take your vertex information and transform it accordingly to be drawn. If this is
-undesirable, you can use render modes to transform the data yourself; see the 
+undesirable, you can use render modes to transform the data yourself; see the
 :ref:`Spatial shader doc <doc_spatial_shader>` for an example of this.
 
 Fragment processor
 ^^^^^^^^^^^^^^^^^^
 
 The ``fragment`` processing function is used to set up the Godot material parameters per pixel. This code
-runs on every visible pixel the object or primitive draws. It is only available in "spatial" and 
+runs on every visible pixel the object or primitive draws. It is only available in "spatial" and
 "canvas_item" shaders.
 
-The standard use of the fragment function is to set up material properties that will be used to calculate 
+The standard use of the fragment function is to set up material properties that will be used to calculate
 lighting. For example, you would set values for ``ROUGHNESS``, ``RIM``, or ``TRANSMISSION`` which would
 tell the light function how the lights respond to that fragment. This makes it possible to control a complex
 shading pipeline without the user having to write much code. If you don't need this built-in functionality,
-you can ignore it and write your own light processing function and Godot will optimize it away. For example, 
+you can ignore it and write your own light processing function and Godot will optimize it away. For example,
 if you do not write a value to ``RIM``, Godot will not calculate rim lighting. During compilation, Godot checks
-to see if ``RIM`` is used; if not, it cuts all the corresponding code out. Therefore, you will not 
-waste calculations on effects that you do not use. 
+to see if ``RIM`` is used; if not, it cuts all the corresponding code out. Therefore, you will not
+waste calculations on effects that you do not use.
 
 Light processor
 ^^^^^^^^^^^^^^^
 
-The ``light`` processor runs per pixel too, but also runs for every light that affects the object 
-(and does not run if no lights affect the object). It exists as a function called inside the 
+The ``light`` processor runs per pixel too, but also runs for every light that affects the object
+(and does not run if no lights affect the object). It exists as a function called inside the
 ``fragment`` processor and typically operates on the material properties setup inside the ``fragment``
 function.
 
 The ``light`` processor works differently in 2D than it does in 3D; for a description of how it works
-in each, see their documentation, :ref:`CanvasItem shaders <doc_canvas_item_shader>` and 
+in each, see their documentation, :ref:`CanvasItem shaders <doc_canvas_item_shader>` and
 :ref:`Spatial shaders <doc_spatial_shader>`, respectively.

@@ -45,14 +45,14 @@ RIDs
 ----
 
 The key to using servers is understanding Resource ID (:ref:`RID <class_RID>`) objects. These are opaque
-handles to the sever implementation. They are allocated and freed manually. Almost every
+handles to the server implementation. They are allocated and freed manually. Almost every
 function in the servers requires RIDs to access the actual resource.
 
 Most Godot nodes and resources contain these RIDs from the servers internally, and they can
 be obtained with different functions. In fact, anything that inherits :ref:`Resource <class_Resource>`
 can be directly casted to an RID (not all resources contain an RID, though, in such cases
 the RID will be empty). In fact, resources can be passed to server APIs as RIDs. Just make
-sure to keep references to the resources ouside the server, because if the resource is erased,
+sure to keep references to the resources outside the server, because if the resource is erased,
 the internal RID is erased too.
 
 For nodes, there are many functions available:
@@ -91,6 +91,11 @@ This is a simple example of how to create a sprite from code and move it using t
 
     extends Node2D
 
+
+    # VisualServer expects references to be kept around.
+    var sprite
+
+
     func _ready():
         # Create a canvas item, child of this node.
         var ci_rid = VisualServer.canvas_item_create()
@@ -98,7 +103,7 @@ This is a simple example of how to create a sprite from code and move it using t
         VisualServer.canvas_item_set_parent(ci_rid, get_canvas_item())
         # Draw a sprite on it.
         # Remember, keep this reference.
-        var sprite = load("res://mysprite.png")
+        sprite = load("res://mysprite.png")
         # Add it, centered.
         VisualServer.canvas_item_add_texture_rect(ci_rid, Rect2(sprite.get_size() / 2, sprite.get_size()), sprite)
         # Add the item, rotated 45 degrees and translated.
@@ -120,12 +125,17 @@ Primitives are cleared this way:
 Instantiating a Mesh into 3D space
 ----------------------------------
 
-The 3D APIs are different than the 2D ones, so the instantiation API must be used.
+The 3D APIs are different from the 2D ones, so the instantiation API must be used.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     extends Spatial
+
+
+    # VisualServer expects references to be kept around.
+    var mesh
+
 
     func _ready():
         # Create a visual instance (for 3D).
@@ -136,7 +146,7 @@ The 3D APIs are different than the 2D ones, so the instantiation API must be use
         VisualServer.instance_set_scenario(instance, scenario)
         # Add a mesh to it.
         # Remember, keep the reference.
-        var mesh = load("res://mymesh.obj")
+        mesh = load("res://mymesh.obj")
         VisualServer.instance_set_base(instance, mesh)
         # Move the mesh around.
         var xform = Transform(Basis(), Vector3(20, 100, 0))
@@ -151,16 +161,22 @@ and moves a :ref:`CanvasItem <class_CanvasItem>` when the body moves.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
+    # Physics2DServer expects references to be kept around.
+    var body
+    var shape
+
+
     func _body_moved(state, index):
         # Created your own canvas item, use it here.
         VisualServer.canvas_item_set_transform(canvas_item, state.transform)
 
+
     func _ready():
         # Create the body.
-        var body = Physics2DServer.body_create()
+        body = Physics2DServer.body_create()
         Physics2DServer.body_set_mode(body, Physics2DServer.BODY_MODE_RIGID)
         # Add a shape.
-        var shape = RectangleShape2D.new()
+        shape = RectangleShape2D.new()
         shape.extents = Vector2(10, 10)
         # Make sure to keep the shape reference!
         Physics2DServer.body_add_shape(body, shape)

@@ -13,12 +13,19 @@ PanelContainer
 
 **Inherited By:** :ref:`ScriptEditor<class_ScriptEditor>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Panel container type.
+
+Description
+-----------
+
+Panel container type. This container fits controls inside of the delimited area of a stylebox. It's useful for giving controls an outline.
+
+Properties
+----------
+
++----------------------------------------------+--------------+--------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter | **O:** ``0`` |
++----------------------------------------------+--------------+--------------+
 
 Theme Properties
 ----------------
@@ -26,9 +33,4 @@ Theme Properties
 +---------------------------------+-------+
 | :ref:`StyleBox<class_StyleBox>` | panel |
 +---------------------------------+-------+
-
-Description
------------
-
-Panel container type. This container fits controls inside of the delimited area of a stylebox. It's useful for giving controls an outline.
 

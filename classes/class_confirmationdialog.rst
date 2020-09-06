@@ -13,12 +13,27 @@ ConfirmationDialog
 
 **Inherited By:** :ref:`EditorFileDialog<class_EditorFileDialog>`, :ref:`FileDialog<class_FileDialog>`, :ref:`ScriptCreateDialog<class_ScriptCreateDialog>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Dialog for confirmation of actions.
+
+Description
+-----------
+
+Dialog for confirmation of actions. This dialog inherits from :ref:`AcceptDialog<class_AcceptDialog>`, but has by default an OK and Cancel button (in host OS order).
+
+To get cancel action, you can use:
+
+::
+
+    get_cancel().connect("pressed", self, "cancelled").
+
+Properties
+----------
+
++-------------------------------+---------------+--------------------------------+
+| :ref:`Vector2<class_Vector2>` | rect_min_size | **O:** ``Vector2( 200, 70 )``  |
++-------------------------------+---------------+--------------------------------+
+| :ref:`String<class_String>`   | window_title  | **O:** ``"Please Confirm..."`` |
++-------------------------------+---------------+--------------------------------+
 
 Methods
 -------
@@ -26,11 +41,6 @@ Methods
 +-----------------------------+---------------------------------------------------------------------------+
 | :ref:`Button<class_Button>` | :ref:`get_cancel<class_ConfirmationDialog_method_get_cancel>` **(** **)** |
 +-----------------------------+---------------------------------------------------------------------------+
-
-Description
------------
-
-Dialog for confirmation of actions. This dialog inherits from :ref:`AcceptDialog<class_AcceptDialog>`, but has by default an OK and Cancel button (in host OS order).
 
 Method Descriptions
 -------------------

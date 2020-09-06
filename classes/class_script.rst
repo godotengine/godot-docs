@@ -13,12 +13,19 @@ Script
 
 **Inherited By:** :ref:`CSharpScript<class_CSharpScript>`, :ref:`GDScript<class_GDScript>`, :ref:`NativeScript<class_NativeScript>`, :ref:`PluginScript<class_PluginScript>`, :ref:`VisualScript<class_VisualScript>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A class stored as a resource.
+
+Description
+-----------
+
+A class stored as a resource. A script extends the functionality of all objects that instance it.
+
+The ``new`` method of a script subclass creates a new instance. :ref:`Object.set_script<class_Object_method_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
+
+Tutorials
+---------
+
+- :doc:`../getting_started/step_by_step/scripting`
 
 Properties
 ----------
@@ -30,35 +37,33 @@ Properties
 Methods
 -------
 
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`can_instance<class_Script_method_can_instance>` **(** **)** const                                                   |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Script<class_Script>`           | :ref:`get_base_script<class_Script_method_get_base_script>` **(** **)** const                                             |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_instance_base_type<class_Script_method_get_instance_base_type>` **(** **)** const                               |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_script_signal<class_Script_method_has_script_signal>` **(** :ref:`String<class_String>` signal_name **)** const |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_source_code<class_Script_method_has_source_code>` **(** **)** const                                             |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`instance_has<class_Script_method_instance_has>` **(** :ref:`Object<class_Object>` base_object **)** const           |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_tool<class_Script_method_is_tool>` **(** **)** const                                                             |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`reload<class_Script_method_reload>` **(** :ref:`bool<class_bool>` keep_state=false **)**                            |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A class stored as a resource. A script exends the functionality of all objects that instance it.
-
-The ``new`` method of a script subclass creates a new instance. :ref:`Object.set_script<class_Object_method_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
-
-Tutorials
----------
-
-- :doc:`../getting_started/step_by_step/scripting`
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`can_instance<class_Script_method_can_instance>` **(** **)** const                                                                    |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Script<class_Script>`           | :ref:`get_base_script<class_Script_method_get_base_script>` **(** **)** const                                                              |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringName<class_StringName>`   | :ref:`get_instance_base_type<class_Script_method_get_instance_base_type>` **(** **)** const                                                |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`         | :ref:`get_property_default_value<class_Script_method_get_property_default_value>` **(** :ref:`StringName<class_StringName>` property **)** |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`   | :ref:`get_script_constant_map<class_Script_method_get_script_constant_map>` **(** **)**                                                    |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`             | :ref:`get_script_method_list<class_Script_method_get_script_method_list>` **(** **)**                                                      |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`             | :ref:`get_script_property_list<class_Script_method_get_script_property_list>` **(** **)**                                                  |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`             | :ref:`get_script_signal_list<class_Script_method_get_script_signal_list>` **(** **)**                                                      |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`has_script_signal<class_Script_method_has_script_signal>` **(** :ref:`StringName<class_StringName>` signal_name **)** const          |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`has_source_code<class_Script_method_has_source_code>` **(** **)** const                                                              |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`instance_has<class_Script_method_instance_has>` **(** :ref:`Object<class_Object>` base_object **)** const                            |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`is_tool<class_Script_method_is_tool>` **(** **)** const                                                                              |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`reload<class_Script_method_reload>` **(** :ref:`bool<class_bool>` keep_state=false **)**                                             |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -84,23 +89,71 @@ Method Descriptions
 
 Returns ``true`` if the script can be instanced.
 
+----
+
 .. _class_Script_method_get_base_script:
 
 - :ref:`Script<class_Script>` **get_base_script** **(** **)** const
 
 Returns the script directly inherited by this script.
 
+----
+
 .. _class_Script_method_get_instance_base_type:
 
-- :ref:`String<class_String>` **get_instance_base_type** **(** **)** const
+- :ref:`StringName<class_StringName>` **get_instance_base_type** **(** **)** const
 
 Returns the script's base type.
 
+----
+
+.. _class_Script_method_get_property_default_value:
+
+- :ref:`Variant<class_Variant>` **get_property_default_value** **(** :ref:`StringName<class_StringName>` property **)**
+
+Returns the default value of the specified property.
+
+----
+
+.. _class_Script_method_get_script_constant_map:
+
+- :ref:`Dictionary<class_Dictionary>` **get_script_constant_map** **(** **)**
+
+Returns a dictionary containing constant names and their values.
+
+----
+
+.. _class_Script_method_get_script_method_list:
+
+- :ref:`Array<class_Array>` **get_script_method_list** **(** **)**
+
+Returns the list of methods in this ``Script``.
+
+----
+
+.. _class_Script_method_get_script_property_list:
+
+- :ref:`Array<class_Array>` **get_script_property_list** **(** **)**
+
+Returns the list of properties in this ``Script``.
+
+----
+
+.. _class_Script_method_get_script_signal_list:
+
+- :ref:`Array<class_Array>` **get_script_signal_list** **(** **)**
+
+Returns the list of user signals defined in this ``Script``.
+
+----
+
 .. _class_Script_method_has_script_signal:
 
-- :ref:`bool<class_bool>` **has_script_signal** **(** :ref:`String<class_String>` signal_name **)** const
+- :ref:`bool<class_bool>` **has_script_signal** **(** :ref:`StringName<class_StringName>` signal_name **)** const
 
 Returns ``true`` if the script, or a base class, defines a signal with the given name.
+
+----
 
 .. _class_Script_method_has_source_code:
 
@@ -108,17 +161,23 @@ Returns ``true`` if the script, or a base class, defines a signal with the given
 
 Returns ``true`` if the script contains non-empty source code.
 
+----
+
 .. _class_Script_method_instance_has:
 
 - :ref:`bool<class_bool>` **instance_has** **(** :ref:`Object<class_Object>` base_object **)** const
 
 Returns ``true`` if ``base_object`` is an instance of this script.
 
+----
+
 .. _class_Script_method_is_tool:
 
 - :ref:`bool<class_bool>` **is_tool** **(** **)** const
 
 Returns ``true`` if the script is a tool script. A tool script can run in the editor.
+
+----
 
 .. _class_Script_method_reload:
 

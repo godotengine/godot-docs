@@ -11,25 +11,25 @@ AudioEffectPitchShift
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Adds a pitch-shifting audio effect to an Audio bus.
 
 Raises or lowers the pitch of original sound.
 
+Description
+-----------
+
+Allows modulation of pitch independently of tempo. All frequencies can be increased/decreased with minimal effect on transients.
+
 Properties
 ----------
 
-+------------------------------------------------------+------------------------------------------------------------------------+-----+
-| :ref:`FFT_Size<enum_AudioEffectPitchShift_FFT_Size>` | :ref:`fft_size<class_AudioEffectPitchShift_property_fft_size>`         | 3   |
-+------------------------------------------------------+------------------------------------------------------------------------+-----+
-| :ref:`int<class_int>`                                | :ref:`oversampling<class_AudioEffectPitchShift_property_oversampling>` | 4   |
-+------------------------------------------------------+------------------------------------------------------------------------+-----+
-| :ref:`float<class_float>`                            | :ref:`pitch_scale<class_AudioEffectPitchShift_property_pitch_scale>`   | 1.0 |
-+------------------------------------------------------+------------------------------------------------------------------------+-----+
++------------------------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`FFT_Size<enum_AudioEffectPitchShift_FFT_Size>` | :ref:`fft_size<class_AudioEffectPitchShift_property_fft_size>`         | ``3``   |
++------------------------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`int<class_int>`                                | :ref:`oversampling<class_AudioEffectPitchShift_property_oversampling>` | ``4``   |
++------------------------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`                            | :ref:`pitch_scale<class_AudioEffectPitchShift_property_pitch_scale>`   | ``1.0`` |
++------------------------------------------------------+------------------------------------------------------------------------+---------+
 
 Enumerations
 ------------
@@ -62,11 +62,6 @@ enum **FFT_Size**:
 
 - **FFT_SIZE_MAX** = **5** --- Represents the size of the :ref:`FFT_Size<enum_AudioEffectPitchShift_FFT_Size>` enum.
 
-Description
------------
-
-Allows modulation of pitch independently of tempo. All frequencies can be increased/decreased with minimal effect on transients.
-
 Property Descriptions
 ---------------------
 
@@ -75,31 +70,35 @@ Property Descriptions
 - :ref:`FFT_Size<enum_AudioEffectPitchShift_FFT_Size>` **fft_size**
 
 +-----------+---------------------+
-| *Default* | 3                   |
+| *Default* | ``3``               |
 +-----------+---------------------+
 | *Setter*  | set_fft_size(value) |
 +-----------+---------------------+
 | *Getter*  | get_fft_size()      |
 +-----------+---------------------+
 
+----
+
 .. _class_AudioEffectPitchShift_property_oversampling:
 
 - :ref:`int<class_int>` **oversampling**
 
 +-----------+-------------------------+
-| *Default* | 4                       |
+| *Default* | ``4``                   |
 +-----------+-------------------------+
 | *Setter*  | set_oversampling(value) |
 +-----------+-------------------------+
 | *Getter*  | get_oversampling()      |
 +-----------+-------------------------+
 
+----
+
 .. _class_AudioEffectPitchShift_property_pitch_scale:
 
 - :ref:`float<class_float>` **pitch_scale**
 
 +-----------+------------------------+
-| *Default* | 1.0                    |
+| *Default* | ``1.0``                |
 +-----------+------------------------+
 | *Setter*  | set_pitch_scale(value) |
 +-----------+------------------------+

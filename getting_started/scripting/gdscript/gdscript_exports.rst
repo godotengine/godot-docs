@@ -63,7 +63,7 @@ Examples
 
     # Editor will enumerate as THING_1, THING_2, ANOTHER_THING.
     enum NamedEnum {THING_1, THING_2, ANOTHER_THING = -1}
-    export (NamedEnum) var x
+    export(NamedEnum) var x
 
     # Strings as paths
 
@@ -92,7 +92,7 @@ Examples
     export(int, 20) var i
     # Allow integer values from -10 to 20.
     export(int, -10, 20) var j
-    # Allow floats from -10 to 20, with a step of 0.2.
+    # Allow floats from -10 to 20 and snap the value to multiples of 0.2.
     export(float, -10, 20, 0.2) var k
     # Allow values 'y = exp(x)' where 'y' varies between 100 and 1000
     # while snapping to steps of 20. The editor will present a
@@ -107,14 +107,31 @@ Examples
 
     # Colors
 
-    # Color given as red-green-blue value (alpha will always be 1)
+    # Color given as red-green-blue value (alpha will always be 1).
     export(Color, RGB) var col
-    # Color given as red-green-blue-alpha value
+    # Color given as red-green-blue-alpha value.
     export(Color, RGBA) var col
 
-    # Another node in the scene can be exported, too.
+    # Nodes
 
-    export(NodePath) var node
+    # Another node in the scene can be exported as a NodePath.
+    export(NodePath) var node_path
+    # Do take note that the node itself isn't being exported -
+    # there is one more step to call the true node:
+    var node = get_node(node_path)
+
+    # Resources
+
+    export(Resource) var resource
+    # In the Inspector, you can then drag and drop a resource file
+    # from the FileSystem dock into the variable slot.
+
+    # Opening the inspector dropdown may result in an
+    # extremely long list of possible classes to create, however.
+    # Therefore, if you specify an extension of Resource such as:
+    export(AnimationNode) var resource
+    # The drop-down menu will be limited to AnimationNode and all
+    # its inherited classes.
 
 It must be noted that even if the script is not being run while in the
 editor, the exported properties are still editable. This can be used
@@ -124,45 +141,45 @@ Exporting bit flags
 -------------------
 
 Integers used as bit flags can store multiple ``true``/``false`` (boolean)
-values in one property. By using the export hint ``int, FLAGS``, they
+values in one property. By using the export hint ``int, FLAGS, ...``, they
 can be set from the editor::
-
-    # Individually edit the bits of an integer.
-    export(int, FLAGS) var spell_elements = ELEMENT_WIND | ELEMENT_WATER
-
-Restricting the flags to a certain number of named flags is also
-possible. The syntax is similar to the enumeration syntax::
 
     # Set any of the given flags from the editor.
     export(int, FLAGS, "Fire", "Water", "Earth", "Wind") var spell_elements = 0
 
-In this example, ``Fire`` has value 1, ``Water`` has value 2, ``Earth``
-has value 4 and ``Wind`` corresponds to value 8. Usually, constants
-should be defined accordingly (e.g. ``const ELEMENT_WIND = 8`` and so
-on).
+You must provide a string description for each flag. In this example, ``Fire``
+has value 1, ``Water`` has value 2, ``Earth`` has value 4 and ``Wind``
+corresponds to value 8. Usually, constants should be defined accordingly (e.g.
+``const ELEMENT_WIND = 8`` and so on).
 
-Using bit flags requires some understanding of bitwise operations. If in
-doubt, boolean variables should be exported instead.
+Export hints are also provided for the physics and render layers defined in the project settings::
+
+    export(int, LAYERS_2D_PHYSICS) var layers_2d_physics
+    export(int, LAYERS_2D_RENDER) var layers_2d_render
+    export(int, LAYERS_3D_PHYSICS) var layers_3d_physics
+    export(int, LAYERS_3D_RENDER) var layers_3d_render
+
+Using bit flags requires some understanding of bitwise operations.
+If in doubt, use boolean variables instead.
 
 Exporting arrays
 ----------------
 
-Exporting arrays works, but with an important caveat: while regular
-arrays are created local to every class instance, exported arrays are *shared*
-between all instances. This means that editing them in one instance will
-cause them to change in all other instances. Exported arrays can have
-initializers, but they must be constant expressions.
+Exported arrays can have initializers, but they must be constant expressions.
+
+If the exported array specifies a type which inherits from Resource, the array
+values can be set in the inspector by dragging and dropping multiple files
+from the FileSystem dock at once.
 
 ::
 
-    # Exported array, shared between all instances.
     # Default value must be a constant expression.
 
     export var a = [1, 2, 3]
 
     # Exported arrays can specify type (using the same hints as before).
 
-    export(Array, int) var ints = [1,2,3]
+    export(Array, int) var ints = [1, 2, 3]
     export(Array, int, "Red", "Green", "Blue") var enums = [2, 1, 0]
     export(Array, Array, float) var two_dimensional = [[1.0, 2.0], [3.0, 4.0]]
 
@@ -171,13 +188,101 @@ initializers, but they must be constant expressions.
     export(Array) var b
     export(Array, PackedScene) var scenes
 
+    # Arrays with specified types which inherit from resource can be set by
+    # drag-and-dropping multiple files from the FileSystem dock.
+
+    export(Array, Texture) var textures
+    export(Array, PackedScene) var scenes
+
     # Typed arrays also work, only initialized empty:
 
-    export var vector3s = PoolVector3Array()
-    export var strings = PoolStringArray()
+    export var vector3s = PackedVector3Array()
+    export var strings = PackedStringArray()
 
-    # Regular array, created local for every instance.
     # Default value can include run-time values, but can't
     # be exported.
 
     var c = [a, 2, 3]
+
+Setting exported variables from a tool script
+---------------------------------------------
+
+When changing an exported variable's value from a script in
+:ref:`doc_gdscript_tool_mode`, the value in the inspector won't be updated
+automatically. To update it, call
+:ref:`property_list_changed_notify() <class_Object_method_property_list_changed_notify>`
+after setting the exported variable's value.
+
+Advanced exports
+----------------
+
+Not every type of export can be provided on the level of the language itself to
+avoid unnecessary design complexity. The following describes some more or less
+common exporting features which can be implemented with a low-level API.
+
+Before reading further, you should get familiar with the way properties are
+handled and how they can be customized with
+:ref:`_set() <class_Object_method__get_property_list>`,
+:ref:`_get() <class_Object_method__get_property_list>`, and
+:ref:`_get_property_list() <class_Object_method__get_property_list>` methods as
+described in :ref:`doc_accessing_data_or_logic_from_object`.
+
+.. seealso:: For binding properties using the above methods in C++, see
+             :ref:`doc_binding_properties_using_set_get_property_list`.
+
+.. warning:: The script must operate in the ``tool`` mode so the above methods
+             can work from within the editor.
+
+Adding script categories
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+For better visual distinguishing of properties, a special script category can be
+embedded into the inspector to act as a separator. ``Script Variables`` is one
+example of a built-in category.
+
+::
+
+    func _get_property_list():
+        var properties = []
+        properties.append(
+            {
+                name = "Debug",
+                type = TYPE_NIL,
+                usage = PROPERTY_USAGE_CATEGORY | PROPERTY_USAGE_SCRIPT_VARIABLE
+            }
+        )
+        return properties
+
+* ``name`` is the name of a category to be added to the inspector;
+
+* ``PROPERTY_USAGE_CATEGORY`` indicates that the property should be treated as a
+  script category specifically, so the type ``TYPE_NIL`` can be ignored as it
+  won't be actually used for the scripting logic, yet it must be defined anyway.
+
+Grouping properties
+~~~~~~~~~~~~~~~~~~~
+
+A list of properties with similar names can be grouped.
+
+::
+
+    func _get_property_list():
+        var properties = []
+        properties.append({
+                name = "Rotate",
+                type = TYPE_NIL,
+                hint_string = "rotate_",
+                usage = PROPERTY_USAGE_GROUP | PROPERTY_USAGE_SCRIPT_VARIABLE
+        })
+        return properties
+
+* ``name`` is the name of a group which is going to be displayed as collapsible
+  list of properties;
+
+* every successive property added after the group property will be collapsed and
+  shortened as determined by the prefix defined via the ``hint_string`` key. For
+  instance, ``rotate_speed`` is going to be shortened to ``speed`` in this case.
+
+* ``PROPERTY_USAGE_GROUP`` indicates that the property should be treated as a
+  script group specifically, so the type ``TYPE_NIL`` can be ignored as it
+  won't be actually used for the scripting logic, yet it must be defined anyway.

@@ -11,12 +11,12 @@ HBoxContainer
 
 **Inherits:** :ref:`BoxContainer<class_BoxContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Horizontal box container.
+
+Description
+-----------
+
+Horizontal box container. See :ref:`BoxContainer<class_BoxContainer>`.
 
 Theme Properties
 ----------------
@@ -24,9 +24,4 @@ Theme Properties
 +-----------------------+------------+---+
 | :ref:`int<class_int>` | separation | 4 |
 +-----------------------+------------+---+
-
-Description
------------
-
-Horizontal box container. See :ref:`BoxContainer<class_BoxContainer>`.
 

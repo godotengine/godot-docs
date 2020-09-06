@@ -9,23 +9,7 @@
 int
 ===
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Integer built-in type.
-
-Methods
--------
-
-+-----------------------+-------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`int<class_int_method_int>` **(** :ref:`bool<class_bool>` from **)**     |
-+-----------------------+-------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`int<class_int_method_int>` **(** :ref:`float<class_float>` from **)**   |
-+-----------------------+-------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`int<class_int_method_int>` **(** :ref:`String<class_String>` from **)** |
-+-----------------------+-------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -38,16 +22,27 @@ It can take values in the interval ``[-2^63, 2^63 - 1]``, i.e. ``[-9223372036854
 
 ::
 
-    var my_variant = 0    # int, value 0
-    my_variant += 4.2     # float, value 4.2
-    var my_int: int = 1   # int, value 1
-    my_int = 4.2          # int, value 4, the right value is implicitly cast to int
-    my_int = int("6.7")   # int, value 6, the String is explicitly cast with [method int]
+    var my_variant = 0 # int, value 0.
+    my_variant += 4.2 # float, value 4.2.
+    var my_int: int = 1 # int, value 1.
+    my_int = 4.2 # int, value 4, the right value is implicitly cast to int.
+    my_int = int("6.7") # int, value 6, the String is explicitly cast with int.
     
     var max_int = 9223372036854775807
-    print(max_int)        # 9223372036854775807, OK
+    print(max_int) # 9223372036854775807, OK.
     max_int += 1
-    print(max_int)        # -9223372036854775808, we overflowed and wrapped around
+    print(max_int) # -9223372036854775808, we overflowed and wrapped around.
+
+Methods
+-------
+
++-----------------------+-------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`int<class_int_method_int>` **(** :ref:`bool<class_bool>` from **)**     |
++-----------------------+-------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`int<class_int_method_int>` **(** :ref:`float<class_float>` from **)**   |
++-----------------------+-------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`int<class_int_method_int>` **(** :ref:`String<class_String>` from **)** |
++-----------------------+-------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -58,9 +53,13 @@ Method Descriptions
 
 Cast a :ref:`bool<class_bool>` value to an integer value, ``int(true)`` will be equals to 1 and ``int(false)`` will be equals to 0.
 
+----
+
 - :ref:`int<class_int>` **int** **(** :ref:`float<class_float>` from **)**
 
 Cast a float value to an integer value, this method simply removes the number fractions, so for example ``int(2.7)`` will be equals to 2, ``int(.1)`` will be equals to 0 and ``int(-2.7)`` will be equals to -2.
+
+----
 
 - :ref:`int<class_int>` **int** **(** :ref:`String<class_String>` from **)**
 

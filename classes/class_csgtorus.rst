@@ -11,34 +11,29 @@ CSGTorus
 
 **Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A CSG Torus shape.
-
-Properties
-----------
-
-+---------------------------------+-----------------------------------------------------------+------+
-| :ref:`float<class_float>`       | :ref:`inner_radius<class_CSGTorus_property_inner_radius>` | 2.0  |
-+---------------------------------+-----------------------------------------------------------+------+
-| :ref:`Material<class_Material>` | :ref:`material<class_CSGTorus_property_material>`         |      |
-+---------------------------------+-----------------------------------------------------------+------+
-| :ref:`float<class_float>`       | :ref:`outer_radius<class_CSGTorus_property_outer_radius>` | 3.0  |
-+---------------------------------+-----------------------------------------------------------+------+
-| :ref:`int<class_int>`           | :ref:`ring_sides<class_CSGTorus_property_ring_sides>`     | 6    |
-+---------------------------------+-----------------------------------------------------------+------+
-| :ref:`int<class_int>`           | :ref:`sides<class_CSGTorus_property_sides>`               | 8    |
-+---------------------------------+-----------------------------------------------------------+------+
-| :ref:`bool<class_bool>`         | :ref:`smooth_faces<class_CSGTorus_property_smooth_faces>` | true |
-+---------------------------------+-----------------------------------------------------------+------+
 
 Description
 -----------
 
 This node allows you to create a torus for use with the CSG system.
+
+Properties
+----------
+
++---------------------------------+-----------------------------------------------------------+----------+
+| :ref:`float<class_float>`       | :ref:`inner_radius<class_CSGTorus_property_inner_radius>` | ``2.0``  |
++---------------------------------+-----------------------------------------------------------+----------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CSGTorus_property_material>`         |          |
++---------------------------------+-----------------------------------------------------------+----------+
+| :ref:`float<class_float>`       | :ref:`outer_radius<class_CSGTorus_property_outer_radius>` | ``3.0``  |
++---------------------------------+-----------------------------------------------------------+----------+
+| :ref:`int<class_int>`           | :ref:`ring_sides<class_CSGTorus_property_ring_sides>`     | ``6``    |
++---------------------------------+-----------------------------------------------------------+----------+
+| :ref:`int<class_int>`           | :ref:`sides<class_CSGTorus_property_sides>`               | ``8``    |
++---------------------------------+-----------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`         | :ref:`smooth_faces<class_CSGTorus_property_smooth_faces>` | ``true`` |
++---------------------------------+-----------------------------------------------------------+----------+
 
 Property Descriptions
 ---------------------
@@ -48,7 +43,7 @@ Property Descriptions
 - :ref:`float<class_float>` **inner_radius**
 
 +-----------+-------------------------+
-| *Default* | 2.0                     |
+| *Default* | ``2.0``                 |
 +-----------+-------------------------+
 | *Setter*  | set_inner_radius(value) |
 +-----------+-------------------------+
@@ -56,6 +51,8 @@ Property Descriptions
 +-----------+-------------------------+
 
 The inner radius of the torus.
+
+----
 
 .. _class_CSGTorus_property_material:
 
@@ -69,12 +66,14 @@ The inner radius of the torus.
 
 The material used to render the torus.
 
+----
+
 .. _class_CSGTorus_property_outer_radius:
 
 - :ref:`float<class_float>` **outer_radius**
 
 +-----------+-------------------------+
-| *Default* | 3.0                     |
+| *Default* | ``3.0``                 |
 +-----------+-------------------------+
 | *Setter*  | set_outer_radius(value) |
 +-----------+-------------------------+
@@ -83,12 +82,14 @@ The material used to render the torus.
 
 The outer radius of the torus.
 
+----
+
 .. _class_CSGTorus_property_ring_sides:
 
 - :ref:`int<class_int>` **ring_sides**
 
 +-----------+-----------------------+
-| *Default* | 6                     |
+| *Default* | ``6``                 |
 +-----------+-----------------------+
 | *Setter*  | set_ring_sides(value) |
 +-----------+-----------------------+
@@ -97,12 +98,14 @@ The outer radius of the torus.
 
 The number of edges each ring of the torus is constructed of.
 
+----
+
 .. _class_CSGTorus_property_sides:
 
 - :ref:`int<class_int>` **sides**
 
 +-----------+------------------+
-| *Default* | 8                |
+| *Default* | ``8``            |
 +-----------+------------------+
 | *Setter*  | set_sides(value) |
 +-----------+------------------+
@@ -111,12 +114,14 @@ The number of edges each ring of the torus is constructed of.
 
 The number of slices the torus is constructed of.
 
+----
+
 .. _class_CSGTorus_property_smooth_faces:
 
 - :ref:`bool<class_bool>` **smooth_faces**
 
 +-----------+-------------------------+
-| *Default* | true                    |
+| *Default* | ``true``                |
 +-----------+-------------------------+
 | *Setter*  | set_smooth_faces(value) |
 +-----------+-------------------------+

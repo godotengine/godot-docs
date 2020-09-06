@@ -9,10 +9,5 @@
 @C#
 ===
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 

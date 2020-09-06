@@ -11,12 +11,12 @@ XMLParser
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Low-level class for creating parsers for `XML <https://en.wikipedia.org/wiki/XML>`_ files.
+
+Description
+-----------
+
+This class can serve as base to make custom XML parsers. Since XML is a very flexible standard, this interface is low-level so it can be applied to any possible schema.
 
 Methods
 -------
@@ -48,7 +48,7 @@ Methods
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`open<class_XMLParser_method_open>` **(** :ref:`String<class_String>` file **)**                                                           |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`open_buffer<class_XMLParser_method_open_buffer>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**                             |
+| :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`open_buffer<class_XMLParser_method_open_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**                         |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`read<class_XMLParser_method_read>` **(** **)**                                                                                            |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -78,24 +78,19 @@ Enumerations
 
 enum **NodeType**:
 
-- **NODE_NONE** = **0** --- There's no node (no file or buffer opened)
+- **NODE_NONE** = **0** --- There's no node (no file or buffer opened).
 
-- **NODE_ELEMENT** = **1** --- Element (tag)
+- **NODE_ELEMENT** = **1** --- Element (tag).
 
-- **NODE_ELEMENT_END** = **2** --- End of element
+- **NODE_ELEMENT_END** = **2** --- End of element.
 
-- **NODE_TEXT** = **3** --- Text node
+- **NODE_TEXT** = **3** --- Text node.
 
-- **NODE_COMMENT** = **4** --- Comment node
+- **NODE_COMMENT** = **4** --- Comment node.
 
-- **NODE_CDATA** = **5** --- CDATA content
+- **NODE_CDATA** = **5** --- CDATA content.
 
-- **NODE_UNKNOWN** = **6** --- Unknown node
-
-Description
------------
-
-This class can serve as base to make custom XML parsers. Since XML is a very flexible standard, this interface is low-level so it can be applied to any possible schema.
+- **NODE_UNKNOWN** = **6** --- Unknown node.
 
 Method Descriptions
 -------------------
@@ -106,11 +101,15 @@ Method Descriptions
 
 Gets the amount of attributes in the current element.
 
+----
+
 .. _class_XMLParser_method_get_attribute_name:
 
 - :ref:`String<class_String>` **get_attribute_name** **(** :ref:`int<class_int>` idx **)** const
 
 Gets the name of the attribute specified by the index in ``idx`` argument.
+
+----
 
 .. _class_XMLParser_method_get_attribute_value:
 
@@ -118,11 +117,15 @@ Gets the name of the attribute specified by the index in ``idx`` argument.
 
 Gets the value of the attribute specified by the index in ``idx`` argument.
 
+----
+
 .. _class_XMLParser_method_get_current_line:
 
 - :ref:`int<class_int>` **get_current_line** **(** **)** const
 
 Gets the current line in the parsed file (currently not implemented).
+
+----
 
 .. _class_XMLParser_method_get_named_attribute_value:
 
@@ -130,11 +133,15 @@ Gets the current line in the parsed file (currently not implemented).
 
 Gets the value of a certain attribute of the current element by name. This will raise an error if the element has no such attribute.
 
+----
+
 .. _class_XMLParser_method_get_named_attribute_value_safe:
 
 - :ref:`String<class_String>` **get_named_attribute_value_safe** **(** :ref:`String<class_String>` name **)** const
 
 Gets the value of a certain attribute of the current element by name. This will return an empty :ref:`String<class_String>` if the attribute is not found.
+
+----
 
 .. _class_XMLParser_method_get_node_data:
 
@@ -142,11 +149,15 @@ Gets the value of a certain attribute of the current element by name. This will 
 
 Gets the contents of a text node. This will raise an error in any other type of node.
 
+----
+
 .. _class_XMLParser_method_get_node_name:
 
 - :ref:`String<class_String>` **get_node_name** **(** **)** const
 
 Gets the name of the current element node. This will raise an error if the current node type is neither :ref:`NODE_ELEMENT<class_XMLParser_constant_NODE_ELEMENT>` nor :ref:`NODE_ELEMENT_END<class_XMLParser_constant_NODE_ELEMENT_END>`.
+
+----
 
 .. _class_XMLParser_method_get_node_offset:
 
@@ -154,11 +165,15 @@ Gets the name of the current element node. This will raise an error if the curre
 
 Gets the byte offset of the current node since the beginning of the file or buffer.
 
+----
+
 .. _class_XMLParser_method_get_node_type:
 
 - :ref:`NodeType<enum_XMLParser_NodeType>` **get_node_type** **(** **)**
 
-Gets the type of the current node. Compare with ``NODE_*`` constants.
+Gets the type of the current node. Compare with :ref:`NodeType<enum_XMLParser_NodeType>` constants.
+
+----
 
 .. _class_XMLParser_method_has_attribute:
 
@@ -166,11 +181,15 @@ Gets the type of the current node. Compare with ``NODE_*`` constants.
 
 Check whether the current element has a certain attribute.
 
+----
+
 .. _class_XMLParser_method_is_empty:
 
 - :ref:`bool<class_bool>` **is_empty** **(** **)** const
 
 Check whether the current element is empty (this only works for completely empty tags, e.g. ``<element \>``).
+
+----
 
 .. _class_XMLParser_method_open:
 
@@ -178,11 +197,15 @@ Check whether the current element is empty (this only works for completely empty
 
 Opens an XML file for parsing. This returns an error code.
 
+----
+
 .. _class_XMLParser_method_open_buffer:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **open_buffer** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **open_buffer** **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**
 
 Opens an XML raw buffer for parsing. This returns an error code.
+
+----
 
 .. _class_XMLParser_method_read:
 
@@ -190,11 +213,15 @@ Opens an XML raw buffer for parsing. This returns an error code.
 
 Reads the next node of the file. This returns an error code.
 
+----
+
 .. _class_XMLParser_method_seek:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **seek** **(** :ref:`int<class_int>` position **)**
 
 Moves the buffer cursor to a certain offset (since the beginning) and read the next node there. This returns an error code.
+
+----
 
 .. _class_XMLParser_method_skip_section:
 

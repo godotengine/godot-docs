@@ -5,7 +5,7 @@ Documentation guidelines
 
 This page describes the rules to follow if you want to contribute to Godot
 Engine by writing or reviewing documentation, or by translating existing
-documentation. Also have a look at README of the
+documentation. Also, have a look at README of the
 `godot-docs GitHub repository <https://github.com/godotengine/godot-docs>`_
 and the `docs front page <https://docs.godotengine.org>`_
 on what steps to follow and how to contact the docs team.
@@ -35,26 +35,40 @@ reference documentation about the reStructuredText markup language.
              main repository. These files are then later used to generate the
              in-editor documentation as well as the API reference of the
              online docs. Read more here: :ref:`doc_updating_the_class_reference`.
-             
-The 'Edit on Github' link
+
+The 'Edit on GitHub' link
 -------------------------
 
-If you're reading documentation on ``docs.godotengine.org`` you'll see an 'Edit on GitHub' hyperlink at the top right of the page. Once you've created a GitHub account you can propose changes to a page you're reading as follows:
+If you're reading documentation on `docs.godotengine.org <https://docs.godotengine.org>`_,
+you'll see an **Edit on GitHub** hyperlink at the top right of the page.
+Once you've created a GitHub account, you can propose changes to a page you're
+reading as follows:
 
-1. Copy the URL that the GitHub link points to. Part of the URL refers to a version name such as '3.1' or 'latest'. Swap this part for the word 'master' so that the result looks something like this: ``https://github.com/godotengine/godot-docs/blob/master/community/contributing/docs_writing_guidelines.rst``
-2. Load that URL in your browser.
-3. On the GitHub page you're taken to, click the pencil icon. It has the tooltip "Edit the file in a fork of this project".
-4. Complete all the edits you want to make for that page.
-5. Summarise the changes you made in the form at the bottom of the page and click the button labelled 'Propose file change' when done.
-6. On the following screens, click the 'Create pull request' buttons until you see a message like ``Open. yourGitHubUsername wants to merge 1 commit into godotengine:master from yourGitHubUsername:patch-6``
-7. A reviewer will evaluate your changes and incorporate them into the docs if they're judged to improve them. You might also be asked to make modifications to your changes before they're included.
+1. Click the **Edit on GitHub** button.
+
+2. On the GitHub page you're taken to, click the pencil icon in the top-right
+   corner near the **Raw**, **Blame** and **History** buttons. It has the tooltip
+   "Edit the file in a fork of this project".
+
+3. Complete all the edits you want to make for that page.
+
+4. Summarize the changes you made in the form at the bottom of the page and
+   click the button labelled **Propose file change** when done.
+
+5. On the following screens, click the **Create pull request** button until you
+   see a message like *Username wants to merge 1 commit into
+   godotengine:master from Username:patch-6*.
+
+6. A reviewer will evaluate your changes and incorporate them into the docs if
+   they're acceptable. You might also be asked to make
+   modifications to your changes before they're included.
 
 What makes good documentation?
 ------------------------------
 
 Documentation should be well written in plain English, using well-formed
 sentences and various levels of sections and subsections. It should be clear
-and objective. Also have a look at the :ref:`doc_docs_writing_guidelines`.
+and objective. Also, have a look at the :ref:`doc_docs_writing_guidelines`.
 
 We differentiate tutorial pages from other documentation pages by these
 definitions:
@@ -82,7 +96,7 @@ Always begin pages with their title and a Sphinx reference name:
     Insert your title here
     ======================
 
-The reference allows to link to this page using the ``:ref:`` format, e.g.
+The reference allows linking to this page using the ``:ref:`` format, e.g.
 ``:ref:`doc_insert_your_title_here``` would link to the above example page
 (note the lack of leading underscore in the reference).
 
@@ -108,8 +122,12 @@ You can help to translate the official Godot documentation on our `Hosted Weblat
     :alt: Translation state
     :align: center
     :target: https://hosted.weblate.org/engage/godot-engine/?utm_source=widget
+    :width: 287
+    :height: 66
 
-There also is the official `Godot I18N repository <https://github.com/godotengine/godot-docs-l10n>`_. where you can see when the data was last synced.
+There also is the official
+`Godot i18n repository <https://github.com/godotengine/godot-docs-l10n>`_
+where you can see when the data was last synchronized.
 
 License
 -------

@@ -11,19 +11,14 @@ VisualShaderNodeScalarDerivativeFunc
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties
 ----------
 
-+---------------------------------------------------------------------+-------------------------------------------------------------------------------+---+
-| :ref:`Function<enum_VisualShaderNodeScalarDerivativeFunc_Function>` | :ref:`function<class_VisualShaderNodeScalarDerivativeFunc_property_function>` | 0 |
-+---------------------------------------------------------------------+-------------------------------------------------------------------------------+---+
++---------------------------------------------------------------------+-------------------------------------------------------------------------------+-------+
+| :ref:`Function<enum_VisualShaderNodeScalarDerivativeFunc_Function>` | :ref:`function<class_VisualShaderNodeScalarDerivativeFunc_property_function>` | ``0`` |
++---------------------------------------------------------------------+-------------------------------------------------------------------------------+-------+
 
 Enumerations
 ------------
@@ -52,7 +47,7 @@ Property Descriptions
 - :ref:`Function<enum_VisualShaderNodeScalarDerivativeFunc_Function>` **function**
 
 +-----------+---------------------+
-| *Default* | 0                   |
+| *Default* | ``0``               |
 +-----------+---------------------+
 | *Setter*  | set_function(value) |
 +-----------+---------------------+

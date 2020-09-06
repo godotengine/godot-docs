@@ -13,30 +13,25 @@ Joint2D
 
 **Inherited By:** :ref:`DampedSpringJoint2D<class_DampedSpringJoint2D>`, :ref:`GrooveJoint2D<class_GrooveJoint2D>`, :ref:`PinJoint2D<class_PinJoint2D>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base node for all joint constraints in 2D physics.
-
-Properties
-----------
-
-+---------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`       | :ref:`bias<class_Joint2D_property_bias>`                           | 0.0          |
-+---------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`         | :ref:`disable_collision<class_Joint2D_property_disable_collision>` | true         |
-+---------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`node_a<class_Joint2D_property_node_a>`                       | NodePath("") |
-+---------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`node_b<class_Joint2D_property_node_b>`                       | NodePath("") |
-+---------------------------------+--------------------------------------------------------------------+--------------+
 
 Description
 -----------
 
 Base node for all joint constraints in 2D physics. Joints take 2 bodies and apply a custom constraint.
+
+Properties
+----------
+
++---------------------------------+--------------------------------------------------------------------+------------------+
+| :ref:`float<class_float>`       | :ref:`bias<class_Joint2D_property_bias>`                           | ``0.0``          |
++---------------------------------+--------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`         | :ref:`disable_collision<class_Joint2D_property_disable_collision>` | ``true``         |
++---------------------------------+--------------------------------------------------------------------+------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`node_a<class_Joint2D_property_node_a>`                       | ``NodePath("")`` |
++---------------------------------+--------------------------------------------------------------------+------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`node_b<class_Joint2D_property_node_b>`                       | ``NodePath("")`` |
++---------------------------------+--------------------------------------------------------------------+------------------+
 
 Property Descriptions
 ---------------------
@@ -46,7 +41,7 @@ Property Descriptions
 - :ref:`float<class_float>` **bias**
 
 +-----------+-----------------+
-| *Default* | 0.0             |
+| *Default* | ``0.0``         |
 +-----------+-----------------+
 | *Setter*  | set_bias(value) |
 +-----------+-----------------+
@@ -55,12 +50,14 @@ Property Descriptions
 
 When :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` move in different directions the ``bias`` controls how fast the joint pulls them back to their original position. The lower the ``bias`` the more the two bodies can pull on the joint.
 
+----
+
 .. _class_Joint2D_property_disable_collision:
 
 - :ref:`bool<class_bool>` **disable_collision**
 
 +-----------+-----------------------------------------+
-| *Default* | true                                    |
+| *Default* | ``true``                                |
 +-----------+-----------------------------------------+
 | *Setter*  | set_exclude_nodes_from_collision(value) |
 +-----------+-----------------------------------------+
@@ -69,12 +66,14 @@ When :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D
 
 If ``true``, :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` can collide.
 
+----
+
 .. _class_Joint2D_property_node_a:
 
 - :ref:`NodePath<class_NodePath>` **node_a**
 
 +-----------+-------------------+
-| *Default* | NodePath("")      |
+| *Default* | ``NodePath("")``  |
 +-----------+-------------------+
 | *Setter*  | set_node_a(value) |
 +-----------+-------------------+
@@ -83,12 +82,14 @@ If ``true``, :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class
 
 The first body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
 
+----
+
 .. _class_Joint2D_property_node_b:
 
 - :ref:`NodePath<class_NodePath>` **node_b**
 
 +-----------+-------------------+
-| *Default* | NodePath("")      |
+| *Default* | ``NodePath("")``  |
 +-----------+-------------------+
 | *Setter*  | set_node_b(value) |
 +-----------+-------------------+

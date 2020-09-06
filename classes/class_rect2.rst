@@ -9,23 +9,30 @@
 Rect2
 =====
 
-**Category:** Built-In Types
+2D axis-aligned bounding box using floating point coordinates.
 
-Brief Description
------------------
+Description
+-----------
 
-2D axis-aligned bounding box.
+``Rect2`` consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
+
+It uses floating point coordinates.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
 
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`end<class_Rect2_property_end>`           | Vector2( 0, 0 ) |
-+-------------------------------+------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`position<class_Rect2_property_position>` | Vector2( 0, 0 ) |
-+-------------------------------+------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_Rect2_property_size>`         | Vector2( 0, 0 ) |
-+-------------------------------+------------------------------------------------+-----------------+
++-------------------------------+------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`end<class_Rect2_property_end>`           | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`position<class_Rect2_property_position>` | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_Rect2_property_size>`         | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -34,6 +41,8 @@ Methods
 | :ref:`Rect2<class_Rect2>` | :ref:`Rect2<class_Rect2_method_Rect2>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`Vector2<class_Vector2>` size **)**                                                                            |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_Rect2>` | :ref:`Rect2<class_Rect2_method_Rect2>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` width, :ref:`float<class_float>` height **)**                           |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_Rect2>` | :ref:`Rect2<class_Rect2_method_Rect2>` **(** :ref:`Rect2i<class_Rect2i>` from **)**                                                                                                                      |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_Rect2>` | :ref:`abs<class_Rect2_method_abs>` **(** **)**                                                                                                                                                           |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -55,20 +64,12 @@ Methods
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`has_point<class_Rect2_method_has_point>` **(** :ref:`Vector2<class_Vector2>` point **)**                                                                                                           |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`intersects<class_Rect2_method_intersects>` **(** :ref:`Rect2<class_Rect2>` b **)**                                                                                                                 |
+| :ref:`bool<class_bool>`   | :ref:`intersects<class_Rect2_method_intersects>` **(** :ref:`Rect2<class_Rect2>` b, :ref:`bool<class_bool>` include_borders=false **)**                                                                  |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`is_equal_approx<class_Rect2_method_is_equal_approx>` **(** :ref:`Rect2<class_Rect2>` rect **)**                                                                                                    |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_Rect2>` | :ref:`merge<class_Rect2_method_merge>` **(** :ref:`Rect2<class_Rect2>` b **)**                                                                                                                           |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Rect2 consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
-
-Tutorials
----------
-
-- :doc:`../tutorials/math/index`
 
 Property Descriptions
 ---------------------
@@ -77,29 +78,33 @@ Property Descriptions
 
 - :ref:`Vector2<class_Vector2>` **end**
 
-+-----------+-----------------+
-| *Default* | Vector2( 0, 0 ) |
-+-----------+-----------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 0, 0 )`` |
++-----------+---------------------+
 
 Ending corner.
+
+----
 
 .. _class_Rect2_property_position:
 
 - :ref:`Vector2<class_Vector2>` **position**
 
-+-----------+-----------------+
-| *Default* | Vector2( 0, 0 ) |
-+-----------+-----------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 0, 0 )`` |
++-----------+---------------------+
 
 Position (starting corner).
+
+----
 
 .. _class_Rect2_property_size:
 
 - :ref:`Vector2<class_Vector2>` **size**
 
-+-----------+-----------------+
-| *Default* | Vector2( 0, 0 ) |
-+-----------+-----------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 0, 0 )`` |
++-----------+---------------------+
 
 Size from position to end.
 
@@ -112,9 +117,19 @@ Method Descriptions
 
 Constructs a ``Rect2`` by position and size.
 
+----
+
 - :ref:`Rect2<class_Rect2>` **Rect2** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` width, :ref:`float<class_float>` height **)**
 
 Constructs a ``Rect2`` by x, y, width, and height.
+
+----
+
+- :ref:`Rect2<class_Rect2>` **Rect2** **(** :ref:`Rect2i<class_Rect2i>` from **)**
+
+Constructs a ``Rect2`` from a :ref:`Rect2i<class_Rect2i>`.
+
+----
 
 .. _class_Rect2_method_abs:
 
@@ -122,11 +137,15 @@ Constructs a ``Rect2`` by x, y, width, and height.
 
 Returns a ``Rect2`` with equivalent position and area, modified so that the top-left corner is the origin and ``width`` and ``height`` are positive.
 
+----
+
 .. _class_Rect2_method_clip:
 
 - :ref:`Rect2<class_Rect2>` **clip** **(** :ref:`Rect2<class_Rect2>` b **)**
 
 Returns the intersection of this ``Rect2`` and b.
+
+----
 
 .. _class_Rect2_method_encloses:
 
@@ -134,11 +153,15 @@ Returns the intersection of this ``Rect2`` and b.
 
 Returns ``true`` if this ``Rect2`` completely encloses another one.
 
+----
+
 .. _class_Rect2_method_expand:
 
 - :ref:`Rect2<class_Rect2>` **expand** **(** :ref:`Vector2<class_Vector2>` to **)**
 
 Returns this ``Rect2`` expanded to include a given point.
+
+----
 
 .. _class_Rect2_method_get_area:
 
@@ -146,11 +169,15 @@ Returns this ``Rect2`` expanded to include a given point.
 
 Returns the area of the ``Rect2``.
 
+----
+
 .. _class_Rect2_method_grow:
 
 - :ref:`Rect2<class_Rect2>` **grow** **(** :ref:`float<class_float>` by **)**
 
 Returns a copy of the ``Rect2`` grown a given amount of units towards all the sides.
+
+----
 
 .. _class_Rect2_method_grow_individual:
 
@@ -158,11 +185,15 @@ Returns a copy of the ``Rect2`` grown a given amount of units towards all the si
 
 Returns a copy of the ``Rect2`` grown a given amount of units towards each direction individually.
 
+----
+
 .. _class_Rect2_method_grow_margin:
 
 - :ref:`Rect2<class_Rect2>` **grow_margin** **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` by **)**
 
 Returns a copy of the ``Rect2`` grown a given amount of units towards the :ref:`Margin<enum_@GlobalScope_Margin>` direction.
+
+----
 
 .. _class_Rect2_method_has_no_area:
 
@@ -170,21 +201,37 @@ Returns a copy of the ``Rect2`` grown a given amount of units towards the :ref:`
 
 Returns ``true`` if the ``Rect2`` is flat or empty.
 
+----
+
 .. _class_Rect2_method_has_point:
 
 - :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector2<class_Vector2>` point **)**
 
 Returns ``true`` if the ``Rect2`` contains a point.
 
+----
+
 .. _class_Rect2_method_intersects:
 
-- :ref:`bool<class_bool>` **intersects** **(** :ref:`Rect2<class_Rect2>` b **)**
+- :ref:`bool<class_bool>` **intersects** **(** :ref:`Rect2<class_Rect2>` b, :ref:`bool<class_bool>` include_borders=false **)**
 
-Returns ``true`` if the ``Rect2`` overlaps with another.
+Returns ``true`` if the ``Rect2`` overlaps with ``b`` (i.e. they have at least one point in common).
+
+If ``include_borders`` is ``true``, they will also be considered overlapping if their borders touch, even without intersection.
+
+----
+
+.. _class_Rect2_method_is_equal_approx:
+
+- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Rect2<class_Rect2>` rect **)**
+
+Returns ``true`` if this ``Rect2`` and ``rect`` are approximately equal, by calling ``is_equal_approx`` on each component.
+
+----
 
 .. _class_Rect2_method_merge:
 
 - :ref:`Rect2<class_Rect2>` **merge** **(** :ref:`Rect2<class_Rect2>` b **)**
 
-Returns a larger Rect2 that contains this Rect2 and ``b``.
+Returns a larger ``Rect2`` that contains this ``Rect2`` and ``b``.
 

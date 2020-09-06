@@ -11,23 +11,23 @@ RegExMatch
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Contains the results of a :ref:`RegEx<class_RegEx>` search.
+
+Description
+-----------
+
+Contains the results of a single :ref:`RegEx<class_RegEx>` match returned by :ref:`RegEx.search<class_RegEx_method_search>` and :ref:`RegEx.search_all<class_RegEx_method_search_all>`. It can be used to find the position and range of the match and its capturing groups, and it can extract its substring for you.
 
 Properties
 ----------
 
-+-------------------------------------+---------------------------------------------------+------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`names<class_RegExMatch_property_names>`     | {}   |
-+-------------------------------------+---------------------------------------------------+------+
-| :ref:`Array<class_Array>`           | :ref:`strings<class_RegExMatch_property_strings>` | [  ] |
-+-------------------------------------+---------------------------------------------------+------+
-| :ref:`String<class_String>`         | :ref:`subject<class_RegExMatch_property_subject>` | ""   |
-+-------------------------------------+---------------------------------------------------+------+
++-------------------------------------+---------------------------------------------------+----------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`names<class_RegExMatch_property_names>`     | ``{}``   |
++-------------------------------------+---------------------------------------------------+----------+
+| :ref:`Array<class_Array>`           | :ref:`strings<class_RegExMatch_property_strings>` | ``[  ]`` |
++-------------------------------------+---------------------------------------------------+----------+
+| :ref:`String<class_String>`         | :ref:`subject<class_RegExMatch_property_subject>` | ``""``   |
++-------------------------------------+---------------------------------------------------+----------+
 
 Methods
 -------
@@ -42,11 +42,6 @@ Methods
 | :ref:`String<class_String>` | :ref:`get_string<class_RegExMatch_method_get_string>` **(** :ref:`Variant<class_Variant>` name=0 **)** const |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------+
 
-Description
------------
-
-Contains the results of a single :ref:`RegEx<class_RegEx>` match returned by :ref:`RegEx.search<class_RegEx_method_search>` and :ref:`RegEx.search_all<class_RegEx_method_search_all>`. It can be used to find the position and range of the match and its capturing groups, and it can extract its substring for you.
-
 Property Descriptions
 ---------------------
 
@@ -55,31 +50,35 @@ Property Descriptions
 - :ref:`Dictionary<class_Dictionary>` **names**
 
 +-----------+-------------+
-| *Default* | {}          |
+| *Default* | ``{}``      |
 +-----------+-------------+
 | *Getter*  | get_names() |
 +-----------+-------------+
 
 A dictionary of named groups and its corresponding group number. Only groups with that were matched are included. If multiple groups have the same name, that name would refer to the first matching one.
 
+----
+
 .. _class_RegExMatch_property_strings:
 
 - :ref:`Array<class_Array>` **strings**
 
 +-----------+---------------+
-| *Default* | [  ]          |
+| *Default* | ``[  ]``      |
 +-----------+---------------+
 | *Getter*  | get_strings() |
 +-----------+---------------+
 
 An :ref:`Array<class_Array>` of the match and its capturing groups.
 
+----
+
 .. _class_RegExMatch_property_subject:
 
 - :ref:`String<class_String>` **subject**
 
 +-----------+---------------+
-| *Default* | ""            |
+| *Default* | ``""``        |
 +-----------+---------------+
 | *Getter*  | get_subject() |
 +-----------+---------------+
@@ -97,11 +96,15 @@ Returns the end position of the match within the source string. The end position
 
 Returns -1 if the group did not match or doesn't exist.
 
+----
+
 .. _class_RegExMatch_method_get_group_count:
 
 - :ref:`int<class_int>` **get_group_count** **(** **)** const
 
 Returns the number of capturing groups.
+
+----
 
 .. _class_RegExMatch_method_get_start:
 
@@ -110,6 +113,8 @@ Returns the number of capturing groups.
 Returns the starting position of the match within the source string. The starting position of capturing groups can be retrieved by providing its group number as an integer or its string name (if it's a named group). The default value of 0 refers to the whole pattern.
 
 Returns -1 if the group did not match or doesn't exist.
+
+----
 
 .. _class_RegExMatch_method_get_string:
 

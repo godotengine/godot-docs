@@ -27,10 +27,10 @@ node for everything 3D.
 .. image:: img/tuto_3d1.png
 
 Spatial nodes have a local transform, which is relative to the parent
-node (as long as the parent node is also of **or inherits** from the type
-Spatial). This transform can be accessed as a 4x3
+node (as long as the parent node is also of **or inherits from** the type
+Spatial). This transform can be accessed as a 4×3
 :ref:`Transform <class_Transform>`, or as 3 :ref:`Vector3 <class_Vector3>`
-members representing location, Euler rotation (x,y and z angles) and
+members representing location, Euler rotation (X, Y and Z angles) and
 scale.
 
 .. image:: img/tuto_3d2.png
@@ -133,7 +133,7 @@ know what you are doing).
 When working with 3D assets, it's always best to work in the correct
 scale (set your DCC to metric). Godot allows scaling post-import and,
 while this works in most cases, in rare situations it may introduce
-floating point precision issues (and thus, glitches or artifacts) in
+floating-point precision issues (and thus, glitches or artifacts) in
 delicate areas, such as rendering or physics, so make sure your artists
 always work in the right scale!
 
@@ -150,18 +150,18 @@ Space and manipulation gizmos
 -----------------------------
 
 Moving objects in the 3D view is done through the manipulator gizmos.
-Each axis is represented by a color: Red, Green, Blue represent X,Y,Z
+Each axis is represented by a color: Red, Green, Blue represent X, Y, Z
 respectively. This convention applies to the grid and other gizmos too
 (and also to the shader language, ordering of components for
-Vector3,Color,etc.).
+Vector3, Color, etc.).
 
 .. image:: img/tuto_3d5.png
 
 Some useful keybindings:
 
--  To snap placement or rotation, press the "Ctrl" key while moving, scaling
+-  To snap placement or rotation, press :kbd:`Ctrl` while moving, scaling
    or rotating.
--  To center the view on the selected object, press the "f" key.
+-  To center the view on the selected object, press :kbd:`F`.
 
 View menu
 ---------

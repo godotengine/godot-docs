@@ -13,23 +13,30 @@ ARVRInterface
 
 **Inherited By:** :ref:`ARVRInterfaceGDNative<class_ARVRInterfaceGDNative>`, :ref:`MobileVRInterface<class_MobileVRInterface>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for an AR/VR interface implementation.
+
+Description
+-----------
+
+This class needs to be implemented to make an AR or VR platform available to Godot and these should be implemented as C++ modules or GDNative modules (note that for GDNative the subclass ARVRScriptInterface should be used). Part of the interface is exposed to GDScript so you can detect, enable and configure an AR or VR platform.
+
+Interfaces should be written in such a way that simply enabling them will give us a working setup. You can query the available interfaces through :ref:`ARVRServer<class_ARVRServer>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/vr/index`
 
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`ar_is_anchor_detection_enabled<class_ARVRInterface_property_ar_is_anchor_detection_enabled>` | false |
-+-------------------------+----------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`interface_is_initialized<class_ARVRInterface_property_interface_is_initialized>`             | false |
-+-------------------------+----------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`interface_is_primary<class_ARVRInterface_property_interface_is_primary>`                     | false |
-+-------------------------+----------------------------------------------------------------------------------------------------+-------+
++-------------------------+----------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`ar_is_anchor_detection_enabled<class_ARVRInterface_property_ar_is_anchor_detection_enabled>` | ``false`` |
++-------------------------+----------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`interface_is_initialized<class_ARVRInterface_property_interface_is_initialized>`             | ``false`` |
++-------------------------+----------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`interface_is_primary<class_ARVRInterface_property_interface_is_primary>`                     | ``false`` |
++-------------------------+----------------------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -39,7 +46,7 @@ Methods
 +------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                      | :ref:`get_capabilities<class_ARVRInterface_method_get_capabilities>` **(** **)** const       |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                | :ref:`get_name<class_ARVRInterface_method_get_name>` **(** **)** const                       |
+| :ref:`StringName<class_StringName>`                        | :ref:`get_name<class_ARVRInterface_method_get_name>` **(** **)** const                       |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                              | :ref:`get_render_targetsize<class_ARVRInterface_method_get_render_targetsize>` **(** **)**   |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------------+
@@ -75,9 +82,11 @@ enum **Capabilities**:
 
 - **ARVR_STEREO** = **2** --- This interface supports stereoscopic rendering.
 
-- **ARVR_AR** = **4** --- This interface support AR (video background and real world tracking).
+- **ARVR_AR** = **4** --- This interface supports AR (video background and real world tracking).
 
-- **ARVR_EXTERNAL** = **8** --- This interface outputs to an external device, if the main viewport is used the on screen output is an unmodified buffer of either the left or right eye (stretched if the viewport size is not changed to the same aspect ratio of :ref:`get_render_targetsize<class_ARVRInterface_method_get_render_targetsize>`). Using a separate viewport node frees up the main viewport for other purposes.
+- **ARVR_EXTERNAL** = **8** --- This interface outputs to an external device. If the main viewport is used, the on screen output is an unmodified buffer of either the left or right eye (stretched if the viewport size is not changed to the same aspect ratio of :ref:`get_render_targetsize<class_ARVRInterface_method_get_render_targetsize>`). Using a separate viewport node frees up the main viewport for other purposes.
+
+----
 
 .. _enum_ARVRInterface_Eyes:
 
@@ -95,6 +104,8 @@ enum **Eyes**:
 
 - **EYE_RIGHT** = **2** --- Right eye output, this is mostly used internally when rendering the image for the right eye and obtaining positioning and projection information.
 
+----
+
 .. _enum_ARVRInterface_Tracking_status:
 
 .. _class_ARVRInterface_constant_ARVR_NORMAL_TRACKING:
@@ -111,20 +122,13 @@ enum **Tracking_status**:
 
 - **ARVR_NORMAL_TRACKING** = **0** --- Tracking is behaving as expected.
 
-- **ARVR_EXCESSIVE_MOTION** = **1** --- Tracking is hindered by excessive motion, player is moving faster than tracking can keep up.
+- **ARVR_EXCESSIVE_MOTION** = **1** --- Tracking is hindered by excessive motion (the player is moving faster than tracking can keep up).
 
 - **ARVR_INSUFFICIENT_FEATURES** = **2** --- Tracking is hindered by insufficient features, it's too dark (for camera-based tracking), player is blocked, etc.
 
 - **ARVR_UNKNOWN_TRACKING** = **3** --- We don't know the status of the tracking or this interface does not provide feedback.
 
-- **ARVR_NOT_TRACKING** = **4** --- Tracking is not functional (camera not plugged in or obscured, lighthouses turned off, etc.)
-
-Description
------------
-
-This class needs to be implemented to make an AR or VR platform available to Godot and these should be implemented as C++ modules or GDNative modules (note that for GDNative the subclass ARVRScriptInterface should be used). Part of the interface is exposed to GDScript so you can detect, enable and configure an AR or VR platform.
-
-Interfaces should be written in such a way that simply enabling them will give us a working setup. You can query the available interfaces through :ref:`ARVRServer<class_ARVRServer>`.
+- **ARVR_NOT_TRACKING** = **4** --- Tracking is not functional (camera not plugged in or obscured, lighthouses turned off, etc.).
 
 Property Descriptions
 ---------------------
@@ -134,42 +138,46 @@ Property Descriptions
 - :ref:`bool<class_bool>` **ar_is_anchor_detection_enabled**
 
 +-----------+----------------------------------------+
-| *Default* | false                                  |
+| *Default* | ``false``                              |
 +-----------+----------------------------------------+
 | *Setter*  | set_anchor_detection_is_enabled(value) |
 +-----------+----------------------------------------+
 | *Getter*  | get_anchor_detection_is_enabled()      |
 +-----------+----------------------------------------+
 
-On an AR interface, is our anchor detection enabled?
+On an AR interface, ``true`` if anchor detection is enabled.
+
+----
 
 .. _class_ARVRInterface_property_interface_is_initialized:
 
 - :ref:`bool<class_bool>` **interface_is_initialized**
 
 +-----------+---------------------------+
-| *Default* | false                     |
+| *Default* | ``false``                 |
 +-----------+---------------------------+
 | *Setter*  | set_is_initialized(value) |
 +-----------+---------------------------+
 | *Getter*  | is_initialized()          |
 +-----------+---------------------------+
 
-Has this interface been initialized?
+``true`` if this interface been initialized.
+
+----
 
 .. _class_ARVRInterface_property_interface_is_primary:
 
 - :ref:`bool<class_bool>` **interface_is_primary**
 
 +-----------+-----------------------+
-| *Default* | false                 |
+| *Default* | ``false``             |
 +-----------+-----------------------+
 | *Setter*  | set_is_primary(value) |
 +-----------+-----------------------+
 | *Getter*  | is_primary()          |
 +-----------+-----------------------+
 
-Is this our primary interface?
+``true`` if this is the primary interface.
 
 Method Descriptions
 -------------------
@@ -180,17 +188,23 @@ Method Descriptions
 
 If this is an AR interface that requires displaying a camera feed as the background, this method returns the feed ID in the :ref:`CameraServer<class_CameraServer>` for this interface.
 
+----
+
 .. _class_ARVRInterface_method_get_capabilities:
 
 - :ref:`int<class_int>` **get_capabilities** **(** **)** const
 
-Returns a combination of flags providing information about the capabilities of this interface.
+Returns a combination of :ref:`Capabilities<enum_ARVRInterface_Capabilities>` flags providing information about the capabilities of this interface.
+
+----
 
 .. _class_ARVRInterface_method_get_name:
 
-- :ref:`String<class_String>` **get_name** **(** **)** const
+- :ref:`StringName<class_StringName>` **get_name** **(** **)** const
 
 Returns the name of this interface (OpenVR, OpenHMD, ARKit, etc).
+
+----
 
 .. _class_ARVRInterface_method_get_render_targetsize:
 
@@ -198,11 +212,15 @@ Returns the name of this interface (OpenVR, OpenHMD, ARKit, etc).
 
 Returns the resolution at which we should render our intermediate results before things like lens distortion are applied by the VR platform.
 
+----
+
 .. _class_ARVRInterface_method_get_tracking_status:
 
 - :ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` **get_tracking_status** **(** **)** const
 
 If supported, returns the status of our tracking. This will allow you to provide feedback to the user whether there are issues with positional tracking.
+
+----
 
 .. _class_ARVRInterface_method_initialize:
 
@@ -212,17 +230,21 @@ Call this to initialize this interface. The first interface that is initialized 
 
 After initializing the interface you want to use you then need to enable the AR/VR mode of a viewport and rendering should commence.
 
-**Note:** You must enable the AR/VR mode on the main viewport for any device that uses the main output of Godot such as for mobile VR.
+**Note:** You must enable the AR/VR mode on the main viewport for any device that uses the main output of Godot, such as for mobile VR.
 
-If you do this for a platform that handles its own output (such as OpenVR) Godot will show just one eye without distortion on screen. Alternatively, you can add a separate viewport node to your scene and enable AR/VR on that viewport and it will be used to output to the HMD leaving you free to do anything you like in the main window such as using a separate camera as a spectator camera or render out something completely different.
+If you do this for a platform that handles its own output (such as OpenVR) Godot will show just one eye without distortion on screen. Alternatively, you can add a separate viewport node to your scene and enable AR/VR on that viewport. It will be used to output to the HMD, leaving you free to do anything you like in the main window, such as using a separate camera as a spectator camera or rendering something completely different.
 
-While currently not used you can activate additional interfaces, you may wish to do this if you want to track controllers from other platforms. However, at this point in time only one interface can render to an HMD.
+While currently not used, you can activate additional interfaces. You may wish to do this if you want to track controllers from other platforms. However, at this point in time only one interface can render to an HMD.
+
+----
 
 .. _class_ARVRInterface_method_is_stereo:
 
 - :ref:`bool<class_bool>` **is_stereo** **(** **)**
 
 Returns ``true`` if the current output of this interface is in stereo.
+
+----
 
 .. _class_ARVRInterface_method_uninitialize:
 

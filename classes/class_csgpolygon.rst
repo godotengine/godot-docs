@@ -11,43 +11,43 @@ CSGPolygon
 
 **Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Extrudes a 2D polygon shape to create a 3D mesh.
+
+Description
+-----------
+
+This node takes a 2D polygon shape and extrudes it to create a 3D mesh.
 
 Properties
 ----------
 
-+---------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
-| :ref:`float<class_float>`                         | :ref:`depth<class_CSGPolygon_property_depth>`                         | 1.0                                        |
-+---------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
-| :ref:`Material<class_Material>`                   | :ref:`material<class_CSGPolygon_property_material>`                   |                                            |
-+---------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
-| :ref:`Mode<enum_CSGPolygon_Mode>`                 | :ref:`mode<class_CSGPolygon_property_mode>`                           | 0                                          |
-+---------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`path_continuous_u<class_CSGPolygon_property_path_continuous_u>` |                                            |
-+---------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
-| :ref:`float<class_float>`                         | :ref:`path_interval<class_CSGPolygon_property_path_interval>`         |                                            |
-+---------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`path_joined<class_CSGPolygon_property_path_joined>`             |                                            |
-+---------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`path_local<class_CSGPolygon_property_path_local>`               |                                            |
-+---------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
-| :ref:`NodePath<class_NodePath>`                   | :ref:`path_node<class_CSGPolygon_property_path_node>`                 |                                            |
-+---------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
-| :ref:`PathRotation<enum_CSGPolygon_PathRotation>` | :ref:`path_rotation<class_CSGPolygon_property_path_rotation>`         |                                            |
-+---------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>`   | :ref:`polygon<class_CSGPolygon_property_polygon>`                     | PoolVector2Array( 0, 0, 0, 1, 1, 1, 1, 0 ) |
-+---------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`smooth_faces<class_CSGPolygon_property_smooth_faces>`           | false                                      |
-+---------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
-| :ref:`float<class_float>`                         | :ref:`spin_degrees<class_CSGPolygon_property_spin_degrees>`           |                                            |
-+---------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`spin_sides<class_CSGPolygon_property_spin_sides>`               |                                            |
-+---------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
++-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------------+
+| :ref:`float<class_float>`                           | :ref:`depth<class_CSGPolygon_property_depth>`                         | ``1.0``                                          |
++-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------------+
+| :ref:`Material<class_Material>`                     | :ref:`material<class_CSGPolygon_property_material>`                   |                                                  |
++-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------------+
+| :ref:`Mode<enum_CSGPolygon_Mode>`                   | :ref:`mode<class_CSGPolygon_property_mode>`                           | ``0``                                            |
++-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`path_continuous_u<class_CSGPolygon_property_path_continuous_u>` |                                                  |
++-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------------+
+| :ref:`float<class_float>`                           | :ref:`path_interval<class_CSGPolygon_property_path_interval>`         |                                                  |
++-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`path_joined<class_CSGPolygon_property_path_joined>`             |                                                  |
++-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`path_local<class_CSGPolygon_property_path_local>`               |                                                  |
++-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------------+
+| :ref:`NodePath<class_NodePath>`                     | :ref:`path_node<class_CSGPolygon_property_path_node>`                 |                                                  |
++-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------------+
+| :ref:`PathRotation<enum_CSGPolygon_PathRotation>`   | :ref:`path_rotation<class_CSGPolygon_property_path_rotation>`         |                                                  |
++-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------------+
+| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`polygon<class_CSGPolygon_property_polygon>`                     | ``PackedVector2Array( 0, 0, 0, 1, 1, 1, 1, 0 )`` |
++-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`smooth_faces<class_CSGPolygon_property_smooth_faces>`           | ``false``                                        |
++-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------------+
+| :ref:`float<class_float>`                           | :ref:`spin_degrees<class_CSGPolygon_property_spin_degrees>`           |                                                  |
++-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`spin_sides<class_CSGPolygon_property_spin_sides>`               |                                                  |
++-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------------------------------+
 
 Enumerations
 ------------
@@ -68,6 +68,8 @@ enum **Mode**:
 
 - **MODE_PATH** = **2** --- Shape is extruded along a path set by a :ref:`Shape<class_Shape>` set in :ref:`path_node<class_CSGPolygon_property_path_node>`.
 
+----
+
 .. _enum_CSGPolygon_PathRotation:
 
 .. _class_CSGPolygon_constant_PATH_ROTATION_POLYGON:
@@ -84,11 +86,6 @@ enum **PathRotation**:
 
 - **PATH_ROTATION_PATH_FOLLOW** = **2** --- Slice is rotate to match the path exactly.
 
-Description
------------
-
-This node takes a 2D polygon shape and extrudes it to create a 3D mesh.
-
 Property Descriptions
 ---------------------
 
@@ -97,7 +94,7 @@ Property Descriptions
 - :ref:`float<class_float>` **depth**
 
 +-----------+------------------+
-| *Default* | 1.0              |
+| *Default* | ``1.0``          |
 +-----------+------------------+
 | *Setter*  | set_depth(value) |
 +-----------+------------------+
@@ -105,6 +102,8 @@ Property Descriptions
 +-----------+------------------+
 
 Extrusion depth when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_DEPTH<class_CSGPolygon_constant_MODE_DEPTH>`.
+
+----
 
 .. _class_CSGPolygon_property_material:
 
@@ -118,12 +117,14 @@ Extrusion depth when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_D
 
 Material to use for the resulting mesh.
 
+----
+
 .. _class_CSGPolygon_property_mode:
 
 - :ref:`Mode<enum_CSGPolygon_Mode>` **mode**
 
 +-----------+-----------------+
-| *Default* | 0               |
+| *Default* | ``0``           |
 +-----------+-----------------+
 | *Setter*  | set_mode(value) |
 +-----------+-----------------+
@@ -131,6 +132,8 @@ Material to use for the resulting mesh.
 +-----------+-----------------+
 
 Extrusion mode.
+
+----
 
 .. _class_CSGPolygon_property_path_continuous_u:
 
@@ -144,6 +147,8 @@ Extrusion mode.
 
 If ``true`` the u component of our uv will continuously increase in unison with the distance traveled along our path when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
 
+----
+
 .. _class_CSGPolygon_property_path_interval:
 
 - :ref:`float<class_float>` **path_interval**
@@ -155,6 +160,8 @@ If ``true`` the u component of our uv will continuously increase in unison with 
 +----------+--------------------------+
 
 Interval at which a new extrusion slice is added along the path when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
+
+----
 
 .. _class_CSGPolygon_property_path_joined:
 
@@ -168,6 +175,8 @@ Interval at which a new extrusion slice is added along the path when :ref:`mode<
 
 If ``true`` the start and end of our path are joined together ensuring there is no seam when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
 
+----
+
 .. _class_CSGPolygon_property_path_local:
 
 - :ref:`bool<class_bool>` **path_local**
@@ -179,6 +188,8 @@ If ``true`` the start and end of our path are joined together ensuring there is 
 +----------+-----------------------+
 
 If ``false`` we extrude centered on our path, if ``true`` we extrude in relation to the position of our CSGPolygon when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
+
+----
 
 .. _class_CSGPolygon_property_path_node:
 
@@ -192,6 +203,8 @@ If ``false`` we extrude centered on our path, if ``true`` we extrude in relation
 
 The :ref:`Shape<class_Shape>` object containing the path along which we extrude when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
 
+----
+
 .. _class_CSGPolygon_property_path_rotation:
 
 - :ref:`PathRotation<enum_CSGPolygon_PathRotation>` **path_rotation**
@@ -204,26 +217,30 @@ The :ref:`Shape<class_Shape>` object containing the path along which we extrude 
 
 The method by which each slice is rotated along the path when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
 
+----
+
 .. _class_CSGPolygon_property_polygon:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **polygon**
 
-+-----------+--------------------------------------------+
-| *Default* | PoolVector2Array( 0, 0, 0, 1, 1, 1, 1, 0 ) |
-+-----------+--------------------------------------------+
-| *Setter*  | set_polygon(value)                         |
-+-----------+--------------------------------------------+
-| *Getter*  | get_polygon()                              |
-+-----------+--------------------------------------------+
++-----------+--------------------------------------------------+
+| *Default* | ``PackedVector2Array( 0, 0, 0, 1, 1, 1, 1, 0 )`` |
++-----------+--------------------------------------------------+
+| *Setter*  | set_polygon(value)                               |
++-----------+--------------------------------------------------+
+| *Getter*  | get_polygon()                                    |
++-----------+--------------------------------------------------+
 
 Point array that defines the shape that we'll extrude.
+
+----
 
 .. _class_CSGPolygon_property_smooth_faces:
 
 - :ref:`bool<class_bool>` **smooth_faces**
 
 +-----------+-------------------------+
-| *Default* | false                   |
+| *Default* | ``false``               |
 +-----------+-------------------------+
 | *Setter*  | set_smooth_faces(value) |
 +-----------+-------------------------+
@@ -231,6 +248,8 @@ Point array that defines the shape that we'll extrude.
 +-----------+-------------------------+
 
 Generates smooth normals so smooth shading is applied to our mesh.
+
+----
 
 .. _class_CSGPolygon_property_spin_degrees:
 
@@ -243,6 +262,8 @@ Generates smooth normals so smooth shading is applied to our mesh.
 +----------+-------------------------+
 
 Degrees to rotate our extrusion for each slice when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_SPIN<class_CSGPolygon_constant_MODE_SPIN>`.
+
+----
 
 .. _class_CSGPolygon_property_spin_sides:
 

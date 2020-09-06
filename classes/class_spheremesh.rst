@@ -11,32 +11,27 @@ SphereMesh
 
 **Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+Class representing a spherical :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
-Brief Description
------------------
+Description
+-----------
 
 Class representing a spherical :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`height<class_SphereMesh_property_height>`                   | 2.0   |
-+---------------------------+-------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`is_hemisphere<class_SphereMesh_property_is_hemisphere>`     | false |
-+---------------------------+-------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`     | :ref:`radial_segments<class_SphereMesh_property_radial_segments>` | 64    |
-+---------------------------+-------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`radius<class_SphereMesh_property_radius>`                   | 1.0   |
-+---------------------------+-------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`     | :ref:`rings<class_SphereMesh_property_rings>`                     | 32    |
-+---------------------------+-------------------------------------------------------------------+-------+
-
-Description
------------
-
-Class representing a spherical :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
++---------------------------+-------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`height<class_SphereMesh_property_height>`                   | ``2.0``   |
++---------------------------+-------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`is_hemisphere<class_SphereMesh_property_is_hemisphere>`     | ``false`` |
++---------------------------+-------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`     | :ref:`radial_segments<class_SphereMesh_property_radial_segments>` | ``64``    |
++---------------------------+-------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`radius<class_SphereMesh_property_radius>`                   | ``1.0``   |
++---------------------------+-------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`     | :ref:`rings<class_SphereMesh_property_rings>`                     | ``32``    |
++---------------------------+-------------------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
@@ -46,7 +41,7 @@ Property Descriptions
 - :ref:`float<class_float>` **height**
 
 +-----------+-------------------+
-| *Default* | 2.0               |
+| *Default* | ``2.0``           |
 +-----------+-------------------+
 | *Setter*  | set_height(value) |
 +-----------+-------------------+
@@ -55,28 +50,32 @@ Property Descriptions
 
 Full height of the sphere.
 
+----
+
 .. _class_SphereMesh_property_is_hemisphere:
 
 - :ref:`bool<class_bool>` **is_hemisphere**
 
 +-----------+--------------------------+
-| *Default* | false                    |
+| *Default* | ``false``                |
 +-----------+--------------------------+
 | *Setter*  | set_is_hemisphere(value) |
 +-----------+--------------------------+
 | *Getter*  | get_is_hemisphere()      |
 +-----------+--------------------------+
 
-Determines whether a full sphere or a hemisphere is created.
+If ``true``, a hemisphere is created rather than a full sphere.
 
 **Note:** To get a regular hemisphere, the height and radius of the sphere must be equal.
+
+----
 
 .. _class_SphereMesh_property_radial_segments:
 
 - :ref:`int<class_int>` **radial_segments**
 
 +-----------+----------------------------+
-| *Default* | 64                         |
+| *Default* | ``64``                     |
 +-----------+----------------------------+
 | *Setter*  | set_radial_segments(value) |
 +-----------+----------------------------+
@@ -85,12 +84,14 @@ Determines whether a full sphere or a hemisphere is created.
 
 Number of radial segments on the sphere.
 
+----
+
 .. _class_SphereMesh_property_radius:
 
 - :ref:`float<class_float>` **radius**
 
 +-----------+-------------------+
-| *Default* | 1.0               |
+| *Default* | ``1.0``           |
 +-----------+-------------------+
 | *Setter*  | set_radius(value) |
 +-----------+-------------------+
@@ -99,12 +100,14 @@ Number of radial segments on the sphere.
 
 Radius of sphere.
 
+----
+
 .. _class_SphereMesh_property_rings:
 
 - :ref:`int<class_int>` **rings**
 
 +-----------+------------------+
-| *Default* | 32               |
+| *Default* | ``32``           |
 +-----------+------------------+
 | *Setter*  | set_rings(value) |
 +-----------+------------------+

@@ -1,6 +1,6 @@
 .. _doc_godot_design_philosophy:
 
-Godot’s design philosophy
+Godot's design philosophy
 =========================
 
 Now that you've gotten your hands wet, let's talk about Godot's design.
@@ -8,7 +8,7 @@ Now that you've gotten your hands wet, let's talk about Godot's design.
 **Every game engine is different and fits different needs.**
 Not only do they offer a range of features, but the design of each engine
 is unique. This leads to different workflows and different ways to form
-your games’ structures. This all stems from their respective design philosophies.
+your games' structures. This all stems from their respective design philosophies.
 
 This page is here to help you understand how Godot works, starting
 with some of its core pillars. It is not a list of available features, nor
@@ -36,22 +36,22 @@ BrokenLanterns in the city will update instantly.
 On top of that, you can **inherit** from any scene.
 
 A Godot scene could be a Weapon, a Character, an Item, a Door, a Level,
-part of a level… anything you’d like. It works like a class in pure code,
-except you’re free to design it by using the editor, using only the
+part of a level… anything you'd like. It works like a class in pure code,
+except you're free to design it by using the editor, using only the
 code, or mixing and matching the two.
 
-It’s different from prefabs you find in several 3D engines, as you can
+It's different from prefabs you find in several 3D engines, as you can
 then inherit from and extend those scenes. You may create a Magician
 that extends your Character. Modify the Character in the editor and the Magician
 will update as well. It helps you build your projects so that their
-structure matches the game’s design.
+structure matches the game's design.
 
 |image0|
 
 Also note that Godot offers many different types of objects called
 nodes, each with a specific purpose. Nodes are part of a tree and always
 inherit from their parents up to the Node class. Although the engine
-does feature components like collision shapes, they’re the
+does feature components like collision shapes, they're the
 exception, not the norm.
 
 |image1|
@@ -76,8 +76,8 @@ there is an import plugin for it. Or you can create one, like the `Tiled
 Map Importer <https://github.com/vnen/godot-tiled-importer>`__.
 
 That is also partly why Godot offers its own programming languages
-GDscript and VisualScript, along with C#. They’re designed for the needs
-of game developers and game designers, and they’re tightly integrated in
+GDscript and VisualScript, along with C#. They're designed for the needs
+of game developers and game designers, and they're tightly integrated in
 the engine and the editor.
 
 GDscript lets you write simple code using Python-like syntax,
@@ -94,9 +94,9 @@ without recompiling the engine.
 in the editor. You can drag and drop nodes or resources into the graph
 to create new code blocks.*
 
-Note that the 3D workspace doesn’t feature as many tools as the 2D workspace.
-You’ll need external programs or add-ons to edit terrains, animate complex characters, and so on.
-Godot provides a complete API to extend the editor’s functionality using
+Note that the 3D workspace doesn't feature as many tools as the 2D workspace.
+You'll need external programs or add-ons to edit terrains, animate complex characters, and so on.
+Godot provides a complete API to extend the editor's functionality using
 game code. See `The Godot editor is a Godot game`_ below.
 
 |image4|
@@ -110,40 +110,40 @@ Open source
 Godot offers a fully open source codebase under the **MIT license**.
 This means all the technologies that ship with it have to be Free
 (as in freedom) as well.
-For the most part, they’re developed from the ground up by contributors.
+For the most part, they're developed from the ground up by contributors.
 
 Anyone can plug in proprietary tools for the needs of their projects —
-they just won’t ship with the engine. This may include Google AdMob,
+they just won't ship with the engine. This may include Google AdMob,
 or FMOD. Any of these can come as
 third-party plugins instead.
 
 On the other hand, an open codebase means you can **learn from and extend
-the engine** to your heart’s content. You can also debug games easily,
+the engine** to your heart's content. You can also debug games easily,
 as Godot will print errors with a stack trace, even if they come from the engine itself.
 
 .. note::
 
-   This **does not affect the work you do with Godot** in any way: there’s
+   This **does not affect the work you do with Godot** in any way: there's
    no strings attached to the engine or anything you make with it.
 
 Community-driven
 ----------------
 
 **Godot is made by its community, for the community, and for all game
-creators out there.** It’s the needs of the users and open discussions
+creators out there.** It's the needs of the users and open discussions
 that drive the core updates. New features from the core developers often
 focus on what will benefit the most users first.
 
 That said, although a handful of core developers work on it full-time,
 the project has over 600 contributors at the time of writing. Benevolent
-programmers work on features they may need themselves, so you’ll see
+programmers work on features they may need themselves, so you'll see
 improvements in all corners of the engine at the same time in every
 major release.
 
 The Godot editor is a Godot game
 --------------------------------
 
-The Godot editor runs on the game engine. It uses the engine’s own UI
+The Godot editor runs on the game engine. It uses the engine's own UI
 system, it can hot-reload code and scenes when you test your projects,
 or run game code in the editor. This means you can **use the same code**
 and scenes for your games, or **build plugins and extend the editor.**
@@ -153,7 +153,7 @@ itself. With the ``tool`` keyword, you can run any game code in the editor.
 
 |image5|
 
-*RPG in a Box is a voxel RPG editor made with Godot 2. It uses Godot’s
+*RPG in a Box is a voxel RPG editor made with Godot 2. It uses Godot's
 UI tools for its node-based programming system and for the rest of the
 interface.*
 
@@ -170,9 +170,9 @@ base unit for 2D scenes is pixels.** Even though the engines are
 separate, you can render 2D in 3D, 3D in 2D, and overlay 2D sprites and
 interfaces over your 3D world.
 
-.. |image0| image:: ./img/engine_design_01.png
-.. |image1| image:: ./img/engine_design_02.png
-.. |image2| image:: ./img/engine_design_03.png
-.. |image3| image:: ./img/engine_design_visual_script.png
-.. |image4| image:: ./img/engine_design_fsm_plugin.png
-.. |image5| image:: ./img/engine_design_rpg_in_a_box.png
+.. |image0| image:: img/engine_design_01.png
+.. |image1| image:: img/engine_design_02.png
+.. |image2| image:: img/engine_design_03.png
+.. |image3| image:: img/engine_design_visual_script.png
+.. |image4| image:: img/engine_design_fsm_plugin.png
+.. |image5| image:: img/engine_design_rpg_in_a_box.png

@@ -7,8 +7,8 @@ Introduction
 ------------
 
 For the most common cases, Godot provides ready to use materials for
-most types of shaders, such as :ref:`SpatialMaterial <class_SpatialMaterial>`, 
-:ref:`CanvasItemMaterial <class_CanvasItemMaterial>` and :ref:`ParticlesMaterial <class_ParticlesMaterial>`. 
+most types of shaders, such as :ref:`StandardMaterial3D <class_StandardMaterial3D>`,
+:ref:`CanvasItemMaterial <class_CanvasItemMaterial>` and :ref:`ParticlesMaterial <class_ParticlesMaterial>`.
 They are flexible implementations that cover most use cases.
 
 Shader materials allow writing a custom shader directly, for maximum flexibility.
@@ -23,7 +23,7 @@ Examples of this are:
 -  Create custom particle code.
 -  And much more!
 
-Godot provides built in functionality to make frequent operations 
+Godot provides built in functionality to make frequent operations
 easier. Additionally, Godot's shader editor will detect errors as you
 type, so you can see your edited shaders in real-time. It is also
 possible to edit shaders using a visual, node-based graph editor.
@@ -40,8 +40,8 @@ Next, click on the shader material to see its properties. From here you
 can create a shader or visual shader. Regular shaders use code to set
 their properties while a visual shader uses a node based workflow.
 
-There is no way to convert between the two, so if you decide you want to
-change to a visual shader or vice versa, you will have to start from scratch.
+If you need to you can convert a visual shader to a text shader.
+However you can't convert a text shader to a visual shader.
 
 Choose one of them and you can start editing your shader.
 
@@ -55,16 +55,27 @@ If you create a visual shader the visual shader editor will open automatically.
 
 .. image:: img/visual_shader_editor.png
 
+In the visual shader editor you can click a button and see what your visual
+shader looks like as shader code. This can be useful if you're trying to
+replicate a text shader as nodes, or it can be used as a preview for converting
+your visual shader to a text shader.
+
+.. image:: img/visual_shader_code.png
+
+.. note::
+
+   To learn more about visual shaders, read :ref:`doc_visual_shaders`.
+
 Converting to ShaderMaterial
 ----------------------------
 
-It is possible to convert from SpatialMaterial, CanvasItemMaterial and
+It is possible to convert from StandardMaterial3D, CanvasItemMaterial and
 ParticlesMaterial to ShaderMaterial. To do so, go to the material properties
 and select the convert option.
 
 .. image:: img/shader_material_convert.png
 
 .. note::
-    
-   Using the convert option will turn the SpatialMaterial into a ShaderMaterial
+
+   Using the convert option will turn the StandardMaterial3D into a ShaderMaterial
    with a text shader, not a visual shader.
