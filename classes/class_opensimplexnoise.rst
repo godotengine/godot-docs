@@ -40,8 +40,7 @@ This resource allows you to configure and sample a fractal noise space. Here is 
     OpenSimplexNoise noise = new OpenSimplexNoise();
 
     // Configure
-    System.Random random = new System.Random(); 
-    noise.Seed = random.Next(); 
+    noise.Seed = GD.Randi(); 
     noise.Octaves = 4;
     noise.Period = 20.0f;
     noise.Persistence = 0.8f;
@@ -237,4 +236,3 @@ Returns the 4D noise value ``[-1,1]`` at the given position.
 - :ref:`Image<class_Image>` **get_seamless_image** **(** :ref:`int<class_int>` size **)**
 
 Generate a tileable noise image, based on the current noise parameters. Generated seamless images are always square (``size`` × ``size``).
-
