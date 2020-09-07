@@ -338,7 +338,7 @@ interesting glow patterns:
 
 Finally, as the highest layers are created by stretching small blurred images,
 it is possible that some blockiness may be visible. Enabling **Bicubic Upscaling**
-gets rids of it, at a minimal performance cost.
+gets rids of it, at a minimal performance cost. *Note that this is effective only when using the GLES3 backend.*
 
 .. image:: img/environment_glow_bicubic.png
 
