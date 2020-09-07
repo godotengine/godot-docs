@@ -147,6 +147,60 @@ this way.
 
 On the downside, it also means having to use largely imperative programming.
 
+Performance of Script vs PackedScene
+------------------------------------
+
+One last aspect to consider when choosing scenes and scripts is execution speed.
+
+As the size of objects increases, the scripts' necessary size to create and
+initialize them grows much larger. Creating node hierarchies demonstrates this.
+Each Node's logic could be several hundred lines of code in length.
+
+The code example below creates a new ``Node``, changes its name, assigns a
+script to it, sets its future parent as its owner so it gets saved to disk along
+with it, and finally adds it as a child of the ``Main`` node:
+
+.. tabs::
+  .. code-tab:: gdscript GDScript
+
+    # Main.gd
+    extends Node
+
+    func _init():
+        var child = Node.new()
+        child.name = "Child"
+        child.script = preload("Child.gd")
+        child.owner = self
+        add_child(child)
+
+  .. code-tab:: csharp
+
+    using System;
+    using Godot;
+
+    public class Main : Resource
+    {
+        public Node Child { get; set; }
+
+        public Main()
+        {
+            Child = new Node();
+            Child.Name = "Child";
+            Child.Script = ResourceLoader.Load<Script>("child.gd");
+            Child.Owner = this;
+            AddChild(Child);
+        }
+    }
+
+Script code like this is much slower than engine-side C++ code. Each instruction
+makes a call to the scripting API which leads to many "lookups" on the back-end
+to find the logic to execute.
+
+Scenes help to avoid this performance issue. :ref:`PackedScene
+<class_PackedScene>`, the base type that scenes inherit from, defines resources
+that use serialized data to create objects. The engine can process scenes in
+batches on the back-end and provide much better performance than scripts.
+
 Conclusion
 ----------
 
