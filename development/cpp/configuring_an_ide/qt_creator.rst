@@ -93,7 +93,7 @@ Code style configuration
 Developers must follow the project's :ref:`code style <doc_code_style_guidelines>`
 and the IDE should help them follow it. By default, Qt Creator uses spaces
 for indentation which doesn't match the Godot code style guidelines. You can
-change this behavior by changing the **Code Style** in **Options > C++**.
+change this behavior by changing the **Code Style** in **Tools > Options > C++**.
 
 .. figure:: img/qtcreator-options-cpp.png
    :figclass: figure-w480
