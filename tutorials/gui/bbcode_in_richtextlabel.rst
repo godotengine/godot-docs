@@ -232,6 +232,7 @@ Ghost
 
     tool
     extends RichTextEffect
+    class_name RichTextGhost
 
     # Syntax: [ghost freq=5.0 span=10.0][/ghost]
 
@@ -254,6 +255,7 @@ Pulse
 
     tool
     extends RichTextEffect
+    class_name RichTextPulse
 
     # Syntax: [pulse color=#00FFAA height=0.0 freq=2.0][/pulse]
 
@@ -280,6 +282,7 @@ Matrix
 
     tool
     extends RichTextEffect
+    class_name RichTextMatrix
 
     # Syntax: [matrix clean=2.0 dirty=1.0 span=50][/matrix]
 
