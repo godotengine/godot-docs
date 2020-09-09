@@ -26,7 +26,7 @@ But what if someone were to find a way to edit the saved games and
 assign the items and currency without effort? That would be terrible,
 because it would help players consume the content much faster, and therefore
 run out of it sooner than expected. If that happens, they will have
-nothing that avoids them to think, and the tremendous agony of realizing
+nothing that prevents them from thinking, and the tremendous agony of realizing
 their own irrelevance would again take over their life.
 
 No, we definitely do not want that to happen, so let's see how to
