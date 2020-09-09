@@ -159,6 +159,10 @@ If you are targeting desktop platforms, the
 `UPX <https://upx.github.io/>`_ compressor can be used.
 This can reduce binary size considerably.
 
+.. warning::
+
+    You cannot use embedded PCK files with UPX compression.
+
 However, keep in mind that some antivirus programs may detect UPX-packed
 binaries as a virus. Therefore, if you are releasing a commercial game,
 make sure to sign your binaries or use a platform that will distribute them.

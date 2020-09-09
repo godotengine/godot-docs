@@ -178,21 +178,20 @@ means particles are drawn according to their emission order (default).
 ParticlesMaterial settings
 --------------------------
 
-.. Commented out as not implemented in 3.x for now.
-..
-   Direction
-   ~~~~~~~~~
-..
-   This is the base angle at which particles emit. Default is ``0`` (down):
-..
-   .. image:: img/paranim1.gif
-..
-   Changing it will change the emissor direction, but gravity will still affect them:
-..
-   .. image:: img/paranim2.gif
-..
-   This parameter is useful because, by rotating the node, gravity will
-   also be rotated. Changing direction allows them to be separated.
+Direction
+~~~~~~~~~
+
+This is the base direction at which particles emit. The default is
+``Vector3(1, 0, 0)`` which makes particles emit to the right. However,
+with the default gravity settings, particles will go straight down.
+
+.. image:: img/direction1.png
+
+For this property to be noticeable, you need an *initial velocity* greater
+than 0. Here, we set the initial velocity to 40. You'll notice that
+particles emit toward the right, then go down because of gravity.
+
+.. image:: img/direction2.png
 
 Spread
 ~~~~~~
@@ -203,6 +202,11 @@ in all directions (+/- 180). For spread to do anything the "Initial Velocity"
 parameter must be greater than 0.
 
 .. image:: img/paranim3.gif
+
+Flatness
+~~~~~~~~
+
+This property is only useful for 3D particles.
 
 Gravity
 ~~~~~~~

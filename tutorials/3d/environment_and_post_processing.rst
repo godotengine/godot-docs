@@ -265,8 +265,6 @@ Tweaking SSAO is possible with several parameters:
 Depth of Field / Far Blur
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*This feature is only available when using the GLES3 backend.*
-
 This effect simulates focal distance on high end cameras. It blurs objects behind
 a given range. It has an initial **Distance** with a **Transition** region
 (in world units):
@@ -278,8 +276,6 @@ the **Quality** may be needed in order to avoid artifacts.
 
 Depth of Field / Near Blur
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-*This feature is only available when using the GLES3 backend.*
 
 This effect simulates focal distance on high end cameras. It blurs objects close
 to the camera (acts in the opposite direction as far blur).
@@ -297,8 +293,6 @@ given object:
 
 Glow
 ^^^^
-
-*This feature is only available when using the GLES3 backend.*
 
 In photography and film, when light amount exceeds the maximum supported by the
 media (be it analog or digital), it generally bleeds outwards to darker regions
@@ -345,13 +339,12 @@ interesting glow patterns:
 Finally, as the highest layers are created by stretching small blurred images,
 it is possible that some blockiness may be visible. Enabling **Bicubic Upscaling**
 gets rids of it, at a minimal performance cost.
+*Note that this is effective only when using the GLES3 backend.*
 
 .. image:: img/environment_glow_bicubic.png
 
 Adjustments
 ^^^^^^^^^^^
-
-*This feature is only available when using the GLES3 backend.*
 
 At the end of processing, Godot offers the possibility to do some standard
 image adjustments.

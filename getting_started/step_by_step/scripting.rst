@@ -104,6 +104,8 @@ easier to get an overview of the concepts.
 Scene setup
 ~~~~~~~~~~~
 
+If you still have the "instancing" project open from the previous tutorial, then close that out (Project -> Quit to Project List) and create a New Project.
+
 Use the "Add Child Node" dialogue accessed from the Scene tab (or by pressing :kbd:`Ctrl + A`) to create a hierarchy with the following
 nodes:
 
@@ -259,7 +261,7 @@ using :ref:`Object.connect() <class_Object_method_connect>`.
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        get_node("Button").connect("pressed", self, "_on_Button_pressed")
+        get_node("Button").connect("pressed", self._on_Button_pressed)
 
  .. code-tab:: csharp
 
@@ -276,7 +278,7 @@ The final script should look like this:
     extends Panel
 
     func _ready():
-        get_node("Button").connect("pressed", self, "_on_Button_pressed")
+        get_node("Button").connect("pressed", self._on_Button_pressed)
 
     func _on_Button_pressed():
         get_node("Label").text = "HELLO!"

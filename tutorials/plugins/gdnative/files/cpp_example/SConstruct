@@ -1,5 +1,5 @@
 #!python
-import os, subprocess
+import os
 
 opts = Variables([], ARGUMENTS)
 

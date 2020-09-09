@@ -704,8 +704,9 @@ you will see some new buttons at the top of the editor:
 
 Select the middle one ("Add Point") and draw the path by clicking to add
 the points at the corners shown. To have the points snap to the grid, make
-sure "Use Grid Snap" is selected. This option can be found to the left of
-the "Lock" button, appearing as a magnet next to some intersecting lines.
+sure "Use Grid Snap" and "Use Snap" are both selected. These options can be 
+found to the left of the "Lock" button, appearing as a magnet next to some
+dots and intersecting lines, respectively.
 
 .. image:: img/grid_snap_button.png
 
@@ -897,11 +898,11 @@ Note that a new instance must be added to the scene using ``add_child()``.
         mobInstance.Position = mobSpawnLocation.Position;
 
         // Add some randomness to the direction.
-        direction += RandRange(-Mathf.Pi / 4, Mathf.Pi / 4);
+        direction += GD.RandRange(-Mathf.Pi / 4, Mathf.Pi / 4);
         mobInstance.Rotation = direction;
 
         // Choose the velocity.
-        mobInstance.LinearVelocity = new Vector2(RandRange(150f, 250f), 0).Rotated(direction);
+        mobInstance.LinearVelocity = new Vector2(GD.RandRange(150f, 250f), 0).Rotated(direction);
     }
 
 .. important:: Why ``PI``? In functions requiring angles, GDScript uses *radians*,

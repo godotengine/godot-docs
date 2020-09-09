@@ -97,7 +97,7 @@ the ``Modulate`` property and use the color picker.
 TextureButton
 ~~~~~~~~~~~~~
 
-**TextureButton** is like TextureRect, except it has 5 texture slots:
+**TextureButton** is like TextureRect, except it has 6 texture slots:
 one for each of the button's states. Most of the time, you'll use the
 Normal, Pressed, and Hover textures. Focused is useful if your interface
 listens to the keyboard's input. The sixth image slot, the Click Mask,

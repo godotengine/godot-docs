@@ -7,7 +7,7 @@ Introduction
 ------------
 
 Godot implements multi-threading as servers. Servers are daemons which
-manages data, processes, and pushes the result. Servers implement the
+manage data, process it, and push the result. Servers implement the
 mediator pattern which interprets resource ID and process data for the
 engine and other modules. In addition, the server claims ownership for
 its RID allocations.
