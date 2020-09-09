@@ -365,7 +365,7 @@ Import
 
 **Formats:**
 
-- *Images:* See :ref:`doc_importing_images_supported_formats`.
+- *Images:* See :ref:`doc_import_images`.
 - *Audio:*
 
    - WAV with optional IMA-ADPCM compression.
