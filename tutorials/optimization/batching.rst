@@ -16,6 +16,10 @@ of work for the user in the GPU driver at the cost of more expensive draw calls.
 As a result, applications can often be sped up by reducing the number of draw
 calls.
 
+.. note::
+
+    2D batching is currently only supported when using the GLES2 renderer.
+
 Draw calls
 ^^^^^^^^^^
 
@@ -68,8 +72,8 @@ Batching will be broken by (amongst other things):
 * Change of material
 * Change of primitive type (say going from rectangles to lines)
 
-.. note:: 
-	
+.. note::
+
 	If for example, you draw a series of sprites each with a different texture,
 	there is no way they can be batched.
 
@@ -95,7 +99,7 @@ In Godot this back to front order is determined by:
 * Y sort nodes
 
 .. note::
-	
+
 	You can group similar objects together for easier batching. While doing so
 	is not a requirement on your part, think of it as an optional approach that
 	can improve performance in some cases. See the diagnostics section in order
@@ -144,7 +148,7 @@ balance the costs and benefits in your project.
 	A - wood
 	C - wood
 	B - grass
-	
+
 Because the texture only changes once, we can render the above in only 2
 draw calls.
 
@@ -198,7 +202,7 @@ in a real game, you might be drawing closer to 1000 sprites.
 - Before: 1000 * 4 = 4000 draw calls.
 - After: 1 * 4 = 4 draw calls.
 
-That is 1000x decrease in draw calls, and should give a huge increase in
+That is a 1000× decrease in draw calls, and should give a huge increase in
 performance.
 
 Overlap test
@@ -411,20 +415,20 @@ Reading a diagnostic
 	canvas_begin FRAME 2604
 	items
 		joined_item 1 refs
-				batch D 0-0 
+				batch D 0-0
 				batch D 0-2 n n
 				batch R 0-1 [0 - 0] {255 255 255 255 }
 		joined_item 1 refs
-				batch D 0-0 
+				batch D 0-0
 				batch R 0-1 [0 - 146] {255 255 255 255 }
-				batch D 0-0 
+				batch D 0-0
 				batch R 0-1 [0 - 146] {255 255 255 255 }
 		joined_item 1 refs
-				batch D 0-0 
+				batch D 0-0
 				batch R 0-2560 [0 - 144] {158 193 0 104 } MULTI
-				batch D 0-0 
+				batch D 0-0
 				batch R 0-2560 [0 - 144] {158 193 0 104 } MULTI
-				batch D 0-0 
+				batch D 0-0
 				batch R 0-2560 [0 - 144] {158 193 0 104 } MULTI
 	canvas_end
 
