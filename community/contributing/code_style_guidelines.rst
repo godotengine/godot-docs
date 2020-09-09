@@ -271,7 +271,8 @@ You then have different possibilities to apply black to your changes:
 
 Manual usage
 ^^^^^^^^^^^^
-You can apply ``black`` manually one or more files with the following
+
+You can apply ``black`` manually to one or more files with the following
 command:
 
 ::
@@ -290,11 +291,11 @@ For ease of use, we provide a pre-commit hook for Git that will run
 black automatically on all your commits to check them, and let you apply
 its changes in the final commit.
 
-This "hook" is a script which can be found in ``misc/hooks``, refer to that
-folder's README.md for installation instructions.
+This "hook" is a script which can be found in ``misc/hooks``. Refer to that
+folder's ``README.md`` for installation instructions.
 
 
-Editor Integration
+Editor integration
 ^^^^^^^^^^^^^^^^^^
 
 Many IDEs or code editors have beautifier plugins that can be configured to run
