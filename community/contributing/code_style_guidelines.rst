@@ -248,7 +248,56 @@ Python
 Godot's SCons buildsystem is written in Python, and various scripts included
 in the source tree are also using Python.
 
-For those, we follow the `PEP-8 style guide <https://www.python.org/dev/peps/pep-0008/>`__,
-this is however not as strongly enforced as for the C++ code. If you are so
-inclined, you can check and format your Python changes using
-`autopep8 <https://pypi.org/project/autopep8/>`__.
+For those, we follow the `Black style guide <https://github.com/psf/black#the-black-code-style>`__.
+Blacken your Python changes using `Black <https://pypi.org/project/black/>`__.
+
+Using black locally
+~~~~~~~~~~~~~~~~~~~
+
+First of all, you will need to install black. Black requires Python 3.6.0+ 
+to run.
+
+Installation
+^^^^^^^^^^^^
+
+Here's how to install black:
+
+::
+
+    pip install black --user
+
+
+You then have different possibilities to apply black to your changes:
+
+Manual usage
+^^^^^^^^^^^^
+
+You can apply ``black`` manually to one or more files with the following
+command:
+
+::
+
+    black -l 120 <path/to/file(s)>
+
+- ``-l 120`` means that the allowed number of characters per line is 120.
+  This number was agreed upon by the developers.
+- The path can point to several files, either one after the other or using
+  wildcards like in a typical Unix shell.
+
+Pre-commit hook
+^^^^^^^^^^^^^^^
+
+For ease of use, we provide a pre-commit hook for Git that will run
+black automatically on all your commits to check them, and let you apply
+its changes in the final commit.
+
+This "hook" is a script which can be found in ``misc/hooks``. Refer to that
+folder's ``README.md`` for installation instructions.
+
+
+Editor integration
+^^^^^^^^^^^^^^^^^^
+
+Many IDEs or code editors have beautifier plugins that can be configured to run
+black automatically, for example each time you save a file. For details you can
+check `Black editor integration <https://github.com/psf/black#editor-integration>`__.
