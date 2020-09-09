@@ -697,7 +697,7 @@ To declare a variable's type, use ``<variable>: <type>``:
 
    var health: int = 0
 
-To declare the return type of a function, use ``-> <type>``: 
+To declare the return type of a function, use ``-> <type>``:
 
 ::
 
@@ -706,13 +706,15 @@ To declare the return type of a function, use ``-> <type>``:
 Inferred Types
 ~~~~~~~~~~~~~~
 
-In some cases you can let the compiler infer the type, using ``:=``:
+In most cases you can let the compiler infer the type, using ``:=``:
 
 ::
    var health := 0  # The compiler will use the int type.
 
-However, in other cases the compiler is not able to infer the exact type, 
-so you should set it explicitly.
+However, in a few cases when context is missing, the compiler falls back to
+the function's return type. For example, ``get_node()`` cannot infer a type
+unless the scene or file of the node is loaded in memory. In this case, you
+should set the type explicitly.
 
 **Good**:
 
