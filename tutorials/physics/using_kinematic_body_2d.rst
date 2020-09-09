@@ -265,7 +265,7 @@ Attach a script to the KinematicBody2D and add the following code:
         public override void _PhysicsProcess(float delta)
         {
             GetInput();
-            MoveAndCollide(velocity * delta);
+            MoveAndCollide(_velocity * delta);
         }
     }
 
