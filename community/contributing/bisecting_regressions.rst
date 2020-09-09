@@ -95,9 +95,11 @@ folder and enter the following command:
 
 .. code-block:: shell
 
-    # <good> is the commit hash of the build that works as expected.
-    # <bad> is the commit hash of the build exhibiting the bug.
-    $ git bisect start <good> <bad>
+    # <good commit hash> is hash of the build that works as expected.
+    # <bad commit hash> is hash of the build exhibiting the bug.
+    $ git bisect start
+    $ git bisect good <good commit hash>
+    $ git bisect bad <bad commit hash>
 
 Compile Godot. This assumes you've set up a build environment:
 
