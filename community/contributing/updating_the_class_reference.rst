@@ -288,7 +288,7 @@ the end of the description:
     [b]Note:[/b] Only available when using the Vulkan renderer.
 
 To denote crucial information that could cause security issues or loss of data
-if not followed carefully, add a paragraph starting with "[b]Warning:[/b] at the
+if not followed carefully, add a paragraph starting with "[b]Warning:[/b]" at the
 end of the description:
 
 .. code-block:: none
