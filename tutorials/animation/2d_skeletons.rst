@@ -3,6 +3,11 @@
 2D skeletons
 ============
 
+.. warning::
+
+   Please note that 2D skeletons are currently not supported on Android (see `this issue
+   <https://github.com/godotengine/godot/issues/35772>`_ for more information).
+
 Introduction
 ------------
 
