@@ -735,19 +735,39 @@ Static typing
 
 Since Godot 3.1, GDScript supports :ref:`optional static typing<doc_gdscript_static_typing>`.
 
-Type hints
-~~~~~~~~~~
+Declared Types
+~~~~~~~~~~~~~~
 
-Place the colon right after the variable's name, without a space, and let the
-GDScript compiler infer the variable's type when possible.
+To declare a variable's type, use ``<variable>: <type>``:
+
+::
+
+   var health: int = 0
+
+To declare the return type of a function, use ``-> <type>``:
+
+::
+
+   func heal(amount: int) -> void:
+
+Inferred Types
+~~~~~~~~~~~~~~
+
+In most cases you can let the compiler infer the type, using ``:=``:
+
+::
+   var health := 0  # The compiler will use the int type.
+
+However, in a few cases when context is missing, the compiler falls back to
+the function's return type. For example, ``get_node()`` cannot infer a type
+unless the scene or file of the node is loaded in memory. In this case, you
+should set the type explicitly.
 
 **Good**:
 
 ::
 
    onready var health_bar: ProgressBar = get_node("UI/LifeBar")
-
-   var health := 0 # The compiler will use the int type.
 
 **Bad**:
 
@@ -756,15 +776,3 @@ GDScript compiler infer the variable's type when possible.
    # The compiler can't infer the exact type and will use Node
    # instead of ProgressBar.
    onready var health_bar := get_node("UI/LifeBar")
-
-When you let the compiler infer the type hint, write the colon and equal signs together: ``:=``.
-
-::
-
-   var health := 0 # The compiler will use the int type.
-
-Add a space on either sides of the return type arrow when defining functions.
-
-::
-
-   func heal(amount: int) -> void:
