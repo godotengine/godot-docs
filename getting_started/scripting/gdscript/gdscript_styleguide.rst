@@ -735,7 +735,7 @@ Static typing
 
 Since Godot 3.1, GDScript supports :ref:`optional static typing<doc_gdscript_static_typing>`.
 
-Declared Types
+Declared types
 ~~~~~~~~~~~~~~
 
 To declare a variable's type, use ``<variable>: <type>``:
@@ -750,7 +750,7 @@ To declare the return type of a function, use ``-> <type>``:
 
    func heal(amount: int) -> void:
 
-Inferred Types
+Inferred types
 ~~~~~~~~~~~~~~
 
 In most cases you can let the compiler infer the type, using ``:=``:
