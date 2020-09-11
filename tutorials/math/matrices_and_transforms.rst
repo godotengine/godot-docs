@@ -235,7 +235,7 @@ Putting it all together
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 We're going to apply everything we mentioned so far onto one transform.
-To follow along, create a simple project with a Sprite node and use the 
+To follow along, create a simple project with a Sprite node and use the
 Godot logo for the texture resource.
 
 Let's set the translation to (350, 150), rotate by -0.5 rad, and scale by 3.
@@ -290,7 +290,7 @@ matrix has four total numbers in two :ref:`class_Vector2` values, while
 a rotation value and a Vector2 for scale only has 3 numbers. The high-level
 concept for the missing degree of freedom is called *shearing*.
 
-Normally you will always have the basis vectors perpendicular to each
+Normally, you will always have the basis vectors perpendicular to each
 other. However, shearing can be useful in some situations, and
 understanding shearing helps you understand how transforms work.
 
