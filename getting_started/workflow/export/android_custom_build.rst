@@ -51,6 +51,10 @@ You need to install a Java SDK (**not** just the runtime or JRE).
 `OpenJDK 8 <https://adoptopenjdk.net/index.html>`__ is required, newer
 versions won't work.
 
+On Windows, make sure that you enable "Set ``JAVA_HOME`` variable" in the *Custom Setup* view
+of the installer. You have to restart Godot after this, otherwise Godot can't
+find the ``JAVA_HOME`` variable.
+
 Download the command-line tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -141,16 +145,17 @@ keystore (this is needed to build). Go up two folders by writing:
 
 (or open a new shell in the ``android-sdk`` folder).
 
-And you need to input the following line (on Linux and macOS, this should work
-out of the box, for Windows there are further instructions below):
+And you need to input the following line (This should work out of the box.
+However, if you haven't set the ``JAVA_HOME`` variable on Windows,
+there are further instructions below):
 
 .. code-block:: shell
 
     keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999
 
-On Windows, the full path to Java should be provided. You need to add ``&`` at
-the beginning of the line if you use PowerShell; it's not needed for the regular
-``cmd.exe`` console.
+On Windows, if you did not install the ``JAVA_HOME`` variable, the full path to Java
+should be provided. You need to add ``&`` at the beginning of the line if you use
+PowerShell; it's not needed for the regular ``cmd.exe`` console.
 
 To make it clearer, here is an capture of a line that works on PowerShell (by
 adding ``&`` and the full Java path before ``keytool.exe``). Again, keep in mind that you
