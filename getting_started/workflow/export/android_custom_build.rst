@@ -82,7 +82,7 @@ an empty directory). On Windows, the following path is usually good enough:
 
 Create an empty folder named ``cmdline-tools`` inside of the ``android-sdk`` folder.
 Then unzip the Android SDK ZIP file into the ``android-sdk/cmdline-tools`` folder.
-  
+
 .. note::
 
     If you're on Windows, you must not extract the ZIP archive with the default
@@ -102,7 +102,7 @@ Your final directory structure should look like this :
   android-sdk/cmdline-tools/
   android-sdk/cmdline-tools/latest
   android-sdk/cmdline-tools/latest/allTheOtherFiles
-  
+
 We need to setup the directory structure this way for the sdkmanager (inside the bin folder) to work.
 
 Accepting the licenses
@@ -143,7 +143,7 @@ keystore (this is needed to build). Go up two folders by writing:
 
 .. code-block:: shell
 
-    cd ..\..
+    cd ..\..\..
 
 (or open a new shell in the ``android-sdk`` folder).
 
