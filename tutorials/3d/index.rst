@@ -7,7 +7,6 @@
 
    introduction_to_3d
    using_transforms
-   optimizing_3d_performance
    3d_rendering_limitations
    standard_material_3d
    lights_and_shadows
