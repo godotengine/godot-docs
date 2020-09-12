@@ -67,12 +67,8 @@ To save disk space, you don't want the full IDE, so don't download it.
     doing the same using Android Studio.
 
 Look on that page for the *Command line tools only* section. Currently, they are listed under
-*Download Options*. Scroll down a bit until you see them.
-
-Download the ZIP file for your platform, there will be a single ``tools``
-folder inside:
-
-.. image:: img/custom_build_zip.png
+*Download Options*. Scroll down a bit until you see them and download the ZIP file for
+your platform.
 
 This may appear a little confusing, but be sure to follow these instructions
 carefully:
@@ -82,16 +78,22 @@ an empty directory). On Windows, the following path is usually good enough:
 
 .. code-block:: none
 
-  C:\users\<yourusername>\Documents\android-sdk
+  C:\users\<yourusername>\android-sdk
+
+Create an empty folder named ``cmdline-tools`` inside of the ``android-sdk`` folder.
+Then unzip the Android SDK ZIP file into the ``android-sdk/cmdline-tools`` folder.
   
 .. note::
 
-    If you already have an android-sdk folder, normally located in ``%LOCALAPPDATA%\Android\Sdk``, 
-    then use this folder instead of creating an empty ``android-sdk`` folder. 
+    If you're on Windows, you must not extract the ZIP archive with the default
+    Windows extractor (e.g. Windows Explorer). You have to use another tool
+    like 7zip, WinRAR or the Powershell ``Expand-Archive`` command. If you
+    extract the archive with the default Windows extractor, the files are not
+    extracted correctly and you will run into errors later on!
 
-Unzip the Android SDK ZIP file into the ``android-sdk`` folder. This folder should 
-now contain the unzipped folder called ``tools``. Rename ``tools`` to ``latest``. 
-Finally, create an empty folder named ``cmdline-tools`` and place ``latest`` into it. 
+The ``cmdline-tools`` folder should now contain the unzipped folder called ``tools``.
+Finally, rename the ``tools`` folder to ``latest``.
+
 Your final directory structure should look like this :
 
 .. code-block:: none
