@@ -183,6 +183,24 @@ free and open-source integration, consider starting the integration work yoursel
 Godot is not owned by one person; it belongs to the community, and it grows along
 with ambitious community contributors like you.
 
+Why does Godot use Vulkan or OpenGL instead of Direct3D?
+--------------------------------------------------------
+
+Godot aims for cross-platform compatibility and open standards first and
+foremost. OpenGL and Vulkan are the technologies that are both open and
+available (nearly) on all platforms. Thanks to this design decision, a project
+developed with Godot on Windows will run out of the box on Linux, macOS, and
+more.
+
+Since Godot only has a few people working on its renderer, we would prefer
+having fewer rendering backends to maintain. On top of that, using a single API
+on all platforms allows for greater consistency with fewer platform-specific
+issues.
+
+In the long term, we may develop a Direct3D 12 renderer for Godot (mainly for
+the Xbox's purposes), but Vulkan and OpenGL will remain the default rendering
+backends on all platforms, including Windows.
+
 How should assets be created to handle multiple resolutions and aspect ratios?
 ------------------------------------------------------------------------------
 
