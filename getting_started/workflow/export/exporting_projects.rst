@@ -147,3 +147,24 @@ flag, and to create a dedicated export preset for automated export:
 .. code-block:: shell
 
     godot --path path/to/project --export "pck" game_name.pck
+
+PCK versus ZIP pack file formats
+--------------------------------
+
+Each format has its upsides and downsides. PCK is the default and recommended
+format for most use cases, but you may want to use a ZIP archive instead
+depending on your needs.
+
+**PCK format:**
+
+- Uncompressed format. Larger file size, but faster to read/write.
+- Not readable and writable using tools normally present on the user's
+  operating system, even though there are
+  `third-party tools <https://github.com/hhyyrylainen/GodotPckTool>`__
+  to extract and create PCK files.
+
+**ZIP format:**
+
+- Compressed format. Smaller file size, but slower to read/write.
+- Readable and writable using tools normally present on the user's operating system.
+  This can be useful to make modding easier (see also :ref:`doc_exporting_pcks`).
