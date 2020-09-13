@@ -65,6 +65,8 @@ for each Godot version:
 Pre-release Godot versions aren't intended to be used in production and are
 provided on a best-effort basis.
 
+.. _doc_release_policy_when_is_next_release_out:
+
 When is the next release out?
 -----------------------------
 
