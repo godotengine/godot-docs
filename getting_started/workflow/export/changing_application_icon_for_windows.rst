@@ -12,7 +12,7 @@ Creating an ICO file
 
 Windows does not use formats such as png or jpg for application icons. Instead,
 it uses a Windows-only format called ICO. You can create your application icon
-in any program but you will have to convert it to an ICO file using a program such 
+in any program but you will have to convert it to an ICO file using a program such
 as GIMP.
 
 `This video tutorial <https://www.youtube.com/watch?v=uqV3UfM-n5Y>`_ goes over how to
@@ -40,7 +40,7 @@ Click on the folder icon and select your ICO file.
 
 .. image:: img/icon_project_settings.png
 
-This setting only changes the icon for your exported game on Windows. 
+This setting only changes the icon for your exported game on Windows.
 To set the icon for macOS, use ``Macos Native Icon``. And for any other platform,
 use the ``Icon`` setting.
 
@@ -69,8 +69,10 @@ Go to **Editor → Editor Settings → Export → Windows**.
 Click on the folder icon for the **rcedit** entry.
 Navigate to and select the rcedit executable.
 
-.. note:: Linux and macOS users will also need to install
-          `WINE <https://www.winehq.org/>`_ to use rcedit.
+.. note::
+
+    Linux and macOS users will also need to install
+    `WINE <https://www.winehq.org/>`_ to use rcedit.
 
 .. image:: img/icon_rcedit.png
 
@@ -82,6 +84,17 @@ the **Application → Icon** field.
 
 .. image:: img/icon_export_settings.png
 
+.. note::
+
+    If rcedit fails to change the icon, you can instead
+    :ref:`compile your own Windows export templates <doc_compiling_for_windows>`
+    with the icon changed. To do so, replace
+    `platform/windows/godot.ico <https://github.com/godotengine/godot/blob/master/platform/windows/godot.ico>`__
+    with your own ICO file *before* compiling export templates.
+
+    Once this is done, you can specify your export templates as custom export
+    templates in your project's Windows export preset.
+
 Testing the result
 ------------------
 
@@ -89,6 +102,8 @@ You can now export the project. If it worked correctly, you should see this:
 
 .. image:: img/icon_result.png
 
-.. note:: if your icon isn't showing up properly, on Windows 10, try clearing 
-             the icon cache. To do so, open `Run` and call the command 
-             ``ie4uinit.exe -ClearIconCache`` or ``ie4uinit.exe -show``.
+.. note::
+
+    If your icon isn't showing up properly, on Windows 10, try clearing the icon
+    cache. To do so, open the **Run** dialog and enter ``ie4uinit.exe
+    -ClearIconCache`` or ``ie4uinit.exe -show``.

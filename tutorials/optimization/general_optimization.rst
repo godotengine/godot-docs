@@ -145,8 +145,8 @@ Principles
 The messages are very important:
 
 - Developer time is limited. Instead of blindly trying to speed up
-  all aspects of a program, we should concentrate our efforts on the aspects that
-  really matter.
+  all aspects of a program, we should concentrate our efforts on the aspects
+  that really matter.
 - Efforts at optimization often end up with code that is harder to read and
   debug than non-optimized code. It is in our interests to limit this to areas
   that will really benefit.
@@ -156,9 +156,9 @@ mean that we *should*. Knowing when and when not to optimize is a great skill to
 develop.
 
 One misleading aspect of the quote is that people tend to focus on the subquote
-*"premature optimization is the root of all evil"*. While *premature* optimization
-is (by definition) undesirable, performant software is the result of performant
-design.
+*"premature optimization is the root of all evil"*. While *premature*
+optimization is (by definition) undesirable, performant software is the result
+of performant design.
 
 Performant design
 ~~~~~~~~~~~~~~~~~
@@ -166,9 +166,9 @@ Performant design
 The danger with encouraging people to ignore optimization until necessary, is
 that it conveniently ignores that the most important time to consider
 performance is at the design stage, before a key has even hit a keyboard. If the
-design or algorithms of a program are inefficient, then no amount of polishing the
-details later will make it run fast. It may run *faster*, but it will never run
-as fast as a program designed for performance.
+design or algorithms of a program are inefficient, then no amount of polishing
+the details later will make it run fast. It may run *faster*, but it will never
+run as fast as a program designed for performance.
 
 This tends to be far more important in game or graphics programming than in
 general programming. A performant design, even without low-level optimization,
@@ -179,18 +179,18 @@ Incremental design
 ~~~~~~~~~~~~~~~~~~
 
 Of course, in practice, unless you have prior knowledge, you are unlikely to
-come up with the best design the first time. Instead, you'll often make a series of
-versions of a particular area of code, each taking a different approach to the
-problem, until you come to a satisfactory solution. It's important not to spend
-too much time on the details at this stage until you have finalized the overall
-design. Otherwise, much of your work will be thrown out.
+come up with the best design the first time. Instead, you'll often make a series
+of versions of a particular area of code, each taking a different approach to
+the problem, until you come to a satisfactory solution. It's important not to
+spend too much time on the details at this stage until you have finalized the
+overall design. Otherwise, much of your work will be thrown out.
 
 It's difficult to give general guidelines for performant design because this is
-so dependent on the problem. One point worth mentioning though, on the CPU
-side, is that modern CPUs are nearly always limited by memory bandwidth. This
-has led to a resurgence in data-oriented design, which involves designing data
-structures and algorithms for *cache locality* of data and linear access, rather than
-jumping around in memory.
+so dependent on the problem. One point worth mentioning though, on the CPU side,
+is that modern CPUs are nearly always limited by memory bandwidth. This has led
+to a resurgence in data-oriented design, which involves designing data
+structures and algorithms for *cache locality* of data and linear access, rather
+than jumping around in memory.
 
 The optimization process
 ~~~~~~~~~~~~~~~~~~~~~~~~

@@ -176,8 +176,8 @@ amount of work the GPU has to do. You can do this by simplifying the shader
 (perhaps turn off expensive options if you are using a :ref:`SpatialMaterial
 <class_SpatialMaterial>`), or reducing the number and size of textures used.
 
-**When targeting mobile devices, consider using the simplest possible shaders you
-can reasonably afford to use.**
+**When targeting mobile devices, consider using the simplest possible shaders
+you can reasonably afford to use.**
 
 Reading textures
 ~~~~~~~~~~~~~~~~

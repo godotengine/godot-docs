@@ -6,12 +6,12 @@ CPU optimization
 Measuring performance
 =====================
 
-To know how to speed up our program, we have to know where the "bottlenecks"
-are. Bottlenecks are the slowest parts of the program that limit the rate that
-everything can progress. This allows us to concentrate our efforts on optimizing
-the areas which will give us the greatest speed improvement, instead of spending
-a lot of time optimizing functions that will lead to small performance
-improvements.
+We have to know where the "bottlenecks" are to know how to speed up our program.
+Bottlenecks are the slowest parts of the program that limit the rate that
+everything can progress. Focussing on bottlenecks allows us to concentrate our
+efforts on optimizing the areas which will give us the greatest speed
+improvement, instead of spending a lot of time optimizing functions that will
+lead to small performance improvements.
 
 For the CPU, the easiest way to identify bottlenecks is to use a profiler.
 
@@ -45,7 +45,8 @@ When a project is running slowly, you will often see an obvious function or
 process taking a lot more time than others. This is your primary bottleneck, and
 you can usually increase speed by optimizing this area.
 
-For more info about using Godot's built-in profiler, see :ref:`doc_debugger_panel`.
+For more info about using Godot's built-in profiler, see
+:ref:`doc_debugger_panel`.
 
 External profilers
 ~~~~~~~~~~~~~~~~~~
