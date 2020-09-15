@@ -101,3 +101,6 @@ Try to initiate the DTLS handshake with the given ``udp_peer`` which must be alr
 
 **Note**: You must check that the state of the return PacketPeerUDP is :ref:`PacketPeerDTLS.STATUS_HANDSHAKING<class_PacketPeerDTLS_constant_STATUS_HANDSHAKING>`, as it is normal that 50% of the new connections will be invalid due to cookie exchange.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

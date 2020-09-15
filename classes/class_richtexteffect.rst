@@ -37,16 +37,19 @@ Tutorials
 Methods
 -------
 
-+-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`_process_custom_fx<class_RichTextEffect_method__process_custom_fx>` **(** :ref:`CharFXTransform<class_CharFXTransform>` char_fx **)** virtual |
-+-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`_process_custom_fx<class_RichTextEffect_method__process_custom_fx>` **(** :ref:`CharFXTransform<class_CharFXTransform>` char_fx **)** |virtual| |
++-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_RichTextEffect_method__process_custom_fx:
 
-- :ref:`bool<class_bool>` **_process_custom_fx** **(** :ref:`CharFXTransform<class_CharFXTransform>` char_fx **)** virtual
+- :ref:`bool<class_bool>` **_process_custom_fx** **(** :ref:`CharFXTransform<class_CharFXTransform>` char_fx **)** |virtual|
 
 Override this method to modify properties in ``char_fx``. The method must return ``true`` if the character could be transformed successfully. If the method returns ``false``, it will skip transformation to avoid displaying broken text.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

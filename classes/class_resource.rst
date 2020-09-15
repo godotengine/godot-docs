@@ -41,19 +41,19 @@ Properties
 Methods
 -------
 
-+---------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`_setup_local_to_scene<class_Resource_method__setup_local_to_scene>` **(** **)** virtual                  |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_Resource>` | :ref:`duplicate<class_Resource_method_duplicate>` **(** :ref:`bool<class_bool>` subresources=false **)** const |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`         | :ref:`get_local_scene<class_Resource_method_get_local_scene>` **(** **)** const                                |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`           | :ref:`get_rid<class_Resource_method_get_rid>` **(** **)** const                                                |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`setup_local_to_scene<class_Resource_method_setup_local_to_scene>` **(** **)**                            |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`take_over_path<class_Resource_method_take_over_path>` **(** :ref:`String<class_String>` path **)**       |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------+
++---------------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`_setup_local_to_scene<class_Resource_method__setup_local_to_scene>` **(** **)** |virtual|                  |
++---------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_Resource>` | :ref:`duplicate<class_Resource_method_duplicate>` **(** :ref:`bool<class_bool>` subresources=false **)** |const| |
++---------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_Node>`         | :ref:`get_local_scene<class_Resource_method_get_local_scene>` **(** **)** |const|                                |
++---------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`           | :ref:`get_rid<class_Resource_method_get_rid>` **(** **)** |const|                                                |
++---------------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`setup_local_to_scene<class_Resource_method_setup_local_to_scene>` **(** **)**                              |
++---------------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`take_over_path<class_Resource_method_take_over_path>` **(** :ref:`String<class_String>` path **)**         |
++---------------------------------+------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -118,7 +118,7 @@ Method Descriptions
 
 .. _class_Resource_method__setup_local_to_scene:
 
-- void **_setup_local_to_scene** **(** **)** virtual
+- void **_setup_local_to_scene** **(** **)** |virtual|
 
 Virtual function which can be overridden to customize the behavior value of :ref:`setup_local_to_scene<class_Resource_method_setup_local_to_scene>`.
 
@@ -126,7 +126,7 @@ Virtual function which can be overridden to customize the behavior value of :ref
 
 .. _class_Resource_method_duplicate:
 
-- :ref:`Resource<class_Resource>` **duplicate** **(** :ref:`bool<class_bool>` subresources=false **)** const
+- :ref:`Resource<class_Resource>` **duplicate** **(** :ref:`bool<class_bool>` subresources=false **)** |const|
 
 Duplicates the resource, returning a new resource. By default, sub-resources are shared between resource copies for efficiency. This can be changed by passing ``true`` to the ``subresources`` argument which will copy the subresources.
 
@@ -136,7 +136,7 @@ Duplicates the resource, returning a new resource. By default, sub-resources are
 
 .. _class_Resource_method_get_local_scene:
 
-- :ref:`Node<class_Node>` **get_local_scene** **(** **)** const
+- :ref:`Node<class_Node>` **get_local_scene** **(** **)** |const|
 
 If :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` is enabled and the resource was loaded from a :ref:`PackedScene<class_PackedScene>` instantiation, returns the local scene where this resource's unique copy is in use. Otherwise, returns ``null``.
 
@@ -144,7 +144,7 @@ If :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene
 
 .. _class_Resource_method_get_rid:
 
-- :ref:`RID<class_RID>` **get_rid** **(** **)** const
+- :ref:`RID<class_RID>` **get_rid** **(** **)** |const|
 
 Returns the RID of the resource (or an empty RID). Many resources (such as :ref:`Texture<class_Texture>`, :ref:`Mesh<class_Mesh>`, etc) are high-level abstractions of resources stored in a server, so this function will return the original RID.
 
@@ -166,3 +166,6 @@ For most resources, this method performs no base logic. :ref:`ViewportTexture<cl
 
 Sets the path of the resource, potentially overriding an existing cache entry for this path. This differs from setting :ref:`resource_path<class_Resource_property_resource_path>`, as the latter would error out if another resource was already cached for the given path.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -168,6 +168,8 @@ Property Descriptions
 
 The file system access scope. See enum ``Access`` constants.
 
+**Warning:** Currently, in sandboxed environments such as HTML5 builds or sandboxed macOS apps, FileDialog cannot access the host file system. See `godot-proposals#1123 <https://github.com/godotengine/godot-proposals/issues/1123>`_.
+
 ----
 
 .. _class_FileDialog_property_current_dir:
@@ -329,3 +331,6 @@ Returns the vertical box container of the dialog, custom controls can be added t
 
 Invalidate and update the current dialog content list.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

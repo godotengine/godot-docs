@@ -34,9 +34,9 @@ Properties
 Methods
 -------
 
-+---------------------------+--------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>` **(** **)** const |
-+---------------------------+--------------------------------------------------------------------------------------+
++---------------------------+----------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>` **(** **)** |const| |
++---------------------------+----------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -92,7 +92,7 @@ Method Descriptions
 
 .. _class_PrimitiveMesh_method_get_mesh_arrays:
 
-- :ref:`Array<class_Array>` **get_mesh_arrays** **(** **)** const
+- :ref:`Array<class_Array>` **get_mesh_arrays** **(** **)** |const|
 
 Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. The result can be passed to :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>` to create a new surface. For example:
 
@@ -102,3 +102,6 @@ Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. The r
     var arr_mesh := ArrayMesh.new()
     arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, c.get_mesh_arrays())
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

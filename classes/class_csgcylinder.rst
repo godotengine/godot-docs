@@ -130,3 +130,6 @@ The number of sides of the cylinder, the higher this number the more detail ther
 
 If ``true`` the normals of the cylinder are set to give a smooth effect making the cylinder seem rounded. If ``false`` the cylinder will have a flat shaded look.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

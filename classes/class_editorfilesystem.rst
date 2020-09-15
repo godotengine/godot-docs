@@ -24,15 +24,15 @@ Methods
 -------
 
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                       | :ref:`get_file_type<class_EditorFileSystem_method_get_file_type>` **(** :ref:`String<class_String>` path **)** const       |
+| :ref:`String<class_String>`                                       | :ref:`get_file_type<class_EditorFileSystem_method_get_file_type>` **(** :ref:`String<class_String>` path **)** |const|     |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` | :ref:`get_filesystem<class_EditorFileSystem_method_get_filesystem>` **(** **)**                                            |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` | :ref:`get_filesystem_path<class_EditorFileSystem_method_get_filesystem_path>` **(** :ref:`String<class_String>` path **)** |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                         | :ref:`get_scanning_progress<class_EditorFileSystem_method_get_scanning_progress>` **(** **)** const                        |
+| :ref:`float<class_float>`                                         | :ref:`get_scanning_progress<class_EditorFileSystem_method_get_scanning_progress>` **(** **)** |const|                      |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                           | :ref:`is_scanning<class_EditorFileSystem_method_is_scanning>` **(** **)** const                                            |
+| :ref:`bool<class_bool>`                                           | :ref:`is_scanning<class_EditorFileSystem_method_is_scanning>` **(** **)** |const|                                          |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`scan<class_EditorFileSystem_method_scan>` **(** **)**                                                                |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
@@ -81,7 +81,7 @@ Method Descriptions
 
 .. _class_EditorFileSystem_method_get_file_type:
 
-- :ref:`String<class_String>` **get_file_type** **(** :ref:`String<class_String>` path **)** const
+- :ref:`String<class_String>` **get_file_type** **(** :ref:`String<class_String>` path **)** |const|
 
 Gets the type of the file, given the full path.
 
@@ -105,7 +105,7 @@ Returns a view into the filesystem at ``path``.
 
 .. _class_EditorFileSystem_method_get_scanning_progress:
 
-- :ref:`float<class_float>` **get_scanning_progress** **(** **)** const
+- :ref:`float<class_float>` **get_scanning_progress** **(** **)** |const|
 
 Returns the scan progress for 0 to 1 if the FS is being scanned.
 
@@ -113,7 +113,7 @@ Returns the scan progress for 0 to 1 if the FS is being scanned.
 
 .. _class_EditorFileSystem_method_is_scanning:
 
-- :ref:`bool<class_bool>` **is_scanning** **(** **)** const
+- :ref:`bool<class_bool>` **is_scanning** **(** **)** |const|
 
 Returns ``true`` of the filesystem is being scanned.
 
@@ -149,3 +149,6 @@ Update a file information. Call this if an external program (not Godot) modified
 
 Scans the script files and updates the list of custom class names.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

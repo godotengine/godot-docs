@@ -52,39 +52,39 @@ Methods
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`copy_theme<class_Theme_method_copy_theme>` **(** :ref:`Theme<class_Theme>` other **)**                                                                                 |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`                     | :ref:`get_color<class_Theme_method_get_color>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const                                          |
+| :ref:`Color<class_Color>`                     | :ref:`get_color<class_Theme_method_get_color>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|                                        |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_color_list<class_Theme_method_get_color_list>` **(** :ref:`String<class_String>` type **)** const                                                                  |
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_color_list<class_Theme_method_get_color_list>` **(** :ref:`String<class_String>` type **)** |const|                                                                |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`get_constant<class_Theme_method_get_constant>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const                                    |
+| :ref:`int<class_int>`                         | :ref:`get_constant<class_Theme_method_get_constant>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|                                  |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_constant_list<class_Theme_method_get_constant_list>` **(** :ref:`String<class_String>` type **)** const                                                            |
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_constant_list<class_Theme_method_get_constant_list>` **(** :ref:`String<class_String>` type **)** |const|                                                          |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Font<class_Font>`                       | :ref:`get_font<class_Theme_method_get_font>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const                                            |
+| :ref:`Font<class_Font>`                       | :ref:`get_font<class_Theme_method_get_font>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|                                          |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_font_list<class_Theme_method_get_font_list>` **(** :ref:`String<class_String>` type **)** const                                                                    |
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_font_list<class_Theme_method_get_font_list>` **(** :ref:`String<class_String>` type **)** |const|                                                                  |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                 | :ref:`get_icon<class_Theme_method_get_icon>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const                                            |
+| :ref:`Texture<class_Texture>`                 | :ref:`get_icon<class_Theme_method_get_icon>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|                                          |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_icon_list<class_Theme_method_get_icon_list>` **(** :ref:`String<class_String>` type **)** const                                                                    |
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_icon_list<class_Theme_method_get_icon_list>` **(** :ref:`String<class_String>` type **)** |const|                                                                  |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`               | :ref:`get_stylebox<class_Theme_method_get_stylebox>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const                                    |
+| :ref:`StyleBox<class_StyleBox>`               | :ref:`get_stylebox<class_Theme_method_get_stylebox>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|                                  |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_stylebox_list<class_Theme_method_get_stylebox_list>` **(** :ref:`String<class_String>` type **)** const                                                            |
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_stylebox_list<class_Theme_method_get_stylebox_list>` **(** :ref:`String<class_String>` type **)** |const|                                                          |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_stylebox_types<class_Theme_method_get_stylebox_types>` **(** **)** const                                                                                           |
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_stylebox_types<class_Theme_method_get_stylebox_types>` **(** **)** |const|                                                                                         |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_type_list<class_Theme_method_get_type_list>` **(** :ref:`String<class_String>` type **)** const                                                                    |
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_type_list<class_Theme_method_get_type_list>` **(** :ref:`String<class_String>` type **)** |const|                                                                  |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`has_color<class_Theme_method_has_color>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const                                          |
+| :ref:`bool<class_bool>`                       | :ref:`has_color<class_Theme_method_has_color>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|                                        |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`has_constant<class_Theme_method_has_constant>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const                                    |
+| :ref:`bool<class_bool>`                       | :ref:`has_constant<class_Theme_method_has_constant>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|                                  |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`has_font<class_Theme_method_has_font>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const                                            |
+| :ref:`bool<class_bool>`                       | :ref:`has_font<class_Theme_method_has_font>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|                                          |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`has_icon<class_Theme_method_has_icon>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const                                            |
+| :ref:`bool<class_bool>`                       | :ref:`has_icon<class_Theme_method_has_icon>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|                                          |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`has_stylebox<class_Theme_method_has_stylebox>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const                                    |
+| :ref:`bool<class_bool>`                       | :ref:`has_stylebox<class_Theme_method_has_stylebox>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|                                  |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`set_color<class_Theme_method_set_color>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type, :ref:`Color<class_Color>` color **)**               |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -181,7 +181,7 @@ Sets the theme's values to a copy of a given theme.
 
 .. _class_Theme_method_get_color:
 
-- :ref:`Color<class_Color>` **get_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const
+- :ref:`Color<class_Color>` **get_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|
 
 Returns the :ref:`Color<class_Color>` at ``name`` if the theme has ``type``.
 
@@ -189,7 +189,7 @@ Returns the :ref:`Color<class_Color>` at ``name`` if the theme has ``type``.
 
 .. _class_Theme_method_get_color_list:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_color_list** **(** :ref:`String<class_String>` type **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_color_list** **(** :ref:`String<class_String>` type **)** |const|
 
 Returns all the :ref:`Color<class_Color>`\ s as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`Color<class_Color>`'s name, for use in :ref:`get_color<class_Theme_method_get_color>`, if the theme has ``type``.
 
@@ -197,7 +197,7 @@ Returns all the :ref:`Color<class_Color>`\ s as a :ref:`PoolStringArray<class_Po
 
 .. _class_Theme_method_get_constant:
 
-- :ref:`int<class_int>` **get_constant** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const
+- :ref:`int<class_int>` **get_constant** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|
 
 Returns the constant at ``name`` if the theme has ``type``.
 
@@ -205,7 +205,7 @@ Returns the constant at ``name`` if the theme has ``type``.
 
 .. _class_Theme_method_get_constant_list:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_constant_list** **(** :ref:`String<class_String>` type **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_constant_list** **(** :ref:`String<class_String>` type **)** |const|
 
 Returns all the constants as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each constant's name, for use in :ref:`get_constant<class_Theme_method_get_constant>`, if the theme has ``type``.
 
@@ -213,7 +213,7 @@ Returns all the constants as a :ref:`PoolStringArray<class_PoolStringArray>` fil
 
 .. _class_Theme_method_get_font:
 
-- :ref:`Font<class_Font>` **get_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const
+- :ref:`Font<class_Font>` **get_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|
 
 Returns the :ref:`Font<class_Font>` at ``name`` if the theme has ``type``.
 
@@ -221,7 +221,7 @@ Returns the :ref:`Font<class_Font>` at ``name`` if the theme has ``type``.
 
 .. _class_Theme_method_get_font_list:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_font_list** **(** :ref:`String<class_String>` type **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_font_list** **(** :ref:`String<class_String>` type **)** |const|
 
 Returns all the :ref:`Font<class_Font>`\ s as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`Font<class_Font>`'s name, for use in :ref:`get_font<class_Theme_method_get_font>`, if the theme has ``type``.
 
@@ -229,7 +229,7 @@ Returns all the :ref:`Font<class_Font>`\ s as a :ref:`PoolStringArray<class_Pool
 
 .. _class_Theme_method_get_icon:
 
-- :ref:`Texture<class_Texture>` **get_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const
+- :ref:`Texture<class_Texture>` **get_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|
 
 Returns the icon :ref:`Texture<class_Texture>` at ``name`` if the theme has ``type``.
 
@@ -237,7 +237,7 @@ Returns the icon :ref:`Texture<class_Texture>` at ``name`` if the theme has ``ty
 
 .. _class_Theme_method_get_icon_list:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_icon_list** **(** :ref:`String<class_String>` type **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_icon_list** **(** :ref:`String<class_String>` type **)** |const|
 
 Returns all the icons as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`Texture<class_Texture>`'s name, for use in :ref:`get_icon<class_Theme_method_get_icon>`, if the theme has ``type``.
 
@@ -245,7 +245,7 @@ Returns all the icons as a :ref:`PoolStringArray<class_PoolStringArray>` filled 
 
 .. _class_Theme_method_get_stylebox:
 
-- :ref:`StyleBox<class_StyleBox>` **get_stylebox** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const
+- :ref:`StyleBox<class_StyleBox>` **get_stylebox** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|
 
 Returns the icon :ref:`StyleBox<class_StyleBox>` at ``name`` if the theme has ``type``.
 
@@ -253,7 +253,7 @@ Returns the icon :ref:`StyleBox<class_StyleBox>` at ``name`` if the theme has ``
 
 .. _class_Theme_method_get_stylebox_list:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_stylebox_list** **(** :ref:`String<class_String>` type **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_stylebox_list** **(** :ref:`String<class_String>` type **)** |const|
 
 Returns all the :ref:`StyleBox<class_StyleBox>`\ s as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`StyleBox<class_StyleBox>`'s name, for use in :ref:`get_stylebox<class_Theme_method_get_stylebox>`, if the theme has ``type``.
 
@@ -261,7 +261,7 @@ Returns all the :ref:`StyleBox<class_StyleBox>`\ s as a :ref:`PoolStringArray<cl
 
 .. _class_Theme_method_get_stylebox_types:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_stylebox_types** **(** **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_stylebox_types** **(** **)** |const|
 
 Returns all the :ref:`StyleBox<class_StyleBox>` types as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`StyleBox<class_StyleBox>`'s type, for use in :ref:`get_stylebox<class_Theme_method_get_stylebox>` and/or :ref:`get_stylebox_list<class_Theme_method_get_stylebox_list>`, if the theme has ``type``.
 
@@ -269,7 +269,7 @@ Returns all the :ref:`StyleBox<class_StyleBox>` types as a :ref:`PoolStringArray
 
 .. _class_Theme_method_get_type_list:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_type_list** **(** :ref:`String<class_String>` type **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_type_list** **(** :ref:`String<class_String>` type **)** |const|
 
 Returns all the types in ``type`` as a :ref:`PoolStringArray<class_PoolStringArray>` for use in any of the ``get_*`` functions, if the theme has ``type``.
 
@@ -277,7 +277,7 @@ Returns all the types in ``type`` as a :ref:`PoolStringArray<class_PoolStringArr
 
 .. _class_Theme_method_has_color:
 
-- :ref:`bool<class_bool>` **has_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const
+- :ref:`bool<class_bool>` **has_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|
 
 Returns ``true`` if :ref:`Color<class_Color>` with ``name`` is in ``type``.
 
@@ -287,7 +287,7 @@ Returns ``false`` if the theme does not have ``type``.
 
 .. _class_Theme_method_has_constant:
 
-- :ref:`bool<class_bool>` **has_constant** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const
+- :ref:`bool<class_bool>` **has_constant** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|
 
 Returns ``true`` if constant with ``name`` is in ``type``.
 
@@ -297,7 +297,7 @@ Returns ``false`` if the theme does not have ``type``.
 
 .. _class_Theme_method_has_font:
 
-- :ref:`bool<class_bool>` **has_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const
+- :ref:`bool<class_bool>` **has_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|
 
 Returns ``true`` if :ref:`Font<class_Font>` with ``name`` is in ``type``.
 
@@ -307,7 +307,7 @@ Returns ``false`` if the theme does not have ``type``.
 
 .. _class_Theme_method_has_icon:
 
-- :ref:`bool<class_bool>` **has_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const
+- :ref:`bool<class_bool>` **has_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|
 
 Returns ``true`` if icon :ref:`Texture<class_Texture>` with ``name`` is in ``type``.
 
@@ -317,7 +317,7 @@ Returns ``false`` if the theme does not have ``type``.
 
 .. _class_Theme_method_has_stylebox:
 
-- :ref:`bool<class_bool>` **has_stylebox** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const
+- :ref:`bool<class_bool>` **has_stylebox** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** |const|
 
 Returns ``true`` if :ref:`StyleBox<class_StyleBox>` with ``name`` is in ``type``.
 
@@ -373,3 +373,6 @@ Sets theme's :ref:`StyleBox<class_StyleBox>` to ``stylebox`` at ``name`` in ``ty
 
 Does nothing if the theme does not have ``type``.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -70,13 +70,13 @@ Methods
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`create_from_mesh<class_NavigationMesh_method_create_from_mesh>` **(** :ref:`Mesh<class_Mesh>` mesh **)**                                         |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`get_collision_mask_bit<class_NavigationMesh_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
+| :ref:`bool<class_bool>`                         | :ref:`get_collision_mask_bit<class_NavigationMesh_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** |const|                        |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`get_polygon<class_NavigationMesh_method_get_polygon>` **(** :ref:`int<class_int>` idx **)**                                                      |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`get_polygon_count<class_NavigationMesh_method_get_polygon_count>` **(** **)** const                                                              |
+| :ref:`int<class_int>`                           | :ref:`get_polygon_count<class_NavigationMesh_method_get_polygon_count>` **(** **)** |const|                                                            |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_vertices<class_NavigationMesh_method_get_vertices>` **(** **)** const                                                                        |
+| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_vertices<class_NavigationMesh_method_get_vertices>` **(** **)** |const|                                                                      |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_collision_mask_bit<class_NavigationMesh_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -424,7 +424,7 @@ Method Descriptions
 
 .. _class_NavigationMesh_method_get_collision_mask_bit:
 
-- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
+- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** |const|
 
 ----
 
@@ -436,13 +436,13 @@ Method Descriptions
 
 .. _class_NavigationMesh_method_get_polygon_count:
 
-- :ref:`int<class_int>` **get_polygon_count** **(** **)** const
+- :ref:`int<class_int>` **get_polygon_count** **(** **)** |const|
 
 ----
 
 .. _class_NavigationMesh_method_get_vertices:
 
-- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_vertices** **(** **)** const
+- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_vertices** **(** **)** |const|
 
 ----
 
@@ -456,3 +456,6 @@ Method Descriptions
 
 - void **set_vertices** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` vertices **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

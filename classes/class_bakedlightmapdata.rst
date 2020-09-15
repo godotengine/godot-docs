@@ -36,11 +36,11 @@ Methods
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`clear_users<class_BakedLightmapData_method_clear_users>` **(** **)**                                                                                                        |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_user_count<class_BakedLightmapData_method_get_user_count>` **(** **)** const                                                                                            |
+| :ref:`int<class_int>`           | :ref:`get_user_count<class_BakedLightmapData_method_get_user_count>` **(** **)** |const|                                                                                          |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`get_user_lightmap<class_BakedLightmapData_method_get_user_lightmap>` **(** :ref:`int<class_int>` user_idx **)** const                                                       |
+| :ref:`Texture<class_Texture>`   | :ref:`get_user_lightmap<class_BakedLightmapData_method_get_user_lightmap>` **(** :ref:`int<class_int>` user_idx **)** |const|                                                     |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`get_user_path<class_BakedLightmapData_method_get_user_path>` **(** :ref:`int<class_int>` user_idx **)** const                                                               |
+| :ref:`NodePath<class_NodePath>` | :ref:`get_user_path<class_BakedLightmapData_method_get_user_path>` **(** :ref:`int<class_int>` user_idx **)** |const|                                                             |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
@@ -131,17 +131,20 @@ Method Descriptions
 
 .. _class_BakedLightmapData_method_get_user_count:
 
-- :ref:`int<class_int>` **get_user_count** **(** **)** const
+- :ref:`int<class_int>` **get_user_count** **(** **)** |const|
 
 ----
 
 .. _class_BakedLightmapData_method_get_user_lightmap:
 
-- :ref:`Texture<class_Texture>` **get_user_lightmap** **(** :ref:`int<class_int>` user_idx **)** const
+- :ref:`Texture<class_Texture>` **get_user_lightmap** **(** :ref:`int<class_int>` user_idx **)** |const|
 
 ----
 
 .. _class_BakedLightmapData_method_get_user_path:
 
-- :ref:`NodePath<class_NodePath>` **get_user_path** **(** :ref:`int<class_int>` user_idx **)** const
+- :ref:`NodePath<class_NodePath>` **get_user_path** **(** :ref:`int<class_int>` user_idx **)** |const|
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

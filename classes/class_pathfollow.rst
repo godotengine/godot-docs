@@ -183,3 +183,6 @@ The distance from the first vertex, considering 0.0 as the first vertex and 1.0 
 
 The node's offset perpendicular to the curve.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

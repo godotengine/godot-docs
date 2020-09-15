@@ -18,8 +18,6 @@ Description
 
 A node that displays a 2D texture in a 3D environment. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
 
-**Note:** There are `known performance issues <https://github.com/godotengine/godot/issues/20855>`_ when using ``Sprite3D``. Consider using a :ref:`MeshInstance<class_MeshInstance>` with a :ref:`QuadMesh<class_QuadMesh>` as the mesh instead. You can still have billboarding by enabling billboard properties in the QuadMesh's :ref:`SpatialMaterial<class_SpatialMaterial>`.
-
 Properties
 ----------
 
@@ -141,7 +139,7 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-:ref:`Texture<class_Texture>` object to draw.
+:ref:`Texture<class_Texture>` object to draw. If :ref:`GeometryInstance.material_override<class_GeometryInstance_property_material_override>` is used, this will be overridden.
 
 ----
 
@@ -159,3 +157,6 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_
 
 The number of rows in the sprite sheet.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

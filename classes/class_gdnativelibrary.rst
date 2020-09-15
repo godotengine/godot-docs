@@ -43,11 +43,11 @@ Properties
 Methods
 -------
 
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_current_dependencies<class_GDNativeLibrary_method_get_current_dependencies>` **(** **)** const |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_current_library_path<class_GDNativeLibrary_method_get_current_library_path>` **(** **)** const |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_current_dependencies<class_GDNativeLibrary_method_get_current_dependencies>` **(** **)** |const| |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`get_current_library_path<class_GDNativeLibrary_method_get_current_library_path>` **(** **)** |const| |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -141,7 +141,7 @@ Method Descriptions
 
 .. _class_GDNativeLibrary_method_get_current_dependencies:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_current_dependencies** **(** **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_current_dependencies** **(** **)** |const|
 
 Returns paths to all dependency libraries for the current platform and architecture.
 
@@ -149,7 +149,10 @@ Returns paths to all dependency libraries for the current platform and architect
 
 .. _class_GDNativeLibrary_method_get_current_library_path:
 
-- :ref:`String<class_String>` **get_current_library_path** **(** **)** const
+- :ref:`String<class_String>` **get_current_library_path** **(** **)** |const|
 
 Returns the path to the dynamic library file for the current platform and architecture.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

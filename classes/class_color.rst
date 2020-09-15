@@ -1070,3 +1070,6 @@ Returns the color's 64-bit integer in RGBA format (each word represents a compon
     var c = Color(1, 0.5, 0.2)
     print(c.to_rgba64()) # Prints -140736629309441
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

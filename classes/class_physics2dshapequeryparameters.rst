@@ -93,7 +93,7 @@ If ``true``, the query will take :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s in
 | *Getter*  | get_collision_layer()      |
 +-----------+----------------------------+
 
-The physics layer(s) the query will take into account (as a bitmask).
+The physics layer(s) the query will take into account (as a bitmask). See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 
@@ -182,3 +182,6 @@ Method Descriptions
 
 Sets the :ref:`Shape2D<class_Shape2D>` that will be used for collision/intersection queries.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

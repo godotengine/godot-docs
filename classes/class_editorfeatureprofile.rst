@@ -26,13 +26,13 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`           | :ref:`get_feature_name<class_EditorFeatureProfile_method_get_feature_name>` **(** :ref:`Feature<enum_EditorFeatureProfile_Feature>` feature **)**                                                                         |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_class_disabled<class_EditorFeatureProfile_method_is_class_disabled>` **(** :ref:`String<class_String>` class_name **)** const                                                                                    |
+| :ref:`bool<class_bool>`               | :ref:`is_class_disabled<class_EditorFeatureProfile_method_is_class_disabled>` **(** :ref:`String<class_String>` class_name **)** |const|                                                                                  |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_class_editor_disabled<class_EditorFeatureProfile_method_is_class_editor_disabled>` **(** :ref:`String<class_String>` class_name **)** const                                                                      |
+| :ref:`bool<class_bool>`               | :ref:`is_class_editor_disabled<class_EditorFeatureProfile_method_is_class_editor_disabled>` **(** :ref:`String<class_String>` class_name **)** |const|                                                                    |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_class_property_disabled<class_EditorFeatureProfile_method_is_class_property_disabled>` **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` property **)** const                            |
+| :ref:`bool<class_bool>`               | :ref:`is_class_property_disabled<class_EditorFeatureProfile_method_is_class_property_disabled>` **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` property **)** |const|                          |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_feature_disabled<class_EditorFeatureProfile_method_is_feature_disabled>` **(** :ref:`Feature<enum_EditorFeatureProfile_Feature>` feature **)** const                                                             |
+| :ref:`bool<class_bool>`               | :ref:`is_feature_disabled<class_EditorFeatureProfile_method_is_feature_disabled>` **(** :ref:`Feature<enum_EditorFeatureProfile_Feature>` feature **)** |const|                                                           |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load_from_file<class_EditorFeatureProfile_method_load_from_file>` **(** :ref:`String<class_String>` path **)**                                                                                                      |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -99,7 +99,7 @@ Returns the specified ``feature``'s human-readable name.
 
 .. _class_EditorFeatureProfile_method_is_class_disabled:
 
-- :ref:`bool<class_bool>` **is_class_disabled** **(** :ref:`String<class_String>` class_name **)** const
+- :ref:`bool<class_bool>` **is_class_disabled** **(** :ref:`String<class_String>` class_name **)** |const|
 
 Returns ``true`` if the class specified by ``class_name`` is disabled. When disabled, the class won't appear in the Create New Node dialog.
 
@@ -107,7 +107,7 @@ Returns ``true`` if the class specified by ``class_name`` is disabled. When disa
 
 .. _class_EditorFeatureProfile_method_is_class_editor_disabled:
 
-- :ref:`bool<class_bool>` **is_class_editor_disabled** **(** :ref:`String<class_String>` class_name **)** const
+- :ref:`bool<class_bool>` **is_class_editor_disabled** **(** :ref:`String<class_String>` class_name **)** |const|
 
 Returns ``true`` if editing for the class specified by ``class_name`` is disabled. When disabled, the class will still appear in the Create New Node dialog but the inspector will be read-only when selecting a node that extends the class.
 
@@ -115,7 +115,7 @@ Returns ``true`` if editing for the class specified by ``class_name`` is disable
 
 .. _class_EditorFeatureProfile_method_is_class_property_disabled:
 
-- :ref:`bool<class_bool>` **is_class_property_disabled** **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` property **)** const
+- :ref:`bool<class_bool>` **is_class_property_disabled** **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` property **)** |const|
 
 Returns ``true`` if ``property`` is disabled in the class specified by ``class_name``. When a property is disabled, it won't appear in the inspector when selecting a node that extends the class specified by ``class_name``.
 
@@ -123,7 +123,7 @@ Returns ``true`` if ``property`` is disabled in the class specified by ``class_n
 
 .. _class_EditorFeatureProfile_method_is_feature_disabled:
 
-- :ref:`bool<class_bool>` **is_feature_disabled** **(** :ref:`Feature<enum_EditorFeatureProfile_Feature>` feature **)** const
+- :ref:`bool<class_bool>` **is_feature_disabled** **(** :ref:`Feature<enum_EditorFeatureProfile_Feature>` feature **)** |const|
 
 Returns ``true`` if the ``feature`` is disabled. When a feature is disabled, it will disappear from the editor entirely.
 
@@ -175,3 +175,6 @@ If ``disable`` is ``true``, disables editing for ``property`` in the class speci
 
 If ``disable`` is ``true``, disables the editor feature specified in ``feature``. When a feature is disabled, it will disappear from the editor entirely.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

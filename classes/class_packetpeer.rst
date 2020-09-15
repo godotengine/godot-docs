@@ -33,11 +33,11 @@ Methods
 -------
 
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`get_available_packet_count<class_PacketPeer_method_get_available_packet_count>` **(** **)** const                                   |
+| :ref:`int<class_int>`                     | :ref:`get_available_packet_count<class_PacketPeer_method_get_available_packet_count>` **(** **)** |const|                                 |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_packet<class_PacketPeer_method_get_packet>` **(** **)**                                                                         |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`get_packet_error<class_PacketPeer_method_get_packet_error>` **(** **)** const                                                       |
+| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`get_packet_error<class_PacketPeer_method_get_packet_error>` **(** **)** |const|                                                     |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`             | :ref:`get_var<class_PacketPeer_method_get_var>` **(** :ref:`bool<class_bool>` allow_objects=false **)**                                   |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -90,7 +90,7 @@ Method Descriptions
 
 .. _class_PacketPeer_method_get_available_packet_count:
 
-- :ref:`int<class_int>` **get_available_packet_count** **(** **)** const
+- :ref:`int<class_int>` **get_available_packet_count** **(** **)** |const|
 
 Returns the number of packets currently available in the ring-buffer.
 
@@ -106,7 +106,7 @@ Gets a raw packet.
 
 .. _class_PacketPeer_method_get_packet_error:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **get_packet_error** **(** **)** const
+- :ref:`Error<enum_@GlobalScope_Error>` **get_packet_error** **(** **)** |const|
 
 Returns the error state of the last packet received (via :ref:`get_packet<class_PacketPeer_method_get_packet>` and :ref:`get_var<class_PacketPeer_method_get_var>`).
 
@@ -136,3 +136,6 @@ Sends a raw packet.
 
 Sends a :ref:`Variant<class_Variant>` as a packet. If ``full_objects`` (or :ref:`allow_object_decoding<class_PacketPeer_property_allow_object_decoding>`) is ``true``, encoding objects is allowed (and can potentially include code).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -78,3 +78,6 @@ If ``true``, the stream will automatically loop when it reaches the end.
 
 Time in seconds at which the stream starts after being looped.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

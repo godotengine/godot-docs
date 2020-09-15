@@ -71,41 +71,41 @@ Methods
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`clear<class_PopupMenu_method_clear>` **(** **)**                                                                                                                                                                                                    |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_current_index<class_PopupMenu_method_get_current_index>` **(** **)** const                                                                                                                                                                      |
+| :ref:`int<class_int>`           | :ref:`get_current_index<class_PopupMenu_method_get_current_index>` **(** **)** |const|                                                                                                                                                                    |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                      |
+| :ref:`int<class_int>`           | :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                    |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_item_count<class_PopupMenu_method_get_item_count>` **(** **)** const                                                                                                                                                                            |
+| :ref:`int<class_int>`           | :ref:`get_item_count<class_PopupMenu_method_get_item_count>` **(** **)** |const|                                                                                                                                                                          |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`get_item_icon<class_PopupMenu_method_get_item_icon>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                    |
+| :ref:`Texture<class_Texture>`   | :ref:`get_item_icon<class_PopupMenu_method_get_item_icon>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                                  |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_item_id<class_PopupMenu_method_get_item_id>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                        |
+| :ref:`int<class_int>`           | :ref:`get_item_id<class_PopupMenu_method_get_item_id>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                                      |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_item_index<class_PopupMenu_method_get_item_index>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                   |
+| :ref:`int<class_int>`           | :ref:`get_item_index<class_PopupMenu_method_get_item_index>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                 |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`   | :ref:`get_item_metadata<class_PopupMenu_method_get_item_metadata>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                            |
+| :ref:`Variant<class_Variant>`   | :ref:`get_item_metadata<class_PopupMenu_method_get_item_metadata>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                          |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ShortCut<class_ShortCut>` | :ref:`get_item_shortcut<class_PopupMenu_method_get_item_shortcut>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                            |
+| :ref:`ShortCut<class_ShortCut>` | :ref:`get_item_shortcut<class_PopupMenu_method_get_item_shortcut>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                          |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`     | :ref:`get_item_submenu<class_PopupMenu_method_get_item_submenu>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                              |
+| :ref:`String<class_String>`     | :ref:`get_item_submenu<class_PopupMenu_method_get_item_submenu>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                            |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`     | :ref:`get_item_text<class_PopupMenu_method_get_item_text>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                    |
+| :ref:`String<class_String>`     | :ref:`get_item_text<class_PopupMenu_method_get_item_text>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                                  |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`     | :ref:`get_item_tooltip<class_PopupMenu_method_get_item_tooltip>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                              |
+| :ref:`String<class_String>`     | :ref:`get_item_tooltip<class_PopupMenu_method_get_item_tooltip>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                            |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`is_hide_on_window_lose_focus<class_PopupMenu_method_is_hide_on_window_lose_focus>` **(** **)** const                                                                                                                                                |
+| :ref:`bool<class_bool>`         | :ref:`is_hide_on_window_lose_focus<class_PopupMenu_method_is_hide_on_window_lose_focus>` **(** **)** |const|                                                                                                                                              |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`is_item_checkable<class_PopupMenu_method_is_item_checkable>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                            |
+| :ref:`bool<class_bool>`         | :ref:`is_item_checkable<class_PopupMenu_method_is_item_checkable>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                          |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`is_item_checked<class_PopupMenu_method_is_item_checked>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                |
+| :ref:`bool<class_bool>`         | :ref:`is_item_checked<class_PopupMenu_method_is_item_checked>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                              |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`is_item_disabled<class_PopupMenu_method_is_item_disabled>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                              |
+| :ref:`bool<class_bool>`         | :ref:`is_item_disabled<class_PopupMenu_method_is_item_disabled>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                            |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`is_item_radio_checkable<class_PopupMenu_method_is_item_radio_checkable>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                |
+| :ref:`bool<class_bool>`         | :ref:`is_item_radio_checkable<class_PopupMenu_method_is_item_radio_checkable>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                              |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`is_item_separator<class_PopupMenu_method_is_item_separator>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                            |
+| :ref:`bool<class_bool>`         | :ref:`is_item_separator<class_PopupMenu_method_is_item_separator>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                          |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`is_item_shortcut_disabled<class_PopupMenu_method_is_item_shortcut_disabled>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                            |
+| :ref:`bool<class_bool>`         | :ref:`is_item_shortcut_disabled<class_PopupMenu_method_is_item_shortcut_disabled>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                          |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`remove_item<class_PopupMenu_method_remove_item>` **(** :ref:`int<class_int>` idx **)**                                                                                                                                                              |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -464,13 +464,13 @@ Removes all items from the ``PopupMenu``.
 
 .. _class_PopupMenu_method_get_current_index:
 
-- :ref:`int<class_int>` **get_current_index** **(** **)** const
+- :ref:`int<class_int>` **get_current_index** **(** **)** |const|
 
 ----
 
 .. _class_PopupMenu_method_get_item_accelerator:
 
-- :ref:`int<class_int>` **get_item_accelerator** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`int<class_int>` **get_item_accelerator** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the accelerator of the item at index ``idx``. Accelerators are special combinations of keys that activate the item, no matter which control is focused.
 
@@ -478,7 +478,7 @@ Returns the accelerator of the item at index ``idx``. Accelerators are special c
 
 .. _class_PopupMenu_method_get_item_count:
 
-- :ref:`int<class_int>` **get_item_count** **(** **)** const
+- :ref:`int<class_int>` **get_item_count** **(** **)** |const|
 
 Returns the number of items in the ``PopupMenu``.
 
@@ -486,7 +486,7 @@ Returns the number of items in the ``PopupMenu``.
 
 .. _class_PopupMenu_method_get_item_icon:
 
-- :ref:`Texture<class_Texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Texture<class_Texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the icon of the item at index ``idx``.
 
@@ -494,7 +494,7 @@ Returns the icon of the item at index ``idx``.
 
 .. _class_PopupMenu_method_get_item_id:
 
-- :ref:`int<class_int>` **get_item_id** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`int<class_int>` **get_item_id** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the id of the item at index ``idx``. ``id`` can be manually assigned, while index can not.
 
@@ -502,7 +502,7 @@ Returns the id of the item at index ``idx``. ``id`` can be manually assigned, wh
 
 .. _class_PopupMenu_method_get_item_index:
 
-- :ref:`int<class_int>` **get_item_index** **(** :ref:`int<class_int>` id **)** const
+- :ref:`int<class_int>` **get_item_index** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the index of the item containing the specified ``id``. Index is automatically assigned to each item by the engine. Index can not be set manually.
 
@@ -510,7 +510,7 @@ Returns the index of the item containing the specified ``id``. Index is automati
 
 .. _class_PopupMenu_method_get_item_metadata:
 
-- :ref:`Variant<class_Variant>` **get_item_metadata** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Variant<class_Variant>` **get_item_metadata** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the metadata of the specified item, which might be of any type. You can set it with :ref:`set_item_metadata<class_PopupMenu_method_set_item_metadata>`, which provides a simple way of assigning context data to items.
 
@@ -518,7 +518,7 @@ Returns the metadata of the specified item, which might be of any type. You can 
 
 .. _class_PopupMenu_method_get_item_shortcut:
 
-- :ref:`ShortCut<class_ShortCut>` **get_item_shortcut** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`ShortCut<class_ShortCut>` **get_item_shortcut** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the :ref:`ShortCut<class_ShortCut>` associated with the specified ``idx`` item.
 
@@ -526,7 +526,7 @@ Returns the :ref:`ShortCut<class_ShortCut>` associated with the specified ``idx`
 
 .. _class_PopupMenu_method_get_item_submenu:
 
-- :ref:`String<class_String>` **get_item_submenu** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`String<class_String>` **get_item_submenu** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the submenu name of the item at index ``idx``. See :ref:`add_submenu_item<class_PopupMenu_method_add_submenu_item>` for more info on how to add a submenu.
 
@@ -534,7 +534,7 @@ Returns the submenu name of the item at index ``idx``. See :ref:`add_submenu_ite
 
 .. _class_PopupMenu_method_get_item_text:
 
-- :ref:`String<class_String>` **get_item_text** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`String<class_String>` **get_item_text** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the text of the item at index ``idx``.
 
@@ -542,7 +542,7 @@ Returns the text of the item at index ``idx``.
 
 .. _class_PopupMenu_method_get_item_tooltip:
 
-- :ref:`String<class_String>` **get_item_tooltip** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`String<class_String>` **get_item_tooltip** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the tooltip associated with the specified index index ``idx``.
 
@@ -550,7 +550,7 @@ Returns the tooltip associated with the specified index index ``idx``.
 
 .. _class_PopupMenu_method_is_hide_on_window_lose_focus:
 
-- :ref:`bool<class_bool>` **is_hide_on_window_lose_focus** **(** **)** const
+- :ref:`bool<class_bool>` **is_hide_on_window_lose_focus** **(** **)** |const|
 
 Returns ``true`` if the popup will be hidden when the window loses focus or not.
 
@@ -558,7 +558,7 @@ Returns ``true`` if the popup will be hidden when the window loses focus or not.
 
 .. _class_PopupMenu_method_is_item_checkable:
 
-- :ref:`bool<class_bool>` **is_item_checkable** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`bool<class_bool>` **is_item_checkable** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns ``true`` if the item at index ``idx`` is checkable in some way, i.e. if it has a checkbox or radio button.
 
@@ -568,7 +568,7 @@ Returns ``true`` if the item at index ``idx`` is checkable in some way, i.e. if 
 
 .. _class_PopupMenu_method_is_item_checked:
 
-- :ref:`bool<class_bool>` **is_item_checked** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`bool<class_bool>` **is_item_checked** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns ``true`` if the item at index ``idx`` is checked.
 
@@ -576,7 +576,7 @@ Returns ``true`` if the item at index ``idx`` is checked.
 
 .. _class_PopupMenu_method_is_item_disabled:
 
-- :ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns ``true`` if the item at index ``idx`` is disabled. When it is disabled it can't be selected, or its action invoked.
 
@@ -586,7 +586,7 @@ See :ref:`set_item_disabled<class_PopupMenu_method_set_item_disabled>` for more 
 
 .. _class_PopupMenu_method_is_item_radio_checkable:
 
-- :ref:`bool<class_bool>` **is_item_radio_checkable** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`bool<class_bool>` **is_item_radio_checkable** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns ``true`` if the item at index ``idx`` has radio button-style checkability.
 
@@ -596,7 +596,7 @@ Returns ``true`` if the item at index ``idx`` has radio button-style checkabilit
 
 .. _class_PopupMenu_method_is_item_separator:
 
-- :ref:`bool<class_bool>` **is_item_separator** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`bool<class_bool>` **is_item_separator** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns ``true`` if the item is a separator. If it is, it will be displayed as a line. See :ref:`add_separator<class_PopupMenu_method_add_separator>` for more info on how to add a separator.
 
@@ -604,7 +604,7 @@ Returns ``true`` if the item is a separator. If it is, it will be displayed as a
 
 .. _class_PopupMenu_method_is_item_shortcut_disabled:
 
-- :ref:`bool<class_bool>` **is_item_shortcut_disabled** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`bool<class_bool>` **is_item_shortcut_disabled** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns ``true`` if the specified item's shortcut is disabled.
 
@@ -764,3 +764,6 @@ Toggles the check state of the item of the specified index ``idx``.
 
 Cycle to the next state of an multistate item. See :ref:`add_multistate_item<class_PopupMenu_method_add_multistate_item>` for details.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

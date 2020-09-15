@@ -26,7 +26,7 @@ Methods
 +---------------------------------------+----------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pack<class_PackedDataContainer_method_pack>` **(** :ref:`Variant<class_Variant>` value **)** |
 +---------------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`size<class_PackedDataContainer_method_size>` **(** **)** const                               |
+| :ref:`int<class_int>`                 | :ref:`size<class_PackedDataContainer_method_size>` **(** **)** |const|                             |
 +---------------------------------------+----------------------------------------------------------------------------------------------------+
 
 Property Descriptions
@@ -51,5 +51,8 @@ Method Descriptions
 
 .. _class_PackedDataContainer_method_size:
 
-- :ref:`int<class_int>` **size** **(** **)** const
+- :ref:`int<class_int>` **size** **(** **)** |const|
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

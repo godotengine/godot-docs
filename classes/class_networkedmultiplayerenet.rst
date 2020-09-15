@@ -60,13 +60,13 @@ Methods
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`disconnect_peer<class_NetworkedMultiplayerENet_method_disconnect_peer>` **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` now=false **)**                                                                                                                   |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_last_packet_channel<class_NetworkedMultiplayerENet_method_get_last_packet_channel>` **(** **)** const                                                                                                                                                         |
+| :ref:`int<class_int>`                 | :ref:`get_last_packet_channel<class_NetworkedMultiplayerENet_method_get_last_packet_channel>` **(** **)** |const|                                                                                                                                                       |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_packet_channel<class_NetworkedMultiplayerENet_method_get_packet_channel>` **(** **)** const                                                                                                                                                                   |
+| :ref:`int<class_int>`                 | :ref:`get_packet_channel<class_NetworkedMultiplayerENet_method_get_packet_channel>` **(** **)** |const|                                                                                                                                                                 |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_peer_address<class_NetworkedMultiplayerENet_method_get_peer_address>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                              |
+| :ref:`String<class_String>`           | :ref:`get_peer_address<class_NetworkedMultiplayerENet_method_get_peer_address>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                            |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_peer_port<class_NetworkedMultiplayerENet_method_get_peer_port>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                    |
+| :ref:`int<class_int>`                 | :ref:`get_peer_port<class_NetworkedMultiplayerENet_method_get_peer_port>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                  |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`set_bind_ip<class_NetworkedMultiplayerENet_method_set_bind_ip>` **(** :ref:`String<class_String>` ip **)**                                                                                                                                                        |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -254,7 +254,7 @@ Disconnect the given peer. If "now" is set to ``true``, the connection will be c
 
 .. _class_NetworkedMultiplayerENet_method_get_last_packet_channel:
 
-- :ref:`int<class_int>` **get_last_packet_channel** **(** **)** const
+- :ref:`int<class_int>` **get_last_packet_channel** **(** **)** |const|
 
 Returns the channel of the last packet fetched via :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>`.
 
@@ -262,7 +262,7 @@ Returns the channel of the last packet fetched via :ref:`PacketPeer.get_packet<c
 
 .. _class_NetworkedMultiplayerENet_method_get_packet_channel:
 
-- :ref:`int<class_int>` **get_packet_channel** **(** **)** const
+- :ref:`int<class_int>` **get_packet_channel** **(** **)** |const|
 
 Returns the channel of the next packet that will be retrieved via :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>`.
 
@@ -270,7 +270,7 @@ Returns the channel of the next packet that will be retrieved via :ref:`PacketPe
 
 .. _class_NetworkedMultiplayerENet_method_get_peer_address:
 
-- :ref:`String<class_String>` **get_peer_address** **(** :ref:`int<class_int>` id **)** const
+- :ref:`String<class_String>` **get_peer_address** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the IP address of the given peer.
 
@@ -278,7 +278,7 @@ Returns the IP address of the given peer.
 
 .. _class_NetworkedMultiplayerENet_method_get_peer_port:
 
-- :ref:`int<class_int>` **get_peer_port** **(** :ref:`int<class_int>` id **)** const
+- :ref:`int<class_int>` **get_peer_port** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the remote port of the given peer.
 
@@ -306,3 +306,6 @@ Configure the :ref:`X509Certificate<class_X509Certificate>` to use when :ref:`us
 
 Configure the :ref:`CryptoKey<class_CryptoKey>` to use when :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>` is ``true``. Remember to also call :ref:`set_dtls_certificate<class_NetworkedMultiplayerENet_method_set_dtls_certificate>` to setup your :ref:`X509Certificate<class_X509Certificate>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

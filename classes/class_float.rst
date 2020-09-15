@@ -48,3 +48,6 @@ Cast an :ref:`int<class_int>` value to a floating-point value, ``float(1)`` will
 
 Cast a :ref:`String<class_String>` value to a floating-point value. This method accepts float value strings like ``"1.23"`` and exponential notation strings for its parameter so calling ``float("1e3")`` will return 1000.0 and calling ``float("1e-3")`` will return 0.001. Calling this method with an invalid float string will return 0. This method stops parsing at the first invalid character and will return the parsed result so far, so calling ``float("1a3")`` will return 1 while calling ``float("1e3a2")`` will return 1000.0.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

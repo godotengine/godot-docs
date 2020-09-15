@@ -65,7 +65,7 @@ Property Descriptions
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The layers against which the collision check shall be done.
+The layers against which the collision check shall be done. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 
@@ -154,3 +154,6 @@ Returns the spring arm's current length.
 
 Removes the given :ref:`RID<class_RID>` from the list of :ref:`PhysicsBody<class_PhysicsBody>` objects excluded from the collision check.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

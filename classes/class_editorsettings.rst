@@ -37,39 +37,39 @@ Accessing the settings can be done using the following methods, such as:
 Methods
 -------
 
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`add_property_info<class_EditorSettings_method_add_property_info>` **(** :ref:`Dictionary<class_Dictionary>` info **)**                                                                                     |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`erase<class_EditorSettings_method_erase>` **(** :ref:`String<class_String>` property **)**                                                                                                                 |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_favorites<class_EditorSettings_method_get_favorites>` **(** **)** const                                                                                                                                |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`get_project_metadata<class_EditorSettings_method_get_project_metadata>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** const |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_project_settings_dir<class_EditorSettings_method_get_project_settings_dir>` **(** **)** const                                                                                                          |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_recent_dirs<class_EditorSettings_method_get_recent_dirs>` **(** **)** const                                                                                                                            |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`get_setting<class_EditorSettings_method_get_setting>` **(** :ref:`String<class_String>` name **)** const                                                                                                   |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_settings_dir<class_EditorSettings_method_get_settings_dir>` **(** **)** const                                                                                                                          |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`has_setting<class_EditorSettings_method_has_setting>` **(** :ref:`String<class_String>` name **)** const                                                                                                   |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`property_can_revert<class_EditorSettings_method_property_can_revert>` **(** :ref:`String<class_String>` name **)**                                                                                         |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`property_get_revert<class_EditorSettings_method_property_get_revert>` **(** :ref:`String<class_String>` name **)**                                                                                         |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_favorites<class_EditorSettings_method_set_favorites>` **(** :ref:`PoolStringArray<class_PoolStringArray>` dirs **)**                                                                                   |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_initial_value<class_EditorSettings_method_set_initial_value>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` update_current **)**                |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_project_metadata<class_EditorSettings_method_set_project_metadata>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` data **)**               |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_recent_dirs<class_EditorSettings_method_set_recent_dirs>` **(** :ref:`PoolStringArray<class_PoolStringArray>` dirs **)**                                                                               |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_setting<class_EditorSettings_method_set_setting>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**                                                                    |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`add_property_info<class_EditorSettings_method_add_property_info>` **(** :ref:`Dictionary<class_Dictionary>` info **)**                                                                                       |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`erase<class_EditorSettings_method_erase>` **(** :ref:`String<class_String>` property **)**                                                                                                                   |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_favorites<class_EditorSettings_method_get_favorites>` **(** **)** |const|                                                                                                                                |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                 | :ref:`get_project_metadata<class_EditorSettings_method_get_project_metadata>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** |const| |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`get_project_settings_dir<class_EditorSettings_method_get_project_settings_dir>` **(** **)** |const|                                                                                                          |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_recent_dirs<class_EditorSettings_method_get_recent_dirs>` **(** **)** |const|                                                                                                                            |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                 | :ref:`get_setting<class_EditorSettings_method_get_setting>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                   |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`get_settings_dir<class_EditorSettings_method_get_settings_dir>` **(** **)** |const|                                                                                                                          |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`has_setting<class_EditorSettings_method_has_setting>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                   |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`property_can_revert<class_EditorSettings_method_property_can_revert>` **(** :ref:`String<class_String>` name **)**                                                                                           |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                 | :ref:`property_get_revert<class_EditorSettings_method_property_get_revert>` **(** :ref:`String<class_String>` name **)**                                                                                           |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_favorites<class_EditorSettings_method_set_favorites>` **(** :ref:`PoolStringArray<class_PoolStringArray>` dirs **)**                                                                                     |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_initial_value<class_EditorSettings_method_set_initial_value>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` update_current **)**                  |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_project_metadata<class_EditorSettings_method_set_project_metadata>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` data **)**                 |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_recent_dirs<class_EditorSettings_method_set_recent_dirs>` **(** :ref:`PoolStringArray<class_PoolStringArray>` dirs **)**                                                                                 |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_setting<class_EditorSettings_method_set_setting>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**                                                                      |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -129,7 +129,7 @@ Erases the setting whose name is specified by ``property``.
 
 .. _class_EditorSettings_method_get_favorites:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_favorites** **(** **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_favorites** **(** **)** |const|
 
 Returns the list of favorite files and directories for this project.
 
@@ -137,7 +137,7 @@ Returns the list of favorite files and directories for this project.
 
 .. _class_EditorSettings_method_get_project_metadata:
 
-- :ref:`Variant<class_Variant>` **get_project_metadata** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** const
+- :ref:`Variant<class_Variant>` **get_project_metadata** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** |const|
 
 Returns project-specific metadata for the ``section`` and ``key`` specified. If the metadata doesn't exist, ``default`` will be returned instead. See also :ref:`set_project_metadata<class_EditorSettings_method_set_project_metadata>`.
 
@@ -145,7 +145,7 @@ Returns project-specific metadata for the ``section`` and ``key`` specified. If 
 
 .. _class_EditorSettings_method_get_project_settings_dir:
 
-- :ref:`String<class_String>` **get_project_settings_dir** **(** **)** const
+- :ref:`String<class_String>` **get_project_settings_dir** **(** **)** |const|
 
 Returns the project-specific settings path. Projects all have a unique subdirectory inside the settings path where project-specific settings are saved.
 
@@ -153,7 +153,7 @@ Returns the project-specific settings path. Projects all have a unique subdirect
 
 .. _class_EditorSettings_method_get_recent_dirs:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_recent_dirs** **(** **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_recent_dirs** **(** **)** |const|
 
 Returns the list of recently visited folders in the file dialog for this project.
 
@@ -161,7 +161,7 @@ Returns the list of recently visited folders in the file dialog for this project
 
 .. _class_EditorSettings_method_get_setting:
 
-- :ref:`Variant<class_Variant>` **get_setting** **(** :ref:`String<class_String>` name **)** const
+- :ref:`Variant<class_Variant>` **get_setting** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns the value of the setting specified by ``name``. This is equivalent to using :ref:`Object.get<class_Object_method_get>` on the EditorSettings instance.
 
@@ -169,7 +169,7 @@ Returns the value of the setting specified by ``name``. This is equivalent to us
 
 .. _class_EditorSettings_method_get_settings_dir:
 
-- :ref:`String<class_String>` **get_settings_dir** **(** **)** const
+- :ref:`String<class_String>` **get_settings_dir** **(** **)** |const|
 
 Gets the global settings path for the engine. Inside this path, you can find some standard paths such as:
 
@@ -181,7 +181,7 @@ Gets the global settings path for the engine. Inside this path, you can find som
 
 .. _class_EditorSettings_method_has_setting:
 
-- :ref:`bool<class_bool>` **has_setting** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **has_setting** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns ``true`` if the setting specified by ``name`` exists, ``false`` otherwise.
 
@@ -241,3 +241,6 @@ Sets the list of recently visited folders in the file dialog for this project.
 
 Sets the ``value`` of the setting specified by ``name``. This is equivalent to using :ref:`Object.set<class_Object_method_set>` on the EditorSettings instance.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

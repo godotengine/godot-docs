@@ -22,13 +22,13 @@ Methods
 -------
 
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`can_push_buffer<class_AudioStreamGeneratorPlayback_method_can_push_buffer>` **(** :ref:`int<class_int>` amount **)** const             |
+| :ref:`bool<class_bool>` | :ref:`can_push_buffer<class_AudioStreamGeneratorPlayback_method_can_push_buffer>` **(** :ref:`int<class_int>` amount **)** |const|           |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`clear_buffer<class_AudioStreamGeneratorPlayback_method_clear_buffer>` **(** **)**                                                      |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`get_frames_available<class_AudioStreamGeneratorPlayback_method_get_frames_available>` **(** **)** const                                |
+| :ref:`int<class_int>`   | :ref:`get_frames_available<class_AudioStreamGeneratorPlayback_method_get_frames_available>` **(** **)** |const|                              |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`get_skips<class_AudioStreamGeneratorPlayback_method_get_skips>` **(** **)** const                                                      |
+| :ref:`int<class_int>`   | :ref:`get_skips<class_AudioStreamGeneratorPlayback_method_get_skips>` **(** **)** |const|                                                    |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`push_buffer<class_AudioStreamGeneratorPlayback_method_push_buffer>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` frames **)** |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -40,7 +40,7 @@ Method Descriptions
 
 .. _class_AudioStreamGeneratorPlayback_method_can_push_buffer:
 
-- :ref:`bool<class_bool>` **can_push_buffer** **(** :ref:`int<class_int>` amount **)** const
+- :ref:`bool<class_bool>` **can_push_buffer** **(** :ref:`int<class_int>` amount **)** |const|
 
 ----
 
@@ -52,13 +52,13 @@ Method Descriptions
 
 .. _class_AudioStreamGeneratorPlayback_method_get_frames_available:
 
-- :ref:`int<class_int>` **get_frames_available** **(** **)** const
+- :ref:`int<class_int>` **get_frames_available** **(** **)** |const|
 
 ----
 
 .. _class_AudioStreamGeneratorPlayback_method_get_skips:
 
-- :ref:`int<class_int>` **get_skips** **(** **)** const
+- :ref:`int<class_int>` **get_skips** **(** **)** |const|
 
 ----
 
@@ -72,3 +72,6 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **push_frame** **(** :ref:`Vector2<class_Vector2>` frame **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

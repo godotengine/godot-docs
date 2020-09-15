@@ -42,7 +42,7 @@ Methods
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`create_offer<class_WebRTCPeerConnection_method_create_offer>` **(** **)**                                                                                                            |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` | :ref:`get_connection_state<class_WebRTCPeerConnection_method_get_connection_state>` **(** **)** const                                                                                      |
+| :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` | :ref:`get_connection_state<class_WebRTCPeerConnection_method_get_connection_state>` **(** **)** |const|                                                                                    |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`initialize<class_WebRTCPeerConnection_method_initialize>` **(** :ref:`Dictionary<class_Dictionary>` configuration={  } **)**                                                         |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -170,7 +170,7 @@ If this functions returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`
 
 .. _class_WebRTCPeerConnection_method_get_connection_state:
 
-- :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` **get_connection_state** **(** **)** const
+- :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` **get_connection_state** **(** **)** |const|
 
 Returns the connection state. See :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>`.
 
@@ -194,7 +194,7 @@ Valid ``options`` are:
             {
                 "urls": [ "turn:turn.example.com:3478" ], # One or more TURN servers.
                 "username": "a_username", # Optional username for the TURN server.
-                "credentials": "a_password", # Optional password for the TURN server.
+                "credential": "a_password", # Optional password for the TURN server.
             }
         ]
     }
@@ -229,3 +229,6 @@ If ``type`` is ``offer`` the peer will emit :ref:`session_description_created<cl
 
 If ``type`` is ``answer`` the peer will start emitting :ref:`ice_candidate_created<class_WebRTCPeerConnection_signal_ice_candidate_created>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

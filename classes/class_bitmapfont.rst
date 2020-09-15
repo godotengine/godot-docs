@@ -47,11 +47,11 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`create_from_fnt<class_BitmapFont_method_create_from_fnt>` **(** :ref:`String<class_String>` path **)**                                                                                                                                            |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_kerning_pair<class_BitmapFont_method_get_kerning_pair>` **(** :ref:`int<class_int>` char_a, :ref:`int<class_int>` char_b **)** const                                                                                                          |
+| :ref:`int<class_int>`                 | :ref:`get_kerning_pair<class_BitmapFont_method_get_kerning_pair>` **(** :ref:`int<class_int>` char_a, :ref:`int<class_int>` char_b **)** |const|                                                                                                        |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`         | :ref:`get_texture<class_BitmapFont_method_get_texture>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                     |
+| :ref:`Texture<class_Texture>`         | :ref:`get_texture<class_BitmapFont_method_get_texture>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                                   |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_texture_count<class_BitmapFont_method_get_texture_count>` **(** **)** const                                                                                                                                                                   |
+| :ref:`int<class_int>`                 | :ref:`get_texture_count<class_BitmapFont_method_get_texture_count>` **(** **)** |const|                                                                                                                                                                 |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
@@ -162,7 +162,7 @@ Creates a BitmapFont from the ``*.fnt`` file at ``path``.
 
 .. _class_BitmapFont_method_get_kerning_pair:
 
-- :ref:`int<class_int>` **get_kerning_pair** **(** :ref:`int<class_int>` char_a, :ref:`int<class_int>` char_b **)** const
+- :ref:`int<class_int>` **get_kerning_pair** **(** :ref:`int<class_int>` char_a, :ref:`int<class_int>` char_b **)** |const|
 
 Returns a kerning pair as a difference.
 
@@ -170,7 +170,7 @@ Returns a kerning pair as a difference.
 
 .. _class_BitmapFont_method_get_texture:
 
-- :ref:`Texture<class_Texture>` **get_texture** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Texture<class_Texture>` **get_texture** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the font atlas texture at index ``idx``.
 
@@ -178,7 +178,10 @@ Returns the font atlas texture at index ``idx``.
 
 .. _class_BitmapFont_method_get_texture_count:
 
-- :ref:`int<class_int>` **get_texture_count** **(** **)** const
+- :ref:`int<class_int>` **get_texture_count** **(** **)** |const|
 
 Returns the number of textures in the BitmapFont atlas.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

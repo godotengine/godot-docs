@@ -71,7 +71,7 @@ Methods
 -------
 
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_param<class_SliderJoint_method_get_param>` **(** :ref:`Param<enum_SliderJoint_Param>` param **)** const                            |
+| :ref:`float<class_float>` | :ref:`get_param<class_SliderJoint_method_get_param>` **(** :ref:`Param<enum_SliderJoint_Param>` param **)** |const|                          |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_param<class_SliderJoint_method_set_param>` **(** :ref:`Param<enum_SliderJoint_Param>` param, :ref:`float<class_float>` value **)** |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -531,7 +531,7 @@ Method Descriptions
 
 .. _class_SliderJoint_method_get_param:
 
-- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_SliderJoint_Param>` param **)** const
+- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_SliderJoint_Param>` param **)** |const|
 
 ----
 
@@ -539,3 +539,6 @@ Method Descriptions
 
 - void **set_param** **(** :ref:`Param<enum_SliderJoint_Param>` param, :ref:`float<class_float>` value **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

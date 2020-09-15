@@ -62,7 +62,7 @@ Methods
 -------
 
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`_draw<class_CanvasItem_method__draw>` **(** **)** virtual                                                                                                                                                                                                                                                                                                                                  |
+| void                                  | :ref:`_draw<class_CanvasItem_method__draw>` **(** **)** |virtual|                                                                                                                                                                                                                                                                                                                                |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`draw_arc<class_CanvasItem_method_draw_arc>` **(** :ref:`Vector2<class_Vector2>` center, :ref:`float<class_float>` radius, :ref:`float<class_float>` start_angle, :ref:`float<class_float>` end_angle, :ref:`int<class_int>` point_count, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                             |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -108,41 +108,41 @@ Methods
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`force_update_transform<class_CanvasItem_method_force_update_transform>` **(** **)**                                                                                                                                                                                                                                                                                                        |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                 | :ref:`get_canvas<class_CanvasItem_method_get_canvas>` **(** **)** const                                                                                                                                                                                                                                                                                                                          |
+| :ref:`RID<class_RID>`                 | :ref:`get_canvas<class_CanvasItem_method_get_canvas>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                        |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                 | :ref:`get_canvas_item<class_CanvasItem_method_get_canvas_item>` **(** **)** const                                                                                                                                                                                                                                                                                                                |
+| :ref:`RID<class_RID>`                 | :ref:`get_canvas_item<class_CanvasItem_method_get_canvas_item>` **(** **)** |const|                                                                                                                                                                                                                                                                                                              |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`get_canvas_transform<class_CanvasItem_method_get_canvas_transform>` **(** **)** const                                                                                                                                                                                                                                                                                                      |
+| :ref:`Transform2D<class_Transform2D>` | :ref:`get_canvas_transform<class_CanvasItem_method_get_canvas_transform>` **(** **)** |const|                                                                                                                                                                                                                                                                                                    |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`get_global_mouse_position<class_CanvasItem_method_get_global_mouse_position>` **(** **)** const                                                                                                                                                                                                                                                                                            |
+| :ref:`Vector2<class_Vector2>`         | :ref:`get_global_mouse_position<class_CanvasItem_method_get_global_mouse_position>` **(** **)** |const|                                                                                                                                                                                                                                                                                          |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`get_global_transform<class_CanvasItem_method_get_global_transform>` **(** **)** const                                                                                                                                                                                                                                                                                                      |
+| :ref:`Transform2D<class_Transform2D>` | :ref:`get_global_transform<class_CanvasItem_method_get_global_transform>` **(** **)** |const|                                                                                                                                                                                                                                                                                                    |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`get_global_transform_with_canvas<class_CanvasItem_method_get_global_transform_with_canvas>` **(** **)** const                                                                                                                                                                                                                                                                              |
+| :ref:`Transform2D<class_Transform2D>` | :ref:`get_global_transform_with_canvas<class_CanvasItem_method_get_global_transform_with_canvas>` **(** **)** |const|                                                                                                                                                                                                                                                                            |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`get_local_mouse_position<class_CanvasItem_method_get_local_mouse_position>` **(** **)** const                                                                                                                                                                                                                                                                                              |
+| :ref:`Vector2<class_Vector2>`         | :ref:`get_local_mouse_position<class_CanvasItem_method_get_local_mouse_position>` **(** **)** |const|                                                                                                                                                                                                                                                                                            |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`get_transform<class_CanvasItem_method_get_transform>` **(** **)** const                                                                                                                                                                                                                                                                                                                    |
+| :ref:`Transform2D<class_Transform2D>` | :ref:`get_transform<class_CanvasItem_method_get_transform>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                  |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`             | :ref:`get_viewport_rect<class_CanvasItem_method_get_viewport_rect>` **(** **)** const                                                                                                                                                                                                                                                                                                            |
+| :ref:`Rect2<class_Rect2>`             | :ref:`get_viewport_rect<class_CanvasItem_method_get_viewport_rect>` **(** **)** |const|                                                                                                                                                                                                                                                                                                          |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`get_viewport_transform<class_CanvasItem_method_get_viewport_transform>` **(** **)** const                                                                                                                                                                                                                                                                                                  |
+| :ref:`Transform2D<class_Transform2D>` | :ref:`get_viewport_transform<class_CanvasItem_method_get_viewport_transform>` **(** **)** |const|                                                                                                                                                                                                                                                                                                |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`World2D<class_World2D>`         | :ref:`get_world_2d<class_CanvasItem_method_get_world_2d>` **(** **)** const                                                                                                                                                                                                                                                                                                                      |
+| :ref:`World2D<class_World2D>`         | :ref:`get_world_2d<class_CanvasItem_method_get_world_2d>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                    |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`hide<class_CanvasItem_method_hide>` **(** **)**                                                                                                                                                                                                                                                                                                                                            |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_local_transform_notification_enabled<class_CanvasItem_method_is_local_transform_notification_enabled>` **(** **)** const                                                                                                                                                                                                                                                                |
+| :ref:`bool<class_bool>`               | :ref:`is_local_transform_notification_enabled<class_CanvasItem_method_is_local_transform_notification_enabled>` **(** **)** |const|                                                                                                                                                                                                                                                              |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_set_as_toplevel<class_CanvasItem_method_is_set_as_toplevel>` **(** **)** const                                                                                                                                                                                                                                                                                                          |
+| :ref:`bool<class_bool>`               | :ref:`is_set_as_toplevel<class_CanvasItem_method_is_set_as_toplevel>` **(** **)** |const|                                                                                                                                                                                                                                                                                                        |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_transform_notification_enabled<class_CanvasItem_method_is_transform_notification_enabled>` **(** **)** const                                                                                                                                                                                                                                                                            |
+| :ref:`bool<class_bool>`               | :ref:`is_transform_notification_enabled<class_CanvasItem_method_is_transform_notification_enabled>` **(** **)** |const|                                                                                                                                                                                                                                                                          |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>` **(** **)** const                                                                                                                                                                                                                                                                                                          |
+| :ref:`bool<class_bool>`               | :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>` **(** **)** |const|                                                                                                                                                                                                                                                                                                        |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`make_canvas_position_local<class_CanvasItem_method_make_canvas_position_local>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** const                                                                                                                                                                                                                                               |
+| :ref:`Vector2<class_Vector2>`         | :ref:`make_canvas_position_local<class_CanvasItem_method_make_canvas_position_local>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|                                                                                                                                                                                                                                             |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`InputEvent<class_InputEvent>`   | :ref:`make_input_local<class_CanvasItem_method_make_input_local>` **(** :ref:`InputEvent<class_InputEvent>` event **)** const                                                                                                                                                                                                                                                                    |
+| :ref:`InputEvent<class_InputEvent>`   | :ref:`make_input_local<class_CanvasItem_method_make_input_local>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |const|                                                                                                                                                                                                                                                                  |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`set_as_toplevel<class_CanvasItem_method_set_as_toplevel>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                                                                                                       |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -368,7 +368,7 @@ Method Descriptions
 
 .. _class_CanvasItem_method__draw:
 
-- void **_draw** **(** **)** virtual
+- void **_draw** **(** **)** |virtual|
 
 Overridable function called by the engine (if defined) to draw the canvas item.
 
@@ -570,7 +570,7 @@ Forces the transform to update. Transform changes in physics are not instant for
 
 .. _class_CanvasItem_method_get_canvas:
 
-- :ref:`RID<class_RID>` **get_canvas** **(** **)** const
+- :ref:`RID<class_RID>` **get_canvas** **(** **)** |const|
 
 Returns the :ref:`RID<class_RID>` of the :ref:`World2D<class_World2D>` canvas where this item is in.
 
@@ -578,7 +578,7 @@ Returns the :ref:`RID<class_RID>` of the :ref:`World2D<class_World2D>` canvas wh
 
 .. _class_CanvasItem_method_get_canvas_item:
 
-- :ref:`RID<class_RID>` **get_canvas_item** **(** **)** const
+- :ref:`RID<class_RID>` **get_canvas_item** **(** **)** |const|
 
 Returns the canvas item RID used by :ref:`VisualServer<class_VisualServer>` for this item.
 
@@ -586,7 +586,7 @@ Returns the canvas item RID used by :ref:`VisualServer<class_VisualServer>` for 
 
 .. _class_CanvasItem_method_get_canvas_transform:
 
-- :ref:`Transform2D<class_Transform2D>` **get_canvas_transform** **(** **)** const
+- :ref:`Transform2D<class_Transform2D>` **get_canvas_transform** **(** **)** |const|
 
 Returns the transform matrix of this item's canvas.
 
@@ -594,7 +594,7 @@ Returns the transform matrix of this item's canvas.
 
 .. _class_CanvasItem_method_get_global_mouse_position:
 
-- :ref:`Vector2<class_Vector2>` **get_global_mouse_position** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_global_mouse_position** **(** **)** |const|
 
 Returns the global position of the mouse.
 
@@ -602,7 +602,7 @@ Returns the global position of the mouse.
 
 .. _class_CanvasItem_method_get_global_transform:
 
-- :ref:`Transform2D<class_Transform2D>` **get_global_transform** **(** **)** const
+- :ref:`Transform2D<class_Transform2D>` **get_global_transform** **(** **)** |const|
 
 Returns the global transform matrix of this item.
 
@@ -610,7 +610,7 @@ Returns the global transform matrix of this item.
 
 .. _class_CanvasItem_method_get_global_transform_with_canvas:
 
-- :ref:`Transform2D<class_Transform2D>` **get_global_transform_with_canvas** **(** **)** const
+- :ref:`Transform2D<class_Transform2D>` **get_global_transform_with_canvas** **(** **)** |const|
 
 Returns the global transform matrix of this item in relation to the canvas.
 
@@ -618,7 +618,7 @@ Returns the global transform matrix of this item in relation to the canvas.
 
 .. _class_CanvasItem_method_get_local_mouse_position:
 
-- :ref:`Vector2<class_Vector2>` **get_local_mouse_position** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_local_mouse_position** **(** **)** |const|
 
 Returns the mouse position relative to this item's position.
 
@@ -626,7 +626,7 @@ Returns the mouse position relative to this item's position.
 
 .. _class_CanvasItem_method_get_transform:
 
-- :ref:`Transform2D<class_Transform2D>` **get_transform** **(** **)** const
+- :ref:`Transform2D<class_Transform2D>` **get_transform** **(** **)** |const|
 
 Returns the transform matrix of this item.
 
@@ -634,7 +634,7 @@ Returns the transform matrix of this item.
 
 .. _class_CanvasItem_method_get_viewport_rect:
 
-- :ref:`Rect2<class_Rect2>` **get_viewport_rect** **(** **)** const
+- :ref:`Rect2<class_Rect2>` **get_viewport_rect** **(** **)** |const|
 
 Returns the viewport's boundaries as a :ref:`Rect2<class_Rect2>`.
 
@@ -642,7 +642,7 @@ Returns the viewport's boundaries as a :ref:`Rect2<class_Rect2>`.
 
 .. _class_CanvasItem_method_get_viewport_transform:
 
-- :ref:`Transform2D<class_Transform2D>` **get_viewport_transform** **(** **)** const
+- :ref:`Transform2D<class_Transform2D>` **get_viewport_transform** **(** **)** |const|
 
 Returns this item's transform in relation to the viewport.
 
@@ -650,7 +650,7 @@ Returns this item's transform in relation to the viewport.
 
 .. _class_CanvasItem_method_get_world_2d:
 
-- :ref:`World2D<class_World2D>` **get_world_2d** **(** **)** const
+- :ref:`World2D<class_World2D>` **get_world_2d** **(** **)** |const|
 
 Returns the :ref:`World2D<class_World2D>` where this item is in.
 
@@ -666,7 +666,7 @@ Hide the ``CanvasItem`` if it's currently visible.
 
 .. _class_CanvasItem_method_is_local_transform_notification_enabled:
 
-- :ref:`bool<class_bool>` **is_local_transform_notification_enabled** **(** **)** const
+- :ref:`bool<class_bool>` **is_local_transform_notification_enabled** **(** **)** |const|
 
 Returns ``true`` if local transform notifications are communicated to children.
 
@@ -674,7 +674,7 @@ Returns ``true`` if local transform notifications are communicated to children.
 
 .. _class_CanvasItem_method_is_set_as_toplevel:
 
-- :ref:`bool<class_bool>` **is_set_as_toplevel** **(** **)** const
+- :ref:`bool<class_bool>` **is_set_as_toplevel** **(** **)** |const|
 
 Returns ``true`` if the node is set as top-level. See :ref:`set_as_toplevel<class_CanvasItem_method_set_as_toplevel>`.
 
@@ -682,7 +682,7 @@ Returns ``true`` if the node is set as top-level. See :ref:`set_as_toplevel<clas
 
 .. _class_CanvasItem_method_is_transform_notification_enabled:
 
-- :ref:`bool<class_bool>` **is_transform_notification_enabled** **(** **)** const
+- :ref:`bool<class_bool>` **is_transform_notification_enabled** **(** **)** |const|
 
 Returns ``true`` if global transform notifications are communicated to children.
 
@@ -690,7 +690,7 @@ Returns ``true`` if global transform notifications are communicated to children.
 
 .. _class_CanvasItem_method_is_visible_in_tree:
 
-- :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** const
+- :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** |const|
 
 Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and all its antecedents are also visible. If any antecedent is hidden, this node will not be visible in the scene tree.
 
@@ -698,7 +698,7 @@ Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`
 
 .. _class_CanvasItem_method_make_canvas_position_local:
 
-- :ref:`Vector2<class_Vector2>` **make_canvas_position_local** **(** :ref:`Vector2<class_Vector2>` screen_point **)** const
+- :ref:`Vector2<class_Vector2>` **make_canvas_position_local** **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|
 
 Assigns ``screen_point`` as this node's new local transform.
 
@@ -706,7 +706,7 @@ Assigns ``screen_point`` as this node's new local transform.
 
 .. _class_CanvasItem_method_make_input_local:
 
-- :ref:`InputEvent<class_InputEvent>` **make_input_local** **(** :ref:`InputEvent<class_InputEvent>` event **)** const
+- :ref:`InputEvent<class_InputEvent>` **make_input_local** **(** :ref:`InputEvent<class_InputEvent>` event **)** |const|
 
 Transformations issued by ``event``'s inputs are applied in local space instead of global space.
 
@@ -750,3 +750,6 @@ Show the ``CanvasItem`` if it's currently hidden. For controls that inherit :ref
 
 Queue the ``CanvasItem`` for update. :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be called on idle time to request redraw.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

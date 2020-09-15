@@ -31,9 +31,9 @@ Methods
 -------
 
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`get_default_input_values<class_VisualShaderNode_method_get_default_input_values>` **(** **)** const                                                                   |
+| :ref:`Array<class_Array>`     | :ref:`get_default_input_values<class_VisualShaderNode_method_get_default_input_values>` **(** **)** |const|                                                                 |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_input_port_default_value<class_VisualShaderNode_method_get_input_port_default_value>` **(** :ref:`int<class_int>` port **)** const                                |
+| :ref:`Variant<class_Variant>` | :ref:`get_input_port_default_value<class_VisualShaderNode_method_get_input_port_default_value>` **(** :ref:`int<class_int>` port **)** |const|                              |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_default_input_values<class_VisualShaderNode_method_set_default_input_values>` **(** :ref:`Array<class_Array>` values **)**                                        |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -102,7 +102,7 @@ Method Descriptions
 
 .. _class_VisualShaderNode_method_get_default_input_values:
 
-- :ref:`Array<class_Array>` **get_default_input_values** **(** **)** const
+- :ref:`Array<class_Array>` **get_default_input_values** **(** **)** |const|
 
 Returns an :ref:`Array<class_Array>` containing default values for all of the input ports of the node in the form ``[index0, value0, index1, value1, ...]``.
 
@@ -110,7 +110,7 @@ Returns an :ref:`Array<class_Array>` containing default values for all of the in
 
 .. _class_VisualShaderNode_method_get_input_port_default_value:
 
-- :ref:`Variant<class_Variant>` **get_input_port_default_value** **(** :ref:`int<class_int>` port **)** const
+- :ref:`Variant<class_Variant>` **get_input_port_default_value** **(** :ref:`int<class_int>` port **)** |const|
 
 Returns the default value of the input ``port``.
 
@@ -130,3 +130,6 @@ Sets the default input ports values using an :ref:`Array<class_Array>` of the fo
 
 Sets the default value for the selected input ``port``.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

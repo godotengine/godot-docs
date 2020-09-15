@@ -20,6 +20,11 @@ Description
 
 Allows frequencies other than the :ref:`cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>` to pass.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/audio/audio_buses`
+
 Properties
 ----------
 
@@ -117,5 +122,8 @@ Gain amount of the frequencies after the filter.
 | *Getter*  | get_resonance()      |
 +-----------+----------------------+
 
-Amount of boost in the overtones near the cutoff frequency.
+Amount of boost in the frequency range near the cutoff frequency.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

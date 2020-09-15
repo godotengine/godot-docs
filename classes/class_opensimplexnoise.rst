@@ -220,3 +220,6 @@ Returns the 4D noise value ``[-1,1]`` at the given position.
 
 Generate a tileable noise image, based on the current noise parameters. Generated seamless images are always square (``size`` × ``size``).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -31,25 +31,25 @@ Methods
 -------
 
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Shape<class_Shape>`                       | :ref:`create_convex_shape<class_Mesh_method_create_convex_shape>` **(** **)** const                                                                      |
+| :ref:`Shape<class_Shape>`                       | :ref:`create_convex_shape<class_Mesh_method_create_convex_shape>` **(** **)** |const|                                                                    |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`                         | :ref:`create_outline<class_Mesh_method_create_outline>` **(** :ref:`float<class_float>` margin **)** const                                               |
+| :ref:`Mesh<class_Mesh>`                         | :ref:`create_outline<class_Mesh_method_create_outline>` **(** :ref:`float<class_float>` margin **)** |const|                                             |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Shape<class_Shape>`                       | :ref:`create_trimesh_shape<class_Mesh_method_create_trimesh_shape>` **(** **)** const                                                                    |
+| :ref:`Shape<class_Shape>`                       | :ref:`create_trimesh_shape<class_Mesh_method_create_trimesh_shape>` **(** **)** |const|                                                                  |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TriangleMesh<class_TriangleMesh>`         | :ref:`generate_triangle_mesh<class_Mesh_method_generate_triangle_mesh>` **(** **)** const                                                                |
+| :ref:`TriangleMesh<class_TriangleMesh>`         | :ref:`generate_triangle_mesh<class_Mesh_method_generate_triangle_mesh>` **(** **)** |const|                                                              |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>`                         | :ref:`get_aabb<class_Mesh_method_get_aabb>` **(** **)** const                                                                                            |
+| :ref:`AABB<class_AABB>`                         | :ref:`get_aabb<class_Mesh_method_get_aabb>` **(** **)** |const|                                                                                          |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_faces<class_Mesh_method_get_faces>` **(** **)** const                                                                                          |
+| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_faces<class_Mesh_method_get_faces>` **(** **)** |const|                                                                                        |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`get_surface_count<class_Mesh_method_get_surface_count>` **(** **)** const                                                                          |
+| :ref:`int<class_int>`                           | :ref:`get_surface_count<class_Mesh_method_get_surface_count>` **(** **)** |const|                                                                        |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                       | :ref:`surface_get_arrays<class_Mesh_method_surface_get_arrays>` **(** :ref:`int<class_int>` surf_idx **)** const                                         |
+| :ref:`Array<class_Array>`                       | :ref:`surface_get_arrays<class_Mesh_method_surface_get_arrays>` **(** :ref:`int<class_int>` surf_idx **)** |const|                                       |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                       | :ref:`surface_get_blend_shape_arrays<class_Mesh_method_surface_get_blend_shape_arrays>` **(** :ref:`int<class_int>` surf_idx **)** const                 |
+| :ref:`Array<class_Array>`                       | :ref:`surface_get_blend_shape_arrays<class_Mesh_method_surface_get_blend_shape_arrays>` **(** :ref:`int<class_int>` surf_idx **)** |const|               |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_Material>`                 | :ref:`surface_get_material<class_Mesh_method_surface_get_material>` **(** :ref:`int<class_int>` surf_idx **)** const                                     |
+| :ref:`Material<class_Material>`                 | :ref:`surface_get_material<class_Mesh_method_surface_get_material>` **(** :ref:`int<class_int>` surf_idx **)** |const|                                   |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`surface_set_material<class_Mesh_method_surface_set_material>` **(** :ref:`int<class_int>` surf_idx, :ref:`Material<class_Material>` material **)** |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -265,7 +265,7 @@ Method Descriptions
 
 .. _class_Mesh_method_create_convex_shape:
 
-- :ref:`Shape<class_Shape>` **create_convex_shape** **(** **)** const
+- :ref:`Shape<class_Shape>` **create_convex_shape** **(** **)** |const|
 
 Calculate a :ref:`ConvexPolygonShape<class_ConvexPolygonShape>` from the mesh.
 
@@ -273,7 +273,7 @@ Calculate a :ref:`ConvexPolygonShape<class_ConvexPolygonShape>` from the mesh.
 
 .. _class_Mesh_method_create_outline:
 
-- :ref:`Mesh<class_Mesh>` **create_outline** **(** :ref:`float<class_float>` margin **)** const
+- :ref:`Mesh<class_Mesh>` **create_outline** **(** :ref:`float<class_float>` margin **)** |const|
 
 Calculate an outline mesh at a defined offset (margin) from the original mesh.
 
@@ -283,7 +283,7 @@ Calculate an outline mesh at a defined offset (margin) from the original mesh.
 
 .. _class_Mesh_method_create_trimesh_shape:
 
-- :ref:`Shape<class_Shape>` **create_trimesh_shape** **(** **)** const
+- :ref:`Shape<class_Shape>` **create_trimesh_shape** **(** **)** |const|
 
 Calculate a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` from the mesh.
 
@@ -291,7 +291,7 @@ Calculate a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` from the mesh.
 
 .. _class_Mesh_method_generate_triangle_mesh:
 
-- :ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** const
+- :ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** |const|
 
 Generate a :ref:`TriangleMesh<class_TriangleMesh>` from the mesh.
 
@@ -299,7 +299,7 @@ Generate a :ref:`TriangleMesh<class_TriangleMesh>` from the mesh.
 
 .. _class_Mesh_method_get_aabb:
 
-- :ref:`AABB<class_AABB>` **get_aabb** **(** **)** const
+- :ref:`AABB<class_AABB>` **get_aabb** **(** **)** |const|
 
 Returns the smallest :ref:`AABB<class_AABB>` enclosing this mesh. Not affected by ``custom_aabb``.
 
@@ -309,7 +309,7 @@ Returns the smallest :ref:`AABB<class_AABB>` enclosing this mesh. Not affected b
 
 .. _class_Mesh_method_get_faces:
 
-- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_faces** **(** **)** const
+- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_faces** **(** **)** |const|
 
 Returns all the vertices that make up the faces of the mesh. Each three vertices represent one triangle.
 
@@ -317,7 +317,7 @@ Returns all the vertices that make up the faces of the mesh. Each three vertices
 
 .. _class_Mesh_method_get_surface_count:
 
-- :ref:`int<class_int>` **get_surface_count** **(** **)** const
+- :ref:`int<class_int>` **get_surface_count** **(** **)** |const|
 
 Returns the amount of surfaces that the ``Mesh`` holds.
 
@@ -325,7 +325,7 @@ Returns the amount of surfaces that the ``Mesh`` holds.
 
 .. _class_Mesh_method_surface_get_arrays:
 
-- :ref:`Array<class_Array>` **surface_get_arrays** **(** :ref:`int<class_int>` surf_idx **)** const
+- :ref:`Array<class_Array>` **surface_get_arrays** **(** :ref:`int<class_int>` surf_idx **)** |const|
 
 Returns the arrays for the vertices, normals, uvs, etc. that make up the requested surface (see :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`).
 
@@ -333,7 +333,7 @@ Returns the arrays for the vertices, normals, uvs, etc. that make up the request
 
 .. _class_Mesh_method_surface_get_blend_shape_arrays:
 
-- :ref:`Array<class_Array>` **surface_get_blend_shape_arrays** **(** :ref:`int<class_int>` surf_idx **)** const
+- :ref:`Array<class_Array>` **surface_get_blend_shape_arrays** **(** :ref:`int<class_int>` surf_idx **)** |const|
 
 Returns the blend shape arrays for the requested surface.
 
@@ -341,7 +341,7 @@ Returns the blend shape arrays for the requested surface.
 
 .. _class_Mesh_method_surface_get_material:
 
-- :ref:`Material<class_Material>` **surface_get_material** **(** :ref:`int<class_int>` surf_idx **)** const
+- :ref:`Material<class_Material>` **surface_get_material** **(** :ref:`int<class_int>` surf_idx **)** |const|
 
 Returns a :ref:`Material<class_Material>` in a given surface. Surface is rendered using this material.
 
@@ -353,3 +353,6 @@ Returns a :ref:`Material<class_Material>` in a given surface. Surface is rendere
 
 Sets a :ref:`Material<class_Material>` for a given surface. Surface will be rendered using this material.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

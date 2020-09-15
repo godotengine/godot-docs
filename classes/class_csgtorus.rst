@@ -130,3 +130,6 @@ The number of slices the torus is constructed of.
 
 If ``true`` the normals of the torus are set to give a smooth effect making the torus seem rounded. If ``false`` the torus will have a flat shaded look.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

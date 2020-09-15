@@ -159,13 +159,13 @@ Methods
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`convert_from_particles<class_CPUParticles_method_convert_from_particles>` **(** :ref:`Node<class_Node>` particles **)**                                                     |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_param<class_CPUParticles_method_get_param>` **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param **)** const                                                       |
+| :ref:`float<class_float>` | :ref:`get_param<class_CPUParticles_method_get_param>` **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param **)** |const|                                                     |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Curve<class_Curve>` | :ref:`get_param_curve<class_CPUParticles_method_get_param_curve>` **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param **)** const                                           |
+| :ref:`Curve<class_Curve>` | :ref:`get_param_curve<class_CPUParticles_method_get_param_curve>` **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param **)** |const|                                         |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_param_randomness<class_CPUParticles_method_get_param_randomness>` **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param **)** const                                 |
+| :ref:`float<class_float>` | :ref:`get_param_randomness<class_CPUParticles_method_get_param_randomness>` **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param **)** |const|                               |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`get_particle_flag<class_CPUParticles_method_get_particle_flag>` **(** :ref:`Flags<enum_CPUParticles_Flags>` flag **)** const                                                |
+| :ref:`bool<class_bool>`   | :ref:`get_particle_flag<class_CPUParticles_method_get_particle_flag>` **(** :ref:`Flags<enum_CPUParticles_Flags>` flag **)** |const|                                              |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`restart<class_CPUParticles_method_restart>` **(** **)**                                                                                                                     |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1311,7 +1311,7 @@ Sets this node's properties to match a given :ref:`Particles<class_Particles>` n
 
 .. _class_CPUParticles_method_get_param:
 
-- :ref:`float<class_float>` **get_param** **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param **)** const
+- :ref:`float<class_float>` **get_param** **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param **)** |const|
 
 Returns the base value of the parameter specified by :ref:`Parameter<enum_CPUParticles_Parameter>`.
 
@@ -1319,7 +1319,7 @@ Returns the base value of the parameter specified by :ref:`Parameter<enum_CPUPar
 
 .. _class_CPUParticles_method_get_param_curve:
 
-- :ref:`Curve<class_Curve>` **get_param_curve** **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param **)** const
+- :ref:`Curve<class_Curve>` **get_param_curve** **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param **)** |const|
 
 Returns the :ref:`Curve<class_Curve>` of the parameter specified by :ref:`Parameter<enum_CPUParticles_Parameter>`.
 
@@ -1327,7 +1327,7 @@ Returns the :ref:`Curve<class_Curve>` of the parameter specified by :ref:`Parame
 
 .. _class_CPUParticles_method_get_param_randomness:
 
-- :ref:`float<class_float>` **get_param_randomness** **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param **)** const
+- :ref:`float<class_float>` **get_param_randomness** **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param **)** |const|
 
 Returns the randomness factor of the parameter specified by :ref:`Parameter<enum_CPUParticles_Parameter>`.
 
@@ -1335,7 +1335,7 @@ Returns the randomness factor of the parameter specified by :ref:`Parameter<enum
 
 .. _class_CPUParticles_method_get_particle_flag:
 
-- :ref:`bool<class_bool>` **get_particle_flag** **(** :ref:`Flags<enum_CPUParticles_Flags>` flag **)** const
+- :ref:`bool<class_bool>` **get_particle_flag** **(** :ref:`Flags<enum_CPUParticles_Flags>` flag **)** |const|
 
 Returns the enabled state of the given flag (see :ref:`Flags<enum_CPUParticles_Flags>` for options).
 
@@ -1379,3 +1379,6 @@ Sets the randomness factor of the parameter specified by :ref:`Parameter<enum_CP
 
 Enables or disables the given flag (see :ref:`Flags<enum_CPUParticles_Flags>` for options).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

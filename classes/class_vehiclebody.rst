@@ -90,3 +90,6 @@ A negative value will result in the vehicle reversing.
 
 The steering angle for the vehicle. Setting this to a non-zero value will result in the vehicle turning when it's moving. Wheels that have :ref:`VehicleWheel.use_as_steering<class_VehicleWheel_property_use_as_steering>` set to ``true`` will automatically be rotated.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

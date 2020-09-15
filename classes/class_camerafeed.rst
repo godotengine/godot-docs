@@ -32,13 +32,13 @@ Properties
 Methods
 -------
 
-+---------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`get_id<class_CameraFeed_method_get_id>` **(** **)** const             |
-+---------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`String<class_String>`                       | :ref:`get_name<class_CameraFeed_method_get_name>` **(** **)** const         |
-+---------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`FeedPosition<enum_CameraFeed_FeedPosition>` | :ref:`get_position<class_CameraFeed_method_get_position>` **(** **)** const |
-+---------------------------------------------------+-----------------------------------------------------------------------------+
++---------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`get_id<class_CameraFeed_method_get_id>` **(** **)** |const|             |
++---------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`get_name<class_CameraFeed_method_get_name>` **(** **)** |const|         |
++---------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`FeedPosition<enum_CameraFeed_FeedPosition>` | :ref:`get_position<class_CameraFeed_method_get_position>` **(** **)** |const| |
++---------------------------------------------------+-------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -119,7 +119,7 @@ Method Descriptions
 
 .. _class_CameraFeed_method_get_id:
 
-- :ref:`int<class_int>` **get_id** **(** **)** const
+- :ref:`int<class_int>` **get_id** **(** **)** |const|
 
 Returns the unique ID for this feed.
 
@@ -127,7 +127,7 @@ Returns the unique ID for this feed.
 
 .. _class_CameraFeed_method_get_name:
 
-- :ref:`String<class_String>` **get_name** **(** **)** const
+- :ref:`String<class_String>` **get_name** **(** **)** |const|
 
 Returns the camera's name.
 
@@ -135,7 +135,10 @@ Returns the camera's name.
 
 .. _class_CameraFeed_method_get_position:
 
-- :ref:`FeedPosition<enum_CameraFeed_FeedPosition>` **get_position** **(** **)** const
+- :ref:`FeedPosition<enum_CameraFeed_FeedPosition>` **get_position** **(** **)** |const|
 
 Returns the position of camera on the device.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

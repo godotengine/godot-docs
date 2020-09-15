@@ -34,25 +34,25 @@ Methods
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`clear_bones_global_pose_override<class_Skeleton_method_clear_bones_global_pose_override>` **(** **)**                                                                                                                                              |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`find_bone<class_Skeleton_method_find_bone>` **(** :ref:`String<class_String>` name **)** const                                                                                                                                                     |
+| :ref:`int<class_int>`                     | :ref:`find_bone<class_Skeleton_method_find_bone>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                                   |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`get_bone_count<class_Skeleton_method_get_bone_count>` **(** **)** const                                                                                                                                                                            |
+| :ref:`int<class_int>`                     | :ref:`get_bone_count<class_Skeleton_method_get_bone_count>` **(** **)** |const|                                                                                                                                                                          |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>`         | :ref:`get_bone_custom_pose<class_Skeleton_method_get_bone_custom_pose>` **(** :ref:`int<class_int>` bone_idx **)** const                                                                                                                                 |
+| :ref:`Transform<class_Transform>`         | :ref:`get_bone_custom_pose<class_Skeleton_method_get_bone_custom_pose>` **(** :ref:`int<class_int>` bone_idx **)** |const|                                                                                                                               |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>`         | :ref:`get_bone_global_pose<class_Skeleton_method_get_bone_global_pose>` **(** :ref:`int<class_int>` bone_idx **)** const                                                                                                                                 |
+| :ref:`Transform<class_Transform>`         | :ref:`get_bone_global_pose<class_Skeleton_method_get_bone_global_pose>` **(** :ref:`int<class_int>` bone_idx **)** |const|                                                                                                                               |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`               | :ref:`get_bone_name<class_Skeleton_method_get_bone_name>` **(** :ref:`int<class_int>` bone_idx **)** const                                                                                                                                               |
+| :ref:`String<class_String>`               | :ref:`get_bone_name<class_Skeleton_method_get_bone_name>` **(** :ref:`int<class_int>` bone_idx **)** |const|                                                                                                                                             |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`get_bone_parent<class_Skeleton_method_get_bone_parent>` **(** :ref:`int<class_int>` bone_idx **)** const                                                                                                                                           |
+| :ref:`int<class_int>`                     | :ref:`get_bone_parent<class_Skeleton_method_get_bone_parent>` **(** :ref:`int<class_int>` bone_idx **)** |const|                                                                                                                                         |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>`         | :ref:`get_bone_pose<class_Skeleton_method_get_bone_pose>` **(** :ref:`int<class_int>` bone_idx **)** const                                                                                                                                               |
+| :ref:`Transform<class_Transform>`         | :ref:`get_bone_pose<class_Skeleton_method_get_bone_pose>` **(** :ref:`int<class_int>` bone_idx **)** |const|                                                                                                                                             |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>`         | :ref:`get_bone_rest<class_Skeleton_method_get_bone_rest>` **(** :ref:`int<class_int>` bone_idx **)** const                                                                                                                                               |
+| :ref:`Transform<class_Transform>`         | :ref:`get_bone_rest<class_Skeleton_method_get_bone_rest>` **(** :ref:`int<class_int>` bone_idx **)** |const|                                                                                                                                             |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                 | :ref:`get_bound_child_nodes_to_bone<class_Skeleton_method_get_bound_child_nodes_to_bone>` **(** :ref:`int<class_int>` bone_idx **)** const                                                                                                               |
+| :ref:`Array<class_Array>`                 | :ref:`get_bound_child_nodes_to_bone<class_Skeleton_method_get_bound_child_nodes_to_bone>` **(** :ref:`int<class_int>` bone_idx **)** |const|                                                                                                             |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`is_bone_rest_disabled<class_Skeleton_method_is_bone_rest_disabled>` **(** :ref:`int<class_int>` bone_idx **)** const                                                                                                                               |
+| :ref:`bool<class_bool>`                   | :ref:`is_bone_rest_disabled<class_Skeleton_method_is_bone_rest_disabled>` **(** :ref:`int<class_int>` bone_idx **)** |const|                                                                                                                             |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`localize_rests<class_Skeleton_method_localize_rests>` **(** **)**                                                                                                                                                                                  |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -125,7 +125,7 @@ Clear all the bones in this skeleton.
 
 .. _class_Skeleton_method_find_bone:
 
-- :ref:`int<class_int>` **find_bone** **(** :ref:`String<class_String>` name **)** const
+- :ref:`int<class_int>` **find_bone** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns the bone index that matches ``name`` as its name.
 
@@ -133,7 +133,7 @@ Returns the bone index that matches ``name`` as its name.
 
 .. _class_Skeleton_method_get_bone_count:
 
-- :ref:`int<class_int>` **get_bone_count** **(** **)** const
+- :ref:`int<class_int>` **get_bone_count** **(** **)** |const|
 
 Returns the amount of bones in the skeleton.
 
@@ -141,7 +141,7 @@ Returns the amount of bones in the skeleton.
 
 .. _class_Skeleton_method_get_bone_custom_pose:
 
-- :ref:`Transform<class_Transform>` **get_bone_custom_pose** **(** :ref:`int<class_int>` bone_idx **)** const
+- :ref:`Transform<class_Transform>` **get_bone_custom_pose** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
 Returns the custom pose of the specified bone. Custom pose is applied on top of the rest pose.
 
@@ -149,7 +149,7 @@ Returns the custom pose of the specified bone. Custom pose is applied on top of 
 
 .. _class_Skeleton_method_get_bone_global_pose:
 
-- :ref:`Transform<class_Transform>` **get_bone_global_pose** **(** :ref:`int<class_int>` bone_idx **)** const
+- :ref:`Transform<class_Transform>` **get_bone_global_pose** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
 Returns the overall transform of the specified bone, with respect to the skeleton. Being relative to the skeleton frame, this is not the actual "global" transform of the bone.
 
@@ -157,7 +157,7 @@ Returns the overall transform of the specified bone, with respect to the skeleto
 
 .. _class_Skeleton_method_get_bone_name:
 
-- :ref:`String<class_String>` **get_bone_name** **(** :ref:`int<class_int>` bone_idx **)** const
+- :ref:`String<class_String>` **get_bone_name** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
 Returns the name of the bone at index ``index``.
 
@@ -165,7 +165,7 @@ Returns the name of the bone at index ``index``.
 
 .. _class_Skeleton_method_get_bone_parent:
 
-- :ref:`int<class_int>` **get_bone_parent** **(** :ref:`int<class_int>` bone_idx **)** const
+- :ref:`int<class_int>` **get_bone_parent** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
 Returns the bone index which is the parent of the bone at ``bone_idx``. If -1, then bone has no parent.
 
@@ -175,7 +175,7 @@ Returns the bone index which is the parent of the bone at ``bone_idx``. If -1, t
 
 .. _class_Skeleton_method_get_bone_pose:
 
-- :ref:`Transform<class_Transform>` **get_bone_pose** **(** :ref:`int<class_int>` bone_idx **)** const
+- :ref:`Transform<class_Transform>` **get_bone_pose** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
 Returns the pose transform of the specified bone. Pose is applied on top of the custom pose, which is applied on top the rest pose.
 
@@ -183,7 +183,7 @@ Returns the pose transform of the specified bone. Pose is applied on top of the 
 
 .. _class_Skeleton_method_get_bone_rest:
 
-- :ref:`Transform<class_Transform>` **get_bone_rest** **(** :ref:`int<class_int>` bone_idx **)** const
+- :ref:`Transform<class_Transform>` **get_bone_rest** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
 Returns the rest transform for a bone ``bone_idx``.
 
@@ -191,7 +191,7 @@ Returns the rest transform for a bone ``bone_idx``.
 
 .. _class_Skeleton_method_get_bound_child_nodes_to_bone:
 
-- :ref:`Array<class_Array>` **get_bound_child_nodes_to_bone** **(** :ref:`int<class_int>` bone_idx **)** const
+- :ref:`Array<class_Array>` **get_bound_child_nodes_to_bone** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
 *Deprecated soon.*
 
@@ -199,7 +199,7 @@ Returns the rest transform for a bone ``bone_idx``.
 
 .. _class_Skeleton_method_is_bone_rest_disabled:
 
-- :ref:`bool<class_bool>` **is_bone_rest_disabled** **(** :ref:`int<class_int>` bone_idx **)** const
+- :ref:`bool<class_bool>` **is_bone_rest_disabled** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
 ----
 
@@ -295,3 +295,6 @@ Sets the rest transform for bone ``bone_idx``.
 
 - void **unparent_bone_and_rest** **(** :ref:`int<class_int>` bone_idx **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

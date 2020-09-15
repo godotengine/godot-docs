@@ -26,13 +26,13 @@ Methods
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`connect_to_host<class_PacketPeerUDP_method_connect_to_host>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**                                          |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_packet_ip<class_PacketPeerUDP_method_get_packet_ip>` **(** **)** const                                                                                                     |
+| :ref:`String<class_String>`           | :ref:`get_packet_ip<class_PacketPeerUDP_method_get_packet_ip>` **(** **)** |const|                                                                                                   |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_packet_port<class_PacketPeerUDP_method_get_packet_port>` **(** **)** const                                                                                                 |
+| :ref:`int<class_int>`                 | :ref:`get_packet_port<class_PacketPeerUDP_method_get_packet_port>` **(** **)** |const|                                                                                               |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_connected_to_host<class_PacketPeerUDP_method_is_connected_to_host>` **(** **)** const                                                                                       |
+| :ref:`bool<class_bool>`               | :ref:`is_connected_to_host<class_PacketPeerUDP_method_is_connected_to_host>` **(** **)** |const|                                                                                     |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_listening<class_PacketPeerUDP_method_is_listening>` **(** **)** const                                                                                                       |
+| :ref:`bool<class_bool>`               | :ref:`is_listening<class_PacketPeerUDP_method_is_listening>` **(** **)** |const|                                                                                                     |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`join_multicast_group<class_PacketPeerUDP_method_join_multicast_group>` **(** :ref:`String<class_String>` multicast_address, :ref:`String<class_String>` interface_name **)**   |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -70,7 +70,7 @@ Note: Connecting to the remote peer does not help to protect from malicious atta
 
 .. _class_PacketPeerUDP_method_get_packet_ip:
 
-- :ref:`String<class_String>` **get_packet_ip** **(** **)** const
+- :ref:`String<class_String>` **get_packet_ip** **(** **)** |const|
 
 Returns the IP of the remote peer that sent the last packet(that was received with :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>` or :ref:`PacketPeer.get_var<class_PacketPeer_method_get_var>`).
 
@@ -78,7 +78,7 @@ Returns the IP of the remote peer that sent the last packet(that was received wi
 
 .. _class_PacketPeerUDP_method_get_packet_port:
 
-- :ref:`int<class_int>` **get_packet_port** **(** **)** const
+- :ref:`int<class_int>` **get_packet_port** **(** **)** |const|
 
 Returns the port of the remote peer that sent the last packet(that was received with :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>` or :ref:`PacketPeer.get_var<class_PacketPeer_method_get_var>`).
 
@@ -86,7 +86,7 @@ Returns the port of the remote peer that sent the last packet(that was received 
 
 .. _class_PacketPeerUDP_method_is_connected_to_host:
 
-- :ref:`bool<class_bool>` **is_connected_to_host** **(** **)** const
+- :ref:`bool<class_bool>` **is_connected_to_host** **(** **)** |const|
 
 Returns ``true`` if the UDP socket is open and has been connected to a remote address. See :ref:`connect_to_host<class_PacketPeerUDP_method_connect_to_host>`.
 
@@ -94,7 +94,7 @@ Returns ``true`` if the UDP socket is open and has been connected to a remote ad
 
 .. _class_PacketPeerUDP_method_is_listening:
 
-- :ref:`bool<class_bool>` **is_listening** **(** **)** const
+- :ref:`bool<class_bool>` **is_listening** **(** **)** |const|
 
 Returns whether this ``PacketPeerUDP`` is listening.
 
@@ -160,3 +160,6 @@ Note: :ref:`set_broadcast_enabled<class_PacketPeerUDP_method_set_broadcast_enabl
 
 Waits for a packet to arrive on the listening port. See :ref:`listen<class_PacketPeerUDP_method_listen>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

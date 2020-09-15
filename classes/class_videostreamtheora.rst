@@ -44,3 +44,6 @@ Returns the Ogg Theora video file handled by this ``VideoStreamTheora``.
 
 Sets the Ogg Theora video file that this ``VideoStreamTheora`` resource handles. The ``file`` name should have the ``.o`` extension.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

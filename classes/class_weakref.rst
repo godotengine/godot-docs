@@ -21,16 +21,19 @@ A weakref can hold a :ref:`Reference<class_Reference>`, without contributing to 
 Methods
 -------
 
-+-------------------------------+----------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_ref<class_WeakRef_method_get_ref>` **(** **)** const |
-+-------------------------------+----------------------------------------------------------------+
++-------------------------------+------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`get_ref<class_WeakRef_method_get_ref>` **(** **)** |const| |
++-------------------------------+------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_WeakRef_method_get_ref:
 
-- :ref:`Variant<class_Variant>` **get_ref** **(** **)** const
+- :ref:`Variant<class_Variant>` **get_ref** **(** **)** |const|
 
 Returns the :ref:`Object<class_Object>` this weakref is referring to.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

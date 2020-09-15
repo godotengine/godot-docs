@@ -76,6 +76,8 @@ Properties
 +----------------------------------------------+-------------------------------------------------------------------------------------------+---------------------------+
 | :ref:`float<class_float>`                    | :ref:`v_scroll_speed<class_TextEdit_property_v_scroll_speed>`                             | ``80.0``                  |
 +----------------------------------------------+-------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`virtual_keyboard_enabled<class_TextEdit_property_virtual_keyboard_enabled>`         | ``true``                  |
++----------------------------------------------+-------------------------------------------------------------------------------------------+---------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`wrap_enabled<class_TextEdit_property_wrap_enabled>`                                 | ``false``                 |
 +----------------------------------------------+-------------------------------------------------------------------------------------------+---------------------------+
 
@@ -87,7 +89,7 @@ Methods
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`add_keyword_color<class_TextEdit_method_add_keyword_color>` **(** :ref:`String<class_String>` keyword, :ref:`Color<class_Color>` color **)**                                                                                 |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`can_fold<class_TextEdit_method_can_fold>` **(** :ref:`int<class_int>` line **)** const                                                                                                                                       |
+| :ref:`bool<class_bool>`                 | :ref:`can_fold<class_TextEdit_method_can_fold>` **(** :ref:`int<class_int>` line **)** |const|                                                                                                                                     |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`center_viewport_to_cursor<class_TextEdit_method_center_viewport_to_cursor>` **(** **)**                                                                                                                                      |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -97,9 +99,9 @@ Methods
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`copy<class_TextEdit_method_copy>` **(** **)**                                                                                                                                                                                |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`cursor_get_column<class_TextEdit_method_cursor_get_column>` **(** **)** const                                                                                                                                                |
+| :ref:`int<class_int>`                   | :ref:`cursor_get_column<class_TextEdit_method_cursor_get_column>` **(** **)** |const|                                                                                                                                              |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`cursor_get_line<class_TextEdit_method_cursor_get_line>` **(** **)** const                                                                                                                                                    |
+| :ref:`int<class_int>`                   | :ref:`cursor_get_line<class_TextEdit_method_cursor_get_line>` **(** **)** |const|                                                                                                                                                  |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`cursor_set_column<class_TextEdit_method_cursor_set_column>` **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` adjust_viewport=true **)**                                                                           |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -113,37 +115,37 @@ Methods
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`fold_line<class_TextEdit_method_fold_line>` **(** :ref:`int<class_int>` line **)**                                                                                                                                           |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`               | :ref:`get_breakpoints<class_TextEdit_method_get_breakpoints>` **(** **)** const                                                                                                                                                    |
+| :ref:`Array<class_Array>`               | :ref:`get_breakpoints<class_TextEdit_method_get_breakpoints>` **(** **)** |const|                                                                                                                                                  |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`               | :ref:`get_keyword_color<class_TextEdit_method_get_keyword_color>` **(** :ref:`String<class_String>` keyword **)** const                                                                                                            |
+| :ref:`Color<class_Color>`               | :ref:`get_keyword_color<class_TextEdit_method_get_keyword_color>` **(** :ref:`String<class_String>` keyword **)** |const|                                                                                                          |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`             | :ref:`get_line<class_TextEdit_method_get_line>` **(** :ref:`int<class_int>` line **)** const                                                                                                                                       |
+| :ref:`String<class_String>`             | :ref:`get_line<class_TextEdit_method_get_line>` **(** :ref:`int<class_int>` line **)** |const|                                                                                                                                     |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`get_line_count<class_TextEdit_method_get_line_count>` **(** **)** const                                                                                                                                                      |
+| :ref:`int<class_int>`                   | :ref:`get_line_count<class_TextEdit_method_get_line_count>` **(** **)** |const|                                                                                                                                                    |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PopupMenu<class_PopupMenu>`       | :ref:`get_menu<class_TextEdit_method_get_menu>` **(** **)** const                                                                                                                                                                  |
+| :ref:`PopupMenu<class_PopupMenu>`       | :ref:`get_menu<class_TextEdit_method_get_menu>` **(** **)** |const|                                                                                                                                                                |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`get_selection_from_column<class_TextEdit_method_get_selection_from_column>` **(** **)** const                                                                                                                                |
+| :ref:`int<class_int>`                   | :ref:`get_selection_from_column<class_TextEdit_method_get_selection_from_column>` **(** **)** |const|                                                                                                                              |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`get_selection_from_line<class_TextEdit_method_get_selection_from_line>` **(** **)** const                                                                                                                                    |
+| :ref:`int<class_int>`                   | :ref:`get_selection_from_line<class_TextEdit_method_get_selection_from_line>` **(** **)** |const|                                                                                                                                  |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`             | :ref:`get_selection_text<class_TextEdit_method_get_selection_text>` **(** **)** const                                                                                                                                              |
+| :ref:`String<class_String>`             | :ref:`get_selection_text<class_TextEdit_method_get_selection_text>` **(** **)** |const|                                                                                                                                            |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`get_selection_to_column<class_TextEdit_method_get_selection_to_column>` **(** **)** const                                                                                                                                    |
+| :ref:`int<class_int>`                   | :ref:`get_selection_to_column<class_TextEdit_method_get_selection_to_column>` **(** **)** |const|                                                                                                                                  |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`get_selection_to_line<class_TextEdit_method_get_selection_to_line>` **(** **)** const                                                                                                                                        |
+| :ref:`int<class_int>`                   | :ref:`get_selection_to_line<class_TextEdit_method_get_selection_to_line>` **(** **)** |const|                                                                                                                                      |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`             | :ref:`get_word_under_cursor<class_TextEdit_method_get_word_under_cursor>` **(** **)** const                                                                                                                                        |
+| :ref:`String<class_String>`             | :ref:`get_word_under_cursor<class_TextEdit_method_get_word_under_cursor>` **(** **)** |const|                                                                                                                                      |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`has_keyword_color<class_TextEdit_method_has_keyword_color>` **(** :ref:`String<class_String>` keyword **)** const                                                                                                            |
+| :ref:`bool<class_bool>`                 | :ref:`has_keyword_color<class_TextEdit_method_has_keyword_color>` **(** :ref:`String<class_String>` keyword **)** |const|                                                                                                          |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`insert_text_at_cursor<class_TextEdit_method_insert_text_at_cursor>` **(** :ref:`String<class_String>` text **)**                                                                                                             |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`is_folded<class_TextEdit_method_is_folded>` **(** :ref:`int<class_int>` line **)** const                                                                                                                                     |
+| :ref:`bool<class_bool>`                 | :ref:`is_folded<class_TextEdit_method_is_folded>` **(** :ref:`int<class_int>` line **)** |const|                                                                                                                                   |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`is_line_hidden<class_TextEdit_method_is_line_hidden>` **(** :ref:`int<class_int>` line **)** const                                                                                                                           |
+| :ref:`bool<class_bool>`                 | :ref:`is_line_hidden<class_TextEdit_method_is_line_hidden>` **(** :ref:`int<class_int>` line **)** |const|                                                                                                                         |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`is_selection_active<class_TextEdit_method_is_selection_active>` **(** **)** const                                                                                                                                            |
+| :ref:`bool<class_bool>`                 | :ref:`is_selection_active<class_TextEdit_method_is_selection_active>` **(** **)** |const|                                                                                                                                          |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`menu_option<class_TextEdit_method_menu_option>` **(** :ref:`int<class_int>` option **)**                                                                                                                                     |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -153,7 +155,7 @@ Methods
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`remove_breakpoints<class_TextEdit_method_remove_breakpoints>` **(** **)**                                                                                                                                                    |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`search<class_TextEdit_method_search>` **(** :ref:`String<class_String>` key, :ref:`int<class_int>` flags, :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column **)** const                                     |
+| :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`search<class_TextEdit_method_search>` **(** :ref:`String<class_String>` key, :ref:`int<class_int>` flags, :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column **)** |const|                                   |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`select<class_TextEdit_method_select>` **(** :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column, :ref:`int<class_int>` to_line, :ref:`int<class_int>` to_column **)**                                         |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -780,6 +782,22 @@ Vertical scroll sensitivity.
 
 ----
 
+.. _class_TextEdit_property_virtual_keyboard_enabled:
+
+- :ref:`bool<class_bool>` **virtual_keyboard_enabled**
+
++-----------+-------------------------------------+
+| *Default* | ``true``                            |
++-----------+-------------------------------------+
+| *Setter*  | set_virtual_keyboard_enabled(value) |
++-----------+-------------------------------------+
+| *Getter*  | is_virtual_keyboard_enabled()       |
++-----------+-------------------------------------+
+
+If ``true``, the native virtual keyboard is shown when focused on platforms that support it.
+
+----
+
 .. _class_TextEdit_property_wrap_enabled:
 
 - :ref:`bool<class_bool>` **wrap_enabled**
@@ -815,7 +833,7 @@ Adds a ``keyword`` and its :ref:`Color<class_Color>`.
 
 .. _class_TextEdit_method_can_fold:
 
-- :ref:`bool<class_bool>` **can_fold** **(** :ref:`int<class_int>` line **)** const
+- :ref:`bool<class_bool>` **can_fold** **(** :ref:`int<class_int>` line **)** |const|
 
 Returns if the given line is foldable, that is, it has indented lines right below it.
 
@@ -855,7 +873,7 @@ Copy's the current text selection.
 
 .. _class_TextEdit_method_cursor_get_column:
 
-- :ref:`int<class_int>` **cursor_get_column** **(** **)** const
+- :ref:`int<class_int>` **cursor_get_column** **(** **)** |const|
 
 Returns the column the editing cursor is at.
 
@@ -863,7 +881,7 @@ Returns the column the editing cursor is at.
 
 .. _class_TextEdit_method_cursor_get_line:
 
-- :ref:`int<class_int>` **cursor_get_line** **(** **)** const
+- :ref:`int<class_int>` **cursor_get_line** **(** **)** |const|
 
 Returns the line the editing cursor is at.
 
@@ -925,7 +943,7 @@ Folds the given line, if possible (see :ref:`can_fold<class_TextEdit_method_can_
 
 .. _class_TextEdit_method_get_breakpoints:
 
-- :ref:`Array<class_Array>` **get_breakpoints** **(** **)** const
+- :ref:`Array<class_Array>` **get_breakpoints** **(** **)** |const|
 
 Returns an array containing the line number of each breakpoint.
 
@@ -933,7 +951,7 @@ Returns an array containing the line number of each breakpoint.
 
 .. _class_TextEdit_method_get_keyword_color:
 
-- :ref:`Color<class_Color>` **get_keyword_color** **(** :ref:`String<class_String>` keyword **)** const
+- :ref:`Color<class_Color>` **get_keyword_color** **(** :ref:`String<class_String>` keyword **)** |const|
 
 Returns the :ref:`Color<class_Color>` of the specified ``keyword``.
 
@@ -941,7 +959,7 @@ Returns the :ref:`Color<class_Color>` of the specified ``keyword``.
 
 .. _class_TextEdit_method_get_line:
 
-- :ref:`String<class_String>` **get_line** **(** :ref:`int<class_int>` line **)** const
+- :ref:`String<class_String>` **get_line** **(** :ref:`int<class_int>` line **)** |const|
 
 Returns the text of a specific line.
 
@@ -949,7 +967,7 @@ Returns the text of a specific line.
 
 .. _class_TextEdit_method_get_line_count:
 
-- :ref:`int<class_int>` **get_line_count** **(** **)** const
+- :ref:`int<class_int>` **get_line_count** **(** **)** |const|
 
 Returns the amount of total lines in the text.
 
@@ -957,7 +975,7 @@ Returns the amount of total lines in the text.
 
 .. _class_TextEdit_method_get_menu:
 
-- :ref:`PopupMenu<class_PopupMenu>` **get_menu** **(** **)** const
+- :ref:`PopupMenu<class_PopupMenu>` **get_menu** **(** **)** |const|
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` of this ``TextEdit``. By default, this menu is displayed when right-clicking on the ``TextEdit``.
 
@@ -965,7 +983,7 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` of this ``TextEdit``. By default, 
 
 .. _class_TextEdit_method_get_selection_from_column:
 
-- :ref:`int<class_int>` **get_selection_from_column** **(** **)** const
+- :ref:`int<class_int>` **get_selection_from_column** **(** **)** |const|
 
 Returns the selection begin column.
 
@@ -973,7 +991,7 @@ Returns the selection begin column.
 
 .. _class_TextEdit_method_get_selection_from_line:
 
-- :ref:`int<class_int>` **get_selection_from_line** **(** **)** const
+- :ref:`int<class_int>` **get_selection_from_line** **(** **)** |const|
 
 Returns the selection begin line.
 
@@ -981,7 +999,7 @@ Returns the selection begin line.
 
 .. _class_TextEdit_method_get_selection_text:
 
-- :ref:`String<class_String>` **get_selection_text** **(** **)** const
+- :ref:`String<class_String>` **get_selection_text** **(** **)** |const|
 
 Returns the text inside the selection.
 
@@ -989,7 +1007,7 @@ Returns the text inside the selection.
 
 .. _class_TextEdit_method_get_selection_to_column:
 
-- :ref:`int<class_int>` **get_selection_to_column** **(** **)** const
+- :ref:`int<class_int>` **get_selection_to_column** **(** **)** |const|
 
 Returns the selection end column.
 
@@ -997,7 +1015,7 @@ Returns the selection end column.
 
 .. _class_TextEdit_method_get_selection_to_line:
 
-- :ref:`int<class_int>` **get_selection_to_line** **(** **)** const
+- :ref:`int<class_int>` **get_selection_to_line** **(** **)** |const|
 
 Returns the selection end line.
 
@@ -1005,7 +1023,7 @@ Returns the selection end line.
 
 .. _class_TextEdit_method_get_word_under_cursor:
 
-- :ref:`String<class_String>` **get_word_under_cursor** **(** **)** const
+- :ref:`String<class_String>` **get_word_under_cursor** **(** **)** |const|
 
 Returns a :ref:`String<class_String>` text with the word under the mouse cursor location.
 
@@ -1013,7 +1031,7 @@ Returns a :ref:`String<class_String>` text with the word under the mouse cursor 
 
 .. _class_TextEdit_method_has_keyword_color:
 
-- :ref:`bool<class_bool>` **has_keyword_color** **(** :ref:`String<class_String>` keyword **)** const
+- :ref:`bool<class_bool>` **has_keyword_color** **(** :ref:`String<class_String>` keyword **)** |const|
 
 Returns whether the specified ``keyword`` has a color set to it or not.
 
@@ -1029,7 +1047,7 @@ Insert the specified text at the cursor position.
 
 .. _class_TextEdit_method_is_folded:
 
-- :ref:`bool<class_bool>` **is_folded** **(** :ref:`int<class_int>` line **)** const
+- :ref:`bool<class_bool>` **is_folded** **(** :ref:`int<class_int>` line **)** |const|
 
 Returns whether the line at the specified index is folded or not.
 
@@ -1037,7 +1055,7 @@ Returns whether the line at the specified index is folded or not.
 
 .. _class_TextEdit_method_is_line_hidden:
 
-- :ref:`bool<class_bool>` **is_line_hidden** **(** :ref:`int<class_int>` line **)** const
+- :ref:`bool<class_bool>` **is_line_hidden** **(** :ref:`int<class_int>` line **)** |const|
 
 Returns whether the line at the specified index is hidden or not.
 
@@ -1045,7 +1063,7 @@ Returns whether the line at the specified index is hidden or not.
 
 .. _class_TextEdit_method_is_selection_active:
 
-- :ref:`bool<class_bool>` **is_selection_active** **(** **)** const
+- :ref:`bool<class_bool>` **is_selection_active** **(** **)** |const|
 
 Returns ``true`` if the selection is active.
 
@@ -1085,7 +1103,7 @@ Removes all the breakpoints. This will not fire the :ref:`breakpoint_toggled<cla
 
 .. _class_TextEdit_method_search:
 
-- :ref:`PoolIntArray<class_PoolIntArray>` **search** **(** :ref:`String<class_String>` key, :ref:`int<class_int>` flags, :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column **)** const
+- :ref:`PoolIntArray<class_PoolIntArray>` **search** **(** :ref:`String<class_String>` key, :ref:`int<class_int>` flags, :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column **)** |const|
 
 Perform a search inside the text. Search flags can be specified in the :ref:`SearchFlags<enum_TextEdit_SearchFlags>` enum.
 
@@ -1167,3 +1185,6 @@ Unfolds the given line, if folded.
 
 Unhide all lines that were previously set to hidden by :ref:`set_line_as_hidden<class_TextEdit_method_set_line_as_hidden>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

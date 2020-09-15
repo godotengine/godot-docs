@@ -41,7 +41,7 @@ Methods
 -------
 
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_popup<class_MenuButton_method_get_popup>` **(** **)** const                                                    |
+| :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_popup<class_MenuButton_method_get_popup>` **(** **)** |const|                                                  |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_disable_shortcuts<class_MenuButton_method_set_disable_shortcuts>` **(** :ref:`bool<class_bool>` disabled **)** |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
@@ -104,7 +104,7 @@ Method Descriptions
 
 .. _class_MenuButton_method_get_popup:
 
-- :ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** const
+- :ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** |const|
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
@@ -116,3 +116,6 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
 If ``true``, shortcuts are disabled and cannot be used to trigger the button.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

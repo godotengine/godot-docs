@@ -39,7 +39,7 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                 | :ref:`get_8<class_StreamPeer_method_get_8>` **(** **)**                                                                                     |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_available_bytes<class_StreamPeer_method_get_available_bytes>` **(** **)** const                                                   |
+| :ref:`int<class_int>`                 | :ref:`get_available_bytes<class_StreamPeer_method_get_available_bytes>` **(** **)** |const|                                                 |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`             | :ref:`get_data<class_StreamPeer_method_get_data>` **(** :ref:`int<class_int>` bytes **)**                                                   |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -148,7 +148,7 @@ Gets a signed byte from the stream.
 
 .. _class_StreamPeer_method_get_available_bytes:
 
-- :ref:`int<class_int>` **get_available_bytes** **(** **)** const
+- :ref:`int<class_int>` **get_available_bytes** **(** **)** |const|
 
 Returns the amount of bytes this ``StreamPeer`` has available.
 
@@ -374,3 +374,6 @@ Note: To put an UTF-8 string without prepending its size, you can use :ref:`put_
 
 Puts a Variant into the stream. If ``full_objects`` is ``true`` encoding objects is allowed (and can potentially include code).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

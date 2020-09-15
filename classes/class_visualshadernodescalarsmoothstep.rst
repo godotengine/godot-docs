@@ -20,3 +20,6 @@ Translates to ``smoothstep(edge0, edge1, x)`` in the shader language.
 
 Returns ``0.0`` if ``x`` is smaller than ``edge0`` and ``1.0`` if ``x`` is larger than ``edge1``. Otherwise the return value is interpolated between ``0.0`` and ``1.0`` using Hermite polynomials.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

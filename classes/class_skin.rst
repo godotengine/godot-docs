@@ -21,13 +21,13 @@ Methods
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`clear_binds<class_Skin_method_clear_binds>` **(** **)**                                                                              |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_bind_bone<class_Skin_method_get_bind_bone>` **(** :ref:`int<class_int>` bind_index **)** const                                   |
+| :ref:`int<class_int>`             | :ref:`get_bind_bone<class_Skin_method_get_bind_bone>` **(** :ref:`int<class_int>` bind_index **)** |const|                                 |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_bind_count<class_Skin_method_get_bind_count>` **(** **)** const                                                                  |
+| :ref:`int<class_int>`             | :ref:`get_bind_count<class_Skin_method_get_bind_count>` **(** **)** |const|                                                                |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`       | :ref:`get_bind_name<class_Skin_method_get_bind_name>` **(** :ref:`int<class_int>` bind_index **)** const                                   |
+| :ref:`String<class_String>`       | :ref:`get_bind_name<class_Skin_method_get_bind_name>` **(** :ref:`int<class_int>` bind_index **)** |const|                                 |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>` | :ref:`get_bind_pose<class_Skin_method_get_bind_pose>` **(** :ref:`int<class_int>` bind_index **)** const                                   |
+| :ref:`Transform<class_Transform>` | :ref:`get_bind_pose<class_Skin_method_get_bind_pose>` **(** :ref:`int<class_int>` bind_index **)** |const|                                 |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_bind_bone<class_Skin_method_set_bind_bone>` **(** :ref:`int<class_int>` bind_index, :ref:`int<class_int>` bone **)**             |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -55,25 +55,25 @@ Method Descriptions
 
 .. _class_Skin_method_get_bind_bone:
 
-- :ref:`int<class_int>` **get_bind_bone** **(** :ref:`int<class_int>` bind_index **)** const
+- :ref:`int<class_int>` **get_bind_bone** **(** :ref:`int<class_int>` bind_index **)** |const|
 
 ----
 
 .. _class_Skin_method_get_bind_count:
 
-- :ref:`int<class_int>` **get_bind_count** **(** **)** const
+- :ref:`int<class_int>` **get_bind_count** **(** **)** |const|
 
 ----
 
 .. _class_Skin_method_get_bind_name:
 
-- :ref:`String<class_String>` **get_bind_name** **(** :ref:`int<class_int>` bind_index **)** const
+- :ref:`String<class_String>` **get_bind_name** **(** :ref:`int<class_int>` bind_index **)** |const|
 
 ----
 
 .. _class_Skin_method_get_bind_pose:
 
-- :ref:`Transform<class_Transform>` **get_bind_pose** **(** :ref:`int<class_int>` bind_index **)** const
+- :ref:`Transform<class_Transform>` **get_bind_pose** **(** :ref:`int<class_int>` bind_index **)** |const|
 
 ----
 
@@ -99,3 +99,6 @@ Method Descriptions
 
 - void **set_bind_pose** **(** :ref:`int<class_int>` bind_index, :ref:`Transform<class_Transform>` pose **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

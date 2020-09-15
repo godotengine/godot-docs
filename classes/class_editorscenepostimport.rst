@@ -47,20 +47,20 @@ Tutorials
 Methods
 -------
 
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_source_file<class_EditorScenePostImport_method_get_source_file>` **(** **)** const                             |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_source_folder<class_EditorScenePostImport_method_get_source_folder>` **(** **)** const                         |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>` | :ref:`post_import<class_EditorScenePostImport_method_post_import>` **(** :ref:`Object<class_Object>` scene **)** virtual |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
++-----------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_source_file<class_EditorScenePostImport_method_get_source_file>` **(** **)** |const|                             |
++-----------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_source_folder<class_EditorScenePostImport_method_get_source_folder>` **(** **)** |const|                         |
++-----------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>` | :ref:`post_import<class_EditorScenePostImport_method_post_import>` **(** :ref:`Object<class_Object>` scene **)** |virtual| |
++-----------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_EditorScenePostImport_method_get_source_file:
 
-- :ref:`String<class_String>` **get_source_file** **(** **)** const
+- :ref:`String<class_String>` **get_source_file** **(** **)** |const|
 
 Returns the source file path which got imported (e.g. ``res://scene.dae``).
 
@@ -68,7 +68,7 @@ Returns the source file path which got imported (e.g. ``res://scene.dae``).
 
 .. _class_EditorScenePostImport_method_get_source_folder:
 
-- :ref:`String<class_String>` **get_source_folder** **(** **)** const
+- :ref:`String<class_String>` **get_source_folder** **(** **)** |const|
 
 Returns the resource folder the imported scene file is located in.
 
@@ -76,7 +76,10 @@ Returns the resource folder the imported scene file is located in.
 
 .. _class_EditorScenePostImport_method_post_import:
 
-- :ref:`Object<class_Object>` **post_import** **(** :ref:`Object<class_Object>` scene **)** virtual
+- :ref:`Object<class_Object>` **post_import** **(** :ref:`Object<class_Object>` scene **)** |virtual|
 
 Called after the scene was imported. This method must return the modified version of the scene.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

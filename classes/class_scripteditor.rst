@@ -21,21 +21,21 @@ Description
 Methods
 -------
 
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`can_drop_data_fw<class_ScriptEditor_method_can_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)** const |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`drop_data_fw<class_ScriptEditor_method_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)**               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Script<class_Script>`   | :ref:`get_current_script<class_ScriptEditor_method_get_current_script>` **(** **)**                                                                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_drag_data_fw<class_ScriptEditor_method_get_drag_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Control<class_Control>` from **)**                                           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`get_open_scripts<class_ScriptEditor_method_get_open_scripts>` **(** **)** const                                                                                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`goto_line<class_ScriptEditor_method_goto_line>` **(** :ref:`int<class_int>` line_number **)**                                                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`open_script_create_dialog<class_ScriptEditor_method_open_script_create_dialog>` **(** :ref:`String<class_String>` base_name, :ref:`String<class_String>` base_path **)**                    |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`can_drop_data_fw<class_ScriptEditor_method_can_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)** |const| |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`drop_data_fw<class_ScriptEditor_method_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)**                 |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Script<class_Script>`   | :ref:`get_current_script<class_ScriptEditor_method_get_current_script>` **(** **)**                                                                                                                 |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`get_drag_data_fw<class_ScriptEditor_method_get_drag_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Control<class_Control>` from **)**                                             |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`     | :ref:`get_open_scripts<class_ScriptEditor_method_get_open_scripts>` **(** **)** |const|                                                                                                             |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`goto_line<class_ScriptEditor_method_goto_line>` **(** :ref:`int<class_int>` line_number **)**                                                                                                 |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`open_script_create_dialog<class_ScriptEditor_method_open_script_create_dialog>` **(** :ref:`String<class_String>` base_name, :ref:`String<class_String>` base_path **)**                      |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -59,7 +59,7 @@ Method Descriptions
 
 .. _class_ScriptEditor_method_can_drop_data_fw:
 
-- :ref:`bool<class_bool>` **can_drop_data_fw** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)** const
+- :ref:`bool<class_bool>` **can_drop_data_fw** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)** |const|
 
 ----
 
@@ -85,7 +85,7 @@ Returns a :ref:`Script<class_Script>` that is currently active in editor.
 
 .. _class_ScriptEditor_method_get_open_scripts:
 
-- :ref:`Array<class_Array>` **get_open_scripts** **(** **)** const
+- :ref:`Array<class_Array>` **get_open_scripts** **(** **)** |const|
 
 Returns an array with all :ref:`Script<class_Script>` objects which are currently open in editor.
 
@@ -103,3 +103,6 @@ Goes to the specified line in the current script.
 
 - void **open_script_create_dialog** **(** :ref:`String<class_String>` base_name, :ref:`String<class_String>` base_path **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

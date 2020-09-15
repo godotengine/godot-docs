@@ -47,3 +47,6 @@ Property Descriptions
 
 Animation to use as an output. It is one of the animations provided by :ref:`AnimationTree.anim_player<class_AnimationTree_property_anim_player>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

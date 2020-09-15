@@ -34,9 +34,9 @@ Methods
 -------
 
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AudioStreamSample<class_AudioStreamSample>` | :ref:`get_recording<class_AudioEffectRecord_method_get_recording>` **(** **)** const                                        |
+| :ref:`AudioStreamSample<class_AudioStreamSample>` | :ref:`get_recording<class_AudioEffectRecord_method_get_recording>` **(** **)** |const|                                      |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`is_recording_active<class_AudioEffectRecord_method_is_recording_active>` **(** **)** const                            |
+| :ref:`bool<class_bool>`                           | :ref:`is_recording_active<class_AudioEffectRecord_method_is_recording_active>` **(** **)** |const|                          |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`set_recording_active<class_AudioEffectRecord_method_set_recording_active>` **(** :ref:`bool<class_bool>` record **)** |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
@@ -63,7 +63,7 @@ Method Descriptions
 
 .. _class_AudioEffectRecord_method_get_recording:
 
-- :ref:`AudioStreamSample<class_AudioStreamSample>` **get_recording** **(** **)** const
+- :ref:`AudioStreamSample<class_AudioStreamSample>` **get_recording** **(** **)** |const|
 
 Returns the recorded sample.
 
@@ -71,7 +71,7 @@ Returns the recorded sample.
 
 .. _class_AudioEffectRecord_method_is_recording_active:
 
-- :ref:`bool<class_bool>` **is_recording_active** **(** **)** const
+- :ref:`bool<class_bool>` **is_recording_active** **(** **)** |const|
 
 Returns whether the recording is active or not.
 
@@ -83,3 +83,6 @@ Returns whether the recording is active or not.
 
 If ``true``, the sound will be recorded. Note that restarting the recording will remove the previously recorded sample.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

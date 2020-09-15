@@ -65,17 +65,17 @@ Methods
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`get_connection_output_type<class_GraphNode_method_get_connection_output_type>` **(** :ref:`int<class_int>` idx **)**                                                                                                                                                                                                                                                                                         |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`get_slot_color_left<class_GraphNode_method_get_slot_color_left>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                                                                                                                                                                 |
+| :ref:`Color<class_Color>`     | :ref:`get_slot_color_left<class_GraphNode_method_get_slot_color_left>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                                                                                                                                                                               |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`get_slot_color_right<class_GraphNode_method_get_slot_color_right>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                                                                                                                                                               |
+| :ref:`Color<class_Color>`     | :ref:`get_slot_color_right<class_GraphNode_method_get_slot_color_right>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                                                                                                                                                                             |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_slot_type_left<class_GraphNode_method_get_slot_type_left>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                                                                                                                                                                   |
+| :ref:`int<class_int>`         | :ref:`get_slot_type_left<class_GraphNode_method_get_slot_type_left>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                                                                                                                                                                                 |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_slot_type_right<class_GraphNode_method_get_slot_type_right>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                                                                                                                                                                 |
+| :ref:`int<class_int>`         | :ref:`get_slot_type_right<class_GraphNode_method_get_slot_type_right>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                                                                                                                                                                               |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_slot_enabled_left<class_GraphNode_method_is_slot_enabled_left>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                                                                                                                                                               |
+| :ref:`bool<class_bool>`       | :ref:`is_slot_enabled_left<class_GraphNode_method_is_slot_enabled_left>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                                                                                                                                                                             |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_slot_enabled_right<class_GraphNode_method_is_slot_enabled_right>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                                                                                                                                                             |
+| :ref:`bool<class_bool>`       | :ref:`is_slot_enabled_right<class_GraphNode_method_is_slot_enabled_right>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                                                                                                                                                                           |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_slot<class_GraphNode_method_set_slot>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable_left, :ref:`int<class_int>` type_left, :ref:`Color<class_Color>` color_left, :ref:`bool<class_bool>` enable_right, :ref:`int<class_int>` type_right, :ref:`Color<class_Color>` color_right, :ref:`Texture<class_Texture>` custom_left=null, :ref:`Texture<class_Texture>` custom_right=null **)** |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -387,7 +387,7 @@ Returns the type of the output connection ``idx``.
 
 .. _class_GraphNode_method_get_slot_color_left:
 
-- :ref:`Color<class_Color>` **get_slot_color_left** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Color<class_Color>` **get_slot_color_left** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the color set to ``idx`` left (input) slot.
 
@@ -395,7 +395,7 @@ Returns the color set to ``idx`` left (input) slot.
 
 .. _class_GraphNode_method_get_slot_color_right:
 
-- :ref:`Color<class_Color>` **get_slot_color_right** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Color<class_Color>` **get_slot_color_right** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the color set to ``idx`` right (output) slot.
 
@@ -403,7 +403,7 @@ Returns the color set to ``idx`` right (output) slot.
 
 .. _class_GraphNode_method_get_slot_type_left:
 
-- :ref:`int<class_int>` **get_slot_type_left** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`int<class_int>` **get_slot_type_left** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the (integer) type of left (input) ``idx`` slot.
 
@@ -411,7 +411,7 @@ Returns the (integer) type of left (input) ``idx`` slot.
 
 .. _class_GraphNode_method_get_slot_type_right:
 
-- :ref:`int<class_int>` **get_slot_type_right** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`int<class_int>` **get_slot_type_right** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the (integer) type of right (output) ``idx`` slot.
 
@@ -419,7 +419,7 @@ Returns the (integer) type of right (output) ``idx`` slot.
 
 .. _class_GraphNode_method_is_slot_enabled_left:
 
-- :ref:`bool<class_bool>` **is_slot_enabled_left** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`bool<class_bool>` **is_slot_enabled_left** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns ``true`` if left (input) slot ``idx`` is enabled, ``false`` otherwise.
 
@@ -427,7 +427,7 @@ Returns ``true`` if left (input) slot ``idx`` is enabled, ``false`` otherwise.
 
 .. _class_GraphNode_method_is_slot_enabled_right:
 
-- :ref:`bool<class_bool>` **is_slot_enabled_right** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`bool<class_bool>` **is_slot_enabled_right** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns ``true`` if right (output) slot ``idx`` is enabled, ``false`` otherwise.
 
@@ -449,3 +449,6 @@ If ``enable_left``/``right``, a port will appear and the slot will be able to be
 
 **Note:** This method only sets properties of the slot. To create the slot, add a :ref:`Control<class_Control>`-derived child to the GraphNode.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

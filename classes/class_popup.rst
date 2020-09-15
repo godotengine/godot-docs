@@ -91,6 +91,8 @@ Property Descriptions
 
 If ``true``, the popup will not be hidden when a click event occurs outside of it, or when it receives the ``ui_cancel`` action event.
 
+**Note:** Enabling this property doesn't affect the Close or Cancel buttons' behavior in dialogs that inherit from this class. As a workaround, you can use :ref:`WindowDialog.get_close_button<class_WindowDialog_method_get_close_button>` or :ref:`ConfirmationDialog.get_cancel<class_ConfirmationDialog_method_get_cancel>` and hide the buttons in question by setting their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property to ``false``.
+
 Method Descriptions
 -------------------
 
@@ -140,3 +142,6 @@ Popup (show the control in modal form) in the center of the screen relative to t
 
 Shrink popup to keep to the minimum size of content.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

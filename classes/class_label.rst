@@ -52,15 +52,15 @@ Properties
 Methods
 -------
 
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_line_count<class_Label_method_get_line_count>` **(** **)** const                       |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_line_height<class_Label_method_get_line_height>` **(** **)** const                     |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_total_character_count<class_Label_method_get_total_character_count>` **(** **)** const |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_visible_line_count<class_Label_method_get_visible_line_count>` **(** **)** const       |
-+-----------------------+--------------------------------------------------------------------------------------------------+
++-----------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_line_count<class_Label_method_get_line_count>` **(** **)** |const|                       |
++-----------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_line_height<class_Label_method_get_line_height>` **(** **)** |const|                     |
++-----------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_total_character_count<class_Label_method_get_total_character_count>` **(** **)** |const| |
++-----------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_visible_line_count<class_Label_method_get_visible_line_count>` **(** **)** |const|       |
++-----------------------+----------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
@@ -296,7 +296,7 @@ Method Descriptions
 
 .. _class_Label_method_get_line_count:
 
-- :ref:`int<class_int>` **get_line_count** **(** **)** const
+- :ref:`int<class_int>` **get_line_count** **(** **)** |const|
 
 Returns the amount of lines of text the Label has.
 
@@ -304,7 +304,7 @@ Returns the amount of lines of text the Label has.
 
 .. _class_Label_method_get_line_height:
 
-- :ref:`int<class_int>` **get_line_height** **(** **)** const
+- :ref:`int<class_int>` **get_line_height** **(** **)** |const|
 
 Returns the font size in pixels.
 
@@ -312,7 +312,7 @@ Returns the font size in pixels.
 
 .. _class_Label_method_get_total_character_count:
 
-- :ref:`int<class_int>` **get_total_character_count** **(** **)** const
+- :ref:`int<class_int>` **get_total_character_count** **(** **)** |const|
 
 Returns the total number of printable characters in the text (excluding spaces and newlines).
 
@@ -320,7 +320,10 @@ Returns the total number of printable characters in the text (excluding spaces a
 
 .. _class_Label_method_get_visible_line_count:
 
-- :ref:`int<class_int>` **get_visible_line_count** **(** **)** const
+- :ref:`int<class_int>` **get_visible_line_count** **(** **)** |const|
 
 Returns the number of lines shown. Useful if the ``Label``'s height cannot currently display all lines.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

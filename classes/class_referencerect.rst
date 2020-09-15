@@ -60,3 +60,6 @@ Sets the border :ref:`Color<class_Color>` of the ``ReferenceRect``.
 
 If set to ``true``, the ``ReferenceRect`` will only be visible while in editor. Otherwise, ``ReferenceRect`` will be visible in game.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

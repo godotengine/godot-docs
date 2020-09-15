@@ -41,9 +41,9 @@ Methods
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`create_trimesh_collision<class_MeshInstance_method_create_trimesh_collision>` **(** **)**                                                                 |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`get_surface_material<class_MeshInstance_method_get_surface_material>` **(** :ref:`int<class_int>` surface **)** const                                     |
+| :ref:`Material<class_Material>` | :ref:`get_surface_material<class_MeshInstance_method_get_surface_material>` **(** :ref:`int<class_int>` surface **)** |const|                                   |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_surface_material_count<class_MeshInstance_method_get_surface_material_count>` **(** **)** const                                                       |
+| :ref:`int<class_int>`           | :ref:`get_surface_material_count<class_MeshInstance_method_get_surface_material_count>` **(** **)** |const|                                                     |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`set_surface_material<class_MeshInstance_method_set_surface_material>` **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)** |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -122,7 +122,7 @@ This helper creates a :ref:`StaticBody<class_StaticBody>` child node with a :ref
 
 .. _class_MeshInstance_method_get_surface_material:
 
-- :ref:`Material<class_Material>` **get_surface_material** **(** :ref:`int<class_int>` surface **)** const
+- :ref:`Material<class_Material>` **get_surface_material** **(** :ref:`int<class_int>` surface **)** |const|
 
 Returns the :ref:`Material<class_Material>` for a surface of the :ref:`Mesh<class_Mesh>` resource.
 
@@ -130,7 +130,7 @@ Returns the :ref:`Material<class_Material>` for a surface of the :ref:`Mesh<clas
 
 .. _class_MeshInstance_method_get_surface_material_count:
 
-- :ref:`int<class_int>` **get_surface_material_count** **(** **)** const
+- :ref:`int<class_int>` **get_surface_material_count** **(** **)** |const|
 
 Returns the number of surface materials.
 
@@ -142,3 +142,6 @@ Returns the number of surface materials.
 
 Sets the :ref:`Material<class_Material>` for a surface of the :ref:`Mesh<class_Mesh>` resource.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

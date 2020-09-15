@@ -39,21 +39,21 @@ Properties
 Methods
 -------
 
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                | :ref:`get_controller_name<class_ARVRController_method_get_controller_name>` **(** **)** const                          |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>` | :ref:`get_hand<class_ARVRController_method_get_hand>` **(** **)** const                                                |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`get_is_active<class_ARVRController_method_get_is_active>` **(** **)** const                                      |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`get_joystick_axis<class_ARVRController_method_get_joystick_axis>` **(** :ref:`int<class_int>` axis **)** const   |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`get_joystick_id<class_ARVRController_method_get_joystick_id>` **(** **)** const                                  |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`                                    | :ref:`get_mesh<class_ARVRController_method_get_mesh>` **(** **)** const                                                |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`is_button_pressed<class_ARVRController_method_is_button_pressed>` **(** :ref:`int<class_int>` button **)** const |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                                | :ref:`get_controller_name<class_ARVRController_method_get_controller_name>` **(** **)** |const|                          |
++------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>` | :ref:`get_hand<class_ARVRController_method_get_hand>` **(** **)** |const|                                                |
++------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                    | :ref:`get_is_active<class_ARVRController_method_get_is_active>` **(** **)** |const|                                      |
++------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                  | :ref:`get_joystick_axis<class_ARVRController_method_get_joystick_axis>` **(** :ref:`int<class_int>` axis **)** |const|   |
++------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                      | :ref:`get_joystick_id<class_ARVRController_method_get_joystick_id>` **(** **)** |const|                                  |
++------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`                                    | :ref:`get_mesh<class_ARVRController_method_get_mesh>` **(** **)** |const|                                                |
++------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                      | :ref:`is_button_pressed<class_ARVRController_method_is_button_pressed>` **(** :ref:`int<class_int>` button **)** |const| |
++------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -126,7 +126,7 @@ Method Descriptions
 
 .. _class_ARVRController_method_get_controller_name:
 
-- :ref:`String<class_String>` **get_controller_name** **(** **)** const
+- :ref:`String<class_String>` **get_controller_name** **(** **)** |const|
 
 If active, returns the name of the associated controller if provided by the AR/VR SDK used.
 
@@ -134,7 +134,7 @@ If active, returns the name of the associated controller if provided by the AR/V
 
 .. _class_ARVRController_method_get_hand:
 
-- :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>` **get_hand** **(** **)** const
+- :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>` **get_hand** **(** **)** |const|
 
 Returns the hand holding this controller, if known. See :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>`.
 
@@ -142,7 +142,7 @@ Returns the hand holding this controller, if known. See :ref:`TrackerHand<enum_A
 
 .. _class_ARVRController_method_get_is_active:
 
-- :ref:`bool<class_bool>` **get_is_active** **(** **)** const
+- :ref:`bool<class_bool>` **get_is_active** **(** **)** |const|
 
 Returns ``true`` if the bound controller is active. ARVR systems attempt to track active controllers.
 
@@ -150,7 +150,7 @@ Returns ``true`` if the bound controller is active. ARVR systems attempt to trac
 
 .. _class_ARVRController_method_get_joystick_axis:
 
-- :ref:`float<class_float>` **get_joystick_axis** **(** :ref:`int<class_int>` axis **)** const
+- :ref:`float<class_float>` **get_joystick_axis** **(** :ref:`int<class_int>` axis **)** |const|
 
 Returns the value of the given axis for things like triggers, touchpads, etc. that are embedded into the controller.
 
@@ -158,7 +158,7 @@ Returns the value of the given axis for things like triggers, touchpads, etc. th
 
 .. _class_ARVRController_method_get_joystick_id:
 
-- :ref:`int<class_int>` **get_joystick_id** **(** **)** const
+- :ref:`int<class_int>` **get_joystick_id** **(** **)** |const|
 
 Returns the ID of the joystick object bound to this. Every controller tracked by the :ref:`ARVRServer<class_ARVRServer>` that has buttons and axis will also be registered as a joystick within Godot. This means that all the normal joystick tracking and input mapping will work for buttons and axis found on the AR/VR controllers. This ID is purely offered as information so you can link up the controller with its joystick entry.
 
@@ -166,7 +166,7 @@ Returns the ID of the joystick object bound to this. Every controller tracked by
 
 .. _class_ARVRController_method_get_mesh:
 
-- :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)** const
+- :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)** |const|
 
 If provided by the :ref:`ARVRInterface<class_ARVRInterface>`, this returns a mesh associated with the controller. This can be used to visualize the controller.
 
@@ -174,7 +174,10 @@ If provided by the :ref:`ARVRInterface<class_ARVRInterface>`, this returns a mes
 
 .. _class_ARVRController_method_is_button_pressed:
 
-- :ref:`int<class_int>` **is_button_pressed** **(** :ref:`int<class_int>` button **)** const
+- :ref:`int<class_int>` **is_button_pressed** **(** :ref:`int<class_int>` button **)** |const|
 
 Returns ``true`` if the button at index ``button`` is pressed. See :ref:`JoystickList<enum_@GlobalScope_JoystickList>`, in particular the ``JOY_VR_*`` constants.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

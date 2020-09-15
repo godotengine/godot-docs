@@ -65,3 +65,6 @@ Cast a float value to an integer value, this method simply removes the number fr
 
 Cast a :ref:`String<class_String>` value to an integer value, this method is an integer parser from a string, so calling this method with an invalid integer string will return 0, a valid string will be something like ``'1.7'``. This method will ignore all non-number characters, so calling ``int('1e3')`` will return 13.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

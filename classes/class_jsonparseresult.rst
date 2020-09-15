@@ -60,7 +60,7 @@ The error type if the JSON source was not successfully parsed. See the :ref:`Err
 | *Getter*  | get_error_line()      |
 +-----------+-----------------------+
 
-The line number where the error occurred if JSON source was not successfully parsed.
+The line number where the error occurred if the JSON source was not successfully parsed.
 
 ----
 
@@ -76,7 +76,7 @@ The line number where the error occurred if JSON source was not successfully par
 | *Getter*  | get_error_string()      |
 +-----------+-------------------------+
 
-The error message if JSON source was not successfully parsed. See the :ref:`Error<enum_@GlobalScope_Error>` constants.
+The error message if the JSON source was not successfully parsed. See the :ref:`Error<enum_@GlobalScope_Error>` constants.
 
 ----
 
@@ -90,9 +90,9 @@ The error message if JSON source was not successfully parsed. See the :ref:`Erro
 | *Getter* | get_result()      |
 +----------+-------------------+
 
-A :ref:`Variant<class_Variant>` containing the parsed JSON. Use :ref:`@GDScript.typeof<class_@GDScript_method_typeof>` or the ``is`` keyword to check if it is what you expect. For example, if the JSON source starts with curly braces (``{}``), a :ref:`Dictionary<class_Dictionary>` will be returned. If the JSON source starts with braces (``[]``), an :ref:`Array<class_Array>` will be returned.
+A :ref:`Variant<class_Variant>` containing the parsed JSON. Use :ref:`@GDScript.typeof<class_@GDScript_method_typeof>` or the ``is`` keyword to check if it is what you expect. For example, if the JSON source starts with curly braces (``{}``), a :ref:`Dictionary<class_Dictionary>` will be returned. If the JSON source starts with brackets (``[]``), an :ref:`Array<class_Array>` will be returned.
 
-**Note:** The JSON specification does not define integer or float types, but only a number type. Therefore, parsing a JSON text will convert all numerical values to float types.
+**Note:** The JSON specification does not define integer or float types, but only a *number* type. Therefore, parsing a JSON text will convert all numerical values to :ref:`float<class_float>` types.
 
 **Note:** JSON objects do not preserve key order like Godot dictionaries, thus, you should not rely on keys being in a certain order if a dictionary is constructed from JSON. In contrast, JSON arrays retain the order of their elements:
 
@@ -102,5 +102,8 @@ A :ref:`Variant<class_Variant>` containing the parsed JSON. Use :ref:`@GDScript.
     if typeof(p.result) == TYPE_ARRAY:
         print(p.result[0]) # Prints "hello"
     else:
-        print("unexpected results")
+        push_error("Unexpected results.")
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

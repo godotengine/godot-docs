@@ -41,23 +41,23 @@ Properties
 Methods
 -------
 
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`get_camera_feed_id<class_ARVRInterface_method_get_camera_feed_id>` **(** **)**         |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`get_capabilities<class_ARVRInterface_method_get_capabilities>` **(** **)** const       |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                | :ref:`get_name<class_ARVRInterface_method_get_name>` **(** **)** const                       |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                              | :ref:`get_render_targetsize<class_ARVRInterface_method_get_render_targetsize>` **(** **)**   |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` | :ref:`get_tracking_status<class_ARVRInterface_method_get_tracking_status>` **(** **)** const |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`initialize<class_ARVRInterface_method_initialize>` **(** **)**                         |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`is_stereo<class_ARVRInterface_method_is_stereo>` **(** **)**                           |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`uninitialize<class_ARVRInterface_method_uninitialize>` **(** **)**                     |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------+
++------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                      | :ref:`get_camera_feed_id<class_ARVRInterface_method_get_camera_feed_id>` **(** **)**           |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                      | :ref:`get_capabilities<class_ARVRInterface_method_get_capabilities>` **(** **)** |const|       |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                                | :ref:`get_name<class_ARVRInterface_method_get_name>` **(** **)** |const|                       |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                              | :ref:`get_render_targetsize<class_ARVRInterface_method_get_render_targetsize>` **(** **)**     |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` | :ref:`get_tracking_status<class_ARVRInterface_method_get_tracking_status>` **(** **)** |const| |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                    | :ref:`initialize<class_ARVRInterface_method_initialize>` **(** **)**                           |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                    | :ref:`is_stereo<class_ARVRInterface_method_is_stereo>` **(** **)**                             |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`uninitialize<class_ARVRInterface_method_uninitialize>` **(** **)**                       |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -192,7 +192,7 @@ If this is an AR interface that requires displaying a camera feed as the backgro
 
 .. _class_ARVRInterface_method_get_capabilities:
 
-- :ref:`int<class_int>` **get_capabilities** **(** **)** const
+- :ref:`int<class_int>` **get_capabilities** **(** **)** |const|
 
 Returns a combination of :ref:`Capabilities<enum_ARVRInterface_Capabilities>` flags providing information about the capabilities of this interface.
 
@@ -200,7 +200,7 @@ Returns a combination of :ref:`Capabilities<enum_ARVRInterface_Capabilities>` fl
 
 .. _class_ARVRInterface_method_get_name:
 
-- :ref:`String<class_String>` **get_name** **(** **)** const
+- :ref:`String<class_String>` **get_name** **(** **)** |const|
 
 Returns the name of this interface (OpenVR, OpenHMD, ARKit, etc).
 
@@ -216,7 +216,7 @@ Returns the resolution at which we should render our intermediate results before
 
 .. _class_ARVRInterface_method_get_tracking_status:
 
-- :ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` **get_tracking_status** **(** **)** const
+- :ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` **get_tracking_status** **(** **)** |const|
 
 If supported, returns the status of our tracking. This will allow you to provide feedback to the user whether there are issues with positional tracking.
 
@@ -252,3 +252,6 @@ Returns ``true`` if the current output of this interface is in stereo.
 
 Turns the interface off.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

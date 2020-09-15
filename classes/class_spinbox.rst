@@ -143,3 +143,6 @@ Applies the current value of this ``SpinBox``.
 
 Returns the :ref:`LineEdit<class_LineEdit>` instance from this ``SpinBox``. You can use it to access properties and methods of :ref:`LineEdit<class_LineEdit>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

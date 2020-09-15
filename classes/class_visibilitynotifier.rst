@@ -34,9 +34,9 @@ Properties
 Methods
 -------
 
-+-------------------------+-------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_on_screen<class_VisibilityNotifier_method_is_on_screen>` **(** **)** const |
-+-------------------------+-------------------------------------------------------------------------------------+
++-------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`is_on_screen<class_VisibilityNotifier_method_is_on_screen>` **(** **)** |const| |
++-------------------------+---------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -93,9 +93,12 @@ Method Descriptions
 
 .. _class_VisibilityNotifier_method_is_on_screen:
 
-- :ref:`bool<class_bool>` **is_on_screen** **(** **)** const
+- :ref:`bool<class_bool>` **is_on_screen** **(** **)** |const|
 
 If ``true``, the bounding box is on the screen.
 
 **Note:** It takes one frame for the node's visibility to be assessed once added to the scene tree, so this method will return ``false`` right after it is instantiated, even if it will be on screen in the draw pass.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

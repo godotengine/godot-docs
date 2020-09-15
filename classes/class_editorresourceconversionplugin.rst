@@ -16,22 +16,25 @@ EditorResourceConversionPlugin
 Methods
 -------
 
-+---------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_Resource>` | :ref:`_convert<class_EditorResourceConversionPlugin_method__convert>` **(** :ref:`Resource<class_Resource>` resource **)** virtual |
-+---------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`     | :ref:`_converts_to<class_EditorResourceConversionPlugin_method__converts_to>` **(** **)** virtual                                  |
-+---------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_Resource>` | :ref:`_convert<class_EditorResourceConversionPlugin_method__convert>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`     | :ref:`_converts_to<class_EditorResourceConversionPlugin_method__converts_to>` **(** **)** |virtual|                                  |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_EditorResourceConversionPlugin_method__convert:
 
-- :ref:`Resource<class_Resource>` **_convert** **(** :ref:`Resource<class_Resource>` resource **)** virtual
+- :ref:`Resource<class_Resource>` **_convert** **(** :ref:`Resource<class_Resource>` resource **)** |virtual|
 
 ----
 
 .. _class_EditorResourceConversionPlugin_method__converts_to:
 
-- :ref:`String<class_String>` **_converts_to** **(** **)** virtual
+- :ref:`String<class_String>` **_converts_to** **(** **)** |virtual|
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

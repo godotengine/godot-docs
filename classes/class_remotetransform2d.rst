@@ -132,3 +132,6 @@ Method Descriptions
 
 ``RemoteTransform2D`` caches the remote node. It may not notice if the remote node disappears; :ref:`force_update_cache<class_RemoteTransform2D_method_force_update_cache>` forces it to update the cache again.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -52,15 +52,15 @@ Methods
 -------
 
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>`               | :ref:`get_aabb<class_MultiMesh_method_get_aabb>` **(** **)** const                                                                                                             |
+| :ref:`AABB<class_AABB>`               | :ref:`get_aabb<class_MultiMesh_method_get_aabb>` **(** **)** |const|                                                                                                           |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`             | :ref:`get_instance_color<class_MultiMesh_method_get_instance_color>` **(** :ref:`int<class_int>` instance **)** const                                                          |
+| :ref:`Color<class_Color>`             | :ref:`get_instance_color<class_MultiMesh_method_get_instance_color>` **(** :ref:`int<class_int>` instance **)** |const|                                                        |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`             | :ref:`get_instance_custom_data<class_MultiMesh_method_get_instance_custom_data>` **(** :ref:`int<class_int>` instance **)** const                                              |
+| :ref:`Color<class_Color>`             | :ref:`get_instance_custom_data<class_MultiMesh_method_get_instance_custom_data>` **(** :ref:`int<class_int>` instance **)** |const|                                            |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>`     | :ref:`get_instance_transform<class_MultiMesh_method_get_instance_transform>` **(** :ref:`int<class_int>` instance **)** const                                                  |
+| :ref:`Transform<class_Transform>`     | :ref:`get_instance_transform<class_MultiMesh_method_get_instance_transform>` **(** :ref:`int<class_int>` instance **)** |const|                                                |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`get_instance_transform_2d<class_MultiMesh_method_get_instance_transform_2d>` **(** :ref:`int<class_int>` instance **)** const                                            |
+| :ref:`Transform2D<class_Transform2D>` | :ref:`get_instance_transform_2d<class_MultiMesh_method_get_instance_transform_2d>` **(** :ref:`int<class_int>` instance **)** |const|                                          |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`set_as_bulk_array<class_MultiMesh_method_set_as_bulk_array>` **(** :ref:`PoolRealArray<class_PoolRealArray>` array **)**                                                 |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -224,7 +224,7 @@ Method Descriptions
 
 .. _class_MultiMesh_method_get_aabb:
 
-- :ref:`AABB<class_AABB>` **get_aabb** **(** **)** const
+- :ref:`AABB<class_AABB>` **get_aabb** **(** **)** |const|
 
 Returns the visibility axis-aligned bounding box.
 
@@ -232,7 +232,7 @@ Returns the visibility axis-aligned bounding box.
 
 .. _class_MultiMesh_method_get_instance_color:
 
-- :ref:`Color<class_Color>` **get_instance_color** **(** :ref:`int<class_int>` instance **)** const
+- :ref:`Color<class_Color>` **get_instance_color** **(** :ref:`int<class_int>` instance **)** |const|
 
 Gets a specific instance's color.
 
@@ -240,7 +240,7 @@ Gets a specific instance's color.
 
 .. _class_MultiMesh_method_get_instance_custom_data:
 
-- :ref:`Color<class_Color>` **get_instance_custom_data** **(** :ref:`int<class_int>` instance **)** const
+- :ref:`Color<class_Color>` **get_instance_custom_data** **(** :ref:`int<class_int>` instance **)** |const|
 
 Returns the custom data that has been set for a specific instance.
 
@@ -248,7 +248,7 @@ Returns the custom data that has been set for a specific instance.
 
 .. _class_MultiMesh_method_get_instance_transform:
 
-- :ref:`Transform<class_Transform>` **get_instance_transform** **(** :ref:`int<class_int>` instance **)** const
+- :ref:`Transform<class_Transform>` **get_instance_transform** **(** :ref:`int<class_int>` instance **)** |const|
 
 Returns the :ref:`Transform<class_Transform>` of a specific instance.
 
@@ -256,7 +256,7 @@ Returns the :ref:`Transform<class_Transform>` of a specific instance.
 
 .. _class_MultiMesh_method_get_instance_transform_2d:
 
-- :ref:`Transform2D<class_Transform2D>` **get_instance_transform_2d** **(** :ref:`int<class_int>` instance **)** const
+- :ref:`Transform2D<class_Transform2D>` **get_instance_transform_2d** **(** :ref:`int<class_int>` instance **)** |const|
 
 Returns the :ref:`Transform2D<class_Transform2D>` of a specific instance.
 
@@ -306,3 +306,6 @@ Sets the :ref:`Transform<class_Transform>` for a specific instance.
 
 Sets the :ref:`Transform2D<class_Transform2D>` for a specific instance.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

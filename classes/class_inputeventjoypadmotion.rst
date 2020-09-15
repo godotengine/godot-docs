@@ -65,3 +65,6 @@ Axis identifier. Use one of the :ref:`JoystickList<enum_@GlobalScope_JoystickLis
 
 Current position of the joystick on the given axis. The value ranges from ``-1.0`` to ``1.0``. A value of ``0`` means the axis is in its resting position.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

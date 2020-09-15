@@ -47,9 +47,9 @@ Methods
 -------
 
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`get_flag<class_HingeJoint_method_get_flag>` **(** :ref:`Flag<enum_HingeJoint_Flag>` flag **)** const                                 |
+| :ref:`bool<class_bool>`   | :ref:`get_flag<class_HingeJoint_method_get_flag>` **(** :ref:`Flag<enum_HingeJoint_Flag>` flag **)** |const|                               |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_param<class_HingeJoint_method_get_param>` **(** :ref:`Param<enum_HingeJoint_Param>` param **)** const                            |
+| :ref:`float<class_float>` | :ref:`get_param<class_HingeJoint_method_get_param>` **(** :ref:`Param<enum_HingeJoint_Param>` param **)** |const|                          |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_flag<class_HingeJoint_method_set_flag>` **(** :ref:`Flag<enum_HingeJoint_Flag>` flag, :ref:`bool<class_bool>` enabled **)**      |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -273,7 +273,7 @@ Method Descriptions
 
 .. _class_HingeJoint_method_get_flag:
 
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flag<enum_HingeJoint_Flag>` flag **)** const
+- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flag<enum_HingeJoint_Flag>` flag **)** |const|
 
 Returns the value of the specified flag.
 
@@ -281,7 +281,7 @@ Returns the value of the specified flag.
 
 .. _class_HingeJoint_method_get_param:
 
-- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_HingeJoint_Param>` param **)** const
+- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_HingeJoint_Param>` param **)** |const|
 
 Returns the value of the specified parameter.
 
@@ -301,3 +301,6 @@ If ``true``, enables the specified flag.
 
 Sets the value of the specified parameter.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

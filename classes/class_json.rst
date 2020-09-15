@@ -34,7 +34,7 @@ Method Descriptions
 
 - :ref:`JSONParseResult<class_JSONParseResult>` **parse** **(** :ref:`String<class_String>` json **)**
 
-Parses a JSON encoded string and returns a :ref:`JSONParseResult<class_JSONParseResult>` containing the result.
+Parses a JSON-encoded string and returns a :ref:`JSONParseResult<class_JSONParseResult>` containing the result.
 
 ----
 
@@ -44,3 +44,33 @@ Parses a JSON encoded string and returns a :ref:`JSONParseResult<class_JSONParse
 
 Converts a :ref:`Variant<class_Variant>` var to JSON text and returns the result. Useful for serializing data to store or send over the network.
 
+**Note:** The JSON specification does not define integer or float types, but only a *number* type. Therefore, converting a Variant to JSON text will convert all numerical values to :ref:`float<class_float>` types.
+
+Use ``indent`` parameter to pretty print the output.
+
+**Example output:**
+
+::
+
+    ## JSON.print(my_dictionary)
+    {"name":"my_dictionary","version":"1.0.0","entities":[{"name":"entity_0","value":"value_0"},{"name":"entity_1","value":"value_1"}]}
+    
+    ## JSON.print(my_dictionary, "\t")
+    {
+            "name": "my_dictionary",
+            "version": "1.0.0",
+            "entities": [
+                    {
+                            "name": "entity_0",
+                            "value": "value_0"
+                    },
+                    {
+                            "name": "entity_1",
+                            "value": "value_1"
+                    }
+            ]
+    }
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

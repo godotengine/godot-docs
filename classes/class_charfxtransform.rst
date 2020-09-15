@@ -189,3 +189,6 @@ The index of the current character (starting from 0). Setting this property won'
 
 If ``true``, the character will be drawn. If ``false``, the character will be hidden. Characters around hidden characters will reflow to take the space of hidden characters. If this is not desired, set their :ref:`color<class_CharFXTransform_property_color>` to ``Color(1, 1, 1, 0)`` instead.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

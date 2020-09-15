@@ -212,7 +212,7 @@ Methods
 -------
 
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_glow_level_enabled<class_Environment_method_is_glow_level_enabled>` **(** :ref:`int<class_int>` idx **)** const              |
+| :ref:`bool<class_bool>` | :ref:`is_glow_level_enabled<class_Environment_method_is_glow_level_enabled>` **(** :ref:`int<class_int>` idx **)** |const|            |
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`set_glow_level<class_Environment_method_set_glow_level>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enabled **)** |
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
@@ -1706,7 +1706,7 @@ Method Descriptions
 
 .. _class_Environment_method_is_glow_level_enabled:
 
-- :ref:`bool<class_bool>` **is_glow_level_enabled** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`bool<class_bool>` **is_glow_level_enabled** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns ``true`` if the glow level ``idx`` is specified, ``false`` otherwise.
 
@@ -1718,3 +1718,6 @@ Returns ``true`` if the glow level ``idx`` is specified, ``false`` otherwise.
 
 Enables or disables the glow level at index ``idx``. Each level relies on the previous level. This means that enabling higher glow levels will slow down the glow effect rendering, even if previous levels aren't enabled.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

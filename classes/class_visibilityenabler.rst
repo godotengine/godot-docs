@@ -37,7 +37,7 @@ Methods
 -------
 
 +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_enabler_enabled<class_VisibilityEnabler_method_is_enabler_enabled>` **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler **)** const              |
+| :ref:`bool<class_bool>` | :ref:`is_enabler_enabled<class_VisibilityEnabler_method_is_enabler_enabled>` **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler **)** |const|            |
 +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`set_enabler<class_VisibilityEnabler_method_set_enabler>` **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler, :ref:`bool<class_bool>` enabled **)** |
 +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -99,7 +99,7 @@ Method Descriptions
 
 .. _class_VisibilityEnabler_method_is_enabler_enabled:
 
-- :ref:`bool<class_bool>` **is_enabler_enabled** **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler **)** const
+- :ref:`bool<class_bool>` **is_enabler_enabled** **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler **)** |const|
 
 Returns whether the enabler identified by given :ref:`Enabler<enum_VisibilityEnabler_Enabler>` constant is active.
 
@@ -111,3 +111,6 @@ Returns whether the enabler identified by given :ref:`Enabler<enum_VisibilityEna
 
 Sets active state of the enabler identified by given :ref:`Enabler<enum_VisibilityEnabler_Enabler>` constant.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

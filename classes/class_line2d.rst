@@ -59,9 +59,9 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`clear_points<class_Line2D_method_clear_points>` **(** **)**                                                                             |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_point_count<class_Line2D_method_get_point_count>` **(** **)** const                                                                 |
+| :ref:`int<class_int>`         | :ref:`get_point_count<class_Line2D_method_get_point_count>` **(** **)** |const|                                                               |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_point_position<class_Line2D_method_get_point_position>` **(** :ref:`int<class_int>` i **)** const                                   |
+| :ref:`Vector2<class_Vector2>` | :ref:`get_point_position<class_Line2D_method_get_point_position>` **(** :ref:`int<class_int>` i **)** |const|                                 |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`remove_point<class_Line2D_method_remove_point>` **(** :ref:`int<class_int>` i **)**                                                     |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -232,7 +232,7 @@ The style for the points between the start and the end.
 | *Getter*  | get_points()             |
 +-----------+--------------------------+
 
-The points that form the lines. The line is drawn between every point set in this array.
+The points that form the lines. The line is drawn between every point set in this array. Points are interpreted as local vectors.
 
 ----
 
@@ -349,7 +349,7 @@ Removes all points from the line.
 
 .. _class_Line2D_method_get_point_count:
 
-- :ref:`int<class_int>` **get_point_count** **(** **)** const
+- :ref:`int<class_int>` **get_point_count** **(** **)** |const|
 
 Returns the Line2D's amount of points.
 
@@ -357,7 +357,7 @@ Returns the Line2D's amount of points.
 
 .. _class_Line2D_method_get_point_position:
 
-- :ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` i **)** const
+- :ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` i **)** |const|
 
 Returns point ``i``'s position.
 
@@ -377,3 +377,6 @@ Removes the point at index ``i`` from the line.
 
 Overwrites the position in point ``i`` with the supplied ``position``.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

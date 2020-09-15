@@ -48,17 +48,17 @@ Properties
 Methods
 -------
 
-+-------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_stream_name<class_VideoPlayer_method_get_stream_name>` **(** **)** const     |
-+-------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`get_video_texture<class_VideoPlayer_method_get_video_texture>` **(** **)** const |
-+-------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_playing<class_VideoPlayer_method_is_playing>` **(** **)** const               |
-+-------------------------------+----------------------------------------------------------------------------------------+
-| void                          | :ref:`play<class_VideoPlayer_method_play>` **(** **)**                                 |
-+-------------------------------+----------------------------------------------------------------------------------------+
-| void                          | :ref:`stop<class_VideoPlayer_method_stop>` **(** **)**                                 |
-+-------------------------------+----------------------------------------------------------------------------------------+
++-------------------------------+------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`get_stream_name<class_VideoPlayer_method_get_stream_name>` **(** **)** |const|     |
++-------------------------------+------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`get_video_texture<class_VideoPlayer_method_get_video_texture>` **(** **)** |const| |
++-------------------------------+------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_playing<class_VideoPlayer_method_is_playing>` **(** **)** |const|               |
++-------------------------------+------------------------------------------------------------------------------------------+
+| void                          | :ref:`play<class_VideoPlayer_method_play>` **(** **)**                                   |
++-------------------------------+------------------------------------------------------------------------------------------+
+| void                          | :ref:`stop<class_VideoPlayer_method_stop>` **(** **)**                                   |
++-------------------------------+------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -229,7 +229,7 @@ Method Descriptions
 
 .. _class_VideoPlayer_method_get_stream_name:
 
-- :ref:`String<class_String>` **get_stream_name** **(** **)** const
+- :ref:`String<class_String>` **get_stream_name** **(** **)** |const|
 
 Returns the video stream's name, or ``"<No Stream>"`` if no video stream is assigned.
 
@@ -237,7 +237,7 @@ Returns the video stream's name, or ``"<No Stream>"`` if no video stream is assi
 
 .. _class_VideoPlayer_method_get_video_texture:
 
-- :ref:`Texture<class_Texture>` **get_video_texture** **(** **)** const
+- :ref:`Texture<class_Texture>` **get_video_texture** **(** **)** |const|
 
 Returns the current frame as a :ref:`Texture<class_Texture>`.
 
@@ -245,7 +245,7 @@ Returns the current frame as a :ref:`Texture<class_Texture>`.
 
 .. _class_VideoPlayer_method_is_playing:
 
-- :ref:`bool<class_bool>` **is_playing** **(** **)** const
+- :ref:`bool<class_bool>` **is_playing** **(** **)** |const|
 
 Returns ``true`` if the video is playing.
 
@@ -269,3 +269,6 @@ Stops the video playback and sets the stream position to 0.
 
 **Note:** Although the stream position will be set to 0, the first frame of the video stream won't become the current frame.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

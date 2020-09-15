@@ -58,3 +58,6 @@ The :ref:`Gradient<class_Gradient>` that will be used to fill the texture.
 
 The number of color samples that will be obtained from the :ref:`Gradient<class_Gradient>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

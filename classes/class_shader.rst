@@ -30,21 +30,21 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`code<class_Shader_property_code>`                     | ``""``                                                                                                                                     |
-+-----------------------------+-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`custom_defines<class_Shader_property_custom_defines>` | ``"#define MAX_LIGHT_DATA_STRUCTS 409#define MAX_FORWARD_LIGHTS 8#define MAX_REFLECTION_DATA_STRUCTS 455#define MAX_SKELETON_BONES 1365"`` |
-+-----------------------------+-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------+-------------------------------------------------------------+--------+
+| :ref:`String<class_String>` | :ref:`code<class_Shader_property_code>`                     | ``""`` |
++-----------------------------+-------------------------------------------------------------+--------+
+| :ref:`String<class_String>` | :ref:`custom_defines<class_Shader_property_custom_defines>` | ``""`` |
++-----------------------------+-------------------------------------------------------------+--------+
 
 Methods
 -------
 
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`get_default_texture_param<class_Shader_method_get_default_texture_param>` **(** :ref:`String<class_String>` param **)** const                                  |
+| :ref:`Texture<class_Texture>` | :ref:`get_default_texture_param<class_Shader_method_get_default_texture_param>` **(** :ref:`String<class_String>` param **)** |const|                                |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Mode<enum_Shader_Mode>` | :ref:`get_mode<class_Shader_method_get_mode>` **(** **)** const                                                                                                      |
+| :ref:`Mode<enum_Shader_Mode>` | :ref:`get_mode<class_Shader_method_get_mode>` **(** **)** |const|                                                                                                    |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`has_param<class_Shader_method_has_param>` **(** :ref:`String<class_String>` name **)** const                                                                   |
+| :ref:`bool<class_bool>`       | :ref:`has_param<class_Shader_method_has_param>` **(** :ref:`String<class_String>` name **)** |const|                                                                 |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_default_texture_param<class_Shader_method_set_default_texture_param>` **(** :ref:`String<class_String>` param, :ref:`Texture<class_Texture>` texture **)** |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -91,13 +91,13 @@ Returns the shader's code as the user has written it, not the full generated cod
 
 - :ref:`String<class_String>` **custom_defines**
 
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| *Default* | ``"#define MAX_LIGHT_DATA_STRUCTS 409#define MAX_FORWARD_LIGHTS 8#define MAX_REFLECTION_DATA_STRUCTS 455#define MAX_SKELETON_BONES 1365"`` |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| *Setter*  | set_custom_defines(value)                                                                                                                  |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| *Getter*  | get_custom_defines()                                                                                                                       |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------+
++-----------+---------------------------+
+| *Default* | ``""``                    |
++-----------+---------------------------+
+| *Setter*  | set_custom_defines(value) |
++-----------+---------------------------+
+| *Getter*  | get_custom_defines()      |
++-----------+---------------------------+
 
 Returns the shader's custom defines. Custom defines can be used in Godot to add GLSL preprocessor directives (e.g: extensions) required for the shader logic.
 
@@ -108,7 +108,7 @@ Method Descriptions
 
 .. _class_Shader_method_get_default_texture_param:
 
-- :ref:`Texture<class_Texture>` **get_default_texture_param** **(** :ref:`String<class_String>` param **)** const
+- :ref:`Texture<class_Texture>` **get_default_texture_param** **(** :ref:`String<class_String>` param **)** |const|
 
 Returns the texture that is set as default for the specified parameter.
 
@@ -118,7 +118,7 @@ Returns the texture that is set as default for the specified parameter.
 
 .. _class_Shader_method_get_mode:
 
-- :ref:`Mode<enum_Shader_Mode>` **get_mode** **(** **)** const
+- :ref:`Mode<enum_Shader_Mode>` **get_mode** **(** **)** |const|
 
 Returns the shader mode for the shader, either :ref:`MODE_CANVAS_ITEM<class_Shader_constant_MODE_CANVAS_ITEM>`, :ref:`MODE_SPATIAL<class_Shader_constant_MODE_SPATIAL>` or :ref:`MODE_PARTICLES<class_Shader_constant_MODE_PARTICLES>`.
 
@@ -126,7 +126,7 @@ Returns the shader mode for the shader, either :ref:`MODE_CANVAS_ITEM<class_Shad
 
 .. _class_Shader_method_has_param:
 
-- :ref:`bool<class_bool>` **has_param** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **has_param** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns ``true`` if the shader has this param defined as a uniform in its code.
 
@@ -142,3 +142,6 @@ Sets the default texture to be used with a texture uniform. The default is used 
 
 **Note:** ``param`` must match the name of the uniform in the code exactly.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

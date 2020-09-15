@@ -264,3 +264,6 @@ Sets the origin offset to be used when this reflection probe is in box project m
 
 Sets how frequently the probe is updated. Can be :ref:`UPDATE_ONCE<class_ReflectionProbe_constant_UPDATE_ONCE>` or :ref:`UPDATE_ALWAYS<class_ReflectionProbe_constant_UPDATE_ALWAYS>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

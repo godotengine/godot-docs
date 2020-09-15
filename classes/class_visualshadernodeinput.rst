@@ -33,9 +33,9 @@ Properties
 Methods
 -------
 
-+-----------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_input_real_name<class_VisualShaderNodeInput_method_get_input_real_name>` **(** **)** const |
-+-----------------------------+------------------------------------------------------------------------------------------------------+
++-----------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_input_real_name<class_VisualShaderNodeInput_method_get_input_real_name>` **(** **)** |const| |
++-----------------------------+--------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -66,5 +66,8 @@ Method Descriptions
 
 .. _class_VisualShaderNodeInput_method_get_input_real_name:
 
-- :ref:`String<class_String>` **get_input_real_name** **(** **)** const
+- :ref:`String<class_String>` **get_input_real_name** **(** **)** |const|
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

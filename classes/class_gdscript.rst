@@ -28,18 +28,18 @@ Tutorials
 Methods
 -------
 
-+-------------------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_as_byte_code<class_GDScript_method_get_as_byte_code>` **(** **)** const |
-+-------------------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`             | :ref:`new<class_GDScript_method_new>` **(** ... **)** vararg                      |
-+-------------------------------------------+-----------------------------------------------------------------------------------+
++-------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_as_byte_code<class_GDScript_method_get_as_byte_code>` **(** **)** |const| |
++-------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`             | :ref:`new<class_GDScript_method_new>` **(** ... **)** |vararg|                      |
++-------------------------------------------+-------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_GDScript_method_get_as_byte_code:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **get_as_byte_code** **(** **)** const
+- :ref:`PoolByteArray<class_PoolByteArray>` **get_as_byte_code** **(** **)** |const|
 
 Returns byte code for the script source code.
 
@@ -47,7 +47,7 @@ Returns byte code for the script source code.
 
 .. _class_GDScript_method_new:
 
-- :ref:`Variant<class_Variant>` **new** **(** ... **)** vararg
+- :ref:`Variant<class_Variant>` **new** **(** ... **)** |vararg|
 
 Returns a new instance of the script.
 
@@ -59,3 +59,6 @@ For example:
     var instance = MyClass.new()
     assert(instance.get_script() == MyClass)
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

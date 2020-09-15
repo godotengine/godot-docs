@@ -41,13 +41,13 @@ Methods
 -------
 
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`get_collision_layer_bit<class_CSGShape_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
+| :ref:`bool<class_bool>`   | :ref:`get_collision_layer_bit<class_CSGShape_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** |const|                        |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`get_collision_mask_bit<class_CSGShape_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                            |
+| :ref:`bool<class_bool>`   | :ref:`get_collision_mask_bit<class_CSGShape_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** |const|                          |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_meshes<class_CSGShape_method_get_meshes>` **(** **)** const                                                                              |
+| :ref:`Array<class_Array>` | :ref:`get_meshes<class_CSGShape_method_get_meshes>` **(** **)** |const|                                                                            |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`is_root_shape<class_CSGShape_method_is_root_shape>` **(** **)** const                                                                        |
+| :ref:`bool<class_bool>`   | :ref:`is_root_shape<class_CSGShape_method_is_root_shape>` **(** **)** |const|                                                                      |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_collision_layer_bit<class_CSGShape_method_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -108,7 +108,7 @@ The physics layers this area is in.
 
 Collidable objects can exist in any of 32 different layers. These layers work like a tagging system, and are not visual. A collidable can use these layers to select with which objects it can collide, using the collision_mask property.
 
-A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A.
+A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 
@@ -124,7 +124,7 @@ A contact is detected if object A is in any of the layers that object B scans, o
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The physics layers this CSG shape scans for collisions.
+The physics layers this CSG shape scans for collisions. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 
@@ -179,7 +179,7 @@ Method Descriptions
 
 .. _class_CSGShape_method_get_collision_layer_bit:
 
-- :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
+- :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** |const|
 
 Returns an individual bit on the collision mask.
 
@@ -187,7 +187,7 @@ Returns an individual bit on the collision mask.
 
 .. _class_CSGShape_method_get_collision_mask_bit:
 
-- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
+- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** |const|
 
 Returns an individual bit on the collision mask.
 
@@ -195,7 +195,7 @@ Returns an individual bit on the collision mask.
 
 .. _class_CSGShape_method_get_meshes:
 
-- :ref:`Array<class_Array>` **get_meshes** **(** **)** const
+- :ref:`Array<class_Array>` **get_meshes** **(** **)** |const|
 
 Returns an :ref:`Array<class_Array>` with two elements, the first is the :ref:`Transform<class_Transform>` of this node and the second is the root :ref:`Mesh<class_Mesh>` of this node. Only works when this node is the root shape.
 
@@ -203,7 +203,7 @@ Returns an :ref:`Array<class_Array>` with two elements, the first is the :ref:`T
 
 .. _class_CSGShape_method_is_root_shape:
 
-- :ref:`bool<class_bool>` **is_root_shape** **(** **)** const
+- :ref:`bool<class_bool>` **is_root_shape** **(** **)** |const|
 
 Returns ``true`` if this is a root shape and is thus the object that is rendered.
 
@@ -223,3 +223,6 @@ Sets individual bits on the layer mask. Use this if you only need to change one 
 
 Sets individual bits on the collision mask. Use this if you only need to change one layer's value.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

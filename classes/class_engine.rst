@@ -36,37 +36,37 @@ Properties
 Methods
 -------
 
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_author_info<class_Engine_method_get_author_info>` **(** **)** const                                       |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`           | :ref:`get_copyright_info<class_Engine_method_get_copyright_info>` **(** **)** const                                 |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_donor_info<class_Engine_method_get_donor_info>` **(** **)** const                                         |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`get_frames_drawn<class_Engine_method_get_frames_drawn>` **(** **)**                                           |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`get_frames_per_second<class_Engine_method_get_frames_per_second>` **(** **)** const                           |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`get_idle_frames<class_Engine_method_get_idle_frames>` **(** **)** const                                       |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_license_info<class_Engine_method_get_license_info>` **(** **)** const                                     |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`get_license_text<class_Engine_method_get_license_text>` **(** **)** const                                     |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`MainLoop<class_MainLoop>`     | :ref:`get_main_loop<class_Engine_method_get_main_loop>` **(** **)** const                                           |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`get_physics_frames<class_Engine_method_get_physics_frames>` **(** **)** const                                 |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`get_physics_interpolation_fraction<class_Engine_method_get_physics_interpolation_fraction>` **(** **)** const |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>`         | :ref:`get_singleton<class_Engine_method_get_singleton>` **(** :ref:`String<class_String>` name **)** const          |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_version_info<class_Engine_method_get_version_info>` **(** **)** const                                     |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`has_singleton<class_Engine_method_has_singleton>` **(** :ref:`String<class_String>` name **)** const          |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`is_in_physics_frame<class_Engine_method_is_in_physics_frame>` **(** **)** const                               |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`get_author_info<class_Engine_method_get_author_info>` **(** **)** |const|                                       |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`           | :ref:`get_copyright_info<class_Engine_method_get_copyright_info>` **(** **)** |const|                                 |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`get_donor_info<class_Engine_method_get_donor_info>` **(** **)** |const|                                         |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`get_frames_drawn<class_Engine_method_get_frames_drawn>` **(** **)**                                             |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | :ref:`get_frames_per_second<class_Engine_method_get_frames_per_second>` **(** **)** |const|                           |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`get_idle_frames<class_Engine_method_get_idle_frames>` **(** **)** |const|                                       |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`get_license_info<class_Engine_method_get_license_info>` **(** **)** |const|                                     |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`get_license_text<class_Engine_method_get_license_text>` **(** **)** |const|                                     |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`MainLoop<class_MainLoop>`     | :ref:`get_main_loop<class_Engine_method_get_main_loop>` **(** **)** |const|                                           |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`get_physics_frames<class_Engine_method_get_physics_frames>` **(** **)** |const|                                 |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | :ref:`get_physics_interpolation_fraction<class_Engine_method_get_physics_interpolation_fraction>` **(** **)** |const| |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>`         | :ref:`get_singleton<class_Engine_method_get_singleton>` **(** :ref:`String<class_String>` name **)** |const|          |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`get_version_info<class_Engine_method_get_version_info>` **(** **)** |const|                                     |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`has_singleton<class_Engine_method_has_singleton>` **(** :ref:`String<class_String>` name **)** |const|          |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`is_in_physics_frame<class_Engine_method_is_in_physics_frame>` **(** **)** |const|                               |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -154,7 +154,7 @@ Method Descriptions
 
 .. _class_Engine_method_get_author_info:
 
-- :ref:`Dictionary<class_Dictionary>` **get_author_info** **(** **)** const
+- :ref:`Dictionary<class_Dictionary>` **get_author_info** **(** **)** |const|
 
 Returns engine author information in a Dictionary.
 
@@ -170,7 +170,7 @@ Returns engine author information in a Dictionary.
 
 .. _class_Engine_method_get_copyright_info:
 
-- :ref:`Array<class_Array>` **get_copyright_info** **(** **)** const
+- :ref:`Array<class_Array>` **get_copyright_info** **(** **)** |const|
 
 Returns an Array of copyright information Dictionaries.
 
@@ -182,11 +182,11 @@ Returns an Array of copyright information Dictionaries.
 
 .. _class_Engine_method_get_donor_info:
 
-- :ref:`Dictionary<class_Dictionary>` **get_donor_info** **(** **)** const
+- :ref:`Dictionary<class_Dictionary>` **get_donor_info** **(** **)** |const|
 
 Returns a Dictionary of Arrays of donor names.
 
-{``platinum_sponsors``, ``gold_sponsors``, ``mini_sponsors``, ``gold_donors``, ``silver_donors``, ``bronze_donors``}
+{``platinum_sponsors``, ``gold_sponsors``, ``silver_sponsors``, ``bronze_sponsors``, ``mini_sponsors``, ``gold_donors``, ``silver_donors``, ``bronze_donors``}
 
 ----
 
@@ -200,7 +200,7 @@ Returns the total number of frames drawn. If the render loop is disabled with ``
 
 .. _class_Engine_method_get_frames_per_second:
 
-- :ref:`float<class_float>` **get_frames_per_second** **(** **)** const
+- :ref:`float<class_float>` **get_frames_per_second** **(** **)** |const|
 
 Returns the frames per second of the running game.
 
@@ -208,7 +208,7 @@ Returns the frames per second of the running game.
 
 .. _class_Engine_method_get_idle_frames:
 
-- :ref:`int<class_int>` **get_idle_frames** **(** **)** const
+- :ref:`int<class_int>` **get_idle_frames** **(** **)** |const|
 
 Returns the total number of frames passed since engine initialization which is advanced on each **idle frame**, regardless of whether the render loop is enabled. See also :ref:`get_frames_drawn<class_Engine_method_get_frames_drawn>`.
 
@@ -216,7 +216,7 @@ Returns the total number of frames passed since engine initialization which is a
 
 .. _class_Engine_method_get_license_info:
 
-- :ref:`Dictionary<class_Dictionary>` **get_license_info** **(** **)** const
+- :ref:`Dictionary<class_Dictionary>` **get_license_info** **(** **)** |const|
 
 Returns Dictionary of licenses used by Godot and included third party components.
 
@@ -224,7 +224,7 @@ Returns Dictionary of licenses used by Godot and included third party components
 
 .. _class_Engine_method_get_license_text:
 
-- :ref:`String<class_String>` **get_license_text** **(** **)** const
+- :ref:`String<class_String>` **get_license_text** **(** **)** |const|
 
 Returns Godot license text.
 
@@ -232,7 +232,7 @@ Returns Godot license text.
 
 .. _class_Engine_method_get_main_loop:
 
-- :ref:`MainLoop<class_MainLoop>` **get_main_loop** **(** **)** const
+- :ref:`MainLoop<class_MainLoop>` **get_main_loop** **(** **)** |const|
 
 Returns the main loop object (see :ref:`MainLoop<class_MainLoop>` and :ref:`SceneTree<class_SceneTree>`).
 
@@ -240,7 +240,7 @@ Returns the main loop object (see :ref:`MainLoop<class_MainLoop>` and :ref:`Scen
 
 .. _class_Engine_method_get_physics_frames:
 
-- :ref:`int<class_int>` **get_physics_frames** **(** **)** const
+- :ref:`int<class_int>` **get_physics_frames** **(** **)** |const|
 
 Returns the total number of frames passed since engine initialization which is advanced on each **physics frame**.
 
@@ -248,7 +248,7 @@ Returns the total number of frames passed since engine initialization which is a
 
 .. _class_Engine_method_get_physics_interpolation_fraction:
 
-- :ref:`float<class_float>` **get_physics_interpolation_fraction** **(** **)** const
+- :ref:`float<class_float>` **get_physics_interpolation_fraction** **(** **)** |const|
 
 Returns the fraction through the current physics tick we are at the time of rendering the frame. This can be used to implement fixed timestep interpolation.
 
@@ -256,7 +256,7 @@ Returns the fraction through the current physics tick we are at the time of rend
 
 .. _class_Engine_method_get_singleton:
 
-- :ref:`Object<class_Object>` **get_singleton** **(** :ref:`String<class_String>` name **)** const
+- :ref:`Object<class_Object>` **get_singleton** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns a global singleton with given ``name``. Often used for plugins, e.g. ``GodotPayment`` on Android.
 
@@ -264,7 +264,7 @@ Returns a global singleton with given ``name``. Often used for plugins, e.g. ``G
 
 .. _class_Engine_method_get_version_info:
 
-- :ref:`Dictionary<class_Dictionary>` **get_version_info** **(** **)** const
+- :ref:`Dictionary<class_Dictionary>` **get_version_info** **(** **)** |const|
 
 Returns the current engine version information in a Dictionary.
 
@@ -299,7 +299,7 @@ The ``hex`` value is encoded as follows, from left to right: one byte for the ma
 
 .. _class_Engine_method_has_singleton:
 
-- :ref:`bool<class_bool>` **has_singleton** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **has_singleton** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns ``true`` if a singleton with given ``name`` exists in global scope.
 
@@ -307,7 +307,10 @@ Returns ``true`` if a singleton with given ``name`` exists in global scope.
 
 .. _class_Engine_method_is_in_physics_frame:
 
-- :ref:`bool<class_bool>` **is_in_physics_frame** **(** **)** const
+- :ref:`bool<class_bool>` **is_in_physics_frame** **(** **)** |const|
 
 Returns ``true`` if the game is inside the fixed process and physics phase of the game loop.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -44,7 +44,7 @@ Methods
 -------
 
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` | :ref:`get_mix_mode<class_AnimationNodeOneShot_method_get_mix_mode>` **(** **)** const                                                  |
+| :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` | :ref:`get_mix_mode<class_AnimationNodeOneShot_method_get_mix_mode>` **(** **)** |const|                                                |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`set_mix_mode<class_AnimationNodeOneShot_method_set_mix_mode>` **(** :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` mode **)** |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
@@ -160,7 +160,7 @@ Method Descriptions
 
 .. _class_AnimationNodeOneShot_method_get_mix_mode:
 
-- :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **get_mix_mode** **(** **)** const
+- :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **get_mix_mode** **(** **)** |const|
 
 ----
 
@@ -168,3 +168,6 @@ Method Descriptions
 
 - void **set_mix_mode** **(** :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` mode **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

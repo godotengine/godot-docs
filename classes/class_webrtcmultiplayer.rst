@@ -113,3 +113,6 @@ If ``server_compatibilty`` is ``true`` the peer will suppress all :ref:`Networke
 
 Remove the peer with given ``peer_id`` from the mesh. If the peer was connected, and :ref:`NetworkedMultiplayerPeer.peer_connected<class_NetworkedMultiplayerPeer_signal_peer_connected>` was emitted for it, then :ref:`NetworkedMultiplayerPeer.peer_disconnected<class_NetworkedMultiplayerPeer_signal_peer_disconnected>` will be emitted.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

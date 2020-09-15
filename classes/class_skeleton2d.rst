@@ -29,9 +29,9 @@ Methods
 +-----------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`Bone2D<class_Bone2D>` | :ref:`get_bone<class_Skeleton2D_method_get_bone>` **(** :ref:`int<class_int>` idx **)** |
 +-----------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`get_bone_count<class_Skeleton2D_method_get_bone_count>` **(** **)** const         |
+| :ref:`int<class_int>`       | :ref:`get_bone_count<class_Skeleton2D_method_get_bone_count>` **(** **)** |const|       |
 +-----------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`       | :ref:`get_skeleton<class_Skeleton2D_method_get_skeleton>` **(** **)** const             |
+| :ref:`RID<class_RID>`       | :ref:`get_skeleton<class_Skeleton2D_method_get_skeleton>` **(** **)** |const|           |
 +-----------------------------+-----------------------------------------------------------------------------------------+
 
 Signals
@@ -54,7 +54,7 @@ Returns a :ref:`Bone2D<class_Bone2D>` from the node hierarchy parented by Skelet
 
 .. _class_Skeleton2D_method_get_bone_count:
 
-- :ref:`int<class_int>` **get_bone_count** **(** **)** const
+- :ref:`int<class_int>` **get_bone_count** **(** **)** |const|
 
 Returns the number of :ref:`Bone2D<class_Bone2D>` nodes in the node hierarchy parented by Skeleton2D.
 
@@ -62,7 +62,10 @@ Returns the number of :ref:`Bone2D<class_Bone2D>` nodes in the node hierarchy pa
 
 .. _class_Skeleton2D_method_get_skeleton:
 
-- :ref:`RID<class_RID>` **get_skeleton** **(** **)** const
+- :ref:`RID<class_RID>` **get_skeleton** **(** **)** |const|
 
 Returns the :ref:`RID<class_RID>` of a Skeleton2D instance.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

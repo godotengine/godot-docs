@@ -125,3 +125,6 @@ The source texture, if needed for the selected :ref:`source<class_VisualShaderNo
 
 Specifies the type of the texture if :ref:`source<class_VisualShaderNodeTexture_property_source>` is set to :ref:`SOURCE_TEXTURE<class_VisualShaderNodeTexture_constant_SOURCE_TEXTURE>`. See :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` for options.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

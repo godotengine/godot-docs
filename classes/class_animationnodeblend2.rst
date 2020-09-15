@@ -47,3 +47,6 @@ Property Descriptions
 
 If ``true``, sets the ``optimization`` to ``false`` when calling :ref:`AnimationNode.blend_input<class_AnimationNode_method_blend_input>`, forcing the blended animations to update every frame.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

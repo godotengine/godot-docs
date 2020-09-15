@@ -126,19 +126,19 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Resource<class_Resource>`                           | :ref:`preload<class_@GDScript_method_preload>` **(** :ref:`String<class_String>` path **)**                                                                                                                                            |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`print<class_@GDScript_method_print>` **(** ... **)** vararg                                                                                                                                                                      |
+| void                                                      | :ref:`print<class_@GDScript_method_print>` **(** ... **)** |vararg|                                                                                                                                                                    |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`print_debug<class_@GDScript_method_print_debug>` **(** ... **)** vararg                                                                                                                                                          |
+| void                                                      | :ref:`print_debug<class_@GDScript_method_print_debug>` **(** ... **)** |vararg|                                                                                                                                                        |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`print_stack<class_@GDScript_method_print_stack>` **(** **)**                                                                                                                                                                     |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`printerr<class_@GDScript_method_printerr>` **(** ... **)** vararg                                                                                                                                                                |
+| void                                                      | :ref:`printerr<class_@GDScript_method_printerr>` **(** ... **)** |vararg|                                                                                                                                                              |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`printraw<class_@GDScript_method_printraw>` **(** ... **)** vararg                                                                                                                                                                |
+| void                                                      | :ref:`printraw<class_@GDScript_method_printraw>` **(** ... **)** |vararg|                                                                                                                                                              |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`prints<class_@GDScript_method_prints>` **(** ... **)** vararg                                                                                                                                                                    |
+| void                                                      | :ref:`prints<class_@GDScript_method_prints>` **(** ... **)** |vararg|                                                                                                                                                                  |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`printt<class_@GDScript_method_printt>` **(** ... **)** vararg                                                                                                                                                                    |
+| void                                                      | :ref:`printt<class_@GDScript_method_printt>` **(** ... **)** |vararg|                                                                                                                                                                  |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`push_error<class_@GDScript_method_push_error>` **(** :ref:`String<class_String>` message **)**                                                                                                                                   |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -156,7 +156,7 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`randomize<class_@GDScript_method_randomize>` **(** **)**                                                                                                                                                                         |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                                 | :ref:`range<class_@GDScript_method_range>` **(** ... **)** vararg                                                                                                                                                                      |
+| :ref:`Array<class_Array>`                                 | :ref:`range<class_@GDScript_method_range>` **(** ... **)** |vararg|                                                                                                                                                                    |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`range_lerp<class_@GDScript_method_range_lerp>` **(** :ref:`float<class_float>` value, :ref:`float<class_float>` istart, :ref:`float<class_float>` istop, :ref:`float<class_float>` ostart, :ref:`float<class_float>` ostop **)** |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -178,7 +178,7 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`stepify<class_@GDScript_method_stepify>` **(** :ref:`float<class_float>` s, :ref:`float<class_float>` step **)**                                                                                                                 |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                               | :ref:`str<class_@GDScript_method_str>` **(** ... **)** vararg                                                                                                                                                                          |
+| :ref:`String<class_String>`                               | :ref:`str<class_@GDScript_method_str>` **(** ... **)** |vararg|                                                                                                                                                                        |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                             | :ref:`str2var<class_@GDScript_method_str2var>` **(** :ref:`String<class_String>` string **)**                                                                                                                                          |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -378,6 +378,8 @@ Rounds ``s`` upward (towards positive infinity), returning the smallest whole nu
     i = ceil(1.45)  # i is 2
     i = ceil(1.001) # i is 2
 
+See also :ref:`floor<class_@GDScript_method_floor>`, :ref:`round<class_@GDScript_method_round>`, and :ref:`stepify<class_@GDScript_method_stepify>`.
+
 ----
 
 .. _class_@GDScript_method_char:
@@ -545,6 +547,8 @@ Rounds ``s`` downward (towards negative infinity), returning the largest whole n
     # a is -3.0
     a = floor(-2.99)
 
+See also :ref:`ceil<class_@GDScript_method_ceil>`, :ref:`round<class_@GDScript_method_round>`, and :ref:`stepify<class_@GDScript_method_stepify>`.
+
 **Note:** This method returns a float. If you need an integer, you can use ``int(s)`` directly.
 
 ----
@@ -572,26 +576,21 @@ Returns the floating-point modulus of ``a/b`` that wraps equally in positive and
 
 ::
 
-    var i = -6
-    while i < 5:
-        prints(i, fposmod(i, 3))
-        i += 1
+    for i in 7:
+        var x = 0.5 * i - 1.5
+        print("%4.1f %4.1f %4.1f" % [x, fmod(x, 1.5), fposmod(x, 1.5)])
 
 Produces:
 
 ::
 
-    -6 0
-    -5 1
-    -4 2
-    -3 0
-    -2 1
-    -1 2
-    0 0
-    1 1
-    2 2
-    3 0
-    4 1
+    -1.5 -0.0  0.0
+    -1.0 -1.0  0.5
+    -0.5 -0.5  1.0
+     0.0  0.0  0.0
+     0.5  0.5  0.5
+     1.0  1.0  1.0
+     1.5  0.0  0.0
 
 ----
 
@@ -917,19 +916,21 @@ This is the inverse of :ref:`char<class_@GDScript_method_char>`.
 
 - :ref:`Variant<class_Variant>` **parse_json** **(** :ref:`String<class_String>` json **)**
 
-Parse JSON text to a Variant (use :ref:`typeof<class_@GDScript_method_typeof>` to check if it is what you expect).
+Parse JSON text to a Variant. (Use :ref:`typeof<class_@GDScript_method_typeof>` to check if the Variant's type is what you expect.)
 
-Be aware that the JSON specification does not define integer or float types, but only a number type. Therefore, parsing a JSON text will convert all numerical values to :ref:`float<class_float>` types.
+**Note:** The JSON specification does not define integer or float types, but only a *number* type. Therefore, parsing a JSON text will convert all numerical values to :ref:`float<class_float>` types.
 
-Note that JSON objects do not preserve key order like Godot dictionaries, thus you should not rely on keys being in a certain order if a dictionary is constructed from JSON. In contrast, JSON arrays retain the order of their elements:
+**Note:** JSON objects do not preserve key order like Godot dictionaries, thus, you should not rely on keys being in a certain order if a dictionary is constructed from JSON. In contrast, JSON arrays retain the order of their elements:
 
 ::
 
-    p = parse_json('["a", "b", "c"]')
-    if typeof(p) == TYPE_ARRAY:
-        print(p[0]) # Prints a
+    var p = JSON.parse('["hello", "world", "!"]')
+    if typeof(p.result) == TYPE_ARRAY:
+        print(p.result[0]) # Prints "hello"
     else:
-        print("unexpected results")
+        push_error("Unexpected results.")
+
+See also :ref:`JSON<class_JSON>` for an alternative way to parse JSON text.
 
 ----
 
@@ -949,26 +950,20 @@ Returns the integer modulus of ``a/b`` that wraps equally in positive and negati
 
 ::
 
-    var i = -6
-    while i < 5:
-        prints(i, posmod(i, 3))
-        i += 1
+    for i in range(-3, 4):
+        print("%2.0f %2.0f %2.0f" % [i, i % 3, posmod(i, 3)])
 
 Produces:
 
 ::
 
-    -6 0
-    -5 1
-    -4 2
-    -3 0
-    -2 1
-    -1 2
-    0 0
-    1 1
-    2 2
-    3 0
-    4 1
+    -3  0  0
+    -2 -2  1
+    -1 -1  2
+     0  0  0
+     1  1  1
+     2  2  2
+     3  0  0
 
 ----
 
@@ -1001,7 +996,7 @@ Returns a :ref:`Resource<class_Resource>` from the filesystem located at ``path`
 
 .. _class_@GDScript_method_print:
 
-- void **print** **(** ... **)** vararg
+- void **print** **(** ... **)** |vararg|
 
 Converts one or more arguments to strings in the best way possible and prints them to the console.
 
@@ -1014,7 +1009,7 @@ Converts one or more arguments to strings in the best way possible and prints th
 
 .. _class_@GDScript_method_print_debug:
 
-- void **print_debug** **(** ... **)** vararg
+- void **print_debug** **(** ... **)** |vararg|
 
 Like :ref:`print<class_@GDScript_method_print>`, but prints only when used in debug mode.
 
@@ -1036,7 +1031,7 @@ Output in the console would look something like this:
 
 .. _class_@GDScript_method_printerr:
 
-- void **printerr** **(** ... **)** vararg
+- void **printerr** **(** ... **)** |vararg|
 
 Prints one or more arguments to strings in the best way possible to standard error line.
 
@@ -1048,7 +1043,7 @@ Prints one or more arguments to strings in the best way possible to standard err
 
 .. _class_@GDScript_method_printraw:
 
-- void **printraw** **(** ... **)** vararg
+- void **printraw** **(** ... **)** |vararg|
 
 Prints one or more arguments to strings in the best way possible to console. No newline is added at the end.
 
@@ -1064,7 +1059,7 @@ Prints one or more arguments to strings in the best way possible to console. No 
 
 .. _class_@GDScript_method_prints:
 
-- void **prints** **(** ... **)** vararg
+- void **prints** **(** ... **)** |vararg|
 
 Prints one or more arguments to the console with a space between each argument.
 
@@ -1076,7 +1071,7 @@ Prints one or more arguments to the console with a space between each argument.
 
 .. _class_@GDScript_method_printt:
 
-- void **printt** **(** ... **)** vararg
+- void **printt** **(** ... **)** |vararg|
 
 Prints one or more arguments to the console with a tab between each argument.
 
@@ -1184,35 +1179,23 @@ Randomizes the seed (or the internal state) of the random number generator. Curr
 
 .. _class_@GDScript_method_range:
 
-- :ref:`Array<class_Array>` **range** **(** ... **)** vararg
+- :ref:`Array<class_Array>` **range** **(** ... **)** |vararg|
 
 Returns an array with the given range. Range can be 1 argument N (0 to N-1), two arguments (initial, final-1) or three arguments (initial, final-1, increment).
 
 ::
 
-    for i in range(4):
-        print(i)
-    for i in range(2, 5):
-        print(i)
-    for i in range(0, 6, 2):
-        print(i)
+    print(range(4))
+    print(range(2, 5))
+    print(range(0, 6, 2))
 
 Output:
 
 ::
 
-    0
-    1
-    2
-    3
-    
-    2
-    3
-    4
-    
-    0
-    2
-    4
+    [0, 1, 2, 3]
+    [2, 3, 4]
+    [0, 2, 4]
 
 ----
 
@@ -1237,6 +1220,8 @@ Rounds ``s`` to the nearest whole number, with halfway cases rounded away from z
 ::
 
     round(2.6) # Returns 3
+
+See also :ref:`floor<class_@GDScript_method_floor>`, :ref:`ceil<class_@GDScript_method_ceil>`, and :ref:`stepify<class_@GDScript_method_stepify>`.
 
 ----
 
@@ -1348,11 +1333,13 @@ Snaps float value ``s`` to a given ``step``. This can also be used to round a fl
     stepify(100, 32) # Returns 96
     stepify(3.14159, 0.01) # Returns 3.14
 
+See also :ref:`ceil<class_@GDScript_method_ceil>`, :ref:`floor<class_@GDScript_method_floor>`, and :ref:`round<class_@GDScript_method_round>`.
+
 ----
 
 .. _class_@GDScript_method_str:
 
-- :ref:`String<class_String>` **str** **(** ... **)** vararg
+- :ref:`String<class_String>` **str** **(** ... **)** |vararg|
 
 Converts one or more arguments to string in the best way possible.
 
@@ -1408,13 +1395,19 @@ Returns the hyperbolic tangent of ``s``.
 
 - :ref:`String<class_String>` **to_json** **(** :ref:`Variant<class_Variant>` var **)**
 
-Converts a Variant ``var`` to JSON text and return the result. Useful for serializing data to store or send over the network.
+Converts a :ref:`Variant<class_Variant>` ``var`` to JSON text and return the result. Useful for serializing data to store or send over the network.
 
 ::
 
+    # Both numbers below are integers.
     a = { "a": 1, "b": 2 }
     b = to_json(a)
     print(b) # {"a":1, "b":2}
+    # Both numbers above are floats, even if they display without any decimal places.
+
+**Note:** The JSON specification does not define integer or float types, but only a *number* type. Therefore, converting a :ref:`Variant<class_Variant>` to JSON text will convert all numerical values to :ref:`float<class_float>` types.
+
+See also :ref:`JSON<class_JSON>` for an alternative way to convert a :ref:`Variant<class_Variant>` to JSON text.
 
 ----
 
@@ -1458,9 +1451,9 @@ Checks that ``json`` is valid JSON data. Returns an empty string if valid, or an
     j = to_json([1, 2, 3])
     v = validate_json(j)
     if not v:
-        print("valid")
+        print("Valid JSON.")
     else:
-        prints("invalid", v)
+        push_error("Invalid JSON: " + v)
 
 ----
 
@@ -1594,3 +1587,6 @@ When yielding on a function, the ``completed`` signal will be emitted automatica
 
 In order to yield on a function, the resulting function should also return a ``GDScriptFunctionState``. Notice ``yield(get_tree(), "idle_frame")`` from the above example.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

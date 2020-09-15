@@ -18,6 +18,8 @@ Description
 
 Sprite frame library for :ref:`AnimatedSprite<class_AnimatedSprite>`. Contains frames and animation data for playback.
 
+**Note:** You can associate a set of normal maps by creating additional ``SpriteFrames`` resources with a ``_normal`` suffix. For example, having 2 ``SpriteFrames`` resources ``run`` and ``run_normal`` will make it so the ``run`` animation uses the normal map.
+
 Properties
 ----------
 
@@ -37,17 +39,17 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`clear_all<class_SpriteFrames_method_clear_all>` **(** **)**                                                                                                             |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`get_animation_loop<class_SpriteFrames_method_get_animation_loop>` **(** :ref:`String<class_String>` anim **)** const                                                    |
+| :ref:`bool<class_bool>`                       | :ref:`get_animation_loop<class_SpriteFrames_method_get_animation_loop>` **(** :ref:`String<class_String>` anim **)** |const|                                                  |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_animation_names<class_SpriteFrames_method_get_animation_names>` **(** **)** const                                                                                   |
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_animation_names<class_SpriteFrames_method_get_animation_names>` **(** **)** |const|                                                                                 |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`get_animation_speed<class_SpriteFrames_method_get_animation_speed>` **(** :ref:`String<class_String>` anim **)** const                                                  |
+| :ref:`float<class_float>`                     | :ref:`get_animation_speed<class_SpriteFrames_method_get_animation_speed>` **(** :ref:`String<class_String>` anim **)** |const|                                                |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                 | :ref:`get_frame<class_SpriteFrames_method_get_frame>` **(** :ref:`String<class_String>` anim, :ref:`int<class_int>` idx **)** const                                           |
+| :ref:`Texture<class_Texture>`                 | :ref:`get_frame<class_SpriteFrames_method_get_frame>` **(** :ref:`String<class_String>` anim, :ref:`int<class_int>` idx **)** |const|                                         |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`get_frame_count<class_SpriteFrames_method_get_frame_count>` **(** :ref:`String<class_String>` anim **)** const                                                          |
+| :ref:`int<class_int>`                         | :ref:`get_frame_count<class_SpriteFrames_method_get_frame_count>` **(** :ref:`String<class_String>` anim **)** |const|                                                        |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`has_animation<class_SpriteFrames_method_has_animation>` **(** :ref:`String<class_String>` anim **)** const                                                              |
+| :ref:`bool<class_bool>`                       | :ref:`has_animation<class_SpriteFrames_method_has_animation>` **(** :ref:`String<class_String>` anim **)** |const|                                                            |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`remove_animation<class_SpriteFrames_method_remove_animation>` **(** :ref:`String<class_String>` anim **)**                                                              |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -108,7 +110,7 @@ Removes all animations. A "default" animation will be created.
 
 .. _class_SpriteFrames_method_get_animation_loop:
 
-- :ref:`bool<class_bool>` **get_animation_loop** **(** :ref:`String<class_String>` anim **)** const
+- :ref:`bool<class_bool>` **get_animation_loop** **(** :ref:`String<class_String>` anim **)** |const|
 
 If ``true``, the given animation will loop.
 
@@ -116,7 +118,7 @@ If ``true``, the given animation will loop.
 
 .. _class_SpriteFrames_method_get_animation_names:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_animation_names** **(** **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_animation_names** **(** **)** |const|
 
 Returns an array containing the names associated to each animation. Values are placed in alphabetical order.
 
@@ -124,7 +126,7 @@ Returns an array containing the names associated to each animation. Values are p
 
 .. _class_SpriteFrames_method_get_animation_speed:
 
-- :ref:`float<class_float>` **get_animation_speed** **(** :ref:`String<class_String>` anim **)** const
+- :ref:`float<class_float>` **get_animation_speed** **(** :ref:`String<class_String>` anim **)** |const|
 
 The animation's speed in frames per second.
 
@@ -132,7 +134,7 @@ The animation's speed in frames per second.
 
 .. _class_SpriteFrames_method_get_frame:
 
-- :ref:`Texture<class_Texture>` **get_frame** **(** :ref:`String<class_String>` anim, :ref:`int<class_int>` idx **)** const
+- :ref:`Texture<class_Texture>` **get_frame** **(** :ref:`String<class_String>` anim, :ref:`int<class_int>` idx **)** |const|
 
 Returns the animation's selected frame.
 
@@ -140,7 +142,7 @@ Returns the animation's selected frame.
 
 .. _class_SpriteFrames_method_get_frame_count:
 
-- :ref:`int<class_int>` **get_frame_count** **(** :ref:`String<class_String>` anim **)** const
+- :ref:`int<class_int>` **get_frame_count** **(** :ref:`String<class_String>` anim **)** |const|
 
 Returns the number of frames in the animation.
 
@@ -148,7 +150,7 @@ Returns the number of frames in the animation.
 
 .. _class_SpriteFrames_method_has_animation:
 
-- :ref:`bool<class_bool>` **has_animation** **(** :ref:`String<class_String>` anim **)** const
+- :ref:`bool<class_bool>` **has_animation** **(** :ref:`String<class_String>` anim **)** |const|
 
 If ``true``, the named animation exists.
 
@@ -200,3 +202,6 @@ The animation's speed in frames per second.
 
 Sets the texture of the given frame.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

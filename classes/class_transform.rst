@@ -244,3 +244,6 @@ Transforms the given :ref:`Vector3<class_Vector3>`, :ref:`Plane<class_Plane>`, :
 
 Inverse-transforms the given :ref:`Vector3<class_Vector3>`, :ref:`Plane<class_Plane>`, :ref:`AABB<class_AABB>`, or :ref:`PoolVector3Array<class_PoolVector3Array>` by this transform.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

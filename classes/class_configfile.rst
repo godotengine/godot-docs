@@ -49,37 +49,37 @@ ConfigFiles can also contain manually written comment lines starting with a semi
 Methods
 -------
 
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`erase_section<class_ConfigFile_method_erase_section>` **(** :ref:`String<class_String>` section **)**                                                                            |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`erase_section_key<class_ConfigFile_method_erase_section_key>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key **)**                                   |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_section_keys<class_ConfigFile_method_get_section_keys>` **(** :ref:`String<class_String>` section **)** const                                                                |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_sections<class_ConfigFile_method_get_sections>` **(** **)** const                                                                                                            |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`get_value<class_ConfigFile_method_get_value>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** const |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`has_section<class_ConfigFile_method_has_section>` **(** :ref:`String<class_String>` section **)** const                                                                          |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`has_section_key<class_ConfigFile_method_has_section_key>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key **)** const                                 |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load<class_ConfigFile_method_load>` **(** :ref:`String<class_String>` path **)**                                                                                                 |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_encrypted<class_ConfigFile_method_load_encrypted>` **(** :ref:`String<class_String>` path, :ref:`PoolByteArray<class_PoolByteArray>` key **)**                              |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_encrypted_pass<class_ConfigFile_method_load_encrypted_pass>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` password **)**                             |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`parse<class_ConfigFile_method_parse>` **(** :ref:`String<class_String>` data **)**                                                                                               |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save<class_ConfigFile_method_save>` **(** :ref:`String<class_String>` path **)**                                                                                                 |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save_encrypted<class_ConfigFile_method_save_encrypted>` **(** :ref:`String<class_String>` path, :ref:`PoolByteArray<class_PoolByteArray>` key **)**                              |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save_encrypted_pass<class_ConfigFile_method_save_encrypted_pass>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` password **)**                             |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_value<class_ConfigFile_method_set_value>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` value **)**              |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`erase_section<class_ConfigFile_method_erase_section>` **(** :ref:`String<class_String>` section **)**                                                                              |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`erase_section_key<class_ConfigFile_method_erase_section_key>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key **)**                                     |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_section_keys<class_ConfigFile_method_get_section_keys>` **(** :ref:`String<class_String>` section **)** |const|                                                                |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_sections<class_ConfigFile_method_get_sections>` **(** **)** |const|                                                                                                            |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                 | :ref:`get_value<class_ConfigFile_method_get_value>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** |const| |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`has_section<class_ConfigFile_method_has_section>` **(** :ref:`String<class_String>` section **)** |const|                                                                          |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`has_section_key<class_ConfigFile_method_has_section_key>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key **)** |const|                                 |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load<class_ConfigFile_method_load>` **(** :ref:`String<class_String>` path **)**                                                                                                   |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_encrypted<class_ConfigFile_method_load_encrypted>` **(** :ref:`String<class_String>` path, :ref:`PoolByteArray<class_PoolByteArray>` key **)**                                |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_encrypted_pass<class_ConfigFile_method_load_encrypted_pass>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` password **)**                               |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`parse<class_ConfigFile_method_parse>` **(** :ref:`String<class_String>` data **)**                                                                                                 |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save<class_ConfigFile_method_save>` **(** :ref:`String<class_String>` path **)**                                                                                                   |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save_encrypted<class_ConfigFile_method_save_encrypted>` **(** :ref:`String<class_String>` path, :ref:`PoolByteArray<class_PoolByteArray>` key **)**                                |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save_encrypted_pass<class_ConfigFile_method_save_encrypted_pass>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` password **)**                               |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_value<class_ConfigFile_method_set_value>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` value **)**                |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -102,7 +102,7 @@ Deletes the specified key in a section. Raises an error if either the section or
 
 .. _class_ConfigFile_method_get_section_keys:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_section_keys** **(** :ref:`String<class_String>` section **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_section_keys** **(** :ref:`String<class_String>` section **)** |const|
 
 Returns an array of all defined key identifiers in the specified section. Raises an error and returns an empty array if the section does not exist.
 
@@ -110,7 +110,7 @@ Returns an array of all defined key identifiers in the specified section. Raises
 
 .. _class_ConfigFile_method_get_sections:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_sections** **(** **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_sections** **(** **)** |const|
 
 Returns an array of all defined section identifiers.
 
@@ -118,7 +118,7 @@ Returns an array of all defined section identifiers.
 
 .. _class_ConfigFile_method_get_value:
 
-- :ref:`Variant<class_Variant>` **get_value** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** const
+- :ref:`Variant<class_Variant>` **get_value** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** |const|
 
 Returns the current value for the specified section and key. If either the section or the key do not exist, the method returns the fallback ``default`` value. If ``default`` is not specified or set to ``null``, an error is also raised.
 
@@ -126,7 +126,7 @@ Returns the current value for the specified section and key. If either the secti
 
 .. _class_ConfigFile_method_has_section:
 
-- :ref:`bool<class_bool>` **has_section** **(** :ref:`String<class_String>` section **)** const
+- :ref:`bool<class_bool>` **has_section** **(** :ref:`String<class_String>` section **)** |const|
 
 Returns ``true`` if the specified section exists.
 
@@ -134,7 +134,7 @@ Returns ``true`` if the specified section exists.
 
 .. _class_ConfigFile_method_has_section_key:
 
-- :ref:`bool<class_bool>` **has_section_key** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key **)** const
+- :ref:`bool<class_bool>` **has_section_key** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key **)** |const|
 
 Returns ``true`` if the specified section-key pair exists.
 
@@ -216,3 +216,6 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` 
 
 Assigns a value to the specified key of the specified section. If either the section or the key do not exist, they are created. Passing a ``null`` value deletes the specified key if it exists, and deletes the section if it ends up empty once the key has been removed.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

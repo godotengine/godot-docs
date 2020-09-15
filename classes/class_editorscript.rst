@@ -36,7 +36,7 @@ Methods
 -------
 
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`_run<class_EditorScript_method__run>` **(** **)** virtual                                        |
+| void                                          | :ref:`_run<class_EditorScript_method__run>` **(** **)** |virtual|                                      |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`add_root_node<class_EditorScript_method_add_root_node>` **(** :ref:`Node<class_Node>` node **)** |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
@@ -50,7 +50,7 @@ Method Descriptions
 
 .. _class_EditorScript_method__run:
 
-- void **_run** **(** **)** virtual
+- void **_run** **(** **)** |virtual|
 
 This method is executed by the Editor when **File > Run** is used.
 
@@ -80,3 +80,6 @@ Returns the :ref:`EditorInterface<class_EditorInterface>` singleton instance.
 
 Returns the Editor's currently active scene.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

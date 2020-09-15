@@ -24,11 +24,11 @@ Methods
 -------
 
 +-------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`call_func<class_FuncRef_method_call_func>` **(** ... **)** vararg                                 |
+| :ref:`Variant<class_Variant>` | :ref:`call_func<class_FuncRef_method_call_func>` **(** ... **)** |vararg|                               |
 +-------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>` | :ref:`call_funcv<class_FuncRef_method_call_funcv>` **(** :ref:`Array<class_Array>` arg_array **)**      |
 +-------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_valid<class_FuncRef_method_is_valid>` **(** **)** const                                        |
+| :ref:`bool<class_bool>`       | :ref:`is_valid<class_FuncRef_method_is_valid>` **(** **)** |const|                                      |
 +-------------------------------+---------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_function<class_FuncRef_method_set_function>` **(** :ref:`String<class_String>` name **)**     |
 +-------------------------------+---------------------------------------------------------------------------------------------------------+
@@ -40,7 +40,7 @@ Method Descriptions
 
 .. _class_FuncRef_method_call_func:
 
-- :ref:`Variant<class_Variant>` **call_func** **(** ... **)** vararg
+- :ref:`Variant<class_Variant>` **call_func** **(** ... **)** |vararg|
 
 Calls the referenced function previously set by :ref:`set_function<class_FuncRef_method_set_function>` or :ref:`@GDScript.funcref<class_@GDScript_method_funcref>`.
 
@@ -56,7 +56,7 @@ Calls the referenced function previously set by :ref:`set_function<class_FuncRef
 
 .. _class_FuncRef_method_is_valid:
 
-- :ref:`bool<class_bool>` **is_valid** **(** **)** const
+- :ref:`bool<class_bool>` **is_valid** **(** **)** |const|
 
 Returns whether the object still exists and has the function assigned.
 
@@ -76,3 +76,6 @@ The name of the referenced function to call on the object, without parentheses o
 
 The object containing the referenced function. This object must be of a type actually inheriting from :ref:`Object<class_Object>`, not a built-in type such as :ref:`int<class_int>`, :ref:`Vector2<class_Vector2>` or :ref:`Dictionary<class_Dictionary>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

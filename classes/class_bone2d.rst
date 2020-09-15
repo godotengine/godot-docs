@@ -36,13 +36,13 @@ Properties
 Methods
 -------
 
-+---------------------------------------+-------------------------------------------------------------------------------------------+
-| void                                  | :ref:`apply_rest<class_Bone2D_method_apply_rest>` **(** **)**                             |
-+---------------------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_index_in_skeleton<class_Bone2D_method_get_index_in_skeleton>` **(** **)** const |
-+---------------------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`get_skeleton_rest<class_Bone2D_method_get_skeleton_rest>` **(** **)** const         |
-+---------------------------------------+-------------------------------------------------------------------------------------------+
++---------------------------------------+---------------------------------------------------------------------------------------------+
+| void                                  | :ref:`apply_rest<class_Bone2D_method_apply_rest>` **(** **)**                               |
++---------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`get_index_in_skeleton<class_Bone2D_method_get_index_in_skeleton>` **(** **)** |const| |
++---------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`get_skeleton_rest<class_Bone2D_method_get_skeleton_rest>` **(** **)** |const|         |
++---------------------------------------+---------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -90,7 +90,7 @@ Stores the node's current transforms in :ref:`rest<class_Bone2D_property_rest>`.
 
 .. _class_Bone2D_method_get_index_in_skeleton:
 
-- :ref:`int<class_int>` **get_index_in_skeleton** **(** **)** const
+- :ref:`int<class_int>` **get_index_in_skeleton** **(** **)** |const|
 
 Returns the node's index as part of the entire skeleton. See :ref:`Skeleton2D<class_Skeleton2D>`.
 
@@ -98,7 +98,10 @@ Returns the node's index as part of the entire skeleton. See :ref:`Skeleton2D<cl
 
 .. _class_Bone2D_method_get_skeleton_rest:
 
-- :ref:`Transform2D<class_Transform2D>` **get_skeleton_rest** **(** **)** const
+- :ref:`Transform2D<class_Transform2D>` **get_skeleton_rest** **(** **)** |const|
 
 Returns the node's :ref:`rest<class_Bone2D_property_rest>` ``Transform2D`` if it doesn't have a parent, or its rest pose relative to its parent.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

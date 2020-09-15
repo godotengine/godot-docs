@@ -59,7 +59,7 @@ Methods
 -------
 
 +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_stretch_margin<class_TextureProgress_method_get_stretch_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                        |
+| :ref:`int<class_int>` | :ref:`get_stretch_margin<class_TextureProgress_method_get_stretch_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** |const|                      |
 +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                  | :ref:`set_stretch_margin<class_TextureProgress_method_set_stretch_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`int<class_int>` value **)** |
 +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -351,7 +351,7 @@ Method Descriptions
 
 .. _class_TextureProgress_method_get_stretch_margin:
 
-- :ref:`int<class_int>` **get_stretch_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+- :ref:`int<class_int>` **get_stretch_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** |const|
 
 ----
 
@@ -359,3 +359,6 @@ Method Descriptions
 
 - void **set_stretch_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`int<class_int>` value **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -18,3 +18,6 @@ Description
 
 ``TextureArray``\ s store an array of images in a single :ref:`Texture<class_Texture>` primitive. Each layer of the texture array has its own mipmap chain. This makes it is a good alternative to texture atlases.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

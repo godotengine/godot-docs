@@ -31,15 +31,15 @@ Methods
 -------
 
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>` | :ref:`get_aabb<class_VisualInstance_method_get_aabb>` **(** **)** const                                                                            |
+| :ref:`AABB<class_AABB>` | :ref:`get_aabb<class_VisualInstance_method_get_aabb>` **(** **)** |const|                                                                          |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`   | :ref:`get_base<class_VisualInstance_method_get_base>` **(** **)** const                                                                            |
+| :ref:`RID<class_RID>`   | :ref:`get_base<class_VisualInstance_method_get_base>` **(** **)** |const|                                                                          |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`   | :ref:`get_instance<class_VisualInstance_method_get_instance>` **(** **)** const                                                                    |
+| :ref:`RID<class_RID>`   | :ref:`get_instance<class_VisualInstance_method_get_instance>` **(** **)** |const|                                                                  |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`get_layer_mask_bit<class_VisualInstance_method_get_layer_mask_bit>` **(** :ref:`int<class_int>` layer **)** const                            |
+| :ref:`bool<class_bool>` | :ref:`get_layer_mask_bit<class_VisualInstance_method_get_layer_mask_bit>` **(** :ref:`int<class_int>` layer **)** |const|                          |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>` | :ref:`get_transformed_aabb<class_VisualInstance_method_get_transformed_aabb>` **(** **)** const                                                    |
+| :ref:`AABB<class_AABB>` | :ref:`get_transformed_aabb<class_VisualInstance_method_get_transformed_aabb>` **(** **)** |const|                                                  |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`set_base<class_VisualInstance_method_set_base>` **(** :ref:`RID<class_RID>` base **)**                                                       |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -70,7 +70,7 @@ Method Descriptions
 
 .. _class_VisualInstance_method_get_aabb:
 
-- :ref:`AABB<class_AABB>` **get_aabb** **(** **)** const
+- :ref:`AABB<class_AABB>` **get_aabb** **(** **)** |const|
 
 Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this ``VisualInstance``.
 
@@ -78,7 +78,7 @@ Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this ``
 
 .. _class_VisualInstance_method_get_base:
 
-- :ref:`RID<class_RID>` **get_base** **(** **)** const
+- :ref:`RID<class_RID>` **get_base** **(** **)** |const|
 
 Returns the RID of the resource associated with this ``VisualInstance``. For example, if the Node is a :ref:`MeshInstance<class_MeshInstance>`, this will return the RID of the associated :ref:`Mesh<class_Mesh>`.
 
@@ -86,7 +86,7 @@ Returns the RID of the resource associated with this ``VisualInstance``. For exa
 
 .. _class_VisualInstance_method_get_instance:
 
-- :ref:`RID<class_RID>` **get_instance** **(** **)** const
+- :ref:`RID<class_RID>` **get_instance** **(** **)** |const|
 
 Returns the RID of this instance. This RID is the same as the RID returned by :ref:`VisualServer.instance_create<class_VisualServer_method_instance_create>`. This RID is needed if you want to call :ref:`VisualServer<class_VisualServer>` functions directly on this ``VisualInstance``.
 
@@ -94,7 +94,7 @@ Returns the RID of this instance. This RID is the same as the RID returned by :r
 
 .. _class_VisualInstance_method_get_layer_mask_bit:
 
-- :ref:`bool<class_bool>` **get_layer_mask_bit** **(** :ref:`int<class_int>` layer **)** const
+- :ref:`bool<class_bool>` **get_layer_mask_bit** **(** :ref:`int<class_int>` layer **)** |const|
 
 Returns ``true`` when the specified layer is enabled in :ref:`layers<class_VisualInstance_property_layers>` and ``false`` otherwise.
 
@@ -102,7 +102,7 @@ Returns ``true`` when the specified layer is enabled in :ref:`layers<class_Visua
 
 .. _class_VisualInstance_method_get_transformed_aabb:
 
-- :ref:`AABB<class_AABB>` **get_transformed_aabb** **(** **)** const
+- :ref:`AABB<class_AABB>` **get_transformed_aabb** **(** **)** |const|
 
 Returns the transformed :ref:`AABB<class_AABB>` (also known as the bounding box) for this ``VisualInstance``.
 
@@ -124,3 +124,6 @@ Sets the resource that is instantiated by this ``VisualInstance``, which changes
 
 Enables a particular layer in :ref:`layers<class_VisualInstance_property_layers>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

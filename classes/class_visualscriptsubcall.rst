@@ -16,14 +16,17 @@ VisualScriptSubCall
 Methods
 -------
 
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`_subcall<class_VisualScriptSubCall_method__subcall>` **(** :ref:`Variant<class_Variant>` arguments **)** virtual |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`_subcall<class_VisualScriptSubCall_method__subcall>` **(** :ref:`Variant<class_Variant>` arguments **)** |virtual| |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_VisualScriptSubCall_method__subcall:
 
-- :ref:`Variant<class_Variant>` **_subcall** **(** :ref:`Variant<class_Variant>` arguments **)** virtual
+- :ref:`Variant<class_Variant>` **_subcall** **(** :ref:`Variant<class_Variant>` arguments **)** |virtual|
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

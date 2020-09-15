@@ -113,3 +113,6 @@ This method needs the transformation matrix for this shape (``local_xform``), th
 
 Draws a solid shape onto a :ref:`CanvasItem<class_CanvasItem>` with the :ref:`VisualServer<class_VisualServer>` API filled with the specified ``color``. The exact drawing method is specific for each shape and cannot be configured.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

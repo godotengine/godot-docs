@@ -104,3 +104,6 @@ Refreshes the inspector.
 
 **Note:** To save on CPU resources, calling this method will do nothing if the time specified in ``docks/property_editor/auto_refresh_interval`` editor setting hasn't passed yet since this method was last called. (By default, this interval is set to 0.3 seconds.)
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

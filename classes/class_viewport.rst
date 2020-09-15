@@ -104,41 +104,41 @@ Methods
 -------
 
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`World<class_World>`                                                 | :ref:`find_world<class_Viewport_method_find_world>` **(** **)** const                                                                                                                                                        |
+| :ref:`World<class_World>`                                                 | :ref:`find_world<class_Viewport_method_find_world>` **(** **)** |const|                                                                                                                                                      |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`World2D<class_World2D>`                                             | :ref:`find_world_2d<class_Viewport_method_find_world_2d>` **(** **)** const                                                                                                                                                  |
+| :ref:`World2D<class_World2D>`                                             | :ref:`find_world_2d<class_Viewport_method_find_world_2d>` **(** **)** |const|                                                                                                                                                |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Camera<class_Camera>`                                               | :ref:`get_camera<class_Viewport_method_get_camera>` **(** **)** const                                                                                                                                                        |
+| :ref:`Camera<class_Camera>`                                               | :ref:`get_camera<class_Viewport_method_get_camera>` **(** **)** |const|                                                                                                                                                      |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>`                                     | :ref:`get_final_transform<class_Viewport_method_get_final_transform>` **(** **)** const                                                                                                                                      |
+| :ref:`Transform2D<class_Transform2D>`                                     | :ref:`get_final_transform<class_Viewport_method_get_final_transform>` **(** **)** |const|                                                                                                                                    |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Control<class_Control>`                                             | :ref:`get_modal_stack_top<class_Viewport_method_get_modal_stack_top>` **(** **)** const                                                                                                                                      |
+| :ref:`Control<class_Control>`                                             | :ref:`get_modal_stack_top<class_Viewport_method_get_modal_stack_top>` **(** **)** |const|                                                                                                                                    |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                                             | :ref:`get_mouse_position<class_Viewport_method_get_mouse_position>` **(** **)** const                                                                                                                                        |
+| :ref:`Vector2<class_Vector2>`                                             | :ref:`get_mouse_position<class_Viewport_method_get_mouse_position>` **(** **)** |const|                                                                                                                                      |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                                     | :ref:`get_render_info<class_Viewport_method_get_render_info>` **(** :ref:`RenderInfo<enum_Viewport_RenderInfo>` info **)**                                                                                                   |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` | :ref:`get_shadow_atlas_quadrant_subdiv<class_Viewport_method_get_shadow_atlas_quadrant_subdiv>` **(** :ref:`int<class_int>` quadrant **)** const                                                                             |
+| :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` | :ref:`get_shadow_atlas_quadrant_subdiv<class_Viewport_method_get_shadow_atlas_quadrant_subdiv>` **(** :ref:`int<class_int>` quadrant **)** |const|                                                                           |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                                             | :ref:`get_size_override<class_Viewport_method_get_size_override>` **(** **)** const                                                                                                                                          |
+| :ref:`Vector2<class_Vector2>`                                             | :ref:`get_size_override<class_Viewport_method_get_size_override>` **(** **)** |const|                                                                                                                                        |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ViewportTexture<class_ViewportTexture>`                             | :ref:`get_texture<class_Viewport_method_get_texture>` **(** **)** const                                                                                                                                                      |
+| :ref:`ViewportTexture<class_ViewportTexture>`                             | :ref:`get_texture<class_Viewport_method_get_texture>` **(** **)** |const|                                                                                                                                                    |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                                                     | :ref:`get_viewport_rid<class_Viewport_method_get_viewport_rid>` **(** **)** const                                                                                                                                            |
+| :ref:`RID<class_RID>`                                                     | :ref:`get_viewport_rid<class_Viewport_method_get_viewport_rid>` **(** **)** |const|                                                                                                                                          |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`                                                 | :ref:`get_visible_rect<class_Viewport_method_get_visible_rect>` **(** **)** const                                                                                                                                            |
+| :ref:`Rect2<class_Rect2>`                                                 | :ref:`get_visible_rect<class_Viewport_method_get_visible_rect>` **(** **)** |const|                                                                                                                                          |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                                             | :ref:`gui_get_drag_data<class_Viewport_method_gui_get_drag_data>` **(** **)** const                                                                                                                                          |
+| :ref:`Variant<class_Variant>`                                             | :ref:`gui_get_drag_data<class_Viewport_method_gui_get_drag_data>` **(** **)** |const|                                                                                                                                        |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`gui_has_modal_stack<class_Viewport_method_gui_has_modal_stack>` **(** **)** const                                                                                                                                      |
+| :ref:`bool<class_bool>`                                                   | :ref:`gui_has_modal_stack<class_Viewport_method_gui_has_modal_stack>` **(** **)** |const|                                                                                                                                    |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`gui_is_dragging<class_Viewport_method_gui_is_dragging>` **(** **)** const                                                                                                                                              |
+| :ref:`bool<class_bool>`                                                   | :ref:`gui_is_dragging<class_Viewport_method_gui_is_dragging>` **(** **)** |const|                                                                                                                                            |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                      | :ref:`input<class_Viewport_method_input>` **(** :ref:`InputEvent<class_InputEvent>` local_event **)**                                                                                                                        |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`is_input_handled<class_Viewport_method_is_input_handled>` **(** **)** const                                                                                                                                            |
+| :ref:`bool<class_bool>`                                                   | :ref:`is_input_handled<class_Viewport_method_is_input_handled>` **(** **)** |const|                                                                                                                                          |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`is_size_override_enabled<class_Viewport_method_is_size_override_enabled>` **(** **)** const                                                                                                                            |
+| :ref:`bool<class_bool>`                                                   | :ref:`is_size_override_enabled<class_Viewport_method_is_size_override_enabled>` **(** **)** |const|                                                                                                                          |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                      | :ref:`set_attach_to_screen_rect<class_Viewport_method_set_attach_to_screen_rect>` **(** :ref:`Rect2<class_Rect2>` rect **)**                                                                                                 |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -337,9 +337,9 @@ enum **MSAA**:
 
 enum **Usage**:
 
-- **USAGE_2D** = **0** --- Allocates all buffers needed for drawing 2D scenes. This takes less VRAM than the 3D usage modes.
+- **USAGE_2D** = **0** --- Allocates all buffers needed for drawing 2D scenes. This takes less VRAM than the 3D usage modes. Note that 3D rendering effects such as glow and HDR are not available when using this mode.
 
-- **USAGE_2D_NO_SAMPLING** = **1** --- Allocates buffers needed for 2D scenes without allocating a buffer for screen copy. Accordingly, you cannot read from the screen. Of the :ref:`Usage<enum_Viewport_Usage>` types, this requires the least VRAM.
+- **USAGE_2D_NO_SAMPLING** = **1** --- Allocates buffers needed for 2D scenes without allocating a buffer for screen copy. Accordingly, you cannot read from the screen. Of the :ref:`Usage<enum_Viewport_Usage>` types, this requires the least VRAM. Note that 3D rendering effects such as glow and HDR are not available when using this mode.
 
 - **USAGE_3D** = **2** --- Allocates full buffers for drawing 3D scenes and all 3D effects including buffers needed for 2D scenes and effects.
 
@@ -632,6 +632,8 @@ If ``true``, renders the Viewport directly to the screen instead of to the root 
 
 The clear mode when viewport used as a render target.
 
+**Note:** This property is intended for 2D usage.
+
 ----
 
 .. _class_Viewport_property_render_target_update_mode:
@@ -843,7 +845,7 @@ Method Descriptions
 
 .. _class_Viewport_method_find_world:
 
-- :ref:`World<class_World>` **find_world** **(** **)** const
+- :ref:`World<class_World>` **find_world** **(** **)** |const|
 
 Returns the 3D world of the viewport, or if none the world of the parent viewport.
 
@@ -851,7 +853,7 @@ Returns the 3D world of the viewport, or if none the world of the parent viewpor
 
 .. _class_Viewport_method_find_world_2d:
 
-- :ref:`World2D<class_World2D>` **find_world_2d** **(** **)** const
+- :ref:`World2D<class_World2D>` **find_world_2d** **(** **)** |const|
 
 Returns the 2D world of the viewport.
 
@@ -859,7 +861,7 @@ Returns the 2D world of the viewport.
 
 .. _class_Viewport_method_get_camera:
 
-- :ref:`Camera<class_Camera>` **get_camera** **(** **)** const
+- :ref:`Camera<class_Camera>` **get_camera** **(** **)** |const|
 
 Returns the active 3D camera.
 
@@ -867,7 +869,7 @@ Returns the active 3D camera.
 
 .. _class_Viewport_method_get_final_transform:
 
-- :ref:`Transform2D<class_Transform2D>` **get_final_transform** **(** **)** const
+- :ref:`Transform2D<class_Transform2D>` **get_final_transform** **(** **)** |const|
 
 Returns the total transform of the viewport.
 
@@ -875,7 +877,7 @@ Returns the total transform of the viewport.
 
 .. _class_Viewport_method_get_modal_stack_top:
 
-- :ref:`Control<class_Control>` **get_modal_stack_top** **(** **)** const
+- :ref:`Control<class_Control>` **get_modal_stack_top** **(** **)** |const|
 
 Returns the topmost modal in the stack.
 
@@ -883,7 +885,7 @@ Returns the topmost modal in the stack.
 
 .. _class_Viewport_method_get_mouse_position:
 
-- :ref:`Vector2<class_Vector2>` **get_mouse_position** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_mouse_position** **(** **)** |const|
 
 Returns the mouse position relative to the viewport.
 
@@ -899,7 +901,7 @@ Returns information about the viewport from the rendering pipeline.
 
 .. _class_Viewport_method_get_shadow_atlas_quadrant_subdiv:
 
-- :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` **get_shadow_atlas_quadrant_subdiv** **(** :ref:`int<class_int>` quadrant **)** const
+- :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` **get_shadow_atlas_quadrant_subdiv** **(** :ref:`int<class_int>` quadrant **)** |const|
 
 Returns the :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` of the specified quadrant.
 
@@ -907,7 +909,7 @@ Returns the :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSub
 
 .. _class_Viewport_method_get_size_override:
 
-- :ref:`Vector2<class_Vector2>` **get_size_override** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_size_override** **(** **)** |const|
 
 Returns the size override set with :ref:`set_size_override<class_Viewport_method_set_size_override>`.
 
@@ -915,7 +917,7 @@ Returns the size override set with :ref:`set_size_override<class_Viewport_method
 
 .. _class_Viewport_method_get_texture:
 
-- :ref:`ViewportTexture<class_ViewportTexture>` **get_texture** **(** **)** const
+- :ref:`ViewportTexture<class_ViewportTexture>` **get_texture** **(** **)** |const|
 
 Returns the viewport's texture.
 
@@ -930,7 +932,7 @@ Returns the viewport's texture.
 
 .. _class_Viewport_method_get_viewport_rid:
 
-- :ref:`RID<class_RID>` **get_viewport_rid** **(** **)** const
+- :ref:`RID<class_RID>` **get_viewport_rid** **(** **)** |const|
 
 Returns the viewport's RID from the :ref:`VisualServer<class_VisualServer>`.
 
@@ -938,7 +940,7 @@ Returns the viewport's RID from the :ref:`VisualServer<class_VisualServer>`.
 
 .. _class_Viewport_method_get_visible_rect:
 
-- :ref:`Rect2<class_Rect2>` **get_visible_rect** **(** **)** const
+- :ref:`Rect2<class_Rect2>` **get_visible_rect** **(** **)** |const|
 
 Returns the visible rectangle in global screen coordinates.
 
@@ -946,7 +948,7 @@ Returns the visible rectangle in global screen coordinates.
 
 .. _class_Viewport_method_gui_get_drag_data:
 
-- :ref:`Variant<class_Variant>` **gui_get_drag_data** **(** **)** const
+- :ref:`Variant<class_Variant>` **gui_get_drag_data** **(** **)** |const|
 
 Returns the drag data from the GUI, that was previously returned by :ref:`Control.get_drag_data<class_Control_method_get_drag_data>`.
 
@@ -954,7 +956,7 @@ Returns the drag data from the GUI, that was previously returned by :ref:`Contro
 
 .. _class_Viewport_method_gui_has_modal_stack:
 
-- :ref:`bool<class_bool>` **gui_has_modal_stack** **(** **)** const
+- :ref:`bool<class_bool>` **gui_has_modal_stack** **(** **)** |const|
 
 Returns ``true`` if there are visible modals on-screen.
 
@@ -962,7 +964,7 @@ Returns ``true`` if there are visible modals on-screen.
 
 .. _class_Viewport_method_gui_is_dragging:
 
-- :ref:`bool<class_bool>` **gui_is_dragging** **(** **)** const
+- :ref:`bool<class_bool>` **gui_is_dragging** **(** **)** |const|
 
 Returns ``true`` if the viewport is currently performing a drag operation.
 
@@ -976,13 +978,13 @@ Returns ``true`` if the viewport is currently performing a drag operation.
 
 .. _class_Viewport_method_is_input_handled:
 
-- :ref:`bool<class_bool>` **is_input_handled** **(** **)** const
+- :ref:`bool<class_bool>` **is_input_handled** **(** **)** |const|
 
 ----
 
 .. _class_Viewport_method_is_size_override_enabled:
 
-- :ref:`bool<class_bool>` **is_size_override_enabled** **(** **)** const
+- :ref:`bool<class_bool>` **is_size_override_enabled** **(** **)** |const|
 
 Returns ``true`` if the size override is enabled. See :ref:`set_size_override<class_Viewport_method_set_size_override>`.
 
@@ -1040,3 +1042,6 @@ Forces update of the 2D and 3D worlds.
 
 Warps the mouse to a position relative to the viewport.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

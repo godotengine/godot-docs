@@ -26,7 +26,7 @@ Methods
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`disconnect_from_peer<class_PacketPeerDTLS_method_disconnect_from_peer>` **(** **)**                                                                                                                                                                                                             |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Status<enum_PacketPeerDTLS_Status>` | :ref:`get_status<class_PacketPeerDTLS_method_get_status>` **(** **)** const                                                                                                                                                                                                                           |
+| :ref:`Status<enum_PacketPeerDTLS_Status>` | :ref:`get_status<class_PacketPeerDTLS_method_get_status>` **(** **)** |const|                                                                                                                                                                                                                         |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`poll<class_PacketPeerDTLS_method_poll>` **(** **)**                                                                                                                                                                                                                                             |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -79,7 +79,7 @@ Disconnects this peer, terminating the DTLS session.
 
 .. _class_PacketPeerDTLS_method_get_status:
 
-- :ref:`Status<enum_PacketPeerDTLS_Status>` **get_status** **(** **)** const
+- :ref:`Status<enum_PacketPeerDTLS_Status>` **get_status** **(** **)** |const|
 
 Returns the status of the connection. See :ref:`Status<enum_PacketPeerDTLS_Status>` for values.
 
@@ -91,3 +91,6 @@ Returns the status of the connection. See :ref:`Status<enum_PacketPeerDTLS_Statu
 
 Poll the connection to check for incoming packets. Call this frequently to update the status and keep the connection working.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

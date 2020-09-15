@@ -89,3 +89,6 @@ Sets the collision shape's shape to the addition of all its convexed :ref:`MeshI
 
 If this method exists within a script it will be called whenever the shape resource has been modified.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -197,17 +197,17 @@ Methods
 -------
 
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`get_flag_x<class_Generic6DOFJoint_method_get_flag_x>` **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** const                                 |
+| :ref:`bool<class_bool>`   | :ref:`get_flag_x<class_Generic6DOFJoint_method_get_flag_x>` **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** |const|                               |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`get_flag_y<class_Generic6DOFJoint_method_get_flag_y>` **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** const                                 |
+| :ref:`bool<class_bool>`   | :ref:`get_flag_y<class_Generic6DOFJoint_method_get_flag_y>` **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** |const|                               |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`get_flag_z<class_Generic6DOFJoint_method_get_flag_z>` **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** const                                 |
+| :ref:`bool<class_bool>`   | :ref:`get_flag_z<class_Generic6DOFJoint_method_get_flag_z>` **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** |const|                               |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_param_x<class_Generic6DOFJoint_method_get_param_x>` **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** const                            |
+| :ref:`float<class_float>` | :ref:`get_param_x<class_Generic6DOFJoint_method_get_param_x>` **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** |const|                          |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_param_y<class_Generic6DOFJoint_method_get_param_y>` **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** const                            |
+| :ref:`float<class_float>` | :ref:`get_param_y<class_Generic6DOFJoint_method_get_param_y>` **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** |const|                          |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_param_z<class_Generic6DOFJoint_method_get_param_z>` **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** const                            |
+| :ref:`float<class_float>` | :ref:`get_param_z<class_Generic6DOFJoint_method_get_param_z>` **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** |const|                          |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_flag_x<class_Generic6DOFJoint_method_set_flag_x>` **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag, :ref:`bool<class_bool>` value **)**        |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1649,37 +1649,37 @@ Method Descriptions
 
 .. _class_Generic6DOFJoint_method_get_flag_x:
 
-- :ref:`bool<class_bool>` **get_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** const
+- :ref:`bool<class_bool>` **get_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** |const|
 
 ----
 
 .. _class_Generic6DOFJoint_method_get_flag_y:
 
-- :ref:`bool<class_bool>` **get_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** const
+- :ref:`bool<class_bool>` **get_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** |const|
 
 ----
 
 .. _class_Generic6DOFJoint_method_get_flag_z:
 
-- :ref:`bool<class_bool>` **get_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** const
+- :ref:`bool<class_bool>` **get_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** |const|
 
 ----
 
 .. _class_Generic6DOFJoint_method_get_param_x:
 
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** const
+- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** |const|
 
 ----
 
 .. _class_Generic6DOFJoint_method_get_param_y:
 
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** const
+- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** |const|
 
 ----
 
 .. _class_Generic6DOFJoint_method_get_param_z:
 
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** const
+- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** |const|
 
 ----
 
@@ -1717,3 +1717,6 @@ Method Descriptions
 
 - void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param, :ref:`float<class_float>` value **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

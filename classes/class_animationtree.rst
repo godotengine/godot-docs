@@ -46,7 +46,7 @@ Methods
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`advance<class_AnimationTree_method_advance>` **(** :ref:`float<class_float>` delta **)**                                                              |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>` | :ref:`get_root_motion_transform<class_AnimationTree_method_get_root_motion_transform>` **(** **)** const                                                    |
+| :ref:`Transform<class_Transform>` | :ref:`get_root_motion_transform<class_AnimationTree_method_get_root_motion_transform>` **(** **)** |const|                                                  |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`rename_parameter<class_AnimationTree_method_rename_parameter>` **(** :ref:`String<class_String>` old_name, :ref:`String<class_String>` new_name **)** |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -164,7 +164,7 @@ Manually advance the animations by the specified time (in seconds).
 
 .. _class_AnimationTree_method_get_root_motion_transform:
 
-- :ref:`Transform<class_Transform>` **get_root_motion_transform** **(** **)** const
+- :ref:`Transform<class_Transform>` **get_root_motion_transform** **(** **)** |const|
 
 Retrieve the motion of the :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` as a :ref:`Transform<class_Transform>` that can be used elsewhere. If :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` is not a path to a track of type :ref:`Animation.TYPE_TRANSFORM<class_Animation_constant_TYPE_TRANSFORM>`, returns an identity transformation.
 
@@ -174,3 +174,6 @@ Retrieve the motion of the :ref:`root_motion_track<class_AnimationTree_property_
 
 - void **rename_parameter** **(** :ref:`String<class_String>` old_name, :ref:`String<class_String>` new_name **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

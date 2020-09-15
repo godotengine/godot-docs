@@ -33,7 +33,7 @@ Methods
 -------
 
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`WebSocketPeer<class_WebSocketPeer>` | :ref:`get_peer<class_WebSocketMultiplayerPeer_method_get_peer>` **(** :ref:`int<class_int>` peer_id **)** const                                                                                                                                              |
+| :ref:`WebSocketPeer<class_WebSocketPeer>` | :ref:`get_peer<class_WebSocketMultiplayerPeer_method_get_peer>` **(** :ref:`int<class_int>` peer_id **)** |const|                                                                                                                                            |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`set_buffers<class_WebSocketMultiplayerPeer_method_set_buffers>` **(** :ref:`int<class_int>` input_buffer_size_kb, :ref:`int<class_int>` input_max_packets, :ref:`int<class_int>` output_buffer_size_kb, :ref:`int<class_int>` output_max_packets **)** |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -54,7 +54,7 @@ Method Descriptions
 
 .. _class_WebSocketMultiplayerPeer_method_get_peer:
 
-- :ref:`WebSocketPeer<class_WebSocketPeer>` **get_peer** **(** :ref:`int<class_int>` peer_id **)** const
+- :ref:`WebSocketPeer<class_WebSocketPeer>` **get_peer** **(** :ref:`int<class_int>` peer_id **)** |const|
 
 Returns the :ref:`WebSocketPeer<class_WebSocketPeer>` associated to the given ``peer_id``.
 
@@ -72,3 +72,6 @@ Buffer sizes are expressed in KiB, so ``4 = 2^12 = 4096 bytes``. All parameters 
 
 **Note:** HTML5 exports only use the input buffer since the output one is managed by browsers.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -23,15 +23,15 @@ Once added to the scene tree and enabled using :ref:`make_current<class_Listener
 Methods
 -------
 
-+-----------------------------------+-----------------------------------------------------------------------------------------------+
-| void                              | :ref:`clear_current<class_Listener_method_clear_current>` **(** **)**                         |
-+-----------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>` | :ref:`get_listener_transform<class_Listener_method_get_listener_transform>` **(** **)** const |
-+-----------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_current<class_Listener_method_is_current>` **(** **)** const                         |
-+-----------------------------------+-----------------------------------------------------------------------------------------------+
-| void                              | :ref:`make_current<class_Listener_method_make_current>` **(** **)**                           |
-+-----------------------------------+-----------------------------------------------------------------------------------------------+
++-----------------------------------+-------------------------------------------------------------------------------------------------+
+| void                              | :ref:`clear_current<class_Listener_method_clear_current>` **(** **)**                           |
++-----------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_Transform>` | :ref:`get_listener_transform<class_Listener_method_get_listener_transform>` **(** **)** |const| |
++-----------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`is_current<class_Listener_method_is_current>` **(** **)** |const|                         |
++-----------------------------------+-------------------------------------------------------------------------------------------------+
+| void                              | :ref:`make_current<class_Listener_method_make_current>` **(** **)**                             |
++-----------------------------------+-------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -46,7 +46,7 @@ Disables the listener to use the current camera's listener instead.
 
 .. _class_Listener_method_get_listener_transform:
 
-- :ref:`Transform<class_Transform>` **get_listener_transform** **(** **)** const
+- :ref:`Transform<class_Transform>` **get_listener_transform** **(** **)** |const|
 
 Returns the listener's global orthonormalized :ref:`Transform<class_Transform>`.
 
@@ -54,7 +54,7 @@ Returns the listener's global orthonormalized :ref:`Transform<class_Transform>`.
 
 .. _class_Listener_method_is_current:
 
-- :ref:`bool<class_bool>` **is_current** **(** **)** const
+- :ref:`bool<class_bool>` **is_current** **(** **)** |const|
 
 Returns ``true`` if the listener was made current using :ref:`make_current<class_Listener_method_make_current>`, ``false`` otherwise.
 
@@ -68,3 +68,6 @@ Returns ``true`` if the listener was made current using :ref:`make_current<class
 
 Enables the listener. This will override the current camera's listener.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

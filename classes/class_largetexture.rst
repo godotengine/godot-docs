@@ -35,11 +35,11 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`clear<class_LargeTexture_method_clear>` **(** **)**                                                                                          |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_piece_count<class_LargeTexture_method_get_piece_count>` **(** **)** const                                                                |
+| :ref:`int<class_int>`         | :ref:`get_piece_count<class_LargeTexture_method_get_piece_count>` **(** **)** |const|                                                              |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_piece_offset<class_LargeTexture_method_get_piece_offset>` **(** :ref:`int<class_int>` idx **)** const                                    |
+| :ref:`Vector2<class_Vector2>` | :ref:`get_piece_offset<class_LargeTexture_method_get_piece_offset>` **(** :ref:`int<class_int>` idx **)** |const|                                  |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`get_piece_texture<class_LargeTexture_method_get_piece_texture>` **(** :ref:`int<class_int>` idx **)** const                                  |
+| :ref:`Texture<class_Texture>` | :ref:`get_piece_texture<class_LargeTexture_method_get_piece_texture>` **(** :ref:`int<class_int>` idx **)** |const|                                |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_piece_offset<class_LargeTexture_method_set_piece_offset>` **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` ofs **)**       |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -69,7 +69,7 @@ Clears the ``LargeTexture``.
 
 .. _class_LargeTexture_method_get_piece_count:
 
-- :ref:`int<class_int>` **get_piece_count** **(** **)** const
+- :ref:`int<class_int>` **get_piece_count** **(** **)** |const|
 
 Returns the number of pieces currently in this ``LargeTexture``.
 
@@ -77,7 +77,7 @@ Returns the number of pieces currently in this ``LargeTexture``.
 
 .. _class_LargeTexture_method_get_piece_offset:
 
-- :ref:`Vector2<class_Vector2>` **get_piece_offset** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Vector2<class_Vector2>` **get_piece_offset** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the offset of the piece with the index ``idx``.
 
@@ -85,7 +85,7 @@ Returns the offset of the piece with the index ``idx``.
 
 .. _class_LargeTexture_method_get_piece_texture:
 
-- :ref:`Texture<class_Texture>` **get_piece_texture** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Texture<class_Texture>` **get_piece_texture** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the :ref:`Texture<class_Texture>` of the piece with the index ``idx``.
 
@@ -113,3 +113,6 @@ Sets the :ref:`Texture<class_Texture>` of the piece with index ``idx`` to ``text
 
 Sets the size of this ``LargeTexture``.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

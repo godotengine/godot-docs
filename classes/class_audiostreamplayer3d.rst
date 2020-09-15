@@ -18,6 +18,8 @@ Description
 
 Plays a sound effect with directed sound effects, dampens with distance if needed, generates effect of hearable position in space.
 
+By default, audio is heard from the camera position. This can be changed by adding a :ref:`Listener<class_Listener>` node to the scene and enabling it by calling :ref:`Listener.make_current<class_Listener_method_make_current>` on it.
+
 Tutorials
 ---------
 
@@ -487,3 +489,6 @@ Sets the position from which audio will be played, in seconds.
 
 Stops the audio.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

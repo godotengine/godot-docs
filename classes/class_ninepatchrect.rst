@@ -47,7 +47,7 @@ Methods
 -------
 
 +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_patch_margin<class_NinePatchRect_method_get_patch_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                        |
+| :ref:`int<class_int>` | :ref:`get_patch_margin<class_NinePatchRect_method_get_patch_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** |const|                      |
 +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                  | :ref:`set_patch_margin<class_NinePatchRect_method_set_patch_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`int<class_int>` value **)** |
 +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -228,7 +228,7 @@ Method Descriptions
 
 .. _class_NinePatchRect_method_get_patch_margin:
 
-- :ref:`int<class_int>` **get_patch_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+- :ref:`int<class_int>` **get_patch_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** |const|
 
 Returns the size of the margin identified by the given :ref:`Margin<enum_@GlobalScope_Margin>` constant.
 
@@ -240,3 +240,6 @@ Returns the size of the margin identified by the given :ref:`Margin<enum_@Global
 
 Sets the size of the margin identified by the given :ref:`Margin<enum_@GlobalScope_Margin>` constant to ``value`` in pixels.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

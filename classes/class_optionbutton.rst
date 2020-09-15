@@ -43,25 +43,25 @@ Methods
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`clear<class_OptionButton_method_clear>` **(** **)**                                                                                                                       |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_item_count<class_OptionButton_method_get_item_count>` **(** **)** const                                                                                               |
+| :ref:`int<class_int>`             | :ref:`get_item_count<class_OptionButton_method_get_item_count>` **(** **)** |const|                                                                                             |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`     | :ref:`get_item_icon<class_OptionButton_method_get_item_icon>` **(** :ref:`int<class_int>` idx **)** const                                                                       |
+| :ref:`Texture<class_Texture>`     | :ref:`get_item_icon<class_OptionButton_method_get_item_icon>` **(** :ref:`int<class_int>` idx **)** |const|                                                                     |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_item_id<class_OptionButton_method_get_item_id>` **(** :ref:`int<class_int>` idx **)** const                                                                           |
+| :ref:`int<class_int>`             | :ref:`get_item_id<class_OptionButton_method_get_item_id>` **(** :ref:`int<class_int>` idx **)** |const|                                                                         |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_item_index<class_OptionButton_method_get_item_index>` **(** :ref:`int<class_int>` id **)** const                                                                      |
+| :ref:`int<class_int>`             | :ref:`get_item_index<class_OptionButton_method_get_item_index>` **(** :ref:`int<class_int>` id **)** |const|                                                                    |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`     | :ref:`get_item_metadata<class_OptionButton_method_get_item_metadata>` **(** :ref:`int<class_int>` idx **)** const                                                               |
+| :ref:`Variant<class_Variant>`     | :ref:`get_item_metadata<class_OptionButton_method_get_item_metadata>` **(** :ref:`int<class_int>` idx **)** |const|                                                             |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`       | :ref:`get_item_text<class_OptionButton_method_get_item_text>` **(** :ref:`int<class_int>` idx **)** const                                                                       |
+| :ref:`String<class_String>`       | :ref:`get_item_text<class_OptionButton_method_get_item_text>` **(** :ref:`int<class_int>` idx **)** |const|                                                                     |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_popup<class_OptionButton_method_get_popup>` **(** **)** const                                                                                                         |
+| :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_popup<class_OptionButton_method_get_popup>` **(** **)** |const|                                                                                                       |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_selected_id<class_OptionButton_method_get_selected_id>` **(** **)** const                                                                                             |
+| :ref:`int<class_int>`             | :ref:`get_selected_id<class_OptionButton_method_get_selected_id>` **(** **)** |const|                                                                                           |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`     | :ref:`get_selected_metadata<class_OptionButton_method_get_selected_metadata>` **(** **)** const                                                                                 |
+| :ref:`Variant<class_Variant>`     | :ref:`get_selected_metadata<class_OptionButton_method_get_selected_metadata>` **(** **)** |const|                                                                               |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_item_disabled<class_OptionButton_method_is_item_disabled>` **(** :ref:`int<class_int>` idx **)** const                                                                 |
+| :ref:`bool<class_bool>`           | :ref:`is_item_disabled<class_OptionButton_method_is_item_disabled>` **(** :ref:`int<class_int>` idx **)** |const|                                                               |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`remove_item<class_OptionButton_method_remove_item>` **(** :ref:`int<class_int>` idx **)**                                                                                 |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -116,7 +116,7 @@ Signals
 
 - **item_focused** **(** :ref:`int<class_int>` index **)**
 
-Emitted the when user navigates to an item using the ``ui_up`` or ``ui_down`` actions. The index of the item selected is passed as argument.
+Emitted when the user navigates to an item using the ``ui_up`` or ``ui_down`` actions. The index of the item selected is passed as argument.
 
 ----
 
@@ -178,7 +178,7 @@ Clears all the items in the ``OptionButton``.
 
 .. _class_OptionButton_method_get_item_count:
 
-- :ref:`int<class_int>` **get_item_count** **(** **)** const
+- :ref:`int<class_int>` **get_item_count** **(** **)** |const|
 
 Returns the amount of items in the OptionButton, including separators.
 
@@ -186,7 +186,7 @@ Returns the amount of items in the OptionButton, including separators.
 
 .. _class_OptionButton_method_get_item_icon:
 
-- :ref:`Texture<class_Texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Texture<class_Texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the icon of the item at index ``idx``.
 
@@ -194,7 +194,7 @@ Returns the icon of the item at index ``idx``.
 
 .. _class_OptionButton_method_get_item_id:
 
-- :ref:`int<class_int>` **get_item_id** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`int<class_int>` **get_item_id** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the ID of the item at index ``idx``.
 
@@ -202,7 +202,7 @@ Returns the ID of the item at index ``idx``.
 
 .. _class_OptionButton_method_get_item_index:
 
-- :ref:`int<class_int>` **get_item_index** **(** :ref:`int<class_int>` id **)** const
+- :ref:`int<class_int>` **get_item_index** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the index of the item with the given ``id``.
 
@@ -210,7 +210,7 @@ Returns the index of the item with the given ``id``.
 
 .. _class_OptionButton_method_get_item_metadata:
 
-- :ref:`Variant<class_Variant>` **get_item_metadata** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Variant<class_Variant>` **get_item_metadata** **(** :ref:`int<class_int>` idx **)** |const|
 
 Retrieves the metadata of an item. Metadata may be any type and can be used to store extra information about an item, such as an external string ID.
 
@@ -218,7 +218,7 @@ Retrieves the metadata of an item. Metadata may be any type and can be used to s
 
 .. _class_OptionButton_method_get_item_text:
 
-- :ref:`String<class_String>` **get_item_text** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`String<class_String>` **get_item_text** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the text of the item at index ``idx``.
 
@@ -226,7 +226,7 @@ Returns the text of the item at index ``idx``.
 
 .. _class_OptionButton_method_get_popup:
 
-- :ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** const
+- :ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** |const|
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
@@ -234,7 +234,7 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
 .. _class_OptionButton_method_get_selected_id:
 
-- :ref:`int<class_int>` **get_selected_id** **(** **)** const
+- :ref:`int<class_int>` **get_selected_id** **(** **)** |const|
 
 Returns the ID of the selected item, or ``0`` if no item is selected.
 
@@ -242,7 +242,7 @@ Returns the ID of the selected item, or ``0`` if no item is selected.
 
 .. _class_OptionButton_method_get_selected_metadata:
 
-- :ref:`Variant<class_Variant>` **get_selected_metadata** **(** **)** const
+- :ref:`Variant<class_Variant>` **get_selected_metadata** **(** **)** |const|
 
 Gets the metadata of the selected item. Metadata for items can be set using :ref:`set_item_metadata<class_OptionButton_method_set_item_metadata>`.
 
@@ -250,7 +250,7 @@ Gets the metadata of the selected item. Metadata for items can be set using :ref
 
 .. _class_OptionButton_method_is_item_disabled:
 
-- :ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns ``true`` if the item at index ``idx`` is disabled.
 
@@ -312,3 +312,6 @@ Sets the metadata of an item. Metadata may be of any type and can be used to sto
 
 Sets the text of the item at index ``idx``.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -65,15 +65,15 @@ Properties
 Methods
 -------
 
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`can_instance<class_PackedScene_method_can_instance>` **(** **)** const                                                         |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneState<class_SceneState>`   | :ref:`get_state<class_PackedScene_method_get_state>` **(** **)**                                                                     |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`               | :ref:`instance<class_PackedScene_method_instance>` **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** const |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pack<class_PackedScene_method_pack>` **(** :ref:`Node<class_Node>` path **)**                                                  |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`can_instance<class_PackedScene_method_can_instance>` **(** **)** |const|                                                         |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`SceneState<class_SceneState>`   | :ref:`get_state<class_PackedScene_method_get_state>` **(** **)**                                                                       |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_Node>`               | :ref:`instance<class_PackedScene_method_instance>` **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** |const| |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pack<class_PackedScene_method_pack>` **(** :ref:`Node<class_Node>` path **)**                                                    |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -118,7 +118,7 @@ Method Descriptions
 
 .. _class_PackedScene_method_can_instance:
 
-- :ref:`bool<class_bool>` **can_instance** **(** **)** const
+- :ref:`bool<class_bool>` **can_instance** **(** **)** |const|
 
 Returns ``true`` if the scene file has nodes.
 
@@ -134,7 +134,7 @@ Returns the ``SceneState`` representing the scene file contents.
 
 .. _class_PackedScene_method_instance:
 
-- :ref:`Node<class_Node>` **instance** **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** const
+- :ref:`Node<class_Node>` **instance** **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** |const|
 
 Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers a :ref:`Node.NOTIFICATION_INSTANCED<class_Node_constant_NOTIFICATION_INSTANCED>` notification on the root node.
 
@@ -146,3 +146,6 @@ Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). 
 
 Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.owner<class_Node_property_owner>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

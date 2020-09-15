@@ -60,3 +60,6 @@ Method Descriptions
 
 Based on the set of points provided, this creates and assigns the :ref:`points<class_ConvexPolygonShape2D_property_points>` property using the convex hull algorithm. Removing all unneeded points. See :ref:`Geometry.convex_hull_2d<class_Geometry_method_convex_hull_2d>` for details.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

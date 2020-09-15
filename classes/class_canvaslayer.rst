@@ -53,9 +53,9 @@ Properties
 Methods
 -------
 
-+-----------------------+--------------------------------------------------------------------------+
-| :ref:`RID<class_RID>` | :ref:`get_canvas<class_CanvasLayer_method_get_canvas>` **(** **)** const |
-+-----------------------+--------------------------------------------------------------------------+
++-----------------------+----------------------------------------------------------------------------+
+| :ref:`RID<class_RID>` | :ref:`get_canvas<class_CanvasLayer_method_get_canvas>` **(** **)** |const| |
++-----------------------+----------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -205,7 +205,10 @@ Method Descriptions
 
 .. _class_CanvasLayer_method_get_canvas:
 
-- :ref:`RID<class_RID>` **get_canvas** **(** **)** const
+- :ref:`RID<class_RID>` **get_canvas** **(** **)** |const|
 
 Returns the RID of the canvas used by this layer.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

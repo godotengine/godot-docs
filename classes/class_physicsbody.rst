@@ -42,9 +42,9 @@ Methods
 +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>` | :ref:`get_collision_exceptions<class_PhysicsBody_method_get_collision_exceptions>` **(** **)**                                                        |
 +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`get_collision_layer_bit<class_PhysicsBody_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
+| :ref:`bool<class_bool>`   | :ref:`get_collision_layer_bit<class_PhysicsBody_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** |const|                        |
 +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`get_collision_mask_bit<class_PhysicsBody_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                            |
+| :ref:`bool<class_bool>`   | :ref:`get_collision_mask_bit<class_PhysicsBody_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** |const|                          |
 +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`remove_collision_exception_with<class_PhysicsBody_method_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**             |
 +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -72,7 +72,7 @@ The physics layers this area is in.
 
 Collidable objects can exist in any of 32 different layers. These layers work like a tagging system, and are not visual. A collidable can use these layers to select with which objects it can collide, using the :ref:`collision_mask<class_PhysicsBody_property_collision_mask>` property.
 
-A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A.
+A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 
@@ -88,7 +88,7 @@ A contact is detected if object A is in any of the layers that object B scans, o
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The physics layers this area scans for collisions.
+The physics layers this area scans for collisions. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 Method Descriptions
 -------------------
@@ -111,7 +111,7 @@ Returns an array of nodes that were added as collision exceptions for this body.
 
 .. _class_PhysicsBody_method_get_collision_layer_bit:
 
-- :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
+- :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** |const|
 
 Returns an individual bit on the :ref:`collision_layer<class_PhysicsBody_property_collision_layer>`.
 
@@ -119,7 +119,7 @@ Returns an individual bit on the :ref:`collision_layer<class_PhysicsBody_propert
 
 .. _class_PhysicsBody_method_get_collision_mask_bit:
 
-- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
+- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** |const|
 
 Returns an individual bit on the :ref:`collision_mask<class_PhysicsBody_property_collision_mask>`.
 
@@ -147,3 +147,6 @@ Sets individual bits on the :ref:`collision_layer<class_PhysicsBody_property_col
 
 Sets individual bits on the :ref:`collision_mask<class_PhysicsBody_property_collision_mask>` bitmask. Use this if you only need to change one layer's value.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -41,7 +41,7 @@ Methods
 -------
 
 +-------------------------+------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_stopped<class_Timer_method_is_stopped>` **(** **)** const                       |
+| :ref:`bool<class_bool>` | :ref:`is_stopped<class_Timer_method_is_stopped>` **(** **)** |const|                     |
 +-------------------------+------------------------------------------------------------------------------------------+
 | void                    | :ref:`start<class_Timer_method_start>` **(** :ref:`float<class_float>` time_sec=-1 **)** |
 +-------------------------+------------------------------------------------------------------------------------------+
@@ -172,7 +172,7 @@ Method Descriptions
 
 .. _class_Timer_method_is_stopped:
 
-- :ref:`bool<class_bool>` **is_stopped** **(** **)** const
+- :ref:`bool<class_bool>` **is_stopped** **(** **)** |const|
 
 Returns ``true`` if the timer is stopped.
 
@@ -194,3 +194,6 @@ Starts the timer. Sets ``wait_time`` to ``time_sec`` if ``time_sec > 0``. This a
 
 Stops the timer.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

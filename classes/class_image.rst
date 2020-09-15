@@ -57,7 +57,7 @@ Methods
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`decompress<class_Image_method_decompress>` **(** **)**                                                                                                                                                                                                     |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AlphaMode<enum_Image_AlphaMode>`    | :ref:`detect_alpha<class_Image_method_detect_alpha>` **(** **)** const                                                                                                                                                                                           |
+| :ref:`AlphaMode<enum_Image_AlphaMode>`    | :ref:`detect_alpha<class_Image_method_detect_alpha>` **(** **)** |const|                                                                                                                                                                                         |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`expand_x2_hq2x<class_Image_method_expand_x2_hq2x>` **(** **)**                                                                                                                                                                                             |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -71,33 +71,33 @@ Methods
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>` **(** :ref:`bool<class_bool>` renormalize=false **)**                                                                                                                                               |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_data<class_Image_method_get_data>` **(** **)** const                                                                                                                                                                                                   |
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_data<class_Image_method_get_data>` **(** **)** |const|                                                                                                                                                                                                 |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Format<enum_Image_Format>`          | :ref:`get_format<class_Image_method_get_format>` **(** **)** const                                                                                                                                                                                               |
+| :ref:`Format<enum_Image_Format>`          | :ref:`get_format<class_Image_method_get_format>` **(** **)** |const|                                                                                                                                                                                             |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`get_height<class_Image_method_get_height>` **(** **)** const                                                                                                                                                                                               |
+| :ref:`int<class_int>`                     | :ref:`get_height<class_Image_method_get_height>` **(** **)** |const|                                                                                                                                                                                             |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`get_mipmap_offset<class_Image_method_get_mipmap_offset>` **(** :ref:`int<class_int>` mipmap **)** const                                                                                                                                                    |
+| :ref:`int<class_int>`                     | :ref:`get_mipmap_offset<class_Image_method_get_mipmap_offset>` **(** :ref:`int<class_int>` mipmap **)** |const|                                                                                                                                                  |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`                 | :ref:`get_pixel<class_Image_method_get_pixel>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const                                                                                                                                                |
+| :ref:`Color<class_Color>`                 | :ref:`get_pixel<class_Image_method_get_pixel>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |const|                                                                                                                                              |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`                 | :ref:`get_pixelv<class_Image_method_get_pixelv>` **(** :ref:`Vector2<class_Vector2>` src **)** const                                                                                                                                                             |
+| :ref:`Color<class_Color>`                 | :ref:`get_pixelv<class_Image_method_get_pixelv>` **(** :ref:`Vector2<class_Vector2>` src **)** |const|                                                                                                                                                           |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_Image>`                 | :ref:`get_rect<class_Image_method_get_rect>` **(** :ref:`Rect2<class_Rect2>` rect **)** const                                                                                                                                                                    |
+| :ref:`Image<class_Image>`                 | :ref:`get_rect<class_Image_method_get_rect>` **(** :ref:`Rect2<class_Rect2>` rect **)** |const|                                                                                                                                                                  |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`             | :ref:`get_size<class_Image_method_get_size>` **(** **)** const                                                                                                                                                                                                   |
+| :ref:`Vector2<class_Vector2>`             | :ref:`get_size<class_Image_method_get_size>` **(** **)** |const|                                                                                                                                                                                                 |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`                 | :ref:`get_used_rect<class_Image_method_get_used_rect>` **(** **)** const                                                                                                                                                                                         |
+| :ref:`Rect2<class_Rect2>`                 | :ref:`get_used_rect<class_Image_method_get_used_rect>` **(** **)** |const|                                                                                                                                                                                       |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`get_width<class_Image_method_get_width>` **(** **)** const                                                                                                                                                                                                 |
+| :ref:`int<class_int>`                     | :ref:`get_width<class_Image_method_get_width>` **(** **)** |const|                                                                                                                                                                                               |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`has_mipmaps<class_Image_method_has_mipmaps>` **(** **)** const                                                                                                                                                                                             |
+| :ref:`bool<class_bool>`                   | :ref:`has_mipmaps<class_Image_method_has_mipmaps>` **(** **)** |const|                                                                                                                                                                                           |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`is_compressed<class_Image_method_is_compressed>` **(** **)** const                                                                                                                                                                                         |
+| :ref:`bool<class_bool>`                   | :ref:`is_compressed<class_Image_method_is_compressed>` **(** **)** |const|                                                                                                                                                                                       |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`is_empty<class_Image_method_is_empty>` **(** **)** const                                                                                                                                                                                                   |
+| :ref:`bool<class_bool>`                   | :ref:`is_empty<class_Image_method_is_empty>` **(** **)** |const|                                                                                                                                                                                                 |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`is_invisible<class_Image_method_is_invisible>` **(** **)** const                                                                                                                                                                                           |
+| :ref:`bool<class_bool>`                   | :ref:`is_invisible<class_Image_method_is_invisible>` **(** **)** |const|                                                                                                                                                                                         |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`load<class_Image_method_load>` **(** :ref:`String<class_String>` path **)**                                                                                                                                                                                |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -121,11 +121,11 @@ Methods
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Image<class_Image>`                 | :ref:`rgbe_to_srgb<class_Image_method_rgbe_to_srgb>` **(** **)**                                                                                                                                                                                                 |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`save_exr<class_Image_method_save_exr>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` grayscale=false **)** const                                                                                                                         |
+| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`save_exr<class_Image_method_save_exr>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` grayscale=false **)** |const|                                                                                                                       |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`save_png<class_Image_method_save_png>` **(** :ref:`String<class_String>` path **)** const                                                                                                                                                                  |
+| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`save_png<class_Image_method_save_png>` **(** :ref:`String<class_String>` path **)** |const|                                                                                                                                                                |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`save_png_to_buffer<class_Image_method_save_png_to_buffer>` **(** **)** const                                                                                                                                                                               |
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`save_png_to_buffer<class_Image_method_save_png_to_buffer>` **(** **)** |const|                                                                                                                                                                             |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`set_pixel<class_Image_method_set_pixel>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`Color<class_Color>` color **)**                                                                                                                     |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -546,7 +546,7 @@ Decompresses the image if it is compressed. Returns an error if decompress funct
 
 .. _class_Image_method_detect_alpha:
 
-- :ref:`AlphaMode<enum_Image_AlphaMode>` **detect_alpha** **(** **)** const
+- :ref:`AlphaMode<enum_Image_AlphaMode>` **detect_alpha** **(** **)** |const|
 
 Returns :ref:`ALPHA_BLEND<class_Image_constant_ALPHA_BLEND>` if the image has data for alpha values. Returns :ref:`ALPHA_BIT<class_Image_constant_ALPHA_BIT>` if all the alpha values are stored in a single bit. Returns :ref:`ALPHA_NONE<class_Image_constant_ALPHA_NONE>` if no data for alpha values is found.
 
@@ -602,15 +602,15 @@ Generates mipmaps for the image. Mipmaps are pre-calculated and lower resolution
 
 .. _class_Image_method_get_data:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **get_data** **(** **)** const
+- :ref:`PoolByteArray<class_PoolByteArray>` **get_data** **(** **)** |const|
 
-Returns the image's raw data.
+Returns a copy of the image's raw data.
 
 ----
 
 .. _class_Image_method_get_format:
 
-- :ref:`Format<enum_Image_Format>` **get_format** **(** **)** const
+- :ref:`Format<enum_Image_Format>` **get_format** **(** **)** |const|
 
 Returns the image's format. See :ref:`Format<enum_Image_Format>` constants.
 
@@ -618,7 +618,7 @@ Returns the image's format. See :ref:`Format<enum_Image_Format>` constants.
 
 .. _class_Image_method_get_height:
 
-- :ref:`int<class_int>` **get_height** **(** **)** const
+- :ref:`int<class_int>` **get_height** **(** **)** |const|
 
 Returns the image's height.
 
@@ -626,7 +626,7 @@ Returns the image's height.
 
 .. _class_Image_method_get_mipmap_offset:
 
-- :ref:`int<class_int>` **get_mipmap_offset** **(** :ref:`int<class_int>` mipmap **)** const
+- :ref:`int<class_int>` **get_mipmap_offset** **(** :ref:`int<class_int>` mipmap **)** |const|
 
 Returns the offset where the image's mipmap with index ``mipmap`` is stored in the ``data`` dictionary.
 
@@ -634,7 +634,7 @@ Returns the offset where the image's mipmap with index ``mipmap`` is stored in t
 
 .. _class_Image_method_get_pixel:
 
-- :ref:`Color<class_Color>` **get_pixel** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
+- :ref:`Color<class_Color>` **get_pixel** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |const|
 
 Returns the color of the pixel at ``(x, y)`` if the image is locked. If the image is unlocked, it always returns a :ref:`Color<class_Color>` with the value ``(0, 0, 0, 1.0)``. This is the same as :ref:`get_pixelv<class_Image_method_get_pixelv>`, but two integer arguments instead of a Vector2 argument.
 
@@ -642,7 +642,7 @@ Returns the color of the pixel at ``(x, y)`` if the image is locked. If the imag
 
 .. _class_Image_method_get_pixelv:
 
-- :ref:`Color<class_Color>` **get_pixelv** **(** :ref:`Vector2<class_Vector2>` src **)** const
+- :ref:`Color<class_Color>` **get_pixelv** **(** :ref:`Vector2<class_Vector2>` src **)** |const|
 
 Returns the color of the pixel at ``src`` if the image is locked. If the image is unlocked, it always returns a :ref:`Color<class_Color>` with the value ``(0, 0, 0, 1.0)``. This is the same as :ref:`get_pixel<class_Image_method_get_pixel>`, but with a Vector2 argument instead of two integer arguments.
 
@@ -650,7 +650,7 @@ Returns the color of the pixel at ``src`` if the image is locked. If the image i
 
 .. _class_Image_method_get_rect:
 
-- :ref:`Image<class_Image>` **get_rect** **(** :ref:`Rect2<class_Rect2>` rect **)** const
+- :ref:`Image<class_Image>` **get_rect** **(** :ref:`Rect2<class_Rect2>` rect **)** |const|
 
 Returns a new image that is a copy of the image's area specified with ``rect``.
 
@@ -658,7 +658,7 @@ Returns a new image that is a copy of the image's area specified with ``rect``.
 
 .. _class_Image_method_get_size:
 
-- :ref:`Vector2<class_Vector2>` **get_size** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_size** **(** **)** |const|
 
 Returns the image's size (width and height).
 
@@ -666,7 +666,7 @@ Returns the image's size (width and height).
 
 .. _class_Image_method_get_used_rect:
 
-- :ref:`Rect2<class_Rect2>` **get_used_rect** **(** **)** const
+- :ref:`Rect2<class_Rect2>` **get_used_rect** **(** **)** |const|
 
 Returns a :ref:`Rect2<class_Rect2>` enclosing the visible portion of the image, considering each pixel with a non-zero alpha channel as visible.
 
@@ -674,7 +674,7 @@ Returns a :ref:`Rect2<class_Rect2>` enclosing the visible portion of the image, 
 
 .. _class_Image_method_get_width:
 
-- :ref:`int<class_int>` **get_width** **(** **)** const
+- :ref:`int<class_int>` **get_width** **(** **)** |const|
 
 Returns the image's width.
 
@@ -682,7 +682,7 @@ Returns the image's width.
 
 .. _class_Image_method_has_mipmaps:
 
-- :ref:`bool<class_bool>` **has_mipmaps** **(** **)** const
+- :ref:`bool<class_bool>` **has_mipmaps** **(** **)** |const|
 
 Returns ``true`` if the image has generated mipmaps.
 
@@ -690,7 +690,7 @@ Returns ``true`` if the image has generated mipmaps.
 
 .. _class_Image_method_is_compressed:
 
-- :ref:`bool<class_bool>` **is_compressed** **(** **)** const
+- :ref:`bool<class_bool>` **is_compressed** **(** **)** |const|
 
 Returns ``true`` if the image is compressed.
 
@@ -698,7 +698,7 @@ Returns ``true`` if the image is compressed.
 
 .. _class_Image_method_is_empty:
 
-- :ref:`bool<class_bool>` **is_empty** **(** **)** const
+- :ref:`bool<class_bool>` **is_empty** **(** **)** |const|
 
 Returns ``true`` if the image has no data.
 
@@ -706,7 +706,7 @@ Returns ``true`` if the image has no data.
 
 .. _class_Image_method_is_invisible:
 
-- :ref:`bool<class_bool>` **is_invisible** **(** **)** const
+- :ref:`bool<class_bool>` **is_invisible** **(** **)** |const|
 
 Returns ``true`` if all the image's pixels have an alpha value of 0. Returns ``false`` if any pixel has an alpha value higher than 0.
 
@@ -802,7 +802,7 @@ Converts a standard RGBE (Red Green Blue Exponent) image to an sRGB image.
 
 .. _class_Image_method_save_exr:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **save_exr** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` grayscale=false **)** const
+- :ref:`Error<enum_@GlobalScope_Error>` **save_exr** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` grayscale=false **)** |const|
 
 Saves the image as an EXR file to ``path``. If ``grayscale`` is ``true`` and the image has only one channel, it will be saved explicitly as monochrome rather than one red channel. This function will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` if Godot was compiled without the TinyEXR module.
 
@@ -810,7 +810,7 @@ Saves the image as an EXR file to ``path``. If ``grayscale`` is ``true`` and the
 
 .. _class_Image_method_save_png:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **save_png** **(** :ref:`String<class_String>` path **)** const
+- :ref:`Error<enum_@GlobalScope_Error>` **save_png** **(** :ref:`String<class_String>` path **)** |const|
 
 Saves the image as a PNG file to ``path``.
 
@@ -818,7 +818,7 @@ Saves the image as a PNG file to ``path``.
 
 .. _class_Image_method_save_png_to_buffer:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **save_png_to_buffer** **(** **)** const
+- :ref:`PoolByteArray<class_PoolByteArray>` **save_png_to_buffer** **(** **)** |const|
 
 ----
 
@@ -878,3 +878,6 @@ Converts the raw data from the sRGB colorspace to a linear scale.
 
 Unlocks the data and prevents changes.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

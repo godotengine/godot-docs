@@ -42,7 +42,7 @@ Methods
 -------
 
 +---------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`Skeleton<class_Skeleton>` | :ref:`get_parent_skeleton<class_SkeletonIK_method_get_parent_skeleton>` **(** **)** const      |
+| :ref:`Skeleton<class_Skeleton>` | :ref:`get_parent_skeleton<class_SkeletonIK_method_get_parent_skeleton>` **(** **)** |const|    |
 +---------------------------------+------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`         | :ref:`is_running<class_SkeletonIK_method_is_running>` **(** **)**                              |
 +---------------------------------+------------------------------------------------------------------------------------------------+
@@ -197,7 +197,7 @@ Method Descriptions
 
 .. _class_SkeletonIK_method_get_parent_skeleton:
 
-- :ref:`Skeleton<class_Skeleton>` **get_parent_skeleton** **(** **)** const
+- :ref:`Skeleton<class_Skeleton>` **get_parent_skeleton** **(** **)** |const|
 
 ----
 
@@ -217,3 +217,6 @@ Method Descriptions
 
 - void **stop** **(** **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

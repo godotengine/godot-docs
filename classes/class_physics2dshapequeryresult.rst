@@ -21,24 +21,24 @@ The result of a 2D shape query in :ref:`Physics2DServer<class_Physics2DServer>`.
 Methods
 -------
 
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`get_result_count<class_Physics2DShapeQueryResult_method_get_result_count>` **(** **)** const                                         |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>` | :ref:`get_result_object<class_Physics2DShapeQueryResult_method_get_result_object>` **(** :ref:`int<class_int>` idx **)** const             |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`get_result_object_id<class_Physics2DShapeQueryResult_method_get_result_object_id>` **(** :ref:`int<class_int>` idx **)** const       |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`get_result_object_shape<class_Physics2DShapeQueryResult_method_get_result_object_shape>` **(** :ref:`int<class_int>` idx **)** const |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`       | :ref:`get_result_rid<class_Physics2DShapeQueryResult_method_get_result_rid>` **(** :ref:`int<class_int>` idx **)** const                   |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`get_result_count<class_Physics2DShapeQueryResult_method_get_result_count>` **(** **)** |const|                                         |
++-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>` | :ref:`get_result_object<class_Physics2DShapeQueryResult_method_get_result_object>` **(** :ref:`int<class_int>` idx **)** |const|             |
++-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`get_result_object_id<class_Physics2DShapeQueryResult_method_get_result_object_id>` **(** :ref:`int<class_int>` idx **)** |const|       |
++-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`get_result_object_shape<class_Physics2DShapeQueryResult_method_get_result_object_shape>` **(** :ref:`int<class_int>` idx **)** |const| |
++-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`       | :ref:`get_result_rid<class_Physics2DShapeQueryResult_method_get_result_rid>` **(** :ref:`int<class_int>` idx **)** |const|                   |
++-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_Physics2DShapeQueryResult_method_get_result_count:
 
-- :ref:`int<class_int>` **get_result_count** **(** **)** const
+- :ref:`int<class_int>` **get_result_count** **(** **)** |const|
 
 Returns the number of objects that intersected with the shape.
 
@@ -46,7 +46,7 @@ Returns the number of objects that intersected with the shape.
 
 .. _class_Physics2DShapeQueryResult_method_get_result_object:
 
-- :ref:`Object<class_Object>` **get_result_object** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Object<class_Object>` **get_result_object** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the :ref:`Object<class_Object>` that intersected with the shape at index ``idx``.
 
@@ -54,7 +54,7 @@ Returns the :ref:`Object<class_Object>` that intersected with the shape at index
 
 .. _class_Physics2DShapeQueryResult_method_get_result_object_id:
 
-- :ref:`int<class_int>` **get_result_object_id** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`int<class_int>` **get_result_object_id** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the instance ID of the :ref:`Object<class_Object>` that intersected with the shape at index ``idx``.
 
@@ -62,7 +62,7 @@ Returns the instance ID of the :ref:`Object<class_Object>` that intersected with
 
 .. _class_Physics2DShapeQueryResult_method_get_result_object_shape:
 
-- :ref:`int<class_int>` **get_result_object_shape** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`int<class_int>` **get_result_object_shape** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the child index of the object's :ref:`Shape<class_Shape>` that intersected with the shape at index ``idx``.
 
@@ -70,7 +70,10 @@ Returns the child index of the object's :ref:`Shape<class_Shape>` that intersect
 
 .. _class_Physics2DShapeQueryResult_method_get_result_rid:
 
-- :ref:`RID<class_RID>` **get_result_rid** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`RID<class_RID>` **get_result_rid** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the :ref:`RID<class_RID>` of the object that intersected with the shape at index ``idx``.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

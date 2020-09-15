@@ -115,7 +115,7 @@ Methods
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`deselect<class_LineEdit_method_deselect>` **(** **)**                                                                          |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_menu<class_LineEdit_method_get_menu>` **(** **)** const                                                                    |
+| :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_menu<class_LineEdit_method_get_menu>` **(** **)** |const|                                                                  |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`menu_option<class_LineEdit_method_menu_option>` **(** :ref:`int<class_int>` option **)**                                       |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
@@ -577,7 +577,7 @@ Clears the current selection.
 
 .. _class_LineEdit_method_get_menu:
 
-- :ref:`PopupMenu<class_PopupMenu>` **get_menu** **(** **)** const
+- :ref:`PopupMenu<class_PopupMenu>` **get_menu** **(** **)** |const|
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` of this ``LineEdit``. By default, this menu is displayed when right-clicking on the ``LineEdit``.
 
@@ -612,3 +612,6 @@ Selects characters inside ``LineEdit`` between ``from`` and ``to``. By default, 
 
 Selects the whole :ref:`String<class_String>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

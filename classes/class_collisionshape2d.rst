@@ -51,7 +51,7 @@ Property Descriptions
 | *Getter*  | is_disabled()       |
 +-----------+---------------------+
 
-A disabled collision shape has no effect in the world.
+A disabled collision shape has no effect in the world. This property should be changed with :ref:`Object.set_deferred<class_Object_method_set_deferred>`.
 
 ----
 
@@ -99,3 +99,6 @@ The margin used for one-way collision (in pixels). Higher values will make the s
 
 The actual shape owned by this collision shape.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

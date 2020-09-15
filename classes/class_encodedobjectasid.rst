@@ -44,3 +44,6 @@ Property Descriptions
 
 The :ref:`Object<class_Object>` identifier stored in this ``EncodedObjectAsID`` instance. The object instance can be retrieved with :ref:`@GDScript.instance_from_id<class_@GDScript_method_instance_from_id>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

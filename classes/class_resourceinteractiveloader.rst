@@ -21,17 +21,17 @@ Interactive :ref:`Resource<class_Resource>` loader. This object is returned by :
 Methods
 -------
 
-+---------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_Resource>`       | :ref:`get_resource<class_ResourceInteractiveLoader_method_get_resource>` **(** **)**             |
-+---------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_stage<class_ResourceInteractiveLoader_method_get_stage>` **(** **)** const             |
-+---------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_stage_count<class_ResourceInteractiveLoader_method_get_stage_count>` **(** **)** const |
-+---------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`poll<class_ResourceInteractiveLoader_method_poll>` **(** **)**                             |
-+---------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_ResourceInteractiveLoader_method_wait>` **(** **)**                             |
-+---------------------------------------+--------------------------------------------------------------------------------------------------+
++---------------------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_Resource>`       | :ref:`get_resource<class_ResourceInteractiveLoader_method_get_resource>` **(** **)**               |
++---------------------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`get_stage<class_ResourceInteractiveLoader_method_get_stage>` **(** **)** |const|             |
++---------------------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`get_stage_count<class_ResourceInteractiveLoader_method_get_stage_count>` **(** **)** |const| |
++---------------------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`poll<class_ResourceInteractiveLoader_method_poll>` **(** **)**                               |
++---------------------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_ResourceInteractiveLoader_method_wait>` **(** **)**                               |
++---------------------------------------+----------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -46,7 +46,7 @@ Returns the loaded resource if the load operation completed successfully, ``null
 
 .. _class_ResourceInteractiveLoader_method_get_stage:
 
-- :ref:`int<class_int>` **get_stage** **(** **)** const
+- :ref:`int<class_int>` **get_stage** **(** **)** |const|
 
 Returns the load stage. The total amount of stages can be queried with :ref:`get_stage_count<class_ResourceInteractiveLoader_method_get_stage_count>`.
 
@@ -54,7 +54,7 @@ Returns the load stage. The total amount of stages can be queried with :ref:`get
 
 .. _class_ResourceInteractiveLoader_method_get_stage_count:
 
-- :ref:`int<class_int>` **get_stage_count** **(** **)** const
+- :ref:`int<class_int>` **get_stage_count** **(** **)** |const|
 
 Returns the total amount of stages (calls to :ref:`poll<class_ResourceInteractiveLoader_method_poll>`) needed to completely load this resource.
 
@@ -84,3 +84,6 @@ Returns :ref:`@GlobalScope.ERR_FILE_EOF<class_@GlobalScope_constant_ERR_FILE_EOF
 
 Returns another :ref:`Error<enum_@GlobalScope_Error>` code if a poll has failed, aborting the operation.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -49,3 +49,6 @@ Lowers the ``Semaphore``, allowing one more thread in. Returns :ref:`@GlobalScop
 
 Tries to wait for the ``Semaphore``, if its value is zero, blocks until non-zero. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` otherwise.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

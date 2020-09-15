@@ -85,3 +85,6 @@ The ``flags`` bitmask can be specified to customize the save behavior.
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

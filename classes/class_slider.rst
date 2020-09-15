@@ -20,6 +20,8 @@ Description
 
 Base class for GUI sliders.
 
+**Note:** The :ref:`Range.changed<class_Range_signal_changed>` and :ref:`Range.value_changed<class_Range_signal_value_changed>` signals are part of the :ref:`Range<class_Range>` class which this class inherits from.
+
 Properties
 ----------
 
@@ -102,3 +104,6 @@ Number of ticks displayed on the slider, including border ticks. Ticks are unifo
 
 If ``true``, the slider will display ticks for minimum and maximum values.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

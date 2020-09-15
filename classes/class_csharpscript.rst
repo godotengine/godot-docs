@@ -28,16 +28,19 @@ Tutorials
 Methods
 -------
 
-+-----------------------------+------------------------------------------------------------------+
-| :ref:`Object<class_Object>` | :ref:`new<class_CSharpScript_method_new>` **(** ... **)** vararg |
-+-----------------------------+------------------------------------------------------------------+
++-----------------------------+--------------------------------------------------------------------+
+| :ref:`Object<class_Object>` | :ref:`new<class_CSharpScript_method_new>` **(** ... **)** |vararg| |
++-----------------------------+--------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_CSharpScript_method_new:
 
-- :ref:`Object<class_Object>` **new** **(** ... **)** vararg
+- :ref:`Object<class_Object>` **new** **(** ... **)** |vararg|
 
 Returns a new instance of the script.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

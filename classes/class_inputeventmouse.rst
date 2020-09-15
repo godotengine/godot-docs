@@ -85,3 +85,6 @@ The global mouse position relative to the current :ref:`Viewport<class_Viewport>
 
 The local mouse position relative to the :ref:`Viewport<class_Viewport>`. If used in :ref:`Control._gui_input<class_Control_method__gui_input>`, the position is relative to the current :ref:`Control<class_Control>` which is under the mouse.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

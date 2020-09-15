@@ -55,3 +55,6 @@ Allows you to adjust the scale to your game's units. Most AR/VR platforms assume
 
 **Note:** This method is a passthrough to the :ref:`ARVRServer<class_ARVRServer>` itself.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

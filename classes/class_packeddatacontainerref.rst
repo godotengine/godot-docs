@@ -16,14 +16,17 @@ Reference version of :ref:`PackedDataContainer<class_PackedDataContainer>`.
 Methods
 -------
 
-+-----------------------+-------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`size<class_PackedDataContainerRef_method_size>` **(** **)** const |
-+-----------------------+-------------------------------------------------------------------------+
++-----------------------+---------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`size<class_PackedDataContainerRef_method_size>` **(** **)** |const| |
++-----------------------+---------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_PackedDataContainerRef_method_size:
 
-- :ref:`int<class_int>` **size** **(** **)** const
+- :ref:`int<class_int>` **size** **(** **)** |const|
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

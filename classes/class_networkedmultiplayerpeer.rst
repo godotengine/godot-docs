@@ -38,11 +38,11 @@ Methods
 -------
 
 +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` | :ref:`get_connection_status<class_NetworkedMultiplayerPeer_method_get_connection_status>` **(** **)** const        |
+| :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` | :ref:`get_connection_status<class_NetworkedMultiplayerPeer_method_get_connection_status>` **(** **)** |const|      |
 +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                   | :ref:`get_packet_peer<class_NetworkedMultiplayerPeer_method_get_packet_peer>` **(** **)** const                    |
+| :ref:`int<class_int>`                                                   | :ref:`get_packet_peer<class_NetworkedMultiplayerPeer_method_get_packet_peer>` **(** **)** |const|                  |
 +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                   | :ref:`get_unique_id<class_NetworkedMultiplayerPeer_method_get_unique_id>` **(** **)** const                        |
+| :ref:`int<class_int>`                                                   | :ref:`get_unique_id<class_NetworkedMultiplayerPeer_method_get_unique_id>` **(** **)** |const|                      |
 +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | void                                                                    | :ref:`poll<class_NetworkedMultiplayerPeer_method_poll>` **(** **)**                                                |
 +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
@@ -176,7 +176,7 @@ Method Descriptions
 
 .. _class_NetworkedMultiplayerPeer_method_get_connection_status:
 
-- :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` **get_connection_status** **(** **)** const
+- :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` **get_connection_status** **(** **)** |const|
 
 Returns the current state of the connection. See :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>`.
 
@@ -184,7 +184,7 @@ Returns the current state of the connection. See :ref:`ConnectionStatus<enum_Net
 
 .. _class_NetworkedMultiplayerPeer_method_get_packet_peer:
 
-- :ref:`int<class_int>` **get_packet_peer** **(** **)** const
+- :ref:`int<class_int>` **get_packet_peer** **(** **)** |const|
 
 Returns the ID of the ``NetworkedMultiplayerPeer`` who sent the most recent packet.
 
@@ -192,7 +192,7 @@ Returns the ID of the ``NetworkedMultiplayerPeer`` who sent the most recent pack
 
 .. _class_NetworkedMultiplayerPeer_method_get_unique_id:
 
-- :ref:`int<class_int>` **get_unique_id** **(** **)** const
+- :ref:`int<class_int>` **get_unique_id** **(** **)** |const|
 
 Returns the ID of this ``NetworkedMultiplayerPeer``.
 
@@ -214,3 +214,6 @@ Sets the peer to which packets will be sent.
 
 The ``id`` can be one of: :ref:`TARGET_PEER_BROADCAST<class_NetworkedMultiplayerPeer_constant_TARGET_PEER_BROADCAST>` to send to all connected peers, :ref:`TARGET_PEER_SERVER<class_NetworkedMultiplayerPeer_constant_TARGET_PEER_SERVER>` to send to the peer acting as server, a valid peer ID to send to that specific peer, a negative peer ID to send to all peers except that one. By default, the target peer is :ref:`TARGET_PEER_BROADCAST<class_NetworkedMultiplayerPeer_constant_TARGET_PEER_BROADCAST>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

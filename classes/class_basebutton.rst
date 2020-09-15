@@ -50,15 +50,15 @@ Properties
 Methods
 -------
 
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`_pressed<class_BaseButton_method__pressed>` **(** **)** virtual                                        |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`_toggled<class_BaseButton_method__toggled>` **(** :ref:`bool<class_bool>` button_pressed **)** virtual |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`DrawMode<enum_BaseButton_DrawMode>` | :ref:`get_draw_mode<class_BaseButton_method_get_draw_mode>` **(** **)** const                                |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`is_hovered<class_BaseButton_method_is_hovered>` **(** **)** const                                      |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------+
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`_pressed<class_BaseButton_method__pressed>` **(** **)** |virtual|                                        |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`_toggled<class_BaseButton_method__toggled>` **(** :ref:`bool<class_bool>` button_pressed **)** |virtual| |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| :ref:`DrawMode<enum_BaseButton_DrawMode>` | :ref:`get_draw_mode<class_BaseButton_method_get_draw_mode>` **(** **)** |const|                                |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                   | :ref:`is_hovered<class_BaseButton_method_is_hovered>` **(** **)** |const|                                      |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -302,7 +302,7 @@ Method Descriptions
 
 .. _class_BaseButton_method__pressed:
 
-- void **_pressed** **(** **)** virtual
+- void **_pressed** **(** **)** |virtual|
 
 Called when the button is pressed. If you need to know the button's pressed state (and :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is active), use :ref:`_toggled<class_BaseButton_method__toggled>` instead.
 
@@ -310,7 +310,7 @@ Called when the button is pressed. If you need to know the button's pressed stat
 
 .. _class_BaseButton_method__toggled:
 
-- void **_toggled** **(** :ref:`bool<class_bool>` button_pressed **)** virtual
+- void **_toggled** **(** :ref:`bool<class_bool>` button_pressed **)** |virtual|
 
 Called when the button is toggled (only if :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is active).
 
@@ -318,7 +318,7 @@ Called when the button is toggled (only if :ref:`toggle_mode<class_BaseButton_pr
 
 .. _class_BaseButton_method_get_draw_mode:
 
-- :ref:`DrawMode<enum_BaseButton_DrawMode>` **get_draw_mode** **(** **)** const
+- :ref:`DrawMode<enum_BaseButton_DrawMode>` **get_draw_mode** **(** **)** |const|
 
 Returns the visual state used to draw the button. This is useful mainly when implementing your own draw code by either overriding _draw() or connecting to "draw" signal. The visual state of the button is defined by the :ref:`DrawMode<enum_BaseButton_DrawMode>` enum.
 
@@ -326,7 +326,10 @@ Returns the visual state used to draw the button. This is useful mainly when imp
 
 .. _class_BaseButton_method_is_hovered:
 
-- :ref:`bool<class_bool>` **is_hovered** **(** **)** const
+- :ref:`bool<class_bool>` **is_hovered** **(** **)** |const|
 
 Returns ``true`` if the mouse has entered the button and has not left it yet.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

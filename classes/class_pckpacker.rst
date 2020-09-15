@@ -63,3 +63,6 @@ Writes the files specified using all :ref:`add_file<class_PCKPacker_method_add_f
 
 Creates a new PCK file with the name ``pck_name``. The ``.pck`` file extension isn't added automatically, so it should be part of ``pck_name`` (even though it's not required).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

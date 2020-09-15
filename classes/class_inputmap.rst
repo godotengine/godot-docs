@@ -26,31 +26,31 @@ Tutorials
 Methods
 -------
 
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`action_add_event<class_InputMap_method_action_add_event>` **(** :ref:`String<class_String>` action, :ref:`InputEvent<class_InputEvent>` event **)**     |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`action_erase_event<class_InputMap_method_action_erase_event>` **(** :ref:`String<class_String>` action, :ref:`InputEvent<class_InputEvent>` event **)** |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`action_erase_events<class_InputMap_method_action_erase_events>` **(** :ref:`String<class_String>` action **)**                                          |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`action_has_event<class_InputMap_method_action_has_event>` **(** :ref:`String<class_String>` action, :ref:`InputEvent<class_InputEvent>` event **)**     |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`action_set_deadzone<class_InputMap_method_action_set_deadzone>` **(** :ref:`String<class_String>` action, :ref:`float<class_float>` deadzone **)**      |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`add_action<class_InputMap_method_add_action>` **(** :ref:`String<class_String>` action, :ref:`float<class_float>` deadzone=0.5 **)**                    |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`erase_action<class_InputMap_method_erase_action>` **(** :ref:`String<class_String>` action **)**                                                        |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`event_is_action<class_InputMap_method_event_is_action>` **(** :ref:`InputEvent<class_InputEvent>` event, :ref:`String<class_String>` action **)** const |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_action_list<class_InputMap_method_get_action_list>` **(** :ref:`String<class_String>` action **)**                                                  |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_actions<class_InputMap_method_get_actions>` **(** **)**                                                                                             |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`has_action<class_InputMap_method_has_action>` **(** :ref:`String<class_String>` action **)** const                                                      |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`load_from_globals<class_InputMap_method_load_from_globals>` **(** **)**                                                                                 |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`action_add_event<class_InputMap_method_action_add_event>` **(** :ref:`String<class_String>` action, :ref:`InputEvent<class_InputEvent>` event **)**       |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`action_erase_event<class_InputMap_method_action_erase_event>` **(** :ref:`String<class_String>` action, :ref:`InputEvent<class_InputEvent>` event **)**   |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`action_erase_events<class_InputMap_method_action_erase_events>` **(** :ref:`String<class_String>` action **)**                                            |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`action_has_event<class_InputMap_method_action_has_event>` **(** :ref:`String<class_String>` action, :ref:`InputEvent<class_InputEvent>` event **)**       |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`action_set_deadzone<class_InputMap_method_action_set_deadzone>` **(** :ref:`String<class_String>` action, :ref:`float<class_float>` deadzone **)**        |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`add_action<class_InputMap_method_add_action>` **(** :ref:`String<class_String>` action, :ref:`float<class_float>` deadzone=0.5 **)**                      |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`erase_action<class_InputMap_method_erase_action>` **(** :ref:`String<class_String>` action **)**                                                          |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`event_is_action<class_InputMap_method_event_is_action>` **(** :ref:`InputEvent<class_InputEvent>` event, :ref:`String<class_String>` action **)** |const| |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | :ref:`get_action_list<class_InputMap_method_get_action_list>` **(** :ref:`String<class_String>` action **)**                                                    |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | :ref:`get_actions<class_InputMap_method_get_actions>` **(** **)**                                                                                               |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`has_action<class_InputMap_method_has_action>` **(** :ref:`String<class_String>` action **)** |const|                                                      |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`load_from_globals<class_InputMap_method_load_from_globals>` **(** **)**                                                                                   |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -115,7 +115,7 @@ Removes an action from the ``InputMap``.
 
 .. _class_InputMap_method_event_is_action:
 
-- :ref:`bool<class_bool>` **event_is_action** **(** :ref:`InputEvent<class_InputEvent>` event, :ref:`String<class_String>` action **)** const
+- :ref:`bool<class_bool>` **event_is_action** **(** :ref:`InputEvent<class_InputEvent>` event, :ref:`String<class_String>` action **)** |const|
 
 Returns ``true`` if the given event is part of an existing action. This method ignores keyboard modifiers if the given :ref:`InputEvent<class_InputEvent>` is not pressed (for proper release detection). See :ref:`action_has_event<class_InputMap_method_action_has_event>` if you don't want this behavior.
 
@@ -139,7 +139,7 @@ Returns an array of all actions in the ``InputMap``.
 
 .. _class_InputMap_method_has_action:
 
-- :ref:`bool<class_bool>` **has_action** **(** :ref:`String<class_String>` action **)** const
+- :ref:`bool<class_bool>` **has_action** **(** :ref:`String<class_String>` action **)** |const|
 
 Returns ``true`` if the ``InputMap`` has a registered action with the given name.
 
@@ -151,3 +151,6 @@ Returns ``true`` if the ``InputMap`` has a registered action with the given name
 
 Clears all :ref:`InputEventAction<class_InputEventAction>` in the ``InputMap`` and load it anew from :ref:`ProjectSettings<class_ProjectSettings>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

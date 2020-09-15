@@ -56,3 +56,6 @@ The :ref:`Material<class_Material>` used in drawing the CSG shape.
 
 The :ref:`Mesh<class_Mesh>` resource to use as a CSG shape.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

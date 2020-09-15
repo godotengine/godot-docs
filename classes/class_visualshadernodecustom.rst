@@ -34,40 +34,40 @@ Tutorials
 Methods
 -------
 
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`_get_category<class_VisualShaderNodeCustom_method__get_category>` **(** **)** virtual                                                                                                                             |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`_get_code<class_VisualShaderNodeCustom_method__get_code>` **(** :ref:`Array<class_Array>` input_vars, :ref:`Array<class_Array>` output_vars, :ref:`int<class_int>` mode, :ref:`int<class_int>` type **)** virtual |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`_get_description<class_VisualShaderNodeCustom_method__get_description>` **(** **)** virtual                                                                                                                       |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`_get_global_code<class_VisualShaderNodeCustom_method__get_global_code>` **(** :ref:`int<class_int>` mode **)** virtual                                                                                            |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`_get_input_port_count<class_VisualShaderNodeCustom_method__get_input_port_count>` **(** **)** virtual                                                                                                             |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`_get_input_port_name<class_VisualShaderNodeCustom_method__get_input_port_name>` **(** :ref:`int<class_int>` port **)** virtual                                                                                    |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`_get_input_port_type<class_VisualShaderNodeCustom_method__get_input_port_type>` **(** :ref:`int<class_int>` port **)** virtual                                                                                    |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`_get_name<class_VisualShaderNodeCustom_method__get_name>` **(** **)** virtual                                                                                                                                     |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`_get_output_port_count<class_VisualShaderNodeCustom_method__get_output_port_count>` **(** **)** virtual                                                                                                           |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`_get_output_port_name<class_VisualShaderNodeCustom_method__get_output_port_name>` **(** :ref:`int<class_int>` port **)** virtual                                                                                  |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`_get_output_port_type<class_VisualShaderNodeCustom_method__get_output_port_type>` **(** :ref:`int<class_int>` port **)** virtual                                                                                  |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`_get_return_icon_type<class_VisualShaderNodeCustom_method__get_return_icon_type>` **(** **)** virtual                                                                                                             |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`_get_subcategory<class_VisualShaderNodeCustom_method__get_subcategory>` **(** **)** virtual                                                                                                                       |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`_get_category<class_VisualShaderNodeCustom_method__get_category>` **(** **)** |virtual|                                                                                                                             |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`_get_code<class_VisualShaderNodeCustom_method__get_code>` **(** :ref:`Array<class_Array>` input_vars, :ref:`Array<class_Array>` output_vars, :ref:`int<class_int>` mode, :ref:`int<class_int>` type **)** |virtual| |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`_get_description<class_VisualShaderNodeCustom_method__get_description>` **(** **)** |virtual|                                                                                                                       |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`_get_global_code<class_VisualShaderNodeCustom_method__get_global_code>` **(** :ref:`int<class_int>` mode **)** |virtual|                                                                                            |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`_get_input_port_count<class_VisualShaderNodeCustom_method__get_input_port_count>` **(** **)** |virtual|                                                                                                             |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`_get_input_port_name<class_VisualShaderNodeCustom_method__get_input_port_name>` **(** :ref:`int<class_int>` port **)** |virtual|                                                                                    |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`_get_input_port_type<class_VisualShaderNodeCustom_method__get_input_port_type>` **(** :ref:`int<class_int>` port **)** |virtual|                                                                                    |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`_get_name<class_VisualShaderNodeCustom_method__get_name>` **(** **)** |virtual|                                                                                                                                     |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`_get_output_port_count<class_VisualShaderNodeCustom_method__get_output_port_count>` **(** **)** |virtual|                                                                                                           |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`_get_output_port_name<class_VisualShaderNodeCustom_method__get_output_port_name>` **(** :ref:`int<class_int>` port **)** |virtual|                                                                                  |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`_get_output_port_type<class_VisualShaderNodeCustom_method__get_output_port_type>` **(** :ref:`int<class_int>` port **)** |virtual|                                                                                  |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`_get_return_icon_type<class_VisualShaderNodeCustom_method__get_return_icon_type>` **(** **)** |virtual|                                                                                                             |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`_get_subcategory<class_VisualShaderNodeCustom_method__get_subcategory>` **(** **)** |virtual|                                                                                                                       |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_VisualShaderNodeCustom_method__get_category:
 
-- :ref:`String<class_String>` **_get_category** **(** **)** virtual
+- :ref:`String<class_String>` **_get_category** **(** **)** |virtual|
 
 Override this method to define the category of the associated custom node in the Visual Shader Editor's members dialog.
 
@@ -77,7 +77,7 @@ Defining this method is **optional**. If not overridden, the node will be filed 
 
 .. _class_VisualShaderNodeCustom_method__get_code:
 
-- :ref:`String<class_String>` **_get_code** **(** :ref:`Array<class_Array>` input_vars, :ref:`Array<class_Array>` output_vars, :ref:`int<class_int>` mode, :ref:`int<class_int>` type **)** virtual
+- :ref:`String<class_String>` **_get_code** **(** :ref:`Array<class_Array>` input_vars, :ref:`Array<class_Array>` output_vars, :ref:`int<class_int>` mode, :ref:`int<class_int>` type **)** |virtual|
 
 Override this method to define the actual shader code of the associated custom node. The shader code should be returned as a string, which can have multiple lines (the ``"""`` multiline string construct can be used for convenience).
 
@@ -93,7 +93,7 @@ Defining this method is **required**.
 
 .. _class_VisualShaderNodeCustom_method__get_description:
 
-- :ref:`String<class_String>` **_get_description** **(** **)** virtual
+- :ref:`String<class_String>` **_get_description** **(** **)** |virtual|
 
 Override this method to define the description of the associated custom node in the Visual Shader Editor's members dialog.
 
@@ -103,7 +103,7 @@ Defining this method is **optional**.
 
 .. _class_VisualShaderNodeCustom_method__get_global_code:
 
-- :ref:`String<class_String>` **_get_global_code** **(** :ref:`int<class_int>` mode **)** virtual
+- :ref:`String<class_String>` **_get_global_code** **(** :ref:`int<class_int>` mode **)** |virtual|
 
 Override this method to add shader code on top of the global shader, to define your own standard library of reusable methods, varyings, constants, uniforms, etc. The shader code should be returned as a string, which can have multiple lines (the ``"""`` multiline string construct can be used for convenience).
 
@@ -117,7 +117,7 @@ Defining this method is **optional**.
 
 .. _class_VisualShaderNodeCustom_method__get_input_port_count:
 
-- :ref:`int<class_int>` **_get_input_port_count** **(** **)** virtual
+- :ref:`int<class_int>` **_get_input_port_count** **(** **)** |virtual|
 
 Override this method to define the amount of input ports of the associated custom node.
 
@@ -127,7 +127,7 @@ Defining this method is **required**. If not overridden, the node has no input p
 
 .. _class_VisualShaderNodeCustom_method__get_input_port_name:
 
-- :ref:`String<class_String>` **_get_input_port_name** **(** :ref:`int<class_int>` port **)** virtual
+- :ref:`String<class_String>` **_get_input_port_name** **(** :ref:`int<class_int>` port **)** |virtual|
 
 Override this method to define the names of input ports of the associated custom node. The names are used both for the input slots in the editor and as identifiers in the shader code, and are passed in the ``input_vars`` array in :ref:`_get_code<class_VisualShaderNodeCustom_method__get_code>`.
 
@@ -137,7 +137,7 @@ Defining this method is **optional**, but recommended. If not overridden, input 
 
 .. _class_VisualShaderNodeCustom_method__get_input_port_type:
 
-- :ref:`int<class_int>` **_get_input_port_type** **(** :ref:`int<class_int>` port **)** virtual
+- :ref:`int<class_int>` **_get_input_port_type** **(** :ref:`int<class_int>` port **)** |virtual|
 
 Override this method to define the returned type of each input port of the associated custom node (see :ref:`PortType<enum_VisualShaderNode_PortType>` for possible types).
 
@@ -147,7 +147,7 @@ Defining this method is **optional**, but recommended. If not overridden, input 
 
 .. _class_VisualShaderNodeCustom_method__get_name:
 
-- :ref:`String<class_String>` **_get_name** **(** **)** virtual
+- :ref:`String<class_String>` **_get_name** **(** **)** |virtual|
 
 Override this method to define the name of the associated custom node in the Visual Shader Editor's members dialog and graph.
 
@@ -157,7 +157,7 @@ Defining this method is **optional**, but recommended. If not overridden, the no
 
 .. _class_VisualShaderNodeCustom_method__get_output_port_count:
 
-- :ref:`int<class_int>` **_get_output_port_count** **(** **)** virtual
+- :ref:`int<class_int>` **_get_output_port_count** **(** **)** |virtual|
 
 Override this method to define the amount of output ports of the associated custom node.
 
@@ -167,7 +167,7 @@ Defining this method is **required**. If not overridden, the node has no output 
 
 .. _class_VisualShaderNodeCustom_method__get_output_port_name:
 
-- :ref:`String<class_String>` **_get_output_port_name** **(** :ref:`int<class_int>` port **)** virtual
+- :ref:`String<class_String>` **_get_output_port_name** **(** :ref:`int<class_int>` port **)** |virtual|
 
 Override this method to define the names of output ports of the associated custom node. The names are used both for the output slots in the editor and as identifiers in the shader code, and are passed in the ``output_vars`` array in :ref:`_get_code<class_VisualShaderNodeCustom_method__get_code>`.
 
@@ -177,7 +177,7 @@ Defining this method is **optional**, but recommended. If not overridden, output
 
 .. _class_VisualShaderNodeCustom_method__get_output_port_type:
 
-- :ref:`int<class_int>` **_get_output_port_type** **(** :ref:`int<class_int>` port **)** virtual
+- :ref:`int<class_int>` **_get_output_port_type** **(** :ref:`int<class_int>` port **)** |virtual|
 
 Override this method to define the returned type of each output port of the associated custom node (see :ref:`PortType<enum_VisualShaderNode_PortType>` for possible types).
 
@@ -187,7 +187,7 @@ Defining this method is **optional**, but recommended. If not overridden, output
 
 .. _class_VisualShaderNodeCustom_method__get_return_icon_type:
 
-- :ref:`int<class_int>` **_get_return_icon_type** **(** **)** virtual
+- :ref:`int<class_int>` **_get_return_icon_type** **(** **)** |virtual|
 
 Override this method to define the return icon of the associated custom node in the Visual Shader Editor's members dialog.
 
@@ -197,9 +197,12 @@ Defining this method is **optional**. If not overridden, no return icon is shown
 
 .. _class_VisualShaderNodeCustom_method__get_subcategory:
 
-- :ref:`String<class_String>` **_get_subcategory** **(** **)** virtual
+- :ref:`String<class_String>` **_get_subcategory** **(** **)** |virtual|
 
 Override this method to define the subcategory of the associated custom node in the Visual Shader Editor's members dialog.
 
 Defining this method is **optional**. If not overridden, the node will be filed under the root of the main category (see :ref:`_get_category<class_VisualShaderNodeCustom_method__get_category>`).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

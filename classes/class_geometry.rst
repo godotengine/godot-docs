@@ -72,7 +72,7 @@ Methods
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                       | :ref:`offset_polyline_2d<class_Geometry_method_offset_polyline_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polyline, :ref:`float<class_float>` delta, :ref:`PolyJoinType<enum_Geometry_PolyJoinType>` join_type=0, :ref:`PolyEndType<enum_Geometry_PolyEndType>` end_type=3 **)** |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`point_is_inside_triangle<class_Geometry_method_point_is_inside_triangle>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` a, :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` c **)** const                                                         |
+| :ref:`bool<class_bool>`                         | :ref:`point_is_inside_triangle<class_Geometry_method_point_is_inside_triangle>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` a, :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` c **)** |const|                                                       |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                   | :ref:`ray_intersects_triangle<class_Geometry_method_ray_intersects_triangle>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**                               |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -394,7 +394,7 @@ The operation may result in an outer polygon (boundary) and inner polygon (hole)
 
 .. _class_Geometry_method_point_is_inside_triangle:
 
-- :ref:`bool<class_bool>` **point_is_inside_triangle** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` a, :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` c **)** const
+- :ref:`bool<class_bool>` **point_is_inside_triangle** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` a, :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` c **)** |const|
 
 Returns if ``point`` is inside the triangle specified by ``a``, ``b`` and ``c``.
 
@@ -470,3 +470,6 @@ Triangulates the area specified by discrete set of ``points`` such that no point
 
 Triangulates the polygon specified by the points in ``polygon``. Returns a :ref:`PoolIntArray<class_PoolIntArray>` where each triangle consists of three consecutive point indices into ``polygon`` (i.e. the returned array will have ``n * 3`` elements, with ``n`` being the number of found triangles). If the triangulation did not succeed, an empty :ref:`PoolIntArray<class_PoolIntArray>` is returned.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

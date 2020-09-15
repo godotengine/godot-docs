@@ -72,29 +72,29 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`fix_invalid_tiles<class_TileMap_method_fix_invalid_tiles>` **(** **)**                                                                                                                                                                                                                                               |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_cell<class_TileMap_method_get_cell>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const                                                                                                                                                                                                          |
+| :ref:`int<class_int>`         | :ref:`get_cell<class_TileMap_method_get_cell>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |const|                                                                                                                                                                                                        |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_cell_autotile_coord<class_TileMap_method_get_cell_autotile_coord>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const                                                                                                                                                                            |
+| :ref:`Vector2<class_Vector2>` | :ref:`get_cell_autotile_coord<class_TileMap_method_get_cell_autotile_coord>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |const|                                                                                                                                                                          |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_cellv<class_TileMap_method_get_cellv>` **(** :ref:`Vector2<class_Vector2>` position **)** const                                                                                                                                                                                                                  |
+| :ref:`int<class_int>`         | :ref:`get_cellv<class_TileMap_method_get_cellv>` **(** :ref:`Vector2<class_Vector2>` position **)** |const|                                                                                                                                                                                                                |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_collision_layer_bit<class_TileMap_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                                                                                                                                                                                                   |
+| :ref:`bool<class_bool>`       | :ref:`get_collision_layer_bit<class_TileMap_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** |const|                                                                                                                                                                                                 |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_collision_mask_bit<class_TileMap_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                                                                                                                                                                                                     |
+| :ref:`bool<class_bool>`       | :ref:`get_collision_mask_bit<class_TileMap_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** |const|                                                                                                                                                                                                   |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`get_used_cells<class_TileMap_method_get_used_cells>` **(** **)** const                                                                                                                                                                                                                                               |
+| :ref:`Array<class_Array>`     | :ref:`get_used_cells<class_TileMap_method_get_used_cells>` **(** **)** |const|                                                                                                                                                                                                                                             |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`get_used_cells_by_id<class_TileMap_method_get_used_cells_by_id>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                                          |
+| :ref:`Array<class_Array>`     | :ref:`get_used_cells_by_id<class_TileMap_method_get_used_cells_by_id>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                                                        |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_Rect2>`     | :ref:`get_used_rect<class_TileMap_method_get_used_rect>` **(** **)**                                                                                                                                                                                                                                                       |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_cell_transposed<class_TileMap_method_is_cell_transposed>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const                                                                                                                                                                                      |
+| :ref:`bool<class_bool>`       | :ref:`is_cell_transposed<class_TileMap_method_is_cell_transposed>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |const|                                                                                                                                                                                    |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_cell_x_flipped<class_TileMap_method_is_cell_x_flipped>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const                                                                                                                                                                                        |
+| :ref:`bool<class_bool>`       | :ref:`is_cell_x_flipped<class_TileMap_method_is_cell_x_flipped>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |const|                                                                                                                                                                                      |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_cell_y_flipped<class_TileMap_method_is_cell_y_flipped>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const                                                                                                                                                                                        |
+| :ref:`bool<class_bool>`       | :ref:`is_cell_y_flipped<class_TileMap_method_is_cell_y_flipped>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |const|                                                                                                                                                                                      |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`map_to_world<class_TileMap_method_map_to_world>` **(** :ref:`Vector2<class_Vector2>` map_position, :ref:`bool<class_bool>` ignore_half_ofs=false **)** const                                                                                                                                                         |
+| :ref:`Vector2<class_Vector2>` | :ref:`map_to_world<class_TileMap_method_map_to_world>` **(** :ref:`Vector2<class_Vector2>` map_position, :ref:`bool<class_bool>` ignore_half_ofs=false **)** |const|                                                                                                                                                       |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_cell<class_TileMap_method_set_cell>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` tile, :ref:`bool<class_bool>` flip_x=false, :ref:`bool<class_bool>` flip_y=false, :ref:`bool<class_bool>` transpose=false, :ref:`Vector2<class_Vector2>` autotile_coord=Vector2( 0, 0 ) **)** |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -110,7 +110,7 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`update_dirty_quadrants<class_TileMap_method_update_dirty_quadrants>` **(** **)**                                                                                                                                                                                                                                     |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`world_to_map<class_TileMap_method_world_to_map>` **(** :ref:`Vector2<class_Vector2>` world_position **)** const                                                                                                                                                                                                      |
+| :ref:`Vector2<class_Vector2>` | :ref:`world_to_map<class_TileMap_method_world_to_map>` **(** :ref:`Vector2<class_Vector2>` world_position **)** |const|                                                                                                                                                                                                    |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -369,7 +369,7 @@ Friction value for static body collisions (see ``collision_use_kinematic``).
 | *Getter*  | get_collision_layer()      |
 +-----------+----------------------------+
 
-The collision layer(s) for all colliders in the TileMap.
+The collision layer(s) for all colliders in the TileMap. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 
@@ -385,7 +385,7 @@ The collision layer(s) for all colliders in the TileMap.
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The collision mask(s) for all colliders in the TileMap.
+The collision mask(s) for all colliders in the TileMap. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 
@@ -506,7 +506,7 @@ Clears cells that do not exist in the tileset.
 
 .. _class_TileMap_method_get_cell:
 
-- :ref:`int<class_int>` **get_cell** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
+- :ref:`int<class_int>` **get_cell** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |const|
 
 Returns the tile index of the given cell. If no tile exists in the cell, returns :ref:`INVALID_CELL<class_TileMap_constant_INVALID_CELL>`.
 
@@ -514,7 +514,7 @@ Returns the tile index of the given cell. If no tile exists in the cell, returns
 
 .. _class_TileMap_method_get_cell_autotile_coord:
 
-- :ref:`Vector2<class_Vector2>` **get_cell_autotile_coord** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
+- :ref:`Vector2<class_Vector2>` **get_cell_autotile_coord** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |const|
 
 Returns the coordinate (subtile column and row) of the autotile variation in the tileset. Returns a zero vector if the cell doesn't have autotiling.
 
@@ -522,7 +522,7 @@ Returns the coordinate (subtile column and row) of the autotile variation in the
 
 .. _class_TileMap_method_get_cellv:
 
-- :ref:`int<class_int>` **get_cellv** **(** :ref:`Vector2<class_Vector2>` position **)** const
+- :ref:`int<class_int>` **get_cellv** **(** :ref:`Vector2<class_Vector2>` position **)** |const|
 
 Returns the tile index of the cell given by a Vector2. If no tile exists in the cell, returns :ref:`INVALID_CELL<class_TileMap_constant_INVALID_CELL>`.
 
@@ -530,7 +530,7 @@ Returns the tile index of the cell given by a Vector2. If no tile exists in the 
 
 .. _class_TileMap_method_get_collision_layer_bit:
 
-- :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
+- :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** |const|
 
 Returns ``true`` if the given collision layer bit is set.
 
@@ -538,7 +538,7 @@ Returns ``true`` if the given collision layer bit is set.
 
 .. _class_TileMap_method_get_collision_mask_bit:
 
-- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
+- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** |const|
 
 Returns ``true`` if the given collision mask bit is set.
 
@@ -546,7 +546,7 @@ Returns ``true`` if the given collision mask bit is set.
 
 .. _class_TileMap_method_get_used_cells:
 
-- :ref:`Array<class_Array>` **get_used_cells** **(** **)** const
+- :ref:`Array<class_Array>` **get_used_cells** **(** **)** |const|
 
 Returns a :ref:`Vector2<class_Vector2>` array with the positions of all cells containing a tile from the tileset (i.e. a tile index different from ``-1``).
 
@@ -554,7 +554,7 @@ Returns a :ref:`Vector2<class_Vector2>` array with the positions of all cells co
 
 .. _class_TileMap_method_get_used_cells_by_id:
 
-- :ref:`Array<class_Array>` **get_used_cells_by_id** **(** :ref:`int<class_int>` id **)** const
+- :ref:`Array<class_Array>` **get_used_cells_by_id** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns an array of all cells with the given tile index specified in ``id``.
 
@@ -570,7 +570,7 @@ Returns a rectangle enclosing the used (non-empty) tiles of the map.
 
 .. _class_TileMap_method_is_cell_transposed:
 
-- :ref:`bool<class_bool>` **is_cell_transposed** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
+- :ref:`bool<class_bool>` **is_cell_transposed** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |const|
 
 Returns ``true`` if the given cell is transposed, i.e. the X and Y axes are swapped.
 
@@ -578,7 +578,7 @@ Returns ``true`` if the given cell is transposed, i.e. the X and Y axes are swap
 
 .. _class_TileMap_method_is_cell_x_flipped:
 
-- :ref:`bool<class_bool>` **is_cell_x_flipped** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
+- :ref:`bool<class_bool>` **is_cell_x_flipped** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |const|
 
 Returns ``true`` if the given cell is flipped in the X axis.
 
@@ -586,7 +586,7 @@ Returns ``true`` if the given cell is flipped in the X axis.
 
 .. _class_TileMap_method_is_cell_y_flipped:
 
-- :ref:`bool<class_bool>` **is_cell_y_flipped** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
+- :ref:`bool<class_bool>` **is_cell_y_flipped** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |const|
 
 Returns ``true`` if the given cell is flipped in the Y axis.
 
@@ -594,7 +594,7 @@ Returns ``true`` if the given cell is flipped in the Y axis.
 
 .. _class_TileMap_method_map_to_world:
 
-- :ref:`Vector2<class_Vector2>` **map_to_world** **(** :ref:`Vector2<class_Vector2>` map_position, :ref:`bool<class_bool>` ignore_half_ofs=false **)** const
+- :ref:`Vector2<class_Vector2>` **map_to_world** **(** :ref:`Vector2<class_Vector2>` map_position, :ref:`bool<class_bool>` ignore_half_ofs=false **)** |const|
 
 Returns the global position corresponding to the given tilemap (grid-based) coordinates.
 
@@ -620,7 +620,7 @@ Overriding this method also overrides it internally, allowing custom logic to be
 
 ::
 
-    func set_cell(x, y, tile, flip_x, flip_y, transpose, autotile_coord)
+    func set_cell(x, y, tile, flip_x=false, flip_y=false, transpose=false, autotile_coord=Vector2())
         # Write your custom logic here.
         # To call the default method:
         .set_cell(x, y, tile, flip_x, flip_y, transpose, autotile_coord)
@@ -687,7 +687,10 @@ Updates the tile map's quadrants, allowing things such as navigation and collisi
 
 .. _class_TileMap_method_world_to_map:
 
-- :ref:`Vector2<class_Vector2>` **world_to_map** **(** :ref:`Vector2<class_Vector2>` world_position **)** const
+- :ref:`Vector2<class_Vector2>` **world_to_map** **(** :ref:`Vector2<class_Vector2>` world_position **)** |const|
 
 Returns the tilemap (grid-based) coordinates corresponding to the given local position.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

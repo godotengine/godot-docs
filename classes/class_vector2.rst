@@ -192,7 +192,9 @@ Returns a new vector with all components in absolute values (i.e. positive).
 
 - :ref:`float<class_float>` **angle** **(** **)**
 
-Returns this vector's angle with respect to the X axis, or ``(1, 0)`` vector, in radians.
+Returns this vector's angle with respect to the positive X axis, or ``(1, 0)`` vector, in radians.
+
+For example, ``Vector2.RIGHT.angle()`` will return zero, ``Vector2.DOWN.angle()`` will return ``PI / 2`` (a quarter turn, or 90 degrees), and ``Vector2(1, -1).angle()`` will return ``-PI / 4`` (a negative eighth turn, or -45 degrees).
 
 Equivalent to the result of :ref:`@GDScript.atan2<class_@GDScript_method_atan2>` when called with the vector's :ref:`y<class_Vector2_property_y>` and :ref:`x<class_Vector2_property_x>` as parameters: ``atan2(y, x)``.
 
@@ -456,3 +458,6 @@ Returns this vector with each component snapped to the nearest multiple of ``ste
 
 Returns a perpendicular vector rotated 90 degrees counter-clockwise compared to the original, with the same length.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

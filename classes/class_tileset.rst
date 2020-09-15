@@ -24,27 +24,27 @@ Methods
 -------
 
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                     | :ref:`_forward_atlas_subtile_selection<class_TileSet_method__forward_atlas_subtile_selection>` **(** :ref:`int<class_int>` atlastile_id, :ref:`Object<class_Object>` tilemap, :ref:`Vector2<class_Vector2>` tile_location **)** virtual                                                          |
+| :ref:`Vector2<class_Vector2>`                     | :ref:`_forward_atlas_subtile_selection<class_TileSet_method__forward_atlas_subtile_selection>` **(** :ref:`int<class_int>` atlastile_id, :ref:`Object<class_Object>` tilemap, :ref:`Vector2<class_Vector2>` tile_location **)** |virtual|                                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                     | :ref:`_forward_subtile_selection<class_TileSet_method__forward_subtile_selection>` **(** :ref:`int<class_int>` autotile_id, :ref:`int<class_int>` bitmask, :ref:`Object<class_Object>` tilemap, :ref:`Vector2<class_Vector2>` tile_location **)** virtual                                        |
+| :ref:`Vector2<class_Vector2>`                     | :ref:`_forward_subtile_selection<class_TileSet_method__forward_subtile_selection>` **(** :ref:`int<class_int>` autotile_id, :ref:`int<class_int>` bitmask, :ref:`Object<class_Object>` tilemap, :ref:`Vector2<class_Vector2>` tile_location **)** |virtual|                                      |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`_is_tile_bound<class_TileSet_method__is_tile_bound>` **(** :ref:`int<class_int>` drawn_id, :ref:`int<class_int>` neighbor_id **)** virtual                                                                                                                                                 |
+| :ref:`bool<class_bool>`                           | :ref:`_is_tile_bound<class_TileSet_method__is_tile_bound>` **(** :ref:`int<class_int>` drawn_id, :ref:`int<class_int>` neighbor_id **)** |virtual|                                                                                                                                               |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`autotile_clear_bitmask_map<class_TileSet_method_autotile_clear_bitmask_map>` **(** :ref:`int<class_int>` id **)**                                                                                                                                                                          |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`autotile_get_bitmask<class_TileSet_method_autotile_get_bitmask>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)**                                                                                                                                                 |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`BitmaskMode<enum_TileSet_BitmaskMode>`      | :ref:`autotile_get_bitmask_mode<class_TileSet_method_autotile_get_bitmask_mode>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                      |
+| :ref:`BitmaskMode<enum_TileSet_BitmaskMode>`      | :ref:`autotile_get_bitmask_mode<class_TileSet_method_autotile_get_bitmask_mode>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                    |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                     | :ref:`autotile_get_icon_coordinate<class_TileSet_method_autotile_get_icon_coordinate>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                |
+| :ref:`Vector2<class_Vector2>`                     | :ref:`autotile_get_icon_coordinate<class_TileSet_method_autotile_get_icon_coordinate>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                              |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` | :ref:`autotile_get_light_occluder<class_TileSet_method_autotile_get_light_occluder>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)** const                                                                                                                             |
+| :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` | :ref:`autotile_get_light_occluder<class_TileSet_method_autotile_get_light_occluder>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)** |const|                                                                                                                           |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`autotile_get_navigation_polygon<class_TileSet_method_autotile_get_navigation_polygon>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)** const                                                                                                                     |
+| :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`autotile_get_navigation_polygon<class_TileSet_method_autotile_get_navigation_polygon>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)** |const|                                                                                                                   |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                     | :ref:`autotile_get_size<class_TileSet_method_autotile_get_size>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                      |
+| :ref:`Vector2<class_Vector2>`                     | :ref:`autotile_get_size<class_TileSet_method_autotile_get_size>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                                    |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`autotile_get_spacing<class_TileSet_method_autotile_get_spacing>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                |
+| :ref:`int<class_int>`                             | :ref:`autotile_get_spacing<class_TileSet_method_autotile_get_spacing>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                              |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`autotile_get_subtile_priority<class_TileSet_method_autotile_get_subtile_priority>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)**                                                                                                                               |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -72,55 +72,55 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`create_tile<class_TileSet_method_create_tile>` **(** :ref:`int<class_int>` id **)**                                                                                                                                                                                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`find_tile_by_name<class_TileSet_method_find_tile_by_name>` **(** :ref:`String<class_String>` name **)** const                                                                                                                                                                              |
+| :ref:`int<class_int>`                             | :ref:`find_tile_by_name<class_TileSet_method_find_tile_by_name>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                                                            |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`get_last_unused_tile_id<class_TileSet_method_get_last_unused_tile_id>` **(** **)** const                                                                                                                                                                                                   |
+| :ref:`int<class_int>`                             | :ref:`get_last_unused_tile_id<class_TileSet_method_get_last_unused_tile_id>` **(** **)** |const|                                                                                                                                                                                                 |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                         | :ref:`get_tiles_ids<class_TileSet_method_get_tiles_ids>` **(** **)** const                                                                                                                                                                                                                       |
+| :ref:`Array<class_Array>`                         | :ref:`get_tiles_ids<class_TileSet_method_get_tiles_ids>` **(** **)** |const|                                                                                                                                                                                                                     |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`remove_tile<class_TileSet_method_remove_tile>` **(** :ref:`int<class_int>` id **)**                                                                                                                                                                                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`tile_add_shape<class_TileSet_method_tile_add_shape>` **(** :ref:`int<class_int>` id, :ref:`Shape2D<class_Shape2D>` shape, :ref:`Transform2D<class_Transform2D>` shape_transform, :ref:`bool<class_bool>` one_way=false, :ref:`Vector2<class_Vector2>` autotile_coord=Vector2( 0, 0 ) **)** |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` | :ref:`tile_get_light_occluder<class_TileSet_method_tile_get_light_occluder>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                          |
+| :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` | :ref:`tile_get_light_occluder<class_TileSet_method_tile_get_light_occluder>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ShaderMaterial<class_ShaderMaterial>`       | :ref:`tile_get_material<class_TileSet_method_tile_get_material>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                      |
+| :ref:`ShaderMaterial<class_ShaderMaterial>`       | :ref:`tile_get_material<class_TileSet_method_tile_get_material>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                                    |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`                         | :ref:`tile_get_modulate<class_TileSet_method_tile_get_modulate>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                      |
+| :ref:`Color<class_Color>`                         | :ref:`tile_get_modulate<class_TileSet_method_tile_get_modulate>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                                    |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                       | :ref:`tile_get_name<class_TileSet_method_tile_get_name>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                              |
+| :ref:`String<class_String>`                       | :ref:`tile_get_name<class_TileSet_method_tile_get_name>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                                            |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`tile_get_navigation_polygon<class_TileSet_method_tile_get_navigation_polygon>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                  |
+| :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`tile_get_navigation_polygon<class_TileSet_method_tile_get_navigation_polygon>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                     | :ref:`tile_get_navigation_polygon_offset<class_TileSet_method_tile_get_navigation_polygon_offset>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                    |
+| :ref:`Vector2<class_Vector2>`                     | :ref:`tile_get_navigation_polygon_offset<class_TileSet_method_tile_get_navigation_polygon_offset>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                  |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                     | :ref:`tile_get_normal_map<class_TileSet_method_tile_get_normal_map>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                  |
+| :ref:`Texture<class_Texture>`                     | :ref:`tile_get_normal_map<class_TileSet_method_tile_get_normal_map>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                                |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                     | :ref:`tile_get_occluder_offset<class_TileSet_method_tile_get_occluder_offset>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                        |
+| :ref:`Vector2<class_Vector2>`                     | :ref:`tile_get_occluder_offset<class_TileSet_method_tile_get_occluder_offset>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                      |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`                         | :ref:`tile_get_region<class_TileSet_method_tile_get_region>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                          |
+| :ref:`Rect2<class_Rect2>`                         | :ref:`tile_get_region<class_TileSet_method_tile_get_region>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Shape2D<class_Shape2D>`                     | :ref:`tile_get_shape<class_TileSet_method_tile_get_shape>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const                                                                                                                                                            |
+| :ref:`Shape2D<class_Shape2D>`                     | :ref:`tile_get_shape<class_TileSet_method_tile_get_shape>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** |const|                                                                                                                                                          |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`tile_get_shape_count<class_TileSet_method_tile_get_shape_count>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                |
+| :ref:`int<class_int>`                             | :ref:`tile_get_shape_count<class_TileSet_method_tile_get_shape_count>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                              |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                     | :ref:`tile_get_shape_offset<class_TileSet_method_tile_get_shape_offset>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const                                                                                                                                              |
+| :ref:`Vector2<class_Vector2>`                     | :ref:`tile_get_shape_offset<class_TileSet_method_tile_get_shape_offset>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** |const|                                                                                                                                            |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`tile_get_shape_one_way<class_TileSet_method_tile_get_shape_one_way>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const                                                                                                                                            |
+| :ref:`bool<class_bool>`                           | :ref:`tile_get_shape_one_way<class_TileSet_method_tile_get_shape_one_way>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** |const|                                                                                                                                          |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                         | :ref:`tile_get_shape_one_way_margin<class_TileSet_method_tile_get_shape_one_way_margin>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const                                                                                                                              |
+| :ref:`float<class_float>`                         | :ref:`tile_get_shape_one_way_margin<class_TileSet_method_tile_get_shape_one_way_margin>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** |const|                                                                                                                            |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>`             | :ref:`tile_get_shape_transform<class_TileSet_method_tile_get_shape_transform>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const                                                                                                                                        |
+| :ref:`Transform2D<class_Transform2D>`             | :ref:`tile_get_shape_transform<class_TileSet_method_tile_get_shape_transform>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** |const|                                                                                                                                      |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                         | :ref:`tile_get_shapes<class_TileSet_method_tile_get_shapes>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                          |
+| :ref:`Array<class_Array>`                         | :ref:`tile_get_shapes<class_TileSet_method_tile_get_shapes>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                     | :ref:`tile_get_texture<class_TileSet_method_tile_get_texture>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                        |
+| :ref:`Texture<class_Texture>`                     | :ref:`tile_get_texture<class_TileSet_method_tile_get_texture>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                                      |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                     | :ref:`tile_get_texture_offset<class_TileSet_method_tile_get_texture_offset>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                          |
+| :ref:`Vector2<class_Vector2>`                     | :ref:`tile_get_texture_offset<class_TileSet_method_tile_get_texture_offset>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TileMode<enum_TileSet_TileMode>`            | :ref:`tile_get_tile_mode<class_TileSet_method_tile_get_tile_mode>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                    |
+| :ref:`TileMode<enum_TileSet_TileMode>`            | :ref:`tile_get_tile_mode<class_TileSet_method_tile_get_tile_mode>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                                  |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`tile_get_z_index<class_TileSet_method_tile_get_z_index>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`tile_get_z_index<class_TileSet_method_tile_get_z_index>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                                      |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`tile_set_light_occluder<class_TileSet_method_tile_set_light_occluder>` **(** :ref:`int<class_int>` id, :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` light_occluder **)**                                                                                                              |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -245,19 +245,19 @@ Method Descriptions
 
 .. _class_TileSet_method__forward_atlas_subtile_selection:
 
-- :ref:`Vector2<class_Vector2>` **_forward_atlas_subtile_selection** **(** :ref:`int<class_int>` atlastile_id, :ref:`Object<class_Object>` tilemap, :ref:`Vector2<class_Vector2>` tile_location **)** virtual
+- :ref:`Vector2<class_Vector2>` **_forward_atlas_subtile_selection** **(** :ref:`int<class_int>` atlastile_id, :ref:`Object<class_Object>` tilemap, :ref:`Vector2<class_Vector2>` tile_location **)** |virtual|
 
 ----
 
 .. _class_TileSet_method__forward_subtile_selection:
 
-- :ref:`Vector2<class_Vector2>` **_forward_subtile_selection** **(** :ref:`int<class_int>` autotile_id, :ref:`int<class_int>` bitmask, :ref:`Object<class_Object>` tilemap, :ref:`Vector2<class_Vector2>` tile_location **)** virtual
+- :ref:`Vector2<class_Vector2>` **_forward_subtile_selection** **(** :ref:`int<class_int>` autotile_id, :ref:`int<class_int>` bitmask, :ref:`Object<class_Object>` tilemap, :ref:`Vector2<class_Vector2>` tile_location **)** |virtual|
 
 ----
 
 .. _class_TileSet_method__is_tile_bound:
 
-- :ref:`bool<class_bool>` **_is_tile_bound** **(** :ref:`int<class_int>` drawn_id, :ref:`int<class_int>` neighbor_id **)** virtual
+- :ref:`bool<class_bool>` **_is_tile_bound** **(** :ref:`int<class_int>` drawn_id, :ref:`int<class_int>` neighbor_id **)** |virtual|
 
 Determines when the auto-tiler should consider two different auto-tile IDs to be bound together.
 
@@ -285,7 +285,7 @@ The value is the sum of the values in :ref:`AutotileBindings<enum_TileSet_Autoti
 
 .. _class_TileSet_method_autotile_get_bitmask_mode:
 
-- :ref:`BitmaskMode<enum_TileSet_BitmaskMode>` **autotile_get_bitmask_mode** **(** :ref:`int<class_int>` id **)** const
+- :ref:`BitmaskMode<enum_TileSet_BitmaskMode>` **autotile_get_bitmask_mode** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the :ref:`BitmaskMode<enum_TileSet_BitmaskMode>` of the autotile.
 
@@ -293,7 +293,7 @@ Returns the :ref:`BitmaskMode<enum_TileSet_BitmaskMode>` of the autotile.
 
 .. _class_TileSet_method_autotile_get_icon_coordinate:
 
-- :ref:`Vector2<class_Vector2>` **autotile_get_icon_coordinate** **(** :ref:`int<class_int>` id **)** const
+- :ref:`Vector2<class_Vector2>` **autotile_get_icon_coordinate** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the subtile that's being used as an icon in an atlas/autotile given its coordinates.
 
@@ -303,7 +303,7 @@ The subtile defined as the icon will be used as a fallback when the atlas/autoti
 
 .. _class_TileSet_method_autotile_get_light_occluder:
 
-- :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **autotile_get_light_occluder** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)** const
+- :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **autotile_get_light_occluder** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)** |const|
 
 Returns the light occluder of the subtile from an atlas/autotile given its coordinates.
 
@@ -311,7 +311,7 @@ Returns the light occluder of the subtile from an atlas/autotile given its coord
 
 .. _class_TileSet_method_autotile_get_navigation_polygon:
 
-- :ref:`NavigationPolygon<class_NavigationPolygon>` **autotile_get_navigation_polygon** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)** const
+- :ref:`NavigationPolygon<class_NavigationPolygon>` **autotile_get_navigation_polygon** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)** |const|
 
 Returns the navigation polygon of the subtile from an atlas/autotile given its coordinates.
 
@@ -319,7 +319,7 @@ Returns the navigation polygon of the subtile from an atlas/autotile given its c
 
 .. _class_TileSet_method_autotile_get_size:
 
-- :ref:`Vector2<class_Vector2>` **autotile_get_size** **(** :ref:`int<class_int>` id **)** const
+- :ref:`Vector2<class_Vector2>` **autotile_get_size** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the size of the subtiles in an atlas/autotile.
 
@@ -327,7 +327,7 @@ Returns the size of the subtiles in an atlas/autotile.
 
 .. _class_TileSet_method_autotile_get_spacing:
 
-- :ref:`int<class_int>` **autotile_get_spacing** **(** :ref:`int<class_int>` id **)** const
+- :ref:`int<class_int>` **autotile_get_spacing** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the spacing between subtiles of the atlas/autotile.
 
@@ -447,7 +447,7 @@ Creates a new tile with the given ID.
 
 .. _class_TileSet_method_find_tile_by_name:
 
-- :ref:`int<class_int>` **find_tile_by_name** **(** :ref:`String<class_String>` name **)** const
+- :ref:`int<class_int>` **find_tile_by_name** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns the first tile matching the given name.
 
@@ -455,7 +455,7 @@ Returns the first tile matching the given name.
 
 .. _class_TileSet_method_get_last_unused_tile_id:
 
-- :ref:`int<class_int>` **get_last_unused_tile_id** **(** **)** const
+- :ref:`int<class_int>` **get_last_unused_tile_id** **(** **)** |const|
 
 Returns the ID following the last currently used ID, useful when creating a new tile.
 
@@ -463,7 +463,7 @@ Returns the ID following the last currently used ID, useful when creating a new 
 
 .. _class_TileSet_method_get_tiles_ids:
 
-- :ref:`Array<class_Array>` **get_tiles_ids** **(** **)** const
+- :ref:`Array<class_Array>` **get_tiles_ids** **(** **)** |const|
 
 Returns an array of all currently used tile IDs.
 
@@ -487,7 +487,7 @@ Adds a shape to the tile.
 
 .. _class_TileSet_method_tile_get_light_occluder:
 
-- :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **tile_get_light_occluder** **(** :ref:`int<class_int>` id **)** const
+- :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **tile_get_light_occluder** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the tile's light occluder.
 
@@ -495,7 +495,7 @@ Returns the tile's light occluder.
 
 .. _class_TileSet_method_tile_get_material:
 
-- :ref:`ShaderMaterial<class_ShaderMaterial>` **tile_get_material** **(** :ref:`int<class_int>` id **)** const
+- :ref:`ShaderMaterial<class_ShaderMaterial>` **tile_get_material** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the tile's material.
 
@@ -503,7 +503,7 @@ Returns the tile's material.
 
 .. _class_TileSet_method_tile_get_modulate:
 
-- :ref:`Color<class_Color>` **tile_get_modulate** **(** :ref:`int<class_int>` id **)** const
+- :ref:`Color<class_Color>` **tile_get_modulate** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the tile's modulation color.
 
@@ -511,7 +511,7 @@ Returns the tile's modulation color.
 
 .. _class_TileSet_method_tile_get_name:
 
-- :ref:`String<class_String>` **tile_get_name** **(** :ref:`int<class_int>` id **)** const
+- :ref:`String<class_String>` **tile_get_name** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the tile's name.
 
@@ -519,7 +519,7 @@ Returns the tile's name.
 
 .. _class_TileSet_method_tile_get_navigation_polygon:
 
-- :ref:`NavigationPolygon<class_NavigationPolygon>` **tile_get_navigation_polygon** **(** :ref:`int<class_int>` id **)** const
+- :ref:`NavigationPolygon<class_NavigationPolygon>` **tile_get_navigation_polygon** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the navigation polygon of the tile.
 
@@ -527,7 +527,7 @@ Returns the navigation polygon of the tile.
 
 .. _class_TileSet_method_tile_get_navigation_polygon_offset:
 
-- :ref:`Vector2<class_Vector2>` **tile_get_navigation_polygon_offset** **(** :ref:`int<class_int>` id **)** const
+- :ref:`Vector2<class_Vector2>` **tile_get_navigation_polygon_offset** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the offset of the tile's navigation polygon.
 
@@ -535,7 +535,7 @@ Returns the offset of the tile's navigation polygon.
 
 .. _class_TileSet_method_tile_get_normal_map:
 
-- :ref:`Texture<class_Texture>` **tile_get_normal_map** **(** :ref:`int<class_int>` id **)** const
+- :ref:`Texture<class_Texture>` **tile_get_normal_map** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the tile's normal map texture.
 
@@ -543,7 +543,7 @@ Returns the tile's normal map texture.
 
 .. _class_TileSet_method_tile_get_occluder_offset:
 
-- :ref:`Vector2<class_Vector2>` **tile_get_occluder_offset** **(** :ref:`int<class_int>` id **)** const
+- :ref:`Vector2<class_Vector2>` **tile_get_occluder_offset** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the offset of the tile's light occluder.
 
@@ -551,7 +551,7 @@ Returns the offset of the tile's light occluder.
 
 .. _class_TileSet_method_tile_get_region:
 
-- :ref:`Rect2<class_Rect2>` **tile_get_region** **(** :ref:`int<class_int>` id **)** const
+- :ref:`Rect2<class_Rect2>` **tile_get_region** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the tile sub-region in the texture.
 
@@ -559,7 +559,7 @@ Returns the tile sub-region in the texture.
 
 .. _class_TileSet_method_tile_get_shape:
 
-- :ref:`Shape2D<class_Shape2D>` **tile_get_shape** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const
+- :ref:`Shape2D<class_Shape2D>` **tile_get_shape** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** |const|
 
 Returns a tile's given shape.
 
@@ -567,7 +567,7 @@ Returns a tile's given shape.
 
 .. _class_TileSet_method_tile_get_shape_count:
 
-- :ref:`int<class_int>` **tile_get_shape_count** **(** :ref:`int<class_int>` id **)** const
+- :ref:`int<class_int>` **tile_get_shape_count** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the number of shapes assigned to a tile.
 
@@ -575,7 +575,7 @@ Returns the number of shapes assigned to a tile.
 
 .. _class_TileSet_method_tile_get_shape_offset:
 
-- :ref:`Vector2<class_Vector2>` **tile_get_shape_offset** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const
+- :ref:`Vector2<class_Vector2>` **tile_get_shape_offset** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** |const|
 
 Returns the offset of a tile's shape.
 
@@ -583,7 +583,7 @@ Returns the offset of a tile's shape.
 
 .. _class_TileSet_method_tile_get_shape_one_way:
 
-- :ref:`bool<class_bool>` **tile_get_shape_one_way** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const
+- :ref:`bool<class_bool>` **tile_get_shape_one_way** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** |const|
 
 Returns the one-way collision value of a tile's shape.
 
@@ -591,13 +591,13 @@ Returns the one-way collision value of a tile's shape.
 
 .. _class_TileSet_method_tile_get_shape_one_way_margin:
 
-- :ref:`float<class_float>` **tile_get_shape_one_way_margin** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const
+- :ref:`float<class_float>` **tile_get_shape_one_way_margin** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** |const|
 
 ----
 
 .. _class_TileSet_method_tile_get_shape_transform:
 
-- :ref:`Transform2D<class_Transform2D>` **tile_get_shape_transform** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const
+- :ref:`Transform2D<class_Transform2D>` **tile_get_shape_transform** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** |const|
 
 Returns the :ref:`Transform2D<class_Transform2D>` of a tile's shape.
 
@@ -605,7 +605,7 @@ Returns the :ref:`Transform2D<class_Transform2D>` of a tile's shape.
 
 .. _class_TileSet_method_tile_get_shapes:
 
-- :ref:`Array<class_Array>` **tile_get_shapes** **(** :ref:`int<class_int>` id **)** const
+- :ref:`Array<class_Array>` **tile_get_shapes** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns an array of dictionaries describing the tile's shapes.
 
@@ -625,7 +625,7 @@ Returns an array of dictionaries describing the tile's shapes.
 
 .. _class_TileSet_method_tile_get_texture:
 
-- :ref:`Texture<class_Texture>` **tile_get_texture** **(** :ref:`int<class_int>` id **)** const
+- :ref:`Texture<class_Texture>` **tile_get_texture** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the tile's texture.
 
@@ -633,7 +633,7 @@ Returns the tile's texture.
 
 .. _class_TileSet_method_tile_get_texture_offset:
 
-- :ref:`Vector2<class_Vector2>` **tile_get_texture_offset** **(** :ref:`int<class_int>` id **)** const
+- :ref:`Vector2<class_Vector2>` **tile_get_texture_offset** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the texture offset of the tile.
 
@@ -641,7 +641,7 @@ Returns the texture offset of the tile.
 
 .. _class_TileSet_method_tile_get_tile_mode:
 
-- :ref:`TileMode<enum_TileSet_TileMode>` **tile_get_tile_mode** **(** :ref:`int<class_int>` id **)** const
+- :ref:`TileMode<enum_TileSet_TileMode>` **tile_get_tile_mode** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the tile's :ref:`TileMode<enum_TileSet_TileMode>`.
 
@@ -649,7 +649,7 @@ Returns the tile's :ref:`TileMode<enum_TileSet_TileMode>`.
 
 .. _class_TileSet_method_tile_get_z_index:
 
-- :ref:`int<class_int>` **tile_get_z_index** **(** :ref:`int<class_int>` id **)** const
+- :ref:`int<class_int>` **tile_get_z_index** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the tile's Z index (drawing layer).
 
@@ -805,3 +805,6 @@ Sets the tile's :ref:`TileMode<enum_TileSet_TileMode>`.
 
 Sets the tile's drawing index.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

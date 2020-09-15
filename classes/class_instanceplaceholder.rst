@@ -26,7 +26,7 @@ Methods
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_Node>`             | :ref:`create_instance<class_InstancePlaceholder_method_create_instance>` **(** :ref:`bool<class_bool>` replace=false, :ref:`PackedScene<class_PackedScene>` custom_scene=null **)** |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`get_instance_path<class_InstancePlaceholder_method_get_instance_path>` **(** **)** const                                                                                      |
+| :ref:`String<class_String>`         | :ref:`get_instance_path<class_InstancePlaceholder_method_get_instance_path>` **(** **)** |const|                                                                                    |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>` | :ref:`get_stored_values<class_InstancePlaceholder_method_get_stored_values>` **(** :ref:`bool<class_bool>` with_order=false **)**                                                   |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -44,7 +44,7 @@ Method Descriptions
 
 .. _class_InstancePlaceholder_method_get_instance_path:
 
-- :ref:`String<class_String>` **get_instance_path** **(** **)** const
+- :ref:`String<class_String>` **get_instance_path** **(** **)** |const|
 
 Gets the path to the :ref:`PackedScene<class_PackedScene>` resource file that is loaded by default when calling :ref:`replace_by_instance<class_InstancePlaceholder_method_replace_by_instance>`.
 
@@ -62,3 +62,6 @@ Gets the path to the :ref:`PackedScene<class_PackedScene>` resource file that is
 
 Replaces this placeholder by the scene handed as an argument, or the original scene if no argument is given. As for all resources, the scene is loaded only if it's not loaded already. By manually loading the scene beforehand, delays caused by this function can be avoided.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

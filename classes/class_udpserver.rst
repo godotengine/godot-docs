@@ -79,9 +79,9 @@ Methods
 -------
 
 +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`is_connection_available<class_UDPServer_method_is_connection_available>` **(** **)** const                                  |
+| :ref:`bool<class_bool>`                   | :ref:`is_connection_available<class_UDPServer_method_is_connection_available>` **(** **)** |const|                                |
 +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`is_listening<class_UDPServer_method_is_listening>` **(** **)** const                                                        |
+| :ref:`bool<class_bool>`                   | :ref:`is_listening<class_UDPServer_method_is_listening>` **(** **)** |const|                                                      |
 +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`listen<class_UDPServer_method_listen>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*" **)** |
 +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
@@ -114,7 +114,7 @@ Method Descriptions
 
 .. _class_UDPServer_method_is_connection_available:
 
-- :ref:`bool<class_bool>` **is_connection_available** **(** **)** const
+- :ref:`bool<class_bool>` **is_connection_available** **(** **)** |const|
 
 Returns ``true`` if a packet with a new address/port combination was received on the socket.
 
@@ -122,7 +122,7 @@ Returns ``true`` if a packet with a new address/port combination was received on
 
 .. _class_UDPServer_method_is_listening:
 
-- :ref:`bool<class_bool>` **is_listening** **(** **)** const
+- :ref:`bool<class_bool>` **is_listening** **(** **)** |const|
 
 Returns ``true`` if the socket is open and listening on a port.
 
@@ -158,3 +158,6 @@ Stops the server, closing the UDP socket if open. Will close all connected :ref:
 
 Returns the first pending connection (connected to the appropriate address/port). Will return ``null`` if no new connection is available. See also :ref:`is_connection_available<class_UDPServer_method_is_connection_available>`, :ref:`PacketPeerUDP.connect_to_host<class_PacketPeerUDP_method_connect_to_host>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

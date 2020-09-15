@@ -72,9 +72,9 @@ Methods
 -------
 
 +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>` | :ref:`capture_aabb<class_Particles_method_capture_aabb>` **(** **)** const                                                                |
+| :ref:`AABB<class_AABB>` | :ref:`capture_aabb<class_Particles_method_capture_aabb>` **(** **)** |const|                                                              |
 +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Mesh<class_Mesh>` | :ref:`get_draw_pass_mesh<class_Particles_method_get_draw_pass_mesh>` **(** :ref:`int<class_int>` pass **)** const                         |
+| :ref:`Mesh<class_Mesh>` | :ref:`get_draw_pass_mesh<class_Particles_method_get_draw_pass_mesh>` **(** :ref:`int<class_int>` pass **)** |const|                       |
 +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`restart<class_Particles_method_restart>` **(** **)**                                                                                |
 +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -409,7 +409,7 @@ Method Descriptions
 
 .. _class_Particles_method_capture_aabb:
 
-- :ref:`AABB<class_AABB>` **capture_aabb** **(** **)** const
+- :ref:`AABB<class_AABB>` **capture_aabb** **(** **)** |const|
 
 Returns the axis-aligned bounding box that contains all the particles that are active in the current frame.
 
@@ -417,7 +417,7 @@ Returns the axis-aligned bounding box that contains all the particles that are a
 
 .. _class_Particles_method_get_draw_pass_mesh:
 
-- :ref:`Mesh<class_Mesh>` **get_draw_pass_mesh** **(** :ref:`int<class_int>` pass **)** const
+- :ref:`Mesh<class_Mesh>` **get_draw_pass_mesh** **(** :ref:`int<class_int>` pass **)** |const|
 
 Returns the :ref:`Mesh<class_Mesh>` that is drawn at index ``pass``.
 
@@ -437,3 +437,6 @@ Restarts the particle emission, clearing existing particles.
 
 Sets the :ref:`Mesh<class_Mesh>` that is drawn at index ``pass``.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -114,11 +114,11 @@ Methods
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`cancel_request<class_HTTPRequest_method_cancel_request>` **(** **)**                                                                                                                                                                                                                                                    |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_body_size<class_HTTPRequest_method_get_body_size>` **(** **)** const                                                                                                                                                                                                                                                |
+| :ref:`int<class_int>`                 | :ref:`get_body_size<class_HTTPRequest_method_get_body_size>` **(** **)** |const|                                                                                                                                                                                                                                              |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_downloaded_bytes<class_HTTPRequest_method_get_downloaded_bytes>` **(** **)** const                                                                                                                                                                                                                                  |
+| :ref:`int<class_int>`                 | :ref:`get_downloaded_bytes<class_HTTPRequest_method_get_downloaded_bytes>` **(** **)** |const|                                                                                                                                                                                                                                |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Status<enum_HTTPClient_Status>` | :ref:`get_http_client_status<class_HTTPRequest_method_get_http_client_status>` **(** **)** const                                                                                                                                                                                                                              |
+| :ref:`Status<enum_HTTPClient_Status>` | :ref:`get_http_client_status<class_HTTPRequest_method_get_http_client_status>` **(** **)** |const|                                                                                                                                                                                                                            |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`request<class_HTTPRequest_method_request>` **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` custom_headers=PoolStringArray(  ), :ref:`bool<class_bool>` ssl_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)** |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -301,7 +301,7 @@ Cancels the current request.
 
 .. _class_HTTPRequest_method_get_body_size:
 
-- :ref:`int<class_int>` **get_body_size** **(** **)** const
+- :ref:`int<class_int>` **get_body_size** **(** **)** |const|
 
 Returns the response body length.
 
@@ -311,7 +311,7 @@ Returns the response body length.
 
 .. _class_HTTPRequest_method_get_downloaded_bytes:
 
-- :ref:`int<class_int>` **get_downloaded_bytes** **(** **)** const
+- :ref:`int<class_int>` **get_downloaded_bytes** **(** **)** |const|
 
 Returns the amount of bytes this HTTPRequest downloaded.
 
@@ -319,7 +319,7 @@ Returns the amount of bytes this HTTPRequest downloaded.
 
 .. _class_HTTPRequest_method_get_http_client_status:
 
-- :ref:`Status<enum_HTTPClient_Status>` **get_http_client_status** **(** **)** const
+- :ref:`Status<enum_HTTPClient_Status>` **get_http_client_status** **(** **)** |const|
 
 Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`. See :ref:`Status<enum_HTTPClient_Status>`.
 
@@ -333,3 +333,8 @@ Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>`. If there 
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if request is successfully created. (Does not imply that the server has responded), :ref:`@GlobalScope.ERR_UNCONFIGURED<class_@GlobalScope_constant_ERR_UNCONFIGURED>` if not in the tree, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` if still processing previous request, :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` if given string is not a valid URL format, or :ref:`@GlobalScope.ERR_CANT_CONNECT<class_@GlobalScope_constant_ERR_CANT_CONNECT>` if not using thread and the :ref:`HTTPClient<class_HTTPClient>` cannot connect to host.
 
+**Note:** The ``request_data`` parameter is ignored if ``method`` is :ref:`HTTPClient.METHOD_GET<class_HTTPClient_constant_METHOD_GET>`. This is because GET methods can't contain request data. As a workaround, you can pass request data as a query string in the URL. See :ref:`String.http_escape<class_String_method_http_escape>` for an example.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

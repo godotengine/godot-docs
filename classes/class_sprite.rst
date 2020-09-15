@@ -52,11 +52,11 @@ Properties
 Methods
 -------
 
-+---------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>` | :ref:`get_rect<class_Sprite_method_get_rect>` **(** **)** const                                                 |
-+---------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`is_pixel_opaque<class_Sprite_method_is_pixel_opaque>` **(** :ref:`Vector2<class_Vector2>` pos **)** const |
-+---------------------------+-----------------------------------------------------------------------------------------------------------------+
++---------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_Rect2>` | :ref:`get_rect<class_Sprite_method_get_rect>` **(** **)** |const|                                                 |
++---------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`is_pixel_opaque<class_Sprite_method_is_pixel_opaque>` **(** :ref:`Vector2<class_Vector2>` pos **)** |const| |
++---------------------------+-------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -287,7 +287,7 @@ Method Descriptions
 
 .. _class_Sprite_method_get_rect:
 
-- :ref:`Rect2<class_Rect2>` **get_rect** **(** **)** const
+- :ref:`Rect2<class_Rect2>` **get_rect** **(** **)** |const|
 
 Returns a :ref:`Rect2<class_Rect2>` representing the Sprite's boundary in local coordinates. Can be used to detect if the Sprite was clicked. Example:
 
@@ -302,9 +302,12 @@ Returns a :ref:`Rect2<class_Rect2>` representing the Sprite's boundary in local 
 
 .. _class_Sprite_method_is_pixel_opaque:
 
-- :ref:`bool<class_bool>` **is_pixel_opaque** **(** :ref:`Vector2<class_Vector2>` pos **)** const
+- :ref:`bool<class_bool>` **is_pixel_opaque** **(** :ref:`Vector2<class_Vector2>` pos **)** |const|
 
 Returns ``true``, if the pixel at the given position is opaque and ``false`` in other case.
 
 **Note:** It also returns ``false``, if the sprite's texture is ``null`` or if the given position is invalid.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

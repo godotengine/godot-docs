@@ -18,6 +18,8 @@ Description
 
 A unit of execution in a process. Can run methods on :ref:`Object<class_Object>`\ s simultaneously. The use of synchronization via :ref:`Mutex<class_Mutex>` or :ref:`Semaphore<class_Semaphore>` is advised if working with shared objects.
 
+**Note:** Breakpoints won't break on code if it's running in a thread. This is a current limitation of the GDScript debugger.
+
 Tutorials
 ---------
 
@@ -29,9 +31,9 @@ Methods
 -------
 
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_id<class_Thread_method_get_id>` **(** **)** const                                                                                                                                                                 |
+| :ref:`String<class_String>`           | :ref:`get_id<class_Thread_method_get_id>` **(** **)** |const|                                                                                                                                                               |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_active<class_Thread_method_is_active>` **(** **)** const                                                                                                                                                           |
+| :ref:`bool<class_bool>`               | :ref:`is_active<class_Thread_method_is_active>` **(** **)** |const|                                                                                                                                                         |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`start<class_Thread_method_start>` **(** :ref:`Object<class_Object>` instance, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` userdata=null, :ref:`Priority<enum_Thread_Priority>` priority=1 **)** |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -62,15 +64,15 @@ Method Descriptions
 
 .. _class_Thread_method_get_id:
 
-- :ref:`String<class_String>` **get_id** **(** **)** const
+- :ref:`String<class_String>` **get_id** **(** **)** |const|
 
-Returns the current ``Thread``'s ID, uniquely identifying it among all threads.
+Returns the current ``Thread``'s ID, uniquely identifying it among all threads. If the ``Thread`` is not running this returns an empty string.
 
 ----
 
 .. _class_Thread_method_is_active:
 
-- :ref:`bool<class_bool>` **is_active** **(** **)** const
+- :ref:`bool<class_bool>` **is_active** **(** **)** |const|
 
 Returns ``true`` if this ``Thread`` is currently active. An active ``Thread`` cannot start work on a new method but can be joined with :ref:`wait_to_finish<class_Thread_method_wait_to_finish>`.
 
@@ -92,3 +94,6 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or :r
 
 Joins the ``Thread`` and waits for it to finish. Returns what the method called returned.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

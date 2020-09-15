@@ -11,12 +11,16 @@ TouchScreenButton
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Button for touch screen devices.
+Button for touch screen devices for gameplay use.
 
 Description
 -----------
 
-Button for touch screen devices. You can set it to be visible on all screens, or only on touch devices.
+TouchScreenButton allows you to create on-screen buttons for touch devices. It's intended for gameplay use, such as a unit you have to touch to move.
+
+This node inherits from :ref:`Node2D<class_Node2D>`. Unlike with :ref:`Control<class_Control>` nodes, you cannot set anchors on it. If you want to create menus or user interfaces, you may want to use :ref:`Button<class_Button>` nodes instead. To make button nodes react to touch events, you can enable the Emulate Mouse option in the Project Settings.
+
+You can configure TouchScreenButton to be visible only on touch devices, helping you develop your game both for desktop and mobile devices.
 
 Properties
 ----------
@@ -44,9 +48,9 @@ Properties
 Methods
 -------
 
-+-------------------------+--------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_pressed<class_TouchScreenButton_method_is_pressed>` **(** **)** const |
-+-------------------------+--------------------------------------------------------------------------------+
++-------------------------+----------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`is_pressed<class_TouchScreenButton_method_is_pressed>` **(** **)** |const| |
++-------------------------+----------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -222,7 +226,10 @@ Method Descriptions
 
 .. _class_TouchScreenButton_method_is_pressed:
 
-- :ref:`bool<class_bool>` **is_pressed** **(** **)** const
+- :ref:`bool<class_bool>` **is_pressed** **(** **)** |const|
 
 Returns ``true`` if this button is currently pressed.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

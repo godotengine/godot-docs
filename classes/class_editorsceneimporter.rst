@@ -19,13 +19,13 @@ Methods
 -------
 
 +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`         | :ref:`_get_extensions<class_EditorSceneImporter_method__get_extensions>` **(** **)** virtual                                                                                                                                 |
+| :ref:`Array<class_Array>`         | :ref:`_get_extensions<class_EditorSceneImporter_method__get_extensions>` **(** **)** |virtual|                                                                                                                               |
 +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`_get_import_flags<class_EditorSceneImporter_method__get_import_flags>` **(** **)** virtual                                                                                                                             |
+| :ref:`int<class_int>`             | :ref:`_get_import_flags<class_EditorSceneImporter_method__get_import_flags>` **(** **)** |virtual|                                                                                                                           |
 +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Animation<class_Animation>` | :ref:`_import_animation<class_EditorSceneImporter_method__import_animation>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** virtual                               |
+| :ref:`Animation<class_Animation>` | :ref:`_import_animation<class_EditorSceneImporter_method__import_animation>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** |virtual|                             |
 +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`           | :ref:`_import_scene<class_EditorSceneImporter_method__import_scene>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** virtual                                       |
+| :ref:`Node<class_Node>`           | :ref:`_import_scene<class_EditorSceneImporter_method__import_scene>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** |virtual|                                     |
 +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Animation<class_Animation>` | :ref:`import_animation_from_other_importer<class_EditorSceneImporter_method_import_animation_from_other_importer>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** |
 +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -80,25 +80,25 @@ Method Descriptions
 
 .. _class_EditorSceneImporter_method__get_extensions:
 
-- :ref:`Array<class_Array>` **_get_extensions** **(** **)** virtual
+- :ref:`Array<class_Array>` **_get_extensions** **(** **)** |virtual|
 
 ----
 
 .. _class_EditorSceneImporter_method__get_import_flags:
 
-- :ref:`int<class_int>` **_get_import_flags** **(** **)** virtual
+- :ref:`int<class_int>` **_get_import_flags** **(** **)** |virtual|
 
 ----
 
 .. _class_EditorSceneImporter_method__import_animation:
 
-- :ref:`Animation<class_Animation>` **_import_animation** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** virtual
+- :ref:`Animation<class_Animation>` **_import_animation** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** |virtual|
 
 ----
 
 .. _class_EditorSceneImporter_method__import_scene:
 
-- :ref:`Node<class_Node>` **_import_scene** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** virtual
+- :ref:`Node<class_Node>` **_import_scene** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** |virtual|
 
 ----
 
@@ -112,3 +112,6 @@ Method Descriptions
 
 - :ref:`Node<class_Node>` **import_scene_from_other_importer** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

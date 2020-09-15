@@ -24,7 +24,7 @@ Methods
 -------
 
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`get_tracked_linear_velocity<class_SpatialVelocityTracker_method_get_tracked_linear_velocity>` **(** **)** const          |
+| :ref:`Vector3<class_Vector3>` | :ref:`get_tracked_linear_velocity<class_SpatialVelocityTracker_method_get_tracked_linear_velocity>` **(** **)** |const|        |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`reset<class_SpatialVelocityTracker_method_reset>` **(** :ref:`Vector3<class_Vector3>` position **)**                     |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
@@ -51,7 +51,7 @@ Method Descriptions
 
 .. _class_SpatialVelocityTracker_method_get_tracked_linear_velocity:
 
-- :ref:`Vector3<class_Vector3>` **get_tracked_linear_velocity** **(** **)** const
+- :ref:`Vector3<class_Vector3>` **get_tracked_linear_velocity** **(** **)** |const|
 
 ----
 
@@ -65,3 +65,6 @@ Method Descriptions
 
 - void **update_position** **(** :ref:`Vector3<class_Vector3>` position **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

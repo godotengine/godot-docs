@@ -18,6 +18,13 @@ Description
 
 Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource, which can be configured in the editor via the SpriteFrames panel.
 
+**Note:** You can associate a set of normal maps by creating additional :ref:`SpriteFrames<class_SpriteFrames>` resources with a ``_normal`` suffix. For example, having 2 :ref:`SpriteFrames<class_SpriteFrames>` resources ``run`` and ``run_normal`` will make it so the ``run`` animation uses the normal map.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/2d_sprite_animation`
+
 Properties
 ----------
 
@@ -45,7 +52,7 @@ Methods
 -------
 
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_playing<class_AnimatedSprite_method_is_playing>` **(** **)** const                                                            |
+| :ref:`bool<class_bool>` | :ref:`is_playing<class_AnimatedSprite_method_is_playing>` **(** **)** |const|                                                          |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`play<class_AnimatedSprite_method_play>` **(** :ref:`String<class_String>` anim="", :ref:`bool<class_bool>` backwards=false **)** |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
@@ -213,7 +220,7 @@ Method Descriptions
 
 .. _class_AnimatedSprite_method_is_playing:
 
-- :ref:`bool<class_bool>` **is_playing** **(** **)** const
+- :ref:`bool<class_bool>` **is_playing** **(** **)** |const|
 
 Returns ``true`` if an animation is currently being played.
 
@@ -233,3 +240,6 @@ Plays the animation named ``anim``. If no ``anim`` is provided, the current anim
 
 Stops the current animation (does not reset the frame counter).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

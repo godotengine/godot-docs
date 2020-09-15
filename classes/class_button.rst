@@ -20,6 +20,21 @@ Description
 
 Button is the standard themed button. It can contain text and an icon, and will display them according to the current :ref:`Theme<class_Theme>`.
 
+**Example of creating a button and assigning an action when pressed by code:**
+
+::
+
+    func _ready():
+        var button = Button.new()
+        button.text = "Click me"
+        button.connect("pressed", self, "_button_pressed")
+        add_child(button)
+    
+    func _button_pressed():
+        print("Hello world!")
+
+Buttons (like all Control nodes) can also be created in the editor, but some situations may require creating them from code.
+
 Properties
 ----------
 
@@ -178,3 +193,6 @@ Button's icon, if text is present the icon will be placed before the text.
 
 The button's text that will be displayed inside the button's area.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

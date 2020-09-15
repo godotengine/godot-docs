@@ -683,17 +683,17 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`clear<class_ProjectSettings_method_clear>` **(** :ref:`String<class_String>` name **)**                                                                       |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_order<class_ProjectSettings_method_get_order>` **(** :ref:`String<class_String>` name **)** const                                                         |
+| :ref:`int<class_int>`                 | :ref:`get_order<class_ProjectSettings_method_get_order>` **(** :ref:`String<class_String>` name **)** |const|                                                       |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`get_setting<class_ProjectSettings_method_get_setting>` **(** :ref:`String<class_String>` name **)** const                                                     |
+| :ref:`Variant<class_Variant>`         | :ref:`get_setting<class_ProjectSettings_method_get_setting>` **(** :ref:`String<class_String>` name **)** |const|                                                   |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`globalize_path<class_ProjectSettings_method_globalize_path>` **(** :ref:`String<class_String>` path **)** const                                               |
+| :ref:`String<class_String>`           | :ref:`globalize_path<class_ProjectSettings_method_globalize_path>` **(** :ref:`String<class_String>` path **)** |const|                                             |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_setting<class_ProjectSettings_method_has_setting>` **(** :ref:`String<class_String>` name **)** const                                                     |
+| :ref:`bool<class_bool>`               | :ref:`has_setting<class_ProjectSettings_method_has_setting>` **(** :ref:`String<class_String>` name **)** |const|                                                   |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`               | :ref:`load_resource_pack<class_ProjectSettings_method_load_resource_pack>` **(** :ref:`String<class_String>` pack, :ref:`bool<class_bool>` replace_files=true **)** |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`localize_path<class_ProjectSettings_method_localize_path>` **(** :ref:`String<class_String>` path **)** const                                                 |
+| :ref:`String<class_String>`           | :ref:`localize_path<class_ProjectSettings_method_localize_path>` **(** :ref:`String<class_String>` path **)** |const|                                               |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`               | :ref:`property_can_revert<class_ProjectSettings_method_property_can_revert>` **(** :ref:`String<class_String>` name **)**                                           |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -833,7 +833,9 @@ Icon set in ``.icns`` format used on macOS to set the game's icon. This is done 
 | *Default* | ``""`` |
 +-----------+--------+
 
-The project's name. It is used both by the Project Manager and by exporters. The project name can be translated by translating its value in localization files.
+The project's name. It is used both by the Project Manager and by exporters. The project name can be translated by translating its value in localization files. The window title will be set to match the project name automatically on startup.
+
+**Note:** Changing this value will also change the user data folder's path if :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>` is ``false``. After renaming the project, you will no longer be able to access existing data in ``user://`` unless you rename the old folder to match the new project name. See `Data paths <https://docs.godotengine.org/en/latest/tutorials/io/data_paths.html>`_ in the documentation for more information.
 
 ----
 
@@ -3817,6 +3819,8 @@ Enabling this setting uses the legacy method to draw batches containing only one
 
 Turns batching on and off. Batching increases performance by reducing the amount of graphics API drawcalls.
 
+**Note:** Currently only effective when using the GLES2 renderer.
+
 ----
 
 .. _class_ProjectSettings_property_rendering/batching/options/use_batching_in_editor:
@@ -3828,6 +3832,8 @@ Turns batching on and off. Batching increases performance by reducing the amount
 +-----------+----------+
 
 Switches on batching within the editor.
+
+**Note:** Currently only effective when using the GLES2 renderer.
 
 ----
 
@@ -4683,7 +4689,7 @@ Clears the whole configuration (not recommended, may break things).
 
 .. _class_ProjectSettings_method_get_order:
 
-- :ref:`int<class_int>` **get_order** **(** :ref:`String<class_String>` name **)** const
+- :ref:`int<class_int>` **get_order** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns the order of a configuration value (influences when saved to the config file).
 
@@ -4691,7 +4697,7 @@ Returns the order of a configuration value (influences when saved to the config 
 
 .. _class_ProjectSettings_method_get_setting:
 
-- :ref:`Variant<class_Variant>` **get_setting** **(** :ref:`String<class_String>` name **)** const
+- :ref:`Variant<class_Variant>` **get_setting** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns the value of a setting.
 
@@ -4705,7 +4711,7 @@ Returns the value of a setting.
 
 .. _class_ProjectSettings_method_globalize_path:
 
-- :ref:`String<class_String>` **globalize_path** **(** :ref:`String<class_String>` path **)** const
+- :ref:`String<class_String>` **globalize_path** **(** :ref:`String<class_String>` path **)** |const|
 
 Converts a localized path (``res://``) to a full native OS path.
 
@@ -4713,7 +4719,7 @@ Converts a localized path (``res://``) to a full native OS path.
 
 .. _class_ProjectSettings_method_has_setting:
 
-- :ref:`bool<class_bool>` **has_setting** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **has_setting** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns ``true`` if a configuration value is present.
 
@@ -4731,7 +4737,7 @@ Loads the contents of the .pck or .zip file specified by ``pack`` into the resou
 
 .. _class_ProjectSettings_method_localize_path:
 
-- :ref:`String<class_String>` **localize_path** **(** :ref:`String<class_String>` path **)** const
+- :ref:`String<class_String>` **localize_path** **(** :ref:`String<class_String>` path **)** |const|
 
 Convert a path to a localized path (``res://`` path).
 
@@ -4797,3 +4803,6 @@ Sets the value of a setting.
 
     ProjectSettings.set_setting("application/config/name", "Example")
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

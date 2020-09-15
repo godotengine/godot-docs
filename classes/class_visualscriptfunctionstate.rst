@@ -19,7 +19,7 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`connect_to_signal<class_VisualScriptFunctionState_method_connect_to_signal>` **(** :ref:`Object<class_Object>` obj, :ref:`String<class_String>` signals, :ref:`Array<class_Array>` args **)** |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_valid<class_VisualScriptFunctionState_method_is_valid>` **(** **)** const                                                                                                                  |
+| :ref:`bool<class_bool>`       | :ref:`is_valid<class_VisualScriptFunctionState_method_is_valid>` **(** **)** |const|                                                                                                                |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>` | :ref:`resume<class_VisualScriptFunctionState_method_resume>` **(** :ref:`Array<class_Array>` args=null **)**                                                                                        |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -35,7 +35,7 @@ Method Descriptions
 
 .. _class_VisualScriptFunctionState_method_is_valid:
 
-- :ref:`bool<class_bool>` **is_valid** **(** **)** const
+- :ref:`bool<class_bool>` **is_valid** **(** **)** |const|
 
 ----
 
@@ -43,3 +43,6 @@ Method Descriptions
 
 - :ref:`Variant<class_Variant>` **resume** **(** :ref:`Array<class_Array>` args=null **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

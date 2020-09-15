@@ -129,3 +129,6 @@ The margin used for one-way collision (in pixels). Higher values will make the s
 
 The polygon's list of vertices. The final point will be connected to the first. The returned value is a clone of the :ref:`PoolVector2Array<class_PoolVector2Array>`, not a reference.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

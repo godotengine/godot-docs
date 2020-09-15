@@ -60,35 +60,35 @@ Here is an example script implementing a simple ``MainLoop``:
 Methods
 -------
 
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`_drop_files<class_MainLoop_method__drop_files>` **(** :ref:`PoolStringArray<class_PoolStringArray>` files, :ref:`int<class_int>` from_screen **)** virtual |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`_finalize<class_MainLoop_method__finalize>` **(** **)** virtual                                                                                            |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`_global_menu_action<class_MainLoop_method__global_menu_action>` **(** :ref:`Variant<class_Variant>` id, :ref:`Variant<class_Variant>` meta **)** virtual   |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`_idle<class_MainLoop_method__idle>` **(** :ref:`float<class_float>` delta **)** virtual                                                                    |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`_initialize<class_MainLoop_method__initialize>` **(** **)** virtual                                                                                        |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`_input_event<class_MainLoop_method__input_event>` **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual                                            |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`_input_text<class_MainLoop_method__input_text>` **(** :ref:`String<class_String>` text **)** virtual                                                       |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`_iteration<class_MainLoop_method__iteration>` **(** :ref:`float<class_float>` delta **)** virtual                                                          |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`finish<class_MainLoop_method_finish>` **(** **)**                                                                                                          |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`idle<class_MainLoop_method_idle>` **(** :ref:`float<class_float>` delta **)**                                                                              |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`init<class_MainLoop_method_init>` **(** **)**                                                                                                              |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`input_event<class_MainLoop_method_input_event>` **(** :ref:`InputEvent<class_InputEvent>` event **)**                                                      |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`input_text<class_MainLoop_method_input_text>` **(** :ref:`String<class_String>` text **)**                                                                 |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`iteration<class_MainLoop_method_iteration>` **(** :ref:`float<class_float>` delta **)**                                                                    |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`_drop_files<class_MainLoop_method__drop_files>` **(** :ref:`PoolStringArray<class_PoolStringArray>` files, :ref:`int<class_int>` from_screen **)** |virtual| |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`_finalize<class_MainLoop_method__finalize>` **(** **)** |virtual|                                                                                            |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`_global_menu_action<class_MainLoop_method__global_menu_action>` **(** :ref:`Variant<class_Variant>` id, :ref:`Variant<class_Variant>` meta **)** |virtual|   |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`_idle<class_MainLoop_method__idle>` **(** :ref:`float<class_float>` delta **)** |virtual|                                                                    |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`_initialize<class_MainLoop_method__initialize>` **(** **)** |virtual|                                                                                        |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`_input_event<class_MainLoop_method__input_event>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|                                            |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`_input_text<class_MainLoop_method__input_text>` **(** :ref:`String<class_String>` text **)** |virtual|                                                       |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`_iteration<class_MainLoop_method__iteration>` **(** :ref:`float<class_float>` delta **)** |virtual|                                                          |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`finish<class_MainLoop_method_finish>` **(** **)**                                                                                                            |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`idle<class_MainLoop_method_idle>` **(** :ref:`float<class_float>` delta **)**                                                                                |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`init<class_MainLoop_method_init>` **(** **)**                                                                                                                |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`input_event<class_MainLoop_method_input_event>` **(** :ref:`InputEvent<class_InputEvent>` event **)**                                                        |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`input_text<class_MainLoop_method_input_text>` **(** :ref:`String<class_String>` text **)**                                                                   |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`iteration<class_MainLoop_method_iteration>` **(** :ref:`float<class_float>` delta **)**                                                                      |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -189,7 +189,7 @@ Method Descriptions
 
 .. _class_MainLoop_method__drop_files:
 
-- void **_drop_files** **(** :ref:`PoolStringArray<class_PoolStringArray>` files, :ref:`int<class_int>` from_screen **)** virtual
+- void **_drop_files** **(** :ref:`PoolStringArray<class_PoolStringArray>` files, :ref:`int<class_int>` from_screen **)** |virtual|
 
 Called when files are dragged from the OS file manager and dropped in the game window. The arguments are a list of file paths and the identifier of the screen where the drag originated.
 
@@ -197,7 +197,7 @@ Called when files are dragged from the OS file manager and dropped in the game w
 
 .. _class_MainLoop_method__finalize:
 
-- void **_finalize** **(** **)** virtual
+- void **_finalize** **(** **)** |virtual|
 
 Called before the program exits.
 
@@ -205,7 +205,7 @@ Called before the program exits.
 
 .. _class_MainLoop_method__global_menu_action:
 
-- void **_global_menu_action** **(** :ref:`Variant<class_Variant>` id, :ref:`Variant<class_Variant>` meta **)** virtual
+- void **_global_menu_action** **(** :ref:`Variant<class_Variant>` id, :ref:`Variant<class_Variant>` meta **)** |virtual|
 
 Called when the user performs an action in the system global menu (e.g. the Mac OS menu bar).
 
@@ -213,7 +213,7 @@ Called when the user performs an action in the system global menu (e.g. the Mac 
 
 .. _class_MainLoop_method__idle:
 
-- :ref:`bool<class_bool>` **_idle** **(** :ref:`float<class_float>` delta **)** virtual
+- :ref:`bool<class_bool>` **_idle** **(** :ref:`float<class_float>` delta **)** |virtual|
 
 Called each idle frame with the time since the last idle frame as argument (in seconds). Equivalent to :ref:`Node._process<class_Node_method__process>`.
 
@@ -223,7 +223,7 @@ If implemented, the method must return a boolean value. ``true`` ends the main l
 
 .. _class_MainLoop_method__initialize:
 
-- void **_initialize** **(** **)** virtual
+- void **_initialize** **(** **)** |virtual|
 
 Called once during initialization.
 
@@ -231,7 +231,7 @@ Called once during initialization.
 
 .. _class_MainLoop_method__input_event:
 
-- void **_input_event** **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual
+- void **_input_event** **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|
 
 Called whenever an :ref:`InputEvent<class_InputEvent>` is received by the main loop.
 
@@ -239,7 +239,7 @@ Called whenever an :ref:`InputEvent<class_InputEvent>` is received by the main l
 
 .. _class_MainLoop_method__input_text:
 
-- void **_input_text** **(** :ref:`String<class_String>` text **)** virtual
+- void **_input_text** **(** :ref:`String<class_String>` text **)** |virtual|
 
 Deprecated callback, does not do anything. Use :ref:`_input_event<class_MainLoop_method__input_event>` to parse text input. Will be removed in Godot 4.0.
 
@@ -247,7 +247,7 @@ Deprecated callback, does not do anything. Use :ref:`_input_event<class_MainLoop
 
 .. _class_MainLoop_method__iteration:
 
-- :ref:`bool<class_bool>` **_iteration** **(** :ref:`float<class_float>` delta **)** virtual
+- :ref:`bool<class_bool>` **_iteration** **(** :ref:`float<class_float>` delta **)** |virtual|
 
 Called each physics frame with the time since the last physics frame as argument (in seconds). Equivalent to :ref:`Node._physics_process<class_Node_method__physics_process>`.
 
@@ -301,3 +301,6 @@ Should not be called manually, override :ref:`_input_text<class_MainLoop_method_
 
 Should not be called manually, override :ref:`_iteration<class_MainLoop_method__iteration>` instead. Will be removed in Godot 4.0.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

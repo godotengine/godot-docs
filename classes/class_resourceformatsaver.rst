@@ -23,20 +23,20 @@ By default, Godot saves resources as ``.tres`` (text-based), ``.res`` (binary) o
 Methods
 -------
 
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_recognized_extensions<class_ResourceFormatSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` resource **)** virtual                      |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`recognize<class_ResourceFormatSaver_method_recognize>` **(** :ref:`Resource<class_Resource>` resource **)** virtual                                                      |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`save<class_ResourceFormatSaver_method_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags **)** virtual |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_recognized_extensions<class_ResourceFormatSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual|                      |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`recognize<class_ResourceFormatSaver_method_recognize>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual|                                                      |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`save<class_ResourceFormatSaver_method_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags **)** |virtual| |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_ResourceFormatSaver_method_get_recognized_extensions:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` resource **)** virtual
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` resource **)** |virtual|
 
 Returns the list of extensions available for saving the resource object, provided it is recognized (see :ref:`recognize<class_ResourceFormatSaver_method_recognize>`).
 
@@ -44,7 +44,7 @@ Returns the list of extensions available for saving the resource object, provide
 
 .. _class_ResourceFormatSaver_method_recognize:
 
-- :ref:`bool<class_bool>` **recognize** **(** :ref:`Resource<class_Resource>` resource **)** virtual
+- :ref:`bool<class_bool>` **recognize** **(** :ref:`Resource<class_Resource>` resource **)** |virtual|
 
 Returns whether the given resource object can be saved by this saver.
 
@@ -52,9 +52,12 @@ Returns whether the given resource object can be saved by this saver.
 
 .. _class_ResourceFormatSaver_method_save:
 
-- :ref:`int<class_int>` **save** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags **)** virtual
+- :ref:`int<class_int>` **save** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags **)** |virtual|
 
 Saves the given resource object to a file at the target ``path``. ``flags`` is a bitmask composed with :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` constants.
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or an :ref:`Error<enum_@GlobalScope_Error>` constant in case of failure.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -18,3 +18,6 @@ Description
 
 Generic 3D position hint for editing. It's just like a plain :ref:`Spatial<class_Spatial>`, but it displays as a cross in the 3D editor at all times.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -18,6 +18,8 @@ Description
 
 Horizontal slider. See :ref:`Slider<class_Slider>`. This one goes from left (min) to right (max).
 
+**Note:** The :ref:`Range.changed<class_Range_signal_changed>` and :ref:`Range.value_changed<class_Range_signal_value_changed>` signals are part of the :ref:`Range<class_Range>` class which this class inherits from.
+
 Theme Properties
 ----------------
 
@@ -37,3 +39,6 @@ Theme Properties
 | :ref:`Texture<class_Texture>`   | tick                   |
 +---------------------------------+------------------------+
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

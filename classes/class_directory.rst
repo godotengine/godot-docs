@@ -51,7 +51,7 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`copy<class_Directory_method_copy>` **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**                                               |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`current_is_dir<class_Directory_method_current_is_dir>` **(** **)** const                                                                                      |
+| :ref:`bool<class_bool>`               | :ref:`current_is_dir<class_Directory_method_current_is_dir>` **(** **)** |const|                                                                                    |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`               | :ref:`dir_exists<class_Directory_method_dir_exists>` **(** :ref:`String<class_String>` path **)**                                                                   |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -109,7 +109,7 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` 
 
 .. _class_Directory_method_current_is_dir:
 
-- :ref:`bool<class_bool>` **current_is_dir** **(** **)** const
+- :ref:`bool<class_bool>` **current_is_dir** **(** **)** |const|
 
 Returns whether the current item processed with the last :ref:`get_next<class_Directory_method_get_next>` call is a directory (``.`` and ``..`` are considered directories).
 
@@ -249,3 +249,6 @@ Renames (move) the ``from`` file to the ``to`` destination. Both arguments shoul
 
 Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

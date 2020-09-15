@@ -65,25 +65,25 @@ Methods
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`ensure_current_is_visible<class_ItemList_method_ensure_current_is_visible>` **(** **)**                                                                                  |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`get_item_at_position<class_ItemList_method_get_item_at_position>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` exact=false **)** const          |
+| :ref:`int<class_int>`                   | :ref:`get_item_at_position<class_ItemList_method_get_item_at_position>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` exact=false **)** |const|        |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`get_item_count<class_ItemList_method_get_item_count>` **(** **)** const                                                                                                  |
+| :ref:`int<class_int>`                   | :ref:`get_item_count<class_ItemList_method_get_item_count>` **(** **)** |const|                                                                                                |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`               | :ref:`get_item_custom_bg_color<class_ItemList_method_get_item_custom_bg_color>` **(** :ref:`int<class_int>` idx **)** const                                                    |
+| :ref:`Color<class_Color>`               | :ref:`get_item_custom_bg_color<class_ItemList_method_get_item_custom_bg_color>` **(** :ref:`int<class_int>` idx **)** |const|                                                  |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`               | :ref:`get_item_custom_fg_color<class_ItemList_method_get_item_custom_fg_color>` **(** :ref:`int<class_int>` idx **)** const                                                    |
+| :ref:`Color<class_Color>`               | :ref:`get_item_custom_fg_color<class_ItemList_method_get_item_custom_fg_color>` **(** :ref:`int<class_int>` idx **)** |const|                                                  |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`           | :ref:`get_item_icon<class_ItemList_method_get_item_icon>` **(** :ref:`int<class_int>` idx **)** const                                                                          |
+| :ref:`Texture<class_Texture>`           | :ref:`get_item_icon<class_ItemList_method_get_item_icon>` **(** :ref:`int<class_int>` idx **)** |const|                                                                        |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`               | :ref:`get_item_icon_modulate<class_ItemList_method_get_item_icon_modulate>` **(** :ref:`int<class_int>` idx **)** const                                                        |
+| :ref:`Color<class_Color>`               | :ref:`get_item_icon_modulate<class_ItemList_method_get_item_icon_modulate>` **(** :ref:`int<class_int>` idx **)** |const|                                                      |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`               | :ref:`get_item_icon_region<class_ItemList_method_get_item_icon_region>` **(** :ref:`int<class_int>` idx **)** const                                                            |
+| :ref:`Rect2<class_Rect2>`               | :ref:`get_item_icon_region<class_ItemList_method_get_item_icon_region>` **(** :ref:`int<class_int>` idx **)** |const|                                                          |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`           | :ref:`get_item_metadata<class_ItemList_method_get_item_metadata>` **(** :ref:`int<class_int>` idx **)** const                                                                  |
+| :ref:`Variant<class_Variant>`           | :ref:`get_item_metadata<class_ItemList_method_get_item_metadata>` **(** :ref:`int<class_int>` idx **)** |const|                                                                |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`             | :ref:`get_item_text<class_ItemList_method_get_item_text>` **(** :ref:`int<class_int>` idx **)** const                                                                          |
+| :ref:`String<class_String>`             | :ref:`get_item_text<class_ItemList_method_get_item_text>` **(** :ref:`int<class_int>` idx **)** |const|                                                                        |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`             | :ref:`get_item_tooltip<class_ItemList_method_get_item_tooltip>` **(** :ref:`int<class_int>` idx **)** const                                                                    |
+| :ref:`String<class_String>`             | :ref:`get_item_tooltip<class_ItemList_method_get_item_tooltip>` **(** :ref:`int<class_int>` idx **)** |const|                                                                  |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`get_selected_items<class_ItemList_method_get_selected_items>` **(** **)**                                                                                                |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -91,15 +91,15 @@ Methods
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                 | :ref:`is_anything_selected<class_ItemList_method_is_anything_selected>` **(** **)**                                                                                            |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`is_item_disabled<class_ItemList_method_is_item_disabled>` **(** :ref:`int<class_int>` idx **)** const                                                                    |
+| :ref:`bool<class_bool>`                 | :ref:`is_item_disabled<class_ItemList_method_is_item_disabled>` **(** :ref:`int<class_int>` idx **)** |const|                                                                  |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`is_item_icon_transposed<class_ItemList_method_is_item_icon_transposed>` **(** :ref:`int<class_int>` idx **)** const                                                      |
+| :ref:`bool<class_bool>`                 | :ref:`is_item_icon_transposed<class_ItemList_method_is_item_icon_transposed>` **(** :ref:`int<class_int>` idx **)** |const|                                                    |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`is_item_selectable<class_ItemList_method_is_item_selectable>` **(** :ref:`int<class_int>` idx **)** const                                                                |
+| :ref:`bool<class_bool>`                 | :ref:`is_item_selectable<class_ItemList_method_is_item_selectable>` **(** :ref:`int<class_int>` idx **)** |const|                                                              |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`is_item_tooltip_enabled<class_ItemList_method_is_item_tooltip_enabled>` **(** :ref:`int<class_int>` idx **)** const                                                      |
+| :ref:`bool<class_bool>`                 | :ref:`is_item_tooltip_enabled<class_ItemList_method_is_item_tooltip_enabled>` **(** :ref:`int<class_int>` idx **)** |const|                                                    |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`is_selected<class_ItemList_method_is_selected>` **(** :ref:`int<class_int>` idx **)** const                                                                              |
+| :ref:`bool<class_bool>`                 | :ref:`is_selected<class_ItemList_method_is_selected>` **(** :ref:`int<class_int>` idx **)** |const|                                                                            |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`move_item<class_ItemList_method_move_item>` **(** :ref:`int<class_int>` from_idx, :ref:`int<class_int>` to_idx **)**                                                     |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -485,7 +485,7 @@ Ensure current selection is visible, adjusting the scroll position as necessary.
 
 .. _class_ItemList_method_get_item_at_position:
 
-- :ref:`int<class_int>` **get_item_at_position** **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` exact=false **)** const
+- :ref:`int<class_int>` **get_item_at_position** **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` exact=false **)** |const|
 
 Returns the item index at the given ``position``.
 
@@ -495,7 +495,7 @@ When there is no item at that point, -1 will be returned if ``exact`` is ``true`
 
 .. _class_ItemList_method_get_item_count:
 
-- :ref:`int<class_int>` **get_item_count** **(** **)** const
+- :ref:`int<class_int>` **get_item_count** **(** **)** |const|
 
 Returns the number of items currently in the list.
 
@@ -503,7 +503,7 @@ Returns the number of items currently in the list.
 
 .. _class_ItemList_method_get_item_custom_bg_color:
 
-- :ref:`Color<class_Color>` **get_item_custom_bg_color** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Color<class_Color>` **get_item_custom_bg_color** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the custom background color of the item specified by ``idx`` index.
 
@@ -511,7 +511,7 @@ Returns the custom background color of the item specified by ``idx`` index.
 
 .. _class_ItemList_method_get_item_custom_fg_color:
 
-- :ref:`Color<class_Color>` **get_item_custom_fg_color** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Color<class_Color>` **get_item_custom_fg_color** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the custom foreground color of the item specified by ``idx`` index.
 
@@ -519,7 +519,7 @@ Returns the custom foreground color of the item specified by ``idx`` index.
 
 .. _class_ItemList_method_get_item_icon:
 
-- :ref:`Texture<class_Texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Texture<class_Texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the icon associated with the specified index.
 
@@ -527,7 +527,7 @@ Returns the icon associated with the specified index.
 
 .. _class_ItemList_method_get_item_icon_modulate:
 
-- :ref:`Color<class_Color>` **get_item_icon_modulate** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Color<class_Color>` **get_item_icon_modulate** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns a :ref:`Color<class_Color>` modulating item's icon at the specified index.
 
@@ -535,7 +535,7 @@ Returns a :ref:`Color<class_Color>` modulating item's icon at the specified inde
 
 .. _class_ItemList_method_get_item_icon_region:
 
-- :ref:`Rect2<class_Rect2>` **get_item_icon_region** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Rect2<class_Rect2>` **get_item_icon_region** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the region of item's icon used. The whole icon will be used if the region has no area.
 
@@ -543,7 +543,7 @@ Returns the region of item's icon used. The whole icon will be used if the regio
 
 .. _class_ItemList_method_get_item_metadata:
 
-- :ref:`Variant<class_Variant>` **get_item_metadata** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Variant<class_Variant>` **get_item_metadata** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the metadata value of the specified index.
 
@@ -551,7 +551,7 @@ Returns the metadata value of the specified index.
 
 .. _class_ItemList_method_get_item_text:
 
-- :ref:`String<class_String>` **get_item_text** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`String<class_String>` **get_item_text** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the text associated with the specified index.
 
@@ -559,7 +559,7 @@ Returns the text associated with the specified index.
 
 .. _class_ItemList_method_get_item_tooltip:
 
-- :ref:`String<class_String>` **get_item_tooltip** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`String<class_String>` **get_item_tooltip** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the tooltip hint associated with the specified index.
 
@@ -591,7 +591,7 @@ Returns ``true`` if one or more items are selected.
 
 .. _class_ItemList_method_is_item_disabled:
 
-- :ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns ``true`` if the item at the specified index is disabled.
 
@@ -599,7 +599,7 @@ Returns ``true`` if the item at the specified index is disabled.
 
 .. _class_ItemList_method_is_item_icon_transposed:
 
-- :ref:`bool<class_bool>` **is_item_icon_transposed** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`bool<class_bool>` **is_item_icon_transposed** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns ``true`` if the item icon will be drawn transposed, i.e. the X and Y axes are swapped.
 
@@ -607,7 +607,7 @@ Returns ``true`` if the item icon will be drawn transposed, i.e. the X and Y axe
 
 .. _class_ItemList_method_is_item_selectable:
 
-- :ref:`bool<class_bool>` **is_item_selectable** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`bool<class_bool>` **is_item_selectable** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns ``true`` if the item at the specified index is selectable.
 
@@ -615,7 +615,7 @@ Returns ``true`` if the item at the specified index is selectable.
 
 .. _class_ItemList_method_is_item_tooltip_enabled:
 
-- :ref:`bool<class_bool>` **is_item_tooltip_enabled** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`bool<class_bool>` **is_item_tooltip_enabled** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns ``true`` if the tooltip is enabled for specified item index.
 
@@ -623,7 +623,7 @@ Returns ``true`` if the tooltip is enabled for specified item index.
 
 .. _class_ItemList_method_is_selected:
 
-- :ref:`bool<class_bool>` **is_selected** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`bool<class_bool>` **is_selected** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns ``true`` if the item at the specified index is currently selected.
 
@@ -785,3 +785,6 @@ Ensures the item associated with the specified index is not selected.
 
 Ensures there are no items selected.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

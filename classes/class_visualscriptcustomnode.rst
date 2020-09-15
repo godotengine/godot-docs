@@ -21,35 +21,35 @@ A custom Visual Script node which can be scripted in powerful ways.
 Methods
 -------
 
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`_get_caption<class_VisualScriptCustomNode_method__get_caption>` **(** **)** virtual                                                                                                                                |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`_get_category<class_VisualScriptCustomNode_method__get_category>` **(** **)** virtual                                                                                                                              |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`_get_input_value_port_count<class_VisualScriptCustomNode_method__get_input_value_port_count>` **(** **)** virtual                                                                                                  |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`_get_input_value_port_name<class_VisualScriptCustomNode_method__get_input_value_port_name>` **(** :ref:`int<class_int>` idx **)** virtual                                                                          |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`_get_input_value_port_type<class_VisualScriptCustomNode_method__get_input_value_port_type>` **(** :ref:`int<class_int>` idx **)** virtual                                                                          |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`_get_output_sequence_port_count<class_VisualScriptCustomNode_method__get_output_sequence_port_count>` **(** **)** virtual                                                                                          |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`_get_output_sequence_port_text<class_VisualScriptCustomNode_method__get_output_sequence_port_text>` **(** :ref:`int<class_int>` idx **)** virtual                                                                  |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`_get_output_value_port_count<class_VisualScriptCustomNode_method__get_output_value_port_count>` **(** **)** virtual                                                                                                |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`_get_output_value_port_name<class_VisualScriptCustomNode_method__get_output_value_port_name>` **(** :ref:`int<class_int>` idx **)** virtual                                                                        |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`_get_output_value_port_type<class_VisualScriptCustomNode_method__get_output_value_port_type>` **(** :ref:`int<class_int>` idx **)** virtual                                                                        |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`_get_text<class_VisualScriptCustomNode_method__get_text>` **(** **)** virtual                                                                                                                                      |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`_get_working_memory_size<class_VisualScriptCustomNode_method__get_working_memory_size>` **(** **)** virtual                                                                                                        |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`_has_input_sequence_port<class_VisualScriptCustomNode_method__has_input_sequence_port>` **(** **)** virtual                                                                                                        |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`_step<class_VisualScriptCustomNode_method__step>` **(** :ref:`Array<class_Array>` inputs, :ref:`Array<class_Array>` outputs, :ref:`int<class_int>` start_mode, :ref:`Array<class_Array>` working_mem **)** virtual |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`_get_caption<class_VisualScriptCustomNode_method__get_caption>` **(** **)** |virtual|                                                                                                                                |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`_get_category<class_VisualScriptCustomNode_method__get_category>` **(** **)** |virtual|                                                                                                                              |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`_get_input_value_port_count<class_VisualScriptCustomNode_method__get_input_value_port_count>` **(** **)** |virtual|                                                                                                  |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`_get_input_value_port_name<class_VisualScriptCustomNode_method__get_input_value_port_name>` **(** :ref:`int<class_int>` idx **)** |virtual|                                                                          |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`_get_input_value_port_type<class_VisualScriptCustomNode_method__get_input_value_port_type>` **(** :ref:`int<class_int>` idx **)** |virtual|                                                                          |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`_get_output_sequence_port_count<class_VisualScriptCustomNode_method__get_output_sequence_port_count>` **(** **)** |virtual|                                                                                          |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`_get_output_sequence_port_text<class_VisualScriptCustomNode_method__get_output_sequence_port_text>` **(** :ref:`int<class_int>` idx **)** |virtual|                                                                  |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`_get_output_value_port_count<class_VisualScriptCustomNode_method__get_output_value_port_count>` **(** **)** |virtual|                                                                                                |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`_get_output_value_port_name<class_VisualScriptCustomNode_method__get_output_value_port_name>` **(** :ref:`int<class_int>` idx **)** |virtual|                                                                        |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`_get_output_value_port_type<class_VisualScriptCustomNode_method__get_output_value_port_type>` **(** :ref:`int<class_int>` idx **)** |virtual|                                                                        |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`_get_text<class_VisualScriptCustomNode_method__get_text>` **(** **)** |virtual|                                                                                                                                      |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`_get_working_memory_size<class_VisualScriptCustomNode_method__get_working_memory_size>` **(** **)** |virtual|                                                                                                        |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`_has_input_sequence_port<class_VisualScriptCustomNode_method__has_input_sequence_port>` **(** **)** |virtual|                                                                                                        |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`_step<class_VisualScriptCustomNode_method__step>` **(** :ref:`Array<class_Array>` inputs, :ref:`Array<class_Array>` outputs, :ref:`int<class_int>` start_mode, :ref:`Array<class_Array>` working_mem **)** |virtual| |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -102,7 +102,7 @@ Method Descriptions
 
 .. _class_VisualScriptCustomNode_method__get_caption:
 
-- :ref:`String<class_String>` **_get_caption** **(** **)** virtual
+- :ref:`String<class_String>` **_get_caption** **(** **)** |virtual|
 
 Return the node's title.
 
@@ -110,7 +110,7 @@ Return the node's title.
 
 .. _class_VisualScriptCustomNode_method__get_category:
 
-- :ref:`String<class_String>` **_get_category** **(** **)** virtual
+- :ref:`String<class_String>` **_get_category** **(** **)** |virtual|
 
 Return the node's category.
 
@@ -118,7 +118,7 @@ Return the node's category.
 
 .. _class_VisualScriptCustomNode_method__get_input_value_port_count:
 
-- :ref:`int<class_int>` **_get_input_value_port_count** **(** **)** virtual
+- :ref:`int<class_int>` **_get_input_value_port_count** **(** **)** |virtual|
 
 Return the count of input value ports.
 
@@ -126,7 +126,7 @@ Return the count of input value ports.
 
 .. _class_VisualScriptCustomNode_method__get_input_value_port_name:
 
-- :ref:`String<class_String>` **_get_input_value_port_name** **(** :ref:`int<class_int>` idx **)** virtual
+- :ref:`String<class_String>` **_get_input_value_port_name** **(** :ref:`int<class_int>` idx **)** |virtual|
 
 Return the specified input port's name.
 
@@ -134,7 +134,7 @@ Return the specified input port's name.
 
 .. _class_VisualScriptCustomNode_method__get_input_value_port_type:
 
-- :ref:`int<class_int>` **_get_input_value_port_type** **(** :ref:`int<class_int>` idx **)** virtual
+- :ref:`int<class_int>` **_get_input_value_port_type** **(** :ref:`int<class_int>` idx **)** |virtual|
 
 Return the specified input port's type. See the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
 
@@ -142,7 +142,7 @@ Return the specified input port's type. See the :ref:`Variant.Type<enum_@GlobalS
 
 .. _class_VisualScriptCustomNode_method__get_output_sequence_port_count:
 
-- :ref:`int<class_int>` **_get_output_sequence_port_count** **(** **)** virtual
+- :ref:`int<class_int>` **_get_output_sequence_port_count** **(** **)** |virtual|
 
 Return the amount of output **sequence** ports.
 
@@ -150,7 +150,7 @@ Return the amount of output **sequence** ports.
 
 .. _class_VisualScriptCustomNode_method__get_output_sequence_port_text:
 
-- :ref:`String<class_String>` **_get_output_sequence_port_text** **(** :ref:`int<class_int>` idx **)** virtual
+- :ref:`String<class_String>` **_get_output_sequence_port_text** **(** :ref:`int<class_int>` idx **)** |virtual|
 
 Return the specified **sequence** output's name.
 
@@ -158,7 +158,7 @@ Return the specified **sequence** output's name.
 
 .. _class_VisualScriptCustomNode_method__get_output_value_port_count:
 
-- :ref:`int<class_int>` **_get_output_value_port_count** **(** **)** virtual
+- :ref:`int<class_int>` **_get_output_value_port_count** **(** **)** |virtual|
 
 Return the amount of output value ports.
 
@@ -166,7 +166,7 @@ Return the amount of output value ports.
 
 .. _class_VisualScriptCustomNode_method__get_output_value_port_name:
 
-- :ref:`String<class_String>` **_get_output_value_port_name** **(** :ref:`int<class_int>` idx **)** virtual
+- :ref:`String<class_String>` **_get_output_value_port_name** **(** :ref:`int<class_int>` idx **)** |virtual|
 
 Return the specified output's name.
 
@@ -174,7 +174,7 @@ Return the specified output's name.
 
 .. _class_VisualScriptCustomNode_method__get_output_value_port_type:
 
-- :ref:`int<class_int>` **_get_output_value_port_type** **(** :ref:`int<class_int>` idx **)** virtual
+- :ref:`int<class_int>` **_get_output_value_port_type** **(** :ref:`int<class_int>` idx **)** |virtual|
 
 Return the specified output's type. See the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
 
@@ -182,7 +182,7 @@ Return the specified output's type. See the :ref:`Variant.Type<enum_@GlobalScope
 
 .. _class_VisualScriptCustomNode_method__get_text:
 
-- :ref:`String<class_String>` **_get_text** **(** **)** virtual
+- :ref:`String<class_String>` **_get_text** **(** **)** |virtual|
 
 Return the custom node's text, which is shown right next to the input **sequence** port (if there is none, on the place that is usually taken by it).
 
@@ -190,7 +190,7 @@ Return the custom node's text, which is shown right next to the input **sequence
 
 .. _class_VisualScriptCustomNode_method__get_working_memory_size:
 
-- :ref:`int<class_int>` **_get_working_memory_size** **(** **)** virtual
+- :ref:`int<class_int>` **_get_working_memory_size** **(** **)** |virtual|
 
 Return the size of the custom node's working memory. See :ref:`_step<class_VisualScriptCustomNode_method__step>` for more details.
 
@@ -198,7 +198,7 @@ Return the size of the custom node's working memory. See :ref:`_step<class_Visua
 
 .. _class_VisualScriptCustomNode_method__has_input_sequence_port:
 
-- :ref:`bool<class_bool>` **_has_input_sequence_port** **(** **)** virtual
+- :ref:`bool<class_bool>` **_has_input_sequence_port** **(** **)** |virtual|
 
 Return whether the custom node has an input **sequence** port.
 
@@ -206,7 +206,7 @@ Return whether the custom node has an input **sequence** port.
 
 .. _class_VisualScriptCustomNode_method__step:
 
-- :ref:`Variant<class_Variant>` **_step** **(** :ref:`Array<class_Array>` inputs, :ref:`Array<class_Array>` outputs, :ref:`int<class_int>` start_mode, :ref:`Array<class_Array>` working_mem **)** virtual
+- :ref:`Variant<class_Variant>` **_step** **(** :ref:`Array<class_Array>` inputs, :ref:`Array<class_Array>` outputs, :ref:`int<class_int>` start_mode, :ref:`Array<class_Array>` working_mem **)** |virtual|
 
 Execute the custom node's logic, returning the index of the output sequence port to use or a :ref:`String<class_String>` when there is an error.
 
@@ -220,3 +220,6 @@ The ``start_mode`` is usually :ref:`START_MODE_BEGIN_SEQUENCE<class_VisualScript
 
 When returning, you can mask the returned value with one of the ``STEP_*`` constants.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

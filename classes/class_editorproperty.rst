@@ -47,11 +47,11 @@ Methods
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>` | :ref:`get_edited_property<class_EditorProperty_method_get_edited_property>` **(** **)**                                                                                                                                           |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_tooltip_text<class_EditorProperty_method_get_tooltip_text>` **(** **)** const                                                                                                                                           |
+| :ref:`String<class_String>` | :ref:`get_tooltip_text<class_EditorProperty_method_get_tooltip_text>` **(** **)** |const|                                                                                                                                         |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                        | :ref:`set_bottom_editor<class_EditorProperty_method_set_bottom_editor>` **(** :ref:`Control<class_Control>` editor **)**                                                                                                          |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`update_property<class_EditorProperty_method_update_property>` **(** **)** virtual                                                                                                                                           |
+| void                        | :ref:`update_property<class_EditorProperty_method_update_property>` **(** **)** |virtual|                                                                                                                                         |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -253,7 +253,7 @@ Gets the edited property. If your editor is for a single property (added via :re
 
 .. _class_EditorProperty_method_get_tooltip_text:
 
-- :ref:`String<class_String>` **get_tooltip_text** **(** **)** const
+- :ref:`String<class_String>` **get_tooltip_text** **(** **)** |const|
 
 Override if you want to allow a custom tooltip over your property.
 
@@ -269,7 +269,10 @@ Adds controls with this function if you want them on the bottom (below the label
 
 .. _class_EditorProperty_method_update_property:
 
-- void **update_property** **(** **)** virtual
+- void **update_property** **(** **)** |virtual|
 
 When this virtual function is called, you must update your editor.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

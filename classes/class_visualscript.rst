@@ -41,11 +41,11 @@ Methods
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`custom_signal_add_argument<class_VisualScript_method_custom_signal_add_argument>` **(** :ref:`String<class_String>` name, :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` argname, :ref:`int<class_int>` index=-1 **)** |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                               | :ref:`custom_signal_get_argument_count<class_VisualScript_method_custom_signal_get_argument_count>` **(** :ref:`String<class_String>` name **)** const                                                                                                              |
+| :ref:`int<class_int>`                               | :ref:`custom_signal_get_argument_count<class_VisualScript_method_custom_signal_get_argument_count>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                            |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                         | :ref:`custom_signal_get_argument_name<class_VisualScript_method_custom_signal_get_argument_name>` **(** :ref:`String<class_String>` name, :ref:`int<class_int>` argidx **)** const                                                                                  |
+| :ref:`String<class_String>`                         | :ref:`custom_signal_get_argument_name<class_VisualScript_method_custom_signal_get_argument_name>` **(** :ref:`String<class_String>` name, :ref:`int<class_int>` argidx **)** |const|                                                                                |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`custom_signal_get_argument_type<class_VisualScript_method_custom_signal_get_argument_type>` **(** :ref:`String<class_String>` name, :ref:`int<class_int>` argidx **)** const                                                                                  |
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`custom_signal_get_argument_type<class_VisualScript_method_custom_signal_get_argument_type>` **(** :ref:`String<class_String>` name, :ref:`int<class_int>` argidx **)** |const|                                                                                |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`custom_signal_remove_argument<class_VisualScript_method_custom_signal_remove_argument>` **(** :ref:`String<class_String>` name, :ref:`int<class_int>` argidx **)**                                                                                            |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -59,31 +59,31 @@ Methods
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`data_disconnect<class_VisualScript_method_data_disconnect>` **(** :ref:`String<class_String>` func, :ref:`int<class_int>` from_node, :ref:`int<class_int>` from_port, :ref:`int<class_int>` to_node, :ref:`int<class_int>` to_port **)**                      |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                               | :ref:`get_function_node_id<class_VisualScript_method_get_function_node_id>` **(** :ref:`String<class_String>` name **)** const                                                                                                                                      |
+| :ref:`int<class_int>`                               | :ref:`get_function_node_id<class_VisualScript_method_get_function_node_id>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                    |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                       | :ref:`get_function_scroll<class_VisualScript_method_get_function_scroll>` **(** :ref:`String<class_String>` name **)** const                                                                                                                                        |
+| :ref:`Vector2<class_Vector2>`                       | :ref:`get_function_scroll<class_VisualScript_method_get_function_scroll>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                      |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`VisualScriptNode<class_VisualScriptNode>`     | :ref:`get_node<class_VisualScript_method_get_node>` **(** :ref:`String<class_String>` func, :ref:`int<class_int>` id **)** const                                                                                                                                    |
+| :ref:`VisualScriptNode<class_VisualScriptNode>`     | :ref:`get_node<class_VisualScript_method_get_node>` **(** :ref:`String<class_String>` func, :ref:`int<class_int>` id **)** |const|                                                                                                                                  |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                       | :ref:`get_node_position<class_VisualScript_method_get_node_position>` **(** :ref:`String<class_String>` func, :ref:`int<class_int>` id **)** const                                                                                                                  |
+| :ref:`Vector2<class_Vector2>`                       | :ref:`get_node_position<class_VisualScript_method_get_node_position>` **(** :ref:`String<class_String>` func, :ref:`int<class_int>` id **)** |const|                                                                                                                |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                       | :ref:`get_variable_default_value<class_VisualScript_method_get_variable_default_value>` **(** :ref:`String<class_String>` name **)** const                                                                                                                          |
+| :ref:`Variant<class_Variant>`                       | :ref:`get_variable_default_value<class_VisualScript_method_get_variable_default_value>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                        |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`get_variable_export<class_VisualScript_method_get_variable_export>` **(** :ref:`String<class_String>` name **)** const                                                                                                                                        |
+| :ref:`bool<class_bool>`                             | :ref:`get_variable_export<class_VisualScript_method_get_variable_export>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                      |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>`                 | :ref:`get_variable_info<class_VisualScript_method_get_variable_info>` **(** :ref:`String<class_String>` name **)** const                                                                                                                                            |
+| :ref:`Dictionary<class_Dictionary>`                 | :ref:`get_variable_info<class_VisualScript_method_get_variable_info>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                          |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`has_custom_signal<class_VisualScript_method_has_custom_signal>` **(** :ref:`String<class_String>` name **)** const                                                                                                                                            |
+| :ref:`bool<class_bool>`                             | :ref:`has_custom_signal<class_VisualScript_method_has_custom_signal>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                          |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`has_data_connection<class_VisualScript_method_has_data_connection>` **(** :ref:`String<class_String>` func, :ref:`int<class_int>` from_node, :ref:`int<class_int>` from_port, :ref:`int<class_int>` to_node, :ref:`int<class_int>` to_port **)** const        |
+| :ref:`bool<class_bool>`                             | :ref:`has_data_connection<class_VisualScript_method_has_data_connection>` **(** :ref:`String<class_String>` func, :ref:`int<class_int>` from_node, :ref:`int<class_int>` from_port, :ref:`int<class_int>` to_node, :ref:`int<class_int>` to_port **)** |const|      |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`has_function<class_VisualScript_method_has_function>` **(** :ref:`String<class_String>` name **)** const                                                                                                                                                      |
+| :ref:`bool<class_bool>`                             | :ref:`has_function<class_VisualScript_method_has_function>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                                    |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`has_node<class_VisualScript_method_has_node>` **(** :ref:`String<class_String>` func, :ref:`int<class_int>` id **)** const                                                                                                                                    |
+| :ref:`bool<class_bool>`                             | :ref:`has_node<class_VisualScript_method_has_node>` **(** :ref:`String<class_String>` func, :ref:`int<class_int>` id **)** |const|                                                                                                                                  |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`has_sequence_connection<class_VisualScript_method_has_sequence_connection>` **(** :ref:`String<class_String>` func, :ref:`int<class_int>` from_node, :ref:`int<class_int>` from_output, :ref:`int<class_int>` to_node **)** const                             |
+| :ref:`bool<class_bool>`                             | :ref:`has_sequence_connection<class_VisualScript_method_has_sequence_connection>` **(** :ref:`String<class_String>` func, :ref:`int<class_int>` from_node, :ref:`int<class_int>` from_output, :ref:`int<class_int>` to_node **)** |const|                           |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`has_variable<class_VisualScript_method_has_variable>` **(** :ref:`String<class_String>` name **)** const                                                                                                                                                      |
+| :ref:`bool<class_bool>`                             | :ref:`has_variable<class_VisualScript_method_has_variable>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                                    |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`remove_custom_signal<class_VisualScript_method_remove_custom_signal>` **(** :ref:`String<class_String>` name **)**                                                                                                                                            |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -170,7 +170,7 @@ Add an argument to a custom signal added with :ref:`add_custom_signal<class_Visu
 
 .. _class_VisualScript_method_custom_signal_get_argument_count:
 
-- :ref:`int<class_int>` **custom_signal_get_argument_count** **(** :ref:`String<class_String>` name **)** const
+- :ref:`int<class_int>` **custom_signal_get_argument_count** **(** :ref:`String<class_String>` name **)** |const|
 
 Get the count of a custom signal's arguments.
 
@@ -178,7 +178,7 @@ Get the count of a custom signal's arguments.
 
 .. _class_VisualScript_method_custom_signal_get_argument_name:
 
-- :ref:`String<class_String>` **custom_signal_get_argument_name** **(** :ref:`String<class_String>` name, :ref:`int<class_int>` argidx **)** const
+- :ref:`String<class_String>` **custom_signal_get_argument_name** **(** :ref:`String<class_String>` name, :ref:`int<class_int>` argidx **)** |const|
 
 Get the name of a custom signal's argument.
 
@@ -186,7 +186,7 @@ Get the name of a custom signal's argument.
 
 .. _class_VisualScript_method_custom_signal_get_argument_type:
 
-- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **custom_signal_get_argument_type** **(** :ref:`String<class_String>` name, :ref:`int<class_int>` argidx **)** const
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **custom_signal_get_argument_type** **(** :ref:`String<class_String>` name, :ref:`int<class_int>` argidx **)** |const|
 
 Get the type of a custom signal's argument.
 
@@ -242,7 +242,7 @@ Disconnect two data ports previously connected with :ref:`data_connect<class_Vis
 
 .. _class_VisualScript_method_get_function_node_id:
 
-- :ref:`int<class_int>` **get_function_node_id** **(** :ref:`String<class_String>` name **)** const
+- :ref:`int<class_int>` **get_function_node_id** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns the id of a function's entry point node.
 
@@ -250,7 +250,7 @@ Returns the id of a function's entry point node.
 
 .. _class_VisualScript_method_get_function_scroll:
 
-- :ref:`Vector2<class_Vector2>` **get_function_scroll** **(** :ref:`String<class_String>` name **)** const
+- :ref:`Vector2<class_Vector2>` **get_function_scroll** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns the position of the center of the screen for a given function.
 
@@ -258,7 +258,7 @@ Returns the position of the center of the screen for a given function.
 
 .. _class_VisualScript_method_get_node:
 
-- :ref:`VisualScriptNode<class_VisualScriptNode>` **get_node** **(** :ref:`String<class_String>` func, :ref:`int<class_int>` id **)** const
+- :ref:`VisualScriptNode<class_VisualScriptNode>` **get_node** **(** :ref:`String<class_String>` func, :ref:`int<class_int>` id **)** |const|
 
 Returns a node given its id and its function.
 
@@ -266,7 +266,7 @@ Returns a node given its id and its function.
 
 .. _class_VisualScript_method_get_node_position:
 
-- :ref:`Vector2<class_Vector2>` **get_node_position** **(** :ref:`String<class_String>` func, :ref:`int<class_int>` id **)** const
+- :ref:`Vector2<class_Vector2>` **get_node_position** **(** :ref:`String<class_String>` func, :ref:`int<class_int>` id **)** |const|
 
 Returns a node's position in pixels.
 
@@ -274,7 +274,7 @@ Returns a node's position in pixels.
 
 .. _class_VisualScript_method_get_variable_default_value:
 
-- :ref:`Variant<class_Variant>` **get_variable_default_value** **(** :ref:`String<class_String>` name **)** const
+- :ref:`Variant<class_Variant>` **get_variable_default_value** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns the default (initial) value of a variable.
 
@@ -282,7 +282,7 @@ Returns the default (initial) value of a variable.
 
 .. _class_VisualScript_method_get_variable_export:
 
-- :ref:`bool<class_bool>` **get_variable_export** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **get_variable_export** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns whether a variable is exported.
 
@@ -290,7 +290,7 @@ Returns whether a variable is exported.
 
 .. _class_VisualScript_method_get_variable_info:
 
-- :ref:`Dictionary<class_Dictionary>` **get_variable_info** **(** :ref:`String<class_String>` name **)** const
+- :ref:`Dictionary<class_Dictionary>` **get_variable_info** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns the information for a given variable as a dictionary. The information includes its name, type, hint and usage.
 
@@ -298,7 +298,7 @@ Returns the information for a given variable as a dictionary. The information in
 
 .. _class_VisualScript_method_has_custom_signal:
 
-- :ref:`bool<class_bool>` **has_custom_signal** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **has_custom_signal** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns whether a signal exists with the specified name.
 
@@ -306,7 +306,7 @@ Returns whether a signal exists with the specified name.
 
 .. _class_VisualScript_method_has_data_connection:
 
-- :ref:`bool<class_bool>` **has_data_connection** **(** :ref:`String<class_String>` func, :ref:`int<class_int>` from_node, :ref:`int<class_int>` from_port, :ref:`int<class_int>` to_node, :ref:`int<class_int>` to_port **)** const
+- :ref:`bool<class_bool>` **has_data_connection** **(** :ref:`String<class_String>` func, :ref:`int<class_int>` from_node, :ref:`int<class_int>` from_port, :ref:`int<class_int>` to_node, :ref:`int<class_int>` to_port **)** |const|
 
 Returns whether the specified data ports are connected.
 
@@ -314,7 +314,7 @@ Returns whether the specified data ports are connected.
 
 .. _class_VisualScript_method_has_function:
 
-- :ref:`bool<class_bool>` **has_function** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **has_function** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns whether a function exists with the specified name.
 
@@ -322,7 +322,7 @@ Returns whether a function exists with the specified name.
 
 .. _class_VisualScript_method_has_node:
 
-- :ref:`bool<class_bool>` **has_node** **(** :ref:`String<class_String>` func, :ref:`int<class_int>` id **)** const
+- :ref:`bool<class_bool>` **has_node** **(** :ref:`String<class_String>` func, :ref:`int<class_int>` id **)** |const|
 
 Returns whether a node exists with the given id.
 
@@ -330,7 +330,7 @@ Returns whether a node exists with the given id.
 
 .. _class_VisualScript_method_has_sequence_connection:
 
-- :ref:`bool<class_bool>` **has_sequence_connection** **(** :ref:`String<class_String>` func, :ref:`int<class_int>` from_node, :ref:`int<class_int>` from_output, :ref:`int<class_int>` to_node **)** const
+- :ref:`bool<class_bool>` **has_sequence_connection** **(** :ref:`String<class_String>` func, :ref:`int<class_int>` from_node, :ref:`int<class_int>` from_output, :ref:`int<class_int>` to_node **)** |const|
 
 Returns whether the specified sequence ports are connected.
 
@@ -338,7 +338,7 @@ Returns whether the specified sequence ports are connected.
 
 .. _class_VisualScript_method_has_variable:
 
-- :ref:`bool<class_bool>` **has_variable** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **has_variable** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns whether a variable exists with the specified name.
 
@@ -464,3 +464,6 @@ Change whether a variable is exported.
 
 Set a variable's info, using the same format as :ref:`get_variable_info<class_VisualScript_method_get_variable_info>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -64,21 +64,21 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`     | :ref:`get_bake_meshes<class_GridMap_method_get_bake_meshes>` **(** **)**                                                                                                                                        |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_cell_item<class_GridMap_method_get_cell_item>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** const                                                            |
+| :ref:`int<class_int>`         | :ref:`get_cell_item<class_GridMap_method_get_cell_item>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** |const|                                                          |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_cell_item_orientation<class_GridMap_method_get_cell_item_orientation>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** const                                    |
+| :ref:`int<class_int>`         | :ref:`get_cell_item_orientation<class_GridMap_method_get_cell_item_orientation>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** |const|                                  |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_collision_layer_bit<class_GridMap_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                                                                                        |
+| :ref:`bool<class_bool>`       | :ref:`get_collision_layer_bit<class_GridMap_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** |const|                                                                                      |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_collision_mask_bit<class_GridMap_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                                                                                          |
+| :ref:`bool<class_bool>`       | :ref:`get_collision_mask_bit<class_GridMap_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** |const|                                                                                        |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`     | :ref:`get_meshes<class_GridMap_method_get_meshes>` **(** **)**                                                                                                                                                  |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`get_used_cells<class_GridMap_method_get_used_cells>` **(** **)** const                                                                                                                                    |
+| :ref:`Array<class_Array>`     | :ref:`get_used_cells<class_GridMap_method_get_used_cells>` **(** **)** |const|                                                                                                                                  |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`make_baked_meshes<class_GridMap_method_make_baked_meshes>` **(** :ref:`bool<class_bool>` gen_lightmap_uv=false, :ref:`float<class_float>` lightmap_uv_texel_size=0.1 **)**                                |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`map_to_world<class_GridMap_method_map_to_world>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** const                                                              |
+| :ref:`Vector3<class_Vector3>` | :ref:`map_to_world<class_GridMap_method_map_to_world>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** |const|                                                            |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`resource_changed<class_GridMap_method_resource_changed>` **(** :ref:`Resource<class_Resource>` resource **)**                                                                                             |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -90,7 +90,7 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_collision_mask_bit<class_GridMap_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**                                                                 |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`world_to_map<class_GridMap_method_world_to_map>` **(** :ref:`Vector3<class_Vector3>` pos **)** const                                                                                                      |
+| :ref:`Vector3<class_Vector3>` | :ref:`world_to_map<class_GridMap_method_world_to_map>` **(** :ref:`Vector3<class_Vector3>` pos **)** |const|                                                                                                    |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -242,7 +242,7 @@ GridMaps act as static bodies, meaning they aren't affected by gravity or other 
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The physics layers this GridMap detects collisions in.
+The physics layers this GridMap detects collisions in. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 
@@ -289,7 +289,7 @@ Clear all cells.
 
 .. _class_GridMap_method_get_cell_item:
 
-- :ref:`int<class_int>` **get_cell_item** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** const
+- :ref:`int<class_int>` **get_cell_item** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** |const|
 
 The :ref:`MeshLibrary<class_MeshLibrary>` item index located at the grid-based X, Y and Z coordinates. If the cell is empty, :ref:`INVALID_CELL_ITEM<class_GridMap_constant_INVALID_CELL_ITEM>` will be returned.
 
@@ -297,7 +297,7 @@ The :ref:`MeshLibrary<class_MeshLibrary>` item index located at the grid-based X
 
 .. _class_GridMap_method_get_cell_item_orientation:
 
-- :ref:`int<class_int>` **get_cell_item_orientation** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** const
+- :ref:`int<class_int>` **get_cell_item_orientation** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** |const|
 
 The orientation of the cell at the grid-based X, Y and Z coordinates. -1 is returned if the cell is empty.
 
@@ -305,7 +305,7 @@ The orientation of the cell at the grid-based X, Y and Z coordinates. -1 is retu
 
 .. _class_GridMap_method_get_collision_layer_bit:
 
-- :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
+- :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** |const|
 
 Returns an individual bit on the :ref:`collision_layer<class_GridMap_property_collision_layer>`.
 
@@ -313,7 +313,7 @@ Returns an individual bit on the :ref:`collision_layer<class_GridMap_property_co
 
 .. _class_GridMap_method_get_collision_mask_bit:
 
-- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
+- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** |const|
 
 Returns an individual bit on the :ref:`collision_mask<class_GridMap_property_collision_mask>`.
 
@@ -329,7 +329,7 @@ Returns an array of :ref:`Transform<class_Transform>` and :ref:`Mesh<class_Mesh>
 
 .. _class_GridMap_method_get_used_cells:
 
-- :ref:`Array<class_Array>` **get_used_cells** **(** **)** const
+- :ref:`Array<class_Array>` **get_used_cells** **(** **)** |const|
 
 Returns an array of :ref:`Vector3<class_Vector3>` with the non-empty cell coordinates in the grid map.
 
@@ -343,7 +343,7 @@ Returns an array of :ref:`Vector3<class_Vector3>` with the non-empty cell coordi
 
 .. _class_GridMap_method_map_to_world:
 
-- :ref:`Vector3<class_Vector3>` **map_to_world** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** const
+- :ref:`Vector3<class_Vector3>` **map_to_world** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** |const|
 
 Returns the position of a grid cell in the GridMap's local coordinate space.
 
@@ -391,9 +391,12 @@ Sets an individual bit on the :ref:`collision_mask<class_GridMap_property_collis
 
 .. _class_GridMap_method_world_to_map:
 
-- :ref:`Vector3<class_Vector3>` **world_to_map** **(** :ref:`Vector3<class_Vector3>` pos **)** const
+- :ref:`Vector3<class_Vector3>` **world_to_map** **(** :ref:`Vector3<class_Vector3>` pos **)** |const|
 
 Returns the coordinates of the grid cell containing the given point.
 
 ``pos`` should be in the GridMap's local coordinate space.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

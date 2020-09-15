@@ -57,9 +57,9 @@ Methods
 -------
 
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_expand_margin_size<class_StyleBoxTexture_method_get_expand_margin_size>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                                                                                                             |
+| :ref:`float<class_float>` | :ref:`get_expand_margin_size<class_StyleBoxTexture_method_get_expand_margin_size>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** |const|                                                                                                           |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_margin_size<class_StyleBoxTexture_method_get_margin_size>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                                                                                                                           |
+| :ref:`float<class_float>` | :ref:`get_margin_size<class_StyleBoxTexture_method_get_margin_size>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** |const|                                                                                                                         |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_expand_margin_all<class_StyleBoxTexture_method_set_expand_margin_all>` **(** :ref:`float<class_float>` size **)**                                                                                                                                     |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -360,7 +360,7 @@ Method Descriptions
 
 .. _class_StyleBoxTexture_method_get_expand_margin_size:
 
-- :ref:`float<class_float>` **get_expand_margin_size** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+- :ref:`float<class_float>` **get_expand_margin_size** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** |const|
 
 Returns the size of the given ``margin``'s expand margin. See :ref:`Margin<enum_@GlobalScope_Margin>` for possible values.
 
@@ -368,7 +368,7 @@ Returns the size of the given ``margin``'s expand margin. See :ref:`Margin<enum_
 
 .. _class_StyleBoxTexture_method_get_margin_size:
 
-- :ref:`float<class_float>` **get_margin_size** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+- :ref:`float<class_float>` **get_margin_size** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** |const|
 
 Returns the size of the given ``margin``. See :ref:`Margin<enum_@GlobalScope_Margin>` for possible values.
 
@@ -404,3 +404,6 @@ Sets the expand margin to ``size`` pixels for the given ``margin``. See :ref:`Ma
 
 Sets the margin to ``size`` pixels for the given ``margin``. See :ref:`Margin<enum_@GlobalScope_Margin>` for possible values.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

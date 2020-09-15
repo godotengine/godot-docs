@@ -71,3 +71,6 @@ Direct access to the world's physics 2D space state. Used for querying current a
 
 The :ref:`RID<class_RID>` of this world's physics space resource. Used by the :ref:`Physics2DServer<class_Physics2DServer>` for 2D physics, treating it as both a space and an area.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

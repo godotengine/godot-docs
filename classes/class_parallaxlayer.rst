@@ -82,3 +82,6 @@ The ParallaxLayer's offset relative to the parent ParallaxBackground's :ref:`Par
 
 Multiplies the ParallaxLayer's motion. If an axis is set to ``0``, it will not scroll.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

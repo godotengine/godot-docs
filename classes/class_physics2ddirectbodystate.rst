@@ -51,45 +51,45 @@ Properties
 Methods
 -------
 
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`add_central_force<class_Physics2DDirectBodyState_method_add_central_force>` **(** :ref:`Vector2<class_Vector2>` force **)**                                                     |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`add_force<class_Physics2DDirectBodyState_method_add_force>` **(** :ref:`Vector2<class_Vector2>` offset, :ref:`Vector2<class_Vector2>` force **)**                               |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`add_torque<class_Physics2DDirectBodyState_method_add_torque>` **(** :ref:`float<class_float>` torque **)**                                                                      |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`apply_central_impulse<class_Physics2DDirectBodyState_method_apply_central_impulse>` **(** :ref:`Vector2<class_Vector2>` impulse **)**                                           |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`apply_impulse<class_Physics2DDirectBodyState_method_apply_impulse>` **(** :ref:`Vector2<class_Vector2>` offset, :ref:`Vector2<class_Vector2>` impulse **)**                     |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`apply_torque_impulse<class_Physics2DDirectBodyState_method_apply_torque_impulse>` **(** :ref:`float<class_float>` impulse **)**                                                 |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                                             | :ref:`get_contact_collider<class_Physics2DDirectBodyState_method_get_contact_collider>` **(** :ref:`int<class_int>` contact_idx **)** const                                           |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                             | :ref:`get_contact_collider_id<class_Physics2DDirectBodyState_method_get_contact_collider_id>` **(** :ref:`int<class_int>` contact_idx **)** const                                     |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>`                                       | :ref:`get_contact_collider_object<class_Physics2DDirectBodyState_method_get_contact_collider_object>` **(** :ref:`int<class_int>` contact_idx **)** const                             |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                                     | :ref:`get_contact_collider_position<class_Physics2DDirectBodyState_method_get_contact_collider_position>` **(** :ref:`int<class_int>` contact_idx **)** const                         |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                             | :ref:`get_contact_collider_shape<class_Physics2DDirectBodyState_method_get_contact_collider_shape>` **(** :ref:`int<class_int>` contact_idx **)** const                               |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                                     | :ref:`get_contact_collider_shape_metadata<class_Physics2DDirectBodyState_method_get_contact_collider_shape_metadata>` **(** :ref:`int<class_int>` contact_idx **)** const             |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                                     | :ref:`get_contact_collider_velocity_at_position<class_Physics2DDirectBodyState_method_get_contact_collider_velocity_at_position>` **(** :ref:`int<class_int>` contact_idx **)** const |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                             | :ref:`get_contact_count<class_Physics2DDirectBodyState_method_get_contact_count>` **(** **)** const                                                                                   |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                                     | :ref:`get_contact_local_normal<class_Physics2DDirectBodyState_method_get_contact_local_normal>` **(** :ref:`int<class_int>` contact_idx **)** const                                   |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                                     | :ref:`get_contact_local_position<class_Physics2DDirectBodyState_method_get_contact_local_position>` **(** :ref:`int<class_int>` contact_idx **)** const                               |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                             | :ref:`get_contact_local_shape<class_Physics2DDirectBodyState_method_get_contact_local_shape>` **(** :ref:`int<class_int>` contact_idx **)** const                                     |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` | :ref:`get_space_state<class_Physics2DDirectBodyState_method_get_space_state>` **(** **)**                                                                                             |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`integrate_forces<class_Physics2DDirectBodyState_method_integrate_forces>` **(** **)**                                                                                           |
-+-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`add_central_force<class_Physics2DDirectBodyState_method_add_central_force>` **(** :ref:`Vector2<class_Vector2>` force **)**                                                       |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`add_force<class_Physics2DDirectBodyState_method_add_force>` **(** :ref:`Vector2<class_Vector2>` offset, :ref:`Vector2<class_Vector2>` force **)**                                 |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`add_torque<class_Physics2DDirectBodyState_method_add_torque>` **(** :ref:`float<class_float>` torque **)**                                                                        |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`apply_central_impulse<class_Physics2DDirectBodyState_method_apply_central_impulse>` **(** :ref:`Vector2<class_Vector2>` impulse **)**                                             |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`apply_impulse<class_Physics2DDirectBodyState_method_apply_impulse>` **(** :ref:`Vector2<class_Vector2>` offset, :ref:`Vector2<class_Vector2>` impulse **)**                       |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`apply_torque_impulse<class_Physics2DDirectBodyState_method_apply_torque_impulse>` **(** :ref:`float<class_float>` impulse **)**                                                   |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                             | :ref:`get_contact_collider<class_Physics2DDirectBodyState_method_get_contact_collider>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                           |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                             | :ref:`get_contact_collider_id<class_Physics2DDirectBodyState_method_get_contact_collider_id>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                     |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>`                                       | :ref:`get_contact_collider_object<class_Physics2DDirectBodyState_method_get_contact_collider_object>` **(** :ref:`int<class_int>` contact_idx **)** |const|                             |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                                     | :ref:`get_contact_collider_position<class_Physics2DDirectBodyState_method_get_contact_collider_position>` **(** :ref:`int<class_int>` contact_idx **)** |const|                         |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                             | :ref:`get_contact_collider_shape<class_Physics2DDirectBodyState_method_get_contact_collider_shape>` **(** :ref:`int<class_int>` contact_idx **)** |const|                               |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                                     | :ref:`get_contact_collider_shape_metadata<class_Physics2DDirectBodyState_method_get_contact_collider_shape_metadata>` **(** :ref:`int<class_int>` contact_idx **)** |const|             |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                                     | :ref:`get_contact_collider_velocity_at_position<class_Physics2DDirectBodyState_method_get_contact_collider_velocity_at_position>` **(** :ref:`int<class_int>` contact_idx **)** |const| |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                             | :ref:`get_contact_count<class_Physics2DDirectBodyState_method_get_contact_count>` **(** **)** |const|                                                                                   |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                                     | :ref:`get_contact_local_normal<class_Physics2DDirectBodyState_method_get_contact_local_normal>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                   |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                                     | :ref:`get_contact_local_position<class_Physics2DDirectBodyState_method_get_contact_local_position>` **(** :ref:`int<class_int>` contact_idx **)** |const|                               |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                             | :ref:`get_contact_local_shape<class_Physics2DDirectBodyState_method_get_contact_local_shape>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                     |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` | :ref:`get_space_state<class_Physics2DDirectBodyState_method_get_space_state>` **(** **)**                                                                                               |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`integrate_forces<class_Physics2DDirectBodyState_method_integrate_forces>` **(** **)**                                                                                             |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -273,7 +273,7 @@ Applies a rotational impulse to the body.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_collider:
 
-- :ref:`RID<class_RID>` **get_contact_collider** **(** :ref:`int<class_int>` contact_idx **)** const
+- :ref:`RID<class_RID>` **get_contact_collider** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
 Returns the collider's :ref:`RID<class_RID>`.
 
@@ -281,7 +281,7 @@ Returns the collider's :ref:`RID<class_RID>`.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_collider_id:
 
-- :ref:`int<class_int>` **get_contact_collider_id** **(** :ref:`int<class_int>` contact_idx **)** const
+- :ref:`int<class_int>` **get_contact_collider_id** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
 Returns the collider's object id.
 
@@ -289,7 +289,7 @@ Returns the collider's object id.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_collider_object:
 
-- :ref:`Object<class_Object>` **get_contact_collider_object** **(** :ref:`int<class_int>` contact_idx **)** const
+- :ref:`Object<class_Object>` **get_contact_collider_object** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
 Returns the collider object. This depends on how it was created (will return a scene node if such was used to create it).
 
@@ -297,7 +297,7 @@ Returns the collider object. This depends on how it was created (will return a s
 
 .. _class_Physics2DDirectBodyState_method_get_contact_collider_position:
 
-- :ref:`Vector2<class_Vector2>` **get_contact_collider_position** **(** :ref:`int<class_int>` contact_idx **)** const
+- :ref:`Vector2<class_Vector2>` **get_contact_collider_position** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
 Returns the contact position in the collider.
 
@@ -305,7 +305,7 @@ Returns the contact position in the collider.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_collider_shape:
 
-- :ref:`int<class_int>` **get_contact_collider_shape** **(** :ref:`int<class_int>` contact_idx **)** const
+- :ref:`int<class_int>` **get_contact_collider_shape** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
 Returns the collider's shape index.
 
@@ -313,7 +313,7 @@ Returns the collider's shape index.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_collider_shape_metadata:
 
-- :ref:`Variant<class_Variant>` **get_contact_collider_shape_metadata** **(** :ref:`int<class_int>` contact_idx **)** const
+- :ref:`Variant<class_Variant>` **get_contact_collider_shape_metadata** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
 Returns the collided shape's metadata. This metadata is different from :ref:`Object.get_meta<class_Object_method_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_method_shape_set_data>`.
 
@@ -321,7 +321,7 @@ Returns the collided shape's metadata. This metadata is different from :ref:`Obj
 
 .. _class_Physics2DDirectBodyState_method_get_contact_collider_velocity_at_position:
 
-- :ref:`Vector2<class_Vector2>` **get_contact_collider_velocity_at_position** **(** :ref:`int<class_int>` contact_idx **)** const
+- :ref:`Vector2<class_Vector2>` **get_contact_collider_velocity_at_position** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
 Returns the linear velocity vector at the collider's contact point.
 
@@ -329,7 +329,7 @@ Returns the linear velocity vector at the collider's contact point.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_count:
 
-- :ref:`int<class_int>` **get_contact_count** **(** **)** const
+- :ref:`int<class_int>` **get_contact_count** **(** **)** |const|
 
 Returns the number of contacts this body has with other bodies.
 
@@ -339,7 +339,7 @@ Returns the number of contacts this body has with other bodies.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_local_normal:
 
-- :ref:`Vector2<class_Vector2>` **get_contact_local_normal** **(** :ref:`int<class_int>` contact_idx **)** const
+- :ref:`Vector2<class_Vector2>` **get_contact_local_normal** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
 Returns the local normal at the contact point.
 
@@ -347,7 +347,7 @@ Returns the local normal at the contact point.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_local_position:
 
-- :ref:`Vector2<class_Vector2>` **get_contact_local_position** **(** :ref:`int<class_int>` contact_idx **)** const
+- :ref:`Vector2<class_Vector2>` **get_contact_local_position** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
 Returns the local position of the contact point.
 
@@ -355,7 +355,7 @@ Returns the local position of the contact point.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_local_shape:
 
-- :ref:`int<class_int>` **get_contact_local_shape** **(** :ref:`int<class_int>` contact_idx **)** const
+- :ref:`int<class_int>` **get_contact_local_shape** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
 Returns the local shape index of the collision.
 
@@ -375,3 +375,6 @@ Returns the current state of the space, useful for queries.
 
 Calls the built-in force integration code.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

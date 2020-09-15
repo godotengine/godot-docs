@@ -56,9 +56,9 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`force_update_transform<class_Spatial_method_force_update_transform>` **(** **)**                                                                                                              |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Spatial<class_Spatial>` | :ref:`get_parent_spatial<class_Spatial_method_get_parent_spatial>` **(** **)** const                                                                                                                |
+| :ref:`Spatial<class_Spatial>` | :ref:`get_parent_spatial<class_Spatial_method_get_parent_spatial>` **(** **)** |const|                                                                                                              |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`World<class_World>`     | :ref:`get_world<class_Spatial_method_get_world>` **(** **)** const                                                                                                                                  |
+| :ref:`World<class_World>`     | :ref:`get_world<class_Spatial_method_get_world>` **(** **)** |const|                                                                                                                                |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`global_rotate<class_Spatial_method_global_rotate>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                                            |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -68,15 +68,15 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`hide<class_Spatial_method_hide>` **(** **)**                                                                                                                                                  |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_local_transform_notification_enabled<class_Spatial_method_is_local_transform_notification_enabled>` **(** **)** const                                                                      |
+| :ref:`bool<class_bool>`       | :ref:`is_local_transform_notification_enabled<class_Spatial_method_is_local_transform_notification_enabled>` **(** **)** |const|                                                                    |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_scale_disabled<class_Spatial_method_is_scale_disabled>` **(** **)** const                                                                                                                  |
+| :ref:`bool<class_bool>`       | :ref:`is_scale_disabled<class_Spatial_method_is_scale_disabled>` **(** **)** |const|                                                                                                                |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_set_as_toplevel<class_Spatial_method_is_set_as_toplevel>` **(** **)** const                                                                                                                |
+| :ref:`bool<class_bool>`       | :ref:`is_set_as_toplevel<class_Spatial_method_is_set_as_toplevel>` **(** **)** |const|                                                                                                              |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_transform_notification_enabled<class_Spatial_method_is_transform_notification_enabled>` **(** **)** const                                                                                  |
+| :ref:`bool<class_bool>`       | :ref:`is_transform_notification_enabled<class_Spatial_method_is_transform_notification_enabled>` **(** **)** |const|                                                                                |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_visible_in_tree<class_Spatial_method_is_visible_in_tree>` **(** **)** const                                                                                                                |
+| :ref:`bool<class_bool>`       | :ref:`is_visible_in_tree<class_Spatial_method_is_visible_in_tree>` **(** **)** |const|                                                                                                              |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`look_at<class_Spatial_method_look_at>` **(** :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up **)**                                                                     |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -110,9 +110,9 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`show<class_Spatial_method_show>` **(** **)**                                                                                                                                                  |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`to_global<class_Spatial_method_to_global>` **(** :ref:`Vector3<class_Vector3>` local_point **)** const                                                                                        |
+| :ref:`Vector3<class_Vector3>` | :ref:`to_global<class_Spatial_method_to_global>` **(** :ref:`Vector3<class_Vector3>` local_point **)** |const|                                                                                      |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`to_local<class_Spatial_method_to_local>` **(** :ref:`Vector3<class_Vector3>` global_point **)** const                                                                                         |
+| :ref:`Vector3<class_Vector3>` | :ref:`to_local<class_Spatial_method_to_local>` **(** :ref:`Vector3<class_Vector3>` global_point **)** |const|                                                                                       |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`translate<class_Spatial_method_translate>` **(** :ref:`Vector3<class_Vector3>` offset **)**                                                                                                   |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -289,7 +289,7 @@ Forces the transform to update. Transform changes in physics are not instant for
 
 .. _class_Spatial_method_get_parent_spatial:
 
-- :ref:`Spatial<class_Spatial>` **get_parent_spatial** **(** **)** const
+- :ref:`Spatial<class_Spatial>` **get_parent_spatial** **(** **)** |const|
 
 Returns the parent ``Spatial``, or an empty :ref:`Object<class_Object>` if no parent exists or parent is not of type ``Spatial``.
 
@@ -297,7 +297,7 @@ Returns the parent ``Spatial``, or an empty :ref:`Object<class_Object>` if no pa
 
 .. _class_Spatial_method_get_world:
 
-- :ref:`World<class_World>` **get_world** **(** **)** const
+- :ref:`World<class_World>` **get_world** **(** **)** |const|
 
 Returns the current :ref:`World<class_World>` resource this ``Spatial`` node is registered to.
 
@@ -337,7 +337,7 @@ Disables rendering of this node. Changes :ref:`visible<class_Spatial_property_vi
 
 .. _class_Spatial_method_is_local_transform_notification_enabled:
 
-- :ref:`bool<class_bool>` **is_local_transform_notification_enabled** **(** **)** const
+- :ref:`bool<class_bool>` **is_local_transform_notification_enabled** **(** **)** |const|
 
 Returns whether node notifies about its local transformation changes. ``Spatial`` will not propagate this by default.
 
@@ -345,7 +345,7 @@ Returns whether node notifies about its local transformation changes. ``Spatial`
 
 .. _class_Spatial_method_is_scale_disabled:
 
-- :ref:`bool<class_bool>` **is_scale_disabled** **(** **)** const
+- :ref:`bool<class_bool>` **is_scale_disabled** **(** **)** |const|
 
 Returns whether this node uses a scale of ``(1, 1, 1)`` or its local transformation scale.
 
@@ -353,7 +353,7 @@ Returns whether this node uses a scale of ``(1, 1, 1)`` or its local transformat
 
 .. _class_Spatial_method_is_set_as_toplevel:
 
-- :ref:`bool<class_bool>` **is_set_as_toplevel** **(** **)** const
+- :ref:`bool<class_bool>` **is_set_as_toplevel** **(** **)** |const|
 
 Returns whether this node is set as Toplevel, that is whether it ignores its parent nodes transformations.
 
@@ -361,7 +361,7 @@ Returns whether this node is set as Toplevel, that is whether it ignores its par
 
 .. _class_Spatial_method_is_transform_notification_enabled:
 
-- :ref:`bool<class_bool>` **is_transform_notification_enabled** **(** **)** const
+- :ref:`bool<class_bool>` **is_transform_notification_enabled** **(** **)** |const|
 
 Returns whether the node notifies about its global and local transformation changes. ``Spatial`` will not propagate this by default.
 
@@ -369,7 +369,7 @@ Returns whether the node notifies about its global and local transformation chan
 
 .. _class_Spatial_method_is_visible_in_tree:
 
-- :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** const
+- :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** |const|
 
 Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_Spatial_property_visible>` property is ``true`` and all its antecedents are also visible. If any antecedent is hidden, this node will not be visible in the scene tree.
 
@@ -509,7 +509,7 @@ Enables rendering of this node. Changes :ref:`visible<class_Spatial_property_vis
 
 .. _class_Spatial_method_to_global:
 
-- :ref:`Vector3<class_Vector3>` **to_global** **(** :ref:`Vector3<class_Vector3>` local_point **)** const
+- :ref:`Vector3<class_Vector3>` **to_global** **(** :ref:`Vector3<class_Vector3>` local_point **)** |const|
 
 Transforms ``local_point`` from this node's local space to world space.
 
@@ -517,7 +517,7 @@ Transforms ``local_point`` from this node's local space to world space.
 
 .. _class_Spatial_method_to_local:
 
-- :ref:`Vector3<class_Vector3>` **to_local** **(** :ref:`Vector3<class_Vector3>` global_point **)** const
+- :ref:`Vector3<class_Vector3>` **to_local** **(** :ref:`Vector3<class_Vector3>` global_point **)** |const|
 
 Transforms ``global_point`` from world space to this node's local space.
 
@@ -547,3 +547,6 @@ Changes the node's position by the given offset :ref:`Vector3<class_Vector3>` in
 
 Updates the :ref:`SpatialGizmo<class_SpatialGizmo>` of this node.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

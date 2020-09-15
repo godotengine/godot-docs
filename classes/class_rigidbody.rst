@@ -26,6 +26,8 @@ A RigidBody has 4 behavior :ref:`mode<class_RigidBody_property_mode>`\ s: Rigid,
 
 If you need to override the default physics behavior, you can write a custom force integration function. See :ref:`custom_integrator<class_RigidBody_property_custom_integrator>`.
 
+With Bullet physics (the default), the center of mass is the RigidBody3D center. With GodotPhysics, the center of mass is the average of the :ref:`CollisionShape<class_CollisionShape>` centers.
+
 Tutorials
 ---------
 
@@ -85,31 +87,31 @@ Properties
 Methods
 -------
 
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`_integrate_forces<class_RigidBody_method__integrate_forces>` **(** :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>` state **)** virtual |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`add_central_force<class_RigidBody_method_add_central_force>` **(** :ref:`Vector3<class_Vector3>` force **)**                                       |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`add_force<class_RigidBody_method_add_force>` **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position **)**               |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`add_torque<class_RigidBody_method_add_torque>` **(** :ref:`Vector3<class_Vector3>` torque **)**                                                    |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`apply_central_impulse<class_RigidBody_method_apply_central_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                             |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`apply_impulse<class_RigidBody_method_apply_impulse>` **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` impulse **)**     |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`apply_torque_impulse<class_RigidBody_method_apply_torque_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                               |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`get_axis_lock<class_RigidBody_method_get_axis_lock>` **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis **)** const                           |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_colliding_bodies<class_RigidBody_method_get_colliding_bodies>` **(** **)** const                                                               |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_Basis>` | :ref:`get_inverse_inertia_tensor<class_RigidBody_method_get_inverse_inertia_tensor>` **(** **)**                                                         |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_axis_lock<class_RigidBody_method_set_axis_lock>` **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis, :ref:`bool<class_bool>` lock **)**   |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_axis_velocity<class_RigidBody_method_set_axis_velocity>` **(** :ref:`Vector3<class_Vector3>` axis_velocity **)**                               |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`_integrate_forces<class_RigidBody_method__integrate_forces>` **(** :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>` state **)** |virtual| |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`add_central_force<class_RigidBody_method_add_central_force>` **(** :ref:`Vector3<class_Vector3>` force **)**                                         |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`add_force<class_RigidBody_method_add_force>` **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position **)**                 |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`add_torque<class_RigidBody_method_add_torque>` **(** :ref:`Vector3<class_Vector3>` torque **)**                                                      |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`apply_central_impulse<class_RigidBody_method_apply_central_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                               |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`apply_impulse<class_RigidBody_method_apply_impulse>` **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` impulse **)**       |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`apply_torque_impulse<class_RigidBody_method_apply_torque_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                                 |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`get_axis_lock<class_RigidBody_method_get_axis_lock>` **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis **)** |const|                           |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | :ref:`get_colliding_bodies<class_RigidBody_method_get_colliding_bodies>` **(** **)** |const|                                                               |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Basis<class_Basis>` | :ref:`get_inverse_inertia_tensor<class_RigidBody_method_get_inverse_inertia_tensor>` **(** **)**                                                           |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_axis_lock<class_RigidBody_method_set_axis_lock>` **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis, :ref:`bool<class_bool>` lock **)**     |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_axis_velocity<class_RigidBody_method_set_axis_velocity>` **(** :ref:`Vector3<class_Vector3>` axis_velocity **)**                                 |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -342,6 +344,8 @@ Deprecated, use :ref:`PhysicsMaterial.bounce<class_PhysicsMaterial_property_boun
 
 If ``true``, the body can enter sleep mode when there is no movement. See :ref:`sleeping<class_RigidBody_property_sleeping>`.
 
+**Note:** A RigidBody3D will never enter sleep mode automatically if its :ref:`mode<class_RigidBody_property_mode>` is :ref:`MODE_CHARACTER<class_RigidBody_constant_MODE_CHARACTER>`. It can still be put to sleep manually by setting its :ref:`sleeping<class_RigidBody_property_sleeping>` property to ``true``.
+
 ----
 
 .. _class_RigidBody_property_contact_monitor:
@@ -559,7 +563,7 @@ Method Descriptions
 
 .. _class_RigidBody_method__integrate_forces:
 
-- void **_integrate_forces** **(** :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>` state **)** virtual
+- void **_integrate_forces** **(** :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>` state **)** |virtual|
 
 Called during physics processing, allowing you to read and safely modify the simulation state for the object. By default, it works in addition to the usual physics behavior, but the :ref:`custom_integrator<class_RigidBody_property_custom_integrator>` property allows you to disable the default behavior and do fully custom force integration for a body.
 
@@ -621,7 +625,7 @@ Applies a torque impulse which will be affected by the body mass and shape. This
 
 .. _class_RigidBody_method_get_axis_lock:
 
-- :ref:`bool<class_bool>` **get_axis_lock** **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis **)** const
+- :ref:`bool<class_bool>` **get_axis_lock** **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis **)** |const|
 
 Returns ``true`` if the specified linear or rotational axis is locked.
 
@@ -629,7 +633,7 @@ Returns ``true`` if the specified linear or rotational axis is locked.
 
 .. _class_RigidBody_method_get_colliding_bodies:
 
-- :ref:`Array<class_Array>` **get_colliding_bodies** **(** **)** const
+- :ref:`Array<class_Array>` **get_colliding_bodies** **(** **)** |const|
 
 Returns a list of the bodies colliding with this one. Requires :ref:`contact_monitor<class_RigidBody_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody_property_contacts_reported>` to be set high enough to detect all the collisions.
 
@@ -659,3 +663,6 @@ Locks the specified linear or rotational axis.
 
 Sets an axis velocity. The velocity in the given vector axis will be set as the given vector length. This is useful for jumping behavior.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

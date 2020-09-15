@@ -20,6 +20,8 @@ Rich text can contain custom text, fonts, images and some basic formatting. The 
 
 **Note:** Assignments to :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` clear the tag stack and reconstruct it from the property's contents. Any edits made to :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` will erase previous edits made from other manual sources such as :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` and the ``push_*`` / :ref:`pop<class_RichTextLabel_method_pop>` methods.
 
+**Note:** Unlike :ref:`Label<class_Label>`, RichTextLabel doesn't have a *property* to horizontally align text to the center. Instead, enable :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>` and surround the text in a ``[center]`` tag as follows: ``[center]Example[/center]``. There is currently no built-in way to vertically align text either, but this can be emulated by relying on anchors/containers and the :ref:`fit_content_height<class_RichTextLabel_property_fit_content_height>` property.
+
 Tutorials
 ---------
 
@@ -70,15 +72,15 @@ Methods
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`clear<class_RichTextLabel_method_clear>` **(** **)**                                                                                                                               |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_content_height<class_RichTextLabel_method_get_content_height>` **(** **)** const                                                                                               |
+| :ref:`int<class_int>`                 | :ref:`get_content_height<class_RichTextLabel_method_get_content_height>` **(** **)** |const|                                                                                             |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_line_count<class_RichTextLabel_method_get_line_count>` **(** **)** const                                                                                                       |
+| :ref:`int<class_int>`                 | :ref:`get_line_count<class_RichTextLabel_method_get_line_count>` **(** **)** |const|                                                                                                     |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_total_character_count<class_RichTextLabel_method_get_total_character_count>` **(** **)** const                                                                                 |
+| :ref:`int<class_int>`                 | :ref:`get_total_character_count<class_RichTextLabel_method_get_total_character_count>` **(** **)** |const|                                                                               |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`VScrollBar<class_VScrollBar>`   | :ref:`get_v_scroll<class_RichTextLabel_method_get_v_scroll>` **(** **)**                                                                                                                 |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_visible_line_count<class_RichTextLabel_method_get_visible_line_count>` **(** **)** const                                                                                       |
+| :ref:`int<class_int>`                 | :ref:`get_visible_line_count<class_RichTextLabel_method_get_visible_line_count>` **(** **)** |const|                                                                                     |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`install_effect<class_RichTextLabel_method_install_effect>` **(** :ref:`Variant<class_Variant>` effect **)**                                                                        |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -572,7 +574,7 @@ Clears the tag stack and sets :ref:`bbcode_text<class_RichTextLabel_property_bbc
 
 .. _class_RichTextLabel_method_get_content_height:
 
-- :ref:`int<class_int>` **get_content_height** **(** **)** const
+- :ref:`int<class_int>` **get_content_height** **(** **)** |const|
 
 Returns the height of the content.
 
@@ -580,7 +582,7 @@ Returns the height of the content.
 
 .. _class_RichTextLabel_method_get_line_count:
 
-- :ref:`int<class_int>` **get_line_count** **(** **)** const
+- :ref:`int<class_int>` **get_line_count** **(** **)** |const|
 
 Returns the total number of newlines in the tag stack's text tags. Considers wrapped text as one line.
 
@@ -588,7 +590,7 @@ Returns the total number of newlines in the tag stack's text tags. Considers wra
 
 .. _class_RichTextLabel_method_get_total_character_count:
 
-- :ref:`int<class_int>` **get_total_character_count** **(** **)** const
+- :ref:`int<class_int>` **get_total_character_count** **(** **)** |const|
 
 Returns the total number of characters from text tags. Does not include BBCodes.
 
@@ -604,7 +606,7 @@ Returns the vertical scrollbar.
 
 .. _class_RichTextLabel_method_get_visible_line_count:
 
-- :ref:`int<class_int>` **get_visible_line_count** **(** **)** const
+- :ref:`int<class_int>` **get_visible_line_count** **(** **)** |const|
 
 Returns the number of visible lines.
 
@@ -798,3 +800,6 @@ For example, 2 columns with ratios 3 and 4 plus 70 pixels in available width wou
 
 If ``expand`` is ``false``, the column will not contribute to the total ratio.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

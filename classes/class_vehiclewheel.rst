@@ -56,13 +56,13 @@ Properties
 Methods
 -------
 
-+---------------------------+---------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_rpm<class_VehicleWheel_method_get_rpm>` **(** **)** const             |
-+---------------------------+---------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_skidinfo<class_VehicleWheel_method_get_skidinfo>` **(** **)** const   |
-+---------------------------+---------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`is_in_contact<class_VehicleWheel_method_is_in_contact>` **(** **)** const |
-+---------------------------+---------------------------------------------------------------------------------+
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_rpm<class_VehicleWheel_method_get_rpm>` **(** **)** |const|             |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_skidinfo<class_VehicleWheel_method_get_skidinfo>` **(** **)** |const|   |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`is_in_contact<class_VehicleWheel_method_is_in_contact>` **(** **)** |const| |
++---------------------------+-----------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -300,7 +300,7 @@ Method Descriptions
 
 .. _class_VehicleWheel_method_get_rpm:
 
-- :ref:`float<class_float>` **get_rpm** **(** **)** const
+- :ref:`float<class_float>` **get_rpm** **(** **)** |const|
 
 Returns the rotational speed of the wheel in revolutions per minute.
 
@@ -308,7 +308,7 @@ Returns the rotational speed of the wheel in revolutions per minute.
 
 .. _class_VehicleWheel_method_get_skidinfo:
 
-- :ref:`float<class_float>` **get_skidinfo** **(** **)** const
+- :ref:`float<class_float>` **get_skidinfo** **(** **)** |const|
 
 Returns a value between 0.0 and 1.0 that indicates whether this wheel is skidding. 0.0 is skidding (the wheel has lost grip, e.g. icy terrain), 1.0 means not skidding (the wheel has full grip, e.g. dry asphalt road).
 
@@ -316,7 +316,10 @@ Returns a value between 0.0 and 1.0 that indicates whether this wheel is skiddin
 
 .. _class_VehicleWheel_method_is_in_contact:
 
-- :ref:`bool<class_bool>` **is_in_contact** **(** **)** const
+- :ref:`bool<class_bool>` **is_in_contact** **(** **)** |const|
 
 Returns ``true`` if this wheel is in contact with a surface.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

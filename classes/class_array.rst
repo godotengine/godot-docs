@@ -175,7 +175,9 @@ Appends an element at the end of the array (alias of :ref:`push_back<class_Array
 
 - :ref:`Variant<class_Variant>` **back** **(** **)**
 
-Returns the last element of the array, or ``null`` if the array is empty.
+Returns the last element of the array. Prints an error and returns ``null`` if the array is empty.
+
+**Note:** Calling this function is not the same as writing ``array[-1]``. If the array is empty, accessing by index will pause project execution when running from the editor.
 
 ----
 
@@ -261,7 +263,9 @@ Searches the array in reverse order for a value and returns its index or ``-1`` 
 
 - :ref:`Variant<class_Variant>` **front** **(** **)**
 
-Returns the first element of the array, or ``null`` if the array is empty.
+Returns the first element of the array. Prints an error and returns ``null`` if the array is empty.
+
+**Note:** Calling this function is not the same as writing ``array[0]``. If the array is empty, accessing by index will pause project execution when running from the editor.
 
 ----
 
@@ -332,7 +336,7 @@ Returns the minimum value contained in the array if all elements are of comparab
 
 - :ref:`Variant<class_Variant>` **pop_back** **(** **)**
 
-Removes and returns the last element of the array. Returns ``null`` if the array is empty.
+Removes and returns the last element of the array. Returns ``null`` if the array is empty, without printing an error message.
 
 ----
 
@@ -340,7 +344,7 @@ Removes and returns the last element of the array. Returns ``null`` if the array
 
 - :ref:`Variant<class_Variant>` **pop_front** **(** **)**
 
-Removes and returns the first element of the array. Returns ``null`` if the array is empty.
+Removes and returns the first element of the array. Returns ``null`` if the array is empty, wwithout printing an error message.
 
 ----
 
@@ -364,7 +368,7 @@ Adds an element at the beginning of the array.
 
 - void **remove** **(** :ref:`int<class_int>` position **)**
 
-Removes an element from the array by index.
+Removes an element from the array by index. If the index does not exist in the array, nothing happens.
 
 ----
 
@@ -444,3 +448,6 @@ Sorts the array using a custom method. The arguments are an object that holds th
     my_items.sort_custom(MyCustomSorter, "sort_ascending")
     print(my_items) # Prints [[4, Tomato], [5, Potato], [9, Rice]].
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -41,13 +41,13 @@ Methods
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`disconnect_peer<class_WebSocketServer_method_disconnect_peer>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**                               |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_peer_address<class_WebSocketServer_method_get_peer_address>` **(** :ref:`int<class_int>` id **)** const                                                                                               |
+| :ref:`String<class_String>`           | :ref:`get_peer_address<class_WebSocketServer_method_get_peer_address>` **(** :ref:`int<class_int>` id **)** |const|                                                                                             |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_peer_port<class_WebSocketServer_method_get_peer_port>` **(** :ref:`int<class_int>` id **)** const                                                                                                     |
+| :ref:`int<class_int>`                 | :ref:`get_peer_port<class_WebSocketServer_method_get_peer_port>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                   |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_peer<class_WebSocketServer_method_has_peer>` **(** :ref:`int<class_int>` id **)** const                                                                                                               |
+| :ref:`bool<class_bool>`               | :ref:`has_peer<class_WebSocketServer_method_has_peer>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                             |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_listening<class_WebSocketServer_method_is_listening>` **(** **)** const                                                                                                                                |
+| :ref:`bool<class_bool>`               | :ref:`is_listening<class_WebSocketServer_method_is_listening>` **(** **)** |const|                                                                                                                              |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`listen<class_WebSocketServer_method_listen>` **(** :ref:`int<class_int>` port, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)** |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -161,7 +161,7 @@ Disconnects the peer identified by ``id`` from the server. See :ref:`WebSocketPe
 
 .. _class_WebSocketServer_method_get_peer_address:
 
-- :ref:`String<class_String>` **get_peer_address** **(** :ref:`int<class_int>` id **)** const
+- :ref:`String<class_String>` **get_peer_address** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the IP address of the given peer.
 
@@ -169,7 +169,7 @@ Returns the IP address of the given peer.
 
 .. _class_WebSocketServer_method_get_peer_port:
 
-- :ref:`int<class_int>` **get_peer_port** **(** :ref:`int<class_int>` id **)** const
+- :ref:`int<class_int>` **get_peer_port** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the remote port of the given peer.
 
@@ -177,7 +177,7 @@ Returns the remote port of the given peer.
 
 .. _class_WebSocketServer_method_has_peer:
 
-- :ref:`bool<class_bool>` **has_peer** **(** :ref:`int<class_int>` id **)** const
+- :ref:`bool<class_bool>` **has_peer** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns ``true`` if a peer with the given ID is connected.
 
@@ -185,7 +185,7 @@ Returns ``true`` if a peer with the given ID is connected.
 
 .. _class_WebSocketServer_method_is_listening:
 
-- :ref:`bool<class_bool>` **is_listening** **(** **)** const
+- :ref:`bool<class_bool>` **is_listening** **(** **)** |const|
 
 Returns ``true`` if the server is actively listening on a port.
 
@@ -211,3 +211,6 @@ If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_P
 
 Stops the server and clear its state.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

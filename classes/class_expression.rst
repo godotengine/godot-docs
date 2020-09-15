@@ -44,9 +44,9 @@ Methods
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`         | :ref:`execute<class_Expression_method_execute>` **(** :ref:`Array<class_Array>` inputs=[  ], :ref:`Object<class_Object>` base_instance=null, :ref:`bool<class_bool>` show_error=true **)** |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_error_text<class_Expression_method_get_error_text>` **(** **)** const                                                                                                            |
+| :ref:`String<class_String>`           | :ref:`get_error_text<class_Expression_method_get_error_text>` **(** **)** |const|                                                                                                          |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_execute_failed<class_Expression_method_has_execute_failed>` **(** **)** const                                                                                                    |
+| :ref:`bool<class_bool>`               | :ref:`has_execute_failed<class_Expression_method_has_execute_failed>` **(** **)** |const|                                                                                                  |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`parse<class_Expression_method_parse>` **(** :ref:`String<class_String>` expression, :ref:`PoolStringArray<class_PoolStringArray>` input_names=PoolStringArray(  ) **)**              |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -66,7 +66,7 @@ If you defined input variables in :ref:`parse<class_Expression_method_parse>`, y
 
 .. _class_Expression_method_get_error_text:
 
-- :ref:`String<class_String>` **get_error_text** **(** **)** const
+- :ref:`String<class_String>` **get_error_text** **(** **)** |const|
 
 Returns the error text if :ref:`parse<class_Expression_method_parse>` has failed.
 
@@ -74,7 +74,7 @@ Returns the error text if :ref:`parse<class_Expression_method_parse>` has failed
 
 .. _class_Expression_method_has_execute_failed:
 
-- :ref:`bool<class_bool>` **has_execute_failed** **(** **)** const
+- :ref:`bool<class_bool>` **has_execute_failed** **(** **)** |const|
 
 Returns ``true`` if :ref:`execute<class_Expression_method_execute>` has failed.
 
@@ -88,3 +88,6 @@ Parses the expression and returns an :ref:`Error<enum_@GlobalScope_Error>` code.
 
 You can optionally specify names of variables that may appear in the expression with ``input_names``, so that you can bind them when it gets executed.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

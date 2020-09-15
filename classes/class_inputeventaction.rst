@@ -83,3 +83,6 @@ If ``true``, the action's state is pressed. If ``false``, the action's state is 
 
 The action's strength between 0 and 1. This value is considered as equal to 0 if pressed is ``false``. The event strength allows faking analog joypad motion events, by precising how strongly is the joypad axis bent or pressed.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

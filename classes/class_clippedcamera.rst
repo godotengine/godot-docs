@@ -43,9 +43,9 @@ Methods
 +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`clear_exceptions<class_ClippedCamera_method_clear_exceptions>` **(** **)**                                                                      |
 +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_clip_offset<class_ClippedCamera_method_get_clip_offset>` **(** **)** const                                                                  |
+| :ref:`float<class_float>` | :ref:`get_clip_offset<class_ClippedCamera_method_get_clip_offset>` **(** **)** |const|                                                                |
 +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`get_collision_mask_bit<class_ClippedCamera_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
+| :ref:`bool<class_bool>`   | :ref:`get_collision_mask_bit<class_ClippedCamera_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** |const|                        |
 +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`remove_exception<class_ClippedCamera_method_remove_exception>` **(** :ref:`Object<class_Object>` node **)**                                     |
 +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -116,7 +116,7 @@ If ``true``, the camera stops on contact with :ref:`PhysicsBody<class_PhysicsBod
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The camera's collision mask. Only objects in at least one collision layer matching the mask will be detected.
+The camera's collision mask. Only objects in at least one collision layer matching the mask will be detected. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 
@@ -179,7 +179,7 @@ Removes all collision exceptions.
 
 .. _class_ClippedCamera_method_get_clip_offset:
 
-- :ref:`float<class_float>` **get_clip_offset** **(** **)** const
+- :ref:`float<class_float>` **get_clip_offset** **(** **)** |const|
 
 Returns the distance the camera has been offset due to a collision.
 
@@ -187,7 +187,7 @@ Returns the distance the camera has been offset due to a collision.
 
 .. _class_ClippedCamera_method_get_collision_mask_bit:
 
-- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
+- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** |const|
 
 Returns ``true`` if the specified bit index is on.
 
@@ -219,3 +219,6 @@ Sets the specified bit index to the ``value``.
 
 **Note:** Bit indices range from 0-19.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

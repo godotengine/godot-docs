@@ -96,3 +96,6 @@ The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum fr
 
 If ``true``, the physics engine will use the friction of the object marked as "rough" when two objects collide. If ``false``, the physics engine will use the lowest friction of all colliding objects instead. If ``true`` for both colliding objects, the physics engine will use the highest friction.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

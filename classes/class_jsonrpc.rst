@@ -16,21 +16,21 @@ JSONRPC
 Methods
 -------
 
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`make_notification<class_JSONRPC_method_make_notification>` **(** :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` params **)**                                         |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`make_request<class_JSONRPC_method_make_request>` **(** :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` params, :ref:`Variant<class_Variant>` id **)**                 |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`make_response<class_JSONRPC_method_make_response>` **(** :ref:`Variant<class_Variant>` result, :ref:`Variant<class_Variant>` id **)**                                                   |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`make_response_error<class_JSONRPC_method_make_response_error>` **(** :ref:`int<class_int>` code, :ref:`String<class_String>` message, :ref:`Variant<class_Variant>` id=null **)** const |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`       | :ref:`process_action<class_JSONRPC_method_process_action>` **(** :ref:`Variant<class_Variant>` action, :ref:`bool<class_bool>` recurse=false **)**                                            |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`process_string<class_JSONRPC_method_process_string>` **(** :ref:`String<class_String>` action **)**                                                                                     |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                | :ref:`set_scope<class_JSONRPC_method_set_scope>` **(** :ref:`String<class_String>` scope, :ref:`Object<class_Object>` target **)**                                                            |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`make_notification<class_JSONRPC_method_make_notification>` **(** :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` params **)**                                           |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`make_request<class_JSONRPC_method_make_request>` **(** :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` params, :ref:`Variant<class_Variant>` id **)**                   |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`make_response<class_JSONRPC_method_make_response>` **(** :ref:`Variant<class_Variant>` result, :ref:`Variant<class_Variant>` id **)**                                                     |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`make_response_error<class_JSONRPC_method_make_response_error>` **(** :ref:`int<class_int>` code, :ref:`String<class_String>` message, :ref:`Variant<class_Variant>` id=null **)** |const| |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`       | :ref:`process_action<class_JSONRPC_method_process_action>` **(** :ref:`Variant<class_Variant>` action, :ref:`bool<class_bool>` recurse=false **)**                                              |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`process_string<class_JSONRPC_method_process_string>` **(** :ref:`String<class_String>` action **)**                                                                                       |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`set_scope<class_JSONRPC_method_set_scope>` **(** :ref:`String<class_String>` scope, :ref:`Object<class_Object>` target **)**                                                              |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -82,7 +82,7 @@ Method Descriptions
 
 .. _class_JSONRPC_method_make_response_error:
 
-- :ref:`Dictionary<class_Dictionary>` **make_response_error** **(** :ref:`int<class_int>` code, :ref:`String<class_String>` message, :ref:`Variant<class_Variant>` id=null **)** const
+- :ref:`Dictionary<class_Dictionary>` **make_response_error** **(** :ref:`int<class_int>` code, :ref:`String<class_String>` message, :ref:`Variant<class_Variant>` id=null **)** |const|
 
 ----
 
@@ -102,3 +102,6 @@ Method Descriptions
 
 - void **set_scope** **(** :ref:`String<class_String>` scope, :ref:`Object<class_Object>` target **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

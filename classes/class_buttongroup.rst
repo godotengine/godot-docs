@@ -53,3 +53,6 @@ Returns an :ref:`Array<class_Array>` of :ref:`Button<class_Button>`\ s who have 
 
 Returns the current pressed button.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

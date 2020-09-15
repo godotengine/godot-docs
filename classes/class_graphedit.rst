@@ -55,13 +55,13 @@ Methods
 +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`disconnect_node<class_GraphEdit_method_disconnect_node>` **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port **)**                                                   |
 +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                 | :ref:`get_connection_list<class_GraphEdit_method_get_connection_list>` **(** **)** const                                                                                                                                                                      |
+| :ref:`Array<class_Array>`                 | :ref:`get_connection_list<class_GraphEdit_method_get_connection_list>` **(** **)** |const|                                                                                                                                                                    |
 +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`HBoxContainer<class_HBoxContainer>` | :ref:`get_zoom_hbox<class_GraphEdit_method_get_zoom_hbox>` **(** **)**                                                                                                                                                                                        |
 +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                   | :ref:`is_node_connected<class_GraphEdit_method_is_node_connected>` **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port **)**                                               |
 +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`is_valid_connection_type<class_GraphEdit_method_is_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)** const                                                                                             |
+| :ref:`bool<class_bool>`                   | :ref:`is_valid_connection_type<class_GraphEdit_method_is_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)** |const|                                                                                           |
 +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`remove_valid_connection_type<class_GraphEdit_method_remove_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**                                                                                           |
 +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -352,7 +352,7 @@ Removes the connection between the ``from_port`` slot of the ``from`` GraphNode 
 
 .. _class_GraphEdit_method_get_connection_list:
 
-- :ref:`Array<class_Array>` **get_connection_list** **(** **)** const
+- :ref:`Array<class_Array>` **get_connection_list** **(** **)** |const|
 
 Returns an Array containing the list of connections. A connection consists in a structure of the form ``{ from_port: 0, from: "GraphNode name 0", to_port: 1, to: "GraphNode name 1" }``.
 
@@ -378,7 +378,7 @@ Returns ``true`` if the ``from_port`` slot of the ``from`` GraphNode is connecte
 
 .. _class_GraphEdit_method_is_valid_connection_type:
 
-- :ref:`bool<class_bool>` **is_valid_connection_type** **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)** const
+- :ref:`bool<class_bool>` **is_valid_connection_type** **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)** |const|
 
 Returns whether it's possible to connect slots of the specified types.
 
@@ -422,3 +422,6 @@ Sets the coloration of the connection between ``from``'s ``from_port`` and ``to`
 
 Sets the specified ``node`` as the one selected.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

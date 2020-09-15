@@ -45,7 +45,7 @@ Methods
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`erase_preset<class_ColorPicker_method_erase_preset>` **(** :ref:`Color<class_Color>` color **)** |
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`PoolColorArray<class_PoolColorArray>` | :ref:`get_presets<class_ColorPicker_method_get_presets>` **(** **)** const                             |
+| :ref:`PoolColorArray<class_PoolColorArray>` | :ref:`get_presets<class_ColorPicker_method_get_presets>` **(** **)** |const|                           |
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 Theme Properties
@@ -240,7 +240,10 @@ Removes the given color from the list of color presets of this color picker.
 
 .. _class_ColorPicker_method_get_presets:
 
-- :ref:`PoolColorArray<class_PoolColorArray>` **get_presets** **(** **)** const
+- :ref:`PoolColorArray<class_PoolColorArray>` **get_presets** **(** **)** |const|
 
 Returns the list of colors in the presets of the color picker.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -42,7 +42,7 @@ Methods
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`apply_impulse<class_PhysicalBone_method_apply_impulse>` **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` impulse **)** |
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`get_bone_id<class_PhysicalBone_method_get_bone_id>` **(** **)** const                                                                             |
+| :ref:`int<class_int>`   | :ref:`get_bone_id<class_PhysicalBone_method_get_bone_id>` **(** **)** |const|                                                                           |
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`get_simulate_physics<class_PhysicalBone_method_get_simulate_physics>` **(** **)**                                                                 |
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -212,7 +212,7 @@ Method Descriptions
 
 .. _class_PhysicalBone_method_get_bone_id:
 
-- :ref:`int<class_int>` **get_bone_id** **(** **)** const
+- :ref:`int<class_int>` **get_bone_id** **(** **)** |const|
 
 ----
 
@@ -232,3 +232,6 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **is_static_body** **(** **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

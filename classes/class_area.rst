@@ -63,17 +63,17 @@ Methods
 -------
 
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`get_collision_layer_bit<class_Area_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
+| :ref:`bool<class_bool>`   | :ref:`get_collision_layer_bit<class_Area_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** |const|                        |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`get_collision_mask_bit<class_Area_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                            |
+| :ref:`bool<class_bool>`   | :ref:`get_collision_mask_bit<class_Area_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** |const|                          |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_overlapping_areas<class_Area_method_get_overlapping_areas>` **(** **)** const                                                        |
+| :ref:`Array<class_Array>` | :ref:`get_overlapping_areas<class_Area_method_get_overlapping_areas>` **(** **)** |const|                                                      |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_overlapping_bodies<class_Area_method_get_overlapping_bodies>` **(** **)** const                                                      |
+| :ref:`Array<class_Array>` | :ref:`get_overlapping_bodies<class_Area_method_get_overlapping_bodies>` **(** **)** |const|                                                    |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`overlaps_area<class_Area_method_overlaps_area>` **(** :ref:`Node<class_Node>` area **)** const                                           |
+| :ref:`bool<class_bool>`   | :ref:`overlaps_area<class_Area_method_overlaps_area>` **(** :ref:`Node<class_Node>` area **)** |const|                                         |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`overlaps_body<class_Area_method_overlaps_body>` **(** :ref:`Node<class_Node>` body **)** const                                           |
+| :ref:`bool<class_bool>`   | :ref:`overlaps_body<class_Area_method_overlaps_body>` **(** :ref:`Node<class_Node>` body **)** |const|                                         |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_collision_layer_bit<class_Area_method_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -243,7 +243,7 @@ If ``true``, the area's audio bus overrides the default audio bus.
 | *Getter*  | get_collision_layer()      |
 +-----------+----------------------------+
 
-The area's physics layer(s). Collidable objects can exist in any of 32 different layers. A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See also :ref:`collision_mask<class_Area_property_collision_mask>`.
+The area's physics layer(s). Collidable objects can exist in any of 32 different layers. A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See also :ref:`collision_mask<class_Area_property_collision_mask>`. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 
@@ -259,7 +259,7 @@ The area's physics layer(s). Collidable objects can exist in any of 32 different
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The physics layers this area scans to determine collision detection.
+The physics layers this area scans to determine collision detection. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 
@@ -474,7 +474,7 @@ Method Descriptions
 
 .. _class_Area_method_get_collision_layer_bit:
 
-- :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
+- :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** |const|
 
 Returns an individual bit on the layer mask.
 
@@ -482,7 +482,7 @@ Returns an individual bit on the layer mask.
 
 .. _class_Area_method_get_collision_mask_bit:
 
-- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
+- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** |const|
 
 Returns an individual bit on the collision mask.
 
@@ -490,7 +490,7 @@ Returns an individual bit on the collision mask.
 
 .. _class_Area_method_get_overlapping_areas:
 
-- :ref:`Array<class_Array>` **get_overlapping_areas** **(** **)** const
+- :ref:`Array<class_Array>` **get_overlapping_areas** **(** **)** |const|
 
 Returns a list of intersecting ``Area``\ s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
@@ -498,7 +498,7 @@ Returns a list of intersecting ``Area``\ s. For performance reasons (collisions 
 
 .. _class_Area_method_get_overlapping_bodies:
 
-- :ref:`Array<class_Array>` **get_overlapping_bodies** **(** **)** const
+- :ref:`Array<class_Array>` **get_overlapping_bodies** **(** **)** |const|
 
 Returns a list of intersecting :ref:`PhysicsBody<class_PhysicsBody>`\ s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
@@ -506,7 +506,7 @@ Returns a list of intersecting :ref:`PhysicsBody<class_PhysicsBody>`\ s. For per
 
 .. _class_Area_method_overlaps_area:
 
-- :ref:`bool<class_bool>` **overlaps_area** **(** :ref:`Node<class_Node>` area **)** const
+- :ref:`bool<class_bool>` **overlaps_area** **(** :ref:`Node<class_Node>` area **)** |const|
 
 If ``true``, the given area overlaps the Area.
 
@@ -516,7 +516,7 @@ If ``true``, the given area overlaps the Area.
 
 .. _class_Area_method_overlaps_body:
 
-- :ref:`bool<class_bool>` **overlaps_body** **(** :ref:`Node<class_Node>` body **)** const
+- :ref:`bool<class_bool>` **overlaps_body** **(** :ref:`Node<class_Node>` body **)** |const|
 
 If ``true``, the given physics body overlaps the Area.
 
@@ -540,3 +540,6 @@ Set/clear individual bits on the layer mask. This simplifies editing this ``Area
 
 Set/clear individual bits on the collision mask. This simplifies editing which ``Area`` layers this ``Area`` scans.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -42,11 +42,11 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`erase_message<class_Translation_method_erase_message>` **(** :ref:`String<class_String>` src_message **)**                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_message<class_Translation_method_get_message>` **(** :ref:`String<class_String>` src_message **)** const                                       |
+| :ref:`String<class_String>`                   | :ref:`get_message<class_Translation_method_get_message>` **(** :ref:`String<class_String>` src_message **)** |const|                                     |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`get_message_count<class_Translation_method_get_message_count>` **(** **)** const                                                                   |
+| :ref:`int<class_int>`                         | :ref:`get_message_count<class_Translation_method_get_message_count>` **(** **)** |const|                                                                 |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_message_list<class_Translation_method_get_message_list>` **(** **)** const                                                                     |
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_message_list<class_Translation_method_get_message_list>` **(** **)** |const|                                                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
@@ -87,7 +87,7 @@ Erases a message.
 
 .. _class_Translation_method_get_message:
 
-- :ref:`String<class_String>` **get_message** **(** :ref:`String<class_String>` src_message **)** const
+- :ref:`String<class_String>` **get_message** **(** :ref:`String<class_String>` src_message **)** |const|
 
 Returns a message's translation.
 
@@ -95,7 +95,7 @@ Returns a message's translation.
 
 .. _class_Translation_method_get_message_count:
 
-- :ref:`int<class_int>` **get_message_count** **(** **)** const
+- :ref:`int<class_int>` **get_message_count** **(** **)** |const|
 
 Returns the number of existing messages.
 
@@ -103,7 +103,10 @@ Returns the number of existing messages.
 
 .. _class_Translation_method_get_message_list:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_message_list** **(** **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_message_list** **(** **)** |const|
 
 Returns all the messages (keys).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

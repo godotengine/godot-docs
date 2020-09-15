@@ -33,11 +33,11 @@ Methods
 -------
 
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`get_height<class_CubeMap_method_get_height>` **(** **)** const                                                            |
+| :ref:`int<class_int>`     | :ref:`get_height<class_CubeMap_method_get_height>` **(** **)** |const|                                                          |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_Image>` | :ref:`get_side<class_CubeMap_method_get_side>` **(** :ref:`Side<enum_CubeMap_Side>` side **)** const                            |
+| :ref:`Image<class_Image>` | :ref:`get_side<class_CubeMap_method_get_side>` **(** :ref:`Side<enum_CubeMap_Side>` side **)** |const|                          |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`get_width<class_CubeMap_method_get_width>` **(** **)** const                                                              |
+| :ref:`int<class_int>`     | :ref:`get_width<class_CubeMap_method_get_width>` **(** **)** |const|                                                            |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_side<class_CubeMap_method_set_side>` **(** :ref:`Side<enum_CubeMap_Side>` side, :ref:`Image<class_Image>` image **)** |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
@@ -167,7 +167,7 @@ Method Descriptions
 
 .. _class_CubeMap_method_get_height:
 
-- :ref:`int<class_int>` **get_height** **(** **)** const
+- :ref:`int<class_int>` **get_height** **(** **)** |const|
 
 Returns the ``CubeMap``'s height.
 
@@ -175,7 +175,7 @@ Returns the ``CubeMap``'s height.
 
 .. _class_CubeMap_method_get_side:
 
-- :ref:`Image<class_Image>` **get_side** **(** :ref:`Side<enum_CubeMap_Side>` side **)** const
+- :ref:`Image<class_Image>` **get_side** **(** :ref:`Side<enum_CubeMap_Side>` side **)** |const|
 
 Returns an :ref:`Image<class_Image>` for a side of the ``CubeMap`` using one of the :ref:`Side<enum_CubeMap_Side>` constants.
 
@@ -183,7 +183,7 @@ Returns an :ref:`Image<class_Image>` for a side of the ``CubeMap`` using one of 
 
 .. _class_CubeMap_method_get_width:
 
-- :ref:`int<class_int>` **get_width** **(** **)** const
+- :ref:`int<class_int>` **get_width** **(** **)** |const|
 
 Returns the ``CubeMap``'s width.
 
@@ -195,3 +195,6 @@ Returns the ``CubeMap``'s width.
 
 Sets an :ref:`Image<class_Image>` for a side of the ``CubeMap`` using one of the :ref:`Side<enum_CubeMap_Side>` constants.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

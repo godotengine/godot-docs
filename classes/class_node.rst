@@ -68,23 +68,23 @@ Methods
 -------
 
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`_enter_tree<class_Node_method__enter_tree>` **(** **)** virtual                                                                                                                               |
+| void                              | :ref:`_enter_tree<class_Node_method__enter_tree>` **(** **)** |virtual|                                                                                                                             |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`_exit_tree<class_Node_method__exit_tree>` **(** **)** virtual                                                                                                                                 |
+| void                              | :ref:`_exit_tree<class_Node_method__exit_tree>` **(** **)** |virtual|                                                                                                                               |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`       | :ref:`_get_configuration_warning<class_Node_method__get_configuration_warning>` **(** **)** virtual                                                                                                 |
+| :ref:`String<class_String>`       | :ref:`_get_configuration_warning<class_Node_method__get_configuration_warning>` **(** **)** |virtual|                                                                                               |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`_input<class_Node_method__input>` **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual                                                                                               |
+| void                              | :ref:`_input<class_Node_method__input>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|                                                                                             |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`_physics_process<class_Node_method__physics_process>` **(** :ref:`float<class_float>` delta **)** virtual                                                                                     |
+| void                              | :ref:`_physics_process<class_Node_method__physics_process>` **(** :ref:`float<class_float>` delta **)** |virtual|                                                                                   |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`_process<class_Node_method__process>` **(** :ref:`float<class_float>` delta **)** virtual                                                                                                     |
+| void                              | :ref:`_process<class_Node_method__process>` **(** :ref:`float<class_float>` delta **)** |virtual|                                                                                                   |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`_ready<class_Node_method__ready>` **(** **)** virtual                                                                                                                                         |
+| void                              | :ref:`_ready<class_Node_method__ready>` **(** **)** |virtual|                                                                                                                                       |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`_unhandled_input<class_Node_method__unhandled_input>` **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual                                                                           |
+| void                              | :ref:`_unhandled_input<class_Node_method__unhandled_input>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|                                                                         |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`_unhandled_key_input<class_Node_method__unhandled_key_input>` **(** :ref:`InputEventKey<class_InputEventKey>` event **)** virtual                                                             |
+| void                              | :ref:`_unhandled_key_input<class_Node_method__unhandled_key_input>` **(** :ref:`InputEventKey<class_InputEventKey>` event **)** |virtual|                                                           |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`add_child<class_Node_method_add_child>` **(** :ref:`Node<class_Node>` node, :ref:`bool<class_bool>` legible_unique_name=false **)**                                                           |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -92,79 +92,79 @@ Methods
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`add_to_group<class_Node_method_add_to_group>` **(** :ref:`String<class_String>` group, :ref:`bool<class_bool>` persistent=false **)**                                                         |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`can_process<class_Node_method_can_process>` **(** **)** const                                                                                                                                 |
+| :ref:`bool<class_bool>`           | :ref:`can_process<class_Node_method_can_process>` **(** **)** |const|                                                                                                                               |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`           | :ref:`duplicate<class_Node_method_duplicate>` **(** :ref:`int<class_int>` flags=15 **)** const                                                                                                      |
+| :ref:`Node<class_Node>`           | :ref:`duplicate<class_Node_method_duplicate>` **(** :ref:`int<class_int>` flags=15 **)** |const|                                                                                                    |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`           | :ref:`find_node<class_Node_method_find_node>` **(** :ref:`String<class_String>` mask, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** const                        |
+| :ref:`Node<class_Node>`           | :ref:`find_node<class_Node_method_find_node>` **(** :ref:`String<class_String>` mask, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|                      |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`           | :ref:`find_parent<class_Node_method_find_parent>` **(** :ref:`String<class_String>` mask **)** const                                                                                                |
+| :ref:`Node<class_Node>`           | :ref:`find_parent<class_Node_method_find_parent>` **(** :ref:`String<class_String>` mask **)** |const|                                                                                              |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`           | :ref:`get_child<class_Node_method_get_child>` **(** :ref:`int<class_int>` idx **)** const                                                                                                           |
+| :ref:`Node<class_Node>`           | :ref:`get_child<class_Node_method_get_child>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                         |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_child_count<class_Node_method_get_child_count>` **(** **)** const                                                                                                                         |
+| :ref:`int<class_int>`             | :ref:`get_child_count<class_Node_method_get_child_count>` **(** **)** |const|                                                                                                                       |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`         | :ref:`get_children<class_Node_method_get_children>` **(** **)** const                                                                                                                               |
+| :ref:`Array<class_Array>`         | :ref:`get_children<class_Node_method_get_children>` **(** **)** |const|                                                                                                                             |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`         | :ref:`get_groups<class_Node_method_get_groups>` **(** **)** const                                                                                                                                   |
+| :ref:`Array<class_Array>`         | :ref:`get_groups<class_Node_method_get_groups>` **(** **)** |const|                                                                                                                                 |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_index<class_Node_method_get_index>` **(** **)** const                                                                                                                                     |
+| :ref:`int<class_int>`             | :ref:`get_index<class_Node_method_get_index>` **(** **)** |const|                                                                                                                                   |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_network_master<class_Node_method_get_network_master>` **(** **)** const                                                                                                                   |
+| :ref:`int<class_int>`             | :ref:`get_network_master<class_Node_method_get_network_master>` **(** **)** |const|                                                                                                                 |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`           | :ref:`get_node<class_Node_method_get_node>` **(** :ref:`NodePath<class_NodePath>` path **)** const                                                                                                  |
+| :ref:`Node<class_Node>`           | :ref:`get_node<class_Node_method_get_node>` **(** :ref:`NodePath<class_NodePath>` path **)** |const|                                                                                                |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`         | :ref:`get_node_and_resource<class_Node_method_get_node_and_resource>` **(** :ref:`NodePath<class_NodePath>` path **)**                                                                              |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`           | :ref:`get_node_or_null<class_Node_method_get_node_or_null>` **(** :ref:`NodePath<class_NodePath>` path **)** const                                                                                  |
+| :ref:`Node<class_Node>`           | :ref:`get_node_or_null<class_Node_method_get_node_or_null>` **(** :ref:`NodePath<class_NodePath>` path **)** |const|                                                                                |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`           | :ref:`get_parent<class_Node_method_get_parent>` **(** **)** const                                                                                                                                   |
+| :ref:`Node<class_Node>`           | :ref:`get_parent<class_Node_method_get_parent>` **(** **)** |const|                                                                                                                                 |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>`   | :ref:`get_path<class_Node_method_get_path>` **(** **)** const                                                                                                                                       |
+| :ref:`NodePath<class_NodePath>`   | :ref:`get_path<class_Node_method_get_path>` **(** **)** |const|                                                                                                                                     |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>`   | :ref:`get_path_to<class_Node_method_get_path_to>` **(** :ref:`Node<class_Node>` node **)** const                                                                                                    |
+| :ref:`NodePath<class_NodePath>`   | :ref:`get_path_to<class_Node_method_get_path_to>` **(** :ref:`Node<class_Node>` node **)** |const|                                                                                                  |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`         | :ref:`get_physics_process_delta_time<class_Node_method_get_physics_process_delta_time>` **(** **)** const                                                                                           |
+| :ref:`float<class_float>`         | :ref:`get_physics_process_delta_time<class_Node_method_get_physics_process_delta_time>` **(** **)** |const|                                                                                         |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_position_in_parent<class_Node_method_get_position_in_parent>` **(** **)** const                                                                                                           |
+| :ref:`int<class_int>`             | :ref:`get_position_in_parent<class_Node_method_get_position_in_parent>` **(** **)** |const|                                                                                                         |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`         | :ref:`get_process_delta_time<class_Node_method_get_process_delta_time>` **(** **)** const                                                                                                           |
+| :ref:`float<class_float>`         | :ref:`get_process_delta_time<class_Node_method_get_process_delta_time>` **(** **)** |const|                                                                                                         |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`get_scene_instance_load_placeholder<class_Node_method_get_scene_instance_load_placeholder>` **(** **)** const                                                                                 |
+| :ref:`bool<class_bool>`           | :ref:`get_scene_instance_load_placeholder<class_Node_method_get_scene_instance_load_placeholder>` **(** **)** |const|                                                                               |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneTree<class_SceneTree>` | :ref:`get_tree<class_Node_method_get_tree>` **(** **)** const                                                                                                                                       |
+| :ref:`SceneTree<class_SceneTree>` | :ref:`get_tree<class_Node_method_get_tree>` **(** **)** |const|                                                                                                                                     |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Viewport<class_Viewport>`   | :ref:`get_viewport<class_Node_method_get_viewport>` **(** **)** const                                                                                                                               |
+| :ref:`Viewport<class_Viewport>`   | :ref:`get_viewport<class_Node_method_get_viewport>` **(** **)** |const|                                                                                                                             |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`has_node<class_Node_method_has_node>` **(** :ref:`NodePath<class_NodePath>` path **)** const                                                                                                  |
+| :ref:`bool<class_bool>`           | :ref:`has_node<class_Node_method_has_node>` **(** :ref:`NodePath<class_NodePath>` path **)** |const|                                                                                                |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`has_node_and_resource<class_Node_method_has_node_and_resource>` **(** :ref:`NodePath<class_NodePath>` path **)** const                                                                        |
+| :ref:`bool<class_bool>`           | :ref:`has_node_and_resource<class_Node_method_has_node_and_resource>` **(** :ref:`NodePath<class_NodePath>` path **)** |const|                                                                      |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_a_parent_of<class_Node_method_is_a_parent_of>` **(** :ref:`Node<class_Node>` node **)** const                                                                                              |
+| :ref:`bool<class_bool>`           | :ref:`is_a_parent_of<class_Node_method_is_a_parent_of>` **(** :ref:`Node<class_Node>` node **)** |const|                                                                                            |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_displayed_folded<class_Node_method_is_displayed_folded>` **(** **)** const                                                                                                                 |
+| :ref:`bool<class_bool>`           | :ref:`is_displayed_folded<class_Node_method_is_displayed_folded>` **(** **)** |const|                                                                                                               |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_greater_than<class_Node_method_is_greater_than>` **(** :ref:`Node<class_Node>` node **)** const                                                                                            |
+| :ref:`bool<class_bool>`           | :ref:`is_greater_than<class_Node_method_is_greater_than>` **(** :ref:`Node<class_Node>` node **)** |const|                                                                                          |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_in_group<class_Node_method_is_in_group>` **(** :ref:`String<class_String>` group **)** const                                                                                               |
+| :ref:`bool<class_bool>`           | :ref:`is_in_group<class_Node_method_is_in_group>` **(** :ref:`String<class_String>` group **)** |const|                                                                                             |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_inside_tree<class_Node_method_is_inside_tree>` **(** **)** const                                                                                                                           |
+| :ref:`bool<class_bool>`           | :ref:`is_inside_tree<class_Node_method_is_inside_tree>` **(** **)** |const|                                                                                                                         |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_network_master<class_Node_method_is_network_master>` **(** **)** const                                                                                                                     |
+| :ref:`bool<class_bool>`           | :ref:`is_network_master<class_Node_method_is_network_master>` **(** **)** |const|                                                                                                                   |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_physics_processing<class_Node_method_is_physics_processing>` **(** **)** const                                                                                                             |
+| :ref:`bool<class_bool>`           | :ref:`is_physics_processing<class_Node_method_is_physics_processing>` **(** **)** |const|                                                                                                           |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_physics_processing_internal<class_Node_method_is_physics_processing_internal>` **(** **)** const                                                                                           |
+| :ref:`bool<class_bool>`           | :ref:`is_physics_processing_internal<class_Node_method_is_physics_processing_internal>` **(** **)** |const|                                                                                         |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_processing<class_Node_method_is_processing>` **(** **)** const                                                                                                                             |
+| :ref:`bool<class_bool>`           | :ref:`is_processing<class_Node_method_is_processing>` **(** **)** |const|                                                                                                                           |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_processing_input<class_Node_method_is_processing_input>` **(** **)** const                                                                                                                 |
+| :ref:`bool<class_bool>`           | :ref:`is_processing_input<class_Node_method_is_processing_input>` **(** **)** |const|                                                                                                               |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_processing_internal<class_Node_method_is_processing_internal>` **(** **)** const                                                                                                           |
+| :ref:`bool<class_bool>`           | :ref:`is_processing_internal<class_Node_method_is_processing_internal>` **(** **)** |const|                                                                                                         |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_processing_unhandled_input<class_Node_method_is_processing_unhandled_input>` **(** **)** const                                                                                             |
+| :ref:`bool<class_bool>`           | :ref:`is_processing_unhandled_input<class_Node_method_is_processing_unhandled_input>` **(** **)** |const|                                                                                           |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_processing_unhandled_key_input<class_Node_method_is_processing_unhandled_key_input>` **(** **)** const                                                                                     |
+| :ref:`bool<class_bool>`           | :ref:`is_processing_unhandled_key_input<class_Node_method_is_processing_unhandled_key_input>` **(** **)** |const|                                                                                   |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`move_child<class_Node_method_move_child>` **(** :ref:`Node<class_Node>` child_node, :ref:`int<class_int>` to_position **)**                                                                   |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -192,15 +192,15 @@ Methods
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`request_ready<class_Node_method_request_ready>` **(** **)**                                                                                                                                   |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`     | :ref:`rpc<class_Node_method_rpc>` **(** :ref:`String<class_String>` method, ... **)** vararg                                                                                                        |
+| :ref:`Variant<class_Variant>`     | :ref:`rpc<class_Node_method_rpc>` **(** :ref:`String<class_String>` method, ... **)** |vararg|                                                                                                      |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`rpc_config<class_Node_method_rpc_config>` **(** :ref:`String<class_String>` method, :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` mode **)**                                                    |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`     | :ref:`rpc_id<class_Node_method_rpc_id>` **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method, ... **)** vararg                                                                   |
+| :ref:`Variant<class_Variant>`     | :ref:`rpc_id<class_Node_method_rpc_id>` **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method, ... **)** |vararg|                                                                 |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`     | :ref:`rpc_unreliable<class_Node_method_rpc_unreliable>` **(** :ref:`String<class_String>` method, ... **)** vararg                                                                                  |
+| :ref:`Variant<class_Variant>`     | :ref:`rpc_unreliable<class_Node_method_rpc_unreliable>` **(** :ref:`String<class_String>` method, ... **)** |vararg|                                                                                |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`     | :ref:`rpc_unreliable_id<class_Node_method_rpc_unreliable_id>` **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method, ... **)** vararg                                             |
+| :ref:`Variant<class_Variant>`     | :ref:`rpc_unreliable_id<class_Node_method_rpc_unreliable_id>` **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method, ... **)** |vararg|                                           |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`rset<class_Node_method_rset>` **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**                                                                           |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -354,6 +354,8 @@ Constants
 
 .. _class_Node_constant_NOTIFICATION_INTERNAL_PHYSICS_PROCESS:
 
+.. _class_Node_constant_NOTIFICATION_POST_ENTER_TREE:
+
 .. _class_Node_constant_NOTIFICATION_WM_MOUSE_ENTER:
 
 .. _class_Node_constant_NOTIFICATION_WM_MOUSE_EXIT:
@@ -415,6 +417,8 @@ Constants
 - **NOTIFICATION_INTERNAL_PROCESS** = **25** --- Notification received every frame when the internal process flag is set (see :ref:`set_process_internal<class_Node_method_set_process_internal>`).
 
 - **NOTIFICATION_INTERNAL_PHYSICS_PROCESS** = **26** --- Notification received every frame when the internal physics process flag is set (see :ref:`set_physics_process_internal<class_Node_method_set_physics_process_internal>`).
+
+- **NOTIFICATION_POST_ENTER_TREE** = **27** --- Notification received when the node is ready, just before :ref:`NOTIFICATION_READY<class_Node_constant_NOTIFICATION_READY>` is received. Unlike the latter, it's sent every time the node enters tree, instead of only once.
 
 - **NOTIFICATION_WM_MOUSE_ENTER** = **1002** --- Notification received from the OS when the mouse enters the game window.
 
@@ -576,7 +580,7 @@ Method Descriptions
 
 .. _class_Node_method__enter_tree:
 
-- void **_enter_tree** **(** **)** virtual
+- void **_enter_tree** **(** **)** |virtual|
 
 Called when the node enters the :ref:`SceneTree<class_SceneTree>` (e.g. upon instancing, scene changing, or after calling :ref:`add_child<class_Node_method_add_child>` in a script). If the node has children, its :ref:`_enter_tree<class_Node_method__enter_tree>` callback will be called first, and then that of the children.
 
@@ -586,7 +590,7 @@ Corresponds to the :ref:`NOTIFICATION_ENTER_TREE<class_Node_constant_NOTIFICATIO
 
 .. _class_Node_method__exit_tree:
 
-- void **_exit_tree** **(** **)** virtual
+- void **_exit_tree** **(** **)** |virtual|
 
 Called when the node is about to leave the :ref:`SceneTree<class_SceneTree>` (e.g. upon freeing, scene changing, or after calling :ref:`remove_child<class_Node_method_remove_child>` in a script). If the node has children, its :ref:`_exit_tree<class_Node_method__exit_tree>` callback will be called last, after all its children have left the tree.
 
@@ -596,7 +600,7 @@ Corresponds to the :ref:`NOTIFICATION_EXIT_TREE<class_Node_constant_NOTIFICATION
 
 .. _class_Node_method__get_configuration_warning:
 
-- :ref:`String<class_String>` **_get_configuration_warning** **(** **)** virtual
+- :ref:`String<class_String>` **_get_configuration_warning** **(** **)** |virtual|
 
 The string returned from this method is displayed as a warning in the Scene Dock if the script that overrides it is a ``tool`` script.
 
@@ -608,7 +612,7 @@ Call :ref:`update_configuration_warning<class_Node_method_update_configuration_w
 
 .. _class_Node_method__input:
 
-- void **_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual
+- void **_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|
 
 Called when there is an input event. The input event propagates up through the node tree until a node consumes it.
 
@@ -624,7 +628,7 @@ For gameplay input, :ref:`_unhandled_input<class_Node_method__unhandled_input>` 
 
 .. _class_Node_method__physics_process:
 
-- void **_physics_process** **(** :ref:`float<class_float>` delta **)** virtual
+- void **_physics_process** **(** :ref:`float<class_float>` delta **)** |virtual|
 
 Called during the physics processing step of the main loop. Physics processing means that the frame rate is synced to the physics, i.e. the ``delta`` variable should be constant.
 
@@ -638,7 +642,7 @@ Corresponds to the :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFI
 
 .. _class_Node_method__process:
 
-- void **_process** **(** :ref:`float<class_float>` delta **)** virtual
+- void **_process** **(** :ref:`float<class_float>` delta **)** |virtual|
 
 Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the ``delta`` time since the previous frame is not constant.
 
@@ -652,7 +656,7 @@ Corresponds to the :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_P
 
 .. _class_Node_method__ready:
 
-- void **_ready** **(** **)** virtual
+- void **_ready** **(** **)** |virtual|
 
 Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their :ref:`_ready<class_Node_method__ready>` callbacks get triggered first, and the parent node will receive the ready notification afterwards.
 
@@ -666,7 +670,7 @@ Usually used for initialization. For even earlier initialization, :ref:`Object._
 
 .. _class_Node_method__unhandled_input:
 
-- void **_unhandled_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual
+- void **_unhandled_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|
 
 Called when an :ref:`InputEvent<class_InputEvent>` hasn't been consumed by :ref:`_input<class_Node_method__input>` or any GUI. The input event propagates up through the node tree until a node consumes it.
 
@@ -682,7 +686,7 @@ For gameplay input, this and :ref:`_unhandled_key_input<class_Node_method__unhan
 
 .. _class_Node_method__unhandled_key_input:
 
-- void **_unhandled_key_input** **(** :ref:`InputEventKey<class_InputEventKey>` event **)** virtual
+- void **_unhandled_key_input** **(** :ref:`InputEventKey<class_InputEventKey>` event **)** |virtual|
 
 Called when an :ref:`InputEventKey<class_InputEventKey>` hasn't been consumed by :ref:`_input<class_Node_method__input>` or any GUI. The input event propagates up through the node tree until a node consumes it.
 
@@ -738,7 +742,7 @@ The ``persistent`` option is used when packing node to :ref:`PackedScene<class_P
 
 .. _class_Node_method_can_process:
 
-- :ref:`bool<class_bool>` **can_process** **(** **)** const
+- :ref:`bool<class_bool>` **can_process** **(** **)** |const|
 
 Returns ``true`` if the node can process while the scene tree is paused (see :ref:`pause_mode<class_Node_property_pause_mode>`). Always returns ``true`` if the scene tree is not paused, and ``false`` if the node is not in the tree.
 
@@ -746,7 +750,7 @@ Returns ``true`` if the node can process while the scene tree is paused (see :re
 
 .. _class_Node_method_duplicate:
 
-- :ref:`Node<class_Node>` **duplicate** **(** :ref:`int<class_int>` flags=15 **)** const
+- :ref:`Node<class_Node>` **duplicate** **(** :ref:`int<class_int>` flags=15 **)** |const|
 
 Duplicates the node, returning a new node.
 
@@ -758,7 +762,7 @@ You can fine-tune the behavior using the ``flags`` (see :ref:`DuplicateFlags<enu
 
 .. _class_Node_method_find_node:
 
-- :ref:`Node<class_Node>` **find_node** **(** :ref:`String<class_String>` mask, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** const
+- :ref:`Node<class_Node>` **find_node** **(** :ref:`String<class_String>` mask, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|
 
 Finds a descendant of this node whose name matches ``mask`` as in :ref:`String.match<class_String_method_match>` (i.e. case-sensitive, but ``"*"`` matches zero or more characters and ``"?"`` matches any single character except ``"."``).
 
@@ -766,21 +770,25 @@ Finds a descendant of this node whose name matches ``mask`` as in :ref:`String.m
 
 If ``owned`` is ``true``, this method only finds nodes whose owner is this node. This is especially important for scenes instantiated through a script, because those scenes don't have an owner.
 
+**Note:** As this method walks through all the descendants of the node, it is the slowest way to get a reference to another node. Whenever possible, consider using :ref:`get_node<class_Node_method_get_node>` instead. To avoid using :ref:`find_node<class_Node_method_find_node>` too often, consider caching the node reference into a variable.
+
 ----
 
 .. _class_Node_method_find_parent:
 
-- :ref:`Node<class_Node>` **find_parent** **(** :ref:`String<class_String>` mask **)** const
+- :ref:`Node<class_Node>` **find_parent** **(** :ref:`String<class_String>` mask **)** |const|
 
 Finds the first parent of the current node whose name matches ``mask`` as in :ref:`String.match<class_String_method_match>` (i.e. case-sensitive, but ``"*"`` matches zero or more characters and ``"?"`` matches any single character except ``"."``).
 
 **Note:** It does not match against the full path, just against individual node names.
 
+**Note:** As this method walks upwards in the scene tree, it can be slow in large, deeply nested scene trees. Whenever possible, consider using :ref:`get_node<class_Node_method_get_node>` instead. To avoid using :ref:`find_parent<class_Node_method_find_parent>` too often, consider caching the node reference into a variable.
+
 ----
 
 .. _class_Node_method_get_child:
 
-- :ref:`Node<class_Node>` **get_child** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Node<class_Node>` **get_child** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns a child node by its index (see :ref:`get_child_count<class_Node_method_get_child_count>`). This method is often used for iterating all children of a node.
 
@@ -790,7 +798,7 @@ To access a child node via its name, use :ref:`get_node<class_Node_method_get_no
 
 .. _class_Node_method_get_child_count:
 
-- :ref:`int<class_int>` **get_child_count** **(** **)** const
+- :ref:`int<class_int>` **get_child_count** **(** **)** |const|
 
 Returns the number of child nodes.
 
@@ -798,7 +806,7 @@ Returns the number of child nodes.
 
 .. _class_Node_method_get_children:
 
-- :ref:`Array<class_Array>` **get_children** **(** **)** const
+- :ref:`Array<class_Array>` **get_children** **(** **)** |const|
 
 Returns an array of references to node's children.
 
@@ -806,7 +814,7 @@ Returns an array of references to node's children.
 
 .. _class_Node_method_get_groups:
 
-- :ref:`Array<class_Array>` **get_groups** **(** **)** const
+- :ref:`Array<class_Array>` **get_groups** **(** **)** |const|
 
 Returns an array listing the groups that the node is a member of.
 
@@ -814,7 +822,7 @@ Returns an array listing the groups that the node is a member of.
 
 .. _class_Node_method_get_index:
 
-- :ref:`int<class_int>` **get_index** **(** **)** const
+- :ref:`int<class_int>` **get_index** **(** **)** |const|
 
 Returns the node's index, i.e. its position among the siblings of its parent.
 
@@ -822,7 +830,7 @@ Returns the node's index, i.e. its position among the siblings of its parent.
 
 .. _class_Node_method_get_network_master:
 
-- :ref:`int<class_int>` **get_network_master** **(** **)** const
+- :ref:`int<class_int>` **get_network_master** **(** **)** |const|
 
 Returns the peer ID of the network master for this node. See :ref:`set_network_master<class_Node_method_set_network_master>`.
 
@@ -830,7 +838,7 @@ Returns the peer ID of the network master for this node. See :ref:`set_network_m
 
 .. _class_Node_method_get_node:
 
-- :ref:`Node<class_Node>` **get_node** **(** :ref:`NodePath<class_NodePath>` path **)** const
+- :ref:`Node<class_Node>` **get_node** **(** :ref:`NodePath<class_NodePath>` path **)** |const|
 
 Fetches a node. The :ref:`NodePath<class_NodePath>` can be either a relative path (from the current node) or an absolute path (in the scene tree) to a node. If the path does not exist, a ``null instance`` is returned and an error is logged. Attempts to access methods on the return value will result in an "Attempt to call <method> on a null instance." error.
 
@@ -880,7 +888,7 @@ For example, assuming that ``Area2D/CollisionShape2D`` is a valid node and that 
 
 .. _class_Node_method_get_node_or_null:
 
-- :ref:`Node<class_Node>` **get_node_or_null** **(** :ref:`NodePath<class_NodePath>` path **)** const
+- :ref:`Node<class_Node>` **get_node_or_null** **(** :ref:`NodePath<class_NodePath>` path **)** |const|
 
 Similar to :ref:`get_node<class_Node_method_get_node>`, but does not log an error if ``path`` does not point to a valid ``Node``.
 
@@ -888,7 +896,7 @@ Similar to :ref:`get_node<class_Node_method_get_node>`, but does not log an erro
 
 .. _class_Node_method_get_parent:
 
-- :ref:`Node<class_Node>` **get_parent** **(** **)** const
+- :ref:`Node<class_Node>` **get_parent** **(** **)** |const|
 
 Returns the parent node of the current node, or a ``null instance`` if the node lacks a parent.
 
@@ -896,7 +904,7 @@ Returns the parent node of the current node, or a ``null instance`` if the node 
 
 .. _class_Node_method_get_path:
 
-- :ref:`NodePath<class_NodePath>` **get_path** **(** **)** const
+- :ref:`NodePath<class_NodePath>` **get_path** **(** **)** |const|
 
 Returns the absolute path of the current node. This only works if the current node is inside the scene tree (see :ref:`is_inside_tree<class_Node_method_is_inside_tree>`).
 
@@ -904,7 +912,7 @@ Returns the absolute path of the current node. This only works if the current no
 
 .. _class_Node_method_get_path_to:
 
-- :ref:`NodePath<class_NodePath>` **get_path_to** **(** :ref:`Node<class_Node>` node **)** const
+- :ref:`NodePath<class_NodePath>` **get_path_to** **(** :ref:`Node<class_Node>` node **)** |const|
 
 Returns the relative :ref:`NodePath<class_NodePath>` from this node to the specified ``node``. Both nodes must be in the same scene or the function will fail.
 
@@ -912,7 +920,7 @@ Returns the relative :ref:`NodePath<class_NodePath>` from this node to the speci
 
 .. _class_Node_method_get_physics_process_delta_time:
 
-- :ref:`float<class_float>` **get_physics_process_delta_time** **(** **)** const
+- :ref:`float<class_float>` **get_physics_process_delta_time** **(** **)** |const|
 
 Returns the time elapsed since the last physics-bound frame (see :ref:`_physics_process<class_Node_method__physics_process>`). This is always a constant value in physics processing unless the frames per second is changed via :ref:`Engine.iterations_per_second<class_Engine_property_iterations_per_second>`.
 
@@ -920,7 +928,7 @@ Returns the time elapsed since the last physics-bound frame (see :ref:`_physics_
 
 .. _class_Node_method_get_position_in_parent:
 
-- :ref:`int<class_int>` **get_position_in_parent** **(** **)** const
+- :ref:`int<class_int>` **get_position_in_parent** **(** **)** |const|
 
 Returns the node's order in the scene tree branch. For example, if called on the first child node the position is ``0``.
 
@@ -928,7 +936,7 @@ Returns the node's order in the scene tree branch. For example, if called on the
 
 .. _class_Node_method_get_process_delta_time:
 
-- :ref:`float<class_float>` **get_process_delta_time** **(** **)** const
+- :ref:`float<class_float>` **get_process_delta_time** **(** **)** |const|
 
 Returns the time elapsed (in seconds) since the last process callback. This value may vary from frame to frame.
 
@@ -936,7 +944,7 @@ Returns the time elapsed (in seconds) since the last process callback. This valu
 
 .. _class_Node_method_get_scene_instance_load_placeholder:
 
-- :ref:`bool<class_bool>` **get_scene_instance_load_placeholder** **(** **)** const
+- :ref:`bool<class_bool>` **get_scene_instance_load_placeholder** **(** **)** |const|
 
 Returns ``true`` if this is an instance load placeholder. See :ref:`InstancePlaceholder<class_InstancePlaceholder>`.
 
@@ -944,7 +952,7 @@ Returns ``true`` if this is an instance load placeholder. See :ref:`InstancePlac
 
 .. _class_Node_method_get_tree:
 
-- :ref:`SceneTree<class_SceneTree>` **get_tree** **(** **)** const
+- :ref:`SceneTree<class_SceneTree>` **get_tree** **(** **)** |const|
 
 Returns the :ref:`SceneTree<class_SceneTree>` that contains this node.
 
@@ -952,7 +960,7 @@ Returns the :ref:`SceneTree<class_SceneTree>` that contains this node.
 
 .. _class_Node_method_get_viewport:
 
-- :ref:`Viewport<class_Viewport>` **get_viewport** **(** **)** const
+- :ref:`Viewport<class_Viewport>` **get_viewport** **(** **)** |const|
 
 Returns the node's :ref:`Viewport<class_Viewport>`.
 
@@ -960,7 +968,7 @@ Returns the node's :ref:`Viewport<class_Viewport>`.
 
 .. _class_Node_method_has_node:
 
-- :ref:`bool<class_bool>` **has_node** **(** :ref:`NodePath<class_NodePath>` path **)** const
+- :ref:`bool<class_bool>` **has_node** **(** :ref:`NodePath<class_NodePath>` path **)** |const|
 
 Returns ``true`` if the node that the :ref:`NodePath<class_NodePath>` points to exists.
 
@@ -968,7 +976,7 @@ Returns ``true`` if the node that the :ref:`NodePath<class_NodePath>` points to 
 
 .. _class_Node_method_has_node_and_resource:
 
-- :ref:`bool<class_bool>` **has_node_and_resource** **(** :ref:`NodePath<class_NodePath>` path **)** const
+- :ref:`bool<class_bool>` **has_node_and_resource** **(** :ref:`NodePath<class_NodePath>` path **)** |const|
 
 Returns ``true`` if the :ref:`NodePath<class_NodePath>` points to a valid node and its subname points to a valid resource, e.g. ``Area2D/CollisionShape2D:shape``. Properties with a non-:ref:`Resource<class_Resource>` type (e.g. nodes or primitive math types) are not considered resources.
 
@@ -976,7 +984,7 @@ Returns ``true`` if the :ref:`NodePath<class_NodePath>` points to a valid node a
 
 .. _class_Node_method_is_a_parent_of:
 
-- :ref:`bool<class_bool>` **is_a_parent_of** **(** :ref:`Node<class_Node>` node **)** const
+- :ref:`bool<class_bool>` **is_a_parent_of** **(** :ref:`Node<class_Node>` node **)** |const|
 
 Returns ``true`` if the given node is a direct or indirect child of the current node.
 
@@ -984,7 +992,7 @@ Returns ``true`` if the given node is a direct or indirect child of the current 
 
 .. _class_Node_method_is_displayed_folded:
 
-- :ref:`bool<class_bool>` **is_displayed_folded** **(** **)** const
+- :ref:`bool<class_bool>` **is_displayed_folded** **(** **)** |const|
 
 Returns ``true`` if the node is folded (collapsed) in the Scene dock.
 
@@ -992,7 +1000,7 @@ Returns ``true`` if the node is folded (collapsed) in the Scene dock.
 
 .. _class_Node_method_is_greater_than:
 
-- :ref:`bool<class_bool>` **is_greater_than** **(** :ref:`Node<class_Node>` node **)** const
+- :ref:`bool<class_bool>` **is_greater_than** **(** :ref:`Node<class_Node>` node **)** |const|
 
 Returns ``true`` if the given node occurs later in the scene hierarchy than the current node.
 
@@ -1000,7 +1008,7 @@ Returns ``true`` if the given node occurs later in the scene hierarchy than the 
 
 .. _class_Node_method_is_in_group:
 
-- :ref:`bool<class_bool>` **is_in_group** **(** :ref:`String<class_String>` group **)** const
+- :ref:`bool<class_bool>` **is_in_group** **(** :ref:`String<class_String>` group **)** |const|
 
 Returns ``true`` if this node is in the specified group. See notes in the description, and the group methods in :ref:`SceneTree<class_SceneTree>`.
 
@@ -1008,7 +1016,7 @@ Returns ``true`` if this node is in the specified group. See notes in the descri
 
 .. _class_Node_method_is_inside_tree:
 
-- :ref:`bool<class_bool>` **is_inside_tree** **(** **)** const
+- :ref:`bool<class_bool>` **is_inside_tree** **(** **)** |const|
 
 Returns ``true`` if this node is currently inside a :ref:`SceneTree<class_SceneTree>`.
 
@@ -1016,7 +1024,7 @@ Returns ``true`` if this node is currently inside a :ref:`SceneTree<class_SceneT
 
 .. _class_Node_method_is_network_master:
 
-- :ref:`bool<class_bool>` **is_network_master** **(** **)** const
+- :ref:`bool<class_bool>` **is_network_master** **(** **)** |const|
 
 Returns ``true`` if the local system is the master of this node.
 
@@ -1024,7 +1032,7 @@ Returns ``true`` if the local system is the master of this node.
 
 .. _class_Node_method_is_physics_processing:
 
-- :ref:`bool<class_bool>` **is_physics_processing** **(** **)** const
+- :ref:`bool<class_bool>` **is_physics_processing** **(** **)** |const|
 
 Returns ``true`` if physics processing is enabled (see :ref:`set_physics_process<class_Node_method_set_physics_process>`).
 
@@ -1032,7 +1040,7 @@ Returns ``true`` if physics processing is enabled (see :ref:`set_physics_process
 
 .. _class_Node_method_is_physics_processing_internal:
 
-- :ref:`bool<class_bool>` **is_physics_processing_internal** **(** **)** const
+- :ref:`bool<class_bool>` **is_physics_processing_internal** **(** **)** |const|
 
 Returns ``true`` if internal physics processing is enabled (see :ref:`set_physics_process_internal<class_Node_method_set_physics_process_internal>`).
 
@@ -1040,7 +1048,7 @@ Returns ``true`` if internal physics processing is enabled (see :ref:`set_physic
 
 .. _class_Node_method_is_processing:
 
-- :ref:`bool<class_bool>` **is_processing** **(** **)** const
+- :ref:`bool<class_bool>` **is_processing** **(** **)** |const|
 
 Returns ``true`` if processing is enabled (see :ref:`set_process<class_Node_method_set_process>`).
 
@@ -1048,7 +1056,7 @@ Returns ``true`` if processing is enabled (see :ref:`set_process<class_Node_meth
 
 .. _class_Node_method_is_processing_input:
 
-- :ref:`bool<class_bool>` **is_processing_input** **(** **)** const
+- :ref:`bool<class_bool>` **is_processing_input** **(** **)** |const|
 
 Returns ``true`` if the node is processing input (see :ref:`set_process_input<class_Node_method_set_process_input>`).
 
@@ -1056,7 +1064,7 @@ Returns ``true`` if the node is processing input (see :ref:`set_process_input<cl
 
 .. _class_Node_method_is_processing_internal:
 
-- :ref:`bool<class_bool>` **is_processing_internal** **(** **)** const
+- :ref:`bool<class_bool>` **is_processing_internal** **(** **)** |const|
 
 Returns ``true`` if internal processing is enabled (see :ref:`set_process_internal<class_Node_method_set_process_internal>`).
 
@@ -1064,7 +1072,7 @@ Returns ``true`` if internal processing is enabled (see :ref:`set_process_intern
 
 .. _class_Node_method_is_processing_unhandled_input:
 
-- :ref:`bool<class_bool>` **is_processing_unhandled_input** **(** **)** const
+- :ref:`bool<class_bool>` **is_processing_unhandled_input** **(** **)** |const|
 
 Returns ``true`` if the node is processing unhandled input (see :ref:`set_process_unhandled_input<class_Node_method_set_process_unhandled_input>`).
 
@@ -1072,7 +1080,7 @@ Returns ``true`` if the node is processing unhandled input (see :ref:`set_proces
 
 .. _class_Node_method_is_processing_unhandled_key_input:
 
-- :ref:`bool<class_bool>` **is_processing_unhandled_key_input** **(** **)** const
+- :ref:`bool<class_bool>` **is_processing_unhandled_key_input** **(** **)** |const|
 
 Returns ``true`` if the node is processing unhandled key input (see :ref:`set_process_unhandled_key_input<class_Node_method_set_process_unhandled_key_input>`).
 
@@ -1127,7 +1135,7 @@ Similar to :ref:`print_tree<class_Node_method_print_tree>`, this prints the tree
         ┠╴Menu
         ┃  ┠╴Label
         ┃  ┖╴Camera2D
-        ┖-SplashScreen
+        ┖╴SplashScreen
            ┖╴Camera2D
 
 ----
@@ -1206,7 +1214,7 @@ Requests that ``_ready`` be called again. Note that the method won't be called i
 
 .. _class_Node_method_rpc:
 
-- :ref:`Variant<class_Variant>` **rpc** **(** :ref:`String<class_String>` method, ... **)** vararg
+- :ref:`Variant<class_Variant>` **rpc** **(** :ref:`String<class_String>` method, ... **)** |vararg|
 
 Sends a remote procedure call request for the given ``method`` to peers on the network (and locally), optionally sending all additional arguments as arguments to the method called by the RPC. The call request will only be received by nodes with the same :ref:`NodePath<class_NodePath>`, including the exact same node name. Behaviour depends on the RPC configuration for the given method, see :ref:`rpc_config<class_Node_method_rpc_config>`. Methods are not exposed to RPCs by default. See also :ref:`rset<class_Node_method_rset>` and :ref:`rset_config<class_Node_method_rset_config>` for properties. Returns an empty :ref:`Variant<class_Variant>`.
 
@@ -1224,7 +1232,7 @@ Changes the RPC mode for the given ``method`` to the given ``mode``. See :ref:`R
 
 .. _class_Node_method_rpc_id:
 
-- :ref:`Variant<class_Variant>` **rpc_id** **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method, ... **)** vararg
+- :ref:`Variant<class_Variant>` **rpc_id** **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method, ... **)** |vararg|
 
 Sends a :ref:`rpc<class_Node_method_rpc>` to a specific peer identified by ``peer_id`` (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_method_set_target_peer>`). Returns an empty :ref:`Variant<class_Variant>`.
 
@@ -1232,7 +1240,7 @@ Sends a :ref:`rpc<class_Node_method_rpc>` to a specific peer identified by ``pee
 
 .. _class_Node_method_rpc_unreliable:
 
-- :ref:`Variant<class_Variant>` **rpc_unreliable** **(** :ref:`String<class_String>` method, ... **)** vararg
+- :ref:`Variant<class_Variant>` **rpc_unreliable** **(** :ref:`String<class_String>` method, ... **)** |vararg|
 
 Sends a :ref:`rpc<class_Node_method_rpc>` using an unreliable protocol. Returns an empty :ref:`Variant<class_Variant>`.
 
@@ -1240,7 +1248,7 @@ Sends a :ref:`rpc<class_Node_method_rpc>` using an unreliable protocol. Returns 
 
 .. _class_Node_method_rpc_unreliable_id:
 
-- :ref:`Variant<class_Variant>` **rpc_unreliable_id** **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method, ... **)** vararg
+- :ref:`Variant<class_Variant>` **rpc_unreliable_id** **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method, ... **)** |vararg|
 
 Sends a :ref:`rpc<class_Node_method_rpc>` to a specific peer identified by ``peer_id`` using an unreliable protocol (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_method_set_target_peer>`). Returns an empty :ref:`Variant<class_Variant>`.
 
@@ -1374,3 +1382,6 @@ Updates the warning displayed for this node in the Scene Dock.
 
 Use :ref:`_get_configuration_warning<class_Node_method__get_configuration_warning>` to setup the warning message to display.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

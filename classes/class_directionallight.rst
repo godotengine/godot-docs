@@ -226,3 +226,6 @@ The distance from shadow split 1 to split 2. Relative to :ref:`directional_shado
 
 The distance from shadow split 2 to split 3. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`. Only used when :ref:`directional_shadow_mode<class_DirectionalLight_property_directional_shadow_mode>` is ``SHADOW_PARALLEL_4_SPLITS``.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

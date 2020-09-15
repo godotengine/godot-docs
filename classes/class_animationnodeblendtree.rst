@@ -40,11 +40,11 @@ Methods
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`disconnect_node<class_AnimationNodeBlendTree_method_disconnect_node>` **(** :ref:`String<class_String>` input_node, :ref:`int<class_int>` input_index **)**                                                  |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AnimationNode<class_AnimationNode>` | :ref:`get_node<class_AnimationNodeBlendTree_method_get_node>` **(** :ref:`String<class_String>` name **)** const                                                                                                   |
+| :ref:`AnimationNode<class_AnimationNode>` | :ref:`get_node<class_AnimationNodeBlendTree_method_get_node>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                 |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`             | :ref:`get_node_position<class_AnimationNodeBlendTree_method_get_node_position>` **(** :ref:`String<class_String>` name **)** const                                                                                 |
+| :ref:`Vector2<class_Vector2>`             | :ref:`get_node_position<class_AnimationNodeBlendTree_method_get_node_position>` **(** :ref:`String<class_String>` name **)** |const|                                                                               |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`has_node<class_AnimationNodeBlendTree_method_has_node>` **(** :ref:`String<class_String>` name **)** const                                                                                                   |
+| :ref:`bool<class_bool>`                   | :ref:`has_node<class_AnimationNodeBlendTree_method_has_node>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                 |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`remove_node<class_AnimationNodeBlendTree_method_remove_node>` **(** :ref:`String<class_String>` name **)**                                                                                                   |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -126,7 +126,7 @@ Disconnects the node connected to the specified input.
 
 .. _class_AnimationNodeBlendTree_method_get_node:
 
-- :ref:`AnimationNode<class_AnimationNode>` **get_node** **(** :ref:`String<class_String>` name **)** const
+- :ref:`AnimationNode<class_AnimationNode>` **get_node** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns the sub-node with the specified ``name``.
 
@@ -134,7 +134,7 @@ Returns the sub-node with the specified ``name``.
 
 .. _class_AnimationNodeBlendTree_method_get_node_position:
 
-- :ref:`Vector2<class_Vector2>` **get_node_position** **(** :ref:`String<class_String>` name **)** const
+- :ref:`Vector2<class_Vector2>` **get_node_position** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns the position of the sub-node with the specified ``name``.
 
@@ -142,7 +142,7 @@ Returns the position of the sub-node with the specified ``name``.
 
 .. _class_AnimationNodeBlendTree_method_has_node:
 
-- :ref:`bool<class_bool>` **has_node** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **has_node** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns ``true`` if a sub-node with specified ``name`` exists.
 
@@ -170,3 +170,6 @@ Changes the name of a sub-node.
 
 Modifies the position of a sub-node.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

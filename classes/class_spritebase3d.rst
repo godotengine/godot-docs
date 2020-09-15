@@ -55,11 +55,11 @@ Methods
 -------
 
 +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TriangleMesh<class_TriangleMesh>` | :ref:`generate_triangle_mesh<class_SpriteBase3D_method_generate_triangle_mesh>` **(** **)** const                                                             |
+| :ref:`TriangleMesh<class_TriangleMesh>` | :ref:`generate_triangle_mesh<class_SpriteBase3D_method_generate_triangle_mesh>` **(** **)** |const|                                                           |
 +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`get_draw_flag<class_SpriteBase3D_method_get_draw_flag>` **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag **)** const                            |
+| :ref:`bool<class_bool>`                 | :ref:`get_draw_flag<class_SpriteBase3D_method_get_draw_flag>` **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag **)** |const|                          |
 +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`               | :ref:`get_item_rect<class_SpriteBase3D_method_get_item_rect>` **(** **)** const                                                                               |
+| :ref:`Rect2<class_Rect2>`               | :ref:`get_item_rect<class_SpriteBase3D_method_get_item_rect>` **(** **)** |const|                                                                             |
 +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`set_draw_flag<class_SpriteBase3D_method_set_draw_flag>` **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)** |
 +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -315,13 +315,13 @@ Method Descriptions
 
 .. _class_SpriteBase3D_method_generate_triangle_mesh:
 
-- :ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** const
+- :ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** |const|
 
 ----
 
 .. _class_SpriteBase3D_method_get_draw_flag:
 
-- :ref:`bool<class_bool>` **get_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag **)** const
+- :ref:`bool<class_bool>` **get_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag **)** |const|
 
 Returns the value of the specified flag.
 
@@ -329,7 +329,7 @@ Returns the value of the specified flag.
 
 .. _class_SpriteBase3D_method_get_item_rect:
 
-- :ref:`Rect2<class_Rect2>` **get_item_rect** **(** **)** const
+- :ref:`Rect2<class_Rect2>` **get_item_rect** **(** **)** |const|
 
 Returns the rectangle representing this sprite.
 
@@ -341,3 +341,6 @@ Returns the rectangle representing this sprite.
 
 If ``true``, the specified flag will be enabled.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

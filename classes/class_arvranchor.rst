@@ -32,17 +32,17 @@ Properties
 Methods
 -------
 
-+-------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_anchor_name<class_ARVRAnchor_method_get_anchor_name>` **(** **)** const |
-+-------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_is_active<class_ARVRAnchor_method_get_is_active>` **(** **)** const     |
-+-------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`       | :ref:`get_mesh<class_ARVRAnchor_method_get_mesh>` **(** **)** const               |
-+-------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`Plane<class_Plane>`     | :ref:`get_plane<class_ARVRAnchor_method_get_plane>` **(** **)** const             |
-+-------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`get_size<class_ARVRAnchor_method_get_size>` **(** **)** const               |
-+-------------------------------+-----------------------------------------------------------------------------------+
++-------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`get_anchor_name<class_ARVRAnchor_method_get_anchor_name>` **(** **)** |const| |
++-------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`get_is_active<class_ARVRAnchor_method_get_is_active>` **(** **)** |const|     |
++-------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`       | :ref:`get_mesh<class_ARVRAnchor_method_get_mesh>` **(** **)** |const|               |
++-------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Plane<class_Plane>`     | :ref:`get_plane<class_ARVRAnchor_method_get_plane>` **(** **)** |const|             |
++-------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`get_size<class_ARVRAnchor_method_get_size>` **(** **)** |const|               |
++-------------------------------+-------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -75,7 +75,7 @@ Method Descriptions
 
 .. _class_ARVRAnchor_method_get_anchor_name:
 
-- :ref:`String<class_String>` **get_anchor_name** **(** **)** const
+- :ref:`String<class_String>` **get_anchor_name** **(** **)** |const|
 
 Returns the name given to this anchor.
 
@@ -83,7 +83,7 @@ Returns the name given to this anchor.
 
 .. _class_ARVRAnchor_method_get_is_active:
 
-- :ref:`bool<class_bool>` **get_is_active** **(** **)** const
+- :ref:`bool<class_bool>` **get_is_active** **(** **)** |const|
 
 Returns ``true`` if the anchor is being tracked and ``false`` if no anchor with this ID is currently known.
 
@@ -91,7 +91,7 @@ Returns ``true`` if the anchor is being tracked and ``false`` if no anchor with 
 
 .. _class_ARVRAnchor_method_get_mesh:
 
-- :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)** const
+- :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)** |const|
 
 If provided by the :ref:`ARVRInterface<class_ARVRInterface>`, this returns a mesh object for the anchor. For an anchor, this can be a shape related to the object being tracked or it can be a mesh that provides topology related to the anchor and can be used to create shadows/reflections on surfaces or for generating collision shapes.
 
@@ -99,7 +99,7 @@ If provided by the :ref:`ARVRInterface<class_ARVRInterface>`, this returns a mes
 
 .. _class_ARVRAnchor_method_get_plane:
 
-- :ref:`Plane<class_Plane>` **get_plane** **(** **)** const
+- :ref:`Plane<class_Plane>` **get_plane** **(** **)** |const|
 
 Returns a plane aligned with our anchor; handy for intersection testing.
 
@@ -107,7 +107,10 @@ Returns a plane aligned with our anchor; handy for intersection testing.
 
 .. _class_ARVRAnchor_method_get_size:
 
-- :ref:`Vector3<class_Vector3>` **get_size** **(** **)** const
+- :ref:`Vector3<class_Vector3>` **get_size** **(** **)** |const|
 
 Returns the estimated size of the plane that was detected. Say when the anchor relates to a table in the real world, this is the estimated size of the surface of that table.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

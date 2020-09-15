@@ -21,11 +21,11 @@ Calling :ref:`@GDScript.yield<class_@GDScript_method_yield>` within a function w
 Methods
 -------
 
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_valid<class_GDScriptFunctionState_method_is_valid>` **(** :ref:`bool<class_bool>` extended_check=false **)** const |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`resume<class_GDScriptFunctionState_method_resume>` **(** :ref:`Variant<class_Variant>` arg=null **)**                 |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_valid<class_GDScriptFunctionState_method_is_valid>` **(** :ref:`bool<class_bool>` extended_check=false **)** |const| |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`resume<class_GDScriptFunctionState_method_resume>` **(** :ref:`Variant<class_Variant>` arg=null **)**                   |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -39,7 +39,7 @@ Method Descriptions
 
 .. _class_GDScriptFunctionState_method_is_valid:
 
-- :ref:`bool<class_bool>` **is_valid** **(** :ref:`bool<class_bool>` extended_check=false **)** const
+- :ref:`bool<class_bool>` **is_valid** **(** :ref:`bool<class_bool>` extended_check=false **)** |const|
 
 Check whether the function call may be resumed. This is not the case if the function state was already resumed.
 
@@ -57,3 +57,6 @@ If handed an argument, return the argument from the :ref:`@GDScript.yield<class_
 
 This function returns what the resumed function call returns, possibly another function state if yielded again.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

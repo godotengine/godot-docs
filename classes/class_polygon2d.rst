@@ -69,11 +69,11 @@ Methods
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`erase_bone<class_Polygon2D_method_erase_bone>` **(** :ref:`int<class_int>` index **)**                                                                |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`get_bone_count<class_Polygon2D_method_get_bone_count>` **(** **)** const                                                                              |
+| :ref:`int<class_int>`                     | :ref:`get_bone_count<class_Polygon2D_method_get_bone_count>` **(** **)** |const|                                                                            |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>`           | :ref:`get_bone_path<class_Polygon2D_method_get_bone_path>` **(** :ref:`int<class_int>` index **)** const                                                    |
+| :ref:`NodePath<class_NodePath>`           | :ref:`get_bone_path<class_Polygon2D_method_get_bone_path>` **(** :ref:`int<class_int>` index **)** |const|                                                  |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolRealArray<class_PoolRealArray>` | :ref:`get_bone_weights<class_Polygon2D_method_get_bone_weights>` **(** :ref:`int<class_int>` index **)** const                                              |
+| :ref:`PoolRealArray<class_PoolRealArray>` | :ref:`get_bone_weights<class_Polygon2D_method_get_bone_weights>` **(** :ref:`int<class_int>` index **)** |const|                                            |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`set_bone_path<class_Polygon2D_method_set_bone_path>` **(** :ref:`int<class_int>` index, :ref:`NodePath<class_NodePath>` path **)**                    |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -368,7 +368,7 @@ Removes the specified bone from this ``Polygon2D``.
 
 .. _class_Polygon2D_method_get_bone_count:
 
-- :ref:`int<class_int>` **get_bone_count** **(** **)** const
+- :ref:`int<class_int>` **get_bone_count** **(** **)** |const|
 
 Returns the number of bones in this ``Polygon2D``.
 
@@ -376,7 +376,7 @@ Returns the number of bones in this ``Polygon2D``.
 
 .. _class_Polygon2D_method_get_bone_path:
 
-- :ref:`NodePath<class_NodePath>` **get_bone_path** **(** :ref:`int<class_int>` index **)** const
+- :ref:`NodePath<class_NodePath>` **get_bone_path** **(** :ref:`int<class_int>` index **)** |const|
 
 Returns the path to the node associated with the specified bone.
 
@@ -384,7 +384,7 @@ Returns the path to the node associated with the specified bone.
 
 .. _class_Polygon2D_method_get_bone_weights:
 
-- :ref:`PoolRealArray<class_PoolRealArray>` **get_bone_weights** **(** :ref:`int<class_int>` index **)** const
+- :ref:`PoolRealArray<class_PoolRealArray>` **get_bone_weights** **(** :ref:`int<class_int>` index **)** |const|
 
 Returns the height values of the specified bone.
 
@@ -404,3 +404,6 @@ Sets the path to the node associated with the specified bone.
 
 Sets the weight values for the specified bone.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

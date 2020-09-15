@@ -87,13 +87,13 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`force_update_scroll<class_Camera2D_method_force_update_scroll>` **(** **)**                                                                               |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_camera_position<class_Camera2D_method_get_camera_position>` **(** **)** const                                                                         |
+| :ref:`Vector2<class_Vector2>` | :ref:`get_camera_position<class_Camera2D_method_get_camera_position>` **(** **)** |const|                                                                       |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_camera_screen_center<class_Camera2D_method_get_camera_screen_center>` **(** **)** const                                                               |
+| :ref:`Vector2<class_Vector2>` | :ref:`get_camera_screen_center<class_Camera2D_method_get_camera_screen_center>` **(** **)** |const|                                                             |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`get_drag_margin<class_Camera2D_method_get_drag_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                                  |
+| :ref:`float<class_float>`     | :ref:`get_drag_margin<class_Camera2D_method_get_drag_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** |const|                                |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_limit<class_Camera2D_method_get_limit>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                                              |
+| :ref:`int<class_int>`         | :ref:`get_limit<class_Camera2D_method_get_limit>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** |const|                                            |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`make_current<class_Camera2D_method_make_current>` **(** **)**                                                                                             |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -563,7 +563,7 @@ Forces the camera to update scroll immediately.
 
 .. _class_Camera2D_method_get_camera_position:
 
-- :ref:`Vector2<class_Vector2>` **get_camera_position** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_camera_position** **(** **)** |const|
 
 Returns the camera position.
 
@@ -571,7 +571,7 @@ Returns the camera position.
 
 .. _class_Camera2D_method_get_camera_screen_center:
 
-- :ref:`Vector2<class_Vector2>` **get_camera_screen_center** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_camera_screen_center** **(** **)** |const|
 
 Returns the location of the ``Camera2D``'s screen-center, relative to the origin.
 
@@ -579,7 +579,7 @@ Returns the location of the ``Camera2D``'s screen-center, relative to the origin
 
 .. _class_Camera2D_method_get_drag_margin:
 
-- :ref:`float<class_float>` **get_drag_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+- :ref:`float<class_float>` **get_drag_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** |const|
 
 Returns the specified margin. See also :ref:`drag_margin_bottom<class_Camera2D_property_drag_margin_bottom>`, :ref:`drag_margin_top<class_Camera2D_property_drag_margin_top>`, :ref:`drag_margin_left<class_Camera2D_property_drag_margin_left>`, and :ref:`drag_margin_right<class_Camera2D_property_drag_margin_right>`.
 
@@ -587,7 +587,7 @@ Returns the specified margin. See also :ref:`drag_margin_bottom<class_Camera2D_p
 
 .. _class_Camera2D_method_get_limit:
 
-- :ref:`int<class_int>` **get_limit** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+- :ref:`int<class_int>` **get_limit** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** |const|
 
 Returns the specified camera limit. See also :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`, :ref:`limit_top<class_Camera2D_property_limit_top>`, :ref:`limit_left<class_Camera2D_property_limit_left>`, and :ref:`limit_right<class_Camera2D_property_limit_right>`.
 
@@ -625,3 +625,6 @@ Sets the specified margin. See also :ref:`drag_margin_bottom<class_Camera2D_prop
 
 Sets the specified camera limit. See also :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`, :ref:`limit_top<class_Camera2D_property_limit_top>`, :ref:`limit_left<class_Camera2D_property_limit_left>`, and :ref:`limit_right<class_Camera2D_property_limit_right>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

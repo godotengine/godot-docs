@@ -25,9 +25,9 @@ This class provides access to a number of different monitors related to performa
 Methods
 -------
 
-+---------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_monitor<class_Performance_method_get_monitor>` **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** const |
-+---------------------------+-----------------------------------------------------------------------------------------------------------------------------+
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_monitor<class_Performance_method_get_monitor>` **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** |const| |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -169,7 +169,7 @@ Method Descriptions
 
 .. _class_Performance_method_get_monitor:
 
-- :ref:`float<class_float>` **get_monitor** **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** const
+- :ref:`float<class_float>` **get_monitor** **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** |const|
 
 Returns the value of one of the available monitors. You should provide one of the :ref:`Monitor<enum_Performance_Monitor>` constants as the argument, like this:
 
@@ -177,3 +177,6 @@ Returns the value of one of the available monitors. You should provide one of th
 
     print(Performance.get_monitor(Performance.TIME_FPS)) # Prints the FPS to the console
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

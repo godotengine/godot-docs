@@ -141,13 +141,13 @@ Methods
 -------
 
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_flag<class_ParticlesMaterial_method_get_flag>` **(** :ref:`Flags<enum_ParticlesMaterial_Flags>` flag **)** const                                                                  |
+| :ref:`bool<class_bool>`       | :ref:`get_flag<class_ParticlesMaterial_method_get_flag>` **(** :ref:`Flags<enum_ParticlesMaterial_Flags>` flag **)** |const|                                                                |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`get_param<class_ParticlesMaterial_method_get_param>` **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param **)** const                                                       |
+| :ref:`float<class_float>`     | :ref:`get_param<class_ParticlesMaterial_method_get_param>` **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param **)** |const|                                                     |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`get_param_randomness<class_ParticlesMaterial_method_get_param_randomness>` **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param **)** const                                 |
+| :ref:`float<class_float>`     | :ref:`get_param_randomness<class_ParticlesMaterial_method_get_param_randomness>` **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param **)** |const|                               |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`get_param_texture<class_ParticlesMaterial_method_get_param_texture>` **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param **)** const                                       |
+| :ref:`Texture<class_Texture>` | :ref:`get_param_texture<class_ParticlesMaterial_method_get_param_texture>` **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param **)** |const|                                     |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_flag<class_ParticlesMaterial_method_set_flag>` **(** :ref:`Flags<enum_ParticlesMaterial_Flags>` flag, :ref:`bool<class_bool>` enable **)**                                        |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1117,7 +1117,7 @@ Method Descriptions
 
 .. _class_ParticlesMaterial_method_get_flag:
 
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_ParticlesMaterial_Flags>` flag **)** const
+- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_ParticlesMaterial_Flags>` flag **)** |const|
 
 Returns ``true`` if the specified flag is enabled.
 
@@ -1125,7 +1125,7 @@ Returns ``true`` if the specified flag is enabled.
 
 .. _class_ParticlesMaterial_method_get_param:
 
-- :ref:`float<class_float>` **get_param** **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param **)** const
+- :ref:`float<class_float>` **get_param** **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param **)** |const|
 
 Returns the value of the specified parameter.
 
@@ -1133,7 +1133,7 @@ Returns the value of the specified parameter.
 
 .. _class_ParticlesMaterial_method_get_param_randomness:
 
-- :ref:`float<class_float>` **get_param_randomness** **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param **)** const
+- :ref:`float<class_float>` **get_param_randomness** **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param **)** |const|
 
 Returns the randomness ratio associated with the specified parameter.
 
@@ -1141,7 +1141,7 @@ Returns the randomness ratio associated with the specified parameter.
 
 .. _class_ParticlesMaterial_method_get_param_texture:
 
-- :ref:`Texture<class_Texture>` **get_param_texture** **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param **)** const
+- :ref:`Texture<class_Texture>` **get_param_texture** **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param **)** |const|
 
 Returns the :ref:`Texture<class_Texture>` used by the specified parameter.
 
@@ -1177,3 +1177,6 @@ Sets the randomness ratio for the specified :ref:`Parameter<enum_ParticlesMateri
 
 Sets the :ref:`Texture<class_Texture>` for the specified :ref:`Parameter<enum_ParticlesMaterial_Parameter>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

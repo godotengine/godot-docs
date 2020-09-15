@@ -16,15 +16,15 @@ FileSystemDock
 Methods
 -------
 
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`can_drop_data_fw<class_FileSystemDock_method_can_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` arg0, :ref:`Variant<class_Variant>` arg1, :ref:`Control<class_Control>` arg2 **)** const |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`drop_data_fw<class_FileSystemDock_method_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` arg0, :ref:`Variant<class_Variant>` arg1, :ref:`Control<class_Control>` arg2 **)**               |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_drag_data_fw<class_FileSystemDock_method_get_drag_data_fw>` **(** :ref:`Vector2<class_Vector2>` arg0, :ref:`Control<class_Control>` arg1 **)**                                           |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`navigate_to_path<class_FileSystemDock_method_navigate_to_path>` **(** :ref:`String<class_String>` arg0 **)**                                                                                 |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`can_drop_data_fw<class_FileSystemDock_method_can_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` arg0, :ref:`Variant<class_Variant>` arg1, :ref:`Control<class_Control>` arg2 **)** |const| |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`drop_data_fw<class_FileSystemDock_method_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` arg0, :ref:`Variant<class_Variant>` arg1, :ref:`Control<class_Control>` arg2 **)**                 |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`get_drag_data_fw<class_FileSystemDock_method_get_drag_data_fw>` **(** :ref:`Vector2<class_Vector2>` arg0, :ref:`Control<class_Control>` arg1 **)**                                             |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`navigate_to_path<class_FileSystemDock_method_navigate_to_path>` **(** :ref:`String<class_String>` arg0 **)**                                                                                   |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -74,7 +74,7 @@ Method Descriptions
 
 .. _class_FileSystemDock_method_can_drop_data_fw:
 
-- :ref:`bool<class_bool>` **can_drop_data_fw** **(** :ref:`Vector2<class_Vector2>` arg0, :ref:`Variant<class_Variant>` arg1, :ref:`Control<class_Control>` arg2 **)** const
+- :ref:`bool<class_bool>` **can_drop_data_fw** **(** :ref:`Vector2<class_Vector2>` arg0, :ref:`Variant<class_Variant>` arg1, :ref:`Control<class_Control>` arg2 **)** |const|
 
 ----
 
@@ -94,3 +94,6 @@ Method Descriptions
 
 - void **navigate_to_path** **(** :ref:`String<class_String>` arg0 **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

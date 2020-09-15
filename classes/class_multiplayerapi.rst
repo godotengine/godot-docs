@@ -39,15 +39,15 @@ Methods
 +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`clear<class_MultiplayerAPI_method_clear>` **(** **)**                                                                                                                                                               |
 +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`get_network_connected_peers<class_MultiplayerAPI_method_get_network_connected_peers>` **(** **)** const                                                                                                             |
+| :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`get_network_connected_peers<class_MultiplayerAPI_method_get_network_connected_peers>` **(** **)** |const|                                                                                                           |
 +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`get_network_unique_id<class_MultiplayerAPI_method_get_network_unique_id>` **(** **)** const                                                                                                                         |
+| :ref:`int<class_int>`                   | :ref:`get_network_unique_id<class_MultiplayerAPI_method_get_network_unique_id>` **(** **)** |const|                                                                                                                       |
 +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`get_rpc_sender_id<class_MultiplayerAPI_method_get_rpc_sender_id>` **(** **)** const                                                                                                                                 |
+| :ref:`int<class_int>`                   | :ref:`get_rpc_sender_id<class_MultiplayerAPI_method_get_rpc_sender_id>` **(** **)** |const|                                                                                                                               |
 +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`has_network_peer<class_MultiplayerAPI_method_has_network_peer>` **(** **)** const                                                                                                                                   |
+| :ref:`bool<class_bool>`                 | :ref:`has_network_peer<class_MultiplayerAPI_method_has_network_peer>` **(** **)** |const|                                                                                                                                 |
 +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`is_network_server<class_MultiplayerAPI_method_is_network_server>` **(** **)** const                                                                                                                                 |
+| :ref:`bool<class_bool>`                 | :ref:`is_network_server<class_MultiplayerAPI_method_is_network_server>` **(** **)** |const|                                                                                                                               |
 +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`poll<class_MultiplayerAPI_method_poll>` **(** **)**                                                                                                                                                                 |
 +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -210,7 +210,7 @@ Clears the current MultiplayerAPI network state (you shouldn't call this unless 
 
 .. _class_MultiplayerAPI_method_get_network_connected_peers:
 
-- :ref:`PoolIntArray<class_PoolIntArray>` **get_network_connected_peers** **(** **)** const
+- :ref:`PoolIntArray<class_PoolIntArray>` **get_network_connected_peers** **(** **)** |const|
 
 Returns the peer IDs of all connected peers of this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>`.
 
@@ -218,7 +218,7 @@ Returns the peer IDs of all connected peers of this MultiplayerAPI's :ref:`netwo
 
 .. _class_MultiplayerAPI_method_get_network_unique_id:
 
-- :ref:`int<class_int>` **get_network_unique_id** **(** **)** const
+- :ref:`int<class_int>` **get_network_unique_id** **(** **)** |const|
 
 Returns the unique peer ID of this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>`.
 
@@ -226,7 +226,7 @@ Returns the unique peer ID of this MultiplayerAPI's :ref:`network_peer<class_Mul
 
 .. _class_MultiplayerAPI_method_get_rpc_sender_id:
 
-- :ref:`int<class_int>` **get_rpc_sender_id** **(** **)** const
+- :ref:`int<class_int>` **get_rpc_sender_id** **(** **)** |const|
 
 Returns the sender's peer ID for the RPC currently being executed.
 
@@ -236,7 +236,7 @@ Returns the sender's peer ID for the RPC currently being executed.
 
 .. _class_MultiplayerAPI_method_has_network_peer:
 
-- :ref:`bool<class_bool>` **has_network_peer** **(** **)** const
+- :ref:`bool<class_bool>` **has_network_peer** **(** **)** |const|
 
 Returns ``true`` if there is a :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` set.
 
@@ -244,7 +244,7 @@ Returns ``true`` if there is a :ref:`network_peer<class_MultiplayerAPI_property_
 
 .. _class_MultiplayerAPI_method_is_network_server:
 
-- :ref:`bool<class_bool>` **is_network_server** **(** **)** const
+- :ref:`bool<class_bool>` **is_network_server** **(** **)** |const|
 
 Returns ``true`` if this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` is in server mode (listening for connections).
 
@@ -276,3 +276,6 @@ Sets the base root node to use for RPCs. Instead of an absolute path, a relative
 
 This effectively allows to have different branches of the scene tree to be managed by different MultiplayerAPI, allowing for example to run both client and server in the same scene.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -43,23 +43,23 @@ Methods
 -------
 
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Control<class_Control>` | :ref:`get_current_tab_control<class_TabContainer_method_get_current_tab_control>` **(** **)** const                                             |
+| :ref:`Control<class_Control>` | :ref:`get_current_tab_control<class_TabContainer_method_get_current_tab_control>` **(** **)** |const|                                           |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Popup<class_Popup>`     | :ref:`get_popup<class_TabContainer_method_get_popup>` **(** **)** const                                                                         |
+| :ref:`Popup<class_Popup>`     | :ref:`get_popup<class_TabContainer_method_get_popup>` **(** **)** |const|                                                                       |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_previous_tab<class_TabContainer_method_get_previous_tab>` **(** **)** const                                                           |
+| :ref:`int<class_int>`         | :ref:`get_previous_tab<class_TabContainer_method_get_previous_tab>` **(** **)** |const|                                                         |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Control<class_Control>` | :ref:`get_tab_control<class_TabContainer_method_get_tab_control>` **(** :ref:`int<class_int>` tab_idx **)** const                               |
+| :ref:`Control<class_Control>` | :ref:`get_tab_control<class_TabContainer_method_get_tab_control>` **(** :ref:`int<class_int>` tab_idx **)** |const|                             |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_tab_count<class_TabContainer_method_get_tab_count>` **(** **)** const                                                                 |
+| :ref:`int<class_int>`         | :ref:`get_tab_count<class_TabContainer_method_get_tab_count>` **(** **)** |const|                                                               |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_tab_disabled<class_TabContainer_method_get_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** const                             |
+| :ref:`bool<class_bool>`       | :ref:`get_tab_disabled<class_TabContainer_method_get_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** |const|                           |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`get_tab_icon<class_TabContainer_method_get_tab_icon>` **(** :ref:`int<class_int>` tab_idx **)** const                                     |
+| :ref:`Texture<class_Texture>` | :ref:`get_tab_icon<class_TabContainer_method_get_tab_icon>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                   |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_tab_title<class_TabContainer_method_get_tab_title>` **(** :ref:`int<class_int>` tab_idx **)** const                                   |
+| :ref:`String<class_String>`   | :ref:`get_tab_title<class_TabContainer_method_get_tab_title>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                 |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_tabs_rearrange_group<class_TabContainer_method_get_tabs_rearrange_group>` **(** **)** const                                           |
+| :ref:`int<class_int>`         | :ref:`get_tabs_rearrange_group<class_TabContainer_method_get_tabs_rearrange_group>` **(** **)** |const|                                         |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_popup<class_TabContainer_method_set_popup>` **(** :ref:`Node<class_Node>` popup **)**                                                 |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -245,7 +245,7 @@ Method Descriptions
 
 .. _class_TabContainer_method_get_current_tab_control:
 
-- :ref:`Control<class_Control>` **get_current_tab_control** **(** **)** const
+- :ref:`Control<class_Control>` **get_current_tab_control** **(** **)** |const|
 
 Returns the child :ref:`Control<class_Control>` node located at the active tab index.
 
@@ -253,7 +253,7 @@ Returns the child :ref:`Control<class_Control>` node located at the active tab i
 
 .. _class_TabContainer_method_get_popup:
 
-- :ref:`Popup<class_Popup>` **get_popup** **(** **)** const
+- :ref:`Popup<class_Popup>` **get_popup** **(** **)** |const|
 
 Returns the :ref:`Popup<class_Popup>` node instance if one has been set already with :ref:`set_popup<class_TabContainer_method_set_popup>`.
 
@@ -261,7 +261,7 @@ Returns the :ref:`Popup<class_Popup>` node instance if one has been set already 
 
 .. _class_TabContainer_method_get_previous_tab:
 
-- :ref:`int<class_int>` **get_previous_tab** **(** **)** const
+- :ref:`int<class_int>` **get_previous_tab** **(** **)** |const|
 
 Returns the previously active tab index.
 
@@ -269,7 +269,7 @@ Returns the previously active tab index.
 
 .. _class_TabContainer_method_get_tab_control:
 
-- :ref:`Control<class_Control>` **get_tab_control** **(** :ref:`int<class_int>` tab_idx **)** const
+- :ref:`Control<class_Control>` **get_tab_control** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns the :ref:`Control<class_Control>` node from the tab at index ``tab_idx``.
 
@@ -277,7 +277,7 @@ Returns the :ref:`Control<class_Control>` node from the tab at index ``tab_idx``
 
 .. _class_TabContainer_method_get_tab_count:
 
-- :ref:`int<class_int>` **get_tab_count** **(** **)** const
+- :ref:`int<class_int>` **get_tab_count** **(** **)** |const|
 
 Returns the number of tabs.
 
@@ -285,7 +285,7 @@ Returns the number of tabs.
 
 .. _class_TabContainer_method_get_tab_disabled:
 
-- :ref:`bool<class_bool>` **get_tab_disabled** **(** :ref:`int<class_int>` tab_idx **)** const
+- :ref:`bool<class_bool>` **get_tab_disabled** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns ``true`` if the tab at index ``tab_idx`` is disabled.
 
@@ -293,7 +293,7 @@ Returns ``true`` if the tab at index ``tab_idx`` is disabled.
 
 .. _class_TabContainer_method_get_tab_icon:
 
-- :ref:`Texture<class_Texture>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** const
+- :ref:`Texture<class_Texture>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns the :ref:`Texture<class_Texture>` for the tab at index ``tab_idx`` or ``null`` if the tab has no :ref:`Texture<class_Texture>`.
 
@@ -301,7 +301,7 @@ Returns the :ref:`Texture<class_Texture>` for the tab at index ``tab_idx`` or ``
 
 .. _class_TabContainer_method_get_tab_title:
 
-- :ref:`String<class_String>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** const
+- :ref:`String<class_String>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns the title of the tab at index ``tab_idx``. Tab titles default to the name of the indexed child node, but this can be overridden with :ref:`set_tab_title<class_TabContainer_method_set_tab_title>`.
 
@@ -309,7 +309,7 @@ Returns the title of the tab at index ``tab_idx``. Tab titles default to the nam
 
 .. _class_TabContainer_method_get_tabs_rearrange_group:
 
-- :ref:`int<class_int>` **get_tabs_rearrange_group** **(** **)** const
+- :ref:`int<class_int>` **get_tabs_rearrange_group** **(** **)** |const|
 
 Returns the ``TabContainer`` rearrange group id.
 
@@ -355,3 +355,6 @@ Sets a title for the tab at index ``tab_idx``. Tab titles default to the name of
 
 Defines rearrange group id, choose for each ``TabContainer`` the same value to enable tab drag between ``TabContainer``. Enable drag with ``set_drag_to_rearrange_enabled(true)``.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

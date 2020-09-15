@@ -24,7 +24,7 @@ Methods
 -------
 
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_faces<class_ConcavePolygonShape_method_get_faces>` **(** **)** const                                                 |
+| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_faces<class_ConcavePolygonShape_method_get_faces>` **(** **)** |const|                                               |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_faces<class_ConcavePolygonShape_method_set_faces>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` faces **)** |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
@@ -34,7 +34,7 @@ Method Descriptions
 
 .. _class_ConcavePolygonShape_method_get_faces:
 
-- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_faces** **(** **)** const
+- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_faces** **(** **)** |const|
 
 Returns the faces (an array of triangles).
 
@@ -46,3 +46,6 @@ Returns the faces (an array of triangles).
 
 Sets the faces (an array of triangles).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

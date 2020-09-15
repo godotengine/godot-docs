@@ -22,9 +22,9 @@ Methods
 -------
 
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`is_connection_available<class_TCP_Server_method_is_connection_available>` **(** **)** const                                  |
+| :ref:`bool<class_bool>`                   | :ref:`is_connection_available<class_TCP_Server_method_is_connection_available>` **(** **)** |const|                                |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`is_listening<class_TCP_Server_method_is_listening>` **(** **)** const                                                        |
+| :ref:`bool<class_bool>`                   | :ref:`is_listening<class_TCP_Server_method_is_listening>` **(** **)** |const|                                                      |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`listen<class_TCP_Server_method_listen>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*" **)** |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
@@ -38,7 +38,7 @@ Method Descriptions
 
 .. _class_TCP_Server_method_is_connection_available:
 
-- :ref:`bool<class_bool>` **is_connection_available** **(** **)** const
+- :ref:`bool<class_bool>` **is_connection_available** **(** **)** |const|
 
 Returns ``true`` if a connection is available for taking.
 
@@ -46,7 +46,7 @@ Returns ``true`` if a connection is available for taking.
 
 .. _class_TCP_Server_method_is_listening:
 
-- :ref:`bool<class_bool>` **is_listening** **(** **)** const
+- :ref:`bool<class_bool>` **is_listening** **(** **)** |const|
 
 Returns ``true`` if the server is currently listening for connections.
 
@@ -80,3 +80,6 @@ Stops listening.
 
 If a connection is available, returns a StreamPeerTCP with the connection.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

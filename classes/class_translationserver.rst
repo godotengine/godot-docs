@@ -33,17 +33,17 @@ Methods
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                        | :ref:`clear<class_TranslationServer_method_clear>` **(** **)**                                                                             |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`   | :ref:`get_loaded_locales<class_TranslationServer_method_get_loaded_locales>` **(** **)** const                                             |
+| :ref:`Array<class_Array>`   | :ref:`get_loaded_locales<class_TranslationServer_method_get_loaded_locales>` **(** **)** |const|                                           |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_locale<class_TranslationServer_method_get_locale>` **(** **)** const                                                             |
+| :ref:`String<class_String>` | :ref:`get_locale<class_TranslationServer_method_get_locale>` **(** **)** |const|                                                           |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_locale_name<class_TranslationServer_method_get_locale_name>` **(** :ref:`String<class_String>` locale **)** const                |
+| :ref:`String<class_String>` | :ref:`get_locale_name<class_TranslationServer_method_get_locale_name>` **(** :ref:`String<class_String>` locale **)** |const|              |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                        | :ref:`remove_translation<class_TranslationServer_method_remove_translation>` **(** :ref:`Translation<class_Translation>` translation **)** |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                        | :ref:`set_locale<class_TranslationServer_method_set_locale>` **(** :ref:`String<class_String>` locale **)**                                |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`translate<class_TranslationServer_method_translate>` **(** :ref:`String<class_String>` message **)** const                           |
+| :ref:`String<class_String>` | :ref:`translate<class_TranslationServer_method_translate>` **(** :ref:`String<class_String>` message **)** |const|                         |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
@@ -67,7 +67,7 @@ Clears the server from all translations.
 
 .. _class_TranslationServer_method_get_loaded_locales:
 
-- :ref:`Array<class_Array>` **get_loaded_locales** **(** **)** const
+- :ref:`Array<class_Array>` **get_loaded_locales** **(** **)** |const|
 
 Returns an Array of all loaded locales of the game.
 
@@ -75,7 +75,7 @@ Returns an Array of all loaded locales of the game.
 
 .. _class_TranslationServer_method_get_locale:
 
-- :ref:`String<class_String>` **get_locale** **(** **)** const
+- :ref:`String<class_String>` **get_locale** **(** **)** |const|
 
 Returns the current locale of the game.
 
@@ -83,7 +83,7 @@ Returns the current locale of the game.
 
 .. _class_TranslationServer_method_get_locale_name:
 
-- :ref:`String<class_String>` **get_locale_name** **(** :ref:`String<class_String>` locale **)** const
+- :ref:`String<class_String>` **get_locale_name** **(** :ref:`String<class_String>` locale **)** |const|
 
 Returns a locale's language and its variant (e.g. ``"en_US"`` would return ``"English (United States)"``).
 
@@ -107,7 +107,10 @@ Sets the locale of the game.
 
 .. _class_TranslationServer_method_translate:
 
-- :ref:`String<class_String>` **translate** **(** :ref:`String<class_String>` message **)** const
+- :ref:`String<class_String>` **translate** **(** :ref:`String<class_String>` message **)** |const|
 
 Returns the current locale's translation for the given message (key).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

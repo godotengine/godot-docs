@@ -155,3 +155,6 @@ Controls the texture's behavior when resizing the node's bounding rectangle. See
 
 The node's :ref:`Texture<class_Texture>` resource.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

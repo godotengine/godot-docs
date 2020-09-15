@@ -22,9 +22,9 @@ Methods
 -------
 
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>`                 | :ref:`get_constructor<class_VisualScriptConstructor_method_get_constructor>` **(** **)** const                                                              |
+| :ref:`Dictionary<class_Dictionary>`                 | :ref:`get_constructor<class_VisualScriptConstructor_method_get_constructor>` **(** **)** |const|                                                            |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`get_constructor_type<class_VisualScriptConstructor_method_get_constructor_type>` **(** **)** const                                                    |
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`get_constructor_type<class_VisualScriptConstructor_method_get_constructor_type>` **(** **)** |const|                                                  |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`set_constructor<class_VisualScriptConstructor_method_set_constructor>` **(** :ref:`Dictionary<class_Dictionary>` constructor **)**                    |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -36,13 +36,13 @@ Method Descriptions
 
 .. _class_VisualScriptConstructor_method_get_constructor:
 
-- :ref:`Dictionary<class_Dictionary>` **get_constructor** **(** **)** const
+- :ref:`Dictionary<class_Dictionary>` **get_constructor** **(** **)** |const|
 
 ----
 
 .. _class_VisualScriptConstructor_method_get_constructor_type:
 
-- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **get_constructor_type** **(** **)** const
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **get_constructor_type** **(** **)** |const|
 
 ----
 
@@ -56,3 +56,6 @@ Method Descriptions
 
 - void **set_constructor_type** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -26,6 +26,8 @@ Please also keep in mind that physics bodies manage their own transform which ov
 
 If you need to override the default physics behavior or add a transformation at runtime, you can write a custom force integration. See :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>`.
 
+The center of mass is always located at the node's origin without taking into account the :ref:`CollisionShape2D<class_CollisionShape2D>` centroid offsets.
+
 Properties
 ----------
 
@@ -75,7 +77,7 @@ Methods
 -------
 
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`_integrate_forces<class_RigidBody2D_method__integrate_forces>` **(** :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>` state **)** virtual                                                                                                                 |
+| void                      | :ref:`_integrate_forces<class_RigidBody2D_method__integrate_forces>` **(** :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>` state **)** |virtual|                                                                                                               |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`add_central_force<class_RigidBody2D_method_add_central_force>` **(** :ref:`Vector2<class_Vector2>` force **)**                                                                                                                                                           |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -89,7 +91,7 @@ Methods
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`apply_torque_impulse<class_RigidBody2D_method_apply_torque_impulse>` **(** :ref:`float<class_float>` torque **)**                                                                                                                                                        |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_colliding_bodies<class_RigidBody2D_method_get_colliding_bodies>` **(** **)** const                                                                                                                                                                                   |
+| :ref:`Array<class_Array>` | :ref:`get_colliding_bodies<class_RigidBody2D_method_get_colliding_bodies>` **(** **)** |const|                                                                                                                                                                                 |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_axis_velocity<class_RigidBody2D_method_set_axis_velocity>` **(** :ref:`Vector2<class_Vector2>` axis_velocity **)**                                                                                                                                                   |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -276,6 +278,8 @@ Deprecated, use :ref:`PhysicsMaterial.bounce<class_PhysicsMaterial_property_boun
 +-----------+----------------------+
 
 If ``true``, the body can enter sleep mode when there is no movement. See :ref:`sleeping<class_RigidBody2D_property_sleeping>`.
+
+**Note:** A RigidBody2D will never enter sleep mode automatically if its :ref:`mode<class_RigidBody2D_property_mode>` is :ref:`MODE_CHARACTER<class_RigidBody2D_constant_MODE_CHARACTER>`. It can still be put to sleep manually by setting its :ref:`sleeping<class_RigidBody2D_property_sleeping>` property to ``true``.
 
 ----
 
@@ -508,7 +512,7 @@ Method Descriptions
 
 .. _class_RigidBody2D_method__integrate_forces:
 
-- void **_integrate_forces** **(** :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>` state **)** virtual
+- void **_integrate_forces** **(** :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>` state **)** |virtual|
 
 Allows you to read and safely modify the simulation state for the object. Use this instead of :ref:`Node._physics_process<class_Node_method__physics_process>` if you need to directly change the body's ``position`` or other physics properties. By default, it works in addition to the usual physics behavior, but :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>` allows you to disable the default behavior and write custom force integration for a body.
 
@@ -564,7 +568,7 @@ Applies a rotational impulse to the body.
 
 .. _class_RigidBody2D_method_get_colliding_bodies:
 
-- :ref:`Array<class_Array>` **get_colliding_bodies** **(** **)** const
+- :ref:`Array<class_Array>` **get_colliding_bodies** **(** **)** |const|
 
 Returns a list of the bodies colliding with this one. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` to be set high enough to detect all the collisions.
 
@@ -586,3 +590,6 @@ Sets the body's velocity on the given axis. The velocity in the given vector axi
 
 Returns ``true`` if a collision would result from moving in the given vector. ``margin`` increases the size of the shapes involved in the collision detection, and ``result`` is an object of type :ref:`Physics2DTestMotionResult<class_Physics2DTestMotionResult>`, which contains additional information about the collision (should there be one).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

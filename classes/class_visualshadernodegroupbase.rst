@@ -39,23 +39,23 @@ Methods
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                        | :ref:`clear_output_ports<class_VisualShaderNodeGroupBase_method_clear_output_ports>` **(** **)**                                                                                  |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`get_free_input_port_id<class_VisualShaderNodeGroupBase_method_get_free_input_port_id>` **(** **)** const                                                                    |
+| :ref:`int<class_int>`       | :ref:`get_free_input_port_id<class_VisualShaderNodeGroupBase_method_get_free_input_port_id>` **(** **)** |const|                                                                  |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`get_free_output_port_id<class_VisualShaderNodeGroupBase_method_get_free_output_port_id>` **(** **)** const                                                                  |
+| :ref:`int<class_int>`       | :ref:`get_free_output_port_id<class_VisualShaderNodeGroupBase_method_get_free_output_port_id>` **(** **)** |const|                                                                |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`get_input_port_count<class_VisualShaderNodeGroupBase_method_get_input_port_count>` **(** **)** const                                                                        |
+| :ref:`int<class_int>`       | :ref:`get_input_port_count<class_VisualShaderNodeGroupBase_method_get_input_port_count>` **(** **)** |const|                                                                      |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_inputs<class_VisualShaderNodeGroupBase_method_get_inputs>` **(** **)** const                                                                                            |
+| :ref:`String<class_String>` | :ref:`get_inputs<class_VisualShaderNodeGroupBase_method_get_inputs>` **(** **)** |const|                                                                                          |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`get_output_port_count<class_VisualShaderNodeGroupBase_method_get_output_port_count>` **(** **)** const                                                                      |
+| :ref:`int<class_int>`       | :ref:`get_output_port_count<class_VisualShaderNodeGroupBase_method_get_output_port_count>` **(** **)** |const|                                                                    |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_outputs<class_VisualShaderNodeGroupBase_method_get_outputs>` **(** **)** const                                                                                          |
+| :ref:`String<class_String>` | :ref:`get_outputs<class_VisualShaderNodeGroupBase_method_get_outputs>` **(** **)** |const|                                                                                        |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`has_input_port<class_VisualShaderNodeGroupBase_method_has_input_port>` **(** :ref:`int<class_int>` id **)** const                                                           |
+| :ref:`bool<class_bool>`     | :ref:`has_input_port<class_VisualShaderNodeGroupBase_method_has_input_port>` **(** :ref:`int<class_int>` id **)** |const|                                                         |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`has_output_port<class_VisualShaderNodeGroupBase_method_has_output_port>` **(** :ref:`int<class_int>` id **)** const                                                         |
+| :ref:`bool<class_bool>`     | :ref:`has_output_port<class_VisualShaderNodeGroupBase_method_has_output_port>` **(** :ref:`int<class_int>` id **)** |const|                                                       |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`is_valid_port_name<class_VisualShaderNodeGroupBase_method_is_valid_port_name>` **(** :ref:`String<class_String>` name **)** const                                           |
+| :ref:`bool<class_bool>`     | :ref:`is_valid_port_name<class_VisualShaderNodeGroupBase_method_is_valid_port_name>` **(** :ref:`String<class_String>` name **)** |const|                                         |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                        | :ref:`remove_input_port<class_VisualShaderNodeGroupBase_method_remove_input_port>` **(** :ref:`int<class_int>` id **)**                                                           |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -128,7 +128,7 @@ Removes all previously specified output ports.
 
 .. _class_VisualShaderNodeGroupBase_method_get_free_input_port_id:
 
-- :ref:`int<class_int>` **get_free_input_port_id** **(** **)** const
+- :ref:`int<class_int>` **get_free_input_port_id** **(** **)** |const|
 
 Returns a free input port ID which can be used in :ref:`add_input_port<class_VisualShaderNodeGroupBase_method_add_input_port>`.
 
@@ -136,7 +136,7 @@ Returns a free input port ID which can be used in :ref:`add_input_port<class_Vis
 
 .. _class_VisualShaderNodeGroupBase_method_get_free_output_port_id:
 
-- :ref:`int<class_int>` **get_free_output_port_id** **(** **)** const
+- :ref:`int<class_int>` **get_free_output_port_id** **(** **)** |const|
 
 Returns a free output port ID which can be used in :ref:`add_output_port<class_VisualShaderNodeGroupBase_method_add_output_port>`.
 
@@ -144,7 +144,7 @@ Returns a free output port ID which can be used in :ref:`add_output_port<class_V
 
 .. _class_VisualShaderNodeGroupBase_method_get_input_port_count:
 
-- :ref:`int<class_int>` **get_input_port_count** **(** **)** const
+- :ref:`int<class_int>` **get_input_port_count** **(** **)** |const|
 
 Returns the number of input ports in use. Alternative for :ref:`get_free_input_port_id<class_VisualShaderNodeGroupBase_method_get_free_input_port_id>`.
 
@@ -152,7 +152,7 @@ Returns the number of input ports in use. Alternative for :ref:`get_free_input_p
 
 .. _class_VisualShaderNodeGroupBase_method_get_inputs:
 
-- :ref:`String<class_String>` **get_inputs** **(** **)** const
+- :ref:`String<class_String>` **get_inputs** **(** **)** |const|
 
 Returns a :ref:`String<class_String>` description of the input ports as as colon-separated list using the format ``id,type,name;`` (see :ref:`add_input_port<class_VisualShaderNodeGroupBase_method_add_input_port>`).
 
@@ -160,7 +160,7 @@ Returns a :ref:`String<class_String>` description of the input ports as as colon
 
 .. _class_VisualShaderNodeGroupBase_method_get_output_port_count:
 
-- :ref:`int<class_int>` **get_output_port_count** **(** **)** const
+- :ref:`int<class_int>` **get_output_port_count** **(** **)** |const|
 
 Returns the number of output ports in use. Alternative for :ref:`get_free_output_port_id<class_VisualShaderNodeGroupBase_method_get_free_output_port_id>`.
 
@@ -168,7 +168,7 @@ Returns the number of output ports in use. Alternative for :ref:`get_free_output
 
 .. _class_VisualShaderNodeGroupBase_method_get_outputs:
 
-- :ref:`String<class_String>` **get_outputs** **(** **)** const
+- :ref:`String<class_String>` **get_outputs** **(** **)** |const|
 
 Returns a :ref:`String<class_String>` description of the output ports as as colon-separated list using the format ``id,type,name;`` (see :ref:`add_output_port<class_VisualShaderNodeGroupBase_method_add_output_port>`).
 
@@ -176,7 +176,7 @@ Returns a :ref:`String<class_String>` description of the output ports as as colo
 
 .. _class_VisualShaderNodeGroupBase_method_has_input_port:
 
-- :ref:`bool<class_bool>` **has_input_port** **(** :ref:`int<class_int>` id **)** const
+- :ref:`bool<class_bool>` **has_input_port** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns ``true`` if the specified input port exists.
 
@@ -184,7 +184,7 @@ Returns ``true`` if the specified input port exists.
 
 .. _class_VisualShaderNodeGroupBase_method_has_output_port:
 
-- :ref:`bool<class_bool>` **has_output_port** **(** :ref:`int<class_int>` id **)** const
+- :ref:`bool<class_bool>` **has_output_port** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns ``true`` if the specified output port exists.
 
@@ -192,7 +192,7 @@ Returns ``true`` if the specified output port exists.
 
 .. _class_VisualShaderNodeGroupBase_method_is_valid_port_name:
 
-- :ref:`bool<class_bool>` **is_valid_port_name** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **is_valid_port_name** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns ``true`` if the specified port name does not override an existed port name and is valid within the shader.
 
@@ -260,3 +260,6 @@ Sets the specified output port's type (see :ref:`PortType<enum_VisualShaderNode_
 
 Defines all output ports using a :ref:`String<class_String>` formatted as a colon-separated list: ``id,type,name;`` (see :ref:`add_output_port<class_VisualShaderNodeGroupBase_method_add_output_port>`).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

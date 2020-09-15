@@ -45,7 +45,7 @@ Methods
 -------
 
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`get_flag<class_GeometryInstance_method_get_flag>` **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag **)** const                          |
+| :ref:`bool<class_bool>` | :ref:`get_flag<class_GeometryInstance_method_get_flag>` **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag **)** |const|                        |
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`set_custom_aabb<class_GeometryInstance_method_set_custom_aabb>` **(** :ref:`AABB<class_AABB>` aabb **)**                                    |
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -241,7 +241,7 @@ Method Descriptions
 
 .. _class_GeometryInstance_method_get_flag:
 
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag **)** const
+- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag **)** |const|
 
 Returns the :ref:`Flags<enum_GeometryInstance_Flags>` that have been set for this object.
 
@@ -261,3 +261,6 @@ Overrides the bounding box of this node with a custom one. To remove it, set an 
 
 Sets the :ref:`Flags<enum_GeometryInstance_Flags>` specified. See :ref:`Flags<enum_GeometryInstance_Flags>` for options.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

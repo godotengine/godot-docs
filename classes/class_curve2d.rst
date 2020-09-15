@@ -35,27 +35,27 @@ Methods
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`clear_points<class_Curve2D_method_clear_points>` **(** **)**                                                                                                                                                                             |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`get_baked_length<class_Curve2D_method_get_baked_length>` **(** **)** const                                                                                                                                                               |
+| :ref:`float<class_float>`                       | :ref:`get_baked_length<class_Curve2D_method_get_baked_length>` **(** **)** |const|                                                                                                                                                             |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`get_baked_points<class_Curve2D_method_get_baked_points>` **(** **)** const                                                                                                                                                               |
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`get_baked_points<class_Curve2D_method_get_baked_points>` **(** **)** |const|                                                                                                                                                             |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`get_closest_offset<class_Curve2D_method_get_closest_offset>` **(** :ref:`Vector2<class_Vector2>` to_point **)** const                                                                                                                    |
+| :ref:`float<class_float>`                       | :ref:`get_closest_offset<class_Curve2D_method_get_closest_offset>` **(** :ref:`Vector2<class_Vector2>` to_point **)** |const|                                                                                                                  |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                   | :ref:`get_closest_point<class_Curve2D_method_get_closest_point>` **(** :ref:`Vector2<class_Vector2>` to_point **)** const                                                                                                                      |
+| :ref:`Vector2<class_Vector2>`                   | :ref:`get_closest_point<class_Curve2D_method_get_closest_point>` **(** :ref:`Vector2<class_Vector2>` to_point **)** |const|                                                                                                                    |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`get_point_count<class_Curve2D_method_get_point_count>` **(** **)** const                                                                                                                                                                 |
+| :ref:`int<class_int>`                           | :ref:`get_point_count<class_Curve2D_method_get_point_count>` **(** **)** |const|                                                                                                                                                               |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                   | :ref:`get_point_in<class_Curve2D_method_get_point_in>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                             |
+| :ref:`Vector2<class_Vector2>`                   | :ref:`get_point_in<class_Curve2D_method_get_point_in>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                           |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                   | :ref:`get_point_out<class_Curve2D_method_get_point_out>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                           |
+| :ref:`Vector2<class_Vector2>`                   | :ref:`get_point_out<class_Curve2D_method_get_point_out>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                         |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                   | :ref:`get_point_position<class_Curve2D_method_get_point_position>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                 |
+| :ref:`Vector2<class_Vector2>`                   | :ref:`get_point_position<class_Curve2D_method_get_point_position>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                               |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                   | :ref:`interpolate<class_Curve2D_method_interpolate>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` t **)** const                                                                                                                  |
+| :ref:`Vector2<class_Vector2>`                   | :ref:`interpolate<class_Curve2D_method_interpolate>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` t **)** |const|                                                                                                                |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                   | :ref:`interpolate_baked<class_Curve2D_method_interpolate_baked>` **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` cubic=false **)** const                                                                                       |
+| :ref:`Vector2<class_Vector2>`                   | :ref:`interpolate_baked<class_Curve2D_method_interpolate_baked>` **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` cubic=false **)** |const|                                                                                     |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                   | :ref:`interpolatef<class_Curve2D_method_interpolatef>` **(** :ref:`float<class_float>` fofs **)** const                                                                                                                                        |
+| :ref:`Vector2<class_Vector2>`                   | :ref:`interpolatef<class_Curve2D_method_interpolatef>` **(** :ref:`float<class_float>` fofs **)** |const|                                                                                                                                      |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`remove_point<class_Curve2D_method_remove_point>` **(** :ref:`int<class_int>` idx **)**                                                                                                                                                   |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -65,7 +65,7 @@ Methods
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_point_position<class_Curve2D_method_set_point_position>` **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` position **)**                                                                                               |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`tessellate<class_Curve2D_method_tessellate>` **(** :ref:`int<class_int>` max_stages=5, :ref:`float<class_float>` tolerance_degrees=4 **)** const                                                                                         |
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`tessellate<class_Curve2D_method_tessellate>` **(** :ref:`int<class_int>` max_stages=5, :ref:`float<class_float>` tolerance_degrees=4 **)** |const|                                                                                       |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
@@ -108,7 +108,7 @@ Removes all points from the curve.
 
 .. _class_Curve2D_method_get_baked_length:
 
-- :ref:`float<class_float>` **get_baked_length** **(** **)** const
+- :ref:`float<class_float>` **get_baked_length** **(** **)** |const|
 
 Returns the total length of the curve, based on the cached points. Given enough density (see :ref:`bake_interval<class_Curve2D_property_bake_interval>`), it should be approximate enough.
 
@@ -116,7 +116,7 @@ Returns the total length of the curve, based on the cached points. Given enough 
 
 .. _class_Curve2D_method_get_baked_points:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **get_baked_points** **(** **)** const
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **get_baked_points** **(** **)** |const|
 
 Returns the cache of points as a :ref:`PoolVector2Array<class_PoolVector2Array>`.
 
@@ -124,7 +124,7 @@ Returns the cache of points as a :ref:`PoolVector2Array<class_PoolVector2Array>`
 
 .. _class_Curve2D_method_get_closest_offset:
 
-- :ref:`float<class_float>` **get_closest_offset** **(** :ref:`Vector2<class_Vector2>` to_point **)** const
+- :ref:`float<class_float>` **get_closest_offset** **(** :ref:`Vector2<class_Vector2>` to_point **)** |const|
 
 Returns the closest offset to ``to_point``. This offset is meant to be used in :ref:`interpolate_baked<class_Curve2D_method_interpolate_baked>`.
 
@@ -134,7 +134,7 @@ Returns the closest offset to ``to_point``. This offset is meant to be used in :
 
 .. _class_Curve2D_method_get_closest_point:
 
-- :ref:`Vector2<class_Vector2>` **get_closest_point** **(** :ref:`Vector2<class_Vector2>` to_point **)** const
+- :ref:`Vector2<class_Vector2>` **get_closest_point** **(** :ref:`Vector2<class_Vector2>` to_point **)** |const|
 
 Returns the closest point (in curve's local space) to ``to_point``.
 
@@ -144,7 +144,7 @@ Returns the closest point (in curve's local space) to ``to_point``.
 
 .. _class_Curve2D_method_get_point_count:
 
-- :ref:`int<class_int>` **get_point_count** **(** **)** const
+- :ref:`int<class_int>` **get_point_count** **(** **)** |const|
 
 Returns the number of points describing the curve.
 
@@ -152,7 +152,7 @@ Returns the number of points describing the curve.
 
 .. _class_Curve2D_method_get_point_in:
 
-- :ref:`Vector2<class_Vector2>` **get_point_in** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Vector2<class_Vector2>` **get_point_in** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the position of the control point leading to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0)``.
 
@@ -160,7 +160,7 @@ Returns the position of the control point leading to the vertex ``idx``. If the 
 
 .. _class_Curve2D_method_get_point_out:
 
-- :ref:`Vector2<class_Vector2>` **get_point_out** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Vector2<class_Vector2>` **get_point_out** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the position of the control point leading out of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0)``.
 
@@ -168,7 +168,7 @@ Returns the position of the control point leading out of the vertex ``idx``. If 
 
 .. _class_Curve2D_method_get_point_position:
 
-- :ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the position of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0)``.
 
@@ -176,7 +176,7 @@ Returns the position of the vertex ``idx``. If the index is out of bounds, the f
 
 .. _class_Curve2D_method_interpolate:
 
-- :ref:`Vector2<class_Vector2>` **interpolate** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` t **)** const
+- :ref:`Vector2<class_Vector2>` **interpolate** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` t **)** |const|
 
 Returns the position between the vertex ``idx`` and the vertex ``idx + 1``, where ``t`` controls if the point is the first vertex (``t = 0.0``), the last vertex (``t = 1.0``), or in between. Values of ``t`` outside the range (``0.0 >= t <=1``) give strange, but predictable results.
 
@@ -186,7 +186,7 @@ If ``idx`` is out of bounds it is truncated to the first or last vertex, and ``t
 
 .. _class_Curve2D_method_interpolate_baked:
 
-- :ref:`Vector2<class_Vector2>` **interpolate_baked** **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` cubic=false **)** const
+- :ref:`Vector2<class_Vector2>` **interpolate_baked** **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` cubic=false **)** |const|
 
 Returns a point within the curve at position ``offset``, where ``offset`` is measured as a pixel distance along the curve.
 
@@ -198,7 +198,7 @@ Cubic interpolation tends to follow the curves better, but linear is faster (and
 
 .. _class_Curve2D_method_interpolatef:
 
-- :ref:`Vector2<class_Vector2>` **interpolatef** **(** :ref:`float<class_float>` fofs **)** const
+- :ref:`Vector2<class_Vector2>` **interpolatef** **(** :ref:`float<class_float>` fofs **)** |const|
 
 Returns the position at the vertex ``fofs``. It calls :ref:`interpolate<class_Curve2D_method_interpolate>` using the integer part of ``fofs`` as ``idx``, and its fractional part as ``t``.
 
@@ -238,7 +238,7 @@ Sets the position for the vertex ``idx``. If the index is out of bounds, the fun
 
 .. _class_Curve2D_method_tessellate:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **tessellate** **(** :ref:`int<class_int>` max_stages=5, :ref:`float<class_float>` tolerance_degrees=4 **)** const
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **tessellate** **(** :ref:`int<class_int>` max_stages=5, :ref:`float<class_float>` tolerance_degrees=4 **)** |const|
 
 Returns a list of points along the curve, with a curvature controlled point density. That is, the curvier parts will have more points than the straighter parts.
 
@@ -248,3 +248,6 @@ This approximation makes straight segments between each point, then subdivides t
 
 ``tolerance_degrees`` controls how many degrees the midpoint of a segment may deviate from the real curve, before the segment has to be subdivided.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

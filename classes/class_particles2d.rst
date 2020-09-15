@@ -65,11 +65,11 @@ Properties
 Methods
 -------
 
-+---------------------------+------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>` | :ref:`capture_rect<class_Particles2D_method_capture_rect>` **(** **)** const |
-+---------------------------+------------------------------------------------------------------------------+
-| void                      | :ref:`restart<class_Particles2D_method_restart>` **(** **)**                 |
-+---------------------------+------------------------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------------------------+
+| :ref:`Rect2<class_Rect2>` | :ref:`capture_rect<class_Particles2D_method_capture_rect>` **(** **)** |const| |
++---------------------------+--------------------------------------------------------------------------------+
+| void                      | :ref:`restart<class_Particles2D_method_restart>` **(** **)**                   |
++---------------------------+--------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -344,7 +344,7 @@ Method Descriptions
 
 .. _class_Particles2D_method_capture_rect:
 
-- :ref:`Rect2<class_Rect2>` **capture_rect** **(** **)** const
+- :ref:`Rect2<class_Rect2>` **capture_rect** **(** **)** |const|
 
 Returns a rectangle containing the positions of all existing particles.
 
@@ -356,3 +356,6 @@ Returns a rectangle containing the positions of all existing particles.
 
 Restarts all the existing particles.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -16,16 +16,19 @@ PluginScript
 Methods
 -------
 
-+-------------------------------+------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`new<class_PluginScript_method_new>` **(** ... **)** vararg |
-+-------------------------------+------------------------------------------------------------------+
++-------------------------------+--------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`new<class_PluginScript_method_new>` **(** ... **)** |vararg| |
++-------------------------------+--------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_PluginScript_method_new:
 
-- :ref:`Variant<class_Variant>` **new** **(** ... **)** vararg
+- :ref:`Variant<class_Variant>` **new** **(** ... **)** |vararg|
 
 Returns a new instance of the script.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

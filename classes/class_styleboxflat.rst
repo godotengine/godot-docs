@@ -94,13 +94,13 @@ Methods
 -------
 
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`get_border_width<class_StyleBoxFlat_method_get_border_width>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                                                                                                                                       |
+| :ref:`int<class_int>`     | :ref:`get_border_width<class_StyleBoxFlat_method_get_border_width>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** |const|                                                                                                                                     |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`get_border_width_min<class_StyleBoxFlat_method_get_border_width_min>` **(** **)** const                                                                                                                                                                              |
+| :ref:`int<class_int>`     | :ref:`get_border_width_min<class_StyleBoxFlat_method_get_border_width_min>` **(** **)** |const|                                                                                                                                                                            |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`get_corner_radius<class_StyleBoxFlat_method_get_corner_radius>` **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner **)** const                                                                                                                                     |
+| :ref:`int<class_int>`     | :ref:`get_corner_radius<class_StyleBoxFlat_method_get_corner_radius>` **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner **)** |const|                                                                                                                                   |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_expand_margin<class_StyleBoxFlat_method_get_expand_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                                                                                                                                     |
+| :ref:`float<class_float>` | :ref:`get_expand_margin<class_StyleBoxFlat_method_get_expand_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** |const|                                                                                                                                   |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_border_width<class_StyleBoxFlat_method_set_border_width>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`int<class_int>` width **)**                                                                                                                |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -481,7 +481,7 @@ Method Descriptions
 
 .. _class_StyleBoxFlat_method_get_border_width:
 
-- :ref:`int<class_int>` **get_border_width** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+- :ref:`int<class_int>` **get_border_width** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** |const|
 
 Returns the given ``margin``'s border width. See :ref:`Margin<enum_@GlobalScope_Margin>` for possible values.
 
@@ -489,7 +489,7 @@ Returns the given ``margin``'s border width. See :ref:`Margin<enum_@GlobalScope_
 
 .. _class_StyleBoxFlat_method_get_border_width_min:
 
-- :ref:`int<class_int>` **get_border_width_min** **(** **)** const
+- :ref:`int<class_int>` **get_border_width_min** **(** **)** |const|
 
 Returns the smallest border width out of all four borders.
 
@@ -497,7 +497,7 @@ Returns the smallest border width out of all four borders.
 
 .. _class_StyleBoxFlat_method_get_corner_radius:
 
-- :ref:`int<class_int>` **get_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner **)** const
+- :ref:`int<class_int>` **get_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner **)** |const|
 
 Returns the given ``corner``'s radius. See :ref:`Corner<enum_@GlobalScope_Corner>` for possible values.
 
@@ -505,7 +505,7 @@ Returns the given ``corner``'s radius. See :ref:`Corner<enum_@GlobalScope_Corner
 
 .. _class_StyleBoxFlat_method_get_expand_margin:
 
-- :ref:`float<class_float>` **get_expand_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+- :ref:`float<class_float>` **get_expand_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** |const|
 
 Returns the size of the given ``margin``'s expand margin. See :ref:`Margin<enum_@GlobalScope_Margin>` for possible values.
 
@@ -573,3 +573,6 @@ Sets the expand margin to ``size`` pixels for all margins.
 
 Sets the expand margin for each margin to ``size_left``, ``size_top``, ``size_right``, and ``size_bottom`` pixels.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

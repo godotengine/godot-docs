@@ -41,11 +41,11 @@ Methods
 -------
 
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_current_node<class_AnimationNodeStateMachinePlayback_method_get_current_node>` **(** **)** const           |
+| :ref:`String<class_String>`                   | :ref:`get_current_node<class_AnimationNodeStateMachinePlayback_method_get_current_node>` **(** **)** |const|         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_travel_path<class_AnimationNodeStateMachinePlayback_method_get_travel_path>` **(** **)** const             |
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_travel_path<class_AnimationNodeStateMachinePlayback_method_get_travel_path>` **(** **)** |const|           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`is_playing<class_AnimationNodeStateMachinePlayback_method_is_playing>` **(** **)** const                       |
+| :ref:`bool<class_bool>`                       | :ref:`is_playing<class_AnimationNodeStateMachinePlayback_method_is_playing>` **(** **)** |const|                     |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`start<class_AnimationNodeStateMachinePlayback_method_start>` **(** :ref:`String<class_String>` node **)**      |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
@@ -59,7 +59,7 @@ Method Descriptions
 
 .. _class_AnimationNodeStateMachinePlayback_method_get_current_node:
 
-- :ref:`String<class_String>` **get_current_node** **(** **)** const
+- :ref:`String<class_String>` **get_current_node** **(** **)** |const|
 
 Returns the currently playing animation state.
 
@@ -67,7 +67,7 @@ Returns the currently playing animation state.
 
 .. _class_AnimationNodeStateMachinePlayback_method_get_travel_path:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_travel_path** **(** **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_travel_path** **(** **)** |const|
 
 Returns the current travel path as computed internally by the A\* algorithm.
 
@@ -75,7 +75,7 @@ Returns the current travel path as computed internally by the A\* algorithm.
 
 .. _class_AnimationNodeStateMachinePlayback_method_is_playing:
 
-- :ref:`bool<class_bool>` **is_playing** **(** **)** const
+- :ref:`bool<class_bool>` **is_playing** **(** **)** |const|
 
 Returns ``true`` if an animation is playing.
 
@@ -103,3 +103,6 @@ Stops the currently playing animation.
 
 Transitions from the current state to another one, following the shortest path.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

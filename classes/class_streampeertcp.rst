@@ -26,13 +26,13 @@ Methods
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`disconnect_from_host<class_StreamPeerTCP_method_disconnect_from_host>` **(** **)**                                                    |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`              | :ref:`get_connected_host<class_StreamPeerTCP_method_get_connected_host>` **(** **)** const                                                  |
+| :ref:`String<class_String>`              | :ref:`get_connected_host<class_StreamPeerTCP_method_get_connected_host>` **(** **)** |const|                                                |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`get_connected_port<class_StreamPeerTCP_method_get_connected_port>` **(** **)** const                                                  |
+| :ref:`int<class_int>`                    | :ref:`get_connected_port<class_StreamPeerTCP_method_get_connected_port>` **(** **)** |const|                                                |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Status<enum_StreamPeerTCP_Status>` | :ref:`get_status<class_StreamPeerTCP_method_get_status>` **(** **)**                                                                        |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_connected_to_host<class_StreamPeerTCP_method_is_connected_to_host>` **(** **)** const                                              |
+| :ref:`bool<class_bool>`                  | :ref:`is_connected_to_host<class_StreamPeerTCP_method_is_connected_to_host>` **(** **)** |const|                                            |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_no_delay<class_StreamPeerTCP_method_set_no_delay>` **(** :ref:`bool<class_bool>` enabled **)**                                    |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -81,7 +81,7 @@ Disconnects from host.
 
 .. _class_StreamPeerTCP_method_get_connected_host:
 
-- :ref:`String<class_String>` **get_connected_host** **(** **)** const
+- :ref:`String<class_String>` **get_connected_host** **(** **)** |const|
 
 Returns the IP of this peer.
 
@@ -89,7 +89,7 @@ Returns the IP of this peer.
 
 .. _class_StreamPeerTCP_method_get_connected_port:
 
-- :ref:`int<class_int>` **get_connected_port** **(** **)** const
+- :ref:`int<class_int>` **get_connected_port** **(** **)** |const|
 
 Returns the port of this peer.
 
@@ -105,7 +105,7 @@ Returns the status of the connection, see :ref:`Status<enum_StreamPeerTCP_Status
 
 .. _class_StreamPeerTCP_method_is_connected_to_host:
 
-- :ref:`bool<class_bool>` **is_connected_to_host** **(** **)** const
+- :ref:`bool<class_bool>` **is_connected_to_host** **(** **)** |const|
 
 Returns ``true`` if this peer is currently connected to a host, ``false`` otherwise.
 
@@ -119,3 +119,6 @@ Disables Nagle's algorithm to improve latency for small packets.
 
 **Note:** For applications that send large packets or need to transfer a lot of data, this can decrease the total available bandwidth.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

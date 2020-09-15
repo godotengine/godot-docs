@@ -39,7 +39,7 @@ Methods
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`create_from_image<class_ImageTexture_method_create_from_image>` **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` flags=7 **)**                                              |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Format<enum_Image_Format>`      | :ref:`get_format<class_ImageTexture_method_get_format>` **(** **)** const                                                                                                                     |
+| :ref:`Format<enum_Image_Format>`      | :ref:`get_format<class_ImageTexture_method_get_format>` **(** **)** |const|                                                                                                                   |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load<class_ImageTexture_method_load>` **(** :ref:`String<class_String>` path **)**                                                                                                      |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -123,7 +123,7 @@ Create a new ``ImageTexture`` from an :ref:`Image<class_Image>` with ``flags`` f
 
 .. _class_ImageTexture_method_get_format:
 
-- :ref:`Format<enum_Image_Format>` **get_format** **(** **)** const
+- :ref:`Format<enum_Image_Format>` **get_format** **(** **)** |const|
 
 Returns the format of the ``ImageTexture``, one of :ref:`Format<enum_Image_Format>`.
 
@@ -151,3 +151,6 @@ Sets the :ref:`Image<class_Image>` of this ``ImageTexture``.
 
 Resizes the ``ImageTexture`` to the specified dimensions.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

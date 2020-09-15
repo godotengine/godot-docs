@@ -790,13 +790,13 @@ enum **KeyList**:
 
 - **KEY_DIRECTION_R** = **16777267** --- Right Direction key.
 
-- **KEY_BACK** = **16777280** --- Back key.
+- **KEY_BACK** = **16777280** --- Media back key. Not to be confused with the Back button on an Android device.
 
-- **KEY_FORWARD** = **16777281** --- Forward key.
+- **KEY_FORWARD** = **16777281** --- Media forward key.
 
-- **KEY_STOP** = **16777282** --- Stop key.
+- **KEY_STOP** = **16777282** --- Media stop key.
 
-- **KEY_REFRESH** = **16777283** --- Refresh key.
+- **KEY_REFRESH** = **16777283** --- Media refresh key.
 
 - **KEY_VOLUMEDOWN** = **16777284** --- Volume down key.
 
@@ -2417,3 +2417,6 @@ The :ref:`VisualScriptEditor<class_VisualScriptEditor>` singleton.
 
 The :ref:`VisualServer<class_VisualServer>` singleton.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

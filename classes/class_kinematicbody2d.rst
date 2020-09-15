@@ -42,19 +42,19 @@ Methods
 -------
 
 +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                           | :ref:`get_floor_normal<class_KinematicBody2D_method_get_floor_normal>` **(** **)** const                                                                                                                                                                                                                                                                                                                                             |
+| :ref:`Vector2<class_Vector2>`                           | :ref:`get_floor_normal<class_KinematicBody2D_method_get_floor_normal>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                           |
 +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                           | :ref:`get_floor_velocity<class_KinematicBody2D_method_get_floor_velocity>` **(** **)** const                                                                                                                                                                                                                                                                                                                                         |
+| :ref:`Vector2<class_Vector2>`                           | :ref:`get_floor_velocity<class_KinematicBody2D_method_get_floor_velocity>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                       |
 +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`KinematicCollision2D<class_KinematicCollision2D>` | :ref:`get_slide_collision<class_KinematicBody2D_method_get_slide_collision>` **(** :ref:`int<class_int>` slide_idx **)**                                                                                                                                                                                                                                                                                                             |
 +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                   | :ref:`get_slide_count<class_KinematicBody2D_method_get_slide_count>` **(** **)** const                                                                                                                                                                                                                                                                                                                                               |
+| :ref:`int<class_int>`                                   | :ref:`get_slide_count<class_KinematicBody2D_method_get_slide_count>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                             |
 +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                 | :ref:`is_on_ceiling<class_KinematicBody2D_method_is_on_ceiling>` **(** **)** const                                                                                                                                                                                                                                                                                                                                                   |
+| :ref:`bool<class_bool>`                                 | :ref:`is_on_ceiling<class_KinematicBody2D_method_is_on_ceiling>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                 |
 +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                 | :ref:`is_on_floor<class_KinematicBody2D_method_is_on_floor>` **(** **)** const                                                                                                                                                                                                                                                                                                                                                       |
+| :ref:`bool<class_bool>`                                 | :ref:`is_on_floor<class_KinematicBody2D_method_is_on_floor>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                     |
 +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                 | :ref:`is_on_wall<class_KinematicBody2D_method_is_on_wall>` **(** **)** const                                                                                                                                                                                                                                                                                                                                                         |
+| :ref:`bool<class_bool>`                                 | :ref:`is_on_wall<class_KinematicBody2D_method_is_on_wall>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                       |
 +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`KinematicCollision2D<class_KinematicCollision2D>` | :ref:`move_and_collide<class_KinematicBody2D_method_move_and_collide>` **(** :ref:`Vector2<class_Vector2>` rel_vec, :ref:`bool<class_bool>` infinite_inertia=true, :ref:`bool<class_bool>` exclude_raycast_shapes=true, :ref:`bool<class_bool>` test_only=false **)**                                                                                                                                                                |
 +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -103,7 +103,7 @@ Method Descriptions
 
 .. _class_KinematicBody2D_method_get_floor_normal:
 
-- :ref:`Vector2<class_Vector2>` **get_floor_normal** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_floor_normal** **(** **)** |const|
 
 Returns the surface normal of the floor at the last collision point. Only valid after calling :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>` or :ref:`move_and_slide_with_snap<class_KinematicBody2D_method_move_and_slide_with_snap>` and when :ref:`is_on_floor<class_KinematicBody2D_method_is_on_floor>` returns ``true``.
 
@@ -111,7 +111,7 @@ Returns the surface normal of the floor at the last collision point. Only valid 
 
 .. _class_KinematicBody2D_method_get_floor_velocity:
 
-- :ref:`Vector2<class_Vector2>` **get_floor_velocity** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_floor_velocity** **(** **)** |const|
 
 Returns the linear velocity of the floor at the last collision point. Only valid after calling :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>` or :ref:`move_and_slide_with_snap<class_KinematicBody2D_method_move_and_slide_with_snap>` and when :ref:`is_on_floor<class_KinematicBody2D_method_is_on_floor>` returns ``true``.
 
@@ -135,7 +135,7 @@ Returns a :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contain
 
 .. _class_KinematicBody2D_method_get_slide_count:
 
-- :ref:`int<class_int>` **get_slide_count** **(** **)** const
+- :ref:`int<class_int>` **get_slide_count** **(** **)** |const|
 
 Returns the number of times the body collided and changed direction during the last call to :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>`.
 
@@ -143,7 +143,7 @@ Returns the number of times the body collided and changed direction during the l
 
 .. _class_KinematicBody2D_method_is_on_ceiling:
 
-- :ref:`bool<class_bool>` **is_on_ceiling** **(** **)** const
+- :ref:`bool<class_bool>` **is_on_ceiling** **(** **)** |const|
 
 Returns ``true`` if the body is on the ceiling. Only updates when calling :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>`.
 
@@ -151,7 +151,7 @@ Returns ``true`` if the body is on the ceiling. Only updates when calling :ref:`
 
 .. _class_KinematicBody2D_method_is_on_floor:
 
-- :ref:`bool<class_bool>` **is_on_floor** **(** **)** const
+- :ref:`bool<class_bool>` **is_on_floor** **(** **)** |const|
 
 Returns ``true`` if the body is on the floor. Only updates when calling :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>`.
 
@@ -159,7 +159,7 @@ Returns ``true`` if the body is on the floor. Only updates when calling :ref:`mo
 
 .. _class_KinematicBody2D_method_is_on_wall:
 
-- :ref:`bool<class_bool>` **is_on_wall** **(** **)** const
+- :ref:`bool<class_bool>` **is_on_wall** **(** **)** |const|
 
 Returns ``true`` if the body is on a wall. Only updates when calling :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>`.
 
@@ -215,3 +215,6 @@ As long as the ``snap`` vector is in contact with the ground, the body will rema
 
 Checks for collisions without moving the body. Virtually sets the node's position, scale and rotation to that of the given :ref:`Transform2D<class_Transform2D>`, then tries to move the body along the vector ``rel_vec``. Returns ``true`` if a collision would occur.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

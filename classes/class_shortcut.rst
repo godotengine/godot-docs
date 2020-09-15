@@ -30,13 +30,13 @@ Properties
 Methods
 -------
 
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_as_text<class_ShortCut_method_get_as_text>` **(** **)** const                                           |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`is_shortcut<class_ShortCut_method_is_shortcut>` **(** :ref:`InputEvent<class_InputEvent>` event **)** const |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`is_valid<class_ShortCut_method_is_valid>` **(** **)** const                                                 |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------+
++-----------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_as_text<class_ShortCut_method_get_as_text>` **(** **)** |const|                                           |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`is_shortcut<class_ShortCut_method_is_shortcut>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |const| |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`is_valid<class_ShortCut_method_is_valid>` **(** **)** |const|                                                 |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -60,7 +60,7 @@ Method Descriptions
 
 .. _class_ShortCut_method_get_as_text:
 
-- :ref:`String<class_String>` **get_as_text** **(** **)** const
+- :ref:`String<class_String>` **get_as_text** **(** **)** |const|
 
 Returns the shortcut's :ref:`InputEvent<class_InputEvent>` as a :ref:`String<class_String>`.
 
@@ -68,7 +68,7 @@ Returns the shortcut's :ref:`InputEvent<class_InputEvent>` as a :ref:`String<cla
 
 .. _class_ShortCut_method_is_shortcut:
 
-- :ref:`bool<class_bool>` **is_shortcut** **(** :ref:`InputEvent<class_InputEvent>` event **)** const
+- :ref:`bool<class_bool>` **is_shortcut** **(** :ref:`InputEvent<class_InputEvent>` event **)** |const|
 
 Returns ``true`` if the shortcut's :ref:`InputEvent<class_InputEvent>` equals ``event``.
 
@@ -76,7 +76,10 @@ Returns ``true`` if the shortcut's :ref:`InputEvent<class_InputEvent>` equals ``
 
 .. _class_ShortCut_method_is_valid:
 
-- :ref:`bool<class_bool>` **is_valid** **(** **)** const
+- :ref:`bool<class_bool>` **is_valid** **(** **)** |const|
 
 If ``true``, this shortcut is valid.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

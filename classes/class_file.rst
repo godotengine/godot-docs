@@ -55,53 +55,53 @@ Methods
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`close<class_File_method_close>` **(** **)**                                                                                                                                                                              |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`eof_reached<class_File_method_eof_reached>` **(** **)** const                                                                                                                                                            |
+| :ref:`bool<class_bool>`                       | :ref:`eof_reached<class_File_method_eof_reached>` **(** **)** |const|                                                                                                                                                          |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`file_exists<class_File_method_file_exists>` **(** :ref:`String<class_String>` path **)** const                                                                                                                           |
+| :ref:`bool<class_bool>`                       | :ref:`file_exists<class_File_method_file_exists>` **(** :ref:`String<class_String>` path **)** |const|                                                                                                                         |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`get_16<class_File_method_get_16>` **(** **)** const                                                                                                                                                                      |
+| :ref:`int<class_int>`                         | :ref:`get_16<class_File_method_get_16>` **(** **)** |const|                                                                                                                                                                    |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`get_32<class_File_method_get_32>` **(** **)** const                                                                                                                                                                      |
+| :ref:`int<class_int>`                         | :ref:`get_32<class_File_method_get_32>` **(** **)** |const|                                                                                                                                                                    |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`get_64<class_File_method_get_64>` **(** **)** const                                                                                                                                                                      |
+| :ref:`int<class_int>`                         | :ref:`get_64<class_File_method_get_64>` **(** **)** |const|                                                                                                                                                                    |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`get_8<class_File_method_get_8>` **(** **)** const                                                                                                                                                                        |
+| :ref:`int<class_int>`                         | :ref:`get_8<class_File_method_get_8>` **(** **)** |const|                                                                                                                                                                      |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_as_text<class_File_method_get_as_text>` **(** **)** const                                                                                                                                                            |
+| :ref:`String<class_String>`                   | :ref:`get_as_text<class_File_method_get_as_text>` **(** **)** |const|                                                                                                                                                          |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>`     | :ref:`get_buffer<class_File_method_get_buffer>` **(** :ref:`int<class_int>` len **)** const                                                                                                                                    |
+| :ref:`PoolByteArray<class_PoolByteArray>`     | :ref:`get_buffer<class_File_method_get_buffer>` **(** :ref:`int<class_int>` len **)** |const|                                                                                                                                  |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_csv_line<class_File_method_get_csv_line>` **(** :ref:`String<class_String>` delim="," **)** const                                                                                                                    |
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_csv_line<class_File_method_get_csv_line>` **(** :ref:`String<class_String>` delim="," **)** |const|                                                                                                                  |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`get_double<class_File_method_get_double>` **(** **)** const                                                                                                                                                              |
+| :ref:`float<class_float>`                     | :ref:`get_double<class_File_method_get_double>` **(** **)** |const|                                                                                                                                                            |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`get_error<class_File_method_get_error>` **(** **)** const                                                                                                                                                                |
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`get_error<class_File_method_get_error>` **(** **)** |const|                                                                                                                                                              |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`get_float<class_File_method_get_float>` **(** **)** const                                                                                                                                                                |
+| :ref:`float<class_float>`                     | :ref:`get_float<class_File_method_get_float>` **(** **)** |const|                                                                                                                                                              |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`get_len<class_File_method_get_len>` **(** **)** const                                                                                                                                                                    |
+| :ref:`int<class_int>`                         | :ref:`get_len<class_File_method_get_len>` **(** **)** |const|                                                                                                                                                                  |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_line<class_File_method_get_line>` **(** **)** const                                                                                                                                                                  |
+| :ref:`String<class_String>`                   | :ref:`get_line<class_File_method_get_line>` **(** **)** |const|                                                                                                                                                                |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_md5<class_File_method_get_md5>` **(** :ref:`String<class_String>` path **)** const                                                                                                                                   |
+| :ref:`String<class_String>`                   | :ref:`get_md5<class_File_method_get_md5>` **(** :ref:`String<class_String>` path **)** |const|                                                                                                                                 |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`get_modified_time<class_File_method_get_modified_time>` **(** :ref:`String<class_String>` file **)** const                                                                                                               |
+| :ref:`int<class_int>`                         | :ref:`get_modified_time<class_File_method_get_modified_time>` **(** :ref:`String<class_String>` file **)** |const|                                                                                                             |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`get_pascal_string<class_File_method_get_pascal_string>` **(** **)**                                                                                                                                                      |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_path<class_File_method_get_path>` **(** **)** const                                                                                                                                                                  |
+| :ref:`String<class_String>`                   | :ref:`get_path<class_File_method_get_path>` **(** **)** |const|                                                                                                                                                                |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_path_absolute<class_File_method_get_path_absolute>` **(** **)** const                                                                                                                                                |
+| :ref:`String<class_String>`                   | :ref:`get_path_absolute<class_File_method_get_path_absolute>` **(** **)** |const|                                                                                                                                              |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`get_position<class_File_method_get_position>` **(** **)** const                                                                                                                                                          |
+| :ref:`int<class_int>`                         | :ref:`get_position<class_File_method_get_position>` **(** **)** |const|                                                                                                                                                        |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`get_real<class_File_method_get_real>` **(** **)** const                                                                                                                                                                  |
+| :ref:`float<class_float>`                     | :ref:`get_real<class_File_method_get_real>` **(** **)** |const|                                                                                                                                                                |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_sha256<class_File_method_get_sha256>` **(** :ref:`String<class_String>` path **)** const                                                                                                                             |
+| :ref:`String<class_String>`                   | :ref:`get_sha256<class_File_method_get_sha256>` **(** :ref:`String<class_String>` path **)** |const|                                                                                                                           |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`get_var<class_File_method_get_var>` **(** :ref:`bool<class_bool>` allow_objects=false **)** const                                                                                                                        |
+| :ref:`Variant<class_Variant>`                 | :ref:`get_var<class_File_method_get_var>` **(** :ref:`bool<class_bool>` allow_objects=false **)** |const|                                                                                                                      |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`is_open<class_File_method_is_open>` **(** **)** const                                                                                                                                                                    |
+| :ref:`bool<class_bool>`                       | :ref:`is_open<class_File_method_is_open>` **(** **)** |const|                                                                                                                                                                  |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`open<class_File_method_open>` **(** :ref:`String<class_String>` path, :ref:`ModeFlags<enum_File_ModeFlags>` flags **)**                                                                                                  |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -157,13 +157,13 @@ Enumerations
 
 enum **ModeFlags**:
 
-- **READ** = **1** --- Opens the file for read operations.
+- **READ** = **1** --- Opens the file for read operations. The cursor is positioned at the beginning of the file.
 
-- **WRITE** = **2** --- Opens the file for write operations. Create it if the file does not exist and truncate if it exists.
+- **WRITE** = **2** --- Opens the file for write operations. The file is created if it does not exist, and truncated if it does.
 
-- **READ_WRITE** = **3** --- Opens the file for read and write operations. Does not truncate the file.
+- **READ_WRITE** = **3** --- Opens the file for read and write operations. Does not truncate the file. The cursor is positioned at the beginning of the file.
 
-- **WRITE_READ** = **7** --- Opens the file for read and write operations. Create it if the file does not exist and truncate if it exists.
+- **WRITE_READ** = **7** --- Opens the file for read and write operations. The file is created if it does not exist, and truncated if it does. The cursor is positioned at the beginning of the file.
 
 ----
 
@@ -219,7 +219,7 @@ Closes the currently opened file.
 
 .. _class_File_method_eof_reached:
 
-- :ref:`bool<class_bool>` **eof_reached** **(** **)** const
+- :ref:`bool<class_bool>` **eof_reached** **(** **)** |const|
 
 Returns ``true`` if the file cursor has read past the end of the file.
 
@@ -229,7 +229,7 @@ Returns ``true`` if the file cursor has read past the end of the file.
 
 .. _class_File_method_file_exists:
 
-- :ref:`bool<class_bool>` **file_exists** **(** :ref:`String<class_String>` path **)** const
+- :ref:`bool<class_bool>` **file_exists** **(** :ref:`String<class_String>` path **)** |const|
 
 Returns ``true`` if the file exists in the given path.
 
@@ -239,7 +239,7 @@ Returns ``true`` if the file exists in the given path.
 
 .. _class_File_method_get_16:
 
-- :ref:`int<class_int>` **get_16** **(** **)** const
+- :ref:`int<class_int>` **get_16** **(** **)** |const|
 
 Returns the next 16 bits from the file as an integer. See :ref:`store_16<class_File_method_store_16>` for details on what values can be stored and retrieved this way.
 
@@ -247,7 +247,7 @@ Returns the next 16 bits from the file as an integer. See :ref:`store_16<class_F
 
 .. _class_File_method_get_32:
 
-- :ref:`int<class_int>` **get_32** **(** **)** const
+- :ref:`int<class_int>` **get_32** **(** **)** |const|
 
 Returns the next 32 bits from the file as an integer. See :ref:`store_32<class_File_method_store_32>` for details on what values can be stored and retrieved this way.
 
@@ -255,7 +255,7 @@ Returns the next 32 bits from the file as an integer. See :ref:`store_32<class_F
 
 .. _class_File_method_get_64:
 
-- :ref:`int<class_int>` **get_64** **(** **)** const
+- :ref:`int<class_int>` **get_64** **(** **)** |const|
 
 Returns the next 64 bits from the file as an integer. See :ref:`store_64<class_File_method_store_64>` for details on what values can be stored and retrieved this way.
 
@@ -263,7 +263,7 @@ Returns the next 64 bits from the file as an integer. See :ref:`store_64<class_F
 
 .. _class_File_method_get_8:
 
-- :ref:`int<class_int>` **get_8** **(** **)** const
+- :ref:`int<class_int>` **get_8** **(** **)** |const|
 
 Returns the next 8 bits from the file as an integer. See :ref:`store_8<class_File_method_store_8>` for details on what values can be stored and retrieved this way.
 
@@ -271,7 +271,7 @@ Returns the next 8 bits from the file as an integer. See :ref:`store_8<class_Fil
 
 .. _class_File_method_get_as_text:
 
-- :ref:`String<class_String>` **get_as_text** **(** **)** const
+- :ref:`String<class_String>` **get_as_text** **(** **)** |const|
 
 Returns the whole file as a :ref:`String<class_String>`.
 
@@ -281,7 +281,7 @@ Text is interpreted as being UTF-8 encoded.
 
 .. _class_File_method_get_buffer:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **get_buffer** **(** :ref:`int<class_int>` len **)** const
+- :ref:`PoolByteArray<class_PoolByteArray>` **get_buffer** **(** :ref:`int<class_int>` len **)** |const|
 
 Returns next ``len`` bytes of the file as a :ref:`PoolByteArray<class_PoolByteArray>`.
 
@@ -289,7 +289,7 @@ Returns next ``len`` bytes of the file as a :ref:`PoolByteArray<class_PoolByteAr
 
 .. _class_File_method_get_csv_line:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_csv_line** **(** :ref:`String<class_String>` delim="," **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_csv_line** **(** :ref:`String<class_String>` delim="," **)** |const|
 
 Returns the next value of the file in CSV (Comma-Separated Values) format. You can pass a different delimiter ``delim`` to use other than the default ``","`` (comma). This delimiter must be one-character long.
 
@@ -299,7 +299,7 @@ Text is interpreted as being UTF-8 encoded.
 
 .. _class_File_method_get_double:
 
-- :ref:`float<class_float>` **get_double** **(** **)** const
+- :ref:`float<class_float>` **get_double** **(** **)** |const|
 
 Returns the next 64 bits from the file as a floating-point number.
 
@@ -307,7 +307,7 @@ Returns the next 64 bits from the file as a floating-point number.
 
 .. _class_File_method_get_error:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **get_error** **(** **)** const
+- :ref:`Error<enum_@GlobalScope_Error>` **get_error** **(** **)** |const|
 
 Returns the last error that happened when trying to perform operations. Compare with the ``ERR_FILE_*`` constants from :ref:`Error<enum_@GlobalScope_Error>`.
 
@@ -315,7 +315,7 @@ Returns the last error that happened when trying to perform operations. Compare 
 
 .. _class_File_method_get_float:
 
-- :ref:`float<class_float>` **get_float** **(** **)** const
+- :ref:`float<class_float>` **get_float** **(** **)** |const|
 
 Returns the next 32 bits from the file as a floating-point number.
 
@@ -323,7 +323,7 @@ Returns the next 32 bits from the file as a floating-point number.
 
 .. _class_File_method_get_len:
 
-- :ref:`int<class_int>` **get_len** **(** **)** const
+- :ref:`int<class_int>` **get_len** **(** **)** |const|
 
 Returns the size of the file in bytes.
 
@@ -331,7 +331,7 @@ Returns the size of the file in bytes.
 
 .. _class_File_method_get_line:
 
-- :ref:`String<class_String>` **get_line** **(** **)** const
+- :ref:`String<class_String>` **get_line** **(** **)** |const|
 
 Returns the next line of the file as a :ref:`String<class_String>`.
 
@@ -341,7 +341,7 @@ Text is interpreted as being UTF-8 encoded.
 
 .. _class_File_method_get_md5:
 
-- :ref:`String<class_String>` **get_md5** **(** :ref:`String<class_String>` path **)** const
+- :ref:`String<class_String>` **get_md5** **(** :ref:`String<class_String>` path **)** |const|
 
 Returns an MD5 String representing the file at the given path or an empty :ref:`String<class_String>` on failure.
 
@@ -349,7 +349,7 @@ Returns an MD5 String representing the file at the given path or an empty :ref:`
 
 .. _class_File_method_get_modified_time:
 
-- :ref:`int<class_int>` **get_modified_time** **(** :ref:`String<class_String>` file **)** const
+- :ref:`int<class_int>` **get_modified_time** **(** :ref:`String<class_String>` file **)** |const|
 
 Returns the last time the ``file`` was modified in unix timestamp format or returns a :ref:`String<class_String>` "ERROR IN ``file``". This unix timestamp can be converted to datetime by using :ref:`OS.get_datetime_from_unix_time<class_OS_method_get_datetime_from_unix_time>`.
 
@@ -367,7 +367,7 @@ Text is interpreted as being UTF-8 encoded.
 
 .. _class_File_method_get_path:
 
-- :ref:`String<class_String>` **get_path** **(** **)** const
+- :ref:`String<class_String>` **get_path** **(** **)** |const|
 
 Returns the path as a :ref:`String<class_String>` for the current open file.
 
@@ -375,7 +375,7 @@ Returns the path as a :ref:`String<class_String>` for the current open file.
 
 .. _class_File_method_get_path_absolute:
 
-- :ref:`String<class_String>` **get_path_absolute** **(** **)** const
+- :ref:`String<class_String>` **get_path_absolute** **(** **)** |const|
 
 Returns the absolute path as a :ref:`String<class_String>` for the current open file.
 
@@ -383,7 +383,7 @@ Returns the absolute path as a :ref:`String<class_String>` for the current open 
 
 .. _class_File_method_get_position:
 
-- :ref:`int<class_int>` **get_position** **(** **)** const
+- :ref:`int<class_int>` **get_position** **(** **)** |const|
 
 Returns the file cursor's position.
 
@@ -391,7 +391,7 @@ Returns the file cursor's position.
 
 .. _class_File_method_get_real:
 
-- :ref:`float<class_float>` **get_real** **(** **)** const
+- :ref:`float<class_float>` **get_real** **(** **)** |const|
 
 Returns the next bits from the file as a floating-point number.
 
@@ -399,7 +399,7 @@ Returns the next bits from the file as a floating-point number.
 
 .. _class_File_method_get_sha256:
 
-- :ref:`String<class_String>` **get_sha256** **(** :ref:`String<class_String>` path **)** const
+- :ref:`String<class_String>` **get_sha256** **(** :ref:`String<class_String>` path **)** |const|
 
 Returns a SHA-256 :ref:`String<class_String>` representing the file at the given path or an empty :ref:`String<class_String>` on failure.
 
@@ -407,7 +407,7 @@ Returns a SHA-256 :ref:`String<class_String>` representing the file at the given
 
 .. _class_File_method_get_var:
 
-- :ref:`Variant<class_Variant>` **get_var** **(** :ref:`bool<class_bool>` allow_objects=false **)** const
+- :ref:`Variant<class_Variant>` **get_var** **(** :ref:`bool<class_bool>` allow_objects=false **)** |const|
 
 Returns the next :ref:`Variant<class_Variant>` value from the file. If ``allow_objects`` is ``true``, decoding objects is allowed.
 
@@ -417,7 +417,7 @@ Returns the next :ref:`Variant<class_Variant>` value from the file. If ``allow_o
 
 .. _class_File_method_is_open:
 
-- :ref:`bool<class_bool>` **is_open** **(** **)** const
+- :ref:`bool<class_bool>` **is_open** **(** **)** |const|
 
 Returns ``true`` if the file is currently opened.
 
@@ -444,6 +444,8 @@ Opens a compressed file for reading or writing.
 - :ref:`Error<enum_@GlobalScope_Error>` **open_encrypted** **(** :ref:`String<class_String>` path, :ref:`ModeFlags<enum_File_ModeFlags>` mode_flags, :ref:`PoolByteArray<class_PoolByteArray>` key **)**
 
 Opens an encrypted file in write or read mode. You need to pass a binary key to encrypt/decrypt it.
+
+**Note:** The provided key must be 32 bytes long.
 
 ----
 
@@ -616,3 +618,6 @@ Text will be encoded as UTF-8.
 
 Stores any Variant value in the file. If ``full_objects`` is ``true``, encoding objects is allowed (and can potentially include code).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

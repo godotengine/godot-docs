@@ -63,3 +63,6 @@ The LightOccluder2D's light mask. The LightOccluder2D will cast shadows only fro
 
 The :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` used to compute the shadow.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

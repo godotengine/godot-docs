@@ -41,9 +41,9 @@ Methods
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`disconnect_from_host<class_WebSocketClient_method_disconnect_from_host>` **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**                                                                                                                                                      |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_connected_host<class_WebSocketClient_method_get_connected_host>` **(** **)** const                                                                                                                                                                                                                           |
+| :ref:`String<class_String>`           | :ref:`get_connected_host<class_WebSocketClient_method_get_connected_host>` **(** **)** |const|                                                                                                                                                                                                                         |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_connected_port<class_WebSocketClient_method_get_connected_port>` **(** **)** const                                                                                                                                                                                                                           |
+| :ref:`int<class_int>`                 | :ref:`get_connected_port<class_WebSocketClient_method_get_connected_port>` **(** **)** |const|                                                                                                                                                                                                                         |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -151,7 +151,7 @@ Disconnects this client from the connected host. See :ref:`WebSocketPeer.close<c
 
 .. _class_WebSocketClient_method_get_connected_host:
 
-- :ref:`String<class_String>` **get_connected_host** **(** **)** const
+- :ref:`String<class_String>` **get_connected_host** **(** **)** |const|
 
 Return the IP address of the currently connected host.
 
@@ -159,7 +159,10 @@ Return the IP address of the currently connected host.
 
 .. _class_WebSocketClient_method_get_connected_port:
 
-- :ref:`int<class_int>` **get_connected_port** **(** **)** const
+- :ref:`int<class_int>` **get_connected_port** **(** **)** |const|
 
 Return the IP port of the currently connected host.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

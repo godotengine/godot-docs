@@ -48,9 +48,9 @@ Methods
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                  | :ref:`capture_set_device<class_AudioServer_method_capture_set_device>` **(** :ref:`String<class_String>` name **)**                                                                           |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AudioBusLayout<class_AudioBusLayout>`           | :ref:`generate_bus_layout<class_AudioServer_method_generate_bus_layout>` **(** **)** const                                                                                                    |
+| :ref:`AudioBusLayout<class_AudioBusLayout>`           | :ref:`generate_bus_layout<class_AudioServer_method_generate_bus_layout>` **(** **)** |const|                                                                                                  |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                 | :ref:`get_bus_channels<class_AudioServer_method_get_bus_channels>` **(** :ref:`int<class_int>` bus_idx **)** const                                                                            |
+| :ref:`int<class_int>`                                 | :ref:`get_bus_channels<class_AudioServer_method_get_bus_channels>` **(** :ref:`int<class_int>` bus_idx **)** |const|                                                                          |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AudioEffect<class_AudioEffect>`                 | :ref:`get_bus_effect<class_AudioServer_method_get_bus_effect>` **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx **)**                                                    |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -58,37 +58,37 @@ Methods
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AudioEffectInstance<class_AudioEffectInstance>` | :ref:`get_bus_effect_instance<class_AudioServer_method_get_bus_effect_instance>` **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx, :ref:`int<class_int>` channel=0 **)** |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                 | :ref:`get_bus_index<class_AudioServer_method_get_bus_index>` **(** :ref:`String<class_String>` bus_name **)** const                                                                           |
+| :ref:`int<class_int>`                                 | :ref:`get_bus_index<class_AudioServer_method_get_bus_index>` **(** :ref:`String<class_String>` bus_name **)** |const|                                                                         |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                           | :ref:`get_bus_name<class_AudioServer_method_get_bus_name>` **(** :ref:`int<class_int>` bus_idx **)** const                                                                                    |
+| :ref:`String<class_String>`                           | :ref:`get_bus_name<class_AudioServer_method_get_bus_name>` **(** :ref:`int<class_int>` bus_idx **)** |const|                                                                                  |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                             | :ref:`get_bus_peak_volume_left_db<class_AudioServer_method_get_bus_peak_volume_left_db>` **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` channel **)** const                       |
+| :ref:`float<class_float>`                             | :ref:`get_bus_peak_volume_left_db<class_AudioServer_method_get_bus_peak_volume_left_db>` **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` channel **)** |const|                     |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                             | :ref:`get_bus_peak_volume_right_db<class_AudioServer_method_get_bus_peak_volume_right_db>` **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` channel **)** const                     |
+| :ref:`float<class_float>`                             | :ref:`get_bus_peak_volume_right_db<class_AudioServer_method_get_bus_peak_volume_right_db>` **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` channel **)** |const|                   |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                           | :ref:`get_bus_send<class_AudioServer_method_get_bus_send>` **(** :ref:`int<class_int>` bus_idx **)** const                                                                                    |
+| :ref:`String<class_String>`                           | :ref:`get_bus_send<class_AudioServer_method_get_bus_send>` **(** :ref:`int<class_int>` bus_idx **)** |const|                                                                                  |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                             | :ref:`get_bus_volume_db<class_AudioServer_method_get_bus_volume_db>` **(** :ref:`int<class_int>` bus_idx **)** const                                                                          |
+| :ref:`float<class_float>`                             | :ref:`get_bus_volume_db<class_AudioServer_method_get_bus_volume_db>` **(** :ref:`int<class_int>` bus_idx **)** |const|                                                                        |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                             | :ref:`get_device_list<class_AudioServer_method_get_device_list>` **(** **)**                                                                                                                  |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                             | :ref:`get_mix_rate<class_AudioServer_method_get_mix_rate>` **(** **)** const                                                                                                                  |
+| :ref:`float<class_float>`                             | :ref:`get_mix_rate<class_AudioServer_method_get_mix_rate>` **(** **)** |const|                                                                                                                |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                             | :ref:`get_output_latency<class_AudioServer_method_get_output_latency>` **(** **)** const                                                                                                      |
+| :ref:`float<class_float>`                             | :ref:`get_output_latency<class_AudioServer_method_get_output_latency>` **(** **)** |const|                                                                                                    |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>`      | :ref:`get_speaker_mode<class_AudioServer_method_get_speaker_mode>` **(** **)** const                                                                                                          |
+| :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>`      | :ref:`get_speaker_mode<class_AudioServer_method_get_speaker_mode>` **(** **)** |const|                                                                                                        |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                             | :ref:`get_time_since_last_mix<class_AudioServer_method_get_time_since_last_mix>` **(** **)** const                                                                                            |
+| :ref:`float<class_float>`                             | :ref:`get_time_since_last_mix<class_AudioServer_method_get_time_since_last_mix>` **(** **)** |const|                                                                                          |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                             | :ref:`get_time_to_next_mix<class_AudioServer_method_get_time_to_next_mix>` **(** **)** const                                                                                                  |
+| :ref:`float<class_float>`                             | :ref:`get_time_to_next_mix<class_AudioServer_method_get_time_to_next_mix>` **(** **)** |const|                                                                                                |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                               | :ref:`is_bus_bypassing_effects<class_AudioServer_method_is_bus_bypassing_effects>` **(** :ref:`int<class_int>` bus_idx **)** const                                                            |
+| :ref:`bool<class_bool>`                               | :ref:`is_bus_bypassing_effects<class_AudioServer_method_is_bus_bypassing_effects>` **(** :ref:`int<class_int>` bus_idx **)** |const|                                                          |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                               | :ref:`is_bus_effect_enabled<class_AudioServer_method_is_bus_effect_enabled>` **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx **)** const                                |
+| :ref:`bool<class_bool>`                               | :ref:`is_bus_effect_enabled<class_AudioServer_method_is_bus_effect_enabled>` **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx **)** |const|                              |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                               | :ref:`is_bus_mute<class_AudioServer_method_is_bus_mute>` **(** :ref:`int<class_int>` bus_idx **)** const                                                                                      |
+| :ref:`bool<class_bool>`                               | :ref:`is_bus_mute<class_AudioServer_method_is_bus_mute>` **(** :ref:`int<class_int>` bus_idx **)** |const|                                                                                    |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                               | :ref:`is_bus_solo<class_AudioServer_method_is_bus_solo>` **(** :ref:`int<class_int>` bus_idx **)** const                                                                                      |
+| :ref:`bool<class_bool>`                               | :ref:`is_bus_solo<class_AudioServer_method_is_bus_solo>` **(** :ref:`int<class_int>` bus_idx **)** |const|                                                                                    |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                  | :ref:`lock<class_AudioServer_method_lock>` **(** **)**                                                                                                                                        |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -245,7 +245,7 @@ Sets which audio input device is used for audio capture.
 
 .. _class_AudioServer_method_generate_bus_layout:
 
-- :ref:`AudioBusLayout<class_AudioBusLayout>` **generate_bus_layout** **(** **)** const
+- :ref:`AudioBusLayout<class_AudioBusLayout>` **generate_bus_layout** **(** **)** |const|
 
 Generates an :ref:`AudioBusLayout<class_AudioBusLayout>` using the available buses and effects.
 
@@ -253,7 +253,7 @@ Generates an :ref:`AudioBusLayout<class_AudioBusLayout>` using the available bus
 
 .. _class_AudioServer_method_get_bus_channels:
 
-- :ref:`int<class_int>` **get_bus_channels** **(** :ref:`int<class_int>` bus_idx **)** const
+- :ref:`int<class_int>` **get_bus_channels** **(** :ref:`int<class_int>` bus_idx **)** |const|
 
 Returns the amount of channels of the bus at index ``bus_idx``.
 
@@ -285,7 +285,7 @@ Returns the :ref:`AudioEffectInstance<class_AudioEffectInstance>` assigned to th
 
 .. _class_AudioServer_method_get_bus_index:
 
-- :ref:`int<class_int>` **get_bus_index** **(** :ref:`String<class_String>` bus_name **)** const
+- :ref:`int<class_int>` **get_bus_index** **(** :ref:`String<class_String>` bus_name **)** |const|
 
 Returns the index of the bus with the name ``bus_name``.
 
@@ -293,7 +293,7 @@ Returns the index of the bus with the name ``bus_name``.
 
 .. _class_AudioServer_method_get_bus_name:
 
-- :ref:`String<class_String>` **get_bus_name** **(** :ref:`int<class_int>` bus_idx **)** const
+- :ref:`String<class_String>` **get_bus_name** **(** :ref:`int<class_int>` bus_idx **)** |const|
 
 Returns the name of the bus with the index ``bus_idx``.
 
@@ -301,7 +301,7 @@ Returns the name of the bus with the index ``bus_idx``.
 
 .. _class_AudioServer_method_get_bus_peak_volume_left_db:
 
-- :ref:`float<class_float>` **get_bus_peak_volume_left_db** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` channel **)** const
+- :ref:`float<class_float>` **get_bus_peak_volume_left_db** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` channel **)** |const|
 
 Returns the peak volume of the left speaker at bus index ``bus_idx`` and channel index ``channel``.
 
@@ -309,7 +309,7 @@ Returns the peak volume of the left speaker at bus index ``bus_idx`` and channel
 
 .. _class_AudioServer_method_get_bus_peak_volume_right_db:
 
-- :ref:`float<class_float>` **get_bus_peak_volume_right_db** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` channel **)** const
+- :ref:`float<class_float>` **get_bus_peak_volume_right_db** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` channel **)** |const|
 
 Returns the peak volume of the right speaker at bus index ``bus_idx`` and channel index ``channel``.
 
@@ -317,7 +317,7 @@ Returns the peak volume of the right speaker at bus index ``bus_idx`` and channe
 
 .. _class_AudioServer_method_get_bus_send:
 
-- :ref:`String<class_String>` **get_bus_send** **(** :ref:`int<class_int>` bus_idx **)** const
+- :ref:`String<class_String>` **get_bus_send** **(** :ref:`int<class_int>` bus_idx **)** |const|
 
 Returns the name of the bus that the bus at index ``bus_idx`` sends to.
 
@@ -325,7 +325,7 @@ Returns the name of the bus that the bus at index ``bus_idx`` sends to.
 
 .. _class_AudioServer_method_get_bus_volume_db:
 
-- :ref:`float<class_float>` **get_bus_volume_db** **(** :ref:`int<class_int>` bus_idx **)** const
+- :ref:`float<class_float>` **get_bus_volume_db** **(** :ref:`int<class_int>` bus_idx **)** |const|
 
 Returns the volume of the bus at index ``bus_idx`` in dB.
 
@@ -341,7 +341,7 @@ Returns the names of all audio devices detected on the system.
 
 .. _class_AudioServer_method_get_mix_rate:
 
-- :ref:`float<class_float>` **get_mix_rate** **(** **)** const
+- :ref:`float<class_float>` **get_mix_rate** **(** **)** |const|
 
 Returns the sample rate at the output of the ``AudioServer``.
 
@@ -349,7 +349,7 @@ Returns the sample rate at the output of the ``AudioServer``.
 
 .. _class_AudioServer_method_get_output_latency:
 
-- :ref:`float<class_float>` **get_output_latency** **(** **)** const
+- :ref:`float<class_float>` **get_output_latency** **(** **)** |const|
 
 Returns the audio driver's output latency.
 
@@ -357,7 +357,7 @@ Returns the audio driver's output latency.
 
 .. _class_AudioServer_method_get_speaker_mode:
 
-- :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>` **get_speaker_mode** **(** **)** const
+- :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>` **get_speaker_mode** **(** **)** |const|
 
 Returns the speaker configuration.
 
@@ -365,7 +365,7 @@ Returns the speaker configuration.
 
 .. _class_AudioServer_method_get_time_since_last_mix:
 
-- :ref:`float<class_float>` **get_time_since_last_mix** **(** **)** const
+- :ref:`float<class_float>` **get_time_since_last_mix** **(** **)** |const|
 
 Returns the relative time since the last mix occurred.
 
@@ -373,7 +373,7 @@ Returns the relative time since the last mix occurred.
 
 .. _class_AudioServer_method_get_time_to_next_mix:
 
-- :ref:`float<class_float>` **get_time_to_next_mix** **(** **)** const
+- :ref:`float<class_float>` **get_time_to_next_mix** **(** **)** |const|
 
 Returns the relative time until the next mix occurs.
 
@@ -381,7 +381,7 @@ Returns the relative time until the next mix occurs.
 
 .. _class_AudioServer_method_is_bus_bypassing_effects:
 
-- :ref:`bool<class_bool>` **is_bus_bypassing_effects** **(** :ref:`int<class_int>` bus_idx **)** const
+- :ref:`bool<class_bool>` **is_bus_bypassing_effects** **(** :ref:`int<class_int>` bus_idx **)** |const|
 
 If ``true``, the bus at index ``bus_idx`` is bypassing effects.
 
@@ -389,7 +389,7 @@ If ``true``, the bus at index ``bus_idx`` is bypassing effects.
 
 .. _class_AudioServer_method_is_bus_effect_enabled:
 
-- :ref:`bool<class_bool>` **is_bus_effect_enabled** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx **)** const
+- :ref:`bool<class_bool>` **is_bus_effect_enabled** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx **)** |const|
 
 If ``true``, the effect at index ``effect_idx`` on the bus at index ``bus_idx`` is enabled.
 
@@ -397,7 +397,7 @@ If ``true``, the effect at index ``effect_idx`` on the bus at index ``bus_idx`` 
 
 .. _class_AudioServer_method_is_bus_mute:
 
-- :ref:`bool<class_bool>` **is_bus_mute** **(** :ref:`int<class_int>` bus_idx **)** const
+- :ref:`bool<class_bool>` **is_bus_mute** **(** :ref:`int<class_int>` bus_idx **)** |const|
 
 If ``true``, the bus at index ``bus_idx`` is muted.
 
@@ -405,7 +405,7 @@ If ``true``, the bus at index ``bus_idx`` is muted.
 
 .. _class_AudioServer_method_is_bus_solo:
 
-- :ref:`bool<class_bool>` **is_bus_solo** **(** :ref:`int<class_int>` bus_idx **)** const
+- :ref:`bool<class_bool>` **is_bus_solo** **(** :ref:`int<class_int>` bus_idx **)** |const|
 
 If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
@@ -523,3 +523,6 @@ Swaps the position of two effects in bus ``bus_idx``.
 
 Unlocks the audio driver's main loop. (After locking it, you should always unlock it.)
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -41,23 +41,23 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`ensure_tab_visible<class_Tabs_method_ensure_tab_visible>` **(** :ref:`int<class_int>` idx **)**                                   |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_offset_buttons_visible<class_Tabs_method_get_offset_buttons_visible>` **(** **)** const                                       |
+| :ref:`bool<class_bool>`       | :ref:`get_offset_buttons_visible<class_Tabs_method_get_offset_buttons_visible>` **(** **)** |const|                                     |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_select_with_rmb<class_Tabs_method_get_select_with_rmb>` **(** **)** const                                                     |
+| :ref:`bool<class_bool>`       | :ref:`get_select_with_rmb<class_Tabs_method_get_select_with_rmb>` **(** **)** |const|                                                   |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_tab_count<class_Tabs_method_get_tab_count>` **(** **)** const                                                                 |
+| :ref:`int<class_int>`         | :ref:`get_tab_count<class_Tabs_method_get_tab_count>` **(** **)** |const|                                                               |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_tab_disabled<class_Tabs_method_get_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** const                             |
+| :ref:`bool<class_bool>`       | :ref:`get_tab_disabled<class_Tabs_method_get_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** |const|                           |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`get_tab_icon<class_Tabs_method_get_tab_icon>` **(** :ref:`int<class_int>` tab_idx **)** const                                     |
+| :ref:`Texture<class_Texture>` | :ref:`get_tab_icon<class_Tabs_method_get_tab_icon>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                   |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_tab_offset<class_Tabs_method_get_tab_offset>` **(** **)** const                                                               |
+| :ref:`int<class_int>`         | :ref:`get_tab_offset<class_Tabs_method_get_tab_offset>` **(** **)** |const|                                                             |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`get_tab_rect<class_Tabs_method_get_tab_rect>` **(** :ref:`int<class_int>` tab_idx **)** const                                     |
+| :ref:`Rect2<class_Rect2>`     | :ref:`get_tab_rect<class_Tabs_method_get_tab_rect>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                   |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_tab_title<class_Tabs_method_get_tab_title>` **(** :ref:`int<class_int>` tab_idx **)** const                                   |
+| :ref:`String<class_String>`   | :ref:`get_tab_title<class_Tabs_method_get_tab_title>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                 |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_tabs_rearrange_group<class_Tabs_method_get_tabs_rearrange_group>` **(** **)** const                                           |
+| :ref:`int<class_int>`         | :ref:`get_tabs_rearrange_group<class_Tabs_method_get_tabs_rearrange_group>` **(** **)** |const|                                         |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`move_tab<class_Tabs_method_move_tab>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**                            |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -313,7 +313,7 @@ Moves the scroll view to make the tab visible.
 
 .. _class_Tabs_method_get_offset_buttons_visible:
 
-- :ref:`bool<class_bool>` **get_offset_buttons_visible** **(** **)** const
+- :ref:`bool<class_bool>` **get_offset_buttons_visible** **(** **)** |const|
 
 Returns ``true`` if the offset buttons (the ones that appear when there's not enough space for all tabs) are visible.
 
@@ -321,7 +321,7 @@ Returns ``true`` if the offset buttons (the ones that appear when there's not en
 
 .. _class_Tabs_method_get_select_with_rmb:
 
-- :ref:`bool<class_bool>` **get_select_with_rmb** **(** **)** const
+- :ref:`bool<class_bool>` **get_select_with_rmb** **(** **)** |const|
 
 Returns ``true`` if select with right mouse button is enabled.
 
@@ -329,7 +329,7 @@ Returns ``true`` if select with right mouse button is enabled.
 
 .. _class_Tabs_method_get_tab_count:
 
-- :ref:`int<class_int>` **get_tab_count** **(** **)** const
+- :ref:`int<class_int>` **get_tab_count** **(** **)** |const|
 
 Returns the number of tabs.
 
@@ -337,7 +337,7 @@ Returns the number of tabs.
 
 .. _class_Tabs_method_get_tab_disabled:
 
-- :ref:`bool<class_bool>` **get_tab_disabled** **(** :ref:`int<class_int>` tab_idx **)** const
+- :ref:`bool<class_bool>` **get_tab_disabled** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns ``true`` if the tab at index ``tab_idx`` is disabled.
 
@@ -345,7 +345,7 @@ Returns ``true`` if the tab at index ``tab_idx`` is disabled.
 
 .. _class_Tabs_method_get_tab_icon:
 
-- :ref:`Texture<class_Texture>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** const
+- :ref:`Texture<class_Texture>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns the :ref:`Texture<class_Texture>` for the tab at index ``tab_idx`` or ``null`` if the tab has no :ref:`Texture<class_Texture>`.
 
@@ -353,7 +353,7 @@ Returns the :ref:`Texture<class_Texture>` for the tab at index ``tab_idx`` or ``
 
 .. _class_Tabs_method_get_tab_offset:
 
-- :ref:`int<class_int>` **get_tab_offset** **(** **)** const
+- :ref:`int<class_int>` **get_tab_offset** **(** **)** |const|
 
 Returns the number of hidden tabs offsetted to the left.
 
@@ -361,7 +361,7 @@ Returns the number of hidden tabs offsetted to the left.
 
 .. _class_Tabs_method_get_tab_rect:
 
-- :ref:`Rect2<class_Rect2>` **get_tab_rect** **(** :ref:`int<class_int>` tab_idx **)** const
+- :ref:`Rect2<class_Rect2>` **get_tab_rect** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns tab :ref:`Rect2<class_Rect2>` with local position and size.
 
@@ -369,7 +369,7 @@ Returns tab :ref:`Rect2<class_Rect2>` with local position and size.
 
 .. _class_Tabs_method_get_tab_title:
 
-- :ref:`String<class_String>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** const
+- :ref:`String<class_String>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns the title of the tab at index ``tab_idx``. Tab titles default to the name of the indexed child node, but this can be overridden with :ref:`set_tab_title<class_Tabs_method_set_tab_title>`.
 
@@ -377,7 +377,7 @@ Returns the title of the tab at index ``tab_idx``. Tab titles default to the nam
 
 .. _class_Tabs_method_get_tabs_rearrange_group:
 
-- :ref:`int<class_int>` **get_tabs_rearrange_group** **(** **)** const
+- :ref:`int<class_int>` **get_tabs_rearrange_group** **(** **)** |const|
 
 Returns the ``Tabs``' rearrange group ID.
 
@@ -439,3 +439,6 @@ Sets a ``title`` for the tab at index ``tab_idx``.
 
 Defines the rearrange group ID. Choose for each ``Tabs`` the same value to dragging tabs between ``Tabs``. Enable drag with ``set_drag_to_rearrange_enabled(true)``.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

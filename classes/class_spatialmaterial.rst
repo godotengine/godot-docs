@@ -234,11 +234,11 @@ Methods
 -------
 
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_feature<class_SpatialMaterial_method_get_feature>` **(** :ref:`Feature<enum_SpatialMaterial_Feature>` feature **)** const                                          |
+| :ref:`bool<class_bool>`       | :ref:`get_feature<class_SpatialMaterial_method_get_feature>` **(** :ref:`Feature<enum_SpatialMaterial_Feature>` feature **)** |const|                                        |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_flag<class_SpatialMaterial_method_get_flag>` **(** :ref:`Flags<enum_SpatialMaterial_Flags>` flag **)** const                                                       |
+| :ref:`bool<class_bool>`       | :ref:`get_flag<class_SpatialMaterial_method_get_flag>` **(** :ref:`Flags<enum_SpatialMaterial_Flags>` flag **)** |const|                                                     |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`get_texture<class_SpatialMaterial_method_get_texture>` **(** :ref:`TextureParam<enum_SpatialMaterial_TextureParam>` param **)** const                                  |
+| :ref:`Texture<class_Texture>` | :ref:`get_texture<class_SpatialMaterial_method_get_texture>` **(** :ref:`TextureParam<enum_SpatialMaterial_TextureParam>` param **)** |const|                                |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_feature<class_SpatialMaterial_method_set_feature>` **(** :ref:`Feature<enum_SpatialMaterial_Feature>` feature, :ref:`bool<class_bool>` enable **)**                |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2214,7 +2214,7 @@ Method Descriptions
 
 .. _class_SpatialMaterial_method_get_feature:
 
-- :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_SpatialMaterial_Feature>` feature **)** const
+- :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_SpatialMaterial_Feature>` feature **)** |const|
 
 Returns ``true``, if the specified :ref:`Feature<enum_SpatialMaterial_Feature>` is enabled.
 
@@ -2222,7 +2222,7 @@ Returns ``true``, if the specified :ref:`Feature<enum_SpatialMaterial_Feature>` 
 
 .. _class_SpatialMaterial_method_get_flag:
 
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_SpatialMaterial_Flags>` flag **)** const
+- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_SpatialMaterial_Flags>` flag **)** |const|
 
 Returns ``true``, if the specified flag is enabled. See :ref:`Flags<enum_SpatialMaterial_Flags>` enumerator for options.
 
@@ -2230,7 +2230,7 @@ Returns ``true``, if the specified flag is enabled. See :ref:`Flags<enum_Spatial
 
 .. _class_SpatialMaterial_method_get_texture:
 
-- :ref:`Texture<class_Texture>` **get_texture** **(** :ref:`TextureParam<enum_SpatialMaterial_TextureParam>` param **)** const
+- :ref:`Texture<class_Texture>` **get_texture** **(** :ref:`TextureParam<enum_SpatialMaterial_TextureParam>` param **)** |const|
 
 Returns the :ref:`Texture<class_Texture>` associated with the specified :ref:`TextureParam<enum_SpatialMaterial_TextureParam>`.
 
@@ -2258,3 +2258,6 @@ If ``true``, enables the specified flag. Flags are optional behaviour that can b
 
 Sets the :ref:`Texture<class_Texture>` to be used by the specified :ref:`TextureParam<enum_SpatialMaterial_TextureParam>`. This function is called when setting members ending in ``*_texture``.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

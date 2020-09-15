@@ -16,7 +16,7 @@ DynamicFont renders vector font files at runtime.
 Description
 -----------
 
-DynamicFont renders vector font files (such as TTF or OTF) dynamically at runtime instead of using a prerendered texture atlas like :ref:`BitmapFont<class_BitmapFont>`. This trades the faster loading time of :ref:`BitmapFont<class_BitmapFont>`\ s for the ability to change font parameters like size and spacing during runtime. :ref:`DynamicFontData<class_DynamicFontData>` is used for referencing the font file paths. DynamicFont also supports defining one or more fallbacks fonts, which will be used when displaying a character not supported by the main font.
+DynamicFont renders vector font files (such as TTF or OTF) dynamically at runtime instead of using a prerendered texture atlas like :ref:`BitmapFont<class_BitmapFont>`. This trades the faster loading time of :ref:`BitmapFont<class_BitmapFont>`\ s for the ability to change font parameters like size and spacing during runtime. :ref:`DynamicFontData<class_DynamicFontData>` is used for referencing the font file paths. DynamicFont also supports defining one or more fallback fonts, which will be used when displaying a character not supported by the main font.
 
 DynamicFont uses the `FreeType <https://www.freetype.org/>`_ library for rasterization.
 
@@ -27,7 +27,7 @@ DynamicFont uses the `FreeType <https://www.freetype.org/>`_ library for rasteri
     dynamic_font.size = 64
     $"Label".set("custom_fonts/font", dynamic_font)
 
-**Note:** DynamicFont doesn't support features such as right-to-left typesetting, ligatures, text shaping, variable fonts and optional font features yet. If you wish to "bake" an optional font feature into a TTF font file, you can use `FontForge <https://fontforge.org/>`_ to do so. In FontForge, use **File > Generate Fonts**, click **Options**, choose the desired features then generate the font.
+**Note:** DynamicFont doesn't support features such as kerning, right-to-left typesetting, ligatures, text shaping, variable fonts and optional font features yet. If you wish to "bake" an optional font feature into a TTF font file, you can use `FontForge <https://fontforge.org/>`_ to do so. In FontForge, use **File > Generate Fonts**, click **Options**, choose the desired features then generate the font.
 
 Properties
 ----------
@@ -60,13 +60,13 @@ Methods
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`add_fallback<class_DynamicFont_method_add_fallback>` **(** :ref:`DynamicFontData<class_DynamicFontData>` data **)**                            |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_available_chars<class_DynamicFont_method_get_available_chars>` **(** **)** const                                                           |
+| :ref:`String<class_String>`                   | :ref:`get_available_chars<class_DynamicFont_method_get_available_chars>` **(** **)** |const|                                                         |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`DynamicFontData<class_DynamicFontData>` | :ref:`get_fallback<class_DynamicFont_method_get_fallback>` **(** :ref:`int<class_int>` idx **)** const                                               |
+| :ref:`DynamicFontData<class_DynamicFontData>` | :ref:`get_fallback<class_DynamicFont_method_get_fallback>` **(** :ref:`int<class_int>` idx **)** |const|                                             |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`get_fallback_count<class_DynamicFont_method_get_fallback_count>` **(** **)** const                                                             |
+| :ref:`int<class_int>`                         | :ref:`get_fallback_count<class_DynamicFont_method_get_fallback_count>` **(** **)** |const|                                                           |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`get_spacing<class_DynamicFont_method_get_spacing>` **(** :ref:`int<class_int>` type **)** const                                                |
+| :ref:`int<class_int>`                         | :ref:`get_spacing<class_DynamicFont_method_get_spacing>` **(** :ref:`int<class_int>` type **)** |const|                                              |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`remove_fallback<class_DynamicFont_method_remove_fallback>` **(** :ref:`int<class_int>` idx **)**                                               |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -272,7 +272,7 @@ Adds a fallback font.
 
 .. _class_DynamicFont_method_get_available_chars:
 
-- :ref:`String<class_String>` **get_available_chars** **(** **)** const
+- :ref:`String<class_String>` **get_available_chars** **(** **)** |const|
 
 Returns a string containing all the characters available in the main and all the fallback fonts.
 
@@ -282,7 +282,7 @@ If a given character is included in more than one font, it appears only once in 
 
 .. _class_DynamicFont_method_get_fallback:
 
-- :ref:`DynamicFontData<class_DynamicFontData>` **get_fallback** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`DynamicFontData<class_DynamicFontData>` **get_fallback** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the fallback font at index ``idx``.
 
@@ -290,7 +290,7 @@ Returns the fallback font at index ``idx``.
 
 .. _class_DynamicFont_method_get_fallback_count:
 
-- :ref:`int<class_int>` **get_fallback_count** **(** **)** const
+- :ref:`int<class_int>` **get_fallback_count** **(** **)** |const|
 
 Returns the number of fallback fonts.
 
@@ -298,7 +298,7 @@ Returns the number of fallback fonts.
 
 .. _class_DynamicFont_method_get_spacing:
 
-- :ref:`int<class_int>` **get_spacing** **(** :ref:`int<class_int>` type **)** const
+- :ref:`int<class_int>` **get_spacing** **(** :ref:`int<class_int>` type **)** |const|
 
 Returns the spacing for the given ``type`` (see :ref:`SpacingType<enum_DynamicFont_SpacingType>`).
 
@@ -326,3 +326,6 @@ Sets the fallback font at index ``idx``.
 
 Sets the spacing for ``type`` (see :ref:`SpacingType<enum_DynamicFont_SpacingType>`) to ``value`` in pixels (not relative to the font size).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

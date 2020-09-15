@@ -20,3 +20,6 @@ Description
 
 Base resource type for all video streams. Classes that derive from ``VideoStream`` can all be used as resource types to play back videos in :ref:`VideoPlayer<class_VideoPlayer>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
