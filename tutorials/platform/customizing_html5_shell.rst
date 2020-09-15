@@ -133,6 +133,23 @@ them by calling the :js:meth:`engine.preloadFile` method with a path to a file o
 with an ``ArrayBuffer`` object. In case of the ``ArrayBuffer``, or one of its views, a second argument
 must be specified to define an internal path for the loaded resource.
 
+Here is a short example for loading additionals files. In this case the file "my_text.txt" is loaded in
+when while the engine starts up.
+::
+		Engine.load(MAIN_PACK)
+		engine.preloadFile('$GODOT_BASENAME.js')
+		engine.preloadFile('$GODOT_BASENAME.pck')
+		engine.preloadFile('$GODOT_BASENAME.png')
+		engine.preloadFile('$GODOT_BASENAME.wasm')
+		engine.preloadFile('my_text.txt')
+		engine.init()
+		setStatusMode('indeterminate');
+		engine.setCanvas(canvas);
+		engine.start().then(() => {
+			setStatusMode('hidden');
+			initializing = true;
+		}, displayFailureNotice);
+
 Customizing the presentation
 ----------------------------
 Several methods can be used to further customize the look and behavior of the game on your page.
