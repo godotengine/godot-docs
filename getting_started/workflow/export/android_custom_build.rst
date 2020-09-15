@@ -29,9 +29,7 @@ Make sure export templates are downloaded. If not, this menu will help you
 download them.
 
 A Gradle-based Android project will be created under ``res://android/build``.
-
-Place a ``.gdignore`` file in ``res://android`` so the Godot filesystem ignores
-this folder. Editing these files is not needed unless you want to :ref:`create
+Editing these files is not needed unless you want to :ref:`create
 your own add-ons<doc_android_plugin>`, or you really need to modify the project.
 
 Install the Android SDK (command-line version)
