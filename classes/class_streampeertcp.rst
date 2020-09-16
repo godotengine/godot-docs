@@ -21,21 +21,23 @@ TCP stream peer. This object can be used to connect to TCP servers, or also is r
 Methods
 -------
 
-+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`connect_to_host<class_StreamPeerTCP_method_connect_to_host>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)** |
-+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`disconnect_from_host<class_StreamPeerTCP_method_disconnect_from_host>` **(** **)**                                                    |
-+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`              | :ref:`get_connected_host<class_StreamPeerTCP_method_get_connected_host>` **(** **)** const                                                  |
-+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`get_connected_port<class_StreamPeerTCP_method_get_connected_port>` **(** **)** const                                                  |
-+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Status<enum_StreamPeerTCP_Status>` | :ref:`get_status<class_StreamPeerTCP_method_get_status>` **(** **)**                                                                        |
-+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_connected_to_host<class_StreamPeerTCP_method_is_connected_to_host>` **(** **)** const                                              |
-+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_no_delay<class_StreamPeerTCP_method_set_no_delay>` **(** :ref:`bool<class_bool>` enabled **)**                                    |
-+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`connect_to_host<class_StreamPeerTCP_method_connect_to_host>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port, :ref:`int<class_int>` client_port=0 **)** |
++------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`disconnect_from_host<class_StreamPeerTCP_method_disconnect_from_host>` **(** **)**                                                                                         |
++------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`get_client_port<class_StreamPeerTCP_method_get_client_port>` **(** **)** const                                                                                             |
++------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`              | :ref:`get_connected_host<class_StreamPeerTCP_method_get_connected_host>` **(** **)** const                                                                                       |
++------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`get_connected_port<class_StreamPeerTCP_method_get_connected_port>` **(** **)** const                                                                                       |
++------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Status<enum_StreamPeerTCP_Status>` | :ref:`get_status<class_StreamPeerTCP_method_get_status>` **(** **)**                                                                                                             |
++------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_connected_to_host<class_StreamPeerTCP_method_is_connected_to_host>` **(** **)** const                                                                                   |
++------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_no_delay<class_StreamPeerTCP_method_set_no_delay>` **(** :ref:`bool<class_bool>` enabled **)**                                                                         |
++------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -65,9 +67,9 @@ Method Descriptions
 
 .. _class_StreamPeerTCP_method_connect_to_host:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **connect_to_host** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **connect_to_host** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port, :ref:`int<class_int>` client_port=0 **)**
 
-Connects to the specified ``host:port`` pair. A hostname will be resolved if valid. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success or :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` on failure.
+Connects to the specified ``host:port`` pair. A hostname will be resolved if valid. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success or :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` on failure. If ``client_port`` is specified, the provided port will be used as source of the connection, otherwise a port number from the ephemeral port range will be provided; this is useful for some NAT traversal techniques.
 
 ----
 
@@ -76,6 +78,14 @@ Connects to the specified ``host:port`` pair. A hostname will be resolved if val
 - void **disconnect_from_host** **(** **)**
 
 Disconnects from host.
+
+----
+
+.. _class_StreamPeerTCP_method_get_client_port:
+
+- :ref:`int<class_int>` **get_client_port** **(** **)** const
+
+Returns the source port of this peer.
 
 ----
 
