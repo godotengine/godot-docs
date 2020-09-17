@@ -22,8 +22,8 @@ Importing the project
 
 - Next, you can choose which folders and files will be visible to the project.
   While C/C++ files are added automatically, other extensions can be potentially useful:
-  ``*.py`` for buildsystem files, ``*.java`` for Android platform development,
-  ``*.mm`` for macOS platform development.
+  ``*.glsl`` for shader files, ``*.py`` for buildsystem files,
+  ``*.java`` for Android platform development, ``*.mm`` for macOS platform development.
 
 .. figure:: img/qtcreator-apply-import-filter.png
    :figclass: figure-w480
