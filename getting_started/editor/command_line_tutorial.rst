@@ -328,7 +328,7 @@ If no ``project.godot`` exists at the path, current path is assumed to be the
 current working directory (unless ``--path`` is specified).
 
 The first line of ``sayhello.gd`` above is commonly referred to as
-a *shebang*. If the Godot binary is in your `PATH` as `godot`,
+a *shebang*. If the Godot binary is in your ``PATH`` as ``godot``,
 it allows you to run the script as follows in modern Linux
 distributions, as well as macOS:
 
