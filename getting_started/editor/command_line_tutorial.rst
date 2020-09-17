@@ -306,11 +306,11 @@ conversion of assets or custom import/export.
 
 The script must inherit from ``SceneTree`` or ``MainLoop``.
 
-Here is a simple example of how it works:
+Here is a simple ``sayhello.gd`` example of how it works:
 
 .. code-block:: python
 
-    # sayhello.gd
+    #!/usr/bin/env -S godot -s
     extends SceneTree
 
     func _init():
@@ -326,3 +326,20 @@ And how to run it:
 
 If no ``project.godot`` exists at the path, current path is assumed to be the
 current working directory (unless ``--path`` is specified).
+
+The first line of ``sayhello.gd`` above is commonly referred to as
+a *shebang*. If the Godot binary is in your ``PATH`` as ``godot``,
+it allows you to run the script as follows in modern Linux
+distributions, as well as macOS:
+
+::
+    # Mark script as executable.
+    chmod +x sayhello.gd
+    # Prints "Hello!" to standard output.
+    ./sayhello.gd
+
+If the above doesn't work in your current version of Linux or macOS, you can
+always have the shebang run Godot straight from where it is located as follows:
+
+::
+    #!/usr/bin/godot -s
