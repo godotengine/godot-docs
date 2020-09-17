@@ -156,7 +156,7 @@ Calling C# methods from GDScript
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Again, calling C# methods from GDScript should be straightforward. The
-marshalling process will do its best to cast your the arguments to match
+marshalling process will do its best to cast the arguments to match
 function signatures.
 If that's impossible, you'll see the following error: ``Invalid call. Nonexistent function `FunctionName```.
 
