@@ -328,12 +328,13 @@ If no ``project.godot`` exists at the path, current path is assumed to be the
 current working directory (unless ``--path`` is specified).
 
 The first line of ``sayhello.gd`` above is commonly referred to as
-a shebang and it allows you to run the script as follows in modern Linux
+a *shebang*. If the Godot binary is in your `PATH` as `godot`,
+it allows you to run the script as follows in modern Linux
 distributions, as well as macOS:
 
 ::
-    # Mark script as executable
-    chmod 755 sayhello.gd
+    # Mark script as executable.
+    chmod +x sayhello.gd
     # Prints "Hello!" to standard output.
     ./sayhello.gd
 
