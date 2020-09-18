@@ -67,6 +67,23 @@ that are different from this base size. Godot offers many ways to
 control how the viewport will be resized and stretched to different
 screen sizes.
 
+.. note::
+
+   Godot follows a modern approach to multiple resolutions. The engine will
+   never change the monitor's resolution on its own. While changing the
+   monitor's resolution is the most efficient approach, it's also the least
+   reliable approach as it can leave the monitor stuck on a low resolution if
+   the game crashes. This is especially common on macOS or Linux which don't
+   handle resolution changes as well as Windows.
+
+   Changing the monitor's resolution also removes any control from the game
+   developer over filtering and aspect ratio stretching, which can be important
+   to ensure correct display for pixel art games.
+
+   On top of that, changing the monitor's resolution makes alt-tabbing in and
+   out of a game much slower since the monitor has to change resolutions every
+   time this is done.
+
 Resizing
 --------
 
@@ -244,6 +261,10 @@ upon loading. This can be done by calling the method below before
 the game data is loaded::
 
     VisualServer.texture_set_shrink_all_x2_on_set_data(true)
+
+Alternatively, you can also enable mipmaps on all your 2D textures. However,
+enabling mipmaps will increase memory usage which may be problematic on low-end
+mobile devices.
 
 Handling aspect ratios
 ----------------------
