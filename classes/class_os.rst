@@ -646,7 +646,7 @@ The current screen orientation.
 | *Getter*  | get_current_tablet_driver()      |
 +-----------+----------------------------------+
 
-The current tablet drvier in use.
+The current tablet driver in use.
 
 ----
 

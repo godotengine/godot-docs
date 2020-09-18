@@ -16,7 +16,7 @@ Checkable button. See also :ref:`CheckBox<class_CheckBox>`.
 Description
 -----------
 
-CheckButton is a toggle button displayed as a check field. It's similar to :ref:`CheckBox<class_CheckBox>` in functionality, but it has a different apperance. To follow established UX patterns, it's recommended to use CheckButton when toggling it has an **immediate** effect on something. For instance, it should be used if toggling it enables/disables a setting without requiring the user to press a confirmation button.
+CheckButton is a toggle button displayed as a check field. It's similar to :ref:`CheckBox<class_CheckBox>` in functionality, but it has a different appearance. To follow established UX patterns, it's recommended to use CheckButton when toggling it has an **immediate** effect on something. For instance, it should be used if toggling it enables/disables a setting without requiring the user to press a confirmation button.
 
 Properties
 ----------

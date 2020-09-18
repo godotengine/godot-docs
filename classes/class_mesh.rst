@@ -301,7 +301,7 @@ Generate a :ref:`TriangleMesh<class_TriangleMesh>` from the mesh.
 
 - :ref:`AABB<class_AABB>` **get_aabb** **(** **)** |const|
 
-Returns the smallest :ref:`AABB<class_AABB>` enclosing this mesh. Not affected by ``custom_aabb``.
+Returns the smallest :ref:`AABB<class_AABB>` enclosing this mesh in local space. Not affected by ``custom_aabb``. See also :ref:`VisualInstance.get_transformed_aabb<class_VisualInstance_method_get_transformed_aabb>`.
 
 **Note:** This is only implemented for :ref:`ArrayMesh<class_ArrayMesh>` and :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 

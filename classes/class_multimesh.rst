@@ -226,7 +226,7 @@ Method Descriptions
 
 - :ref:`AABB<class_AABB>` **get_aabb** **(** **)** |const|
 
-Returns the visibility axis-aligned bounding box.
+Returns the visibility axis-aligned bounding box in local space. See also :ref:`VisualInstance.get_transformed_aabb<class_VisualInstance_method_get_transformed_aabb>`.
 
 ----
 

@@ -11,14 +11,16 @@ AnimationTreePlayer
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Animation player that uses a node graph for blending animations.
+*Deprecated.* Animation player that uses a node graph for blending animations. Superseded by :ref:`AnimationTree<class_AnimationTree>`.
 
 Description
 -----------
 
-A node graph tool for blending multiple animations bound to an :ref:`AnimationPlayer<class_AnimationPlayer>`. Especially useful for animating characters or other skeleton-based rigs. It can combine several animations to form a desired pose.
+*Deprecated.* A node graph tool for blending multiple animations bound to an :ref:`AnimationPlayer<class_AnimationPlayer>`. Especially useful for animating characters or other skeleton-based rigs. It can combine several animations to form a desired pose.
 
 It takes :ref:`Animation<class_Animation>`\ s from an :ref:`AnimationPlayer<class_AnimationPlayer>` node and mixes them depending on the graph.
+
+See :ref:`AnimationTree<class_AnimationTree>` for a more full-featured replacement of this node.
 
 Tutorials
 ---------

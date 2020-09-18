@@ -72,7 +72,7 @@ Method Descriptions
 
 - :ref:`AABB<class_AABB>` **get_aabb** **(** **)** |const|
 
-Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this ``VisualInstance``.
+Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this ``VisualInstance``. See also :ref:`get_transformed_aabb<class_VisualInstance_method_get_transformed_aabb>`.
 
 ----
 
@@ -106,7 +106,7 @@ Returns ``true`` when the specified layer is enabled in :ref:`layers<class_Visua
 
 Returns the transformed :ref:`AABB<class_AABB>` (also known as the bounding box) for this ``VisualInstance``.
 
-Transformed in this case means the :ref:`AABB<class_AABB>` plus the position, rotation, and scale of the :ref:`Spatial<class_Spatial>`'s :ref:`Transform<class_Transform>`.
+Transformed in this case means the :ref:`AABB<class_AABB>` plus the position, rotation, and scale of the :ref:`Spatial<class_Spatial>`'s :ref:`Transform<class_Transform>`. See also :ref:`get_aabb<class_VisualInstance_method_get_aabb>`.
 
 ----
 

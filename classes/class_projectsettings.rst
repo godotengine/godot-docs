@@ -3479,7 +3479,7 @@ Size of the hash table used for the broad-phase 2D hash grid algorithm.
 | *Default* | ``128`` |
 +-----------+---------+
 
-Cell size used for the broad-phase 2D hash grid algorithm.
+Cell size used for the broad-phase 2D hash grid algorithm (in pixels).
 
 ----
 
@@ -4645,7 +4645,7 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 | *Default* | ``100`` |
 +-----------+---------+
 
-Cell size used for the 2D hash grid that :ref:`VisibilityNotifier2D<class_VisibilityNotifier2D>` uses.
+Cell size used for the 2D hash grid that :ref:`VisibilityNotifier2D<class_VisibilityNotifier2D>` uses (in pixels).
 
 Method Descriptions
 -------------------
