@@ -305,7 +305,7 @@ assign ``VERTEX.xz`` to ``tex_position``.
     ...
   }
 
-And now we can access ``vertex_position`` from the ``fragment()`` function.
+And now we can access ``tex_position`` from the ``fragment()`` function.
 
 .. code-block:: glsl
 
