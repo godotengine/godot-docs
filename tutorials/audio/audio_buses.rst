@@ -158,9 +158,9 @@ are far apart.
 Distortion
 ~~~~~~~~~~
 
-Distortion effects make the sound "dirty". Godot offers several types of
-distortion: *overdrive*, *tan* and *bit crushing*. Distortion can be used
-to simulate sound coming through a low-quality speaker or device.
+Makes the sound distorted. Godot offers several types of distortion: *overdrive*,
+*tan* and *bit crushing*. Distortion can be used to simulate sound coming through
+a low-quality speaker or device.
 
 EQ
 ~~
@@ -181,12 +181,17 @@ Filter
 
 Filter is what all other filters inherit from and should not be used directly.
 
-HighPassFilter, HighShelfFilter
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+HighPassFilter
+~~~~~~~~~~~~~~
 
-These are filters that cut frequencies below a specific *Cutoff* frequency.
-HighPassFilter and HighShelfFilter are used to reduce the bass content of a
+Cuts frequencies below a specific *Cutoff* frequency.
+HighPassFilter is used to reduce the bass content of a
 signal.
+
+HighShelfFilter
+~~~~~~~~~~~~~~~
+
+Reduces all frequencies above a specific *Cutoff* frequency.
 
 .. _doc_audio_buses_limiter:
 
@@ -197,13 +202,18 @@ A limiter is similar to a compressor, but it's less flexible and designed to
 prevent a signal's amplitude exceeding a given dB threshold. Adding a limiter to
 the Master bus is a safeguard against clipping.
 
-LowPassFilter, LowShelfFilter
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+LowPassFilter
+~~~~~~~~~~~~~
 
-These are the most common filters, they cut frequencies above a specific
-*Cutoff* frequency and can also resonate (boost frequencies close to the
-*Cutoff* frequency). Low pass filters can be used to simulate "muffled" sound.
-For instance, underwater sounds, sounds blocked by walls, or distant sounds.
+Cuts frequencies above a specific *Cutoff* frequency and can also resonate
+(boost frequencies close to the *Cutoff* frequency). Low pass filters can be
+used to simulate "muffled" sound. For instance, underwater sounds, sounds
+blocked by walls, or distant sounds.
+
+LowShelfFilter
+~~~~~~~~~~~~~~
+
+Reduces all frequencies below a specific *Cutoff* frequency.
 
 NotchFilter
 ~~~~~~~~~~~
