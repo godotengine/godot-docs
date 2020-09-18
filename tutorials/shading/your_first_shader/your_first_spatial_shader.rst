@@ -305,12 +305,12 @@ assign ``VERTEX.xz`` to ``tex_position``.
     ...
   }
 
-And now we can access ``vertex_position`` from the ``fragment()`` function.
+And now we can access ``tex_position`` from the ``fragment()`` function.
 
 .. code-block:: glsl
 
   void fragment() {
-    NORMALMAP = texture(normalmap, vertex_position).xyz;
+    NORMALMAP = texture(normalmap, tex_position).xyz;
   }
 
 With the normals in place the light now reacts to the height of the mesh dynamically.
