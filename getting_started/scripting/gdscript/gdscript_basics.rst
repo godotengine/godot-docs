@@ -654,9 +654,10 @@ the scene tree::
 Constants
 ~~~~~~~~~
 
-Constants are values you cannot change when the game is running. Using the
+Constants are values you cannot change when the game is running.
+Their value must be known at compile-time. Using the
 ``const`` keyword allows you to give a constant value a name. Trying to assign a
-value to a constant will give you an error.
+value to a constant after it's declared will give you an error.
 
 We recommend using constants whenever a value is not meant to change.
 
