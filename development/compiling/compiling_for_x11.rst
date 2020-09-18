@@ -79,6 +79,12 @@ Distro-specific one-liners
 |                  |     sudo zypper install scons pkgconfig libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel \ |
 |                  |             libXi-devel Mesa-libGL-devel alsa-devel libpulse-devel libudev-devel libGLU1 yasm             |
 +------------------+-----------------------------------------------------------------------------------------------------------+
+| **NetBSD**       | ::                                                                                                        |
+|                  |                                                                                                           |
+|                  |     pkg_add pkg-config py37-scons yasm                                                                    |
+|                  |                                                                                                           |
+|                  | For audio support, you can optionally install ``pulseaudio``.                                             |
++------------------+-----------------------------------------------------------------------------------------------------------+
 | **Solus**        | ::                                                                                                        |
 |                  |                                                                                                           |
 |                  |     sudo eopkg install -c system.devel scons libxcursor-devel libxinerama-devel libxi-devel \             |
