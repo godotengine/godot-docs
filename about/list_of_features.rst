@@ -398,7 +398,7 @@ Input
    - When captured, raw input will be used on Windows and Linux to
      sidestep the OS' mouse acceleration settings.
 
-- Gamepad input (up to 8 simulatenous controllers).
+- Gamepad input (up to 8 simultaneous controllers).
 - Pen/tablet input with pressure support.
 
 Navigation
