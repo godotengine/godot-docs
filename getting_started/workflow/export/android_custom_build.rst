@@ -28,9 +28,8 @@ Go to the Project menu, and install the *Custom Build* template:
 Make sure export templates are downloaded. If not, this menu will help you
 download them.
 
-This will create an Gradle-based Android project in ``res://android/build`` and
-place a ``.gdignore`` file in ``res://android`` so the Godot filesystem ignores
-this folder. Editing these files is not needed unless you want to :ref:`create
+A Gradle-based Android project will be created under ``res://android/build``.
+Editing these files is not needed unless you want to :ref:`create
 your own add-ons<doc_android_plugin>`, or you really need to modify the project.
 
 Install the Android SDK (command-line version)
@@ -50,6 +49,10 @@ You need to install a Java SDK (**not** just the runtime or JRE).
 `OpenJDK 8 <https://adoptopenjdk.net/index.html>`__ is required, newer
 versions won't work.
 
+On Windows, make sure that you enable "Set ``JAVA_HOME`` variable" in the *Custom Setup* view
+of the installer. You have to restart Godot after this, otherwise Godot can't
+find the ``JAVA_HOME`` variable.
+
 Download the command-line tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -62,12 +65,8 @@ To save disk space, you don't want the full IDE, so don't download it.
     doing the same using Android Studio.
 
 Look on that page for the *Command line tools only* section. Currently, they are listed under
-*Download Options*. Scroll down a bit until you see them.
-
-Download the ZIP file for your platform, there will be a single ``tools``
-folder inside:
-
-.. image:: img/custom_build_zip.png
+*Download Options*. Scroll down a bit until you see them and download the ZIP file for
+your platform.
 
 This may appear a little confusing, but be sure to follow these instructions
 carefully:
@@ -77,16 +76,22 @@ an empty directory). On Windows, the following path is usually good enough:
 
 .. code-block:: none
 
-  C:\users\<yourusername>\Documents\android-sdk
-  
+  C:\users\<yourusername>\android-sdk
+
+Create an empty folder named ``cmdline-tools`` inside of the ``android-sdk`` folder.
+Then unzip the Android SDK ZIP file into the ``android-sdk/cmdline-tools`` folder.
+
 .. note::
 
-    If you already have an android-sdk folder, normally located in ``%LOCALAPPDATA%\Android\Sdk``, 
-    then use this folder instead of creating an empty ``android-sdk`` folder. 
+    If you're on Windows, you must not extract the ZIP archive with the default
+    Windows extractor (e.g. Windows Explorer). You have to use another tool
+    like 7zip, WinRAR or the Powershell ``Expand-Archive`` command. If you
+    extract the archive with the default Windows extractor, the files are not
+    extracted correctly and you will run into errors later on!
 
-Unzip the Android SDK ZIP file into the ``android-sdk`` folder. This folder should 
-now contain the unzipped folder called ``tools``. Rename ``tools`` to ``latest``. 
-Finally, create an empty folder named ``cmdline-tools`` and place ``latest`` into it. 
+The ``cmdline-tools`` folder should now contain the unzipped folder called ``tools``.
+Finally, rename the ``tools`` folder to ``latest``.
+
 Your final directory structure should look like this :
 
 .. code-block:: none
@@ -95,7 +100,7 @@ Your final directory structure should look like this :
   android-sdk/cmdline-tools/
   android-sdk/cmdline-tools/latest
   android-sdk/cmdline-tools/latest/allTheOtherFiles
-  
+
 We need to setup the directory structure this way for the sdkmanager (inside the bin folder) to work.
 
 Accepting the licenses
@@ -136,20 +141,21 @@ keystore (this is needed to build). Go up two folders by writing:
 
 .. code-block:: shell
 
-    cd ..\..
+    cd ..\..\..
 
 (or open a new shell in the ``android-sdk`` folder).
 
-And you need to input the following line (on Linux and macOS, this should work
-out of the box, for Windows there are further instructions below):
+And you need to input the following line (This should work out of the box.
+However, if you haven't set the ``JAVA_HOME`` variable on Windows,
+there are further instructions below):
 
 .. code-block:: shell
 
     keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999
 
-On Windows, the full path to Java should be provided. You need to add ``&`` at
-the beginning of the line if you use PowerShell; it's not needed for the regular
-``cmd.exe`` console.
+On Windows, if you did not install the ``JAVA_HOME`` variable, the full path to Java
+should be provided. You need to add ``&`` at the beginning of the line if you use
+PowerShell; it's not needed for the regular ``cmd.exe`` console.
 
 To make it clearer, here is an capture of a line that works on PowerShell (by
 adding ``&`` and the full Java path before ``keytool.exe``). Again, keep in mind that you
