@@ -172,6 +172,9 @@ most 3D DCCs don't have the same material options as those present in Godot.
 When materials are built-in, they will be lost each time the source scene
 is modified and re-imported.
 
+.. note::
+   Godot will not reimport materials that are stored in external files.
+
 Keep On Reimport
 ^^^^^^^^^^^^^^^^
 
