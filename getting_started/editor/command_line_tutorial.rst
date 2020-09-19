@@ -333,6 +333,7 @@ it allows you to run the script as follows in modern Linux
 distributions, as well as macOS:
 
 ::
+
     # Mark script as executable.
     chmod +x sayhello.gd
     # Prints "Hello!" to standard output.
@@ -342,4 +343,5 @@ If the above doesn't work in your current version of Linux or macOS, you can
 always have the shebang run Godot straight from where it is located as follows:
 
 ::
+
     #!/usr/bin/godot -s
