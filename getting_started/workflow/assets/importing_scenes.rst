@@ -173,7 +173,8 @@ When materials are built-in, they will be lost each time the source scene
 is modified and re-imported.
 
 .. note::
-   Godot will not reimport materials that are stored in external files.
+
+    Godot will not reimport materials that are stored in external files.
 
 Keep On Reimport
 ^^^^^^^^^^^^^^^^
