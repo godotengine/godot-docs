@@ -350,6 +350,8 @@ In inherited scenes, the only limitations for modifications are:
 
 Other than that, everything is allowed!
 
+.. _doc_importing_scenes_import_hints:
+
 Import hints
 ------------
 
@@ -422,6 +424,11 @@ reliability.
     For better visibility in Blender's editor, you can set the "X-Ray" option
     on collision empties and set some distinct color for them in Blender's
     **User Preferences > Themes > 3D View > Empty**.
+
+.. seealso::
+
+    See :ref:`doc_collision_shapes_3d` for a comprehensive overview of collision
+    shapes.
 
 Create navigation (-navmesh)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
