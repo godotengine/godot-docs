@@ -174,7 +174,13 @@ is modified and re-imported.
 
 .. note::
 
-    Godot will not reimport materials that are stored in external files.
+    Godot will not reimport materials that are stored in external files
+    unless you remove the associated `.material` file before reimporting.
+    
+    To force reimporting materials every time the 3D scene is reimported,
+    change the material storage mode in the 3D scene by selecting it in
+    the FileSystem dock, then go the Import dock and set
+    **Material > Storage** to **Built-In** instead of **Files**.
 
 Keep On Reimport
 ^^^^^^^^^^^^^^^^
