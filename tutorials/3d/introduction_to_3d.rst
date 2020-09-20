@@ -222,5 +222,7 @@ each viewport:
 Lights
 ------
 
-There is no limitation on the number of lights, nor of types of lights, in
-Godot. As many as desired can be added (as long as performance allows).
+Godot has a limit of up to 8 lights per mesh. Aside from that, there
+is no limitation on the number of lights, nor of types of lights, in
+Godot. As many as desired can be added, as long as performance allows,
+and no more than 8 lights shine on a single mesh.
