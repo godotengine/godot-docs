@@ -39,7 +39,8 @@ either ``release`` for a release build or ``release_debug`` for a debug build::
     scons platform=javascript tools=no target=release_debug
 
 By default, the :ref:`JavaScript singleton <doc_javascript_eval>` will be built
-into the engine. Since ``eval()`` calls can be a security concern, the
+into the engine. Official export templates also have the JavaScript singleton
+enabled. Since ``eval()`` calls can be a security concern, the
 ``javascript_eval`` option can be used to build without the singleton::
 
     scons platform=javascript tools=no target=release javascript_eval=no
