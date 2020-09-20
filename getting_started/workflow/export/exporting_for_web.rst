@@ -213,9 +213,10 @@ returned by ``eval()`` under certain circumstances:
 
 Any other JavaScript value is returned as ``null``.
 
-HTML5 export templates may be built without support for the singleton. With such
-templates, and on platforms other than HTML5, calling ``JavaScript.eval`` will
-also return ``null``.  The availability of the singleton can be checked with the
+HTML5 export templates may be :ref:`built <doc_compiling_for_web>` without
+support for the singleton to improve security. With such templates, and on
+platforms other than HTML5, calling ``JavaScript.eval`` will also return
+``null``.  The availability of the singleton can be checked with the
 ``JavaScript`` :ref:`feature tag <doc_feature_tags>`::
 
     func my_func3():
