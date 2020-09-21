@@ -186,10 +186,10 @@ Using lower precision for some operations can speed up the math involved (at the
 This is rarely needed in the vertex processor function (where full precision is needed most of the time),
 but is often useful in the fragment processor.
 
-Keep in mind that some architectures (mainly mobile) benefit a lot from this, but are also restricted
-(conversion between precisions has a cost). Please read the relevant documentation on the target architecture
-to find out more. In all honesty though, mobile drivers are buggy, so, to stay out of trouble, make simple
-shaders without specifying precision unless you *really* need to.
+Some architectures (mainly mobile) can benefit greatly from this, but may have downsides
+such as additional overhead of conversion between precisions. Refer to the documentation of the 
+target architecture for further information. In many cases, mobile drivers cause inconsistent
+or unexpected behaviour and it is best to avoid specifying precision unless necessary.
 
 Arrays
 ------
