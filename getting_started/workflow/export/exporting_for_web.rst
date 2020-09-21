@@ -19,6 +19,7 @@ in the user's browser.
                .. tip:: Python offers an easy method to start a local server.
                         Use ``python -m http.server 8000 --bind 127.0.0.1`` with Python 3 to serve the
                         current working directory at ``http://localhost:8000``.
+                        `Refer to MDN for additional information <https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server>`__.
 
 .. attention:: `There are significant bugs when running HTML5 projects on iOS <https://github.com/godotengine/godot/issues/26554>`__
                (regardless of the browser). We recommend using
