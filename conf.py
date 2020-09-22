@@ -230,6 +230,21 @@ def godot_get_image_filename_for_language(filename, env):
 
 sphinx.util.i18n.get_image_filename_for_language = godot_get_image_filename_for_language
 
+# Read the Docs adds a note at the top of the page when reading documentation
+# for an old stable version, but not when reading the latest unstable version.
+# We want to add a warning note as the `latest` documentation may not always
+# apply to Godot 3.2.x.
+rst_prolog = """
+.. attention::
+    You are reading the ``latest`` (unstable) version of this documentation,
+    which may document features not available or compatible with Godot 3.2.x.
+
+    See `this page <https://docs.godotengine.org/{locale}/stable/>`__
+    for the stable version of this documentation.
+""".format(
+    locale=language,
+)
+
 # Couldn't find a way to retrieve variables nor do advanced string
 # concat from reST, so had to hardcode this in the "epilog" added to
 # all pages. This is used in index.rst to display the Weblate badge.
