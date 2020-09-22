@@ -186,10 +186,11 @@ Using lower precision for some operations can speed up the math involved (at the
 This is rarely needed in the vertex processor function (where full precision is needed most of the time),
 but is often useful in the fragment processor.
 
-Some architectures (mainly mobile) can benefit greatly from this, but may have downsides
-such as additional overhead of conversion between precisions. Refer to the documentation of the 
-target architecture for further information. In many cases, mobile drivers cause inconsistent
-or unexpected behaviour and it is best to avoid specifying precision unless necessary.
+Some architectures (mainly mobile) can benefit significantly from this, but
+there are downsides such as the additional overhead of conversion between
+precisions. Refer to the documentation of the target architecture for further
+information. In many cases, mobile drivers cause inconsistent or unexpected
+behavior and it is best to avoid specifying precision unless necessary.
 
 Arrays
 ------
