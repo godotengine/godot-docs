@@ -3,6 +3,8 @@
 Locales
 =======
 
+.. Note: This list is synced with core/translation.cpp in the engine.
+
 This is the list of supported locales and variants in the engine. It's
 based on the Unix standard locale strings:
 
@@ -60,6 +62,8 @@ based on the Unix standard locale strings:
 | ar_SA        | Arabic (Saudi Arabia)              |
 +--------------+------------------------------------+
 | ar_SD        | Arabic (Sudan)                     |
++--------------+------------------------------------+
+| ar_SS        | Arabic (South Sudan)               |
 +--------------+------------------------------------+
 | ar_SY        | Arabic (Syria)                     |
 +--------------+------------------------------------+
@@ -199,8 +203,6 @@ based on the Unix standard locale strings:
 +--------------+------------------------------------+
 | en_NG        | English (Nigeria)                  |
 +--------------+------------------------------------+
-| en_MT        | English (Malta)                    |
-+--------------+------------------------------------+
 | en_NZ        | English (New Zealand)              |
 +--------------+------------------------------------+
 | en_PH        | English (Philippines)              |
@@ -278,6 +280,8 @@ based on the Unix standard locale strings:
 | fi           | Finnish                            |
 +--------------+------------------------------------+
 | fi_FI        | Finnish (Finland)                  |
++--------------+------------------------------------+
+| fil          | Filipino                           |
 +--------------+------------------------------------+
 | fil_PH       | Filipino (Philippines)             |
 +--------------+------------------------------------+
@@ -375,6 +379,8 @@ based on the Unix standard locale strings:
 +--------------+------------------------------------+
 | kab_DZ       | Kabyle (Algeria)                   |
 +--------------+------------------------------------+
+| ka           | Georgian                           |
++--------------+------------------------------------+
 | ka_GE        | Georgian (Georgia)                 |
 +--------------+------------------------------------+
 | kk_KZ        | Kazakh (Kazakhstan)                |
@@ -435,13 +441,17 @@ based on the Unix standard locale strings:
 +--------------+------------------------------------+
 | mhr_RU       | Eastern Mari (Russia)              |
 +--------------+------------------------------------+
+| mi           | Maori                              |
++--------------+------------------------------------+
 | mi_NZ        | Maori (New Zealand)                |
 +--------------+------------------------------------+
-| miq_NI       | Mískito  (Nicaragua)               |
+| miq_NI       | Mískito (Nicaragua)                |
 +--------------+------------------------------------+
 | mk           | Macedonian                         |
 +--------------+------------------------------------+
 | mk_MK        | Macedonian (Macedonia)             |
++--------------+------------------------------------+
+| ml           | Malayalam                          |
 +--------------+------------------------------------+
 | ml_IN        | Malayalam (India)                  |
 +--------------+------------------------------------+
@@ -461,7 +471,7 @@ based on the Unix standard locale strings:
 +--------------+------------------------------------+
 | my_MM        | Burmese (Myanmar)                  |
 +--------------+------------------------------------+
-| myv_RU       | Erzya  (Russia)                    |
+| myv_RU       | Erzya (Russia)                     |
 +--------------+------------------------------------+
 | nah_MX       | Nahuatl languages (Mexico)         |
 +--------------+------------------------------------+
@@ -494,10 +504,6 @@ based on the Unix standard locale strings:
 | nn           | Norwegian Nynorsk                  |
 +--------------+------------------------------------+
 | nn_NO        | Norwegian Nynorsk (Norway)         |
-+--------------+------------------------------------+
-| no           | Norwegian                          |
-+--------------+------------------------------------+
-| no_NO        | Norwegian (Norway)                 |
 +--------------+------------------------------------+
 | nr_ZA        | South Ndebele (South Africa)       |
 +--------------+------------------------------------+
@@ -577,6 +583,8 @@ based on the Unix standard locale strings:
 +--------------+------------------------------------+
 | sid_ET       | Sidamo (Ethiopia)                  |
 +--------------+------------------------------------+
+| si           | Sinhala                            |
++--------------+------------------------------------+
 | si_LK        | Sinhala (Sri Lanka)                |
 +--------------+------------------------------------+
 | sk           | Slovak                             |
@@ -584,6 +592,8 @@ based on the Unix standard locale strings:
 | sk_SK        | Slovak (Slovakia)                  |
 +--------------+------------------------------------+
 | sl           | Slovenian                          |
++--------------+------------------------------------+
+| sl_SI        | Slovenian (Slovenia)               |
 +--------------+------------------------------------+
 | so           | Somali                             |
 +--------------+------------------------------------+
@@ -607,9 +617,9 @@ based on the Unix standard locale strings:
 +--------------+------------------------------------+
 | sr           | Serbian                            |
 +--------------+------------------------------------+
-| sr_BA        | Serbian (Bosnia and Herzegovina)   |
+| sr_Cyrl      | Serbian (Cyrillic)                 |
 +--------------+------------------------------------+
-| sr_CS        | Serbian (Serbia and Montenegro)    |
+| sr_Latn      | Serbian (Latin)                    |
 +--------------+------------------------------------+
 | sr_ME        | Serbian (Montenegro)               |
 +--------------+------------------------------------+
@@ -639,6 +649,8 @@ based on the Unix standard locale strings:
 +--------------+------------------------------------+
 | tcy_IN       | Tulu (India)                       |
 +--------------+------------------------------------+
+| te           | Telugu                             |
++--------------+------------------------------------+
 | te_IN        | Telugu (India)                     |
 +--------------+------------------------------------+
 | tg_TJ        | Tajik (Tajikistan)                 |
@@ -648,8 +660,6 @@ based on the Unix standard locale strings:
 | th           | Thai                               |
 +--------------+------------------------------------+
 | th_TH        | Thai (Thailand)                    |
-+--------------+------------------------------------+
-| th_TH_TH     | Thai (Thailand, TH)                |
 +--------------+------------------------------------+
 | ti           | Tigrinya                           |
 +--------------+------------------------------------+

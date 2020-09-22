@@ -19,7 +19,7 @@ jobs:
       - name: Linter checks
         run: |
           bash _tools/format.sh
-          codespell -I _tools/codespell-ignore.txt {about,community,development,getting_started,tutorials}/**/*.rst
+          codespell -I _tools/codespell-ignore.txt -x _tools/codespell-ignore-lines.txt {about,community,development,getting_started,tutorials}/**/*.rst
 
       - name: Sphinx build
         run: |
