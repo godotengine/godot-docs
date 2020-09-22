@@ -19,6 +19,7 @@ in the user's browser.
                .. tip:: Python offers an easy method to start a local server.
                         Use ``python -m http.server 8000 --bind 127.0.0.1`` with Python 3 to serve the
                         current working directory at ``http://localhost:8000``.
+                        `Refer to MDN for additional information <https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server>`__.
 
 .. attention:: `There are significant bugs when running HTML5 projects on iOS <https://github.com/godotengine/godot/issues/26554>`__
                (regardless of the browser). We recommend using
@@ -213,9 +214,10 @@ returned by ``eval()`` under certain circumstances:
 
 Any other JavaScript value is returned as ``null``.
 
-HTML5 export templates may be built without support for the singleton. With such
-templates, and on platforms other than HTML5, calling ``JavaScript.eval`` will
-also return ``null``.  The availability of the singleton can be checked with the
+HTML5 export templates may be :ref:`built <doc_compiling_for_web>` without
+support for the singleton to improve security. With such templates, and on
+platforms other than HTML5, calling ``JavaScript.eval`` will also return
+``null``.  The availability of the singleton can be checked with the
 ``JavaScript`` :ref:`feature tag <doc_feature_tags>`::
 
     func my_func3():
