@@ -26,11 +26,11 @@ request and triggers a rebuild of the online documentation upon merging.
              regarding the main godotengine/godot repository is also valid for
              the docs repository.
 
-.. warning:: The class reference's source files are in the :ref:`Godot engine
-             repository <https://github.com/godotengine/godot>`. We generate the
-             :ref:`Godot API <class>` section of this documentation from them.
-             If you want to update the description of a class, its methods, or
-             properties, read :ref:`doc_updating_the_class_reference`.
+.. warning:: The class reference's source files are in the `Godot engine repository
+             <https://github.com/godotengine/godot>`_. We generate the :ref:`Godot API
+             <toc-class-ref>` section of this documentation from them. If you want to update the
+             description of a class, its methods, or properties, read
+             :ref:`doc_updating_the_class_reference`.
 
 Editing pages online
 --------------------
