@@ -17,3 +17,4 @@ Contributing
    updating_the_class_reference
    class_reference_writing_guidelines
    editor_and_docs_localization
+   building_the_manual
