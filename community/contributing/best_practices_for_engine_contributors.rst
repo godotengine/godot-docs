@@ -3,6 +3,14 @@
 Best practices for engine contributors
 ======================================
 
+.. note::
+
+    This page describes general software engineering principles applied to Godot
+    development. If you're not yet familiar with the engine's development
+    philosophy, scope and goals, it's recommended that you read
+    :ref:`doc_development_philosophy` first to better understand the direction
+    of the project in general.
+
 Introduction
 ------------
 
@@ -128,11 +136,6 @@ on implementation can be reached.
 The only exception, in this case, is when an area of code has a clear owner
 (agreed by the other contributors), who talks to users directly and has the most
 knowledge to implement a solution directly.
-
-Also, Godot's philosophy is to favor ease of use and maintenance over absolute
-performance. Performance optimizations will be considered, but they may not
-be accepted if they make something too difficult to use or if they add too much
-complexity to the codebase.
 
 #5: To each problem, its own solution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
