@@ -78,6 +78,9 @@ class DescriptionGenerator:
         # Replace multiple spaces with single spaces
         desc = re.sub("\\s+", " ", desc)
 
+        # Escape double quotes for HTML
+        desc = re.sub('"', "&quot;", desc)
+
         return desc
 
     def create_description(self, cutoff_suffix="..."):
