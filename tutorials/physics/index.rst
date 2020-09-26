@@ -13,3 +13,4 @@ Physics
    ragdoll_system
    kinematic_character_2d
    soft_body
+   collision_shapes_3d
