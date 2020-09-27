@@ -594,6 +594,72 @@ you might encounter an error similar to the following:
     ERROR: Can't write doc file: docs/doc/classes/@GDScript.xml
        At: editor/doc/doc_data.cpp:956
 
+.. _doc_custom_module_unit_tests:
+
+Writing custom unit tests
+-------------------------
+
+It's possible to write self-contained unit tests as part of a C++ module. If you
+are not familiar with the unit testing process in Godot yet, please refer to
+:ref:`doc_unit_testing`.
+
+The procedure is the following:
+
+1. Create a new directory named ``tests/`` under your module's root:
+
+.. code-block:: console
+
+    cd modules/summator
+    mkdir tests
+    cd tests
+
+2. Create a new test suite: ``test_summator.h``. The header must be prefixed
+   with ``test_`` so that the build system can collect it and include it as part
+   of the ``tests/test_main.cpp`` where the tests are run.
+
+3. Write some test cases. Here's an example:
+
+.. code-block:: cpp
+
+    // test_summator.h
+    #ifndef TEST_SUMMATOR_H
+    #define TEST_SUMMATOR_H
+
+    #include "tests/test_macros.h"
+
+    #include "modules/summator/summator.h"
+
+    namespace TestSummator {
+
+    TEST_CASE("[Modules][Summator] Adding numbers") {
+        Ref<Summator> s = memnew(Summator);
+        CHECK(s->get_total() == 0);
+
+        s->add(10);
+        CHECK(s->get_total() == 10);
+
+        s->add(20);
+        CHECK(s->get_total() == 30);
+
+        s->add(30);
+        CHECK(s->get_total() == 60);
+
+        s->reset();
+        CHECK(s->get_total() == 0);
+    }
+
+    } // namespace TestSummator
+
+    #endif // TEST_SUMMATOR_H
+
+4. Compile the engine with ``scons tests=yes``, and run the tests with the
+   following command:
+
+.. code-block:: console
+
+    ./bin/<godot_binary> --test --source-file="*test_summator*" --success
+
+You should see the passing assertions now.
 
 .. _doc_custom_module_icons:
 
