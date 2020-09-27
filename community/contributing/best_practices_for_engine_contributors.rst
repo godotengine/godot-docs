@@ -67,10 +67,10 @@ its characterized by lines of thought such as:
 - I think it would be useful for users to...
 - I think users will eventually need to...
 
-This is generally considered a bad habit, because trying to solve problems that
-*don't actually exist* in the present will very often lead to the code that will
-be written but never used, or the code that is considerably more complex to use
-and maintain than it needs to be.
+This is generally considered a bad habit because trying to solve problems that
+*don't actually exist* in the present will often lead to code that will be
+written but never used, or that is considerably more complex to use and maintain
+than it needs to be.
 
 #3: The problem has to be complex or frequent
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
