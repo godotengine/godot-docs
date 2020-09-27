@@ -25,8 +25,6 @@ Updating the target properties of animations occurs at process time.
 Tutorials
 ---------
 
-- :doc:`../getting_started/step_by_step/animations`
-
 - :doc:`../tutorials/animation/index`
 
 Properties
