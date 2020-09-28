@@ -90,6 +90,8 @@ using the ``load()`` and ``preload()`` methods.
 Ignoring a folder will also automatically hide it from the FileSystem dock,
 which can be useful to reduce clutter.
 
+.. _doc_project_organization_case_sensitivity:
+
 Case sensitivity
 ----------------
 

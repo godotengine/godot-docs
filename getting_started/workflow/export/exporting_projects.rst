@@ -101,6 +101,8 @@ option in the editor:
 
 .. image:: img/exptemp.png
 
+.. _doc_exporting_projects_export_mode:
+
 Export mode
 ~~~~~~~~~~~
 

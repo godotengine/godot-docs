@@ -46,20 +46,19 @@ as source and binary and requires maintenance once it exists. Avoiding the
 addition of anything unnecessary is always considered a good practice in
 software development.
 
-#2: The problem has to exist
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#2: To solve the problem, it has to exist in the first place
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is a variation of the previous practice. I believe most developers agree
-that adding anything unnecessary is not a good idea, but what constitutes what
-is necessary and what isn't?
+This is a variation of the previous practice. Adding anything unnecessary is not
+a good idea, but what constitutes what is necessary and what isn't?
 
 .. image:: img/best_practices2.png
 
-The answer to this question is that the problem needs to *exist*. It must not be
-speculation or a belief. The user must be using the software as intended to
-create something they *need*. In this process, the user may stumble into a
-problem that requires a solution in order to continue, or in order to achieve
-greater productivity. In this case, *a solution is needed*.
+The answer to this question is that the problem needs to *exist* before it can
+be actually solved. It must not be speculation or a belief. The user must be
+using the software as intended to create something they *need*. In this process,
+the user may stumble into a problem that requires a solution to proceed, or in
+order to achieve greater productivity. In this case, *a solution is needed*.
 
 Believing that problems may arise in the future and that the software needs to
 be ready to solve them by the time they appear is called *"Future proofing"* and
@@ -68,10 +67,10 @@ its characterized by lines of thought such as:
 - I think it would be useful for users to...
 - I think users will eventually need to...
 
-This is generally considered a bad habit, because trying to solve problems that
-*don't actually exist* in the present will very often lead to code that will be
-written but never used, or to code that is considerably more complex to use and
-maintain than it needs to be.
+This is generally considered a bad habit because trying to solve problems that
+*don't actually exist* in the present will often lead to code that will be
+written but never used, or that is considerably more complex to use and maintain
+than it needs to be.
 
 #3: The problem has to be complex or frequent
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -329,7 +329,7 @@ accesses:
       child.set_visible(false)
 
       # Dynamic lookup, checks for method existence first.
-      if child.has("set_visible"):
+      if child.has_method("set_visible"):
           child.set_visible(false)
 
       # Cast check, followed by dynamic lookup
@@ -344,7 +344,7 @@ accesses:
       # If one does not wish to fail these checks without notifying users, one
       # can use an assert instead. These will trigger runtime errors
       # immediately if not true.
-      assert(child.has("set_visible"))
+      assert(child.has_method("set_visible"))
       assert(child.is_in_group("offer"))
       assert(child is CanvasItem)
 

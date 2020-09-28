@@ -3,6 +3,11 @@
 2D skeletons
 ============
 
+.. warning::
+
+    There are known issues with 2D skeletons on mobile and web platforms with the GLES2 renderer. We
+    recommend using the GLES3 renderer if your project relies on Skeleton2D for now.
+
 Introduction
 ------------
 

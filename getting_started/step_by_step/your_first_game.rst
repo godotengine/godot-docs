@@ -61,7 +61,7 @@ Dock in the lower left corner:
 Player scene
 ------------
 
-The first scene we will make defines the ``Player`` object. One of the benefits
+The first scene will define the ``Player`` object. One of the benefits
 of creating a separate Player scene is that we can test it separately, even
 before we've created other parts of the game.
 
@@ -669,7 +669,8 @@ Main scene
 ----------
 
 Now it's time to bring it all together. Create a new scene and add a
-:ref:`Node <class_Node>` named ``Main``. Click the "Instance" button and select your
+:ref:`Node <class_Node>` named ``Main``. Ensure you create a Node, **not** a
+Node2D. Click the "Instance" button and select your
 saved ``Player.tscn``.
 
 .. image:: img/instance_scene.png
@@ -898,11 +899,11 @@ Note that a new instance must be added to the scene using ``add_child()``.
         mobInstance.Position = mobSpawnLocation.Position;
 
         // Add some randomness to the direction.
-        direction += GD.RandRange(-Mathf.Pi / 4, Mathf.Pi / 4);
+        direction += RandRange(-Mathf.Pi / 4, Mathf.Pi / 4);
         mobInstance.Rotation = direction;
 
         // Choose the velocity.
-        mobInstance.LinearVelocity = new Vector2(GD.RandRange(150f, 250f), 0).Rotated(direction);
+        mobInstance.LinearVelocity = new Vector2(RandRange(150f, 250f), 0).Rotated(direction);
     }
 
 .. important:: Why ``PI``? In functions requiring angles, GDScript uses *radians*,
