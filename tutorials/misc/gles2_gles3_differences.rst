@@ -86,6 +86,8 @@ That means that in GLES2 environments you can only set:
 - Glow (also known as bloom)
 - Adjustment
 
+See :ref:`doc_environment_and_post_processing` for more information.
+
 GIProbes
 --------
 
