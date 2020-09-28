@@ -995,7 +995,6 @@ on the other two Control nodes.
           origin - the reference point for the edges of the node. Margins
           update automatically when you move or resize a control node. They
           represent the distance from the control node's edges to its anchor.
-          See :ref:`doc_design_interfaces_with_the_control_nodes` for more details.
 
 Arrange the nodes as shown below. Click the "Layout" button to
 set a Control node's layout:
