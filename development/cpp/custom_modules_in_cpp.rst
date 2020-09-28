@@ -28,7 +28,7 @@ instead. Adding C++ modules can be useful in the following scenarios:
 -  Binding an external library to Godot (like PhysX, FMOD, etc).
 -  Optimize critical parts of a game.
 -  Adding new functionality to the engine and/or editor.
--  Porting an existing game.
+-  Porting an existing game to Godot.
 -  Write a whole, new game in C++ because you can't live without C++.
 
 Creating a new module
@@ -503,10 +503,10 @@ Writing custom documentation
 ----------------------------
 
 Writing documentation may seem like a boring task, but it is highly recommended
-to document your newly created module in order to make it easier for users to
-benefit from it. Not to mention that the code you've written one year ago may
-become indistinguishable from the code that was written by someone else, so be
-kind to your future self!
+to document your newly created module to make it easier for users to benefit
+from it. Not to mention that the code you've written one year ago may become
+indistinguishable from the code that was written by someone else, so be kind to
+your future self!
 
 There are several steps in order to setup custom docs for the module:
 
@@ -695,9 +695,12 @@ Summing up
 
 Remember to:
 
--  use ``GDCLASS`` macro for inheritance, so Godot can wrap it
--  use ``_bind_methods`` to bind your functions to scripting, and to
+-  Use ``GDCLASS`` macro for inheritance, so Godot can wrap it.
+-  Use ``_bind_methods`` to bind your functions to scripting, and to
    allow them to work as callbacks for signals.
+-  **Avoid multiple inheritance for classes exposed to Godot**, as ``GDCLASS``
+   doesn't support this. You can still use multiple inheritance in your own
+   classes as long as they're not exposed to Godot's scripting API.
 
 But this is not all, depending what you do, you will be greeted with
 some (hopefully positive) surprises.
