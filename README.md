@@ -125,6 +125,16 @@ pip install -r requirements.txt
 
 Then do `make html` like above.
 
+### Rebuilding automatically on changes
+
+To build the documentation every time you save your changes, install
+[watchexec](https://github.com/watchexec/watchexec) then run the following
+command in this directory:
+
+```sh
+watchexec make html
+```
+
 ## License
 
 At the exception of the `classes/` folder, all the content of this repository is licensed under the Creative Commons Attribution 3.0 Unported license ([CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)) and is to be attributed to "Juan Linietsky, Ariel Manzur and the Godot community".
