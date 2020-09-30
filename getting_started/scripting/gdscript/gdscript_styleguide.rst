@@ -753,11 +753,9 @@ To declare the return type of a function, use ``-> <type>``:
 Inferred types
 ~~~~~~~~~~~~~~
 
-In most cases you can let the compiler infer the type, using ``:=``:
+In most cases you can let the compiler infer the type, using ``:=``::
 
-::
-
-   var health := 0  # The compiler will use the int type.
+    var health := 0  # The compiler will use the int type.
 
 However, in a few cases when context is missing, the compiler falls back to
 the function's return type. For example, ``get_node()`` cannot infer a type
