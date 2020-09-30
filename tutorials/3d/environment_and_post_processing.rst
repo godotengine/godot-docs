@@ -337,20 +337,21 @@ interesting glow patterns:
 .. image:: img/environment_glow_layers2.png
 
 Finally, as the highest layers are created by stretching small blurred images,
-it is possible that some blockiness may be visible. Enabling **Bicubic Upscale**
+The effect may appear blocky. Enabling **Bicubic Upscale**
 gets rids of it, at a minimal performance cost.
 
 .. image:: img/environment_glow_bicubic.png
 
 .. note::
 
-    When using the GLES2 backend, bicubic upscaling is only supported on
+    When using the GLES2 backend, bicubic upscale is only supported on
     graphics cards that provide the ``GL_EXT_gpu_shader4`` extension. Nearly all
-    desktop/laptop graphics cards provide this extension, but not all mobile
+    desktop and laptop graphics cards provide this extension, but not all mobile
     GPUs do.
 
-    Also, since GLES2 does not use high dynamic range rendering, you may need to use
-    different glow intensity values to get a good result.
+    Also, note that GLES2 does not support High Dynamic Range (HDR) rendering. As a
+    result, you will need different glow settings compared to GLES3 to get a
+    good-looking glow.
 
 Adjustments
 ^^^^^^^^^^^
