@@ -63,3 +63,13 @@ a TextureRect can be centered in its parent:
 Setting each anchor to 0.5 moves the reference point for the margins to
 the center of its parent. From there, we set negative margins so that
 the control gets its natural size.
+
+Presets
+-------
+
+Instead of manually adjusting the margin or anchor values, you can achieve
+the same by using the presets provided by the editor. Presets can be accessed
+in the top bar of the editor. Besides centering a control, there are also
+many other options available.
+
+.. image:: img/presets.png
