@@ -59,11 +59,26 @@ manager.
 
 To create an ``.app`` bundle like in the official builds, you need to use the
 template located in ``misc/dist/osx_tools.app``. Typically, for an optimized
-editor binary built with ``target=release_debug``::
+editor binary built with ``target=release_debug``, you may do this::
 
+Start first with::
     cp -r misc/dist/osx_tools.app ./Godot.app
     mkdir -p Godot.app/Contents/MacOS
-    cp bin/godot.osx.opt.tools.universal Godot.app/Contents/MacOS/Godot
+
+Then, if you compiled solely for Intel (x86-64) powered Macs::
+
+    cp bin/godot.osx.tools.x86_64 Godot.app/Contents/MacOS/Godot
+
+Or if you compiled solely for Apple Silicon (ARM64) powered Macs::
+
+    cp bin/godot.osx.tools.arm64 Godot.app/Contents/MacOS/Godot
+
+Or if you bundled both into a single "Universal 2" binary::
+
+    cp bin/godot.osx.tools.universal Godot.app/Contents/MacOS/Godot
+
+Finally, set execute permissions through this command::
+
     chmod +x Godot.app/Contents/MacOS/Godot
 
 If you are building the ``master`` branch, additionally copy the Vulkan library::
