@@ -8,8 +8,8 @@ Godot provides a way to use script templates as seen in the
 
 .. image:: img/script_create_dialog_templates.png
 
-A set of default script templates is provided by default, but it's also possible
-to modify existing and create new ones, both per project and the editor.
+A set of script templates is provided by default, but it's also possible
+to modify existing and create new ones, both per project and editor-wide.
 
 Locating the templates
 ----------------------
