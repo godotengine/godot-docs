@@ -204,6 +204,40 @@ from the FileSystem dock at once.
 
     var c = [a, 2, 3]
 
+Exporting actions as "buttons"
+------------------------------
+
+Godot currently doesn't expose a way to expose a clickable action within the
+Inspector. While you could create an editor plugin, you can also expose a
+boolean property with a setter that performs the desired action. The setter
+should be made to keep the variable's original value at all times, which means
+the checkbox will always remain unchecked. The user will still be able to press
+it to trigger the desired action.
+
+.. note::
+
+    The script **must** be in ``tool`` mode for this to work.
+    Otherwise, the setter won't be run while in the editor.
+    See :ref:`doc_running_code_in_the_editor` for more information.
+
+This can be useful to create editor tooling when you're in a hurry::
+
+    # Notice the setter method.
+    export var bake_shadows = false setget do_bake_shadows
+
+
+    # In GDScript, setters always need to accept at least one parameter.
+    # To make it easier to call this method from code, you can make the parameter optional
+    # by giving it a default value.
+    func do_bake_shadows(_p_bake_shadows = null):
+        print("Do stuff here...")
+
+        # Notice how we never set the variable of `bake_shadows` in this method.
+        # Therefore, `bake_shadows` will always remain set to `false` when changed externally.
+        # Since exported variables will trigger the setter when modifying the value
+        # from the inspector, this `do_bake_shadows()` method will be called
+        # whenever the user tries to enable the "Bake Shadows" property.
+
 Setting exported variables from a tool script
 ---------------------------------------------
 
