@@ -7,76 +7,81 @@ Introduction
 ------------
 
 **GDNative** is a Godot-specific technology that lets the engine interact with
-native shared libraries at run-time. This means it can be used to run native
-code that was not originally supplied with the engine.
+ native `shared libraries
+ <https://en.wikipedia.org/wiki/Library_(computing)#Shared_libraries>`__ at
+ run-time. You can use it to run native code without compiling it with the
+ engine.
 
-GDNative is *not* a scripting language and has no relation to :ref:`GDScript <doc_gdscript>`.
+.. note:: GDNative is *not* a scripting language and has no relation to
+          :ref:`GDScript <doc_gdscript>`.
 
 Differences between GDNative and C++ modules
 --------------------------------------------
 
-Both GDNative and :ref:`C++ modules <doc_custom_modules_in_c++>` can be used to
-run C/C++ code in a Godot project.
-Both GDNative and C++ modules also make it possible to integrate third-party
-libraries into Godot. Which one to choose depends on your needs:
+You can use both GDNative and :ref:`C++ modules <doc_custom_modules_in_c++>` to
+run C or C++ code in a Godot project.
+
+They also both allow you to integrate third-party libraries into Godot. The one
+you should choose depends on your needs.
 
 Advantages of GDNative
 ^^^^^^^^^^^^^^^^^^^^^^
 
-GDNative is most suited to game logic (although GDScript/C# will still be more
-convenient for this use case). The easier setup for end users also makes
-GDNative more suitable for add-ons published to the :ref:`asset library
-<doc_what_is_assetlib>`.
+Unlike modules, GDNative doesn't require compiling the engine's source code,
+making it easier to distribute your work. It gives you access to most of the API
+available to GDScript C#, allowing you to code game logic with full control
+regarding performance. It's ideal if you need high-performance code you'd like
+to distribute as an add-on in the :ref:`asset library <doc_what_is_assetlib>`.
 
-- GDNative is not limited to C/C++. Thanks to
-  :ref:`third-party bindings <doc_what_is_gdnative_third_party_bindings>`,
-  it can be used with many other languages.
-- The same compiled GDNative library can be used both in the editor and exported
+Also:
+
+- GDNative is not limited to C and C++. Thanks to :ref:`third-party bindings
+  <doc_what_is_gdnative_third_party_bindings>`, you can use it with many other
+  languages.
+- You can use the same compiled GDNative library in the editor and exported
   project. With C++ modules, you have to recompile all the export templates you
-  plan to use if module functionality is required at run-time.
-- C++ modules are statically compiled into the engine. Every time you make a
-  change, you need to recompile the engine. Even with incremental builds, this
-  process often takes more than 10 seconds on most machines. In contrast, GDNative
-  only requires you to compile your library, not the whole engine.
+  plan to use if you require its functionality at run-time.
+- GDNative only requires you to compile your library, not the whole engine.
+  That's unlike C++ modules, which are statically compiled into the engine.
+  Every time you change a module, you need to recompile the engine. Even with
+  incremental builds, this process is slower than using GDNative.
 
 Advantages of C++ modules
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-:ref:`C++ modules <doc_custom_modules_in_c++>` are mainly recommended in cases
-where GDNative doesn't suffice for the reasons outlined below:
+We recommend :ref:`C++ modules <doc_custom_modules_in_c++>` in cases where
+GDNative isn't enough:
 
-- C++ modules provide deeper integration into the engine. GDNative is more
-  limited and can only access what the scripting API exposes (more or less).
-- C++ modules can be used to provide additional features in a project without
-  having to carry native library files around. This extends to exported projects
-  as well.
+- C++ modules provide deeper integration into the engine. GDNative's access is
+  limited to what the scripting API exposes.
+- You can use C++ modules to provide additional features in a project without
+  carrying native library files around. This extends to exported projects.
 - C++ modules are supported on all platforms. In contrast, GDNative isn't
-  supported on HTML5 and UWP yet.
-- C++ modules can be faster than GDNative, especially when lots of communication
-  through the scripting API is involved.
+  supported on HTML5 and the Universal Windows Platform (UWP) yet.
+- C++ modules can be faster than GDNative, especially when the code requires a
+  lot of communication through the scripting API.
 
 Supported languages
 -------------------
 
-Official
-^^^^^^^^
+The Godot developers officially support the following language bindings for
+GDNative:
 
 - C++ :ref:`(tutorial) <doc_gdnative_cpp_example>`
 - C :ref:`(tutorial) <doc_gdnative_c_example>`
 
-There are no plans to officially support additional languages with GDNative.
-That said, the community offers several bindings for other languages (see
-below).
+.. note::
+
+    There are no plans to support additional languages with GDNative officially.
+    That said, the community offers several bindings for other languages (see
+    below).
 
 .. _doc_what_is_gdnative_third_party_bindings:
 
-Third-party
-^^^^^^^^^^^
+The bindings below are developed and maintained by the community:
 
-The bindings below are developed by the community and are sorted by alphabetical order.
-
-.. Binding developers: Feel free to open a pull request to add your binding
-.. if it's well-developed enough to be used in a project.
+.. Binding developers: Feel free to open a pull request to add your binding if it's well-developed enough to be used in a project.
+.. Please keep languages sorted in alphabetical order.
 
 - `D <https://github.com/godot-d/godot-d>`__
 - `Kotlin <https://github.com/utopia-rise/godot-kotlin>`__
@@ -87,6 +92,6 @@ The bindings below are developed by the community and are sorted by alphabetical
 .. note::
 
     Not all bindings mentioned here may be production-ready. Make sure to
-    research options thoroughly before starting a project with one of those
-    bindings. Also, double-check whether the binding is compatible with the
-    Godot version you're using.
+    research options thoroughly before starting a project with one of those.
+    Also, double-check whether the binding is compatible with the Godot version
+    you're using.
