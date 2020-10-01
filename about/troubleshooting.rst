@@ -16,6 +16,28 @@ You should use the graphics driver provided by Intel rather than the one
 provided by your desktop or laptop's manufacturer because their version is often
 outdated.
 
+The editor runs slowly and uses all my CPU and GPU resources, making my computer noisy.
+---------------------------------------------------------------------------------------
+
+This is a known issue, especially on macOS since most Macs have Retina displays.
+Due to Retina displays' higher pixel density, everything has to be rendered at a
+higher resolution. This increases the load on the GPU and decreases perceived
+performance.
+
+There are several ways to improve performance and battery life:
+
+- In 3D, click the **Perspective** button in the top left corner and enable
+  **Half Resolution**. The 3D viewport will now be rendered at half resolution,
+  which can be up to 4 times faster.
+- Open the Editor Settings and increase the value of **Low Processor Mode Sleep Usec**
+  to ``33000`` (30 FPS). This value determines the amount of *microseconds*
+  between frames to render. Higher values will make the editor feel less reactive,
+  but will help decrease CPU and GPU usage significantly.
+- If you have a node that causes the editor to redraw continuously (such as
+  particles), hide it and show it using a script in the ``_ready()`` method.
+  This way, it will be hidden in the editor but will still be visible in the
+  running project.
+
 The grid disappears and meshes turn black when I rotate the 3D camera in the editor.
 ------------------------------------------------------------------------------------
 
