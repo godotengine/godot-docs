@@ -7,10 +7,8 @@ Introduction
 ------------
 
 **GDNative** is a Godot-specific technology that lets the engine interact with
- native `shared libraries
- <https://en.wikipedia.org/wiki/Library_(computing)#Shared_libraries>`__ at
- run-time. You can use it to run native code without compiling it with the
- engine.
+native `shared libraries <https://en.wikipedia.org/wiki/Library_(computing)#Shared_libraries>`__
+at run-time. You can use it to run native code without compiling it with the engine.
 
 .. note:: GDNative is *not* a scripting language and has no relation to
           :ref:`GDScript <doc_gdscript>`.
