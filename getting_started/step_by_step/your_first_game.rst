@@ -349,7 +349,7 @@ the ``_process`` function (make sure it's not indented under the `else`):
         complete. Using this value ensures that your movement will remain
         consistent even if the frame rate changes.
 
-Click "Play Scene" (``F6``) and confirm you can move the player
+Click "Play Scene" (:kbd:`F6`, :kbd:`Cmd + R` on macOS) and confirm you can move the player
 around the screen in all directions.
 
 .. warning:: If you get an error in the "Debugger" panel that says
