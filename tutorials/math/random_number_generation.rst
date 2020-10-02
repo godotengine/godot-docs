@@ -110,7 +110,7 @@ and ``to``, and returns a random integer between ``from`` and ``to``::
     # Prints a random floating-point number between -10 and 10.
     var rng = RandomNumberGenerator.new()
     rng.randomize()
-    print(rng.randi_range(-10, 10)
+    print(rng.randi_range(-10, 10))
 
 Get a random array element
 --------------------------
