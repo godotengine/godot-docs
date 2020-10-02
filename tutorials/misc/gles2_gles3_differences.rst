@@ -91,8 +91,8 @@ See :ref:`doc_environment_and_post_processing` for more information.
 Glow
 ----
 
-Many GLES2 devices only have a maximum of 8 texture units. On such devices, only the first 6 levels of glow can be used and 
-level 7 will be ignored.
+Many GLES2 devices only have a maximum of eight texture units. On such devices, you
+can only use the first six levels of glow; the seventh one won't do anything.
 
 GIProbes
 --------
