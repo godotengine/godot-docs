@@ -88,6 +88,12 @@ That means that in GLES2 environments you can only set:
 
 See :ref:`doc_environment_and_post_processing` for more information.
 
+Glow
+----
+
+Many GLES2 devices only have a maximum of 8 texture units. On such devices, only the first 6 levels of glow can be used and 
+level 7 will be ignored.
+
 GIProbes
 --------
 
