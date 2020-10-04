@@ -349,6 +349,8 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 | out float **ALPHA**               | Alpha (0..1); if written to, the material will go   |
 |                                   | to the transparent pipeline.                        |
 +-----------------------------------+-----------------------------------------------------+
+| in float **METALLIC**             | Metallic.                                           |
++-----------------------------------+-----------------------------------------------------+
 | in float **ROUGHNESS**            | Roughness.                                          |
 +-----------------------------------+-----------------------------------------------------+
 | in vec3 **TRANSMISSION**          | Transmission mask from fragment function.           |
