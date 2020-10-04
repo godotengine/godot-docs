@@ -179,7 +179,9 @@ and 64-bit variants. The package names may differ based on your distribution,
 here are some known ones:
 
 +----------------+--------------------------------------------------------------+
-| **Arch Linux** | Install `mingw-w64-gcc from the AUR`_.                       |
+| **Arch Linux** | ::                                                           |
+|                |                                                              |
+|                |     pacman -Sy mingw-w64                                     |
 +----------------+--------------------------------------------------------------+
 | **Debian** /   | ::                                                           |
 | **Ubuntu**     |                                                              |
@@ -199,8 +201,6 @@ here are some known ones:
 |                |     urpmi mingw64-gcc-c++ mingw64-winpthreads-static \       |
 |                |           mingw32-gcc-c++ mingw32-winpthreads-static         |
 +----------------+--------------------------------------------------------------+
-
-.. _mingw-w64-gcc from the AUR: https://aur.archlinux.org/packages/mingw-w64-gcc/
 
 Before attempting the compilation, SCons will check for
 the following binaries in your ``PATH`` environment variable::
