@@ -671,7 +671,7 @@ Main scene
 Now it's time to bring it all together. Create a new scene and add a
 :ref:`Node <class_Node>` named ``Main``. Ensure you create a Node, **not** a
 Node2D. Click the "Instance" button and select your
-saved ``Player.tscn``.
+saved ``Main.tscn``.
 
 .. image:: img/instance_scene.png
 
