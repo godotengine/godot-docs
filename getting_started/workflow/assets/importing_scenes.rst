@@ -432,7 +432,7 @@ reliability.
 .. note::
 
     For better visibility on Blender's editor, you can set the "X-Ray" option
-    on collision empties and set some distinct color for them by going on
+    on collision empties and set some distinct color for them by changing```
     **Edit > Preferences > Themes > 3D Viewport > Empty**.
     
     If using Blender 2.79 or older, follow these steps instead:
