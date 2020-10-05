@@ -435,7 +435,7 @@ reliability.
     on collision empties and set some distinct color for them by going on
     **Edit > Preferences > Themes > 3D Viewport > Empty**.
     
-    Obs.: if you are using a Blender's version below 2.8, maybe the steps are
+    If using Blender 2.79 or older, change the following setting instead:
     **User Preferences > Themes > 3D View > Empty**.
 
 .. seealso::
