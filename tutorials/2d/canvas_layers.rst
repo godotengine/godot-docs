@@ -40,8 +40,8 @@ CanvasLayers
 
 The answer is :ref:`CanvasLayer <class_CanvasLayer>`,
 which is a node that adds a separate 2D rendering layer for all its
-children and grand-children. Viewport children will draw by default at
-layer "0", while a CanvasLayer will draw at any numeric layer. Layers
+children and grand-children. Viewport children will be drawn by default at
+layer "0", while a CanvasLayer will be drawn at any numeric layer. Layers
 with a greater number will be drawn above those with a smaller number.
 CanvasLayers also have their own transform and do not depend on the
 transform of other layers. This allows the UI to be fixed in screen-space
