@@ -36,6 +36,11 @@ There are some folders Godot creates you should have your VCS ignore:
 - ``.mono/``: This folder stores automatically-generated Mono files. It only exists
   in projects that use the Mono version of Godot.
 
+.. tip::
+
+    Save `this .gitignore file <https://raw.githubusercontent.com/github/gitignore/master/Godot.gitignore>`__
+    in your project's root folder to set up file exclusions automatically.
+
 Working with Git on Windows
 ---------------------------
 
@@ -44,3 +49,9 @@ This can lead to files unnecessarily being marked as modified by Git due to thei
 It is better to set this option as::
 
     git config --global core.autocrlf input
+
+Known issues
+------------
+
+**Always close the editor** before running ``git pull``! Otherwise, you may
+`lose data if you synchronize files while the editor is open <https://github.com/godotengine/godot/issues/20250>`__.
