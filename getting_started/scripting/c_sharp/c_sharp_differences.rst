@@ -21,7 +21,12 @@ Most global constants were moved to their own enums.
 Constants
 ^^^^^^^^^
 
-Global constants were moved to their own enums.
+In C#, only primitive types can be constant. For example, the ``TAU`` constant
+is replaced by the ``Mathf.Tau`` constant, but the ``Vector2.RIGHT`` constant
+is replaced by the ``Vector2.Right`` read-only property. This behaves similarly
+to a constant, but can't be used in some contexts like ``switch`` statements.
+
+Global enum constants were moved to their own enums.
 For example, ``ERR_*`` constants were moved to the ``Error`` enum.
 
 Special cases:
