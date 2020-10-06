@@ -3,7 +3,7 @@
 Procedural geometry
 ===================
 
-There are many ways to procedurally generate geometry in Godot. In this tutorial series
+There are many ways to procedurally generate geometry in Godot. In this tutorial series,
 we will explore a few of them. Each technique has its own benefits and drawbacks, so
 it is best to understand each one and how it can be useful in a given situation.
 
@@ -15,6 +15,11 @@ it is best to understand each one and how it can be useful in a given situation.
    meshdatatool
    surfacetool
    immediategeometry
+
+.. note::
+
+      All the procedural geometry generation methods described here run on the
+      CPU. Godot doesn't support generating geometry on the GPU yet.
 
 What is geometry?
 -----------------
