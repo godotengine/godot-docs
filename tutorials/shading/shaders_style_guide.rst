@@ -1,7 +1,7 @@
-.. _doc_godot_shader_language_style_guide:
+.. _doc_shaders_style_guide:
 
-Godot shader language style guide
-=================================
+Shaders style guide
+===================
 
 This style guide lists conventions to write elegant shaders. The goal is to
 encourage writing clean, readable code and promote consistency across projects,
