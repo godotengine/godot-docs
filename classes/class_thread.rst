@@ -21,7 +21,7 @@ A unit of execution in a process. Can run methods on :ref:`Object<class_Object>`
 Tutorials
 ---------
 
-- :doc:`../tutorials/threads/using_multiple_threads`
+- :doc:`../tutorials/performance/using_multiple_threads`
 
 Methods
 -------
