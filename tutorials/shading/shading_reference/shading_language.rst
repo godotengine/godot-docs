@@ -9,7 +9,7 @@ Introduction
 Godot uses a shading language similar to GLSL ES 3.0. Most datatypes and functions are supported,
 and the few remaining ones will likely be added over time.
 
-If you are already familiar with GLSL, the :ref:`Godot Shader Migration Guide<doc_migrating_to_godot_shader_language>`
+If you are already familiar with GLSL, the :ref:`Godot Shader Migration Guide<doc_converting_glsl_to_godot_shaders>`
 is a resource that will help you transition from regular GLSL to Godot's shading language.
 
 Data types
