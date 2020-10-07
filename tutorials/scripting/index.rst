@@ -10,3 +10,6 @@ Scripting
    c_sharp/index
    cross_language_scripting
    creating_script_templates
+   change_scenes_manually
+   instancing_with_signals
+   pausing_games
