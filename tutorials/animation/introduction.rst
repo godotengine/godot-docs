@@ -1,10 +1,7 @@
 .. _doc_introduction_2d_animation:
 
-Introduction to the 2D animation features
-=========================================
-
-Overview
---------
+Introduction to the animation features
+======================================
 
 The :ref:`class_AnimationPlayer` node allows you to create anything
 from simple to complex animations.
