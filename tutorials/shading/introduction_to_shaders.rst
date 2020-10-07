@@ -1,7 +1,7 @@
-.. _doc_what_are_shaders:
+.. _doc_introduction_to_shaders:
 
-What are shaders?
-=================
+Introduction to shaders
+=======================
 
 Introduction
 ------------
