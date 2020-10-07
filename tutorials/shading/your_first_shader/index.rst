@@ -21,6 +21,6 @@ For a more general introduction into shaders and the OpenGL Shading Language, us
    :name: toc-your-first-shader
 
    what_are_shaders
-   your_first_canvasitem_shader
-   your_first_spatial_shader
-   your_second_spatial_shader
+   your_first_2d_shader
+   your_first_3d_shader
+   your_second_3d_shader
