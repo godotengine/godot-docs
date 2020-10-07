@@ -169,7 +169,7 @@ Viewports
 Shading
 ^^^^^^^
 
-- :ref:`doc_migrating_to_godot_shader_language`
+- :ref:`doc_converting_glsl_to_godot_shaders`
 - :ref:`doc_advanced_postprocessing`
 
 Shading Reference:
