@@ -3,9 +3,6 @@
 Introduction to the animation features
 ======================================
 
-Overview
---------
-
 The :ref:`class_AnimationPlayer` node allows you to create anything
 from simple to complex animations.
 
