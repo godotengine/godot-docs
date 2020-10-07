@@ -77,7 +77,6 @@ The main documentation for the site is organized into the following sections:
 
    getting_started/step_by_step/index
    getting_started/editor/index
-   getting_started/scripting/index
    getting_started/workflow/index
 
 
@@ -86,6 +85,7 @@ The main documentation for the site is organized into the following sections:
    :caption: Tutorials
    :name: sec-tutorials
 
+   tutorials/scripting/index
    tutorials/2d/index
    tutorials/3d/index
    tutorials/audio/index
