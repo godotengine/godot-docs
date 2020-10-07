@@ -90,7 +90,6 @@ The main documentation for the site is organized into the following sections:
    tutorials/io/index
    tutorials/i18n/index
    tutorials/gui/index
-   tutorials/viewports/index
    tutorials/rendering/index
    tutorials/shading/index
    tutorials/networking/index

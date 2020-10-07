@@ -27,7 +27,7 @@ Tutorials
 
 - :doc:`../getting_started/step_by_step/scene_tree`
 
-- :doc:`../tutorials/viewports/multiple_resolutions`
+- :doc:`../tutorials/rendering/multiple_resolutions`
 
 Properties
 ----------
