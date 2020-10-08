@@ -5,5 +5,6 @@ GDNative
    :maxdepth: 1
    :name: toc-tutorials-gdnative
 
-   gdnative-c-example
-   gdnative-cpp-example
+   what_is_gdnative
+   gdnative_c_example
+   gdnative_cpp_example
