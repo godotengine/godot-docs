@@ -94,7 +94,6 @@ The main documentation for the site is organized into the following sections:
    tutorials/rendering/index
    tutorials/shading/index
    tutorials/networking/index
-   tutorials/assetlib/index
    tutorials/vr/index
    tutorials/plugins/index
    tutorials/platform/index
@@ -121,6 +120,7 @@ The main documentation for the site is organized into the following sections:
    :name: sec-community
 
    community/contributing/index
+   community/asset_library/index
    community/channels
    community/tutorials
 
