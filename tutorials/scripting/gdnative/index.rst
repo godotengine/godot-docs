@@ -6,5 +6,5 @@ GDNative
    :name: toc-tutorials-gdnative
 
    what_is_gdnative
-   gdnative-c-example
-   gdnative-cpp-example
+   gdnative_c_example
+   gdnative_cpp_example
