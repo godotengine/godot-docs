@@ -9,7 +9,7 @@ Introduction
 Shaders are special programs that execute on the GPU and are used for rendering
 graphics. All modern rendering is done with shaders. For a more detailed
 description of what shaders are please see :ref:`What are shaders
-<doc_what_are_shaders>`.
+<doc_introduction_to_shaders>`.
 
 This tutorial will focus on the practical aspects of writing shader programs by
 walking you through the process of writing a shader with both vertex and
