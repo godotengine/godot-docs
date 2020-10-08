@@ -18,6 +18,3 @@
    using_gridmaps
    using_multi_mesh_instance
    csg_tools
-   fps_tutorial/index
-   vertex_animation/index
-   portals/index
