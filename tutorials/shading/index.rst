@@ -13,3 +13,5 @@ Shading
    migrating_to_godot_shader_language
    shaders_style_guide
    advanced_postprocessing
+   using_viewport_as_texture
+   custom_postprocessing
