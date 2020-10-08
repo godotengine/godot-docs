@@ -7,4 +7,3 @@ Plugins
 
    editor/index
    gdnative/index
-   android/index
