@@ -50,7 +50,7 @@ Shading
 ^^^^^^^
 
 - Your First Shader Series:
-    - :ref:`doc_what_are_shaders`
+    - :ref:`doc_introduction_to_shaders`
     - :ref:`doc_your_first_canvasitem_shader`
     - :ref:`doc_your_first_spatial_shader`
     - :ref:`doc_your_second_spatial_shader`
@@ -169,7 +169,7 @@ Viewports
 Shading
 ^^^^^^^
 
-- :ref:`doc_migrating_to_godot_shader_language`
+- :ref:`doc_converting_glsl_to_godot_shaders`
 - :ref:`doc_advanced_postprocessing`
 
 Shading Reference:
