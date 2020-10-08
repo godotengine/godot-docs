@@ -23,7 +23,7 @@ Visual shader graphs consist of various nodes. Each node in the graph is a separ
 Tutorials
 ---------
 
-- :doc:`../tutorials/shading/visual_shaders`
+- :doc:`../tutorials/shaders/visual_shaders`
 
 Properties
 ----------
