@@ -1,5 +1,5 @@
-Optimization
-=============
+Performance
+===========
 
 Introduction
 ------------
@@ -74,3 +74,14 @@ GPU
    :name: toc-learn-features-3d-optimization
 
    optimizing_3d_performance
+
+
+Threads
+-------
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-learn-features-threads
+
+   using_multiple_threads
+   thread_safe_apis
