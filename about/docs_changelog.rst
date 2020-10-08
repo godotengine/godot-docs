@@ -169,7 +169,6 @@ Viewports
 Shading
 ^^^^^^^
 
-- :ref:`doc_intro_to_shaders_water_workshop`
 - :ref:`doc_migrating_to_godot_shader_language`
 - :ref:`doc_advanced_postprocessing`
 
