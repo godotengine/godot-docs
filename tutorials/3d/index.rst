@@ -18,4 +18,3 @@
    using_gridmaps
    using_multi_mesh_instance
    csg_tools
-   vertex_animation/index
