@@ -1,5 +1,5 @@
-GUI
-===
+User Interface (UI)
+===================
 
 .. toctree::
    :maxdepth: 1

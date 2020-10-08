@@ -23,7 +23,7 @@ Rich text can contain custom text, fonts, images and some basic formatting. The 
 Tutorials
 ---------
 
-- :doc:`../tutorials/gui/bbcode_in_richtextlabel`
+- :doc:`../tutorials/ui/bbcode_in_richtextlabel`
 
 Properties
 ----------
