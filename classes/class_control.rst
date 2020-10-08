@@ -37,7 +37,7 @@ Sets :ref:`mouse_filter<class_Control_property_mouse_filter>` to :ref:`MOUSE_FIL
 Tutorials
 ---------
 
-- :doc:`../tutorials/gui/index`
+- :doc:`../tutorials/ui/index`
 
 - :doc:`../tutorials/2d/custom_drawing_in_2d`
 
