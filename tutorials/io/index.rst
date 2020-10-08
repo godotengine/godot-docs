@@ -9,3 +9,4 @@ I/O
     data_paths
     saving_games
     encrypting_save_games
+    binary_serialization_api

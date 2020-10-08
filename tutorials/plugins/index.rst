@@ -7,3 +7,4 @@ Plugins
 
    editor/index
    gdnative/index
+   running_code_in_the_editor
