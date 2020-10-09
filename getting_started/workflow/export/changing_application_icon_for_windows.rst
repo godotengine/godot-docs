@@ -74,6 +74,9 @@ Navigate to and select the rcedit executable.
     Linux and macOS users will also need to install
     `WINE <https://www.winehq.org/>`_ to use rcedit.
 
+    On macOS 10.15 (Catalina) or later, make sure to use a 64-bit version of
+    both WINE and rcedit since 32-bit applications aren't supported anymore.
+
 .. image:: img/icon_rcedit.png
 
 You should now have everything in place to change the file icon.
@@ -81,6 +84,16 @@ To do that, you will need to specify the icon when exporting.
 Go to **Project → Export**. Assuming you have already created
 a Windows Desktop preset, select your icon in ICO format in
 the **Application → Icon** field.
+
+.. warning::
+
+    All the supplied metadata must be valid. Most importantly, the version
+    identifiers **must** take the form ``major.minor.patch.revision`` where
+    every component is required and is a positive integer. For instance,
+    ``1.2.0.0`` is valid but ``1.2.0`` is not.
+
+    If you provide invalid metadata in the export preset, the application icon
+    won't change as rcedit will fail to change the executable's metadata.
 
 .. image:: img/icon_export_settings.png
 
