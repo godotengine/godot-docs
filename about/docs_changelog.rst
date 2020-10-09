@@ -174,7 +174,7 @@ Shading
 
 Shading Reference:
 
-- :ref:`doc_shaders`
+- :ref:`doc_introduction_to_shaders`
 - :ref:`doc_shading_language`
 - :ref:`doc_spatial_shader`
 - :ref:`doc_canvas_item_shader`
