@@ -1,4 +1,4 @@
-Shading
+Shaders
 =======
 
 .. toctree::
@@ -6,7 +6,7 @@ Shading
    :name: toc-learn-features-shading
 
    introduction_to_shaders
-   shading_reference/index
+   shader_reference/index
    your_first_shader/index
    shader_materials
    visual_shaders

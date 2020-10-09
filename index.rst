@@ -89,9 +89,9 @@ The main documentation for the site is organized into the following sections:
    tutorials/inputs/index
    tutorials/io/index
    tutorials/i18n/index
-   tutorials/gui/index
+   tutorials/ui/index
    tutorials/rendering/index
-   tutorials/shading/index
+   tutorials/shaders/index
    tutorials/networking/index
    tutorials/vr/index
    tutorials/plugins/index
