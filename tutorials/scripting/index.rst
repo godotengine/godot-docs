@@ -9,6 +9,7 @@ Scripting
    visual_script/index
    c_sharp/index
    gdnative/index
+   debug/index
    cross_language_scripting
    creating_script_templates
    change_scenes_manually
