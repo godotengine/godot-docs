@@ -98,7 +98,6 @@ The main documentation for the site is organized into the following sections:
    tutorials/platform/index
    tutorials/content/index
    tutorials/performance/index
-   tutorials/debug/index
 
 
 .. toctree::
