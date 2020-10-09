@@ -3,117 +3,116 @@
 Animation Track types
 =====================
 
-Overview
---------
+This page gives an overview of the track types available for Godot's animation
+player node on top of the default property tracks.
 
-This page goes over the different track types in Godot's animation player
-node.
+.. seealso::
+
+   We assume you already read :ref:`doc_introduction_animation`, which covers
+   the basics, including property tracks.
 
 .. image:: img/track_types.png
 
-This page will assume you have already read :ref:`doc_introduction_2d_animation`,
-or have basic knowledge of animation in Godot. Property tracks will not be
-explained here.
 
 3D Transform Track
 ------------------
 
-3D transform tracks have a very specific use. They are used exclusively to
-adjust the location, rotation and scale of a 3D object. This exists because
-adjusting those properties with a property track would be cumbersome.
+3D transform tracks control the location, rotation, and scale of a 3D object.
+They make it easier to animate a 3D object's transform compared to using regular
+property tracks.
 
 .. image:: img/3D_transform_track.png
 
 Call Method tracks
 ------------------
 
-Call method tracks allow you to use the method of a node while an animation
-is playing. For example deleting a node after a death animation.
+Call method tracks allow you to call a function at a precise time from within an
+animation. For example, you can call ``queue_free()`` to delete a node at the
+end of a death animation.
 
-To create one click "Add Track" and then "Call Method Track." Then select
-the node whose method you want to call during the animation. To call the
-method right click the timeline and select "Insert Key," this will bring
-up a list of every method in that node.
+To create such a track, click "Add Track -> Call Method Track." Then, a window
+opens and lets you select the node to associate with the track. To call one of
+the node's methods, right-click the timeline and select "Insert Key". A window
+opens with a list of available methods. Double-click one to finish creating the
+keyframe.
 
 .. image:: img/node_methods.png
 
-Selecting the key on the timeline will bring up the animation track key
-editor in the inspector. If you expand the "Args" tab you will see a
-list of arguments the method takes that you can edit.
+To change the method call or its arguments, click on the key and head to the
+inspector dock. There, you can change the method to call. If you expand the
+"Args" section, you will see a list of arguments you can edit.
 
 .. image:: img/node_method_args.png
 
 Bezier Curve Track
 ------------------
 
-A bezier curve track is a specific type of property track. In a property
-track properties are changed at a consistent rate. Bezier curve tracks
-allow you to change properties according to a bezier curve.
+A bezier curve track is similar to a property track, except it allows you to
+animate a property's value using a bezier curve.
 
-To create one click "Add Track" and then "Bezier Curve Track." Like a
-property track you need to select a node and then a property to animate.
-Create some keys and click the curve icon on the right side of the
-animation player.
+To create one, click "Add Track -> Bezier Curve Track". As with property tracks,
+you need to select a node and a property to animate. To open the bezier curve
+editor, click the curve icon to the right of the animation track.
 
 .. image:: img/bezier_curve_icon.png
 
-This should open the bezier curve editor. Keys will be represented
-by white diamonds, and the transparent diamonds connected to them are
-manipulators that can be moved to manipulate the shape of the curve.
+In the editor, keys are represented by white diamonds and the transparent
+diamonds connected to them by a line control curve's shape.
 
 .. image:: img/bezier_curves.png
 
-In the bottom right of the editor you can select the manipulator mode.
+In the bottom-right of the editor, you can select the manipulator mode:
+
+- Free allows you to orient a manipulator in any direction without affecting the
+  other's position.
+- Balanced makes it so manipulators rotate together, but the distance between
+  the key and a manipulator is not mirrored.
+- Mirror makes the position of one manipulator perfectly mirror the other,
+  including their distance to the key.
 
 .. image:: img/manipulator_modes.png
-
--  Free: either manipulator of a key can be moved completely without
-   affecting the position of the other.
--  Balanced: The position of one manipulator perfectly mirrors the other.
-   But the distance of the manipulator from the key is not mirrored.
--  Mirror: The position of one manipulator perfectly mirrors the other.
-   Including the distance of the manipulator from the key.
 
 Audio Playback Track
 --------------------
 
-If you want to create an animation with audio you need to use an audio
-playback track. Before you create one your scene must have either a
-AudioStreamPlayer, AudioStreamPlayer2D, or AudioStreamPlayer3D node. When
-creating the track you must select one of those nodes.
+If you want to create an animation with audio, you need to create an audio
+playback track. To create one, your scene must have either an AudioStreamPlayer,
+AudioStreamPlayer2D, or AudioStreamPlayer3D node. When creating the track, you
+must select one of those nodes.
 
-If you need to you can create multiple audio tracks using the same node.
-To add an audio file to your audio playback track, find the file you want
-in the file system panel, then drag and drop it onto the audio playback
-track in the animation player. After that you should see the waveform
-of your audio file in the track.
+To play a sound in your animation, drag and drop an audio file from the file
+system dock onto the animation track. You should see the waveform of your audio
+file in the track.
 
 .. image:: img/audio_track.png
 
-To delete an audio file from your audio playback track, select it in the
-track and press your delete key, or right click it and select "Delete
-Key(s)"
+To remove a sound from the animation, you can right-click it and select "Delete
+Key(s)" or click on it and press the :kbd:`Del` key.
+
+.. note:: If you need to, you can create multiple audio tracks that trigger
+          playback on the same node.
 
 Animation Playback Track
 ------------------------
 
-Animation playback tracks are used to access the animations of other
-animation player nodes in a scene. For example you may have several
-characters in a scene for a cutscene, and want to use their own animations
-for the cutscene.
+Animation playback tracks allow you to sequence the animations of other
+animation player nodes in a scene. For example, you can use it to animate
+several characters in a cut-scene.
 
-To create one select "New Track" and "Animation Playback Track." You then
-need to select the animation player you want to access. If you have a instanced
-scene where the animation player of that scene is not the root node, you need
-to enable "Editable Children" in the scene tree to access that animation player.
-And an animation player cannot access itself.
+To create an animation playback track, select "New Track -> Animation Playback
+Track."
 
-To play an animation right click the timeline and insert a key. Select the
-key you just created to open animation track key edit in the inspector. From
-there you can select the specific animation you want to paly.
+Then, select the animation player you want to associate with the track.
+
+To add an animation to the track, right-click on it and insert a key. Select the
+key you just created to select an animation in the inspector dock.
 
 .. image:: img/animation_player_animation.png
 
 If an animation is already playing and you want to stop it early, you can create
-a key and have it set to `[STOP]` under animation. The current animation will then
-stop when it hits that key.
+a key and have it set to `[STOP]` in the inspector.
+
+.. note:: If you instanced a scene that contains an animation player into your
+          scene, you need to enable "Editable Children" in the scene tree to
+          access its animation player. Also, an animation player cannot
+          reference itself.

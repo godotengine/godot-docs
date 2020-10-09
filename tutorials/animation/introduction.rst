@@ -1,4 +1,4 @@
-.. _doc_introduction_2d_animation:
+.. _doc_introduction_animation:
 
 Introduction to the animation features
 ======================================
