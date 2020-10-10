@@ -1595,6 +1595,24 @@ You can also get the signal's argument once it's emitted by an object:
     # Wait for when any node is added to the scene tree.
     var node = yield(get_tree(), "node_added")
 
+If there is more than one argument, ``yield`` returns an array containing
+the arguments::
+
+    signal done(input, processed)
+    
+    func process_input(input):
+        print("Processing initialized")
+        yield(get_tree(), "idle_frame")
+        print("Waiting")
+        yield(get_tree(), "idle_frame")
+        emit_signal(input, "Processed " + input)
+
+
+    func _ready():
+        process_input("Test") # Prints: Processing initialized
+        var data = yield(self, "done") # Prints: waiting
+        print(data[1]) # Prints: Processed Test
+
 If you're unsure whether a function may yield or not, or whether it may yield
 multiple times, you can yield to the ``completed`` signal conditionally:
 
