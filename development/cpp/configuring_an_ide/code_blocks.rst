@@ -63,7 +63,7 @@ The next step is to change the build options. Right-click on the new project and
 
 Select the **"Make" commands** tab and remove all the existing commands for all the build targets. For each build target enter the **SCons** command for creating the desired build in the **Build project/target** field. The minimum is ``scons``. For details on the **SCons** build options, see :ref:`doc_introduction_to_the_buildsystem`. It's also useful to add the ``scons --clean`` command in the **Clean project/target** field to the project's default commmands.
 
-If you're using Windows, all the commands need to be preceded with ``cmd /c`` to iniitalize the command interpreter.
+If you're using Windows, all the commands need to be preceded with ``cmd /c`` to initialize the command interpreter.
 
 .. figure:: img/code_blocks_scons_minimum.png
    :figclass: figure-w480
