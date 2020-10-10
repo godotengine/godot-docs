@@ -245,16 +245,15 @@ Reporting node configuration warnings
 -------------------------------------
 
 Godot uses a *node configuration warning* system to warn users about incorrectly
-configured nodes. It's materialized by a yellow triangle with an exclamation
-mark next to the node name in the Scene tree dock. When the user hovers or
-clicks the triangle, they can see a warning message. You can use this feature in
-your scripts to help yourself (and your team) avoid mistakes when setting up
-scenes.
+configured nodes. When a node isn't configured correctly, a yellow warning sign
+appears next to the node's name in the Scene dock. When you hover or click on
+the icon, a warning message pops up. You can use this feature in your scripts to
+help you and your team avoid mistakes when setting up scenes.
 
-When using node configuration warnings, make sure to call
-:ref:`class_Node_method_update_configuration_warning` when the value of any
-"dependencies" changes so the warning is updated. Otherwise, the user will have
-to close and reopen the scene for the warning to be updated.
+When using node configuration warnings, when any value that should affect or
+remove the warning changes, you need to call
+:ref:`class_Node_method_update_configuration_warning`. By default, the warning
+only updates when closing and reopening the scene.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
