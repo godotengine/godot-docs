@@ -76,35 +76,36 @@ The main documentation for the site is organized into the following sections:
    :name: sec-learn
 
    getting_started/step_by_step/index
-   getting_started/workflow/index
 
 
+.. The sections below are sorted alphabetically. Please keep them that way.
 .. toctree::
    :maxdepth: 1
    :caption: Tutorials
    :name: sec-tutorials
 
-   tutorials/scripting/index
    tutorials/2d/index
    tutorials/3d/index
-   tutorials/audio/index
-   tutorials/physics/index
-   tutorials/editor/index
-   tutorials/math/index
    tutorials/animation/index
+   tutorials/assets_pipeline/index
+   tutorials/audio/index
+   tutorials/best_practices/index
+   tutorials/editor/index
+   tutorials/export/index
+   tutorials/i18n/index
    tutorials/inputs/index
    tutorials/io/index
-   tutorials/i18n/index
-   tutorials/ui/index
-   tutorials/rendering/index
-   tutorials/shaders/index
+   tutorials/math/index
    tutorials/networking/index
-   tutorials/vr/index
-   tutorials/plugins/index
-   tutorials/platform/index
-   tutorials/best_practices/index
    tutorials/performance/index
-   tutorials/export/index
+   tutorials/physics/index
+   tutorials/platform/index
+   tutorials/plugins/index
+   tutorials/rendering/index
+   tutorials/scripting/index
+   tutorials/shaders/index
+   tutorials/ui/index
+   tutorials/vr/index
 
 
 .. toctree::

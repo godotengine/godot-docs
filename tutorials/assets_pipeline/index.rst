@@ -1,4 +1,4 @@
-Assets workflow
+Assets pipeline
 ===============
 
 .. toctree::

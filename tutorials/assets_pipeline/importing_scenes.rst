@@ -448,7 +448,7 @@ simple or dynamic objects that require mostly-accurate collision detection.
 
 However, in both cases, the visual geometry may be too complex or not smooth
 enough for collisions. This can create physics glitches and slow down the engine
-unneccesarily.
+unnecessarily.
 
 To solve this, the ``-colonly`` modifier exists. It will remove the mesh upon
 importing and will create a :ref:`class_staticbody` collision instead.
