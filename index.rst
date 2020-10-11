@@ -93,6 +93,7 @@ The main documentation for the site is organized into the following sections:
    tutorials/vr/index
    tutorials/plugins/index
    tutorials/platform/index
+   tutorials/best_practices/index
    tutorials/performance/index
    tutorials/export/index
 

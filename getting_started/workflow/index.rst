@@ -7,4 +7,3 @@ Project workflow
 
    project_setup/index
    assets/index
-   best_practices/index
