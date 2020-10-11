@@ -58,7 +58,7 @@ Scroll down to the section where the Android settings are located:
 In that screen, the path to 3 files needs to be set:
 
 - The ``adb`` executable (``adb.exe`` on Windows)
-  - It can usually be found at ``%LOCALAPPDATA%\Android\Sdk\platform-tools\adb.exe`` on Windows and at ``/Users/$HOME/Library/Android/sdk/platform-tools/adb`` on macOS.
+  - It can usually be found at ``%LOCALAPPDATA%\Android\Sdk\platform-tools\adb.exe`` on Windows and at ``/Users/$USER/Library/Android/sdk/platform-tools/adb`` on macOS.
 
 - The ``jarsigner`` executable (from JDK 6 or 8)
   - On Windows, OpenJDK installs to a directory like ``%PROGRAMFILES%\AdoptOpenJDK\jdk-8.0.252.09-hotspot\bin``. On Linux and macOS, it typically installs to a directory like ``/usr/bin/jarsigner``. The exact path may vary depending on the OpenJDK update you've installed and your machine's operating system.
