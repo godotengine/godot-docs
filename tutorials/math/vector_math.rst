@@ -203,7 +203,8 @@ by its magnitude. Because this is such a common operation,
 
 .. warning:: Because normalization involves dividing by the vector's length,
              you cannot normalize a vector of length ``0``. Attempting to
-             do so will result in an error.
+             do so will result in an undefined value. Though while programming,
+             if using the normalized() function, it will return ``Vector3(0, 0, 0)``
 
 Reflection
 ----------
