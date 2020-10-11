@@ -60,9 +60,6 @@ you want to "listen" for the signal. Note that the Timer node is blue, this is a
 visual indication that it's the node that is emitting the signal. Select the root
 node.
 
-.. warning:: The target node *must* have a script attached or you'll receive
-             an error message.
-
 If you toggle the Advanced menu, you'll see on the right side that you can bind an arbitrary number of arguments of (possibly) different
 types. This can be useful when you have more than one signal connected to the same method,
 as each signal propagation will result in different values for those extra call arguments.
