@@ -36,6 +36,7 @@ below will help you make the most of Godot.
    :maxdepth: 1
    :name: toc-scripting-core-features
 
+   how_to_read_the_godot_api
    debug/index
    idle_and_physics_processing
    groups
