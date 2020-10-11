@@ -385,7 +385,7 @@ own place in the hierarchy as a sibling or some other relation.
   of game connections and the like.
 
 The key to scene organization is to consider the SceneTree in relational terms
-rather than spatial terms. Are the nodes dependent on their parent's existance?
+rather than spatial terms. Are the nodes dependent on their parent's existence?
 If not, then they can thrive all by themselves somewhere else.
 If they are dependent, then it stands to reason that they should be children of
 that parent (and likely part of that parent's scene if they aren't already).
