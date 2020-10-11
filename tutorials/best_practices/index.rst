@@ -15,3 +15,5 @@ Best practices
    godot_notifications
    data_preferences
    logic_preferences
+   project_organization
+   version_control_systems
