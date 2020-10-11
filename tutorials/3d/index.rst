@@ -18,3 +18,4 @@
    using_gridmaps
    using_multi_mesh_instance
    csg_tools
+   procedural_geometry/index

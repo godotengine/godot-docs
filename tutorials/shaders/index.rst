@@ -16,3 +16,4 @@ Shaders
    advanced_postprocessing
    using_viewport_as_texture
    custom_postprocessing
+   making_trees
