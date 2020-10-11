@@ -19,3 +19,4 @@ Step by step
    filesystem
    scene_tree
    singletons_autoload
+   learning_new_features
