@@ -169,7 +169,7 @@ logic. This allows for:
    keyboard on PC, Joypad on console).
 -  Input to be reconfigured at run-time.
 
-Actions can be created from the Project Settings menu in the Input Map
+Actions can be created from the Project Settings menu in the **Input Map**
 tab.
 
 Any event has the methods :ref:`InputEvent.is_action() <class_InputEvent_method_is_action>`,
