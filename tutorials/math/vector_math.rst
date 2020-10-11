@@ -203,7 +203,10 @@ by its magnitude. Because this is such a common operation,
 
 .. warning:: Because normalization involves dividing by the vector's length,
              you cannot normalize a vector of length ``0``. Attempting to
-             do so will result in an error.
+              do so would normally result in an error. In GDScript though,
+              trying to call the ``normalized()`` method on a ``Vector2`` or
+              ``Vector3`` of length 0 leaves the value untouched and avoids the
+              error for you.
 
 Reflection
 ----------
