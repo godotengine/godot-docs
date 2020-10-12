@@ -1,5 +1,5 @@
-Getting Started: Introduction
-=============================
+Introduction
+============
 
 This series will introduce you to Godot and give you an overview of its
 features.

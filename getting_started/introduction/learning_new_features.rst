@@ -10,12 +10,14 @@ online communities to learn new features and techniques.
 Making the most of this manual
 ------------------------------
 
-What you are reading now is the reference manual. It documents each of the
-engine's concepts and available features. When learning a new topic, you can
-start by browsing the corresponding section of this website. The left menu
-allows you to explore broad topics while the search bar will help you find more
-specific pages. If a page exists for a given theme, it will often link to more
-related content.
+What you are reading now is the user manual. It documents each of the engine's
+concepts and available features. When learning a new topic, you can start by
+browsing the corresponding section of this website. The left menu allows you to
+explore broad topics while the search bar will help you find more specific
+pages. If a page exists for a given theme, it will often link to more related
+content.
+
+.. image:: img/manual_search.png
 
 The manual has a companion class reference that explains each Godot class's
 available functions and properties when programming. While the manual covers
@@ -25,6 +27,8 @@ access it both online and offline. We recommend browsing the reference offline,
 from within the Godot editor. To do so, go to Help -> Search or press
 :kbd:`Shift F1`.
 
+.. image:: img/manual_class_reference_search.png
+
 To browse it online, head to the manual's :ref:`Class Reference <toc-class-ref>`
 section.
 
@@ -33,6 +37,8 @@ A class reference's page tells you:
 1. Where the class exists in the inheritance hierarchy. You can click the top
    links to jump to parent classes and see the properties and methods a type
    inherits.
+
+   .. image:: img/manual_class_reference_inheritance.png
 
 2. A summary of the class's role and use cases.
 
@@ -46,8 +52,8 @@ A class reference's page tells you:
           <https://github.com/godotengine/godot-docs/issues>`_ GitHub repository
           to report it.
 
-You can Ctrl-click anything underlined in blue like the name of a class,
-property, method, signal, or constant to jump to it.
+You can Ctrl-click any underlined text the name of a class, property, method,
+signal, or constant to jump to it.
 
 Learning to think like a programmer
 -----------------------------------
@@ -57,7 +63,7 @@ beyond the scope of Godot's documentation. If you're new to programming, we
 recommend two excellent free resources to get you started:
 
 1. The Harvard university offers a free courseware to learn to program,
-   `CS50<https://cs50.harvard.edu/x/2020/>`_. It will teach you programming
+   `CS50 <https://cs50.harvard.edu/x/2020/>`_. It will teach you programming
    fundamentals, how code works, and how to think like a programmer. These
    skills are essential to become a game developer and learn any game engine
    efficiently. You can see this course as an investment that will save you time
@@ -72,7 +78,7 @@ Learning with the community
 Godot has a growing community of users. If you're stuck on a problem or need
 help to better understand how to achieve something, you can ask other users for
 help on one of the many `active
-communities<https://godotengine.org/community>`_.
+communities <https://godotengine.org/community>`_.
 
 The best place to ask for questions and find already answered ones is the
 official `Questions & Answers <https://godotengine.org/qa/>`_ site. These
@@ -86,17 +92,17 @@ Asking questions well and providing details will help others answer you faster
 and better. When asking questions, we recommend to include the following
 information:
 
-1. Describe your goal. You want to explain what you are trying to achieve
+1. **Describe your goal**. You want to explain what you are trying to achieve
    design-wise. If you are having trouble figuring out how to make a solution
    work, there may be a different, easier solution that accomplishes the same
    goal.
 
-2. If there is an error involved, what is the exact error message you see? You
+2. If there is an error involved, **share the exact error message**. You
    can copy the exact error message in the editor's Debugger bottom panel by
    clicking the Copy Error icon. Knowing what it says can help community members
    better identify how you triggered the error.
 
-3. If there is code involved, please share a code sample. Often, other users
+3. If there is code involved, **share a code sample**. Often, other users
    won't be able to help you fix a problem without seeing your code. Try to
    share the code as text directly. To do so, you can copy and paste a short
    code snippet in the chat directly, or use a website like `Pastebin
