@@ -173,6 +173,8 @@ You can increase performance in a fill rate-limited project by reducing the
 amount of work the GPU has to do. You can do this by simplifying the shader
 (perhaps turn off expensive options if you are using a :ref:`StandardMaterial3D
 <class_StandardMaterial3D>`), or reducing the number and size of textures used.
+Also, when using non-unshaded particles, consider forcing vertex shading in
+their material to decrease the shading cost.
 
 **When targeting mobile devices, consider using the simplest possible shaders
 you can reasonably afford to use.**
