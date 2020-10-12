@@ -13,10 +13,16 @@ To enable an external text editor, browse to the relevant editor settings via:
 
 .. image:: img/editor_settings.png
 
-There are two fields: the executable path and command line flags. The flags
-allow you to integrate the editor with Godot, passing it the file path to open
-and other relevant arguments. Godot will replace the following placeholders in
-the flags string:
+You can choose your editor from a list of presets, which will cause Godot to
+use appropriate values for the executable path and command line flags settings.
+
+If your editor is at an unusual path, you can override the preset default by
+changing the Exec Path setting to point at your editor.
+
+Alternatively, you can use the "Custom" option and fill out both settings by
+hand. The flags allow you to integrate the editor with Godot, passing it the
+file path to open and other relevant arguments. Godot will replace the
+following placeholders in the flags string:
 
 +---------------------+-----------------------------------------------------+
 | Field in Exec Flags | Is replaced with                                    |
