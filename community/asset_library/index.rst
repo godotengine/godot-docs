@@ -7,4 +7,4 @@ Asset Library
 
    what_is_assetlib
    using_assetlib
-   uploading_to_assetlib
+   submitting_to_assetlib
