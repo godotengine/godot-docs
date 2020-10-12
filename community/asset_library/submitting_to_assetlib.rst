@@ -1,4 +1,4 @@
-.. _doc_uploading_to_assetlib:
+.. _doc_submitting_to_assetlib:
 
 Submitting to the Asset Library
 ===============================
