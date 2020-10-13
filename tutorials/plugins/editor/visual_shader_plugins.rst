@@ -50,6 +50,10 @@ all you need to initialize your plugin.
         return "Classic Perlin-Noise-3D function (by Curly-Brace)"
 
 
+    func _init():
+        set_input_port_default_value(2, 0.0)
+
+
     func _get_return_icon_type():
         return VisualShaderNode.PORT_TYPE_SCALAR
 
