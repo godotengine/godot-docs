@@ -52,8 +52,8 @@ A class reference's page tells you:
           <https://github.com/godotengine/godot-docs/issues>`_ GitHub repository
           to report it.
 
-You can Ctrl-click any underlined text the name of a class, property, method,
-signal, or constant to jump to it.
+You can Ctrl-click any underlined text like the name of a class, property,
+method, signal, or constant to jump to it.
 
 Learning to think like a programmer
 -----------------------------------
@@ -62,8 +62,8 @@ Teaching programming foundations and how to think like a game developer is
 beyond the scope of Godot's documentation. If you're new to programming, we
 recommend two excellent free resources to get you started:
 
-1. The Harvard university offers a free courseware to learn to program,
-   `CS50 <https://cs50.harvard.edu/x/2020/>`_. It will teach you programming
+1. Harvard university offers a free courseware to learn to program, `CS50
+   <https://cs50.harvard.edu/x/2020/>`_. It will teach you programming
    fundamentals, how code works, and how to think like a programmer. These
    skills are essential to become a game developer and learn any game engine
    efficiently. You can see this course as an investment that will save you time
@@ -89,7 +89,7 @@ sure to look for existing answers that might solve your problem on this website
 or using your preferred search engine.
 
 Asking questions well and providing details will help others answer you faster
-and better. When asking questions, we recommend to include the following
+and better. When asking questions, we recommend including the following
 information:
 
 1. **Describe your goal**. You want to explain what you are trying to achieve
@@ -102,10 +102,10 @@ information:
    clicking the Copy Error icon. Knowing what it says can help community members
    better identify how you triggered the error.
 
-3. If there is code involved, **share a code sample**. Often, other users
-   won't be able to help you fix a problem without seeing your code. Try to
-   share the code as text directly. To do so, you can copy and paste a short
-   code snippet in the chat directly, or use a website like `Pastebin
+3. If there is code involved, **share a code sample**. Often, other users won't
+   be able to help you fix a problem without seeing your code. Try to share the
+   code as text directly. To do so, you can copy and paste a short code snippet
+   in the chat directly, or use a website like `Pastebin
    <https://pastebin.com/>`_ to share long files. A screenshot of the scene in
    which your code runs also helps.
 
