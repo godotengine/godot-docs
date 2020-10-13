@@ -156,7 +156,7 @@ What type of 3D model formats does Godot support?
 -------------------------------------------------
 
 Godot supports Collada via the `OpenCollada <https://github.com/KhronosGroup/OpenCOLLADA/wiki/OpenCOLLADA-Tools>`_ exporter (Maya, 3DSMax).
-If you are using Blender, take a look at our own `Better Collada Exporter <https://godotengine.org/download>`_.
+If you are using Blender, take a look at our own `Better Collada Exporter <https://github.com/godotengine/collada-exporter>`_.
 
 As of Godot 3.0, glTF is supported.
 
