@@ -3,119 +3,161 @@
 Introduction to shaders
 =======================
 
-Introduction
-------------
+This page explains what shaders are and will give you an overview of how they
+work in Godot. For a detailed reference of the engine's shading language, see
+:ref:`doc_shading_language`.
 
-So, you have decided to give shaders a try. You have likely heard that they can be used to
-create interesting effects that run incredibly fast. You have also likely heard that they
-are terrifying. Both are true.
+Shaders are a special kind of program that runs on Graphics Processing Units
+(GPUs). They were initially used to shade 3D scenes but can nowadays do much
+more. You can use them to control how the engine draws geometry and pixels on
+the screen, allowing you to achieve all sorts of effects.
 
-Shaders can be used to create a wide range of effects (in fact everything drawn in a modern
-rendering engine is done with shaders).
+Modern rendering engines like Godot draw everything with shaders: graphics cards
+can run thousands of instructions in parallel, leading to incredible rendering
+speed.
 
-Writing shaders can also be very difficult for people unfamiliar with them. Godot tries to make writing
-shaders a little easier by exposing many useful built-in features and handling some of the
-lower-level initialization work for you. However, GLSL (the OpenGL Shading Language, which Godot uses)
-is still unintuitive and restricting, especially for users who are used to GDScript.
+Because of their parallel nature, though, shaders don't process information the
+way a typical program does. Shader code runs on each vertex or pixel in
+isolation. You cannot store data between frames either. As a result, when
+working with shaders, you need to code and think differently from other
+programming languages.
 
-But what are they?
-------------------
-
-Shaders are a special kind of program that runs on Graphics Processing Units (GPUs). Most computers
-have some sort of GPU, either one integrated into their CPU or discrete (meaning it is a separate
-hardware component, for example, the typical graphics card). GPUs are especially useful for
-rendering because they are optimized for running thousands of instructions in parallel.
-
-The output of the shader is typically the colored pixels of the object drawn to the viewport. But some
-shaders allow for specialized outputs (this is especially true for APIs like Vulkan). Shaders operate
-inside the shader pipeline. The standard process is the vertex -> fragment shader pipeline. The vertex
-shader is used to decided where each vertex (point in a 3D model, or corner of a Sprite) goes and the
-fragment shader decides what color individual pixels receive.
-
-Suppose you want to update all the pixels in a texture to a given color, on the CPU you would write:
-
-::
+Suppose you want to update all the pixels in a texture to a given color. In
+GDScript, your code would use ``for`` loops::
 
   for x in range(width):
     for y in range(height):
       set_color(x, y, some_color)
 
-In a shader you are given access only to the inside of the loop so what you write looks like this:
+Your code is already part of a loop in a shader, so the corresponding code would
+look like this.
 
 .. code-block:: glsl
 
-  // function called for each pixel
   void fragment() {
     COLOR = some_color;
   }
 
-You have no control over how this function is called. So you have to design your shaders
-differently from how you would design programs on the CPU.
+.. note::
 
-A consequence of the shader pipeline is that you cannot access the results from a previous
-run of the shader, you cannot access other pixels from the pixel being drawn, and you cannot
-write outside of the current pixel being drawn. This enables the GPU to execute the shader
-for different pixels in parallel, as they do not depend on each other. This lack of
-flexibility is designed to work with the GPU which allows shaders to be incredibly fast.
+   The graphics card calls the ``fragment()`` function once or more for each pixel it has to draw. More on that below.
 
-What can they do
-^^^^^^^^^^^^^^^^
+Shaders in Godot
+----------------
 
-- position vertices very fast
-- compute color very fast
-- compute lighting very fast
-- lots and lots of math
+Godot provides a shading language based on the popular OpenGL Shading Language
+(GLSL) but simplified. The engine handles some of the lower-level initialization
+work for you, making it easier to write complex shaders.
 
-What can't they do
-^^^^^^^^^^^^^^^^^^
+In Godot, shaders are made up of three main functions: ``vertex()``,
+``fragment()``, and ``light()``.
 
-- draw outside mesh
-- access other pixels from current pixel (or vertices)
-- store previous iterations
-- update on the fly (they can, but they need to be compiled)
+1. The ``vertex()`` function runs over all the vertices in the mesh and sets
+   their positions and some other per-vertex variables.
 
-Structure of a shader
----------------------
+2. The ``fragment()`` function runs for every pixel covered by the mesh. It uses
+   values output by the ``vertex()`` function, interpolated between the
+   vertices.
 
-In Godot, shaders are made up of 3 main functions: the ``vertex()`` function, the ``fragment()``
-function and the ``light()`` function.
-
-The ``vertex()`` function runs over all the vertices in the mesh and sets their positions as well
-as some other per-vertex variables.
-
-The ``fragment()`` function runs for every pixel that is covered by the mesh. It uses the variables
-from the ``vertex()`` function to run. The variables from the ``vertex()`` function are interpolated
-between the vertices to provide the values for the ``fragment()`` function.
-
-The ``light()`` function runs for every pixel and for every light. It takes variables from the
-``fragment()`` function and from previous runs of itself.
-
-For more information about how shaders operate specifically in Godot, see the :ref:`Shaders <doc_shaders>` doc.
+3. The ``light()`` function runs for every pixel and for every light. It takes
+   variables from the ``fragment()`` function and from its previous runs.
 
 .. warning::
 
-    The ``light()`` function won't be run if the ``vertex_lighting`` render mode
-    is enabled, or if
-    **Rendering > Quality > Shading > Force Vertex Shading** is enabled in the
-    Project Settings. (It's enabled by default on mobile platforms.)
+    The ``light()`` function won't run if the ``vertex_lighting`` render mode is
+    enabled, or if **Rendering > Quality > Shading > Force Vertex Shading** is
+    enabled in the Project Settings. It's enabled by default on mobile
+    platforms.
 
-Technical overview
-------------------
+Shader types
+------------
 
-GPUs are able to render graphics much faster than CPUs for a few reasons, but most notably,
-because they are able to run calculations massively in parallel. A CPU typically has 4 or 8 cores
-while a GPU typically has thousands. That means a GPU can do hundreds of tasks at once. GPU architects
-have exploited this in a way that allows for doing many calculations very quickly, but only when
-many or all cores are doing the same calculation at once, but with different data.
+Instead of supplying a general-purpose configuration for all uses (2D, 3D,
+particles), you must specify the type of shader you're writing. Different types
+support different render modes, built-in variables, and processing functions.
 
-That is where shaders come in. The GPU will call the shader a bunch of times simultaneously, and then
-operate on different bits of data (vertices, or pixels). These bunches of data are often called wavefronts.
-A shader will run the same for every thread in the wavefront. For example, if a given GPU can handle 100
-threads per wavefront, a wavefront will run on a 10×10 block of pixels together. It will continue to
-run for all pixels in that wavefront until they are complete. Accordingly, if you have one pixel slower
-than the rest (due to excessive branching), the entire block will be slowed down, resulting in massively
-slower render times.
+In Godot, all shaders need to specify their type in the first line, like so:
 
-This is different from CPU-based operations. On a CPU, if you can speed up even one
-pixel, the entire rendering time will decrease. On a GPU, you have to speed up the entire wavefront
-to speed up rendering.
+.. code-block:: glsl
+
+    shader_type spatial;
+
+Here are the available types:
+
+* :ref:`spatial <doc_spatial_shader>` for 3D rendering.
+* :ref:`canvas_item <doc_canvas_item_shader>` for 2D rendering.
+* :ref:`particles <doc_particle_shader>` for particle systems.
+* :ref:`sky <doc_sky_shader>` to render :ref:`Skies <class_Sky>`.
+
+Render modes
+------------
+
+Shaders have optional render modes you can specify on the second line, after the
+shader type, like so:
+
+.. code-block:: glsl
+
+    shader_type spatial;
+    render_mode unshaded, cull_disabled;
+
+Render modes alter the way Godot applies the shader. For example, the
+``unshaded`` mode makes the engine skip the built-in light processor function.
+
+Each shader type has different render modes. See the reference for each shader
+type for a complete list of render modes.
+
+Processor functions
+-------------------
+
+Depending on the shader type, you can override different processor functions.
+For ``spatial`` and ``canvas_item``, you have access to ``vertex()``,
+``fragment()``, and ``light()``. For ``particles``, you only have access to
+``vertex()``. For ''sky'', you only have access to ''fragment()''.
+
+Vertex processor
+^^^^^^^^^^^^^^^^
+
+The ``vertex()`` processing function is called once for every vertex in
+``spatial`` and ``canvas_item`` shaders. For ``particles`` shaders, it is called
+once for every particle.
+
+Each vertex in your world's geometry has properties like a position and color.
+The function modifies those values and passes them to the fragment function. You
+can also use it to send extra data to the fragment function using varyings.
+
+By default, Godot transforms your vertex information for you, which is necessary
+to project geometry onto the screen. You can use render modes to transform the
+data yourself; see the :ref:`Spatial shader doc <doc_spatial_shader>` for an
+example.
+
+Fragment processor
+^^^^^^^^^^^^^^^^^^
+
+The ``fragment()`` processing function is used to set up the Godot material
+parameters per pixel. This code runs on every visible pixel the object or
+primitive draws. It is only available in ``spatial``, ``canvas_item``, and ``sky`` shaders.
+
+The standard use of the fragment function is to set up material properties used
+to calculate lighting. For example, you would set values for ``ROUGHNESS``,
+``RIM``, or ``TRANSMISSION``, which would tell the light function how the lights
+respond to that fragment. This makes it possible to control a complex shading
+pipeline without the user having to write much code. If you don't need this
+built-in functionality, you can ignore it and write your own light processing
+function, and Godot will optimize it away. For example, if you do not write a
+value to ``RIM``, Godot will not calculate rim lighting. During compilation,
+Godot checks to see if ``RIM`` is used; if not, it cuts all the corresponding
+code out. Therefore, you will not waste calculations on the effects that you do
+not use.
+
+Light processor
+^^^^^^^^^^^^^^^
+
+The ``light()`` processor runs per pixel too, and it runs once for every light
+that affects the object. It does not run if no lights affect the object. It
+exists as a function called inside the ``fragment()`` processor and typically
+operates on the material properties setup inside the ``fragment()`` function.
+
+The ``light()`` processor works differently in 2D than it does in 3D; for a
+description of how it works in each, see their documentation, :ref:`CanvasItem
+shaders <doc_canvas_item_shader>` and :ref:`Spatial shaders
+<doc_spatial_shader>`, respectively.
