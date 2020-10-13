@@ -69,6 +69,7 @@ The main documentation for the site is organized into the following sections:
    :caption: Getting started
    :name: sec-learn
 
+   getting_started/introduction/index
    getting_started/step_by_step/index
    getting_started/editor/index
    getting_started/workflow/index
