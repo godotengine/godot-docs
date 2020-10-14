@@ -211,7 +211,8 @@ $(document).ready(() => {
   if (inDev) {
     // Add a compatibility notice using JavaScript so it doesn't end up in the
     // automatically generated `meta description` tag.
-    const url = window.location.href.replace('/latest/', '/stable/');
+    const strippedUrl = [location.protocol, '//', location.host, location.pathname].join('');
+    const updatedUrl = strippedUrl.replace('/latest/', '/stable/');
     document.querySelector('div[itemprop="articleBody"]').insertAdjacentHTML('afterbegin', `
       <div class="admonition attention">
         <p class="first admonition-title">Attention</p>
@@ -221,7 +222,7 @@ $(document).ready(() => {
           or compatible with Godot 3.2.x.
         </p>
         <p class="last">
-          See <a class="reference" href="${url}">this page</a>
+          See <a class="reference" href="${updatedUrl}">this page</a>
           for the stable version of this documentation.
         </p>
       </div>
