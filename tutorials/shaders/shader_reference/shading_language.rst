@@ -266,7 +266,7 @@ You can declare arrays at global space like:
     const lowp vec3 v[1] = lowp vec3[1] ( vec3(0, 0, 1) );
 
     void fragment() {
-      ALBEDO = v[0]; 
+      ALBEDO = v[0];
     }
 
 .. note::
@@ -676,7 +676,7 @@ When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature i
           :ref:`Differences between GLES2 and GLES3 doc <doc_gles2_gles3_differences>`.
 
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| Function                                                               | Description                                                   |
+| Function                                                               | Description / Return value                                    |
 +========================================================================+===============================================================+
 | vec_type **radians** (vec_type degrees)                                | Convert degrees to radians                                    |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
@@ -722,55 +722,61 @@ When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature i
 +------------------------------------------------------------------------+---------------------------------------------------------------+
 | vec_type **inversesqrt** (vec_type x)                                  | Inverse square root                                           |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| vec_type **abs** (vec_type x)                                          | Absolute                                                      |
+| vec_type **abs** (vec_type x)                                          | Absolute value (returns positive value if negative)           |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| ivec_type **abs** (ivec_type x)                                        | Absolute                                                      |
+| ivec_type **abs** (ivec_type x)                                        | Absolute value (returns positive value if negative)           |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| vec_type **sign** (vec_type x)                                         | Sign                                                          |
+| vec_type **sign** (vec_type x)                                         | Sign (returns ``1.0`` if positive, ``-1.0`` if negative,      |
+|                                                                        | ``0.0`` if zero)                                              |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| ivec_type **sign** (ivec_type x)                                       | Sign                                                          |
+| ivec_type **sign** (ivec_type x)                                       | Sign (returns ``1`` if positive, ``-1`` if negative,          |
+|                                                                        | ``0`` if zero)                                                |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| vec_type **floor** (vec_type x)                                        | Floor                                                         |
+| vec_type **floor** (vec_type x)                                        | Round to the integer below                                    |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| vec_type **round** (vec_type x)                                        | Round                                                         |
+| vec_type **round** (vec_type x)                                        | Round to the nearest integer                                  |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| vec_type **roundEven** (vec_type x)                                    | Round to the nearest even number                              |
+| vec_type **roundEven** (vec_type x)                                    | Round to the nearest even integer                             |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
 | vec_type **trunc** (vec_type x)                                        | Truncation                                                    |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| vec_type **ceil** (vec_type x)                                         | Ceil                                                          |
+| vec_type **ceil** (vec_type x)                                         | Round to the integer above                                    |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
 | vec_type **fract** (vec_type x)                                        | Fractional                                                    |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| vec_type **mod** (vec_type x, vec_type y)                              | Remainder                                                     |
+| vec_type **mod** (vec_type x, vec_type y)                              | Modulo (division remainder)                                   |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| vec_type **mod** (vec_type x , float y)                                | Remainder                                                     |
+| vec_type **mod** (vec_type x, float y)                                 | Modulo (division remainder)                                   |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
 | vec_type **modf** (vec_type x, out vec_type i)                         | Fractional of ``x``, with ``i`` as integer part               |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| vec_type  **min** (vec_type a, vec_type b)                             | Minimum                                                       |
+| vec_type  **min** (vec_type a, vec_type b)                             | Lowest value between ``a`` and ``b``                          |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| vec_type  **max** (vec_type a, vec_type b)                             | Maximum                                                       |
+| vec_type  **max** (vec_type a, vec_type b)                             | Highest value between ``a`` and ``b``                         |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| vec_type **clamp** (vec_type x, vec_type min, vec_type max)            | Clamp to ``min..max``                                         |
+| vec_type **clamp** (vec_type x, vec_type min, vec_type max)            | Clamp ``x`` between ``min`` and ``max`` (inclusive)           |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| float **mix** (float a, float b, float c)                              | Linear interpolate                                            |
+| float **mix** (float a, float b, float c)                              | Linear interpolate between ``a`` and ``b`` by ``c``           |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| vec_type **mix** (vec_type a, vec_type b, float c)                     | Linear interpolate (scalar coefficient)                       |
+| vec_type **mix** (vec_type a, vec_type b, float c)                     | Linear interpolate between ``a`` and ``b`` by ``c``           |
+|                                                                        | (scalar coefficient)                                          |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| vec_type **mix** (vec_type a, vec_type b, vec_type c)                  | Linear interpolate (vector coefficient)                       |
+| vec_type **mix** (vec_type a, vec_type b, vec_type c)                  | Linear interpolate between ``a`` and ``b`` by ``c``           |
+|                                                                        | (vector coefficient)                                          |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| vec_type **mix** (vec_type a, vec_type b, bvec_type c)                 | Linear interpolate (boolean-vector selection)                 |
+| vec_type **mix** (vec_type a, vec_type b, bvec_type c)                 | Linear interpolate between ``a`` and ``b`` by ``c``           |
+|                                                                        | (boolean-vector selection)                                    |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
 | vec_type **fma** (vec_type a, vec_type b, vec_type c)                  | Performs a fused multiply-add operation: ``(a * b + c)``      |
+|                                                                        | (faster than doing it manually)                               |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
 | vec_type **step** (vec_type a, vec_type b)                             | ``b[i] < a[i] ? 0.0 : 1.0``                                   |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
 | vec_type **step** (float a, vec_type b)                                | ``b[i] < a ? 0.0 : 1.0``                                      |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| vec_type **smoothstep** (vec_type a, vec_type b, vec_type c)           | Hermite interpolate                                           |
+| vec_type **smoothstep** (vec_type a, vec_type b, vec_type c)           | Hermite interpolate between ``a`` and ``b`` by ``c``          |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| vec_type **smoothstep** (float a, float b, vec_type c)                 | Hermite interpolate                                           |
+| vec_type **smoothstep** (float a, float b, vec_type c)                 | Hermite interpolate between ``a`` and ``b`` by ``c``          |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
 | bvec_type **isnan** (vec_type x)                                       | Returns ``true`` if scalar or vector component is ``NaN``     |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
@@ -822,9 +828,9 @@ When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature i
 +------------------------------------------------------------------------+---------------------------------------------------------------+
 | bvec_type **notEqual** (vec_type x, vec_type y)                        | Bool vector comparison on != int/uint/float vectors           |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| bool **any** (bvec_type x)                                             | Any component is ``true``                                     |
+| bool **any** (bvec_type x)                                             | ``true`` if any component is ``true``, ``false`` otherwise    |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
-| bool **all** (bvec_type x)                                             | All components are ``true``                                   |
+| bool **all** (bvec_type x)                                             | ``true`` if all components are ``true``, ``false`` otherwise  |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
 | bvec_type **not** (bvec_type x)                                        | Invert boolean vector                                         |
 +------------------------------------------------------------------------+---------------------------------------------------------------+
