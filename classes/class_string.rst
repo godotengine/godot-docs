@@ -948,8 +948,8 @@ Example:
     var some_string = "One,Two,Three,Four"
     var some_array = some_string.rsplit(",", true, 1)
     print(some_array.size()) # Prints 2
-    print(some_array[0]) # Prints "Four"
-    print(some_array[1]) # Prints "Three,Two,One"
+    print(some_array[0]) # Prints "One,Two,Three"
+    print(some_array[1]) # Prints "Four"
 
 ----
 
@@ -1132,4 +1132,3 @@ Returns a copy of the string with special characters escaped using the XML stand
 - :ref:`String<class_String>` **xml_unescape** **(** **)**
 
 Returns a copy of the string with escaped characters replaced by their meanings according to the XML standard.
-
