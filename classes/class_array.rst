@@ -289,10 +289,21 @@ Returns ``true`` if the array contains the given value.
 
 ::
 
-    ["inside", 7].has("inside") == true
-    ["inside", 7].has("outside") == false
-    ["inside", 7].has(7) == true
-    ["inside", 7].has("7") == false
+    ["inside", 7, 13.0].has("inside") == true
+    ["inside", 7, 13.0].has("outside") == false
+    ["inside", 7, 13.0].has(7) == true
+    ["inside", 7, 13.0].has(7.0) == false
+    ["inside", 7, 13.0].has("7") == false
+    
+    var dictionary = {
+      array = [100]
+    }
+    var cloned_dictionary = JSON.parse(JSON.print(dictionary)).result
+    
+    dictionary.array.has(100) == true
+    cloned_dictionary.array.has(100) == false
+    cloned_dictionary.array.has(100.0) == true
+    100 in cloned_dictionary.array == true
 
 ----
 
