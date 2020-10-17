@@ -51,8 +51,12 @@ Global built-ins are available everywhere, including custom functions.
 +-------------------+-----------------------------------------------------------------------------+
 | Built-in          | Description                                                                 |
 +===================+=============================================================================+
-| in float **TIME** | Global time, in seconds.                                                    |
-|                   | It's subject to the rollover setting (which is 3,600 -1 hour- by default).  |
+| in float **TIME** | Global time since the shader was compiled, in seconds (always positive).    |
+|                   | It's subject to the rollover setting (which is 3,600 seconds by default).   |
+|                   | It's not affected by :ref:`time_scale<class_Engine_property_time_scale>`    |
+|                   | or pausing, but you can override the ``TIME`` variable's time scale by      |
+|                   | calling ``VisualServer.set_shader_time_scale()`` with the desired           |
+|                   | time scale factor as parameter (``1.0`` being the default).                 |
 +-------------------+-----------------------------------------------------------------------------+
 
 Vertex built-ins
