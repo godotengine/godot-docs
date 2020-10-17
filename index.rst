@@ -7,10 +7,6 @@ Godot Docs – *master* branch
             Expand the "Read the Docs" panel at the bottom of the sidebar to see
             the list.
 
-  .. attention:: This is the documentation for the development (master) branch.
-                 Looking for the documentation of the current **stable** branch?
-                 `Have a look here <https://docs.godotengine.org/en/stable>`_.
-
 .. only:: i18n
 
   .. note:: This documentation is translated from the `original English one
