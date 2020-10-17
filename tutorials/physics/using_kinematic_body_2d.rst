@@ -130,7 +130,7 @@ and ``get_slide_collision()``:
         var collision = get_slide_collision(i)
         print("I collided with ", collision.collider.name)
 
-.. note:: `get_slide_count()` only counts times the body has collided and changed direction.      
+.. note:: `get_slide_count()` only counts times the body has collided and changed direction.
 
 See :ref:`KinematicCollision2D <class_KinematicCollision2D>` for details on what
 collision data is returned.
@@ -484,7 +484,7 @@ Here's the code for the player body:
 
     export (int) var run_speed = 100
     export (int) var jump_speed = -400
-    export (int) var gravity = 1200
+    export (int) var gravity = 20
 
     var velocity = Vector2()
     var jumping = false
@@ -505,7 +505,7 @@ Here's the code for the player body:
 
     func _physics_process(delta):
         get_input()
-        velocity.y += gravity * delta
+        velocity.y += gravity
         if jumping and is_on_floor():
             jumping = false
         velocity = move_and_slide(velocity, Vector2(0, -1))
@@ -519,7 +519,7 @@ Here's the code for the player body:
     {
         [Export] public int RunSpeed = 100;
         [Export] public int JumpSpeed = -400;
-        [Export] public int Gravity = 1200;
+        [Export] public int Gravity = 20;
 
         Vector2 velocity = new Vector2();
         bool jumping = false;
@@ -546,7 +546,7 @@ Here's the code for the player body:
         public override void _PhysicsProcess(float delta)
         {
             GetInput();
-            velocity.y += Gravity * delta;
+            velocity.y += Gravity;
             if (jumping && IsOnFloor())
                 jumping = false;
             velocity = MoveAndSlide(velocity, new Vector2(0, -1));
