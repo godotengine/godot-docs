@@ -186,7 +186,7 @@ Example:
 
     #include "core/hash_map.h"
     #include "core/list.h"
-    #include "scene/gui/control.h
+    #include "scene/gui/control.h"
 
     #include <png.h>
 
@@ -229,7 +229,7 @@ Example:
     #include "my_new_file.h"
 
     #include "core/math/math_funcs.h"
-    #include "scene/gui/line_edit.h
+    #include "scene/gui/line_edit.h"
 
     #include <zlib.h>
     #include <zstd.h>
@@ -254,7 +254,7 @@ Blacken your Python changes using `Black <https://pypi.org/project/black/>`__.
 Using black locally
 ~~~~~~~~~~~~~~~~~~~
 
-First of all, you will need to install black. Black requires Python 3.6.0+ 
+First of all, you will need to install black. Black requires Python 3.6.0+
 to run.
 
 Installation
