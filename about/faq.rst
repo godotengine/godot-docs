@@ -152,16 +152,22 @@ The main reasons for creating a custom scripting language for Godot were:
 
 GDScript was designed to curtail the issues above, and more.
 
-What type of 3D model formats does Godot support?
--------------------------------------------------
+What 3D model formats does Godot support?
+-----------------------------------------
 
-Godot supports Collada via the `OpenCollada <https://github.com/KhronosGroup/OpenCOLLADA/wiki/OpenCOLLADA-Tools>`_ exporter (Maya, 3DSMax).
-If you are using Blender, take a look at our own `Better Collada Exporter <https://github.com/godotengine/collada-exporter>`_.
+Godot supports the following formats:
 
-As of Godot 3.0, glTF is supported.
+- glTF 2.0 *(recommended)*
+- Collada
+- OBJ
+- FBX (Static meshes only)
 
-FBX is supported via the Open Asset Import library. However, FBX is proprietary
-so we recommend using other formats listed above, if suitable for your workflow.
+FBX support is the fruit of reverse engineering via the Open Asset Import library.
+However, FBX is proprietary so we recommend using other formats listed above,
+if suitable for your workflow.
+
+You can find more detailed information on supported formats, and how to export
+and import them for Godot :ref:`here <doc_importing_3d_scenes>`.
 
 Will [insert closed SDK such as FMOD, GameWorks, etc.] be supported in Godot?
 -----------------------------------------------------------------------------
