@@ -160,7 +160,7 @@ Godot supports the following formats:
 - glTF 2.0 *(recommended)*
 - Collada
 - OBJ
-- FBX (Static meshes only)
+- FBX (static meshes only)
 
 FBX support is the fruit of reverse engineering via the Open Asset Import library.
 However, FBX is proprietary so we recommend using other formats listed above,
