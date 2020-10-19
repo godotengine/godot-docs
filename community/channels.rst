@@ -23,7 +23,7 @@ IRC on Freenode
 - `Pull request meetings: #godotengine-meeting <https://webchat.freenode.net/?channels=#godotengine-meeting>`_
 - `GDNative: #godotengine-gdnative <https://webchat.freenode.net/?channels=#godotengine-gdnative>`_
 - `Website and public relations: #godotengine-atelier <https://webchat.freenode.net/?channels=#godotengine-atelier>`_
-- `IRC logs <https://godot.eska.me/irc-logs/>`_
+- `IRC logs <https://freenode.logbot.info/godotengine-devel>`_
 
 Other chats
 -----------
