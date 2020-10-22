@@ -362,6 +362,8 @@ Emits the given ``signal``. The signal must exist, so it should be a built-in si
 
 Deletes the object from memory. Any pre-existing reference to the freed object will become invalid, e.g. ``is_instance_valid(object)`` will return ``false``.
 
+**Note:** While references to a freed object will be set to ``null`` in debug builds, this does *not* happen in release builds. Relying on this behaviour may cause memory corruption or segmentation faults.
+
 ----
 
 .. _class_Object_method_get:
