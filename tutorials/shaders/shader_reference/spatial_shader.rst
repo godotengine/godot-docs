@@ -279,6 +279,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec4 **IRRADIANCE**           | If written to, blends environment map IRRADIANCE with IRRADIANCE.rgb based on IRRADIANCE.a.      |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
+
 Light built-ins
 ^^^^^^^^^^^^^^^
 
