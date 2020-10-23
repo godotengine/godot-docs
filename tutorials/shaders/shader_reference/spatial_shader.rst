@@ -273,6 +273,12 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec2 **POINT_COORD**           | Point Coordinate for drawing points with POINT_SIZE.                                             |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
+| out vec4 **FOG**                  | If written to, blends final pixel color with FOG.rgb based on FOG.a.                             |
++-----------------------------------+--------------------------------------------------------------------------------------------------+
+| out vec4 **RADIANCE**             | If written to, blends environment map radiance with RADIANCE.rgb based on RADIANCE.a.            |
++-----------------------------------+--------------------------------------------------------------------------------------------------+
+| out vec4 **IRRADIANCE**           | If written to, blends environment map IRRADIANCE with IRRADIANCE.rgb based on IRRADIANCE.a.      |
++-----------------------------------+--------------------------------------------------------------------------------------------------+
 
 Light built-ins
 ^^^^^^^^^^^^^^^
