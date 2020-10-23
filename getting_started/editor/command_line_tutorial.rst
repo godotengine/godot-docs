@@ -160,10 +160,10 @@ Command line reference
 Path
 ----
 
-It is recommended that your Godot binary be in your PATH environment
-variable, so it can be executed easily from any place by typing
-``godot``. You can do so on Linux by placing the Godot binary in
-``/usr/local/bin`` and making sure it is called ``godot``.
+It is recommended that your Godot editor binary be in your ``PATH`` environment
+variable, so it can be executed easily from any place by typing ``godot``.
+You can do so on Linux by placing the Godot binary in ``/usr/local/bin`` and
+making sure it is called ``godot``.
 
 Setting the project path
 ------------------------
@@ -196,7 +196,7 @@ Creating a project
 
 
 Creating a project from the command line can be done by navigating the
-shell to the desired place and making a project.godot file.
+shell to the desired place and making a ``project.godot`` file.
 
 
 ::
@@ -230,9 +230,9 @@ the same code with that scene as argument.
 Erasing a scene
 ---------------
 
-Godot is friends with your filesystem and will not create extra
-metadata files. Use ``rm`` to erase a scene file. Make sure nothing
-references that scene or else an error will be thrown upon opening.
+Godot is friends with your filesystem and will not create extra metadata files.
+Use ``rm`` to erase a scene file. Make sure nothing references that scene.
+Otherwise, an error will be thrown upon opening the project.
 
 ::
 
@@ -281,6 +281,9 @@ that is headless (server build, no video) is ideal for this.
 
 ::
 
+    # `godot` must be a Godot editor binary, not an export template.
+    # Also, export templates must be installed for the editor
+    # (or a valid custom export template must be defined in the export preset).
     godot --export "Linux/X11" /var/builds/project
     godot --export Android /var/builds/project.apk
 
@@ -293,7 +296,7 @@ will be shown.
 To export a debug version of the game, use the ``--export-debug`` switch
 instead of ``--export``. Their parameters and usage are the same.
 
-To export only a PCK file, use the ``--export-pack`` option followed by the 
+To export only a PCK file, use the ``--export-pack`` option followed by the
 preset name and output path, with the file extension, instead of ``--export``.
 The output path extension determines the package's format, either PCK or ZIP.
 
