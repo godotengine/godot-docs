@@ -13,4 +13,5 @@ make the most of your time learning it.
    :maxdepth: 1
    :name: toc-learn-introduction
 
+   introduction_to_godot
    learning_new_features
