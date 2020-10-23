@@ -36,7 +36,7 @@ Best Practices
 Many contributors are extremely creative and just enjoy the process of designing
 abstract data structures, creating nice user interfaces, or simply love
 programming. Whatever the case may be, they come up with cool ideas, which may
-not be actually solving any actual problems.
+or may not be solving any real problems.
 
 .. image:: img/best_practices1.png
 
@@ -104,9 +104,9 @@ This is why discussing with other developers (next point) is always advised.
 #4: The solution must be discussed with others
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-It is often the case that, when users stumble upon problems, they are only
-immersed in their own project, so they will naturally try to solve the problem
-from their own perspective, thinking only about their use case.
+It is often the case that when users stumble upon problems, they are only
+immersed in their project, so they will naturally try to solve the problem
+from their perspective, thinking only about their use case.
 
 Because of this, user proposed solutions don't always contemplate other use
 cases that developers are often aware of, so they are often biased towards their
