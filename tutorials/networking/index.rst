@@ -6,6 +6,7 @@ Networking
    :name: toc-learn-features-networking
 
    high_level_multiplayer
+   networked_player_movement
    http_request_class
    http_client_class
    ssl_certificates
