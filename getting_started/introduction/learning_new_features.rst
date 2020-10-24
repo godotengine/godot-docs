@@ -1,3 +1,7 @@
+.. Keep this page short and sweet! We want users to read it to the end, so they
+   know where to find information, how to get help, and how to maximize chances
+   of getting answers.
+
 .. _doc_learning_new_features:
 
 Learning new features
