@@ -100,6 +100,10 @@ considered resources. For example, if you load ``test.json`` in the exported
 project, you need to specify ``*.json`` in the non-resource export filter. See
 :ref:`doc_exporting_projects_export_mode` for more information.
 
+Also, note that files and folders whose name begin with a period will never be
+included in the exported project. This is done to prevent version control
+folders like ``.git`` from being included in the exported PCK file.
+
 On Windows, this can also be due to :ref:`case sensitivity
 <doc_project_organization_case_sensitivity>` issues. If you reference a resource
 in your script with a different case than on the filesystem, loading will fail
