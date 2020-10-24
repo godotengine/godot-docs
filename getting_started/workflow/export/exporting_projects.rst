@@ -122,6 +122,12 @@ select every scene or resource you want to export.
 
 .. image:: img/expselected.png
 
+.. note::
+
+    Files and folders whose name begin with a period will never be included in
+    the exported project. This is done to prevent version control folders like
+    ``.git`` from being included in the exported PCK file.
+
 Exporting from the command line
 -------------------------------
 
