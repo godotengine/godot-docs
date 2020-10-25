@@ -3849,6 +3849,8 @@ The video driver to use ("GLES2" or "Vulkan").
 | *Default* | ``2`` |
 +-----------+-------+
 
+Sets the quality level of the depth of field effect. Higher values will take more samples and be slower, but look smoother.
+
 ----
 
 .. _class_ProjectSettings_property_rendering/quality/filters/depth_of_field_bokeh_shape:
