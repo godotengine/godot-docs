@@ -1029,3 +1029,60 @@ kbd, .kbd {
 .wy-menu.wy-menu-vertical::-webkit-scrollbar-thumb:active {
     background-color: var(--navbar-scrollbar-active-color);
 }
+
+/* snake_case/PascalCase chooser */
+
+.snakepascal-chooser {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.snakepascal-chooser label {
+    margin-top: 1rem;
+    color: var(--navbar-level-3-color);
+    font-weight: 700;
+    user-select: none;
+}
+
+.snakepascal-chooser span {
+    /* Style the label only. */
+    background-color: hsl(0, 0%, 100%, 0.075);
+    padding: 0.375rem 0.75rem;
+}
+
+.snakepascal-chooser span:hover {
+    background-color: hsl(0, 0%, 100%, 0.15);
+}
+
+.snakepascal-chooser span:active {
+    background-color: hsl(0, 0%, 100%, 0.05);
+}
+
+.snakepascal-chooser label:focus-within {
+    /* For keyboard accessibility. */
+    outline: 2px solid var(--input-focus-border-color);
+}
+
+.snakepascal-chooser :checked + span {
+    /* Style the label only (when the radio button is checked). */
+    background-color: hsl(0, 0%, 100%, 0.25);
+    color: white;
+}
+
+.snakepascal-chooser span.snakecase {
+    /* The snake_case option is on the left, so round the left corners only. */
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.snakepascal-chooser span.pascalcase {
+    /* The PascalCase option is on the right, so round the right corners only. */
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.snakepascal-chooser input {
+    /* Hide the radio button but still allow keyboard navigation. */
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}

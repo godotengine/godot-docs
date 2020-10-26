@@ -198,6 +198,65 @@ const registerSidebarObserver = (function(){
   };
 })();
 
+// Perform a non-initial snake_case/PascalCase replacement.
+function updateCase() {
+  document.querySelectorAll('.snakepascal').forEach(($snakePascal) => {
+    // Prefer PascalCase only if explicitly requested. Use snake_case otherwise.
+    if (localStorage.getItem('preferredCase') === 'PascalCase') {
+      $snakePascal.innerText = $snakePascal.dataset.pascalcase;
+    } else {
+      $snakePascal.innerText = $snakePascal.dataset.snakecase;
+    }
+  });
+
+  document.querySelectorAll('.rst-content a[href*="classes/"]').forEach(($classrefLink) => {
+    // Prefer PascalCase only if explicitly requested. Use snake_case otherwise.
+    if (localStorage.getItem('preferredCase') === 'PascalCase') {
+      $classrefLink.innerText = $classrefLink.dataset.pascalcase;
+    } else {
+      $classrefLink.innerText = $classrefLink.dataset.snakecase;
+    }
+  });
+}
+
+/**
+ * Returns the PascalCase version of a snake_case string, automatically
+ * converted using a predefined set of rules. This is only used for reference
+ * links, not literal blocks as these can't always be converted automatically.
+ */
+function snakeToPascalCase(str) {
+  // Handle both strings of the form `Class.method_name()` and `method_name()`.
+  let className = '';
+  let memberSplit = [];
+  if (str.indexOf('.') !== -1) {
+    className = str.split('.')[0];
+    memberSplit = str.split('.')[1].split('_');
+  } else {
+    memberSplit = str.split('_');
+  }
+
+  function upper(string) {
+    return string.slice(0, 1).toUpperCase() + string.slice(1, string.length);
+  }
+
+  for (let i = 0; i < memberSplit.length; i += 1){
+    const memberSplit2 = memberSplit[i].split('/');
+
+    for (let j = 0; j < memberSplit2.length; j += 1){
+      memberSplit2[j] = upper(memberSplit2[j]);
+    }
+
+    memberSplit[i] = memberSplit2.join('');
+  }
+
+  if (className !== '') {
+    return `${className}.${memberSplit.join('')}`;
+  } else {
+    return memberSplit.join('');
+  }
+}
+
+
 $(document).ready(() => {
   const mediaQuery = window.matchMedia('only screen and (min-width: 769px)');
 
@@ -207,6 +266,57 @@ $(document).ready(() => {
   registerSidebarObserver(() => {
     registerOnScrollEvent(mediaQuery);
   });
+
+  // Perform the initial snake_case/PascalCase replacement.
+  const preferredCase = localStorage.getItem('preferredCase');
+
+  document.querySelectorAll('.snakepascal').forEach(($snakePascal) => {
+    // Literals.
+    // Index 0 is snake_case, index 1 is PascalCase.
+    const snakePascalText = $snakePascal.innerText.split(';;');
+    $snakePascal.dataset.snakecase = snakePascalText[0];
+    $snakePascal.dataset.pascalcase = snakePascalText[1];
+    // Prefer PascalCase only if explicitly requested. Use snake_case otherwise.
+    $snakePascal.innerText = snakePascalText[preferredCase === 'PascalCase' ? 1 : 0];
+  });
+
+  document.querySelectorAll('.rst-content a[href*="classes/"]').forEach(($classrefLink) => {
+    // Reference links.
+    $classrefLink.dataset.snakecase = $classrefLink.innerText;
+    $classrefLink.dataset.pascalcase = snakeToPascalCase($classrefLink.innerText);
+    // Prefer PascalCase only if explicitly requested. Use snake_case otherwise.
+    if (preferredCase === 'PascalCase') {
+      $classrefLink.innerText = $classrefLink.dataset.pascalcase;
+    }
+  });
+
+  // Add buttons below the search bar for toggling between snake_case and
+  // PascalCase in the documentation.
+  // Note: `onchange` isn't called during the initial page load.
+  document.querySelector('[role="search"]').insertAdjacentHTML('afterend', `
+  <div class="snakepascal-chooser">
+    <label>
+      <input
+        type="radio"
+        name="snakepascal"
+        value="snake_case"
+        ${preferredCase !== 'PascalCase' ? 'checked' : ''}
+        onchange="localStorage.setItem('preferredCase', 'snake_case'); updateCase()"
+      >
+      <span class="snakecase" title="Use snake_case for API methods and properties (GDScript, C++)">snake_case</span>
+    </label>
+    <label>
+      <input
+        type="radio"
+        name="snakepascal"
+        value="PascalCase"
+        ${preferredCase === 'PascalCase' ? 'checked' : ''}
+        onchange="localStorage.setItem('preferredCase', 'PascalCase'); updateCase()"
+      >
+      <span class="pascalcase" title="Use PascalCase for API methods and properties (C#)">PascalCase</span>
+    </label>
+  </div>
+  `);
 
   if (inDev) {
     // Add a compatibility notice using JavaScript so it doesn't end up in the

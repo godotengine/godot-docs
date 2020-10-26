@@ -3,7 +3,7 @@ Godot Docs – *master* branch
 
 .. only:: not i18n
 
-  .. note:: Godot's documentation is available in various languages and versions.
+  .. note:: Godot's documentation :snakepascal:`is_available;;IsAvailable` in various languages and versions.
             Expand the "Read the Docs" panel at the bottom of the sidebar to see
             the list.
 
