@@ -303,7 +303,7 @@ Position for tile origin. See :ref:`TileOrigin<enum_TileMap_TileOrigin>` for pos
 | *Getter*  | is_y_sort_mode_enabled() |
 +-----------+--------------------------+
 
-If ``true``, the TileMap's children will be drawn in order of their Y coordinate.
+If ``true``, the TileMap's direct children will be drawn in order of their Y coordinate.
 
 ----
 
