@@ -76,7 +76,6 @@ The main documentation for the site is organized into the following sections:
    :name: sec-learn
 
    getting_started/step_by_step/index
-   getting_started/editor/index
    getting_started/workflow/index
 
 
@@ -90,6 +89,7 @@ The main documentation for the site is organized into the following sections:
    tutorials/3d/index
    tutorials/audio/index
    tutorials/physics/index
+   tutorials/editor/index
    tutorials/math/index
    tutorials/animation/index
    tutorials/inputs/index
