@@ -3,17 +3,20 @@
 Using an external text editor
 ==============================
 
+This page explains how to code using an external text editor.
+
 .. warning::
 
-    `External editors are currently incompatible with Godot's "Sync Script Changes" feature. <https://github.com/godotengine/godot/issues/10946>`__
+    `External editors are currently incompatible with Godot's "Sync Script
+    Changes" feature. <https://github.com/godotengine/godot/issues/10946>`__
 
-Godot can be used with an external text editor, such as Sublime Text or Visual Studio Code.
-To enable an external text editor, browse to the relevant editor settings via:
-``Editor -> Editor Settings -> Text Editor -> External``
+Godot can be used with an external text editor, such as Sublime Text or Visual
+Studio Code. Browse to the relevant editor settings: ``Editor -> Editor Settings
+-> Text Editor -> External``
 
 .. image:: img/editor_settings.png
 
-There are two fields: the executable path and command line flags. The flags
+There are two fields: the executable path and command-line flags. The flags
 allow you to integrate the editor with Godot, passing it the file path to open
 and other relevant arguments. Godot will replace the following placeholders in
 the flags string:
@@ -45,5 +48,17 @@ Some example Exec Flags for various editors include:
 +---------------------+-----------------------------------------------------+
 | Vim (gVim)          | ``"+call cursor({line}, {col})" {file}``            |
 +---------------------+-----------------------------------------------------+
+| Emacs               | ``emacs +{line}:{col} {file}``                      |
++---------------------+-----------------------------------------------------+
 
-.. note:: For Visual Studio Code you will have to point to the ``code.cmd`` file.
+.. note:: For Visual Studio Code, you will have to point to the ``code.cmd``
+          file. For Emacs, you can call ``emacsclient`` instead of ``emacs`` if
+          you use the server mode.
+
+Official editor plugins
+-----------------------
+
+We have official plugins for the following code editors:
+
+- `Visual Studio Code <https://github.com/godotengine/godot-vscode-plugin>`_
+- `Emacs <https://github.com/godotengine/emacs-gdscript-mode>`_
