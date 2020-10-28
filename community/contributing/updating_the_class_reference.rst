@@ -64,7 +64,7 @@ Create a new branch to make your changes. It makes it a lot easier to sync your 
 
     git checkout -b your-new-branch-name
 
-The new branch is the same as your master branch, until you start to write API docs. In the ``doc/`` folder, you'll find the class reference.
+The new branch is the same as your master branch until you start to write API docs. In the ``doc/`` folder, you'll find the class reference.
 
 How to keep your local clone up-to-date
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -159,7 +159,7 @@ When it's done, you can ask for a Pull Request via the GitHub UI of your Godot f
 
     Although you can edit files on GitHub, it's not recommended. As hundreds of contributors work on Godot, the Git history must stay clean. Each commit should bundle all related improvements you make to the class reference, a new feature, bug fixes... When you edit from GitHub, it will create a new branch and a Pull Request every time you want to save it. If a few days pass before your changes get a review, you won't be able to update to the latest version of the repository cleanly. Also, it's harder to keep clean indents from GitHub. And they're very important in the docs.
 
-    TL;DR: If you don't know what you're doing exactly, do not edit files from GitHub.
+    TL;DR: If you don't know exactly what you're doing, do not edit files from GitHub.
 
 How to edit class XML
 ---------------------
@@ -173,7 +173,7 @@ If you need to check that the modifications you've made are correct in the gener
 How to write the class reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Each class has a brief and a long description. The brief description is always at the top of the page, while the full description lies below the list of methods, variables and constants. Methods, member variables, constants and signals are in separate categories or XML nodes. For each, learn how they work in Godot's source code, and fill their <description>.
+Each class has a brief and long description. The brief description is always at the top of the page, while the full description lies below the list of methods, variables, and constants. Methods, member variables, constants, and signals are in separate categories or XML nodes. For each, learn how they work in Godot's source code, and fill their <description>.
 
 Our job is to add the missing text between these marks:
 
@@ -184,7 +184,7 @@ Our job is to add the missing text between these marks:
 -  <member></member>
 -  <signal></signal>
 
-Write in a clear and simple language. Always follow the :ref:`writing guidelines <doc_docs_writing_guidelines>` to keep your descriptions short and easy to read. **Do not leave empty lines** in the descriptions: each line in the XML file will result in a new paragraph.
+Write using clear and simple language. Always follow the :ref:`writing guidelines <doc_docs_writing_guidelines>` to keep your descriptions short and easy to read. **Do not leave empty lines** in the descriptions: each line in the XML file will result in a new paragraph.
 
 Here's how a class looks like in XML:
 
@@ -195,7 +195,7 @@ Here's how a class looks like in XML:
             Base node for 2D system.
         </brief_description>
         <description>
-            Base node for 2D system. Node2D contains a position, rotation and scale, which is used to position and animate. It can alternatively be used with a custom 2D transform ([Matrix32]). A tree of Node2Ds allows complex hierarchies for animation and positioning.
+            Base node for the 2D system. Node2D contains a position, rotation, and scale, which is used to position and animate. It can alternatively be used with a custom 2D transform ([Matrix32]). A tree of Node2Ds allows complex hierarchies for animation and positioning.
         </description>
         <methods>
             <method name="set_pos">
@@ -351,7 +351,7 @@ BBCode tags for consistency.
 I don't know what this method does!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No problem. Leave it behind, and list the methods you skipped when you request a pull of your changes. Another writer will take care of it.
+No problem. Leave it behind and list the methods you skipped when you request a pull of your changes. Another writer will take care of it.
 
 You can still have a look at the methods' implementation in Godot's source code on GitHub. Also, if you have doubts, feel free to ask on the `Q&A website <https://godotengine.org/qa/>`__ and on IRC (freenode, #godotengine).
 
