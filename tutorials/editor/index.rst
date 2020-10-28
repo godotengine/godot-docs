@@ -2,9 +2,29 @@ Editor manual
 =============
 
 In this section, we cover the Godot editor in general, from its interface to
-using it with the command line. We cover some specific editors' interface in
-other sections where appropriate. For example, the :ref:`animation editor
+using it with the command line.
+
+The editor's interface
+----------------------
+
+The following pages explain how to use the various windows, workspaces, and
+docks that make up the Godot editor. We cover some specific editors' interface
+in other sections where appropriate. For example, the :ref:`animation editor
 <doc_introduction_animation>`.
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-editor-interface
+
+   project_manager
+   default_key_mapping
+
+For developers
+--------------
+
+The articles below focus on features for developers, like calling Godot from the
+command lines and using an external text editor such as Visual Studio Code or
+Emacs.
 
 .. toctree::
    :maxdepth: 1
@@ -12,4 +32,3 @@ other sections where appropriate. For example, the :ref:`animation editor
 
    command_line_tutorial
    external_editor
-   default_key_mapping
