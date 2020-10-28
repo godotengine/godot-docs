@@ -5,7 +5,7 @@ Docs writing guidelines
 
 The Godot community is rich and international. Users come from all
 around the world. Some of them are young, and many aren't native English
-speakers. That's why we must all write using a clear and a common
+speakers. That's why we must all write using a clear and common
 language. For the class reference, the goal is to make it easy to read
 for everyone and precise.
 
@@ -28,9 +28,7 @@ There are 3 rules to describe classes:
 
 .. note::
 
-    A technical writer's job is to pack as much information as possible into
-    the smallest and clearest sentences possible. These guidelines will help
-    you work towards that goal.
+    A technical writer's job is to pack as much information as possible into the smallest and clearest sentences possible. These guidelines will help you work towards that goal.
 
 7 rules for clear English
 -------------------------
@@ -105,7 +103,7 @@ The progressive forms describe continuous actions. E.g. "is calling",
     Vector2 move ( Vector2 rel_vec )
     Move the body in the given direction, **stopping** if there is an obstacle. [...]
 
-**Do** use simple present, preterit or future.
+**Do** use simple present, preterit, or future.
 
 ::
 
@@ -243,8 +241,8 @@ milk" instead.
 
     The region **of the AtlasTexture that is** used.
 
-**Do** use ``'s``. It lets you put the main subject at the start of the
-sentence, and keep it short:
+**Do** use ``'s``. It lets you put the main subject at the start of
+a sentence, and keep it short:
 
 ::
 
@@ -385,7 +383,7 @@ functionality, in up to 200 characters.
 ::
 
     **Node2D**
-    Base node for 2D system.
+    Base node for the 2D system.
 
 **Do** give an overview of the node's functionality:
 
@@ -394,7 +392,7 @@ functionality, in up to 200 characters.
     **Node2D**
     A 2D game object, inherited by all 2D-related nodes. Has a position, rotation, scale, and Z index.
 
-Use the node's full description to provide more information, and a code
+Use the node's full description to provide more information and a code
 example, if possible.
 
 Mention what methods return if it's useful
@@ -429,7 +427,7 @@ For boolean member variables, always use ``if true`` and/or
 ``if false``, to stay explicit. ``Controls whether or not`` may be
 ambiguous and won't work for every member variable.
 
-Also, surround boolean values, variable names and methods with ``[code][/code]``.
+Also, surround boolean values, variable names, and methods with ``[code][/code]``.
 
 **Do** start with "if true":
 
@@ -470,7 +468,7 @@ you find a list of ``tools`` inside the ``toolbar``.
 The tabs or dockable panels on either side of the viewport are
 ``docks``. You have the ``FileSystem dock``, the ``Scene dock`` that
 contains your scene tree, the ``Import dock``, the ``Node dock``, and
-the ``Inspector`` or ``Inspector dock``. With the default layout you may
+the ``Inspector`` or ``Inspector dock``. With the default layout, you may
 call the tabbed docks ``tabs``: the ``Scene tab``, the ``Node tab``...
 
 The Animation, Debugger, etc. at the bottom of the viewport are
