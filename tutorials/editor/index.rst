@@ -18,6 +18,7 @@ in other sections where appropriate. For example, the :ref:`animation editor
 
    project_manager
    default_key_mapping
+   customizing_editor
 
 For developers
 --------------
