@@ -17,6 +17,8 @@ in other sections where appropriate. For example, the :ref:`animation editor
    :name: toc-editor-interface
 
    project_manager
+   inspector_dock
+   project_settings
    default_key_mapping
    customizing_editor
 

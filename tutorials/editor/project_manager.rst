@@ -13,6 +13,8 @@ editor's language.
 
 .. image:: img/editor_ui_intro_project_manager_02.png
 
+.. _doc_creating_and_importing_projects:
+
 Creating and importing projects
 -------------------------------
 
@@ -21,7 +23,7 @@ To create a new project:
 1. Click the ``New Project`` button on the right of the window.
 2. Give the project a name, choose an empty folder on your computer to save the
    files, and select a rendering backend.
-3. Click the Create & Edit button.
+3. Click the Create & Edit button to create the project folder and open it in the editor.
 
 .. image:: img/editor_ui_intro_project_manager_04.png
 

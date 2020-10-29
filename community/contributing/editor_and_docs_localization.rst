@@ -171,8 +171,8 @@ translating.
   a page that you want to translate, and then translate all the strings with the
   same source string location while comparing with the online version of that
   page in English. An example of source string location could be
-  ``getting_started/step_by_step/scenes_and_nodes.rst`` for the
-  page :ref:`doc_scenes_and_nodes`.
+  ``getting_started/step_by_step/nodes_and_scenes.rst`` for the
+  page :ref:`doc_nodes_and_scenes`.
 - The class reference's translation template is generated from the source XML
   files in **alphabetical order**, which is also the same as the order of the
   table of contents for the online version. You can therefore locate the source
@@ -184,7 +184,7 @@ translating.
 
 A handy tool to locate specific pages/classes is to use Weblate's advanced
 search feature, and especially the "Location strings" query (which can also be
-used with the ``location:`` token, e.g. ``location:scenes_and_nodes.rst``):
+used with the ``location:`` token, e.g. ``location:nodes_and_scenes.rst``):
 
 .. image:: img/l10n_05_search_location.png
 
@@ -194,9 +194,9 @@ used with the ``location:`` token, e.g. ``location:scenes_and_nodes.rst``):
 
     When a given source string is used in multiple source locations, they will
     all be concatenated into one. For example, the above
-    ``location:scenes_and_nodes.rst`` query would land first on the
+    ``location:nodes_and_scenes.rst`` query would land first on the
     "Introduction" source string which is used in dozens of pages, including
-    some that come before ``scenes_and_nodes.rst`` in the template. Clicking the
+    some that come before ``nodes_and_scenes.rst`` in the template. Clicking the
     "Next" button then brings us to the "Scene and nodes" title string displayed
     above.
     So it may happen that a given paragraph or section title is not at the
