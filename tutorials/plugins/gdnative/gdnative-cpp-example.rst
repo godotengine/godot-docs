@@ -33,7 +33,7 @@ There are a few prerequisites you'll need:
 - a C++ compiler,
 - SCons as a build tool,
 - a copy of the `godot-cpp
-  repository <https://github.com/GodotNativeTools/godot-cpp>`__.
+  repository <https://github.com/godotengine/godot-cpp>`__.
 
 See also :ref:`Compiling <toc-devel-compiling>` as the build tools are identical
 to the ones you need to compile Godot from source.
@@ -55,7 +55,7 @@ Git submodules:
     mkdir gdnative_cpp_example
     cd gdnative_cpp_example
     git init
-    git submodule add https://github.com/GodotNativeTools/godot-cpp
+    git submodule add https://github.com/godotengine/godot-cpp
     cd godot-cpp
     git submodule update --init
 
@@ -64,7 +64,7 @@ Git submodules:
     mkdir gdnative_cpp_example
     cd gdnative_cpp_example
     git init
-    git submodule add -b 3.0 https://github.com/GodotNativeTools/godot-cpp
+    git submodule add -b 3.0 https://github.com/godotengine/godot-cpp
     cd godot-cpp
     git submodule update --init
 
@@ -80,13 +80,13 @@ Do make sure you clone recursive to pull in both repositories:
 
     mkdir gdnative_cpp_example
     cd gdnative_cpp_example
-    git clone --recursive https://github.com/GodotNativeTools/godot-cpp
+    git clone --recursive https://github.com/godotengine/godot-cpp
 
  .. code-tab:: none Godot 3.0
 
     mkdir gdnative_cpp_example
     cd gdnative_cpp_example
-    git clone --recursive -b 3.0 https://github.com/GodotNativeTools/godot-cpp
+    git clone --recursive -b 3.0 https://github.com/godotengine/godot-cpp
 
 .. note::
 
