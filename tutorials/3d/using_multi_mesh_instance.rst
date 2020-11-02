@@ -25,7 +25,7 @@ Setting up the nodes
 The basic setup requires three nodes: the MultiMeshInstance node
 and two MeshInstance nodes.
 
-One node is used as the target, the mesh that you want to place multiple meshes
+One node is used as the target, the surface mesh that you want to place multiple meshes
 on. In the tree example, this would be the landscape.
 
 The other node is used as the source, the mesh that you want to have duplicated.
