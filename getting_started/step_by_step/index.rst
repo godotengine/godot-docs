@@ -18,7 +18,6 @@ where appropriate.
 
    nodes_and_scenes
    instancing
-   instancing_continued
    scripting
    signals
    your_first_game
