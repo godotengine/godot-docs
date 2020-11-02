@@ -18,7 +18,9 @@ where appropriate.
 
    nodes_and_scenes
    instancing
-   scripting
+   scripting_languages
+   your_first_script
+   scripting_continued
    signals
    your_first_game
    exporting
