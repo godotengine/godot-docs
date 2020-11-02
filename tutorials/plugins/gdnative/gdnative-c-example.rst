@@ -13,7 +13,7 @@ that is to come after this.
 
 Before we begin, you can download the source code to the example object we
 describe below in the `GDNative-demos repository
-<https://github.com/GodotNativeTools/GDNative-demos/tree/master/c/SimpleDemo>`_.
+<https://docs.godotengine.org/en/latest/tutorials/scripting/gdnative/gdnative_c_example.html>`_.
 
 This example project also contains a SConstruct file that makes compiling a
 little easier, but in this tutorial we'll be doing things by hand to
@@ -53,7 +53,7 @@ Before we start you'll need a few things:
    manager. On macOS, you can install Xcode from the Mac App Store. On Windows,
    you can use Visual Studio 2015 or later, or MinGW-w64.
 3) A Git clone of the `godot_headers
-   repository <https://github.com/GodotNativeTools/godot_headers>`_: these are
+   repository <https://github.com/godotengine/godot_headers>`_: these are
    the C headers for Godot's public API exposed to GDNative.
 
 For the latter, we suggest that you create a dedicated folder for this GDNative
@@ -61,7 +61,7 @@ example project, open a terminal in that folder and execute:
 
 .. code-block:: none
 
-    git clone https://github.com/GodotNativeTools/godot_headers
+    git clone https://github.com/godotengine/godot_headers
 
 This will download the required files into that folder.
 
@@ -515,7 +515,7 @@ select our ``.gdnlib`` file by clicking on *Library* and selecting *Load*:
     The *Class Name* must have the same spelling as the one given in ``godot_nativescript_init``
     when registering the class.
 
-   
+
 Finally, click on the save icon and save this as ``bin/simple.gdns``:
 
 .. image:: img/save_gdns.gif
