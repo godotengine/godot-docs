@@ -261,7 +261,7 @@ For example, here is the code for an "Asteroids" style spaceship:
 
     extends RigidBody2D
 
-    var thrust = Vector2(0, 250)
+    var thrust = Vector2(0, -250)
     var torque = 20000
 
     func _integrate_forces(state):
@@ -280,7 +280,7 @@ For example, here is the code for an "Asteroids" style spaceship:
 
     class Spaceship : RigidBody2D
     {
-        private Vector2 _thrust = new Vector2(0, 250);
+        private Vector2 _thrust = new Vector2(0, -250);
         private float _torque = 20000;
 
         public override void _IntegrateForces(Physics2DDirectBodyState state)
