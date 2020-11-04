@@ -167,6 +167,11 @@ the ``.pck`` and ``.wasm`` files, which are usually large in size.
 The WebAssembly module compresses particularly well, down to around a quarter
 of its original size with gzip compression.
 
+**Hosts that provide on-the-fly compression:** GitHub Pages (gzip)
+
+**Hosts that don't provide on-the-fly compression:** itch.io, GitLab Pages
+(`supports manual gzip precompression <https://webd97.de/post/gitlab-pages-compression/>`__
+
 Export options
 --------------
 
