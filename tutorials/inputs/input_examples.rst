@@ -141,7 +141,7 @@ avoid this, make sure to test the event type first:
     {
         if (inputEvent is InputEventMouseButton mouseEvent)
         {
-            GD.Print($"mouse button event at {mouseEvent.Position}");
+            GD.Print("mouse button event at ", mouseEvent.Position);
         }
     }
 
@@ -194,7 +194,7 @@ the :kbd:`T`:
 
     func _input(event):
         if event is InputEventKey and event.pressed:
-            if event.scancode == KEY_T:
+            if event.keycode == KEY_T:
                 print("T was pressed")
 
  .. code-tab:: csharp
@@ -203,14 +203,14 @@ the :kbd:`T`:
     {
         if (inputEvent is InputEventKey keyEvent && keyEvent.Pressed)
         {
-            if ((KeyList)keyEvent.Scancode == KeyList.T)
+            if ((Keylist)keyEvent.Keycode == KeyList.T)
             {
                 GD.Print("T was pressed");
             }
         }
     }
 
-.. tip:: See :ref:`@GlobalScope_KeyList <enum_@GlobalScope_KeyList>` for a list of scancode
+.. tip:: See :ref:`@GlobalScope_KeyList <enum_@GlobalScope_KeyList>` for a list of keycode
         constants.
 
 Keyboard modifiers
@@ -227,7 +227,7 @@ different when it's :kbd:`Shift + T`:
 
     func _input(event):
         if event is InputEventKey and event.pressed:
-            if event.scancode == KEY_T:
+            if event.keycode == KEY_T:
                 if event.shift:
                     print("Shift+T was pressed")
                 else:
@@ -239,7 +239,7 @@ different when it's :kbd:`Shift + T`:
     {
         if (inputEvent is InputEventKey keyEvent && keyEvent.Pressed)
         {
-            switch ((KeyList)keyEvent.Scancode)
+            switch ((KeyList)keyEvent.Keycode)
             {
                 case KeyList.T:
                     GD.Print(keyEvent.Shift ? "Shift+T was pressed" : "T was pressed");
@@ -248,7 +248,7 @@ different when it's :kbd:`Shift + T`:
         }
     }
 
-.. tip:: See :ref:`@GlobalScope_KeyList <enum_@GlobalScope_KeyList>` for a list of scancode
+.. tip:: See :ref:`@GlobalScope_KeyList <enum_@GlobalScope_KeyList>` for a list of keycode
         constants.
 
 Mouse events
@@ -287,7 +287,7 @@ also counts as a button - two buttons, to be precise, with both
             switch ((ButtonList)mouseEvent.ButtonIndex)
             {
                 case ButtonList.Left:
-                    GD.Print($"Left button was clicked at {mouseEvent.Position}");
+                    GD.Print("Left button was clicked at ", {mouseEvent.Position});
                     break;
                 case ButtonList.WheelUp:
                     GD.Print("Wheel up");
