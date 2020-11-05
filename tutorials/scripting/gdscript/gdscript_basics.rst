@@ -1,10 +1,12 @@
 .. _doc_gdscript:
 
-GDScript basics
-===============
+GDScript reference
+==================
 
-Introduction
-------------
+:ref:`GDScript<doc_gdscript>` is a high-level, `object-oriented
+<https://en.wikipedia.org/wiki/Object-oriented_programming>`_, `imperative
+<https://en.wikipedia.org/wiki/Imperative_programming>`_, and `gradually typed
+<https://en.wikipedia.org/wiki/Gradual_typing>`_ programming language built for Godot.
 
 *GDScript* is a high-level, dynamically typed programming language used to
 create content. It uses an indentation-based syntax similar to languages like
@@ -15,7 +17,7 @@ allowing great flexibility for content creation and integration.
 GDScript is entirely independent from Python and is not based on it.
 
 History
-~~~~~~~
+-------
 
 .. note::
 
@@ -23,7 +25,7 @@ History
     :ref:`Frequently Asked Questions <doc_faq_what_is_gdscript>`.
 
 Example of GDScript
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 Some people can learn better by taking a look at the syntax, so
 here's a simple example of how GDScript looks.

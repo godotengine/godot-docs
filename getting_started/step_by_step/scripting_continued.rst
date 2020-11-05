@@ -3,21 +3,21 @@
 Built-in callbacks
 ==================
 
-Processing
-----------
+Idle and Physics Processing
+---------------------------
 
-Several actions in Godot are triggered by callbacks or virtual functions,
-so there is no need to write code that runs all the time.
+Several actions in Godot are triggered by callbacks or virtual functions, so there is no need to write code that runs all the time. However, it is still common to need a script to be processed on every frame.
 
-However, it is still common to need a script to be processed on every
-frame. There are two types of processing: idle processing and physics
-processing.
+There are two types of processing:
+
+1. Idle processing allows you
+2. Physics.
 
 Idle processing is activated when the method :ref:`Node._process() <class_Node_method__process>`
 is found in a script. It can be turned off and on with the
 :ref:`Node.set_process() <class_Node_method_set_process>` function.
 
-This method will be called every time a frame is drawn:
+The engine calls this method every time it draws a frame:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -33,30 +33,32 @@ This method will be called every time a frame is drawn:
         // Do something...
     }
 
-It's important to bear in mind that the frequency with which ``_process()``
-will be called depends on how many frames per second (FPS) your application
-is running at. This rate can vary over time and devices.
+It's important to bear in mind that the frequency with which ``_process()`` will
+be called depends on how many frames per second (FPS) your application is
+running at. This rate can vary over time and devices.
 
 To help manage this variability, the ``delta`` parameter contains the time
-elapsed in seconds as a floating-point number since the previous call to ``_process()``.
+elapsed in seconds as a floating-point number since the previous call to
+``_process()``.
 
-This parameter can be used to make sure things always take the same
-amount of time, regardless of the game's FPS.
+This parameter can be used to make sure things always take the same amount of
+time, regardless of the game's FPS.
 
 For example, movement is often multiplied with a time delta to make movement
 speed both constant and independent of the frame rate.
 
-Physics processing with ``_physics_process()`` is similar, but it should be used for processes that
-must happen before each physics step, such as controlling a character.
-It always runs before a physics step and it is called at fixed time intervals:
-60 times per second by default. You can change the interval from the Project Settings, under
-Physics -> Common -> Physics Fps.
+Physics processing with ``_physics_process()`` is similar, but it should be used
+for processes that must happen before each physics step, such as controlling a
+character. It always runs before a physics step and it is called at fixed time
+intervals: 60 times per second by default. You can change the interval from the
+Project Settings, under Physics -> Common -> Physics Fps.
 
-The function ``_process()``, however, is not synced with physics. Its frame rate is not constant and is dependent
-on hardware and game optimization. Its execution is done after the physics step on single-threaded games.
+The function ``_process()``, however, is not synced with physics. Its frame rate
+is not constant and is dependent on hardware and game optimization. Its
+execution is done after the physics step on single-threaded games.
 
-A simple way to see the ``_process()`` function at work is to create a scene with a single Label node,
-with the following script:
+A simple way to see the ``_process()`` function at work is to create a scene
+with a single Label node, with the following script:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -145,12 +147,10 @@ calling
 
     var enemies = GetTree().GetNodesInGroup("enemies");
 
-The :ref:`SceneTree <class_SceneTree>` class provides many useful methods,
-like interacting with scenes, their node hierarchy and groups of nodes.
-It allows you to easily switch scenes or reload them,
-to quit the game or pause and unpause it.
-It even comes with interesting signals.
-So check it out if you have some time!
+The :ref:`SceneTree <class_SceneTree>` class provides many useful methods to
+interact with scenes, their node hierarchy, and groups of nodes. It allows you
+to easily switch scenes or reload them, to quit the game or pause and unpause
+it. It also provides useful signals.
 
 Notifications
 -------------
