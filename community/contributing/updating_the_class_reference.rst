@@ -1,7 +1,7 @@
 .. _doc_updating_the_class_reference:
 
-Contribute to the Class Reference
-=================================
+Contributing to the class reference
+===================================
 
 .. highlight:: shell
 
@@ -64,7 +64,7 @@ Create a new branch to make your changes. It makes it a lot easier to sync your 
 
     git checkout -b your-new-branch-name
 
-The new branch is the same as your master branch, until you start to write API docs. In the ``doc/`` folder, you'll find the class reference.
+The new branch is the same as your master branch until you start to write API docs. In the ``doc/`` folder, you'll find the class reference.
 
 How to keep your local clone up-to-date
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -159,21 +159,21 @@ When it's done, you can ask for a Pull Request via the GitHub UI of your Godot f
 
     Although you can edit files on GitHub, it's not recommended. As hundreds of contributors work on Godot, the Git history must stay clean. Each commit should bundle all related improvements you make to the class reference, a new feature, bug fixes... When you edit from GitHub, it will create a new branch and a Pull Request every time you want to save it. If a few days pass before your changes get a review, you won't be able to update to the latest version of the repository cleanly. Also, it's harder to keep clean indents from GitHub. And they're very important in the docs.
 
-    TL;DR: If you don't know what you're doing exactly, do not edit files from GitHub.
+    TL;DR: If you don't know exactly what you're doing, do not edit files from GitHub.
 
 How to edit class XML
 ---------------------
 
 Edit the file for your chosen class in ``doc/classes/`` to update the class reference. The folder contains an XML file for each class. The XML lists the constants and methods you'll find in the class reference. Godot generates and updates the XML automatically.
 
-Edit it using your favorite text editor. If you use a code editor, make sure that it doesn't change the indent style: tabs for the XML, and 4 spaces inside BBcode-style blocks. More on that below.
+Edit it using your favorite text editor. If you use a code editor, make sure that it doesn't change the indent style: tabs for the XML, and 4 spaces inside BBCode-style blocks. More on that below.
 
 If you need to check that the modifications you've made are correct in the generated documentation, build Godot as described :ref:`here <toc-devel-compiling>`, run the editor and open the help for the page you modified.
 
 How to write the class reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Each class has a brief and a long description. The brief description is always at the top of the page, while the full description lies below the list of methods, variables and constants. Methods, member variables, constants and signals are in separate categories or XML nodes. For each, learn how they work in Godot's source code, and fill their <description>.
+Each class has a brief and long description. The brief description is always at the top of the page, while the full description lies below the list of methods, variables, and constants. Methods, member variables, constants, and signals are in separate categories or XML nodes. For each, learn how they work in Godot's source code, and fill their <description>.
 
 Our job is to add the missing text between these marks:
 
@@ -184,7 +184,7 @@ Our job is to add the missing text between these marks:
 -  <member></member>
 -  <signal></signal>
 
-Write in a clear and simple language. Always follow the :ref:`writing guidelines <doc_docs_writing_guidelines>` to keep your descriptions short and easy to read. **Do not leave empty lines** in the descriptions: each line in the XML file will result in a new paragraph.
+Write using clear and simple language. Always follow the :ref:`writing guidelines <doc_docs_writing_guidelines>` to keep your descriptions short and easy to read. **Do not leave empty lines** in the descriptions: each line in the XML file will result in a new paragraph.
 
 Here's how a class looks like in XML:
 
@@ -195,7 +195,7 @@ Here's how a class looks like in XML:
             Base node for 2D system.
         </brief_description>
         <description>
-            Base node for 2D system. Node2D contains a position, rotation and scale, which is used to position and animate. It can alternatively be used with a custom 2D transform ([Matrix32]). A tree of Node2Ds allows complex hierarchies for animation and positioning.
+            Base node for the 2D system. Node2D contains a position, rotation, and scale, which is used to position and animate. It can alternatively be used with a custom 2D transform ([Matrix32]). A tree of Node2Ds allows complex hierarchies for animation and positioning.
         </description>
         <methods>
             <method name="set_pos">
@@ -227,39 +227,46 @@ Here's how a class looks like in XML:
 
 Use a code editor like Vim, Atom, Code, Notepad++ or anything similar to edit the file quickly. Use the search function to find classes fast.
 
+.. _doc_updating_the_class_reference_bbcode:
 
-Improve formatting with BBcode style tags
+Improve formatting with BBCode style tags
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Godot's class reference supports BBcode-like tags. They add nice formatting to the text. Here's the list of available tags:
+Godot's class reference supports BBCode-like tags. They add nice formatting to the text. Here's the list of available tags:
 
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| Tag                       | Effect                         | Usage                             | Result                                            |
-+===========================+================================+===================================+===================================================+
-| [Class]                   | Link a class                   | Move the [Sprite].                | Move the :ref:`class_sprite`.                     |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [method methodname]       | Link to a method in this class | Call [method hide].               | See :ref:`hide <class_spatial_method_hide>`.      |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [method Class.methodname] | Link to another class's method | Call [method Spatial.hide].       | See :ref:`hide <class_spatial_method_hide>`.      |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [member membername]       | Link to a member in this class | Get [member scale].               | Get :ref:`scale <class_node2d_property_scale>`.   |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [member Class.membername] | Link to another class's member | Get [member Node2D.scale].        | Get :ref:`scale <class_node2d_property_scale>`.   |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [signal signalname]       | Link to a signal in this class | Emit [signal renamed].            | Emit :ref:`renamed <class_node_signal_renamed>`.  |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [signal Class.signalname] | Link to another class's signal | Emit [signal Node.renamed].       | Emit :ref:`renamed <class_node_signal_renamed>`.  |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [b] [/b]                  | Bold                           | Some [b]bold[/b] text.            | Some **bold** text.                               |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [i] [/i]                  | Italic                         | Some [i]italic[/i] text.          | Some *italic* text.                               |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [code] [/code]            | Monospace                      | Some [code]monospace[/code] text. | Some ``monospace`` text.                          |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [kbd] [/kbd]              | Keyboard/mouse shortcut        | Some [kbd]Ctrl + C[/kbd] key.     | Some :kbd:`Ctrl + C` key.                         |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [codeblock] [/codeblock]  | Multiline preformatted block   | *See below.*                      | *See below.*                                      |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| Tag                        | Effect                               | Usage                             | Result                                            |
++============================+======================================+===================================+===================================================+
+| [Class]                    | Link a class                         | Move the [Sprite].                | Move the :ref:`class_sprite`.                     |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [method methodname]        | Link to a method in this class       | Call [method hide].               | See :ref:`hide <class_spatial_method_hide>`.      |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [method Class.methodname]  | Link to another class's method       | Call [method Spatial.hide].       | See :ref:`hide <class_spatial_method_hide>`.      |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [member membername]        | Link to a member in this class       | Get [member scale].               | Get :ref:`scale <class_node2d_property_scale>`.   |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [member Class.membername]  | Link to another class's member       | Get [member Node2D.scale].        | Get :ref:`scale <class_node2d_property_scale>`.   |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [signal signalname]        | Link to a signal in this class       | Emit [signal renamed].            | Emit :ref:`renamed <class_node_signal_renamed>`.  |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [signal Class.signalname]  | Link to another class's signal       | Emit [signal Node.renamed].       | Emit :ref:`renamed <class_node_signal_renamed>`.  |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [b] [/b]                   | Bold                                 | Some [b]bold[/b] text.            | Some **bold** text.                               |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [i] [/i]                   | Italic                               | Some [i]italic[/i] text.          | Some *italic* text.                               |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [code] [/code]             | Monospace                            | Some [code]monospace[/code] text. | Some ``monospace`` text.                          |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [kbd] [/kbd]               | Keyboard/mouse shortcut              | Some [kbd]Ctrl + C[/kbd] key.     | Some :kbd:`Ctrl + C` key.                         |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [codeblock] [/codeblock]   | Multiline preformatted block         | *See below.*                      | *See below.*                                      |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [codeblocks] [/codeblocks] | [codeblock] for multiple languages   | *See below.*                      | *See below.*                                      |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [gdscript] [/gdscript]     | GDScript codeblock tab in codeblocks | *See below.*                      | *See below.*                                      |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
+| [csharp] [/csharp]         | C# codeblock tab in codeblocks       | *See below.*                      | *See below.*                                      |
++----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
 
 Use ``[codeblock]`` for pre-formatted code blocks. Inside ``[codeblock]``, always use **four spaces** for indentation (the parser will delete tabs). Example:
 
@@ -279,11 +286,72 @@ Will display as:
         var sprite = get_node("Sprite")
         print(sprite.get_pos())
 
+If you need to have different code version in GDScript and C#, use ``[codeblocks]`` instead. If you use ``[codeblocks]``, you also need to have at least one of the language specific tags (``[gdscript]`` and ``[csharp]``). Always write GDScript code examples first! You can use this `experimental code translation tool <https://github.com/HaSa1002/codetranslator>`_ to speed up your workflow.
+
+.. code-block:: none
+
+    [codeblocks]
+    [gdscript]
+    func _ready():
+        var sprite = get_node("Sprite")
+        print(sprite.get_pos())
+    [/gdscript]
+    [csharp]
+    public override void _Ready()
+    {
+        var sprite = GetNode("Sprite");
+        GD.Print(sprite.GetPos());
+    }
+    [/csharp]
+    [/codeblocks]
+
+Will display as:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _ready():
+        var sprite = get_node("Sprite")
+        print(sprite.get_pos())
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        var sprite = GetNode("Sprite");
+        GD.Print(sprite.GetPos());
+    }
+
+
+To denote important information, add a paragraph starting with "[b]Note:[/b]" at
+the end of the description:
+
+.. code-block:: none
+
+    [b]Note:[/b] Only available when using the Vulkan renderer.
+
+To denote crucial information that could cause security issues or loss of data
+if not followed carefully, add a paragraph starting with "[b]Warning:[/b]" at the
+end of the description:
+
+.. code-block:: none
+
+    [b]Warning:[/b] If this property is set to [code]true[/code], it allows clients to execute arbitrary code on the server.
+
+For deprecated properties, add a paragraph starting with "[i]Deprecated.[/i]".
+Notice the use of italics instead of bold:
+
+.. code-block:: none
+
+    [i]Deprecated.[/i] This property has been replaced by [member other_property].
+
+In all the paragraphs described above, make sure the punctuation is part of the
+BBCode tags for consistency.
 
 I don't know what this method does!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No problem. Leave it behind, and list the methods you skipped when you request a pull of your changes. Another writer will take care of it.
+No problem. Leave it behind and list the methods you skipped when you request a pull of your changes. Another writer will take care of it.
 
 You can still have a look at the methods' implementation in Godot's source code on GitHub. Also, if you have doubts, feel free to ask on the `Q&A website <https://godotengine.org/qa/>`__ and on IRC (freenode, #godotengine).
 

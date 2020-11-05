@@ -22,8 +22,8 @@ Importing the project
 
 - Next, you can choose which folders and files will be visible to the project.
   While C/C++ files are added automatically, other extensions can be potentially useful:
-  ``*.py`` for buildsystem files, ``*.java`` for Android platform development,
-  ``*.mm`` for macOS platform development.
+  ``*.glsl`` for shader files, ``*.py`` for buildsystem files,
+  ``*.java`` for Android platform development, ``*.mm`` for macOS platform development.
 
 .. figure:: img/qtcreator-apply-import-filter.png
    :figclass: figure-w480
@@ -93,7 +93,7 @@ Code style configuration
 Developers must follow the project's :ref:`code style <doc_code_style_guidelines>`
 and the IDE should help them follow it. By default, Qt Creator uses spaces
 for indentation which doesn't match the Godot code style guidelines. You can
-change this behavior by changing the **Code Style** in **Options > C++**.
+change this behavior by changing the **Code Style** in **Tools > Options > C++**.
 
 .. figure:: img/qtcreator-options-cpp.png
    :figclass: figure-w480

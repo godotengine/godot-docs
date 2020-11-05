@@ -28,7 +28,7 @@ instead. Adding C++ modules can be useful in the following scenarios:
 -  Binding an external library to Godot (like PhysX, FMOD, etc).
 -  Optimize critical parts of a game.
 -  Adding new functionality to the engine and/or editor.
--  Porting an existing game.
+-  Porting an existing game to Godot.
 -  Write a whole, new game in C++ because you can't live without C++.
 
 Creating a new module
@@ -119,7 +119,11 @@ need to be created:
     register_types.h
     register_types.cpp
 
-With the following contents:
+.. important::
+    These files must be in the top-level folder of your module (next to your
+    ``SCsub`` and ``config.py`` files) for the module to be registered properly.
+
+These files should contain the following:
 
 .. code-block:: cpp
 
@@ -414,22 +418,30 @@ library that will be dynamically loaded when starting our game's binary.
 
     # First, create a custom env for the shared library.
     module_env = env.Clone()
-    module_env.Append(CCFLAGS=['-fPIC'])  # Needed to compile shared library
-    # We don't want godot's dependencies to be injected into our shared library.
+
+    # Position-independent code is required for a shared library.
+    module_env.Append(CCFLAGS=['-fPIC'])
+
+    # Don't inject Godot's dependencies into our shared library.
     module_env['LIBS'] = []
 
-    # Now define the shared library. Note that by default it would be built
-    # into the module's folder, however it's better to output it into `bin`
-    # next to the Godot binary.
+    # Define the shared library. By default, it would be built in the module's
+    # folder, however it's better to output it into `bin` next to the
+    # Godot binary.
     shared_lib = module_env.SharedLibrary(target='#bin/summator', source=sources)
 
-    # Finally, notify the main env it has our shared lirary as a new dependency.
-    # To do so, SCons wants the name of the lib with it custom suffixes
+    # Finally, notify the main build environment it now has our shared library
+    # as a new dependency.
+
+    # LIBPATH and LIBS need to be set on the real "env" (not the clone)
+    # to link the specified libraries to the Godot executable.
+
+    env.Append(LIBPATH=['#bin'])
+
+    # SCons wants the name of the library with it custom suffixes
     # (e.g. ".linuxbsd.tools.64") but without the final ".so".
-    # We pass this along with the directory of our library to the main env.
     shared_lib_shim = shared_lib[0].name.rsplit('.', 1)[0]
     env.Append(LIBS=[shared_lib_shim])
-    env.Append(LIBPATH=['#bin'])
 
 Once compiled, we should end up with a ``bin`` directory containing both the
 ``godot*`` binary and our ``libsummator*.so``. However given the .so is not in
@@ -441,8 +453,9 @@ during runtime with the ``LD_LIBRARY_PATH`` environment variable:
     export LD_LIBRARY_PATH="$PWD/bin/"
     ./bin/godot*
 
-**note**: Pay attention you have to ``export`` the environ variable otherwise
-you won't be able to play your project from within the editor.
+.. note::
+  You have to ``export`` the environment variable otherwise
+  you won't be able to play your project from within the editor.
 
 On top of that, it would be nice to be able to select whether to compile our
 module as shared library (for development) or as a part of the Godot binary
@@ -490,10 +503,10 @@ Writing custom documentation
 ----------------------------
 
 Writing documentation may seem like a boring task, but it is highly recommended
-to document your newly created module in order to make it easier for users to
-benefit from it. Not to mention that the code you've written one year ago may
-become indistinguishable from the code that was written by someone else, so be
-kind to your future self!
+to document your newly created module to make it easier for users to benefit
+from it. Not to mention that the code you've written one year ago may become
+indistinguishable from the code that was written by someone else, so be kind to
+your future self!
 
 There are several steps in order to setup custom docs for the module:
 
@@ -581,6 +594,72 @@ you might encounter an error similar to the following:
     ERROR: Can't write doc file: docs/doc/classes/@GDScript.xml
        At: editor/doc/doc_data.cpp:956
 
+.. _doc_custom_module_unit_tests:
+
+Writing custom unit tests
+-------------------------
+
+It's possible to write self-contained unit tests as part of a C++ module. If you
+are not familiar with the unit testing process in Godot yet, please refer to
+:ref:`doc_unit_testing`.
+
+The procedure is the following:
+
+1. Create a new directory named ``tests/`` under your module's root:
+
+.. code-block:: console
+
+    cd modules/summator
+    mkdir tests
+    cd tests
+
+2. Create a new test suite: ``test_summator.h``. The header must be prefixed
+   with ``test_`` so that the build system can collect it and include it as part
+   of the ``tests/test_main.cpp`` where the tests are run.
+
+3. Write some test cases. Here's an example:
+
+.. code-block:: cpp
+
+    // test_summator.h
+    #ifndef TEST_SUMMATOR_H
+    #define TEST_SUMMATOR_H
+
+    #include "tests/test_macros.h"
+
+    #include "modules/summator/summator.h"
+
+    namespace TestSummator {
+
+    TEST_CASE("[Modules][Summator] Adding numbers") {
+        Ref<Summator> s = memnew(Summator);
+        CHECK(s->get_total() == 0);
+
+        s->add(10);
+        CHECK(s->get_total() == 10);
+
+        s->add(20);
+        CHECK(s->get_total() == 30);
+
+        s->add(30);
+        CHECK(s->get_total() == 60);
+
+        s->reset();
+        CHECK(s->get_total() == 0);
+    }
+
+    } // namespace TestSummator
+
+    #endif // TEST_SUMMATOR_H
+
+4. Compile the engine with ``scons tests=yes``, and run the tests with the
+   following command:
+
+.. code-block:: console
+
+    ./bin/<godot_binary> --test --source-file="*test_summator*" --success
+
+You should see the passing assertions now.
 
 .. _doc_custom_module_icons:
 
@@ -616,9 +695,12 @@ Summing up
 
 Remember to:
 
--  use ``GDCLASS`` macro for inheritance, so Godot can wrap it
--  use ``_bind_methods`` to bind your functions to scripting, and to
+-  Use ``GDCLASS`` macro for inheritance, so Godot can wrap it.
+-  Use ``_bind_methods`` to bind your functions to scripting, and to
    allow them to work as callbacks for signals.
+-  **Avoid multiple inheritance for classes exposed to Godot**, as ``GDCLASS``
+   doesn't support this. You can still use multiple inheritance in your own
+   classes as long as they're not exposed to Godot's scripting API.
 
 But this is not all, depending what you do, you will be greeted with
 some (hopefully positive) surprises.

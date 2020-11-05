@@ -6,5 +6,4 @@ Plugins
    :name: toc-tutorials-extending
 
    editor/index
-   gdnative/index
-   android/index
+   running_code_in_the_editor

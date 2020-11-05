@@ -51,11 +51,14 @@ when needed:
     tool
     extends EditorPlugin
 
+
     var import_plugin
+
 
     func _enter_tree():
         import_plugin = preload("import_plugin.gd").new()
         add_import_plugin(import_plugin)
+
 
     func _exit_tree():
         remove_import_plugin(import_plugin)
@@ -89,6 +92,7 @@ Let's begin to code our plugin, one method at time:
     # import_plugin.gd
     tool
     extends EditorImportPlugin
+
 
     func get_importer_name():
         return "demos.sillymaterial"
@@ -178,7 +182,9 @@ good practice to use an enum so you can refer to them using names.
     tool
     extends EditorImportPlugin
 
-    enum Presets { PRESET_DEFAULT }
+
+    enum Presets { DEFAULT }
+
 
     ...
 
@@ -199,7 +205,7 @@ now, but we can make this method future-proof by returning the size of our
 
     func get_preset_name(preset):
         match preset:
-            PRESET_DEFAULT:
+            Presets.DEFAULT:
                 return "Default"
             _:
                 return "Unknown"
@@ -222,7 +228,7 @@ you do this you have to be careful when you add more presets.
 
     func get_import_options(preset):
         match preset:
-            PRESET_DEFAULT:
+            Presets.DEFAULT:
                 return [{
                            "name": "use_red_anyway",
                            "default_value": false

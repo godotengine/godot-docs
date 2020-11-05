@@ -33,7 +33,7 @@ Tutorials
 
 - :doc:`../tutorials/2d/2d_transforms`
 
-- :doc:`../tutorials/viewports/index`
+- :doc:`../tutorials/rendering/viewports`
 
 Properties
 ----------

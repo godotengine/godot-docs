@@ -265,8 +265,6 @@ Tweaking SSAO is possible with several parameters:
 Depth of Field / Far Blur
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*This feature is only available when using the GLES3 backend.*
-
 This effect simulates focal distance on high end cameras. It blurs objects behind
 a given range. It has an initial **Distance** with a **Transition** region
 (in world units):
@@ -278,8 +276,6 @@ the **Quality** may be needed in order to avoid artifacts.
 
 Depth of Field / Near Blur
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-*This feature is only available when using the GLES3 backend.*
 
 This effect simulates focal distance on high end cameras. It blurs objects close
 to the camera (acts in the opposite direction as far blur).
@@ -297,8 +293,6 @@ given object:
 
 Glow
 ^^^^
-
-*This feature is only available when using the GLES3 backend.*
 
 In photography and film, when light amount exceeds the maximum supported by the
 media (be it analog or digital), it generally bleeds outwards to darker regions
@@ -343,15 +337,24 @@ interesting glow patterns:
 .. image:: img/environment_glow_layers2.png
 
 Finally, as the highest layers are created by stretching small blurred images,
-it is possible that some blockiness may be visible. Enabling **Bicubic Upscaling**
+The effect may appear blocky. Enabling **Bicubic Upscale**
 gets rids of it, at a minimal performance cost.
 
 .. image:: img/environment_glow_bicubic.png
 
+.. note::
+
+    When using the GLES2 backend, bicubic upscale is only supported on
+    graphics cards that provide the ``GL_EXT_gpu_shader4`` extension. Nearly all
+    desktop and laptop graphics cards provide this extension, but not all mobile
+    GPUs do.
+
+    Also, note that GLES2 does not support High Dynamic Range (HDR) rendering. As a
+    result, you will need different glow settings compared to GLES3 to get a
+    good-looking glow.
+
 Adjustments
 ^^^^^^^^^^^
-
-*This feature is only available when using the GLES3 backend.*
 
 At the end of processing, Godot offers the possibility to do some standard
 image adjustments.

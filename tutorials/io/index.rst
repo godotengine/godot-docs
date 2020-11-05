@@ -1,5 +1,5 @@
-I/O
-===
+Input and Output (I/O)
+======================
 
 .. toctree::
     :maxdepth: 1
@@ -9,3 +9,4 @@ I/O
     data_paths
     saving_games
     encrypting_save_games
+    binary_serialization_api

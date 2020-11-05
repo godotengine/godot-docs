@@ -162,6 +162,12 @@ in the editor. This lets you import and export plugins, create plugins
 like custom level editors, or create scripts with the same nodes and API
 you use in your projects.
 
+.. note::
+
+   The editor is fully written in C++ and is statically compiled into the
+   binary. This means you can't import it as a typical project that would have a
+   ``project.godot`` file.
+
 Separate 2D and 3D engines
 --------------------------
 

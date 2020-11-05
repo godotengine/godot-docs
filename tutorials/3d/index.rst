@@ -7,7 +7,6 @@
 
    introduction_to_3d
    using_transforms
-   optimizing_3d_performance
    3d_rendering_limitations
    standard_material_3d
    lights_and_shadows
@@ -19,5 +18,4 @@
    using_gridmaps
    using_multi_mesh_instance
    csg_tools
-   fps_tutorial/index
-   vertex_animation/index
+   procedural_geometry/index

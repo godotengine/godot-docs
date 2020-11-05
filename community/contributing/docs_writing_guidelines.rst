@@ -112,6 +112,10 @@ The progressive forms describe continuous actions. E.g. "is calling",
     Vector2 move ( Vector2 rel_vec )
     Moves the body in the vector's direction. The body **stops** if it collides with an obstacle. [...]
 
+Exception: If the subject is not clear, replacing "ing" verbs is not an
+improvement. For example, in the previous sentence, "it replaces"
+would not make much sense where "replacing" currently is.
+
 You may use the progressive tense to describe actions that are
 continuous in time. Anything like animation or coroutines.
 
@@ -294,7 +298,7 @@ The exception is topics that explain static typing concepts to users.
     var body_sprite := $Sprite as Sprite
 
 
-**Do** write constants variables with dynamic typing:
+**Do** write constants and variables with dynamic typing:
 
 ::
 
@@ -308,7 +312,7 @@ The exception is topics that explain static typing concepts to users.
 
 ::
 
-    func choose(arguments: Array):
+    func choose(arguments: PackedStringArray) -> String:
         # Chooses one of the arguments from array with equal chances
         randomize()
         var size := arguments.size()
@@ -388,7 +392,7 @@ functionality, in up to 200 characters.
 ::
 
     **Node2D**
-    2D game object, parent of all 2D related nodes. Has a position, rotation, scale and z-index.
+    A 2D game object, inherited by all 2D-related nodes. Has a position, rotation, scale, and Z index.
 
 Use the node's full description to provide more information, and a code
 example, if possible.
@@ -514,10 +518,18 @@ Screenshot sizes should not exceed 1920×1080 to ensure fast loading on slower
 connections.
 
 When you need to highlight an area of the editor to show something, like a
-button or option, use a 2 pixel thick outline without a bevel.
+button or option, use a 2 pixel-thick yellow outline without a bevel. If the
+outline is on a dark background, the outline should be yellow so it can be
+easily seen by colorblind people. Please do not use red as it won't be visible
+for some users.
 
 Before you add or replace any images in the documentation, they should be run
-through a PNG compressor to save size. The built in lossless compressor in
-programs like Krita or Photoshop should be enough. For heavier images, also look
-into using a lossy compressor, such as `pngquant <https://pngquant.org/>`_ where
-almost no image quality is lost during compression.
+through a PNG compressor to save size. You can use the lossless OxiPNG
+compressor included in `Squoosh <https://squoosh.app/>`__ for this purpose. For
+heavier images, consider using a lossy compressor like `pngquant
+<https://pngquant.org/>`_. With it, almost no image quality is lost during
+compression.
+
+.. note::
+
+    The program pngquant must be installed locally as it's not available in Squoosh.

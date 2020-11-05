@@ -17,6 +17,13 @@ This tutorial aims to give an overview on different methods to create
 a smaller binary. Before continuing, it is recommended to read the previous tutorials
 on compiling Godot for each platform.
 
+.. seealso::
+
+    You can use the online
+    `Godot build options generator <https://godot-build-options-generator.github.io/>`__
+    to generate a ``custom.py`` file containing SCons options.
+    You can then save this file and place it at the root of your Godot source directory.
+
 Disabling 3D
 ------------
 
@@ -34,7 +41,7 @@ Disabling advanced GUI nodes
 ----------------------------
 
 Most small games don't require complex GUI controls such as Tree, ItemList,
-TextEditor or GraphEdit. They can be disabled using a build flag:
+TextEdit or GraphEdit. They can be disabled using a build flag:
 
 ::
 
@@ -70,7 +77,7 @@ following:
 .. code-block:: python
 
     # custom.py
-    
+
     module_arkit_enabled = "no"
     module_assimp_enabled = "no"
     module_bmp_enabled = "no"
@@ -104,7 +111,7 @@ following:
     module_webrtc_enabled = "no"
     module_websocket_enabled = "no"
     module_xatlas_unwrap_enabled = "no"
-    
+
 .. seealso::
 
     :ref:`doc_overriding_build_options`.
@@ -144,14 +151,3 @@ If you build from source, remember to strip debug symbols from binaries:
 ::
 
     strip godot.64
-
-Using UPX to compress binaries
-------------------------------
-
-If you are targeting desktop platforms, the
-`UPX <https://upx.github.io/>`_ compressor can be used.
-This can reduce binary size considerably.
-
-However, keep in mind that some antivirus programs may detect UPX-packed
-binaries as a virus. Therefore, if you are releasing a commercial game,
-make sure to sign your binaries or use a platform that will distribute them.

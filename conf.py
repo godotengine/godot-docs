@@ -14,7 +14,6 @@ needs_sphinx = "1.3"
 sys.path.append(os.path.abspath("_extensions"))
 extensions = [
     "sphinx_tabs.tabs",
-    "sphinx.ext.imgmath",
 ]
 
 # Warning when the Sphinx Tabs extension is used with unknown
@@ -76,6 +75,7 @@ supported_languages = {
     "ru": "Документация Godot Engine (%s) на русском языке",
     "uk": "Документація до Godot Engine (%s) українською мовою",
     "zh_CN": "Godot Engine (%s) 简体中文文档",
+    "zh_TW": "Godot Engine (%s) 正體中文 (台灣) 文件",
 }
 
 language = os.getenv("READTHEDOCS_LANGUAGE", "en")
@@ -100,6 +100,8 @@ from sphinx.highlighting import lexers
 
 lexers["gdscript"] = GDScriptLexer()
 # fmt: on
+
+smartquotes = False
 
 # Pygments (syntax highlighting) style to use
 pygments_style = "sphinx"

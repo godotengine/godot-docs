@@ -245,11 +245,11 @@ object from the ``AnimationTree`` node (it is exported as a property).
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var state_machine = anim_tree["parameters/StateMachine/playback"]
+    var state_machine = anim_tree["parameters/playback"]
 
  .. code-tab:: csharp
 
-    AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)animTree.Get("parameters/StateMachine/playback");
+    AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)animTree.Get("parameters/playback");
 
 Once retrieved, it can be used by calling one of the many functions it offers:
 

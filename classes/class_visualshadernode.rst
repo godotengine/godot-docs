@@ -18,7 +18,7 @@ Base class for nodes in a visual shader graph.
 Tutorials
 ---------
 
-- :doc:`../tutorials/shading/visual_shaders`
+- :doc:`../tutorials/shaders/visual_shaders`
 
 Properties
 ----------

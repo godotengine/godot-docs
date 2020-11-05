@@ -12,6 +12,7 @@ Engine development
    variant_class
    object_class
    inheritance_class_tree
+   unit_testing
    custom_modules_in_cpp
    binding_to_external_libraries
    custom_resource_format_loaders

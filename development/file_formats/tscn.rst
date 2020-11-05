@@ -1,3 +1,5 @@
+.. _doc_tscn_file_format:
+
 TSCN file format
 ================
 

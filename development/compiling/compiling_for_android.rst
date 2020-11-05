@@ -83,8 +83,8 @@ As Google will require all APKs to include ARMv8 (64-bit) libraries starting
 from August 2019, the commands below will build an APK containing both
 ARMv7 and ARMv8 libraries.
 
-Compiling the standard export templates is done by calling SCons with
-the following arguments:
+Compiling the standard export templates is done by calling SCons from the Godot
+root directory with the following arguments:
 
 -  Release template (used when exporting with **Debugging Enabled** unchecked)
 

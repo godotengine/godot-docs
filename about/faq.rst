@@ -152,16 +152,22 @@ The main reasons for creating a custom scripting language for Godot were:
 
 GDScript was designed to curtail the issues above, and more.
 
-What type of 3D model formats does Godot support?
--------------------------------------------------
+What 3D model formats does Godot support?
+-----------------------------------------
 
-Godot supports Collada via the `OpenCollada <https://github.com/KhronosGroup/OpenCOLLADA/wiki/OpenCOLLADA-Tools>`_ exporter (Maya, 3DSMax).
-If you are using Blender, take a look at our own `Better Collada Exporter <https://godotengine.org/download>`_.
+Godot supports the following formats:
 
-As of Godot 3.0, glTF is supported.
+- glTF 2.0 *(recommended)*
+- Collada
+- OBJ
+- FBX (static meshes only)
 
-FBX is supported via the Open Asset Import library. However, FBX is proprietary
-so we recommend using other formats listed above, if suitable for your workflow.
+FBX support is the fruit of reverse engineering via the Open Asset Import library.
+However, FBX is proprietary so we recommend using other formats listed above,
+if suitable for your workflow.
+
+You can find more detailed information on supported formats, and how to export
+and import them for Godot :ref:`here <doc_importing_3d_scenes>`.
 
 Will [insert closed SDK such as FMOD, GameWorks, etc.] be supported in Godot?
 -----------------------------------------------------------------------------
@@ -182,6 +188,24 @@ If you know of a third-party SDK that is not supported by Godot but that offers
 free and open-source integration, consider starting the integration work yourself.
 Godot is not owned by one person; it belongs to the community, and it grows along
 with ambitious community contributors like you.
+
+Why does Godot use Vulkan or OpenGL instead of Direct3D?
+--------------------------------------------------------
+
+Godot aims for cross-platform compatibility and open standards first and
+foremost. OpenGL and Vulkan are the technologies that are both open and
+available (nearly) on all platforms. Thanks to this design decision, a project
+developed with Godot on Windows will run out of the box on Linux, macOS, and
+more.
+
+Since Godot only has a few people working on its renderer, we would prefer
+having fewer rendering backends to maintain. On top of that, using a single API
+on all platforms allows for greater consistency with fewer platform-specific
+issues.
+
+In the long term, we may develop a Direct3D 12 renderer for Godot (mainly for
+the Xbox's purposes), but Vulkan and OpenGL will remain the default rendering
+backends on all platforms, including Windows.
 
 How should assets be created to handle multiple resolutions and aspect ratios?
 ------------------------------------------------------------------------------
@@ -243,6 +267,12 @@ as well as the `unofficial Python support <https://github.com/touilleMan/godot-p
 This would be a good starting point to see how another third-party library
 integrates with Godot.
 
+When is the next release of Godot out?
+--------------------------------------
+
+When it's ready! See :ref:`doc_release_policy_when_is_next_release_out` for more
+information.
+
 I would like to contribute! How can I get started?
 --------------------------------------------------
 
@@ -289,6 +319,35 @@ developer experiences as a whole.
 Bonus points for bringing screenshots, concrete numbers, test cases, or example
 projects (if applicable).
 
+Is it possible to use Godot to create non-game applications?
+------------------------------------------------------------
+
+Yes! Godot features an extensive built-in UI system, and its small distribution
+size can make it a suitable alternative to frameworks like Electron or Qt.
+
+When creating a non-game application, make sure to enable
+:ref:`low-processor mode <class_ProjectSettings_property_application/run/low_processor_mode>`
+in the Project Settings to decrease CPU and GPU usage.
+
+That said, we wouldn't recommend using Godot to create a *mobile* application
+since low-processor mode isn't supported on mobile platforms yet.
+
+Check out `Material Maker <https://github.com/RodZill4/material-maker>`__ and
+`Pixelorama <https://github.com/Orama-Interactive/Pixelorama>`__ for examples of
+open source applications made with Godot.
+
+Is it possible to use Godot as a library?
+-----------------------------------------
+
+Godot is meant to be used with its editor. We recommend you give it a try, as it
+will most likely save you time in the long term. There are no plans to make
+Godot usable as a library, as it would make the rest of the engine more
+convoluted and difficult to use for casual users.
+
+If you want to use a rendering library, look into using an established rendering
+engine instead. Keep in mind rendering engines usually have smaller communities
+compared to Godot. This will make it more difficult to find answers to your
+questions.
 
 Why does Godot not use STL (Standard Template Library)
 ------------------------------------------------------

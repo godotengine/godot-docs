@@ -61,7 +61,7 @@ Dock in the lower left corner:
 Player scene
 ------------
 
-The first scene we will make defines the ``Player`` object. One of the benefits
+The first scene will define the ``Player`` object. One of the benefits
 of creating a separate Player scene is that we can test it separately, even
 before we've created other parts of the game.
 
@@ -176,17 +176,17 @@ Start by declaring the member variables this object will need:
 
     extends Area2D
 
-    export var speed = 400  # How fast the player will move (pixels/sec).
-    var screen_size  # Size of the game window.
+    export var speed = 400 # How fast the player will move (pixels/sec).
+    var screen_size # Size of the game window.
 
  .. code-tab:: csharp
 
     public class Player : Area2D
     {
         [Export]
-        public int Speed = 400; // How fast the player will move (pixels/sec).
+        public int speed = 400; // How fast the player will move (pixels/sec).
 
-        private Vector2 _screenSize; // Size of the game window.
+        public Vector2 screenSize; // Size of the game window.
     }
 
 
@@ -213,12 +213,14 @@ which is a good time to find the size of the game window:
 
     func _ready():
         screen_size = get_viewport_rect().size
+        hide() # Start the player hidden.
 
  .. code-tab:: csharp
 
     public override void _Ready()
     {
-        _screenSize = GetViewport().Size;
+        screenSize = GetViewportRect().Size;
+        Hide(); // Start the player hidden.
     }
 
 Now we can use the ``_process()`` function to define what the player will do.
@@ -233,9 +235,9 @@ need to do the following:
 First, we need to check for input - is the player pressing a key? For
 this game, we have 4 direction inputs to check. Input actions are defined
 in the Project Settings under "Input Map". Here, you can define custom events and
-assign different keys, mouse events, or other inputs to them. For this demo,
-we will use the default events that are assigned to the arrow keys on the
-keyboard.
+assign different keys, mouse events, or other inputs to them.
+For this game, we will just use the default events called
+"ui_right" etc that are assigned to the arrow keys on the keyboard.
 
 You can detect whether a key is pressed using
 ``Input.is_action_pressed()``, which returns ``true`` if it's pressed
@@ -245,7 +247,7 @@ or ``false`` if it isn't.
  .. code-tab:: gdscript GDScript
 
     func _process(delta):
-        var velocity = Vector2()  # The player's movement vector.
+        var velocity = Vector2.ZERO # The player's movement vector.
         if Input.is_action_pressed("ui_right"):
             velocity.x += 1
         if Input.is_action_pressed("ui_left"):
@@ -254,6 +256,7 @@ or ``false`` if it isn't.
             velocity.y += 1
         if Input.is_action_pressed("ui_up"):
             velocity.y -= 1
+
         if velocity.length() > 0:
             velocity = velocity.normalized() * speed
             $AnimatedSprite.play()
@@ -264,7 +267,7 @@ or ``false`` if it isn't.
 
     public override void _Process(float delta)
     {
-        var velocity = new Vector2(); // The player's movement vector.
+        var velocity = Vector2.Zero; // The player's movement vector.
 
         if (Input.IsActionPressed("ui_right"))
         {
@@ -290,7 +293,7 @@ or ``false`` if it isn't.
 
         if (velocity.Length() > 0)
         {
-            velocity = velocity.Normalized() * Speed;
+            velocity = velocity.Normalized() * speed;
             animatedSprite.Play();
         }
         else
@@ -339,8 +342,8 @@ the ``_process`` function (make sure it's not indented under the `else`):
 
         Position += velocity * delta;
         Position = new Vector2(
-            x: Mathf.Clamp(Position.x, 0, _screenSize.x),
-            y: Mathf.Clamp(Position.y, 0, _screenSize.y)
+            x: Mathf.Clamp(Position.x, 0, screenSize.x),
+            y: Mathf.Clamp(Position.y, 0, screenSize.y)
         );
 
 
@@ -349,7 +352,7 @@ the ``_process`` function (make sure it's not indented under the `else`):
         complete. Using this value ensures that your movement will remain
         consistent even if the frame rate changes.
 
-Click "Play Scene" (``F6``) and confirm you can move the player
+Click "Play Scene" (:kbd:`F6`, :kbd:`Cmd + R` on macOS) and confirm you can move the player
 around the screen in all directions.
 
 .. warning:: If you get an error in the "Debugger" panel that says
@@ -377,7 +380,7 @@ function:
         if velocity.x != 0:
             $AnimatedSprite.animation = "walk"
             $AnimatedSprite.flip_v = false
-            # See the note below about boolean assignment
+            # See the note below about boolean assignment.
             $AnimatedSprite.flip_h = velocity.x < 0
         elif velocity.y != 0:
             $AnimatedSprite.animation = "up"
@@ -389,7 +392,7 @@ function:
         {
             animatedSprite.Animation = "walk";
             animatedSprite.FlipV = false;
-            // See the note below about boolean assignment
+            // See the note below about boolean assignment.
             animatedSprite.FlipH = velocity.x < 0;
         }
         else if (velocity.y != 0)
@@ -486,8 +489,9 @@ this code to the function:
  .. code-tab:: gdscript GDScript
 
     func _on_Player_body_entered(body):
-        hide()  # Player disappears after being hit.
+        hide() # Player disappears after being hit.
         emit_signal("hit")
+        # Must be deferred as we can't change physics properties on a physics callback.
         $CollisionShape2D.set_deferred("disabled", true)
 
  .. code-tab:: csharp
@@ -495,7 +499,8 @@ this code to the function:
     public void OnPlayerBodyEntered(PhysicsBody2D body)
     {
         Hide(); // Player disappears after being hit.
-        EmitSignal("Hit");
+        EmitSignal(nameof(Hit));
+        // Must be deferred as we can't change physics properties on a physics callback.
         GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
     }
 
@@ -605,33 +610,31 @@ Add a script to the ``Mob`` and add the following member variables:
 
         [Export]
         public int MaxSpeed = 250; // Maximum speed range.
-
     }
 
 When we spawn a mob, we'll pick a random value between ``min_speed`` and
 ``max_speed`` for how fast each mob will move (it would be boring if they
 were all moving at the same speed).
 
-Now let's look at the rest of the script. In ``_ready()`` we randomly
-choose one of the three animation types:
+Now let's look at the rest of the script. In ``_ready()`` we play the
+animation and randomly choose one of the three animation types:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _ready():
+        $AnimatedSprite.playing = true
         var mob_types = $AnimatedSprite.frames.get_animation_names()
         $AnimatedSprite.animation = mob_types[randi() % mob_types.size()]
 
  .. code-tab:: csharp
 
-    // C# doesn't implement GDScript's random methods, so we use 'System.Random' as an alternative.
-    static private Random _random = new Random();
-
     public override void _Ready()
     {
         var animSprite = GetNode<AnimatedSprite>("AnimatedSprite");
-        var mobTypes = animSprite.Frames.GetAnimationNames();
-        animSprite.Animation = mobTypes[_random.Next(0, mobTypes.Length)];
+        animSprite.Playing = true;
+        string[] mobTypes = animSprite.Frames.GetAnimationNames();
+        animSprite.Animation = mobTypes[GD.Randi() % mobTypes.Length];
     }
 
 First, we get the list of animation names from the AnimatedSprite's ``frames``
@@ -669,7 +672,8 @@ Main scene
 ----------
 
 Now it's time to bring it all together. Create a new scene and add a
-:ref:`Node <class_Node>` named ``Main``. Click the "Instance" button and select your
+:ref:`Node <class_Node>` named ``Main``. Ensure you create a Node, **not** a
+Node2D. Click the "Instance" button and select your
 saved ``Player.tscn``.
 
 .. image:: img/instance_scene.png
@@ -704,8 +708,9 @@ you will see some new buttons at the top of the editor:
 
 Select the middle one ("Add Point") and draw the path by clicking to add
 the points at the corners shown. To have the points snap to the grid, make
-sure "Use Grid Snap" is selected. This option can be found to the left of
-the "Lock" button, appearing as a magnet next to some intersecting lines.
+sure "Use Grid Snap" and "Use Snap" are both selected. These options can be 
+found to the left of the "Lock" button, appearing as a magnet next to some
+dots and intersecting lines, respectively.
 
 .. image:: img/grid_snap_button.png
 
@@ -738,7 +743,7 @@ instance.
 
     extends Node
 
-    export (PackedScene) var Mob
+    export(PackedScene) var mob_scene
     var score
 
     func _ready():
@@ -750,22 +755,17 @@ instance.
     {
         // Don't forget to rebuild the project so the editor knows about the new export variable.
 
+    #pragma warning disable 649
+        // We assign this in the editor, so we don't need the warning about not being assigned.
         [Export]
-        public PackedScene Mob;
+        public PackedScene mobScene;
+    #pragma warning restore 649
 
-        private int _score;
-
-        // We use 'System.Random' as an alternative to GDScript's random methods.
-        private Random _random = new Random();
+        public int score;
 
         public override void _Ready()
         {
-        }
-
-        // We'll use this later because C# doesn't support GDScript's randi().
-        private float RandRange(float min, float max)
-        {
-            return (float)_random.NextDouble() * (max - min) + min;
+            GD.Randomize();
         }
     }
 
@@ -779,10 +779,16 @@ You can assign this property's value in two ways:
 - Click the down arrow next to "[empty]" and choose "Load". Select
   ``Mob.tscn``.
 
-Next, click on the Player and connect the ``hit`` signal. We want to make a
-new function named ``game_over``, which will handle what needs to happen when a
-game ends. Type "game_over" in the "Receiver Method" box at the bottom of the
-"Connect a Signal" window and click "Connect". Add the following code to the
+Next, select the ``Player`` node in the Scene dock, and access the Node dock on
+the sidebar. Make sure to have the Signals tab selected in the Node dock.
+
+You should see a list of the signals for the ``Player`` node. Find and
+double-click the ``hit`` signal in the list (or right-click it and select
+"Connect..."). This will open the signal connection dialog. We want to make
+a new function named ``game_over``, which will handle what needs to happen when
+a game ends.
+Type "game_over" in the "Receiver Method" box at the bottom of the
+signal connection dialog and click "Connect". Add the following code to the
 new function, as well as a ``new_game`` function that will set everything up
 for a new game:
 
@@ -808,7 +814,7 @@ for a new game:
 
     public void NewGame()
     {
-        _score = 0;
+        score = 0;
 
         var player = GetNode<Player>("Player");
         var startPosition = GetNode<Position2D>("StartPosition");
@@ -841,7 +847,7 @@ the other two timers. ``ScoreTimer`` will increment the score by 1.
 
     public void OnScoreTimerTimeout()
     {
-        _score++;
+        score++;
     }
 
 In ``_on_MobTimer_timeout()``, we will create a mob instance, pick a
@@ -857,49 +863,62 @@ Note that a new instance must be added to the scene using ``add_child()``.
 
     func _on_MobTimer_timeout():
         # Choose a random location on Path2D.
-        $MobPath/MobSpawnLocation.offset = randi()
+        var mob_spawn_location = get_node("MobPath/MobSpawnLocation");
+        mob_spawn_location.offset = randi()
+
         # Create a Mob instance and add it to the scene.
-        var mob = Mob.instance()
+        var mob = mob_scene.instance()
         add_child(mob)
+
         # Set the mob's direction perpendicular to the path direction.
-        var direction = $MobPath/MobSpawnLocation.rotation + PI / 2
+        var direction = mob_spawn_location.rotation + PI / 2
+
         # Set the mob's position to a random location.
-        mob.position = $MobPath/MobSpawnLocation.position
+        mob.position = mob_spawn_location.position
+
         # Add some randomness to the direction.
         direction += rand_range(-PI / 4, PI / 4)
         mob.rotation = direction
-        # Set the velocity (speed & direction).
-        mob.linear_velocity = Vector2(rand_range(mob.min_speed, mob.max_speed), 0)
-        mob.linear_velocity = mob.linear_velocity.rotated(direction)
+
+        # Choose the velocity.
+        var velocity = Vector2(rand_range(mob.min_speed, mob.max_speed), 0)
+        mob.linear_velocity = velocity.rotated(direction)
 
  .. code-tab:: csharp
 
     public void OnMobTimerTimeout()
     {
+        // Note: Normally it is best to use explicit types rather than the `var`
+        // keyword. However, var is acceptable to use here because the types are
+        // obviously PathFollow2D and Mob, since they appear later on the line.
+
         // Choose a random location on Path2D.
         var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
-        mobSpawnLocation.Offset = _random.Next();
+        mobSpawnLocation.Offset = GD.Randi();
 
         // Create a Mob instance and add it to the scene.
-        var mobInstance = (RigidBody2D)Mob.Instance();
-        AddChild(mobInstance);
+        var mob = (Mob)mobScene.Instance();
+        AddChild(mob);
 
         // Set the mob's direction perpendicular to the path direction.
         float direction = mobSpawnLocation.Rotation + Mathf.Pi / 2;
 
         // Set the mob's position to a random location.
-        mobInstance.Position = mobSpawnLocation.Position;
+        mob.Position = mobSpawnLocation.Position;
 
         // Add some randomness to the direction.
-        direction += RandRange(-Mathf.Pi / 4, Mathf.Pi / 4);
-        mobInstance.Rotation = direction;
+        direction += (float)GD.RandRange(-Mathf.Pi / 4, Mathf.Pi / 4);
+        mob.Rotation = direction;
 
         // Choose the velocity.
-        mobInstance.LinearVelocity = new Vector2(RandRange(150f, 250f), 0).Rotated(direction);
+        var velocity = new Vector2((float)GD.RandRange(mob.minSpeed, mob.maxSpeed), 0);
+        mob.LinearVelocity = velocity.Rotated(direction);
     }
 
-.. important:: Why ``PI``? In functions requiring angles, GDScript uses *radians*,
-               not degrees. If you're more comfortable working with
+.. important:: Why ``PI``? In functions requiring angles, Godot uses *radians*,
+               not degrees. Pi represents a half turn in radians, about
+               ``3.1415`` (there is also ``TAU`` which is equal to ``2 * PI``).
+               If you're more comfortable working with
                degrees, you'll need to use the ``deg2rad()`` and
                ``rad2deg()`` functions to convert between the two.
 
@@ -917,10 +936,9 @@ Let's test the scene to make sure everything is working. Add this to ``_ready()`
 
  .. code-tab:: csharp
 
-        public override void _Ready()
-        {
-            NewGame();
-        }
+    public override void _Ready()
+    {
+        NewGame();
     }
 
 Let's also assign ``Main`` as our "Main Scene" - the one that runs automatically
@@ -987,7 +1005,6 @@ on the other two Control nodes.
           origin - the reference point for the edges of the node. Margins
           update automatically when you move or resize a control node. They
           represent the distance from the control node's edges to its anchor.
-          See :ref:`doc_design_interfaces_with_the_control_nodes` for more details.
 
 Arrange the nodes as shown below. Click the "Layout" button to
 set a Control node's layout:
@@ -1180,7 +1197,7 @@ message:
  .. code-tab:: csharp
 
         var hud = GetNode<HUD>("HUD");
-        hud.UpdateScore(_score);
+        hud.UpdateScore(score);
         hud.ShowMessage("Get Ready!");
 
 In ``game_over()`` we need to call the corresponding ``HUD`` function:
@@ -1204,7 +1221,7 @@ sync with the changing score:
 
  .. code-tab:: csharp
 
-        GetNode<HUD>("HUD").UpdateScore(_score);
+        GetNode<HUD>("HUD").UpdateScore(score);
 
 Now you're ready to play! Click the "Play the Project" button. You will
 be asked to select a main scene, so choose ``Main.tscn``.
@@ -1224,16 +1241,17 @@ click "Groups" and you can type a new group name and click "Add".
 .. image:: img/group_tab.png
 
 Now all mobs will be in the "mobs" group. We can then add the following line to
-the ``game_over()`` function in ``Main``:
+the ``new_game()`` function in ``Main``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
         get_tree().call_group("mobs", "queue_free")
 
-
  .. code-tab:: csharp
 
+        // Note that for calling Godot-provided methods with strings,
+        // we have to use the original Godot snake_case name.
         GetTree().CallGroup("mobs", "queue_free");
 
 The ``call_group()`` function calls the named function on every node in a group -

@@ -79,6 +79,12 @@ Distro-specific one-liners
 |                  |     sudo zypper install scons pkgconfig libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel \ |
 |                  |             libXi-devel Mesa-libGL-devel alsa-devel libpulse-devel libudev-devel libGLU1 yasm             |
 +------------------+-----------------------------------------------------------------------------------------------------------+
+| **NetBSD**       | ::                                                                                                        |
+|                  |                                                                                                           |
+|                  |     pkg_add pkg-config py37-scons yasm                                                                    |
+|                  |                                                                                                           |
+|                  | For audio support, you can optionally install ``pulseaudio``.                                             |
++------------------+-----------------------------------------------------------------------------------------------------------+
 | **Solus**        | ::                                                                                                        |
 |                  |                                                                                                           |
 |                  |     sudo eopkg install -c system.devel scons libxcursor-devel libxinerama-devel libxi-devel \             |
@@ -97,6 +103,12 @@ Start a terminal, go to the root dir of the engine source code and type:
 A good rule of thumb for the ``-j`` (*jobs*) flag, is to have at least as many
 threads compiling Godot as you have cores in your CPU, if not one or two more.
 Feel free to add the ``-j`` option to any SCons command you see below.
+
+.. note::
+
+    Prior to Godot 4.0, the Linux/\*BSD target was called ``x11`` instead of
+    ``linuxbsd``. If you are looking to compile Godot 3.2, make sure to use the
+    `3.2 branch of this documentation <https://docs.godotengine.org/en/3.2/development/compiling/compiling_for_x11.html>`__.
 
 If all goes well, the resulting binary executable will be placed in the
 "bin" subdirectory. This executable file contains the whole engine and

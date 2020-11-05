@@ -21,9 +21,9 @@ A GDNative library can implement :ref:`NativeScript<class_NativeScript>`\ s, glo
 Tutorials
 ---------
 
-- :doc:`../tutorials/plugins/gdnative/gdnative-c-example`
+_ :doc:`../tutorials/scripting/gdnative/gdnative_c_example`
 
-- :doc:`../tutorials/plugins/gdnative/gdnative-cpp-example`
+_ :doc:`../tutorials/scripting/gdnative/gdnative_cpp_example`
 
 Properties
 ----------

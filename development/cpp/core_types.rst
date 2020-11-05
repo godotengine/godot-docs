@@ -12,7 +12,7 @@ understanding.
 Definitions
 -----------
 
-Godot uses the standard C98 datatypes, such as ``uint8_t``,
+Godot uses the standard C99 datatypes, such as ``uint8_t``,
 ``uint32_t``, ``int64_t``, etc. which are nowadays supported by every
 compiler. Reinventing the wheel for those is not fun, as it makes code
 more difficult to read.

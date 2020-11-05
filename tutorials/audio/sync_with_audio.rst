@@ -40,10 +40,12 @@ Add these two and it's possible to guess almost exactly when sound or music will
     var time_begin
     var time_delay
 
+
     func _ready()
         time_begin = OS.get_ticks_usec()
         time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
         $Player.play()
+
 
     func _process(delta):
         # Obtain from ticks.
@@ -91,6 +93,7 @@ Here is the same code as before using this approach:
 
     func _ready()
         $Player.play()
+
 
     func _process(delta):
         var time = $Player.get_playback_position() + AudioServer.get_time_since_last_mix()

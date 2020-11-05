@@ -265,7 +265,7 @@ Animation tips
 
 The following section will be a collection of tips for creating animation for
 your cutout rigs. For more information on how the animation system in Godot
-works, see :ref:`doc_animations`.
+works, see :ref:`doc_introduction_animation`.
 
 Setting keyframes and excluding properties
 ------------------------------------------

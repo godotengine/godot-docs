@@ -190,3 +190,12 @@ There are two separate resources referred to as "documentation" in Godot:
    to which you can contribute via pull requests on the
    `godot-docs <https://github.com/godotengine/godot-docs>`_ GitHub repository.
    See :ref:`doc_documentation_guidelines` for more details.
+
+Contributing translations
+-------------------------
+
+To make Godot accessible to everyone, including users who may prefer resources
+in their native language instead of English, our community helps translate both
+the Godot editor and its documentation in many languages.
+
+See :ref:`doc_editor_and_docs_localization` for more details.

@@ -4,6 +4,17 @@ This repository contains the source files of [Godot Engine](https://godotengine.
 
 They are meant to be parsed with the [Sphinx](https://www.sphinx-doc.org/) documentation builder to build the HTML documentation on [Godot's website](https://docs.godotengine.org).
 
+## Theming
+
+The Godot documentation uses the default ``sphinx_rtd_theme`` with many
+[customizations](_static/) applied on top. It will automatically switch between
+the light and dark theme depending on your browser/OS' theming preference.
+
+If you use Firefox and wish to use the dark theme regardless of your OS
+configuration, you can install the
+[Dark Website Forcer](https://addons.mozilla.org/en-US/firefox/addon/dark-mode-website-switcher/)
+add-on.
+
 ## Contributing changes
 
 **Pull Requests should use the `master` branch by default. Only make Pull Requests against other branches (e.g. `2.1` or `3.0`) if your changes only apply to that specific version of Godot.**
@@ -113,6 +124,16 @@ pip install -r requirements.txt
 ```
 
 Then do `make html` like above.
+
+### Rebuilding automatically on changes
+
+To build the documentation every time you save your changes, install
+[watchexec](https://github.com/watchexec/watchexec) then run the following
+command in this directory:
+
+```sh
+watchexec make html
+```
 
 ## License
 

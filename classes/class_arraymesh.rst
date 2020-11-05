@@ -41,7 +41,7 @@ The :ref:`MeshInstance<class_MeshInstance>` is ready to be added to the :ref:`Sc
 Tutorials
 ---------
 
-- :doc:`../tutorials/content/procedural_geometry/arraymesh`
+- :doc:`../tutorials/3d/procedural_geometry/arraymesh`
 
 Properties
 ----------

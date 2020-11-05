@@ -97,7 +97,7 @@ empty scene, as the "root" node).
     In an empty scene (without root node), the scene dock shows several
     options to quickly add a root node to the scene. "2D Scene" adds a
     Node2D node, "3D Scene" adds a Spatial node, "User Interface" adds a
-    Control node, and "Custom Node" which lets you select any node (so it
+    Control node, and "Other Node" which lets you select any node (so it
     is equivalent to pressing the "Add Child Node" button). You can also
     press the star-shaped icon to toggle the display of your favorited
     nodes.
@@ -107,7 +107,7 @@ empty scene, as the "root" node).
     node as its root node, likewise not every GUI or 2D scene needs a Control
     node or Node2D as their root node.
 
-Now, to add a label node to this scene you can click on the Custom Node
+Now, to add a label node to this scene you can click on the Other Node
 button or the Add Node button at the top. In scenes that aren't empty you
 use the add node button to create every child node.
 

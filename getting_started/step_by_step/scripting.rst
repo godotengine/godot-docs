@@ -97,12 +97,14 @@ demonstrate:
 - Hooking up UI elements via signals.
 - Writing a script that can access other nodes in the scene.
 
-Before continuing, please make sure to read the :ref:`GDScript<doc_gdscript>` reference.
-It's a language designed to be simple, and the reference is short, so it will not take more
-than a few minutes to get an overview of the concepts.
+Before continuing, make sure to skim and bookmark the :ref:`GDScript<doc_gdscript>` reference.
+It's a language designed to be simple, and the reference is structured into sections to make it
+easier to get an overview of the concepts.
 
 Scene setup
 ~~~~~~~~~~~
+
+If you still have the "instancing" project open from the previous tutorial, then close that out (Project -> Quit to Project List) and create a New Project.
 
 Use the "Add Child Node" dialogue accessed from the Scene tab (or by pressing :kbd:`Ctrl + A`) to create a hierarchy with the following
 nodes:
@@ -259,7 +261,7 @@ using :ref:`Object.connect() <class_Object_method_connect>`.
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        get_node("Button").connect("pressed", self, "_on_Button_pressed")
+        get_node("Button").connect("pressed", self._on_Button_pressed)
 
  .. code-tab:: csharp
 
@@ -276,7 +278,7 @@ The final script should look like this:
     extends Panel
 
     func _ready():
-        get_node("Button").connect("pressed", self, "_on_Button_pressed")
+        get_node("Button").connect("pressed", self._on_Button_pressed)
 
     func _on_Button_pressed():
         get_node("Label").text = "HELLO!"
@@ -331,7 +333,7 @@ Also, remember that nodes are referenced by name, not by type.
 
 .. note::
 
-    The right-hand panel of the connect dialogue is for binding specific
+    The 'advanced' panel of the connect dialogue is for binding specific
     values to the connected function's parameters. You can add and remove
     values of different types.
 
