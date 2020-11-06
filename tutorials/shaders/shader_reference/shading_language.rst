@@ -427,7 +427,7 @@ Godot Shading language supports the most common types of flow control:
     }
 
     // switch
-    switch(i) { // signed integer expression
+    switch (i) { // signed integer expression
         case -1:
             break;
         case 0:
@@ -451,12 +451,37 @@ Godot Shading language supports the most common types of flow control:
     }
 
     // do while
+    // Like `while`, but always runs at least once.
     do {
 
-    } while(true);
+    } while (true);
 
 Keep in mind that, in modern GPUs, an infinite loop can exist and can freeze your application (including editor).
 Godot can't protect you from this, so be careful not to make this mistake!
+
+Also, when comparing floating-point values against a number, make sure
+to compare them against a *range* instead of an exact number:
+
+.. code-block:: glsl
+
+    float value = 0.1 + 0.2;
+
+    // No guarantee that this evalutes to `true`!
+    // Floating-point math is often approximate and can defy expectations.
+    // It can also behave differently depending on the hardware.
+    if (value == 0.3) {
+        // ...
+    }
+
+    // Instead, always perform a range comparison with an epsilon value.
+    // The larger the floating-point number (and the less precise the floating-point number),
+    // the larger the epsilon value should be.
+    const float EPSILON = 0.0001;
+    if (value >= 0.3 - EPSILON && value <= 0.3 + EPSILON) {
+        // ...
+    }
+
+See `floating-point-gui.de <https://floating-point-gui.de/>`__ for more information.
 
 .. warning::
 
