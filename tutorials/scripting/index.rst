@@ -41,6 +41,7 @@ below will help you make the most of Godot.
    overridable_functions
    cross_language_scripting
    creating_script_templates
+   evaluating_expressions
    change_scenes_manually
    instancing_with_signals
    pausing_games
