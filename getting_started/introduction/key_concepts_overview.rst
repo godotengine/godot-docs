@@ -76,7 +76,7 @@ flexibility in how you structure your scenes.
 .. image:: img/key_concepts_signals.png
 
 .. note:: Signals are Godot's version of the *observer* pattern. You can read
-          more about the observer pattern here:
+          more about it here:
           https://gameprogrammingpatterns.com/observer.html
 
 For example, buttons emit a signal when pressed. You can connect to this signal
