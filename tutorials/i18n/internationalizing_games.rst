@@ -65,6 +65,21 @@ translations and convert it if found:
     level.set_text(tr("LEVEL_5_NAME"))
     status.set_text(tr("GAME_STATUS_" + str(status_index)))
 
+.. note::
+
+    If no text is displayed after changing the language, try to use a different
+    font. The default project font only supports a subset of the Latin-1 character set,
+    which cannot be used to display languages like Russian or Chinese.
+
+    A good resource for multilingual fonts is `Noto Fonts <https://www.google.com/get/noto/>`__.
+    Make sure to download the correct variation if you're using a less common
+    language.
+
+    Once you've downloaded the font, load the TTF file into a DynamicFont
+    resource and use it as a custom font of your Control node. For better
+    reusability, associate a new a Theme resource to your root Control node and
+    define the DynamicFont as the Default Font in the theme.
+
 Making controls resizable
 --------------------------
 
