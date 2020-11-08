@@ -112,7 +112,7 @@ There are two systems for registering types...
 
    - Set up using :ref:`EditorPlugin.add_custom_type <class_EditorPlugin_method_add_custom_type>`.
 
-- :ref:`Script Classes <doc_scripting_continued_class_name>`
+- :ref:`Script Classes <doc_gdscript_basics_class_name>`
 
    - Editor and runtime accessible.
 
