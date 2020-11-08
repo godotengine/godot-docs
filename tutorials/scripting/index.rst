@@ -38,6 +38,7 @@ below will help you make the most of Godot.
    idle_and_physics_processing
    groups
    nodes_and_scene_instances
+   overridable_functions
    cross_language_scripting
    creating_script_templates
    change_scenes_manually
