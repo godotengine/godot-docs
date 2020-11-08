@@ -5,12 +5,9 @@ Scripting (continued)
 Notifications
 -------------
 
-Godot has a system of notifications. These are usually not needed for
+Godot has a low-level notifications system. You don't  are usually not needed for
 scripting, as it's too low-level and virtual functions are provided for
-most of them. It's just good to know they exist. For example,
-you may add an
-:ref:`Object._notification() <class_Object_method__notification>`
-function in your script:
+most of them. You can learn more about how notifications work under the hood in :ref:`doc_godot_notifications`.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -119,41 +116,3 @@ follows, can be applied to nodes:
         base._PhysicsProcess(delta);
     }
 
-As mentioned before, it's better to use these functions instead of
-the notification system.
-
-.. _doc_scripting_continued_class_name:
-
-Register scripts as classes
----------------------------
-
-Godot has a "Script Class" feature to register individual scripts with the
-Editor. By default, you can only access unnamed scripts by loading the file
-directly.
-
-You can name a script and register it as a type in the editor with the
-``class_name`` keyword followed by the class's name. You may add a comma and an
-optional path to an image to use as an icon. You will then find your new type in
-the Node or Resource creation dialog.
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    extends Node
-
-    # Declare the class name here
-    class_name ScriptName, "res://path/to/optional/icon.svg"
-
-    func _ready():
-        var this = ScriptName           # reference to the script
-        var cppNode = MyCppNode.new()   # new instance of a class named MyCppNode
-
-        cppNode.queue_free()
-
-.. image:: img/script_class_nativescript_example.png
-
-
-.. warning:: In Godot 3.1:
-
-            - Only GDScript and NativeScript, i.e., C++ and other GDNative-powered languages, can register scripts.
-            - Only GDScript creates global variables for each named script.

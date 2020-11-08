@@ -1190,8 +1190,6 @@ There are 6 pattern types:
             "Sword", "Splash potion", "Fist":
                 print("Yep, you've taken damage")
 
-
-
 Classes
 ~~~~~~~
 
@@ -1207,6 +1205,11 @@ path. For example, if you name a script file ``character.gd``::
 
    var Character = load("res://path/to/character.gd")
    var character_node = Character.new()
+
+.. _doc_gdscript_basics_class_name:
+
+Registering named classes
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Instead, you can give your class a name to register it as a new type in Godot's
 editor. For that, you use the ``class_name`` keyword. You can optionally use
