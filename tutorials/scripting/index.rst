@@ -37,6 +37,7 @@ below will help you make the most of Godot.
    debug/index
    idle_and_physics_processing
    groups
+   nodes_and_scene_instances
    cross_language_scripting
    creating_script_templates
    change_scenes_manually
