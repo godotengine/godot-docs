@@ -10,7 +10,6 @@ Step by step
    instancing
    instancing_continued
    scripting
-   scripting_continued
    signals
    your_first_game
    exporting
