@@ -8,7 +8,7 @@ High-level vs low-level API
 
 The following explains the differences of high- and low-level networking in Godot as well as some fundamentals. If you want to jump in head-first and add networking to your first nodes, skip to `Initializing the network`_ below. But make sure to read the rest later on!
 
-Godot always supported standard low-level networking via UDP, TCP and some higher level protocols such as SSL and HTTP.
+Godot always supported standard low-level networking via :abbr:`UDP (User Datagram Protocol)`, :abbr:`TCP (Transmission Control Protocol)` and some higher-level protocols such as :abbr:`HTTP (Hypertext Transfer Protocol)` and :abbr:`SSL (Secure Sockets Layer)`.
 These protocols are flexible and can be used for almost anything. However, using them to synchronize game state manually can be a large amount of work. Sometimes that work can't be avoided or is worth it, for example when working with a custom server implementation on the backend. But in most cases, it's worthwhile to consider Godot's high-level networking API, which sacrifices some of the fine-grained control of low-level networking for greater ease of use.
 
 This is due to the inherent limitations of the low-level protocols:
@@ -51,7 +51,7 @@ In summary, you can use the low-level networking API for maximum control and imp
              You can of course experiment, but when you release a networked application,
              always take care of any possible security concerns.
 
-Mid level abstraction
+Mid-level abstraction
 ---------------------
 
 Before going into how we would like to synchronize a game across the network, it can be helpful to understand how the base network API for synchronization works.
@@ -68,7 +68,35 @@ one based on WebRTC (:ref:`WebRTCMultiplayer <class_WebRTCMultiplayer>`), and on
 mobile APIs (for ad hoc WiFi, Bluetooth) or custom device/console-specific networking APIs.
 
 For most common cases, using this object directly is discouraged, as Godot provides even higher level networking facilities.
-Yet it is made available in case a game has specific needs for a lower level API.
+This object is still made available in case a game has specific needs for a lower-level API.
+
+Hosting considerations
+----------------------
+
+When hosting a server, clients on your :abbr:`LAN (Local Area Network)` can
+connect using the internal IP address which is usually of the form
+``192.168.*.*``. This internal IP address is **not** reachable by
+non-LAN/Internet clients.
+
+On Windows, you can find your internal IP address by opening a command prompt
+and entering ``ipconfig``. On macOS, open a Terminal and enter ``ifconfig``. On
+Linux, open a terminal and enter ``ip addr``.
+
+If you're hosting a server on your own machine and want non-LAN clients to
+connect to it, you'll probably have to *forward* the server port on your router.
+This is required to make your server reachable from the Internet since most
+residential connections use a `NAT
+<https://en.wikipedia.org/wiki/Network_address_translation>`__. Godot's
+high-level multiplayer API only uses UDP, so you must forward the port in UDP,
+not just TCP.
+
+After forwarding an UDP port and making sure your server uses that port, you can
+use `this website <https://icanhazip.com/>`__ to find your public IP address.
+Then give this public IP address to any Internet clients that wish to connect to
+your server.
+
+Godot's high-level multiplayer API uses a modified version of ENet which allows
+for full IPv6 support.
 
 Initializing the network
 ------------------------
@@ -407,7 +435,7 @@ Example player code:
             return # Already stunned
 
         rpc("stun")
-        
+
         # Stun this player instance for myself as well; could instead have used
         # the remotesync keyword above (in place of puppet) to achieve this.
         stun()
