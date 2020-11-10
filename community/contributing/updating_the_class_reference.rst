@@ -14,7 +14,8 @@ But it's incomplete. Some methods, variables and signals lack descriptions. Othe
 The developers can't write the entire reference on their own. Godot needs you, and all of us, to contribute.
 
 **Important:** If you are planning to make larger changes or a more substantial contribution, it is usually a good idea
-to create an issue (or a comment in an existing one) to let others know so they don't start working on the same thing too.
+to create an issue (or a comment in an existing one) to let others know so they don't start working on the same thing too. Class
+reference issues should be opened in the `godot-docs repository <https://github.com/godotengine/godot-docs/issues>`__.
 
 .. seealso::
 
