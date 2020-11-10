@@ -7,8 +7,8 @@ Viewport and Canvas items
 -------------------------
 
 :ref:`CanvasItem <class_CanvasItem>` is the base for all 2D nodes, be it regular
-     2D nodes, such as :ref:`Node2D <class_Node2D>`, or `Control
-     <class_Control>`. Both inherit from :ref:`CanvasItem <class_CanvasItem>`.
+     2D nodes, such as :ref:`Node2D <class_Node2D>`, or :ref:`Control <class_Control>`.
+     Both inherit from :ref:`CanvasItem <class_CanvasItem>`.
      You can arrange canvas items in trees. Each item will inherit its parent's
      transform: when the parent moves, its children move too.
 
