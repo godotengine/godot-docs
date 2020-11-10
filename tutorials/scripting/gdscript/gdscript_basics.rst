@@ -1211,7 +1211,7 @@ path. For example, if you name a script file ``character.gd``::
 Registering named classes
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Instead, you can give your class a name to register it as a new type in Godot's
+You can give your class a name to register it as a new type in Godot's
 editor. For that, you use the ``class_name`` keyword. You can optionally use
 the ``@icon`` annotation with a path to an image, to use it as an icon. Your
 class will then appear with its new icon in the editor::

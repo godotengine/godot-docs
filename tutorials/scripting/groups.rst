@@ -83,7 +83,7 @@ scene tree.
         AddToGroup("guards");
     }
 
-Imagine you're creating a strategy game inspired by Metal Gear Solid. When an
+Imagine you're creating an infiltration game. When an
 enemy spots the player, you want all guards and robots to be on alert.
 
 In the fictional example below, we use ``SceneTree.call_group()`` to alert all
