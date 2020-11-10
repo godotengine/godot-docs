@@ -4,7 +4,7 @@ Idle and Physics Processing
 ===========================
 
 Games run in a loop. Each frame, you need to update the state of your game world
-before drawing it on screen. Godot provides two virtual methods on the Node
+before drawing it on screen. Godot provides two virtual methods in the Node
 class to do so: :ref:`Node._process() <class_Node_method__process>` and
 :ref:`Node._physics_process() <class_Node_method__physics_process>`. If you
 define either or both in a script, the engine will call them automatically.
@@ -14,7 +14,7 @@ There are two types of processing available to you:
 1. **Idle processing** allows you to run code that updates a node every frame,
    as often as possible.
 2. **Physics processing** happens at a fixed rate, 60 times per second by
-   default, independently of your game's actual framerate, and keeps physics
+   default. This is independent of your game's actual framerate, and keeps physics
    running smoothly. You should use it for anything that involves the physics
    engine, like moving a body that collides with the environment.
 
@@ -70,12 +70,12 @@ The engine calls this method every time it draws a frame:
         // Do something...
     }
 
-The function ``_process()`` is not synced with physics. Its rate depends on
-hardware and game optimization. It also runs after the physics step on
+The function ``_process()`` is not synchronized with physics. Its rate depends on
+hardware and game optimization. It also runs after the physics step in
 single-threaded games.
 
 You can see the ``_process()`` function at work by creating a scene with a
-single Label node, with the following script:
+single Label node, with the following script attached to it:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

@@ -8,7 +8,7 @@ every frame or on specific events, like when they enter the scene tree.
 
 This document presents the ones you'll use most often.
 
-.. seealso:: Under the hood, these functions rely on Godot's uses a low-level
+.. seealso:: Under the hood, these functions rely on Godot's low-level
              notifications system. To learn more about it, see
              :ref:`doc_godot_notifications`.
 
@@ -16,13 +16,13 @@ Two functions allow you to initialize and get nodes, besides the class's
 constructor: ``_enter_tree()`` and ``_ready()``.
 
 When the node enters the Scene Tree, it becomes active and the engine calls its
-``_enter_tree()`` method. Children may not be part of the active scene yet. As
+``_enter_tree()`` method. That node's children may not be part of the active scene yet. As
 you can remove and re-add nodes to the scene tree, this function may be called
 multiple times throughout a node's lifetime.
 
 Most of the time, you'll use ``_ready()`` instead. This function is called only
-once in a node's lifetime, after ``_enter_tree()``. It ensures that all children
-have entered the scene tree first, so you can safely call ``get_node()`` in it.
+once in a node's lifetime, after ``_enter_tree()``. ``_ready()`` ensures that all children
+have entered the scene tree first, so you can safely call ``get_node()`` on it.
 
 .. seealso:: To learn more about getting node references, read
              :ref:`doc_nodes_and_scene_instances`.
@@ -43,7 +43,7 @@ a node exits the scene tree. This can be when you call :ref:`Node.remove_child()
         pass
 
     # Called when the node is about to leave the scene tree, after all its
-    children.
+    children received the _exit_tree() callback.
     func _exit_tree():
         pass
 
@@ -69,7 +69,7 @@ a node exits the scene tree. This can be when you call :ref:`Node.remove_child()
     }
 
 The two virtual methods ``_process()`` and ``_physics_process()`` allow you to
-update the node, respectively, every frame and every physics frame. For more
+update the node, every frame and every physics frame respectively. For more
 information, read the dedicated documentation:
 :ref:`doc_idle_and_physics_processing`.
 
@@ -100,15 +100,14 @@ information, read the dedicated documentation:
 
 Two more essential built-in node callback functions are
 :ref:`Node._unhandled_input() <class_Node_method__unhandled_input>` and
-:ref:`Node._input() <class_Node_method__input>`, which you both use to receive
+:ref:`Node._input() <class_Node_method__input>`, which you use to both receive
 and process individual input events. The ``_unhandled_input()`` method receives
-every key press, mouse click, etc. that had not been handled already in an
-``_input()`` callback or in a piece of user interface. You want to use it for
+every key press, mouse click, etc. that have not been handled already in an
+``_input()`` callback or in a user interface component. You want to use it for
 gameplay input in general. The ``_input()`` callback allows you to intercept and
 process input events before ``_unhandled_input()`` gets them.
 
-There's a lot to say about input handling in Godot. You'll find a lot more
-information in the :ref:`Input section <toc-learn-features-inputs>`.
+To learn more about inputs in Godot, see the :ref:`Input section <toc-learn-features-inputs>`.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

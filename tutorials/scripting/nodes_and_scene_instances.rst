@@ -14,7 +14,7 @@ You can get a reference to a node by calling the :ref:`Node.get_node()
 present in the scene tree. Getting it in the parent node's ``_ready()`` function
 guarantees that.
 
-Say you have a scene tree like this, and you want to get a reference to the
+If, for example,  you have a scene tree like this, and you want to get a reference to the
 Sprite and Camera2D nodes to access them in your script.
 
 .. image:: img/nodes_and_scene_instances_player_scene_example.png
@@ -50,7 +50,7 @@ node into Skin, the call to get it would have to be ``get_node("Skin")``.
 Node paths
 ----------
 
-You're not limited to getting a direct child. The ``get_node()`` function
+When getting a reference to a node, you're not limited to getting a direct child. The ``get_node()`` function
 supports paths, a bit like when working with a file browser. Add a slash to
 separate nodes.
 
@@ -81,15 +81,15 @@ To get the Tween node, you would use the following code.
     }
 
 .. note:: As with file paths, you can use ".." to get a parent node. The best
-          practice is to avoid doing that though not to break encapsulation and
-          keep your code organized. You can also start the path with a forward
+          practice is to avoid doing that though not to break encapsulation.
+          You can also start the path with a forward
           slash to make it absolute, in which case your topmost node would be
           "/root", the application's predefined root viewport.
 
 Syntactic sugar
 ~~~~~~~~~~~~~~~
 
-You can use two shorthands to shorten your code in GDScript: putting the
+You can use two shorthands to shorten your code in GDScript. Firstly, putting the
 ``onready`` keyword before a member variable makes it initialize right before
 the ``_ready()`` callback.
 
@@ -138,7 +138,7 @@ script.
 
 To delete a node and free it from memory, you can call its ``queue_free()``
 method. Doing so queues the node for deletion at the end of the current frame
-after it finished processing. At that point, the engine removes the node from
+after it has finished processing. At that point, the engine removes the node from
 the scene and frees the object in memory.
 
 .. tabs::
@@ -176,8 +176,9 @@ Instancing a scene from code happens in two steps:
 
     var scene = GD.Load<PackedScene>("res://MyScene.tscn");
 
-Preloading it can improve the user's experience as it happens when parsing the
-script. This feature is only available with GDScript.
+Preloading the scene can improve the user's experience as the load operation
+happens when the compiler reads the script and not at runtime. This feature is
+only available with GDScript.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -187,7 +188,7 @@ script. This feature is only available with GDScript.
 At that point, ``scene`` is a packed scene resource, not a node. To create the
 actual node, you need to call :ref:`PackedScene.instance()
 <class_PackedScene_method_instance>`. It returns a tree of nodes that you can
-add as a child.
+as a child of your current node.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

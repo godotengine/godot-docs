@@ -26,7 +26,7 @@ case, an interface that works with multiple languages.
 Core features
 -------------
 
-Some features are specific to the engine and available in all supported
+Some features are specific to the engine and are available in all supported
 languages. Whether you code in GDScript, C#, or another language, the pages
 below will help you make the most of Godot.
 
