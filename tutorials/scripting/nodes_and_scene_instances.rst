@@ -44,8 +44,15 @@ To do so, you can use the following code.
         _camera2d = GetNode<Camera2D>("Camera2D");
     }
 
-Note that you get nodes by their name. For example, if you rename the Sprite
-node into Skin, the call to get it would have to be ``get_node("Skin")``.
+Note that you get nodes using their name, not their type. Above, "Sprite" and
+"Camera2D" are the nodes' names in the scene.
+
+.. image:: img/nodes_and_scene_instances_sprite_node.png
+
+If you rename the Sprite node as Skin in the Scene dock, you have to change the
+line that gets the node to ``get_node("Skin")`` in the script.
+
+.. image:: img/nodes_and_scene_instances_sprite_node_renamed.png
 
 Node paths
 ----------
@@ -150,6 +157,15 @@ the scene and frees the object in memory.
 
     _sprite.QueueFree();
 
+Before calling ``sprite.queue_free()``, the remote scene tree looks like this.
+
+.. image:: img/nodes_and_scene_instances_remote_tree_with_sprite.png
+
+After the engine freed the node, the remote scene tree doesn't display the
+sprite anymore.
+
+.. image:: img/nodes_and_scene_instances_remote_tree_no_sprite.png
+
 You can alternatively call ``free()`` to immediately destroy the node. You
 should do this with care as any reference to it will instantly become ``null``.
 We recommend using ``queue_free()`` unless you know what you're doing.
@@ -161,7 +177,9 @@ node.
 Instancing scenes
 -----------------
 
-Instancing a scene from code happens in two steps:
+Scenes are templates from which you can create as many reproductions as you'd
+like. This operation is called instancing, and doing it from code happens in two
+steps:
 
 1. Loading the scene from the hard drive.
 2. Creating an instance of the loaded :ref:`PackedScene <class_PackedScene>`
