@@ -239,9 +239,11 @@ several other bones (the shin and the thigh at least). This would be quite
 complex and lead to imprecise results. IK allows us to move the foot directly 
 while the shin and thigh self-adjust.
 
-It should be noted that IK chains in Godot currently work in the editor only, not
-at runtime. They are intended to ease the process of setting keyframes, and are
-not currently useful for techniques like procedural animation. 
+.. note::
+
+    **IK chains in Godot currently work in the editor only**, not
+    at runtime. They are intended to ease the process of setting keyframes, and are
+    not currently useful for techniques like procedural animation. 
 
 To create an IK chain, select a chain of bones from endpoint to
 the base for the chain. For example, to create an IK chain for the right
