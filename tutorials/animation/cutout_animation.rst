@@ -236,9 +236,12 @@ position of hands, feet and other extremities of rigs like the one we've made.
 Imagine you want to pose a character's foot in a specific position on the ground.
 Without IK chains, each motion of the foot would require rotating and positioning
 several other bones (the shin and the thigh at least). This would be quite
-complex and lead to imprecise results.
+complex and lead to imprecise results. IK allows us to move the foot directly 
+while the shin and thigh self-adjust.
 
-IK allows us to move directly the foot while the shin and thigh self-adjust.
+It should be noted that IK chains in Godot currently work in the editor only, not
+at runtime. They are intended to ease the process of setting keyframes, and are
+not currently useful for techniques like procedural animation. 
 
 To create an IK chain, select a chain of bones from endpoint to
 the base for the chain. For example, to create an IK chain for the right
@@ -254,8 +257,8 @@ As a result, the base of the chain will turn *Yellow*.
 
 .. image:: img/tuto_cutout19.png
 
-Once the IK chain is set-up grab any child or grand-child of the base of the
-chain (e.g. a foot) and move it. You'll see the rest of the chain adjust as you
+Once the IK chain is set up, grab any child or grand-child of the base of the
+chain (e.g. a foot), and move it. You'll see the rest of the chain adjust as you
 adjust its position.
 
 .. image:: img/tutovec_torso5.gif
