@@ -65,7 +65,7 @@ Using code
 ~~~~~~~~~~
 
 You can also manage groups from scripts. The following code adds the node to
-which you attach the script to the ``guards`` group as soon as it entered the
+which you attach the script to the ``guards`` group as soon as it enters the
 scene tree.
 
 .. tabs::
