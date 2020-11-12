@@ -68,7 +68,7 @@ or data across many scenes.
 
 In the case of functions, you can create a new type of ``Node`` that provides
 that feature for an individual scene using the :ref:`class_name
-<doc_scripting_continued_class_name>` keyword in GDScript.
+<doc_gdscript_basics_class_name>` keyword in GDScript.
 
 When it comes to data, you can either:
 

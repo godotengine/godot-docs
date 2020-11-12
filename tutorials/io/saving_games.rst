@@ -25,9 +25,9 @@ sessions and what information we want to keep from those objects. For
 this tutorial, we will use groups to mark and handle objects to be saved,
 but other methods are certainly possible.
 
-We will start by adding objects we wish to save to the "Persist" group.
-As in the :ref:`doc_scripting_continued` tutorial, we can do this through
-either the GUI or script. Let's add the relevant nodes using the GUI:
+We will start by adding objects we wish to save to the "Persist" group. We can
+do this through either the GUI or script. Let's add the relevant nodes using the
+GUI:
 
 .. image:: img/groups.png
 
