@@ -573,7 +573,7 @@ Adjust the "Speed (FPS)" to ``3`` for all animations.
 
 .. image:: img/mob_animations.gif
 
-Set the ``Playing`` property in the Inspector to “On”.
+Set the ``Playing`` property in the Inspector to "On".
 
 We'll select one of these animations randomly so that the mobs will have some variety.
 

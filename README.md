@@ -19,7 +19,7 @@ add-on.
 
 If you'd like to contribute to the official documentation, whether you want to improve existing pages or write a new one, we would ask you to follow our workflow and guidelines:
 
-1. If you want to write a new page, please start by opening an issue or join the discussion on an open issue with your proposal. This ensures that your work matches our [content guidelines](https://docs.godotengine.org/en/latest/community/contributing/content_guidelines.html) and saves both you and the reviewers' time.
+1. If you want to write a new page, please start by opening an issue or join the discussion on an open issue with your proposal. This ensures that your work matches our [content guidelines](https://docs.godotengine.org/en/latest/community/contributing/content_guidelines.html) and saves everyone time.
 2. Before writing, be sure to check out our style guides:
     - [Writing style guide](https://docs.godotengine.org/en/latest/community/contributing/docs_writing_guidelines.html)
     - [GDScript style guide](https://docs.godotengine.org/en/latest/tutorials/scripting/gdscript/gdscript_styleguide.html) if you write GDScript code.
@@ -28,8 +28,6 @@ If you'd like to contribute to the official documentation, whether you want to i
 We also detail how to create new pages on the documentation [here](https://docs.godotengine.org/en/latest/community/contributing/documentation_guidelines.html).
 
 **Pull Requests should use the `master` branch by default. Only make Pull Requests against other branches (e.g. `3.2` or `2.1`) if your changes only apply to that version of Godot.**
-
-_Though less convenient to edit than a wiki, having direct access to the source files in a revision control system is a big plus to ensure the quality of our documentation._
 
 ### Editing existing pages
 

@@ -187,7 +187,7 @@ The 2D usage mode is slightly faster and uses less memory compared to the 3D one
     If you need to render 3D shadows in the viewport, make sure to set the viewport's *Shadow Atlas Size* property to a value higher than 0.
     Otherwise, shadows won't be rendered. For reference, the Project Settings define it to 4096 by default.
 
-Godot also provides a way of customizing how everything is drawn inside :ref:`Viewports <class_Viewport>` using “Debug Draw”.
+Godot also provides a way of customizing how everything is drawn inside :ref:`Viewports <class_Viewport>` using "Debug Draw".
 Debug Draw allows you to specify one of four options for how the :ref:`Viewport <class_Viewport>` will display things drawn
 inside it. Debug Draw is disabled by default.
 
