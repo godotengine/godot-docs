@@ -55,7 +55,7 @@ Generating PCK files
 --------------------
 
 In order to pack all resources of a project into a PCK file open the project
-and go to Project/Export and click on “Export PCK/Zip”. Also make sure to have
+and go to Project/Export and click on "Export PCK/Zip". Also make sure to have
 an export template selected while doing so.
 
 .. image:: img/export_pck.png
@@ -91,9 +91,9 @@ Opening PCK files at runtime
 
 To import a PCK file, one uses a one-liner. Keep in mind, there is no
 error or exception if the import fails. Instead, one might have to create some
-validation code as a layer on top. The following example expects a “mod.pck”
+validation code as a layer on top. The following example expects a "mod.pck"
 file in the directory of the games executable. The PCK file contains a
-“mod_scene.tscn” test scene in its root.
+"mod_scene.tscn" test scene in its root.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
