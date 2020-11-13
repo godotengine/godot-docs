@@ -41,6 +41,9 @@ You can find the source files for the class reference in Godot's GitHub
 repository: `doc/classes/
 <https://github.com/godotengine/godot/tree/master/doc/classes>`_.
 
+.. note:: For some modules in the engine's source code, you'll find the XML
+          files in the ``modules/<module_name>/doc_classes/`` directory instead.
+
 There are five steps to update the class reference:
 
 1. Fork `Godot's repository <https://github.com/godotengine/godot>`_
@@ -103,7 +106,7 @@ Keeping your local clone up-to-date
 
 Other writers contribute to Godot's documentation. Your local repository will
 fall behind it. You will have to synchronize it, especially if other
-contributors update the class reference while working on it.
+contributors update the class reference while you are working on it.
 
 First, add an ``upstream`` Git *remote*. Remotes are links to online repositories
 from which you can download new files. The following command registers a new
@@ -112,27 +115,6 @@ remote named "upstream" that links to the original Godot repository.
 ::
 
     git remote add upstream https://github.com/godotengine/godot
-
-You can check the list of all remote servers with this command:
-
-::
-
-    git remote -v
-
-You should have two remotes:
-
-1. ``origin``, corresponding to your fork on GitHub. Git adds it by default when
-   you clone a repository.
-2. ``upstream``, that you just added.
-
-The output should look like the following:
-
-::
-
-    origin https://github.com/your_name/godot.git (fetch) origin
-    https://github.com/your_name/godot.git (push) upstream
-    https://github.com/godotengine/godot.git (fetch) upstream
-    https://github.com/godotengine/godot.git (push)
 
 Each time you want to synchronize your branch with the upstream repository,
 enter:
@@ -161,12 +143,18 @@ branch with the Godot repository, and create a new branch:
 
 ::
 
-    git checkout master git branch -d your-new-branch-name git pull --rebase
-    upstream master git checkout -b your-new-branch-name
+    git checkout master
+    git pull --rebase upstream master
+    # Creates a new branch and checks out to it
+    git checkout -b your-new-branch-name
 
 If you're feeling lost by now, come to our `IRC channels
 <https://webchat.freenode.net/?channels=#godotengine>`_ and ask for help.
 Experienced Git users will give you a hand.
+
+Alternatively, you can join the `Godot Discord server
+<https://discord.gg/4JBkykG>`_ and participate in the ``#documentation``
+channel.
 
 Submitting your changes
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -188,33 +176,29 @@ in the GitHub documentation.
 
 .. warning::
 
-    You should avoid editing files directly on GitHub in the godot engine
-    repository. As hundreds of contributors work on the engine, the Git history
-    must stay clean. Each commit should bundle all related improvements you make
-    to the class reference.
+    Unless you make minor changes, like fixing a typo, we do not recommend using the GitHub web editor to edit the class reference's XML.
 
-    Editing from GitHub creates a new branch and Pull Request every time you
-    save your changes. Suppose days pass before your changes get a review. In
-    that case, you won't be able to update to the latest version of the
-    repository cleanly. Also, it's harder to keep clean indents with GitHub's
-    text editor. And they're essential in the class reference.
+    It lacks features to edit XML well, like keeping indentations consistent, and it does not allow amending commits based on reviews.
+
+    Also, it doesn't allow you to test your changes in the engine or with validation
+    scripts as described in
+    :ref:`doc_class_reference_writing_guidelines_editing_xml`.
 
 Updating the documentation template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When classes are modified in the source code, the documentation template might become outdated. To make sure that you are editing an up-to-date version, you first need to compile Godot (you can follow the :ref:`doc_introduction_to_the_buildsystem` page), and then run the following command (assuming 64-bit Linux):
+When you create a new class or modify the engine's API, you need to re-generate the XML files in ``doc/classes/``.
+
+To do so, you first need to compile Godot. See the
+:ref:`doc_introduction_to_the_buildsystem` page to learn how. Then, execute the
+compiled godot executable with the ``--doctool`` option. If you're on 64-bit
+Linux, the command is:
 
 ::
 
     ./bin/godot.linuxbsd.tools.64 --doctool .
 
-The XML files in doc/classes should then be up-to-date with current Godot Engine features. You can then check what changed using the ``git diff`` command. If there are changes to other classes than the one you are planning to document, please commit those changes first before starting to edit the template:
-
-::
-
-    git add doc/classes/*.xml
-    git commit -m "Sync classes reference template with current code base"
-
-You are now ready to edit this file to add stuff.
-
-**Note:** If this has been done recently by another contributor, you don't forcefully need to go through these steps (unless you know that the class you plan to edit *has* been modified recently).
+The XML files in doc/classes should then be up-to-date with current Godot Engine
+features. You can then check what changed using the ``git diff`` command. Please
+only include changes that are relevant to your work on the API in your commits.
+You can discard changes in other XML files using ``git checkout``.

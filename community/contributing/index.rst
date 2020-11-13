@@ -38,6 +38,7 @@ Writing documentation
    :name: toc-community-contributing-to-documentation
 
    documentation_guidelines
+   content_guidelines
    docs_writing_guidelines
    updating_the_class_reference
    class_reference_writing_guidelines

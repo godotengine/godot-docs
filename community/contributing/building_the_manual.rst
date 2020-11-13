@@ -7,20 +7,24 @@ This page explains how to build a local copy of the Godot manual using the
 Sphinx docs engine. This allows you to have local HTML files and build the
 documentation as a PDF, EPUB, or LaTeX file, for example.
 
-To get started, you need to install:
+To get started, you need to:
 
-1. `Sphinx <https://www.sphinx-doc.org/>`__
-2. To build the docs as HTML files, the `readthedocs.org theme
-   <https://github.com/snide/sphinx_rtd_theme>`__
-3. The Sphinx extensions defined in this repository's ``requirements.txt`` file
+1. Clone the `godot-docs repository <https://github.com/godotengine/godot-docs/>`__.
+2. Install `Sphinx <https://www.sphinx-doc.org/>`__
+3. To build the docs as HTML files, install the `readthedocs.org theme
+   <https://github.com/snide/sphinx_rtd_theme>`__.
+4. Install the Sphinx extensions defined in the `godot-docs repository
+   <https://github.com/godotengine/godot-docs/>`__ ``requirements.txt`` file.
 
 We recommend using `pip <https://pip.pypa.io>` _, Python’s package manager to
 install all these tools. It comes pre-installed with `Python
-<https://www.python.org/>`__. Ensure that you install and use Python 3.
+<https://www.python.org/>`__. Ensure that you install and use Python 3. Here are
+the commands to clone the repository and then install all requirements.
 
 .. code:: sh
 
-   pip install -r requirements.txt
+    git clone https://github.com/godotengine/godot-docs.git
+    pip install -r requirements.txt
 
 .. note:: On Linux distributions, you may need to write ``pip3`` instead of
           ``pip`` because you generally have both Python 2 and 3 installed on
@@ -32,13 +36,17 @@ folder of this repository with the following command:
 
 .. code:: sh
 
-   make html
+    # On Linux and MacOS
+    make html
+
+    # On Windows, you need to execute the ``make.bat`` file instead.
+    make.bat html
 
 If you run into errors, you may try the following command:
 
 .. code:: sh
 
-   make SPHINXBUILD=~/.local/bin/sphinx-build html
+    make SPHINXBUILD=~/.local/bin/sphinx-build html
 
 Building the documentation requires at least 8 GB of RAM to run without disk
 swapping, which slows it down. If you have at least 16 GB of RAM, you can speed
@@ -46,11 +54,11 @@ up compilation by running:
 
 .. code:: sh
 
-   # On Linux/macOS
-   make html SPHINXOPTS=-j2
+    # On Linux/macOS
+    make html SPHINXOPTS=-j2
 
-   # On Windows
-   set SPHINXOPTS=-j2 && make html
+    # On Windows
+    set SPHINXOPTS=-j2 && make html
 
 The compilation will take some time as the ``classes/`` folder contains hundreds
 of files.
@@ -68,33 +76,12 @@ from the final HTML documentation but will keep the rest intact.
           <https://github.com/godotengine/godot-docs/issues/3157>`__ for more
           detail.
 
-
-Building with Sphinx on Windows
--------------------------------
-
-On Windows, you need to:
-
-1. Download the Python installer `here <https://www.python.org/downloads/>`__.
-2. Install Python. Be sure to check the “Add Python to PATH” checkbox.
-3. Use the above ``pip`` commands to install required programs.
-
-To build the documentation, open the root directory of this repository in your
-command line and execute ``make.bat`` like so:
-
-.. code:: sh
-
-   make.bat html
-
 Alternatively, you can build the documentation by running the sphinx-build
 program manually:
 
 .. code:: sh
 
    sphinx-build -b html ./ _build
-
-Note that during the first build, various installation prompts may appear and
-ask to install LaTeX plugins. Make sure you don’t miss them, especially if they
-open behind other windows. The build may hang until you confirm these prompts.
 
 Building with Sphinx and virtualenv
 -----------------------------------

@@ -25,8 +25,9 @@ Here are some quick links to the areas you might be interested in:
 
 1. [Contributing to the online manual](https://docs.godotengine.org/en/latest/community/contributing/documentation_guidelines.html)
 2. [Contributing to the class reference](https://docs.godotengine.org/en/latest/community/contributing/updating_the_class_reference.html)
-3. [Writing guidelines](https://docs.godotengine.org/en/latest/community/contributing/docs_writing_guidelines.html)
-4. [Translating the documentation](https://docs.godotengine.org/en/latest/community/contributing/editor_and_docs_localization.html)
+3. [Content guidelines](https://docs.godotengine.org/en/latest/community/contributing/content_guidelines.html)
+4. [Writing guidelines](https://docs.godotengine.org/en/latest/community/contributing/docs_writing_guidelines.html)
+5. [Translating the documentation](https://docs.godotengine.org/en/latest/community/contributing/editor_and_docs_localization.html)
     
 ## License
 

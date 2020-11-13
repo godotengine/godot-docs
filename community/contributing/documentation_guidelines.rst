@@ -49,7 +49,7 @@ contribute, you should also read:
 Contributing changes
 --------------------
 
-**Pull Requests should use the ``master`` branch by default**. Only make Pull
+**Pull Requests should use the ``master`` branch by default.** Only make Pull
  Requests against other branches (e.g. ``2.1`` or ``3.0``) if your changes only
  apply to that specific version of Godot.
 
@@ -68,6 +68,9 @@ reference <https://github.com/godotengine/godot/tree/master/doc/classes>`__.
 See `Contribute to the Class Reference
 <https://docs.godotengine.org/en/latest/community/contributing/updating_the_class_reference.html>`__
 for details.
+
+.. seealso:: To build the manual and test changes on your computer, see
+             :ref:`doc_building_the_manual`
 
 Editing pages online
 --------------------
@@ -100,19 +103,20 @@ they're good. They may also make changes or ask you to do so before merging.
 Adding new pages
 ----------------
 
+Before adding a new page, please ensure that it fits in the documentation:
+
+1. Look for `existing issues
+   <https://github.com/godotengine/godot-docs/issues>`_ or open a new one to see
+   if the page is necessary.
+2. Ensure there isn't a page that already covers the topic.
+3. Read our :ref:`doc_content_guidelines`.
+
 To add a new page, create a ``.rst`` file with a meaningful name in the section you
-want to add a file to, e.g. ``tutorials/3d/light_baking.rst``. Write its
-content like you would do for any other file, and make sure to define a
-reference name for Sphinx at the beginning of the file (check other files for
-the syntax), based on the file name with a "doc\_" prefix (e.g. ``..
-_doc_light_baking:``).
+want to add a file to, e.g. ``tutorials/3d/light_baking.rst``.
 
 You should then add your page to the relevant "toctree" (table of contents,
-e.g. ``tutorials/3d/index.rst``). By convention, the files used to define the
-various levels of toctree are prefixed with an underscore, so in the above
-example the file should be referenced in ``tutorials/3d/_3d_graphics.rst``. Add
-your new filename to the list on a new line, using a relative path and no
-extension, e.g. here ``light_baking``.
+e.g. ``tutorials/3d/index.rst``). Add your new filename to the list on a new
+line, using a relative path and no extension, e.g. here ``light_baking``.
 
 Titles
 ~~~~~~
@@ -125,6 +129,8 @@ Always begin pages with their title and a Sphinx reference name:
 
     Insert your title here
     ======================
+
+The reference ``_doc_insert_your_title_here`` and the title should match.
 
 The reference allows linking to this page using the ``:ref:`` format, e.g.
 ``:ref:`doc_insert_your_title_here``` would link to the above example page (note
@@ -148,8 +154,10 @@ details on the syntax.
 Sphinx uses specific reST comments to do specific operations, like defining the
 table of contents (``.. toctree::``) or cross-referencing pages. Check the
 `official Sphinx documentation
-<https://www.sphinx-doc.org/en/stable/index.html>`__ for more details, or see
-how things are done in existing pages and adapt it to your needs.
+<https://www.sphinx-doc.org/en/stable/index.html>`__ for more details. To learn
+how to use Sphinx directives like ``.. note::`` or ``.. seealso::``, check out
+the `Sphinx directives documentation
+<https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html>`__.
 
 Adding images and attachments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
