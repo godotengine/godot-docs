@@ -38,6 +38,21 @@ There are several ways to improve performance and battery life:
   This way, it will be hidden in the editor but will still be visible in the
   running project.
 
+The editor stutters and flickers on my variable refresh rate monitor (G-Sync/FreeSync).
+---------------------------------------------------------------------------------------
+
+This is a `known issue <https://github.com/godotengine/godot/issues/38219>`__.
+There are two workarounds for this:
+
+- Enable **Interface > Editor > Update Continuously** in the Editor Settings. Keep in mind
+  this will increase power usage and heat/noise emissions, since the editor will
+  now be rendering constantly, even if nothing has changed on screen. To
+  alleviate this, you can increase **Low Processor Mode Sleep Usec** to
+  ``33000`` (30 FPS) in the Editor Settings. This value determines the amount of
+  *microseconds* between frames to render. Higher values will make the editor
+  feel less reactive, but will help decrease CPU and GPU usage significantly.
+- Alternatively, disable variable refresh rate on your monitor or in the graphics driver.
+
 The grid disappears and meshes turn black when I rotate the 3D camera in the editor.
 ------------------------------------------------------------------------------------
 
