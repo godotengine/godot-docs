@@ -15,8 +15,9 @@ a :ref:`class_RichTextLabel`.
 :ref:`class_RichTextLabel` allows the display of complex text markup in a Control.
 It has a built-in API for generating the markup, but can also parse a BBCode.
 
-Note that the BBCode tags can also be used, to some extent, in the
-:ref:`XML source of the class reference <doc_updating_the_class_reference>`.
+Note that the BBCode tags can also be used, to some extent, in the XML source of
+the class reference. For more information, see
+:ref:`doc_class_reference_writing_guidelines`.
 
 Using BBCode
 ------------

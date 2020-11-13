@@ -102,7 +102,7 @@ relatively intuitive:
   which is also available directly within the engine's script editor. It is
   generated automatically from a file in the main source repository, therefore
   the generated files of the documentation are not meant to be modified. See
-  :ref:`doc_updating_the_class_reference` for details.
+  :ref:`doc_class_reference_writing_guidelines` for details.
 
 In addition to this documentation you may also want to take a look at the
 various `Godot demo projects <https://github.com/godotengine/godot-demo-projects>`_.
