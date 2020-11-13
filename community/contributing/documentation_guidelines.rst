@@ -17,7 +17,7 @@ Getting started
 To modify or create pages in the reference manual, you need to edit ``.rst``
 files in the `godot-docs GitHub repository
 <https://github.com/godotengine/godot-docs>`_. Modifying those pages in a pull
-request and triggers a rebuild of the online documentation upon merging.
+request triggers a rebuild of the online documentation upon merging.
 
 .. seealso:: For details on Git usage and the pull request workflow, please
              refer to the :ref:`doc_pr_workflow` page. Most of what it describes
@@ -38,7 +38,7 @@ The Godot documentation is intended as a comprehensive reference manual for the
 Godot game engine. It is not meant to contain step-by-step tutorials, except for
 two game creation tutorials in the Getting Started section.
 
-We strive to write factual content in an accessible and well-written English. To
+We strive to write factual content in an accessible and well-written language. To
 contribute, you should also read:
 
 1. The :ref:`doc_docs_writing_guidelines`. There, you will find rules and
@@ -60,12 +60,12 @@ control system is a plus to ensure our documentation quality.
 Editing existing pages
 ~~~~~~~~~~~~~~~~~~~~~~
 
-To edit an existing page, locate its .rst source file and open it in your
+To edit an existing page, locate its ``.rst`` source file and open it in your
 favorite text editor. You can then commit the changes, push them to your fork,
 and make a pull request. **Note that the pages in ``classes/`` should not be
-edited here. They are automatically generated from Godot’s**\ `XML class
-references <https://github.com/godotengine/godot/tree/master/doc/classes>`__\
-**.** See `Contribute to the Class Reference
+edited here.** They are automatically generated from Godot’s `XML class
+reference <https://github.com/godotengine/godot/tree/master/doc/classes>`__.
+See `Contribute to the Class Reference
 <https://docs.godotengine.org/en/latest/community/contributing/updating_the_class_reference.html>`__
 for details.
 
@@ -81,17 +81,18 @@ and to log in to use it. Once logged in, you can propose change like so:
 1. Click the **Edit on GitHub** button.
 
 2. On the GitHub page you're taken to, click the pencil icon in the top-right
-   corner near the **Raw**, **Blame**, and **History** buttons. It has the
-   tooltip "Edit the file in a fork of this project".
+   corner near the **Raw**, **Blame**, and **Delete** buttons. It has the
+   tooltip "Fork this project and edit the file".
 
 3. Edit the text in the text editor.
 
 4. At the bottom of the web page, summarize the changes you made and click the
-   button **Propose file change**.
+   button **Propose file change**. Make sure to replace the placeholder "Update file.rst"
+   by a short but clear one-line description, as this is the commit title.
 
 5. On the following screens, click the **Create pull request** button until you
    see a message like *Username wants to merge 1 commit into godotengine:master
-   from Username:patch-6*.
+   from Username:patch-1*.
 
 Another contributor will review your changes and merge them into the docs if
 they're good. They may also make changes or ask you to do so before merging.
@@ -99,15 +100,15 @@ they're good. They may also make changes or ask you to do so before merging.
 Adding new pages
 ----------------
 
-To add a new page, create a .rst file with a meaningful name in the section you
-want to add a file to, e.g. \ ``tutorials/3d/light_baking.rst``. Write its
+To add a new page, create a ``.rst`` file with a meaningful name in the section you
+want to add a file to, e.g. ``tutorials/3d/light_baking.rst``. Write its
 content like you would do for any other file, and make sure to define a
 reference name for Sphinx at the beginning of the file (check other files for
-the syntax), based on the file name with a “doc\_” prefix (e.g. ``..
+the syntax), based on the file name with a "doc\_" prefix (e.g. ``..
 _doc_light_baking:``).
 
-You should then add your page to the relevant “toctree” (table of contents,
-e.g. \ ``tutorials/3d/index.rst``). By convention, the files used to define the
+You should then add your page to the relevant "toctree" (table of contents,
+e.g. ``tutorials/3d/index.rst``). By convention, the files used to define the
 various levels of toctree are prefixed with an underscore, so in the above
 example the file should be referenced in ``tutorials/3d/_3d_graphics.rst``. Add
 your new filename to the list on a new line, using a relative path and no
@@ -131,8 +132,8 @@ the lack of leading underscore in the reference).
 
 Write your titles like plain sentences, without capitalizing each word:
 
--  **Good**: Understanding signals in Godot
--  **Bad**: Understanding Signals In Godot
+-  **Good:** Understanding signals in Godot
+-  **Bad:** Understanding Signals In Godot
 
 Only propers nouns, projects, people, and node class names should have their
 first letter capitalized.
@@ -145,7 +146,7 @@ and the `official reference <http://docutils.sourceforge.net/rst.html>`__ for
 details on the syntax.
 
 Sphinx uses specific reST comments to do specific operations, like defining the
-table of contents (``:toctree:``) or cross-referencing pages. Check the
+table of contents (``.. toctree::``) or cross-referencing pages. Check the
 `official Sphinx documentation
 <https://www.sphinx-doc.org/en/stable/index.html>`__ for more details, or see
 how things are done in existing pages and adapt it to your needs.
@@ -153,7 +154,7 @@ how things are done in existing pages and adapt it to your needs.
 Adding images and attachments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To add images, please put them in an ``img/`` folder next to the .rst file with
+To add images, please put them in an ``img/`` folder next to the ``.rst`` file with
 a meaningful name and include them in your page with:
 
 .. code:: rst
@@ -161,7 +162,7 @@ a meaningful name and include them in your page with:
    .. image:: img/image_name.png
 
 Similarly, you can include attachments, like assets as support material for a
-tutorial, by placing them into a ``files/`` folder next to the .rst file, and
+tutorial, by placing them into a ``files/`` folder next to the ``.rst`` file, and
 using this inline markup:
 
 .. code:: rst

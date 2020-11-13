@@ -44,7 +44,7 @@ Building the documentation requires at least 8 GB of RAM to run without disk
 swapping, which slows it down. If you have at least 16 GB of RAM, you can speed
 up compilation by running:
 
-.. code:: bash
+.. code:: sh
 
    # On Linux/macOS
    make html SPHINXOPTS=-j2

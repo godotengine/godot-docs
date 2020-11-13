@@ -55,7 +55,7 @@ You will find a complete breakdown of these steps below.
              <https://www.youtube.com/watch?v=5jeHXxeX-JY>`_.
 
 .. warning:: Always edit the API reference through these source XML files. Do
-             not edit the generated .rst files :ref:`in the online documentation
+             not edit the generated ``.rst`` files :ref:`in the online documentation
              <toc-class-ref>`, hosted in the `godot-docs
              <https://github.com/godotengine/godot-docs>`_ repository.
 
@@ -96,7 +96,7 @@ up your repository if you run into any issues with Git.
     git checkout -b your-new-branch-name
 
 The new branch is the same as your master branch until you start to write API
-docs. In the ``doc/`` folder, you will find the class reference.
+docs. You will find the class reference in the ``doc/classes/`` folder.
 
 Keeping your local clone up-to-date
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -149,10 +149,11 @@ following commands instead:
 
 ::
 
-    git fetch upstream git reset --hard upstream master
+    git fetch upstream
+    git reset --hard upstream/master
 
 **Warning:** The above command will reset your branch to the state of the
- ``upstream master`` branch. It will discard all local changes. Make sure to
+ ``upstream/master`` branch. It will discard all local changes. Make sure to
  only run this *before* you make important changes.
 
 Another option is to delete the branch you're working on, synchronize the master

@@ -12,7 +12,7 @@ built-in node types.
     To learn to submit your changes to the Godot project using the Git version
     control system, see :ref:`doc_updating_the_class_reference`.
 
-Each class's reference is contained in an XML file like the one below:
+The reference for each class is contained in an XML file like the one below:
 
 .. code-block:: xml
 
@@ -59,12 +59,13 @@ how they work in Godot's source code, and fill their <description> tag.
 
 Our job is to complete or improve the text in these tags:
 
-- <description></description>
-- <brief_description></brief_description>
-- <constant></constant>
-- <method></method>
-- <member></member>
-- <signal></signal>
+- `<brief_description>`
+- `<description>`
+- `<constant>`
+- `<method>` (in its `<description>` tag; return types and arguments don't take separate documentation strings)
+- `<member>`
+- `<signal>` (in its `<description>` tag; arguments don't take separate documentation strings)
+- `<constant>`
 
 Write in a clear and simple language. Always follow the :ref:`writing guidelines
 <doc_docs_writing_guidelines>` to keep your descriptions short and easy to read.
