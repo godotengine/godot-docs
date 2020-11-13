@@ -10,7 +10,7 @@ built-in node types.
 .. seealso::
 
     To learn to submit your changes to the Godot project using the Git version
-    control system, see :ref:`doc_updating_the_class_reference`.
+    control system, see :ref:`doc_updating_the_class_reference_with_git`.
 
 The reference for each class is contained in an XML file like the one below:
 

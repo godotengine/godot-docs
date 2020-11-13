@@ -1,4 +1,4 @@
-.. _doc_documentation_guidelines:
+.. _doc_contributing_to_the_documentation:
 
 Contributing to the documentation
 =================================
@@ -29,7 +29,7 @@ request triggers a rebuild of the online documentation upon merging.
              the :ref:`Godot API <toc-class-ref>` section of this documentation
              from them. If you want to update the description of a class, its
              methods, or properties, read
-             :ref:`doc_updating_the_class_reference`.
+             :ref:`doc_updating_the_class_reference_with_git`.
 
 What is the Godot documentation
 -------------------------------

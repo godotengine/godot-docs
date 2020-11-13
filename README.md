@@ -23,7 +23,7 @@ To get started, head to the [Contributing section](https://docs.godotengine.org/
 
 Here are some quick links to the areas you might be interested in:
 
-1. [Contributing to the online manual](https://docs.godotengine.org/en/latest/community/contributing/documentation_guidelines.html)
+1. [Contributing to the online manual](https://docs.godotengine.org/en/latest/community/contributing/contibuting_to_the_documentation.html)
 2. [Contributing to the class reference](https://docs.godotengine.org/en/latest/community/contributing/updating_the_class_reference.html)
 3. [Content guidelines](https://docs.godotengine.org/en/latest/community/contributing/content_guidelines.html)
 4. [Writing guidelines](https://docs.godotengine.org/en/latest/community/contributing/docs_writing_guidelines.html)

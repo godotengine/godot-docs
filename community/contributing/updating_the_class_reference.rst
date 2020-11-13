@@ -1,4 +1,4 @@
-.. _doc_updating_the_class_reference:
+.. _doc_updating_the_class_reference_with_git:
 
 Contributing to the class reference with Git
 ============================================

@@ -181,7 +181,7 @@ There are two separate resources referred to as "documentation" in Godot:
    offline, directly in Godot's code editor, or online at :ref:`Godot API
    <toc-class-ref>`. To contribute to the class reference, you have to edit the
    `doc/base/classes.xml` in Godot's Git repository, and make a pull request.
-   See :ref:`doc_updating_the_class_reference` and
+   See :ref:`doc_updating_the_class_reference_with_git` and
    :ref:`doc_class_reference_writing_guidelines` for more details.
 
 -  **The tutorials and engine documentation and its translations.** This is the part you are reading
@@ -189,7 +189,7 @@ There are two separate resources referred to as "documentation" in Godot:
    are generated from plain text files in the reStructured Text (rst) format,
    to which you can contribute via pull requests on the
    `godot-docs <https://github.com/godotengine/godot-docs>`_ GitHub repository.
-   See :ref:`doc_documentation_guidelines` for more details.
+   See :ref:`doc_contributing_to_the_documentation` for more details.
 
 Contributing translations
 -------------------------
