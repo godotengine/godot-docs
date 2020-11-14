@@ -76,7 +76,7 @@ an initialization state and a cleanup procedure.
 	private:
 		uint64_t counter;
 		RID_Owner<InfiniteBus> bus_owner;
-		// https://github.com/godotengine/godot/blob/master/core/rid.h#L196
+		// https://github.com/godotengine/godot/blob/master/core/templates/rid.h
 		Set<RID> buses;
 		void _emit_occupy_room(uint64_t room, RID rid);
 
@@ -204,7 +204,7 @@ an initialization state and a cleanup procedure.
 		return ret;
 	}
 
-	// https://github.com/godotengine/godot/blob/master/core/rid.h#L187
+	// https://github.com/godotengine/godot/blob/master/core/templates/rid.h
 	bool HilbertHotel::delete_bus(RID id) {
 		if (bus_owner.owns(id)) {
 			lock();
@@ -316,7 +316,7 @@ References
 ~~~~~~~~~~~
 
 - :ref:`RID<class_rid>`
-- `core/rid.h <https://github.com/godotengine/godot/blob/master/core/rid.h>`__
+- `core/templates/rid.h <https://github.com/godotengine/godot/blob/master/core/templates/rid.h>`__
 
 Registering the class in GDScript
 ---------------------------------
@@ -474,7 +474,7 @@ to execute the desired behavior. The queue will be flushed whenever either
 References:
 ~~~~~~~~~~~
 
-- `core/message_queue.cpp <https://github.com/godotengine/godot/blob/master/core/message_queue.cpp>`__
+- `core/object/message_queue.cpp <https://github.com/godotengine/godot/blob/master/core/object/message_queue.cpp>`__
 
 Summing it up
 -------------

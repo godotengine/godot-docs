@@ -12,7 +12,7 @@ path again, the previous loaded Resource will be referenced. Naturally,
 loaded resources must be stateless.
 
 This guide assumes the reader knows how to create C++ modules and Godot
-data types. If not, refer to this guide :ref:`doc_custom_modules_in_c++`.
+data types. If not, refer to this guide: :ref:`doc_custom_modules_in_c++`
 
 References
 ~~~~~~~~~~
@@ -304,7 +304,7 @@ References
 
 - `istream <http://www.cplusplus.com/reference/istream/istream/>`_
 - `streambuf <http://www.cplusplus.com/reference/streambuf/streambuf/?kw=streambuf>`_
-- `core/io/fileaccess.h <https://github.com/godotengine/godot/blob/master/core/os/file_access.h>`_
+- `core/io/file_access.h <https://github.com/godotengine/godot/blob/master/core/os/file_access.h>`_
 
 Registering the new file format
 -------------------------------
