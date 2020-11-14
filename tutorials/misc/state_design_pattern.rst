@@ -46,7 +46,7 @@ Below is the generic state, from which all other states will inherit.
         var change_state
         var animated_sprite
         var persistent_state
-        var velocity
+        var velocity = 0
 
         # Writing _delta instead of delta here prevents the unused variable warning.
         func _physics_process(_delta):
@@ -83,7 +83,7 @@ Third, the ``_physics_process(delta)`` method is actually implemented here. This
 the movement of the player is to use the ``velocity`` variable defined in their base class.
 
 Finally, this script is actually being designated as a class named ``State``. This makes refactoring the code
-easier, since the file path from using the ``load()`` and ``preload()`` functions in godot will not be needed.
+easier, since the file path from using the ``load()`` and ``preload()`` functions in Godot will not be needed.
 
 So, now that there is a base state, the two states discussed earlier can be implemented.
 
@@ -134,7 +134,7 @@ So, now that there is a base state, the two states discussed earlier can be impl
             persistent_state.velocity += move_speed
 
         func _physics_process(_delta):
-            if abs(velocity) < min_move_speed:
+            if abs(persistent_state.velocity.x) < min_move_speed:
                  change_state.call_func("idle")
             persistent_state.velocity.x *= friction
 
@@ -151,14 +151,14 @@ So, now that there is a base state, the two states discussed earlier can be impl
                 change_state.call_func("idle")
 
 .. note::
-  The since the ``Run`` and ``Idle`` states extend from ``State`` which extends ``Node2D``, the function
+  Since the ``Run`` and ``Idle`` states extend from ``State`` which extends ``Node2D``, the function
   ``_physics_process(delta)`` is called from the **bottom-up** meaning ``Run`` and ``Idle`` will call their
   implementation of ``_physics_process(delta)``, then ``State`` will call its implementation, then ``Node2D``
   will call its own implementation and so on. This may seem strange, but it is only relevant for predefined functions
   such as ``_ready()``, ``_process(delta)``, etc. Custom functions use the normal inheritance rules of overriding
   the base implementation.
 
-There is a round-about method for obtaining a state instance. A state factory can be used.
+There is a roundabout method for obtaining a state instance. A state factory can be used.
 
 .. tabs::
     .. code-tab:: gdscript GDScript
@@ -219,7 +219,8 @@ will not change it makes sense to call this new script ``persistent_state.gd``.
             state.move_right()
 
         func change_state(new_state_name):
-            state.queue_free()
+            if state != null: 
+                state.queue_free()
             state = state_factory.get_state(new_state_name).new()
             state.setup(funcref(self, "change_state"), $AnimatedSprite, self)
             state.name = "current_state"
@@ -241,7 +242,7 @@ the idle and run animations. Also, the top-level node is assumed to be a :ref:`K
 .. note::
     The zip file of the llama used in this tutorial is :download:`here <files/llama.zip>`.
     The source was from `piskel_llama <https://www.piskelapp.com/p/agxzfnBpc2tlbC1hcHByEwsSBlBpc2tlbBiAgICfx5ygCQw/edit>`_, but
-    I couldn't find the original creator information on that page though...
+    I couldn't find the original creator information on that page...
     There is also a good tutorial for sprite animation already. See :ref:`2D Sprite Animation <doc_2d_sprite_animation>`.
 
 So, the only script that must be attached is ``persistent_state.gd``, which  should be attached to the top node of the
