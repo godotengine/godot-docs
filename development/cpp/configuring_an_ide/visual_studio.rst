@@ -21,7 +21,7 @@ with the solution file, it can be generated using SCons.
 - Use the **Build** top menu to build the project.
 
 .. warning:: Visual Studio must be configured with the C++ package. It can be selected
-             in the intaller:
+             in the installer:
 
              .. figure:: img/vs_1_install_cpp_package.png
                 :align: center
