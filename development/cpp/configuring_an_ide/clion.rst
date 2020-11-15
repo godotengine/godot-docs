@@ -65,4 +65,7 @@ You will first need to `compile godot yourself <https://docs.godotengine.org/en/
 
 You can now use the debugging tools from CLion.
 
-**Note** : If you run the binary without any arguments, you will only debug the project manager window. Don't forget to add the ``--path path/to/your/godot/project`` argument to debug a project.
+.. note::
+
+    If you run the binary without any arguments, you will only debug the project manager window.
+    Don't forget to add the ``--path path/to/your/godot/project`` argument to debug a project.
