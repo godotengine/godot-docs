@@ -51,7 +51,7 @@ You will first need to `compile godot yourself <https://docs.godotengine.org/en/
 
 - Run the compilation in debug mode by entering ``scons``.
 
-- Run the binary you have created (in the bin directory). If you want to debug a specific project, run the binary with the following arguments : ``--editor --path path/to/your/godot/project``. To run the project instead of editing it, remove the "--editor" argument.
+- Run the binary you have created (in the bin directory). If you want to debug a specific project, run the binary with the following arguments : ``--editor --path path/to/your/godot/project``. To run the project instead of editing it, remove the ``--editor`` argument.
 
 - In CLion, go to **Run > Attach to Process...**
 
