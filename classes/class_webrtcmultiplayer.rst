@@ -11,7 +11,7 @@ WebRTCMultiplayer
 
 **Inherits:** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-A simple interface to create a peer-to-peer mesh network composed of :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` that is compatible with the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
+A interface to create a peer-to-peer mesh network composed of :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` that is compatible with the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
 Description
 -----------

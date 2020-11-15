@@ -31,8 +31,7 @@ Another reason is that the developer might prefer a specially-compiled
 binary, which is smaller in size, more optimized and does not include
 tools like the editor and debugger.
 
-Finally, Godot has a simple but efficient system for creating DLCs as
-extra package files.
+Finally, Godot has an efficient system for creating DLCs as extra package files.
 
 On mobile
 ~~~~~~~~~

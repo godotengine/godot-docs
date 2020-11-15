@@ -34,7 +34,7 @@ Property membership can be tested directly in GDScript using ``in``:
     print("position" in n) # Prints "True".
     print("other_property" in n) # Prints "False".
 
-Objects also receive notifications. Notifications are a simple way to notify the object about different events, so they can all be handled together. See :ref:`_notification<class_Object_method__notification>`.
+Objects also receive notifications. Notifications are a way to notify the object about different events, so they can all be handled together. See :ref:`_notification<class_Object_method__notification>`.
 
 Methods
 -------

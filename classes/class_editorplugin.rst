@@ -315,7 +315,7 @@ When given node or resource is selected, the base type will be instanced (e.g. "
 
 You can use the virtual method :ref:`handles<class_EditorPlugin_method_handles>` to check if your custom object is being edited by checking the script or using the ``is`` keyword.
 
-During run-time, this will be a simple object with a script so this function does not need to be called then.
+During run-time, this will be an object with a script so this function does not need to be called then.
 
 ----
 

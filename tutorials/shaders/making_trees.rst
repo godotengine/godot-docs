@@ -34,7 +34,7 @@ This is a bit exaggerated, but the idea is that color indicates how much sway af
 Write a custom shader for the leaves
 ------------------------------------
 
-This is a simple example of a shader for leaves:
+This is an example of a shader for leaves:
 
 .. code-block:: glsl
 

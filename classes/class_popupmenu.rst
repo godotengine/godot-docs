@@ -504,7 +504,7 @@ Returns the index of the item containing the specified ``id``. Index is automati
 
 - :ref:`Variant<class_Variant>` **get_item_metadata** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the metadata of the specified item, which might be of any type. You can set it with :ref:`set_item_metadata<class_PopupMenu_method_set_item_metadata>`, which provides a simple way of assigning context data to items.
+Returns the metadata of the specified item, which might be of any type. You can set it with :ref:`set_item_metadata<class_PopupMenu_method_set_item_metadata>`, which provides a way of assigning context data to items.
 
 ----
 
@@ -690,7 +690,7 @@ Sets the ``id`` of the item at index ``idx``.
 
 - void **set_item_metadata** **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` metadata **)**
 
-Sets the metadata of an item, which may be of any type. You can later get it with :ref:`get_item_metadata<class_PopupMenu_method_get_item_metadata>`, which provides a simple way of assigning context data to items.
+Sets the metadata of an item, which may be of any type. You can later get it with :ref:`get_item_metadata<class_PopupMenu_method_get_item_metadata>`, which provides a way of assigning context data to items.
 
 ----
 

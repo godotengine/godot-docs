@@ -11,7 +11,7 @@ MarginContainer
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Simple margin container.
+Margin container.
 
 Description
 -----------

@@ -16,7 +16,7 @@ Helper class to implement a UDP server.
 Description
 -----------
 
-A simple server that opens a UDP socket and returns connected :ref:`PacketPeerUDP<class_PacketPeerUDP>` upon receiving new packets. See also :ref:`PacketPeerUDP.connect_to_host<class_PacketPeerUDP_method_connect_to_host>`.
+A server that opens a UDP socket and returns connected :ref:`PacketPeerUDP<class_PacketPeerUDP>` upon receiving new packets. See also :ref:`PacketPeerUDP.connect_to_host<class_PacketPeerUDP_method_connect_to_host>`.
 
 Below a small example of how it can be used:
 

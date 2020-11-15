@@ -27,7 +27,7 @@ instead think about your scenes in a more natural way. Start by imagining the
 visible elements in your game, the ones that can be named not just by a
 programmer, but by anyone.
 
-For example, here's how a simple shooter game could be imagined:
+For example, here's how a shooter game could be imagined:
 
 .. image:: img/shooter_instancing.png
 

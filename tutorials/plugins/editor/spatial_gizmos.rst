@@ -61,7 +61,7 @@ is enough. If you want to store some per-gizmo data or you are porting a Godot 3
 to 3.1+, you should go with the second approach.
 
 
-Simple approach
+Possible approach
 ---------------
 
 The first step is to, in our custom gizmo plugin, override the :ref:`has_gizmo()<class_EditorSpatialGizmoPlugin_method_has_gizmo>`

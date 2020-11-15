@@ -16,7 +16,7 @@ A generic animation transition node for :ref:`AnimationTree<class_AnimationTree>
 Description
 -----------
 
-Simple state machine for cases which don't require a more advanced :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`. Animations can be connected to the inputs and transition times can be specified.
+State machine for cases which don't require a more advanced :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`. Animations can be connected to the inputs and transition times can be specified.
 
 Tutorials
 ---------

@@ -10,7 +10,7 @@ In this guide you learn to:
 
 -  Work with the Animation Panel
 -  Animate any property of any node
--  Create a simple animation
+-  Create a basic animation
 -  Call functions with the powerful Call Function Tracks
 
 In Godot, you can animate anything available in the Inspector, such as

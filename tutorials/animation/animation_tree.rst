@@ -106,7 +106,7 @@ Allows scaling the speed of the animation (or reverse it) in any children nodes.
 Transition
 ^^^^^^^^^^
 
-Very simple state machine (when you don't want to cope with a ``StateMachine`` node). Animations can be connected to the outputs and transition times can be specified.
+Basic state machine (when you don't want to cope with a ``StateMachine`` node). Animations can be connected to the outputs and transition times can be specified.
 
 BlendSpace2D
 ^^^^^^^^^^^^

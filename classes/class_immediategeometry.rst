@@ -11,12 +11,12 @@ ImmediateGeometry
 
 **Inherits:** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Draws simple geometry from code.
+Draws a geometry from code.
 
 Description
 -----------
 
-Draws simple geometry from code. Uses a drawing mode similar to OpenGL 1.x.
+Draws a geometry from code. Uses a drawing mode similar to OpenGL 1.x.
 
 Methods
 -------
@@ -50,7 +50,7 @@ Method Descriptions
 
 - void **add_sphere** **(** :ref:`int<class_int>` lats, :ref:`int<class_int>` lons, :ref:`float<class_float>` radius, :ref:`bool<class_bool>` add_uv=true **)**
 
-Simple helper to draw an UV sphere with given latitude, longitude and radius.
+Helper to draw an UV sphere with given latitude, longitude and radius.
 
 ----
 

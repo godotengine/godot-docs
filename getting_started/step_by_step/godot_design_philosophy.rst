@@ -80,9 +80,9 @@ GDscript and VisualScript, along with C#. They're designed for the needs
 of game developers and game designers, and they're tightly integrated in
 the engine and the editor.
 
-GDscript lets you write simple code using Python-like syntax,
-yet it detects types and offers a static language's quality of auto-completion.
-It is also optimized for gameplay code with built-in types like Vectors and Colors.
+GDscript lets you write code using Python-like syntax, yet it detects types and 
+offers a static language's quality of auto-completion. It is also optimized for 
+gameplay code with built-in types like Vectors and Colors.
 
 Note that with GDNative, you can write high-performance code using compiled
 languages like C, C++, Rust, or Python (using the Cython compiler)

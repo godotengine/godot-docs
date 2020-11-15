@@ -11,7 +11,7 @@ LinkButton
 
 **Inherits:** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Simple button used to represent a link to some resource.
+Button used to represent a link to some resource.
 
 Description
 -----------

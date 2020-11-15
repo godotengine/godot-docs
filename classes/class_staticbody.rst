@@ -16,7 +16,7 @@ Static body for 3D physics.
 Description
 -----------
 
-Static body for 3D physics. A static body is a simple body that is not intended to move. In contrast to :ref:`RigidBody<class_RigidBody>`, they don't consume any CPU resources as long as they don't move.
+Static body for 3D physics. A static body is a body that is not intended to move. In contrast to :ref:`RigidBody<class_RigidBody>`, they don't consume any CPU resources as long as they don't move.
 
 Additionally, a constant linear or angular velocity can be set for the static body, so even if it doesn't move, it affects other bodies as if it was moving (this is useful for simulating conveyor belts or conveyor wheels).
 

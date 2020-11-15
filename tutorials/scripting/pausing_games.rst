@@ -13,8 +13,7 @@ but it might be desirable that some menus and animations continue
 working.
 
 Implementing a fine-grained control for what can be paused (and what can
-not) is a lot of work, so a simple framework for pausing is provided in
-Godot.
+not) is a lot of work, so a framework for pausing is provided in Godot.
 
 How pausing works
 -----------------

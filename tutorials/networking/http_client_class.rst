@@ -21,7 +21,7 @@ It will connect and fetch a website.
     extends SceneTree
 
     # HTTPClient demo
-    # This simple class can do HTTP requests; it will not block, but it needs to be polled.
+    # This class can do HTTP requests; it will not block, but it needs to be polled.
 
     func _init():
         var err = 0

@@ -520,7 +520,7 @@ Returns the response headers.
 
 - :ref:`Dictionary<class_Dictionary>` **get_response_headers_as_dictionary** **(** **)**
 
-Returns all response headers as a Dictionary of structure ``{ "key": "value1; value2" }`` where the case-sensitivity of the keys and values is kept like the server delivers it. A value is a simple String, this string can have more than one value where "; " is used as separator.
+Returns all response headers as a Dictionary of structure ``{ "key": "value1; value2" }`` where the case-sensitivity of the keys and values is kept like the server delivers it. A value is a String, this string can have more than one value where "; " is used as separator.
 
 **Example:**
 

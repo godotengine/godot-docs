@@ -51,7 +51,7 @@ Size flags are independent for vertical and horizontal sizing and not all contai
   amount of space they take from each other is determined by the *Ratio* (see below).
 * **Shrink Center** When expanding (and if not filling), try to remain at the center of the expanded
   area (by default it remains at the left or top).
-* **Ratio** Simple ratio of how much expanded controls take up the available space in relation to each
+* **Ratio** a ratio of how much expanded controls take up the available space in relation to each
   other. A control with "2", will take up twice as much available space as one with "1".
 
 Experimenting with these flags and different containers is recommended to get a better grasp on how they work.
@@ -127,7 +127,7 @@ The divisor can be dragged around to change the size relation between both child
 PanelContainer
 ^^^^^^^^^^^^^^
 
-Simple container that draws a *StyleBox*, then expands children to cover its whole area
+Container that draws a *StyleBox*, then expands children to cover its whole area
 (via :ref:`PanelContainer <class_PanelContainer>`, respecting the *StyleBox* margins).
 It respects both the horizontal and vertical size flags.
 
@@ -161,7 +161,7 @@ it as if it was an image (via :ref:`ViewportContainer <class_ViewportContainer>`
 Creating custom Containers
 --------------------------
 
-It is possible to easily create a custom container using script. Here is an example of a simple container that fits children
+It is possible to easily create a custom container using script. Here is an example of a container that fits children
 to its rect size:
 
 .. tabs::

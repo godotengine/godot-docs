@@ -260,7 +260,7 @@ Debugging
 
 Catching errors in the command line can be a difficult task because they
 just fly by. For this, a command line debugger is provided by adding
-``-d``. It works for running either the game or a simple scene.
+``-d``. It works for running either the game or a basic scene.
 
 ::
 
@@ -309,7 +309,7 @@ conversion of assets or custom import/export.
 
 The script must inherit from ``SceneTree`` or ``MainLoop``.
 
-Here is a simple ``sayhello.gd`` example of how it works:
+Here is a ``sayhello.gd`` example of how it works:
 
 .. code-block:: python
 

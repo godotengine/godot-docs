@@ -24,7 +24,7 @@ Throughout the course of this tutorial, we will cover:
 - How to make a teleportation locomotion system that uses the VR controllers.
 - How to make a artificial movement locomotion system that uses the VR controllers.
 - How to create a :ref:`RigidBody <class_RigidBody>`-based system that allows for picking up, dropping, and throwing RigidBody nodes using the VR controllers.
-- How to create simple destroyable target.
+- How to create a destroyable target.
 - How to create some special :ref:`RigidBody <class_RigidBody>`-based objects that can destroy the targets.
 
 .. tip:: While this tutorial can be completed by beginners, it is highly

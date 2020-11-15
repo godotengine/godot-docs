@@ -15,7 +15,7 @@ to be imported by Godot and be treated as first-class resources. The editor
 itself comes bundled with a lot of import plugins to handle the common resources
 like PNG images, Collada and glTF models, Ogg Vorbis sounds, and many more.
 
-This tutorial will show you how to create a simple import plugin to load a
+This tutorial will show you how to create an import plugin to load a
 custom text file as a material resource. This text file will contain three
 numeric values separated by comma, which represents the three channels of a
 color, and the resulting color will be used as the albedo (main color) of the

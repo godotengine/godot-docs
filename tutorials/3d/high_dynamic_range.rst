@@ -67,9 +67,8 @@ to light output of common desktop computing CRT displays.
 The mathematics of a scene-referred model require that we multiply the scene by
 different values to adjust the intensities and exposure to different
 light ranges. The transfer function of the display can't appropriately render
-the wider dynamic range of the game engine's scene output using the simple
-transfer function of the display. A more complex approach to encoding
-is required.
+the wider dynamic range of the game engine's scene output using the transfer 
+function of the display. A more complex approach to encoding is required.
 
 Scene linear & asset pipelines
 ------------------------------

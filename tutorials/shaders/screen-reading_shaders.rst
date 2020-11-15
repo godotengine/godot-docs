@@ -23,7 +23,7 @@ SCREEN_TEXTURE built-in texture
 Godot :ref:`doc_shading_language` has a special texture, ``SCREEN_TEXTURE`` (and ``DEPTH_TEXTURE`` for depth, in the case of 3D).
 It takes as argument the UV of the screen and returns a vec3 RGB with the color. A
 special built-in varying: SCREEN_UV can be used to obtain the UV for
-the current fragment. As a result, this simple canvas_item fragment shader:
+the current fragment. As a result, this canvas_item fragment shader:
 
 .. code-block:: glsl
 
@@ -47,10 +47,9 @@ of blur at no cost.
 SCREEN_TEXTURE example
 ~~~~~~~~~~~~~~~~~~~~~~
 
-``SCREEN_TEXTURE`` can be used for many things. There is a
-special demo for *Screen Space Shaders*, that you can download to see
-and learn. One example is a simple shader to adjust brightness, contrast
-and saturation:
+``SCREEN_TEXTURE`` can be used for many things. There is a special demo for 
+*Screen Space Shaders*, that you can download to see and learn. One example 
+is a shader to adjust brightness, contrast and saturation:
 
 .. code-block:: glsl
 

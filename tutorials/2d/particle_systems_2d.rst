@@ -6,7 +6,7 @@ Particle systems (2D)
 Intro
 -----
 
-A simple (but flexible enough for most uses) particle system is
+A basic (but flexible enough for most uses) particle system is
 provided. Particle systems are used to simulate complex physical effects,
 such as sparks, fire, magic particles, smoke, mist, etc.
 

@@ -1517,7 +1517,7 @@ Usable for creating loop-alike behavior or infinite surfaces.
 
 **Note:** If you just want to wrap between 0.0 and ``n`` (where ``n`` is a positive floating-point value), it is better for performance to use the :ref:`fmod<class_@GDScript_method_fmod>` method like ``fmod(number, n)``.
 
-``wrapf`` is more flexible than using the :ref:`fmod<class_@GDScript_method_fmod>` approach by giving the user a simple control over the minimum value. It also fully supports negative numbers, e.g.
+``wrapf`` is more flexible than using the :ref:`fmod<class_@GDScript_method_fmod>` approach by giving the user a control over the minimum value. It also fully supports negative numbers, e.g.
 
 ::
 
@@ -1551,7 +1551,7 @@ Usable for creating loop-alike behavior or infinite surfaces.
 
 **Note:** If you just want to wrap between 0 and ``n`` (where ``n`` is a positive integer value), it is better for performance to use the modulo operator like ``number % n``.
 
-``wrapi`` is more flexible than using the modulo approach by giving the user a simple control over the minimum value. It also fully supports negative numbers, e.g.
+``wrapi`` is more flexible than using the modulo approach by giving the user a control over the minimum value. It also fully supports negative numbers, e.g.
 
 ::
 

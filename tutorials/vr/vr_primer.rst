@@ -86,8 +86,8 @@ default, the origin point will be the center location of the room you are in. As
 physically walk around the room, the location of the HMD is tracked in relation to this
 center position and the tracking is mirror in the virtual world.
 
-To keep things simple, when you physically move around your room, the ARVR Origin point stays
-where it is, the position of the camera and controllers will be adjusted according to your
+When you physically move around your room, the ARVR Origin point stays where it is,
+the position of the camera and controllers will be adjusted according to your 
 movements. When you move through the virtual world, either through controller input or when
 you implement a teleport system, it is the position of the origin point which you will
 have to adjust.

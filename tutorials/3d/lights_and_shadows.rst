@@ -212,7 +212,7 @@ Each quadrant can be subdivided to allocate any number of shadow maps; the follo
 
 .. image:: img/shadow_quadrants2.png
 
-The allocation logic is simple. The biggest shadow map size (when no subdivision is used)
+Here is the allocation logic. The biggest shadow map size (when no subdivision is used)
 represents a light the size of the screen (or bigger).
 Subdivisions (smaller maps) represent shadows for lights that are further away
 from view and proportionally smaller.

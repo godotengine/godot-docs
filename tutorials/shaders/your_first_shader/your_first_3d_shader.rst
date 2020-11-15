@@ -19,7 +19,7 @@ set the proper parameters. This is especially true for a PBR (physically based
 rendering) workflow.
 
 This is a two-part tutorial. In this first part we are going to go through how
-to make a simple terrain using vertex displacement from a heightmap in the
+to make a terrain using vertex displacement from a heightmap in the
 vertex function. In the :ref:`second part <doc_your_second_spatial_shader>` we
 are going to take the concepts from this tutorial and walk through how to set up
 custom materials in a fragment shader by writing an ocean water shader.

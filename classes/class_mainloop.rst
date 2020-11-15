@@ -22,7 +22,7 @@ Description
 
 Upon the application start, a ``MainLoop`` implementation must be provided to the OS; otherwise, the application will exit. This happens automatically (and a :ref:`SceneTree<class_SceneTree>` is created) unless a main :ref:`Script<class_Script>` is provided from the command line (with e.g. ``godot -s my_loop.gd``, which should then be a ``MainLoop`` implementation.
 
-Here is an example script implementing a simple ``MainLoop``:
+Here is an example script implementing a ``MainLoop``:
 
 ::
 

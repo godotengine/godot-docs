@@ -94,7 +94,7 @@ workaround, offering such a solution is unnecessary and it's up to the user to
 do it.
 
 The exception, however, is when the user stumbles into this problem *frequently
-enough* that having to do the simple solution every time becomes an annoyance.
+enough* that having to do the same solution every time becomes an annoyance.
 In this case, the software must offer a solution to simplify this use case.
 
 In our experience, in most cases it's usually obvious to tell when a problem is

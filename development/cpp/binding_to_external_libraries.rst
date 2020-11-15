@@ -17,7 +17,7 @@ To bind to an external library, set up a module directory similar to the Summato
 
     godot/modules/tts/
 
-Next, you will create a header file with a simple TTS class:
+Next, you will create a header file with a TTS class:
 
 .. code-block:: cpp
 

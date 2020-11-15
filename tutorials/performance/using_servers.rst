@@ -10,7 +10,7 @@ resources simplifies project organization and asset management in complex games.
 There are, of course, always drawbacks:
 
 * There is an extra layer of complexity
-* Performance is lower than using simple APIs directly
+* Performance is lower than using APIs directly
 * It is not possible to use multiple threads to control them
 * More memory is needed.
 
@@ -83,7 +83,7 @@ functions should always be used for creating and controlling new ones and intera
 Creating a sprite
 -----------------
 
-This is a simple example of how to create a sprite from code and move it using the low-level
+This is an example of how to create a sprite from code and move it using the low-level
 :ref:`CanvasItem <class_CanvasItem>` API.
 
 .. tabs::

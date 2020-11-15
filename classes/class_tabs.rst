@@ -16,7 +16,7 @@ Tabs control.
 Description
 -----------
 
-Simple tabs control, similar to :ref:`TabContainer<class_TabContainer>` but is only in charge of drawing tabs, not interact with children.
+Tabs control, similar to :ref:`TabContainer<class_TabContainer>` but is only in charge of drawing tabs, not interact with children.
 
 Properties
 ----------

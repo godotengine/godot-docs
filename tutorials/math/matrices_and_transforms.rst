@@ -235,7 +235,7 @@ Putting it all together
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 We're going to apply everything we mentioned so far onto one transform.
-To follow along, create a simple project with a Sprite node and use the
+To follow along, create a project with a Sprite node and use the
 Godot logo for the texture resource.
 
 Let's set the translation to (350, 150), rotate by -0.5 rad, and scale by 3.

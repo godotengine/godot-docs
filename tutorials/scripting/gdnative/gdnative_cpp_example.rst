@@ -150,7 +150,7 @@ step optional.
     You may need to add ``bits=64`` to the command on Windows or Linux. We're
     still working on better auto detection.
 
-Creating a simple plugin
+Creating a plugin
 ------------------------
 
 Now it's time to build an actual plugin. We'll start by creating an empty Godot
@@ -674,7 +674,7 @@ Now when the project is compiled we'll see another property called speed.
 Changing its value will make the animation go faster or slower.
 
 For this example there is no obvious advantage of using a setter and getter. It
-is just more code to write. For a simple example as this there may be a good
+is just more code to write. For an example as this there may be a good
 reason for a setter if you want to react on the variable being changed but in
 many cases just binding the variable will be enough.
 
@@ -848,7 +848,7 @@ show its benefits.
 Next steps
 ----------
 
-The above is only a simple example, but we hope it shows you the basics. You can
+The above is only an example, but we hope it shows you the basics. You can
 build upon this example to create full-fledged scripts to control nodes in Godot
 using C++.
 

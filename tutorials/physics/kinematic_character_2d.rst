@@ -40,9 +40,8 @@ So, what is the difference?:
    other physics objects, unless done by hand in code.
 
 This short tutorial will focus on the kinematic character controller.
-Basically, the old-school way of handling collisions (which is not
-necessarily simpler under the hood, but well hidden and presented as a
-nice and simple API).
+Basically, the old-school way of handling collisions (which is not necessarily 
+simpler under the hood, but well hidden and presented as a nice API).
 
 Physics process
 ~~~~~~~~~~~~~~~

@@ -96,10 +96,10 @@ scene tree is always a viewport (scenes loaded are instanced as a child
 of it, and it can always be accessed by calling
 ``get_tree().get_root()`` or ``get_node("/root")``).
 
-In any case, while changing the root Viewport params is probably the
-most flexible way to deal with the problem, it can be a lot of work,
-code and guessing, so Godot provides a simple set of parameters in the
-project settings to handle multiple resolutions.
+In any case, while changing the root Viewport params is probably the most 
+flexible way to deal with the problem, it can be a lot of work, code and guessing,
+so Godot provides a set of parameters in the project settings to handle multiple 
+resolutions.
 
 Stretch settings
 ----------------

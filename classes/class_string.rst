@@ -799,7 +799,7 @@ Returns a copy of the string with characters removed from the left.
 
 - :ref:`bool<class_bool>` **match** **(** :ref:`String<class_String>` expr **)**
 
-Does a simple case-sensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``).
+Does a case-sensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``).
 
 ----
 
@@ -807,7 +807,7 @@ Does a simple case-sensitive expression match, where ``"*"`` matches zero or mor
 
 - :ref:`bool<class_bool>` **matchn** **(** :ref:`String<class_String>` expr **)**
 
-Does a simple case-insensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``).
+Does a case-insensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``).
 
 ----
 

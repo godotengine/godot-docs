@@ -55,7 +55,7 @@ common one is by :ref:`doc_importing_3d_scenes`, which allows you to import
 entire scenes (just as they look in the DCC), including animation,
 skeletal rigs, blend shapes, etc.
 
-The second pipeline is by importing simple .OBJ files as mesh resources,
+The second pipeline is by importing .OBJ files as mesh resources,
 which can be then put inside a :ref:`MeshInstance <class_MeshInstance>`
 node for display.
 
