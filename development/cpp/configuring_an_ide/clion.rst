@@ -46,7 +46,7 @@ If you run into any issues, ask for help in one of
 Debugging the project
 ---------------------
 
-Since CLion does not support scons, you won't be able to compile, launch, and debug Godot from CLion in one step.
+Since CLion does not support SCons, you won't be able to compile, launch, and debug Godot from CLion in one step.
 You will first need to `compile godot yourself <https://docs.godotengine.org/en/stable/development/compiling/index.html>`__ and run the binary without CLion. You will then be able to debug Godot by using the `Attach to process <https://www.jetbrains.com/help/clion/attaching-to-local-process.html>`__ feature.
 
 - Run the compilation with the debug flag like so : ``scons platform=x11 target=debug`` (replace x11 by your platform)
