@@ -35,7 +35,7 @@ This makes Objects gain a lot of functionality, like for example
 References:
 ~~~~~~~~~~~
 
--  `core/object.h <https://github.com/godotengine/godot/blob/master/core/object.h>`__
+-  `core/object/object.h <https://github.com/godotengine/godot/blob/master/core/object/object.h>`__
 
 Registering an Object
 ---------------------
@@ -93,7 +93,7 @@ string passing the name can be passed for brevity.
 References:
 ~~~~~~~~~~~
 
--  `core/class_db.h <https://github.com/godotengine/godot/blob/master/core/class_db.h>`__
+-  `core/object/class_db.h <https://github.com/godotengine/godot/blob/master/core/object/class_db.h>`__
 
 Constants
 ---------
@@ -258,7 +258,7 @@ templates point to it.
 References:
 ~~~~~~~~~~~
 
--  `core/reference.h <https://github.com/godotengine/godot/blob/master/core/reference.h>`__
+-  `core/object/reference.h <https://github.com/godotengine/godot/blob/master/core/object/reference.h>`__
 
 Resources:
 ----------
@@ -274,7 +274,7 @@ Resources without a path are fine too.
 References:
 ~~~~~~~~~~~
 
--  `core/resource.h <https://github.com/godotengine/godot/blob/master/core/resource.h>`__
+-  `core/io/resource.h <https://github.com/godotengine/godot/blob/master/core/io/resource.h>`__
 
 Resource loading
 ----------------

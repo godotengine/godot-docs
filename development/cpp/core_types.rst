@@ -165,10 +165,10 @@ The Vector<> class also has a few nice features:
 References:
 ~~~~~~~~~~~
 
--  `core/vector.h <https://github.com/godotengine/godot/blob/master/core/vector.h>`__
--  `core/list.h <https://github.com/godotengine/godot/blob/master/core/list.h>`__
--  `core/set.h <https://github.com/godotengine/godot/blob/master/core/set.h>`__
--  `core/map.h <https://github.com/godotengine/godot/blob/master/core/map.h>`__
+-  `core/templates/vector.h <https://github.com/godotengine/godot/blob/master/core/templates/vector.h>`__
+-  `core/templates/list.h <https://github.com/godotengine/godot/blob/master/core/templates/list.h>`__
+-  `core/templates/set.h <https://github.com/godotengine/godot/blob/master/core/templates/set.h>`__
+-  `core/templates/map.h <https://github.com/godotengine/godot/blob/master/core/templates/map.h>`__
 
 String
 ------
@@ -181,7 +181,7 @@ conversion and visualization.
 References:
 ~~~~~~~~~~~
 
--  `core/ustring.h <https://github.com/godotengine/godot/blob/master/core/ustring.h>`__
+-  `core/string/ustring.h <https://github.com/godotengine/godot/blob/master/core/string/ustring.h>`__
 
 StringName
 ----------
@@ -197,7 +197,7 @@ is fast.
 References:
 ~~~~~~~~~~~
 
--  `core/string_name.h <https://github.com/godotengine/godot/blob/master/core/string_name.h>`__
+-  `core/string/string_name.h <https://github.com/godotengine/godot/blob/master/core/string/string_name.h>`__
 
 Math types
 ----------
@@ -219,7 +219,7 @@ referencing them fast.
 References:
 ~~~~~~~~~~~
 
--  `core/node_path.h <https://github.com/godotengine/godot/blob/master/core/node_path.h>`__
+-  `core/string/node_path.h <https://github.com/godotengine/godot/blob/master/core/string/node_path.h>`__
 
 RID
 ---
@@ -232,4 +232,4 @@ referenced data.
 References:
 ~~~~~~~~~~~
 
--  `core/rid.h <https://github.com/godotengine/godot/blob/master/core/rid.h>`__
+-  `core/templates/rid.h <https://github.com/godotengine/godot/blob/master/core/templates/rid.h>`__
