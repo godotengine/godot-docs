@@ -179,7 +179,7 @@ languages.
 C#
 ~~
 
-:ref:`C# <toc-learn-scripting-C#>` is popular and has first-class support in Godot.It
+:ref:`C# <toc-learn-scripting-C#>` is popular and has first-class support in Godot. It
 offers a good compromise between speed and ease of use. Beware of possible
 garbage collection pauses and leaks that can occur during gameplay, though. A
 common approach to workaround issues with garbage collection is to use *object
