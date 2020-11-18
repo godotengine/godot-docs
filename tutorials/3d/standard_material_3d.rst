@@ -539,9 +539,9 @@ Distance fade is useful for light shafts or indicators that are only present
 after a given distance.
 
 Keep in mind enabling proximity fade and distance fade with **Pixel Alpha** mode
-enables alpha blending. Alpha blending is more performance intensive, and doesn't
-allow for depth mapping so the mesh can't have a shadow. So abusing them for an
-entire scene is usually not a good idea.
+enables alpha blending. Alpha blending is more GPU-intensive and can cause transparency sorting issues.
+Alpha blending also disables many material features such as the ability to cast shadows.
+To hide a character when they get too close to the camera, consider using **Pixel Dither** or better, **Object Dither** (which is faster).
 
 Render priority
 ---------------
