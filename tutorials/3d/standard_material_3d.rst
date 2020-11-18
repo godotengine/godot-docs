@@ -527,7 +527,7 @@ world triplanar, so the brick texture continues smoothly between them.
 .. image:: img/spatial_material25.png
 
 Proximity and Distance Fade
-----------------------------
+---------------------------
 
 Godot allows materials to fade by proximity to each other as well as depending
 on the distance from the viewer. Proximity fade is useful for effects such as
