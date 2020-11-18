@@ -526,19 +526,22 @@ world triplanar, so the brick texture continues smoothly between them.
 
 .. image:: img/spatial_material25.png
 
-Proximity and distance fade
+Proximity and Distance Fade
 ----------------------------
 
 Godot allows materials to fade by proximity to each other as well as depending
 on the distance from the viewer. Proximity fade is useful for effects such as
-soft particles or a mass of water with a smooth blending to the shores. Distance
-fade is useful for light shafts or indicators that are only present after a
-given distance.
-
-Keep in mind enabling these enables alpha blending, so abusing them for an
-entire scene is usually not a good idea.
+soft particles or a mass of water with a smooth blending to the shores.
 
 .. image:: img/spatial_material_proxfade.gif
+
+Distance fade is useful for light shafts or indicators that are only present
+after a given distance.
+
+Keep in mind enabling proximity fade and distance fade with pixel alpha mode
+enables alpha blending. Alpha blending is more performance intensive, and doesn't
+allow for depth mapping so the mesh can't have a shadow. So abusing them for an
+entire scene is usually not a good idea.
 
 Render priority
 ---------------
