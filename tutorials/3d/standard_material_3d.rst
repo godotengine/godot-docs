@@ -541,7 +541,9 @@ after a given distance.
 Keep in mind enabling proximity fade and distance fade with **Pixel Alpha** mode
 enables alpha blending. Alpha blending is more GPU-intensive and can cause transparency sorting issues.
 Alpha blending also disables many material features such as the ability to cast shadows.
-To hide a character when they get too close to the camera, consider using **Pixel Dither** or better, **Object Dither** (which is faster).
+To hide a character when they get too close to the camera, consider using
+**Pixel Dither** or better, **Object Dither** (which is even faster than
+**Pixel Dither**).
 
 Render priority
 ---------------
