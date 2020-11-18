@@ -532,7 +532,6 @@ Rounds ``s`` to the closest smaller integer and returns it.
     # a is -3.0
     a = floor(-2.99)
 
-**Note:** This method returns a float. If you need an integer, you can use ``int(s)`` directly.
 
 ----
 
