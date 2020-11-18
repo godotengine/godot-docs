@@ -7,11 +7,12 @@ Introduction
 ------------
 
 *GDScript* is a high-level, dynamically typed programming language used to
-create content. It uses a syntax similar to
-`Python <https://en.wikipedia.org/wiki/Python_%28programming_language%29>`_
-(blocks are indent-based and many keywords are similar). Its goal is
-to be optimized for and tightly integrated with Godot Engine, allowing great
-flexibility for content creation and integration.
+create content. It uses an indentation-based syntax similar to languages like
+`Python <https://en.wikipedia.org/wiki/Python_%28programming_language%29>`_.
+Its goal is to be optimized for and tightly integrated with Godot Engine,
+allowing great flexibility for content creation and integration.
+
+GDScript is entirely independent from Python and is not based on it.
 
 History
 ~~~~~~~
