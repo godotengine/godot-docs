@@ -413,7 +413,7 @@ This helps the visual mesh and actual collision to be separated.
 
 The option ``-convcolonly`` works in a similar way, but will create a :ref:`class_convexpolygonshape` instead.
 
-The option ``-colonly`` can also be used with Blender's empty objects.
+With Collada files the option ``-colonly`` can also be used with Blender's empty objects.
 On import, it will create a :ref:`class_staticbody` with
 a collision node as a child. The collision node will have one of a number of predefined shapes,
 depending on Blender's empty draw type:
