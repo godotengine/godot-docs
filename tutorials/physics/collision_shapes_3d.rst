@@ -121,9 +121,8 @@ editor exposes two options:
 
 .. seealso::
 
-    Godot can generate collision shapes for your imported 3D scenes
-    automatically. See :ref:`doc_importing_scenes_import_hints` in the
-    documentation for more information.
+    See :ref:`doc_importing_3d_scenes` for information on how to export models
+    for Godot, and automatically generate collision shapes on import.
 
 Performance caveats
 -------------------
