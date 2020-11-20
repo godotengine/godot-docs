@@ -76,11 +76,11 @@ there is an import plugin for it. Or you can create one, like the `Tiled
 Map Importer <https://github.com/vnen/godot-tiled-importer>`__.
 
 That is also partly why Godot offers its own programming languages
-GDscript and VisualScript, along with C#. They're designed for the needs
+GDScript and VisualScript, along with C#. They're designed for the needs
 of game developers and game designers, and they're tightly integrated in
 the engine and the editor.
 
-GDscript lets you write simple code using Python-like syntax,
+GDScript lets you write simple code using an indentation-based syntax,
 yet it detects types and offers a static language's quality of auto-completion.
 It is also optimized for gameplay code with built-in types like Vectors and Colors.
 

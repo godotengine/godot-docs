@@ -300,7 +300,7 @@ Scripting
 
 - :ref:`High-level interpreted language <doc_gdscript>` with
   :ref:`optional static typing <doc_gdscript_static_typing>`.
-- Syntax inspired by Python.
+- Syntax inspired by Python. However, GDScript is **not** based on Python.
 - Syntax highlighting is provided on GitHub.
 - :ref:`Use threads <doc_using_multiple_threads>` to perform asynchronous actions
   or make use of multiple processor cores.

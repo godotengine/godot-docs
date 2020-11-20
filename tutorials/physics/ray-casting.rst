@@ -52,7 +52,7 @@ must be used.
 Use the following code in 2D:
 
 .. tabs::
- .. code-tab:: gdscript GDscript
+ .. code-tab:: gdscript GDScript
 
     func _physics_process(delta):
         var space_rid = get_world_2d().space

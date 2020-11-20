@@ -95,7 +95,7 @@ What is GDScript and why should I use it?
 GDScript is Godot's integrated scripting language. It was built from the ground
 up to maximize Godot's potential in the least amount of code, affording both novice
 and expert developers alike to capitalize on Godot's strengths as fast as possible.
-If you've ever written anything in a language like Python before then you'll feel
+If you've ever written anything in a language like Python before, then you'll feel
 right at home. For examples and a complete overview of the power GDScript offers
 you, check out the :ref:`GDScript scripting guide <doc_gdscript>`.
 
@@ -126,11 +126,11 @@ languages can be found in the :ref:`doc_gdscript_more_efficiently` tutorial.
 What were the motivations behind creating GDScript?
 ---------------------------------------------------
 
-In the early days, the engine used the `Lua <https://www.lua.org>`__
-scripting language. Lua is fast, but creating bindings to an object
-oriented system (by using fallbacks) was complex and slow and took an
-enormous amount of code. After some experiments with
-`Python <https://www.python.org>`__, it also proved difficult to embed.
+In the early days, the engine used the `Lua <https://www.lua.org>`__ scripting
+language. Lua can be fast thanks to LuaJIT, but creating bindings to an object
+oriented system (by using fallbacks) was complex and slow and took an enormous
+amount of code. After some experiments with `Python <https://www.python.org>`__,
+it also proved difficult to embed.
 
 The main reasons for creating a custom scripting language for Godot were:
 
