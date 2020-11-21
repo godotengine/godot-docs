@@ -18,7 +18,7 @@ Adding nodes to a group
 There are two ways to add nodes to groups:
 
 - Using the Node dock in the editor.
-- Calling :ref:`SceneTree.call_group() <class_SceneTree_method_call_group>`.
+- Calling :ref:`Node.add_to_group() <class_Node_method_add_to_group>`.
 
 Using the Node dock
 ~~~~~~~~~~~~~~~~~~~
