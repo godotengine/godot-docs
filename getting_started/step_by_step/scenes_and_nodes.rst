@@ -86,8 +86,11 @@ kitchen, so let's open the refrigerator and add some fresh nodes to the
 project. We'll begin with a "Hello World" message that we'll put on the
 screen.
 
-To do this we need to add a Label node. Press the "Add Child Node" button
-at the top left of the scene dock (the icon represents a plus symbol).
+To do this we need to add a Label node. Press the "**Add Child Node**" (**+**) button
+at the top left of the scene dock.
+
+.. image:: img/newnode_button.png
+
 This button is the main way to add new nodes to a scene, and will always
 add the chosen node as a child of the currently selected node (or, in an
 empty scene, as the "root" node).
@@ -107,11 +110,9 @@ empty scene, as the "root" node).
     node as its root node, likewise not every GUI or 2D scene needs a Control
     node or Node2D as their root node.
 
-Now, to add a label node to this scene you can click on the Other Node
-button or the Add Node button at the top. In scenes that aren't empty you
+Now, to add a label node to this scene you can click on the **Other Node**
+button or the **Add Node** button at the top. In scenes that aren't empty you
 use the add node button to create every child node.
-
-.. image:: img/newnode_button.png
 
 This will open the Create Node dialog, showing the long list of nodes
 that can be created:
@@ -123,7 +124,7 @@ the fastest way:
 
 .. image:: img/node_search_label.png
 
-And finally, create the Label! A lot happens when Create is pressed:
+Finally, click the "Create" button at the bottom of the Create Node dialog to create our first Label! A lot happens when Create is pressed:
 
 .. image:: img/editor_with_label.png
 
@@ -138,7 +139,7 @@ change it to "Hello World":
 
 .. image:: img/hw.png
 
-Ok, everything's ready to run the scene! Press the PLAY SCENE Button on
+Now that we have our Label node with text, everything's ready to run the scene! Press the PLAY SCENE Button on
 the top bar (or hit :kbd:`F6`):
 
 .. image:: img/playscene.png
@@ -179,10 +180,10 @@ Success!
 Configuring the project
 -----------------------
 
-Ok, it's time to configure the project. Right now, the only way to run
-something is to execute the current scene. Projects, however, may have several
-scenes, so one of them must be set as the main scene. This is the scene that
-will be loaded any time the project is run.
+Right now, the only way to run something is to execute the current scene.
+However, projects may have several scenes, so one of them must be set as
+the **main scene**. This is the scene that will be loaded any time the project
+is run.
 
 These settings are all stored in a project.godot file, which is a plaintext
 file in win.ini format (for easy editing). There are dozens of settings that
@@ -196,6 +197,8 @@ Once the window opens, let's select a main scene. Locate the
 `Application/Run/Main Scene` property and click on it to select 'Hello.tscn'.
 
 .. image:: img/main_scene.png
+
+Click the "Close" button to save your Project Settings changes.
 
 Now, with this change, when you press the regular Play button (or F5), this
 scene will run, no matter which scene is actively being edited.
