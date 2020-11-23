@@ -324,7 +324,7 @@ breaks if they are not part of the original translation.
 .. seealso::
 
     See our documentation for class reference writers for the :ref:`list of
-    BBCode-like tags <doc_updating_the_class_reference_bbcode>` which are used
+    BBCode-like tags <doc_class_reference_writing_guidelines_bbcode>` which are used
     throughout the class reference.
 
 Offline translation and testing

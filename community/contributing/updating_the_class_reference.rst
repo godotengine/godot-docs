@@ -1,57 +1,88 @@
-.. _doc_updating_the_class_reference:
+.. _doc_updating_the_class_reference_with_git:
 
-Contributing to the class reference
-===================================
+Contributing to the class reference with Git
+============================================
 
 .. highlight:: shell
 
-.. note:: This guide also is available as a `video tutorial on YouTube <https://www.youtube.com/watch?v=5jeHXxeX-JY>`_.
+This page gives you an overview of the steps to submit changes to Godot's class
+reference using the Git version control system.
 
-Godot ships with many nodes and singletons to help you develop your games. Each is a class, documented in the :ref:`class reference <toc-class-ref>`.
-This reference is essential for anyone learning the engine: it is available both online and in the engine.
-
-But it's incomplete. Some methods, variables and signals lack descriptions. Others changed with recent releases and need updates.
-The developers can't write the entire reference on their own. Godot needs you, and all of us, to contribute.
-
-**Important:** If you are planning to make larger changes or a more substantial contribution, it is usually a good idea
-to create an issue (or a comment in an existing one) to let others know so they don't start working on the same thing too. Class
-reference issues should be opened in the `godot-docs repository <https://github.com/godotengine/godot-docs/issues>`__.
+The class reference is available online in the :ref:`classes <toc-class-ref>`
+section of the documentation and in the Godot editor, from the help menu.
 
 .. seealso::
 
-    Not sure where to start contributing? Take a look at the current class reference
+    This guide focuses on using Git. You can find the writing guidelines for the
+    class reference :ref:`here <doc_class_reference_writing_guidelines>`.
+
+    If you want to translate the class reference from English to another
+    language, see :ref:`doc_editor_and_docs_localization`.
+
+In the class reference, some methods, variables, and signals lack descriptions.
+Others changed with recent releases and need updates. The developers can't write
+the entire reference on their own. Godot needs you, and all of us, to
+contribute.
+
+**Important:** If you plan to make large changes, you should create an issue on
+ the `godot-docs repository <https://github.com/godotengine/godot-docs/>`_
+ or comment on an existing issue. Doing so lets others know you're already
+ taking care of a given class.
+
+.. seealso::
+
+    Not sure which class to contribute to? Take a look at the class reference's
     completion status `here <https://godotengine.github.io/doc-status/>`__.
 
 How to contribute
 -----------------
 
-The class reference lies in the following XML files, in Godot's GitHub repository: `doc/classes/ <https://github.com/godotengine/godot/tree/master/doc/classes>`_.
+You can find the source files for the class reference in Godot's GitHub
+repository: `doc/classes/
+<https://github.com/godotengine/godot/tree/master/doc/classes>`_.
 
-There are 5 steps to update the class reference (full guide below):
+.. note:: For some modules in the engine's source code, you'll find the XML
+          files in the ``modules/<module_name>/doc_classes/`` directory instead.
+
+There are five steps to update the class reference:
 
 1. Fork `Godot's repository <https://github.com/godotengine/godot>`_
-2. Clone your fork on your computer
-3. Edit the class file in ``doc/classes/`` to write documentation
-4. Commit your changes and push them to your fork
-5. Make a pull request on the Godot repository
+2. Clone your fork on your computer.
+3. Edit the class file in ``doc/classes/`` to write documentation.
+4. Commit your changes and push them to your fork.
+5. Make a pull request on the Godot repository.
 
-.. warning:: Always use these XML files to edit the API reference. Do not edit the generated .rst files :ref:`in the online documentation <toc-class-ref>`, hosted in the `godot-docs <https://github.com/godotengine/godot-docs>`_ repository.
+You will find a complete breakdown of these steps below.
 
-Get started with GitHub
------------------------
+.. seealso:: This guide is also available as a `video tutorial on YouTube
+             <https://www.youtube.com/watch?v=5jeHXxeX-JY>`_.
 
-If you're new to Git and GitHub, this guide will help you get started. You'll learn to:
+.. warning:: Always edit the API reference through these source XML files. Do
+             not edit the generated ``.rst`` files :ref:`in the online documentation
+             <toc-class-ref>`, hosted in the `godot-docs
+             <https://github.com/godotengine/godot-docs>`_ repository.
+
+Getting started with GitHub
+---------------------------
+
+If you're new to using GitHub, the platform we use to develop Godot, this guide
+will help you get started. You will learn to:
 
 - Fork and clone Godot's repository
 - Keep your fork up to date with other contributors
-- Create a pull request so your improvements end in the official docs
+- Create a pull request to submit your improvements to the official docs
 
-.. note:: If you're new to Git, the version control system Godot uses, go through `GitHub's interactive guide <https://try.github.io/levels/1/challenges/1>`_. You'll learn some essential vocabulary and get a sense for the tool.
+.. note:: If you're new to Git, the version control system Godot uses, start
+          with `GitHub's interactive guide
+          <https://try.github.io/levels/1/challenges/1>`_. You'll learn some
+          essential vocabulary and get a sense for how the tool works.
 
-Fork Godot
-~~~~~~~~~~
+Forking Godot
+~~~~~~~~~~~~~
 
-Fork the Godot Engine into a GitHub repository of your own.
+Start by forking the Godot Engine into a GitHub repository of your own. Read the
+`GitHub forking guide <https://guides.github.com/activities/forking/>`_ to learn
+to create forks.
 
 Clone the repository on your computer:
 
@@ -59,93 +90,76 @@ Clone the repository on your computer:
 
     git clone https://github.com/your_name/godot.git
 
-Create a new branch to make your changes. It makes it a lot easier to sync your improvements with other docs writers. It's also easier to clean up your repository if you run into any issues with Git.
+Create a new branch to make your changes. It makes it a lot easier to
+synchronize your improvements with other contributors. It's also easier to clean
+up your repository if you run into any issues with Git.
 
 ::
 
     git checkout -b your-new-branch-name
 
-The new branch is the same as your master branch until you start to write API docs. In the ``doc/`` folder, you'll find the class reference.
+The new branch is the same as your master branch until you start to write API
+docs. You will find the class reference in the ``doc/classes/`` folder.
 
-How to keep your local clone up-to-date
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Keeping your local clone up-to-date
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Other writers contribute to Godot's documentation. Your local repository will fall behind it, and you'll have to synchronize it. Especially if other contributors update the class reference while you work on it.
+Other writers contribute to Godot's documentation. Your local repository will
+fall behind it. You will have to synchronize it, especially if other
+contributors update the class reference while you are working on it.
 
-First add an ``upstream`` git *remote* to work with. Remotes are links to online repositories you can download new files from.
+First, add an ``upstream`` Git *remote*. Remotes are links to online repositories
+from which you can download new files. The following command registers a new
+remote named "upstream" that links to the original Godot repository.
 
 ::
 
     git remote add upstream https://github.com/godotengine/godot
 
-You can check the list of all remote servers with:
-
-::
-
-    git remote -v
-
-You should have two: ``origin``, your fork on GitHub that Git adds by default, and ``upstream``, that you just added:
-
-
-::
-
-    origin  https://github.com/your_name/godot.git (fetch)
-    origin  https://github.com/your_name/godot.git (push)
-    upstream        https://github.com/godotengine/godot.git (fetch)
-    upstream        https://github.com/godotengine/godot.git (push)
-
-Each time you want to sync your branch to the state of the upstream repository, enter:
+Each time you want to synchronize your branch with the upstream repository,
+enter:
 
 ::
 
     git pull --rebase upstream master
 
-This command will first ``fetch``, or download the latest version of the Godot repository. Then, it will reapply your local changes on top.
+This command will first ``fetch``, that is, download the latest version of the
+Godot repository. Then, it will reapply your local changes on top of it.
 
-If you made changes you don't want to keep in your local branch, use the following commands instead:
+If you made changes you don't want to keep in your local branch, use the
+following commands instead:
 
 ::
 
     git fetch upstream
-    git reset --hard upstream master
+    git reset --hard upstream/master
 
-**Warning:** The above command will reset your branch to the state of the ``upstream master`` branch. It will discard all local changes. Make sure to only run this *before* you make important changes.
+**Warning:** The above command will reset your branch to the state of the
+ ``upstream/master`` branch. It will discard all local changes. Make sure to
+ only run this *before* you make important changes.
 
-Another option is to delete the branch you're working on, synchronize the master branch with the Godot repository, and create a new branch:
+Another option is to delete the branch you're working on, synchronize the master
+branch with the Godot repository, and create a new branch:
 
 ::
 
     git checkout master
-    git branch -d your-new-branch-name
     git pull --rebase upstream master
+    # Creates a new branch and checks out to it
     git checkout -b your-new-branch-name
 
-If you're feeling lost by now, come to our `IRC channels <https://webchat.freenode.net/?channels=#godotengine>`_ and ask for help. Experienced Git users will give you a hand.
+If you're feeling lost by now, come to our `IRC channels
+<https://webchat.freenode.net/?channels=#godotengine>`_ and ask for help.
+Experienced Git users will give you a hand.
 
-Updating the documentation template
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Alternatively, you can join the `Godot Discord server
+<https://discord.gg/4JBkykG>`_ and participate in the ``#documentation``
+channel.
 
-When classes are modified in the source code, the documentation template might become outdated. To make sure that you are editing an up-to-date version, you first need to compile Godot (you can follow the :ref:`doc_introduction_to_the_buildsystem` page), and then run the following command (assuming 64-bit Linux):
+Submitting your changes
+~~~~~~~~~~~~~~~~~~~~~~~
 
-::
-
-    ./bin/godot.linuxbsd.tools.64 --doctool .
-
-The XML files in doc/classes should then be up-to-date with current Godot Engine features. You can then check what changed using the ``git diff`` command. If there are changes to other classes than the one you are planning to document, please commit those changes first before starting to edit the template:
-
-::
-
-    git add doc/classes/*.xml
-    git commit -m "Sync classes reference template with current code base"
-
-You are now ready to edit this file to add stuff.
-
-**Note:** If this has been done recently by another contributor, you don't forcefully need to go through these steps (unless you know that the class you plan to edit *has* been modified recently).
-
-Push and request a pull of your changes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Once your modifications are finished, push your changes on your GitHub
+Once you finished modifying the reference, push your changes to your GitHub
 repository:
 
 ::
@@ -154,220 +168,37 @@ repository:
     git commit -m "Explain your modifications."
     git push
 
-When it's done, you can ask for a Pull Request via the GitHub UI of your Godot fork.
+When it's done, you can ask for a pull request (abbreviated PR) on GitHub.
+
+To learn to create a pull request, read `Creating a pull request
+<https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request>`_
+in the GitHub documentation.
 
 .. warning::
 
-    Although you can edit files on GitHub, it's not recommended. As hundreds of contributors work on Godot, the Git history must stay clean. Each commit should bundle all related improvements you make to the class reference, a new feature, bug fixes... When you edit from GitHub, it will create a new branch and a Pull Request every time you want to save it. If a few days pass before your changes get a review, you won't be able to update to the latest version of the repository cleanly. Also, it's harder to keep clean indents from GitHub. And they're very important in the docs.
+    Unless you make minor changes, like fixing a typo, we do not recommend using the GitHub web editor to edit the class reference's XML.
 
-    TL;DR: If you don't know exactly what you're doing, do not edit files from GitHub.
+    It lacks features to edit XML well, like keeping indentations consistent, and it does not allow amending commits based on reviews.
 
-How to edit class XML
----------------------
+    Also, it doesn't allow you to test your changes in the engine or with validation
+    scripts as described in
+    :ref:`doc_class_reference_writing_guidelines_editing_xml`.
 
-Edit the file for your chosen class in ``doc/classes/`` to update the class reference. The folder contains an XML file for each class. The XML lists the constants and methods you'll find in the class reference. Godot generates and updates the XML automatically.
-
-Edit it using your favorite text editor. If you use a code editor, make sure that it doesn't change the indent style: tabs for the XML, and 4 spaces inside BBCode-style blocks. More on that below.
-
-If you need to check that the modifications you've made are correct in the generated documentation, build Godot as described :ref:`here <toc-devel-compiling>`, run the editor and open the help for the page you modified.
-
-How to write the class reference
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Each class has a brief and long description. The brief description is always at the top of the page, while the full description lies below the list of methods, variables, and constants. Methods, member variables, constants, and signals are in separate categories or XML nodes. For each, learn how they work in Godot's source code, and fill their <description>.
-
-Our job is to add the missing text between these marks:
-
--  <description></description>
--  <brief_description></brief_description>
--  <constant></constant>
--  <method></method>
--  <member></member>
--  <signal></signal>
-
-Write using clear and simple language. Always follow the :ref:`writing guidelines <doc_docs_writing_guidelines>` to keep your descriptions short and easy to read. **Do not leave empty lines** in the descriptions: each line in the XML file will result in a new paragraph.
-
-Here's how a class looks like in XML:
-
-.. code-block:: xml
-
-    <class name="Node2D" inherits="CanvasItem" category="Core">
-        <brief_description>
-            Base node for 2D system.
-        </brief_description>
-        <description>
-            Base node for the 2D system. Node2D contains a position, rotation, and scale, which is used to position and animate. It can alternatively be used with a custom 2D transform ([Matrix32]). A tree of Node2Ds allows complex hierarchies for animation and positioning.
-        </description>
-        <methods>
-            <method name="set_pos">
-                <argument index="0" name="pos" type="Vector2">
-                </argument>
-                <description>
-                    Sets the position of the 2D node.
-                </description>
-            </method>
-            [...]
-            <method name="edit_set_pivot">
-                <argument index="0" name="arg0" type="Vector2">
-                </argument>
-                <description>
-                </description>
-            </method>
-        </methods>
-        <members>
-            <member name="global_position" type="Vector2" setter="set_global_position" getter="get_global_position" brief="">
-            </member>
-            [...]
-            <member name="z_as_relative" type="bool" setter="set_z_as_relative" getter="is_z_relative" brief="">
-            </member>
-        </members>
-        <constants>
-        </constants>
-    </class>
-
-
-Use a code editor like Vim, Atom, Code, Notepad++ or anything similar to edit the file quickly. Use the search function to find classes fast.
-
-.. _doc_updating_the_class_reference_bbcode:
-
-Improve formatting with BBCode style tags
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Godot's class reference supports BBCode-like tags. They add nice formatting to the text. Here's the list of available tags:
-
-+----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| Tag                        | Effect                               | Usage                             | Result                                            |
-+============================+======================================+===================================+===================================================+
-| [Class]                    | Link a class                         | Move the [Sprite].                | Move the :ref:`class_sprite`.                     |
-+----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [method methodname]        | Link to a method in this class       | Call [method hide].               | See :ref:`hide <class_spatial_method_hide>`.      |
-+----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [method Class.methodname]  | Link to another class's method       | Call [method Spatial.hide].       | See :ref:`hide <class_spatial_method_hide>`.      |
-+----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [member membername]        | Link to a member in this class       | Get [member scale].               | Get :ref:`scale <class_node2d_property_scale>`.   |
-+----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [member Class.membername]  | Link to another class's member       | Get [member Node2D.scale].        | Get :ref:`scale <class_node2d_property_scale>`.   |
-+----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [signal signalname]        | Link to a signal in this class       | Emit [signal renamed].            | Emit :ref:`renamed <class_node_signal_renamed>`.  |
-+----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [signal Class.signalname]  | Link to another class's signal       | Emit [signal Node.renamed].       | Emit :ref:`renamed <class_node_signal_renamed>`.  |
-+----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [b] [/b]                   | Bold                                 | Some [b]bold[/b] text.            | Some **bold** text.                               |
-+----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [i] [/i]                   | Italic                               | Some [i]italic[/i] text.          | Some *italic* text.                               |
-+----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [code] [/code]             | Monospace                            | Some [code]monospace[/code] text. | Some ``monospace`` text.                          |
-+----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [kbd] [/kbd]               | Keyboard/mouse shortcut              | Some [kbd]Ctrl + C[/kbd] key.     | Some :kbd:`Ctrl + C` key.                         |
-+----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [codeblock] [/codeblock]   | Multiline preformatted block         | *See below.*                      | *See below.*                                      |
-+----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [codeblocks] [/codeblocks] | [codeblock] for multiple languages   | *See below.*                      | *See below.*                                      |
-+----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [gdscript] [/gdscript]     | GDScript codeblock tab in codeblocks | *See below.*                      | *See below.*                                      |
-+----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [csharp] [/csharp]         | C# codeblock tab in codeblocks       | *See below.*                      | *See below.*                                      |
-+----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-
-Use ``[codeblock]`` for pre-formatted code blocks. Inside ``[codeblock]``, always use **four spaces** for indentation (the parser will delete tabs). Example:
-
-.. code-block:: none
-
-    [codeblock]
-    func _ready():
-        var sprite = get_node("Sprite")
-        print(sprite.get_pos())
-    [/codeblock]
-
-Will display as:
-
-.. code-block:: gdscript
-
-    func _ready():
-        var sprite = get_node("Sprite")
-        print(sprite.get_pos())
-
-If you need to have different code version in GDScript and C#, use ``[codeblocks]`` instead. If you use ``[codeblocks]``, you also need to have at least one of the language specific tags (``[gdscript]`` and ``[csharp]``). Always write GDScript code examples first! You can use this `experimental code translation tool <https://github.com/HaSa1002/codetranslator>`_ to speed up your workflow.
-
-.. code-block:: none
-
-    [codeblocks]
-    [gdscript]
-    func _ready():
-        var sprite = get_node("Sprite")
-        print(sprite.get_pos())
-    [/gdscript]
-    [csharp]
-    public override void _Ready()
-    {
-        var sprite = GetNode("Sprite");
-        GD.Print(sprite.GetPos());
-    }
-    [/csharp]
-    [/codeblocks]
-
-Will display as:
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    func _ready():
-        var sprite = get_node("Sprite")
-        print(sprite.get_pos())
-
- .. code-tab:: csharp
-
-    public override void _Ready()
-    {
-        var sprite = GetNode("Sprite");
-        GD.Print(sprite.GetPos());
-    }
-
-
-To denote important information, add a paragraph starting with "[b]Note:[/b]" at
-the end of the description:
-
-.. code-block:: none
-
-    [b]Note:[/b] Only available when using the Vulkan renderer.
-
-To denote crucial information that could cause security issues or loss of data
-if not followed carefully, add a paragraph starting with "[b]Warning:[/b]" at the
-end of the description:
-
-.. code-block:: none
-
-    [b]Warning:[/b] If this property is set to [code]true[/code], it allows clients to execute arbitrary code on the server.
-
-For deprecated properties, add a paragraph starting with "[i]Deprecated.[/i]".
-Notice the use of italics instead of bold:
-
-.. code-block:: none
-
-    [i]Deprecated.[/i] This property has been replaced by [member other_property].
-
-In all the paragraphs described above, make sure the punctuation is part of the
-BBCode tags for consistency.
-
-I don't know what this method does!
+Updating the documentation template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No problem. Leave it behind and list the methods you skipped when you request a pull of your changes. Another writer will take care of it.
+When you create a new class or modify the engine's API, you need to re-generate the XML files in ``doc/classes/``.
 
-You can still have a look at the methods' implementation in Godot's source code on GitHub. Also, if you have doubts, feel free to ask on the `Q&A website <https://godotengine.org/qa/>`__ and on IRC (freenode, #godotengine).
+To do so, you first need to compile Godot. See the
+:ref:`doc_introduction_to_the_buildsystem` page to learn how. Then, execute the
+compiled godot executable with the ``--doctool`` option. If you're on 64-bit
+Linux, the command is:
 
+::
 
-Localization
-~~~~~~~~~~~~
+    ./bin/godot.linuxbsd.tools.64 --doctool .
 
-The documentation can be translated in any language on `Hosted Weblate
-<https://hosted.weblate.org/projects/godot-engine/godot-docs/>`__.
-
-Translated strings are synced manually by documentation maintainers in
-the `godot-docs-l10n <https://github.com/godotengine/godot-docs-l10n>`__
-repository.
-
-Languages with a good level of completion have their own localized
-instances of ReadTheDocs. Open an issue on the ``godot-docs-l10n``
-repository if you think that a new language is complete enough to get
-its own instance.
+The XML files in doc/classes should then be up-to-date with current Godot Engine
+features. You can then check what changed using the ``git diff`` command. Please
+only include changes that are relevant to your work on the API in your commits.
+You can discard changes in other XML files using ``git checkout``.
