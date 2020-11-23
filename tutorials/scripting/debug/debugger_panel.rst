@@ -48,32 +48,9 @@ You can disable specific warnings in **Project Settings > Debug > GDScript**.
 Profiler
 ++++++++
 
-The debugger comes with three profilers for your processor, network operations,
-and video memory.
-
-The profiler is used to show why individual frames take as long as they do
-to process and render.
-
-Unlike other debugging tools, the profiler does not start automatically. It can
-be started at any time during gameplay by pressing the start button. You can
-even start the profiler before opening the game to profile startup performance.
-It can also be started and stopped while the game is running without losing
-information from when it was last running. The information it records won't
-go away unless you click clear, or close the game, reopen it and start
-the profiler again.
-
-After starting and stopping the profiler, you should see things being kept track
-of on the left and a graph on the right. The items listed on the left are
-everything that contributes to frame time, and they should each have a value
-for time and calls for the current frame you are looking at.
-
-The frame number in the top right tells you which frame you are currently
-looking at. You can change this by using the up or down arrows, typing in the
-frame number, or clicking on the graph.
-
-If you want to add something to your graph or think it looks too cluttered,
-you can check and uncheck the box next to an item to add or remove it
-from the graph.
+The profiler is used to see what code is running while your project is in use,
+and how that effects performance. A detailed explanation of how to use it can
+be found :ref:`here <doc_the_profiler>`.
 
 Network Profiler
 ++++++++++++++++
