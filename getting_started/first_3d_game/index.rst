@@ -58,5 +58,6 @@ Contents
    02.player_input
    03.player_movement_code
    04.mob_scene
+   05.spawning_mobs
 
 .. |image0| image:: img/squash-the-creeps-final.gif

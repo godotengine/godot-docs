@@ -1,4 +1,4 @@
-.. _doc_designing_the_mob_scene:
+.. _doc_first_3d_game_designing_the_mob_scene:
 
 Designing the mob scene
 =======================
