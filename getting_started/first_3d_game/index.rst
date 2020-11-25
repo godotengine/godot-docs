@@ -57,5 +57,6 @@ Contents
    01.game_setup
    02.player_input
    03.player_movement_code
+   04.mob_scene
 
 .. |image0| image:: img/squash-the-creeps-final.gif
