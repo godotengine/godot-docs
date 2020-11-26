@@ -122,7 +122,7 @@ editor exposes two options:
 .. seealso::
 
     See :ref:`doc_importing_3d_scenes` for information on how to export models
-    for Godot, and automatically generate collision shapes on import.
+    for Godot and automatically generate collision shapes on import.
 
 Performance caveats
 -------------------
