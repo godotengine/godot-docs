@@ -4,7 +4,7 @@ Player scene and input actions
 ==============================
 
 In the next two lessons, we will design the player scene, register custom input
-actions, and code player movement. By the end, you’ll have a playable character
+actions, and code player movement. By the end, you'll have a playable character
 that moves in eight directions.
 
 .. TODO: add player animated gif?
@@ -18,7 +18,7 @@ Scene*. Create a *KinematicBody* node as the root and name it *Player*.
 Kinematic bodies are complementary to the area and rigid bodies used in the 2D
 game tutorial. Like rigid bodies, they can move and collide with the
 environment, but instead of being controlled by the physics engine, you dictate
-their movement. You will see how we use the node’s unique features when we code
+their movement. You will see how we use the node's unique features when we code
 the jump and squash mechanics.
 
 .. seealso::
@@ -26,7 +26,7 @@ the jump and squash mechanics.
     To learn more about the different physics node types, see the
     :ref:`doc_physics_introduction`.
 
-For now, we’re going to create a basic rig for our character’s 3D model. This
+For now, we're going to create a basic rig for our character's 3D model. This
 will allow us to rotate the model later via code while it plays an animation.
 
 Add a *Spatial* node as a child of *Player* and name it *Pivot*. Then, in the
@@ -43,14 +43,14 @@ This should instantiate the model as a child of *Pivot*. You can rename it to
 .. note::
 
     The ``.glb`` files contain 3D scene data based on the open-source GLTF 2.0
-    specification. They’re a modern and powerful alternative to a proprietary format
+    specification. They're a modern and powerful alternative to a proprietary format
     like FBX, which Godot also supports. To produce these files, we designed the
     model in `Blender 3D <https://www.blender.org/>`__ and exported it to GLTF.
 
 As with all kinds of physics nodes, we need a collision shape for our character
 to collide with the environment. Select the *Player* node again and add a
 *CollisionShape*. In the *Inspector*, assign a *SphereShape* to the *Shape*
-property. The sphere’s wireframe appears below the character.
+property. The sphere's wireframe appears below the character.
 
 |image3|
 
@@ -58,11 +58,11 @@ It will be the shape the physics engine uses to collide with the environment, so
 we want it to better fit the 3D model. Shrink it a bit by dragging the orange
 dot in the viewport. My sphere has a radius of about ``0.8`` meters.
 
-Then, move the shape up so its bottom roughly aligns with the grid’s plane.
+Then, move the shape up so its bottom roughly aligns with the grid's plane.
 
 |image4|
 
-You can toggle the model’s visibility by clicking the eye icon next to the
+You can toggle the model's visibility by clicking the eye icon next to the
 *Character* or the *Pivot* nodes.
 
 |image5|
@@ -75,8 +75,8 @@ some input actions.
 Creating input actions
 ----------------------
 
-To move the character, we will listen to the player’s input, like pressing the
-arrow keys. In Godot, while we could write all the key bindings in code, there’s
+To move the character, we will listen to the player's input, like pressing the
+arrow keys. In Godot, while we could write all the key bindings in code, there's
 a powerful system that allows you to assign a label to a set of keys and
 buttons. This simplifies our scripts and makes them more readable.
 
@@ -92,9 +92,9 @@ can bind keys to these actions.
 |image7|
 
 Godot projects come with some predefined actions designed for user interface
-design, which we could use here. But we’re defining our own to support gamepads.
+design, which we could use here. But we're defining our own to support gamepads.
 
-We’re going to name our actions ``move_left``, ``move_right``, ``move_up``,
+We're going to name our actions ``move_left``, ``move_right``, ``move_up``,
 ``move_down``, and ``jump``.
 
 To add an action, write its name in the bar at the top and press Enter.
@@ -105,7 +105,7 @@ Create the five actions. Your window should have them all listed at the bottom.
 
 |image9|
 
-To bind a key or button to an action, click the “+” button to its right. Do this
+To bind a key or button to an action, click the "+" button to its right. Do this
 for ``move_left`` and in the drop-down menu, click *Key*.
 
 |image10|
@@ -119,7 +119,7 @@ Do the same for the A key.
 
 |image12|
 
-Let’s now add support for a gamepad’s left joystick. Click the “+” button again
+Let's now add support for a gamepad's left joystick. Click the "+" button again
 but this time, select *Joy Axis*.
 
 |image13|
@@ -133,13 +133,13 @@ press the *Add* button.
 |image14|
 
 Do the same for the other input actions. For example, bind the right arrow, D,
-and The left joystick’s right axis to ``move_right``. After binding all keys,
+and The left joystick's right axis to ``move_right``. After binding all keys,
 your interface should look like this.
 
 |image15|
 
-We have the ``jump`` action left to set up. Bind the Space key and the gamepad’s
-A button. To bind a gamepad’s button, select the joy button option in the menu.
+We have the ``jump`` action left to set up. Bind the Space key and the gamepad's
+A button. To bind a gamepad's button, select the joy button option in the menu.
 
 |image16|
 
@@ -151,10 +151,10 @@ Your jump input action should look like this.
 
 |image18|
 
-That’s all the actions we need for this game. You can use this menu to label any
+That's all the actions we need for this game. You can use this menu to label any
 groups of keys and buttons in your projects.
 
-In the next part, we’ll code and test the player’s movement.
+In the next part, we'll code and test the player's movement.
 
 .. |image0| image:: img/02.player_input/01.new_scene.png
 .. |image1| image:: img/02.player_input/02.instantiating_the_model.png

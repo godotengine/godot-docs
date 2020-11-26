@@ -7,7 +7,7 @@ project of your own like the animated gif below.
 
 |image0|
 
-The game we’ll code here is similar to :ref:`doc_your_first_game`, with a twist:
+The game we'll code here is similar to :ref:`doc_your_first_game`, with a twist:
 you can now jump and your goal is to squash the creeps. This way, you will both
 **recognize patterns** you learned in the previous tutorial and **build upon
 them** with new code and features.
@@ -26,15 +26,15 @@ You will learn to:
 And more.
 
 This tutorial is for beginners who followed the complete getting started series.
-We’ll start slow with detailed instructions and shorten them as we do similar
-steps. If you’re an experienced programmer, you can browse the complete demo’s
+We'll start slow with detailed instructions and shorten them as we do similar
+steps. If you're an experienced programmer, you can browse the complete demo's
 source code here: `Squash the Creep source code
 <https://github.com/GDQuest/godot-3d-dodge-the-creeps/>`__.
 
 .. note::
 
     You can follow this series without having done the 2D one. However, if
-    you’re new to game development, we recommend you to start with 2D. 3D game
+    you're new to game development, we recommend you to start with 2D. 3D game
     code is always more complex and the 2D series will give you foundations to
     follow along more comfortably.
 
@@ -42,10 +42,10 @@ We prepared some game assets so we can jump straight to the code. You can
 download them here: `Squash the Creeps assets
 <https://github.com/GDQuest/godot-3d-dodge-the-creeps/releases/tag/1.0.0>`__.
 
-We will first work on a basic prototype for the player’s movement. We will then
-add the monsters that we’ll spawn randomly around the screen. After that, we’ll
+We will first work on a basic prototype for the player's movement. We will then
+add the monsters that we'll spawn randomly around the screen. After that, we'll
 implement the jump and squashing mechanic before refining the game with some
-nice animation. We’ll wrap up with the score and the retry screen.
+nice animation. We'll wrap up with the score and the retry screen.
 
 Contents
 --------

@@ -113,7 +113,7 @@ the "velocity ".
        move_and_slide(velocity)
 
 Similarly to the player, we move the mob every frame by calling
-``KinematicBody``\ ’s ``move_and_slide()`` method. This time, we don't update
+``KinematicBody``\ 's ``move_and_slide()`` method. This time, we don't update
 the "velocity "every frame: we want the monster to move at a constant speed
 and leave the screen, even if it were to hit an obstacle.
 
@@ -159,7 +159,7 @@ Leaving the screen
 ------------------
 
 We still have to destroy the mobs when they leave the screen. To do so, we'll
-connect our *VisibilityNotifier* node’s ``screen_exited`` signal to the *Mob*.
+connect our *VisibilityNotifier* node's ``screen_exited`` signal to the *Mob*.
 
 Head back to the 3D viewport by clicking on the *3D* label at the top of the
 editor. You can also press F2.
