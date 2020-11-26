@@ -59,5 +59,6 @@ Contents
    03.player_movement_code
    04.mob_scene
    05.spawning_mobs
+   06.jump_and_squash
 
 .. |image0| image:: img/squash-the-creeps-final.gif
