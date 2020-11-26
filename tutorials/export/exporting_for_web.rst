@@ -300,3 +300,5 @@ defaulting to ``false`` to prevent polluting the global namespace::
         # execute in global execution context,
         # thus adding a new JavaScript global variable `SomeGlobal`
         JavaScript.eval("var SomeGlobal = {};", true)
+
+.. questions-answers:: export html5

@@ -261,3 +261,5 @@ Once retrieved, it can be used by calling one of the many functions it offers:
  .. code-tab:: csharp
 
     stateMachine.Travel("SomeState")
+
+.. questions-answers:: animationtree

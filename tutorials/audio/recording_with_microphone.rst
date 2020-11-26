@@ -97,3 +97,5 @@ To playback the recording, you assign the recording as the stream of the
 
 To save the recording, you call ``save_to_wav()`` with the path to a file.
 In this demo, the path is defined by the user via a ``LineEdit`` input box.
+
+.. questions-answers:: audio record

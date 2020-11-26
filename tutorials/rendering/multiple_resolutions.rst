@@ -327,3 +327,5 @@ better in many cases.
 See the
 `3D viewport scaling demo <https://github.com/godotengine/godot-demo-projects/tree/master/viewport/3d_scaling>`__
 for examples.
+
+.. questions-answers:: scaling

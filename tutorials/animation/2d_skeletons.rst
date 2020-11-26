@@ -238,3 +238,5 @@ painting! Go to the *Bones* section again to assign them to the right bones.
 Once you are all set, you will get much better results:
 
 .. image:: img/skel2d25.gif
+
+.. questions-answers:: 2d skeleton

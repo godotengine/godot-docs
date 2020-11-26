@@ -116,3 +116,5 @@ a key and have it set to `[STOP]` in the inspector.
           scene, you need to enable "Editable Children" in the scene tree to
           access its animation player. Also, an animation player cannot
           reference itself.
+
+.. questions-answers:: animation track

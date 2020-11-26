@@ -100,3 +100,5 @@ Here is the same code as before using this approach:
         # Compensate for output latency.
         time -= AudioServer.get_output_latency()
         print("Time is: ", time)
+
+.. questions-answers:: audio

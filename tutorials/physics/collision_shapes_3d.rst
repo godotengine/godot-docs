@@ -143,3 +143,5 @@ If you run into performance issues, you may have to make tradeoffs in terms of
 accuracy. Most games out there don't have a 100% accurate collision. They find
 creative ways to hide it or otherwise make it unnoticeable during normal
 gameplay.
+
+.. questions-answers:: 3d physics collision

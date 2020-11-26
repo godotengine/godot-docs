@@ -493,3 +493,5 @@ the ground (including slopes) and jump when standing on the ground:
 
 See :ref:`doc_kinematic_character_2d` for more details on using ``move_and_slide()``,
 including a demo project with detailed code.
+
+.. questions-answers:: physics

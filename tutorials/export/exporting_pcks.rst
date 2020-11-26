@@ -136,3 +136,5 @@ is. The most important thing is to identify how one plans to distribute future
 content for their game and develop a workflow that is customized for that
 purpose. Godot should make that process smooth regardless of which route a
 developer pursues.
+
+.. questions-answers:: export pck

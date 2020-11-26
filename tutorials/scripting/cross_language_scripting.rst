@@ -208,3 +208,5 @@ inherit from a GDScript file. Due to how complex this would be to implement,
 this limitation is unlikely to be lifted in the future. See
 `this GitHub issue <https://github.com/godotengine/godot/issues/38352>`__
 for more information.
+
+.. questions-answers:: cross language scripting

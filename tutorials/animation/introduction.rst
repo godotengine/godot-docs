@@ -311,3 +311,5 @@ You can tweak your animations this way until the movement "looks right."
 
 .. |Play from beginning| image:: img/animation_play_from_beginning.png
 .. |Add Animation| image:: img/animation_add.png
+
+.. questions-answers:: animation

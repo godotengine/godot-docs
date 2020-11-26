@@ -156,3 +156,5 @@ Now the bullets will maintain their own movement independent of the player's
 rotation:
 
 .. image:: img/signals_shoot2.gif
+
+.. questions-answers:: instancing signals

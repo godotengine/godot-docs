@@ -69,3 +69,5 @@ Here is a custom ``look_at()`` method that will work reliably with rigid bodies:
 This method uses the rigid body's ``set_angular_velocity()`` method to rotate the body. It first calculates the difference between the current and desired angle and then adds the velocity needed to rotate by that amount in one frame's time.
 
 .. note:: This script will not work with rigid bodies in *character mode* because then, the body's rotation is locked. In that case, you would have to rotate the attached mesh node instead using the standard Spatial methods.
+
+.. questions-answers:: physics rigidbody

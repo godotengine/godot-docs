@@ -57,3 +57,5 @@ Using one-click deploy
 - Click the button to export to the desired platform in one click.
 
 .. image:: img/oneclick.png
+
+.. questions-answers:: one-click-deploy

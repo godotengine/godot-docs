@@ -270,3 +270,5 @@ To obtain it using a camera, the following code can be used:
 
 Remember that during ``_input()``, the space may be locked, so in practice
 this query should be run in ``_physics_process()``.
+
+.. questions-answers:: physics raycast

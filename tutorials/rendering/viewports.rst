@@ -252,3 +252,5 @@ incurring the cost of rendering every frame.
 Make sure to check the Viewport demos! Viewport folder in the demos
 archive available to download, or
 https://github.com/godotengine/godot-demo-projects/tree/master/viewport
+
+.. questions-answers:: viewport

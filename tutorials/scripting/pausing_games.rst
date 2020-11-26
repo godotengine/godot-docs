@@ -125,3 +125,5 @@ closed:
     }
 
 And that should be all!
+
+.. questions-answers:: pause

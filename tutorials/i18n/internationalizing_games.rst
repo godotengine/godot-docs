@@ -121,3 +121,5 @@ For instance, for Spanish, this would be ``application/name_es``:
 
 If you are unsure about the language code to use, refer to the
 :ref:`list of locale codes <doc_locales>`.
+
+.. questions-answers:: localization

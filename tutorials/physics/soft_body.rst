@@ -65,3 +65,5 @@ Play the scene and the cloak should simulate correctly.
 .. image:: img/softbody_cloak_finish.png
 
 This covers the basic settings of softbody, experiment with the parameters to achieve the effect you are aiming for when making your game.
+
+.. questions-answers:: physics softbody

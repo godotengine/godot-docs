@@ -124,3 +124,5 @@ Customizing the build
 
 Feature tags can be used to customize a build process too, by writing a custom **ExportPlugin**.
 They are also used to specify which shared library is loaded and exported in **GDNative**.
+
+.. questions-answers:: feature-tags

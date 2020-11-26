@@ -348,3 +348,5 @@ always have the shebang run Godot straight from where it is located as follows:
 ::
 
     #!/usr/bin/godot -s
+
+.. questions-answers:: command-line

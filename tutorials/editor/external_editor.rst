@@ -62,3 +62,5 @@ We have official plugins for the following code editors:
 
 - `Visual Studio Code <https://github.com/godotengine/godot-vscode-plugin>`_
 - `Emacs <https://github.com/godotengine/emacs-gdscript-mode>`_
+
+.. questions-answers:: external-editor

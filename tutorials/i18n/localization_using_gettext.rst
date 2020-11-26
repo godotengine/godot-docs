@@ -177,3 +177,5 @@ the command below:
 
 If there are syntax errors or warnings, they will be displayed in the console.
 Otherwise, ``msgfmt`` won't output anything.
+
+.. questions-answers:: localization

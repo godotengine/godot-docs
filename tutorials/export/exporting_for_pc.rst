@@ -17,3 +17,5 @@ does not contain the editor and debugger.
 
     If you export for Windows with embedded PCK files, you will not be able to
     sign the program, it will break.
+
+.. questions-answers:: export desktop

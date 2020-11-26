@@ -139,3 +139,5 @@ and ARMv8 is usually sufficient to cover most devices in use today.
 You can optimize the size further by compiling an Android export template with
 only the features you need. See :ref:`doc_optimizing_for_size` for more
 information.
+
+.. questions-answers:: export android

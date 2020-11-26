@@ -130,7 +130,7 @@ and ``get_slide_collision()``:
         var collision = get_slide_collision(i)
         print("I collided with ", collision.collider.name)
 
-.. note:: `get_slide_count()` only counts times the body has collided and changed direction.      
+.. note:: `get_slide_count()` only counts times the body has collided and changed direction.
 
 See :ref:`KinematicCollision2D <class_KinematicCollision2D>` for details on what
 collision data is returned.
@@ -571,3 +571,5 @@ vector. You can control the maximum angle by setting ``floor_max_angle``.
 
 This angle also allows you to implement other features like wall jumps using
 ``is_on_wall()``, for example.
+
+.. questions-answers:: physics kinematicbody

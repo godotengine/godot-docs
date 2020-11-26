@@ -94,3 +94,5 @@ It's also possible to install by using the ``Add-AppxPackage`` PowerShell cmdlet
 .. note:: If you want to update your already installed app, you must
           update the version number on the new package or first uninstall
           the previous package.
+
+.. questions-answers:: export uwp

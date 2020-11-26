@@ -122,3 +122,5 @@ The :ref:`SceneTree <class_SceneTree>` class provides many more useful methods
 to interact with scenes, their node hierarchy, and groups. It allows you to
 switch scenes easily or reload them, quit the game or pause and unpause it. It
 also provides useful signals.
+
+.. questions-answers:: groups

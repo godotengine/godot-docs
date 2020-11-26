@@ -88,6 +88,9 @@
     --btn-neutral-background-color: #f3f6f6;
     --btn-neutral-hover-background-color: #e5ebeb;
     --footer-color: #808080;
+
+    /* Match the filtered background color of the Q&A iframe. */
+    --qa-box-background-color: #fff;
 }
 
 /* Dark theme colors */
@@ -176,6 +179,14 @@
         --btn-neutral-background-color: #404040;
         --btn-neutral-hover-background-color: #505050;
         --footer-color: #aaa;
+
+        /* Match the filtered background color of the Q&A iframe. */
+        --qa-box-background-color: #131313;
+    }
+
+    /* Crude dark theme for the Q&A integration until we have a proper dark theme for it. */
+    .questions-answers-iframe {
+        filter: invert(0.925) hue-rotate(180deg);
     }
 }
 
@@ -1028,4 +1039,53 @@ kbd, .kbd {
 }
 .wy-menu.wy-menu-vertical::-webkit-scrollbar-thumb:active {
     background-color: var(--navbar-scrollbar-active-color);
+}
+
+.questions-answers {
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: var(--qa-box-background-color);
+    box-shadow: 0 0.125rem 0.25rem hsla(0, 0%, 0%, 0.2);
+}
+
+a.questions-answers-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    color: hsl(0, 0%, 100%);
+    border-radius: 0.25rem;
+    background-color: hsl(205, 75%, 35%);
+}
+
+a.questions-answers-btn:hover {
+    background-color: hsl(205, 70%, 40%);
+    text-decoration: none;
+}
+
+a.questions-answers-btn:active {
+    background-color: hsl(205, 80%, 30%);
+}
+
+.questions-answers-question {
+    --score-answers-width: 2.75rem;
+    --padding-x: 0.4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.75rem var(--padding-x);
+    margin: 0.75rem 0;
+    background-color: hsla(0, 0%, 50%, 0.15);
+}
+
+.questions-answers-question-score,
+.questions-answers-question-answers {
+    width: var(--score-answers-width);
+    font-size: 75%;
+    text-align: center;
+}
+
+.questions-answers-question-title {
+    --margin-left: 1rem;
+    margin-left: var(--margin-left);
+    width: calc(100% - 2 * var(--score-answers-width) - 2 * var(--padding-x) - var(--margin-left));
 }

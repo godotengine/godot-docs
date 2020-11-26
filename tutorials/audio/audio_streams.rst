@@ -30,7 +30,7 @@ your use case best:
   at relatively low bitrates.
 
 Keep in mind that while WAV files may contain looping information in their metadata,
-Ogg Vorbis files do not. If looping an Ogg Vorbis file is desired, 
+Ogg Vorbis files do not. If looping an Ogg Vorbis file is desired,
 it must be set up using the import options:
 
 .. image:: img/audio_stream_import.png
@@ -113,3 +113,5 @@ Enable it by setting it depending on how objects will be moved:
 use **Idle** for objects moved using ``_process``, or **Physics**
 for objects moved using ``_physics_process``. The tracking will
 happen automatically.
+
+.. questions-answers:: audio
