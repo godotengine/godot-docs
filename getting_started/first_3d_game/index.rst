@@ -60,5 +60,6 @@ Contents
    04.mob_scene
    05.spawning_mobs
    06.jump_and_squash
+   07.killing_player
 
 .. |image0| image:: img/squash-the-creeps-final.gif
