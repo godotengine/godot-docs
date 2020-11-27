@@ -128,7 +128,7 @@ of your improvements. Sometimes, attempts to improve performance can backfire
 and lead to slower performance.
 **Always use profiling and timing to guide your efforts.**
 
-For more info about using Godot's built-in profiler, see :ref:`doc_debugger_panel`.
+For more info about using Godot's built-in profiler, see :ref:`doc_the_profiler`.
 
 Principles
 ==========
