@@ -40,7 +40,7 @@ source code here: `Squash the Creep source code
 
 We prepared some game assets so we can jump straight to the code. You can
 download them here: `Squash the Creeps assets
-<https://github.com/GDQuest/godot-3d-dodge-the-creeps/releases/tag/1.0.0>`__.
+<https://github.com/GDQuest/godot-3d-dodge-the-creeps/releases/tag/1.1.0>`__.
 
 We will first work on a basic prototype for the player's movement. We will then
 add the monsters that we'll spawn randomly around the screen. After that, we'll
