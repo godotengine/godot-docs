@@ -1,12 +1,12 @@
 .. _doc_locales:
 
-Locales
-=======
+Locale codes
+============
 
 .. Note: This list is synced with core/translation.cpp in the engine.
 
 This is the list of supported locales and variants in the engine. It's
-based on the Unix standard locale strings:
+based on the UNIX standard locale strings:
 
 +--------------+------------------------------------+
 | Locale       | Language and Variant               |
