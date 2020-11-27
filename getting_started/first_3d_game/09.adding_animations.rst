@@ -1,3 +1,5 @@
+.. _doc_first_3d_game_character_animation:
+
 Character animation
 ===================
 

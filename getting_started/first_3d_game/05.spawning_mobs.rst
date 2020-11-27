@@ -172,7 +172,7 @@ We want to spawn mobs at regular time intervals. To do this, we need to go back
 to the scene and add a timer. Before that, though, we need to assign the
 ``Mob.tscn`` file to the ``mob_scene`` property.
 
-Head back to the 3D workspace and select the *Main* node. Drag ``Mob.tscn`` from
+Head back to the 3D screen and select the *Main* node. Drag ``Mob.tscn`` from
 the *FileSystem* dock to the *Mob Scene* slot in the *Inspector*.
 
 |image20|

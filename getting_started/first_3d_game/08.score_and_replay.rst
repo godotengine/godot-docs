@@ -1,3 +1,5 @@
+.. _doc_first_3d_game_score_and_replay:
+
 Score and replay
 ================
 
