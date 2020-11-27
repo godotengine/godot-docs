@@ -92,10 +92,10 @@ When you click on one, it expands vertically. Below, you can see the animation e
 .. image:: img/editor_intro_bottom_panel_animation.png
 
 The four main screens
--------------------
+---------------------
 
-There are four main screen buttons centered at the editor's top: 2D, 3D, Script,
-and AssetLib.
+There are four main screen buttons centered at the top of the editor:
+2D, 3D, Script, and AssetLib.
 
 You'll use the **2D screen** for all types of games. In addition to 2D games,
 the 2D screen is where you'll build your interfaces. Press :kbd:`F1` (or
@@ -141,8 +141,8 @@ signal by:
 1. Pressing :kbd:`Shift + F1` anywhere in the editor.
 2. Clicking the "Search Help" button in the top-right of the Script main screen.
 3. Clicking on the Help menu and Search.
-4. Clicking while pressing the :kbd:`Ctrl` key on a built-in variable or
-   function name in the script editor.
+4. Clicking while pressing the :kbd:`Ctrl` key on a class name,
+   function name, or built-in variable in the script editor.
 
 
 .. image:: img/editor_intro_search_help_button.png
