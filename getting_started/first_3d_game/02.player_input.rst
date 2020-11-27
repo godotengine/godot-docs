@@ -133,13 +133,13 @@ press the *Add* button.
 |image14|
 
 Do the same for the other input actions. For example, bind the right arrow, D,
-and The left joystick's right axis to ``move_right``. After binding all keys,
+and the left joystick's right axis to ``move_right``. After binding all keys,
 your interface should look like this.
 
 |image15|
 
 We have the ``jump`` action left to set up. Bind the Space key and the gamepad's
-A button. To bind a gamepad's button, select the joy button option in the menu.
+A button. To bind a gamepad's button, select the *Joy Button* option in the menu.
 
 |image16|
 

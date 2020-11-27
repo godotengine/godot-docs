@@ -29,7 +29,7 @@ character.
 
 These are common properties for a moving body. The ``velocity`` is a 3D vector
 combining a speed with a direction. Here, we define it as a property because
-we're going to build upon its value frame after frame.
+we want to update and reuse its value across frames.
 
 .. note::
 
@@ -130,7 +130,7 @@ shorthand for ``variable = variable - ...``.
 
 This line of code will cause our character to fall in every frame. This may seem
 strange if it's already on the floor. But we have to do this for the character
-to collide with the ground every.
+to collide with the ground every frame.
 
 The physics engine can only detect interactions with walls, the floor, or other
 bodies during a given frame if movement and collisions happen. We will use this

@@ -27,7 +27,7 @@ tint the text.
 
 |image2|
 
-Pick a dark tone to it contrasts well with the 3D scene.
+Pick a dark tone so it contrasts well with the 3D scene.
 
 |image3|
 
@@ -77,7 +77,7 @@ In the *FileSystem* dock, Expand the ``fonts`` directory and click and drag the
 ``Montserrat-Medium.ttf`` file we included in the project onto the *Font Data*.
 The text will reappear in the theme preview.
 
-The text's a bit small. Set the *Settings -> Size* to ``22`` pixels to increase
+The text is a bit small. Set the *Settings -> Size* to ``22`` pixels to increase
 the text's size.
 
 |image9|
@@ -133,7 +133,7 @@ There, we increment the score and update the displayed text.
        score += 1
        text = "Score: %s" % score
 
-The second line uses the value of the' score' variable to replace the
+The second line uses the value of the ``score`` variable to replace the
 placeholder ``%s``. When using this feature, Godot automatically converts values
 to text, which is convenient to output text in labels or using the ``print()``
 function.
@@ -228,7 +228,7 @@ Then, when the player gets hit, we show the overlay.
        $UserInterface/Retry.show()
 
 Finally, when the *Retry* node is visible, we need to listen to the player's
-input and restart the game if they press enter. To do this, we use the build-in
+input and restart the game if they press enter. To do this, we use the built-in
 ``_unhandled_input()`` callback.
 
 If the player pressed the predefined ``ui_accept`` input action and *Retry* is

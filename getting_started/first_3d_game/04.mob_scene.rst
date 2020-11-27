@@ -11,7 +11,7 @@ to be similar to the *Player* scene.
 
 Create a scene with, once again, a *KinematicBody* node as its root. Name it
 *Mob*. Add a *Spatial* node as a child of it, name it *Pivot*. And drag and drop
-the file "mob.glb "from the *FileSystem* dock onto the *Pivot* to add the
+the file ``mob.glb`` from the *FileSystem* dock onto the *Pivot* to add the
 monster's 3D model to the scene. You can rename the newly created *mob* node
 into *Character*.
 
@@ -93,9 +93,9 @@ Attach a script to the *Mob*.
 
 |image7|
 
-Here's the movement code to start with. We define two properties, "min_speed "
-and "max_speed ", to define a random speed range. We then define and initialize
-the "velocity ".
+Here's the movement code to start with. We define two properties, ``min_speed``
+and ``max_speed``, to define a random speed range. We then define and initialize
+the ``velocity``.
 
 ::
 
@@ -114,18 +114,18 @@ the "velocity ".
 
 Similarly to the player, we move the mob every frame by calling
 ``KinematicBody``\ 's ``move_and_slide()`` method. This time, we don't update
-the "velocity "every frame: we want the monster to move at a constant speed
+the ``velocity`` every frame: we want the monster to move at a constant speed
 and leave the screen, even if it were to hit an obstacle.
 
 We need to define another function to calculate the start velocity. This
 function will turn the monster towards the player and randomize both its angle
 of motion and its velocity.
 
-The function will take a "start_position ", the mob's spawn position, and the
-"player_position "as its arguments.
+The function will take a ``start_position``, the mob's spawn position, and the
+``player_position`` as its arguments.
 
-We first position the mob at "start_position ". Then, we turn it towards the
-player using the "look_at() "method and randomize the angle by rotating a
+We first position the mob at ``start_position``. Then, we turn it towards the
+player using the ``look_at()`` method and randomize the angle by rotating a
 random amount around the Y axis. Below, ``rand_range()`` outputs a random value
 between ``-PI / 4`` radians and ``PI / 4`` radians.
 
@@ -139,11 +139,11 @@ between ``-PI / 4`` radians and ``PI / 4`` radians.
        # And rotate it randomly so it doesn't move exactly toward the player.
        rotate_y(rand_range(-PI / 4, PI / 4))
 
-We then calculate a random speed using "rand_range() "once again and we use it
+We then calculate a random speed using ``rand_range()`` once again and we use it
 to calculate the velocity.
 
 We start by creating a 3D vector pointing forward, multiply it by our
-"random_speed ", and finally rotate it using the "Vector3 "class's
+``random_speed``, and finally rotate it using the ``Vector3`` class's
 ``rotated()`` method.
 
 ::
@@ -188,7 +188,7 @@ leaves the screen.
 Our monster is ready to enter the game! In the next part, you will spawn
 monsters in the game level.
 
-Here is the complete "Mob.gd "script for reference.
+Here is the complete ``Mob.gd`` script for reference.
 
 ::
 
