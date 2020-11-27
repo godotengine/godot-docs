@@ -6,11 +6,13 @@ Shading language
 Introduction
 ------------
 
-Godot uses a shading language similar to GLSL ES 3.0. Most datatypes and functions are supported,
-and the few remaining ones will likely be added over time.
+Godot uses a shading language similar to GLSL ES 3.0. Most datatypes and
+functions are supported, and the few remaining ones will likely be added over
+time.
 
-If you are already familiar with GLSL, the :ref:`Godot Shader Migration Guide<doc_converting_glsl_to_godot_shaders>`
-is a resource that will help you transition from regular GLSL to Godot's shading language.
+If you are already familiar with GLSL, the :ref:`Godot Shader Migration
+Guide<doc_converting_glsl_to_godot_shaders>` is a resource that will help you
+transition from regular GLSL to Godot's shading language.
 
 Data types
 ----------
@@ -84,8 +86,9 @@ Most GLSL ES 3.0 datatypes are supported:
 Casting
 ~~~~~~~
 
-Just like GLSL ES 3.0, implicit casting between scalars and vectors of the same size but different type is not allowed.
-Casting of types of different size is also not allowed. Conversion must be done explicitly via constructors.
+Just like GLSL ES 3.0, implicit casting between scalars and vectors of the same
+size but different type is not allowed. Casting of types of different size is
+also not allowed. Conversion must be done explicitly via constructors.
 
 Example:
 
@@ -95,7 +98,8 @@ Example:
     float a = 2.0; // valid
     float a = float(2); // valid
 
-Default integer constants are signed, so casting is always needed to convert to unsigned:
+Default integer constants are signed, so casting is always needed to convert to
+unsigned:
 
 .. code-block:: glsl
 
@@ -106,13 +110,13 @@ Default integer constants are signed, so casting is always needed to convert to 
 Members
 ~~~~~~~
 
-Individual scalar members of vector types are accessed via the "x", "y", "z" and "w" members.
-Alternatively, using "r", "g", "b" and "a" also works and is equivalent. Use whatever fits
-best for your needs.
+Individual scalar members of vector types are accessed via the "x", "y", "z" and
+"w" members. Alternatively, using "r", "g", "b" and "a" also works and is
+equivalent. Use whatever fits best for your needs.
 
-For matrices, use the ``m[row][column]`` indexing syntax to access each scalar, or ``m[idx]`` to access
-a vector by row index. For example, for accessing the y position of an object in a mat4 you  use
-``m[3][1]``.
+For matrices, use the ``m[row][column]`` indexing syntax to access each scalar,
+or ``m[idx]`` to access a vector by row index. For example, for accessing the y
+position of an object in a mat4 you use ``m[3][1]``.
 
 Constructing
 ~~~~~~~~~~~~
@@ -129,9 +133,9 @@ Construction of vector types must always pass:
     // A single scalar for the whole vector
     vec4 a = vec4(0.0);
 
-Construction of matrix types requires vectors of the same dimension as the matrix. You can
-also build a diagonal matrix using ``matx(float)`` syntax. Accordingly, ``mat4(1.0)`` is
-an identity matrix.
+Construction of matrix types requires vectors of the same dimension as the
+matrix. You can also build a diagonal matrix using ``matx(float)`` syntax.
+Accordingly, ``mat4(1.0)`` is an identity matrix.
 
 .. code-block:: glsl
 
@@ -139,11 +143,13 @@ an identity matrix.
     mat3 m3 = mat3(vec3(1.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0), vec3(0.0, 0.0, 1.0));
     mat4 identity = mat4(1.0);
 
-Matrices can also be built from a matrix of another dimension.
-There are two rules :
-If a larger matrix is constructed from a smaller matrix, the additional rows and columns are
-set to the values they would have in an identity matrix. If a smaller matrix is constructed
-from a larger matrix, the top, left submatrix of the larger matrix is used.
+Matrices can also be built from a matrix of another dimension. There are two
+rules:
+
+1. If a larger matrix is constructed from a smaller matrix, the additional rows
+and columns are set to the values they would have in an identity matrix.
+2. If a smaller matrix is constructed from a larger matrix, the top, left
+submatrix of the larger matrix is used.
 
 .. code-block:: glsl
 
@@ -154,8 +160,9 @@ from a larger matrix, the top, left submatrix of the larger matrix is used.
 Swizzling
 ~~~~~~~~~
 
-It is possible to obtain any combination of components in any order, as long as the result
-is another vector type (or scalar). This is easier shown than explained:
+It is possible to obtain any combination of components in any order, as long as
+the result is another vector type (or scalar). This is easier shown than
+explained:
 
 .. code-block:: glsl
 
@@ -173,7 +180,8 @@ is another vector type (or scalar). This is easier shown than explained:
 Precision
 ~~~~~~~~~
 
-It is possible to add precision modifiers to datatypes; use them for uniforms, variables, arguments and varyings:
+It is possible to add precision modifiers to datatypes; use them for uniforms,
+variables, arguments and varyings:
 
 .. code-block:: glsl
 
@@ -182,9 +190,10 @@ It is possible to add precision modifiers to datatypes; use them for uniforms, v
     highp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // high precision, uses full float or integer range (default)
 
 
-Using lower precision for some operations can speed up the math involved (at the cost of less precision).
-This is rarely needed in the vertex processor function (where full precision is needed most of the time),
-but is often useful in the fragment processor.
+Using lower precision for some operations can speed up the math involved (at the
+cost of less precision). This is rarely needed in the vertex processor function
+(where full precision is needed most of the time), but is often useful in the
+fragment processor.
 
 Some architectures (mainly mobile) can benefit significantly from this, but
 there are downsides such as the additional overhead of conversion between
@@ -200,8 +209,9 @@ Arrays are containers for multiple variables of a similar type.
 Local arrays
 ~~~~~~~~~~~~
 
-Local arrays are declared in functions. They can use all of the allowed datatypes, except samplers.
-The array declaration follows a C-style syntax: ``[const] + [precision] + typename + identifier + [array size]``.
+Local arrays are declared in functions. They can use all of the allowed
+datatypes, except samplers. The array declaration follows a C-style syntax:
+``[const] + [precision] + typename + identifier + [array size]``.
 
 .. code-block:: glsl
 
@@ -241,7 +251,9 @@ To access an array element, use the indexing syntax:
 
     COLOR.r = arr[0]; // getter
 
-Arrays also have a built-in function ``.length()`` (not to be confused with the built-in ``length()`` function). It doesn't accept any parameters and will return the array's size.
+Arrays also have a built-in function ``.length()`` (not to be confused with the
+built-in ``length()`` function). It doesn't accept any parameters and will
+return the array's size.
 
 .. code-block:: glsl
 
@@ -252,7 +264,12 @@ Arrays also have a built-in function ``.length()`` (not to be confused with the 
 
 .. note::
 
-    If you use an index below 0 or greater than array size - the shader will crash and break rendering. To prevent this, use ``length()``, ``if``, or ``clamp()`` functions to ensure the index is between 0 and the array's length. Always carefully test and check your code. If you pass a constant expression or a simple number, the editor will check its bounds to prevent this crash.
+    If you use an index below 0 or greater than array size - the shader will
+    crash and break rendering. To prevent this, use ``length()``, ``if``, or
+    ``clamp()`` functions to ensure the index is between 0 and the array's
+    length. Always carefully test and check your code. If you pass a constant
+    expression or a simple number, the editor will check its bounds to prevent
+    this crash.
 
 Global arrays
 ~~~~~~~~~~~~~
@@ -271,12 +288,17 @@ You can declare arrays at global space like:
 
 .. note::
 
-    Global arrays have to be declared as global constants, otherwise they can be declared the same as local arrays.
+    Global arrays have to be declared as global constants, otherwise they can be
+    declared the same as local arrays.
 
 Constants
 ---------
 
-Use the ``const`` keyword before the variable declaration to make that variable immutable, which means that it cannot be modified. All basic types, except samplers can be declared as constants. Accessing and using a constant value is slightly faster than using a uniform. Constants must be initialized at their declaration.
+Use the ``const`` keyword before the variable declaration to make that variable
+immutable, which means that it cannot be modified. All basic types, except
+samplers can be declared as constants. Accessing and using a constant value is
+slightly faster than using a uniform. Constants must be initialized at their
+declaration.
 
 .. code-block:: glsl
 
@@ -286,7 +308,8 @@ Use the ``const`` keyword before the variable declaration to make that variable 
     a = b; // invalid
     b = a; // valid
 
-Constants cannot be modified and additionally cannot have hints, but multiple of them (if they have the same type) can be declared in a single expression e.g
+Constants cannot be modified and additionally cannot have hints, but multiple of
+them (if they have the same type) can be declared in a single expression e.g
 
 .. code-block:: glsl
 
@@ -302,8 +325,11 @@ Similar to variables, arrays can also be declared with ``const``.
 
     COLOR.r = arr[0]; // valid
 
-Constants can be declared both globally (outside of any function) or locally (inside a function).
-Global constants are useful when you want to have access to a value throughout your shader that does not need to be modified. Like uniforms, global constants are shared between all shader stages, but they are not accessible outside of the shader.
+Constants can be declared both globally (outside of any function) or locally
+(inside a function). Global constants are useful when you want to have access to
+a value throughout your shader that does not need to be modified. Like uniforms,
+global constants are shared between all shader stages, but they are not
+accessible outside of the shader.
 
 .. code-block:: glsl
 
@@ -315,7 +341,8 @@ Global constants are useful when you want to have access to a value throughout y
 Structs
 -------
 
-Structs are compound types which can be used for better abstraction of shader code. You can declare them at the global scope like:
+Structs are compound types which can be used for better abstraction of shader
+code. You can declare them at the global scope like:
 
 .. code-block:: glsl
 
@@ -343,7 +370,8 @@ Or use struct constructor for same purpose:
 
     PointLight light = PointLight(vec3(0.0), vec3(1.0, 0.0, 0.0), 0.5);
 
-Structs may contain other struct or array, you can also instance them as global constant:
+Structs may contain other struct or array, you can also instance them as global
+constant:
 
 .. code-block:: glsl
 
@@ -382,7 +410,8 @@ You can also pass them to functions:
 Operators
 ---------
 
-Godot shading language supports the same set of operators as GLSL ES 3.0. Below is the list of them in precedence order:
+Godot shading language supports the same set of operators as GLSL ES 3.0. Below
+is the list of them in precedence order:
 
 +-------------+------------------------+------------------+
 | Precedence  | Class                  | Operator         |
@@ -456,32 +485,41 @@ Godot Shading language supports the most common types of flow control:
 
     } while (true);
 
-Keep in mind that, in modern GPUs, an infinite loop can exist and can freeze your application (including editor).
-Godot can't protect you from this, so be careful not to make this mistake!
+Keep in mind that, in modern GPUs, an infinite loop can exist and can freeze
+your application (including editor). Godot can't protect you from this, so be
+careful not to make this mistake!
 
-Also, when comparing floating-point values against a number, make sure
-to compare them against a *range* instead of an exact number:
+Also, when comparing floating-point values against a number, make sure to
+compare them against a *range* instead of an exact number.
+
+A comparison like ``if (value == 0.3)`` may not evaluate to ``true``.
+Floating-point math is often approximate and can defy expectations. It can also
+behave differently depending on the hardware.
+
+**Don't** do this.
 
 .. code-block:: glsl
 
     float value = 0.1 + 0.2;
 
-    // No guarantee that this evalutes to `true`!
-    // Floating-point math is often approximate and can defy expectations.
-    // It can also behave differently depending on the hardware.
+    // May not evaluate to `true`!
     if (value == 0.3) {
         // ...
     }
 
-    // Instead, always perform a range comparison with an epsilon value.
-    // The larger the floating-point number (and the less precise the floating-point number),
-    // the larger the epsilon value should be.
+Instead, always perform a range comparison with an epsilon value. The larger the
+floating-point number (and the less precise the floating-point number, the
+larger the epsilon value should be.
+
+.. code-block:: glsl
+
     const float EPSILON = 0.0001;
     if (value >= 0.3 - EPSILON && value <= 0.3 + EPSILON) {
         // ...
     }
 
-See `floating-point-gui.de <https://floating-point-gui.de/>`__ for more information.
+See `floating-point-gui.de <https://floating-point-gui.de/>`__ for more
+information.
 
 .. warning::
 
@@ -491,12 +529,14 @@ See `floating-point-gui.de <https://floating-point-gui.de/>`__ for more informat
 Discarding
 ----------
 
-Fragment and light functions can use the **discard** keyword. If used, the fragment is discarded and nothing is written.
+Fragment and light functions can use the **discard** keyword. If used, the
+fragment is discarded and nothing is written.
 
 Functions
 ---------
 
-It is possible to define functions in a Godot shader. They use the following syntax:
+It is possible to define functions in a Godot shader. They use the following
+syntax:
 
 .. code-block:: glsl
 
@@ -511,15 +551,16 @@ It is possible to define functions in a Godot shader. They use the following syn
     }
 
 
-You can only use functions that have been defined above (higher in the editor) the function from which you are calling
-them.
+You can only use functions that have been defined above (higher in the editor)
+the function from which you are calling them.
 
 Function arguments can have special qualifiers:
 
 * **in**: Means the argument is only for reading (default).
 * **out**: Means the argument is only for writing.
 * **inout**: Means the argument is fully passed via reference.
-* **const**: Means the argument is a constant and cannot be changed, may be combined with **in** qualifier.
+* **const**: Means the argument is a constant and cannot be changed, may be
+  combined with **in** qualifier.
 
 Example below:
 
@@ -532,9 +573,9 @@ Example below:
 Varyings
 ~~~~~~~~
 
-To send data from the vertex to the fragment processor function, *varyings* are used. They are set
-for every primitive vertex in the *vertex processor*, and the value is interpolated for every
-pixel in the fragment processor.
+To send data from the vertex to the fragment processor function, *varyings* are
+used. They are set for every primitive vertex in the *vertex processor*, and the
+value is interpolated for every pixel in the fragment processor.
 
 .. code-block:: glsl
 
@@ -568,8 +609,8 @@ Varying can also be an array:
 Interpolation qualifiers
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Certain values are interpolated during the shading pipeline. You can modify how these interpolations
-are done by using *interpolation qualifiers*.
+Certain values are interpolated during the shading pipeline. You can modify how
+these interpolations are done by using *interpolation qualifiers*.
 
 .. code-block:: glsl
 
@@ -599,9 +640,10 @@ There are two possible interpolation qualifiers:
 Uniforms
 ~~~~~~~~
 
-Passing values to shaders is possible. These are global to the whole shader and are called *uniforms*.
-When a shader is later assigned to a material, the uniforms will appear as editable parameters in it.
-Uniforms can't be written from within the shader.
+Passing values to shaders is possible. These are global to the whole shader and
+are called *uniforms*. When a shader is later assigned to a material, the
+uniforms will appear as editable parameters in it. Uniforms can't be written
+from within the shader.
 
 .. note::
     Uniform arrays are not implemented yet.
@@ -612,17 +654,20 @@ Uniforms can't be written from within the shader.
 
     uniform float some_value;
 
-You can set uniforms in the editor in the material. Or you can set them through GDScript:
+You can set uniforms in the editor in the material. Or you can set them through
+GDScript:
 
 ::
 
   material.set_shader_param("some_value", some_value)
 
-.. note:: The first argument to ``set_shader_param`` is the name of the uniform in the shader. It
-          must match *exactly* to the name of the uniform in the shader or else it will not be recognized.
+.. note:: The first argument to ``set_shader_param`` is the name of the uniform
+          in the shader. It must match *exactly* to the name of the uniform in
+          the shader or else it will not be recognized.
 
-Any GLSL type except for *void* can be a uniform. Additionally, Godot provides optional shader hints
-to make the compiler understand for what the uniform is used.
+Any GLSL type except for *void* can be a uniform. Additionally, Godot provides
+optional shader hints to make the compiler understand for what the uniform is
+used.
 
 .. code-block:: glsl
 
@@ -632,7 +677,9 @@ to make the compiler understand for what the uniform is used.
     uniform float amount : hint_range(0, 1);
     uniform vec4 other_color : hint_color = vec4(1.0);
 
-It's important to understand that textures that are supplied as color require hints for proper sRGB->linear conversion (i.e. ``hint_albedo``), as Godot's 3D engine renders in linear color space.
+It's important to understand that textures that are supplied as color require
+hints for proper sRGB->linear conversion (i.e. ``hint_albedo``), as Godot's 3D
+engine renders in linear color space.
 
 Full list of hints below:
 
@@ -656,8 +703,9 @@ Full list of hints below:
 | **sampler2D**  | hint_aniso                   | As flowmap, default to right.       |
 +----------------+------------------------------+-------------------------------------+
 
-GDScript uses different variable types than GLSL does, so when passing variables from GDScript
-to shaders, Godot converts the type automatically. Below is a table of the corresponding types:
+GDScript uses different variable types than GLSL does, so when passing variables
+from GDScript to shaders, Godot converts the type automatically. Below is a
+table of the corresponding types:
 
 +-----------------+-----------+
 | GDScript type   | GLSL type |
@@ -679,8 +727,9 @@ to shaders, Godot converts the type automatically. Below is a table of the corre
 | **Transform2D** | **mat4**  |
 +-----------------+-----------+
 
-.. note:: Be careful when setting shader uniforms from GDScript, no error will be thrown if the
-          type does not match. Your shader will just exhibit undefined behavior.
+.. note:: Be careful when setting shader uniforms from GDScript, no error will
+          be thrown if the type does not match. Your shader will just exhibit
+          undefined behavior.
 
 Uniforms can also be assigned default values:
 
@@ -695,10 +744,12 @@ Built-in functions
 ------------------
 
 A large number of built-in functions are supported, conforming to GLSL ES 3.0.
-When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature is used, it can be scalar or vector.
+When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature
+is used, it can be scalar or vector.
 
-.. note:: For a list of the functions that are not available in the GLES2 backend, please see the
-          :ref:`Differences between GLES2 and GLES3 doc <doc_gles2_gles3_differences>`.
+.. note:: For a list of the functions that are not available in the GLES2
+          backend, please see the :ref:`Differences between GLES2 and GLES3 doc
+          <doc_gles2_gles3_differences>`.
 
 +------------------------------------------------------------------------+---------------------------------------------------------------+
 | Function                                                               | Description / Return value                                    |
