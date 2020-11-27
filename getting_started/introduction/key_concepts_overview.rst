@@ -1,6 +1,6 @@
-.. Intention: only to introduce only a handful of key concepts and avoid a big
-   cognitive load. Readers will then be reminded of the concepts further in the
-   getting started series, reinforcing their learning.
+.. Intention: introduce only a handful of key concepts and avoid a big cognitive
+   load. Readers will then be reminded of the concepts further in the getting
+   started series, reinforcing their learning.
 
 .. _doc_key_concepts_overview:
 
@@ -47,7 +47,8 @@ It is made of a ``KinematicBody2D`` node named "Character", a ``Sprite2D``, a
           counterpart have names that end with "3D".
 
 Notice how nodes and scenes look the same in the editor. When you save a tree of
-nodes as a scene, it then acts as a single node, hiding its internal structure.
+nodes as a scene, it then shows as a single node, with its internal structure
+hidden in the editor.
 
 Godot provides an extensive library of base node types you can combine and
 extend to build more powerful ones. 2D, 3D, or user interface, you will do most

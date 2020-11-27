@@ -10,7 +10,7 @@ First look at Godot's editor
 ============================
 
 This page will give you a brief overview of Godot's interface. We're going to
-look at the different workspaces and docks to help you situate yourself.
+look at the different main screens and docks to help you situate yourself.
 
 .. seealso:: For a comprehensive breakdown of the editor's interface and how to
              use it, see the :ref:`Editor manual <toc-learn-editor>`.
@@ -47,7 +47,7 @@ Let's look at its main areas.
 
 .. image:: img/editor_intro_editor_empty.png
 
-By default, it features **menus**, **workspaces**, and playtest buttons along
+By default, it features **menus**, **main screens**, and playtest buttons along
 the window's top edge.
 
 .. image:: img/editor_intro_top_menus.png
@@ -91,19 +91,19 @@ When you click on one, it expands vertically. Below, you can see the animation e
 
 .. image:: img/editor_intro_bottom_panel_animation.png
 
-The four workspaces
+The four main screens
 -------------------
 
-There are four workspace buttons centered at the editor's top: 2D, 3D, Script,
+There are four main screen buttons centered at the editor's top: 2D, 3D, Script,
 and AssetLib.
 
-You'll use the **2D workspace** for all types of games. In addition to 2D games,
-the 2D workspace is where you'll build your interfaces. Press :kbd:`F1` (or
+You'll use the **2D screen** for all types of games. In addition to 2D games,
+the 2D screen is where you'll build your interfaces. Press :kbd:`F1` (or
 :kbd:`Alt + 1` on macOS) to access it.
 
 .. image:: img/editor_intro_workspace_2d.png
 
-In the **3D workspace**, you can work with meshes, lights, and design levels for
+In the **3D screen**, you can work with meshes, lights, and design levels for
 3D games. Press :kbd:`F2` (:kbd:`Alt + 2` on macOS) to access it.
 
 .. image:: img/editor_intro_workspace_3d.png
@@ -114,9 +114,9 @@ options related to the 3D view.
 .. image:: img/editor_intro_3d_viewport_perspective.png
 
 .. note:: Read :ref:`doc_introduction_to_3d` for more detail about the **3D
-          workspace**.
+          main screen**.
 
-The **Script** workspace is a complete code editor with a debugger, rich
+The **Script screen** is a complete code editor with a debugger, rich
 auto-completion, and built-in code reference. Press :kbd:`F3` (:kbd:`Alt + 3`
 on macOS) to access it.
 
@@ -139,8 +139,10 @@ You can search for information about a class, method, property, constant, or
 signal by:
 
 1. Pressing :kbd:`Shift + F1` anywhere in the editor.
-2. Clicking the "Search Help" button in the top-right of the Script workspace.
+2. Clicking the "Search Help" button in the top-right of the Script main screen.
 3. Clicking on the Help menu and Search.
+4. Clicking while pressing the :kbd:`Ctrl` key on a built-in variable or
+   function name in the script editor.
 
 
 .. image:: img/editor_intro_search_help_button.png
@@ -150,6 +152,6 @@ also use it to browse available objects and methods.
 
 .. image:: img/editor_intro_search_help.png
 
-Double-click on an item to open the corresponding page in the script workspace.
+Double-click on an item to open the corresponding page in the script main screen.
 
 .. image:: img/editor_intro_help_class_animated_sprite.png

@@ -22,7 +22,7 @@ programming skills or a developer to port the game for you.
 .. note:: The Godot team can't provide an open-source console export due to the
           licensing terms imposed by console manufacturers. Regardless of the
           engine you use, though, releasing games on consoles is always a lot of
-          work. You can read more on that here:
+          work. You can read more on that here: :ref:`doc_consoles`.
 
 What can the engine do?
 -----------------------
@@ -56,9 +56,9 @@ editor, a shader editor, a debugger, a profiler, and more.
 
 .. image:: img/introduction_editor.png
 
-The team strives to offer a complete game creation package with a consistent
-user experience. While there is always room for improvement, the user interface
-keeps getting refined.
+The team strives to offer a feature-rich game editor with a consistent user
+experience. While there is always room for improvement, the user interface keeps
+getting refined.
 
 Of course, if you prefer, you can work with external programs. We officially
 support importing 3D scenes designed in Blender_ and maintain plugins to code in
@@ -73,7 +73,7 @@ Programming languages
 Let's talk about the available programming languages.
 
 You can code your games using :ref:`GDScript <toc-learn-scripting-gdscript>`, a
-Godot-specific, a tightly integrated language with a lightweight syntax, or
+Godot-specific and tightly integrated language with a lightweight syntax, or
 :ref:`C# <toc-learn-scripting-C#>`, which is popular in the games industry.
 These are the two main scripting languages we support.
 
