@@ -207,9 +207,9 @@ Finally, the longest script, ``Player.gd``.
            direction.x += 1
        if Input.is_action_pressed("move_left"):
            direction.x -= 1
-       if Input.is_action_pressed("move_down"):
+       if Input.is_action_pressed("move_back"):
            direction.z += 1
-       if Input.is_action_pressed("move_up"):
+       if Input.is_action_pressed("move_forward"):
            direction.z -= 1
 
        if direction.length() > 0:

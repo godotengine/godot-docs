@@ -51,11 +51,11 @@ using the global ``Input`` object, in ``_physics_process()``.
            direction.x += 1
        if Input.is_action_pressed("move_left"):
            direction.x -= 1
-       if Input.is_action_pressed("move_down"):
+       if Input.is_action_pressed("move_back"):
            # Notice how we are working with the vector's x and z axes.
            # In 3D, the XZ plane is the ground plane.
            direction.z += 1
-       if Input.is_action_pressed("move_up"):
+       if Input.is_action_pressed("move_forward"):
            direction.z -= 1
 
 Here, we're going to make all calculations using the ``_physics_process()``
@@ -112,17 +112,18 @@ fall speed separately. Be sure to go back one tab so the lines are inside the
 
 ::
 
-       #if direction.length() > 0:
-           #direction = direction.normalized()
-           #$Pivot.look_at(translation + direction, Vector3.UP)
+    func _physics_process(delta):_
+        #...
+        if direction.length() > 0:
+            #...
 
-       # Ground velocity
-       velocity.x = direction.x * speed
-       velocity.z = direction.z * speed
-       # Vertical velocity
-       velocity.y -= fall_acceleration * delta
-       # Moving the character
-       velocity = move_and_slide(velocity, Vector3.UP)
+        # Ground velocity
+        velocity.x = direction.x * speed
+        velocity.z = direction.z * speed
+        # Vertical velocity
+        velocity.y -= fall_acceleration * delta
+        # Moving the character
+        velocity = move_and_slide(velocity, Vector3.UP)
 
 For the vertical velocity, we subtract the fall acceleration multiplied by the
 delta time every frame. Notice the use of the ``-=`` operator, which is a
@@ -171,9 +172,9 @@ Here is the complete ``Player.gd`` code for reference.
            direction.x += 1
        if Input.is_action_pressed("move_left"):
            direction.x -= 1
-       if Input.is_action_pressed("move_down"):
+       if Input.is_action_pressed("move_back"):
            direction.z += 1
-       if Input.is_action_pressed("move_up"):
+       if Input.is_action_pressed("move_forward"):
            direction.z -= 1
 
        if direction.length() > 0:

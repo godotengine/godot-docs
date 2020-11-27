@@ -94,8 +94,8 @@ can bind keys to these actions.
 Godot projects come with some predefined actions designed for user interface
 design, which we could use here. But we're defining our own to support gamepads.
 
-We're going to name our actions ``move_left``, ``move_right``, ``move_up``,
-``move_down``, and ``jump``.
+We're going to name our actions ``move_left``, ``move_right``, ``move_forward``,
+``move_back``, and ``jump``.
 
 To add an action, write its name in the bar at the top and press Enter.
 
