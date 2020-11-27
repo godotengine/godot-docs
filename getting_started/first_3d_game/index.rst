@@ -62,5 +62,6 @@ Contents
    06.jump_and_squash
    07.killing_player
    08.score_and_replay
+   09.adding_animations
 
 .. |image0| image:: img/squash-the-creeps-final.gif
