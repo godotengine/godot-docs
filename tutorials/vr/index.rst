@@ -8,3 +8,4 @@ VR
    vr_primer
    vr_starter_tutorial/index
    developing_for_oculus_quest
+   vr_particle_tutorial/index
