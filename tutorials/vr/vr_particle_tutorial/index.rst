@@ -1,5 +1,5 @@
 How to make a Cosmic Sugar clone
-===================
+================================
 
 .. toctree::
    :maxdepth: 1
