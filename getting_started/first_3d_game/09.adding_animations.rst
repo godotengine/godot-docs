@@ -190,7 +190,7 @@ vector, add the following code.
 
    func _physics_process(delta):
        #...
-       #if direction.length() > 0:
+       #if direction != Vector3.ZERO:
            #...
            $AnimationPlayer.playback_speed = 4
        else:
@@ -280,7 +280,7 @@ Here's the *Player* script.
        if Input.is_action_pressed("move_forward"):
            direction.z -= 1
 
-       if direction.length() > 0:
+       if direction != Vector3.ZERO:
            direction = direction.normalized()
            $Pivot.look_at(translation + direction, Vector3.UP)
            $AnimationPlayer.playback_speed = 4

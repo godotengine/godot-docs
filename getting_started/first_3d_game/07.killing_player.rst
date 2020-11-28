@@ -212,7 +212,7 @@ Finally, the longest script, ``Player.gd``.
        if Input.is_action_pressed("move_forward"):
            direction.z -= 1
 
-       if direction.length() > 0:
+       if direction != Vector3.ZERO:
            direction = direction.normalized()
            $Pivot.look_at(translation + direction, Vector3.UP)
 

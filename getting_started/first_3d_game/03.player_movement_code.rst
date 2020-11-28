@@ -85,7 +85,7 @@ call its ``normalize()`` method.
    #func _physics_process(delta):
        #...
 
-       if direction.length() > 0:
+       if direction != Vector3.ZERO:
            direction = direction.normalized()
            $Pivot.look_at(translation + direction, Vector3.UP)
 
@@ -114,7 +114,7 @@ fall speed separately. Be sure to go back one tab so the lines are inside the
 
     func _physics_process(delta):_
         #...
-        if direction.length() > 0:
+        if direction != Vector3.ZERO:
             #...
 
         # Ground velocity
@@ -177,7 +177,7 @@ Here is the complete ``Player.gd`` code for reference.
        if Input.is_action_pressed("move_forward"):
            direction.z -= 1
 
-       if direction.length() > 0:
+       if direction != Vector3.ZERO:
            direction = direction.normalized()
            $Pivot.look_at(translation + direction, Vector3.UP)
 
