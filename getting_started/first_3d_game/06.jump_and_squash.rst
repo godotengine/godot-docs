@@ -261,7 +261,7 @@ destroy the mob.
 We will use the signal to add points to the score in the next lesson.
 
 With that, you should be able to kill monsters by jumping on them. You can press
-F5 to try the game and set ``Main.tscn`` as your project's main scene.
+:kbd:`F5` to try the game and set ``Main.tscn`` as your project's main scene.
 
 However, the player won't die yet. We'll work on that in the next part.
 

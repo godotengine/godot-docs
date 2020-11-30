@@ -229,7 +229,7 @@ Let's first split the 3D view to be able to freely navigate the scene and see
 what the camera sees.
 
 In the toolbar right above the viewport, click on *View*, then *2 Viewports*.
-You can also press Ctrl 2 (Cmd 2 on MacOS).
+You can also press :kbd:`Ctrl + 2` (:kbd:`Cmd + 2` on MacOS).
 
 |image5|
 
@@ -249,7 +249,7 @@ if it was attached to a crane.
 
 |image8|
 
-You can run the scene by pressing F6 and press the arrow keys to move the
+You can run the scene by pressing :kbd:`F6` and press the arrow keys to move the
 character.
 
 |image9|

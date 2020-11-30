@@ -117,8 +117,8 @@ Move the time cursor to the end of the animation, at ``1.2`` seconds. Set the Y
 translation to about ``0.35`` and the X rotation to ``-9`` degrees. Once again,
 create a key for both properties.
 
-You can preview the result by clicking the play button or pressing Shift
-D. Click the stop button or press S to stop playback.
+You can preview the result by clicking the play button or pressing :kbd:`Shift + D`.
+Click the stop button or press :kbd:`S` to stop playback.
 
 |image15|
 

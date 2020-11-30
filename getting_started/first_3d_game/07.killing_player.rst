@@ -76,7 +76,7 @@ a ``die()`` function that helps us put a descriptive label on the code.
    func _on_MobDetector_body_entered(_body):
        die()
 
-Try the game again by pressing F5. If everything is set up correctly,
+Try the game again by pressing :kbd:`F5`. If everything is set up correctly,
 the character should die when an enemy runs into it.
 
 However, note that this depends entirely on the size and position of the
