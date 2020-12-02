@@ -21,7 +21,6 @@ where appropriate.
    scripting_languages
    scripting_first_script
    scripting_player_input
-   scripting_continued
    signals
    your_first_game
    exporting
