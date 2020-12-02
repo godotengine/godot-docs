@@ -50,8 +50,7 @@ if you need a quick writeup about Godot Engine.
     Freedom Conservancy <https://sfconservancy.org>`_ not-for-profit.
 
 For a more in-depth view of the engine, you are encouraged to read this
-documentation further, especially the :ref:`Step by step
-<toc-learn-step_by_step>` tutorial.
+documentation further, especially the :ref:`Getting Started <sec-learn>` series.
 
 About the documentation
 -----------------------

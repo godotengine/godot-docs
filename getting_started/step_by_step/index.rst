@@ -5,7 +5,6 @@ Step by step
    :maxdepth: 1
    :name: toc-learn-step_by_step
 
-   intro_to_the_editor_interface
    scenes_and_nodes
    instancing
    instancing_continued
