@@ -34,7 +34,7 @@ images and sounds you'll be using to make the game. Unzip these files in your
 project folder.
 
 .. note:: For this tutorial, we will assume you are familiar with the
-          Godot editor. If you haven't read :ref:`doc_scenes_and_nodes`, do so now
+          Godot editor. If you haven't read :ref:`doc_nodes_and_scenes`, do so now
           for an explanation of setting up a project and using the editor.
 
 This game is designed for portrait mode, so we need to adjust the size of the
