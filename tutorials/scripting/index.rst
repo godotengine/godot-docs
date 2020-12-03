@@ -30,6 +30,8 @@ Some features are specific to the engine and are available in all supported
 languages. Whether you code in GDScript, C#, or another language, the pages
 below will help you make the most of Godot.
 
+.. To split and organize better, into some related toctrees?
+
 .. toctree::
    :maxdepth: 1
    :name: toc-scripting-core-features
@@ -45,3 +47,7 @@ below will help you make the most of Godot.
    change_scenes_manually
    instancing_with_signals
    pausing_games
+   filesystem
+   resources
+   singletons_autoload
+   scene_tree

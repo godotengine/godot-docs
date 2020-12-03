@@ -38,7 +38,7 @@ Here's a sample on how to write and read from a file:
 Tutorials
 ---------
 
-- :doc:`../getting_started/step_by_step/filesystem`
+- :doc:`../tutorials/scripting/filesystem`
 
 Properties
 ----------
