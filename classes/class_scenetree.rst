@@ -25,7 +25,7 @@ You can also use the ``SceneTree`` to organize your nodes into groups: every nod
 Tutorials
 ---------
 
-- :doc:`../getting_started/step_by_step/scene_tree`
+- :doc:`../tutorials/scripting/scene_tree`
 
 - :doc:`../tutorials/rendering/multiple_resolutions`
 

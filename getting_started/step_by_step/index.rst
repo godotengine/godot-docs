@@ -12,15 +12,3 @@ Step by step
    scripting
    signals
    your_first_game
-   exporting
-   godot_design_philosophy
-   ui_introduction_to_the_ui_system
-   ui_main_menu
-   ui_game_user_interface
-   ui_code_a_life_bar
-   splash_screen
-   animations
-   resources
-   filesystem
-   scene_tree
-   singletons_autoload

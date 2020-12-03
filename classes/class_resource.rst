@@ -25,7 +25,7 @@ Resource is the base class for all Godot-specific resource types, serving primar
 Tutorials
 ---------
 
-- :doc:`../getting_started/step_by_step/resources`
+- :doc:`../tutorials/scripting/resources`
 
 - :doc:`../getting_started/workflow/best_practices/node_alternatives`
 
