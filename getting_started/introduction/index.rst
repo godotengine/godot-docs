@@ -21,3 +21,4 @@ make the most of your time learning it.
    key_concepts_overview
    first_look_at_the_editor
    learning_new_features
+   godot_design_philosophy

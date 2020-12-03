@@ -23,9 +23,3 @@ where appropriate.
    scripting_player_input
    signals
    your_first_game
-   exporting
-   godot_design_philosophy
-   resources
-   filesystem
-   scene_tree
-   singletons_autoload

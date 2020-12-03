@@ -1,3 +1,5 @@
+.. _doc_introduction_to_godot:
+
 Introduction to Godot
 =====================
 

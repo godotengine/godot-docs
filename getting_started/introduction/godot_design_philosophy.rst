@@ -3,7 +3,7 @@
 Godot's design philosophy
 =========================
 
-Now that you've gotten your hands wet, let's talk about Godot's design.
+Now that you've gotten your feet wet, let's talk about Godot's design.
 
 **Every game engine is different and fits different needs.**
 Not only do they offer a range of features, but the design of each engine
@@ -16,7 +16,7 @@ is it an engine comparison. To know if any engine can be a good fit for
 your project, you need to try it out for yourself and
 understand its design and limitations.
 
-Please watch `Discover Godot 3, the Free game engine <https://youtu.be/4v3qge-3CqQ>`_
+Please watch `Godot explained in 5 minutes <https://youtu.be/4v3qge-3CqQ>`_
 if you're looking for an overview of the engine's features.
 
 Object-oriented design and composition
