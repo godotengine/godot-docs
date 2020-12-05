@@ -106,16 +106,40 @@ information:
    clicking the Copy Error icon. Knowing what it says can help community members
    better identify how you triggered the error.
 
-3. If there is code involved, **share a code sample**. Often, other users won't
-   be able to help you fix a problem without seeing your code. Try to share the
-   code as text directly. To do so, you can copy and paste a short code snippet
-   in the chat directly, or use a website like `Pastebin
-   <https://pastebin.com/>`_ to share long files. A screenshot of the scene in
-   which your code runs also helps.
+3. If there is code involved, **share a code sample**. Other users won't be able
+   to help you fix a problem without seeing your code. Share the code as text
+   directly. To do so, you can copy and paste a short code snippet in a chat
+   box, or use a website like `Pastebin <https://pastebin.com/>`_ to share long
+   files.
 
-4. If you're not using the stable version of Godot, please mention the version
+4. **Share a screenshot** of your *Scene* dock along with your written code. Most of
+   the code you write affects nodes in your scenes. As a result, you should
+   think of those scenes as part of your source code.
+
+   .. image:: img/key_concepts_scene_tree.png
+
+   Also, please don't take a picture with your phone, the low quality and screen
+   reflections can make it hard to understand the image. Your operating system
+   should have a built-in tool to take screenshots with the :kbd:`PrtSc` (Print
+   Screen) key.
+
+   Alternatively, you can use a program like `ShareX <https://getsharex.com/>`_
+   on Windows or `FlameShot <https://flameshot.org/>`_ on Linux.
+
+5. Sharing a video of your running game can also be really **useful to
+   troubleshoot your game**. You can use programs like `OBS Studio
+   <https://obsproject.com/>`_ and `Screen to GIF
+   <https://www.screentogif.com/>`_ to capture your screen.
+
+   You can then use a service like `streamable <https://streamable.com/>`_ or a
+   cloud provider to upload and share your videos for free.
+
+6. If you're not using the stable version of Godot, please mention the version
    you're using. The answer can be different as available features and the
    interface evolve rapidly.
+
+Following these guidelines will maximize your chances of getting the answer
+you're looking for. They will save time both to you and the persons helping you.
 
 Community tutorials
 -------------------
