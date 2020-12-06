@@ -42,6 +42,19 @@ Linux, and ``%APPDATA%/Name`` on Windows. ``Name`` is based on the application
 name defined in the Project Settings, but you can override it on a per-platform
 basis using :ref:`feature tags <doc_feature_tags>`.
 
+Converting paths to absolute paths or "local" paths
+---------------------------------------------------
+
+You can use :ref:`ProjectSettings.globalize_path() <class_ProjectSettings_method_globalize_path>`
+to convert a "local" path like ``res://path/to/file.txt`` to an absolute OS path.
+For example, :ref:`ProjectSettings.globalize_path() <class_ProjectSettings_method_globalize_path>`
+can be used to open "local" paths in the OS file manager
+using :ref:`OS.shell_open() <class_OS_method_shell_open>` since it only accepts
+native OS paths.
+
+To convert an absolute OS path to a "local" path starting with ``res://``, use
+:ref:`ProjectSettings.localize_path() <class_ProjectSettings_method_localize_path>`.
+
 Editor data paths
 -----------------
 
