@@ -961,7 +961,7 @@ Produces:
 
 - :ref:`float<class_float>` **pow** **(** :ref:`float<class_float>` base, :ref:`float<class_float>` exp **)**
 
-Returns the result of ``x`` raised to the power of ``y``.
+Returns the result of ``base`` raised to the power of ``exp``.
 
 ::
 
