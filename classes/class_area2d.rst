@@ -425,7 +425,8 @@ Returns an individual bit on the collision mask. Describes whether this area wil
 
 - :ref:`Array<class_Array>` **get_overlapping_areas** **(** **)** |const|
 
-Returns a list of intersecting ``Area2D``\ s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
+Returns a list of intersecting ``Area2D``\ s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. WARNING - if area overlaps with other area(s) who have their mask set to collision layer of the calling area - they will be present in the returned list (see more in https://github.com/godotengine/godot/issues/7644) otherwise not. Consider using signals instead.
+
 
 ----
 
