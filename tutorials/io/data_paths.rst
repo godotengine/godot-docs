@@ -37,8 +37,8 @@ when the game is running, the project's file system will likely be read-only.
 
 The ``user://`` prefix points to a different directory on the user's device. On
 mobile and consoles, this path is unique to the project. On desktop, the engine
-stores user files in ``~/.local/share/godot/app_userdata/Name`` on macOS and
-Linux, and ``%APPDATA%/Name`` on Windows. ``Name`` is based on the application
+stores user files in ``~/.local/share/godot/app_userdata/Name`` on
+Linux, ``Library/Application\ Support/Godot/app_userdata`` on Mac OSX (since Catalina) and ``%APPDATA%/Name`` on Windows. ``Name`` is based on the application
 name defined in the Project Settings, but you can override it on a per-platform
 basis using :ref:`feature tags <doc_feature_tags>`.
 
