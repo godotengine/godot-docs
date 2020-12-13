@@ -165,10 +165,10 @@ Baking quality
 ~~~~~~~~~~~~~~
 
 ``BakedLightmap`` uses, for simplicity, a voxelized version of the scene to compute
-lighting. Voxel size can be adjusted with the **Bake Subdiv** parameter.
+lighting. Voxel size can be adjusted with the **Bake Cell Size** parameter.
 More subdivision results in more detail, but also takes more time to bake.
 
-In general, the defaults are good enough. There is also a **Capture Subdivision**
+In general, the defaults are good enough. There is also a **Capture Cell Size**
 (that must always be equal to or less than the main subdivision), which is used
 for capturing light in dynamic objects (more on that later). Its default value
 is also good enough for most cases.
@@ -199,15 +199,15 @@ Configuring bake
 
 Several more options are present for baking:
 
-- **Bake Subdiv**: The Godot lightmapper uses a grid to transfer light information around; the default value is fine and should work for most cases. Increase it in case you want better lighting on small details or your scene is large.
-- **Capture Subdiv**: This is the grid used for real-time capture information (lighting dynamic objects). Default value is generally OK, it's usually smaller than Bake Subdiv and can't be larger than it.
+- **Bake Cell Size**: The Godot lightmapper uses a grid to transfer light information around; the default value is fine and should work for most cases. Increase it in case you want better lighting on small details or your scene is large.
+- **Capture Cell Size**: This is the grid used for real-time capture information (lighting dynamic objects). Default value is generally OK, it's usually smaller than Bake Cell Size and can't be larger than it.
 - **Bake Quality**: Three bake quality modes are provided, Low, Medium and High. Higher quality takes more time.
-- **Bake Mode**: The baker can use two different techniques: *Voxel Cone Tracing* (fast, but approximate), or *RayTracing* (slow, but accurate).
-- **Propagation**: Used for the *Voxel Cone Trace* mode. Works just like in ``GIProbe``.
-- **HDR**: If disabled, lightmaps are smaller, but can't capture any light over white (1.0).
+- **Bake Mode**: The baker can use two different techniques: *ConeTract* (fast, but approximate), or *RayTrace* (slow, but accurate). If you run into issues, switch the bake mode to *RayTrace*.
+- **Bake Propagation**: Used for the *Voxel Cone Trace* mode. Works just like in :ref:`GIProbe <doc_gi_probes>`.
+- **Bake Hdr**: If disabled, lightmaps are smaller, but can't capture any light over white (1.0).
+- **Bake Extents**: Size of the area affected (can be edited visually)
 - **Image Path**: Where lightmaps will be saved. By default, on the same directory as the scene ("."), but can be tweaked.
-- **Extents**: Size of the area affected (can be edited visually)
-- **Light Data**: Contains the light baked data after baking. Textures are saved to disk, but this also contains the capture data for dynamic objects, which can be a bit heavy. If you are using .tscn formats (instead of .scn), you can save it to disk.
+- **Light Data**: Contains the light baked data after baking. Textures are saved to disk, but this also contains the capture data for dynamic objects, which can be heavy. If you are using a scene in ``.tscn`` format, you should save this resource to an external binary ``.res`` file to avoid bloating the ``.tscn`` scene with binary data encoded in Base64.
 
 Dynamic objects
 ---------------
