@@ -31,8 +31,15 @@ Another reason is that the developer might prefer a specially-compiled
 binary, which is smaller in size, more optimized and does not include
 tools like the editor and debugger.
 
-Finally, Godot has a simple but efficient system for creating DLCs as
-extra package files.
+Finally, Godot has a simple but efficient system for
+:ref:`creating DLCs as extra package files <doc_exporting_pcks>`.
+
+.. warning::
+
+    Godot does not support loading PCK files larger than 2 GB yet. If your
+    exported project data is larger than 2 GB, you will need to split it into
+    several PCK files by :ref:`exporting additional PCKs <doc_exporting_pcks>`
+    and loading them at run-time.
 
 On mobile
 ~~~~~~~~~
