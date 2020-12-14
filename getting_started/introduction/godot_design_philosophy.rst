@@ -16,7 +16,8 @@ is it an engine comparison. To know if any engine can be a good fit for
 your project, you need to try it out for yourself and
 understand its design and limitations.
 
-Please watch `Godot explained in 5 minutes <https://youtu.be/4v3qge-3CqQ>`_
+Please watch
+`Godot explained in 5 minutes <https://www.youtube.com/watch?v=KjX5llYZ5eQ>`_
 if you're looking for an overview of the engine's features.
 
 Object-oriented design and composition
