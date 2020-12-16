@@ -70,6 +70,8 @@ has three methods for purchasing:
 -  ``Error purchase(Variant p_params);``
 -  ``Error request_product_info(Variant p_params);``
 -  ``Error restore_purchases();``
+-  ``void  set_auto_finish_transaction(bool b);``
+-  ``void  finish_transaction(String product_id);``
 
 and the pending_event interface
 
@@ -81,7 +83,7 @@ and the pending_event interface
 purchase
 ~~~~~~~~
 
-Purchases a product id through the Store Kit API.
+Purchases a product id through the Store Kit API. You have to call finish_transaction(product_id) once you receive a successful response or call set_auto_finish_transaction(true) prior to calling purchase. These two methods ensure the transaction is completed.
 
 Parameters
 ^^^^^^^^^^
@@ -169,6 +171,18 @@ The response events will be dictionaries with the following fields:
       "result": "ok",
       "product id": "product id of restored purchase"
     }
+    
+set_auto_finish_transaction
+~~~~~~~~~~~~~~~~~
+
+If set to true, Once a purchase is successful, your purchase will be 
+finalized automatically. Call this method prior to calling purchase.
+
+finish_transaction
+~~~~~~~~~~~~~~~~~
+
+If you don't want transactions to be automatically finalized, call this
+method after you receive a successful purchase response.
 
 Game Center
 -----------
