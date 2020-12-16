@@ -213,14 +213,12 @@ which is a good time to find the size of the game window:
 
     func _ready():
         screen_size = get_viewport_rect().size
-        hide() # Start the player hidden.
 
  .. code-tab:: csharp
 
     public override void _Ready()
     {
         screenSize = GetViewportRect().Size;
-        Hide(); // Start the player hidden.
     }
 
 Now we can use the ``_process()`` function to define what the player will do.
