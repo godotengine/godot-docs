@@ -177,14 +177,34 @@ The response events will be dictionaries with the following fields:
 set_auto_finish_transaction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If set to true, Once a purchase is successful, your purchase will be 
+If set to true, once a purchase is successful, your purchase will be 
 finalized automatically. Call this method prior to calling purchase.
+
+Parameters
+^^^^^^^^^^
+
+Takes a bool as a parameter, with one field, b, a bool specifying if 
+purchases should be automatically finalized. Example:
+
+::
+
+    InAppStore.set_auto_finish_transaction( true )
 
 finish_transaction
 ~~~~~~~~~~~~~~~~~~
 
 If you don't want transactions to be automatically finalized, call this
 method after you receive a successful purchase response.
+
+
+Parameters
+^^^^^^^^^^
+Takes a string as a parameter, with one field, product_id, a string 
+specifying what product to finalize the purchase on. Example:
+
+::
+
+    InAppStore.finish_transaction( "my_product1" )
 
 Game Center
 -----------
