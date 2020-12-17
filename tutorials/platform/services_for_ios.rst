@@ -70,8 +70,8 @@ has three methods for purchasing:
 -  ``Error purchase(Variant p_params);``
 -  ``Error request_product_info(Variant p_params);``
 -  ``Error restore_purchases();``
--  ``void  set_auto_finish_transaction(bool b);``
--  ``void  finish_transaction(String product_id);``
+-  ``void set_auto_finish_transaction(bool b);``
+-  ``void finish_transaction(String product_id);``
 
 and the pending_event interface
 
@@ -83,8 +83,8 @@ and the pending_event interface
 purchase
 ~~~~~~~~
 
-Purchases a product id through the Store Kit API. You have to call finish_transaction(product_id) once you 
-receive a successful response or call set_auto_finish_transaction(true) prior to calling purchase. 
+Purchases a product ID through the Store Kit API. You have to call ``finish_transaction(product_id)`` once you 
+receive a successful response or call ``set_auto_finish_transaction(true)`` prior to calling ``purchase()``.
 These two methods ensure the transaction is completed.
 
 Parameters
@@ -177,14 +177,14 @@ The response events will be dictionaries with the following fields:
 set_auto_finish_transaction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If set to true, once a purchase is successful, your purchase will be 
-finalized automatically. Call this method prior to calling purchase.
+If set to ``true``, once a purchase is successful, your purchase will be 
+finalized automatically. Call this method prior to calling ``purchase()``.
 
 Parameters
 ^^^^^^^^^^
 
-Takes a bool as a parameter, with one field, b, a bool specifying if 
-purchases should be automatically finalized. Example:
+Takes a boolean ``b`` as a parameter which specifies if purchases should be
+automatically finalized. Example:
 
 ::
 
@@ -199,8 +199,9 @@ method after you receive a successful purchase response.
 
 Parameters
 ^^^^^^^^^^
-Takes a string as a parameter, with one field, product_id, a string 
-specifying what product to finalize the purchase on. Example:
+
+Takes a string ``product_id`` as an argument. ``product_id`` specifies what product to
+finalize the purchase on. Example:
 
 ::
 
