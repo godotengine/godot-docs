@@ -178,7 +178,7 @@ header.
 
    Animation length
 
-Now move the sprite right, to its final positon. You can use the Move tool in the 
+Now move the sprite right, to its final position. You can use the Move tool in the 
 editor or set the Transform/Position/X value in the Inspector. 
 
 Click on the timeline header near the two-second mark in the animation panel 
