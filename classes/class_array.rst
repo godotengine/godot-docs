@@ -296,7 +296,8 @@ Returns ``true`` if the array contains the given value.
 
 - :ref:`int<class_int>` **hash** **(** **)**
 
-Returns a hashed integer value representing the array contents.
+Returns a hashed integer value representing the array and its contents.
+**Note:** Different arrays containing equal values can still yield different hashes. Only the very same array yields the same hash.
 
 ----
 
