@@ -84,9 +84,9 @@ at various points, and change their timing.
    The timeline in the animation panel
 
 Each line in the Animation Panel is an animation track that references a 
-Normal or Transform property of a node. The track's name or id is a path to 
-the node and its affected property. For example, the position track 
-in the illustration refers to to the Position Transform of the Sprite 
+Normal or Transform property of a node. Each track stores a path to 
+a node and its affected property. For example, the position track 
+in the illustration refers to to the ``position`` property of the Sprite 
 node.
 
 .. figure:: img/animation_normal_track.png
@@ -96,8 +96,8 @@ node.
 
 .. tip::
 
-   If you animate the wrong property, you can edit a track's path at any time;
-   just double click on it and type the new path. Play the animation using the
+   If you animate the wrong property, you can edit a track's path at any time
+   by double-clicking on it and typing the new path. Play the animation using the
    "Play from beginning" button |Play from beginning| (or pressing
    :kbd:`Shift + D` on keyboard) to see the changes instantly.
 
@@ -126,7 +126,7 @@ click Texture in the Inspector, and then click Load. Select the default Godot
 icon for the sprite's texture. 
 
 Select the AnimationPlayer node and click the "Animation" button in the
-animation editor. From the list select "New" (|Add Animation|) to add a new 
+animation editor. From the list, select "New" (|Add Animation|) to add a new 
 animation. Enter a name for the animation in the dialog box.
 
 .. figure:: img/animation_create_new_animation.png
@@ -147,11 +147,11 @@ toolbar:
 
 These switches and buttons allow you to add keyframes for the selected
 node's location, rotation, and scale. Since we are only animating the sprite's 
-position, make sure that only the location switch is selected. (The selected 
-switches are blue.)
+position, make sure that only the location switch is selected. The selected 
+switches are blue.
 
 Click on the key button to create the first keyframe. Since we don't have a 
-track set up for the Transform/Position property yet, Godot will offer to 
+track set up for the Position property yet, Godot will offer to 
 create it for us. Click **Create**. 
 
 Godot will create a new track and insert our first keyframe at the beginning of
@@ -165,11 +165,10 @@ the timeline:
 The second keyframe
 ~~~~~~~~~~~~~~~~~~~
 
-Now we need to set the our sprite's end location and how long it will take for 
-it to get there.
+We need to set our sprite's end location and how long it will take for it to get there.
 
 Let's say we want it to take two seconds to move between the points. By
-default the animation is set to last only one second, so change the animation 
+default, the animation is set to last only one second, so change the animation 
 length to 2 in the controls on the right side of the animation panel's timeline 
 header.
 
@@ -178,8 +177,8 @@ header.
 
    Animation length
 
-Now move the sprite right, to its final position. You can use the Move tool in the 
-editor or set the Transform/Position/X value in the Inspector. 
+Now, move the sprite right, to its final position. You can use the *Move tool* in the 
+toolbar or set the *Position*'s X value in the *Inspector*.
 
 Click on the timeline header near the two-second mark in the animation panel 
 and then click the key button in the toolbar to create the second keyframe.
@@ -280,13 +279,13 @@ loop:
 Keyframes for other properties
 ------------------------------
 
-Godot animation isn't restricted to transformation properties. You can create a 
-track and set keyframes to animate any property.
+Godot's animation system isn't restricted to position, rotation, and scale.
+You can animate any property.
 
 If you select your sprite while the animation panel is visible, Godot will 
-display a small keyframe button in the Inspector for each the sprite's 
-properties. Click on one of these buttons and Godot will automatically add a 
-track and keyframe to the current animation.
+display a small keyframe button in the *Inspector* for each of the sprite's 
+properties. Click on one of these buttons to add a track and keyframe to 
+the current animation.
 
 .. figure:: img/animation_properties_keyframe.png
    :alt: Keyframes for other properties
@@ -296,9 +295,8 @@ track and keyframe to the current animation.
 Edit keyframes
 --------------
 
-For advanced use you can click on a keyframe in the time line to display
-the keyframe editor in the Inspector. You can us this editor to directly edit
-the keyframe's values.
+You can click on a keyframe in the animation timeline to display and 
+edit its value in the *Inspector*.
 
 .. figure:: img/animation_keyframe_editor_key.png
    :alt: Keyframe editor editing a key
@@ -306,7 +304,7 @@ the keyframe's values.
    Keyframe editor editing a key
 
 You can also edit the easing value for a keyframe here by clicking and dragging 
-its easing setting. This tells Godot how to change the property values when it 
+its easing curve. This tells Godot how to interpolate the animated property when it 
 reaches this keyframe.
 
 You can tweak your animations this way until the movement "looks right."
