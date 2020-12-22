@@ -25,9 +25,9 @@ the entire reference on their own. Godot needs you, and all of us, to
 contribute.
 
 **Important:** If you plan to make large changes, you should create an issue on
- the `godot-docs repository <https://github.com/godotengine/godot-docs/>`_
- or comment on an existing issue. Doing so lets others know you're already
- taking care of a given class.
+the `godot-docs repository <https://github.com/godotengine/godot-docs/>`_
+or comment on an existing issue. Doing so lets others know you're already
+taking care of a given class.
 
 .. seealso::
 
