@@ -300,7 +300,8 @@ Returns ``true`` if the array contains the given value.
 
 - :ref:`int<class_int>` **hash** **(** **)**
 
-Returns a hashed integer value representing the array contents.
+Returns a hashed integer value representing the array and it's contents.
+**Note:** Arrays containing equal contents can still produce different hashes. Only the exact same array produces the same hashed integer value.
 
 ----
 
@@ -447,8 +448,7 @@ Sorts the array using a custom method. The arguments are an object that holds th
             if a[0] < b[0]:
                 return true
             return false
-    
+
     var my_items = [[5, "Potato"], [9, "Rice"], [4, "Tomato"]]
     my_items.sort_custom(MyCustomSorter, "sort_ascending")
     print(my_items) # Prints [[4, Tomato], [5, Potato], [9, Rice]].
-
