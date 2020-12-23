@@ -98,10 +98,11 @@ Start a terminal, go to the root dir of the engine source code and type:
 
 ::
 
-    scons -j8 platform=linuxbsd
+    scons -j`nproc` platform=linuxbsd
 
 A good rule of thumb for the ``-j`` (*jobs*) flag, is to have at least as many
 threads compiling Godot as you have cores in your CPU, if not one or two more.
+```nproc``` can be used to automatically use the number of cores your system has.
 Feel free to add the ``-j`` option to any SCons command you see below.
 
 .. note::
