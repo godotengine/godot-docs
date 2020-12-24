@@ -104,7 +104,7 @@ A good rule of thumb for the ``-j`` (*jobs*) flag, is to have at least as many
 threads compiling Godot as you have cores in your CPU, if not one or two more.
 Feel free to add the ``-j`` option to any SCons command you see below.
 
-You can automatically use all available cores with command substitution.
+You can automatically use all available CPU cores with command substitution.
 
 On Linux, you can use ``nproc``:
 
@@ -112,7 +112,7 @@ On Linux, you can use ``nproc``:
 
     scons -j$(nproc)
 
-On BSD, you can use ``sysctl -n hw.ncpu``:
+On \*BSD, you can use ``sysctl -n hw.ncpu``:
 
 ::
 
