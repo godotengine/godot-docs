@@ -106,13 +106,13 @@ Feel free to add the ``-j`` option to any SCons command you see below.
 
 You can automatically use all available cores with command substitution.
 
-On Linux you can use ``nproc``:
+On Linux, you can use ``nproc``:
 
 ::
 
     scons -j$(nproc)
 
-On BSD you can use ``sysctl -n hw.ncpu``:
+On BSD, you can use ``sysctl -n hw.ncpu``:
 
 ::
 
