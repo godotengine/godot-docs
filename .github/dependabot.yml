@@ -8,3 +8,6 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    ignore:
+      # read the docs is staying on v1
+      - dependency-name: "sphinx"
