@@ -3,7 +3,7 @@
 # Sync with readthedocs:
 # https://github.com/readthedocs/readthedocs.org/blob/master/requirements/pip.txt
 # https://github.com/readthedocs/readthedocs.org/blob/master/requirements/local-docs-build.txt
-sphinx==1.8.5  # pyup: <2.0.0
+sphinx==3.4.1  # pyup: <2.0.0
 sphinx_rtd_theme==0.4.3
 
 # Code tabs extension for GDScript/C#
