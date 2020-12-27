@@ -117,6 +117,8 @@ Here is a non-exhaustive list of beautifier plugins for some IDEs:
 - Visual Studio Code: `Clang-Format <https://marketplace.visualstudio.com/items?itemName=xaver.clang-format>`__
 - Visual Studio: `ClangFormat <https://marketplace.visualstudio.com/items?itemName=LLVMExtensions.ClangFormat>`__
 - vim: `vim-clang-format <https://github.com/rhysd/vim-clang-format>`__
+- CLion: Starting from version ``2019.1``, no plugin is required. Instead, enable
+  `ClangFormat <https://www.jetbrains.com/help/clion/clangformat-as-alternative-formatter.html#clion-support>`__
 
 (Pull requests welcome to extend this list with tested plugins.)
 
@@ -159,7 +161,7 @@ Example:
     /*                      https://godotengine.org                          */
     /*************************************************************************/
     /* Copyright (c) 2007-2020 Juan Linietsky, Ariel Manzur.                 */
-    /* Copyright (c) 2014-2020 Godot Engine contributors (cf. AUTHORS.md)    */
+    /* Copyright (c) 2014-2020 Godot Engine contributors (cf. AUTHORS.md).   */
     /*                                                                       */
     /* Permission is hereby granted, free of charge, to any person obtaining */
     /* a copy of this software and associated documentation files (the       */
@@ -204,7 +206,7 @@ Example:
     /*                      https://godotengine.org                          */
     /*************************************************************************/
     /* Copyright (c) 2007-2020 Juan Linietsky, Ariel Manzur.                 */
-    /* Copyright (c) 2014-2020 Godot Engine contributors (cf. AUTHORS.md)    */
+    /* Copyright (c) 2014-2020 Godot Engine contributors (cf. AUTHORS.md).   */
     /*                                                                       */
     /* Permission is hereby granted, free of charge, to any person obtaining */
     /* a copy of this software and associated documentation files (the       */
