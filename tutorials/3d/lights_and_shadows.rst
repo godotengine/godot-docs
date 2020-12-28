@@ -237,6 +237,6 @@ Godot supports no filter, PCF5 and PCF13.
 
 .. image:: img/shadow_pcf1.png
 
-It affects the blockyness of the shadow outline:
+It affects the blockiness of the shadow outline:
 
 .. image:: img/shadow_pcf2.png

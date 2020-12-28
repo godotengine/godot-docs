@@ -25,22 +25,22 @@ are that:
 -  The language is easy to get started with.
 -  Most code can be written and changed quickly and without hassle.
 -  Less code written means less errors & mistakes to fix.
--  Easier to read the code (less clutter).
+-  The code is easy to read (little clutter).
 -  No compilation is required to test.
 -  Runtime is tiny.
--  Duck-typing and polymorphism by nature.
+-  It has duck-typing and polymorphism by nature.
 
 While the main disadvantages are:
 
 -  Less performance than statically typed languages.
--  More difficult to refactor (symbols can't be traced)
+-  More difficult to refactor (symbols can't be traced).
 -  Some errors that would typically be detected at compile time in
    statically typed languages only appear while running the code
    (because expression parsing is more strict).
 -  Less flexibility for code-completion (some variable types are only
    known at run-time).
 
-This, translated to reality, means that Godot+GDScript are a combination
+This, translated to reality, means that Godot used with GDScript is a combination
 designed to create games quickly and efficiently. For games that are very
 computationally intensive and can't benefit from the engine built-in
 tools (such as the Vector types, Physics Engine, Math library, etc), the

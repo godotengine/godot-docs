@@ -264,7 +264,7 @@ return the array's size.
 
 .. note::
 
-    If you use an index below 0 or greater than array size - the shader will
+    If you use an index either below 0 or greater than array size - the shader will
     crash and break rendering. To prevent this, use ``length()``, ``if``, or
     ``clamp()`` functions to ensure the index is between 0 and the array's
     length. Always carefully test and check your code. If you pass a constant

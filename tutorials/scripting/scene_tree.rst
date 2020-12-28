@@ -132,7 +132,7 @@ the current node.
 Changing current scene
 ----------------------
 
-After a scene is loaded, it is often desired to change this scene for
+After a scene is loaded, you may want to change this scene for
 another one. The main way to do this is to use the
 :ref:`SceneTree.change_scene() <class_SceneTree_method_change_scene>`
 function:

@@ -41,7 +41,7 @@ of blur at no cost.
 .. note::
 
    Mipmaps are not generated in GLES2 due to poor performance and compatibility with older
-   devices. 
+   devices.
 
 SCREEN_TEXTURE example
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -100,13 +100,13 @@ With correct back-buffer copying, the two spheres blend correctly:
 
 .. image:: img/texscreen_demo2.png
 
-In 3D, there is less flexibility to solve this particular issue because the 
-``SCREEN_TEXTURE`` is only captured once. Be careful when using 
+In 3D, there is less flexibility to solve this particular issue because the
+``SCREEN_TEXTURE`` is only captured once. Be careful when using
 ``SCREEN_TEXTURE`` in 3D as it won't capture transparent objects and may capture
 some opaque objects that are in front of the object.
 
 You can reproduce the back-buffer logic in 3D by creating a :ref:`Viewport <class_Viewport>`
-with a camera in the same position as your object, and then use the 
+with a camera in the same position as your object, and then use the
 :ref:`Viewport's <class_Viewport>` texture instead of ``SCREEN_TEXTURE``.
 
 Back-buffer logic

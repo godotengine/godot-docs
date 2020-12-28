@@ -6,7 +6,7 @@ GDNative C example
 Introduction
 ------------
 
-This tutorial will introduce you to the bare minimum required to create GDNative
+This tutorial introduces the bare minimum required to create GDNative
 modules. This should be your starting point into the world of GDNative.
 Understanding the contents of this tutorial will help you in understanding all
 that is to come after this.
@@ -515,7 +515,7 @@ select our ``.gdnlib`` file by clicking on *Library* and selecting *Load*:
     The *Class Name* must have the same spelling as the one given in ``godot_nativescript_init``
     when registering the class.
 
-   
+
 Finally, click on the save icon and save this as ``bin/simple.gdns``:
 
 .. image:: img/save_gdns.gif
