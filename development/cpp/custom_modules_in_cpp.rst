@@ -52,7 +52,7 @@ located):
     C:\godot\modules> cd summator
     C:\godot\modules\summator>
 
-Inside we will create a simple summator class:
+Inside we will create a summator class:
 
 .. code-block:: cpp
 
@@ -196,8 +196,8 @@ Example `SCsub` with custom flags:
     module_env.Append(CCFLAGS=['-O2']) # Flags for C and C++ code
     module_env.Append(CXXFLAGS=['-std=c++11']) # Flags for C++ code only
 
-And finally, the configuration file for the module, this is a simple
-python script that must be named ``config.py``:
+And finally, the configuration file for the module, this is a
+Python script that must be named ``config.py``:
 
 .. code-block:: python
 
@@ -391,7 +391,7 @@ We now need to add this method to ``register_types`` header and source files:
 Improving the build system for development
 ------------------------------------------
 
-So far we defined a clean and simple SCsub that allows us to add the sources
+So far we defined a clean SCsub that allows us to add the sources
 of our new module as part of the Godot binary.
 
 This static approach is fine when we want to build a release version of our

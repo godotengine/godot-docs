@@ -21,7 +21,7 @@ planes, 3D geometry (to determine where each face or vertex is siding),
 etc. A **normal** *is* a **unit vector**, but it's called *normal*
 because of its usage. (Just like we call (0,0) the Origin!).
 
-It's as simple as it looks. The plane passes by the origin and the
+The plane passes by the origin and the
 surface of it is perpendicular to the unit vector (or *normal*). The
 side towards the vector points to is the positive half-space, while the
 other side is the negative half-space. In 3D this is exactly the same,
@@ -142,10 +142,9 @@ So, using the format below will work as expected:
 
     var invertedPlane = -plane;
 
-So, remember, a plane is just that and its main practical use is
-calculating the distance to it. So, why is it useful to calculate the
-distance from a point to a plane? It's extremely useful! Let's see some
-simple examples..
+So, remember, the plane's main practical use is that we can
+calculate the distance to it. So, when is it useful to calculate the
+distance from a point to a plane? Let's see some examples.
 
 Constructing a plane in 2D
 --------------------------
@@ -218,7 +217,7 @@ further down.
 Some examples of planes
 -----------------------
 
-Here is a simple example of what planes are useful for. Imagine you have
+Here is an example of what planes are useful for. Imagine you have
 a `convex <https://www.mathsisfun.com/definitions/convex.html>`__
 polygon. For example, a rectangle, a trapezoid, a triangle, or just any
 polygon where no faces bend inwards.

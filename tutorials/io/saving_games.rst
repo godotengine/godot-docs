@@ -199,8 +199,8 @@ way to pull the data out of the file as well.
     }
 
 
-Game saved! Loading is fairly simple as well. For that, we'll read each
-line, use :ref:`parse_json()` to read it back to a dict, and then iterate over
+Game saved! Now, to load, we'll read each
+line, use ``parse_json()`` to read it back to a dict, and then iterate over
 the dict to read our values. But we'll need to first create the object
 and we can use the filename and parent values to achieve that. Here is our
 load function:

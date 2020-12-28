@@ -209,7 +209,7 @@ We first determine the angle of each point, between the starting and ending angl
 
 The reason why each angle is decreased by 90° is that we will compute 2D positions
 out of each angle using trigonometry (you know, cosine and sine stuff...). However,
-to be simple, ``cos()`` and ``sin()`` use radians, not degrees. The angle of 0° (0 radian)
+``cos()`` and ``sin()`` use radians, not degrees. The angle of 0° (0 radian)
 starts at 3 o'clock, although we want to start counting at 12 o'clock. So we decrease
 each angle by 90° in order to start counting from 12 o'clock.
 

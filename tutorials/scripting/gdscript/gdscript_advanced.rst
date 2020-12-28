@@ -22,7 +22,7 @@ Pros & cons of dynamic typing
 GDScript is a Dynamically Typed language. As such, its main advantages
 are that:
 
--  The language is simple and easy to learn.
+-  The language is easy to get started with.
 -  Most code can be written and changed quickly and without hassle.
 -  Less code written means less errors & mistakes to fix.
 -  Easier to read the code (less clutter).
@@ -204,7 +204,7 @@ And in GDScript:
 
 ::
 
-    var array = [10, "hello", 40, 60] # Simple, and can mix types.
+    var array = [10, "hello", 40, 60] # You can mix types.
     array.resize(3) # Can be resized.
     use_array(array) # Passed as reference.
     # Freed when no longer in use.
@@ -246,7 +246,7 @@ Example of Dictionary:
 
 ::
 
-    var d = {"name": "John", "age": 22} # Simple syntax.
+    var d = {"name": "John", "age": 22}
     print("Name: ", d["name"], " Age: ", d["age"])
 
 Dictionaries are also dynamic, keys can be added or removed at any point
@@ -259,7 +259,7 @@ at little cost:
     d.erase("name") # Removal.
 
 In most cases, two-dimensional arrays can often be implemented more
-easily with dictionaries. Here's a simple battleship game example:
+easily with dictionaries. Here's a battleship game example:
 
 ::
 

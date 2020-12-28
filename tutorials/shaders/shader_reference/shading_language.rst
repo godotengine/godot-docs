@@ -268,7 +268,7 @@ return the array's size.
     crash and break rendering. To prevent this, use ``length()``, ``if``, or
     ``clamp()`` functions to ensure the index is between 0 and the array's
     length. Always carefully test and check your code. If you pass a constant
-    expression or a simple number, the editor will check its bounds to prevent
+    expression or a number, the editor will check its bounds to prevent
     this crash.
 
 Global arrays

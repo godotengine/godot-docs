@@ -98,7 +98,7 @@ of it, and it can always be accessed by calling
 
 In any case, while changing the root Viewport params is probably the
 most flexible way to deal with the problem, it can be a lot of work,
-code and guessing, so Godot provides a simple set of parameters in the
+code and guessing, so Godot provides a set of parameters in the
 project settings to handle multiple resolutions.
 
 Stretch settings

@@ -13,7 +13,7 @@ This is a great opportunity for both demos and full games, but used to come with
 WebSocket
 ^^^^^^^^^
 
-When the WebSocket protocol was standardized in December 2011, it allowed browsers to create stable and bidirectional connections to a WebSocket server. The protocol is quite simple, but a very powerful tool to send push notifications to browsers, and has been used to implement chats, turn-based games, etc.
+When the WebSocket protocol was standardized in December 2011, it allowed browsers to create stable and bidirectional connections to a WebSocket server. The protocol is a very powerful tool to send push notifications to browsers, and has been used to implement chats, turn-based games, etc.
 
 WebSockets, though, still use a TCP connection, which is good for reliability but not for latency, so not good for real-time applications like VoIP and fast-paced games.
 

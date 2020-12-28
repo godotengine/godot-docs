@@ -9,9 +9,9 @@ resources simplifies project organization and asset management in complex games.
 
 There are, of course, always drawbacks:
 
-* There is an extra layer of complexity
-* Performance is lower than using simple APIs directly
-* It is not possible to use multiple threads to control them
+* There is an extra layer of complexity.
+* Performance is lower than when using simple APIs directly.
+* It is not possible to use multiple threads to control them.
 * More memory is needed.
 
 In many cases, this is not really a problem (Godot is very optimized, and most operations are handled
@@ -83,7 +83,7 @@ functions should always be used for creating and controlling new ones and intera
 Creating a sprite
 -----------------
 
-This is a simple example of how to create a sprite from code and move it using the low-level
+This is an example of how to create a sprite from code and move it using the low-level
 :ref:`CanvasItem <class_CanvasItem>` API.
 
 .. tabs::
