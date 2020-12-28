@@ -17,7 +17,7 @@ Godot supports threads and provides many handy functions to use them.
 Creating a Thread
 -----------------
 
-Creating a thread is very simple, just use the following code:
+To create a thread, use the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

@@ -154,7 +154,7 @@ Constructing them in 2D is easy, this can be done from either a normal
 (unit vector) and a point, or from two points in space.
 
 In the case of a normal and a point, most of the work is done, as the
-normal is already computed, so just calculate D from the dot product of
+normal is already computed, so calculate D from the dot product of
 the normal and the point.
 
 .. tabs::

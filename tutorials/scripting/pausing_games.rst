@@ -84,7 +84,7 @@ and set its pause mode to "Process" then hide it:
 
 .. image:: img/pause_popup.png
 
-Just by setting the root of the pause popup to "Process", all children
+By setting the root of the pause popup to "Process", all children
 and grandchildren will inherit that state. This way, this branch of the
 scene tree will continue working when paused.
 

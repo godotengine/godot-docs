@@ -851,5 +851,5 @@ We hope the above example showed you the basics. You can
 build upon this example to create full-fledged scripts to control nodes in Godot
 using C++.
 
-You should be able to edit and recompile the plugin while the Godot editor
-remains open; just rerun the project after the library has finished building.
+To edit and recompile the plugin while the Godot editor
+remains open, rerun the project after the library has finished building.

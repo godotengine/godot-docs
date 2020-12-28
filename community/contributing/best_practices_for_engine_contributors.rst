@@ -148,7 +148,7 @@ problems (as described in #2) also make their appearance on stage.
 .. image:: img/best_practices5.png
 
 The main problem is that, in reality, it rarely works this way. Most of the
-time, just writing an individual solution to each problem results in code that
+time, writing an individual solution to each problem results in code that
 is simpler and more maintainable.
 
 Additionally, solutions that target individual problems are better for the
@@ -225,7 +225,7 @@ but this path is always the advised one.
 Not every problem has a simple solution and, many times, the right choice is to
 use a third party library to solve the problem.
 
-As Godot requires to be shipped in a large amount of platforms, we just can't
+As Godot requires to be shipped in a large amount of platforms, we can't
 link libraries dynamically. Instead, we bundle them in our source tree.
 
 .. image:: img/best_practices8.png

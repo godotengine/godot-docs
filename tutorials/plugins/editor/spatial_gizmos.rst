@@ -56,7 +56,7 @@ This would be a basic setup:
         remove_spatial_gizmo_plugin(gizmo_plugin)
 
 
-For simple gizmos, just inheriting :ref:`EditorSpatialGizmoPlugin <class_EditorSpatialGizmoPlugin>`
+For simple gizmos, inheriting :ref:`EditorSpatialGizmoPlugin <class_EditorSpatialGizmoPlugin>`
 is enough. If you want to store some per-gizmo data or you are porting a Godot 3.0 gizmo
 to 3.1+, you should go with the second approach.
 
