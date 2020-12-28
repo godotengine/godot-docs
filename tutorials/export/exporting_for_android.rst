@@ -88,7 +88,8 @@ If you don't provide some of the requested icons, Godot will replace them using 
 - **Adaptive Icon Foreground:** Provided foreground icon -> Provided main icon -> Project icon -> Default Godot foreground icon.
 - **Adaptive Icon Background:** Provided background icon -> Default Godot background icon.
 
-It's highly recommended to provide all the requested icons with their specified resolutions. This way, your application will look great on all Android devices and versions.
+It's highly recommended to provide all the requested icons with their specified resolutions.
+This way, your application will look great on all Android devices and versions.
 
 Exporting for Google Play Store
 -------------------------------
