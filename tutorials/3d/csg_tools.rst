@@ -100,7 +100,7 @@ Processing order
 ~~~~~~~~~~~~~~~~
 
 Every CSG node will first process its children nodes and their operations:
-union, intersection or subtraction, in tree order, and apply them to itself one
+union, intersection, or subtraction, in tree order, and apply them to itself one
 after the other.
 
 .. note:: In the interest of performance, make sure CSG geometry remains

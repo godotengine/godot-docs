@@ -7,7 +7,7 @@ Interpolation is a very basic operation in graphics programming. It's good to be
 
 The basic idea is that you want to transition from A to B. A value ``t``, represents the states in-between.
 
-As an example if ``t`` is 0, then the state is A. If ``t`` is 1, then the state is B. Anything in-between is an *interpolation*.
+For example, if ``t`` is 0, then the state is A. If ``t`` is 1, then the state is B. Anything in-between is an *interpolation*.
 
 Between two real (floating-point) numbers, a simple interpolation is usually described as:
 

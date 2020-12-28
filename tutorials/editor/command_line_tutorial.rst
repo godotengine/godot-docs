@@ -259,8 +259,8 @@ Debugging
 ---------
 
 Catching errors in the command line can be a difficult task because they
-just fly by. For this, a command line debugger is provided by adding
 ``-d``. It works for running either the game or a simple scene.
+scroll quickly. For this, a command line debugger is provided by adding
 
 ::
 

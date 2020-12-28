@@ -130,8 +130,8 @@ inverted negative and positive half spaces:
     N = -N;
     D = -D;
 
-Of course, Godot also implements this operator in :ref:`Plane <class_Plane>`,
-so doing:
+Godot also implements this operator in :ref:`Plane <class_Plane>`.
+So, using the format below will work as expected:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -141,8 +141,6 @@ so doing:
  .. code-tab:: csharp
 
     var invertedPlane = -plane;
-
-Will work as expected.
 
 So, remember, a plane is just that and its main practical use is
 calculating the distance to it. So, why is it useful to calculate the
@@ -196,8 +194,8 @@ degrees to either side:
     // Alternatively (depending the desired side of the normal):
     // var normal = new Vector2(-dvec.y, dvec.x);
 
-The rest is the same as the previous example, either point_a or
-point_b will work since they are in the same plane:
+The rest is the same as the previous example. Either point_a or
+point_b will work, as they are in the same plane:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -214,7 +212,7 @@ point_b will work since they are in the same plane:
     // this works the same
     // var D = normal.Dot(pointB);
 
-Doing the same in 3D is a little more complex and will be explained
+Doing the same in 3D is a little more complex and is explained
 further down.
 
 Some examples of planes
