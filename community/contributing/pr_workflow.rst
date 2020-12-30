@@ -469,7 +469,7 @@ between, the most common and convenient workflow involves rebasing on the
           with this little by little).
 
 This will open a text editor (``vi`` by default, see
-`Git docs <https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor>__`
+`Git docs <https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor>`_
 to configure your favorite one) with something which may look like this:
 
 .. code-block:: text
