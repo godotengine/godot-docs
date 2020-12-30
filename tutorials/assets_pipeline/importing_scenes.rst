@@ -380,7 +380,7 @@ will detect suffixes in object names and will perform actions automatically.
 Remove nodes (-noimp)
 ~~~~~~~~~~~~~~~~~~~~~
 
-Objects that have the ``-noimp`` suffix will be removed at import-time no matter
+Objects that have the ``-noimp`` suffix, and any child nodes they have, will be removed at import-time no matter
 what their type is. They will not appear in the imported scene.
 
 Create collisions (-col, -convcol, -colonly, -convcolonly)
@@ -411,9 +411,9 @@ This helps the visual mesh and actual collision to be separated.
 
 The option ``-convcolonly`` works in a similar way, but will create a :ref:`class_convexpolygonshape` instead.
 
-With Collada files the option ``-colonly`` can also be used with Blender's empty objects.
-On import, it will create a :ref:`class_staticbody` with
-a collision node as a child. The collision node will have one of a number of predefined shapes,
+With Collada files options ``-colonly``, ``-convcolonly``, ``-shapeonly`` and ``-convshapeonly``
+can also be used with Blender's empty objects. In this case ``conv`` part in suffix does not have any effect.
+The collision node will have one of a number of predefined shapes,
 depending on Blender's empty draw type:
 
 .. image:: img/3dimp_BlenderEmptyDrawTypes.png
@@ -440,6 +440,14 @@ reliability.
 
     See :ref:`doc_collision_shapes_3d` for a comprehensive overview of collision
     shapes.
+
+Create shapes (-shape, -shapeonly, -convshape, -convshapeonly)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+These options work similarly to the options above, but only create a :ref:`class_convexpolygonshape` or
+:ref:`class_concavepolygonshape` as a child of the scene root without: :ref:`class_staticbody`.
+
+This can be useful if your scene root is already a :ref:`class_staticbody` or a :ref:`class_rigidbody`.
 
 Create navigation (-navmesh)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -473,3 +481,12 @@ will be imported as a Godot Animation with the loop flag set.
 
 In Blender, this requires using the NLA Editor and naming the Action with the ``loop`` or
 ``cycle`` prefix or suffix.
+
+Materials (-alpha, -vcol)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A material with ``-alpha`` suffix will have :ref:`BaseMaterial3D.transparency<class_BaseMaterial3D_property_transparency>`
+set to :ref:`BaseMaterial3D::TRANSPARENCY_ALPHA<class_BaseMaterial3D_constant_TRANSPARENCY_ALPHA>`.
+
+A material with ``-vcol`` suffix will have :ref:`BaseMaterial3D.vertex_color_is_srgb<class_BaseMaterial3D_property_vertex_color_is_srgb>` and
+:ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` set to ``true``
