@@ -43,7 +43,7 @@ or :kbd:`F6` on keyboard, and give each a try.
           and navigating to the file.
 	* Do the same for the Walls node.
 
-	* Open up Ruins_Level.tscn (res://assets/Ruin_Level_Objects/Ruin_Level.tscn).
+	* Open up Ruins_Level.tscn (res://assets/Ruin_Level_Objects/Ruins_Level.tscn).
 	* In the Scene dock, select the Floor node. In the Inspector dock, if the Mesh Library field under GridMap is "[empty]",
           set it to Ruin_Level_Mesh_Lib.tres, either by (1) dragging the file res://assets/Ruin_Level_Objects/Ruin_Level_Mesh_Lib.tres
           from the FileSystem dock into that field; or by (2) clicking on "[empty]" to expand the pulldown menu, selecting Load
