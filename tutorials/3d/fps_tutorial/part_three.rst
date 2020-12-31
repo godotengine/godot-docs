@@ -33,6 +33,23 @@ or :kbd:`F6` on keyboard, and give each a try.
 .. warning:: ``Space_Level.tscn`` is more graphically demanding of the GPU than ``Ruins_Level.tscn``. If your computer is struggling to render
           ``Space_Level.tscn``, try using ``Ruins_Level.tscn`` instead.
 
+.. note::
+          * Due to software updates since this tutorial was published, if you are using a recent version of Godot, you may need to apply the following changes to the Space Level and Ruins Level scenes:
+
+	* Open up Space_Level.tscn (res://assets/Space_Level_Objects/Space_Level.tscn).
+	* In the Scene dock, select the Floor_and_Celing node. In the Inspector dock, if the Mesh Library field under GridMap is "[empty]",
+          set it to Space_Level_Mesh_Lib.tres, either by (1) dragging the file res://assets/Space_Level_Objects/Space_Level_Mesh_Lib.tres
+          from the FileSystem dock into that field; or by (2) clicking on "[empty]" to expand the pulldown menu, selecting Load
+          and navigating to the file.
+	* Do the same for the Walls node.
+
+	* Open up Ruins_Level.tscn (res://assets/Ruin_Level_Objects/Ruin_Level.tscn).
+	* In the Scene dock, select the Floor node. In the Inspector dock, if the Mesh Library field under GridMap is "[empty]",
+          set it to Ruin_Level_Mesh_Lib.tres, either by (1) dragging the file res://assets/Ruin_Level_Objects/Ruin_Level_Mesh_Lib.tres
+          from the FileSystem dock into that field; or by (2) clicking on "[empty]" to expand the pulldown menu, selecting Load
+          and navigating to the file.
+	* Do the same for the Walls node.
+
 You might have noticed there are several :ref:`RigidBody <class_RigidBody>` nodes placed throughout the level.
 We can place ``RigidBody_hit_test.gd`` on them and then they will react to being hit with bullets, so let's do that!
 
