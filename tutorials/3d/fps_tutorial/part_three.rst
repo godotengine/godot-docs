@@ -34,6 +34,7 @@ or :kbd:`F6` on keyboard, and give each a try.
           ``Space_Level.tscn``, try using ``Ruins_Level.tscn`` instead.
 
 .. note::
+
     Due to Godot updates since this tutorial was published, if you are using Godot 3.2 or later, you may need to apply the following changes to the Space Level and Ruins Level scenes:
 
     - Open ``res://assets/Space_Level_Objects/Space_Level.tscn``.
