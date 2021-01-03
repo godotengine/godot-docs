@@ -44,7 +44,7 @@ of Godot. GDNative modules written for an earlier version of Godot will work in
 newer versions (with the exception of one breaking change in ARVR interfaces
 between 3.0 and 3.1) but not vice versa so make sure you download the correct
 branch. Also note that the version of Godot you use to generate the ``api.json``
-with becomes your minimum version.
+which becomes your minimum version.
 
 If you are versioning your project using Git, it is a good idea to add them as
 Git submodules:
