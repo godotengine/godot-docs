@@ -221,6 +221,18 @@ which is a good time to find the size of the game window:
         screenSize = GetViewportRect().Size;
     }
 
+ .. code-tab:: rust
+
+    #[methods]
+    impl Player {
+        #[export]
+        fn _ready(&mut self, owner: &Area2D) {
+            let viewport = unsafe { owner.get_viewport().unwrap().assume_safe() };
+            self.screen_size = viewport.size();
+            owner.hide();
+        }
+    }
+
 Now we can use the ``_process()`` function to define what the player will do.
 ``_process()`` is called every frame, so we'll use it to update
 elements of our game, which we expect will change often. For the player, we
