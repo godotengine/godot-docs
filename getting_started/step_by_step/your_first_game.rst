@@ -189,6 +189,17 @@ Start by declaring the member variables this object will need:
         public Vector2 screenSize; // Size of the game window.
     }
 
+ .. code-tab:: rust
+
+    use gdnative::api::Area2D;
+
+    #[inherit(Area2D)]
+    pub struct Player {
+        #[property(default = 400)] // How fast the player will move (pixels/sec).
+        speed: i32,
+
+        screen_size: Vector2, // Size of the game window.
+    }
 
 Using the ``export`` keyword on the first variable ``speed`` allows us to
 set its value in the Inspector. This can be handy for values that you
