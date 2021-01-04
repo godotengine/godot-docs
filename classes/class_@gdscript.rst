@@ -1337,7 +1337,7 @@ Snaps float value ``s`` to a given ``step``. This can also be used to round a fl
 
 - :ref:`String<class_String>` **str** **(** ... **)** vararg
 
-Converts one or more arguments to string in the best way possible.
+Converts one or more arguments of any type to string in the best way possible.
 
 ::
 
