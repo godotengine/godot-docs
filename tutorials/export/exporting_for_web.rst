@@ -12,16 +12,7 @@ in the user's browser.
                with :kbd:`F12`, to view **debug information** like JavaScript,
                engine, and WebGL errors.
 
-.. attention:: Many browsers, including Firefox and Chromium-based browsers,
-               will not load exported projects when **opened locally** per
-               ``file://`` protocol. To get around this, use a local server.
-
-               .. tip:: Python offers an easy method to start a local server.
-                        Use ``python -m http.server 8000 --bind 127.0.0.1`` with Python 3 to serve the
-                        current working directory at ``http://localhost:8000``.
-                        `Refer to MDN for additional information <https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server>`__.
-
-.. attention:: `There are significant bugs when running HTML5 projects on iOS <https://github.com/godotengine/godot/issues/26554>`__
+.. attention:: `There are significant bugs when running HTML5 projects on iOS <https://github.com/godotengine/godot/issues?q=is:issue+is:open+label:platform:html5+ios>`__
                (regardless of the browser). We recommend using
                :ref:`iOS' native export functionality <doc_exporting_for_ios>`
                instead, as it will also result in better performance.
@@ -42,12 +33,62 @@ WebKit (i.e. Safari), so they will also not work.
 
 Godot's WebGL 2 renderer has issues with 3D and is no longer maintained.
 
+.. _doc_javascript_export_options:
+
+Export options
+--------------
+
+If a runnable web export template is available, a button appears between the
+*Stop scene* and *Play edited Scene* buttons in the editor to quickly open the
+game in the default browser for testing.
+
+You can choose the **Export Type** to select which features will be available:
+
+- *Regular*: is the most compatible across browsers, will not support threads, nor GDNative.
+- *Threads*: will require the browser to support `SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`__
+- *GDNative*: enables GDNative support but makes the binary bigger and slower to load.
+
+If you plan to use :ref:`VRAM compression <doc_import_images>` make sure that
+**Vram Texture Compression** is enabled for the targeted platforms (enabling
+both **For Desktop** and **For Mobile** will result in a bigger, but more
+compatible export).
+
+If a path to a **Custom HTML shell** file is given, it will be used instead of
+the default HTML page. See :ref:`doc_customizing_html5_shell`.
+
+**Head Include** is appended into the ``<head>`` element of the generated
+HTML page. This allows to, for example, load webfonts and third-party
+JavaScript APIs, include CSS, or run JavaScript code.
+
+.. important:: Each project must generate their own HTML file. On export,
+               several text placeholders are replaced in the generated HTML
+               file specifically for the given export options. Any direct
+               modifications to that HTML file will be lost in future exports.
+               To customize the generated file, use the **Custom HTML shell**
+               option.
+
+.. warning:: **Export types** other then *Regular* are not yet supported by the
+             C# version.
+
 Limitations
 -----------
 
 For security and privacy reasons, many features that work effortlessly on
 native platforms are more complicated on the web platform. Following is a list
 of limitations you should be aware of when porting a Godot game to the web.
+
+.. _doc_javascript_secure_contexts:
+
+.. important:: Browser vendors are making more and more functionalities only
+               available in `secure contexts <https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts>`_,
+               this means that such features are only be available if the web
+               page is served via a secure HTTPS connection (localhost is
+               usually exempt from such requirement).
+
+.. tip:: Check the `list of open HTML5 issues on GitHub
+         <https://github.com/godotengine/godot/issues?q=is:open+is:issue+label:platform:html5>`__
+         to see if the functionality you're interested in has an issue yet. If
+         not, open one to communicate your interest.
 
 Using cookies for data persistence
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -60,6 +101,26 @@ browsing mode also prevents persistence.
 The method ``OS.is_userfs_persistent()`` can be used to check if the
 ``user://`` file system is persistent, but can give false positives in some
 cases.
+
+Threads
+~~~~~~~
+
+As mentioned :ref:`above <doc_javascript_export_options>` multi-threading is
+only available if the appropriate **Export Type** is set and support for it
+across browsers is still limited.
+
+.. warning:: Requires a :ref:`secure context <doc_javascript_secure_contexts>`.
+             Browsers are also starting to require that the web page is served with specific
+             `cross-origin isolation headers <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy>`__.
+
+GDNative
+~~~~~~~~
+
+As mentioned :ref:`above <doc_javascript_export_options>` GDNative is only
+available if the appropriate **Export Type** is set.
+
+The export will also copy the required GDNative ``.wasm`` files to the output
+folder (and must be uploaded to your server along with your game).
 
 Full screen and mouse capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,8 +136,8 @@ For the same reason, the full screen project setting doesn't work unless the
 engine is started from within a valid input event handler. This requires
 :ref:`customization of the HTML page <doc_customizing_html5_shell>`.
 
-Audio autoplay
-~~~~~~~~~~~~~~
+Audio
+~~~~~
 
 Chrome restricts how websites may play audio. It may be necessary for the
 player to click or tap or press a key to enable audio.
@@ -84,10 +145,20 @@ player to click or tap or press a key to enable audio.
 .. seealso:: Google offers additional information about their `Web Audio autoplay
              policies <https://sites.google.com/a/chromium.org/dev/audio-video/autoplay>`__.
 
-:ref:`class_HTTPClient` and :ref:`class_HTTPRequest`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. warning:: Access to microphone requires a
+             :ref:`secure context <doc_javascript_secure_contexts>`.
 
-The HTTP classes have several restrictions on the HTML5 platform:
+Networking
+~~~~~~~~~~
+
+Low level networking is not implemented due to lacking support in browsers.
+
+Currently, only :ref:`HTTP client <doc_http_client_class>`,
+:ref:`HTTP requests <doc_http_request_class>`,
+:ref:`WebSocket (client) <doc_websocket>` and :ref:`WebRTC <doc_webrtc>` are
+supported.
+
+The HTTP classes also have several restrictions on the HTML5 platform:
 
  -  Accessing or changing the ``StreamPeer`` is not possible
  -  Threaded/Blocking mode is not available
@@ -96,11 +167,26 @@ The HTTP classes have several restrictions on the HTML5 platform:
  -  Host verification cannot be disabled
  -  Subject to `same-origin policy <https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy>`__
 
-Exported ``.html`` file must not be reused
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Clipboard
+~~~~~~~~~
 
-Each project must generate their own HTML file. On export, several text placeholders are replaced in the **generated HTML
-file** specifically for the given export options. Any direct modifications to the **generated HTML file** will be lost in future exports. To customize the generated file, see :ref:`doc_customizing_html5_shell`.
+Clipboard synchronization between engine and the operating system requires a
+browser supporting the `Clipboard API <https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API>`__,
+additionally, due to the API asynchronous nature might not be reliable when
+accessed from GDScript.
+
+.. warning:: Requires a :ref:`secure context <doc_javascript_secure_contexts>`.
+
+Gamepads
+~~~~~~~~
+
+Gamepads will not be detected until one of their button is pressed. Gamepads
+might have the wrong mapping depending on the browser/OS/gamepad combination,
+sadly the `Gamepad API <https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API>`__
+does not provide a reliable way to detect the gamepad information necessary
+to remap them based on model/vendor/OS due to privacy considerations.
+
+.. warning:: Requires a :ref:`secure context <doc_javascript_secure_contexts>`.
 
 Boot splash is not displayed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -114,22 +200,6 @@ Shader language limitations
 
 When exporting a GLES2 project to HTML5, WebGL 1.0 will be used. WebGL 1.0
 doesn't support dynamic loops, so shaders using those won't work there.
-
-Unimplemented functionality
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following functionality is currently unavailable on the HTML5 platform:
-
- -  Threads
- -  GDNative
- -  C#
- -  Clipboard synchronization between engine and operating system
- -  Networking other than :ref:`class_HTTPClient` and :ref:`class_WebSocketClient`
-
-.. tip:: Check the `list of open HTML5 issues on GitHub
-         <https://github.com/godotengine/godot/issues?q=is:open+is:issue+label:platform:html5>`__
-         to see if the functionality you're interested in has an issue yet. If
-         not, open one to communicate your interest.
 
 Serving the files
 -----------------
@@ -170,21 +240,7 @@ of its original size with gzip compression.
 **Hosts that provide on-the-fly compression:** GitHub Pages (gzip)
 
 **Hosts that don't provide on-the-fly compression:** itch.io, GitLab Pages
-(`supports manual gzip precompression <https://webd97.de/post/gitlab-pages-compression/>`__
-
-Export options
---------------
-
-If a runnable web export template is available, a button appears between the
-*Stop scene* and *Play edited Scene* buttons in the editor to quickly open the
-game in the default browser for testing.
-
-If a path to a **Custom HTML shell** file is given, it will be used instead of
-the default HTML page. See :ref:`doc_customizing_html5_shell`.
-
-**Head Include** is appended into the ``<head>`` element of the generated
-HTML page. This allows to, for example, load webfonts and third-party
-JavaScript APIs, include CSS, or run JavaScript code.
+(`supports manual gzip precompression <https://webd97.de/post/gitlab-pages-compression/>`__)
 
 .. _doc_javascript_eval:
 
