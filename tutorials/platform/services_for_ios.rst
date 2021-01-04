@@ -269,7 +269,7 @@ On success:
     }
 
 ``post_score``
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 Posts a score to a Game Center leaderboard.
 
