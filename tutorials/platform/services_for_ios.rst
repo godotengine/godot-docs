@@ -15,7 +15,7 @@ this:
 
 ::
 
-    Error purchase(Variant p_params);
+    Error purchase(Variant params);
 
 The parameter will usually be a Dictionary, with the information
 necessary to make the request, and the call will have two phases. First,
@@ -28,7 +28,7 @@ the 'pending events' queue. Example:
 ::
 
     func on_purchase_pressed():
-        var result = InAppStore.purchase( { "product_id": "my_product" } )
+        var result = InAppStore.purchase({ "product_id": "my_product" })
         if result == OK:
             animation.play("busy") # show the "waiting for response" animation
         else:
@@ -63,25 +63,28 @@ Store Kit
 
 Implemented in ``platform/iphone/in_app_store.mm``.
 
-The Store Kit API is accessible through the "InAppStore" singleton (will
-always be available from gdscript). It is initialized automatically. It
-has three methods for purchasing:
+The Store Kit API is accessible through the ``InAppStore`` singleton (will
+always be available from GDScript on iOS). It is initialized automatically.
 
--  ``Error purchase(Variant p_params);``
--  ``Error request_product_info(Variant p_params);``
--  ``Error restore_purchases();``
--  ``void set_auto_finish_transaction(bool b);``
--  ``void finish_transaction(String product_id);``
-
-and the pending_event interface
+The following methods are available and documented below:
 
 ::
 
-    int get_pending_event_count();
-    Variant pop_pending_event();
+    Error purchase(Variant params)
+    Error request_product_info(Variant params)
+    Error restore_purchases()
+    void set_auto_finish_transaction(bool enable)
+    void finish_transaction(String product_id)
+ 
+ and the pending events interface:
+ 
+ ::
+ 
+    int get_pending_event_count()
+    Variant pop_pending_event()
 
-purchase
-~~~~~~~~
+``purchase``
+~~~~~~~~~~~~
 
 Purchases a product ID through the Store Kit API. You have to call ``finish_transaction(product_id)`` once you 
 receive a successful response or call ``set_auto_finish_transaction(true)`` prior to calling ``purchase()``.
@@ -90,12 +93,12 @@ These two methods ensure the transaction is completed.
 Parameters
 ^^^^^^^^^^
 
-Takes a Dictionary as a parameter, with one field, ``product_id``, a
+Takes a dictionary as a parameter, with one field, ``product_id``, a
 string with your product id. Example:
 
 ::
 
-    var result = InAppStore.purchase( { "product_id": "my_product" } )
+    var result = InAppStore.purchase({ "product_id": "my_product" })
 
 Response event
 ^^^^^^^^^^^^^^
@@ -109,7 +112,7 @@ On error:
     {
       "type": "purchase",
       "result": "error",
-      "product_id": "the product id requested"
+      "product_id": "the product id requested",
     }
 
 On success:
@@ -119,23 +122,23 @@ On success:
     {
       "type": "purchase",
       "result": "ok",
-      "product_id": "the product id requested"
+      "product_id": "the product id requested",
     }
 
-request_product_info
-~~~~~~~~~~~~~~~~~~~~
+``request_product_info``
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Requests the product info on a list of product IDs.
 
 Parameters
 ^^^^^^^^^^
 
-Takes a Dictionary as a parameter, with one field, ``product_ids``, a
-string array with a list of product ids. Example:
+Takes a dictionary as a parameter, with a single ``product_ids`` key to which a
+string array of product ids is assigned. Example:
 
 ::
 
-    var result = InAppStore.request_product_info( { "product_ids": ["my_product1", "my_product2"] } )
+    var result = InAppStore.request_product_info({ "product_ids": ["my_product1", "my_product2"] })
 
 Response event
 ^^^^^^^^^^^^^^
@@ -155,8 +158,8 @@ The response event will be a dictionary with the following fields:
       "localized_prices": [ list of valid product localized prices ],
     }
 
-restore_purchases
-~~~~~~~~~~~~~~~~~
+``restore_purchases``
+~~~~~~~~~~~~~~~~~~~~~
 
 Restores previously made purchases on user's account. This will create
 response events for each previously purchased product id.
@@ -171,11 +174,11 @@ The response events will be dictionaries with the following fields:
     {
       "type": "restore",
       "result": "ok",
-      "product id": "product id of restored purchase"
+      "product id": "product id of restored purchase",
     }
     
-set_auto_finish_transaction
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``set_auto_finish_transaction``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If set to ``true``, once a purchase is successful, your purchase will be 
 finalized automatically. Call this method prior to calling ``purchase()``.
@@ -183,15 +186,15 @@ finalized automatically. Call this method prior to calling ``purchase()``.
 Parameters
 ^^^^^^^^^^
 
-Takes a boolean ``b`` as a parameter which specifies if purchases should be
+Takes a boolean as a parameter which specifies if purchases should be
 automatically finalized. Example:
 
 ::
 
-    InAppStore.set_auto_finish_transaction( true )
+    InAppStore.set_auto_finish_transaction(true)
 
-finish_transaction
-~~~~~~~~~~~~~~~~~~
+``finish_transaction``
+~~~~~~~~~~~~~~~~~~~~~~
 
 If you don't want transactions to be automatically finalized, call this
 method after you receive a successful purchase response.
@@ -205,7 +208,7 @@ finalize the purchase on. Example:
 
 ::
 
-    InAppStore.finish_transaction( "my_product1" )
+    InAppStore.finish_transaction("my_product1")
 
 Game Center
 -----------
@@ -213,22 +216,29 @@ Game Center
 Implemented in ``platform/iphone/game_center.mm``.
 
 The Game Center API is available through the "GameCenter" singleton. It
-has 9 methods:
+has the following methods:
 
--  ``Error authenticate();``
--  ``bool is_authenticated();``
--  ``Error post_score(Variant p_score);``
--  ``Error award_achievement(Variant p_params);``
--  ``void reset_achievements();``
--  ``void request_achievements();``
--  ``void request_achievement_descriptions();``
--  ``Error show_game_center(Variant p_params);``
--  ``Error request_identity_verification_signature();``
+::
 
-plus the standard pending event interface.
+    Error authenticate()
+    bool is_authenticated()
+    Error post_score(Variant score)
+    Error award_achievement(Variant params)
+    void reset_achievements()
+    void request_achievements()
+    void request_achievement_descriptions()
+    Error show_game_center(Variant params)
+    Error request_identity_verification_signature()
 
-authenticate
-~~~~~~~~~~~~
+and the pending events interface:
+
+::
+ 
+    int get_pending_event_count()
+    Variant pop_pending_event()
+
+``authenticate``
+~~~~~~~~~~~~~~~~
 
 Authenticates a user in Game Center.
 
@@ -258,15 +268,15 @@ On success:
       "player_id": the value from GKLocalPlayer::playerID,
     }
 
-post_score
-~~~~~~~~~~
+``post_score``
+~~~~~~~~~~~~~
 
 Posts a score to a Game Center leaderboard.
 
 Parameters
 ^^^^^^^^^^
 
-Takes a Dictionary as a parameter, with two fields:
+Takes a dictionary as a parameter, with two fields:
 
 -  ``score`` a float number
 -  ``category`` a string with the category name
@@ -275,7 +285,7 @@ Example:
 
 ::
 
-    var result = GameCenter.post_score( { "score": 100, "category": "my_leaderboard", } )
+    var result = GameCenter.post_score({ "score": 100, "category": "my_leaderboard", })
 
 Response event
 ^^^^^^^^^^^^^^
@@ -302,8 +312,8 @@ On success:
       "result": "ok",
     }
 
-award_achievement
-~~~~~~~~~~~~~~~~~
+``award_achievement``
+~~~~~~~~~~~~~~~~~~~~~
 
 Modifies the progress of a Game Center achievement.
 
@@ -322,7 +332,7 @@ Example:
 
 ::
 
-    var result = award_achievement( { "name": "hard_mode_completed", "progress": 6.1 } )
+    var result = award_achievement({ "name": "hard_mode_completed", "progress": 6.1 })
 
 Response event
 ^^^^^^^^^^^^^^
@@ -348,8 +358,8 @@ On success:
       "result": "ok",
     }
 
-reset_achievements
-~~~~~~~~~~~~~~~~~~
+``reset_achievements``
+~~~~~~~~~~~~~~~~~~~~~~
 
 Clears all Game Center achievements. The function takes no parameters.
 
@@ -365,7 +375,7 @@ On error:
     {
       "type": "reset_achievements",
       "result": "error",
-      "error_code": the value from NSError::code
+      "error_code": the value from NSError::code,
     }
 
 On success:
@@ -377,8 +387,8 @@ On success:
       "result": "ok",
     }
 
-request_achievements
-~~~~~~~~~~~~~~~~~~~~
+``request_achievements``
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Request all the Game Center achievements the player has made progress
 on. The function takes no parameters.
@@ -395,7 +405,7 @@ On error:
     {
       "type": "achievements",
       "result": "error",
-      "error_code": the value from NSError::code
+      "error_code": the value from NSError::code,
     }
 
 On success:
@@ -406,11 +416,11 @@ On success:
       "type": "achievements",
       "result": "ok",
       "names": [ list of the name of each achievement ],
-      "progress": [ list of the progress made on each achievement ]
+      "progress": [ list of the progress made on each achievement ],
     }
 
-request_achievement_descriptions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``request_achievement_descriptions``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Request the descriptions of all existing Game Center achievements
 regardless of progress. The function takes no parameters.
@@ -427,7 +437,7 @@ On error:
     {
       "type": "achievement_descriptions",
       "result": "error",
-      "error_code": the value from NSError::code
+      "error_code": the value from NSError::code,
     }
 
 On success:
@@ -438,16 +448,16 @@ On success:
       "type": "achievement_descriptions",
       "result": "ok",
       "names": [ list of the name of each achievement ],
-      "titles": [ list of the title of each achievement ]
-      "unachieved_descriptions": [ list of the description of each achievement when it is unachieved ]
-      "achieved_descriptions": [ list of the description of each achievement when it is achieved ]
-      "maximum_points": [ list of the points earned by completing each achievement ]
-      "hidden": [ list of booleans indicating whether each achievement is initially visible ]
-      "replayable": [ list of booleans indicating whether each achievement can be earned more than once ]
+      "titles": [ list of the title of each achievement ],
+      "unachieved_descriptions": [ list of the description of each achievement when it is unachieved ],
+      "achieved_descriptions": [ list of the description of each achievement when it is achieved ],
+      "maximum_points": [ list of the points earned by completing each achievement ],
+      "hidden": [ list of booleans indicating whether each achievement is initially visible ],
+      "replayable": [ list of booleans indicating whether each achievement can be earned more than once ],
     }
 
-show_game_center
-~~~~~~~~~~~~~~~~
+``show_game_center``
+~~~~~~~~~~~~~~~~~~~~
 
 Displays the built in Game Center overlay showing leaderboards,
 achievements, and challenges.
@@ -469,8 +479,8 @@ Examples:
 
 ::
 
-    var result = show_game_center( { "view": "leaderboards", "leaderboard_name": "best_time_leaderboard" } )
-    var result = show_game_center( { "view": "achievements" } )
+    var result = show_game_center({ "view": "leaderboards", "leaderboard_name": "best_time_leaderboard" })
+    var result = show_game_center({ "view": "achievements" })
 
 Response event
 ^^^^^^^^^^^^^^
@@ -501,10 +511,10 @@ of how to work around this in a class:
 
     var GameCenter = null # define it as a class member
 
-    func post_score(p_score):
+    func post_score(score):
         if GameCenter == null:
             return
-        GameCenter.post_score( { "value": p_score, "category": "my_leaderboard" } )
+        GameCenter.post_score({ "value": score, "category": "my_leaderboard" })
 
     func check_events():
         while GameCenter.get_pending_event_count() > 0:
