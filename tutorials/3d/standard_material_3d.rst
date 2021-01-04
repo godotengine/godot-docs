@@ -191,7 +191,7 @@ Specular Mode
 Specifies how the specular blob will be rendered. The specular blob
 represents the shape of a light source reflected in the object.
 
-* **ShlickGGX:** The most common blob used by PBR 3D engines nowadays.
+* **SchlickGGX:** The most common blob used by PBR 3D engines nowadays.
 * **Blinn:** Common in previous-generation engines.
   Not worth using nowadays, but left here for the sake of compatibility.
 * **Phong:** Same as above.
