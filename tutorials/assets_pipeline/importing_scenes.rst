@@ -72,12 +72,12 @@ its functionality and usage.
 Exporting textures separately
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-While textures can be exported with a model in certain file formats, such as gLTF 2.0, you can also export them
+While textures can be exported with a model in certain file formats, such as glTF 2.0, you can also export them
 separately. Godot uses PBR (physically based rendering) for its materials, so if a texturing program can export PBR
-textures they can work in Godot. This includes the `Substance Programs <https://www.substance3d.com/>`__,
-`ArmorPaint(Open Source) <https://armorpaint.org/>`__, and `Material Maker (Open Source) <https://github.com/RodZill4/material-maker>`__.
+textures they can work in Godot. This includes the `Substance suite <https://www.substance3d.com/>`__,
+`ArmorPaint (open source) <https://armorpaint.org/>`__, and `Material Maker (open source) <https://github.com/RodZill4/material-maker>`__.
 
-.. note:: for more information on Godot's materials see :ref:`doc_standard_material_3d`. 
+.. note:: For more information on Godot's materials, see :ref:`doc_standard_material_3d`. 
 
 Import workflows
 ----------------
