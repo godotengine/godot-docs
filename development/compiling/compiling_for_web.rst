@@ -84,7 +84,7 @@ the debug template::
     mv bin/godot.javascript.opt.debug.threads.zip bin/webassembly_threads_debug.zip
     mv bin/godot.javascript.opt.debug.gdnative.zip bin/webassembly_gdnative_debugzip
 
-Building the Editor
+Building the editor
 -------------------
 
 It is also possible to build a version of the Godot editor that can run in the
