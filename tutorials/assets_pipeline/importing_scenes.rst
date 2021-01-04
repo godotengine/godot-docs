@@ -13,27 +13,17 @@ transferred as close as possible.
 
 Godot supports the following 3D *scene file formats*:
 
-* glTF 2.0. Godot has full support for text and binary formats.
+* glTF 2.0 *(recommended)*. Godot has full support for text and binary formats.
 * DAE (COLLADA), an older format that is fully supported.
 * OBJ (Wavefront) formats. It is also fully supported, but pretty limited (no support for pivots, skeletons, etc).
 * ESCN, a Godot specific format that Blender can export with a plugin.
-* FBX, supported via the Open Asset Import library. However, FBX is proprietary, so we recommend using other formats
-  listed above, if suitable for your workflow.
+* FBX, supported via a reverse engineered importer. So we recommend using other formats listed above, if suitable
+  for your workflow.
 
 Just copy the scene file together with the texture to the project repository, and Godot will do a full import.
 
 It is important that the mesh is not deformed by bones when exporting. Make sure that the skeleton is reset to its T-pose
 or default rest pose before exporting with your favorite 3D editor.
-
-Exporting DAE files from Maya and 3DS Max
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Autodesk added built-in COLLADA support to Maya and 3DS Max, but it's
-broken by default and should not be used. The best way to export this format
-is by using the
-`OpenCollada <https://github.com/KhronosGroup/OpenCOLLADA/wiki/OpenCOLLADA-Tools>`__
-plugins. They work well, although they are not always up-to date
-with the latest version of the software.
 
 Exporting glTF 2.0 files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,6 +68,16 @@ experimental.
 
 The ESCN exporter has a detailed `document <escn_exporter/index.html>`__ describing
 its functionality and usage.
+
+Exporting textures separately
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+While textures can be exported with a model in certain file formats, such as glTF 2.0, you can also export them
+separately. Godot uses PBR (physically based rendering) for its materials, so if a texturing program can export PBR
+textures they can work in Godot. This includes the `Substance suite <https://www.substance3d.com/>`__,
+`ArmorPaint (open source) <https://armorpaint.org/>`__, and `Material Maker (open source) <https://github.com/RodZill4/material-maker>`__.
+
+.. note:: For more information on Godot's materials, see :ref:`doc_standard_material_3d`. 
 
 Import workflows
 ----------------
