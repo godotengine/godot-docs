@@ -43,7 +43,7 @@ For compiling under Windows, Linux or macOS, the following is required:
 Setting up the buildsystem
 --------------------------
 
-Set the environment variable ``ANDROID_HOME`` to point to the Android
+Set the environment variable ``ANDROID_SDK_ROOT`` to point to the Android
 SDK. If you downloaded the Android command-line tools, this would be
 the folder where you extracted the contents of the ZIP archive.
 Later on, ``gradlew`` will install necessary SDK components in this folder.
@@ -69,7 +69,7 @@ pane, then click on **Environment variables** on the window that
 appears.
 
 To set those environment variables on Linux or macOS, use
-``export ANDROID_HOME=/path/to/android-sdk`` and
+``export ANDROID_SDK_ROOT=/path/to/android-sdk`` and
 ``export ANDROID_NDK_ROOT=/path/to/android-ndk``
 where ``/path/to/android-sdk`` and ``/path/to/android-ndk`` point to
 the root of the SDK and NDK directories.
@@ -202,7 +202,7 @@ Troubleshooting
 Platform doesn't appear in SCons
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Double-check that you've set both the ``ANDROID_HOME`` and ``ANDROID_NDK_ROOT``
+Double-check that you've set both the ``ANDROID_SDK_ROOT`` and ``ANDROID_NDK_ROOT``
 environment variables. This is required for the platform to appear in SCons'
 list of detected platforms.
 See :ref:`Setting up the buildsystem <doc_android_setting_up_the_buildsystem>`
