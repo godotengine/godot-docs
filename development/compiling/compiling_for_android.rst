@@ -202,7 +202,7 @@ Troubleshooting
 Platform doesn't appear in SCons
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Double-check that you've set both the ``ANDROID_HOME`` and ``ANDROID_NDK_ROOT``
+Double-check that you've set both the ``ANDROID_SDK_ROOT`` and ``ANDROID_NDK_ROOT``
 environment variables. This is required for the platform to appear in SCons'
 list of detected platforms.
 See :ref:`Setting up the buildsystem <doc_android_setting_up_the_buildsystem>`
