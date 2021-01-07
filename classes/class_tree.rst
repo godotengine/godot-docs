@@ -568,7 +568,15 @@ To get the item which the returned drop section is relative to, use :ref:`get_it
 
 - :ref:`TreeItem<class_TreeItem>` **get_edited** **(** **)** |const|
 
-Returns the currently edited item. This is only available for custom cell mode.
+Returns the currently edited item. Can be used with :ref:`item_edited<class_Tree_signal_item_edited>` to get the item that was modified.
+
+::
+
+    func _ready():
+        $Tree.item_edited.connect(on_Tree_item_edited)
+    
+    func on_Tree_item_edited():
+        print($Tree.get_edited()) # This item just got edited (e.g. checked).
 
 ----
 
@@ -576,7 +584,7 @@ Returns the currently edited item. This is only available for custom cell mode.
 
 - :ref:`int<class_int>` **get_edited_column** **(** **)** |const|
 
-Returns the column for the currently edited item. This is only available for custom cell mode.
+Returns the column for the currently edited item.
 
 ----
 

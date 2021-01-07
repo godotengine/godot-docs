@@ -29,6 +29,8 @@ Tutorials
 
 - :doc:`../tutorials/3d/introduction_to_3d`
 
+- `https://github.com/godotengine/godot-demo-projects/tree/master/3d <https://github.com/godotengine/godot-demo-projects/tree/master/3d>`_
+
 Properties
 ----------
 

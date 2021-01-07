@@ -20,16 +20,29 @@ Description
 
 MeshInstance is a node that takes a :ref:`Mesh<class_Mesh>` resource and adds it to the current scenario by creating an instance of it. This is the class most often used to get 3D geometry rendered and can be used to instance a single :ref:`Mesh<class_Mesh>` in many places. This allows to reuse geometry and save on resources. When a :ref:`Mesh<class_Mesh>` has to be instanced more than thousands of times at close proximity, consider using a :ref:`MultiMesh<class_MultiMesh>` in a :ref:`MultiMeshInstance<class_MultiMeshInstance>` instead.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/123 <https://godotengine.org/asset-library/asset/123>`_
+
+- `https://godotengine.org/asset-library/asset/126 <https://godotengine.org/asset-library/asset/126>`_
+
+- `https://godotengine.org/asset-library/asset/125 <https://godotengine.org/asset-library/asset/125>`_
+
+- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+
 Properties
 ----------
 
-+---------------------------------+-------------------------------------------------------+--------------------+
-| :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_MeshInstance_property_mesh>`         |                    |
-+---------------------------------+-------------------------------------------------------+--------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`skeleton<class_MeshInstance_property_skeleton>` | ``NodePath("..")`` |
-+---------------------------------+-------------------------------------------------------+--------------------+
-| :ref:`Skin<class_Skin>`         | :ref:`skin<class_MeshInstance_property_skin>`         |                    |
-+---------------------------------+-------------------------------------------------------+--------------------+
++---------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_MeshInstance_property_mesh>`                                                               |                    |
++---------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`skeleton<class_MeshInstance_property_skeleton>`                                                       | ``NodePath("..")`` |
++---------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`Skin<class_Skin>`         | :ref:`skin<class_MeshInstance_property_skin>`                                                               |                    |
++---------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`bool<class_bool>`         | :ref:`software_skinning_transform_normals<class_MeshInstance_property_software_skinning_transform_normals>` | ``true``           |
++---------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------+
 
 Methods
 -------
@@ -40,6 +53,8 @@ Methods
 | void                            | :ref:`create_debug_tangents<class_MeshInstance_method_create_debug_tangents>` **(** **)**                                                                       |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`create_trimesh_collision<class_MeshInstance_method_create_trimesh_collision>` **(** **)**                                                                 |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Material<class_Material>` | :ref:`get_active_material<class_MeshInstance_method_get_active_material>` **(** :ref:`int<class_int>` surface **)** |const|                                     |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Material<class_Material>` | :ref:`get_surface_material<class_MeshInstance_method_get_surface_material>` **(** :ref:`int<class_int>` surface **)** |const|                                   |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -93,6 +108,24 @@ The :ref:`Mesh<class_Mesh>` resource for the instance.
 
 Sets the skin to be used by this instance.
 
+----
+
+.. _class_MeshInstance_property_software_skinning_transform_normals:
+
+- :ref:`bool<class_bool>` **software_skinning_transform_normals**
+
++-----------+--------------------------------------------------+
+| *Default* | ``true``                                         |
++-----------+--------------------------------------------------+
+| *Setter*  | set_software_skinning_transform_normals(value)   |
++-----------+--------------------------------------------------+
+| *Getter*  | is_software_skinning_transform_normals_enabled() |
++-----------+--------------------------------------------------+
+
+If ``true``, normals are transformed when software skinning is used. Set to ``false`` when normals are not needed for better performance.
+
+See :ref:`ProjectSettings.rendering/quality/skinning/software_skinning_fallback<class_ProjectSettings_property_rendering/quality/skinning/software_skinning_fallback>` for details about how software skinning is enabled.
+
 Method Descriptions
 -------------------
 
@@ -117,6 +150,14 @@ This helper creates a ``MeshInstance`` child node with gizmos at every vertex ca
 - void **create_trimesh_collision** **(** **)**
 
 This helper creates a :ref:`StaticBody<class_StaticBody>` child node with a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` collision shape calculated from the mesh geometry. It's mainly used for testing.
+
+----
+
+.. _class_MeshInstance_method_get_active_material:
+
+- :ref:`Material<class_Material>` **get_active_material** **(** :ref:`int<class_int>` surface **)** |const|
+
+Returns the :ref:`Material<class_Material>` that will be used by the :ref:`Mesh<class_Mesh>` when drawing. This can return the :ref:`GeometryInstance.material_override<class_GeometryInstance_property_material_override>`, the surface override :ref:`Material<class_Material>` defined in this ``MeshInstance``, or the surface :ref:`Material<class_Material>` defined in the :ref:`Mesh<class_Mesh>`. For example, if :ref:`GeometryInstance.material_override<class_GeometryInstance_property_material_override>` is used, all surfaces will return the override material.
 
 ----
 

@@ -22,6 +22,15 @@ When naming a Project Settings property, use the full path to the setting includ
 
 **Overriding:** Any project setting can be overridden by creating a file named ``override.cfg`` in the project's root directory. This can also be used in exported projects by placing this file in the same directory as the project binary.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/675 <https://godotengine.org/asset-library/asset/675>`_
+
+- `https://godotengine.org/asset-library/asset/125 <https://godotengine.org/asset-library/asset/125>`_
+
+- `https://godotengine.org/asset-library/asset/677 <https://godotengine.org/asset-library/asset/677>`_
+
 Properties
 ----------
 
@@ -270,6 +279,8 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>`                               | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`input_devices/pointing/ios/touch_delay<class_ProjectSettings_property_input_devices/pointing/ios/touch_delay>`                                                 | ``0.15``                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_1<class_ProjectSettings_property_layer_names/2d_physics/layer_1>`                                                                 | ``""``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_10<class_ProjectSettings_property_layer_names/2d_physics/layer_10>`                                                               | ``""``                                                                                          |
@@ -442,7 +453,9 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`logging/file_logging/max_log_files<class_ProjectSettings_property_logging/file_logging/max_log_files>`                                                         | ``5``                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`memory/limits/message_queue/max_size_kb<class_ProjectSettings_property_memory/limits/message_queue/max_size_kb>`                                               | ``1024``                                                                                        |
+| :ref:`int<class_int>`                         | :ref:`memory/limits/command_queue/multithreading_queue_size_kb<class_ProjectSettings_property_memory/limits/command_queue/multithreading_queue_size_kb>`             | ``256``                                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`memory/limits/message_queue/max_size_kb<class_ProjectSettings_property_memory/limits/message_queue/max_size_kb>`                                               | ``4096``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`memory/limits/multithreaded_server/rid_pool_prealloc<class_ProjectSettings_property_memory/limits/multithreaded_server/rid_pool_prealloc>`                     | ``60``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -570,6 +583,8 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/limits/buffers/immediate_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/immediate_buffer_size_kb>`                           | ``2048``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/limits/rendering/max_lights_per_object<class_ProjectSettings_property_rendering/limits/rendering/max_lights_per_object>`                             | ``32``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/limits/rendering/max_renderable_elements<class_ProjectSettings_property_rendering/limits/rendering/max_renderable_elements>`                         | ``65536``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/limits/rendering/max_renderable_lights<class_ProjectSettings_property_rendering/limits/rendering/max_renderable_lights>`                             | ``4096``                                                                                        |
@@ -578,9 +593,17 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                     | :ref:`rendering/limits/time/time_rollover_secs<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`                                             | ``3600``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/2d/ninepatch_mode<class_ProjectSettings_property_rendering/quality/2d/ninepatch_mode>`                                                       | ``0``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/2d/use_camera_snap<class_ProjectSettings_property_rendering/quality/2d/use_camera_snap>`                                                     | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/2d/use_nvidia_rect_flicker_workaround<class_ProjectSettings_property_rendering/quality/2d/use_nvidia_rect_flicker_workaround>`               | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/2d/use_pixel_snap<class_ProjectSettings_property_rendering/quality/2d/use_pixel_snap>`                                                       | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/2d/use_software_skinning<class_ProjectSettings_property_rendering/quality/2d/use_software_skinning>`                                         | ``true``                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/2d/use_transform_snap<class_ProjectSettings_property_rendering/quality/2d/use_transform_snap>`                                               | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>`                                                                       | ``true``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -601,6 +624,10 @@ Properties
 | :ref:`int<class_int>`                         | :ref:`rendering/quality/filters/anisotropic_filter_level<class_ProjectSettings_property_rendering/quality/filters/anisotropic_filter_level>`                         | ``4``                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/quality/filters/msaa<class_ProjectSettings_property_rendering/quality/filters/msaa>`                                                                 | ``0``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/filters/use_debanding<class_ProjectSettings_property_rendering/quality/filters/use_debanding>`                                               | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/filters/use_fxaa<class_ProjectSettings_property_rendering/quality/filters/use_fxaa>`                                                         | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/filters/use_nearest_mipmap_filter<class_ProjectSettings_property_rendering/quality/filters/use_nearest_mipmap_filter>`                       | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -650,6 +677,12 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/quality/shadows/filter_mode.mobile<class_ProjectSettings_property_rendering/quality/shadows/filter_mode.mobile>`                                     | ``0``                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/skinning/force_software_skinning<class_ProjectSettings_property_rendering/quality/skinning/force_software_skinning>`                         | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/skinning/software_skinning_fallback<class_ProjectSettings_property_rendering/quality/skinning/software_skinning_fallback>`                   | ``true``                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`rendering/quality/spatial_partitioning/render_tree_balance<class_ProjectSettings_property_rendering/quality/spatial_partitioning/render_tree_balance>`         | ``0.0``                                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/subsurface_scattering/follow_surface<class_ProjectSettings_property_rendering/quality/subsurface_scattering/follow_surface>`                 | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/quality/subsurface_scattering/quality<class_ProjectSettings_property_rendering/quality/subsurface_scattering/quality>`                               | ``1``                                                                                           |
@@ -678,37 +711,37 @@ Properties
 Methods
 -------
 
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`add_property_info<class_ProjectSettings_method_add_property_info>` **(** :ref:`Dictionary<class_Dictionary>` hint **)**                                       |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`clear<class_ProjectSettings_method_clear>` **(** :ref:`String<class_String>` name **)**                                                                       |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_order<class_ProjectSettings_method_get_order>` **(** :ref:`String<class_String>` name **)** |const|                                                       |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`get_setting<class_ProjectSettings_method_get_setting>` **(** :ref:`String<class_String>` name **)** |const|                                                   |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`globalize_path<class_ProjectSettings_method_globalize_path>` **(** :ref:`String<class_String>` path **)** |const|                                             |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_setting<class_ProjectSettings_method_has_setting>` **(** :ref:`String<class_String>` name **)** |const|                                                   |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`load_resource_pack<class_ProjectSettings_method_load_resource_pack>` **(** :ref:`String<class_String>` pack, :ref:`bool<class_bool>` replace_files=true **)** |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`localize_path<class_ProjectSettings_method_localize_path>` **(** :ref:`String<class_String>` path **)** |const|                                               |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`property_can_revert<class_ProjectSettings_method_property_can_revert>` **(** :ref:`String<class_String>` name **)**                                           |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`property_get_revert<class_ProjectSettings_method_property_get_revert>` **(** :ref:`String<class_String>` name **)**                                           |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save<class_ProjectSettings_method_save>` **(** **)**                                                                                                          |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save_custom<class_ProjectSettings_method_save_custom>` **(** :ref:`String<class_String>` file **)**                                                           |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_initial_value<class_ProjectSettings_method_set_initial_value>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**          |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_order<class_ProjectSettings_method_set_order>` **(** :ref:`String<class_String>` name, :ref:`int<class_int>` position **)**                               |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_setting<class_ProjectSettings_method_set_setting>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**                      |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`add_property_info<class_ProjectSettings_method_add_property_info>` **(** :ref:`Dictionary<class_Dictionary>` hint **)**                                                                       |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`clear<class_ProjectSettings_method_clear>` **(** :ref:`String<class_String>` name **)**                                                                                                       |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`get_order<class_ProjectSettings_method_get_order>` **(** :ref:`String<class_String>` name **)** |const|                                                                                       |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`         | :ref:`get_setting<class_ProjectSettings_method_get_setting>` **(** :ref:`String<class_String>` name **)** |const|                                                                                   |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`globalize_path<class_ProjectSettings_method_globalize_path>` **(** :ref:`String<class_String>` path **)** |const|                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`has_setting<class_ProjectSettings_method_has_setting>` **(** :ref:`String<class_String>` name **)** |const|                                                                                   |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`load_resource_pack<class_ProjectSettings_method_load_resource_pack>` **(** :ref:`String<class_String>` pack, :ref:`bool<class_bool>` replace_files=true, :ref:`int<class_int>` offset=0 **)** |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`localize_path<class_ProjectSettings_method_localize_path>` **(** :ref:`String<class_String>` path **)** |const|                                                                               |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`property_can_revert<class_ProjectSettings_method_property_can_revert>` **(** :ref:`String<class_String>` name **)**                                                                           |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`         | :ref:`property_get_revert<class_ProjectSettings_method_property_get_revert>` **(** :ref:`String<class_String>` name **)**                                                                           |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save<class_ProjectSettings_method_save>` **(** **)**                                                                                                                                          |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save_custom<class_ProjectSettings_method_save_custom>` **(** :ref:`String<class_String>` file **)**                                                                                           |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_initial_value<class_ProjectSettings_method_set_initial_value>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**                                          |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_order<class_ProjectSettings_method_set_order>` **(** :ref:`String<class_String>` name, :ref:`int<class_int>` position **)**                                                               |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_setting<class_ProjectSettings_method_set_setting>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**                                                      |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -835,7 +868,7 @@ Icon set in ``.icns`` format used on macOS to set the game's icon. This is done 
 
 The project's name. It is used both by the Project Manager and by exporters. The project name can be translated by translating its value in localization files. The window title will be set to match the project name automatically on startup.
 
-**Note:** Changing this value will also change the user data folder's path if :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>` is ``false``. After renaming the project, you will no longer be able to access existing data in ``user://`` unless you rename the old folder to match the new project name. See `Data paths <https://docs.godotengine.org/en/latest/tutorials/io/data_paths.html>`_ in the documentation for more information.
+**Note:** Changing this value will also change the user data folder's path if :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>` is ``false``. After renaming the project, you will no longer be able to access existing data in ``user://`` unless you rename the old folder to match the new project name. See `Data paths <https://docs.godotengine.org/en/3.2/tutorials/io/data_paths.html>`_ in the documentation for more information.
 
 ----
 
@@ -1753,7 +1786,9 @@ Sets the window background to transparent when it starts.
 | *Default* | ``false`` |
 +-----------+-----------+
 
-Force the window to be always on top.
+Forces the main window to be always on top.
+
+**Note:** This setting is ignored on iOS, Android, and HTML5.
 
 ----
 
@@ -1765,7 +1800,9 @@ Force the window to be always on top.
 | *Default* | ``false`` |
 +-----------+-----------+
 
-Force the window to be borderless.
+Forces the main window to be borderless.
+
+**Note:** This setting is ignored on iOS, Android, and HTML5.
 
 ----
 
@@ -1777,7 +1814,11 @@ Force the window to be borderless.
 | *Default* | ``false`` |
 +-----------+-----------+
 
-Sets the window to full screen when it starts.
+Sets the main window to full screen when the project starts. Note that this is not *exclusive* fullscreen. On Windows and Linux, a borderless window is used to emulate fullscreen. On macOS, a new desktop is used to display the running project.
+
+Regardless of the platform, enabling fullscreen will change the window size to match the monitor's size. Therefore, make sure your project supports `multiple resolutions <https://docs.godotengine.org/en/latest/tutorials/rendering/multiple_resolutions.html>`_ when enabling fullscreen mode.
+
+**Note:** This setting is ignored on iOS, Android, and HTML5.
 
 ----
 
@@ -1802,6 +1843,8 @@ Sets the game's main viewport height. On desktop platforms, this is the default 
 +-----------+----------+
 
 Allows the window to be resizable by default.
+
+**Note:** This setting is ignored on iOS and Android.
 
 ----
 
@@ -1887,7 +1930,7 @@ If ``Use Vsync`` is enabled and this setting is ``true``, enables vertical synch
 | *Default* | ``"res://script_templates"`` |
 +-----------+------------------------------+
 
-Search path for project-specific script templates. Script templates will be search both in the editor-specific path and in this project-specific path.
+Search path for project-specific script templates. Godot will search for script templates both in the editor-specific path and in this project-specific path.
 
 ----
 
@@ -2160,6 +2203,18 @@ If ``true``, sends mouse input events when tapping or swiping on the touchscreen
 +-----------+-----------+
 
 If ``true``, sends touch input events when clicking or dragging the mouse.
+
+----
+
+.. _class_ProjectSettings_property_input_devices/pointing/ios/touch_delay:
+
+- :ref:`float<class_float>` **input_devices/pointing/ios/touch_delay**
+
++-----------+----------+
+| *Default* | ``0.15`` |
++-----------+----------+
+
+Default delay for touch events. This only affects iOS devices.
 
 ----
 
@@ -3167,6 +3222,8 @@ If ``true``, logs all output to files.
 | *Default* | ``true`` |
 +-----------+----------+
 
+Desktop override for :ref:`logging/file_logging/enable_file_logging<class_ProjectSettings_property_logging/file_logging/enable_file_logging>`, as log files are not readily accessible on mobile/Web platforms.
+
 ----
 
 .. _class_ProjectSettings_property_logging/file_logging/log_path:
@@ -3193,12 +3250,22 @@ Specifies the maximum amount of log files allowed (used for rotation).
 
 ----
 
+.. _class_ProjectSettings_property_memory/limits/command_queue/multithreading_queue_size_kb:
+
+- :ref:`int<class_int>` **memory/limits/command_queue/multithreading_queue_size_kb**
+
++-----------+---------+
+| *Default* | ``256`` |
++-----------+---------+
+
+----
+
 .. _class_ProjectSettings_property_memory/limits/message_queue/max_size_kb:
 
 - :ref:`int<class_int>` **memory/limits/message_queue/max_size_kb**
 
 +-----------+----------+
-| *Default* | ``1024`` |
+| *Default* | ``4096`` |
 +-----------+----------+
 
 Godot uses a message queue to defer some function calls. If you run out of space on it (you will see an error), you can increase the size here.
@@ -3273,7 +3340,7 @@ Maximum number of warnings allowed to be sent as output from the debugger. Over 
 | *Default* | ``16`` |
 +-----------+--------+
 
-Default size of packet peer stream for deserializing Godot data. Over this size, data is dropped.
+Default size of packet peer stream for deserializing Godot data (in bytes, specified as a power of two). The default value ``16`` is equal to 65,536 bytes. Over this size, data is dropped.
 
 ----
 
@@ -3493,6 +3560,8 @@ Cell size used for the broad-phase 2D hash grid algorithm (in pixels).
 
 The default angular damp in 2D.
 
+**Note:** Good values are in the range ``0`` to ``1``. At value ``0`` objects will keep moving with the same velocity. Values greater than ``1`` will aim to reduce the velocity to ``0`` in less than a second e.g. a value of ``2`` will aim to reduce the velocity to ``0`` in half a second. A value equal to or greater than the physics frame rate (:ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`, ``60`` by default) will bring the object to a stop in one iteration.
+
 ----
 
 .. _class_ProjectSettings_property_physics/2d/default_gravity:
@@ -3542,6 +3611,8 @@ The default gravity direction in 2D.
 +-----------+---------+
 
 The default linear damp in 2D.
+
+**Note:** Good values are in the range ``0`` to ``1``. At value ``0`` objects will keep moving with the same velocity. Values greater than ``1`` will aim to reduce the velocity to ``0`` in less than a second e.g. a value of ``2`` will aim to reduce the velocity to ``0`` in half a second. A value equal to or greater than the physics frame rate (:ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`, ``60`` by default) will bring the object to a stop in one iteration.
 
 ----
 
@@ -3643,6 +3714,8 @@ Sets whether the 3D physics world will be created with support for :ref:`SoftBod
 
 The default angular damp in 3D.
 
+**Note:** Good values are in the range ``0`` to ``1``. At value ``0`` objects will keep moving with the same velocity. Values greater than ``1`` will aim to reduce the velocity to ``0`` in less than a second e.g. a value of ``2`` will aim to reduce the velocity to ``0`` in half a second. A value equal to or greater than the physics frame rate (:ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`, ``60`` by default) will bring the object to a stop in one iteration.
+
 ----
 
 .. _class_ProjectSettings_property_physics/3d/default_gravity:
@@ -3692,6 +3765,8 @@ The default gravity direction in 3D.
 +-----------+---------+
 
 The default linear damp in 3D.
+
+**Note:** Good values are in the range ``0`` to ``1``. At value ``0`` objects will keep moving with the same velocity. Values greater than ``1`` will aim to reduce the velocity to ``0`` in less than a second e.g. a value of ``2`` will aim to reduce the velocity to ``0`` in half a second. A value equal to or greater than the physics frame rate (:ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`, ``60`` by default) will bring the object to a stop in one iteration.
 
 ----
 
@@ -4011,6 +4086,18 @@ Max buffer size for drawing immediate objects (ImmediateGeometry nodes). Nodes u
 
 ----
 
+.. _class_ProjectSettings_property_rendering/limits/rendering/max_lights_per_object:
+
+- :ref:`int<class_int>` **rendering/limits/rendering/max_lights_per_object**
+
++-----------+--------+
+| *Default* | ``32`` |
++-----------+--------+
+
+Max number of lights renderable per object. This is further limited by hardware support. Most devices only support 409 lights, while many devices (especially mobile) only support 102. Setting this low will slightly reduce memory usage and may decrease shader compile times.
+
+----
+
 .. _class_ProjectSettings_property_rendering/limits/rendering/max_renderable_elements:
 
 - :ref:`int<class_int>` **rendering/limits/rendering/max_renderable_elements**
@@ -4019,7 +4106,7 @@ Max buffer size for drawing immediate objects (ImmediateGeometry nodes). Nodes u
 | *Default* | ``65536`` |
 +-----------+-----------+
 
-Max amount of elements renderable in a frame. If more than this are visible per frame, they will be dropped. Keep in mind elements refer to mesh surfaces and not meshes themselves.
+Max amount of elements renderable in a frame. If more elements than this are visible per frame, they will not be drawn. Keep in mind elements refer to mesh surfaces and not meshes themselves. Setting this low will slightly reduce memory usage and may decrease shader compile times, particularly on web. For most uses, the default value is suitable, but consider lowering as much as possible on web export.
 
 ----
 
@@ -4031,7 +4118,7 @@ Max amount of elements renderable in a frame. If more than this are visible per 
 | *Default* | ``4096`` |
 +-----------+----------+
 
-Max number of lights renderable in a frame. If more than this number are used, they will be ignored. On some systems (particularly web) setting this number as low as possible can increase the speed of shader compilation.
+Max number of lights renderable in a frame. If more lights than this number are used, they will be ignored. Setting this low will slightly reduce memory usage and may decrease shader compile times, particularly on web. For most uses, the default value is suitable, but consider lowering as much as possible on web export.
 
 ----
 
@@ -4043,7 +4130,7 @@ Max number of lights renderable in a frame. If more than this number are used, t
 | *Default* | ``1024`` |
 +-----------+----------+
 
-Max number of reflection probes renderable in a frame. If more than this number are used, they will be ignored. On some systems (particularly web) setting this number as low as possible can increase the speed of shader compilation.
+Max number of reflection probes renderable in a frame. If more reflection probes than this number are used, they will be ignored. Setting this low will slightly reduce memory usage and may decrease shader compile times, particularly on web. For most uses, the default value is suitable, but consider lowering as much as possible on web export.
 
 ----
 
@@ -4056,6 +4143,30 @@ Max number of reflection probes renderable in a frame. If more than this number 
 +-----------+----------+
 
 Shaders have a time variable that constantly increases. At some point, it needs to be rolled back to zero to avoid precision errors on shader animations. This setting specifies when (in seconds).
+
+----
+
+.. _class_ProjectSettings_property_rendering/quality/2d/ninepatch_mode:
+
+- :ref:`int<class_int>` **rendering/quality/2d/ninepatch_mode**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+Choose between default mode where corner scalings are preserved matching the artwork, and scaling mode.
+
+Not available in GLES3 when :ref:`rendering/batching/options/use_batching<class_ProjectSettings_property_rendering/batching/options/use_batching>` is off.
+
+----
+
+.. _class_ProjectSettings_property_rendering/quality/2d/use_camera_snap:
+
+- :ref:`bool<class_bool>` **rendering/quality/2d/use_camera_snap**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
 
 ----
 
@@ -4084,6 +4195,34 @@ If ``true``, this option enables a "safe" code path for such NVIDIA GPUs at the 
 If ``true``, forces snapping of polygons to pixels in 2D rendering. May help in some pixel art styles.
 
 Consider using the project setting :ref:`rendering/batching/precision/uv_contract<class_ProjectSettings_property_rendering/batching/precision/uv_contract>` to prevent artifacts.
+
+----
+
+.. _class_ProjectSettings_property_rendering/quality/2d/use_software_skinning:
+
+- :ref:`bool<class_bool>` **rendering/quality/2d/use_software_skinning**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+If ``true``, performs 2D skinning on the CPU rather than the GPU. This provides greater compatibility with a wide range of hardware, and also may be faster in some circumstances.
+
+Currently only available when :ref:`rendering/batching/options/use_batching<class_ProjectSettings_property_rendering/batching/options/use_batching>` is active.
+
+----
+
+.. _class_ProjectSettings_property_rendering/quality/2d/use_transform_snap:
+
+- :ref:`bool<class_bool>` **rendering/quality/2d/use_transform_snap**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+If ``true``, forces snapping of 2D object transforms to the nearest whole coordinate.
+
+Can help prevent unwanted relative movement in pixel art styles.
 
 ----
 
@@ -4212,6 +4351,32 @@ Maximum anisotropic filter level used for textures with anisotropy enabled. High
 Sets the number of MSAA samples to use. MSAA is used to reduce aliasing around the edges of polygons. A higher MSAA value results in smoother edges but can be significantly slower on some hardware.
 
 **Note:** MSAA is not available on HTML5 export using the GLES2 backend.
+
+----
+
+.. _class_ProjectSettings_property_rendering/quality/filters/use_debanding:
+
+- :ref:`bool<class_bool>` **rendering/quality/filters/use_debanding**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+If ``true``, uses a fast post-processing filter to make banding significantly less visible. In some cases, debanding may introduce a slightly noticeable dithering pattern. It's recommended to enable debanding only when actually needed since the dithering pattern will make lossless-compressed screenshots larger.
+
+**Note:** Only available on the GLES3 backend. :ref:`rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>` must also be ``true`` for debanding to be effective.
+
+----
+
+.. _class_ProjectSettings_property_rendering/quality/filters/use_fxaa:
+
+- :ref:`bool<class_bool>` **rendering/quality/filters/use_fxaa**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+Enables FXAA in the root Viewport. FXAA is a popular screen-space antialiasing method, which is fast but will make the image look blurry, especially at lower resolutions. It can still work relatively well at large resolutions such as 1440p and 4K.
 
 ----
 
@@ -4505,6 +4670,52 @@ Lower-end override for :ref:`rendering/quality/shadows/filter_mode<class_Project
 
 ----
 
+.. _class_ProjectSettings_property_rendering/quality/skinning/force_software_skinning:
+
+- :ref:`bool<class_bool>` **rendering/quality/skinning/force_software_skinning**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+Forces :ref:`MeshInstance<class_MeshInstance>` to always perform skinning on the CPU (applies to both GLES2 and GLES3).
+
+See also :ref:`rendering/quality/skinning/software_skinning_fallback<class_ProjectSettings_property_rendering/quality/skinning/software_skinning_fallback>`.
+
+----
+
+.. _class_ProjectSettings_property_rendering/quality/skinning/software_skinning_fallback:
+
+- :ref:`bool<class_bool>` **rendering/quality/skinning/software_skinning_fallback**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+Allows :ref:`MeshInstance<class_MeshInstance>` to perform skinning on the CPU when the hardware doesn't support the default GPU skinning process with GLES2.
+
+If ``false``, an alternative skinning process on the GPU is used in this case (slower in most cases).
+
+See also :ref:`rendering/quality/skinning/force_software_skinning<class_ProjectSettings_property_rendering/quality/skinning/force_software_skinning>`.
+
+**Note:** When the software skinning fallback is triggered, custom vertex shaders will behave in a different way, because the bone transform will be already applied to the modelview matrix.
+
+----
+
+.. _class_ProjectSettings_property_rendering/quality/spatial_partitioning/render_tree_balance:
+
+- :ref:`float<class_float>` **rendering/quality/spatial_partitioning/render_tree_balance**
+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
+
+The rendering octree balance can be changed to favor smaller (``0``), or larger (``1``) branches.
+
+Larger branches can increase performance significantly in some projects.
+
+----
+
 .. _class_ProjectSettings_property_rendering/quality/subsurface_scattering/follow_surface:
 
 - :ref:`bool<class_bool>` **rendering/quality/subsurface_scattering/follow_surface**
@@ -4713,7 +4924,23 @@ Returns the value of a setting.
 
 - :ref:`String<class_String>` **globalize_path** **(** :ref:`String<class_String>` path **)** |const|
 
-Converts a localized path (``res://``) to a full native OS path.
+Returns the absolute, native OS path corresponding to the localized ``path`` (starting with ``res://`` or ``user://``). The returned path will vary depending on the operating system and user preferences. See `File paths in Godot projects <https://docs.godotengine.org/en/latest/tutorials/io/data_paths.html>`_ to see what those paths convert to. See also :ref:`localize_path<class_ProjectSettings_method_localize_path>`.
+
+**Note:** :ref:`globalize_path<class_ProjectSettings_method_globalize_path>` with ``res://`` will not work in an exported project. Instead, prepend the executable's base directory to the path when running from an exported project:
+
+::
+
+    var path = ""
+    if OS.has_feature("editor"):
+        # Running from an editor binary.
+        # `path` will contain the absolute path to `hello.txt` located in the project root.
+        path = ProjectSettings.globalize_path("res://hello.txt")
+    else:
+        # Running from an exported project.
+        # `path` will contain the absolute path to `hello.txt` next to the executable.
+        # This is *not* identical to using `ProjectSettings.globalize_path()` with a `res://` path,
+        # but is close enough in spirit.
+        path = OS.get_executable_path().get_base_dir().plus_file("hello.txt")
 
 ----
 
@@ -4727,11 +4954,13 @@ Returns ``true`` if a configuration value is present.
 
 .. _class_ProjectSettings_method_load_resource_pack:
 
-- :ref:`bool<class_bool>` **load_resource_pack** **(** :ref:`String<class_String>` pack, :ref:`bool<class_bool>` replace_files=true **)**
+- :ref:`bool<class_bool>` **load_resource_pack** **(** :ref:`String<class_String>` pack, :ref:`bool<class_bool>` replace_files=true, :ref:`int<class_int>` offset=0 **)**
 
 Loads the contents of the .pck or .zip file specified by ``pack`` into the resource filesystem (``res://``). Returns ``true`` on success.
 
 **Note:** If a file from ``pack`` shares the same path as a file already in the resource filesystem, any attempts to load that file will use the file from ``pack`` unless ``replace_files`` is set to ``false``.
+
+**Note:** The optional ``offset`` parameter can be used to specify the offset in bytes to the start of the resource pack. This is only supported for .pck files.
 
 ----
 
@@ -4739,7 +4968,7 @@ Loads the contents of the .pck or .zip file specified by ``pack`` into the resou
 
 - :ref:`String<class_String>` **localize_path** **(** :ref:`String<class_String>` path **)** |const|
 
-Convert a path to a localized path (``res://`` path).
+Returns the localized path (starting with ``res://``) corresponding to the absolute, native OS ``path``. See also :ref:`globalize_path<class_ProjectSettings_method_globalize_path>`.
 
 ----
 

@@ -11,7 +11,7 @@ ConeTwistJoint
 
 **Inherits:** :ref:`Joint<class_Joint>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A twist joint between two 3D bodies.
+A twist joint between two 3D PhysicsBodies.
 
 Description
 -----------
@@ -20,7 +20,7 @@ The joint can rotate the bodies across an axis defined by the local x-axes of th
 
 The twist axis is initiated as the X axis of the :ref:`Joint<class_Joint>`.
 
-Once the Bodies swing, the twist axis is calculated as the middle of the x-axes of the Joint in the local space of the two Bodies.
+Once the Bodies swing, the twist axis is calculated as the middle of the x-axes of the Joint in the local space of the two Bodies. See also :ref:`Generic6DOFJoint<class_Generic6DOFJoint>`.
 
 Properties
 ----------

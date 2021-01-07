@@ -32,16 +32,16 @@ Properties
 Methods
 -------
 
-+------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`broadcast<class_ProximityGroup_method_broadcast>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` parameters **)** |
-+------+------------------------------------------------------------------------------------------------------------------------------------------------+
++------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`broadcast<class_ProximityGroup_method_broadcast>` **(** :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` parameters **)** |
++------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
 .. _class_ProximityGroup_signal_broadcast:
 
-- **broadcast** **(** :ref:`String<class_String>` group_name, :ref:`Array<class_Array>` parameters **)**
+- **broadcast** **(** :ref:`String<class_String>` method, :ref:`Array<class_Array>` parameters **)**
 
 Enumerations
 ------------
@@ -106,7 +106,7 @@ Method Descriptions
 
 .. _class_ProximityGroup_method_broadcast:
 
-- void **broadcast** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` parameters **)**
+- void **broadcast** **(** :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` parameters **)**
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

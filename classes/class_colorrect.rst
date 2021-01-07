@@ -16,7 +16,12 @@ Colored rectangle.
 Description
 -----------
 
-Displays a colored rectangle.
+Displays a rectangle filled with a solid :ref:`color<class_ColorRect_property_color>`. If you need to display the border alone, consider using :ref:`ReferenceRect<class_ReferenceRect>` instead.
+
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
 
 Properties
 ----------

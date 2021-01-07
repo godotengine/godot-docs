@@ -278,7 +278,7 @@ All data is packed in one large float array. An array may look like this: Transf
 
 - void **set_instance_color** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` color **)**
 
-Sets the color of a specific instance.
+Sets the color of a specific instance by *multiplying* the mesh's existing vertex colors.
 
 For the color to take effect, ensure that :ref:`color_format<class_MultiMesh_property_color_format>` is non-``null`` on the ``MultiMesh`` and :ref:`SpatialMaterial.vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>` is ``true`` on the material.
 

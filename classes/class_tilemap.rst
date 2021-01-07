@@ -23,6 +23,18 @@ Tutorials
 
 - :doc:`../tutorials/2d/using_tilemaps`
 
+- `https://godotengine.org/asset-library/asset/120 <https://godotengine.org/asset-library/asset/120>`_
+
+- `https://godotengine.org/asset-library/asset/112 <https://godotengine.org/asset-library/asset/112>`_
+
+- `https://godotengine.org/asset-library/asset/111 <https://godotengine.org/asset-library/asset/111>`_
+
+- `https://godotengine.org/asset-library/asset/519 <https://godotengine.org/asset-library/asset/519>`_
+
+- `https://godotengine.org/asset-library/asset/520 <https://godotengine.org/asset-library/asset/520>`_
+
+- `https://godotengine.org/asset-library/asset/113 <https://godotengine.org/asset-library/asset/113>`_
+
 Properties
 ----------
 
@@ -303,7 +315,7 @@ Position for tile origin. See :ref:`TileOrigin<enum_TileMap_TileOrigin>` for pos
 | *Getter*  | is_y_sort_mode_enabled() |
 +-----------+--------------------------+
 
-If ``true``, the TileMap's children will be drawn in order of their Y coordinate.
+If ``true``, the TileMap's direct children will be drawn in order of their Y coordinate.
 
 ----
 
@@ -369,7 +381,7 @@ Friction value for static body collisions (see ``collision_use_kinematic``).
 | *Getter*  | get_collision_layer()      |
 +-----------+----------------------------+
 
-The collision layer(s) for all colliders in the TileMap. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
+The collision layer(s) for all colliders in the TileMap. See `Collision layers and masks <https://docs.godotengine.org/en/3.2/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 
@@ -385,7 +397,7 @@ The collision layer(s) for all colliders in the TileMap. See `Collision layers a
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The collision mask(s) for all colliders in the TileMap. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
+The collision mask(s) for all colliders in the TileMap. See `Collision layers and masks <https://docs.godotengine.org/en/3.2/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 

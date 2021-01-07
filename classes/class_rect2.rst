@@ -14,12 +14,20 @@ Rect2
 Description
 -----------
 
-Rect2 consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
+``Rect2`` consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
+
+It uses floating-point coordinates.
+
+The 3D counterpart to ``Rect2`` is :ref:`AABB<class_AABB>`.
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/math/index`
+
+- :doc:`../tutorials/math/vector_math`
+
+- :doc:`../tutorials/math/vectors_advanced`
 
 Properties
 ----------

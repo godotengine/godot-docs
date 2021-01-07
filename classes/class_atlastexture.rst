@@ -18,6 +18,8 @@ Description
 
 :ref:`Texture<class_Texture>` resource aimed at managing big textures files that pack multiple smaller textures. Consists of a :ref:`Texture<class_Texture>`, a margin that defines the border width, and a region that defines the actual area of the AtlasTexture.
 
+**Note:** AtlasTextures don't support repetition. The :ref:`Texture.FLAG_REPEAT<class_Texture_constant_FLAG_REPEAT>` and :ref:`Texture.FLAG_MIRRORED_REPEAT<class_Texture_constant_FLAG_MIRRORED_REPEAT>` flags are ignored when using an AtlasTexture.
+
 Properties
 ----------
 

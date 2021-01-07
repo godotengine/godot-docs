@@ -164,6 +164,8 @@ Methods
 +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`UpdateMode<enum_Animation_UpdateMode>`               | :ref:`value_track_get_update_mode<class_Animation_method_value_track_get_update_mode>` **(** :ref:`int<class_int>` track_idx **)** |const|                                                                                                                                                                     |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                              | :ref:`value_track_interpolate<class_Animation_method_value_track_interpolate>` **(** :ref:`int<class_int>` track_idx, :ref:`float<class_float>` time_sec **)** |const|                                                                                                                                         |
++------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`value_track_set_update_mode<class_Animation_method_value_track_set_update_mode>` **(** :ref:`int<class_int>` track_idx, :ref:`UpdateMode<enum_Animation_UpdateMode>` mode **)**                                                                                                                          |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -764,6 +766,14 @@ Returns all the key indices of a value track, given a position and delta time.
 - :ref:`UpdateMode<enum_Animation_UpdateMode>` **value_track_get_update_mode** **(** :ref:`int<class_int>` track_idx **)** |const|
 
 Returns the update mode of a value track.
+
+----
+
+.. _class_Animation_method_value_track_interpolate:
+
+- :ref:`Variant<class_Variant>` **value_track_interpolate** **(** :ref:`int<class_int>` track_idx, :ref:`float<class_float>` time_sec **)** |const|
+
+Returns the interpolated value at the given time (in seconds). The ``track_idx`` must be the index of a value track.
 
 ----
 

@@ -43,6 +43,8 @@ Enumerations
 
 .. _class_VisualScriptPropertyGet_constant_CALL_MODE_INSTANCE:
 
+.. _class_VisualScriptPropertyGet_constant_CALL_MODE_BASIC_TYPE:
+
 enum **CallMode**:
 
 - **CALL_MODE_SELF** = **0**
@@ -50,6 +52,8 @@ enum **CallMode**:
 - **CALL_MODE_NODE_PATH** = **1**
 
 - **CALL_MODE_INSTANCE** = **2**
+
+- **CALL_MODE_BASIC_TYPE** = **3**
 
 Property Descriptions
 ---------------------

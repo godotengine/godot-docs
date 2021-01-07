@@ -11,12 +11,12 @@ HingeJoint
 
 **Inherits:** :ref:`Joint<class_Joint>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A hinge between two 3D bodies.
+A hinge between two 3D PhysicsBodies.
 
 Description
 -----------
 
-A HingeJoint normally uses the Z axis of body A as the hinge axis, another axis can be specified when adding it manually though.
+A HingeJoint normally uses the Z axis of body A as the hinge axis, another axis can be specified when adding it manually though. See also :ref:`Generic6DOFJoint<class_Generic6DOFJoint>`.
 
 Properties
 ----------

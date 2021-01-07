@@ -23,6 +23,8 @@ Tutorials
 
 - :doc:`../tutorials/audio/recording_with_microphone`
 
+- `https://godotengine.org/asset-library/asset/527 <https://godotengine.org/asset-library/asset/527>`_
+
 Properties
 ----------
 

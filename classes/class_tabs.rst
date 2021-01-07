@@ -16,7 +16,7 @@ Tabs control.
 Description
 -----------
 
-Simple tabs control, similar to :ref:`TabContainer<class_TabContainer>` but is only in charge of drawing tabs, not interact with children.
+Simple tabs control, similar to :ref:`TabContainer<class_TabContainer>` but is only in charge of drawing tabs, not interacting with children.
 
 Properties
 ----------
@@ -42,6 +42,8 @@ Methods
 | void                          | :ref:`ensure_tab_visible<class_Tabs_method_ensure_tab_visible>` **(** :ref:`int<class_int>` idx **)**                                   |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`get_offset_buttons_visible<class_Tabs_method_get_offset_buttons_visible>` **(** **)** |const|                                     |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`get_previous_tab<class_Tabs_method_get_previous_tab>` **(** **)** |const|                                                         |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`get_select_with_rmb<class_Tabs_method_get_select_with_rmb>` **(** **)** |const|                                                   |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -316,6 +318,14 @@ Moves the scroll view to make the tab visible.
 - :ref:`bool<class_bool>` **get_offset_buttons_visible** **(** **)** |const|
 
 Returns ``true`` if the offset buttons (the ones that appear when there's not enough space for all tabs) are visible.
+
+----
+
+.. _class_Tabs_method_get_previous_tab:
+
+- :ref:`int<class_int>` **get_previous_tab** **(** **)** |const|
+
+Returns the previously active tab index.
 
 ----
 

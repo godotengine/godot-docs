@@ -18,6 +18,15 @@ Description
 
 3D box shape that can be a child of a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`Area<class_Area>`.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/675 <https://godotengine.org/asset-library/asset/675>`_
+
+- `https://godotengine.org/asset-library/asset/126 <https://godotengine.org/asset-library/asset/126>`_
+
+- `https://godotengine.org/asset-library/asset/125 <https://godotengine.org/asset-library/asset/125>`_
+
 Properties
 ----------
 

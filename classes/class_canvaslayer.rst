@@ -27,6 +27,8 @@ Tutorials
 
 - :doc:`../tutorials/2d/canvas_layers`
 
+- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
+
 Properties
 ----------
 

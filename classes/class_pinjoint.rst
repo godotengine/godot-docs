@@ -11,12 +11,12 @@ PinJoint
 
 **Inherits:** :ref:`Joint<class_Joint>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Pin joint for 3D shapes.
+Pin joint for 3D PhysicsBodies.
 
 Description
 -----------
 
-Pin joint for 3D rigid bodies. It pins 2 bodies (rigid or static) together.
+Pin joint for 3D rigid bodies. It pins 2 bodies (rigid or static) together. See also :ref:`Generic6DOFJoint<class_Generic6DOFJoint>`.
 
 Properties
 ----------

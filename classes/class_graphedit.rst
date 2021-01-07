@@ -26,6 +26,12 @@ Properties
 +------------------------------------------+----------------------------------------------------------------------+------------------------------+
 | :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                           | ``2`` *(parent override)*    |
 +------------------------------------------+----------------------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`minimap_enabled<class_GraphEdit_property_minimap_enabled>`     | ``true``                     |
++------------------------------------------+----------------------------------------------------------------------+------------------------------+
+| :ref:`float<class_float>`                | :ref:`minimap_opacity<class_GraphEdit_property_minimap_opacity>`     | ``0.65``                     |
++------------------------------------------+----------------------------------------------------------------------+------------------------------+
+| :ref:`Vector2<class_Vector2>`            | :ref:`minimap_size<class_GraphEdit_property_minimap_size>`           | ``Vector2( 240, 160 )``      |
++------------------------------------------+----------------------------------------------------------------------+------------------------------+
 | :ref:`bool<class_bool>`                  | rect_clip_content                                                    | ``true`` *(parent override)* |
 +------------------------------------------+----------------------------------------------------------------------+------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`right_disconnects<class_GraphEdit_property_right_disconnects>` | ``false``                    |
@@ -89,6 +95,8 @@ Theme Properties
 | :ref:`Color<class_Color>`       | grid_major                    | Color( 1, 1, 1, 0.2 )  |
 +---------------------------------+-------------------------------+------------------------+
 | :ref:`Color<class_Color>`       | grid_minor                    | Color( 1, 1, 1, 0.05 ) |
++---------------------------------+-------------------------------+------------------------+
+| :ref:`Texture<class_Texture>`   | minimap                       |                        |
 +---------------------------------+-------------------------------+------------------------+
 | :ref:`Texture<class_Texture>`   | minus                         |                        |
 +---------------------------------+-------------------------------+------------------------+
@@ -220,6 +228,54 @@ Emitted when the scroll offset is changed by the user. It will not be emitted wh
 
 Property Descriptions
 ---------------------
+
+.. _class_GraphEdit_property_minimap_enabled:
+
+- :ref:`bool<class_bool>` **minimap_enabled**
+
++-----------+----------------------------+
+| *Default* | ``true``                   |
++-----------+----------------------------+
+| *Setter*  | set_minimap_enabled(value) |
++-----------+----------------------------+
+| *Getter*  | is_minimap_enabled()       |
++-----------+----------------------------+
+
+If ``true``, the minimap is visible.
+
+----
+
+.. _class_GraphEdit_property_minimap_opacity:
+
+- :ref:`float<class_float>` **minimap_opacity**
+
++-----------+----------------------------+
+| *Default* | ``0.65``                   |
++-----------+----------------------------+
+| *Setter*  | set_minimap_opacity(value) |
++-----------+----------------------------+
+| *Getter*  | get_minimap_opacity()      |
++-----------+----------------------------+
+
+The opacity of the minimap rectangle.
+
+----
+
+.. _class_GraphEdit_property_minimap_size:
+
+- :ref:`Vector2<class_Vector2>` **minimap_size**
+
++-----------+-------------------------+
+| *Default* | ``Vector2( 240, 160 )`` |
++-----------+-------------------------+
+| *Setter*  | set_minimap_size(value) |
++-----------+-------------------------+
+| *Getter*  | get_minimap_size()      |
++-----------+-------------------------+
+
+The size of the minimap rectangle. The map itself is based on the size of the grid area and is scaled to fit this rectangle.
+
+----
 
 .. _class_GraphEdit_property_right_disconnects:
 

@@ -37,6 +37,8 @@ Tutorials
 
 - :doc:`../tutorials/2d/custom_drawing_in_2d`
 
+- `https://godotengine.org/asset-library/asset/528 <https://godotengine.org/asset-library/asset/528>`_
+
 Properties
 ----------
 
@@ -178,7 +180,7 @@ Emitted when becoming hidden.
 
 - **item_rect_changed** **(** **)**
 
-Emitted when the item rect has changed.
+Emitted when the item's :ref:`Rect2<class_Rect2>` boundaries (position or size) have changed, or when an action is taking place that may have impacted these boundaries (e.g. changing :ref:`Sprite.texture<class_Sprite_property_texture>`).
 
 ----
 

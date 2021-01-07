@@ -29,6 +29,10 @@ Tutorials
 
 - :doc:`../tutorials/3d/using_gridmaps`
 
+- `https://godotengine.org/asset-library/asset/125 <https://godotengine.org/asset-library/asset/125>`_
+
+- `https://godotengine.org/asset-library/asset/126 <https://godotengine.org/asset-library/asset/126>`_
+
 Properties
 ----------
 
@@ -242,7 +246,7 @@ GridMaps act as static bodies, meaning they aren't affected by gravity or other 
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The physics layers this GridMap detects collisions in. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
+The physics layers this GridMap detects collisions in. See `Collision layers and masks <https://docs.godotengine.org/en/3.2/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 

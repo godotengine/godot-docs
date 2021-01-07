@@ -36,6 +36,11 @@ See also :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`ImmediateGeometry<class_Immedi
 
 **Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`_ for front faces of triangle primitive modes.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
+
 Methods
 -------
 
@@ -103,6 +108,8 @@ Adds an array of bones for the next vertex to use. ``bones`` must contain 4 inte
 - void **add_color** **(** :ref:`Color<class_Color>` color **)**
 
 Specifies a :ref:`Color<class_Color>` for the next vertex to use.
+
+**Note:** The material must have :ref:`SpatialMaterial.vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>` enabled for the vertex color to be visible.
 
 ----
 

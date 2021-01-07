@@ -154,7 +154,7 @@ Returns the number of points describing the curve.
 
 - :ref:`Vector2<class_Vector2>` **get_point_in** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the position of the control point leading to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0)``.
+Returns the position of the control point leading to the vertex ``idx``. The returned position is relative to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0)``.
 
 ----
 
@@ -162,7 +162,7 @@ Returns the position of the control point leading to the vertex ``idx``. If the 
 
 - :ref:`Vector2<class_Vector2>` **get_point_out** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the position of the control point leading out of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0)``.
+Returns the position of the control point leading out of the vertex ``idx``. The returned position is relative to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0)``.
 
 ----
 
@@ -216,7 +216,7 @@ Deletes the point ``idx`` from the curve. Sends an error to the console if ``idx
 
 - void **set_point_in** **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` position **)**
 
-Sets the position of the control point leading to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console.
+Sets the position of the control point leading to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console. The position is relative to the vertex.
 
 ----
 
@@ -224,7 +224,7 @@ Sets the position of the control point leading to the vertex ``idx``. If the ind
 
 - void **set_point_out** **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` position **)**
 
-Sets the position of the control point leading out of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console.
+Sets the position of the control point leading out of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console. The position is relative to the vertex.
 
 ----
 

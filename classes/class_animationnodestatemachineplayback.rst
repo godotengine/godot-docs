@@ -40,28 +40,46 @@ Properties
 Methods
 -------
 
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_current_node<class_AnimationNodeStateMachinePlayback_method_get_current_node>` **(** **)** |const|         |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_travel_path<class_AnimationNodeStateMachinePlayback_method_get_travel_path>` **(** **)** |const|           |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`is_playing<class_AnimationNodeStateMachinePlayback_method_is_playing>` **(** **)** |const|                     |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`start<class_AnimationNodeStateMachinePlayback_method_start>` **(** :ref:`String<class_String>` node **)**      |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`stop<class_AnimationNodeStateMachinePlayback_method_stop>` **(** **)**                                         |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`travel<class_AnimationNodeStateMachinePlayback_method_travel>` **(** :ref:`String<class_String>` to_node **)** |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`get_current_length<class_AnimationNodeStateMachinePlayback_method_get_current_length>` **(** **)** |const|               |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`get_current_node<class_AnimationNodeStateMachinePlayback_method_get_current_node>` **(** **)** |const|                   |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`get_current_play_position<class_AnimationNodeStateMachinePlayback_method_get_current_play_position>` **(** **)** |const| |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_travel_path<class_AnimationNodeStateMachinePlayback_method_get_travel_path>` **(** **)** |const|                     |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`is_playing<class_AnimationNodeStateMachinePlayback_method_is_playing>` **(** **)** |const|                               |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`start<class_AnimationNodeStateMachinePlayback_method_start>` **(** :ref:`String<class_String>` node **)**                |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`stop<class_AnimationNodeStateMachinePlayback_method_stop>` **(** **)**                                                   |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`travel<class_AnimationNodeStateMachinePlayback_method_travel>` **(** :ref:`String<class_String>` to_node **)**           |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
+
+.. _class_AnimationNodeStateMachinePlayback_method_get_current_length:
+
+- :ref:`float<class_float>` **get_current_length** **(** **)** |const|
+
+----
 
 .. _class_AnimationNodeStateMachinePlayback_method_get_current_node:
 
 - :ref:`String<class_String>` **get_current_node** **(** **)** |const|
 
 Returns the currently playing animation state.
+
+----
+
+.. _class_AnimationNodeStateMachinePlayback_method_get_current_play_position:
+
+- :ref:`float<class_float>` **get_current_play_position** **(** **)** |const|
+
+Returns the playback position within the current animation state.
 
 ----
 

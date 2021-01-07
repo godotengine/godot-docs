@@ -23,7 +23,7 @@ Tutorials
 
 - :doc:`../tutorials/animation/animation_tree`
 
-- `https://github.com/godotengine/tps-demo <https://github.com/godotengine/tps-demo>`_
+- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
 
 Properties
 ----------

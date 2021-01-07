@@ -24,6 +24,8 @@ Textures are often created by loading them from a file. See :ref:`@GDScript.load
 
 ``Texture`` is a base for other resources. It cannot be used directly.
 
+**Note:** The maximum texture size is 16384×16384 pixels due to graphics hardware limitations. Larger textures may fail to import.
+
 Properties
 ----------
 
@@ -81,6 +83,8 @@ enum **Flags**:
 
 - **FLAG_REPEAT** = **2** --- Repeats the texture (instead of clamp to edge).
 
+**Note:** Ignored when using an :ref:`AtlasTexture<class_AtlasTexture>` as these don't support repetition.
+
 - **FLAG_FILTER** = **4** --- Uses a magnifying filter, to enable smooth zooming in of the texture.
 
 - **FLAG_ANISOTROPIC_FILTER** = **8** --- Uses anisotropic mipmap filtering. Generates smaller versions of the same texture with different aspect ratios.
@@ -90,6 +94,8 @@ This results in better-looking textures when viewed from oblique angles.
 - **FLAG_CONVERT_TO_LINEAR** = **16** --- Converts the texture to the sRGB color space.
 
 - **FLAG_MIRRORED_REPEAT** = **32** --- Repeats the texture with alternate sections mirrored.
+
+**Note:** Ignored when using an :ref:`AtlasTexture<class_AtlasTexture>` as these don't support repetition.
 
 - **FLAG_VIDEO_SURFACE** = **2048** --- Texture is a video surface.
 

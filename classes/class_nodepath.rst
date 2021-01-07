@@ -35,6 +35,11 @@ Some examples of NodePaths include the following:
     @"/root/Main" # If your main scene's root node were named "Main".
     @"/root/MyAutoload" # If you have an autoloaded node or scene.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/520 <https://godotengine.org/asset-library/asset/520>`_
+
 Methods
 -------
 

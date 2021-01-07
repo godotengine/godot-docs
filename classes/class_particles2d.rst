@@ -11,7 +11,7 @@ Particles2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-2D particle emitter.
+GPU-based 2D particle emitter.
 
 Description
 -----------
@@ -20,10 +20,16 @@ Description
 
 Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_ParticlesMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
 
+**Note:** ``Particles2D`` only work when using the GLES3 renderer. If using the GLES2 renderer, use :ref:`CPUParticles2D<class_CPUParticles2D>` instead. You can convert ``Particles2D`` to :ref:`CPUParticles2D<class_CPUParticles2D>` by selecting the node, clicking the **Particles** menu at the top of the 2D editor viewport then choosing **Convert to CPUParticles2D**.
+
+**Note:** After working on a Particles node, remember to update its :ref:`visibility_rect<class_Particles2D_property_visibility_rect>` by selecting it, clicking the **Particles** menu at the top of the 2D editor viewport then choose **Generate Visibility Rect**. Otherwise, particles may suddenly disappear depending on the camera position and angle.
+
 Tutorials
 ---------
 
 - :doc:`../tutorials/2d/particle_systems_2d`
+
+- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
 
 Properties
 ----------
@@ -101,7 +107,9 @@ Property Descriptions
 | *Getter*  | get_amount()      |
 +-----------+-------------------+
 
-Number of particles emitted in one emission cycle.
+The number of particles emitted in one emission cycle (corresponding to the :ref:`lifetime<class_Particles2D_property_lifetime>`).
+
+**Note:** Changing :ref:`amount<class_Particles2D_property_amount>` will reset the particle emission, therefore removing all particles that were already emitted before changing :ref:`amount<class_Particles2D_property_amount>`.
 
 ----
 
@@ -197,7 +205,7 @@ If ``true``, results in fractional delta calculation which has a smoother partic
 | *Getter*  | get_lifetime()      |
 +-----------+---------------------+
 
-Amount of time each particle will exist.
+The amount of time each particle will exist (in seconds).
 
 ----
 

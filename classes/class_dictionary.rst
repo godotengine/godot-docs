@@ -26,24 +26,34 @@ Creating a dictionary:
 
 ::
 
-    var my_dir = {} # Creates an empty dictionary.
-    var points_dir = {"White": 50, "Yellow": 75, "Orange": 100}
-    var another_dir = {
-        key1: value1,
-        key2: value2,
-        key3: value3,
+    var my_dict = {} # Creates an empty dictionary.
+    
+    var dict_variable_key = "Another key name"
+    var dict_variable_value = "value2"
+    var another_dict = {
+        "Some key name": "value1",
+        dict_variable_key: dict_variable_value,
+    }
+    
+    var points_dict = {"White": 50, "Yellow": 75, "Orange": 100}
+    
+    # Alternative Lua-style syntax.
+    # Doesn't require quotes around keys, but only string constants can be used as key names.
+    # Additionally, key names must start with a letter or an underscore.
+    # Here, `some_key` is a string literal, not a variable!
+    another_dict = {
+        some_key = 42,
     }
 
 You can access a dictionary's values by referencing the appropriate key. In the above example, ``points_dir["White"]`` will return ``50``. You can also write ``points_dir.White``, which is equivalent. However, you'll have to use the bracket syntax if the key you're accessing the dictionary with isn't a fixed string (such as a number or variable).
 
 ::
 
-    export(String, "White", "Yellow", "Orange") var my_color
-    var points_dir = {"White": 50, "Yellow": 75, "Orange": 100}
-    
+    export(string, "White", "Yellow", "Orange") var my_color
+    var points_dict = {"White": 50, "Yellow": 75, "Orange": 100}
     func _ready():
         # We can't use dot syntax here as `my_color` is a variable.
-        var points = points_dir[my_color]
+        var points = points_dict[my_color]
 
 In the above code, ``points`` will be assigned the value that is paired with the appropriate color selected in ``my_color``.
 
@@ -51,14 +61,14 @@ Dictionaries can contain more complex data:
 
 ::
 
-    my_dir = {"First Array": [1, 2, 3, 4]} # Assigns an Array to a String key.
+    my_dict = {"First Array": [1, 2, 3, 4]} # Assigns an Array to a String key.
 
 To add a key to an existing dictionary, access it like an existing key and assign to it:
 
 ::
 
-    var points_dir = {"White": 50, "Yellow": 75, "Orange": 100}
-    points_dir["Blue"] = 150 # Add "Blue" as a key and assign 150 as its value.
+    var points_dict = {"White": 50, "Yellow": 75, "Orange": 100}
+    points_dict["Blue"] = 150 # Add "Blue" as a key and assign 150 as its value.
 
 Finally, dictionaries can contain different types of keys and values in the same dictionary:
 
@@ -67,11 +77,11 @@ Finally, dictionaries can contain different types of keys and values in the same
     # This is a valid dictionary.
     # To access the string "Nested value" below, use `my_dir.sub_dir.sub_key` or `my_dir["sub_dir"]["sub_key"]`.
     # Indexing styles can be mixed and matched depending on your needs.
-    var my_dir = {
+    var my_dict = {
         "String Key": 5,
         4: [1, 2, 3],
         7: "Hello",
-        "sub_dir": {"sub_key": "Nested value"},
+        "sub_dict": {"sub_key": "Nested value"},
     }
 
 **Note:** Unlike :ref:`Array<class_Array>`\ s, you can't compare dictionaries directly:
@@ -84,26 +94,32 @@ Finally, dictionaries can contain different types of keys and values in the same
     func compare_arrays():
         print(array1 == array2) # Will print true.
     
-    dir1 = {"a": 1, "b": 2, "c": 3}
-    dir2 = {"a": 1, "b": 2, "c": 3}
+    var dict1 = {"a": 1, "b": 2, "c": 3}
+    var dict2 = {"a": 1, "b": 2, "c": 3}
     
     func compare_dictionaries():
-        print(dir1 == dir2) # Will NOT print true.
+        print(dict1 == dict2) # Will NOT print true.
 
 You need to first calculate the dictionary's hash with :ref:`hash<class_Dictionary_method_hash>` before you can compare them:
 
 ::
 
-    dir1 = {"a": 1, "b": 2, "c": 3}
-    dir2 = {"a": 1, "b": 2, "c": 3}
+    var dict1 = {"a": 1, "b": 2, "c": 3}
+    var dict2 = {"a": 1, "b": 2, "c": 3}
     
     func compare_dictionaries():
-        print(dir1.hash() == dir2.hash()) # Will print true.
+        print(dict1.hash() == dict2.hash()) # Will print true.
+
+**Note:** When declaring a dictionary with ``const``, the dictionary itself can still be mutated by defining the values of individual keys. Using ``const`` will only prevent assigning the constant with another value after it was initialized.
 
 Tutorials
 ---------
 
 - `#dictionary <../getting_started/scripting/gdscript/gdscript_basics.html#dictionary>`_ in :doc:`../getting_started/scripting/gdscript/gdscript_basics`
+
+- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
+
+- `https://godotengine.org/asset-library/asset/677 <https://godotengine.org/asset-library/asset/677>`_
 
 Methods
 -------
@@ -230,7 +246,7 @@ Returns the list of keys in the ``Dictionary``.
 
 - :ref:`int<class_int>` **size** **(** **)**
 
-Returns the size of the dictionary (in pairs).
+Returns the number of keys in the dictionary.
 
 ----
 

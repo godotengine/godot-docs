@@ -25,6 +25,8 @@ Tutorials
 
 - :doc:`../tutorials/inputs/mouse_and_input_coordinates`
 
+- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
+
 Properties
 ----------
 

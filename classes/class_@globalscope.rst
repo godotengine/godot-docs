@@ -1678,10 +1678,10 @@ Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other failu
 
     var err = method_that_returns_error()
     if err != OK:
-        print("Failure!)
+        print("Failure!")
     # Or, equivalent:
     if err:
-        print("Still failing!)
+        print("Still failing!")
 
 - **FAILED** = **1** --- Generic error.
 

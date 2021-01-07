@@ -18,10 +18,14 @@ Description
 
 A Spotlight is a type of :ref:`Light<class_Light>` node that emits lights in a specific direction, in the shape of a cone. The light is attenuated through the distance. This attenuation can be configured by changing the energy, radius and attenuation parameters of :ref:`Light<class_Light>`.
 
+**Note:** By default, only 32 SpotLights may affect a single mesh *resource* at once. Consider splitting your level into several meshes to decrease the likelihood that more than 32 lights will affect the same mesh resource. Splitting the level mesh will also improve frustum culling effectiveness, leading to greater performance. If you need to use more lights per mesh, you can increase :ref:`ProjectSettings.rendering/limits/rendering/max_lights_per_object<class_ProjectSettings_property_rendering/limits/rendering/max_lights_per_object>` at the cost of shader compilation times.
+
 Tutorials
 ---------
 
 - :doc:`../tutorials/3d/lights_and_shadows`
+
+- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
 
 Properties
 ----------

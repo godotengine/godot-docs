@@ -35,7 +35,11 @@ Arrays can be concatenated using the ``+`` operator:
     var array2 = [3, "Four"]
     print(array1 + array2) # ["One", 2, 3, "Four"]
 
+**Note:** Concatenating with the ``+=`` operator will create a new array, which has a cost. If you want to append another array to an existing array, :ref:`append_array<class_Array_method_append_array>` is more efficient.
+
 **Note:** Arrays are always passed by reference. To get a copy of an array which can be modified independently of the original array, use :ref:`duplicate<class_Array_method_duplicate>`.
+
+**Note:** When declaring an array with ``const``, the array itself can still be mutated by defining the values at individual indices or pushing/removing elements. Using ``const`` will only prevent assigning the constant with another value after it was initialized.
 
 Methods
 -------
@@ -56,6 +60,8 @@ Methods
 | :ref:`Array<class_Array>`     | :ref:`Array<class_Array_method_Array>` **(** :ref:`PoolByteArray<class_PoolByteArray>` from **)**                                                                                                                |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`append<class_Array_method_append>` **(** :ref:`Variant<class_Variant>` value **)**                                                                                                                         |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`append_array<class_Array_method_append_array>` **(** :ref:`Array<class_Array>` array **)**                                                                                                                 |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>` | :ref:`back<class_Array_method_back>` **(** **)**                                                                                                                                                                 |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -168,6 +174,21 @@ Constructs an array from a :ref:`PoolByteArray<class_PoolByteArray>`.
 - void **append** **(** :ref:`Variant<class_Variant>` value **)**
 
 Appends an element at the end of the array (alias of :ref:`push_back<class_Array_method_push_back>`).
+
+----
+
+.. _class_Array_method_append_array:
+
+- void **append_array** **(** :ref:`Array<class_Array>` array **)**
+
+Appends another array at the end of this array.
+
+::
+
+    var array1 = [1, 2, 3]
+    var array2 = [4, 5, 6]
+    array1.append_array(array2)
+    print(array1) # Prints [1, 2, 3, 4, 5, 6].
 
 ----
 
@@ -344,7 +365,7 @@ Removes and returns the last element of the array. Returns ``null`` if the array
 
 - :ref:`Variant<class_Variant>` **pop_front** **(** **)**
 
-Removes and returns the first element of the array. Returns ``null`` if the array is empty, wwithout printing an error message.
+Removes and returns the first element of the array. Returns ``null`` if the array is empty, without printing an error message.
 
 ----
 

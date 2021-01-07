@@ -74,11 +74,15 @@ Enumerations
 
 enum **AxisStretchMode**:
 
-- **AXIS_STRETCH_MODE_STRETCH** = **0** --- Doesn't do anything at the time of writing.
+- **AXIS_STRETCH_MODE_STRETCH** = **0** --- Stretches the center texture across the NinePatchRect. This may cause the texture to be distorted.
 
-- **AXIS_STRETCH_MODE_TILE** = **1** --- Doesn't do anything at the time of writing.
+- **AXIS_STRETCH_MODE_TILE** = **1** --- Repeats the center texture across the NinePatchRect. This won't cause any visible distortion. The texture must be seamless for this to work without displaying artifacts between edges.
 
-- **AXIS_STRETCH_MODE_TILE_FIT** = **2** --- Doesn't do anything at the time of writing.
+**Note:** Only supported when using the GLES3 renderer. When using the GLES2 renderer, this will behave like :ref:`AXIS_STRETCH_MODE_STRETCH<class_NinePatchRect_constant_AXIS_STRETCH_MODE_STRETCH>`.
+
+- **AXIS_STRETCH_MODE_TILE_FIT** = **2** --- Repeats the center texture across the NinePatchRect, but will also stretch the texture to make sure each tile is visible in full. This may cause the texture to be distorted, but less than :ref:`AXIS_STRETCH_MODE_STRETCH<class_NinePatchRect_constant_AXIS_STRETCH_MODE_STRETCH>`. The texture must be seamless for this to work without displaying artifacts between edges.
+
+**Note:** Only supported when using the GLES3 renderer. When using the GLES2 renderer, this will behave like :ref:`AXIS_STRETCH_MODE_STRETCH<class_NinePatchRect_constant_AXIS_STRETCH_MODE_STRETCH>`.
 
 Property Descriptions
 ---------------------
@@ -95,7 +99,7 @@ Property Descriptions
 | *Getter*  | get_h_axis_stretch_mode()      |
 +-----------+--------------------------------+
 
-Doesn't do anything at the time of writing.
+The stretch mode to use for horizontal stretching/tiling. See :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` for possible values.
 
 ----
 
@@ -111,7 +115,7 @@ Doesn't do anything at the time of writing.
 | *Getter*  | get_v_axis_stretch_mode()      |
 +-----------+--------------------------------+
 
-Doesn't do anything at the time of writing.
+The stretch mode to use for vertical stretching/tiling. See :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` for possible values.
 
 ----
 
@@ -159,7 +163,7 @@ The height of the 9-slice's bottom row. A margin of 16 means the 9-slice's botto
 | *Getter*  | get_patch_margin()      |
 +-----------+-------------------------+
 
-The height of the 9-slice's left column.
+The width of the 9-slice's left column. A margin of 16 means the 9-slice's left corners and side will have a width of 16 pixels. You can set all 4 margin values individually to create panels with non-uniform borders.
 
 ----
 
@@ -175,7 +179,7 @@ The height of the 9-slice's left column.
 | *Getter*  | get_patch_margin()      |
 +-----------+-------------------------+
 
-The height of the 9-slice's right column.
+The width of the 9-slice's right column. A margin of 16 means the 9-slice's right corners and side will have a width of 16 pixels. You can set all 4 margin values individually to create panels with non-uniform borders.
 
 ----
 
@@ -191,7 +195,7 @@ The height of the 9-slice's right column.
 | *Getter*  | get_patch_margin()      |
 +-----------+-------------------------+
 
-The height of the 9-slice's top row.
+The height of the 9-slice's top row. A margin of 16 means the 9-slice's top corners and side will have a height of 16 pixels. You can set all 4 margin values individually to create panels with non-uniform borders.
 
 ----
 

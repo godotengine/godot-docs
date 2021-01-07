@@ -55,6 +55,11 @@ Can be used to save a node to a file. When saving, the node as well as all the n
         if error != OK:
             push_error("An error occurred while saving the scene to disk.")
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/520 <https://godotengine.org/asset-library/asset/520>`_
+
 Properties
 ----------
 
