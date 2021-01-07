@@ -52,8 +52,8 @@ you are writing a CanvasItem Shader or a Spatial Shader and it previews the
 output of spatial shaders. So what you are seeing is the output of the default
 Spatial Shader.
 
-Click beside "Shader" and select "New Shader". Finally, click on the new shader
-resource and the shader editor will open. You are now ready to begin writing
+Click beside "Shader" and select "New Shader". Finally, click on the shader
+you just created and the shader editor will open. You are now ready to begin writing
 your first shader.
 
 Your first CanvasItem shader
