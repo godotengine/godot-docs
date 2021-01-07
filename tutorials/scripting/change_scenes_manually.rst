@@ -25,7 +25,7 @@ scenes which one instances and adds to the tree at runtime:
 
     public MyClass()
     {
-        simultaneousScene = ((PackedScene) ResourceLoader.Load("res://levels/level2.tscn")).Instance();
+        simultaneousScene = ResourceLoader.Load<PackedScene>("res://levels/level2.tscn").Instance();
     }
 
     public void _AddASceneManually()
