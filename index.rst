@@ -30,7 +30,17 @@ documentation has to offer.
 
 The table of contents below and in the sidebar should let you easily access the
 documentation for your topic of interest. You can also use the search function
-in the top left corner.
+in the top-left corner.
+
+To browse the documentation offline, you can use the mirror of the documentation
+hosted on `DevDocs <https://devdocs.io/godot/>`__. To enable offline browsing on
+DevDocs, you need to:
+
+- Click the three dots in the top-left corner, choose **Preferences**.
+- Enable the desired version of the Godot documentation by checking the box
+  next to it in the sidebar.
+- Click the three dots in the top-left corner, choose **Offline data**.
+- Click the **Install** link next to the Godot documentation.
 
 .. note:: Godot Engine is an open source project developed by a community of
           volunteers. The documentation team can always use your
