@@ -103,7 +103,7 @@ For now let's open up ``Player.tscn``.
 Making the FPS movement logic
 -----------------------------
 
-Once you have ``Player.tscn`` open, let's take a quick look at how it is set up
+Once you have ``Player.tscn`` open, let's take a quick look at how it is set up:
 
 .. image:: img/PlayerSceneTree.png
 
