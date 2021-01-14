@@ -3,21 +3,21 @@
 Exporting for Android
 =====================
 
-Exporting for Android has fewer requirements than compiling Godot for it.
-The following steps detail what is needed to setup the SDK and the engine.
+Exporting for Android has fewer requirements than compiling Godot for Android.
+The following steps detail what is needed to set up the Android SDK and the engine.
 
 Download the Android SDK
 ------------------------
 
-Download and install the Android SDK. 
+Download and install the Android SDK.
 
 - You can install it using `Android Studio <https://developer.android.com/studio/>`__.
-  
+
   - Run it once to complete the SDK setup using these `instructions <https://developer.android.com/studio/intro/update#sdk-manager>`__.
   - Ensure that the `required packages <https://developer.android.com/studio/intro/update#recommended>`__ are installed as well.
 
 - You can install it using the `command line tools <https://developer.android.com/studio/#command-tools>`__.
-  
+
   - Once the command line tools are installed, run the `sdkmanager <https://developer.android.com/studio/command-line/sdkmanager>`__ command to complete the setup process:
 
 ::
