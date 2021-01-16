@@ -3,5 +3,6 @@
 
 Only make Pull Requests against other branches (e.g. `2.1`) if your changes only apply to that specific version of Godot.
 
-All pull requests for Godot 3 should usually go into `master`.
+The type of content accepted into the documentation is explained here: https://docs.godotengine.org/en/latest/community/contributing/content_guidelines.html
+
 -->
