@@ -181,6 +181,9 @@ Start by declaring the member variables this object will need:
 
  .. code-tab:: csharp
 
+    using Godot;
+    using System;
+    
     public class Player : Area2D
     {
         [Export]
