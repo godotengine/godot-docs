@@ -135,7 +135,7 @@ Add the following code to ``AnimationPlayer_Manager.gd``:
         elif current_state == "Rifle_equip":
             set_animation("Rifle_idle")
         elif current_state == "Rifle_idle":
-            pass;
+            pass
         elif current_state == "Rifle_fire":
             set_animation("Rifle_idle")
         elif current_state == "Rifle_unequip":
@@ -1106,7 +1106,7 @@ Add the following code:
 
 Let's go over what's happening here:
 
-The first thing we do is make sure we've received input to change weapons. We do this by making sure ``changing_weapons`` is ``true``.
+The first thing we do is make sure we've received input to change weapons. We do this by making sure ``changing_weapon`` is ``true``.
 
 Next we define a variable (``weapon_unequipped``) so we can check whether the current weapon has been successfully unequipped or not.
 
@@ -1178,13 +1178,13 @@ Now we need to add this code:
 
     extends RigidBody
 
-    const BASE_BULLET_BOOST = 9;
+    const BASE_BULLET_BOOST = 9
 
     func _ready():
         pass
 
     func bullet_hit(damage, bullet_global_trans):
-        var direction_vect = bullet_global_trans.basis.z.normalized() * BASE_BULLET_BOOST;
+        var direction_vect = bullet_global_trans.basis.z.normalized() * BASE_BULLET_BOOST
 
         apply_impulse((bullet_global_trans.origin - global_transform.origin).normalized(), direction_vect * damage)
 
