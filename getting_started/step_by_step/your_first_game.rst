@@ -170,7 +170,7 @@ click "Create":
           :ref:`doc_scripting` before continuing.
           
 .. note:: If this is your first time encountering C# in Godot, please read
-          `C# basics <https://docs.godotengine.org/en/stable/getting_started/scripting/c_sharp/c_sharp_basics.html`_. before continuing.
+          `C# basics <https://docs.godotengine.org/en/stable/getting_started/scripting/c_sharp/c_sharp_basics.html>`_. before continuing.
 
 Start by declaring the member variables this object will need:
 
