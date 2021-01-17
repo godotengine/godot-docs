@@ -170,7 +170,7 @@ an array holding all the animations (states) we can transition to. For example, 
 
 If we try to transition to a state that is not included in the possible transitions states for the state we are in,
 then we get a warning message and the animation does not change. We can also automatically
-transition from some states into others, as will be explained further below in ``animation_ended``
+transition from some states into others, as will be explained further below in ``animation_ended``.
 
 .. note:: For the sake of keeping this tutorial simple, we are not using a 'proper'
           state machine. If you are interested to know more about state machines,
@@ -203,7 +203,7 @@ This means whenever an animation is finished, ``animation_ended`` will be called
 
 _________
 
-Lets look at ``set_animation`` next.
+Let's look at ``set_animation`` next.
 
 ``set_animation`` changes the animation to the animation named ``animation_name``
 *if* we can transition to it. In other words, if the animation state we are currently in
@@ -233,7 +233,7 @@ a blend time of ``-1`` at the speed set in ``animation_speeds`` and return ``tru
 
 _________
 
-Now lets look at ``animation_ended``.
+Now let's look at ``animation_ended``.
 
 ``animation_ended`` is the function that will be called by :ref:`AnimationPlayer <class_AnimationPlayer>` when it's done playing an animation.
 
