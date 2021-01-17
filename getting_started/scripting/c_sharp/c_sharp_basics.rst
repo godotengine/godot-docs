@@ -83,7 +83,7 @@ external editors:
 .. note::
 
     If you are using Visual Studio 2019, you must follow the instructions found
-    in the `:ref:doc_c_sharp_configuring_vs_2019_for_debugging` section below.
+    in the :ref:`doc_c_sharp_configuring_vs_2019_for_debugging` section below.
 
 Windows (Visual Studio)
 ~~~~~~~~~~~~~~~~~~~~~~~
