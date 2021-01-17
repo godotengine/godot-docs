@@ -136,7 +136,7 @@ node, which is why we want the blob to be centered on its parent :ref:`Light <cl
 
 Right now the scene should look too bright. This is because all three lights are adding color to the scene.
 This is why the demo uses a :ref:`CanvasModulate <class_CanvasModulate>` in the scene. The
-:ref:`CanvasModulate <class_CanvasModulate>` multiples the entire viewport by a specific color.
+:ref:`CanvasModulate <class_CanvasModulate>` multiplies the entire viewport by a specific color.
 
 Add a :ref:`CanvasModulate <class_CanvasModulate>` to the scene and set its color to ``rgb(70, 70, 70)``.
 This will make the scene sufficiently dark to see the effects of the lights distinctly.
