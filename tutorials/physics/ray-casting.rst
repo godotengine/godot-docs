@@ -245,17 +245,17 @@ To obtain it using a camera, the following code can be used:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    const ray_length = 1000
+    const RAY_LENGTH = 1000.0
 
     func _input(event):
         if event is InputEventMouseButton and event.pressed and event.button_index == 1:
               var camera = $Camera
               var from = camera.project_ray_origin(event.position)
-              var to = from + camera.project_ray_normal(event.position) * ray_length
+              var to = from + camera.project_ray_normal(event.position) * RAY_LENGTH
 
  .. code-tab:: csharp
 
-    private const float rayLength = 1000;
+    private const float RayLength = 1000.0f;
 
     public override void _Input(InputEvent @event)
     {
@@ -263,7 +263,7 @@ To obtain it using a camera, the following code can be used:
         {
             var camera = (Camera)GetNode("Camera");
             var from = camera.ProjectRayOrigin(eventMouseButton.Position);
-            var to = from + camera.ProjectRayNormal(eventMouseButton.Position) * rayLength;
+            var to = from + camera.ProjectRayNormal(eventMouseButton.Position) * RayLength;
         }
     }
 
