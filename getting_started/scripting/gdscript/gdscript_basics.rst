@@ -1605,7 +1605,7 @@ the arguments::
         yield(get_tree(), "idle_frame")
         print("Waiting")
         yield(get_tree(), "idle_frame")
-        emit_signal(input, "Processed " + input)
+        emit_signal("done", input, "Processed " + input)
 
 
     func _ready():
