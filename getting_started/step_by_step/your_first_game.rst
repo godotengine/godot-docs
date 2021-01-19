@@ -13,7 +13,7 @@ a project, and how to build a 2D game.
 .. note:: This project is an introduction to the Godot engine. It
           assumes that you have some programming experience already. If
           you're new to programming entirely, you should start here:
-          :ref:`doc_scripting`. If you want to use C# in Godot please read also
+          :ref:`doc_scripting`. If you want to use C# in Godot please also read
           :ref:`doc_c_sharp` before continuing.
 
 The game is called "Dodge the Creeps!". Your character must move and
