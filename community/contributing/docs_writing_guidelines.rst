@@ -32,6 +32,11 @@ There are 3 rules to describe classes:
     the smallest and clearest sentences possible. These guidelines will help
     you work towards that goal.
 
+.. seealso::
+
+    See the :ref:`content guidelines <doc_content_guidelines>` for information
+    on the types of documentation you can write in the official documentation.
+
 7 rules for clear English
 -------------------------
 
