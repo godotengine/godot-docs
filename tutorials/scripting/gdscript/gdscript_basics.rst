@@ -1726,6 +1726,8 @@ This also means that returning a signal from a function that isn't a coroutine w
           type-safety, because a function cannot say that returns an ``int`` but actually give a function state object
           during runtime.
 
+.. _doc_onready_annotation:
+
 Onready annotation
 ~~~~~~~~~~~~~~~~~~
 
