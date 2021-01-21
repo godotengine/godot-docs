@@ -13,7 +13,7 @@ To create editor plugins in GDScript, see :ref:`doc_making_plugins` instead.
 
 .. seealso::
 
-    If you are new to Godot, it's recommended to read
+    If you are new to Godot, we recommended you to read
     :ref:`doc_godot_design_philosophy` before continuing. Since the Godot editor
     is a Godot project written in C++, much of the engine's philosophy applies
     to the editor.
@@ -24,11 +24,10 @@ Technical choices
 The Godot editor is drawn using Godot's renderer and
 :ref:`UI system <toc-learn-features-gui>`. It does *not* rely on a toolkit
 such as GTK or Qt. This is similar in spirit to software like Blender.
-While using a toolkit makes it easier to achieve a "native" appearance, they are
+While using toolkits makes it easier to achieve a "native" appearance, they are
 also quite heavy and their licensing is not compatible with Godot's.
 
-The editor is fully written in C++. It does *not* (and cannot) contain any
-GDScript or C# code.
+The editor is fully written in C++. It can't contain any GDScript or C# code.
 
 Directory structure
 -------------------
@@ -46,8 +45,8 @@ in the Godot source repository.
 Editor dependencies in ``scene/`` files
 ---------------------------------------
 
-When working on a feature for the editor, you may have to modify files in
-Godot's GUI nodes which is in the ``scene/`` folder.
+When working on an editor feature, you may have to modify files in
+Godot's GUI nodes, which you can find in the ``scene/`` folder.
 
 One rule to keep in mind is that you must **not** introduce new dependencies to
 ``editor/`` includes in other folders such as ``scene/``. This applies even if
@@ -58,18 +57,18 @@ dependency order is:
 
 - ``editor/`` -> ``scene/`` -> ``servers/`` -> ``core/``
 
-This means that files in ``editor/`` can depend on includes from all ``scene/``,
-``servers/`` and ``core/``. On the flip side, ``scene/`` can depend on includes
-from ``servers/`` and ``core/`` but not on includes from ``editor/``.
+This means that files in ``editor/`` can depend on includes from ``scene/``,
+``servers/``, and ``core/``. But, for example, while ``scene/`` can depend on includes
+from ``servers/`` and ``core/``, it cannot depend on includes from ``editor/``.
 
 Currently, there are some dependencies to ``editor/`` includes in ``scene/``
 files, but
-`they are on the process of being removed <https://github.com/godotengine/godot/issues/29730>`__.
+`they are in the process of being removed <https://github.com/godotengine/godot/issues/29730>`__.
 
 Development tips
 ----------------
 
-To iterate quickly on the editor, it's recommended to set up a test project and
+To iterate quickly on the editor, we recommend to set up a test project and
 :ref:`open it from the command line <doc_command_line_tutorial>` after compiling
 the editor. This way, you don't have to go through the project manager every
 time you start Godot.
