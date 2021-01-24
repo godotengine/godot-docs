@@ -35,7 +35,7 @@ it must be set up using the import options:
 
 .. image:: img/audio_stream_import.png
 
-There are other types of AudioStreamPlayer, such as AudioStreamRandomPitch.
+There are other types of AudioStreams, such as AudioStreamRandomPitch.
 This one makes a random adjustment to the sound's pitch every time it's
 played back. This can be helpful for adding variation to sounds that are
 played back often.
