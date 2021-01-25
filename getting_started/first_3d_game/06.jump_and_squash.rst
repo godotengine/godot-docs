@@ -85,7 +85,7 @@ Select the *Player* node and set its *Collision -> Mask* to both "enemies" and
 Then, open the *Mob* scene by double-clicking on ``Mob.tscn`` and select the
 *Mob* node.
 
-Set its *Collision -> Layer* to "enemies" and unset its *Collision -> Mask* 
+Set its *Collision -> Layer* to "enemies" and unset its *Collision -> Mask*,
 leaving the mask empty.
 
 |image6|
