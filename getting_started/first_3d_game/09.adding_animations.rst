@@ -90,7 +90,7 @@ Two tracks appear in the editor with a diamond icon representing each keyframe.
 |image11|
 
 You can click and drag on the diamonds to move them in time. Move the
-translation key to ``0.1`` seconds and the rotation key to ``0.2`` seconds.
+translation key to ``0.2`` seconds and the rotation key to ``0.1`` seconds.
 
 |image12|
 
