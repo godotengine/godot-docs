@@ -153,7 +153,7 @@ Vulkan renderer.
 
 **Real-time lighting:**
 
-- Directional lights (sun/moon). Up to 4 per scene.
+- Directional lights (sun/moon). Up to four per scene.
 - Omnidirectional lights.
 - Spot lights with adjustable cone angle and attenuation.
 - Adjustable light "size" for fake area lights (will also make shadows blurrier).
