@@ -335,13 +335,13 @@ the ``_process`` function (make sure it's not indented under the `else`):
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-        position += velocity * delta
+        position += velocity * speed * delta
         position.x = clamp(position.x, 0, screen_size.x)
         position.y = clamp(position.y, 0, screen_size.y)
 
  .. code-tab:: csharp
 
-        Position += velocity * delta;
+        Position += velocity * Speed * delta;
         Position = new Vector2(
             x: Mathf.Clamp(Position.x, 0, screenSize.x),
             y: Mathf.Clamp(Position.y, 0, screenSize.y)
