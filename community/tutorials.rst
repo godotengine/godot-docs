@@ -39,6 +39,7 @@ Video tutorials
 - `Code with Tom <https://www.youtube.com/playlist?list=PLiUQR4U_J9ec0k91iHPme_qtfS1nrWF3W>`_ (2D and 3D, GDScript).
 - `BornCG <https://www.youtube.com/playlist?list=PLda3VoSoc_TSBBOBYwcmlamF1UrjVtccZ>`_ (2D and 3D, GDScript).
 - `Gonkee <https://www.youtube.com/channel/UCJqCPFHdbc6443G3Sz6VYDw>`_ (2D and 3D, GDScript, Shaders).
+- `TheGuideKnight <https://www.youtube.com/playlist?list=PLYcTJBw32KtX2fvOdtO_fS3Nd6sxM71tn>`_ (2D, GDScript).
 
 Text tutorials
 --------------
