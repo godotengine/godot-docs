@@ -136,6 +136,21 @@ html_context = {
 
 html_logo = "img/docs_logo.png"
 
+# These folders are copied to the documentation's HTML output
+html_static_path = ["_static"]
+
+html_extra_path = ["robots.txt"]
+
+# These paths are either relative to html_static_path
+# or fully qualified paths (eg. https://...)
+html_css_files = [
+    "css/custom.css",
+]
+
+html_js_files = [
+    "js/custom.js",
+]
+
 # Output file base name for HTML help builder
 htmlhelp_basename = "GodotEnginedoc"
 
