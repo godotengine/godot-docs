@@ -190,7 +190,8 @@ You can extend the :ref:`class_RichTextEffect` resource type to create your own 
 BBCode tags. You begin by extending the :ref:`class_RichTextEffect` resource type. Add
 the ``tool`` prefix to your GDScript file if you wish to have these custom effects run
 within the editor itself. The RichTextLabel does not need to have a script attached,
-nor does it need to be running in ``tool`` mode.
+nor does it need to be running in ``tool`` mode. The new effect will be activable in 
+the Inspector through the **Custom Effects** property.
 
 There is only one function that you need to extend: ``_process_custom_fx(char_fx)``.
 Optionally, you can also provide a custom BBCode identifier simply by adding a member
