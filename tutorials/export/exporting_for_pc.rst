@@ -16,4 +16,9 @@ does not contain the editor and debugger.
 .. warning::
 
     If you export for Windows with embedded PCK files, you will not be able to
-    sign the program, it will break.
+    sign the program as it will break.
+
+    On Windows, PCK embedding is also known to cause false positives in
+    antivirus programs. Therefore, it's recommended to avoid using it unless
+    you're distributing your project via Steam as it bypasses code signing and
+    antivirus checks.
