@@ -7,7 +7,10 @@ This tutorial gives you a springboard into the world of AR and VR in the Godot g
 
 A new architecture was introduced in Godot 3 called the AR/VR Server. On top of this
 architecture, specific implementations are available as interfaces, most of which are plugins
-based on GDNative. This tutorial focuses purely on the core elements abstracted by the core
+based on GDNative. WebXR is supported out of the box in Godot 3.2.4 and later, and
+does not require a plugin.
+
+This tutorial focuses purely on the core elements abstracted by the core
 architecture. This architecture has enough features for you to create an entire VR experience
 that can then be deployed for various interfaces. However, each platform often has some unique
 features that are impossible to abstract. Such features will be documented on the relevant
