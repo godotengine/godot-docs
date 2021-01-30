@@ -14,23 +14,20 @@ AudioStream
 -----------
 
 An audio stream is an abstract object that emits sound. The sound can come from
-many places, but is most commonly loaded from the filesystem. Audio files such
-as WAV (``.wav``) or Ogg Vorbis (``.ogg``) can be loaded as AudioStreams and
-placed inside an AudioStreamPlayer.
+many places, but is most commonly loaded from the filesystem. Godot supports
+the following audio files:
 
-Here is a comparison of the two file types to help you choose the one that fits
-your use case best:
-
-- WAV files are quite large, but use little CPU power to play back.
+- WAV. These files are quite large, but use little CPU power to play back.
   Hundreds of them can be played simultaneously with little impact
   on performance. This format is usually best for short sound effects.
-- Ogg Vorbis files are much smaller, but use considerably more CPU power
+- Ogg Vorbis. These files are much smaller, but use considerably more CPU power
   to play back, so only a few can be played back at once (especially on mobile).
   This format works well for music, long sound effect sequences, and voice
   at relatively low bitrates.
+- MP3. Supported via the `minimp3 <https://github.com/lieff/minimp3>`__ decoder.
 
 Keep in mind that while WAV files may contain looping information in their metadata,
-Ogg Vorbis files do not. If looping an Ogg Vorbis file is desired, 
+Ogg Vorbis and MP3 files do not. If looping either of these is desired, 
 it must be set up using the import options:
 
 .. image:: img/audio_stream_import.png
