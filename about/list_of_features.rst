@@ -370,6 +370,7 @@ Import
 
    - WAV with optional IMA-ADPCM compression.
    - Ogg Vorbis.
+   - MP3 (only in Godot 3.2.4 and later).
 
 - *3D scenes:*
 
