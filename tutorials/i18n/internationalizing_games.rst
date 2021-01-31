@@ -40,13 +40,25 @@ Localizing resources
 --------------------
 
 It is also possible to instruct Godot to use alternate versions of
-assets (resources) depending on the current language. The **Remaps** tab
-can be used for this:
+assets (resources) depending on the current language. This can be used for
+localized images such as in-game billboards or localized voices.
+
+The **Remaps** tab can be used for this:
 
 .. image:: img/localization_remaps.png
 
-Select the resource to be remapped, then add some alternatives for each
-locale.
+Select the resource to be remapped then add some alternatives for each locale.
+
+.. note::
+
+    The resource remapping system isn't supported for DynamicFonts. To use
+    different fonts depending on the language's script, use the DynamicFont
+    fallback system instead, which lets you define as many fallback fonts as you
+    want.
+
+    The upside of the DynamicFont fallback system is that it works regardless of
+    the current language, making it ideal for things like multiplayer chat where
+    the text language may not match the client's language.
 
 Converting keys to text
 -----------------------
