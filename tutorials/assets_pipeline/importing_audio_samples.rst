@@ -25,8 +25,6 @@ Each has different advantages.
   when playing multiple compressed sounds at the same time (such as long
   ambient sounds).
 
-.. note:: Godot supports MP3 files with the `minimp3 <https://github.com/lieff/minimp3>`__ decoder.
-
 Here is a comparative chart.
 
 +-----------------------------+-------------------+
