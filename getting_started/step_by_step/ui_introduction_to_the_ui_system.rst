@@ -172,7 +172,7 @@ There are two workflows to build responsive UIs
 There are two workflows to build scalable and flexible interfaces in Godot:
 
 1. **Place UI elements precisely with anchors:** Use the **Layout** menu to place and resize a UI element relative to its parent.
-2. **Arrange control nodes automatically with containers:** Use container nodes to automatically scale and place UI elements. 
+2. **Arrange control nodes automatically with containers:** Use container nodes to automatically scale and place UI elements.
 
 The two approaches are not always compatible. Because a container controls its children, you cannot use the layout menu on them. Each container has a specific effect, so you may need to nest several of them to get a working interface. With the layout approach you work from the bottom up, on the children. As you don't insert extra containers in the scene it can make for cleaner hierarchies, but it's harder to arrange items in a row, column, grid, etc.
 
