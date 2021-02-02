@@ -216,7 +216,7 @@ as a child of your current node.
 
  .. code-tab:: csharp
 
-    var instance = scene.();
+    var instance = scene.Instance();
     AddChild(instance);
 
 The advantage of this two-step process is you can keep a packed scene loaded and
