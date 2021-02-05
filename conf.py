@@ -14,12 +14,45 @@ needs_sphinx = "1.3"
 sys.path.append(os.path.abspath("_extensions"))
 extensions = [
     "sphinx_tabs.tabs",
+    "notfound.extension",
 ]
 
 # Warning when the Sphinx Tabs extension is used with unknown
 # builders (like the dummy builder) - as it doesn't cause errors,
 # we can ignore this so we still can treat other warnings as errors.
 sphinx_tabs_nowarn = True
+
+# Custom 4O4 page HTML template.
+# https://github.com/readthedocs/sphinx-notfound-page
+notfound_context = {
+    "title": "Page not found",
+    "body": """
+        <h1>Page not found</h1>
+        <p>
+            Sorry, we couldn't find that page. It may have been renamed or removed
+            in the version of the documentation you're currently browsing.
+        </p>
+        <p>
+            If you're currently browsing the
+            <em>latest</em> version of the documentation, try browsing the
+            <a href="/en/stable/"><em>stable</em> version of the documentation</a>.
+        </p>
+        <p>
+            Alternatively, use the
+            <a href="#" onclick="$('#rtd-search-form [name=\\'q\\']').focus()">Search docs</a>
+            box on the left or <a href="/">go to the homepage</a>.
+        </p>
+    """,
+}
+
+# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
+on_rtd = os.environ.get("READTHEDOCS", None) == "True"
+
+# Don't add `/en/latest` prefix during local development.
+# This makes it easier to test the custom 404 page by loading `/404.html`
+# on a local web server.
+if not on_rtd:
+    notfound_urls_prefix = ''
 
 if not os.getenv("SPHINX_NO_GDSCRIPT"):
     extensions.append("gdscript")
@@ -108,9 +141,6 @@ pygments_style = "sphinx"
 highlight_language = "gdscript"
 
 # -- Options for HTML output ----------------------------------------------
-
-# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-on_rtd = os.environ.get("READTHEDOCS", None) == "True"
 
 html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
