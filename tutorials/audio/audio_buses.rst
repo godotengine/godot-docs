@@ -110,6 +110,11 @@ megaphone. Modulating the BandPass frequency can simulate the sound of a wah-wah
 guitar pedal, think of the guitar in Jimi Hendrix's *Voodoo Child (Slight
 Return)*.
 
+Capture
+~~~~~~~
+
+Capture allows access to the microphone and other audio on an audio bus in real-time.
+
 Chorus
 ~~~~~~
 
