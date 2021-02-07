@@ -296,7 +296,7 @@ We can now replace the contents of our ``height()`` function with ``wave()``.
     return h;
   }
 
-Using this you get:
+Using this, you get:
 
 .. image:: img/wave1.png
 
@@ -306,7 +306,7 @@ We do this by scaling ``position``.
 .. code-block:: glsl
 
   float height(vec2 position, float time) {
-    float h = wave(position*0.4);
+    float h = wave(position * 0.4);
     return h;
   }
 
