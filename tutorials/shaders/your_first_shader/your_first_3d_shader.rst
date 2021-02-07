@@ -305,7 +305,7 @@ do that by passing in a second noise texture.
   uniform sampler2D normalmap;
 
 Set this second uniform texture to another NoiseTexture with another
-OpenSimplexNoise. But this time, check "As Normalmap".
+OpenSimplexNoise. But this time, check **As Normalmap**.
 
 .. image:: img/normal-set.png
 
