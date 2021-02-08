@@ -272,9 +272,10 @@ We can now replace the contents of our ``height()`` function with ``wave()``.
 
   float height(vec2 position, float time) {
     float h = wave(position);
+    return h;
   }
 
-Using this you get:
+Using this, you get:
 
 .. image:: img/wave1.png
 
@@ -283,7 +284,8 @@ The shape of the sin wave is too obvious. So let's spread the waves out a bit. W
 .. code-block:: glsl
 
   float height(vec2 position, float time) {
-    float h = wave(position*0.4);
+    float h = wave(position * 0.4);
+    return h;
   }
 
 Now it looks much better.
