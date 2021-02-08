@@ -82,7 +82,7 @@ received input, in order:
 2. Second, it will try to feed the input to the GUI, and see if any
    control can receive it. If so, the :ref:`Control <class_Control>` will be called via the
    virtual function :ref:`Control._gui_input() <class_Control_method__gui_input>` and the signal
-   "input_event" will be emitted (this function is re-implementable by
+   "gui_input" will be emitted (this function is re-implementable by
    script by inheriting from it). If the control wants to "consume" the
    event, it will call :ref:`Control.accept_event() <class_Control_method_accept_event>` and the event will
    not spread any more. Use the :ref:`Control.mouse_filter <class_Control_property_mouse_filter>`
