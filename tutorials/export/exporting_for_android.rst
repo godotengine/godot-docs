@@ -24,6 +24,11 @@ Download and install the Android SDK.
 
     sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;30.0.1" "platforms;android-29" "cmdline-tools;latest"
 
+.. note::
+
+    If you are using Linux,
+    **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
+
 Install OpenJDK
 -----------------
 
