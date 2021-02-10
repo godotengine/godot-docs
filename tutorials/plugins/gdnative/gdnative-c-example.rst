@@ -13,7 +13,7 @@ that is to come after this.
 
 Before we begin, you can download the source code to the example object we
 describe below in the `GDNative-demos repository
-<https://docs.godotengine.org/en/latest/tutorials/scripting/gdnative/gdnative_c_example.html>`_.
+<https://github.com/godotengine/gdnative-demos/tree/master/c/simple>`_.
 
 This example project also contains a SConstruct file that makes compiling a
 little easier, but in this tutorial we'll be doing things by hand to
