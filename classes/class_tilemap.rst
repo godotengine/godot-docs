@@ -608,7 +608,7 @@ Returns ``true`` if the given cell is flipped in the Y axis.
 
 - :ref:`Vector2<class_Vector2>` **map_to_world** **(** :ref:`Vector2<class_Vector2>` map_position, :ref:`bool<class_bool>` ignore_half_ofs=false **)** |const|
 
-Returns the global position corresponding to the given tilemap (grid-based) coordinates.
+Returns the position relative to the origin of the tilemap corresponding to the given tilemap (grid-based) coordinates. To get the global position, use :ref:`to_global<class_Node2D_method_to_global>` on the result of ``map_to_world``.
 
 Optionally, the tilemap's half offset can be ignored.
 
@@ -701,7 +701,8 @@ Updates the tile map's quadrants, allowing things such as navigation and collisi
 
 - :ref:`Vector2<class_Vector2>` **world_to_map** **(** :ref:`Vector2<class_Vector2>` world_position **)** |const|
 
-Returns the tilemap (grid-based) coordinates corresponding to the given local position.
+Returns the tilemap (grid-based) coordinates corresponding to the given local position. To account for a tilemap origin different from (0, 0), first translate the position with :ref:`to_local<class_Node2D_method_to_local>`.
+
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
