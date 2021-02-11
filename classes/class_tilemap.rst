@@ -701,7 +701,7 @@ Updates the tile map's quadrants, allowing things such as navigation and collisi
 
 - :ref:`Vector2<class_Vector2>` **world_to_map** **(** :ref:`Vector2<class_Vector2>` world_position **)** |const|
 
-Returns the tilemap (grid-based) coordinates corresponding to the given local position. To account for a tilemap origin different from (0, 0), first translate the position with :ref:`to_local<class_Node2D_method_to_local>`.
+Returns the tilemap (grid-based) coordinates corresponding to the given local position. To account for tilemap transformations, first translate the position to the tilemap with :ref:`to_local<class_Node2D_method_to_local>`.
 
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
