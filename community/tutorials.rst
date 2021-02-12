@@ -56,5 +56,5 @@ Devlogs
 Resources
 ---------
 
-- `awesome-godot: A curated list of resources by Calinou <https://github.com/Calinou/awesome-godot>`_
+- `awesome-godot: A curated list of free/libre plugins, scripts and add-ons <https://github.com/godotengine/awesome-godot>`_
 - `Zeef Godot Engine: A curated directory of resources by Andre Schmitz <https://godot-engine.zeef.com/andre.antonio.schmitz>`_
