@@ -14,8 +14,17 @@ Q&A
 
 - `Official Godot Questions & Answers <https://godotengine.org/qa/>`_
 
+Rocket.Chat
+-----------
+
+- `Godot Contributors Chat <https://chat.godotengine.org/>`_
+
 IRC on Freenode
 ---------------
+
+.. note::
+
+    As of January 2021, core developer chat has moved to the Godot Contributors Chat platform listed above.
 
 - `General: #godotengine <https://webchat.freenode.net/?channels=#godotengine>`_
 - `Engine development: #godotengine-devel <https://webchat.freenode.net/?channels=#godotengine-devel>`_

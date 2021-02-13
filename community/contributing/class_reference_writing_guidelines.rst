@@ -251,4 +251,4 @@ pull of your changes. Another writer will take care of it.
 
 You can still look at the methods' implementation in Godot's source code on
 GitHub. If you have doubts, feel free to ask on the `Q&A website
-<https://godotengine.org/qa/>`__ and IRC (Freenode, #godotengine).
+<https://godotengine.org/qa/>`__ and `Godot Contributors Chat <https://chat.godotengine.org/>`_.
