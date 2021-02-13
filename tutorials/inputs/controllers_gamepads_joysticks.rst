@@ -108,7 +108,6 @@ use ``Input.is_action_pressed()``:
     # `jumping` will be a boolean with a value of `true` or `false`.
     var jumping = Input.is_action_pressed("jump")
 
-.. tabs::
  .. code-tab:: csharp
 
     // `jumping` will be a boolean with a value of `true` or `false`.
@@ -206,7 +205,7 @@ the ``SDL_GAMECONTROLLERCONFIG`` environment variable before running Godot:
     set SDL_GAMECONTROLLERCONFIG=your:mapping:here
     path\to\godot.exe
 
- .. code-tab:: powershell Windows (powershell)
+ .. code-tab:: powershell Windows (PowerShell)
 
     $env:SDL_GAMECONTROLLERCONFIG="your:mapping:here"
     path\to\godot.exe
