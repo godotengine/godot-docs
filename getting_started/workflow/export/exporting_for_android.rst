@@ -21,6 +21,11 @@ Download and install the Android SDK from
 
 If you install Android Studio, you need to run it once to complete the SDK setup.
 
+.. note::
+
+    If you are using Linux,
+    **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
+
 Install OpenJDK 8
 -----------------
 

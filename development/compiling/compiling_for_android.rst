@@ -27,6 +27,8 @@ For compiling under Windows, Linux or macOS, the following is required:
    (command-line tools are sufficient).
 
    -  Required SDK components will be automatically installed by Gradle (except the NDK).
+   -  On Linux,
+      **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
 
 -  `Android NDK <https://developer.android.com/ndk/downloads/>`_ r17 or later.
 -  Gradle (will be downloaded and installed automatically if missing).
