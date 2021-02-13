@@ -139,7 +139,9 @@ The button's texture for the normal state.
 | *Getter*  | is_passby_press_enabled() |
 +-----------+---------------------------+
 
-If ``true``, pass-by presses are enabled.
+If ``true``, ``pressed`` and ``released`` signals are emitted whenever a pressed finger goes in and out of the button, even if the pressure started outside the active area of the button.
+
+**Note:** this is a "pass-by" (not "bypass") press mode.
 
 ----
 
