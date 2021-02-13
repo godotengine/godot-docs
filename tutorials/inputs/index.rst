@@ -9,3 +9,4 @@ Inputs
    input_examples
    mouse_and_input_coordinates
    custom_mouse_cursor
+   controllers_gamepads_joysticks
