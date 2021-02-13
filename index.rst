@@ -55,8 +55,8 @@ DevDocs, you need to:
           <https://hosted.weblate.org/engage/godot-engine/>`_ into your
           language, or talk to us on either the ``#documentation``
           channel on `Discord <https://discord.gg/zH7NUgz>`_, or the
-          ``#godotengine-doc`` channel on `irc.freenode.net
-          <http://webchat.freenode.net/?channels=#godotengine-doc>`_!
+          ``#documentation`` channel on the `Godot Contributors Chat 
+          <https://chat.godotengine.org/>`_!
 
 .. centered:: |weblate_widget|
 

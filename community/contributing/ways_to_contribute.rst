@@ -16,8 +16,8 @@ positive to the engine, regardless of their skill set:
 -  **Be part of the community.** The best way to contribute to Godot and help
    it become ever better is simply to use the engine and promote it by
    word-of-mouth, in the credits or splash screen of your games, blog posts, tutorials,
-   videos, demos, gamedev or free software events, support on the Q&A, IRC,
-   forums, Discord, etc. Participate!
+   videos, demos, gamedev or free software events, support on the Q&A, forums,
+   Contributors Chat, Discord, etc. Participate!
    Being a user and advocate helps spread the word about our great engine,
    which has no marketing budget and can therefore only rely on its community
    to become more mainstream.
