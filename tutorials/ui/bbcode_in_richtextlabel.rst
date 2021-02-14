@@ -90,26 +90,11 @@ Reference
 | **cell**          | ``[cell]{text}[/cell]``                    | Adds cells with the {text} to the table.                        |
 +-------------------+--------------------------------------------+-----------------------------------------------------------------+
 
-Built-in color names
-~~~~~~~~~~~~~~~~~~~~
+Named colors
+~~~~~~~~~~~~
 
-List of valid color names for the [color=<name>] tag:
-
--  aqua
--  black
--  blue
--  fuchsia
--  gray
--  green
--  lime
--  maroon
--  navy
--  purple
--  red
--  silver
--  teal
--  white
--  yellow
+You can use the constants of the :ref:`class_Color` class for the ``[color=<name>]`` tag.
+The case and style of the name is not important: ``DARK_RED``, ``DarkRed`` and ``darkred`` will give the same result.
 
 Hexadecimal color codes
 ~~~~~~~~~~~~~~~~~~~~~~~
