@@ -266,6 +266,9 @@ Let's see some examples.
             }
         }
 
+Be sure to set a default value for every parameter of the ``_init`` function.
+Otherwise, there will be problems with creating and editing your resource over the inspector.
+
 .. note::
 
     Resource scripts are similar to Unity's ScriptableObjects. The Inspector
