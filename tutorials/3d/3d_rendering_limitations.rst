@@ -32,13 +32,17 @@ so it can be displayed on the screen. This can result in visible banding,
 especially when using untextured materials. This can also be seen in 2D projects
 when using smooth gradient textures.
 
-There are several ways to alleviate banding. Here are a few examples:
+There are two main ways to alleviate banding:
 
-- Bake some noise into your textures. This is mainly effective in 2D, e.g. for
-  vignetting effects.
-- Implement a debanding shader as a :ref:`screen-reading shader <doc_screen-reading_shaders>`.
-  Godot currently doesn't provide a built-in debanding shader, but this may be
-  added in a future release.
+- Enable **Use Debanding** in the Project Settings. This applies a
+  fullscreen debanding shader as a post-processing effect and is very cheap.
+  Fullscreen debanding is only supported when using the GLES3 or Vulkan renderers.
+  It also requires HDR to be enabled in the Project Settings (which is the default).
+- Alternatively, bake some noise into your textures. This is mainly effective in 2D,
+  e.g. for vignetting effects. In 3D, you can also use a
+  `custom debanding shader <https://github.com/fractilegames/godot-gles2-debanding-material>`__
+  to be applied on your *materials*. This technique works even if your project is
+  rendered in LDR, which means it will work when using the GLES2 renderer.
 
 .. seealso::
 
