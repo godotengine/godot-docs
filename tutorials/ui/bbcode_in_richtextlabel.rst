@@ -93,7 +93,8 @@ Reference
 Named colors
 ~~~~~~~~~~~~
 
-You can use the constants of the :ref:`class_Color` class for the ``[color=<name>]`` tag. The case of the name is not important: ``DARK_RED``, ``DarkRed`` and ``darkred`` will give the same result.
+You can use the constants of the :ref:`class_Color` class for the ``[color=<name>]`` tag.
+The case and style of the name is not important: ``DARK_RED``, ``DarkRed`` and ``darkred`` will give the same result.
 
 Hexadecimal color codes
 ~~~~~~~~~~~~~~~~~~~~~~~
