@@ -48,18 +48,26 @@ In Godot 4.0, there are 3 ways to get input in an analog-aware way:
  .. code-tab:: gdscript GDScript
 
     # `velocity` will be a Vector2 between `Vector2(-1.0, -1.0)` and `Vector2(1.0, 1.0)`.
+    # This handles deadzone in a correct way for most use cases.
+    # The resulting deadzone will have a circular shape as it generally should.
     var velocity = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 
-    # The line above is a shorter form of:
+    # The line below is similar to `get_vector()`, except that it handles
+    # the deadzone in a less optimal way. The resulting deadzone will have
+    # a square-ish shape when it should ideally have a circular shape.
     var velocity = Vector2(Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		Input.get_action_strength("move_back") - Input.get_action_strength("move_forward")).clamped(1)
 
  .. code-tab:: csharp
 
     // `velocity` will be a Vector2 between `Vector2(-1.0, -1.0)` and `Vector2(1.0, 1.0)`.
+    // This handles deadzone in a correct way for most use cases.
+    // The resulting deadzone will have a circular shape as it generally should.
     Vector2 velocity = Input.GetVector("move_left", "move_right", "move_forward", "move_back");
 
-    // The line above is a shorter form of:
+    // The line below is similar to `get_vector()`, except that it handles
+    // the deadzone in a less optimal way. The resulting deadzone will have
+    // a square-ish shape when it should ideally have a circular shape.
     Vector2 velocity = new Vector2(Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left"),
 		Input.GetActionStrength("move_back") - Input.GetActionStrength("move_forward")).Clamped(1);
 
