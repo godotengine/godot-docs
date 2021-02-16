@@ -206,7 +206,8 @@ Let's see some examples.
     export(Resource) var sub_resource
     export(Array, String) var strings
 
-    # Make sure that every variable gets a default value. Otherwise, there will be problems with creating and editing your resource via the inspector.
+    # Make sure that every variable gets a default value. 
+    # Otherwise, there will be problems with creating and editing your resource via the inspector.
     func _init(p_health = 0, p_sub_resource = null, p_strings = []):
         health = p_health
         sub_resource = p_sub_resource
@@ -239,7 +240,8 @@ Let's see some examples.
                 [Export]
                 public String[] Strings { get; set; }
 
-                // Make sure that every variable gets a default value. Otherwise, there will be problems with creating and editing your resource via the inspector.
+                // Make sure that every variable gets a default value. 
+                // Otherwise, there will be problems with creating and editing your resource via the inspector.
                 public BotStats(int health = 0, Resource subResource = null, String[] strings = null)
                 {
                     Health = health;
