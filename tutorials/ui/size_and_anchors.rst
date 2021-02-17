@@ -45,7 +45,8 @@ To center a control in its parent, set its anchors to 0.5 and each margin
 to half of its relevant dimension. For example, the code below shows how
 a TextureRect can be centered in its parent:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var rect = TextureRect.new()
     rect.texture = load("res://icon.png")
@@ -59,6 +60,25 @@ a TextureRect can be centered in its parent:
     rect.margin_top = -texture_size.y / 2
     rect.margin_bottom = -texture_size.y / 2
     add_child(rect)
+
+ .. code-tab:: csharp
+     
+    var rect = new TextureRect();
+    
+    rect.Texture = GD.Load("res://icon.png");
+    rect.AnchorLeft = 0.5f;
+    rect.AnchorRight = 0.5f;
+    rect.AnchorTop = 0.5f;
+    rect.AnchorBottom = 0.5f;
+     
+    var TextureSize = rect.Texture.GetSize();
+     
+    rect.MarginLeft = -(TextureSize.x / 2);
+    rect.MarginRight = -(TextureSize.x / 2);
+    rect.MarginTop = -(TextureSize.y / 2);
+    rect.MarginBottom = -(TextureSize.y / 2);
+    AddChild(rect);
+ 
 
 Setting each anchor to 0.5 moves the reference point for the margins to
 the center of its parent. From there, we set negative margins so that
