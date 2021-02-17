@@ -85,6 +85,29 @@ released.
         else:
             $AnimatedSprite.stop()
 
+.. tabs::
+ .. code-tab:: csharp
+    
+    using Godot;
+    using System;
+    
+    public class Kinematic2DSprite : KinematicBody2D
+    {
+        public override void _Process(float delta)
+        {
+            AnimatedSprite animatedSprite = (AnimatedSprite) GetNode("AnimatedSprite");
+            
+            if (Input.IsActionPressed("ui_right")
+            {
+                animatedSprite?.Play("run");
+            }
+            else
+            {
+                animatedSprite?.Stop();
+            }
+        }
+    }
+
 
 Sprite sheet with AnimatedSprite
 --------------------------------
@@ -197,6 +220,28 @@ released.
             $AnimationPlayer.play("walk")
         else:
             $AnimationPlayer.stop()
+
+.. tabs::
+ .. code-tab:: csharp
+    using Godot;
+    using System;
+    
+    public class Kinematic2DSprite : KinematicBody2D
+    {
+        public override void _Process(float delta)
+        {
+            AnimatedSprite animatedSprite = (AnimatedSprite) GetNode("AnimatedSprite");
+            
+            if (Input.IsActionPressed("ui_right")
+            {
+                animatedSprite?.Play("walk");
+            }
+            else
+            {
+                animatedSprite?.Stop();
+            }
+        }
+    }
 
 
 .. note:: If updating both an animation and a separate property at once
