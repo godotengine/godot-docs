@@ -85,7 +85,6 @@ released.
         else:
             $AnimatedSprite.stop()
 
-.. tabs::
  .. code-tab:: csharp
     
     using Godot;
@@ -221,7 +220,6 @@ released.
         else:
             $AnimationPlayer.stop()
 
-.. tabs::
  .. code-tab:: csharp
     using Godot;
     using System;
