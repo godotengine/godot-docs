@@ -179,3 +179,29 @@ to its rect size:
     func set_some_setting():
         # Some setting changed, ask for children re-sort
         queue_sort()
+
+ .. code-tab:: csharp
+    using Godot;
+    using System;
+
+    public class Container : Godot.Container
+    {
+        public override void _Notification(int what)
+        {
+            if (what == NotificationSortChildren)
+            {
+                // Must re-sort the children
+                foreach (Control c in GetChildren())
+                {
+                    // Fit to own size
+                    FitChildInRect(c, new Rect2(new Vector2(), RectSize));
+                }
+            }
+        }
+        
+        public void Set_Something()
+        {
+            // Some setting changed, ask for children re-sort
+            QueueSort();
+        }
+    }
