@@ -36,7 +36,7 @@ change the value of ``t`` from 0 to 1.
 
  .. code-tab:: csharp
     
-    public Vector2 Quadratic_Bezier(Vector2 p0, Vector2 p1, Vector2 p2, Particles2D, float t)
+    public Vector2 Quadratic_Bezier(Vector2 p0, Vector2 p1, Vector2 p2, float t)
     {
         var q0 = p0.LinearInterpolate(p1, t);
         var q1 = p1.LinearInterpolate(p2, t);
