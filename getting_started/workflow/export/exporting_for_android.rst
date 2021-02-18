@@ -7,7 +7,7 @@ Exporting for Android
 
     If you are using Godot 3.2.4 beta/RC, note that
     **the Android export process has changed**. Read an
-    `updated version of this page <https://github.com/m4gr3d/godot-docs/blob/957279271079197575a615c2637f3785da242307/getting_started/workflow/export/exporting_for_android.rst>`__
+    `updated version of this page <https://github.com/m4gr3d/godot-docs/blob/02cfb669f6b4ee77f0cb3e13b4d41054cc020673/getting_started/workflow/export/exporting_for_android.rst>`__
     instead of the page you're currently on.
 
 Exporting for Android has fewer requirements than compiling Godot for it.
