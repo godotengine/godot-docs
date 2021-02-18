@@ -11,15 +11,13 @@ As an example if ``t`` is 0, then the state is A. If ``t`` is 1, then the state 
 
 Between two real (floating-point) numbers, a simple interpolation is usually described as:
 
-.. tabs::
- .. code-tab:: gdscript GDScript
+::
 
     interpolation = A * (1 - t) + B * t
 
 And often simplified to:
 
-.. tabs::
- .. code-tab:: gdscript GDScript
+::
 
     interpolation = A + (B - A) * t
 
@@ -44,6 +42,19 @@ Here is simple pseudo-code for going from point A to B using interpolation:
         t += delta * 0.4
 
         $Sprite.position = $A.position.linear_interpolate($B.position, t)
+
+ .. code-tab:: csharp
+
+    public override void _PhysicsProcess(float delta)
+    {
+        t += (float)(delta * 0.4);
+
+        Position2D A = (Position2D)GetNode("A");
+        Position2D B = (Position2D)GetNode("B");
+
+        GetNode<Sprite>("Sprite").Position = A.Position.LinearInterpolate(B.Position, t);
+
+    }
 
 It will produce the following motion:
 
@@ -71,6 +82,21 @@ Using the following pseudocode:
 
         $Monkey.transform = $Position1.transform.interpolate_with($Position2.transform, t)
 
+ .. code-tab:: csharp
+
+    public override void _PhysicsProcess(float delta)
+    {
+        t += delta;
+
+        Position3D P1 = (Position3D)GetNode("Position1");
+        Position3D P2 = (Position3D)GetNode("Position2");
+
+        CSGMesh Monkey = (CSGMesh)GetNode("Monkey");
+
+        Monkey.Transform = P1.Transform.InterpolateWith(P2.Transform, t);
+
+    }
+
 And again, it will produce the following motion:
 
 .. image:: img/interpolation_monkey.gif
@@ -90,6 +116,19 @@ Interpolation can be used to smooth movement, rotation, etc. Here is an example 
         var mouse_pos = get_local_mouse_position()
 
         $Sprite.position = $Sprite.position.linear_interpolate(mouse_pos, delta * FOLLOW_SPEED)
+
+ .. code-tab:: csharp
+ 
+    const float FOLLOW_SPEED = 4.0f;
+    
+    public override void _PhysicsProcess(float delta)
+    {
+        var MousePos = GetLocalMousePosition();
+
+        Sprite MySprite = (Sprite)GetNode("Sprite");
+
+        MySprite.Position = MySprite.Position.LinearInterpolate(MousePos, delta * FOLLOW_SPEED); 
+    }
 
 Here is how it looks:
 
