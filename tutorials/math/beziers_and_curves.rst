@@ -34,6 +34,14 @@ change the value of ``t`` from 0 to 1.
         var q0 = p0.linear_interpolate(p1, t)
         var q1 = p1.linear_interpolate(p2, t)
 
+ .. code-tab:: csharp
+    
+    public Vector2 Quadratic_Bezier(Vector2 p0, Vector2 p1, Vector2 p2, Particles2D, float t)
+    {
+        var q0 = p0.LinearInterpolate(p1, t);
+        var q1 = p1.LinearInterpolate(p2, t);
+    }
+
 We then interpolate ``q0`` and ``q1`` to obtain a single point ``r`` that moves
 along a curve.
 
@@ -42,6 +50,11 @@ along a curve.
 
         var r = q0.linear_interpolate(q1, t)
         return r
+
+ .. code-tab:: csharp
+ 
+        var r = q0.LinearInterpolate(q1, t);
+        return r;
 
 This type of is called a *Quadratic Bezier* curve.
 
@@ -65,6 +78,13 @@ We first use a function with four parameters to take four points as an input,
 
     func _cubic_bezier(p0: Vector2, p1: Vector2, p2: Vector2, p3: Vector2, t: float):
 
+ .. code-tab:: csharp
+    
+    public Vector2 Cubic_Bezier(Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3, float t)
+    {
+
+    }
+
 We apply a linear interpolation to each couple of points to reduce them to
 three:
 
@@ -75,6 +95,13 @@ three:
         var q1 = p1.linear_interpolate(p2, t)
         var q2 = p2.linear_interpolate(p3, t)
 
+ .. code-tab:: csharp
+        
+        var q0 = p0.LinearInterpolate(p1, t);
+        var q1 = p1.LinearInterpolate(p2, t);
+        var q2 = p2.LinearInterpolate(p3, t);
+
+
 We then take our three points and reduce them to two:
 
 .. tabs::
@@ -83,6 +110,12 @@ We then take our three points and reduce them to two:
         var r0 = q0.linear_interpolate(q1, t)
         var r1 = q1.linear_interpolate(q2, t)
 
+ .. code-tab:: csharp
+        
+        var r0 = q0.LinearInterpolate(q1, t);
+        var r1 = q1.LinearInterpolate(q2, t);
+
+
 And to one:
 
 .. tabs::
@@ -90,6 +123,11 @@ And to one:
 
         var s = r0.linear_interpolate(r1, t)
         return s
+
+ .. code-tab:: csharp
+
+        var s = r0.LinearInterpolate(r1, t);
+        return s;
 
 Here is the full function:
 
@@ -106,6 +144,21 @@ Here is the full function:
 
         var s = r0.linear_interpolate(r1, t)
         return s
+
+ .. code-tab:: csharp
+    
+    public Vector2 Cubic_Bezier(Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3, float t)
+    {
+        var q0 = p0.LinearInterpolate(p1, t);
+        var q1 = p1.LinearInterpolate(p2, t);
+        var q2 = p2.LinearInterpolate(p3, t);
+        
+        var r0 = q0.LinearInterpolate(q1, t);
+        var r1 = q1.LinearInterpolate(q2, t);
+        
+        var s = r0.LinearInterpolate(r1, t);
+        return s;
+    }
 
 The result will be a smooth curve interpolating between all four points:
 
@@ -164,6 +217,17 @@ Let's do a simple example with the following pseudocode:
         t += delta
         position = _cubic_bezier(p0, p1, p2, p3, t)
 
+ .. code-tab:: csharp
+    
+    float t = 0.0;
+
+    public override void _Process(float delta)
+    {
+        t += delta;
+
+        Position = Cubic_Bezier(p0, p1, p2, p3, t)
+    }
+
 
 .. image:: img/bezier_interpolation_speed.gif
 
@@ -190,7 +254,7 @@ Traversal
 
 The last common use case for the curves is to traverse them. Because of what was mentioned before regarding constant speed, this is also difficult.
 
-To make this easier, the curves need to be *baked* into equidistant points. This way, they can be approximated with regular  interpolation (which can be improved further with a cubic option). To do this, just use the :ref:`Curve.interpolate_baked()<class_Curve_method_interpolate_baked>` method together with
+To make this easier, the curves need to be *baked* into equidistant points. This way, they can be approximated with regular interpolation (which can be improved further with a cubic option). To do this, just use the :ref:`Curve.interpolate_baked()<class_Curve_method_interpolate_baked>` method together with
 :ref:`Curve2D.get_baked_length()<class_Curve2D_method_get_baked_length>`. The first call to either of them will bake the curve internally.
 
 Traversal at constant speed, then, can be done with the following pseudo-code:
@@ -203,6 +267,18 @@ Traversal at constant speed, then, can be done with the following pseudo-code:
     func _process(delta):
         t += delta
         position = curve.interpolate_baked(t * curve.get_baked_length(), true)
+
+ .. code-tab:: csharp
+    
+    float t = 0.0;
+
+    public override void _Process(float delta)
+    {
+        Curve2D curve = GetNode<Curve2D>("Curve");
+
+        Position = curve.InterpolateBaked(t * curve.GetBakedLength(), true);
+    }
+
 
 And the output will, then, move at constant speed:
 
