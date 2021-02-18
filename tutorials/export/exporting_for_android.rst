@@ -11,10 +11,17 @@ Download the Android SDK
 
 Download and install the Android SDK.
 
-- You can install it using `Android Studio <https://developer.android.com/studio/>`__.
+- You can install it using `Android Studio version 4.1 or later <https://developer.android.com/studio/>`__.
 
   - Run it once to complete the SDK setup using these `instructions <https://developer.android.com/studio/intro/update#sdk-manager>`__.
   - Ensure that the `required packages <https://developer.android.com/studio/intro/update#recommended>`__ are installed as well.
+    
+    - Android SDK Platform-Tools version 30.0.5 or later
+    - Android SDK Build-Tools version 30.0.1
+    - Android SDK Platform 29
+    - Android SDK Command-line Tools (latest)
+    - CMake version 3.10.2.4988404
+    - NDK version 21.4.7075529
 
 - You can install it using the `command line tools <https://developer.android.com/studio/#command-tools>`__.
 
@@ -22,17 +29,17 @@ Download and install the Android SDK.
 
 ::
 
-    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;30.0.1" "platforms;android-29" "cmdline-tools;latest"
+    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;30.0.1" "platforms;android-29" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;21.4.7075529"
 
 .. note::
 
     If you are using Linux,
     **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
 
-Install OpenJDK
+Install OpenJDK 8
 -----------------
 
-Download and install  `OpenJDK <https://adoptopenjdk.net/index.html>`__.
+Download and install  `OpenJDK 8 <https://adoptopenjdk.net/index.html?variant=openjdk8&jvmVariant=hotspot>`__.
 
 Create a debug.keystore
 -----------------------
