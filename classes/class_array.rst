@@ -216,7 +216,40 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 - :ref:`int<class_int>` **bsearch_custom** **(** :ref:`Variant<class_Variant>` value, :ref:`Object<class_Object>` obj, :ref:`String<class_String>` func, :ref:`bool<class_bool>` before=true **)**
 
-Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search and a custom comparison method. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array. The custom method receives two arguments (an element from the array and the value searched for) and must return ``true`` if the first argument is less than the second, and return ``false`` otherwise.
+Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search and a custom comparison method declared in the obj. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array. The custom method receives two arguments (an element from the array and the value searched for) and must return ``true`` if the first argument is less than the second, and return ``false`` otherwise.
+
+
+``` 
+## Custom.gd
+extends Object
+
+var val = 0
+func setV(a):
+	val = a
+
+func getV():
+	return val
+```
+```
+## bsearch code
+extends Node
+
+var custom = preload("Custom.gd")
+func compare(a,b): ## This compare is called when obj is set to self
+	return a.getV() < b.getV()
+
+func _ready():
+	var v = custom.new() ## Search value
+
+	v.setV(8)
+	var a = [custom.new(), custom.new(), custom.new(), custom.new(), 
+		custom.new(), custom.new(), custom.new(), custom.new(), custom.new(),
+		custom.new(), custom.new(), custom.new(), custom.new(), custom.new(), custom.new()]
+    for i in a.size():
+		a[i].setV(i + 1)
+
+	print(a.bsearch_custom(v, self, "compare", true)) #Expect value is 7
+```
 
 **Note:** Calling :ref:`bsearch<class_Array_method_bsearch>` on an unsorted array results in unexpected behavior.
 
