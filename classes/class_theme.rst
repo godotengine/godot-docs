@@ -247,7 +247,7 @@ Returns all the icons as a :ref:`PackedStringArray<class_PackedStringArray>` fil
 
 - :ref:`StyleBox<class_StyleBox>` **get_stylebox** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type **)** const
 
-Returns the icon :ref:`StyleBox<class_StyleBox>` at ``name`` if the theme has ``type``.
+Returns the :ref:`StyleBox<class_StyleBox>` at ``name`` if the theme has ``type``. Valid names may be found using :ref:`get_stylebox_list<_class_Theme_method_get_stylebox_list>`. Valid types may be found using :ref:`get_stylebox_types<class_Theme_method_get_stylebox_types>`.
 
 ----
 
