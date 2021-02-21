@@ -57,8 +57,9 @@ Examples
 
     # Editor will enumerate as 0, 1 and 2.
     @export_enum("Warrior", "Magician", "Thief") var character_class
-    # If type is String, editor will enumerate with string names.
-    @export_enum("Rebecca", "Mary", "Leah") var character_name: String
+    # If type is String, editor will enumerate with string names. 
+    # A default value is required to apply values from editor.
+    @export_enum("Rebecca", "Mary", "Leah") var character_name = "": String
 
     # Named enum values
 
