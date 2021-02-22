@@ -1052,6 +1052,13 @@ will then appear with its new icon in the editor::
 
 .. image:: img/class_name_editor_register_example.png
 
+.. warning::
+
+    If the script is located in the ``res://addons/`` directory, ``class_name``
+    will only cause the node to show up in the **Create New Node** dialog if
+    the script is part of an *enabled* editor plugin. See :ref:`doc_making_plugins`
+    for more information.
+
 Here's a class file example:
 
 ::
@@ -1599,7 +1606,7 @@ If there is more than one argument, ``yield`` returns an array containing
 the arguments::
 
     signal done(input, processed)
-    
+
     func process_input(input):
         print("Processing initialized")
         yield(get_tree(), "idle_frame")
