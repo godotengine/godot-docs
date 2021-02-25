@@ -22,6 +22,19 @@ in other sections where appropriate. For example, the :ref:`animation editor
    default_key_mapping
    customizing_editor
 
+Web editor
+----------
+
+Godot offers an HTML5 version of the editor running entirely in your browser. No
+download is required to use it, but it has a certain amount of caveats you
+should be aware of.
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-web-editor
+
+   using_the_web_editor
+
 For developers
 --------------
 
