@@ -121,6 +121,15 @@ use ``Input.is_action_pressed()``:
     // `jumping` will be a boolean with a value of `true` or `false`.
     bool jumping = Input.IsActionPressed("jump");
 
+.. note::
+
+    If you need to know whether an input was *just* pressed in the previous
+    frame, use ``Input.is_action_just_pressed()`` instead of
+    ``Input.is_action_pressed()``. Unlike ``Input.is_action_pressed()`` which
+    returns ``true`` as long as the input is
+    held,``Input.is_action_just_pressed()`` will only return ``true`` for one
+    frame after the button has been pressed.
+
 In Godot versions before 4.0, such as 3.2, ``Input.get_vector()`` and
 ``Input.get_axis()`` aren't available. Only ``Input.get_action_strength()``
 and ``Input.is_action_pressed()`` are available in Godot 3.2.
