@@ -108,8 +108,9 @@ the following files in the ``bin`` directory:
 
 - If you're not linking the Mono runtime statically, the build script will place
   the Mono runtime shared library (``monosgen-2.0``) next to the Godot
-  binary in the output directory. Make sure to include this library when
-  distributing Godot. When targeting Android, no extra steps are required as
+  binary in the output directory.
+  **Make sure to include this library when distributing the Godot editor or export templates.**
+  When targeting Android, no extra steps are required as
   this library is automatically copied to ``#platform/android/java/libs`` and
   Gradle takes care of the rest.
 - Unlike "classical" Godot builds, when building with the Mono module enabled
