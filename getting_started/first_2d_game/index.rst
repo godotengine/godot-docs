@@ -66,6 +66,12 @@ Contents
    :maxdepth: 1
    :name: toc-learn-introduction
 
-   your_first_game.rst
+   01.project_setup
+   02.player_scene
+   03.coding_the_player
+   04.creating_the_enemy
+   05.the_main_game_scene
+   06.heads_up_display
+   07.finishing-up
 
 .. |image0| image:: img/dodge_preview.gif
