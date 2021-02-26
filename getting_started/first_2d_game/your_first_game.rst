@@ -3,27 +3,6 @@
 Your first game
 ===============
 
-Overview
---------
-
-This tutorial will guide you through making your first Godot
-project. You will learn how the Godot editor works, how to structure
-a project, and how to build a 2D game.
-
-.. note:: This project is an introduction to the Godot engine. It
-          assumes that you have some programming experience already. If
-          you're new to programming entirely, you should start here:
-          :ref:`doc_scripting`.
-
-The game is called "Dodge the Creeps!". Your character must move and
-avoid the enemies for as long as possible. Here is a preview of the
-final result:
-
-.. image:: img/dodge_preview.gif
-
-**Why 2D?** 3D games are much more complex than 2D ones. You should stick to 2D
-until you have a good understanding of the game development process and how to
-use Godot.
 
 Project setup
 -------------
