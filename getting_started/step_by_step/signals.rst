@@ -280,5 +280,5 @@ events. For example, an :ref:`Area2D <class_Area2D>` representing a coin emits
 a ``body_entered`` signal whenever the player's physics body enters its collision
 shape, allowing you to know when the player collected it.
 
-In the next section, :ref:`doc_your_first_game`, you'll build a complete game
-including several uses of signals to connect different game components.
+In the next section, :ref:`doc_your_first_2d_game`, you'll create a complete 2D
+game and put everything you learned so far into practice.

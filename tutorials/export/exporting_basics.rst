@@ -16,8 +16,8 @@ this tutorial, you'll learn how to export the *Dodge the Creeps* game for a
 variety of platforms. First, however, we need to make some changes to the
 way the game works.
 
-.. note:: If you haven't made *Dodge the Creeps* yourself yet, please read
-          :ref:`doc_your_first_game` before continuing with this tutorial.
+.. note:: If you haven't made "Dodge the Creeps" yourself yet, please read
+          :ref:`doc_your_first_2d_game` before continuing with this tutorial.
 
 Preparing the project
 ---------------------
