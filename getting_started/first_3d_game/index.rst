@@ -7,7 +7,7 @@ project of your own like the animated gif below.
 
 |image0|
 
-The game we'll code here is similar to :ref:`doc_your_first_game`, with a twist:
+The game we'll code here is similar to :ref:`doc_your_first_2d_game`, with a twist:
 you can now jump and your goal is to squash the creeps. This way, you will both
 **recognize patterns** you learned in the previous tutorial and **build upon
 them** with new code and features.

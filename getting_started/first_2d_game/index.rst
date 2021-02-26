@@ -1,3 +1,5 @@
+.. _doc_your_first_2d_game:
+
 Your first 2D game
 ==================
 
@@ -34,6 +36,11 @@ recommend you to start with this one, though.
 
 3D games are much more complex than 2D ones. It would be best if you stuck to 2D
 until you understood the game development process and how to use Godot well.
+
+You can find a completed version of this project at these locations:
+
+- https://github.com/kidscancode/Godot3_dodge/releases
+- https://github.com/godotengine/godot-demo-projects
 
 Prerequisites
 -------------

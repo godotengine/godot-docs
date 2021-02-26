@@ -28,7 +28,7 @@ Throughout the course of this tutorial, we will cover:
 - How to create some special :ref:`RigidBody <class_RigidBody>`-based objects that can destroy the targets.
 
 .. tip:: While this tutorial can be completed by beginners, it is highly
-          advised to complete :ref:`doc_your_first_game`,
+          advised to complete :ref:`doc_your_first_2d_game`,
           if you are new to Godot and/or game development.
 
           **Some experience with making 3D games is required** before going through this tutorial series.
