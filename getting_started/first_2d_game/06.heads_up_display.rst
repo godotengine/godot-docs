@@ -304,3 +304,6 @@ the ``new_game()`` function in ``Main``:
 
 The ``call_group()`` function calls the named function on every node in a
 group - in this case we are telling every mob to delete itself.
+
+The game's mostly done at this point. In the next and last part, we'll polish it
+a bit by adding a background, looping music, and some keyboard shortcuts.

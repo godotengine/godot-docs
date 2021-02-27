@@ -283,3 +283,6 @@ player disappear when hit by a mob.
 
 When you're sure everything is working, remove the call to ``new_game()`` from
 ``_ready()``.
+
+What's our game lacking? Some user interface. In the next lesson, we'll add a
+title screen and display the player's score.

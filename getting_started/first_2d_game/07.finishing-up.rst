@@ -56,3 +56,17 @@ spacebar.
 
 Now when the start button appears, you can either click it or press :kbd:`Space`
 to start the game.
+
+And with that, you completed your first 2D game in Godot.
+
+.. image:: img/dodge_preview.gif
+
+You got to make a player-controlled character, enemies that spawn randomly
+around the game board, count the score, implement a game over and replay, user
+interface, sounds, and more. Congratulations!
+
+There's still much to learn, but you can take a moment to appreciate what you
+achieved.
+
+And when you're ready, you can move on to :ref:`doc_your_first_3d_game` to learn
+to create a complete 3D game from scratch, in Godot.

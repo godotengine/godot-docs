@@ -3,6 +3,9 @@
 Creating the player scene
 =========================
 
+With the project settings in place, we can start working on the
+player-controlled character.
+
 The first scene will define the ``Player`` object. One of the benefits of
 creating a separate Player scene is that we can test it separately, even before
 we've created other parts of the game.
@@ -91,3 +94,7 @@ When you're finished, your ``Player`` scene should look like this:
 .. image:: img/player_scene_nodes.png
 
 Make sure to save the scene again after these changes.
+
+In the next part, we'll add a script to the player node to move and animate it.
+Then, we'll set up collision detection to know when the player got hit by
+something.

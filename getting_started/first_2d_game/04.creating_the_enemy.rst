@@ -134,3 +134,7 @@ add this code:
     }
 
 This completes the `Mob` scene.
+
+With the player and enemies ready, in the next part, we'll bring them together
+in a new scene. We'll make enemies spawn randomly around the game board and move
+forward, turning our project into a playable game.
