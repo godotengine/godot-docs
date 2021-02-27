@@ -291,7 +291,7 @@ The 5 most useful containers
 If you build tools, you might need all of the containers. But for most
 games, a handful will be enough:
 
--  MarginContainer, to add margins around part of the UI
+-  MarginContainer, to add margins around parts of the UI
 -  CenterContainer, to center its children in its bounding box
 -  VboxContainer and HboxContainer, to arrange UI elements in rows or
    columns
