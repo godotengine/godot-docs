@@ -29,7 +29,7 @@ When a plugin is active, you can access it in your using ``Engine.get_singleton(
 Creating an iOS plugin
 ----------------------
 
-At its core, a Godot iOS plugin is an iOS library (*.a* archive file or *.xcframework* that contains static libraries) with the following requirements:
+At its core, a Godot iOS plugin is an iOS library (*.a* archive file or *.xcframework* containing static libraries) with the following requirements:
 
 - The library must have a dependency on the Godot engine headers.
 
@@ -58,9 +58,9 @@ To build an iOS plugin:
 
 3. In the ``Build Settings`` tab, specify the compilation flags for your static library in ``OTHER_CFLAGS``. The most important ones are ``-fcxx-modules``, ``-fmodules``, and ``-DDEBUG`` if you need debug support. Other flags should be the same you use to compile Godot. For instance, ``-DPTRCALL_ENABLED -DDEBUG_ENABLED, -DDEBUG_MEMORY_ALLOC -DDISABLE_FORCED_INLINE -DTYPED_METHOD_BIND``.
 
-4. Add the required logic for your plugin and build your library to generate a ``.a`` file. You will probably need to build both ``debug`` and ``release`` targeted ``.a`` files. Depending on your need, pick only one or both. If you need both ``.a`` files their name should match following pattern: ``[PluginName].[TargetType].a``. You can also build the static library with your SCons configuration.
+4. Add the required logic for your plugin and build your library to generate a ``.a`` file. You will probably need to build both ``debug`` and ``release`` target ``.a`` files. Depending on your needs, pick either or both. If you need both debug and release ``.a`` files, their name should match following pattern: ``[PluginName].[TargetType].a``. You can also build the static library with your SCons configuration.
 
-5. iOS plugin system also support ``.xcframework`` files. To generate one you can use a command such as: ``xcodebuild -create-xcframework -library [DeviceLibrary].a -library [SimulatorLibrary].a -output [PluginName].xcframework``.
+5. The iOS plugin system also supports ``.xcframework`` files. To generate one, you can use a command such as: ``xcodebuild -create-xcframework -library [DeviceLibrary].a -library [SimulatorLibrary].a -output [PluginName].xcframework``.
 
 6.  Create a Godot iOS Plugin configuration file to help the system detect and load your plugin:
 
@@ -95,10 +95,10 @@ To build an iOS plugin:
 
             -   **binary**: this should be the filepath of the plugin library (``a`` or ``xcframework``) file.
 
-                -   The filepath can be relative (e.g.: ``MyPlugin.a``, ``MyPlugin.xcframework``) in which case it's relative to the directory where ``gdip`` file is located.
+                -   The filepath can be relative (e.g.: ``MyPlugin.a``, ``MyPlugin.xcframework``) in which case it's relative to the directory where the ``gdip`` file is located.
                 -   The filepath can be absolute: ``res://some_path/MyPlugin.a`` or ``res://some_path/MyPlugin.xcframework``.
-                -   In case you need multitarget library usage, filename should be ``MyPlugin.a`` and ``a`` files should be named as ``MyPlugin.release.a`` and ``MyPlugin.debug.a``.
-                -   In case of using multitarget ``xcframework`` libraries filename in configuration should be ``MyPlugin.xcframework`` and ``xcframework`` files should be named as ``MyPlugin.release.xcframework`` and ``MyPlugin.debug.xcframework``.
+                -   In case you need multitarget library usage, the filename should be ``MyPlugin.a`` and ``.a`` files should be named as ``MyPlugin.release.a`` and ``MyPlugin.debug.a``.
+                -   In case you use multitarget ``xcframework`` libraries, their filename in the configuration should be ``MyPlugin.xcframework``. The ``.xcframework`` files should be named as ``MyPlugin.release.xcframework`` and ``MyPlugin.debug.xcframework``.
 
         The ``dependencies`` and ``plist`` sections are optional and defined as follow:
 
@@ -114,6 +114,6 @@ To build an iOS plugin:
 
                 -   **files**: contains a list of files that should be copied on export. This is useful for data files or images.
 
-                -   **linker_flags**: containts a list of linker flags that should be added to the Xcode project if plugin is exported.
+                -   **linker_flags**: contains a list of linker flags to add to the Xcode project when exporting the plugin.
 
             -   **plist**: should have keys and values that should be present in ``Info.plist`` file following pattern: ``KeyName="key value"``

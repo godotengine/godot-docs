@@ -11,10 +11,11 @@ ARKit and Camera access are also provided as plugins.
 Accessing plugin singletons
 ---------------------------
 
-To access plugin functionality it's first required to use check if plugin
-is exported and available with `Engine.has_singleton` function. After
-that calling a `Engine.get_singleton` will return a singleton. This
-is an example of how this can be done:
+To access plugin functionality, you first need to check that the plugin is
+exported and available by calling the `Engine.has_singleton()` function, which
+returns a registered singleton.
+
+Here's an example of how to do this in GDScript:
 
 ::
 
@@ -24,7 +25,6 @@ is an example of how this can be done:
         if Engine.has_singleton("InAppStore"):
             in_app_store = Engine.get_singleton("InAppStore")
             
-            # Plugin setup
         else:
             print("iOS IAP plugin is not exported.")
 
