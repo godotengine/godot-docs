@@ -11,10 +11,11 @@ ARKit and Camera access are also provided as plugins.
 Accessing plugin singletons
 ---------------------------
 
-To access plugin functionality it's first required to use check if plugin
-is exported and available with `Engine.has_singleton` function. After
-that calling a `Engine.get_singleton` will return a singleton. This
-is an example of how this can be done:
+To access plugin functionality, you first need to check that the plugin is
+exported and available by calling the `Engine.has_singleton()` function, which
+returns a registered singleton.
+
+Here's an example of how to do this in GDScript:
 
 ::
 
@@ -24,7 +25,6 @@ is an example of how this can be done:
         if Engine.has_singleton("InAppStore"):
             in_app_store = Engine.get_singleton("InAppStore")
 
-            # Plugin setup
         else:
             print("iOS IAP plugin is not exported.")
 
@@ -468,37 +468,3 @@ On close:
       "type": "show_game_center",
       "result": "ok",
     }
-<<<<<<< HEAD:tutorials/platform/services_for_ios.rst
-
-Multi-platform games
---------------------
-
-When working on a multi-platform game, you won't always have the
-"GameCenter" singleton available (for example when running on PC or
-Android). Because the gdscript compiler looks up the singletons at
-compile time, you can't just query the singletons to see and use what
-you need inside a conditional block, you need to also define them as
-valid identifiers (local variable or class member). This is an example
-of how to work around this in a class:
-
-::
-
-    var GameCenter = null # define it as a class member
-
-    func post_score(p_score):
-        if GameCenter == null:
-            return
-        GameCenter.post_score( { "value": p_score, "category": "my_leaderboard" } )
-
-    func check_events():
-        while GameCenter.get_pending_event_count() > 0:
-            # do something with events here
-            pass
-
-    func _ready():
-        # check if the singleton exists
-        if Globals.has_singleton("GameCenter"):
-            GameCenter = Globals.get_singleton("GameCenter")
-            # connect your timer here to the "check_events" function
-=======
->>>>>>> efc0a860 (Update iOS plugins documentation):tutorials/platform/ios/plugins_for_ios.rst
