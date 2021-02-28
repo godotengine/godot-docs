@@ -7,6 +7,5 @@ Platform-specific
 
    android_in_app_purchases
    ios/index
-   services_for_ios
    platform_html5
    consoles

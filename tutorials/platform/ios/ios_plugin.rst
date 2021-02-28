@@ -10,7 +10,7 @@ iOS plugins allow you to use third-party libraries and support iOS-specific feat
 Loading and using an existing plugin
 ------------------------------------
 
-An iOS plugin requires a ``.gdip`` configuration file, a ``.a`` binary file, and possibly other dependencies. To use it, you need to:
+An iOS plugin requires a ``.gdip`` configuration file, a binary file which can be either ``.a`` static library or ``.xcframework`` containing ``.a`` static libraries, and possibly other dependencies. To use it, you need to:
 
 1. Copy the plugin's files to your Godot project's ``res://ios/plugins`` directory. You can also group files in a sub-directory, like ``res://ios/plugins/my_plugin``.
 
@@ -29,7 +29,7 @@ When a plugin is active, you can access it in your using ``Engine.get_singleton(
 Creating an iOS plugin
 ----------------------
 
-At its core, a Godot iOS plugin is an iOS static library (*.a* archive file) with the following requirements:
+At its core, a Godot iOS plugin is an iOS library (*.a* archive file or *.xcframework* that contains static libraries) with the following requirements:
 
 - The library must have a dependency on the Godot engine headers.
 
@@ -39,7 +39,9 @@ An iOS plugin can have the same functionality as a Godot module but provides mor
 
 Here are the steps to get a plugin's development started. We recommend using `Xcode <https://developer.apple.com/develop/>`_ as your development environment.
 
-.. seealso:: The `Godot iOS plugin template <https://github.com/naithar/godot_ios_plugin>`_ gives you all the boilerplate you need to get your iOS plugin started.
+.. seealso:: The `Godot iOS Plugins <https://github.com/godotengine/godot-ios-plugins>`_ Godot iOS plugins.
+
+    The `Godot iOS plugin template <https://github.com/naithar/godot_ios_plugin>`_ gives you all the boilerplate you need to get your iOS plugin started.
 
 
 To build an iOS plugin:
@@ -56,9 +58,11 @@ To build an iOS plugin:
 
 3. In the ``Build Settings`` tab, specify the compilation flags for your static library in ``OTHER_CFLAGS``. The most important ones are ``-fcxx-modules``, ``-fmodules``, and ``-DDEBUG`` if you need debug support. Other flags should be the same you use to compile Godot. For instance, ``-DPTRCALL_ENABLED -DDEBUG_ENABLED, -DDEBUG_MEMORY_ALLOC -DDISABLE_FORCED_INLINE -DTYPED_METHOD_BIND``.
 
-4. Add the required logic for your plugin and build your library to generate a ``.a`` file. You will probably need to build both ``debug`` and ``release`` targeted ``a`` files. Depending on your need, pick only one or both. If you need both ``a`` files their name should match following pattern: ``[PluginName].[TargetType].a``. You can also build the static library with your SCons configuration.
+4. Add the required logic for your plugin and build your library to generate a ``.a`` file. You will probably need to build both ``debug`` and ``release`` targeted ``.a`` files. Depending on your need, pick only one or both. If you need both ``.a`` files their name should match following pattern: ``[PluginName].[TargetType].a``. You can also build the static library with your SCons configuration.
 
-5.  Create a Godot iOS Plugin configuration file to help the system detect and load your plugin:
+5. iOS plugin system also support ``.xcframework`` files. To generate one you can use a command such as: ``xcodebuild -create-xcframework -library [DeviceLibrary].a -library [SimulatorLibrary].a -output [PluginName].xcframework``.
+
+6.  Create a Godot iOS Plugin configuration file to help the system detect and load your plugin:
 
     -   The configuration file extension must be ``gdip`` (e.g.: ``MyPlugin.gdip``).
 
@@ -80,6 +84,8 @@ To build an iOS plugin:
 
             files=["data.json"]
 
+            linker_flags=["-ObjC"]
+
             [plist]
             PlistKey="Some Info.plist key you might need"
 
@@ -87,11 +93,12 @@ To build an iOS plugin:
 
             -   **name**: name of the plugin
 
-            -   **binary**: this should be the filepath of the plugin ``a`` file.
+            -   **binary**: this should be the filepath of the plugin library (``a`` or ``xcframework``) file.
 
-                -   The filepath can be relative (e.g.: ``MyPlugin.a``) in which case it's relative to the directory where ``gdip`` file is located.
-                -   The filepath can be absolute: ``res://some_path/MyPlugin.aar``.
-                -   In case you need multitarget library usage, filename should be ``MyPlugin.a`` and ``a`` files should be name as ``MyPlugin.release.a`` and ``MyPlugin.debug.a``.
+                -   The filepath can be relative (e.g.: ``MyPlugin.a``, ``MyPlugin.xcframework``) in which case it's relative to the directory where ``gdip`` file is located.
+                -   The filepath can be absolute: ``res://some_path/MyPlugin.a`` or ``res://some_path/MyPlugin.xcframework``.
+                -   In case you need multitarget library usage, filename should be ``MyPlugin.a`` and ``a`` files should be named as ``MyPlugin.release.a`` and ``MyPlugin.debug.a``.
+                -   In case of using multitarget ``xcframework`` libraries filename in configuration should be ``MyPlugin.xcframework`` and ``xcframework`` files should be named as ``MyPlugin.release.xcframework`` and ``MyPlugin.debug.xcframework``.
 
         The ``dependencies`` and ``plist`` sections are optional and defined as follow:
 
@@ -106,5 +113,7 @@ To build an iOS plugin:
                 -   **capabilities**: contains a list of iOS capabilities that is required for plugin. A list of available capabilities can be found at `Apple UIRequiredDeviceCapabilities documentation page <https://developer.apple.com/documentation/bundleresources/information_property_list/uirequireddevicecapabilities>`_.
 
                 -   **files**: contains a list of files that should be copied on export. This is useful for data files or images.
+
+                -   **linker_flags**: containts a list of linker flags that should be added to the Xcode project if plugin is exported.
 
             -   **plist**: should have keys and values that should be present in ``Info.plist`` file following pattern: ``KeyName="key value"``

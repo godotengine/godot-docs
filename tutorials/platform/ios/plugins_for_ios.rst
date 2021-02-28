@@ -1,11 +1,32 @@
-.. _doc_services_for_ios:
+.. _doc_plugins_for_ios:
 
-Services for iOS
-================
+Plugins for iOS
+===============
 
-At the moment, there are two iOS APIs partially implemented, GameCenter
-and Storekit. Both use the same model of asynchronous calls explained
-below.
+At the moment Godot provides StoreKit, GameCenter, iCloud services plugins.
+They are using same model of asynchronous calls explained below.
+
+ARKit and Camera access are also provided as plugins.
+
+Accessing plugin singletons
+---------------------------
+
+To access plugin functionality it's first required to use check if plugin
+is exported and available with `Engine.has_singleton` function. After
+that calling a `Engine.get_singleton` will return a singleton. This
+is an example of how this can be done:
+
+::
+
+    var in_app_store
+
+    func _ready():
+        if Engine.has_singleton("InAppStore"):
+            in_app_store = Engine.get_singleton("InAppStore")
+
+            # Plugin setup
+        else:
+            print("iOS IAP plugin is not exported.")
 
 Asynchronous methods
 --------------------
@@ -28,7 +49,7 @@ the 'pending events' queue. Example:
 ::
 
     func on_purchase_pressed():
-        var result = InAppStore.purchase( { "product_id": "my_product" } )
+        var result = in_app_store.purchase({ "product_id": "my_product" })
         if result == OK:
             animation.play("busy") # show the "waiting for response" animation
         else:
@@ -36,8 +57,8 @@ the 'pending events' queue. Example:
 
     # put this on a 1 second timer or something
     func check_events():
-        while InAppStore.get_pending_event_count() > 0:
-            var event = InAppStore.pop_pending_event()
+        while in_app_store.get_pending_event_count() > 0:
+            var event = in_app_store.pop_pending_event()
             if event.type == "purchase":
                 if event.result == "ok":
                     show_success(event.product_id)
@@ -61,11 +82,10 @@ The pending event interface consists of two methods:
 Store Kit
 ---------
 
-Implemented in ``platform/iphone/in_app_store.mm``.
+Implemented in `Godot iOS InAppStore plugin <https://github.com/godotengine/godot-ios-plugins/blob/master/plugins/inappstore/in_app_store.mm>`_.
 
-The Store Kit API is accessible through the "InAppStore" singleton (will
-always be available from gdscript). It is initialized automatically. It
-has three methods for purchasing:
+The Store Kit API is accessible through the ``InAppStore`` singleton.
+It is initialized automatically.
 
 -  ``Error purchase(Variant p_params);``
 -  ``Error request_product_info(Variant p_params);``
@@ -173,10 +193,10 @@ The response events will be dictionaries with the following fields:
 Game Center
 -----------
 
-Implemented in ``platform/iphone/game_center.mm``.
+Implemented in `Godot iOS GameCenter plugin <https://github.com/godotengine/godot-ios-plugins/blob/master/plugins/gamecenter/game_center.mm>`_.
 
-The Game Center API is available through the "GameCenter" singleton. It
-has 9 methods:
+The Game Center API is available through the ``GameCenter`` singleton. It
+has the following methods:
 
 -  ``Error authenticate();``
 -  ``bool is_authenticated();``
@@ -448,6 +468,7 @@ On close:
       "type": "show_game_center",
       "result": "ok",
     }
+<<<<<<< HEAD:tutorials/platform/services_for_ios.rst
 
 Multi-platform games
 --------------------
@@ -479,3 +500,5 @@ of how to work around this in a class:
         if Globals.has_singleton("GameCenter"):
             GameCenter = Globals.get_singleton("GameCenter")
             # connect your timer here to the "check_events" function
+=======
+>>>>>>> efc0a860 (Update iOS plugins documentation):tutorials/platform/ios/plugins_for_ios.rst
