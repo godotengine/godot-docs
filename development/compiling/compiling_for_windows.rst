@@ -105,7 +105,10 @@ use MinGW, pass ``use_mingw=yes`` to the SCons command line.
 During development, using the Visual Studio compiler is usually a better idea,
 as it links the Godot binary much faster than MinGW. However, MinGW can
 produce more optimized binaries using link-time optimization (see below),
-making it a better choice for production use.
+making it a better choice for production use. Note that MSVC builds cannot be 
+performed from the MSYS2 or MingW* shells, use either `cmd.exe` or PowerShell
+instead.
+
 
 Running SCons
 ~~~~~~~~~~~~~
