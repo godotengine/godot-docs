@@ -108,8 +108,6 @@ During development, using the Visual Studio compiler is usually a better idea,
 as it links the Godot binary much faster than MinGW. However, MinGW can
 produce more optimized binaries using link-time optimization (see below),
 making it a better choice for production use.
-
-
 Running SCons
 ~~~~~~~~~~~~~
 
