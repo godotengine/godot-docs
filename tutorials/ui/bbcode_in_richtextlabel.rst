@@ -90,26 +90,11 @@ Reference
 | **cell**          | ``[cell]{text}[/cell]``                    | Adds cells with the {text} to the table.                        |
 +-------------------+--------------------------------------------+-----------------------------------------------------------------+
 
-Built-in color names
-~~~~~~~~~~~~~~~~~~~~
+Named colors
+~~~~~~~~~~~~
 
-List of valid color names for the [color=<name>] tag:
-
--  aqua
--  black
--  blue
--  fuchsia
--  gray
--  green
--  lime
--  maroon
--  navy
--  purple
--  red
--  silver
--  teal
--  white
--  yellow
+You can use the constants of the :ref:`class_Color` class for the ``[color=<name>]`` tag.
+The case and style of the name is not important: ``DARK_RED``, ``DarkRed`` and ``darkred`` will give the same result.
 
 Hexadecimal color codes
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -190,7 +175,8 @@ You can extend the :ref:`class_RichTextEffect` resource type to create your own 
 BBCode tags. You begin by extending the :ref:`class_RichTextEffect` resource type. Add
 the ``tool`` prefix to your GDScript file if you wish to have these custom effects run
 within the editor itself. The RichTextLabel does not need to have a script attached,
-nor does it need to be running in ``tool`` mode.
+nor does it need to be running in ``tool`` mode. The new effect will be activable in 
+the Inspector through the **Custom Effects** property.
 
 There is only one function that you need to extend: ``_process_custom_fx(char_fx)``.
 Optionally, you can also provide a custom BBCode identifier simply by adding a member

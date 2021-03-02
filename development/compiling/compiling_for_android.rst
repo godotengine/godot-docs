@@ -26,9 +26,10 @@ For compiling under Windows, Linux or macOS, the following is required:
 -  `Android SDK <https://developer.android.com/studio/#command-tools>`_
    (command-line tools are sufficient).
 
-   -  Required SDK components will be automatically installed by Gradle (except the NDK).
+   -  Required SDK components will be automatically installed.
+   -  On Linux,
+      **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
 
--  `Android NDK <https://developer.android.com/ndk/downloads/>`_ r17 or later.
 -  Gradle (will be downloaded and installed automatically if missing).
 -  JDK 8 (either OpenJDK or Oracle JDK).
 
@@ -43,36 +44,32 @@ For compiling under Windows, Linux or macOS, the following is required:
 Setting up the buildsystem
 --------------------------
 
-Set the environment variable ``ANDROID_SDK_ROOT`` to point to the Android
-SDK. If you downloaded the Android command-line tools, this would be
-the folder where you extracted the contents of the ZIP archive.
-Later on, ``gradlew`` will install necessary SDK components in this folder.
-However, you need to accept the SDK component licenses before they can be
-downloaded by Gradle. This can be done by running the following command
-from the root of the SDK directory, then answering all the prompts
-with ``y``:
+-  Set the environment variable ``ANDROID_SDK_ROOT`` to point to the Android 
+   SDK. If you downloaded the Android command-line tools, this would be
+   the folder where you extracted the contents of the ZIP archive.
 
-::
+-  Install the necessary SDK components in this folder:
 
-    tools/bin/sdkmanager --licenses
+    -  Accept the SDK component licenses by running the following command 
+       from the root of the SDK directory, then answering all the prompts with ``y``:
 
+    ::
 
-Set the environment variable ``ANDROID_NDK_ROOT`` to point to the
-Android NDK. You also might need to set the variable ``ANDROID_NDK_HOME``
-to the same path, especially if you are using custom Android modules,
-since some Gradle plugins rely on the NDK and use this variable to
-determine its location.
+        tools/bin/sdkmanager --licenses
 
-To set those environment variables on Windows, press :kbd:`Windows + R`, type
-"control system", then click on **Advanced system settings** in the left
-pane, then click on **Environment variables** on the window that
-appears.
+    -  Complete setup by running the following command where ``android_sdk_path`` is the path to the Android SDK.
 
-To set those environment variables on Linux or macOS, use
-``export ANDROID_SDK_ROOT=/path/to/android-sdk`` and
-``export ANDROID_NDK_ROOT=/path/to/android-ndk``
-where ``/path/to/android-sdk`` and ``/path/to/android-ndk`` point to
-the root of the SDK and NDK directories.
+    ::
+
+        tools/bin/sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;30.0.1" "platforms;android-29" "cmdline-tools;latest" "cmake;3.10.2.4988404"
+
+.. seealso::   To set the environment variable on Windows, press :kbd:`Windows + R`, type 
+            "control system", then click on **Advanced system settings** in the left
+            pane, then click on **Environment variables** on the window that appears.
+
+.. seealso::   To set the environment variable on Linux or macOS, use
+            ``export ANDROID_SDK_ROOT=/path/to/android-sdk`` where ``/path/to/android-sdk`` points to
+            the root of the SDK directories.
 
 Building the export templates
 -----------------------------
@@ -202,8 +199,8 @@ Troubleshooting
 Platform doesn't appear in SCons
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Double-check that you've set both the ``ANDROID_SDK_ROOT`` and ``ANDROID_NDK_ROOT``
-environment variables. This is required for the platform to appear in SCons'
+Double-check that you've set the ``ANDROID_SDK_ROOT``
+environment variable. This is required for the platform to appear in SCons'
 list of detected platforms.
 See :ref:`Setting up the buildsystem <doc_android_setting_up_the_buildsystem>`
 for more information.

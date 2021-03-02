@@ -370,6 +370,7 @@ Import
 
    - WAV with optional IMA-ADPCM compression.
    - Ogg Vorbis.
+   - MP3.
 
 - *3D scenes:*
 

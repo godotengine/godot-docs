@@ -255,7 +255,12 @@ call to find out which methods can be called on our NativeScript and which
 properties it exposes. The second is our ``_process`` function, which will work
 exactly the same as the ``_process`` function you're used to in GDScript. The
 third is our ``_init`` function which is called after Godot has properly set up
-our object. It has to exist even if you don't place any code in it.
+our object.
+
+.. warning::
+
+    The ``_init`` function has to exist even if you don't place any code in it.
+    Otherwise, the class won't be instantiable.
 
 Let's implement our functions by creating our ``gdexample.cpp`` file:
 

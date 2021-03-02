@@ -161,14 +161,19 @@ submission boxes to enable them.
     preview. This option will be removed eventually, and thumbnails will be automatically
     computed instead.
 
-Once you are done, hit Submit. Your asset will be entered into the pending queue,
-which you can visit on the AssetLib `here <https://godotengine.org/asset-library/asset/edit?&asset=-1>`_ . The approval process is manual and may
-take up to a few days for your addon to be accepted (or rejected), so please
-be patient! You will be informed when your asset is reviewed. If it was rejected,
+Once you are done, press "Submit". Your asset will be entered into the review queue.
+You can check all assets currently pending a review `here <https://godotengine.org/asset-library/asset/edit?&asset=-1>`_ .
+The approval process is manual and may take up to a few days for your asset to be accepted (or rejected), so please
+be patient! 
+
+.. note::
+    
+    You may have some luck accelerating the approval process by messaging the
+    moderators and AssetLib reviewers on the `Contributors Chat <https://chat.godotengine.org/>`_,
+    or the official Discord server.
+
+You will be informed when your asset is reviewed. If it was rejected,
 you will be told why that may have been, and you will be able to submit it again
 with the appropriate changes.
-You may have some luck accelerating the approval process by messaging the
-moderators/assetlib reviewers on IRC (the ``#godotengine-atelier`` channel on Freenode),
-or the official Discord server.
 
 .. |image0| image:: img/assetlib_submit.png
