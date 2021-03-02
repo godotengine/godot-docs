@@ -14,11 +14,14 @@ The Godot video tutorials by `GDQuest <https://www.youtube.com/channel/UCxboW7x0
 
 If you're interested in Visual Scripting, `Emilio's tutorials <https://www.youtube.com/channel/UC9DR22-qohBDtZ74R3FxOZg>`_ may be worth a look.
 
+If you're interested in a complete introduction to programming using Godot and GDScript, the unofficial `Godot Tutorials <https://www.youtube.com/channel/UCnr9ojBEQGgwbcKsZC-2rIg>`_ YouTube channel is a good place to start.
+
 Some tutorials mentioned below provide more advanced tutorials, e.g. on 3D or shaders.
 
 Video tutorials
 ---------------
 
+- `Godot Tutorials <https://www.youtube.com/channel/UCnr9ojBEQGgwbcKsZC-2rIg>`_ (2D, GDScript, Programming Basics).
 - `Emilio <https://www.youtube.com/channel/UC9DR22-qohBDtZ74R3FxOZg>`_ (2D, GDScript and VisualScript).
 - `GDQuest <https://www.youtube.com/channel/UCxboW7x0jZqFdvMdCFKTMsQ/playlists>`_ (2D and 3D, GDScript, VisualScript and C#).
 - `Game Development Channel <https://www.youtube.com/channel/UClseGZiVmeHamsjYmpbiAmQ/playlists>`_ (2D, GDScript).
