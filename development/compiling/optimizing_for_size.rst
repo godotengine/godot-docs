@@ -140,7 +140,7 @@ and MSVC compilers:
 
     scons p=windows target=release tools=no use_lto=yes
 
-Linking becomes much slower with this option, so it should be used only for
+Linking becomes much slower with this option (and also consumes more RAM), so it should be used only for
 release builds.
 
 Stripping binaries
