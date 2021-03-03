@@ -127,7 +127,7 @@ manager.
           If you are compiling Godot with GCC, you can make the binary
           even smaller and faster by adding the SCons option ``use_lto=yes``.
           As link-time optimization is a memory-intensive process,
-          this will require about 3 GB of available RAM while compiling.
+          this will require about 7 GB of available RAM while compiling.
 
 .. note:: If you want to use separate editor settings for your own Godot builds
           and official releases, you can enable
