@@ -40,7 +40,7 @@ Video tutorials
 - `BornCG <https://www.youtube.com/playlist?list=PLda3VoSoc_TSBBOBYwcmlamF1UrjVtccZ>`_ (2D and 3D, GDScript).
 - `Gonkee <https://www.youtube.com/channel/UCJqCPFHdbc6443G3Sz6VYDw>`_ (2D and 3D, GDScript, Shaders).
 - `TheGuideKnight <https://www.youtube.com/playlist?list=PLYcTJBw32KtX2fvOdtO_fS3Nd6sxM71tn>`_ (2D, GDScript).
-- `GDScript Dude <https://www.youtube.com/channel/UCQs0i6vKISElM6mh7OzLouQn>`_ (GDScript).
+- `GDScript Dude <https://www.youtube.com/channel/UCQs0i6vKISElM6mh7OzLouQ>`_ (GDScript).
 
 Text tutorials
 --------------
