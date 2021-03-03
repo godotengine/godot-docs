@@ -301,3 +301,63 @@ Editor integration
 Many IDEs or code editors have beautifier plugins that can be configured to run
 black automatically, for example each time you save a file. For details you can
 check `Black editor integration <https://github.com/psf/black#editor-integration>`__.
+
+Comment style guide
+-------------------
+
+This comment style guide applies to all programming languages used within
+Godot's codebase.
+
+- Begin comments with a space character to distinguish them from disabled code.
+- Use sentence case for comments. Begin comments with an uppercase character and
+  always end them with a period.
+- Reference variable/function names and values using backticks.
+- Wrap comments to ~100 characters.
+- You can use ``TODO:``, ``FIXME:``, ``NOTE:``, or ``HACK:`` as adominitions
+  when needed.
+
+**Example:**
+
+.. code-block:: cpp
+
+    // Compute the first 10,000 decimals of Pi.
+    // FIXME: Don't crash when computing the 1,337th decimal due to `increment`
+    //        being negative.
+
+Don't repeat what the code says in a comment. Explain the *why* rather than *how*.
+
+**Bad:**
+
+.. code-block:: cpp
+
+    // Draw loading screen.
+    draw_load_screen();
+
+You can use Javadoc-style comments above function or macro definitions. It's
+recommended to use Javadoc-style comments *only* for methods which are not
+exposed to scripting. This is because exposed methods should be documented in
+the :ref:`class reference XML <doc_updating_the_class_reference_with_git>`
+instead.
+
+**Example:**
+
+.. code-block:: cpp
+
+    /**
+     * Returns the number of nodes in the universe.
+     * This can potentially be a very large number, hence the 64-bit return type.
+     */
+    uint64_t Universe::get_node_count() {
+        // ...
+    }
+
+For member variables, don't use Javadoc-style comments but use single-line comments instead:
+
+.. code-block:: cpp
+
+    class Universe {
+        // The cached number of nodes in the universe.
+        // This value may not always be up-to-date with the current number of nodes
+        // in the universe.
+        uint64_t node_count_cached = 0;
+    };
