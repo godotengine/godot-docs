@@ -251,7 +251,7 @@ Run the scene to see the Godot head run in circles.
 .. image:: img/scripting_first_script_rotating_godot.gif
 
 .. note:: Moving a node like that does not take into account colliding with
-          walls or the floor. In :ref:`doc_your_first_game`, you will learn
+          walls or the floor. In :ref:`doc_your_first_2d_game`, you will learn
           another approach to moving objects while detecting collisions.
 
 Our node currently moves by itself. In the next part, we'll use player input to control it.
