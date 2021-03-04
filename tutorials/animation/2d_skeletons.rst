@@ -86,8 +86,8 @@ piece.
 When you duplicate nodes and the next piece has a similar shape, you can edit
 the previous polygon instead of drawing a new one.
 
-After moving the polygon, remember to update the UV by selecting Edit -> "Polygon
--> UV" in the Polygon 2D UV Editor.
+After moving the polygon, remember to update the UV by selecting
+**Edit > Copy Polygon to UV** in the Polygon 2D UV Editor.
 
 .. image:: img/skel2d5.png
 
