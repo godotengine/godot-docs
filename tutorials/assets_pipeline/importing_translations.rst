@@ -6,10 +6,9 @@ Importing translations
 Games and internationalization
 ------------------------------
 
-The world is full of different markets and cultures and, to maximize
-profits™, nowadays games are released in several languages. To solve
-this, internationalized text must be supported in any modern game
-engine.
+The world is full of different languages and cultures, so nowadays games
+are released in several languages. To handle this, internationalized text
+must be supported in any modern game engine.
 
 In regular desktop or mobile applications, internationalized text is
 usually located in resource files (or .po files for GNU stuff). Games,
