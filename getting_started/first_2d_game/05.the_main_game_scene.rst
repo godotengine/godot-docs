@@ -243,7 +243,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
         mob.Rotation = direction;
 
         // Choose the velocity.
-        var velocity = new Vector2((float)GD.RandRange(mob.minSpeed, mob.maxSpeed), 0);
+        var velocity = new Vector2((float)GD.RandRange(mob.MinSpeed, mob.MaxSpeed), 0);
         mob.LinearVelocity = velocity.Rotated(direction);
     }
 
