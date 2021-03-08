@@ -1,0 +1,3 @@
+user-agent: *
+
+sitemap: https://docs.godotengine.org/sitemap.xml

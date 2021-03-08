@@ -1,0 +1,27 @@
+# .readthedocs.yml
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+version: 2
+
+build:
+  image: latest
+
+sphinx:
+  configuration: conf.py
+
+# Possible options: htmlzip, pdf, epub
+# All disabled for now:
+# - single-page htmlzip is too big to be usable, and requires too much memory.
+# - pdf generates too many latex warnings and the build is killed once logs
+#   reach 4 MB. Could likely be improved if someone is motivated.
+# - epub is too big, and has tons of validation errors which make most readers
+#   treat it as invalid (GH-3862). Also, it's ugly.
+# Hopefully one day we'll have a multi-page HTML zip option, but until
+# then, all offline download options are worthless.
+# (Track https://github.com/readthedocs/readthedocs.org/issues/3242)
+formats: []
+
+python:
+  install:
+    - requirements: requirements.txt

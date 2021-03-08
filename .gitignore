@@ -1,0 +1,42 @@
+_build/
+env/
+__pycache__
+*.pyc
+*~
+.directory
+.vs/
+.vscode/
+*.mo
+
+# Vim temp files
+*.swo
+*.swp
+
+# Geany/geany-plugins files
+*.geany
+.geanyprj
+
+# Finder (macOS) makes these automatically.
+.DS_Store
+__MACOSX
+
+# Windows image file caches
+[Tt]humbs.db
+[Tt]humbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Windows shortcuts
+*.lnk
+
+# Windows folder config file
+[Dd]esktop.ini
+
+# Windows Recycle Bin used on file shares
+$RECYCLE.BIN/
+logo.h
+*.autosave
+
+# Output of list-unused-images.sh tool
+tmp-unused-images
+tmp-unused-images-history
