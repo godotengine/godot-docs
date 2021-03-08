@@ -265,6 +265,12 @@ each animation in a separate file.
 
 Import of animations is enabled by default.
 
+.. attention::
+
+    To modify animations from an imported 3D scene, you need to change the animation
+    storage option from **Built-In** to **Files** in the Import dock. Otherwise,
+    changes made to animations from Godot will be lost when the project is run.
+
 FPS
 ~~~
 
