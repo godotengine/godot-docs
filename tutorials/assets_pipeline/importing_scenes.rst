@@ -77,7 +77,7 @@ separately. Godot uses PBR (physically based rendering) for its materials, so if
 textures they can work in Godot. This includes the `Substance suite <https://www.substance3d.com/>`__,
 `ArmorPaint (open source) <https://armorpaint.org/>`__, and `Material Maker (open source) <https://github.com/RodZill4/material-maker>`__.
 
-.. note:: For more information on Godot's materials, see :ref:`doc_standard_material_3d`. 
+.. note:: For more information on Godot's materials, see :ref:`doc_standard_material_3d`.
 
 Import workflows
 ----------------
@@ -265,6 +265,12 @@ each animation in a separate file.
 
 Import of animations is enabled by default.
 
+.. attention::
+
+    To modify animations from an imported 3D scene, you need to change the animation
+    storage option from **Built-In** to **Files** in the Import dock. Otherwise,
+    changes made to animations from Godot will be lost when the project is run.
+
 FPS
 ~~~
 
@@ -432,7 +438,7 @@ reliability.
     For better visibility on Blender's editor, you can set the "X-Ray" option
     on collision empties and set some distinct color for them by changing
     **Edit > Preferences > Themes > 3D Viewport > Empty**.
-    
+
     If using Blender 2.79 or older, follow these steps instead:
     **User Preferences > Themes > 3D View > Empty**.
 
