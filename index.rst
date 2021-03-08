@@ -42,6 +42,10 @@ DevDocs, you need to:
 - Click the three dots in the top-left corner, choose **Offline data**.
 - Click the **Install** link next to the Godot documentation.
 
+You can also `download an HTML copy <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html.zip>`__
+for offline reading (updated every Monday). Extract the ZIP archive then open
+the top-level ``index.html`` in a web browser.
+
 .. note:: Godot Engine is an open source project developed by a community of
           volunteers. The documentation team can always use your
           feedback and help to improve the tutorials and class reference. If
@@ -55,7 +59,7 @@ DevDocs, you need to:
           <https://hosted.weblate.org/engage/godot-engine/>`_ into your
           language, or talk to us on either the ``#documentation``
           channel on `Discord <https://discord.gg/zH7NUgz>`_, or the
-          ``#documentation`` channel on the `Godot Contributors Chat 
+          ``#documentation`` channel on the `Godot Contributors Chat
           <https://chat.godotengine.org/>`_!
 
 .. centered:: |weblate_widget|
