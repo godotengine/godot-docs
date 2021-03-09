@@ -478,8 +478,8 @@ the code we would use:
  .. code-tab:: gdscript GDScript
 
     # Set up transforms just like in the image, except make positions be 100 times bigger.
-    var parent = Transform2D(2, 0, 0, 1, 100, 200)
-    var child = Transform2D(0.5, 0, 0, 0.5, 100, 100)
+    var parent = Transform2D(Vector2(2, 0), Vector2(0, 1), Vector2(100, 200))
+    var child = Transform2D(Vector2(0.5, 0), Vector2(0, 0.5), Vector2(100, 100))
 
     # Calculate the child's world space transform
     # origin = (2, 0) * 100 + (0, 1) * 100 + (100, 200)
