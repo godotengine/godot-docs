@@ -34,7 +34,10 @@ It will connect and fetch a website.
         while http.get_status() == HTTPClient.STATUS_CONNECTING or http.get_status() == HTTPClient.STATUS_RESOLVING:
             http.poll()
             print("Connecting...")
-            OS.delay_msec(500)
+            if not OS.has_feature("web"):
+                OS.delay_msec(500)
+            else:
+                yield(Engine.get_main_loop(), "idle_frame")
 
         assert(http.get_status() == HTTPClient.STATUS_CONNECTED) # Could not connect
 
@@ -86,13 +89,16 @@ It will connect and fetch a website.
             while http.get_status() == HTTPClient.STATUS_BODY:
                 # While there is body left to be read
                 http.poll()
-                var chunk = http.read_response_body_chunk() # Get a chunk.
+                # Get a chunk.
+                var chunk = http.read_response_body_chunk()
                 if chunk.size() == 0:
-                    # Got nothing, wait for buffers to fill a bit.
-                    OS.delay_usec(1000)
+                    if not OS.has_feature("web"):
+                        # Got nothing, wait for buffers to fill a bit.
+                        OS.delay_usec(1000)
+                    else:
+                        yield(Engine.get_main_loop(), "idle_frame")
                 else:
                     rb = rb + chunk # Append to read buffer.
-
             # Done!
 
             print("bytes got: ", rb.size())
