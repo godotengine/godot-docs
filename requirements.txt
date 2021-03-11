@@ -7,7 +7,7 @@ sphinx==1.8.5  # pyup: <2.0.0
 sphinx_rtd_theme==0.4.3
 
 # Code tabs extension for GDScript/C#
-sphinx-tabs==1.1.13
+sphinx-tabs==2.1.0
 
 # Custom 404 error page (more useful than the default)
 sphinx-notfound-page==0.6
