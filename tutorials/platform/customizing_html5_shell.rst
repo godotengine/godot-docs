@@ -206,5 +206,5 @@ and the :js:attr:`onPrintError` override option to set a callback function for t
     }
     engine.startGame({ onPrint: print, onPrintError: printError });
 
-When handling the engine output keep in mind, that it may not be desirable to print it out in the
+When handling the engine output, keep in mind that it may not be desirable to print it out in the
 finished product.
