@@ -260,7 +260,7 @@ Key:
 **Template - Generic 16 tiles:**
 
 This template can be used for tilesets that only have 16 tiles - for simpler art
-styles the missing tiles will not be noticable.
+styles the missing tiles will not be noticeable.
 
 Key:
 
