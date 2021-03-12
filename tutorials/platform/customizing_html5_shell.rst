@@ -77,8 +77,8 @@ section.
 Starting the project
 --------------------
 To be able to start the game, you need to write a script that initializes the engine — the control
-code. This process consists of three steps, though as shown most of them can be skipped depending on
-how much customization is needed (or be left to a default behavior).
+code. This process consists of three steps, but as shown here, most of them can be skipped depending on
+how much customization is needed.
 
 See the :ref:`HTML5 shell class reference <doc_html5_shell_classref>`, for the full list of methods and options available.
 
