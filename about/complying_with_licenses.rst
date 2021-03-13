@@ -1,6 +1,6 @@
 .. _doc_complying_with_licenses:
 
-Complying with licenses
+Complying with Licenses
 =======================
 
 What are licenses?
