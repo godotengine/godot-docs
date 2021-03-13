@@ -3,7 +3,7 @@
 
 .. _doc_faq:
 
-Frequently asked questions
+Frequently Asked Questions
 ==========================
 
 What can I do with Godot? How much does it cost? What are the license terms?
