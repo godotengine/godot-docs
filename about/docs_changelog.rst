@@ -1,6 +1,6 @@
 .. _doc_docs_changelog:
 
-Documentation changelog
+Documentation Changelog
 =======================
 
 The documentation is continually being improved. The release of version 3.2
