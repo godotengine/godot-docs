@@ -246,6 +246,7 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     extends ARVRController
 
     var controller_velocity = Vector3(0,0,0)
@@ -970,6 +971,7 @@ Once you have ``VR_Interactable_Rigidbody.gd`` open, add the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     class_name VR_Interactable_Rigidbody
     extends RigidBody
 
