@@ -1,6 +1,6 @@
 .. _doc_release_policy:
 
-Godot release policy
+Godot Release Policy
 ====================
 
 Godot versioning
