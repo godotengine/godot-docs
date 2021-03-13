@@ -1,6 +1,6 @@
 .. _doc_list_of_features:
 
-List of features
+List of Features
 ================
 
 This page aims to list all features currently supported by Godot.
