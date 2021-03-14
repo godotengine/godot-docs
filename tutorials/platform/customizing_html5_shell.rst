@@ -1,9 +1,9 @@
 .. _doc_customizing_html5_shell:
 
-Custom HTML page for Web export
+Custom HTML page for web export
 ====================================
 
-While Web export templates provide a default HTML page fully capable of launching
+While web export templates provide a default HTML page fully capable of launching
 the project without any further customization, it may be beneficial to create a custom
 HTML page. While the game itself cannot easily be directly controlled from the outside yet,
 such page allows to customize the initialization process for the engine.
@@ -67,7 +67,7 @@ The following optional placeholders will enable some extra features in your cuss
   A custom string to include in the HTML document just before the end of the ``<head>`` tag. It
   is customized in the export options under the *Html / Head Include* section. While you fully
   control the HTML page you create, this variable can be useful for configuring parts of the
-  HTML ``head`` element from the Godot Editor, e.g. for different Web export presets.
+  HTML ``head`` element from the Godot Editor, e.g. for different web export presets.
 
 When the custom page is ready, it can be selected in the export options under the *Html / Custom Html Shell*
 section.
@@ -140,13 +140,13 @@ this method is static, multiple engine instances can be spawned if the share the
 
 Customizing the behavior
 ------------------------
-In the Web environment several methods can be used to guarantee that the game will work as intended.
+In the web environment several methods can be used to guarantee that the game will work as intended.
 
 If you target a specific version of WebGL, or just want to check if WebGL is available at all,
 you can call the :js:meth:`Engine.isWebGLAvailable` method. It optionally takes an argument that
 allows to test for a specific major version of WebGL.
 
-As the real executable file does not exist in the Web environment, the engine only stores a virtual
+As the real executable file does not exist in the web environment, the engine only stores a virtual
 filename formed from the base name of loaded engine files. This value affects the output of the
 :ref:`OS.get_executable_path() <class_OS_method_get_executable_path>` method and defines the name of
 the automatically started main pack. The :js:attr:`executable` override option can be
