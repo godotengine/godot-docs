@@ -3,7 +3,7 @@
 HTML5 shell class reference
 ===========================
 
-Projects exported for the Web expose the :js:class:`Engine` class to the JavaScript environment, that allows
+Projects exported for the web expose the :js:class:`Engine` class to the JavaScript environment, that allows
 fine control over the engine's start-up process.
 
 This API is built in an asynchronous manner and requires basic understanding
@@ -14,7 +14,7 @@ Engine
 
 The ``Engine`` class provides methods for loading and starting exported projects on the Web. For default export
 settings, this is already part of the exported HTML page. To understand practical use of the ``Engine`` class,
-see :ref:`Custom HTML page for Web export <doc_customizing_html5_shell>`.
+see :ref:`Custom HTML page for web export <doc_customizing_html5_shell>`.
 
 Static Methods
 ^^^^^^^^^^^^^^
@@ -295,7 +295,7 @@ Properties
 
       A callback function for handling Godot's ``OS.execute`` calls.
 
-      This is for example used in the Web Editor template to switch between project manager and editor, and for running the game.
+      This is for example used in the web Editor template to switch between project manager and editor, and for running the game.
 
       :param string path:
          The path that Godot's wants executed.
