@@ -756,6 +756,7 @@ Inferred types
 In most cases you can let the compiler infer the type, using ``:=``:
 
 ::
+
    var health := 0  # The compiler will use the int type.
 
 However, in a few cases when context is missing, the compiler falls back to
