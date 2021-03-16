@@ -35,15 +35,6 @@ Button is the standard themed button. It can contain text and an icon, and will 
 
 Buttons (like all Control nodes) can also be created in the editor, but some situations may require creating them from code.
 
-See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
-
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
-
-- `https://godotengine.org/asset-library/asset/677 <https://godotengine.org/asset-library/asset/677>`_
-
 Properties
 ----------
 

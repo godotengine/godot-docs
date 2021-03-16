@@ -20,13 +20,6 @@ A line through several points in 2D space.
 
 **Note:** By default, Godot can only draw up to 4,096 polygon points at a time. To increase this limit, open the Project Settings and increase :ref:`ProjectSettings.rendering/limits/buffers/canvas_polygon_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/canvas_polygon_buffer_size_kb>` and :ref:`ProjectSettings.rendering/limits/buffers/canvas_polygon_index_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/canvas_polygon_index_buffer_size_kb>`.
 
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/584 <https://godotengine.org/asset-library/asset/584>`_
-
-- `https://godotengine.org/asset-library/asset/583 <https://godotengine.org/asset-library/asset/583>`_
-
 Properties
 ----------
 

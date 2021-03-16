@@ -25,8 +25,6 @@ Tutorials
 
 - `#interpolating-with-quaternions <../tutorials/3d/using_transforms.html#interpolating-with-quaternions>`_ in :doc:`../tutorials/3d/using_transforms`
 
-- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
-
 Properties
 ----------
 

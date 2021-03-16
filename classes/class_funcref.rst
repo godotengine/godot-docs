@@ -20,13 +20,6 @@ In GDScript, functions are not *first-class objects*. This means it is impossibl
 
 However, by creating a ``FuncRef`` using the :ref:`@GDScript.funcref<class_@GDScript_method_funcref>` function, a reference to a function in a given object can be created, passed around and called.
 
-Properties
-----------
-
-+-----------------------------+--------------------------------------------------+--------+
-| :ref:`String<class_String>` | :ref:`function<class_FuncRef_property_function>` | ``""`` |
-+-----------------------------+--------------------------------------------------+--------+
-
 Methods
 -------
 
@@ -37,25 +30,10 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`is_valid<class_FuncRef_method_is_valid>` **(** **)** |const|                                      |
 +-------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_function<class_FuncRef_method_set_function>` **(** :ref:`String<class_String>` name **)**     |
++-------------------------------+---------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_instance<class_FuncRef_method_set_instance>` **(** :ref:`Object<class_Object>` instance **)** |
 +-------------------------------+---------------------------------------------------------------------------------------------------------+
-
-Property Descriptions
----------------------
-
-.. _class_FuncRef_property_function:
-
-- :ref:`String<class_String>` **function**
-
-+-----------+---------------------+
-| *Default* | ``""``              |
-+-----------+---------------------+
-| *Setter*  | set_function(value) |
-+-----------+---------------------+
-| *Getter*  | get_function()      |
-+-----------+---------------------+
-
-The name of the referenced function.
 
 Method Descriptions
 -------------------
@@ -64,7 +42,7 @@ Method Descriptions
 
 - :ref:`Variant<class_Variant>` **call_func** **(** ... **)** |vararg|
 
-Calls the referenced function previously set in :ref:`function<class_FuncRef_property_function>` or :ref:`@GDScript.funcref<class_@GDScript_method_funcref>`.
+Calls the referenced function previously set by :ref:`set_function<class_FuncRef_method_set_function>` or :ref:`@GDScript.funcref<class_@GDScript_method_funcref>`.
 
 ----
 
@@ -72,7 +50,7 @@ Calls the referenced function previously set in :ref:`function<class_FuncRef_pro
 
 - :ref:`Variant<class_Variant>` **call_funcv** **(** :ref:`Array<class_Array>` arg_array **)**
 
-Calls the referenced function previously set in :ref:`function<class_FuncRef_property_function>` or :ref:`@GDScript.funcref<class_@GDScript_method_funcref>`. Contrarily to :ref:`call_func<class_FuncRef_method_call_func>`, this method does not support a variable number of arguments but expects all parameters to be passed via a single :ref:`Array<class_Array>`.
+Calls the referenced function previously set by :ref:`set_function<class_FuncRef_method_set_function>` or :ref:`@GDScript.funcref<class_@GDScript_method_funcref>`. Contrarily to :ref:`call_func<class_FuncRef_method_call_func>`, this method does not support a variable number of arguments but expects all parameters to be passed via a single :ref:`Array<class_Array>`.
 
 ----
 
@@ -81,6 +59,14 @@ Calls the referenced function previously set in :ref:`function<class_FuncRef_pro
 - :ref:`bool<class_bool>` **is_valid** **(** **)** |const|
 
 Returns whether the object still exists and has the function assigned.
+
+----
+
+.. _class_FuncRef_method_set_function:
+
+- void **set_function** **(** :ref:`String<class_String>` name **)**
+
+The name of the referenced function to call on the object, without parentheses or any parameters.
 
 ----
 

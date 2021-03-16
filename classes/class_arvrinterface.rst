@@ -11,7 +11,7 @@ ARVRInterface
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`ARVRInterfaceGDNative<class_ARVRInterfaceGDNative>`, :ref:`MobileVRInterface<class_MobileVRInterface>`, :ref:`WebXRInterface<class_WebXRInterface>`
+**Inherited By:** :ref:`ARVRInterfaceGDNative<class_ARVRInterfaceGDNative>`, :ref:`MobileVRInterface<class_MobileVRInterface>`
 
 Base class for an AR/VR interface implementation.
 

@@ -11,12 +11,7 @@ EditorExportPlugin
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-A script that is executed when exporting the project.
-
-Description
------------
-
-Editor export plugins are automatically activated whenever the user exports the project. Their most common use is to determine what files are being included in the exported project. For each plugin, :ref:`_export_begin<class_EditorExportPlugin_method__export_begin>` is called at the beginning of the export process and then :ref:`_export_file<class_EditorExportPlugin_method__export_file>` is called for each exported file.
+A script that is executed when exporting projects.
 
 Methods
 -------
@@ -56,7 +51,7 @@ Method Descriptions
 
 - void **_export_begin** **(** :ref:`PoolStringArray<class_PoolStringArray>` features, :ref:`bool<class_bool>` is_debug, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual|
 
-Virtual method to be overridden by the user. It is called when the export starts and provides all information about the export. ``features`` is the list of features for the export, ``is_debug`` is ``true`` for debug builds, ``path`` is the target path for the exported project. ``flags`` is only used when running a runnable profile, e.g. when using native run on Android.
+Virtual method to be overridden by the user. It is called when the export starts and provides all information about the export.
 
 ----
 
@@ -72,17 +67,11 @@ Virtual method to be overridden by the user. Called when the export is finished.
 
 - void **_export_file** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type, :ref:`PoolStringArray<class_PoolStringArray>` features **)** |virtual|
 
-Virtual method to be overridden by the user. Called for each exported file, providing arguments that can be used to identify the file. ``path`` is the path of the file, ``type`` is the :ref:`Resource<class_Resource>` represented by the file (e.g. :ref:`PackedScene<class_PackedScene>`) and ``features`` is the list of features for the export.
-
-Calling :ref:`skip<class_EditorExportPlugin_method_skip>` inside this callback will make the file not included in the export.
-
 ----
 
 .. _class_EditorExportPlugin_method_add_file:
 
 - void **add_file** **(** :ref:`String<class_String>` path, :ref:`PoolByteArray<class_PoolByteArray>` file, :ref:`bool<class_bool>` remap **)**
-
-Adds a custom file to be exported. ``path`` is the virtual path that can be used to load the file, ``file`` is the binary data of the file. If ``remap`` is ``true``, file will not be exported, but instead remapped to the given ``path``.
 
 ----
 
@@ -90,15 +79,11 @@ Adds a custom file to be exported. ``path`` is the virtual path that can be used
 
 - void **add_ios_bundle_file** **(** :ref:`String<class_String>` path **)**
 
-Adds an iOS bundle file from the given ``path`` to the exported project.
-
 ----
 
 .. _class_EditorExportPlugin_method_add_ios_cpp_code:
 
 - void **add_ios_cpp_code** **(** :ref:`String<class_String>` code **)**
-
-Adds a C++ code to the iOS export. The final code is created from the code appended by each active export plugin.
 
 ----
 
@@ -126,15 +111,11 @@ Adds a static library (\*.a) or dynamic library (\*.dylib, \*.framework) to Link
 
 - void **add_ios_linker_flags** **(** :ref:`String<class_String>` flags **)**
 
-Adds linker flags for the iOS export.
-
 ----
 
 .. _class_EditorExportPlugin_method_add_ios_plist_content:
 
 - void **add_ios_plist_content** **(** :ref:`String<class_String>` plist_content **)**
-
-Adds content for iOS Property List files.
 
 ----
 
@@ -142,23 +123,17 @@ Adds content for iOS Property List files.
 
 - void **add_ios_project_static_lib** **(** :ref:`String<class_String>` path **)**
 
-Adds a static lib from the given ``path`` to the iOS project.
-
 ----
 
 .. _class_EditorExportPlugin_method_add_shared_object:
 
 - void **add_shared_object** **(** :ref:`String<class_String>` path, :ref:`PoolStringArray<class_PoolStringArray>` tags **)**
 
-Adds a shared object with the given ``tags`` and destination ``path``.
-
 ----
 
 .. _class_EditorExportPlugin_method_skip:
 
 - void **skip** **(** **)**
-
-To be called inside :ref:`_export_file<class_EditorExportPlugin_method__export_file>`. Skips the current file, so it's not included in the export.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

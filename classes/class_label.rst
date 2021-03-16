@@ -20,11 +20,6 @@ Label displays plain text on the screen. It gives you control over the horizonta
 
 **Note:** Contrarily to most other :ref:`Control<class_Control>`\ s, Label's :ref:`Control.mouse_filter<class_Control_property_mouse_filter>` defaults to :ref:`Control.MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` (i.e. it doesn't react to mouse input events). This implies that a label won't display any configured :ref:`Control.hint_tooltip<class_Control_property_hint_tooltip>`, unless you change its mouse filter.
 
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
-
 Properties
 ----------
 

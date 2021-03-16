@@ -25,11 +25,11 @@ Updating the target properties of animations occurs at process time.
 Tutorials
 ---------
 
-- :doc:`../tutorials/animation/index`
+- :doc:`../getting_started/step_by_step/animations`
 
 - :doc:`../tutorials/2d/2d_sprite_animation`
 
-- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+- :doc:`../tutorials/animation/index`
 
 Properties
 ----------

@@ -429,13 +429,7 @@ Changes the case of some letters. Replaces underscores with spaces, adds spaces 
 
 - :ref:`int<class_int>` **casecmp_to** **(** :ref:`String<class_String>` to **)**
 
-Performs a case-sensitive comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "less than" or "greater than" are determined by the `Unicode code points`` of each string, which roughly matches the alphabetical order.
-
-**Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
-
-**Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
-
-To get a boolean result from a string comparison, use the ``==`` operator instead. See also :ref:`nocasecmp_to<class_String_method_nocasecmp_to>`.
+Performs a case-sensitive comparison to another string. Returns ``-1`` if less than, ``+1`` if greater than, or ``0`` if equal.
 
 ----
 
@@ -711,7 +705,7 @@ Returns ``true`` if this string contains a valid integer.
 
 - :ref:`bool<class_bool>` **is_valid_ip_address** **(** **)**
 
-Returns ``true`` if this string contains only a well-formatted IPv4 or IPv6 address. This method considers `reserved IP addresses <https://en.wikipedia.org/wiki/Reserved_IP_addresses>`_ such as ``0.0.0.0`` as valid.
+Returns ``true`` if this string contains a valid IP address.
 
 ----
 
@@ -783,13 +777,7 @@ Returns the MD5 hash of the string as a string.
 
 - :ref:`int<class_int>` **nocasecmp_to** **(** :ref:`String<class_String>` to **)**
 
-Performs a case-insensitive comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "less than" or "greater than" are determined by the `Unicode code points`` of each string, which roughly matches the alphabetical order. Internally, lowercase characters will be converted to uppercase during the comparison.
-
-**Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
-
-**Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
-
-To get a boolean result from a string comparison, use the ``==`` operator instead. See also :ref:`casecmp_to<class_String_method_casecmp_to>`.
+Performs a case-insensitive comparison to another string. Returns ``-1`` if less than, ``+1`` if greater than, or ``0`` if equal.
 
 ----
 

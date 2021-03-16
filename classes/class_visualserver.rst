@@ -404,8 +404,6 @@ Methods
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`light_omni_set_shadow_mode<class_VisualServer_method_light_omni_set_shadow_mode>` **(** :ref:`RID<class_RID>` light, :ref:`LightOmniShadowMode<enum_VisualServer_LightOmniShadowMode>` mode **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                    | :ref:`light_set_bake_mode<class_VisualServer_method_light_set_bake_mode>` **(** :ref:`RID<class_RID>` light, :ref:`LightBakeMode<enum_VisualServer_LightBakeMode>` bake_mode **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-+---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`light_set_color<class_VisualServer_method_light_set_color>` **(** :ref:`RID<class_RID>` light, :ref:`Color<class_Color>` color **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`light_set_cull_mask<class_VisualServer_method_light_set_cull_mask>` **(** :ref:`RID<class_RID>` light, :ref:`int<class_int>` mask **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -781,10 +779,6 @@ Methods
 | void                                                    | :ref:`viewport_set_usage<class_VisualServer_method_viewport_set_usage>` **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportUsage<enum_VisualServer_ViewportUsage>` usage **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`viewport_set_use_arvr<class_VisualServer_method_viewport_set_use_arvr>` **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` use_arvr **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-+---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                    | :ref:`viewport_set_use_debanding<class_VisualServer_method_viewport_set_use_debanding>` **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` debanding **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-+---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                    | :ref:`viewport_set_use_fxaa<class_VisualServer_method_viewport_set_use_fxaa>` **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` fxaa **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`viewport_set_vflip<class_VisualServer_method_viewport_set_vflip>` **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enabled **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1192,24 +1186,6 @@ enum **LightParam**:
 - **LIGHT_PARAM_SHADOW_BIAS_SPLIT_SCALE** = **14** --- Increases bias on further splits to fix self-shadowing that only occurs far away from the camera.
 
 - **LIGHT_PARAM_MAX** = **15** --- Represents the size of the :ref:`LightParam<enum_VisualServer_LightParam>` enum.
-
-----
-
-.. _enum_VisualServer_LightBakeMode:
-
-.. _class_VisualServer_constant_LIGHT_BAKE_DISABLED:
-
-.. _class_VisualServer_constant_LIGHT_BAKE_INDIRECT:
-
-.. _class_VisualServer_constant_LIGHT_BAKE_ALL:
-
-enum **LightBakeMode**:
-
-- **LIGHT_BAKE_DISABLED** = **0**
-
-- **LIGHT_BAKE_INDIRECT** = **1**
-
-- **LIGHT_BAKE_ALL** = **2**
 
 ----
 
@@ -3076,9 +3052,7 @@ Not yet implemented. Always returns ``false``.
 
 - :ref:`bool<class_bool>` **has_os_feature** **(** :ref:`String<class_String>` feature **)** |const|
 
-Returns ``true`` if the OS supports a certain feature. Features might be ``s3tc``, ``etc``, ``etc2``, ``pvrtc`` and ``skinning_fallback``.
-
-When rendering with GLES2, returns ``true`` with ``skinning_fallback`` in case the hardware doesn't support the default GPU skinning process.
+Returns ``true`` if the OS supports a certain feature. Features might be ``s3tc``, ``etc``, ``etc2`` and ``pvrtc``.
 
 ----
 
@@ -3434,14 +3408,6 @@ Sets whether to use a dual paraboloid or a cubemap for the shadow map. Dual para
 
 ----
 
-.. _class_VisualServer_method_light_set_bake_mode:
-
-- void **light_set_bake_mode** **(** :ref:`RID<class_RID>` light, :ref:`LightBakeMode<enum_VisualServer_LightBakeMode>` bake_mode **)**
-
-Sets the bake mode for this light, see :ref:`LightBakeMode<enum_VisualServer_LightBakeMode>` for options. The bake mode affects how the light will be baked in :ref:`BakedLightmap<class_BakedLightmap>`\ s and :ref:`GIProbe<class_GIProbe>`\ s.
-
-----
-
 .. _class_VisualServer_method_light_set_color:
 
 - void **light_set_color** **(** :ref:`RID<class_RID>` light, :ref:`Color<class_Color>` color **)**
@@ -3510,7 +3476,7 @@ Sets the color of the shadow cast by the light. Equivalent to :ref:`Light.shadow
 
 - void **light_set_use_gi** **(** :ref:`RID<class_RID>` light, :ref:`bool<class_bool>` enabled **)**
 
-Sets whether GI probes capture light information from this light. *Deprecated method.* Use :ref:`light_set_bake_mode<class_VisualServer_method_light_set_bake_mode>` instead. This method is only kept for compatibility reasons and calls :ref:`light_set_bake_mode<class_VisualServer_method_light_set_bake_mode>` internally, setting the bake mode to :ref:`LIGHT_BAKE_DISABLED<class_VisualServer_constant_LIGHT_BAKE_DISABLED>` or :ref:`LIGHT_BAKE_INDIRECT<class_VisualServer_constant_LIGHT_BAKE_INDIRECT>` depending on the given parameter.
+Sets whether GI probes capture light information from this light.
 
 ----
 
@@ -5013,24 +4979,6 @@ Sets the viewport's 2D/3D mode. See :ref:`ViewportUsage<enum_VisualServer_Viewpo
 - void **viewport_set_use_arvr** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` use_arvr **)**
 
 If ``true``, the viewport uses augmented or virtual reality technologies. See :ref:`ARVRInterface<class_ARVRInterface>`.
-
-----
-
-.. _class_VisualServer_method_viewport_set_use_debanding:
-
-- void **viewport_set_use_debanding** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` debanding **)**
-
-If ``true``, uses a fast post-processing filter to make banding significantly less visible. In some cases, debanding may introduce a slightly noticeable dithering pattern. It's recommended to enable debanding only when actually needed since the dithering pattern will make lossless-compressed screenshots larger.
-
-**Note:** Only available on the GLES3 backend. :ref:`Viewport.hdr<class_Viewport_property_hdr>` must also be ``true`` for debanding to be effective.
-
-----
-
-.. _class_VisualServer_method_viewport_set_use_fxaa:
-
-- void **viewport_set_use_fxaa** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` fxaa **)**
-
-Enables fast approximate antialiasing for this viewport. FXAA is a popular screen-space antialiasing method, which is fast but will make the image look blurry, especially at lower resolutions. It can still work relatively well at large resolutions such as 1440p and 4K.
 
 ----
 

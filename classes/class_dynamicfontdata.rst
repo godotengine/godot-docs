@@ -18,11 +18,6 @@ Description
 
 Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a vector font file for dynamic rendering at runtime.
 
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
-
 Properties
 ----------
 

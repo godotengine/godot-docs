@@ -18,11 +18,6 @@ Description
 
 Provides navigation and pathfinding within a collection of :ref:`NavigationMesh<class_NavigationMesh>`\ es. By default, these will be automatically collected from child :ref:`NavigationMeshInstance<class_NavigationMeshInstance>` nodes, but they can also be added on the fly with :ref:`navmesh_add<class_Navigation_method_navmesh_add>`. In addition to basic pathfinding, this class also assists with aligning navigation agents with the meshes they are navigating on.
 
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/124 <https://godotengine.org/asset-library/asset/124>`_
-
 Properties
 ----------
 

@@ -35,18 +35,6 @@ Tutorials
 
 - :doc:`../tutorials/viewports/index`
 
-- `https://godotengine.org/asset-library/asset/127 <https://godotengine.org/asset-library/asset/127>`_
-
-- `https://godotengine.org/asset-library/asset/128 <https://godotengine.org/asset-library/asset/128>`_
-
-- `https://godotengine.org/asset-library/asset/129 <https://godotengine.org/asset-library/asset/129>`_
-
-- `https://godotengine.org/asset-library/asset/130 <https://godotengine.org/asset-library/asset/130>`_
-
-- `https://godotengine.org/asset-library/asset/541 <https://godotengine.org/asset-library/asset/541>`_
-
-- `https://godotengine.org/asset-library/asset/586 <https://godotengine.org/asset-library/asset/586>`_
-
 Properties
 ----------
 
@@ -59,13 +47,9 @@ Properties
 +---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
 | :ref:`Transform2D<class_Transform2D>`                                     | :ref:`canvas_transform<class_Viewport_property_canvas_transform>`                       |                     |
 +---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`debanding<class_Viewport_property_debanding>`                                     | ``false``           |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
 | :ref:`DebugDraw<enum_Viewport_DebugDraw>`                                 | :ref:`debug_draw<class_Viewport_property_debug_draw>`                                   | ``0``               |
 +---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`                                                   | :ref:`disable_3d<class_Viewport_property_disable_3d>`                                   | ``false``           |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`fxaa<class_Viewport_property_fxaa>`                                               | ``false``           |
 +---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
 | :ref:`Transform2D<class_Transform2D>`                                     | :ref:`global_canvas_transform<class_Viewport_property_global_canvas_transform>`         |                     |
 +---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
@@ -444,24 +428,6 @@ The canvas transform of the viewport, useful for changing the on-screen position
 
 ----
 
-.. _class_Viewport_property_debanding:
-
-- :ref:`bool<class_bool>` **debanding**
-
-+-----------+--------------------------+
-| *Default* | ``false``                |
-+-----------+--------------------------+
-| *Setter*  | set_use_debanding(value) |
-+-----------+--------------------------+
-| *Getter*  | get_use_debanding()      |
-+-----------+--------------------------+
-
-If ``true``, uses a fast post-processing filter to make banding significantly less visible. In some cases, debanding may introduce a slightly noticeable dithering pattern. It's recommended to enable debanding only when actually needed since the dithering pattern will make lossless-compressed screenshots larger.
-
-**Note:** Only available on the GLES3 backend. :ref:`hdr<class_Viewport_property_hdr>` must also be ``true`` for debanding to be effective.
-
-----
-
 .. _class_Viewport_property_debug_draw:
 
 - :ref:`DebugDraw<enum_Viewport_DebugDraw>` **debug_draw**
@@ -494,22 +460,6 @@ If ``true``, the viewport will disable 3D rendering. For actual disabling use ``
 
 ----
 
-.. _class_Viewport_property_fxaa:
-
-- :ref:`bool<class_bool>` **fxaa**
-
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_use_fxaa(value) |
-+-----------+---------------------+
-| *Getter*  | get_use_fxaa()      |
-+-----------+---------------------+
-
-Enables fast approximate antialiasing. FXAA is a popular screen-space antialiasing method, which is fast but will make the image look blurry, especially at lower resolutions. It can still work relatively well at large resolutions such as 1440p and 4K.
-
-----
-
 .. _class_Viewport_property_global_canvas_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **global_canvas_transform**
@@ -536,7 +486,7 @@ The global canvas transform of the viewport. The canvas transform is relative to
 | *Getter*  | is_input_disabled()      |
 +-----------+--------------------------+
 
-If ``true``, the viewport will not receive input events.
+If ``true``, the viewport will not receive input event.
 
 ----
 

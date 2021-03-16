@@ -23,12 +23,6 @@ Tutorials
 
 - :doc:`../tutorials/audio/audio_buses`
 
-- `https://godotengine.org/asset-library/asset/525 <https://godotengine.org/asset-library/asset/525>`_
-
-- `https://godotengine.org/asset-library/asset/527 <https://godotengine.org/asset-library/asset/527>`_
-
-- `https://godotengine.org/asset-library/asset/528 <https://godotengine.org/asset-library/asset/528>`_
-
 Properties
 ----------
 

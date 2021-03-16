@@ -24,11 +24,6 @@ If you want nodes to be disabled automatically when they exit the screen, use :r
 
 **Note:** For performance reasons, VisibilityNotifier2D uses an approximate heuristic with precision determined by :ref:`ProjectSettings.world/2d/cell_size<class_ProjectSettings_property_world/2d/cell_size>`. If you need precise visibility checking, use another method such as adding an :ref:`Area2D<class_Area2D>` node as a child of a :ref:`Camera2D<class_Camera2D>` node.
 
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
-
 Properties
 ----------
 

@@ -100,9 +100,7 @@ Note that this function is hidden in the default ``AStar2D`` class.
 
 - void **add_point** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` weight_scale=1.0 **)**
 
-Adds a new point at the given position with the given identifier. The ``id`` must be 0 or larger, and the ``weight_scale`` must be 1 or larger.
-
-The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost<class_AStar2D_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point. Thus, all else being equal, the algorithm prefers points with lower ``weight_scale``\ s to form a path.
+Adds a new point at the given position with the given identifier. The algorithm prefers points with lower ``weight_scale`` to form a path. The ``id`` must be 0 or larger, and the ``weight_scale`` must be 1 or larger.
 
 ::
 
@@ -334,7 +332,7 @@ Sets the ``position`` for the point with the given ``id``.
 
 - void **set_point_weight_scale** **(** :ref:`int<class_int>` id, :ref:`float<class_float>` weight_scale **)**
 
-Sets the ``weight_scale`` for the point with the given ``id``. The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost<class_AStar2D_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point.
+Sets the ``weight_scale`` for the point with the given ``id``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

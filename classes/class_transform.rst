@@ -27,12 +27,6 @@ Tutorials
 
 - :doc:`../tutorials/3d/using_transforms`
 
-- `https://godotengine.org/asset-library/asset/584 <https://godotengine.org/asset-library/asset/584>`_
-
-- `https://godotengine.org/asset-library/asset/125 <https://godotengine.org/asset-library/asset/125>`_
-
-- `https://godotengine.org/asset-library/asset/583 <https://godotengine.org/asset-library/asset/583>`_
-
 Properties
 ----------
 

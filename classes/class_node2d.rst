@@ -25,8 +25,6 @@ Tutorials
 
 - :doc:`../tutorials/2d/custom_drawing_in_2d`
 
-- `https://github.com/godotengine/godot-demo-projects/tree/master/2d <https://github.com/godotengine/godot-demo-projects/tree/master/2d>`_
-
 Properties
 ----------
 

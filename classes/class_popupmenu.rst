@@ -63,7 +63,7 @@ Methods
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`add_radio_check_shortcut<class_PopupMenu_method_add_radio_check_shortcut>` **(** :ref:`ShortCut<class_ShortCut>` shortcut, :ref:`int<class_int>` id=-1, :ref:`bool<class_bool>` global=false **)**                                                  |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`add_separator<class_PopupMenu_method_add_separator>` **(** :ref:`String<class_String>` label="", :ref:`int<class_int>` id=-1 **)**                                                                                                                  |
+| void                            | :ref:`add_separator<class_PopupMenu_method_add_separator>` **(** :ref:`String<class_String>` label="" **)**                                                                                                                                               |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`add_shortcut<class_PopupMenu_method_add_shortcut>` **(** :ref:`ShortCut<class_ShortCut>` shortcut, :ref:`int<class_int>` id=-1, :ref:`bool<class_bool>` global=false **)**                                                                          |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -161,8 +161,6 @@ Theme Properties
 | :ref:`Color<class_Color>`       | font_color_disabled     | Color( 0.4, 0.4, 0.4, 0.8 )  |
 +---------------------------------+-------------------------+------------------------------+
 | :ref:`Color<class_Color>`       | font_color_hover        | Color( 0.88, 0.88, 0.88, 1 ) |
-+---------------------------------+-------------------------+------------------------------+
-| :ref:`Color<class_Color>`       | font_color_separator    | Color( 0.88, 0.88, 0.88, 1 ) |
 +---------------------------------+-------------------------+------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | hover                   |                              |
 +---------------------------------+-------------------------+------------------------------+
@@ -430,11 +428,9 @@ An ``id`` can optionally be provided. If no ``id`` is provided, one will be crea
 
 .. _class_PopupMenu_method_add_separator:
 
-- void **add_separator** **(** :ref:`String<class_String>` label="", :ref:`int<class_int>` id=-1 **)**
+- void **add_separator** **(** :ref:`String<class_String>` label="" **)**
 
-Adds a separator between items. Separators also occupy an index, which you can set by using the ``id`` parameter.
-
-A ``label`` can optionally be provided, which will appear at the center of the separator.
+Adds a separator between items. Separators also occupy an index.
 
 ----
 

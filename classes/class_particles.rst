@@ -11,7 +11,7 @@ Particles
 
 **Inherits:** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-GPU-based 3D particle emitter.
+3D particle emitter.
 
 Description
 -----------
@@ -20,16 +20,10 @@ Description
 
 Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_ParticlesMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
 
-**Note:** ``Particles`` only work when using the GLES3 renderer. If using the GLES2 renderer, use :ref:`CPUParticles<class_CPUParticles>` instead. You can convert ``Particles`` to :ref:`CPUParticles<class_CPUParticles>` by selecting the node, clicking the **Particles** menu at the top of the 3D editor viewport then choosing **Convert to CPUParticles**.
-
-**Note:** After working on a Particles node, remember to update its :ref:`visibility_aabb<class_Particles_property_visibility_aabb>` by selecting it, clicking the **Particles** menu at the top of the 3D editor viewport then choose **Generate Visibility AABB**. Otherwise, particles may suddenly disappear depending on the camera position and angle.
-
 Tutorials
 ---------
 
 - :doc:`../tutorials/3d/vertex_animation/controlling_thousands_of_fish`
-
-- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
 
 Properties
 ----------
@@ -128,9 +122,7 @@ Property Descriptions
 | *Getter*  | get_amount()      |
 +-----------+-------------------+
 
-The number of particles emitted in one emission cycle (corresponding to the :ref:`lifetime<class_Particles_property_lifetime>`).
-
-**Note:** Changing :ref:`amount<class_Particles_property_amount>` will reset the particle emission, therefore removing all particles that were already emitted before changing :ref:`amount<class_Particles_property_amount>`.
+Number of particles to emit.
 
 ----
 
@@ -298,7 +290,7 @@ If ``true``, results in fractional delta calculation which has a smoother partic
 | *Getter*  | get_lifetime()      |
 +-----------+---------------------+
 
-The amount of time each particle will exist (in seconds).
+Amount of time each particle will exist.
 
 ----
 

@@ -27,8 +27,6 @@ Tutorials
 
 - :doc:`../tutorials/threads/thread_safe_apis`
 
-- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
-
 Methods
 -------
 

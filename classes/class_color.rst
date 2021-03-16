@@ -22,17 +22,6 @@ If you want to supply values in a range of 0 to 255, you should use :ref:`@GDScr
 
 **Note:** In a boolean context, a Color will evaluate to ``false`` if it's equal to ``Color(0, 0, 0, 1)`` (opaque black). Otherwise, a Color will always evaluate to ``true``.
 
-`Color constants cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/color_constants.png>`_
-
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/517 <https://godotengine.org/asset-library/asset/517>`_
-
-- `https://godotengine.org/asset-library/asset/146 <https://godotengine.org/asset-library/asset/146>`_
-
-- `https://godotengine.org/asset-library/asset/133 <https://godotengine.org/asset-library/asset/133>`_
-
 Properties
 ----------
 
@@ -846,31 +835,31 @@ Constructs a color from an HTML hexadecimal color string in ARGB or RGB format. 
 
 - :ref:`Color<class_Color>` **Color** **(** :ref:`int<class_int>` from **)**
 
-Constructs a color from a 32-bit integer in RGBA format (each byte represents a color channel).
+Constructs a color from a 32-bit integer (each byte represents a component of the RGBA profile).
 
 ::
 
-    var c = Color(274) # Similar to Color(0.0, 0.0, 0.004, 0.07)
+    var c = Color(274) # Equivalent to RGBA(0, 0, 1, 18)
 
 ----
 
 - :ref:`Color<class_Color>` **Color** **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b **)**
 
-Constructs a color from RGB values, typically between 0 and 1. Alpha will be 1.
+Constructs a color from an RGB profile using values between 0 and 1. Alpha will always be 1.
 
 ::
 
-    var color = Color(0.2, 1.0, 0.7) # Similar to Color8(51, 255, 178, 255)
+    var c = Color(0.2, 1.0, 0.7) # Equivalent to RGBA(51, 255, 178, 255)
 
 ----
 
 - :ref:`Color<class_Color>` **Color** **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b, :ref:`float<class_float>` a **)**
 
-Constructs a color from RGBA values, typically between 0 and 1.
+Constructs a color from an RGBA profile using values between 0 and 1.
 
 ::
 
-    var color = Color(0.2, 1.0, 0.7, 0.8) # Similar to Color8(51, 255, 178, 204)
+    var c = Color(0.2, 1.0, 0.7, 0.8) # Equivalent to RGBA(51, 255, 178, 204)
 
 ----
 
@@ -949,8 +938,8 @@ Returns the inverted color ``(1 - r, 1 - g, 1 - b, a)``.
 
 ::
 
-    var color = Color(0.3, 0.4, 0.9)
-    var inverted_color = color.inverted() # Equivalent to Color(0.7, 0.6, 0.1)
+    var c = Color(0.3, 0.4, 0.9)
+    var inverted_color = c.inverted() # A color of an RGBA(178, 153, 26, 255)
 
 ----
 
@@ -985,7 +974,7 @@ Returns the linear interpolation with another color. The interpolation factor ``
 
     var c1 = Color(1.0, 0.0, 0.0)
     var c2 = Color(0.0, 1.0, 0.0)
-    var li_c = c1.linear_interpolate(c2, 0.5) # Equivalent to Color(0.5, 0.5, 0.0)
+    var li_c = c1.linear_interpolate(c2, 0.5) # A color of an RGBA(128, 128, 0, 255)
 
 ----
 
@@ -993,12 +982,12 @@ Returns the linear interpolation with another color. The interpolation factor ``
 
 - :ref:`int<class_int>` **to_abgr32** **(** **)**
 
-Returns the color converted to a 32-bit integer in ABGR format (each byte represents a color channel). ABGR is the reversed version of the default format.
+Returns the color's 32-bit integer in ABGR format (each byte represents a component of the ABGR profile). ABGR is the reversed version of the default format.
 
 ::
 
-    var color = Color(1, 0.5, 0.2)
-    print(color.to_abgr32()) # Prints 4281565439
+    var c = Color(1, 0.5, 0.2)
+    print(c.to_abgr32()) # Prints 4281565439
 
 ----
 
@@ -1006,12 +995,12 @@ Returns the color converted to a 32-bit integer in ABGR format (each byte repres
 
 - :ref:`int<class_int>` **to_abgr64** **(** **)**
 
-Returns the color converted to a 64-bit integer in ABGR format (each word represents a color channel). ABGR is the reversed version of the default format.
+Returns the color's 64-bit integer in ABGR format (each word represents a component of the ABGR profile). ABGR is the reversed version of the default format.
 
 ::
 
-    var color = Color(1, 0.5, 0.2)
-    print(color.to_abgr64()) # Prints -225178692812801
+    var c = Color(1, 0.5, 0.2)
+    print(c.to_abgr64()) # Prints -225178692812801
 
 ----
 
@@ -1019,12 +1008,12 @@ Returns the color converted to a 64-bit integer in ABGR format (each word repres
 
 - :ref:`int<class_int>` **to_argb32** **(** **)**
 
-Returns the color converted to a 32-bit integer in ARGB format (each byte represents a color channel). ARGB is more compatible with DirectX.
+Returns the color's 32-bit integer in ARGB format (each byte represents a component of the ARGB profile). ARGB is more compatible with DirectX.
 
 ::
 
-    var color = Color(1, 0.5, 0.2)
-    print(color.to_argb32()) # Prints 4294934323
+    var c = Color(1, 0.5, 0.2)
+    print(c.to_argb32()) # Prints 4294934323
 
 ----
 
@@ -1032,12 +1021,12 @@ Returns the color converted to a 32-bit integer in ARGB format (each byte repres
 
 - :ref:`int<class_int>` **to_argb64** **(** **)**
 
-Returns the color converted to a 64-bit integer in ARGB format (each word represents a color channel). ARGB is more compatible with DirectX.
+Returns the color's 64-bit integer in ARGB format (each word represents a component of the ARGB profile). ARGB is more compatible with DirectX.
 
 ::
 
-    var color = Color(1, 0.5, 0.2)
-    print(color.to_argb64()) # Prints -2147470541
+    var c = Color(1, 0.5, 0.2)
+    print(c.to_argb64()) # Prints -2147470541
 
 ----
 
@@ -1061,12 +1050,12 @@ Setting ``with_alpha`` to ``false`` excludes alpha from the hexadecimal string.
 
 - :ref:`int<class_int>` **to_rgba32** **(** **)**
 
-Returns the color converted to a 32-bit integer in RGBA format (each byte represents a color channel). RGBA is Godot's default format.
+Returns the color's 32-bit integer in RGBA format (each byte represents a component of the RGBA profile). RGBA is Godot's default format.
 
 ::
 
-    var color = Color(1, 0.5, 0.2)
-    print(color.to_rgba32()) # Prints 4286526463
+    var c = Color(1, 0.5, 0.2)
+    print(c.to_rgba32()) # Prints 4286526463
 
 ----
 
@@ -1074,12 +1063,12 @@ Returns the color converted to a 32-bit integer in RGBA format (each byte repres
 
 - :ref:`int<class_int>` **to_rgba64** **(** **)**
 
-Returns the color converted to a 64-bit integer in RGBA format (each word represents a color channel). RGBA is Godot's default format.
+Returns the color's 64-bit integer in RGBA format (each word represents a component of the RGBA profile). RGBA is Godot's default format.
 
 ::
 
-    var color = Color(1, 0.5, 0.2)
-    print(color.to_rgba64()) # Prints -140736629309441
+    var c = Color(1, 0.5, 0.2)
+    print(c.to_rgba64()) # Prints -140736629309441
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

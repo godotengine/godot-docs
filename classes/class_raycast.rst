@@ -31,8 +31,6 @@ Tutorials
 
 - :doc:`../tutorials/physics/ray-casting`
 
-- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
-
 Properties
 ----------
 
@@ -144,7 +142,7 @@ If ``true``, collision with :ref:`PhysicsBody<class_PhysicsBody>`\ s will be rep
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The ray's collision mask. Only objects in at least one collision layer enabled in the mask will be detected. See `Collision layers and masks <https://docs.godotengine.org/en/3.2/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
+The ray's collision mask. Only objects in at least one collision layer enabled in the mask will be detected. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 

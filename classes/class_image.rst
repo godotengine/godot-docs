@@ -16,16 +16,9 @@ Image datatype.
 Description
 -----------
 
-Native image datatype. Contains image data which can be converted to an :ref:`ImageTexture<class_ImageTexture>` and provides commonly used *image processing* methods. The maximum width and height for an ``Image`` are :ref:`MAX_WIDTH<class_Image_constant_MAX_WIDTH>` and :ref:`MAX_HEIGHT<class_Image_constant_MAX_HEIGHT>`.
+Native image datatype. Contains image data, which can be converted to a :ref:`Texture<class_Texture>`, and several functions to interact with it. The maximum width and height for an ``Image`` are :ref:`MAX_WIDTH<class_Image_constant_MAX_WIDTH>` and :ref:`MAX_HEIGHT<class_Image_constant_MAX_HEIGHT>`.
 
-An ``Image`` cannot be assigned to a ``texture`` property of an object directly (such as :ref:`Sprite<class_Sprite>`), and has to be converted manually to an :ref:`ImageTexture<class_ImageTexture>` first.
-
-**Note:** The maximum image size is 16384×16384 pixels due to graphics hardware limitations. Larger images may fail to import.
-
-Tutorials
----------
-
-- :doc:`../getting_started/workflow/assets/importing_images`
+**Note:** The maximum image size is 16384×16384 pixels due to graphics hardware limitations. Larger images will fail to import.
 
 Properties
 ----------
@@ -108,8 +101,6 @@ Methods
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`load<class_Image_method_load>` **(** :ref:`String<class_String>` path **)**                                                                                                                                                                                |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`load_bmp_from_buffer<class_Image_method_load_bmp_from_buffer>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**                                                                                                                                |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`load_jpg_from_buffer<class_Image_method_load_jpg_from_buffer>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**                                                                                                                                |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`load_png_from_buffer<class_Image_method_load_png_from_buffer>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**                                                                                                                                |
@@ -126,7 +117,7 @@ Methods
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`resize<class_Image_method_resize>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Interpolation<enum_Image_Interpolation>` interpolation=1 **)**                                                                                   |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`resize_to_po2<class_Image_method_resize_to_po2>` **(** :ref:`bool<class_bool>` square=false, :ref:`Interpolation<enum_Image_Interpolation>` interpolation=1 **)**                                                                                          |
+| void                                      | :ref:`resize_to_po2<class_Image_method_resize_to_po2>` **(** :ref:`bool<class_bool>` square=false **)**                                                                                                                                                          |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Image<class_Image>`                 | :ref:`rgbe_to_srgb<class_Image_method_rgbe_to_srgb>` **(** **)**                                                                                                                                                                                                 |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -725,21 +716,7 @@ Returns ``true`` if all the image's pixels have an alpha value of 0. Returns ``f
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
-Loads an image from file ``path``. See `Supported image formats <https://docs.godotengine.org/en/3.2/getting_started/workflow/assets/importing_images.html#supported-image-formats>`_ for a list of supported image formats and limitations.
-
-**Warning:** This method should only be used in the editor or in cases when you need to load external images at run-time, such as images located at the ``user://`` directory, and may not work in exported projects.
-
-See also :ref:`ImageTexture<class_ImageTexture>` description for usage examples.
-
-----
-
-.. _class_Image_method_load_bmp_from_buffer:
-
-- :ref:`Error<enum_@GlobalScope_Error>` **load_bmp_from_buffer** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**
-
-Loads an image from the binary contents of a BMP file.
-
-**Note:** Godot's BMP module doesn't support 16-bit per pixel images. Only 1-bit, 4-bit, 8-bit, 24-bit, and 32-bit per pixel images are supported.
+Loads an image from file ``path``. See `Supported image formats <https://docs.godotengine.org/en/latest/getting_started/workflow/assets/importing_images.html#supported-image-formats>`_ for a list of supported image formats and limitations.
 
 ----
 
@@ -803,15 +780,15 @@ Multiplies color values with alpha values. Resulting color values for a pixel ar
 
 - void **resize** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Interpolation<enum_Image_Interpolation>` interpolation=1 **)**
 
-Resizes the image to the given ``width`` and ``height``. New pixels are calculated using the ``interpolation`` mode defined via :ref:`Interpolation<enum_Image_Interpolation>` constants.
+Resizes the image to the given ``width`` and ``height``. New pixels are calculated using ``interpolation``. See ``interpolation`` constants.
 
 ----
 
 .. _class_Image_method_resize_to_po2:
 
-- void **resize_to_po2** **(** :ref:`bool<class_bool>` square=false, :ref:`Interpolation<enum_Image_Interpolation>` interpolation=1 **)**
+- void **resize_to_po2** **(** :ref:`bool<class_bool>` square=false **)**
 
-Resizes the image to the nearest power of 2 for the width and height. If ``square`` is ``true`` then set width and height to be the same. New pixels are calculated using the ``interpolation`` mode defined via :ref:`Interpolation<enum_Image_Interpolation>` constants.
+Resizes the image to the nearest power of 2 for the width and height. If ``square`` is ``true`` then set width and height to be the same.
 
 ----
 

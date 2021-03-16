@@ -20,11 +20,6 @@ Used to draw icons and sprites in a user interface. The texture's placement can 
 
 **Note:** You should enable :ref:`flip_v<class_TextureRect_property_flip_v>` when using a TextureRect to display a :ref:`ViewportTexture<class_ViewportTexture>`. Alternatively, you can enable :ref:`Viewport.render_target_v_flip<class_Viewport_property_render_target_v_flip>` on the Viewport. Otherwise, the image will appear upside down.
 
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
-
 Properties
 ----------
 

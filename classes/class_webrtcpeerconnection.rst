@@ -38,13 +38,13 @@ Methods
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`close<class_WebRTCPeerConnection_method_close>` **(** **)**                                                                                                                          |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`                 | :ref:`create_data_channel<class_WebRTCPeerConnection_method_create_data_channel>` **(** :ref:`String<class_String>` label, :ref:`Dictionary<class_Dictionary>` options={ } **)**           |
+| :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`                 | :ref:`create_data_channel<class_WebRTCPeerConnection_method_create_data_channel>` **(** :ref:`String<class_String>` label, :ref:`Dictionary<class_Dictionary>` options={  } **)**          |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`create_offer<class_WebRTCPeerConnection_method_create_offer>` **(** **)**                                                                                                            |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` | :ref:`get_connection_state<class_WebRTCPeerConnection_method_get_connection_state>` **(** **)** |const|                                                                                    |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`initialize<class_WebRTCPeerConnection_method_initialize>` **(** :ref:`Dictionary<class_Dictionary>` configuration={ } **)**                                                          |
+| :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`initialize<class_WebRTCPeerConnection_method_initialize>` **(** :ref:`Dictionary<class_Dictionary>` configuration={  } **)**                                                         |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`poll<class_WebRTCPeerConnection_method_poll>` **(** **)**                                                                                                                            |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -132,7 +132,7 @@ Close the peer connection and all data channels associated with it. Note, you ca
 
 .. _class_WebRTCPeerConnection_method_create_data_channel:
 
-- :ref:`WebRTCDataChannel<class_WebRTCDataChannel>` **create_data_channel** **(** :ref:`String<class_String>` label, :ref:`Dictionary<class_Dictionary>` options={ } **)**
+- :ref:`WebRTCDataChannel<class_WebRTCDataChannel>` **create_data_channel** **(** :ref:`String<class_String>` label, :ref:`Dictionary<class_Dictionary>` options={  } **)**
 
 Returns a new :ref:`WebRTCDataChannel<class_WebRTCDataChannel>` (or ``null`` on failure) with given ``label`` and optionally configured via the ``options`` dictionary. This method can only be called when the connection is in state :ref:`STATE_NEW<class_WebRTCPeerConnection_constant_STATE_NEW>`.
 
@@ -178,7 +178,7 @@ Returns the connection state. See :ref:`ConnectionState<enum_WebRTCPeerConnectio
 
 .. _class_WebRTCPeerConnection_method_initialize:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **initialize** **(** :ref:`Dictionary<class_Dictionary>` configuration={ } **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **initialize** **(** :ref:`Dictionary<class_Dictionary>` configuration={  } **)**
 
 Re-initialize this peer connection, closing any previously active connection, and going back to state :ref:`STATE_NEW<class_WebRTCPeerConnection_constant_STATE_NEW>`. A dictionary of ``options`` can be passed to configure the peer connection.
 

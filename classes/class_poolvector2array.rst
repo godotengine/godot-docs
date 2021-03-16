@@ -18,11 +18,6 @@ An :ref:`Array<class_Array>` specifically designed to hold :ref:`Vector2<class_V
 
 **Note:** This type is passed by value and not by reference.
 
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/519 <https://godotengine.org/asset-library/asset/519>`_
-
 Methods
 -------
 

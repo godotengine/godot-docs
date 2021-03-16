@@ -33,10 +33,6 @@ Tutorials
 
 - :doc:`../tutorials/physics/physics_introduction`
 
-- `https://godotengine.org/asset-library/asset/524 <https://godotengine.org/asset-library/asset/524>`_
-
-- `https://godotengine.org/asset-library/asset/675 <https://godotengine.org/asset-library/asset/675>`_
-
 Properties
 ----------
 
@@ -203,8 +199,6 @@ Property Descriptions
 +-----------+-------------------------+
 
 Damps RigidBody's rotational forces.
-
-See :ref:`ProjectSettings.physics/3d/default_angular_damp<class_ProjectSettings_property_physics/3d/default_angular_damp>` for more details about damping.
 
 ----
 
@@ -467,8 +461,6 @@ This is multiplied by the global 3D gravity setting found in **Project > Project
 +-----------+------------------------+
 
 The body's linear damp. Cannot be less than -1.0. If this value is different from -1.0, any linear damp derived from the world or areas will be overridden.
-
-See :ref:`ProjectSettings.physics/3d/default_linear_damp<class_ProjectSettings_property_physics/3d/default_linear_damp>` for more details about damping.
 
 ----
 

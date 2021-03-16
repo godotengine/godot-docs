@@ -16,7 +16,7 @@ Returns the :ref:`Vector3<class_Vector3>` that points in the direction of refrac
 Description
 -----------
 
-Translated to ``refract(I, N, eta)`` in the shader language, where ``I`` is the incident vector, ``N`` is the normal vector and ``eta`` is the ratio of the indices of the refraction.
+Translated to ``refract(I, N, eta)`` in the shader language, where ``I`` is the incident vector, ``N`` is the normal vector and ``eta`` is the ratio of the indicies of the refraction.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

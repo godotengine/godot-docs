@@ -22,7 +22,7 @@ The VisibilityNotifier detects when it is visible on the screen. It also notifie
 
 If you want nodes to be disabled automatically when they exit the screen, use :ref:`VisibilityEnabler<class_VisibilityEnabler>` instead.
 
-**Note:** VisibilityNotifier uses an approximate heuristic for performance reasons. It doesn't take walls and other occlusion into account. The heuristic is an implementation detail and may change in future versions. If you need precise visibility checking, use another method such as adding an :ref:`Area<class_Area>` node as a child of a :ref:`Camera<class_Camera>` node and/or :ref:`Vector3.dot<class_Vector3_method_dot>`.
+**Note:** VisibilityNotifier uses an approximate heuristic for performance reasons. It does't take walls and other occlusion into account. The heuristic is an implementation detail and may change in future versions. If you need precise visibility checking, use another method such as adding an :ref:`Area<class_Area>` node as a child of a :ref:`Camera<class_Camera>` node and/or :ref:`Vector3.dot<class_Vector3_method_dot>`.
 
 Properties
 ----------

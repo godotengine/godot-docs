@@ -20,11 +20,6 @@ Description
 
 Camera is a special node that displays what is visible from its current location. Cameras register themselves in the nearest :ref:`Viewport<class_Viewport>` node (when ascending the tree). Only one camera can be active per viewport. If no viewport is available ascending the tree, the camera will register in the global viewport. In other words, a camera just provides 3D display capabilities to a :ref:`Viewport<class_Viewport>`, and, without one, a scene registered in that :ref:`Viewport<class_Viewport>` (or higher viewports) can't be displayed.
 
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
-
 Properties
 ----------
 
@@ -481,15 +476,6 @@ Sets the camera projection to perspective mode (see :ref:`PROJECTION_PERSPECTIVE
 - :ref:`Vector2<class_Vector2>` **unproject_position** **(** :ref:`Vector3<class_Vector3>` world_point **)** |const|
 
 Returns the 2D coordinate in the :ref:`Viewport<class_Viewport>` rectangle that maps to the given 3D point in worldspace.
-
-**Note:** When using this to position GUI elements over a 3D viewport, use :ref:`is_position_behind<class_Camera_method_is_position_behind>` to prevent them from appearing if the 3D point is behind the camera:
-
-::
-
-    # This code block is part of a script that inherits from Spatial.
-    # `control` is a reference to a node inheriting from Control.
-    control.visible = not get_viewport().get_camera().is_position_behind(global_transform.origin)
-    control.rect_position = get_viewport().get_camera().unproject_position(global_transform.origin)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

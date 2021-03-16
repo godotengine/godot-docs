@@ -18,13 +18,6 @@ Description
 
 Class representing a square :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat mesh does not have a thickness. By default, this mesh is aligned on the X and Y axes; this default rotation is more suited for use with billboarded materials. Unlike :ref:`PlaneMesh<class_PlaneMesh>`, this mesh doesn't provide subdivision options.
 
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/127 <https://godotengine.org/asset-library/asset/127>`_
-
-- `https://godotengine.org/asset-library/asset/129 <https://godotengine.org/asset-library/asset/129>`_
-
 Properties
 ----------
 

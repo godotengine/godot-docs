@@ -26,8 +26,6 @@ For more information on HTTP, see https://developer.mozilla.org/en-US/docs/Web/H
 
 **Note:** When performing HTTP requests from a project exported to HTML5, keep in mind the remote server may not allow requests from foreign origins due to `CORS <https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS>`_. If you host the server in question, you should modify its backend to allow requests from foreign origins by adding the ``Access-Control-Allow-Origin: *`` HTTP header.
 
-**Note:** SSL/TLS support is currently limited to TLS 1.0, TLS 1.1, and TLS 1.2. Attempting to connect to a TLS 1.3-only server will return an error.
-
 Tutorials
 ---------
 
@@ -43,7 +41,7 @@ Properties
 +-------------------------------------+-------------------------------------------------------------------------------+-----------+
 | :ref:`StreamPeer<class_StreamPeer>` | :ref:`connection<class_HTTPClient_property_connection>`                       |           |
 +-------------------------------------+-------------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`               | :ref:`read_chunk_size<class_HTTPClient_property_read_chunk_size>`             | ``65536`` |
+| :ref:`int<class_int>`               | :ref:`read_chunk_size<class_HTTPClient_property_read_chunk_size>`             | ``4096``  |
 +-------------------------------------+-------------------------------------------------------------------------------+-----------+
 
 Methods
@@ -460,7 +458,7 @@ The connection to use for this client.
 - :ref:`int<class_int>` **read_chunk_size**
 
 +-----------+----------------------------+
-| *Default* | ``65536``                  |
+| *Default* | ``4096``                   |
 +-----------+----------------------------+
 | *Setter*  | set_read_chunk_size(value) |
 +-----------+----------------------------+

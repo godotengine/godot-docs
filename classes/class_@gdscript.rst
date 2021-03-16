@@ -271,7 +271,8 @@ Returns the absolute value of parameter ``s`` (i.e. positive value).
 
 ::
 
-    a = abs(-1) # a is 1
+    # a is 1
+    a = abs(-1)
 
 ----
 
@@ -305,19 +306,17 @@ Returns the arc sine of ``s`` in radians. Use to get the angle of sine ``s``.
 
 - void **assert** **(** :ref:`bool<class_bool>` condition, :ref:`String<class_String>` message="" **)**
 
-Asserts that the ``condition`` is ``true``. If the ``condition`` is ``false``, an error is generated. When running from the editor, the running project will also be paused until you resume it. This can be used as a stronger form of :ref:`push_error<class_@GDScript_method_push_error>` for reporting errors to project developers or add-on users.
-
-**Note:** For performance reasons, the code inside :ref:`assert<class_@GDScript_method_assert>` is only executed in debug builds or when running the project from the editor. Don't include code that has side effects in an :ref:`assert<class_@GDScript_method_assert>` call. Otherwise, the project will behave differently when exported in release mode.
+Asserts that the ``condition`` is ``true``. If the ``condition`` is ``false``, an error is generated and the program is halted until you resume it. Only executes in debug builds, or when running the game from the editor. Use it for debugging purposes, to make sure a statement is ``true`` during development.
 
 The optional ``message`` argument, if given, is shown in addition to the generic "Assertion failed" message. You can use this to provide additional details about why the assertion failed.
 
 ::
 
-    # Imagine we always want speed to be between 0 and 20.
-    var speed = -10
+    # Imagine we always want speed to be between 0 and 20
+    speed = -10
     assert(speed < 20) # True, the program will continue
     assert(speed >= 0) # False, the program will stop
-    assert(speed >= 0 and speed < 20) # You can also combine the two conditional statements in one check
+    assert(speed >= 0 && speed < 20) # You can also combine the two conditional statements in one check
     assert(speed < 20, "speed = %f, but the speed limit is 20" % speed) # Show a message with clarifying details
 
 ----
@@ -376,10 +375,10 @@ Rounds ``s`` upward (towards positive infinity), returning the smallest whole nu
 
 ::
 
-    a = ceil(1.45)  # a is 2.0
-    a = ceil(1.001) # a is 2.0
+    i = ceil(1.45)  # i is 2
+    i = ceil(1.001) # i is 2
 
-See also :ref:`floor<class_@GDScript_method_floor>`, :ref:`round<class_@GDScript_method_round>`, :ref:`stepify<class_@GDScript_method_stepify>`, and :ref:`int<class_int>`.
+See also :ref:`floor<class_@GDScript_method_floor>`, :ref:`round<class_@GDScript_method_round>`, and :ref:`stepify<class_@GDScript_method_stepify>`.
 
 ----
 
@@ -407,9 +406,13 @@ Clamps ``value`` and returns a value not less than ``min`` and not more than ``m
 
 ::
 
-    a = clamp(1000, 1, 20) # a is 20
-    a = clamp(-10, 1, 20)  # a is 1
-    a = clamp(15, 1, 20)   # a is 15
+    speed = 1000
+    # a is 20
+    a = clamp(speed, 1, 20)
+    
+    speed = -10
+    # a is 1
+    a = clamp(speed, 1, 20)
 
 ----
 
@@ -438,8 +441,9 @@ Returns the cosine of angle ``s`` in radians.
 
 ::
 
-    a = cos(TAU) # a is 1.0
-    a = cos(PI)  # a is -1.0
+    # Prints 1 then -1
+    print(cos(PI * 2))
+    print(cos(PI))
 
 ----
 
@@ -451,7 +455,8 @@ Returns the hyperbolic cosine of ``s`` in radians.
 
 ::
 
-    print(cosh(1)) # Prints 1.543081
+    # Prints 1.543081
+    print(cosh(1))
 
 ----
 
@@ -479,7 +484,8 @@ Returns the result of ``value`` decreased by ``step`` \* ``amount``.
 
 ::
 
-    a = dectime(60, 10, 0.1)) # a is 59.0
+    # a = 59
+    a = dectime(60, 10, 0.1))
 
 ----
 
@@ -491,7 +497,8 @@ Converts an angle expressed in degrees to radians.
 
 ::
 
-    r = deg2rad(180) # r is 3.141593
+    # r is 3.141593
+    r = deg2rad(180)
 
 ----
 
@@ -499,7 +506,7 @@ Converts an angle expressed in degrees to radians.
 
 - :ref:`Object<class_Object>` **dict2inst** **(** :ref:`Dictionary<class_Dictionary>` dict **)**
 
-Converts a dictionary (previously created with :ref:`inst2dict<class_@GDScript_method_inst2dict>`) back to an instance. Useful for deserializing.
+Converts a previously converted instance to a dictionary, back into an instance. Useful for deserializing.
 
 ----
 
@@ -535,13 +542,14 @@ Rounds ``s`` downward (towards negative infinity), returning the largest whole n
 
 ::
 
-    a = floor(2.45)  # a is 2.0
-    a = floor(2.99)  # a is 2.0
-    a = floor(-2.99) # a is -3.0
+    # a is 2.0
+    a = floor(2.99)
+    # a is -3.0
+    a = floor(-2.99)
 
-See also :ref:`ceil<class_@GDScript_method_ceil>`, :ref:`round<class_@GDScript_method_round>`, :ref:`stepify<class_@GDScript_method_stepify>`, and :ref:`int<class_int>`.
+See also :ref:`ceil<class_@GDScript_method_ceil>`, :ref:`round<class_@GDScript_method_round>`, and :ref:`stepify<class_@GDScript_method_stepify>`.
 
-**Note:** This method returns a float. If you need an integer and ``s`` is a non-negative number, you can use ``int(s)`` directly.
+**Note:** This method returns a float. If you need an integer, you can use ``int(s)`` directly.
 
 ----
 
@@ -553,7 +561,8 @@ Returns the floating-point remainder of ``a/b``, keeping the sign of ``a``.
 
 ::
 
-    r = fmod(7, 5.5) # r is 1.5
+    # Remainder is 1.5
+    var remainder = fmod(7, 5.5)
 
 For the integer remainder operation, use the % operator.
 
@@ -817,8 +826,6 @@ Loads a resource from the filesystem located at ``path``. The resource is loaded
 
 **Important:** The path must be absolute, a local path will just return ``null``.
 
-This method is a simplified version of :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`, which can be used for more advanced scenarios.
-
 ----
 
 .. _class_@GDScript_method_log:
@@ -944,7 +951,7 @@ Returns the integer modulus of ``a/b`` that wraps equally in positive and negati
 ::
 
     for i in range(-3, 4):
-        print("%2d %2d %2d" % [i, i % 3, posmod(i, 3)])
+        print("%2.0f %2.0f %2.0f" % [i, i % 3, posmod(i, 3)])
 
 Produces:
 
@@ -964,11 +971,11 @@ Produces:
 
 - :ref:`float<class_float>` **pow** **(** :ref:`float<class_float>` base, :ref:`float<class_float>` exp **)**
 
-Returns the result of ``base`` raised to the power of ``exp``.
+Returns the result of ``x`` raised to the power of ``y``.
 
 ::
 
-    pow(2, 5) # Returns 32.0
+    pow(2, 5) # Returns 32
 
 ----
 
@@ -991,14 +998,12 @@ Returns a :ref:`Resource<class_Resource>` from the filesystem located at ``path`
 
 - void **print** **(** ... **)** |vararg|
 
-Converts one or more arguments of any type to string in the best way possible and prints them to the console.
+Converts one or more arguments to strings in the best way possible and prints them to the console.
 
 ::
 
     a = [1, 2, 3]
-    print("a", "=", a) # Prints a=[1, 2, 3]
-
-**Note:** Consider using :ref:`push_error<class_@GDScript_method_push_error>` and :ref:`push_warning<class_@GDScript_method_push_warning>` to print error and warning messages instead of :ref:`print<class_@GDScript_method_print>`. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed.
+    print("a", "b", a) # Prints ab[1, 2, 3]
 
 ----
 
@@ -1086,8 +1091,6 @@ Pushes an error message to Godot's built-in debugger and to the OS terminal.
 
     push_error("test error") # Prints "test error" to debugger and terminal as error call
 
-**Note:** Errors printed this way will not pause project execution. To print an error message and pause project execution in debug builds, use ``assert(false, "test error")`` instead.
-
 ----
 
 .. _class_@GDScript_method_push_warning:
@@ -1110,7 +1113,7 @@ Converts an angle expressed in radians to degrees.
 
 ::
 
-    rad2deg(0.523599) # Returns 30.0
+    rad2deg(0.523599) # Returns 30
 
 ----
 
@@ -1216,11 +1219,9 @@ Rounds ``s`` to the nearest whole number, with halfway cases rounded away from z
 
 ::
 
-    a = round(2.49) # a is 2.0
-    a = round(2.5)  # a is 3.0
-    a = round(2.51) # a is 3.0
+    round(2.6) # Returns 3
 
-See also :ref:`floor<class_@GDScript_method_floor>`, :ref:`ceil<class_@GDScript_method_ceil>`, :ref:`stepify<class_@GDScript_method_stepify>`, and :ref:`int<class_int>`.
+See also :ref:`floor<class_@GDScript_method_floor>`, :ref:`ceil<class_@GDScript_method_ceil>`, and :ref:`stepify<class_@GDScript_method_stepify>`.
 
 ----
 
@@ -1284,10 +1285,9 @@ Returns a number smoothly interpolated between the ``from`` and ``to``, based on
 
 ::
 
-    smoothstep(0, 2, -5.0) # Returns 0.0
-    smoothstep(0, 2, 0.5)  # Returns 0.15625
-    smoothstep(0, 2, 1.0)  # Returns 0.5
-    smoothstep(0, 2, 2.0)  # Returns 1.0
+    smoothstep(0, 2, 0.5) # Returns 0.15
+    smoothstep(0, 2, 1.0) # Returns 0.5
+    smoothstep(0, 2, 2.0) # Returns 1.0
 
 ----
 
@@ -1313,9 +1313,12 @@ Returns the position of the first non-zero digit, after the decimal point. Note 
 
 ::
 
-    n = step_decimals(5)           # n is 0
-    n = step_decimals(1.0005)      # n is 4
-    n = step_decimals(0.000000005) # n is 9
+    # n is 0
+    n = step_decimals(5)
+    # n is 4
+    n = step_decimals(1.0005)
+    # n is 9
+    n = step_decimals(0.000000005)
 
 ----
 
@@ -1327,10 +1330,10 @@ Snaps float value ``s`` to a given ``step``. This can also be used to round a fl
 
 ::
 
-    stepify(100, 32) # Returns 96.0
+    stepify(100, 32) # Returns 96
     stepify(3.14159, 0.01) # Returns 3.14
 
-See also :ref:`ceil<class_@GDScript_method_ceil>`, :ref:`floor<class_@GDScript_method_floor>`, :ref:`round<class_@GDScript_method_round>`, and :ref:`int<class_int>`.
+See also :ref:`ceil<class_@GDScript_method_ceil>`, :ref:`floor<class_@GDScript_method_floor>`, and :ref:`round<class_@GDScript_method_round>`.
 
 ----
 
@@ -1338,7 +1341,7 @@ See also :ref:`ceil<class_@GDScript_method_ceil>`, :ref:`floor<class_@GDScript_m
 
 - :ref:`String<class_String>` **str** **(** ... **)** |vararg|
 
-Converts one or more arguments of any type to string in the best way possible.
+Converts one or more arguments to string in the best way possible.
 
 ::
 
@@ -1383,8 +1386,8 @@ Returns the hyperbolic tangent of ``s``.
 
 ::
 
-    a = log(2.0) # a is 0.693147
-    b = tanh(a)  # b is 0.6
+    a = log(2.0) # Returns 0.693147
+    tanh(a)      # Returns 0.6
 
 ----
 

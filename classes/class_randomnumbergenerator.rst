@@ -32,9 +32,9 @@ To generate a random float number (within a given range) based on a time-dependa
 Properties
 ----------
 
-+-----------------------+--------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`seed<class_RandomNumberGenerator_property_seed>` | ``0`` |
-+-----------------------+--------------------------------------------------------+-------+
++-----------------------+--------------------------------------------------------+--------------------------+
+| :ref:`int<class_int>` | :ref:`seed<class_RandomNumberGenerator_property_seed>` | ``-6398989897141750821`` |
++-----------------------+--------------------------------------------------------+--------------------------+
 
 Methods
 -------
@@ -60,19 +60,17 @@ Property Descriptions
 
 - :ref:`int<class_int>` **seed**
 
-+-----------+-----------------+
-| *Default* | ``0``           |
-+-----------+-----------------+
-| *Setter*  | set_seed(value) |
-+-----------+-----------------+
-| *Getter*  | get_seed()      |
-+-----------+-----------------+
++-----------+--------------------------+
+| *Default* | ``-6398989897141750821`` |
++-----------+--------------------------+
+| *Setter*  | set_seed(value)          |
++-----------+--------------------------+
+| *Getter*  | get_seed()               |
++-----------+--------------------------+
 
 The seed used by the random number generator. A given seed will give a reproducible sequence of pseudo-random numbers.
 
 **Note:** The RNG does not have an avalanche effect, and can output similar random streams given similar seeds. Consider using a hash function to improve your seed quality if they're sourced externally.
-
-**Note:** The default value of this property is pseudo-random, and changes when calling :ref:`randomize<class_RandomNumberGenerator_method_randomize>`. The ``0`` value documented here is a placeholder, and not the actual default seed.
 
 Method Descriptions
 -------------------

@@ -20,11 +20,6 @@ Counts down a specified interval and emits a signal on reaching 0. Can be set to
 
 **Note:** To create an one-shot timer without instantiating a node, use :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>`.
 
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
-
 Properties
 ----------
 

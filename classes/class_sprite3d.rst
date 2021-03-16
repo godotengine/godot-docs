@@ -61,7 +61,7 @@ Property Descriptions
 | *Getter*  | get_frame()      |
 +-----------+------------------+
 
-Current frame to display from sprite sheet. :ref:`hframes<class_Sprite3D_property_hframes>` or :ref:`vframes<class_Sprite3D_property_vframes>` must be greater than 1.
+Current frame to display from sprite sheet. :ref:`vframes<class_Sprite3D_property_vframes>` or :ref:`hframes<class_Sprite3D_property_hframes>` must be greater than 1.
 
 ----
 
@@ -77,7 +77,7 @@ Current frame to display from sprite sheet. :ref:`hframes<class_Sprite3D_propert
 | *Getter*  | get_frame_coords()      |
 +-----------+-------------------------+
 
-Coordinates of the frame to display from sprite sheet. This is as an alias for the :ref:`frame<class_Sprite3D_property_frame>` property. :ref:`hframes<class_Sprite3D_property_hframes>` or :ref:`vframes<class_Sprite3D_property_vframes>` must be greater than 1.
+Coordinates of the frame to display from sprite sheet. This is as an alias for the :ref:`frame<class_Sprite3D_property_frame>` property. :ref:`vframes<class_Sprite3D_property_vframes>` or :ref:`hframes<class_Sprite3D_property_hframes>` must be greater than 1.
 
 ----
 

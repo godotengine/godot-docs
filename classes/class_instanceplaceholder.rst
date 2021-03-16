@@ -40,15 +40,13 @@ Method Descriptions
 
 - :ref:`Node<class_Node>` **create_instance** **(** :ref:`bool<class_bool>` replace=false, :ref:`PackedScene<class_PackedScene>` custom_scene=null **)**
 
-Not thread-safe. Use :ref:`Object.call_deferred<class_Object_method_call_deferred>` if calling from a thread.
-
 ----
 
 .. _class_InstancePlaceholder_method_get_instance_path:
 
 - :ref:`String<class_String>` **get_instance_path** **(** **)** |const|
 
-Gets the path to the :ref:`PackedScene<class_PackedScene>` resource file that is loaded by default when calling :ref:`replace_by_instance<class_InstancePlaceholder_method_replace_by_instance>`. Not thread-safe. Use :ref:`Object.call_deferred<class_Object_method_call_deferred>` if calling from a thread.
+Gets the path to the :ref:`PackedScene<class_PackedScene>` resource file that is loaded by default when calling :ref:`replace_by_instance<class_InstancePlaceholder_method_replace_by_instance>`.
 
 ----
 

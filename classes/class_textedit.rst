@@ -1025,7 +1025,7 @@ Returns the selection end line.
 
 - :ref:`String<class_String>` **get_word_under_cursor** **(** **)** |const|
 
-Returns a :ref:`String<class_String>` text with the word under the caret (text cursor) location.
+Returns a :ref:`String<class_String>` text with the word under the mouse cursor location.
 
 ----
 

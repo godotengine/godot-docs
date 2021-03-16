@@ -18,8 +18,6 @@ Description
 
 The JavaScript singleton is implemented only in the HTML5 export. It's used to access the browser's JavaScript context. This allows interaction with embedding pages or calling third-party JavaScript APIs.
 
-**Note:** This singleton can be disabled at build-time to improve security. By default, the JavaScript singleton is enabled. Official export templates also have the JavaScript singleton enabled. See `Compiling for the Web <https://docs.godotengine.org/en/3.2/development/compiling/compiling_for_web.html>`_ in the documentation for more information.
-
 Tutorials
 ---------
 

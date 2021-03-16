@@ -23,10 +23,6 @@ Tutorials
 
 - `#actions <../tutorials/inputs/inputevent.html#actions>`_ in :doc:`../tutorials/inputs/inputevent`
 
-- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
-
-- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
-
 Properties
 ----------
 

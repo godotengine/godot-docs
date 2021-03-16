@@ -23,16 +23,6 @@ Tutorials
 
 - :doc:`../tutorials/math/index`
 
-- :doc:`../tutorials/math/vector_math`
-
-- :doc:`../tutorials/math/vectors_advanced`
-
-- `https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab <https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`_
-
-- `https://godotengine.org/asset-library/asset/584 <https://godotengine.org/asset-library/asset/584>`_
-
-- `https://github.com/godotengine/godot-demo-projects/tree/master/3d <https://github.com/godotengine/godot-demo-projects/tree/master/3d>`_
-
 Properties
 ----------
 
@@ -268,7 +258,7 @@ Performs a cubic interpolation between vectors ``pre_a``, ``a``, ``b``, ``post_b
 
 - :ref:`Vector3<class_Vector3>` **direction_to** **(** :ref:`Vector3<class_Vector3>` b **)**
 
-Returns the normalized vector pointing from this vector to ``b``. This is equivalent to using ``(b - a).normalized()``.
+Returns the normalized vector pointing from this vector to ``b``.
 
 ----
 
@@ -332,7 +322,7 @@ Returns ``true`` if this vector and ``v`` are approximately equal, by running :r
 
 - :ref:`bool<class_bool>` **is_normalized** **(** **)**
 
-Returns ``true`` if the vector is normalized, ``false`` otherwise.
+Returns ``true`` if the vector is normalized, and false otherwise.
 
 ----
 

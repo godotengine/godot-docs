@@ -69,10 +69,6 @@ Methods
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`forward_canvas_gui_input<class_EditorPlugin_method_forward_canvas_gui_input>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|                                                                                    |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`forward_spatial_draw_over_viewport<class_EditorPlugin_method_forward_spatial_draw_over_viewport>` **(** :ref:`Control<class_Control>` overlay **)** |virtual|                                                                    |
-+-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`forward_spatial_force_draw_over_viewport<class_EditorPlugin_method_forward_spatial_force_draw_over_viewport>` **(** :ref:`Control<class_Control>` overlay **)** |virtual|                                                        |
-+-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`forward_spatial_gui_input<class_EditorPlugin_method_forward_spatial_gui_input>` **(** :ref:`Camera<class_Camera>` camera, :ref:`InputEvent<class_InputEvent>` event **)** |virtual|                                              |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_PoolStringArray>`       | :ref:`get_breakpoints<class_EditorPlugin_method_get_breakpoints>` **(** **)** |virtual|                                                                                                                                                |
@@ -327,8 +323,6 @@ During run-time, this will be a simple object with a script so this function doe
 
 - void **add_export_plugin** **(** :ref:`EditorExportPlugin<class_EditorExportPlugin>` plugin **)**
 
-Registers a new export plugin. Export plugins are used when the project is being exported. See :ref:`EditorExportPlugin<class_EditorExportPlugin>` for more information.
-
 ----
 
 .. _class_EditorPlugin_method_add_import_plugin:
@@ -423,30 +417,11 @@ Called by the engine when the user enables the ``EditorPlugin`` in the Plugin ta
 
 - void **forward_canvas_draw_over_viewport** **(** :ref:`Control<class_Control>` overlay **)** |virtual|
 
-Called by the engine when the 2D editor's viewport is updated. Use the ``overlay`` :ref:`Control<class_Control>` for drawing. You can update the viewport manually by calling :ref:`update_overlays<class_EditorPlugin_method_update_overlays>`.
-
-::
-
-    func forward_canvas_draw_over_viewport(overlay):
-        # Draw a circle at cursor position.
-        overlay.draw_circle(overlay.get_local_mouse_position(), 64)
-    
-    func forward_canvas_gui_input(event):
-        if event is InputEventMouseMotion:
-            # Redraw viewport when cursor is moved.
-            update_overlays()
-            return true
-        return false
-
 ----
 
 .. _class_EditorPlugin_method_forward_canvas_force_draw_over_viewport:
 
 - void **forward_canvas_force_draw_over_viewport** **(** :ref:`Control<class_Control>` overlay **)** |virtual|
-
-This method is the same as :ref:`forward_canvas_draw_over_viewport<class_EditorPlugin_method_forward_canvas_draw_over_viewport>`, except it draws on top of everything. Useful when you need an extra layer that shows over anything else.
-
-You need to enable calling of this method by using :ref:`set_force_draw_over_forwarding_enabled<class_EditorPlugin_method_set_force_draw_over_forwarding_enabled>`.
 
 ----
 
@@ -473,37 +448,6 @@ Must ``return false`` in order to forward the :ref:`InputEvent<class_InputEvent>
         if event is InputEventMouseMotion:
             forward = true
         return forward
-
-----
-
-.. _class_EditorPlugin_method_forward_spatial_draw_over_viewport:
-
-- void **forward_spatial_draw_over_viewport** **(** :ref:`Control<class_Control>` overlay **)** |virtual|
-
-Called by the engine when the 3D editor's viewport is updated. Use the ``overlay`` :ref:`Control<class_Control>` for drawing. You can update the viewport manually by calling :ref:`update_overlays<class_EditorPlugin_method_update_overlays>`.
-
-::
-
-    func forward_spatial_draw_over_viewport(overlay):
-        # Draw a circle at cursor position.
-        overlay.draw_circle(overlay.get_local_mouse_position(), 64)
-    
-    func forward_spatial_gui_input(camera, event):
-        if event is InputEventMouseMotion:
-            # Redraw viewport when cursor is moved.
-            update_overlays()
-            return true
-        return false
-
-----
-
-.. _class_EditorPlugin_method_forward_spatial_force_draw_over_viewport:
-
-- void **forward_spatial_force_draw_over_viewport** **(** :ref:`Control<class_Control>` overlay **)** |virtual|
-
-This method is the same as :ref:`forward_spatial_draw_over_viewport<class_EditorPlugin_method_forward_spatial_draw_over_viewport>`, except it draws on top of everything. Useful when you need an extra layer that shows over anything else.
-
-You need to enable calling of this method by using :ref:`set_force_draw_over_forwarding_enabled<class_EditorPlugin_method_set_force_draw_over_forwarding_enabled>`.
 
 ----
 
@@ -749,8 +693,6 @@ This method is called after the editor saves the project or when it's closed. It
 
 - void **set_force_draw_over_forwarding_enabled** **(** **)**
 
-Enables calling of :ref:`forward_canvas_force_draw_over_viewport<class_EditorPlugin_method_forward_canvas_force_draw_over_viewport>` for the 2D editor and :ref:`forward_spatial_force_draw_over_viewport<class_EditorPlugin_method_forward_spatial_force_draw_over_viewport>` for the 3D editor when their viewports are updated. You need to call this method only once and it will work permanently for this plugin.
-
 ----
 
 .. _class_EditorPlugin_method_set_input_event_forwarding_always_enabled:
@@ -781,7 +723,7 @@ Restore the plugin GUI layout saved by :ref:`get_window_layout<class_EditorPlugi
 
 - :ref:`int<class_int>` **update_overlays** **(** **)** |const|
 
-Updates the overlays of the 2D and 3D editor viewport. Causes methods :ref:`forward_canvas_draw_over_viewport<class_EditorPlugin_method_forward_canvas_draw_over_viewport>`, :ref:`forward_canvas_force_draw_over_viewport<class_EditorPlugin_method_forward_canvas_force_draw_over_viewport>`, :ref:`forward_spatial_draw_over_viewport<class_EditorPlugin_method_forward_spatial_draw_over_viewport>` and :ref:`forward_spatial_force_draw_over_viewport<class_EditorPlugin_method_forward_spatial_force_draw_over_viewport>` to be called.
+Updates the overlays of the editor (2D/3D) viewport.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

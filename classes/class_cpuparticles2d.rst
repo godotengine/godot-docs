@@ -20,8 +20,6 @@ CPU-based 2D particle node used to create a variety of particle systems and effe
 
 See also :ref:`Particles2D<class_Particles2D>`, which provides the same functionality with hardware acceleration, but may not run on older devices.
 
-**Note:** Unlike :ref:`Particles2D<class_Particles2D>`, the visibility rect is generated on-the-fly and doesn't need to be configured by the user.
-
 Tutorials
 ---------
 
@@ -321,9 +319,7 @@ Property Descriptions
 | *Getter*  | get_amount()      |
 +-----------+-------------------+
 
-The number of particles emitted in one emission cycle (corresponding to the :ref:`lifetime<class_CPUParticles2D_property_lifetime>`).
-
-**Note:** Changing :ref:`amount<class_CPUParticles2D_property_amount>` will reset the particle emission, therefore removing all particles that were already emitted before changing :ref:`amount<class_CPUParticles2D_property_amount>`.
+Number of particles emitted in one emission cycle.
 
 ----
 
@@ -891,7 +887,7 @@ Initial velocity randomness ratio.
 | *Getter*  | get_lifetime()      |
 +-----------+---------------------+
 
-The amount of time each particle will exist (in seconds).
+Amount of time each particle will exist.
 
 ----
 

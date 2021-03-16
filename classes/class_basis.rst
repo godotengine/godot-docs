@@ -25,19 +25,9 @@ For more information, read the "Matrices and transforms" documentation article.
 Tutorials
 ---------
 
-- :doc:`../tutorials/math/index`
-
 - :doc:`../tutorials/math/matrices_and_transforms`
 
 - :doc:`../tutorials/3d/using_transforms`
-
-- `https://godotengine.org/asset-library/asset/584 <https://godotengine.org/asset-library/asset/584>`_
-
-- `https://godotengine.org/asset-library/asset/125 <https://godotengine.org/asset-library/asset/125>`_
-
-- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
-
-- `https://godotengine.org/asset-library/asset/583 <https://godotengine.org/asset-library/asset/583>`_
 
 Properties
 ----------

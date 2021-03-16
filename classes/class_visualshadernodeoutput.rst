@@ -16,7 +16,7 @@ Represents the output shader parameters within the visual shader graph.
 Description
 -----------
 
-This visual shader node is present in all shader graphs in form of "Output" block with multiple output value ports.
+This visual shader node is present in all shader graphs in form of "Output" block with mutliple output value ports.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

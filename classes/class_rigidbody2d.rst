@@ -28,13 +28,6 @@ If you need to override the default physics behavior or add a transformation at 
 
 The center of mass is always located at the node's origin without taking into account the :ref:`CollisionShape2D<class_CollisionShape2D>` centroid offsets.
 
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/119 <https://godotengine.org/asset-library/asset/119>`_
-
-- `https://godotengine.org/asset-library/asset/148 <https://godotengine.org/asset-library/asset/148>`_
-
 Properties
 ----------
 
@@ -206,8 +199,6 @@ Property Descriptions
 
 Damps the body's :ref:`angular_velocity<class_RigidBody2D_property_angular_velocity>`. If ``-1``, the body will use the **Default Angular Damp** defined in **Project > Project Settings > Physics > 2d**.
 
-See :ref:`ProjectSettings.physics/2d/default_angular_damp<class_ProjectSettings_property_physics/2d/default_angular_damp>` for more details about damping.
-
 ----
 
 .. _class_RigidBody2D_property_angular_velocity:
@@ -322,7 +313,7 @@ If ``true``, the body will emit signals when it collides with another RigidBody2
 
 The maximum number of contacts that will be recorded. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true``.
 
-**Note:** The number of contacts is different from the number of collisions. Collisions between parallel edges will result in two contacts (one at each end).
+**Note:** The number of contacts is different from the number of collisions. Collisions between parallel edges will result in two contacts (one at each end), and collisions between parallel faces will result in four contacts (one at each corner).
 
 ----
 
@@ -419,8 +410,6 @@ The body's moment of inertia. This is like mass, but for rotation: it determines
 +-----------+------------------------+
 
 Damps the body's :ref:`linear_velocity<class_RigidBody2D_property_linear_velocity>`. If ``-1``, the body will use the **Default Linear Damp** in **Project > Project Settings > Physics > 2d**.
-
-See :ref:`ProjectSettings.physics/2d/default_linear_damp<class_ProjectSettings_property_physics/2d/default_linear_damp>` for more details about damping.
 
 ----
 

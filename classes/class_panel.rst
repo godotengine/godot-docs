@@ -18,15 +18,6 @@ Description
 
 Panel is a :ref:`Control<class_Control>` that displays an opaque background. It's commonly used as a parent and container for other types of :ref:`Control<class_Control>` nodes.
 
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/520 <https://godotengine.org/asset-library/asset/520>`_
-
-- `https://godotengine.org/asset-library/asset/516 <https://godotengine.org/asset-library/asset/516>`_
-
-- `https://godotengine.org/asset-library/asset/523 <https://godotengine.org/asset-library/asset/523>`_
-
 Theme Properties
 ----------------
 

@@ -117,8 +117,6 @@ Methods
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_menu<class_LineEdit_method_get_menu>` **(** **)** |const|                                                                  |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_scroll_offset<class_LineEdit_method_get_scroll_offset>` **(** **)** |const|                                                |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`menu_option<class_LineEdit_method_menu_option>` **(** :ref:`int<class_int>` option **)**                                       |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`select<class_LineEdit_method_select>` **(** :ref:`int<class_int>` from=0, :ref:`int<class_int>` to=-1 **)**                    |
@@ -582,14 +580,6 @@ Clears the current selection.
 - :ref:`PopupMenu<class_PopupMenu>` **get_menu** **(** **)** |const|
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` of this ``LineEdit``. By default, this menu is displayed when right-clicking on the ``LineEdit``.
-
-----
-
-.. _class_LineEdit_method_get_scroll_offset:
-
-- :ref:`int<class_int>` **get_scroll_offset** **(** **)** |const|
-
-Returns the scroll offset due to :ref:`caret_position<class_LineEdit_property_caret_position>`, as a number of characters.
 
 ----
 

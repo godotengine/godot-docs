@@ -468,7 +468,7 @@ enum **ConeTwistJointParam**:
 
 - **CONE_TWIST_JOINT_SWING_SPAN** = **0** --- Swing is rotation from side to side, around the axis perpendicular to the twist axis.
 
-The swing span defines, how much rotation will not get corrected along the swing axis.
+The swing span defines, how much rotation will not get corrected allong the swing axis.
 
 Could be defined as looseness in the :ref:`ConeTwistJoint<class_ConeTwistJoint>`.
 

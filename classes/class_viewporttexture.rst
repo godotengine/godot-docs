@@ -20,17 +20,6 @@ Displays the content of a :ref:`Viewport<class_Viewport>` node as a dynamic :ref
 
 To create a ViewportTexture in code, use the :ref:`Viewport.get_texture<class_Viewport_method_get_texture>` method on the target viewport.
 
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/127 <https://godotengine.org/asset-library/asset/127>`_
-
-- `https://godotengine.org/asset-library/asset/128 <https://godotengine.org/asset-library/asset/128>`_
-
-- `https://godotengine.org/asset-library/asset/129 <https://godotengine.org/asset-library/asset/129>`_
-
-- `https://godotengine.org/asset-library/asset/586 <https://godotengine.org/asset-library/asset/586>`_
-
 Properties
 ----------
 

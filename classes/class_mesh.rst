@@ -20,17 +20,6 @@ Description
 
 Mesh is a type of :ref:`Resource<class_Resource>` that contains vertex array-based geometry, divided in *surfaces*. Each surface contains a completely separate array and a material used to draw it. Design wise, a mesh with multiple surfaces is preferred to a single surface, because objects created in 3D editing software commonly contain multiple materials.
 
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/123 <https://godotengine.org/asset-library/asset/123>`_
-
-- `https://godotengine.org/asset-library/asset/126 <https://godotengine.org/asset-library/asset/126>`_
-
-- `https://godotengine.org/asset-library/asset/125 <https://godotengine.org/asset-library/asset/125>`_
-
-- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
-
 Properties
 ----------
 

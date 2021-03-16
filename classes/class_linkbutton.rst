@@ -18,11 +18,11 @@ Description
 
 This kind of button is primarily used when the interaction with the button causes a context change (like linking to a web page).
 
-See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
-
 Properties
 ----------
 
++-----------------------------------------------------+-------------------------------------------------------+---------------------------+
+| :ref:`FocusMode<enum_Control_FocusMode>`            | enabled_focus_mode                                    | ``0`` *(parent override)* |
 +-----------------------------------------------------+-------------------------------------------------------+---------------------------+
 | :ref:`FocusMode<enum_Control_FocusMode>`            | focus_mode                                            | ``0`` *(parent override)* |
 +-----------------------------------------------------+-------------------------------------------------------+---------------------------+

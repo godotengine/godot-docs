@@ -41,8 +41,6 @@ Tutorials
 
 - :doc:`../tutorials/2d/custom_drawing_in_2d`
 
-- `https://github.com/godotengine/godot-demo-projects/tree/master/gui <https://github.com/godotengine/godot-demo-projects/tree/master/gui>`_
-
 Properties
 ----------
 
@@ -122,7 +120,7 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`_gui_input<class_Control_method__gui_input>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|                                                                                                                                                 |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Control<class_Control>`                | :ref:`_make_custom_tooltip<class_Control_method__make_custom_tooltip>` **(** :ref:`String<class_String>` for_text **)** |virtual|                                                                                                                                  |
+| :ref:`Object<class_Object>`                  | :ref:`_make_custom_tooltip<class_Control_method__make_custom_tooltip>` **(** :ref:`String<class_String>` for_text **)** |virtual|                                                                                                                                  |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`accept_event<class_Control_method_accept_event>` **(** **)**                                                                                                                                                                                                 |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -148,11 +146,11 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                | :ref:`get_begin<class_Control_method_get_begin>` **(** **)** |const|                                                                                                                                                                                               |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`                    | :ref:`get_color<class_Control_method_get_color>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|                                                                                                                    |
+| :ref:`Color<class_Color>`                    | :ref:`get_color<class_Control_method_get_color>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|                                                                                                                         |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                | :ref:`get_combined_minimum_size<class_Control_method_get_combined_minimum_size>` **(** **)** |const|                                                                                                                                                               |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                        | :ref:`get_constant<class_Control_method_get_constant>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|                                                                                                              |
+| :ref:`int<class_int>`                        | :ref:`get_constant<class_Control_method_get_constant>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|                                                                                                                   |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`CursorShape<enum_Control_CursorShape>` | :ref:`get_cursor_shape<class_Control_method_get_cursor_shape>` **(** :ref:`Vector2<class_Vector2>` position=Vector2( 0, 0 ) **)** |const|                                                                                                                          |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -164,11 +162,11 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_Control>`                | :ref:`get_focus_owner<class_Control_method_get_focus_owner>` **(** **)** |const|                                                                                                                                                                                   |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Font<class_Font>`                      | :ref:`get_font<class_Control_method_get_font>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|                                                                                                                      |
+| :ref:`Font<class_Font>`                      | :ref:`get_font<class_Control_method_get_font>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|                                                                                                                           |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_Rect2>`                    | :ref:`get_global_rect<class_Control_method_get_global_rect>` **(** **)** |const|                                                                                                                                                                                   |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                | :ref:`get_icon<class_Control_method_get_icon>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|                                                                                                                      |
+| :ref:`Texture<class_Texture>`                | :ref:`get_icon<class_Control_method_get_icon>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|                                                                                                                           |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                    | :ref:`get_margin<class_Control_method_get_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** |const|                                                                                                                                              |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -182,7 +180,7 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                    | :ref:`get_rotation<class_Control_method_get_rotation>` **(** **)** |const|                                                                                                                                                                                         |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`              | :ref:`get_stylebox<class_Control_method_get_stylebox>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|                                                                                                              |
+| :ref:`StyleBox<class_StyleBox>`              | :ref:`get_stylebox<class_Control_method_get_stylebox>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|                                                                                                                   |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                  | :ref:`get_tooltip<class_Control_method_get_tooltip>` **(** :ref:`Vector2<class_Vector2>` at_position=Vector2( 0, 0 ) **)** |const|                                                                                                                                 |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -190,21 +188,21 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`grab_focus<class_Control_method_grab_focus>` **(** **)**                                                                                                                                                                                                     |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`has_color<class_Control_method_has_color>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|                                                                                                                    |
+| :ref:`bool<class_bool>`                      | :ref:`has_color<class_Control_method_has_color>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|                                                                                                                         |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`has_color_override<class_Control_method_has_color_override>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                            |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`has_constant<class_Control_method_has_constant>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|                                                                                                              |
+| :ref:`bool<class_bool>`                      | :ref:`has_constant<class_Control_method_has_constant>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|                                                                                                                   |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`has_constant_override<class_Control_method_has_constant_override>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                      |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`has_focus<class_Control_method_has_focus>` **(** **)** |const|                                                                                                                                                                                               |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`has_font<class_Control_method_has_font>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|                                                                                                                      |
+| :ref:`bool<class_bool>`                      | :ref:`has_font<class_Control_method_has_font>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|                                                                                                                           |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`has_font_override<class_Control_method_has_font_override>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                              |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`has_icon<class_Control_method_has_icon>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|                                                                                                                      |
+| :ref:`bool<class_bool>`                      | :ref:`has_icon<class_Control_method_has_icon>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|                                                                                                                           |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`has_icon_override<class_Control_method_has_icon_override>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                              |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -212,7 +210,7 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`has_shader_override<class_Control_method_has_shader_override>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                          |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`has_stylebox<class_Control_method_has_stylebox>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|                                                                                                              |
+| :ref:`bool<class_bool>`                      | :ref:`has_stylebox<class_Control_method_has_stylebox>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|                                                                                                                   |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`has_stylebox_override<class_Control_method_has_stylebox_override>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                      |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -847,17 +845,6 @@ Controls the direction on the vertical axis in which the control should grow if 
 
 Changes the tooltip text. The tooltip appears when the user's mouse cursor stays idle over this control for a few moments, provided that the :ref:`mouse_filter<class_Control_property_mouse_filter>` property is not :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>`. You can change the time required for the tooltip to appear with ``gui/timers/tooltip_delay_sec`` option in Project Settings.
 
-The tooltip popup will use either a default implementation, or a custom one that you can provide by overriding :ref:`_make_custom_tooltip<class_Control_method__make_custom_tooltip>`. The default tooltip includes a :ref:`PopupPanel<class_PopupPanel>` and :ref:`Label<class_Label>` whose theme properties can be customized using :ref:`Theme<class_Theme>` methods with the ``"TooltipPanel"`` and ``"TooltipLabel"`` respectively. For example:
-
-::
-
-    var style_box = StyleBoxFlat.new()
-    style_box.set_bg_color(Color(1, 1, 0))
-    style_box.set_border_width_all(2)
-    # We assume here that the `theme` property has been assigned a custom Theme beforehand.
-    theme.set_stylebox("panel", "TooltipPanel", style_box)
-    theme.set_color("font_color", "TooltipLabel", Color(0, 1, 1))
-
 ----
 
 .. _class_Control_property_margin_bottom:
@@ -1070,7 +1057,7 @@ The node's rotation around its pivot, in degrees. See :ref:`rect_pivot_offset<cl
 
 The node's scale, relative to its :ref:`rect_size<class_Control_property_rect_size>`. Change this property to scale the node around its :ref:`rect_pivot_offset<class_Control_property_rect_pivot_offset>`. The Control's :ref:`hint_tooltip<class_Control_property_hint_tooltip>` will also scale according to this value.
 
-**Note:** This property is mainly intended to be used for animation purposes. Text inside the Control will look pixelated or blurry when the Control is scaled. To support multiple resolutions in your project, use an appropriate viewport stretch mode as described in the `documentation <https://docs.godotengine.org/en/3.2/tutorials/viewports/multiple_resolutions.html>`_ instead of scaling Controls individually.
+**Note:** This property is mainly intended to be used for animation purposes. Text inside the Control will look pixelated or blurry when the Control is scaled. To support multiple resolutions in your project, use an appropriate viewport stretch mode as described in the `documentation <https://docs.godotengine.org/en/latest/tutorials/viewports/multiple_resolutions.html>`_ instead of scaling Controls individually.
 
 **Note:** If the Control node is a child of a :ref:`Container<class_Container>` node, the scale will be reset to ``Vector2(1, 1)`` when the scene is instanced. To set the Control's scale when it's instanced, wait for one frame using ``yield(get_tree(), "idle_frame")`` then set its :ref:`rect_scale<class_Control_property_rect_scale>` property.
 
@@ -1204,17 +1191,15 @@ The event won't trigger if:
 
 .. _class_Control_method__make_custom_tooltip:
 
-- :ref:`Control<class_Control>` **_make_custom_tooltip** **(** :ref:`String<class_String>` for_text **)** |virtual|
+- :ref:`Object<class_Object>` **_make_custom_tooltip** **(** :ref:`String<class_String>` for_text **)** |virtual|
 
-Virtual method to be implemented by the user. Returns a ``Control`` node that should be used as a tooltip instead of the default one. The ``for_text`` includes the contents of the :ref:`hint_tooltip<class_Control_property_hint_tooltip>` property.
+Virtual method to be implemented by the user. Returns a ``Control`` node that should be used as a tooltip instead of the default one. Use ``for_text`` parameter to determine what text the tooltip should contain (likely the contents of :ref:`hint_tooltip<class_Control_property_hint_tooltip>`).
 
-The returned node must be of type ``Control`` or Control-derived. It can have child nodes of any type. It is freed when the tooltip disappears, so make sure you always provide a new instance (if you want to use a pre-existing node from your scene tree, you can duplicate it and pass the duplicated instance).When ``null`` or a non-Control node is returned, the default tooltip will be used instead.
-
-The returned node will be added as child to a :ref:`PopupPanel<class_PopupPanel>`, so you should only provide the contents of that panel. That :ref:`PopupPanel<class_PopupPanel>` can be themed using :ref:`Theme.set_stylebox<class_Theme_method_set_stylebox>` for the type ``"TooltipPanel"`` (see :ref:`hint_tooltip<class_Control_property_hint_tooltip>` for an example).
+The returned node must be of type ``Control`` or Control-derieved. It can have child nodes of any type. It is freed when the tooltip disappears, so make sure you always provide a new instance, not e.g. a node from scene. When ``null`` or non-Control node is returned, the default tooltip will be used instead.
 
 **Note:** The tooltip is shrunk to minimal size. If you want to ensure it's fully visible, you might want to set its :ref:`rect_min_size<class_Control_property_rect_min_size>` to some non-zero value.
 
-Example of usage with a custom-constructed node:
+Example of usage with custom-constructed node:
 
 ::
 
@@ -1223,12 +1208,12 @@ Example of usage with a custom-constructed node:
         label.text = for_text
         return label
 
-Example of usage with a custom scene instance:
+Example of usage with custom scene instance:
 
 ::
 
     func _make_custom_tooltip(for_text):
-        var tooltip = preload("res://SomeTooltipScene.tscn").instance()
+        var tooltip = preload("SomeTooltipScene.tscn").instance()
         tooltip.get_node("Label").text = for_text
         return tooltip
 
@@ -1379,9 +1364,9 @@ Returns :ref:`margin_left<class_Control_property_margin_left>` and :ref:`margin_
 
 .. _class_Control_method_get_color:
 
-- :ref:`Color<class_Color>` **get_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|
+- :ref:`Color<class_Color>` **get_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|
 
-Returns a color from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``node_type``.
+Returns a color from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``type``.
 
 ::
 
@@ -1400,9 +1385,9 @@ Returns combined minimum size from :ref:`rect_min_size<class_Control_property_re
 
 .. _class_Control_method_get_constant:
 
-- :ref:`int<class_int>` **get_constant** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|
+- :ref:`int<class_int>` **get_constant** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|
 
-Returns a constant from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``node_type``.
+Returns a constant from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``type``.
 
 ----
 
@@ -1457,9 +1442,9 @@ Returns the control that has the keyboard focus or ``null`` if none.
 
 .. _class_Control_method_get_font:
 
-- :ref:`Font<class_Font>` **get_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|
+- :ref:`Font<class_Font>` **get_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|
 
-Returns a font from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``node_type``.
+Returns a font from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``type``.
 
 ----
 
@@ -1473,9 +1458,9 @@ Returns the position and size of the control relative to the top-left corner of 
 
 .. _class_Control_method_get_icon:
 
-- :ref:`Texture<class_Texture>` **get_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|
+- :ref:`Texture<class_Texture>` **get_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|
 
-Returns an icon from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``node_type``.
+Returns an icon from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``type``.
 
 ----
 
@@ -1529,9 +1514,9 @@ Returns the rotation (in radians).
 
 .. _class_Control_method_get_stylebox:
 
-- :ref:`StyleBox<class_StyleBox>` **get_stylebox** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|
+- :ref:`StyleBox<class_StyleBox>` **get_stylebox** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|
 
-Returns a :ref:`StyleBox<class_StyleBox>` from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``node_type``.
+Returns a :ref:`StyleBox<class_StyleBox>` from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``type``.
 
 ----
 
@@ -1566,9 +1551,9 @@ Steal the focus from another control and become the focused control (see :ref:`f
 
 .. _class_Control_method_has_color:
 
-- :ref:`bool<class_bool>` **has_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|
+- :ref:`bool<class_bool>` **has_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|
 
-Returns ``true`` if :ref:`Color<class_Color>` with given ``name`` and associated with ``Control`` of given ``node_type`` exists in assigned :ref:`Theme<class_Theme>`.
+Returns ``true`` if :ref:`Color<class_Color>` with given ``name`` and associated with ``Control`` of given ``type`` exists in assigned :ref:`Theme<class_Theme>`.
 
 ----
 
@@ -1582,9 +1567,9 @@ Returns ``true`` if :ref:`Color<class_Color>` with given ``name`` has a valid ov
 
 .. _class_Control_method_has_constant:
 
-- :ref:`bool<class_bool>` **has_constant** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|
+- :ref:`bool<class_bool>` **has_constant** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|
 
-Returns ``true`` if constant with given ``name`` and associated with ``Control`` of given ``node_type`` exists in assigned :ref:`Theme<class_Theme>`.
+Returns ``true`` if constant with given ``name`` and associated with ``Control`` of given ``type`` exists in assigned :ref:`Theme<class_Theme>`.
 
 ----
 
@@ -1606,9 +1591,9 @@ Returns ``true`` if this is the current focused control. See :ref:`focus_mode<cl
 
 .. _class_Control_method_has_font:
 
-- :ref:`bool<class_bool>` **has_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|
+- :ref:`bool<class_bool>` **has_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|
 
-Returns ``true`` if font with given ``name`` and associated with ``Control`` of given ``node_type`` exists in assigned :ref:`Theme<class_Theme>`.
+Returns ``true`` if font with given ``name`` and associated with ``Control`` of given ``type`` exists in assigned :ref:`Theme<class_Theme>`.
 
 ----
 
@@ -1622,9 +1607,9 @@ Returns ``true`` if font with given ``name`` has a valid override in this ``Cont
 
 .. _class_Control_method_has_icon:
 
-- :ref:`bool<class_bool>` **has_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|
+- :ref:`bool<class_bool>` **has_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|
 
-Returns ``true`` if icon with given ``name`` and associated with ``Control`` of given ``node_type`` exists in assigned :ref:`Theme<class_Theme>`.
+Returns ``true`` if icon with given ``name`` and associated with ``Control`` of given ``type`` exists in assigned :ref:`Theme<class_Theme>`.
 
 ----
 
@@ -1658,9 +1643,9 @@ Returns ``true`` if :ref:`Shader<class_Shader>` with given ``name`` has a valid 
 
 .. _class_Control_method_has_stylebox:
 
-- :ref:`bool<class_bool>` **has_stylebox** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` node_type="" **)** |const|
+- :ref:`bool<class_bool>` **has_stylebox** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** |const|
 
-Returns ``true`` if :ref:`StyleBox<class_StyleBox>` with given ``name`` and associated with ``Control`` of given ``node_type`` exists in assigned :ref:`Theme<class_Theme>`.
+Returns ``true`` if :ref:`StyleBox<class_StyleBox>` with given ``name`` and associated with ``Control`` of given ``type`` exists in assigned :ref:`Theme<class_Theme>`.
 
 ----
 

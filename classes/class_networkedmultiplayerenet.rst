@@ -165,7 +165,7 @@ The compression method used for network packets. These have different tradeoffs 
 | *Getter*  | is_dtls_verify_enabled()       |
 +-----------+--------------------------------+
 
-Enable or disable certificate verification when :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>` ``true``.
+Enable or disable certiticate verification when :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>` ``true``.
 
 ----
 

@@ -23,10 +23,6 @@ Tutorials
 
 - :doc:`../tutorials/inputs/index`
 
-- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
-
-- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
-
 Methods
 -------
 
@@ -255,7 +251,7 @@ Adds a new mapping entry (in SDL2 format) to the mapping database. Optionally up
 
 - :ref:`Vector3<class_Vector3>` **get_accelerometer** **(** **)** |const|
 
-Returns the acceleration of the device's accelerometer sensor, if the device has one. Otherwise, the method returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
+Returns the acceleration of the device's accelerometer, if the device has one. Otherwise, the method returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
 Note this method returns an empty :ref:`Vector3<class_Vector3>` when running from the editor even when your device has an accelerometer. You must export your project to a supported device to read values from the accelerometer.
 
@@ -291,7 +287,7 @@ Returns the currently assigned cursor shape (see :ref:`CursorShape<enum_Input_Cu
 
 - :ref:`Vector3<class_Vector3>` **get_gravity** **(** **)** |const|
 
-Returns the gravity of the device's accelerometer sensor, if the device has one. Otherwise, the method returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
+Returns the gravity of the device's accelerometer, if the device has one. Otherwise, the method returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
 **Note:** This method only works on Android and iOS. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
@@ -301,9 +297,9 @@ Returns the gravity of the device's accelerometer sensor, if the device has one.
 
 - :ref:`Vector3<class_Vector3>` **get_gyroscope** **(** **)** |const|
 
-Returns the rotation rate in rad/s around a device's X, Y, and Z axes of the gyroscope sensor, if the device has one. Otherwise, the method returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
+Returns the rotation rate in rad/s around a device's X, Y, and Z axes of the gyroscope, if the device has one. Otherwise, the method returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
-**Note:** This method only works on Android and iOS. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
+**Note:** This method only works on Android. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
 ----
 
@@ -391,9 +387,9 @@ Returns the mouse speed for the last time the cursor was moved, and this until t
 
 - :ref:`Vector3<class_Vector3>` **get_magnetometer** **(** **)** |const|
 
-Returns the the magnetic field strength in micro-Tesla for all axes of the device's magnetometer sensor, if the device has one. Otherwise, the method returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
+Returns the the magnetic field strength in micro-Tesla for all axes of the device's magnetometer, if the device has one. Otherwise, the method returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
-**Note:** This method only works on Android, iOS and UWP. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
+**Note:** This method only works on Android and UWP. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
 ----
 
@@ -576,7 +572,7 @@ Stops the vibration of the joypad.
 
 Vibrate Android and iOS devices.
 
-**Note:** It needs ``VIBRATE`` permission for Android at export settings. iOS does not support duration.
+**Note:** It needs VIBRATE permission for Android at export settings. iOS does not support duration.
 
 ----
 

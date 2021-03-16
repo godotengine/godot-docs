@@ -18,11 +18,6 @@ Description
 
 A node that displays a 2D texture. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
 
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/148 <https://godotengine.org/asset-library/asset/148>`_
-
 Properties
 ----------
 
@@ -143,7 +138,7 @@ If ``true``, texture is flipped vertically.
 | *Getter*  | get_frame()      |
 +-----------+------------------+
 
-Current frame to display from sprite sheet. :ref:`hframes<class_Sprite_property_hframes>` or :ref:`vframes<class_Sprite_property_vframes>` must be greater than 1.
+Current frame to display from sprite sheet. :ref:`vframes<class_Sprite_property_vframes>` or :ref:`hframes<class_Sprite_property_hframes>` must be greater than 1.
 
 ----
 
@@ -159,7 +154,7 @@ Current frame to display from sprite sheet. :ref:`hframes<class_Sprite_property_
 | *Getter*  | get_frame_coords()      |
 +-----------+-------------------------+
 
-Coordinates of the frame to display from sprite sheet. This is as an alias for the :ref:`frame<class_Sprite_property_frame>` property. :ref:`hframes<class_Sprite_property_hframes>` or :ref:`vframes<class_Sprite_property_vframes>` must be greater than 1.
+Coordinates of the frame to display from sprite sheet. This is as an alias for the :ref:`frame<class_Sprite_property_frame>` property. :ref:`vframes<class_Sprite_property_vframes>` or :ref:`hframes<class_Sprite_property_hframes>` must be greater than 1.
 
 ----
 

@@ -18,11 +18,6 @@ An :ref:`Array<class_Array>` specifically designed to hold :ref:`String<class_St
 
 **Note:** This type is passed by value and not by reference.
 
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/677 <https://godotengine.org/asset-library/asset/677>`_
-
 Methods
 -------
 

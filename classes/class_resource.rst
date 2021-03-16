@@ -20,8 +20,6 @@ Description
 
 Resource is the base class for all Godot-specific resource types, serving primarily as data containers. Unlike :ref:`Object<class_Object>`\ s, they are reference-counted and freed when no longer in use. They are also cached once loaded from disk, so that any further attempts to load a resource from a given path will return the same reference (all this in contrast to a :ref:`Node<class_Node>`, which is not reference-counted and can be instanced from disk as many times as desired). Resources can be saved externally on disk or bundled into another object, such as a :ref:`Node<class_Node>` or another resource.
 
-**Note:** In C#, resources will not be freed instantly after they are no longer in use. Instead, garbage collection will run periodically and will free resources that are no longer in use. This means that unused resources will linger on for a while before being removed.
-
 Tutorials
 ---------
 
@@ -65,8 +63,6 @@ Signals
 - **changed** **(** **)**
 
 Emitted whenever the resource changes.
-
-**Note:** This signal is not emitted automatically for custom resources, which means that you need to create a setter and emit the signal yourself.
 
 Property Descriptions
 ---------------------

@@ -201,7 +201,7 @@ Clips the polygon defined by the points in ``points`` against the ``plane`` and 
 
 Clips ``polygon_a`` against ``polygon_b`` and returns an array of clipped polygons. This performs :ref:`OPERATION_DIFFERENCE<class_Geometry_constant_OPERATION_DIFFERENCE>` between polygons. Returns an empty array if ``polygon_b`` completely overlaps ``polygon_a``.
 
-If ``polygon_b`` is enclosed by ``polygon_a``, returns an outer polygon (boundary) and inner polygon (hole) which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
+If ``polygon_b`` is enclosed by ``polygon_a``, returns an outer polygon (boundary) and inner polygon (hole) which could be distiguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
 
 ----
 
@@ -227,7 +227,7 @@ Given an array of :ref:`Vector2<class_Vector2>`\ s, returns the convex hull as a
 
 Mutually excludes common area defined by intersection of ``polygon_a`` and ``polygon_b`` (see :ref:`intersect_polygons_2d<class_Geometry_method_intersect_polygons_2d>`) and returns an array of excluded polygons. This performs :ref:`OPERATION_XOR<class_Geometry_constant_OPERATION_XOR>` between polygons. In other words, returns all but common area between polygons.
 
-The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
+The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distiguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
 
 ----
 
@@ -275,7 +275,7 @@ Given the two 3D segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **get_closest_points_between_segments_2d** **(** :ref:`Vector2<class_Vector2>` p1, :ref:`Vector2<class_Vector2>` q1, :ref:`Vector2<class_Vector2>` p2, :ref:`Vector2<class_Vector2>` q2 **)**
 
-Given the two 2D segments (``p1``, ``q1``) and (``p2``, ``q2``), finds those two points on the two segments that are closest to each other. Returns a :ref:`PoolVector2Array<class_PoolVector2Array>` that contains this point on (``p1``, ``q1``) as well the accompanying point on (``p2``, ``q2``).
+Given the two 2D segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two points on the two segments that are closest to each other. Returns a :ref:`PoolVector2Array<class_PoolVector2Array>` that contains this point on (``p1``, ``p2``) as well the accompanying point on (``q1``, ``q2``).
 
 ----
 

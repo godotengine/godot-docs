@@ -22,15 +22,6 @@ This node is intended to be a simple helper to get things going quickly and it m
 
 Note that the ``Camera2D`` node's ``position`` doesn't represent the actual position of the screen, which may differ due to applied smoothing or limits. You can use :ref:`get_camera_screen_center<class_Camera2D_method_get_camera_screen_center>` to get the real position.
 
-Tutorials
----------
-
-- `https://godotengine.org/asset-library/asset/120 <https://godotengine.org/asset-library/asset/120>`_
-
-- `https://godotengine.org/asset-library/asset/112 <https://godotengine.org/asset-library/asset/112>`_
-
-- `https://godotengine.org/asset-library/asset/110 <https://godotengine.org/asset-library/asset/110>`_
-
 Properties
 ----------
 

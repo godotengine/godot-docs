@@ -33,15 +33,15 @@ Methods
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`add_point<class_Gradient_method_add_point>` **(** :ref:`float<class_float>` offset, :ref:`Color<class_Color>` color **)** |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>` | :ref:`get_color<class_Gradient_method_get_color>` **(** :ref:`int<class_int>` point **)**                                       |
+| :ref:`Color<class_Color>` | :ref:`get_color<class_Gradient_method_get_color>` **(** :ref:`int<class_int>` point **)** |const|                               |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_offset<class_Gradient_method_get_offset>` **(** :ref:`int<class_int>` point **)**                                     |
+| :ref:`float<class_float>` | :ref:`get_offset<class_Gradient_method_get_offset>` **(** :ref:`int<class_int>` point **)** |const|                             |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`     | :ref:`get_point_count<class_Gradient_method_get_point_count>` **(** **)** |const|                                               |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>` | :ref:`interpolate<class_Gradient_method_interpolate>` **(** :ref:`float<class_float>` offset **)**                              |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`remove_point<class_Gradient_method_remove_point>` **(** :ref:`int<class_int>` point **)**                                 |
+| void                      | :ref:`remove_point<class_Gradient_method_remove_point>` **(** :ref:`int<class_int>` offset **)**                                |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_color<class_Gradient_method_set_color>` **(** :ref:`int<class_int>` point, :ref:`Color<class_Color>` color **)**      |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
@@ -94,7 +94,7 @@ Adds the specified color to the end of the ramp, with the specified offset.
 
 .. _class_Gradient_method_get_color:
 
-- :ref:`Color<class_Color>` **get_color** **(** :ref:`int<class_int>` point **)**
+- :ref:`Color<class_Color>` **get_color** **(** :ref:`int<class_int>` point **)** |const|
 
 Returns the color of the ramp color at index ``point``.
 
@@ -102,7 +102,7 @@ Returns the color of the ramp color at index ``point``.
 
 .. _class_Gradient_method_get_offset:
 
-- :ref:`float<class_float>` **get_offset** **(** :ref:`int<class_int>` point **)**
+- :ref:`float<class_float>` **get_offset** **(** :ref:`int<class_int>` point **)** |const|
 
 Returns the offset of the ramp color at index ``point``.
 
@@ -126,9 +126,9 @@ Returns the interpolated color specified by ``offset``.
 
 .. _class_Gradient_method_remove_point:
 
-- void **remove_point** **(** :ref:`int<class_int>` point **)**
+- void **remove_point** **(** :ref:`int<class_int>` offset **)**
 
-Removes the color at the index ``point``.
+Removes the color at the index ``offset``.
 
 ----
 

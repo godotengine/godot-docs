@@ -24,8 +24,6 @@ Unlike :ref:`Object<class_Object>`\ s, References keep an internal reference cou
 
 In the vast majority of use cases, instantiating and using ``Reference``-derived types is all you need to do. The methods provided in this class are only for advanced users, and can cause issues if misused.
 
-**Note:** In C#, references will not be freed instantly after they are no longer in use. Instead, garbage collection will run periodically and will free references that are no longer in use. This means that unused references will linger on for a while before being removed.
-
 Tutorials
 ---------
 

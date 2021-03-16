@@ -16,42 +16,9 @@ A :ref:`Texture<class_Texture>` based on an :ref:`Image<class_Image>`.
 Description
 -----------
 
-A :ref:`Texture<class_Texture>` based on an :ref:`Image<class_Image>`. For an image to be displayed, an ``ImageTexture`` has to be created from it using the :ref:`create_from_image<class_ImageTexture_method_create_from_image>` method:
+A :ref:`Texture<class_Texture>` based on an :ref:`Image<class_Image>`. Can be created from an :ref:`Image<class_Image>` with :ref:`create_from_image<class_ImageTexture_method_create_from_image>`.
 
-::
-
-    var texture = ImageTexture.new()
-    var image = Image.new()
-    image.load("res://icon.png")
-    texture.create_from_image(image)
-    $Sprite.texture = texture
-
-This way, textures can be created at run-time by loading images both from within the editor and externally.
-
-**Warning:** Prefer to load imported textures with :ref:`@GDScript.load<class_@GDScript_method_load>` over loading them from within the filesystem dynamically with :ref:`Image.load<class_Image_method_load>`, as it may not work in exported projects:
-
-::
-
-    var texture = load("res://icon.png")
-    $Sprite.texture = texture
-
-This is because images have to be imported as :ref:`StreamTexture<class_StreamTexture>` first to be loaded with :ref:`@GDScript.load<class_@GDScript_method_load>`. If you'd still like to load an image file just like any other :ref:`Resource<class_Resource>`, import it as an :ref:`Image<class_Image>` resource instead, and then load it normally using the :ref:`@GDScript.load<class_@GDScript_method_load>` method.
-
-But do note that the image data can still be retrieved from an imported texture as well using the :ref:`Texture.get_data<class_Texture_method_get_data>` method, which returns a copy of the data:
-
-::
-
-    var texture = load("res://icon.png")
-    var image : Image = texture.get_data()
-
-An ``ImageTexture`` is not meant to be operated from within the editor interface directly, and is mostly useful for rendering images on screen dynamically via code. If you need to generate images procedurally from within the editor, consider saving and importing images as custom texture resources implementing a new :ref:`EditorImportPlugin<class_EditorImportPlugin>`.
-
-**Note:** The maximum texture size is 16384×16384 pixels due to graphics hardware limitations.
-
-Tutorials
----------
-
-- :doc:`../getting_started/workflow/assets/importing_images`
+**Note:** The maximum image size is 16384×16384 pixels due to graphics hardware limitations. Larger images will fail to import.
 
 Properties
 ----------
@@ -150,7 +117,7 @@ Create a new ``ImageTexture`` with ``width`` and ``height``.
 
 - void **create_from_image** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` flags=7 **)**
 
-Initializes the texture by allocating and setting the data from an :ref:`Image<class_Image>` with ``flags`` from :ref:`Flags<enum_Texture_Flags>`. An sRGB to linear color space conversion can take place, according to :ref:`Format<enum_Image_Format>`.
+Create a new ``ImageTexture`` from an :ref:`Image<class_Image>` with ``flags`` from :ref:`Flags<enum_Texture_Flags>`. An sRGB to linear color space conversion can take place, according to :ref:`Format<enum_Image_Format>`.
 
 ----
 
@@ -158,7 +125,7 @@ Initializes the texture by allocating and setting the data from an :ref:`Image<c
 
 - :ref:`Format<enum_Image_Format>` **get_format** **(** **)** |const|
 
-Returns the format of the texture, one of :ref:`Format<enum_Image_Format>`.
+Returns the format of the ``ImageTexture``, one of :ref:`Format<enum_Image_Format>`.
 
 ----
 
@@ -166,9 +133,7 @@ Returns the format of the texture, one of :ref:`Format<enum_Image_Format>`.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
-Loads an image from a file path and creates a texture from it.
-
-**Note:** the method is deprecated and will be removed in Godot 4.0, use :ref:`Image.load<class_Image_method_load>` and :ref:`create_from_image<class_ImageTexture_method_create_from_image>` instead.
+Load an ``ImageTexture`` from a file path.
 
 ----
 
@@ -176,11 +141,7 @@ Loads an image from a file path and creates a texture from it.
 
 - void **set_data** **(** :ref:`Image<class_Image>` image **)**
 
-Replaces the texture's data with a new :ref:`Image<class_Image>`.
-
-**Note:** The texture has to be initialized first with the :ref:`create_from_image<class_ImageTexture_method_create_from_image>` method before it can be updated. The new image dimensions, format, and mipmaps configuration should match the existing texture's image configuration, otherwise it has to be re-created with the :ref:`create_from_image<class_ImageTexture_method_create_from_image>` method.
-
-Use this method over :ref:`create_from_image<class_ImageTexture_method_create_from_image>` if you need to update the texture frequently, which is faster than allocating additional memory for a new texture each time.
+Sets the :ref:`Image<class_Image>` of this ``ImageTexture``.
 
 ----
 
@@ -188,7 +149,7 @@ Use this method over :ref:`create_from_image<class_ImageTexture_method_create_fr
 
 - void **set_size_override** **(** :ref:`Vector2<class_Vector2>` size **)**
 
-Resizes the texture to the specified dimensions.
+Resizes the ``ImageTexture`` to the specified dimensions.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

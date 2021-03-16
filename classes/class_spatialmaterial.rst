@@ -1099,9 +1099,7 @@ Specifies whether to use ``UV`` or ``UV2`` for the detail layer. See :ref:`Detai
 | *Getter* | get_distance_fade_max_distance()      |
 +----------+---------------------------------------+
 
-Distance at which the object appears fully opaque.
-
-**Note:** If ``distance_fade_max_distance`` is less than ``distance_fade_min_distance``, the behavior will be reversed. The object will start to fade away at ``distance_fade_max_distance`` and will fully disappear once it reaches ``distance_fade_min_distance``.
+Distance at which the object fades fully and is no longer visible.
 
 ----
 
@@ -1115,9 +1113,7 @@ Distance at which the object appears fully opaque.
 | *Getter* | get_distance_fade_min_distance()      |
 +----------+---------------------------------------+
 
-Distance at which the object starts to become visible. If the object is less than this distance away, it will be invisible.
-
-**Note:** If ``distance_fade_min_distance`` is greater than ``distance_fade_max_distance``, the behavior will be reversed. The object will start to fade away at ``distance_fade_max_distance`` and will fully disappear once it reaches ``distance_fade_min_distance``.
+Distance at which the object starts to fade. If the object is less than this distance away it will appear normal.
 
 ----
 
@@ -1570,8 +1566,6 @@ If ``true``, the shader will keep the scale set for the mesh. Otherwise the scal
 +-----------+---------------------------+
 
 Controls how the object faces the camera. See :ref:`BillboardMode<enum_SpatialMaterial_BillboardMode>`.
-
-**Note:** Billboard mode is not suitable for VR because the left-right vector of the camera is not horizontal when the screen is attached to your head instead of on the table. See `GitHub issue #41567 <https://github.com/godotengine/godot/issues/41567>`_ for details.
 
 ----
 

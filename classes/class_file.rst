@@ -35,16 +35,12 @@ Here's a sample on how to write and read from a file:
         file.close()
         return content
 
-In the example above, the file will be saved in the user data folder as specified in the `Data paths <https://docs.godotengine.org/en/3.2/tutorials/io/data_paths.html>`_ documentation.
-
-**Note:** To access project resources once exported, it is recommended to use :ref:`ResourceLoader<class_ResourceLoader>` instead of the ``File`` API, as some files are converted to engine-specific formats and their original source files might not be present in the exported PCK package.
+In the example above, the file will be saved in the user data folder as specified in the `Data paths <https://docs.godotengine.org/en/latest/tutorials/io/data_paths.html>`_ documentation.
 
 Tutorials
 ---------
 
 - :doc:`../getting_started/step_by_step/filesystem`
-
-- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
 
 Properties
 ----------
@@ -237,7 +233,7 @@ Returns ``true`` if the file cursor has read past the end of the file.
 
 Returns ``true`` if the file exists in the given path.
 
-**Note:** Many resources types are imported (e.g. textures or sound files), and their source asset will not be included in the exported game, as only the imported version is used. See :ref:`ResourceLoader.exists<class_ResourceLoader_method_exists>` for an alternative approach that takes resource remapping into account.
+**Note:** Many resources types are imported (e.g. textures or sound files), and that their source asset will not be included in the exported game, as only the imported version is used (in the ``res://.import`` folder). To check for the existence of such resources while taking into account the remapping to their imported location, use :ref:`ResourceLoader.exists<class_ResourceLoader_method_exists>`. Typically, using ``File.file_exists`` on an imported resource would work while you are developing in the editor (the source asset is present in ``res://``, but fail when exported).
 
 ----
 
@@ -582,7 +578,9 @@ Stores a floating-point number as 32 bits in the file.
 
 - void **store_line** **(** :ref:`String<class_String>` line **)**
 
-Appends ``line`` to the file followed by a line return character (``\n``), encoding the text as UTF-8.
+Stores the given :ref:`String<class_String>` as a line in the file.
+
+Text will be encoded as UTF-8.
 
 ----
 
@@ -608,7 +606,9 @@ Stores a floating-point number in the file.
 
 - void **store_string** **(** :ref:`String<class_String>` string **)**
 
-Appends ``string`` to the file without a line return, encoding the text as UTF-8.
+Stores the given :ref:`String<class_String>` in the file.
+
+Text will be encoded as UTF-8.
 
 ----
 

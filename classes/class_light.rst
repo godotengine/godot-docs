@@ -25,8 +25,6 @@ Tutorials
 
 - :doc:`../tutorials/3d/lights_and_shadows`
 
-- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
-
 Properties
 ----------
 
