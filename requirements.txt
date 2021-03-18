@@ -12,5 +12,8 @@ sphinx-tabs==1.1.13
 # Custom 404 error page (more useful than the default)
 sphinx-notfound-page==0.6
 
+# Adds Open Graph tags in the HTML `<head>` tag
+sphinxext-opengraph==0.4.1
+
 # Full-page search UI for RTD: https://readthedocs-sphinx-search.readthedocs.io
 readthedocs-sphinx-search==0.1.0rc3
