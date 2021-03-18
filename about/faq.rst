@@ -207,6 +207,48 @@ In the long term, we may develop a Direct3D 12 renderer for Godot (mainly for
 the Xbox's purposes), but Vulkan and OpenGL will remain the default rendering
 backends on all platforms, including Windows.
 
+Why does Godot aim to keep its core feature set small?
+------------------------------------------------------
+
+Godot intentionally does not include features that can be implemented by add-ons
+unless they are used very often. One exemple of this would be advanced
+artificial intelligence functionality.
+
+There are several reasons for this:
+
+- **Code maintenance and surface for bugs.** Every time we accept new code in
+  the Godot repository, existing contributors often take the reponsibility of
+  maintaining it. Some contributors don't always stick around after getting
+  their code merged, which can make it difficult for us to maintain the code in
+  question. This can lead to poorly maintained features with bugs that are never
+  fixed. On top of that, the "API surface" that needs to be tested and checked
+  for regressions keeps increasing over time.
+
+- **Ease of contribution.** By keeping the codebase small and tidy, it can remain
+  fast and easy to compile from source. This makes it easier for new
+  contributors to get started with Godot, without requiring them to purchase
+  high-end hardware.
+
+- **Keeping the binary size small for the editor.** Not everyone has a fast Internet
+  connection. Ensuring that everyone can download the Godot editor, extract it
+  and run it in less than 5 minutes makes Godot more accessible to developers in
+  all countries.
+
+- **Keeping the binary size small for export templates.** This directly impacts the
+  size of projects exported with Godot. On mobile and web platforms, keeping
+  file sizes low is primordial to ensure fast installation and loading on
+  underpowered devices. Again, there are many countries where high-speed
+  Internet is not readily available. To add to this, strict data usage caps are
+  often in effect in those countries.
+
+For all the reasons above, we have to be selective of what we can accept as core
+functionality in Godot. This is why we are aiming to move some core
+functionality to officially supported add-ons in future versions of Godot. In
+terms of binary size, this also has the advance of making you pay only for what
+you actually use in your project. (In the meantime, you can
+:ref:`compile custom export templates with unused features disabled <doc_optimizing_for_size>`
+to optimize the distribution size of your project.)
+
 How should assets be created to handle multiple resolutions and aspect ratios?
 ------------------------------------------------------------------------------
 
