@@ -339,7 +339,8 @@ Here's the list of available annotations:
 +------------------------------+---------------------------------------------------------------------------------------------------+
 | ``@tool``                    | Enable the `Tool mode`_.                                                                          |
 +------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@onready``                 | Defer initialization of variable until the node is in the tree. See `Onready annotation`_.        |
+| ``@onready``                 | Defer initialization of variable until the node is in the tree. See                               |
+|                              | :ref:`doc_gdscript_onready_annotation`.                                                           |
 +------------------------------+---------------------------------------------------------------------------------------------------+
 | ``@icon(path)``              | Set the class icon to show in editor. To be used together with the ``class_name`` keyword.        |
 +------------------------------+---------------------------------------------------------------------------------------------------+
@@ -1726,8 +1727,10 @@ This also means that returning a signal from a function that isn't a coroutine w
           type-safety, because a function cannot say that returns an ``int`` but actually give a function state object
           during runtime.
 
-Onready annotation
-~~~~~~~~~~~~~~~~~~
+.. _doc_gdscript_onready_annotation:
+
+`@onready` annotation
+~~~~~~~~~~~~~~~~~~~~~
 
 When using nodes, it's common to desire to keep references to parts
 of the scene in a variable. As scenes are only warranted to be

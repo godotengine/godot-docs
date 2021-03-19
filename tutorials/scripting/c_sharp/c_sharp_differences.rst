@@ -128,6 +128,28 @@ This attribute should be used on a `delegate`, whose name signature will be used
 
 See also: :ref:`doc_c_sharp_signals`.
 
+`@onready` annotation
+---------------------
+
+GDScript has the ability to defer the initialization of a member variable until the ready function
+is called with `@onready` (cf. :ref:`doc_gdscript_onready_annotation`).
+For example:
+
+.. code-block:: gdscript
+
+    @onready var my_label = get_node("MyLabel")
+
+However C# does not have this ability. To achieve the same effect you need to do this.
+
+.. code-block:: csharp
+
+    private Label _myLabel;
+
+    public override void _Ready()
+    {
+        _myLabel = GetNode<Label>("MyLabel");
+    }
+
 Singletons
 ----------
 
