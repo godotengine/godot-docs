@@ -245,7 +245,7 @@ In ``new_game()``, update the score display and show the "Get Ready" message:
  .. code-tab:: csharp
 
         var hud = GetNode<HUD>("HUD");
-        hud.UpdateScore(score);
+        hud.UpdateScore(Score);
         hud.ShowMessage("Get Ready!");
 
 In ``game_over()`` we need to call the corresponding ``HUD`` function:
@@ -269,7 +269,7 @@ with the changing score:
 
  .. code-tab:: csharp
 
-        GetNode<HUD>("HUD").UpdateScore(score);
+        GetNode<HUD>("HUD").UpdateScore(Score);
 
 Now you're ready to play! Click the "Play the Project" button. You will be asked
 to select a main scene, so choose ``Main.tscn``.

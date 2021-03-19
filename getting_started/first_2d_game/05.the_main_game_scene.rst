@@ -93,10 +93,10 @@ Add a script to ``Main``. At the top of the script, we use ``export
     #pragma warning disable 649
         // We assign this in the editor, so we don't need the warning about not being assigned.
         [Export]
-        public PackedScene mobScene;
+        public PackedScene MobScene;
     #pragma warning restore 649
 
-        public int score;
+        public int Score;
 
         public override void _Ready()
         {
@@ -147,7 +147,7 @@ new game:
 
     public void NewGame()
     {
-        score = 0;
+        Score = 0;
 
         var player = GetNode<Player>("Player");
         var startPosition = GetNode<Position2D>("StartPosition");
@@ -180,7 +180,7 @@ the other two timers. ``ScoreTimer`` will increment the score by 1.
 
     public void OnScoreTimerTimeout()
     {
-        score++;
+        Score++;
     }
 
 In ``_on_MobTimer_timeout()``, we will create a mob instance, pick a random
@@ -229,7 +229,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
         mobSpawnLocation.Offset = GD.Randi();
 
         // Create a Mob instance and add it to the scene.
-        var mob = (Mob)mobScene.Instance();
+        var mob = (Mob)MobScene.Instance();
         AddChild(mob);
 
         // Set the mob's direction perpendicular to the path direction.
@@ -243,7 +243,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
         mob.Rotation = direction;
 
         // Choose the velocity.
-        var velocity = new Vector2((float)GD.RandRange(mob.minSpeed, mob.maxSpeed), 0);
+        var velocity = new Vector2((float)GD.RandRange(mob.MinSpeed, mob.MaxSpeed), 0);
         mob.LinearVelocity = velocity.Rotated(direction);
     }
 
