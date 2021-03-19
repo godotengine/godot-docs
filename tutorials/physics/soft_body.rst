@@ -52,7 +52,7 @@ To create pinned joints, select the upper vertices in the ``SoftBody`` node:
 
 .. image:: img/softbody_cloak_pinned.png
 
-The pinned joints can be find in ``SoftBody``'s ``Attachments`` property, choose the ``BoneAttachment`` as the ``SpatialAttachment`` for each pinned joints, the pinned joints are now attached to the neck.
+The pinned joints can be found in ``SoftBody``'s ``Attachments`` property, choose the ``BoneAttachment`` as the ``SpatialAttachment`` for each pinned joints, the pinned joints are now attached to the neck.
 
 .. image:: img/softbody_cloak_pinned_attach.png
 
