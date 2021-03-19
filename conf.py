@@ -79,7 +79,7 @@ master_doc = "index"
 # General information about the project
 project = "Godot Engine"
 copyright = (
-    "2014-2020, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0)"
+    "2014-2021, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0)"
 )
 author = "Juan Linietsky, Ariel Manzur and the Godot community"
 
