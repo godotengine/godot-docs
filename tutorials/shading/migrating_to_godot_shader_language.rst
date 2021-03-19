@@ -70,7 +70,7 @@ fragment shader, rename ``main`` to ``fragment``.
 Constants
 ^^^^^^^^^
 
-Global array constants are not supported in Godot 3.2.x. You can fake the functionality by using a uniform
+Global array constants are not supported in Godot 3.x. You can fake the functionality by using a uniform
 initialized to the value, but you will not benefit from the increased speed from using a constant.
 
 Macros

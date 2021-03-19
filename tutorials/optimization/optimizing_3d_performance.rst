@@ -31,7 +31,7 @@ prepass* and is enabled by default in Godot when using the GLES3 renderer.
 However, unneeded objects are still reducing performance.
 
 One way we can potentially reduce the amount to be rendered is to take advantage
-of occlusion. As of Godot 3.2.2, there is no built in support for occlusion in
+of occlusion. As of Godot 3.3, there is no built in support for occlusion in
 Godot. However, with careful design you can still get many of the advantages.
 
 For instance, in our city street scenario, you may be able to work out in advance

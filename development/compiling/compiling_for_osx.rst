@@ -36,7 +36,7 @@ To compile for Intel (x86-64) powered Macs, use::
 
     scons platform=osx arch=x86_64 --jobs=$(sysctl -n hw.logicalcpu)
 
-To compile for Apple Silicon (ARM64) powered Macs, use (only for Godot 3.2.3+)::
+To compile for Apple Silicon (ARM64) powered Macs, use::
 
     scons platform=osx arch=arm64 --jobs=$(sysctl -n hw.logicalcpu)
 

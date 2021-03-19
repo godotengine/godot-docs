@@ -8,7 +8,7 @@ This page aims to list all features currently supported by Godot.
 .. note::
 
     This page lists features supported by the current stable version of
-    Godot (3.2). `More features <https://docs.godotengine.org/en/latest/about/list_of_features.html>`__
+    Godot (3.3). `More features <https://docs.godotengine.org/en/latest/about/list_of_features.html>`__
     are available in the latest development version (4.0).
 
 Features
@@ -370,7 +370,7 @@ Import
 
    - WAV with optional IMA-ADPCM compression.
    - Ogg Vorbis.
-   - MP3 (only in Godot 3.2.4 and later).
+   - MP3.
 
 - *3D scenes:*
 
