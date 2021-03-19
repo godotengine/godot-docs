@@ -48,7 +48,7 @@ Each file format consist of a data container and a ``ResourceFormatLoader``.
 
 ResourceFormatLoaders are usually simple classes which return all the
 necessary metadata for supporting new extensions in Godot. The
-class must the return the format name and the extension string.
+class must return the format name and the extension string.
 
 In addition, ResourceFormatLoaders must convert file paths into
 resources with the ``load`` function. To load a resource, ``load`` must
