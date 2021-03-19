@@ -1647,8 +1647,10 @@ regardless of whether coroutines were used internally. Note that using
 ``while`` would be redundant here as the ``completed`` signal is only emitted
 when the function didn't yield anymore.
 
-Onready keyword
-~~~~~~~~~~~~~~~
+.. _doc_gdscript_onready_keyword:
+
+`onready` keyword
+~~~~~~~~~~~~~~~~~
 
 When using nodes, it's common to desire to keep references to parts
 of the scene in a variable. As scenes are only warranted to be
