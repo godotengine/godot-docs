@@ -6,8 +6,7 @@ Importing audio samples
 Supported files
 ---------------
 
-Godot provides three options to import your audio data: WAV, Ogg Vorbis
-and MP3.
+Godot provides two options to import your audio data: WAV and Ogg Vorbis.
 
 Each has different advantages.
 
@@ -17,17 +16,10 @@ Each has different advantages.
 * Ogg Vorbis files use a stronger compression that results in much
   smaller file size, but require significantly more processing power to
   play back.
-* MP3 files use better compression than WAV with IMA-ADPCM, but worse than
-  Ogg Vorbis. This means that a MP3 file with roughly equal quality to
-  Ogg Vorbis will be significantly larger. On the bright side, MP3 requires
-  less CPU usage to play back compared to Ogg Vorbis. This makes MP3 useful
-  for mobile and HTML5 projects where CPU resources are limited, especially
-  when playing multiple compressed sounds at the same time (such as long
-  ambient sounds).
 
 .. note::
 
-    MP3 support is only available in Godot 3.2.4 and later.
+    MP3 support is available in Godot 3.3 and later.
 
 Here is a comparative chart.
 
@@ -39,8 +31,6 @@ Here is a comparative chart.
 | WAV 16-bit, 44 kHz, mono    | 88 KB             |
 +-----------------------------+-------------------+
 | WAV 16-bit, IMA-ADPCM, mono | 22 KB             |
-+-----------------------------+-------------------+
-| MP3 192 Kb/s, stereo        | 24 KB             |
 +-----------------------------+-------------------+
 | Ogg Vorbis 128 Kb/s, stereo | 16 KB             |
 +-----------------------------+-------------------+
