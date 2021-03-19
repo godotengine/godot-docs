@@ -128,11 +128,11 @@ This attribute should be used on a `delegate`, whose name signature will be used
 
 See also: :ref:`doc_c_sharp_signals`.
 
-Onready annotation
-------------------
+`@onready` annotation
+---------------------
 
 GDScript has the ability to defer the initialization of a member variable until the ready function
-is called with `@onready`. (You can find out more :ref:`(here) <doc_onready_annotation>`.
+is called with `@onready` (cf. :ref:`doc_onready_annotation`).
 For example:
 
 .. code-block:: gdscript

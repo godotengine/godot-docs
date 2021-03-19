@@ -1728,8 +1728,8 @@ This also means that returning a signal from a function that isn't a coroutine w
 
 .. _doc_onready_annotation:
 
-Onready annotation
-~~~~~~~~~~~~~~~~~~
+`@onready` annotation
+~~~~~~~~~~~~~~~~~~~~~
 
 When using nodes, it's common to desire to keep references to parts
 of the scene in a variable. As scenes are only warranted to be
