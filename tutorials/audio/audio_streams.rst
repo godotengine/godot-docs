@@ -15,7 +15,7 @@ AudioStream
 
 An audio stream is an abstract object that emits sound. The sound can come from
 many places, but is most commonly loaded from the filesystem. Audio files can be
-loaded as AudioStreams and placed inside an AudioStreamPlayer. You can find a
+loaded as AudioStreams and placed inside an AudioStreamPlayer. You can find
 information on supported formats and differences in :ref:`doc_importing_audio_samples`.
 
 There are other types of AudioStreams, such as AudioStreamRandomPitch.
