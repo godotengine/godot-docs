@@ -25,10 +25,6 @@ Each has different advantages.
   when playing multiple compressed sounds at the same time (such as long
   ambient sounds).
 
-.. note::
-
-    MP3 support is only available in Godot 3.2.4 and later.
-
 Here is a comparative chart.
 
 +-----------------------------+-------------------+
