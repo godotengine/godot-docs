@@ -51,11 +51,11 @@ Setting up the buildsystem
 -  Install the necessary SDK components in this folder:
 
     -  Accept the SDK component licenses by running the following command 
-       from the root of the SDK directory, then answering all the prompts with ``y``:
+       where ``android_sdk_path`` is the path to the Android SDK, then answering all the prompts with ``y``:
 
     ::
 
-        tools/bin/sdkmanager --licenses
+        tools/bin/sdkmanager --sdk_root=<android_sdk_path> --licenses
 
     -  Complete setup by running the following command where ``android_sdk_path`` is the path to the Android SDK.
 
