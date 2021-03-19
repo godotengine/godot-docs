@@ -60,7 +60,8 @@ Code-wise, we're going to do two things: emit a signal we'll later use
 to end the game and destroy the player. We can wrap these operations in
 a ``die()`` function that helps us put a descriptive label on the code.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    # Emitted when the player was hit by a mob.
    # Put this at the top of the script.
@@ -75,6 +76,28 @@ a ``die()`` function that helps us put a descriptive label on the code.
 
    func _on_MobDetector_body_entered(_body):
        die()
+
+ .. code-tab:: csharp
+
+    // Don't forget to rebuild the project so the editor knows about the new signal.
+
+    // Emitted when the player was hit by a mob.
+    [Signal]
+    public delegate void Hit();
+
+    // ...
+    
+    private void Die()
+    {
+        EmitSignal(nameof(Hit));
+        QueueFree();
+    }
+
+    // We also specified this function name in PascalCase in the editor's connection window
+    public void OnMobDetectorBodyEntered(Node body)
+    {
+        Die();
+    }
 
 Try the game again by pressing :kbd:`F5`. If everything is set up correctly,
 the character should die when an enemy runs into it.
@@ -97,10 +120,19 @@ connect its ``hit`` signal to the *Main* node.
 
 Get and stop the timer in the ``_on_Player_hit()`` function.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    func _on_Player_hit():
        $MobTimer.stop()
+
+ .. code-tab:: csharp
+
+    // We also specified this function name in PascalCase in the editor's connection window
+    public void OnPlayerHit()
+    {
+        GetNode<Timer>("MobTimer").Stop();
+    }
 
 If you try the game now, the monsters will stop spawning when you die,
 and the remaining ones will leave the screen.
@@ -120,7 +152,8 @@ for reference. You can use them to compare and check your code.
 
 Starting with ``Main.gd``.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    extends Node
 
@@ -137,6 +170,7 @@ Starting with ``Main.gd``.
 
        # Choose a random location on Path2D.
        var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
+       # And give it a random offset.
        mob_spawn_location.unit_offset = randf()
 
        var player_position = $Player.transform.origin
@@ -148,11 +182,53 @@ Starting with ``Main.gd``.
    func _on_Player_hit():
        $MobTimer.stop()
 
+ .. code-tab:: csharp
+
+    public class Main : Node
+    {
+    #pragma warning disable 649
+        [Export]
+        public PackedScene MobScene;
+    #pragma warning restore 649
+    
+        public override void _Ready()
+        {
+            GD.Randomize();
+        }
+    
+        public void OnMobTimerTimeout()
+        {
+            // Create a mob instance and add it to the scene.
+            var mob = (Mob)MobScene.Instance();
+    
+            // Choose a random location on Path2D.
+            // We stire the reference to the SpawnLocation node.
+            var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
+            // And give it a random offset.
+            mobSpawnLocation.UnitOffset = GD.Randf();
+    
+            Vector3 playerPosition = GetNode<Player>("Player").Transform.origin;
+    
+            AddChild(mob);
+            mob.Initialize(mobSpawnLocation.Translation, playerPosition);
+        }
+    
+        public void OnPlayerHit()
+        {
+            GetNode<Timer>("MobTimer").Stop();
+        }
+    }
+ 
+
 Next is ``Mob.gd``.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    extends KinematicBody
+
+   # Emitted when the player jumped on the mob.
+   signal squashed
 
    # Minimum speed of the mob in meters per second.
    export var min_speed = 10
@@ -176,12 +252,64 @@ Next is ``Mob.gd``.
        velocity = velocity.rotated(Vector3.UP, rotation.y)
 
 
+    func squash():
+       emit_signal("squashed")
+       queue_free()
+
+
    func _on_VisibilityNotifier_screen_exited():
        queue_free()
 
+ .. code-tab:: csharp
+
+    public class Mob : KinematicBody
+    {
+        // Emitted when the played jumped on the mob.
+        [Signal]
+        public delegate void Squashed();
+
+        // Minimum speed of the mob in meters per second
+        [Export]
+        public int MinSpeed = 10;
+        // Maximum speed of the mob in meters per second
+        [Export]
+        public int MaxSpeed = 18;
+
+        private Vector3 _velocity = Vector3.Zero;
+
+        public override void _PhysicsProcess(float delta)
+        {
+            MoveAndSlide(_velocity);
+        }
+
+        public void Initialize(Vector3 startPosition, Vector3 playerPosition)
+        {
+            Translation = startPosition;
+            LookAt(playerPosition, Vector3.Up);
+            RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
+
+            float randomSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);
+            _velocity = Vector3.Forward * randomSpeed;
+            _velocity = _velocity.Rotated(Vector3.Up, Rotation.y);
+        }
+
+        public void Squash()
+        {
+            EmitSignal(nameof(Squashed));
+            QueueFree();
+        }
+
+        public void OnVisibilityNotifierScreenExited()
+        {
+            QueueFree();
+        }
+    }
+ 
+ 
 Finally, the longest script, ``Player.gd``.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    extends KinematicBody
 
@@ -242,6 +370,95 @@ Finally, the longest script, ``Player.gd``.
 
    func _on_MobDetector_body_entered(_body):
        die()
+
+ .. code-tab:: csharp
+
+    public class Player : KinematicBody
+    {
+        // Emitted when the player was hit by a mob.
+        [Signal]
+        public delegate void Hit();
+
+        // How fast the player moves in meters per second.
+        [Export]
+        public int Speed = 14;
+        // The downward acceleration when in the air, in meters per second squared.
+        [Export]
+        public int FallAcceleration = 75;
+        // Vertical impulse applied to the character upon jumping in meters per second.
+        [Export]
+        public int JumpImpulse = 20;
+        // Vertical impulse applied to the character upon bouncing over a mob in meters per second.
+        [Export]
+        public int BounceImpulse = 16;
+
+        private Vector3 _velocity = Vector3.Zero;
+
+        public override void _PhysicsProcess(float delta)
+        {
+            var direction = Vector3.Zero;
+
+            if (Input.IsActionPressed("move_right"))
+            {
+                direction.x += 1f;
+            }
+            if (Input.IsActionPressed("move_left"))
+            {
+                direction.x -= 1f;
+            }
+            if (Input.IsActionPressed("move_back"))
+            {
+                direction.z += 1f;
+            }
+            if (Input.IsActionPressed("move_forward"))
+            {
+                direction.z -= 1f;
+            }
+
+            if (direction != Vector3.Zero)
+            {
+                direction = direction.Normalized();
+                GetNode<Spatial>("Pivot").LookAt(Translation + direction, Vector3.Up);
+            }
+
+            _velocity.x = direction.x * Speed;
+            _velocity.z = direction.z * Speed;
+            
+            // Jumping.
+            if (IsOnFloor() && Input.IsActionJustPressed("jump"))
+            {
+                _velocity.y += JumpImpulse;
+            }
+            
+            _velocity.y -= FallAcceleration * delta;
+            _velocity = MoveAndSlide(_velocity, Vector3.Up);
+
+            for (int index = 0; index < GetSlideCount(); index++)
+            {
+                KinematicCollision collision = GetSlideCollision(index);
+                if (collision.Collider is Mob mob && mob.IsInGroup("mob"))
+                {
+                    if (Vector3.Up.Dot(collision.Normal) > 0.1f)
+                    {
+                        mob.Squash();
+                        _velocity.y = BounceImpulse;
+                    }
+                }
+            }
+        }
+
+        private void Die()
+        {
+            EmitSignal(nameof(Hit));
+            QueueFree();
+        }
+
+        public void OnMobDetectorBodyEntered(Node body)
+        {
+            Die();
+        }
+    }
+
 
 See you in the next lesson to add the score and the retry option.
 
