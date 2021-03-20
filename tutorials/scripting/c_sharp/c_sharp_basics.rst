@@ -285,8 +285,8 @@ the ``.csproj`` file located in the project root:
         ...
     </Project>
 
-When Godot builds your project, the .NET Core SDK automatically downloads any
-new packages. As of Godot 3.2.3, no special commands are necessary.
+As of Godot 3.2.3, Godot automatically downloads and sets up newly added NuGet
+packages the next time it builds the project.
 
 Profiling your C# code
 ----------------------
