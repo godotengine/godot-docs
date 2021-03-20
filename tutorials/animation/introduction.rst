@@ -1,7 +1,7 @@
-.. _doc_introduction_2d_animation:
+.. _doc_introduction_animation:
 
-Introduction to the 2D animation features
-=========================================
+Introduction to the animation features
+======================================
 
 Overview
 --------
