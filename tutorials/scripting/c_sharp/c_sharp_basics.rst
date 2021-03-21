@@ -280,23 +280,13 @@ the ``.csproj`` file located in the project root:
     :emphasize-lines: 2
 
         <ItemGroup>
-            <PackageReference Include="Newtonsoft.Json">
-              <Version>11.0.2</Version>
-            </PackageReference>
+            <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
         </ItemGroup>
         ...
     </Project>
 
-.. note::
-    By default, tools like NuGet put ``Version`` as an attribute of the ```PackageReference``` Node. **You must manually create a Version node as shown above.**  This is because the version of MSBuild used requires this. (This will be fixed in Godot 4.0.)
-
-Whenever packages are added or modified, run ``nuget restore`` (*not* ``dotnet restore``) in the root of the
-project directory. To ensure that NuGet packages will be available for
-msbuild to use, run:
-
-.. code-block:: none
-
-    msbuild /t:restore
+As of Godot 3.2.3, Godot automatically downloads and sets up newly added NuGet
+packages the next time it builds the project.
 
 Profiling your C# code
 ----------------------
