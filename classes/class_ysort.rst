@@ -27,7 +27,7 @@ Properties
 | :ref:`bool<class_bool>` | :ref:`sort_enabled<class_YSort_property_sort_enabled>` | ``true`` |
 +-------------------------+--------------------------------------------------------+----------+
 
-Property Descriptions
+Property descriptions
 ---------------------
 
 .. _class_YSort_property_sort_enabled:
