@@ -183,3 +183,21 @@ depending on your needs.
 - Compressed format. Smaller file size, but slower to read/write.
 - Readable and writable using tools normally present on the user's operating system.
   This can be useful to make modding easier (see also :ref:`doc_exporting_pcks`).
+
+.. warning::
+
+    Due to a `known bug <https://github.com/godotengine/godot/pull/42123>`__,
+    when using a ZIP file as a pack file, the exported binary will not try to use
+    it automatically. Therefore, you have to create a *launcher script* that
+    the player can double-click or run from a terminal to launch the project::
+
+        :: launch.bat (Windows)
+        @echo off
+        my_project.exe --main-pack my_project.zip
+
+        # launch.sh (Linux)
+        ./my_project.x86_64 --main-pack my_project.zip
+
+    Save the launcher script and place it in the same folder as the exported binary.
+    On Linux, make sure to give executable permissions to the launcher script using
+    the command ``chmod +x launch.sh``.
