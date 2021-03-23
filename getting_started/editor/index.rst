@@ -6,7 +6,6 @@ Editor manual
    :maxdepth: 1
    :name: toc-learn-editor
 
-   using_the_web_editor
    command_line_tutorial
    external_editor
    default_key_mapping

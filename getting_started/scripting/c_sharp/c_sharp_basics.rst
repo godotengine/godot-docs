@@ -45,7 +45,7 @@ Install the latest stable version of
 `.NET Core SDK <https://dotnet.microsoft.com/download/dotnet-core>`__
 (3.1 as of writing).
 
-As of Godot 3.2.3, installing Mono SDK is not a requirement anymore,
+From Godot 3.2.3 onwards, installing Mono SDK is not a requirement anymore,
 except it is required if you are building the engine from source.
 
 Godot bundles the parts of Mono needed to run already compiled games,
@@ -254,9 +254,8 @@ take a look over the official
   can use any custom properties or methods without this limitation.
 
 
-As of Godot 3.2.2, exporting Mono projects is supported for desktop platforms
-(Linux, Windows and macOS), Android, HTML5, and iOS. The only platform not
-supported yet is UWP.
+Exporting Mono projects is supported for desktop platforms (Linux, Windows and
+macOS), Android, HTML5, and iOS. The only platform not supported yet is UWP.
 
 Performance of C# in Godot
 --------------------------
