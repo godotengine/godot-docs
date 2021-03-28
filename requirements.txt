@@ -7,7 +7,8 @@ sphinx==3.5.2
 sphinx_rtd_theme==0.5.1
 
 # Code tabs extension for GDScript/C#
-sphinx-tabs==2.1.0
+# Stay on 1.3.0 until https://github.com/readthedocs/readthedocs-sphinx-search/issues/82 is fixed.
+sphinx-tabs==1.3.0  # pyup: ignore
 
 # Custom 404 error page (more useful than the default)
 sphinx-notfound-page==0.6
