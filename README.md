@@ -4,6 +4,12 @@ This repository contains the source files of [Godot Engine](https://godotengine.
 
 They are meant to be parsed with the [Sphinx](https://www.sphinx-doc.org/) documentation builder to build the HTML documentation on [Godot's website](https://docs.godotengine.org).
 
+## Download for offline use
+
+You can [download an HTML copy](https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/3.3/godot-docs-html.zip)
+for offline reading (updated every Monday). Extract the ZIP archive then open
+the top-level `index.html` in a web browser.
+
 ## Theming
 
 The Godot documentation uses the default ``sphinx_rtd_theme`` with many
