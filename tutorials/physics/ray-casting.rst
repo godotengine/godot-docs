@@ -182,7 +182,7 @@ collision object node:
         public override void _PhysicsProcess(float delta)
         {
             var spaceState = GetWorld2d().DirectSpaceState;
-            var result = spaceState.IntersectRay(globalPosition, enemyPosition, new object[] { this });
+            var result = spaceState.IntersectRay(globalPosition, enemyPosition, new Godot.Collections.Array { this });
         }
     }
 
@@ -217,7 +217,7 @@ member variable:
         {
             var spaceState = GetWorld2d().DirectSpaceState;
             var result = spaceState.IntersectRay(globalPosition, enemyPosition,
-                            new object[] { this }, CollisionMask);
+                            new Godot.Collections.Array { this }, CollisionMask);
         }
     }
 
