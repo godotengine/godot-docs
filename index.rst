@@ -38,6 +38,10 @@ The table of contents below and in the sidebar should let you easily access the
 documentation for your topic of interest. You can also use the search function
 in the top left corner.
 
+You can also `download an HTML copy <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/3.2/godot-docs-html.zip>`__
+for offline reading (updated every Monday). Extract the ZIP archive then open
+the top-level ``index.html`` in a web browser.
+
 .. note:: Godot Engine is an open source project developed by a community of
           volunteers. The documentation team can always use your
           feedback and help to improve the tutorials and class reference. If
@@ -51,8 +55,8 @@ in the top left corner.
           <https://hosted.weblate.org/engage/godot-engine/>`_ into your
           language, or talk to us on either the ``#documentation``
           channel on `Discord <https://discord.gg/zH7NUgz>`_, or the
-          ``#godotengine-doc`` channel on `irc.freenode.net
-          <http://webchat.freenode.net/?channels=#godotengine-doc>`_!
+          ``#documentation`` channel on the `Godot Contributors Chat
+          <https://chat.godotengine.org/>`_!
 
 .. centered:: |weblate_widget|
 
