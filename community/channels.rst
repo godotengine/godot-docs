@@ -43,11 +43,8 @@ Other chats
 Language-based communities
 --------------------------
 
-- Brazilian Portuguese: `Godot Brasil (Discord) <https://discord.gg/gWmQKBv>`_
-- French: `Godot Francophone Officiel (Discord) <https://discord.gg/3jvf3XN>`_
-- French: `SoloCode Godot (Discord) <https://discord.gg/gZ3QJ5T>`_
-- German: `Deutsche Godot Community (Discord) <https://discord.gg/Tr7Ma6E>`_
-- Swedish: `Swedish Godot Community (Discord) <https://discord.gg/6ZsgWmH>`_
+See the `User groups <https://godotengine.org/community/user-groups>` page of
+the website for a list of local communities.
 
 Social networks
 ---------------
