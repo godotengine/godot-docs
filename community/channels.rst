@@ -48,6 +48,7 @@ Language-based communities
 - French: `SoloCode Godot (Discord) <https://discord.gg/gZ3QJ5T>`_
 - German: `Deutsche Godot Community (Discord) <https://discord.gg/Tr7Ma6E>`_
 - Swedish: `Swedish Godot Community (Discord) <https://discord.gg/6ZsgWmH>`_
+- Russian: `Godot Engine Russia (Discord) <https://discord.gg/UnyhPBdV>`_
 
 Social networks
 ---------------
