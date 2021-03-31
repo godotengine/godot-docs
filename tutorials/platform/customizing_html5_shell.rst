@@ -19,9 +19,9 @@ Some use-cases where customizing the default page is useful include:
 - Passing custom command line arguments, e.g. ``-s`` to start a ``MainLoop`` script.
 
 The default HTML page is available in the Godot Engine repository at
-`/misc/dist/html/full-size.html <https://github.com/godotengine/godot/blob/master/misc/dist/html/full-size.html>`__
+`/misc/dist/html/full-size.html <https://github.com/godotengine/godot/blob/3.2/misc/dist/html/full-size.html>`__
 and can be used as a reference implementation. Another sample HTML page is available at
-`/misc/dist/html/fixed-size.html <https://github.com/godotengine/godot/blob/master/misc/dist/html/fixed-size.html>`__.
+`/misc/dist/html/fixed-size.html <https://github.com/godotengine/godot/blob/3.2/misc/dist/html/fixed-size.html>`__.
 It differs from the default one by having a fixed size canvas area and an output widget below it.
 
 .. note:: It is recommended to use developer tools provided by browser vendors to debug
