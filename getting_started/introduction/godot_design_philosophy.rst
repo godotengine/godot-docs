@@ -141,6 +141,15 @@ programmers work on features they may need themselves, so you'll see
 improvements in all corners of the engine at the same time in every
 major release.
 
+.. note::
+
+   Community-driven does not mean that final decisions are made by the community
+   at large. Rather, decisions are made by trusted community members who have
+   shown dedication, skill, and leadership within the community. However,
+   community feedback often directly guides this decision-making process, which
+   in turn allows the community to shape Godot's future as a truly
+   community-driven project.
+
 The Godot editor is a Godot game
 --------------------------------
 
