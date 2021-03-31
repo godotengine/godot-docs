@@ -37,6 +37,12 @@ For any stable release, visit the `release page <https://github.com/godotengine/
 and click on the link for the release you want.
 You can then download and extract the source from the download link on the page.
 
+With ``git`` you can also clone a stable release by specifying it's tag:
+
+::
+
+    git clone https://github.com/godotengine/godot.git --branch <tag_name>
+
 There are also generally branches besides ``master`` for each major version.
 
 After downloading the Godot source code,
