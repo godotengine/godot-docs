@@ -1,11 +1,32 @@
-.. _doc_services_for_ios:
+.. _doc_plugins_for_ios:
 
-Services for iOS
-================
+Plugins for iOS
+===============
 
-At the moment, there are two iOS APIs partially implemented, GameCenter
-and Storekit. Both use the same model of asynchronous calls explained
-below.
+At the moment Godot provides StoreKit, GameCenter, iCloud services plugins.
+They are using same model of asynchronous calls explained below.
+
+ARKit and Camera access are also provided as plugins.
+
+Accessing plugin singletons
+---------------------------
+
+To access plugin functionality, you first need to check that the plugin is
+exported and available by calling the `Engine.has_singleton()` function, which
+returns a registered singleton.
+
+Here's an example of how to do this in GDScript:
+
+::
+
+    var in_app_store
+
+    func _ready():
+        if Engine.has_singleton("InAppStore"):
+            in_app_store = Engine.get_singleton("InAppStore")
+
+        else:
+            print("iOS IAP plugin is not exported.")
 
 Asynchronous methods
 --------------------
@@ -28,7 +49,7 @@ the 'pending events' queue. Example:
 ::
 
     func on_purchase_pressed():
-        var result = InAppStore.purchase( { "product_id": "my_product" } )
+        var result = in_app_store.purchase({ "product_id": "my_product" })
         if result == OK:
             animation.play("busy") # show the "waiting for response" animation
         else:
@@ -36,8 +57,8 @@ the 'pending events' queue. Example:
 
     # put this on a 1 second timer or something
     func check_events():
-        while InAppStore.get_pending_event_count() > 0:
-            var event = InAppStore.pop_pending_event()
+        while in_app_store.get_pending_event_count() > 0:
+            var event = in_app_store.pop_pending_event()
             if event.type == "purchase":
                 if event.result == "ok":
                     show_success(event.product_id)
@@ -61,11 +82,10 @@ The pending event interface consists of two methods:
 Store Kit
 ---------
 
-Implemented in ``platform/iphone/in_app_store.mm``.
+Implemented in `Godot iOS InAppStore plugin <https://github.com/godotengine/godot-ios-plugins/blob/master/plugins/inappstore/in_app_store.mm>`_.
 
-The Store Kit API is accessible through the "InAppStore" singleton (will
-always be available from gdscript). It is initialized automatically. It
-has three methods for purchasing:
+The Store Kit API is accessible through the ``InAppStore`` singleton.
+It is initialized automatically.
 
 -  ``Error purchase(Variant p_params);``
 -  ``Error request_product_info(Variant p_params);``
@@ -173,10 +193,10 @@ The response events will be dictionaries with the following fields:
 Game Center
 -----------
 
-Implemented in ``platform/iphone/game_center.mm``.
+Implemented in `Godot iOS GameCenter plugin <https://github.com/godotengine/godot-ios-plugins/blob/master/plugins/gamecenter/game_center.mm>`_.
 
-The Game Center API is available through the "GameCenter" singleton. It
-has 9 methods:
+The Game Center API is available through the ``GameCenter`` singleton. It
+has the following methods:
 
 -  ``Error authenticate();``
 -  ``bool is_authenticated();``
@@ -448,34 +468,3 @@ On close:
       "type": "show_game_center",
       "result": "ok",
     }
-
-Multi-platform games
---------------------
-
-When working on a multi-platform game, you won't always have the
-"GameCenter" singleton available (for example when running on PC or
-Android). Because the gdscript compiler looks up the singletons at
-compile time, you can't just query the singletons to see and use what
-you need inside a conditional block, you need to also define them as
-valid identifiers (local variable or class member). This is an example
-of how to work around this in a class:
-
-::
-
-    var GameCenter = null # define it as a class member
-
-    func post_score(p_score):
-        if GameCenter == null:
-            return
-        GameCenter.post_score( { "value": p_score, "category": "my_leaderboard" } )
-
-    func check_events():
-        while GameCenter.get_pending_event_count() > 0:
-            # do something with events here
-            pass
-
-    func _ready():
-        # check if the singleton exists
-        if Globals.has_singleton("GameCenter"):
-            GameCenter = Globals.get_singleton("GameCenter")
-            # connect your timer here to the "check_events" function
