@@ -95,15 +95,15 @@ A good place to start is by searching for issues tagged as `junior jobs <https:/
              :ref:`doc_code_style_guidelines`.
 
 All pull requests must go through a review process before being accepted.
-Depending on the scope of the changes it may take some time for a maintainer
+Depending on the scope of the changes, it may take some time for a maintainer
 responsible for the modified part of the engine to provide their review.
 We value all of our contributors and ask them to be patient in the meantime,
-as it is expected that in an open source project like Godot there is going to be
+as it is expected that in an open source project like Godot, there is going to be
 way more contributions than people validating them.
 
-To make sure that your time and efforts aren't wasted it is recommended to vet the idea
-first before implementing it and putting it for a review as a PR. To that end Godot
-has a `proposal system <https://github.com/godotengine/godot-proposals>`_, and its
+To make sure that your time and efforts aren't wasted, it is recommended to vet the idea
+first before implementing it and putting it for a review as a PR. To that end, Godot
+has a `proposal system <https://github.com/godotengine/godot-proposals>`_. Its
 usage is encouraged to plan changes and discuss them with the community. Implementation
 details can also be discussed with other contributors on the `Godot Contributors Chat <https://chat.godotengine.org/>`_.
 
