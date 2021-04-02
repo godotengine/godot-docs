@@ -89,7 +89,7 @@ the latest 3.x stable branch by the time Godot 4.0 is released.
 +-------------+-------------------+--------------------------------------------------------------------------+
 | Godot 4.0   | ~2021 (see below) | |unstable| *Current focus of development (unstable).*                    |
 +-------------+-------------------+--------------------------------------------------------------------------+
-| Godot 3.3   | March/April 2021  | |supported| Receives bug, security and platform support fixes, as well   |
+| Godot 3.3   | April 2021        | |supported| Receives bug, security and platform support fixes, as well   |
 |             |                   | as backwards-compatible usability enhancements.                          |
 +-------------+-------------------+--------------------------------------------------------------------------+
 | Godot 3.2   | January 2020      | |partial| Only critical, security and platform support fixes             |
