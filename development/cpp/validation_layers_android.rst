@@ -40,7 +40,6 @@ Your Godot source directory tree should look like on the example below::
 
 If the subdirectory ``libs/debug/vulkan_validation_layers`` doesn't exist, create it.
 
-
 Compile and run the Android app
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
