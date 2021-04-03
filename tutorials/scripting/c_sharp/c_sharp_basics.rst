@@ -118,11 +118,12 @@ In Godot's **Editor → Editor Settings** menu:
 In Visual Studio Code:
 
 - Install the `C# <https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp>`__ extension.
-- Install the `godot-tools <https://marketplace.visualstudio.com/items?itemName=geequlim.godot-tools>`__ extension.
+- Install the `Mono Debug <https://marketplace.visualstudio.com/items?itemName=ms-vscode.mono-debug>`__ extension.
 - Install the `C# Tools for Godot <https://marketplace.visualstudio.com/items?itemName=neikeq.godot-csharp-vscode>`__ extension.
 
-Next, follow the instructions found in the
-:ref:`doc_c_sharp_configuring_vs_code_for_debugging` section below.
+To configure a project for debugging open the Godot project folder in VS Code.
+Go to the Run tab and click on **create a launch.json file**. Select **C# Godot** from the dropdown
+menu. Now, when you start the debugger in VS Code your Godot project will run.
 
 Visual Studio (Windows only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,8 +143,10 @@ In Godot's **Editor → Editor Settings** menu:
 
 - Set **Mono** -> **Editor** -> **External Editor** to **Visual Studio**.
 
-Next, follow the instructions found in the
-:ref:`doc_c_sharp_configuring_vs_2019_for_debugging` section below.
+Next, you need to download the Godot Visual Studio extension from github
+`here <https://github.com/godotengine/godot-csharp-visualstudio/releases>`__.
+Double click on the downloaded file and follow the installation process.
+
 
 Creating a C# script
 --------------------
@@ -226,8 +229,9 @@ For more information, see the :ref:`doc_c_sharp_differences` page.
 
     You need to (re)build the project assemblies whenever you want to see new
     exported variables or signals in the editor. This build can be manually
-    triggered by clicking the word **Mono** at the bottom of the editor window
-    to reveal the Mono panel, then clicking the **Build Project** button.
+    triggered by clicking the word **Build** in the top right corner of the
+    editor. You can also click **Mono** at the bottom of the editor window
+    to reveal the Mono panel, then click the **Build Project** button.
 
     You will also need to rebuild the project assemblies to apply changes in
     "tool" scripts.
@@ -293,38 +297,3 @@ Profiling your C# code
 
 - `Mono log profiler <https://www.mono-project.com/docs/debug+profile/profile/profiler/>`_ is available for Linux and macOS. Due to a Mono change, it does not work on Windows currently.
 - External Mono profiler like `JetBrains dotTrace <https://www.jetbrains.com/profiler/>`_ can be used as described `here <https://github.com/godotengine/godot/pull/34382>`_.
-
-.. _doc_c_sharp_configuring_vs_2019_for_debugging:
-
-Configuring VS 2019 for debugging
----------------------------------
-
-.. note::
-
-    Godot has built-in support for workflows involving several popular C# IDEs.
-    Built-in support for Visual Studio will be including in future versions,
-    but in the meantime, the steps below can let you configure VS 2019 for use
-    with Godot C# projects.
-
-1. Install VS 2019 with ``.NET desktop development`` and ``Desktop development with C++`` workloads selected.
-2. **Ensure that you do not have Xamarin installed.** Do not choose the ``Mobile development with .NET`` workload. Xamarin changes the DLLs used by MonoDebugger, which breaks debugging.
-3. Install the `VSMonoDebugger extension <https://marketplace.visualstudio.com/items?itemName=GordianDotNet.VSMonoDebugger0d62>`_.
-4. In VS 2019 --> Extensions --> Mono --> Settings:
-
-   - Select ``Debug/Deploy to local Windows``.
-   - Leave ``Local Deploy Path`` blank.
-   - Set the ``Mono Debug Port`` to the port in Godot --> Project --> Project Settings --> Mono --> Debugger Agent.
-   - Also select ``Wait for Debugger`` in the Godot Mono options. `This Godot Addon <https://godotengine.org/asset-library/asset/435>`_ may be helpful.
-
-5. Run the game in Godot. It should hang at the Godot splash screen while it waits for your debugger to attach.
-6. In VS 2019, open your project and choose Extensions --> Mono --> Attach to Mono Debugger.
-
-.. _doc_c_sharp_configuring_vs_code_for_debugging:
-
-Configuring Visual Studio Code for debugging
---------------------------------------------
-
-To configure debugging, open Visual Studio Code and download the Mono Debug extension from
-Microsoft and the Godot extension by Ignacio. Then open the Godot project folder in VS Code.
-Go to the Run tab and click on **create a launch.json file**. Select **C# Godot** from the dropdown
-menu. Now, when you start the debugger in VS Code your Godot project will run.
