@@ -18,4 +18,3 @@ Engine development
    custom_resource_format_loaders
    custom_audiostreams
    custom_godot_servers
-   validation_layers_android
