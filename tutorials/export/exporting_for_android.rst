@@ -110,7 +110,7 @@ keystore file; such file can be generated like this:
 
 .. code-block:: shell
 
-    keytool -v -genkey -v -keystore mygame.keystore -alias mygame -keyalg RSA -validity 10000
+    keytool -v -genkey -keystore mygame.keystore -alias mygame -keyalg RSA -validity 10000
 
 This keystore and key are used to verify your developer identity, remember the password and keep it in a safe place!
 Use Google's Android Developer guides to learn more about `APK signing <https://developer.android.com/studio/publish/app-signing>`__.
