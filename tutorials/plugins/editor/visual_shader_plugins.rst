@@ -194,7 +194,7 @@ all you need to initialize your plugin.
     func _get_code(input_vars, output_vars, mode, type):
         return output_vars[0] + " = cnoise(vec3((%s.xy + %s.xy) * %s, %s)) * 0.5 + 0.5;" % [input_vars[0], input_vars[1], input_vars[2], input_vars[3]]
 
-Save it and open the Visual Shader. You should see your new node type within the member's dialog (if you can't see your new node, try restarting the editor):
+Save it and open the Visual Shader. You should see your new node type within the member's dialog under the Addons category (if you can't see your new node, try restarting the editor):
 
 .. image:: img/visual_shader_plugins_result1.png
 
