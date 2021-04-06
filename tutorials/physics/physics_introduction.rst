@@ -51,6 +51,13 @@ The other three bodies extend :ref:`PhysicsBody2D <class_PhysicsBody2D>`:
     A body that provides collision detection, but no physics. All movement and
     collision response must be implemented in code.
 
+Physics material
+~~~~~~~~~~~~~~~~
+
+Static bodies and rigid bodies can be configured to use a :ref:`physics material
+<class_PhysicsMaterial>`. This allows adjusting the friction and bounce of an object,
+and set if it's absorbent and/or rough.
+
 Collision shapes
 ~~~~~~~~~~~~~~~~
 
