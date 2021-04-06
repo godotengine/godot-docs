@@ -54,8 +54,9 @@ The other three bodies extend :ref:`PhysicsBody2D <class_PhysicsBody2D>`:
 Physics material
 ~~~~~~~~~~~~~~~~
 
-Static bodies and rigid bodies can have a physics material added to them. This allows
-you to adjust the friction and bounce of an object, and set if it's absorbent and or rough.
+Static bodies and rigid bodies can be configured to use a :ref:`physics material
+<class_PhysicsMaterial>`. This allows adjusting the friction and bounce of an object,
+and set if it's absorbent and/or rough.
 
 Collision shapes
 ~~~~~~~~~~~~~~~~
