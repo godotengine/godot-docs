@@ -53,7 +53,7 @@ Property Descriptions
 | *Getter*  | get_custom_aabb()            |
 +-----------+------------------------------+
 
-Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frustum culling. Especially useful to avoid unnexpected culling when  using a shader to offset vertices.
+Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frustum culling. Especially useful to avoid unexpected culling when  using a shader to offset vertices.
 
 ----
 

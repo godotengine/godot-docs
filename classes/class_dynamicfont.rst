@@ -29,6 +29,11 @@ DynamicFont uses the `FreeType <https://www.freetype.org/>`_ library for rasteri
 
 **Note:** DynamicFont doesn't support features such as kerning, right-to-left typesetting, ligatures, text shaping, variable fonts and optional font features yet. If you wish to "bake" an optional font feature into a TTF font file, you can use `FontForge <https://fontforge.org/>`_ to do so. In FontForge, use **File > Generate Fonts**, click **Options**, choose the desired features then generate the font.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
+
 Properties
 ----------
 
@@ -94,9 +99,9 @@ enum **SpacingType**:
 
 - **SPACING_BOTTOM** = **1** --- Spacing at the bottom.
 
-- **SPACING_CHAR** = **2** --- Character spacing.
+- **SPACING_CHAR** = **2** --- Spacing for each character.
 
-- **SPACING_SPACE** = **3** --- Space spacing.
+- **SPACING_SPACE** = **3** --- Spacing for the space character.
 
 Property Descriptions
 ---------------------
@@ -129,7 +134,9 @@ Extra spacing at the bottom in pixels.
 | *Getter*  | get_spacing()      |
 +-----------+--------------------+
 
-Extra character spacing in pixels.
+Extra spacing for each character in pixels.
+
+This can be a negative number to make the distance between characters smaller.
 
 ----
 
@@ -145,7 +152,9 @@ Extra character spacing in pixels.
 | *Getter*  | get_spacing()      |
 +-----------+--------------------+
 
-Extra space spacing in pixels.
+Extra spacing for the space character (in addition to :ref:`extra_spacing_char<class_DynamicFont_property_extra_spacing_char>`) in pixels.
+
+This can be a negative number to make the distance between words smaller.
 
 ----
 

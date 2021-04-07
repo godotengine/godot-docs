@@ -36,6 +36,11 @@ See also :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`ImmediateGeometry<class_Immedi
 
 **Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`_ for front faces of triangle primitive modes.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
+
 Methods
 -------
 
@@ -94,7 +99,7 @@ Method Descriptions
 
 - void **add_bones** **(** :ref:`PoolIntArray<class_PoolIntArray>` bones **)**
 
-Adds an array of bones for the next vertex to use. ``bones`` must contain 4 integers.
+Specifies an array of bones to use for the *next* vertex. ``bones`` must contain 4 integers.
 
 ----
 
@@ -102,7 +107,9 @@ Adds an array of bones for the next vertex to use. ``bones`` must contain 4 inte
 
 - void **add_color** **(** :ref:`Color<class_Color>` color **)**
 
-Specifies a :ref:`Color<class_Color>` for the next vertex to use.
+Specifies a :ref:`Color<class_Color>` to use for the *next* vertex. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.
+
+**Note:** The material must have :ref:`SpatialMaterial.vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>` enabled for the vertex color to be visible.
 
 ----
 
@@ -118,7 +125,7 @@ Adds an index to index array if you are using indexed vertices. Does not need to
 
 - void **add_normal** **(** :ref:`Vector3<class_Vector3>` normal **)**
 
-Specifies a normal for the next vertex to use.
+Specifies a normal to use for the *next* vertex. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.
 
 ----
 
@@ -134,7 +141,7 @@ Specifies whether the current vertex (if using only vertex arrays) or current in
 
 - void **add_tangent** **(** :ref:`Plane<class_Plane>` tangent **)**
 
-Specifies a tangent for the next vertex to use.
+Specifies a tangent to use for the *next* vertex. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.
 
 ----
 
@@ -152,7 +159,7 @@ Requires the primitive type be set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_
 
 - void **add_uv** **(** :ref:`Vector2<class_Vector2>` uv **)**
 
-Specifies a set of UV coordinates to use for the next vertex.
+Specifies a set of UV coordinates to use for the *next* vertex. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.
 
 ----
 
@@ -160,7 +167,7 @@ Specifies a set of UV coordinates to use for the next vertex.
 
 - void **add_uv2** **(** :ref:`Vector2<class_Vector2>` uv2 **)**
 
-Specifies an optional second set of UV coordinates to use for the next vertex.
+Specifies an optional second set of UV coordinates to use for the *next* vertex. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.
 
 ----
 
@@ -176,7 +183,7 @@ Specifies the position of current vertex. Should be called after specifying othe
 
 - void **add_weights** **(** :ref:`PoolRealArray<class_PoolRealArray>` weights **)**
 
-Specifies weight values for next vertex to use. ``weights`` must contain 4 values.
+Specifies weight values to use for the *next* vertex. ``weights`` must contain 4 values. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.
 
 ----
 
@@ -250,9 +257,9 @@ Removes the index array by expanding the vertex array.
 
 - void **generate_normals** **(** :ref:`bool<class_bool>` flip=false **)**
 
-Generates normals from vertices so you do not have to do it manually. If ``flip`` is ``true``, the resulting normals will be inverted.
+Generates normals from vertices so you do not have to do it manually. If ``flip`` is ``true``, the resulting normals will be inverted. :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` should be called *after* generating geometry and *before* committing the mesh using :ref:`commit<class_SurfaceTool_method_commit>` or :ref:`commit_to_arrays<class_SurfaceTool_method_commit_to_arrays>`.
 
-Requires the primitive type to be set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
+**Note:** :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` only works if the primitive type to be set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
 ----
 
@@ -268,7 +275,7 @@ Generates a tangent vector for each vertex. Requires that each vertex have UVs a
 
 - void **index** **(** **)**
 
-Shrinks the vertex array by creating an index array (avoids reusing vertices).
+Shrinks the vertex array by creating an index array. This can improve performance by avoiding vertex reuse.
 
 ----
 

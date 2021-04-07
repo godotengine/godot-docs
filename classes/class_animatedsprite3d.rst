@@ -50,6 +50,14 @@ Methods
 Signals
 -------
 
+.. _class_AnimatedSprite3D_signal_animation_finished:
+
+- **animation_finished** **(** **)**
+
+Emitted when the animation is finished (when it plays the last frame). If the animation is looping, this signal is emitted every time the last frame is drawn.
+
+----
+
 .. _class_AnimatedSprite3D_signal_frame_changed:
 
 - **frame_changed** **(** **)**

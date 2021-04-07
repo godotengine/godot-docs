@@ -23,6 +23,10 @@ Tutorials
 
 - `#actions <../tutorials/inputs/inputevent.html#actions>`_ in :doc:`../tutorials/inputs/inputevent`
 
+- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
+
+- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
+
 Properties
 ----------
 
@@ -81,7 +85,7 @@ If ``true``, the action's state is pressed. If ``false``, the action's state is 
 | *Getter*  | get_strength()      |
 +-----------+---------------------+
 
-The action's strength between 0 and 1. This value is considered as equal to 0 if pressed is ``false``. The event strength allows faking analog joypad motion events, by precising how strongly is the joypad axis bent or pressed.
+The action's strength between 0 and 1. This value is considered as equal to 0 if pressed is ``false``. The event strength allows faking analog joypad motion events, by specifying how strongly the joypad axis is bent or pressed.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

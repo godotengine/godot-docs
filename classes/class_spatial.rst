@@ -29,6 +29,8 @@ Tutorials
 
 - :doc:`../tutorials/3d/introduction_to_3d`
 
+- `https://github.com/godotengine/godot-demo-projects/tree/master/3d <https://github.com/godotengine/godot-demo-projects/tree/master/3d>`_
+
 Properties
 ----------
 
@@ -143,7 +145,7 @@ Constants
 
 - **NOTIFICATION_TRANSFORM_CHANGED** = **2000** --- Spatial nodes receives this notification when their global transform changes. This means that either the current or a parent node changed its transform.
 
-In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Spatial_constant_NOTIFICATION_TRANSFORM_CHANGED>` to work, users first need to ask for it, with :ref:`set_notify_transform<class_Spatial_method_set_notify_transform>`.
+In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Spatial_constant_NOTIFICATION_TRANSFORM_CHANGED>` to work, users first need to ask for it, with :ref:`set_notify_transform<class_Spatial_method_set_notify_transform>`. The notification is also sent if the node is in the editor context and it has a valid gizmo.
 
 - **NOTIFICATION_ENTER_WORLD** = **41** --- Spatial nodes receives this notification when they are registered to new :ref:`World<class_World>` resource.
 
@@ -495,7 +497,7 @@ Sets whether the node notifies about its local transformation changes. ``Spatial
 
 - void **set_notify_transform** **(** :ref:`bool<class_bool>` enable **)**
 
-Sets whether the node notifies about its global and local transformation changes. ``Spatial`` will not propagate this by default.
+Sets whether the node notifies about its global and local transformation changes. ``Spatial`` will not propagate this by default, unless it is in the editor context and it has a valid gizmo.
 
 ----
 

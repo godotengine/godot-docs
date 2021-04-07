@@ -58,7 +58,7 @@ Emitted if the filesystem changed.
 
 - **resources_reimported** **(** :ref:`PoolStringArray<class_PoolStringArray>` resources **)**
 
-Remitted if a resource is reimported.
+Emitted if a resource is reimported.
 
 ----
 

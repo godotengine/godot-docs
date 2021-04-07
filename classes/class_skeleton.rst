@@ -22,6 +22,13 @@ The overall transform of a bone with respect to the skeleton is determined by th
 
 Note that "global pose" below refers to the overall transform of the bone with respect to skeleton, so it not the actual global/world transform of the bone.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/523 <https://godotengine.org/asset-library/asset/523>`_
+
+- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+
 Methods
 -------
 
@@ -82,6 +89,13 @@ Methods
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`unparent_bone_and_rest<class_Skeleton_method_unparent_bone_and_rest>` **(** :ref:`int<class_int>` bone_idx **)**                                                                                                                                   |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+.. _class_Skeleton_signal_skeleton_updated:
+
+- **skeleton_updated** **(** **)**
 
 Constants
 ---------

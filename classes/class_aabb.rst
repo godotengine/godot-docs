@@ -14,12 +14,20 @@ Axis-Aligned Bounding Box.
 Description
 -----------
 
-AABB consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
+``AABB`` consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
+
+It uses floating-point coordinates. The 2D counterpart to ``AABB`` is :ref:`Rect2<class_Rect2>`.
+
+**Note:** Unlike :ref:`Rect2<class_Rect2>`, ``AABB`` does not have a variant that uses integer coordinates.
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/math/index`
+
+- :doc:`../tutorials/math/vector_math`
+
+- :doc:`../tutorials/math/vectors_advanced`
 
 Properties
 ----------
@@ -118,7 +126,7 @@ Beginning corner. Typically has values lower than :ref:`end<class_AABB_property_
 | *Default* | ``Vector3( 0, 0, 0 )`` |
 +-----------+------------------------+
 
-Size from :ref:`position<class_AABB_property_position>` to :ref:`end<class_AABB_property_end>`. Typically all components are positive.
+Size from :ref:`position<class_AABB_property_position>` to :ref:`end<class_AABB_property_end>`. Typically, all components are positive.
 
 If the size is negative, you can use :ref:`abs<class_AABB_method_abs>` to fix it.
 

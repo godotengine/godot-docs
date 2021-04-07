@@ -20,12 +20,18 @@ Rich text can contain custom text, fonts, images and some basic formatting. The 
 
 **Note:** Assignments to :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` clear the tag stack and reconstruct it from the property's contents. Any edits made to :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` will erase previous edits made from other manual sources such as :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` and the ``push_*`` / :ref:`pop<class_RichTextLabel_method_pop>` methods.
 
+**Note:** RichTextLabel doesn't support entangled BBCode tags. For example, instead of using ``[b]bold[i]bold italic[/b]italic[/i]``, use ``[b]bold[i]bold italic[/i][/b][i]italic[/i]``.
+
 **Note:** Unlike :ref:`Label<class_Label>`, RichTextLabel doesn't have a *property* to horizontally align text to the center. Instead, enable :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>` and surround the text in a ``[center]`` tag as follows: ``[center]Example[/center]``. There is currently no built-in way to vertically align text either, but this can be emulated by relying on anchors/containers and the :ref:`fit_content_height<class_RichTextLabel_property_fit_content_height>` property.
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/gui/bbcode_in_richtextlabel`
+
+- `https://godotengine.org/asset-library/asset/132 <https://godotengine.org/asset-library/asset/132>`_
+
+- `https://godotengine.org/asset-library/asset/677 <https://godotengine.org/asset-library/asset/677>`_
 
 Properties
 ----------
@@ -333,6 +339,8 @@ Property Descriptions
 
 If ``true``, the label uses BBCode formatting.
 
+**Note:** Trying to alter the ``RichTextLabel``'s text with :ref:`add_text<class_RichTextLabel_method_add_text>` will reset this to ``false``. Use instead :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` to preserve BBCode formatting.
+
 ----
 
 .. _class_RichTextLabel_property_bbcode_text:
@@ -349,7 +357,7 @@ If ``true``, the label uses BBCode formatting.
 
 The label's text in BBCode format. Is not representative of manual modifications to the internal tag stack. Erases changes made by other methods when edited.
 
-**Note:** It is unadvised to use ``+=`` operator with ``bbcode_text`` (e.g. ``bbcode_text += "some string"``) as it replaces the whole text and can cause slowdowns. Use :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` for adding text instead.
+**Note:** It is unadvised to use the ``+=`` operator with ``bbcode_text`` (e.g. ``bbcode_text += "some string"``) as it replaces the whole text and can cause slowdowns. Use :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` for adding text instead, unless you absolutely need to close a tag that was opened in an earlier method call.
 
 ----
 
@@ -535,6 +543,8 @@ When set, clears the tag stack and adds a raw text tag to the top of it. Does no
 
 The restricted number of characters to display in the label. If ``-1``, all characters will be displayed.
 
+**Note:** Setting this property updates :ref:`percent_visible<class_RichTextLabel_property_percent_visible>` based on current :ref:`get_total_character_count<class_RichTextLabel_method_get_total_character_count>`.
+
 Method Descriptions
 -------------------
 
@@ -561,6 +571,8 @@ Adds raw non-BBCode-parsed text to the tag stack.
 - :ref:`Error<enum_@GlobalScope_Error>` **append_bbcode** **(** :ref:`String<class_String>` bbcode **)**
 
 Parses ``bbcode`` and adds tags to the tag stack as needed. Returns the result of the parsing, :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if successful.
+
+**Note:** Using this method, you can't close a tag that was opened in a previous :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` call. This is done to improve performance, especially when updating large RichTextLabels since rebuilding the whole BBCode every time would be slower. If you absolutely need to close a tag in a future method call, append the :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` instead of using :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>`.
 
 ----
 

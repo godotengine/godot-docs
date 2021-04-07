@@ -14,7 +14,7 @@ Boolean built-in type.
 Description
 -----------
 
-Boolean is a built-in type. There are two boolean values: ``true`` and ``false``. You can think of it as an switch with on or off (1 or 0) setting. Booleans are used in programming for logic in condition statements, like ``if`` statements.
+Boolean is a built-in type. There are two boolean values: ``true`` and ``false``. You can think of it as a switch with on or off (1 or 0) setting. Booleans are used in programming for logic in condition statements, like ``if`` statements.
 
 Booleans can be directly used in ``if`` statements. The code below demonstrates this on the ``if can_shoot:`` line. You don't need to use ``== true``, you only need ``if can_shoot:``. Similarly, use ``if not can_shoot:`` rather than ``== false``.
 

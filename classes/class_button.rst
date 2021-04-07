@@ -35,6 +35,17 @@ Button is the standard themed button. It can contain text and an icon, and will 
 
 Buttons (like all Control nodes) can also be created in the editor, but some situations may require creating them from code.
 
+See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
+
+**Note:** Buttons do not interpret touch input and therefore don't support multitouch, since mouse emulation can only press one button at a given time. Use :ref:`TouchScreenButton<class_TouchScreenButton>` for buttons that trigger gameplay movement or actions, as :ref:`TouchScreenButton<class_TouchScreenButton>` supports multitouch.
+
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
+
+- `https://godotengine.org/asset-library/asset/677 <https://godotengine.org/asset-library/asset/677>`_
+
 Properties
 ----------
 

@@ -13,6 +13,11 @@ NavigationMesh
 
 
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/124 <https://godotengine.org/asset-library/asset/124>`_
+
 Properties
 ----------
 

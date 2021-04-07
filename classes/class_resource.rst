@@ -18,7 +18,9 @@ Base class for all resources.
 Description
 -----------
 
-Resource is the base class for all Godot-specific resource types, serving primarily as data containers. Unlike :ref:`Object<class_Object>`\ s, they are reference-counted and freed when no longer in use. They are also cached once loaded from disk, so that any further attempts to load a resource from a given path will return the same reference (all this in contrast to a :ref:`Node<class_Node>`, which is not reference-counted and can be instanced from disk as many times as desired). Resources can be saved externally on disk or bundled into another object, such as a :ref:`Node<class_Node>` or another resource.
+Resource is the base class for all Godot-specific resource types, serving primarily as data containers. Since they inherit from :ref:`Reference<class_Reference>`, resources are reference-counted and freed when no longer in use. They are also cached once loaded from disk, so that any further attempts to load a resource from a given path will return the same reference (all this in contrast to a :ref:`Node<class_Node>`, which is not reference-counted and can be instanced from disk as many times as desired). Resources can be saved externally on disk or bundled into another object, such as a :ref:`Node<class_Node>` or another resource.
+
+**Note:** In C#, resources will not be freed instantly after they are no longer in use. Instead, garbage collection will run periodically and will free resources that are no longer in use. This means that unused resources will linger on for a while before being removed.
 
 Tutorials
 ---------
@@ -46,6 +48,8 @@ Methods
 +---------------------------------+------------------------------------------------------------------------------------------------------------------+
 | :ref:`Resource<class_Resource>` | :ref:`duplicate<class_Resource_method_duplicate>` **(** :ref:`bool<class_bool>` subresources=false **)** |const| |
 +---------------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`emit_changed<class_Resource_method_emit_changed>` **(** **)**                                              |
++---------------------------------+------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_Node>`         | :ref:`get_local_scene<class_Resource_method_get_local_scene>` **(** **)** |const|                                |
 +---------------------------------+------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`           | :ref:`get_rid<class_Resource_method_get_rid>` **(** **)** |const|                                                |
@@ -63,6 +67,8 @@ Signals
 - **changed** **(** **)**
 
 Emitted whenever the resource changes.
+
+**Note:** This signal is not emitted automatically for custom resources, which means that you need to create a setter and emit the signal yourself.
 
 Property Descriptions
 ---------------------
@@ -95,7 +101,7 @@ If ``true``, the resource will be made unique in each instance of its local scen
 | *Getter*  | get_name()      |
 +-----------+-----------------+
 
-The name of the resource. This is an optional identifier.
+The name of the resource. This is an optional identifier. If :ref:`resource_name<class_Resource_property_resource_name>` is not empty, its value will be displayed to represent the current resource in the editor inspector. For built-in scripts, the :ref:`resource_name<class_Resource_property_resource_name>` will be displayed as the tab name in the script editor.
 
 ----
 
@@ -131,6 +137,24 @@ Virtual function which can be overridden to customize the behavior value of :ref
 Duplicates the resource, returning a new resource. By default, sub-resources are shared between resource copies for efficiency. This can be changed by passing ``true`` to the ``subresources`` argument which will copy the subresources.
 
 **Note:** If ``subresources`` is ``true``, this method will only perform a shallow copy. Nested resources within subresources will not be duplicated and will still be shared.
+
+----
+
+.. _class_Resource_method_emit_changed:
+
+- void **emit_changed** **(** **)**
+
+Emits the :ref:`changed<class_Resource_signal_changed>` signal.
+
+If external objects which depend on this resource should be updated, this method must be called manually whenever the state of this resource has changed (such as modification of properties).
+
+The method is equivalent to:
+
+::
+
+    emit_signal("changed")
+
+**Note:** This method is called automatically for built-in resources.
 
 ----
 

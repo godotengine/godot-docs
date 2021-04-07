@@ -64,8 +64,8 @@ If you need to process multiple results, :ref:`search_all<class_RegEx_method_sea
     var regex = RegEx.new()
     regex.compile("\\S+") # Negated whitespace character class.
     var results = []
-    for match in regex.search_all("One  Two \n\tThree"):
-        results.push_back(match.get_string())
+    for result in regex.search_all("One  Two \n\tThree"):
+        results.push_back(result.get_string())
     # The `results` array now contains "One", "Two", "Three".
 
 **Note:** Godot's regex implementation is based on the `PCRE2 <https://www.pcre.org/>`_ library. You can view the full pattern reference `here <https://www.pcre.org/current/doc/html/pcre2pattern.html>`_.

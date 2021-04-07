@@ -18,6 +18,11 @@ Description
 
 Sphere shape for 3D collisions, which can be set into a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`Area<class_Area>`. This shape is useful for modeling sphere-like 3D objects.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/675 <https://godotengine.org/asset-library/asset/675>`_
+
 Properties
 ----------
 

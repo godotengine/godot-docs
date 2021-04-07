@@ -29,12 +29,16 @@ To generate a random float number (within a given range) based on a time-dependa
         rng.randomize()
         var my_random_number = rng.randf_range(-10.0, 10.0)
 
+**Note:** The default values of :ref:`seed<class_RandomNumberGenerator_property_seed>` and :ref:`state<class_RandomNumberGenerator_property_state>` properties are pseudo-random, and changes when calling :ref:`randomize<class_RandomNumberGenerator_method_randomize>`. The ``0`` value documented here is a placeholder, and not the actual default seed.
+
 Properties
 ----------
 
-+-----------------------+--------------------------------------------------------+--------------------------+
-| :ref:`int<class_int>` | :ref:`seed<class_RandomNumberGenerator_property_seed>` | ``-6398989897141750821`` |
-+-----------------------+--------------------------------------------------------+--------------------------+
++-----------------------+----------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`seed<class_RandomNumberGenerator_property_seed>`   | ``0`` |
++-----------------------+----------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`state<class_RandomNumberGenerator_property_state>` | ``0`` |
++-----------------------+----------------------------------------------------------+-------+
 
 Methods
 -------
@@ -60,17 +64,54 @@ Property Descriptions
 
 - :ref:`int<class_int>` **seed**
 
-+-----------+--------------------------+
-| *Default* | ``-6398989897141750821`` |
-+-----------+--------------------------+
-| *Setter*  | set_seed(value)          |
-+-----------+--------------------------+
-| *Getter*  | get_seed()               |
-+-----------+--------------------------+
++-----------+-----------------+
+| *Default* | ``0``           |
++-----------+-----------------+
+| *Setter*  | set_seed(value) |
++-----------+-----------------+
+| *Getter*  | get_seed()      |
++-----------+-----------------+
 
-The seed used by the random number generator. A given seed will give a reproducible sequence of pseudo-random numbers.
+Initializes the random number generator state based on the given seed value. A given seed will give a reproducible sequence of pseudo-random numbers.
 
 **Note:** The RNG does not have an avalanche effect, and can output similar random streams given similar seeds. Consider using a hash function to improve your seed quality if they're sourced externally.
+
+**Note:** Setting this property produces a side effect of changing the internal :ref:`state<class_RandomNumberGenerator_property_state>`, so make sure to initialize the seed *before* modifying the :ref:`state<class_RandomNumberGenerator_property_state>`:
+
+::
+
+    var rng = RandomNumberGenerator.new()
+    rng.seed = hash("Godot")
+    rng.state = 100 # Restore to some previously saved state.
+
+**Warning:** the getter of this property returns the previous :ref:`state<class_RandomNumberGenerator_property_state>`, and not the initial seed value, which is going to be fixed in Godot 4.0.
+
+----
+
+.. _class_RandomNumberGenerator_property_state:
+
+- :ref:`int<class_int>` **state**
+
++-----------+------------------+
+| *Default* | ``0``            |
++-----------+------------------+
+| *Setter*  | set_state(value) |
++-----------+------------------+
+| *Getter*  | get_state()      |
++-----------+------------------+
+
+The current state of the random number generator. Save and restore this property to restore the generator to a previous state:
+
+::
+
+    var rng = RandomNumberGenerator.new()
+    print(rng.randf())
+    var saved_state = rng.state # Store current state.
+    print(rng.randf()) # Advance internal state.
+    rng.state = saved_state # Restore the state.
+    print(rng.randf()) # Prints the same value as in previous.
+
+**Note:** Do not set state to arbitrary values, since the random number generator requires the state to have certain qualities to behave properly. It should only be set to values that came from the state property itself. To initialize the random number generator with arbitrary input, use :ref:`seed<class_RandomNumberGenerator_property_seed>` instead.
 
 Method Descriptions
 -------------------

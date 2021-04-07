@@ -82,7 +82,7 @@ Each :ref:`Dictionary<class_Dictionary>` object has the line diff contents under
 
 - :ref:`Dictionary<class_Dictionary>` **get_modified_files_data** **(** **)**
 
-Returns a :ref:`Dictionary<class_Dictionary>` containing the path of the detected file change mapped to an integer signifying what kind of a change the corresponding file has experienced.
+Returns a :ref:`Dictionary<class_Dictionary>` containing the path of the detected file change mapped to an integer signifying what kind of change the corresponding file has experienced.
 
 The following integer values are being used to signify that the detected file is:
 

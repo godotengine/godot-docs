@@ -22,6 +22,11 @@ Notice that grid layout will preserve the columns and rows for every size of the
 
 **Note:** GridContainer only works with child nodes inheriting from Control. It won't rearrange child nodes inheriting from Node2D.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/677 <https://godotengine.org/asset-library/asset/677>`_
+
 Properties
 ----------
 

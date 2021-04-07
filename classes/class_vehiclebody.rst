@@ -22,6 +22,11 @@ This node implements all the physics logic needed to simulate a car. It is based
 
 **Note:** This class has known issues and isn't designed to provide realistic 3D vehicle physics. If you want advanced vehicle physics, you will probably have to write your own physics integration using another :ref:`PhysicsBody<class_PhysicsBody>` class.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/524 <https://godotengine.org/asset-library/asset/524>`_
+
 Properties
 ----------
 

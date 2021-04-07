@@ -57,7 +57,7 @@ The :ref:`RID<class_RID>` of this world's canvas resource. Used by the :ref:`Vis
 | *Getter* | get_direct_space_state() |
 +----------+--------------------------+
 
-Direct access to the world's physics 2D space state. Used for querying current and potential collisions. Must only be accessed from the main thread within ``_physics_process(delta)``.
+Direct access to the world's physics 2D space state. Used for querying current and potential collisions. When using multi-threaded physics, access is limited to ``_physics_process(delta)`` in the main thread.
 
 ----
 

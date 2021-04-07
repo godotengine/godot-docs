@@ -11,7 +11,7 @@ Object
 
 **Inherited By:** :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>`, :ref:`ARVRServer<class_ARVRServer>`, :ref:`AudioServer<class_AudioServer>`, :ref:`CameraServer<class_CameraServer>`, :ref:`ClassDB<class_ClassDB>`, :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>`, :ref:`EditorNavigationMeshGenerator<class_EditorNavigationMeshGenerator>`, :ref:`EditorSelection<class_EditorSelection>`, :ref:`EditorVCSInterface<class_EditorVCSInterface>`, :ref:`Engine<class_Engine>`, :ref:`Geometry<class_Geometry>`, :ref:`GodotSharp<class_GodotSharp>`, :ref:`IP<class_IP>`, :ref:`Input<class_Input>`, :ref:`InputMap<class_InputMap>`, :ref:`JNISingleton<class_JNISingleton>`, :ref:`JSON<class_JSON>`, :ref:`JSONRPC<class_JSONRPC>`, :ref:`JavaClassWrapper<class_JavaClassWrapper>`, :ref:`JavaScript<class_JavaScript>`, :ref:`MainLoop<class_MainLoop>`, :ref:`Marshalls<class_Marshalls>`, :ref:`Node<class_Node>`, :ref:`OS<class_OS>`, :ref:`Performance<class_Performance>`, :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>`, :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>`, :ref:`Physics2DServer<class_Physics2DServer>`, :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>`, :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>`, :ref:`PhysicsServer<class_PhysicsServer>`, :ref:`ProjectSettings<class_ProjectSettings>`, :ref:`Reference<class_Reference>`, :ref:`ResourceLoader<class_ResourceLoader>`, :ref:`ResourceSaver<class_ResourceSaver>`, :ref:`TranslationServer<class_TranslationServer>`, :ref:`TreeItem<class_TreeItem>`, :ref:`UndoRedo<class_UndoRedo>`, :ref:`VisualScriptEditor<class_VisualScriptEditor>`, :ref:`VisualServer<class_VisualServer>`
 
-Base class for all non built-in types.
+Base class for all non-built-in types.
 
 Description
 -----------
@@ -40,10 +40,14 @@ Objects also receive notifications. Notifications are a simple way to notify the
 
 **Note:** Unlike references to a :ref:`Reference<class_Reference>`, references to an Object stored in a variable can become invalid without warning. Therefore, it's recommended to use :ref:`Reference<class_Reference>` for data classes instead of ``Object``.
 
+**Note:** Due to a bug, you can't create a "plain" Object using ``Object.new()``. Instead, use ``ClassDB.instance("Object")``. This bug only applies to Object itself, not any of its descendents like :ref:`Reference<class_Reference>`.
+
 Tutorials
 ---------
 
 - :doc:`../getting_started/workflow/best_practices/node_alternatives`
+
+- `#advanced-exports <../getting_started/scripting/gdscript/gdscript_exports.html#advanced-exports>`_ in :doc:`../getting_started/scripting/gdscript/gdscript_exports`
 
 Methods
 -------

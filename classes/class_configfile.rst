@@ -50,6 +50,8 @@ Methods
 -------
 
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`clear<class_ConfigFile_method_clear>` **(** **)**                                                                                                                                  |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`erase_section<class_ConfigFile_method_erase_section>` **(** :ref:`String<class_String>` section **)**                                                                              |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`erase_section_key<class_ConfigFile_method_erase_section_key>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key **)**                                     |
@@ -83,6 +85,12 @@ Methods
 
 Method Descriptions
 -------------------
+
+.. _class_ConfigFile_method_clear:
+
+- void **clear** **(** **)**
+
+----
 
 .. _class_ConfigFile_method_erase_section:
 
@@ -174,7 +182,7 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` 
 
 - :ref:`Error<enum_@GlobalScope_Error>` **parse** **(** :ref:`String<class_String>` data **)**
 
-Parses the the passed string as the contents of a config file. The string is parsed and loaded in the ConfigFile object which the method was called on.
+Parses the passed string as the contents of a config file. The string is parsed and loaded in the ConfigFile object which the method was called on.
 
 Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 

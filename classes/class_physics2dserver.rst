@@ -599,7 +599,7 @@ Removes all shapes from an area. It does not delete the shapes, so they can be r
 
 - :ref:`RID<class_RID>` **area_create** **(** **)**
 
-Creates an :ref:`Area2D<class_Area2D>`.
+Creates an :ref:`Area2D<class_Area2D>`. After creating an :ref:`Area2D<class_Area2D>` with this method, assign it to a space using :ref:`area_set_space<class_Physics2DServer_method_area_set_space>` to use the created :ref:`Area2D<class_Area2D>` in the physics world.
 
 ----
 

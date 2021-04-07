@@ -22,11 +22,12 @@ Adds a top, left, bottom, and right margin to all :ref:`Control<class_Control>` 
 
 ::
 
+    # This code sample assumes the current script is extending MarginContainer.
     var margin_value = 100
-    set("custom_constants/margin_top", margin_value)
-    set("custom_constants/margin_left", margin_value)
-    set("custom_constants/margin_bottom", margin_value)
-    set("custom_constants/margin_right", margin_value)
+    add_constant_override("margin_top", margin_value)
+    add_constant_override("margin_left", margin_value)
+    add_constant_override("margin_bottom", margin_value)
+    add_constant_override("margin_right", margin_value)
 
 Theme Properties
 ----------------

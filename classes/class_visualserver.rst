@@ -28,7 +28,7 @@ All objects are drawn to a viewport. You can use the :ref:`Viewport<class_Viewpo
 
 In 3D, all visual objects must be associated with a scenario. The scenario is a visual representation of the world. If accessing the visual server from a running game, the scenario can be accessed from the scene tree from any :ref:`Spatial<class_Spatial>` node with :ref:`Spatial.get_world<class_Spatial_method_get_world>`. Otherwise, a scenario can be created with :ref:`scenario_create<class_VisualServer_method_scenario_create>`.
 
-Similarly in 2D, a canvas is needed to draw all canvas items.
+Similarly, in 2D, a canvas is needed to draw all canvas items.
 
 In 3D, all visible objects are comprised of a resource and an instance. A resource can be a mesh, a particle system, a light, or any other 3D object. In order to be visible resources must be attached to an instance using :ref:`instance_set_base<class_VisualServer_method_instance_set_base>`. The instance must also be attached to the scenario using :ref:`instance_set_scenario<class_VisualServer_method_instance_set_scenario>` in order to be visible.
 
@@ -384,7 +384,7 @@ Methods
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`instance_set_transform<class_VisualServer_method_instance_set_transform>` **(** :ref:`RID<class_RID>` instance, :ref:`Transform<class_Transform>` transform **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                    | :ref:`instance_set_use_lightmap<class_VisualServer_method_instance_set_use_lightmap>` **(** :ref:`RID<class_RID>` instance, :ref:`RID<class_RID>` lightmap_instance, :ref:`RID<class_RID>` lightmap **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| void                                                    | :ref:`instance_set_use_lightmap<class_VisualServer_method_instance_set_use_lightmap>` **(** :ref:`RID<class_RID>` instance, :ref:`RID<class_RID>` lightmap_instance, :ref:`RID<class_RID>` lightmap, :ref:`int<class_int>` lightmap_slice=-1, :ref:`Rect2<class_Rect2>` lightmap_uv_rect=Rect2( 0, 0, 1, 1 ) **)**                                                                                                                                                                                                                                                                                                                                                                                                     |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`instance_set_visible<class_VisualServer_method_instance_set_visible>` **(** :ref:`RID<class_RID>` instance, :ref:`bool<class_bool>` visible **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -403,6 +403,8 @@ Methods
 | void                                                    | :ref:`light_omni_set_shadow_detail<class_VisualServer_method_light_omni_set_shadow_detail>` **(** :ref:`RID<class_RID>` light, :ref:`LightOmniShadowDetail<enum_VisualServer_LightOmniShadowDetail>` detail **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`light_omni_set_shadow_mode<class_VisualServer_method_light_omni_set_shadow_mode>` **(** :ref:`RID<class_RID>` light, :ref:`LightOmniShadowMode<enum_VisualServer_LightOmniShadowMode>` mode **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
++---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                    | :ref:`light_set_bake_mode<class_VisualServer_method_light_set_bake_mode>` **(** :ref:`RID<class_RID>` light, :ref:`LightBakeMode<enum_VisualServer_LightBakeMode>` bake_mode **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`light_set_color<class_VisualServer_method_light_set_color>` **(** :ref:`RID<class_RID>` light, :ref:`Color<class_Color>` color **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -434,9 +436,13 @@ Methods
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_Transform>`                       | :ref:`lightmap_capture_get_octree_cell_transform<class_VisualServer_method_lightmap_capture_get_octree_cell_transform>` **(** :ref:`RID<class_RID>` capture **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                 | :ref:`lightmap_capture_is_interior<class_VisualServer_method_lightmap_capture_is_interior>` **(** :ref:`RID<class_RID>` capture **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
++---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`lightmap_capture_set_bounds<class_VisualServer_method_lightmap_capture_set_bounds>` **(** :ref:`RID<class_RID>` capture, :ref:`AABB<class_AABB>` bounds **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`lightmap_capture_set_energy<class_VisualServer_method_lightmap_capture_set_energy>` **(** :ref:`RID<class_RID>` capture, :ref:`float<class_float>` energy **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
++---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                    | :ref:`lightmap_capture_set_interior<class_VisualServer_method_lightmap_capture_set_interior>` **(** :ref:`RID<class_RID>` capture, :ref:`bool<class_bool>` interior **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`lightmap_capture_set_octree<class_VisualServer_method_lightmap_capture_set_octree>` **(** :ref:`RID<class_RID>` capture, :ref:`PoolByteArray<class_PoolByteArray>` octree **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -779,6 +785,10 @@ Methods
 | void                                                    | :ref:`viewport_set_usage<class_VisualServer_method_viewport_set_usage>` **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportUsage<enum_VisualServer_ViewportUsage>` usage **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`viewport_set_use_arvr<class_VisualServer_method_viewport_set_use_arvr>` **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` use_arvr **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
++---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                    | :ref:`viewport_set_use_debanding<class_VisualServer_method_viewport_set_use_debanding>` **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` debanding **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
++---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                    | :ref:`viewport_set_use_fxaa<class_VisualServer_method_viewport_set_use_fxaa>` **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` fxaa **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`viewport_set_vflip<class_VisualServer_method_viewport_set_vflip>` **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enabled **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1186,6 +1196,24 @@ enum **LightParam**:
 - **LIGHT_PARAM_SHADOW_BIAS_SPLIT_SCALE** = **14** --- Increases bias on further splits to fix self-shadowing that only occurs far away from the camera.
 
 - **LIGHT_PARAM_MAX** = **15** --- Represents the size of the :ref:`LightParam<enum_VisualServer_LightParam>` enum.
+
+----
+
+.. _enum_VisualServer_LightBakeMode:
+
+.. _class_VisualServer_constant_LIGHT_BAKE_DISABLED:
+
+.. _class_VisualServer_constant_LIGHT_BAKE_INDIRECT:
+
+.. _class_VisualServer_constant_LIGHT_BAKE_ALL:
+
+enum **LightBakeMode**:
+
+- **LIGHT_BAKE_DISABLED** = **0**
+
+- **LIGHT_BAKE_INDIRECT** = **1**
+
+- **LIGHT_BAKE_ALL** = **2**
 
 ----
 
@@ -3052,7 +3080,9 @@ Not yet implemented. Always returns ``false``.
 
 - :ref:`bool<class_bool>` **has_os_feature** **(** :ref:`String<class_String>` feature **)** |const|
 
-Returns ``true`` if the OS supports a certain feature. Features might be ``s3tc``, ``etc``, ``etc2`` and ``pvrtc``.
+Returns ``true`` if the OS supports a certain feature. Features might be ``s3tc``, ``etc``, ``etc2``, ``pvrtc`` and ``skinning_fallback``.
+
+When rendering with GLES2, returns ``true`` with ``skinning_fallback`` in case the hardware doesn't support the default GPU skinning process.
 
 ----
 
@@ -3286,7 +3316,7 @@ Function not implemented in Godot 3.x.
 
 - void **instance_set_extra_visibility_margin** **(** :ref:`RID<class_RID>` instance, :ref:`float<class_float>` margin **)**
 
-Sets a margin to increase the size of the AABB when culling objects from the view frustum. This allows you avoid culling objects that fall outside the view frustum. Equivalent to :ref:`GeometryInstance.extra_cull_margin<class_GeometryInstance_property_extra_cull_margin>`.
+Sets a margin to increase the size of the AABB when culling objects from the view frustum. This allows you to avoid culling objects that fall outside the view frustum. Equivalent to :ref:`GeometryInstance.extra_cull_margin<class_GeometryInstance_property_extra_cull_margin>`.
 
 ----
 
@@ -3324,7 +3354,7 @@ Sets the world space transform of the instance. Equivalent to :ref:`Spatial.tran
 
 .. _class_VisualServer_method_instance_set_use_lightmap:
 
-- void **instance_set_use_lightmap** **(** :ref:`RID<class_RID>` instance, :ref:`RID<class_RID>` lightmap_instance, :ref:`RID<class_RID>` lightmap **)**
+- void **instance_set_use_lightmap** **(** :ref:`RID<class_RID>` instance, :ref:`RID<class_RID>` lightmap_instance, :ref:`RID<class_RID>` lightmap, :ref:`int<class_int>` lightmap_slice=-1, :ref:`Rect2<class_Rect2>` lightmap_uv_rect=Rect2( 0, 0, 1, 1 ) **)**
 
 Sets the lightmap to use with this instance.
 
@@ -3408,6 +3438,14 @@ Sets whether to use a dual paraboloid or a cubemap for the shadow map. Dual para
 
 ----
 
+.. _class_VisualServer_method_light_set_bake_mode:
+
+- void **light_set_bake_mode** **(** :ref:`RID<class_RID>` light, :ref:`LightBakeMode<enum_VisualServer_LightBakeMode>` bake_mode **)**
+
+Sets the bake mode for this light, see :ref:`LightBakeMode<enum_VisualServer_LightBakeMode>` for options. The bake mode affects how the light will be baked in :ref:`BakedLightmap<class_BakedLightmap>`\ s and :ref:`GIProbe<class_GIProbe>`\ s.
+
+----
+
 .. _class_VisualServer_method_light_set_color:
 
 - void **light_set_color** **(** :ref:`RID<class_RID>` light, :ref:`Color<class_Color>` color **)**
@@ -3476,7 +3514,7 @@ Sets the color of the shadow cast by the light. Equivalent to :ref:`Light.shadow
 
 - void **light_set_use_gi** **(** :ref:`RID<class_RID>` light, :ref:`bool<class_bool>` enabled **)**
 
-Sets whether GI probes capture light information from this light.
+Sets whether GI probes capture light information from this light. *Deprecated method.* Use :ref:`light_set_bake_mode<class_VisualServer_method_light_set_bake_mode>` instead. This method is only kept for compatibility reasons and calls :ref:`light_set_bake_mode<class_VisualServer_method_light_set_bake_mode>` internally, setting the bake mode to :ref:`LIGHT_BAKE_DISABLED<class_VisualServer_constant_LIGHT_BAKE_DISABLED>` or :ref:`LIGHT_BAKE_INDIRECT<class_VisualServer_constant_LIGHT_BAKE_INDIRECT>` depending on the given parameter.
 
 ----
 
@@ -3532,6 +3570,14 @@ Returns the cell transform for this lightmap capture's octree.
 
 ----
 
+.. _class_VisualServer_method_lightmap_capture_is_interior:
+
+- :ref:`bool<class_bool>` **lightmap_capture_is_interior** **(** :ref:`RID<class_RID>` capture **)** |const|
+
+Returns ``true`` if capture is in "interior" mode.
+
+----
+
 .. _class_VisualServer_method_lightmap_capture_set_bounds:
 
 - void **lightmap_capture_set_bounds** **(** :ref:`RID<class_RID>` capture, :ref:`AABB<class_AABB>` bounds **)**
@@ -3545,6 +3591,14 @@ Sets the size of the area covered by the lightmap capture. Equivalent to :ref:`B
 - void **lightmap_capture_set_energy** **(** :ref:`RID<class_RID>` capture, :ref:`float<class_float>` energy **)**
 
 Sets the energy multiplier for this lightmap capture. Equivalent to :ref:`BakedLightmapData.energy<class_BakedLightmapData_property_energy>`.
+
+----
+
+.. _class_VisualServer_method_lightmap_capture_set_interior:
+
+- void **lightmap_capture_set_interior** **(** :ref:`RID<class_RID>` capture, :ref:`bool<class_bool>` interior **)**
+
+Sets the "interior" mode for this lightmap capture. Equivalent to :ref:`BakedLightmapData.interior<class_BakedLightmapData_property_interior>`.
 
 ----
 
@@ -4178,7 +4232,7 @@ If ``true``, particles will emit once and then stop. Equivalent to :ref:`Particl
 
 - void **particles_set_pre_process_time** **(** :ref:`RID<class_RID>` particles, :ref:`float<class_float>` time **)**
 
-Sets the preprocess time for the particles animation. This lets you delay starting an animation until after the particles have begun emitting. Equivalent to :ref:`Particles.preprocess<class_Particles_property_preprocess>`.
+Sets the preprocess time for the particles' animation. This lets you delay starting an animation until after the particles have begun emitting. Equivalent to :ref:`Particles.preprocess<class_Particles_property_preprocess>`.
 
 ----
 
@@ -4979,6 +5033,24 @@ Sets the viewport's 2D/3D mode. See :ref:`ViewportUsage<enum_VisualServer_Viewpo
 - void **viewport_set_use_arvr** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` use_arvr **)**
 
 If ``true``, the viewport uses augmented or virtual reality technologies. See :ref:`ARVRInterface<class_ARVRInterface>`.
+
+----
+
+.. _class_VisualServer_method_viewport_set_use_debanding:
+
+- void **viewport_set_use_debanding** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` debanding **)**
+
+If ``true``, uses a fast post-processing filter to make banding significantly less visible. In some cases, debanding may introduce a slightly noticeable dithering pattern. It's recommended to enable debanding only when actually needed since the dithering pattern will make lossless-compressed screenshots larger.
+
+**Note:** Only available on the GLES3 backend. :ref:`Viewport.hdr<class_Viewport_property_hdr>` must also be ``true`` for debanding to be effective.
+
+----
+
+.. _class_VisualServer_method_viewport_set_use_fxaa:
+
+- void **viewport_set_use_fxaa** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` fxaa **)**
+
+Enables fast approximate antialiasing for this viewport. FXAA is a popular screen-space antialiasing method, which is fast but will make the image look blurry, especially at lower resolutions. It can still work relatively well at large resolutions such as 1440p and 4K.
 
 ----
 

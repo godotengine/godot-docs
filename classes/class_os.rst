@@ -18,6 +18,11 @@ Description
 
 Operating System functions. OS wraps the most common functionality to communicate with the host operating system, such as the clipboard, video driver, date and time, timers, environment variables, execution of binaries, command line, etc.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/677 <https://godotengine.org/asset-library/asset/677>`_
+
 Properties
 ----------
 
@@ -107,7 +112,7 @@ Methods
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`get_dynamic_memory_usage<class_OS_method_get_dynamic_memory_usage>` **(** **)** |const|                                                                                                                                                                          |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_environment<class_OS_method_get_environment>` **(** :ref:`String<class_String>` environment **)** |const|                                                                                                                                                    |
+| :ref:`String<class_String>`                   | :ref:`get_environment<class_OS_method_get_environment>` **(** :ref:`String<class_String>` variable **)** |const|                                                                                                                                                       |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`get_executable_path<class_OS_method_get_executable_path>` **(** **)** |const|                                                                                                                                                                                    |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -124,6 +129,8 @@ Methods
 | :ref:`String<class_String>`                   | :ref:`get_model_name<class_OS_method_get_model_name>` **(** **)** |const|                                                                                                                                                                                              |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`get_name<class_OS_method_get_name>` **(** **)** |const|                                                                                                                                                                                                          |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`get_native_handle<class_OS_method_get_native_handle>` **(** :ref:`HandleType<enum_OS_HandleType>` handle_type **)**                                                                                                                                              |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`get_power_percent_left<class_OS_method_get_power_percent_left>` **(** **)**                                                                                                                                                                                      |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -167,6 +174,8 @@ Methods
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`get_tablet_driver_name<class_OS_method_get_tablet_driver_name>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                                    |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`get_thread_caller_id<class_OS_method_get_thread_caller_id>` **(** **)** |const|                                                                                                                                                                                  |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`get_ticks_msec<class_OS_method_get_ticks_msec>` **(** **)** |const|                                                                                                                                                                                              |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`get_ticks_usec<class_OS_method_get_ticks_usec>` **(** **)** |const|                                                                                                                                                                                              |
@@ -199,7 +208,7 @@ Methods
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`global_menu_remove_item<class_OS_method_global_menu_remove_item>` **(** :ref:`String<class_String>` menu, :ref:`int<class_int>` idx **)**                                                                                                                        |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`has_environment<class_OS_method_has_environment>` **(** :ref:`String<class_String>` environment **)** |const|                                                                                                                                                    |
+| :ref:`bool<class_bool>`                       | :ref:`has_environment<class_OS_method_has_environment>` **(** :ref:`String<class_String>` variable **)** |const|                                                                                                                                                       |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`has_feature<class_OS_method_has_feature>` **(** :ref:`String<class_String>` tag_name **)** |const|                                                                                                                                                               |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -263,6 +272,8 @@ Methods
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`request_permissions<class_OS_method_request_permissions>` **(** **)**                                                                                                                                                                                            |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`set_environment<class_OS_method_set_environment>` **(** :ref:`String<class_String>` variable, :ref:`String<class_String>` value **)** |const|                                                                                                                    |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`set_icon<class_OS_method_set_icon>` **(** :ref:`Image<class_Image>` icon **)**                                                                                                                                                                                   |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`set_ime_active<class_OS_method_set_ime_active>` **(** :ref:`bool<class_bool>` active **)**                                                                                                                                                                       |
@@ -276,6 +287,8 @@ Methods
 | void                                          | :ref:`set_use_file_access_save_and_swap<class_OS_method_set_use_file_access_save_and_swap>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                                                |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`set_window_always_on_top<class_OS_method_set_window_always_on_top>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                                                                  |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_window_mouse_passthrough<class_OS_method_set_window_mouse_passthrough>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` region **)**                                                                                                                   |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`set_window_title<class_OS_method_set_window_title>` **(** :ref:`String<class_String>` title **)**                                                                                                                                                                |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -386,6 +399,58 @@ enum **Month**:
 - **MONTH_NOVEMBER** = **11** --- November.
 
 - **MONTH_DECEMBER** = **12** --- December.
+
+----
+
+.. _enum_OS_HandleType:
+
+.. _class_OS_constant_APPLICATION_HANDLE:
+
+.. _class_OS_constant_DISPLAY_HANDLE:
+
+.. _class_OS_constant_WINDOW_HANDLE:
+
+.. _class_OS_constant_WINDOW_VIEW:
+
+.. _class_OS_constant_OPENGL_CONTEXT:
+
+enum **HandleType**:
+
+- **APPLICATION_HANDLE** = **0** --- Application handle:
+
+- Windows: ``HINSTANCE`` of the application
+
+- MacOS: ``NSApplication*`` of the application (not yet implemented)
+
+- Android: ``JNIEnv*`` of the application (not yet implemented)
+
+- **DISPLAY_HANDLE** = **1** --- Display handle:
+
+- Linux: ``X11::Display*`` for the display
+
+- **WINDOW_HANDLE** = **2** --- Window handle:
+
+- Windows: ``HWND`` of the main window
+
+- Linux: ``X11::Window*`` of the main window
+
+- MacOS: ``NSWindow*`` of the main window (not yet implemented)
+
+- Android: ``jObject`` the main android activity (not yet implemented)
+
+- **WINDOW_VIEW** = **3** --- Window view:
+
+- Windows: ``HDC`` of the main window drawing context
+
+- MacOS: ``NSView*`` of the main windows view (not yet implemented)
+
+- **OPENGL_CONTEXT** = **4** --- OpenGL Context:
+
+- Windows: ``HGLRC``
+
+- Linux: ``X11::GLXContext``
+
+- MacOS: ``NSOpenGLContext*`` (not yet implemented)
 
 ----
 
@@ -646,7 +711,7 @@ The current screen orientation.
 | *Getter*  | get_current_tablet_driver()      |
 +-----------+----------------------------------+
 
-The current tablet drvier in use.
+The current tablet driver in use.
 
 ----
 
@@ -869,7 +934,7 @@ Shuts down system MIDI driver.
 
 - void **delay_msec** **(** :ref:`int<class_int>` msec **)** |const|
 
-Delay execution of the current thread by ``msec`` milliseconds.
+Delay execution of the current thread by ``msec`` milliseconds. ``usec`` must be greater than or equal to ``0``. Otherwise, :ref:`delay_msec<class_OS_method_delay_msec>` will do nothing and will print an error message.
 
 ----
 
@@ -877,7 +942,7 @@ Delay execution of the current thread by ``msec`` milliseconds.
 
 - void **delay_usec** **(** :ref:`int<class_int>` usec **)** |const|
 
-Delay execution of the current thread by ``usec`` microseconds.
+Delay execution of the current thread by ``usec`` microseconds. ``usec`` must be greater than or equal to ``0``. Otherwise, :ref:`delay_usec<class_OS_method_delay_usec>` will do nothing and will print an error message.
 
 ----
 
@@ -1046,9 +1111,11 @@ Returns the total amount of dynamic memory used (only works in debug).
 
 .. _class_OS_method_get_environment:
 
-- :ref:`String<class_String>` **get_environment** **(** :ref:`String<class_String>` environment **)** |const|
+- :ref:`String<class_String>` **get_environment** **(** :ref:`String<class_String>` variable **)** |const|
 
-Returns an environment variable.
+Returns the value of an environment variable. Returns an empty string if the environment variable doesn't exist.
+
+**Note:** Double-check the casing of ``variable``. Environment variable names are case-sensitive on all platforms except Windows.
 
 ----
 
@@ -1132,6 +1199,16 @@ Returns the name of the host OS. Possible values are: ``"Android"``, ``"iOS"``, 
 
 ----
 
+.. _class_OS_method_get_native_handle:
+
+- :ref:`int<class_int>` **get_native_handle** **(** :ref:`HandleType<enum_OS_HandleType>` handle_type **)**
+
+Returns internal structure pointers for use in GDNative plugins.
+
+**Note:** This method is implemented on Linux and Windows (other OSs will soon be supported).
+
+----
+
 .. _class_OS_method_get_power_percent_left:
 
 - :ref:`int<class_int>` **get_power_percent_left** **(** **)**
@@ -1212,7 +1289,9 @@ Returns the number of displays attached to the host machine.
 
 Returns the dots per inch density of the specified screen. If ``screen`` is ``-1`` (the default value), the current screen will be used.
 
-On Android devices, the actual screen densities are grouped into six generalized densities:
+**Note:** On macOS, returned value is inaccurate if fractional display scaling mode is used.
+
+**Note:** On Android devices, the actual screen densities are grouped into six generalized densities:
 
 ::
 
@@ -1337,6 +1416,16 @@ Returns the tablet driver name for the given index.
 
 ----
 
+.. _class_OS_method_get_thread_caller_id:
+
+- :ref:`int<class_int>` **get_thread_caller_id** **(** **)** |const|
+
+Returns the ID of the current thread. This can be used in logs to ease debugging of multi-threaded applications.
+
+**Note:** Thread IDs are not deterministic and may be reused across application restarts.
+
+----
+
 .. _class_OS_method_get_ticks_msec:
 
 - :ref:`int<class_int>` **get_ticks_msec** **(** **)** |const|
@@ -1383,7 +1472,9 @@ Returns a string that is unique to the device.
 
 - :ref:`int<class_int>` **get_unix_time** **(** **)** |const|
 
-Returns the current UNIX epoch timestamp.
+Returns the current UNIX epoch timestamp in seconds.
+
+**Important:** This is the system clock that the user can manully set. **Never use** this method for precise time calculation since its results are also subject to automatic adjustments by the operating system. **Always use** :ref:`get_ticks_usec<class_OS_method_get_ticks_usec>` or :ref:`get_ticks_msec<class_OS_method_get_ticks_msec>` for precise time calculation instead, since they are guaranteed to be monotonic (i.e. never decrease).
 
 ----
 
@@ -1394,6 +1485,8 @@ Returns the current UNIX epoch timestamp.
 Gets an epoch time value from a dictionary of time values.
 
 ``datetime`` must be populated with the following keys: ``year``, ``month``, ``day``, ``hour``, ``minute``, ``second``.
+
+If the dictionary is empty ``0`` is returned.
 
 You can pass the output from :ref:`get_datetime_from_unix_time<class_OS_method_get_datetime_from_unix_time>` directly into this function. Daylight Savings Time (``dst``), if present, is ignored.
 
@@ -1489,9 +1582,11 @@ Removes the item at index "idx" from the global menu. Note that the indexes of i
 
 .. _class_OS_method_has_environment:
 
-- :ref:`bool<class_bool>` **has_environment** **(** :ref:`String<class_String>` environment **)** |const|
+- :ref:`bool<class_bool>` **has_environment** **(** :ref:`String<class_String>` variable **)** |const|
 
-Returns ``true`` if an environment variable exists.
+Returns ``true`` if the environment variable with the name ``variable`` exists.
+
+**Note:** Double-check the casing of ``variable``. Environment variable names are case-sensitive on all platforms except Windows.
 
 ----
 
@@ -1499,7 +1594,7 @@ Returns ``true`` if an environment variable exists.
 
 - :ref:`bool<class_bool>` **has_feature** **(** :ref:`String<class_String>` tag_name **)** |const|
 
-Returns ``true`` if the feature for the given feature tag is supported in the currently running instance, depending on platform, build etc. Can be used to check whether you're currently running a debug build, on a certain platform or arch, etc. Refer to the `Feature Tags <https://docs.godotengine.org/en/latest/getting_started/workflow/export/feature_tags.html>`_ documentation for more details.
+Returns ``true`` if the feature for the given feature tag is supported in the currently running instance, depending on platform, build etc. Can be used to check whether you're currently running a debug build, on a certain platform or arch, etc. Refer to the `Feature Tags <https://docs.godotengine.org/en/3.3/getting_started/workflow/export/feature_tags.html>`_ documentation for more details.
 
 **Note:** Tag names are case-sensitive.
 
@@ -1783,6 +1878,16 @@ With this function you can request dangerous permissions since normal permission
 
 ----
 
+.. _class_OS_method_set_environment:
+
+- :ref:`bool<class_bool>` **set_environment** **(** :ref:`String<class_String>` variable, :ref:`String<class_String>` value **)** |const|
+
+Sets the value of the environment variable ``variable`` to ``value``. The environment variable will be set for the Godot process and any process executed with :ref:`execute<class_OS_method_execute>` after running :ref:`set_environment<class_OS_method_set_environment>`. The environment variable will *not* persist to processes run after the Godot process was terminated.
+
+**Note:** Double-check the casing of ``variable``. Environment variable names are case-sensitive on all platforms except Windows.
+
+----
+
 .. _class_OS_method_set_icon:
 
 - void **set_icon** **(** :ref:`Image<class_Image>` icon **)**
@@ -1854,6 +1959,31 @@ Enables backup saves if ``enabled`` is ``true``.
 - void **set_window_always_on_top** **(** :ref:`bool<class_bool>` enabled **)**
 
 Sets whether the window should always be on top.
+
+**Note:** This method is implemented on Linux, macOS and Windows.
+
+----
+
+.. _class_OS_method_set_window_mouse_passthrough:
+
+- void **set_window_mouse_passthrough** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` region **)**
+
+Sets a polygonal region of the window which accepts mouse events. Mouse events outside the region will be passed through.
+
+Passing an empty array will disable passthrough support (all mouse events will be intercepted by the window, which is the default behavior).
+
+::
+
+    # Set region, using Path2D node.
+    OS.set_window_mouse_passthrough($Path2D.curve.get_baked_points())
+    
+    # Set region, using Polygon2D node.
+    OS.set_window_mouse_passthrough($Polygon2D.polygon)
+    
+    # Reset region to default.
+    OS.set_window_mouse_passthrough([])
+
+**Note:** On Windows, the portion of a window that lies outside the region is not drawn, while on Linux and macOS it is.
 
 **Note:** This method is implemented on Linux, macOS and Windows.
 

@@ -30,7 +30,7 @@ Here is a brief usage example that makes a 2D node move smoothly between two pos
             Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
     tween.start()
 
-Many methods require a property name, such as ``"position"`` above. You can find the correct property name by hovering over the property in the Inspector. You can also provide the components of a property directly by using ``"property:component"`` (eg. ``position:x``), where it would only apply to that particular component.
+Many methods require a property name, such as ``"position"`` above. You can find the correct property name by hovering over the property in the Inspector. You can also provide the components of a property directly by using ``"property:component"`` (e.g. ``position:x``), where it would only apply to that particular component.
 
 Many of the methods accept ``trans_type`` and ``ease_type``. The first accepts an :ref:`TransitionType<enum_Tween_TransitionType>` constant, and refers to the way the timing of the animation is handled (see `easings.net <https://easings.net/>`_ for some examples). The second accepts an :ref:`EaseType<enum_Tween_EaseType>` constant, and controls where the ``trans_type`` is applied to the interpolation (in the beginning, the end, or both). If you don't know which transition and easing to pick, you can try different :ref:`TransitionType<enum_Tween_TransitionType>` constants with :ref:`EASE_IN_OUT<class_Tween_constant_EASE_IN_OUT>`, and use the one that looks best.
 

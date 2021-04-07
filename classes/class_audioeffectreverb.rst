@@ -20,6 +20,11 @@ Description
 
 Simulates rooms of different sizes. Its parameters can be adjusted to simulate the sound of a specific room.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+
 Properties
 ----------
 

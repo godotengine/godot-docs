@@ -11,12 +11,12 @@ SliderJoint
 
 **Inherits:** :ref:`Joint<class_Joint>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Piston kind of slider between two bodies in 3D.
+Slider between two PhysicsBodies in 3D.
 
 Description
 -----------
 
-Slides across the X axis of the pivot object.
+Slides across the X axis of the pivot object. See also :ref:`Generic6DOFJoint<class_Generic6DOFJoint>`.
 
 Properties
 ----------

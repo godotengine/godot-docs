@@ -163,6 +163,8 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`md5_text<class_String_method_md5_text>` **(** **)**                                                                                                               |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`naturalnocasecmp_to<class_String_method_naturalnocasecmp_to>` **(** :ref:`String<class_String>` to **)**                                                          |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`nocasecmp_to<class_String_method_nocasecmp_to>` **(** :ref:`String<class_String>` to **)**                                                                        |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`ord_at<class_String_method_ord_at>` **(** :ref:`int<class_int>` at **)**                                                                                          |
@@ -225,9 +227,13 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_PoolByteArray>`     | :ref:`to_utf8<class_String_method_to_utf8>` **(** **)**                                                                                                                 |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>`     | :ref:`to_wchar<class_String_method_to_wchar>` **(** **)**                                                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`trim_prefix<class_String_method_trim_prefix>` **(** :ref:`String<class_String>` prefix **)**                                                                      |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`trim_suffix<class_String_method_trim_suffix>` **(** :ref:`String<class_String>` suffix **)**                                                                      |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`validate_node_name<class_String_method_validate_node_name>` **(** **)**                                                                                           |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`xml_escape<class_String_method_xml_escape>` **(** **)**                                                                                                           |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -429,7 +435,13 @@ Changes the case of some letters. Replaces underscores with spaces, adds spaces 
 
 - :ref:`int<class_int>` **casecmp_to** **(** :ref:`String<class_String>` to **)**
 
-Performs a case-sensitive comparison to another string. Returns ``-1`` if less than, ``+1`` if greater than, or ``0`` if equal.
+Performs a case-sensitive comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "less than" or "greater than" are determined by the `Unicode code points`` of each string, which roughly matches the alphabetical order.
+
+**Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
+
+**Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
+
+To get a boolean result from a string comparison, use the ``==`` operator instead. See also :ref:`nocasecmp_to<class_String_method_nocasecmp_to>`.
 
 ----
 
@@ -705,7 +717,7 @@ Returns ``true`` if this string contains a valid integer.
 
 - :ref:`bool<class_bool>` **is_valid_ip_address** **(** **)**
 
-Returns ``true`` if this string contains a valid IP address.
+Returns ``true`` if this string contains only a well-formatted IPv4 or IPv6 address. This method considers `reserved IP addresses <https://en.wikipedia.org/wiki/Reserved_IP_addresses>`_ such as ``0.0.0.0`` as valid.
 
 ----
 
@@ -737,7 +749,9 @@ Returns the string's amount of characters.
 
 - :ref:`String<class_String>` **lstrip** **(** :ref:`String<class_String>` chars **)**
 
-Returns a copy of the string with characters removed from the left.
+Returns a copy of the string with characters removed from the left. The ``chars`` argument is a string specifying the set of characters to be removed.
+
+**Note:** The ``chars`` is not a prefix. See :ref:`trim_prefix<class_String_method_trim_prefix>` method that will remove a single prefix string rather than a set of characters.
 
 ----
 
@@ -773,11 +787,33 @@ Returns the MD5 hash of the string as a string.
 
 ----
 
+.. _class_String_method_naturalnocasecmp_to:
+
+- :ref:`int<class_int>` **naturalnocasecmp_to** **(** :ref:`String<class_String>` to **)**
+
+Performs a case-insensitive *natural order* comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "less than" or "greater than" are determined by the `Unicode code points`` of each string, which roughly matches the alphabetical order. Internally, lowercase characters will be converted to uppercase during the comparison.
+
+When used for sorting, natural order comparison will order suites of numbers as expected by most people. If you sort the numbers from 1 to 10 using natural order, you will get ``[1, 2, 3, ...]`` instead of ``[1, 10, 2, 3, ...]``.
+
+**Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
+
+**Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
+
+To get a boolean result from a string comparison, use the ``==`` operator instead. See also :ref:`nocasecmp_to<class_String_method_nocasecmp_to>` and :ref:`casecmp_to<class_String_method_casecmp_to>`.
+
+----
+
 .. _class_String_method_nocasecmp_to:
 
 - :ref:`int<class_int>` **nocasecmp_to** **(** :ref:`String<class_String>` to **)**
 
-Performs a case-insensitive comparison to another string. Returns ``-1`` if less than, ``+1`` if greater than, or ``0`` if equal.
+Performs a case-insensitive comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "less than" or "greater than" are determined by the `Unicode code points`` of each string, which roughly matches the alphabetical order. Internally, lowercase characters will be converted to uppercase during the comparison.
+
+**Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
+
+**Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
+
+To get a boolean result from a string comparison, use the ``==`` operator instead. See also :ref:`casecmp_to<class_String_method_casecmp_to>`.
 
 ----
 
@@ -903,7 +939,9 @@ Example:
 
 - :ref:`String<class_String>` **rstrip** **(** :ref:`String<class_String>` chars **)**
 
-Returns a copy of the string with characters removed from the right.
+Returns a copy of the string with characters removed from the right. The ``chars`` argument is a string specifying the set of characters to be removed.
+
+**Note:** The ``chars`` is not a suffix. See :ref:`trim_suffix<class_String_method_trim_suffix>` method that will remove a single suffix string rather than a set of characters.
 
 ----
 
@@ -1051,6 +1089,14 @@ Converts the String (which is an array of characters) to :ref:`PoolByteArray<cla
 
 ----
 
+.. _class_String_method_to_wchar:
+
+- :ref:`PoolByteArray<class_PoolByteArray>` **to_wchar** **(** **)**
+
+Converts the String (which is an array of characters) to :ref:`PoolByteArray<class_PoolByteArray>` (which is an array of bytes).
+
+----
+
 .. _class_String_method_trim_prefix:
 
 - :ref:`String<class_String>` **trim_prefix** **(** :ref:`String<class_String>` prefix **)**
@@ -1064,6 +1110,14 @@ Removes a given string from the start if it starts with it or leaves the string 
 - :ref:`String<class_String>` **trim_suffix** **(** :ref:`String<class_String>` suffix **)**
 
 Removes a given string from the end if it ends with it or leaves the string unchanged.
+
+----
+
+.. _class_String_method_validate_node_name:
+
+- :ref:`String<class_String>` **validate_node_name** **(** **)**
+
+Removes any characters from the string that are prohibited in :ref:`Node<class_Node>` names (``.`` ``:`` ``@`` ``/`` ``"``).
 
 ----
 

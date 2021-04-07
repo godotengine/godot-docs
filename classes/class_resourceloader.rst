@@ -20,7 +20,10 @@ Singleton used to load resource files from the filesystem.
 
 It uses the many :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` classes registered in the engine (either built-in or from a plugin) to load files into memory and convert them to a format that can be used by the engine.
 
-GDScript has a simplified :ref:`@GDScript.load<class_@GDScript_method_load>` built-in method which can be used in most situations, leaving the use of ``ResourceLoader`` for more advanced scenarios.
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/677 <https://godotengine.org/asset-library/asset/677>`_
 
 Methods
 -------
@@ -98,11 +101,13 @@ Loads a resource at the given ``path``, caching the result for further access.
 
 The registered :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`\ s are queried sequentially to find the first one which can handle the file's extension, and then attempt loading. If loading fails, the remaining ResourceFormatLoaders are also attempted.
 
-An optional ``type_hint`` can be used to further specify the :ref:`Resource<class_Resource>` type that should be handled by the :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`.
+An optional ``type_hint`` can be used to further specify the :ref:`Resource<class_Resource>` type that should be handled by the :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`. Anything that inherits from :ref:`Resource<class_Resource>` can be used as a type hint, for example :ref:`Image<class_Image>`.
 
 If ``no_cache`` is ``true``, the resource cache will be bypassed and the resource will be loaded anew. Otherwise, the cached resource will be returned if it exists.
 
-Returns an empty resource if no ResourceFormatLoader could handle the file.
+Returns an empty resource if no :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` could handle the file.
+
+GDScript has a simplified :ref:`@GDScript.load<class_@GDScript_method_load>` built-in method which can be used in most situations, leaving the use of ``ResourceLoader`` for more advanced scenarios.
 
 ----
 
@@ -112,7 +117,7 @@ Returns an empty resource if no ResourceFormatLoader could handle the file.
 
 Starts loading a resource interactively. The returned :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>` object allows to load with high granularity, calling its :ref:`ResourceInteractiveLoader.poll<class_ResourceInteractiveLoader_method_poll>` method successively to load chunks.
 
-An optional ``type_hint`` can be used to further specify the :ref:`Resource<class_Resource>` type that should be handled by the :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`.
+An optional ``type_hint`` can be used to further specify the :ref:`Resource<class_Resource>` type that should be handled by the :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`. Anything that inherits from :ref:`Resource<class_Resource>` can be used as a type hint, for example :ref:`Image<class_Image>`.
 
 ----
 

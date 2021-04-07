@@ -16,7 +16,9 @@ VideoStreamTheora
 Description
 -----------
 
-:ref:`VideoStream<class_VideoStream>` resource handling the `Ogg Theora <https://www.theora.org/>`_ video format with ``.ogv`` extension.
+:ref:`VideoStream<class_VideoStream>` resource handling the `Ogg Theora <https://www.theora.org/>`_ video format with ``.ogv`` extension. The Theora codec is less efficient than :ref:`VideoStreamWebm<class_VideoStreamWebm>`'s VP8 and VP9, but it requires less CPU resources to decode. The Theora codec is decoded on the CPU.
+
+**Note:** While Ogg Theora videos can also have an ``.ogg`` extension, you will have to rename the extension to ``.ogv`` to use those videos within Godot.
 
 Methods
 -------
@@ -42,7 +44,7 @@ Returns the Ogg Theora video file handled by this ``VideoStreamTheora``.
 
 - void **set_file** **(** :ref:`String<class_String>` file **)**
 
-Sets the Ogg Theora video file that this ``VideoStreamTheora`` resource handles. The ``file`` name should have the ``.o`` extension.
+Sets the Ogg Theora video file that this ``VideoStreamTheora`` resource handles. The ``file`` name should have the ``.ogv`` extension.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

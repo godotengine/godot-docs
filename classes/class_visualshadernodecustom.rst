@@ -69,7 +69,7 @@ Method Descriptions
 
 - :ref:`String<class_String>` **_get_category** **(** **)** |virtual|
 
-Override this method to define the category of the associated custom node in the Visual Shader Editor's members dialog.
+Override this method to define the category of the associated custom node in the Visual Shader Editor's members dialog. The path may look like ``"MyGame/MyFunctions/Noise"``.
 
 Defining this method is **optional**. If not overridden, the node will be filed under the "Custom" category.
 

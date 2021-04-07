@@ -18,7 +18,7 @@ Base class for 3D texture types.
 Description
 -----------
 
-Base class for :ref:`Texture3D<class_Texture3D>` and :ref:`TextureArray<class_TextureArray>`. Cannot be used directly, but contains all the functions necessary for accessing and using :ref:`Texture3D<class_Texture3D>` and :ref:`TextureArray<class_TextureArray>`. Data is set on a per-layer basis. For :ref:`Texture3D<class_Texture3D>`\ s, the layer sepcifies the depth or Z-index, they can be treated as a bunch of 2D slices. Similarly, for :ref:`TextureArray<class_TextureArray>`\ s, the layer specifies the array layer.
+Base class for :ref:`Texture3D<class_Texture3D>` and :ref:`TextureArray<class_TextureArray>`. Cannot be used directly, but contains all the functions necessary for accessing and using :ref:`Texture3D<class_Texture3D>` and :ref:`TextureArray<class_TextureArray>`. Data is set on a per-layer basis. For :ref:`Texture3D<class_Texture3D>`\ s, the layer specifies the depth or Z-index, they can be treated as a bunch of 2D slices. Similarly, for :ref:`TextureArray<class_TextureArray>`\ s, the layer specifies the array layer.
 
 Properties
 ----------

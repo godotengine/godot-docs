@@ -18,6 +18,11 @@ Description
 
 :ref:`Control<class_Control>` node displaying a color picker widget. It's useful for selecting a color from an RGB/RGBA colorspace.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/146 <https://godotengine.org/asset-library/asset/146>`_
+
 Properties
 ----------
 

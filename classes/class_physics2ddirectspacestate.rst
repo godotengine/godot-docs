@@ -49,9 +49,11 @@ Method Descriptions
 
 - :ref:`Array<class_Array>` **cast_motion** **(** :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` shape **)**
 
-Checks how far the shape can travel toward a point. If the shape can not move, the array will be empty.
+Checks how far a :ref:`Shape2D<class_Shape2D>` can move without colliding. All the parameters for the query, including the shape and the motion, are supplied through a :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` object.
 
-**Note:** Both the shape and the motion are supplied through a :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` object. The method will return an array with two floats between 0 and 1, both representing a fraction of ``motion``. The first is how far the shape can move without triggering a collision, and the second is the point at which a collision will occur. If no collision is detected, the returned array will be ``[1, 1]``.
+Returns an array with the safe and unsafe proportions (between 0 and 1) of the motion. The safe proportion is the maximum fraction of the motion that can be made without a collision. The unsafe proportion is the minimum fraction of the distance that must be moved for a collision. If no collision is detected a result of ``[1.0, 1.0]`` will be returned.
+
+**Note:** Any :ref:`Shape2D<class_Shape2D>`\ s that the shape is already colliding with e.g. inside of, will be ignored. Use :ref:`collide_shape<class_Physics2DDirectSpaceState_method_collide_shape>` to determine the :ref:`Shape2D<class_Shape2D>`\ s that the shape is already colliding with.
 
 ----
 
@@ -91,7 +93,7 @@ Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryPa
 
 - :ref:`Array<class_Array>` **intersect_point** **(** :ref:`Vector2<class_Vector2>` point, :ref:`int<class_int>` max_results=32, :ref:`Array<class_Array>` exclude=[  ], :ref:`int<class_int>` collision_layer=2147483647, :ref:`bool<class_bool>` collide_with_bodies=true, :ref:`bool<class_bool>` collide_with_areas=false **)**
 
-Checks whether a point is inside any shape. The shapes the point is inside of are returned in an array containing dictionaries with the following fields:
+Checks whether a point is inside any solid shape. The shapes the point is inside of are returned in an array containing dictionaries with the following fields:
 
 ``collider``: The colliding object.
 
@@ -104,6 +106,8 @@ Checks whether a point is inside any shape. The shapes the point is inside of ar
 ``shape``: The shape index of the colliding shape.
 
 Additionally, the method can take an ``exclude`` array of objects or :ref:`RID<class_RID>`\ s that are to be excluded from collisions, a ``collision_mask`` bitmask representing the physics layers to check in, or booleans to determine if the ray should collide with :ref:`PhysicsBody<class_PhysicsBody>`\ s or :ref:`Area<class_Area>`\ s, respectively.
+
+**Note:** :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>`\ s and :ref:`CollisionPolygon2D<class_CollisionPolygon2D>`\ s in ``Segments`` build mode are not solid shapes. Therefore, they will not be detected.
 
 ----
 

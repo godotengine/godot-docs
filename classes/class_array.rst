@@ -35,7 +35,11 @@ Arrays can be concatenated using the ``+`` operator:
     var array2 = [3, "Four"]
     print(array1 + array2) # ["One", 2, 3, "Four"]
 
+**Note:** Concatenating with the ``+=`` operator will create a new array, which has a cost. If you want to append another array to an existing array, :ref:`append_array<class_Array_method_append_array>` is more efficient.
+
 **Note:** Arrays are always passed by reference. To get a copy of an array which can be modified independently of the original array, use :ref:`duplicate<class_Array_method_duplicate>`.
+
+**Note:** When declaring an array with ``const``, the array itself can still be mutated by defining the values at individual indices or pushing/removing elements. Using ``const`` will only prevent assigning the constant with another value after it was initialized.
 
 Methods
 -------
@@ -56,6 +60,8 @@ Methods
 | :ref:`Array<class_Array>`     | :ref:`Array<class_Array_method_Array>` **(** :ref:`PoolByteArray<class_PoolByteArray>` from **)**                                                                                                                |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`append<class_Array_method_append>` **(** :ref:`Variant<class_Variant>` value **)**                                                                                                                         |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`append_array<class_Array_method_append_array>` **(** :ref:`Array<class_Array>` array **)**                                                                                                                 |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>` | :ref:`back<class_Array_method_back>` **(** **)**                                                                                                                                                                 |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -171,6 +177,21 @@ Appends an element at the end of the array (alias of :ref:`push_back<class_Array
 
 ----
 
+.. _class_Array_method_append_array:
+
+- void **append_array** **(** :ref:`Array<class_Array>` array **)**
+
+Appends another array at the end of this array.
+
+::
+
+    var array1 = [1, 2, 3]
+    var array2 = [4, 5, 6]
+    array1.append_array(array2)
+    print(array1) # Prints [1, 2, 3, 4, 5, 6].
+
+----
+
 .. _class_Array_method_back:
 
 - :ref:`Variant<class_Variant>` **back** **(** **)**
@@ -195,9 +216,32 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 - :ref:`int<class_int>` **bsearch_custom** **(** :ref:`Variant<class_Variant>` value, :ref:`Object<class_Object>` obj, :ref:`String<class_String>` func, :ref:`bool<class_bool>` before=true **)**
 
-Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search and a custom comparison method. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array. The custom method receives two arguments (an element from the array and the value searched for) and must return ``true`` if the first argument is less than the second, and return ``false`` otherwise.
+Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search and a custom comparison method declared in the ``obj``. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array. The custom method receives two arguments (an element from the array and the value searched for) and must return ``true`` if the first argument is less than the second, and return ``false`` otherwise.
 
-**Note:** Calling :ref:`bsearch<class_Array_method_bsearch>` on an unsorted array results in unexpected behavior.
+::
+
+    func cardinal_to_algebraic(a):
+        match a:
+            "one":
+                return 1
+            "two":
+                return 2
+            "three":
+                return 3
+            "four":
+                return 4
+            _:
+                return 0
+    
+    func compare(a, b):
+        return cardinal_to_algebraic(a) < cardinal_to_algebraic(b)
+    
+    func _ready():
+        var a = ["one", "two", "three", "four"]
+        # `compare` is defined in this object, so we use `self` as the `obj` parameter.
+        print(a.bsearch_custom("three", self, "compare", true)) # Expected value is 2.
+
+**Note:** Calling :ref:`bsearch_custom<class_Array_method_bsearch_custom>` on an unsorted array results in unexpected behavior.
 
 ----
 
@@ -239,7 +283,11 @@ Returns ``true`` if the array is empty.
 
 - void **erase** **(** :ref:`Variant<class_Variant>` value **)**
 
-Removes the first occurrence of a value from the array.
+Removes the first occurrence of a value from the array. To remove an element by index, use :ref:`remove<class_Array_method_remove>` instead.
+
+**Note:** This method acts in-place and doesn't return a value.
+
+**Note:** On large arrays, this method will be slower if the removed element is close to the beginning of the array (index 0). This is because all elements placed after the removed element have to be reindexed.
 
 ----
 
@@ -296,7 +344,9 @@ Returns ``true`` if the array contains the given value.
 
 - :ref:`int<class_int>` **hash** **(** **)**
 
-Returns a hashed integer value representing the array contents.
+Returns a hashed integer value representing the array and its contents.
+
+**Note:** Arrays with equal contents can still produce different hashes. Only the exact same arrays will produce the same hashed integer value.
 
 ----
 
@@ -305,6 +355,10 @@ Returns a hashed integer value representing the array contents.
 - void **insert** **(** :ref:`int<class_int>` position, :ref:`Variant<class_Variant>` value **)**
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``pos == size()``).
+
+**Note:** This method acts in-place and doesn't return a value.
+
+**Note:** On large arrays, this method will be slower if the inserted element is close to the beginning of the array (index 0). This is because all elements placed after the newly inserted element have to be reindexed.
 
 ----
 
@@ -336,7 +390,7 @@ Returns the minimum value contained in the array if all elements are of comparab
 
 - :ref:`Variant<class_Variant>` **pop_back** **(** **)**
 
-Removes and returns the last element of the array. Returns ``null`` if the array is empty, without printing an error message.
+Removes and returns the last element of the array. Returns ``null`` if the array is empty, without printing an error message. See also :ref:`pop_front<class_Array_method_pop_front>`.
 
 ----
 
@@ -344,7 +398,9 @@ Removes and returns the last element of the array. Returns ``null`` if the array
 
 - :ref:`Variant<class_Variant>` **pop_front** **(** **)**
 
-Removes and returns the first element of the array. Returns ``null`` if the array is empty, wwithout printing an error message.
+Removes and returns the first element of the array. Returns ``null`` if the array is empty, without printing an error message. See also :ref:`pop_back<class_Array_method_pop_back>`.
+
+**Note:** On large arrays, this method is much slower than :ref:`pop_back<class_Array_method_pop_back>` as it will reindex all the array's elements every time it's called. The larger the array, the slower :ref:`pop_front<class_Array_method_pop_front>` will be.
 
 ----
 
@@ -352,7 +408,7 @@ Removes and returns the first element of the array. Returns ``null`` if the arra
 
 - void **push_back** **(** :ref:`Variant<class_Variant>` value **)**
 
-Appends an element at the end of the array.
+Appends an element at the end of the array. See also :ref:`push_front<class_Array_method_push_front>`.
 
 ----
 
@@ -360,7 +416,9 @@ Appends an element at the end of the array.
 
 - void **push_front** **(** :ref:`Variant<class_Variant>` value **)**
 
-Adds an element at the beginning of the array.
+Adds an element at the beginning of the array. See also :ref:`push_back<class_Array_method_push_back>`.
+
+**Note:** On large arrays, this method is much slower than :ref:`push_back<class_Array_method_push_back>` as it will reindex all the array's elements every time it's called. The larger the array, the slower :ref:`push_front<class_Array_method_push_front>` will be.
 
 ----
 
@@ -368,7 +426,11 @@ Adds an element at the beginning of the array.
 
 - void **remove** **(** :ref:`int<class_int>` position **)**
 
-Removes an element from the array by index. If the index does not exist in the array, nothing happens.
+Removes an element from the array by index. If the index does not exist in the array, nothing happens. To remove an element by searching for its value, use :ref:`erase<class_Array_method_erase>` instead.
+
+**Note:** This method acts in-place and doesn't return a value.
+
+**Note:** On large arrays, this method will be slower if the removed element is close to the beginning of the array (index 0). This is because all elements placed after the removed element have to be reindexed.
 
 ----
 

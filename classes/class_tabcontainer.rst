@@ -28,6 +28,8 @@ Properties
 ----------
 
 +---------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                     | :ref:`all_tabs_in_front<class_TabContainer_property_all_tabs_in_front>`                       | ``false`` |
++---------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
 | :ref:`int<class_int>`                       | :ref:`current_tab<class_TabContainer_property_current_tab>`                                   | ``0``     |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                     | :ref:`drag_to_rearrange_enabled<class_TabContainer_property_drag_to_rearrange_enabled>`       | ``false`` |
@@ -161,6 +163,22 @@ enum **TabAlign**:
 
 Property Descriptions
 ---------------------
+
+.. _class_TabContainer_property_all_tabs_in_front:
+
+- :ref:`bool<class_bool>` **all_tabs_in_front**
+
++-----------+------------------------------+
+| *Default* | ``false``                    |
++-----------+------------------------------+
+| *Setter*  | set_all_tabs_in_front(value) |
++-----------+------------------------------+
+| *Getter*  | is_all_tabs_in_front()       |
++-----------+------------------------------+
+
+If ``true``, all tabs are drawn in front of the panel. If ``false``, inactive tabs are drawn behind the panel.
+
+----
 
 .. _class_TabContainer_property_current_tab:
 

@@ -60,11 +60,11 @@ Enumerations
 
 .. _class_EditorFeatureProfile_constant_FEATURE_SCENE_TREE:
 
-.. _class_EditorFeatureProfile_constant_FEATURE_IMPORT_DOCK:
-
 .. _class_EditorFeatureProfile_constant_FEATURE_NODE_DOCK:
 
 .. _class_EditorFeatureProfile_constant_FEATURE_FILESYSTEM_DOCK:
+
+.. _class_EditorFeatureProfile_constant_FEATURE_IMPORT_DOCK:
 
 .. _class_EditorFeatureProfile_constant_FEATURE_MAX:
 
@@ -78,11 +78,11 @@ enum **Feature**:
 
 - **FEATURE_SCENE_TREE** = **3** --- Scene tree editing. If this feature is disabled, the Scene tree dock will still be visible but will be read-only.
 
-- **FEATURE_IMPORT_DOCK** = **4** --- The Import dock. If this feature is disabled, the Import dock won't be visible.
+- **FEATURE_NODE_DOCK** = **4** --- The Node dock. If this feature is disabled, signals and groups won't be visible and modifiable from the editor.
 
-- **FEATURE_NODE_DOCK** = **5** --- The Node dock. If this feature is disabled, signals and groups won't be visible and modifiable from the editor.
+- **FEATURE_FILESYSTEM_DOCK** = **5** --- The FileSystem dock. If this feature is disabled, the FileSystem dock won't be visible.
 
-- **FEATURE_FILESYSTEM_DOCK** = **6** --- The FileSystem dock. If this feature is disabled, the FileSystem dock won't be visible.
+- **FEATURE_IMPORT_DOCK** = **6** --- The Import dock. If this feature is disabled, the Import dock won't be visible.
 
 - **FEATURE_MAX** = **7** --- Represents the size of the :ref:`Feature<enum_EditorFeatureProfile_Feature>` enum.
 

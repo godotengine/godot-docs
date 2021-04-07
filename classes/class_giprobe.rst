@@ -20,10 +20,16 @@ Description
 
 Having ``GIProbe``\ s in a scene can be expensive, the quality of the probe can be turned down in exchange for better performance in the :ref:`ProjectSettings<class_ProjectSettings>` using :ref:`ProjectSettings.rendering/quality/voxel_cone_tracing/high_quality<class_ProjectSettings_property_rendering/quality/voxel_cone_tracing/high_quality>`.
 
+**Note:** Meshes should have sufficiently thick walls to avoid light leaks (avoid one-sided walls). For interior levels, enclose your level geometry in a sufficiently large box and bridge the loops to close the mesh.
+
+**Note:** Due to a renderer limitation, emissive :ref:`ShaderMaterial<class_ShaderMaterial>`\ s cannot emit light when used in a ``GIProbe``. Only emissive :ref:`SpatialMaterial<class_SpatialMaterial>`\ s can emit light in a ``GIProbe``.
+
 Tutorials
 ---------
 
 - :doc:`../tutorials/3d/gi_probes`
+
+- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
 
 Properties
 ----------

@@ -26,6 +26,8 @@ Properties
 +-------------------------------------------------+-----------------------------------------------------------+--------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`disabled<class_CollisionPolygon_property_disabled>` | ``false``                |
 +-------------------------------------------------+-----------------------------------------------------------+--------------------------+
+| :ref:`float<class_float>`                       | :ref:`margin<class_CollisionPolygon_property_margin>`     | ``0.04``                 |
++-------------------------------------------------+-----------------------------------------------------------+--------------------------+
 | :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`polygon<class_CollisionPolygon_property_polygon>`   | ``PoolVector2Array(  )`` |
 +-------------------------------------------------+-----------------------------------------------------------+--------------------------+
 
@@ -61,6 +63,22 @@ Length that the resulting collision extends in either direction perpendicular to
 +-----------+---------------------+
 
 If ``true``, no collision will be produced.
+
+----
+
+.. _class_CollisionPolygon_property_margin:
+
+- :ref:`float<class_float>` **margin**
+
++-----------+-------------------+
+| *Default* | ``0.04``          |
++-----------+-------------------+
+| *Setter*  | set_margin(value) |
++-----------+-------------------+
+| *Getter*  | get_margin()      |
++-----------+-------------------+
+
+The collision margin for the generated :ref:`Shape<class_Shape>`. See :ref:`Shape.margin<class_Shape_property_margin>` for more details.
 
 ----
 

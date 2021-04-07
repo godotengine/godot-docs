@@ -18,6 +18,10 @@ Description
 
 A PacketPeer implementation that should be passed to :ref:`SceneTree.network_peer<class_SceneTree_property_network_peer>` after being initialized as either a client or server. Events can then be handled by connecting to :ref:`SceneTree<class_SceneTree>` signals.
 
+ENet's purpose is to provide a relatively thin, simple and robust network communication layer on top of UDP (User Datagram Protocol).
+
+**Note:** ENet only uses UDP, not TCP. When forwarding the server port to make your server accessible on the public Internet, you only need to forward the server port in UDP. You can use the :ref:`UPNP<class_UPNP>` class to try to forward the server port automatically when starting the server.
+
 Tutorials
 ---------
 
@@ -73,6 +77,8 @@ Methods
 | void                                  | :ref:`set_dtls_certificate<class_NetworkedMultiplayerENet_method_set_dtls_certificate>` **(** :ref:`X509Certificate<class_X509Certificate>` certificate **)**                                                                                                           |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`set_dtls_key<class_NetworkedMultiplayerENet_method_set_dtls_key>` **(** :ref:`CryptoKey<class_CryptoKey>` key **)**                                                                                                                                               |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_peer_timeout<class_NetworkedMultiplayerENet_method_set_peer_timeout>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` timeout_limit, :ref:`int<class_int>` timeout_min, :ref:`int<class_int>` timeout_max **)**                                         |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
@@ -165,7 +171,7 @@ The compression method used for network packets. These have different tradeoffs 
 | *Getter*  | is_dtls_verify_enabled()       |
 +-----------+--------------------------------+
 
-Enable or disable certiticate verification when :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>` ``true``.
+Enable or disable certificate verification when :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>` ``true``.
 
 ----
 
@@ -305,6 +311,16 @@ Configure the :ref:`X509Certificate<class_X509Certificate>` to use when :ref:`us
 - void **set_dtls_key** **(** :ref:`CryptoKey<class_CryptoKey>` key **)**
 
 Configure the :ref:`CryptoKey<class_CryptoKey>` to use when :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>` is ``true``. Remember to also call :ref:`set_dtls_certificate<class_NetworkedMultiplayerENet_method_set_dtls_certificate>` to setup your :ref:`X509Certificate<class_X509Certificate>`.
+
+----
+
+.. _class_NetworkedMultiplayerENet_method_set_peer_timeout:
+
+- void **set_peer_timeout** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` timeout_limit, :ref:`int<class_int>` timeout_min, :ref:`int<class_int>` timeout_max **)**
+
+Sets the timeout parameters for a peer.	The timeout parameters control how and when a peer will timeout from a failure to acknowledge reliable traffic. Timeout values are expressed in milliseconds.
+
+The ``timeout_limit`` is a factor that, multiplied by a value based on the avarage round trip time, will determine the timeout limit for a reliable packet. When that limit is reached, the timeout will be doubled, and the peer will be disconnected if that limit has reached ``timeout_min``. The ``timeout_max`` parameter, on the other hand, defines a fixed timeout for which any packet must be acknowledged or the peer will be dropped.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

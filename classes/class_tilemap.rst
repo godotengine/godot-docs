@@ -18,10 +18,24 @@ Description
 
 Node for 2D tile-based maps. Tilemaps use a :ref:`TileSet<class_TileSet>` which contain a list of tiles (textures plus optional collision, navigation, and/or occluder shapes) which are used to create grid-based maps.
 
+When doing physics queries against the tilemap, the cell coordinates are encoded as ``metadata`` for each detected collision shape returned by methods such as :ref:`Physics2DDirectSpaceState.intersect_shape<class_Physics2DDirectSpaceState_method_intersect_shape>`, :ref:`Physics2DDirectBodyState.get_contact_collider_shape_metadata<class_Physics2DDirectBodyState_method_get_contact_collider_shape_metadata>`, etc.
+
 Tutorials
 ---------
 
 - :doc:`../tutorials/2d/using_tilemaps`
+
+- `https://godotengine.org/asset-library/asset/120 <https://godotengine.org/asset-library/asset/120>`_
+
+- `https://godotengine.org/asset-library/asset/112 <https://godotengine.org/asset-library/asset/112>`_
+
+- `https://godotengine.org/asset-library/asset/111 <https://godotengine.org/asset-library/asset/111>`_
+
+- `https://godotengine.org/asset-library/asset/519 <https://godotengine.org/asset-library/asset/519>`_
+
+- `https://godotengine.org/asset-library/asset/520 <https://godotengine.org/asset-library/asset/520>`_
+
+- `https://godotengine.org/asset-library/asset/113 <https://godotengine.org/asset-library/asset/113>`_
 
 Properties
 ----------
@@ -60,6 +74,8 @@ Properties
 | :ref:`Mode<enum_TileMap_Mode>`             | :ref:`mode<class_TileMap_property_mode>`                                       | ``0``                                 |
 +--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`occluder_light_mask<class_TileMap_property_occluder_light_mask>`         | ``1``                                 |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`show_collision<class_TileMap_property_show_collision>`                   | ``false``                             |
 +--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------+
 | :ref:`TileSet<class_TileSet>`              | :ref:`tile_set<class_TileMap_property_tile_set>`                               |                                       |
 +--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------+
@@ -303,7 +319,7 @@ Position for tile origin. See :ref:`TileOrigin<enum_TileMap_TileOrigin>` for pos
 | *Getter*  | is_y_sort_mode_enabled() |
 +-----------+--------------------------+
 
-If ``true``, the TileMap's children will be drawn in order of their Y coordinate.
+If ``true``, the TileMap's direct children will be drawn in order of their Y coordinate.
 
 ----
 
@@ -369,7 +385,7 @@ Friction value for static body collisions (see ``collision_use_kinematic``).
 | *Getter*  | get_collision_layer()      |
 +-----------+----------------------------+
 
-The collision layer(s) for all colliders in the TileMap. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
+The collision layer(s) for all colliders in the TileMap. See `Collision layers and masks <https://docs.godotengine.org/en/3.3/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 
@@ -385,7 +401,7 @@ The collision layer(s) for all colliders in the TileMap. See `Collision layers a
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The collision mask(s) for all colliders in the TileMap. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
+The collision mask(s) for all colliders in the TileMap. See `Collision layers and masks <https://docs.godotengine.org/en/3.3/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 
@@ -470,6 +486,22 @@ The TileMap orientation mode. See :ref:`Mode<enum_TileMap_Mode>` for possible va
 +-----------+--------------------------------+
 
 The light mask assigned to all light occluders in the TileMap. The TileSet's light occluders will cast shadows only from Light2D(s) that have the same light mask(s).
+
+----
+
+.. _class_TileMap_property_show_collision:
+
+- :ref:`bool<class_bool>` **show_collision**
+
++-----------+-----------------------------+
+| *Default* | ``false``                   |
++-----------+-----------------------------+
+| *Setter*  | set_show_collision(value)   |
++-----------+-----------------------------+
+| *Getter*  | is_show_collision_enabled() |
++-----------+-----------------------------+
+
+If ``true``, collision shapes are shown in the editor and at run-time. Requires **Visible Collision Shapes** to be enabled in the **Debug** menu for collision shapes to be visible at run-time.
 
 ----
 
@@ -596,7 +628,14 @@ Returns ``true`` if the given cell is flipped in the Y axis.
 
 - :ref:`Vector2<class_Vector2>` **map_to_world** **(** :ref:`Vector2<class_Vector2>` map_position, :ref:`bool<class_bool>` ignore_half_ofs=false **)** |const|
 
-Returns the global position corresponding to the given tilemap (grid-based) coordinates.
+Returns the local position of the top left corner of the cell corresponding to the given tilemap (grid-based) coordinates.
+
+To get the global position, use :ref:`Node2D.to_global<class_Node2D_method_to_global>`:
+
+::
+
+    var local_position = my_tilemap.map_to_world(map_position)
+    var global_position = my_tilemap.to_global(local_position)
 
 Optionally, the tilemap's half offset can be ignored.
 
@@ -620,7 +659,7 @@ Overriding this method also overrides it internally, allowing custom logic to be
 
 ::
 
-    func set_cell(x, y, tile, flip_x=false, flip_y=false, transpose=false, autotile_coord=Vector2())
+    func set_cell(x, y, tile, flip_x=false, flip_y=false, transpose=false, autotile_coord=Vector2()):
         # Write your custom logic here.
         # To call the default method:
         .set_cell(x, y, tile, flip_x, flip_y, transpose, autotile_coord)
@@ -690,6 +729,13 @@ Updates the tile map's quadrants, allowing things such as navigation and collisi
 - :ref:`Vector2<class_Vector2>` **world_to_map** **(** :ref:`Vector2<class_Vector2>` world_position **)** |const|
 
 Returns the tilemap (grid-based) coordinates corresponding to the given local position.
+
+To use this with a global position, first determine the local position with :ref:`Node2D.to_local<class_Node2D_method_to_local>`:
+
+::
+
+    var local_position = my_tilemap.to_local(global_position)
+    var map_position = my_tilemap.world_to_map(local_position)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

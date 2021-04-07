@@ -16,7 +16,7 @@ Customizable :ref:`StyleBox<class_StyleBox>` with a given set of parameters (no 
 Description
 -----------
 
-This :ref:`StyleBox<class_StyleBox>` can be used to achieve all kinds of looks without the need of a texture. Those properties are customizable:
+This :ref:`StyleBox<class_StyleBox>` can be used to achieve all kinds of looks without the need of a texture. The following properties are customizable:
 
 - Color
 
@@ -26,7 +26,7 @@ This :ref:`StyleBox<class_StyleBox>` can be used to achieve all kinds of looks w
 
 - Shadow (with blur and offset)
 
-Setting corner radius to high values is allowed. As soon as corners would overlap, the stylebox will switch to a relative system. Example:
+Setting corner radius to high values is allowed. As soon as corners overlap, the stylebox will switch to a relative system. Example:
 
 ::
 
@@ -278,9 +278,9 @@ Border width for the top border.
 | *Getter*  | get_corner_detail()      |
 +-----------+--------------------------+
 
-This sets the amount of vertices used for each corner. Higher values result in rounder corners but take more processing power to compute. When choosing a value, you should take the corner radius (:ref:`set_corner_radius_all<class_StyleBoxFlat_method_set_corner_radius_all>`) into account.
+This sets the number of vertices used for each corner. Higher values result in rounder corners but take more processing power to compute. When choosing a value, you should take the corner radius (:ref:`set_corner_radius_all<class_StyleBoxFlat_method_set_corner_radius_all>`) into account.
 
-For corner radii smaller than 10, ``4`` or ``5`` should be enough. For corner radii smaller than 30, values between ``8`` and ``12`` should be enough.
+For corner radii less than 10, ``4`` or ``5`` should be enough. For corner radii less than 30, values between ``8`` and ``12`` should be enough.
 
 A corner detail of ``1`` will result in chamfered corners instead of rounded corners, which is useful for some artistic effects.
 

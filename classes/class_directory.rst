@@ -20,6 +20,8 @@ Directory type. It is used to manage directories and their content (not restrict
 
 When creating a new ``Directory``, its default opened directory will be ``res://``. This may change in the future, so it is advised to always use :ref:`open<class_Directory_method_open>` to initialize your ``Directory`` where you want to operate, with explicit error checking.
 
+**Note:** Many resources types are imported (e.g. textures or sound files), and their source asset will not be included in the exported game, as only the imported version is used. Use :ref:`ResourceLoader<class_ResourceLoader>` to access imported resources.
+
 Here is an example on how to iterate through the files of a directory:
 
 ::
@@ -151,7 +153,7 @@ Returns the currently opened directory's drive index. See :ref:`get_drive<class_
 
 - :ref:`String<class_String>` **get_drive** **(** :ref:`int<class_int>` idx **)**
 
-On Windows, returns the name of the drive (partition) passed as an argument (e.g. ``C:``). On other platforms, or if the requested drive does not existed, the method returns an empty String.
+On Windows, returns the name of the drive (partition) passed as an argument (e.g. ``C:``). On other platforms, or if the requested drive does not exist, the method returns an empty String.
 
 ----
 
@@ -197,7 +199,7 @@ If ``skip_hidden`` is ``true``, hidden files are filtered out.
 
 - void **list_dir_end** **(** **)**
 
-Closes the current stream opened with :ref:`list_dir_begin<class_Directory_method_list_dir_begin>` (whether it has been fully processed with :ref:`get_next<class_Directory_method_get_next>` or not does not matter).
+Closes the current stream opened with :ref:`list_dir_begin<class_Directory_method_list_dir_begin>` (whether it has been fully processed with :ref:`get_next<class_Directory_method_get_next>` does not matter).
 
 ----
 

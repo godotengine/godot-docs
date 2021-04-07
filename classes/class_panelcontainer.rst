@@ -20,6 +20,11 @@ Description
 
 Panel container type. This container fits controls inside of the delimited area of a stylebox. It's useful for giving controls an outline.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/520 <https://godotengine.org/asset-library/asset/520>`_
+
 Theme Properties
 ----------------
 

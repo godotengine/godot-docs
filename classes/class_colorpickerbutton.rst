@@ -18,6 +18,15 @@ Description
 
 Encapsulates a :ref:`ColorPicker<class_ColorPicker>` making it accessible by pressing a button. Pressing the button will toggle the :ref:`ColorPicker<class_ColorPicker>` visibility.
 
+See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
+
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/133 <https://godotengine.org/asset-library/asset/133>`_
+
+- `https://godotengine.org/asset-library/asset/517 <https://godotengine.org/asset-library/asset/517>`_
+
 Properties
 ----------
 

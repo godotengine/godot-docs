@@ -118,7 +118,7 @@ Removes a given item ``id`` from the queue. This should be used to free a queue 
 
 - :ref:`Array<class_Array>` **get_local_addresses** **(** **)** |const|
 
-Returns all of the user's current IPv4 and IPv6 addresses as an array.
+Returns all the user's current IPv4 and IPv6 addresses as an array.
 
 ----
 

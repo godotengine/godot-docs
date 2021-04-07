@@ -39,6 +39,11 @@ Using :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` and indices
     polygon.add_polygon(indices)
     $NavigationPolygonInstance.navpoly = polygon
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/117 <https://godotengine.org/asset-library/asset/117>`_
+
 Methods
 -------
 

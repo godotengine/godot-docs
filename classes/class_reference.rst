@@ -20,9 +20,11 @@ Description
 
 Base class for any object that keeps a reference count. :ref:`Resource<class_Resource>` and many other helper objects inherit this class.
 
-Unlike :ref:`Object<class_Object>`\ s, References keep an internal reference counter so that they are automatically released when no longer in use, and only then. References therefore do not need to be freed manually with :ref:`Object.free<class_Object_method_free>`.
+Unlike other :ref:`Object<class_Object>` types, References keep an internal reference counter so that they are automatically released when no longer in use, and only then. References therefore do not need to be freed manually with :ref:`Object.free<class_Object_method_free>`.
 
 In the vast majority of use cases, instantiating and using ``Reference``-derived types is all you need to do. The methods provided in this class are only for advanced users, and can cause issues if misused.
+
+**Note:** In C#, references will not be freed instantly after they are no longer in use. Instead, garbage collection will run periodically and will free references that are no longer in use. This means that unused references will linger on for a while before being removed.
 
 Tutorials
 ---------

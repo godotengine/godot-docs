@@ -14,12 +14,20 @@ Rect2
 Description
 -----------
 
-Rect2 consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
+``Rect2`` consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
+
+It uses floating-point coordinates.
+
+The 3D counterpart to ``Rect2`` is :ref:`AABB<class_AABB>`.
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/math/index`
+
+- :doc:`../tutorials/math/vector_math`
+
+- :doc:`../tutorials/math/vectors_advanced`
 
 Properties
 ----------
@@ -102,7 +110,7 @@ Beginning corner. Typically has values lower than :ref:`end<class_Rect2_property
 | *Default* | ``Vector2( 0, 0 )`` |
 +-----------+---------------------+
 
-Size from :ref:`position<class_Rect2_property_position>` to :ref:`end<class_Rect2_property_end>`. Typically all components are positive.
+Size from :ref:`position<class_Rect2_property_position>` to :ref:`end<class_Rect2_property_end>`. Typically, all components are positive.
 
 If the size is negative, you can use :ref:`abs<class_Rect2_method_abs>` to fix it.
 

@@ -126,6 +126,8 @@ The :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` instance used to generate th
 
 Whether the texture can be tiled without visible seams or not. Seamless textures take longer to generate.
 
+**Note:** Seamless noise has a lower contrast compared to non-seamless noise. This is due to the way noise uses higher dimensions for generating seamless noise.
+
 ----
 
 .. _class_NoiseTexture_property_width:

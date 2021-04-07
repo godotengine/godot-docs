@@ -11,7 +11,7 @@ AudioStream
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AudioStreamGenerator<class_AudioStreamGenerator>`, :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`, :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>`, :ref:`AudioStreamRandomPitch<class_AudioStreamRandomPitch>`, :ref:`AudioStreamSample<class_AudioStreamSample>`
+**Inherited By:** :ref:`AudioStreamGenerator<class_AudioStreamGenerator>`, :ref:`AudioStreamMP3<class_AudioStreamMP3>`, :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`, :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>`, :ref:`AudioStreamRandomPitch<class_AudioStreamRandomPitch>`, :ref:`AudioStreamSample<class_AudioStreamSample>`
 
 Base class for audio streams.
 
@@ -24,6 +24,12 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/audio/audio_streams`
+
+- `https://godotengine.org/asset-library/asset/526 <https://godotengine.org/asset-library/asset/526>`_
+
+- `https://godotengine.org/asset-library/asset/527 <https://godotengine.org/asset-library/asset/527>`_
+
+- `https://godotengine.org/asset-library/asset/528 <https://godotengine.org/asset-library/asset/528>`_
 
 Methods
 -------

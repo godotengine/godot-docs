@@ -20,7 +20,7 @@ MultiMesh provides low-level mesh instancing. Drawing thousands of :ref:`MeshIns
 
 MultiMesh is much faster as it can draw thousands of instances with a single draw call, resulting in less API overhead.
 
-As a drawback, if the instances are too far away of each other, performance may be reduced as every single instance will always rendered (they are spatially indexed as one, for the whole object).
+As a drawback, if the instances are too far away of each other, performance may be reduced as every single instance will always render (they are spatially indexed as one, for the whole object).
 
 Since instances may have any behavior, the AABB used for visibility must be provided by the user.
 
@@ -278,7 +278,7 @@ All data is packed in one large float array. An array may look like this: Transf
 
 - void **set_instance_color** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` color **)**
 
-Sets the color of a specific instance.
+Sets the color of a specific instance by *multiplying* the mesh's existing vertex colors.
 
 For the color to take effect, ensure that :ref:`color_format<class_MultiMesh_property_color_format>` is non-``null`` on the ``MultiMesh`` and :ref:`SpatialMaterial.vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>` is ``true`` on the material.
 

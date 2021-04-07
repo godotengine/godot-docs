@@ -20,6 +20,23 @@ A TileSet is a library of tiles for a :ref:`TileMap<class_TileMap>`. It contains
 
 Tiles are referenced by a unique integer ID.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/using_tilemaps`
+
+- `https://godotengine.org/asset-library/asset/120 <https://godotengine.org/asset-library/asset/120>`_
+
+- `https://godotengine.org/asset-library/asset/112 <https://godotengine.org/asset-library/asset/112>`_
+
+- `https://godotengine.org/asset-library/asset/111 <https://godotengine.org/asset-library/asset/111>`_
+
+- `https://godotengine.org/asset-library/asset/519 <https://godotengine.org/asset-library/asset/519>`_
+
+- `https://godotengine.org/asset-library/asset/520 <https://godotengine.org/asset-library/asset/520>`_
+
+- `https://godotengine.org/asset-library/asset/113 <https://godotengine.org/asset-library/asset/113>`_
+
 Methods
 -------
 

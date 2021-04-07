@@ -11,7 +11,7 @@ AStar
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-An implementation of A\* to find shortest paths among connected points in space.
+An implementation of A\* to find the shortest paths among connected points in space.
 
 Description
 -----------
@@ -34,6 +34,8 @@ It is also possible to use non-Euclidean distances. To do so, create a class tha
             return min(0, abs(u - v) - 1)
 
 :ref:`_estimate_cost<class_AStar_method__estimate_cost>` should return a lower bound of the distance, i.e. ``_estimate_cost(u, v) <= _compute_cost(u, v)``. This serves as a hint to the algorithm because the custom ``_compute_cost`` might be computation-heavy. If this is not the case, make :ref:`_estimate_cost<class_AStar_method__estimate_cost>` return the same value as :ref:`_compute_cost<class_AStar_method__compute_cost>` to provide the algorithm with the most accurate information.
+
+If the default :ref:`_estimate_cost<class_AStar_method__estimate_cost>` and :ref:`_compute_cost<class_AStar_method__compute_cost>` methods are used, or if the supplied :ref:`_estimate_cost<class_AStar_method__estimate_cost>` method returns a lower bound of the cost, then the paths returned by A\* will be the lowest cost paths. Here, the cost of a path equals to the sum of the :ref:`_compute_cost<class_AStar_method__compute_cost>` results of all segments in the path multiplied by the ``weight_scale``\ s of the end points of the respective segments. If the default methods are used and the ``weight_scale``\ s of all points are set to ``1.0``, then this equals to the sum of Euclidean distances of all segments in the path.
 
 Methods
 -------
@@ -117,7 +119,9 @@ Note that this function is hidden in the default ``AStar`` class.
 
 - void **add_point** **(** :ref:`int<class_int>` id, :ref:`Vector3<class_Vector3>` position, :ref:`float<class_float>` weight_scale=1.0 **)**
 
-Adds a new point at the given position with the given identifier. The algorithm prefers points with lower ``weight_scale`` to form a path. The ``id`` must be 0 or larger, and the ``weight_scale`` must be 1 or larger.
+Adds a new point at the given position with the given identifier. The ``id`` must be 0 or larger, and the ``weight_scale`` must be 1 or larger.
+
+The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost<class_AStar_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point. Thus, all else being equal, the algorithm prefers points with lower ``weight_scale``\ s to form a path.
 
 ::
 
@@ -349,7 +353,7 @@ Sets the ``position`` for the point with the given ``id``.
 
 - void **set_point_weight_scale** **(** :ref:`int<class_int>` id, :ref:`float<class_float>` weight_scale **)**
 
-Sets the ``weight_scale`` for the point with the given ``id``.
+Sets the ``weight_scale`` for the point with the given ``id``. The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost<class_AStar_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

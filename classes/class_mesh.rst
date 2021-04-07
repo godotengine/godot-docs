@@ -20,6 +20,17 @@ Description
 
 Mesh is a type of :ref:`Resource<class_Resource>` that contains vertex array-based geometry, divided in *surfaces*. Each surface contains a completely separate array and a material used to draw it. Design wise, a mesh with multiple surfaces is preferred to a single surface, because objects created in 3D editing software commonly contain multiple materials.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/123 <https://godotengine.org/asset-library/asset/123>`_
+
+- `https://godotengine.org/asset-library/asset/126 <https://godotengine.org/asset-library/asset/126>`_
+
+- `https://godotengine.org/asset-library/asset/125 <https://godotengine.org/asset-library/asset/125>`_
+
+- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+
 Properties
 ----------
 
@@ -258,7 +269,7 @@ Property Descriptions
 | *Getter*  | get_lightmap_size_hint()      |
 +-----------+-------------------------------+
 
-Sets a hint to be used for lightmap resolution in :ref:`BakedLightmap<class_BakedLightmap>`. Overrides :ref:`BakedLightmap.bake_default_texels_per_unit<class_BakedLightmap_property_bake_default_texels_per_unit>`.
+Sets a hint to be used for lightmap resolution in :ref:`BakedLightmap<class_BakedLightmap>`. Overrides :ref:`BakedLightmap.default_texels_per_unit<class_BakedLightmap_property_default_texels_per_unit>`.
 
 Method Descriptions
 -------------------

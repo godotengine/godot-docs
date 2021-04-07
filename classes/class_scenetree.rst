@@ -18,7 +18,7 @@ Description
 
 As one of the most important classes, the ``SceneTree`` manages the hierarchy of nodes in a scene as well as scenes themselves. Nodes can be added, retrieved and removed. The whole scene tree (and thus the current scene) can be paused. Scenes can be loaded, switched and reloaded.
 
-You can also use the ``SceneTree`` to organize your nodes into groups: every node can be assigned as many groups as you want to create, e.g. a "enemy" group. You can then iterate these groups or even call methods and set properties on all the group's members at once.
+You can also use the ``SceneTree`` to organize your nodes into groups: every node can be assigned as many groups as you want to create, e.g. an "enemy" group. You can then iterate these groups or even call methods and set properties on all the group's members at once.
 
 ``SceneTree`` is the default :ref:`MainLoop<class_MainLoop>` implementation used by scenes, and is thus in charge of the game loop.
 
@@ -479,7 +479,9 @@ Method Descriptions
 
 - :ref:`Variant<class_Variant>` **call_group** **(** :ref:`String<class_String>` group, :ref:`String<class_String>` method, ... **)** |vararg|
 
-Calls ``method`` on each member of the given group.
+Calls ``method`` on each member of the given group. You can pass arguments to ``method`` by specifying them at the end of the method call.
+
+**Note:** ``method`` may only have 5 arguments at most (7 arguments passed to this method in total).
 
 ----
 
@@ -487,7 +489,9 @@ Calls ``method`` on each member of the given group.
 
 - :ref:`Variant<class_Variant>` **call_group_flags** **(** :ref:`int<class_int>` flags, :ref:`String<class_String>` group, :ref:`String<class_String>` method, ... **)** |vararg|
 
-Calls ``method`` on each member of the given group, respecting the given :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`.
+Calls ``method`` on each member of the given group, respecting the given :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`. You can pass arguments to ``method`` by specifying them at the end of the method call.
+
+**Note:** ``method`` may only have 5 arguments at most (8 arguments passed to this method in total).
 
 ----
 
@@ -499,6 +503,8 @@ Changes the running scene to the one at the given ``path``, after loading it int
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_CANT_OPEN<class_@GlobalScope_constant_ERR_CANT_OPEN>` if the ``path`` cannot be loaded into a :ref:`PackedScene<class_PackedScene>`, or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if that scene cannot be instantiated.
 
+**Note:** The scene change is deferred, which means that the new scene node is added on the next idle frame. You won't be able to access it immediately after the :ref:`change_scene<class_SceneTree_method_change_scene>` call.
+
 ----
 
 .. _class_SceneTree_method_change_scene_to:
@@ -508,6 +514,8 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:
 Changes the running scene to a new instance of the given :ref:`PackedScene<class_PackedScene>`.
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the scene cannot be instantiated.
+
+**Note:** The scene change is deferred, which means that the new scene node is added on the next idle frame. You won't be able to access it immediately after the :ref:`change_scene_to<class_SceneTree_method_change_scene_to>` call.
 
 ----
 
@@ -525,6 +533,8 @@ Commonly used to create a one-shot delay timer as in the following example:
         print("start")
         yield(get_tree().create_timer(1.0), "timeout")
         print("end")
+
+The timer will be automatically freed after its time elapses.
 
 ----
 
@@ -636,7 +646,7 @@ Queues the given object for deletion, delaying the call to :ref:`Object.free<cla
 
 - void **quit** **(** :ref:`int<class_int>` exit_code=-1 **)**
 
-Quits the application. A process ``exit_code`` can optionally be passed as an argument. If this argument is ``0`` or greater, it will override the :ref:`OS.exit_code<class_OS_property_exit_code>` defined before quitting the application.
+Quits the application at the end of the current iteration. A process ``exit_code`` can optionally be passed as an argument. If this argument is ``0`` or greater, it will override the :ref:`OS.exit_code<class_OS_property_exit_code>` defined before quitting the application.
 
 ----
 

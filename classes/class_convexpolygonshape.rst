@@ -18,6 +18,11 @@ Description
 
 Convex polygon shape resource, which can be added to a :ref:`PhysicsBody<class_PhysicsBody>` or area.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/675 <https://godotengine.org/asset-library/asset/675>`_
+
 Properties
 ----------
 

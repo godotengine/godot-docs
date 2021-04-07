@@ -249,7 +249,7 @@ Deprecated callback, does not do anything. Use :ref:`_input_event<class_MainLoop
 
 - :ref:`bool<class_bool>` **_iteration** **(** :ref:`float<class_float>` delta **)** |virtual|
 
-Called each physics frame with the time since the last physics frame as argument (in seconds). Equivalent to :ref:`Node._physics_process<class_Node_method__physics_process>`.
+Called each physics frame with the time since the last physics frame as argument (``delta``, in seconds). Equivalent to :ref:`Node._physics_process<class_Node_method__physics_process>`.
 
 If implemented, the method must return a boolean value. ``true`` ends the main loop, while ``false`` lets it proceed to the next frame.
 

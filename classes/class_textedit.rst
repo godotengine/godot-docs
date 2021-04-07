@@ -145,6 +145,12 @@ Methods
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                 | :ref:`is_line_hidden<class_TextEdit_method_is_line_hidden>` **(** :ref:`int<class_int>` line **)** |const|                                                                                                                         |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                 | :ref:`is_line_set_as_bookmark<class_TextEdit_method_is_line_set_as_bookmark>` **(** :ref:`int<class_int>` line **)** |const|                                                                                                       |
++-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                 | :ref:`is_line_set_as_breakpoint<class_TextEdit_method_is_line_set_as_breakpoint>` **(** :ref:`int<class_int>` line **)** |const|                                                                                                   |
++-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                 | :ref:`is_line_set_as_safe<class_TextEdit_method_is_line_set_as_safe>` **(** :ref:`int<class_int>` line **)** |const|                                                                                                               |
++-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                 | :ref:`is_selection_active<class_TextEdit_method_is_selection_active>` **(** **)** |const|                                                                                                                                          |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`menu_option<class_TextEdit_method_menu_option>` **(** :ref:`int<class_int>` option **)**                                                                                                                                     |
@@ -163,7 +169,13 @@ Methods
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`set_line<class_TextEdit_method_set_line>` **(** :ref:`int<class_int>` line, :ref:`String<class_String>` new_text **)**                                                                                                       |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                    | :ref:`set_line_as_bookmark<class_TextEdit_method_set_line_as_bookmark>` **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` bookmark **)**                                                                                   |
++-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                    | :ref:`set_line_as_breakpoint<class_TextEdit_method_set_line_as_breakpoint>` **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` breakpoint **)**                                                                             |
++-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`set_line_as_hidden<class_TextEdit_method_set_line_as_hidden>` **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` enable **)**                                                                                         |
++-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                    | :ref:`set_line_as_safe<class_TextEdit_method_set_line_as_safe>` **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` safe **)**                                                                                               |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`toggle_fold_line<class_TextEdit_method_toggle_fold_line>` **(** :ref:`int<class_int>` line **)**                                                                                                                             |
 +-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1025,7 +1037,7 @@ Returns the selection end line.
 
 - :ref:`String<class_String>` **get_word_under_cursor** **(** **)** |const|
 
-Returns a :ref:`String<class_String>` text with the word under the mouse cursor location.
+Returns a :ref:`String<class_String>` text with the word under the caret (text cursor) location.
 
 ----
 
@@ -1058,6 +1070,30 @@ Returns whether the line at the specified index is folded or not.
 - :ref:`bool<class_bool>` **is_line_hidden** **(** :ref:`int<class_int>` line **)** |const|
 
 Returns whether the line at the specified index is hidden or not.
+
+----
+
+.. _class_TextEdit_method_is_line_set_as_bookmark:
+
+- :ref:`bool<class_bool>` **is_line_set_as_bookmark** **(** :ref:`int<class_int>` line **)** |const|
+
+Returns ``true`` when the specified ``line`` is bookmarked.
+
+----
+
+.. _class_TextEdit_method_is_line_set_as_breakpoint:
+
+- :ref:`bool<class_bool>` **is_line_set_as_breakpoint** **(** :ref:`int<class_int>` line **)** |const|
+
+Returns ``true`` when the specified ``line`` has a breakpoint.
+
+----
+
+.. _class_TextEdit_method_is_line_set_as_safe:
+
+- :ref:`bool<class_bool>` **is_line_set_as_safe** **(** :ref:`int<class_int>` line **)** |const|
+
+Returns ``true`` when the specified ``line`` is marked as safe.
 
 ----
 
@@ -1147,11 +1183,39 @@ Sets the text for a specific line.
 
 ----
 
+.. _class_TextEdit_method_set_line_as_bookmark:
+
+- void **set_line_as_bookmark** **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` bookmark **)**
+
+Bookmarks the ``line`` if ``bookmark`` is true. Deletes the bookmark if ``bookmark`` is false.
+
+Bookmarks are shown in the :ref:`breakpoint_gutter<class_TextEdit_property_breakpoint_gutter>`.
+
+----
+
+.. _class_TextEdit_method_set_line_as_breakpoint:
+
+- void **set_line_as_breakpoint** **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` breakpoint **)**
+
+Adds or removes the breakpoint in ``line``. Breakpoints are shown in the :ref:`breakpoint_gutter<class_TextEdit_property_breakpoint_gutter>`.
+
+----
+
 .. _class_TextEdit_method_set_line_as_hidden:
 
 - void **set_line_as_hidden** **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` enable **)**
 
 If ``true``, hides the line of the specified index.
+
+----
+
+.. _class_TextEdit_method_set_line_as_safe:
+
+- void **set_line_as_safe** **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` safe **)**
+
+If ``true``, marks the ``line`` as safe.
+
+This will show the line number with the color provided in the ``safe_line_number_color`` theme property.
 
 ----
 

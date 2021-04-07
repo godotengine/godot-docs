@@ -32,6 +32,8 @@ The above code will create a ``SpinBox``, disable context menu on it and set the
 
 See :ref:`Range<class_Range>` class for more options over the ``SpinBox``.
 
+**Note:** ``SpinBox`` relies on an underlying :ref:`LineEdit<class_LineEdit>` node. To theme a ``SpinBox``'s background, add theme items for :ref:`LineEdit<class_LineEdit>` and customize them.
+
 Properties
 ----------
 

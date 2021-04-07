@@ -20,6 +20,11 @@ Description
 
 Camera is a special node that displays what is visible from its current location. Cameras register themselves in the nearest :ref:`Viewport<class_Viewport>` node (when ascending the tree). Only one camera can be active per viewport. If no viewport is available ascending the tree, the camera will register in the global viewport. In other words, a camera just provides 3D display capabilities to a :ref:`Viewport<class_Viewport>`, and, without one, a scene registered in that :ref:`Viewport<class_Viewport>` (or higher viewports) can't be displayed.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+
 Properties
 ----------
 
@@ -233,6 +238,16 @@ The distance to the far culling boundary for this camera relative to its local Z
 +-----------+----------------+
 
 The camera's field of view angle (in degrees). Only applicable in perspective mode. Since :ref:`keep_aspect<class_Camera_property_keep_aspect>` locks one axis, ``fov`` sets the other axis' field of view angle.
+
+For reference, the default vertical field of view value (``75.0``) is equivalent to a horizontal FOV of:
+
+- ~91.31 degrees in a 4:3 viewport
+
+- ~101.67 degrees in a 16:10 viewport
+
+- ~107.51 degrees in a 16:9 viewport
+
+- ~121.63 degrees in a 21:9 viewport
 
 ----
 
@@ -476,6 +491,15 @@ Sets the camera projection to perspective mode (see :ref:`PROJECTION_PERSPECTIVE
 - :ref:`Vector2<class_Vector2>` **unproject_position** **(** :ref:`Vector3<class_Vector3>` world_point **)** |const|
 
 Returns the 2D coordinate in the :ref:`Viewport<class_Viewport>` rectangle that maps to the given 3D point in worldspace.
+
+**Note:** When using this to position GUI elements over a 3D viewport, use :ref:`is_position_behind<class_Camera_method_is_position_behind>` to prevent them from appearing if the 3D point is behind the camera:
+
+::
+
+    # This code block is part of a script that inherits from Spatial.
+    # `control` is a reference to a node inheriting from Control.
+    control.visible = not get_viewport().get_camera().is_position_behind(global_transform.origin)
+    control.rect_position = get_viewport().get_camera().unproject_position(global_transform.origin)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

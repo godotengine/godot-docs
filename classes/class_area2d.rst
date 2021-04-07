@@ -23,6 +23,12 @@ Tutorials
 
 - :doc:`../tutorials/physics/using_area_2d`
 
+- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
+
+- `https://godotengine.org/asset-library/asset/121 <https://godotengine.org/asset-library/asset/121>`_
+
+- `https://godotengine.org/asset-library/asset/120 <https://godotengine.org/asset-library/asset/120>`_
+
 Properties
 ----------
 
@@ -84,7 +90,9 @@ Signals
 
 - **area_entered** **(** :ref:`Area2D<class_Area2D>` area **)**
 
-Emitted when another area enters.
+Emitted when another Area2D enters this Area2D. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``.
+
+``area`` the other Area2D.
 
 ----
 
@@ -92,23 +100,41 @@ Emitted when another area enters.
 
 - **area_exited** **(** :ref:`Area2D<class_Area2D>` area **)**
 
-Emitted when another area exits.
+Emitted when another Area2D exits this Area2D. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``.
+
+``area`` the other Area2D.
 
 ----
 
 .. _class_Area2D_signal_area_shape_entered:
 
-- **area_shape_entered** **(** :ref:`int<class_int>` area_id, :ref:`Area2D<class_Area2D>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape **)**
+- **area_shape_entered** **(** :ref:`int<class_int>` area_id, :ref:`Area2D<class_Area2D>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` local_shape **)**
 
-Emitted when another area enters, reporting which shapes overlapped. ``shape_owner_get_owner(shape_find_owner(shape))`` returns the parent object of the owner of the ``shape``.
+Emitted when one of another Area2D's :ref:`Shape2D<class_Shape2D>`\ s enters one of this Area2D's :ref:`Shape2D<class_Shape2D>`\ s. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``.
+
+``area_id`` the :ref:`RID<class_RID>` of the other Area2D's :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`Physics2DServer<class_Physics2DServer>`.
+
+``area`` the other Area2D.
+
+``area_shape`` the index of the :ref:`Shape2D<class_Shape2D>` of the other Area2D used by the :ref:`Physics2DServer<class_Physics2DServer>`.
+
+``local_shape`` the index of the :ref:`Shape2D<class_Shape2D>` of this Area2D used by the :ref:`Physics2DServer<class_Physics2DServer>`.
 
 ----
 
 .. _class_Area2D_signal_area_shape_exited:
 
-- **area_shape_exited** **(** :ref:`int<class_int>` area_id, :ref:`Area2D<class_Area2D>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape **)**
+- **area_shape_exited** **(** :ref:`int<class_int>` area_id, :ref:`Area2D<class_Area2D>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` local_shape **)**
 
-Emitted when another area exits, reporting which shapes were overlapping.
+Emitted when one of another Area2D's :ref:`Shape2D<class_Shape2D>`\ s exits one of this Area2D's :ref:`Shape2D<class_Shape2D>`\ s. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``.
+
+``area_id`` the :ref:`RID<class_RID>` of the other Area2D's :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`Physics2DServer<class_Physics2DServer>`.
+
+``area`` the other Area2D.
+
+``area_shape`` the index of the :ref:`Shape2D<class_Shape2D>` of the other Area2D used by the :ref:`Physics2DServer<class_Physics2DServer>`.
+
+``local_shape`` the index of the :ref:`Shape2D<class_Shape2D>` of this Area2D used by the :ref:`Physics2DServer<class_Physics2DServer>`.
 
 ----
 
@@ -116,9 +142,9 @@ Emitted when another area exits, reporting which shapes were overlapping.
 
 - **body_entered** **(** :ref:`Node<class_Node>` body **)**
 
-Emitted when a physics body enters.
+Emitted when a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` enters this Area2D. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
-The ``body`` argument can either be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or a :ref:`TileMap<class_TileMap>` instance (while TileMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
+``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
 
 ----
 
@@ -126,29 +152,41 @@ The ``body`` argument can either be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` 
 
 - **body_exited** **(** :ref:`Node<class_Node>` body **)**
 
-Emitted when a physics body exits.
+Emitted when a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` exits this Area2D. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
-The ``body`` argument can either be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or a :ref:`TileMap<class_TileMap>` instance (while TileMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
+``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
 
 ----
 
 .. _class_Area2D_signal_body_shape_entered:
 
-- **body_shape_entered** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape **)**
+- **body_shape_entered** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
 
-Emitted when a physics body enters, reporting which shapes overlapped.
+Emitted when one of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`'s :ref:`Shape2D<class_Shape2D>`\ s enters one of this Area2D's :ref:`Shape2D<class_Shape2D>`\ s. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
-The ``body`` argument can either be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or a :ref:`TileMap<class_TileMap>` instance (while TileMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
+``body_id`` the :ref:`RID<class_RID>` of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileSet<class_TileSet>`'s :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`Physics2DServer<class_Physics2DServer>`.
+
+``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
+
+``body_shape`` the index of the :ref:`Shape2D<class_Shape2D>` of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`Physics2DServer<class_Physics2DServer>`.
+
+``local_shape`` the index of the :ref:`Shape2D<class_Shape2D>` of this Area2D used by the :ref:`Physics2DServer<class_Physics2DServer>`.
 
 ----
 
 .. _class_Area2D_signal_body_shape_exited:
 
-- **body_shape_exited** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape **)**
+- **body_shape_exited** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
 
-Emitted when a physics body exits, reporting which shapes were overlapping.
+Emitted when one of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`'s :ref:`Shape2D<class_Shape2D>`\ s exits one of this Area2D's :ref:`Shape2D<class_Shape2D>`\ s. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
-The ``body`` argument can either be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or a :ref:`TileMap<class_TileMap>` instance (while TileMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
+``body_id`` the :ref:`RID<class_RID>` of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileSet<class_TileSet>`'s :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`Physics2DServer<class_Physics2DServer>`.
+
+``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
+
+``body_shape`` the index of the :ref:`Shape2D<class_Shape2D>` of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`Physics2DServer<class_Physics2DServer>`.
+
+``local_shape`` the index of the :ref:`Shape2D<class_Shape2D>` of this Area2D used by the :ref:`Physics2DServer<class_Physics2DServer>`.
 
 Enumerations
 ------------
@@ -192,7 +230,9 @@ Property Descriptions
 | *Getter*  | get_angular_damp()      |
 +-----------+-------------------------+
 
-The rate at which objects stop spinning in this area. Represents the angular velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
+The rate at which objects stop spinning in this area. Represents the angular velocity lost per second.
+
+See :ref:`ProjectSettings.physics/2d/default_angular_damp<class_ProjectSettings_property_physics/2d/default_angular_damp>` for more details about damping.
 
 ----
 
@@ -240,7 +280,7 @@ If ``true``, the area's audio bus overrides the default audio bus.
 | *Getter*  | get_collision_layer()      |
 +-----------+----------------------------+
 
-The area's physics layer(s). Collidable objects can exist in any of 32 different layers. A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See also :ref:`collision_mask<class_Area2D_property_collision_mask>`. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
+The area's physics layer(s). Collidable objects can exist in any of 32 different layers. A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See also :ref:`collision_mask<class_Area2D_property_collision_mask>`. See `Collision layers and masks <https://docs.godotengine.org/en/3.3/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 
@@ -256,7 +296,7 @@ The area's physics layer(s). Collidable objects can exist in any of 32 different
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The physics layers this area scans to determine collision detection. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
+The physics layers this area scans to determine collision detection. See `Collision layers and masks <https://docs.godotengine.org/en/3.3/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 
@@ -336,7 +376,9 @@ The area's gravity vector (not normalized). If gravity is a point (see :ref:`gra
 | *Getter*  | get_linear_damp()      |
 +-----------+------------------------+
 
-The rate at which objects stop moving in this area. Represents the linear velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
+The rate at which objects stop moving in this area. Represents the linear velocity lost per second.
+
+See :ref:`ProjectSettings.physics/2d/default_linear_damp<class_ProjectSettings_property_physics/2d/default_linear_damp>` for more details about damping.
 
 ----
 

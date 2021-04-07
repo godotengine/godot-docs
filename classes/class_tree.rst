@@ -66,6 +66,8 @@ Methods
 +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`TreeItem<class_TreeItem>` | :ref:`create_item<class_Tree_method_create_item>` **(** :ref:`Object<class_Object>` parent=null, :ref:`int<class_int>` idx=-1 **)**                   |
 +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`edit_selected<class_Tree_method_edit_selected>` **(** **)**                                                                                     |
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`ensure_cursor_is_visible<class_Tree_method_ensure_cursor_is_visible>` **(** **)**                                                               |
 +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`           | :ref:`get_column_at_position<class_Tree_method_get_column_at_position>` **(** :ref:`Vector2<class_Vector2>` position **)** |const|                    |
@@ -97,6 +99,8 @@ Methods
 | :ref:`TreeItem<class_TreeItem>` | :ref:`get_selected<class_Tree_method_get_selected>` **(** **)** |const|                                                                               |
 +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`           | :ref:`get_selected_column<class_Tree_method_get_selected_column>` **(** **)** |const|                                                                 |
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`scroll_to_item<class_Tree_method_scroll_to_item>` **(** :ref:`Object<class_Object>` item **)**                                                  |
 +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`set_column_expand<class_Tree_method_set_column_expand>` **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand **)**                |
 +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -508,6 +512,14 @@ The new item will be the ``idx``\ th child of parent, or it will be the last chi
 
 ----
 
+.. _class_Tree_method_edit_selected:
+
+- :ref:`bool<class_bool>` **edit_selected** **(** **)**
+
+Edits the selected tree item as if it was clicked. The item must be set editable with :ref:`TreeItem.set_editable<class_TreeItem_method_set_editable>`. Returns ``true`` if the item could be edited. Fails if no item is selected.
+
+----
+
 .. _class_Tree_method_ensure_cursor_is_visible:
 
 - void **ensure_cursor_is_visible** **(** **)**
@@ -568,7 +580,15 @@ To get the item which the returned drop section is relative to, use :ref:`get_it
 
 - :ref:`TreeItem<class_TreeItem>` **get_edited** **(** **)** |const|
 
-Returns the currently edited item. This is only available for custom cell mode.
+Returns the currently edited item. Can be used with :ref:`item_edited<class_Tree_signal_item_edited>` to get the item that was modified.
+
+::
+
+    func _ready():
+        $Tree.item_edited.connect(on_Tree_item_edited)
+    
+    func on_Tree_item_edited():
+        print($Tree.get_edited()) # This item just got edited (e.g. checked).
 
 ----
 
@@ -576,7 +596,7 @@ Returns the currently edited item. This is only available for custom cell mode.
 
 - :ref:`int<class_int>` **get_edited_column** **(** **)** |const|
 
-Returns the column for the currently edited item. This is only available for custom cell mode.
+Returns the column for the currently edited item.
 
 ----
 
@@ -651,6 +671,12 @@ Returns the currently focused column, or -1 if no column is focused.
 In :ref:`SELECT_SINGLE<class_Tree_constant_SELECT_SINGLE>` mode, the focused column is the selected column. In :ref:`SELECT_ROW<class_Tree_constant_SELECT_ROW>` mode, the focused column is always 0 if any item is selected. In :ref:`SELECT_MULTI<class_Tree_constant_SELECT_MULTI>` mode, the focused column is the column under the focus cursor, and there are not necessarily any column selected.
 
 To tell whether a column of an item is selected, use :ref:`TreeItem.is_selected<class_TreeItem_method_is_selected>`.
+
+----
+
+.. _class_Tree_method_scroll_to_item:
+
+- void **scroll_to_item** **(** :ref:`Object<class_Object>` item **)**
 
 ----
 

@@ -154,7 +154,7 @@ Returns the number of input ports in use. Alternative for :ref:`get_free_input_p
 
 - :ref:`String<class_String>` **get_inputs** **(** **)** |const|
 
-Returns a :ref:`String<class_String>` description of the input ports as as colon-separated list using the format ``id,type,name;`` (see :ref:`add_input_port<class_VisualShaderNodeGroupBase_method_add_input_port>`).
+Returns a :ref:`String<class_String>` description of the input ports as a colon-separated list using the format ``id,type,name;`` (see :ref:`add_input_port<class_VisualShaderNodeGroupBase_method_add_input_port>`).
 
 ----
 
@@ -170,7 +170,7 @@ Returns the number of output ports in use. Alternative for :ref:`get_free_output
 
 - :ref:`String<class_String>` **get_outputs** **(** **)** |const|
 
-Returns a :ref:`String<class_String>` description of the output ports as as colon-separated list using the format ``id,type,name;`` (see :ref:`add_output_port<class_VisualShaderNodeGroupBase_method_add_output_port>`).
+Returns a :ref:`String<class_String>` description of the output ports as a colon-separated list using the format ``id,type,name;`` (see :ref:`add_output_port<class_VisualShaderNodeGroupBase_method_add_output_port>`).
 
 ----
 

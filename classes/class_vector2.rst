@@ -23,6 +23,16 @@ Tutorials
 
 - :doc:`../tutorials/math/index`
 
+- :doc:`../tutorials/math/vector_math`
+
+- :doc:`../tutorials/math/vectors_advanced`
+
+- `https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab <https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`_
+
+- `https://godotengine.org/asset-library/asset/584 <https://godotengine.org/asset-library/asset/584>`_
+
+- `https://github.com/godotengine/godot-demo-projects/tree/master/2d <https://github.com/godotengine/godot-demo-projects/tree/master/2d>`_
+
 Properties
 ----------
 
@@ -268,7 +278,7 @@ Cubically interpolates between this vector and ``b`` using ``pre_a`` and ``post_
 
 - :ref:`Vector2<class_Vector2>` **direction_to** **(** :ref:`Vector2<class_Vector2>` b **)**
 
-Returns the normalized vector pointing from this vector to ``b``.
+Returns the normalized vector pointing from this vector to ``b``. This is equivalent to using ``(b - a).normalized()``.
 
 ----
 
@@ -324,7 +334,7 @@ Returns ``true`` if this vector and ``v`` are approximately equal, by running :r
 
 - :ref:`bool<class_bool>` **is_normalized** **(** **)**
 
-Returns ``true`` if the vector is normalized, and false otherwise.
+Returns ``true`` if the vector is normalized, ``false`` otherwise.
 
 ----
 
@@ -422,7 +432,7 @@ Returns the vector with all components rounded to the nearest integer, with half
 
 - :ref:`Vector2<class_Vector2>` **sign** **(** **)**
 
-Returns the vector with each component set to one or negative one, depending on the signs of the components, or zero if the component is zero, by calling :ref:`@GDScript.sign<class_@GDScript_method_sign>` on each component.
+Returns the vector with each component set to one or negative one, depending on the signs of the components. If a component is zero, it returns positive one.
 
 ----
 

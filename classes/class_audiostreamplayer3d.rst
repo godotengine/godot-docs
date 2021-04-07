@@ -16,7 +16,7 @@ Plays 3D sound in 3D space.
 Description
 -----------
 
-Plays a sound effect with directed sound effects, dampens with distance if needed, generates effect of hearable position in space.
+Plays a sound effect with directed sound effects, dampens with distance if needed, generates effect of hearable position in space. For greater realism, a low-pass filter is automatically applied to distant sounds. This can be disabled by setting :ref:`attenuation_filter_cutoff_hz<class_AudioStreamPlayer3D_property_attenuation_filter_cutoff_hz>` to ``20500``.
 
 By default, audio is heard from the camera position. This can be changed by adding a :ref:`Listener<class_Listener>` node to the scene and enabling it by calling :ref:`Listener.make_current<class_Listener_method_make_current>` on it.
 
@@ -113,7 +113,7 @@ enum **AttenuationModel**:
 
 - **ATTENUATION_LOGARITHMIC** = **2** --- Logarithmic dampening of loudness according to distance.
 
-- **ATTENUATION_DISABLED** = **3** --- No dampening of loudness according to distance.
+- **ATTENUATION_DISABLED** = **3** --- No dampening of loudness according to distance. The sound will still be heard positionally, unlike an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`.
 
 ----
 
@@ -125,9 +125,9 @@ enum **AttenuationModel**:
 
 enum **OutOfRangeMode**:
 
-- **OUT_OF_RANGE_MIX** = **0** --- Mix this audio in, even when it's out of range.
+- **OUT_OF_RANGE_MIX** = **0** --- Mix this audio in, even when it's out of range. This increases CPU usage, but keeps the sound playing at the correct position if the camera leaves and enters the ``AudioStreamPlayer3D``'s :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>` radius.
 
-- **OUT_OF_RANGE_PAUSE** = **1** --- Pause this audio when it gets out of range.
+- **OUT_OF_RANGE_PAUSE** = **1** --- Pause this audio when it gets out of range. This decreases CPU usage, but will cause the sound to restart if the camera leaves and enters the ``AudioStreamPlayer3D``'s :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>` radius.
 
 ----
 
@@ -178,7 +178,7 @@ Areas in which this sound plays.
 | *Getter*  | get_attenuation_filter_cutoff_hz()      |
 +-----------+-----------------------------------------+
 
-Dampens audio above this frequency, in Hz.
+Dampens audio using a low-pass filter above this frequency, in Hz. To disable the dampening effect entirely, set this to ``20500`` as this frequency is above the human hearing limit.
 
 ----
 
@@ -194,7 +194,7 @@ Dampens audio above this frequency, in Hz.
 | *Getter*  | get_attenuation_filter_db()      |
 +-----------+----------------------------------+
 
-Amount how much the filter affects the loudness, in dB.
+Amount how much the filter affects the loudness, in decibels.
 
 ----
 
@@ -226,7 +226,7 @@ Decides if audio should get quieter with distance linearly, quadratically, logar
 | *Getter*  | is_autoplay_enabled() |
 +-----------+-----------------------+
 
-If ``true``, audio plays when added to scene tree.
+If ``true``, audio plays when the AudioStreamPlayer3D node is added to scene tree.
 
 ----
 
@@ -242,7 +242,7 @@ If ``true``, audio plays when added to scene tree.
 | *Getter*  | get_bus()      |
 +-----------+----------------+
 
-Bus on which this audio is playing.
+The bus on which this audio is playing.
 
 ----
 
@@ -306,7 +306,7 @@ If ``true``, the audio should be dampened according to the direction of the soun
 | *Getter*  | get_emission_angle_filter_attenuation_db()      |
 +-----------+-------------------------------------------------+
 
-Dampens audio if camera is outside of :ref:`emission_angle_degrees<class_AudioStreamPlayer3D_property_emission_angle_degrees>` and :ref:`emission_angle_enabled<class_AudioStreamPlayer3D_property_emission_angle_enabled>` is set by this factor, in dB.
+Dampens audio if camera is outside of :ref:`emission_angle_degrees<class_AudioStreamPlayer3D_property_emission_angle_degrees>` and :ref:`emission_angle_enabled<class_AudioStreamPlayer3D_property_emission_angle_enabled>` is set by this factor, in decibels.
 
 ----
 
@@ -322,7 +322,7 @@ Dampens audio if camera is outside of :ref:`emission_angle_degrees<class_AudioSt
 | *Getter*  | get_max_db()      |
 +-----------+-------------------+
 
-Sets the absolute maximum of the soundlevel, in dB.
+Sets the absolute maximum of the soundlevel, in decibels.
 
 ----
 
@@ -398,7 +398,7 @@ If ``true``, audio is playing.
 | *Getter* | get_stream()      |
 +----------+-------------------+
 
-The :ref:`AudioStream<class_AudioStream>` object to be played.
+The :ref:`AudioStream<class_AudioStream>` resource to be played.
 
 ----
 
@@ -414,7 +414,7 @@ The :ref:`AudioStream<class_AudioStream>` object to be played.
 | *Getter*  | get_stream_paused()      |
 +-----------+--------------------------+
 
-If ``true``, the playback is paused. You can resume it by setting ``stream_paused`` to ``false``.
+If ``true``, the playback is paused. You can resume it by setting :ref:`stream_paused<class_AudioStreamPlayer3D_property_stream_paused>` to ``false``.
 
 ----
 
@@ -430,7 +430,7 @@ If ``true``, the playback is paused. You can resume it by setting ``stream_pause
 | *Getter*  | get_unit_db()      |
 +-----------+--------------------+
 
-Base sound level unaffected by dampening, in dB.
+The base sound level unaffected by dampening, in decibels.
 
 ----
 
@@ -446,7 +446,7 @@ Base sound level unaffected by dampening, in dB.
 | *Getter*  | get_unit_size()      |
 +-----------+----------------------+
 
-Factor for the attenuation effect.
+The factor for the attenuation effect. Higher values make the sound audible over a larger distance.
 
 Method Descriptions
 -------------------

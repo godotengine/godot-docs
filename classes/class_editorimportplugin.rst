@@ -31,7 +31,7 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` fr
         return "my.special.plugin"
     
     func get_visible_name():
-        return "Special Mesh Importer"
+        return "Special Mesh"
     
     func get_recognized_extensions():
         return ["special", "spec"]
@@ -60,8 +60,7 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` fr
         # Fill the Mesh with data read in "file", left as an exercise to the reader
     
         var filename = save_path + "." + get_save_extension()
-        ResourceSaver.save(filename, mesh)
-        return OK
+        return ResourceSaver.save(filename, mesh)
 
 Tutorials
 ---------
@@ -195,7 +194,7 @@ Gets the extension used to save this resource in the ``.import`` directory.
 
 - :ref:`String<class_String>` **get_visible_name** **(** **)** |virtual|
 
-Gets the name to display in the import window.
+Gets the name to display in the import window. You should choose this name as a continuation to "Import as", e.g. "Import as Special Mesh".
 
 ----
 

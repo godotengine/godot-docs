@@ -35,6 +35,12 @@ Tutorials
 
 - :doc:`../tutorials/3d/high_dynamic_range`
 
+- `https://godotengine.org/asset-library/asset/123 <https://godotengine.org/asset-library/asset/123>`_
+
+- `https://godotengine.org/asset-library/asset/110 <https://godotengine.org/asset-library/asset/110>`_
+
+- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+
 Properties
 ----------
 

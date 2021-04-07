@@ -45,11 +45,11 @@ Methods
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                       | :ref:`get_handle_value<class_EditorSpatialGizmoPlugin_method_get_handle_value>` **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index **)** |virtual|                                                                                               |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SpatialMaterial<class_SpatialMaterial>`       | :ref:`get_material<class_EditorSpatialGizmoPlugin_method_get_material>` **(** :ref:`String<class_String>` name, :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo **)**                                                                                                            |
+| :ref:`SpatialMaterial<class_SpatialMaterial>`       | :ref:`get_material<class_EditorSpatialGizmoPlugin_method_get_material>` **(** :ref:`String<class_String>` name, :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo=null **)**                                                                                                       |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`get_name<class_EditorSpatialGizmoPlugin_method_get_name>` **(** **)** |virtual|                                                                                                                                                                                                      |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                         | :ref:`get_priority<class_EditorSpatialGizmoPlugin_method_get_priority>` **(** **)** |virtual|                                                                                                                                                                                              |
+| :ref:`int<class_int>`                               | :ref:`get_priority<class_EditorSpatialGizmoPlugin_method_get_priority>` **(** **)** |virtual|                                                                                                                                                                                              |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`has_gizmo<class_EditorSpatialGizmoPlugin_method_has_gizmo>` **(** :ref:`Spatial<class_Spatial>` spatial **)** |virtual|                                                                                                                                                              |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -139,7 +139,7 @@ Gets actual value of a handle from gizmo. Called for this plugin's active gizmos
 
 .. _class_EditorSpatialGizmoPlugin_method_get_material:
 
-- :ref:`SpatialMaterial<class_SpatialMaterial>` **get_material** **(** :ref:`String<class_String>` name, :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo **)**
+- :ref:`SpatialMaterial<class_SpatialMaterial>` **get_material** **(** :ref:`String<class_String>` name, :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo=null **)**
 
 Gets material from the internal list of materials. If an :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` is provided, it will try to get the corresponding variant (selected and/or editable).
 
@@ -155,7 +155,7 @@ Override this method to provide the name that will appear in the gizmo visibilit
 
 .. _class_EditorSpatialGizmoPlugin_method_get_priority:
 
-- :ref:`String<class_String>` **get_priority** **(** **)** |virtual|
+- :ref:`int<class_int>` **get_priority** **(** **)** |virtual|
 
 Override this method to set the gizmo's priority. Higher values correspond to higher priority. If a gizmo with higher priority conflicts with another gizmo, only the gizmo with higher priority will be used.
 
@@ -183,7 +183,7 @@ Gets whether a handle is highlighted or not. Called for this plugin's active giz
 
 - :ref:`bool<class_bool>` **is_selectable_when_hidden** **(** **)** |virtual|
 
-Override this method to define whether Spatial with this gizmo should be selecteble even when the gizmo is hidden.
+Override this method to define whether a Spatial with this gizmo should be selectable even when the gizmo is hidden.
 
 ----
 

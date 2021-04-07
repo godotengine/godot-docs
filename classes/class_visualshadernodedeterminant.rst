@@ -16,7 +16,7 @@ Calculates the determinant of a :ref:`Transform<class_Transform>` within the vis
 Description
 -----------
 
-Translates to ``deteminant(x)`` in the shader language.
+Translates to ``determinant(x)`` in the shader language.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

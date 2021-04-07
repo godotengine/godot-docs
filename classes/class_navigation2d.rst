@@ -18,6 +18,11 @@ Description
 
 Navigation2D provides navigation and pathfinding within a 2D area, specified as a collection of :ref:`NavigationPolygon<class_NavigationPolygon>` resources. By default, these are automatically collected from child :ref:`NavigationPolygonInstance<class_NavigationPolygonInstance>` nodes, but they can also be added on the fly with :ref:`navpoly_add<class_Navigation2D_method_navpoly_add>`.
 
+Tutorials
+---------
+
+- `https://godotengine.org/asset-library/asset/117 <https://godotengine.org/asset-library/asset/117>`_
+
 Methods
 -------
 

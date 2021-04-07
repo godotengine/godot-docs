@@ -34,8 +34,6 @@ Properties
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`Geometry<class_Geometry>`                                           | :ref:`Geometry<class_@GlobalScope_property_Geometry>`                               |
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`GodotSharp<class_GodotSharp>`                                       | :ref:`GodotSharp<class_@GlobalScope_property_GodotSharp>`                           |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`IP<class_IP>`                                                       | :ref:`IP<class_@GlobalScope_property_IP>`                                           |
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`Input<class_Input>`                                                 | :ref:`Input<class_@GlobalScope_property_Input>`                                     |
@@ -1284,6 +1282,18 @@ enum **ButtonList**:
 
 .. _class_@GlobalScope_constant_JOY_BUTTON_15:
 
+.. _class_@GlobalScope_constant_JOY_BUTTON_16:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_17:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_18:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_19:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_20:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_21:
+
 .. _class_@GlobalScope_constant_JOY_BUTTON_MAX:
 
 .. _class_@GlobalScope_constant_JOY_SONY_CIRCLE:
@@ -1335,6 +1345,18 @@ enum **ButtonList**:
 .. _class_@GlobalScope_constant_JOY_DPAD_LEFT:
 
 .. _class_@GlobalScope_constant_JOY_DPAD_RIGHT:
+
+.. _class_@GlobalScope_constant_JOY_MISC1:
+
+.. _class_@GlobalScope_constant_JOY_PADDLE1:
+
+.. _class_@GlobalScope_constant_JOY_PADDLE2:
+
+.. _class_@GlobalScope_constant_JOY_PADDLE3:
+
+.. _class_@GlobalScope_constant_JOY_PADDLE4:
+
+.. _class_@GlobalScope_constant_JOY_TOUCHPAD:
 
 .. _class_@GlobalScope_constant_JOY_L:
 
@@ -1426,7 +1448,19 @@ enum **JoystickList**:
 
 - **JOY_BUTTON_15** = **15** --- Gamepad button 15.
 
-- **JOY_BUTTON_MAX** = **16** --- Represents the maximum number of joystick buttons supported.
+- **JOY_BUTTON_16** = **16** --- Gamepad button 16.
+
+- **JOY_BUTTON_17** = **17** --- Gamepad button 17.
+
+- **JOY_BUTTON_18** = **18** --- Gamepad button 18.
+
+- **JOY_BUTTON_19** = **19** --- Gamepad button 19.
+
+- **JOY_BUTTON_20** = **20** --- Gamepad button 20.
+
+- **JOY_BUTTON_21** = **21** --- Gamepad button 21.
+
+- **JOY_BUTTON_MAX** = **22** --- Represents the maximum number of joystick buttons supported.
 
 - **JOY_SONY_CIRCLE** = **1** --- DualShock circle button.
 
@@ -1477,6 +1511,18 @@ enum **JoystickList**:
 - **JOY_DPAD_LEFT** = **14** --- Gamepad DPad left.
 
 - **JOY_DPAD_RIGHT** = **15** --- Gamepad DPad right.
+
+- **JOY_MISC1** = **16** --- Gamepad SDL miscellaneous button.
+
+- **JOY_PADDLE1** = **17** --- Gamepad SDL paddle 1 button.
+
+- **JOY_PADDLE2** = **18** --- Gamepad SDL paddle 2 button.
+
+- **JOY_PADDLE3** = **19** --- Gamepad SDL paddle 3 button.
+
+- **JOY_PADDLE4** = **20** --- Gamepad SDL paddle 4 button.
+
+- **JOY_TOUCHPAD** = **21** --- Gamepad SDL touchpad button.
 
 - **JOY_L** = **4** --- Gamepad left Shoulder button.
 
@@ -1678,10 +1724,10 @@ Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other failu
 
     var err = method_that_returns_error()
     if err != OK:
-        print("Failure!)
+        print("Failure!")
     # Or, equivalent:
     if err:
-        print("Still failing!)
+        print("Still failing!")
 
 - **FAILED** = **1** --- Generic error.
 
@@ -2260,14 +2306,6 @@ The :ref:`Engine<class_Engine>` singleton.
 - :ref:`Geometry<class_Geometry>` **Geometry**
 
 The :ref:`Geometry<class_Geometry>` singleton.
-
-----
-
-.. _class_@GlobalScope_property_GodotSharp:
-
-- :ref:`GodotSharp<class_GodotSharp>` **GodotSharp**
-
-The :ref:`GodotSharp<class_GodotSharp>` singleton.
 
 ----
 

@@ -24,6 +24,8 @@ See also :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`MeshDataTool<class_MeshDataToo
 
 **Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`_ for front faces of triangle primitive modes.
 
+**Note:** In case of missing points when handling large amounts of mesh data, try increasing its buffer size limit under :ref:`ProjectSettings.rendering/limits/buffers/immediate_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/immediate_buffer_size_kb>`.
+
 Methods
 -------
 

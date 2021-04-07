@@ -35,12 +35,18 @@ Here's a sample on how to write and read from a file:
         file.close()
         return content
 
-In the example above, the file will be saved in the user data folder as specified in the `Data paths <https://docs.godotengine.org/en/latest/tutorials/io/data_paths.html>`_ documentation.
+In the example above, the file will be saved in the user data folder as specified in the `Data paths <https://docs.godotengine.org/en/3.3/tutorials/io/data_paths.html>`_ documentation.
+
+**Note:** To access project resources once exported, it is recommended to use :ref:`ResourceLoader<class_ResourceLoader>` instead of the ``File`` API, as some files are converted to engine-specific formats and their original source files might not be present in the exported PCK package.
+
+**Note:** Files are automatically closed only if the process exits "normally" (such as by clicking the window manager's close button or pressing **Alt + F4**). If you stop the project execution by pressing **F8** while the project is running, the file won't be closed as the game process will be killed. You can work around this by calling :ref:`flush<class_File_method_flush>` at regular intervals.
 
 Tutorials
 ---------
 
 - :doc:`../getting_started/step_by_step/filesystem`
+
+- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
 
 Properties
 ----------
@@ -58,6 +64,8 @@ Methods
 | :ref:`bool<class_bool>`                       | :ref:`eof_reached<class_File_method_eof_reached>` **(** **)** |const|                                                                                                                                                          |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`file_exists<class_File_method_file_exists>` **(** :ref:`String<class_String>` path **)** |const|                                                                                                                         |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`flush<class_File_method_flush>` **(** **)**                                                                                                                                                                              |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`get_16<class_File_method_get_16>` **(** **)** |const|                                                                                                                                                                    |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -202,9 +210,11 @@ Property Descriptions
 | *Getter*  | get_endian_swap()      |
 +-----------+------------------------+
 
-If ``true``, the file's endianness is swapped. Use this if you're dealing with files written on big-endian machines.
+If ``true``, the file is read with big-endian `endianness <https://en.wikipedia.org/wiki/Endianness>`_. If ``false``, the file is read with little-endian endianness. If in doubt, leave this to ``false`` as most files are written with little-endian endianness.
 
-**Note:** This is about the file format, not CPU type. This is always reset to ``false`` whenever you open the file.
+**Note:** :ref:`endian_swap<class_File_property_endian_swap>` is only about the file format, not the CPU type. The CPU endianness doesn't affect the default endianness for files written.
+
+**Note:** This is always reset to ``false`` whenever you open the file. Therefore, you must set :ref:`endian_swap<class_File_property_endian_swap>` *after* opening the file, not before.
 
 Method Descriptions
 -------------------
@@ -213,7 +223,7 @@ Method Descriptions
 
 - void **close** **(** **)**
 
-Closes the currently opened file.
+Closes the currently opened file and prevents subsequent read/write operations. Use :ref:`flush<class_File_method_flush>` to persist the data to disk without closing the file.
 
 ----
 
@@ -233,7 +243,17 @@ Returns ``true`` if the file cursor has read past the end of the file.
 
 Returns ``true`` if the file exists in the given path.
 
-**Note:** Many resources types are imported (e.g. textures or sound files), and that their source asset will not be included in the exported game, as only the imported version is used (in the ``res://.import`` folder). To check for the existence of such resources while taking into account the remapping to their imported location, use :ref:`ResourceLoader.exists<class_ResourceLoader_method_exists>`. Typically, using ``File.file_exists`` on an imported resource would work while you are developing in the editor (the source asset is present in ``res://``, but fail when exported).
+**Note:** Many resources types are imported (e.g. textures or sound files), and their source asset will not be included in the exported game, as only the imported version is used. See :ref:`ResourceLoader.exists<class_ResourceLoader_method_exists>` for an alternative approach that takes resource remapping into account.
+
+----
+
+.. _class_File_method_flush:
+
+- void **flush** **(** **)**
+
+Writes the file's buffer to disk. Flushing is automatically performed when the file is closed. This means you don't need to call :ref:`flush<class_File_method_flush>` manually before closing a file using :ref:`close<class_File_method_close>`. Still, calling :ref:`flush<class_File_method_flush>` can be used to ensure the data is safe even if the project crashes instead of being closed gracefully.
+
+**Note:** Only call :ref:`flush<class_File_method_flush>` when you actually need it. Otherwise, it will decrease performance due to constant disk writes.
 
 ----
 
@@ -578,9 +598,7 @@ Stores a floating-point number as 32 bits in the file.
 
 - void **store_line** **(** :ref:`String<class_String>` line **)**
 
-Stores the given :ref:`String<class_String>` as a line in the file.
-
-Text will be encoded as UTF-8.
+Appends ``line`` to the file followed by a line return character (``\n``), encoding the text as UTF-8.
 
 ----
 
@@ -606,9 +624,7 @@ Stores a floating-point number in the file.
 
 - void **store_string** **(** :ref:`String<class_String>` string **)**
 
-Stores the given :ref:`String<class_String>` in the file.
-
-Text will be encoded as UTF-8.
+Appends ``string`` to the file without a line return, encoding the text as UTF-8.
 
 ----
 

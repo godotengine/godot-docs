@@ -182,7 +182,7 @@ Returns the closest offset to ``to_point``. This offset is meant to be used in :
 
 - :ref:`Vector3<class_Vector3>` **get_closest_point** **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|
 
-Returns the closest point (in curve's local space) to ``to_point``.
+Returns the closest baked point (in curve's local space) to ``to_point``.
 
 ``to_point`` must be in this curve's local space.
 
@@ -200,7 +200,7 @@ Returns the number of points describing the curve.
 
 - :ref:`Vector3<class_Vector3>` **get_point_in** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the position of the control point leading to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0, 0)``.
+Returns the position of the control point leading to the vertex ``idx``. The returned position is relative to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0, 0)``.
 
 ----
 
@@ -208,7 +208,7 @@ Returns the position of the control point leading to the vertex ``idx``. If the 
 
 - :ref:`Vector3<class_Vector3>` **get_point_out** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the position of the control point leading out of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0, 0)``.
+Returns the position of the control point leading out of the vertex ``idx``. The returned position is relative to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0, 0)``.
 
 ----
 
@@ -242,7 +242,7 @@ If ``idx`` is out of bounds it is truncated to the first or last vertex, and ``t
 
 - :ref:`Vector3<class_Vector3>` **interpolate_baked** **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` cubic=false **)** |const|
 
-Returns a point within the curve at position ``offset``, where ``offset`` is measured as a pixel distance along the curve.
+Returns a point within the curve at position ``offset``, where ``offset`` is measured as a distance in 3D units along the curve.
 
 To do that, it finds the two cached points where the ``offset`` lies between, then interpolates the values. This interpolation is cubic if ``cubic`` is set to ``true``, or linear if set to ``false``.
 
@@ -282,7 +282,7 @@ Deletes the point ``idx`` from the curve. Sends an error to the console if ``idx
 
 - void **set_point_in** **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` position **)**
 
-Sets the position of the control point leading to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console.
+Sets the position of the control point leading to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console. The position is relative to the vertex.
 
 ----
 
@@ -290,7 +290,7 @@ Sets the position of the control point leading to the vertex ``idx``. If the ind
 
 - void **set_point_out** **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` position **)**
 
-Sets the position of the control point leading out of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console.
+Sets the position of the control point leading out of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console. The position is relative to the vertex.
 
 ----
 

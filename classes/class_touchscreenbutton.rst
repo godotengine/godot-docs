@@ -16,7 +16,7 @@ Button for touch screen devices for gameplay use.
 Description
 -----------
 
-TouchScreenButton allows you to create on-screen buttons for touch devices. It's intended for gameplay use, such as a unit you have to touch to move.
+TouchScreenButton allows you to create on-screen buttons for touch devices. It's intended for gameplay use, such as a unit you have to touch to move. Unlike :ref:`Button<class_Button>`, TouchScreenButton supports multitouch out of the box. Several TouchScreenButtons can be pressed at the same time with touch input.
 
 This node inherits from :ref:`Node2D<class_Node2D>`. Unlike with :ref:`Control<class_Control>` nodes, you cannot set anchors on it. If you want to create menus or user interfaces, you may want to use :ref:`Button<class_Button>` nodes instead. To make button nodes react to touch events, you can enable the Emulate Mouse option in the Project Settings.
 
@@ -143,7 +143,9 @@ The button's texture for the normal state.
 | *Getter*  | is_passby_press_enabled() |
 +-----------+---------------------------+
 
-If ``true``, pass-by presses are enabled.
+If ``true``, the :ref:`pressed<class_TouchScreenButton_signal_pressed>` and :ref:`released<class_TouchScreenButton_signal_released>` signals are emitted whenever a pressed finger goes in and out of the button, even if the pressure started outside the active area of the button.
+
+**Note:** this is a "pass-by" (not "bypass") press mode.
 
 ----
 

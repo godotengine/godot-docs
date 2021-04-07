@@ -37,6 +37,8 @@ Tutorials
 
 - :doc:`../tutorials/2d/custom_drawing_in_2d`
 
+- `https://godotengine.org/asset-library/asset/528 <https://godotengine.org/asset-library/asset/528>`_
+
 Properties
 ----------
 
@@ -178,7 +180,7 @@ Emitted when becoming hidden.
 
 - **item_rect_changed** **(** **)**
 
-Emitted when the item rect has changed.
+Emitted when the item's :ref:`Rect2<class_Rect2>` boundaries (position or size) have changed, or when an action is taking place that may have impacted these boundaries (e.g. changing :ref:`Sprite.texture<class_Sprite_property_texture>`).
 
 ----
 
@@ -512,7 +514,7 @@ Sets a custom transform for drawing via matrix. Anything drawn afterwards will b
 
 - void **draw_string** **(** :ref:`Font<class_Font>` font, :ref:`Vector2<class_Vector2>` position, :ref:`String<class_String>` text, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`int<class_int>` clip_w=-1 **)**
 
-Draws ``text`` using the specified ``font`` at the ``position`` (top-left corner). The text will have its color multiplied by ``modulate``. If ``clip_w`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
+Draws ``text`` using the specified ``font`` at the ``position`` (bottom-left corner using the baseline of the font). The text will have its color multiplied by ``modulate``. If ``clip_w`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
 
 **Example using the default project font:**
 

@@ -23,6 +23,12 @@ Tutorials
 
 - :doc:`../tutorials/physics/physics_introduction`
 
+- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
+
+- `https://godotengine.org/asset-library/asset/121 <https://godotengine.org/asset-library/asset/121>`_
+
+- `https://godotengine.org/asset-library/asset/113 <https://godotengine.org/asset-library/asset/113>`_
+
 Properties
 ----------
 

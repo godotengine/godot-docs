@@ -179,7 +179,7 @@ enum **TreeCellMode**:
 
 - **CELL_MODE_STRING** = **0** --- Cell contains a string.
 
-- **CELL_MODE_CHECK** = **1** --- Cell can be checked.
+- **CELL_MODE_CHECK** = **1** --- Cell contains a checkbox.
 
 - **CELL_MODE_RANGE** = **2** --- Cell contains a range.
 
@@ -399,6 +399,8 @@ Returns the icon :ref:`Texture<class_Texture>` region as :ref:`Rect2<class_Rect2
 
 - :ref:`Variant<class_Variant>` **get_metadata** **(** :ref:`int<class_int>` column **)** |const|
 
+Returns the metadata value that was set for the given column using :ref:`set_metadata<class_TreeItem_method_set_metadata>`.
+
 ----
 
 .. _class_TreeItem_method_get_next:
@@ -449,17 +451,23 @@ If ``wrap`` is enabled, the method will wrap around to the last visible element 
 
 - :ref:`float<class_float>` **get_range** **(** :ref:`int<class_int>` column **)** |const|
 
+Returns the value of a :ref:`CELL_MODE_RANGE<class_TreeItem_constant_CELL_MODE_RANGE>` column.
+
 ----
 
 .. _class_TreeItem_method_get_range_config:
 
 - :ref:`Dictionary<class_Dictionary>` **get_range_config** **(** :ref:`int<class_int>` column **)**
 
+Returns a dictionary containing the range parameters for a given column. The keys are "min", "max", "step", and "expr".
+
 ----
 
 .. _class_TreeItem_method_get_suffix:
 
 - :ref:`String<class_String>` **get_suffix** **(** :ref:`int<class_int>` column **)** |const|
+
+Gets the suffix string shown after the column value.
 
 ----
 
@@ -681,17 +689,25 @@ Sets the given column's icon's texture region.
 
 - void **set_metadata** **(** :ref:`int<class_int>` column, :ref:`Variant<class_Variant>` meta **)**
 
+Sets the metadata value for the given column, which can be retrieved later using :ref:`get_metadata<class_TreeItem_method_get_metadata>`. This can be used, for example, to store a reference to the original data.
+
 ----
 
 .. _class_TreeItem_method_set_range:
 
 - void **set_range** **(** :ref:`int<class_int>` column, :ref:`float<class_float>` value **)**
 
+Sets the value of a :ref:`CELL_MODE_RANGE<class_TreeItem_constant_CELL_MODE_RANGE>` column.
+
 ----
 
 .. _class_TreeItem_method_set_range_config:
 
 - void **set_range_config** **(** :ref:`int<class_int>` column, :ref:`float<class_float>` min, :ref:`float<class_float>` max, :ref:`float<class_float>` step, :ref:`bool<class_bool>` expr=false **)**
+
+Sets the range of accepted values for a column. The column must be in the :ref:`CELL_MODE_RANGE<class_TreeItem_constant_CELL_MODE_RANGE>` mode.
+
+If ``expr`` is ``true``, the edit mode slider will use an exponential scale as with :ref:`Range.exp_edit<class_Range_property_exp_edit>`.
 
 ----
 
@@ -707,11 +723,15 @@ If ``true``, the given column is selectable.
 
 - void **set_suffix** **(** :ref:`int<class_int>` column, :ref:`String<class_String>` text **)**
 
+Sets a string to be shown after a column's value (for example, a unit abbreviation).
+
 ----
 
 .. _class_TreeItem_method_set_text:
 
 - void **set_text** **(** :ref:`int<class_int>` column, :ref:`String<class_String>` text **)**
+
+Sets the given column's text value.
 
 ----
 

@@ -84,7 +84,7 @@ Returns the font ascent (number of pixels above the baseline).
 
 - :ref:`Vector2<class_Vector2>` **get_char_size** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0 **)** |const|
 
-Returns the size of a character, optionally taking kerning into account if the next character is provided.
+Returns the size of a character, optionally taking kerning into account if the next character is provided. Note that the height returned is the font height (see :ref:`get_height<class_Font_method_get_height>`) and has no relation to the glyph height.
 
 ----
 
@@ -108,7 +108,7 @@ Returns the total font height (ascent plus descent) in pixels.
 
 - :ref:`Vector2<class_Vector2>` **get_string_size** **(** :ref:`String<class_String>` string **)** |const|
 
-Returns the size of a string, taking kerning and advance into account.
+Returns the size of a string, taking kerning and advance into account. Note that the height returned is the font height (see :ref:`get_height<class_Font_method_get_height>`) and has no relation to the string.
 
 ----
 

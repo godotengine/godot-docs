@@ -28,6 +28,10 @@ Properties
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`                                               | :ref:`extra_cull_margin<class_GeometryInstance_property_extra_cull_margin>`   | ``0.0``   |
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                                 | :ref:`generate_lightmap<class_GeometryInstance_property_generate_lightmap>`   | ``true``  |
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+| :ref:`LightmapScale<enum_GeometryInstance_LightmapScale>`               | :ref:`lightmap_scale<class_GeometryInstance_property_lightmap_scale>`         | ``0``     |
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`                                               | :ref:`lod_max_distance<class_GeometryInstance_property_lod_max_distance>`     | ``0.0``   |
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`                                               | :ref:`lod_max_hysteresis<class_GeometryInstance_property_lod_max_hysteresis>` | ``0.0``   |
@@ -54,6 +58,32 @@ Methods
 
 Enumerations
 ------------
+
+.. _enum_GeometryInstance_LightmapScale:
+
+.. _class_GeometryInstance_constant_LIGHTMAP_SCALE_1X:
+
+.. _class_GeometryInstance_constant_LIGHTMAP_SCALE_2X:
+
+.. _class_GeometryInstance_constant_LIGHTMAP_SCALE_4X:
+
+.. _class_GeometryInstance_constant_LIGHTMAP_SCALE_8X:
+
+.. _class_GeometryInstance_constant_LIGHTMAP_SCALE_MAX:
+
+enum **LightmapScale**:
+
+- **LIGHTMAP_SCALE_1X** = **0** --- The generated lightmap texture will have the original size.
+
+- **LIGHTMAP_SCALE_2X** = **1** --- The generated lightmap texture will be twice as large, on each axis.
+
+- **LIGHTMAP_SCALE_4X** = **2** --- The generated lightmap texture will be 4 times as large, on each axis.
+
+- **LIGHTMAP_SCALE_8X** = **3** --- The generated lightmap texture will be 8 times as large, on each axis.
+
+- **LIGHTMAP_SCALE_MAX** = **4**
+
+----
 
 .. _enum_GeometryInstance_ShadowCastingSetting:
 
@@ -131,6 +161,38 @@ The selected shadow casting flag. See :ref:`ShadowCastingSetting<enum_GeometryIn
 +-----------+------------------------------+
 
 The extra distance added to the GeometryInstance's bounding box (:ref:`AABB<class_AABB>`) to increase its cull box.
+
+----
+
+.. _class_GeometryInstance_property_generate_lightmap:
+
+- :ref:`bool<class_bool>` **generate_lightmap**
+
++-----------+------------------------------+
+| *Default* | ``true``                     |
++-----------+------------------------------+
+| *Setter*  | set_generate_lightmap(value) |
++-----------+------------------------------+
+| *Getter*  | get_generate_lightmap()      |
++-----------+------------------------------+
+
+When disabled, the mesh will be taken into account when computing indirect lighting, but the resulting lightmap will not be saved. Useful for emissive only materials or shadow casters.
+
+----
+
+.. _class_GeometryInstance_property_lightmap_scale:
+
+- :ref:`LightmapScale<enum_GeometryInstance_LightmapScale>` **lightmap_scale**
+
++-----------+---------------------------+
+| *Default* | ``0``                     |
++-----------+---------------------------+
+| *Setter*  | set_lightmap_scale(value) |
++-----------+---------------------------+
+| *Getter*  | get_lightmap_scale()      |
++-----------+---------------------------+
+
+Scale factor for the generated baked lightmap. Useful for adding detail to certain mesh instances.
 
 ----
 

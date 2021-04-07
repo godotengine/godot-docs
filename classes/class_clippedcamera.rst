@@ -116,7 +116,7 @@ If ``true``, the camera stops on contact with :ref:`PhysicsBody<class_PhysicsBod
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The camera's collision mask. Only objects in at least one collision layer matching the mask will be detected. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
+The camera's collision mask. Only objects in at least one collision layer matching the mask will be detected. See `Collision layers and masks <https://docs.godotengine.org/en/3.3/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 

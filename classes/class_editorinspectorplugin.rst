@@ -16,7 +16,7 @@ Plugin for adding custom property editors on inspector.
 Description
 -----------
 
-This plugins allows adding custom property editors to :ref:`EditorInspector<class_EditorInspector>`.
+These plugins allow adding custom property editors to :ref:`EditorInspector<class_EditorInspector>`.
 
 Plugins are registered via :ref:`EditorPlugin.add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>`.
 
@@ -26,7 +26,7 @@ If supported, the function :ref:`parse_begin<class_EditorInspectorPlugin_method_
 
 Subsequently, the :ref:`parse_category<class_EditorInspectorPlugin_method_parse_category>` and :ref:`parse_property<class_EditorInspectorPlugin_method_parse_property>` are called for every category and property. They offer the ability to add custom controls to the inspector too.
 
-Finally :ref:`parse_end<class_EditorInspectorPlugin_method_parse_end>` will be called.
+Finally, :ref:`parse_end<class_EditorInspectorPlugin_method_parse_end>` will be called.
 
 On each of these calls, the "add" functions can be called.
 

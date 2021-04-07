@@ -661,11 +661,6 @@ Select the item at the specified index.
 
 Sets the background color of the item specified by ``idx`` index to the specified :ref:`Color<class_Color>`.
 
-::
-
-    var some_string = "Some text"
-    some_string.set_item_custom_bg_color(0,Color(1, 0, 0, 1) # This will set the background color of the first item of the control to red.
-
 ----
 
 .. _class_ItemList_method_set_item_custom_fg_color:
@@ -673,11 +668,6 @@ Sets the background color of the item specified by ``idx`` index to the specifie
 - void **set_item_custom_fg_color** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` custom_fg_color **)**
 
 Sets the foreground color of the item specified by ``idx`` index to the specified :ref:`Color<class_Color>`.
-
-::
-
-    var some_string = "Some text"
-    some_string.set_item_custom_fg_color(0,Color(1, 0, 0, 1) # This will set the foreground color of the first item of the control to red.
 
 ----
 

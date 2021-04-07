@@ -16,11 +16,13 @@ High-level multiplayer API.
 Description
 -----------
 
-This class implements most of the logic behind the high-level multiplayer API.
+This class implements most of the logic behind the high-level multiplayer API. See also :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`.
 
 By default, :ref:`SceneTree<class_SceneTree>` has a reference to this class that is used to provide multiplayer capabilities (i.e. RPC/RSET) across the whole scene.
 
 It is possible to override the MultiplayerAPI instance used by specific Nodes by setting the :ref:`Node.custom_multiplayer<class_Node_property_custom_multiplayer>` property, effectively allowing to run both client and server in the same scene.
+
+**Note:** The high-level multiplayer API protocol is an implementation detail and isn't meant to be used by non-Godot servers. It may change without notice.
 
 Properties
 ----------
@@ -31,6 +33,8 @@ Properties
 | :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` | :ref:`network_peer<class_MultiplayerAPI_property_network_peer>`                                     |           |
 +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_MultiplayerAPI_property_refuse_new_network_connections>` | ``false`` |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
+| :ref:`Node<class_Node>`                                         | :ref:`root_node<class_MultiplayerAPI_property_root_node>`                                           |           |
 +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
 
 Methods
@@ -52,8 +56,6 @@ Methods
 | void                                    | :ref:`poll<class_MultiplayerAPI_method_poll>` **(** **)**                                                                                                                                                                 |
 +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`   | :ref:`send_bytes<class_MultiplayerAPI_method_send_bytes>` **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes, :ref:`int<class_int>` id=0, :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` mode=2 **)** |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`set_root_node<class_MultiplayerAPI_method_set_root_node>` **(** :ref:`Node<class_Node>` node **)**                                                                                                                  |
 +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -197,6 +199,22 @@ The peer object to handle the RPC system (effectively enabling networking when s
 
 If ``true``, the MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` refuses new incoming connections.
 
+----
+
+.. _class_MultiplayerAPI_property_root_node:
+
+- :ref:`Node<class_Node>` **root_node**
+
++----------+----------------------+
+| *Setter* | set_root_node(value) |
++----------+----------------------+
+| *Getter* | get_root_node()      |
++----------+----------------------+
+
+The root node to use for RPCs. Instead of an absolute path, a relative path will be used to find the node upon which the RPC should be executed.
+
+This effectively allows to have different branches of the scene tree to be managed by different MultiplayerAPI, allowing for example to run both client and server in the same scene.
+
 Method Descriptions
 -------------------
 
@@ -265,16 +283,6 @@ Method used for polling the MultiplayerAPI. You only need to worry about this if
 - :ref:`Error<enum_@GlobalScope_Error>` **send_bytes** **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes, :ref:`int<class_int>` id=0, :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` mode=2 **)**
 
 Sends the given raw ``bytes`` to a specific peer identified by ``id`` (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_method_set_target_peer>`). Default ID is ``0``, i.e. broadcast to all peers.
-
-----
-
-.. _class_MultiplayerAPI_method_set_root_node:
-
-- void **set_root_node** **(** :ref:`Node<class_Node>` node **)**
-
-Sets the base root node to use for RPCs. Instead of an absolute path, a relative path will be used to find the node upon which the RPC should be executed.
-
-This effectively allows to have different branches of the scene tree to be managed by different MultiplayerAPI, allowing for example to run both client and server in the same scene.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

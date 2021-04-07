@@ -24,33 +24,41 @@ A GridMap contains a collection of cells. Each grid cell refers to a tile in the
 
 Internally, a GridMap is split into a sparse collection of octants for efficient rendering and physics processing. Every octant has the same dimensions and can contain several cells.
 
+**Note:** GridMap doesn't extend :ref:`VisualInstance<class_VisualInstance>` and therefore can't be hidden or cull masked based on :ref:`VisualInstance.layers<class_VisualInstance_property_layers>`. If you make a light not affect the first layer, the whole GridMap won't be lit by the light in question.
+
 Tutorials
 ---------
 
 - :doc:`../tutorials/3d/using_gridmaps`
 
+- `https://godotengine.org/asset-library/asset/125 <https://godotengine.org/asset-library/asset/125>`_
+
+- `https://godotengine.org/asset-library/asset/126 <https://godotengine.org/asset-library/asset/126>`_
+
 Properties
 ----------
 
-+---------------------------------------+------------------------------------------------------------------+------------------------+
-| :ref:`bool<class_bool>`               | :ref:`cell_center_x<class_GridMap_property_cell_center_x>`       | ``true``               |
-+---------------------------------------+------------------------------------------------------------------+------------------------+
-| :ref:`bool<class_bool>`               | :ref:`cell_center_y<class_GridMap_property_cell_center_y>`       | ``true``               |
-+---------------------------------------+------------------------------------------------------------------+------------------------+
-| :ref:`bool<class_bool>`               | :ref:`cell_center_z<class_GridMap_property_cell_center_z>`       | ``true``               |
-+---------------------------------------+------------------------------------------------------------------+------------------------+
-| :ref:`int<class_int>`                 | :ref:`cell_octant_size<class_GridMap_property_cell_octant_size>` | ``8``                  |
-+---------------------------------------+------------------------------------------------------------------+------------------------+
-| :ref:`float<class_float>`             | :ref:`cell_scale<class_GridMap_property_cell_scale>`             | ``1.0``                |
-+---------------------------------------+------------------------------------------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>`         | :ref:`cell_size<class_GridMap_property_cell_size>`               | ``Vector3( 2, 2, 2 )`` |
-+---------------------------------------+------------------------------------------------------------------+------------------------+
-| :ref:`int<class_int>`                 | :ref:`collision_layer<class_GridMap_property_collision_layer>`   | ``1``                  |
-+---------------------------------------+------------------------------------------------------------------+------------------------+
-| :ref:`int<class_int>`                 | :ref:`collision_mask<class_GridMap_property_collision_mask>`     | ``1``                  |
-+---------------------------------------+------------------------------------------------------------------+------------------------+
-| :ref:`MeshLibrary<class_MeshLibrary>` | :ref:`mesh_library<class_GridMap_property_mesh_library>`         |                        |
-+---------------------------------------+------------------------------------------------------------------+------------------------+
++---------------------------------------+----------------------------------------------------------------------+------------------------+
+| :ref:`bool<class_bool>`               | :ref:`cell_center_x<class_GridMap_property_cell_center_x>`           | ``true``               |
++---------------------------------------+----------------------------------------------------------------------+------------------------+
+| :ref:`bool<class_bool>`               | :ref:`cell_center_y<class_GridMap_property_cell_center_y>`           | ``true``               |
++---------------------------------------+----------------------------------------------------------------------+------------------------+
+| :ref:`bool<class_bool>`               | :ref:`cell_center_z<class_GridMap_property_cell_center_z>`           | ``true``               |
++---------------------------------------+----------------------------------------------------------------------+------------------------+
+| :ref:`int<class_int>`                 | :ref:`cell_octant_size<class_GridMap_property_cell_octant_size>`     | ``8``                  |
++---------------------------------------+----------------------------------------------------------------------+------------------------+
+| :ref:`float<class_float>`             | :ref:`cell_scale<class_GridMap_property_cell_scale>`                 | ``1.0``                |
++---------------------------------------+----------------------------------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>`         | :ref:`cell_size<class_GridMap_property_cell_size>`                   | ``Vector3( 2, 2, 2 )`` |
++---------------------------------------+----------------------------------------------------------------------+------------------------+
+| :ref:`int<class_int>`                 | :ref:`collision_layer<class_GridMap_property_collision_layer>`       | ``1``                  |
++---------------------------------------+----------------------------------------------------------------------+------------------------+
+| :ref:`int<class_int>`                 | :ref:`collision_mask<class_GridMap_property_collision_mask>`         | ``1``                  |
++---------------------------------------+----------------------------------------------------------------------+------------------------+
+| :ref:`MeshLibrary<class_MeshLibrary>` | :ref:`mesh_library<class_GridMap_property_mesh_library>`             |                        |
++---------------------------------------+----------------------------------------------------------------------+------------------------+
+| :ref:`bool<class_bool>`               | :ref:`use_in_baked_light<class_GridMap_property_use_in_baked_light>` | ``false``              |
++---------------------------------------+----------------------------------------------------------------------+------------------------+
 
 Methods
 -------
@@ -242,7 +250,7 @@ GridMaps act as static bodies, meaning they aren't affected by gravity or other 
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The physics layers this GridMap detects collisions in. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
+The physics layers this GridMap detects collisions in. See `Collision layers and masks <https://docs.godotengine.org/en/3.3/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
 
 ----
 
@@ -257,6 +265,22 @@ The physics layers this GridMap detects collisions in. See `Collision layers and
 +----------+-------------------------+
 
 The assigned :ref:`MeshLibrary<class_MeshLibrary>`.
+
+----
+
+.. _class_GridMap_property_use_in_baked_light:
+
+- :ref:`bool<class_bool>` **use_in_baked_light**
+
++-----------+-------------------------------+
+| *Default* | ``false``                     |
++-----------+-------------------------------+
+| *Setter*  | set_use_in_baked_light(value) |
++-----------+-------------------------------+
+| *Getter*  | get_use_in_baked_light()      |
++-----------+-------------------------------+
+
+Controls whether this GridMap will be baked in a :ref:`BakedLightmap<class_BakedLightmap>` or not.
 
 Method Descriptions
 -------------------
@@ -284,6 +308,8 @@ Clear all cells.
 .. _class_GridMap_method_get_bake_meshes:
 
 - :ref:`Array<class_Array>` **get_bake_meshes** **(** **)**
+
+Returns an array of :ref:`ArrayMesh<class_ArrayMesh>`\ es and :ref:`Transform<class_Transform>` references of all bake meshes that exist within the current GridMap.
 
 ----
 
