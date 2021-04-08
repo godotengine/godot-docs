@@ -113,6 +113,12 @@ The resulting APK will be located at ``bin/android_release.apk``.
 
 The resulting APK will be located at ``bin/android_debug.apk``.
 
+
+.. seealso::
+
+    If you want to enable Vulkan validation layers, see
+    :ref:`Vulkan validation layers on Android<doc_vulkan_validation_layers-android>`.
+
 Adding support for x86 devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
