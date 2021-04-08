@@ -21,7 +21,7 @@ Build validation layers from official sources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To build Android libraries, follow the instructions on
-`Khronos' repository  <https://https://github.com/KhronosGroup/Vulkan-ValidationLayers/blob/master/BUILD.md#building-on-android>`__.
+`Khronos' repository  <https://github.com/KhronosGroup/Vulkan-ValidationLayers/blob/master/BUILD.md#building-on-android>`__.
 After a successful build, the libraries will be located in ``Vulkan-ValidationLayers/build-android/libs``.
 
 Copy libraries
