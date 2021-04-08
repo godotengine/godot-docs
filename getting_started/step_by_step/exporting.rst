@@ -40,7 +40,7 @@ In **Project > Project Settings**, under **Input Devices > Pointing**, enable
 
 We also want to ensure that the game scales consistently on different-sized screens,
 so in the project settings go to **Display**, then click on **Window**. In the **Stretch**
-options, set **Mode** to ``2d``" and **Aspect** to ``keep``.
+options, set **Mode** to ``2d`` and **Aspect** to ``keep``.
 
 Since we are already in the **Window** settings, we should also set under **Handheld**
 the **Orientation** to ``portrait``.
