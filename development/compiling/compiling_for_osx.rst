@@ -29,6 +29,12 @@ For compiling under macOS, the following is required:
           Installing Homebrew will also fetch the Command Line Tools
           for Xcode automatically if you don't have them already.
 
+          Similarly, if you have `MacPorts <https://www.macports.org/>`_
+          installed, you can easily install SCons and yasm using the
+          following command::
+
+              sudo port install scons yasm
+
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
 
