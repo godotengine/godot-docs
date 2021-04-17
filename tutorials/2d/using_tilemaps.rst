@@ -278,6 +278,7 @@ Key (applies to the four templates below):
 - Green: floor
 - Cyan: wall
 - Yellow: top of wall
+- Grey: hidden due to overlap
 - Transparent: air
 
 .. image:: img/autotile_template_3x3_minimal_topdown_floor.png
