@@ -25,6 +25,14 @@ using this `ImageMagick <https://www.imagemagick.org/>`_ command:
 
     magick convert icon.png -define icon:auto-resize=256,128,64,48,32,16 icon.ico
 
+.. warning::
+
+    For the ICO file to effectively replace the default Godot icon, it must
+    contain *all* the sizes included in the default Godot icon: 16×16, 32×32,
+    48×48, 64×64, 128×128, 256×256. If the ICO file does not contain all the sizes,
+    the default Godot icon will be kept for the sizes that weren't overridden.
+
+    The above ImageMagick command takes this into account.
 
 Changing the taskbar icon
 -------------------------
