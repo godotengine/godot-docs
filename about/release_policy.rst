@@ -80,20 +80,19 @@ encountered by users of that branch who cannot port complex projects to the new
 major version. This is the case for the 2.1 branch, and will be the case for
 the latest 3.x stable branch by the time Godot 4.0 is released.
 
-.. To add once 3.3 is released:
-   | Godot 3.4   | Q2 or Q3 2021     | |supported| *Beta.* Receives new features as well as bug fixes while     |
-   |             |                   | under development.                                                       |
-
 +-------------+-------------------+--------------------------------------------------------------------------+
 | **Version** | **Release date**  | **Support level**                                                        |
 +-------------+-------------------+--------------------------------------------------------------------------+
 | Godot 4.0   | ~2021 (see below) | |unstable| *Current focus of development (unstable).*                    |
 +-------------+-------------------+--------------------------------------------------------------------------+
-| Godot 3.3   | April 2021        | |supported| Receives bug, security and platform support fixes, as well   |
-|             |                   | as backwards-compatible usability enhancements.                          |
+| Godot 3.4   | Q2 or Q3 2021     | |supported| *Beta.* Receives new features as well as bug fixes while     |
+|             |                   | under development.                                                       |
 +-------------+-------------------+--------------------------------------------------------------------------+
-| Godot 3.2   | January 2020      | |partial| Only critical, security and platform support fixes             |
-|             |                   | (last update: 3.2.3).                                                    |
+| Godot 3.3   | April 2021        | |supported| Receives fixes for bugs, security and platform support       |
+|             |                   | issues, as well as backwards-compatible usability enhancements.          |
++-------------+-------------------+--------------------------------------------------------------------------+
+| Godot 3.2   | January 2020      | |eol| No longer supported as fully superseded by the compatible 3.3      |
+|             |                   | release (last update: 3.2.3).                                            |
 +-------------+-------------------+--------------------------------------------------------------------------+
 | Godot 3.1   | March 2019        | |partial| Only critical, security and platform support fixes             |
 |             |                   | (last update: 3.1.2).                                                    |
