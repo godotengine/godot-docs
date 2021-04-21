@@ -338,7 +338,7 @@ Iterating in C-derived languages can be quite complex:
         std::cout << *it << std::endl;
     }
 
-This is usually greatly simplified in modern languages using for loops over iterables:
+This is usually greatly simplified in modern languages using for-in loops over iterables:
 
 ::
 
