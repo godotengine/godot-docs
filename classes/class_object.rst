@@ -364,7 +364,9 @@ Emits the given ``signal``. The signal must exist, so it should be a built-in si
 
 - void **free** **(** **)**
 
-Deletes the object from memory. Any pre-existing reference to the freed object will become invalid, e.g. ``is_instance_valid(object)`` will return ``false``.
+Deletes the object from memory immediately. For :ref:`Node<class_Node>`\ s, you may want to use :ref:`Node.queue_free<class_Node_method_queue_free>` to queue the node for safe deletion at the end of the current frame.
+
+**Important:** If you have a variable pointing to an object, it will *not* be assigned to ``null`` once the object is freed. Instead, it will point to a *previously freed instance* and you should validate it with :ref:`@GDScript.is_instance_valid<class_@GDScript_method_is_instance_valid>` before attempting to call its methods or access its properties.
 
 ----
 

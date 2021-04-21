@@ -1166,6 +1166,8 @@ Notifies the current node and all its children recursively by calling :ref:`Obje
 
 Queues a node for deletion at the end of the current frame. When deleted, all of its child nodes will be deleted as well. This method ensures it's safe to delete the node, contrary to :ref:`Object.free<class_Object_method_free>`. Use :ref:`Object.is_queued_for_deletion<class_Object_method_is_queued_for_deletion>` to check whether a node will be deleted at the end of the frame.
 
+**Important:** If you have a variable pointing to a node, it will *not* be assigned to ``null`` once the node is freed. Instead, it will point to a *previously freed instance* and you should validate it with :ref:`@GDScript.is_instance_valid<class_@GDScript_method_is_instance_valid>` before attempting to call its methods or access its properties.
+
 ----
 
 .. _class_Node_method_raise:

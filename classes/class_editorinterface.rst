@@ -31,6 +31,8 @@ Methods
 -------
 
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`edit_node<class_EditorInterface_method_edit_node>` **(** :ref:`Node<class_Node>` node **)**                                                                                                            |
++-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`edit_resource<class_EditorInterface_method_edit_resource>` **(** :ref:`Resource<class_Resource>` resource **)**                                                                                        |
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_Control>`                             | :ref:`get_base_control<class_EditorInterface_method_get_base_control>` **(** **)**                                                                                                                           |
@@ -111,6 +113,14 @@ If ``true``, enables distraction-free mode which hides side docks to increase th
 
 Method Descriptions
 -------------------
+
+.. _class_EditorInterface_method_edit_node:
+
+- void **edit_node** **(** :ref:`Node<class_Node>` node **)**
+
+Edits the given :ref:`Node<class_Node>`. The node will be also selected if it's inside the scene tree.
+
+----
 
 .. _class_EditorInterface_method_edit_resource:
 

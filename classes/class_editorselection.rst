@@ -53,6 +53,8 @@ Method Descriptions
 
 Adds a node to the selection.
 
+**Note:** The newly selected node will not be automatically edited in the inspector. If you want to edit a node, use :ref:`EditorInterface.edit_node<class_EditorInterface_method_edit_node>`.
+
 ----
 
 .. _class_EditorSelection_method_clear:

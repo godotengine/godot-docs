@@ -353,7 +353,7 @@ Given an array of :ref:`Vector2<class_Vector2>`\ s representing tiles, builds an
 
 Merges (combines) ``polygon_a`` and ``polygon_b`` and returns an array of merged polygons. This performs :ref:`OPERATION_UNION<class_Geometry_constant_OPERATION_UNION>` between polygons.
 
-The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
+The operation may result in an outer polygon (boundary) and multiple inner polygons (holes) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
 
 ----
 

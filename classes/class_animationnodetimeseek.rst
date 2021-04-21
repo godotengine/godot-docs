@@ -16,7 +16,19 @@ A time-seeking animation node to be used with :ref:`AnimationTree<class_Animatio
 Description
 -----------
 
-This node can be used to cause a seek command to happen to any sub-children of the graph. After setting the time, this value returns to -1.
+This node can be used to cause a seek command to happen to any sub-children of the animation graph. Use this node type to play an :ref:`Animation<class_Animation>` from the start or a certain playback position inside the :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. After setting the time and changing the animation playback, the seek node automatically goes into sleep mode on the next process frame by setting its ``seek_position`` value to ``-1.0``.
+
+::
+
+    # Play child animation from the start.
+    animation_tree.set("parameters/Seek/seek_position", 0.0)
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/Seek/seek_position"] = 0.0
+    
+    # Play child animation from 12 second timestamp.
+    animation_tree.set("parameters/Seek/seek_position", 12.0)
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/Seek/seek_position"] = 12.0
 
 Tutorials
 ---------

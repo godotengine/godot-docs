@@ -46,7 +46,9 @@ Property Descriptions
 | *Getter*  | get_mid_height()      |
 +-----------+-----------------------+
 
-Height of the capsule mesh from the center point.
+Height of the middle cylindrical part of the capsule (without the hemispherical ends).
+
+**Note:** The capsule's total height is equal to :ref:`mid_height<class_CapsuleMesh_property_mid_height>` + 2 \* :ref:`radius<class_CapsuleMesh_property_radius>`.
 
 ----
 

@@ -20,7 +20,7 @@ Contains global variables accessible from everywhere. Use :ref:`get_setting<clas
 
 When naming a Project Settings property, use the full path to the setting including the category. For example, ``"application/config/name"`` for the project name. Category and property names can be viewed in the Project Settings dialog.
 
-**Overriding:** Any project setting can be overridden by creating a file named ``override.cfg`` in the project's root directory. This can also be used in exported projects by placing this file in the same directory as the project binary.
+**Overriding:** Any project setting can be overridden by creating a file named ``override.cfg`` in the project's root directory. This can also be used in exported projects by placing this file in the same directory as the project binary. Overriding will still take the base project settings' `feature tags <https://docs.godotengine.org/en/latest/tutorials/export/feature_tags.html>`_ in account. Therefore, make sure to *also* override the setting with the desired feature tags if you want them to override base project settings on all platforms and configurations.
 
 Tutorials
 ---------
@@ -551,6 +551,14 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                     | :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>`                                                           | ``0.5``                                                                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/2d/opengl/batching_send_null<class_ProjectSettings_property_rendering/2d/opengl/batching_send_null>`                                                 | ``0``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/2d/opengl/batching_stream<class_ProjectSettings_property_rendering/2d/opengl/batching_stream>`                                                       | ``0``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/2d/opengl/legacy_orphan_buffers<class_ProjectSettings_property_rendering/2d/opengl/legacy_orphan_buffers>`                                           | ``0``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/2d/opengl/legacy_stream<class_ProjectSettings_property_rendering/2d/opengl/legacy_stream>`                                                           | ``0``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/2d/options/ninepatch_mode<class_ProjectSettings_property_rendering/2d/options/ninepatch_mode>`                                                       | ``1``                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/2d/options/use_nvidia_rect_flicker_workaround<class_ProjectSettings_property_rendering/2d/options/use_nvidia_rect_flicker_workaround>`               | ``false``                                                                                       |
@@ -678,6 +686,8 @@ Properties
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/shading/force_vertex_shading<class_ProjectSettings_property_rendering/quality/shading/force_vertex_shading>`                                 | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/shading/force_vertex_shading.mobile<class_ProjectSettings_property_rendering/quality/shading/force_vertex_shading.mobile>`                   | ``true``                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/shadow_atlas/cubemap_size<class_ProjectSettings_property_rendering/quality/shadow_atlas/cubemap_size>`                                       | ``512``                                                                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/quality/shadow_atlas/quadrant_0_subdiv<class_ProjectSettings_property_rendering/quality/shadow_atlas/quadrant_0_subdiv>`                             | ``1``                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -900,9 +910,9 @@ The project's name. It is used both by the Project Manager and by exporters. The
 | *Default* | ``""`` |
 +-----------+--------+
 
-Specifies a file to override project settings. For example: ``user://custom_settings.cfg``.
+Specifies a file to override project settings. For example: ``user://custom_settings.cfg``. See "Overriding" in the ``ProjectSettings`` class description at the top for more information.
 
-**Note:** Regardless of this setting's value, ``res://override.cfg`` will still be read to override the project settings (see this class' description at the top).
+**Note:** Regardless of this setting's value, ``res://override.cfg`` will still be read to override the project settings.
 
 ----
 
@@ -3918,6 +3928,62 @@ Fix to improve physics jitter, specially on monitors where refresh rate is diffe
 
 ----
 
+.. _class_ProjectSettings_property_rendering/2d/opengl/batching_send_null:
+
+- :ref:`int<class_int>` **rendering/2d/opengl/batching_send_null**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+**Experimental** Calls ``glBufferData`` with NULL data prior to uploading batching data. This may not be necessary but can be used for safety.
+
+**Note:** Use with care. You are advised to leave this as default for exports. A non-default setting that works better on your machine may adversely affect performance for end users.
+
+----
+
+.. _class_ProjectSettings_property_rendering/2d/opengl/batching_stream:
+
+- :ref:`int<class_int>` **rendering/2d/opengl/batching_stream**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+**Experimental** If set to on, uses the ``GL_STREAM_DRAW`` flag for batching buffer uploads. If off, uses the ``GL_DYNAMIC_DRAW`` flag.
+
+**Note:** Use with care. You are advised to leave this as default for exports. A non-default setting that works better on your machine may adversely affect performance for end users.
+
+----
+
+.. _class_ProjectSettings_property_rendering/2d/opengl/legacy_orphan_buffers:
+
+- :ref:`int<class_int>` **rendering/2d/opengl/legacy_orphan_buffers**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+**Experimental** If set to on, this applies buffer orphaning - ``glBufferData`` is called with NULL data and the full buffer size prior to uploading new data. This can be important to avoid stalling on some hardware.
+
+**Note:** Use with care. You are advised to leave this as default for exports. A non-default setting that works better on your machine may adversely affect performance for end users.
+
+----
+
+.. _class_ProjectSettings_property_rendering/2d/opengl/legacy_stream:
+
+- :ref:`int<class_int>` **rendering/2d/opengl/legacy_stream**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+**Experimental** If set to on, uses the ``GL_STREAM_DRAW`` flag for legacy buffer uploads. If off, uses the ``GL_DYNAMIC_DRAW`` flag.
+
+**Note:** Use with care. You are advised to leave this as default for exports. A non-default setting that works better on your machine may adversely affect performance for end users.
+
+----
+
 .. _class_ProjectSettings_property_rendering/2d/options/ninepatch_mode:
 
 - :ref:`int<class_int>` **rendering/2d/options/ninepatch_mode**
@@ -4715,6 +4781,18 @@ If ``true``, forces vertex shading for all rendering. This can increase performa
 +-----------+----------+
 
 Lower-end override for :ref:`rendering/quality/shading/force_vertex_shading<class_ProjectSettings_property_rendering/quality/shading/force_vertex_shading>` on mobile devices, due to performance concerns or driver support.
+
+----
+
+.. _class_ProjectSettings_property_rendering/quality/shadow_atlas/cubemap_size:
+
+- :ref:`int<class_int>` **rendering/quality/shadow_atlas/cubemap_size**
+
++-----------+---------+
+| *Default* | ``512`` |
++-----------+---------+
+
+Size for cubemap into which the shadow is rendered before being copied into the shadow atlas. A higher number can result in higher resolution shadows when used with a higher :ref:`rendering/quality/shadow_atlas/size<class_ProjectSettings_property_rendering/quality/shadow_atlas/size>`. Setting higher than a quarter of the :ref:`rendering/quality/shadow_atlas/size<class_ProjectSettings_property_rendering/quality/shadow_atlas/size>` will not result in a perceptible increase in visual quality.
 
 ----
 

@@ -198,6 +198,8 @@ The assigned video stream. See description for supported formats.
 
 The current position of the stream, in seconds.
 
+**Note:** Changing this value won't have any effect as seeking is not implemented yet, except in video formats implemented by a GDNative add-on.
+
 ----
 
 .. _class_VideoPlayer_property_volume:

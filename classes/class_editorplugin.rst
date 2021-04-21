@@ -433,7 +433,7 @@ Called by the engine when the 2D editor's viewport is updated. Use the ``overlay
 
     func forward_canvas_draw_over_viewport(overlay):
         # Draw a circle at cursor position.
-        overlay.draw_circle(overlay.get_local_mouse_position(), 64)
+        overlay.draw_circle(overlay.get_local_mouse_position(), 64, Color.white)
     
     func forward_canvas_gui_input(event):
         if event is InputEventMouseMotion:

@@ -256,6 +256,8 @@ Returns the number of points currently in the points pool.
 
 Returns an array with the points that are in the path found by AStar2D between the given points. The array is ordered from the starting point to the ending point of the path.
 
+**Note:** This method is not thread-safe. If called from a :ref:`Thread<class_Thread>`, it will return an empty :ref:`PoolVector2Array<class_PoolVector2Array>` and will print an error message.
+
 ----
 
 .. _class_AStar2D_method_get_point_position:
