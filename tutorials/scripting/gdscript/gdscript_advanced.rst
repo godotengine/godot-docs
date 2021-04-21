@@ -318,7 +318,7 @@ states and quick structs:
 For & while
 -----------
 
-Iterating in some statically typed languages can be quite complex:
+Iterating in C-derived languages can be quite complex:
 
 .. code-block:: cpp
 
@@ -338,7 +338,7 @@ Iterating in some statically typed languages can be quite complex:
         std::cout << *it << std::endl;
     }
 
-This is usually greatly simplified in dynamically typed languages:
+This is usually greatly simplified in modern languages using for loops over iterables:
 
 ::
 
