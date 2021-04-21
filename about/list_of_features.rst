@@ -27,12 +27,14 @@ Platforms
      on an old enough base distribution.
    - Official binaries are compiled on Ubuntu 14.04.
 
+- HTML5 via WebAssembly (Firefox, Chrome, Edge, Opera).
+
 **Runs exported projects:**
 
 - Android 4.4 and later.
 - iOS 10.0 and later.
-- HTML5 via WebAssembly (Firefox, Chrome, Edge, Opera).
 - :ref:`Consoles <doc_consoles>`.
+- :ref:`Headless Linux and macOS servers <doc_exporting_for_dedicated_servers>`.
 
 Godot aims to be as platform-independent as possible and can be ported to new
 platforms with relative ease.
@@ -220,6 +222,7 @@ Editor
 - *GLES3:* Automatic exposure adjustments based on viewport brightness.
 - *GLES3:* Near and far depth of field.
 - *GLES3:* Screen-space ambient occlusion.
+- *GLES3:* Optional debanding to avoid color banding (effective when HDR rendering is enabled).
 - Glow/bloom with optional bicubic upscaling and several blend modes available:
   Screen, Soft Light, Add, Replace.
 - Color correction using an one-dimensional ramp.
@@ -239,6 +242,7 @@ Editor
 **Anti-aliasing:**
 
 - Multi-sample antialiasing (MSAA).
+- Fast approximate antialiasing (FXAA).
 
 Most of these effects can be adjusted for better performance or to further
 improve quality. This can be helpful when using Godot for offline rendering.
@@ -272,7 +276,7 @@ improve quality. This can be helpful when using Godot for offline rendering.
 
 **Collision detection:**
 
-- Built-in shapes: cuboid, sphere, capsule, cylinder (only with Bullet physics).
+- Built-in shapes: cuboid, sphere, capsule, cylinder.
 - Generate triangle collision shapes for any mesh from the editor.
 - Generate one or several convex collision shapes for any mesh from the editor.
 
@@ -347,7 +351,7 @@ Audio
 - Support for re-routable :ref:`audio buses <doc_audio_buses>` and effects
   with dozens of effects included.
 - Listener3D node to listen from a position different than the camera in 3D.
-- Audio input to record microphones.
+- Audio input to record microphones with real-time access using the AudioEffectCapture class.
 - MIDI input.
 
    - No support for MIDI output yet.
@@ -401,6 +405,7 @@ Input
 
 - Gamepad input (up to 8 simultaneous controllers).
 - Pen/tablet input with pressure support.
+- Gamepad, keyboard and mouse input support are also available on Android.
 
 Navigation
 ^^^^^^^^^^
@@ -464,6 +469,7 @@ Mobile
 
 - In-app purchases on Android and iOS.
 - Support for advertisements using third-party modules.
+- Support for subview embedding on Android.
 
 XR support (AR and VR)
 ^^^^^^^^^^^^^^^^^^^^^^
