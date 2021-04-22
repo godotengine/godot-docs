@@ -93,7 +93,7 @@ Here's a list of libraries requiring attribution:
 FreeType
 ^^^^^^^^
 
-Godot uses `FreeType <https://www.freetype.org/>`_ to render fonts. Its license
+Godot uses `FreeType <https://www.freetype.org/>`_ to render :ref:`DynamicFonts <class_DynamicFont>`. Its license
 requires attribution, so the following text must be included together with the
 Godot license:
 
