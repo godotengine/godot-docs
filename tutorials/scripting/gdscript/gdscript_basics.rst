@@ -1318,7 +1318,7 @@ the function name with the attribute operator::
         return super.overriding() # This calls the method as defined in the base class.
 
 
-Class Constructor
+Class constructor
 ^^^^^^^^^^^^^^^^^
 
 The class constructor, called on class instantiation, is named ``_init``. If you
