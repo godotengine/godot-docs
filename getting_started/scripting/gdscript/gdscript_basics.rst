@@ -1142,7 +1142,7 @@ in other languages)::
           There is no need to call them explicitly when overloading them.
 
 
-Class Constructor
+Class constructor
 ^^^^^^^^^^^^^^^^^
 
 The class constructor, called on class instantiation, is named ``_init``. As
