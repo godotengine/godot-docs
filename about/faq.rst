@@ -211,7 +211,7 @@ Why does Godot aim to keep its core feature set small?
 ------------------------------------------------------
 
 Godot intentionally does not include features that can be implemented by add-ons
-unless they are used very often. One exemple of this would be advanced
+unless they are used very often. One example of this would be advanced
 artificial intelligence functionality.
 
 There are several reasons for this:
