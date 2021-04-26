@@ -8,7 +8,7 @@ Compiling with Mono
 Requirements
 ------------
 
-- Mono 5.12.0 or greater
+- Mono 6.12.0 or greater
 - MSBuild
 - NuGet
 - **On Linux/macOS only:** pkg-config
