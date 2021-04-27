@@ -60,14 +60,42 @@ If all goes well, the resulting binary executable will be placed in the
 runs without any dependencies. Executing it will bring up the project
 manager.
 
+The above process is done using ``target=debug`` which is the standard if not defined.
+
+To create an ``.app`` bundle like in the official builds, you need to use the
+template located in ``misc/dist/osx_tools.app``. Typically, for an optimized
+editor binary built with ``target=release_debug``::
+
+In order to do this inside the terminal here is the changes you need to make in order to create an ``.app``. bundle like in the official builds.  
+
+To compile for Intel (x86-64) powered Macs, use::
+
+    scons platform=osx arch=x86_64 target=release_debug --jobs=$(sysctl -n hw.logicalcpu)
+
+To compile for Apple Silicon (ARM64) powered Macs, use::
+
+    scons platform=osx arch=arm64 target=release_debug --jobs=$(sysctl -n hw.logicalcpu)
+
+To support both architectures in a single "Universal 2" binary, run the above two commands and then use ``lipo`` to bundle them together::
+
+    lipo -create bin/godot.osx.opt.tools.x86_64 bin/godot.osx.opt.tools.arm64 -output bin/godot.osx.opt.tools.universal
+
+
+
 .. note:: If you want to use separate editor settings for your own Godot builds
           and official releases, you can enable
           :ref:`doc_data_paths_self_contained_mode` by creating a file called
           ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
 
-To create an ``.app`` bundle like in the official builds, you need to use the
-template located in ``misc/dist/osx_tools.app``. Typically, for an optimized
-editor binary built with ``target=release_debug``::
+for the ``target=debug`` version run the code below for a build.
+
+
+    cp -r misc/dist/osx_tools.app ./Godot.app
+    mkdir -p Godot.app/Contents/MacOS
+    cp bin/godot.osx.tools.universal Godot.app/Contents/MacOS/Godot
+    chmod +x Godot.app/Contents/MacOS/Godot
+   
+for the ``target=release_debug`` version run the code below for a build.
 
     cp -r misc/dist/osx_tools.app ./Godot.app
     mkdir -p Godot.app/Contents/MacOS
