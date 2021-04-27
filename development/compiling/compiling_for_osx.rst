@@ -87,7 +87,7 @@ To support both architectures in a single "Universal 2" binary, run the above tw
           :ref:`doc_data_paths_self_contained_mode` by creating a file called
           ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
 
-for the ``target=debug`` version run the code below for a build.
+for the ``target=debug`` version run the code below for a build.::
 
     cp -r misc/dist/osx_tools.app ./Godot.app
     mkdir -p Godot.app/Contents/MacOS
@@ -95,7 +95,7 @@ for the ``target=debug`` version run the code below for a build.
     chmod +x Godot.app/Contents/MacOS/Godot
 
   
-for the ``target=release_debug`` version run the code below for a build.
+for the ``target=release_debug`` version run the code below for a build.::
 
     cp -r misc/dist/osx_tools.app ./Godot.app
     mkdir -p Godot.app/Contents/MacOS
