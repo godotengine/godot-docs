@@ -66,7 +66,7 @@ To create an ``.app`` bundle like in the official builds, you need to use the
 template located in ``misc/dist/osx_tools.app``. Typically, for an optimized
 editor binary built with ``target=release_debug``::
 
-In order to do this inside the terminal here is the changes you need to make in order to create an ``.app``. bundle like in the official builds.  
+In order to do this inside the terminal here is the changes you need to make in order to create an ``.app`` bundle like in the official builds  
 
 To compile for Intel (x86-64) powered Macs, use::
 
