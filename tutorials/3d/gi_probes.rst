@@ -1,7 +1,7 @@
 .. _doc_gi_probes:
 
-GI Probes
-=========
+Using GIProbe
+=============
 
 Introduction
 ------------

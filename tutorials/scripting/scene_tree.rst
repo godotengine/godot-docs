@@ -1,7 +1,7 @@
 .. _doc_scene_tree:
 
-SceneTree
-=========
+Using SceneTree
+===============
 
 Introduction
 ------------
