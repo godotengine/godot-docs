@@ -1,6 +1,6 @@
 .. _doc_using_gridmaps:
 
-Using gridmaps
+Using GridMaps
 ~~~~~~~~~~~~~~
 
 Introduction

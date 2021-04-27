@@ -1,7 +1,7 @@
 .. _doc_viewports:
 
-Viewports
-=========
+Using Viewports
+===============
 
 Introduction
 ------------
