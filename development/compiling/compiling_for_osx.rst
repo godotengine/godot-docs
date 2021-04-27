@@ -64,7 +64,7 @@ The above process is done using ``target=debug`` which is the standard if not de
 
 To create an ``.app`` bundle like in the official builds, you need to use the
 template located in ``misc/dist/osx_tools.app``. Typically, for an optimized
-editor binary built with ``target=release_debug``::
+editor binary built with ``target=release_debug``
 
 In order to do this inside the terminal here is the changes you need to make in order to create an ``.app`` bundle like in the official builds  
 
