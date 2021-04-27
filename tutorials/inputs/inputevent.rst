@@ -1,7 +1,7 @@
 .. _doc_inputevent:
 
-InputEvent
-==========
+Using InputEvent
+================
 
 What is it?
 -----------
