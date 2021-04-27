@@ -70,7 +70,7 @@ corner of the screen, so to place a 2D node named ``Node2D`` 400 pixels to the r
 
  .. code-tab:: csharp
 
-    var node2D = (Node2D) GetNode("Node2D");
+    var node2D = GetNode<Node2D>("Node2D");
     node2D.Position = new Vector2(400, 300);
 
 Godot supports both :ref:`Vector2 <class_Vector2>` and
