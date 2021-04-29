@@ -1,4 +1,9 @@
 {% extends "!layout.html" -%}
+
+{% block extrahead -%}
+<meta name="doc_version" content="{{ version }}">
+{% endblock -%}
+
 {% block linktags -%}
   {% if godot_inject_language_links -%}
   {% for alternate_lang in godot_docs_supported_languages -%}
