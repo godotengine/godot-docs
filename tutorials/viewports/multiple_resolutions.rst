@@ -227,6 +227,18 @@ to the region outside the blue frame you see in the 2D editor.
 
    .. image:: img/stretch_viewport_expand.gif
 
+.. tip::
+
+    To support both portrait and landscape mode with a similar automatically
+    determined scale factor, set your project's base resolution to be a *square*
+    (1:1 aspect ratio) instead of a rectangle. For instance, if you wish to design
+    for 1280×720 as the base resolution but wish to support both portrait and
+    landscape mode, use 720×720 as the project's base window size in the
+    Project Settings.
+
+    To allow the user to choose their preferred screen orientation at run-time,
+    remember to set **Display > Window > Handheld > Orientation** to ``sensor``.
+
 Stretch Shrink
 ^^^^^^^^^^^^^^
 
