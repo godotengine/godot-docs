@@ -20,12 +20,10 @@ little-endian-encoded. All packets have a 4-byte header representing an
 integer, specifying the type of data.
 
 The lowest value two bytes are used to determine the type, while the highest value
-two bytes contain flags.
+two bytes contain flags::
 
-```
-base_type = val & 0xFFFF;
-flags = val >> 16;
-```
+    base_type = val & 0xFFFF;
+    flags = val >> 16;
 
 +--------+--------------------------+
 | Type   | Value                    |
@@ -121,8 +119,8 @@ If no flags are set (flags == 0), the integer is sent as a 32 bit integer:
 | 4        | 4     | Integer   | 32-bit signed integer    |
 +----------+-------+-----------+--------------------------+
 
-If flag ENCODE_FLAG_64 is set (flags & 1 == 1), the integer is sent as 
-a 64 bit integer:
+If flag ``ENCODE_FLAG_64`` is set (``flags & 1 == 1``), the integer is sent as 
+a 64-bit integer:
 
 +----------+-------+-----------+--------------------------+
 | Offset   | Len   | Type      | Description              |
@@ -141,14 +139,14 @@ If no flags are set (flags == 0), the float is sent as a 32 bit single precision
 | 4        | 4     | Float   | IEEE 754 single-precision float   |
 +----------+-------+---------+-----------------------------------+
 
-If flag ENCODE_FLAG_64 is set (flags & 1 == 1), the float is sent as 
-a 64 bit double precision:
+If flag ``ENCODE_FLAG_64`` is set (``flags & 1 == 1``), the float is sent as 
+a 64-bit double precision number:
 
 +----------+-------+---------+-----------------------------------+
 | Offset   | Len   | Type    | Description                       |
 +==========+=======+=========+===================================+
 | 4        | 8     | Float   | IEEE 754 double-precision float   |
-+----------+-------+-----------+---------------------------------+
++----------+-------+---------+-----------------------------------+
 
 4: :ref:`String<class_string>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
