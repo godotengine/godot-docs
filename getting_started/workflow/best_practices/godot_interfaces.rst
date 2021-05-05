@@ -167,7 +167,8 @@ Nodes likewise have an alternative access point: the SceneTree.
             return
 
         # Fail and terminate.
-        # Note: Scripts run from a release export template don't run `assert` statements.
+        # Note: Scripts run from a release export template don't
+        # run `assert` statements.
         assert(prop, "'prop' wasn't initialized")
 
     # Use an autoload.
@@ -348,7 +349,8 @@ accesses:
       assert(child.is_in_group("offer"))
       assert(child is CanvasItem)
 
-      # Can also use object labels to imply an interface, i.e. assume it implements certain methods.
+      # Can also use object labels to imply an interface, 
+      # i.e. assume it implements certain methods.
       # There are two types, both of which only exist for Nodes: Names and Groups
 
       # Assuming...
@@ -370,7 +372,8 @@ accesses:
 
       # Note that these interfaces are project-specific conventions the team
       # defines (which means documentation! But maybe worth it?).
-      # Any script that conforms to the documented "interface" of the name/group can fill in for it.
+      # Any script that conforms to the documented "interface" of 
+      # the name/group can fill in for it.
 
     .. code-tab:: csharp
 
@@ -385,9 +388,10 @@ accesses:
           child.Call("SetVisible", false);
       }
 
-      // Use a group as if it were an "interface", i.e. assume it implements certain methods
-      // requires good documentation for the project to keep it reliable (unless you make
-      // editor tools to enforce it at editor time.
+      // Use a group as if it were an "interface", i.e. assume it
+      // implements certain methods
+      // requires good documentation for the project to keep it reliable (unless 
+      // you make editor tools to enforce it at editor time).
       // Note, this is generally not as good as using an actual interface in C#,
       // but you can't set C# interfaces from the editor since they are
       // language-level features.
@@ -414,7 +418,8 @@ accesses:
       Debug.Assert(child.IsInGroup("offer"));
       Debug.Assert(CanvasItem.InstanceHas(child));
 
-      // Can also use object labels to imply an interface, i.e. assume it implements certain methods.
+      // Can also use object labels to imply an interface,
+      // i.e. assume it implements certain methods.
       // There are two types, both of which only exist for Nodes: Names and Groups
 
       // Assuming...
