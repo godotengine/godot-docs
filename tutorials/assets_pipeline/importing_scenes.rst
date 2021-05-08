@@ -13,10 +13,10 @@ transferred as close as possible.
 
 Godot supports the following 3D *scene file formats*:
 
-* glTF 2.0 *(recommended)*. Godot has full support for text and binary formats.
+* glTF 2.0 **(recommended)**. Godot has full support for both text (``.gltf``) and binary (``.glb``) formats.
 * DAE (COLLADA), an older format that is fully supported.
-* OBJ (Wavefront) formats. It is also fully supported, but pretty limited (no support for pivots, skeletons, etc).
-* ESCN, a Godot specific format that Blender can export with a plugin.
+* OBJ (Wavefront) format + their MTL material files. This is also fully supported, but pretty limited (no support for pivots, skeletons, animations, PBR materials, ...).
+* ESCN, a Godot-specific format that Blender can export with a plugin.
 * FBX, supported via a reverse engineered importer. So we recommend using other formats listed above, if suitable
   for your workflow.
 
@@ -77,7 +77,27 @@ separately. Godot uses PBR (physically based rendering) for its materials, so if
 textures they can work in Godot. This includes the `Substance suite <https://www.substance3d.com/>`__,
 `ArmorPaint (open source) <https://armorpaint.org/>`__, and `Material Maker (open source) <https://github.com/RodZill4/material-maker>`__.
 
-.. note:: For more information on Godot's materials, see :ref:`doc_standard_material_3d`. 
+.. note:: For more information on Godot's materials, see :ref:`doc_standard_material_3d`.
+
+Exporting considerations
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Since GPUs can only render triangles, meshes that contain quads or N-gons have
+to be *triangulated* before they can be rendered. Godot can triangulate meshes
+on import, but results may be unpredictable or incorrect, especially with
+N-gons. Regardless of the target application, triangulating *before* exporting
+the scene will lead to more consistent results and should be done whenever
+possible.
+
+To avoid issues with incorrect triangulation after importing in Godot, it is
+recommended to make the 3D DCC triangulate objects on its own. In Blender, this
+can be done by adding a Triangulate modifier to your objects and making sure
+**Apply Modifiers** is checked in the export dialog. Alternatively, depending on
+the exporter, you may be able to find and enable a **Triangulate Faces** option
+in the export dialog.
+
+To avoid issues with 3D selection in the editor, it is recommended to apply the
+object transform in the 3D DCC before exporting the scene.
 
 Import workflows
 ----------------
@@ -265,6 +285,12 @@ each animation in a separate file.
 
 Import of animations is enabled by default.
 
+.. attention::
+
+    To modify animations from an imported 3D scene, you need to change the animation
+    storage option from **Built-In** to **Files** in the Import dock. Otherwise,
+    changes made to animations from Godot will be lost when the project is run.
+
 FPS
 ~~~
 
@@ -432,7 +458,7 @@ reliability.
     For better visibility on Blender's editor, you can set the "X-Ray" option
     on collision empties and set some distinct color for them by changing
     **Edit > Preferences > Themes > 3D Viewport > Empty**.
-    
+
     If using Blender 2.79 or older, follow these steps instead:
     **User Preferences > Themes > 3D View > Empty**.
 

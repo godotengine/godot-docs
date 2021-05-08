@@ -69,8 +69,7 @@ The following labels are currently defined in the Godot repository:
    feature requests. Please use
    `godot-proposals <https://github.com/godotengine/godot-proposals>`__ instead.
 -  *For PR meeting*: the issue needs to be discussed in a pull request meeting.
-   These meetings are public and are held regularly on the ``#godotengine-meeting``
-   IRC channel.
+   These meetings are public and are held on the `Godot Contributors Chat <https://chat.godotengine.org/>`_.
 -  *Junior job*: the issue is *assumed* to be an easy one to fix, which makes
    it a great fit for junior contributors who need to become familiar with
    the code base.

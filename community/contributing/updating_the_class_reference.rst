@@ -148,8 +148,8 @@ branch with the Godot repository, and create a new branch:
     # Creates a new branch and checks out to it
     git checkout -b your-new-branch-name
 
-If you're feeling lost by now, come to our `IRC channels
-<https://webchat.freenode.net/?channels=#godotengine>`_ and ask for help.
+If you're feeling lost by now, come to our `Contributors Chat 
+<https://chat.godotengine.org/>`_ and ask for help.
 Experienced Git users will give you a hand.
 
 Alternatively, you can join the `Godot Discord server

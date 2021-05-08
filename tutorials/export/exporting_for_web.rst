@@ -17,6 +17,13 @@ in the user's browser.
                :ref:`iOS' native export functionality <doc_exporting_for_ios>`
                instead, as it will also result in better performance.
 
+.. note::
+
+    If you use Linux, due to
+    `poor Firefox WebGL performance <https://bugzilla.mozilla.org/show_bug.cgi?id=1010527>`__,
+    it's recommended to play the exported project using a Chromium-based browser
+    instead of Firefox.
+
 WebGL 2
 -------
 

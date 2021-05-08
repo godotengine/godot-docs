@@ -82,6 +82,14 @@ different name, you can specify the path to the PCK file using the
 
     ./godot-server --main-pack my_project.pck
 
+.. warning::
+
+    Make sure the aforementioned ``godot-server`` has the executable permission
+    defined by running ``chmod +x godot-server`` (if the binary is called
+    ``godot-server``). Otherwise, you may get a "command not found" or
+    "permission denied" error message when trying to run the Godot server
+    binary.
+
 Starting the dedicated server
 -----------------------------
 

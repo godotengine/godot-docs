@@ -277,7 +277,7 @@ load function:
             newObject.Set("Position", new Vector2((float)nodeData["PosX"], (float)nodeData["PosY"]));
 
             // Now we set the remaining variables.
-            foreach (KeyValuePair<object, object> entry in nodeData)
+            foreach (KeyValuePair<string, object> entry in nodeData)
             {
                 string key = entry.Key.ToString();
                 if (key == "Filename" || key == "Parent" || key == "PosX" || key == "PosY")

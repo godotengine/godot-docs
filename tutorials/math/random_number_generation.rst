@@ -85,13 +85,11 @@ number between 0 and 1. This is useful to implement a
 other things.
 
 :ref:`randfn() <class_RandomNumberGenerator_method_randfn>` returns a random
-floating-point number between 0 and 1. Unlike :ref:`randf()
-<class_@GDScript_method_randf>` which follows an uniform distribution, the
-returned number follows a `normal distribution
+floating-point number following a `normal distribution
 <https://en.wikipedia.org/wiki/Normal_distribution>`__. This means the returned
-value is more likely to be around 0.5 compared to the extreme bounds (0 and 1)::
+value is more likely to be around the mean (0.0 by default), varying by the deviation (1.0 by default)::
 
-    # Prints a normally distributed floating-point number between 0.0 and 1.0.
+    # Prints a random floating-point number from a normal distribution with a mean 0.0 and deviation 1.0.
     var rng = RandomNumberGenerator.new()
     rng.randomize()
     print(rng.randfn())

@@ -14,28 +14,11 @@ AudioStream
 -----------
 
 An audio stream is an abstract object that emits sound. The sound can come from
-many places, but is most commonly loaded from the filesystem. Audio files such
-as WAV (``.wav``) or Ogg Vorbis (``.ogg``) can be loaded as AudioStreams and
-placed inside an AudioStreamPlayer.
+many places, but is most commonly loaded from the filesystem. Audio files can be
+loaded as AudioStreams and placed inside an AudioStreamPlayer. You can find
+information on supported formats and differences in :ref:`doc_importing_audio_samples`.
 
-Here is a comparison of the two file types to help you choose the one that fits
-your use case best:
-
-- WAV files are quite large, but use little CPU power to play back.
-  Hundreds of them can be played simultaneously with little impact
-  on performance. This format is usually best for short sound effects.
-- Ogg Vorbis files are much smaller, but use considerably more CPU power
-  to play back, so only a few can be played back at once (especially on mobile).
-  This format works well for music, long sound effect sequences, and voice
-  at relatively low bitrates.
-
-Keep in mind that while WAV files may contain looping information in their metadata,
-Ogg Vorbis files do not. If looping an Ogg Vorbis file is desired, 
-it must be set up using the import options:
-
-.. image:: img/audio_stream_import.png
-
-There are other types of AudioStreamPlayer, such as AudioStreamRandomPitch.
+There are other types of AudioStreams, such as AudioStreamRandomPitch.
 This one makes a random adjustment to the sound's pitch every time it's
 played back. This can be helpful for adding variation to sounds that are
 played back often.

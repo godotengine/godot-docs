@@ -104,9 +104,21 @@ guidelines are, in the next part of this tutorial, :ref:`doc_submitting_to_asset
 In the editor
 -------------
 
-You can also access the AssetLib directly from Godot. It is available from two
-places - in the Project Manager's Templates tab, and inside of a project, from
-the workspaces list.
+.. note::
+
+    The editor will display different categories of assets depending on whether
+    you're browsing the project manager's **Templates** tab or the editor's
+    **AssetLib** tab.
+
+    The project manager's **Templates** tab will only display assets that are
+    standalone projects by themselves. This is denoted on the asset library with
+    the *Templates*, *Demos* and *Projects* categories.
+
+    The editor's **AssetLib** tab will only display assets that are *not* standalone
+    projects by themselves. In other words, it will display assets from all
+    categories except *Templates*, *Demos* and *Projects*.
+
+You can also access the AssetLib directly from Godot:
 
 |image7|
 
@@ -169,7 +181,6 @@ You may also use the Import button to import asset archives obtained
 elsewhere (such as downloading them directly from the AssetLib web frontend),
 which will take you through the same package installation procedure as with the
 assets downloaded directly via Godot that we just covered.
-
 
 .. |image0| image:: img/assetlib_website.png
 .. |image1| image:: img/assetlib_search.png

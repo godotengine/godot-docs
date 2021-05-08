@@ -51,7 +51,7 @@ Distro-specific one-liners
 |                  |                                                                                                           |
 |                  |     sudo dnf install scons pkgconfig libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel \    |
 |                  |         libXi-devel mesa-libGL-devel mesa-libGLU-devel alsa-lib-devel pulseaudio-libs-devel \             |
-|                  |         libudev-devel yasm gcc-c++                                                                        |
+|                  |         libudev-devel yasm gcc-c++ libstdc++-static                                                       |
 +------------------+-----------------------------------------------------------------------------------------------------------+
 | **FreeBSD**      | ::                                                                                                        |
 |                  |                                                                                                           |
@@ -116,7 +116,7 @@ On \*BSD, you can use ``sysctl -n hw.ncpu``:
 
 ::
 
-    scons -j$(sysctl -n hw.ncpu)  
+    scons -j$(sysctl -n hw.ncpu)
 
 .. note::
 
@@ -147,7 +147,7 @@ manager.
           If you are compiling Godot with GCC, you can make the binary
           even smaller and faster by adding the SCons option ``use_lto=yes``.
           As link-time optimization is a memory-intensive process,
-          this will require about 3 GB of available RAM while compiling.
+          this will require about 7 GB of available RAM while compiling.
 
 .. note:: If you want to use separate editor settings for your own Godot builds
           and official releases, you can enable

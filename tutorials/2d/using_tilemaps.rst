@@ -257,6 +257,20 @@ Key:
 .. image:: img/autotile_template_3x3_minimal.png
 
 
+**Template - Generic 16 tiles:**
+
+This template can be used for tilesets that only have 16 tiles - for simpler art
+styles the missing tiles will not be noticeable.
+
+Key:
+
+- Red: "on"
+- White: "off"
+- Blue-checkered: "ignore"
+
+.. image:: img/autotile_template_3x3_minimal_16.png
+
+
 **Template - Top-down floor in 3/4 perspective:**
 
 Key (applies to the four templates below):
@@ -301,7 +315,7 @@ arrangement that this mode can test for.
 Disabling autotile
 ~~~~~~~~~~~~~~~~~~
 
-When using an autotile, it is possible to turn of the autotile behaviour and
+When using an autotile, it is possible to turn off the autotile behaviour and
 select tiles manually, by clicking "Disable Autotile" at the top of the tile
 selection window.
 

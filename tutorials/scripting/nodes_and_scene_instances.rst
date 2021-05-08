@@ -205,7 +205,7 @@ only available with GDScript.
 
 At that point, ``scene`` is a packed scene resource, not a node. To create the
 actual node, you need to call :ref:`PackedScene.instance()
-<class_PackedScene_method_instance>`. It returns a tree of nodes that you can
+<class_PackedScene_method_instance>`. It returns a tree of nodes that you can use
 as a child of your current node.
 
 .. tabs::
@@ -216,7 +216,7 @@ as a child of your current node.
 
  .. code-tab:: csharp
 
-    var instance = scene.();
+    var instance = scene.Instance();
     AddChild(instance);
 
 The advantage of this two-step process is you can keep a packed scene loaded and

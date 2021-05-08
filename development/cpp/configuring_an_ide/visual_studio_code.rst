@@ -3,7 +3,7 @@
 Visual Studio Code
 ==================
 
-`Visual Studio Code <https://code.visualstudio.com>`_ is a free cross-platform IDE
+`Visual Studio Code <https://code.visualstudio.com>`_ is a free cross-platform code editor
 by `Microsoft <https://microsoft.com>`_ (not to be confused with :ref:`doc_configuring_an_ide_vs`).
 
 Importing the project

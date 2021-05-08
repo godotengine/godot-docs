@@ -79,11 +79,37 @@ released.
 
     extends KinematicBody2D
 
+    onready var _animated_sprite = $AnimatedSprite
+
     func _process(delta):
         if Input.is_action_pressed("ui_right"):
-            $AnimatedSprite.play("run")
+            _animated_sprite.play("run")
         else:
-            $AnimatedSprite.stop()
+            _animated_sprite.stop()
+
+ .. code-tab:: csharp
+
+    public class Character : KinematicBody2D
+    {
+        private AnimatedSprite _animatedSprite;
+
+        public override void _Ready()
+        {
+            _animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+        }
+
+        public override _Process(float delta)
+        {
+            if (Input.IsActionPressed("ui_right"))
+            {
+                _animatedSprite.Play("run");
+            }
+            else
+            {
+                _animatedSprite.Stop();
+            }
+        }
+    }
 
 
 Sprite sheet with AnimatedSprite
@@ -192,12 +218,37 @@ released.
 
     extends KinematicBody2D
 
+    onready var _animation_player = $AnimationPlayer
+
     func _process(delta):
         if Input.is_action_pressed("ui_right"):
-            $AnimationPlayer.play("walk")
+            _animation_player.play("walk")
         else:
-            $AnimationPlayer.stop()
+            _animation_player.stop()
 
+ .. code-tab:: csharp
+
+    public class Character : KinematicBody2D
+    {
+        private AnimationPlayer _animationPlayer;
+
+        public override void _Ready()
+        {
+            _animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+        }
+
+        public override void _Process(float delta)
+        {
+            if (Input.IsActionPressed("ui_right"))
+            {
+                _animationPlayer.Play("walk");
+            }
+            else
+            {
+                _animationPlayer.Stop();
+            }
+        }
+    }
 
 .. note:: If updating both an animation and a separate property at once
           (for example, a platformer may update the sprite's ``h_flip``/``v_flip``

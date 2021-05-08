@@ -49,13 +49,13 @@ Add a script to the kinematic body and add the following code:
 
     func get_input():
         velocity = Vector2()
-        if Input.is_action_pressed('right'):
+        if Input.is_action_pressed("right"):
             velocity.x += 1
-        if Input.is_action_pressed('left'):
+        if Input.is_action_pressed("left"):
             velocity.x -= 1
-        if Input.is_action_pressed('down'):
+        if Input.is_action_pressed("down"):
             velocity.y += 1
-        if Input.is_action_pressed('up'):
+        if Input.is_action_pressed("up"):
             velocity.y -= 1
         velocity = velocity.normalized() * speed
 
@@ -140,13 +140,13 @@ while up/down moves it forward or backward in whatever direction it's facing.
     func get_input():
         rotation_dir = 0
         velocity = Vector2()
-        if Input.is_action_pressed('right'):
+        if Input.is_action_pressed("right"):
             rotation_dir += 1
-        if Input.is_action_pressed('left'):
+        if Input.is_action_pressed("left"):
             rotation_dir -= 1
-        if Input.is_action_pressed('down'):
+        if Input.is_action_pressed("down"):
             velocity = Vector2(-speed, 0).rotated(rotation)
-        if Input.is_action_pressed('up'):
+        if Input.is_action_pressed("up"):
             velocity = Vector2(speed, 0).rotated(rotation)
 
     func _physics_process(delta):
@@ -225,9 +225,9 @@ is set by the mouse position instead of the keyboard. The character will always
     func get_input():
         look_at(get_global_mouse_position())
         velocity = Vector2()
-        if Input.is_action_pressed('down'):
+        if Input.is_action_pressed("down"):
             velocity = Vector2(-speed, 0).rotated(rotation)
-        if Input.is_action_pressed('up'):
+        if Input.is_action_pressed("up"):
             velocity = Vector2(speed, 0).rotated(rotation)
 
     func _physics_process(delta):
@@ -299,7 +299,7 @@ on the screen will cause the player to move to the target location.
     var velocity = Vector2()
 
     func _input(event):
-        if event.is_action_pressed('click'):
+        if event.is_action_pressed("click"):
             target = get_global_mouse_position()
 
     func _physics_process(delta):
