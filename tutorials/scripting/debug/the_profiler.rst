@@ -40,7 +40,7 @@ The measured data
 The profiler's interface is split into two. There is a list of functions on the
 left and the performance graph on the right.
 
-The main measurements are frame time, physics time, idle time, and physics time.
+The main measurements are frame time, physics frame, idle time, and physics time.
 
 - The **frame time** is the time it takes Godot to execute all the logic for an
   entire image, from physics to rendering.
