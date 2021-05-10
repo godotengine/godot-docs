@@ -98,13 +98,13 @@ There are four main screen buttons centered at the top of the editor:
 2D, 3D, Script, and AssetLib.
 
 You'll use the **2D screen** for all types of games. In addition to 2D games,
-the 2D screen is where you'll build your interfaces. Press :kbd:`F1` (or
+the 2D screen is where you'll build your interfaces. Press :kbd:`Ctrl + F1` (or
 :kbd:`Alt + 1` on macOS) to access it.
 
 .. image:: img/editor_intro_workspace_2d.png
 
 In the **3D screen**, you can work with meshes, lights, and design levels for
-3D games. Press :kbd:`F2` (:kbd:`Alt + 2` on macOS) to access it.
+3D games. Press :kbd:`Ctrl + F2` (:kbd:`Alt + 2` on macOS) to access it.
 
 .. image:: img/editor_intro_workspace_3d.png
 
@@ -117,7 +117,7 @@ options related to the 3D view.
           main screen**.
 
 The **Script screen** is a complete code editor with a debugger, rich
-auto-completion, and built-in code reference. Press :kbd:`F3` (:kbd:`Alt + 3`
+auto-completion, and built-in code reference. Press :kbd:`Ctrl + F3` (:kbd:`Alt + 3`
 on macOS) to access it.
 
 .. image:: img/editor_intro_workspace_script.png
