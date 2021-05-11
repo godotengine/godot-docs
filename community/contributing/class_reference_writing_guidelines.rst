@@ -110,7 +110,7 @@ Alternatively, you can build Godot and open the modified page in the built-in
 code reference. To learn how to compile the engine, read the :ref:`compilation
 guide <toc-devel-compiling>`.
 
-We recommend using a code editor that supports XML files like Vim, Atom, Code,
+We recommend using a code editor that supports XML files like Vim, Atom, VS Code,
 Notepad++, or another to comfortably edit the file. You can also use their
 search feature to find classes and properties quickly.
 
