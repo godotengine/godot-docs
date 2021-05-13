@@ -74,10 +74,15 @@ editor binary built with ``target=release_debug``::
     cp bin/godot.osx.opt.tools.universal Godot.app/Contents/MacOS/Godot
     chmod +x Godot.app/Contents/MacOS/Godot
 
-If you are building the ``master`` branch, additionally copy the Vulkan library::
+.. note::
 
-    mkdir -p Godot.app/Contents/Frameworks
-    cp <Vulkan SDK path>/macOS/libs/libMoltenVK.dylib Godot.app/Contents/Frameworks/libMoltenVK.dylib
+    If you are building the ``master`` branch, you also need to include support
+    for the MoltenVK Vulkan portability library. You can do so either by
+    building it statically with ``use_static_mvk=yes``, or by including the
+    dynamic library in your ``.app`` bundle::
+
+        mkdir -p Godot.app/Contents/Frameworks
+        cp <Vulkan SDK path>/macOS/libs/libMoltenVK.dylib Godot.app/Contents/Frameworks/libMoltenVK.dylib
 
 Compiling a headless/server build
 ---------------------------------
@@ -91,6 +96,61 @@ To compile a *server* build which is optimized to run dedicated game servers,
 use::
 
     scons platform=server tools=no target=release --jobs=$(sysctl -n hw.logicalcpu)
+
+Building export templates
+-------------------------
+
+To build macOS export templates, you have to compile with ``tools=no`` (no
+editor) and respectively for ``target=release`` (release template) and
+``target=release_debug``.
+
+Official templates are universal binaries which support both Intel x86_64 and
+ARM64 architectures. You can also create export templates that support only one
+of those two architectures by leaving out the ``lipo`` step below.
+
+- For Intel x86_64::
+
+    scons platform=osx tools=no target=release arch=x86_64 --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=osx tools=no target=release_debug arch=x86_64 --jobs=$(sysctl -n hw.logicalcpu)
+
+- For ARM64 (Apple M1)::
+
+    scons platform=osx tools=no target=release arch=arm64 --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=osx tools=no target=release_debug arch=arm64 --jobs=$(sysctl -n hw.logicalcpu)
+
+To support both architectures in a single "Universal 2" binary, run the above
+two commands blocks and then use ``lipo`` to bundle them together::
+
+    lipo -create bin/godot.osx.opt.x86_64 bin/godot.osx.opt.arm64 -output bin/godot.osx.opt.universal
+    lipo -create bin/godot.osx.opt.debug.x86_64 bin/godot.osx.opt.debug.arm64 -output bin/godot.osx.opt.debug.universal
+
+To create an ``.app`` bundle like in the official builds, you need to use the
+template located in ``misc/dist/osx_template.app``. The release and debug
+builds should be placed in ``osx_template.app/Contents/MacOS`` with the names
+``godot_osx_release.64`` and ``godot_osx_debug.64`` respectively. You can do so
+with the following commands (assuming a universal build, otherwise replace the
+``.universal`` extension with the one of your arch-specific binaries)::
+
+    cp -r misc/dist/osx_template.app .
+    mkdir -p osx_template.app/Contents/MacOS
+    cp bin/godot.osx.opt.universal osx_template.app/Contents/MacOS/godot_osx_release.64
+    cp bin/godot.osx.opt.debug.universal osx_template.app/Contents/MacOS/godot_osx_debug.64
+    chmod +x Godot.app/Contents/MacOS/godot_osx*
+
+.. note::
+
+    If you are building the ``master`` branch, you also need to include support
+    for the MoltenVK Vulkan portability library. You can do so either by
+    building it statically with ``use_static_mvk=yes``, or by including the
+    dynamic library in your ``.app`` bundle::
+
+        mkdir -p osx_template.app/Contents/Frameworks
+        cp <Vulkan SDK path>/macOS/libs/libMoltenVK.dylib osx_template.app/Contents/Frameworks/libMoltenVK.dylib
+
+You can then zip the ``osx_template.app`` folder to reproduce the ``osx.zip``
+template from the official Godot distribution::
+
+    zip -q -9 -r osx.zip osx_template.app
 
 Cross-compiling for macOS from Linux
 ------------------------------------
