@@ -59,3 +59,19 @@ behavior to quit when quit is requested, this can be changed:
  .. code-tab:: csharp
 
     GetTree().SetAutoAcceptQuit(false);
+
+Sending your own quit notification
+----------------------------------
+
+While forcing the application to close can be done simply with `get_tree().quit()` (with GDscript on desktops) connected to a button, doing so will not send the quit notification and thus will not call the function described above. Quitting in such a way will not allow custom actions to complete (such as saving, confirming the quit, or debugging) even if you try to delay the line that forces the quit. 
+
+Insead you should be sending a quit request:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    get_tree().notification(MainLoop.NOTIFICATION_WM_QUIT_REQUEST)
+
+ .. code-tab:: csharp
+
+    GetTree().Notification(MainLoop.NotificationWmQuitRequest)
