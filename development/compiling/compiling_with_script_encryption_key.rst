@@ -46,9 +46,13 @@ Step by step
 
        export SCRIPT_AES256_ENCRYPTION_KEY="your_generated_key"
 
-    .. code-tab:: bat Windows
+    .. code-tab:: bat Windows (cmd)
 
        set SCRIPT_AES256_ENCRYPTION_KEY=your_generated_key
+
+    .. code-tab:: bat Windows (PowerShell)
+
+       $env:SCRIPT_AES256_ENCRYPTION_KEY="your_generated_key"
 
 3. Compile Godot export templates and set them as custom export templates
    in the export preset options.
