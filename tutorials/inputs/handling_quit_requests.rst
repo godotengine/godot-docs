@@ -63,9 +63,14 @@ behavior to quit when quit is requested, this can be changed:
 Sending your own quit notification
 ----------------------------------
 
-While forcing the application to close can be done simply with `get_tree().quit()` (with GDscript on desktops) connected to a button, doing so will not send the quit notification and thus will not call the function described above. Quitting in such a way will not allow custom actions to complete (such as saving, confirming the quit, or debugging) even if you try to delay the line that forces the quit. 
+While forcing the application to close can be done by calling :ref:`SceneTree.quit <class_SceneTree_method_quit>,
+doing so will not send the quit *notification*. This means the function
+described above won't be called. Quitting by calling
+:ref:`SceneTree.quit <class_SceneTree_method_quit> will not allow custom actions
+to complete (such as saving, confirming the quit, or debugging), even if you try
+to delay the line that forces the quit. 
 
-Insead you should be sending a quit request:
+Instead, you should send a quit request:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
