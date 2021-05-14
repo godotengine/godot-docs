@@ -63,10 +63,10 @@ behavior to quit when quit is requested, this can be changed:
 Sending your own quit notification
 ----------------------------------
 
-While forcing the application to close can be done by calling :ref:`SceneTree.quit <class_SceneTree_method_quit>,
+While forcing the application to close can be done by calling :ref:`SceneTree.quit <class_SceneTree_method_quit>`,
 doing so will not send the quit *notification*. This means the function
 described above won't be called. Quitting by calling
-:ref:`SceneTree.quit <class_SceneTree_method_quit> will not allow custom actions
+:ref:`SceneTree.quit <class_SceneTree_method_quit>` will not allow custom actions
 to complete (such as saving, confirming the quit, or debugging), even if you try
 to delay the line that forces the quit. 
 
