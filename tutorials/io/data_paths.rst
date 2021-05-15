@@ -26,7 +26,7 @@ this file is your project's root folder.
 You can access any file relative to it by writing paths starting with
 ``res://``, which stands for resources. For example, you can access an image
 file ``character.png`` located in the project's root folder in code with the
-following path: ``res://some_texture.png``.
+following path: ``res://character.png``.
 
 Accessing persistent user data
 ------------------------------
