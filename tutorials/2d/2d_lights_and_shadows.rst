@@ -130,9 +130,8 @@ node, which is why we want the blob to be centered on its parent :ref:`Light <cl
 
 .. image:: img/light_shadow_all_lights.png
 
-.. note:: At the time of writing, 3.0 is the stable release version. The 3.1 development branch contains
-          many changes to the animation system, so the animations in the demo will not be covered here.
-          See :ref:`doc_introduction_animation` for more information.
+.. note:: The animations in the demo will not be covered here. See :ref:`doc_introduction_animation`
+          for information on creating animations.
 
 Right now the scene should look too bright. This is because all three lights are adding color to the scene.
 This is why the demo uses a :ref:`CanvasModulate <class_CanvasModulate>` in the scene. The
