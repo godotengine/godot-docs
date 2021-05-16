@@ -65,7 +65,7 @@ When you create a new class or modify the engine's API, you need to re-generate 
 
 To do so, you first need to compile Godot. See the
 :ref:`doc_introduction_to_the_buildsystem` page to learn how. Then, execute the
-compiled godot executable with the ``--doctool`` option. For example, if you're on 64-bit
+compiled godot executable with the ``--doctool`` option, from the godot root directory. For example, if you're on 64-bit
 Linux the command is:
 
 ::
