@@ -79,6 +79,16 @@ In that screen, 2 paths need to be set:
 
 Once that is configured, everything is ready to export to Android!
 
+When you go to export your project for Android with debugging, ensure that Export -> Options -> Keystore has the following fields set:
+
+- The ``Debug`` field should be set to the path of the folder where you put the ``debug.keystore`` file you created above.
+
+- The ``Debug User`` field should be set to the value provided to the ``-alias`` flag in the ``keytool`` command that generated the ``debug.keystore``. In the example ``keytool`` command above, the ``-alias`` value is ``androiddebugkey``.
+
+- The ``Debug Password`` field should be set to the value provided to the ``-keypass`` flag in the ``keytool`` command that generated the ``debug.keystore``. In the example ``keytool`` command above, the ``-keypass`` value is ``android``.
+
+.. image:: img/export_debug_keystore_highlighted.png
+
 Providing launcher icons
 ------------------------
 
