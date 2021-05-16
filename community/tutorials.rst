@@ -31,7 +31,7 @@ Video tutorials
 - `Jeremy Bullock <https://www.youtube.com/channel/UCwJw2-V5S1TkBjLQ3_Ws54g>`_ (2D and 3D, GDScript, VisualScript and C#).
 - `KidsCanCode <https://www.youtube.com/channel/UCNaPQ5uLX5iIEHUCLmfAgKg/playlists>`__ (2D and 3D, GDScript and VisualScript).
 - `Mister Taft Creates <https://www.youtube.com/playlist?list=PL4vbr3u7UKWqwQlvwvgNcgDL1p_3hcNn2>`_ (2D, GDScript).
-- `Miziziziz <https://www.youtube.com/playlist?list=PLmugv6_kd0qN6AyjG245_Pdak4MXKUx88>`_ (2D, GDScript).
+- `Miziziziz <https://www.youtube.com/playlist?list=PLmugv6_kd0qN6AyjG245_Pdak4MXKUx88>`_ (2D and 3D, GDScript).
 - `P1X / Krzysztof Jankowski <https://www.youtube.com/playlist?list=PLvDk7UKhld4xGPovdB4IFtAHYMYjx_-3K>`_ (3D).
 - `Pigdev <https://www.youtube.com/playlist?list=PLPMN4vCRFdordS3E-3zi0Hdh7pAsbWQ6a>`_ (2D, GDScript).
 - `Steincodes <https://www.youtube.com/c/steincodes/playlists>`__ (2D, GDScript and VisualScript).
@@ -41,6 +41,7 @@ Video tutorials
 - `Gonkee <https://www.youtube.com/channel/UCJqCPFHdbc6443G3Sz6VYDw>`_ (2D and 3D, GDScript, Shaders).
 - `TheGuideKnight <https://www.youtube.com/playlist?list=PLYcTJBw32KtX2fvOdtO_fS3Nd6sxM71tn>`_ (2D, GDScript).
 - `GDScript Dude <https://www.youtube.com/channel/UCQs0i6vKISElM6mh7OzLouQ>`_ (GDScript).
+- `Garbaj <https://www.youtube.com/c/Garbaj/>`_ (3D, GDScript).
 
 Text tutorials
 --------------
