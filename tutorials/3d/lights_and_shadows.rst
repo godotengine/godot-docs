@@ -38,7 +38,7 @@ Each one has a specific function:
 -  **Bake Mode**: Sets the bake mode for the light. For more information see :ref:`doc_baked_lightmaps`
 -  **Cull Mask**: Objects that are in the selected layers below will be affected by this light.
    Note that objects disabled via this cull mask will still cast shadows.
-   If you don't want them to cast shadows, adjust the ``cast_shadow`` property on the
+   If you don't want disabled objects to cast shadows, adjust the ``cast_shadow`` property on the
    GeometryInstance to the desired value.
 
 Shadow mapping
