@@ -36,7 +36,10 @@ Each one has a specific function:
 -  **Negative**: Light becomes subtractive instead of additive. It's sometimes useful to manually compensate some dark corners.
 -  **Specular**: Affects the intensity of the specular blob in objects affected by this light. At zero, this light becomes a pure diffuse light.
 -  **Bake Mode**: Sets the bake mode for the light. For more information see :ref:`doc_baked_lightmaps`
--  **Cull Mask**: Objects that are in the selected layers below will be affected by this light. Note that even disabled objects will still cast shadows. You'll need to modify the `cast_shadow` property on the GeometryInstance itself to change this.
+-  **Cull Mask**: Objects that are in the selected layers below will be affected by this light.
+   Note that objects disabled via this cull mask will still cast shadows.
+   If you don't want them to cast shadows, adjust the ``cast_shadow`` property on the
+   GeometryInstance to the desired value.
 
 Shadow mapping
 ^^^^^^^^^^^^^^
