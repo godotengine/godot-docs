@@ -68,6 +68,30 @@ will automatically fetch a translation if their text matches a translation key.
 For example, if a label's text is "MAIN_SCREEN_GREETING1" and that key exists
 in the current translation, then the text will automatically be translated.
 
+This automatic translation behavior may be undesirable in certain cases. For
+instance, when using a Label to display a player's name, you most likely don't
+want the player's name to be translated if it matches a translation key. To
+disable automatic translation on a specific node, use
+:ref:`Object.set_message_translation<class_Object_method_set_message_translation>`
+and send a :ref:`Object.notification<class_Object_method_notification>` to update the
+translation::
+
+    func _ready():
+        # This assumes you have a node called "Label" as a child of the node
+        # that has the script attached.
+        var label = get_node("Label")
+        label.set_message_translation(false)
+        label.notification(NOTIFICATION_TRANSLATION_CHANGED)
+
+For more complex UI nodes such as OptionButtons, you may have to use this instead::
+
+    func _ready():
+        var option_button = get_node("OptionButton")
+        option_button.set_message_translation(false)
+        option_button.notification(NOTIFICATION_TRANSLATION_CHANGED)
+        option_button.get_popup().set_message_translation(false)
+        option_button.get_popup().notification(NOTIFICATION_TRANSLATION_CHANGED)
+
 In code, the :ref:`Object.tr() <class_Object_method_tr>`
 function can be used. This will just look up the text in the
 translations and convert it if found:
