@@ -11,12 +11,12 @@ LargeTexture
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-A :ref:`Texture<class_Texture>` capable of storing many smaller textures with offsets.
+*Deprecated.* A :ref:`Texture<class_Texture>` capable of storing many smaller textures with offsets.
 
 Description
 -----------
 
-A :ref:`Texture<class_Texture>` capable of storing many smaller textures with offsets.
+*Deprecated (will be removed in Godot 4.0).* A :ref:`Texture<class_Texture>` capable of storing many smaller textures with offsets.
 
 You can dynamically add pieces (:ref:`Texture<class_Texture>`\ s) to this ``LargeTexture`` using different offsets.
 

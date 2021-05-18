@@ -212,7 +212,7 @@ Returns the scale.
 
 - :ref:`Transform2D<class_Transform2D>` **interpolate_with** **(** :ref:`Transform2D<class_Transform2D>` transform, :ref:`float<class_float>` weight **)**
 
-Returns a transform interpolated between this transform and another by a given weight (on the range of 0.0 to 1.0).
+Returns a transform interpolated between this transform and another by a given ``weight`` (on the range of 0.0 to 1.0).
 
 ----
 

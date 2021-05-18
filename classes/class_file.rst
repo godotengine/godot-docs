@@ -457,6 +457,8 @@ Opens the file for writing or reading, depending on the flags.
 
 Opens a compressed file for reading or writing.
 
+**Note:** :ref:`open_compressed<class_File_method_open_compressed>` can only read files that were saved by Godot, not third-party compression formats. See `GitHub issue #28999 <https://github.com/godotengine/godot/issues/28999>`_ for a workaround.
+
 ----
 
 .. _class_File_method_open_encrypted:

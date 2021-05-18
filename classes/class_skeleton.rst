@@ -49,6 +49,8 @@ Methods
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_Transform>`         | :ref:`get_bone_global_pose<class_Skeleton_method_get_bone_global_pose>` **(** :ref:`int<class_int>` bone_idx **)** |const|                                                                                                                               |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_Transform>`         | :ref:`get_bone_global_pose_no_override<class_Skeleton_method_get_bone_global_pose_no_override>` **(** :ref:`int<class_int>` bone_idx **)** |const|                                                                                                       |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`               | :ref:`get_bone_name<class_Skeleton_method_get_bone_name>` **(** :ref:`int<class_int>` bone_idx **)** |const|                                                                                                                                             |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                     | :ref:`get_bone_parent<class_Skeleton_method_get_bone_parent>` **(** :ref:`int<class_int>` bone_idx **)** |const|                                                                                                                                         |
@@ -166,6 +168,14 @@ Returns the custom pose of the specified bone. Custom pose is applied on top of 
 - :ref:`Transform<class_Transform>` **get_bone_global_pose** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
 Returns the overall transform of the specified bone, with respect to the skeleton. Being relative to the skeleton frame, this is not the actual "global" transform of the bone.
+
+----
+
+.. _class_Skeleton_method_get_bone_global_pose_no_override:
+
+- :ref:`Transform<class_Transform>` **get_bone_global_pose_no_override** **(** :ref:`int<class_int>` bone_idx **)** |const|
+
+Returns the overall transform of the specified bone, with respect to the skeleton, but without any global pose overrides. Being relative to the skeleton frame, this is not the actual "global" transform of the bone.
 
 ----
 

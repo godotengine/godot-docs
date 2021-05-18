@@ -11,12 +11,16 @@ AudioStreamPlayer2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Plays audio in 2D.
+Plays positional sound in 2D space.
 
 Description
 -----------
 
 Plays audio that dampens with distance from screen center.
+
+See also :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` to play a sound non-positionally.
+
+**Note:** Hiding an ``AudioStreamPlayer2D`` node does not disable its audio output. To temporarily disable an ``AudioStreamPlayer2D``'s audio output, set :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>` to a very low value like ``-100`` (which isn't audible to human hearing).
 
 Tutorials
 ---------

@@ -112,7 +112,7 @@ Removes all animations. A "default" animation will be created.
 
 - :ref:`bool<class_bool>` **get_animation_loop** **(** :ref:`String<class_String>` anim **)** |const|
 
-If ``true``, the given animation will loop.
+Returns ``true`` if the given animation is configured to loop when it finishes playing. Otherwise, returns ``false``.
 
 ----
 

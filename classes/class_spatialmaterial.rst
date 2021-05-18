@@ -857,6 +857,8 @@ Sets the strength of the clearcoat effect. Setting to ``0`` looks the same as di
 
 If ``true``, clearcoat rendering is enabled. Adds a secondary transparent pass to the lighting calculation resulting in an added specular blob. This makes materials appear as if they have a clear layer on them that can be either glossy or rough.
 
+**Note:** Clearcoat rendering is not visible if the material has :ref:`flags_unshaded<class_SpatialMaterial_property_flags_unshaded>` set to ``true``.
+
 ----
 
 .. _class_SpatialMaterial_property_clearcoat_gloss:
@@ -1894,6 +1896,8 @@ Sets the strength of the rim lighting effect.
 +-----------+--------------------+
 
 If ``true``, rim effect is enabled. Rim lighting increases the brightness at glancing angles on an object.
+
+**Note:** Rim lighting is not visible if the material has :ref:`flags_unshaded<class_SpatialMaterial_property_flags_unshaded>` set to ``true``.
 
 ----
 

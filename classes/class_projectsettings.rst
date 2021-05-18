@@ -20,6 +20,8 @@ Contains global variables accessible from everywhere. Use :ref:`get_setting<clas
 
 When naming a Project Settings property, use the full path to the setting including the category. For example, ``"application/config/name"`` for the project name. Category and property names can be viewed in the Project Settings dialog.
 
+**Feature tags:** Project settings can be overriden for specific platforms and configurations (debug, release, ...) using `feature tags <https://docs.godotengine.org/en/latest/tutorials/export/feature_tags.html>`_.
+
 **Overriding:** Any project setting can be overridden by creating a file named ``override.cfg`` in the project's root directory. This can also be used in exported projects by placing this file in the same directory as the project binary. Overriding will still take the base project settings' `feature tags <https://docs.godotengine.org/en/latest/tutorials/export/feature_tags.html>`_ in account. Therefore, make sure to *also* override the setting with the desired feature tags if you want them to override base project settings on all platforms and configurations.
 
 Tutorials

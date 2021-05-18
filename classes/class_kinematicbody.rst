@@ -197,7 +197,7 @@ Returns the number of times the body collided and changed direction during the l
 
 - :ref:`bool<class_bool>` **is_on_ceiling** **(** **)** |const|
 
-Returns ``true`` if the body is on the ceiling. Only updates when calling :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>` or :ref:`move_and_slide_with_snap<class_KinematicBody_method_move_and_slide_with_snap>`.
+Returns ``true`` if the body collided with the ceiling on the last call of :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>` or :ref:`move_and_slide_with_snap<class_KinematicBody_method_move_and_slide_with_snap>`. Otherwise, returns ``false``.
 
 ----
 
@@ -205,7 +205,7 @@ Returns ``true`` if the body is on the ceiling. Only updates when calling :ref:`
 
 - :ref:`bool<class_bool>` **is_on_floor** **(** **)** |const|
 
-Returns ``true`` if the body is on the floor. Only updates when calling :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>` or :ref:`move_and_slide_with_snap<class_KinematicBody_method_move_and_slide_with_snap>`.
+Returns ``true`` if the body collided with the floor on the last call of :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>` or :ref:`move_and_slide_with_snap<class_KinematicBody_method_move_and_slide_with_snap>`. Otherwise, returns ``false``.
 
 ----
 
@@ -213,7 +213,7 @@ Returns ``true`` if the body is on the floor. Only updates when calling :ref:`mo
 
 - :ref:`bool<class_bool>` **is_on_wall** **(** **)** |const|
 
-Returns ``true`` if the body is on a wall. Only updates when calling :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>` or :ref:`move_and_slide_with_snap<class_KinematicBody_method_move_and_slide_with_snap>`.
+Returns ``true`` if the body collided with a wall on the last call of :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>` or :ref:`move_and_slide_with_snap<class_KinematicBody_method_move_and_slide_with_snap>`. Otherwise, returns ``false``.
 
 ----
 

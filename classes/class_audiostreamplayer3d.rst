@@ -11,7 +11,7 @@ AudioStreamPlayer3D
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Plays 3D sound in 3D space.
+Plays positional sound in 3D space.
 
 Description
 -----------
@@ -19,6 +19,10 @@ Description
 Plays a sound effect with directed sound effects, dampens with distance if needed, generates effect of hearable position in space. For greater realism, a low-pass filter is automatically applied to distant sounds. This can be disabled by setting :ref:`attenuation_filter_cutoff_hz<class_AudioStreamPlayer3D_property_attenuation_filter_cutoff_hz>` to ``20500``.
 
 By default, audio is heard from the camera position. This can be changed by adding a :ref:`Listener<class_Listener>` node to the scene and enabling it by calling :ref:`Listener.make_current<class_Listener_method_make_current>` on it.
+
+See also :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` to play a sound non-positionally.
+
+**Note:** Hiding an ``AudioStreamPlayer3D`` node does not disable its audio output. To temporarily disable an ``AudioStreamPlayer3D``'s audio output, set :ref:`unit_db<class_AudioStreamPlayer3D_property_unit_db>` to a very low value like ``-100`` (which isn't audible to human hearing).
 
 Tutorials
 ---------

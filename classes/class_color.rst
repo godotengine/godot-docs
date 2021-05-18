@@ -88,7 +88,7 @@ Methods
 +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`   | :ref:`lightened<class_Color_method_lightened>` **(** :ref:`float<class_float>` amount **)**                                                                                     |
 +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`   | :ref:`linear_interpolate<class_Color_method_linear_interpolate>` **(** :ref:`Color<class_Color>` b, :ref:`float<class_float>` t **)**                                           |
+| :ref:`Color<class_Color>`   | :ref:`linear_interpolate<class_Color_method_linear_interpolate>` **(** :ref:`Color<class_Color>` to, :ref:`float<class_float>` weight **)**                                     |
 +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`       | :ref:`to_abgr32<class_Color_method_to_abgr32>` **(** **)**                                                                                                                      |
 +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -977,9 +977,9 @@ Returns a new color resulting from making this color lighter by the specified pe
 
 .. _class_Color_method_linear_interpolate:
 
-- :ref:`Color<class_Color>` **linear_interpolate** **(** :ref:`Color<class_Color>` b, :ref:`float<class_float>` t **)**
+- :ref:`Color<class_Color>` **linear_interpolate** **(** :ref:`Color<class_Color>` to, :ref:`float<class_float>` weight **)**
 
-Returns the linear interpolation with another color. The interpolation factor ``t`` is between 0 and 1.
+Returns the linear interpolation with another color. The interpolation factor ``weight`` is between 0 and 1.
 
 ::
 

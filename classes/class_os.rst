@@ -1464,6 +1464,8 @@ Returns the current time zone as a dictionary with the keys: bias and name.
 
 Returns a string that is unique to the device.
 
+**Note:** This string may change without notice if the user reinstalls/upgrades their operating system or changes their hardware. This means it should generally not be used to encrypt persistent data as the data saved prior to an unexpected ID change would become inaccessible. The returned string may also be falsified using external programs, so do not rely on the string returned by :ref:`get_unique_id<class_OS_method_get_unique_id>` for security purposes.
+
 **Note:** Returns an empty string on HTML5 and UWP, as this method isn't implemented on those platforms yet.
 
 ----

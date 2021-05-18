@@ -82,7 +82,7 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`     | :ref:`scaled<class_Basis_method_scaled>` **(** :ref:`Vector3<class_Vector3>` scale **)**                                                                            |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_Basis>`     | :ref:`slerp<class_Basis_method_slerp>` **(** :ref:`Basis<class_Basis>` b, :ref:`float<class_float>` t **)**                                                         |
+| :ref:`Basis<class_Basis>`     | :ref:`slerp<class_Basis_method_slerp>` **(** :ref:`Basis<class_Basis>` to, :ref:`float<class_float>` weight **)**                                                   |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`     | :ref:`tdotx<class_Basis_method_tdotx>` **(** :ref:`Vector3<class_Vector3>` with **)**                                                                               |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -274,7 +274,7 @@ Introduce an additional scaling specified by the given 3D scaling factor.
 
 .. _class_Basis_method_slerp:
 
-- :ref:`Basis<class_Basis>` **slerp** **(** :ref:`Basis<class_Basis>` b, :ref:`float<class_float>` t **)**
+- :ref:`Basis<class_Basis>` **slerp** **(** :ref:`Basis<class_Basis>` to, :ref:`float<class_float>` weight **)**
 
 Assuming that the matrix is a proper rotation matrix, slerp performs a spherical-linear interpolation with another rotation matrix.
 

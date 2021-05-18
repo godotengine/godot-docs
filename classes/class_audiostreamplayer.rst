@@ -18,6 +18,8 @@ Description
 
 Plays an audio stream non-positionally.
 
+To play audio positionally, use :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>` or :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>` instead of ``AudioStreamPlayer``.
+
 Tutorials
 ---------
 

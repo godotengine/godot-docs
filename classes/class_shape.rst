@@ -32,6 +32,13 @@ Properties
 | :ref:`float<class_float>` | :ref:`margin<class_Shape_property_margin>` | ``0.04`` |
 +---------------------------+--------------------------------------------+----------+
 
+Methods
+-------
+
++-----------------------------------+----------------------------------------------------------------------+
+| :ref:`ArrayMesh<class_ArrayMesh>` | :ref:`get_debug_mesh<class_Shape_method_get_debug_mesh>` **(** **)** |
++-----------------------------------+----------------------------------------------------------------------+
+
 Property Descriptions
 ---------------------
 
@@ -50,6 +57,15 @@ Property Descriptions
 The collision margin for the shape. Used in Bullet Physics only.
 
 Collision margins allow collision detection to be more efficient by adding an extra shell around shapes. Collision algorithms are more expensive when objects overlap by more than their margin, so a higher value for margins is better for performance, at the cost of accuracy around edges as it makes them less sharp.
+
+Method Descriptions
+-------------------
+
+.. _class_Shape_method_get_debug_mesh:
+
+- :ref:`ArrayMesh<class_ArrayMesh>` **get_debug_mesh** **(** **)**
+
+Returns the :ref:`ArrayMesh<class_ArrayMesh>` used to draw the debug collision for this ``Shape``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

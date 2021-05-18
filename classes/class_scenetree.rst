@@ -483,6 +483,8 @@ Calls ``method`` on each member of the given group. You can pass arguments to ``
 
 **Note:** ``method`` may only have 5 arguments at most (7 arguments passed to this method in total).
 
+**Note:** :ref:`call_group<class_SceneTree_method_call_group>` will always call methods with an one-frame delay, in a way similar to :ref:`Object.call_deferred<class_Object_method_call_deferred>`. To call methods immediately, use :ref:`call_group_flags<class_SceneTree_method_call_group_flags>` with the :ref:`GROUP_CALL_REALTIME<class_SceneTree_constant_GROUP_CALL_REALTIME>` flag.
+
 ----
 
 .. _class_SceneTree_method_call_group_flags:
@@ -492,6 +494,8 @@ Calls ``method`` on each member of the given group. You can pass arguments to ``
 Calls ``method`` on each member of the given group, respecting the given :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`. You can pass arguments to ``method`` by specifying them at the end of the method call.
 
 **Note:** ``method`` may only have 5 arguments at most (8 arguments passed to this method in total).
+
+**Note:** Group call flags are used to control the method calling behavior. If the :ref:`GROUP_CALL_REALTIME<class_SceneTree_constant_GROUP_CALL_REALTIME>` flag is present in the ``flags`` argument, methods will be called immediately. If this flag isn't present in ``flags``, methods will be called with a one-frame delay in a way similar to :ref:`call_group<class_SceneTree_method_call_group>`.
 
 ----
 
