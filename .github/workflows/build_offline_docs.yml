@@ -1,7 +1,5 @@
 name: Build documentation for offline usage
 on:
-  push: # FIXME
-  pull_request: # FIXME
   schedule:
     # Every week on Monday at midnight (UTC).
     # This keeps the generated HTML documentation fresh.
