@@ -141,7 +141,7 @@ avoid this, make sure to test the event type first:
     {
         if (inputEvent is InputEventMouseButton mouseEvent)
         {
-            GD.Print($"mouse button event at {mouseEvent.Position}");
+            GD.Print("mouse button event at ", mouseEvent.Position);
         }
     }
 
