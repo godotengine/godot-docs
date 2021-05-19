@@ -38,7 +38,7 @@ The table of contents below and in the sidebar should let you easily access the
 documentation for your topic of interest. You can also use the search function
 in the top left corner.
 
-You can also `download an HTML copy <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/3.3/godot-docs-html.zip>`__
+You can also `download an HTML copy <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-stable.zip>`__
 for offline reading (updated every Monday). Extract the ZIP archive then open
 the top-level ``index.html`` in a web browser.
 
