@@ -282,12 +282,12 @@ also counts as a button - two buttons, to be precise, with both
 
     public override void _Input(InputEvent inputEvent)
     {
-        if (inputEvent as InputEventMouseButton mouseEvent && mouseEvent.Pressed)
+        if (inputEvent is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
         {
             switch ((ButtonList)mouseEvent.ButtonIndex)
             {
                 case ButtonList.Left:
-                    GD.Print($"Left button was clicked at {mouseEvent.Position}");
+                    GD.Print("Left button was clicked at ", {mouseEvent.Position});
                     break;
                 case ButtonList.WheelUp:
                     GD.Print("Wheel up");
