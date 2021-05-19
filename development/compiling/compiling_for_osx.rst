@@ -104,6 +104,8 @@ For the ``target=release_debug`` version, run the code below for a build::
 
 
 If you are building the ``master`` branch, additionally copy the Vulkan library::
+=======
+.. note::
 
     mkdir -p Godot.app/Contents/Frameworks
     cp <Vulkan SDK path>/macOS/libs/libMoltenVK.dylib Godot.app/Contents/Frameworks/libMoltenVK.dylib
