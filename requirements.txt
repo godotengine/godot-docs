@@ -11,7 +11,7 @@ sphinx_rtd_theme==0.5.2
 sphinx-tabs==1.3.0  # pyup: ignore
 
 # Custom 404 error page (more useful than the default)
-sphinx-notfound-page==0.6
+sphinx-notfound-page==0.7.1
 
 # Adds Open Graph tags in the HTML `<head>` tag
 sphinxext-opengraph==0.4.1
