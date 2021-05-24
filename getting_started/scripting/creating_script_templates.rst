@@ -23,7 +23,7 @@ These are available globally throughout any project. The location of these
 templates are determined per each OS:
 
 -  Windows: ``%APPDATA%\Godot\script_templates\``
--  Linux: ``$HOME/.local/share/godot/script_templates/``
+-  Linux: ``$HOME/.config/godot/script_templates/``
 -  macOS: ``$HOME/Library/Application Support/Godot/script_templates/``
 
 If no ``script_templates`` is detected, Godot will create a default set of
