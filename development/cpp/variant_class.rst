@@ -37,7 +37,7 @@ of C++ with little effort. Become a friend of Variant today.
 References:
 ~~~~~~~~~~~
 
--  `core/variant.h <https://github.com/godotengine/godot/blob/master/core/variant.h>`__
+-  `core/variant.h <https://github.com/godotengine/godot/blob/3.x/core/variant.h>`__
 
 Containers: Dictionary and Array
 --------------------------------
@@ -56,5 +56,5 @@ Copy-on-write (COW) mode support for containers was dropped with Godot 3.0.
 References:
 ~~~~~~~~~~~
 
--  `core/dictionary.h <https://github.com/godotengine/godot/blob/master/core/dictionary.h>`__
--  `core/array.h <https://github.com/godotengine/godot/blob/master/core/array.h>`__
+-  `core/dictionary.h <https://github.com/godotengine/godot/blob/3.x/core/dictionary.h>`__
+-  `core/array.h <https://github.com/godotengine/godot/blob/3.x/core/array.h>`__

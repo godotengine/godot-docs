@@ -35,7 +35,7 @@ This makes Objects gain a lot of functionality, like for example
 References:
 ~~~~~~~~~~~
 
--  `core/object.h <https://github.com/godotengine/godot/blob/master/core/object.h>`__
+-  `core/object.h <https://github.com/godotengine/godot/blob/3.x/core/object.h>`__
 
 Registering an Object
 ---------------------
@@ -93,7 +93,7 @@ string passing the name can be passed for brevity.
 References:
 ~~~~~~~~~~~
 
--  `core/class_db.h <https://github.com/godotengine/godot/blob/master/core/class_db.h>`__
+-  `core/class_db.h <https://github.com/godotengine/godot/blob/3.x/core/class_db.h>`__
 
 Constants
 ---------
@@ -258,7 +258,7 @@ templates point to it.
 References:
 ~~~~~~~~~~~
 
--  `core/reference.h <https://github.com/godotengine/godot/blob/master/core/reference.h>`__
+-  `core/reference.h <https://github.com/godotengine/godot/blob/3.x/core/reference.h>`__
 
 Resources:
 ----------
@@ -274,7 +274,7 @@ Resources without a path are fine too.
 References:
 ~~~~~~~~~~~
 
--  `core/resource.h <https://github.com/godotengine/godot/blob/master/core/resource.h>`__
+-  `core/resource.h <https://github.com/godotengine/godot/blob/3.x/core/resource.h>`__
 
 Resource loading
 ----------------
@@ -295,7 +295,7 @@ the same time.
 References:
 ~~~~~~~~~~~
 
--  `core/io/resource_loader.h <https://github.com/godotengine/godot/blob/master/core/io/resource_loader.h>`__
+-  `core/io/resource_loader.h <https://github.com/godotengine/godot/blob/3.x/core/io/resource_loader.h>`__
 
 Resource saving
 ---------------
@@ -314,4 +314,4 @@ be bundled with the saved resource and assigned sub-IDs, like
 References:
 ~~~~~~~~~~~
 
--  `core/io/resource_saver.h <https://github.com/godotengine/godot/blob/master/core/io/resource_saver.h>`__
+-  `core/io/resource_saver.h <https://github.com/godotengine/godot/blob/3.x/core/io/resource_saver.h>`__
