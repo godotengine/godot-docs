@@ -92,9 +92,9 @@ other parameters allowing you to customize the slide behavior:
 
 - ``infinite_inertia`` - *default value:* ``true``
 
-When this parameter is ``true``, the body can push :ref:`RigidBody2D <class_RigidBody2D>`
-nodes, ignoring their mass, but won't detect collisions with them. If it's ``false``
-the body will collide with rigid bodies and stop.
+    When this parameter is ``true``, the body can push :ref:`RigidBody2D <class_RigidBody2D>`
+    nodes, ignoring their mass, but won't detect collisions with them. If it's ``false``
+    the body will collide with rigid bodies and stop.
 
 ``move_and_slide_with_snap``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
