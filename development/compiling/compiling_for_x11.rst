@@ -55,8 +55,8 @@ Distro-specific one-liners
 +------------------+-----------------------------------------------------------------------------------------------------------+
 | **FreeBSD**      | ::                                                                                                        |
 |                  |                                                                                                           |
-|                  |     sudo pkg install scons pkgconf xorg-libraries libXcursor libXrandr libXi xorgproto libGLU alsa-lib \  |
-|                  |         pulseaudio yasm                                                                                   |
+|                  |     sudo pkg install py37-scons pkgconf xorg-libraries libXcursor libXrandr libXi xorgproto libGLU \      |
+|                  |         alsa-lib pulseaudio yasm                                                                          |
 |                  |                                                                                                           |
 +------------------+-----------------------------------------------------------------------------------------------------------+
 | **Gentoo**       | ::                                                                                                        |
