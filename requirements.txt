@@ -14,7 +14,7 @@ sphinx-tabs==1.3.0  # pyup: ignore
 sphinx-notfound-page==0.7.1
 
 # Adds Open Graph tags in the HTML `<head>` tag
-sphinxext-opengraph==0.4.1
+sphinxext-opengraph==0.4.2
 
 # Full-page search UI for RTD: https://readthedocs-sphinx-search.readthedocs.io
 readthedocs-sphinx-search==0.1.0
