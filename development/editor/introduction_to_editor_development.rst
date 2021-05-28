@@ -44,7 +44,10 @@ in the Godot source repository.
 
 Some important files in the editor are:
 
-- `editor/editor_node.cpp <https://github.com/godotengine/godot/blob/3.x/editor/editor_node.cpp>`__: Main editor initialization file.
+- `editor/editor_node.cpp <https://github.com/godotengine/godot/blob/3.x/editor/editor_node.cpp>`__:
+  Main editor initialization file. Effectively the "main scene" of the editor.
+- `editor/project_manager.cpp <https://github.com/godotengine/godot/blob/3.x/editor/project_manager.cpp>`__:
+  Main project manager initialization file. Effectively the "main scene" of the project manager.
 - `editor/plugins/canvas_item_editor_plugin.cpp <https://github.com/godotengine/godot/blob/3.x/editor/plugins/canvas_item_editor_plugin.cpp>`__:
   The 2D editor viewport and related functionality (toolbar at the top, editing modes, overlaid helpers/panels, …).
 - `editor/plugins/spatial_editor_plugin.cpp <https://github.com/godotengine/godot/blob/3.x/editor/plugins/spatial_editor_plugin.cpp>`__:
