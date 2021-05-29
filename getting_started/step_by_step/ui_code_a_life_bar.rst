@@ -567,7 +567,7 @@ bar as well when the character died. We will reuse the same ``Tween``
 node as it manages multiple animations in parallel for us.
 
 First, the ``GUI`` needs to connect to the ``Player``'s ``died`` signal
-to know when it died. Press :kbd:`F1` to jump back to the 2D
+to know when it died. Press :kbd:`Ctrl + F1` to jump back to the 2D
 Workspace. Select the ``Player`` node in the Scene dock and click on the
 Node tab next to the Inspector.
 
