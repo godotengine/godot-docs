@@ -42,6 +42,20 @@ editor builds to decrease the binary size of export templates. See the
 `modules/ <https://github.com/godotengine/godot/tree/master/modules>`__ folder
 in the Godot source repository.
 
+Some important files in the editor are:
+
+- `editor/editor_node.cpp <https://github.com/godotengine/godot/blob/master/editor/editor_node.cpp>`__:
+  Main editor initialization file. Effectively the "main scene" of the editor.
+- `editor/project_manager.cpp <https://github.com/godotengine/godot/blob/master/editor/project_manager.cpp>`__:
+  Main project manager initialization file. Effectively the "main scene" of the project manager.
+- `editor/plugins/canvas_item_editor_plugin.cpp <https://github.com/godotengine/godot/blob/master/editor/plugins/canvas_item_editor_plugin.cpp>`__:
+  The 2D editor viewport and related functionality (toolbar at the top, editing modes, overlaid helpers/panels, …).
+- `editor/plugins/node_3d_editor_plugin.cpp <https://github.com/godotengine/godot/blob/master/editor/plugins/node_3d_editor_plugin.cpp>`__:
+  The 3D editor viewport and related functionality (toolbar at the top, editing modes, overlaid panels, …).
+- `editor/node_3d_editor_gizmos.cpp <https://github.com/godotengine/godot/blob/master/editor/node_3d_editor_gizmos.cpp>`__:
+  Where the 3D editor gizmos are defined and drawn.
+  This file doesn't have a 2D counterpart as 2D gizmos are drawn by the nodes themselves.
+
 Editor dependencies in ``scene/`` files
 ---------------------------------------
 
