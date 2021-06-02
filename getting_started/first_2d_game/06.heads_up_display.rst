@@ -36,19 +36,21 @@ Inspector. The default font for ``Control`` nodes is small and doesn't scale
 well. There is a font file included in the game assets called
 "Xolonium-Regular.ttf". To use this font, do the following:
 
-1. Under "Custom Fonts", choose "New DynamicFont"
+1. Under "Custom Fonts", choose "New Font"
 
 .. image:: img/custom_font1.png
 
-2. Click on the "DynamicFont" you added, and under "Font/Font Data", choose
-   "Load" and select the "Xolonium-Regular.ttf" file. You must also set the
-   font's ``Size``. A setting of ``64`` works well.
+2. Click on the "Font" you added, and under "Font/Data/0",
+   choose "Load" and select the "Xolonium-Regular.ttf" file.
 
 .. image:: img/custom_font2.png
 
 Once you've done this on the ``ScoreLabel``, you can click the down arrow next
-to the DynamicFont property and choose "Copy", then "Paste" it in the same place
+to the Font property and choose "Copy", then "Paste" it in the same place
 on the other two Control nodes.
+Set "Custom Font Size" property of the ``ScoreLabel``. A setting of ``64`` works well.
+
+.. image:: img/custom_font3.png
 
 .. note:: **Anchors and Margins:** ``Control`` nodes have a position and size,
           but they also have anchors and margins. Anchors define the origin -
