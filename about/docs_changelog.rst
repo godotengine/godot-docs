@@ -107,7 +107,7 @@ Step by step
 ^^^^^^^^^^^^
 
 - :ref:`doc_signals`
-- :ref:`doc_exporting_basics`
+- Exporting
 
 Scripting
 ^^^^^^^^^
