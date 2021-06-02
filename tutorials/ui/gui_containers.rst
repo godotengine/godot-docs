@@ -1,7 +1,7 @@
 .. _doc_gui_containers:
 
-Containers
-==========
+Using Containers
+================
 
 :ref:`Anchors <doc_size_and_anchors>` are an efficient way to handle
 different aspect ratios for basic multiple resolution handling in GUIs,
