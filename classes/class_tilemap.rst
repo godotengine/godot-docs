@@ -501,7 +501,7 @@ The light mask assigned to all light occluders in the TileMap. The TileSet's lig
 | *Getter*  | is_show_collision_enabled() |
 +-----------+-----------------------------+
 
-If ``true``, collision shapes are shown in the editor and at run-time. Requires **Visible Collision Shapes** to be enabled in the **Debug** menu for collision shapes to be visible at run-time.
+If ``true``, collision shapes are visible in the editor. Doesn't affect collision shapes visibility at runtime. To show collision shapes at runtime, enable **Visible Collision Shapes** in the **Debug** menu instead.
 
 ----
 

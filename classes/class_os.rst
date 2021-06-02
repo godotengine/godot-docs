@@ -1476,7 +1476,7 @@ Returns a string that is unique to the device.
 
 Returns the current UNIX epoch timestamp in seconds.
 
-**Important:** This is the system clock that the user can manully set. **Never use** this method for precise time calculation since its results are also subject to automatic adjustments by the operating system. **Always use** :ref:`get_ticks_usec<class_OS_method_get_ticks_usec>` or :ref:`get_ticks_msec<class_OS_method_get_ticks_msec>` for precise time calculation instead, since they are guaranteed to be monotonic (i.e. never decrease).
+**Important:** This is the system clock that the user can manually set. **Never use** this method for precise time calculation since its results are also subject to automatic adjustments by the operating system. **Always use** :ref:`get_ticks_usec<class_OS_method_get_ticks_usec>` or :ref:`get_ticks_msec<class_OS_method_get_ticks_msec>` for precise time calculation instead, since they are guaranteed to be monotonic (i.e. never decrease).
 
 ----
 
@@ -1488,7 +1488,7 @@ Gets an epoch time value from a dictionary of time values.
 
 ``datetime`` must be populated with the following keys: ``year``, ``month``, ``day``, ``hour``, ``minute``, ``second``.
 
-If the dictionary is empty ``0`` is returned.
+If the dictionary is empty ``0`` is returned. If some keys are omitted, they default to the equivalent values for the UNIX epoch timestamp 0 (1970-01-01 at 00:00:00 UTC).
 
 You can pass the output from :ref:`get_datetime_from_unix_time<class_OS_method_get_datetime_from_unix_time>` directly into this function. Daylight Savings Time (``dst``), if present, is ignored.
 

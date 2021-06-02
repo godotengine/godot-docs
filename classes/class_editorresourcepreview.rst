@@ -67,7 +67,9 @@ Check if the resource changed, if so, it will be invalidated and the correspondi
 
 - void **queue_edited_resource_preview** **(** :ref:`Resource<class_Resource>` resource, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` receiver_func, :ref:`Variant<class_Variant>` userdata **)**
 
-Queue a resource being edited for preview (using an instance). Once the preview is ready, your receiver.receiver_func will be called either containing the preview texture or an empty texture (if no preview was possible). Callback must have the format: (path,texture,userdata). Userdata can be anything.
+Queue the ``resource`` being edited for preview. Once the preview is ready, the ``receiver``'s ``receiver_func`` will be called. The ``receiver_func`` must take the following four arguments: :ref:`String<class_String>` path, :ref:`Texture<class_Texture>` preview, :ref:`Texture<class_Texture>` thumbnail_preview, :ref:`Variant<class_Variant>` userdata. ``userdata`` can be anything, and will be returned when ``receiver_func`` is called.
+
+**Note**: If it was not possible to create the preview the ``receiver_func`` will still be called, but the preview will be null.
 
 ----
 
@@ -75,7 +77,9 @@ Queue a resource being edited for preview (using an instance). Once the preview 
 
 - void **queue_resource_preview** **(** :ref:`String<class_String>` path, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` receiver_func, :ref:`Variant<class_Variant>` userdata **)**
 
-Queue a resource file for preview (using a path). Once the preview is ready, your receiver.receiver_func will be called either containing the preview texture or an empty texture (if no preview was possible). Callback must have the format: (path,texture,userdata). Userdata can be anything.
+Queue a resource file located at ``path`` for preview. Once the preview is ready, the ``receiver``'s ``receiver_func`` will be called. The ``receiver_func`` must take the following four arguments: :ref:`String<class_String>` path, :ref:`Texture<class_Texture>` preview, :ref:`Texture<class_Texture>` thumbnail_preview, :ref:`Variant<class_Variant>` userdata. ``userdata`` can be anything, and will be returned when ``receiver_func`` is called.
+
+**Note**: If it was not possible to create the preview the ``receiver_func`` will still be called, but the preview will be null.
 
 ----
 

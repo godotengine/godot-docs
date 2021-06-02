@@ -262,7 +262,7 @@ If ``true``, the node's Z index is relative to its parent's Z index. If this nod
 | *Getter*  | get_z_index()      |
 +-----------+--------------------+
 
-Z index. Controls the order in which the nodes render. A node with a higher Z index will display in front of others.
+Z index. Controls the order in which the nodes render. A node with a higher Z index will display in front of others. Must be between :ref:`VisualServer.CANVAS_ITEM_Z_MIN<class_VisualServer_constant_CANVAS_ITEM_Z_MIN>` and :ref:`VisualServer.CANVAS_ITEM_Z_MAX<class_VisualServer_constant_CANVAS_ITEM_Z_MAX>` (inclusive).
 
 Method Descriptions
 -------------------

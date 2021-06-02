@@ -138,6 +138,8 @@ Duplicates the resource, returning a new resource. By default, sub-resources are
 
 **Note:** If ``subresources`` is ``true``, this method will only perform a shallow copy. Nested resources within subresources will not be duplicated and will still be shared.
 
+**Note:** When duplicating a resource, only ``export``\ ed properties are copied. Other properties will be set to their default value in the new resource.
+
 ----
 
 .. _class_Resource_method_emit_changed:
