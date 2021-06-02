@@ -127,7 +127,7 @@ Now fill in the following forms in your Android Export Presets:
 a version control system, you should remove it from public repositories and add
 it to your ``.gitignore`` file or equivalent.
 
-Don't forget to uncheck the **Export With Debug** checkbox while choosing the APK's name.
+Don't forget to uncheck the **Export With Debug** checkbox while exporting.
 
 .. image:: img/export-with-debug-button.png
 
