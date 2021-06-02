@@ -115,7 +115,7 @@ it manually with the following code:
 
     void vertex() {
         VERTEX = (MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
-        NORMAL = (MODELVIEW_MATRIX * vec4(NORMAL, 0.0)).xyz;
+        NORMAL = normalize((MODELVIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
         // same as above for binormal and tangent, if normal mapping is used
     }
 
