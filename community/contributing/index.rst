@@ -37,6 +37,7 @@ about the code style, the contribution workflow, and more.
 
    best_practices_for_engine_contributors
    pr_workflow
+   testing_pull_requests
    bisecting_regressions
    code_style_guidelines
    bug_triage_guidelines
