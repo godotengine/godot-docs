@@ -361,6 +361,8 @@ developer experiences as a whole.
 Bonus points for bringing screenshots, concrete numbers, test cases, or example
 projects (if applicable).
 
+.. _doc_faq_non_game_applications:
+
 Is it possible to use Godot to create non-game applications?
 ------------------------------------------------------------
 
@@ -378,6 +380,8 @@ Check out `Material Maker <https://github.com/RodZill4/material-maker>`__ and
 `Pixelorama <https://github.com/Orama-Interactive/Pixelorama>`__ for examples of
 open source applications made with Godot.
 
+.. _doc_faq_use_godot_as_library:
+
 Is it possible to use Godot as a library?
 -----------------------------------------
 
@@ -390,6 +394,26 @@ If you want to use a rendering library, look into using an established rendering
 engine instead. Keep in mind rendering engines usually have smaller communities
 compared to Godot. This will make it more difficult to find answers to your
 questions.
+
+What user interface toolkit does Godot use?
+-------------------------------------------
+
+Godot does not use a standard :abbr:`GUI (Graphical User Interface)` toolkit
+like GTK, Qt or wxWidgets. Instead, Godot uses its own user interface toolkit,
+rendered using OpenGL ES or Vulkan. This toolkit is exposed in the form of
+Control nodes, which are used to render the editor (which is written in C++).
+These Control nodes can also be used in projects from any scripting language
+supported by Godot.
+
+This custom toolkit makes it possible to benefit from hardware acceleration and
+have a consistent appearance across all platforms. On top of that, it doesn't
+have to deal with the LGPL licensing caveats that come with GTK or Qt. Lastly,
+this means Godot is "eating its own dog food" since the editor itself is one of
+the most complex users of Godot's UI system.
+
+This custom UI toolkit :ref:`can't be used as a library <doc_faq_use_godot_as_library>`,
+but you can still
+:ref:`use Godot to create non-game applications by using the editor <doc_faq_non_game_applications>`.
 
 Why does Godot not use STL (Standard Template Library)
 ------------------------------------------------------
