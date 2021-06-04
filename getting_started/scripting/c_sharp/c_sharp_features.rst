@@ -226,7 +226,7 @@ Full list of defines
   ``GODOT_ANDROID``, ``GODOT_IOS``, ``GODOT_HTML5``, or ``GODOT_SERVER``
   depending on the OS. These names may change in the future.
   These are created from the ``get_name()`` method of the
-  :ref:``OS <class_OS>`` singleton, but not every possible OS
+  :ref:`OS <class_OS>` singleton, but not every possible OS
   the method returns is an OS that Godot with Mono runs on.
 
 When **exporting**, the following may also be defined depending on the export features:
