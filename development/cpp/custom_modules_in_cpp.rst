@@ -34,24 +34,14 @@ instead. Adding C++ modules can be useful in the following scenarios:
 Creating a new module
 ---------------------
 
-Before creating a module, make sure to download the source code of Godot
-and manage to compile it. There are tutorials in the documentation for this.
+Before creating a module, make sure to :ref:`download the source code of Godot
+and compile it <toc-devel-compiling>`.
 
 To create a new module, the first step is creating a directory inside
 ``modules/``. If you want to maintain the module separately, you can checkout
 a different VCS into modules and use it.
 
-The example module will be called "summator", and is placed inside the
-Godot source tree (``C:\godot`` refers to wherever the Godot sources are
-located):
-
-.. code-block:: console
-
-    C:\godot> cd modules
-    C:\godot\modules> mkdir summator
-    C:\godot\modules> cd summator
-    C:\godot\modules\summator>
-
+The example module will be called "summator" (``godot/modules/summator``).
 Inside we will create a simple summator class:
 
 .. code-block:: cpp
@@ -237,7 +227,8 @@ Using the module
 
 You can now use your newly created module from any script:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var s = Summator.new()
     s.add(10)
