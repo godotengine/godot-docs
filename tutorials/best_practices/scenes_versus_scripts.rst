@@ -88,6 +88,16 @@ is much more streamlined. Rather than having to...
 
       3. Select the script from the file dialog.
 
+   3. (Add existing script method)
+
+      1. Select your node in the Scene dock.
+
+      2. Select "Attach a new or existing script to the selected node".
+
+      3. Select the folder at "Path" in Attach Node Script dialog.
+      
+      4. Select the script from the file dialog and press "Load".
+
 With a registered script, the scripted type instead becomes a creation option
 like the other nodes and resources in the system. One need not do any of the
 above work. The creation dialog even has a search bar to look up the type by
