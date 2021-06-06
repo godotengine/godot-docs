@@ -97,6 +97,8 @@ is much more streamlined. Rather than having to...
       3. Select the folder at "Path" in Attach Node Script dialog.
       
       4. Select the script from the file dialog and press "Load".
+      
+      5. Alternatively, you can just type the path to the script and press "Load".
 
 With a registered script, the scripted type instead becomes a creation option
 like the other nodes and resources in the system. One need not do any of the
