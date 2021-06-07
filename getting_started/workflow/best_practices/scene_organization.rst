@@ -306,7 +306,7 @@ If one has a system that...
 If one has systems that modify other systems' data, one should define those as
 their own scripts or scenes rather than autoloads. For more information on the
 reasons, please see the
-:ref:`'Autoloads vs. Internal Nodes' <doc_autoloads_versus_internal_nodes>`
+:ref:`Autoloads versus regular nodes <doc_autoloads_versus_internal_nodes>`
 documentation.
 
 Each subsystem within one's game should have its own section within the
