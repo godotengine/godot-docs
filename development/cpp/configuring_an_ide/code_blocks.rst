@@ -126,4 +126,4 @@ Under **General Settings**, on the **Editor Settings** tab, under **Tab Options*
    :figclass: figure-w480
    :align: center
 
-That's it. You're ready to start contributing to Godot using the Code::Blocks IDE. Remember to save the project file and the **Workspace**.  If you run into any issues, ask for help in one of `Godot's community channels <https://godotengine.org/community>`__.
+That's it. You're ready to start contributing to Godot using the Code::Blocks IDE. Remember to save the project file and the **Workspace**. If you run into any issues, ask for help in one of `Godot's community channels <https://godotengine.org/community>`__.

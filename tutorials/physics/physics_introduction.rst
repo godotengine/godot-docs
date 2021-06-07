@@ -221,7 +221,7 @@ to it and the physics engine calculates the resulting movement, including
 collisions with other bodies, and collision responses, such as bouncing,
 rotating, etc.
 
-You can modify a rigid body's behavior via  properties such as "Mass",
+You can modify a rigid body's behavior via properties such as "Mass",
 "Friction", or "Bounce", which can be set in the Inspector.
 
 The body's behavior is also affected by the world's properties, as set in

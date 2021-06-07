@@ -37,7 +37,7 @@ Color space
 -----------
 
 GLES2 and GLES3 are in different color spaces. This means that colors will appear slightly
-different between them  especially when lighting is used.
+different between them especially when lighting is used.
 
 If your game is going to use both GLES2 and GLES3, you can use an ``if``
 statement check and see if the output is in sRGB, using ``OUTPUT_IS_SRGB``. ``OUTPUT_IS_SRGB`` is

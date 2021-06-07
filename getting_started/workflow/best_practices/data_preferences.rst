@@ -85,7 +85,7 @@ Contiguous memory stores imply the following operation performance:
       This makes only 2 copies of the array (still constant time, but slow)
       versus copying roughly 1/2 of the array, on average, N times (linear time).
 
-- **Get, Set:** Fastest *by position*. Ex. can request 0th, 2nd, 10th record, etc.
+- **Get, Set:** Fastest *by position*. E.g. can request 0th, 2nd, 10th record, etc.
   but cannot specify which record you want.
 
     - Op: 1 addition operation from array start position up to desired index.

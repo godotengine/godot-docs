@@ -291,7 +291,7 @@ calls into ``std::istream``.
     		}
     	}
     	int uflow() {
-    		return _file->eof_reached() ?  EOF : _file->get_8();
+    		return _file->eof_reached() ? EOF : _file->get_8();
     	}
 
     private:

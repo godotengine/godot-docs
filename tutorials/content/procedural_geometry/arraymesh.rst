@@ -19,7 +19,7 @@ PoolIntArray, etc.) for each type of information.
 
 - ``ARRAY_VERTEX`` = 0 | PoolVector3Array or PoolVector2Array
 - ``ARRAY_NORMAL`` = 1 | PoolVector3Array
-- ``ARRAY_TANGENT`` = 2 | PoolRealArray of groups of 4 floats. first 3 floats determine the tangent, and
+- ``ARRAY_TANGENT`` = 2 | PoolRealArray of groups of 4 floats. First 3 floats determine the tangent, and
   the last the binormal direction as -1 or 1.
 - ``ARRAY_COLOR`` = 3 | PoolColorArray
 - ``ARRAY_TEX_UV`` = 4 | PoolVector2Array or PoolVector3Array

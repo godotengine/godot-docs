@@ -251,7 +251,7 @@ load function:
     {
         var saveGame = new File();
         if (!saveGame.FileExists("user://savegame.save"))
-            return; // Error!  We don't have a save to load.
+            return; // Error! We don't have a save to load.
 
         // We need to revert the game state so we're not cloning objects during loading.
         // This will vary wildly depending on the needs of a project, so take care with
