@@ -73,8 +73,9 @@ change: it must be a ``tool`` script, or else it will not load properly in the
 editor, and it must inherit from :ref:`class_EditorPlugin`.
 
 .. warning::
+
     In addition to the EditorPlugin script, any other GDScript that your plugin uses
-    must *also* be a tool.  Any GDScript without ``tool`` imported into the editor
+    must *also* be a tool. Any GDScript without ``tool`` imported into the editor
     will act like an empty file!
 
 It's important to deal with initialization and clean-up of resources.

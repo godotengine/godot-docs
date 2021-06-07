@@ -75,5 +75,5 @@ it at runtime.
 
 ::
 
-   ERROR: open_and_parse: Condition ' String::md5(md5.digest) != String::md5(md5d) ' is true. returned: ERR_FILE_CORRUPT
+   ERROR: open_and_parse: Condition "String::md5(md5.digest) != String::md5(md5d)" is true. Returning: ERR_FILE_CORRUPT
       At: core/io/file_access_encrypted.cpp:103

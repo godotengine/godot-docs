@@ -259,7 +259,7 @@ use it to set the height value instead of arbitrarily multiplying by ``0.5``.
 
   VERTEX.y += height * height_scale;
 
-Now it looks  much better.
+Now it looks much better.
 
 .. image:: img/noise-low.png
 

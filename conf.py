@@ -187,7 +187,7 @@ html_static_path = ["_static"]
 html_extra_path = ["robots.txt"]
 
 # These paths are either relative to html_static_path
-# or fully qualified paths (eg. https://...)
+# or fully qualified paths (e.g. https://...)
 html_css_files = [
     "css/custom.css",
 ]

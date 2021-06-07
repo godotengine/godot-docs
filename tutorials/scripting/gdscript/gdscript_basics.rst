@@ -1364,7 +1364,7 @@ There are a few things to keep in mind here:
    in to ``Idle.gd``.
 4. If ``Idle.gd``'s ``_init`` constructor takes 0 arguments, it still needs to pass some value
    to the ``State.gd`` base class, even if it does nothing. This brings us to the fact that you
-   can pass expressions to the base constructor as well, not just variables. eg.::
+   can pass expressions to the base constructor as well, not just variables, e.g.::
 
     # Idle.gd
 
