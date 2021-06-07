@@ -19,7 +19,7 @@ PackedInt32Array, etc.) for each type of information.
 
 - ``ARRAY_VERTEX`` = 0 | PackedVector3Array or PackedVector2Array
 - ``ARRAY_NORMAL`` = 1 | PackedVector3Array
-- ``ARRAY_TANGENT`` = 2 | PackedFloat32Array of groups of 4 floats. first 3 floats determine the tangent, and
+- ``ARRAY_TANGENT`` = 2 | PackedFloat32Array of groups of 4 floats. First 3 floats determine the tangent, and
   the last the binormal direction as -1 or 1.
 - ``ARRAY_COLOR`` = 3 | PackedColorArray
 - ``ARRAY_TEX_UV`` = 4 | PackedVector2Array or PackedVector3Array

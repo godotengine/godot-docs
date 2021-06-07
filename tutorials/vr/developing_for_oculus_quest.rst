@@ -81,7 +81,7 @@ is the scene we run. Godot does not ask you to set this on export.
 
 .. image:: img/quest_project_settings.png
 
-Then go into the export menu and configure a new Android export. if
+Then go into the export menu and configure a new Android export. If
 you still haven't gone through the :ref:`doc_exporting_for_android`
 page do it now. If you didn't you'll have some red messages on this
 screen.

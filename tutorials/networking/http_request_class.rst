@@ -26,7 +26,7 @@ Below is all the code we need to make it work. The URL points to an online API m
 .. tabs::
 
     .. code-tab:: gdscript GDScript
-    
+
         extends CanvasLayer
 
         func _ready():
@@ -38,9 +38,9 @@ Below is all the code we need to make it work. The URL points to an online API m
         func _on_request_completed(result, response_code, headers, body):
             var json = JSON.parse(body.get_string_from_utf8())
             print(json.result)
-    
+
     .. code-tab:: csharp
-    
+
         class HTTPRequestDemo : CanvasLayer
         {
             public override void _Ready()
@@ -48,13 +48,13 @@ Below is all the code we need to make it work. The URL points to an online API m
                 GetNode("HTTPRequest").Connect("request_completed", this, "OnRequestCompleted");
                 GetNode("Button").Connect("pressed", this, "OnButtonPressed");
             }
-            
+
             public void OnButtonPressed()
             {
                 HTTPRequest httpRequest = GetNode<HTTPRequest>("HTTPRequest");
                 httpRequest.Request("http://www.mocky.io/v2/5185415ba171ea3a00704eed");
             }
-            
+
             public void OnRequestCompleted(int result, int response_code, string[] headers, byte[] body)
             {
                 JSONParseResult json = JSON.Parse(Encoding.UTF8.GetString(body));
@@ -71,14 +71,14 @@ Note that you may want to check whether the ``result`` equals ``RESULT_SUCCESS``
 Of course, you can also set custom HTTP headers. These are given as a string array, with each string containing a header in the format ``"header: value"``.
 For example, to set a custom user agent (the HTTP ``user-agent`` header) you could use the following:
 
-..  tabs::
+.. tabs::
 
     .. code-tab:: gdscript GDScript
-    
+
         $HTTPRequest.request("http://www.mocky.io/v2/5185415ba171ea3a00704eed", ["user-agent: YourCustomUserAgent"])
-    
+
     .. code-tab:: csharp
-    
+
         HTTPRequest httpRequest = GetNode<HTTPRequest>("HTTPRequest");
         httpRequest.Request("http://www.mocky.io/v2/5185415ba171ea3a00704eed", new string[] { "user-agent: YourCustomUserAgent" });
 
@@ -95,16 +95,16 @@ Until now, we have limited ourselves to requesting data from a server. But what 
 .. tabs::
 
     .. code-tab:: gdscript GDScript
-    
+
         func _make_post_request(url, data_to_send, use_ssl):
             # Convert data to json string:
             var query = JSON.print(data_to_send)
             # Add 'Content-Type' header:
             var headers = ["Content-Type: application/json"]
             $HTTPRequest.request(url, headers, use_ssl, HTTPClient.METHOD_POST, query)
-    
+
     .. code-tab:: csharp
-    
+
             public void MakePostRequest(string url, object data_to_send, bool use_ssl)
             {
                 string query = JSON.Print(data_to_send);

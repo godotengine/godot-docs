@@ -62,7 +62,7 @@ To build an iOS plugin:
 
 5. The iOS plugin system also supports ``.xcframework`` files. To generate one, you can use a command such as: ``xcodebuild -create-xcframework -library [DeviceLibrary].a -library [SimulatorLibrary].a -output [PluginName].xcframework``.
 
-6.  Create a Godot iOS Plugin configuration file to help the system detect and load your plugin:
+6. Create a Godot iOS Plugin configuration file to help the system detect and load your plugin:
 
     -   The configuration file extension must be ``gdip`` (e.g.: ``MyPlugin.gdip``).
 
