@@ -6,307 +6,379 @@ Saving games
 Introduction
 ------------
 
-Save games can be complicated. For example, it may be desirable
-to store information from multiple objects across multiple levels.
-Advanced save game systems should allow for additional information about
-an arbitrary number of objects. This will allow the save function to
-scale as the game grows more complex.
+This tutorial will walk you through serializing data and saving it
+with :ref:`ConfigFile <class_ConfigFile>` and JSON.
 
-.. note::
 
-    If you're looking to save user configuration, you can use the
-    :ref:`class_ConfigFile` class for this purpose.
+Setting up the project
+----------------------
 
-Identify persistent objects
----------------------------
+First, create a main scene with this node layout:
 
-Firstly, we should identify what objects we want to keep between game
-sessions and what information we want to keep from those objects. For
-this tutorial, we will use groups to mark and handle objects to be saved,
-but other methods are certainly possible.
+.. image:: img/saving_node_layout0.png
 
-We will start by adding objects we wish to save to the "Persist" group. We can
-do this through either the GUI or script. Let's add the relevant nodes using the
-GUI:
+Next, let's set up the GUI. These buttons will later be connected to
+functions that allow you to save and load data.
+
+.. image:: img/saving_node_layout1.png
+
+Next, we will need entities with data to save and load. Create a new
+scene and give it this layout.
+
+.. image:: img/saving_node_layout2.png
+
+Give the enemies some simple movement code. Make sure to connect the
+`body_entered()` and `body_exited()` signals of the "AttackArea" node through
+the "Signals" tab.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends KinematicBody2D
+
+    const MOVE_SPEED = 75
+    const DAMAGE_PER_SECOND = 15
+
+    # The node we should be "attacking" every frame.
+    # If `null`, nobody is in range to attack.
+    var attacking = null
+
+
+    func _process(delta):
+        if attacking:
+            attacking.health -= delta * DAMAGE_PER_SECOND
+
+        # warning-ignore:return_value_discarded
+        move_and_slide(Vector2(MOVE_SPEED, 0))
+
+        # The enemy went outside of the window. Move it back to the left.
+        if position.x >= 1056:
+            position.x = -32
+
+
+    func _on_AttackArea_body_entered(body):
+        if body.name == "Player":
+            attacking = body
+
+
+    func _on_AttackArea_body_exited(_body):
+        attacking = null
+
+ .. code-tab:: csharp
+
+    // Someone else can do this
+
+
+Finally, add the "Enemy" node to the group "enemy" in the "Groups" tab.
 
 .. image:: img/groups.png
 
-Once this is done, when we need to save the game, we can get all objects
-to save them and then tell them all to save with this script:
+Return to the main scene and instance the enemy node multiple times
+as children of the "Game" node. Make sure to place them in different
+locations in the main scene.
+
+.. image:: img/enemy_instances.png
+
+Next, create a new player scene that looks like this. Make sure to
+resize and move the `ProgressBar` so that it looks like the image. Also,
+set the `value` of the `ProgressBar` to 100.
+
+.. image:: img/saving_node_layout3.png
+
+Add a simple movement script to the player. Also add a health
+property that can be saved and loaded.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var save_nodes = get_tree().get_nodes_in_group("Persist")
-    for i in save_nodes:
-        # Now, we can call our save function on each node.
+    extends KinematicBody2D
+
+    # The player's movement speed.
+    const MOVE_SPEED = 240
+
+    var health = 100 setget set_health
+    var motion = Vector2()
+
+    onready var progress_bar = $Sprite/ProgressBar
+
+
+    func _process(delta):
+        var velocity = Vector2.ZERO
+        velocity.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+        velocity.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+        position += velocity * MOVE_SPEED * delta
+
+        # Prevent the player from going outside the window.
+        position.x = clamp(position.x, 32, 1024)
+        position.y = clamp(position.y, 32, 600)
+
+
+    func set_health(p_health):
+        health = p_health
+        progress_bar.value = health
+
+        if health <= 0:
+            # The player died.
+            # warning-ignore:return_value_discarded
+            get_tree().reload_current_scene()
 
  .. code-tab:: csharp
 
-    var saveNodes = GetTree().GetNodesInGroup("Persist");
-    foreach (Node saveNode in saveNodes)
-    {
-        // Now, we can call our save function on each node.
-    }
+    // Someone else can do this
 
+Return to the main scene and instance the "Player" scene as a
+child of the "Game" node. Move the player so that it isn't
+underneath the buttons.
 
-Serializing
------------
+.. image:: img/saving_node_layout4.png
 
-The next step is to serialize the data. This makes it much easier to
-read from and store to disk. In this case, we're assuming each member of
-group Persist is an instanced node and thus has a path. GDScript
-has helper functions for this, such as :ref:`to_json()
-<class_@GDScript_method_to_json>` and :ref:`parse_json()
-<class_@GDScript_method_parse_json>`, so we will use a dictionary. Our node needs to
-contain a save function that returns this data. The save function will look
-like this:
+If you run the main scene now, you will be able to move the
+player around and take damage from the enemies. However, we still
+need to serialize the data to save and load it.
+
+There is a specific directory in that Godot uses for saving app data.
+Like "res://" it is referred to by a special name, "user://". The
+location of this directory varies depending on the operating system,
+but there's a method for converting the "user://" path to the system
+path as shown in the code below.
+
+Add the following script to the VBoxContainer node. Make sure to connect
+the `pressed()` signal from the "OpenUser" button to this script.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func save():
-        var save_dict = {
-            "filename" : get_filename(),
-            "parent" : get_parent().get_path(),
-            "pos_x" : position.x, # Vector2 is not supported by JSON
-            "pos_y" : position.y,
-            "attack" : attack,
-            "defense" : defense,
-            "current_health" : current_health,
-            "max_health" : max_health,
-            "damage" : damage,
-            "regen" : regen,
-            "experience" : experience,
-            "tnl" : tnl,
-            "level" : level,
-            "attack_growth" : attack_growth,
-            "defense_growth" : defense_growth,
-            "health_growth" : health_growth,
-            "is_alive" : is_alive,
-            "last_attack" : last_attack
-        }
-        return save_dict
+    extends VBoxContainer
+
+
+    func _ready():
+        var file = File.new()
+        # Don't allow loading files that don't exist yet.
+        $SaveLoad/LoadConfig.disabled = not file.file_exists(ProjectSettings.globalize_path("user://save_config_file.ini"))
+        $SaveLoad/LoadJSON.disabled = not file.file_exists(ProjectSettings.globalize_path("user://save_json.json"))
+
+
+    func _on_OpenUser_pressed() -> void:
+        # warning-ignore:return_value_discarded
+        OS.shell_open(ProjectSettings.globalize_path("user://"))
 
  .. code-tab:: csharp
 
-    public Godot.Collections.Dictionary<string, object> Save()
-    {
-        return new Godot.Collections.Dictionary<string, object>()
-        {
-            { "Filename", GetFilename() },
-            { "Parent", GetParent().GetPath() },
-            { "PosX", Position.x }, // Vector2 is not supported by JSON
-            { "PosY", Position.y },
-            { "Attack", Attack },
-            { "Defense", Defense },
-            { "CurrentHealth", CurrentHealth },
-            { "MaxHealth", MaxHealth },
-            { "Damage", Damage },
-            { "Regen", Regen },
-            { "Experience", Experience },
-            { "Tnl", Tnl },
-            { "Level", Level },
-            { "AttackGrowth", AttackGrowth },
-            { "DefenseGrowth", DefenseGrowth },
-            { "HealthGrowth", HealthGrowth },
-            { "IsAlive", IsAlive },
-            { "LastAttack", LastAttack }
-        };
-    }
+    // Someone else can do this
 
 
-This gives us a dictionary with the style
-``{ "variable_name":value_of_variable }``, which will be useful when
-loading.
+Saving with ConfigFile
+----------------------
 
-Saving and reading data
------------------------
+:ref:`ConfigFile <class_ConfigFile>` is an INI-style file that can be
+used to store any value. ConfigFiles are composed of sections that
+contain key-value pairs, similar to a `Dictionary`.
 
-As covered in the :ref:`doc_filesystem` tutorial, we'll need to open a file
-so we can write to it or read from it. Now that we have a way to
-call our groups and get their relevant data, let's use :ref:`to_json()
-<class_@GDScript_method_to_json>` to
-convert it into an easily stored string and store them in a file. Doing
-it this way ensures that each line is its own object, so we have an easy
-way to pull the data out of the file as well.
+The "SaveConfig" and "LoadConfig" buttons will be sharing the same script.
+Create a new script and assign it to both buttons.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Note: This can be called from anywhere inside the tree. This function is
-    # path independent.
-    # Go through everything in the persist category and ask them to return a
-    # dict of relevant variables.
+    extends Button
+    # This script shows how to save data using Godot's custom ConfigFile format.
+    # ConfigFile can store any Godot type natively.
+
+    # The root game node (so we can get and instance enemies).
+    export(NodePath) var game_node
+    # The player node (so we can set/get its health and position).
+    export(NodePath) var player_node
+
+    const SAVE_PATH = "user://save_config_file.ini"
+
+ .. code-tab:: csharp
+
+    // Someone else can do this
+
+Now move to the Inspector and set the export variables to the
+correct paths for both Buttons.
+
+In order to use ConfigFile to save, you will need to create a new ConfigFile
+and set its values. We will only be saving the properties that need to be
+saved. There is no need to save every property of every node.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
     func save_game():
-        var save_game = File.new()
-        save_game.open("user://savegame.save", File.WRITE)
-        var save_nodes = get_tree().get_nodes_in_group("Persist")
-        for node in save_nodes:
-            # Check the node is an instanced scene so it can be instanced again during load.
-            if node.filename.empty():
-                print("persistent node '%s' is not an instanced scene, skipped" % node.name)
-                continue
+        var config = ConfigFile.new()
 
-            # Check the node has a save function.
-            if !node.has_method("save"):
-                print("persistent node '%s' is missing a save() function, skipped" % node.name)
-                continue
+        var player = get_node(player_node)
+        config.set_value("player", "position", player.position)
+        config.set_value("player", "health", player.health)
 
-            # Call the node's save function.
-            var node_data = node.call("save")
+        var enemies = []
+        for enemy in get_tree().get_nodes_in_group("enemy"):
+            enemies.push_back({
+                position = enemy.position,
+            })
+        config.set_value("enemies", "enemies", enemies)
 
-            # Store the save dictionary as a new line in the save file.
-            save_game.store_line(to_json(node_data))
-        save_game.close()
+        config.save(SAVE_PATH)
+
+        get_node("../LoadConfig").disabled = false
 
  .. code-tab:: csharp
 
-    // Note: This can be called from anywhere inside the tree. This function is
-    // path independent.
-    // Go through everything in the persist category and ask them to return a
-    // dict of relevant variables.
-    public void SaveGame()
-    {
-        var saveGame = new File();
-        saveGame.Open("user://savegame.save", (int)File.ModeFlags.Write);
+    // Someone else can do this
 
-        var saveNodes = GetTree().GetNodesInGroup("Persist");
-        foreach (Node saveNode in saveNodes)
-        {
-            // Check the node is an instanced scene so it can be instanced again during load.
-            if (saveNode.Filename.Empty())
-            {
-                GD.Print(String.Format("persistent node '{0}' is not an instanced scene, skipped", saveNode.Name));
-                continue;
-            }
-
-            // Check the node has a save function.
-            if (!saveNode.HasMethod("Save"))
-            {
-                GD.Print(String.Format("persistent node '{0}' is missing a Save() function, skipped", saveNode.Name));
-                continue;
-            }
-
-            // Call the node's save function.
-            var nodeData = saveNode.Call("Save");
-
-            // Store the save dictionary as a new line in the save file.
-            saveGame.StoreLine(JSON.Print(nodeData));
-        }
-
-        saveGame.Close();
-    }
-
-
-Game saved! Loading is fairly simple as well. For that, we'll read each
-line, use parse_json() to read it back to a dict, and then iterate over
-the dict to read our values. But we'll need to first create the object
-and we can use the filename and parent values to achieve that. Here is our
-load function:
+Loading is like saving, but in reverse. We will delete the current
+enemies and create new ones at the saved values.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Note: This can be called from anywhere inside the tree. This function
-    # is path independent.
+    # `load()` is reserved.
     func load_game():
-        var save_game = File.new()
-        if not save_game.file_exists("user://savegame.save"):
-            return # Error! We don't have a save to load.
+        var config = ConfigFile.new()
+        config.load(SAVE_PATH)
 
-        # We need to revert the game state so we're not cloning objects
-        # during loading. This will vary wildly depending on the needs of a
-        # project, so take care with this step.
-        # For our example, we will accomplish this by deleting saveable objects.
-        var save_nodes = get_tree().get_nodes_in_group("Persist")
-        for i in save_nodes:
-            i.queue_free()
+        var player = get_node(player_node)
+        player.position = config.get_value("player", "position")
+        player.health = config.get_value("player", "health")
 
-        # Load the file line by line and process that dictionary to restore
-        # the object it represents.
-        save_game.open("user://savegame.save", File.READ)
-        while save_game.get_position() < save_game.get_len():
-            # Get the saved dictionary from the next line in the save file
-            var node_data = parse_json(save_game.get_line())
+        # Remove existing enemies and add new ones.
+        for enemy in get_tree().get_nodes_in_group("enemy"):
+            enemy.queue_free()
 
-            # Firstly, we need to create the object and add it to the tree and set its position.
-            var new_object = load(node_data["filename"]).instance()
-            get_node(node_data["parent"]).add_child(new_object)
-            new_object.position = Vector2(node_data["pos_x"], node_data["pos_y"])
+        var enemies = config.get_value("enemies", "enemies")
+        # Ensure the node structure is the same when loading.
+        var game = get_node(game_node)
 
-            # Now we set the remaining variables.
-            for i in node_data.keys():
-                if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
-                    continue
-                new_object.set(i, node_data[i])
-
-        save_game.close()
+        for enemy_config in enemies:
+            var enemy = preload("res://enemy.tscn").instance()
+            enemy.position = enemy_config.position
+            game.add_child(enemy)
 
  .. code-tab:: csharp
 
-    // Note: This can be called from anywhere inside the tree. This function is
-    // path independent.
-    public void LoadGame()
-    {
-        var saveGame = new File();
-        if (!saveGame.FileExists("user://savegame.save"))
-            return; // Error! We don't have a save to load.
+    // Someone else can do this
 
-        // We need to revert the game state so we're not cloning objects during loading.
-        // This will vary wildly depending on the needs of a project, so take care with
-        // this step.
-        // For our example, we will accomplish this by deleting saveable objects.
-        var saveNodes = GetTree().GetNodesInGroup("Persist");
-        foreach (Node saveNode in saveNodes)
-            saveNode.QueueFree();
+Next, connect the "SaveConfig" button to the `save_game()` function and
+the "LoadConfig" button to the `load_game()` function.
 
-        // Load the file line by line and process that dictionary to restore the object
-        // it represents.
-        saveGame.Open("user://savegame.save", (int)File.ModeFlags.Read);
+Now if you run the scene, you will be able to load and save with ConfigFile.
 
-        while (saveGame.GetPosition() < saveGame.GetLen())
-        {
-            // Get the saved dictionary from the next line in the save file
-            var nodeData = new Godot.Collections.Dictionary<string, object>((Godot.Collections.Dictionary)JSON.Parse(saveGame.GetLine()).Result);
+Saving with JSON
+----------------
 
-            // Firstly, we need to create the object and add it to the tree and set its position.
-            var newObjectScene = (PackedScene)ResourceLoader.Load(nodeData["Filename"].ToString());
-            var newObject = (Node)newObjectScene.Instance();
-            GetNode(nodeData["Parent"].ToString()).AddChild(newObject);
-            newObject.Set("Position", new Vector2((float)nodeData["PosX"], (float)nodeData["PosY"]));
+JSON is a data-interchange format. It is widely used to transfer data between
+systems, but since it's not designed specifically for Godot, there are some data
+types that can't be stored natively, like :ref:`Vector2 <class_Vector2>`.
 
-            // Now we set the remaining variables.
-            foreach (KeyValuePair<string, object> entry in nodeData)
-            {
-                string key = entry.Key.ToString();
-                if (key == "Filename" || key == "Parent" || key == "PosX" || key == "PosY")
-                    continue;
-                newObject.Set(key, entry.Value);
-            }
+Like before, the "SaveJSON" and "LoadJSON" buttons will be sharing the same script.
+Create a new script and attach it to both.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends Button
+    # This script shows how to save data using the JSON file format.
+    # JSON is a widely used file format, but not all Godot types can be
+    # stored natively. For example, integers get converted into doubles,
+    # and to store Vector2 and other non-JSON types you need `var2str()`.
+
+    # The root game node (so we can get and instance enemies).
+    export(NodePath) var game_node
+    # The player node (so we can set/get its health and position).
+    export(NodePath) var player_node
+
+    const SAVE_PATH = "user://save_json.json"
+
+ .. code-tab:: csharp
+
+    // Someone else can do this
+
+Move to the Inspector and set the export variables for both buttons.
+
+We will create a new :ref:`File <class_File>` in order to save as a
+JSON file. In order to store Vector2 values, you need to use the `var2str`
+function to convert the Vector2 into a String so that it can be converted
+back later.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func save_game():
+        var file = File.new()
+        file.open(SAVE_PATH, File.WRITE)
+
+        var player = get_node(player_node)
+        # JSON doesn't support complex types such as Vector2.
+        # `var2str()` can be used to convert any Variant to a String.
+        var save_dict = {
+            player = {
+                position = var2str(player.position),
+                health = var2str(player.health),
+            },
+            enemies = []
         }
 
-        saveGame.Close();
-    }
+        for enemy in get_tree().get_nodes_in_group("enemy"):
+            save_dict.enemies.push_back({
+                position = var2str(enemy.position),
+            })
 
+        file.store_line(to_json(save_dict))
 
-Now we can save and load an arbitrary number of objects laid out
-almost anywhere across the scene tree! Each object can store different
-data depending on what it needs to save.
+        get_node("../LoadJSON").disabled = false
 
-Some notes
+ .. code-tab:: csharp
+ 
+    // Someone else can do this
+
+For loading, we will need to use the opposite of the `var2str` method,
+`str2var`, in order to convert the JSON data back into Godot's data
+types.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # `load()` is reserved.
+    func load_game():
+        var file = File.new()
+        file.open(SAVE_PATH, File.READ)
+        var save_dict = parse_json(file.get_line())
+
+        var player = get_node(player_node)
+        # JSON doesn't support complex types such as Vector2.
+        # `str2var()` can be used to convert a String to the corresponding Variant.
+        player.position = str2var(save_dict.player.position)
+        player.health = str2var(save_dict.player.health)
+
+        # Remove existing enemies and add new ones.
+        for enemy in get_tree().get_nodes_in_group("enemy"):
+            enemy.queue_free()
+
+        # Ensure the node structure is the same when loading.
+        var game = get_node(game_node)
+
+        for enemy_config in save_dict.enemies:
+            var enemy = preload("res://enemy.tscn").instance()
+            enemy.position = str2var(enemy_config.position)
+            game.add_child(enemy)
+
+ .. code-tab:: csharp
+
+    // Someone else can do this
+
+Now, connect the `pressed()` signal from the "SaveJSON" button to the `save_game()`
+function and the "LoadJSON" button to the `load_game()` function.
+
+If you run the main scene now, you will be able to save and load using JSON
+files.
+
+Conclusion
 ----------
 
-We have glossed over setting up the game state for loading. It's ultimately up
-to the project creator where much of this logic goes.
-This is often complicated and will need to be heavily
-customized based on the needs of the individual project.
+ConfigFile and JSON are only two ways to save and load data. You can also store
+data directly with :ref:`File <class_File>` without using JSON, or you can save
+whole scenes with :ref:`PackedScene <class_PackedScene>`.
 
-Additionally, our implementation assumes no Persist objects are children of other
-Persist objects. Otherwise, invalid paths would be created. To
-accommodate nested Persist objects, consider saving objects in stages.
-Load parent objects first so they are available for the :ref:`add_child()
-<class_node_method_add_child>`
-call when child objects are loaded. You will also need a way to link
-children to parents as the :ref:`NodePath
-<class_nodepath>` will likely be invalid.
+You can find a completed version of this project at
+https://github.com/godotengine/godot-demo-projects.
