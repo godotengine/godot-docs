@@ -65,6 +65,7 @@ the "Signals" tab.
         attacking = null
 
  .. code-tab:: csharp
+
     // Someone else can do this
 
 
@@ -122,6 +123,7 @@ property that can be saved and loaded.
             get_tree().reload_current_scene()
 
  .. code-tab:: csharp
+
     // Someone else can do this
 
 Return to the main scene and instance the "Player" scene as a
@@ -161,6 +163,7 @@ the `pressed()` signal from the "OpenUser" button to this script.
         OS.shell_open(ProjectSettings.globalize_path("user://"))
 
  .. code-tab:: csharp
+
     // Someone else can do this
 
 
@@ -189,6 +192,7 @@ Create a new script and assign it to both buttons.
     const SAVE_PATH = "user://save_config_file.ini"
 
  .. code-tab:: csharp
+
     // Someone else can do this
 
 Now move to the Inspector and set the export variables to the
@@ -220,6 +224,7 @@ saved. There is no need to save every property of every node.
         get_node("../LoadConfig").disabled = false
 
  .. code-tab:: csharp
+
     // Someone else can do this
 
 Loading is like saving, but in reverse. We will delete the current
@@ -251,6 +256,7 @@ enemies and create new ones at the saved values.
             game.add_child(enemy)
 
  .. code-tab:: csharp
+
     // Someone else can do this
 
 Next, connect the "SaveConfig" button to the `save_game()` function and
@@ -285,6 +291,7 @@ Create a new script and attach it to both.
     const SAVE_PATH = "user://save_json.json"
 
  .. code-tab:: csharp
+
     // Someone else can do this
 
 Move to the Inspector and set the export variables for both buttons.
@@ -322,6 +329,7 @@ back later.
         get_node("../LoadJSON").disabled = false
 
  .. code-tab:: csharp
+ 
     // Someone else can do this
 
 For loading, we will need to use the opposite of the `var2str` method,
@@ -356,6 +364,7 @@ types.
             game.add_child(enemy)
 
  .. code-tab:: csharp
+
     // Someone else can do this
 
 Now, connect the `pressed()` signal from the "SaveJSON" button to the `save_game()`
