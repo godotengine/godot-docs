@@ -19,6 +19,7 @@ getting a ``plugin.cfg`` file created, and start with our
 
 .. tabs::
   .. code-tab:: gdscript GDScript
+
     # MyEditorPlugin.gd
     tool
     extends EditorPlugin
