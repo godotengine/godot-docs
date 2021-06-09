@@ -416,7 +416,7 @@ but you can still
 :ref:`use Godot to create non-game applications by using the editor <doc_faq_non_game_applications>`.
 
 Why does Godot not use STL (Standard Template Library)?
-------------------------------------------------------
+-------------------------------------------------------
 
 Like many other libraries (Qt as an example), Godot does not make use of
 STL. We believe STL is a great general purpose library, but we had special
