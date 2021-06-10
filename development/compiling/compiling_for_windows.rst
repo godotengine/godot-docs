@@ -291,3 +291,9 @@ here:
 You don't need to copy them in this case, just reference the resulting
 files in the ``bin\`` directory of your Godot source folder, so the next
 time you build, you will automatically have the custom templates referenced.
+
+Video Demonstrating the Compile Process
+---------------------------------------
+Here is a video demonstrating the compile process in Windows.
+https://www.youtube.com/watch?v=sKA4t6N_Gd8
+
