@@ -79,6 +79,17 @@ In that screen, 2 paths need to be set:
 
 Once that is configured, everything is ready to export to Android!
 
+.. note::
+
+    If you get an error saying *"Could not install to device."*, make sure
+    you do not have an application with the same Android package name already
+    installed on the device (but signed with a different key).
+
+    If you have an application with the same Android package name but a
+    different signing key already installed on the device, you **must** remove
+    the application in question from the Android device before exporting to
+    Android again.
+
 Providing launcher icons
 ------------------------
 
