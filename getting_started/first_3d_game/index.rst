@@ -1,55 +1,37 @@
 .. _doc_your_first_3d_game:
 
-Your first 3D game
+Ваша первая 3D игра
 ==================
 
-In this step-by-step tutorial series, you will create your first complete 3D
-game with Godot. By the end of the series, you will have a simple yet finished
-project of your own like the animated gif below.
+В этой серии уроков вы шаг за шагом создадите свою первую полноценную 3D игру с Godot. К концу серии вы будете иметь собственный простой, но завершенный проект как на анимации ниже.
 
 |image0|
 
-The game we'll code here is similar to :ref:`doc_your_first_2d_game`, with a twist:
-you can now jump and your goal is to squash the creeps. This way, you will both
-**recognize patterns** you learned in the previous tutorial and **build upon
-them** with new code and features.
+Игра, которую мы хотим написать здесь похожа на :ref:`doc_your_first_2d_game` с изюминкой: теперь вы можете прыгать и ваша цель — давить крипов. Таким образом вы **вспомните структуру,** которую изучили в прошлых уроках и **расширите ее** новым кодом и возможностями.
 
-You will learn to:
+Вы изучите как:
 
-- Work with 3D coordinates with a jumping mechanic.
-- Use kinematic bodies to move 3D characters and detect when and how they
-  collide.
-- Use physics layers and a group to detect interactions with specific entities.
-- Code basic procedural gameplay by instancing monsters at regular time
-  intervals.
-- Design a movement animation and change its speed at run-time.
-- Draw a simple interface on a 3D game.
+- Работать в 3D координатах с механикой прыжков.
+- Использовать кинематические тела для перемещения 3D персонажа и регистрировать как и когда они сталкиваются.
+- Использовать физические слои и группу для обнаружения взаимодействий с определенными структурами.
+- Писать базовый процедурный геймплей создавая монстров через равные промежутки времени.
+- Разрабатывать анимацию движения и изменять ее скорость во время выполнения.
+- Рисовать простой интерфейс 3D игры.
 
-And more.
+И многое другое.
 
-This tutorial is for beginners who followed the complete getting started series.
-We'll start slow with detailed instructions and shorten them as we do similar
-steps. If you're an experienced programmer, you can browse the complete demo's
-source code here: `Squash the Creep source code
-<https://github.com/GDQuest/godot-3d-dodge-the-creeps/>`__.
+Этот урок для начинающих, которые изучили серию "Начало работы". Мы начнем медленно с детальных инструкций и сократим их, когда сделаем похожие шаги. Если вы опытный программист вы можете ознакомиться с исходным кодом демо здесь: `Исходный код "Раздави крипа" <https://github.com/GDQuest/godot-3d-dodge-the-creeps/>`__.
 
 .. note::
 
-    You can follow this series without having done the 2D one. However, if
-    you're new to game development, we recommend you to start with 2D. 3D game
-    code is always more complex and the 2D series will give you foundations to
-    follow along more comfortably.
+    Вы можете изучать эту серию не завершив прошлую серию о 2D. В любом случае, если вы новичок в разработке игр, мы рекомендуем вам начать с 2D. Программирование 3D игры всегда сложнее и 2D серия даст вам основу, с которой можно продолжать более комфортно.  
 
-We prepared some game assets so we can jump straight to the code. You can
-download them here: `Squash the Creeps assets
+Мы подготовили несколько файлов для игры, так что вы можете перейти сразу к коду. Вы можете скачать их здесь: `Файлы "Раздави крипа"
 <https://github.com/GDQuest/godot-3d-dodge-the-creeps/releases/tag/1.1.0>`__.
 
-We will first work on a basic prototype for the player's movement. We will then
-add the monsters that we'll spawn randomly around the screen. After that, we'll
-implement the jump and squashing mechanic before refining the game with some
-nice animation. We'll wrap up with the score and the retry screen.
+Сначала мы поработаем над базовым прототипом для управления персонажем. Позже мы добавим монстров, которые появляются на экране случайно. После этого, мы добавим механику прыжков и раздавливания перед совершенствованием игры несколькими отличными анимациями. Мы закончим счетом и экраном повтора.
 
-Contents
+Соджержание
 --------
 
 .. toctree::
