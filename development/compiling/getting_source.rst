@@ -30,21 +30,21 @@ If you are using the ``git`` command line client, this is done by entering
 the following in a terminal:
 
 ::
-
-    git clone https://github.com/godotengine/godot.git
+    #Use --depth 1 argument to avoid cloning the whole unneeded commit history.
+    git clone https://github.com/godotengine/godot.git --depth 1
 
 For any stable release, visit the `release page <https://github.com/godotengine/godot/releases>`__
 and click on the link for the release you want.
 You can then download and extract the source from the download link on the page.
 
 With ``git``, you can also clone a stable release by specifying its branch or tag
-after the ``--branch`` argument::
+after the ``--branch`` (or just ``-b``) argument::
 
     # Clone the continuously maintained stable branch (`3.x` as of writing).
-    git clone https://github.com/godotengine/godot.git --branch 3.x
+    git clone https://github.com/godotengine/godot.git --branch 3.x --depth 1
 
     # Clone the `3.2.3-stable` tag. This is a fixed revision that will never change.
-    git clone https://github.com/godotengine/godot.git --branch 3.2.3-stable
+    git clone https://github.com/godotengine/godot.git -b 3.2.3-stable --depth 1
 
 There are also generally branches besides ``master`` for each major version.
 
