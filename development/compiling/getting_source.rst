@@ -30,7 +30,8 @@ If you are using the ``git`` command line client, this is done by entering
 the following in a terminal:
 
 ::
-    #Use --depth 1 argument to avoid cloning the whole unneeded commit history.
+
+    # Use --depth 1 argument to avoid cloning the whole unneeded commit history.
     git clone https://github.com/godotengine/godot.git --depth 1
 
 For any stable release, visit the `release page <https://github.com/godotengine/godot/releases>`__
