@@ -43,7 +43,7 @@ Other chats
 Language-based communities
 --------------------------
 
-See the `User groups <https://godotengine.org/community/user-groups>` page of
+See the `User groups <https://godotengine.org/community/user-groups>`_ page of
 the website for a list of local communities.
 
 Social networks
