@@ -109,31 +109,31 @@ is usually:
 * **y**: Phase during lifetime (0 to 1).
 * **z**: Animation frame.
 
-+--------------------------------+----------------------------------------------------------------+
-| Built-in                       | Description                                                    |
-+================================+================================================================+
-| in mat4 **WORLD_MATRIX**       | Image space to view space transform.                           |
-+--------------------------------+----------------------------------------------------------------+
-| in mat4 **EXTRA_MATRIX**       | Extra transform.                                               |
-+--------------------------------+----------------------------------------------------------------+
-| in mat4 **PROJECTION_MATRIX**  | View space to clip space transform.                            |
-+--------------------------------+----------------------------------------------------------------+
-| in vec4 **INSTANCE_CUSTOM**    | Instance custom data.                                          |
-+--------------------------------+----------------------------------------------------------------+
-| in bool **AT_LIGHT_PASS**      | ``true`` if this is a light pass.                              |
-+--------------------------------+----------------------------------------------------------------+
-| inout vec2 **VERTEX**          | Vertex, in image space.                                        |
-+--------------------------------+----------------------------------------------------------------+
-| in vec2 **TEXTURE_PIXEL_SIZE** | Normalized pixel size of default 2D texture.                   |
-|                                | For a Sprite with a texture of size 64x32px,                   |
-|                                | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)`              |
-+--------------------------------+----------------------------------------------------------------+
-| inout vec2 **UV**              | Texture coordinates.                                           |
-+--------------------------------+----------------------------------------------------------------+
-| inout vec4 **COLOR**           | Color from vertex primitive.                                   |
-+--------------------------------+----------------------------------------------------------------+
-| inout float **POINT_SIZE**     | Point size for point drawing.                                  |
-+--------------------------------+----------------------------------------------------------------+
++--------------------------------+---------------------------------------------------+
+| Built-in                       | Description                                       |
++--------------------------------+---------------------------------------------------+
+| in mat4 **WORLD_MATRIX**       | Image space to view space transform.              |
++--------------------------------+---------------------------------------------------+
+| in mat4 **CANVAS_MATRIX**      |                                                   |
++--------------------------------+---------------------------------------------------+
+| in mat4 **SCREEN_MATRIX**      |                                                   |
++--------------------------------+---------------------------------------------------+
+| in vec4 **INSTANCE_CUSTOM**    | Instance custom data.                             |
++--------------------------------+---------------------------------------------------+
+| in bool **AT_LIGHT_PASS**      | ``true`` if this is a light pass.                 |
++--------------------------------+---------------------------------------------------+
+| in vec2 **TEXTURE_PIXEL_SIZE** | Normalized pixel size of default 2D texture.      |
+|                                | For a Sprite with a texture of size 64x32px,      |
+|                                | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)` |
++--------------------------------+---------------------------------------------------+
+| inout vec2 **VERTEX**          | Vertex, in image space.                           |
++--------------------------------+---------------------------------------------------+
+| inout vec2 **UV**              | Texture coordinates.                              |
++--------------------------------+---------------------------------------------------+
+| inout vec4 **COLOR**           | Color from vertex primitive.                      |
++--------------------------------+---------------------------------------------------+
+| inout float **POINT_SIZE**     | Point size for point drawing.                     |
++--------------------------------+---------------------------------------------------+
 
 Fragment built-ins
 ^^^^^^^^^^^^^^^^^^
@@ -156,43 +156,53 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 
   NORMALMAP = texture(NORMAL_TEXTURE, UV).rgb;
 
-+----------------------------------+----------------------------------------------------------------+
-| Built-in                         | Description                                                    |
-+==================================+================================================================+
-| in vec4 **FRAGCOORD**            | Coordinate of pixel center. In screen space. ``xy`` specifies  |
-|                                  | position in window, ``z`` specifies fragment depth if          |
-|                                  | ``DEPTH`` is not used. Origin is lower-left.                   |
-+----------------------------------+----------------------------------------------------------------+
-| inout vec3 **NORMAL**            | Normal read from **NORMAL_TEXTURE**. Writable.                 |
-+----------------------------------+----------------------------------------------------------------+
-| out vec3 **NORMALMAP**           | Configures normal maps meant for 3D for use in 2D. If used,    |
-|                                  | overwrites **NORMAL**.                                         |
-+----------------------------------+----------------------------------------------------------------+
-| inout float **NORMALMAP_DEPTH**  | Normalmap depth for scaling.                                   |
-+----------------------------------+----------------------------------------------------------------+
-| in vec2 **UV**                   | UV from vertex function.                                       |
-+----------------------------------+----------------------------------------------------------------+
-| inout vec4 **COLOR**             | Color from vertex function and output fragment color. If       |
-|                                  | unused, will be set to **TEXTURE** color.                      |
-+----------------------------------+----------------------------------------------------------------+
-| in sampler2D **TEXTURE**         | Default 2D texture.                                            |
-+----------------------------------+----------------------------------------------------------------+
-| in sampler2D **NORMAL_TEXTURE**  | Default 2D normal texture.                                     |
-+----------------------------------+----------------------------------------------------------------+
-| in vec2 **TEXTURE_PIXEL_SIZE**   | Normalized pixel size of default 2D texture.                   |
-|                                  | For a Sprite with a texture of size 64x32px,                   |
-|                                  | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)`              |
-+----------------------------------+----------------------------------------------------------------+
-| in vec2 **SCREEN_UV**            | Screen UV for use with **SCREEN_TEXTURE**.                     |
-+----------------------------------+----------------------------------------------------------------+
-| in vec2 **SCREEN_PIXEL_SIZE**    | Size of individual pixels. Equal to inverse of resolution.     |
-+----------------------------------+----------------------------------------------------------------+
-| in vec2 **POINT_COORD**          | Coordinate for drawing points.                                 |
-+----------------------------------+----------------------------------------------------------------+
-| in bool **AT_LIGHT_PASS**        | ``true`` if this is a light pass.                              |
-+----------------------------------+----------------------------------------------------------------+
-| in sampler2D **SCREEN_TEXTURE**  | Screen texture, mipmaps contain gaussian blurred versions.     |
-+----------------------------------+----------------------------------------------------------------+
++---------------------------------------------+---------------------------------------------------------------+
+| Built-in                                    | Description                                                   |
++---------------------------------------------+---------------------------------------------------------------+
+| in vec4 **FRAGCOORD**                       | Coordinate of pixel center. In screen space. ``xy`` specifies |
+|                                             | position in window, ``z`` specifies fragment depth if         |
+|                                             | ``DEPTH`` is not used. Origin is lower-left.                  |
++---------------------------------------------+---------------------------------------------------------------+
+| in vec2 **UV**                              | UV from vertex function.                                      |
++---------------------------------------------+---------------------------------------------------------------+
+| in vec2 **SCREEN_UV**                       | Screen UV for use with **SCREEN_TEXTURE**.                    |
++---------------------------------------------+---------------------------------------------------------------+
+| in vec2 **SCREEN_PIXEL_SIZE**               | Size of individual pixels. Equal to inverse of resolution.    |
++---------------------------------------------+---------------------------------------------------------------+
+| in vec2 **POINT_COORD**                     | Coordinate for drawing points.                                |
++---------------------------------------------+---------------------------------------------------------------+
+| in bool **AT_LIGHT_PASS**                   | ``true`` if this is a light pass.                             |
++---------------------------------------------+---------------------------------------------------------------+
+| in sampler2D **TEXTURE**                    | Default 2D texture.                                           |
++---------------------------------------------+---------------------------------------------------------------+
+| in vec2 **TEXTURE_PIXEL_SIZE**              | Normalized pixel size of default 2D texture.                  |
+|                                             | For a Sprite with a texture of size 64x32px,                  |
+|                                             | **TEXTURE_PIXEL_SIZE** = :code`vec2(1/64, 1/32)`              |
++---------------------------------------------+---------------------------------------------------------------+
+| in sampler2D **SPECULAR_SHININESS_TEXTURE** |                                                               |
++---------------------------------------------+---------------------------------------------------------------+
+| in vec4 **SPECULAR_SHININESS**              |                                                               |
++---------------------------------------------+---------------------------------------------------------------+
+| in sampler2D **SCREEN_TEXTURE**             | Screen texture, mipmaps contain gaussian blurred versions.    |
++---------------------------------------------+---------------------------------------------------------------+
+| in sampler2D **NORMAL_TEXTURE**             | Default 2D normal texture.                                    |
++---------------------------------------------+---------------------------------------------------------------+
+| inout vec3 **NORMAL**                       | Normal read from **NORMAL_TEXTURE**. Writable.                |
++---------------------------------------------+---------------------------------------------------------------+
+| inout vec3 **NORMAL_MAP**                   | Configures normal maps meant for 3D for use in 2D. If used,   |
+|                                             | overrides **NORMAL**.                                         |
++---------------------------------------------+---------------------------------------------------------------+
+| inout float **NORMAL_MAP_DEPTH**            | Normalmap depth for scaling.                                  |
++---------------------------------------------+---------------------------------------------------------------+
+| inout vec2 **VERTEX**                       |                                                               |
++---------------------------------------------+---------------------------------------------------------------+
+| inout vec2 **SHADOW_VERTEX**                |                                                               |
++---------------------------------------------+---------------------------------------------------------------+
+| inout vec3 **LIGHT_VERTEX**                 |                                                               |
++---------------------------------------------+---------------------------------------------------------------+
+| inout vec4 **COLOR**                        | Color from vertex function and output fragment color. If      |
+|                                             | unused, will be set to **TEXTURE** color.                     |
++---------------------------------------------+---------------------------------------------------------------+
 
 Light built-ins
 ^^^^^^^^^^^^^^^
@@ -205,45 +215,41 @@ that object; this can be useful when you only want the object visible where it i
 
 When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``true``.
 
-+-------------------------------------+-------------------------------------------------------------------------------+
-| Built-in                            | Description                                                                   |
-+=====================================+===============================================================================+
-| in vec4 **FRAGCOORD**               | Coordinate of pixel center. In screen space. ``xy`` specifies                 |
-|                                     | position in window, ``z`` specifies fragment depth if                         |
-|                                     | ``DEPTH`` is not used. Origin is lower-left.                                  |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| in vec3 **NORMAL**                  | Input Normal. Although this value is passed in,                               |
-|                                     | **normal calculation still happens outside of this function**.                |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| in vec2 **UV**                      | UV from vertex function, equivalent to the UV in the fragment function.       |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| in vec4 **COLOR**                   | Input Color.                                                                  |
-|                                     | This is the output of the fragment function with final modulation applied.    |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| sampler2D **TEXTURE**               | Current texture in use for CanvasItem.                                        |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| in vec2 **TEXTURE_PIXEL_SIZE**      | Normalized pixel size of default 2D texture.                                  |
-|                                     | For a Sprite with a texture of size 64x32px,                                  |
-|                                     | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)`                             |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| in vec2 **SCREEN_UV**               | **SCREEN_TEXTURE** Coordinate (for using with screen texture).                |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| in vec2 **POINT_COORD**             | UV for Point Sprite.                                                          |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| inout vec2 **LIGHT_VEC**            | Vector from light to fragment in local coordinates. It can be modified to     |
-|                                     | alter illumination direction when normal maps are used.                       |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| inout vec2 **SHADOW_VEC**           | Vector from light to fragment in local coordinates. It can be modified to     |
-|                                     | alter shadow computation.                                                     |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| inout float **LIGHT_HEIGHT**        | Height of Light. Only effective when normals are used.                        |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| inout vec4 **LIGHT_COLOR**          | Color of Light.                                                               |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| in vec2 **LIGHT_UV**                | UV for Light texture.                                                         |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| out vec4 **SHADOW_COLOR**           | Shadow Color of Light.                                                        |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| inout vec4 **LIGHT**                | Value from the Light texture and output color. Can be modified. If not used,  |
-|                                     | the light function is ignored.                                                |
-+-------------------------------------+-------------------------------------------------------------------------------+
++--------------------------------+------------------------------------------------------------------------------+
+| Built-in                       | Description                                                                  |
++--------------------------------+------------------------------------------------------------------------------+
+| in vec4 **FRAGCOORD**          | Coordinate of pixel center. In screen space. ``xy`` specifies                |
+|                                | position in window, ``z`` specifies fragment depth if                        |
+|                                | ``DEPTH`` is not used. Origin is lower-left.                                 |
++--------------------------------+------------------------------------------------------------------------------+
+| in vec3 **NORMAL**             | Input Normal. Although this value is passed in,                              |
+|                                | **normal calculation still happens outside of this function**.               |
++--------------------------------+------------------------------------------------------------------------------+
+| in vec4 **COLOR**              | Input Color.                                                                 |
+|                                | This is the output of the fragment function with final modulation applied.   |
++--------------------------------+------------------------------------------------------------------------------+
+| in vec2 **UV**                 | UV from vertex function, equivalent to the UV in the fragment function.      |
++--------------------------------+------------------------------------------------------------------------------+
+| in vec4 **SPECULAR_SHININESS** |                                                                              |
++--------------------------------+------------------------------------------------------------------------------+
+| in sampler2D **TEXTURE**       | Current texture in use for CanvasItem.                                       |
++--------------------------------+------------------------------------------------------------------------------+
+| in vec2 **TEXTURE_PIXEL_SIZE** | Normalized pixel size of default 2D texture.                                 |
+|                                | For a Sprite with a texture of size 64x32px,                                 |
+|                                | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)`                            |
++--------------------------------+------------------------------------------------------------------------------+
+| in vec2 **SCREEN_UV**          | **SCREEN_TEXTURE** Coordinate (for using with screen texture).               |
++--------------------------------+------------------------------------------------------------------------------+
+| in vec2 **POINT_COORD**        | UV for Point Sprite.                                                         |
++--------------------------------+------------------------------------------------------------------------------+
+| in vec4 **LIGHT_COLOR**        | Color of Light.                                                              |
++--------------------------------+------------------------------------------------------------------------------+
+| in vec3 **LIGHT_POSITION**     | Position of Light.                                                           |
++--------------------------------+------------------------------------------------------------------------------+
+| in vec3 **LIGHT_VERTEX**       |                                                                              |
++--------------------------------+------------------------------------------------------------------------------+
+| inout vec4 **LIGHT**           | Value from the Light texture and output color. Can be modified. If not used, |
+|                                | the light function is ignored.                                               |
++--------------------------------+------------------------------------------------------------------------------+
+| inout vec4 **SHADOW_MODULATE** |                                                                              |
++--------------------------------+------------------------------------------------------------------------------+

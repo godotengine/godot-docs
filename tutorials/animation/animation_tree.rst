@@ -1,7 +1,7 @@
 .. _doc_animation_tree:
 
-AnimationTree
-=============
+Using AnimationTree
+===================
 
 Introduction
 ------------

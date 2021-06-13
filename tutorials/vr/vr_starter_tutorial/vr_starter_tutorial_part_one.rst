@@ -770,7 +770,7 @@ teleport, it will make the ``teleport_mesh`` visible so the user knows where the
 _________________
 
 If ``held_object`` is not equal to ``null``, then the VR controller is holding something. We then check to see if the object that is being held, ``held_object``, extends
-a class called ``VR_Interactable_Rigidbody``. we have not made ``VR_Interactable_Rigidbody`` yet, but ``VR_Interactable_Rigidbody`` will be a custom class we will use
+a class called ``VR_Interactable_Rigidbody``. We have not made ``VR_Interactable_Rigidbody`` yet, but ``VR_Interactable_Rigidbody`` will be a custom class we will use
 on all of the special/custom :ref:`RigidBody <class_RigidBody>`-based nodes in the project.
 
 .. tip:: Don't worry, we will cover ``VR_Interactable_Rigidbody`` after this section!

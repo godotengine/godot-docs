@@ -39,7 +39,7 @@ An iOS plugin can have the same functionality as a Godot module but provides mor
 
 Here are the steps to get a plugin's development started. We recommend using `Xcode <https://developer.apple.com/develop/>`_ as your development environment.
 
-.. seealso:: The `Godot iOS Plugins <https://github.com/godotengine/godot-ios-plugins>`_ Godot iOS plugins.
+.. seealso:: The `Godot iOS Plugins <https://github.com/godotengine/godot-ios-plugins>`_.
 
     The `Godot iOS plugin template <https://github.com/naithar/godot_ios_plugin>`_ gives you all the boilerplate you need to get your iOS plugin started.
 
@@ -62,7 +62,7 @@ To build an iOS plugin:
 
 5. The iOS plugin system also supports ``.xcframework`` files. To generate one, you can use a command such as: ``xcodebuild -create-xcframework -library [DeviceLibrary].a -library [SimulatorLibrary].a -output [PluginName].xcframework``.
 
-6.  Create a Godot iOS Plugin configuration file to help the system detect and load your plugin:
+6. Create a Godot iOS Plugin configuration file to help the system detect and load your plugin:
 
     -   The configuration file extension must be ``gdip`` (e.g.: ``MyPlugin.gdip``).
 

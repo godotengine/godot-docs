@@ -243,6 +243,10 @@ The editor translations originate from C++ strings, and may use:
     Scene '%s' is currently being edited.↵
     Changes will only take effect when reloaded.
 
+.. note::
+  Only logical order of the characters matters, in the right-to-left text, format
+  specifiers may be displayed as ``s%``.
+
 Online documentation (RST)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 

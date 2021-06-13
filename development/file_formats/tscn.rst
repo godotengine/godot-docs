@@ -304,7 +304,7 @@ heading. For example, a capsule collision shape looks like:
 
 ::
 
-    [sub_resource  type="CapsuleShape" id=2]
+    [sub_resource type="CapsuleShape" id=2]
 
     radius = 0.5
     height = 3.0

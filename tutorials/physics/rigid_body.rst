@@ -1,7 +1,7 @@
 .. _doc_rigid_body:
 
-RigidBody
-=========
+Using RigidBody
+===============
 
 What is a rigid body?
 ---------------------

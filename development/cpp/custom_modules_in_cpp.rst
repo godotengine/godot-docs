@@ -182,8 +182,8 @@ environment's paths:
     env.Append(CPPPATH=["#myotherlib/include"]) # this is an 'absolute' path
 
 If you want to add custom compiler flags when building your module, you need to clone
-`env` first, so it won't add those flags to whole Godot build (which can cause errors).
-Example `SCsub` with custom flags:
+``env`` first, so it won't add those flags to whole Godot build (which can cause errors).
+Example ``SCsub`` with custom flags:
 
 .. code-block:: python
 
@@ -193,8 +193,11 @@ Example `SCsub` with custom flags:
 
     module_env = env.Clone()
     module_env.add_source_files(env.modules_sources, "*.cpp")
-    module_env.Append(CCFLAGS=['-O2']) # Flags for C and C++ code
-    module_env.Append(CXXFLAGS=['-std=c++11']) # Flags for C++ code only
+    # Append CCFLAGS flags for both C and C++ code.
+    module_env.Append(CCFLAGS=['-O2'])
+    # If you need to, you can:
+    # - Append CFLAGS for C code only.
+    # - Append CXXFLAGS for C++ code only.
 
 And finally, the configuration file for the module, this is a simple
 python script that must be named ``config.py``:

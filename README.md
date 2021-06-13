@@ -6,7 +6,7 @@ They are meant to be parsed with the [Sphinx](https://www.sphinx-doc.org/) docum
 
 ## Download for offline use
 
-You can [download an HTML copy](https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html.zip)
+You can [download an HTML copy](https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-master.zip)
 for offline reading (updated every Monday). Extract the ZIP archive then open
 the top-level `index.html` in a web browser.
 

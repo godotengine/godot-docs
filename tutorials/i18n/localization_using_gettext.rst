@@ -156,8 +156,8 @@ Updating message files to follow the PO template
 
 After updating the PO template, you will have to update message files so
 that they contain new strings, while removing strings that are no longer
-present in the PO template removed in the PO template. This can be done
-automatically using the ``msgmerge`` tool:
+present in the PO template. This can be done automatically using the
+``msgmerge`` tool:
 
 .. code-block:: shell
 

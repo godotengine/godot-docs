@@ -10,7 +10,7 @@ built-in node types.
 .. seealso::
 
     To learn to submit your changes to the Godot project using the Git version
-    control system, see :ref:`doc_updating_the_class_reference_with_git`.
+    control system, see :ref:`doc_updating_the_class_reference`.
 
 The reference for each class is contained in an XML file like the one below:
 
@@ -110,7 +110,7 @@ Alternatively, you can build Godot and open the modified page in the built-in
 code reference. To learn how to compile the engine, read the :ref:`compilation
 guide <toc-devel-compiling>`.
 
-We recommend using a code editor that supports XML files like Vim, Atom, Code,
+We recommend using a code editor that supports XML files like Vim, Atom, Visual Studio Code,
 Notepad++, or another to comfortably edit the file. You can also use their
 search feature to find classes and properties quickly.
 

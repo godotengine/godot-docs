@@ -15,7 +15,7 @@ Download and install the Android SDK.
 
   - Run it once to complete the SDK setup using these `instructions <https://developer.android.com/studio/intro/update#sdk-manager>`__.
   - Ensure that the `required packages <https://developer.android.com/studio/intro/update#recommended>`__ are installed as well.
-    
+
     - Android SDK Platform-Tools version 30.0.5 or later
     - Android SDK Build-Tools version 30.0.3
     - Android SDK Platform 29
@@ -79,6 +79,17 @@ In that screen, 2 paths need to be set:
 
 Once that is configured, everything is ready to export to Android!
 
+.. note::
+
+    If you get an error saying *"Could not install to device."*, make sure
+    you do not have an application with the same Android package name already
+    installed on the device (but signed with a different key).
+
+    If you have an application with the same Android package name but a
+    different signing key already installed on the device, you **must** remove
+    the application in question from the Android device before exporting to
+    Android again.
+
 Providing launcher icons
 ------------------------
 
@@ -127,7 +138,7 @@ Now fill in the following forms in your Android Export Presets:
 a version control system, you should remove it from public repositories and add
 it to your ``.gitignore`` file or equivalent.
 
-Don't forget to uncheck the **Export With Debug** checkbox while choosing the APK's name.
+Don't forget to uncheck the **Export With Debug** checkbox while exporting.
 
 .. image:: img/export-with-debug-button.png
 
