@@ -44,6 +44,7 @@ compile binaries with the following SCons options:
 - For editor binaries: ``target=release_debug use_lto=yes``
 - For debug export templates: ``target=release_debug use_lto=yes``
 - For release export templates: ``tools=no target=release debug_symbols=yes``
+
   - ``debug_symbols=yes`` is required as export templates are stripped from debugging symbols by default.
 
 It is possible to run a profiler on less optimized builds (e.g. ``target=debug`` without LTO),
