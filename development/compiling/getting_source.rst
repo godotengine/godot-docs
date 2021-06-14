@@ -32,6 +32,7 @@ the following in a terminal:
 ::
 
     # Use --depth 1 argument to avoid cloning the whole unneeded commit history.
+    # Don't use --depth 1 if you're cloning for engine development purposes.
     git clone https://github.com/godotengine/godot.git --depth 1
 
 For any stable release, visit the `release page <https://github.com/godotengine/godot/releases>`__
