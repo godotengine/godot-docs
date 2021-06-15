@@ -105,7 +105,7 @@ and ``to``::
 <class_RandomNumberGenerator_method_randi_range>` takes two arguments ``from``
 and ``to``, and returns a random integer between ``from`` and ``to``::
 
-    # Prints a random floating-point number between -10 and 10.
+    # Prints a random integer between -10 and 10.
     var rng = RandomNumberGenerator.new()
     rng.randomize()
     print(rng.randi_range(-10, 10))
