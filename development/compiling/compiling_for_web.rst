@@ -82,7 +82,7 @@ And ``webassembly_debug_threads.zip`` and ``webassembly_debug_gdnative.zip`` for
 the debug template::
 
     mv bin/godot.javascript.opt.debug.threads.zip bin/webassembly_threads_debug.zip
-    mv bin/godot.javascript.opt.debug.gdnative.zip bin/webassembly_gdnative_debugzip
+    mv bin/godot.javascript.opt.debug.gdnative.zip bin/webassembly_gdnative_debug.zip
 
 Building the editor
 -------------------
