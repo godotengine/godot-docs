@@ -313,7 +313,7 @@ hr,
 
 /* JavaScript documentation directives */
 .rst-content dl:not(.docutils) dt {
-    background-color: var(--admonition-note-background-color);
+    background-color: var(--admonition-note-background-color) !important;
     border-color: var(--admonition-note-title-background-color);
     color: var(--admonition-note-color);
 }
