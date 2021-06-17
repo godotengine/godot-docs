@@ -320,7 +320,7 @@ hr,
 .rst-content dl:not(.docutils) dl dt {
     background-color: var(--admonition-attention-background-color);
     border-color: var(--admonition-attention-title-background-color);
-    color: var(--admonition-attention-color);
+    color: var(--admonition-attention-color) !important;
 }
 .rst-content dl:not(.docutils).class dt,
 .rst-content dl:not(.docutils).function dt,
@@ -349,7 +349,7 @@ hr,
 }
 .rst-content dl:not(.docutils) .sig-paren,
 .rst-content dl:not(.docutils) .optional {
-    color: var(--highlight-operator-color);
+    color: var(--highlight-operator-color) !important;
     font-weight: normal;
     padding: 0 2px;
 }
@@ -375,7 +375,7 @@ hr,
     color: var(--highlight-keyword-color);
 }
 .rst-content dl:not(.docutils) dt a.headerlink {
-    color: var(--link-color);
+    color: var(--link-color) !important;
 }
 .rst-content dl:not(.docutils) dt a.headerlink:visited {
     color: var(--link-color-visited);
