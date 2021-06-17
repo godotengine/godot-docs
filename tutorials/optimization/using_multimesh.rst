@@ -72,7 +72,8 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
         for i in multimesh.visible_instance_count:
             multimesh.set_instance_transform(i, Transform(Basis(), Vector3(i * 20, 0, 0)))
 
- .. code-tab:: csharp
+ .. code-tab:: csharp C#
+ 
     using Godot;
     using System;
 
