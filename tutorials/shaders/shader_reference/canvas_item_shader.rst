@@ -48,15 +48,24 @@ Global built-ins
 
 Global built-ins are available everywhere, including custom functions.
 
-+-------------------+-----------------------------------------------------------------------------+
-| Built-in          | Description                                                                 |
-+===================+=============================================================================+
-| in float **TIME** | Global time since the engine has started, in seconds (always positive).     |
-|                   | It's subject to the rollover setting (which is 3,600 seconds by default).   |
-|                   | It's not affected by :ref:`time_scale<class_Engine_property_time_scale>`    |
-|                   | or pausing, but you can define a global shader uniform to add a "scaled"    |
-|                   | ``TIME`` variable if desired.                                               |
-+-------------------+-----------------------------------------------------------------------------+
++-------------------+----------------------------------------------------------------------------------------+
+| Built-in          | Description                                                                            |
++===================+========================================================================================+
+| in float **TIME** | Global time since the engine has started, in seconds (always positive).                |
+|                   | It's subject to the rollover setting (which is 3,600 seconds by default).              |
+|                   | It's not affected by :ref:`time_scale<class_Engine_property_time_scale>`               |
+|                   | or pausing, but you can define a global shader uniform to add a "scaled"               |
+|                   | ``TIME`` variable if desired.                                                          |
++-------------------+----------------------------------------------------------------------------------------+
+| in float **PI**   | A ``PI`` constant (``3.141592``).                                                      |
+|                   | A ration of circle's circumference to its diameter and amount of radians in half turn. |
++-------------------+----------------------------------------------------------------------------------------+
+| in float **TAU**  | A ``TAU`` constant (``6.283185``).                                                     |
+|                   | An equivalent of ``PI * 2`` and amount of radians in full turn.                        |
++-------------------+----------------------------------------------------------------------------------------+
+| in float **E**    | A ``E`` constant (``2.718281``).                                                       |
+|                   | Euler's number and a base of natural logarithm.                                        |
++-------------------+----------------------------------------------------------------------------------------+
 
 Vertex built-ins
 ^^^^^^^^^^^^^^^^
@@ -111,7 +120,7 @@ is usually:
 
 +--------------------------------+---------------------------------------------------+
 | Built-in                       | Description                                       |
-+--------------------------------+---------------------------------------------------+
++================================+===================================================+
 | in mat4 **WORLD_MATRIX**       | Image space to view space transform.              |
 +--------------------------------+---------------------------------------------------+
 | in mat4 **CANVAS_MATRIX**      |                                                   |
@@ -158,7 +167,7 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 
 +---------------------------------------------+---------------------------------------------------------------+
 | Built-in                                    | Description                                                   |
-+---------------------------------------------+---------------------------------------------------------------+
++=============================================+===============================================================+
 | in vec4 **FRAGCOORD**                       | Coordinate of pixel center. In screen space. ``xy`` specifies |
 |                                             | position in window, ``z`` specifies fragment depth if         |
 |                                             | ``DEPTH`` is not used. Origin is lower-left.                  |
@@ -217,7 +226,7 @@ When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``tru
 
 +--------------------------------+------------------------------------------------------------------------------+
 | Built-in                       | Description                                                                  |
-+--------------------------------+------------------------------------------------------------------------------+
++================================+==============================================================================+
 | in vec4 **FRAGCOORD**          | Coordinate of pixel center. In screen space. ``xy`` specifies                |
 |                                | position in window, ``z`` specifies fragment depth if                        |
 |                                | ``DEPTH`` is not used. Origin is lower-left.                                 |
