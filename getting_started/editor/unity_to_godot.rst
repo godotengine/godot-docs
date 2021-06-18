@@ -33,13 +33,14 @@ Differences
 +-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | Scene system      | * Component/Scene (GameObject > Component)                                         | :ref:`Scene tree and nodes <doc_scenes_and_nodes>`, allowing scenes to be nested and/or inherit other scenes   |
 |                   | * Prefabs                                                                          |                                                                                                                |
+|                   | * Entity–component–system (ECS)                                                    |                                                                                                                |
 +-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| Third-party tools | Visual Studio or VS Code                                                           | * :ref:`External editors are possible <doc_external_editor>`                                                   |
+| Third-party tools | Visual Studio, VS Code, Rider                                                      | * :ref:`External editors are possible <doc_external_editor>`                                                   |
 |                   |                                                                                    | * :ref:`Android SDK for Android export <doc_exporting_for_android>`                                            |
 +-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | Notable advantages| * Huge community                                                                   | * Scene System                                                                                                 |
 |                   | * Large assets store                                                               | * :ref:`Animation Pipeline <doc_animations>`                                                                   |
-|                   |                                                                                    | * :ref:`Easy to write Shaders <doc_shading_language>`                                                          |
+|                   | * Unity services                                                                   | * :ref:`Easy to write Shaders <doc_shading_language>`                                                          |
 |                   |                                                                                    | * Debug on Device                                                                                              |
 |                   |                                                                                    |                                                                                                                |
 |                   |                                                                                    |                                                                                                                |
@@ -95,19 +96,33 @@ and linking them together with components and scripts.
 Godot's scene system is superficially similar to Unity. A 'level' consists of a collection of nodes, each with its own purpose: Sprite, Mesh, Light, etc. However, in Godot the nodes are arranged in a tree. Each node can have multiple children, which makes each a subscene of the main scene.
 This means you can compose a whole scene with different scenes stored in different files.
 
-For example, think of a platformer level. You would compose it with multiple elements:
+For example, think of a platformer level. You would compose it with multiple prefabs of:
 
 - Bricks
 - Coins
 - The player
 - The enemies
 
-In Unity, you would put all the GameObjects in the scene: the player, multiple instances of enemies,
-bricks everywhere to form the ground of the level and then multiple instances of coins all over the level.
-You would then add various components to each element to link them and add logic in the level: For example,
+In Unity you have separation between Prefabs and Scenes, in Godot every combination of nodes is a scene.
+
++--------------------------------+------------------------------------+
+| Unity                          |       Godot                        |
++================================+====================================+
+| Scene:                         | Scene:                             |
+|  * Level                       |  * Level                           |
+| Prefabs:                       |  * Bricks                          |
+|  * Bricks                      |  * Coins                           |
+|  * Coins                       |  * The player                      |
+|  * The player                  |  * The enemies                     |
+|  * The enemies                 |                                    |
++--------------------------------+------------------------------------+
+
+If you have used Unity 2018.3 and newer, Godot scenes work like Nested Prefab, if no, you basicly can nested prefab into another without breaking link to a nested prefab.
+In Unity, you would create prefab for  the player, enemies,
+bricks, coins. You would then add various components some will be the same: For example,
 you'd add a BoxCollider2D to all the elements of the scene so that they can collide. This principle is different in Godot.
 
-In Godot, you would split your whole scene into three separate, smaller scenes, and instance them in the main scene.
+In Godot, you would split your those scene into several separate, smaller scenes, and combine objects from them.
 
 1. **A scene for the Player alone.**
 
