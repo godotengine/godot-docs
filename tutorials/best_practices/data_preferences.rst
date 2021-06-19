@@ -257,7 +257,7 @@ tree structures.
 
         public override void Notification(int what)
         {
-            switch(what)
+            switch (what)
             {
                 case NotificationPredelete:
                     foreach (object child in _children)
