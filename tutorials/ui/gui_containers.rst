@@ -174,7 +174,7 @@ to its rect size:
             # Must re-sort the children
             for c in get_children():
                 # Fit to own size
-                fit_child_in_rect(c, Rect2(Vector2(), rect_size))
+                fit_child_in_rect( c, Rect2( Vector2(), rect_size ) )
 
     func set_some_setting():
         # Some setting changed, ask for children re-sort
