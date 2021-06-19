@@ -183,8 +183,8 @@ Nodes likewise have an alternative access point: the SceneTree.
 
     public class MyNode
     {
-        // Slow, dynamic lookup with dynamic NodePath.
-        public void Method1()
+        // Slow
+        public void DynamicLookupWithDynamicNodePath()
         {
             GD.Print(GetNode(NodePath("Child")));
         }
@@ -196,7 +196,7 @@ Nodes likewise have an alternative access point: the SceneTree.
         {
             Child = GetNode(NodePath("Child"));
         }
-        public void Method2()
+        public void LookupAndCacheForFutureAccess()
         {
             GD.Print(Child);
         }
