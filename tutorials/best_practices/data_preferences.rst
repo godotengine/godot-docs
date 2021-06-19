@@ -257,14 +257,18 @@ tree structures.
 
         public override void Notification(int what)
         {
-            if (what == NotificationPredelete)
+            switch (what)
             {
-                foreach (object child in _children)
-                {
-                    TreeNode node = child as TreeNode;
-                    if (node != null)
-                        node.Free();
-                }
+                case NotificationPredelete:
+                    foreach (object child in _children)
+                    {
+                        TreeNode node = child as TreeNode;
+                        if (node != null)
+                            node.Free();
+                    }
+                    break;
+                default:
+                    break;
             }
         }
     }
