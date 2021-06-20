@@ -169,7 +169,7 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | inout vec3 **BINORMAL**                | Binormal in local coordinates.                         |
 +----------------------------------------+--------------------------------------------------------+
-| inout vec4 **POSITION**                | If written to, overrides final vertex position.        |
+| out vec4 **POSITION**                  | If written to, overrides final vertex position.        |
 +----------------------------------------+--------------------------------------------------------+
 | inout vec2 **UV**                      | UV main channel.                                       |
 +----------------------------------------+--------------------------------------------------------+
@@ -177,7 +177,7 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | inout vec4 **COLOR**                   | Color from vertices.                                   |
 +----------------------------------------+--------------------------------------------------------+
-| inout float **ROUGHNESS**              | Roughness for vertex lighting.                         |
+| out float **ROUGHNESS**                | Roughness for vertex lighting.                         |
 +----------------------------------------+--------------------------------------------------------+
 | inout float **POINT_SIZE**             | Point size for point rendering.                        |
 +----------------------------------------+--------------------------------------------------------+
@@ -195,13 +195,13 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | inout vec4 **BONE_WEIGHTS**            |                                                        |
 +----------------------------------------+--------------------------------------------------------+
-| inout vec4 **CUSTOM0**                 |                                                        |
+| out vec4 **CUSTOM0**                   |                                                        |
 +----------------------------------------+--------------------------------------------------------+
-| inout vec4 **CUSTOM1**                 |                                                        |
+| out vec4 **CUSTOM1**                   |                                                        |
 +----------------------------------------+--------------------------------------------------------+
-| inout vec4 **CUSTOM2**                 |                                                        |
+| out vec4 **CUSTOM2**                   |                                                        |
 +----------------------------------------+--------------------------------------------------------+
-| inout vec4 **CUSTOM3**                 |                                                        |
+| out vec4 **CUSTOM3**                   |                                                        |
 +----------------------------------------+--------------------------------------------------------+
 
 Fragment built-ins
@@ -247,15 +247,15 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec3 **VERTEX**                        | Vertex that comes from vertex function (default, in view space).                                 |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| in sampler2D **SCREEN_TEXTURE**           | Built-in Texture for reading from the screen. Mipmaps contain increasingly blurred copies.       |
+| sampler2D **SCREEN_TEXTURE**              | Built-in Texture for reading from the screen. Mipmaps contain increasingly blurred copies.       |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec2 **SCREEN_UV**                     | Screen UV coordinate for current pixel.                                                          |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| in sampler2D **NORMAL_ROUGHNESS_TEXTURE** |                                                                                                  |
+| sampler2D **NORMAL_ROUGHNESS_TEXTURE**    |                                                                                                  |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| in sampler2D **DEPTH_TEXTURE**            | Built-in Texture for reading depth from the screen. Must convert to linear using INV_PROJECTION. |
+| sampler2D **DEPTH_TEXTURE**               | Built-in Texture for reading depth from the screen. Must convert to linear using INV_PROJECTION. |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **DEPTH**                     | Custom depth value (0..1).                                                                       |
+| out float **DEPTH**                       | Custom depth value (0..1).                                                                       |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
 | inout vec3 **NORMAL**                     | Normal that comes from vertex function (default, in view space).                                 |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -263,63 +263,63 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
 | inout vec3 **BINORMAL**                   | Binormal that comes from vertex function.                                                        |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout vec3 **NORMAL_MAP**                 | Set normal here if reading normal from a texture instead of NORMAL.                              |
+| out vec3 **NORMAL_MAP**                   | Set normal here if reading normal from a texture instead of NORMAL.                              |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **NORMAL_MAP_DEPTH**          | Depth from variable above. Defaults to 1.0.                                                      |
+| out float **NORMAL_MAP_DEPTH**            | Depth from variable above. Defaults to 1.0.                                                      |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout vec3 **ALBEDO**                     | Albedo (default white).                                                                          |
+| out vec3 **ALBEDO**                       | Albedo (default white).                                                                          |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **ALPHA**                     | Alpha (0..1); if written to, the material will go to the transparent pipeline.                   |
+| out float **ALPHA**                       | Alpha (0..1); if written to, the material will go to the transparent pipeline.                   |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **ALPHA_SCISSOR_THRESHOLD**   | If written to, values below a certain amount of alpha are discarded.                             |
+| out float **ALPHA_SCISSOR_THRESHOLD**     | If written to, values below a certain amount of alpha are discarded.                             |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **ALPHA_HASH_SCALE**          |                                                                                                  |
+| out float **ALPHA_HASH_SCALE**            |                                                                                                  |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **ALPHA_ANTIALIASING_EDGE**   |                                                                                                  |
+| out float **ALPHA_ANTIALIASING_EDGE**     |                                                                                                  |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout vec2 **ALPHA_TEXTURE_COORDINATE**   |                                                                                                  |
+| out vec2 **ALPHA_TEXTURE_COORDINATE**     |                                                                                                  |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **METALLIC**                  | Metallic (0..1).                                                                                 |
+| out float **METALLIC**                    | Metallic (0..1).                                                                                 |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **SPECULAR**                  | Specular. Defaults to 0.5, best not to modify unless you want to change IOR.                     |
+| out float **SPECULAR**                    | Specular. Defaults to 0.5, best not to modify unless you want to change IOR.                     |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **ROUGHNESS**                 | Roughness (0..1).                                                                                |
+| out float **ROUGHNESS**                   | Roughness (0..1).                                                                                |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **RIM**                       | Rim (0..1). If used, Godot calculates rim lighting.                                              |
+| out float **RIM**                         | Rim (0..1). If used, Godot calculates rim lighting.                                              |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **RIM_TINT**                  | Rim Tint, goes from 0 (white) to 1 (albedo). If used, Godot calculates rim lighting.             |
+| out float **RIM_TINT**                    | Rim Tint, goes from 0 (white) to 1 (albedo). If used, Godot calculates rim lighting.             |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **CLEARCOAT**                 | Small added specular blob. If used, Godot calculates Clearcoat.                                  |
+| out float **CLEARCOAT**                   | Small added specular blob. If used, Godot calculates Clearcoat.                                  |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **CLEARCOAT_GLOSS**           | Gloss of Clearcoat. If used, Godot calculates Clearcoat.                                         |
+| out float **CLEARCOAT_GLOSS**             | Gloss of Clearcoat. If used, Godot calculates Clearcoat.                                         |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **ANISOTROPY**                | For distorting the specular blob according to tangent space.                                     |
+| out float **ANISOTROPY**                  | For distorting the specular blob according to tangent space.                                     |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout vec2 **ANISOTROPY_FLOW**            | Distortion direction, use with flowmaps.                                                         |
+| out vec2 **ANISOTROPY_FLOW**              | Distortion direction, use with flowmaps.                                                         |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **SSS_STRENGTH**              | Strength of Subsurface Scattering. If used, Subsurface Scattering will be applied to object.     |
+| out float **SSS_STRENGTH**                | Strength of Subsurface Scattering. If used, Subsurface Scattering will be applied to object.     |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout vec4 **SSS_TRANSMITTANCE_COLOR**    |                                                                                                  |
+| out vec4 **SSS_TRANSMITTANCE_COLOR**      |                                                                                                  |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **SSS_TRANSMITTANCE_DEPTH**   |                                                                                                  |
+| out float **SSS_TRANSMITTANCE_DEPTH**     |                                                                                                  |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **SSS_TRANSMITTANCE_CURVE**   |                                                                                                  |
+| out float **SSS_TRANSMITTANCE_CURVE**     |                                                                                                  |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **SSS_TRANSMITTANCE_BOOST**   |                                                                                                  |
+| out float **SSS_TRANSMITTANCE_BOOST**     |                                                                                                  |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
 | inout vec3 **BACKLIGHT**                  |                                                                                                  |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **AO**                        | Strength of Ambient Occlusion. For use with pre-baked AO.                                        |
+| out float **AO**                          | Strength of Ambient Occlusion. For use with pre-baked AO.                                        |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout float **AO_LIGHT_AFFECT**           | How much AO affects lights (0..1; default 0).                                                    |
+| out float **AO_LIGHT_AFFECT**             | How much AO affects lights (0..1; default 0).                                                    |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout vec3 **EMISSION**                   | Emission color (can go over 1,1,1 for HDR).                                                      |
+| out vec3 **EMISSION**                     | Emission color (can go over 1,1,1 for HDR).                                                      |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout vec4 **FOG**                        | If written to, blends final pixel color with FOG.rgb based on FOG.a.                             |
+| out vec4 **FOG**                          | If written to, blends final pixel color with FOG.rgb based on FOG.a.                             |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout vec4 **RADIANCE**                   | If written to, blends environment map radiance with RADIANCE.rgb based on RADIANCE.a.            |
+| out vec4 **RADIANCE**                     | If written to, blends environment map radiance with RADIANCE.rgb based on RADIANCE.a.            |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout vec4 **IRRADIANCE**                 | If written to, blends environment map IRRADIANCE with IRRADIANCE.rgb based on IRRADIANCE.a.      |
+| out vec4 **IRRADIANCE**                   | If written to, blends environment map IRRADIANCE with IRRADIANCE.rgb based on IRRADIANCE.a.      |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------+
 
 Light built-ins
@@ -400,10 +400,10 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 | in bool **OUTPUT_IS_SRGB**        | ``true`` when calculations happen in sRGB color    |
 |                                   | space (``true`` in GLES2, ``false`` in GLES3).     |
 +-----------------------------------+----------------------------------------------------+
-| inout vec3 **DIFFUSE_LIGHT**      | Diffuse light result.                              |
+| out vec3 **DIFFUSE_LIGHT**        | Diffuse light result.                              |
 +-----------------------------------+----------------------------------------------------+
-| inout vec3 **SPECULAR_LIGHT**     | Specular light result.                             |
+| out vec3 **SPECULAR_LIGHT**       | Specular light result.                             |
 +-----------------------------------+----------------------------------------------------+
-| inout float **ALPHA**             | Alpha (0..1); if written to, the material will go  |
+| out float **ALPHA**               | Alpha (0..1); if written to, the material will go  |
 |                                   | to the transparent pipeline.                       |
 +-----------------------------------+----------------------------------------------------+

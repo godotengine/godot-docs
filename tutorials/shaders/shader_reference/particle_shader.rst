@@ -106,7 +106,7 @@ to ``true``. In a ShaderMaterial, access it with the ``COLOR`` variable.
 +--------------------------------+------------------------------------------------------------------------------+
 | inout vec4 **CUSTOM**          | Custom particle data. Accessible from shader of mesh as **INSTANCE_CUSTOM**. |
 +--------------------------------+------------------------------------------------------------------------------+
-| inout float **MASS**           | Particle mass, use for attractors (not implemented in 3.1).                  |
+| out float **MASS**             | Particle mass, use for attractors.                                           |
 +--------------------------------+------------------------------------------------------------------------------+
 
 Process built-ins
@@ -157,5 +157,5 @@ Process built-ins
 +---------------------------------+------------------------------------------------------------------------------+
 | inout vec4 **CUSTOM**           | Custom particle data. Accessible from shader of mesh as **INSTANCE_CUSTOM**. |
 +---------------------------------+------------------------------------------------------------------------------+
-| inout float **MASS**            | Particle mass, use for attractors (not implemented in 3.1).                  |
+| out float **MASS**              | Particle mass, use for attractors.                                           |
 +---------------------------------+------------------------------------------------------------------------------+
