@@ -388,7 +388,7 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
         movement_forward.y = 0
         movement_right.y = 0
 
-        if (movement_right.length() > 0 or movement_forward.length() > 0):
+        if movement_right.length() > 0 or movement_forward.length() > 0:
             get_parent().global_translate(movement_right + movement_forward)
             directional_movement = true
         else:
@@ -443,7 +443,7 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
 
         elif grab_mode == "RAYCAST":
             grab_raycast.force_raycast_update()
-            if (grab_raycast.is_colliding()):
+            if grab_raycast.is_colliding():
                 var body = grab_raycast.get_collider()
                 if body is RigidBody:
                     if !("NO_PICKUP" in body):
@@ -1083,10 +1083,10 @@ Add the following code:
 
 
     func _process(_delta):
-        if (controller_one == null or controller_two == null):
+        if controller_one == null or controller_two == null:
             return
 
-        if (controller_one.directional_movement == true or controller_two.directional_movement == true):
+        if controller_one.directional_movement == true or controller_two.directional_movement == true:
             visible = true
         else:
             visible = false
