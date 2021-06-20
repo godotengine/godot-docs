@@ -182,26 +182,26 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 +---------------------------------------------+---------------------------------------------------------------+
 | in bool **AT_LIGHT_PASS**                   | ``true`` if this is a light pass.                             |
 +---------------------------------------------+---------------------------------------------------------------+
-| in sampler2D **TEXTURE**                    | Default 2D texture.                                           |
+| sampler2D **TEXTURE**                       | Default 2D texture.                                           |
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE**              | Normalized pixel size of default 2D texture.                  |
 |                                             | For a Sprite with a texture of size 64x32px,                  |
 |                                             | **TEXTURE_PIXEL_SIZE** = :code`vec2(1/64, 1/32)`              |
 +---------------------------------------------+---------------------------------------------------------------+
-| in sampler2D **SPECULAR_SHININESS_TEXTURE** |                                                               |
+| sampler2D **SPECULAR_SHININESS_TEXTURE**    |                                                               |
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec4 **SPECULAR_SHININESS**              |                                                               |
 +---------------------------------------------+---------------------------------------------------------------+
-| in sampler2D **SCREEN_TEXTURE**             | Screen texture, mipmaps contain gaussian blurred versions.    |
+| sampler2D **SCREEN_TEXTURE**                | Screen texture, mipmaps contain gaussian blurred versions.    |
 +---------------------------------------------+---------------------------------------------------------------+
-| in sampler2D **NORMAL_TEXTURE**             | Default 2D normal texture.                                    |
+| sampler2D **NORMAL_TEXTURE**                | Default 2D normal texture.                                    |
 +---------------------------------------------+---------------------------------------------------------------+
 | inout vec3 **NORMAL**                       | Normal read from **NORMAL_TEXTURE**. Writable.                |
 +---------------------------------------------+---------------------------------------------------------------+
-| inout vec3 **NORMAL_MAP**                   | Configures normal maps meant for 3D for use in 2D. If used,   |
+| out vec3 **NORMAL_MAP**                     | Configures normal maps meant for 3D for use in 2D. If used,   |
 |                                             | overrides **NORMAL**.                                         |
 +---------------------------------------------+---------------------------------------------------------------+
-| inout float **NORMAL_MAP_DEPTH**            | Normalmap depth for scaling.                                  |
+| out float **NORMAL_MAP_DEPTH**              | Normalmap depth for scaling.                                  |
 +---------------------------------------------+---------------------------------------------------------------+
 | inout vec2 **VERTEX**                       |                                                               |
 +---------------------------------------------+---------------------------------------------------------------+
@@ -241,7 +241,7 @@ When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``tru
 +--------------------------------+------------------------------------------------------------------------------+
 | in vec4 **SPECULAR_SHININESS** |                                                                              |
 +--------------------------------+------------------------------------------------------------------------------+
-| in sampler2D **TEXTURE**       | Current texture in use for CanvasItem.                                       |
+| sampler2D **TEXTURE**          | Current texture in use for CanvasItem.                                       |
 +--------------------------------+------------------------------------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE** | Normalized pixel size of default 2D texture.                                 |
 |                                | For a Sprite with a texture of size 64x32px,                                 |
@@ -260,5 +260,5 @@ When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``tru
 | inout vec4 **LIGHT**           | Value from the Light texture and output color. Can be modified. If not used, |
 |                                | the light function is ignored.                                               |
 +--------------------------------+------------------------------------------------------------------------------+
-| inout vec4 **SHADOW_MODULATE** |                                                                              |
+| out vec4 **SHADOW_MODULATE**   |                                                                              |
 +--------------------------------+------------------------------------------------------------------------------+
