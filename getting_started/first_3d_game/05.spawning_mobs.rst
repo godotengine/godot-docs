@@ -255,7 +255,7 @@ Let's code the mob spawning logic. We're going to:
     public void OnMobTimerTimeout()
     {
         // Create a mob instance and add it to the scene.
-        Mob mob = MobScene.Instance();
+        Mob mob = (Mob)MobScene.Instance();
 
         // Choose a random location on Path2D.
         // We stire the reference to the SpawnLocation node.
@@ -312,7 +312,7 @@ Here is the complete ``Main.gd`` script so far, for reference.
 
         public void OnMobTimerTimeout()
         {
-            Mob mob = MobScene.Instance();
+            Mob mob = (Mob)MobScene.Instance();
 
             var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
             mobSpawnLocation.UnitOffset = GD.Randf();
