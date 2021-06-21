@@ -47,8 +47,11 @@ HDR
 ---
 
 GLES2 is not capable of using High Dynamic Range (HDR) rendering features. If HDR is set for your
-project, or for a given viewport, Godot will still user Low Dynamic Range (LDR) which limits
+project, or for a given viewport, Godot will still use Low Dynamic Range (LDR) which limits
 viewport values to the ``0-1`` range.
+
+The Viewport **Debanding** property and associated project setting will also have
+no effect when HDR is disabled. This means debanding can't be used in GLES2.
 
 StandardMaterial3D features
 ---------------------------
