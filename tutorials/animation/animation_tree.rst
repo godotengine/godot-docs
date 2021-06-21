@@ -283,7 +283,7 @@ Once retrieved, it can be used by calling one of the many functions it offers:
 
  .. code-tab:: csharp
 
-    stateMachine.Travel("SomeState")
+    stateMachine.Travel("SomeState");
 
 The state machine must be running before you can travel. Make sure to either call ``start()`` or choose a node to **Autoplay on Load**.
 
