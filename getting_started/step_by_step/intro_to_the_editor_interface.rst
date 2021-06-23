@@ -137,7 +137,7 @@ related to the 3D viewport.
 
 The **Script** workspace is a complete code editor with a debugger, rich
 auto-completion, and built-in code reference. Press :kbd:`Ctrl + F3` (or :kbd:`Alt + 3` on macOS)
-to access it, and :kbd:`Shift + F1` to search the reference.
+to access it, and :kbd:`F1` (or :kbd:`Alt + Space` on macOS) to search the reference.
 
 .. image:: img/editor_ui_intro_editor_06_script_workspace_expanded.png
 
