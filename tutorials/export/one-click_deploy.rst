@@ -45,8 +45,8 @@ Support for more platforms such as iOS is planned.
 Using one-click deploy
 ----------------------
 
-- If deploying to Android, enable developer mode on the your mobile device and turn on USB debugging. 
-- Then connect the device to your PC using an USB cable.
+- If deploying to Android, enable developer mode on your mobile device then enable USB debugging.
+- After enabling USB debugging, connect the device to your PC using an USB cable.
 
    - For advanced users, it should also be possible to use wireless ADB.
 
