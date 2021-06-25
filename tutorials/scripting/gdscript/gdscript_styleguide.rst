@@ -484,14 +484,14 @@ Use snake_case for file names. For named classes, convert the PascalCase class
 name to snake_case::
 
     # This file should be saved as `weapon.gd`.
+    class_name Weapon    
     extends Node
-    class_name Weapon
 
 ::
 
     # This file should be saved as `yaml_parser.gd`.
-    extends Object
     class_name YAMLParser
+    extends Object
 
 This is consistent with how C++ files are named in Godot's source code. This
 also avoids case sensitivity issues that can crop up when exporting a project
