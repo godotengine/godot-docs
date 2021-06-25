@@ -64,7 +64,7 @@ Godot provides several container types out of the box as they serve different pu
 Box Containers
 ^^^^^^^^^^^^^^
 
-Arrange child controls vertically or horizontally (via :ref:`HBoxContainer <class_HBoxContainer>` and
+Arranges child controls vertically or horizontally (via :ref:`HBoxContainer <class_HBoxContainer>` and
 :ref:`VBoxContainer <class_VBoxContainer>`). In the opposite of the designated direction
 (as in, vertical for an horizontal container), it just expands the children.
 
