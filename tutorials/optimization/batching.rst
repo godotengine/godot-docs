@@ -16,10 +16,6 @@ of work for the user in the GPU driver at the cost of more expensive draw calls.
 As a result, applications can often be sped up by reducing the number of draw
 calls.
 
-.. note::
-
-    2D batching is currently only supported when using the GLES2 renderer.
-
 Draw calls
 ^^^^^^^^^^
 
