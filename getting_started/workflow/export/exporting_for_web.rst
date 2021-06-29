@@ -21,7 +21,8 @@ in the user's browser.
                         current working directory at ``http://localhost:8000``.
                         `Refer to MDN for additional information <https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server>`__.
 
-.. attention:: `There are significant bugs when running HTML5 projects on iOS <https://github.com/godotengine/godot/issues/26554>`__
+.. attention:: `There are significant bugs when running HTML5 projects on iOS
+               <https://github.com/godotengine/godot/issues?q=is:issue+is:open+label:platform:html5+ios>`__
                (regardless of the browser). We recommend using
                :ref:`iOS' native export functionality <doc_exporting_for_ios>`
                instead, as it will also result in better performance.
@@ -33,21 +34,23 @@ in the user's browser.
     it's recommended to play the exported project using a Chromium-based browser
     instead of Firefox.
 
-WebGL 2
--------
+WebGL version
+-------------
 
-Until the *OpenGL ES 3* renderer is removed from Godot in favor of *Vulkan*,
-HTML5 export uses *WebGL 2* when the *GLES3* option is selected.
+Depending on your choice of renderer, Godot can target WebGL 1.0 (*GLES2*) or
+WebGL 2.0 (*GLES3*).
 
-.. warning:: Using WebGL 2 is not recommended due to its expected removal
-             from Godot without replacement.
+WebGL 1.0 is the recommended option if you want your project to be supported
+on all browsers with the best performance.
 
-WebGL 2 is not supported in all browsers. **Firefox** and
-**Chromium** (Chrome, Opera) are the most popular supported browsers,
-**Safari** and **Edge** do not work. On **iOS**, all browsers are based on
-WebKit (i.e. Safari), so they will also not work.
+Godot's GLES3 renderer targets high end devices, and the performance using
+WebGL 2.0 can be subpar. Some features are also not supported in WebGL 2.0
+specifically.
 
-Godot's WebGL 2 renderer has issues with 3D and is no longer maintained.
+Additionally, while most browsers support WebGL 2.0, this is not yet the case
+for **Safari**. WebGL 2.0 support is coming in Safari 15 for macOS, and is not
+available yet for any **iOS** browser (all WebKit-based like Safari).
+See `Can I use WebGL 2.0 <https://caniuse.com/webgl2>`__ for details.
 
 Limitations
 -----------
