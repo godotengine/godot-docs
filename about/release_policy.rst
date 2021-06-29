@@ -139,6 +139,6 @@ Maintenance (patch) releases will be released as needed with potentially very
 short development cycles, to provide users of the current stable branch with
 the latest bug fixes for their production needs.
 
-As for the upcoming Godot 4.0, we can only say that we aim for a **2021**
-release, but any closer estimate is likely to be hard to uphold. Alpha builds
-will be published as soon as the main features for Godot 4.0 are finalized.
+As for the upcoming Godot 4.0, we can only say that we aim for a release in
+the **first half of 2022**, but any closer estimate is likely to be hard to uphold.
+Alpha builds will be published as soon as the main features for Godot 4.0 are finalized.
