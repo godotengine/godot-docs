@@ -478,7 +478,6 @@ using the `ARGUMENT` command:
 
     module_env = env.Clone()
     module_env.Append(CCFLAGS=['-O2'])
-    module_env.Append(CXXFLAGS=['-std=c++11'])
 
     if ARGUMENTS.get('summator_shared', 'no') == 'yes':
         # Shared lib compilation
