@@ -76,7 +76,7 @@ This means that any node can access a singleton named "PlayerVariables" with:
 
  .. code-tab:: csharp
 
-    var playerVariables = (PlayerVariables)GetNode("/root/PlayerVariables");
+    var playerVariables = GetNode<PlayerVariables>("/root/PlayerVariables");
     playerVariables.Health -= 10; // Instance field.
 
 If the **Enable** column is checked (which is the default), then the singleton can
@@ -254,7 +254,7 @@ Finally, we need to fill the empty callback functions in the two scenes:
 
     public void OnButtonPressed()
     {
-        var global = (Global)GetNode("/root/Global");
+        var global = GetNode<Global>("/root/Global");
         global.GotoScene("res://Scene2.tscn");
     }
 
@@ -274,7 +274,7 @@ and
 
     public void OnButtonPressed()
     {
-        var global = (Global)GetNode("/root/Global");
+        var global = GetNode<Global>("/root/Global");
         global.GotoScene("res://Scene1.tscn");
     }
 

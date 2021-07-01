@@ -261,7 +261,7 @@ To obtain it using a camera, the following code can be used:
     {
         if (@event is InputEventMouseButton eventMouseButton && eventMouseButton.Pressed && eventMouseButton.ButtonIndex == 1)
         {
-            var camera = (Camera)GetNode("Camera");
+            var camera = GetNode<Camera>("Camera");
             var from = camera.ProjectRayOrigin(eventMouseButton.Position);
             var to = from + camera.ProjectRayNormal(eventMouseButton.Position) * RayLength;
         }
