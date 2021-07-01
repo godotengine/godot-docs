@@ -83,7 +83,7 @@ There are two ways to load resources from code. First, you can use the ``load()`
     public override void _Ready()
     {
         var texture = (Texture)GD.Load("res://robi.png"); // Godot loads the Resource when it reads the line.
-        var sprite = (Sprite)GetNode("sprite");
+        var sprite = GetNode<Sprite>("sprite");
         sprite.Texture = texture;
     }
 
