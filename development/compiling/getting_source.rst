@@ -31,9 +31,9 @@ the following in a terminal:
 
 ::
 
-    # Use --depth 1 argument to avoid cloning the whole unneeded commit history.
-    # Don't use --depth 1 if you're cloning for engine development purposes.
-    git clone https://github.com/godotengine/godot.git --depth 1
+    git clone https://github.com/godotengine/godot.git
+    # You can add the --depth 1 argument to omit the commit history.
+    # Faster, but not all Git operations (like blame) will work.
 
 For any stable release, visit the `release page <https://github.com/godotengine/godot/releases>`__
 and click on the link for the release you want.
