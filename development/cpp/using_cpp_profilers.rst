@@ -165,7 +165,7 @@ Xcode Instruments
 .. image:: img/cpp_profiler_time_profiler_record.png
 
 - Perform the actions you wish to profile in the editor or project. When you're done,
-  click **Stop** button.
+  click the **Stop** button.
 
 - Wait for the results to appear.
 - At the bottom of the window you will see a call tree for all CPU threads started, and
