@@ -246,9 +246,17 @@ a {
     color: var(--link-color);
 }
 
-.sphinx-tabs .sphinx-menu a.item {
-    /* Original definition has `!important` */
-    color: var(--link-color) !important;
+.sphinx-tabs-tab {
+    color: var(--link-color);
+}
+
+.sphinx-tabs-tab[aria-selected="true"] {
+    background-color: var(--code-background-color);
+    border-bottom: 1px solid var(--code-background-color);
+}
+
+.sphinx-tabs-panel {
+    background-color: var(--code-background-color);
 }
 
 a:hover {
