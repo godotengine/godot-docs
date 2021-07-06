@@ -172,6 +172,6 @@ Xcode Instruments
   the **Heaviest Stack Trace** overview.
 - Select **Hide system libraries** in the **Call Tree** menu (at the bottom of window) to
   remove external modules.
-- You can use timeline at the top of the window to display details for the specific time period.
+- You can use the timeline at the top of the window to display details for the specific time period.
 
 .. image:: img/cpp_profiler_time_profiler_result.png
