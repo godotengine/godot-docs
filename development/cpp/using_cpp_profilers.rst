@@ -169,7 +169,7 @@ Xcode Instruments
 
 - Wait for the results to appear.
 - At the bottom of the window you will see a call tree for all CPU threads started, and
-  **Heaviest Stack Trace** overview.
+  the **Heaviest Stack Trace** overview.
 - Select **Hide system libraries** in the **Call Tree** menu (at the bottom of window) to
   remove external modules.
 - You can use timeline at the top of the window to display details for the specific time period.
