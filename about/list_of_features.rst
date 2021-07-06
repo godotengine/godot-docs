@@ -309,7 +309,7 @@ Scripting
 - :ref:`Use threads <doc_using_multiple_threads>` to perform asynchronous actions
   or make use of multiple processor cores.
 
-:ref:`C#: <toc-learn-scripting-gdscript>`
+:ref:`C#: <toc-learn-scripting-C#>`
 
 - Packaged in a separate binary to keep file sizes and dependencies down.
 - Uses Mono 6.x.
