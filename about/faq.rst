@@ -18,7 +18,7 @@ In short:
 
 All the contents of this accompanying documentation are published under
 the permissive Creative Commons Attribution 3.0 (`CC-BY 3.0 <https://creativecommons.org/licenses/by/3.0/>`_) license, with attribution
-to "Juan Linietsky, Ariel Manzur and the Godot Engine community".
+to "Juan Linietsky, Ariel Manzur and the Godot Engine community."
 
 Logos and icons are generally under the same Creative Commons license. Note
 that some third-party libraries included with Godot's source code may have
