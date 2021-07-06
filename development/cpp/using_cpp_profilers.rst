@@ -157,7 +157,7 @@ Xcode Instruments
 
 .. image:: img/cpp_profiler_time_profiler.png
 
-- You can also attach Time Profiler to a running process by selecting it from the **Target**
+- You can also attach the Time Profiler to a running process by selecting it from the **Target**
   menu.
 
 - Click the **Start an immediate mode recording** button to start profiling.
