@@ -247,7 +247,7 @@ functionality to officially supported add-ons in future versions of Godot.
 In terms of binary size, this also has the advantage of making you pay only for
 what you actually use in your project. (In the meantime, you can
 :ref:`compile custom export templates with unused features disabled <doc_optimizing_for_size>`
-to optimize the distribution size of your project).
+to optimize the distribution size of your project.)
 
 How should assets be created to handle multiple resolutions and aspect ratios?
 ------------------------------------------------------------------------------
