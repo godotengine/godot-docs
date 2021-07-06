@@ -116,16 +116,19 @@ child.
 
    Our scene setup
 
+.. warning::
+
+   AnimationPlayer inherits from Node instead of Node2D or Node3D, which means
+   that the child nodes will not inherit the transform from the parent nodes
+   due to a bare Node being present in the hierarchy.
+
+   Therefore, it is not recommended to add nodes that have a 2D/3D transform
+   as a child of an AnimationPlayer node.
+
 The sprite holds an image texture. We animate that sprite to move
 between two points on the screen. For this tutorial, use the default Godot
 icon as the sprite's texture. As a starting point, move the sprite
 to a left position on the screen.
-
-.. tip::
-
-   Adding animated nodes as children to the AnimationPlayer node is not
-   required, but it is a nice way of distinguishing animated nodes from
-   non-animated nodes in the Scene Tree.
 
 Select the AnimationPlayer node, then click the "Animation" button in the
 animation editor. From the list select "New" (|Add
