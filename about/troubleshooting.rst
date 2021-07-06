@@ -80,6 +80,13 @@ peripherals' drivers to their latest version. If the bug persists, you need to
 disconnect the faulty peripherals before opening the editor. You can then
 connect the peripheral again.
 
+Editor tooltips in the Inspector and Node docks blink when they're displayed.
+-----------------------------------------------------------------------------
+
+This is a `known issue <https://github.com/godotengine/godot/issues/32990>`__
+caused by the third-party Stardock Fences application on Windows.
+The only known workaround is to disable Stardock Fences while using Godot.
+
 The Godot editor appears frozen after clicking the system console.
 ------------------------------------------------------------------
 
