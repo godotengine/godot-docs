@@ -399,8 +399,9 @@ directly.
 
 You can name a script and register it as a type in the editor with the
 ``class_name`` keyword followed by the class's name. You may add a comma and an
-optional path to an image to use as an icon. You will then find your new type in
-the Node or Resource creation dialog.
+optional path to a PNG or SVG image to use as an icon (16×16 minimum, 32×32 recommended).
+You will then find your new type in the Node or Resource creation dialog.
+Note that the icon will only appear after restarting the editor.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
