@@ -101,7 +101,7 @@ offers you, check out the :ref:`GDScript scripting guide <doc_gdscript>`.
 
 There are several reasons to use GDScript--especially when you are prototyping, in
 alpha/beta stages of your project, or are not creating the next AAA title--but the
-most salient reason is the overall **reduction of complexity.**
+most salient reason is the overall **reduction of complexity**.
 
 The original intent of creating a tightly integrated, custom scripting language for
 Godot was two-fold: first, it reduces the amount of time necessary to get up and running
@@ -409,8 +409,8 @@ This custom UI toolkit :ref:`can't be used as a library <doc_faq_use_godot_as_li
 but you can still
 :ref:`use Godot to create non-game applications by using the editor <doc_faq_non_game_applications>`.
 
-Why does Godot not use STL (Standard Template Library)
-------------------------------------------------------
+Why does Godot not use STL (Standard Template Library)?
+-------------------------------------------------------
 
 Like many other libraries (Qt as an example), Godot does not make use of
 STL. We believe STL is a great general purpose library, but we had special
