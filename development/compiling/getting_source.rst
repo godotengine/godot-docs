@@ -46,7 +46,7 @@ after the ``--branch`` (or just ``-b``) argument::
     git clone https://github.com/godotengine/godot.git --branch 3.x
 
     # Clone the `3.2.3-stable` tag. This is a fixed revision that will never change.
-    git clone https://github.com/godotengine/godot.git -b 3.2.3-stable --depth 1
+    git clone https://github.com/godotengine/godot.git -b 3.2.3-stable
 
 There are also generally branches besides ``master`` for each major version.
 
