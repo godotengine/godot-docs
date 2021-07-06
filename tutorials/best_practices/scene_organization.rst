@@ -254,7 +254,7 @@ Choosing a node tree structure
 So, a developer starts work on a game only to stop at the vast possibilities
 before them. They might know what they want to do, what systems they want to
 have, but *where* to put them all? Well, how one goes about making their game
-is always up to them. One can construct node trees in myriad ways.
+is always up to them. One can construct node trees in countless ways.
 But, for those who are unsure, this helpful guide can give them a sample of
 a decent structure to start with.
 
