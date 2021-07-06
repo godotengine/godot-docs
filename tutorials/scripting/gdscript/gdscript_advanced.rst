@@ -318,7 +318,7 @@ states and quick structs:
 For & while
 -----------
 
-Iterating in some statically typed languages can be quite complex:
+Iterating using the C-style for loop in C-derived languages can be quite complex:
 
 .. code-block:: cpp
 
@@ -338,7 +338,7 @@ Iterating in some statically typed languages can be quite complex:
         std::cout << *it << std::endl;
     }
 
-This is usually greatly simplified in dynamically typed languages:
+Because of this, GDScript makes the opinonated decision to have a for-in loop over iterables instead:
 
 ::
 
@@ -368,7 +368,7 @@ The range() function can take 3 arguments:
     range(b, n) # Will go from b to n-1.
     range(b, n, s) # Will go from b to n-1, in steps of s.
 
-Some statically typed programming language examples:
+Some examples involving C-style for loops:
 
 .. code-block:: cpp
 
@@ -391,7 +391,7 @@ Translate to:
     for i in range(5, 10, 2):
         pass
 
-And backwards looping is done through a negative counter:
+And backwards looping done through a negative counter:
 
 ::
 
