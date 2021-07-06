@@ -43,7 +43,7 @@ With ``git``, you can also clone a stable release by specifying its branch or ta
 after the ``--branch`` (or just ``-b``) argument::
 
     # Clone the continuously maintained stable branch (`3.x` as of writing).
-    git clone https://github.com/godotengine/godot.git --branch 3.x
+    git clone https://github.com/godotengine/godot.git -b 3.x
 
     # Clone the `3.2.3-stable` tag. This is a fixed revision that will never change.
     git clone https://github.com/godotengine/godot.git -b 3.2.3-stable
