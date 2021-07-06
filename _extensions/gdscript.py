@@ -339,7 +339,7 @@ class GDScriptLexer(RegexLexer):
 
 
 def setup(sphinx):
-    sphinx.add_lexer("gdscript", GDScriptLexer())
+    sphinx.add_lexer("gdscript", GDScriptLexer)
 
     return {
         "parallel_read_safe": True,
