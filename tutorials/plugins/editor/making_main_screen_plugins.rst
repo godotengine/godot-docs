@@ -110,7 +110,7 @@ Here is the full plugin script:
     func _enter_tree():
         main_panel_instance = MainPanel.instance()
         # Add the main panel to the editor's main viewport.
-        get_editor_interface().get_editor_viewport().add_child(main_panel_instance)
+        get_editor_interface().get_editor_main_control().add_child(main_panel_instance)
         # Hide the main panel. Very much required.
         make_visible(false)
 
@@ -142,8 +142,8 @@ a reference to the scene, and we instance it into `main_panel_instance`.
 
 The ``_enter_tree()`` function is called before ``_ready()``. This is where
 we instance the main panel scene, and add them as children of specific parts
-of the editor. We use ``get_editor_interface().get_editor_viewport()`` to
-obtain the viewport and add our main panel instance as a child to it.
+of the editor. We use ``get_editor_interface().get_editor_main_control()`` to
+obtain the main editor control and add our main panel instance as a child to it.
 We call the ``make_visible(false)`` function to hide the main panel so
 it doesn't compete for space when first activating the plugin.
 
