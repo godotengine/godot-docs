@@ -56,19 +56,19 @@ To build an iOS plugin:
 
     - You should use the same header files for iOS plugins and for the iOS export template.
 
-3. In the ``Build Settings`` tab, specify the compilation flags for your static library in ``OTHER_CFLAGS``. The most important ones are ``-fcxx-modules``, ``-fmodules``, and ``-DDEBUG`` if you need debug support. Other flags should be the same you use to compile Godot. For instance:
+3. In the ``Build Settings`` tab, specify the compilation flags for your static library in ``OTHER_CFLAGS``. The most important ones are ``-fcxx-modules``, ``-fmodules``, and ``-DDEBUG`` if you need debug support. Other flags should be the same you use to compile Godot. For instance: 
 
-+--------------------------------------------------------------------------------------------------------+
-| ``-DPTRCALL_ENABLED -DDEBUG_ENABLED -DDEBUG_MEMORY_ALLOC -DDISABLE_FORCED_INLINE -DTYPED_METHOD_BIND`` |
-+--------------------------------------------------------------------------------------------------------+
+::
+
+    -DPTRCALL_ENABLED -DDEBUG_ENABLED -DDEBUG_MEMORY_ALLOC -DDISABLE_FORCED_INLINE -DTYPED_METHOD_BIND
 
 4. Add the required logic for your plugin and build your library to generate a ``.a`` file. You will probably need to build both ``debug`` and ``release`` target ``.a`` files. Depending on your needs, pick either or both. If you need both debug and release ``.a`` files, their name should match following pattern: ``[PluginName].[TargetType].a``. You can also build the static library with your SCons configuration.
 
 5. The iOS plugin system also supports ``.xcframework`` files. To generate one, you can use a command such as:
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-| ``xcodebuild -create-xcframework -library [DeviceLibrary].a -library [SimulatorLibrary].a -output [PluginName].xcframework``|
-+-----------------------------------------------------------------------------------------------------------------------------+
+::
+
+    xcodebuild -create-xcframework -library [DeviceLibrary].a -library [SimulatorLibrary].a -output [PluginName].xcframework
 
 6. Create a Godot iOS Plugin configuration file to help the system detect and load your plugin:
 
