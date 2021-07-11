@@ -212,10 +212,10 @@ Each quadrant can be subdivided to allocate any number of shadow maps; the follo
 
 .. image:: img/shadow_quadrants2.png
 
-The allocation logic consists of:
+The shadow atlas allocates space as follows:
 
-- The biggest shadow map size (when no subdivision is used), which represents a light the size of the screen (or bigger).
-- Subdivisions (smaller maps), which represent shadows for lights that are further away from view and proportionally smaller.
+- The biggest shadow map size (when no subdivision is used) represents a light the size of the screen (or bigger).
+- Subdivisions (smaller maps) represent shadows for lights that are further away from view and proportionally smaller.
 
 Every frame, the following procedure is performed for all lights:
 
