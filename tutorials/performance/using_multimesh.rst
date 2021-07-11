@@ -23,7 +23,7 @@ This means, that millions of objects will be *always* or *never* drawn, dependin
 of the whole MultiMesh. It is possible to provide a custom visibility rect for them, but it will always
 be *all-or-none* visibility.
 
-If the objects are simple enough (just a couple of vertices), this is generally not much of a problem,
+If the objects are simple enough (just a couple of vertices), this is generally not much of a problem
 as most modern GPUs are optimized for this use case. A workaround is to create several MultiMeshes
 for different areas of the world.
 
