@@ -580,6 +580,11 @@ code,
 
 /* Syntax highlighting */
 
+/* Remove default red boxes around Pygments errors */
+.highlight .err {
+    border: none;
+}
+
 .highlight {
     background-color: var(--highlight-background-color);
 }
