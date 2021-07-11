@@ -21,7 +21,7 @@ planes, 3D geometry (to determine where each face or vertex is siding),
 etc. A **normal** *is* a **unit vector**, but it's called *normal*
 because of its usage. (Just like we call (0,0) the Origin!).
 
-It's as simple as it looks. The plane passes by the origin and the
+The plane passes by the origin and the
 surface of it is perpendicular to the unit vector (or *normal*). The
 side towards the vector points to is the positive half-space, while the
 other side is the negative half-space. In 3D this is exactly the same,
@@ -130,8 +130,8 @@ inverted negative and positive half spaces:
     N = -N;
     D = -D;
 
-Of course, Godot also implements this operator in :ref:`Plane <class_Plane>`,
-so doing:
+Godot also implements this operator in :ref:`Plane <class_Plane>`.
+So, using the format below will work as expected:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -142,12 +142,9 @@ so doing:
 
     var invertedPlane = -plane;
 
-Will work as expected.
-
-So, remember, a plane is just that and its main practical use is
-calculating the distance to it. So, why is it useful to calculate the
-distance from a point to a plane? It's extremely useful! Let's see some
-simple examples..
+So, remember, the plane's main practical use is that we can
+calculate the distance to it. So, when is it useful to calculate the
+distance from a point to a plane? Let's see some examples.
 
 Constructing a plane in 2D
 --------------------------
@@ -157,7 +154,7 @@ Constructing them in 2D is easy, this can be done from either a normal
 (unit vector) and a point, or from two points in space.
 
 In the case of a normal and a point, most of the work is done, as the
-normal is already computed, so just calculate D from the dot product of
+normal is already computed, so calculate D from the dot product of
 the normal and the point.
 
 .. tabs::
@@ -196,8 +193,8 @@ degrees to either side:
     // Alternatively (depending the desired side of the normal):
     // var normal = new Vector2(-dvec.y, dvec.x);
 
-The rest is the same as the previous example, either point_a or
-point_b will work since they are in the same plane:
+The rest is the same as the previous example. Either point_a or
+point_b will work, as they are in the same plane:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -214,13 +211,13 @@ point_b will work since they are in the same plane:
     // this works the same
     // var D = normal.Dot(pointB);
 
-Doing the same in 3D is a little more complex and will be explained
+Doing the same in 3D is a little more complex and is explained
 further down.
 
 Some examples of planes
 -----------------------
 
-Here is a simple example of what planes are useful for. Imagine you have
+Here is an example of what planes are useful for. Imagine you have
 a `convex <https://www.mathsisfun.com/definitions/convex.html>`__
 polygon. For example, a rectangle, a trapezoid, a triangle, or just any
 polygon where no faces bend inwards.

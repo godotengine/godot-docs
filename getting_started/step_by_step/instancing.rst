@@ -170,7 +170,7 @@ Godot, such as Model-View-Controller (MVC) or Entity-Relationship diagrams.
 Instead, you can start by imagining the elements players will see in your game
 and structure your code around them.
 
-For example, you could break down a simple shooter game like so:
+For example, you could break down a shooter game like so:
 
 .. image:: img/instancing_diagram_shooter.png
 

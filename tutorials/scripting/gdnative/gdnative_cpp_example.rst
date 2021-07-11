@@ -328,9 +328,9 @@ that we defined in our header file. Note that the ``register_method`` call
 it. However, we do not have to tell Godot about our constructor, destructor and
 ``_init`` functions.
 
-The other method of note is our ``_process`` function, which simply keeps track
+The other method of note is our ``_process`` function, which keeps track
 of how much time has passed and calculates a new position for our sprite using a
-simple sine and cosine function. What stands out is calling
+sine and cosine function. What stands out is calling
 ``owner->set_position`` to call one of the build in methods of our Sprite. This
 is because our class is a container class; ``owner`` points to the actual Sprite
 node our script relates to. In the upcoming NativeScript 1.1, ``set_position``
@@ -678,10 +678,9 @@ showing the methods that have changed so don't remove anything we're omitting:
 Now when the project is compiled we'll see another property called speed.
 Changing its value will make the animation go faster or slower.
 
-For this example there is no obvious advantage of using a setter and getter. It
-is just more code to write. For a simple example as this there may be a good
-reason for a setter if you want to react on the variable being changed but in
-many cases just binding the variable will be enough.
+For this example there is no obvious advantage of using a setter and getter.
+A good reason for a setter would be if you wanted to react on the variable being changed, but in
+many cases binding the variable is enough.
 
 Getters and setters become far more useful in more complex scenarios where you
 need to make additional choices based on the state of your object.
@@ -845,7 +844,7 @@ the old and new syntax. The class is defined slightly differently and we no
 longer use the ``owner`` member to call methods on the Godot side of our object.
 A lot of the improvements are hidden under the hood.
 
-This example only deals with simple variables and simple methods. Especially
+This example only deals with simple variables and methods. Especially
 once you start passing references to other objects or when you start calling
 methods that require more complex parameters, NativeScript 1.1 does start to
 show its benefits.
@@ -853,9 +852,9 @@ show its benefits.
 Next steps
 ----------
 
-The above is only a simple example, but we hope it shows you the basics. You can
+We hope the above example showed you the basics. You can
 build upon this example to create full-fledged scripts to control nodes in Godot
 using C++.
 
-You should be able to edit and recompile the plugin while the Godot editor
-remains open; just rerun the project after the library has finished building.
+To edit and recompile the plugin while the Godot editor
+remains open, rerun the project after the library has finished building.

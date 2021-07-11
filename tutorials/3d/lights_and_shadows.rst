@@ -80,8 +80,8 @@ does not affect the lighting at all and can be anywhere.
 
 .. image:: img/light_directional.png
 
-Every face whose front-side is hit by the light rays is lit, while the others stay dark. Most light types
-have specific parameters, but directional lights are pretty simple in nature, so they don't.
+Every face whose front-side is hit by the light rays is lit, while the others stay dark. Unlike most
+other light types directional lights, don't have specific parameters.
 
 Directional shadow mapping
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -215,10 +215,10 @@ Each quadrant can be subdivided to allocate any number of shadow maps; the follo
 
 .. image:: img/shadow_quadrants2.png
 
-The allocation logic is simple. The biggest shadow map size (when no subdivision is used)
-represents a light the size of the screen (or bigger).
-Subdivisions (smaller maps) represent shadows for lights that are further away
-from view and proportionally smaller.
+The shadow atlas allocates space as follows:
+
+- The biggest shadow map size (when no subdivision is used) represents a light the size of the screen (or bigger).
+- Subdivisions (smaller maps) represent shadows for lights that are further away from view and proportionally smaller.
 
 Every frame, the following procedure is performed for all lights:
 
@@ -240,6 +240,6 @@ Godot supports no filter, PCF5 and PCF13.
 
 .. image:: img/shadow_pcf1.png
 
-It affects the blockyness of the shadow outline:
+It affects the blockiness of the shadow outline:
 
 .. image:: img/shadow_pcf2.png

@@ -139,7 +139,7 @@ can be controlled to determine blending:
 
 .. image:: img/animtree7.gif
 
-The ranges in X and Y can be controlled (and labeled for convenience). By default, points can be placed anywhere (just right-click on
+The ranges in X and Y can be controlled (and labeled for convenience). By default, points can be placed anywhere (right-click on
 the coordinate system or use the *add point* button) and triangles will be generated automatically using Delaunay.
 
 .. image:: img/animtree8.gif

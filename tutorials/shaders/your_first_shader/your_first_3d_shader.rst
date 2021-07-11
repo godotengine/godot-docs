@@ -18,10 +18,10 @@ functionality for common use cases and all the user needs to do in the shader is
 set the proper parameters. This is especially true for a PBR (physically based
 rendering) workflow.
 
-This is a two-part tutorial. In this first part we are going to go through how
-to make a simple terrain using vertex displacement from a heightmap in the
+This is a two-part tutorial. In this first part we will create terrain using
+vertex displacement from a heightmap in the
 vertex function. In the :ref:`second part <doc_your_second_spatial_shader>` we
-are going to take the concepts from this tutorial and walk through how to set up
+will take the concepts from this tutorial and set up
 custom materials in a fragment shader by writing an ocean water shader.
 
 .. note:: This tutorial assumes some basic shader knowledge such as types
@@ -265,7 +265,7 @@ Now it looks much better.
 
 Using uniforms, we can even change the value every frame to animate the height
 of the terrain. Combined with :ref:`Tweens <class_Tween>`, this can be
-especially useful for simple animations.
+especially useful for animations.
 
 Interacting with light
 ----------------------

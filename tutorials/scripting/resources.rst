@@ -316,11 +316,11 @@ Let's see some examples.
             }
         }
 
-    Instead of just inlining the Dictionary values, one could also, alternatively...
+    Instead of inlining the Dictionary values, one could also, alternatively:
 
-    1. Import a table of values from a spreadsheet and generate these key-value pairs, or...
+    1. Import a table of values from a spreadsheet and generate these key-value pairs.
 
-    2. Design a visualization within the editor and create a simple plugin that adds it
+    2. Design a visualization within the editor and create a plugin that adds it
        to the Inspector when you open these types of Resources.
 
     CurveTables are the same thing, except mapped to an Array of float values

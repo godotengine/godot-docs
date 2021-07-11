@@ -90,7 +90,7 @@ tools in Godot.
 Drawbacks
 ---------
 
-There are some drawbacks to this simple file system design. The first issue is that
+There are some drawbacks to this file system design. The first issue is that
 moving assets around (renaming them or moving them from one path to another inside
 the project) will break existing references to these assets. These references will
 have to be re-defined to point at the new asset location.
@@ -107,5 +107,5 @@ on other platforms, such as Linux, Android, etc. This may also apply to exported
 which use a compressed package to store all files.
 
 It is recommended that your team clearly define a naming convention for files when
-working with Godot. One simple fool-proof convention is to only allow lowercase
+working with Godot. One fool-proof convention is to only allow lowercase
 file and path names.

@@ -28,7 +28,7 @@ Example of GDScript
 -------------------
 
 Some people can learn better by taking a look at the syntax, so
-here's a simple example of how GDScript looks.
+here's an example of how GDScript looks.
 
 ::
 

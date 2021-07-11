@@ -114,7 +114,7 @@ added to the scene tree and is drawn directly from the code. The SurfaceTool gen
 a MeshInstance to be seen.
 
 ImmediateGeometry is useful for prototyping because of the straightforward API, but it is slow because the geometry
-is rebuilt every frame. It is most useful for quickly adding simple geometry to debug visually (e.g. by drawing lines to
+is rebuilt every frame. It is most useful for adding simple geometry to debug visually (e.g. by drawing lines to
 visualize physics raycasts etc.).
 
 For more information about ImmediateGeometry, please see the :ref:`ImmediateGeometry tutorial <doc_immediategeometry>`.

@@ -90,7 +90,7 @@ to work around it. This difficulty can be expressed as:
 
 If the problem is *too complex* for most users to solve, the software must offer
 a ready-made solution for it. Likewise, if the problem is easy for the user to
-workaround, offering such a solution is unnecessary and it's up to the user to
+work around, offering such a solution is unnecessary and it's up to the user to
 do it.
 
 The exception, however, is when the user stumbles into this problem *frequently
@@ -148,7 +148,7 @@ problems (as described in #2) also make their appearance on stage.
 .. image:: img/best_practices5.png
 
 The main problem is that, in reality, it rarely works this way. Most of the
-time, just writing an individual solution to each problem results in code that
+time, writing an individual solution to each problem results in code that
 is simpler and more maintainable.
 
 Additionally, solutions that target individual problems are better for the
@@ -157,7 +157,7 @@ to learn and remember a more complex system they will only need for simple
 tasks.
 
 Big and flexible solutions also have an additional drawback which is that, over
-time, they are rarely flexible enough for all users, which keep requesting more
+time, they are rarely flexible enough for all users, who keep requesting more
 functions added (and making the API and codebase more and more complex).
 
 #6: Cater to common use cases, leave the door open for the rare ones
@@ -225,7 +225,7 @@ but this path is always the advised one.
 Not every problem has a simple solution and, many times, the right choice is to
 use a third party library to solve the problem.
 
-As Godot requires to be shipped in a large amount of platforms, we just can't
+As Godot requires to be shipped in a large amount of platforms, we can't
 link libraries dynamically. Instead, we bundle them in our source tree.
 
 .. image:: img/best_practices8.png

@@ -57,7 +57,7 @@ Pay special attention to colors and icons, as each type has a different represen
 Connections
 ~~~~~~~~~~~
 
-Connecting is a relatively simple process. Drag an *Output Port* towards an *Input Port*.
+To make a connection, drag an *Output Port* towards an *Input Port*.
 
 .. image:: img/visual_script_connect.gif
 
@@ -267,7 +267,7 @@ These are nodes you can use as temporary storage for your graphs. Make sure they
 .. image:: img/visual_script41.png
 
 
-As it can be seen above, there are two nodes available: A simple getter, and a sequenced setter (setting requires a sequence port).
+As you can see above, there are two nodes available: a simple getter, and a sequenced setter (setting requires a sequence port).
 
 
 Scene Node
@@ -305,7 +305,7 @@ instancing the node, it's simpler to drag the desired resource from the filesyst
 Resource Path
 ^^^^^^^^^^^^^
 
-This node is a simple helper to get a string with a path to a resource you can pick. It's useful in functions that
+This node is a helper to get a string with a path to a resource you can pick. It's useful in functions that
 load things from disk.
 
 
@@ -330,7 +330,7 @@ given condition.
 Condition
 ^^^^^^^^^
 
-This is a simple node that checks a bool port. If ``true``, it will go via the "true" sequence port. If ``false``,
+This is a node that checks a boolean port. If ``true``, it will go via the "true" sequence port. If ``false``,
 the second. After going for either of them, it goes via the "done" port. Leaving sequence
 ports disconnected is fine if not all of them are used.
 
@@ -390,7 +390,7 @@ the condition in the "cond" data port is met.
 Functions
 ~~~~~~~~~
 
-Functions are simple helpers, most of the time deterministic. They take some arguments as
+Functions are helpers, most of the time deterministic. They take some arguments as
 input and return an output. They are almost never sequenced.
 
 

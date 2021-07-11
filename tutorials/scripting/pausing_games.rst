@@ -12,8 +12,8 @@ However, this is not as simple as it seems. The game might be stopped,
 but it might be desirable that some menus and animations continue
 working.
 
-Implementing a fine-grained control for what can be paused (and what can
-not) is a lot of work, so a simple framework for pausing is provided in
+Implementing a fine-grained control for what can be paused (and what cannot)
+is a lot of work, so a simple framework for pausing is provided in
 Godot.
 
 How pausing works
@@ -91,7 +91,7 @@ and set its pause mode to "Process" then hide it:
 
 .. image:: img/pause_popup.png
 
-Just by setting the root of the pause popup to "Process", all children
+By setting the root of the pause popup to "Process", all children
 and grandchildren will inherit that state. This way, this branch of the
 scene tree will continue working when paused.
 

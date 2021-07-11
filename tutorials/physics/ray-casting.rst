@@ -12,10 +12,10 @@ behaviors, AI, etc. to take place. This tutorial will explain how to
 do this in 2D and 3D.
 
 Godot stores all the low level game information in servers, while the
-scene is just a frontend. As such, ray casting is generally a
-lower-level task. For simple raycasts, node such as
+scene is only a frontend. As such, ray casting is generally a
+lower-level task. For simple raycasts, nodes like
 :ref:`RayCast <class_RayCast>` and :ref:`RayCast2D <class_RayCast2D>`
-will work, as they will return every frame what the result of a raycast
+will work, as they return every frame what the result of a raycast
 is.
 
 Many times, though, ray-casting needs to be a more interactive process

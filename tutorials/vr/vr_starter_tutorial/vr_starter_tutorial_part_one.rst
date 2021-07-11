@@ -24,7 +24,7 @@ Throughout the course of this tutorial, we will cover:
 - How to make a teleportation locomotion system that uses the VR controllers.
 - How to make a artificial movement locomotion system that uses the VR controllers.
 - How to create a :ref:`RigidBody <class_RigidBody>`-based system that allows for picking up, dropping, and throwing RigidBody nodes using the VR controllers.
-- How to create simple destroyable target.
+- How to create a destroyable target.
 - How to create some special :ref:`RigidBody <class_RigidBody>`-based objects that can destroy the targets.
 
 .. tip:: While this tutorial can be completed by beginners, it is highly
@@ -218,7 +218,7 @@ Next is a :ref:`Position3D <class_Position3D>` node called ``Grab_Pos``. This is
 they are held by the VR controller.
 
 A large :ref:`Area <class_Area>` node called ``Sleep_Area`` is used to disable sleeping for any RigidBody nodes within its :ref:`CollisionShape <class_CollisionShape>`,
-simple called ``CollisionShape``. This is needed because if a :ref:`RigidBody <class_RigidBody>` node falls asleep, then the VR controller will be unable to grab it.
+called ``CollisionShape``. This is needed because if a :ref:`RigidBody <class_RigidBody>` node falls asleep, then the VR controller will be unable to grab it.
 By using ``Sleep_Area``, we can write code that makes any :ref:`RigidBody <class_RigidBody>` node within it not able to sleep, therefore allowing the VR controller to grab it.
 
 An :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` node called ``AudioStreamPlayer3D`` has a sound loaded that we will use when an object has been picked up, dropped
@@ -1041,7 +1041,7 @@ Reducing motion sickness
 
 To help reduce motion sickness while moving, we are going to add a vignette effect that will only be visible while the player moves.
 
-First, quickly switch back to ``Game.tscn```. Under the :ref:`ARVROrigin <class_ARVROrigin>` node there is a child node called ``Movement_Vignette``. This node is going to apply a simple
+First, quickly switch back to ``Game.tscn```. Under the :ref:`ARVROrigin <class_ARVROrigin>` node there is a child node called ``Movement_Vignette``. This node is going to apply a
 vignette to the VR headset when the player is moving using the VR controllers. This should help reduce motion sickness.
 
 Open up ``Movement_Vignette.tscn``, which you can find in the ``Scenes`` folder. The scene is just a :ref:`ColorRect <class_ColorRect>` node with a custom

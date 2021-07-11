@@ -4,7 +4,7 @@ Introduction to 3D
 ==================
 
 Creating a 3D game can be challenging. That extra Z coordinate makes
-many of the common techniques that helped to make 2D games simple no
+many of the common techniques that helped to make 2D games simpler no
 longer work. To aid in this transition, it is worth mentioning that
 Godot uses similar APIs for 2D and 3D. Most nodes are the same and
 are present in both 2D and 3D versions. In fact, it is worth checking
@@ -52,7 +52,7 @@ DCC-created models
 
 There are two pipelines to import 3D models in Godot. The first and most
 common one is by :ref:`doc_importing_3d_scenes`, which allows you to import
-entire scenes (just as they look in the DCC), including animation,
+entire scenes (exactly as they look in the DCC), including animation,
 skeletal rigs, blend shapes, etc.
 
 The second pipeline is by importing simple .OBJ files as mesh resources,
@@ -76,7 +76,7 @@ submitting them to the 3D API has a significant performance cost.
 Immediate geometry
 ------------------
 
-If, instead, there is a requirement to generate simple geometry that
+If, instead, you need to generate simple geometry that
 will be updated often, Godot provides a special node,
 :ref:`ImmediateGeometry <class_ImmediateGeometry>`,
 which provides an OpenGL 1.x style immediate-mode API to create points,
