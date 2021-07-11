@@ -154,7 +154,7 @@ Auto Exposure (HDR)
 *This feature is only available when using the GLES3 backend.*
 
 Even though, in most cases, lighting and texturing are heavily artist controlled,
-Godot supports a high dynamic range implementation with the auto exposure
+Godot supports a basic high dynamic range implementation with the auto exposure
 mechanism. This is generally used for the sake of realism when combining
 interior areas with low light and outdoors. Auto exposure simulates the camera
 (or eye) in an effort to adapt between light and dark locations and their
