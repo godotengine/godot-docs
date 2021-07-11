@@ -56,32 +56,48 @@ Save the scene.
 Enemy script
 ~~~~~~~~~~~~
 
-Add a script to the ``Mob`` and add the following member variables:
+Add a script to the ``Mob`` like this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     extends RigidBody2D
 
-    export var min_speed = 150  # Minimum speed range.
-    export var max_speed = 250  # Maximum speed range.
-
  .. code-tab:: csharp
 
     public class Mob : RigidBody2D
     {
-        // Don't forget to rebuild the project so the editor knows about the new export variables.
-
-        [Export]
-        public int MinSpeed = 150; // Minimum speed range.
-
-        [Export]
-        public int MaxSpeed = 250; // Maximum speed range.
+        // Don't forget to rebuild the project.
     }
 
-When we spawn a mob, we'll pick a random value between ``min_speed`` and
-``max_speed`` for how fast each mob will move (it would be boring if they were
-all moving at the same speed).
+ .. code-tab:: cpp
+
+    // Copy `player.gdns` to `mob.gdns` and replace `Player` with `Mob`.
+    // Attach the `mob.gdns` file to the Mob node.
+
+    // Create two files `mob.cpp` and `mob.hpp` next to `entry.cpp` in `src`.
+    // This code goes in `mob.hpp`. We also define the methods we'll be using here.
+    #ifndef MOB_H
+    #define MOB_H
+
+    #include <AnimatedSprite.hpp>
+    #include <Godot.hpp>
+    #include <RigidBody2D.hpp>
+
+    class Mob : public godot::RigidBody2D {
+        GODOT_CLASS(Mob, godot::RigidBody2D)
+
+        godot::AnimatedSprite *_animated_sprite;
+
+    public:
+        void _init() {}
+        void _ready();
+        void _on_VisibilityNotifier2D_screen_exited();
+
+        static void _register_methods();
+    };
+
+    #endif // MOB_H
 
 Now let's look at the rest of the script. In ``_ready()`` we play the animation
 and randomly choose one of the three animation types:
@@ -102,6 +118,23 @@ and randomly choose one of the three animation types:
         animSprite.Playing = true;
         string[] mobTypes = animSprite.Frames.GetAnimationNames();
         animSprite.Animation = mobTypes[GD.Randi() % mobTypes.Length];
+    }
+
+ .. code-tab:: cpp
+
+    // This code goes in `mob.cpp`.
+    #include "mob.hpp"
+
+    #include <RandomNumberGenerator.hpp>
+    #include <SpriteFrames.hpp>
+
+    void Mob::_ready() {
+        godot::Ref<godot::RandomNumberGenerator> random = godot::RandomNumberGenerator::_new();
+        random->randomize();
+        _animated_sprite = get_node<godot::AnimatedSprite>("AnimatedSprite");
+        _animated_sprite->_set_playing(true);
+        godot::PoolStringArray mob_types = _animated_sprite->get_sprite_frames()->get_animation_names();
+        _animated_sprite->set_animation(mob_types[random->randi() % mob_types.size()]);
     }
 
 First, we get the list of animation names from the AnimatedSprite's ``frames``
@@ -131,6 +164,13 @@ add this code:
     public void OnVisibilityNotifier2DScreenExited()
     {
         QueueFree();
+    }
+
+ .. code-tab:: cpp
+
+    // This code goes in `mob.cpp`.
+    void Mob::_on_VisibilityNotifier2D_screen_exited() {
+        queue_free();
     }
 
 This completes the `Mob` scene.

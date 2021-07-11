@@ -81,9 +81,6 @@ Add a script to ``Main``. At the top of the script, we use ``export
     export(PackedScene) var mob_scene
     var score
 
-    func _ready():
-        randomize()
-
  .. code-tab:: csharp
 
     public class Main : Node
@@ -97,11 +94,99 @@ Add a script to ``Main``. At the top of the script, we use ``export
     #pragma warning restore 649
 
         public int Score;
+    }
 
-        public override void _Ready()
-        {
-            GD.Randomize();
-        }
+ .. code-tab:: cpp
+
+    // Copy `player.gdns` to `main.gdns` and replace `Player` with `Main`.
+    // Attach the `main.gdns` file to the Main node.
+
+    // Create two files `main.cpp` and `main.hpp` next to `entry.cpp` in `src`.
+    // This code goes in `main.hpp`. We also define the methods we'll be using here.
+    #ifndef MAIN_H
+    #define MAIN_H
+
+    #include <AudioStreamPlayer.hpp>
+    #include <CanvasLayer.hpp>
+    #include <Godot.hpp>
+    #include <Node.hpp>
+    #include <PackedScene.hpp>
+    #include <PathFollow2D.hpp>
+    #include <RandomNumberGenerator.hpp>
+    #include <Timer.hpp>
+
+    #include "hud.hpp"
+    #include "player.hpp"
+
+    class Main : public godot::Node {
+        GODOT_CLASS(Main, godot::Node)
+
+        int score;
+        HUD *_hud;
+        Player *_player;
+        godot::Node2D *_start_position;
+        godot::PathFollow2D *_mob_spawn_location;
+        godot::Timer *_mob_timer;
+        godot::Timer *_score_timer;
+        godot::Timer *_start_timer;
+        godot::AudioStreamPlayer *_music;
+        godot::AudioStreamPlayer *_death_sound;
+        godot::Ref<godot::RandomNumberGenerator> _random;
+
+    public:
+        godot::Ref<godot::PackedScene> mob_scene;
+
+        void _init() {}
+        void _ready();
+        void game_over();
+        void new_game();
+        void _on_MobTimer_timeout();
+        void _on_ScoreTimer_timeout();
+        void _on_StartTimer_timeout();
+
+        static void _register_methods();
+    };
+
+    #endif // MAIN_H
+
+We also add a call to ``randomize()`` here so that the random number
+generator generates different random numbers each time the game is run:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _ready():
+        randomize()
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        GD.Randomize();
+    }
+
+ .. code-tab:: cpp
+
+    // This code goes in `main.cpp`.
+    #include "main.hpp"
+
+    #include <SceneTree.hpp>
+
+    #include "mob.hpp"
+
+    void Main::_ready() {
+        _hud = get_node<HUD>("HUD");
+        _player = get_node<Player>("Player");
+        _start_position = get_node<godot::Node2D>("StartPosition");
+        _mob_spawn_location = get_node<godot::PathFollow2D>("MobPath/MobSpawnLocation");
+        _mob_timer = get_node<godot::Timer>("MobTimer");
+        _score_timer = get_node<godot::Timer>("ScoreTimer");
+        _start_timer = get_node<godot::Timer>("StartTimer");
+        // Uncomment these after adding the nodes in the "Sound effects" section of "Finishing up".
+        //_music = get_node<godot::AudioStreamPlayer>("Music");
+        //_death_sound = get_node<godot::AudioStreamPlayer>("DeathSound");
+        _random = (godot::Ref<godot::RandomNumberGenerator>)godot::RandomNumberGenerator::_new();
+        _random->randomize();
     }
 
 Click the ``Main`` node and you will see the ``Mob Scene`` property in the Inspector
@@ -156,6 +241,20 @@ new game:
         GetNode<Timer>("StartTimer").Start();
     }
 
+ .. code-tab:: cpp
+
+    // This code goes in `main.cpp`.
+    void Main::game_over() {
+        _score_timer->stop();
+        _mob_timer->stop();
+    }
+
+    void Main::new_game() {
+        score = 0;
+        _player->start(_start_position->get_position());
+        _start_timer->start();
+    }
+
 Now connect the ``timeout()`` signal of each of the Timer nodes (``StartTimer``,
 ``ScoreTimer`` , and ``MobTimer``) to the main script. ``StartTimer`` will start
 the other two timers. ``ScoreTimer`` will increment the score by 1.
@@ -163,14 +262,19 @@ the other two timers. ``ScoreTimer`` will increment the score by 1.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
+    func _on_ScoreTimer_timeout():
+        score += 1
+
     func _on_StartTimer_timeout():
         $MobTimer.start()
         $ScoreTimer.start()
 
-    func _on_ScoreTimer_timeout():
-        score += 1
-
  .. code-tab:: csharp
+
+    public void OnScoreTimerTimeout()
+    {
+        Score++;
+    }
 
     public void OnStartTimerTimeout()
     {
@@ -178,15 +282,36 @@ the other two timers. ``ScoreTimer`` will increment the score by 1.
         GetNode<Timer>("ScoreTimer").Start();
     }
 
-    public void OnScoreTimerTimeout()
-    {
-        Score++;
+ .. code-tab:: cpp
+
+    // This code goes in `main.cpp`.
+    void Main::_on_ScoreTimer_timeout() {
+        score += 1;
+    }
+
+    void Main::_on_StartTimer_timeout() {
+        _mob_timer->start();
+        _score_timer->start();
+    }
+
+    // Also add this to register all methods and the mob scene property.
+    void Main::_register_methods() {
+        godot::register_method("_ready", &Main::_ready);
+        godot::register_method("game_over", &Main::game_over);
+        godot::register_method("new_game", &Main::new_game);
+        godot::register_method("_on_MobTimer_timeout", &Main::_on_MobTimer_timeout);
+        godot::register_method("_on_ScoreTimer_timeout", &Main::_on_ScoreTimer_timeout);
+        godot::register_method("_on_StartTimer_timeout", &Main::_on_StartTimer_timeout);
+        godot::register_property("mob_scene", &Main::mob_scene, (godot::Ref<godot::PackedScene>)nullptr);
     }
 
 In ``_on_MobTimer_timeout()``, we will create a mob instance, pick a random
 starting location along the ``Path2D``, and set the mob in motion. The
 ``PathFollow2D`` node will automatically rotate as it follows the path, so we
 will use that to select the mob's direction as well as its position.
+When we spawn a mob, we'll pick a random value between ``150.0`` and
+``250.0`` for how fast each mob will move (it would be boring if they were
+all moving at the same speed).
 
 Note that a new instance must be added to the scene using ``add_child()``.
 
@@ -213,7 +338,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
         mob.rotation = direction
 
         # Choose the velocity.
-        var velocity = Vector2(rand_range(mob.min_speed, mob.max_speed), 0)
+        var velocity = Vector2(rand_range(150.0, 250.0), 0.0)
         mob.linear_velocity = velocity.rotated(direction)
 
  .. code-tab:: csharp
@@ -243,8 +368,34 @@ Note that a new instance must be added to the scene using ``add_child()``.
         mob.Rotation = direction;
 
         // Choose the velocity.
-        var velocity = new Vector2((float)GD.RandRange(mob.MinSpeed, mob.MaxSpeed), 0);
+        var velocity = new Vector2((float)GD.RandRange(150.0, 250.0), 0);
         mob.LinearVelocity = velocity.Rotated(direction);
+    }
+
+ .. code-tab:: cpp
+
+    // This code goes in `main.cpp`.
+    void Main::_on_MobTimer_timeout() {
+        // Choose a random location on Path2D.
+        _mob_spawn_location->set_offset((real_t)_random->randi());
+
+        // Create a Mob instance and add it to the scene.
+        godot::Node *mob = mob_scene->instance();
+        add_child(mob);
+
+        // Set the mob's direction perpendicular to the path direction.
+        real_t direction = _mob_spawn_location->get_rotation() + (real_t)Math_PI / 2;
+
+        // Set the mob's position to a random location.
+        mob->set("position", _mob_spawn_location->get_position());
+
+        // Add some randomness to the direction.
+        direction += _random->randf_range((real_t)-Math_PI / 4, (real_t)Math_PI / 4);
+        mob->set("rotation", direction);
+
+        // Choose the velocity for the mob.
+        godot::Vector2 velocity = godot::Vector2(_random->randf_range(150.0, 250.0), 0.0);
+        mob->set("linear_velocity", velocity.rotated(direction));
     }
 
 .. important:: Why ``PI``? In functions requiring angles, Godot uses *radians*,
@@ -257,8 +408,8 @@ Note that a new instance must be added to the scene using ``add_child()``.
 Testing the scene
 ~~~~~~~~~~~~~~~~~
 
-Let's test the scene to make sure everything is working. Add this to
-``_ready()``:
+Let's test the scene to make sure everything is working. Add this ``new_game``
+call to ``_ready()``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -272,6 +423,13 @@ Let's test the scene to make sure everything is working. Add this to
     public override void _Ready()
     {
         NewGame();
+    }
+
+ .. code-tab:: cpp
+
+    // This code goes in `main.cpp`.
+    void Main::_ready() {
+        new_game();
     }
 
 Let's also assign ``Main`` as our "Main Scene" - the one that runs automatically
