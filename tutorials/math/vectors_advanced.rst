@@ -212,7 +212,7 @@ point_b will work, as they are in the same plane:
     // var D = normal.Dot(pointB);
 
 Doing the same in 3D is a little more complex and is explained
-in :ref:`Collision detection in 3D`.
+further down.
 
 Some examples of planes
 -----------------------
