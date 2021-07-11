@@ -226,7 +226,7 @@ You can offset the vertices by directly adding to ``VERTEX``.
     VERTEX += vec2(10.0, 0.0);
   }
 
-Combined with the ``TIME`` built-in variable, this can be used for
+Combined with the ``TIME`` built-in variable, this can be used for basic
 animation.
 
 .. code-block:: glsl
