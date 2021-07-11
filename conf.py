@@ -191,6 +191,9 @@ html_css_files = [
     "css/custom.css",
 ]
 
+if not on_rtd:
+    html_css_files.append("css/dev.css")
+
 html_js_files = [
     "js/custom.js",
     ('https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', {'defer': 'defer'}),
