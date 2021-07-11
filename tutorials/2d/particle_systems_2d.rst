@@ -6,7 +6,7 @@ Particle systems (2D)
 Intro
 -----
 
-Godot has a particle system. Particle systems are used to simulate complex physical effects,
+Particle systems are used to simulate complex physical effects,
 such as sparks, fire, magic particles, smoke, mist, etc.
 
 The idea is that a "particle" is emitted at a fixed interval and with a
