@@ -183,7 +183,7 @@ Now the character falls smoothly. Let's make it walk to the sides, left
 and right when touching the directional keys. Remember that the values
 being used (for speed at least) are pixels/second.
 
-This adds support for walking when pressing left and right:
+This adds basic support for walking when pressing left and right:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
