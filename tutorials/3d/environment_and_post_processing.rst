@@ -69,7 +69,7 @@ There are many ways to set the background:
 
 - **Clear Color** uses the default clear color defined by the project. The background will be a constant color.
 - **Custom Color** is like Clear Color, but with a custom color value.
-- **Sky** lets you define a panorama sky (a 360 degree sphere texture) or a procedural sky (featuring a gradient and an optional sun). Objects will reflect it and absorb ambient light from it.
+- **Sky** lets you define a panorama sky (a 360 degree sphere texture) or a procedural sky (a basic sky featuring a gradient and an optional sun). Objects will reflect it and absorb ambient light from it.
 - **Color+Sky** lets you define a sky (as above), but uses a constant color value for drawing the background. The sky will only be used for reflection and ambient light.
 
 Ambient Light
