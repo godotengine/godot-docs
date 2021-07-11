@@ -1,0 +1,8 @@
+/**
+ * CSS tweaks that are only added outside ReadTheDocs (i.e. when built locally).
+ */
+
+/* Re-add default red boxes around Pygments errors */
+.highlight .err {
+    border: 1px solid #FF0000;
+}

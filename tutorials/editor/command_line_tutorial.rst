@@ -287,11 +287,9 @@ that is headless (server build, no video) is ideal for this.
     godot --export "Linux/X11" /var/builds/project
     godot --export Android /var/builds/project.apk
 
-The platform names recognized by the ``--export`` switch are the same as
-displayed in the export wizard of the editor. To get a list of supported
-platforms from the command line, try exporting to a non-recognized
-platform and the full listing of platforms your configuration supports
-will be shown.
+The preset name must match the name of an export preset defined in the
+project's ``export_presets.cfg`` file. If the preset name contains spaces or
+special characters (such as "Windows Desktop"), it must be surrounded with quotes.
 
 To export a debug version of the game, use the ``--export-debug`` switch
 instead of ``--export``. Their parameters and usage are the same.
@@ -299,6 +297,12 @@ instead of ``--export``. Their parameters and usage are the same.
 To export only a PCK file, use the ``--export-pack`` option followed by the
 preset name and output path, with the file extension, instead of ``--export``.
 The output path extension determines the package's format, either PCK or ZIP.
+
+.. warning::
+
+    When specifying a relative path as the path for `--export`, `--export-debug`
+    or `--export-pack`, the path will be relative to the directory containing
+    the ``project.godot`` file, **not** relative to the current working directory.
 
 Running a script
 ----------------

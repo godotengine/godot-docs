@@ -10,3 +10,4 @@ User Interface (UI)
    size_and_anchors
    gui_containers
    bbcode_in_richtextlabel
+   control_node_gallery

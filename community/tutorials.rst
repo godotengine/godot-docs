@@ -28,10 +28,9 @@ Video tutorials
 - `Game Endeavor <https://www.youtube.com/channel/UCLweX1UtQjRjj7rs_0XQ2Eg/videos>`_ (2D, GDScript).
 - `Game from Scratch <https://www.youtube.com/watch?v=iDEcP8Mc-7s&list=PLS9MbmO_ssyDk79j9ewONxV88fD5e_o5d>`_ (2D and 3D, GDScript and C#).
 - `HeartBeast <https://www.youtube.com/watch?v=wETY5_9kFtA&list=PL9FzW-m48fn2jlBu_0DRh7PvAt-GULEmd>`_ (2D, GDScript).
-- `Jeremy Bullock <https://www.youtube.com/channel/UCwJw2-V5S1TkBjLQ3_Ws54g>`_ (2D and 3D, GDScript, VisualScript and C#).
 - `KidsCanCode <https://www.youtube.com/channel/UCNaPQ5uLX5iIEHUCLmfAgKg/playlists>`__ (2D and 3D, GDScript and VisualScript).
 - `Mister Taft Creates <https://www.youtube.com/playlist?list=PL4vbr3u7UKWqwQlvwvgNcgDL1p_3hcNn2>`_ (2D, GDScript).
-- `Miziziziz <https://www.youtube.com/playlist?list=PLmugv6_kd0qN6AyjG245_Pdak4MXKUx88>`_ (2D, GDScript).
+- `Miziziziz <https://www.youtube.com/playlist?list=PLmugv6_kd0qN6AyjG245_Pdak4MXKUx88>`_ (2D and 3D, GDScript).
 - `P1X / Krzysztof Jankowski <https://www.youtube.com/playlist?list=PLvDk7UKhld4xGPovdB4IFtAHYMYjx_-3K>`_ (3D).
 - `Pigdev <https://www.youtube.com/playlist?list=PLPMN4vCRFdordS3E-3zi0Hdh7pAsbWQ6a>`_ (2D, GDScript).
 - `Steincodes <https://www.youtube.com/c/steincodes/playlists>`__ (2D, GDScript and VisualScript).
@@ -39,10 +38,14 @@ Video tutorials
 - `Code with Tom <https://www.youtube.com/playlist?list=PLiUQR4U_J9ec0k91iHPme_qtfS1nrWF3W>`_ (2D and 3D, GDScript).
 - `BornCG <https://www.youtube.com/playlist?list=PLda3VoSoc_TSBBOBYwcmlamF1UrjVtccZ>`_ (2D and 3D, GDScript).
 - `Gonkee <https://www.youtube.com/channel/UCJqCPFHdbc6443G3Sz6VYDw>`_ (2D and 3D, GDScript, Shaders).
+- `TheGuideKnight <https://www.youtube.com/playlist?list=PLYcTJBw32KtX2fvOdtO_fS3Nd6sxM71tn>`_ (2D, GDScript).
+- `GDScript Dude <https://www.youtube.com/channel/UCQs0i6vKISElM6mh7OzLouQ>`_ (GDScript).
+- `Garbaj <https://www.youtube.com/c/Garbaj/>`_ (3D, GDScript).
 
 Text tutorials
 --------------
 
+- `GDScript website by Andrew Wilkes <https://gdscript.com>`__
 - `Godot Recipes by KidsCanCode <http://godotrecipes.com/>`__
 - `Steincodes <https://steincodes.tumblr.com>`__
 
@@ -55,5 +58,5 @@ Devlogs
 Resources
 ---------
 
-- `awesome-godot: A curated list of resources by Calinou <https://github.com/Calinou/awesome-godot>`_
+- `awesome-godot: A curated list of free/libre plugins, scripts and add-ons <https://github.com/godotengine/awesome-godot>`_
 - `Zeef Godot Engine: A curated directory of resources by Andre Schmitz <https://godot-engine.zeef.com/andre.antonio.schmitz>`_

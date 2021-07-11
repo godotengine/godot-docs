@@ -93,7 +93,7 @@ This is an example of how to create a sprite from code and move it using the low
 
 
     # VisualServer expects references to be kept around.
-    var sprite
+    var texture
 
 
     func _ready():
@@ -101,11 +101,11 @@ This is an example of how to create a sprite from code and move it using the low
         var ci_rid = VisualServer.canvas_item_create()
         # Make this node the parent.
         VisualServer.canvas_item_set_parent(ci_rid, get_canvas_item())
-        # Draw a sprite on it.
+        # Draw a texture on it.
         # Remember, keep this reference.
-        sprite = load("res://mysprite.png")
+        texture = load("res://my_texture.png")
         # Add it, centered.
-        VisualServer.canvas_item_add_texture_rect(ci_rid, Rect2(sprite.get_size() / 2, sprite.get_size()), sprite)
+        VisualServer.canvas_item_add_texture_rect(ci_rid, Rect2(texture.get_size() / 2, texture.get_size()), texture)
         # Add the item, rotated 45 degrees and translated.
         var xform = Transform2D().rotated(deg2rad(45)).translated(Vector2(20, 30))
         VisualServer.canvas_item_set_transform(ci_rid, xform)

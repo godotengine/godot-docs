@@ -23,7 +23,7 @@ example, a font resource is often bundled together with the font textures.
 
 The Godot file system avoids using metadata files. Existing asset managers and VCSs
 are better than anything we can implement, so Godot tries its best to play along
-with SVN, Git, Mercurial, Perforce, etc.
+with Subversion, Git, Mercurial, etc.
 
 Example of file system contents:
 

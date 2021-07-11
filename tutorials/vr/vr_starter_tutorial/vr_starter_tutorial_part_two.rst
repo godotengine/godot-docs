@@ -848,7 +848,7 @@ that the functions defined defined in ``VR_Interactable_Rigidbody`` can be calle
 
 Next, let's look at the class variables:
 
-* ``SWORD_DAMAGE``: A constant to define the amount of damage the sword does. This damage is applied  to every object in the sword on every ``_physics_process`` call
+* ``SWORD_DAMAGE``: A constant to define the amount of damage the sword does. This damage is applied to every object in the sword on every ``_physics_process`` call
 * ``COLLISION_FORCE``: A constant that defines the amount of force applied to :ref:`RigidBody <class_RigidBody>` nodes when the sword collides with a :ref:`PhysicsBody <class_PhysicsBody>`.
 * ``damage_body``: A variable to hold the :ref:`KinematicBody <class_KinematicBody>` node used to detect whether the sword is stabbing a :ref:`PhysicsBody <class_PhysicsBody>` node or not.
 * ``sword_noise``: A variable to hold the :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` node used to play a sound when the sword collides with something.

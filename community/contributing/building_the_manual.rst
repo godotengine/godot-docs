@@ -16,7 +16,7 @@ To get started, you need to:
 4. Install the Sphinx extensions defined in the `godot-docs repository
    <https://github.com/godotengine/godot-docs/>`__ ``requirements.txt`` file.
 
-We recommend using `pip <https://pip.pypa.io>` _, Python’s package manager to
+We recommend using `pip <https://pip.pypa.io>`__, Python’s package manager to
 install all these tools. It comes pre-installed with `Python
 <https://www.python.org/>`__. Ensure that you install and use Python 3. Here are
 the commands to clone the repository and then install all requirements.

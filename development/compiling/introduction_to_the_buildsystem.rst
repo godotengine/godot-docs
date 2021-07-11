@@ -299,7 +299,7 @@ For instance, you may want to build Godot in parallel with the aforementioned
 
      set SCONSFLAGS=-j4
 
- .. code-tab:: powershell Windows (powershell)
+ .. code-tab:: powershell Windows (PowerShell)
 
      $env:SCONSFLAGS="-j4"
 

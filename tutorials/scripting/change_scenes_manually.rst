@@ -21,11 +21,11 @@ scenes which one instances and adds to the tree at runtime:
 
  .. code-tab:: csharp
 
-    public PackedScene simultaneousScene;
+    public Node simultaneousScene;
 
     public MyClass()
     {
-        simultaneousScene = (PackedScene)ResourceLoader.Load("res://levels/level2.tscn").instance();
+        simultaneousScene = ResourceLoader.Load<PackedScene>("res://levels/level2.tscn").Instance();
     }
 
     public void _AddASceneManually()
@@ -130,7 +130,7 @@ a scene's data between scene changes (adding the scene to the root node).
 
         GetTree().GetRoot().AddChild(scene);
 
-Perhaps instead they wish to display multiple scenes at the same time using a
+Perhaps instead they wish to display multiple scenes at the same time using
 :ref:`ViewportContainers <class_ViewportContainer>`. This is optimal in
 cases where the intent is to render different content in different parts of the
 screen. Minimaps and split-screen multiplayer are good examples.

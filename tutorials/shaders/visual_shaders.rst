@@ -1,7 +1,7 @@
 .. _doc_visual_shaders:
 
-VisualShaders
-=============
+Using VisualShaders
+===================
 
 Just as VisualScript is an alternative for users that prefer a graphical
 approach to coding, VisualShaders are the visual alternative for creating

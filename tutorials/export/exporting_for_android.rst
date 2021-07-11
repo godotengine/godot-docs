@@ -3,30 +3,51 @@
 Exporting for Android
 =====================
 
-Exporting for Android has fewer requirements than compiling Godot for it.
-The following steps detail what is needed to setup the SDK and the engine.
+Exporting for Android has fewer requirements than compiling Godot for Android.
+The following steps detail what is needed to set up the Android SDK and the engine.
 
 Download the Android SDK
 ------------------------
 
-Download and install the Android SDK from
-`developer.android.com <https://developer.android.com/studio/>`__.
+Download and install the Android SDK.
 
-If you install Android Studio, you need to run it once to complete the SDK setup.
+- You can install it using `Android Studio version 4.1 or later <https://developer.android.com/studio/>`__.
+
+  - Run it once to complete the SDK setup using these `instructions <https://developer.android.com/studio/intro/update#sdk-manager>`__.
+  - Ensure that the `required packages <https://developer.android.com/studio/intro/update#recommended>`__ are installed as well.
+
+    - Android SDK Platform-Tools version 30.0.5 or later
+    - Android SDK Build-Tools version 30.0.3
+    - Android SDK Platform 29
+    - Android SDK Command-line Tools (latest)
+    - CMake version 3.10.2.4988404
+    - NDK version 21.4.7075529
+
+- You can install it using the `command line tools <https://developer.android.com/studio/#command-tools>`__.
+
+  - Once the command line tools are installed, run the `sdkmanager <https://developer.android.com/studio/command-line/sdkmanager>`__ command to complete the setup process:
+
+::
+
+    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;30.0.3" "platforms;android-29" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;21.4.7075529"
+
+.. note::
+
+    If you are using Linux,
+    **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
 
 Install OpenJDK 8
 -----------------
 
-Download and install  `OpenJDK 8 <https://adoptopenjdk.net/index.html?variant=openjdk8&jvmVariant=hotspot>`__,
-newer versions do not work.
+Download and install  `OpenJDK 8 <https://adoptopenjdk.net/index.html?variant=openjdk8&jvmVariant=hotspot>`__.
 
 Create a debug.keystore
 -----------------------
 
 Android needs a debug keystore file to install to devices and distribute
 non-release APKs. If you have used the SDK before and have built
-projects, ant or eclipse probably generated one for you (on Linux and
-macOS, you can find it in the ``~/.android`` directory).
+projects, ant or eclipse probably generated one for you (in the ``~/.android`` directory on Linux and
+macOS, in the ``C:\Users\<user>\.android\`` directory on Windows).
 
 If you can't find it or need to generate one, the keytool command from
 the JDK can be used for this purpose::
@@ -34,13 +55,6 @@ the JDK can be used for this purpose::
     keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12
 
 This will create a ``debug.keystore`` file in your current directory. You should move it to a memorable location such as ``%USERPROFILE%\.android\``, because you will need its location in a later step. For more information on ``keytool`` usage, see `this Q&A article <https://godotengine.org/qa/21349/jdk-android-file-missing>`__.
-
-Make sure you have adb
-----------------------
-
-Android Debug Bridge (``adb``) is the command line tool used to communicate with
-Android devices. It's installed with the SDK, but you may need to install one
-(any) of the Android API levels for it to be installed in the SDK directory.
 
 Setting it up in Godot
 ----------------------
@@ -55,18 +69,26 @@ Scroll down to the section where the Android settings are located:
 
 .. image:: img/androidsdk.png
 
-In that screen, the path to 3 files needs to be set:
+In that screen, 2 paths need to be set:
 
-- The ``adb`` executable (``adb.exe`` on Windows)
-  - It can usually be found at ``%LOCALAPPDATA%\Android\Sdk\platform-tools\adb.exe`` on Windows and at ``/Users/$USER/Library/Android/sdk/platform-tools/adb`` on macOS.
-
-- The ``jarsigner`` executable (from JDK 6 or 8)
-  - On Windows, OpenJDK installs to a directory like ``%PROGRAMFILES%\AdoptOpenJDK\jdk-8.0.252.09-hotspot\bin``. On Linux and macOS, it typically installs to a directory like ``/usr/bin/jarsigner``. The exact path may vary depending on the OpenJDK update you've installed and your machine's operating system.
+- The ``Android Sdk Path`` should be the location where the Android SDK was installed.
+  - For example ``%LOCALAPPDATA%\Android\Sdk\`` on Windows or ``/Users/$USER/Library/Android/sdk/`` on macOS.
 
 - The debug ``.keystore`` file
   - It can be found in the folder where you put the ``debug.keystore`` file you created above.
 
 Once that is configured, everything is ready to export to Android!
+
+.. note::
+
+    If you get an error saying *"Could not install to device."*, make sure
+    you do not have an application with the same Android package name already
+    installed on the device (but signed with a different key).
+
+    If you have an application with the same Android package name but a
+    different signing key already installed on the device, you **must** remove
+    the application in question from the Android device before exporting to
+    Android again.
 
 Providing launcher icons
 ------------------------
@@ -99,7 +121,7 @@ keystore file; such file can be generated like this:
 
 .. code-block:: shell
 
-    keytool -v -genkey -v -keystore mygame.keystore -alias mygame -keyalg RSA -validity 10000
+    keytool -v -genkey -keystore mygame.keystore -alias mygame -keyalg RSA -validity 10000
 
 This keystore and key are used to verify your developer identity, remember the password and keep it in a safe place!
 Use Google's Android Developer guides to learn more about `APK signing <https://developer.android.com/studio/publish/app-signing>`__.
@@ -116,7 +138,7 @@ Now fill in the following forms in your Android Export Presets:
 a version control system, you should remove it from public repositories and add
 it to your ``.gitignore`` file or equivalent.
 
-Don't forget to uncheck the **Export With Debug** checkbox while choosing the APK's name.
+Don't forget to uncheck the **Export With Debug** checkbox while exporting.
 
 .. image:: img/export-with-debug-button.png
 

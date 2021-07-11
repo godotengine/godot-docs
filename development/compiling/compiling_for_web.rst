@@ -10,7 +10,7 @@ Requirements
 
 To compile export templates for the Web, the following is required:
 
--  `Emscripten 1.39.0+ <https://emscripten.org>`__.
+-  `Emscripten 1.39.9+ <https://emscripten.org>`__.
 -  `Python 3.5+ <https://www.python.org/>`__.
 -  `SCons 3.0+ <https://www.scons.org>`__ build system.
 
@@ -20,16 +20,9 @@ To compile export templates for the Web, the following is required:
 Building export templates
 -------------------------
 
-Before starting, confirm that the Emscripten configuration file exists and
-specifies all settings correctly. This file is available as ``~/.emscripten``
-on UNIX-like systems and ``%USERPROFILE%\.emscripten`` on Windows. It's usually
-written by the Emscripten SDK, e.g. when invoking ``emsdk activate latest``,
-or by your package manager. It's also created when starting Emscripten's
-``emcc`` program if the file doesn't exist.
-
-.. attention:: On Windows, make sure to escape backslashes of paths within the Emscripten
-               configuration file as double backslashes ``\\`` or use Unix-style paths with a
-               single forward slash ``/``.
+Before starting, confirm that ``emcc`` is available in your PATH. This is
+usually configured by the Emscripten SDK, e.g. when invoking ``emsdk activate``
+and ``source ./emsdk_env.sh``/``emsdk_env.bat``.
 
 Open a terminal and navigate to the root directory of the engine source code.
 Then instruct SCons to build the JavaScript platform. Specify ``target`` as
@@ -60,22 +53,49 @@ And ``webassembly_debug.zip`` for the debug template::
 
     mv bin/godot.javascript.opt.debug.zip bin/webassembly_debug.zip
 
-Building per asm.js translation or LLVM backend
------------------------------------------------
+Threads and GDNative
+--------------------
 
-WebAssembly can be compiled in two ways: The default is to first compile to
-asm.js, a highly optimizable subset of JavaScript, using Emscripten's
-*fastcomp* fork of LLVM. This code is then translated to WebAssembly using a
-tool called ``asm2wasm``. Emscripten automatically takes care of both
-processes, we simply run SCons.
+The default export templates do not include threads and GDNative support for
+performance and compatibility reasons. See the
+:ref:`export page <doc_javascript_export_options>` for more info.
 
-The other method uses LLVM's WebAssembly backend. This backend is available
-starting with LLVM 8 or in development builds.
-Emscripten manages this process as well, so we just invoke SCons.
+You can build the export templates using the option ``threads_enabled=yes`` or
+``gdnative_enabled=yes`` to enable threads or GDNative support::
 
-In order to choose one of the two methods, the ``LLVM_ROOT`` variable in the
-Emscripten configuration file is used. If it points to a directory containing
-binaries of Emscripten's *fastcomp* fork of clang, ``asm2wasm`` is used.
-This is the default in a normal Emscripten installation. Otherwise,
-LLVM binaries built with the WebAssembly backend will be expected and
-the LLVM's WebAssembly backend is used.
+    scons platform=javascript tools=no threads_enabled=yes target=release
+    scons platform=javascript tools=no threads_enabled=yes target=release_debug
+
+    scons platform=javascript tools=no gdnative_enabled=yes target=release
+    scons platform=javascript tools=no gdnative_enabled=yes target=release_debug
+
+Once finished, the resulting file will be placed in the ``bin`` subdirectory.
+Its name will have either the ``.threads`` or ``.gdnative`` suffix.
+
+Finally, rename the zip archives to ``webassembly_release_threads.zip`` and
+``webassembly_release_gdnative.zip`` for the release template::
+
+    mv bin/godot.javascript.opt.threads.zip bin/webassembly_threads_release.zip
+    mv bin/godot.javascript.opt.gdnative.zip bin/webassembly_gdnative_release.zip
+
+And ``webassembly_debug_threads.zip`` and ``webassembly_debug_gdnative.zip`` for
+the debug template::
+
+    mv bin/godot.javascript.opt.debug.threads.zip bin/webassembly_threads_debug.zip
+    mv bin/godot.javascript.opt.debug.gdnative.zip bin/webassembly_gdnative_debug.zip
+
+Building the editor
+-------------------
+
+It is also possible to build a version of the Godot editor that can run in the
+browser. The editor version requires threads support and is not recommended
+over the native build. You can build the editor with::
+
+    scons platform=javascript tools=yes threads_enabled=yes target=release_debug
+
+Once finished, the resulting file will be placed in the ``bin`` subdirectory.
+Its name will be ``godot.javascript.opt.tools.threads.zip``. You can upload the
+zip content to your web server and visit it with your browser to use the editor.
+
+Refer to the :ref:`export page <doc_javascript_export_options>` for the web
+server requirements.

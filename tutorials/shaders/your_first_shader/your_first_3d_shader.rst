@@ -87,9 +87,9 @@ and thus allow us to add more detail.
 .. image:: img/plane-sub.png
 
 :ref:`PrimitiveMeshes <class_primitivemesh>`, like PlaneMesh, only have one
-     surface, so instead of an array of materials there is only one. Click
-     beside "Material" where it says "[empty]" and select "New ShaderMaterial".
-     Then click the sphere that appears.
+surface, so instead of an array of materials there is only one. Click
+beside "Material" where it says "[empty]" and select "New ShaderMaterial".
+Then click the sphere that appears.
 
 Now click beside "Shader" where it says "[empty]" and select "New Shader".
 
@@ -181,8 +181,8 @@ Click beside it where it says "[empty]" and select "New NoiseTexture". Then in
 your NoiseTexture click beside where it says "Noise" and select "New
 OpenSimplexNoise".
 
-:ref:`OpenSimplexNoise <class_opensimplexnoise>` is used by the NoiseTexture to
-     generate a heightmap.
+.. note:: :ref:`OpenSimplexNoise <class_opensimplexnoise>` is used by the NoiseTexture to
+          generate a heightmap.
 
 Once you set it up and should look like this.
 
@@ -259,7 +259,7 @@ use it to set the height value instead of arbitrarily multiplying by ``0.5``.
 
   VERTEX.y += height * height_scale;
 
-Now it looks  much better.
+Now it looks much better.
 
 .. image:: img/noise-low.png
 
@@ -305,7 +305,7 @@ do that by passing in a second noise texture.
   uniform sampler2D normalmap;
 
 Set this second uniform texture to another NoiseTexture with another
-OpenSimplexNoise. But this time, check off "As Normalmap".
+OpenSimplexNoise. But this time, check **As Normalmap**.
 
 .. image:: img/normal-set.png
 

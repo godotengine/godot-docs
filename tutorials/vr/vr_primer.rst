@@ -7,7 +7,10 @@ This tutorial gives you a springboard into the world of AR and VR in the Godot g
 
 A new architecture was introduced in Godot 3 called the AR/VR Server. On top of this
 architecture, specific implementations are available as interfaces, most of which are plugins
-based on GDNative. This tutorial focuses purely on the core elements abstracted by the core
+based on GDNative. WebXR is supported out of the box in Godot 3.2.4 and later, and
+does not require a plugin.
+
+This tutorial focuses purely on the core elements abstracted by the core
 architecture. This architecture has enough features for you to create an entire VR experience
 that can then be deployed for various interfaces. However, each platform often has some unique
 features that are impossible to abstract. Such features will be documented on the relevant
@@ -129,8 +132,7 @@ in the `GodotVR Repository <https://github.com/GodotVR>`_.
 * `Godot OpenHMD <https://github.com/GodotVR/godot_openhmd>`_ supports OpenHMD, an open source
   API and drivers for headsets.
 * `Godot OpenXR <https://github.com/GodotVR/godot_openxr>`_ supports OpenXR, an open standard
-  for VR and AR software. This plugin is early in development, only supports Linux and requires
-  extra setup described in the repository.
+  for VR and AR software. Tested with SteamVR, Monada and Oculus OpenXR runtimes.
 
 These plugins can be downloaded from GitHub or the Godot Asset Library.
 

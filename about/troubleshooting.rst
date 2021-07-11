@@ -5,6 +5,11 @@ Troubleshooting
 
 This page lists common issues encountered when using Godot and possible solutions.
 
+.. seealso::
+
+    See :ref:`doc_using_the_web_editor` for caveats specific to the HTML5 version
+    of the Godot editor.
+
 Everything I do in the editor or project manager appears delayed by one frame.
 ------------------------------------------------------------------------------
 
@@ -75,6 +80,13 @@ peripherals' drivers to their latest version. If the bug persists, you need to
 disconnect the faulty peripherals before opening the editor. You can then
 connect the peripheral again.
 
+Editor tooltips in the Inspector and Node docks blink when they're displayed.
+-----------------------------------------------------------------------------
+
+This is a `known issue <https://github.com/godotengine/godot/issues/32990>`__
+caused by the third-party Stardock Fences application on Windows.
+The only known workaround is to disable Stardock Fences while using Godot.
+
 The Godot editor appears frozen after clicking the system console.
 ------------------------------------------------------------------
 
@@ -85,6 +97,17 @@ the system console. Godot cannot override this system-specific behavior.
 
 To solve this, select the system console window and press Enter to leave
 selection mode.
+
+Some text such as "NO DC" appears in the top-left corner of the project manager and editor window.
+--------------------------------------------------------------------------------------------------
+
+This is caused by the NVIDIA graphics driver injecting an overlay to display information.
+
+To disable this overlay on Windows, restore your graphics driver settings to the
+default values in the NVIDIA Control Panel.
+
+To disable this overlay on Linux, open ``nvidia-settings``, go to **X Screen 0 >
+OpenGL Settings** then uncheck **Enable Graphics API Visual Indicator**.
 
 The project window appears blurry, unlike the editor.
 -----------------------------------------------------

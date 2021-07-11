@@ -91,6 +91,18 @@ Downloading it (cloning) using `Git <https://git-scm.com/>`_ is recommended.
 The tutorial will assume from now on that you placed the source code in
 ``C:\godot``.
 
+.. warning::
+
+    To prevent slowdowns caused by continuous virus scanning during compilation,
+    add the Godot source folder to the list of exceptions in your antivirus
+    software.
+
+    For Windows Defender, hit the :kbd:`Windows` key, type
+    "Windows Defender Settings" then hit :kbd:`Enter`.
+    Under **Virus & threat protection**, go to **Virus & threat protection setting**
+    and scroll down to **Exclusions**. Click **Add or remove exclusions** then
+    add the Godot source folder.
+
 Compiling
 ---------
 
@@ -100,7 +112,9 @@ Selecting a compiler
 SCons will automatically find and use an existing Visual Studio installation.
 If you do not have Visual Studio installed, it will attempt to use
 MinGW instead. If you already have Visual Studio installed and want to
-use MinGW, pass ``use_mingw=yes`` to the SCons command line.
+use MinGW, pass ``use_mingw=yes`` to the SCons command line. Note that MSVC
+builds cannot be performed from the MSYS2 or MinGW shells. Use either
+``cmd.exe`` or PowerShell instead.
 
 During development, using the Visual Studio compiler is usually a better idea,
 as it links the Godot binary much faster than MinGW. However, MinGW can
@@ -142,7 +156,7 @@ dependencies. Running it will bring up the Project Manager.
           If you are compiling Godot with MinGW, you can make the binary
           even smaller and faster by adding the SCons option ``use_lto=yes``.
           As link-time optimization is a memory-intensive process,
-          this will require about 3 GB of available RAM while compiling.
+          this will require about 7 GB of available RAM while compiling.
 
 .. note:: If you want to use separate editor settings for your own Godot builds
           and official releases, you can enable

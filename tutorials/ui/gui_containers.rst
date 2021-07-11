@@ -1,7 +1,7 @@
 .. _doc_gui_containers:
 
-Containers
-==========
+Using Containers
+================
 
 :ref:`Anchors <doc_size_and_anchors>` are an efficient way to handle
 different aspect ratios for basic multiple resolution handling in GUIs,
@@ -64,7 +64,7 @@ Godot provides several container types out of the box as they serve different pu
 Box Containers
 ^^^^^^^^^^^^^^
 
-Arrange child controls vertically or horizontally (via :ref:`HBoxContainer <class_HBoxContainer>` and
+Arranges child controls vertically or horizontally (via :ref:`HBoxContainer <class_HBoxContainer>` and
 :ref:`VBoxContainer <class_VBoxContainer>`). In the opposite of the designated direction
 (as in, vertical for an horizontal container), it just expands the children.
 
@@ -170,7 +170,7 @@ to its rect size:
     extends Container
 
     func _notification(what):
-        if (what==NOTIFICATION_SORT_CHILDREN):
+        if what == NOTIFICATION_SORT_CHILDREN:
             # Must re-sort the children
             for c in get_children():
                 # Fit to own size

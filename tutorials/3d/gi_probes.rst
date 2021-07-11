@@ -1,7 +1,7 @@
 .. _doc_gi_probes:
 
-GI Probes
-=========
+Using GIProbe
+=============
 
 Introduction
 ------------
@@ -49,6 +49,12 @@ Once the geometry is set up, push the Bake button that appears on the 3D editor
 toolbar to begin the pre-baking process:
 
 .. image:: img/giprobe_bake.png
+
+.. warning::
+
+    Meshes should have sufficiently thick walls to avoid light leaks (avoid
+    one-sided walls). For interior levels, enclose your level geometry in a
+    sufficiently large box and bridge the loops to close the mesh.
 
 Adding lights
 -------------

@@ -6,7 +6,7 @@ Screen-reading shaders
 Introduction
 ~~~~~~~~~~~~
 
-Very often, it is desired to make a shader that reads from the same
+It is often desired to make a shader that reads from the same
 screen to which it's writing. 3D APIs, such as OpenGL or DirectX, make this very
 difficult because of internal hardware limitations. GPUs are extremely
 parallel, so reading and writing causes all sorts of cache and coherency
@@ -15,7 +15,7 @@ properly.
 
 The workaround is to make a copy of the screen, or a part of the screen,
 to a back-buffer and then read from it while drawing. Godot provides a
-few tools that make this process easy!
+few tools that make this process easy.
 
 SCREEN_TEXTURE built-in texture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -135,7 +135,7 @@ Godot:
 DEPTH_TEXTURE
 ~~~~~~~~~~~~~
 
-For 3D Shaders, it's also possible to access the screen depth buffer. For this,
+For 3D shaders, it's also possible to access the screen depth buffer. For this,
 the ``DEPTH_TEXTURE`` built-in is used. This texture is not linear; it must be
 converted via the inverse projection matrix.
 

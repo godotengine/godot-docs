@@ -248,9 +248,17 @@ a {
     color: var(--link-color);
 }
 
-.sphinx-tabs .sphinx-menu a.item {
-    /* Original definition has `!important` */
-    color: var(--link-color) !important;
+.sphinx-tabs-tab {
+    color: var(--link-color);
+}
+
+.sphinx-tabs-tab[aria-selected="true"] {
+    background-color: var(--code-background-color);
+    border-bottom: 1px solid var(--code-background-color);
+}
+
+.sphinx-tabs-panel {
+    background-color: var(--code-background-color);
 }
 
 a:hover {
@@ -313,14 +321,14 @@ hr,
 
 /* JavaScript documentation directives */
 .rst-content dl:not(.docutils) dt {
-    background-color: var(--admonition-note-background-color);
+    background-color: var(--admonition-note-background-color) !important;
     border-color: var(--admonition-note-title-background-color);
     color: var(--admonition-note-color);
 }
 .rst-content dl:not(.docutils) dl dt {
     background-color: var(--admonition-attention-background-color);
     border-color: var(--admonition-attention-title-background-color);
-    color: var(--admonition-attention-color);
+    color: var(--admonition-attention-color) !important;
 }
 .rst-content dl:not(.docutils).class dt,
 .rst-content dl:not(.docutils).function dt,
@@ -349,7 +357,7 @@ hr,
 }
 .rst-content dl:not(.docutils) .sig-paren,
 .rst-content dl:not(.docutils) .optional {
-    color: var(--highlight-operator-color);
+    color: var(--highlight-operator-color) !important;
     font-weight: normal;
     padding: 0 2px;
 }
@@ -375,7 +383,7 @@ hr,
     color: var(--highlight-keyword-color);
 }
 .rst-content dl:not(.docutils) dt a.headerlink {
-    color: var(--link-color);
+    color: var(--link-color) !important;
 }
 .rst-content dl:not(.docutils) dt a.headerlink:visited {
     color: var(--link-color-visited);
@@ -571,6 +579,11 @@ code,
 }
 
 /* Syntax highlighting */
+
+/* Remove default red boxes around Pygments errors */
+.highlight .err {
+    border: none;
+}
 
 .highlight {
     background-color: var(--highlight-background-color);

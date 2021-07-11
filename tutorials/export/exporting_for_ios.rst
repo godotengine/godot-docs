@@ -22,8 +22,7 @@ Export window opens, click **Add..** and select **iOS**.
 The following export options are required. Leaving any blank will cause the
 exporter to throw an error:
 
-  * In the **Application** category
-    * **App Store Team ID** and (Bundle) **Identifier**
+  * In the **Application** category: **App Store Team ID** and (Bundle) **Identifier**
   * Everything in the **Required Icons** category
   * Everything in the **Landscape Launch Screens** category
   * Everything in the **Portrait Launch Screens** category
@@ -93,8 +92,8 @@ you will be able to continue to edit your Godot project in its current location.
 That's it! You can now edit your project in the Godot editor and build it
 in Xcode when you want to run it on a device.
 
-Services for iOS
-----------------
+Plugins for iOS
+---------------
 
-Special iOS services can be used in Godot. Check out the
-:ref:`doc_services_for_ios` page.
+Special iOS plugins can be used in Godot. Check out the
+:ref:`doc_plugins_for_ios` page.

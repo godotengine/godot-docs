@@ -29,7 +29,7 @@ request triggers a rebuild of the online documentation upon merging.
              the :ref:`Godot API <toc-class-ref>` section of this documentation
              from them. If you want to update the description of a class, its
              methods, or properties, read
-             :ref:`doc_updating_the_class_reference_with_git`.
+             :ref:`doc_updating_the_class_reference`.
 
 What is the Godot documentation
 -------------------------------
@@ -49,9 +49,9 @@ contribute, you should also read:
 Contributing changes
 --------------------
 
-**Pull Requests should use the ``master`` branch by default.** Only make Pull
- Requests against other branches (e.g. ``2.1`` or ``3.0``) if your changes only
- apply to that specific version of Godot.
+**Pull Requests should use the** ``master`` **branch by default.** Only make Pull
+Requests against other branches (e.g. ``2.1`` or ``3.0``) if your changes only
+apply to that specific version of Godot.
 
 Though less convenient to edit than a wiki, this Git repository is where we
 write the documentation. Having direct access to the source files in a revision
@@ -62,7 +62,7 @@ Editing existing pages
 
 To edit an existing page, locate its ``.rst`` source file and open it in your
 favorite text editor. You can then commit the changes, push them to your fork,
-and make a pull request. **Note that the pages in ``classes/`` should not be
+and make a pull request. **Note that the pages in** ``classes/`` **should not be
 edited here.** They are automatically generated from Godot’s `XML class
 reference <https://github.com/godotengine/godot/tree/master/doc/classes>`__.
 See `Contribute to the Class Reference
@@ -70,7 +70,7 @@ See `Contribute to the Class Reference
 for details.
 
 .. seealso:: To build the manual and test changes on your computer, see
-             :ref:`doc_building_the_manual`
+             :ref:`doc_building_the_manual`.
 
 Editing pages online
 --------------------

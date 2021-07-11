@@ -28,7 +28,7 @@ Throughout the course of this tutorial, we will cover:
 - How to create some special :ref:`RigidBody <class_RigidBody>`-based objects that can destroy the targets.
 
 .. tip:: While this tutorial can be completed by beginners, it is highly
-          advised to complete :ref:`doc_your_first_game`,
+          advised to complete :ref:`doc_your_first_2d_game`,
           if you are new to Godot and/or game development.
 
           **Some experience with making 3D games is required** before going through this tutorial series.
@@ -246,6 +246,7 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     extends ARVRController
 
     var controller_velocity = Vector3(0,0,0)
@@ -387,7 +388,7 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
         movement_forward.y = 0
         movement_right.y = 0
 
-        if (movement_right.length() > 0 or movement_forward.length() > 0):
+        if movement_right.length() > 0 or movement_forward.length() > 0:
             get_parent().global_translate(movement_right + movement_forward)
             directional_movement = true
         else:
@@ -442,7 +443,7 @@ the same script, so it doesn't matter which you use first. With ``VR_Controller.
 
         elif grab_mode == "RAYCAST":
             grab_raycast.force_raycast_update()
-            if (grab_raycast.is_colliding()):
+            if grab_raycast.is_colliding():
                 var body = grab_raycast.get_collider()
                 if body is RigidBody:
                     if !("NO_PICKUP" in body):
@@ -769,7 +770,7 @@ teleport, it will make the ``teleport_mesh`` visible so the user knows where the
 _________________
 
 If ``held_object`` is not equal to ``null``, then the VR controller is holding something. We then check to see if the object that is being held, ``held_object``, extends
-a class called ``VR_Interactable_Rigidbody``. we have not made ``VR_Interactable_Rigidbody`` yet, but ``VR_Interactable_Rigidbody`` will be a custom class we will use
+a class called ``VR_Interactable_Rigidbody``. We have not made ``VR_Interactable_Rigidbody`` yet, but ``VR_Interactable_Rigidbody`` will be a custom class we will use
 on all of the special/custom :ref:`RigidBody <class_RigidBody>`-based nodes in the project.
 
 .. tip:: Don't worry, we will cover ``VR_Interactable_Rigidbody`` after this section!
@@ -970,6 +971,7 @@ Once you have ``VR_Interactable_Rigidbody.gd`` open, add the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     class_name VR_Interactable_Rigidbody
     extends RigidBody
 
@@ -1081,10 +1083,10 @@ Add the following code:
 
 
     func _process(_delta):
-        if (controller_one == null or controller_two == null):
+        if controller_one == null or controller_two == null:
             return
 
-        if (controller_one.directional_movement == true or controller_two.directional_movement == true):
+        if controller_one.directional_movement == true or controller_two.directional_movement == true:
             visible = true
         else:
             visible = false

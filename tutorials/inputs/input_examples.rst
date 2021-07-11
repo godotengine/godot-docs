@@ -203,7 +203,7 @@ the :kbd:`T`:
     {
         if (inputEvent is InputEventKey keyEvent && keyEvent.Pressed)
         {
-            if ((Keylist)keyEvent.Keycode == KeyList.T)
+            if ((KeyList)keyEvent.Keycode == KeyList.T)
             {
                 GD.Print("T was pressed");
             }
@@ -217,7 +217,7 @@ Keyboard modifiers
 ~~~~~~~~~~~~~~~~~~
 
 Modifier properties are inherited from
-:ref:`InputEventWithModifiers <class_InputEventWithModifiers>`. This  allows
+:ref:`InputEventWithModifiers <class_InputEventWithModifiers>`. This allows
 you to check for modifier combinations using boolean properties. Let's imagine
 you want one thing to happen when the :kbd:`T` is pressed, but something
 different when it's :kbd:`Shift + T`:

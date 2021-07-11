@@ -28,10 +28,12 @@ There are five main sections inside the TSCN file:
 3. Nodes
 4. Connections
 
-The file descriptor looks like ``[gd_scene load_steps=1 format=2]`` and should
-be the first entry in the file. The ``load_steps`` parameter should (in theory)
-be the number of resources within the file. However, in practice, its value seems
-not to matter.
+The file descriptor looks like ``[gd_scene load_steps=3 format=2]`` and should
+be the first entry in the file. The ``load_steps`` parameter is equal to the
+total amount of resources (internal and external) plus one (for the file itself).
+If the file has no resources, ``load_steps`` is omitted. The engine will
+still load the file correctly if ``load_steps`` is incorrect, but this will affect
+loading bars and any other piece of code relying on that value.
 
 These sections should appear in order, but it can be hard to distinguish them.
 The only difference between them is the first element in the heading for all of
@@ -304,7 +306,7 @@ heading. For example, a capsule collision shape looks like:
 
 ::
 
-    [sub_resource  type="CapsuleShape" id=2]
+    [sub_resource type="CapsuleShape" id=2]
 
     radius = 0.5
     height = 3.0

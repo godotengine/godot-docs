@@ -59,7 +59,14 @@ You can achieve the same result in code:
     func _ready():
         pause_mode = Node.PAUSE_MODE_PROCESS
 
-By default all nodes have this property in the "Inherit" state. This
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        PauseMode = Node.PauseModeEnum.Process;
+    }
+
+By default, all nodes have this property in the "Inherit" state. This
 means, that they will only process (or not) depending on what this same
 property is set on the parent node. If the parent is set to "Inherit" ,
 then the grandparent will be checked and so on. Ultimately, if a state

@@ -38,65 +38,42 @@ page in the Mono documentation.
 Setting up C# for Godot
 -----------------------
 
-Windows (Visual Studio)
-~~~~~~~~~~~~~~~~~~~~~~~
+Prerequisites
+~~~~~~~~~~~~~
 
-Download and install the latest version of
-`Visual Studio <https://visualstudio.microsoft.com/downloads/>`_
-(*not* Visual Studio Code), which contains utilities required to use
-C# in Godot. If you don't plan on using the Visual Studio IDE,
-you can download just the
-`Visual Studio Build Tools <https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15>`_
-instead.
-Make sure you at least have the .NET Framework 4.5 targeting pack installed, you can get it using any of the installers mentioned above inside the "Individual components" tab.
+Install the latest stable version of
+`.NET Core SDK <https://dotnet.microsoft.com/download/dotnet-core>`__
+(3.1 as of writing).
 
-Windows (JetBrains Rider)
-~~~~~~~~~~~~~~~~~~~~~~~~~
+As of Godot 3.2.3, installing Mono SDK is not a requirement anymore,
+except it is required if you are building the engine from source.
 
-JetBrains Rider comes with bundled MSBuild, so nothing extra is required.
-Make sure to set the following preferences:
+Godot bundles the parts of Mono needed to run already compiled games,
+however Godot does not include the tools required to build and compile
+games, such as MSBuild. These tools need to be installed separately.
+The required tools are included in the .NET Core SDK. MSBuild is also
+included in the Mono SDK, but it can't build C# projects with the new
+``csproj`` format, therefore .NET Core SDK is required for Godot 3.2.3+.
 
-- In Godot's Editor Settings:
-
-   - Set **Mono External Editor** to **JetBrains Rider**.
-   - set **Mono Build Tool** to **JetBrains Mono**.
-
-- In Rider:
-
-   - Set **MSBuild version** to either **Bundled with Rider** or **.NET Core**.
-   - Install the **Godot support** plugin.
-
-macOS and Linux
-~~~~~~~~~~~~~~~
-
-Download and install the latest version of the
-`Mono SDK <http://www.mono-project.com/download/>`_. As of Godot 3.1 beta 3,
-the version number doesn't matter since Godot bundles its own Mono 5.18
-installation. We only need the Mono installation for NuGet and MSBuild
-which are required to use C# in Godot.
-
-.. note:: To download Mono on macOS, use the "Stable Channel" link
-          from the `Mono Downloads Page <http://www.mono-project.com/download/>`_.
-          The Visual Studio channel is an earlier version of Mono and
-          will not work.
+In summary, you must have installed .NET Core SDK
+**and** the Mono-enabled version of Godot.
 
 Additional notes
 ~~~~~~~~~~~~~~~~
 
-Your Godot version must have Mono support enabled,
-so make sure to download the **Mono version** of Godot.
-If you are building Godot from source, make sure to follow the steps to
-enable Mono support in your build as outlined in the
-:ref:`doc_compiling_with_mono` page.
+Be sure to install the 64-bit version of the SDK(s)
+if you are using the 64-bit version of Godot.
 
-In summary, you must have installed Visual Studio or Mono (depending
-on your operating system) **and** the Mono-enabled version of Godot.
+If you are building Godot from source, install the latest stable version of
+`Mono <https://www.mono-project.com/download/stable/>`__, and make sure to
+follow the steps to enable Mono support in your build as outlined in the
+:ref:`doc_compiling_with_mono` page.
 
 Configuring an external editor
 ------------------------------
 
-C# support in Godot's script editor is minimal. Consider using an
-external IDE or editor, such as  `Visual Studio Code <https://code.visualstudio.com/>`_
+C# support in Godot's built-in script editor is minimal. Consider using an
+external IDE or editor, such as  `Visual Studio Code <https://code.visualstudio.com/>`__
 or MonoDevelop. These provide autocompletion, debugging, and other
 useful features for C#. To select an external editor in Godot,
 click on **Editor → Editor Settings** and scroll down to
@@ -110,16 +87,65 @@ external editors:
 - Visual Studio for Mac
 - JetBrains Rider
 
-.. note::
+See the following sections for how to configure an external editor:
 
-    If you are using Visual Studio Code, ensure you download and install the
-    `C# extension <https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp>`_
-    to enable features like syntax highlighting and IntelliSense.
+JetBrains Rider
+~~~~~~~~~~~~~~~
 
-.. note::
+After reading the "Prerequisites" section, you can download and install
+`JetBrains Rider <https://www.jetbrains.com/rider/download>`__.
 
-    If you are using Visual Studio 2019, you must follow the instructions found
-    in the `:ref:doc_c_sharp_configuring_vs_2019_for_debugging` section below.
+In Godot's **Editor → Editor Settings** menu:
+
+- Set **Mono** -> **Editor** -> **External Editor** to **JetBrains Rider**.
+- Set **Mono** -> **Builds** -> **Build Tool** to **dotnet CLI**.
+
+In Rider:
+
+- Set **MSBuild version** to **.NET Core**.
+- Install the **Godot support** plugin.
+
+Visual Studio Code
+~~~~~~~~~~~~~~~~~~
+
+After reading the "Prerequisites" section, you can download and install
+`Visual Studio Code <https://code.visualstudio.com/download>`__ (aka VS Code).
+
+In Godot's **Editor → Editor Settings** menu:
+
+- Set **Mono** -> **Editor** -> **External Editor** to **Visual Studio Code**.
+
+In Visual Studio Code:
+
+- Install the `C# <https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp>`__ extension.
+- Install the `Mono Debug <https://marketplace.visualstudio.com/items?itemName=ms-vscode.mono-debug>`__ extension.
+- Install the `C# Tools for Godot <https://marketplace.visualstudio.com/items?itemName=neikeq.godot-csharp-vscode>`__ extension.
+
+To configure a project for debugging open the Godot project folder in VS Code.
+Go to the Run tab and click on **create a launch.json file**. Select **C# Godot** from the dropdown
+menu. Now, when you start the debugger in VS Code your Godot project will run.
+
+Visual Studio (Windows only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Download and install the latest version of
+`Visual Studio <https://visualstudio.microsoft.com/downloads/>`__.
+Visual Studio will include the required SDKs if you have the correct
+workloads selected, so you don't need to manually install the things
+listed in the "Prerequisites" section.
+
+While installing Visual Studio, select these workloads:
+
+- Mobile development with .NET
+- .NET Core cross-platform development
+
+In Godot's **Editor → Editor Settings** menu:
+
+- Set **Mono** -> **Editor** -> **External Editor** to **Visual Studio**.
+
+Next, you need to download the Godot Visual Studio extension from github
+`here <https://github.com/godotengine/godot-csharp-visualstudio/releases>`__.
+Double click on the downloaded file and follow the installation process.
 
 
 Creating a C# script
@@ -203,8 +229,9 @@ For more information, see the :ref:`doc_c_sharp_differences` page.
 
     You need to (re)build the project assemblies whenever you want to see new
     exported variables or signals in the editor. This build can be manually
-    triggered by clicking the word **Mono** at the bottom of the editor window
-    to reveal the Mono panel, then clicking the **Build Project** button.
+    triggered by clicking the word **Build** in the top right corner of the
+    editor. You can also click **Mono** at the bottom of the editor window
+    to reveal the Mono panel, then click the **Build Project** button.
 
     You will also need to rebuild the project assemblies to apply changes in
     "tool" scripts.
@@ -257,59 +284,16 @@ the ``.csproj`` file located in the project root:
     :emphasize-lines: 2
 
         <ItemGroup>
-            <PackageReference Include="Newtonsoft.Json">
-              <Version>11.0.2</Version>
-            </PackageReference>
+            <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
         </ItemGroup>
         ...
     </Project>
 
-.. note::
-    By default, tools like NuGet put ``Version`` as an attribute of the ```PackageReference``` Node. **You must manually create a Version node as shown above.**  This is because the version of MSBuild used requires this. (This will be fixed in Godot 4.0.)
-
-Whenever packages are added or modified, run ``nuget restore`` (*not* ``dotnet restore``) in the root of the
-project directory. To ensure that NuGet packages will be available for
-msbuild to use, run:
-
-.. code-block:: none
-
-    msbuild /t:restore
+As of Godot 3.2.3, Godot automatically downloads and sets up newly added NuGet
+packages the next time it builds the project.
 
 Profiling your C# code
 ----------------------
 
 - `Mono log profiler <https://www.mono-project.com/docs/debug+profile/profile/profiler/>`_ is available for Linux and macOS. Due to a Mono change, it does not work on Windows currently.
 - External Mono profiler like `JetBrains dotTrace <https://www.jetbrains.com/profiler/>`_ can be used as described `here <https://github.com/godotengine/godot/pull/34382>`_.
-
-.. _doc_c_sharp_configuring_vs_2019_for_debugging:
-
-Configuring VS 2019 for debugging
----------------------------------
-
-.. note::
-
-    Godot has built-in support for workflows involving several popular C# IDEs.
-    Built-in support for Visual Studio will be including in future versions,
-    but in the meantime, the steps below can let you configure VS 2019 for use
-    with Godot C# projects.
-
-1. Install VS 2019 with ``.NET desktop development`` and ``Desktop development with C++`` workloads selected.
-2. **Ensure that you do not have Xamarin installed.** Do not choose the ``Mobile development with .NET`` workload. Xamarin changes the DLLs used by MonoDebugger, which breaks debugging.
-3. Install the `VSMonoDebugger extension <https://marketplace.visualstudio.com/items?itemName=GordianDotNet.VSMonoDebugger0d62>`_.
-4. In VS 2019 --> Extensions --> Mono --> Settings:
-
-   - Select ``Debug/Deploy to local Windows``.
-   - Leave ``Local Deploy Path`` blank.
-   - Set the ``Mono Debug Port`` to the port in Godot --> Project --> Project Settings --> Mono --> Debugger Agent.
-   - Also select ``Wait for Debugger`` in the Godot Mono options. `This Godot Addon <https://godotengine.org/asset-library/asset/435>`_ may be helpful.
-
-5. Run the game in Godot. It should hang at the Godot splash screen while it waits for your debugger to attach.
-6. In VS 2019, open your project and choose Extensions --> Mono --> Attach to Mono Debugger.
-
-Configuring Visual Studio Code for debugging
---------------------------------------------
-
-To configure debugging, open Visual Studio Code and download the Mono Debug extension from
-Microsoft and the Godot extension by Ignacio. Then open the Godot project folder in VS Code.
-Go to the Run tab and click on **create a launch.json file**. Select **C# Godot** from the dropdown
-menu. Now, when you start the debugger in VS Code your Godot project will run.

@@ -51,6 +51,13 @@ The other three bodies extend :ref:`PhysicsBody2D <class_PhysicsBody2D>`:
     A body that provides collision detection, but no physics. All movement and
     collision response must be implemented in code.
 
+Physics material
+~~~~~~~~~~~~~~~~
+
+Static bodies and rigid bodies can be configured to use a :ref:`physics material
+<class_PhysicsMaterial>`. This allows adjusting the friction and bounce of an object,
+and set if it's absorbent and/or rough.
+
 Collision shapes
 ~~~~~~~~~~~~~~~~
 
@@ -167,7 +174,7 @@ would be as follows::
 
     # Decimal - Add the results of 2 to the power of (layer be enabled-1).
     # (2^(1-1)) + (2^(3-1)) + (2^(4-1)) = 1 + 4 + 8 = 13
-    pow(2, 1) + pow(2, 3) + pow(2, 4)
+    pow(2, 1-1) + pow(2, 3-1) + pow(2, 4-1)
 
 
 Area2D
@@ -214,7 +221,7 @@ to it and the physics engine calculates the resulting movement, including
 collisions with other bodies, and collision responses, such as bouncing,
 rotating, etc.
 
-You can modify a rigid body's behavior via  properties such as "Mass",
+You can modify a rigid body's behavior via properties such as "Mass",
 "Friction", or "Bounce", which can be set in the Inspector.
 
 The body's behavior is also affected by the world's properties, as set in
