@@ -100,6 +100,12 @@ With correct back-buffer copying, the two spheres blend correctly:
 
 .. image:: img/texscreen_demo2.png
 
+.. warning:
+    Materials that use ``SCREEN_TEXTURE`` are considered transparent themselves and
+    will not appear in the resulting ``SCREEN_TEXTURE`` of other materials.
+    If you plan to instance a scene that uses a material with ``SCREEN_TEXTURE``,
+    you will need to use a BackBufferCopy node.
+
 In 3D, there is less flexibility to solve this particular issue because the
 ``SCREEN_TEXTURE`` is only captured once. Be careful when using
 ``SCREEN_TEXTURE`` in 3D as it won't capture transparent objects and may capture
