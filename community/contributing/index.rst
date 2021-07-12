@@ -12,6 +12,7 @@ Contributing
    bisecting_regressions
    code_style_guidelines
    bug_triage_guidelines
+   building_the_manual
    documentation_guidelines
    docs_writing_guidelines
    updating_the_class_reference
