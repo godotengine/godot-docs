@@ -26,7 +26,7 @@ bake lightmaps only when you actually need to see changes in lighting.
 
 Baking lightmaps will also reserve baked materials' UV2 slot, which means you can
 no longer use it for other purposes in materials (either in the built-in
-:ref:`doc_standard_material_3d` or in custom shaders).
+:ref:`doc_spatial_material` or in custom shaders).
 
 In the end, deciding which indirect lighting approach is better depends on your
 use case. In general, GIProbe is easier to set up and works better with dynamic
