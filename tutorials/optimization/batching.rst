@@ -514,6 +514,21 @@ I use a large number of textures, so few items are being batched.
 Appendix
 ~~~~~~~~
 
+Batched Primitives
+^^^^^^^^^^^^^^^^^^
+
+Note that not all primitives can be batched, and batching is not guaranteed,
+especially with primitives using an anti-aliased border. The following
+primitive types are currently available:
+
+- RECT
+- NINEPATCH (depending on wrapping mode)
+- POLY
+- LINE
+
+With non-batched primitives you may be able to get better performance drawing
+them manually with polys in a ``_draw()`` function.
+
 .. _doc_batching_light_scissoring_threshold_calculation:
 
 Light scissoring threshold calculation
