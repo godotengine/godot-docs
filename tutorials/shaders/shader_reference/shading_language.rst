@@ -748,7 +748,17 @@ Uniforms can also be assigned default values:
     uniform vec4 some_vector = vec4(0.0);
     uniform vec4 some_color : hint_color = vec4(1.0);
 
-Built-in functions
+Built-in variables
+------------------
+
+A large number of built-in variables are available, like ``UV``, ``COLOR`` and ``VERTEX``. What variables are available depends on the type of shader (``spacial``, ``canvas_item`` or ``particle``) and the function used (``vertex``, ``fragment`` or ``light``).
+For a list of the build-in variables that are available, please see the corresponding pages:
+
+    :ref:`Spatial shaders <doc_spatial_shader>`
+    :ref:`Canvas item shaders <doc_canvas_item_shader>`
+    :ref:`Particle shaders <doc_particle_shader>`
+
+    Built-in functions
 ------------------
 
 A large number of built-in functions are supported, conforming to GLSL ES 3.0.
