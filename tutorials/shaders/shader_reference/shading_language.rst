@@ -758,7 +758,7 @@ For a list of the build-in variables that are available, please see the correspo
     :ref:`Canvas item shaders <doc_canvas_item_shader>`
     :ref:`Particle shaders <doc_particle_shader>`
 
-    Built-in functions
+Built-in functions
 ------------------
 
 A large number of built-in functions are supported, conforming to GLSL ES 3.0.
