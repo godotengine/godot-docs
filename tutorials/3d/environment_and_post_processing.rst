@@ -69,7 +69,7 @@ There are many ways to set the background:
 
 - **Clear Color** uses the default clear color defined by the project. The background will be a constant color.
 - **Custom Color** is like Clear Color, but with a custom color value.
-- **Sky** lets you define a panorama sky (a 360 degree sphere texture) or a procedural sky (a simple sky featuring a gradient and an optional sun). Objects will reflect it and absorb ambient light from it.
+- **Sky** lets you define a panorama sky (a 360 degree sphere texture) or a procedural sky (a basic sky featuring a gradient and an optional sun). Objects will reflect it and absorb ambient light from it.
 - **Color+Sky** lets you define a sky (as above), but uses a constant color value for drawing the background. The sky will only be used for reflection and ambient light.
 
 Ambient Light
@@ -154,7 +154,7 @@ Auto Exposure (HDR)
 *This feature is only available when using the GLES3 backend.*
 
 Even though, in most cases, lighting and texturing are heavily artist controlled,
-Godot supports a simple high dynamic range implementation with the auto exposure
+Godot supports a basic high dynamic range implementation with the auto exposure
 mechanism. This is generally used for the sake of realism when combining
 interior areas with low light and outdoors. Auto exposure simulates the camera
 (or eye) in an effort to adapt between light and dark locations and their
@@ -259,7 +259,7 @@ Tweaking SSAO is possible with several parameters:
 - **Light Affect:** SSAO only affects ambient light, but increasing this slider can make it also affect direct light. Some artists prefer this effect.
 - **Ao Channel Affect:** If a value of zero is used, only the material's AO texture will be used for ambient occlusion; SSAO will not be applied. Values greater than 0 multiply the AO texture by the SSAO effect to varying degrees. This does not affect materials without an AO texture.
 - **Quality:** Depending on quality, SSAO will take more samples over a sphere for every pixel. High quality only works well on modern GPUs.
-- **Blur:** Type of blur kernel used. The 1x1 kernel is a simple blur that preserves local detail better, but is not as efficient (generally works better with the high quality setting above), while 3x3 will soften the image better (with a bit of dithering-like effect), but does not preserve local detail as well.
+- **Blur:** Type of blur kernel used. The 1x1 kernel preserves local detail better, but is not as efficient (generally works better with the high quality setting above), while 3x3 softens the image better (with a bit of dithering-like effect), but does not preserve local detail as well.
 - **Edge Sharpness**: This can be used to preserve the sharpness of edges (avoids areas without AO on creases).
 
 Depth of Field / Far Blur
@@ -320,10 +320,10 @@ Once glow is visible, it can be controlled with a few extra parameters:
 
 The **Blend Mode** of the effect can also be changed:
 
-- **Additive** is the strongest one, as it just adds the glow effect over the image with no blending involved. In general, it's too strong to be used, but can look good with low intensity Bloom (produces a dream-like effect).
-- **Screen** is the default one. It ensures glow never brights more than itself and works great as an all around.
+- **Additive** is the strongest one, as it only adds the glow effect over the image with no blending involved. In general, it's too strong to be used, but can look good with low intensity Bloom (produces a dream-like effect).
+- **Screen** is the default one. It ensures glow never brightens more than itself and it works great as an all around.
 - **Softlight** is the weakest one, producing only a subtle color disturbance around the objects. This mode works best on dark scenes.
-- **Replace** can be used to blur the whole screen or debug the effect. It just shows the glow effect without the image below.
+- **Replace** can be used to blur the whole screen or debug the effect. It only shows the glow effect without the image below.
 
 To change the glow effect size and shape, Godot provides **Levels**. Smaller
 levels are strong glows that appear around objects, while large levels are hazy

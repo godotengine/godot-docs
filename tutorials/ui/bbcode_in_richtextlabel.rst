@@ -50,45 +50,116 @@ markup. All changes to the text must be done in the BBCode parameter.
 Reference
 ---------
 
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| Command           | Tag                                        | Description                                                     |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **bold**          | ``[b]{text}[/b]``                          | Makes {text} bold.                                              |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **italics**       | ``[i]{text}[/i]``                          | Makes {text} italics.                                           |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **underline**     | ``[u]{text}[/u]``                          | Makes {text} underline.                                         |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **strikethrough** | ``[s]{text}[/s]``                          | Makes {text} strikethrough.                                     |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **code**          | ``[code]{text}[/code]``                    | Makes {text} use the code font (which is typically monospace).  |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **center**        | ``[center]{text}[/center]``                | Makes {text} horizontally centered.                             |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **right**         | ``[right]{text}[/right]``                  | Makes {text} horizontally right-aligned.                        |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **fill**          | ``[fill]{text}[/fill]``                    | Makes {text} fill the RichTextLabel's width.                    |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **indent**        | ``[indent]{text}[/indent]``                | Increase the indentation level of {text}.                       |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **url**           | ``[url]{url}[/url]``                       | Show {url} as such, underline it and make it clickable.         |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **url (ref)**     | ``[url=<url>]{text}[/url]``                | Makes {text} reference <url> (underlined and clickable).        |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **image**         | ``[img]{path}[/img]``                      | Insert image at resource {path}.                                |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **resized image** | ``[img=<width>]{path}[/img]``              | Insert image at resource {path} using <width> (keeps ratio).    |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **resized image** | ``[img=<width>x<height>]{path}[/img]``     | Insert image at resource {path} using <width>×<height>.         |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **font**          | ``[font=<path>]{text}[/font]``             | Use custom font at <path> for {text}.                           |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **color**         | ``[color=<code/name>]{text}[/color]``      | Change {text} color; use name or # format, such as ``#ff00ff``. |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **table**         | ``[table=<number>]{cells}[/table]``        | Creates a table with <number> of columns.                       |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **cell**          | ``[cell]{text}[/cell]``                    | Adds cells with the {text} to the table.                        |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| Command               | Tag                                                       | Description                                                              |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **bold**              | ``[b]{text}[/b]``                                         | Makes {text} bold.                                                       |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **italics**           | ``[i]{text}[/i]``                                         | Makes {text} italics.                                                    |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **underline**         | ``[u]{text}[/u]``                                         | Makes {text} underline.                                                  |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **strikethrough**     | ``[s]{text}[/s]``                                         | Makes {text} strikethrough.                                              |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **code**              | ``[code]{text}[/code]``                                   | Makes {text} use the code font (which is typically monospace).           |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **p**                 | ``[p {options}]{text}[/p]``                               | Adds new paragraph with {text}. See paragraph options for more info.     |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **center**            | ``[center]{text}[/center]``                               | Makes {text} horizontally centered. Same as ``[p align=center]``.        |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **left**              | ``[left]{text}[/left]``                                   | Makes {text} horizontally right-aligned. Same as ``[p align=left]``.     |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **right**             | ``[right]{text}[/right]``                                 | Makes {text} horizontally right-aligned. Same as ``[p align=right]``.    |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **fill**              | ``[fill]{text}[/fill]``                                   | Makes {text} fill the RichTextLabel's width. Same as ``[p align=fill]``. |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **indent**            | ``[indent]{text}[/indent]``                               | Increase the indentation level of {text}.                                |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **url**               | ``[url]{url}[/url]``                                      | Show {url} as such, underline it and make it clickable.                  |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **url (ref)**         | ``[url=<url>]{text}[/url]``                               | Makes {text} reference <url> (underlined and clickable).                 |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **image**             | ``[img]{path}[/img]``                                     | Insert image at resource {path}.                                         |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **resized image**     | ``[img=<width>]{path}[/img]``                             | Insert image at resource {path} using <width> (keeps ratio).             |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **resized image**     | ``[img=<width>x<height>]{path}[/img]``                    | Insert image at resource {path} using <width>×<height>.                  |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **aligned image**     | ``[img align=<valign>]{path}[/img]``                      | Insert image at resource {path} using <valign> vertical alignment.       |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **font**              | ``[font=<path>]{text}[/font]``                            | Use custom font at <path> for {text}.                                    |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **font options**      | ``[font {options}]{text}[/font]``                         | Use custom font options for the {text}. See font options for more info.  |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **font size**         | ``[font_size=nn]{text}[/font_size]``                      | Use custom font size for {text}.                                         |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **opentype features** | ``[opentype_features=ftr,ftr]{text}[/opentype_features]`` | Use custom OpenType font features (comma separated list) for {text}.     |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **outline size**      | ``[outline_size=<size>]{text}[/outline_size]``            | Use custom font outline size for {text}.                                 |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **outline color**     | ``[outline_color=<color>]{text}[/outline_color]``         | Use custom outline color for {text}.                                     |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **color**             | ``[color=<code/name>]{text}[/color]``                     | Change {text} color; use name or # format, such as ``#ff00ff``.          |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **table**             | ``[table=<number>]{cells}[/table]``                       | Creates a table with <number> of columns.                                |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **cell**              | ``[cell=<expand ratio>]{text}[/cell]``                    | Adds cells with the {text} to the table.                                 |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **cell**              | ``[cell {options}]{text}[/cell]``                         | Adds cells with the {text} to the table. See cell options for more info. |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **list**              | ``[ul]{one item per line}[/ul]``                          | Add unnumbered list.                                                     |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **list**              | ``[ol type=<type>]{one item per line}[/ol]``              | Add numbered list. See list types for more info.                         |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **unicode control**   | ``[lrm]``, ``[rlm]``, ``[lre]``, ``[rle]``, ``[lro]``,    | Adds Unicode control character.                                          |
+|                       | ``[rlo]``, ``[pdf]``, ``[alm]``, ``[lri]``, ``[rli]``,    |                                                                          |
+|                       | ``[fsi]``, ``[pdi]``, ``[zwj]``, ``[zwnj]``, ``[wj]``     |                                                                          |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+
+Note: Options are optional for all tags.
+
+Paragraph options
+~~~~~~~~~~~~~~~~~
+
++----------------------------+---------------------------------------------------------------------------+----------------------------+
+| Option                     | Supported Values                                                          | Description                |
++----------------------------+---------------------------------------------------------------------------+----------------------------+
+| ``align``                  | ``left``, ``center``, ``right``, ``fill``                                 | Text horizontal alignment. |
++----------------------------+---------------------------------------------------------------------------+----------------------------+
+| ``direction`` or ``dir``   | ``ltr``, ``rtl``, ``auto``                                                | Base BiDi direction.       |
++----------------------------+---------------------------------------------------------------------------+----------------------------+
+| ``language`` or ``lang``   | ISO language codes                                                        | Locale override.           |
++----------------------------+---------------------------------------------------------------------------+----------------------------+
+| ``bidi_override`` or `st`  | ``default``, ``uri``, ``file``, ``email``, ``list``, ``none``, ``custom`` | Structured text override.  |
++----------------------------+---------------------------------------------------------------------------+----------------------------+
+
+
+Font options
+~~~~~~~~~~~~
+
++----------------------------+-------------------------------------------------+
+| Option                     | Description                                     |
++----------------------------+-------------------------------------------------+
+| ``name`` or ``n``          | Font resource path.                             |
++----------------------------+-------------------------------------------------+
+| ``size`` or ``s``          | Font size.                                      |
++----------------------------+-------------------------------------------------+
+
+Cell options
+~~~~~~~~~~~~
+
+-  ``expand`` - Column expansion ratio, the column expands in proportion to its expansion ratio versus the other columns' ratios.
+-  ``border`` -  Sets cell border color.
+-  ``bg`` - Sets cell background color, for alternating odd/even row backgrounds use ``bg=odd_color,even_color``.
+
+List types
+~~~~~~~~~~
+
+Supported list types:
+
+-  ``1`` - Numbers, using language specific numbering system if possible.
+-  ``a`` and ``A`` - Lower and upper case Latin letters.
+-  ``i`` and ``I`` - Lower and upper case Roman numerals.
 
 Named colors
 ~~~~~~~~~~~~
@@ -107,11 +178,7 @@ In this case, note that the alpha channel is the **first** component of the colo
 Image vertical offset
 ~~~~~~~~~~~~~~~~~~~~~
 
-You use a custom font for your image in order to align it vertically.
-
-1. Create a ``BitmapFont`` resource
-2. Set this bitmap font with a positive value for the ``ascent`` property, that's your height offset
-3. Set the BBCode tag this way: ``[font=<font-path>][img]{image-path}[/img][/font]``
+Use ``[img=align]...[/img]`` to set vertical alignment of the image, where ``align`` is ``t`` (top), ``c`` (center) or ``b`` (bottom).
 
 Animation effects
 -----------------
@@ -186,21 +253,22 @@ use the name of the file to determine what the BBCode tag should be.
 ``_process_custom_fx``
 ~~~~~~~~~~~~~~~~~~~~~~
 
-This is where the logic of each effect takes place and is called once per character
+This is where the logic of each effect takes place and is called once per glyph
 during the draw phase of text rendering. This passes in a :ref:`class_CharFXTransform`
-object, which holds a few variables to control how the associated character is rendered:
+object, which holds a few variables to control how the associated glyph is rendered:
 
 - ``identity`` specifies which custom effect is being processed. You should use that for
   code flow control.
-- ``relative_index`` tells you how far into a given custom effect block you are in as an
+- ``outline`` is ``true`` if effect is called for drawing text outline.
+- ``range`` tells you how far into a given custom effect block you are in as an
   index.
-- ``absolute_index`` tells you how far into the entire text you are as an index.
 - ``elapsed_time`` is the total amount of time the text effect has been running.
-- ``visible`` will tell you whether the character is visible or not and will also allow you
+- ``visible`` will tell you whether the glyph is visible or not and will also allow you
   to hide a given portion of text.
-- ``offset`` is an offset position relative to where the given character should render under
+- ``offset`` is an offset position relative to where the given glyph should render under
   normal circumstances.
-- ``color`` is the color of a given character.
+- ``color`` is the color of a given glyph.
+- ``glyph_index`` and ``font`` is glyph being drawn and font data resource used to draw it.
 - Finally, ``env`` is a :ref:`class_Dictionary` of parameters assigned to a given custom
   effect. You can use :ref:`get() <class_Dictionary_method_get>` with an optional default value
   to retrieve each parameter, if specified by the user. For example ``[custom_fx spread=0.5
@@ -209,7 +277,7 @@ object, which holds a few variables to control how the associated character is r
 
 The last thing to note about this function is that it is necessary to return a boolean
 ``true`` value to verify that the effect processed correctly. This way, if there's a problem
-with rendering a given character, it will back out of rendering custom effects entirely until
+with rendering a given glyph, it will back out of rendering custom effects entirely until
 the user fixes whatever error cropped up in their custom effect logic.
 
 Here are some examples of custom effects:
@@ -284,20 +352,17 @@ Matrix
         var dirty_time = char_fx.env.get("dirty", 1.0)
         var text_span = char_fx.env.get("span", 50)
 
-        var value = char_fx.character
-
-        var matrix_time = fmod(char_fx.elapsed_time + (char_fx.absolute_index / float(text_span)), \
+        var matrix_time = fmod(char_fx.elapsed_time + (char_fx.range.x / float(text_span)), \
                                clear_time + dirty_time)
 
         matrix_time = 0.0 if matrix_time < clear_time else \
                       (matrix_time - clear_time) / dirty_time
 
-        if value >= 65 && value < 126 && matrix_time > 0.0:
-            value -= 65
-            value = value + int(1 * matrix_time * (126 - 65))
+        if matrix_time > 0.0:
+            value = int(1 * matrix_time * (126 - 65))
             value %= (126 - 65)
             value += 65
-        char_fx.character = value
+        char_fx.glyph_index = TextServer.font_get_glyph_index(char_fx.font, value)
         return true
 
 This will add a few new BBCode commands, which can be used like so:

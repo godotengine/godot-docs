@@ -128,7 +128,7 @@ Emitting signals is done with the ``EmitSignal`` method.
 
 Notice that you can always reference a signal name with the ``nameof`` keyword (applied on the delegate itself).
 
-It is possible to bind values when establishing a connection by passing an object array.
+It is possible to bind values when establishing a connection by passing a Godot array.
 
 .. code-block:: csharp
 
@@ -144,8 +144,8 @@ It is possible to bind values when establishing a connection by passing an objec
         var plusButton = (Button)GetNode("PlusButton");
         var minusButton = (Button)GetNode("MinusButton");
 
-        plusButton.Connect("pressed", this, "ModifyValue", new object[] { 1 });
-        minusButton.Connect("pressed", this, "ModifyValue", new object[] { -1 });
+        plusButton.Connect("pressed", this, "ModifyValue", new Godot.Collections.Array { 1 });
+        minusButton.Connect("pressed", this, "ModifyValue", new Godot.Collections.Array { -1 });
     }
 
 Signals support parameters and bound values of all the `built-in types <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/built-in-types-table>`_ and Classes derived from :ref:`Godot.Object <class_Object>`.
@@ -226,7 +226,7 @@ Full list of defines
   ``GODOT_ANDROID``, ``GODOT_IOS``, ``GODOT_HTML5``, or ``GODOT_SERVER``
   depending on the OS. These names may change in the future.
   These are created from the ``get_name()`` method of the
-  :ref:``OS <class_OS>`` singleton, but not every possible OS
+  :ref:`OS <class_OS>` singleton, but not every possible OS
   the method returns is an OS that Godot with Mono runs on.
 
 When **exporting**, the following may also be defined depending on the export features:

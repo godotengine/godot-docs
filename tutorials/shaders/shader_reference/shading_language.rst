@@ -169,13 +169,13 @@ explained:
     vec4 a = vec4(0.0, 1.0, 2.0, 3.0);
     vec3 b = a.rgb; // Creates a vec3 with vec4 components.
     vec3 b = a.ggg; // Also valid; creates a vec3 and fills it with a single vec4 component.
-    vec3 b = a.bgr; // Order does not matter.
+    vec3 b = a.bgr; // "b" will be vec3(2.0, 1.0, 0.0).
     vec3 b = a.xyz; // Also rgba, xyzw are equivalent.
     vec3 b = a.stp; // And stpq (for texture coordinates).
     float c = b.w; // Invalid, because "w" is not present in vec3 b.
     vec3 c = b.xrt; // Invalid, mixing different styles is forbidden.
     b.rrr = a.rgb; // Invalid, assignment with duplication.
-    b.bgr = a.rgb; // Valid assignment.
+    b.bgr = a.rgb; // Valid assignment. "b"'s "blue" component will be "a"'s "red" and vice versa.
 
 Precision
 ~~~~~~~~~
@@ -264,11 +264,11 @@ return the array's size.
 
 .. note::
 
-    If you use an index below 0 or greater than array size - the shader will
+    If you use an index either below 0 or greater than array size - the shader will
     crash and break rendering. To prevent this, use ``length()``, ``if``, or
     ``clamp()`` functions to ensure the index is between 0 and the array's
     length. Always carefully test and check your code. If you pass a constant
-    expression or a simple number, the editor will check its bounds to prevent
+    expression or a number, the editor will check its bounds to prevent
     this crash.
 
 Global arrays
@@ -747,6 +747,16 @@ Uniforms can also be assigned default values:
 
     uniform vec4 some_vector = vec4(0.0);
     uniform vec4 some_color : hint_color = vec4(1.0);
+
+Built-in variables
+------------------
+
+A large number of built-in variables are available, like ``UV``, ``COLOR`` and ``VERTEX``. What variables are available depends on the type of shader (``spatial``, ``canvas_item`` or ``particle``) and the function used (``vertex``, ``fragment`` or ``light``).
+For a list of the build-in variables that are available, please see the corresponding pages:
+
+- :ref:`Spatial shaders <doc_spatial_shader>`
+- :ref:`Canvas item shaders <doc_canvas_item_shader>`
+- :ref:`Particle shaders <doc_particle_shader>`
 
 Built-in functions
 ------------------

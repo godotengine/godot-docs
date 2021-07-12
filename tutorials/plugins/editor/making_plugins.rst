@@ -13,10 +13,10 @@ While this makes plugins less powerful, there are still many things you can
 do with them. Note that a plugin is similar to any scene you can already
 make, except it is created using a script to add editor functionality.
 
-This tutorial will guide you through the creation of two simple plugins so
+This tutorial will guide you through the creation of two plugins so
 you can understand how they work and be able to develop your own. The first
-will be a custom node that you can add to any scene in the project and the
-other will be a custom dock added to the editor.
+is a custom node that you can add to any scene in the project, and the
+other is a custom dock added to the editor.
 
 Creating a plugin
 ~~~~~~~~~~~~~~~~~
@@ -56,7 +56,7 @@ You should end up with a directory structure like this:
 
 .. image:: img/making_plugins-my_custom_mode_folder.png
 
-``plugin.cfg`` is a simple INI file with metadata about your plugin.
+``plugin.cfg`` is an INI file with metadata about your plugin.
 The name and description help people understand what it does.
 Your name helps you get properly credited for your work.
 The version number helps others know if they have an outdated version;
@@ -73,8 +73,9 @@ change: it must be a ``tool`` script, or else it will not load properly in the
 editor, and it must inherit from :ref:`class_EditorPlugin`.
 
 .. warning::
+
     In addition to the EditorPlugin script, any other GDScript that your plugin uses
-    must *also* be a tool.  Any GDScript without ``tool`` imported into the editor
+    must *also* be a tool. Any GDScript without ``tool`` imported into the editor
     will act like an empty file!
 
 It's important to deal with initialization and clean-up of resources.
@@ -147,8 +148,8 @@ To create a new node type, you can use the function
 that will act as the logic for the type. While that script doesn't have to use
 the ``tool`` keyword, it can be added so the script runs in the editor.
 
-For this tutorial, we'll create a simple button that prints a message when
-clicked. For that, we'll need a simple script that extends from
+For this tutorial, we'll create a button that prints a message when
+clicked. For that, we'll need a script that extends from
 :ref:`class_Button`. It could also extend
 :ref:`class_BaseButton` if you prefer:
 

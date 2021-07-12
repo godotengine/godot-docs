@@ -259,8 +259,8 @@ Debugging
 ---------
 
 Catching errors in the command line can be a difficult task because they
-just fly by. For this, a command line debugger is provided by adding
-``-d``. It works for running either the game or a simple scene.
+scroll quickly. For this, a command line debugger is provided by adding
+``-d``. It works for running either the game or a single scene.
 
 ::
 
@@ -307,13 +307,13 @@ The output path extension determines the package's format, either PCK or ZIP.
 Running a script
 ----------------
 
-It is possible to run a simple ``.gd`` script from the command line.
+It is possible to run a ``.gd`` script from the command line.
 This feature is especially useful in large projects, e.g. for batch
 conversion of assets or custom import/export.
 
 The script must inherit from ``SceneTree`` or ``MainLoop``.
 
-Here is a simple ``sayhello.gd`` example of how it works:
+Here is an example ``sayhello.gd``, showing how it works:
 
 .. code-block:: python
 

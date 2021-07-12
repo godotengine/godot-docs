@@ -6,7 +6,7 @@ Binary serialization API
 Introduction
 ------------
 
-Godot has a simple serialization API based on Variant. It's used for
+Godot has a serialization API based on Variant. It's used for
 converting data types to an array of bytes efficiently. This API is used
 in the functions ``get_var`` and ``store_var`` of :ref:`class_File`
 as well as the packet APIs for :ref:`class_PacketPeer`. This format
@@ -17,7 +17,13 @@ Packet specification
 
 The packet is designed to be always padded to 4 bytes. All values are
 little-endian-encoded. All packets have a 4-byte header representing an
-integer, specifying the type of data:
+integer, specifying the type of data.
+
+The lowest value two bytes are used to determine the type, while the highest value
+two bytes contain flags::
+
+    base_type = val & 0xFFFF;
+    flags = val >> 16;
 
 +--------+--------------------------+
 | Type   | Value                    |
@@ -105,6 +111,17 @@ precision.
 2: :ref:`int<class_int>`
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+If no flags are set (flags == 0), the integer is sent as a 32 bit integer:
+
++----------+-------+-----------+--------------------------+
+| Offset   | Len   | Type      | Description              |
++==========+=======+===========+==========================+
+| 4        | 4     | Integer   | 32-bit signed integer    |
++----------+-------+-----------+--------------------------+
+
+If flag ``ENCODE_FLAG_64`` is set (``flags & 1 == 1``), the integer is sent as 
+a 64-bit integer:
+
 +----------+-------+-----------+--------------------------+
 | Offset   | Len   | Type      | Description              |
 +==========+=======+===========+==========================+
@@ -113,6 +130,17 @@ precision.
 
 3: :ref:`float<class_float>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If no flags are set (flags == 0), the float is sent as a 32 bit single precision:
+
++----------+-------+---------+-----------------------------------+
+| Offset   | Len   | Type    | Description                       |
++==========+=======+=========+===================================+
+| 4        | 4     | Float   | IEEE 754 single-precision float   |
++----------+-------+---------+-----------------------------------+
+
+If flag ``ENCODE_FLAG_64`` is set (``flags & 1 == 1``), the float is sent as 
+a 64-bit double precision number:
 
 +----------+-------+---------+-----------------------------------+
 | Offset   | Len   | Type    | Description                       |

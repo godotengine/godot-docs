@@ -37,7 +37,7 @@ Color space
 -----------
 
 GLES2 and GLES3 are in different color spaces. This means that colors will appear slightly
-different between them  especially when lighting is used.
+different between them especially when lighting is used.
 
 If your game is going to use both GLES2 and GLES3, you can use an ``if``
 statement check and see if the output is in sRGB, using ``OUTPUT_IS_SRGB``. ``OUTPUT_IS_SRGB`` is
@@ -47,8 +47,11 @@ HDR
 ---
 
 GLES2 is not capable of using High Dynamic Range (HDR) rendering features. If HDR is set for your
-project, or for a given viewport, Godot will still user Low Dynamic Range (LDR) which limits
+project, or for a given viewport, Godot will still use Low Dynamic Range (LDR) which limits
 viewport values to the ``0-1`` range.
+
+The Viewport **Debanding** property and associated project setting will also have
+no effect when HDR is disabled. This means debanding can't be used in GLES2.
 
 StandardMaterial3D features
 ---------------------------
@@ -168,7 +171,7 @@ For a complete list of built-in GLSL functions see the :ref:`Shading Language do
 +---------------------------------------------------------------------------------------------+--------------------------------------------------+
 | vec4_type **textureProjLod** ( sampler_type s, vec_type uv, float lod )                     |                                                  |
 +---------------------------------------------------------------------------------------------+--------------------------------------------------+
-| vec4_type **textureGrad** ( sampler_type s, vec_type uv, vec_type dPdx, vec_type dPdy)      |                                                  |
+| vec4_type **textureGrad** ( sampler_type s, vec_type uv, vec_type dPdx, vec_type dPdy )     |                                                  |
 +---------------------------------------------------------------------------------------------+--------------------------------------------------+
 | vec_type **dFdx** ( vec_type p )                                                            |                                                  |
 +---------------------------------------------------------------------------------------------+--------------------------------------------------+

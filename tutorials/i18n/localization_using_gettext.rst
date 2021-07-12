@@ -53,8 +53,10 @@ install them.
   `this page <https://mlocati.github.io/articles/gettext-iconv-windows.html>`_.
   Any architecture and binary type (shared or static) works;
   if in doubt, choose the 64-bit static installer.
-- **macOS:** Use `Homebrew <https://brew.sh/>`_ to install gettext with the
-  ``brew install gettext`` command.
+- **macOS:** Install gettext either using `Homebrew <https://brew.sh/>`_
+  with the ``brew install gettext`` command, or using
+  `MacPorts <https://www.macports.org/>`_ with the
+  ``sudo port install gettext`` command.
 - **Linux:** On most distributions, install the ``gettext`` package from
   your distribution's package manager.
 
@@ -154,8 +156,8 @@ Updating message files to follow the PO template
 
 After updating the PO template, you will have to update message files so
 that they contain new strings, while removing strings that are no longer
-present in the PO template removed in the PO template. This can be done
-automatically using the ``msgmerge`` tool:
+present in the PO template. This can be done automatically using the
+``msgmerge`` tool:
 
 .. code-block:: shell
 

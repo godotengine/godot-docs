@@ -98,7 +98,7 @@ of it, and it can always be accessed by calling
 
 In any case, while changing the root Viewport params is probably the
 most flexible way to deal with the problem, it can be a lot of work,
-code and guessing, so Godot provides a simple set of parameters in the
+code and guessing, so Godot provides a set of parameters in the
 project settings to handle multiple resolutions.
 
 Stretch settings
@@ -227,6 +227,18 @@ to the region outside the blue frame you see in the 2D editor.
 
    .. image:: img/stretch_viewport_expand.gif
 
+.. tip::
+
+    To support both portrait and landscape mode with a similar automatically
+    determined scale factor, set your project's base resolution to be a *square*
+    (1:1 aspect ratio) instead of a rectangle. For instance, if you wish to design
+    for 1280×720 as the base resolution but wish to support both portrait and
+    landscape mode, use 720×720 as the project's base window size in the
+    Project Settings.
+
+    To allow the user to choose their preferred screen orientation at run-time,
+    remember to set **Display > Window > Handheld > Orientation** to ``sensor``.
+
 Stretch Shrink
 ^^^^^^^^^^^^^^
 
@@ -251,6 +263,117 @@ To configure stretching at runtime from a script, use the
 ``get_tree().set_screen_stretch()`` method (see
 :ref:`SceneTree.set_screen_stretch() <class_SceneTree_method_set_screen_stretch>`).
 
+Common use case scenarios
+-------------------------
+
+The following settings are recommended to support multiple resolutions and aspect
+ratios well.
+
+Desktop game
+^^^^^^^^^^^^
+
+**Non-pixel art:**
+
+- Set the base window width to ``1920`` and window height to ``1080``. If you have a
+  display smaller than 1920×1080, set **Test Width** and **Test Height** to
+  lower values to make the window smaller when the project starts.
+- Alternatively, if you're targeting high-end devices primarily, set the base
+  window width to ``3840`` and window height to ``2160``.
+  This allows you to provide higher resolution 2D assets, resulting in crisper
+  visuals at the cost of higher memory usage and file sizes.
+  Note that this will make non-mipmapped textures grainy on low resolution devices,
+  so make sure to follow the instructions described in
+  :ref:`doc_multiple_resolutions_reducing_aliasing_on_downsampling`.
+- Set the stretch mode to ``2d``.
+- Set the stretch aspect to ``expand``. This allows for supporting multiple aspect ratios
+  and makes better use of tall smartphone displays (such as 18:9 or 19:9 aspect ratios).
+- Configure Control nodes' anchors to snap to the correct corners using the **Layout** menu.
+
+**Pixel art:**
+
+- Set the base window size to the viewport size you intend to use. Most pixel art games
+  use viewport sizes between 256×224 and 640×480. Higher viewport sizes will
+  require using higher resolution artwork, unless you intend to show more of the
+  game world at a given time.
+- Set the stretch mode to ``viewport``.
+- Set the stretch aspect to ``keep`` to enforce a single aspect ratio (with
+  black bars). As an alternative, you can set the stretch aspect to ``expand`` to
+  support multiple aspect ratios.
+- If using the ``expand`` stretch aspect, Configure Control nodes' anchors to
+  snap to the correct corners using the **Layout** menu.
+
+.. note::
+
+    The ``viewport`` stretch mode provides low-resolution rendering that is then
+    stretched to the final window size. If you are OK with sprites being able to
+    move or rotate in "sub-pixel" positions or wish to have a high resolution 3D
+    viewport, you should use the ``2d`` stretch mode instead of the ``viewport``
+    stretch mode.
+
+    Godot currently doesn't have a way to enforce integer scaling when using the
+    ``2d`` or ``viewport`` stretch mode, which means pixel art may look bad if the
+    final window size is not a multiple of the base window size.
+    To fix this, use an add-on such as the `Integer Resolution Handler <https://github.com/Yukitty/godot-addon-integer_resolution_handler>`__.
+
+Mobile game in landscape mode
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Godot is configured to use landscape mode by default. This means you don't need
+to change the display orientation project setting.
+
+- Set the base window width to ``1280`` and window height to ``720``.
+- Alternatively, if you're targeting high-end devices primarily, set the base
+  window width to ``1920`` and window height to ``1080``.
+  This allows you to provide higher resolution 2D assets, resulting in crisper
+  visuals at the cost of higher memory usage and file sizes. Many devices have
+  even higher resolution displays (1440p), but the difference with 1080p is
+  barely visible given the small size of smartphone displays.
+  Note that this will make non-mipmapped textures grainy on low resolution devices,
+  so make sure to follow the instructions described in
+  :ref:`doc_multiple_resolutions_reducing_aliasing_on_downsampling`.
+- Set the stretch mode to ``2d``.
+- Set the stretch aspect to ``expand``. This allows for supporting multiple aspect ratios
+  and makes better use of tall smartphone displays (such as 18:9 or 19:9 aspect ratios).
+- Configure Control nodes' anchors to snap to the correct corners using the **Layout** menu.
+
+Mobile game in portrait mode
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Set the base window width to ``720`` and window height to ``1080``.
+- Alternatively, if you're targeting high-end devices primarily, set the base
+  window width to ``1080`` and window height to ``1920``.
+  This allows you to provide higher resolution 2D assets, resulting in crisper
+  visuals at the cost of higher memory usage and file sizes. Many devices have
+  even higher resolution displays (1440p), but the difference with 1080p is
+  barely visible given the small size of smartphone displays.
+  Note that this will make non-mipmapped textures grainy on low resolution devices,
+  so make sure to follow the instructions described in
+  :ref:`doc_multiple_resolutions_reducing_aliasing_on_downsampling`.
+- Set **Display > Window > Handheld > Orientation** to ``portrait``.
+- Set the stretch mode to ``2d``.
+- Set the stretch aspect to ``expand``. This allows for supporting multiple aspect ratios
+  and makes better use of tall smartphone displays (such as 18:9 or 19:9 aspect ratios).
+- Configure Control nodes' anchors to snap to the correct corners using the **Layout** menu.
+
+Non-game application
+^^^^^^^^^^^^^^^^^^^^
+
+- Set the base window width and height to the smallest window size that you intend to target.
+  This is not required, but this ensures that you design your UI with small window sizes in mind.
+- Keep the stretch mode to its default value, ``disabled``.
+- Keep the stretch aspect to its default value, ``ignore``
+  (its value won't be used since the stretch mode is ``disabled``).
+- You can define a minimum window size by setting ``OS.min_window_size`` in a
+  script's ``_ready()`` function. This prevents the user from resizing the application
+  below a certain size, which could break the UI layout.
+
+.. note::
+
+    Godot doesn't support manually overriding the 2D scale factor yet, so it is
+    not possible to have hiDPI support in non-game applications. Due to this, it
+    is recommended to leave **Allow Hidpi** disabled in non-game applications to
+    allow for the OS to use its low-DPI fallback.
+
 hiDPI support
 -------------
 
@@ -272,6 +395,8 @@ other platforms.
     The Godot editor itself is always marked as DPI-aware. Running the project
     from the editor will only be DPI-aware if **Allow Hidpi** is enabled in the
     Project Settings.
+
+.. _doc_multiple_resolutions_reducing_aliasing_on_downsampling:
 
 Reducing aliasing on downsampling
 ---------------------------------

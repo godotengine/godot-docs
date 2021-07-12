@@ -199,8 +199,8 @@ way to pull the data out of the file as well.
     }
 
 
-Game saved! Loading is fairly simple as well. For that, we'll read each
-line, use parse_json() to read it back to a dict, and then iterate over
+Game saved! Now, to load, we'll read each
+line, use ``parse_json()`` to read it back to a dict, and then iterate over
 the dict to read our values. But we'll need to first create the object
 and we can use the filename and parent values to achieve that. Here is our
 load function:
@@ -251,7 +251,7 @@ load function:
     {
         var saveGame = new File();
         if (!saveGame.FileExists("user://savegame.save"))
-            return; // Error!  We don't have a save to load.
+            return; // Error! We don't have a save to load.
 
         // We need to revert the game state so we're not cloning objects during loading.
         // This will vary wildly depending on the needs of a project, so take care with
@@ -277,7 +277,7 @@ load function:
             newObject.Set("Position", new Vector2((float)nodeData["PosX"], (float)nodeData["PosY"]));
 
             // Now we set the remaining variables.
-            foreach (KeyValuePair<object, object> entry in nodeData)
+            foreach (KeyValuePair<string, object> entry in nodeData)
             {
                 string key = entry.Key.ToString();
                 if (key == "Filename" || key == "Parent" || key == "PosX" || key == "PosY")

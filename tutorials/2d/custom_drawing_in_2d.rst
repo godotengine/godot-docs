@@ -7,11 +7,9 @@ Why?
 ----
 
 Godot has nodes to draw sprites, polygons, particles, and all sorts of
-stuff. For most cases, this is enough; but not always. Before crying in fear,
-angst, and rage because a node to draw that specific *something* does not exist...
-it would be good to know that it is possible to easily make any 2D node (be it
-:ref:`Control <class_Control>` or :ref:`Node2D <class_Node2D>`
-based) draw custom commands. It is *really* easy to do it, too.
+stuff. For most cases, this is enough. If there's no node to draw something specific
+you need, you can make any 2D node (for example, :ref:`Control <class_Control>` or
+:ref:`Node2D <class_Node2D>` based) draw custom commands.
 
 But...
 ------
@@ -111,7 +109,7 @@ redrawn if modified:
         }
     }
 
-In some cases, it may be desired to draw every frame. For this, just
+In some cases, it may be desired to draw every frame. For this,
 call ``update()`` from the ``_process()`` callback, like this:
 
 .. tabs::
@@ -209,7 +207,7 @@ We first determine the angle of each point, between the starting and ending angl
 
 The reason why each angle is decreased by 90° is that we will compute 2D positions
 out of each angle using trigonometry (you know, cosine and sine stuff...). However,
-to be simple, ``cos()`` and ``sin()`` use radians, not degrees. The angle of 0° (0 radian)
+``cos()`` and ``sin()`` use radians, not degrees. The angle of 0° (0 radian)
 starts at 3 o'clock, although we want to start counting at 12 o'clock. So we decrease
 each angle by 90° in order to start counting from 12 o'clock.
 

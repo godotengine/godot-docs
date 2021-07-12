@@ -7,9 +7,9 @@ Interpolation is a very basic operation in graphics programming. It's good to be
 
 The basic idea is that you want to transition from A to B. A value ``t``, represents the states in-between.
 
-As an example if ``t`` is 0, then the state is A. If ``t`` is 1, then the state is B. Anything in-between is an *interpolation*.
+For example, if ``t`` is 0, then the state is A. If ``t`` is 1, then the state is B. Anything in-between is an *interpolation*.
 
-Between two real (floating-point) numbers, a simple interpolation is usually described as:
+Between two real (floating-point) numbers, an interpolation can be described as:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -23,7 +23,7 @@ And often simplified to:
 
     interpolation = A + (B - A) * t
 
-The name of this type of interpolation, which transforms a value into another at *constant speed* is *"linear"*. So, when you hear about *Linear Interpolation*, you know they are referring to this simple formula.
+The name of this type of interpolation, which transforms a value into another at *constant speed* is *"linear"*. So, when you hear about *Linear Interpolation*, you know they are referring to this formula.
 
 There are other types of interpolations, which will not be covered here. A recommended read afterwards is the :ref:`Bezier <doc_beziers_and_curves>` page.
 
@@ -35,7 +35,7 @@ Vector types (:ref:`Vector2 <class_Vector2>` and :ref:`Vector3 <class_Vector3>`)
 
 For cubic interpolation, there are also :ref:`Vector2.cubic_interpolate() <class_Vector2_method_linear_interpolate>` and :ref:`Vector3.cubic_interpolate() <class_Vector3_method_linear_interpolate>`, which do a :ref:`Bezier <doc_beziers_and_curves>` style interpolation.
 
-Here is simple pseudo-code for going from point A to B using interpolation:
+Here is example pseudo-code for going from point A to B using interpolation:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

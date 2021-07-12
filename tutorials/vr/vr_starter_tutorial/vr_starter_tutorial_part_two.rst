@@ -19,10 +19,10 @@ class called ``VR_Interactable_Rigidbody``.
 Adding destroyable targets
 --------------------------
 
-Before we make any of the special :ref:`RigidBody <class_RigidBody>`-based nodes, we need something for them to do. Let's make a simple sphere target that will break into a bunch of pieces
+Before we make any of the special :ref:`RigidBody <class_RigidBody>`-based nodes, we need something for them to do. Let's create a sphere target that will break into a bunch of pieces
 when destroyed.
 
-Open up ``Sphere_Target.tscn``, which is in the ``Scenes`` folder. The scene is fairly simple, with just a :ref:`StaticBody <class_StaticBody>` with a sphere shaped
+Open up ``Sphere_Target.tscn``, which is in the ``Scenes`` folder. The scene only has a :ref:`StaticBody <class_StaticBody>` with a sphere shaped
 :ref:`CollisionShape <class_CollisionShape>`, a :ref:`MeshInstance <class_MeshInstance>` node displaying a sphere mesh, and an :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` node.
 
 The special :ref:`RigidBody <class_RigidBody>` nodes will handle damaging the sphere, which is why we are using a :ref:`StaticBody <class_StaticBody>` node instead of something like
@@ -185,7 +185,7 @@ Let's quickly go over a few things of note in ``Pistol.tscn`` real quick before 
 All of the nodes in ``Pistol.tscn`` expect the root node are rotated. This is so the pistol is in the correct rotation relative to the VR controller when it is picked up. The root node
 is a :ref:`RigidBody <class_RigidBody>` node, which we need because we're going to use the ``VR_Interactable_Rigidbody`` class we created in the last part of this tutorial series.
 
-There is a :ref:`MeshInstance <class_MeshInstance>` node called ``Pistol_Flash``, which is a simple mesh that we will be using to simulate the muzzle flash on the end of the pistol's barrel.
+There is a :ref:`MeshInstance <class_MeshInstance>` node called ``Pistol_Flash``, which is a mesh that we will be using to simulate the muzzle flash on the end of the pistol's barrel.
 A :ref:`MeshInstance <class_MeshInstance>` node called ``LaserSight`` is used to as a guide for aiming the pistol, and it follows the direction of the :ref:`Raycast <class_Raycast>` node,
 called ``Raycast``, that the pistol uses to detect if its 'bullet' hit something. Finally, there is an :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` node at the end of the
 pistol that we will use to play the sound of the pistol firing.
@@ -299,7 +299,7 @@ muzzle flash timer just finished and so we need to make ``flash_mesh`` invisible
 """"""""""""""""""""""""""""""""""""""""""""""
 
 The interact function first checks to see if the pistol's muzzle flash is invisible by checking to see if ``flash_timer`` is less than or equal to zero. We do this so we
-can limit the rate of fire of the pistol to the length of time the muzzle flash is visible, which is a simple solution for limiting how fast the player can fire.
+can limit the rate of fire of the pistol to the length of time the muzzle flash is visible, which is a solution for limiting how fast the player can fire.
 
 If ``flash_timer`` is zero or less, we then set ``flash_timer`` to ``FLASH_TIME`` so there is a delay before the pistol can fire again. After that we set ``flash_mesh.visible``
 to ``true`` so the muzzle flash at the end of the pistol is visible while ``flash_timer`` is more than zero.
@@ -473,7 +473,7 @@ instead of just one. All of the other class variables are the same as ``Pistol.g
 """"""""""""""""""""""""""""""""""""""""""""""
 
 The interact function first checks to see if the shotgun's muzzle flash is invisible by checking to see if ``flash_timer`` is less than or equal to zero. We do this so we
-can limit the rate of fire of the shotgun to the length of time the muzzle flash is visible, which is a simple solution for limiting how fast the player can fire.
+can limit the rate of fire of the shotgun to the length of time the muzzle flash is visible, which is a solution for limiting how fast the player can fire.
 
 If ``flash_timer`` is zero or less, we then set ``flash_timer`` to ``FLASH_TIME`` so there is a delay before the shotgun can fire again. After that we set ``flash_mesh.visible``
 to ``true`` so the muzzle flash at the end of the shotgun is visible while ``flash_timer`` is more than zero.
@@ -531,7 +531,7 @@ we then set the ``rumble`` property of the VR controller to ``0.25``, so there i
 Shotgun finished
 ^^^^^^^^^^^^^^^^
 
-Everything else is exactly the same as the pistol, with at most just some simple name changes.
+Everything else is exactly the same as the pistol, with at most some name changes.
 
 Now the shotgun is finished! You can find the shotgun in the sample scene by looking around the back of one of the walls (not in the building though!).
 
@@ -848,7 +848,7 @@ that the functions defined defined in ``VR_Interactable_Rigidbody`` can be calle
 
 Next, let's look at the class variables:
 
-* ``SWORD_DAMAGE``: A constant to define the amount of damage the sword does. This damage is applied  to every object in the sword on every ``_physics_process`` call
+* ``SWORD_DAMAGE``: A constant to define the amount of damage the sword does. This damage is applied to every object in the sword on every ``_physics_process`` call
 * ``COLLISION_FORCE``: A constant that defines the amount of force applied to :ref:`RigidBody <class_RigidBody>` nodes when the sword collides with a :ref:`PhysicsBody <class_PhysicsBody>`.
 * ``damage_body``: A variable to hold the :ref:`KinematicBody <class_KinematicBody>` node used to detect whether the sword is stabbing a :ref:`PhysicsBody <class_PhysicsBody>` node or not.
 * ``sword_noise``: A variable to hold the :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` node used to play a sound when the sword collides with something.

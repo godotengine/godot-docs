@@ -28,7 +28,7 @@ Example of GDScript
 -------------------
 
 Some people can learn better by taking a look at the syntax, so
-here's a simple example of how GDScript looks.
+here's an example of how GDScript looks.
 
 ::
 
@@ -339,7 +339,8 @@ Here's the list of available annotations:
 +------------------------------+---------------------------------------------------------------------------------------------------+
 | ``@tool``                    | Enable the `Tool mode`_.                                                                          |
 +------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@onready``                 | Defer initialization of variable until the node is in the tree. See `Onready annotation`_.        |
+| ``@onready``                 | Defer initialization of variable until the node is in the tree. See                               |
+|                              | :ref:`doc_gdscript_onready_annotation`.                                                           |
 +------------------------------+---------------------------------------------------------------------------------------------------+
 | ``@icon(path)``              | Set the class icon to show in editor. To be used together with the ``class_name`` keyword.        |
 +------------------------------+---------------------------------------------------------------------------------------------------+
@@ -1005,6 +1006,29 @@ boolean expression. In this case, ternary-if expressions come in handy::
     var x = [value] if [expression] else [value]
     y += 3 if y < 10 else -1
 
+Ternary-if expressions can be nested to handle more than 2 cases. When nesting
+ternary-if expressions, it is recommended to wrap the complete expression over
+multiple lines to preserve readability::
+
+    var count = 0
+
+    var fruit = (
+            "apple" if count == 2
+            else "pear" if count == 1
+            else "banana" if count == 0
+            else "orange"
+    )
+    print(fruit)  # banana
+
+    # Alternative syntax with backslashes instead of parentheses (for multi-line expressions).
+    # Less lines required, but harder to refactor.
+    var fruit_alt = \
+            "apple" if count == 2 \
+            else "pear" if count == 1 \
+            else "banana" if count == 0 \
+            else "orange"
+    print(fruit_alt)  # banana
+
 while
 ^^^^^
 
@@ -1317,7 +1341,7 @@ the function name with the attribute operator::
         return super.overriding() # This calls the method as defined in the base class.
 
 
-Class Constructor
+Class constructor
 ^^^^^^^^^^^^^^^^^
 
 The class constructor, called on class instantiation, is named ``_init``. If you
@@ -1363,7 +1387,7 @@ There are a few things to keep in mind here:
    in to ``Idle.gd``.
 4. If ``Idle.gd``'s ``_init`` constructor takes 0 arguments, it still needs to pass some value
    to the ``State.gd`` base class, even if it does nothing. This brings us to the fact that you
-   can pass expressions to the base constructor as well, not just variables. eg.::
+   can pass expressions to the base constructor as well, not just variables, e.g.::
 
     # Idle.gd
 
@@ -1507,8 +1531,22 @@ freed when no longer in use. No garbage collector exists, just
 reference counting. By default, all classes that don't define
 inheritance extend **Reference**. If this is not desired, then a class
 must inherit :ref:`class_Object` manually and must call ``instance.free()``. To
-avoid reference cycles that can't be freed, a ``weakref`` function is
-provided for creating weak references.
+avoid reference cycles that can't be freed, a :ref:`class_WeakRef` function is
+provided for creating weak references. Here is an example:
+
+::
+
+    extends Node
+
+    var my_node_ref
+
+    func _ready():
+        my_node_ref = weakref(get_node("MyNode"))
+
+    func _this_is_called_later():
+        var my_node = my_node_ref.get_ref()
+        if my_node:
+            my_node.do_something()
 
 Alternatively, when not using references, the
 ``is_instance_valid(instance)`` can be used to check if an object has been
@@ -1726,8 +1764,10 @@ This also means that returning a signal from a function that isn't a coroutine w
           type-safety, because a function cannot say that returns an ``int`` but actually give a function state object
           during runtime.
 
-Onready annotation
-~~~~~~~~~~~~~~~~~~
+.. _doc_gdscript_onready_annotation:
+
+`@onready` annotation
+~~~~~~~~~~~~~~~~~~~~~
 
 When using nodes, it's common to desire to keep references to parts
 of the scene in a variable. As scenes are only warranted to be

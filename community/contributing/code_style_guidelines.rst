@@ -167,8 +167,8 @@ Example:
     /*                           GODOT ENGINE                                */
     /*                      https://godotengine.org                          */
     /*************************************************************************/
-    /* Copyright (c) 2007-2020 Juan Linietsky, Ariel Manzur.                 */
-    /* Copyright (c) 2014-2020 Godot Engine contributors (cf. AUTHORS.md).   */
+    /* Copyright (c) 2007-2021 Juan Linietsky, Ariel Manzur.                 */
+    /* Copyright (c) 2014-2021 Godot Engine contributors (cf. AUTHORS.md).   */
     /*                                                                       */
     /* Permission is hereby granted, free of charge, to any person obtaining */
     /* a copy of this software and associated documentation files (the       */
@@ -212,8 +212,8 @@ Example:
     /*                           GODOT ENGINE                                */
     /*                      https://godotengine.org                          */
     /*************************************************************************/
-    /* Copyright (c) 2007-2020 Juan Linietsky, Ariel Manzur.                 */
-    /* Copyright (c) 2014-2020 Godot Engine contributors (cf. AUTHORS.md).   */
+    /* Copyright (c) 2007-2021 Juan Linietsky, Ariel Manzur.                 */
+    /* Copyright (c) 2014-2021 Godot Engine contributors (cf. AUTHORS.md).   */
     /*                                                                       */
     /* Permission is hereby granted, free of charge, to any person obtaining */
     /* a copy of this software and associated documentation files (the       */
@@ -345,7 +345,7 @@ Don't repeat what the code says in a comment. Explain the *why* rather than *how
 You can use Javadoc-style comments above function or macro definitions. It's
 recommended to use Javadoc-style comments *only* for methods which are not
 exposed to scripting. This is because exposed methods should be documented in
-the :ref:`class reference XML <doc_updating_the_class_reference_with_git>`
+the :ref:`class reference XML <doc_updating_the_class_reference>`
 instead.
 
 **Example:**

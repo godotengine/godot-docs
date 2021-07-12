@@ -31,8 +31,15 @@ Another reason is that the developer might prefer a specially-compiled
 binary, which is smaller in size, more optimized and does not include
 tools like the editor and debugger.
 
-Finally, Godot has a simple but efficient system for creating DLCs as
-extra package files.
+Finally, Godot has a simple but efficient system for
+:ref:`creating DLCs as extra package files <doc_exporting_pcks>`.
+
+.. warning::
+
+    Godot does not support loading PCK files larger than 2 GB yet. If your
+    exported project data is larger than 2 GB, you will need to split it into
+    several PCK files by :ref:`exporting additional PCKs <doc_exporting_pcks>`
+    and loading them at run-time.
 
 On mobile
 ~~~~~~~~~
@@ -176,3 +183,21 @@ depending on your needs.
 - Compressed format. Smaller file size, but slower to read/write.
 - Readable and writable using tools normally present on the user's operating system.
   This can be useful to make modding easier (see also :ref:`doc_exporting_pcks`).
+
+.. warning::
+
+    Due to a `known bug <https://github.com/godotengine/godot/pull/42123>`__,
+    when using a ZIP file as a pack file, the exported binary will not try to use
+    it automatically. Therefore, you have to create a *launcher script* that
+    the player can double-click or run from a terminal to launch the project::
+
+        :: launch.bat (Windows)
+        @echo off
+        my_project.exe --main-pack my_project.zip
+
+        # launch.sh (Linux)
+        ./my_project.x86_64 --main-pack my_project.zip
+
+    Save the launcher script and place it in the same folder as the exported binary.
+    On Linux, make sure to give executable permissions to the launcher script using
+    the command ``chmod +x launch.sh``.

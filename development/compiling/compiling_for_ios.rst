@@ -8,7 +8,8 @@ Compiling for iOS
 Requirements
 ------------
 
--  SCons 3.0+ (you can install it via Homebrew or Macports, you should be able
+-  SCons 3.0+ (you can install it via `Homebrew <https://brew.sh/>`_ or
+   `MacPorts <https://www.macports.org/>`_, you should be able
    to run ``scons`` in a terminal when installed).
 -  Xcode 11.0 (or later) with the iOS (13.0) SDK and the command line tools.
 

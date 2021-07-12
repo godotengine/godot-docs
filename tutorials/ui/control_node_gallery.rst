@@ -1,3 +1,5 @@
+.. _doc_control_node_gallery:
+
 Control node gallery
 ====================
 

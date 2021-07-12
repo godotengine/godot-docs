@@ -110,7 +110,7 @@ The progressive forms describe continuous actions. E.g. "is calling",
     Vector2 move ( Vector2 rel_vec )
     Move the body in the given direction, **stopping** if there is an obstacle. [...]
 
-**Do** use simple present, preterit or future.
+**Do** use simple present, past, or future.
 
 ::
 

@@ -219,7 +219,7 @@ $(document).ready(() => {
         <p>
           You are reading the <code class="docutils literal notranslate"><span class="pre">latest</span></code>
           (unstable) version of this documentation, which may document features not available
-          or compatible with Godot 3.2.x.
+          or compatible with Godot 3.x.
         </p>
         <p class="last">
           See <a class="reference" href="${updatedUrl}">this page</a>

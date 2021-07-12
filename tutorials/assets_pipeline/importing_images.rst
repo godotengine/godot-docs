@@ -28,6 +28,8 @@ Godot can import the following image formats:
   For complex vectors, rendering them to PNGs using Inkscape is often a better solution.
   This can be automated thanks to its `command-line interface <https://wiki.inkscape.org/wiki/index.php/Using_the_Command_Line#Export_files>`__.
 - WebP (``.webp``)
+  - WebP files support transparency and can be compressed lossily or losslessly.
+  The precision is limited to 8 bits per channel.
 
 .. note::
 
@@ -78,21 +80,21 @@ Compress Mode
 In this table, each of the four options are described together with their
 advantages and disadvantages (|good| = best, |bad| = worst):
 
-+----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-|                | Uncompressed           | Compress Lossless (PNG)   | Compress Lossy (WebP)   | Compress VRAM                                        |
-+================+========================+===========================+=========================+======================================================+
-| Description    | Stored as raw pixels   | Stored as PNG             | Stored as WebP          | Stored as S3TC/BC or PVRTC/ETC depending on platform |
-+----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-| Size on Disk   | |bad| Large            | |regular| Small           | |good| Very Small       | |regular| Small                                      |
-+----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-| Memory Usage   | |bad| Large            | |bad| Large               | |bad| Large             | |good| Small                                         |
-+----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-| Performance    | |regular| Normal       | |regular| Normal          | |regular| Normal        | |good| Fast                                          |
-+----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-| Quality Loss   | |good| None            | |good| None               | |regular| Slight        | |bad| Moderate                                       |
-+----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-| Load Time      | |regular| Normal       | |bad| Slow                | |bad| Slow              | |good| Fast                                          |
-+----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
++----------------+------------------------+-------------------------------+----------------------+------------------------------------------------------+
+|                | Uncompressed           | Compress Lossless             | Compress Lossy       | Compress VRAM                                        |
++================+========================+===============================+======================+======================================================+
+| Description    | Stored as raw pixels   | Stored as Lossless WebP / PNG | Stored as Lossy WebP | Stored as S3TC/BC or PVRTC/ETC depending on platform |
++----------------+------------------------+-------------------------------+----------------------+------------------------------------------------------+
+| Size on Disk   | |bad| Large            | |regular| Small               | |good| Very Small    | |regular| Small                                      |
++----------------+------------------------+-------------------------------+----------------------+------------------------------------------------------+
+| Memory Usage   | |bad| Large            | |bad| Large                   | |bad| Large          | |good| Small                                         |
++----------------+------------------------+-------------------------------+----------------------+------------------------------------------------------+
+| Performance    | |regular| Normal       | |regular| Normal              | |regular| Normal     | |good| Fast                                          |
++----------------+------------------------+-------------------------------+----------------------+------------------------------------------------------+
+| Quality Loss   | |good| None            | |good| None                   | |regular| Slight     | |bad| Moderate                                       |
++----------------+------------------------+-------------------------------+----------------------+------------------------------------------------------+
+| Load Time      | |regular| Normal       | |bad| Slow                    | |bad| Slow           | |good| Fast                                          |
++----------------+------------------------+-------------------------------+----------------------+------------------------------------------------------+
 
 .. |bad| image:: img/bad.png
 

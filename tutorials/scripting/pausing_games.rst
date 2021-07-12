@@ -12,8 +12,8 @@ However, this is not as simple as it seems. The game might be stopped,
 but it might be desirable that some menus and animations continue
 working.
 
-Implementing a fine-grained control for what can be paused (and what can
-not) is a lot of work, so a simple framework for pausing is provided in
+Implementing a fine-grained control for what can be paused (and what cannot)
+is a lot of work, so a simple framework for pausing is provided in
 Godot.
 
 How pausing works
@@ -59,7 +59,14 @@ You can achieve the same result in code:
     func _ready():
         pause_mode = Node.PAUSE_MODE_PROCESS
 
-By default all nodes have this property in the "Inherit" state. This
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        PauseMode = Node.PauseModeEnum.Process;
+    }
+
+By default, all nodes have this property in the "Inherit" state. This
 means, that they will only process (or not) depending on what this same
 property is set on the parent node. If the parent is set to "Inherit" ,
 then the grandparent will be checked and so on. Ultimately, if a state
@@ -84,7 +91,7 @@ and set its pause mode to "Process" then hide it:
 
 .. image:: img/pause_popup.png
 
-Just by setting the root of the pause popup to "Process", all children
+By setting the root of the pause popup to "Process", all children
 and grandchildren will inherit that state. This way, this branch of the
 scene tree will continue working when paused.
 

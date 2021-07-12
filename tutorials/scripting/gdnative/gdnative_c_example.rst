@@ -6,7 +6,7 @@ GDNative C example
 Introduction
 ------------
 
-This tutorial will introduce you to the bare minimum required to create GDNative
+This tutorial introduces the bare minimum required to create GDNative
 modules. This should be your starting point into the world of GDNative.
 Understanding the contents of this tutorial will help you in understanding all
 that is to come after this.
@@ -228,7 +228,7 @@ library and communicates back to the engine what objects we make available.
         godot_instance_destroy_func destroy = { NULL, NULL, NULL };
         destroy.destroy_func = &simple_destructor;
 
-        nativescript_api->godot_nativescript_register_class(p_handle, "Simple", "Reference",
+        nativescript_api->godot_nativescript_register_class(p_handle, "SIMPLE", "Reference",
                 create, destroy);
 
         godot_instance_method get_data = { NULL, NULL, NULL };
@@ -236,7 +236,7 @@ library and communicates back to the engine what objects we make available.
 
         godot_method_attributes attributes = { GODOT_METHOD_RPC_MODE_DISABLED };
 
-        nativescript_api->godot_nativescript_register_method(p_handle, "Simple", "get_data",
+        nativescript_api->godot_nativescript_register_method(p_handle, "SIMPLE", "get_data",
                 attributes, get_data);
     }
 
@@ -495,7 +495,7 @@ Creating the NativeScript (``.gdns``) file
 ------------------------------------------
 
 With our ``.gdnlib`` file we've told Godot how to load our library, now we need
-to tell it about our "Simple" object class. We do this by creating a
+to tell it about our "SIMPLE" object class. We do this by creating a
 :ref:`NativeScript <class_NativeScript>` resource file with ``.gdns`` extension.
 
 Like done for the GDNativeLibrary resource, click the button to create a new
@@ -504,7 +504,7 @@ resource in the Inspector and select ``NativeScript``:
 .. image:: img/nativescript_resource.png
 
 The inspector will show a few properties that we need to fill. As *Class Name*
-we enter "Simple" which is the object class name that we declared in our C
+we enter "SIMPLE" which is the object class name that we declared in our C
 source when calling ``godot_nativescript_register_class``. We also need to
 select our ``.gdnlib`` file by clicking on *Library* and selecting *Load*:
 
@@ -515,7 +515,7 @@ select our ``.gdnlib`` file by clicking on *Library* and selecting *Load*:
     The *Class Name* must have the same spelling as the one given in ``godot_nativescript_init``
     when registering the class.
 
-   
+
 Finally, click on the save icon and save this as ``bin/simple.gdns``:
 
 .. image:: img/save_gdns.gif

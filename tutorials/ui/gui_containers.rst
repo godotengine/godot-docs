@@ -1,7 +1,7 @@
 .. _doc_gui_containers:
 
-Containers
-==========
+Using Containers
+================
 
 :ref:`Anchors <doc_size_and_anchors>` are an efficient way to handle
 different aspect ratios for basic multiple resolution handling in GUIs,
@@ -51,7 +51,7 @@ Size flags are independent for vertical and horizontal sizing and not all contai
   amount of space they take from each other is determined by the *Ratio* (see below).
 * **Shrink Center** When expanding (and if not filling), try to remain at the center of the expanded
   area (by default it remains at the left or top).
-* **Ratio** Simple ratio of how much expanded controls take up the available space in relation to each
+* **Ratio**: The ratio of how much expanded controls take up the available space in relation to each
   other. A control with "2", will take up twice as much available space as one with "1".
 
 Experimenting with these flags and different containers is recommended to get a better grasp on how they work.
@@ -64,7 +64,7 @@ Godot provides several container types out of the box as they serve different pu
 Box Containers
 ^^^^^^^^^^^^^^
 
-Arrange child controls vertically or horizontally (via :ref:`HBoxContainer <class_HBoxContainer>` and
+Arranges child controls vertically or horizontally (via :ref:`HBoxContainer <class_HBoxContainer>` and
 :ref:`VBoxContainer <class_VBoxContainer>`). In the opposite of the designated direction
 (as in, vertical for an horizontal container), it just expands the children.
 
@@ -127,7 +127,7 @@ The divisor can be dragged around to change the size relation between both child
 PanelContainer
 ^^^^^^^^^^^^^^
 
-Simple container that draws a *StyleBox*, then expands children to cover its whole area
+A container that draws a *StyleBox*, then expands children to cover its whole area
 (via :ref:`PanelContainer <class_PanelContainer>`, respecting the *StyleBox* margins).
 It respects both the horizontal and vertical size flags.
 
@@ -161,7 +161,7 @@ it as if it was an image (via :ref:`ViewportContainer <class_ViewportContainer>`
 Creating custom Containers
 --------------------------
 
-It is possible to easily create a custom container using script. Here is an example of a simple container that fits children
+It is possible to easily create a custom container using script. Here is an example of a container that fits children
 to its rect size:
 
 .. tabs::
@@ -170,7 +170,7 @@ to its rect size:
     extends Container
 
     func _notification(what):
-        if (what==NOTIFICATION_SORT_CHILDREN):
+        if what == NOTIFICATION_SORT_CHILDREN:
             # Must re-sort the children
             for c in get_children():
                 # Fit to own size

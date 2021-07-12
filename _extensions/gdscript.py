@@ -146,13 +146,9 @@ class GDScriptLexer(RegexLexer):
                         "extends",
                         "is",
                         "func",
-                        "setget",
                         "signal",
-                        "tool",
                         "const",
                         "enum",
-                        "export",
-                        "onready",
                         "static",
                         "var",
                         "break",
@@ -165,12 +161,6 @@ class GDScriptLexer(RegexLexer):
                         "return",
                         "match",
                         "while",
-                        "remote",
-                        "master",
-                        "puppet",
-                        "remotesync",
-                        "mastersync",
-                        "puppetsync",
                     ),
                     suffix=r"\b",
                 ),
@@ -189,6 +179,7 @@ class GDScriptLexer(RegexLexer):
                         "assert",
                         "atan",
                         "atan2",
+                        "await",
                         "bytes2var",
                         "ceil",
                         "char",
@@ -251,14 +242,13 @@ class GDScriptLexer(RegexLexer):
                         "var2bytes",
                         "var2str",
                         "weakref",
-                        "yield",
                     ),
                     prefix=r"(?<!\.)",
                     suffix=r"\b",
                 ),
                 Name.Builtin,
             ),
-            (r"((?<!\.)(self|false|true)|(PI|TAU|NAN|INF)" r")\b", Name.Builtin.Pseudo),
+            (r"((?<!\.)(self|super|false|true)|(PI|TAU|NAN|INF)" r")\b", Name.Builtin.Pseudo),
             (
                 words(
                     (
@@ -305,7 +295,7 @@ class GDScriptLexer(RegexLexer):
             (r"0[xX][a-fA-F0-9]+", Number.Hex),
             (r"\d+j?", Number.Integer),
         ],
-        "name": [(r"[a-zA-Z_]\w*", Name)],
+        "name": [(r"@?[a-zA-Z_]\w*", Name)],
         "funcname": [(r"[a-zA-Z_]\w*", Name.Function, "#pop"), default("#pop")],
         "classname": [(r"[a-zA-Z_]\w*", Name.Class, "#pop")],
         "stringescape": [
@@ -341,7 +331,7 @@ class GDScriptLexer(RegexLexer):
 
 
 def setup(sphinx):
-    sphinx.add_lexer("gdscript", GDScriptLexer())
+    sphinx.add_lexer("gdscript", GDScriptLexer)
 
     return {
         "parallel_read_safe": True,

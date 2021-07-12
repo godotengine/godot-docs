@@ -151,9 +151,9 @@ Using them, however, may not be completely obvious, so following is a descriptio
 Evaluating
 ----------
 
-Just evaluating them may be an option, but in most cases it's not very useful. The big drawback with Bezier curves is that if you traverse them at constant speed, from ``t = 0`` to ``t = 1``, the actual interpolation will *not* move at constant speed. The speed is also an interpolation between the distances between points ``p0``, ``p1``, ``p2`` and ``p3`` and there is not a mathematically simple way to traverse the curve at constant speed.
+Only evaluating them may be an option, but in most cases it's not very useful. The big drawback with Bezier curves is that if you traverse them at constant speed, from ``t = 0`` to ``t = 1``, the actual interpolation will *not* move at constant speed. The speed is also an interpolation between the distances between points ``p0``, ``p1``, ``p2`` and ``p3`` and there is not a mathematically simple way to traverse the curve at constant speed.
 
-Let's do a simple example with the following pseudocode:
+Let's do an example with the following pseudocode:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -190,7 +190,7 @@ Traversal
 
 The last common use case for the curves is to traverse them. Because of what was mentioned before regarding constant speed, this is also difficult.
 
-To make this easier, the curves need to be *baked* into equidistant points. This way, they can be approximated with regular  interpolation (which can be improved further with a cubic option). To do this, just use the :ref:`Curve.interpolate_baked()<class_Curve_method_interpolate_baked>` method together with
+To make this easier, the curves need to be *baked* into equidistant points. This way, they can be approximated with regular interpolation (which can be improved further with a cubic option). To do this, just use the :ref:`Curve.interpolate_baked()<class_Curve_method_interpolate_baked>` method together with
 :ref:`Curve2D.get_baked_length()<class_Curve2D_method_get_baked_length>`. The first call to either of them will bake the curve internally.
 
 Traversal at constant speed, then, can be done with the following pseudo-code:

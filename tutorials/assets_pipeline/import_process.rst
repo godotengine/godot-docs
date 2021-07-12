@@ -15,7 +15,7 @@ In Godot 3.0+, we use a more modern approach to importing: Simply drop
 your assets (image files, scenes, audio files, fonts, etc) directly in the
 project folder (copy them manually with your OS file explorer).
 Godot will automatically import these files internally
-and keep the imported resources hidden in a res://.import folder.
+and keep the imported resources hidden in a ``res://.import`` folder.
 
 This means that when trying to access imported assets through code you
 need to use the :ref:`Resource Loader<class_ResourceLoader>` as it will
@@ -68,12 +68,12 @@ asset.
 Files generated
 -----------------
 
-Importing will add an extra <asset>.import file, containing the import
+Importing will add an extra ``<asset>.import`` file, containing the import
 configuration. Make sure to commit these to your version control system!
 
 .. image:: img/asset_workflow4.png
 
-Additionally, extra assets will be preset in the hidden res://.import folder:
+Additionally, extra assets will be preset in the hidden ``res://.import`` folder:
 
 .. image:: img/asset_workflow5.png
 
@@ -106,7 +106,7 @@ the default setting can be saved and cleared too:
 Simplicity is key!
 ------------------
 
-This is a very simple workflow which should take very little time to get used to. It also enforces a more
+This workflow is aimed to be simple and take very little time to get used to. It also enforces a more
 correct way to deal with resources.
 
 There are many types of assets available for import, so please continue reading to understand how to work

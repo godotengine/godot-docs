@@ -74,7 +74,7 @@ is required.
 Scene linear & asset pipelines
 ------------------------------
 
-Working in scene-linear sRGB is not as simple as just pressing a switch. First,
+Working in scene-linear sRGB is more complex than pressing a single switch. First,
 imported image assets must be converted to linear light ratios on import. Even
 when linearized, those assets may not be perfectly well-suited for use
 as textures, depending on how they were generated.

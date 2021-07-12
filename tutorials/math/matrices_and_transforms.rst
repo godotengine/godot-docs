@@ -235,7 +235,7 @@ Putting it all together
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 We're going to apply everything we mentioned so far onto one transform.
-To follow along, create a simple project with a Sprite node and use the
+To follow along, create a project with a Sprite node and use the
 Godot logo for the texture resource.
 
 Let's set the translation to (350, 150), rotate by -0.5 rad, and scale by 3.
@@ -478,8 +478,8 @@ the code we would use:
  .. code-tab:: gdscript GDScript
 
     # Set up transforms just like in the image, except make positions be 100 times bigger.
-    var parent = Transform2D(2, 0, 0, 1, 100, 200)
-    var child = Transform2D(0.5, 0, 0, 0.5, 100, 100)
+    var parent = Transform2D(Vector2(2, 0), Vector2(0, 1), Vector2(100, 200))
+    var child = Transform2D(Vector2(0.5, 0), Vector2(0, 0.5), Vector2(100, 100))
 
     # Calculate the child's world space transform
     # origin = (2, 0) * 100 + (0, 1) * 100 + (100, 200)

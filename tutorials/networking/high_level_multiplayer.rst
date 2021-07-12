@@ -495,7 +495,7 @@ a dedicated server with no GPU available. See
 
     The bomberman example here is largely for illustrational purposes, and does not
     do anything on the host-side to handle the case where a peer uses a custom client
-    to cheat by for example refusing to to stun itself. In the current implementation
+    to cheat by for example refusing to stun itself. In the current implementation
     such cheating is perfectly possible because each client is the network master of
     its own player, and the network master of a player is the one which decides whether
     to call the I-was-stunned method (``stun``) on all of the other peers and itself.

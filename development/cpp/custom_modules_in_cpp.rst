@@ -34,25 +34,15 @@ instead. Adding C++ modules can be useful in the following scenarios:
 Creating a new module
 ---------------------
 
-Before creating a module, make sure to download the source code of Godot
-and manage to compile it. There are tutorials in the documentation for this.
+Before creating a module, make sure to :ref:`download the source code of Godot
+and compile it <toc-devel-compiling>`.
 
 To create a new module, the first step is creating a directory inside
 ``modules/``. If you want to maintain the module separately, you can checkout
 a different VCS into modules and use it.
 
-The example module will be called "summator", and is placed inside the
-Godot source tree (``C:\godot`` refers to wherever the Godot sources are
-located):
-
-.. code-block:: console
-
-    C:\godot> cd modules
-    C:\godot\modules> mkdir summator
-    C:\godot\modules> cd summator
-    C:\godot\modules\summator>
-
-Inside we will create a simple summator class:
+The example module will be called "summator" (``godot/modules/summator``).
+Inside we will create a summator class:
 
 .. code-block:: cpp
 
@@ -182,8 +172,8 @@ environment's paths:
     env.Append(CPPPATH=["#myotherlib/include"]) # this is an 'absolute' path
 
 If you want to add custom compiler flags when building your module, you need to clone
-`env` first, so it won't add those flags to whole Godot build (which can cause errors).
-Example `SCsub` with custom flags:
+``env`` first, so it won't add those flags to whole Godot build (which can cause errors).
+Example ``SCsub`` with custom flags:
 
 .. code-block:: python
 
@@ -193,11 +183,14 @@ Example `SCsub` with custom flags:
 
     module_env = env.Clone()
     module_env.add_source_files(env.modules_sources, "*.cpp")
-    module_env.Append(CCFLAGS=['-O2']) # Flags for C and C++ code
-    module_env.Append(CXXFLAGS=['-std=c++11']) # Flags for C++ code only
+    # Append CCFLAGS flags for both C and C++ code.
+    module_env.Append(CCFLAGS=['-O2'])
+    # If you need to, you can:
+    # - Append CFLAGS for C code only.
+    # - Append CXXFLAGS for C++ code only.
 
-And finally, the configuration file for the module, this is a simple
-python script that must be named ``config.py``:
+And finally, the configuration file for the module, this is a
+Python script that must be named ``config.py``:
 
 .. code-block:: python
 
@@ -237,7 +230,8 @@ Using the module
 
 You can now use your newly created module from any script:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var s = Summator.new()
     s.add(10)
@@ -391,7 +385,7 @@ We now need to add this method to ``register_types`` header and source files:
 Improving the build system for development
 ------------------------------------------
 
-So far we defined a clean and simple SCsub that allows us to add the sources
+So far we defined a clean SCsub that allows us to add the sources
 of our new module as part of the Godot binary.
 
 This static approach is fine when we want to build a release version of our
@@ -475,7 +469,6 @@ using the `ARGUMENT` command:
 
     module_env = env.Clone()
     module_env.Append(CCFLAGS=['-O2'])
-    module_env.Append(CXXFLAGS=['-std=c++11'])
 
     if ARGUMENTS.get('summator_shared', 'no') == 'yes':
         # Shared lib compilation
