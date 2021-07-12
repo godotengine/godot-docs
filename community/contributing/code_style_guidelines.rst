@@ -48,6 +48,11 @@ setup clang-format locally to check and automatically fix all your commits.
              ``/* clang-format off */`` and ``/* clang-format on */`` to tell
              clang-format to ignore a chunk of code.
 
+.. seealso::
+
+    These guidelines only cover code formatting. See :ref:`doc_cpp_usage_guidelines`
+    for a list of language features that are permitted in pull requests.
+
 Using clang-format locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -121,6 +126,8 @@ Here is a non-exhaustive list of beautifier plugins for some IDEs:
   `ClangFormat <https://www.jetbrains.com/help/clion/clangformat-as-alternative-formatter.html#clion-support>`__
 
 (Pull requests welcome to extend this list with tested plugins.)
+
+.. _doc_code_style_guidelines_header_includes:
 
 Header includes
 ~~~~~~~~~~~~~~~

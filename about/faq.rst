@@ -415,6 +415,8 @@ This custom UI toolkit :ref:`can't be used as a library <doc_faq_use_godot_as_li
 but you can still
 :ref:`use Godot to create non-game applications by using the editor <doc_faq_non_game_applications>`.
 
+.. _doc_faq_why_not_stl:
+
 Why does Godot not use STL (Standard Template Library)?
 -------------------------------------------------------
 
@@ -460,7 +462,7 @@ removed at run-time to dynamically add and remove behaviors.
 More information about Godot's design choices can be found in
 `this article <https://godotengine.org/article/why-isnt-godot-ecs-based-game-engine>`__.
 
-Why does Godot not force users to implement DoD (Data oriented Design)?
+Why does Godot not force users to implement DoD (Data-oriented Design)?
 -----------------------------------------------------------------------
 
 While Godot internally for a lot of the heavy performance tasks attempts
