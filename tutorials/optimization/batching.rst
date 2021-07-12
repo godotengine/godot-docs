@@ -514,11 +514,11 @@ I use a large number of textures, so few items are being batched.
 Appendix
 ~~~~~~~~
 
-Batched Primitives
+Batched primitives
 ^^^^^^^^^^^^^^^^^^
 
-Note that not all primitives can be batched, and batching is not guaranteed,
-especially with primitives using an anti-aliased border. The following
+Not all primitives can be batched. Batching is not guaranteed either,
+especially with primitives using an antialiased border. The following
 primitive types are currently available:
 
 - RECT
@@ -526,8 +526,9 @@ primitive types are currently available:
 - POLY
 - LINE
 
-With non-batched primitives you may be able to get better performance drawing
-them manually with polys in a ``_draw()`` function.
+With non-batched primitives, you may be able to get better performance by
+drawing them manually with polys in a ``_draw()`` function.
+See :ref:`doc_custom_drawing_in_2d` for more information.
 
 .. _doc_batching_light_scissoring_threshold_calculation:
 
