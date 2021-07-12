@@ -3,8 +3,8 @@
 Documentation changelog
 =======================
 
-The documentation is continually being improved. The release of version 3.3
-includes many new pages, many fixes and updates to existing pages, and many updates
+The documentation is continually being improved. New releases
+include new pages, fixes and updates to existing pages, and many updates
 to the :ref:`class reference <toc-class-ref>`. Below is a list of new pages
 added since version 3.0.
 
@@ -14,7 +14,15 @@ added since version 3.0.
 New pages since version 3.3
 ---------------------------
 
-None yet.
+C++
+^^^
+
+- :ref:`doc_cpp_usage_guidelines`
+
+GDScript
+^^^^^^^^
+
+- :ref:`doc_gdscript_documentation_comments`
 
 New pages since version 3.2
 ---------------------------
