@@ -75,6 +75,31 @@ library a better place for all users.
 * If your asset is a library for working with other files,
   consider including example files in the asset.
 
+* Consider adding a **.gitattributes** file to your repo and listing
+  files not required by your asset to function with the ``export-ignore``
+  directive. This directive removes such files from the resulting ZIP file
+  and prevents them from being downloaded by the asset library users.
+  For a typical plugin **.gitattributes** may look like this:
+
+  .. code-block:: none
+
+    /.gitattributes     export-ignore
+    /.gitignore         export-ignore
+    /LICENSE            export-ignore
+    /LICENSE.md         export-ignore
+    /README.md          export-ignore
+    /project.godot      export-ignore
+    /icon.png           export-ignore
+    /icon.svg           export-ignore
+
+  Other types of assets may require a different configuration (e.g.
+  a project template requires **project.godot**).
+
+* If you are submitting a plugin, add a copy of your license and readme
+  to the plugin folder itself. This is the folder that users are guaranteed to
+  keep with their project, so a copy ensures they always have those files handy
+  (and helps them fulfill your licensing terms).
+
 * The icon should be a square, its aspect ratio should be 1:1. It should
   also ideally have a minimum resolution of 64x64 pixels.
 
@@ -164,10 +189,10 @@ submission boxes to enable them.
 Once you are done, press "Submit". Your asset will be entered into the review queue.
 You can check all assets currently pending a review `here <https://godotengine.org/asset-library/asset/edit?&asset=-1>`_ .
 The approval process is manual and may take up to a few days for your asset to be accepted (or rejected), so please
-be patient! 
+be patient!
 
 .. note::
-    
+
     You may have some luck accelerating the approval process by messaging the
     moderators and AssetLib reviewers on the `Contributors Chat <https://chat.godotengine.org/>`_,
     or the official Discord server.
