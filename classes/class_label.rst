@@ -182,7 +182,7 @@ If ``true``, wraps the text inside the node's bounding rectangle. If you resize 
 | *Getter*  | is_clipping_text()   |
 +-----------+----------------------+
 
-If ``true``, the Label only shows the text that fits inside its bounding rectangle. It also lets you scale the node down freely.
+If ``true``, the Label only shows the text that fits inside its bounding rectangle and will clip text horizontally.
 
 ----
 

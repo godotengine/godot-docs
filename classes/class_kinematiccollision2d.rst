@@ -30,6 +30,8 @@ Properties
 +-------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`Variant<class_Variant>` | :ref:`collider_metadata<class_KinematicCollision2D_property_collider_metadata>`       |                     |
 +-------------------------------+---------------------------------------------------------------------------------------+---------------------+
+| :ref:`RID<class_RID>`         | :ref:`collider_rid<class_KinematicCollision2D_property_collider_rid>`                 |                     |
++-------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`Object<class_Object>`   | :ref:`collider_shape<class_KinematicCollision2D_property_collider_shape>`             |                     |
 +-------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`int<class_int>`         | :ref:`collider_shape_index<class_KinematicCollision2D_property_collider_shape_index>` | ``0``               |
@@ -85,6 +87,18 @@ The colliding body's unique instance ID. See :ref:`Object.get_instance_id<class_
 +----------+-------------------------+
 
 The colliding body's metadata. See :ref:`Object<class_Object>`.
+
+----
+
+.. _class_KinematicCollision2D_property_collider_rid:
+
+- :ref:`RID<class_RID>` **collider_rid**
+
++----------+--------------------+
+| *Getter* | get_collider_rid() |
++----------+--------------------+
+
+The colliding body's :ref:`RID<class_RID>` used by the :ref:`Physics2DServer<class_Physics2DServer>`.
 
 ----
 

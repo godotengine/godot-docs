@@ -950,7 +950,9 @@ Icon set in ``.ico`` format used on Windows to set the game's icon. This is done
 | *Default* | ``false`` |
 +-----------+-----------+
 
-If ``true``, disables printing to standard error in an exported build.
+If ``true``, disables printing to standard error. If ``true``, this also hides error and warning messages printed by :ref:`@GDScript.push_error<class_@GDScript_method_push_error>` and :ref:`@GDScript.push_warning<class_@GDScript_method_push_warning>`. See also :ref:`application/run/disable_stdout<class_ProjectSettings_property_application/run/disable_stdout>`.
+
+Changes to this setting will only be applied upon restarting the application.
 
 ----
 
@@ -962,7 +964,9 @@ If ``true``, disables printing to standard error in an exported build.
 | *Default* | ``false`` |
 +-----------+-----------+
 
-If ``true``, disables printing to standard output in an exported build.
+If ``true``, disables printing to standard output. This is equivalent to starting the editor or project with the ``--quiet`` command line argument. See also :ref:`application/run/disable_stderr<class_ProjectSettings_property_application/run/disable_stderr>`.
+
+Changes to this setting will only be applied upon restarting the application.
 
 ----
 
@@ -3650,7 +3654,7 @@ The default angular damp in 2D.
 | *Default* | ``98`` |
 +-----------+--------+
 
-The default gravity strength in 2D.
+The default gravity strength in 2D (in pixels per second squared).
 
 **Note:** This property is only read when the project starts. To change the default gravity at runtime, use the following code sample:
 
@@ -3804,7 +3808,7 @@ The default angular damp in 3D.
 | *Default* | ``9.8`` |
 +-----------+---------+
 
-The default gravity strength in 3D.
+The default gravity strength in 3D (in meters per second squared).
 
 **Note:** This property is only read when the project starts. To change the default gravity at runtime, use the following code sample:
 
@@ -3926,7 +3930,9 @@ The number of fixed iterations per second. This controls how often physics simul
 | *Default* | ``0.5`` |
 +-----------+---------+
 
-Fix to improve physics jitter, specially on monitors where refresh rate is different than the physics FPS.
+Controls how much physics ticks are synchronized with real time. For 0 or less, the ticks are synchronized. Such values are recommended for network games, where clock synchronization matters. Higher values cause higher deviation of in-game clock and real clock, but allows smoothing out framerate jitters. The default value of 0.5 should be fine for most; values above 2 could cause the game to react to dropped frames with a noticeable delay and are not recommended.
+
+**Note:** For best results, when using a custom physics interpolation solution, the physics jitter fix should be disabled by setting :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>` to ``0``.
 
 **Note:** This property is only read when the project starts. To change the physics FPS at runtime, set :ref:`Engine.physics_jitter_fix<class_Engine_property_physics_jitter_fix>` instead.
 
@@ -4556,6 +4562,8 @@ If ``true``, uses a fast post-processing filter to make banding significantly le
 
 **Note:** Only available on the GLES3 backend. :ref:`rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>` must also be ``true`` for debanding to be effective.
 
+**Note:** There are known issues with debanding breaking rendering on mobile platforms. Due to this, it is recommended to leave this option disabled when targeting mobile platforms.
+
 ----
 
 .. _class_ProjectSettings_property_rendering/quality/filters/use_fxaa:
@@ -5038,6 +5046,8 @@ Thread model for rendering. Rendering on a thread can vastly improve performance
 
 If ``true``, the texture importer will import VRAM-compressed textures using the BPTC algorithm. This texture compression algorithm is only supported on desktop platforms, and only when using the GLES3 renderer.
 
+**Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.import/`` folder located inside the project folder then restart the editor.
+
 ----
 
 .. _class_ProjectSettings_property_rendering/vram_compression/import_etc:
@@ -5049,6 +5059,8 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 +-----------+-----------+
 
 If ``true``, the texture importer will import VRAM-compressed textures using the Ericsson Texture Compression algorithm. This algorithm doesn't support alpha channels in textures.
+
+**Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.import/`` folder located inside the project folder then restart the editor.
 
 ----
 
@@ -5062,6 +5074,8 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 
 If ``true``, the texture importer will import VRAM-compressed textures using the Ericsson Texture Compression 2 algorithm. This texture compression algorithm is only supported when using the GLES3 renderer.
 
+**Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.import/`` folder located inside the project folder then restart the editor.
+
 ----
 
 .. _class_ProjectSettings_property_rendering/vram_compression/import_pvrtc:
@@ -5074,6 +5088,8 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 
 If ``true``, the texture importer will import VRAM-compressed textures using the PowerVR Texture Compression algorithm. This texture compression algorithm is only supported on iOS.
 
+**Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.import/`` folder located inside the project folder then restart the editor.
+
 ----
 
 .. _class_ProjectSettings_property_rendering/vram_compression/import_s3tc:
@@ -5085,6 +5101,8 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 +-----------+----------+
 
 If ``true``, the texture importer will import VRAM-compressed textures using the S3 Texture Compression algorithm. This algorithm is only supported on desktop platforms and consoles.
+
+**Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.import/`` folder located inside the project folder then restart the editor.
 
 ----
 

@@ -470,6 +470,8 @@ Removes all items from the ``PopupMenu``.
 
 - :ref:`int<class_int>` **get_current_index** **(** **)** |const|
 
+Returns the index of the currently focused item. Returns ``-1`` if no item is focused.
+
 ----
 
 .. _class_PopupMenu_method_get_item_accelerator:

@@ -33,6 +33,8 @@ Methods
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`action_erase_events<class_InputMap_method_action_erase_events>` **(** :ref:`String<class_String>` action **)**                                            |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`action_get_deadzone<class_InputMap_method_action_get_deadzone>` **(** :ref:`String<class_String>` action **)**                                            |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`action_has_event<class_InputMap_method_action_has_event>` **(** :ref:`String<class_String>` action, :ref:`InputEvent<class_InputEvent>` event **)**       |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`action_set_deadzone<class_InputMap_method_action_set_deadzone>` **(** :ref:`String<class_String>` action, :ref:`float<class_float>` deadzone **)**        |
@@ -76,6 +78,14 @@ Removes an :ref:`InputEvent<class_InputEvent>` from an action.
 - void **action_erase_events** **(** :ref:`String<class_String>` action **)**
 
 Removes all events from an action.
+
+----
+
+.. _class_InputMap_method_action_get_deadzone:
+
+- :ref:`float<class_float>` **action_get_deadzone** **(** :ref:`String<class_String>` action **)**
+
+Returns a deadzone value for the action.
 
 ----
 

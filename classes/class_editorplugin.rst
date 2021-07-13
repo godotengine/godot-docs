@@ -327,7 +327,9 @@ During run-time, this will be a simple object with a script so this function doe
 
 - void **add_export_plugin** **(** :ref:`EditorExportPlugin<class_EditorExportPlugin>` plugin **)**
 
-Registers a new export plugin. Export plugins are used when the project is being exported. See :ref:`EditorExportPlugin<class_EditorExportPlugin>` for more information.
+Registers a new :ref:`EditorExportPlugin<class_EditorExportPlugin>`. Export plugins are used to perform tasks when the project is being exported.
+
+See :ref:`add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>` for an example of how to register a plugin.
 
 ----
 
@@ -335,11 +337,32 @@ Registers a new export plugin. Export plugins are used when the project is being
 
 - void **add_import_plugin** **(** :ref:`EditorImportPlugin<class_EditorImportPlugin>` importer **)**
 
+Registers a new :ref:`EditorImportPlugin<class_EditorImportPlugin>`. Import plugins are used to import custom and unsupported assets as a custom :ref:`Resource<class_Resource>` type.
+
+**Note:** If you want to import custom 3D asset formats use :ref:`add_scene_import_plugin<class_EditorPlugin_method_add_scene_import_plugin>` instead.
+
+See :ref:`add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>` for an example of how to register a plugin.
+
 ----
 
 .. _class_EditorPlugin_method_add_inspector_plugin:
 
 - void **add_inspector_plugin** **(** :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` plugin **)**
+
+Registers a new :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>`. Inspector plugins are used to extend :ref:`EditorInspector<class_EditorInspector>` and provide custom configuration tools for your object's properties.
+
+**Note:** Always use :ref:`remove_inspector_plugin<class_EditorPlugin_method_remove_inspector_plugin>` to remove the registered :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` when your ``EditorPlugin`` is disabled to prevent leaks and an unexpected behavior.
+
+::
+
+    const MyInspectorPlugin = preload("res://addons/your_addon/path/to/your/script.gd")
+    var inspector_plugin = MyInspectorPlugin.new()
+    
+    func _enter_tree():
+        add_inspector_plugin(inspector_plugin)
+    
+    func _exit_tree():
+        remove_inspector_plugin(inspector_plugin)
 
 ----
 
@@ -347,11 +370,17 @@ Registers a new export plugin. Export plugins are used when the project is being
 
 - void **add_scene_import_plugin** **(** :ref:`EditorSceneImporter<class_EditorSceneImporter>` scene_importer **)**
 
+Registers a new :ref:`EditorSceneImporter<class_EditorSceneImporter>`. Scene importers are used to import custom 3D asset formats as scenes.
+
 ----
 
 .. _class_EditorPlugin_method_add_spatial_gizmo_plugin:
 
 - void **add_spatial_gizmo_plugin** **(** :ref:`EditorSpatialGizmoPlugin<class_EditorSpatialGizmoPlugin>` plugin **)**
+
+Registers a new :ref:`EditorSpatialGizmoPlugin<class_EditorSpatialGizmoPlugin>`. Gizmo plugins are used to add custom gizmos to the 3D preview viewport for a :ref:`Spatial<class_Spatial>`.
+
+See :ref:`add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>` for an example of how to register a plugin.
 
 ----
 
@@ -637,11 +666,15 @@ Returns ``true`` if this is a main screen editor plugin (it goes in the workspac
 
 - void **hide_bottom_panel** **(** **)**
 
+Minimizes the bottom panel.
+
 ----
 
 .. _class_EditorPlugin_method_make_bottom_panel_item_visible:
 
 - void **make_bottom_panel_item_visible** **(** :ref:`Control<class_Control>` item **)**
+
+Makes a specific item in the bottom panel visible.
 
 ----
 
@@ -707,11 +740,15 @@ Removes a custom type added by :ref:`add_custom_type<class_EditorPlugin_method_a
 
 - void **remove_export_plugin** **(** :ref:`EditorExportPlugin<class_EditorExportPlugin>` plugin **)**
 
+Removes an export plugin registered by :ref:`add_export_plugin<class_EditorPlugin_method_add_export_plugin>`.
+
 ----
 
 .. _class_EditorPlugin_method_remove_import_plugin:
 
 - void **remove_import_plugin** **(** :ref:`EditorImportPlugin<class_EditorImportPlugin>` importer **)**
+
+Removes an import plugin registered by :ref:`add_import_plugin<class_EditorPlugin_method_add_import_plugin>`.
 
 ----
 
@@ -719,17 +756,23 @@ Removes a custom type added by :ref:`add_custom_type<class_EditorPlugin_method_a
 
 - void **remove_inspector_plugin** **(** :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` plugin **)**
 
+Removes an inspector plugin registered by :ref:`add_import_plugin<class_EditorPlugin_method_add_import_plugin>`
+
 ----
 
 .. _class_EditorPlugin_method_remove_scene_import_plugin:
 
 - void **remove_scene_import_plugin** **(** :ref:`EditorSceneImporter<class_EditorSceneImporter>` scene_importer **)**
 
+Removes a scene importer registered by :ref:`add_scene_import_plugin<class_EditorPlugin_method_add_scene_import_plugin>`.
+
 ----
 
 .. _class_EditorPlugin_method_remove_spatial_gizmo_plugin:
 
 - void **remove_spatial_gizmo_plugin** **(** :ref:`EditorSpatialGizmoPlugin<class_EditorSpatialGizmoPlugin>` plugin **)**
+
+Removes a gizmo plugin registered by :ref:`add_spatial_gizmo_plugin<class_EditorPlugin_method_add_spatial_gizmo_plugin>`.
 
 ----
 

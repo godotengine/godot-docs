@@ -18,6 +18,8 @@ Description
 
 Provides navigation and pathfinding within a collection of :ref:`NavigationMesh<class_NavigationMesh>`\ es. By default, these will be automatically collected from child :ref:`NavigationMeshInstance<class_NavigationMeshInstance>` nodes, but they can also be added on the fly with :ref:`navmesh_add<class_Navigation_method_navmesh_add>`. In addition to basic pathfinding, this class also assists with aligning navigation agents with the meshes they are navigating on.
 
+**Note:** The current navigation system has many known issues and will not always return optimal paths as expected. These issues will be fixed in Godot 4.0.
+
 Tutorials
 ---------
 
@@ -108,6 +110,8 @@ Returns the navigation point closest to the given line segment. When enabling ``
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **get_simple_path** **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` optimize=true **)**
 
 Returns the path between two given points. Points are in local coordinate space. If ``optimize`` is ``true`` (the default), the agent properties associated with each :ref:`NavigationMesh<class_NavigationMesh>` (radius, height, etc.) are considered in the path calculation, otherwise they are ignored.
+
+**Note:** This method has known issues and will often return non-optimal paths. These issues will be fixed in Godot 4.0.
 
 ----
 

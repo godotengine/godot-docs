@@ -1294,6 +1294,8 @@ enum **ButtonList**:
 
 .. _class_@GlobalScope_constant_JOY_BUTTON_21:
 
+.. _class_@GlobalScope_constant_JOY_BUTTON_22:
+
 .. _class_@GlobalScope_constant_JOY_BUTTON_MAX:
 
 .. _class_@GlobalScope_constant_JOY_SONY_CIRCLE:
@@ -1345,6 +1347,8 @@ enum **ButtonList**:
 .. _class_@GlobalScope_constant_JOY_DPAD_LEFT:
 
 .. _class_@GlobalScope_constant_JOY_DPAD_RIGHT:
+
+.. _class_@GlobalScope_constant_JOY_GUIDE:
 
 .. _class_@GlobalScope_constant_JOY_MISC1:
 
@@ -1460,7 +1464,9 @@ enum **JoystickList**:
 
 - **JOY_BUTTON_21** = **21** --- Gamepad button 21.
 
-- **JOY_BUTTON_MAX** = **22** --- Represents the maximum number of joystick buttons supported.
+- **JOY_BUTTON_22** = **22** --- Gamepad button 22.
+
+- **JOY_BUTTON_MAX** = **23** --- Represents the maximum number of joystick buttons supported.
 
 - **JOY_SONY_CIRCLE** = **1** --- DualShock circle button.
 
@@ -1512,17 +1518,19 @@ enum **JoystickList**:
 
 - **JOY_DPAD_RIGHT** = **15** --- Gamepad DPad right.
 
-- **JOY_MISC1** = **16** --- Gamepad SDL miscellaneous button.
+- **JOY_GUIDE** = **16** --- Gamepad SDL guide button.
 
-- **JOY_PADDLE1** = **17** --- Gamepad SDL paddle 1 button.
+- **JOY_MISC1** = **17** --- Gamepad SDL miscellaneous button.
 
-- **JOY_PADDLE2** = **18** --- Gamepad SDL paddle 2 button.
+- **JOY_PADDLE1** = **18** --- Gamepad SDL paddle 1 button.
 
-- **JOY_PADDLE3** = **19** --- Gamepad SDL paddle 3 button.
+- **JOY_PADDLE2** = **19** --- Gamepad SDL paddle 2 button.
 
-- **JOY_PADDLE4** = **20** --- Gamepad SDL paddle 4 button.
+- **JOY_PADDLE3** = **20** --- Gamepad SDL paddle 3 button.
 
-- **JOY_TOUCHPAD** = **21** --- Gamepad SDL touchpad button.
+- **JOY_PADDLE4** = **21** --- Gamepad SDL paddle 4 button.
+
+- **JOY_TOUCHPAD** = **22** --- Gamepad SDL touchpad button.
 
 - **JOY_L** = **4** --- Gamepad left Shoulder button.
 

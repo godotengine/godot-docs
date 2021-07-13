@@ -496,6 +496,8 @@ Sorts the array.
 
 Sorts the array using a custom method. The arguments are an object that holds the method and the name of such method. The custom method receives two arguments (a pair of elements from the array) and must return either ``true`` or ``false``.
 
+For two elements ``a`` and ``b``, if the given method returns ``true``, element ``b`` will be after element ``a`` in the array.
+
 **Note:** you cannot randomize the return value as the heapsort algorithm expects a deterministic result. Doing so will result in unexpected behavior.
 
 ::

@@ -603,7 +603,9 @@ Reads one chunk from the response.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **request** **(** :ref:`Method<enum_HTTPClient_Method>` method, :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`String<class_String>` body="" **)**
 
-Sends a request to the connected host. The URL parameter is just the part after the host, so for ``http://somehost.com/index.php``, it is ``index.php``.
+Sends a request to the connected host.
+
+The URL parameter is usually just the part after the host, so for ``http://somehost.com/index.php``, it is ``/index.php``. When sending requests to an HTTP proxy server, it should be an absolute URL. For :ref:`METHOD_OPTIONS<class_HTTPClient_constant_METHOD_OPTIONS>` requests, ``*`` is also allowed. For :ref:`METHOD_CONNECT<class_HTTPClient_constant_METHOD_CONNECT>` requests, it should be the authority component (``host:port``).
 
 Headers are HTTP request headers. For available HTTP methods, see :ref:`Method<enum_HTTPClient_Method>`.
 
@@ -614,7 +616,7 @@ To create a POST request with query strings to push to the server, do:
     var fields = {"username" : "user", "password" : "pass"}
     var query_string = http_client.query_string_from_dict(fields)
     var headers = ["Content-Type: application/x-www-form-urlencoded", "Content-Length: " + str(query_string.length())]
-    var result = http_client.request(http_client.METHOD_POST, "index.php", headers, query_string)
+    var result = http_client.request(http_client.METHOD_POST, "/index.php", headers, query_string)
 
 **Note:** The ``request_data`` parameter is ignored if ``method`` is :ref:`METHOD_GET<class_HTTPClient_constant_METHOD_GET>`. This is because GET methods can't contain request data. As a workaround, you can pass request data as a query string in the URL. See :ref:`String.http_escape<class_String_method_http_escape>` for an example.
 
@@ -624,7 +626,9 @@ To create a POST request with query strings to push to the server, do:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **request_raw** **(** :ref:`Method<enum_HTTPClient_Method>` method, :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`PoolByteArray<class_PoolByteArray>` body **)**
 
-Sends a raw request to the connected host. The URL parameter is just the part after the host, so for ``http://somehost.com/index.php``, it is ``index.php``.
+Sends a raw request to the connected host.
+
+The URL parameter is usually just the part after the host, so for ``http://somehost.com/index.php``, it is ``/index.php``. When sending requests to an HTTP proxy server, it should be an absolute URL. For :ref:`METHOD_OPTIONS<class_HTTPClient_constant_METHOD_OPTIONS>` requests, ``*`` is also allowed. For :ref:`METHOD_CONNECT<class_HTTPClient_constant_METHOD_CONNECT>` requests, it should be the authority component (``host:port``).
 
 Headers are HTTP request headers. For available HTTP methods, see :ref:`Method<enum_HTTPClient_Method>`.
 

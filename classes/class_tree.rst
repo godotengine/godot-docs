@@ -678,6 +678,8 @@ To tell whether a column of an item is selected, use :ref:`TreeItem.is_selected<
 
 - void **scroll_to_item** **(** :ref:`Object<class_Object>` item **)**
 
+Causes the ``Tree`` to jump to the specified item.
+
 ----
 
 .. _class_Tree_method_set_column_expand:

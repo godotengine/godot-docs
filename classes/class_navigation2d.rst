@@ -18,6 +18,8 @@ Description
 
 Navigation2D provides navigation and pathfinding within a 2D area, specified as a collection of :ref:`NavigationPolygon<class_NavigationPolygon>` resources. By default, these are automatically collected from child :ref:`NavigationPolygonInstance<class_NavigationPolygonInstance>` nodes, but they can also be added on the fly with :ref:`navpoly_add<class_Navigation2D_method_navpoly_add>`.
 
+**Note:** The current navigation system has many known issues and will not always return optimal paths as expected. These issues will be fixed in Godot 4.0.
+
 Tutorials
 ---------
 
@@ -64,6 +66,8 @@ Returns the owner of the :ref:`NavigationPolygon<class_NavigationPolygon>` which
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **get_simple_path** **(** :ref:`Vector2<class_Vector2>` start, :ref:`Vector2<class_Vector2>` end, :ref:`bool<class_bool>` optimize=true **)**
 
 Returns the path between two given points. Points are in local coordinate space. If ``optimize`` is ``true`` (the default), the path is smoothed by merging path segments where possible.
+
+**Note:** This method has known issues and will often return non-optimal paths. These issues will be fixed in Godot 4.0.
 
 ----
 

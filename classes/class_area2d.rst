@@ -312,7 +312,7 @@ The physics layers this area scans to determine collision detection. See `Collis
 | *Getter*  | get_gravity()      |
 +-----------+--------------------+
 
-The area's gravity intensity (ranges from -1024 to 1024). This value multiplies the gravity vector. This is useful to alter the force of gravity without altering its direction.
+The area's gravity intensity (in pixels per second squared). This value multiplies the gravity vector. This is useful to alter the force of gravity without altering its direction.
 
 ----
 
