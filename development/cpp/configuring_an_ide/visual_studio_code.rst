@@ -30,20 +30,35 @@ Importing the project
 
 - Within the ``tasks.json`` file find the ``"tasks"`` array and add a new section to it:
 
-.. code-block:: js
+.. tabs::
+  .. code-tab:: js LinuxBSD
 
-  {
-    "label": "build",
-    "type": "shell",
-    "command": "scons",
-    "group": "build",
-    "args": [
-      "platform=linuxbsd", // Change to your current platform
-      "target=debug",
-      "-j4"
-    ],
-    "problemMatcher": "$msCompile"
-  }
+    {
+      "label": "build",
+      "group": "build",
+      "type": "shell",
+      "command": "scons",
+      "args": [
+        "-j $(nproc)"
+      ],
+      "problemMatcher": "$msCompile"
+    }
+
+  .. code-tab:: js Windows
+
+    {
+      "label": "build",
+      "group": "build",
+      "type": "shell",
+      "command": "scons",
+      "args": [
+        // Use this when your default shell is Command Prompt (cmd.exe).
+        "-j %NUMBER_OF_PROCESSORS%",
+        // Use this when your default shell is PowerShell.
+        "-j $env:NUMBER_OF_PROCESSORS"
+      ],
+      "problemMatcher": "$msCompile"
+    }
 
 .. figure:: img/vscode_3_tasks.json.png
    :figclass: figure-w480
@@ -69,31 +84,49 @@ To run and debug the project you need to create a new configuration in the ``lau
   adjust the configuration example provided accordingly.
 - Within the ``launch.json`` file find the ``"configurations"`` array and add a new section to it:
 
-.. code-block:: js
+.. tabs::
+  .. code-tab:: js LinuxBSD
 
-  {
-    "name": "Launch",
-    "type": "cppdbg",
-    "request": "launch",
-    // Change the path below to match your current platform.
-    "program": "${workspaceFolder}/bin/godot.linuxbsd.tools.64",
-    // Change the arguments below for the project you want to test with.
-    // To run the project instead of editing it, remove the "--editor" argument.
-    "args": [ "--editor", "--path", "path-to-your-godot-project-folder" ],
-    "stopAtEntry": false,
-    "cwd": "${workspaceFolder}",
-    "environment": [],
-    "externalConsole": true,
-    "MIMode": "gdb",
-    "setupCommands": [
-      {
-        "description": "Enable pretty-printing for gdb",
-        "text": "-enable-pretty-printing",
-        "ignoreFailures": true
-      }
-    ],
-    "preLaunchTask": "build"
-  }
+    {
+      "name": "Launch Project",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/godot.linuxbsd.tools.64",
+      // Change the arguments below for the project you want to test with.
+      // To run the project instead of editing it, remove the "--editor" argument.
+      "args": [ "--editor", "--path", "path-to-your-godot-project-folder" ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build"
+    }
+
+  .. code-tab:: js Windows
+
+    {
+      "name": "Launch Project",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/godot.windows.tools.64.exe",
+      // Change the arguments below for the project you want to test with.
+      // To run the project instead of editing it, remove the "--editor" argument.
+      "args": [ "--editor", "--path", "path-to-your-godot-project-folder" ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "console": "internalConsole",
+      "visualizerFile": "${workspaceFolder}/platform/windows/godot.natvis",
+      "preLaunchTask": "build"
+    }
 
 .. figure:: img/vscode_2_launch.json.png
    :figclass: figure-w480
