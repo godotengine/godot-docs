@@ -56,7 +56,7 @@ To build an iOS plugin:
 
     - You should use the same header files for iOS plugins and for the iOS export template.
 
-3. In the ``Build Settings`` tab, specify the compilation flags for your static library in ``OTHER_CFLAGS``. The most important ones are ``-fcxx-modules``, ``-fmodules``, and ``-DDEBUG`` if you need debug support. Other flags should be the same you use to compile Godot. For instance: 
+3. In the ``Build Settings`` tab, specify the compilation flags for your static library in ``OTHER_CFLAGS``. The most important ones are ``-fcxx-modules``, ``-fmodules``, and ``-DDEBUG`` if you need debug support. Other flags should be the same you use to compile Godot. For instance:
 
 ::
 
