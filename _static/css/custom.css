@@ -709,6 +709,16 @@ kbd, .kbd {
     vertical-align: middle;
 }
 
+/* Unset excessive styles for nested kbd tags. */
+kbd.compound > kbd,
+kbd.compound > .kbd,
+.kbd.compound > kbd,
+.kbd.compound > .kbd {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
 /* Buttons */
 
 .btn-neutral {
