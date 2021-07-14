@@ -3,10 +3,12 @@
 Plugins for iOS
 ===============
 
-At the moment Godot provides StoreKit, GameCenter, iCloud services plugins.
+Godot provides StoreKit, GameCenter, iCloud services and other plugins.
 They are using same model of asynchronous calls explained below.
 
 ARKit and Camera access are also provided as plugins.
+
+Latest updates, documentation and source code can be found at `Godot iOS plugins repository <https://github.com/godotengine/godot-ios-plugins>`_ 
 
 Accessing plugin singletons
 ---------------------------
