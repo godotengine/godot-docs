@@ -233,7 +233,8 @@ then causes a reverse cascade going up back to the tree's root.
 
 When instantiating a script or a standalone scene, nodes are not
 added to the SceneTree upon creation, so no ``_enter_tree`` callbacks
-trigger. Instead, only the ``_init`` and later ``_ready`` calls occur.
+trigger. Instead, only the ``_init`` call occurs. When the scene is added
+to the SceneTree, the ``_enter_tree`` and ``_ready`` calls occur.
 
 If one needs to trigger behavior that occurs as nodes parent to another,
 regardless of whether it occurs as part of the main/active scene or not, one
