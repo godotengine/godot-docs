@@ -26,11 +26,11 @@ Effects like scrolling are best achieved by manipulating the canvas transform pr
 efficient than moving the root canvas item (and hence the whole scene).
 
 Usually though, we don't want *everything* in the game or app to be subject to the canvas
-transform. Examples of this are:
+transform. For example:
 
 -  **Parallax Backgrounds**: Backgrounds that move slower than the rest
    of the stage.
--  **UI**: Think of a user interface (UI) or Heads-up display (HUD) superimposed on our view of the game world. We want a life counter, score display and other elements to retain their screen positions even when our view of the game world is changing.
+-  **UI**: Think of a user interface (UI) or head-up display (HUD) superimposed on our view of the game world. We want a life counter, score display and other elements to retain their screen positions even when our view of the game world changes.
 -  **Transitions**: We may want visual effects used for transitions (fades, blends) to remain at a fixed screen location.
 
 How can these problems be solved in a single scene tree?
