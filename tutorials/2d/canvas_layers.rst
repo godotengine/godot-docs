@@ -7,10 +7,10 @@ Viewport and Canvas items
 -------------------------
 
 :ref:`CanvasItem <class_CanvasItem>` is the base for all 2D nodes, be it regular
-     2D nodes, such as :ref:`Node2D <class_Node2D>`, or :ref:`Control <class_Control>`.
-     Both inherit from :ref:`CanvasItem <class_CanvasItem>`.
-     You can arrange canvas items in trees. Each item will inherit its parent's
-     transform: when the parent moves, its children move too.
+2D nodes, such as :ref:`Node2D <class_Node2D>`, or :ref:`Control <class_Control>`.
+Both inherit from :ref:`CanvasItem <class_CanvasItem>`.
+You can arrange canvas items in trees. Each item will inherit its parent's
+transform: when the parent moves, its children move too.
 
 CanvasItem nodes, and nodes inheriting from them, are direct or indirect children of a
 :ref:`Viewport <class_Viewport>`, that display them.
@@ -25,11 +25,11 @@ To achieve effects like scrolling, manipulating the canvas transform property is
 more efficient than moving the root canvas item and the entire scene with it.
 
 Usually though, we don't want *everything* in the game or app to be subject to the canvas
-transform. Examples of this are:
+transform. For example:
 
 -  **Parallax Backgrounds**: Backgrounds that move slower than the rest
    of the stage.
--  **UI**: Think of a user interface (UI) or Heads-up display (HUD) superimposed on our view of the game world. We want a life counter, score display and other elements to retain their screen positions even when our view of the game world changes.
+-  **UI**: Think of a user interface (UI) or head-up display (HUD) superimposed on our view of the game world. We want a life counter, score display and other elements to retain their screen positions even when our view of the game world changes.
 -  **Transitions**: We may want visual effects used for transitions (fades, blends) to remain at a fixed screen location.
 
 How to solve these problems in a single scene tree?
