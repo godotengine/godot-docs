@@ -282,7 +282,7 @@ Shaders
 
 - *2D:* Custom vertex, fragment, and light shaders.
 - *3D:* Custom vertex, fragment, light, and sky shaders.
-- Text-based shaders using a `shader language inspired by GLSL <doc_shading_language>`.
+- Text-based shaders using a :ref:`shader language inspired by GLSL <doc_shading_language>`.
 - Visual shader editor.
 
    - Support for visual shader plugins.
