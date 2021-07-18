@@ -44,3 +44,7 @@ Parses a JSON encoded string and returns a :ref:`JSONParseResult<class_JSONParse
 
 Converts a :ref:`Variant<class_Variant>` var to JSON text and returns the result. Useful for serializing data to store or send over the network.
 
+``indent`` is inserted before each key-value pair, which can be used to set the indentation (tabs or spaces).
+
+``sort_keys`` specifies whether the key-value pairs in the output will be sorted alphabetically by key name in ascending order.
+
