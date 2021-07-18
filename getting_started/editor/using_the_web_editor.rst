@@ -47,6 +47,9 @@ are currently missing:
 
 - No C#/Mono support.
 - No GDNative support.
+- No debugging support. This means GDScript debugging/profiling, live scene
+  editing, the Remote Scene tree dock and other features that rely on the debugger
+  protocol will not work.
 - No project exporting. As a workaround, you can download the project source
   using **Project > Tools > Download Project Source** and export it using a
   `native version of the Godot editor <https://godotengine.org/download>`__.
