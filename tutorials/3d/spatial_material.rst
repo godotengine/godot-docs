@@ -223,6 +223,15 @@ Determines which side of the object is not drawn when backfaces are rendered:
 * **Front:** The front of the object is culled when not visible.
 * **Disabled:** Used for objects that are double-sided (no culling is performed).
 
+.. note::
+
+    By default, Blender has backface culling disabled on materials and will
+    export materials to match how they render in Blender. This means that
+    materials in Godot will have their cull mode set to **Disabled**. This can
+    decrease performance since backfaces will be rendered, even when they are
+    being culled by other faces. To resolve this, enable **Backface Culling** in
+    Blender's Materials tab, then export the scene to glTF again.
+
 Depth Draw Mode
 ~~~~~~~~~~~~~~~
 

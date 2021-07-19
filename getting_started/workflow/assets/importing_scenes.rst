@@ -57,6 +57,13 @@ either of those glTF binary files are fine.
     Blender does not export emissive textures with the glTF file. If your model
     uses one, it must be brought in separately.
 
+    By default, Blender has backface culling disabled on materials and will
+    export materials to match how they render in Blender. This means that
+    materials in Godot will have their cull mode set to **Disabled**. This can
+    decrease performance since backfaces will be rendered, even when they are
+    being culled by other faces. To resolve this, enable **Backface Culling** in
+    Blender's Materials tab, then export the scene to glTF again.
+
 Exporting DAE files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
