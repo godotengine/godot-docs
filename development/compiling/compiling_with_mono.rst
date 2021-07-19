@@ -16,7 +16,7 @@ Requirements
 You may need to import necessary certificates for NuGet to perform HTTPS
 requests.
 
-The recommended method is to use **curl**'s CA (Certificate Autorities) certificate bundle.
+The recommended method is to use **curl**'s CA (Certificate Authorities) certificate bundle.
 
 Run the following commands to download and import it. On Windows, you can run it
 from the Mono command line prompt (or the regular prompt if you added Mono's
