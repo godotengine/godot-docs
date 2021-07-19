@@ -26,11 +26,15 @@ played back often.
 AudioStreamPlayer
 -----------------
 
+.. image:: img/audio_stream_player.png
+
 This is the standard, non-positional stream player. It can play to any bus.
 In 5.1 sound setups, it can send audio to stereo mix or front speakers.
 
 AudioStreamPlayer2D
 -------------------
+
+.. image:: img/audio_stream_2d.png
 
 This is a variant of AudioStreamPlayer, but emits sound in a 2D positional
 environment. When close to the left of the screen, the panning will go left.
@@ -47,6 +51,8 @@ When close to the right side, it will go right.
 
 AudioStreamPlayer3D
 -------------------
+
+.. image:: img/audio_stream_3d.png
 
 This is a variant of AudioStreamPlayer, but emits sound in a 3D positional
 environment. Depending on the location of the player relative to the screen,
