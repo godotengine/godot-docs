@@ -43,7 +43,7 @@ Godot stores all variables in the scripting API in the
 `Variant <https://docs.godotengine.org/en/latest/development/cpp/variant_class.html>`_
 class. Variants can store Variant-compatible data structures such as
 :ref:`Array <class_Array>` and :ref:`Dictionary <class_Dictionary>` as well 
-as :ref:`Object <class_Object>`s.
+as :ref:`Object <class_Object>`\ s.
 
 Godot implements Array as a ``Vector<Variant>``. The engine stores the Array
 contents in a contiguous section of memory, i.e. they are in a row adjacent
