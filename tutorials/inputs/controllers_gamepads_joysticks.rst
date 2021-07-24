@@ -39,7 +39,7 @@ Input actions are explained in detail on the :ref:`doc_inputevent` page.
 Which Input singleton method should I use?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In Godot 4.0, there are 3 ways to get input in an analog-aware way:
+There are 3 ways to get input in an analog-aware way:
 
 - When you have two axes (such as joystick or WASD movement) and want both
   axes to behave as a single input, use ``Input.get_vector()``:
@@ -122,9 +122,9 @@ use ``Input.is_action_pressed()``:
     // `jumping` will be a boolean with a value of `true` or `false`.
     bool jumping = Input.IsActionPressed("jump");
 
-In Godot versions before 4.0, such as 3.2, ``Input.get_vector()`` and
+In Godot versions before 3.4, such as 3.3, ``Input.get_vector()`` and
 ``Input.get_axis()`` aren't available. Only ``Input.get_action_strength()``
-and ``Input.is_action_pressed()`` are available in Godot 3.2.
+and ``Input.is_action_pressed()`` are available in Godot 3.3.
 
 Differences between keyboard/mouse and controller input
 -------------------------------------------------------
