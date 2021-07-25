@@ -11,6 +11,19 @@ entirely from the command line. Given the engine relies on almost no
 external libraries, initialization times are pretty fast, making it
 suitable for this workflow.
 
+.. note::
+
+    On Windows and Linux, you can run a Godot binary in a terminal by specifying
+    its relative or absolute path.
+
+    On macOS, the process is different due to Godot being contained within an
+    ``.app`` bundle (which is a *folder*, not a file). To run a Godot binary
+    from a terminal on macOS, you have to ``cd`` to the folder where the Godot
+    application bundle is located, then run ``Godot.app/Contents/MacOS/Godot``
+    followed by any command line arguments. If you've renamed the application
+    bundle from ``Godot`` to another name, make sure to edit this command line
+    accordingly.
+
 Command line reference
 ----------------------
 
