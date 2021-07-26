@@ -656,7 +656,7 @@ Note that varying may not be assigned in custom functions or a *light processor*
         test = 0.0; // Error too.
     }
 
-This limitation was introduced to prevent incorrect usage of them before initialization.
+This limitation was introduced to prevent incorrect usage before initialization.
 
 Interpolation qualifiers
 ~~~~~~~~~~~~~~~~~~~~~~~~
