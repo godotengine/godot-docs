@@ -28,6 +28,8 @@ Methods
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | void                                                     | :ref:`close<class_WebRTCDataChannel_method_close>` **(** **)**                                               |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                    | :ref:`get_buffered_amount<class_WebRTCDataChannel_method_get_buffered_amount>` **(** **)** |const|           |
++----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                    | :ref:`get_id<class_WebRTCDataChannel_method_get_id>` **(** **)** |const|                                     |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                              | :ref:`get_label<class_WebRTCDataChannel_method_get_label>` **(** **)** |const|                               |
@@ -111,6 +113,14 @@ Method Descriptions
 - void **close** **(** **)**
 
 Closes this data channel, notifying the other peer.
+
+----
+
+.. _class_WebRTCDataChannel_method_get_buffered_amount:
+
+- :ref:`int<class_int>` **get_buffered_amount** **(** **)** |const|
+
+Returns the number of bytes currently queued to be sent over this channel.
 
 ----
 

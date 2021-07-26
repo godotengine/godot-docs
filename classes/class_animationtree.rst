@@ -135,7 +135,7 @@ The process mode of this ``AnimationTree``. See :ref:`AnimationProcessMode<enum_
 
 The path to the Animation track used for root motion. Paths must be valid scene-tree paths to a node, and must be specified starting from the parent node of the node that will reproduce the animation. To specify a track that controls properties or bones, append its name after the path, separated by ``":"``. For example, ``"character/skeleton:ankle"`` or ``"character/mesh:transform/local"``.
 
-If the track has type :ref:`Animation.TYPE_TRANSFORM<class_Animation_constant_TYPE_TRANSFORM>`, the transformation will be cancelled visually, and the animation will appear to stay in place.
+If the track has type :ref:`Animation.TYPE_TRANSFORM<class_Animation_constant_TYPE_TRANSFORM>`, the transformation will be cancelled visually, and the animation will appear to stay in place. See also :ref:`get_root_motion_transform<class_AnimationTree_method_get_root_motion_transform>` and :ref:`RootMotionView<class_RootMotionView>`.
 
 ----
 
@@ -166,7 +166,7 @@ Manually advance the animations by the specified time (in seconds).
 
 - :ref:`Transform<class_Transform>` **get_root_motion_transform** **(** **)** |const|
 
-Retrieve the motion of the :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` as a :ref:`Transform<class_Transform>` that can be used elsewhere. If :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` is not a path to a track of type :ref:`Animation.TYPE_TRANSFORM<class_Animation_constant_TYPE_TRANSFORM>`, returns an identity transformation.
+Retrieve the motion of the :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` as a :ref:`Transform<class_Transform>` that can be used elsewhere. If :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` is not a path to a track of type :ref:`Animation.TYPE_TRANSFORM<class_Animation_constant_TYPE_TRANSFORM>`, returns an identity transformation. See also :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` and :ref:`RootMotionView<class_RootMotionView>`.
 
 ----
 

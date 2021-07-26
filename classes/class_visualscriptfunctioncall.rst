@@ -11,7 +11,12 @@ VisualScriptFunctionCall
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+A Visual Script node for calling a function.
 
+Description
+-----------
+
+``VisualScriptFunctionCall`` is created when you add or drag and drop a function onto the Visual Script graph. It allows to tweak parameters of the call, e.g. what object the function is called on.
 
 Properties
 ----------
@@ -55,15 +60,15 @@ Enumerations
 
 enum **CallMode**:
 
-- **CALL_MODE_SELF** = **0**
+- **CALL_MODE_SELF** = **0** --- The method will be called on this :ref:`Object<class_Object>`.
 
-- **CALL_MODE_NODE_PATH** = **1**
+- **CALL_MODE_NODE_PATH** = **1** --- The method will be called on the given :ref:`Node<class_Node>` in the scene tree.
 
-- **CALL_MODE_INSTANCE** = **2**
+- **CALL_MODE_INSTANCE** = **2** --- The method will be called on an instanced node with the given type and script.
 
-- **CALL_MODE_BASIC_TYPE** = **3**
+- **CALL_MODE_BASIC_TYPE** = **3** --- The method will be called on a GDScript basic type (e.g. :ref:`Vector2<class_Vector2>`).
 
-- **CALL_MODE_SINGLETON** = **4**
+- **CALL_MODE_SINGLETON** = **4** --- The method will be called on a singleton.
 
 ----
 
@@ -81,15 +86,15 @@ enum **CallMode**:
 
 enum **RPCCallMode**:
 
-- **RPC_DISABLED** = **0**
+- **RPC_DISABLED** = **0** --- The method will be called locally.
 
-- **RPC_RELIABLE** = **1**
+- **RPC_RELIABLE** = **1** --- The method will be called remotely.
 
-- **RPC_UNRELIABLE** = **2**
+- **RPC_UNRELIABLE** = **2** --- The method will be called remotely using an unreliable protocol.
 
-- **RPC_RELIABLE_TO_ID** = **3**
+- **RPC_RELIABLE_TO_ID** = **3** --- The method will be called remotely for the given peer.
 
-- **RPC_UNRELIABLE_TO_ID** = **4**
+- **RPC_UNRELIABLE_TO_ID** = **4** --- The method will be called remotely for the given peer, using an unreliable protocol.
 
 Property Descriptions
 ---------------------
@@ -103,6 +108,8 @@ Property Descriptions
 +----------+------------------------+
 | *Getter* | get_base_script()      |
 +----------+------------------------+
+
+The script to be used when :ref:`call_mode<class_VisualScriptFunctionCall_property_call_mode>` is set to :ref:`CALL_MODE_INSTANCE<class_VisualScriptFunctionCall_constant_CALL_MODE_INSTANCE>`.
 
 ----
 
@@ -118,6 +125,8 @@ Property Descriptions
 | *Getter*  | get_base_type()      |
 +-----------+----------------------+
 
+The base type to be used when :ref:`call_mode<class_VisualScriptFunctionCall_property_call_mode>` is set to :ref:`CALL_MODE_INSTANCE<class_VisualScriptFunctionCall_constant_CALL_MODE_INSTANCE>`.
+
 ----
 
 .. _class_VisualScriptFunctionCall_property_basic_type:
@@ -129,6 +138,8 @@ Property Descriptions
 +----------+-----------------------+
 | *Getter* | get_basic_type()      |
 +----------+-----------------------+
+
+The type to be used when :ref:`call_mode<class_VisualScriptFunctionCall_property_call_mode>` is set to :ref:`CALL_MODE_BASIC_TYPE<class_VisualScriptFunctionCall_constant_CALL_MODE_BASIC_TYPE>`.
 
 ----
 
@@ -144,6 +155,8 @@ Property Descriptions
 | *Getter*  | get_call_mode()      |
 +-----------+----------------------+
 
+``call_mode`` determines the target object on which the method will be called. See :ref:`CallMode<enum_VisualScriptFunctionCall_CallMode>` for options.
+
 ----
 
 .. _class_VisualScriptFunctionCall_property_function:
@@ -158,6 +171,8 @@ Property Descriptions
 | *Getter*  | get_function()      |
 +-----------+---------------------+
 
+The name of the function to be called.
+
 ----
 
 .. _class_VisualScriptFunctionCall_property_node_path:
@@ -169,6 +184,8 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | get_base_path()      |
 +----------+----------------------+
+
+The node path to use when :ref:`call_mode<class_VisualScriptFunctionCall_property_call_mode>` is set to :ref:`CALL_MODE_NODE_PATH<class_VisualScriptFunctionCall_constant_CALL_MODE_NODE_PATH>`.
 
 ----
 
@@ -184,6 +201,8 @@ Property Descriptions
 | *Getter*  | get_rpc_call_mode()      |
 +-----------+--------------------------+
 
+The mode for RPC calls. See :ref:`Node.rpc<class_Node_method_rpc>` for more details and :ref:`RPCCallMode<enum_VisualScriptFunctionCall_RPCCallMode>` for available options.
+
 ----
 
 .. _class_VisualScriptFunctionCall_property_singleton:
@@ -196,6 +215,8 @@ Property Descriptions
 | *Getter* | get_singleton()      |
 +----------+----------------------+
 
+The singleton to call the method on. Used when :ref:`call_mode<class_VisualScriptFunctionCall_property_call_mode>` is set to :ref:`CALL_MODE_SINGLETON<class_VisualScriptFunctionCall_constant_CALL_MODE_SINGLETON>`.
+
 ----
 
 .. _class_VisualScriptFunctionCall_property_use_default_args:
@@ -207,6 +228,8 @@ Property Descriptions
 +----------+-----------------------------+
 | *Getter* | get_use_default_args()      |
 +----------+-----------------------------+
+
+Number of default arguments that will be used when calling the function. Can't be higher than the number of available default arguments in the method's declaration.
 
 ----
 
@@ -221,6 +244,8 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | get_validate()      |
 +-----------+---------------------+
+
+If ``false``, call errors (e.g. wrong number of arguments) will be ignored.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

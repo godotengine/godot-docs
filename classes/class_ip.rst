@@ -32,9 +32,13 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`get_resolve_item_address<class_IP_method_get_resolve_item_address>` **(** :ref:`int<class_int>` id **)** |const|                                            |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                     | :ref:`get_resolve_item_addresses<class_IP_method_get_resolve_item_addresses>` **(** :ref:`int<class_int>` id **)** |const|                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ResolverStatus<enum_IP_ResolverStatus>` | :ref:`get_resolve_item_status<class_IP_method_get_resolve_item_status>` **(** :ref:`int<class_int>` id **)** |const|                                              |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`resolve_hostname<class_IP_method_resolve_hostname>` **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**                       |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                     | :ref:`resolve_hostname_addresses<class_IP_method_resolve_hostname_addresses>` **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**   |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`resolve_hostname_queue_item<class_IP_method_resolve_hostname_queue_item>` **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)** |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -149,6 +153,14 @@ Returns a queued hostname's IP address, given its queue ``id``. Returns an empty
 
 ----
 
+.. _class_IP_method_get_resolve_item_addresses:
+
+- :ref:`Array<class_Array>` **get_resolve_item_addresses** **(** :ref:`int<class_int>` id **)** |const|
+
+Return resolved addresses, or an empty array if an error happened or resolution didn't happen yet (see :ref:`get_resolve_item_status<class_IP_method_get_resolve_item_status>`).
+
+----
+
 .. _class_IP_method_get_resolve_item_status:
 
 - :ref:`ResolverStatus<enum_IP_ResolverStatus>` **get_resolve_item_status** **(** :ref:`int<class_int>` id **)** |const|
@@ -162,6 +174,14 @@ Returns a queued hostname's status as a :ref:`ResolverStatus<enum_IP_ResolverSta
 - :ref:`String<class_String>` **resolve_hostname** **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**
 
 Returns a given hostname's IPv4 or IPv6 address when resolved (blocking-type method). The address type returned depends on the :ref:`Type<enum_IP_Type>` constant given as ``ip_type``.
+
+----
+
+.. _class_IP_method_resolve_hostname_addresses:
+
+- :ref:`Array<class_Array>` **resolve_hostname_addresses** **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**
+
+Resolves a given hostname in a blocking way. Addresses are returned as an :ref:`Array<class_Array>` of IPv4 or IPv6 depending on ``ip_type``.
 
 ----
 

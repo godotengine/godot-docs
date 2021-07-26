@@ -162,9 +162,9 @@ Signals
 
 .. _class_LineEdit_signal_text_change_rejected:
 
-- **text_change_rejected** **(** **)**
+- **text_change_rejected** **(** :ref:`String<class_String>` rejected_substring **)**
 
-Emitted when trying to append text that would overflow the :ref:`max_length<class_LineEdit_property_max_length>`.
+Emitted when appending text that overflows the :ref:`max_length<class_LineEdit_property_max_length>`. The appended text is truncated to fit :ref:`max_length<class_LineEdit_property_max_length>`, and the part that couldn't fit is passed as the ``rejected_substring`` argument.
 
 ----
 
@@ -389,6 +389,20 @@ If ``true``, the ``LineEdit`` width will increase to stay longer than the :ref:`
 +-----------+-----------------------+
 
 Maximum amount of characters that can be entered inside the ``LineEdit``. If ``0``, there is no limit.
+
+When a limit is defined, characters that would exceed :ref:`max_length<class_LineEdit_property_max_length>` are truncated. This happens both for existing :ref:`text<class_LineEdit_property_text>` contents when setting the max length, or for new text inserted in the ``LineEdit``, including pasting. If any input text is truncated, the :ref:`text_change_rejected<class_LineEdit_signal_text_change_rejected>` signal is emitted with the truncated substring as parameter.
+
+**Example:**
+
+::
+
+    text = "Hello world"
+    max_length = 5
+    # `text` becomes "Hello".
+    max_length = 10
+    text += " goodbye"
+    # `text` becomes "Hello good".
+    # `text_change_rejected` is emitted with "bye" as parameter.
 
 ----
 

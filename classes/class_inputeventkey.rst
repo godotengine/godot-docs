@@ -26,22 +26,26 @@ Tutorials
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`echo<class_InputEventKey_property_echo>`         | ``false`` |
-+-------------------------+--------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`pressed<class_InputEventKey_property_pressed>`   | ``false`` |
-+-------------------------+--------------------------------------------------------+-----------+
-| :ref:`int<class_int>`   | :ref:`scancode<class_InputEventKey_property_scancode>` | ``0``     |
-+-------------------------+--------------------------------------------------------+-----------+
-| :ref:`int<class_int>`   | :ref:`unicode<class_InputEventKey_property_unicode>`   | ``0``     |
-+-------------------------+--------------------------------------------------------+-----------+
++-------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`echo<class_InputEventKey_property_echo>`                           | ``false`` |
++-------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`   | :ref:`physical_scancode<class_InputEventKey_property_physical_scancode>` | ``0``     |
++-------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`pressed<class_InputEventKey_property_pressed>`                     | ``false`` |
++-------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`   | :ref:`scancode<class_InputEventKey_property_scancode>`                   | ``0``     |
++-------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`   | :ref:`unicode<class_InputEventKey_property_unicode>`                     | ``0``     |
++-------------------------+--------------------------------------------------------------------------+-----------+
 
 Methods
 -------
 
-+-----------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_scancode_with_modifiers<class_InputEventKey_method_get_scancode_with_modifiers>` **(** **)** |const| |
-+-----------------------+----------------------------------------------------------------------------------------------------------------+
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_physical_scancode_with_modifiers<class_InputEventKey_method_get_physical_scancode_with_modifiers>` **(** **)** |const| |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_scancode_with_modifiers<class_InputEventKey_method_get_scancode_with_modifiers>` **(** **)** |const|                   |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -59,6 +63,24 @@ Property Descriptions
 +-----------+-----------------+
 
 If ``true``, the key was already pressed before this event. It means the user is holding the key down.
+
+----
+
+.. _class_InputEventKey_property_physical_scancode:
+
+- :ref:`int<class_int>` **physical_scancode**
+
++-----------+------------------------------+
+| *Default* | ``0``                        |
++-----------+------------------------------+
+| *Setter*  | set_physical_scancode(value) |
++-----------+------------------------------+
+| *Getter*  | get_physical_scancode()      |
++-----------+------------------------------+
+
+Key physical scancode, which corresponds to one of the :ref:`KeyList<enum_@GlobalScope_KeyList>` constants. Represent the physical location of a key on the 101/102-key US QWERTY keyboard.
+
+To get a human-readable representation of the ``InputEventKey``, use ``OS.get_scancode_string(event.physical_scancode)`` where ``event`` is the ``InputEventKey``.
 
 ----
 
@@ -90,7 +112,7 @@ If ``true``, the key's state is pressed. If ``false``, the key's state is releas
 | *Getter*  | get_scancode()      |
 +-----------+---------------------+
 
-The key scancode, which corresponds to one of the :ref:`KeyList<enum_@GlobalScope_KeyList>` constants.
+The key scancode, which corresponds to one of the :ref:`KeyList<enum_@GlobalScope_KeyList>` constants. Represent key in the current keyboard layout.
 
 To get a human-readable representation of the ``InputEventKey``, use ``OS.get_scancode_string(event.scancode)`` where ``event`` is the ``InputEventKey``.
 
@@ -112,6 +134,16 @@ The key Unicode identifier (when relevant). Unicode identifiers for the composit
 
 Method Descriptions
 -------------------
+
+.. _class_InputEventKey_method_get_physical_scancode_with_modifiers:
+
+- :ref:`int<class_int>` **get_physical_scancode_with_modifiers** **(** **)** |const|
+
+Returns the physical scancode combined with modifier keys such as ``Shift`` or ``Alt``. See also :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`.
+
+To get a human-readable representation of the ``InputEventKey`` with modifiers, use ``OS.get_scancode_string(event.get_physical_scancode_with_modifiers())`` where ``event`` is the ``InputEventKey``.
+
+----
 
 .. _class_InputEventKey_method_get_scancode_with_modifiers:
 

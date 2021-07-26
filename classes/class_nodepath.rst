@@ -35,6 +35,8 @@ Some examples of NodePaths include the following:
     @"/root/Main" # If your main scene's root node were named "Main".
     @"/root/MyAutoload" # If you have an autoloaded node or scene.
 
+**Note:** In the editor, ``NodePath`` properties are automatically updated when moving, renaming or deleting a node in the scene tree, but they are never updated at runtime.
+
 Tutorials
 ---------
 

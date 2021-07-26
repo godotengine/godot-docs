@@ -38,11 +38,19 @@ Properties
 +------------------------------------------+----------------------------------------------------------------------+------------------------------+
 | :ref:`Vector2<class_Vector2>`            | :ref:`scroll_offset<class_GraphEdit_property_scroll_offset>`         | ``Vector2( 0, 0 )``          |
 +------------------------------------------+----------------------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`show_zoom_label<class_GraphEdit_property_show_zoom_label>`     | ``false``                    |
++------------------------------------------+----------------------------------------------------------------------+------------------------------+
 | :ref:`int<class_int>`                    | :ref:`snap_distance<class_GraphEdit_property_snap_distance>`         | ``20``                       |
 +------------------------------------------+----------------------------------------------------------------------+------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`use_snap<class_GraphEdit_property_use_snap>`                   | ``true``                     |
 +------------------------------------------+----------------------------------------------------------------------+------------------------------+
 | :ref:`float<class_float>`                | :ref:`zoom<class_GraphEdit_property_zoom>`                           | ``1.0``                      |
++------------------------------------------+----------------------------------------------------------------------+------------------------------+
+| :ref:`float<class_float>`                | :ref:`zoom_max<class_GraphEdit_property_zoom_max>`                   | ``2.0736``                   |
++------------------------------------------+----------------------------------------------------------------------+------------------------------+
+| :ref:`float<class_float>`                | :ref:`zoom_min<class_GraphEdit_property_zoom_min>`                   | ``0.232568``                 |
++------------------------------------------+----------------------------------------------------------------------+------------------------------+
+| :ref:`float<class_float>`                | :ref:`zoom_step<class_GraphEdit_property_zoom_step>`                 | ``1.2``                      |
 +------------------------------------------+----------------------------------------------------------------------+------------------------------+
 
 Methods
@@ -309,6 +317,22 @@ The scroll offset.
 
 ----
 
+.. _class_GraphEdit_property_show_zoom_label:
+
+- :ref:`bool<class_bool>` **show_zoom_label**
+
++-----------+----------------------------+
+| *Default* | ``false``                  |
++-----------+----------------------------+
+| *Setter*  | set_show_zoom_label(value) |
++-----------+----------------------------+
+| *Getter*  | is_showing_zoom_label()    |
++-----------+----------------------------+
+
+If ``true``, makes a label with the current zoom level visible. The zoom value is displayed in percents.
+
+----
+
 .. _class_GraphEdit_property_snap_distance:
 
 - :ref:`int<class_int>` **snap_distance**
@@ -354,6 +378,54 @@ If ``true``, enables snapping.
 +-----------+-----------------+
 
 The current zoom value.
+
+----
+
+.. _class_GraphEdit_property_zoom_max:
+
+- :ref:`float<class_float>` **zoom_max**
+
++-----------+---------------------+
+| *Default* | ``2.0736``          |
++-----------+---------------------+
+| *Setter*  | set_zoom_max(value) |
++-----------+---------------------+
+| *Getter*  | get_zoom_max()      |
++-----------+---------------------+
+
+The upper zoom limit.
+
+----
+
+.. _class_GraphEdit_property_zoom_min:
+
+- :ref:`float<class_float>` **zoom_min**
+
++-----------+---------------------+
+| *Default* | ``0.232568``        |
++-----------+---------------------+
+| *Setter*  | set_zoom_min(value) |
++-----------+---------------------+
+| *Getter*  | get_zoom_min()      |
++-----------+---------------------+
+
+The lower zoom limit.
+
+----
+
+.. _class_GraphEdit_property_zoom_step:
+
+- :ref:`float<class_float>` **zoom_step**
+
++-----------+----------------------+
+| *Default* | ``1.2``              |
++-----------+----------------------+
+| *Setter*  | set_zoom_step(value) |
++-----------+----------------------+
+| *Getter*  | get_zoom_step()      |
++-----------+----------------------+
+
+The step of each zoom level.
 
 Method Descriptions
 -------------------

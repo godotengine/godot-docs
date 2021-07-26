@@ -111,7 +111,7 @@ Gets the options and default values for the preset at this index. Returns an Arr
 
 - :ref:`int<class_int>` **get_import_order** **(** **)** |virtual|
 
-Gets the order of this importer to be run when importing resources. Higher values will be called later. Use this to ensure the importer runs after the dependencies are already imported.
+Gets the order of this importer to be run when importing resources. Importers with *lower* import orders will be called first, and higher values will be called later. Use this to ensure the importer runs after the dependencies are already imported. The default import order is ``0`` unless overridden by a specific importer. See :ref:`ImportOrder<enum_ResourceImporter_ImportOrder>` for some predefined values.
 
 ----
 

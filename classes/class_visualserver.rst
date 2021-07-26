@@ -1137,6 +1137,10 @@ enum **LightType**:
 
 .. _class_VisualServer_constant_LIGHT_PARAM_ENERGY:
 
+.. _class_VisualServer_constant_LIGHT_PARAM_INDIRECT_ENERGY:
+
+.. _class_VisualServer_constant_LIGHT_PARAM_SIZE:
+
 .. _class_VisualServer_constant_LIGHT_PARAM_SPECULAR:
 
 .. _class_VisualServer_constant_LIGHT_PARAM_RANGE:
@@ -1169,33 +1173,37 @@ enum **LightParam**:
 
 - **LIGHT_PARAM_ENERGY** = **0** --- The light's energy.
 
-- **LIGHT_PARAM_SPECULAR** = **2** --- The light's influence on specularity.
+- **LIGHT_PARAM_INDIRECT_ENERGY** = **1** --- Secondary multiplier used with indirect light (light bounces).
 
-- **LIGHT_PARAM_RANGE** = **3** --- The light's range.
+- **LIGHT_PARAM_SIZE** = **2** --- The light's size, currently only used for soft shadows in baked lightmaps.
 
-- **LIGHT_PARAM_ATTENUATION** = **4** --- The light's attenuation.
+- **LIGHT_PARAM_SPECULAR** = **3** --- The light's influence on specularity.
 
-- **LIGHT_PARAM_SPOT_ANGLE** = **5** --- The spotlight's angle.
+- **LIGHT_PARAM_RANGE** = **4** --- The light's range.
 
-- **LIGHT_PARAM_SPOT_ATTENUATION** = **6** --- The spotlight's attenuation.
+- **LIGHT_PARAM_ATTENUATION** = **5** --- The light's attenuation.
 
-- **LIGHT_PARAM_CONTACT_SHADOW_SIZE** = **7** --- Scales the shadow color.
+- **LIGHT_PARAM_SPOT_ANGLE** = **6** --- The spotlight's angle.
 
-- **LIGHT_PARAM_SHADOW_MAX_DISTANCE** = **8** --- Max distance that shadows will be rendered.
+- **LIGHT_PARAM_SPOT_ATTENUATION** = **7** --- The spotlight's attenuation.
 
-- **LIGHT_PARAM_SHADOW_SPLIT_1_OFFSET** = **9** --- Proportion of shadow atlas occupied by the first split.
+- **LIGHT_PARAM_CONTACT_SHADOW_SIZE** = **8** --- Scales the shadow color.
 
-- **LIGHT_PARAM_SHADOW_SPLIT_2_OFFSET** = **10** --- Proportion of shadow atlas occupied by the second split.
+- **LIGHT_PARAM_SHADOW_MAX_DISTANCE** = **9** --- Max distance that shadows will be rendered.
 
-- **LIGHT_PARAM_SHADOW_SPLIT_3_OFFSET** = **11** --- Proportion of shadow atlas occupied by the third split. The fourth split occupies the rest.
+- **LIGHT_PARAM_SHADOW_SPLIT_1_OFFSET** = **10** --- Proportion of shadow atlas occupied by the first split.
 
-- **LIGHT_PARAM_SHADOW_NORMAL_BIAS** = **12** --- Normal bias used to offset shadow lookup by object normal. Can be used to fix self-shadowing artifacts.
+- **LIGHT_PARAM_SHADOW_SPLIT_2_OFFSET** = **11** --- Proportion of shadow atlas occupied by the second split.
 
-- **LIGHT_PARAM_SHADOW_BIAS** = **13** --- Bias the shadow lookup to fix self-shadowing artifacts.
+- **LIGHT_PARAM_SHADOW_SPLIT_3_OFFSET** = **12** --- Proportion of shadow atlas occupied by the third split. The fourth split occupies the rest.
 
-- **LIGHT_PARAM_SHADOW_BIAS_SPLIT_SCALE** = **14** --- Increases bias on further splits to fix self-shadowing that only occurs far away from the camera.
+- **LIGHT_PARAM_SHADOW_NORMAL_BIAS** = **13** --- Normal bias used to offset shadow lookup by object normal. Can be used to fix self-shadowing artifacts.
 
-- **LIGHT_PARAM_MAX** = **15** --- Represents the size of the :ref:`LightParam<enum_VisualServer_LightParam>` enum.
+- **LIGHT_PARAM_SHADOW_BIAS** = **14** --- Bias the shadow lookup to fix self-shadowing artifacts.
+
+- **LIGHT_PARAM_SHADOW_BIAS_SPLIT_SCALE** = **15** --- Increases bias on further splits to fix self-shadowing that only occurs far away from the camera.
+
+- **LIGHT_PARAM_MAX** = **16** --- Represents the size of the :ref:`LightParam<enum_VisualServer_LightParam>` enum.
 
 ----
 

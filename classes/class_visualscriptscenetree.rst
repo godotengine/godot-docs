@@ -11,7 +11,12 @@ VisualScriptSceneTree
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+A Visual Script node for accessing :ref:`SceneTree<class_SceneTree>` methods.
 
+Description
+-----------
+
+A Visual Script node for accessing :ref:`SceneTree<class_SceneTree>` methods.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

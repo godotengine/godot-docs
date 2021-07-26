@@ -11,7 +11,12 @@ VisualScriptFunctionState
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+A Visual Script node representing a function state.
 
+Description
+-----------
+
+``VisualScriptFunctionState`` is returned from :ref:`VisualScriptYield<class_VisualScriptYield>` and can be used to resume a paused function call.
 
 Methods
 -------
@@ -31,17 +36,23 @@ Method Descriptions
 
 - void **connect_to_signal** **(** :ref:`Object<class_Object>` obj, :ref:`String<class_String>` signals, :ref:`Array<class_Array>` args **)**
 
+Connects this ``VisualScriptFunctionState`` to a signal in the given object to automatically resume when it's emitted.
+
 ----
 
 .. _class_VisualScriptFunctionState_method_is_valid:
 
 - :ref:`bool<class_bool>` **is_valid** **(** **)** |const|
 
+Returns whether the function state is valid.
+
 ----
 
 .. _class_VisualScriptFunctionState_method_resume:
 
 - :ref:`Variant<class_Variant>` **resume** **(** :ref:`Array<class_Array>` args=null **)**
+
+Resumes the function to run from the point it was yielded.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

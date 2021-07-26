@@ -11,7 +11,7 @@ HeightMapShape
 
 **Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-Height map shape for 3D physics (Bullet only).
+Height map shape for 3D physics.
 
 Description
 -----------

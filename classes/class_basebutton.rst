@@ -50,15 +50,17 @@ Properties
 Methods
 -------
 
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`_pressed<class_BaseButton_method__pressed>` **(** **)** |virtual|                                        |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`_toggled<class_BaseButton_method__toggled>` **(** :ref:`bool<class_bool>` button_pressed **)** |virtual| |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`DrawMode<enum_BaseButton_DrawMode>` | :ref:`get_draw_mode<class_BaseButton_method_get_draw_mode>` **(** **)** |const|                                |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`is_hovered<class_BaseButton_method_is_hovered>` **(** **)** |const|                                      |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------+
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`_pressed<class_BaseButton_method__pressed>` **(** **)** |virtual|                                                 |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`_toggled<class_BaseButton_method__toggled>` **(** :ref:`bool<class_bool>` button_pressed **)** |virtual|          |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`DrawMode<enum_BaseButton_DrawMode>` | :ref:`get_draw_mode<class_BaseButton_method_get_draw_mode>` **(** **)** |const|                                         |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                   | :ref:`is_hovered<class_BaseButton_method_is_hovered>` **(** **)** |const|                                               |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`set_pressed_no_signal<class_BaseButton_method_set_pressed_no_signal>` **(** :ref:`bool<class_bool>` pressed **)** |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -249,7 +251,9 @@ If ``true``, the button stays pressed when moving the cursor outside the button 
 | *Getter*  | is_pressed()       |
 +-----------+--------------------+
 
-If ``true``, the button's state is pressed. Means the button is pressed down or toggled (if :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is active).
+If ``true``, the button's state is pressed. Means the button is pressed down or toggled (if :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is active). Only works if :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is ``true``.
+
+**Note:** Setting :ref:`pressed<class_BaseButton_property_pressed>` will result in :ref:`toggled<class_BaseButton_signal_toggled>` to be emitted. If you want to change the pressed state without emitting that signal, use :ref:`set_pressed_no_signal<class_BaseButton_method_set_pressed_no_signal>`.
 
 ----
 
@@ -329,6 +333,16 @@ Returns the visual state used to draw the button. This is useful mainly when imp
 - :ref:`bool<class_bool>` **is_hovered** **(** **)** |const|
 
 Returns ``true`` if the mouse has entered the button and has not left it yet.
+
+----
+
+.. _class_BaseButton_method_set_pressed_no_signal:
+
+- void **set_pressed_no_signal** **(** :ref:`bool<class_bool>` pressed **)**
+
+Changes the :ref:`pressed<class_BaseButton_property_pressed>` state of the button, without emitting :ref:`toggled<class_BaseButton_signal_toggled>`. Use when you just want to change the state of the button without sending the pressed event (e.g. when initializing scene). Only works if :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is ``true``.
+
+**Note:** This method doesn't unpress other buttons in its button :ref:`group<class_BaseButton_property_group>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

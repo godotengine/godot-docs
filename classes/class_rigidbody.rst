@@ -142,7 +142,7 @@ Emitted when the collision with another :ref:`PhysicsBody<class_PhysicsBody>` or
 
 .. _class_RigidBody_signal_body_shape_entered:
 
-- **body_shape_entered** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
+- **body_shape_entered** **(** :ref:`RID<class_RID>` body_rid, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
 
 Emitted when one of this RigidBody's :ref:`Shape<class_Shape>`\ s collides with another :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`'s :ref:`Shape<class_Shape>`\ s. Requires :ref:`contact_monitor<class_RigidBody_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape<class_Shape>`\ s.
 
@@ -160,7 +160,7 @@ Emitted when one of this RigidBody's :ref:`Shape<class_Shape>`\ s collides with 
 
 .. _class_RigidBody_signal_body_shape_exited:
 
-- **body_shape_exited** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
+- **body_shape_exited** **(** :ref:`RID<class_RID>` body_rid, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
 
 Emitted when the collision between one of this RigidBody's :ref:`Shape<class_Shape>`\ s and another :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`'s :ref:`Shape<class_Shape>`\ s ends. Requires :ref:`contact_monitor<class_RigidBody_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape<class_Shape>`\ s.
 

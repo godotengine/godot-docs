@@ -53,7 +53,7 @@ Methods
 -------
 
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_Image>` | :ref:`get_image<class_OpenSimplexNoise_method_get_image>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height **)** |const|                                                                |
+| :ref:`Image<class_Image>` | :ref:`get_image<class_OpenSimplexNoise_method_get_image>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Vector2<class_Vector2>` noise_offset=Vector2( 0, 0 ) **)** |const|    |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>` | :ref:`get_noise_1d<class_OpenSimplexNoise_method_get_noise_1d>` **(** :ref:`float<class_float>` x **)** |const|                                                                                        |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -158,9 +158,9 @@ Method Descriptions
 
 .. _class_OpenSimplexNoise_method_get_image:
 
-- :ref:`Image<class_Image>` **get_image** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height **)** |const|
+- :ref:`Image<class_Image>` **get_image** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Vector2<class_Vector2>` noise_offset=Vector2( 0, 0 ) **)** |const|
 
-Generate a noise image in :ref:`Image.FORMAT_L8<class_Image_constant_FORMAT_L8>` format with the requested ``width`` and ``height``, based on the current noise parameters.
+Generate a noise image in :ref:`Image.FORMAT_L8<class_Image_constant_FORMAT_L8>` format with the requested ``width`` and ``height``, based on the current noise parameters. If ``noise_offset`` is specified, then the offset value is used as the coordinates of the top-left corner of the generated noise.
 
 ----
 

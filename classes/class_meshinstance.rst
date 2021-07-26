@@ -9,7 +9,7 @@
 MeshInstance
 ============
 
-**Inherits:** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`CullInstance<class_CullInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Inherited By:** :ref:`SoftBody<class_SoftBody>`
 
@@ -47,21 +47,23 @@ Properties
 Methods
 -------
 
-+---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`create_convex_collision<class_MeshInstance_method_create_convex_collision>` **(** **)**                                                                   |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`create_debug_tangents<class_MeshInstance_method_create_debug_tangents>` **(** **)**                                                                       |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`create_trimesh_collision<class_MeshInstance_method_create_trimesh_collision>` **(** **)**                                                                 |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`get_active_material<class_MeshInstance_method_get_active_material>` **(** :ref:`int<class_int>` surface **)** |const|                                     |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`get_surface_material<class_MeshInstance_method_get_surface_material>` **(** :ref:`int<class_int>` surface **)** |const|                                   |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_surface_material_count<class_MeshInstance_method_get_surface_material_count>` **(** **)** |const|                                                     |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_surface_material<class_MeshInstance_method_set_surface_material>` **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)** |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`create_convex_collision<class_MeshInstance_method_create_convex_collision>` **(** :ref:`bool<class_bool>` clean=true, :ref:`bool<class_bool>` simplify=false **)** |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`create_debug_tangents<class_MeshInstance_method_create_debug_tangents>` **(** **)**                                                                                |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`create_multiple_convex_collisions<class_MeshInstance_method_create_multiple_convex_collisions>` **(** **)**                                                        |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`create_trimesh_collision<class_MeshInstance_method_create_trimesh_collision>` **(** **)**                                                                          |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Material<class_Material>` | :ref:`get_active_material<class_MeshInstance_method_get_active_material>` **(** :ref:`int<class_int>` surface **)** |const|                                              |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Material<class_Material>` | :ref:`get_surface_material<class_MeshInstance_method_get_surface_material>` **(** :ref:`int<class_int>` surface **)** |const|                                            |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`get_surface_material_count<class_MeshInstance_method_get_surface_material_count>` **(** **)** |const|                                                              |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`set_surface_material<class_MeshInstance_method_set_surface_material>` **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)**          |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -131,9 +133,13 @@ Method Descriptions
 
 .. _class_MeshInstance_method_create_convex_collision:
 
-- void **create_convex_collision** **(** **)**
+- void **create_convex_collision** **(** :ref:`bool<class_bool>` clean=true, :ref:`bool<class_bool>` simplify=false **)**
 
 This helper creates a :ref:`StaticBody<class_StaticBody>` child node with a :ref:`ConvexPolygonShape<class_ConvexPolygonShape>` collision shape calculated from the mesh geometry. It's mainly used for testing.
+
+If ``clean`` is ``true`` (default), duplicate and interior vertices are removed automatically. You can set it to ``false`` to make the process faster if not needed.
+
+If ``simplify`` is ``true``, the geometry can be further simplified to reduce the amount of vertices. Disabled by default.
 
 ----
 
@@ -142,6 +148,14 @@ This helper creates a :ref:`StaticBody<class_StaticBody>` child node with a :ref
 - void **create_debug_tangents** **(** **)**
 
 This helper creates a ``MeshInstance`` child node with gizmos at every vertex calculated from the mesh geometry. It's mainly used for testing.
+
+----
+
+.. _class_MeshInstance_method_create_multiple_convex_collisions:
+
+- void **create_multiple_convex_collisions** **(** **)**
+
+This helper creates a :ref:`StaticBody<class_StaticBody>` child node with multiple :ref:`ConvexPolygonShape<class_ConvexPolygonShape>` collision shapes calculated from the mesh geometry via convex decomposition. It's mainly used for testing.
 
 ----
 

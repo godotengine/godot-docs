@@ -42,6 +42,8 @@ Properties
 +-------------------------------------------------+-----------------------------------------------------------------+---------------------------+
 | :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` | :ref:`noise<class_NoiseTexture_property_noise>`                 |                           |
 +-------------------------------------------------+-----------------------------------------------------------------+---------------------------+
+| :ref:`Vector2<class_Vector2>`                   | :ref:`noise_offset<class_NoiseTexture_property_noise_offset>`   | ``Vector2( 0, 0 )``       |
++-------------------------------------------------+-----------------------------------------------------------------+---------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`seamless<class_NoiseTexture_property_seamless>`           | ``false``                 |
 +-------------------------------------------------+-----------------------------------------------------------------+---------------------------+
 | :ref:`int<class_int>`                           | :ref:`width<class_NoiseTexture_property_width>`                 | ``512``                   |
@@ -109,6 +111,22 @@ Height of the generated texture.
 +----------+------------------+
 
 The :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` instance used to generate the noise.
+
+----
+
+.. _class_NoiseTexture_property_noise_offset:
+
+- :ref:`Vector2<class_Vector2>` **noise_offset**
+
++-----------+-------------------------+
+| *Default* | ``Vector2( 0, 0 )``     |
++-----------+-------------------------+
+| *Setter*  | set_noise_offset(value) |
++-----------+-------------------------+
+| *Getter*  | get_noise_offset()      |
++-----------+-------------------------+
+
+An offset used to specify the noise space coordinate of the top left corner of the generated noise. This value is ignored if :ref:`seamless<class_NoiseTexture_property_seamless>` is enabled.
 
 ----
 

@@ -11,12 +11,19 @@ AudioStreamGeneratorPlayback
 
 **Inherits:** :ref:`AudioStreamPlaybackResampled<class_AudioStreamPlaybackResampled>` **<** :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Plays back audio generated using :ref:`AudioStreamGenerator<class_AudioStreamGenerator>`.
 
+Description
+-----------
+
+This class is meant to be used with :ref:`AudioStreamGenerator<class_AudioStreamGenerator>` to play back the generated audio in real-time.
 
 Tutorials
 ---------
 
-- `https://github.com/godotengine/godot-demo-projects/tree/master/audio/generator <https://github.com/godotengine/godot-demo-projects/tree/master/audio/generator>`_
+- `https://godotengine.org/asset-library/asset/526 <https://godotengine.org/asset-library/asset/526>`_
+
+- `Godot 3.2 will get new audio features <Godot 3.2 will get new audio features>`_
 
 Methods
 -------
@@ -42,17 +49,23 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **can_push_buffer** **(** :ref:`int<class_int>` amount **)** |const|
 
+Returns ``true`` if a buffer of the size ``amount`` can be pushed to the audio sample data buffer without overflowing it, ``false`` otherwise.
+
 ----
 
 .. _class_AudioStreamGeneratorPlayback_method_clear_buffer:
 
 - void **clear_buffer** **(** **)**
 
+Clears the audio sample data buffer.
+
 ----
 
 .. _class_AudioStreamGeneratorPlayback_method_get_frames_available:
 
 - :ref:`int<class_int>` **get_frames_available** **(** **)** |const|
+
+Returns the number of audio data frames left to play. If this returned number reaches ``0``, the audio will stop playing until frames are added again. Therefore, make sure your script can always generate and push new audio frames fast enough to avoid audio cracking.
 
 ----
 
@@ -66,11 +79,15 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **push_buffer** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` frames **)**
 
+Pushes several audio data frames to the buffer. This is usually more efficient than :ref:`push_frame<class_AudioStreamGeneratorPlayback_method_push_frame>` in C# and compiled languages via GDNative, but :ref:`push_buffer<class_AudioStreamGeneratorPlayback_method_push_buffer>` may be *less* efficient in GDScript.
+
 ----
 
 .. _class_AudioStreamGeneratorPlayback_method_push_frame:
 
 - :ref:`bool<class_bool>` **push_frame** **(** :ref:`Vector2<class_Vector2>` frame **)**
+
+Pushes a single audio data frame to the buffer. This is usually less efficient than :ref:`push_buffer<class_AudioStreamGeneratorPlayback_method_push_buffer>` in C# and compiled languages via GDNative, but :ref:`push_frame<class_AudioStreamGeneratorPlayback_method_push_frame>` may be *more* efficient in GDScript.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

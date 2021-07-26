@@ -36,19 +36,23 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------------------+-------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`cast_to<class_RayCast_property_cast_to>`                         | ``Vector3( 0, -1, 0 )`` |
-+-------------------------------+------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`       | :ref:`collide_with_areas<class_RayCast_property_collide_with_areas>`   | ``false``               |
-+-------------------------------+------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`       | :ref:`collide_with_bodies<class_RayCast_property_collide_with_bodies>` | ``true``                |
-+-------------------------------+------------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`         | :ref:`collision_mask<class_RayCast_property_collision_mask>`           | ``1``                   |
-+-------------------------------+------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`       | :ref:`enabled<class_RayCast_property_enabled>`                         | ``false``               |
-+-------------------------------+------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`       | :ref:`exclude_parent<class_RayCast_property_exclude_parent>`           | ``true``                |
-+-------------------------------+------------------------------------------------------------------------+-------------------------+
++-------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`cast_to<class_RayCast_property_cast_to>`                                   | ``Vector3( 0, -1, 0 )`` |
++-------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`       | :ref:`collide_with_areas<class_RayCast_property_collide_with_areas>`             | ``false``               |
++-------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`       | :ref:`collide_with_bodies<class_RayCast_property_collide_with_bodies>`           | ``true``                |
++-------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`         | :ref:`collision_mask<class_RayCast_property_collision_mask>`                     | ``1``                   |
++-------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>`     | :ref:`debug_shape_custom_color<class_RayCast_property_debug_shape_custom_color>` | ``Color( 0, 0, 0, 1 )`` |
++-------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`     | :ref:`debug_shape_thickness<class_RayCast_property_debug_shape_thickness>`       | ``2.0``                 |
++-------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`       | :ref:`enabled<class_RayCast_property_enabled>`                                   | ``false``               |
++-------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`       | :ref:`exclude_parent<class_RayCast_property_exclude_parent>`                     | ``true``                |
++-------------------------------+----------------------------------------------------------------------------------+-------------------------+
 
 Methods
 -------
@@ -145,6 +149,40 @@ If ``true``, collision with :ref:`PhysicsBody<class_PhysicsBody>`\ s will be rep
 +-----------+---------------------------+
 
 The ray's collision mask. Only objects in at least one collision layer enabled in the mask will be detected. See `Collision layers and masks <https://docs.godotengine.org/en/3.3/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
+
+----
+
+.. _class_RayCast_property_debug_shape_custom_color:
+
+- :ref:`Color<class_Color>` **debug_shape_custom_color**
+
++-----------+-------------------------------------+
+| *Default* | ``Color( 0, 0, 0, 1 )``             |
++-----------+-------------------------------------+
+| *Setter*  | set_debug_shape_custom_color(value) |
++-----------+-------------------------------------+
+| *Getter*  | get_debug_shape_custom_color()      |
++-----------+-------------------------------------+
+
+The custom color to use to draw the shape in the editor and at run-time if **Visible Collision Shapes** is enabled in the **Debug** menu. This color will be highlighted at run-time if the ``RayCast`` is colliding with something.
+
+If set to ``Color(0.0, 0.0, 0.0)`` (by default), the color set in :ref:`ProjectSettings.debug/shapes/collision/shape_color<class_ProjectSettings_property_debug/shapes/collision/shape_color>` is used.
+
+----
+
+.. _class_RayCast_property_debug_shape_thickness:
+
+- :ref:`float<class_float>` **debug_shape_thickness**
+
++-----------+----------------------------------+
+| *Default* | ``2.0``                          |
++-----------+----------------------------------+
+| *Setter*  | set_debug_shape_thickness(value) |
++-----------+----------------------------------+
+| *Getter*  | get_debug_shape_thickness()      |
++-----------+----------------------------------+
+
+If set to ``1``, a line is used as the debug shape. Otherwise, a truncated pyramid is drawn to represent the ``RayCast``. Requires **Visible Collision Shapes** to be enabled in the **Debug** menu for the debug shape to be visible at run-time.
 
 ----
 

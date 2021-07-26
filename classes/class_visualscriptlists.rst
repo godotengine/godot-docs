@@ -48,11 +48,15 @@ Method Descriptions
 
 - void **add_input_data_port** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`int<class_int>` index **)**
 
+Adds an input port to the Visual Script node.
+
 ----
 
 .. _class_VisualScriptLists_method_add_output_data_port:
 
 - void **add_output_data_port** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`int<class_int>` index **)**
+
+Adds an output port to the Visual Script node.
 
 ----
 
@@ -60,11 +64,15 @@ Method Descriptions
 
 - void **remove_input_data_port** **(** :ref:`int<class_int>` index **)**
 
+Removes an input port from the Visual Script node.
+
 ----
 
 .. _class_VisualScriptLists_method_remove_output_data_port:
 
 - void **remove_output_data_port** **(** :ref:`int<class_int>` index **)**
+
+Removes an output port from the Visual Script node.
 
 ----
 
@@ -72,11 +80,15 @@ Method Descriptions
 
 - void **set_input_data_port_name** **(** :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**
 
+Sets the name of an input port.
+
 ----
 
 .. _class_VisualScriptLists_method_set_input_data_port_type:
 
 - void **set_input_data_port_type** **(** :ref:`int<class_int>` index, :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type **)**
+
+Sets the type of an input port.
 
 ----
 
@@ -84,11 +96,15 @@ Method Descriptions
 
 - void **set_output_data_port_name** **(** :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**
 
+Sets the name of an output port.
+
 ----
 
 .. _class_VisualScriptLists_method_set_output_data_port_type:
 
 - void **set_output_data_port_type** **(** :ref:`int<class_int>` index, :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type **)**
+
+Sets the type of an output port.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

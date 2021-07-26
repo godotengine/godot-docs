@@ -9,7 +9,7 @@
 GIProbe
 =======
 
-**Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`CullInstance<class_CullInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 Real-time global illumination (GI) probe.
 
@@ -125,7 +125,7 @@ Offsets the lookup of the light contribution from the ``GIProbe``. This can be u
 | *Getter*  | is_compressed()     |
 +-----------+---------------------+
 
-If ``true``, the data for this ``GIProbe`` will be compressed. Compression saves space, but results in far worse visual quality.
+*Deprecated.* This property has been deprecated due to known bugs and no longer has any effect when enabled.
 
 ----
 

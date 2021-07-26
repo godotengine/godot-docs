@@ -36,6 +36,15 @@ Methods
 | :ref:`BaseButton<class_BaseButton>` | :ref:`get_pressed_button<class_ButtonGroup_method_get_pressed_button>` **(** **)** |
 +-------------------------------------+------------------------------------------------------------------------------------+
 
+Signals
+-------
+
+.. _class_ButtonGroup_signal_pressed:
+
+- **pressed** **(** :ref:`Object<class_Object>` button **)**
+
+Emitted when one of the buttons of the group is pressed.
+
 Method Descriptions
 -------------------
 

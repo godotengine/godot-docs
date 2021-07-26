@@ -24,7 +24,7 @@ For more information on Godot's UI system, anchors, margins, and containers, see
 
 **User Interface nodes and input**
 
-Godot sends input events to the scene's root node first, by calling :ref:`Node._input<class_Node_method__input>`. :ref:`Node._input<class_Node_method__input>` forwards the event down the node tree to the nodes under the mouse cursor, or on keyboard focus. To do so, it calls :ref:`MainLoop._input_event<class_MainLoop_method__input_event>`. Call :ref:`accept_event<class_Control_method_accept_event>` so no other node receives the event. Once you accepted an input, it becomes handled so :ref:`Node._unhandled_input<class_Node_method__unhandled_input>` will not process it.
+Godot sends input events to the scene's root node first, by calling :ref:`Node._input<class_Node_method__input>`. :ref:`Node._input<class_Node_method__input>` forwards the event down the node tree to the nodes under the mouse cursor, or on keyboard focus. To do so, it calls :ref:`MainLoop._input_event<class_MainLoop_method__input_event>`. Call :ref:`accept_event<class_Control_method_accept_event>` so no other node receives the event. Once you accept an input, it becomes handled so :ref:`Node._unhandled_input<class_Node_method__unhandled_input>` will not process it.
 
 Only one ``Control`` node can be in keyboard focus. Only the node in focus will receive keyboard events. To get the focus, call :ref:`grab_focus<class_Control_method_grab_focus>`. ``Control`` nodes lose focus when another node grabs it, or if you hide the node in focus.
 
@@ -312,6 +312,8 @@ Emitted when a modal ``Control`` is closed. See :ref:`show_modal<class_Control_m
 
 Emitted when the mouse enters the control's ``Rect`` area, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it.
 
+**Note:** :ref:`mouse_entered<class_Control_signal_mouse_entered>` will not be emitted if the mouse enters a child ``Control`` node before entering the parent's ``Rect`` area, at least until the mouse is moved to reach the parent's ``Rect`` area.
+
 ----
 
 .. _class_Control_signal_mouse_exited:
@@ -319,6 +321,8 @@ Emitted when the mouse enters the control's ``Rect`` area, provided its :ref:`mo
 - **mouse_exited** **(** **)**
 
 Emitted when the mouse leaves the control's ``Rect`` area, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it.
+
+**Note:** :ref:`mouse_exited<class_Control_signal_mouse_exited>` will be emitted if the mouse enters a child ``Control`` node, even if the mouse cursor is still inside the parent's ``Rect`` area.
 
 ----
 
@@ -691,7 +695,7 @@ Anchors the right edge of the node to the origin, the center or the end of its p
 | *Getter*  | get_anchor() |
 +-----------+--------------+
 
-Anchors the top edge of the node to the origin, the center or the end of its parent control. It changes how the top margin updates when the node moves or changes size. You can use  one of the :ref:`Anchor<enum_Control_Anchor>` constants for convenience.
+Anchors the top edge of the node to the origin, the center or the end of its parent control. It changes how the top margin updates when the node moves or changes size. You can use one of the :ref:`Anchor<enum_Control_Anchor>` constants for convenience.
 
 ----
 
@@ -755,7 +759,7 @@ Tells Godot which node it should give keyboard focus to if the user presses the 
 | *Getter*  | get_focus_neighbour()      |
 +-----------+----------------------------+
 
-Tells Godot which node it should give keyboard focus to if the user presses the right arrow on the keyboard or right on a gamepad  by default. You can change the key by editing the ``ui_right`` input action. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
+Tells Godot which node it should give keyboard focus to if the user presses the right arrow on the keyboard or right on a gamepad by default. You can change the key by editing the ``ui_right`` input action. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
 
 ----
 
@@ -1224,7 +1228,7 @@ The event won't trigger if:
 
 \* control's parent has :ref:`mouse_filter<class_Control_property_mouse_filter>` set to :ref:`MOUSE_FILTER_STOP<class_Control_constant_MOUSE_FILTER_STOP>` or has accepted the event;
 
-\* it happens outside parent's rectangle and the parent has either :ref:`rect_clip_content<class_Control_property_rect_clip_content>` or :ref:`_clips_input<class_Control_method__clips_input>` enabled.
+\* it happens outside the parent's rectangle and the parent has either :ref:`rect_clip_content<class_Control_property_rect_clip_content>` or :ref:`_clips_input<class_Control_method__clips_input>` enabled.
 
 ----
 
@@ -1234,7 +1238,7 @@ The event won't trigger if:
 
 Virtual method to be implemented by the user. Returns a ``Control`` node that should be used as a tooltip instead of the default one. The ``for_text`` includes the contents of the :ref:`hint_tooltip<class_Control_property_hint_tooltip>` property.
 
-The returned node must be of type ``Control`` or Control-derived. It can have child nodes of any type. It is freed when the tooltip disappears, so make sure you always provide a new instance (if you want to use a pre-existing node from your scene tree, you can duplicate it and pass the duplicated instance).When ``null`` or a non-Control node is returned, the default tooltip will be used instead.
+The returned node must be of type ``Control`` or Control-derived. It can have child nodes of any type. It is freed when the tooltip disappears, so make sure you always provide a new instance (if you want to use a pre-existing node from your scene tree, you can duplicate it and pass the duplicated instance). When ``null`` or a non-Control node is returned, the default tooltip will be used instead.
 
 The returned node will be added as child to a :ref:`PopupPanel<class_PopupPanel>`, so you should only provide the contents of that panel. That :ref:`PopupPanel<class_PopupPanel>` can be themed using :ref:`Theme.set_stylebox<class_Theme_method_set_stylebox>` for the type ``"TooltipPanel"`` (see :ref:`hint_tooltip<class_Control_property_hint_tooltip>` for an example).
 
@@ -1762,7 +1766,7 @@ Sets both anchor preset and margin preset. See :ref:`set_anchors_preset<class_Co
 
 - void **set_anchors_preset** **(** :ref:`LayoutPreset<enum_Control_LayoutPreset>` preset, :ref:`bool<class_bool>` keep_margins=false **)**
 
-Sets the anchors to a ``preset`` from :ref:`LayoutPreset<enum_Control_LayoutPreset>` enum. This is code equivalent of using the Layout menu in 2D editor.
+Sets the anchors to a ``preset`` from :ref:`LayoutPreset<enum_Control_LayoutPreset>` enum. This is the code equivalent to using the Layout menu in the 2D editor.
 
 If ``keep_margins`` is ``true``, control's position will also be updated.
 
@@ -1867,7 +1871,7 @@ Sets the margin identified by ``margin`` constant from :ref:`Margin<enum_@Global
 
 - void **set_margins_preset** **(** :ref:`LayoutPreset<enum_Control_LayoutPreset>` preset, :ref:`LayoutPresetMode<enum_Control_LayoutPresetMode>` resize_mode=0, :ref:`int<class_int>` margin=0 **)**
 
-Sets the margins to a ``preset`` from :ref:`LayoutPreset<enum_Control_LayoutPreset>` enum. This is code equivalent of using the Layout menu in 2D editor.
+Sets the margins to a ``preset`` from :ref:`LayoutPreset<enum_Control_LayoutPreset>` enum. This is the code equivalent to using the Layout menu in the 2D editor.
 
 Use parameter ``resize_mode`` with constants from :ref:`LayoutPresetMode<enum_Control_LayoutPresetMode>` to better determine the resulting size of the ``Control``. Constant size will be ignored if used with presets that change size, e.g. ``PRESET_LEFT_WIDE``.
 

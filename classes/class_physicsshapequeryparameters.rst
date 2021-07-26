@@ -16,7 +16,7 @@ Parameters to be sent to a 3D shape physics query.
 Description
 -----------
 
-This class contains the shape and other parameters for 3D intersection/collision queries. See also :ref:`PhysicsShapeQueryResult<class_PhysicsShapeQueryResult>`.
+This class contains the shape and other parameters for 3D intersection/collision queries.
 
 Properties
 ----------

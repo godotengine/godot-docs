@@ -187,7 +187,7 @@ On UNIX desktop systems, returns the available space on the current directory's 
 
 - :ref:`Error<enum_@GlobalScope_Error>` **list_dir_begin** **(** :ref:`bool<class_bool>` skip_navigational=false, :ref:`bool<class_bool>` skip_hidden=false **)**
 
-Initializes the stream used to list all files and directories using the :ref:`get_next<class_Directory_method_get_next>` function, closing the current opened stream if needed. Once the stream has been processed, it should typically be closed with :ref:`list_dir_end<class_Directory_method_list_dir_end>`.
+Initializes the stream used to list all files and directories using the :ref:`get_next<class_Directory_method_get_next>` function, closing the currently opened stream if needed. Once the stream has been processed, it should typically be closed with :ref:`list_dir_end<class_Directory_method_list_dir_end>`.
 
 If ``skip_navigational`` is ``true``, ``.`` and ``..`` are filtered out.
 

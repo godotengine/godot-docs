@@ -11,7 +11,12 @@ VisualScriptPropertySet
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+A Visual Script node that sets a property of an :ref:`Object<class_Object>`.
 
+Description
+-----------
+
+``VisualScriptPropertySet`` can set the value of any property from the current object or other objects.
 
 Properties
 ----------
@@ -49,13 +54,13 @@ Enumerations
 
 enum **CallMode**:
 
-- **CALL_MODE_SELF** = **0**
+- **CALL_MODE_SELF** = **0** --- The property will be set on this :ref:`Object<class_Object>`.
 
-- **CALL_MODE_NODE_PATH** = **1**
+- **CALL_MODE_NODE_PATH** = **1** --- The property will be set on the given :ref:`Node<class_Node>` in the scene tree.
 
-- **CALL_MODE_INSTANCE** = **2**
+- **CALL_MODE_INSTANCE** = **2** --- The property will be set on an instanced node with the given type and script.
 
-- **CALL_MODE_BASIC_TYPE** = **3**
+- **CALL_MODE_BASIC_TYPE** = **3** --- The property will be set on a GDScript basic type (e.g. :ref:`Vector2<class_Vector2>`).
 
 ----
 
@@ -85,27 +90,27 @@ enum **CallMode**:
 
 enum **AssignOp**:
 
-- **ASSIGN_OP_NONE** = **0**
+- **ASSIGN_OP_NONE** = **0** --- The property will be assigned regularly.
 
-- **ASSIGN_OP_ADD** = **1**
+- **ASSIGN_OP_ADD** = **1** --- The value will be added to the property. Equivalent of doing ``+=``.
 
-- **ASSIGN_OP_SUB** = **2**
+- **ASSIGN_OP_SUB** = **2** --- The value will be subtracted from the property. Equivalent of doing ``-=``.
 
-- **ASSIGN_OP_MUL** = **3**
+- **ASSIGN_OP_MUL** = **3** --- The property will be multiplied by the value. Equivalent of doing ``*=``.
 
-- **ASSIGN_OP_DIV** = **4**
+- **ASSIGN_OP_DIV** = **4** --- The property will be divided by the value. Equivalent of doing ``/=``.
 
-- **ASSIGN_OP_MOD** = **5**
+- **ASSIGN_OP_MOD** = **5** --- A modulo operation will be performed on the property and the value. Equivalent of doing ``%=``.
 
-- **ASSIGN_OP_SHIFT_LEFT** = **6**
+- **ASSIGN_OP_SHIFT_LEFT** = **6** --- The property will be binarly shifted to the left by the given value. Equivalent of doing ``<<``.
 
-- **ASSIGN_OP_SHIFT_RIGHT** = **7**
+- **ASSIGN_OP_SHIFT_RIGHT** = **7** --- The property will be binarly shifted to the right by the given value. Equivalent of doing ``>>``.
 
-- **ASSIGN_OP_BIT_AND** = **8**
+- **ASSIGN_OP_BIT_AND** = **8** --- A binary ``AND`` operation will be performed on the property. Equivalent of doing ``&=``.
 
-- **ASSIGN_OP_BIT_OR** = **9**
+- **ASSIGN_OP_BIT_OR** = **9** --- A binary ``OR`` operation will be performed on the property. Equivalent of doing ``|=``.
 
-- **ASSIGN_OP_BIT_XOR** = **10**
+- **ASSIGN_OP_BIT_XOR** = **10** --- A binary ``XOR`` operation will be performed on the property. Equivalent of doing ``^=``.
 
 Property Descriptions
 ---------------------
@@ -122,6 +127,8 @@ Property Descriptions
 | *Getter*  | get_assign_op()      |
 +-----------+----------------------+
 
+The additional operation to perform when assigning. See :ref:`AssignOp<enum_VisualScriptPropertySet_AssignOp>` for options.
+
 ----
 
 .. _class_VisualScriptPropertySet_property_base_script:
@@ -133,6 +140,8 @@ Property Descriptions
 +----------+------------------------+
 | *Getter* | get_base_script()      |
 +----------+------------------------+
+
+The script to be used when :ref:`set_mode<class_VisualScriptPropertySet_property_set_mode>` is set to :ref:`CALL_MODE_INSTANCE<class_VisualScriptPropertySet_constant_CALL_MODE_INSTANCE>`.
 
 ----
 
@@ -148,6 +157,8 @@ Property Descriptions
 | *Getter*  | get_base_type()      |
 +-----------+----------------------+
 
+The base type to be used when :ref:`set_mode<class_VisualScriptPropertySet_property_set_mode>` is set to :ref:`CALL_MODE_INSTANCE<class_VisualScriptPropertySet_constant_CALL_MODE_INSTANCE>`.
+
 ----
 
 .. _class_VisualScriptPropertySet_property_basic_type:
@@ -159,6 +170,8 @@ Property Descriptions
 +----------+-----------------------+
 | *Getter* | get_basic_type()      |
 +----------+-----------------------+
+
+The type to be used when :ref:`set_mode<class_VisualScriptPropertySet_property_set_mode>` is set to :ref:`CALL_MODE_BASIC_TYPE<class_VisualScriptPropertySet_constant_CALL_MODE_BASIC_TYPE>`.
 
 ----
 
@@ -172,6 +185,8 @@ Property Descriptions
 | *Getter* | get_index()      |
 +----------+------------------+
 
+The indexed name of the property to set. See :ref:`Object.set_indexed<class_Object_method_set_indexed>` for details.
+
 ----
 
 .. _class_VisualScriptPropertySet_property_node_path:
@@ -183,6 +198,8 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | get_base_path()      |
 +----------+----------------------+
+
+The node path to use when :ref:`set_mode<class_VisualScriptPropertySet_property_set_mode>` is set to :ref:`CALL_MODE_NODE_PATH<class_VisualScriptPropertySet_constant_CALL_MODE_NODE_PATH>`.
 
 ----
 
@@ -198,6 +215,8 @@ Property Descriptions
 | *Getter*  | get_property()      |
 +-----------+---------------------+
 
+The name of the property to set. Changing this will clear :ref:`index<class_VisualScriptPropertySet_property_index>`.
+
 ----
 
 .. _class_VisualScriptPropertySet_property_set_mode:
@@ -211,6 +230,8 @@ Property Descriptions
 +-----------+----------------------+
 | *Getter*  | get_call_mode()      |
 +-----------+----------------------+
+
+``set_mode`` determines the target object on which the property will be set. See :ref:`CallMode<enum_VisualScriptPropertySet_CallMode>` for options.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

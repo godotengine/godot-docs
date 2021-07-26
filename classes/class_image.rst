@@ -350,7 +350,7 @@ enum **Interpolation**:
 
 - **INTERPOLATE_TRILINEAR** = **3** --- Performs bilinear separately on the two most-suited mipmap levels, then linearly interpolates between them.
 
-It's slower than :ref:`INTERPOLATE_BILINEAR<class_Image_constant_INTERPOLATE_BILINEAR>`, but produces higher-quality results with much less aliasing artifacts.
+It's slower than :ref:`INTERPOLATE_BILINEAR<class_Image_constant_INTERPOLATE_BILINEAR>`, but produces higher-quality results with far fewer aliasing artifacts.
 
 If the image does not have mipmaps, they will be generated and used internally, but no mipmaps will be generated on the resulting image.
 
@@ -605,7 +605,7 @@ Flips the image vertically.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **generate_mipmaps** **(** :ref:`bool<class_bool>` renormalize=false **)**
 
-Generates mipmaps for the image. Mipmaps are precalculated and lower resolution copies of the image. Mipmaps are automatically used if the image needs to be scaled down when rendered. This improves image quality and the performance of the rendering. Returns an error if the image is compressed, in a custom format or if the image's width/height is 0.
+Generates mipmaps for the image. Mipmaps are precalculated lower-resolution copies of the image that are automatically used if the image needs to be scaled down when rendered. They help improve image quality and performance when rendering. This method returns an error if the image is compressed, in a custom format, or if the image's width/height is ``0``.
 
 ----
 

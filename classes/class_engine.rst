@@ -28,6 +28,8 @@ Properties
 +---------------------------+---------------------------------------------------------------------------+----------+
 | :ref:`float<class_float>` | :ref:`physics_jitter_fix<class_Engine_property_physics_jitter_fix>`       | ``0.5``  |
 +---------------------------+---------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`   | :ref:`print_error_messages<class_Engine_property_print_error_messages>`   | ``true`` |
++---------------------------+---------------------------------------------------------------------------+----------+
 | :ref:`int<class_int>`     | :ref:`target_fps<class_Engine_property_target_fps>`                       | ``0``    |
 +---------------------------+---------------------------------------------------------------------------+----------+
 | :ref:`float<class_float>` | :ref:`time_scale<class_Engine_property_time_scale>`                       | ``1.0``  |
@@ -126,9 +128,29 @@ The number of fixed iterations per second. This controls how often physics simul
 | *Getter*  | get_physics_jitter_fix()      |
 +-----------+-------------------------------+
 
-Controls how much physics ticks are synchronized with real time. For 0 or less, the ticks are synchronized. Such values are recommended for network games, where clock synchronization matters. Higher values cause higher deviation of in-game clock and real clock, but allows smoothing out framerate jitters. The default value of 0.5 should be fine for most; values above 2 could cause the game to react to dropped frames with a noticeable delay and are not recommended.
+Controls how much physics ticks are synchronized with real time. For 0 or less, the ticks are synchronized. Such values are recommended for network games, where clock synchronization matters. Higher values cause higher deviation of the in-game clock and real clock but smooth out framerate jitters. The default value of 0.5 should be fine for most; values above 2 could cause the game to react to dropped frames with a noticeable delay and are not recommended.
 
 **Note:** For best results, when using a custom physics interpolation solution, the physics jitter fix should be disabled by setting :ref:`physics_jitter_fix<class_Engine_property_physics_jitter_fix>` to ``0``.
+
+----
+
+.. _class_Engine_property_print_error_messages:
+
+- :ref:`bool<class_bool>` **print_error_messages**
+
++-----------+---------------------------------+
+| *Default* | ``true``                        |
++-----------+---------------------------------+
+| *Setter*  | set_print_error_messages(value) |
++-----------+---------------------------------+
+| *Getter*  | is_printing_error_messages()    |
++-----------+---------------------------------+
+
+If ``false``, stops printing error and warning messages to the console and editor Output log. This can be used to hide error and warning messages during unit test suite runs. This property is equivalent to the :ref:`ProjectSettings.application/run/disable_stderr<class_ProjectSettings_property_application/run/disable_stderr>` project setting.
+
+**Warning:** If you set this to ``false`` anywhere in the project, important error messages may be hidden even if they are emitted from other scripts. If this is set to ``false`` in a ``@tool`` script, this will also impact the editor itself. Do *not* report bugs before ensuring error messages are enabled (as they are by default).
+
+**Note:** This property does not impact the editor's Errors tab when running a project from the editor.
 
 ----
 

@@ -537,7 +537,7 @@ Each particle's initial color. If :ref:`texture<class_CPUParticles2D_property_te
 | *Getter* | get_color_ramp()      |
 +----------+-----------------------+
 
-Each particle's color will vary along this :ref:`Gradient<class_Gradient>`.
+Each particle's color will vary along this :ref:`Gradient<class_Gradient>` (multiplied with :ref:`color<class_CPUParticles2D_property_color>`).
 
 ----
 

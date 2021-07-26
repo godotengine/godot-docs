@@ -11,7 +11,12 @@ EditorSpinSlider
 
 **Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+Godot editor's control for editing numeric values.
 
+Description
+-----------
+
+This :ref:`Control<class_Control>` node is used in the editor's Inspector dock to allow editing of numeric values. Can be used with :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` to recreate the same behavior.
 
 Properties
 ----------

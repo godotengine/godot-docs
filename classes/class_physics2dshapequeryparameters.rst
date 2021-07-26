@@ -16,7 +16,7 @@ Parameters to be sent to a 2D shape physics query.
 Description
 -----------
 
-This class contains the shape and other parameters for 2D intersection/collision queries. See also :ref:`Physics2DShapeQueryResult<class_Physics2DShapeQueryResult>`.
+This class contains the shape and other parameters for 2D intersection/collision queries.
 
 Properties
 ----------

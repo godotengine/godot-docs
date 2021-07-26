@@ -11,7 +11,7 @@ Spatial
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`ARVRAnchor<class_ARVRAnchor>`, :ref:`ARVRController<class_ARVRController>`, :ref:`ARVROrigin<class_ARVROrigin>`, :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`, :ref:`BoneAttachment<class_BoneAttachment>`, :ref:`Camera<class_Camera>`, :ref:`CollisionObject<class_CollisionObject>`, :ref:`CollisionPolygon<class_CollisionPolygon>`, :ref:`CollisionShape<class_CollisionShape>`, :ref:`GridMap<class_GridMap>`, :ref:`Joint<class_Joint>`, :ref:`Listener<class_Listener>`, :ref:`Navigation<class_Navigation>`, :ref:`NavigationMeshInstance<class_NavigationMeshInstance>`, :ref:`Path<class_Path>`, :ref:`PathFollow<class_PathFollow>`, :ref:`Position3D<class_Position3D>`, :ref:`ProximityGroup<class_ProximityGroup>`, :ref:`RayCast<class_RayCast>`, :ref:`RemoteTransform<class_RemoteTransform>`, :ref:`Skeleton<class_Skeleton>`, :ref:`SpringArm<class_SpringArm>`, :ref:`VehicleWheel<class_VehicleWheel>`, :ref:`VisibilityNotifier<class_VisibilityNotifier>`, :ref:`VisualInstance<class_VisualInstance>`
+**Inherited By:** :ref:`ARVRAnchor<class_ARVRAnchor>`, :ref:`ARVRController<class_ARVRController>`, :ref:`ARVROrigin<class_ARVROrigin>`, :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`, :ref:`BoneAttachment<class_BoneAttachment>`, :ref:`Camera<class_Camera>`, :ref:`CollisionObject<class_CollisionObject>`, :ref:`CollisionPolygon<class_CollisionPolygon>`, :ref:`CollisionShape<class_CollisionShape>`, :ref:`CullInstance<class_CullInstance>`, :ref:`GridMap<class_GridMap>`, :ref:`Joint<class_Joint>`, :ref:`Listener<class_Listener>`, :ref:`Navigation<class_Navigation>`, :ref:`NavigationMeshInstance<class_NavigationMeshInstance>`, :ref:`Path<class_Path>`, :ref:`PathFollow<class_PathFollow>`, :ref:`Portal<class_Portal>`, :ref:`Position3D<class_Position3D>`, :ref:`ProximityGroup<class_ProximityGroup>`, :ref:`RayCast<class_RayCast>`, :ref:`RemoteTransform<class_RemoteTransform>`, :ref:`Room<class_Room>`, :ref:`RoomGroup<class_RoomGroup>`, :ref:`RoomManager<class_RoomManager>`, :ref:`Skeleton<class_Skeleton>`, :ref:`SpringArm<class_SpringArm>`, :ref:`VehicleWheel<class_VehicleWheel>`
 
 Most basic 3D game object, parent of all 3D-related nodes.
 
@@ -126,6 +126,22 @@ Methods
 Signals
 -------
 
+.. _class_Spatial_signal_gameplay_entered:
+
+- **gameplay_entered** **(** **)**
+
+Emitted by portal system gameplay monitor when a node enters the gameplay area.
+
+----
+
+.. _class_Spatial_signal_gameplay_exited:
+
+- **gameplay_exited** **(** **)**
+
+Emitted by portal system gameplay monitor when a node exits the gameplay area.
+
+----
+
 .. _class_Spatial_signal_visibility_changed:
 
 - **visibility_changed** **(** **)**
@@ -143,6 +159,10 @@ Constants
 
 .. _class_Spatial_constant_NOTIFICATION_VISIBILITY_CHANGED:
 
+.. _class_Spatial_constant_NOTIFICATION_ENTER_GAMEPLAY:
+
+.. _class_Spatial_constant_NOTIFICATION_EXIT_GAMEPLAY:
+
 - **NOTIFICATION_TRANSFORM_CHANGED** = **2000** --- Spatial nodes receives this notification when their global transform changes. This means that either the current or a parent node changed its transform.
 
 In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Spatial_constant_NOTIFICATION_TRANSFORM_CHANGED>` to work, users first need to ask for it, with :ref:`set_notify_transform<class_Spatial_method_set_notify_transform>`. The notification is also sent if the node is in the editor context and it has a valid gizmo.
@@ -152,6 +172,10 @@ In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Spatial_constant_NOTIFIC
 - **NOTIFICATION_EXIT_WORLD** = **42** --- Spatial nodes receives this notification when they are unregistered from current :ref:`World<class_World>` resource.
 
 - **NOTIFICATION_VISIBILITY_CHANGED** = **43** --- Spatial nodes receives this notification when their visibility changes.
+
+- **NOTIFICATION_ENTER_GAMEPLAY** = **45** --- Spatial nodes receives this notification if the portal system gameplay monitor detects they have entered the gameplay area.
+
+- **NOTIFICATION_EXIT_GAMEPLAY** = **46** --- Spatial nodes receives this notification if the portal system gameplay monitor detects they have exited the gameplay area.
 
 Property Descriptions
 ---------------------

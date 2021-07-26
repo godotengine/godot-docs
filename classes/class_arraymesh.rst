@@ -66,6 +66,8 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`clear_blend_shapes<class_ArrayMesh_method_clear_blend_shapes>` **(** **)**                                                                                                                                                                                              |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`clear_surfaces<class_ArrayMesh_method_clear_surfaces>` **(** **)**                                                                                                                                                                                                      |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`get_blend_shape_count<class_ArrayMesh_method_get_blend_shape_count>` **(** **)** |const|                                                                                                                                                                                |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`get_blend_shape_name<class_ArrayMesh_method_get_blend_shape_name>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                      |
@@ -73,6 +75,8 @@ Methods
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`lightmap_unwrap<class_ArrayMesh_method_lightmap_unwrap>` **(** :ref:`Transform<class_Transform>` transform, :ref:`float<class_float>` texel_size **)**                                                                                                                  |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`regen_normalmaps<class_ArrayMesh_method_regen_normalmaps>` **(** **)**                                                                                                                                                                                                  |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_blend_shape_name<class_ArrayMesh_method_set_blend_shape_name>` **(** :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**                                                                                                                            |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`surface_find_by_name<class_ArrayMesh_method_surface_find_by_name>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                                 |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -245,7 +249,7 @@ Adds name for a blend shape that will be added with :ref:`add_surface_from_array
 
 Creates a new surface.
 
-Surfaces are created to be rendered using a ``primitive``, which may be any of the types defined in :ref:`PrimitiveType<enum_Mesh_PrimitiveType>`. (As a note, when using indices, it is recommended to only use points, lines or triangles.) :ref:`Mesh.get_surface_count<class_Mesh_method_get_surface_count>` will become the ``surf_idx`` for this new surface.
+Surfaces are created to be rendered using a ``primitive``, which may be any of the types defined in :ref:`PrimitiveType<enum_Mesh_PrimitiveType>`. (As a note, when using indices, it is recommended to only use points, lines, or triangles.) :ref:`Mesh.get_surface_count<class_Mesh_method_get_surface_count>` will become the ``surf_idx`` for this new surface.
 
 The ``arrays`` argument is an array of arrays. See :ref:`ArrayType<enum_ArrayMesh_ArrayType>` for the values used in this array. For example, ``arrays[0]`` is the array of vertices. That first vertex sub-array is always required; the others are optional. Adding an index array puts this function into "index mode" where the vertex and other arrays become the sources of data and the index array defines the vertex order. All sub-arrays must have the same length as the vertex array or be empty, except for :ref:`ARRAY_INDEX<class_ArrayMesh_constant_ARRAY_INDEX>` if it is used.
 
@@ -256,6 +260,14 @@ The ``arrays`` argument is an array of arrays. See :ref:`ArrayType<enum_ArrayMes
 - void **clear_blend_shapes** **(** **)**
 
 Removes all blend shapes from this ``ArrayMesh``.
+
+----
+
+.. _class_ArrayMesh_method_clear_surfaces:
+
+- void **clear_surfaces** **(** **)**
+
+Removes all surfaces from this ``ArrayMesh``.
 
 ----
 
@@ -288,6 +300,12 @@ Will perform a UV unwrap on the ``ArrayMesh`` to prepare the mesh for lightmappi
 - void **regen_normalmaps** **(** **)**
 
 Will regenerate normal maps for the ``ArrayMesh``.
+
+----
+
+.. _class_ArrayMesh_method_set_blend_shape_name:
+
+- void **set_blend_shape_name** **(** :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**
 
 ----
 

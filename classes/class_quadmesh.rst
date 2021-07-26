@@ -28,12 +28,30 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_QuadMesh_property_size>` | ``Vector2( 1, 1 )`` |
-+-------------------------------+-------------------------------------------+---------------------+
++-------------------------------+-------------------------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`center_offset<class_QuadMesh_property_center_offset>` | ``Vector3( 0, 0, 0 )`` |
++-------------------------------+-------------------------------------------------------------+------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_QuadMesh_property_size>`                   | ``Vector2( 1, 1 )``    |
++-------------------------------+-------------------------------------------------------------+------------------------+
 
 Property Descriptions
 ---------------------
+
+.. _class_QuadMesh_property_center_offset:
+
+- :ref:`Vector3<class_Vector3>` **center_offset**
+
++-----------+--------------------------+
+| *Default* | ``Vector3( 0, 0, 0 )``   |
++-----------+--------------------------+
+| *Setter*  | set_center_offset(value) |
++-----------+--------------------------+
+| *Getter*  | get_center_offset()      |
++-----------+--------------------------+
+
+Offset of the generated Quad. Useful for particles.
+
+----
 
 .. _class_QuadMesh_property_size:
 

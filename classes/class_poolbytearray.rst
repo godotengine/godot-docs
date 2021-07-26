@@ -21,41 +21,43 @@ An :ref:`Array<class_Array>` specifically designed to hold bytes. Optimized for 
 Methods
 -------
 
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`PoolByteArray<class_PoolByteArray_method_PoolByteArray>` **(** :ref:`Array<class_Array>` from **)**                                        |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`append<class_PoolByteArray_method_append>` **(** :ref:`int<class_int>` byte **)**                                                          |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`append_array<class_PoolByteArray_method_append_array>` **(** :ref:`PoolByteArray<class_PoolByteArray>` array **)**                         |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`compress<class_PoolByteArray_method_compress>` **(** :ref:`int<class_int>` compression_mode=0 **)**                                        |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`decompress<class_PoolByteArray_method_decompress>` **(** :ref:`int<class_int>` buffer_size, :ref:`int<class_int>` compression_mode=0 **)** |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`empty<class_PoolByteArray_method_empty>` **(** **)**                                                                                       |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`               | :ref:`get_string_from_ascii<class_PoolByteArray_method_get_string_from_ascii>` **(** **)**                                                       |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`               | :ref:`get_string_from_utf8<class_PoolByteArray_method_get_string_from_utf8>` **(** **)**                                                         |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`               | :ref:`hex_encode<class_PoolByteArray_method_hex_encode>` **(** **)**                                                                             |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`insert<class_PoolByteArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**                               |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`invert<class_PoolByteArray_method_invert>` **(** **)**                                                                                     |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`push_back<class_PoolByteArray_method_push_back>` **(** :ref:`int<class_int>` byte **)**                                                    |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`remove<class_PoolByteArray_method_remove>` **(** :ref:`int<class_int>` idx **)**                                                           |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`resize<class_PoolByteArray_method_resize>` **(** :ref:`int<class_int>` idx **)**                                                           |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set<class_PoolByteArray_method_set>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**                                     |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`size<class_PoolByteArray_method_size>` **(** **)**                                                                                         |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`subarray<class_PoolByteArray_method_subarray>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**                            |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`PoolByteArray<class_PoolByteArray_method_PoolByteArray>` **(** :ref:`Array<class_Array>` from **)**                                                            |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`append<class_PoolByteArray_method_append>` **(** :ref:`int<class_int>` byte **)**                                                                              |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`append_array<class_PoolByteArray_method_append_array>` **(** :ref:`PoolByteArray<class_PoolByteArray>` array **)**                                             |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`compress<class_PoolByteArray_method_compress>` **(** :ref:`int<class_int>` compression_mode=0 **)**                                                            |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`decompress<class_PoolByteArray_method_decompress>` **(** :ref:`int<class_int>` buffer_size, :ref:`int<class_int>` compression_mode=0 **)**                     |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`decompress_dynamic<class_PoolByteArray_method_decompress_dynamic>` **(** :ref:`int<class_int>` max_output_size, :ref:`int<class_int>` compression_mode=0 **)** |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                   | :ref:`empty<class_PoolByteArray_method_empty>` **(** **)**                                                                                                           |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`               | :ref:`get_string_from_ascii<class_PoolByteArray_method_get_string_from_ascii>` **(** **)**                                                                           |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`               | :ref:`get_string_from_utf8<class_PoolByteArray_method_get_string_from_utf8>` **(** **)**                                                                             |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`               | :ref:`hex_encode<class_PoolByteArray_method_hex_encode>` **(** **)**                                                                                                 |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                     | :ref:`insert<class_PoolByteArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**                                                   |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`invert<class_PoolByteArray_method_invert>` **(** **)**                                                                                                         |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`push_back<class_PoolByteArray_method_push_back>` **(** :ref:`int<class_int>` byte **)**                                                                        |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`remove<class_PoolByteArray_method_remove>` **(** :ref:`int<class_int>` idx **)**                                                                               |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`resize<class_PoolByteArray_method_resize>` **(** :ref:`int<class_int>` idx **)**                                                                               |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`set<class_PoolByteArray_method_set>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**                                                         |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                     | :ref:`size<class_PoolByteArray_method_size>` **(** **)**                                                                                                             |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`subarray<class_PoolByteArray_method_subarray>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**                                                |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -97,6 +99,20 @@ Returns a new ``PoolByteArray`` with the data compressed. Set the compression mo
 - :ref:`PoolByteArray<class_PoolByteArray>` **decompress** **(** :ref:`int<class_int>` buffer_size, :ref:`int<class_int>` compression_mode=0 **)**
 
 Returns a new ``PoolByteArray`` with the data decompressed. Set ``buffer_size`` to the size of the uncompressed data. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants.
+
+----
+
+.. _class_PoolByteArray_method_decompress_dynamic:
+
+- :ref:`PoolByteArray<class_PoolByteArray>` **decompress_dynamic** **(** :ref:`int<class_int>` max_output_size, :ref:`int<class_int>` compression_mode=0 **)**
+
+Returns a new ``PoolByteArray`` with the data decompressed. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants. **This method only accepts gzip and deflate compression modes.**
+
+This method is potentially slower than ``decompress``, as it may have to re-allocate it's output buffer multiple times while decompressing, where as ``decompress`` knows it's output buffer size from the begining.
+
+
+
+GZIP has a maximal compression ratio of 1032:1, meaning it's very possible for a small compressed payload to decompress to a potentially very large output. To guard against this, you may provide a maximum size this function is allowed to allocate in bytes via ``max_output_size``. Passing -1 will allow for unbounded output. If any positive value is passed, and the decompression exceeds that ammount in bytes, then an error will be returned.
 
 ----
 

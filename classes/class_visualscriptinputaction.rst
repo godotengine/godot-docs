@@ -11,7 +11,12 @@ VisualScriptInputAction
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+A Visual Script node returning a state of an action.
 
+Description
+-----------
+
+``VisualScriptInputAction`` can be used to check if an action is pressed or released.
 
 Properties
 ----------
@@ -37,13 +42,13 @@ Enumerations
 
 enum **Mode**:
 
-- **MODE_PRESSED** = **0**
+- **MODE_PRESSED** = **0** --- ``True`` if action is pressed.
 
-- **MODE_RELEASED** = **1**
+- **MODE_RELEASED** = **1** --- ``True`` if action is released (i.e. not pressed).
 
-- **MODE_JUST_PRESSED** = **2**
+- **MODE_JUST_PRESSED** = **2** --- ``True`` on the frame the action was pressed.
 
-- **MODE_JUST_RELEASED** = **3**
+- **MODE_JUST_RELEASED** = **3** --- ``True`` on the frame the action was released.
 
 Property Descriptions
 ---------------------
@@ -60,6 +65,8 @@ Property Descriptions
 | *Getter*  | get_action_name()      |
 +-----------+------------------------+
 
+Name of the action.
+
 ----
 
 .. _class_VisualScriptInputAction_property_mode:
@@ -73,6 +80,8 @@ Property Descriptions
 +-----------+------------------------+
 | *Getter*  | get_action_mode()      |
 +-----------+------------------------+
+
+State of the action to check. See :ref:`Mode<enum_VisualScriptInputAction_Mode>` for options.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

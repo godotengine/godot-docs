@@ -79,6 +79,18 @@ Methods
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_slot<class_GraphNode_method_set_slot>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable_left, :ref:`int<class_int>` type_left, :ref:`Color<class_Color>` color_left, :ref:`bool<class_bool>` enable_right, :ref:`int<class_int>` type_right, :ref:`Color<class_Color>` color_right, :ref:`Texture<class_Texture>` custom_left=null, :ref:`Texture<class_Texture>` custom_right=null **)** |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_slot_color_left<class_GraphNode_method_set_slot_color_left>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color_left **)**                                                                                                                                                                                                                                                                 |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_slot_color_right<class_GraphNode_method_set_slot_color_right>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color_right **)**                                                                                                                                                                                                                                                              |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_slot_enabled_left<class_GraphNode_method_set_slot_enabled_left>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable_left **)**                                                                                                                                                                                                                                                              |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_slot_enabled_right<class_GraphNode_method_set_slot_enabled_right>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable_right **)**                                                                                                                                                                                                                                                           |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_slot_type_left<class_GraphNode_method_set_slot_type_left>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` type_left **)**                                                                                                                                                                                                                                                                        |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_slot_type_right<class_GraphNode_method_set_slot_type_right>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` type_right **)**                                                                                                                                                                                                                                                                     |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
@@ -333,7 +345,7 @@ Disables input and output slot whose index is ``idx``.
 
 - :ref:`Color<class_Color>` **get_connection_input_color** **(** :ref:`int<class_int>` idx **)**
 
-Returns the color of the input connection ``idx``.
+Returns the :ref:`Color<class_Color>` of the input connection ``idx``.
 
 ----
 
@@ -365,7 +377,7 @@ Returns the type of the input connection ``idx``.
 
 - :ref:`Color<class_Color>` **get_connection_output_color** **(** :ref:`int<class_int>` idx **)**
 
-Returns the color of the output connection ``idx``.
+Returns the :ref:`Color<class_Color>` of the output connection ``idx``.
 
 ----
 
@@ -397,7 +409,7 @@ Returns the type of the output connection ``idx``.
 
 - :ref:`Color<class_Color>` **get_slot_color_left** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the color set to ``idx`` left (input) slot.
+Returns the left (input) :ref:`Color<class_Color>` of the slot ``idx``.
 
 ----
 
@@ -405,7 +417,7 @@ Returns the color set to ``idx`` left (input) slot.
 
 - :ref:`Color<class_Color>` **get_slot_color_right** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the color set to ``idx`` right (output) slot.
+Returns the right (output) :ref:`Color<class_Color>` of the slot ``idx``.
 
 ----
 
@@ -413,7 +425,7 @@ Returns the color set to ``idx`` right (output) slot.
 
 - :ref:`int<class_int>` **get_slot_type_left** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the (integer) type of left (input) ``idx`` slot.
+Returns the left (input) type of the slot ``idx``.
 
 ----
 
@@ -421,7 +433,7 @@ Returns the (integer) type of left (input) ``idx`` slot.
 
 - :ref:`int<class_int>` **get_slot_type_right** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the (integer) type of right (output) ``idx`` slot.
+Returns the right (output) type of the slot ``idx``.
 
 ----
 
@@ -429,7 +441,7 @@ Returns the (integer) type of right (output) ``idx`` slot.
 
 - :ref:`bool<class_bool>` **is_slot_enabled_left** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns ``true`` if left (input) slot ``idx`` is enabled, ``false`` otherwise.
+Returns ``true`` if left (input) side of the slot ``idx`` is enabled.
 
 ----
 
@@ -437,7 +449,7 @@ Returns ``true`` if left (input) slot ``idx`` is enabled, ``false`` otherwise.
 
 - :ref:`bool<class_bool>` **is_slot_enabled_right** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns ``true`` if right (output) slot ``idx`` is enabled, ``false`` otherwise.
+Returns ``true`` if right (output) side of the slot ``idx`` is enabled.
 
 ----
 
@@ -456,6 +468,56 @@ If ``enable_left``/``right``, a port will appear and the slot will be able to be
 ``custom_left``/``right`` is a custom texture for this side's port.
 
 **Note:** This method only sets properties of the slot. To create the slot, add a :ref:`Control<class_Control>`-derived child to the GraphNode.
+
+Individual properties can be set using one of the ``set_slot_*`` methods. You must enable at least one side of the slot to do so.
+
+----
+
+.. _class_GraphNode_method_set_slot_color_left:
+
+- void **set_slot_color_left** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color_left **)**
+
+Sets the :ref:`Color<class_Color>` of the left (input) side of the slot ``idx`` to ``color_left``.
+
+----
+
+.. _class_GraphNode_method_set_slot_color_right:
+
+- void **set_slot_color_right** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color_right **)**
+
+Sets the :ref:`Color<class_Color>` of the right (output) side of the slot ``idx`` to ``color_right``.
+
+----
+
+.. _class_GraphNode_method_set_slot_enabled_left:
+
+- void **set_slot_enabled_left** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable_left **)**
+
+Toggles the left (input) side of the slot ``idx``. If ``enable_left`` is ``true``, a port will appear on the left side and the slot will be able to be connected from this side.
+
+----
+
+.. _class_GraphNode_method_set_slot_enabled_right:
+
+- void **set_slot_enabled_right** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable_right **)**
+
+Toggles the right (output) side of the slot ``idx``. If ``enable_right`` is ``true``, a port will appear on the right side and the slot will be able to be connected from this side.
+
+----
+
+.. _class_GraphNode_method_set_slot_type_left:
+
+- void **set_slot_type_left** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` type_left **)**
+
+Sets the left (input) type of the slot ``idx`` to ``type_left``.
+
+----
+
+.. _class_GraphNode_method_set_slot_type_right:
+
+- void **set_slot_type_right** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` type_right **)**
+
+Sets the right (output) type of the slot ``idx`` to ``type_right``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

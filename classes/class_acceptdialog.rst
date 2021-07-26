@@ -47,6 +47,8 @@ Methods
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                        | :ref:`register_text_enter<class_AcceptDialog_method_register_text_enter>` **(** :ref:`Node<class_Node>` line_edit **)**                                                          |
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`remove_button<class_AcceptDialog_method_remove_button>` **(** :ref:`Control<class_Control>` button **)**                                                                   |
++-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -127,6 +129,8 @@ Adds a button with label ``text`` and a custom ``action`` to the dialog and retu
 
 If ``true``, ``right`` will place the button to the right of any sibling buttons.
 
+You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method to remove a button created with this method from the dialog.
+
 ----
 
 .. _class_AcceptDialog_method_add_cancel:
@@ -134,6 +138,8 @@ If ``true``, ``right`` will place the button to the right of any sibling buttons
 - :ref:`Button<class_Button>` **add_cancel** **(** :ref:`String<class_String>` name **)**
 
 Adds a button with label ``name`` and a cancel action to the dialog and returns the created button.
+
+You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method to remove a button created with this method from the dialog.
 
 ----
 
@@ -158,6 +164,14 @@ Returns the OK :ref:`Button<class_Button>` instance.
 - void **register_text_enter** **(** :ref:`Node<class_Node>` line_edit **)**
 
 Registers a :ref:`LineEdit<class_LineEdit>` in the dialog. When the enter key is pressed, the dialog will be accepted.
+
+----
+
+.. _class_AcceptDialog_method_remove_button:
+
+- void **remove_button** **(** :ref:`Control<class_Control>` button **)**
+
+Removes the ``button`` from the dialog. Does NOT free the ``button``. The ``button`` must be a :ref:`Button<class_Button>` added with :ref:`add_button<class_AcceptDialog_method_add_button>` or :ref:`add_cancel<class_AcceptDialog_method_add_cancel>` method. After removal, pressing the ``button`` will no longer emit this dialog's :ref:`custom_action<class_AcceptDialog_signal_custom_action>` signal or cancel this dialog.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

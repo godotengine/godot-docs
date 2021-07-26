@@ -400,7 +400,7 @@ Returns ``true`` if the given ``layer`` in the :ref:`cull_mask<class_Camera_prop
 
 - :ref:`Array<class_Array>` **get_frustum** **(** **)** |const|
 
-Returns the camera's frustum planes in world-space units as an array of :ref:`Plane<class_Plane>`\ s in the following order: near, far, left, top, right, bottom. Not to be confused with :ref:`frustum_offset<class_Camera_property_frustum_offset>`.
+Returns the camera's frustum planes in world space units as an array of :ref:`Plane<class_Plane>`\ s in the following order: near, far, left, top, right, bottom. Not to be confused with :ref:`frustum_offset<class_Camera_property_frustum_offset>`.
 
 ----
 
@@ -434,7 +434,7 @@ Returns a normal vector from the screen point location directed along the camera
 
 - :ref:`Vector3<class_Vector3>` **project_position** **(** :ref:`Vector2<class_Vector2>` screen_point, :ref:`float<class_float>` z_depth **)** |const|
 
-Returns the 3D point in worldspace that maps to the given 2D coordinate in the :ref:`Viewport<class_Viewport>` rectangle on a plane that is the given ``z_depth`` distance into the scene away from the camera.
+Returns the 3D point in world space that maps to the given 2D coordinate in the :ref:`Viewport<class_Viewport>` rectangle on a plane that is the given ``z_depth`` distance into the scene away from the camera.
 
 ----
 
@@ -442,7 +442,7 @@ Returns the 3D point in worldspace that maps to the given 2D coordinate in the :
 
 - :ref:`Vector3<class_Vector3>` **project_ray_normal** **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|
 
-Returns a normal vector in worldspace, that is the result of projecting a point on the :ref:`Viewport<class_Viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
+Returns a normal vector in world space, that is the result of projecting a point on the :ref:`Viewport<class_Viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
 
 ----
 
@@ -450,7 +450,7 @@ Returns a normal vector in worldspace, that is the result of projecting a point 
 
 - :ref:`Vector3<class_Vector3>` **project_ray_origin** **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|
 
-Returns a 3D position in worldspace, that is the result of projecting a point on the :ref:`Viewport<class_Viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
+Returns a 3D position in world space, that is the result of projecting a point on the :ref:`Viewport<class_Viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
 
 ----
 
@@ -466,7 +466,7 @@ Enables or disables the given ``layer`` in the :ref:`cull_mask<class_Camera_prop
 
 - void **set_frustum** **(** :ref:`float<class_float>` size, :ref:`Vector2<class_Vector2>` offset, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
 
-Sets the camera projection to frustum mode (see :ref:`PROJECTION_FRUSTUM<class_Camera_constant_PROJECTION_FRUSTUM>`), by specifying a ``size``, an ``offset``, and the ``z_near`` and ``z_far`` clip planes in world-space units.
+Sets the camera projection to frustum mode (see :ref:`PROJECTION_FRUSTUM<class_Camera_constant_PROJECTION_FRUSTUM>`), by specifying a ``size``, an ``offset``, and the ``z_near`` and ``z_far`` clip planes in world space units.
 
 ----
 
@@ -474,7 +474,7 @@ Sets the camera projection to frustum mode (see :ref:`PROJECTION_FRUSTUM<class_C
 
 - void **set_orthogonal** **(** :ref:`float<class_float>` size, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
 
-Sets the camera projection to orthogonal mode (see :ref:`PROJECTION_ORTHOGONAL<class_Camera_constant_PROJECTION_ORTHOGONAL>`), by specifying a ``size``, and the ``z_near`` and ``z_far`` clip planes in world-space units. (As a hint, 2D games often use this projection, with values specified in pixels.)
+Sets the camera projection to orthogonal mode (see :ref:`PROJECTION_ORTHOGONAL<class_Camera_constant_PROJECTION_ORTHOGONAL>`), by specifying a ``size``, and the ``z_near`` and ``z_far`` clip planes in world space units. (As a hint, 2D games often use this projection, with values specified in pixels.)
 
 ----
 
@@ -482,7 +482,7 @@ Sets the camera projection to orthogonal mode (see :ref:`PROJECTION_ORTHOGONAL<c
 
 - void **set_perspective** **(** :ref:`float<class_float>` fov, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
 
-Sets the camera projection to perspective mode (see :ref:`PROJECTION_PERSPECTIVE<class_Camera_constant_PROJECTION_PERSPECTIVE>`), by specifying a ``fov`` (field of view) angle in degrees, and the ``z_near`` and ``z_far`` clip planes in world-space units.
+Sets the camera projection to perspective mode (see :ref:`PROJECTION_PERSPECTIVE<class_Camera_constant_PROJECTION_PERSPECTIVE>`), by specifying a ``fov`` (field of view) angle in degrees, and the ``z_near`` and ``z_far`` clip planes in world space units.
 
 ----
 
@@ -490,7 +490,7 @@ Sets the camera projection to perspective mode (see :ref:`PROJECTION_PERSPECTIVE
 
 - :ref:`Vector2<class_Vector2>` **unproject_position** **(** :ref:`Vector3<class_Vector3>` world_point **)** |const|
 
-Returns the 2D coordinate in the :ref:`Viewport<class_Viewport>` rectangle that maps to the given 3D point in worldspace.
+Returns the 2D coordinate in the :ref:`Viewport<class_Viewport>` rectangle that maps to the given 3D point in world space.
 
 **Note:** When using this to position GUI elements over a 3D viewport, use :ref:`is_position_behind<class_Camera_method_is_position_behind>` to prevent them from appearing if the 3D point is behind the camera:
 

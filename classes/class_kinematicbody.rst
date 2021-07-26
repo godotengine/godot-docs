@@ -38,15 +38,17 @@ Tutorials
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`collision/safe_margin<class_KinematicBody_property_collision/safe_margin>` | ``0.001`` |
-+---------------------------+----------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`move_lock_x<class_KinematicBody_property_move_lock_x>`                     | ``false`` |
-+---------------------------+----------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`move_lock_y<class_KinematicBody_property_move_lock_y>`                     | ``false`` |
-+---------------------------+----------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`move_lock_z<class_KinematicBody_property_move_lock_z>`                     | ``false`` |
-+---------------------------+----------------------------------------------------------------------------------+-----------+
++---------------------------+------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`collision/safe_margin<class_KinematicBody_property_collision/safe_margin>`   | ``0.001`` |
++---------------------------+------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`motion/sync_to_physics<class_KinematicBody_property_motion/sync_to_physics>` | ``false`` |
++---------------------------+------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`move_lock_x<class_KinematicBody_property_move_lock_x>`                       | ``false`` |
++---------------------------+------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`move_lock_y<class_KinematicBody_property_move_lock_y>`                       | ``false`` |
++---------------------------+------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`move_lock_z<class_KinematicBody_property_move_lock_z>`                       | ``false`` |
++---------------------------+------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -101,6 +103,22 @@ If the body is at least this close to another body, it will consider them to be 
 A higher value means it's more flexible for detecting collision, which helps with consistently detecting walls and floors.
 
 A lower value forces the collision algorithm to use more exact detection, so it can be used in cases that specifically require precision, e.g at very low scale to avoid visible jittering, or for stability with a stack of kinematic bodies.
+
+----
+
+.. _class_KinematicBody_property_motion/sync_to_physics:
+
+- :ref:`bool<class_bool>` **motion/sync_to_physics**
+
++-----------+------------------------------+
+| *Default* | ``false``                    |
++-----------+------------------------------+
+| *Setter*  | set_sync_to_physics(value)   |
++-----------+------------------------------+
+| *Getter*  | is_sync_to_physics_enabled() |
++-----------+------------------------------+
+
+If ``true``, the body's movement will be synchronized to the physics frame. This is useful when animating movement via :ref:`AnimationPlayer<class_AnimationPlayer>`, for example on moving platforms. Do **not** use together with :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>` or :ref:`move_and_collide<class_KinematicBody_method_move_and_collide>` functions.
 
 ----
 

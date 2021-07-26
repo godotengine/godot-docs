@@ -9,7 +9,7 @@
 Light
 =====
 
-**Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`CullInstance<class_CullInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Inherited By:** :ref:`DirectionalLight<class_DirectionalLight>`, :ref:`OmniLight<class_OmniLight>`, :ref:`SpotLight<class_SpotLight>`
 
@@ -45,6 +45,8 @@ Properties
 +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
 | :ref:`bool<class_bool>`              | :ref:`light_negative<class_Light_property_light_negative>`                     | ``false``               |
 +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`            | :ref:`light_size<class_Light_property_light_size>`                             | ``0.0``                 |
++--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
 | :ref:`float<class_float>`            | :ref:`light_specular<class_Light_property_light_specular>`                     | ``0.5``                 |
 +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
 | :ref:`float<class_float>`            | :ref:`shadow_bias<class_Light_property_shadow_bias>`                           | ``0.15``                |
@@ -75,6 +77,8 @@ Enumerations
 .. _class_Light_constant_PARAM_ENERGY:
 
 .. _class_Light_constant_PARAM_INDIRECT_ENERGY:
+
+.. _class_Light_constant_PARAM_SIZE:
 
 .. _class_Light_constant_PARAM_SPECULAR:
 
@@ -110,33 +114,35 @@ enum **Param**:
 
 - **PARAM_INDIRECT_ENERGY** = **1** --- Constant for accessing :ref:`light_indirect_energy<class_Light_property_light_indirect_energy>`.
 
-- **PARAM_SPECULAR** = **2** --- Constant for accessing :ref:`light_specular<class_Light_property_light_specular>`.
+- **PARAM_SIZE** = **2** --- Constant for accessing :ref:`light_size<class_Light_property_light_size>`.
 
-- **PARAM_RANGE** = **3** --- Constant for accessing :ref:`OmniLight.omni_range<class_OmniLight_property_omni_range>` or :ref:`SpotLight.spot_range<class_SpotLight_property_spot_range>`.
+- **PARAM_SPECULAR** = **3** --- Constant for accessing :ref:`light_specular<class_Light_property_light_specular>`.
 
-- **PARAM_ATTENUATION** = **4** --- Constant for accessing :ref:`OmniLight.omni_attenuation<class_OmniLight_property_omni_attenuation>` or :ref:`SpotLight.spot_attenuation<class_SpotLight_property_spot_attenuation>`.
+- **PARAM_RANGE** = **4** --- Constant for accessing :ref:`OmniLight.omni_range<class_OmniLight_property_omni_range>` or :ref:`SpotLight.spot_range<class_SpotLight_property_spot_range>`.
 
-- **PARAM_SPOT_ANGLE** = **5** --- Constant for accessing :ref:`SpotLight.spot_angle<class_SpotLight_property_spot_angle>`.
+- **PARAM_ATTENUATION** = **5** --- Constant for accessing :ref:`OmniLight.omni_attenuation<class_OmniLight_property_omni_attenuation>` or :ref:`SpotLight.spot_attenuation<class_SpotLight_property_spot_attenuation>`.
 
-- **PARAM_SPOT_ATTENUATION** = **6** --- Constant for accessing :ref:`SpotLight.spot_angle_attenuation<class_SpotLight_property_spot_angle_attenuation>`.
+- **PARAM_SPOT_ANGLE** = **6** --- Constant for accessing :ref:`SpotLight.spot_angle<class_SpotLight_property_spot_angle>`.
 
-- **PARAM_CONTACT_SHADOW_SIZE** = **7** --- Constant for accessing :ref:`shadow_contact<class_Light_property_shadow_contact>`.
+- **PARAM_SPOT_ATTENUATION** = **7** --- Constant for accessing :ref:`SpotLight.spot_angle_attenuation<class_SpotLight_property_spot_angle_attenuation>`.
 
-- **PARAM_SHADOW_MAX_DISTANCE** = **8** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`.
+- **PARAM_CONTACT_SHADOW_SIZE** = **8** --- Constant for accessing :ref:`shadow_contact<class_Light_property_shadow_contact>`.
 
-- **PARAM_SHADOW_SPLIT_1_OFFSET** = **9** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_split_1<class_DirectionalLight_property_directional_shadow_split_1>`.
+- **PARAM_SHADOW_MAX_DISTANCE** = **9** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`.
 
-- **PARAM_SHADOW_SPLIT_2_OFFSET** = **10** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_split_2<class_DirectionalLight_property_directional_shadow_split_2>`.
+- **PARAM_SHADOW_SPLIT_1_OFFSET** = **10** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_split_1<class_DirectionalLight_property_directional_shadow_split_1>`.
 
-- **PARAM_SHADOW_SPLIT_3_OFFSET** = **11** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_split_3<class_DirectionalLight_property_directional_shadow_split_3>`.
+- **PARAM_SHADOW_SPLIT_2_OFFSET** = **11** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_split_2<class_DirectionalLight_property_directional_shadow_split_2>`.
 
-- **PARAM_SHADOW_NORMAL_BIAS** = **12** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_normal_bias<class_DirectionalLight_property_directional_shadow_normal_bias>`.
+- **PARAM_SHADOW_SPLIT_3_OFFSET** = **12** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_split_3<class_DirectionalLight_property_directional_shadow_split_3>`.
 
-- **PARAM_SHADOW_BIAS** = **13** --- Constant for accessing :ref:`shadow_bias<class_Light_property_shadow_bias>`.
+- **PARAM_SHADOW_NORMAL_BIAS** = **13** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_normal_bias<class_DirectionalLight_property_directional_shadow_normal_bias>`.
 
-- **PARAM_SHADOW_BIAS_SPLIT_SCALE** = **14** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_bias_split_scale<class_DirectionalLight_property_directional_shadow_bias_split_scale>`.
+- **PARAM_SHADOW_BIAS** = **14** --- Constant for accessing :ref:`shadow_bias<class_Light_property_shadow_bias>`.
 
-- **PARAM_MAX** = **15** --- Represents the size of the :ref:`Param<enum_Light_Param>` enum.
+- **PARAM_SHADOW_BIAS_SPLIT_SCALE** = **15** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_bias_split_scale<class_DirectionalLight_property_directional_shadow_bias_split_scale>`.
+
+- **PARAM_MAX** = **16** --- Represents the size of the :ref:`Param<enum_Light_Param>` enum.
 
 ----
 
@@ -272,6 +278,22 @@ Secondary multiplier used with indirect light (light bounces). This works on bot
 +-----------+---------------------+
 
 If ``true``, the light's effect is reversed, darkening areas and casting bright shadows.
+
+----
+
+.. _class_Light_property_light_size:
+
+- :ref:`float<class_float>` **light_size**
+
++-----------+------------------+
+| *Default* | ``0.0``          |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
+
+The size of the light in Godot units. Only considered in baked lightmaps and only if :ref:`light_bake_mode<class_Light_property_light_bake_mode>` is set to :ref:`BAKE_ALL<class_Light_constant_BAKE_ALL>`. Increasing this value will make the shadows appear blurrier. This can be used to simulate area lights to an extent.
 
 ----
 

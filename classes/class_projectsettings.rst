@@ -63,6 +63,10 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`application/config/windows_native_icon<class_ProjectSettings_property_application/config/windows_native_icon>`                                                 | ``""``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`application/run/delta_smoothing<class_ProjectSettings_property_application/run/delta_smoothing>`                                                               | ``true``                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`application/run/delta_sync_after_draw<class_ProjectSettings_property_application/run/delta_sync_after_draw>`                                                   | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`application/run/disable_stderr<class_ProjectSettings_property_application/run/disable_stderr>`                                                                 | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`application/run/disable_stdout<class_ProjectSettings_property_application/run/disable_stdout>`                                                                 | ``false``                                                                                       |
@@ -235,9 +239,11 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`display/window/vsync/vsync_via_compositor<class_ProjectSettings_property_display/window/vsync/vsync_via_compositor>`                                           | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`editor/main_run_args<class_ProjectSettings_property_editor/main_run_args>`                                                                                     | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`editor/script_templates_search_path<class_ProjectSettings_property_editor/script_templates_search_path>`                                                       | ``"res://script_templates"``                                                                    |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`editor/search_in_file_extensions<class_ProjectSettings_property_editor/search_in_file_extensions>`                                                             | ``PoolStringArray( "gd", "shader" )``                                                           |
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`editor/search_in_file_extensions<class_ProjectSettings_property_editor/search_in_file_extensions>`                                                             | ``PoolStringArray( "gd", "gdshader", "shader" )``                                               |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`gui/common/default_scroll_deadzone<class_ProjectSettings_property_gui/common/default_scroll_deadzone>`                                                         | ``0``                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -531,6 +537,8 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                     | :ref:`physics/2d/time_before_sleep<class_ProjectSettings_property_physics/2d/time_before_sleep>`                                                                     | ``0.5``                                                                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`physics/2d/use_bvh<class_ProjectSettings_property_physics/2d/use_bvh>`                                                                                         | ``true``                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`physics/3d/active_soft_world<class_ProjectSettings_property_physics/3d/active_soft_world>`                                                                     | ``true``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                     | :ref:`physics/3d/default_angular_damp<class_ProjectSettings_property_physics/3d/default_angular_damp>`                                                               | ``0.1``                                                                                         |
@@ -629,6 +637,12 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                     | :ref:`rendering/limits/time/time_rollover_secs<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`                                             | ``3600``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/lossless_compression/force_png<class_ProjectSettings_property_rendering/lossless_compression/force_png>`                                             | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/lossless_compression/webp_compression_level<class_ProjectSettings_property_rendering/lossless_compression/webp_compression_level>`                   | ``2``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/mesh_storage/split_stream<class_ProjectSettings_property_rendering/mesh_storage/split_stream>`                                                       | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>`                                                                       | ``true``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/depth/hdr.mobile<class_ProjectSettings_property_rendering/quality/depth/hdr.mobile>`                                                         | ``false``                                                                                       |
@@ -726,6 +740,8 @@ Properties
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/voxel_cone_tracing/high_quality<class_ProjectSettings_property_rendering/quality/voxel_cone_tracing/high_quality>`                           | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/threads/thread_model<class_ProjectSettings_property_rendering/threads/thread_model>`                                                                 | ``1``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/threads/thread_safe_bvh<class_ProjectSettings_property_rendering/threads/thread_safe_bvh>`                                                           | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/vram_compression/import_bptc<class_ProjectSettings_property_rendering/vram_compression/import_bptc>`                                                 | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -942,6 +958,34 @@ Icon set in ``.ico`` format used on Windows to set the game's icon. This is done
 
 ----
 
+.. _class_ProjectSettings_property_application/run/delta_smoothing:
+
+- :ref:`bool<class_bool>` **application/run/delta_smoothing**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+Time samples for frame deltas are subject to random variation introduced by the platform, even when frames are displayed at regular intervals thanks to V-Sync. This can lead to jitter. Delta smoothing can often give a better result by filtering the input deltas to correct for minor fluctuations from the refresh rate.
+
+**Note:** Delta smoothing is only attempted when :ref:`display/window/vsync/use_vsync<class_ProjectSettings_property_display/window/vsync/use_vsync>` is switched on, as it does not work well without V-Sync.
+
+It may take several seconds at a stable frame rate before the smoothing is initially activated. It will only be active on machines where performance is adequate to render frames at the refresh rate.
+
+----
+
+.. _class_ProjectSettings_property_application/run/delta_sync_after_draw:
+
+- :ref:`bool<class_bool>` **application/run/delta_sync_after_draw**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+**Experimental.** Shifts the measurement of delta time for each frame to just after the drawing has taken place. This may lead to more consistent deltas and a reduction in frame stutters.
+
+----
+
 .. _class_ProjectSettings_property_application/run/disable_stderr:
 
 - :ref:`bool<class_bool>` **application/run/disable_stderr**
@@ -1118,7 +1162,7 @@ If ``true``, microphone input will be allowed. This requires appropriate permiss
 | *Default* | ``44100`` |
 +-----------+-----------+
 
-Mixing rate used for audio. In general, it's better to not touch this and leave it to the host operating system.
+The mixing rate used for audio (in Hz). In general, it's better to not touch this and leave it to the host operating system.
 
 ----
 
@@ -2004,6 +2048,26 @@ If ``Use Vsync`` is enabled and this setting is ``true``, enables vertical synch
 
 ----
 
+.. _class_ProjectSettings_property_editor/main_run_args:
+
+- :ref:`String<class_String>` **editor/main_run_args**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+The command-line arguments to append to Godot's own command line when running the project. This doesn't affect the editor itself.
+
+It is possible to make another executable run Godot by using the ``%command%`` placeholder. The placeholder will be replaced with Godot's own command line. Program-specific arguments should be placed *before* the placeholder, whereas Godot-specific arguments should be placed *after* the placeholder.
+
+For example, this can be used to force the project to run on the dedicated GPU in a NVIDIA Optimus system on Linux:
+
+::
+
+    prime-run %command%
+
+----
+
 .. _class_ProjectSettings_property_editor/script_templates_search_path:
 
 - :ref:`String<class_String>` **editor/script_templates_search_path**
@@ -2020,9 +2084,9 @@ Search path for project-specific script templates. Godot will search for script 
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **editor/search_in_file_extensions**
 
-+-----------+---------------------------------------+
-| *Default* | ``PoolStringArray( "gd", "shader" )`` |
-+-----------+---------------------------------------+
++-----------+---------------------------------------------------+
+| *Default* | ``PoolStringArray( "gd", "gdshader", "shader" )`` |
++-----------+---------------------------------------------------+
 
 Text-based file extensions to include in the script editor's "Find in Files" feature. You can add e.g. ``tscn`` if you wish to also parse your scene files, especially if you use built-in scripts which are serialized in the scene files.
 
@@ -3618,6 +3682,8 @@ What to use to separate node name from number. This is mostly an editor setting.
 
 Size of the hash table used for the broad-phase 2D hash grid algorithm.
 
+**Note:** Not used if :ref:`physics/2d/use_bvh<class_ProjectSettings_property_physics/2d/use_bvh>` is enabled.
+
 ----
 
 .. _class_ProjectSettings_property_physics/2d/cell_size:
@@ -3629,6 +3695,8 @@ Size of the hash table used for the broad-phase 2D hash grid algorithm.
 +-----------+---------+
 
 Cell size used for the broad-phase 2D hash grid algorithm (in pixels).
+
+**Note:** Not used if :ref:`physics/2d/use_bvh<class_ProjectSettings_property_physics/2d/use_bvh>` is enabled.
 
 ----
 
@@ -3708,6 +3776,8 @@ The default linear damp in 2D.
 
 Threshold defining the surface size that constitutes a large object with regard to cells in the broad-phase 2D hash grid algorithm.
 
+**Note:** Not used if :ref:`physics/2d/use_bvh<class_ProjectSettings_property_physics/2d/use_bvh>` is enabled.
+
 ----
 
 .. _class_ProjectSettings_property_physics/2d/physics_engine:
@@ -3771,6 +3841,18 @@ Sets whether physics is run on the main thread or a separate one. Running the se
 +-----------+---------+
 
 Time (in seconds) of inactivity before which a 2D physics body will put to sleep. See :ref:`Physics2DServer.SPACE_PARAM_BODY_TIME_TO_SLEEP<class_Physics2DServer_constant_SPACE_PARAM_BODY_TIME_TO_SLEEP>`.
+
+----
+
+.. _class_ProjectSettings_property_physics/2d/use_bvh:
+
+- :ref:`bool<class_bool>` **physics/2d/use_bvh**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+Enables the use of bounding volume hierarchy instead of hash grid for 2D physics spatial partitioning. This may give better performance.
 
 ----
 
@@ -3860,7 +3942,7 @@ The default linear damp in 3D.
 | *Default* | ``true`` |
 +-----------+----------+
 
-Enables the use of bounding volume hierarchy instead of octree for physics spatial partitioning. This may give better performance.
+Enables the use of bounding volume hierarchy instead of octree for 3D physics spatial partitioning. This may give better performance.
 
 ----
 
@@ -3946,7 +4028,7 @@ Controls how much physics ticks are synchronized with real time. For 0 or less, 
 | *Default* | ``0`` |
 +-----------+-------+
 
-**Experimental** Calls ``glBufferData`` with NULL data prior to uploading batching data. This may not be necessary but can be used for safety.
+**Experimental.** Calls ``glBufferData`` with NULL data prior to uploading batching data. This may not be necessary but can be used for safety.
 
 **Note:** Use with care. You are advised to leave this as default for exports. A non-default setting that works better on your machine may adversely affect performance for end users.
 
@@ -3960,7 +4042,7 @@ Controls how much physics ticks are synchronized with real time. For 0 or less, 
 | *Default* | ``0`` |
 +-----------+-------+
 
-**Experimental** If set to on, uses the ``GL_STREAM_DRAW`` flag for batching buffer uploads. If off, uses the ``GL_DYNAMIC_DRAW`` flag.
+**Experimental.** If set to on, uses the ``GL_STREAM_DRAW`` flag for batching buffer uploads. If off, uses the ``GL_DYNAMIC_DRAW`` flag.
 
 **Note:** Use with care. You are advised to leave this as default for exports. A non-default setting that works better on your machine may adversely affect performance for end users.
 
@@ -3974,7 +4056,7 @@ Controls how much physics ticks are synchronized with real time. For 0 or less, 
 | *Default* | ``0`` |
 +-----------+-------+
 
-**Experimental** If set to on, this applies buffer orphaning - ``glBufferData`` is called with NULL data and the full buffer size prior to uploading new data. This can be important to avoid stalling on some hardware.
+**Experimental.** If set to on, this applies buffer orphaning - ``glBufferData`` is called with NULL data and the full buffer size prior to uploading new data. This can be important to avoid stalling on some hardware.
 
 **Note:** Use with care. You are advised to leave this as default for exports. A non-default setting that works better on your machine may adversely affect performance for end users.
 
@@ -3988,7 +4070,7 @@ Controls how much physics ticks are synchronized with real time. For 0 or less, 
 | *Default* | ``0`` |
 +-----------+-------+
 
-**Experimental** If set to on, uses the ``GL_STREAM_DRAW`` flag for legacy buffer uploads. If off, uses the ``GL_DYNAMIC_DRAW`` flag.
+**Experimental.** If set to on, uses the ``GL_STREAM_DRAW`` flag for legacy buffer uploads. If off, uses the ``GL_DYNAMIC_DRAW`` flag.
 
 **Note:** Use with care. You are advised to leave this as default for exports. A non-default setting that works better on your machine may adversely affect performance for end users.
 
@@ -4076,7 +4158,7 @@ When batching is on, this regularly prints a frame diagnosis log. Note that this
 | *Default* | ``false`` |
 +-----------+-----------+
 
-**Experimental** For regression testing against the old renderer. If this is switched on, and ``use_batching`` is set, the renderer will swap alternately between using the old renderer, and the batched renderer, on each frame. This makes it easy to identify visual differences. Performance will be degraded.
+**Experimental.** For regression testing against the old renderer. If this is switched on, and ``use_batching`` is set, the renderer will swap alternately between using the old renderer, and the batched renderer, on each frame. This makes it easy to identify visual differences. Performance will be degraded.
 
 ----
 
@@ -4419,6 +4501,42 @@ Max number of reflection probes renderable in a frame. If more reflection probes
 +-----------+----------+
 
 Shaders have a time variable that constantly increases. At some point, it needs to be rolled back to zero to avoid precision errors on shader animations. This setting specifies when (in seconds).
+
+----
+
+.. _class_ProjectSettings_property_rendering/lossless_compression/force_png:
+
+- :ref:`bool<class_bool>` **rendering/lossless_compression/force_png**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+If ``true``, the texture importer will import lossless textures using the PNG format. Otherwise, it will default to using WebP.
+
+----
+
+.. _class_ProjectSettings_property_rendering/lossless_compression/webp_compression_level:
+
+- :ref:`int<class_int>` **rendering/lossless_compression/webp_compression_level**
+
++-----------+-------+
+| *Default* | ``2`` |
++-----------+-------+
+
+The default compression level for lossless WebP. Higher levels result in smaller files at the cost of compression speed. Decompression speed is mostly unaffected by the compression level. Supported values are 0 to 9. Note that compression levels above 6 are very slow and offer very little savings.
+
+----
+
+.. _class_ProjectSettings_property_rendering/mesh_storage/split_stream:
+
+- :ref:`bool<class_bool>` **rendering/mesh_storage/split_stream**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+On import, mesh vertex data will be split into two streams within a single vertex buffer, one for position data and the other for interleaved attributes data. Recommended to be enabled if targeting mobile devices. Requires manual reimport of meshes after toggling.
 
 ----
 
@@ -5033,6 +5151,20 @@ Use high-quality voxel cone tracing. This results in better-looking reflections,
 +-----------+-------+
 
 Thread model for rendering. Rendering on a thread can vastly improve performance, but synchronizing to the main thread can cause a bit more jitter.
+
+----
+
+.. _class_ProjectSettings_property_rendering/threads/thread_safe_bvh:
+
+- :ref:`bool<class_bool>` **rendering/threads/thread_safe_bvh**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+If ``true``, a thread safe version of BVH (bounding volume hierarchy) will be used in rendering and Godot physics.
+
+Try enabling this option if you see any visual anomalies in 3D (such as incorrect object visibility).
 
 ----
 

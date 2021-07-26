@@ -31,11 +31,11 @@ Properties
 +-------------------------------+-------------------+----------------------------------------------+
 | :ref:`bool<class_bool>`       | dialog_hide_on_ok | ``false`` *(parent override)*                |
 +-------------------------------+-------------------+----------------------------------------------+
-| :ref:`float<class_float>`     | margin_bottom     | ``232.0`` *(parent override)*                |
+| :ref:`float<class_float>`     | margin_bottom     | ``258.0`` *(parent override)*                |
 +-------------------------------+-------------------+----------------------------------------------+
-| :ref:`float<class_float>`     | margin_right      | ``361.0`` *(parent override)*                |
+| :ref:`float<class_float>`     | margin_right      | ``366.0`` *(parent override)*                |
 +-------------------------------+-------------------+----------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | rect_size         | ``Vector2( 361, 232 )`` *(parent override)*  |
+| :ref:`Vector2<class_Vector2>` | rect_size         | ``Vector2( 366, 258 )`` *(parent override)*  |
 +-------------------------------+-------------------+----------------------------------------------+
 | :ref:`String<class_String>`   | window_title      | ``"Attach Node Script"`` *(parent override)* |
 +-------------------------------+-------------------+----------------------------------------------+

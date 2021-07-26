@@ -9,12 +9,12 @@
 Array
 =====
 
-Generic array datatype.
+A generic array datatype.
 
 Description
 -----------
 
-Generic array which can contain several elements of any type, accessible by a numerical index starting at 0. Negative indices can be used to count from the back, like in Python (-1 is the last element, -2 the second to last, etc.).
+A generic array that can contain several elements of any type, accessible by a numerical index starting at 0. Negative indices can be used to count from the back, like in Python (-1 is the last element, -2 is the second to last, etc.).
 
 **Example:**
 
@@ -37,7 +37,7 @@ Arrays can be concatenated using the ``+`` operator:
 
 **Note:** Concatenating with the ``+=`` operator will create a new array, which has a cost. If you want to append another array to an existing array, :ref:`append_array<class_Array_method_append_array>` is more efficient.
 
-**Note:** Arrays are always passed by reference. To get a copy of an array which can be modified independently of the original array, use :ref:`duplicate<class_Array_method_duplicate>`.
+**Note:** Arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_Array_method_duplicate>`.
 
 **Note:** When declaring an array with ``const``, the array itself can still be mutated by defining the values at individual indices or pushing/removing elements. Using ``const`` will only prevent assigning the constant with another value after it was initialized.
 

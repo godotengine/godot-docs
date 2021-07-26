@@ -36,7 +36,13 @@ Methods
 -------
 
 +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`add_interface<class_ARVRServer_method_add_interface>` **(** :ref:`ARVRInterface<class_ARVRInterface>` interface **)**                                                  |
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`add_tracker<class_ARVRServer_method_add_tracker>` **(** :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` tracker **)**                                        |
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`center_on_hmd<class_ARVRServer_method_center_on_hmd>` **(** :ref:`RotationMode<enum_ARVRServer_RotationMode>` rotation_mode, :ref:`bool<class_bool>` keep_height **)** |
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`clear_primary_interface_if<class_ARVRServer_method_clear_primary_interface_if>` **(** :ref:`ARVRInterface<class_ARVRInterface>` interface **)**                        |
 +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ARVRInterface<class_ARVRInterface>`                 | :ref:`find_interface<class_ARVRServer_method_find_interface>` **(** :ref:`String<class_String>` name **)** |const|                                                           |
 +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -59,6 +65,10 @@ Methods
 | :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` | :ref:`get_tracker<class_ARVRServer_method_get_tracker>` **(** :ref:`int<class_int>` idx **)** |const|                                                                        |
 +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                     | :ref:`get_tracker_count<class_ARVRServer_method_get_tracker_count>` **(** **)** |const|                                                                                      |
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`remove_interface<class_ARVRServer_method_remove_interface>` **(** :ref:`ARVRInterface<class_ARVRInterface>` interface **)**                                            |
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`remove_tracker<class_ARVRServer_method_remove_tracker>` **(** :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` tracker **)**                                  |
 +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -177,6 +187,22 @@ Allows you to adjust the scale to your game's units. Most AR/VR platforms assume
 Method Descriptions
 -------------------
 
+.. _class_ARVRServer_method_add_interface:
+
+- void **add_interface** **(** :ref:`ARVRInterface<class_ARVRInterface>` interface **)**
+
+Registers an :ref:`ARVRInterface<class_ARVRInterface>` object.
+
+----
+
+.. _class_ARVRServer_method_add_tracker:
+
+- void **add_tracker** **(** :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` tracker **)**
+
+Registers a new :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` that tracks a spatial location in real space.
+
+----
+
 .. _class_ARVRServer_method_center_on_hmd:
 
 - void **center_on_hmd** **(** :ref:`RotationMode<enum_ARVRServer_RotationMode>` rotation_mode, :ref:`bool<class_bool>` keep_height **)**
@@ -192,6 +218,14 @@ This method allows you to center your tracker on the location of the HMD. It wil
 For this method to produce usable results, tracking information must be available. This often takes a few frames after starting your game.
 
 You should call this method after a few seconds have passed. For instance, when the user requests a realignment of the display holding a designated button on a controller for a short period of time, or when implementing a teleport mechanism.
+
+----
+
+.. _class_ARVRServer_method_clear_primary_interface_if:
+
+- void **clear_primary_interface_if** **(** :ref:`ARVRInterface<class_ARVRInterface>` interface **)**
+
+Clears our current primary interface if it is set to the provided interface.
 
 ----
 
@@ -280,6 +314,22 @@ Returns the positional tracker at the given ID.
 - :ref:`int<class_int>` **get_tracker_count** **(** **)** |const|
 
 Returns the number of trackers currently registered.
+
+----
+
+.. _class_ARVRServer_method_remove_interface:
+
+- void **remove_interface** **(** :ref:`ARVRInterface<class_ARVRInterface>` interface **)**
+
+Removes this interface.
+
+----
+
+.. _class_ARVRServer_method_remove_tracker:
+
+- void **remove_tracker** **(** :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` tracker **)**
+
+Removes this positional tracker.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

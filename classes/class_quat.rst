@@ -52,6 +52,8 @@ Methods
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Quat<class_Quat>`       | :ref:`Quat<class_Quat_method_Quat>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**                       |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`angle_to<class_Quat_method_angle_to>` **(** :ref:`Quat<class_Quat>` to **)**                                                                                                       |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Quat<class_Quat>`       | :ref:`cubic_slerp<class_Quat_method_cubic_slerp>` **(** :ref:`Quat<class_Quat>` b, :ref:`Quat<class_Quat>` pre_a, :ref:`Quat<class_Quat>` post_b, :ref:`float<class_float>` weight **)** |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`     | :ref:`dot<class_Quat_method_dot>` **(** :ref:`Quat<class_Quat>` b **)**                                                                                                                  |
@@ -171,6 +173,16 @@ Constructs a quaternion that will rotate around the given axis by the specified 
 - :ref:`Quat<class_Quat>` **Quat** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**
 
 Constructs a quaternion defined by the given values.
+
+----
+
+.. _class_Quat_method_angle_to:
+
+- :ref:`float<class_float>` **angle_to** **(** :ref:`Quat<class_Quat>` to **)**
+
+Returns the angle between this quaternion and ``to``. This is the magnitude of the angle you would need to rotate by to get from one to the other.
+
+**Note:** This method has an abnormally high amount of floating-point error, so methods such as :ref:`@GDScript.is_zero_approx<class_@GDScript_method_is_zero_approx>` will not work reliably.
 
 ----
 

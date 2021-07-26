@@ -18,7 +18,7 @@ Description
 
 Camera node for 2D scenes. It forces the screen (current layer) to scroll following this node. This makes it easier (and faster) to program scrollable scenes than manually changing the position of :ref:`CanvasItem<class_CanvasItem>`-based nodes.
 
-This node is intended to be a simple helper to get things going quickly and it may happen that more functionality is desired to change how the camera works. To make your own custom camera node, inherit from :ref:`Node2D<class_Node2D>` and change the transform of the canvas by setting :ref:`Viewport.canvas_transform<class_Viewport_property_canvas_transform>` in :ref:`Viewport<class_Viewport>` (you can obtain the current :ref:`Viewport<class_Viewport>` by using :ref:`Node.get_viewport<class_Node_method_get_viewport>`).
+This node is intended to be a simple helper to get things going quickly, but more functionality may be desired to change how the camera works. To make your own custom camera node, inherit it from :ref:`Node2D<class_Node2D>` and change the transform of the canvas by setting :ref:`Viewport.canvas_transform<class_Viewport_property_canvas_transform>` in :ref:`Viewport<class_Viewport>` (you can obtain the current :ref:`Viewport<class_Viewport>` by using :ref:`Node.get_viewport<class_Node_method_get_viewport>`).
 
 Note that the ``Camera2D`` node's ``position`` doesn't represent the actual position of the screen, which may differ due to applied smoothing or limits. You can use :ref:`get_camera_screen_center<class_Camera2D_method_get_camera_screen_center>` to get the real position.
 
@@ -394,6 +394,10 @@ Right scroll limit in pixels. The camera stops moving when reaching this value.
 +-----------+------------------------------------+
 
 If ``true``, the camera smoothly stops when reaches its limits.
+
+This has no effect if smoothing is disabled.
+
+**Note:** To immediately update the camera's position to be within limits without smoothing, even with this setting enabled, invoke :ref:`reset_smoothing<class_Camera2D_method_reset_smoothing>`.
 
 ----
 

@@ -16,25 +16,31 @@ Physics2DTestMotionResult
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`Object<class_Object>`   | :ref:`collider<class_Physics2DTestMotionResult_property_collider>`                   |                     |
-+-------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`collider_id<class_Physics2DTestMotionResult_property_collider_id>`             | ``0``               |
-+-------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`RID<class_RID>`         | :ref:`collider_rid<class_Physics2DTestMotionResult_property_collider_rid>`           |                     |
-+-------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`collider_shape<class_Physics2DTestMotionResult_property_collider_shape>`       | ``0``               |
-+-------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`collider_velocity<class_Physics2DTestMotionResult_property_collider_velocity>` | ``Vector2( 0, 0 )`` |
-+-------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`collision_normal<class_Physics2DTestMotionResult_property_collision_normal>`   | ``Vector2( 0, 0 )`` |
-+-------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`collision_point<class_Physics2DTestMotionResult_property_collision_point>`     | ``Vector2( 0, 0 )`` |
-+-------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`motion<class_Physics2DTestMotionResult_property_motion>`                       | ``Vector2( 0, 0 )`` |
-+-------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`motion_remainder<class_Physics2DTestMotionResult_property_motion_remainder>`   | ``Vector2( 0, 0 )`` |
-+-------------------------------+--------------------------------------------------------------------------------------+---------------------+
++-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`Object<class_Object>`   | :ref:`collider<class_Physics2DTestMotionResult_property_collider>`                                   |                     |
++-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`         | :ref:`collider_id<class_Physics2DTestMotionResult_property_collider_id>`                             | ``0``               |
++-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`RID<class_RID>`         | :ref:`collider_rid<class_Physics2DTestMotionResult_property_collider_rid>`                           |                     |
++-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`         | :ref:`collider_shape<class_Physics2DTestMotionResult_property_collider_shape>`                       | ``0``               |
++-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`collider_velocity<class_Physics2DTestMotionResult_property_collider_velocity>`                 | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`     | :ref:`collision_depth<class_Physics2DTestMotionResult_property_collision_depth>`                     | ``0.0``             |
++-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`collision_normal<class_Physics2DTestMotionResult_property_collision_normal>`                   | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`collision_point<class_Physics2DTestMotionResult_property_collision_point>`                     | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`     | :ref:`collision_safe_fraction<class_Physics2DTestMotionResult_property_collision_safe_fraction>`     | ``0.0``             |
++-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`     | :ref:`collision_unsafe_fraction<class_Physics2DTestMotionResult_property_collision_unsafe_fraction>` | ``0.0``             |
++-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`motion<class_Physics2DTestMotionResult_property_motion>`                                       | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`motion_remainder<class_Physics2DTestMotionResult_property_motion_remainder>`                   | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
 
 Property Descriptions
 ---------------------
@@ -95,6 +101,18 @@ Property Descriptions
 
 ----
 
+.. _class_Physics2DTestMotionResult_property_collision_depth:
+
+- :ref:`float<class_float>` **collision_depth**
+
++-----------+-----------------------+
+| *Default* | ``0.0``               |
++-----------+-----------------------+
+| *Getter*  | get_collision_depth() |
++-----------+-----------------------+
+
+----
+
 .. _class_Physics2DTestMotionResult_property_collision_normal:
 
 - :ref:`Vector2<class_Vector2>` **collision_normal**
@@ -116,6 +134,30 @@ Property Descriptions
 +-----------+-----------------------+
 | *Getter*  | get_collision_point() |
 +-----------+-----------------------+
+
+----
+
+.. _class_Physics2DTestMotionResult_property_collision_safe_fraction:
+
+- :ref:`float<class_float>` **collision_safe_fraction**
+
++-----------+-------------------------------+
+| *Default* | ``0.0``                       |
++-----------+-------------------------------+
+| *Getter*  | get_collision_safe_fraction() |
++-----------+-------------------------------+
+
+----
+
+.. _class_Physics2DTestMotionResult_property_collision_unsafe_fraction:
+
+- :ref:`float<class_float>` **collision_unsafe_fraction**
+
++-----------+---------------------------------+
+| *Default* | ``0.0``                         |
++-----------+---------------------------------+
+| *Getter*  | get_collision_unsafe_fraction() |
++-----------+---------------------------------+
 
 ----
 

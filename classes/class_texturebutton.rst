@@ -33,6 +33,10 @@ Properties
 +----------------------------------------------------+----------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                            | :ref:`expand<class_TextureButton_property_expand>`                         | ``false`` |
 +----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                            | :ref:`flip_h<class_TextureButton_property_flip_h>`                         | ``false`` |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                            | :ref:`flip_v<class_TextureButton_property_flip_v>`                         | ``false`` |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
 | :ref:`StretchMode<enum_TextureButton_StretchMode>` | :ref:`stretch_mode<class_TextureButton_property_stretch_mode>`             | ``0``     |
 +----------------------------------------------------+----------------------------------------------------------------------------+-----------+
 | :ref:`BitMap<class_BitMap>`                        | :ref:`texture_click_mask<class_TextureButton_property_texture_click_mask>` |           |
@@ -99,6 +103,38 @@ Property Descriptions
 +-----------+-------------------+
 
 If ``true``, the texture stretches to the edges of the node's bounding rectangle using the :ref:`stretch_mode<class_TextureButton_property_stretch_mode>`. If ``false``, the texture will not scale with the node.
+
+----
+
+.. _class_TextureButton_property_flip_h:
+
+- :ref:`bool<class_bool>` **flip_h**
+
++-----------+-------------------+
+| *Default* | ``false``         |
++-----------+-------------------+
+| *Setter*  | set_flip_h(value) |
++-----------+-------------------+
+| *Getter*  | is_flipped_h()    |
++-----------+-------------------+
+
+If ``true``, texture is flipped horizontally.
+
+----
+
+.. _class_TextureButton_property_flip_v:
+
+- :ref:`bool<class_bool>` **flip_v**
+
++-----------+-------------------+
+| *Default* | ``false``         |
++-----------+-------------------+
+| *Setter*  | set_flip_v(value) |
++-----------+-------------------+
+| *Getter*  | is_flipped_v()    |
++-----------+-------------------+
+
+If ``true``, texture is flipped vertically.
 
 ----
 

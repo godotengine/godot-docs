@@ -11,7 +11,21 @@ AudioEffectSpectrumAnalyzer
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Audio effect that can be used for real-time audio visualizations.
 
+Description
+-----------
+
+This audio effect does not affect sound output, but can be used for real-time audio visualizations.
+
+See also :ref:`AudioStreamGenerator<class_AudioStreamGenerator>` for procedurally generating sounds.
+
+Tutorials
+---------
+
+- `Audio Spectrum Demo <Audio Spectrum Demo>`_
+
+- `Godot 3.2 will get new audio features <Godot 3.2 will get new audio features>`_
 
 Properties
 ----------
@@ -43,15 +57,15 @@ Enumerations
 
 enum **FFT_Size**:
 
-- **FFT_SIZE_256** = **0**
+- **FFT_SIZE_256** = **0** --- Use a buffer of 256 samples for the Fast Fourier transform. Lowest latency, but least stable over time.
 
-- **FFT_SIZE_512** = **1**
+- **FFT_SIZE_512** = **1** --- Use a buffer of 512 samples for the Fast Fourier transform. Low latency, but less stable over time.
 
-- **FFT_SIZE_1024** = **2**
+- **FFT_SIZE_1024** = **2** --- Use a buffer of 1024 samples for the Fast Fourier transform. This is a compromise between latency and stability over time.
 
-- **FFT_SIZE_2048** = **3**
+- **FFT_SIZE_2048** = **3** --- Use a buffer of 2048 samples for the Fast Fourier transform. High latency, but stable over time.
 
-- **FFT_SIZE_4096** = **4**
+- **FFT_SIZE_4096** = **4** --- Use a buffer of 4096 samples for the Fast Fourier transform. Highest latency, but most stable over time.
 
 - **FFT_SIZE_MAX** = **5** --- Represents the size of the :ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` enum.
 
@@ -70,6 +84,8 @@ Property Descriptions
 | *Getter*  | get_buffer_length()      |
 +-----------+--------------------------+
 
+The length of the buffer to keep (in seconds). Higher values keep data around for longer, but require more memory.
+
 ----
 
 .. _class_AudioEffectSpectrumAnalyzer_property_fft_size:
@@ -83,6 +99,8 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | get_fft_size()      |
 +-----------+---------------------+
+
+The size of the `Fast Fourier transform <https://en.wikipedia.org/wiki/Fast_Fourier_transform>`_ buffer. Higher values smooth out the spectrum analysis over time, but have greater latency. The effects of this higher latency are especially noticeable with sudden amplitude changes.
 
 ----
 

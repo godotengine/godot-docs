@@ -42,11 +42,13 @@ Properties
 Methods
 -------
 
-+-------------------------------------+----------------------------------------------------------------------------------+
-| :ref:`HScrollBar<class_HScrollBar>` | :ref:`get_h_scrollbar<class_ScrollContainer_method_get_h_scrollbar>` **(** **)** |
-+-------------------------------------+----------------------------------------------------------------------------------+
-| :ref:`VScrollBar<class_VScrollBar>` | :ref:`get_v_scrollbar<class_ScrollContainer_method_get_v_scrollbar>` **(** **)** |
-+-------------------------------------+----------------------------------------------------------------------------------+
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`ensure_control_visible<class_ScrollContainer_method_ensure_control_visible>` **(** :ref:`Control<class_Control>` control **)** |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`HScrollBar<class_HScrollBar>` | :ref:`get_h_scrollbar<class_ScrollContainer_method_get_h_scrollbar>` **(** **)**                                                     |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`VScrollBar<class_VScrollBar>` | :ref:`get_v_scrollbar<class_ScrollContainer_method_get_v_scrollbar>` **(** **)**                                                     |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
@@ -169,6 +171,14 @@ If ``true``, enables vertical scrolling.
 
 Method Descriptions
 -------------------
+
+.. _class_ScrollContainer_method_ensure_control_visible:
+
+- void **ensure_control_visible** **(** :ref:`Control<class_Control>` control **)**
+
+Ensures the given ``control`` is visible (must be a direct or indirect child of the ScrollContainer). Used by :ref:`follow_focus<class_ScrollContainer_property_follow_focus>`.
+
+----
 
 .. _class_ScrollContainer_method_get_h_scrollbar:
 

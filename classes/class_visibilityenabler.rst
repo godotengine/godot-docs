@@ -9,7 +9,7 @@
 VisibilityEnabler
 =================
 
-**Inherits:** :ref:`VisibilityNotifier<class_VisibilityNotifier>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisibilityNotifier<class_VisibilityNotifier>` **<** :ref:`CullInstance<class_CullInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 Enables certain nodes only when approximately visible.
 

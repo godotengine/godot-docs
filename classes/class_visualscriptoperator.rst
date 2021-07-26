@@ -11,7 +11,7 @@ VisualScriptOperator
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-
+A Visual Script node that performs an operation on two values.
 
 Description
 -----------
@@ -50,6 +50,8 @@ Property Descriptions
 | *Getter*  | get_operator()      |
 +-----------+---------------------+
 
+The operation to be performed. See :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` for available options.
+
 ----
 
 .. _class_VisualScriptOperator_property_type:
@@ -63,6 +65,8 @@ Property Descriptions
 +-----------+------------------+
 | *Getter*  | get_typed()      |
 +-----------+------------------+
+
+The type of the values for this operation. See :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` for available options.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

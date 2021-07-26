@@ -130,7 +130,7 @@ Emitted when the collision with another :ref:`PhysicsBody2D<class_PhysicsBody2D>
 
 .. _class_RigidBody2D_signal_body_shape_entered:
 
-- **body_shape_entered** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
+- **body_shape_entered** **(** :ref:`RID<class_RID>` body_rid, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
 
 Emitted when one of this RigidBody2D's :ref:`Shape2D<class_Shape2D>`\ s collides with another :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`'s :ref:`Shape2D<class_Shape2D>`\ s. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
@@ -146,7 +146,7 @@ Emitted when one of this RigidBody2D's :ref:`Shape2D<class_Shape2D>`\ s collides
 
 .. _class_RigidBody2D_signal_body_shape_exited:
 
-- **body_shape_exited** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
+- **body_shape_exited** **(** :ref:`RID<class_RID>` body_rid, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
 
 Emitted when the collision between one of this RigidBody2D's :ref:`Shape2D<class_Shape2D>`\ s and another :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`'s :ref:`Shape2D<class_Shape2D>`\ s ends. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 

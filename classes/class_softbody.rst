@@ -9,7 +9,7 @@
 SoftBody
 ========
 
-**Inherits:** :ref:`MeshInstance<class_MeshInstance>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`MeshInstance<class_MeshInstance>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`CullInstance<class_CullInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 A soft mesh physics body.
 
@@ -40,6 +40,8 @@ Properties
 | :ref:`float<class_float>`       | :ref:`linear_stiffness<class_SoftBody_property_linear_stiffness>`                   | ``0.5``          |
 +---------------------------------+-------------------------------------------------------------------------------------+------------------+
 | :ref:`NodePath<class_NodePath>` | :ref:`parent_collision_ignore<class_SoftBody_property_parent_collision_ignore>`     | ``NodePath("")`` |
++---------------------------------+-------------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`         | :ref:`physics_enabled<class_SoftBody_property_physics_enabled>`                     | ``true``         |
 +---------------------------------+-------------------------------------------------------------------------------------+------------------+
 | :ref:`float<class_float>`       | :ref:`pose_matching_coefficient<class_SoftBody_property_pose_matching_coefficient>` | ``0.0``          |
 +---------------------------------+-------------------------------------------------------------------------------------+------------------+
@@ -181,6 +183,22 @@ The physics layers this SoftBody scans for collisions. See `Collision layers and
 +-----------+------------------------------------+
 
 :ref:`NodePath<class_NodePath>` to a :ref:`CollisionObject<class_CollisionObject>` this SoftBody should avoid clipping.
+
+----
+
+.. _class_SoftBody_property_physics_enabled:
+
+- :ref:`bool<class_bool>` **physics_enabled**
+
++-----------+----------------------------+
+| *Default* | ``true``                   |
++-----------+----------------------------+
+| *Setter*  | set_physics_enabled(value) |
++-----------+----------------------------+
+| *Getter*  | is_physics_enabled()       |
++-----------+----------------------------+
+
+If ``true``, the ``SoftBody`` is simulated in physics. Can be set to ``false`` to pause the physics simulation.
 
 ----
 

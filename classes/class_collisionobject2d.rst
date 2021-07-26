@@ -23,9 +23,13 @@ CollisionObject2D is the base class for 2D physics objects. It can hold any numb
 Properties
 ----------
 
-+-------------------------+------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>` | :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` | ``true`` |
-+-------------------------+------------------------------------------------------------------------+----------+
++-------------------------+--------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`   | :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>` | ``1``    |
++-------------------------+--------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`   | :ref:`collision_mask<class_CollisionObject2D_property_collision_mask>`   | ``1``    |
++-------------------------+--------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>` | :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>`   | ``true`` |
++-------------------------+--------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -34,6 +38,10 @@ Methods
 | void                                  | :ref:`_input_event<class_CollisionObject2D_method__input_event>` **(** :ref:`Object<class_Object>` viewport, :ref:`InputEvent<class_InputEvent>` event, :ref:`int<class_int>` shape_idx **)** |virtual| |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                 | :ref:`create_shape_owner<class_CollisionObject2D_method_create_shape_owner>` **(** :ref:`Object<class_Object>` owner **)**                                                                              |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`get_collision_layer_bit<class_CollisionObject2D_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** |const|                                                                    |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`get_collision_mask_bit<class_CollisionObject2D_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** |const|                                                                      |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                 | :ref:`get_rid<class_CollisionObject2D_method_get_rid>` **(** **)** |const|                                                                                                                              |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -46,6 +54,10 @@ Methods
 | :ref:`bool<class_bool>`               | :ref:`is_shape_owner_one_way_collision_enabled<class_CollisionObject2D_method_is_shape_owner_one_way_collision_enabled>` **(** :ref:`int<class_int>` owner_id **)** |const|                             |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`remove_shape_owner<class_CollisionObject2D_method_remove_shape_owner>` **(** :ref:`int<class_int>` owner_id **)**                                                                                 |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_collision_layer_bit<class_CollisionObject2D_method_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**                                             |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_collision_mask_bit<class_CollisionObject2D_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**                                               |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                 | :ref:`shape_find_owner<class_CollisionObject2D_method_shape_find_owner>` **(** :ref:`int<class_int>` shape_index **)** |const|                                                                          |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -102,6 +114,42 @@ Emitted when the mouse pointer exits all this object's shapes. Requires :ref:`in
 Property Descriptions
 ---------------------
 
+.. _class_CollisionObject2D_property_collision_layer:
+
+- :ref:`int<class_int>` **collision_layer**
+
++-----------+----------------------------+
+| *Default* | ``1``                      |
++-----------+----------------------------+
+| *Setter*  | set_collision_layer(value) |
++-----------+----------------------------+
+| *Getter*  | get_collision_layer()      |
++-----------+----------------------------+
+
+The physics layers this CollisionObject2D is in. Collision objects can exist in one or more of 32 different layers. See also :ref:`collision_mask<class_CollisionObject2D_property_collision_mask>`.
+
+**Note:** A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
+
+----
+
+.. _class_CollisionObject2D_property_collision_mask:
+
+- :ref:`int<class_int>` **collision_mask**
+
++-----------+---------------------------+
+| *Default* | ``1``                     |
++-----------+---------------------------+
+| *Setter*  | set_collision_mask(value) |
++-----------+---------------------------+
+| *Getter*  | get_collision_mask()      |
++-----------+---------------------------+
+
+The physics layers this CollisionObject2D scans. Collision objects can scan one or more of 32 different layers. See also :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>`.
+
+**Note:** A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`_ in the documentation for more information.
+
+----
+
 .. _class_CollisionObject2D_property_input_pickable:
 
 - :ref:`bool<class_bool>` **input_pickable**
@@ -132,6 +180,22 @@ Accepts unhandled :ref:`InputEvent<class_InputEvent>`\ s. Requires :ref:`input_p
 - :ref:`int<class_int>` **create_shape_owner** **(** :ref:`Object<class_Object>` owner **)**
 
 Creates a new shape owner for the given object. Returns ``owner_id`` of the new owner for future reference.
+
+----
+
+.. _class_CollisionObject2D_method_get_collision_layer_bit:
+
+- :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** |const|
+
+Returns whether or not the specified ``bit`` of the :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>` is set.
+
+----
+
+.. _class_CollisionObject2D_method_get_collision_mask_bit:
+
+- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** |const|
+
+Returns whether or not the specified ``bit`` of the :ref:`collision_mask<class_CollisionObject2D_property_collision_mask>` is set.
 
 ----
 
@@ -180,6 +244,26 @@ Returns ``true`` if collisions for the shape owner originating from this ``Colli
 - void **remove_shape_owner** **(** :ref:`int<class_int>` owner_id **)**
 
 Removes the given shape owner.
+
+----
+
+.. _class_CollisionObject2D_method_set_collision_layer_bit:
+
+- void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
+
+If ``value`` is ``true``, sets the specified ``bit`` in the the :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>`.
+
+If ``value`` is ``false``, clears the specified ``bit`` in the the :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>`.
+
+----
+
+.. _class_CollisionObject2D_method_set_collision_mask_bit:
+
+- void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
+
+If ``value`` is ``true``, sets the specified ``bit`` in the the :ref:`collision_mask<class_CollisionObject2D_property_collision_mask>`.
+
+If ``value`` is ``false``, clears the specified ``bit`` in the the :ref:`collision_mask<class_CollisionObject2D_property_collision_mask>`.
 
 ----
 

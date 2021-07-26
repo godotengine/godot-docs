@@ -28,12 +28,50 @@ Tutorials
 Methods
 -------
 
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`eval<class_JavaScript_method_eval>` **(** :ref:`String<class_String>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)** |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`JavaScriptObject<class_JavaScriptObject>` | :ref:`create_callback<class_JavaScript_method_create_callback>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method **)**                                                                          |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                   | :ref:`create_object<class_JavaScript_method_create_object>` **(** :ref:`String<class_String>` object, ... **)** |vararg|                                                                                                    |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`download_buffer<class_JavaScript_method_download_buffer>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer, :ref:`String<class_String>` name, :ref:`String<class_String>` mime="application/octet-stream" **)** |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                   | :ref:`eval<class_JavaScript_method_eval>` **(** :ref:`String<class_String>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)**                                                                          |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`JavaScriptObject<class_JavaScriptObject>` | :ref:`get_interface<class_JavaScript_method_get_interface>` **(** :ref:`String<class_String>` interface **)**                                                                                                               |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
+
+.. _class_JavaScript_method_create_callback:
+
+- :ref:`JavaScriptObject<class_JavaScriptObject>` **create_callback** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method **)**
+
+Creates a reference to a script function that can be used as a callback by JavaScript. The reference must be kept until the callback happens, or it won't be called at all. See :ref:`JavaScriptObject<class_JavaScriptObject>` for usage.
+
+----
+
+.. _class_JavaScript_method_create_object:
+
+- :ref:`Variant<class_Variant>` **create_object** **(** :ref:`String<class_String>` object, ... **)** |vararg|
+
+Creates a new JavaScript object using the ``new`` constructor. The ``object`` must a valid property of the JavaScript ``window``. See :ref:`JavaScriptObject<class_JavaScriptObject>` for usage.
+
+----
+
+.. _class_JavaScript_method_download_buffer:
+
+- void **download_buffer** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer, :ref:`String<class_String>` name, :ref:`String<class_String>` mime="application/octet-stream" **)**
+
+Prompts the user to download a file containing the specified ``buffer``. The file will have the given ``name`` and ``mime`` type.
+
+**Note:** The browser may override the `MIME type <https://en.wikipedia.org/wiki/Media_type>`_ provided based on the file ``name``'s extension.
+
+**Note:** Browsers might block the download if :ref:`download_buffer<class_JavaScript_method_download_buffer>` is not being called from a user interaction (e.g. button click).
+
+**Note:** Browsers might ask the user for permission or block the download if multiple download requests are made in a quick succession.
+
+----
 
 .. _class_JavaScript_method_eval:
 
@@ -42,6 +80,14 @@ Method Descriptions
 Execute the string ``code`` as JavaScript code within the browser window. This is a call to the actual global JavaScript function ``eval()``.
 
 If ``use_global_execution_context`` is ``true``, the code will be evaluated in the global execution context. Otherwise, it is evaluated in the execution context of a function within the engine's runtime environment.
+
+----
+
+.. _class_JavaScript_method_get_interface:
+
+- :ref:`JavaScriptObject<class_JavaScriptObject>` **get_interface** **(** :ref:`String<class_String>` interface **)**
+
+Returns an interface to a JavaScript object that can be used by scripts. The ``interface`` must be a valid property of the JavaScript ``window``. The callback must accept a single :ref:`Array<class_Array>` argument, which will contain the JavaScript ``arguments``. See :ref:`JavaScriptObject<class_JavaScriptObject>` for usage.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

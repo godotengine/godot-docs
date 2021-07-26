@@ -55,6 +55,8 @@ Properties
 +------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
 | :ref:`float<class_float>`                                                    | :ref:`playback_speed<class_AnimationPlayer_property_playback_speed>`                           | ``1.0``            |
 +------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`bool<class_bool>`                                                      | :ref:`reset_on_save<class_AnimationPlayer_property_reset_on_save>`                             | ``true``           |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
 | :ref:`NodePath<class_NodePath>`                                              | :ref:`root_node<class_AnimationPlayer_property_root_node>`                                     | ``NodePath("..")`` |
 +------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
 
@@ -114,7 +116,9 @@ Signals
 
 - **animation_changed** **(** :ref:`String<class_String>` old_name, :ref:`String<class_String>` new_name **)**
 
-If the currently being played animation changes, this signal will notify of such change.
+Emitted when a queued animation plays after the previous animation was finished. See :ref:`queue<class_AnimationPlayer_method_queue>`.
+
+**Note:** The signal is not emitted when the animation is changed via :ref:`play<class_AnimationPlayer_method_play>` or from :ref:`AnimationTree<class_AnimationTree>`.
 
 ----
 
@@ -323,6 +327,24 @@ The process notification in which to update animations.
 +-----------+------------------------+
 
 The speed scaling ratio. For instance, if this value is 1, then the animation plays at normal speed. If it's 0.5, then it plays at half speed. If it's 2, then it plays at double speed.
+
+----
+
+.. _class_AnimationPlayer_property_reset_on_save:
+
+- :ref:`bool<class_bool>` **reset_on_save**
+
++-----------+----------------------------------+
+| *Default* | ``true``                         |
++-----------+----------------------------------+
+| *Setter*  | set_reset_on_save_enabled(value) |
++-----------+----------------------------------+
+| *Getter*  | is_reset_on_save_enabled()       |
++-----------+----------------------------------+
+
+This is used by the editor. If set to ``true``, the scene will be saved with the effects of the reset animation applied (as if it had been seeked to time 0), then reverted after saving.
+
+In other words, the saved scene file will contain the "default pose", as defined by the reset animation, if any, with the editor keeping the values that the nodes had before saving.
 
 ----
 

@@ -16,7 +16,7 @@ A script implemented in the Visual Script programming environment.
 Description
 -----------
 
-A script implemented in the  Visual Script programming environment. The script extends the functionality of all objects that instance it.
+A script implemented in the Visual Script programming environment. The script extends the functionality of all objects that instance it.
 
 :ref:`Object.set_script<class_Object_method_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
 

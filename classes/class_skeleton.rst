@@ -81,6 +81,8 @@ Methods
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`set_bone_global_pose_override<class_Skeleton_method_set_bone_global_pose_override>` **(** :ref:`int<class_int>` bone_idx, :ref:`Transform<class_Transform>` pose, :ref:`float<class_float>` amount, :ref:`bool<class_bool>` persistent=false **)** |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`set_bone_name<class_Skeleton_method_set_bone_name>` **(** :ref:`int<class_int>` bone_idx, :ref:`String<class_String>` name **)**                                                                                                                   |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`set_bone_parent<class_Skeleton_method_set_bone_parent>` **(** :ref:`int<class_int>` bone_idx, :ref:`int<class_int>` parent_idx **)**                                                                                                               |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`set_bone_pose<class_Skeleton_method_set_bone_pose>` **(** :ref:`int<class_int>` bone_idx, :ref:`Transform<class_Transform>` pose **)**                                                                                                             |
@@ -278,6 +280,12 @@ Returns the rest transform for a bone ``bone_idx``.
 .. _class_Skeleton_method_set_bone_global_pose_override:
 
 - void **set_bone_global_pose_override** **(** :ref:`int<class_int>` bone_idx, :ref:`Transform<class_Transform>` pose, :ref:`float<class_float>` amount, :ref:`bool<class_bool>` persistent=false **)**
+
+----
+
+.. _class_Skeleton_method_set_bone_name:
+
+- void **set_bone_name** **(** :ref:`int<class_int>` bone_idx, :ref:`String<class_String>` name **)**
 
 ----
 

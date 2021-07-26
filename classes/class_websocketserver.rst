@@ -25,15 +25,17 @@ After starting the server (:ref:`listen<class_WebSocketServer_method_listen>`), 
 Properties
 ----------
 
-+-----------------------------------------------+------------------------------------------------------------------------+---------+
-| :ref:`String<class_String>`                   | :ref:`bind_ip<class_WebSocketServer_property_bind_ip>`                 | ``"*"`` |
-+-----------------------------------------------+------------------------------------------------------------------------+---------+
-| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ca_chain<class_WebSocketServer_property_ca_chain>`               |         |
-+-----------------------------------------------+------------------------------------------------------------------------+---------+
-| :ref:`CryptoKey<class_CryptoKey>`             | :ref:`private_key<class_WebSocketServer_property_private_key>`         |         |
-+-----------------------------------------------+------------------------------------------------------------------------+---------+
-| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>` |         |
-+-----------------------------------------------+------------------------------------------------------------------------+---------+
++-----------------------------------------------+----------------------------------------------------------------------------+---------+
+| :ref:`String<class_String>`                   | :ref:`bind_ip<class_WebSocketServer_property_bind_ip>`                     | ``"*"`` |
++-----------------------------------------------+----------------------------------------------------------------------------+---------+
+| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ca_chain<class_WebSocketServer_property_ca_chain>`                   |         |
++-----------------------------------------------+----------------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`                     | :ref:`handshake_timeout<class_WebSocketServer_property_handshake_timeout>` | ``3.0`` |
++-----------------------------------------------+----------------------------------------------------------------------------+---------+
+| :ref:`CryptoKey<class_CryptoKey>`             | :ref:`private_key<class_WebSocketServer_property_private_key>`             |         |
++-----------------------------------------------+----------------------------------------------------------------------------+---------+
+| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>`     |         |
++-----------------------------------------------+----------------------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -119,6 +121,22 @@ When not set to ``*`` will restrict incoming connections to the specified IP add
 +----------+---------------------+
 
 When using SSL (see :ref:`private_key<class_WebSocketServer_property_private_key>` and :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>`), you can set this to a valid :ref:`X509Certificate<class_X509Certificate>` to be provided as additional CA chain information during the SSL handshake.
+
+----
+
+.. _class_WebSocketServer_property_handshake_timeout:
+
+- :ref:`float<class_float>` **handshake_timeout**
+
++-----------+------------------------------+
+| *Default* | ``3.0``                      |
++-----------+------------------------------+
+| *Setter*  | set_handshake_timeout(value) |
++-----------+------------------------------+
+| *Getter*  | get_handshake_timeout()      |
++-----------+------------------------------+
+
+The time in seconds before a pending client (i.e. a client that has not yet finished the HTTP handshake) is considered stale and forcefully disconnected.
 
 ----
 

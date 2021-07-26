@@ -18,7 +18,7 @@ Description
 
 The Crypto class allows you to access some more advanced cryptographic functionalities in Godot.
 
-For now, this includes generating cryptographically secure random bytes, and RSA keys and self-signed X509 certificates generation. More functionalities are planned for future releases.
+For now, this includes generating cryptographically secure random bytes, RSA keys and self-signed X509 certificates generation, asymmetric key encryption/decryption, and signing/verification.
 
 ::
 
@@ -36,6 +36,18 @@ For now, this includes generating cryptographically secure random bytes, and RSA
         # Save key and certificate in the user folder.
         key.save("user://generated.key")
         cert.save("user://generated.crt")
+        # Encryption
+        var data = "Some data"
+        var encrypted = crypto.encrypt(key, data.to_utf8())
+        # Decryption
+        var decrypted = crypto.decrypt(key, encrypted)
+        # Signing
+        var signature = crypto.sign(HashingContext.HASH_SHA256, data.sha256_buffer(), key)
+        # Verifying
+        var verified = crypto.verify(HashingContext.HASH_SHA256, data.sha256_buffer(), signature, key)
+        # Checks
+        assert(verified)
+        assert(data.to_utf8() == decrypted)
 
 **Note:** Not available in HTML5 exports.
 
@@ -43,15 +55,57 @@ Methods
 -------
 
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`constant_time_compare<class_Crypto_method_constant_time_compare>` **(** :ref:`PoolByteArray<class_PoolByteArray>` trusted, :ref:`PoolByteArray<class_PoolByteArray>` received **)**                                                                                                                                                     |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>`     | :ref:`decrypt<class_Crypto_method_decrypt>` **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`PoolByteArray<class_PoolByteArray>` ciphertext **)**                                                                                                                                                                                           |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>`     | :ref:`encrypt<class_Crypto_method_encrypt>` **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`PoolByteArray<class_PoolByteArray>` plaintext **)**                                                                                                                                                                                            |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_PoolByteArray>`     | :ref:`generate_random_bytes<class_Crypto_method_generate_random_bytes>` **(** :ref:`int<class_int>` size **)**                                                                                                                                                                                                                                |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`CryptoKey<class_CryptoKey>`             | :ref:`generate_rsa<class_Crypto_method_generate_rsa>` **(** :ref:`int<class_int>` size **)**                                                                                                                                                                                                                                                  |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`X509Certificate<class_X509Certificate>` | :ref:`generate_self_signed_certificate<class_Crypto_method_generate_self_signed_certificate>` **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`String<class_String>` issuer_name="CN=myserver,O=myorganisation,C=IT", :ref:`String<class_String>` not_before="20140101000000", :ref:`String<class_String>` not_after="20340101000000" **)** |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>`     | :ref:`hmac_digest<class_Crypto_method_hmac_digest>` **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PoolByteArray<class_PoolByteArray>` key, :ref:`PoolByteArray<class_PoolByteArray>` msg **)**                                                                                                                         |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>`     | :ref:`sign<class_Crypto_method_sign>` **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PoolByteArray<class_PoolByteArray>` hash, :ref:`CryptoKey<class_CryptoKey>` key **)**                                                                                                                                              |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`verify<class_Crypto_method_verify>` **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PoolByteArray<class_PoolByteArray>` hash, :ref:`PoolByteArray<class_PoolByteArray>` signature, :ref:`CryptoKey<class_CryptoKey>` key **)**                                                                                     |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
+
+.. _class_Crypto_method_constant_time_compare:
+
+- :ref:`bool<class_bool>` **constant_time_compare** **(** :ref:`PoolByteArray<class_PoolByteArray>` trusted, :ref:`PoolByteArray<class_PoolByteArray>` received **)**
+
+Compares two :ref:`PoolByteArray<class_PoolByteArray>`\ s for equality without leaking timing information in order to prevent timing attacks.
+
+See `this blog post <https://paragonie.com/blog/2015/11/preventing-timing-attacks-on-string-comparison-with-double-hmac-strategy>`_ for more information.
+
+----
+
+.. _class_Crypto_method_decrypt:
+
+- :ref:`PoolByteArray<class_PoolByteArray>` **decrypt** **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`PoolByteArray<class_PoolByteArray>` ciphertext **)**
+
+Decrypt the given ``ciphertext`` with the provided private ``key``.
+
+**Note**: The maximum size of accepted ciphertext is limited by the key size.
+
+----
+
+.. _class_Crypto_method_encrypt:
+
+- :ref:`PoolByteArray<class_PoolByteArray>` **encrypt** **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`PoolByteArray<class_PoolByteArray>` plaintext **)**
+
+Encrypt the given ``plaintext`` with the provided public ``key``.
+
+**Note**: The maximum size of accepted plaintext is limited by the key size.
+
+----
 
 .. _class_Crypto_method_generate_random_bytes:
 
@@ -84,6 +138,32 @@ A small example to generate an RSA key and a X509 self-signed certificate.
     var key = crypto.generate_rsa(4096)
     # Generate self-signed certificate using the given key.
     var cert = crypto.generate_self_signed_certificate(key, "CN=example.com,O=A Game Company,C=IT")
+
+----
+
+.. _class_Crypto_method_hmac_digest:
+
+- :ref:`PoolByteArray<class_PoolByteArray>` **hmac_digest** **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PoolByteArray<class_PoolByteArray>` key, :ref:`PoolByteArray<class_PoolByteArray>` msg **)**
+
+Generates an `HMAC <https://en.wikipedia.org/wiki/HMAC>`_ digest of ``msg`` using ``key``. The ``hash_type`` parameter is the hashing algorithm that is used for the inner and outer hashes.
+
+Currently, only :ref:`HashingContext.HASH_SHA256<class_HashingContext_constant_HASH_SHA256>` and :ref:`HashingContext.HASH_SHA1<class_HashingContext_constant_HASH_SHA1>` are supported.
+
+----
+
+.. _class_Crypto_method_sign:
+
+- :ref:`PoolByteArray<class_PoolByteArray>` **sign** **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PoolByteArray<class_PoolByteArray>` hash, :ref:`CryptoKey<class_CryptoKey>` key **)**
+
+Sign a given ``hash`` of type ``hash_type`` with the provided private ``key``.
+
+----
+
+.. _class_Crypto_method_verify:
+
+- :ref:`bool<class_bool>` **verify** **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PoolByteArray<class_PoolByteArray>` hash, :ref:`PoolByteArray<class_PoolByteArray>` signature, :ref:`CryptoKey<class_CryptoKey>` key **)**
+
+Verify that a given ``signature`` for ``hash`` of type ``hash_type`` against the provided public ``key``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

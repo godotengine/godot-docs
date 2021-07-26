@@ -11,7 +11,7 @@ EditorSceneImporter
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`EditorSceneImporterFBX<class_EditorSceneImporterFBX>`
+**Inherited By:** :ref:`EditorSceneImporterFBX<class_EditorSceneImporterFBX>`, :ref:`EditorSceneImporterGLTF<class_EditorSceneImporterGLTF>`
 
 Imports scenes from third-parties' 3D files.
 

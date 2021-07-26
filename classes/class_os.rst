@@ -31,6 +31,8 @@ Properties
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`int<class_int>`                               | :ref:`current_screen<class_OS_property_current_screen>`                                               | ``0``               |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                             | :ref:`delta_smoothing<class_OS_property_delta_smoothing>`                                             | ``true``            |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`int<class_int>`                               | :ref:`exit_code<class_OS_property_exit_code>`                                                         | ``0``               |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`                             | :ref:`keep_screen_on<class_OS_property_keep_screen_on>`                                               | ``true``            |
@@ -98,11 +100,17 @@ Methods
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`get_audio_driver_name<class_OS_method_get_audio_driver_name>` **(** :ref:`int<class_int>` driver **)** |const|                                                                                                                                                   |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`get_cache_dir<class_OS_method_get_cache_dir>` **(** **)** |const|                                                                                                                                                                                                |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_cmdline_args<class_OS_method_get_cmdline_args>` **(** **)**                                                                                                                                                                                                  |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`get_config_dir<class_OS_method_get_config_dir>` **(** **)** |const|                                                                                                                                                                                              |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_connected_midi_inputs<class_OS_method_get_connected_midi_inputs>` **(** **)**                                                                                                                                                                                |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`VideoDriver<enum_OS_VideoDriver>`       | :ref:`get_current_video_driver<class_OS_method_get_current_video_driver>` **(** **)** |const|                                                                                                                                                                          |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`get_data_dir<class_OS_method_get_data_dir>` **(** **)** |const|                                                                                                                                                                                                  |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`           | :ref:`get_date<class_OS_method_get_date>` **(** :ref:`bool<class_bool>` utc=false **)** |const|                                                                                                                                                                        |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -115,6 +123,8 @@ Methods
 | :ref:`String<class_String>`                   | :ref:`get_environment<class_OS_method_get_environment>` **(** :ref:`String<class_String>` variable **)** |const|                                                                                                                                                       |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`get_executable_path<class_OS_method_get_executable_path>` **(** **)** |const|                                                                                                                                                                                    |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`get_external_data_dir<class_OS_method_get_external_data_dir>` **(** **)** |const|                                                                                                                                                                                |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_granted_permissions<class_OS_method_get_granted_permissions>` **(** **)** |const|                                                                                                                                                                            |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -585,6 +595,22 @@ The current screen index (starting from 0).
 
 ----
 
+.. _class_OS_property_delta_smoothing:
+
+- :ref:`bool<class_bool>` **delta_smoothing**
+
++-----------+------------------------------+
+| *Default* | ``true``                     |
++-----------+------------------------------+
+| *Setter*  | set_delta_smoothing(value)   |
++-----------+------------------------------+
+| *Getter*  | is_delta_smoothing_enabled() |
++-----------+------------------------------+
+
+If ``true``, the engine filters the time delta measured between each frame, and attempts to compensate for random variation. This will only operate on systems where V-Sync is active.
+
+----
+
 .. _class_OS_property_exit_code:
 
 - :ref:`int<class_int>` **exit_code**
@@ -934,7 +960,7 @@ Shuts down system MIDI driver.
 
 - void **delay_msec** **(** :ref:`int<class_int>` msec **)** |const|
 
-Delay execution of the current thread by ``msec`` milliseconds. ``usec`` must be greater than or equal to ``0``. Otherwise, :ref:`delay_msec<class_OS_method_delay_msec>` will do nothing and will print an error message.
+Delay execution of the current thread by ``msec`` milliseconds. ``msec`` must be greater than or equal to ``0``. Otherwise, :ref:`delay_msec<class_OS_method_delay_msec>` will do nothing and will print an error message.
 
 ----
 
@@ -1031,6 +1057,16 @@ Returns the audio driver name for the given index.
 
 ----
 
+.. _class_OS_method_get_cache_dir:
+
+- :ref:`String<class_String>` **get_cache_dir** **(** **)** |const|
+
+Returns the *global* cache data directory according to the operating system's standards. On desktop platforms, this path can be overridden by setting the ``XDG_CACHE_HOME`` environment variable before starting the project. See `File paths in Godot projects <https://docs.godotengine.org/en/latest/tutorials/io/data_paths.html>`_ in the documentation for more information. See also :ref:`get_config_dir<class_OS_method_get_config_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
+
+Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
+
+----
+
 .. _class_OS_method_get_cmdline_args:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_cmdline_args** **(** **)**
@@ -1041,7 +1077,7 @@ Command-line arguments can be written in any form, including both ``--key value`
 
 You can also incorporate environment variables using the :ref:`get_environment<class_OS_method_get_environment>` method.
 
-You can set ``editor/main_run_args`` in the Project Settings to define command-line arguments to be passed by the editor when running the project.
+You can set :ref:`ProjectSettings.editor/main_run_args<class_ProjectSettings_property_editor/main_run_args>` to define command-line arguments to be passed by the editor when running the project.
 
 Here's a minimal example on how to parse command-line arguments into a dictionary using the ``--key=value`` form for arguments:
 
@@ -1052,6 +1088,16 @@ Here's a minimal example on how to parse command-line arguments into a dictionar
         if argument.find("=") > -1:
             var key_value = argument.split("=")
             arguments[key_value[0].lstrip("--")] = key_value[1]
+
+----
+
+.. _class_OS_method_get_config_dir:
+
+- :ref:`String<class_String>` **get_config_dir** **(** **)** |const|
+
+Returns the *global* user configuration directory according to the operating system's standards. On desktop platforms, this path can be overridden by setting the ``XDG_CONFIG_HOME`` environment variable before starting the project. See `File paths in Godot projects <https://docs.godotengine.org/en/latest/tutorials/io/data_paths.html>`_ in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
+
+Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
 
 ----
 
@@ -1072,6 +1118,16 @@ The returned array will be empty if the system MIDI driver has not previously be
 - :ref:`VideoDriver<enum_OS_VideoDriver>` **get_current_video_driver** **(** **)** |const|
 
 Returns the currently used video driver, using one of the values from :ref:`VideoDriver<enum_OS_VideoDriver>`.
+
+----
+
+.. _class_OS_method_get_data_dir:
+
+- :ref:`String<class_String>` **get_data_dir** **(** **)** |const|
+
+Returns the *global* user data directory according to the operating system's standards. On desktop platforms, this path can be overridden by setting the ``XDG_DATA_HOME`` environment variable before starting the project. See `File paths in Godot projects <https://docs.godotengine.org/en/latest/tutorials/io/data_paths.html>`_ in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_config_dir<class_OS_method_get_config_dir>`.
+
+Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
 
 ----
 
@@ -1127,11 +1183,19 @@ Returns the path to the current engine executable.
 
 ----
 
+.. _class_OS_method_get_external_data_dir:
+
+- :ref:`String<class_String>` **get_external_data_dir** **(** **)** |const|
+
+On Android, returns the absolute directory path where user data can be written to external storage if available. On all other platforms, this will return the same location as :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`.
+
+----
+
 .. _class_OS_method_get_granted_permissions:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_granted_permissions** **(** **)** |const|
 
-With this function you can get the list of dangerous permissions that have been granted to the Android application.
+With this function, you can get the list of dangerous permissions that have been granted to the Android application.
 
 **Note:** This method is implemented on Android.
 
@@ -1464,7 +1528,7 @@ Returns the current time zone as a dictionary with the keys: bias and name.
 
 Returns a string that is unique to the device.
 
-**Note:** This string may change without notice if the user reinstalls/upgrades their operating system or changes their hardware. This means it should generally not be used to encrypt persistent data as the data saved prior to an unexpected ID change would become inaccessible. The returned string may also be falsified using external programs, so do not rely on the string returned by :ref:`get_unique_id<class_OS_method_get_unique_id>` for security purposes.
+**Note:** This string may change without notice if the user reinstalls/upgrades their operating system or changes their hardware. This means it should generally not be used to encrypt persistent data as the data saved before an unexpected ID change would become inaccessible. The returned string may also be falsified using external programs, so do not rely on the string returned by :ref:`get_unique_id<class_OS_method_get_unique_id>` for security purposes.
 
 **Note:** Returns an empty string on HTML5 and UWP, as this method isn't implemented on those platforms yet.
 
@@ -1507,6 +1571,8 @@ On macOS, this is ``~/Library/Application Support/Godot/app_userdata/[project_na
 On Windows, this is ``%APPDATA%\Godot\app_userdata\[project_name]``, or ``%APPDATA%\[custom_name]`` if ``use_custom_user_dir`` is set. ``%APPDATA%`` expands to ``%USERPROFILE%\AppData\Roaming``.
 
 If the project name is empty, ``user://`` falls back to ``res://``.
+
+Not to be confused with :ref:`get_data_dir<class_OS_method_get_data_dir>`, which returns the *global* (non-project-specific) user data directory.
 
 ----
 
@@ -1596,7 +1662,7 @@ Returns ``true`` if the environment variable with the name ``variable`` exists.
 
 - :ref:`bool<class_bool>` **has_feature** **(** :ref:`String<class_String>` tag_name **)** |const|
 
-Returns ``true`` if the feature for the given feature tag is supported in the currently running instance, depending on platform, build etc. Can be used to check whether you're currently running a debug build, on a certain platform or arch, etc. Refer to the `Feature Tags <https://docs.godotengine.org/en/3.3/getting_started/workflow/export/feature_tags.html>`_ documentation for more details.
+Returns ``true`` if the feature for the given feature tag is supported in the currently running instance, depending on the platform, build etc. Can be used to check whether you're currently running a debug build, on a certain platform or arch, etc. Refer to the `Feature Tags <https://docs.godotengine.org/en/3.3/getting_started/workflow/export/feature_tags.html>`_ documentation for more details.
 
 **Note:** Tag names are case-sensitive.
 
@@ -1766,7 +1832,7 @@ Moves the window to the front.
 
 Returns ``true`` if native video is playing.
 
-**Note:** This method is implemented on Android and iOS.
+**Note:** This method is only implemented on iOS.
 
 ----
 
@@ -1776,7 +1842,7 @@ Returns ``true`` if native video is playing.
 
 Pauses native video playback.
 
-**Note:** This method is implemented on Android and iOS.
+**Note:** This method is only implemented on iOS.
 
 ----
 
@@ -1786,7 +1852,7 @@ Pauses native video playback.
 
 Plays native video from the specified path, at the given volume and with audio and subtitle tracks.
 
-**Note:** This method is implemented on Android and iOS, and the current Android implementation does not support the ``volume``, ``audio_track`` and ``subtitle_track`` options.
+**Note:** This method is only implemented on iOS.
 
 ----
 
@@ -1796,7 +1862,7 @@ Plays native video from the specified path, at the given volume and with audio a
 
 Stops native video playback.
 
-**Note:** This method is implemented on Android and iOS.
+**Note:** This method is implemented on iOS.
 
 ----
 
@@ -1806,7 +1872,7 @@ Stops native video playback.
 
 Resumes native video playback.
 
-**Note:** This method is implemented on Android and iOS.
+**Note:** This method is implemented on iOS.
 
 ----
 
@@ -1874,7 +1940,7 @@ At the moment this function is only used by ``AudioDriverOpenSL`` to request per
 
 - :ref:`bool<class_bool>` **request_permissions** **(** **)**
 
-With this function you can request dangerous permissions since normal permissions are automatically granted at install time in Android application.
+With this function, you can request dangerous permissions since normal permissions are automatically granted at install time in Android applications.
 
 **Note:** This method is implemented on Android.
 

@@ -9,7 +9,7 @@
 ARVRPositionalTracker
 =====================
 
-**Inherits:** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 A tracked object.
 

@@ -28,6 +28,10 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`_get_input_value_port_count<class_VisualScriptCustomNode_method__get_input_value_port_count>` **(** **)** |virtual|                                                                                                  |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`_get_input_value_port_hint<class_VisualScriptCustomNode_method__get_input_value_port_hint>` **(** :ref:`int<class_int>` idx **)** |virtual|                                                                          |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`_get_input_value_port_hint_string<class_VisualScriptCustomNode_method__get_input_value_port_hint_string>` **(** :ref:`int<class_int>` idx **)** |virtual|                                                            |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`   | :ref:`_get_input_value_port_name<class_VisualScriptCustomNode_method__get_input_value_port_name>` **(** :ref:`int<class_int>` idx **)** |virtual|                                                                          |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`_get_input_value_port_type<class_VisualScriptCustomNode_method__get_input_value_port_type>` **(** :ref:`int<class_int>` idx **)** |virtual|                                                                          |
@@ -37,6 +41,10 @@ Methods
 | :ref:`String<class_String>`   | :ref:`_get_output_sequence_port_text<class_VisualScriptCustomNode_method__get_output_sequence_port_text>` **(** :ref:`int<class_int>` idx **)** |virtual|                                                                  |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`_get_output_value_port_count<class_VisualScriptCustomNode_method__get_output_value_port_count>` **(** **)** |virtual|                                                                                                |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`_get_output_value_port_hint<class_VisualScriptCustomNode_method__get_output_value_port_hint>` **(** :ref:`int<class_int>` idx **)** |virtual|                                                                        |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`_get_output_value_port_hint_string<class_VisualScriptCustomNode_method__get_output_value_port_hint_string>` **(** :ref:`int<class_int>` idx **)** |virtual|                                                          |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`   | :ref:`_get_output_value_port_name<class_VisualScriptCustomNode_method__get_output_value_port_name>` **(** :ref:`int<class_int>` idx **)** |virtual|                                                                        |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -124,6 +132,22 @@ Return the count of input value ports.
 
 ----
 
+.. _class_VisualScriptCustomNode_method__get_input_value_port_hint:
+
+- :ref:`int<class_int>` **_get_input_value_port_hint** **(** :ref:`int<class_int>` idx **)** |virtual|
+
+Return the specified input port's hint. See the :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` hints.
+
+----
+
+.. _class_VisualScriptCustomNode_method__get_input_value_port_hint_string:
+
+- :ref:`String<class_String>` **_get_input_value_port_hint_string** **(** :ref:`int<class_int>` idx **)** |virtual|
+
+Return the specified input port's hint string.
+
+----
+
 .. _class_VisualScriptCustomNode_method__get_input_value_port_name:
 
 - :ref:`String<class_String>` **_get_input_value_port_name** **(** :ref:`int<class_int>` idx **)** |virtual|
@@ -164,11 +188,27 @@ Return the amount of output value ports.
 
 ----
 
+.. _class_VisualScriptCustomNode_method__get_output_value_port_hint:
+
+- :ref:`int<class_int>` **_get_output_value_port_hint** **(** :ref:`int<class_int>` idx **)** |virtual|
+
+Return the specified output port's hint. See the :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` hints.
+
+----
+
+.. _class_VisualScriptCustomNode_method__get_output_value_port_hint_string:
+
+- :ref:`String<class_String>` **_get_output_value_port_hint_string** **(** :ref:`int<class_int>` idx **)** |virtual|
+
+Return the specified output port's hint string.
+
+----
+
 .. _class_VisualScriptCustomNode_method__get_output_value_port_name:
 
 - :ref:`String<class_String>` **_get_output_value_port_name** **(** :ref:`int<class_int>` idx **)** |virtual|
 
-Return the specified output's name.
+Return the specified output port's name.
 
 ----
 
@@ -176,7 +216,7 @@ Return the specified output's name.
 
 - :ref:`int<class_int>` **_get_output_value_port_type** **(** :ref:`int<class_int>` idx **)** |virtual|
 
-Return the specified output's type. See the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
+Return the specified output port's type. See the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
 
 ----
 

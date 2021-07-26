@@ -108,6 +108,8 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`sign<class_Vector3_method_sign>` **(** **)**                                                                                                                                                                        |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`signed_angle_to<class_Vector3_method_signed_angle_to>` **(** :ref:`Vector3<class_Vector3>` to, :ref:`Vector3<class_Vector3>` axis **)**                                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`slerp<class_Vector3_method_slerp>` **(** :ref:`Vector3<class_Vector3>` to, :ref:`float<class_float>` weight **)**                                                                                                   |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`slide<class_Vector3_method_slide>` **(** :ref:`Vector3<class_Vector3>` n **)**                                                                                                                                      |
@@ -228,7 +230,7 @@ Returns a new vector with all components in absolute values (i.e. positive).
 
 - :ref:`float<class_float>` **angle_to** **(** :ref:`Vector3<class_Vector3>` to **)**
 
-Returns the minimum angle to the given vector, in radians.
+Returns the unsigned minimum angle to the given vector, in radians.
 
 ----
 
@@ -455,6 +457,14 @@ Returns this vector with all components rounded to the nearest integer, with hal
 - :ref:`Vector3<class_Vector3>` **sign** **(** **)**
 
 Returns a vector with each component set to one or negative one, depending on the signs of this vector's components. If a component is zero, it returns positive one.
+
+----
+
+.. _class_Vector3_method_signed_angle_to:
+
+- :ref:`float<class_float>` **signed_angle_to** **(** :ref:`Vector3<class_Vector3>` to, :ref:`Vector3<class_Vector3>` axis **)**
+
+Returns the signed angle to the given vector, in radians. The sign of the angle is positive in a counter-clockwise direction and negative in a clockwise direction when viewed from the side specified by the ``axis``.
 
 ----
 

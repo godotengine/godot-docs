@@ -23,16 +23,34 @@ Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_PlaneMesh_property_size>`                       | ``Vector2( 2, 2 )`` |
-+-------------------------------+------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_PlaneMesh_property_subdivide_depth>` | ``0``               |
-+-------------------------------+------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` | ``0``               |
-+-------------------------------+------------------------------------------------------------------+---------------------+
++-------------------------------+------------------------------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`center_offset<class_PlaneMesh_property_center_offset>`     | ``Vector3( 0, 0, 0 )`` |
++-------------------------------+------------------------------------------------------------------+------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_PlaneMesh_property_size>`                       | ``Vector2( 2, 2 )``    |
++-------------------------------+------------------------------------------------------------------+------------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_PlaneMesh_property_subdivide_depth>` | ``0``                  |
++-------------------------------+------------------------------------------------------------------+------------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` | ``0``                  |
++-------------------------------+------------------------------------------------------------------+------------------------+
 
 Property Descriptions
 ---------------------
+
+.. _class_PlaneMesh_property_center_offset:
+
+- :ref:`Vector3<class_Vector3>` **center_offset**
+
++-----------+--------------------------+
+| *Default* | ``Vector3( 0, 0, 0 )``   |
++-----------+--------------------------+
+| *Setter*  | set_center_offset(value) |
++-----------+--------------------------+
+| *Getter*  | get_center_offset()      |
++-----------+--------------------------+
+
+Offset from the origin of the generated plane. Useful for particles.
+
+----
 
 .. _class_PlaneMesh_property_size:
 

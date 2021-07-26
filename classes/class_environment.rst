@@ -823,7 +823,7 @@ The length of the transition between the no-blur area and far blur.
 | *Getter*  | get_dof_blur_near_amount()      |
 +-----------+---------------------------------+
 
-The amount of near blur for the depth-of-field effect.
+The amount of near blur for the depth-of-field effect. :ref:`dof_blur_far_amount<class_Environment_property_dof_blur_far_amount>` is used if both far and near DOF are enabled.
 
 ----
 
@@ -871,7 +871,7 @@ If ``true``, enables the depth-of-field near blur effect.
 | *Getter*  | get_dof_blur_near_quality()      |
 +-----------+----------------------------------+
 
-The depth-of-field near blur's quality. Higher values can mitigate the visible banding effect seen at higher strengths, but are much slower.
+The depth-of-field near blur's quality. Higher values can mitigate the visible banding effect seen at higher strengths, but are much slower. :ref:`dof_blur_far_quality<class_Environment_property_dof_blur_far_quality>` is used if both far and near DOF are enabled.
 
 ----
 

@@ -11,6 +11,8 @@ PackedScene
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`PackedSceneGLTF<class_PackedSceneGLTF>`
+
 An abstraction of a serialized scene.
 
 Description

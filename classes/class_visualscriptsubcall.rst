@@ -11,7 +11,12 @@ VisualScriptSubCall
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Calls a method called ``_subcall`` in this object.
 
+Description
+-----------
+
+``VisualScriptSubCall`` will call method named ``_subcall`` in the current script. It will fail if the method doesn't exist or the provided arguments are wrong.
 
 Methods
 -------
@@ -26,6 +31,8 @@ Method Descriptions
 .. _class_VisualScriptSubCall_method__subcall:
 
 - :ref:`Variant<class_Variant>` **_subcall** **(** :ref:`Variant<class_Variant>` arguments **)** |virtual|
+
+Called by this node.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
