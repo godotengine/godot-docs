@@ -420,21 +420,26 @@ Example below:
 Varyings
 ~~~~~~~~
 
-To send data from the vertex to the fragment processor function, *varyings* are used. They are set
-for every primitive vertex in the *vertex processor*, and the value is interpolated for every
-pixel in the fragment processor.
+To send data from the vertex to the fragment (or light) processor function, *varyings* are
+used. They are set for every primitive vertex in the *vertex processor*, and the
+value is interpolated for every pixel in the *fragment processor*.
 
 .. code-block:: glsl
 
     shader_type spatial;
 
     varying vec3 some_color;
+
     void vertex() {
         some_color = NORMAL; // Make the normal the color.
     }
 
     void fragment() {
         ALBEDO = some_color;
+    }
+
+    void light() {
+        DIFFUSE_LIGHT = some_color * 100; // optionally
     }
 
 Varying can also be an array:
@@ -444,6 +449,7 @@ Varying can also be an array:
     shader_type spatial;
 
     varying float var_arr[3];
+
     void vertex() {
         var_arr[0] = 1.0;
         var_arr[1] = 0.0;
@@ -452,6 +458,44 @@ Varying can also be an array:
     void fragment() {
         ALBEDO = vec3(var_arr[0], var_arr[1], var_arr[2]); // red color
     }
+
+It's also possible to send data from *fragment* to *light* processors using *varying* keyword. To do so you can assign it in the *fragment* and later use it in the *light* function.
+
+.. code-block:: glsl
+
+    shader_type spatial;
+
+    varying vec3 some_light;
+
+    void fragment() {
+        some_light = ALBEDO * 100.0; // Make a shining light.
+    }
+
+    void light() {
+        DIFFUSE_LIGHT = some_light;
+    }
+
+Note that varying may not be assigned in custom functions or a *light processor* function like:
+
+.. code-block:: glsl
+
+    shader_type spatial;
+
+    varying float test;
+
+    void foo() {
+        test = 0.0; // Error.
+    }
+
+    void vertex() {
+        test = 0.0;
+    }
+
+    void light() {
+        test = 0.0; // Error too.
+    }
+
+This limitation was introduced to prevent incorrect usage before initialization.
 
 Interpolation qualifiers
 ~~~~~~~~~~~~~~~~~~~~~~~~
