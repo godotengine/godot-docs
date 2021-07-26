@@ -93,7 +93,7 @@ When a node is connected, directly or indirectly, to the root
 viewport, it becomes part of the *scene tree*.
 
 This means that as explained in previous tutorials, it will get the
-``_enter_tree() and ``_ready()`` callbacks (as well as ``_exit_tree()``).
+``_enter_tree()`` and ``_ready()`` callbacks (as well as ``_exit_tree()``).
 
 .. image:: img/activescene.png
 
