@@ -636,7 +636,7 @@ It's also possible to send data from *fragment* to *light* processors using *var
         DIFFUSE_LIGHT = some_light;
     }
 
-Note that varying may not be assigned in custom functions or *light processor* function like:
+Note that varying may not be assigned in custom functions or a *light processor* function like:
 
 .. code-block:: glsl
 
