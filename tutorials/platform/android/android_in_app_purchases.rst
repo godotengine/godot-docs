@@ -110,7 +110,7 @@ Then, wait for the ``_on_purchases_updated`` callback and handle the purchase re
 
     func _on_purchases_updated(purchases):
         for purchase in purchases:
-            if purchase.purchase_state==1: # 1 means "purchased"
+            if purchase.purchase_state == 1: # 1 means "purchased", see https://developer.android.com/reference/com/android/billingclient/api/Purchase.PurchaseState#constants_1
                 # enable_premium(purchase.sku) # unlock paid content, add coins, save token on server, etc.
                 if not purchase.is_acknowledged:                                        
                     payment.acknowledgePurchase(purchase.purchase_token) # call if non-consumable product
