@@ -132,7 +132,7 @@ Full example:
     var query = payment.queryPurchases("inapp") # Or "subs" for subscriptions
     if query.status == OK:
         for purchase in query.purchases:
-            if purchase.sku == "my_iap_item" and purchase.purchase_state==1:
+            if purchase.sku == "my_iap_item" and purchase.purchase_state == 1:
                 # enable_premium(purchase.sku) # unlock paid content, save token on server, etc.
                 if !purchase.is_acknowledged:
                     payment.acknowledgePurchase(purchase.purchase_token)
