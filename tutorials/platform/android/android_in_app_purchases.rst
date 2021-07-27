@@ -102,8 +102,8 @@ initiate the purchase flow for it.
 ::
 
     payment.purchase("my_iap_item")
-Then, wait for the ``_on_purchases_updated`` callback and handle the purchase result:
 
+Then, wait for the ``_on_purchases_updated`` callback and handle the purchase result:
 
 ::
 
