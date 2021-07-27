@@ -164,11 +164,21 @@ Anisotropic
 
 When textures are near parallel to the view (like floors), this option makes them have more detail by reducing blurriness.
 
-SRGB
+sRGB
 ~~~~
 
 Godot uses Linear colorspace when rendering 3D. Textures mapped to albedo or detail channels need to have this option turned on in order for colors to look correct.
-When set to "Detect" mode, the texture will be marked as SRGB when used in albedo channels.
+When set to **Detect** mode, the texture will be marked as sRGB when used in albedo channels.
+
+.. warning::
+
+    Since the texture will have its data modified when sRGB is enabled, this
+    means using the same texture in both 2D and 3D will make the texture
+    display with incorrect colors in either 2D or 3D.
+
+    To work around this, make a copy of the texture on the filesystem and enable
+    sRGB on one of the copies only. Use the copy with sRGB enabled in 3D, and
+    the copy with sRGB disabled in 2D.
 
 Process
 -------
