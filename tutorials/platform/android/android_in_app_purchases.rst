@@ -153,7 +153,7 @@ Consuming a product allows the user to purchase it again, and removes it from ap
     var query = payment.queryPurchases("inapp") # Or "subs" for subscriptions
     if query.status == OK:
         for purchase in query.purchases:
-            if purchase.sku == "my_consumable_iap_item" and purchase.purchase_state==1:
+            if purchase.sku == "my_consumable_iap_item" and purchase.purchase_state == 1:
                 # enable_premium(purchase.sku) # add coins, save token on server, etc.
                 payment.consumePurchase(purchase.purchase_token)
                 # Or wait for the _on_purchase_consumed callback before giving the user what they bought
