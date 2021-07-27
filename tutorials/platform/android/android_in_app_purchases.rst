@@ -112,7 +112,7 @@ Then, wait for the ``_on_purchases_updated`` callback and handle the purchase re
         for purchase in purchases:
             if purchase.purchase_state==1: # 1 means "purchased"
                 # enable_premium(purchase.sku) # unlock paid content, add coins, save token on server, etc.
-                if !purchase.is_acknowledged:                                        
+                if not purchase.is_acknowledged:                                        
                     payment.acknowledgePurchase(purchase.purchase_token) # call if non-consumable product
                     if purchase.sku in list_of_consumable_products:
                         payment.consumePurchase(purchase.purchase_token) # call if consumable product
