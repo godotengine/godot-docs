@@ -313,6 +313,11 @@ a[href*="classes/"]::before {
     display: none;
 }
 
+/* Prevent the "ref" badge from appearing in the sidebar. */
+.wy-menu-vertical a[href*="classes/"]::before {
+    display: none;
+}
+
 hr,
 #search-results .search li:first-child,
 #search-results .search li {
