@@ -81,8 +81,8 @@ Conclusion
 
 This concludes this simple tutorial. Don't be afraid to experiment with the new room system you have created.
 
-Some things to try:
-^^^^^^^^^^^^^^^^^^^
+Some things to try
+^^^^^^^^^^^^^^^^^^
 
 - Create different types of geometry. CSG nodes, Particle systems, and Multimeshes are all supported by the portal system.
 - Try creating a Camera and adding it to the scene. If you run the scene you will notice that the portal culling is not active. This is because the ``room graph`` must be created each time you load a level, by converting the rooms. Instead of using a button in the editor, in real games you call a function in the RoomManager to convert the level, called ``rooms_convert()``. Try this out with a script, perhaps running within a ``_ready()`` function.

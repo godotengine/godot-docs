@@ -1,7 +1,7 @@
 Advanced Room and Portal usage
 ==============================
 
-Gameplay Callbacks
+Gameplay callbacks
 ~~~~~~~~~~~~~~~~~~
 
 Although occlusion culling greatly reduces the number of objects that need to be rendered, there are other costs to maintaining objects in a game besides the final rendering. For instance, in Godot, animated objects will still be animated whether they appear on screen or not. This can take up a lot of processing power, especially for objects that use software skinning (where skinning is calculated on the CPU).
@@ -88,7 +88,7 @@ The only differences:
 - Portals of internal rooms are not considered as part of the bound of outer rooms.
 - ``STATIC`` and ``DYNAMIC`` objects from outer rooms will not sprawl into internal rooms. If you want objects to cross these portals, place them in the internal room. This is to prevent large objects like terrain sections sprawling into entire buildings, and rendering when not necessary.
 
-Internal Room Example
+Internal room example
 ^^^^^^^^^^^^^^^^^^^^^
 
 The tent is a simple room inside a terrain room (which contains the ground, the trees etc).
