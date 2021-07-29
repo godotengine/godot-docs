@@ -35,6 +35,8 @@ page in the Mono documentation.
         `Microsoft C# guide <https://docs.microsoft.com/en-us/dotnet/csharp/index>`_
         or look for a suitable introduction elsewhere.
 
+.. _doc_c_sharp_setup:
+
 Setting up C# for Godot
 -----------------------
 

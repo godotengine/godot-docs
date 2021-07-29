@@ -65,9 +65,7 @@ favorite text editor. You can then commit the changes, push them to your fork,
 and make a pull request. **Note that the pages in** ``classes/`` **should not be
 edited here.** They are automatically generated from Godot’s `XML class
 reference <https://github.com/godotengine/godot/tree/master/doc/classes>`__.
-See `Contribute to the Class Reference
-<https://docs.godotengine.org/en/latest/community/contributing/updating_the_class_reference.html>`__
-for details.
+See :ref:`doc_updating_the_class_reference` for details.
 
 .. seealso:: To build the manual and test changes on your computer, see
              :ref:`doc_building_the_manual`.

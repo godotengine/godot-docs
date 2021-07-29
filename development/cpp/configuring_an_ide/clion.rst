@@ -3,18 +3,18 @@
 CLion
 =====
 
-`CLion <https://www.jetbrains.com/clion/>`_ is a commercial 
+`CLion <https://www.jetbrains.com/clion/>`_ is a commercial
 `JetBrains <https://www.jetbrains.com/>`_ IDE for C++.
 
 Importing the project
 ---------------------
 
 CLion requires a ``CMakeLists.txt`` file as a project file, which is problematic
-for Godot because it uses the SCons buildsystem instead of CMake. However, 
-there is a ``CMakeLists.txt`` configuration for :ref:`Android Studio <doc_configuring_an_ide_android_studio>` 
+for Godot because it uses the SCons buildsystem instead of CMake. However,
+there is a ``CMakeLists.txt`` configuration for :ref:`Android Studio <doc_configuring_an_ide_android_studio>`
 which can also be used by CLion.
 
-- From the CLion's welcome window choose the option to import an existing 
+- From the CLion's welcome window choose the option to import an existing
   project. If you've already opened another project, choose **File > Open**
   from the top menu.
 - Navigate to ``<Godot root directory>/platform/android/java/nativeSrcsConfigs`` (the
@@ -31,7 +31,7 @@ which can also be used by CLion.
 .. figure:: img/clion_2_this_window.png
    :align: center
 
-- Choose **Tools > CMake > Change Project Root** from the top menu and select 
+- Choose **Tools > CMake > Change Project Root** from the top menu and select
   the Godot root folder.
 
 .. figure:: img/clion_3_change_project_root.png
@@ -47,7 +47,7 @@ Debugging the project
 ---------------------
 
 Since CLion does not support SCons, you won't be able to compile, launch, and debug Godot from CLion in one step.
-You will first need to `compile godot yourself <https://docs.godotengine.org/en/stable/development/compiling/index.html>`__ and run the binary without CLion. You will then be able to debug Godot by using the `Attach to process <https://www.jetbrains.com/help/clion/attaching-to-local-process.html>`__ feature.
+You will first need to :ref:`compile Godot yourself <toc-devel-compiling>` and run the binary without CLion. You will then be able to debug Godot by using the `Attach to process <https://www.jetbrains.com/help/clion/attaching-to-local-process.html>`__ feature.
 
 - Run the compilation in debug mode by entering ``scons``.
 
