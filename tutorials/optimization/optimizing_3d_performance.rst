@@ -31,8 +31,7 @@ prepass* and is enabled by default in Godot when using the GLES3 renderer.
 However, unneeded objects are still reducing performance.
 
 One way we can potentially reduce the amount to be rendered is to take advantage
-of occlusion. As of Godot 3.3, there is no built in support for occlusion in
-Godot. However, with careful design you can still get many of the advantages.
+of occlusion.
 
 For instance, in our city street scenario, you may be able to work out in advance
 that you can only see two other streets, ``B`` and ``C``, from street ``A``.
@@ -40,24 +39,34 @@ Streets ``D`` to ``Z`` are hidden. In order to take advantage of occlusion, all
 you have to do is work out when your viewer is in street ``A`` (perhaps using
 Godot Areas), then you can hide the other streets.
 
-This is a manual version of what is known as a "potentially visible set". It is
-a very powerful technique for speeding up rendering. You can also use it to
+This example is a manual version of what is known as a *potentially visible set*.
+It is a very powerful technique for speeding up rendering. You can also use it to
 restrict physics or AI to the local area, and speed these up as well as
 rendering.
 
+Portal Rendering
+~~~~~~~~~~~~~~~~
+
+However, there is a much easier way to take advantage of occlusion. Godot features
+an advanced portal rendering system, which can perform occlusion culling from cameras and
+lights. See :ref:`doc_rooms_and_portals`.
+
+This is not a fully automatic system and it requires some manual setup. However, it potentially
+offers significant performance increases.
+
 .. note::
 
-    In some cases, you may have to adapt your level design to add more occlusion
-    opportunities. For example, you may have to add more walls to prevent the player
+    In some cases, you can adapt your level design to add more occlusion
+    opportunities. For example, you can add more walls to prevent the player
     from seeing too far away, which would decrease performance due to the lost
     opportunies for occlusion culling.
 
 Other occlusion techniques
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are other occlusion techniques such as portals, automatic PVS, and
-raster-based occlusion culling. Some of these may be available through add-ons
-and may be available in core Godot in the future.
+As well as the portal system and manual methods, there are various other occlusion
+techniques such as raster-based occlusion culling. Some of these may be available
+through add-ons or may be available in core Godot in the future.
 
 Transparent objects
 ~~~~~~~~~~~~~~~~~~~
