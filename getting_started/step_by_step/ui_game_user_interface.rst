@@ -608,7 +608,7 @@ Head to the FileSystem dock and open ``LevelMockup.tscn``.
 
 Drag-and-drop the ``GUI.tscn`` scene right below the ``bg`` node and
 above the ``Characters``. The GUI will scale to fit the entire viewport.
-Head to the Layout menu and select the ``Center Top`` option so it anchors
+Head to the Layout menu and select the ``Top Wide`` option so it anchors
 to the top edge of the game window. Then resize the GUI to make it as
 small as possible vertically. Now you can see how the interface looks in
 the context of the game.
