@@ -4,14 +4,16 @@ TSCN file format
 ================
 
 The TSCN (text scene) file format represents a single scene tree inside
-Godot. TSCN files have the advantage of being mostly human-readable and easy for
-version control systems to manage. During import, TSCN files are compiled into
-binary ``.scn`` files stored inside the .import folder. This reduces the data
-size and speeds up loading.
+Godot. Unlike binary SCN files, TSCN files have the advantage of being mostly
+human-readable and easy for version control systems to manage.
 
 The ESCN (exported scene) file format is identical to the TSCN file format, but
 is used to indicate to Godot that the file has been exported from another
 program and should not be edited by the user from within Godot.
+Unlike SCN and TSCN files, during import, ESCN files are compiled to binary
+SCN files stored inside the ``.godot/imported/`` folder.
+This reduces the data size and speeds up loading, as binary formats are faster
+to load compared to text-based formats.
 
 For those looking for a complete description, the parsing is handled in the file
 `resource_format_text.cpp <https://github.com/godotengine/godot/blob/master/scene/resources/resource_format_text.cpp>`_
