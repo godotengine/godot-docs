@@ -47,6 +47,7 @@ Text tutorials
 
 - `GDScript website by Andrew Wilkes <https://gdscript.com>`__
 - `Godot Recipes by KidsCanCode <http://godotrecipes.com/>`__
+- `Horror RPG Game by MyGameFast <https://www.mygamefast.com/category/volume2/>`__
 - `Steincodes <https://steincodes.tumblr.com>`__
 
 Devlogs
