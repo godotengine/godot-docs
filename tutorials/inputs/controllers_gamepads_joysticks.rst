@@ -201,6 +201,15 @@ your controller is recognized.
 My controller has incorrectly mapped buttons or axes.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+First, if your controller provides some kind of firmware update utility,
+make sure to run it to get the latest fixes from the manufacturer. For instance,
+Xbox One and Xbox Series controllers can have their firmware updated using the
+`Xbox Accessories app <https://www.microsoft.com/en-us/p/xbox-accessories/9nblggh30xj3>`__.
+(This application only runs on Windows, so you have to use a Windows machine
+or a Windows virtual machine with USB support to update the controller's firmware.)
+After updating the controller's firmware, unpair the controller and pair it again
+with your PC if you are using the controller in wireless mode.
+
 If buttons are incorrectly mapped, this may be due to an erroneous mapping from
 the `SDL game controller database <https://github.com/gabomdq/SDL_GameControllerDB>`__.
 You can contribute an updated mapping to be included in the next Godot version
