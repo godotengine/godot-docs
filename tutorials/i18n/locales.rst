@@ -231,7 +231,7 @@ based on the UNIX standard locale strings:
 +--------------+------------------------------------+
 | es_CR        | Spanish (Costa Rica)               |
 +--------------+------------------------------------+
-| en_CU        | Spanish (Cuba)                     |
+| es_CU        | Spanish (Cuba)                     |
 +--------------+------------------------------------+
 | es_DO        | Spanish (Dominican Republic)       |
 +--------------+------------------------------------+
@@ -523,6 +523,8 @@ based on the UNIX standard locale strings:
 +--------------+------------------------------------+
 | pa_IN        | Panjabi (India)                    |
 +--------------+------------------------------------+
+| pa_PK        | Panjabi (Pakistan)                 |
++--------------+------------------------------------+
 | pap          | Papiamento                         |
 +--------------+------------------------------------+
 | pap_AN       | Papiamento (Netherlands Antilles)  |
@@ -530,8 +532,6 @@ based on the UNIX standard locale strings:
 | pap_AW       | Papiamento (Aruba)                 |
 +--------------+------------------------------------+
 | pap_CW       | Papiamento (Curaçao)               |
-+--------------+------------------------------------+
-| pa_PK        | Panjabi (Pakistan)                 |
 +--------------+------------------------------------+
 | pl           | Polish                             |
 +--------------+------------------------------------+
