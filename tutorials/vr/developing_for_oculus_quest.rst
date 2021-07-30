@@ -18,6 +18,10 @@ needs to export to Android devices.
 Next you need the Quest plugin. You can get it from the Asset
 Library or manually download it from `here <https://github.com/GodotVR/godot-oculus-mobile-asset>`__.
 
+.. note:: Oculus has announced the `deprecation of their APIs <https://developer.oculus.com/blog/oculus-all-in-on-openxr-deprecates-proprietary-apis/>`_
+          in favor of OpenXR. The OpenXR plugin does not currently support the Oculus Quest,
+          until it does the Oculus mobile plugin should still be used.
+
 Setting Up Godot
 ----------------
 

@@ -122,17 +122,19 @@ As mentioned earlier, Godot does not support the various VR and AR SDKs out of t
 need a plugin for the specific SDK you want to use. There are several official plugins available
 in the `GodotVR Repository <https://github.com/GodotVR>`_.
 
+* `Godot OpenXR <https://github.com/GodotVR/godot_openxr>`_ supports OpenXR, an open standard
+  for VR and AR software. Tested with SteamVR, Monada and Oculus OpenXR runtimes.
 * `Godot Oculus Mobile <https://github.com/GodotVR/godot_oculus_mobile>`_ provides support for
   the Oculus Go and Oculus Quest. The Quest will require additional setup documented in
   :ref:`doc_developing_for_oculus_quest`.
 * `Godot OpenVR <https://github.com/GodotVR/godot_openvr>`_ (not to be confused with OpenXR)
   supports the OpenVR SDK used by Steam.
-* `Godot Oculus <https://github.com/GodotVR/godot_oculus>`_ supports the Oculus SDK
-  (desktop headsets only).
 * `Godot OpenHMD <https://github.com/GodotVR/godot_openhmd>`_ supports OpenHMD, an open source
   API and drivers for headsets.
-* `Godot OpenXR <https://github.com/GodotVR/godot_openxr>`_ supports OpenXR, an open standard
-  for VR and AR software. Tested with SteamVR, Monada and Oculus OpenXR runtimes.
+
+.. note:: Oculus has announced the `deprecation of their APIs <https://developer.oculus.com/blog/oculus-all-in-on-openxr-deprecates-proprietary-apis/>`_
+          in favor of OpenXR. The OpenXR plugin does not currently support the Oculus Quest,
+          until it does the Oculus mobile plugin should still be used.
 
 These plugins can be downloaded from GitHub or the Godot Asset Library.
 
