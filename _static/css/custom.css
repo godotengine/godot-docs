@@ -85,6 +85,9 @@
     --kbd-shadow-color: #b0b7bf;
     --kbd-text-color: #444d56;
 
+    --code-example-good-color: #3fb950;
+    --code-example-bad-color: #f85149;
+
     --btn-neutral-background-color: #f3f6f6;
     --btn-neutral-hover-background-color: #e5ebeb;
     --footer-color: #808080;
@@ -172,6 +175,9 @@
         --kbd-outline-color: #3d4144;
         --kbd-shadow-color: #1e2023;
         --kbd-text-color: #e2f2ff;
+
+        --code-example-good-color: #3fb950;
+        --code-example-bad-color: #f85149;
 
         --btn-neutral-background-color: #404040;
         --btn-neutral-hover-background-color: #505050;
@@ -1056,4 +1062,14 @@ kbd.compound > .kbd,
 }
 .wy-menu.wy-menu-vertical::-webkit-scrollbar-thumb:active {
     background-color: var(--navbar-scrollbar-active-color);
+}
+
+/* Allows to add a green or red bar to code blocks for "good"/"bad" code examples. */
+.code-example-good div.highlight {
+    border-left-color: var(--code-example-good-color);
+    border-left-width: 8px;
+}
+.code-example-bad div.highlight {
+    border-left-color: var(--code-example-bad-color);
+    border-left-width: 8px;
 }
