@@ -121,8 +121,8 @@ On \*BSD, you can use ``sysctl -n hw.ncpu``:
 .. note::
 
     Prior to Godot 4.0, the Linux/\*BSD target was called ``x11`` instead of
-    ``linuxbsd``. If you are looking to compile Godot 3.2, make sure to use the
-    `3.2 branch of this documentation <https://docs.godotengine.org/en/3.2/development/compiling/compiling_for_x11.html>`__.
+    ``linuxbsd``. If you are looking to compile Godot 3.x, make sure to use the
+    `stable branch of this documentation <https://docs.godotengine.org/en/stable/development/compiling/compiling_for_x11.html>`__.
 
 If all goes well, the resulting binary executable will be placed in the
 "bin" subdirectory. This executable file contains the whole engine and
