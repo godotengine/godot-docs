@@ -130,7 +130,7 @@ Using an ArrayMesh is slightly faster than using a SurfaceTool, but the API is a
 Additionally, SurfaceTool has a few quality of life methods such as ``generate_normals()`` and ``index()``.
 
 ImmediateGeometry regenerates the mesh every frame, so it is much slower than ArrayMesh or SurfaceTool. However, if you
-need the geometry to change every frame anyways, it provides a much easier interface that may even be a little faster than generating
+need the geometry to change every frame anyway, it provides a much easier interface that may even be a little faster than generating
 an ArrayMesh every frame.
 
 The MeshDataTool is not fast, but it gives you access to all kinds of properties of the mesh that you don't get with the others
