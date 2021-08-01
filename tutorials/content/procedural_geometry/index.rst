@@ -121,14 +121,14 @@ Which method you use depends on what you are trying to do and what kind of proce
 
 Both SurfaceTool and ArrayMesh are excellent for generating static geometry (meshes) that don't change over time.
 
-Using an ArrayMesh is slightly faster than using a SurfaceTool, but the API is more a little more challenging.
+Using an ArrayMesh is slightly faster than using a SurfaceTool, but the API is a little more challenging.
 Additionally, SurfaceTool has a few quality of life methods such as ``generate_normals()`` and ``index()``.
 
 ImmediateGeometry regenerates the mesh every frame, so it is much slower than ArrayMesh or SurfaceTool. However, if you
-need the geometry to change every frame anyway it provides a much easier interface that may even be a little faster than generating
+need the geometry to change every frame anyway, it provides a much easier interface that may even be a little faster than generating
 an ArrayMesh every frame.
 
 The MeshDataTool is not fast, but it gives you access to all kinds of properties of the mesh that you don't get with the others
 (edges, faces, etc.). It is incredibly useful when you need that sort of data to transform the mesh, but it is not a good idea
-to use if that information is not needed. The MeshDataTool is best used if you are going to be using an algorithm that requires
+to use it if that information is not needed. The MeshDataTool is best used if you are going to be using an algorithm that requires
 access to the face or edge array.
