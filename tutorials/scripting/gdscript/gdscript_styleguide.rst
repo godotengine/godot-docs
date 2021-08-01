@@ -108,12 +108,16 @@ Each indent level should be one greater than the block containing it.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     for i in range(10):
         print("hello")
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -128,6 +132,8 @@ regular code blocks.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     effect.interpolate_property(sprite, "transform/scale",
@@ -135,6 +141,8 @@ regular code blocks.
                 Tween.TRANS_QUAD, Tween.EASE_OUT)
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -146,6 +154,8 @@ Exceptions to this rule are arrays, dictionaries, and enums. Use a single
 indentation level to distinguish continuation lines:
 
 **Good**:
+
+.. rst-class:: code-example-good
 
 ::
 
@@ -169,6 +179,8 @@ indentation level to distinguish continuation lines:
     }
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -200,6 +212,8 @@ line doesn't need to be modified when adding new elements.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     enum Tiles {
@@ -210,6 +224,8 @@ line doesn't need to be modified when adding new elements.
     }
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -224,11 +240,15 @@ Trailing commas are unnecessary in single-line lists, so don't add them in this 
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     enum Tiles {TILE_BRICK, TILE_FLOOR, TILE_SPIKE, TILE_TELEPORT}
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -274,6 +294,8 @@ not even with a single line conditional statement.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     if position.x > width:
@@ -283,6 +305,8 @@ not even with a single line conditional statement.
         print("flagged")
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -315,6 +339,8 @@ end of the previous line.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     var angle_degrees = 135
@@ -334,6 +360,8 @@ end of the previous line.
 
 **Bad**:
 
+.. rst-class:: code-example-bad
+
 ::
 
     var angle_degrees = 135
@@ -352,12 +380,16 @@ they only reduce readability.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     if is_colliding():
         queue_free()
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -377,12 +409,16 @@ This can make long expressions easier to read.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     if (foo and bar) or baz:
         print("condition is true")
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -397,12 +433,16 @@ This helps differentiate text comments from disabled code.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     # This is a comment.
     #print("This is disabled code")
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -423,6 +463,8 @@ in dictionary references and function calls.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     position.x = 5
@@ -432,6 +474,8 @@ in dictionary references and function calls.
     print("foo")
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -476,12 +520,20 @@ Don't omit the leading or trailing zero in floating-point numbers. Otherwise,
 this makes them less readable and harder to distinguish from integers at a
 glance.
 
-**Good**::
+**Good**:
+
+.. rst-class:: code-example-good
+
+::
 
     var float_number = 0.234
     var other_float_number = 13.0
 
-**Bad**::
+**Bad**:
+
+.. rst-class:: code-example-bad
+
+::
 
     var float_number = .234
     var other_float_number = 13.
@@ -489,18 +541,30 @@ glance.
 Use lowercase for letters in hexadecimal numbers, as their lower height makes
 the number easier to read.
 
-**Good**::
+**Good**:
+
+.. rst-class:: code-example-good
+
+::
 
     var hex_number = 0xfb8c0b
 
-**Bad**::
+**Bad**:
+
+.. rst-class:: code-example-bad
+
+::
 
     var hex_number = 0xFB8C0B
 
 Take advantage of GDScript's underscores in literals to make large numbers more
 readable.
 
-**Good**::
+**Good**:
+
+.. rst-class:: code-example-good
+
+::
 
     var large_number = 1_234_567_890
     var large_hex_number = 0xffff_f8f8_0000
@@ -508,7 +572,11 @@ readable.
     # Numbers lower than 1000000 generally don't need separators.
     var small_number = 12345
 
-**Bad**::
+**Bad**:
+
+.. rst-class:: code-example-bad
+
+::
 
     var large_number = 1234567890
     var large_hex_number = 0xfffff8f80000
@@ -815,11 +883,15 @@ should set the type explicitly.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
    onready var health_bar: ProgressBar = get_node("UI/LifeBar")
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
