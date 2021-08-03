@@ -60,7 +60,7 @@ Can be used to save a node to a file. When saving, the node as well as all the n
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/520 <https://godotengine.org/asset-library/asset/520>`_
+- `2D Role Playing Game Demo <https://godotengine.org/asset-library/asset/520>`_
 
 Properties
 ----------

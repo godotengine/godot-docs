@@ -25,9 +25,9 @@ Note that "global pose" below refers to the overall transform of the bone with r
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/523 <https://godotengine.org/asset-library/asset/523>`_
+- `3D Inverse Kinematics Demo <https://godotengine.org/asset-library/asset/523>`_
 
-- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`_
 
 Methods
 -------

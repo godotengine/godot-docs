@@ -23,7 +23,7 @@ Joints are used to bind together two physics bodies. They have a solver priority
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/524 <https://godotengine.org/asset-library/asset/524>`_
+- `3D Truck Town Demo <https://godotengine.org/asset-library/asset/524>`_
 
 Properties
 ----------

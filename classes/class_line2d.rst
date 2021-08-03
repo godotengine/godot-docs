@@ -23,9 +23,9 @@ A line through several points in 2D space.
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/584 <https://godotengine.org/asset-library/asset/584>`_
+- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/584>`_
 
-- `https://godotengine.org/asset-library/asset/583 <https://godotengine.org/asset-library/asset/583>`_
+- `2.5D Demo <https://godotengine.org/asset-library/asset/583>`_
 
 Properties
 ----------

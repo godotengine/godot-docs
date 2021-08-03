@@ -23,9 +23,9 @@ Material is a base :ref:`Resource<class_Resource>` used for coloring and shading
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/123 <https://godotengine.org/asset-library/asset/123>`_
+- `3D Material Testers Demo <https://godotengine.org/asset-library/asset/123>`_
 
-- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`_
 
 Properties
 ----------

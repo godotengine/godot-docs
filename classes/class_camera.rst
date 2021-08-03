@@ -23,7 +23,7 @@ Camera is a special node that displays what is visible from its current location
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`_
 
 Properties
 ----------

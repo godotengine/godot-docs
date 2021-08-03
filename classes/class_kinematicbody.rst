@@ -27,13 +27,13 @@ Tutorials
 
 - :doc:`../tutorials/physics/kinematic_character_2d`
 
-- `https://godotengine.org/asset-library/asset/126 <https://godotengine.org/asset-library/asset/126>`_
+- `3D Kinematic Character Demo <https://godotengine.org/asset-library/asset/126>`_
 
-- `https://godotengine.org/asset-library/asset/125 <https://godotengine.org/asset-library/asset/125>`_
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`_
 
-- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`_
 
-- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`_
 
 Properties
 ----------

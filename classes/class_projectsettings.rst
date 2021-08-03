@@ -27,11 +27,11 @@ When naming a Project Settings property, use the full path to the setting includ
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/675 <https://godotengine.org/asset-library/asset/675>`_
+- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`_
 
-- `https://godotengine.org/asset-library/asset/125 <https://godotengine.org/asset-library/asset/125>`_
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`_
 
-- `https://godotengine.org/asset-library/asset/677 <https://godotengine.org/asset-library/asset/677>`_
+- `OS Test Demo <https://godotengine.org/asset-library/asset/677>`_
 
 Properties
 ----------
@@ -321,7 +321,31 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_20<class_ProjectSettings_property_layer_names/2d_physics/layer_20>`                                                               | ``""``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_21<class_ProjectSettings_property_layer_names/2d_physics/layer_21>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_22<class_ProjectSettings_property_layer_names/2d_physics/layer_22>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_23<class_ProjectSettings_property_layer_names/2d_physics/layer_23>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_24<class_ProjectSettings_property_layer_names/2d_physics/layer_24>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_25<class_ProjectSettings_property_layer_names/2d_physics/layer_25>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_26<class_ProjectSettings_property_layer_names/2d_physics/layer_26>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_27<class_ProjectSettings_property_layer_names/2d_physics/layer_27>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_28<class_ProjectSettings_property_layer_names/2d_physics/layer_28>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_29<class_ProjectSettings_property_layer_names/2d_physics/layer_29>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_3<class_ProjectSettings_property_layer_names/2d_physics/layer_3>`                                                                 | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_30<class_ProjectSettings_property_layer_names/2d_physics/layer_30>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_31<class_ProjectSettings_property_layer_names/2d_physics/layer_31>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_32<class_ProjectSettings_property_layer_names/2d_physics/layer_32>`                                                               | ``""``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_4<class_ProjectSettings_property_layer_names/2d_physics/layer_4>`                                                                 | ``""``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -401,7 +425,31 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_20<class_ProjectSettings_property_layer_names/3d_physics/layer_20>`                                                               | ``""``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_21<class_ProjectSettings_property_layer_names/3d_physics/layer_21>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_22<class_ProjectSettings_property_layer_names/3d_physics/layer_22>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_23<class_ProjectSettings_property_layer_names/3d_physics/layer_23>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_24<class_ProjectSettings_property_layer_names/3d_physics/layer_24>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_25<class_ProjectSettings_property_layer_names/3d_physics/layer_25>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_26<class_ProjectSettings_property_layer_names/3d_physics/layer_26>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_27<class_ProjectSettings_property_layer_names/3d_physics/layer_27>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_28<class_ProjectSettings_property_layer_names/3d_physics/layer_28>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_29<class_ProjectSettings_property_layer_names/3d_physics/layer_29>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_3<class_ProjectSettings_property_layer_names/3d_physics/layer_3>`                                                                 | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_30<class_ProjectSettings_property_layer_names/3d_physics/layer_30>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_31<class_ProjectSettings_property_layer_names/3d_physics/layer_31>`                                                               | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_32<class_ProjectSettings_property_layer_names/3d_physics/layer_32>`                                                               | ``""``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_4<class_ProjectSettings_property_layer_names/3d_physics/layer_4>`                                                                 | ``""``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -2520,6 +2568,114 @@ Optional name for the 2D physics layer 20.
 
 ----
 
+.. _class_ProjectSettings_property_layer_names/2d_physics/layer_21:
+
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_21**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 2D physics layer 21.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/2d_physics/layer_22:
+
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_22**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 2D physics layer 22.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/2d_physics/layer_23:
+
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_23**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 2D physics layer 23.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/2d_physics/layer_24:
+
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_24**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 2D physics layer 24.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/2d_physics/layer_25:
+
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_25**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 2D physics layer 25.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/2d_physics/layer_26:
+
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_26**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 2D physics layer 26.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/2d_physics/layer_27:
+
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_27**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 2D physics layer 27.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/2d_physics/layer_28:
+
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_28**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 2D physics layer 28.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/2d_physics/layer_29:
+
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_29**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 2D physics layer 29.
+
+----
+
 .. _class_ProjectSettings_property_layer_names/2d_physics/layer_3:
 
 - :ref:`String<class_String>` **layer_names/2d_physics/layer_3**
@@ -2529,6 +2685,42 @@ Optional name for the 2D physics layer 20.
 +-----------+--------+
 
 Optional name for the 2D physics layer 3.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/2d_physics/layer_30:
+
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_30**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 2D physics layer 30.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/2d_physics/layer_31:
+
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_31**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 2D physics layer 31.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/2d_physics/layer_32:
+
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_32**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 2D physics layer 32.
 
 ----
 
@@ -3000,6 +3192,114 @@ Optional name for the 3D physics layer 20.
 
 ----
 
+.. _class_ProjectSettings_property_layer_names/3d_physics/layer_21:
+
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_21**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 3D physics layer 21.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/3d_physics/layer_22:
+
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_22**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 3D physics layer 22.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/3d_physics/layer_23:
+
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_23**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 3D physics layer 23.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/3d_physics/layer_24:
+
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_24**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 3D physics layer 24.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/3d_physics/layer_25:
+
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_25**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 3D physics layer 25.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/3d_physics/layer_26:
+
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_26**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 3D physics layer 26.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/3d_physics/layer_27:
+
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_27**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 3D physics layer 27.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/3d_physics/layer_28:
+
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_28**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 3D physics layer 28.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/3d_physics/layer_29:
+
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_29**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 3D physics layer 29.
+
+----
+
 .. _class_ProjectSettings_property_layer_names/3d_physics/layer_3:
 
 - :ref:`String<class_String>` **layer_names/3d_physics/layer_3**
@@ -3009,6 +3309,42 @@ Optional name for the 3D physics layer 20.
 +-----------+--------+
 
 Optional name for the 3D physics layer 3.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/3d_physics/layer_30:
+
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_30**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 3D physics layer 30.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/3d_physics/layer_31:
+
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_31**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 3D physics layer 31.
+
+----
+
+.. _class_ProjectSettings_property_layer_names/3d_physics/layer_32:
+
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_32**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Optional name for the 3D physics layer 32.
 
 ----
 

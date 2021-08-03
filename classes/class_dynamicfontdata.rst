@@ -21,7 +21,7 @@ Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a ve
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`_
 
 Properties
 ----------

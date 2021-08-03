@@ -25,9 +25,9 @@ See also :ref:`AudioEffectSpectrumAnalyzer<class_AudioEffectSpectrumAnalyzer>` f
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/526 <https://godotengine.org/asset-library/asset/526>`_
+- `Audio Generator Demo <https://godotengine.org/asset-library/asset/526>`_
 
-- `Godot 3.2 will get new audio features <Godot 3.2 will get new audio features>`_
+- `https://godotengine.org/article/godot-32-will-get-new-audio-features <Godot 3.2 will get new audio features>`_
 
 Properties
 ----------

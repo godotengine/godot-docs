@@ -21,7 +21,7 @@ Description
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/146 <https://godotengine.org/asset-library/asset/146>`_
+- `Tween Demo <https://godotengine.org/asset-library/asset/146>`_
 
 Properties
 ----------

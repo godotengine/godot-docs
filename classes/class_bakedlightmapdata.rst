@@ -104,7 +104,9 @@ Property Descriptions
 | *Getter*  | get_energy()      |
 +-----------+-------------------+
 
-Global energy multiplier for baked and dynamic capture objects.
+Global energy multiplier for baked and dynamic capture objects. This can be changed at run-time without having to bake lightmaps again.
+
+To adjust only the energy of indirect lighting (without affecting direct lighting or emissive materials), adjust :ref:`BakedLightmap.bounce_indirect_energy<class_BakedLightmap_property_bounce_indirect_energy>` and bake lightmaps again.
 
 ----
 

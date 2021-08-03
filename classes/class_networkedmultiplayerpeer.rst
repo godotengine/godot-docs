@@ -27,7 +27,7 @@ Tutorials
 
 - :doc:`../tutorials/networking/high_level_multiplayer`
 
-- `https://godotengine.org/asset-library/asset/537 <https://godotengine.org/asset-library/asset/537>`_
+- `WebRTC Signaling Demo <https://godotengine.org/asset-library/asset/537>`_
 
 Properties
 ----------

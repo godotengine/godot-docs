@@ -25,7 +25,7 @@ This node implements all the physics logic needed to simulate a car. It is based
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/524 <https://godotengine.org/asset-library/asset/524>`_
+- `3D Truck Town Demo <https://godotengine.org/asset-library/asset/524>`_
 
 Properties
 ----------

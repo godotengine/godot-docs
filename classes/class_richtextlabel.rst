@@ -29,9 +29,9 @@ Tutorials
 
 - :doc:`../tutorials/gui/bbcode_in_richtextlabel`
 
-- `https://godotengine.org/asset-library/asset/132 <https://godotengine.org/asset-library/asset/132>`_
+- `GUI Rich Text/BBcode Demo <https://godotengine.org/asset-library/asset/132>`_
 
-- `https://godotengine.org/asset-library/asset/677 <https://godotengine.org/asset-library/asset/677>`_
+- `OS Test Demo <https://godotengine.org/asset-library/asset/677>`_
 
 Properties
 ----------

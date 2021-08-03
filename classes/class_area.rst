@@ -21,9 +21,9 @@ Description
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/125 <https://godotengine.org/asset-library/asset/125>`_
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`_
 
-- `https://godotengine.org/asset-library/asset/127 <https://godotengine.org/asset-library/asset/127>`_
+- `GUI in 3D Demo <https://godotengine.org/asset-library/asset/127>`_
 
 Properties
 ----------

@@ -18,6 +18,8 @@ Description
 
 Baked lightmaps are an alternative workflow for adding indirect (or baked) lighting to a scene. Unlike the :ref:`GIProbe<class_GIProbe>` approach, baked lightmaps work fine on low-end PCs and mobile devices as they consume almost no resources in run-time.
 
+**Note:** Due to how lightmaps work, most properties only have a visible effect once lightmaps are baked again.
+
 Tutorials
 ---------
 
@@ -32,6 +34,8 @@ Properties
 | :ref:`int<class_int>`                                      | :ref:`atlas_max_size<class_BakedLightmap_property_atlas_max_size>`                                                   | ``4096``                  |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
 | :ref:`float<class_float>`                                  | :ref:`bias<class_BakedLightmap_property_bias>`                                                                       | ``0.005``                 |
++------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`float<class_float>`                                  | :ref:`bounce_indirect_energy<class_BakedLightmap_property_bounce_indirect_energy>`                                   | ``1.0``                   |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
 | :ref:`int<class_int>`                                      | :ref:`bounces<class_BakedLightmap_property_bounces>`                                                                 | ``3``                     |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
@@ -209,7 +213,25 @@ Maximum size of each lightmap layer, only used when :ref:`atlas_generate<class_B
 | *Getter*  | get_bias()      |
 +-----------+-----------------+
 
-Raycasting bias used during baking to avoid floating point precission issues.
+Raycasting bias used during baking to avoid floating point precision issues.
+
+----
+
+.. _class_BakedLightmap_property_bounce_indirect_energy:
+
+- :ref:`float<class_float>` **bounce_indirect_energy**
+
++-----------+-----------------------------------+
+| *Default* | ``1.0``                           |
++-----------+-----------------------------------+
+| *Setter*  | set_bounce_indirect_energy(value) |
++-----------+-----------------------------------+
+| *Getter*  | get_bounce_indirect_energy()      |
++-----------+-----------------------------------+
+
+The energy multiplier for each bounce. Higher values will make indirect lighting brighter. A value of ``1.0`` represents physically accurate behavior, but higher values can be used to make indirect lighting propagate more visibly when using a low number of bounces. This can be used to speed up bake times by lowering the number of :ref:`bounces<class_BakedLightmap_property_bounces>` then increasing :ref:`bounce_indirect_energy<class_BakedLightmap_property_bounce_indirect_energy>`. Unlike :ref:`BakedLightmapData.energy<class_BakedLightmapData_property_energy>`, this property does not affect direct lighting emitted by light nodes, emissive materials and the environment.
+
+**Note:** :ref:`bounce_indirect_energy<class_BakedLightmap_property_bounce_indirect_energy>` only has an effect if :ref:`bounces<class_BakedLightmap_property_bounces>` is set to a value greater than or equal to ``1``.
 
 ----
 
@@ -225,7 +247,7 @@ Raycasting bias used during baking to avoid floating point precission issues.
 | *Getter*  | get_bounces()      |
 +-----------+--------------------+
 
-Number of light bounces that are taken into account during baking.
+Number of light bounces that are taken into account during baking. See also :ref:`bounce_indirect_energy<class_BakedLightmap_property_bounce_indirect_energy>`.
 
 ----
 

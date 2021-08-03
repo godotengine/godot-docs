@@ -23,7 +23,7 @@ It uses the many :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` classes
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/677 <https://godotengine.org/asset-library/asset/677>`_
+- `OS Test Demo <https://godotengine.org/asset-library/asset/677>`_
 
 Methods
 -------

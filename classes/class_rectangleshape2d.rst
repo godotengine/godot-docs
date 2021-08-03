@@ -21,9 +21,9 @@ Rectangle shape for 2D collisions. This shape is useful for modeling box-like 2D
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/121 <https://godotengine.org/asset-library/asset/121>`_
+- `2D Pong Demo <https://godotengine.org/asset-library/asset/121>`_
 
-- `https://godotengine.org/asset-library/asset/113 <https://godotengine.org/asset-library/asset/113>`_
+- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/113>`_
 
 Properties
 ----------

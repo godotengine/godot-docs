@@ -23,13 +23,13 @@ Mesh is a type of :ref:`Resource<class_Resource>` that contains vertex array-bas
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/123 <https://godotengine.org/asset-library/asset/123>`_
+- `3D Material Testers Demo <https://godotengine.org/asset-library/asset/123>`_
 
-- `https://godotengine.org/asset-library/asset/126 <https://godotengine.org/asset-library/asset/126>`_
+- `3D Kinematic Character Demo <https://godotengine.org/asset-library/asset/126>`_
 
-- `https://godotengine.org/asset-library/asset/125 <https://godotengine.org/asset-library/asset/125>`_
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`_
 
-- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`_
 
 Properties
 ----------
@@ -160,6 +160,8 @@ enum **BlendShapeMode**:
 
 .. _class_Mesh_constant_ARRAY_FLAG_USE_16_BIT_BONES:
 
+.. _class_Mesh_constant_ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION:
+
 .. _class_Mesh_constant_ARRAY_COMPRESS_DEFAULT:
 
 enum **ArrayFormat**:
@@ -206,7 +208,9 @@ enum **ArrayFormat**:
 
 - **ARRAY_FLAG_USE_16_BIT_BONES** = **524288** --- Flag used to mark that the array uses 16-bit bones instead of 8-bit.
 
-- **ARRAY_COMPRESS_DEFAULT** = **97280** --- Used to set flags :ref:`ARRAY_COMPRESS_VERTEX<class_Mesh_constant_ARRAY_COMPRESS_VERTEX>`, :ref:`ARRAY_COMPRESS_NORMAL<class_Mesh_constant_ARRAY_COMPRESS_NORMAL>`, :ref:`ARRAY_COMPRESS_TANGENT<class_Mesh_constant_ARRAY_COMPRESS_TANGENT>`, :ref:`ARRAY_COMPRESS_COLOR<class_Mesh_constant_ARRAY_COMPRESS_COLOR>`, :ref:`ARRAY_COMPRESS_TEX_UV<class_Mesh_constant_ARRAY_COMPRESS_TEX_UV>`, :ref:`ARRAY_COMPRESS_TEX_UV2<class_Mesh_constant_ARRAY_COMPRESS_TEX_UV2>` and :ref:`ARRAY_COMPRESS_WEIGHTS<class_Mesh_constant_ARRAY_COMPRESS_WEIGHTS>` quickly.
+- **ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION** = **2097152** --- Flag used to mark that the array uses an octahedral representation of normal and tangent vectors rather than cartesian.
+
+- **ARRAY_COMPRESS_DEFAULT** = **2194432** --- Used to set flags :ref:`ARRAY_COMPRESS_VERTEX<class_Mesh_constant_ARRAY_COMPRESS_VERTEX>`, :ref:`ARRAY_COMPRESS_NORMAL<class_Mesh_constant_ARRAY_COMPRESS_NORMAL>`, :ref:`ARRAY_COMPRESS_TANGENT<class_Mesh_constant_ARRAY_COMPRESS_TANGENT>`, :ref:`ARRAY_COMPRESS_COLOR<class_Mesh_constant_ARRAY_COMPRESS_COLOR>`, :ref:`ARRAY_COMPRESS_TEX_UV<class_Mesh_constant_ARRAY_COMPRESS_TEX_UV>`, :ref:`ARRAY_COMPRESS_TEX_UV2<class_Mesh_constant_ARRAY_COMPRESS_TEX_UV2>`, :ref:`ARRAY_COMPRESS_WEIGHTS<class_Mesh_constant_ARRAY_COMPRESS_WEIGHTS>`, and :ref:`ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION<class_Mesh_constant_ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION>` quickly.
 
 ----
 

@@ -21,9 +21,9 @@ This class is meant to be used with :ref:`AudioStreamGenerator<class_AudioStream
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/526 <https://godotengine.org/asset-library/asset/526>`_
+- `Audio Generator Demo <https://godotengine.org/asset-library/asset/526>`_
 
-- `Godot 3.2 will get new audio features <Godot 3.2 will get new audio features>`_
+- `https://godotengine.org/article/godot-32-will-get-new-audio-features <Godot 3.2 will get new audio features>`_
 
 Methods
 -------

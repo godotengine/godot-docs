@@ -21,7 +21,7 @@ Sphere shape for 3D collisions, which can be set into a :ref:`PhysicsBody<class_
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/675 <https://godotengine.org/asset-library/asset/675>`_
+- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`_
 
 Properties
 ----------

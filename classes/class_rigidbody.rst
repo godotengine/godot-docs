@@ -33,9 +33,9 @@ Tutorials
 
 - :doc:`../tutorials/physics/physics_introduction`
 
-- `https://godotengine.org/asset-library/asset/524 <https://godotengine.org/asset-library/asset/524>`_
+- `3D Truck Town Demo <https://godotengine.org/asset-library/asset/524>`_
 
-- `https://godotengine.org/asset-library/asset/675 <https://godotengine.org/asset-library/asset/675>`_
+- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`_
 
 Properties
 ----------

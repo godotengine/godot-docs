@@ -21,11 +21,11 @@ Panel is a :ref:`Control<class_Control>` that displays an opaque background. It'
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/520 <https://godotengine.org/asset-library/asset/520>`_
+- `2D Role Playing Game Demo <https://godotengine.org/asset-library/asset/520>`_
 
-- `https://godotengine.org/asset-library/asset/516 <https://godotengine.org/asset-library/asset/516>`_
+- `2D Finite State Machine Demo <https://godotengine.org/asset-library/asset/516>`_
 
-- `https://godotengine.org/asset-library/asset/523 <https://godotengine.org/asset-library/asset/523>`_
+- `3D Inverse Kinematics Demo <https://godotengine.org/asset-library/asset/523>`_
 
 Theme Properties
 ----------------

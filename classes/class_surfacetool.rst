@@ -39,7 +39,7 @@ See also :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`ImmediateGeometry<class_Immedi
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`_
 
 Methods
 -------
@@ -73,7 +73,7 @@ Methods
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`clear<class_SurfaceTool_method_clear>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ArrayMesh<class_ArrayMesh>` | :ref:`commit<class_SurfaceTool_method_commit>` **(** :ref:`ArrayMesh<class_ArrayMesh>` existing=null, :ref:`int<class_int>` flags=97280 **)**                                                                                                                                                                                                                                                                                                                                              |
+| :ref:`ArrayMesh<class_ArrayMesh>` | :ref:`commit<class_SurfaceTool_method_commit>` **(** :ref:`ArrayMesh<class_ArrayMesh>` existing=null, :ref:`int<class_int>` flags=2194432 **)**                                                                                                                                                                                                                                                                                                                                            |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`         | :ref:`commit_to_arrays<class_SurfaceTool_method_commit_to_arrays>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                             |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -213,11 +213,11 @@ Clear all information passed into the surface tool so far.
 
 .. _class_SurfaceTool_method_commit:
 
-- :ref:`ArrayMesh<class_ArrayMesh>` **commit** **(** :ref:`ArrayMesh<class_ArrayMesh>` existing=null, :ref:`int<class_int>` flags=97280 **)**
+- :ref:`ArrayMesh<class_ArrayMesh>` **commit** **(** :ref:`ArrayMesh<class_ArrayMesh>` existing=null, :ref:`int<class_int>` flags=2194432 **)**
 
 Returns a constructed :ref:`ArrayMesh<class_ArrayMesh>` from current information passed in. If an existing :ref:`ArrayMesh<class_ArrayMesh>` is passed in as an argument, will add an extra surface to the existing :ref:`ArrayMesh<class_ArrayMesh>`.
 
-Default flag is :ref:`Mesh.ARRAY_COMPRESS_DEFAULT<class_Mesh_constant_ARRAY_COMPRESS_DEFAULT>`. See ``ARRAY_COMPRESS_*`` constants in :ref:`ArrayFormat<enum_Mesh_ArrayFormat>` for other flags.
+Default flag is :ref:`Mesh.ARRAY_COMPRESS_DEFAULT<class_Mesh_constant_ARRAY_COMPRESS_DEFAULT>` if compression is enabled. If compression is disabled the default flag is :ref:`Mesh.ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION<class_Mesh_constant_ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION>`. See ``ARRAY_COMPRESS_*`` constants in :ref:`ArrayFormat<enum_Mesh_ArrayFormat>` for other flags.
 
 ----
 

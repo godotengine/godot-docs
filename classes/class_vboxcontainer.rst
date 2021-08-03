@@ -23,7 +23,7 @@ Vertical box container. See :ref:`BoxContainer<class_BoxContainer>`.
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`_
 
 Theme Properties
 ----------------

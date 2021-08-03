@@ -41,7 +41,7 @@ SkeletonIK is used to place the end bone of a :ref:`Skeleton<class_Skeleton>` bo
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/523 <https://godotengine.org/asset-library/asset/523>`_
+- `3D Inverse Kinematics Demo <https://godotengine.org/asset-library/asset/523>`_
 
 Properties
 ----------

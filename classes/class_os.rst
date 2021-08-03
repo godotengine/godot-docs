@@ -21,7 +21,7 @@ Operating System functions. OS wraps the most common functionality to communicat
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/677 <https://godotengine.org/asset-library/asset/677>`_
+- `OS Test Demo <https://godotengine.org/asset-library/asset/677>`_
 
 Properties
 ----------

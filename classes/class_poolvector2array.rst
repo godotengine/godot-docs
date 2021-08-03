@@ -21,7 +21,7 @@ An :ref:`Array<class_Array>` specifically designed to hold :ref:`Vector2<class_V
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/519 <https://godotengine.org/asset-library/asset/519>`_
+- `2D Navigation Astar Demo <https://godotengine.org/asset-library/asset/519>`_
 
 Methods
 -------

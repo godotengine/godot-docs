@@ -25,11 +25,11 @@ Note that the ``Camera2D`` node's ``position`` doesn't represent the actual posi
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/120 <https://godotengine.org/asset-library/asset/120>`_
+- `2D Platformer Demo <https://godotengine.org/asset-library/asset/120>`_
 
-- `https://godotengine.org/asset-library/asset/112 <https://godotengine.org/asset-library/asset/112>`_
+- `2D Isometric Demo <https://godotengine.org/asset-library/asset/112>`_
 
-- `https://godotengine.org/asset-library/asset/110 <https://godotengine.org/asset-library/asset/110>`_
+- `2D HDR Demo <https://godotengine.org/asset-library/asset/110>`_
 
 Properties
 ----------

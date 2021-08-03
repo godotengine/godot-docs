@@ -37,7 +37,7 @@ Tutorials
 
 - :doc:`../tutorials/2d/custom_drawing_in_2d`
 
-- `https://godotengine.org/asset-library/asset/528 <https://godotengine.org/asset-library/asset/528>`_
+- `Audio Spectrum Demo <https://godotengine.org/asset-library/asset/528>`_
 
 Properties
 ----------

@@ -829,6 +829,8 @@ Converts a standard RGBE (Red Green Blue Exponent) image to an sRGB image.
 
 Saves the image as an EXR file to ``path``. If ``grayscale`` is ``true`` and the image has only one channel, it will be saved explicitly as monochrome rather than one red channel. This function will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` if Godot was compiled without the TinyEXR module.
 
+**Note:** The TinyEXR module is disabled in non-editor builds, which means :ref:`save_exr<class_Image_method_save_exr>` will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` when it is called from an exported project.
+
 ----
 
 .. _class_Image_method_save_png:

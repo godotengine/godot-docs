@@ -31,6 +31,11 @@ To generate a random float number (within a given range) based on a time-dependa
 
 **Note:** The default values of :ref:`seed<class_RandomNumberGenerator_property_seed>` and :ref:`state<class_RandomNumberGenerator_property_state>` properties are pseudo-random, and changes when calling :ref:`randomize<class_RandomNumberGenerator_method_randomize>`. The ``0`` value documented here is a placeholder, and not the actual default seed.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/math/random_number_generation`
+
 Properties
 ----------
 

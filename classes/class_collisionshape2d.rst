@@ -23,11 +23,11 @@ Tutorials
 
 - :doc:`../tutorials/physics/physics_introduction`
 
-- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
+- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`_
 
-- `https://godotengine.org/asset-library/asset/121 <https://godotengine.org/asset-library/asset/121>`_
+- `2D Pong Demo <https://godotengine.org/asset-library/asset/121>`_
 
-- `https://godotengine.org/asset-library/asset/113 <https://godotengine.org/asset-library/asset/113>`_
+- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/113>`_
 
 Properties
 ----------

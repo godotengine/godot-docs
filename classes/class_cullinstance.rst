@@ -31,11 +31,13 @@ Objects that are not ``Static`` or ``Dynamic`` can be freely created and deleted
 Properties
 ----------
 
-+-------------------------------------------------+-----------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                         | :ref:`include_in_bound<class_CullInstance_property_include_in_bound>` | ``true`` |
-+-------------------------------------------------+-----------------------------------------------------------------------+----------+
-| :ref:`PortalMode<enum_CullInstance_PortalMode>` | :ref:`portal_mode<class_CullInstance_property_portal_mode>`           | ``0``    |
-+-------------------------------------------------+-----------------------------------------------------------------------+----------+
++-------------------------------------------------+---------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                           | :ref:`autoplace_priority<class_CullInstance_property_autoplace_priority>` | ``0``    |
++-------------------------------------------------+---------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                         | :ref:`include_in_bound<class_CullInstance_property_include_in_bound>`     | ``true`` |
++-------------------------------------------------+---------------------------------------------------------------------------+----------+
+| :ref:`PortalMode<enum_CullInstance_PortalMode>` | :ref:`portal_mode<class_CullInstance_property_portal_mode>`               | ``0``    |
++-------------------------------------------------+---------------------------------------------------------------------------+----------+
 
 Enumerations
 ------------
@@ -70,6 +72,26 @@ enum **PortalMode**:
 
 Property Descriptions
 ---------------------
+
+.. _class_CullInstance_property_autoplace_priority:
+
+- :ref:`int<class_int>` **autoplace_priority**
+
++-----------+--------------------------------------+
+| *Default* | ``0``                                |
++-----------+--------------------------------------+
+| *Setter*  | set_portal_autoplace_priority(value) |
++-----------+--------------------------------------+
+| *Getter*  | get_portal_autoplace_priority()      |
++-----------+--------------------------------------+
+
+When set to ``0``, ``CullInstance``\ s will be autoplaced in the :ref:`Room<class_Room>` with the highest priority.
+
+When set to a value other than ``0``, the system will attempt to autoplace in a :ref:`Room<class_Room>` with the ``autoplace_priority``, if it is present.
+
+This can be used to control autoplacement of building exteriors in an outer :ref:`RoomGroup<class_RoomGroup>`.
+
+----
 
 .. _class_CullInstance_property_include_in_bound:
 

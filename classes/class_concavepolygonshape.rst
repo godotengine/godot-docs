@@ -23,7 +23,7 @@ Note: when used for collision, ``ConcavePolygonShape`` is intended to work with 
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/675 <https://godotengine.org/asset-library/asset/675>`_
+- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`_
 
 Methods
 -------

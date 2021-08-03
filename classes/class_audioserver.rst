@@ -23,11 +23,11 @@ Tutorials
 
 - :doc:`../tutorials/audio/audio_buses`
 
-- `https://godotengine.org/asset-library/asset/525 <https://godotengine.org/asset-library/asset/525>`_
+- `Audio Device Changer Demo <https://godotengine.org/asset-library/asset/525>`_
 
-- `https://godotengine.org/asset-library/asset/527 <https://godotengine.org/asset-library/asset/527>`_
+- `Audio Mic Record Demo <https://godotengine.org/asset-library/asset/527>`_
 
-- `https://godotengine.org/asset-library/asset/528 <https://godotengine.org/asset-library/asset/528>`_
+- `Audio Spectrum Demo <https://godotengine.org/asset-library/asset/528>`_
 
 Properties
 ----------

@@ -21,7 +21,7 @@ A node that displays a 2D texture. The texture displayed can be a region from a 
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/148 <https://godotengine.org/asset-library/asset/148>`_
+- `Instancing Demo <https://godotengine.org/asset-library/asset/148>`_
 
 Properties
 ----------

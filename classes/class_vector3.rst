@@ -27,11 +27,11 @@ Tutorials
 
 - :doc:`../tutorials/math/vectors_advanced`
 
-- `https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab <https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`_
+- `3Blue1Brown Essence of Linear Algebra <https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`_
 
-- `https://godotengine.org/asset-library/asset/584 <https://godotengine.org/asset-library/asset/584>`_
+- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/584>`_
 
-- `https://github.com/godotengine/godot-demo-projects/tree/master/3d <https://github.com/godotengine/godot-demo-projects/tree/master/3d>`_
+- `All 3D Demos <https://github.com/godotengine/godot-demo-projects/tree/master/3d>`_
 
 Properties
 ----------

@@ -23,7 +23,7 @@ Can play, loop, pause a scroll through audio. See :ref:`AudioStream<class_AudioS
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/526 <https://godotengine.org/asset-library/asset/526>`_
+- `Audio Generator Demo <https://godotengine.org/asset-library/asset/526>`_
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

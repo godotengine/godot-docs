@@ -23,7 +23,7 @@ Used to draw icons and sprites in a user interface. The texture's placement can 
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`_
 
 Properties
 ----------

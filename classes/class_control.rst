@@ -43,7 +43,7 @@ Tutorials
 
 - :doc:`../tutorials/gui/control_node_gallery`
 
-- `https://github.com/godotengine/godot-demo-projects/tree/master/gui <https://github.com/godotengine/godot-demo-projects/tree/master/gui>`_
+- `All GUI Demos <https://github.com/godotengine/godot-demo-projects/tree/master/gui>`_
 
 Properties
 ----------

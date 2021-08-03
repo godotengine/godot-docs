@@ -31,9 +31,9 @@ The center of mass is always located at the node's origin without taking into ac
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/119 <https://godotengine.org/asset-library/asset/119>`_
+- `2D Physics Platformer Demo <https://godotengine.org/asset-library/asset/119>`_
 
-- `https://godotengine.org/asset-library/asset/148 <https://godotengine.org/asset-library/asset/148>`_
+- `Instancing Demo <https://godotengine.org/asset-library/asset/148>`_
 
 Properties
 ----------

@@ -115,7 +115,7 @@ You can use one or all of these methods to allow your game or app to support a w
 Tutorials
 ---------
 
-- `https://www.snopekgames.com/blog/2020/how-make-vr-game-webxr-godot <https://www.snopekgames.com/blog/2020/how-make-vr-game-webxr-godot>`_
+- `How to make a VR game for WebXR with Godot <https://www.snopekgames.com/blog/2020/how-make-vr-game-webxr-godot>`_
 
 Properties
 ----------

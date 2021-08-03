@@ -23,13 +23,13 @@ To create a ViewportTexture in code, use the :ref:`Viewport.get_texture<class_Vi
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/127 <https://godotengine.org/asset-library/asset/127>`_
+- `GUI in 3D Demo <https://godotengine.org/asset-library/asset/127>`_
 
-- `https://godotengine.org/asset-library/asset/128 <https://godotengine.org/asset-library/asset/128>`_
+- `3D in 2D Demo <https://godotengine.org/asset-library/asset/128>`_
 
-- `https://godotengine.org/asset-library/asset/129 <https://godotengine.org/asset-library/asset/129>`_
+- `2D in 3D Demo <https://godotengine.org/asset-library/asset/129>`_
 
-- `https://godotengine.org/asset-library/asset/586 <https://godotengine.org/asset-library/asset/586>`_
+- `3D Viewport Scaling Demo <https://godotengine.org/asset-library/asset/586>`_
 
 Properties
 ----------

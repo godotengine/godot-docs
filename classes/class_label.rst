@@ -23,7 +23,7 @@ Label displays plain text on the screen. It gives you control over the horizonta
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
+- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`_
 
 Properties
 ----------

@@ -21,7 +21,7 @@ Displays a rectangle filled with a solid :ref:`color<class_ColorRect_property_co
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
+- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`_
 
 Properties
 ----------
