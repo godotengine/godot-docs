@@ -23,7 +23,7 @@ Panel container type. This container fits controls inside of the delimited area 
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/520 <https://godotengine.org/asset-library/asset/520>`_
+- `2D Role Playing Game Demo <https://godotengine.org/asset-library/asset/520>`_
 
 Theme Properties
 ----------------

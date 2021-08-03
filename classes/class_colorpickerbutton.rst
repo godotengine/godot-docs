@@ -23,9 +23,9 @@ See also :ref:`BaseButton<class_BaseButton>` which contains common properties an
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/133 <https://godotengine.org/asset-library/asset/133>`_
+- `GUI Drag And Drop Demo <https://godotengine.org/asset-library/asset/133>`_
 
-- `https://godotengine.org/asset-library/asset/517 <https://godotengine.org/asset-library/asset/517>`_
+- `2D GD Paint Demo <https://godotengine.org/asset-library/asset/517>`_
 
 Properties
 ----------

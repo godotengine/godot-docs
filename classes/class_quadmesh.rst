@@ -21,9 +21,9 @@ Class representing a square :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/127 <https://godotengine.org/asset-library/asset/127>`_
+- `GUI in 3D Demo <https://godotengine.org/asset-library/asset/127>`_
 
-- `https://godotengine.org/asset-library/asset/129 <https://godotengine.org/asset-library/asset/129>`_
+- `2D in 3D Demo <https://godotengine.org/asset-library/asset/129>`_
 
 Properties
 ----------

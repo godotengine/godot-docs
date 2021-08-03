@@ -25,15 +25,15 @@ Tutorials
 
 - :doc:`../tutorials/audio/audio_streams`
 
-- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
+- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`_
 
-- `https://godotengine.org/asset-library/asset/525 <https://godotengine.org/asset-library/asset/525>`_
+- `Audio Device Changer Demo <https://godotengine.org/asset-library/asset/525>`_
 
-- `https://godotengine.org/asset-library/asset/526 <https://godotengine.org/asset-library/asset/526>`_
+- `Audio Generator Demo <https://godotengine.org/asset-library/asset/526>`_
 
-- `https://godotengine.org/asset-library/asset/527 <https://godotengine.org/asset-library/asset/527>`_
+- `Audio Mic Record Demo <https://godotengine.org/asset-library/asset/527>`_
 
-- `https://godotengine.org/asset-library/asset/528 <https://godotengine.org/asset-library/asset/528>`_
+- `Audio Spectrum Demo <https://godotengine.org/asset-library/asset/528>`_
 
 Properties
 ----------

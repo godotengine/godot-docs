@@ -23,11 +23,11 @@ Additionally, a constant linear or angular velocity can be set for the static bo
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/675 <https://godotengine.org/asset-library/asset/675>`_
+- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`_
 
-- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`_
 
-- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`_
 
 Properties
 ----------

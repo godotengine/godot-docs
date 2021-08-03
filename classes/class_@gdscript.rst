@@ -220,11 +220,15 @@ Constants
 
 - **PI** = **3.141593** --- Constant that represents how many times the diameter of a circle fits around its perimeter. This is equivalent to ``TAU / 2``.
 
-- **TAU** = **6.283185** --- The circle constant, the circumference of the unit circle in radians.
+- **TAU** = **6.283185** --- The circle constant, the circumference of the unit circle in radians. This is equivalent to ``PI * 2``, or 360 degrees in rotations.
 
-- **INF** = **inf** --- Positive infinity. For negative infinity, use -INF.
+- **INF** = **inf** --- Positive floating-point infinity. This is the result of floating-point division when the divisor is ``0.0``. For negative infinity, use ``-INF``. Dividing by ``-0.0`` will result in negative infinity if the numerator is positive, so dividing by ``0.0`` is not the same as dividing by ``-0.0`` (despite ``0.0 == -0.0`` returning ``true``).
 
-- **NAN** = **nan** --- "Not a Number", an invalid value. ``NaN`` has special properties, including that it is not equal to itself. It is output by some invalid operations, such as dividing zero by zero.
+**Note:** Numeric infinity is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer number by ``0`` will not result in :ref:`INF<class_@GDScript_constant_INF>` and will result in a run-time error instead.
+
+- **NAN** = **nan** --- "Not a Number", an invalid floating-point value. :ref:`NAN<class_@GDScript_constant_NAN>` has special properties, including that it is not equal to itself (``NAN == NAN`` returns ``false``). It is output by some invalid operations, such as dividing floating-point ``0.0`` by ``0.0``.
+
+**Note:** "Not a Number" is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer ``0`` by ``0`` will not result in :ref:`NAN<class_@GDScript_constant_NAN>` and will result in a run-time error instead.
 
 Method Descriptions
 -------------------

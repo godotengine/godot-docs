@@ -29,7 +29,7 @@ Tutorials
 
 - :doc:`../tutorials/3d/gi_probes`
 
-- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`_
 
 Properties
 ----------

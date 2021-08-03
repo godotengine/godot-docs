@@ -16,7 +16,7 @@ AudioStreamGenerator
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/526 <https://godotengine.org/asset-library/asset/526>`_
+- `Audio Generator Demo <https://godotengine.org/asset-library/asset/526>`_
 
 Properties
 ----------

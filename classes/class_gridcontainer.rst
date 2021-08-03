@@ -25,7 +25,7 @@ Notice that grid layout will preserve the columns and rows for every size of the
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/677 <https://godotengine.org/asset-library/asset/677>`_
+- `OS Test Demo <https://godotengine.org/asset-library/asset/677>`_
 
 Properties
 ----------

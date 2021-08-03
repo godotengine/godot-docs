@@ -21,7 +21,7 @@ Convex polygon shape resource, which can be added to a :ref:`PhysicsBody<class_P
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/675 <https://godotengine.org/asset-library/asset/675>`_
+- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`_
 
 Properties
 ----------

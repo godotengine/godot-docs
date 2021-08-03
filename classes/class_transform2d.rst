@@ -14,7 +14,7 @@ Transform2D
 Description
 -----------
 
-2×3 matrix (2 rows, 3 columns) used for 2D linear transformations. It can represent transformations such as translation, rotation, or scaling. It consists of a three :ref:`Vector2<class_Vector2>` values: :ref:`x<class_Transform2D_property_x>`, :ref:`y<class_Transform2D_property_y>`, and the :ref:`origin<class_Transform2D_property_origin>`.
+2×3 matrix (2 rows, 3 columns) used for 2D linear transformations. It can represent transformations such as translation, rotation, or scaling. It consists of three :ref:`Vector2<class_Vector2>` values: :ref:`x<class_Transform2D_property_x>`, :ref:`y<class_Transform2D_property_y>`, and the :ref:`origin<class_Transform2D_property_origin>`.
 
 For more information, read the "Matrices and transforms" documentation article.
 
@@ -25,9 +25,9 @@ Tutorials
 
 - :doc:`../tutorials/math/matrices_and_transforms`
 
-- `https://godotengine.org/asset-library/asset/584 <https://godotengine.org/asset-library/asset/584>`_
+- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/584>`_
 
-- `https://godotengine.org/asset-library/asset/583 <https://godotengine.org/asset-library/asset/583>`_
+- `2.5D Demo <https://godotengine.org/asset-library/asset/583>`_
 
 Properties
 ----------

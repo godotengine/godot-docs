@@ -23,7 +23,7 @@ Base resource for audio bus. Applies an audio effect on the bus that the resourc
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/527 <https://godotengine.org/asset-library/asset/527>`_
+- `Audio Mic Record Demo <https://godotengine.org/asset-library/asset/527>`_
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

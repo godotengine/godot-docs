@@ -23,9 +23,9 @@ Tutorials
 
 - :doc:`../tutorials/animation/animation_tree`
 
-- `https://godotengine.org/asset-library/asset/125 <https://godotengine.org/asset-library/asset/125>`_
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`_
 
-- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`_
 
 Properties
 ----------

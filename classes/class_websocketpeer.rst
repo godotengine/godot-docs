@@ -30,6 +30,8 @@ Methods
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_connected_port<class_WebSocketPeer_method_get_connected_port>` **(** **)** |const|                                      |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`get_current_outbound_buffered_amount<class_WebSocketPeer_method_get_current_outbound_buffered_amount>` **(** **)** |const|  |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` | :ref:`get_write_mode<class_WebSocketPeer_method_get_write_mode>` **(** **)** |const|                                              |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_connected_to_host<class_WebSocketPeer_method_is_connected_to_host>` **(** **)** |const|                                  |
@@ -88,6 +90,14 @@ Returns the IP address of the connected peer.
 Returns the remote port of the connected peer.
 
 **Note:** Not available in the HTML5 export.
+
+----
+
+.. _class_WebSocketPeer_method_get_current_outbound_buffered_amount:
+
+- :ref:`int<class_int>` **get_current_outbound_buffered_amount** **(** **)** |const|
+
+Returns the current amount of data in the outbound websocket buffer. **Note:** HTML5 exports use WebSocket.bufferedAmount, while other platforms use an internal buffer.
 
 ----
 

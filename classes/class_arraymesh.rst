@@ -245,7 +245,7 @@ Adds name for a blend shape that will be added with :ref:`add_surface_from_array
 
 Creates a new surface.
 
-Surfaces are created to be rendered using a ``primitive``, which may be any of the types defined in :ref:`PrimitiveType<enum_Mesh_PrimitiveType>`. (As a note, when using indices, it is recommended to only use points, lines or triangles.) :ref:`Mesh.get_surface_count<class_Mesh_method_get_surface_count>` will become the ``surf_idx`` for this new surface.
+Surfaces are created to be rendered using a ``primitive``, which may be any of the types defined in :ref:`PrimitiveType<enum_Mesh_PrimitiveType>`. (As a note, when using indices, it is recommended to only use points, lines, or triangles.) :ref:`Mesh.get_surface_count<class_Mesh_method_get_surface_count>` will become the ``surf_idx`` for this new surface.
 
 The ``arrays`` argument is an array of arrays. See :ref:`ArrayType<enum_ArrayMesh_ArrayType>` for the values used in this array. For example, ``arrays[0]`` is the array of vertices. That first vertex sub-array is always required; the others are optional. Adding an index array puts this function into "index mode" where the vertex and other arrays become the sources of data and the index array defines the vertex order. All sub-arrays must have the same length as the vertex array or be empty, except for :ref:`ARRAY_INDEX<class_ArrayMesh_constant_ARRAY_INDEX>` if it is used.
 

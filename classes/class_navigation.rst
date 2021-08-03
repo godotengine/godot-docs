@@ -23,7 +23,7 @@ Provides navigation and pathfinding within a collection of :ref:`NavigationMesh<
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/124 <https://godotengine.org/asset-library/asset/124>`_
+- `3D Navmesh Demo <https://godotengine.org/asset-library/asset/124>`_
 
 Properties
 ----------

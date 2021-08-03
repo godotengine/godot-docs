@@ -45,7 +45,7 @@ Tutorials
 
 - :doc:`../getting_started/step_by_step/scenes_and_nodes`
 
-- `https://github.com/godotengine/godot-demo-projects/ <https://github.com/godotengine/godot-demo-projects/>`_
+- `All Demos <https://github.com/godotengine/godot-demo-projects/>`_
 
 Properties
 ----------

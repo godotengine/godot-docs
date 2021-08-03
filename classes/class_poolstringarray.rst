@@ -21,7 +21,7 @@ An :ref:`Array<class_Array>` specifically designed to hold :ref:`String<class_St
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/677 <https://godotengine.org/asset-library/asset/677>`_
+- `OS Test Demo <https://godotengine.org/asset-library/asset/677>`_
 
 Methods
 -------

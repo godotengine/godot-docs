@@ -27,11 +27,11 @@ When naming a Project Settings property, use the full path to the setting includ
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/675 <https://godotengine.org/asset-library/asset/675>`_
+- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`_
 
-- `https://godotengine.org/asset-library/asset/125 <https://godotengine.org/asset-library/asset/125>`_
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`_
 
-- `https://godotengine.org/asset-library/asset/677 <https://godotengine.org/asset-library/asset/677>`_
+- `OS Test Demo <https://godotengine.org/asset-library/asset/677>`_
 
 Properties
 ----------
@@ -237,7 +237,7 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`editor/script_templates_search_path<class_ProjectSettings_property_editor/script_templates_search_path>`                                                       | ``"res://script_templates"``                                                                    |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`editor/search_in_file_extensions<class_ProjectSettings_property_editor/search_in_file_extensions>`                                                             | ``PoolStringArray( "gd", "shader" )``                                                           |
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`editor/search_in_file_extensions<class_ProjectSettings_property_editor/search_in_file_extensions>`                                                             | ``PoolStringArray( "gd", "gdshader", "shader" )``                                               |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`gui/common/default_scroll_deadzone<class_ProjectSettings_property_gui/common/default_scroll_deadzone>`                                                         | ``0``                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -2020,9 +2020,9 @@ Search path for project-specific script templates. Godot will search for script 
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **editor/search_in_file_extensions**
 
-+-----------+---------------------------------------+
-| *Default* | ``PoolStringArray( "gd", "shader" )`` |
-+-----------+---------------------------------------+
++-----------+---------------------------------------------------+
+| *Default* | ``PoolStringArray( "gd", "gdshader", "shader" )`` |
++-----------+---------------------------------------------------+
 
 Text-based file extensions to include in the script editor's "Find in Files" feature. You can add e.g. ``tscn`` if you wish to also parse your scene files, especially if you use built-in scripts which are serialized in the scene files.
 

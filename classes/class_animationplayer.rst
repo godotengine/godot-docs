@@ -29,7 +29,7 @@ Tutorials
 
 - :doc:`../tutorials/2d/2d_sprite_animation`
 
-- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`_
 
 Properties
 ----------

@@ -23,7 +23,7 @@ Counts down a specified interval and emits a signal on reaching 0. Can be set to
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/515 <https://godotengine.org/asset-library/asset/515>`_
+- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`_
 
 Properties
 ----------

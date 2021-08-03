@@ -25,17 +25,17 @@ Tutorials
 
 - :doc:`../tutorials/2d/using_tilemaps`
 
-- `https://godotengine.org/asset-library/asset/120 <https://godotengine.org/asset-library/asset/120>`_
+- `2D Platformer Demo <https://godotengine.org/asset-library/asset/120>`_
 
-- `https://godotengine.org/asset-library/asset/112 <https://godotengine.org/asset-library/asset/112>`_
+- `2D Isometric Demo <https://godotengine.org/asset-library/asset/112>`_
 
-- `https://godotengine.org/asset-library/asset/111 <https://godotengine.org/asset-library/asset/111>`_
+- `2D Hexagonal Demo <https://godotengine.org/asset-library/asset/111>`_
 
-- `https://godotengine.org/asset-library/asset/519 <https://godotengine.org/asset-library/asset/519>`_
+- `2D Navigation Astar Demo <https://godotengine.org/asset-library/asset/519>`_
 
-- `https://godotengine.org/asset-library/asset/520 <https://godotengine.org/asset-library/asset/520>`_
+- `2D Role Playing Game Demo <https://godotengine.org/asset-library/asset/520>`_
 
-- `https://godotengine.org/asset-library/asset/113 <https://godotengine.org/asset-library/asset/113>`_
+- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/113>`_
 
 Properties
 ----------

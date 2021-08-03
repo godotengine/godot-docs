@@ -23,7 +23,7 @@ Simulates rooms of different sizes. Its parameters can be adjusted to simulate t
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`_
 
 Properties
 ----------

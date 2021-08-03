@@ -42,7 +42,7 @@ Using :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` and indices
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/117 <https://godotengine.org/asset-library/asset/117>`_
+- `2D Navigation Demo <https://godotengine.org/asset-library/asset/117>`_
 
 Methods
 -------

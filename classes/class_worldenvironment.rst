@@ -27,11 +27,11 @@ Tutorials
 
 - :doc:`../tutorials/3d/environment_and_post_processing`
 
-- `https://godotengine.org/asset-library/asset/123 <https://godotengine.org/asset-library/asset/123>`_
+- `3D Material Testers Demo <https://godotengine.org/asset-library/asset/123>`_
 
-- `https://godotengine.org/asset-library/asset/110 <https://godotengine.org/asset-library/asset/110>`_
+- `2D HDR Demo <https://godotengine.org/asset-library/asset/110>`_
 
-- `https://godotengine.org/asset-library/asset/678 <https://godotengine.org/asset-library/asset/678>`_
+- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`_
 
 Properties
 ----------

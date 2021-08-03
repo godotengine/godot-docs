@@ -38,7 +38,7 @@ Some examples of NodePaths include the following:
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/520 <https://godotengine.org/asset-library/asset/520>`_
+- `2D Role Playing Game Demo <https://godotengine.org/asset-library/asset/520>`_
 
 Methods
 -------

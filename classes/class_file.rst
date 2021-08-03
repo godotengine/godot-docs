@@ -46,7 +46,7 @@ Tutorials
 
 - :doc:`../getting_started/step_by_step/filesystem`
 
-- `https://godotengine.org/asset-library/asset/676 <https://godotengine.org/asset-library/asset/676>`_
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`_
 
 Properties
 ----------

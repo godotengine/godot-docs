@@ -27,11 +27,11 @@ If you want to supply values in a range of 0 to 255, you should use :ref:`@GDScr
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/517 <https://godotengine.org/asset-library/asset/517>`_
+- `2D GD Paint Demo <https://godotengine.org/asset-library/asset/517>`_
 
-- `https://godotengine.org/asset-library/asset/146 <https://godotengine.org/asset-library/asset/146>`_
+- `Tween Demo <https://godotengine.org/asset-library/asset/146>`_
 
-- `https://godotengine.org/asset-library/asset/133 <https://godotengine.org/asset-library/asset/133>`_
+- `GUI Drag And Drop Demo <https://godotengine.org/asset-library/asset/133>`_
 
 Properties
 ----------

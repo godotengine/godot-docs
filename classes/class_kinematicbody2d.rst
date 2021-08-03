@@ -29,9 +29,9 @@ Tutorials
 
 - :doc:`../tutorials/physics/using_kinematic_body_2d`
 
-- `https://godotengine.org/asset-library/asset/113 <https://godotengine.org/asset-library/asset/113>`_
+- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/113>`_
 
-- `https://godotengine.org/asset-library/asset/120 <https://godotengine.org/asset-library/asset/120>`_
+- `2D Platformer Demo <https://godotengine.org/asset-library/asset/120>`_
 
 Properties
 ----------

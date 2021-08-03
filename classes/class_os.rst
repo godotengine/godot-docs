@@ -21,7 +21,7 @@ Operating System functions. OS wraps the most common functionality to communicat
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/677 <https://godotengine.org/asset-library/asset/677>`_
+- `OS Test Demo <https://godotengine.org/asset-library/asset/677>`_
 
 Properties
 ----------
@@ -934,7 +934,7 @@ Shuts down system MIDI driver.
 
 - void **delay_msec** **(** :ref:`int<class_int>` msec **)** |const|
 
-Delay execution of the current thread by ``msec`` milliseconds. ``usec`` must be greater than or equal to ``0``. Otherwise, :ref:`delay_msec<class_OS_method_delay_msec>` will do nothing and will print an error message.
+Delay execution of the current thread by ``msec`` milliseconds. ``msec`` must be greater than or equal to ``0``. Otherwise, :ref:`delay_msec<class_OS_method_delay_msec>` will do nothing and will print an error message.
 
 ----
 
@@ -1131,7 +1131,7 @@ Returns the path to the current engine executable.
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_granted_permissions** **(** **)** |const|
 
-With this function you can get the list of dangerous permissions that have been granted to the Android application.
+With this function, you can get the list of dangerous permissions that have been granted to the Android application.
 
 **Note:** This method is implemented on Android.
 
@@ -1464,7 +1464,7 @@ Returns the current time zone as a dictionary with the keys: bias and name.
 
 Returns a string that is unique to the device.
 
-**Note:** This string may change without notice if the user reinstalls/upgrades their operating system or changes their hardware. This means it should generally not be used to encrypt persistent data as the data saved prior to an unexpected ID change would become inaccessible. The returned string may also be falsified using external programs, so do not rely on the string returned by :ref:`get_unique_id<class_OS_method_get_unique_id>` for security purposes.
+**Note:** This string may change without notice if the user reinstalls/upgrades their operating system or changes their hardware. This means it should generally not be used to encrypt persistent data as the data saved before an unexpected ID change would become inaccessible. The returned string may also be falsified using external programs, so do not rely on the string returned by :ref:`get_unique_id<class_OS_method_get_unique_id>` for security purposes.
 
 **Note:** Returns an empty string on HTML5 and UWP, as this method isn't implemented on those platforms yet.
 
@@ -1596,7 +1596,7 @@ Returns ``true`` if the environment variable with the name ``variable`` exists.
 
 - :ref:`bool<class_bool>` **has_feature** **(** :ref:`String<class_String>` tag_name **)** |const|
 
-Returns ``true`` if the feature for the given feature tag is supported in the currently running instance, depending on platform, build etc. Can be used to check whether you're currently running a debug build, on a certain platform or arch, etc. Refer to the `Feature Tags <https://docs.godotengine.org/en/3.3/getting_started/workflow/export/feature_tags.html>`_ documentation for more details.
+Returns ``true`` if the feature for the given feature tag is supported in the currently running instance, depending on the platform, build etc. Can be used to check whether you're currently running a debug build, on a certain platform or arch, etc. Refer to the `Feature Tags <https://docs.godotengine.org/en/3.3/getting_started/workflow/export/feature_tags.html>`_ documentation for more details.
 
 **Note:** Tag names are case-sensitive.
 
@@ -1874,7 +1874,7 @@ At the moment this function is only used by ``AudioDriverOpenSL`` to request per
 
 - :ref:`bool<class_bool>` **request_permissions** **(** **)**
 
-With this function you can request dangerous permissions since normal permissions are automatically granted at install time in Android application.
+With this function, you can request dangerous permissions since normal permissions are automatically granted at install time in Android applications.
 
 **Note:** This method is implemented on Android.
 

@@ -21,11 +21,11 @@ Description
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/675 <https://godotengine.org/asset-library/asset/675>`_
+- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`_
 
-- `https://godotengine.org/asset-library/asset/126 <https://godotengine.org/asset-library/asset/126>`_
+- `3D Kinematic Character Demo <https://godotengine.org/asset-library/asset/126>`_
 
-- `https://godotengine.org/asset-library/asset/125 <https://godotengine.org/asset-library/asset/125>`_
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`_
 
 Properties
 ----------

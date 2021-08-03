@@ -23,7 +23,7 @@ This node needs to be used as a child node of :ref:`VehicleBody<class_VehicleBod
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/524 <https://godotengine.org/asset-library/asset/524>`_
+- `3D Truck Town Demo <https://godotengine.org/asset-library/asset/524>`_
 
 Properties
 ----------

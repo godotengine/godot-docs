@@ -23,7 +23,7 @@ Navigation2D provides navigation and pathfinding within a 2D area, specified as 
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/117 <https://godotengine.org/asset-library/asset/117>`_
+- `2D Navigation Demo <https://godotengine.org/asset-library/asset/117>`_
 
 Methods
 -------
