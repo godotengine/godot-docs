@@ -197,6 +197,10 @@ Timer and add the corresponding node. Your scene should now look like this.
 
 .. image:: img/signals_15_scene_tree.png
 
+With the Timer node selected, go to the Inspector and check the **Autostart** property.
+
+.. image:: img/signals_18_timer_autostart.png
+
 Click the script icon next to Sprite to jump back to the scripting workspace.
 
 .. image:: img/signals_16_click_script.png
