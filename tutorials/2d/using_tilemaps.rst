@@ -341,7 +341,7 @@ Tips and tricks
 
 - If you're using a :ref:`Camera2D <class_Camera2D>` to scroll your level, you
   may notice lines appearing between your tiles. To fix this, open Project
-  Settings and enable "Use Pixel Snap" in the "Rendering/Quality" section.
+  Settings and enable "Use Gpu Pixel Snap" in the "Rendering/2d/snapping" section.
 
 - You can flip and rotate tiles using the icons at the top right of the editor.
 
