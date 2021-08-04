@@ -64,6 +64,8 @@ This is an example of a simple RoomGroup script to turn on and off a Directional
 
 .. tip:: You can apply the same technique for switching on and off weather effects, skyboxes and much more.
 
+.. _doc_rooms_and_portals_internal_rooms:
+
 Internal Rooms
 ~~~~~~~~~~~~~~
 

@@ -47,7 +47,7 @@ If you accidentally create overlapping rooms, the editor will flag a warning whe
 
 The system does attempt to cope with overlapping rooms as best as possible by making the current room *"sticky"*. Each object remembers which room it was in last frame, and stays within it as long as it does not move outside the convex hull room bound. This can result in some hysteresis in these overlapping zones.
 
-There is one exception however for *internal rooms*. (These internal rooms are described later, you do not have to worry about these to start with.)
+There is one exception however for :ref:`internal rooms<doc_rooms_and_portals_internal_rooms>`. You do not have to worry about these to start with.
 
 How do I create a room?
 ^^^^^^^^^^^^^^^^^^^^^^^
