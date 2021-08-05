@@ -7,7 +7,7 @@ sphinx==4.0.2
 sphinx_rtd_theme==0.5.2
 
 # Code tabs extension for GDScript/C#
-sphinx-tabs==3.1.0
+sphinx-tabs==3.2.0
 
 # Custom 404 error page (more useful than the default)
 sphinx-notfound-page==0.7.1
