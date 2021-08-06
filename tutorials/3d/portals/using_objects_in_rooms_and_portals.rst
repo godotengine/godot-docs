@@ -33,7 +33,7 @@ Global mode is for objects that you don't want occlusion culled at all. Things l
 IGNORE
 ^^^^^^
 
-Ignore is a special mode for objects that will be essentially free in the system. Manual bounds (``Bound_``) get converted to ignore portal mode automatically. They don't need to show up during the game, but are kept in the scene tree in case you need to convert the level multiple times (e.g. in the Editor). You might also choose to use this for objects that you *only* want to show up in the editor (when RoomManager is inactive).
+Ignore is a special mode for objects that will be essentially free in the system. Manual bounds (``-bound``) get converted to ignore portal mode automatically. They don't need to show up during the game, but are kept in the scene tree in case you need to convert the level multiple times (e.g. in the Editor). You might also choose to use this for objects that you *only* want to show up in the editor (when RoomManager is inactive).
 
 Should you place objects within rooms (in the scene tree) or not?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -43,7 +43,7 @@ Should you place objects within rooms (in the scene tree) or not?
 Autoplace
 ^^^^^^^^^
 
-However, for ease of use, it is also possible to place ``STATIC`` and ``DYNAMIC`` objects *outside* the rooms in the scene tree, but within the RoomList branch. The system will attempt to **autoplace** the objects into the appropriate room. This works in most cases but if in doubt, use the explicit approach. This explicit approach is especially needed when dealing with internal rooms, which have some restrictions for sprawling objects.
+However, for ease of use, it is also possible to place ``STATIC`` and ``DYNAMIC`` objects *outside* the rooms in the scene tree, but within the RoomList branch. The system will attempt to **autoplace** the objects into the appropriate room. This works in most cases but if in doubt, use the explicit approach. The explicit approach is especially needed when dealing with internal rooms, which have some restrictions for sprawling objects.
 
 .. image:: img/freeform.png
 
@@ -59,6 +59,7 @@ It is important to note that the lifetime of ``STATIC`` and ``DYNAMIC`` objects 
 You should therefore not try to create or delete ``STATIC`` or ``DYNAMIC`` objects while the portal system is active. Doing so will cause the system to automatically unload because it is in an invalid state. You can however, freely ``show()`` and ``hide()`` these objects.
 
 The sequence should be therefore:
+
 - Load your level.
 - Place any ``STATIC`` or ``DYNAMIC`` objects.
 - Then run ``rooms_convert()`` *after* all the ``STATIC`` and ``DYNAMIC`` objects were added to the scene tree.
