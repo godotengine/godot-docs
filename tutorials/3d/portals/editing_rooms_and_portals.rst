@@ -55,7 +55,7 @@ In most cases, this can be done using a name such as ``kitchen-portal``. However
 
 The workaround is the use of a *wildcard* character, ``*``. When Godot reads the wildcard, it will ignore anything placed after it in the name.
 
-Thus:
+This means we can use the following portal names:
 
 - ``kitchen*1-portal`` - creates a Portal leading to the "kitchen".
 - ``kitchen*2-portal`` - also creates a Portal leading to the "kitchen".
