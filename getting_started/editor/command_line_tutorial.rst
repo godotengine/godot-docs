@@ -88,7 +88,7 @@ Command line reference
 +-----------------------------+----------------------------------------------------------------------------+
 | ``--low-dpi``               | Force low-DPI mode (macOS and Windows only).                               |
 +-----------------------------+----------------------------------------------------------------------------+
-| ``--no-window``             | Disable window creation (Windows only). Useful together with ``--script``. |
+| ``--no-window``             | Run with invisible window. Useful together with ``--script``.              |
 +-----------------------------+----------------------------------------------------------------------------+
 
 **Debug options**
@@ -288,7 +288,7 @@ special characters (such as "Windows Desktop"), it must be surrounded with quote
 To export a debug version of the game, use the ``--export-debug`` switch
 instead of ``--export``. Their parameters and usage are the same.
 
-To export only a PCK file, use the ``--export-pack`` option followed by the 
+To export only a PCK file, use the ``--export-pack`` option followed by the
 preset name and output path, with the file extension, instead of ``--export``.
 The output path extension determines the package's format, either PCK or ZIP.
 
