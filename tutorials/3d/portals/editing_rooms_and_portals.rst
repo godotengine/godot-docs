@@ -23,8 +23,8 @@ Creating room systems in Blender (or other modeling tools)
 
 Although you can create your room system entirely within the editor, you can also build rooms and portals within your modeling tool. There is one small snag - modeling tools such as Blender have no knowledge of Room, RoomGroup and Portal nodes. In order to work around this we use a series of naming conventions. The first time Godot encounters these specially named nodes, it will convert them into Rooms, RoomGroups and Portals.
 
-Postfix convention:
-^^^^^^^^^^^^^^^^^^^
+Postfix convention
+^^^^^^^^^^^^^^^^^^
 
 - ``-room`` becomes a :ref:`Room<class_Room>`.
 - ``-roomgroup`` becomes a :ref:`RoomGroup<class_RoomGroup>`.
@@ -33,7 +33,7 @@ Postfix convention:
 
 Rooms and RoomGroups should be created as Empties within Blender. Any mesh children of the ``-room`` Empty will thus be placed in the Room during conversion in Godot.
 
-e.g.
+For example:
 
 - ``kitchen-room`` - create a Room called "kitchen".
 - ``outside-roomgroup`` - create a RoomGroup called "outside".
@@ -42,18 +42,18 @@ e.g.
 Portals
 ^^^^^^^
 
-Portals are a little different than Rooms, in that we want to specify the geometry of the Portal in our modelling tool, in addition to just the name. To do this your "portal-to-be" should be created as a Mesh.
+Portals are different from Rooms. In Portals, we need to specify the geometry of the Portal in our modelling tool, in addition to just the name. To do this your "portal-to-be" should be created as a Mesh.
 
 Portal meshes have some restrictions to work properly. They must be convex, and the polygon points should be in the same plane. The accuracy to the plane does not have to be exact, as Godot will automatically average the direction of the portal plane. Once converted to a :ref:`Portal<class_Portal>` node, the snapping to the portal plane is enforced, and the vertices are specified (and editable) as 2D coordinates in the inspector, rather than 3D points.
 
-The naming of the portal is quite important. You can either name the portal ``-portal``, which will attempt to autolink the Portal in Godot, or you can use as a prefix the name of the Room which you wish it to link to.
+The portal's naming is quite important. You can either name the portal ``-portal`` which will attempt to autolink the Portal in Godot, or you can use the name of the Room you wish to link the Portal to as a prefix.
 
 Wildcard
 ^^^^^^^^
 
-In most cases this should be quite simple, using a name such as ``kitchen-portal``. However there is one problem - Blender, and Godot, do not deal well when you have multiple objects with the same name. What happens when we want more than one Portal to lead to the kitchen?
+In most cases, this can be done using a name such as ``kitchen-portal``. However, there is one problem. Blender and Godot do not deal well when you have multiple objects with the same name. What happens when we want more than one Portal to lead to the kitchen?
 
-The workaround is the use of a *wildcard* character, "*". When Godot reads the wildcard, it will ignore anything further in the name.
+The workaround is the use of a *wildcard* character, ``*``. When Godot reads the wildcard, it will ignore anything placed after it in the name.
 
 Thus:
 
@@ -63,11 +63,12 @@ Thus:
 
 Wildcards work on all of the nodes which use these naming conventions.
 
-Manual Bounds
+Manual bounds
 ^^^^^^^^^^^^^
-Manual bounds are a way of explicitly setting the convex hull for a room, and are used if they are present as children of a room in the scene tree. Aside from the postfix, the naming is unimportant. They should be meshes (i.e. MeshInstance in Godot), and bear in mind they will be converted to convex hulls during the conversion process, so don't have to be perfect.
 
-.. tip:: Once used during conversion, they will be converted to ``portal_mode`` IGNORE and not shown. You can alternatively use ``Generate Points`` within the editor to convert these to a set of points stored in the room, and delete the original ``-bound`` MeshInstance.
+Manual bounds are a way of explicitly setting the convex hull for a room, and are used if they are present as children of a room in the scene tree. Aside from the postfix, the naming is unimportant. They should be meshes (i.e. MeshInstance in Godot). Bear in mind they will be converted to convex hulls during the conversion process, so they don't have to be perfect.
+
+.. tip:: Once used during conversion, they will be converted to the ``IGNORE`` **Portal Mode** and won't be shown. You can alternatively use **Generate Points** within the editor to convert these to a set of points stored in the room, and delete the original ``-bound`` MeshInstance.
 
 Portal point editing
 ~~~~~~~~~~~~~~~~~~~~
@@ -78,14 +79,14 @@ The default portal has 4 corners as shown in the inspector:
 
 .. image:: img/portal_point_editing.png
 
-You can edit these points in the gizmo or inspector to make a better match to the opening in your game level. It is generally better to keep the number of points as low as possible for the efficiency of the system. It is better to risk rendering a little too much than to spend the time culling objects at 20 different edges, for example.
+You can edit these points in the gizmo or inspector to make a better match to the opening in your game level. It's generally better to keep the number of points as low as possible for the efficiency of the system. For example, it's better to risk rendering a little too much than to spend the time culling objects at 20 different edges.
 
 .. _doc_room_point_editing:
 
 Room point editing
 ~~~~~~~~~~~~~~~~~~
 
-You also have the option to manually edit the points used to define the convex hull of a room. These points are not present by default, you would typically create them by pressing the **Generate Points** button in the editor toolbar, when a room is selected. This will transfer the auto bound from the geometry (or manual ``-bound`` mesh) into the inspector. Once there are points in the inspector, they will be used and override any other method. So if you wish to revert your manual editing, simply delete all the points.
+You also have the option to manually edit the points used to define the convex hull of a room. These points are not present by default. You would typically create them by pressing the **Generate Points** button in the editor toolbar when a room is selected. This will transfer the auto bound from the geometry (or manual ``-bound`` mesh) into the inspector. Once there are points in the inspector, they will be used and override any other method. So if you wish to revert your manual editing, delete all the room's points.
 
 .. image:: img/room_point_editing.png
 
@@ -120,12 +121,12 @@ Portals
 Portal Active
 ^^^^^^^^^^^^^
 
-Portals can be turned on and off at runtime. This is especially useful if you have opening and closing doors.
+Portals can be turned on and off at runtime. This is especially useful if you have doors that can open and close.
 
 Two Way
 ^^^^^^^
 
-Portals can either be two way or one way. The default two way portals are quicker to set up in most circumstances, but one way portals can be useful. For example you can use one way portals to create windows that can be seen out of, but not seen into. This can help performance when viewing buildings from outdoors.
+Portals can either be two-way or one-way. The default two-way portals are quicker to set up in most circumstances, but one-way portals can be useful in some cases. For example, you can use one-way portals to create windows that can be seen out of, but not seen into. This can help performance when viewing buildings from outdoors.
 
 Particle Systems
 ~~~~~~~~~~~~~~~~

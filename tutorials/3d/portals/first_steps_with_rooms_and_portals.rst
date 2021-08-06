@@ -9,7 +9,7 @@ Anytime you want to use the portal system, you need to include a special node in
 Room Conversion
 ^^^^^^^^^^^^^^^
 
-This conversion must take place every time you want to activate the system, it does not store the *room graph* in your project (for flexibility and to save memory). You can either trigger it by pressing the **Convert Rooms** button in the editor toolbar (which also has a keyboard shortcut), or you can call the ``rooms_convert()`` method in the RoomManager. This latter method will be what you use in-game. Note that for safety, best practice is to call ``rooms_clear()`` before unloading / changing levels.
+This conversion must take place every time you want to activate the system. It does not store the *room graph* in your project (for flexibility and to save memory). You can either trigger it by pressing the **Convert Rooms** button in the editor toolbar (which also has a keyboard shortcut), or you can call the ``rooms_convert()`` method in the RoomManager. This latter method will be what you use in-game. Note that for safety, best practice is to call ``rooms_clear()`` before unloading or changing levels.
 
 .. image:: img/convert_rooms_button.png
 
@@ -21,6 +21,7 @@ If you convert the level while the editor is running, the portal culling system 
 
 The RoomList
 ^^^^^^^^^^^^
+
 Before we create any rooms, we must first create a node to be the parent of all the static objects, rooms, roomgroups and so on in our level. This node is referred to as the the ``RoomList``.
 
 .. image:: img/roomlist_node.png
@@ -31,7 +32,7 @@ You will need to assign the roomlist node in the RoomManager, so the RoomManager
 
 Why do we use a specific branch of the scene tree, and not use the scene root? The answer is that there are many internal details of the system which are easier to manage if the rooms are placed on their own branch.
 
-Often you will end up completely replacing the roomlist branch at runtime in your game as you load and unload levels.
+Often, you will end up completely replacing the roomlist branch at runtime in your game as you load and unload levels.
 
 Rooms
 ~~~~~
@@ -94,23 +95,23 @@ If you create some rooms, place objects within them, then convert the level in t
 
 :ref:`Portal<class_Portal>`\ s are special convex polygons. You position over the openings between rooms, in order to allow the system to see between them. You can create a portal node directly in the editor. The default portal has 4 points and behaves much like a ``plane`` :ref:`MeshInstance<class_MeshInstance>`. You can add or remove points using the inspector. A portal will require at least 3 points to work - this is because it needs to form a polygon rather than a point or line.
 
-To save editing effort, **only one Portal is required between each pair of Rooms**. You *do not need* to (and indeed should not) create two Portals that overlap in opposite directions. Portals default to being two way (but you can make them one way in the Portal inspector).
+To save editing effort, **only one Portal is required between each pair of Rooms**. You *do not need* to (and indeed should not) create two Portals that overlap in opposite directions. Portals default to being two-way (but you can make them one-way in the Portal inspector).
 
 You should therefore place a portal in only one of each pair of neighbouring rooms - this is the portal's *"source room"*. Generally it doesn't matter which you choose as the source room. The portal normal (the arrow in the gizmo) should face *outward* from the source room.
 
 .. image:: img/portal_inspector.png
 
-Do not be confused by the arrow. Although the arrow shows which direction the portal faces, most portals will be *two way*, and can be seen through from both directions. The arrow is more important for ensuring that the portal links to the correct neighbouring room.
+Do not be confused by the arrow. Although the arrow shows which direction the portal faces, most portals will be *two-way*, and can be seen through from both directions. The arrow is more important for ensuring that the portal links to the correct neighbouring room.
 
 Portal linking
 ^^^^^^^^^^^^^^
 
 There are two options for dealing with specifying which room the portal should link to.
 
-- Leave the **Linked Room** in the inspector blank. The system will attempt to *autolink* the portal to the nearest neighbour room during conversion. In most cases this work fine.
+- Leave the **Linked Room** in the inspector blank. The system will attempt to *autolink* the portal to the nearest neighbour room during conversion. This works fine in most cases.
 - You can explicitly specify the room by setting the **Linked Room** in the inspector.
 
-.. note:: Portals are defined as a set of 2D points. This ensures that the polygon formed is in a single plane. The transform determines the portal orientation. The points must also form a *convex* polygon. This is enforced by sanitizing the points you specify, ignoring any that do not form a convex shape. This makes editing easier while making it difficult to break the system.
+.. note:: Portals are defined as a set of 2D points. This ensures that the polygon formed is in a single plane. The transform determines the portal orientation. The points must also form a *convex* polygon. This is enforced by validating the points you specify, ignoring any that do not form a convex shape. This makes editing easier while making it difficult to break the system.
 
 Trying it out
 ~~~~~~~~~~~~~

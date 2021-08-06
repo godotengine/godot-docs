@@ -107,17 +107,18 @@ This is perfect for improving performance in open world games. Often your buildi
 
 Internal room scenes
 ^^^^^^^^^^^^^^^^^^^^
-Let us look in detail at another practical example for an open world. We want to place houses (as internal rooms) on an island, but have each house as a self contained scene containing both the interior *and* the external mesh of the house.
+
+Let us look in detail at another practical example for an open world. We want to place houses (as internal rooms) on an island, but have each house as a self-contained scene containing both the interior *and* the external mesh of the house.
 
 .. image:: img/house_scene.png
 
-We have created a Room node (which will become the internal room) into which we have placed the interior meshes, and a Portal with no links (so autolinking will be used). The exterior mesh is *not* within the room. It will be autoplaced, and we are intending for it to be placed within the outer room.
+We have created a Room node (which will become the internal room) into which we have placed the interior meshes. We have also created a Portal with no links (so autolinking will be used). The exterior mesh is *not* within the room. It will be autoplaced, and we are intending for it to be placed within the outer room.
 
-However there is a problem. The naive autoplace algorithm will look at the centre of the exterior mesh, and attempt to place it *within* the internal room. We want to avoid this somehow, as the idea of the exterior mesh is to have something rendered from the outside, so it must be in the outer room for everything to work.
+However there is a problem. The naive autoplace algorithm will look at the center of the exterior mesh, and attempt to place it *within* the internal room. We want to avoid this somehow, as the idea of the exterior mesh is to have something rendered from the outside, so it must be in the outer room for everything to work.
 
-To get around exactly this problem there is a special setting to enable you to express a preference for autoplacing in an outer room. Each object has an **Autoplace Priority** setting. When set to 0, there is no preference (the object will be placed in the highest priority room).
+To get around this problem, there is a special setting to enable you to express a preference for autoplacing in an outer room. Each object has an **Autoplace Priority** setting. When set to ``0``, there is no preference (the object will be placed in the highest priority room).
 
-However, if we set this autoplace priority to for example ``-1``, the autoplace will always choose a ``-1`` priority room (if one is present at that location). So if we set the outer room priority to ``-1``, it will always place our exterior into our "outside" room.
+However, if we set this autoplace priority to ``-1`` for example, the autoplace will always choose a ``-1`` priority room (if one is present at that location). So if we set the outer room priority to ``-1``, it will always place our exterior into our "outside" room.
 
 .. image:: img/autoplace_priority.png
 
