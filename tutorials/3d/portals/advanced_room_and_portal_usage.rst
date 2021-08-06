@@ -17,7 +17,7 @@ This works because if a monster is in an area that is completely out of view for
 How does a monster know whether it is within the gameplay area?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This problem is solved because the portal system contains a subsystem called the **Gameplay Monitor** that can be turned on and off from the :ref:`RoomManager<class_RoomManager>`. When switched on, any roaming objects that move inside or outside the gameplay area (whether by moving themselves, or the player moving) will receive callbacks to let them know of this change.
+This problem is solved because the portal system contains a subsystem called the **Gameplay Monitor** that can be turned on and off from the :ref:`RoomManager<class_RoomManager>`. When switched on, any roaming objects that move inside or outside the gameplay area (whether by moving themselves, or the camera moving) will receive callbacks to let them know of this change.
 
 You can choose to either receive these callbacks as ``signals``, or as ``notifications``.
 
@@ -104,3 +104,30 @@ The tent is a simple room inside a terrain room (which contains the ground, the 
 This is perfect for improving performance in open world games. Often your buildings can be scenes (including the rooms and portals) that can be reused. When viewed from the outside, interiors will mostly be culled, and when viewing from the inside other buildings and most of the outside will be culled. The same goes for other players and objects that are inside and outside the buildings.
 
 *Scene is 'Diorama Eco scene' by Odo, with slight changes for illustration purposes.* `CC Attribution <https://creativecommons.org/licenses/by/4.0/>`_
+
+Internal room scenes
+^^^^^^^^^^^^^^^^^^^^
+
+Let us look in detail at another practical example for an open world. We want to place houses (as internal rooms) on an island, but have each house as a self-contained scene containing both the interior *and* the external mesh of the house.
+
+.. image:: img/house_scene.png
+
+We have created a Room node (which will become the internal room) into which we have placed the interior meshes. We have also created a Portal with no links (so autolinking will be used). The exterior mesh is *not* within the room. It will be autoplaced, and we are intending for it to be placed within the outer room.
+
+However there is a problem. The naive autoplace algorithm will look at the center of the exterior mesh, and attempt to place it *within* the internal room. We want to avoid this somehow, as the idea of the exterior mesh is to have something rendered from the outside, so it must be in the outer room for everything to work.
+
+To get around this problem, there is a special setting to enable you to express a preference for autoplacing in an outer room. Each object has an **Autoplace Priority** setting. When set to ``0``, there is no preference (the object will be placed in the highest priority room).
+
+However, if we set this autoplace priority to ``-1`` for example, the autoplace will always choose a ``-1`` priority room (if one is present at that location). So if we set the outer room priority to ``-1``, it will always place our exterior into our "outside" room.
+
+.. image:: img/autoplace_priority.png
+
+This gives us a helpful extra bit of control for these kinds of situations, and makes the entire system much more flexible.
+
+.. note:: As the default autoplace priority is ``0``, you can't effectively force objects into RoomGroups with priority ``0``. However there are plenty of priority values available so this should not be a problem in practice.
+
+The final scene looks something like this, with houses instanced wherever you want them on a giant outer room.
+
+.. image:: img/island.png
+
+The house exteriors will be placed in the outer room, and therefore can always be seen when looking from the outside. The interiors will only be rendered when a view into the entry portals is visible.
