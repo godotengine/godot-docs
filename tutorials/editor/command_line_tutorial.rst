@@ -92,7 +92,7 @@ Command line reference
 +------------------------------------+----------------------------------------------------------------------------+
 | ``--low-dpi``                      | Force low-DPI mode (macOS and Windows only).                               |
 +------------------------------------+----------------------------------------------------------------------------+
-| ``--no-window``                    | Disable window creation (Windows only). Useful together with ``--script``. |
+| ``--no-window``                    | Run with invisible window. Useful together with ``--script``.              |
 +------------------------------------+----------------------------------------------------------------------------+
 | ``--enable-vsync-via-compositor``  | When vsync is enabled, vsync via the OS' window compositor (Windows only). |
 +------------------------------------+----------------------------------------------------------------------------+
