@@ -130,9 +130,9 @@ There are three essential parts to the script extending
 3. A signal must be emitted at some point to inform the inspector that the
    control has changed the property using ``emit_changed``.
 
-You can display your custom widget in two ways. Use the default ``add_child()``
-method to display it to the right of the property name, and
-``set_bottom_editor()`` to position it below the name.
+You can display your custom widget in two ways. Use just the default ``add_child()``
+method to display it to the right of the property name, and use ``add_child()``
+followed by ``set_bottom_editor()`` to position it below the name.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
