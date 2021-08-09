@@ -310,3 +310,52 @@ Load parent objects first so they are available for the :ref:`add_child()
 call when child objects are loaded. You will also need a way to link
 children to parents as the :ref:`NodePath
 <class_nodepath>` will likely be invalid.
+
+JSON vs binary serialization
+----------------------------
+
+For simple game state, JSON may be the best choice, because it is easy to
+understand, and generates human-readable files that are easy to debug.
+
+But JSON has many limitations. If you need to store more complex game state or
+a lot of game state, :ref:`binary serialization<doc_binary_serialization_api>`
+may be a better approach.
+
+JSON limitations
+~~~~~~~~~~~~~~~~
+
+Here are some important gotchas to know about when using JSON.
+
+Filesize:
+  JSON stores data in text format, which is much larger than binary format.
+
+Data types:
+  JSON only knows about a limited set of data types. If you have data types
+  that JSON doesn't know about, you will need to translate your data to and
+  from types that JSON can handle. For example, some important types that JSON
+  can't parse are: Vector2, Vector3, Color, Rect2, Quat.
+
+Custom logic needed for encoding/decoding:
+  If you have any custom classes that you want to store with JSON, you will
+  need to write your own logic for encoding and decoding those classes.
+
+Binary serialization
+~~~~~~~~~~~~~~~~~~~~
+
+:ref:`Binary serialization<doc_binary_serialization_api>` is an alternative
+approach for storing game state, and you can use it with the functions
+``get_var`` and ``store_var`` of :ref:`class_File`.
+
+* Binary serialization should produce smaller files than JSON.
+* Binary serialization can handle most common data types.
+* Binary serialization requires less custom logic for encoding and decoding
+  custom classes.
+
+Note that not all properties are included. Only properties that are configured
+with the :ref:`PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>`
+flag set will be serialized. You can add a new usage flag to a property by overriding the
+:ref:`_get_property_list<class_Object_method__get_property_list>`
+method in your class. You can also check how property usage is configured by
+calling ``Object._get_property_list`` See
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` for the
+possible usage flags.
