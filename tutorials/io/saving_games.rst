@@ -314,11 +314,10 @@ children to parents as the :ref:`NodePath
 JSON vs binary serialization
 ----------------------------
 
-For simple game state, JSON may be the best choice, because it is easy to
-understand, and generates human-readable files that are easy to debug.
+For simple game state, JSON may work and it generates human-readable files that are easy to debug.
 
 But JSON has many limitations. If you need to store more complex game state or
-a lot of game state, :ref:`binary serialization<doc_binary_serialization_api>`
+a lot of it, :ref:`binary serialization<doc_binary_serialization_api>`
 may be a better approach.
 
 JSON limitations
@@ -326,16 +325,14 @@ JSON limitations
 
 Here are some important gotchas to know about when using JSON.
 
-Filesize:
-  JSON stores data in text format, which is much larger than binary format.
-
-Data types:
-  JSON only knows about a limited set of data types. If you have data types
-  that JSON doesn't know about, you will need to translate your data to and
+* **Filesize:**
+  JSON stores data in text format, which is much larger than binary formats.
+* **Data types:**
+  JSON only offers a limited set of data types. If you have data types
+  that JSON doesn't have, you will need to translate your data to and
   from types that JSON can handle. For example, some important types that JSON
-  can't parse are: Vector2, Vector3, Color, Rect2, Quat.
-
-Custom logic needed for encoding/decoding:
+  can't parse are: ``Vector2``, ``Vector3``, ``Color``, ``Rect2``, and ``Quat``.
+* **Custom logic needed for encoding/decoding:**
   If you have any custom classes that you want to store with JSON, you will
   need to write your own logic for encoding and decoding those classes.
 
@@ -356,6 +353,6 @@ with the :ref:`PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE
 flag set will be serialized. You can add a new usage flag to a property by overriding the
 :ref:`_get_property_list<class_Object_method__get_property_list>`
 method in your class. You can also check how property usage is configured by
-calling ``Object._get_property_list`` See
-:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` for the
+calling ``Object._get_property_list``.
+See :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` for the
 possible usage flags.
