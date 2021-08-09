@@ -3,40 +3,15 @@
 GUI skinning
 ============
 
-Oh, beautiful GUI!
-------------------
+Themes
+------
 
-This tutorial is about advanced skinning of a user interface. Most
-games generally don't need this, as they end up just relying on
-:ref:`Label <class_Label>`, :ref:`TextureRect <class_TextureRect>`,
-:ref:`TextureButton <class_TextureButton>` and
-:ref:`TextureProgress <class_TextureProgress>`.
-
-However, many types of games often need complex user interfaces, like
-MMOs, traditional RPGs, Simulators, Strategy, etc. These kinds of
-interface are also common in some games that include editors to create
-content, or interfaces for network connectivity.
-
-Godot's user interface uses these kinds of control with the default theme,
-but they can be skinned to resemble pretty much any kind of user
-interface.
-
-Theme
------
-
-The GUI is skinned through the :ref:`Theme <class_Theme>`
+All control nodes are skinned through the :ref:`Theme <class_Theme>`
 resource. Theme contains all the information required to change the
-entire visual styling of all controls. Theme options are named, so it's
-not obvious which name changes what (especially from code), but several
-tools are provided. The ultimate place to look at what each theme option
-is for each control, which will always be more up to date than any
-documentation, is the file `scene/resources/default_theme/default_theme.cpp
-<https://github.com/godotengine/godot/blob/master/scene/resources/default_theme/default_theme.cpp>`__.
-The rest of this document will explain the different tools used to
-customize the theme.
+entire visual styling of all controls. 
 
-A Theme can be applied to any control in the scene. As a result, all
-children and grand-children controls will use that same theme, too
+A Theme can be applied to any control node in the scene. As a result,
+all children and grand-children controls will use that same theme, too
 (unless another theme is specified further down the tree). If a value is
 not found in a theme, it will be searched in themes higher up in the
 hierarchy, towards the root. If nothing was found, the default theme is
@@ -51,29 +26,122 @@ user interfaces.
    automatically. To get correct theming in the editor for instanced scenes,
    you can apply the theme resource to the instanced scene's root node as well.
 
-Theme options
--------------
+Creating a theme
+----------------
 
-Each kind of option in a theme can be:
+Themes can be created from any control node. Select a control node in the scene
+hierarchy, then in the inspector go to the theme property. From there you can
+select **New Theme**.
 
--  **An integer constant**: A single numerical constant. Generally used
-   to define spacing between components or alignment.
--  **A Color**: A single color, with or without transparency. Colors are
+.. image:: img/new_theme.png
+
+This will create an empty theme and open up the theme editor.
+
+.. image:: img/theme_editor.png
+
+In the theme editor you can customize everything about a theme except for
+the default font the theme uses. That can only be customized in the inspector under
+the selected theme.
+
+.. image:: img/default_font.png
+
+Theme items
+-----------
+
+In the theme editor, next to the default preview window, is where you make changes
+to your theme. Clicking the plus button opens the **Add item Type** menu.
+
+.. image:: img/add_item_type.png
+
+From here select the control node you want your theme to modify and click **Ok**. You
+should now see theme items for that node in the theme editor. Theme items are what defines
+the look of a theme, each kind of item in a theme can be:
+
+-  **Color**: A single color, with or without transparency. Colors are
    usually applied to fonts and icons.
--  **A Texture**: A single image. Textures are not often used, but when
+-  **Constant**: A single numerical constant. Generally used
+   to define spacing between components or alignment.
+-  **Font**: Every control that uses text can be assigned the fonts
+   used to draw strings.
+-  **Icon**: A single image. Textures are not often used, but when
    they are, they represent handles to pick or icons in a complex control
    (such as a file dialog).
--  **A Font**: Every control that uses text can be assigned the fonts
-   used to draw strings.
--  **A StyleBox**: Stylebox is a resource that defines how to draw a
+-  **StyleBox**: Stylebox is a resource that defines how to draw a
    panel in varying sizes (more information on them later).
 
-Every option is associated with:
+Every item is associated with:
 
--  A name (the name of the option)
+-  A name (the name of the item)
 -  A Control (the name of the control)
 
-An example usage:
+To customize a theme item click on the plus sign next to it. Your theme
+will now override the default theme for that item. To modify it click on **Empty**,
+then select the new theme item you want to create. Click on it again and you can
+now modify it in the inspector.
+
+.. image:: img/theme_item_inspector.png
+
+You can also add custom theme items to a control node under the built in theme items.
+
+In the theme editor, above the theme items, is the **Show Default** toggle. It will hide
+or show any theme items that are using the default theme settings. Next to it is the
+**Override Defaults** button, which will override the default theme for all theme items
+of the currently selected control node.
+
+Manage theme Items
+------------------
+
+Clicking the **Manage Items** button brings up the Manage theme items menu. In
+the edit items tab you can view all the theme items for your theme, add a custom
+theme item, or a custom control node type.
+
+.. image:: img/manage_items.png
+
+You can also mass delete theme items from here. **Remove Class Items** will remove
+all built in theme items you have customized for the control node. **Remove Custom
+Items** will remove all the custom theme items for the selected node. And **Remove
+All Items** will remove everything. 
+
+From the **Import Items** tab you can import theme items from other themes. You can
+import items from the default Godot theme, the Godot editor theme, or another custom
+theme. You can import all of the theme items for a control node or only one. You need
+to select **Data** when importing to actually import the theme item. Otherwise your
+theme will just have a blank override for that theme option.
+
+.. image:: img/import_items.png
+
+Preview
+-------
+
+The **Default Preview** tab of the theme editor shows you how every control node in
+Godot will look with your theme settings applied. If you haven't applied a setting
+then the default theme setting will be used.
+
+.. image:: img/default_preview.png
+
+You can also preview how other scenes will look by clicking the **Add Preview** button
+and selecting a tscn file that has a control node as the root node.
+
+.. image:: img/scene_preview.png
+
+Theme overrides
+---------------
+
+If only a few controls need to be skinned, it is often not necessary to
+create a new theme. Controls offer their theme items as special kinds
+of properties. If checked, overriding will take place:
+
+.. image:: img/themecheck.png
+
+As can be seen in the image above, theme items have little check boxes.
+If checked, they can be used to override the value of the theme just for
+that control.
+
+Changing themes with code
+-------------------------
+
+In addition to the theme editor it is possible to change theme items with
+code, here is an example:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -111,76 +179,5 @@ directly, and only for a specific control, by using the override API in
     var label = new Label();
     label.AddColorOverride("fontColor", new Color(1.0f, 0.0f, 0.0f));
 
-In the inline help of Godot (in the Script tab), you can check which theme options
+In the inline help of Godot (in the Script tab), you can check which theme items
 are overridable, or check the :ref:`Control <class_Control>` class reference.
-
-Customizing a control
----------------------
-
-If only a few controls need to be skinned, it is often not necessary to
-create a new theme. Controls offer their theme options as special kinds
-of properties. If checked, overriding will take place:
-
-.. image:: img/themecheck.png
-
-As can be seen in the image above, theme options have little check boxes.
-If checked, they can be used to override the value of the theme just for
-that control.
-
-Creating a theme
-----------------
-
-The simplest way to create a theme is to edit a theme resource. Create a
-Theme from the resource menu; the editor will appear immediately.
-After that, save it (for example, with the name mytheme.theme):
-
-.. image:: img/sb2.png
-
-This will create an empty theme that can later be loaded and assigned to
-controls.
-
-Example: theming a button
---------------------------
-
-Download these assets (:download:`skin_assets.zip <files/skin_assets.zip>`)
-and add them to your project. Open the theme editor, click on "Edit Theme"
-and select "Add Class Items":
-
-.. image:: img/themeci.png
-
-A menu will appear prompting the type of control to create. Select
-"Button":
-
-.. image:: img/themeci2.png
-
-Immediately, all button theme options will appear in the property
-editor, where they can be edited:
-
-.. image:: img/themeci3.png
-
-From ``Styles``, open the "Normal" drop-down menu next to where it probably
-says "null" and create a "New StyleBoxTexture", then
-edit it. A texture stylebox contains a texture and the size of the margins
-that will not stretch when the texture is stretched.
-This is called nine-patch or "3x3" stretching:
-
-.. image:: img/sb1.png
-
-Repeat the steps and add the other assets. There is no hover or disabled
-image in the example files, so use the same stylebox as in normal. Set
-the supplied font as the button font and change the font color to black.
-Soon, your button will look different and retro:
-
-.. image:: img/sb2.png
-
-Save this theme to the .theme file. Go to the 2D editor and create a few
-buttons:
-
-.. image:: img/skinbuttons1.png
-
-Now, go to the root node of the scene and locate the "theme" property,
-replace it with the theme that was just created. It should look like this:
-
-.. image:: img/skinbuttons2.png
-
-Congratulations! You have created a reusable GUI Theme!
