@@ -280,7 +280,7 @@ Let's see some examples.
     with an :ref:`EditorPlugin <class_EditorPlugin>` to create custom
     visualizations and editors for their data.
 
-    Unreal Engine 4's DataTables and CurveTables are also easy to recreate with
+    Unreal Engine's DataTables and CurveTables are also easy to recreate with
     Resource scripts. DataTables are a String mapped to a custom struct, similar
     to a Dictionary mapping a String to a secondary custom Resource script.
 
