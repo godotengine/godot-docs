@@ -20,6 +20,13 @@ Using WebSocket in Godot
 
 WebSocket is implemented in Godot via three main classes :ref:`WebSocketClient <class_WebSocketClient>`, :ref:`WebSocketServer <class_WebSocketServer>`, and :ref:`WebSocketPeer <class_WebSocketPeer>`. The WebSocket implementation is compatible with the High Level Multiplayer. See section on :ref:`high-level multiplayer <doc_high_level_multiplayer>` for more details.
 
+.. warning::
+
+    When exporting to Android, make sure to enable the [code]INTERNET[/code]
+    permission in the Android export preset before exporting the project or
+    using one-click deploy. Otherwise, network communication of any kind will be
+    blocked by Android.
+
 Minimal client example
 ^^^^^^^^^^^^^^^^^^^^^^
 
