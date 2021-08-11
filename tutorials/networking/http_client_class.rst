@@ -7,6 +7,13 @@ HTTP client class
 For a higher-level interface, you may want to take a look at :ref:`HTTPRequest <class_HTTPRequest>` first,
 which has a tutorial available :ref:`here <doc_http_request_class>`.
 
+.. warning::
+
+    When exporting to Android, make sure to enable the [code]INTERNET[/code]
+    permission in the Android export preset before exporting the project or
+    using one-click deploy. Otherwise, network communication of any kind will be
+    blocked by Android.
+
 Here's an example of using the :ref:`HTTPClient <class_HTTPClient>`
 class. It's just a script, so it can be run by executing:
 

@@ -143,6 +143,13 @@ Terminating the networking feature:
 
 (Although it may make sense to send a message first to let the other peers know you're going away instead of letting the connection close or timeout, depending on your game.)
 
+.. warning::
+
+    When exporting to Android, make sure to enable the [code]INTERNET[/code]
+    permission in the Android export preset before exporting the project or
+    using one-click deploy. Otherwise, network communication of any kind will be
+    blocked by Android.
+
 Managing connections
 --------------------
 
