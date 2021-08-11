@@ -37,6 +37,13 @@ WebRTC is implemented in Godot via two main classes :ref:`WebRTCPeerConnection <
 
 .. note:: These classes are available automatically in HTML5, but **require an external GDNative plugin on native (non-HTML5) platforms**. Check out the `webrtc-native plugin repository <https://github.com/godotengine/webrtc-native>`__ for instructions and to get the latest `release <https://github.com/godotengine/webrtc-native/releases>`__.
 
+.. warning::
+
+    When exporting to Android, make sure to enable the [code]INTERNET[/code]
+    permission in the Android export preset before exporting the project or
+    using one-click deploy. Otherwise, network communication of any kind will be
+    blocked by Android.
+
 Minimal connection example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 

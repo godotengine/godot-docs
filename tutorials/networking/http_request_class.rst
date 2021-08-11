@@ -8,6 +8,13 @@ It is backed by the more low-level :ref:`HTTPClient <class_HTTPClient>`, for whi
 
 For the sake of this example, we will create a simple UI with a button, that when pressed will start the HTTP request to the specified URL.
 
+.. warning::
+
+    When exporting to Android, make sure to enable the [code]INTERNET[/code]
+    permission in the Android export preset before exporting the project or
+    using one-click deploy. Otherwise, network communication of any kind will be
+    blocked by Android.
+
 Preparing scene
 ---------------
 
