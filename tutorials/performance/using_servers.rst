@@ -176,8 +176,9 @@ and moves a :ref:`CanvasItem <class_CanvasItem>` when the body moves.
         body = Physics2DServer.body_create()
         Physics2DServer.body_set_mode(body, Physics2DServer.BODY_MODE_RIGID)
         # Add a shape.
-        shape = RectangleShape2D.new()
-        shape.extents = Vector2(10, 10)
+        shape = Physics2DServer.rectangle_shape_create()
+        # Set rectangle extents.
+        Physics2DServer.shape_set_data(shape, Vector2(10, 10))
         # Make sure to keep the shape reference!
         Physics2DServer.body_add_shape(body, shape)
         # Set space, so it collides in the same space as current scene.
