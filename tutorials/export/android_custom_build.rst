@@ -48,3 +48,15 @@ window will appear every time):
 
 The templates built will be used automatically afterwards, so no further
 configuration is needed.
+
+Customizing the Android source ZIP
+----------------------------------
+
+If you are using a custom engine build with changes to the Android platform layer,
+it is highly recommended to
+:ref:`generate your own Android source ZIP <doc_compiling_for_android_creating_source_zip>`.
+
+To use this newly generated Android source ZIP in your projects, place it in the
+``templates/<version>`` folder of your Godot user data folder. See
+:ref:`doc_data_paths` for the location of this folder depending on your
+operating system.

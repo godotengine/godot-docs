@@ -44,13 +44,13 @@ For compiling under Windows, Linux or macOS, the following is required:
 Setting up the buildsystem
 --------------------------
 
--  Set the environment variable ``ANDROID_SDK_ROOT`` to point to the Android 
+-  Set the environment variable ``ANDROID_SDK_ROOT`` to point to the Android
    SDK. If you downloaded the Android command-line tools, this would be
    the folder where you extracted the contents of the ZIP archive.
 
 -  Install the necessary SDK components in this folder:
 
-    -  Accept the SDK component licenses by running the following command 
+    -  Accept the SDK component licenses by running the following command
        where ``android_sdk_path`` is the path to the Android SDK, then answering all the prompts with ``y``:
 
     ::
@@ -63,7 +63,7 @@ Setting up the buildsystem
 
         tools/bin/sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;30.0.3" "platforms;android-29" "cmdline-tools;latest" "cmake;3.10.2.4988404"
 
-.. seealso::   To set the environment variable on Windows, press :kbd:`Windows + R`, type 
+.. seealso::   To set the environment variable on Windows, press :kbd:`Windows + R`, type
             "control system", then click on **Advanced system settings** in the left
             pane, then click on **Environment variables** on the window that appears.
 
@@ -198,6 +198,30 @@ You don't even need to copy them, you can just reference the resulting
 file in the ``bin\`` directory of your Godot source folder, so that the
 next time you build you will automatically have the custom templates
 referenced.
+
+.. _doc_compiling_for_android_creating_source_zip:
+
+Creating an Android source ZIP
+------------------------------
+
+To create an Android source ZIP (which is used for custom builds), run the
+following command at the root of the Godot source repository folder::
+
+    cd platform/android/java
+    # On Windows
+    .\gradlew zipCustomBuild
+    # On Linux and macOS
+    ./gradlew zipCustomBuild
+
+You can run this task before or after compiling export templates, as the
+generated ZIP does not contain compiled binaries. Once the ``zipCustomBuild``
+task has finished running, ``android_source.zip`` will be generated in the
+``bin/`` folder.
+
+To use this newly generated Android source ZIP in your projects, place it in the
+``templates/<version>`` folder of your Godot user data folder. See
+:ref:`doc_data_paths` for the location of this folder depending on your
+operating system.
 
 Troubleshooting
 ---------------
