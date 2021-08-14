@@ -67,12 +67,21 @@ The following labels are currently defined in the Godot repository:
    and thus need further testing. This can mean that it needs to be tested
    on different hardware/software configurations or even that the steps to
    reproduce are not certain.
--  *PR welcome / hero wanted!*: Contributions for issues with these labels are especially welcome.
-   Note that this **doesn't** mean you can't work on issues without
-   these labels.
+-  *Performance*: issues that directly impact engine or editor performance.
+   Can also be used for pull requests that improve performance or add low-end-friendly options.
+   Should not be coupled with *Usability*.
+-  *PR welcome / Hero wanted!*: Contributions for issues with these labels
+   are especially welcome. Note that this **doesn't** mean you can't work
+   on issues without these labels.
+-  *Regression*: the bug appeared after a stable release not exhibiting
+   the bug was released.
+-  *Salvageable*: the pull request can't be merged due to design issues or
+   merge conflicts and its author is not active anymore. However, it can still
+   be picked up by an external contributor to bring it to a mergeable state.
+   To do so, you need to open a new pull request based on the original pull request.
 -  *Tracker*: issue used to track other issues (like all issues related to
    the plugin system).
--  *Usability*: issues that directly impact user usability.
+-  *Usability*: issues that directly impact user usability. Should not be coupled with *Performance*.
 
 The categories are used for general triage of the issues. They can be
 combined in some way when relevant, e.g. an issue can be labelled
@@ -82,6 +91,8 @@ feature request, or one that is not precise enough to be worked on.
 
 **Topics:**
 
+-  *2D*: relates to 2D-specific issues. Should be coupled with one of the labels below, and should not be coupled with *3D*.
+-  *3D*: relates to 3D-specific issues. Should be coupled with one of the labels below, and should not be coupled with *2D*.
 -  *Assetlib*: relates to issues with the asset library.
 -  *Audio*: relates to the audio features (low and high level).
 -  *Buildsystem*: relates to building issues, either linked to the SCons
