@@ -606,7 +606,7 @@ Optionally, the tilemap's half offset can be ignored.
 
 - void **set_cell** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` tile, :ref:`bool<class_bool>` flip_x=false, :ref:`bool<class_bool>` flip_y=false, :ref:`bool<class_bool>` transpose=false, :ref:`Vector2<class_Vector2>` autotile_coord=Vector2( 0, 0 ) **)**
 
-Sets the tile index for the cell given by a Vector2.
+Sets the tile index for the given cell.
 
 An index of ``-1`` clears the cell.
 
@@ -631,7 +631,7 @@ Overriding this method also overrides it internally, allowing custom logic to be
 
 - void **set_cellv** **(** :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` tile, :ref:`bool<class_bool>` flip_x=false, :ref:`bool<class_bool>` flip_y=false, :ref:`bool<class_bool>` transpose=false **)**
 
-Sets the tile index for the given cell.
+Sets the tile index for the cell given by a Vector2.
 
 An index of ``-1`` clears the cell.
 
