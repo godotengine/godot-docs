@@ -99,6 +99,7 @@ The main documentation for the site is organized into the following sections:
    tutorials/viewports/index
    tutorials/shading/index
    tutorials/networking/index
+   tutorials/navigation/index
    tutorials/assetlib/index
    tutorials/vr/index
    tutorials/plugins/index
