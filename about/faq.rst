@@ -13,7 +13,7 @@ Godot is `Free and Open-Source Software <https://en.wikipedia.org/wiki/Free_and_
 
 In short:
 
-* You are free to download and use Godot for any purpose, personal, non-profit, commercial, or otherwise.
+* You are free to download and use Godot for any purpose: personal, non-profit, commercial, or otherwise.
 * You are free to modify, distribute, redistribute, and remix Godot to your heart's content, for any reason, both non-commercially and commercially.
 
 All the contents of this accompanying documentation are published under
