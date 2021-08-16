@@ -50,6 +50,7 @@ explain the benefits of that system and how to set it up in your projects.
    :name: toc-gui-skinning
 
    gui_skinning
+   gui_using_theme_editor
 
 Control node tutorials
 ----------------------
