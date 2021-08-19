@@ -92,8 +92,8 @@ Lambdas should be used conservatively when they make code effectively faster or
 simpler, and do not impede readability. Please ask before using lambdas in a
 pull request.
 
-``#pragma once``
-^^^^^^^^^^^^^^^^
+``#pragma once`` directive
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To follow the existing style, please use standard ``#ifdef``-based include
 guards instead of ``#pragma once`` in new files.
