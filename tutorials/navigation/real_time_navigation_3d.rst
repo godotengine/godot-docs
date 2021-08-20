@@ -39,8 +39,8 @@ navigation mesh above the areas in your scene that can be navigated 
 .. image:: img/baked_navmesh.png
 
 Keep in mind that the navmesh shows where the center of an entity can
-go. For example, if you set the agent radius to 1 then your
-navigation mesh will have a distance of .5 from any ledges or walls
+go. For example, if you set the agent radius to 0.5 then your
+navigation mesh will have a distance of 0.5 from any ledges or walls
 to prevent clipping into the wall or hanging off of the edge.
 
 Generating a path
