@@ -26,28 +26,29 @@ Generally speaking, most assets people submit to the asset library
 are accepted. However, in order for your asset to be accepted, there
 are a few requirements your asset needs to meet to be approved.
 
-* The asset must work. If the asset doesn't run or otherwise doesn't
+* The asset must **work**. If the asset doesn't run or otherwise doesn't
   work in the specified Godot version, then it will be rejected.
 
 * The asset must have a proper **.gitignore** file. It's important to
   keep redundant data out of the repository.
-  `Here's a template. <https://github.com/github/gitignore/blob/master/Godot.gitignore>`_
+  `Here's a template. <https://raw.githubusercontent.com/aaronfranke/gitignore/godot/Godot.gitignore>`_
 
-* No submodules, or any submodules must be non-essential. GitHub
+* No **submodules**, or any submodules must be non-essential. GitHub
   does not include submodules in the downloaded ZIP file, so if the
   asset needs the contents of the submodule, your asset won't work.
 
-* The license needs to be correct. The license listed on the asset
+* The **license** needs to be correct. The license listed on the asset
   library must match the license in the repository. The repo MUST
   have a license file, called either "LICENSE" or "LICENSE.md".
   This file must contain the license text itself and a copyright
   statement that includes the year(s) and copyright holder.
 
-* Use proper English for the name and description of your asset.
+* Use proper **English** for the name and description of your asset.
   This includes using correct capitalization, and using full
-  sentences in the description.
+  sentences in the description. You can also include other languages,
+  but there should at least be an English version.
 
-* The icon link must be a direct link. For icons hosted on GitHub, the
+* The icon link must be a **direct link**. For icons hosted on GitHub, the
   link must start with "raw.githubusercontent.com", not "github.com".
 
 Recommendations
@@ -57,11 +58,11 @@ These things are not required for your asset to be approved, but
 if you follow these recommendations, you can help make the asset
 library a better place for all users.
 
-* Fix or suppress all script warnings. The warning system is there to
+* Fix or suppress all script **warnings**. The warning system is there to
   help identify issues with your code, but people using your asset
   don't need to see them.
 
-* Make your code conform to the official style guides. Having a
+* Make your code conform to the official **style guides**. Having a
   consistent style helps other people read your code, and it also helps
   if other people wish to contribute to your asset. See: the
   :ref:`doc_gdscript_styleguide` or the :ref:`doc_c_sharp_styleguide`.
@@ -73,16 +74,21 @@ library a better place for all users.
   ``type nul > .gdignore`` to create a file whose name starts with a period.
 
 * If your asset is a library for working with other files,
-  consider including example files in the asset.
+  consider including **example files** in the asset.
 
-* Consider adding a **.gitattributes** file to your repo and listing
-  files not required by your asset to function with the ``export-ignore``
+* Consider adding a **.gitattributes** file to your repo. This file allows
+  giving extra instructions to Git, such as specifying line endings and listing
+  files not required for your asset to function with the ``export-ignore``
   directive. This directive removes such files from the resulting ZIP file
   and prevents them from being downloaded by the asset library users.
   For a typical plugin **.gitattributes** may look like this:
 
   .. code-block:: none
 
+    # Normalize EOL for all files that Git considers text files.
+    * text=auto eol=lf
+
+    # Ignore some files when exporting to a ZIP.
     /.gitattributes     export-ignore
     /.gitignore         export-ignore
     /LICENSE            export-ignore
@@ -95,16 +101,16 @@ library a better place for all users.
   Other types of assets may require a different configuration (e.g.
   a project template requires **project.godot**).
 
-* If you are submitting a plugin, add a copy of your license and readme
+* If you are submitting a plugin, add a **copy** of your license and readme
   to the plugin folder itself. This is the folder that users are guaranteed to
   keep with their project, so a copy ensures they always have those files handy
   (and helps them fulfill your licensing terms).
 
-* The icon should be a square, its aspect ratio should be 1:1. It should
+* The **icon** should be a square, its aspect ratio should be 1:1. It should
   also ideally have a minimum resolution of 64x64 pixels.
 
 * While the asset library allows more than just GitHub, consider
-  hosting your asset's source code on GitHub. Other services may not
+  hosting your asset's source code on **GitHub**. Other services may not
   work reliably, and a lack of familiarity can be a barrier to contributors.
 
 Submitting
