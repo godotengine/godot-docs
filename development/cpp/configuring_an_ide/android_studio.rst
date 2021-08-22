@@ -4,15 +4,15 @@ Android Studio
 ==============
 
 `Android Studio <https://developer.android.com/studio>`_ is a free
-`JetBrains <https://www.jetbrains.com/>`_ IDE for Android development.
-It has a feature-rich editor which supports Java and C/C++. It can be used to
+IDE for Android development made by `Google <https://about.google/>`_ and `JetBrains <https://www.jetbrains.com/>`_.
+It's based on `IntelliJ IDEA <https://www.jetbrains.com/idea/>`_ and has a
+feature-rich editor which supports Java and C/C++. It can be used to
 work on Godot's core engine as well as the Android platform codebase.
 
 Importing the project
 ---------------------
 
-- From the Android Studio's welcome window select **Open an existing 
-  Android Studio project**.
+- From the Android Studio's welcome window select **Open**.
 
 .. figure:: img/android_studio_setup_project_1.png
    :figclass: figure-w480
