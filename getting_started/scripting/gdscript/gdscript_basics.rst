@@ -833,6 +833,29 @@ boolean expression. In this case, ternary-if expressions come in handy::
     var x = [value] if [expression] else [value]
     y += 3 if y < 10 else -1
 
+Ternary-if expressions can be nested to handle more than 2 cases. When nesting
+ternary-if expressions, it is recommended to wrap the complete expression over
+multiple lines to preserve readability::
+
+    var count = 0
+
+    var fruit = (
+            "apple" if count == 2
+            else "pear" if count == 1
+            else "banana" if count == 0
+            else "orange"
+    )
+    print(fruit)  # banana
+
+    # Alternative syntax with backslashes instead of parentheses (for multi-line expressions).
+    # Less lines required, but harder to refactor.
+    var fruit_alt = \
+            "apple" if count == 2 \
+            else "pear" if count == 1 \
+            else "banana" if count == 0 \
+            else "orange"
+    print(fruit_alt)  # banana
+
 while
 ^^^^^
 
