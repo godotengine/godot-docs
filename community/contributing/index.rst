@@ -40,6 +40,7 @@ about the code style, the contribution workflow, and more.
    testing_pull_requests
    bisecting_regressions
    bug_triage_guidelines
+   pr_review_guidelines
    code_style_guidelines
    cpp_usage_guidelines
 
