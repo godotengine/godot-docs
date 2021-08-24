@@ -4,18 +4,19 @@ Pull request review guidelines
 ==============================
 
 .. note::
-	This page is targeted at engine maintainers responsible for reviewing
-	and approving pull requests. While not all tips and recommendations
-	here are actionable if you are not a maintainer, this can still give
-	you and insight into what goes into successfully merging a PR.
 
-	Even if you are not a maintainer, you can always help by spotting
-	issues in code or problems with the implementation overall, as well
-	as by doing live testing of PRs on your machine and confirming that
-	they work as intended.
+    This page is targeted at engine maintainers responsible for reviewing
+    and approving pull requests. While not all tips and recommendations
+    here are actionable if you are not a maintainer, this can still give
+    you and insight into what goes into successfully merging a PR.
 
-If you are a designated Godot contributor and maintainers, you've likely
-demonstrated skill, knowledge and capacity for better judgement when
+    Even if you are not a maintainer, you can always help by spotting
+    issues in code or problems with the implementation overall, as well
+    as by doing live testing of PRs on your machine and confirming that
+    they work as intended.
+
+If you are a designated Godot maintainer ("Member" on GitHub), you've
+likely demonstrated skill, knowledge and capacity for better judgement when
 writing, reviewing and improving Godot engine code and experience. You
 are entrusted with keeping Godot moving forward, so feel free to exercise
 your maintainer power to achieve that.
@@ -27,7 +28,7 @@ to use it. But there are a few rules, checks and recommendations that you
 need to keep in mind before proceeding to do that.
 
 Now, some of the things stated below may look obvious, but this is not
-to insult your intelligent. We all can forget things, and we also come
+to insult your intelligence. We all can forget things, and we also come
 from different backgrounds. It's to everyone's benefit that all important,
 even if most obvious, steps are listed here.
 
@@ -80,9 +81,10 @@ Before going after the code it always makes sense to check if the
 desired outcome is achieved in practice.
 
 .. note::
-	Some PRs can also aim to improve code that could theoretically cause a
-	problem. Use your better judgement and experience there to assess the
-	case, if it cannot be reproduced and tested in practice.
+
+    Some PRs can also aim to improve code that could theoretically cause a
+    problem. Use your better judgement and experience there to assess the
+    case, if it cannot be reproduced and tested in practice.
 
 The precise approach would highly depend on the affected area of the
 engine.
@@ -111,9 +113,20 @@ checklist of universal things to look for:
   inconsistencies, they are far from perfect in that regard and are
   unable to detect some issues. For example, check that:
 
-  * The style of header includes is respected;
-  * Identifiers use ``snake_case`` and follow our naming conventions;
+  * The style of header includes is respected.
+  * Identifiers use ``snake_case`` and follow our naming conventions.
   * Method parameters start with ``p_*`` or ``r_*``.
+  * Braces are used appropriately, even for one-liner conditionals.
+  * Code is properly spaced (exactly one empty line between methods, no
+    unnecessary empty lines inside of method bodies).
+
+.. note::
+
+    This list is not complete and doesn't aim to be complete. Refer to
+    the linked style guide document for a complete set of rules. Keep
+    in mind that ``clang-format`` may not catch things you hope it would,
+    so pay attention and try to build a sense of what exactly it can and
+    cannot detect.
 
 * **Code only touches the areas announced in the PR (and the commit
   message).**
@@ -251,12 +264,14 @@ team.
 
   This can primarily happen with new contributors, as they
   often don't provide a correct author signature in their
-  commits. This can result in the PR being authored by
-  seemingly one person, but submitted for review by another.
-  Ultimately, it's up to them if they want it to fix, but such
-  PRs won't count towards their contributions to the project
-  and will keep them forever "New contributor" as far as our
-  project is concerned.
+  commits (i.e. they don't use their actual email address, or
+  the address they use isn't connected to their GitHub account).
+  This can result in the PR being authored by seemingly one
+  person, but submitted for review by another. Ultimately,
+  it's up to them if they want to fix it, but such PRs won't
+  count towards their contributions to the project and will
+  keep them forever "New contributor" as far as GitHub is
+  concerned.
 
 * **Check for proper commit messages.**
 
@@ -284,13 +299,14 @@ team.
   labels if the PR can be cherrypicked (e.g. ``cherrypick:3.x``).
 
 .. note::
-	It is possible to change the target branch of the PR,
-	that has already been submitted, but be aware of the
-	consequences. As it cannot be synchronized with the push,
-	the target branch change will inevitable tag the entire
-	list of maintainers for review. It may also render the
-	CI incapable of running properly. A push should help with
-	that, but if nothing else, recommend opening a new, fresh PR.
+
+    It is possible to change the target branch of the PR,
+    that has already been submitted, but be aware of the
+    consequences. As it cannot be synchronized with the push,
+    the target branch change will inevitable tag the entire
+    list of maintainers for review. It may also render the
+    CI incapable of running properly. A push should help with
+    that, but if nothing else, recommend opening a new, fresh PR.
 
 * **Make sure that the appropriate milestone is assigned.**
 
