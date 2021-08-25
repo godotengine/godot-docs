@@ -16,15 +16,15 @@ Pull request review guidelines
     they work as intended.
 
 If you are a designated Godot maintainer ("Member" on GitHub), you've
-likely demonstrated skill, knowledge and capacity for better judgement when
-writing, reviewing and improving Godot engine code and experience. You
+likely demonstrated skill, knowledge, and capacity for better judgement when
+writing, reviewing, and improving Godot engine code and experience. You
 are entrusted with keeping Godot moving forward, so feel free to exercise
 your maintainer power to achieve that.
 
 One part of that power is reviewing and merging pull requests, created
 by your teammates and other contributors. You may not even realize it,
 but you have full control of that green "Merge" button and are encouraged
-to use it. But there are a few rules, checks and recommendations that you
+to use it. But there are a few rules, checks, and recommendations that you
 need to keep in mind before proceeding to do that.
 
 Now, some of the things stated below may look obvious, but this is not
@@ -63,7 +63,7 @@ do to assess if it succeeds.
 
 At the very least no PR should make the engine worse. Regardless of the
 practicality of the solution, there should not be any immediate downgrades,
-regressions and unforeseen side-effects. It is very easy to become too
+regressions, and unforeseen side-effects. It is very easy to become too
 focused on solving a particular issue and accidentally breaking something
 unrelated.
 
@@ -77,7 +77,7 @@ of buttons, and running a scene.
 
 While the rest of the engine and the editor only need a cursory look,
 the areas directly affected by PR need to be evaluated more carefully.
-Before going after the code it always makes sense to check if the
+Before going after the code, it always makes sense to check if the
 desired outcome is achieved in practice.
 
 .. note::
@@ -151,7 +151,7 @@ checklist of universal things to look for:
   process, namely `reduz <https://github.com/reduz>`_ or
   `vnen <https://github.com/vnen>`_. Their input and approval would
   be required for changes to the engine's core systems and overall
-  architecture, APIs that touch on all Objects or Nodes, changes
+  architecture, APIs that touch on all Objects or Nodes, and changes
   to GDScript and GDNative. If the pull request modifies the build
   system, you can contact `Akien <https://github.com/akien-mga>`_.
 
@@ -160,15 +160,15 @@ checklist of universal things to look for:
 
 Inevitably, a lot of pull requests would be initially undercooked.
 At this point, you and the contributor should enter a feedback loop
-where they iterate on your notes, recommendations and requests, and
-you look that they have indeed fixed the issues you've highlighted.
+where they iterate on your notes, recommendations, and requests, and
+you make sure that they have indeed fixed the issues you've highlighted.
 
 Try not to exhaust the contributor with style nitpicks, especially
 if it's still up in the air whether their PR would be accepted at
 all. Preferably, suggestions should come in order of importance:
-first address their overall code design and approach to solving the
+firstly, address their overall code design and approach to solving the
 problem, then make sure their code is complying with the engine's
-best practices, and last do the "pretty pass".
+best practices, and lastly, do the "pretty pass".
 
 Some areas of the engine are more important than others. There is
 a lot of ugly code in the editor and UI components, and while this
@@ -187,8 +187,8 @@ so you can also wait or ask for their assistance.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you find that everything is in order, that the PR is addressing
-a problem and does so in the acceptable way (it doesn't have to be
-perfect, but it helps), then put your positive review on it.
+the problem, and that it does so in an acceptable way (it doesn't have
+to be perfect, but it helps), then put your positive review on it.
 
 If you are a merger
 -------------------
@@ -257,8 +257,9 @@ team.
 
 * **Make sure that the PR has no merge conflicts.**
 
-  It must be a one click merge, and if it's not the contributor
-  needs to rebase their work from the current master.
+  It must be a one click merge, and if it's not, the contributor
+  needs to rebase their work from the current version of the
+  target branch (e.g. ``master`` or ``3.x``).
 
 * **Check for proper commit attribution.**
 
