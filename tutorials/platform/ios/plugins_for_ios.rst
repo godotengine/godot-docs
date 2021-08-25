@@ -22,13 +22,19 @@ Here's an example of how to do this in GDScript:
 ::
 
     var in_app_store
+    var game_center
 
     func _ready():
         if Engine.has_singleton("InAppStore"):
             in_app_store = Engine.get_singleton("InAppStore")
-
         else:
-            print("iOS IAP plugin is not exported.")
+            print("iOS IAP plugin is not available on this platform.")
+
+        if Engine.has_singleton("GameCenter"):
+            game_center = Engine.get_singleton("GameCenter")
+        else:
+            print("iOS Game Center plugin is not available on this platform.")
+
 
 Asynchronous methods
 --------------------
@@ -86,8 +92,8 @@ Store Kit
 
 Implemented in `Godot iOS InAppStore plugin <https://github.com/godotengine/godot-ios-plugins/blob/master/plugins/inappstore/in_app_store.mm>`_.
 
-The Store Kit API is accessible through the ``InAppStore`` singleton (will
-always be available from GDScript on iOS). It is initialized automatically.
+The Store Kit API is accessible through the ``InAppStore`` singleton.
+It is initialized automatically.
 
 The following methods are available and documented below:
 
@@ -117,11 +123,11 @@ Parameters
 ^^^^^^^^^^
 
 Takes a dictionary as a parameter, with one field, ``product_id``, a
-string with your product id. Example:
+string with your product ID. Example:
 
 ::
 
-    var result = InAppStore.purchase({ "product_id": "my_product" })
+    var result = in_app_store.purchase({ "product_id": "my_product" })
 
 Response event
 ^^^^^^^^^^^^^^
@@ -135,7 +141,7 @@ On error:
     {
       "type": "purchase",
       "result": "error",
-      "product_id": "the product id requested",
+      "product_id": "the product ID requested",
     }
 
 On success:
@@ -145,7 +151,7 @@ On success:
     {
       "type": "purchase",
       "result": "ok",
-      "product_id": "the product id requested",
+      "product_id": "the product ID requested",
     }
 
 ``request_product_info``
@@ -157,11 +163,11 @@ Parameters
 ^^^^^^^^^^
 
 Takes a dictionary as a parameter, with a single ``product_ids`` key to which a
-string array of product ids is assigned. Example:
+string array of product IDs is assigned. Example:
 
 ::
 
-    var result = InAppStore.request_product_info({ "product_ids": ["my_product1", "my_product2"] })
+    var result = in_app_store.request_product_info({ "product_ids": ["my_product1", "my_product2"] })
 
 Response event
 ^^^^^^^^^^^^^^
@@ -173,9 +179,9 @@ The response event will be a dictionary with the following fields:
     {
       "type": "product_info",
       "result": "ok",
-      "invalid_ids": [ list of requested ids that were invalid ],
-      "ids": [ list of ids that were valid ],
-      "titles": [ list of valid product titles (corresponds with list of valid ids) ],
+      "invalid_ids": [ list of requested IDs that were invalid ],
+      "ids": [ list of IDs that were valid ],
+      "titles": [ list of valid product titles (corresponds with list of valid IDs) ],
       "descriptions": [ list of valid product descriptions ] ,
       "prices": [ list of valid product prices ],
       "localized_prices": [ list of valid product localized prices ],
@@ -185,7 +191,7 @@ The response event will be a dictionary with the following fields:
 ~~~~~~~~~~~~~~~~~~~~~
 
 Restores previously made purchases on user's account. This will create
-response events for each previously purchased product id.
+response events for each previously purchased product ID.
 
 Response event
 ^^^^^^^^^^^^^^
@@ -197,7 +203,7 @@ The response events will be dictionaries with the following fields:
     {
       "type": "restore",
       "result": "ok",
-      "product id": "product id of restored purchase",
+      "product_id": "product ID of restored purchase",
     }
 
 ``set_auto_finish_transaction``
@@ -214,7 +220,7 @@ automatically finalized. Example:
 
 ::
 
-    InAppStore.set_auto_finish_transaction(true)
+    in_app_store.set_auto_finish_transaction(true)
 
 ``finish_transaction``
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -231,7 +237,7 @@ finalize the purchase on. Example:
 
 ::
 
-    InAppStore.finish_transaction("my_product1")
+    in_app_store.finish_transaction("my_product1")
 
 Game Center
 -----------
@@ -308,7 +314,7 @@ Example:
 
 ::
 
-    var result = GameCenter.post_score({ "score": 100, "category": "my_leaderboard", })
+    var result = game_center.post_score({ "score": 100, "category": "my_leaderboard", })
 
 Response event
 ^^^^^^^^^^^^^^
