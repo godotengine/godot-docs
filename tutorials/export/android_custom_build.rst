@@ -48,3 +48,13 @@ window will appear every time):
 
 The templates built will be used automatically afterwards, so no further
 configuration is needed.
+
+.. note::
+
+    When using the custom Android build system, assets that are placed within a
+    folder whose name begins with an underscore will not be included in the
+    generated APK. This does not apply to assets whose *file* name begins with
+    an underscore.
+
+    For example, ``_example/image.png`` will **not** be included as an asset,
+    but ``_image.png`` will.
