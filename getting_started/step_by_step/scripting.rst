@@ -238,6 +238,15 @@ the following underneath the ``_ready()`` function:
     {
         GetNode("Button");
     }
+    
+ .. code-tab:: GDnative C++
+    
+    #include "Label.hpp"
+    
+    void MyClas::_ready() 
+    {
+        get_node<godot::Label>("Label");
+    }
 
 Next, write a function which will be called when the button is pressed:
 
@@ -253,6 +262,15 @@ Next, write a function which will be called when the button is pressed:
     {
         GetNode<Label>("Label").Text = "HELLO!";
     }
+ .. code-tab:: GDnative C++
+    
+    #include "Label.hpp"
+    
+    void MyClas::_ready() 
+    {
+        get_node<godot::Label>("Label")->set_text("HELLO!");;
+    }
+
 
 Finally, connect the button's "pressed" signal to ``_on_Button_pressed()`` by
 using :ref:`Object.connect() <class_Object_method_connect>`.
