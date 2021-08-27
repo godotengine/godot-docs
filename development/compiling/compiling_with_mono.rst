@@ -376,10 +376,6 @@ the Mono module:
 
   - Path to the Mono installation directory for the target platform and architecture.
 
-- **xbuild_fallback**\ =yes | **no**
-
-  - Whether to fallback to xbuild if MSBuild is not available.
-
 - **mono_static**\ =yes | no
 
   - Whether to link the Mono runtime statically.
