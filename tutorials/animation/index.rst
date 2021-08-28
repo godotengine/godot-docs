@@ -1,7 +1,7 @@
 Animation
 =========
 
-This section of the tutorial covers using the two animation nodes in godot
+This section of the tutorial covers using the two animation nodes in Godot
 and the animation editor.
 
 .. toctree::
@@ -14,4 +14,4 @@ and the animation editor.
    2d_skeletons
    animation_tree
 
-For information on how to import animations with a 3D model see :ref:`doc_importing_3d_scenes`
+See :ref:`doc_importing_3d_scenes` for information on importing animations from a 3D model.
