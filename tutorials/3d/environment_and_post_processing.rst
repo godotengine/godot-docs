@@ -320,10 +320,10 @@ Once glow is visible, it can be controlled with a few extra parameters:
 
 The **Blend Mode** of the effect can also be changed:
 
-- **Additive** is the strongest one, as it just adds the glow effect over the image with no blending involved. In general, it's too strong to be used, but can look good with low intensity Bloom (produces a dream-like effect).
-- **Screen** is the default one. It ensures glow never brights more than itself and works great as an all around.
-- **Softlight** is the weakest one, producing only a subtle color disturbance around the objects. This mode works best on dark scenes.
-- **Replace** can be used to blur the whole screen or debug the effect. It just shows the glow effect without the image below.
+- **Additive** is the strongest one, as it only adds the glow effect over the image with no blending involved. In general, it's too strong to be used, but can look good with low intensity Bloom (produces a dream-like effect).
+- **Screen** ensures glow never brightens more than itself and it works great as an all around.
+- **Softlight** is the default and weakest one, producing only a subtle color disturbance around the objects. This mode works best on dark scenes.
+- **Replace** can be used to blur the whole screen or debug the effect. It only shows the glow effect without the image below.
 
 To change the glow effect size and shape, Godot provides **Levels**. Smaller
 levels are strong glows that appear around objects, while large levels are hazy
