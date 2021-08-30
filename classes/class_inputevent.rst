@@ -113,7 +113,7 @@ Returns a value between 0.0 and 1.0 depending on the given actions' state. Usefu
 
 - :ref:`bool<class_bool>` **is_action** **(** :ref:`StringName<class_StringName>` action **)** const
 
-Returns ``true`` if this input event matches a predefined action of any type.
+Returns ``true`` if this input event matches a pre-defined action of any type.
 
 ----
 

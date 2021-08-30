@@ -14,7 +14,7 @@ An optimized string type for unique names.
 Description
 -----------
 
-``StringName``\ s are immutable strings designed for general-purpose representation of unique names. ``StringName`` ensures that only one instance of a given name exists (so two ``StringName``\ s with the same value are the same object). Comparing them is much faster than with regular :ref:`String<class_String>`\ s, because only the pointers are compared, not the whole strings.
+``StringName``\ s are immutable strings designed for general-purpose represention of unique names. ``StringName`` ensures that only one instance of a given name exists (so two ``StringName``\ s with the same value are the same object). Comparing them is much faster than with regular :ref:`String<class_String>`\ s, because only the pointers are compared, not the whole strings.
 
 Methods
 -------
