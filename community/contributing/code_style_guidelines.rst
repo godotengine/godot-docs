@@ -273,7 +273,7 @@ Here's how to install black:
 
 ::
 
-    pip install black --user
+    pip3 install black --user
 
 
 You then have different possibilities to apply black to your changes:
