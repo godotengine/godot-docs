@@ -97,7 +97,7 @@ After installing ``babel`` and ``babel-godot``, for example using pip:
 
 .. code-block:: shell
 
-    pip install babel babel-godot
+    pip3 install babel babel-godot
 
 Write a mapping file (for example ``babelrc``) which will indicate which files
 pybabel needs to process (note that we process GDScript as Python, which is

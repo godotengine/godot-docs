@@ -35,7 +35,7 @@ For compiling under Windows, the following is required:
                   mingw-w64-i686-yasm make
 
           For each MSYS2 MinGW subsystem, you should then run
-          `pip install scons` in its shell.
+          `pip3 install scons` in its shell.
 
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
@@ -52,7 +52,7 @@ Setting up SCons
 
 To install SCons open the command prompt and run the following command.
 
-``python -m pip install scons``
+``python -m pip3 install scons``
 
 To check whether you have installed Python and SCons correctly, you can
 type ``python --version`` and ``scons --version`` into a command prompt
