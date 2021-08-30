@@ -796,7 +796,7 @@ Built-in variables
 ------------------
 
 A large number of built-in variables are available, like ``UV``, ``COLOR`` and ``VERTEX``. What variables are available depends on the type of shader (``spatial``, ``canvas_item`` or ``particle``) and the function used (``vertex``, ``fragment`` or ``light``).
-For a list of the build-in variables that are available, please see the corresponding pages:
+For a list of the built-in variables that are available, please see the corresponding pages:
 
 - :ref:`Spatial shaders <doc_spatial_shader>`
 - :ref:`Canvas item shaders <doc_canvas_item_shader>`

@@ -161,7 +161,7 @@ There are several specialized types of InputEvent, described in the table below:
 Actions
 -------
 
-An InputEvent may or may not represent a pre-defined action. Actions are
+An InputEvent may or may not represent a predefined action. Actions are
 useful because they abstract the input device when programming the game
 logic. This allows for:
 
