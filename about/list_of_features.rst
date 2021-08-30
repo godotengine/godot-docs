@@ -606,6 +606,6 @@ Miscellaneous
 
 .. seealso::
 
-    The `roadmap <https://github.com/godotengine/godot-roadmap>`__ repository
-    documents features that have been agreed upon and may be implemented in
-    future Godot releases.
+    The `Godot proposals repository <https://github.com/godotengine/godot-proposals>`__
+    lists features that have been requested by the community and may be implemented
+    in future Godot releases.
