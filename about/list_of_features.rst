@@ -92,14 +92,18 @@ Vulkan renderer.
 
    - Hard or soft shadows.
 
-- Font rendering using bitmaps or rasterization using FreeType.
+- Font rendering using bitmaps, rasterization using FreeType or
+  multi-channel signed distance fields (MSDF).
 
    - Bitmap fonts can be exported using tools like BMFont.
-   - Dynamic fonts supports monochrome fonts as well as colored fonts.
-     Supported formats are TTF and OTF.
-   - Dynamic fonts supports optional font outlines with adjustable width and color.
-   - Dynamic fonts supports variable fonts and OpenType features.
-   - Support for font oversampling to keep fonts sharp at higher resolutions.
+   - Dynamic fonts support monochrome fonts as well as colored fonts (e.g. for emoji).
+     Supported formats are TTF, OTF and WOFF1.
+   - Dynamic fonts support optional font outlines with adjustable width and color.
+   - Dynamic fonts support variable fonts and OpenType features.
+   - Dynamic fonts support oversampling to keep fonts sharp at higher resolutions.
+   - Signed distance field fonts can be scaled at any resolution without
+     requiring re-rasterization. Multi-channel usage makes SDF fonts scale down
+     to lower sizes better compared to monochrome SDF fonts.
 
 - GPU-based particles with support for custom particle shaders.
 - CPU-based particles.
@@ -139,6 +143,11 @@ Vulkan renderer.
 
 - HDR rendering with sRGB.
 - Perspective, orthographic and frustum-offset cameras.
+- Support for rendering 3D at a lower resolution while keeping 2D rendering at
+  the original scale. This can be used to improve performance on low-end systems.
+- `OpenGL support planned for a future Godot 4.x release <https://godotengine.org/article/about-godot4-vulkan-gles3-and-gles2>`__.
+
+  - If you need OpenGL support, use Godot 3.x which remains supported.
 
 **Physically-based rendering:**
 
@@ -177,39 +186,56 @@ Vulkan renderer.
 
 - Baked lightmaps (fast, but can't be updated at run-time).
 
-   - Lightmaps are baked on the GPU using compute shaders.
+   - Supports baking indirect light only or baking both direct and indirect lighting.
+     The bake mode can be adjusted on a per-light basis to allow for hybrid light
+     baking setups.
+   - Supports lighting dynamic objects using automatic and manually placed probes.
+   - Optionally supports directional lighting and reflections based on spherical
+     harmonics.
+   - Lightmaps are baked on the GPU using compute shaders (much faster compared
+     to CPU lightmapping).
 
 - GI probes (slower, fully real-time). Supports reflections.
 - Signed distance field GI (intermediate, supports dynamic lights but not
   dynamic occluders). Supports reflections.
-- Global illumination uses a deferred pass to allow for adaptive subsampling.
+- Global illumination uses a deferred pass to allow for rendering GI at half
+  resolution to improve performance.
 
 **Reflections:**
 
-- Voxel-based reflections (when using GI probes) and SDF-based reflections (when using signed distance field GI).
+- Voxel-based reflections (when using GI probes) and SDF-based reflections
+  (when using signed distance field GI).
 - Fast baked reflections or slow real-time reflections using ReflectionProbe.
   Parallax correction can optionally be enabled.
 - Screen-space reflections.
-- Reflection techniques can be mixed together for greater accuracy.
+- Reflection techniques can be mixed together for greater accuracy or scalability.
 
 **Sky:**
 
 - Panorama sky (using an HDRI).
 - Procedural sky and Physically-based sky that respond to the DirectionalLights in the scene.
-- Support for custom sky shaders.
+- Support for custom sky shaders, which can be animated.
 - Radiance can be updated in real-time depending on the quality settings chosen.
 
 **Fog:**
 
-- Depth fog (exponential or with custom attenuation).
-- Height fog (floor or ceiling) with adjustable attenuation.
-- Support for automatic depth fog color depending on the camera direction
-  (to match the sun color).
-- Optional transmittance to make lights more visible in the fog.
+- Exponential depth fog.
+- Exponential height fog.
+- Support for automatic fog color depending on the sky color (aerial perspective).
+- Support for sun scattering in the fog.
 
 **Particles:**
 
-- GPU-based particles with support for custom particle shaders.
+- GPU-based particles with support for subemitters (2D + 3D), trails (2D + 3D),
+  attractors (3D only) and collision (3D only).
+
+  - Particle attractor shapes supported: box, sphere and 3D vector fields.
+  - Particle collision shapes supported: box, sphere, baked signed distance field
+    and real-time heightmap (suited for open world weather effects).
+  - Trails can use the built-in ribbon trail and tube trail meshes, or custom
+    meshes with skeletons.
+  - Support for custom particle shaders with manual emission.
+
 - CPU-based particles.
 
 **Post-processing:**
@@ -530,8 +556,8 @@ Animation
 - Support for playing sounds in animation tracks.
 - Support for Bézier curves in animation.
 
-Formats
-^^^^^^^
+File formats
+^^^^^^^^^^^^
 
 - Scenes and resources can be saved in :ref:`text-based <doc_tscn_file_format>` or binary formats.
 
