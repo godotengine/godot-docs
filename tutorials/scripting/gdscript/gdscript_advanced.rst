@@ -438,7 +438,7 @@ functions in your script. An example implementation of a forward iterator follow
             self.increment = increment
 
         func should_continue():
-            return (current < end)
+            return current < end
 
         func _iter_init(arg):
             return should_continue()
