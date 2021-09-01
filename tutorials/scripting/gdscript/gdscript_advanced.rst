@@ -441,7 +441,6 @@ functions in your script. An example implementation of a forward iterator follow
             return (current < end)
 
         func _iter_init(arg):
-            current = start
             return should_continue()
 
         func _iter_next(arg):
