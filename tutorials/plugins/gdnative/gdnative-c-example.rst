@@ -52,8 +52,8 @@ Before we start you'll need a few things:
 2) A C compiler. On Linux, install ``gcc`` or ``clang`` from your package
    manager. On macOS, you can install Xcode from the Mac App Store. On Windows,
    you can use Visual Studio 2015 or later, or MinGW-w64.
-3) A Git clone of the `godot_headers
-   repository <https://github.com/godotengine/godot_headers>`_: these are
+3) A Git clone of the `godot-headers
+   repository <https://github.com/godotengine/godot-headers.git>`_: these are
    the C headers for Godot's public API exposed to GDNative.
 
 For the latter, we suggest that you create a dedicated folder for this GDNative
@@ -61,18 +61,18 @@ example project, open a terminal in that folder and execute:
 
 .. code-block:: none
 
-    git clone https://github.com/godotengine/godot_headers
+    git clone https://github.com/godotengine/godot-headers.git
 
 This will download the required files into that folder.
 
 .. tip::
 
     If you plan to use Git for your GDNative project, you can also add
-    ``godot_headers`` as a Git submodule.
+    ``godot-headers`` as a Git submodule.
 
 .. note::
 
-    The ``godot_headers`` repository has different branches. As Godot evolves,
+    The ``godot-headers`` repository has different branches. As Godot evolves,
     so does GDNative. While we try to preserve compatibility between version,
     you should always build your GDNative module against headers matching the
     Godot stable branch (e.g. ``3.1``) and ideally actual release (e.g.
@@ -80,13 +80,13 @@ This will download the required files into that folder.
     GDNative modules built against older versions of the Godot headers *may*
     work with newer versions of the engine, but not the other way around.
 
-The ``master`` branch of the ``godot_headers`` repository is kept in line with
+The ``master`` branch of the ``godot-headers`` repository is kept in line with
 the ``master`` branch of Godot and thus contains the GDNative class and
 structure definitions that will work with the latest development builds.
 
 If you want to write a GDNative module for a stable version of Godot, look at
 the available Git tags (with ``git tags``) for the one matching your engine
-version. In the ``godot_headers`` repository, such tags are prefixed with
+version. In the ``godot-headers`` repository, such tags are prefixed with
 ``godot-``, so you can e.g. checkout the ``godot-3.1.1-stable`` tag for use with
 Godot 3.1.1. In your cloned repository, you can do:
 
@@ -111,7 +111,7 @@ structure that looks along those lines:
 .. code-block:: none
 
     + <your development folder>
-      + godot_headers
+      + godot-headers
         - <lots of files here>
       + simple
         + bin
@@ -124,7 +124,7 @@ structure that looks along those lines:
         - simple.c
 
 Open up Godot and create a new project called "simple" alongside your
-``godot_headers`` Git clone. This will create the ``simple`` folder and
+``godot-headers`` Git clone. This will create the ``simple`` folder and
 ``project.godot`` file. Then manually create a ``src`` folder alongside the
 ``simple`` folder, and a ``bin`` subfolder in the ``simple`` folder.
 
@@ -253,7 +253,7 @@ case, that is just ``get_data``. Our first parameter is yet again our handle
 pointer. The second is again the name of the object class we're registering. The
 third is the name of our function as it will be known to GDScript. The fourth is
 our attributes setting (see ``godot_method_rpc_mode`` enum in
-``godot_headers/nativescript/godot_nativescript.h`` for possible values). The
+``godot-headers/nativescript/godot_nativescript.h`` for possible values). The
 fifth and final parameter is a description of which function to call when the
 method gets called.
 
@@ -360,21 +360,21 @@ On Linux:
 
 .. code-block:: none
 
-    gcc -std=c11 -fPIC -c -I../godot_headers simple.c -o simple.o
+    gcc -std=c11 -fPIC -c -I../godot-headers simple.c -o simple.o
     gcc -rdynamic -shared simple.o -o ../simple/bin/libsimple.so
 
 On macOS:
 
 .. code-block:: none
 
-    clang -std=c11 -fPIC -c -I../godot_headers simple.c -o simple.os
+    clang -std=c11 -fPIC -c -I../godot-headers simple.c -o simple.os
     clang -dynamiclib simple.os -o ../simple/bin/libsimple.dylib
 
 On Windows:
 
 .. code-block:: none
 
-    cl /Fosimple.obj /c simple.c /nologo -EHsc -DNDEBUG /MD /I. /I..\godot_headers
+    cl /Fosimple.obj /c simple.c /nologo -EHsc -DNDEBUG /MD /I. /I..\godot-headers
     link /nologo /dll /out:..\simple\bin\libsimple.dll /implib:..\simple\bin\libsimple.lib simple.obj
 
 .. note::
