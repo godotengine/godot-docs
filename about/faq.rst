@@ -217,7 +217,7 @@ artificial intelligence functionality.
 There are several reasons for this:
 
 - **Code maintenance and surface for bugs.** Every time we accept new code in
-  the Godot repository, existing contributors often take the reponsibility of
+  the Godot repository, existing contributors often take the responsibility of
   maintaining it. Some contributors don't always stick around after getting
   their code merged, which can make it difficult for us to maintain the code in
   question. This can lead to poorly maintained features with bugs that are never

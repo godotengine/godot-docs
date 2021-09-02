@@ -602,7 +602,7 @@ Miscellaneous
 
 - Licensed under the permissive MIT license.
 
-   - Open developement process with :ref:`contributions welcome <doc_ways_to_contribute>`.
+   - Open development process with :ref:`contributions welcome <doc_ways_to_contribute>`.
 
 .. seealso::
 

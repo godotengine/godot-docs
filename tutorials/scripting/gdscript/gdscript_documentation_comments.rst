@@ -202,7 +202,7 @@ be used in the documentation. Here's the list of available tags:
 
 ::
 
-    ## The do_something method for this plugin. before useing the 
+    ## The do_something method for this plugin. before using the 
     ## method you first have to initialize [MyPlugin].
     ## see : [method initialize]
     ## [color=yellow]Warning:[/color] always [method clean] after use.
