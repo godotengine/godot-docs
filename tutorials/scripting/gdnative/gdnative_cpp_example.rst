@@ -90,8 +90,8 @@ Do make sure you clone recursive to pull in both repositories:
 
 .. note::
 
-    ``godot-cpp`` now includes ``godot_headers`` as a nested submodule, if you've
-    manually downloaded them please make sure to place ``godot_headers`` inside
+    ``godot-cpp`` now includes ``godot-headers`` as a nested submodule, if you've
+    manually downloaded them please make sure to place ``godot-headers`` inside
     of the ``godot-cpp`` folder.
 
     You don't have to do it this way but we've found it easiest to manage. If you
