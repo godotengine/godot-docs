@@ -165,7 +165,7 @@ we'll save it as ``main.tscn``. We'll come back to that later.
 Back in the top-level GDNative module folder, we're also going to create a
 subfolder called ``src`` in which we'll place our source files.
 
-You should now have ``demo``, ``godot-cpp``, ``godot_headers``, and ``src``
+You should now have ``demo``, ``godot-cpp``, ``godot-headers``, and ``src``
 directories in your GDNative module.
 
 In the ``src`` folder, we'll start with creating our header file for the
@@ -390,7 +390,7 @@ build files in a subsequent tutorial.
     refer to the ``SConstruct`` file in the Godot 3.0 documentation.
 
 Once you've downloaded the ``SConstruct`` file, place it in your GDNative module
-folder besides ``godot-cpp``, ``godot_headers`` and ``demo``, then run:
+folder besides ``godot-cpp``, ``godot-headers`` and ``demo``, then run:
 
 .. code-block:: none
 
