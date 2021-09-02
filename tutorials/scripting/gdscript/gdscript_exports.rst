@@ -31,7 +31,8 @@ Exporting can only be done with built-in types or objects derived from the :ref:
 .. note::
 
     Exporting properties can also be done in other languages such as C#.
-    The syntax varies depending on the language.
+    The syntax varies depending on the language. See :ref:`doc_c_sharp_exports`
+    for information on C# exports.
 
 Basic use
 ---------
