@@ -515,8 +515,8 @@ Yes, we should call it Hulk typing instead.
 
 It's possible that the object being hit doesn't have a smash() function.
 Some dynamically typed languages simply ignore a method call when it
-doesn't exist (like Objective C), but GDScript is stricter, so
-checking if the function exists is desirable:
+doesn't exist, but GDScript is stricter, so checking if the function
+exists is desirable:
 
 ::
 
