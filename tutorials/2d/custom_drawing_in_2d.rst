@@ -3,8 +3,8 @@
 Custom drawing in 2D
 ====================
 
-Why?
-----
+Introduction
+------------
 
 Godot has nodes to draw sprites, polygons, particles, and all sorts of
 stuff. For most cases, this is enough; but not always. Before crying in fear,
@@ -13,26 +13,22 @@ it would be good to know that it is possible to easily make any 2D node (be it
 :ref:`Control <class_Control>` or :ref:`Node2D <class_Node2D>`
 based) draw custom commands. It is *really* easy to do it, too.
 
-But...
-------
+Custom drawing in a 2D node is *really* useful. Here are some use cases:
 
-Custom drawing manually in a node is *really* useful. Here are some
-examples why:
-
--  Drawing shapes or logic that is not handled by nodes (example: making
-   a node that draws a circle, an image with trails, a special kind of
-   animated polygon, etc).
--  Visualizations that are not that compatible with nodes: (example: a
-   tetris board). The tetris example uses a custom draw function to draw
-   the blocks.
+-  Drawing shapes or logic that existing nodes can't do, such as an image
+   with trails or a special animated polygon.
+-  Visualizations that are not that compatible with nodes, such as a
+   tetris board. (The tetris example uses a custom draw function to draw
+   the blocks.)
 -  Drawing a large number of simple objects. Custom drawing avoids the
-   overhead of using nodes which makes it less memory intensive and
-   potentially faster.
+   overhead of using a large number of nodes, possibly lowering memory
+   usage and improving performance.
 -  Making a custom UI control. There are plenty of controls available,
-   but it's easy to run into the need to make a new, custom one.
+   but when you have unusual needs, you will likely need a custom
+   control.
 
-OK, how?
---------
+Drawing
+-------
 
 Add a script to any :ref:`CanvasItem <class_CanvasItem>`
 derived node, like :ref:`Control <class_Control>` or
@@ -64,7 +60,7 @@ The ``_draw()`` function is only called once, and then the draw commands
 are cached and remembered, so further calls are unnecessary.
 
 If re-drawing is required because a state or something else changed,
-simply call :ref:`CanvasItem.update() <class_CanvasItem_method_update>`
+call :ref:`CanvasItem.update() <class_CanvasItem_method_update>`
 in that same node and a new ``_draw()`` call will happen.
 
 Here is a little more complex example, a texture variable that will be
