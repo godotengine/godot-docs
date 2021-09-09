@@ -28,7 +28,7 @@ the parent control or (in case there is no parent control) the viewport.
 .. image:: img/margin.png
 
 So to make the control wider you can make the right margin larger and/or
-make the left margin smaller. This lets you control exactly the placement
+make the left margin smaller. This lets you set the exact placement
 and shape of the control.
 
 The *anchor* properties adjust where the margin distances are relative *to*.
