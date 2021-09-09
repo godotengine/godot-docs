@@ -20,7 +20,7 @@ the top of the screen, or maybe the right or left margins.
 .. image:: img/anchors.png
 
 This is done by editing the *margin* properties of controls. Each
-control has four margins: left, right, bottom and top, which correspond
+control has four margins: left, right, bottom, and top, which correspond
 to the respective edges of the control. By default, all of
 them represent a distance in pixels relative to the top-left corner of
 the parent control or (in case there is no parent control) the viewport.
