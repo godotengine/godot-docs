@@ -191,8 +191,8 @@ In real-life scenarios, these use cases will be at most rare and uncommon
 anyway, so it makes sense a custom solution needs to be written. This is why
 it's important to still provide users the basic building blocks to do it.
 
-#7: Solutions must be local
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#7: Prefer local solutions
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When looking for a solution to a problem, be it implementing a new feature or
 fixing a bug, sometimes the easiest path is to add data or a new function in the
