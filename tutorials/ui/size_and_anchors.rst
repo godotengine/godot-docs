@@ -50,7 +50,7 @@ become relative to the top-right corner of the parent control or viewport.
 Adjusting the two horizontal or the two vertical anchors to different
 values will make the control change size when the parent control does.
 Here, the control is set to anchor its bottom-right corner to the
-parent's bottom right, while the top-left control margins are still
+parent's bottom-right, while the top-left control margins are still
 anchored to the top-left of the parent, so when re-sizing the parent,
 the control will always cover it, leaving a 20 pixel margin:
 
