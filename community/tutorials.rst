@@ -41,6 +41,7 @@ Video tutorials
 - `TheGuideKnight <https://www.youtube.com/playlist?list=PLYcTJBw32KtX2fvOdtO_fS3Nd6sxM71tn>`_ (2D, GDScript).
 - `GDScript Dude <https://www.youtube.com/channel/UCQs0i6vKISElM6mh7OzLouQ>`_ (GDScript).
 - `Garbaj <https://www.youtube.com/c/Garbaj/>`_ (3D, GDScript).
+- `Kasper Frandsen <https://www.youtube.com/c/KasperFrandsen/>`_ (3D, Shaders).
 
 Text tutorials
 --------------
