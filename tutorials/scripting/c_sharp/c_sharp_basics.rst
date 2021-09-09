@@ -123,7 +123,7 @@ In Visual Studio Code:
 - Install the `Mono Debug <https://marketplace.visualstudio.com/items?itemName=ms-vscode.mono-debug>`__ extension.
 - Install the `C# Tools for Godot <https://marketplace.visualstudio.com/items?itemName=neikeq.godot-csharp-vscode>`__ extension.
 
-.. note:: if you are using linux you must install the
+.. note:: If you are using Linux you need to install the
           `Mono SDK <https://www.mono-project.com/download/stable/#download-lin>`__
           for the C# tools plugin to work.
 
