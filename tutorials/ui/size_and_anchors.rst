@@ -36,7 +36,7 @@ Each margin has an individual anchor that can be adjusted from the
 beginning to the end of the parent. So the vertical (top, bottom) anchors
 adjust from 0 (top of parent) to 1.0 (bottom of parent) with 0.5 being
 the center, and the control margins will be placed relative to that
-point. The horizontal(left, right) anchors similarly adjust from left to
+point. The horizontal (left, right) anchors similarly adjust from left to
 right of the parent.
 
 Note that when you wish the edge of a control to be above or left of the
