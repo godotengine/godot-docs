@@ -360,13 +360,6 @@ calls ``_draw()``. This way, you can control when you want to refresh the frame.
 
  .. code-tab:: csharp
 
-    private float Wrap(float value, float minVal, float maxVal)
-    {
-        float f1 = value - minVal;
-        float f2 = maxVal - minVal;
-        return (f1 % f2) + minVal;
-    }
-
     public override void _Process(float delta)
     {
         _angleFrom += _rotationAngle;
@@ -375,8 +368,8 @@ calls ``_draw()``. This way, you can control when you want to refresh the frame.
         // We only wrap angles when both of them are bigger than 360.
         if (_angleFrom > 360 && _angleTo > 360)
         {
-            _angleFrom = Wrap(_angleFrom, 0, 360);
-            _angleTo = Wrap(_angleTo, 0, 360);
+            _angleFrom = Mathf.Wrap(_angleFrom, 0, 360);
+            _angleTo = Mathf.Wrap(_angleTo, 0, 360);
         }
         Update();
     }

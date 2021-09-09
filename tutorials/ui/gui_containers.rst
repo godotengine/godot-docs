@@ -161,8 +161,8 @@ it as if it was an image (via :ref:`ViewportContainer <class_ViewportContainer>`
 Creating custom Containers
 --------------------------
 
-It is possible to easily create a custom container using script. Here is an example of a container that fits children
-to its rect size:
+It is possible to create a custom container using a script.
+Here is an example of a container that fits children to its rect size:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -174,8 +174,34 @@ to its rect size:
             # Must re-sort the children
             for c in get_children():
                 # Fit to own size
-                fit_child_in_rect( c, Rect2( Vector2(), rect_size ) )
+                fit_child_in_rect(c, Rect2(Vector2(), rect_size))
 
     func set_some_setting():
-        # Some setting changed, ask for children re-sort
+        # Some setting changed, ask for children re-sort.
         queue_sort()
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public class CustomContainer : Container
+    {
+        public override void _Notification(int what)
+        {
+            if (what == NotificationSortChildren)
+            {
+                // Must re-sort the children
+                foreach (Control c in GetChildren())
+                {
+                    // Fit to own size
+                    FitChildInRect(c, new Rect2(new Vector2(), RectSize));
+                }
+            }
+        }
+
+        public void SetSomeSetting()
+        {
+            // Some setting changed, ask for children re-sort.
+            QueueSort();
+        }
+    }
