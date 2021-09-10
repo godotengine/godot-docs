@@ -105,6 +105,9 @@ requires attribution, so the following text must be included together with the
 Godot license:
 
     Portions of this software are copyright © <year> The FreeType Project (www.freetype.org).  All rights reserved.
+    
+Note that <year> should correspond to the value from the FreeType version
+used in your build.
 
 ENet
 ^^^^
