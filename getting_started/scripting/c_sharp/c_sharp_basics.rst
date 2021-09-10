@@ -121,6 +121,10 @@ In Visual Studio Code:
 - Install the `Mono Debug <https://marketplace.visualstudio.com/items?itemName=ms-vscode.mono-debug>`__ extension.
 - Install the `C# Tools for Godot <https://marketplace.visualstudio.com/items?itemName=neikeq.godot-csharp-vscode>`__ extension.
 
+.. note:: If you are using Linux you need to install the
+          `Mono SDK <https://www.mono-project.com/download/stable/#download-lin>`__
+          for the C# tools plugin to work.
+
 To configure a project for debugging open the Godot project folder in VS Code.
 Go to the Run tab and click on **create a launch.json file**. Select **C# Godot** from the dropdown
 menu. Now, when you start the debugger in VS Code your Godot project will run.
