@@ -347,3 +347,10 @@ If no errors are printed and everything goes well, you're done!
     recommend writing new tests for already resolved
     `issues related to GDScript at GitHub <https://github.com/godotengine/godot/issues?q=is%3Aissue+label%3Atopic%3Agdscript+is%3Aclosed>`_,
     or writing tests for currently working features.
+
+.. note::
+
+    If your test case requires that there is no ``test()``
+    function present inside the script file,
+    you can disable the runtime section of the test by naming the script file so that it matches the pattern ``*.noscript.gd``.
+    For example, "test_empty_file.notest.gd".
