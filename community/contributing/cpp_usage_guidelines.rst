@@ -25,7 +25,9 @@ modules or GDNative scripts.
 .. note::
 
     Prior to Godot 4.0, the C++ standard used throughout the codebase was C++03,
-    with a handful of C++11 extensions.
+    with a handful of C++14 extensions. If you are contributing a pull request
+    to the `3.x` branch rather than `master`, your code can't use C++17 features.
+    Instead, your code must be able to be built with a C++14 compiler.
 
     The guidelines below don't apply to third-party dependencies, although we
     generally favor small libraries instead of larger solutions. See also
