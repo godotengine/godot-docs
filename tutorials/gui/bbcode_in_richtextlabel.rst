@@ -114,9 +114,11 @@ Hexadecimal color codes
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 For opaque RGB colors, any valid 6-digit hexadecimal code is supported, e.g. ``[color=#ffffff]white[/color]``.
+Short RGB color codes such as ``#6f2`` (equivalent to ``#66ff22``) are also supported.
 
 For transparent RGB colors, any 8-digit hexadecimal code can be used, e.g. ``[color=#88ffffff]translucent white[/color]``.
 In this case, note that the alpha channel is the **first** component of the color code, not the last one.
+Short RGBA color codes such as ``#86f2`` (equivalent to ``#8866ff22``) are also supported.
 
 Image vertical offset
 ~~~~~~~~~~~~~~~~~~~~~
