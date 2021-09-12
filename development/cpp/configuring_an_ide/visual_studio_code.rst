@@ -161,7 +161,7 @@ To run and debug the project you need to create a new configuration in the ``lau
 
     If you encounter issues with lldb, you may consider using gdb (see the X11_gdb configuration).
 
-    Do note that lldb may work better with llvm-based builds. See :ref:`doc_compiling_for_linuxbsd` for further information.
+    Do note that lldb may work better with llvm-based builds. See :ref:`doc_compiling_for_x11` for further information.
 
 The name under ``program`` depends on your build configuration,
 e.g. ``godot.x11.tools.64`` for 64-bit X11 platform with ``tools`` enabled.
