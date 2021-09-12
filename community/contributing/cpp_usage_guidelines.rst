@@ -79,12 +79,6 @@ pull requests.
 We chose to forbid ``auto`` instead of allowing it on a case-by-case basis to
 avoid having to decide on difficult edge cases. Thank you for your understanding.
 
-``for`` range loop
-^^^^^^^^^^^^^^^^^^
-
-Don't use the ``for`` range loop syntax (``for (String string : some_array)``).
-Use traditional ``for`` loops instead as they're more explicit.
-
 Lambdas
 ^^^^^^^
 
