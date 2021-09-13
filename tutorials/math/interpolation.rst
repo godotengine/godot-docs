@@ -11,15 +11,13 @@ As an example if ``t`` is 0, then the state is A. If ``t`` is 1, then the state 
 
 Between two real (floating-point) numbers, a simple interpolation is usually described as:
 
-.. tabs::
- .. code-tab:: gdscript GDScript
+::
 
     interpolation = A * (1 - t) + B * t
 
 And often simplified to:
 
-.. tabs::
- .. code-tab:: gdscript GDScript
+::
 
     interpolation = A + (B - A) * t
 
@@ -40,10 +38,27 @@ Here is simple pseudo-code for going from point A to B using interpolation:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
+    var t = 0.0
+
     func _physics_process(delta):
         t += delta * 0.4
 
         $Sprite.position = $A.position.linear_interpolate($B.position, t)
+
+ .. code-tab:: csharp
+
+    private float _t = 0.0f;
+
+    public override void _PhysicsProcess(float delta)
+    {
+        _t += delta * 0.4f;
+
+        Position2D a = GetNode<Position2D>("A");
+        Position2D b = GetNode<Position2D>("B");
+        Sprite sprite = GetNode<Sprite>("Sprite");
+
+        sprite.Position = a.Position.LinearInterpolate(b.Position, _t);
+    }
 
 It will produce the following motion:
 
@@ -71,6 +86,21 @@ Using the following pseudocode:
 
         $Monkey.transform = $Position1.transform.interpolate_with($Position2.transform, t)
 
+ .. code-tab:: csharp
+
+    private float _t = 0.0f;
+
+    public override void _PhysicsProcess(float delta)
+    {
+        _t += delta;
+
+        Position3D p1 = GetNode<Position3D>("Position1");
+        Position3D p2 = GetNode<Position3D>("Position2");
+        CSGMesh monkey = GetNode<CSGMesh>("Monkey");
+
+        monkey.Transform = p1.Transform.InterpolateWith(p2.Transform, _t);
+    }
+
 And again, it will produce the following motion:
 
 .. image:: img/interpolation_monkey.gif
@@ -90,6 +120,19 @@ Interpolation can be used to smooth movement, rotation, etc. Here is an example 
         var mouse_pos = get_local_mouse_position()
 
         $Sprite.position = $Sprite.position.linear_interpolate(mouse_pos, delta * FOLLOW_SPEED)
+
+ .. code-tab:: csharp
+
+    private const float FollowSpeed = 4.0f;
+
+    public override void _PhysicsProcess(float delta)
+    {
+        Vector2 mousePos = GetLocalMousePosition();
+
+        Sprite sprite = GetNode<Sprite>("Sprite");
+
+        sprite.Position = sprite.Position.LinearInterpolate(mousePos, delta * FollowSpeed);
+    }
 
 Here is how it looks:
 
