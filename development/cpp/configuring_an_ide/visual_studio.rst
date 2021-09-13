@@ -3,7 +3,7 @@
 Visual Studio
 =============
 
-`Visual Studio Community <https://visualstudio.microsoft.com>`__ is a Windows-only IDE 
+`Visual Studio Community <https://visualstudio.microsoft.com>`__ is a Windows-only IDE
 by `Microsoft <https://microsoft.com>`_ that's free for non-commercial use.
 It has many useful features, such as memory view, performance view, source
 control and more.
@@ -35,7 +35,7 @@ and make live changes to the codebase.
 
 You can launch the project with the debugger attached using the **Debug > Start Debugging**
 option from the top menu. However, unless you want to debug the project manager specifically,
-you'd need to configure debugging options first. This is due to the fact that when the Godot 
+you'd need to configure debugging options first. This is due to the fact that when the Godot
 project manager opens a project, the initial process is terminated and the debugger gets detached.
 
 - To configure the launch options to use with the debugger use **Project > Properties**
@@ -44,9 +44,9 @@ project manager opens a project, the initial process is terminated and the debug
 .. figure:: img/vs_2_project_properties.png
    :align: center
 
-- Open the **Debugging** section and under **Command Arguments** add two new arguments: 
+- Open the **Debugging** section and under **Command Arguments** add two new arguments:
   the ``-e`` flag opens the editor instead of the project manager, and the ``--path`` argument
-  tells the executable to open the specified project (must be provided as an *absolute* path 
+  tells the executable to open the specified project (must be provided as an *absolute* path
   to the project root, not the ``project.godot`` file).
 
 .. figure:: img/vs_3_debug_command_line.png

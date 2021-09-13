@@ -44,13 +44,13 @@ For compiling under Windows, Linux or macOS, the following is required:
 Setting up the buildsystem
 --------------------------
 
--  Set the environment variable ``ANDROID_SDK_ROOT`` to point to the Android 
+-  Set the environment variable ``ANDROID_SDK_ROOT`` to point to the Android
    SDK. If you downloaded the Android command-line tools, this would be
    the folder where you extracted the contents of the ZIP archive.
 
 -  Install the necessary SDK components in this folder:
 
-    -  Accept the SDK component licenses by running the following command 
+    -  Accept the SDK component licenses by running the following command
        where ``android_sdk_path`` is the path to the Android SDK, then answering all the prompts with ``y``:
 
     ::
@@ -63,7 +63,7 @@ Setting up the buildsystem
 
         tools/bin/sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;30.0.3" "platforms;android-29" "cmdline-tools;latest" "cmake;3.10.2.4988404"
 
-.. seealso::   To set the environment variable on Windows, press :kbd:`Windows + R`, type 
+.. seealso::   To set the environment variable on Windows, press :kbd:`Windows + R`, type
             "control system", then click on **Advanced system settings** in the left
             pane, then click on **Environment variables** on the window that appears.
 

@@ -620,7 +620,7 @@ Varying can also be an array:
         ALBEDO = vec3(var_arr[0], var_arr[1], var_arr[2]); // red color
     }
 
-It's also possible to send data from *fragment* to *light* processors using *varying* keyword. To do so you can assign it in the *fragment* and later use it in the *light* function. 
+It's also possible to send data from *fragment* to *light* processors using *varying* keyword. To do so you can assign it in the *fragment* and later use it in the *light* function.
 
 .. code-block:: glsl
 

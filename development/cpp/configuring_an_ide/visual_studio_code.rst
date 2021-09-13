@@ -109,7 +109,7 @@ To run and debug the project you need to create a new configuration in the ``lau
       "type": "cppdbg",
       "request": "launch",
       // Change to godot.linuxbsd.tools.64.llvm for llvm-based builds.
-      "program": "${workspaceFolder}/bin/godot.linuxbsd.tools.64", 
+      "program": "${workspaceFolder}/bin/godot.linuxbsd.tools.64",
       // Change the arguments below for the project you want to test with.
       // To run the project instead of editing it, remove the "--editor" argument.
       "args": [ "--editor", "--path", "path-to-your-godot-project-folder" ],
@@ -117,7 +117,7 @@ To run and debug the project you need to create a new configuration in the ``lau
       "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false,
-      "setupCommands": 
+      "setupCommands":
       [
         {
           "description": "Enable pretty-printing for gdb",

@@ -118,7 +118,7 @@ the ``velocity``.
     public class Mob : KinematicBody
     {
         // Don't forget to rebuild the project so the editor knows about the new export variable.
-        
+
         // Minimum speed of the mob in meters per second
         [Export]
         public int MinSpeed = 10;
@@ -183,7 +183,7 @@ We start by creating a 3D vector pointing forward, multiply it by our
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-    
+
    func initialize(start_position, player_position):
        # ...
 

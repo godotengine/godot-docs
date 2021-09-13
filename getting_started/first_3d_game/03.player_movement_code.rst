@@ -40,10 +40,10 @@ character.
         // The downward acceleration when in the air, in meters per second squared.
         [Export]
         public int FallAcceleration = 75;
- 
+
         private Vector3 _velocity = Vector3.Zero;
     }
- 
+
 
 These are common properties for a moving body. The ``velocity`` is a 3D vector
 combining a speed with a direction. Here, we define it as a property because
@@ -317,7 +317,6 @@ Here is the complete ``Player.gd`` code for reference.
             _velocity = MoveAndSlide(_velocity, Vector3.Up);
         }
     }
- 
 
 Testing our player's movement
 -----------------------------

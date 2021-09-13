@@ -2,6 +2,7 @@
 #
 # Godot Engine documentation build configuration file
 
+import sphinx
 import sphinx_rtd_theme
 import sys
 import os
@@ -249,10 +250,10 @@ gettext_compact = False
 # https://github.com/sphinx-doc/sphinx/issues/7768 to see what would be relevant for us.
 figure_language_filename = "{root}.{language}{ext}"
 
-import sphinx
 cwd = os.getcwd()
 
 sphinx_original_get_image_filename_for_language = sphinx.util.i18n.get_image_filename_for_language
+
 
 def godot_get_image_filename_for_language(filename, env):
     """
