@@ -96,7 +96,7 @@ Method Descriptions
 
 - void **erase_section** **(** :ref:`String<class_String>` section **)**
 
-Deletes the specified section along with all the key-value pairs inside. Raises an error if the section does not exist.
+Deletes the specified section along with all the key-value pairs inside. Raises an error if the section does not exist.  After calling this method, make sure to call the :ref:`save<class_ConfigFile_method_save>` method to write the change to the file.
 
 ----
 
@@ -104,7 +104,7 @@ Deletes the specified section along with all the key-value pairs inside. Raises 
 
 - void **erase_section_key** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key **)**
 
-Deletes the specified key in a section. Raises an error if either the section or the key do not exist.
+Deletes the specified key in a section. Raises an error if either the section or the key do not exist.  After calling this method, make sure to call the :ref:`save<class_ConfigFile_method_save>` method to write the change to the file.
 
 ----
 
