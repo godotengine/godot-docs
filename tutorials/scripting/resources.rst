@@ -206,7 +206,7 @@ Let's see some examples.
     export(Resource) var sub_resource
     export(Array, String) var strings
 
-    # Make sure that every parameter has a default value. 
+    # Make sure that every parameter has a default value.
     # Otherwise, there will be problems with creating and editing
     # your resource via the inspector.
     func _init(p_health = 0, p_sub_resource = null, p_strings = []):
@@ -241,7 +241,7 @@ Let's see some examples.
                 [Export]
                 public String[] Strings { get; set; }
 
-                // Make sure that every parameter has a default value. 
+                // Make sure that every parameter has a default value.
                 // Otherwise, there will be problems with creating and editing
                 // your resource via the inspector.
                 public BotStats(int health = 0, Resource subResource = null, String[] strings = null)

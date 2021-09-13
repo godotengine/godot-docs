@@ -83,7 +83,7 @@ Link to the license
 
 The Godot Engine developers consider that a link to godotengine.org/license
 in your game documentation or credits would be an acceptable way to satisfy
-the license terms. 
+the license terms.
 
 Third-party licenses
 --------------------
@@ -105,7 +105,7 @@ requires attribution, so the following text must be included together with the
 Godot license:
 
     Portions of this software are copyright © <year> The FreeType Project (www.freetype.org).  All rights reserved.
-    
+
 Note that <year> should correspond to the value from the FreeType version
 used in your build.
 

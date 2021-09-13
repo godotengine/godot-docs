@@ -3,7 +3,7 @@
 Xcode
 =====
 
-`Xcode <https://developer.apple.com/xcode>`_ is a free macOS-only IDE. You can 
+`Xcode <https://developer.apple.com/xcode>`_ is a free macOS-only IDE. You can
 download it from the Mac App Store.
 
 Importing the project
@@ -47,7 +47,7 @@ Importing the project
 
 - For this target open the **Build Settings** tab and look for **Header Search Paths**.
 - Set **Header Search Paths** to the absolute path to the Godot root folder. You need to
-  include subdirectories as well. To achieve that, add two two asterisks (``**``) to the 
+  include subdirectories as well. To achieve that, add two two asterisks (``**``) to the
   end of the path, e.g. ``/Users/me/repos/godot-source/**``.
 
 - Add the Godot source to the project by dragging and dropping it into the project file browser.
@@ -57,7 +57,7 @@ Importing the project
    :figclass: figure-w480
    :align: center
 
-- Next select **Create groups** for the **Added folders** option and check *only* 
+- Next select **Create groups** for the **Added folders** option and check *only*
   your command line indexing target in the **Add to targets** section.
 
 .. figure:: img/xcode_6_after_add_godot_source_to_project_2.png
@@ -76,7 +76,7 @@ To enable debugging support you need to edit the external build target's build a
 - Open the scheme editor of the external build target.
 - Locate the **Build > Post Actions** section.
 - Add a new script run action
-- Under **Provide build settings from** select your project. This allows to reference 
+- Under **Provide build settings from** select your project. This allows to reference
   the project directory within the script.
 - Create a script that will give the binary a name that Xcode can recognize, e.g.:
 
@@ -100,7 +100,7 @@ To enable debugging support you need to edit the external build target's build a
 - Check **Debug executable**.
 - You can add two arguments on the **Arguments** tab:
   the ``-e`` flag opens the editor instead of the project manager, and the ``--path`` argument
-  tells the executable to open the specified project (must be provided as an *absolute* path 
+  tells the executable to open the specified project (must be provided as an *absolute* path
   to the project root, not the ``project.godot`` file).
 
 To check that everything is working, put a breakpoint in ``platform/osx/godot_main_osx.mm`` and

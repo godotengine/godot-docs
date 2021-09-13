@@ -365,7 +365,7 @@ On that line, there is a "Pull request" link. Clicking it will open a form
 that will let you issue a pull request on the ``godotengine/godot`` upstream
 repository. It should show you your two commits, and state "Able to merge".
 If not (e.g. it has way more commits, or says there are merge conflicts),
-don't create the PR yet, something went wrong. Go to our `Contributors Chat 
+don't create the PR yet, something went wrong. Go to our `Contributors Chat
 <https://chat.godotengine.org/>`_ and ask for support :)
 
 Use an explicit title for the PR and put the necessary details in the comment

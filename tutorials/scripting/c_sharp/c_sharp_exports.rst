@@ -18,7 +18,7 @@ Exporting is done by using the ``[Export]`` attribute.
         [Export]
         private int Number = 5;
     }
-    
+
 In that example the value ``5`` will be saved, and after building the current project
 it will be visible in the property editor. This way, artists and game designers
 can modify values that later influence how the program runs. For this, a
@@ -59,7 +59,7 @@ the following to list them:
     [Export]
     private Resource Resource;
 
-.. 
+..
 	Commenting out enum examples becuase I have been told they
 	require extra steps to actually work properly. The examples bellow
 	will show up in the inspector but apparently do not function properly
@@ -185,7 +185,7 @@ the slider.
 Allow values 'y = exp(x)' where 'y' varies between 100 and 1000
 while snapping to steps of 20. The editor will present a
 slider for easily editing the value. This only works with floats.
-	
+
 .. code-block:: csharp
 
     [Export(PropertyHint.ExpRange, "100,1000,20")]
@@ -196,7 +196,7 @@ Floats with easing hint
 
 Display a visual representation of the 'ease()' function
 when editing.
-	
+
 .. code-block:: csharp
 
     [Export(PropertyHint.ExpEasing)]
@@ -232,7 +232,7 @@ a node path, then use that node path with ``GetNode()``.
     private Label MyNode;
 
     public override void _Ready()
-    {   
+    {
         MyNode = GetNode<Label>(MyNodePath);
     }
 

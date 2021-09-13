@@ -86,7 +86,7 @@ a ``die()`` function that helps us put a descriptive label on the code.
     public delegate void Hit();
 
     // ...
-    
+
     private void Die()
     {
         EmitSignal(nameof(Hit));
@@ -190,35 +190,34 @@ Starting with ``Main.gd``.
         [Export]
         public PackedScene MobScene;
     #pragma warning restore 649
-    
+
         public override void _Ready()
         {
             GD.Randomize();
         }
-    
+
         public void OnMobTimerTimeout()
         {
             // Create a mob instance and add it to the scene.
             var mob = (Mob)MobScene.Instance();
-    
+
             // Choose a random location on Path2D.
             // We stire the reference to the SpawnLocation node.
             var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
             // And give it a random offset.
             mobSpawnLocation.UnitOffset = GD.Randf();
-    
+
             Vector3 playerPosition = GetNode<Player>("Player").Transform.origin;
-    
+
             AddChild(mob);
             mob.Initialize(mobSpawnLocation.Translation, playerPosition);
         }
-    
+
         public void OnPlayerHit()
         {
             GetNode<Timer>("MobTimer").Stop();
         }
     }
- 
 
 Next is ``Mob.gd``.
 
@@ -304,8 +303,7 @@ Next is ``Mob.gd``.
             QueueFree();
         }
     }
- 
- 
+
 Finally, the longest script, ``Player.gd``.
 
 .. tabs::
@@ -423,13 +421,13 @@ Finally, the longest script, ``Player.gd``.
 
             _velocity.x = direction.x * Speed;
             _velocity.z = direction.z * Speed;
-            
+
             // Jumping.
             if (IsOnFloor() && Input.IsActionJustPressed("jump"))
             {
                 _velocity.y += JumpImpulse;
             }
-            
+
             _velocity.y -= FallAcceleration * delta;
             _velocity = MoveAndSlide(_velocity, Vector3.Up);
 
@@ -458,7 +456,6 @@ Finally, the longest script, ``Player.gd``.
             Die();
         }
     }
-
 
 See you in the next lesson to add the score and the retry option.
 

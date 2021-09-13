@@ -144,7 +144,7 @@ In addition to the plugins, there are several official demos.
 * `Godot OpenVR FPS <https://github.com/GodotVR/godot_openvr_fps>`_ (the tutorial for this project
   is :ref:`doc_vr_starter_tutorial_part_one`).
 * `Godot XR tools <https://github.com/GodotVR/godot-xr-tools>`_, which shows implementations for VR
-  features such as movement and picking up objects. 
+  features such as movement and picking up objects.
 
 Other things to consider
 ------------------------

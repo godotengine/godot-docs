@@ -17,7 +17,7 @@ Importing the project
 .. figure:: img/android_studio_setup_project_1.png
    :figclass: figure-w480
    :align: center
-   
+
    Android Studio's welcome window.
 
 - Navigate to ``<Godot root directory>/platform/android/java`` and select the ``settings.gradle`` file.

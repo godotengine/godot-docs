@@ -3,10 +3,10 @@
 GDScript documentation comments
 ===============================
 
-In GDScript, comments can be used to document your code and add description to the 
+In GDScript, comments can be used to document your code and add description to the
 members of a script. There are two differences between a normal comment and a documentation
 comment. Firstly, a documentation comment should start with double hash symbols
-``##``. Secondly, it must immediately precede a script member, or for script descriptions, 
+``##``. Secondly, it must immediately precede a script member, or for script descriptions,
 be placed at the top of the script. If an exported variable is documented,
 its description is used as a tooltip in the editor. This documentation can be
 generated as XML files by the editor.
@@ -14,7 +14,7 @@ generated as XML files by the editor.
 Documenting a script
 --------------------
 
-Comments documenting a script must come before any member documentation. A 
+Comments documenting a script must come before any member documentation. A
 suggested format for script documentation can be divided into three parts.
 
 - A brief description of the script.
@@ -44,23 +44,23 @@ Tags
 ::
 
     extends Node2D
-	
-    ## 
+
+    ##
     ## A brief description of your script.
     ##
     ## @desc:
     ##     A more detailed description of the script.
-    ## 
+    ##
     ## @tutorial:            http://the/tutorial1/url.com
     ## @tutorial(Tutorial2): http://the/tutorial2/url.com
     ##
 
-.. warning:: If there is any space in between the tag name and colon, for example 
+.. warning:: If there is any space in between the tag name and colon, for example
              ``@desc  :``, it won't treated as a valid tag and will be ignored.
 
 
 .. note:: When the description spans multiple lines, the preceding and trailing white
-          spaces will be stripped and joined with a single space. To preserve the line 
+          spaces will be stripped and joined with a single space. To preserve the line
           break (or any other alignment), use
           :ref:`BBCode <doc_bbcode_in_richtextlabel>`.
 
@@ -69,7 +69,7 @@ Documenting script members
 
 Documentation of a script member must immediately precede the member or its
 annotations if it has any. The exception to this is enum values whose description should
-be on the same line as the enum for readability. 
+be on the same line as the enum for readability.
 The description can have more than one line but every line must start
 with the double hash symbol ``##`` to be considered as part of the documentation.
 The script documentation will update in the editor help window every time the
@@ -93,37 +93,37 @@ Examples
 ::
 
     extends Node2D
-	
-    ## 
+
+    ##
     ## A brief description of your script.
     ##
     ## @desc:
     ##     The description of the script, what it
     ##     can do, and any further detail.
-    ## 
+    ##
     ## @tutorial:            http://the/tutorial1/url.com
     ## @tutorial(Tutorial2): http://the/tutorial2/url.com
     ##
-    
+
     ## The description of the variable v1.
     var v1
-    
+
     ## This is a multi line description of the variable v2. The type
     ## information below will be extracted for the documentation.
     var v2: int
-    
+
     ## If the member has any annotation, the annotation should
     ## immediately precede it.
     @export
     @onready
     var v3 := some_func()
-    
+
     ## The description of a constant.
     const GRAVITY = 9.8
-	
+
     ## The description of a signal.
     signal my_signal
-    
+
     ## This is a description of the below enums. Note below that
     ## the enum values are documented on the same line as the enum.
     enum Direction {
@@ -132,28 +132,28 @@ Examples
         LEFT  = 2,  ## Direction left.
         RIGHT = 3,  ## Direction right.
     }
-    
+
     ## As the following function is documented, even though its name starts with
     ## an underscore, it will appear in the help window.
     func _fn(p1: int, p2: String) -> int:
         return 0
-    
-    # The below function isn't documented and its name starts with an underscore 
+
+    # The below function isn't documented and its name starts with an underscore
     # so it will treated as private and will not be shown in the help window.
     func _internal() -> void:
         pass
-    
+
     ## Documenting an inner class.
-    ## 
+    ##
     ## @desc: The same rules apply apply here. The documentation must
     ##        immediately precede the class definition.
-    ##     
+    ##
     ## @tutorial: http://the/tutorial/url.com
     class Inner:
-    
+
         ## Inner class variable v4.
         var v4
-    
+
         ## Inner class function fn.
         func fn(): pass
 
@@ -202,7 +202,7 @@ be used in the documentation. Here's the list of available tags:
 
 ::
 
-    ## The do_something method for this plugin. before using the 
+    ## The do_something method for this plugin. before using the
     ## method you first have to initialize [MyPlugin].
     ## see : [method initialize]
     ## [color=yellow]Warning:[/color] always [method clean] after use.

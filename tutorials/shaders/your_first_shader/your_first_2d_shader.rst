@@ -23,7 +23,7 @@ Setup
 -----
 
 :ref:`CanvasItem shaders <doc_canvas_item_shader>` are used to draw all 2D
-objects in Godot, while :ref:`Spatial <doc_spatial_shader>` shaders are used 
+objects in Godot, while :ref:`Spatial <doc_spatial_shader>` shaders are used
 to draw all 3D objects.
 
 In order to use a shader it must be attached inside a :ref:`Material

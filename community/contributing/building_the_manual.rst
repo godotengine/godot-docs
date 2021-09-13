@@ -21,7 +21,7 @@ install all these tools. It comes pre-installed with `Python
 <https://www.python.org/>`__. Ensure that you install and use Python 3. Here are
 the commands to clone the repository and then install all requirements.
 
-.. note:: You may need to write ``python3 -m pip`` (Unix) or  ``py -m pip`` (Windows) instead of ``pip3``. 
+.. note:: You may need to write ``python3 -m pip`` (Unix) or  ``py -m pip`` (Windows) instead of ``pip3``.
           If both approaches fail, `check that you have pip3 installed <https://pip.pypa.io/en/stable/installation/>`__.
 
 .. code:: sh

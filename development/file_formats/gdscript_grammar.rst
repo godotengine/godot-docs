@@ -108,7 +108,7 @@ for reference purposes.
         | "return" [ expression ] stmtEnd
         ;
 
-    assignmentStmt = subscription ( "=" | "+=" | "-=" | "*=" | "/=" 
+    assignmentStmt = subscription ( "=" | "+=" | "-=" | "*=" | "/="
     | "%=" | "&=" | "|=" | "^=" ) expression stmtEnd;
     varDeclStmt = "var" IDENTIFIER [ "=" expression ] stmtEnd;
 
@@ -137,9 +137,9 @@ for reference purposes.
     sign = ( "-" | "+" ) sign | bitNot ;
     bitNot = "~" bitNot | is ;
     is = call [ "is" ( IDENTIFIER | BUILTINTYPE ) ] ;
-    call 
-        = (attribute [ "(" [ argList ] ")" ]) 
-        | "." IDENTIFIER "(" [ argList ] ")" 
+    call
+        = (attribute [ "(" [ argList ] ")" ])
+        | "." IDENTIFIER "(" [ argList ] ")"
         | "$" ( STRING | IDENTIFIER { '/' IDENTIFIER } );
     attribute = subscription { "." IDENTIFIER } ;
     subscription = primary [ "[" expression "]" ] ;

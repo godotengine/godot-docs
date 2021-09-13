@@ -73,7 +73,7 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
             multimesh.set_instance_transform(i, Transform(Basis(), Vector3(i * 20, 0, 0)))
 
  .. code-tab:: csharp C#
- 
+
     using Godot;
     using System;
 

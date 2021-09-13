@@ -12,7 +12,7 @@ the top-level `index.html` in a web browser.
 
 ## Theming
 
-The Godot documentation uses the default ``sphinx_rtd_theme`` with many
+The Godot documentation uses the default `sphinx_rtd_theme` with many
 [customizations](_static/) applied on top. It will automatically switch between
 the light and dark theme depending on your browser/OS' theming preference.
 

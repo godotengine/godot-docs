@@ -349,4 +349,3 @@ Properties
 
       :param * var_args:
          A variadic number of arguments to be printed as errors.
-

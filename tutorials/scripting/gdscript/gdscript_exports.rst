@@ -14,7 +14,7 @@ Exporting is done by using the ``@export`` annotation::
     extends Button
 
     @export var number = 5
-    
+
 In that example the value `5` will be saved and visible in the property editor.
 
 An exported variable must be initialized to a constant expression or have a type specifier
@@ -154,7 +154,7 @@ The limits can be only for the slider if you add the hints "or_greater" and/or "
 ::
 
     @export_range(0, 100, 1, "or_greater", "or_lesser")
-    
+
 Allow values 'y = exp(x)' where 'y' varies between 100 and 1000
 while snapping to steps of 20. The editor will present a
 slider for easily editing the value.

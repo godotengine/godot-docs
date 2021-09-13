@@ -68,7 +68,7 @@ doing so will not send the quit *notification*. This means the function
 described above won't be called. Quitting by calling
 :ref:`SceneTree.quit <class_SceneTree_method_quit>` will not allow custom actions
 to complete (such as saving, confirming the quit, or debugging), even if you try
-to delay the line that forces the quit. 
+to delay the line that forces the quit.
 
 Instead, you should send a quit request:
 
