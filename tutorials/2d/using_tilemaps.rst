@@ -303,7 +303,7 @@ This means the texture offset should be ``Vector2(0, -120)``:
 3x3
 ~~~
 
-In 3x3 mode, each bitmaks contains 9 bits (4 corners, 4 edges, 1 center)
+In 3x3 mode, each bitmask contains 9 bits (4 corners, 4 edges, 1 center)
 
 Each bit checks a single adjacent cell. Corner bits only check diagonally
 adjacent cells. The center bit should be "on" for any tile you wish to use.
