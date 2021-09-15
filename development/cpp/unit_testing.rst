@@ -310,7 +310,7 @@ Therefore, the process of writing integration tests for GDScript is the followin
    The test should not have any dependency unless it's part of the test too.
    Global classes (using ``class_name``) are registered before the runner
    starts, so those should work if needed.
-   
+
    Here's an example test script:
 
    ::
@@ -331,7 +331,7 @@ Therefore, the process of writing integration tests for GDScript is the followin
 
        ./bin/<godot_binary> --test --test-suite="*GDScript*"
 
-If no errors are printed and everything goes well, you're done! 
+If no errors are printed and everything goes well, you're done!
 
 .. warning::
 
@@ -341,7 +341,7 @@ If no errors are printed and everything goes well, you're done!
     only commit ``*.out`` files for new tests.
 
 .. note::
-    
+
     The GDScript test runner is meant for testing the GDScript implementation,
     not for testing user scripts nor testing the engine using scripts. We
     recommend writing new tests for already resolved

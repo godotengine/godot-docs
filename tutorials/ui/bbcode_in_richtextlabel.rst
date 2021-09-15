@@ -171,9 +171,11 @@ Hexadecimal color codes
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 For opaque RGB colors, any valid 6-digit hexadecimal code is supported, e.g. ``[color=#ffffff]white[/color]``.
+Short RGB color codes such as ``#6f2`` (equivalent to ``#66ff22``) are also supported.
 
-For transparent RGB colors, any 8-digit hexadecimal code can be used, e.g. ``[color=#88ffffff]translucent white[/color]``.
-In this case, note that the alpha channel is the **first** component of the color code, not the last one.
+For transparent RGB colors, any RGBA 8-digit hexadecimal code can be used, e.g. ``[color=#ffffff88]translucent white[/color]``.
+In this case, note that the alpha channel is the **last** component of the color code, not the first one.
+Short RGBA color codes such as ``#6f28`` (equivalent to ``#66ff2288``) are also supported.
 
 Image vertical offset
 ~~~~~~~~~~~~~~~~~~~~~
@@ -242,7 +244,7 @@ You can extend the :ref:`class_RichTextEffect` resource type to create your own 
 BBCode tags. You begin by extending the :ref:`class_RichTextEffect` resource type. Add
 the ``tool`` prefix to your GDScript file if you wish to have these custom effects run
 within the editor itself. The RichTextLabel does not need to have a script attached,
-nor does it need to be running in ``tool`` mode. The new effect will be activable in 
+nor does it need to be running in ``tool`` mode. The new effect will be activable in
 the Inspector through the **Custom Effects** property.
 
 There is only one function that you need to extend: ``_process_custom_fx(char_fx)``.

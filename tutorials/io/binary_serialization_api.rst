@@ -129,7 +129,7 @@ If no flags are set (flags == 0), the integer is sent as a 32 bit integer:
 | 4        | 4     | Integer   | 32-bit signed integer    |
 +----------+-------+-----------+--------------------------+
 
-If flag ``ENCODE_FLAG_64`` is set (``flags & 1 == 1``), the integer is sent as 
+If flag ``ENCODE_FLAG_64`` is set (``flags & 1 == 1``), the integer is sent as
 a 64-bit integer:
 
 +----------+-------+-----------+--------------------------+
@@ -149,7 +149,7 @@ If no flags are set (flags == 0), the float is sent as a 32 bit single precision
 | 4        | 4     | Float   | IEEE 754 single-precision float   |
 +----------+-------+---------+-----------------------------------+
 
-If flag ``ENCODE_FLAG_64`` is set (``flags & 1 == 1``), the float is sent as 
+If flag ``ENCODE_FLAG_64`` is set (``flags & 1 == 1``), the float is sent as
 a 64-bit double precision number:
 
 +----------+-------+---------+-----------------------------------+
@@ -454,7 +454,7 @@ For each property:
    calling ``Object._get_property_list`` See
    :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` for the
    possible usage flags.
-   
+
 18: :ref:`Dictionary<class_dictionary>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

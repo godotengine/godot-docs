@@ -447,7 +447,7 @@ Here is the complete ``Main.gd`` script for reference.
             GetNode<Control>("UserInterface/Retry").Show();
         }
     }
- 
+
 
 .. |image0| image:: img/08.score_and_replay/01.label_node.png
 .. |image1| image:: img/08.score_and_replay/02.score_placeholder.png

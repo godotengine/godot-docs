@@ -620,7 +620,7 @@ Varying can also be an array:
         ALBEDO = vec3(var_arr[0], var_arr[1], var_arr[2]); // red color
     }
 
-It's also possible to send data from *fragment* to *light* processors using *varying* keyword. To do so you can assign it in the *fragment* and later use it in the *light* function. 
+It's also possible to send data from *fragment* to *light* processors using *varying* keyword. To do so you can assign it in the *fragment* and later use it in the *light* function.
 
 .. code-block:: glsl
 
@@ -796,7 +796,7 @@ Built-in variables
 ------------------
 
 A large number of built-in variables are available, like ``UV``, ``COLOR`` and ``VERTEX``. What variables are available depends on the type of shader (``spatial``, ``canvas_item`` or ``particle``) and the function used (``vertex``, ``fragment`` or ``light``).
-For a list of the build-in variables that are available, please see the corresponding pages:
+For a list of the built-in variables that are available, please see the corresponding pages:
 
 - :ref:`Spatial shaders <doc_spatial_shader>`
 - :ref:`Canvas item shaders <doc_canvas_item_shader>`

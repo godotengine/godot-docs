@@ -21,13 +21,13 @@ taking care of a given class.
 .. seealso::
 
     You can find the writing guidelines for the class reference :ref:`here <doc_class_reference_writing_guidelines>`.
-    
+
     For details on Git usage and the pull request workflow, please
     refer to the :ref:`doc_pr_workflow` page.
 
     If you want to translate the class reference from English to another
     language, see :ref:`doc_editor_and_docs_localization`.
-    
+
     This guide is also available as a `video tutorial on YouTube
     <https://www.youtube.com/watch?v=5jeHXxeX-JY>`_.
 

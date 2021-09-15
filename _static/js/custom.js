@@ -54,7 +54,7 @@ const registerOnScrollEvent = (function(){
       // Entering the "desktop" state.
 
       // The main scroll event handler.
-      // Executed as the page is scrolled and once immediatelly as the page enters this state.
+      // Executed as the page is scrolled and once immediately as the page enters this state.
       const handleMainScroll = (currentScroll) => {
         if (currentScroll >= scrollTopPixels) {
           // After the page is scrolled below the threshold, we fix everything in place.

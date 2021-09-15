@@ -14,7 +14,7 @@ Exporting is done by using the ``@export`` annotation::
     extends Button
 
     @export var number = 5
-    
+
 In that example the value `5` will be saved and visible in the property editor.
 
 An exported variable must be initialized to a constant expression or have a type specifier
@@ -31,7 +31,8 @@ Exporting can only be done with built-in types or objects derived from the :ref:
 .. note::
 
     Exporting properties can also be done in other languages such as C#.
-    The syntax varies depending on the language.
+    The syntax varies depending on the language. See :ref:`doc_c_sharp_exports`
+    for information on C# exports.
 
 Basic use
 ---------
@@ -153,7 +154,7 @@ The limits can be only for the slider if you add the hints "or_greater" and/or "
 ::
 
     @export_range(0, 100, 1, "or_greater", "or_lesser")
-    
+
 Allow values 'y = exp(x)' where 'y' varies between 100 and 1000
 while snapping to steps of 20. The editor will present a
 slider for easily editing the value.

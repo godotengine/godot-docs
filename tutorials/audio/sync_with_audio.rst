@@ -96,7 +96,7 @@ Adding the return value from this function to *get_playback_position()* increase
     var time = $Player.get_playback_position() + AudioServer.get_time_since_last_mix()
 
  .. code-tab:: csharp
-    
+
     double time = GetNode<AudioStreamPlayer>("Player").GetPlaybackPosition() + AudioServer.GetTimeSinceLastMix();
 
 

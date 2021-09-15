@@ -95,7 +95,7 @@ relatively intuitive:
 - The :ref:`sec-community` section gives the information related to contributing to
   the engine development and the life of its community, e.g. how to report bugs,
   help with the documentation, etc. It also points to various community channels
-  like Godot Contributors Chat and Discord and contains a list of recommended 
+  like Godot Contributors Chat and Discord and contains a list of recommended
   third-party tutorials outside of this documentation.
 - Finally, the :ref:`sec-class-ref` is the documentation of the Godot API,
   which is also available directly within the engine's script editor. It is

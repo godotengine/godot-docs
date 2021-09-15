@@ -6,7 +6,7 @@ How to read the Godot API
 On this page, you'll learn how to read the class reference for the Godot API.
 
 The API, or Application Programming Interface, is an index of what Godot offers
-users. It provides a brief summary of which classes exist, how they are 
+users. It provides a brief summary of which classes exist, how they are
 related to each other, what features they have, and how to use them.
 
 Inheritance

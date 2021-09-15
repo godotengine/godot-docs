@@ -89,8 +89,9 @@ To run and debug the project you need to create a new configuration in the ``lau
 
     {
       "name": "Launch Project",
-      "type": "cppdbg",
+      "type": "lldb",
       "request": "launch",
+      // Change to godot.linuxbsd.tools.64.llvm for llvm-based builds.
       "program": "${workspaceFolder}/bin/godot.linuxbsd.tools.64",
       // Change the arguments below for the project you want to test with.
       // To run the project instead of editing it, remove the "--editor" argument.
@@ -98,9 +99,26 @@ To run and debug the project you need to create a new configuration in the ``lau
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],
-      "externalConsole": true,
-      "MIMode": "gdb",
-      "setupCommands": [
+      "externalConsole": false,
+      "preLaunchTask": "build"
+    }
+  .. code-tab:: js LinuxBSD_gdb
+
+    {
+      "name": "Launch Project",
+      "type": "cppdbg",
+      "request": "launch",
+      // Change to godot.linuxbsd.tools.64.llvm for llvm-based builds.
+      "program": "${workspaceFolder}/bin/godot.linuxbsd.tools.64",
+      // Change the arguments below for the project you want to test with.
+      // To run the project instead of editing it, remove the "--editor" argument.
+      "args": [ "--editor", "--path", "path-to-your-godot-project-folder" ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "setupCommands":
+      [
         {
           "description": "Enable pretty-printing for gdb",
           "text": "-enable-pretty-printing",
@@ -133,6 +151,17 @@ To run and debug the project you need to create a new configuration in the ``lau
    :align: center
 
    An example of a filled out ``launch.json``.
+
+
+.. note::
+
+    Due to sporadic performance issues, it is recommended to use LLDB over GDB on Unix-based systems.
+    Make sure that the `CodeLLDB extension <https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb>`_
+    is installed.
+
+    If you encounter issues with lldb, you may consider using gdb (see the LinuxBSD_gdb configuration).
+
+    Do note that lldb may work better with llvm-based builds. See :ref:`doc_compiling_for_linuxbsd` for further information.
 
 The name under ``program`` depends on your build configuration,
 e.g. ``godot.linuxbsd.tools.64`` for 64-bit LinuxBSD platform with ``tools`` enabled.

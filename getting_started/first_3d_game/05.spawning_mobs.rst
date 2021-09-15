@@ -174,7 +174,7 @@ always spawn following the same sequence.
     public class Main : Node
     {
         // Don't forget to rebuild the project so the editor knows about the new export variable.
-        
+
     #pragma warning disable 649
         // We assign this in the editor, so we don't need the warning about not being assigned.
         [Export]

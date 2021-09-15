@@ -28,7 +28,7 @@ Create a new empty scene, add a CanvasLayer as the root node and add a script to
 Scripting
 ---------
 
-Below is all the code we need to make it work. The URL points to an online API mocker; it returns a pre-defined JSON string, which we will then parse to get access to the data.
+Below is all the code we need to make it work. The URL points to an online API mocker; it returns a predefined JSON string, which we will then parse to get access to the data.
 
 .. tabs::
 
