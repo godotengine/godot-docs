@@ -13,7 +13,8 @@ a project, and how to build a 2D game.
 .. note:: This project is an introduction to the Godot engine. It
           assumes that you have some programming experience already. If
           you're new to programming entirely, you should start here:
-          :ref:`doc_scripting`.
+          :ref:`doc_scripting`. If you want to use C# in Godot, please also
+          read :ref:`doc_c_sharp` before continuing.
 
 The game is called "Dodge the Creeps!". Your character must move and
 avoid the enemies for as long as possible. Here is a preview of the
@@ -165,9 +166,6 @@ click "Create":
             language from the `language` drop down menu before hitting create.
 
 .. image:: img/attach_node_window.png
-
-.. note:: If this is your first time encountering GDScript, please read
-          :ref:`doc_scripting` before continuing.
 
 Start by declaring the member variables this object will need:
 
