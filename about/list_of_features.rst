@@ -80,8 +80,11 @@ Editor
 **Two renderers available:**
 
 - OpenGL ES 3.0 renderer (uses OpenGL 3.3 on desktop platforms).
+
    - High-end visuals. Recommended on desktop platforms.
+
 - OpenGL ES 2.0 renderer (uses OpenGL 2.1 on desktop platforms).
+
    - Recommended on mobile and Web platforms.
 
 **Features:**
@@ -102,8 +105,8 @@ Editor
 - Font rendering using bitmaps (BitmapFont) or rasterization using FreeType (DynamicFont).
 
    - Bitmap fonts can be exported using tools like BMFont.
-   - DynamicFont supports monochrome fonts as well as colored fonts.
-     Supported formats are TTF and OTF.
+   - DynamicFont supports monochrome fonts as well as colored fonts (e.g. for emoji).
+     Supported formats are TTF, OTF and WOFF1.
    - DynamicFont supports optional font outlines with adjustable width and color.
    - Support for font oversampling to keep fonts sharp at higher resolutions.
 
@@ -144,9 +147,12 @@ Editor
 **Two renderers available:**
 
 - OpenGL ES 3.0 renderer (uses OpenGL 3.3 on desktop platforms).
+
    - High-end visuals. Recommended on desktop platforms.
    - HDR rendering with sRGB.
+
 - OpenGL ES 2.0 renderer (uses OpenGL 2.1 on desktop platforms).
+
    - Recommended on mobile and Web platforms.
    - LDR rendering for greater compatibility.
    - Not all features are available. Features available only when using
@@ -186,6 +192,11 @@ Editor
 
 - Baked lightmaps (fast, but can't be updated at run-time).
 
+   - Supports baking indirect light only or baking both direct and indirect lighting.
+     The bake mode can be adjusted on a per-light basis to allow for hybrid light
+     baking setups.
+   - Supports lighting dynamic objects using an automatic octree-based system.
+     No manual probe placement is required.
    - Lightmaps are baked on the CPU.
 
 - *GLES3:* GI probes (slower, semi-real-time). Supports reflections.
@@ -196,7 +207,7 @@ Editor
 - Fast baked reflections or slow real-time reflections using ReflectionProbe.
   Parallax correction can optionally be enabled.
 - *GLES3:* Screen-space reflections.
-- Reflection techniques can be mixed together for greater accuracy.
+- Reflection techniques can be mixed together for greater accuracy or scalability.
 
 **Sky:**
 
@@ -412,7 +423,9 @@ Navigation
 
 - A* algorithm in 2D and 3D.
 - Navigation meshes.
+
    - Support for dynamic obstacle avoidance planned in Godot 4.0.
+
 - Generate navigation meshes from the editor.
 
 Networking
@@ -535,8 +548,8 @@ Animation
 - Support for playing sounds in animation tracks.
 - Support for Bézier curves in animation.
 
-Formats
-^^^^^^^
+File formats
+^^^^^^^^^^^^
 
 - Scenes and resources can be saved in :ref:`text-based <doc_tscn_file_format>` or binary formats.
 
