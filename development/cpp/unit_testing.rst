@@ -352,5 +352,5 @@ If no errors are printed and everything goes well, you're done!
 
     If your test case requires that there is no ``test()``
     function present inside the script file,
-    you can disable the runtime section of the test by naming the script file so that it matches the pattern ``*.noscript.gd``.
+    you can disable the runtime section of the test by naming the script file so that it matches the pattern ``*.notest.gd``.
     For example, "test_empty_file.notest.gd".
