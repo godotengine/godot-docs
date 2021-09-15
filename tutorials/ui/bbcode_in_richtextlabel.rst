@@ -76,8 +76,12 @@ Reference
 | **indent**            | ``[indent]{text}[/indent]``                               | Increase the indentation level of {text}.                                |
 +-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
 | **url**               | ``[url]{url}[/url]``                                      | Show {url} as such, underline it and make it clickable.                  |
+|                       |                                                           | **Must be handled with the "meta_clicked" signal to have an effect.**    |
+|                       |                                                           | See :ref:`doc_bbcode_in_richtextlabel_handling_url_tag_clicks`.          |
 +-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
 | **url (ref)**         | ``[url=<url>]{text}[/url]``                               | Makes {text} reference <url> (underlined and clickable).                 |
+|                       |                                                           | **Must be handled with the "meta_clicked" signal to have an effect.**    |
+|                       |                                                           | See :ref:`doc_bbcode_in_richtextlabel_handling_url_tag_clicks`.          |
 +-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
 | **image**             | ``[img]{path}[/img]``                                     | Insert image at resource {path}.                                         |
 +-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
@@ -176,6 +180,31 @@ Short RGB color codes such as ``#6f2`` (equivalent to ``#66ff22``) are also supp
 For transparent RGB colors, any RGBA 8-digit hexadecimal code can be used, e.g. ``[color=#ffffff88]translucent white[/color]``.
 In this case, note that the alpha channel is the **last** component of the color code, not the first one.
 Short RGBA color codes such as ``#6f28`` (equivalent to ``#66ff2288``) are also supported.
+
+.. _doc_bbcode_in_richtextlabel_handling_url_tag_clicks:
+
+Handling ``[url]`` tag clicks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default, ``[url]`` tags do nothing when clicked. This is to allow flexible use
+of ``[url]`` tags rather than limiting them to opening URLs in a web browser.
+
+To handle clicked ``[url]`` tags, connect the RichTextLabel node's
+:ref:`meta_clicked <class_RichTextLabel_signal_meta_clicked>` signal to a script function.
+
+For example, the following method can be connected to ``meta_clicked`` to open
+clicked URLs using the user's default web browser::
+
+    # This assumes RichTextLabel's `meta_clicked` signal was connected to
+    # the function below using the signal connection dialog.
+    func _richtextlabel_on_meta_clicked(meta):
+        # `meta` is not guaranteed to be a String, so convert it to a String
+        # to avoid script errors at run-time.
+        OS.shell_open(str(meta))
+
+For more advanced use cases, it's also possible to store JSON in an ``[url]``
+tag's option and parse it in the function that handles the ``meta_clicked`` signal.
+For example: ``[url={"example": "value"}]JSON[/url]``
 
 Image vertical offset
 ~~~~~~~~~~~~~~~~~~~~~
