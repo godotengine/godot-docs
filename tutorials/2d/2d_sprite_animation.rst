@@ -81,7 +81,7 @@ released.
 
     onready var _animated_sprite = $AnimatedSprite
 
-    func _process(delta):
+    func _process(_delta):
         if Input.is_action_pressed("ui_right"):
             _animated_sprite.play("run")
         else:
@@ -98,7 +98,7 @@ released.
             _animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
         }
 
-        public override _Process(float delta)
+        public override _Process(float _delta)
         {
             if (Input.IsActionPressed("ui_right"))
             {
@@ -220,7 +220,7 @@ released.
 
     onready var _animation_player = $AnimationPlayer
 
-    func _process(delta):
+    func _process(_delta):
         if Input.is_action_pressed("ui_right"):
             _animation_player.play("walk")
         else:
@@ -237,7 +237,7 @@ released.
             _animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         }
 
-        public override void _Process(float delta)
+        public override void _Process(float _delta)
         {
             if (Input.IsActionPressed("ui_right"))
             {
