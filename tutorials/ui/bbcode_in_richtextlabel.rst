@@ -6,27 +6,29 @@ BBCode in RichTextLabel
 Introduction
 ------------
 
-Label nodes are great for displaying basic text, but they have limits. If you want
-to change the color of the text, or its alignment, that change affects all of the
-text in the Label node. You can't have only one part of the text be one color, or
-only one part of the text be centered. To get around this limitation you would use
-a :ref:`class_RichTextLabel`.
+:ref:`class_Label` nodes are great for displaying basic text, but they have limitations.
+If you want to change the color of the text, or its alignment, you can only do that to
+the entire label. You can't make a part of the text have another color, or have a part
+of the text centered. To get around these limitations you would use a :ref:`class_RichTextLabel`.
 
-:ref:`class_RichTextLabel` allows the display of complex text markup in a Control.
-It has a built-in API for generating the markup, but can also parse a BBCode.
+:ref:`class_RichTextLabel` allows for complex formatting of text using a markup syntax or
+the built-in API. It uses BBCodes for the markup syntax, a system of tags that designate
+formatting rules for a part of the text. You may be familiar with them if you ever used
+forums (also known as `bulletin boards`, hence the "BB" in "BBCode").
 
 Note that the BBCode tags can also be used, to some extent, in the XML source of
-the class reference. For more information, see
-:ref:`doc_class_reference_writing_guidelines`.
+the class reference. For more information, see :ref:`doc_class_reference_writing_guidelines`.
 
 Using BBCode
 ------------
 
-For uniformly formatted text you can write in the "Text" property, but if you want
-to use BBCode markup you should use the "Text" property in the "Bb Code" section
-instead (``bbcode_text``). Writing to this property will trigger the parsing of your
-markup to format the text as requested. Before this happens, you need to toggle the
-"Enabled" checkbox in the "Bb Code" section (``bbcode_enabled``).
+By default :ref:`class_RichTextLabel` functions exactly the same as the normal label. It
+has the :ref:`property_text <class_RichTextLabel_property_text>` property, which you can
+edit to have uniformly formatted text. To be able to use BBCodes and rich text formatting
+you need to turn on the BBCode mode by setting :ref:`bbcode_enabled <class_RichTextLabel_property_bbcode_enabled>`.
+After that you can edit the :ref:`bbcode_text <class_RichTextLabel_property_bbcode_text>`
+property using available tags. Both properties are located in the "Bb Code" section of
+the Inspector.
 
 .. image:: img/bbcodeText.png
 
@@ -35,151 +37,254 @@ a blue color.
 
 .. image:: img/bbcodeDemo.png
 
-You'll notice that after writing in the BBCode "Text" property the regular "Text"
-property now has the text without the BBCode. While the text property will be updated
-by the BBCode property, you can't edit the text property or you'll lose the BBCode
-markup. All changes to the text must be done in the BBCode parameter.
+Most BBCodes consist of 3 parts: the opening tag, the content and the closing tag. The
+opening tag delimits the start of the formatted part, and can also carry some
+configuration options. Some opening tags, like the ``color`` one shown above, also require
+a value to work. The closing tag delimits the end of the formatted part. In some cases
+both the closing tag and the content can be omitted.
+
+.. code-block:: none
+
+  [tag]content[/tag]
+  [tag=value]content[/tag]
+  [tag options]content[/tag]
+  [tag][/tag]
+  [tag]
 
 .. note::
 
-    For BBCode tags such as ``[b]`` (bold), ``[i]`` (italics) or ``[code]`` to
-    work, you must set up custom fonts for the RichTextLabel node first.
-
-    There are no BBCode tags to control vertical centering of text yet.
+    In the Inspector you may notice that after writing in the "BBCode Text" property the
+    regular "Text" property now has the same text but without BBCodes. Take care not to
+    edit the regular "Text" property! You will lose the BBCode markup if you do. All changes
+    to the text must be done using the "BBCode Text".
 
 Reference
 ---------
 
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| Command               | Tag                                                       | Description                                                              |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **bold**              | ``[b]{text}[/b]``                                         | Makes {text} bold.                                                       |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **italics**           | ``[i]{text}[/i]``                                         | Makes {text} italics.                                                    |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **underline**         | ``[u]{text}[/u]``                                         | Makes {text} underline.                                                  |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **strikethrough**     | ``[s]{text}[/s]``                                         | Makes {text} strikethrough.                                              |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **code**              | ``[code]{text}[/code]``                                   | Makes {text} use the code font (which is typically monospace).           |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **p**                 | ``[p {options}]{text}[/p]``                               | Adds new paragraph with {text}. See paragraph options for more info.     |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **center**            | ``[center]{text}[/center]``                               | Makes {text} horizontally centered. Same as ``[p align=center]``.        |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **left**              | ``[left]{text}[/left]``                                   | Makes {text} horizontally right-aligned. Same as ``[p align=left]``.     |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **right**             | ``[right]{text}[/right]``                                 | Makes {text} horizontally right-aligned. Same as ``[p align=right]``.    |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **fill**              | ``[fill]{text}[/fill]``                                   | Makes {text} fill the RichTextLabel's width. Same as ``[p align=fill]``. |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **indent**            | ``[indent]{text}[/indent]``                               | Increase the indentation level of {text}.                                |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **url**               | ``[url]{url}[/url]``                                      | Show {url} as such, underline it and make it clickable.                  |
-|                       |                                                           | **Must be handled with the "meta_clicked" signal to have an effect.**    |
-|                       |                                                           | See :ref:`doc_bbcode_in_richtextlabel_handling_url_tag_clicks`.          |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **url (ref)**         | ``[url=<url>]{text}[/url]``                               | Makes {text} reference <url> (underlined and clickable).                 |
-|                       |                                                           | **Must be handled with the "meta_clicked" signal to have an effect.**    |
-|                       |                                                           | See :ref:`doc_bbcode_in_richtextlabel_handling_url_tag_clicks`.          |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **image**             | ``[img]{path}[/img]``                                     | Insert image at resource {path}.                                         |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **resized image**     | ``[img=<width>]{path}[/img]``                             | Insert image at resource {path} using <width> (keeps ratio).             |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **resized image**     | ``[img=<width>x<height>]{path}[/img]``                    | Insert image at resource {path} using <width>×<height>.                  |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **aligned image**     | ``[img align=<valign>]{path}[/img]``                      | Insert image at resource {path} using <valign> vertical alignment.       |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **font**              | ``[font=<path>]{text}[/font]``                            | Use custom font at <path> for {text}.                                    |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **font options**      | ``[font {options}]{text}[/font]``                         | Use custom font options for the {text}. See font options for more info.  |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **font size**         | ``[font_size=nn]{text}[/font_size]``                      | Use custom font size for {text}.                                         |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **opentype features** | ``[opentype_features=ftr,ftr]{text}[/opentype_features]`` | Use custom OpenType font features (comma separated list) for {text}.     |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **outline size**      | ``[outline_size=<size>]{text}[/outline_size]``            | Use custom font outline size for {text}.                                 |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **outline color**     | ``[outline_color=<color>]{text}[/outline_color]``         | Use custom outline color for {text}.                                     |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **color**             | ``[color=<code/name>]{text}[/color]``                     | Change {text} color; use name or # format, such as ``#ff00ff``.          |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **table**             | ``[table=<number>]{cells}[/table]``                       | Creates a table with <number> of columns.                                |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **cell**              | ``[cell=<expand ratio>]{text}[/cell]``                    | Adds cells with the {text} to the table.                                 |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **cell**              | ``[cell {options}]{text}[/cell]``                         | Adds cells with the {text} to the table. See cell options for more info. |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **list**              | ``[ul]{one item per line}[/ul]``                          | Add unnumbered list.                                                     |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **list**              | ``[ol type=<type>]{one item per line}[/ol]``              | Add numbered list. See list types for more info.                         |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
-| **unicode control**   | ``[lrm]``, ``[rlm]``, ``[lre]``, ``[rle]``, ``[lro]``,    | Adds Unicode control character.                                          |
-|                       | ``[rlo]``, ``[pdf]``, ``[alm]``, ``[lri]``, ``[rli]``,    |                                                                          |
-|                       | ``[fsi]``, ``[pdi]``, ``[zwj]``, ``[zwnj]``, ``[wj]``     |                                                                          |
-+-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+.. list-table::
+  :class: wrap-normal
+  :width: 100%
+  :widths: 60 40
 
-Note: Options are optional for all tags.
+  * - Tag
+    - Example
+
+  * - | **b**
+      | Makes ``{text}`` use the bold (or bold italics) font of ``RichTextLabel``.
+
+    - ``[b]{text}[/b]``
+
+  * - | **i**
+      | Makes ``{text}`` use the italics (or bold italics) font of ``RichTextLabel``.
+
+    - ``[i]{text}[/i]``
+
+  * - | **u**
+      | Makes ``{text}`` underlined.
+
+    - ``[u]{text}[/u]``
+
+  * - | **s**
+      | Makes ``{text}`` strikethrough.
+
+    - ``[s]{text}[/s]``
+
+  * - | **code**
+      | Makes ``{text}`` use the mono font of ``RichTextLabel``.
+
+    - ``[code]{text}[/code]``
+
+  * - | **p**
+      | Adds new paragraph with ``{text}``. Supports configuration options,
+        see :ref:`doc_bbcode_in_richtextlabel_paragraph_options`.
+
+    - | ``[p]{text}[/p]``
+      | ``[p {options}]{text}[/p]``
+
+  * - | **center**
+      | Makes ``{text}`` horizontally centered.
+      | Same as ``[p align=center]``.
+
+    - ``[center]{text}[/center]``
+
+  * - | **left**
+      | Makes ``{text}`` horizontally right-aligned.
+      | Same as ``[p align=left]``.
+
+    - ``[left]{text}[/left]``
+
+  * - | **right**
+      | Makes ``{text}`` horizontally right-aligned.
+      | Same as ``[p align=right]``.
+
+    - ``[right]{text}[/right]``
+
+  * - | **fill**
+      | Makes ``{text}`` fill the the full width of ``RichTextLabel``.
+      | Same as ``[p align=fill]``.
+
+    - ``[fill]{text}[/fill]``
+
+  * - | **indent**
+      | Indents ``{text}`` once.
+
+    - ``[indent]{text}[/indent]``
+
+  * - | **url**
+      | Creates a hyperlink (underlined and clickable text). Can contain optional
+        ``{text}`` or display ``{link}`` as is.
+      | **Must be handled with the "meta_clicked" signal to have an effect,** see :ref:`doc_bbcode_in_richtextlabel_handling_url_tag_clicks`.
+
+    - | ``[url]{link}[/url]``
+      | ``[url={link}]{text}[/url]``
+
+  * - | **img**
+      | Inserts an image from the ``{path}`` (can be any valid image resource).
+      | If ``{width}`` is provided, the image will try to fit that width maintaining
+        the aspect ratio.
+      | If both ``{width}`` and ``{height}`` are provided, the image will be scaled
+        to that size.
+      | If ``{valign}`` configuration is provided, the image will try to align to the
+        surrounding text, see :ref:`doc_bbcode_in_richtextlabel_image_alignment`.
+      | Supports configuration options, see :ref:`doc_bbcode_in_richtextlabel_image_options`.
+
+    - | ``[img]{path}[/img]``
+      | ``[img={width}]{path}[/img]``
+      | ``[img={width}x{height}]{path}[/img]``
+      | ``[img={valign}]{path}[/img]``
+      | ``[img {options}]{path}[/img]``
+
+  * - | **font**
+      | Makes ``{text}`` use a font resource from the ``{path}``.
+      | Supports configuration options, see :ref:`doc_bbcode_in_richtextlabel_font_options`.
+
+    - | ``[font={path}]{text}[/font]``
+      | ``[font {options}]{text}[/font]``
+
+  * - | **font_size**
+      | Use custom font size for ``{text}``.
+
+    - ``[font_size={size}]{text}[/font_size]``
+
+  * - | **opentype_features**
+      | Enables custom OpenType font features for ``{text}``. Features must be provided as
+        a comma-separated ``{list}``.
+
+    - | ``[opentype_features={list}]``
+      | ``{text}``
+      | ``[/opentype_features]``
+
+  * - | **color**
+      | Changes the color of ``{text}``. Color must be provided by a common name (see
+        :ref:`doc_bbcode_in_richtextlabel_named_colors`) or using the HEX format (e.g.
+        ``#ff00ff``, see :ref:`doc_bbcode_in_richtextlabel_hex_colors`).
+
+    - ``[color={code/name}]{text}[/color]``
+
+  * - | **outline_size**
+      | Use custom font outline size for ``{text}``.
+
+    - | ``[outline_size={size}]``
+      | ``{text}``
+      | ``[/outline_size]``
+
+  * - | **outline_color**
+      | Use custom outline color for ``{text}``. Accepts same values as the ``color`` tag.
+
+    - | ``[outline_color={color}]``
+      | ``{text}``
+      | ``[/outline_color]``
+
+  * - | **table**
+      | Creates a table with the ``{number}`` of columns. Use the ``cell`` tag to define
+        table cells.
+
+    - ``[table={number}]{cells}[/table]``
+
+  * - | **cell**
+      | Adds a cell with ``{text}`` to the table.
+      | If ``{ratio}`` is provided, the cell will try to expand to that value proportionally
+        to other cells and their ratio values.
+      | Supports configuration options, see :ref:`doc_bbcode_in_richtextlabel_cell_options`.
+
+    - | ``[cell]{text}[/cell]``
+      | ``[cell={ratio}]{text}[/cell]``
+      | ``[cell {options}]{text}[/cell]``
+
+  * - | **ul**
+      | Adds an unordered list. List ``{items}`` must be provided by putting one item per
+        line of text.
+
+    - ``[ul]{items}[/ul]``
+
+  * - | **ol**
+      | Adds an ordered (numbered) list of the given ``{type}`` (see :ref:`doc_bbcode_in_richtextlabel_list_types`).
+        List ``{items}`` must be provided by putting one item per line of text.
+
+    - ``[ol type={type}]{items}[/ol]``
+
+  * - | Several Unicode control character can be added using their own tags.
+
+    - | ``[lrm]``, ``[rlm]``, ``[lre]``, ``[rle]``, ``[lro]``, ``[rlo]``,
+        ``[pdf]``, ``[alm]``, ``[lri]``, ``[rli]``, ``[fsi]``, ``[pdi]``,
+        ``[zwj]``, ``[zwnj]``, ``[wj]``
+
+.. note::
+
+    Tags for bold (``[b]``), italics (``[i]``), and monospaced (``[code]``)
+    formatting only work if the appropriate custom fonts are set up for
+    the ``RichTextLabel`` node first.
+
+    There are no BBCode tags to control vertical centering of text yet.
+
+    Options can be skipped for all tags.
+
+
+.. _doc_bbcode_in_richtextlabel_paragraph_options:
 
 Paragraph options
 ~~~~~~~~~~~~~~~~~
 
-+----------------------------+---------------------------------------------------------------------------+----------------------------+
-| Option                     | Supported Values                                                          | Description                |
-+----------------------------+---------------------------------------------------------------------------+----------------------------+
-| ``align``                  | ``left``, ``center``, ``right``, ``fill``                                 | Text horizontal alignment. |
-+----------------------------+---------------------------------------------------------------------------+----------------------------+
-| ``direction`` or ``dir``   | ``ltr``, ``rtl``, ``auto``                                                | Base BiDi direction.       |
-+----------------------------+---------------------------------------------------------------------------+----------------------------+
-| ``language`` or ``lang``   | ISO language codes                                                        | Locale override.           |
-+----------------------------+---------------------------------------------------------------------------+----------------------------+
-| ``bidi_override`` or `st`  | ``default``, ``uri``, ``file``, ``email``, ``list``, ``none``, ``custom`` | Structured text override.  |
-+----------------------------+---------------------------------------------------------------------------+----------------------------+
+- **align**
 
+  +-----------+--------------------------------------------+
+  | `Values`  | ``left``, ``center``, ``right``, ``fill``  |
+  +-----------+--------------------------------------------+
+  | `Default` | ``left``                                   |
+  +-----------+--------------------------------------------+
 
-Font options
-~~~~~~~~~~~~
+  Text horizontal alignment.
 
-+----------------------------+-------------------------------------------------+
-| Option                     | Description                                     |
-+----------------------------+-------------------------------------------------+
-| ``name`` or ``n``          | Font resource path.                             |
-+----------------------------+-------------------------------------------------+
-| ``size`` or ``s``          | Font size.                                      |
-+----------------------------+-------------------------------------------------+
+- **bidi_override**, **st**
 
-Cell options
-~~~~~~~~~~~~
+  +-----------+---------------------------------------------------------------------------+
+  | `Values`  | ``default``, ``uri``, ``file``, ``email``, ``list``, ``none``, ``custom`` |
+  +-----------+---------------------------------------------------------------------------+
+  | `Default` | ``default``                                                               |
+  +-----------+---------------------------------------------------------------------------+
 
--  ``expand`` - Column expansion ratio, the column expands in proportion to its expansion ratio versus the other columns' ratios.
--  ``border`` -  Sets cell border color.
--  ``bg`` - Sets cell background color, for alternating odd/even row backgrounds use ``bg=odd_color,even_color``.
+  Structured text override.
 
-List types
-~~~~~~~~~~
+- **direction**, **dir**
 
-Supported list types:
+  +-----------+--------------------------------------------+
+  | `Values`  | ``ltr``, ``rtl``, ``auto``                 |
+  +-----------+--------------------------------------------+
+  | `Default` | Inherit                                    |
+  +-----------+--------------------------------------------+
 
--  ``1`` - Numbers, using language specific numbering system if possible.
--  ``a`` and ``A`` - Lower and upper case Latin letters.
--  ``i`` and ``I`` - Lower and upper case Roman numerals.
+  Base BiDi direction.
 
-Named colors
-~~~~~~~~~~~~
+- **language**, **lang**
 
-You can use the constants of the :ref:`class_Color` class for the ``[color=<name>]`` tag.
-The case and style of the name is not important: ``DARK_RED``, ``DarkRed`` and ``darkred`` will give the same result.
+  +-----------+--------------------------------------------+
+  | `Values`  | ISO language codes. See :ref:`doc_locales` |
+  +-----------+--------------------------------------------+
+  | `Default` | Inherit                                    |
+  +-----------+--------------------------------------------+
 
-Hexadecimal color codes
-~~~~~~~~~~~~~~~~~~~~~~~
+  Locale override.
 
-For opaque RGB colors, any valid 6-digit hexadecimal code is supported, e.g. ``[color=#ffffff]white[/color]``.
-Short RGB color codes such as ``#6f2`` (equivalent to ``#66ff22``) are also supported.
-
-For transparent RGB colors, any RGBA 8-digit hexadecimal code can be used, e.g. ``[color=#ffffff88]translucent white[/color]``.
-In this case, note that the alpha channel is the **last** component of the color code, not the first one.
-Short RGBA color codes such as ``#6f28`` (equivalent to ``#66ff2288``) are also supported.
 
 .. _doc_bbcode_in_richtextlabel_handling_url_tag_clicks:
 
@@ -189,7 +294,7 @@ Handling ``[url]`` tag clicks
 By default, ``[url]`` tags do nothing when clicked. This is to allow flexible use
 of ``[url]`` tags rather than limiting them to opening URLs in a web browser.
 
-To handle clicked ``[url]`` tags, connect the RichTextLabel node's
+To handle clicked ``[url]`` tags, connect the ``RichTextLabel`` node's
 :ref:`meta_clicked <class_RichTextLabel_signal_meta_clicked>` signal to a script function.
 
 For example, the following method can be connected to ``meta_clicked`` to open
@@ -204,12 +309,179 @@ clicked URLs using the user's default web browser::
 
 For more advanced use cases, it's also possible to store JSON in an ``[url]``
 tag's option and parse it in the function that handles the ``meta_clicked`` signal.
-For example: ``[url={"example": "value"}]JSON[/url]``
+For example:
 
-Image vertical offset
-~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: none
 
-Use ``[img=align]...[/img]`` to set vertical alignment of the image, where ``align`` is ``t`` (top), ``c`` (center) or ``b`` (bottom).
+  [url={"example": "value"}]JSON[/url]
+
+
+.. _doc_bbcode_in_richtextlabel_image_options:
+
+Image options
+~~~~~~~~~~~~~
+
+- **color**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | Color name or color in HEX format          |
+  +-----------+--------------------------------------------+
+  | `Default` | Inherit                                    |
+  +-----------+--------------------------------------------+
+
+  Color tint of the image (modulation).
+
+- **height**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | Number in pixels                           |
+  +-----------+--------------------------------------------+
+  | `Default` | Inherit                                    |
+  +-----------+--------------------------------------------+
+
+  Target height of the image.
+
+- **width**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | Number in pixels                           |
+  +-----------+--------------------------------------------+
+  | `Default` | Inherit                                    |
+  +-----------+--------------------------------------------+
+
+  Target width of the image.
+
+
+.. _doc_bbcode_in_richtextlabel_image_alignment:
+
+Image vertical alignment
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+When a vertical alignment value is provided with the ``[img]`` tag the image
+will try to align itself against the surrounding text. Alignment is performed
+using a vertical point of the image and a vertical point of the text. There are
+3 possible points on the image (``top``, ``center``, and ``bottom``) and 4
+possible points on the text (``top``, ``center``, ``baseline``, and ``bottom``),
+which can be used in any combination.
+
+To specify both points, use their full or short names as a value of the image tag:
+
+.. code-block:: none
+
+    [img=top,bottom]
+    [img=center,center]
+
+You can also specify just one value (``top``, ``center``, or ``bottom``) to make
+use of a corresponding preset (``top-top``, ``center-center``, and ``bottom-bottom``
+respectively).
+
+Short names for the values are ``t`` (``top``), ``c`` (``center``), ``l`` (``baseline``),
+and ``b`` (``bottom``).
+
+
+.. _doc_bbcode_in_richtextlabel_font_options:
+
+Font options
+~~~~~~~~~~~~
+
+- **name**, **n**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | A valid Font resource path.                |
+  +-----------+--------------------------------------------+
+  | `Default` | Inherit                                    |
+  +-----------+--------------------------------------------+
+
+  Font resource path.
+
+- **size**, **s**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | Number in pixels.                          |
+  +-----------+--------------------------------------------+
+  | `Default` | Inherit                                    |
+  +-----------+--------------------------------------------+
+
+  Custom font size.
+
+
+.. _doc_bbcode_in_richtextlabel_named_colors:
+
+Named colors
+~~~~~~~~~~~~
+
+For tags that allow specifying a color by name you can use names of the constants from
+the built-in :ref:`class_Color` class. Named classes can be specified in a number of
+styles using different casings: ``DARK_RED``, ``DarkRed``, and ``darkred`` will give
+the same exact result.
+
+
+.. _doc_bbcode_in_richtextlabel_hex_colors:
+
+Hexadecimal color codes
+~~~~~~~~~~~~~~~~~~~~~~~
+
+For opaque RGB colors, any valid 6-digit hexadecimal code is supported, e.g.
+``[color=#ffffff]white[/color]``. Shorthand RGB color codes such as ``#6f2``
+(equivalent to ``#66ff22``) are also supported.
+
+For transparent RGB colors, any RGBA 8-digit hexadecimal code can be used,
+e.g. ``[color=#ffffff88]translucent white[/color]``. Note that the alpha channel
+is the **last** component of the color code, not the first one. Short RGBA
+color codes such as ``#6f28`` (equivalent to ``#66ff2288``) are supported as well.
+
+
+.. _doc_bbcode_in_richtextlabel_cell_options:
+
+Cell options
+~~~~~~~~~~~~
+
+- **expand**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | Integer number                             |
+  +-----------+--------------------------------------------+
+  | `Default` | 1                                          |
+  +-----------+--------------------------------------------+
+
+  Cell expansion ration, which cell will try to expand to proportionally to other
+  cells and their expansion ratios.
+
+- **border**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | Color name or color in HEX format          |
+  +-----------+--------------------------------------------+
+  | `Default` | Inherit                                    |
+  +-----------+--------------------------------------------+
+
+  Cell border color.
+
+- **bg**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | Color name or color in HEX format          |
+  +-----------+--------------------------------------------+
+  | `Default` | Inherit                                    |
+  +-----------+--------------------------------------------+
+
+  Cell background color. For alternating odd/even row backgrounds
+  you can use ``bg=odd_color,even_color``.
+
+
+.. _doc_bbcode_in_richtextlabel_list_types:
+
+Ordered list types
+~~~~~~~~~~~~~~~~~~
+
+Ordered lists can be used to automatically mark items with numbers
+or letters in ascending order. This tag supports the following
+type options:
+
+- ``1`` - Numbers, using language specific numbering system if possible.
+- ``a``, ``A`` - Lower and upper case Latin letters.
+- ``i``, ``I`` - Lower and upper case Roman numerals.
+
 
 Animation effects
 -----------------
@@ -273,7 +545,7 @@ You can extend the :ref:`class_RichTextEffect` resource type to create your own 
 BBCode tags. You begin by extending the :ref:`class_RichTextEffect` resource type. Add
 the ``tool`` prefix to your GDScript file if you wish to have these custom effects run
 within the editor itself. The RichTextLabel does not need to have a script attached,
-nor does it need to be running in ``tool`` mode. The new effect will be activable in
+nor does it need to be running in ``tool`` mode. The new effect can be activated in
 the Inspector through the **Custom Effects** property.
 
 There is only one function that you need to extend: ``_process_custom_fx(char_fx)``.
@@ -398,7 +670,7 @@ Matrix
 
 This will add a few new BBCode commands, which can be used like so:
 
-::
+.. code-block:: none
 
     [center][ghost]This is a custom [matrix]effect[/matrix][/ghost] made in
     [pulse freq=5.0 height=2.0][pulse color=#00FFAA freq=2.0]GDScript[/pulse][/pulse].[/center]

@@ -549,6 +549,17 @@ footer,
 .wy-table-responsive table th:not(:nth-child(1)) {
     white-space: normal;
 }
+/* Allow to control wrapping behavior per table */
+.wy-table-responsive table.wrap-normal td,
+.wy-table-responsive table.wrap-normal th {
+    white-space: normal;
+}
+
+/* Make sure line blocks don't stretch tables */
+.wy-table-responsive table .line-block {
+    margin-bottom: 0;
+}
+
 
 /* Make sure not to wrap keyboard shortcuts */
 .wy-table-responsive table td kbd {
