@@ -374,8 +374,6 @@ Here's the list of available annotations:
 |                              |                                                                                                   |
 | ``@export_range``            |                                                                                                   |
 |                              |                                                                                                   |
-| ``@export_exp_range``        |                                                                                                   |
-|                              |                                                                                                   |
 | ``@export_exp_easing``       |                                                                                                   |
 |                              |                                                                                                   |
 | ``@export_color_no_alpha``   |                                                                                                   |
