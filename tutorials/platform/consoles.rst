@@ -68,7 +68,7 @@ Following is the list of providers:
   Switch and PlayStation 4 porting and publishing of Godot games.
 - `Pineapple Works <https://pineapple.works/>`_ offers
   Switch and Xbox One porting and publishing of Godot games.
-- `Ratalaika Games <https://www.ratalaikagames.com//>`_ offers
+- `Ratalaika Games <https://www.ratalaikagames.com/>`_ offers
   Switch, Xbox One, Xbox Series, PlayStation 4, and PlayStation 5 porting
   and publishing of Godot games.
   
