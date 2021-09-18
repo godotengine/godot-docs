@@ -65,11 +65,11 @@ Following is the list of providers:
 - `Deck13 Interactive <https://www.deck13.com/>`_ offers Switch porting
   and publishing of Godot games.
 - `Lone Wolf Technology <http://www.lonewolftechnology.com/>`_ offers
-  Switch and PS4 porting and publishing of Godot games.
+  Switch and PlayStation 4 porting and publishing of Godot games.
 - `Pineapple Works <https://pineapple.works/>`_ offers
   Switch and Xbox One porting and publishing of Godot games.
 - `Ratalaika Games <https://www.ratalaikagames.com//>`_ offers
-  Switch, Xbox One, XBox Series X, Playstation 4, and Playstation 5 porting
+  Switch, Xbox One, Xbox Series, PlayStation 4, and PlayStation 5 porting
   and publishing of Godot games.
   
 If your company offers porting and/or publishing services for Godot games,
