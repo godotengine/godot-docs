@@ -755,7 +755,7 @@ return early with the ``return`` keyword, but they can't return any value.
 
 ::
 
-    void_function() -> void:
+    func void_function() -> void:
         return # Can't return a value
 
 .. note:: Non-void functions must **always** return a value, so if your code has
