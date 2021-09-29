@@ -155,13 +155,7 @@ The limits can be only for the slider if you add the hints "or_greater" and/or "
 
     @export_range(0, 100, 1, "or_greater", "or_lesser")
 
-Allow values 'y = exp(x)' where 'y' varies between 100 and 1000
-while snapping to steps of 20. The editor will present a
-slider for easily editing the value.
-
-::
-
-    @export_exp_range(100, 1000, 20) var l
+.. TODO: Document other hint strings usable with export_range.
 
 Floats with easing hint
 -----------------------
