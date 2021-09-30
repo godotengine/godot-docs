@@ -97,23 +97,23 @@ The PCK file contains a “mod_scene.tscn” test scene in its root.
  .. code-tab:: gdscript GDScript
 
     func _your_function():
-        # This could fail if, for example, mod.pck cannot be found
+        # This could fail if, for example, mod.pck cannot be found.
         var success = ProjectSettings.load_resource_pack("res://mod.pck")
 
         if success:
-            # Now one can use the assets as if they had them in the project from the start
+            # Now one can use the assets as if they had them in the project from the start.
             var imported_scene = load("res://mod_scene.tscn")
 
  .. code-tab:: csharp
 
     private void YourFunction()
     {
-        # This could fail if, for example, mod.pck cannot be found
+        // This could fail if, for example, mod.pck cannot be found.
         var success = ProjectSettings.LoadResourcePack("res://mod.pck");
 
         if (success)
         {
-            // Now one can use the assets as if they had them in the project from the start
+            // Now one can use the assets as if they had them in the project from the start.
             var importedScene = (PackedScene)ResourceLoader.Load("res://mod_scene.tscn");
         }
     }
