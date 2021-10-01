@@ -23,10 +23,6 @@ much so that Godot exposes many of them with dedicated functions:
 
 - ``_physics_process(delta)`` : NOTIFICATION_PHYSICS_PROCESS
 
-- ``_input()`` : NOTIFICATION_INPUT
-
-- ``_unhandled_input()`` : NOTIFICATION_UNHANDLED_INPUT
-
 - ``_draw()`` : NOTIFICATION_DRAW
 
 What users might *not* realize is that notifications exist for types other
