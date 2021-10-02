@@ -238,14 +238,6 @@ changed:
         }
     }
 
-Setting a main scene
---------------------
-
-The main scene is the one that your game will start in. For this
-*Dodge the Creeps* example, in
-**Project -> Project Settings -> Application -> Run**, set **Main Scene**
-to ``Main.tscn`` by clicking the folder icon and selecting it.
-
 Export templates
 ----------------
 
