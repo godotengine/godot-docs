@@ -116,6 +116,7 @@ The color the character will be drawn with.
 +-----------+-------------------------+
 
 The time elapsed since the :ref:`RichTextLabel<class_RichTextLabel>` was added to the scene tree (in seconds). Time stops when the project is paused, unless the :ref:`RichTextLabel<class_RichTextLabel>`'s :ref:`Node.pause_mode<class_Node_property_pause_mode>` is set to :ref:`Node.PAUSE_MODE_PROCESS<class_Node_constant_PAUSE_MODE_PROCESS>`.
+Resets when the text in the :ref:`RichTextLabel<class_RichTextLabel>` has been changed.
 
 **Note:** Time still passes while the :ref:`RichTextLabel<class_RichTextLabel>` is hidden.
 
