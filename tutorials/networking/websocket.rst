@@ -93,7 +93,7 @@ This will print:
 Minimal server example
 ^^^^^^^^^^^^^^^^^^^^^^
 
-This example will show you how to create a WebSocket server that listen for remote connections, and how to send and receive data.
+This example will show you how to create a WebSocket server that listens for remote connections, and how to send and receive data.
 
 ::
 
