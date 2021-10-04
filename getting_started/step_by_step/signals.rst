@@ -245,7 +245,7 @@ argument names between parentheses:
     emit any number of arguments when you emit signals. So it's up to you to
     emit the correct values.
 
-To pass values, add them as the second argument to the ``emit_signal`` function:
+To pass values, add them as subsequent arguments to the ``emit_signal`` function:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
