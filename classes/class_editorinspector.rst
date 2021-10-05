@@ -18,19 +18,14 @@ Description
 
 The editor inspector is by default located on the right-hand side of the editor. It's used to edit the properties of the selected node. For example, you can select a node such as the Sprite2D then edit its transform through the inspector tool. The editor inspector is an essential tool in the game development workflow.
 
+**Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_inspector<class_EditorInterface_method_get_inspector>`.
+
 Properties
 ----------
 
-+-------------------------+---------------------------+------------------+
-| :ref:`bool<class_bool>` | scroll_horizontal_enabled | **O:** ``false`` |
-+-------------------------+---------------------------+------------------+
-
-Methods
--------
-
-+------+------------------------------------------------------------------+
-| void | :ref:`refresh<class_EditorInspector_method_refresh>` **(** **)** |
-+------+------------------------------------------------------------------+
++-------------------------+---------------------------+-------------------------------+
+| :ref:`bool<class_bool>` | scroll_horizontal_enabled | ``false`` *(parent override)* |
++-------------------------+---------------------------+-------------------------------+
 
 Signals
 -------
@@ -39,11 +34,23 @@ Signals
 
 - **object_id_selected** **(** :ref:`int<class_int>` id **)**
 
+Emitted when the Edit button of an :ref:`Object<class_Object>` has been pressed in the inspector. This is mainly used in the remote scene tree inspector.
+
+----
+
+.. _class_EditorInspector_signal_property_deleted:
+
+- **property_deleted** **(** :ref:`String<class_String>` property **)**
+
+Emitted when a property is removed from the inspector.
+
 ----
 
 .. _class_EditorInspector_signal_property_edited:
 
 - **property_edited** **(** :ref:`String<class_String>` property **)**
+
+Emitted when a property is edited in the inspector.
 
 ----
 
@@ -51,11 +58,15 @@ Signals
 
 - **property_keyed** **(** :ref:`String<class_String>` property **)**
 
+Emitted when a property is keyed in the inspector. Properties can be keyed by clicking the "key" icon next to a property when the Animation panel is toggled.
+
 ----
 
 .. _class_EditorInspector_signal_property_selected:
 
 - **property_selected** **(** :ref:`String<class_String>` property **)**
+
+Emitted when a property is selected in the inspector.
 
 ----
 
@@ -63,11 +74,17 @@ Signals
 
 - **property_toggled** **(** :ref:`String<class_String>` property, :ref:`bool<class_bool>` checked **)**
 
+Emitted when a boolean property is toggled in the inspector.
+
+**Note:** This signal is never emitted if the internal ``autoclear`` property enabled. Since this property is always enabled in the editor inspector, this signal is never emitted by the editor itself.
+
 ----
 
 .. _class_EditorInspector_signal_resource_selected:
 
 - **resource_selected** **(** :ref:`Object<class_Object>` res, :ref:`String<class_String>` prop **)**
+
+Emitted when a resource is selected in the inspector.
 
 ----
 
@@ -75,10 +92,11 @@ Signals
 
 - **restart_requested** **(** **)**
 
-Method Descriptions
--------------------
+Emitted when a property that requires a restart to be applied is edited in the inspector. This is only used in the Project Settings and Editor Settings.
 
-.. _class_EditorInspector_method_refresh:
-
-- void **refresh** **(** **)**
-
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

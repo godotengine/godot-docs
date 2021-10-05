@@ -9,35 +9,43 @@
 AnimatedTexture
 ===============
 
-**Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Proxy texture for simple frame-based animations.
 
 Description
 -----------
 
-``AnimatedTexture`` is a resource format for frame-based animations, where multiple textures can be chained automatically with a predefined delay for each frame. Unlike :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite<class_AnimatedSprite>`, it isn't a :ref:`Node<class_Node>`, but has the advantage of being usable anywhere a :ref:`Texture2D<class_Texture2D>` resource can be used, e.g. in a :ref:`TileSet<class_TileSet>`.
+``AnimatedTexture`` is a resource format for frame-based animations, where multiple textures can be chained automatically with a predefined delay for each frame. Unlike :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite2D<class_AnimatedSprite2D>`, it isn't a :ref:`Node<class_Node>`, but has the advantage of being usable anywhere a :ref:`Texture2D<class_Texture2D>` resource can be used, e.g. in a :ref:`TileSet<class_TileSet>`.
 
 The playback of the animation is controlled by the :ref:`fps<class_AnimatedTexture_property_fps>` property as well as each frame's optional delay (see :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>`). The animation loops, i.e. it will restart at frame 0 automatically after playing the last frame.
 
-``AnimatedTexture`` currently requires all frame textures to have the same size, otherwise the bigger ones will be cropped to match the smallest one. Also, it doesn't support :ref:`AtlasTexture<class_AtlasTexture>`. Each frame needs to be separate image.
+``AnimatedTexture`` currently requires all frame textures to have the same size, otherwise the bigger ones will be cropped to match the smallest one.
+
+**Note:** AnimatedTexture doesn't support using :ref:`AtlasTexture<class_AtlasTexture>`\ s. Each frame needs to be a separate :ref:`Texture2D<class_Texture2D>`.
 
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`fps<class_AnimatedTexture_property_fps>`       | ``4.0`` |
-+---------------------------+------------------------------------------------------+---------+
-| :ref:`int<class_int>`     | :ref:`frames<class_AnimatedTexture_property_frames>` | ``1``   |
-+---------------------------+------------------------------------------------------+---------+
++---------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`     | :ref:`current_frame<class_AnimatedTexture_property_current_frame>` |           |
++---------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`fps<class_AnimatedTexture_property_fps>`                     | ``4.0``   |
++---------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`     | :ref:`frames<class_AnimatedTexture_property_frames>`               | ``1``     |
++---------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`oneshot<class_AnimatedTexture_property_oneshot>`             | ``false`` |
++---------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`pause<class_AnimatedTexture_property_pause>`                 | ``false`` |
++---------------------------+--------------------------------------------------------------------+-----------+
 
 Methods
 -------
 
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`         | :ref:`get_frame_delay<class_AnimatedTexture_method_get_frame_delay>` **(** :ref:`int<class_int>` frame **)** const                                          |
+| :ref:`float<class_float>`         | :ref:`get_frame_delay<class_AnimatedTexture_method_get_frame_delay>` **(** :ref:`int<class_int>` frame **)** |const|                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`get_frame_texture<class_AnimatedTexture_method_get_frame_texture>` **(** :ref:`int<class_int>` frame **)** const                                      |
+| :ref:`Texture2D<class_Texture2D>` | :ref:`get_frame_texture<class_AnimatedTexture_method_get_frame_texture>` **(** :ref:`int<class_int>` frame **)** |const|                                    |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>` **(** :ref:`int<class_int>` frame, :ref:`float<class_float>` delay **)**               |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -49,10 +57,24 @@ Constants
 
 .. _class_AnimatedTexture_constant_MAX_FRAMES:
 
-- **MAX_FRAMES** = **256** --- The maximum number of frames supported by ``AnimatedTexture``. If you need more frames in your animation, use :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite<class_AnimatedSprite>`.
+- **MAX_FRAMES** = **256** --- The maximum number of frames supported by ``AnimatedTexture``. If you need more frames in your animation, use :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite2D<class_AnimatedSprite2D>`.
 
 Property Descriptions
 ---------------------
+
+.. _class_AnimatedTexture_property_current_frame:
+
+- :ref:`int<class_int>` **current_frame**
+
++----------+--------------------------+
+| *Setter* | set_current_frame(value) |
++----------+--------------------------+
+| *Getter* | get_current_frame()      |
++----------+--------------------------+
+
+Sets the currently visible frame of the texture.
+
+----
 
 .. _class_AnimatedTexture_property_fps:
 
@@ -86,12 +108,44 @@ For example, an animation with 8 frames, no frame delay and a ``fps`` value of 2
 
 Number of frames to use in the animation. While you can create the frames independently with :ref:`set_frame_texture<class_AnimatedTexture_method_set_frame_texture>`, you need to set this value for the animation to take new frames into account. The maximum number of frames is :ref:`MAX_FRAMES<class_AnimatedTexture_constant_MAX_FRAMES>`.
 
+----
+
+.. _class_AnimatedTexture_property_oneshot:
+
+- :ref:`bool<class_bool>` **oneshot**
+
++-----------+--------------------+
+| *Default* | ``false``          |
++-----------+--------------------+
+| *Setter*  | set_oneshot(value) |
++-----------+--------------------+
+| *Getter*  | get_oneshot()      |
++-----------+--------------------+
+
+If ``true``, the animation will only play once and will not loop back to the first frame after reaching the end. Note that reaching the end will not set :ref:`pause<class_AnimatedTexture_property_pause>` to ``true``.
+
+----
+
+.. _class_AnimatedTexture_property_pause:
+
+- :ref:`bool<class_bool>` **pause**
+
++-----------+------------------+
+| *Default* | ``false``        |
++-----------+------------------+
+| *Setter*  | set_pause(value) |
++-----------+------------------+
+| *Getter*  | get_pause()      |
++-----------+------------------+
+
+If ``true``, the animation will pause where it currently is (i.e. at :ref:`current_frame<class_AnimatedTexture_property_current_frame>`). The animation will continue from where it was paused when changing this property to ``false``.
+
 Method Descriptions
 -------------------
 
 .. _class_AnimatedTexture_method_get_frame_delay:
 
-- :ref:`float<class_float>` **get_frame_delay** **(** :ref:`int<class_int>` frame **)** const
+- :ref:`float<class_float>` **get_frame_delay** **(** :ref:`int<class_int>` frame **)** |const|
 
 Returns the given frame's delay value.
 
@@ -99,7 +153,7 @@ Returns the given frame's delay value.
 
 .. _class_AnimatedTexture_method_get_frame_texture:
 
-- :ref:`Texture2D<class_Texture2D>` **get_frame_texture** **(** :ref:`int<class_int>` frame **)** const
+- :ref:`Texture2D<class_Texture2D>` **get_frame_texture** **(** :ref:`int<class_int>` frame **)** |const|
 
 Returns the given frame's :ref:`Texture2D<class_Texture2D>`.
 
@@ -130,3 +184,9 @@ Assigns a :ref:`Texture2D<class_Texture2D>` to the given frame. Frame IDs start 
 
 You can define any number of textures up to :ref:`MAX_FRAMES<class_AnimatedTexture_constant_MAX_FRAMES>`, but keep in mind that only frames from 0 to :ref:`frames<class_AnimatedTexture_property_frames>` - 1 will be part of the animation.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -18,30 +18,30 @@ Description
 
 Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked.
 
-New items can be created inside this :ref:`PopupMenu<class_PopupMenu>` using ``get_popup().add_item("My Item Name")``. You can also create them directly from the editor. To do so, select the ``MenuButton`` node, then in the toolbar at the top of the 2D editor, click **Items** then click **Add** in the popup. You will be able to give each items new properties.
+New items can be created inside this :ref:`PopupMenu<class_PopupMenu>` using ``get_popup().add_item("My Item Name")``. You can also create them directly from the editor. To do so, select the ``MenuButton`` node, then in the toolbar at the top of the 2D editor, click **Items** then click **Add** in the popup. You will be able to give each item new properties.
+
+See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
 
 Properties
 ----------
 
-+-----------------------------------------------+-------------------------------------------------------------------+-----------------+
-| :ref:`ActionMode<enum_BaseButton_ActionMode>` | action_mode                                                       | **O:** ``0``    |
-+-----------------------------------------------+-------------------------------------------------------------------+-----------------+
-| :ref:`FocusMode<enum_Control_FocusMode>`      | enabled_focus_mode                                                | **O:** ``0``    |
-+-----------------------------------------------+-------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                       | flat                                                              | **O:** ``true`` |
-+-----------------------------------------------+-------------------------------------------------------------------+-----------------+
-| :ref:`FocusMode<enum_Control_FocusMode>`      | focus_mode                                                        | **O:** ``0``    |
-+-----------------------------------------------+-------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                       | :ref:`switch_on_hover<class_MenuButton_property_switch_on_hover>` | ``false``       |
-+-----------------------------------------------+-------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                       | toggle_mode                                                       | **O:** ``true`` |
-+-----------------------------------------------+-------------------------------------------------------------------+-----------------+
++-----------------------------------------------+-------------------------------------------------------------------+------------------------------+
+| :ref:`ActionMode<enum_BaseButton_ActionMode>` | action_mode                                                       | ``0`` *(parent override)*    |
++-----------------------------------------------+-------------------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>`                       | flat                                                              | ``true`` *(parent override)* |
++-----------------------------------------------+-------------------------------------------------------------------+------------------------------+
+| :ref:`FocusMode<enum_Control_FocusMode>`      | focus_mode                                                        | ``0`` *(parent override)*    |
++-----------------------------------------------+-------------------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`switch_on_hover<class_MenuButton_property_switch_on_hover>` | ``false``                    |
++-----------------------------------------------+-------------------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>`                       | toggle_mode                                                       | ``true`` *(parent override)* |
++-----------------------------------------------+-------------------------------------------------------------------+------------------------------+
 
 Methods
 -------
 
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_popup<class_MenuButton_method_get_popup>` **(** **)** const                                                    |
+| :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_popup<class_MenuButton_method_get_popup>` **(** **)** |const|                                                  |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_disable_shortcuts<class_MenuButton_method_set_disable_shortcuts>` **(** :ref:`bool<class_bool>` disabled **)** |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
@@ -49,38 +49,44 @@ Methods
 Theme Properties
 ----------------
 
-+---------------------------------+---------------------+------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | disabled            |                              |
-+---------------------------------+---------------------+------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | focus               |                              |
-+---------------------------------+---------------------+------------------------------+
-| :ref:`Font<class_Font>`         | font                |                              |
-+---------------------------------+---------------------+------------------------------+
-| :ref:`Color<class_Color>`       | font_color          | Color( 0.88, 0.88, 0.88, 1 ) |
-+---------------------------------+---------------------+------------------------------+
-| :ref:`Color<class_Color>`       | font_color_disabled | Color( 1, 1, 1, 0.3 )        |
-+---------------------------------+---------------------+------------------------------+
-| :ref:`Color<class_Color>`       | font_color_hover    | Color( 0.94, 0.94, 0.94, 1 ) |
-+---------------------------------+---------------------+------------------------------+
-| :ref:`Color<class_Color>`       | font_color_pressed  | Color( 1, 1, 1, 1 )          |
-+---------------------------------+---------------------+------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | hover               |                              |
-+---------------------------------+---------------------+------------------------------+
-| :ref:`int<class_int>`           | hseparation         | 3                            |
-+---------------------------------+---------------------+------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | normal              |                              |
-+---------------------------------+---------------------+------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | pressed             |                              |
-+---------------------------------+---------------------+------------------------------+
++---------------------------------+------------------------------------------------------------------------------+--------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_MenuButton_theme_style_disabled>`                       |                                |
++---------------------------------+------------------------------------------------------------------------------+--------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_MenuButton_theme_style_focus>`                             |                                |
++---------------------------------+------------------------------------------------------------------------------+--------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_MenuButton_theme_font_font>`                                |                                |
++---------------------------------+------------------------------------------------------------------------------+--------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color<class_MenuButton_theme_color_font_color>`                   | ``Color(0.88, 0.88, 0.88, 1)`` |
++---------------------------------+------------------------------------------------------------------------------+--------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_disabled_color<class_MenuButton_theme_color_font_disabled_color>` | ``Color(1, 1, 1, 0.3)``        |
++---------------------------------+------------------------------------------------------------------------------+--------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_hover_color<class_MenuButton_theme_color_font_hover_color>`       | ``Color(0.94, 0.94, 0.94, 1)`` |
++---------------------------------+------------------------------------------------------------------------------+--------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_MenuButton_theme_color_font_outline_color>`   | ``Color(1, 1, 1, 1)``          |
++---------------------------------+------------------------------------------------------------------------------+--------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_pressed_color<class_MenuButton_theme_color_font_pressed_color>`   | ``Color(1, 1, 1, 1)``          |
++---------------------------------+------------------------------------------------------------------------------+--------------------------------+
+| :ref:`int<class_int>`           | :ref:`font_size<class_MenuButton_theme_font_size_font_size>`                 |                                |
++---------------------------------+------------------------------------------------------------------------------+--------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_MenuButton_theme_style_hover>`                             |                                |
++---------------------------------+------------------------------------------------------------------------------+--------------------------------+
+| :ref:`int<class_int>`           | :ref:`hseparation<class_MenuButton_theme_constant_hseparation>`              | ``3``                          |
++---------------------------------+------------------------------------------------------------------------------+--------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_MenuButton_theme_style_normal>`                           |                                |
++---------------------------------+------------------------------------------------------------------------------+--------------------------------+
+| :ref:`int<class_int>`           | :ref:`outline_size<class_MenuButton_theme_constant_outline_size>`            | ``0``                          |
++---------------------------------+------------------------------------------------------------------------------+--------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_MenuButton_theme_style_pressed>`                         |                                |
++---------------------------------+------------------------------------------------------------------------------+--------------------------------+
 
 Signals
 -------
 
-.. _class_MenuButton_signal_about_to_show:
+.. _class_MenuButton_signal_about_to_popup:
 
-- **about_to_show** **(** **)**
+- **about_to_popup** **(** **)**
 
-Emitted when :ref:`PopupMenu<class_PopupMenu>` of this MenuButton is about to show.
+Emitted when the :ref:`PopupMenu<class_PopupMenu>` of this MenuButton is about to show.
 
 Property Descriptions
 ---------------------
@@ -104,7 +110,7 @@ Method Descriptions
 
 .. _class_MenuButton_method_get_popup:
 
-- :ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** const
+- :ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** |const|
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
@@ -116,3 +122,150 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
 If ``true``, shortcuts are disabled and cannot be used to trigger the button.
 
+Theme Property Descriptions
+---------------------------
+
+.. _class_MenuButton_theme_style_disabled:
+
+- :ref:`StyleBox<class_StyleBox>` **disabled**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``MenuButton`` is disabled.
+
+----
+
+.. _class_MenuButton_theme_style_focus:
+
+- :ref:`StyleBox<class_StyleBox>` **focus**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``MenuButton`` is focused. It is displayed over the current :ref:`StyleBox<class_StyleBox>`, so using :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` will just disable the focus visual effect.
+
+----
+
+.. _class_MenuButton_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+:ref:`Font<class_Font>` of the ``MenuButton``'s text.
+
+----
+
+.. _class_MenuButton_theme_color_font_color:
+
+- :ref:`Color<class_Color>` **font_color**
+
++-----------+--------------------------------+
+| *Default* | ``Color(0.88, 0.88, 0.88, 1)`` |
++-----------+--------------------------------+
+
+Default text :ref:`Color<class_Color>` of the ``MenuButton``.
+
+----
+
+.. _class_MenuButton_theme_color_font_disabled_color:
+
+- :ref:`Color<class_Color>` **font_disabled_color**
+
++-----------+-------------------------+
+| *Default* | ``Color(1, 1, 1, 0.3)`` |
++-----------+-------------------------+
+
+Text :ref:`Color<class_Color>` used when the ``MenuButton`` is disabled.
+
+----
+
+.. _class_MenuButton_theme_color_font_hover_color:
+
+- :ref:`Color<class_Color>` **font_hover_color**
+
++-----------+--------------------------------+
+| *Default* | ``Color(0.94, 0.94, 0.94, 1)`` |
++-----------+--------------------------------+
+
+Text :ref:`Color<class_Color>` used when the ``MenuButton`` is being hovered.
+
+----
+
+.. _class_MenuButton_theme_color_font_outline_color:
+
+- :ref:`Color<class_Color>` **font_outline_color**
+
++-----------+-----------------------+
+| *Default* | ``Color(1, 1, 1, 1)`` |
++-----------+-----------------------+
+
+The tint of text outline of the ``MenuButton``.
+
+----
+
+.. _class_MenuButton_theme_color_font_pressed_color:
+
+- :ref:`Color<class_Color>` **font_pressed_color**
+
++-----------+-----------------------+
+| *Default* | ``Color(1, 1, 1, 1)`` |
++-----------+-----------------------+
+
+Text :ref:`Color<class_Color>` used when the ``MenuButton`` is being pressed.
+
+----
+
+.. _class_MenuButton_theme_font_size_font_size:
+
+- :ref:`int<class_int>` **font_size**
+
+Font size of the ``MenuButton``'s text.
+
+----
+
+.. _class_MenuButton_theme_style_hover:
+
+- :ref:`StyleBox<class_StyleBox>` **hover**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``MenuButton`` is being hovered.
+
+----
+
+.. _class_MenuButton_theme_constant_hseparation:
+
+- :ref:`int<class_int>` **hseparation**
+
++-----------+-------+
+| *Default* | ``3`` |
++-----------+-------+
+
+The horizontal space between ``MenuButton``'s icon and text.
+
+----
+
+.. _class_MenuButton_theme_style_normal:
+
+- :ref:`StyleBox<class_StyleBox>` **normal**
+
+Default :ref:`StyleBox<class_StyleBox>` for the ``MenuButton``.
+
+----
+
+.. _class_MenuButton_theme_constant_outline_size:
+
+- :ref:`int<class_int>` **outline_size**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+The size of the text outline.
+
+----
+
+.. _class_MenuButton_theme_style_pressed:
+
+- :ref:`StyleBox<class_StyleBox>` **pressed**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``MenuButton`` is being pressed.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

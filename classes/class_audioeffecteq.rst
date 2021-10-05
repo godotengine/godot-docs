@@ -9,7 +9,7 @@
 AudioEffectEQ
 =============
 
-**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 **Inherited By:** :ref:`AudioEffectEQ10<class_AudioEffectEQ10>`, :ref:`AudioEffectEQ21<class_AudioEffectEQ21>`, :ref:`AudioEffectEQ6<class_AudioEffectEQ6>`
 
@@ -26,9 +26,9 @@ Methods
 -------
 
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`get_band_count<class_AudioEffectEQ_method_get_band_count>` **(** **)** const                                                                   |
+| :ref:`int<class_int>`     | :ref:`get_band_count<class_AudioEffectEQ_method_get_band_count>` **(** **)** |const|                                                                 |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_band_gain_db<class_AudioEffectEQ_method_get_band_gain_db>` **(** :ref:`int<class_int>` band_idx **)** const                                |
+| :ref:`float<class_float>` | :ref:`get_band_gain_db<class_AudioEffectEQ_method_get_band_gain_db>` **(** :ref:`int<class_int>` band_idx **)** |const|                              |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_band_gain_db<class_AudioEffectEQ_method_set_band_gain_db>` **(** :ref:`int<class_int>` band_idx, :ref:`float<class_float>` volume_db **)** |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -38,7 +38,7 @@ Method Descriptions
 
 .. _class_AudioEffectEQ_method_get_band_count:
 
-- :ref:`int<class_int>` **get_band_count** **(** **)** const
+- :ref:`int<class_int>` **get_band_count** **(** **)** |const|
 
 Returns the number of bands of the equalizer.
 
@@ -46,7 +46,7 @@ Returns the number of bands of the equalizer.
 
 .. _class_AudioEffectEQ_method_get_band_gain_db:
 
-- :ref:`float<class_float>` **get_band_gain_db** **(** :ref:`int<class_int>` band_idx **)** const
+- :ref:`float<class_float>` **get_band_gain_db** **(** :ref:`int<class_int>` band_idx **)** |const|
 
 Returns the band's gain at the specified index, in dB.
 
@@ -58,3 +58,9 @@ Returns the band's gain at the specified index, in dB.
 
 Sets band's gain at the specified index, in dB.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

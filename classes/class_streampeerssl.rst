@@ -9,7 +9,7 @@
 StreamPeerSSL
 =============
 
-**Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 SSL stream peer.
 
@@ -17,6 +17,8 @@ Description
 -----------
 
 SSL stream peer. This object can be used to connect to an SSL server or accept a single SSL client connection.
+
+**Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
 Tutorials
 ---------
@@ -40,7 +42,7 @@ Methods
 +------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`disconnect_from_stream<class_StreamPeerSSL_method_disconnect_from_stream>` **(** **)**                                                                                                                                                                                                   |
 +------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Status<enum_StreamPeerSSL_Status>` | :ref:`get_status<class_StreamPeerSSL_method_get_status>` **(** **)** const                                                                                                                                                                                                                     |
+| :ref:`Status<enum_StreamPeerSSL_Status>` | :ref:`get_status<class_StreamPeerSSL_method_get_status>` **(** **)** |const|                                                                                                                                                                                                                   |
 +------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`poll<class_StreamPeerSSL_method_poll>` **(** **)**                                                                                                                                                                                                                                       |
 +------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -118,7 +120,7 @@ Disconnects from host.
 
 .. _class_StreamPeerSSL_method_get_status:
 
-- :ref:`Status<enum_StreamPeerSSL_Status>` **get_status** **(** **)** const
+- :ref:`Status<enum_StreamPeerSSL_Status>` **get_status** **(** **)** |const|
 
 Returns the status of the connection. See :ref:`Status<enum_StreamPeerSSL_Status>` for values.
 
@@ -130,3 +132,9 @@ Returns the status of the connection. See :ref:`Status<enum_StreamPeerSSL_Status
 
 Poll the connection to check for incoming bytes. Call this right before :ref:`StreamPeer.get_available_bytes<class_StreamPeer_method_get_available_bytes>` for it to work properly.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

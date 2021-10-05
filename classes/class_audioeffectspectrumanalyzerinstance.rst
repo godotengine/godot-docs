@@ -9,16 +9,16 @@
 AudioEffectSpectrumAnalyzerInstance
 ===================================
 
-**Inherits:** :ref:`AudioEffectInstance<class_AudioEffectInstance>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`AudioEffectInstance<class_AudioEffectInstance>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 
 
 Methods
 -------
 
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_magnitude_for_frequency_range<class_AudioEffectSpectrumAnalyzerInstance_method_get_magnitude_for_frequency_range>` **(** :ref:`float<class_float>` from_hz, :ref:`float<class_float>` to_hz, :ref:`MagnitudeMode<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>` mode=1 **)** const |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`get_magnitude_for_frequency_range<class_AudioEffectSpectrumAnalyzerInstance_method_get_magnitude_for_frequency_range>` **(** :ref:`float<class_float>` from_hz, :ref:`float<class_float>` to_hz, :ref:`MagnitudeMode<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>` mode=1 **)** |const| |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -40,5 +40,11 @@ Method Descriptions
 
 .. _class_AudioEffectSpectrumAnalyzerInstance_method_get_magnitude_for_frequency_range:
 
-- :ref:`Vector2<class_Vector2>` **get_magnitude_for_frequency_range** **(** :ref:`float<class_float>` from_hz, :ref:`float<class_float>` to_hz, :ref:`MagnitudeMode<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>` mode=1 **)** const
+- :ref:`Vector2<class_Vector2>` **get_magnitude_for_frequency_range** **(** :ref:`float<class_float>` from_hz, :ref:`float<class_float>` to_hz, :ref:`MagnitudeMode<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>` mode=1 **)** |const|
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

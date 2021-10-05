@@ -20,7 +20,10 @@ SpinBox is a numerical input text field. It allows entering integers and floats.
 
 **Example:**
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var spin_box = SpinBox.new()
     add_child(spin_box)
@@ -28,22 +31,36 @@ SpinBox is a numerical input text field. It allows entering integers and floats.
     line_edit.context_menu_enabled = false
     spin_box.align = LineEdit.ALIGN_RIGHT
 
+ .. code-tab:: csharp
+
+    var spinBox = new SpinBox();
+    AddChild(spinBox);
+    var lineEdit = spinBox.GetLineEdit();
+    lineEdit.ContextMenuEnabled = false;
+    spinBox.Align = LineEdit.AlignEnum.Right;
+
+
+
 The above code will create a ``SpinBox``, disable context menu on it and set the text alignment to right.
 
 See :ref:`Range<class_Range>` class for more options over the ``SpinBox``.
 
+**Note:** ``SpinBox`` relies on an underlying :ref:`LineEdit<class_LineEdit>` node. To theme a ``SpinBox``'s background, add theme items for :ref:`LineEdit<class_LineEdit>` and customize them.
+
 Properties
 ----------
 
-+-----------------------------------+--------------------------------------------------+----------+
-| :ref:`Align<enum_LineEdit_Align>` | :ref:`align<class_SpinBox_property_align>`       | ``0``    |
-+-----------------------------------+--------------------------------------------------+----------+
-| :ref:`bool<class_bool>`           | :ref:`editable<class_SpinBox_property_editable>` | ``true`` |
-+-----------------------------------+--------------------------------------------------+----------+
-| :ref:`String<class_String>`       | :ref:`prefix<class_SpinBox_property_prefix>`     | ``""``   |
-+-----------------------------------+--------------------------------------------------+----------+
-| :ref:`String<class_String>`       | :ref:`suffix<class_SpinBox_property_suffix>`     | ``""``   |
-+-----------------------------------+--------------------------------------------------+----------+
++-----------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`Align<enum_LineEdit_Align>` | :ref:`align<class_SpinBox_property_align>`                                   | ``0``     |
++-----------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`           | :ref:`editable<class_SpinBox_property_editable>`                             | ``true``  |
++-----------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>`       | :ref:`prefix<class_SpinBox_property_prefix>`                                 | ``""``    |
++-----------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>`       | :ref:`suffix<class_SpinBox_property_suffix>`                                 | ``""``    |
++-----------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`           | :ref:`update_on_text_changed<class_SpinBox_property_update_on_text_changed>` | ``false`` |
++-----------------------------------+------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -57,9 +74,9 @@ Methods
 Theme Properties
 ----------------
 
-+-----------------------------------+--------+
-| :ref:`Texture2D<class_Texture2D>` | updown |
-+-----------------------------------+--------+
++-----------------------------------+------------------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`updown<class_SpinBox_theme_icon_updown>` |
++-----------------------------------+------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -124,7 +141,23 @@ Adds the specified ``prefix`` string before the numerical value of the ``SpinBox
 | *Getter*  | get_suffix()      |
 +-----------+-------------------+
 
-Adds the specified ``prefix`` string after the numerical value of the ``SpinBox``.
+Adds the specified ``suffix`` string after the numerical value of the ``SpinBox``.
+
+----
+
+.. _class_SpinBox_property_update_on_text_changed:
+
+- :ref:`bool<class_bool>` **update_on_text_changed**
+
++-----------+-----------------------------------+
+| *Default* | ``false``                         |
++-----------+-----------------------------------+
+| *Setter*  | set_update_on_text_changed(value) |
++-----------+-----------------------------------+
+| *Getter*  | get_update_on_text_changed()      |
++-----------+-----------------------------------+
+
+Sets the value of the :ref:`Range<class_Range>` for this ``SpinBox`` when the :ref:`LineEdit<class_LineEdit>` text is *changed* instead of *submitted*. See :ref:`LineEdit.text_changed<class_LineEdit_signal_text_changed>` and :ref:`LineEdit.text_submitted<class_LineEdit_signal_text_submitted>`.
 
 Method Descriptions
 -------------------
@@ -143,3 +176,18 @@ Applies the current value of this ``SpinBox``.
 
 Returns the :ref:`LineEdit<class_LineEdit>` instance from this ``SpinBox``. You can use it to access properties and methods of :ref:`LineEdit<class_LineEdit>`.
 
+Theme Property Descriptions
+---------------------------
+
+.. _class_SpinBox_theme_icon_updown:
+
+- :ref:`Texture2D<class_Texture2D>` **updown**
+
+Sets a custom :ref:`Texture2D<class_Texture2D>` for up and down arrows of the ``SpinBox``.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

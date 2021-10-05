@@ -18,6 +18,8 @@ Description
 
 This object manages the SceneTree selection in the editor.
 
+**Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_selection<class_EditorInterface_method_get_selection>`.
+
 Methods
 -------
 
@@ -26,7 +28,7 @@ Methods
 +---------------------------+--------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`clear<class_EditorSelection_method_clear>` **(** **)**                                                       |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_selected_nodes<class_EditorSelection_method_get_selected_nodes>` **(** **)**                             |
+| :ref:`Node[]<class_Node>` | :ref:`get_selected_nodes<class_EditorSelection_method_get_selected_nodes>` **(** **)**                             |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>` | :ref:`get_transformable_selected_nodes<class_EditorSelection_method_get_transformable_selected_nodes>` **(** **)** |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------+
@@ -51,6 +53,8 @@ Method Descriptions
 
 Adds a node to the selection.
 
+**Note:** The newly selected node will not be automatically edited in the inspector. If you want to edit a node, use :ref:`EditorInterface.edit_node<class_EditorInterface_method_edit_node>`.
+
 ----
 
 .. _class_EditorSelection_method_clear:
@@ -63,7 +67,7 @@ Clear the selection.
 
 .. _class_EditorSelection_method_get_selected_nodes:
 
-- :ref:`Array<class_Array>` **get_selected_nodes** **(** **)**
+- :ref:`Node[]<class_Node>` **get_selected_nodes** **(** **)**
 
 Gets the list of selected nodes.
 
@@ -83,3 +87,9 @@ Gets the list of selected nodes, optimized for transform operations (i.e. moving
 
 Removes a node from the selection.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

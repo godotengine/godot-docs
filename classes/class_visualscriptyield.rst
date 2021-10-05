@@ -9,9 +9,14 @@
 VisualScriptYield
 =================
 
-**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+A Visual Script node used to pause a function execution.
 
+Description
+-----------
+
+``VisualScriptYield`` will pause the function call and return :ref:`VisualScriptFunctionState<class_VisualScriptFunctionState>`, which can be used to resume the function.
 
 Properties
 ----------
@@ -35,11 +40,11 @@ Enumerations
 
 enum **YieldMode**:
 
-- **YIELD_FRAME** = **1**
+- **YIELD_FRAME** = **1** --- Yields during an idle frame.
 
-- **YIELD_PHYSICS_FRAME** = **2**
+- **YIELD_PHYSICS_FRAME** = **2** --- Yields during a physics frame.
 
-- **YIELD_WAIT** = **3**
+- **YIELD_WAIT** = **3** --- Yields a function and waits the given time.
 
 Property Descriptions
 ---------------------
@@ -56,6 +61,8 @@ Property Descriptions
 | *Getter*  | get_yield_mode()      |
 +-----------+-----------------------+
 
+The mode to use for yielding. See :ref:`YieldMode<enum_VisualScriptYield_YieldMode>` for available options.
+
 ----
 
 .. _class_VisualScriptYield_property_wait_time:
@@ -68,3 +75,11 @@ Property Descriptions
 | *Getter* | get_wait_time()      |
 +----------+----------------------+
 
+The time to wait when :ref:`mode<class_VisualScriptYield_property_mode>` is set to :ref:`YIELD_WAIT<class_VisualScriptYield_constant_YIELD_WAIT>`.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -34,7 +34,7 @@ Properties
 +---------------------------+---------------------------------------------------------------+----------+
 | :ref:`float<class_float>` | :ref:`offset<class_PathFollow2D_property_offset>`             | ``0.0``  |
 +---------------------------+---------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`   | :ref:`rotate<class_PathFollow2D_property_rotate>`             | ``true`` |
+| :ref:`bool<class_bool>`   | :ref:`rotates<class_PathFollow2D_property_rotates>`           | ``true`` |
 +---------------------------+---------------------------------------------------------------+----------+
 | :ref:`float<class_float>` | :ref:`unit_offset<class_PathFollow2D_property_unit_offset>`   | ``0.0``  |
 +---------------------------+---------------------------------------------------------------+----------+
@@ -128,19 +128,19 @@ The distance along the path in pixels.
 
 ----
 
-.. _class_PathFollow2D_property_rotate:
+.. _class_PathFollow2D_property_rotates:
 
-- :ref:`bool<class_bool>` **rotate**
+- :ref:`bool<class_bool>` **rotates**
 
-+-----------+-------------------+
-| *Default* | ``true``          |
-+-----------+-------------------+
-| *Setter*  | set_rotate(value) |
-+-----------+-------------------+
-| *Getter*  | is_rotating()     |
-+-----------+-------------------+
++-----------+--------------------+
+| *Default* | ``true``           |
++-----------+--------------------+
+| *Setter*  | set_rotates(value) |
++-----------+--------------------+
+| *Getter*  | is_rotating()      |
++-----------+--------------------+
 
-If ``true``, this node rotates to follow the path, making its descendants rotate.
+If ``true``, this node rotates to follow the path, with the +X direction facing forward on the path.
 
 ----
 
@@ -174,3 +174,9 @@ The distance along the path as a number in the range 0.0 (for the first vertex) 
 
 The node's offset perpendicular to the curve.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

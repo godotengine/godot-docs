@@ -18,10 +18,79 @@ Description
 
 Panel is a :ref:`Control<class_Control>` that displays an opaque background. It's commonly used as a parent and container for other types of :ref:`Control<class_Control>` nodes.
 
+Tutorials
+---------
+
+- `2D Role Playing Game Demo <https://godotengine.org/asset-library/asset/520>`__
+
+- `2D Finite State Machine Demo <https://godotengine.org/asset-library/asset/516>`__
+
+- `3D Inverse Kinematics Demo <https://godotengine.org/asset-library/asset/523>`__
+
+Properties
+----------
+
++------------------------------+----------------------------------------+-------+
+| :ref:`Mode<enum_Panel_Mode>` | :ref:`mode<class_Panel_property_mode>` | ``0`` |
++------------------------------+----------------------------------------+-------+
+
 Theme Properties
 ----------------
 
-+---------------------------------+-------+
-| :ref:`StyleBox<class_StyleBox>` | panel |
-+---------------------------------+-------+
++---------------------------------+---------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_Panel_theme_style_panel>`       |
++---------------------------------+---------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`panel_fg<class_Panel_theme_style_panel_fg>` |
++---------------------------------+---------------------------------------------------+
 
+Enumerations
+------------
+
+.. _enum_Panel_Mode:
+
+.. _class_Panel_constant_MODE_BACKGROUND:
+
+.. _class_Panel_constant_MODE_FOREGROUND:
+
+enum **Mode**:
+
+- **MODE_BACKGROUND** = **0**
+
+- **MODE_FOREGROUND** = **1**
+
+Property Descriptions
+---------------------
+
+.. _class_Panel_property_mode:
+
+- :ref:`Mode<enum_Panel_Mode>` **mode**
+
++-----------+-----------------+
+| *Default* | ``0``           |
++-----------+-----------------+
+| *Setter*  | set_mode(value) |
++-----------+-----------------+
+| *Getter*  | get_mode()      |
++-----------+-----------------+
+
+Theme Property Descriptions
+---------------------------
+
+.. _class_Panel_theme_style_panel:
+
+- :ref:`StyleBox<class_StyleBox>` **panel**
+
+The style of this ``Panel``.
+
+----
+
+.. _class_Panel_theme_style_panel_fg:
+
+- :ref:`StyleBox<class_StyleBox>` **panel_fg**
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

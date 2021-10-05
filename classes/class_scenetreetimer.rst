@@ -9,7 +9,7 @@
 SceneTreeTimer
 ==============
 
-**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 One-shot timer.
 
@@ -20,12 +20,26 @@ A one-shot timer managed by the scene tree, which emits :ref:`timeout<class_Scen
 
 As opposed to :ref:`Timer<class_Timer>`, it does not require the instantiation of a node. Commonly used to create a one-shot delay timer as in the following example:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     func some_function():
         print("Timer started.")
         yield(get_tree().create_timer(1.0), "timeout")
         print("Timer ended.")
+
+ .. code-tab:: csharp
+
+    public async void SomeFunction()
+    {
+        GD.Print("Timer started.");
+        await ToSignal(GetTree().CreateTimer(1.0f), "timeout");
+        GD.Print("Timer ended.");
+    }
+
+
 
 Properties
 ----------
@@ -58,3 +72,9 @@ Property Descriptions
 
 The time remaining.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -9,7 +9,7 @@
 InputEventMouse
 ===============
 
-**Inherits:** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEventFromWindow<class_InputEventFromWindow>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 **Inherited By:** :ref:`InputEventMouseButton<class_InputEventMouseButton>`, :ref:`InputEventMouseMotion<class_InputEventMouseMotion>`
 
@@ -28,13 +28,13 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`button_mask<class_InputEventMouse_property_button_mask>`         | ``0``               |
-+-------------------------------+------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`global_position<class_InputEventMouse_property_global_position>` | ``Vector2( 0, 0 )`` |
-+-------------------------------+------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventMouse_property_position>`               | ``Vector2( 0, 0 )`` |
-+-------------------------------+------------------------------------------------------------------------+---------------------+
++-------------------------------+------------------------------------------------------------------------+-------------------+
+| :ref:`int<class_int>`         | :ref:`button_mask<class_InputEventMouse_property_button_mask>`         | ``0``             |
++-------------------------------+------------------------------------------------------------------------+-------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`global_position<class_InputEventMouse_property_global_position>` | ``Vector2(0, 0)`` |
++-------------------------------+------------------------------------------------------------------------+-------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventMouse_property_position>`               | ``Vector2(0, 0)`` |
++-------------------------------+------------------------------------------------------------------------+-------------------+
 
 Property Descriptions
 ---------------------
@@ -51,7 +51,7 @@ Property Descriptions
 | *Getter*  | get_button_mask()      |
 +-----------+------------------------+
 
-The mouse button mask identifier, one of or a bitwise combination of the :ref:`ButtonList<enum_@GlobalScope_ButtonList>` button masks.
+The mouse button mask identifier, one of or a bitwise combination of the :ref:`MouseButton<enum_@GlobalScope_MouseButton>` button masks.
 
 ----
 
@@ -60,7 +60,7 @@ The mouse button mask identifier, one of or a bitwise combination of the :ref:`B
 - :ref:`Vector2<class_Vector2>` **global_position**
 
 +-----------+----------------------------+
-| *Default* | ``Vector2( 0, 0 )``        |
+| *Default* | ``Vector2(0, 0)``          |
 +-----------+----------------------------+
 | *Setter*  | set_global_position(value) |
 +-----------+----------------------------+
@@ -76,7 +76,7 @@ The global mouse position relative to the current :ref:`Viewport<class_Viewport>
 - :ref:`Vector2<class_Vector2>` **position**
 
 +-----------+---------------------+
-| *Default* | ``Vector2( 0, 0 )`` |
+| *Default* | ``Vector2(0, 0)``   |
 +-----------+---------------------+
 | *Setter*  | set_position(value) |
 +-----------+---------------------+
@@ -85,3 +85,9 @@ The global mouse position relative to the current :ref:`Viewport<class_Viewport>
 
 The local mouse position relative to the :ref:`Viewport<class_Viewport>`. If used in :ref:`Control._gui_input<class_Control_method__gui_input>`, the position is relative to the current :ref:`Control<class_Control>` which is under the mouse.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

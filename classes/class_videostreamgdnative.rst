@@ -9,7 +9,7 @@
 VideoStreamGDNative
 ===================
 
-**Inherits:** :ref:`VideoStream<class_VideoStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VideoStream<class_VideoStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 :ref:`VideoStream<class_VideoStream>` resource for for video formats implemented via GDNative.
 
@@ -18,7 +18,7 @@ Description
 
 :ref:`VideoStream<class_VideoStream>` resource for for video formats implemented via GDNative.
 
-It can be used via `godot-videodecoder <https://github.com/KidRigger/godot-videodecoder>`_ which uses the `FFmpeg <https://ffmpeg.org>`_ library.
+It can be used via `godot-videodecoder <https://github.com/KidRigger/godot-videodecoder>`__ which uses the `FFmpeg <https://ffmpeg.org>`__ library.
 
 Methods
 -------
@@ -46,3 +46,9 @@ Returns the video file handled by this ``VideoStreamGDNative``.
 
 Sets the video file that this ``VideoStreamGDNative`` resource handles. The supported extensions depend on the GDNative plugins used to expose video formats.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

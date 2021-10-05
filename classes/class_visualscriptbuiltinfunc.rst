@@ -9,7 +9,7 @@
 VisualScriptBuiltinFunc
 =======================
 
-**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A Visual Script node used to call built-in functions.
 
@@ -82,7 +82,7 @@ Enumerations
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_STEP_DECIMALS:
 
-.. _class_VisualScriptBuiltinFunc_constant_MATH_STEPIFY:
+.. _class_VisualScriptBuiltinFunc_constant_MATH_SNAPPED:
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_LERP:
 
@@ -92,15 +92,15 @@ Enumerations
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_MOVE_TOWARD:
 
-.. _class_VisualScriptBuiltinFunc_constant_MATH_DECTIME:
-
 .. _class_VisualScriptBuiltinFunc_constant_MATH_RANDOMIZE:
 
-.. _class_VisualScriptBuiltinFunc_constant_MATH_RAND:
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDI:
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_RANDF:
 
-.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDOM:
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDF_RANGE:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDI_RANGE:
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_SEED:
 
@@ -113,10 +113,6 @@ Enumerations
 .. _class_VisualScriptBuiltinFunc_constant_MATH_LINEAR2DB:
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_DB2LINEAR:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_POLAR2CARTESIAN:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_CARTESIAN2POLAR:
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_WRAP:
 
@@ -131,8 +127,6 @@ Enumerations
 .. _class_VisualScriptBuiltinFunc_constant_LOGIC_NEAREST_PO2:
 
 .. _class_VisualScriptBuiltinFunc_constant_OBJ_WEAKREF:
-
-.. _class_VisualScriptBuiltinFunc_constant_FUNC_FUNCREF:
 
 .. _class_VisualScriptBuiltinFunc_constant_TYPE_CONVERT:
 
@@ -150,6 +144,8 @@ Enumerations
 
 .. _class_VisualScriptBuiltinFunc_constant_TEXT_PRINTRAW:
 
+.. _class_VisualScriptBuiltinFunc_constant_TEXT_PRINT_VERBOSE:
+
 .. _class_VisualScriptBuiltinFunc_constant_VAR_TO_STR:
 
 .. _class_VisualScriptBuiltinFunc_constant_STR_TO_VAR:
@@ -157,8 +153,6 @@ Enumerations
 .. _class_VisualScriptBuiltinFunc_constant_VAR_TO_BYTES:
 
 .. _class_VisualScriptBuiltinFunc_constant_BYTES_TO_VAR:
-
-.. _class_VisualScriptBuiltinFunc_constant_COLORN:
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_SMOOTHSTEP:
 
@@ -222,7 +216,7 @@ enum **BuiltinFunc**:
 
 - **MATH_STEP_DECIMALS** = **24** --- Return the number of digit places after the decimal that the first non-zero digit occurs.
 
-- **MATH_STEPIFY** = **25** --- Return the input snapped to a given step.
+- **MATH_SNAPPED** = **25** --- Return the input snapped to a given step.
 
 - **MATH_LERP** = **26** --- Return a number linearly interpolated between the first two inputs, based on the third input. Uses the formula ``a + (a - b) * t``.
 
@@ -232,15 +226,15 @@ enum **BuiltinFunc**:
 
 - **MATH_MOVE_TOWARD** = **29** --- Moves the number toward a value, based on the third input.
 
-- **MATH_DECTIME** = **30** --- Return the result of ``value`` decreased by ``step`` \* ``amount``.
+- **MATH_RANDOMIZE** = **30** --- Randomize the seed (or the internal state) of the random number generator. Current implementation reseeds using a number based on time.
 
-- **MATH_RANDOMIZE** = **31** --- Randomize the seed (or the internal state) of the random number generator. Current implementation reseeds using a number based on time.
+- **MATH_RANDI** = **31** --- Return a random 32 bits integer value. To obtain a random value between 0 to N (where N is smaller than 2^32 - 1), you can use it with the remainder function.
 
-- **MATH_RAND** = **32** --- Return a random 32 bits integer value. To obtain a random value between 0 to N (where N is smaller than 2^32 - 1), you can use it with the remainder function.
+- **MATH_RANDF** = **32** --- Return a random floating-point value between 0 and 1. To obtain a random value between 0 to N, you can use it with multiplication.
 
-- **MATH_RANDF** = **33** --- Return a random floating-point value between 0 and 1. To obtain a random value between 0 to N, you can use it with multiplication.
+- **MATH_RANDF_RANGE** = **33** --- Return a random floating-point value between the two inputs.
 
-- **MATH_RANDOM** = **34** --- Return a random floating-point value between the two inputs.
+- **MATH_RANDI_RANGE** = **34** --- Return a random 32-bit integer value between the two inputs.
 
 - **MATH_SEED** = **35** --- Set the seed for the random number generator.
 
@@ -254,68 +248,60 @@ enum **BuiltinFunc**:
 
 - **MATH_DB2LINEAR** = **40** --- Convert the input from decibel volume to linear volume.
 
-- **MATH_POLAR2CARTESIAN** = **41** --- Converts a 2D point expressed in the polar coordinate system (a distance from the origin ``r`` and an angle ``th``) to the cartesian coordinate system (X and Y axis).
+- **MATH_WRAP** = **41**
 
-- **MATH_CARTESIAN2POLAR** = **42** --- Converts a 2D point expressed in the cartesian coordinate system (X and Y axis) to the polar coordinate system (a distance from the origin and an angle).
+- **MATH_WRAPF** = **42**
 
-- **MATH_WRAP** = **43**
+- **LOGIC_MAX** = **43** --- Return the greater of the two numbers, also known as their maximum.
 
-- **MATH_WRAPF** = **44**
+- **LOGIC_MIN** = **44** --- Return the lesser of the two numbers, also known as their minimum.
 
-- **LOGIC_MAX** = **45** --- Return the greater of the two numbers, also known as their maximum.
+- **LOGIC_CLAMP** = **45** --- Return the input clamped inside the given range, ensuring the result is never outside it. Equivalent to ``min(max(input, range_low), range_high)``.
 
-- **LOGIC_MIN** = **46** --- Return the lesser of the two numbers, also known as their minimum.
+- **LOGIC_NEAREST_PO2** = **46** --- Return the nearest power of 2 to the input.
 
-- **LOGIC_CLAMP** = **47** --- Return the input clamped inside the given range, ensuring the result is never outside it. Equivalent to ``min(max(input, range_low), range_high)``.
+- **OBJ_WEAKREF** = **47** --- Create a :ref:`WeakRef<class_WeakRef>` from the input.
 
-- **LOGIC_NEAREST_PO2** = **48** --- Return the nearest power of 2 to the input.
+- **TYPE_CONVERT** = **48** --- Convert between types.
 
-- **OBJ_WEAKREF** = **49** --- Create a :ref:`WeakRef<class_WeakRef>` from the input.
+- **TYPE_OF** = **49** --- Return the type of the input as an integer. Check :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` for the integers that might be returned.
 
-- **FUNC_FUNCREF** = **50** --- Create a :ref:`FuncRef<class_FuncRef>` from the input.
+- **TYPE_EXISTS** = **50** --- Checks if a type is registered in the :ref:`ClassDB<class_ClassDB>`.
 
-- **TYPE_CONVERT** = **51** --- Convert between types.
+- **TEXT_CHAR** = **51** --- Return a character with the given ascii value.
 
-- **TYPE_OF** = **52** --- Return the type of the input as an integer. Check :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` for the integers that might be returned.
+- **TEXT_STR** = **52** --- Convert the input to a string.
 
-- **TYPE_EXISTS** = **53** --- Checks if a type is registered in the :ref:`ClassDB<class_ClassDB>`.
+- **TEXT_PRINT** = **53** --- Print the given string to the output window.
 
-- **TEXT_CHAR** = **54** --- Return a character with the given ascii value.
+- **TEXT_PRINTERR** = **54** --- Print the given string to the standard error output.
 
-- **TEXT_STR** = **55** --- Convert the input to a string.
+- **TEXT_PRINTRAW** = **55** --- Print the given string to the standard output, without adding a newline.
 
-- **TEXT_PRINT** = **56** --- Print the given string to the output window.
+- **TEXT_PRINT_VERBOSE** = **56**
 
-- **TEXT_PRINTERR** = **57** --- Print the given string to the standard error output.
+- **VAR_TO_STR** = **57** --- Serialize a :ref:`Variant<class_Variant>` to a string.
 
-- **TEXT_PRINTRAW** = **58** --- Print the given string to the standard output, without adding a newline.
+- **STR_TO_VAR** = **58** --- Deserialize a :ref:`Variant<class_Variant>` from a string serialized using :ref:`VAR_TO_STR<class_VisualScriptBuiltinFunc_constant_VAR_TO_STR>`.
 
-- **VAR_TO_STR** = **59** --- Serialize a :ref:`Variant<class_Variant>` to a string.
+- **VAR_TO_BYTES** = **59** --- Serialize a :ref:`Variant<class_Variant>` to a :ref:`PackedByteArray<class_PackedByteArray>`.
 
-- **STR_TO_VAR** = **60** --- Deserialize a :ref:`Variant<class_Variant>` from a string serialized using :ref:`VAR_TO_STR<class_VisualScriptBuiltinFunc_constant_VAR_TO_STR>`.
+- **BYTES_TO_VAR** = **60** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PackedByteArray<class_PackedByteArray>` serialized using :ref:`VAR_TO_BYTES<class_VisualScriptBuiltinFunc_constant_VAR_TO_BYTES>`.
 
-- **VAR_TO_BYTES** = **61** --- Serialize a :ref:`Variant<class_Variant>` to a :ref:`PackedByteArray<class_PackedByteArray>`.
-
-- **BYTES_TO_VAR** = **62** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PackedByteArray<class_PackedByteArray>` serialized using :ref:`VAR_TO_BYTES<class_VisualScriptBuiltinFunc_constant_VAR_TO_BYTES>`.
-
-- **COLORN** = **63** --- Return the :ref:`Color<class_Color>` with the given name and alpha ranging from 0 to 1.
-
-**Note:** Names are defined in ``color_names.inc``.
-
-- **MATH_SMOOTHSTEP** = **64** --- Return a number smoothly interpolated between the first two inputs, based on the third input. Similar to :ref:`MATH_LERP<class_VisualScriptBuiltinFunc_constant_MATH_LERP>`, but interpolates faster at the beginning and slower at the end. Using Hermite interpolation formula:
+- **MATH_SMOOTHSTEP** = **61** --- Return a number smoothly interpolated between the first two inputs, based on the third input. Similar to :ref:`MATH_LERP<class_VisualScriptBuiltinFunc_constant_MATH_LERP>`, but interpolates faster at the beginning and slower at the end. Using Hermite interpolation formula:
 
 ::
 
     var t = clamp((weight - from) / (to - from), 0.0, 1.0)
     return t * t * (3.0 - 2.0 * t)
 
-- **MATH_POSMOD** = **65**
+- **MATH_POSMOD** = **62**
 
-- **MATH_LERP_ANGLE** = **66**
+- **MATH_LERP_ANGLE** = **63**
 
-- **TEXT_ORD** = **67**
+- **TEXT_ORD** = **64**
 
-- **FUNC_MAX** = **68** --- Represents the size of the :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` enum.
+- **FUNC_MAX** = **65** --- Represents the size of the :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` enum.
 
 Property Descriptions
 ---------------------
@@ -334,3 +320,9 @@ Property Descriptions
 
 The function to be executed.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

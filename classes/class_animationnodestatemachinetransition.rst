@@ -9,7 +9,7 @@
 AnimationNodeStateMachineTransition
 ===================================
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 
 
@@ -22,7 +22,7 @@ Properties
 ----------
 
 +------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
-| :ref:`StringName<class_StringName>`                                    | :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>` | ``@""``   |
+| :ref:`StringName<class_StringName>`                                    | :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>` | ``&""``   |
 +------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                                | :ref:`auto_advance<class_AnimationNodeStateMachineTransition_property_auto_advance>`           | ``false`` |
 +------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
@@ -71,18 +71,27 @@ Property Descriptions
 - :ref:`StringName<class_StringName>` **advance_condition**
 
 +-----------+------------------------------+
-| *Default* | ``@""``                      |
+| *Default* | ``&""``                      |
 +-----------+------------------------------+
 | *Setter*  | set_advance_condition(value) |
 +-----------+------------------------------+
 | *Getter*  | get_advance_condition()      |
 +-----------+------------------------------+
 
-Turn on auto advance when this condition is set. The provided name will become a boolean parameter on the :ref:`AnimationTree<class_AnimationTree>` that can be controlled from code (see `https://docs.godotengine.org/en/latest/tutorials/animation/animation_tree.html#controlling-from-code <https://docs.godotengine.org/en/latest/tutorials/animation/animation_tree.html#controlling-from-code>`_). For example, if :ref:`AnimationTree.tree_root<class_AnimationTree_property_tree_root>` is an :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>` and :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>` is set to ``"idle"``:
+Turn on auto advance when this condition is set. The provided name will become a boolean parameter on the :ref:`AnimationTree<class_AnimationTree>` that can be controlled from code (see `https://docs.godotengine.org/en/latest/tutorials/animation/animation_tree.html#controlling-from-code <https://docs.godotengine.org/en/latest/tutorials/animation/animation_tree.html#controlling-from-code>`__). For example, if :ref:`AnimationTree.tree_root<class_AnimationTree_property_tree_root>` is an :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>` and :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>` is set to ``"idle"``:
 
-::
 
-    $animation_tree["parameters/conditions/idle"] = is_on_floor and (linear_velocity.x == 0)
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    $animation_tree.set("parameters/conditions/idle", is_on_floor and (linear_velocity.x == 0))
+
+ .. code-tab:: csharp
+
+    GetNode<AnimationTree>("animation_tree").Set("parameters/conditions/idle", IsOnFloor && (LinearVelocity.x == 0));
+
+
 
 ----
 
@@ -164,3 +173,9 @@ The transition type.
 
 The time to cross-fade between this state and the next.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

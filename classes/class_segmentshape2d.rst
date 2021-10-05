@@ -9,7 +9,7 @@
 SegmentShape2D
 ==============
 
-**Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Segment shape for 2D collisions.
 
@@ -21,11 +21,11 @@ Segment shape for 2D collisions. Consists of two points, ``a`` and ``b``.
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------+----------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`a<class_SegmentShape2D_property_a>` | ``Vector2( 0, 0 )``  |
-+-------------------------------+-------------------------------------------+----------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`b<class_SegmentShape2D_property_b>` | ``Vector2( 0, 10 )`` |
-+-------------------------------+-------------------------------------------+----------------------+
++-------------------------------+-------------------------------------------+--------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`a<class_SegmentShape2D_property_a>` | ``Vector2(0, 0)``  |
++-------------------------------+-------------------------------------------+--------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`b<class_SegmentShape2D_property_b>` | ``Vector2(0, 10)`` |
++-------------------------------+-------------------------------------------+--------------------+
 
 Property Descriptions
 ---------------------
@@ -34,13 +34,13 @@ Property Descriptions
 
 - :ref:`Vector2<class_Vector2>` **a**
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 0, 0 )`` |
-+-----------+---------------------+
-| *Setter*  | set_a(value)        |
-+-----------+---------------------+
-| *Getter*  | get_a()             |
-+-----------+---------------------+
++-----------+-------------------+
+| *Default* | ``Vector2(0, 0)`` |
++-----------+-------------------+
+| *Setter*  | set_a(value)      |
++-----------+-------------------+
+| *Getter*  | get_a()           |
++-----------+-------------------+
 
 The segment's first point position.
 
@@ -50,13 +50,19 @@ The segment's first point position.
 
 - :ref:`Vector2<class_Vector2>` **b**
 
-+-----------+----------------------+
-| *Default* | ``Vector2( 0, 10 )`` |
-+-----------+----------------------+
-| *Setter*  | set_b(value)         |
-+-----------+----------------------+
-| *Getter*  | get_b()              |
-+-----------+----------------------+
++-----------+--------------------+
+| *Default* | ``Vector2(0, 10)`` |
++-----------+--------------------+
+| *Setter*  | set_b(value)       |
++-----------+--------------------+
+| *Getter*  | get_b()            |
++-----------+--------------------+
 
 The segment's second point position.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

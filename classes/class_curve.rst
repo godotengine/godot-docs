@@ -9,7 +9,7 @@
 Curve
 =====
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A mathematic curve.
 
@@ -41,21 +41,21 @@ Methods
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`clear_points<class_Curve_method_clear_points>` **(** **)**                                                                                                                                                                                                                                        |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`get_point_count<class_Curve_method_get_point_count>` **(** **)** const                                                                                                                                                                                                                            |
+| :ref:`int<class_int>`                      | :ref:`get_point_count<class_Curve_method_get_point_count>` **(** **)** |const|                                                                                                                                                                                                                          |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TangentMode<enum_Curve_TangentMode>` | :ref:`get_point_left_mode<class_Curve_method_get_point_left_mode>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                                                                        |
+| :ref:`TangentMode<enum_Curve_TangentMode>` | :ref:`get_point_left_mode<class_Curve_method_get_point_left_mode>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                                                      |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                  | :ref:`get_point_left_tangent<class_Curve_method_get_point_left_tangent>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                                                                  |
+| :ref:`float<class_float>`                  | :ref:`get_point_left_tangent<class_Curve_method_get_point_left_tangent>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                                                |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`              | :ref:`get_point_position<class_Curve_method_get_point_position>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                                                                          |
+| :ref:`Vector2<class_Vector2>`              | :ref:`get_point_position<class_Curve_method_get_point_position>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                                                        |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TangentMode<enum_Curve_TangentMode>` | :ref:`get_point_right_mode<class_Curve_method_get_point_right_mode>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                                                                      |
+| :ref:`TangentMode<enum_Curve_TangentMode>` | :ref:`get_point_right_mode<class_Curve_method_get_point_right_mode>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                                                    |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                  | :ref:`get_point_right_tangent<class_Curve_method_get_point_right_tangent>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                                                                |
+| :ref:`float<class_float>`                  | :ref:`get_point_right_tangent<class_Curve_method_get_point_right_tangent>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                                              |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                  | :ref:`interpolate<class_Curve_method_interpolate>` **(** :ref:`float<class_float>` offset **)** const                                                                                                                                                                                                   |
+| :ref:`float<class_float>`                  | :ref:`interpolate<class_Curve_method_interpolate>` **(** :ref:`float<class_float>` offset **)** |const|                                                                                                                                                                                                 |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                  | :ref:`interpolate_baked<class_Curve_method_interpolate_baked>` **(** :ref:`float<class_float>` offset **)**                                                                                                                                                                                             |
+| :ref:`float<class_float>`                  | :ref:`interpolate_baked<class_Curve_method_interpolate_baked>` **(** :ref:`float<class_float>` offset **)** |const|                                                                                                                                                                                     |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`remove_point<class_Curve_method_remove_point>` **(** :ref:`int<class_int>` index **)**                                                                                                                                                                                                            |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -186,7 +186,7 @@ Removes all points from the curve.
 
 .. _class_Curve_method_get_point_count:
 
-- :ref:`int<class_int>` **get_point_count** **(** **)** const
+- :ref:`int<class_int>` **get_point_count** **(** **)** |const|
 
 Returns the number of points describing the curve.
 
@@ -194,7 +194,7 @@ Returns the number of points describing the curve.
 
 .. _class_Curve_method_get_point_left_mode:
 
-- :ref:`TangentMode<enum_Curve_TangentMode>` **get_point_left_mode** **(** :ref:`int<class_int>` index **)** const
+- :ref:`TangentMode<enum_Curve_TangentMode>` **get_point_left_mode** **(** :ref:`int<class_int>` index **)** |const|
 
 Returns the left :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index``.
 
@@ -202,7 +202,7 @@ Returns the left :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``i
 
 .. _class_Curve_method_get_point_left_tangent:
 
-- :ref:`float<class_float>` **get_point_left_tangent** **(** :ref:`int<class_int>` index **)** const
+- :ref:`float<class_float>` **get_point_left_tangent** **(** :ref:`int<class_int>` index **)** |const|
 
 Returns the left tangent angle (in degrees) for the point at ``index``.
 
@@ -210,7 +210,7 @@ Returns the left tangent angle (in degrees) for the point at ``index``.
 
 .. _class_Curve_method_get_point_position:
 
-- :ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` index **)** const
+- :ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` index **)** |const|
 
 Returns the curve coordinates for the point at ``index``.
 
@@ -218,7 +218,7 @@ Returns the curve coordinates for the point at ``index``.
 
 .. _class_Curve_method_get_point_right_mode:
 
-- :ref:`TangentMode<enum_Curve_TangentMode>` **get_point_right_mode** **(** :ref:`int<class_int>` index **)** const
+- :ref:`TangentMode<enum_Curve_TangentMode>` **get_point_right_mode** **(** :ref:`int<class_int>` index **)** |const|
 
 Returns the right :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index``.
 
@@ -226,7 +226,7 @@ Returns the right :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``
 
 .. _class_Curve_method_get_point_right_tangent:
 
-- :ref:`float<class_float>` **get_point_right_tangent** **(** :ref:`int<class_int>` index **)** const
+- :ref:`float<class_float>` **get_point_right_tangent** **(** :ref:`int<class_int>` index **)** |const|
 
 Returns the right tangent angle (in degrees) for the point at ``index``.
 
@@ -234,7 +234,7 @@ Returns the right tangent angle (in degrees) for the point at ``index``.
 
 .. _class_Curve_method_interpolate:
 
-- :ref:`float<class_float>` **interpolate** **(** :ref:`float<class_float>` offset **)** const
+- :ref:`float<class_float>` **interpolate** **(** :ref:`float<class_float>` offset **)** |const|
 
 Returns the Y value for the point that would exist at the X position ``offset`` along the curve.
 
@@ -242,7 +242,7 @@ Returns the Y value for the point that would exist at the X position ``offset`` 
 
 .. _class_Curve_method_interpolate_baked:
 
-- :ref:`float<class_float>` **interpolate_baked** **(** :ref:`float<class_float>` offset **)**
+- :ref:`float<class_float>` **interpolate_baked** **(** :ref:`float<class_float>` offset **)** |const|
 
 Returns the Y value for the point that would exist at the X position ``offset`` along the curve using the baked cache. Bakes the curve's points if not already baked.
 
@@ -302,3 +302,9 @@ Sets the right tangent angle for the point at ``index`` to ``tangent``.
 
 Assigns the vertical position ``y`` to the point at ``index``.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

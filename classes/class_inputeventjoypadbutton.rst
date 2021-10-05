@@ -9,7 +9,7 @@
 InputEventJoypadButton
 ======================
 
-**Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Input event for gamepad buttons.
 
@@ -26,20 +26,20 @@ Tutorials
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`     | :ref:`button_index<class_InputEventJoypadButton_property_button_index>` | ``0``     |
-+---------------------------+-------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`pressed<class_InputEventJoypadButton_property_pressed>`           | ``false`` |
-+---------------------------+-------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`pressure<class_InputEventJoypadButton_property_pressure>`         | ``0.0``   |
-+---------------------------+-------------------------------------------------------------------------+-----------+
++-----------------------------------------------+-------------------------------------------------------------------------+-----------+
+| :ref:`JoyButton<enum_@GlobalScope_JoyButton>` | :ref:`button_index<class_InputEventJoypadButton_property_button_index>` | ``0``     |
++-----------------------------------------------+-------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                       | :ref:`pressed<class_InputEventJoypadButton_property_pressed>`           | ``false`` |
++-----------------------------------------------+-------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                     | :ref:`pressure<class_InputEventJoypadButton_property_pressure>`         | ``0.0``   |
++-----------------------------------------------+-------------------------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventJoypadButton_property_button_index:
 
-- :ref:`int<class_int>` **button_index**
+- :ref:`JoyButton<enum_@GlobalScope_JoyButton>` **button_index**
 
 +-----------+-------------------------+
 | *Default* | ``0``                   |
@@ -49,7 +49,7 @@ Property Descriptions
 | *Getter*  | get_button_index()      |
 +-----------+-------------------------+
 
-Button identifier. One of the :ref:`JoystickList<enum_@GlobalScope_JoystickList>` button constants.
+Button identifier. One of the :ref:`JoyButton<enum_@GlobalScope_JoyButton>` button constants.
 
 ----
 
@@ -83,3 +83,9 @@ If ``true``, the button's state is pressed. If ``false``, the button's state is 
 
 Represents the pressure the user puts on the button with his finger, if the controller supports it. Ranges from ``0`` to ``1``.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

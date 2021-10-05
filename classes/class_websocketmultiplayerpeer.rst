@@ -9,7 +9,7 @@
 WebSocketMultiplayerPeer
 ========================
 
-**Inherits:** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`MultiplayerPeer<class_MultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 **Inherited By:** :ref:`WebSocketClient<class_WebSocketClient>`, :ref:`WebSocketServer<class_WebSocketServer>`
 
@@ -18,22 +18,15 @@ Base class for WebSocket server and client.
 Description
 -----------
 
-Base class for WebSocket server and client, allowing them to be used as network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
+Base class for WebSocket server and client, allowing them to be used as multiplayer peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
-Properties
-----------
-
-+-----------------------------------------------------------------+------------------------+------------------+
-| :ref:`bool<class_bool>`                                         | refuse_new_connections | **O:** ``false`` |
-+-----------------------------------------------------------------+------------------------+------------------+
-| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | transfer_mode          | **O:** ``2``     |
-+-----------------------------------------------------------------+------------------------+------------------+
+**Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
 Methods
 -------
 
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`WebSocketPeer<class_WebSocketPeer>` | :ref:`get_peer<class_WebSocketMultiplayerPeer_method_get_peer>` **(** :ref:`int<class_int>` peer_id **)** const                                                                                                                                              |
+| :ref:`WebSocketPeer<class_WebSocketPeer>` | :ref:`get_peer<class_WebSocketMultiplayerPeer_method_get_peer>` **(** :ref:`int<class_int>` peer_id **)** |const|                                                                                                                                            |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`set_buffers<class_WebSocketMultiplayerPeer_method_set_buffers>` **(** :ref:`int<class_int>` input_buffer_size_kb, :ref:`int<class_int>` input_max_packets, :ref:`int<class_int>` output_buffer_size_kb, :ref:`int<class_int>` output_max_packets **)** |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -54,7 +47,7 @@ Method Descriptions
 
 .. _class_WebSocketMultiplayerPeer_method_get_peer:
 
-- :ref:`WebSocketPeer<class_WebSocketPeer>` **get_peer** **(** :ref:`int<class_int>` peer_id **)** const
+- :ref:`WebSocketPeer<class_WebSocketPeer>` **get_peer** **(** :ref:`int<class_int>` peer_id **)** |const|
 
 Returns the :ref:`WebSocketPeer<class_WebSocketPeer>` associated to the given ``peer_id``.
 
@@ -72,3 +65,9 @@ Buffer sizes are expressed in KiB, so ``4 = 2^12 = 4096 bytes``. All parameters 
 
 **Note:** HTML5 exports only use the input buffer since the output one is managed by browsers.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

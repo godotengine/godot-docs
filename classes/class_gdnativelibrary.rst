@@ -9,21 +9,21 @@
 GDNativeLibrary
 ===============
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 An external library containing functions or script classes to use in Godot.
 
 Description
 -----------
 
-A GDNative library can implement :ref:`NativeScript<class_NativeScript>`\ s, global functions to call with the :ref:`GDNative<class_GDNative>` class, or low-level engine extensions through interfaces such as :ref:`ARVRInterfaceGDNative<class_ARVRInterfaceGDNative>`. The library must be compiled for each platform and architecture that the project will run on.
+A GDNative library can implement :ref:`NativeScript<class_NativeScript>`\ s, global functions to call with the :ref:`GDNative<class_GDNative>` class, or low-level engine extensions through interfaces such as XRInterfaceGDNative. The library must be compiled for each platform and architecture that the project will run on.
 
 Tutorials
 ---------
 
-_ :doc:`../tutorials/scripting/gdnative/gdnative_c_example`
+- :doc:`../tutorials/plugins/gdnative/gdnative-c-example`
 
-_ :doc:`../tutorials/scripting/gdnative/gdnative_cpp_example`
+- :doc:`../tutorials/plugins/gdnative/gdnative-cpp-example`
 
 Properties
 ----------
@@ -43,11 +43,11 @@ Properties
 Methods
 -------
 
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_current_dependencies<class_GDNativeLibrary_method_get_current_dependencies>` **(** **)** const |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                       | :ref:`get_current_library_path<class_GDNativeLibrary_method_get_current_library_path>` **(** **)** const |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_current_dependencies<class_GDNativeLibrary_method_get_current_dependencies>` **(** **)** |const| |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`get_current_library_path<class_GDNativeLibrary_method_get_current_library_path>` **(** **)** |const| |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -141,7 +141,7 @@ Method Descriptions
 
 .. _class_GDNativeLibrary_method_get_current_dependencies:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **get_current_dependencies** **(** **)** const
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_current_dependencies** **(** **)** |const|
 
 Returns paths to all dependency libraries for the current platform and architecture.
 
@@ -149,7 +149,13 @@ Returns paths to all dependency libraries for the current platform and architect
 
 .. _class_GDNativeLibrary_method_get_current_library_path:
 
-- :ref:`String<class_String>` **get_current_library_path** **(** **)** const
+- :ref:`String<class_String>` **get_current_library_path** **(** **)** |const|
 
 Returns the path to the dynamic library file for the current platform and architecture.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

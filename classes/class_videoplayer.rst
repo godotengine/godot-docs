@@ -18,7 +18,11 @@ Description
 
 Control node for playing video streams using :ref:`VideoStream<class_VideoStream>` resources.
 
-Supported video formats are `WebM <https://www.webmproject.org/>`_ (:ref:`VideoStreamWebm<class_VideoStreamWebm>`), `Ogg Theora <https://www.theora.org/>`_ (:ref:`VideoStreamTheora<class_VideoStreamTheora>`), and any format exposed via a GDNative plugin using :ref:`VideoStreamGDNative<class_VideoStreamGDNative>`.
+Supported video formats are `WebM <https://www.webmproject.org/>`__ (``.webm``, :ref:`VideoStreamWebm<class_VideoStreamWebm>`), `Ogg Theora <https://www.theora.org/>`__ (``.ogv``, :ref:`VideoStreamTheora<class_VideoStreamTheora>`), and any format exposed via a GDNative plugin using :ref:`VideoStreamGDNative<class_VideoStreamGDNative>`.
+
+**Note:** Due to a bug, VideoPlayer does not support localization remapping yet.
+
+**Warning:** On HTML5, video playback *will* perform poorly due to missing architecture-specific assembly optimizations, especially for VP8/VP9.
 
 Properties
 ----------
@@ -30,7 +34,7 @@ Properties
 +---------------------------------------+--------------------------------------------------------------------+---------------+
 | :ref:`int<class_int>`                 | :ref:`buffering_msec<class_VideoPlayer_property_buffering_msec>`   | ``500``       |
 +---------------------------------------+--------------------------------------------------------------------+---------------+
-| :ref:`StringName<class_StringName>`   | :ref:`bus<class_VideoPlayer_property_bus>`                         | ``@"Master"`` |
+| :ref:`StringName<class_StringName>`   | :ref:`bus<class_VideoPlayer_property_bus>`                         | ``&"Master"`` |
 +---------------------------------------+--------------------------------------------------------------------+---------------+
 | :ref:`bool<class_bool>`               | :ref:`expand<class_VideoPlayer_property_expand>`                   | ``true``      |
 +---------------------------------------+--------------------------------------------------------------------+---------------+
@@ -48,17 +52,17 @@ Properties
 Methods
 -------
 
-+-----------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`       | :ref:`get_stream_name<class_VideoPlayer_method_get_stream_name>` **(** **)** const     |
-+-----------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`get_video_texture<class_VideoPlayer_method_get_video_texture>` **(** **)** const |
-+-----------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_playing<class_VideoPlayer_method_is_playing>` **(** **)** const               |
-+-----------------------------------+----------------------------------------------------------------------------------------+
-| void                              | :ref:`play<class_VideoPlayer_method_play>` **(** **)**                                 |
-+-----------------------------------+----------------------------------------------------------------------------------------+
-| void                              | :ref:`stop<class_VideoPlayer_method_stop>` **(** **)**                                 |
-+-----------------------------------+----------------------------------------------------------------------------------------+
++-----------------------------------+------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`       | :ref:`get_stream_name<class_VideoPlayer_method_get_stream_name>` **(** **)** |const|     |
++-----------------------------------+------------------------------------------------------------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`get_video_texture<class_VideoPlayer_method_get_video_texture>` **(** **)** |const| |
++-----------------------------------+------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`is_playing<class_VideoPlayer_method_is_playing>` **(** **)** |const|               |
++-----------------------------------+------------------------------------------------------------------------------------------+
+| void                              | :ref:`play<class_VideoPlayer_method_play>` **(** **)**                                   |
++-----------------------------------+------------------------------------------------------------------------------------------+
+| void                              | :ref:`stop<class_VideoPlayer_method_stop>` **(** **)**                                   |
++-----------------------------------+------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -125,7 +129,7 @@ Amount of time in milliseconds to store in buffer while playing.
 - :ref:`StringName<class_StringName>` **bus**
 
 +-----------+----------------+
-| *Default* | ``@"Master"``  |
+| *Default* | ``&"Master"``  |
 +-----------+----------------+
 | *Setter*  | set_bus(value) |
 +-----------+----------------+
@@ -194,6 +198,8 @@ The assigned video stream. See description for supported formats.
 
 The current position of the stream, in seconds.
 
+**Note:** Changing this value won't have any effect as seeking is not implemented yet, except in video formats implemented by a GDNative add-on.
+
 ----
 
 .. _class_VideoPlayer_property_volume:
@@ -229,7 +235,7 @@ Method Descriptions
 
 .. _class_VideoPlayer_method_get_stream_name:
 
-- :ref:`String<class_String>` **get_stream_name** **(** **)** const
+- :ref:`String<class_String>` **get_stream_name** **(** **)** |const|
 
 Returns the video stream's name, or ``"<No Stream>"`` if no video stream is assigned.
 
@@ -237,7 +243,7 @@ Returns the video stream's name, or ``"<No Stream>"`` if no video stream is assi
 
 .. _class_VideoPlayer_method_get_video_texture:
 
-- :ref:`Texture2D<class_Texture2D>` **get_video_texture** **(** **)** const
+- :ref:`Texture2D<class_Texture2D>` **get_video_texture** **(** **)** |const|
 
 Returns the current frame as a :ref:`Texture2D<class_Texture2D>`.
 
@@ -245,7 +251,7 @@ Returns the current frame as a :ref:`Texture2D<class_Texture2D>`.
 
 .. _class_VideoPlayer_method_is_playing:
 
-- :ref:`bool<class_bool>` **is_playing** **(** **)** const
+- :ref:`bool<class_bool>` **is_playing** **(** **)** |const|
 
 Returns ``true`` if the video is playing.
 
@@ -269,3 +275,9 @@ Stops the video playback and sets the stream position to 0.
 
 **Note:** Although the stream position will be set to 0, the first frame of the video stream won't become the current frame.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

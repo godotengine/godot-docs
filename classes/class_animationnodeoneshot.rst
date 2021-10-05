@@ -9,7 +9,7 @@
 AnimationNodeOneShot
 ====================
 
-**Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Plays an animation once in :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
@@ -22,6 +22,8 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/animation/animation_tree`
+
+- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
 Properties
 ----------
@@ -44,7 +46,7 @@ Methods
 -------
 
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` | :ref:`get_mix_mode<class_AnimationNodeOneShot_method_get_mix_mode>` **(** **)** const                                                  |
+| :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` | :ref:`get_mix_mode<class_AnimationNodeOneShot_method_get_mix_mode>` **(** **)** |const|                                                |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`set_mix_mode<class_AnimationNodeOneShot_method_set_mix_mode>` **(** :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` mode **)** |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
@@ -160,7 +162,7 @@ Method Descriptions
 
 .. _class_AnimationNodeOneShot_method_get_mix_mode:
 
-- :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **get_mix_mode** **(** **)** const
+- :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **get_mix_mode** **(** **)** |const|
 
 ----
 
@@ -168,3 +170,9 @@ Method Descriptions
 
 - void **set_mix_mode** **(** :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` mode **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

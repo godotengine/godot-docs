@@ -9,16 +9,21 @@
 VisualShaderNode
 ================
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`VisualShaderNodeBooleanConstant<class_VisualShaderNodeBooleanConstant>`, :ref:`VisualShaderNodeColorConstant<class_VisualShaderNodeColorConstant>`, :ref:`VisualShaderNodeColorFunc<class_VisualShaderNodeColorFunc>`, :ref:`VisualShaderNodeColorOp<class_VisualShaderNodeColorOp>`, :ref:`VisualShaderNodeCompare<class_VisualShaderNodeCompare>`, :ref:`VisualShaderNodeCubemap<class_VisualShaderNodeCubemap>`, :ref:`VisualShaderNodeCustom<class_VisualShaderNodeCustom>`, :ref:`VisualShaderNodeDeterminant<class_VisualShaderNodeDeterminant>`, :ref:`VisualShaderNodeDotProduct<class_VisualShaderNodeDotProduct>`, :ref:`VisualShaderNodeFaceForward<class_VisualShaderNodeFaceForward>`, :ref:`VisualShaderNodeFloatConstant<class_VisualShaderNodeFloatConstant>`, :ref:`VisualShaderNodeFloatFunc<class_VisualShaderNodeFloatFunc>`, :ref:`VisualShaderNodeFloatOp<class_VisualShaderNodeFloatOp>`, :ref:`VisualShaderNodeFresnel<class_VisualShaderNodeFresnel>`, :ref:`VisualShaderNodeGroupBase<class_VisualShaderNodeGroupBase>`, :ref:`VisualShaderNodeIf<class_VisualShaderNodeIf>`, :ref:`VisualShaderNodeInput<class_VisualShaderNodeInput>`, :ref:`VisualShaderNodeIntConstant<class_VisualShaderNodeIntConstant>`, :ref:`VisualShaderNodeIntFunc<class_VisualShaderNodeIntFunc>`, :ref:`VisualShaderNodeIntOp<class_VisualShaderNodeIntOp>`, :ref:`VisualShaderNodeIs<class_VisualShaderNodeIs>`, :ref:`VisualShaderNodeOuterProduct<class_VisualShaderNodeOuterProduct>`, :ref:`VisualShaderNodeOutput<class_VisualShaderNodeOutput>`, :ref:`VisualShaderNodeScalarClamp<class_VisualShaderNodeScalarClamp>`, :ref:`VisualShaderNodeScalarDerivativeFunc<class_VisualShaderNodeScalarDerivativeFunc>`, :ref:`VisualShaderNodeScalarInterp<class_VisualShaderNodeScalarInterp>`, :ref:`VisualShaderNodeScalarSmoothStep<class_VisualShaderNodeScalarSmoothStep>`, :ref:`VisualShaderNodeSwitch<class_VisualShaderNodeSwitch>`, :ref:`VisualShaderNodeTexture<class_VisualShaderNodeTexture>`, :ref:`VisualShaderNodeTransformCompose<class_VisualShaderNodeTransformCompose>`, :ref:`VisualShaderNodeTransformConstant<class_VisualShaderNodeTransformConstant>`, :ref:`VisualShaderNodeTransformDecompose<class_VisualShaderNodeTransformDecompose>`, :ref:`VisualShaderNodeTransformFunc<class_VisualShaderNodeTransformFunc>`, :ref:`VisualShaderNodeTransformMult<class_VisualShaderNodeTransformMult>`, :ref:`VisualShaderNodeTransformVecMult<class_VisualShaderNodeTransformVecMult>`, :ref:`VisualShaderNodeUniform<class_VisualShaderNodeUniform>`, :ref:`VisualShaderNodeVec3Constant<class_VisualShaderNodeVec3Constant>`, :ref:`VisualShaderNodeVectorClamp<class_VisualShaderNodeVectorClamp>`, :ref:`VisualShaderNodeVectorCompose<class_VisualShaderNodeVectorCompose>`, :ref:`VisualShaderNodeVectorDecompose<class_VisualShaderNodeVectorDecompose>`, :ref:`VisualShaderNodeVectorDerivativeFunc<class_VisualShaderNodeVectorDerivativeFunc>`, :ref:`VisualShaderNodeVectorDistance<class_VisualShaderNodeVectorDistance>`, :ref:`VisualShaderNodeVectorFunc<class_VisualShaderNodeVectorFunc>`, :ref:`VisualShaderNodeVectorInterp<class_VisualShaderNodeVectorInterp>`, :ref:`VisualShaderNodeVectorLen<class_VisualShaderNodeVectorLen>`, :ref:`VisualShaderNodeVectorOp<class_VisualShaderNodeVectorOp>`, :ref:`VisualShaderNodeVectorRefract<class_VisualShaderNodeVectorRefract>`, :ref:`VisualShaderNodeVectorScalarMix<class_VisualShaderNodeVectorScalarMix>`, :ref:`VisualShaderNodeVectorScalarSmoothStep<class_VisualShaderNodeVectorScalarSmoothStep>`, :ref:`VisualShaderNodeVectorScalarStep<class_VisualShaderNodeVectorScalarStep>`, :ref:`VisualShaderNodeVectorSmoothStep<class_VisualShaderNodeVectorSmoothStep>`
+**Inherited By:** :ref:`VisualShaderNodeBillboard<class_VisualShaderNodeBillboard>`, :ref:`VisualShaderNodeClamp<class_VisualShaderNodeClamp>`, :ref:`VisualShaderNodeColorFunc<class_VisualShaderNodeColorFunc>`, :ref:`VisualShaderNodeColorOp<class_VisualShaderNodeColorOp>`, :ref:`VisualShaderNodeCompare<class_VisualShaderNodeCompare>`, :ref:`VisualShaderNodeConstant<class_VisualShaderNodeConstant>`, :ref:`VisualShaderNodeCubemap<class_VisualShaderNodeCubemap>`, :ref:`VisualShaderNodeCustom<class_VisualShaderNodeCustom>`, :ref:`VisualShaderNodeDeterminant<class_VisualShaderNodeDeterminant>`, :ref:`VisualShaderNodeDotProduct<class_VisualShaderNodeDotProduct>`, :ref:`VisualShaderNodeFaceForward<class_VisualShaderNodeFaceForward>`, :ref:`VisualShaderNodeFloatFunc<class_VisualShaderNodeFloatFunc>`, :ref:`VisualShaderNodeFloatOp<class_VisualShaderNodeFloatOp>`, :ref:`VisualShaderNodeFresnel<class_VisualShaderNodeFresnel>`, :ref:`VisualShaderNodeIf<class_VisualShaderNodeIf>`, :ref:`VisualShaderNodeInput<class_VisualShaderNodeInput>`, :ref:`VisualShaderNodeIntFunc<class_VisualShaderNodeIntFunc>`, :ref:`VisualShaderNodeIntOp<class_VisualShaderNodeIntOp>`, :ref:`VisualShaderNodeIs<class_VisualShaderNodeIs>`, :ref:`VisualShaderNodeMix<class_VisualShaderNodeMix>`, :ref:`VisualShaderNodeMultiplyAdd<class_VisualShaderNodeMultiplyAdd>`, :ref:`VisualShaderNodeOuterProduct<class_VisualShaderNodeOuterProduct>`, :ref:`VisualShaderNodeOutput<class_VisualShaderNodeOutput>`, :ref:`VisualShaderNodeParticleAccelerator<class_VisualShaderNodeParticleAccelerator>`, :ref:`VisualShaderNodeParticleConeVelocity<class_VisualShaderNodeParticleConeVelocity>`, :ref:`VisualShaderNodeParticleEmit<class_VisualShaderNodeParticleEmit>`, :ref:`VisualShaderNodeParticleEmitter<class_VisualShaderNodeParticleEmitter>`, :ref:`VisualShaderNodeParticleMultiplyByAxisAngle<class_VisualShaderNodeParticleMultiplyByAxisAngle>`, :ref:`VisualShaderNodeParticleRandomness<class_VisualShaderNodeParticleRandomness>`, :ref:`VisualShaderNodeResizableBase<class_VisualShaderNodeResizableBase>`, :ref:`VisualShaderNodeSDFRaymarch<class_VisualShaderNodeSDFRaymarch>`, :ref:`VisualShaderNodeSDFToScreenUV<class_VisualShaderNodeSDFToScreenUV>`, :ref:`VisualShaderNodeSample3D<class_VisualShaderNodeSample3D>`, :ref:`VisualShaderNodeScalarDerivativeFunc<class_VisualShaderNodeScalarDerivativeFunc>`, :ref:`VisualShaderNodeScreenUVToSDF<class_VisualShaderNodeScreenUVToSDF>`, :ref:`VisualShaderNodeSmoothStep<class_VisualShaderNodeSmoothStep>`, :ref:`VisualShaderNodeStep<class_VisualShaderNodeStep>`, :ref:`VisualShaderNodeSwitch<class_VisualShaderNodeSwitch>`, :ref:`VisualShaderNodeTexture<class_VisualShaderNodeTexture>`, :ref:`VisualShaderNodeTextureSDF<class_VisualShaderNodeTextureSDF>`, :ref:`VisualShaderNodeTextureSDFNormal<class_VisualShaderNodeTextureSDFNormal>`, :ref:`VisualShaderNodeTransformCompose<class_VisualShaderNodeTransformCompose>`, :ref:`VisualShaderNodeTransformDecompose<class_VisualShaderNodeTransformDecompose>`, :ref:`VisualShaderNodeTransformFunc<class_VisualShaderNodeTransformFunc>`, :ref:`VisualShaderNodeTransformOp<class_VisualShaderNodeTransformOp>`, :ref:`VisualShaderNodeTransformVecMult<class_VisualShaderNodeTransformVecMult>`, :ref:`VisualShaderNodeUVFunc<class_VisualShaderNodeUVFunc>`, :ref:`VisualShaderNodeUniform<class_VisualShaderNodeUniform>`, :ref:`VisualShaderNodeUniformRef<class_VisualShaderNodeUniformRef>`, :ref:`VisualShaderNodeVectorCompose<class_VisualShaderNodeVectorCompose>`, :ref:`VisualShaderNodeVectorDecompose<class_VisualShaderNodeVectorDecompose>`, :ref:`VisualShaderNodeVectorDerivativeFunc<class_VisualShaderNodeVectorDerivativeFunc>`, :ref:`VisualShaderNodeVectorDistance<class_VisualShaderNodeVectorDistance>`, :ref:`VisualShaderNodeVectorFunc<class_VisualShaderNodeVectorFunc>`, :ref:`VisualShaderNodeVectorLen<class_VisualShaderNodeVectorLen>`, :ref:`VisualShaderNodeVectorOp<class_VisualShaderNodeVectorOp>`, :ref:`VisualShaderNodeVectorRefract<class_VisualShaderNodeVectorRefract>`
 
 Base class for nodes in a visual shader graph.
+
+Description
+-----------
+
+Visual shader graphs consist of various nodes. Each node in the graph is a separate object and they are represented as a rectangular boxes with title and a set of properties. Each node has also connection ports that allow to connect it to another nodes and control the flow of the shader.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/shaders/visual_shaders`
+- :doc:`../tutorials/shading/visual_shaders`
 
 Properties
 ----------
@@ -31,9 +36,13 @@ Methods
 -------
 
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`get_default_input_values<class_VisualShaderNode_method_get_default_input_values>` **(** **)** const                                                                   |
+| void                          | :ref:`clear_default_input_values<class_VisualShaderNode_method_clear_default_input_values>` **(** **)**                                                                     |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_input_port_default_value<class_VisualShaderNode_method_get_input_port_default_value>` **(** :ref:`int<class_int>` port **)** const                                |
+| :ref:`Array<class_Array>`     | :ref:`get_default_input_values<class_VisualShaderNode_method_get_default_input_values>` **(** **)** |const|                                                                 |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`get_input_port_default_value<class_VisualShaderNode_method_get_input_port_default_value>` **(** :ref:`int<class_int>` port **)** |const|                              |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`remove_input_port_default_value<class_VisualShaderNode_method_remove_input_port_default_value>` **(** :ref:`int<class_int>` port **)**                                |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_default_input_values<class_VisualShaderNode_method_set_default_input_values>` **(** :ref:`Array<class_Array>` values **)**                                        |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -104,9 +113,17 @@ Sets the output port index which will be showed for preview. If set to ``-1`` no
 Method Descriptions
 -------------------
 
+.. _class_VisualShaderNode_method_clear_default_input_values:
+
+- void **clear_default_input_values** **(** **)**
+
+Clears the default input ports value.
+
+----
+
 .. _class_VisualShaderNode_method_get_default_input_values:
 
-- :ref:`Array<class_Array>` **get_default_input_values** **(** **)** const
+- :ref:`Array<class_Array>` **get_default_input_values** **(** **)** |const|
 
 Returns an :ref:`Array<class_Array>` containing default values for all of the input ports of the node in the form ``[index0, value0, index1, value1, ...]``.
 
@@ -114,9 +131,17 @@ Returns an :ref:`Array<class_Array>` containing default values for all of the in
 
 .. _class_VisualShaderNode_method_get_input_port_default_value:
 
-- :ref:`Variant<class_Variant>` **get_input_port_default_value** **(** :ref:`int<class_int>` port **)** const
+- :ref:`Variant<class_Variant>` **get_input_port_default_value** **(** :ref:`int<class_int>` port **)** |const|
 
 Returns the default value of the input ``port``.
+
+----
+
+.. _class_VisualShaderNode_method_remove_input_port_default_value:
+
+- void **remove_input_port_default_value** **(** :ref:`int<class_int>` port **)**
+
+Removes the default value of the input ``port``.
 
 ----
 
@@ -134,3 +159,9 @@ Sets the default input ports values using an :ref:`Array<class_Array>` of the fo
 
 Sets the default value for the selected input ``port``.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

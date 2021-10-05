@@ -9,7 +9,7 @@
 ViewportTexture
 ===============
 
-**Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Texture which displays the content of a :ref:`Viewport<class_Viewport>`.
 
@@ -20,14 +20,25 @@ Displays the content of a :ref:`Viewport<class_Viewport>` node as a dynamic :ref
 
 To create a ViewportTexture in code, use the :ref:`Viewport.get_texture<class_Viewport_method_get_texture>` method on the target viewport.
 
+Tutorials
+---------
+
+- `GUI in 3D Demo <https://godotengine.org/asset-library/asset/127>`__
+
+- `3D in 2D Demo <https://godotengine.org/asset-library/asset/128>`__
+
+- `2D in 3D Demo <https://godotengine.org/asset-library/asset/129>`__
+
+- `3D Viewport Scaling Demo <https://godotengine.org/asset-library/asset/586>`__
+
 Properties
 ----------
 
-+---------------------------------+--------------------------------------------------------------------+------------------+
-| :ref:`bool<class_bool>`         | resource_local_to_scene                                            | **O:** ``true``  |
-+---------------------------------+--------------------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`viewport_path<class_ViewportTexture_property_viewport_path>` | ``NodePath("")`` |
-+---------------------------------+--------------------------------------------------------------------+------------------+
++---------------------------------+--------------------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>`         | resource_local_to_scene                                            | ``true`` *(parent override)* |
++---------------------------------+--------------------------------------------------------------------+------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`viewport_path<class_ViewportTexture_property_viewport_path>` | ``NodePath("")``             |
++---------------------------------+--------------------------------------------------------------------+------------------------------+
 
 Property Descriptions
 ---------------------
@@ -46,3 +57,9 @@ Property Descriptions
 
 The path to the :ref:`Viewport<class_Viewport>` node to display. This is relative to the scene root, not to the node which uses the texture.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

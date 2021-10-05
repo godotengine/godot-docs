@@ -16,16 +16,18 @@ Reference frame for GUI.
 Description
 -----------
 
-A rectangle box that displays only a :ref:`border_color<class_ReferenceRect_property_border_color>` border color around its rectangle. ``ReferenceRect`` has no fill :ref:`Color<class_Color>`.
+A rectangle box that displays only a :ref:`border_color<class_ReferenceRect_property_border_color>` border color around its rectangle. ``ReferenceRect`` has no fill :ref:`Color<class_Color>`. If you need to display a rectangle filled with a solid color, consider using :ref:`ColorRect<class_ColorRect>` instead.
 
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>` | :ref:`border_color<class_ReferenceRect_property_border_color>` | ``Color( 1, 0, 0, 1 )`` |
-+---------------------------+----------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`   | :ref:`editor_only<class_ReferenceRect_property_editor_only>`   | ``true``                |
-+---------------------------+----------------------------------------------------------------+-------------------------+
++---------------------------+----------------------------------------------------------------+-----------------------+
+| :ref:`Color<class_Color>` | :ref:`border_color<class_ReferenceRect_property_border_color>` | ``Color(1, 0, 0, 1)`` |
++---------------------------+----------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>` | :ref:`border_width<class_ReferenceRect_property_border_width>` | ``1.0``               |
++---------------------------+----------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`   | :ref:`editor_only<class_ReferenceRect_property_editor_only>`   | ``true``              |
++---------------------------+----------------------------------------------------------------+-----------------------+
 
 Property Descriptions
 ---------------------
@@ -35,7 +37,7 @@ Property Descriptions
 - :ref:`Color<class_Color>` **border_color**
 
 +-----------+-------------------------+
-| *Default* | ``Color( 1, 0, 0, 1 )`` |
+| *Default* | ``Color(1, 0, 0, 1)``   |
 +-----------+-------------------------+
 | *Setter*  | set_border_color(value) |
 +-----------+-------------------------+
@@ -43,6 +45,22 @@ Property Descriptions
 +-----------+-------------------------+
 
 Sets the border :ref:`Color<class_Color>` of the ``ReferenceRect``.
+
+----
+
+.. _class_ReferenceRect_property_border_width:
+
+- :ref:`float<class_float>` **border_width**
+
++-----------+-------------------------+
+| *Default* | ``1.0``                 |
++-----------+-------------------------+
+| *Setter*  | set_border_width(value) |
++-----------+-------------------------+
+| *Getter*  | get_border_width()      |
++-----------+-------------------------+
+
+Sets the border width of the ``ReferenceRect``. The border grows both inwards and outwards with respect to the rectangle box.
 
 ----
 
@@ -60,3 +78,9 @@ Sets the border :ref:`Color<class_Color>` of the ``ReferenceRect``.
 
 If set to ``true``, the ``ReferenceRect`` will only be visible while in editor. Otherwise, ``ReferenceRect`` will be visible in game.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -18,22 +18,27 @@ Description
 
 Used to draw icons and sprites in a user interface. The texture's placement can be controlled with the :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` property. It can scale, tile, or stay centered inside its bounding rectangle.
 
+Tutorials
+---------
+
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
+
 Properties
 ----------
 
-+--------------------------------------------------+--------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                          | :ref:`expand<class_TextureRect_property_expand>`             | ``false``    |
-+--------------------------------------------------+--------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                          | :ref:`flip_h<class_TextureRect_property_flip_h>`             | ``false``    |
-+--------------------------------------------------+--------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                          | :ref:`flip_v<class_TextureRect_property_flip_v>`             | ``false``    |
-+--------------------------------------------------+--------------------------------------------------------------+--------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>`     | mouse_filter                                                 | **O:** ``1`` |
-+--------------------------------------------------+--------------------------------------------------------------+--------------+
-| :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` | ``0``        |
-+--------------------------------------------------+--------------------------------------------------------------+--------------+
-| :ref:`Texture2D<class_Texture2D>`                | :ref:`texture<class_TextureRect_property_texture>`           |              |
-+--------------------------------------------------+--------------------------------------------------------------+--------------+
++--------------------------------------------------+--------------------------------------------------------------+---------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`expand<class_TextureRect_property_expand>`             | ``false``                 |
++--------------------------------------------------+--------------------------------------------------------------+---------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`flip_h<class_TextureRect_property_flip_h>`             | ``false``                 |
++--------------------------------------------------+--------------------------------------------------------------+---------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`flip_v<class_TextureRect_property_flip_v>`             | ``false``                 |
++--------------------------------------------------+--------------------------------------------------------------+---------------------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>`     | mouse_filter                                                 | ``1`` *(parent override)* |
++--------------------------------------------------+--------------------------------------------------------------+---------------------------+
+| :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` | ``0``                     |
++--------------------------------------------------+--------------------------------------------------------------+---------------------------+
+| :ref:`Texture2D<class_Texture2D>`                | :ref:`texture<class_TextureRect_property_texture>`           |                           |
++--------------------------------------------------+--------------------------------------------------------------+---------------------------+
 
 Enumerations
 ------------
@@ -153,3 +158,9 @@ Controls the texture's behavior when resizing the node's bounding rectangle. See
 
 The node's :ref:`Texture2D<class_Texture2D>` resource.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

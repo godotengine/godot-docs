@@ -11,7 +11,7 @@ PhysicsBody2D
 
 **Inherits:** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`KinematicBody2D<class_KinematicBody2D>`, :ref:`RigidBody2D<class_RigidBody2D>`, :ref:`StaticBody2D<class_StaticBody2D>`
+**Inherited By:** :ref:`CharacterBody2D<class_CharacterBody2D>`, :ref:`RigidDynamicBody2D<class_RigidDynamicBody2D>`, :ref:`StaticBody2D<class_StaticBody2D>`
 
 Base class for all objects affected by physics in 2D space.
 
@@ -28,79 +28,24 @@ Tutorials
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------------+------------------+
-| :ref:`int<class_int>`   | :ref:`collision_layer<class_PhysicsBody2D_property_collision_layer>` | ``1``            |
-+-------------------------+----------------------------------------------------------------------+------------------+
-| :ref:`int<class_int>`   | :ref:`collision_mask<class_PhysicsBody2D_property_collision_mask>`   | ``1``            |
-+-------------------------+----------------------------------------------------------------------+------------------+
-| :ref:`bool<class_bool>` | input_pickable                                                       | **O:** ``false`` |
-+-------------------------+----------------------------------------------------------------------+------------------+
-| :ref:`int<class_int>`   | :ref:`layers<class_PhysicsBody2D_property_layers>`                   |                  |
-+-------------------------+----------------------------------------------------------------------+------------------+
++-------------------------+----------------+-------------------------------+
+| :ref:`bool<class_bool>` | input_pickable | ``false`` *(parent override)* |
++-------------------------+----------------+-------------------------------+
 
 Methods
 -------
 
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`add_collision_exception_with<class_PhysicsBody2D_method_add_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                   |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_collision_exceptions<class_PhysicsBody2D_method_get_collision_exceptions>` **(** **)**                                                        |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`get_collision_layer_bit<class_PhysicsBody2D_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`get_collision_mask_bit<class_PhysicsBody2D_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                            |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`remove_collision_exception_with<class_PhysicsBody2D_method_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**             |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_collision_layer_bit<class_PhysicsBody2D_method_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_collision_mask_bit<class_PhysicsBody2D_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Property Descriptions
----------------------
-
-.. _class_PhysicsBody2D_property_collision_layer:
-
-- :ref:`int<class_int>` **collision_layer**
-
-+-----------+----------------------------+
-| *Default* | ``1``                      |
-+-----------+----------------------------+
-| *Setter*  | set_collision_layer(value) |
-+-----------+----------------------------+
-| *Getter*  | get_collision_layer()      |
-+-----------+----------------------------+
-
-The physics layers this area is in.
-
-Collidable objects can exist in any of 32 different layers. These layers work like a tagging system, and are not visual. A collidable can use these layers to select with which objects it can collide, using the :ref:`collision_mask<class_PhysicsBody2D_property_collision_mask>` property.
-
-A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A.
-
-----
-
-.. _class_PhysicsBody2D_property_collision_mask:
-
-- :ref:`int<class_int>` **collision_mask**
-
-+-----------+---------------------------+
-| *Default* | ``1``                     |
-+-----------+---------------------------+
-| *Setter*  | set_collision_mask(value) |
-+-----------+---------------------------+
-| *Getter*  | get_collision_mask()      |
-+-----------+---------------------------+
-
-The physics layers this area scans for collisions.
-
-----
-
-.. _class_PhysicsBody2D_property_layers:
-
-- :ref:`int<class_int>` **layers**
-
-Both :ref:`collision_layer<class_PhysicsBody2D_property_collision_layer>` and :ref:`collision_mask<class_PhysicsBody2D_property_collision_mask>`. Returns :ref:`collision_layer<class_PhysicsBody2D_property_collision_layer>` when accessed. Updates :ref:`collision_layer<class_PhysicsBody2D_property_collision_layer>` and :ref:`collision_mask<class_PhysicsBody2D_property_collision_mask>` when modified.
++---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                    | :ref:`add_collision_exception_with<class_PhysicsBody2D_method_add_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                                                                                                                                            |
++---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PhysicsBody2D[]<class_PhysicsBody2D>`             | :ref:`get_collision_exceptions<class_PhysicsBody2D_method_get_collision_exceptions>` **(** **)**                                                                                                                                                                                 |
++---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`KinematicCollision2D<class_KinematicCollision2D>` | :ref:`move_and_collide<class_PhysicsBody2D_method_move_and_collide>` **(** :ref:`Vector2<class_Vector2>` linear_velocity, :ref:`bool<class_bool>` test_only=false, :ref:`float<class_float>` safe_margin=0.08 **)**                                                              |
++---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                    | :ref:`remove_collision_exception_with<class_PhysicsBody2D_method_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                                                                                                                                      |
++---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                 | :ref:`test_move<class_PhysicsBody2D_method_test_move>` **(** :ref:`Transform2D<class_Transform2D>` from, :ref:`Vector2<class_Vector2>` linear_velocity, :ref:`KinematicCollision2D<class_KinematicCollision2D>` collision=null, :ref:`float<class_float>` safe_margin=0.08 **)** |
++---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -115,25 +60,23 @@ Adds a body to the list of bodies that this body can't collide with.
 
 .. _class_PhysicsBody2D_method_get_collision_exceptions:
 
-- :ref:`Array<class_Array>` **get_collision_exceptions** **(** **)**
+- :ref:`PhysicsBody2D[]<class_PhysicsBody2D>` **get_collision_exceptions** **(** **)**
 
 Returns an array of nodes that were added as collision exceptions for this body.
 
 ----
 
-.. _class_PhysicsBody2D_method_get_collision_layer_bit:
+.. _class_PhysicsBody2D_method_move_and_collide:
 
-- :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
+- :ref:`KinematicCollision2D<class_KinematicCollision2D>` **move_and_collide** **(** :ref:`Vector2<class_Vector2>` linear_velocity, :ref:`bool<class_bool>` test_only=false, :ref:`float<class_float>` safe_margin=0.08 **)**
 
-Returns an individual bit on the :ref:`collision_layer<class_PhysicsBody2D_property_collision_layer>`.
+Moves the body along the vector ``linear_velocity``. This method should be used in :ref:`Node._physics_process<class_Node_method__physics_process>` (or in a method called by :ref:`Node._physics_process<class_Node_method__physics_process>`), as it uses the physics step's ``delta`` value automatically in calculations. Otherwise, the simulation will run at an incorrect speed.
 
-----
+The body will stop if it collides. Returns a :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contains information about the collision.
 
-.. _class_PhysicsBody2D_method_get_collision_mask_bit:
+If ``test_only`` is ``true``, the body does not move but the would-be collision information is given.
 
-- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
-
-Returns an individual bit on the :ref:`collision_mask<class_PhysicsBody2D_property_collision_mask>`.
+``safe_margin`` is the extra margin used for collision recovery (see :ref:`CharacterBody2D.collision/safe_margin<class_CharacterBody2D_property_collision/safe_margin>` for more details).
 
 ----
 
@@ -145,17 +88,21 @@ Removes a body from the list of bodies that this body can't collide with.
 
 ----
 
-.. _class_PhysicsBody2D_method_set_collision_layer_bit:
+.. _class_PhysicsBody2D_method_test_move:
 
-- void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **test_move** **(** :ref:`Transform2D<class_Transform2D>` from, :ref:`Vector2<class_Vector2>` linear_velocity, :ref:`KinematicCollision2D<class_KinematicCollision2D>` collision=null, :ref:`float<class_float>` safe_margin=0.08 **)**
 
-Sets individual bits on the :ref:`collision_layer<class_PhysicsBody2D_property_collision_layer>` bitmask. Use this if you only need to change one layer's value.
+Checks for collisions without moving the body. This method should be used in :ref:`Node._physics_process<class_Node_method__physics_process>` (or in a method called by :ref:`Node._physics_process<class_Node_method__physics_process>`), as it uses the physics step's ``delta`` value automatically in calculations. Otherwise, the simulation will run at an incorrect speed.
 
-----
+Virtually sets the node's position, scale and rotation to that of the given :ref:`Transform2D<class_Transform2D>`, then tries to move the body along the vector ``linear_velocity``. Returns ``true`` if a collision would occur.
 
-.. _class_PhysicsBody2D_method_set_collision_mask_bit:
+``collision`` is an optional object of type :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contains additional information about the collision (should there be one).
 
-- void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
+``safe_margin`` is the extra margin used for collision recovery (see :ref:`CharacterBody2D.collision/safe_margin<class_CharacterBody2D_property_collision/safe_margin>` for more details).
 
-Sets individual bits on the :ref:`collision_mask<class_PhysicsBody2D_property_collision_mask>` bitmask. Use this if you only need to change one layer's value.
-
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

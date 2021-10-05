@@ -21,13 +21,58 @@ Vertical split container. See :ref:`SplitContainer<class_SplitContainer>`. This 
 Theme Properties
 ----------------
 
-+-----------------------------------+------------+----+
-| :ref:`int<class_int>`             | autohide   | 1  |
-+-----------------------------------+------------+----+
-| :ref:`StyleBox<class_StyleBox>`   | bg         |    |
-+-----------------------------------+------------+----+
-| :ref:`Texture2D<class_Texture2D>` | grabber    |    |
-+-----------------------------------+------------+----+
-| :ref:`int<class_int>`             | separation | 12 |
-+-----------------------------------+------------+----+
++-----------------------------------+--------------------------------------------------------------------+--------+
+| :ref:`int<class_int>`             | :ref:`autohide<class_VSplitContainer_theme_constant_autohide>`     | ``1``  |
++-----------------------------------+--------------------------------------------------------------------+--------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`bg<class_VSplitContainer_theme_style_bg>`                    |        |
++-----------------------------------+--------------------------------------------------------------------+--------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_VSplitContainer_theme_icon_grabber>`           |        |
++-----------------------------------+--------------------------------------------------------------------+--------+
+| :ref:`int<class_int>`             | :ref:`separation<class_VSplitContainer_theme_constant_separation>` | ``12`` |
++-----------------------------------+--------------------------------------------------------------------+--------+
 
+Theme Property Descriptions
+---------------------------
+
+.. _class_VSplitContainer_theme_constant_autohide:
+
+- :ref:`int<class_int>` **autohide**
+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+Boolean value. If 1 (``true``), the grabber will hide automatically when it isn't under the cursor. If 0 (``false``), it's always visible.
+
+----
+
+.. _class_VSplitContainer_theme_style_bg:
+
+- :ref:`StyleBox<class_StyleBox>` **bg**
+
+----
+
+.. _class_VSplitContainer_theme_icon_grabber:
+
+- :ref:`Texture2D<class_Texture2D>` **grabber**
+
+The icon used for the grabber drawn in the middle area.
+
+----
+
+.. _class_VSplitContainer_theme_constant_separation:
+
+- :ref:`int<class_int>` **separation**
+
++-----------+--------+
+| *Default* | ``12`` |
++-----------+--------+
+
+The space between sides of the container.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

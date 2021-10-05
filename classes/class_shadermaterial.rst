@@ -9,7 +9,7 @@
 ShaderMaterial
 ==============
 
-**Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A material that uses a custom :ref:`Shader<class_Shader>` program.
 
@@ -21,7 +21,7 @@ A material that uses a custom :ref:`Shader<class_Shader>` program to render eith
 Tutorials
 ---------
 
-- :doc:`../tutorials/shaders/index`
+- :doc:`../tutorials/shading/index`
 
 Properties
 ----------
@@ -34,7 +34,7 @@ Methods
 -------
 
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_shader_param<class_ShaderMaterial_method_get_shader_param>` **(** :ref:`StringName<class_StringName>` param **)** const                                |
+| :ref:`Variant<class_Variant>` | :ref:`get_shader_param<class_ShaderMaterial_method_get_shader_param>` **(** :ref:`StringName<class_StringName>` param **)** |const|                              |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`property_can_revert<class_ShaderMaterial_method_property_can_revert>` **(** :ref:`String<class_String>` name **)**                                         |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -63,7 +63,7 @@ Method Descriptions
 
 .. _class_ShaderMaterial_method_get_shader_param:
 
-- :ref:`Variant<class_Variant>` **get_shader_param** **(** :ref:`StringName<class_StringName>` param **)** const
+- :ref:`Variant<class_Variant>` **get_shader_param** **(** :ref:`StringName<class_StringName>` param **)** |const|
 
 Returns the current value set for this material of a uniform in the shader.
 
@@ -89,5 +89,13 @@ Returns the default value of the material property with given ``name``.
 
 - void **set_shader_param** **(** :ref:`StringName<class_StringName>` param, :ref:`Variant<class_Variant>` value **)**
 
-Changes the value set for this material of a uniform in the shader. **Note:** ``param`` must match the name of the uniform in the code exactly.
+Changes the value set for this material of a uniform in the shader.
 
+**Note:** ``param`` must match the name of the uniform in the code exactly.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

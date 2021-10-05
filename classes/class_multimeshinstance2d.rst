@@ -18,7 +18,7 @@ Description
 
 ``MultiMeshInstance2D`` is a specialized node to instance a :ref:`MultiMesh<class_MultiMesh>` resource in 2D.
 
-Usage is the same as :ref:`MultiMeshInstance<class_MultiMeshInstance>`.
+Usage is the same as :ref:`MultiMeshInstance3D<class_MultiMeshInstance3D>`.
 
 Properties
 ----------
@@ -69,6 +69,8 @@ The :ref:`MultiMesh<class_MultiMesh>` that will be drawn by the ``MultiMeshInsta
 
 The normal map that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`.
 
+**Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
+
 ----
 
 .. _class_MultiMeshInstance2D_property_texture:
@@ -83,3 +85,9 @@ The normal map that will be used if using the default :ref:`CanvasItemMaterial<c
 
 The :ref:`Texture2D<class_Texture2D>` that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`. Can be accessed as ``TEXTURE`` in CanvasItem shader.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

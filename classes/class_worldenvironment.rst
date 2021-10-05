@@ -18,7 +18,7 @@ Description
 
 The ``WorldEnvironment`` node is used to configure the default :ref:`Environment<class_Environment>` for the scene.
 
-The parameters defined in the ``WorldEnvironment`` can be overridden by an :ref:`Environment<class_Environment>` node set on the current :ref:`Camera<class_Camera>`. Additionally, only one ``WorldEnvironment`` may be instanced in a given scene at a time.
+The parameters defined in the ``WorldEnvironment`` can be overridden by an :ref:`Environment<class_Environment>` node set on the current :ref:`Camera3D<class_Camera3D>`. Additionally, only one ``WorldEnvironment`` may be instantiated in a given scene at a time.
 
 The ``WorldEnvironment`` allows the user to specify default lighting parameters (e.g. ambient lighting), various post-processing effects (e.g. SSAO, DOF, Tonemapping), and how to draw the background (e.g. solid color, skybox). Usually, these are added in order to improve the realism/color balance of the scene.
 
@@ -26,6 +26,12 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/3d/environment_and_post_processing`
+
+- `3D Material Testers Demo <https://godotengine.org/asset-library/asset/123>`__
+
+- `2D HDR Demo <https://godotengine.org/asset-library/asset/110>`__
+
+- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
 Properties
 ----------
@@ -63,3 +69,9 @@ Property Descriptions
 
 The :ref:`Environment<class_Environment>` resource used by this ``WorldEnvironment``, defining the default properties.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

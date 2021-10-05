@@ -18,6 +18,8 @@ Description
 
 Skeleton2D parents a hierarchy of :ref:`Bone2D<class_Bone2D>` objects. It is a requirement of :ref:`Bone2D<class_Bone2D>`. Skeleton2D holds a reference to the rest pose of its children and acts as a single point of access to its bones.
 
+To setup different types of inverse kinematics for the given Skeleton2D, a :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` should be created. They can be applied by creating the desired number of modifications, which can be done by increasing :ref:`SkeletonModificationStack2D.modification_count<class_SkeletonModificationStack2D_property_modification_count>`.
+
 Tutorials
 ---------
 
@@ -26,13 +28,23 @@ Tutorials
 Methods
 -------
 
-+-----------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`Bone2D<class_Bone2D>` | :ref:`get_bone<class_Skeleton2D_method_get_bone>` **(** :ref:`int<class_int>` idx **)** |
-+-----------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`get_bone_count<class_Skeleton2D_method_get_bone_count>` **(** **)** const         |
-+-----------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`       | :ref:`get_skeleton<class_Skeleton2D_method_get_skeleton>` **(** **)** const             |
-+-----------------------------+-----------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                                  | :ref:`execute_modifications<class_Skeleton2D_method_execute_modifications>` **(** :ref:`float<class_float>` delta, :ref:`int<class_int>` execution_mode **)**                                                                                                     |
++-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Bone2D<class_Bone2D>`                                           | :ref:`get_bone<class_Skeleton2D_method_get_bone>` **(** :ref:`int<class_int>` idx **)**                                                                                                                                                                           |
++-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                                 | :ref:`get_bone_count<class_Skeleton2D_method_get_bone_count>` **(** **)** |const|                                                                                                                                                                                 |
++-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`                                 | :ref:`get_bone_local_pose_override<class_Skeleton2D_method_get_bone_local_pose_override>` **(** :ref:`int<class_int>` bone_idx **)**                                                                                                                              |
++-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` | :ref:`get_modification_stack<class_Skeleton2D_method_get_modification_stack>` **(** **)** |const|                                                                                                                                                                 |
++-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                                 | :ref:`get_skeleton<class_Skeleton2D_method_get_skeleton>` **(** **)** |const|                                                                                                                                                                                     |
++-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                                  | :ref:`set_bone_local_pose_override<class_Skeleton2D_method_set_bone_local_pose_override>` **(** :ref:`int<class_int>` bone_idx, :ref:`Transform2D<class_Transform2D>` override_pose, :ref:`float<class_float>` strength, :ref:`bool<class_bool>` persistent **)** |
++-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                                  | :ref:`set_modification_stack<class_Skeleton2D_method_set_modification_stack>` **(** :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` modification_stack **)**                                                                                |
++-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -41,8 +53,18 @@ Signals
 
 - **bone_setup_changed** **(** **)**
 
+Emitted when the :ref:`Bone2D<class_Bone2D>` setup attached to this skeletons changes. This is primarily used internally within the skeleton.
+
 Method Descriptions
 -------------------
+
+.. _class_Skeleton2D_method_execute_modifications:
+
+- void **execute_modifications** **(** :ref:`float<class_float>` delta, :ref:`int<class_int>` execution_mode **)**
+
+Executes all the modifications on the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>`, if the Skeleton3D has one assigned.
+
+----
 
 .. _class_Skeleton2D_method_get_bone:
 
@@ -54,15 +76,57 @@ Returns a :ref:`Bone2D<class_Bone2D>` from the node hierarchy parented by Skelet
 
 .. _class_Skeleton2D_method_get_bone_count:
 
-- :ref:`int<class_int>` **get_bone_count** **(** **)** const
+- :ref:`int<class_int>` **get_bone_count** **(** **)** |const|
 
 Returns the number of :ref:`Bone2D<class_Bone2D>` nodes in the node hierarchy parented by Skeleton2D.
 
 ----
 
+.. _class_Skeleton2D_method_get_bone_local_pose_override:
+
+- :ref:`Transform2D<class_Transform2D>` **get_bone_local_pose_override** **(** :ref:`int<class_int>` bone_idx **)**
+
+Returns the local pose override transform for ``bone_idx``.
+
+----
+
+.. _class_Skeleton2D_method_get_modification_stack:
+
+- :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` **get_modification_stack** **(** **)** |const|
+
+Returns the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` attached to this skeleton, if one exists.
+
+----
+
 .. _class_Skeleton2D_method_get_skeleton:
 
-- :ref:`RID<class_RID>` **get_skeleton** **(** **)** const
+- :ref:`RID<class_RID>` **get_skeleton** **(** **)** |const|
 
 Returns the :ref:`RID<class_RID>` of a Skeleton2D instance.
 
+----
+
+.. _class_Skeleton2D_method_set_bone_local_pose_override:
+
+- void **set_bone_local_pose_override** **(** :ref:`int<class_int>` bone_idx, :ref:`Transform2D<class_Transform2D>` override_pose, :ref:`float<class_float>` strength, :ref:`bool<class_bool>` persistent **)**
+
+Sets the local pose transform, ``pose``, for the bone at ``bone_idx``.
+
+``amount`` is the interpolation strength that will be used when applying the pose, and ``persistent`` determines if the applied pose will remain.
+
+**Note:** The pose transform needs to be a local transform relative to the :ref:`Bone2D<class_Bone2D>` node at ``bone_idx``!
+
+----
+
+.. _class_Skeleton2D_method_set_modification_stack:
+
+- void **set_modification_stack** **(** :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` modification_stack **)**
+
+Sets the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` attached to this skeleton.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

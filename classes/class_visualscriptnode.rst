@@ -9,7 +9,7 @@
 VisualScriptNode
 ================
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 **Inherited By:** :ref:`VisualScriptBasicTypeConstant<class_VisualScriptBasicTypeConstant>`, :ref:`VisualScriptBuiltinFunc<class_VisualScriptBuiltinFunc>`, :ref:`VisualScriptClassConstant<class_VisualScriptClassConstant>`, :ref:`VisualScriptComment<class_VisualScriptComment>`, :ref:`VisualScriptCondition<class_VisualScriptCondition>`, :ref:`VisualScriptConstant<class_VisualScriptConstant>`, :ref:`VisualScriptConstructor<class_VisualScriptConstructor>`, :ref:`VisualScriptCustomNode<class_VisualScriptCustomNode>`, :ref:`VisualScriptDeconstruct<class_VisualScriptDeconstruct>`, :ref:`VisualScriptEmitSignal<class_VisualScriptEmitSignal>`, :ref:`VisualScriptEngineSingleton<class_VisualScriptEngineSingleton>`, :ref:`VisualScriptExpression<class_VisualScriptExpression>`, :ref:`VisualScriptFunction<class_VisualScriptFunction>`, :ref:`VisualScriptFunctionCall<class_VisualScriptFunctionCall>`, :ref:`VisualScriptGlobalConstant<class_VisualScriptGlobalConstant>`, :ref:`VisualScriptIndexGet<class_VisualScriptIndexGet>`, :ref:`VisualScriptIndexSet<class_VisualScriptIndexSet>`, :ref:`VisualScriptInputAction<class_VisualScriptInputAction>`, :ref:`VisualScriptIterator<class_VisualScriptIterator>`, :ref:`VisualScriptLists<class_VisualScriptLists>`, :ref:`VisualScriptLocalVar<class_VisualScriptLocalVar>`, :ref:`VisualScriptLocalVarSet<class_VisualScriptLocalVarSet>`, :ref:`VisualScriptMathConstant<class_VisualScriptMathConstant>`, :ref:`VisualScriptOperator<class_VisualScriptOperator>`, :ref:`VisualScriptPreload<class_VisualScriptPreload>`, :ref:`VisualScriptPropertyGet<class_VisualScriptPropertyGet>`, :ref:`VisualScriptPropertySet<class_VisualScriptPropertySet>`, :ref:`VisualScriptResourcePath<class_VisualScriptResourcePath>`, :ref:`VisualScriptReturn<class_VisualScriptReturn>`, :ref:`VisualScriptSceneNode<class_VisualScriptSceneNode>`, :ref:`VisualScriptSceneTree<class_VisualScriptSceneTree>`, :ref:`VisualScriptSelect<class_VisualScriptSelect>`, :ref:`VisualScriptSelf<class_VisualScriptSelf>`, :ref:`VisualScriptSequence<class_VisualScriptSequence>`, :ref:`VisualScriptSubCall<class_VisualScriptSubCall>`, :ref:`VisualScriptSwitch<class_VisualScriptSwitch>`, :ref:`VisualScriptTypeCast<class_VisualScriptTypeCast>`, :ref:`VisualScriptVariableGet<class_VisualScriptVariableGet>`, :ref:`VisualScriptVariableSet<class_VisualScriptVariableSet>`, :ref:`VisualScriptWhile<class_VisualScriptWhile>`, :ref:`VisualScriptYield<class_VisualScriptYield>`, :ref:`VisualScriptYieldSignal<class_VisualScriptYieldSignal>`
 
@@ -24,9 +24,9 @@ Methods
 -------
 
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`           | :ref:`get_default_input_value<class_VisualScriptNode_method_get_default_input_value>` **(** :ref:`int<class_int>` port_idx **)** const                                |
+| :ref:`Variant<class_Variant>`           | :ref:`get_default_input_value<class_VisualScriptNode_method_get_default_input_value>` **(** :ref:`int<class_int>` port_idx **)** |const|                              |
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`VisualScript<class_VisualScript>` | :ref:`get_visual_script<class_VisualScriptNode_method_get_visual_script>` **(** **)** const                                                                           |
+| :ref:`VisualScript<class_VisualScript>` | :ref:`get_visual_script<class_VisualScriptNode_method_get_visual_script>` **(** **)** |const|                                                                         |
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`ports_changed_notify<class_VisualScriptNode_method_ports_changed_notify>` **(** **)**                                                                           |
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -47,7 +47,7 @@ Method Descriptions
 
 .. _class_VisualScriptNode_method_get_default_input_value:
 
-- :ref:`Variant<class_Variant>` **get_default_input_value** **(** :ref:`int<class_int>` port_idx **)** const
+- :ref:`Variant<class_Variant>` **get_default_input_value** **(** :ref:`int<class_int>` port_idx **)** |const|
 
 Returns the default value of a given port. The default value is used when nothing is connected to the port.
 
@@ -55,7 +55,7 @@ Returns the default value of a given port. The default value is used when nothin
 
 .. _class_VisualScriptNode_method_get_visual_script:
 
-- :ref:`VisualScript<class_VisualScript>` **get_visual_script** **(** **)** const
+- :ref:`VisualScript<class_VisualScript>` **get_visual_script** **(** **)** |const|
 
 Returns the :ref:`VisualScript<class_VisualScript>` instance the node is bound to.
 
@@ -75,3 +75,9 @@ Notify that the node's ports have changed. Usually used in conjunction with :ref
 
 Change the default value of a given port.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

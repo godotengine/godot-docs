@@ -9,14 +9,18 @@
 VideoStreamWebm
 ===============
 
-**Inherits:** :ref:`VideoStream<class_VideoStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VideoStream<class_VideoStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 :ref:`VideoStream<class_VideoStream>` resource for WebM videos.
 
 Description
 -----------
 
-:ref:`VideoStream<class_VideoStream>` resource handling the `WebM <https://www.webmproject.org/>`_ video format with ``.webm`` extension.
+:ref:`VideoStream<class_VideoStream>` resource handling the `WebM <https://www.webmproject.org/>`__ video format with ``.webm`` extension. Both the VP8 and VP9 codecs are supported. The VP8 and VP9 codecs are more efficient than :ref:`VideoStreamTheora<class_VideoStreamTheora>`, but they require more CPU resources to decode (especially VP9). Both the VP8 and VP9 codecs are decoded on the CPU.
+
+**Note:** Alpha channel (also known as transparency) is not supported. The video will always appear to have a black background, even if it originally contains an alpha channel.
+
+**Note:** There are known bugs and performance issues with WebM video playback in Godot. If you run into problems, try using the Ogg Theora format instead: :ref:`VideoStreamTheora<class_VideoStreamTheora>`
 
 Methods
 -------
@@ -44,3 +48,9 @@ Returns the WebM video file handled by this ``VideoStreamWebm``.
 
 Sets the WebM video file that this ``VideoStreamWebm`` resource handles. The ``file`` name should have the ``.webm`` extension.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

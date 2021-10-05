@@ -9,14 +9,14 @@
 Curve3D
 =======
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Describes a Bézier curve in 3D space.
 
 Description
 -----------
 
-This class describes a Bézier curve in 3D space. It is mainly used to give a shape to a :ref:`Path<class_Path>`, but can be manually sampled for other purposes.
+This class describes a Bézier curve in 3D space. It is mainly used to give a shape to a :ref:`Path3D<class_Path3D>`, but can be manually sampled for other purposes.
 
 It keeps a cache of precalculated points along the curve, to speed up further calculations.
 
@@ -32,53 +32,53 @@ Properties
 Methods
 -------
 
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`add_point<class_Curve3D_method_add_point>` **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` in=Vector3( 0, 0, 0 ), :ref:`Vector3<class_Vector3>` out=Vector3( 0, 0, 0 ), :ref:`int<class_int>` at_position=-1 **)** |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`clear_points<class_Curve3D_method_clear_points>` **(** **)**                                                                                                                                                                                   |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                           | :ref:`get_baked_length<class_Curve3D_method_get_baked_length>` **(** **)** const                                                                                                                                                                     |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_baked_points<class_Curve3D_method_get_baked_points>` **(** **)** const                                                                                                                                                                     |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedFloat32Array<class_PackedFloat32Array>` | :ref:`get_baked_tilts<class_Curve3D_method_get_baked_tilts>` **(** **)** const                                                                                                                                                                       |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_baked_up_vectors<class_Curve3D_method_get_baked_up_vectors>` **(** **)** const                                                                                                                                                             |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                           | :ref:`get_closest_offset<class_Curve3D_method_get_closest_offset>` **(** :ref:`Vector3<class_Vector3>` to_point **)** const                                                                                                                          |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                       | :ref:`get_closest_point<class_Curve3D_method_get_closest_point>` **(** :ref:`Vector3<class_Vector3>` to_point **)** const                                                                                                                            |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                               | :ref:`get_point_count<class_Curve3D_method_get_point_count>` **(** **)** const                                                                                                                                                                       |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                       | :ref:`get_point_in<class_Curve3D_method_get_point_in>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                   |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                       | :ref:`get_point_out<class_Curve3D_method_get_point_out>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                 |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                       | :ref:`get_point_position<class_Curve3D_method_get_point_position>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                       |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                           | :ref:`get_point_tilt<class_Curve3D_method_get_point_tilt>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                               |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                       | :ref:`interpolate<class_Curve3D_method_interpolate>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` t **)** const                                                                                                                        |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                       | :ref:`interpolate_baked<class_Curve3D_method_interpolate_baked>` **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` cubic=false **)** const                                                                                             |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                       | :ref:`interpolate_baked_up_vector<class_Curve3D_method_interpolate_baked_up_vector>` **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` apply_tilt=false **)** const                                                                    |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                       | :ref:`interpolatef<class_Curve3D_method_interpolatef>` **(** :ref:`float<class_float>` fofs **)** const                                                                                                                                              |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`remove_point<class_Curve3D_method_remove_point>` **(** :ref:`int<class_int>` idx **)**                                                                                                                                                         |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_point_in<class_Curve3D_method_set_point_in>` **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` position **)**                                                                                                                 |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_point_out<class_Curve3D_method_set_point_out>` **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` position **)**                                                                                                               |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_point_position<class_Curve3D_method_set_point_position>` **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` position **)**                                                                                                     |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_point_tilt<class_Curve3D_method_set_point_tilt>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` tilt **)**                                                                                                                     |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`tessellate<class_Curve3D_method_tessellate>` **(** :ref:`int<class_int>` max_stages=5, :ref:`float<class_float>` tolerance_degrees=4 **)** const                                                                                               |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`add_point<class_Curve3D_method_add_point>` **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` in=Vector3(0, 0, 0), :ref:`Vector3<class_Vector3>` out=Vector3(0, 0, 0), :ref:`int<class_int>` at_position=-1 **)** |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`clear_points<class_Curve3D_method_clear_points>` **(** **)**                                                                                                                                                                               |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                           | :ref:`get_baked_length<class_Curve3D_method_get_baked_length>` **(** **)** |const|                                                                                                                                                               |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_baked_points<class_Curve3D_method_get_baked_points>` **(** **)** |const|                                                                                                                                                               |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedFloat32Array<class_PackedFloat32Array>` | :ref:`get_baked_tilts<class_Curve3D_method_get_baked_tilts>` **(** **)** |const|                                                                                                                                                                 |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_baked_up_vectors<class_Curve3D_method_get_baked_up_vectors>` **(** **)** |const|                                                                                                                                                       |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                           | :ref:`get_closest_offset<class_Curve3D_method_get_closest_offset>` **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|                                                                                                                    |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                       | :ref:`get_closest_point<class_Curve3D_method_get_closest_point>` **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|                                                                                                                      |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`get_point_count<class_Curve3D_method_get_point_count>` **(** **)** |const|                                                                                                                                                                 |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                       | :ref:`get_point_in<class_Curve3D_method_get_point_in>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                             |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                       | :ref:`get_point_out<class_Curve3D_method_get_point_out>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                           |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                       | :ref:`get_point_position<class_Curve3D_method_get_point_position>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                 |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                           | :ref:`get_point_tilt<class_Curve3D_method_get_point_tilt>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                         |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                       | :ref:`interpolate<class_Curve3D_method_interpolate>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` t **)** |const|                                                                                                                  |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                       | :ref:`interpolate_baked<class_Curve3D_method_interpolate_baked>` **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` cubic=false **)** |const|                                                                                       |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                       | :ref:`interpolate_baked_up_vector<class_Curve3D_method_interpolate_baked_up_vector>` **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` apply_tilt=false **)** |const|                                                              |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                       | :ref:`interpolatef<class_Curve3D_method_interpolatef>` **(** :ref:`float<class_float>` fofs **)** |const|                                                                                                                                        |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`remove_point<class_Curve3D_method_remove_point>` **(** :ref:`int<class_int>` idx **)**                                                                                                                                                     |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_point_in<class_Curve3D_method_set_point_in>` **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` position **)**                                                                                                             |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_point_out<class_Curve3D_method_set_point_out>` **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` position **)**                                                                                                           |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_point_position<class_Curve3D_method_set_point_position>` **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` position **)**                                                                                                 |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_point_tilt<class_Curve3D_method_set_point_tilt>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` tilt **)**                                                                                                                 |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`tessellate<class_Curve3D_method_tessellate>` **(** :ref:`int<class_int>` max_stages=5, :ref:`float<class_float>` tolerance_degrees=4 **)** |const|                                                                                         |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -111,14 +111,14 @@ The distance in meters between two adjacent cached points. Changing it forces th
 | *Getter*  | is_up_vector_enabled()       |
 +-----------+------------------------------+
 
-If ``true``, the curve will bake up vectors used for orientation. This is used when :ref:`PathFollow.rotation_mode<class_PathFollow_property_rotation_mode>` is set to :ref:`PathFollow.ROTATION_ORIENTED<class_PathFollow_constant_ROTATION_ORIENTED>`. Changing it forces the cache to be recomputed.
+If ``true``, the curve will bake up vectors used for orientation. This is used when :ref:`PathFollow3D.rotation_mode<class_PathFollow3D_property_rotation_mode>` is set to :ref:`PathFollow3D.ROTATION_ORIENTED<class_PathFollow3D_constant_ROTATION_ORIENTED>`. Changing it forces the cache to be recomputed.
 
 Method Descriptions
 -------------------
 
 .. _class_Curve3D_method_add_point:
 
-- void **add_point** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` in=Vector3( 0, 0, 0 ), :ref:`Vector3<class_Vector3>` out=Vector3( 0, 0, 0 ), :ref:`int<class_int>` at_position=-1 **)**
+- void **add_point** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` in=Vector3(0, 0, 0), :ref:`Vector3<class_Vector3>` out=Vector3(0, 0, 0), :ref:`int<class_int>` at_position=-1 **)**
 
 Adds a point to a curve at ``position``, with control points ``in`` and ``out``.
 
@@ -136,7 +136,7 @@ Removes all points from the curve.
 
 .. _class_Curve3D_method_get_baked_length:
 
-- :ref:`float<class_float>` **get_baked_length** **(** **)** const
+- :ref:`float<class_float>` **get_baked_length** **(** **)** |const|
 
 Returns the total length of the curve, based on the cached points. Given enough density (see :ref:`bake_interval<class_Curve3D_property_bake_interval>`), it should be approximate enough.
 
@@ -144,7 +144,7 @@ Returns the total length of the curve, based on the cached points. Given enough 
 
 .. _class_Curve3D_method_get_baked_points:
 
-- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_baked_points** **(** **)** const
+- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_baked_points** **(** **)** |const|
 
 Returns the cache of points as a :ref:`PackedVector3Array<class_PackedVector3Array>`.
 
@@ -152,7 +152,7 @@ Returns the cache of points as a :ref:`PackedVector3Array<class_PackedVector3Arr
 
 .. _class_Curve3D_method_get_baked_tilts:
 
-- :ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_baked_tilts** **(** **)** const
+- :ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_baked_tilts** **(** **)** |const|
 
 Returns the cache of tilts as a :ref:`PackedFloat32Array<class_PackedFloat32Array>`.
 
@@ -160,7 +160,7 @@ Returns the cache of tilts as a :ref:`PackedFloat32Array<class_PackedFloat32Arra
 
 .. _class_Curve3D_method_get_baked_up_vectors:
 
-- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_baked_up_vectors** **(** **)** const
+- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_baked_up_vectors** **(** **)** |const|
 
 Returns the cache of up vectors as a :ref:`PackedVector3Array<class_PackedVector3Array>`.
 
@@ -170,7 +170,7 @@ If :ref:`up_vector_enabled<class_Curve3D_property_up_vector_enabled>` is ``false
 
 .. _class_Curve3D_method_get_closest_offset:
 
-- :ref:`float<class_float>` **get_closest_offset** **(** :ref:`Vector3<class_Vector3>` to_point **)** const
+- :ref:`float<class_float>` **get_closest_offset** **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|
 
 Returns the closest offset to ``to_point``. This offset is meant to be used in :ref:`interpolate_baked<class_Curve3D_method_interpolate_baked>` or :ref:`interpolate_baked_up_vector<class_Curve3D_method_interpolate_baked_up_vector>`.
 
@@ -180,9 +180,9 @@ Returns the closest offset to ``to_point``. This offset is meant to be used in :
 
 .. _class_Curve3D_method_get_closest_point:
 
-- :ref:`Vector3<class_Vector3>` **get_closest_point** **(** :ref:`Vector3<class_Vector3>` to_point **)** const
+- :ref:`Vector3<class_Vector3>` **get_closest_point** **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|
 
-Returns the closest point (in curve's local space) to ``to_point``.
+Returns the closest baked point (in curve's local space) to ``to_point``.
 
 ``to_point`` must be in this curve's local space.
 
@@ -190,7 +190,7 @@ Returns the closest point (in curve's local space) to ``to_point``.
 
 .. _class_Curve3D_method_get_point_count:
 
-- :ref:`int<class_int>` **get_point_count** **(** **)** const
+- :ref:`int<class_int>` **get_point_count** **(** **)** |const|
 
 Returns the number of points describing the curve.
 
@@ -198,23 +198,23 @@ Returns the number of points describing the curve.
 
 .. _class_Curve3D_method_get_point_in:
 
-- :ref:`Vector3<class_Vector3>` **get_point_in** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Vector3<class_Vector3>` **get_point_in** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the position of the control point leading to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0, 0)``.
+Returns the position of the control point leading to the vertex ``idx``. The returned position is relative to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0, 0)``.
 
 ----
 
 .. _class_Curve3D_method_get_point_out:
 
-- :ref:`Vector3<class_Vector3>` **get_point_out** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Vector3<class_Vector3>` **get_point_out** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the position of the control point leading out of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0, 0)``.
+Returns the position of the control point leading out of the vertex ``idx``. The returned position is relative to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0, 0)``.
 
 ----
 
 .. _class_Curve3D_method_get_point_position:
 
-- :ref:`Vector3<class_Vector3>` **get_point_position** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Vector3<class_Vector3>` **get_point_position** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the position of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0, 0)``.
 
@@ -222,7 +222,7 @@ Returns the position of the vertex ``idx``. If the index is out of bounds, the f
 
 .. _class_Curve3D_method_get_point_tilt:
 
-- :ref:`float<class_float>` **get_point_tilt** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`float<class_float>` **get_point_tilt** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the tilt angle in radians for the point ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``0``.
 
@@ -230,7 +230,7 @@ Returns the tilt angle in radians for the point ``idx``. If the index is out of 
 
 .. _class_Curve3D_method_interpolate:
 
-- :ref:`Vector3<class_Vector3>` **interpolate** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` t **)** const
+- :ref:`Vector3<class_Vector3>` **interpolate** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` t **)** |const|
 
 Returns the position between the vertex ``idx`` and the vertex ``idx + 1``, where ``t`` controls if the point is the first vertex (``t = 0.0``), the last vertex (``t = 1.0``), or in between. Values of ``t`` outside the range (``0.0 >= t <=1``) give strange, but predictable results.
 
@@ -240,9 +240,9 @@ If ``idx`` is out of bounds it is truncated to the first or last vertex, and ``t
 
 .. _class_Curve3D_method_interpolate_baked:
 
-- :ref:`Vector3<class_Vector3>` **interpolate_baked** **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` cubic=false **)** const
+- :ref:`Vector3<class_Vector3>` **interpolate_baked** **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` cubic=false **)** |const|
 
-Returns a point within the curve at position ``offset``, where ``offset`` is measured as a pixel distance along the curve.
+Returns a point within the curve at position ``offset``, where ``offset`` is measured as a distance in 3D units along the curve.
 
 To do that, it finds the two cached points where the ``offset`` lies between, then interpolates the values. This interpolation is cubic if ``cubic`` is set to ``true``, or linear if set to ``false``.
 
@@ -252,7 +252,7 @@ Cubic interpolation tends to follow the curves better, but linear is faster (and
 
 .. _class_Curve3D_method_interpolate_baked_up_vector:
 
-- :ref:`Vector3<class_Vector3>` **interpolate_baked_up_vector** **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` apply_tilt=false **)** const
+- :ref:`Vector3<class_Vector3>` **interpolate_baked_up_vector** **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` apply_tilt=false **)** |const|
 
 Returns an up vector within the curve at position ``offset``, where ``offset`` is measured as a distance in 3D units along the curve.
 
@@ -264,7 +264,7 @@ If the curve has no up vectors, the function sends an error to the console, and 
 
 .. _class_Curve3D_method_interpolatef:
 
-- :ref:`Vector3<class_Vector3>` **interpolatef** **(** :ref:`float<class_float>` fofs **)** const
+- :ref:`Vector3<class_Vector3>` **interpolatef** **(** :ref:`float<class_float>` fofs **)** |const|
 
 Returns the position at the vertex ``fofs``. It calls :ref:`interpolate<class_Curve3D_method_interpolate>` using the integer part of ``fofs`` as ``idx``, and its fractional part as ``t``.
 
@@ -282,7 +282,7 @@ Deletes the point ``idx`` from the curve. Sends an error to the console if ``idx
 
 - void **set_point_in** **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` position **)**
 
-Sets the position of the control point leading to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console.
+Sets the position of the control point leading to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console. The position is relative to the vertex.
 
 ----
 
@@ -290,7 +290,7 @@ Sets the position of the control point leading to the vertex ``idx``. If the ind
 
 - void **set_point_out** **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` position **)**
 
-Sets the position of the control point leading out of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console.
+Sets the position of the control point leading out of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console. The position is relative to the vertex.
 
 ----
 
@@ -308,13 +308,13 @@ Sets the position for the vertex ``idx``. If the index is out of bounds, the fun
 
 Sets the tilt angle in radians for the point ``idx``. If the index is out of bounds, the function sends an error to the console.
 
-The tilt controls the rotation along the look-at axis an object traveling the path would have. In the case of a curve controlling a :ref:`PathFollow<class_PathFollow>`, this tilt is an offset over the natural tilt the :ref:`PathFollow<class_PathFollow>` calculates.
+The tilt controls the rotation along the look-at axis an object traveling the path would have. In the case of a curve controlling a :ref:`PathFollow3D<class_PathFollow3D>`, this tilt is an offset over the natural tilt the :ref:`PathFollow3D<class_PathFollow3D>` calculates.
 
 ----
 
 .. _class_Curve3D_method_tessellate:
 
-- :ref:`PackedVector3Array<class_PackedVector3Array>` **tessellate** **(** :ref:`int<class_int>` max_stages=5, :ref:`float<class_float>` tolerance_degrees=4 **)** const
+- :ref:`PackedVector3Array<class_PackedVector3Array>` **tessellate** **(** :ref:`int<class_int>` max_stages=5, :ref:`float<class_float>` tolerance_degrees=4 **)** |const|
 
 Returns a list of points along the curve, with a curvature controlled point density. That is, the curvier parts will have more points than the straighter parts.
 
@@ -324,3 +324,9 @@ This approximation makes straight segments between each point, then subdivides t
 
 ``tolerance_degrees`` controls how many degrees the midpoint of a segment may deviate from the real curve, before the segment has to be subdivided.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

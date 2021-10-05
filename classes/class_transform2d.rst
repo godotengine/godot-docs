@@ -9,64 +9,109 @@
 Transform2D
 ===========
 
-2D transformation (3×2 matrix).
+2D transformation (2×3 matrix).
 
 Description
 -----------
 
-Represents one or many transformations in 2D space such as translation, rotation, or scaling. It consists of two :ref:`x<class_Transform2D_property_x>` and :ref:`y<class_Transform2D_property_y>` :ref:`Vector2<class_Vector2>`\ s and an :ref:`origin<class_Transform2D_property_origin>`. It is similar to a 3×2 matrix.
+2×3 matrix (2 rows, 3 columns) used for 2D linear transformations. It can represent transformations such as translation, rotation, or scaling. It consists of three :ref:`Vector2<class_Vector2>` values: :ref:`x<class_Transform2D_property_x>`, :ref:`y<class_Transform2D_property_y>`, and the :ref:`origin<class_Transform2D_property_origin>`.
+
+For more information, read the "Matrices and transforms" documentation article.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
+
+- :doc:`../tutorials/math/matrices_and_transforms`
+
+- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/584>`__
+
+- `2.5D Demo <https://godotengine.org/asset-library/asset/583>`__
 
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`origin<class_Transform2D_property_origin>` | ``Vector2( 0, 0 )`` |
-+-------------------------------+--------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`x<class_Transform2D_property_x>`           | ``Vector2( 1, 0 )`` |
-+-------------------------------+--------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`y<class_Transform2D_property_y>`           | ``Vector2( 0, 1 )`` |
-+-------------------------------+--------------------------------------------------+---------------------+
++-------------------------------+--------------------------------------------------+-------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`origin<class_Transform2D_property_origin>` | ``Vector2(0, 0)`` |
++-------------------------------+--------------------------------------------------+-------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`x<class_Transform2D_property_x>`           | ``Vector2(1, 0)`` |
++-------------------------------+--------------------------------------------------+-------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`y<class_Transform2D_property_y>`           | ``Vector2(0, 1)`` |
++-------------------------------+--------------------------------------------------+-------------------+
 
 Methods
 -------
 
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`Transform2D<class_Transform2D_method_Transform2D>` **(** :ref:`Transform<class_Transform>` from **)**                                                                           |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`Transform2D<class_Transform2D_method_Transform2D>` **(** :ref:`Vector2<class_Vector2>` x_axis, :ref:`Vector2<class_Vector2>` y_axis, :ref:`Vector2<class_Vector2>` origin **)** |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`Transform2D<class_Transform2D_method_Transform2D>` **(** :ref:`float<class_float>` rotation, :ref:`Vector2<class_Vector2>` position **)**                                       |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`affine_inverse<class_Transform2D_method_affine_inverse>` **(** **)**                                                                                                            |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`basis_xform<class_Transform2D_method_basis_xform>` **(** :ref:`Vector2<class_Vector2>` v **)**                                                                                  |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`basis_xform_inv<class_Transform2D_method_basis_xform_inv>` **(** :ref:`Vector2<class_Vector2>` v **)**                                                                          |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`get_origin<class_Transform2D_method_get_origin>` **(** **)**                                                                                                                    |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`             | :ref:`get_rotation<class_Transform2D_method_get_rotation>` **(** **)**                                                                                                                |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`get_scale<class_Transform2D_method_get_scale>` **(** **)**                                                                                                                      |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`interpolate_with<class_Transform2D_method_interpolate_with>` **(** :ref:`Transform2D<class_Transform2D>` transform, :ref:`float<class_float>` weight **)**                      |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`inverse<class_Transform2D_method_inverse>` **(** **)**                                                                                                                          |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_equal_approx<class_Transform2D_method_is_equal_approx>` **(** :ref:`Transform2D<class_Transform2D>` transform **)**                                                          |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`orthonormalized<class_Transform2D_method_orthonormalized>` **(** **)**                                                                                                          |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`rotated<class_Transform2D_method_rotated>` **(** :ref:`float<class_float>` phi **)**                                                                                            |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`scaled<class_Transform2D_method_scaled>` **(** :ref:`Vector2<class_Vector2>` scale **)**                                                                                        |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`translated<class_Transform2D_method_translated>` **(** :ref:`Vector2<class_Vector2>` offset **)**                                                                               |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`xform<class_Transform2D_method_xform>` **(** :ref:`Variant<class_Variant>` v **)**                                                                                              |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`xform_inv<class_Transform2D_method_xform_inv>` **(** :ref:`Variant<class_Variant>` v **)**                                                                                      |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`               | :ref:`Transform2D<class_Transform2D_method_Transform2D>` **(** **)** |constructor|                                                                                                                                                 |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`               | :ref:`Transform2D<class_Transform2D_method_Transform2D>` **(** :ref:`Transform2D<class_Transform2D>` from **)** |constructor|                                                                                                      |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`               | :ref:`Transform2D<class_Transform2D_method_Transform2D>` **(** :ref:`float<class_float>` rotation, :ref:`Vector2<class_Vector2>` position **)** |constructor|                                                                      |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`               | :ref:`Transform2D<class_Transform2D_method_Transform2D>` **(** :ref:`float<class_float>` rotation, :ref:`Vector2<class_Vector2>` scale, :ref:`float<class_float>` skew, :ref:`Vector2<class_Vector2>` position **)** |constructor| |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`               | :ref:`Transform2D<class_Transform2D_method_Transform2D>` **(** :ref:`Vector2<class_Vector2>` x_axis, :ref:`Vector2<class_Vector2>` y_axis, :ref:`Vector2<class_Vector2>` origin **)** |constructor|                                |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`               | :ref:`affine_inverse<class_Transform2D_method_affine_inverse>` **(** **)** |const|                                                                                                                                                 |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                       | :ref:`basis_xform<class_Transform2D_method_basis_xform>` **(** :ref:`Vector2<class_Vector2>` v **)** |const|                                                                                                                       |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                       | :ref:`basis_xform_inv<class_Transform2D_method_basis_xform_inv>` **(** :ref:`Vector2<class_Vector2>` v **)** |const|                                                                                                               |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                       | :ref:`get_origin<class_Transform2D_method_get_origin>` **(** **)** |const|                                                                                                                                                         |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                           | :ref:`get_rotation<class_Transform2D_method_get_rotation>` **(** **)** |const|                                                                                                                                                     |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                       | :ref:`get_scale<class_Transform2D_method_get_scale>` **(** **)** |const|                                                                                                                                                           |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                           | :ref:`get_skew<class_Transform2D_method_get_skew>` **(** **)** |const|                                                                                                                                                             |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`               | :ref:`interpolate_with<class_Transform2D_method_interpolate_with>` **(** :ref:`Transform2D<class_Transform2D>` xform, :ref:`float<class_float>` weight **)** |const|                                                               |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`               | :ref:`inverse<class_Transform2D_method_inverse>` **(** **)** |const|                                                                                                                                                               |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`is_equal_approx<class_Transform2D_method_is_equal_approx>` **(** :ref:`Transform2D<class_Transform2D>` xform **)** |const|                                                                                                   |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`               | :ref:`looking_at<class_Transform2D_method_looking_at>` **(** :ref:`Vector2<class_Vector2>` target=Vector2(0, 0) **)** |const|                                                                                                      |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | **operator !=** **(** **)** |operator|                                                                                                                                                                                             |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | **operator !=** **(** :ref:`Transform2D<class_Transform2D>` right **)** |operator|                                                                                                                                                 |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedVector2Array<class_PackedVector2Array>` | **operator *** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` right **)** |operator|                                                                                                                                    |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`               | **operator *** **(** :ref:`Transform2D<class_Transform2D>` right **)** |operator|                                                                                                                                                  |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_Rect2>`                           | **operator *** **(** :ref:`Rect2<class_Rect2>` right **)** |operator|                                                                                                                                                              |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                       | **operator *** **(** :ref:`Vector2<class_Vector2>` right **)** |operator|                                                                                                                                                          |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`               | **operator *** **(** :ref:`float<class_float>` right **)** |operator|                                                                                                                                                              |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`               | **operator *** **(** :ref:`int<class_int>` right **)** |operator|                                                                                                                                                                  |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | **operator ==** **(** **)** |operator|                                                                                                                                                                                             |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | **operator ==** **(** :ref:`Transform2D<class_Transform2D>` right **)** |operator|                                                                                                                                                 |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                       | **operator []** **(** :ref:`int<class_int>` index **)** |operator|                                                                                                                                                                 |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`               | :ref:`orthonormalized<class_Transform2D_method_orthonormalized>` **(** **)** |const|                                                                                                                                               |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`               | :ref:`rotated<class_Transform2D_method_rotated>` **(** :ref:`float<class_float>` phi **)** |const|                                                                                                                                 |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`               | :ref:`scaled<class_Transform2D_method_scaled>` **(** :ref:`Vector2<class_Vector2>` scale **)** |const|                                                                                                                             |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_rotation<class_Transform2D_method_set_rotation>` **(** :ref:`float<class_float>` rotation **)**                                                                                                                          |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_scale<class_Transform2D_method_set_scale>` **(** :ref:`Vector2<class_Vector2>` scale **)**                                                                                                                               |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_skew<class_Transform2D_method_set_skew>` **(** :ref:`float<class_float>` skew **)**                                                                                                                                      |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`               | :ref:`translated<class_Transform2D_method_translated>` **(** :ref:`Vector2<class_Vector2>` offset **)** |const|                                                                                                                    |
++-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Constants
 ---------
@@ -77,11 +122,11 @@ Constants
 
 .. _class_Transform2D_constant_FLIP_Y:
 
-- **IDENTITY** = **Transform2D( 1, 0, 0, 1, 0, 0 )** --- ``Transform2D`` with no translation, rotation or scaling applied. When applied to other data structures, :ref:`IDENTITY<class_Transform2D_constant_IDENTITY>` performs no transformation.
+- **IDENTITY** = **Transform2D(1, 0, 0, 1, 0, 0)** --- The identity ``Transform2D`` with no translation, rotation or scaling applied. When applied to other data structures, :ref:`IDENTITY<class_Transform2D_constant_IDENTITY>` performs no transformation.
 
-- **FLIP_X** = **Transform2D( -1, 0, 0, 1, 0, 0 )** --- ``Transform2D`` with mirroring applied parallel to the X axis.
+- **FLIP_X** = **Transform2D(-1, 0, 0, 1, 0, 0)** --- The ``Transform2D`` that will flip something along the X axis.
 
-- **FLIP_Y** = **Transform2D( 1, 0, 0, -1, 0, 0 )** --- ``Transform2D`` with mirroring applied parallel to the Y axis.
+- **FLIP_Y** = **Transform2D(1, 0, 0, -1, 0, 0)** --- The ``Transform2D`` that will flip something along the Y axis.
 
 Property Descriptions
 ---------------------
@@ -90,11 +135,11 @@ Property Descriptions
 
 - :ref:`Vector2<class_Vector2>` **origin**
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 0, 0 )`` |
-+-----------+---------------------+
++-----------+-------------------+
+| *Default* | ``Vector2(0, 0)`` |
++-----------+-------------------+
 
-The transform's translation offset.
+The origin vector (column 2, the third column). Equivalent to array index ``2``. The origin vector represents translation.
 
 ----
 
@@ -102,11 +147,11 @@ The transform's translation offset.
 
 - :ref:`Vector2<class_Vector2>` **x**
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 1, 0 )`` |
-+-----------+---------------------+
++-----------+-------------------+
+| *Default* | ``Vector2(1, 0)`` |
++-----------+-------------------+
 
-The X axis of 2×2 basis matrix containing 2 :ref:`Vector2<class_Vector2>`\ s as its columns: X axis and Y axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
+The basis matrix's X vector (column 0). Equivalent to array index ``0``.
 
 ----
 
@@ -114,62 +159,78 @@ The X axis of 2×2 basis matrix containing 2 :ref:`Vector2<class_Vector2>`\ s as
 
 - :ref:`Vector2<class_Vector2>` **y**
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 0, 1 )`` |
-+-----------+---------------------+
++-----------+-------------------+
+| *Default* | ``Vector2(0, 1)`` |
++-----------+-------------------+
 
-The Y axis of 2×2 basis matrix containing 2 :ref:`Vector2<class_Vector2>`\ s as its columns: X axis and Y axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
+The basis matrix's Y vector (column 1). Equivalent to array index ``1``.
 
 Method Descriptions
 -------------------
 
 .. _class_Transform2D_method_Transform2D:
 
-- :ref:`Transform2D<class_Transform2D>` **Transform2D** **(** :ref:`Transform<class_Transform>` from **)**
+- :ref:`Transform2D<class_Transform2D>` **Transform2D** **(** **)** |constructor|
 
-Constructs the transform from a 3D :ref:`Transform<class_Transform>`.
-
-----
-
-- :ref:`Transform2D<class_Transform2D>` **Transform2D** **(** :ref:`Vector2<class_Vector2>` x_axis, :ref:`Vector2<class_Vector2>` y_axis, :ref:`Vector2<class_Vector2>` origin **)**
-
-Constructs the transform from 3 :ref:`Vector2<class_Vector2>`\ s representing x, y, and origin.
+Constructs a default-initialized ``Transform2D`` set to :ref:`IDENTITY<class_Transform2D_constant_IDENTITY>`.
 
 ----
 
-- :ref:`Transform2D<class_Transform2D>` **Transform2D** **(** :ref:`float<class_float>` rotation, :ref:`Vector2<class_Vector2>` position **)**
+- :ref:`Transform2D<class_Transform2D>` **Transform2D** **(** :ref:`Transform2D<class_Transform2D>` from **)** |constructor|
+
+Constructs a ``Transform2D`` as a copy of the given ``Transform2D``.
+
+----
+
+- :ref:`Transform2D<class_Transform2D>` **Transform2D** **(** :ref:`float<class_float>` rotation, :ref:`Vector2<class_Vector2>` position **)** |constructor|
 
 Constructs the transform from a given angle (in radians) and position.
 
 ----
 
+- :ref:`Transform2D<class_Transform2D>` **Transform2D** **(** :ref:`float<class_float>` rotation, :ref:`Vector2<class_Vector2>` scale, :ref:`float<class_float>` skew, :ref:`Vector2<class_Vector2>` position **)** |constructor|
+
+Constructs the transform from a given angle (in radians), scale, skew (in radians) and position.
+
+----
+
+- :ref:`Transform2D<class_Transform2D>` **Transform2D** **(** :ref:`Vector2<class_Vector2>` x_axis, :ref:`Vector2<class_Vector2>` y_axis, :ref:`Vector2<class_Vector2>` origin **)** |constructor|
+
+Constructs the transform from 3 :ref:`Vector2<class_Vector2>` values representing :ref:`x<class_Transform2D_property_x>`, :ref:`y<class_Transform2D_property_y>`, and the :ref:`origin<class_Transform2D_property_origin>` (the three column vectors).
+
+----
+
 .. _class_Transform2D_method_affine_inverse:
 
-- :ref:`Transform2D<class_Transform2D>` **affine_inverse** **(** **)**
+- :ref:`Transform2D<class_Transform2D>` **affine_inverse** **(** **)** |const|
 
-Returns the inverse of the matrix.
+Returns the inverse of the transform, under the assumption that the transformation is composed of rotation, scaling and translation.
 
 ----
 
 .. _class_Transform2D_method_basis_xform:
 
-- :ref:`Vector2<class_Vector2>` **basis_xform** **(** :ref:`Vector2<class_Vector2>` v **)**
+- :ref:`Vector2<class_Vector2>` **basis_xform** **(** :ref:`Vector2<class_Vector2>` v **)** |const|
 
-Transforms the given vector by this transform's basis (no translation).
+Returns a vector transformed (multiplied) by the basis matrix.
+
+This method does not account for translation (the origin vector).
 
 ----
 
 .. _class_Transform2D_method_basis_xform_inv:
 
-- :ref:`Vector2<class_Vector2>` **basis_xform_inv** **(** :ref:`Vector2<class_Vector2>` v **)**
+- :ref:`Vector2<class_Vector2>` **basis_xform_inv** **(** :ref:`Vector2<class_Vector2>` v **)** |const|
 
-Inverse-transforms the given vector by this transform's basis (no translation).
+Returns a vector transformed (multiplied) by the inverse basis matrix.
+
+This method does not account for translation (the origin vector).
 
 ----
 
 .. _class_Transform2D_method_get_origin:
 
-- :ref:`Vector2<class_Vector2>` **get_origin** **(** **)**
+- :ref:`Vector2<class_Vector2>` **get_origin** **(** **)** |const|
 
 Returns the transform's origin (translation).
 
@@ -177,7 +238,7 @@ Returns the transform's origin (translation).
 
 .. _class_Transform2D_method_get_rotation:
 
-- :ref:`float<class_float>` **get_rotation** **(** **)**
+- :ref:`float<class_float>` **get_rotation** **(** **)** |const|
 
 Returns the transform's rotation (in radians).
 
@@ -185,47 +246,121 @@ Returns the transform's rotation (in radians).
 
 .. _class_Transform2D_method_get_scale:
 
-- :ref:`Vector2<class_Vector2>` **get_scale** **(** **)**
+- :ref:`Vector2<class_Vector2>` **get_scale** **(** **)** |const|
 
 Returns the scale.
 
 ----
 
+.. _class_Transform2D_method_get_skew:
+
+- :ref:`float<class_float>` **get_skew** **(** **)** |const|
+
+Returns the transform's skew (in radians).
+
+----
+
 .. _class_Transform2D_method_interpolate_with:
 
-- :ref:`Transform2D<class_Transform2D>` **interpolate_with** **(** :ref:`Transform2D<class_Transform2D>` transform, :ref:`float<class_float>` weight **)**
+- :ref:`Transform2D<class_Transform2D>` **interpolate_with** **(** :ref:`Transform2D<class_Transform2D>` xform, :ref:`float<class_float>` weight **)** |const|
 
-Returns a transform interpolated between this transform and another by a given weight (0-1).
+Returns a transform interpolated between this transform and another by a given ``weight`` (on the range of 0.0 to 1.0).
 
 ----
 
 .. _class_Transform2D_method_inverse:
 
-- :ref:`Transform2D<class_Transform2D>` **inverse** **(** **)**
+- :ref:`Transform2D<class_Transform2D>` **inverse** **(** **)** |const|
 
-Returns the inverse of the transform, under the assumption that the transformation is composed of rotation and translation (no scaling, use affine_inverse for transforms with scaling).
+Returns the inverse of the transform, under the assumption that the transformation is composed of rotation and translation (no scaling, use :ref:`affine_inverse<class_Transform2D_method_affine_inverse>` for transforms with scaling).
 
 ----
 
 .. _class_Transform2D_method_is_equal_approx:
 
-- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Transform2D<class_Transform2D>` transform **)**
+- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Transform2D<class_Transform2D>` xform **)** |const|
 
 Returns ``true`` if this transform and ``transform`` are approximately equal, by calling ``is_equal_approx`` on each component.
 
 ----
 
+.. _class_Transform2D_method_looking_at:
+
+- :ref:`Transform2D<class_Transform2D>` **looking_at** **(** :ref:`Vector2<class_Vector2>` target=Vector2(0, 0) **)** |const|
+
+Returns a copy of the transform rotated such that it's rotation on the X-axis points towards the ``target`` position.
+
+Operations take place in global space.
+
+----
+
+.. _class_Transform2D_method_operator !=:
+
+- :ref:`bool<class_bool>` **operator !=** **(** **)** |operator|
+
+----
+
+- :ref:`bool<class_bool>` **operator !=** **(** :ref:`Transform2D<class_Transform2D>` right **)** |operator|
+
+----
+
+.. _class_Transform2D_method_operator *:
+
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **operator *** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` right **)** |operator|
+
+----
+
+- :ref:`Transform2D<class_Transform2D>` **operator *** **(** :ref:`Transform2D<class_Transform2D>` right **)** |operator|
+
+----
+
+- :ref:`Rect2<class_Rect2>` **operator *** **(** :ref:`Rect2<class_Rect2>` right **)** |operator|
+
+----
+
+- :ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`Vector2<class_Vector2>` right **)** |operator|
+
+----
+
+- :ref:`Transform2D<class_Transform2D>` **operator *** **(** :ref:`float<class_float>` right **)** |operator|
+
+This operator multiplies all components of the ``Transform2D``, including the origin vector, which scales it uniformly.
+
+----
+
+- :ref:`Transform2D<class_Transform2D>` **operator *** **(** :ref:`int<class_int>` right **)** |operator|
+
+This operator multiplies all components of the ``Transform2D``, including the origin vector, which scales it uniformly.
+
+----
+
+.. _class_Transform2D_method_operator ==:
+
+- :ref:`bool<class_bool>` **operator ==** **(** **)** |operator|
+
+----
+
+- :ref:`bool<class_bool>` **operator ==** **(** :ref:`Transform2D<class_Transform2D>` right **)** |operator|
+
+----
+
+.. _class_Transform2D_method_operator []:
+
+- :ref:`Vector2<class_Vector2>` **operator []** **(** :ref:`int<class_int>` index **)** |operator|
+
+----
+
 .. _class_Transform2D_method_orthonormalized:
 
-- :ref:`Transform2D<class_Transform2D>` **orthonormalized** **(** **)**
+- :ref:`Transform2D<class_Transform2D>` **orthonormalized** **(** **)** |const|
 
-Returns the transform with the basis orthogonal (90 degrees), and normalized axis vectors.
+Returns the transform with the basis orthogonal (90 degrees), and normalized axis vectors (scale of 1 or -1).
 
 ----
 
 .. _class_Transform2D_method_rotated:
 
-- :ref:`Transform2D<class_Transform2D>` **rotated** **(** :ref:`float<class_float>` phi **)**
+- :ref:`Transform2D<class_Transform2D>` **rotated** **(** :ref:`float<class_float>` phi **)** |const|
 
 Rotates the transform by the given angle (in radians), using matrix multiplication.
 
@@ -233,33 +368,47 @@ Rotates the transform by the given angle (in radians), using matrix multiplicati
 
 .. _class_Transform2D_method_scaled:
 
-- :ref:`Transform2D<class_Transform2D>` **scaled** **(** :ref:`Vector2<class_Vector2>` scale **)**
+- :ref:`Transform2D<class_Transform2D>` **scaled** **(** :ref:`Vector2<class_Vector2>` scale **)** |const|
 
 Scales the transform by the given scale factor, using matrix multiplication.
 
 ----
 
+.. _class_Transform2D_method_set_rotation:
+
+- void **set_rotation** **(** :ref:`float<class_float>` rotation **)**
+
+Sets the transform's rotation (in radians).
+
+----
+
+.. _class_Transform2D_method_set_scale:
+
+- void **set_scale** **(** :ref:`Vector2<class_Vector2>` scale **)**
+
+Sets the transform's scale.
+
+----
+
+.. _class_Transform2D_method_set_skew:
+
+- void **set_skew** **(** :ref:`float<class_float>` skew **)**
+
+Sets the transform's skew (in radians).
+
+----
+
 .. _class_Transform2D_method_translated:
 
-- :ref:`Transform2D<class_Transform2D>` **translated** **(** :ref:`Vector2<class_Vector2>` offset **)**
+- :ref:`Transform2D<class_Transform2D>` **translated** **(** :ref:`Vector2<class_Vector2>` offset **)** |const|
 
 Translates the transform by the given offset, relative to the transform's basis vectors.
 
 Unlike :ref:`rotated<class_Transform2D_method_rotated>` and :ref:`scaled<class_Transform2D_method_scaled>`, this does not use matrix multiplication.
 
-----
-
-.. _class_Transform2D_method_xform:
-
-- :ref:`Variant<class_Variant>` **xform** **(** :ref:`Variant<class_Variant>` v **)**
-
-Transforms the given :ref:`Vector2<class_Vector2>`, :ref:`Rect2<class_Rect2>`, or :ref:`PackedVector2Array<class_PackedVector2Array>` by this transform.
-
-----
-
-.. _class_Transform2D_method_xform_inv:
-
-- :ref:`Variant<class_Variant>` **xform_inv** **(** :ref:`Variant<class_Variant>` v **)**
-
-Inverse-transforms the given :ref:`Vector2<class_Vector2>`, :ref:`Rect2<class_Rect2>`, or :ref:`PackedVector2Array<class_PackedVector2Array>` by this transform.
-
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

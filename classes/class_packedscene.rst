@@ -9,7 +9,7 @@
 PackedScene
 ===========
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 An abstraction of a serialized scene.
 
@@ -18,51 +18,110 @@ Description
 
 A simplified interface to a scene file. Provides access to operations and checks that can be performed on the scene resource itself.
 
-Can be used to save a node to a file. When saving, the node as well as all the node it owns get saved (see ``owner`` property on :ref:`Node<class_Node>`).
+Can be used to save a node to a file. When saving, the node as well as all the nodes it owns get saved (see ``owner`` property on :ref:`Node<class_Node>`).
 
 **Note:** The node doesn't need to own itself.
 
-**Example of saving a node with different owners:** The following example creates 3 objects: ``Node2D`` (``node``), ``RigidBody2D`` (``rigid``) and ``CollisionObject2D`` (``collision``). ``collision`` is a child of ``rigid`` which is a child of ``node``. Only ``rigid`` is owned by ``node`` and ``pack`` will therefore only save those two nodes, but not ``collision``.
+**Example of loading a saved scene:**
 
-::
 
-    # Create the objects
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    # Use load() instead of preload() if the path isn't known at compile-time.
+    var scene = preload("res://scene.tscn").instantiate()
+    # Add the node as a child of the node the script is attached to.
+    add_child(scene)
+
+ .. code-tab:: csharp
+
+    // C# has no preload, so you have to always use ResourceLoader.Load<PackedScene>().
+    var scene = ResourceLoader.Load<PackedScene>("res://scene.tscn").Instantiate();
+    // Add the node as a child of the node the script is attached to.
+    AddChild(scene);
+
+
+
+**Example of saving a node with different owners:** The following example creates 3 objects: ``Node2D`` (``node``), ``RigidDynamicBody2D`` (``body``) and ``CollisionObject2D`` (``collision``). ``collision`` is a child of ``body`` which is a child of ``node``. Only ``body`` is owned by ``node`` and ``pack`` will therefore only save those two nodes, but not ``collision``.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    # Create the objects.
     var node = Node2D.new()
-    var rigid = RigidBody2D.new()
+    var body = RigidDynamicBody2D.new()
     var collision = CollisionShape2D.new()
     
-    # Create the object hierarchy
-    rigid.add_child(collision)
-    node.add_child(rigid)
+    # Create the object hierarchy.
+    body.add_child(collision)
+    node.add_child(body)
     
-    # Change owner of rigid, but not of collision
-    rigid.owner = node
-    
+    # Change owner of `body`, but not of `collision`.
+    body.owner = node
     var scene = PackedScene.new()
-    # Only node and rigid are now packed
+    
+    # Only `node` and `body` are now packed.
     var result = scene.pack(node)
     if result == OK:
-        ResourceSaver.save("res://path/name.scn", scene) # Or "user://..."
+        var error = ResourceSaver.save("res://path/name.tscn", scene)  # Or "user://..."
+        if error != OK:
+            push_error("An error occurred while saving the scene to disk.")
+
+ .. code-tab:: csharp
+
+    // Create the objects.
+    var node = new Node2D();
+    var body = new RigidDynamicBody2D();
+    var collision = new CollisionShape2D();
+    
+    // Create the object hierarchy.
+    body.AddChild(collision);
+    node.AddChild(body);
+    
+    // Change owner of `body`, but not of `collision`.
+    body.Owner = node;
+    var scene = new PackedScene();
+    
+    // Only `node` and `body` are now packed.
+    Error result = scene.Pack(node);
+    if (result == Error.Ok)
+    {
+        Error error = ResourceSaver.Save("res://path/name.tscn", scene); // Or "user://..."
+        if (error != Error.Ok)
+        {
+            GD.PushError("An error occurred while saving the scene to disk.");
+        }
+    }
+
+
+
+Tutorials
+---------
+
+- `2D Role Playing Game Demo <https://godotengine.org/asset-library/asset/520>`__
 
 Properties
 ----------
 
-+-------------------------------------+------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`_bundled<class_PackedScene_property__bundled>` | ``{"conn_count": 0,"conns": PackedInt32Array(  ),"editable_instances": [  ],"names": PackedStringArray(  ),"node_count": 0,"node_paths": [  ],"nodes": PackedInt32Array(  ),"variants": [  ],"version": 2}`` |
-+-------------------------------------+------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------+------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`_bundled<class_PackedScene_property__bundled>` | ``{"conn_count": 0,"conns": PackedInt32Array(),"editable_instances": [],"names": PackedStringArray(),"node_count": 0,"node_paths": [],"nodes": PackedInt32Array(),"variants": [],"version": 2}`` |
++-------------------------------------+------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Methods
 -------
 
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`can_instance<class_PackedScene_method_can_instance>` **(** **)** const                                                         |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneState<class_SceneState>`   | :ref:`get_state<class_PackedScene_method_get_state>` **(** **)**                                                                     |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`               | :ref:`instance<class_PackedScene_method_instance>` **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** const |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pack<class_PackedScene_method_pack>` **(** :ref:`Node<class_Node>` path **)**                                                  |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`can_instantiate<class_PackedScene_method_can_instantiate>` **(** **)** |const|                                                         |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`SceneState<class_SceneState>`   | :ref:`get_state<class_PackedScene_method_get_state>` **(** **)**                                                                             |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_Node>`               | :ref:`instantiate<class_PackedScene_method_instantiate>` **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** |const| |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pack<class_PackedScene_method_pack>` **(** :ref:`Node<class_Node>` path **)**                                                          |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -77,13 +136,13 @@ Enumerations
 
 enum **GenEditState**:
 
-- **GEN_EDIT_STATE_DISABLED** = **0** --- If passed to :ref:`instance<class_PackedScene_method_instance>`, blocks edits to the scene state.
+- **GEN_EDIT_STATE_DISABLED** = **0** --- If passed to :ref:`instantiate<class_PackedScene_method_instantiate>`, blocks edits to the scene state.
 
-- **GEN_EDIT_STATE_INSTANCE** = **1** --- If passed to :ref:`instance<class_PackedScene_method_instance>`, provides local scene resources to the local scene.
+- **GEN_EDIT_STATE_INSTANCE** = **1** --- If passed to :ref:`instantiate<class_PackedScene_method_instantiate>`, provides local scene resources to the local scene.
 
 **Note:** Only available in editor builds.
 
-- **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`instance<class_PackedScene_method_instance>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state.
+- **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`instantiate<class_PackedScene_method_instantiate>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state.
 
 **Note:** Only available in editor builds.
 
@@ -94,9 +153,9 @@ Property Descriptions
 
 - :ref:`Dictionary<class_Dictionary>` **_bundled**
 
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| *Default* | ``{"conn_count": 0,"conns": PackedInt32Array(  ),"editable_instances": [  ],"names": PackedStringArray(  ),"node_count": 0,"node_paths": [  ],"nodes": PackedInt32Array(  ),"variants": [  ],"version": 2}`` |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| *Default* | ``{"conn_count": 0,"conns": PackedInt32Array(),"editable_instances": [],"names": PackedStringArray(),"node_count": 0,"node_paths": [],"nodes": PackedInt32Array(),"variants": [],"version": 2}`` |
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 A dictionary representation of the scene contents.
 
@@ -105,9 +164,9 @@ Available keys include "rnames" and "variants" for resources, "node_count", "nod
 Method Descriptions
 -------------------
 
-.. _class_PackedScene_method_can_instance:
+.. _class_PackedScene_method_can_instantiate:
 
-- :ref:`bool<class_bool>` **can_instance** **(** **)** const
+- :ref:`bool<class_bool>` **can_instantiate** **(** **)** |const|
 
 Returns ``true`` if the scene file has nodes.
 
@@ -121,9 +180,9 @@ Returns the ``SceneState`` representing the scene file contents.
 
 ----
 
-.. _class_PackedScene_method_instance:
+.. _class_PackedScene_method_instantiate:
 
-- :ref:`Node<class_Node>` **instance** **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** const
+- :ref:`Node<class_Node>` **instantiate** **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** |const|
 
 Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers a :ref:`Node.NOTIFICATION_INSTANCED<class_Node_constant_NOTIFICATION_INSTANCED>` notification on the root node.
 
@@ -135,3 +194,9 @@ Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). 
 
 Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.owner<class_Node_property_owner>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

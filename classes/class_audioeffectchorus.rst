@@ -9,7 +9,7 @@
 AudioEffectChorus
 =================
 
-**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Adds a chorus audio effect.
 
@@ -81,17 +81,17 @@ Methods
 -------
 
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_voice_cutoff_hz<class_AudioEffectChorus_method_get_voice_cutoff_hz>` **(** :ref:`int<class_int>` voice_idx **)** const                                |
+| :ref:`float<class_float>` | :ref:`get_voice_cutoff_hz<class_AudioEffectChorus_method_get_voice_cutoff_hz>` **(** :ref:`int<class_int>` voice_idx **)** |const|                              |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_voice_delay_ms<class_AudioEffectChorus_method_get_voice_delay_ms>` **(** :ref:`int<class_int>` voice_idx **)** const                                  |
+| :ref:`float<class_float>` | :ref:`get_voice_delay_ms<class_AudioEffectChorus_method_get_voice_delay_ms>` **(** :ref:`int<class_int>` voice_idx **)** |const|                                |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_voice_depth_ms<class_AudioEffectChorus_method_get_voice_depth_ms>` **(** :ref:`int<class_int>` voice_idx **)** const                                  |
+| :ref:`float<class_float>` | :ref:`get_voice_depth_ms<class_AudioEffectChorus_method_get_voice_depth_ms>` **(** :ref:`int<class_int>` voice_idx **)** |const|                                |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_voice_level_db<class_AudioEffectChorus_method_get_voice_level_db>` **(** :ref:`int<class_int>` voice_idx **)** const                                  |
+| :ref:`float<class_float>` | :ref:`get_voice_level_db<class_AudioEffectChorus_method_get_voice_level_db>` **(** :ref:`int<class_int>` voice_idx **)** |const|                                |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_voice_pan<class_AudioEffectChorus_method_get_voice_pan>` **(** :ref:`int<class_int>` voice_idx **)** const                                            |
+| :ref:`float<class_float>` | :ref:`get_voice_pan<class_AudioEffectChorus_method_get_voice_pan>` **(** :ref:`int<class_int>` voice_idx **)** |const|                                          |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_voice_rate_hz<class_AudioEffectChorus_method_get_voice_rate_hz>` **(** :ref:`int<class_int>` voice_idx **)** const                                    |
+| :ref:`float<class_float>` | :ref:`get_voice_rate_hz<class_AudioEffectChorus_method_get_voice_rate_hz>` **(** :ref:`int<class_int>` voice_idx **)** |const|                                  |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_voice_cutoff_hz<class_AudioEffectChorus_method_set_voice_cutoff_hz>` **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` cutoff_hz **)** |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -520,37 +520,37 @@ Method Descriptions
 
 .. _class_AudioEffectChorus_method_get_voice_cutoff_hz:
 
-- :ref:`float<class_float>` **get_voice_cutoff_hz** **(** :ref:`int<class_int>` voice_idx **)** const
+- :ref:`float<class_float>` **get_voice_cutoff_hz** **(** :ref:`int<class_int>` voice_idx **)** |const|
 
 ----
 
 .. _class_AudioEffectChorus_method_get_voice_delay_ms:
 
-- :ref:`float<class_float>` **get_voice_delay_ms** **(** :ref:`int<class_int>` voice_idx **)** const
+- :ref:`float<class_float>` **get_voice_delay_ms** **(** :ref:`int<class_int>` voice_idx **)** |const|
 
 ----
 
 .. _class_AudioEffectChorus_method_get_voice_depth_ms:
 
-- :ref:`float<class_float>` **get_voice_depth_ms** **(** :ref:`int<class_int>` voice_idx **)** const
+- :ref:`float<class_float>` **get_voice_depth_ms** **(** :ref:`int<class_int>` voice_idx **)** |const|
 
 ----
 
 .. _class_AudioEffectChorus_method_get_voice_level_db:
 
-- :ref:`float<class_float>` **get_voice_level_db** **(** :ref:`int<class_int>` voice_idx **)** const
+- :ref:`float<class_float>` **get_voice_level_db** **(** :ref:`int<class_int>` voice_idx **)** |const|
 
 ----
 
 .. _class_AudioEffectChorus_method_get_voice_pan:
 
-- :ref:`float<class_float>` **get_voice_pan** **(** :ref:`int<class_int>` voice_idx **)** const
+- :ref:`float<class_float>` **get_voice_pan** **(** :ref:`int<class_int>` voice_idx **)** |const|
 
 ----
 
 .. _class_AudioEffectChorus_method_get_voice_rate_hz:
 
-- :ref:`float<class_float>` **get_voice_rate_hz** **(** :ref:`int<class_int>` voice_idx **)** const
+- :ref:`float<class_float>` **get_voice_rate_hz** **(** :ref:`int<class_int>` voice_idx **)** |const|
 
 ----
 
@@ -588,3 +588,9 @@ Method Descriptions
 
 - void **set_voice_rate_hz** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` rate_hz **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

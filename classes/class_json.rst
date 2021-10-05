@@ -9,38 +9,131 @@
 JSON
 ====
 
-**Inherits:** :ref:`Object<class_Object>`
+**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Helper class for parsing JSON data.
+Helper class for creating and parsing JSON data.
 
 Description
 -----------
 
-Helper class for parsing JSON data. For usage example and other important hints, see :ref:`JSONParseResult<class_JSONParseResult>`.
+The ``JSON`` enables all data types to be converted to and from a JSON string. This useful for serializing data to save to a file or send over the network.
+
+:ref:`stringify<class_JSON_method_stringify>` is used to convert any data type into a JSON string.
+
+:ref:`parse<class_JSON_method_parse>` is used to convert any existing JSON data into a :ref:`Variant<class_Variant>` that can be used within Godot. If successfully parsed, use :ref:`get_data<class_JSON_method_get_data>` to retrieve the :ref:`Variant<class_Variant>`, and use ``typeof`` to check if the Variant's type is what you expect. JSON Objects are converted into a :ref:`Dictionary<class_Dictionary>`, but JSON data can be used to store :ref:`Array<class_Array>`\ s, numbers, :ref:`String<class_String>`\ s and even just a boolean.
+
+**Example**
+
+::
+
+    var data_to_send = ["a", "b", "c"]
+    var json = JSON.new()
+    var json_string = json.stringify(data_to_send)
+    # Save data
+    # ...
+    # Retrieve data
+    var error = json.parse(json_string)
+    if error == OK:
+        var data_received = json.get_data()
+        if typeof(data_received) == TYPE_ARRAY:
+            print(data_received) # Prints array
+        else:
+            print("Unexpected data")
+    else:
+        print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
 
 Methods
 -------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`JSONParseResult<class_JSONParseResult>` | :ref:`parse<class_JSON_method_parse>` **(** :ref:`String<class_String>` json **)**                                                                                    |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`print<class_JSON_method_print>` **(** :ref:`Variant<class_Variant>` value, :ref:`String<class_String>` indent="", :ref:`bool<class_bool>` sort_keys=false **)** |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`         | :ref:`get_data<class_JSON_method_get_data>` **(** **)** |const|                                                                                                                                                           |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`get_error_line<class_JSON_method_get_error_line>` **(** **)** |const|                                                                                                                                               |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`get_error_message<class_JSON_method_get_error_message>` **(** **)** |const|                                                                                                                                         |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`parse<class_JSON_method_parse>` **(** :ref:`String<class_String>` json_string **)**                                                                                                                                 |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`stringify<class_JSON_method_stringify>` **(** :ref:`Variant<class_Variant>` data, :ref:`String<class_String>` indent="", :ref:`bool<class_bool>` sort_keys=true, :ref:`bool<class_bool>` full_precision=false **)** |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_JSON_method_parse:
+.. _class_JSON_method_get_data:
 
-- :ref:`JSONParseResult<class_JSONParseResult>` **parse** **(** :ref:`String<class_String>` json **)**
+- :ref:`Variant<class_Variant>` **get_data** **(** **)** |const|
 
-Parses a JSON encoded string and returns a :ref:`JSONParseResult<class_JSONParseResult>` containing the result.
+Returns the :ref:`Variant<class_Variant>` containing the data of a successful :ref:`parse<class_JSON_method_parse>`.
+
+**Note:** It will return ``Null`` if the last call to parse was unsuccessful or :ref:`parse<class_JSON_method_parse>` has not yet been called.
 
 ----
 
-.. _class_JSON_method_print:
+.. _class_JSON_method_get_error_line:
 
-- :ref:`String<class_String>` **print** **(** :ref:`Variant<class_Variant>` value, :ref:`String<class_String>` indent="", :ref:`bool<class_bool>` sort_keys=false **)**
+- :ref:`int<class_int>` **get_error_line** **(** **)** |const|
+
+Returns ``0`` if the last call to :ref:`parse<class_JSON_method_parse>` was successful, or the line number where the parse failed.
+
+----
+
+.. _class_JSON_method_get_error_message:
+
+- :ref:`String<class_String>` **get_error_message** **(** **)** |const|
+
+Returns an empty string if the last call to :ref:`parse<class_JSON_method_parse>` was successful, or the error message if it failed.
+
+----
+
+.. _class_JSON_method_parse:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **parse** **(** :ref:`String<class_String>` json_string **)**
+
+Attempts to parse the ``json_string`` provided.
+
+Returns an :ref:`Error<enum_@GlobalScope_Error>`. If the parse was successful, it returns ``OK`` and the result can be retrieved using :ref:`get_data<class_JSON_method_get_data>`. If unsuccessful, use :ref:`get_error_line<class_JSON_method_get_error_line>` and :ref:`get_error_message<class_JSON_method_get_error_message>` for identifying the source of the failure.
+
+----
+
+.. _class_JSON_method_stringify:
+
+- :ref:`String<class_String>` **stringify** **(** :ref:`Variant<class_Variant>` data, :ref:`String<class_String>` indent="", :ref:`bool<class_bool>` sort_keys=true, :ref:`bool<class_bool>` full_precision=false **)**
 
 Converts a :ref:`Variant<class_Variant>` var to JSON text and returns the result. Useful for serializing data to store or send over the network.
 
+**Note:** The JSON specification does not define integer or float types, but only a *number* type. Therefore, converting a Variant to JSON text will convert all numerical values to :ref:`float<class_float>` types.
+
+**Note:** If ``full_precision`` is true, when stringifying floats, the unreliable digits are stringified in addition to the reliable digits to guarantee exact decoding.
+
+Use ``indent`` parameter to pretty stringify the output.
+
+**Example output:**
+
+::
+
+    ## JSON.stringify(my_dictionary)
+    {"name":"my_dictionary","version":"1.0.0","entities":[{"name":"entity_0","value":"value_0"},{"name":"entity_1","value":"value_1"}]}
+    
+    ## JSON.stringify(my_dictionary, "\t")
+    {
+            "name": "my_dictionary",
+            "version": "1.0.0",
+            "entities": [
+                    {
+                            "name": "entity_0",
+                            "value": "value_0"
+                    },
+                    {
+                            "name": "entity_1",
+                            "value": "value_1"
+                    }
+            ]
+    }
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

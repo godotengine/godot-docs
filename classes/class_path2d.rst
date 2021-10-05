@@ -23,11 +23,9 @@ Can have :ref:`PathFollow2D<class_PathFollow2D>` child nodes moving along the :r
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------+--------------------------------------+
-| :ref:`Curve2D<class_Curve2D>` | :ref:`curve<class_Path2D_property_curve>` |                                      |
-+-------------------------------+-------------------------------------------+--------------------------------------+
-| :ref:`Color<class_Color>`     | self_modulate                             | **O:** ``Color( 0.5, 0.6, 1, 0.7 )`` |
-+-------------------------------+-------------------------------------------+--------------------------------------+
++-------------------------------+-------------------------------------------+
+| :ref:`Curve2D<class_Curve2D>` | :ref:`curve<class_Path2D_property_curve>` |
++-------------------------------+-------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -44,3 +42,9 @@ Property Descriptions
 
 A :ref:`Curve2D<class_Curve2D>` describing the path.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

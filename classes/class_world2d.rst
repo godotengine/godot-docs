@@ -9,7 +9,7 @@
 World2D
 =======
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Class that has everything pertaining to a 2D world.
 
@@ -29,7 +29,9 @@ Properties
 +-------------------------------------------------------------------+----------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                                             | :ref:`canvas<class_World2D_property_canvas>`                         |
 +-------------------------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` | :ref:`direct_space_state<class_World2D_property_direct_space_state>` |
+| :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` | :ref:`direct_space_state<class_World2D_property_direct_space_state>` |
++-------------------------------------------------------------------+----------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                             | :ref:`navigation_map<class_World2D_property_navigation_map>`         |
 +-------------------------------------------------------------------+----------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                                             | :ref:`space<class_World2D_property_space>`                           |
 +-------------------------------------------------------------------+----------------------------------------------------------------------+
@@ -45,19 +47,31 @@ Property Descriptions
 | *Getter* | get_canvas() |
 +----------+--------------+
 
-The :ref:`RID<class_RID>` of this world's canvas resource. Used by the :ref:`VisualServer<class_VisualServer>` for 2D drawing.
+The :ref:`RID<class_RID>` of this world's canvas resource. Used by the :ref:`RenderingServer<class_RenderingServer>` for 2D drawing.
 
 ----
 
 .. _class_World2D_property_direct_space_state:
 
-- :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` **direct_space_state**
+- :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` **direct_space_state**
 
 +----------+--------------------------+
 | *Getter* | get_direct_space_state() |
 +----------+--------------------------+
 
-The state of this world's physics space. This allows arbitrary querying for collision.
+Direct access to the world's physics 2D space state. Used for querying current and potential collisions. When using multi-threaded physics, access is limited to ``_physics_process(delta)`` in the main thread.
+
+----
+
+.. _class_World2D_property_navigation_map:
+
+- :ref:`RID<class_RID>` **navigation_map**
+
++----------+----------------------+
+| *Getter* | get_navigation_map() |
++----------+----------------------+
+
+The :ref:`RID<class_RID>` of this world's navigation map. Used by the :ref:`NavigationServer2D<class_NavigationServer2D>`.
 
 ----
 
@@ -69,5 +83,11 @@ The state of this world's physics space. This allows arbitrary querying for coll
 | *Getter* | get_space() |
 +----------+-------------+
 
-The :ref:`RID<class_RID>` of this world's physics space resource. Used by the :ref:`Physics2DServer<class_Physics2DServer>` for 2D physics, treating it as both a space and an area.
+The :ref:`RID<class_RID>` of this world's physics space resource. Used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>` for 2D physics, treating it as both a space and an area.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -9,7 +9,7 @@
 AnimationNodeAnimation
 ======================
 
-**Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Input animation to use in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
@@ -23,11 +23,15 @@ Tutorials
 
 - :doc:`../tutorials/animation/animation_tree`
 
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
+
+- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+
 Properties
 ----------
 
 +-------------------------------------+-------------------------------------------------------------------+---------+
-| :ref:`StringName<class_StringName>` | :ref:`animation<class_AnimationNodeAnimation_property_animation>` | ``@""`` |
+| :ref:`StringName<class_StringName>` | :ref:`animation<class_AnimationNodeAnimation_property_animation>` | ``&""`` |
 +-------------------------------------+-------------------------------------------------------------------+---------+
 
 Property Descriptions
@@ -38,7 +42,7 @@ Property Descriptions
 - :ref:`StringName<class_StringName>` **animation**
 
 +-----------+----------------------+
-| *Default* | ``@""``              |
+| *Default* | ``&""``              |
 +-----------+----------------------+
 | *Setter*  | set_animation(value) |
 +-----------+----------------------+
@@ -47,3 +51,9 @@ Property Descriptions
 
 Animation to use as an output. It is one of the animations provided by :ref:`AnimationTree.anim_player<class_AnimationTree_property_anim_player>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -9,7 +9,7 @@
 MobileVRInterface
 =================
 
-**Inherits:** :ref:`ARVRInterface<class_ARVRInterface>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`XRInterface<class_XRInterface>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Generic mobile VR implementation.
 
@@ -24,9 +24,9 @@ You can initialise this interface as follows:
 
 ::
 
-    var interface = ARVRServer.find_interface("Native mobile")
+    var interface = XRServer.find_interface("Native mobile")
     if interface and interface.initialize():
-        get_viewport().arvr = true
+        get_viewport().xr = true
 
 Properties
 ----------
@@ -94,7 +94,7 @@ The width of the display in centimeters.
 | *Getter*  | get_eye_height()      |
 +-----------+-----------------------+
 
-The height at which the camera is placed in relation to the ground (i.e. :ref:`ARVROrigin<class_ARVROrigin>` node).
+The height at which the camera is placed in relation to the ground (i.e. :ref:`XROrigin3D<class_XROrigin3D>` node).
 
 ----
 
@@ -160,3 +160,9 @@ The k2 lens factor, see k1.
 
 The oversample setting. Because of the lens distortion we have to render our buffers at a higher resolution then the screen can natively handle. A value between 1.5 and 2.0 often provides good results but at the cost of performance.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

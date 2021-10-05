@@ -18,16 +18,32 @@ Description
 
 This class provides access to a number of different monitors related to performance, such as memory usage, draw calls, and FPS. These are the same as the values displayed in the **Monitor** tab in the editor's **Debugger** panel. By using the :ref:`get_monitor<class_Performance_method_get_monitor>` method of this class, you can access this data from your code.
 
+You can add custom monitors using the :ref:`add_custom_monitor<class_Performance_method_add_custom_monitor>` method. Custom monitors are available in **Monitor** tab in the editor's **Debugger** panel together with built-in monitors.
+
 **Note:** A few of these monitors are only available in debug mode and will always return 0 when used in a release build.
 
 **Note:** Many of these monitors are not updated in real-time, so there may be a short delay between changes.
 
+**Note:** Custom monitors do not support negative values. Negative values are clamped to 0.
+
 Methods
 -------
 
-+---------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_monitor<class_Performance_method_get_monitor>` **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** const |
-+---------------------------+-----------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`add_custom_monitor<class_Performance_method_add_custom_monitor>` **(** :ref:`StringName<class_StringName>` id, :ref:`Callable<class_Callable>` callable, :ref:`Array<class_Array>` arguments=[] **)** |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`get_custom_monitor<class_Performance_method_get_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                                   |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`     | :ref:`get_custom_monitor_names<class_Performance_method_get_custom_monitor_names>` **(** **)**                                                                                                              |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`get_monitor<class_Performance_method_get_monitor>` **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** |const|                                                                               |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`get_monitor_modification_time<class_Performance_method_get_monitor_modification_time>` **(** **)**                                                                                                    |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`has_custom_monitor<class_Performance_method_has_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                                   |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`remove_custom_monitor<class_Performance_method_remove_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                             |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -54,25 +70,17 @@ Enumerations
 
 .. _class_Performance_constant_OBJECT_ORPHAN_NODE_COUNT:
 
-.. _class_Performance_constant_RENDER_OBJECTS_IN_FRAME:
+.. _class_Performance_constant_RENDER_TOTAL_OBJECTS_IN_FRAME:
 
-.. _class_Performance_constant_RENDER_VERTICES_IN_FRAME:
+.. _class_Performance_constant_RENDER_TOTAL_PRIMITIVES_IN_FRAME:
 
-.. _class_Performance_constant_RENDER_MATERIAL_CHANGES_IN_FRAME:
-
-.. _class_Performance_constant_RENDER_SHADER_CHANGES_IN_FRAME:
-
-.. _class_Performance_constant_RENDER_SURFACE_CHANGES_IN_FRAME:
-
-.. _class_Performance_constant_RENDER_DRAW_CALLS_IN_FRAME:
+.. _class_Performance_constant_RENDER_TOTAL_DRAW_CALLS_IN_FRAME:
 
 .. _class_Performance_constant_RENDER_VIDEO_MEM_USED:
 
 .. _class_Performance_constant_RENDER_TEXTURE_MEM_USED:
 
-.. _class_Performance_constant_RENDER_VERTEX_MEM_USED:
-
-.. _class_Performance_constant_RENDER_USAGE_VIDEO_MEM_TOTAL:
+.. _class_Performance_constant_RENDER_BUFFER_MEM_USED:
 
 .. _class_Performance_constant_PHYSICS_2D_ACTIVE_OBJECTS:
 
@@ -104,60 +112,177 @@ enum **Monitor**:
 
 - **MEMORY_MESSAGE_BUFFER_MAX** = **5** --- Largest amount of memory the message queue buffer has used, in bytes. The message queue is used for deferred functions calls and notifications.
 
-- **OBJECT_COUNT** = **6** --- Number of objects currently instanced (including nodes).
+- **OBJECT_COUNT** = **6** --- Number of objects currently instantiated (including nodes).
 
 - **OBJECT_RESOURCE_COUNT** = **7** --- Number of resources currently used.
 
-- **OBJECT_NODE_COUNT** = **8** --- Number of nodes currently instanced in the scene tree. This also includes the root node.
+- **OBJECT_NODE_COUNT** = **8** --- Number of nodes currently instantiated in the scene tree. This also includes the root node.
 
 - **OBJECT_ORPHAN_NODE_COUNT** = **9** --- Number of orphan nodes, i.e. nodes which are not parented to a node of the scene tree.
 
-- **RENDER_OBJECTS_IN_FRAME** = **10** --- 3D objects drawn per frame.
+- **RENDER_TOTAL_OBJECTS_IN_FRAME** = **10**
 
-- **RENDER_VERTICES_IN_FRAME** = **11** --- Vertices drawn per frame. 3D only.
+- **RENDER_TOTAL_PRIMITIVES_IN_FRAME** = **11**
 
-- **RENDER_MATERIAL_CHANGES_IN_FRAME** = **12** --- Material changes per frame. 3D only.
+- **RENDER_TOTAL_DRAW_CALLS_IN_FRAME** = **12**
 
-- **RENDER_SHADER_CHANGES_IN_FRAME** = **13** --- Shader changes per frame. 3D only.
+- **RENDER_VIDEO_MEM_USED** = **13** --- The amount of video memory used, i.e. texture and vertex memory combined.
 
-- **RENDER_SURFACE_CHANGES_IN_FRAME** = **14** --- Render surface changes per frame. 3D only.
+- **RENDER_TEXTURE_MEM_USED** = **14** --- The amount of texture memory used.
 
-- **RENDER_DRAW_CALLS_IN_FRAME** = **15** --- Draw calls per frame. 3D only.
+- **RENDER_BUFFER_MEM_USED** = **15**
 
-- **RENDER_VIDEO_MEM_USED** = **16** --- The amount of video memory used, i.e. texture and vertex memory combined.
+- **PHYSICS_2D_ACTIVE_OBJECTS** = **16** --- Number of active :ref:`RigidDynamicBody2D<class_RigidDynamicBody2D>` nodes in the game.
 
-- **RENDER_TEXTURE_MEM_USED** = **17** --- The amount of texture memory used.
+- **PHYSICS_2D_COLLISION_PAIRS** = **17** --- Number of collision pairs in the 2D physics engine.
 
-- **RENDER_VERTEX_MEM_USED** = **18** --- The amount of vertex memory used.
+- **PHYSICS_2D_ISLAND_COUNT** = **18** --- Number of islands in the 2D physics engine.
 
-- **RENDER_USAGE_VIDEO_MEM_TOTAL** = **19** --- Unimplemented in the GLES2 rendering backend, always returns 0.
+- **PHYSICS_3D_ACTIVE_OBJECTS** = **19** --- Number of active :ref:`RigidDynamicBody3D<class_RigidDynamicBody3D>` and :ref:`VehicleBody3D<class_VehicleBody3D>` nodes in the game.
 
-- **PHYSICS_2D_ACTIVE_OBJECTS** = **20** --- Number of active :ref:`RigidBody2D<class_RigidBody2D>` nodes in the game.
+- **PHYSICS_3D_COLLISION_PAIRS** = **20** --- Number of collision pairs in the 3D physics engine.
 
-- **PHYSICS_2D_COLLISION_PAIRS** = **21** --- Number of collision pairs in the 2D physics engine.
+- **PHYSICS_3D_ISLAND_COUNT** = **21** --- Number of islands in the 3D physics engine.
 
-- **PHYSICS_2D_ISLAND_COUNT** = **22** --- Number of islands in the 2D physics engine.
+- **AUDIO_OUTPUT_LATENCY** = **22** --- Output latency of the :ref:`AudioServer<class_AudioServer>`.
 
-- **PHYSICS_3D_ACTIVE_OBJECTS** = **23** --- Number of active :ref:`RigidBody<class_RigidBody>` and :ref:`VehicleBody<class_VehicleBody>` nodes in the game.
-
-- **PHYSICS_3D_COLLISION_PAIRS** = **24** --- Number of collision pairs in the 3D physics engine.
-
-- **PHYSICS_3D_ISLAND_COUNT** = **25** --- Number of islands in the 3D physics engine.
-
-- **AUDIO_OUTPUT_LATENCY** = **26** --- Output latency of the :ref:`AudioServer<class_AudioServer>`.
-
-- **MONITOR_MAX** = **27** --- Represents the size of the :ref:`Monitor<enum_Performance_Monitor>` enum.
+- **MONITOR_MAX** = **23** --- Represents the size of the :ref:`Monitor<enum_Performance_Monitor>` enum.
 
 Method Descriptions
 -------------------
 
+.. _class_Performance_method_add_custom_monitor:
+
+- void **add_custom_monitor** **(** :ref:`StringName<class_StringName>` id, :ref:`Callable<class_Callable>` callable, :ref:`Array<class_Array>` arguments=[] **)**
+
+Adds a custom monitor with name same as id. You can specify the category of monitor using '/' in id. If there are more than one '/' then default category is used. Default category is "Custom".
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func _ready():
+        var monitor_value = Callable(self, "get_monitor_value")
+    
+        # Adds monitor with name "MyName" to category "MyCategory".
+        Performance.add_custom_monitor("MyCategory/MyMonitor", monitor_value)
+    
+        # Adds monitor with name "MyName" to category "Custom".
+        # Note: "MyCategory/MyMonitor" and "MyMonitor" have same name but different ids so the code is valid.
+        Performance.add_custom_monitor("MyMonitor", monitor_value)
+    
+        # Adds monitor with name "MyName" to category "Custom".
+        # Note: "MyMonitor" and "Custom/MyMonitor" have same name and same category but different ids so the code is valid.
+        Performance.add_custom_monitor("Custom/MyMonitor", monitor_value)
+    
+        # Adds monitor with name "MyCategoryOne/MyCategoryTwo/MyMonitor" to category "Custom".
+        Performance.add_custom_monitor("MyCategoryOne/MyCategoryTwo/MyMonitor", monitor_value)
+    
+    func get_monitor_value():
+        return randi() % 25
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        var monitorValue = new Callable(this, nameof(GetMonitorValue));
+    
+        // Adds monitor with name "MyName" to category "MyCategory".
+        Performance.AddCustomMonitor("MyCategory/MyMonitor", monitorValue);
+        // Adds monitor with name "MyName" to category "Custom".
+        // Note: "MyCategory/MyMonitor" and "MyMonitor" have same name but different ids so the code is valid.
+        Performance.AddCustomMonitor("MyMonitor", monitorValue);
+    
+        // Adds monitor with name "MyName" to category "Custom".
+        // Note: "MyMonitor" and "Custom/MyMonitor" have same name and same category but different ids so the code is valid.
+        Performance.AddCustomMonitor("Custom/MyMonitor", monitorValue);
+    
+        // Adds monitor with name "MyCategoryOne/MyCategoryTwo/MyMonitor" to category "Custom".
+        Performance.AddCustomMonitor("MyCategoryOne/MyCategoryTwo/MyMonitor", monitorValue);
+    }
+    
+    public int GetMonitorValue()
+    {
+        return GD.Randi() % 25;
+    }
+
+
+
+The debugger calls the callable to get the value of custom monitor. The callable must return a number.
+
+Callables are called with arguments supplied in argument array.
+
+**Note:** It throws an error if given id is already present.
+
+----
+
+.. _class_Performance_method_get_custom_monitor:
+
+- :ref:`Variant<class_Variant>` **get_custom_monitor** **(** :ref:`StringName<class_StringName>` id **)**
+
+Returns the value of custom monitor with given id. The callable is called to get the value of custom monitor.
+
+**Note:** It throws an error if the given id is absent.
+
+----
+
+.. _class_Performance_method_get_custom_monitor_names:
+
+- :ref:`Array<class_Array>` **get_custom_monitor_names** **(** **)**
+
+Returns the names of active custom monitors in an array.
+
+----
+
 .. _class_Performance_method_get_monitor:
 
-- :ref:`float<class_float>` **get_monitor** **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** const
+- :ref:`float<class_float>` **get_monitor** **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** |const|
 
 Returns the value of one of the available monitors. You should provide one of the :ref:`Monitor<enum_Performance_Monitor>` constants as the argument, like this:
 
-::
 
-    print(Performance.get_monitor(Performance.TIME_FPS)) # Prints the FPS to the console
+.. tabs::
 
+ .. code-tab:: gdscript
+
+    print(Performance.get_monitor(Performance.TIME_FPS)) # Prints the FPS to the console.
+
+ .. code-tab:: csharp
+
+    GD.Print(Performance.GetMonitor(Performance.Monitor.TimeFps)); // Prints the FPS to the console.
+
+
+
+----
+
+.. _class_Performance_method_get_monitor_modification_time:
+
+- :ref:`int<class_int>` **get_monitor_modification_time** **(** **)**
+
+Returns the last tick in which custom monitor was added/removed.
+
+----
+
+.. _class_Performance_method_has_custom_monitor:
+
+- :ref:`bool<class_bool>` **has_custom_monitor** **(** :ref:`StringName<class_StringName>` id **)**
+
+Returns true if custom monitor with the given id is present otherwise returns false.
+
+----
+
+.. _class_Performance_method_remove_custom_monitor:
+
+- void **remove_custom_monitor** **(** :ref:`StringName<class_StringName>` id **)**
+
+Removes the custom monitor with given id.
+
+**Note:** It throws an error if the given id is already absent.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

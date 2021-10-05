@@ -9,7 +9,7 @@
 Shader
 ======
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 **Inherited By:** :ref:`VisualShader<class_VisualShader>`
 
@@ -23,9 +23,9 @@ This class allows you to define a custom shader program that can be used by a :r
 Tutorials
 ---------
 
-- :doc:`../tutorials/shaders/index`
+- :doc:`../tutorials/shading/index`
 
-- :ref:`doc_introduction_to_shaders`
+- :doc:`../tutorials/shading/your_first_shader/what_are_shaders`
 
 Properties
 ----------
@@ -38,11 +38,11 @@ Methods
 -------
 
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`get_default_texture_param<class_Shader_method_get_default_texture_param>` **(** :ref:`StringName<class_StringName>` param **)** const                                      |
+| :ref:`Texture2D<class_Texture2D>` | :ref:`get_default_texture_param<class_Shader_method_get_default_texture_param>` **(** :ref:`StringName<class_StringName>` param **)** |const|                                    |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Mode<enum_Shader_Mode>`     | :ref:`get_mode<class_Shader_method_get_mode>` **(** **)** const                                                                                                                  |
+| :ref:`Mode<enum_Shader_Mode>`     | :ref:`get_mode<class_Shader_method_get_mode>` **(** **)** |const|                                                                                                                |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`has_param<class_Shader_method_has_param>` **(** :ref:`StringName<class_StringName>` name **)** const                                                                       |
+| :ref:`bool<class_bool>`           | :ref:`has_param<class_Shader_method_has_param>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                     |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_default_texture_param<class_Shader_method_set_default_texture_param>` **(** :ref:`StringName<class_StringName>` param, :ref:`Texture2D<class_Texture2D>` texture **)** |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -92,7 +92,7 @@ Method Descriptions
 
 .. _class_Shader_method_get_default_texture_param:
 
-- :ref:`Texture2D<class_Texture2D>` **get_default_texture_param** **(** :ref:`StringName<class_StringName>` param **)** const
+- :ref:`Texture2D<class_Texture2D>` **get_default_texture_param** **(** :ref:`StringName<class_StringName>` param **)** |const|
 
 Returns the texture that is set as default for the specified parameter.
 
@@ -102,7 +102,7 @@ Returns the texture that is set as default for the specified parameter.
 
 .. _class_Shader_method_get_mode:
 
-- :ref:`Mode<enum_Shader_Mode>` **get_mode** **(** **)** const
+- :ref:`Mode<enum_Shader_Mode>` **get_mode** **(** **)** |const|
 
 Returns the shader mode for the shader, either :ref:`MODE_CANVAS_ITEM<class_Shader_constant_MODE_CANVAS_ITEM>`, :ref:`MODE_SPATIAL<class_Shader_constant_MODE_SPATIAL>` or :ref:`MODE_PARTICLES<class_Shader_constant_MODE_PARTICLES>`.
 
@@ -110,7 +110,7 @@ Returns the shader mode for the shader, either :ref:`MODE_CANVAS_ITEM<class_Shad
 
 .. _class_Shader_method_has_param:
 
-- :ref:`bool<class_bool>` **has_param** **(** :ref:`StringName<class_StringName>` name **)** const
+- :ref:`bool<class_bool>` **has_param** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
 Returns ``true`` if the shader has this param defined as a uniform in its code.
 
@@ -126,3 +126,9 @@ Sets the default texture to be used with a texture uniform. The default is used 
 
 **Note:** ``param`` must match the name of the uniform in the code exactly.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

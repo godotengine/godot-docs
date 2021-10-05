@@ -9,7 +9,7 @@
 PlaneMesh
 =========
 
-**Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
@@ -18,31 +18,51 @@ Description
 
 Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat mesh does not have a thickness. By default, this mesh is aligned on the X and Z axes; this default rotation isn't suited for use with billboarded materials. For billboarded materials, use :ref:`QuadMesh<class_QuadMesh>` instead.
 
+**Note:** When using a large textured ``PlaneMesh`` (e.g. as a floor), you may stumble upon UV jittering issues depending on the camera angle. To solve this, increase :ref:`subdivide_depth<class_PlaneMesh_property_subdivide_depth>` and :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` until you no longer notice UV jittering.
+
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_PlaneMesh_property_size>`                       | ``Vector2( 2, 2 )`` |
-+-------------------------------+------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_PlaneMesh_property_subdivide_depth>` | ``0``               |
-+-------------------------------+------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` | ``0``               |
-+-------------------------------+------------------------------------------------------------------+---------------------+
++-------------------------------+------------------------------------------------------------------+----------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`center_offset<class_PlaneMesh_property_center_offset>`     | ``Vector3(0, 0, 0)`` |
++-------------------------------+------------------------------------------------------------------+----------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_PlaneMesh_property_size>`                       | ``Vector2(2, 2)``    |
++-------------------------------+------------------------------------------------------------------+----------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_PlaneMesh_property_subdivide_depth>` | ``0``                |
++-------------------------------+------------------------------------------------------------------+----------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` | ``0``                |
++-------------------------------+------------------------------------------------------------------+----------------------+
 
 Property Descriptions
 ---------------------
+
+.. _class_PlaneMesh_property_center_offset:
+
+- :ref:`Vector3<class_Vector3>` **center_offset**
+
++-----------+--------------------------+
+| *Default* | ``Vector3(0, 0, 0)``     |
++-----------+--------------------------+
+| *Setter*  | set_center_offset(value) |
++-----------+--------------------------+
+| *Getter*  | get_center_offset()      |
++-----------+--------------------------+
+
+Offset of the generated plane. Useful for particles.
+
+----
 
 .. _class_PlaneMesh_property_size:
 
 - :ref:`Vector2<class_Vector2>` **size**
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 2, 2 )`` |
-+-----------+---------------------+
-| *Setter*  | set_size(value)     |
-+-----------+---------------------+
-| *Getter*  | get_size()          |
-+-----------+---------------------+
++-----------+-------------------+
+| *Default* | ``Vector2(2, 2)`` |
++-----------+-------------------+
+| *Setter*  | set_size(value)   |
++-----------+-------------------+
+| *Getter*  | get_size()        |
++-----------+-------------------+
 
 Size of the generated plane.
 
@@ -78,3 +98,9 @@ Number of subdivision along the Z axis.
 
 Number of subdivision along the X axis.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

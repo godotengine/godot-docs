@@ -9,9 +9,40 @@
 ResourceImporter
 ================
 
-**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 **Inherited By:** :ref:`EditorImportPlugin<class_EditorImportPlugin>`
 
+Base class for the implementation of core resource importers.
 
+Description
+-----------
 
+This is the base class for the resource importers implemented in core. To implement your own resource importers using editor plugins, see :ref:`EditorImportPlugin<class_EditorImportPlugin>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/plugins/editor/import_plugins`
+
+Enumerations
+------------
+
+.. _enum_ResourceImporter_ImportOrder:
+
+.. _class_ResourceImporter_constant_IMPORT_ORDER_DEFAULT:
+
+.. _class_ResourceImporter_constant_IMPORT_ORDER_SCENE:
+
+enum **ImportOrder**:
+
+- **IMPORT_ORDER_DEFAULT** = **0** --- The default import order.
+
+- **IMPORT_ORDER_SCENE** = **100** --- The import order for scenes, which ensures scenes are imported *after* all other core resources such as textures. Custom importers should generally have an import order lower than ``100`` to avoid issues when importing scenes that rely on custom resources.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

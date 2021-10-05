@@ -9,34 +9,34 @@
 PrimitiveMesh
 =============
 
-**Inherits:** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`CubeMesh<class_CubeMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`PointMesh<class_PointMesh>`, :ref:`PrismMesh<class_PrismMesh>`, :ref:`QuadMesh<class_QuadMesh>`, :ref:`SphereMesh<class_SphereMesh>`
+**Inherited By:** :ref:`BoxMesh<class_BoxMesh>`, :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`PointMesh<class_PointMesh>`, :ref:`PrismMesh<class_PrismMesh>`, :ref:`QuadMesh<class_QuadMesh>`, :ref:`RibbonTrailMesh<class_RibbonTrailMesh>`, :ref:`SphereMesh<class_SphereMesh>`, :ref:`TubeTrailMesh<class_TubeTrailMesh>`
 
 Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh.
 
 Description
 -----------
 
-Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh. Examples include :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`CubeMesh<class_CubeMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`PrismMesh<class_PrismMesh>`, :ref:`QuadMesh<class_QuadMesh>`, and :ref:`SphereMesh<class_SphereMesh>`.
+Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh. Examples include :ref:`BoxMesh<class_BoxMesh>`, :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`PrismMesh<class_PrismMesh>`, :ref:`QuadMesh<class_QuadMesh>`, and :ref:`SphereMesh<class_SphereMesh>`.
 
 Properties
 ----------
 
-+---------------------------------+--------------------------------------------------------------+------------------------------+
-| :ref:`AABB<class_AABB>`         | :ref:`custom_aabb<class_PrimitiveMesh_property_custom_aabb>` | ``AABB( 0, 0, 0, 0, 0, 0 )`` |
-+---------------------------------+--------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`flip_faces<class_PrimitiveMesh_property_flip_faces>`   | ``false``                    |
-+---------------------------------+--------------------------------------------------------------+------------------------------+
-| :ref:`Material<class_Material>` | :ref:`material<class_PrimitiveMesh_property_material>`       |                              |
-+---------------------------------+--------------------------------------------------------------+------------------------------+
++---------------------------------+--------------------------------------------------------------+----------------------------+
+| :ref:`AABB<class_AABB>`         | :ref:`custom_aabb<class_PrimitiveMesh_property_custom_aabb>` | ``AABB(0, 0, 0, 0, 0, 0)`` |
++---------------------------------+--------------------------------------------------------------+----------------------------+
+| :ref:`bool<class_bool>`         | :ref:`flip_faces<class_PrimitiveMesh_property_flip_faces>`   | ``false``                  |
++---------------------------------+--------------------------------------------------------------+----------------------------+
+| :ref:`Material<class_Material>` | :ref:`material<class_PrimitiveMesh_property_material>`       |                            |
++---------------------------------+--------------------------------------------------------------+----------------------------+
 
 Methods
 -------
 
-+---------------------------+--------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>` **(** **)** const |
-+---------------------------+--------------------------------------------------------------------------------------+
++---------------------------+----------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>` **(** **)** |const| |
++---------------------------+----------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -45,15 +45,15 @@ Property Descriptions
 
 - :ref:`AABB<class_AABB>` **custom_aabb**
 
-+-----------+------------------------------+
-| *Default* | ``AABB( 0, 0, 0, 0, 0, 0 )`` |
-+-----------+------------------------------+
-| *Setter*  | set_custom_aabb(value)       |
-+-----------+------------------------------+
-| *Getter*  | get_custom_aabb()            |
-+-----------+------------------------------+
++-----------+----------------------------+
+| *Default* | ``AABB(0, 0, 0, 0, 0, 0)`` |
++-----------+----------------------------+
+| *Setter*  | set_custom_aabb(value)     |
++-----------+----------------------------+
+| *Getter*  | get_custom_aabb()          |
++-----------+----------------------------+
 
-Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frustum culling. Especially useful to avoid unnexpected culling when  using a shader to offset vertices.
+Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frustum culling. Especially useful to avoid unexpected culling when using a shader to offset vertices.
 
 ----
 
@@ -92,7 +92,30 @@ Method Descriptions
 
 .. _class_PrimitiveMesh_method_get_mesh_arrays:
 
-- :ref:`Array<class_Array>` **get_mesh_arrays** **(** **)** const
+- :ref:`Array<class_Array>` **get_mesh_arrays** **(** **)** |const|
 
-Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. Mesh arrays can be used with :ref:`ArrayMesh<class_ArrayMesh>` to create new surfaces.
+Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. The result can be passed to :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>` to create a new surface. For example:
 
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var c = CylinderMesh.new()
+    var arr_mesh = ArrayMesh.new()
+    arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, c.get_mesh_arrays())
+
+ .. code-tab:: csharp
+
+    var c = new CylinderMesh();
+    var arrMesh = new ArrayMesh();
+    arrMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, c.GetMeshArrays());
+
+
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

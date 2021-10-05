@@ -16,74 +16,99 @@ Displays plain text in a line or wrapped inside a rectangle. For formatted text,
 Description
 -----------
 
-Label displays plain text on the screen. It gives you control over the horizontal and vertical alignment, and can wrap the text inside the node's bounding rectangle. It doesn't support bold, italics or other formatting. For that, use :ref:`RichTextLabel<class_RichTextLabel>` instead.
+Label displays plain text on the screen. It gives you control over the horizontal and vertical alignment and can wrap the text inside the node's bounding rectangle. It doesn't support bold, italics, or other formatting. For that, use :ref:`RichTextLabel<class_RichTextLabel>` instead.
 
 **Note:** Contrarily to most other :ref:`Control<class_Control>`\ s, Label's :ref:`Control.mouse_filter<class_Control_property_mouse_filter>` defaults to :ref:`Control.MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` (i.e. it doesn't react to mouse input events). This implies that a label won't display any configured :ref:`Control.hint_tooltip<class_Control_property_hint_tooltip>`, unless you change its mouse filter.
+
+Tutorials
+---------
+
+- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 
 Properties
 ----------
 
-+----------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`Align<enum_Label_Align>`               | :ref:`align<class_Label_property_align>`                           | ``0``        |
-+----------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                      | :ref:`autowrap<class_Label_property_autowrap>`                     | ``false``    |
-+----------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                      | :ref:`clip_text<class_Label_property_clip_text>`                   | ``false``    |
-+----------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                        | :ref:`lines_skipped<class_Label_property_lines_skipped>`           | ``0``        |
-+----------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                        | :ref:`max_lines_visible<class_Label_property_max_lines_visible>`   | ``-1``       |
-+----------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                                       | **O:** ``2`` |
-+----------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`                    | :ref:`percent_visible<class_Label_property_percent_visible>`       | ``1.0``      |
-+----------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                        | size_flags_vertical                                                | **O:** ``4`` |
-+----------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>`                  | :ref:`text<class_Label_property_text>`                             | ``""``       |
-+----------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                      | :ref:`uppercase<class_Label_property_uppercase>`                   | ``false``    |
-+----------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`VAlign<enum_Label_VAlign>`             | :ref:`valign<class_Label_property_valign>`                         | ``0``        |
-+----------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                        | :ref:`visible_characters<class_Label_property_visible_characters>` | ``-1``       |
-+----------------------------------------------+--------------------------------------------------------------------+--------------+
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`Align<enum_Label_Align>`                                 | :ref:`align<class_Label_property_align>`                                                                 | ``0``                     |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`AutowrapMode<enum_Label_AutowrapMode>`                   | :ref:`autowrap_mode<class_Label_property_autowrap_mode>`                                                 | ``0``                     |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`clip_text<class_Label_property_clip_text>`                                                         | ``false``                 |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`String<class_String>`                                    | :ref:`language<class_Label_property_language>`                                                           | ``""``                    |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`int<class_int>`                                          | :ref:`lines_skipped<class_Label_property_lines_skipped>`                                                 | ``0``                     |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`int<class_int>`                                          | :ref:`max_lines_visible<class_Label_property_max_lines_visible>`                                         | ``-1``                    |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>`                   | mouse_filter                                                                                             | ``2`` *(parent override)* |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`float<class_float>`                                      | :ref:`percent_visible<class_Label_property_percent_visible>`                                             | ``1.0``                   |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`int<class_int>`                                          | size_flags_vertical                                                                                      | ``4`` *(parent override)* |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`StructuredTextParser<enum_Control_StructuredTextParser>` | :ref:`structured_text_bidi_override<class_Label_property_structured_text_bidi_override>`                 | ``0``                     |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`Array<class_Array>`                                      | :ref:`structured_text_bidi_override_options<class_Label_property_structured_text_bidi_override_options>` | ``[]``                    |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`String<class_String>`                                    | :ref:`text<class_Label_property_text>`                                                                   | ``""``                    |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`TextDirection<enum_Control_TextDirection>`               | :ref:`text_direction<class_Label_property_text_direction>`                                               | ``0``                     |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`OverrunBehavior<enum_Label_OverrunBehavior>`             | :ref:`text_overrun_behavior<class_Label_property_text_overrun_behavior>`                                 | ``0``                     |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`uppercase<class_Label_property_uppercase>`                                                         | ``false``                 |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`VAlign<enum_Label_VAlign>`                               | :ref:`valign<class_Label_property_valign>`                                                               | ``0``                     |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`int<class_int>`                                          | :ref:`visible_characters<class_Label_property_visible_characters>`                                       | ``-1``                    |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------------+
 
 Methods
 -------
 
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_line_count<class_Label_method_get_line_count>` **(** **)** const                       |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_line_height<class_Label_method_get_line_height>` **(** **)** const                     |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_total_character_count<class_Label_method_get_total_character_count>` **(** **)** const |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_visible_line_count<class_Label_method_get_visible_line_count>` **(** **)** const       |
-+-----------------------+--------------------------------------------------------------------------------------------------+
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                  | :ref:`clear_opentype_features<class_Label_method_clear_opentype_features>` **(** **)**                                                        |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_line_count<class_Label_method_get_line_count>` **(** **)** |const|                                                                  |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_line_height<class_Label_method_get_line_height>` **(** :ref:`int<class_int>` line=-1 **)** |const|                                  |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_opentype_feature<class_Label_method_get_opentype_feature>` **(** :ref:`String<class_String>` tag **)** |const|                      |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_total_character_count<class_Label_method_get_total_character_count>` **(** **)** |const|                                            |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_visible_line_count<class_Label_method_get_visible_line_count>` **(** **)** |const|                                                  |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                  | :ref:`set_opentype_feature<class_Label_method_set_opentype_feature>` **(** :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)** |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
 
-+---------------------------------+-----------------------+---------------------+
-| :ref:`Font<class_Font>`         | font                  |                     |
-+---------------------------------+-----------------------+---------------------+
-| :ref:`Color<class_Color>`       | font_color            | Color( 1, 1, 1, 1 ) |
-+---------------------------------+-----------------------+---------------------+
-| :ref:`Color<class_Color>`       | font_color_shadow     | Color( 0, 0, 0, 0 ) |
-+---------------------------------+-----------------------+---------------------+
-| :ref:`Color<class_Color>`       | font_outline_modulate | Color( 1, 1, 1, 1 ) |
-+---------------------------------+-----------------------+---------------------+
-| :ref:`int<class_int>`           | line_spacing          | 3                   |
-+---------------------------------+-----------------------+---------------------+
-| :ref:`StyleBox<class_StyleBox>` | normal                |                     |
-+---------------------------------+-----------------------+---------------------+
-| :ref:`int<class_int>`           | shadow_as_outline     | 0                   |
-+---------------------------------+-----------------------+---------------------+
-| :ref:`int<class_int>`           | shadow_offset_x       | 1                   |
-+---------------------------------+-----------------------+---------------------+
-| :ref:`int<class_int>`           | shadow_offset_y       | 1                   |
-+---------------------------------+-----------------------+---------------------+
++---------------------------------+----------------------------------------------------------------------------+-----------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_Label_theme_font_font>`                                   |                       |
++---------------------------------+----------------------------------------------------------------------------+-----------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color<class_Label_theme_color_font_color>`                      | ``Color(1, 1, 1, 1)`` |
++---------------------------------+----------------------------------------------------------------------------+-----------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_Label_theme_color_font_outline_color>`      | ``Color(1, 1, 1, 1)`` |
++---------------------------------+----------------------------------------------------------------------------+-----------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_shadow_color<class_Label_theme_color_font_shadow_color>`        | ``Color(0, 0, 0, 0)`` |
++---------------------------------+----------------------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`           | :ref:`font_size<class_Label_theme_font_size_font_size>`                    |                       |
++---------------------------------+----------------------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`           | :ref:`line_spacing<class_Label_theme_constant_line_spacing>`               | ``3``                 |
++---------------------------------+----------------------------------------------------------------------------+-----------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_Label_theme_style_normal>`                              |                       |
++---------------------------------+----------------------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`           | :ref:`outline_size<class_Label_theme_constant_outline_size>`               | ``0``                 |
++---------------------------------+----------------------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`           | :ref:`shadow_offset_x<class_Label_theme_constant_shadow_offset_x>`         | ``1``                 |
++---------------------------------+----------------------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`           | :ref:`shadow_offset_y<class_Label_theme_constant_shadow_offset_y>`         | ``1``                 |
++---------------------------------+----------------------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`           | :ref:`shadow_outline_size<class_Label_theme_constant_shadow_outline_size>` | ``1``                 |
++---------------------------------+----------------------------------------------------------------------------+-----------------------+
 
 Enumerations
 ------------
@@ -106,7 +131,7 @@ enum **Align**:
 
 - **ALIGN_RIGHT** = **2** --- Align rows to the right.
 
-- **ALIGN_FILL** = **3** --- Expand row whitespaces to fit the width.
+- **ALIGN_FILL** = **3** --- Expand row to fit the width.
 
 ----
 
@@ -130,6 +155,54 @@ enum **VAlign**:
 
 - **VALIGN_FILL** = **3** --- Align the whole text by spreading the rows.
 
+----
+
+.. _enum_Label_AutowrapMode:
+
+.. _class_Label_constant_AUTOWRAP_OFF:
+
+.. _class_Label_constant_AUTOWRAP_ARBITRARY:
+
+.. _class_Label_constant_AUTOWRAP_WORD:
+
+.. _class_Label_constant_AUTOWRAP_WORD_SMART:
+
+enum **AutowrapMode**:
+
+- **AUTOWRAP_OFF** = **0** --- Autowrap is disabled.
+
+- **AUTOWRAP_ARBITRARY** = **1** --- Wraps the text inside the node's bounding rectangle by allowing to break lines at arbitrary positions, which is useful when very limited space is available.
+
+- **AUTOWRAP_WORD** = **2** --- Wraps the text inside the node's bounding rectangle by soft-breaking between words.
+
+- **AUTOWRAP_WORD_SMART** = **3** --- Behaves similarly to :ref:`AUTOWRAP_WORD<class_Label_constant_AUTOWRAP_WORD>`, but force-breaks a word if that single word does not fit in one line.
+
+----
+
+.. _enum_Label_OverrunBehavior:
+
+.. _class_Label_constant_OVERRUN_NO_TRIMMING:
+
+.. _class_Label_constant_OVERRUN_TRIM_CHAR:
+
+.. _class_Label_constant_OVERRUN_TRIM_WORD:
+
+.. _class_Label_constant_OVERRUN_TRIM_ELLIPSIS:
+
+.. _class_Label_constant_OVERRUN_TRIM_WORD_ELLIPSIS:
+
+enum **OverrunBehavior**:
+
+- **OVERRUN_NO_TRIMMING** = **0** --- No text trimming is performed.
+
+- **OVERRUN_TRIM_CHAR** = **1** --- Trims the text per character.
+
+- **OVERRUN_TRIM_WORD** = **2** --- Trims the text per word.
+
+- **OVERRUN_TRIM_ELLIPSIS** = **3** --- Trims the text per character and adds an ellipsis to indicate that parts are hidden.
+
+- **OVERRUN_TRIM_WORD_ELLIPSIS** = **4** --- Trims the text per word and adds an ellipsis to indicate that parts are hidden.
+
 Property Descriptions
 ---------------------
 
@@ -149,19 +222,19 @@ Controls the text's horizontal align. Supports left, center, right, and fill, or
 
 ----
 
-.. _class_Label_property_autowrap:
+.. _class_Label_property_autowrap_mode:
 
-- :ref:`bool<class_bool>` **autowrap**
+- :ref:`AutowrapMode<enum_Label_AutowrapMode>` **autowrap_mode**
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_autowrap(value) |
-+-----------+---------------------+
-| *Getter*  | has_autowrap()      |
-+-----------+---------------------+
++-----------+--------------------------+
+| *Default* | ``0``                    |
++-----------+--------------------------+
+| *Setter*  | set_autowrap_mode(value) |
++-----------+--------------------------+
+| *Getter*  | get_autowrap_mode()      |
++-----------+--------------------------+
 
-If ``true``, wraps the text inside the node's bounding rectangle. If you resize the node, it will change its height automatically to show all the text.
+If set to something other than :ref:`AUTOWRAP_OFF<class_Label_constant_AUTOWRAP_OFF>`, the text gets wrapped inside the node's bounding rectangle. If you resize the node, it will change its height automatically to show all the text. To see how each mode behaves, see :ref:`AutowrapMode<enum_Label_AutowrapMode>`.
 
 ----
 
@@ -177,7 +250,23 @@ If ``true``, wraps the text inside the node's bounding rectangle. If you resize 
 | *Getter*  | is_clipping_text()   |
 +-----------+----------------------+
 
-If ``true``, the Label only shows the text that fits inside its bounding rectangle. It also lets you scale the node down freely.
+If ``true``, the Label only shows the text that fits inside its bounding rectangle and will clip text horizontally.
+
+----
+
+.. _class_Label_property_language:
+
+- :ref:`String<class_String>` **language**
+
++-----------+---------------------+
+| *Default* | ``""``              |
++-----------+---------------------+
+| *Setter*  | set_language(value) |
++-----------+---------------------+
+| *Getter*  | get_language()      |
++-----------+---------------------+
+
+Language code used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
 
 ----
 
@@ -225,7 +314,39 @@ Limits the lines of text the node shows on screen.
 | *Getter*  | get_percent_visible()      |
 +-----------+----------------------------+
 
-Limits the count of visible characters. If you set ``percent_visible`` to 50, only up to half of the text's characters will display on screen. Useful to animate the text in a dialog box.
+Limits the amount of visible characters. If you set ``percent_visible`` to 0.5, only up to half of the text's characters will display on screen. Useful to animate the text in a dialog box.
+
+----
+
+.. _class_Label_property_structured_text_bidi_override:
+
+- :ref:`StructuredTextParser<enum_Control_StructuredTextParser>` **structured_text_bidi_override**
+
++-----------+------------------------------------------+
+| *Default* | ``0``                                    |
++-----------+------------------------------------------+
+| *Setter*  | set_structured_text_bidi_override(value) |
++-----------+------------------------------------------+
+| *Getter*  | get_structured_text_bidi_override()      |
++-----------+------------------------------------------+
+
+Set BiDi algorithm override for the structured text.
+
+----
+
+.. _class_Label_property_structured_text_bidi_override_options:
+
+- :ref:`Array<class_Array>` **structured_text_bidi_override_options**
+
++-----------+--------------------------------------------------+
+| *Default* | ``[]``                                           |
++-----------+--------------------------------------------------+
+| *Setter*  | set_structured_text_bidi_override_options(value) |
++-----------+--------------------------------------------------+
+| *Getter*  | get_structured_text_bidi_override_options()      |
++-----------+--------------------------------------------------+
+
+Set additional options for BiDi override.
 
 ----
 
@@ -242,6 +363,38 @@ Limits the count of visible characters. If you set ``percent_visible`` to 50, on
 +-----------+-----------------+
 
 The text to display on screen.
+
+----
+
+.. _class_Label_property_text_direction:
+
+- :ref:`TextDirection<enum_Control_TextDirection>` **text_direction**
+
++-----------+---------------------------+
+| *Default* | ``0``                     |
++-----------+---------------------------+
+| *Setter*  | set_text_direction(value) |
++-----------+---------------------------+
+| *Getter*  | get_text_direction()      |
++-----------+---------------------------+
+
+Base text writing direction.
+
+----
+
+.. _class_Label_property_text_overrun_behavior:
+
+- :ref:`OverrunBehavior<enum_Label_OverrunBehavior>` **text_overrun_behavior**
+
++-----------+----------------------------------+
+| *Default* | ``0``                            |
++-----------+----------------------------------+
+| *Setter*  | set_text_overrun_behavior(value) |
++-----------+----------------------------------+
+| *Getter*  | get_text_overrun_behavior()      |
++-----------+----------------------------------+
+
+Sets the clipping behavior when the text exceeds the node's bounding rectangle. See :ref:`OverrunBehavior<enum_Label_OverrunBehavior>` for a description of all modes.
 
 ----
 
@@ -294,9 +447,17 @@ Restricts the number of characters to display. Set to -1 to disable.
 Method Descriptions
 -------------------
 
+.. _class_Label_method_clear_opentype_features:
+
+- void **clear_opentype_features** **(** **)**
+
+Removes all OpenType features.
+
+----
+
 .. _class_Label_method_get_line_count:
 
-- :ref:`int<class_int>` **get_line_count** **(** **)** const
+- :ref:`int<class_int>` **get_line_count** **(** **)** |const|
 
 Returns the amount of lines of text the Label has.
 
@@ -304,15 +465,27 @@ Returns the amount of lines of text the Label has.
 
 .. _class_Label_method_get_line_height:
 
-- :ref:`int<class_int>` **get_line_height** **(** **)** const
+- :ref:`int<class_int>` **get_line_height** **(** :ref:`int<class_int>` line=-1 **)** |const|
 
-Returns the font size in pixels.
+Returns the height of the line ``line``.
+
+If ``line`` is set to ``-1``, returns the biggest line height.
+
+If there're no lines returns font size in pixels.
+
+----
+
+.. _class_Label_method_get_opentype_feature:
+
+- :ref:`int<class_int>` **get_opentype_feature** **(** :ref:`String<class_String>` tag **)** |const|
+
+Returns OpenType feature ``tag``.
 
 ----
 
 .. _class_Label_method_get_total_character_count:
 
-- :ref:`int<class_int>` **get_total_character_count** **(** **)** const
+- :ref:`int<class_int>` **get_total_character_count** **(** **)** |const|
 
 Returns the total number of printable characters in the text (excluding spaces and newlines).
 
@@ -320,7 +493,142 @@ Returns the total number of printable characters in the text (excluding spaces a
 
 .. _class_Label_method_get_visible_line_count:
 
-- :ref:`int<class_int>` **get_visible_line_count** **(** **)** const
+- :ref:`int<class_int>` **get_visible_line_count** **(** **)** |const|
 
 Returns the number of lines shown. Useful if the ``Label``'s height cannot currently display all lines.
 
+----
+
+.. _class_Label_method_set_opentype_feature:
+
+- void **set_opentype_feature** **(** :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)**
+
+Returns OpenType feature ``tag``. More info: `OpenType feature tags <https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags>`__.
+
+Theme Property Descriptions
+---------------------------
+
+.. _class_Label_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+:ref:`Font<class_Font>` used for the ``Label``'s text.
+
+----
+
+.. _class_Label_theme_color_font_color:
+
+- :ref:`Color<class_Color>` **font_color**
+
++-----------+-----------------------+
+| *Default* | ``Color(1, 1, 1, 1)`` |
++-----------+-----------------------+
+
+Default text :ref:`Color<class_Color>` of the ``Label``.
+
+----
+
+.. _class_Label_theme_color_font_outline_color:
+
+- :ref:`Color<class_Color>` **font_outline_color**
+
++-----------+-----------------------+
+| *Default* | ``Color(1, 1, 1, 1)`` |
++-----------+-----------------------+
+
+The tint of :ref:`Font<class_Font>`'s outline.
+
+----
+
+.. _class_Label_theme_color_font_shadow_color:
+
+- :ref:`Color<class_Color>` **font_shadow_color**
+
++-----------+-----------------------+
+| *Default* | ``Color(0, 0, 0, 0)`` |
++-----------+-----------------------+
+
+:ref:`Color<class_Color>` of the text's shadow effect.
+
+----
+
+.. _class_Label_theme_font_size_font_size:
+
+- :ref:`int<class_int>` **font_size**
+
+Font size of the ``Label``'s text.
+
+----
+
+.. _class_Label_theme_constant_line_spacing:
+
+- :ref:`int<class_int>` **line_spacing**
+
++-----------+-------+
+| *Default* | ``3`` |
++-----------+-------+
+
+Vertical space between lines in multiline ``Label``.
+
+----
+
+.. _class_Label_theme_style_normal:
+
+- :ref:`StyleBox<class_StyleBox>` **normal**
+
+Background :ref:`StyleBox<class_StyleBox>` for the ``Label``.
+
+----
+
+.. _class_Label_theme_constant_outline_size:
+
+- :ref:`int<class_int>` **outline_size**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+Text outline size.
+
+----
+
+.. _class_Label_theme_constant_shadow_offset_x:
+
+- :ref:`int<class_int>` **shadow_offset_x**
+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+The horizontal offset of the text's shadow.
+
+----
+
+.. _class_Label_theme_constant_shadow_offset_y:
+
+- :ref:`int<class_int>` **shadow_offset_y**
+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+The vertical offset of the text's shadow.
+
+----
+
+.. _class_Label_theme_constant_shadow_outline_size:
+
+- :ref:`int<class_int>` **shadow_outline_size**
+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+Shadow outline size. If set to 1 or greater, the shadow will be displayed around the whole text as an outline.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -9,7 +9,7 @@
 PhysicalSkyMaterial
 ===================
 
-**Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 :ref:`Sky<class_Sky>` :ref:`Material<class_Material>` used for a physically based sky.
 
@@ -18,34 +18,36 @@ Description
 
 The ``PhysicalSkyMaterial`` uses the Preetham analytic daylight model to draw a sky based on physical properties. This results in a substantially more realistic sky than the :ref:`ProceduralSkyMaterial<class_ProceduralSkyMaterial>`, but it is slightly slower and less flexible.
 
-The ``PhysicalSkyMaterial`` only supports one sun. The color, energy, and direction of the sun are taken from the first :ref:`DirectionalLight<class_DirectionalLight>` in the scene tree.
+The ``PhysicalSkyMaterial`` only supports one sun. The color, energy, and direction of the sun are taken from the first :ref:`DirectionalLight3D<class_DirectionalLight3D>` in the scene tree.
 
 As it is based on a daylight model, the sky fades to black as the sunset ends. If you want a full day/night cycle, you will have to add a night sky by converting this to a :ref:`ShaderMaterial<class_ShaderMaterial>` and adding a night sky directly into the resulting shader.
 
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`float<class_float>` | :ref:`dither_strength<class_PhysicalSkyMaterial_property_dither_strength>`           | ``1.0``                          |
-+---------------------------+--------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`float<class_float>` | :ref:`exposure<class_PhysicalSkyMaterial_property_exposure>`                         | ``0.1``                          |
-+---------------------------+--------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Color<class_Color>` | :ref:`ground_color<class_PhysicalSkyMaterial_property_ground_color>`                 | ``Color( 1, 1, 1, 1 )``          |
-+---------------------------+--------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`float<class_float>` | :ref:`mie_coefficient<class_PhysicalSkyMaterial_property_mie_coefficient>`           | ``0.005``                        |
-+---------------------------+--------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Color<class_Color>` | :ref:`mie_color<class_PhysicalSkyMaterial_property_mie_color>`                       | ``Color( 0.36, 0.56, 0.82, 1 )`` |
-+---------------------------+--------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`float<class_float>` | :ref:`mie_eccentricity<class_PhysicalSkyMaterial_property_mie_eccentricity>`         | ``0.8``                          |
-+---------------------------+--------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`float<class_float>` | :ref:`rayleigh_coefficient<class_PhysicalSkyMaterial_property_rayleigh_coefficient>` | ``2.0``                          |
-+---------------------------+--------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Color<class_Color>` | :ref:`rayleigh_color<class_PhysicalSkyMaterial_property_rayleigh_color>`             | ``Color( 0.056, 0.14, 0.3, 1 )`` |
-+---------------------------+--------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`float<class_float>` | :ref:`sun_disk_scale<class_PhysicalSkyMaterial_property_sun_disk_scale>`             | ``1.0``                          |
-+---------------------------+--------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`float<class_float>` | :ref:`turbidity<class_PhysicalSkyMaterial_property_turbidity>`                       | ``10.0``                         |
-+---------------------------+--------------------------------------------------------------------------------------+----------------------------------+
++-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
+| :ref:`float<class_float>`         | :ref:`dither_strength<class_PhysicalSkyMaterial_property_dither_strength>`           | ``1.0``                        |
++-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
+| :ref:`float<class_float>`         | :ref:`exposure<class_PhysicalSkyMaterial_property_exposure>`                         | ``0.1``                        |
++-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`ground_color<class_PhysicalSkyMaterial_property_ground_color>`                 | ``Color(1, 1, 1, 1)``          |
++-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
+| :ref:`float<class_float>`         | :ref:`mie_coefficient<class_PhysicalSkyMaterial_property_mie_coefficient>`           | ``0.005``                      |
++-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`mie_color<class_PhysicalSkyMaterial_property_mie_color>`                       | ``Color(0.36, 0.56, 0.82, 1)`` |
++-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
+| :ref:`float<class_float>`         | :ref:`mie_eccentricity<class_PhysicalSkyMaterial_property_mie_eccentricity>`         | ``0.8``                        |
++-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`night_sky<class_PhysicalSkyMaterial_property_night_sky>`                       |                                |
++-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
+| :ref:`float<class_float>`         | :ref:`rayleigh_coefficient<class_PhysicalSkyMaterial_property_rayleigh_coefficient>` | ``2.0``                        |
++-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`rayleigh_color<class_PhysicalSkyMaterial_property_rayleigh_color>`             | ``Color(0.056, 0.14, 0.3, 1)`` |
++-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
+| :ref:`float<class_float>`         | :ref:`sun_disk_scale<class_PhysicalSkyMaterial_property_sun_disk_scale>`             | ``1.0``                        |
++-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
+| :ref:`float<class_float>`         | :ref:`turbidity<class_PhysicalSkyMaterial_property_turbidity>`                       | ``10.0``                       |
++-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
 
 Property Descriptions
 ---------------------
@@ -87,7 +89,7 @@ Sets the exposure of the sky. Higher exposure values make the entire sky brighte
 - :ref:`Color<class_Color>` **ground_color**
 
 +-----------+-------------------------+
-| *Default* | ``Color( 1, 1, 1, 1 )`` |
+| *Default* | ``Color(1, 1, 1, 1)``   |
 +-----------+-------------------------+
 | *Setter*  | set_ground_color(value) |
 +-----------+-------------------------+
@@ -110,7 +112,7 @@ Modulates the :ref:`Color<class_Color>` on the bottom half of the sky to represe
 | *Getter*  | get_mie_coefficient()      |
 +-----------+----------------------------+
 
-Controls the strength of mie scattering for the sky. Mie scattering results from light colliding with larger particles (like water). On earth, mie scattering results in a whiteish color around the sun and horizon.
+Controls the strength of mie scattering for the sky. Mie scattering results from light colliding with larger particles (like water). On earth, mie scattering results in a whitish color around the sun and horizon.
 
 ----
 
@@ -118,13 +120,13 @@ Controls the strength of mie scattering for the sky. Mie scattering results from
 
 - :ref:`Color<class_Color>` **mie_color**
 
-+-----------+----------------------------------+
-| *Default* | ``Color( 0.36, 0.56, 0.82, 1 )`` |
-+-----------+----------------------------------+
-| *Setter*  | set_mie_color(value)             |
-+-----------+----------------------------------+
-| *Getter*  | get_mie_color()                  |
-+-----------+----------------------------------+
++-----------+--------------------------------+
+| *Default* | ``Color(0.36, 0.56, 0.82, 1)`` |
++-----------+--------------------------------+
+| *Setter*  | set_mie_color(value)           |
++-----------+--------------------------------+
+| *Getter*  | get_mie_color()                |
++-----------+--------------------------------+
 
 Controls the :ref:`Color<class_Color>` of the mie scattering effect. While not physically accurate, this allows for the creation of alien looking planets.
 
@@ -142,7 +144,21 @@ Controls the :ref:`Color<class_Color>` of the mie scattering effect. While not p
 | *Getter*  | get_mie_eccentricity()      |
 +-----------+-----------------------------+
 
-Controls the direction of the mie scattering. A value of ``1`` means that when light hits a particle it passing through straight forward. A value of ``-1`` means that all light is scatter backwards.
+Controls the direction of the mie scattering. A value of ``1`` means that when light hits a particle it's passing through straight forward. A value of ``-1`` means that all light is scatter backwards.
+
+----
+
+.. _class_PhysicalSkyMaterial_property_night_sky:
+
+- :ref:`Texture2D<class_Texture2D>` **night_sky**
+
++----------+----------------------+
+| *Setter* | set_night_sky(value) |
++----------+----------------------+
+| *Getter* | get_night_sky()      |
++----------+----------------------+
+
+:ref:`Texture2D<class_Texture2D>` for the night sky. This is added to the sky, so if it is bright enough, it may be visible during the day.
 
 ----
 
@@ -158,7 +174,7 @@ Controls the direction of the mie scattering. A value of ``1`` means that when l
 | *Getter*  | get_rayleigh_coefficient()      |
 +-----------+---------------------------------+
 
-Controls the strength of the rayleigh scattering. Rayleigh scattering results from light colliding with small particles. It is responsible for the blue color of the sky.
+Controls the strength of the Rayleigh scattering. Rayleigh scattering results from light colliding with small particles. It is responsible for the blue color of the sky.
 
 ----
 
@@ -166,15 +182,15 @@ Controls the strength of the rayleigh scattering. Rayleigh scattering results fr
 
 - :ref:`Color<class_Color>` **rayleigh_color**
 
-+-----------+----------------------------------+
-| *Default* | ``Color( 0.056, 0.14, 0.3, 1 )`` |
-+-----------+----------------------------------+
-| *Setter*  | set_rayleigh_color(value)        |
-+-----------+----------------------------------+
-| *Getter*  | get_rayleigh_color()             |
-+-----------+----------------------------------+
++-----------+--------------------------------+
+| *Default* | ``Color(0.056, 0.14, 0.3, 1)`` |
++-----------+--------------------------------+
+| *Setter*  | set_rayleigh_color(value)      |
++-----------+--------------------------------+
+| *Getter*  | get_rayleigh_color()           |
++-----------+--------------------------------+
 
-Controls the :ref:`Color<class_Color>` of the rayleigh scattering. While not physically accurate, this allows for the creation of alien looking planets. For example, setting this to a red :ref:`Color<class_Color>` results in a mars looking atmosphere with a corresponding blue sunset.
+Controls the :ref:`Color<class_Color>` of the Rayleigh scattering. While not physically accurate, this allows for the creation of alien looking planets. For example, setting this to a red :ref:`Color<class_Color>` results in a Mars looking atmosphere with a corresponding blue sunset.
 
 ----
 
@@ -208,3 +224,9 @@ Sets the size of the sun disk. Default value is based on Sol's perceived size fr
 
 Sets the thickness of the atmosphere. High turbidity creates a foggy looking atmosphere, while a low turbidity results in a clearer atmosphere.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

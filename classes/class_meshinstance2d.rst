@@ -16,7 +16,7 @@ Node used for displaying a :ref:`Mesh<class_Mesh>` in 2D.
 Description
 -----------
 
-Node used for displaying a :ref:`Mesh<class_Mesh>` in 2D. Can be constructed from an existing :ref:`Sprite<class_Sprite>` via a tool in the editor toolbar. Select "Sprite" then "Convert to Mesh2D", select settings in popup and press "Create Mesh2D".
+Node used for displaying a :ref:`Mesh<class_Mesh>` in 2D. Can be constructed from an existing :ref:`Sprite2D<class_Sprite2D>` via a tool in the editor toolbar. Select "Sprite2D" then "Convert to Mesh2D", select settings in popup and press "Create Mesh2D".
 
 Tutorials
 ---------
@@ -72,6 +72,8 @@ The :ref:`Mesh<class_Mesh>` that will be drawn by the ``MeshInstance2D``.
 
 The normal map that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`.
 
+**Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
+
 ----
 
 .. _class_MeshInstance2D_property_texture:
@@ -86,3 +88,9 @@ The normal map that will be used if using the default :ref:`CanvasItemMaterial<c
 
 The :ref:`Texture2D<class_Texture2D>` that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`. Can be accessed as ``TEXTURE`` in CanvasItem shader.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

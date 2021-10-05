@@ -20,6 +20,8 @@ The ``CameraServer`` keeps track of different cameras accessible in Godot. These
 
 It is notably used to provide AR modules with a video feed from the camera.
 
+**Note:** This class is currently only implemented on macOS and iOS. On other platforms, no :ref:`CameraFeed<class_CameraFeed>`\ s will be available.
+
 Methods
 -------
 
@@ -42,7 +44,7 @@ Signals
 
 - **camera_feed_added** **(** :ref:`int<class_int>` id **)**
 
-Emitted when a :ref:`CameraFeed<class_CameraFeed>` is added (e.g. webcam is plugged in).
+Emitted when a :ref:`CameraFeed<class_CameraFeed>` is added (e.g. a webcam is plugged in).
 
 ----
 
@@ -50,7 +52,7 @@ Emitted when a :ref:`CameraFeed<class_CameraFeed>` is added (e.g. webcam is plug
 
 - **camera_feed_removed** **(** :ref:`int<class_int>` id **)**
 
-Emitted when a :ref:`CameraFeed<class_CameraFeed>` is removed (e.g. webcam is unplugged).
+Emitted when a :ref:`CameraFeed<class_CameraFeed>` is removed (e.g. a webcam is unplugged).
 
 Enumerations
 ------------
@@ -69,7 +71,7 @@ enum **FeedImage**:
 
 - **FEED_RGBA_IMAGE** = **0** --- The RGBA camera image.
 
-- **FEED_YCBCR_IMAGE** = **0** --- The YCbCr camera image.
+- **FEED_YCBCR_IMAGE** = **0** --- The `YCbCr <https://en.wikipedia.org/wiki/YCbCr>`__ camera image.
 
 - **FEED_Y_IMAGE** = **0** --- The Y component camera image.
 
@@ -82,7 +84,7 @@ Method Descriptions
 
 - void **add_feed** **(** :ref:`CameraFeed<class_CameraFeed>` feed **)**
 
-Adds a camera feed to the camera server.
+Adds the camera ``feed`` to the camera server.
 
 ----
 
@@ -98,7 +100,7 @@ Returns an array of :ref:`CameraFeed<class_CameraFeed>`\ s.
 
 - :ref:`CameraFeed<class_CameraFeed>` **get_feed** **(** :ref:`int<class_int>` index **)**
 
-Returns the :ref:`CameraFeed<class_CameraFeed>` with this id.
+Returns the :ref:`CameraFeed<class_CameraFeed>` corresponding to the camera with the given ``index``.
 
 ----
 
@@ -114,5 +116,11 @@ Returns the number of :ref:`CameraFeed<class_CameraFeed>`\ s registered.
 
 - void **remove_feed** **(** :ref:`CameraFeed<class_CameraFeed>` feed **)**
 
-Removes a :ref:`CameraFeed<class_CameraFeed>`.
+Removes the specified camera ``feed``.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

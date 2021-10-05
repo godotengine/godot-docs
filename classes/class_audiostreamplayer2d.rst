@@ -11,12 +11,16 @@ AudioStreamPlayer2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Plays audio in 2D.
+Plays positional sound in 2D space.
 
 Description
 -----------
 
 Plays audio that dampens with distance from screen center.
+
+See also :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` to play a sound non-positionally.
+
+**Note:** Hiding an ``AudioStreamPlayer2D`` node does not disable its audio output. To temporarily disable an ``AudioStreamPlayer2D``'s audio output, set :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>` to a very low value like ``-100`` (which isn't audible to human hearing).
 
 Tutorials
 ---------
@@ -33,9 +37,11 @@ Properties
 +---------------------------------------+------------------------------------------------------------------------+---------------+
 | :ref:`bool<class_bool>`               | :ref:`autoplay<class_AudioStreamPlayer2D_property_autoplay>`           | ``false``     |
 +---------------------------------------+------------------------------------------------------------------------+---------------+
-| :ref:`StringName<class_StringName>`   | :ref:`bus<class_AudioStreamPlayer2D_property_bus>`                     | ``@"Master"`` |
+| :ref:`StringName<class_StringName>`   | :ref:`bus<class_AudioStreamPlayer2D_property_bus>`                     | ``&"Master"`` |
 +---------------------------------------+------------------------------------------------------------------------+---------------+
 | :ref:`float<class_float>`             | :ref:`max_distance<class_AudioStreamPlayer2D_property_max_distance>`   | ``2000.0``    |
++---------------------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`int<class_int>`                 | :ref:`max_polyphony<class_AudioStreamPlayer2D_property_max_polyphony>` | ``1``         |
 +---------------------------------------+------------------------------------------------------------------------+---------------+
 | :ref:`float<class_float>`             | :ref:`pitch_scale<class_AudioStreamPlayer2D_property_pitch_scale>`     | ``1.0``       |
 +---------------------------------------+------------------------------------------------------------------------+---------------+
@@ -128,7 +134,7 @@ If ``true``, audio plays when added to scene tree.
 - :ref:`StringName<class_StringName>` **bus**
 
 +-----------+----------------+
-| *Default* | ``@"Master"``  |
+| *Default* | ``&"Master"``  |
 +-----------+----------------+
 | *Setter*  | set_bus(value) |
 +-----------+----------------+
@@ -155,6 +161,22 @@ Maximum distance from which audio is still hearable.
 
 ----
 
+.. _class_AudioStreamPlayer2D_property_max_polyphony:
+
+- :ref:`int<class_int>` **max_polyphony**
+
++-----------+--------------------------+
+| *Default* | ``1``                    |
++-----------+--------------------------+
+| *Setter*  | set_max_polyphony(value) |
++-----------+--------------------------+
+| *Getter*  | get_max_polyphony()      |
++-----------+--------------------------+
+
+The maximum number of sounds this node can play at the same time. Playing additional sounds after this value is reached will cut off the oldest sounds.
+
+----
+
 .. _class_AudioStreamPlayer2D_property_pitch_scale:
 
 - :ref:`float<class_float>` **pitch_scale**
@@ -167,7 +189,7 @@ Maximum distance from which audio is still hearable.
 | *Getter*  | get_pitch_scale()      |
 +-----------+------------------------+
 
-Changes the pitch and the tempo of the audio.
+The pitch and the tempo of the audio, as a multiplier of the audio sample's sample rate.
 
 ----
 
@@ -270,3 +292,9 @@ Sets the position from which audio will be played, in seconds.
 
 Stops the audio.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -9,7 +9,7 @@
 WebSocketPeer
 =============
 
-**Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A class representing a specific WebSocket connection.
 
@@ -26,19 +26,21 @@ Methods
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`close<class_WebSocketPeer_method_close>` **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)** |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                    | :ref:`get_connected_host<class_WebSocketPeer_method_get_connected_host>` **(** **)** const                                        |
+| :ref:`String<class_String>`                    | :ref:`get_connected_host<class_WebSocketPeer_method_get_connected_host>` **(** **)** |const|                                      |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_connected_port<class_WebSocketPeer_method_get_connected_port>` **(** **)** const                                        |
+| :ref:`int<class_int>`                          | :ref:`get_connected_port<class_WebSocketPeer_method_get_connected_port>` **(** **)** |const|                                      |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` | :ref:`get_write_mode<class_WebSocketPeer_method_get_write_mode>` **(** **)** const                                                |
+| :ref:`int<class_int>`                          | :ref:`get_current_outbound_buffered_amount<class_WebSocketPeer_method_get_current_outbound_buffered_amount>` **(** **)** |const|  |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`is_connected_to_host<class_WebSocketPeer_method_is_connected_to_host>` **(** **)** const                                    |
+| :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` | :ref:`get_write_mode<class_WebSocketPeer_method_get_write_mode>` **(** **)** |const|                                              |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`is_connected_to_host<class_WebSocketPeer_method_is_connected_to_host>` **(** **)** |const|                                  |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_no_delay<class_WebSocketPeer_method_set_no_delay>` **(** :ref:`bool<class_bool>` enabled **)**                          |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_write_mode<class_WebSocketPeer_method_set_write_mode>` **(** :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` mode **)**  |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`was_string_packet<class_WebSocketPeer_method_was_string_packet>` **(** **)** const                                          |
+| :ref:`bool<class_bool>`                        | :ref:`was_string_packet<class_WebSocketPeer_method_was_string_packet>` **(** **)** |const|                                        |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
@@ -73,7 +75,7 @@ Closes this WebSocket connection. ``code`` is the status code for the closure (s
 
 .. _class_WebSocketPeer_method_get_connected_host:
 
-- :ref:`String<class_String>` **get_connected_host** **(** **)** const
+- :ref:`String<class_String>` **get_connected_host** **(** **)** |const|
 
 Returns the IP address of the connected peer.
 
@@ -83,7 +85,7 @@ Returns the IP address of the connected peer.
 
 .. _class_WebSocketPeer_method_get_connected_port:
 
-- :ref:`int<class_int>` **get_connected_port** **(** **)** const
+- :ref:`int<class_int>` **get_connected_port** **(** **)** |const|
 
 Returns the remote port of the connected peer.
 
@@ -91,9 +93,17 @@ Returns the remote port of the connected peer.
 
 ----
 
+.. _class_WebSocketPeer_method_get_current_outbound_buffered_amount:
+
+- :ref:`int<class_int>` **get_current_outbound_buffered_amount** **(** **)** |const|
+
+Returns the current amount of data in the outbound websocket buffer. **Note:** HTML5 exports use WebSocket.bufferedAmount, while other platforms use an internal buffer.
+
+----
+
 .. _class_WebSocketPeer_method_get_write_mode:
 
-- :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` **get_write_mode** **(** **)** const
+- :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` **get_write_mode** **(** **)** |const|
 
 Gets the current selected write mode. See :ref:`WriteMode<enum_WebSocketPeer_WriteMode>`.
 
@@ -101,7 +111,7 @@ Gets the current selected write mode. See :ref:`WriteMode<enum_WebSocketPeer_Wri
 
 .. _class_WebSocketPeer_method_is_connected_to_host:
 
-- :ref:`bool<class_bool>` **is_connected_to_host** **(** **)** const
+- :ref:`bool<class_bool>` **is_connected_to_host** **(** **)** |const|
 
 Returns ``true`` if this peer is currently connected.
 
@@ -127,7 +137,13 @@ Sets the socket to use the given :ref:`WriteMode<enum_WebSocketPeer_WriteMode>`.
 
 .. _class_WebSocketPeer_method_was_string_packet:
 
-- :ref:`bool<class_bool>` **was_string_packet** **(** **)** const
+- :ref:`bool<class_bool>` **was_string_packet** **(** **)** |const|
 
 Returns ``true`` if the last received packet was sent as a text payload. See :ref:`WriteMode<enum_WebSocketPeer_WriteMode>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

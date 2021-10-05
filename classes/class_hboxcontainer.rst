@@ -11,6 +11,8 @@ HBoxContainer
 
 **Inherits:** :ref:`BoxContainer<class_BoxContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`EditorResourcePicker<class_EditorResourcePicker>`
+
 Horizontal box container.
 
 Description
@@ -21,7 +23,26 @@ Horizontal box container. See :ref:`BoxContainer<class_BoxContainer>`.
 Theme Properties
 ----------------
 
-+-----------------------+------------+---+
-| :ref:`int<class_int>` | separation | 4 |
-+-----------------------+------------+---+
++-----------------------+------------------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`separation<class_HBoxContainer_theme_constant_separation>` | ``4`` |
++-----------------------+------------------------------------------------------------------+-------+
 
+Theme Property Descriptions
+---------------------------
+
+.. _class_HBoxContainer_theme_constant_separation:
+
+- :ref:`int<class_int>` **separation**
+
++-----------+-------+
+| *Default* | ``4`` |
++-----------+-------+
+
+The horizontal space between the ``HBoxContainer``'s elements.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

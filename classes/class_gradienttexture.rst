@@ -9,7 +9,7 @@
 GradientTexture
 ===============
 
-**Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Gradient-filled texture.
 
@@ -21,11 +21,13 @@ GradientTexture uses a :ref:`Gradient<class_Gradient>` to fill the texture data.
 Properties
 ----------
 
-+---------------------------------+----------------------------------------------------------+----------+
-| :ref:`Gradient<class_Gradient>` | :ref:`gradient<class_GradientTexture_property_gradient>` |          |
-+---------------------------------+----------------------------------------------------------+----------+
-| :ref:`int<class_int>`           | :ref:`width<class_GradientTexture_property_width>`       | ``2048`` |
-+---------------------------------+----------------------------------------------------------+----------+
++---------------------------------+----------------------------------------------------------+-----------+
+| :ref:`Gradient<class_Gradient>` | :ref:`gradient<class_GradientTexture_property_gradient>` |           |
++---------------------------------+----------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`         | :ref:`use_hdr<class_GradientTexture_property_use_hdr>`   | ``false`` |
++---------------------------------+----------------------------------------------------------+-----------+
+| :ref:`int<class_int>`           | :ref:`width<class_GradientTexture_property_width>`       | ``2048``  |
++---------------------------------+----------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
@@ -44,6 +46,22 @@ The :ref:`Gradient<class_Gradient>` that will be used to fill the texture.
 
 ----
 
+.. _class_GradientTexture_property_use_hdr:
+
+- :ref:`bool<class_bool>` **use_hdr**
+
++-----------+--------------------+
+| *Default* | ``false``          |
++-----------+--------------------+
+| *Setter*  | set_use_hdr(value) |
++-----------+--------------------+
+| *Getter*  | is_using_hdr()     |
++-----------+--------------------+
+
+If ``true``, the generated texture will support high dynamic range (:ref:`Image.FORMAT_RGBAF<class_Image_constant_FORMAT_RGBAF>` format). This allows for glow effects to work if :ref:`Environment.glow_enabled<class_Environment_property_glow_enabled>` is ``true``. If ``false``, the generated texture will use low dynamic range; overbright colors will be clamped (:ref:`Image.FORMAT_RGBA8<class_Image_constant_FORMAT_RGBA8>` format).
+
+----
+
 .. _class_GradientTexture_property_width:
 
 - :ref:`int<class_int>` **width**
@@ -58,3 +76,9 @@ The :ref:`Gradient<class_Gradient>` that will be used to fill the texture.
 
 The number of color samples that will be obtained from the :ref:`Gradient<class_Gradient>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

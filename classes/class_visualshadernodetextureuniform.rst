@@ -9,11 +9,16 @@
 VisualShaderNodeTextureUniform
 ==============================
 
-**Inherits:** :ref:`VisualShaderNodeUniform<class_VisualShaderNodeUniform>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualShaderNodeUniform<class_VisualShaderNodeUniform>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`VisualShaderNodeCubemapUniform<class_VisualShaderNodeCubemapUniform>`, :ref:`VisualShaderNodeTextureUniformTriplanar<class_VisualShaderNodeTextureUniformTriplanar>`
+**Inherited By:** :ref:`VisualShaderNodeCubemapUniform<class_VisualShaderNodeCubemapUniform>`, :ref:`VisualShaderNodeTexture2DArrayUniform<class_VisualShaderNodeTexture2DArrayUniform>`, :ref:`VisualShaderNodeTexture3DUniform<class_VisualShaderNodeTexture3DUniform>`, :ref:`VisualShaderNodeTextureUniformTriplanar<class_VisualShaderNodeTextureUniformTriplanar>`
 
+Performs a uniform texture lookup within the visual shader graph.
 
+Description
+-----------
+
+Performs a lookup operation on the texture provided as a uniform for the shader.
 
 Properties
 ----------
@@ -33,19 +38,23 @@ Enumerations
 
 .. _class_VisualShaderNodeTextureUniform_constant_TYPE_COLOR:
 
-.. _class_VisualShaderNodeTextureUniform_constant_TYPE_NORMALMAP:
+.. _class_VisualShaderNodeTextureUniform_constant_TYPE_NORMAL_MAP:
 
 .. _class_VisualShaderNodeTextureUniform_constant_TYPE_ANISO:
 
+.. _class_VisualShaderNodeTextureUniform_constant_TYPE_MAX:
+
 enum **TextureType**:
 
-- **TYPE_DATA** = **0**
+- **TYPE_DATA** = **0** --- No hints are added to the uniform declaration.
 
-- **TYPE_COLOR** = **1**
+- **TYPE_COLOR** = **1** --- Adds ``hint_albedo`` as hint to the uniform declaration for proper sRGB to linear conversion.
 
-- **TYPE_NORMALMAP** = **2**
+- **TYPE_NORMAL_MAP** = **2** --- Adds ``hint_normal`` as hint to the uniform declaration, which internally converts the texture for proper usage as normal map.
 
-- **TYPE_ANISO** = **3**
+- **TYPE_ANISO** = **3** --- Adds ``hint_aniso`` as hint to the uniform declaration to use for a flowmap.
+
+- **TYPE_MAX** = **4** --- Represents the size of the :ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>` enum.
 
 ----
 
@@ -55,11 +64,15 @@ enum **TextureType**:
 
 .. _class_VisualShaderNodeTextureUniform_constant_COLOR_DEFAULT_BLACK:
 
+.. _class_VisualShaderNodeTextureUniform_constant_COLOR_DEFAULT_MAX:
+
 enum **ColorDefault**:
 
-- **COLOR_DEFAULT_WHITE** = **0**
+- **COLOR_DEFAULT_WHITE** = **0** --- Defaults to white color.
 
-- **COLOR_DEFAULT_BLACK** = **1**
+- **COLOR_DEFAULT_BLACK** = **1** --- Defaults to black color.
+
+- **COLOR_DEFAULT_MAX** = **2** --- Represents the size of the :ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` enum.
 
 Property Descriptions
 ---------------------
@@ -76,6 +89,8 @@ Property Descriptions
 | *Getter*  | get_color_default()      |
 +-----------+--------------------------+
 
+Sets the default color if no texture is assigned to the uniform.
+
 ----
 
 .. _class_VisualShaderNodeTextureUniform_property_texture_type:
@@ -90,3 +105,11 @@ Property Descriptions
 | *Getter*  | get_texture_type()      |
 +-----------+-------------------------+
 
+Defines the type of data provided by the source texture. See :ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>` for options.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

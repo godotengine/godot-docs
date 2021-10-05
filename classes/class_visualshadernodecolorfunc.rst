@@ -9,7 +9,7 @@
 VisualShaderNodeColorFunc
 =========================
 
-**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A :ref:`Color<class_Color>` function to be used within the visual shader graph.
 
@@ -34,6 +34,8 @@ Enumerations
 
 .. _class_VisualShaderNodeColorFunc_constant_FUNC_SEPIA:
 
+.. _class_VisualShaderNodeColorFunc_constant_FUNC_MAX:
+
 enum **Function**:
 
 - **FUNC_GRAYSCALE** = **0** --- Converts the color to grayscale using the following formula:
@@ -56,6 +58,8 @@ enum **Function**:
     float b = (c.r * 0.272) + (c.g * 0.534) + (c.b * 0.131);
     return vec3(r, g, b);
 
+- **FUNC_MAX** = **2** --- Represents the size of the :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` enum.
+
 Property Descriptions
 ---------------------
 
@@ -73,3 +77,9 @@ Property Descriptions
 
 A function to be applied to the input color. See :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` for options.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

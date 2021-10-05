@@ -20,17 +20,37 @@ Description
 
 Panel container type. This container fits controls inside of the delimited area of a stylebox. It's useful for giving controls an outline.
 
+Tutorials
+---------
+
+- `2D Role Playing Game Demo <https://godotengine.org/asset-library/asset/520>`__
+
 Properties
 ----------
 
-+----------------------------------------------+--------------+--------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter | **O:** ``0`` |
-+----------------------------------------------+--------------+--------------+
++----------------------------------------------+--------------+---------------------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter | ``0`` *(parent override)* |
++----------------------------------------------+--------------+---------------------------+
 
 Theme Properties
 ----------------
 
-+---------------------------------+-------+
-| :ref:`StyleBox<class_StyleBox>` | panel |
-+---------------------------------+-------+
++---------------------------------+------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_PanelContainer_theme_style_panel>` |
++---------------------------------+------------------------------------------------------+
 
+Theme Property Descriptions
+---------------------------
+
+.. _class_PanelContainer_theme_style_panel:
+
+- :ref:`StyleBox<class_StyleBox>` **panel**
+
+The style of ``PanelContainer``'s background.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

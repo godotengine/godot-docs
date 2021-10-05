@@ -9,30 +9,30 @@
 InputEventMIDI
 ==============
 
-**Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 
 
 Properties
 ----------
 
-+-----------------------+---------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`channel<class_InputEventMIDI_property_channel>`                     | ``0`` |
-+-----------------------+---------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`controller_number<class_InputEventMIDI_property_controller_number>` | ``0`` |
-+-----------------------+---------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`controller_value<class_InputEventMIDI_property_controller_value>`   | ``0`` |
-+-----------------------+---------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`instrument<class_InputEventMIDI_property_instrument>`               | ``0`` |
-+-----------------------+---------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`message<class_InputEventMIDI_property_message>`                     | ``0`` |
-+-----------------------+---------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`pitch<class_InputEventMIDI_property_pitch>`                         | ``0`` |
-+-----------------------+---------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`pressure<class_InputEventMIDI_property_pressure>`                   | ``0`` |
-+-----------------------+---------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`velocity<class_InputEventMIDI_property_velocity>`                   | ``0`` |
-+-----------------------+---------------------------------------------------------------------------+-------+
++---------------------------------------------------+---------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                             | :ref:`channel<class_InputEventMIDI_property_channel>`                     | ``0`` |
++---------------------------------------------------+---------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                             | :ref:`controller_number<class_InputEventMIDI_property_controller_number>` | ``0`` |
++---------------------------------------------------+---------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                             | :ref:`controller_value<class_InputEventMIDI_property_controller_value>`   | ``0`` |
++---------------------------------------------------+---------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                             | :ref:`instrument<class_InputEventMIDI_property_instrument>`               | ``0`` |
++---------------------------------------------------+---------------------------------------------------------------------------+-------+
+| :ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` | :ref:`message<class_InputEventMIDI_property_message>`                     | ``0`` |
++---------------------------------------------------+---------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                             | :ref:`pitch<class_InputEventMIDI_property_pitch>`                         | ``0`` |
++---------------------------------------------------+---------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                             | :ref:`pressure<class_InputEventMIDI_property_pressure>`                   | ``0`` |
++---------------------------------------------------+---------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                             | :ref:`velocity<class_InputEventMIDI_property_velocity>`                   | ``0`` |
++---------------------------------------------------+---------------------------------------------------------------------------+-------+
 
 Property Descriptions
 ---------------------
@@ -95,7 +95,7 @@ Property Descriptions
 
 .. _class_InputEventMIDI_property_message:
 
-- :ref:`int<class_int>` **message**
+- :ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` **message**
 
 +-----------+--------------------+
 | *Default* | ``0``              |
@@ -147,3 +147,9 @@ Property Descriptions
 | *Getter*  | get_velocity()      |
 +-----------+---------------------+
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

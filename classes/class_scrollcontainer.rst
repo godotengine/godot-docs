@@ -27,37 +27,43 @@ Works great with a :ref:`Panel<class_Panel>` control. You can set ``EXPAND`` on 
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>` | :ref:`follow_focus<class_ScrollContainer_property_follow_focus>`                           | ``false``       |
-+-------------------------+--------------------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>` | rect_clip_content                                                                          | **O:** ``true`` |
-+-------------------------+--------------------------------------------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`   | :ref:`scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`                     | ``0``           |
-+-------------------------+--------------------------------------------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`   | :ref:`scroll_horizontal<class_ScrollContainer_property_scroll_horizontal>`                 | ``0``           |
-+-------------------------+--------------------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>` | :ref:`scroll_horizontal_enabled<class_ScrollContainer_property_scroll_horizontal_enabled>` | ``true``        |
-+-------------------------+--------------------------------------------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`   | :ref:`scroll_vertical<class_ScrollContainer_property_scroll_vertical>`                     | ``0``           |
-+-------------------------+--------------------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>` | :ref:`scroll_vertical_enabled<class_ScrollContainer_property_scroll_vertical_enabled>`     | ``true``        |
-+-------------------------+--------------------------------------------------------------------------------------------+-----------------+
++-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>` | :ref:`follow_focus<class_ScrollContainer_property_follow_focus>`                           | ``false``                    |
++-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>` | rect_clip_content                                                                          | ``true`` *(parent override)* |
++-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
+| :ref:`int<class_int>`   | :ref:`scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`                     | ``0``                        |
++-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
+| :ref:`int<class_int>`   | :ref:`scroll_horizontal<class_ScrollContainer_property_scroll_horizontal>`                 | ``0``                        |
++-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>` | :ref:`scroll_horizontal_enabled<class_ScrollContainer_property_scroll_horizontal_enabled>` | ``true``                     |
++-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>` | :ref:`scroll_horizontal_visible<class_ScrollContainer_property_scroll_horizontal_visible>` | ``true``                     |
++-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
+| :ref:`int<class_int>`   | :ref:`scroll_vertical<class_ScrollContainer_property_scroll_vertical>`                     | ``0``                        |
++-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>` | :ref:`scroll_vertical_enabled<class_ScrollContainer_property_scroll_vertical_enabled>`     | ``true``                     |
++-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>` | :ref:`scroll_vertical_visible<class_ScrollContainer_property_scroll_vertical_visible>`     | ``true``                     |
++-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
 
 Methods
 -------
 
-+-------------------------------------+----------------------------------------------------------------------------------+
-| :ref:`HScrollBar<class_HScrollBar>` | :ref:`get_h_scrollbar<class_ScrollContainer_method_get_h_scrollbar>` **(** **)** |
-+-------------------------------------+----------------------------------------------------------------------------------+
-| :ref:`VScrollBar<class_VScrollBar>` | :ref:`get_v_scrollbar<class_ScrollContainer_method_get_v_scrollbar>` **(** **)** |
-+-------------------------------------+----------------------------------------------------------------------------------+
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`ensure_control_visible<class_ScrollContainer_method_ensure_control_visible>` **(** :ref:`Control<class_Control>` control **)** |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`HScrollBar<class_HScrollBar>` | :ref:`get_h_scrollbar<class_ScrollContainer_method_get_h_scrollbar>` **(** **)**                                                     |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`VScrollBar<class_VScrollBar>` | :ref:`get_v_scrollbar<class_ScrollContainer_method_get_v_scrollbar>` **(** **)**                                                     |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
 
-+---------------------------------+----+
-| :ref:`StyleBox<class_StyleBox>` | bg |
-+---------------------------------+----+
++---------------------------------+-------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_ScrollContainer_theme_style_bg>` |
++---------------------------------+-------------------------------------------------+
 
 Signals
 -------
@@ -141,6 +147,22 @@ If ``true``, enables horizontal scrolling.
 
 ----
 
+.. _class_ScrollContainer_property_scroll_horizontal_visible:
+
+- :ref:`bool<class_bool>` **scroll_horizontal_visible**
+
++-----------+-----------------------------+
+| *Default* | ``true``                    |
++-----------+-----------------------------+
+| *Setter*  | set_h_scroll_visible(value) |
++-----------+-----------------------------+
+| *Getter*  | is_h_scroll_visible()       |
++-----------+-----------------------------+
+
+If ``false``, hides the horizontal scrollbar.
+
+----
+
 .. _class_ScrollContainer_property_scroll_vertical:
 
 - :ref:`int<class_int>` **scroll_vertical**
@@ -171,8 +193,32 @@ The current vertical scroll value.
 
 If ``true``, enables vertical scrolling.
 
+----
+
+.. _class_ScrollContainer_property_scroll_vertical_visible:
+
+- :ref:`bool<class_bool>` **scroll_vertical_visible**
+
++-----------+-----------------------------+
+| *Default* | ``true``                    |
++-----------+-----------------------------+
+| *Setter*  | set_v_scroll_visible(value) |
++-----------+-----------------------------+
+| *Getter*  | is_v_scroll_visible()       |
++-----------+-----------------------------+
+
+If ``false``, hides the vertical scrollbar.
+
 Method Descriptions
 -------------------
+
+.. _class_ScrollContainer_method_ensure_control_visible:
+
+- void **ensure_control_visible** **(** :ref:`Control<class_Control>` control **)**
+
+Ensures the given ``control`` is visible (must be a direct or indirect child of the ScrollContainer). Used by :ref:`follow_focus<class_ScrollContainer_property_follow_focus>`.
+
+----
 
 .. _class_ScrollContainer_method_get_h_scrollbar:
 
@@ -188,3 +234,18 @@ Returns the horizontal scrollbar :ref:`HScrollBar<class_HScrollBar>` of this ``S
 
 Returns the vertical scrollbar :ref:`VScrollBar<class_VScrollBar>` of this ``ScrollContainer``.
 
+Theme Property Descriptions
+---------------------------
+
+.. _class_ScrollContainer_theme_style_bg:
+
+- :ref:`StyleBox<class_StyleBox>` **bg**
+
+The background :ref:`StyleBox<class_StyleBox>` of the ``ScrollContainer``.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

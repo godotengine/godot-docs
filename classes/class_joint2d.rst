@@ -64,7 +64,7 @@ When :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D
 | *Getter*  | get_exclude_nodes_from_collision()      |
 +-----------+-----------------------------------------+
 
-If ``true``, :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` can collide.
+If ``true``, :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` can not collide.
 
 ----
 
@@ -98,3 +98,9 @@ The first body attached to the joint. Must derive from :ref:`PhysicsBody2D<class
 
 The second body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

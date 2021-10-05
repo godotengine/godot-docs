@@ -9,7 +9,7 @@
 AcceptDialog
 ============
 
-**Inherits:** :ref:`WindowDialog<class_WindowDialog>` **<** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Inherited By:** :ref:`ConfirmationDialog<class_ConfirmationDialog>`
 
@@ -23,15 +23,23 @@ This dialog is useful for small notifications to the user about an event. It can
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`     | :ref:`dialog_autowrap<class_AcceptDialog_property_dialog_autowrap>`     | ``false``           |
-+-----------------------------+-------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`     | :ref:`dialog_hide_on_ok<class_AcceptDialog_property_dialog_hide_on_ok>` | ``true``            |
-+-----------------------------+-------------------------------------------------------------------------+---------------------+
-| :ref:`String<class_String>` | :ref:`dialog_text<class_AcceptDialog_property_dialog_text>`             | ``""``              |
-+-----------------------------+-------------------------------------------------------------------------+---------------------+
-| :ref:`String<class_String>` | window_title                                                            | **O:** ``"Alert!"`` |
-+-----------------------------+-------------------------------------------------------------------------+---------------------+
++-----------------------------+-------------------------------------------------------------------------+----------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`dialog_autowrap<class_AcceptDialog_property_dialog_autowrap>`     | ``false``                        |
++-----------------------------+-------------------------------------------------------------------------+----------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`dialog_hide_on_ok<class_AcceptDialog_property_dialog_hide_on_ok>` | ``true``                         |
++-----------------------------+-------------------------------------------------------------------------+----------------------------------+
+| :ref:`String<class_String>` | :ref:`dialog_text<class_AcceptDialog_property_dialog_text>`             | ``""``                           |
++-----------------------------+-------------------------------------------------------------------------+----------------------------------+
+| :ref:`bool<class_bool>`     | exclusive                                                               | ``true`` *(parent override)*     |
++-----------------------------+-------------------------------------------------------------------------+----------------------------------+
+| :ref:`String<class_String>` | title                                                                   | ``"Alert!"`` *(parent override)* |
++-----------------------------+-------------------------------------------------------------------------+----------------------------------+
+| :ref:`bool<class_bool>`     | transient                                                               | ``true`` *(parent override)*     |
++-----------------------------+-------------------------------------------------------------------------+----------------------------------+
+| :ref:`bool<class_bool>`     | visible                                                                 | ``false`` *(parent override)*    |
++-----------------------------+-------------------------------------------------------------------------+----------------------------------+
+| :ref:`bool<class_bool>`     | wrap_controls                                                           | ``true`` *(parent override)*     |
++-----------------------------+-------------------------------------------------------------------------+----------------------------------+
 
 Methods
 -------
@@ -39,17 +47,34 @@ Methods
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Button<class_Button>` | :ref:`add_button<class_AcceptDialog_method_add_button>` **(** :ref:`String<class_String>` text, :ref:`bool<class_bool>` right=false, :ref:`String<class_String>` action="" **)** |
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Button<class_Button>` | :ref:`add_cancel<class_AcceptDialog_method_add_cancel>` **(** :ref:`String<class_String>` name **)**                                                                             |
+| :ref:`Button<class_Button>` | :ref:`add_cancel_button<class_AcceptDialog_method_add_cancel_button>` **(** :ref:`String<class_String>` name **)**                                                               |
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Label<class_Label>`   | :ref:`get_label<class_AcceptDialog_method_get_label>` **(** **)**                                                                                                                |
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Button<class_Button>` | :ref:`get_ok<class_AcceptDialog_method_get_ok>` **(** **)**                                                                                                                      |
+| :ref:`Button<class_Button>` | :ref:`get_ok_button<class_AcceptDialog_method_get_ok_button>` **(** **)**                                                                                                        |
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`register_text_enter<class_AcceptDialog_method_register_text_enter>` **(** :ref:`Node<class_Node>` line_edit **)**                                                          |
+| void                        | :ref:`register_text_enter<class_AcceptDialog_method_register_text_enter>` **(** :ref:`Control<class_Control>` line_edit **)**                                                    |
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`remove_button<class_AcceptDialog_method_remove_button>` **(** :ref:`Control<class_Control>` button **)**                                                                   |
++-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Theme Properties
+----------------
+
++---------------------------------+----------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_AcceptDialog_theme_style_panel>` |
++---------------------------------+----------------------------------------------------+
 
 Signals
 -------
+
+.. _class_AcceptDialog_signal_cancelled:
+
+- **cancelled** **(** **)**
+
+Emitted when the dialog is closed or the button created with :ref:`add_cancel_button<class_AcceptDialog_method_add_cancel_button>` is pressed.
+
+----
 
 .. _class_AcceptDialog_signal_confirmed:
 
@@ -127,13 +152,17 @@ Adds a button with label ``text`` and a custom ``action`` to the dialog and retu
 
 If ``true``, ``right`` will place the button to the right of any sibling buttons.
 
+You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method to remove a button created with this method from the dialog.
+
 ----
 
-.. _class_AcceptDialog_method_add_cancel:
+.. _class_AcceptDialog_method_add_cancel_button:
 
-- :ref:`Button<class_Button>` **add_cancel** **(** :ref:`String<class_String>` name **)**
+- :ref:`Button<class_Button>` **add_cancel_button** **(** :ref:`String<class_String>` name **)**
 
 Adds a button with label ``name`` and a cancel action to the dialog and returns the created button.
+
+You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method to remove a button created with this method from the dialog.
 
 ----
 
@@ -145,9 +174,9 @@ Returns the label used for built-in text.
 
 ----
 
-.. _class_AcceptDialog_method_get_ok:
+.. _class_AcceptDialog_method_get_ok_button:
 
-- :ref:`Button<class_Button>` **get_ok** **(** **)**
+- :ref:`Button<class_Button>` **get_ok_button** **(** **)**
 
 Returns the OK :ref:`Button<class_Button>` instance.
 
@@ -155,7 +184,30 @@ Returns the OK :ref:`Button<class_Button>` instance.
 
 .. _class_AcceptDialog_method_register_text_enter:
 
-- void **register_text_enter** **(** :ref:`Node<class_Node>` line_edit **)**
+- void **register_text_enter** **(** :ref:`Control<class_Control>` line_edit **)**
 
 Registers a :ref:`LineEdit<class_LineEdit>` in the dialog. When the enter key is pressed, the dialog will be accepted.
 
+----
+
+.. _class_AcceptDialog_method_remove_button:
+
+- void **remove_button** **(** :ref:`Control<class_Control>` button **)**
+
+Removes the ``button`` from the dialog. Does NOT free the ``button``. The ``button`` must be a :ref:`Button<class_Button>` added with :ref:`add_button<class_AcceptDialog_method_add_button>` or :ref:`add_cancel_button<class_AcceptDialog_method_add_cancel_button>` method. After removal, pressing the ``button`` will no longer emit this dialog's :ref:`custom_action<class_AcceptDialog_signal_custom_action>` or :ref:`cancelled<class_AcceptDialog_signal_cancelled>` signals.
+
+Theme Property Descriptions
+---------------------------
+
+.. _class_AcceptDialog_theme_style_panel:
+
+- :ref:`StyleBox<class_StyleBox>` **panel**
+
+Panel that fills up the background of the window.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

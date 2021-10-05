@@ -9,7 +9,7 @@
 ButtonGroup
 ===========
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Group of Buttons.
 
@@ -23,9 +23,9 @@ Group of :ref:`Button<class_Button>`. All direct and indirect children buttons b
 Properties
 ----------
 
-+-------------------------+-------------------------+-----------------+
-| :ref:`bool<class_bool>` | resource_local_to_scene | **O:** ``true`` |
-+-------------------------+-------------------------+-----------------+
++-------------------------+-------------------------+------------------------------+
+| :ref:`bool<class_bool>` | resource_local_to_scene | ``true`` *(parent override)* |
++-------------------------+-------------------------+------------------------------+
 
 Methods
 -------
@@ -36,6 +36,15 @@ Methods
 | :ref:`BaseButton<class_BaseButton>` | :ref:`get_pressed_button<class_ButtonGroup_method_get_pressed_button>` **(** **)** |
 +-------------------------------------+------------------------------------------------------------------------------------+
 
+Signals
+-------
+
+.. _class_ButtonGroup_signal_pressed:
+
+- **pressed** **(** :ref:`Object<class_Object>` button **)**
+
+Emitted when one of the buttons of the group is pressed.
+
 Method Descriptions
 -------------------
 
@@ -43,7 +52,7 @@ Method Descriptions
 
 - :ref:`Array<class_Array>` **get_buttons** **(** **)**
 
-Returns an :ref:`Array<class_Array>` of :ref:`Button<class_Button>`\ s who have this as their ``ButtonGroup`` (see :ref:`BaseButton.group<class_BaseButton_property_group>`).
+Returns an :ref:`Array<class_Array>` of :ref:`Button<class_Button>`\ s who have this as their ``ButtonGroup`` (see :ref:`BaseButton.button_group<class_BaseButton_property_button_group>`).
 
 ----
 
@@ -53,3 +62,9 @@ Returns an :ref:`Array<class_Array>` of :ref:`Button<class_Button>`\ s who have 
 
 Returns the current pressed button.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

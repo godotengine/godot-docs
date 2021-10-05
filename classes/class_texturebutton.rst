@@ -20,11 +20,22 @@ Description
 
 The "normal" state must contain a texture (:ref:`texture_normal<class_TextureButton_property_texture_normal>`); other textures are optional.
 
+See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
+
+Tutorials
+---------
+
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
+
 Properties
 ----------
 
 +----------------------------------------------------+----------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                            | :ref:`expand<class_TextureButton_property_expand>`                         | ``false`` |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                            | :ref:`flip_h<class_TextureButton_property_flip_h>`                         | ``false`` |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                            | :ref:`flip_v<class_TextureButton_property_flip_v>`                         | ``false`` |
 +----------------------------------------------------+----------------------------------------------------------------------------+-----------+
 | :ref:`StretchMode<enum_TextureButton_StretchMode>` | :ref:`stretch_mode<class_TextureButton_property_stretch_mode>`             | ``0``     |
 +----------------------------------------------------+----------------------------------------------------------------------------+-----------+
@@ -92,6 +103,38 @@ Property Descriptions
 +-----------+-------------------+
 
 If ``true``, the texture stretches to the edges of the node's bounding rectangle using the :ref:`stretch_mode<class_TextureButton_property_stretch_mode>`. If ``false``, the texture will not scale with the node.
+
+----
+
+.. _class_TextureButton_property_flip_h:
+
+- :ref:`bool<class_bool>` **flip_h**
+
++-----------+-------------------+
+| *Default* | ``false``         |
++-----------+-------------------+
+| *Setter*  | set_flip_h(value) |
++-----------+-------------------+
+| *Getter*  | is_flipped_h()    |
++-----------+-------------------+
+
+If ``true``, texture is flipped horizontally.
+
+----
+
+.. _class_TextureButton_property_flip_v:
+
+- :ref:`bool<class_bool>` **flip_v**
+
++-----------+-------------------+
+| *Default* | ``false``         |
++-----------+-------------------+
+| *Setter*  | set_flip_v(value) |
++-----------+-------------------+
+| *Getter*  | is_flipped_v()    |
++-----------+-------------------+
+
+If ``true``, texture is flipped vertically.
 
 ----
 
@@ -193,3 +236,9 @@ Texture to display by default, when the node is **not** in the disabled, focused
 
 Texture to display on mouse down over the node, if the node has keyboard focus and the player presses the Enter key or if the player presses the :ref:`BaseButton.shortcut<class_BaseButton_property_shortcut>` key.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

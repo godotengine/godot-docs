@@ -9,44 +9,23 @@
 AudioStreamOGGVorbis
 ====================
 
-**Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-OGG Vorbis audio stream driver.
 
-Description
------------
-
-OGG Vorbis audio stream driver.
 
 Properties
 ----------
 
-+-----------------------------------------------+---------------------------------------------------------------------+-------------------------+
-| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`data<class_AudioStreamOGGVorbis_property_data>`               | ``PackedByteArray(  )`` |
-+-----------------------------------------------+---------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`loop<class_AudioStreamOGGVorbis_property_loop>`               | ``false``               |
-+-----------------------------------------------+---------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                     | :ref:`loop_offset<class_AudioStreamOGGVorbis_property_loop_offset>` | ``0.0``                 |
-+-----------------------------------------------+---------------------------------------------------------------------+-------------------------+
++---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                           | :ref:`loop<class_AudioStreamOGGVorbis_property_loop>`                       | ``false`` |
++---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                         | :ref:`loop_offset<class_AudioStreamOGGVorbis_property_loop_offset>`         | ``0.0``   |
++---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+| :ref:`OGGPacketSequence<class_OGGPacketSequence>` | :ref:`packet_sequence<class_AudioStreamOGGVorbis_property_packet_sequence>` |           |
++---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
-
-.. _class_AudioStreamOGGVorbis_property_data:
-
-- :ref:`PackedByteArray<class_PackedByteArray>` **data**
-
-+-----------+-------------------------+
-| *Default* | ``PackedByteArray(  )`` |
-+-----------+-------------------------+
-| *Setter*  | set_data(value)         |
-+-----------+-------------------------+
-| *Getter*  | get_data()              |
-+-----------+-------------------------+
-
-Contains the audio data in bytes.
-
-----
 
 .. _class_AudioStreamOGGVorbis_property_loop:
 
@@ -78,3 +57,23 @@ If ``true``, the stream will automatically loop when it reaches the end.
 
 Time in seconds at which the stream starts after being looped.
 
+----
+
+.. _class_AudioStreamOGGVorbis_property_packet_sequence:
+
+- :ref:`OGGPacketSequence<class_OGGPacketSequence>` **packet_sequence**
+
++----------+----------------------------+
+| *Setter* | set_packet_sequence(value) |
++----------+----------------------------+
+| *Getter* | get_packet_sequence()      |
++----------+----------------------------+
+
+Contains the raw OGG data for this stream.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

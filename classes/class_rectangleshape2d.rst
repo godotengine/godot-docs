@@ -9,7 +9,7 @@
 RectangleShape2D
 ================
 
-**Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Rectangle shape for 2D collisions.
 
@@ -18,27 +18,40 @@ Description
 
 Rectangle shape for 2D collisions. This shape is useful for modeling box-like 2D objects.
 
+Tutorials
+---------
+
+- `2D Pong Demo <https://godotengine.org/asset-library/asset/121>`__
+
+- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/113>`__
+
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------------+-----------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`extents<class_RectangleShape2D_property_extents>` | ``Vector2( 10, 10 )`` |
-+-------------------------------+---------------------------------------------------------+-----------------------+
++-------------------------------+---------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_RectangleShape2D_property_size>` | ``Vector2(20, 20)`` |
++-------------------------------+---------------------------------------------------+---------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_RectangleShape2D_property_extents:
+.. _class_RectangleShape2D_property_size:
 
-- :ref:`Vector2<class_Vector2>` **extents**
+- :ref:`Vector2<class_Vector2>` **size**
 
-+-----------+-----------------------+
-| *Default* | ``Vector2( 10, 10 )`` |
-+-----------+-----------------------+
-| *Setter*  | set_extents(value)    |
-+-----------+-----------------------+
-| *Getter*  | get_extents()         |
-+-----------+-----------------------+
++-----------+---------------------+
+| *Default* | ``Vector2(20, 20)`` |
++-----------+---------------------+
+| *Setter*  | set_size(value)     |
++-----------+---------------------+
+| *Getter*  | get_size()          |
++-----------+---------------------+
 
-The rectangle's half extents. The width and height of this shape is twice the half extents.
+The rectangle's width and height.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

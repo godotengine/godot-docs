@@ -21,9 +21,36 @@ Horizontal separator. See :ref:`Separator<class_Separator>`. Even though it look
 Theme Properties
 ----------------
 
-+---------------------------------+------------+---+
-| :ref:`int<class_int>`           | separation | 4 |
-+---------------------------------+------------+---+
-| :ref:`StyleBox<class_StyleBox>` | separator  |   |
-+---------------------------------+------------+---+
++---------------------------------+---------------------------------------------------------------+-------+
+| :ref:`int<class_int>`           | :ref:`separation<class_HSeparator_theme_constant_separation>` | ``4`` |
++---------------------------------+---------------------------------------------------------------+-------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`separator<class_HSeparator_theme_style_separator>`      |       |
++---------------------------------+---------------------------------------------------------------+-------+
 
+Theme Property Descriptions
+---------------------------
+
+.. _class_HSeparator_theme_constant_separation:
+
+- :ref:`int<class_int>` **separation**
+
++-----------+-------+
+| *Default* | ``4`` |
++-----------+-------+
+
+The height of the area covered by the separator. Effectively works like a minimum height.
+
+----
+
+.. _class_HSeparator_theme_style_separator:
+
+- :ref:`StyleBox<class_StyleBox>` **separator**
+
+The style for the separator line. Works best with :ref:`StyleBoxLine<class_StyleBoxLine>`.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

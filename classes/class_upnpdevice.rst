@@ -9,7 +9,7 @@
 UPNPDevice
 ==========
 
-**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 UPNP device.
 
@@ -38,15 +38,15 @@ Properties
 Methods
 -------
 
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`add_port_mapping<class_UPNPDevice_method_add_port_mapping>` **(** :ref:`int<class_int>` port, :ref:`int<class_int>` port_internal=0, :ref:`String<class_String>` desc="", :ref:`String<class_String>` proto="UDP", :ref:`int<class_int>` duration=0 **)** const |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`delete_port_mapping<class_UPNPDevice_method_delete_port_mapping>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` proto="UDP" **)** const                                                                                                         |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`is_valid_gateway<class_UPNPDevice_method_is_valid_gateway>` **(** **)** const                                                                                                                                                                                   |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`query_external_address<class_UPNPDevice_method_query_external_address>` **(** **)** const                                                                                                                                                                       |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`add_port_mapping<class_UPNPDevice_method_add_port_mapping>` **(** :ref:`int<class_int>` port, :ref:`int<class_int>` port_internal=0, :ref:`String<class_String>` desc="", :ref:`String<class_String>` proto="UDP", :ref:`int<class_int>` duration=0 **)** |const| |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`delete_port_mapping<class_UPNPDevice_method_delete_port_mapping>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` proto="UDP" **)** |const|                                                                                                         |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`is_valid_gateway<class_UPNPDevice_method_is_valid_gateway>` **(** **)** |const|                                                                                                                                                                                   |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`query_external_address<class_UPNPDevice_method_query_external_address>` **(** **)** |const|                                                                                                                                                                       |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -197,7 +197,7 @@ Method Descriptions
 
 .. _class_UPNPDevice_method_add_port_mapping:
 
-- :ref:`int<class_int>` **add_port_mapping** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` port_internal=0, :ref:`String<class_String>` desc="", :ref:`String<class_String>` proto="UDP", :ref:`int<class_int>` duration=0 **)** const
+- :ref:`int<class_int>` **add_port_mapping** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` port_internal=0, :ref:`String<class_String>` desc="", :ref:`String<class_String>` proto="UDP", :ref:`int<class_int>` duration=0 **)** |const|
 
 Adds a port mapping to forward the given external port on this ``UPNPDevice`` for the given protocol to the local machine. See :ref:`UPNP.add_port_mapping<class_UPNP_method_add_port_mapping>`.
 
@@ -205,7 +205,7 @@ Adds a port mapping to forward the given external port on this ``UPNPDevice`` fo
 
 .. _class_UPNPDevice_method_delete_port_mapping:
 
-- :ref:`int<class_int>` **delete_port_mapping** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` proto="UDP" **)** const
+- :ref:`int<class_int>` **delete_port_mapping** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` proto="UDP" **)** |const|
 
 Deletes the port mapping identified by the given port and protocol combination on this device. See :ref:`UPNP.delete_port_mapping<class_UPNP_method_delete_port_mapping>`.
 
@@ -213,7 +213,7 @@ Deletes the port mapping identified by the given port and protocol combination o
 
 .. _class_UPNPDevice_method_is_valid_gateway:
 
-- :ref:`bool<class_bool>` **is_valid_gateway** **(** **)** const
+- :ref:`bool<class_bool>` **is_valid_gateway** **(** **)** |const|
 
 Returns ``true`` if this is a valid IGD (InternetGatewayDevice) which potentially supports port forwarding.
 
@@ -221,7 +221,13 @@ Returns ``true`` if this is a valid IGD (InternetGatewayDevice) which potentiall
 
 .. _class_UPNPDevice_method_query_external_address:
 
-- :ref:`String<class_String>` **query_external_address** **(** **)** const
+- :ref:`String<class_String>` **query_external_address** **(** **)** |const|
 
 Returns the external IP address of this ``UPNPDevice`` or an empty string.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -18,19 +18,21 @@ Description
 
 This object holds information of all resources in the filesystem, their types, etc.
 
+**Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_resource_filesystem<class_EditorInterface_method_get_resource_filesystem>`.
+
 Methods
 -------
 
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                       | :ref:`get_file_type<class_EditorFileSystem_method_get_file_type>` **(** :ref:`String<class_String>` path **)** const       |
+| :ref:`String<class_String>`                                       | :ref:`get_file_type<class_EditorFileSystem_method_get_file_type>` **(** :ref:`String<class_String>` path **)** |const|     |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` | :ref:`get_filesystem<class_EditorFileSystem_method_get_filesystem>` **(** **)**                                            |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` | :ref:`get_filesystem_path<class_EditorFileSystem_method_get_filesystem_path>` **(** :ref:`String<class_String>` path **)** |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                         | :ref:`get_scanning_progress<class_EditorFileSystem_method_get_scanning_progress>` **(** **)** const                        |
+| :ref:`float<class_float>`                                         | :ref:`get_scanning_progress<class_EditorFileSystem_method_get_scanning_progress>` **(** **)** |const|                      |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                           | :ref:`is_scanning<class_EditorFileSystem_method_is_scanning>` **(** **)** const                                            |
+| :ref:`bool<class_bool>`                                           | :ref:`is_scanning<class_EditorFileSystem_method_is_scanning>` **(** **)** |const|                                          |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`scan<class_EditorFileSystem_method_scan>` **(** **)**                                                                |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
@@ -56,13 +58,15 @@ Emitted if the filesystem changed.
 
 - **resources_reimported** **(** :ref:`PackedStringArray<class_PackedStringArray>` resources **)**
 
-Remitted if a resource is reimported.
+Emitted if a resource is reimported.
 
 ----
 
 .. _class_EditorFileSystem_signal_resources_reload:
 
 - **resources_reload** **(** :ref:`PackedStringArray<class_PackedStringArray>` resources **)**
+
+Emitted if at least one resource is reloaded when the filesystem is scanned.
 
 ----
 
@@ -77,9 +81,9 @@ Method Descriptions
 
 .. _class_EditorFileSystem_method_get_file_type:
 
-- :ref:`String<class_String>` **get_file_type** **(** :ref:`String<class_String>` path **)** const
+- :ref:`String<class_String>` **get_file_type** **(** :ref:`String<class_String>` path **)** |const|
 
-Gets the type of the file, given the full path.
+Returns the resource type of the file, given the full path. This returns a string such as ``"Resource"`` or ``"GDScript"``, *not* a file extension such as ``".gd"``.
 
 ----
 
@@ -101,7 +105,7 @@ Returns a view into the filesystem at ``path``.
 
 .. _class_EditorFileSystem_method_get_scanning_progress:
 
-- :ref:`float<class_float>` **get_scanning_progress** **(** **)** const
+- :ref:`float<class_float>` **get_scanning_progress** **(** **)** |const|
 
 Returns the scan progress for 0 to 1 if the FS is being scanned.
 
@@ -109,7 +113,7 @@ Returns the scan progress for 0 to 1 if the FS is being scanned.
 
 .. _class_EditorFileSystem_method_is_scanning:
 
-- :ref:`bool<class_bool>` **is_scanning** **(** **)** const
+- :ref:`bool<class_bool>` **is_scanning** **(** **)** |const|
 
 Returns ``true`` of the filesystem is being scanned.
 
@@ -145,3 +149,9 @@ Update a file information. Call this if an external program (not Godot) modified
 
 Scans the script files and updates the list of custom class names.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

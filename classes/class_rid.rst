@@ -14,31 +14,105 @@ Handle for a :ref:`Resource<class_Resource>`'s unique ID.
 Description
 -----------
 
-The RID type is used to access the unique integer ID of a resource. They are opaque, which means they do not grant access to the associated resource by themselves. They are used by and with the low-level Server classes such as :ref:`VisualServer<class_VisualServer>`.
+The RID type is used to access the unique integer ID of a resource. They are opaque, which means they do not grant access to the associated resource by themselves. They are used by and with the low-level Server classes such as :ref:`RenderingServer<class_RenderingServer>`.
 
 Methods
 -------
 
-+-----------------------+-------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>` | :ref:`RID<class_RID_method_RID>` **(** :ref:`Object<class_Object>` from **)** |
-+-----------------------+-------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_id<class_RID_method_get_id>` **(** **)**                            |
-+-----------------------+-------------------------------------------------------------------------------+
++-------------------------+---------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`   | :ref:`RID<class_RID_method_RID>` **(** **)** |constructor|                            |
++-------------------------+---------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`   | :ref:`RID<class_RID_method_RID>` **(** :ref:`RID<class_RID>` from **)** |constructor| |
++-------------------------+---------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`   | :ref:`get_id<class_RID_method_get_id>` **(** **)** |const|                            |
++-------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | **operator !=** **(** **)** |operator|                                                |
++-------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | **operator !=** **(** :ref:`RID<class_RID>` right **)** |operator|                    |
++-------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | **operator <** **(** :ref:`RID<class_RID>` right **)** |operator|                     |
++-------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | **operator <=** **(** :ref:`RID<class_RID>` right **)** |operator|                    |
++-------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | **operator ==** **(** **)** |operator|                                                |
++-------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | **operator ==** **(** :ref:`RID<class_RID>` right **)** |operator|                    |
++-------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | **operator >** **(** :ref:`RID<class_RID>` right **)** |operator|                     |
++-------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | **operator >=** **(** :ref:`RID<class_RID>` right **)** |operator|                    |
++-------------------------+---------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_RID_method_RID:
 
-- :ref:`RID<class_RID>` **RID** **(** :ref:`Object<class_Object>` from **)**
+- :ref:`RID<class_RID>` **RID** **(** **)** |constructor|
 
-Creates a new RID instance with the ID of a given resource. When not handed a valid resource, silently stores the unused ID 0.
+Constructs an empty ``RID`` with the invalid ID ``0``.
+
+----
+
+- :ref:`RID<class_RID>` **RID** **(** :ref:`RID<class_RID>` from **)** |constructor|
+
+Constructs a ``RID`` as a copy of the given ``RID``.
 
 ----
 
 .. _class_RID_method_get_id:
 
-- :ref:`int<class_int>` **get_id** **(** **)**
+- :ref:`int<class_int>` **get_id** **(** **)** |const|
 
 Returns the ID of the referenced resource.
 
+----
+
+.. _class_RID_method_operator !=:
+
+- :ref:`bool<class_bool>` **operator !=** **(** **)** |operator|
+
+----
+
+- :ref:`bool<class_bool>` **operator !=** **(** :ref:`RID<class_RID>` right **)** |operator|
+
+----
+
+.. _class_RID_method_operator <:
+
+- :ref:`bool<class_bool>` **operator <** **(** :ref:`RID<class_RID>` right **)** |operator|
+
+----
+
+.. _class_RID_method_operator <=:
+
+- :ref:`bool<class_bool>` **operator <=** **(** :ref:`RID<class_RID>` right **)** |operator|
+
+----
+
+.. _class_RID_method_operator ==:
+
+- :ref:`bool<class_bool>` **operator ==** **(** **)** |operator|
+
+----
+
+- :ref:`bool<class_bool>` **operator ==** **(** :ref:`RID<class_RID>` right **)** |operator|
+
+----
+
+.. _class_RID_method_operator >:
+
+- :ref:`bool<class_bool>` **operator >** **(** :ref:`RID<class_RID>` right **)** |operator|
+
+----
+
+.. _class_RID_method_operator >=:
+
+- :ref:`bool<class_bool>` **operator >=** **(** :ref:`RID<class_RID>` right **)** |operator|
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -9,19 +9,34 @@
 PopupPanel
 ==========
 
-**Inherits:** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Popup<class_Popup>` **<** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 Class for displaying popups with a panel background.
 
 Description
 -----------
 
-Class for displaying popups with a panel background. In some cases it might be simpler to use than :ref:`Popup<class_Popup>`, since it provides a configurable background. If you are making windows, better check :ref:`WindowDialog<class_WindowDialog>`.
+Class for displaying popups with a panel background. In some cases it might be simpler to use than :ref:`Popup<class_Popup>`, since it provides a configurable background. If you are making windows, better check :ref:`Window<class_Window>`.
 
 Theme Properties
 ----------------
 
-+---------------------------------+-------+
-| :ref:`StyleBox<class_StyleBox>` | panel |
-+---------------------------------+-------+
++---------------------------------+--------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_PopupPanel_theme_style_panel>` |
++---------------------------------+--------------------------------------------------+
 
+Theme Property Descriptions
+---------------------------
+
+.. _class_PopupPanel_theme_style_panel:
+
+- :ref:`StyleBox<class_StyleBox>` **panel**
+
+The background panel style of this ``PopupPanel``.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

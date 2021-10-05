@@ -16,7 +16,7 @@ NavigationAgent2D
 Description
 -----------
 
-2D Agent that is used in navigation to reach a location while avoiding static and dynamic obstacles. The dynamic obstacles are avoided using RVO collision avoidance. The agent needs navigation data to work correctly. This can be done by having the agent as a child of a :ref:`Navigation2D<class_Navigation2D>` node, or using :ref:`set_navigation<class_NavigationAgent2D_method_set_navigation>`. ``NavigationAgent2D`` is physics safe.
+2D Agent that is used in navigation to reach a location while avoiding static and dynamic obstacles. The dynamic obstacles are avoided using RVO collision avoidance. The agent needs navigation data to work correctly. ``NavigationAgent2D`` is physics safe.
 
 Properties
 ----------
@@ -41,27 +41,25 @@ Methods
 -------
 
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                           | :ref:`distance_to_target<class_NavigationAgent2D_method_distance_to_target>` **(** **)** const                                    |
+| :ref:`float<class_float>`                           | :ref:`distance_to_target<class_NavigationAgent2D_method_distance_to_target>` **(** **)** |const|                                  |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                       | :ref:`get_final_location<class_NavigationAgent2D_method_get_final_location>` **(** **)**                                          |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_nav_path<class_NavigationAgent2D_method_get_nav_path>` **(** **)** const                                                |
+| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_nav_path<class_NavigationAgent2D_method_get_nav_path>` **(** **)** |const|                                              |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                               | :ref:`get_nav_path_index<class_NavigationAgent2D_method_get_nav_path_index>` **(** **)** const                                    |
-+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`                             | :ref:`get_navigation<class_NavigationAgent2D_method_get_navigation>` **(** **)** const                                            |
+| :ref:`int<class_int>`                               | :ref:`get_nav_path_index<class_NavigationAgent2D_method_get_nav_path_index>` **(** **)** |const|                                  |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                       | :ref:`get_next_location<class_NavigationAgent2D_method_get_next_location>` **(** **)**                                            |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                       | :ref:`get_target_location<class_NavigationAgent2D_method_get_target_location>` **(** **)** const                                  |
+| :ref:`RID<class_RID>`                               | :ref:`get_rid<class_NavigationAgent2D_method_get_rid>` **(** **)** |const|                                                        |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                       | :ref:`get_target_location<class_NavigationAgent2D_method_get_target_location>` **(** **)** |const|                                |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`is_navigation_finished<class_NavigationAgent2D_method_is_navigation_finished>` **(** **)**                                  |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`is_target_reachable<class_NavigationAgent2D_method_is_target_reachable>` **(** **)**                                        |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`is_target_reached<class_NavigationAgent2D_method_is_target_reached>` **(** **)** const                                      |
-+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_navigation<class_NavigationAgent2D_method_set_navigation>` **(** :ref:`Node<class_Node>` navigation **)**               |
+| :ref:`bool<class_bool>`                             | :ref:`is_target_reached<class_NavigationAgent2D_method_is_target_reached>` **(** **)** |const|                                    |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`set_target_location<class_NavigationAgent2D_method_set_target_location>` **(** :ref:`Vector2<class_Vector2>` location **)** |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
@@ -212,14 +210,14 @@ The distance threshold before a target is considered to be reached. This will al
 | *Getter*  | get_time_horizon()      |
 +-----------+-------------------------+
 
-The minimal amount of time for which this agent's velocities, that are computed with the collision avoidance algorithim, are safe with respect to other agents. The larger the number, the sooner the agent will respond to other agents, but less freedom in choosing its velocities. Must be positive.
+The minimal amount of time for which this agent's velocities, that are computed with the collision avoidance algorithm, are safe with respect to other agents. The larger the number, the sooner the agent will respond to other agents, but less freedom in choosing its velocities. Must be positive.
 
 Method Descriptions
 -------------------
 
 .. _class_NavigationAgent2D_method_distance_to_target:
 
-- :ref:`float<class_float>` **distance_to_target** **(** **)** const
+- :ref:`float<class_float>` **distance_to_target** **(** **)** |const|
 
 Returns the distance to the target location, using the agent's global position. The user must set the target location with :ref:`set_target_location<class_NavigationAgent2D_method_set_target_location>` in order for this to be accurate.
 
@@ -235,7 +233,7 @@ Returns the reachable final location in global coordinates. This can change if t
 
 .. _class_NavigationAgent2D_method_get_nav_path:
 
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_nav_path** **(** **)** const
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_nav_path** **(** **)** |const|
 
 Returns the path from start to finish in global coordinates.
 
@@ -243,17 +241,9 @@ Returns the path from start to finish in global coordinates.
 
 .. _class_NavigationAgent2D_method_get_nav_path_index:
 
-- :ref:`int<class_int>` **get_nav_path_index** **(** **)** const
+- :ref:`int<class_int>` **get_nav_path_index** **(** **)** |const|
 
 Returns which index the agent is currently on in the navigation path's :ref:`PackedVector2Array<class_PackedVector2Array>`.
-
-----
-
-.. _class_NavigationAgent2D_method_get_navigation:
-
-- :ref:`Node<class_Node>` **get_navigation** **(** **)** const
-
-Returns the :ref:`Navigation2D<class_Navigation2D>` node that the agent is using for its navigation system.
 
 ----
 
@@ -265,9 +255,15 @@ Returns a :ref:`Vector2<class_Vector2>` in global coordinates, that can be moved
 
 ----
 
+.. _class_NavigationAgent2D_method_get_rid:
+
+- :ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+
+----
+
 .. _class_NavigationAgent2D_method_get_target_location:
 
-- :ref:`Vector2<class_Vector2>` **get_target_location** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_target_location** **(** **)** |const|
 
 Returns the user defined :ref:`Vector2<class_Vector2>` after setting the target location.
 
@@ -291,17 +287,9 @@ Returns true if the target location is reachable. The target location is set usi
 
 .. _class_NavigationAgent2D_method_is_target_reached:
 
-- :ref:`bool<class_bool>` **is_target_reached** **(** **)** const
+- :ref:`bool<class_bool>` **is_target_reached** **(** **)** |const|
 
 Returns true if the target location is reached. The target location is set using :ref:`set_target_location<class_NavigationAgent2D_method_set_target_location>`. It may not always be possible to reach the target location. It should always be possible to reach the final location though. See :ref:`get_final_location<class_NavigationAgent2D_method_get_final_location>`.
-
-----
-
-.. _class_NavigationAgent2D_method_set_navigation:
-
-- void **set_navigation** **(** :ref:`Node<class_Node>` navigation **)**
-
-Sets the :ref:`Navigation2D<class_Navigation2D>` node used by the agent. Useful when you don't want to make the agent a child of a :ref:`Navigation2D<class_Navigation2D>` node.
 
 ----
 
@@ -319,3 +307,9 @@ Sets the user desired final location. This will clear the current navigation pat
 
 Sends the passed in velocity to the collision avoidance algorithm. It will adjust the velocity to avoid collisions. Once the adjustment to the velocity is complete, it will emit the :ref:`velocity_computed<class_NavigationAgent2D_signal_velocity_computed>` signal.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

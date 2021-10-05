@@ -82,7 +82,7 @@ Each :ref:`Dictionary<class_Dictionary>` object has the line diff contents under
 
 - :ref:`Dictionary<class_Dictionary>` **get_modified_files_data** **(** **)**
 
-Returns a :ref:`Dictionary<class_Dictionary>` containing the path of the detected file change mapped to an integer signifying what kind of a change the corresponding file has experienced.
+Returns a :ref:`Dictionary<class_Dictionary>` containing the path of the detected file change mapped to an integer signifying what kind of change the corresponding file has experienced.
 
 The following integer values are being used to signify that the detected file is:
 
@@ -160,3 +160,9 @@ Stages the file which should be committed when :ref:`commit<class_EditorVCSInter
 
 Unstages the file which was staged previously to be committed, so that it is no longer committed when :ref:`commit<class_EditorVCSInterface_method_commit>` is called. Argument should contain the absolute path.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

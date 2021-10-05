@@ -9,7 +9,7 @@
 VisualScriptClassConstant
 =========================
 
-**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Gets a constant from a given class.
 
@@ -30,9 +30,9 @@ Properties
 ----------
 
 +-------------------------------------+----------------------------------------------------------------------+---------------+
-| :ref:`StringName<class_StringName>` | :ref:`base_type<class_VisualScriptClassConstant_property_base_type>` | ``@"Object"`` |
+| :ref:`StringName<class_StringName>` | :ref:`base_type<class_VisualScriptClassConstant_property_base_type>` | ``&"Object"`` |
 +-------------------------------------+----------------------------------------------------------------------+---------------+
-| :ref:`StringName<class_StringName>` | :ref:`constant<class_VisualScriptClassConstant_property_constant>`   | ``@""``       |
+| :ref:`StringName<class_StringName>` | :ref:`constant<class_VisualScriptClassConstant_property_constant>`   | ``&""``       |
 +-------------------------------------+----------------------------------------------------------------------+---------------+
 
 Property Descriptions
@@ -43,7 +43,7 @@ Property Descriptions
 - :ref:`StringName<class_StringName>` **base_type**
 
 +-----------+----------------------+
-| *Default* | ``@"Object"``        |
+| *Default* | ``&"Object"``        |
 +-----------+----------------------+
 | *Setter*  | set_base_type(value) |
 +-----------+----------------------+
@@ -59,7 +59,7 @@ The constant's parent class.
 - :ref:`StringName<class_StringName>` **constant**
 
 +-----------+---------------------------+
-| *Default* | ``@""``                   |
+| *Default* | ``&""``                   |
 +-----------+---------------------------+
 | *Setter*  | set_class_constant(value) |
 +-----------+---------------------------+
@@ -68,3 +68,9 @@ The constant's parent class.
 
 The constant to return. See the given class for its available constants.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

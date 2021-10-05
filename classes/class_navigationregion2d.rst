@@ -11,13 +11,24 @@ NavigationRegion2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+A region of the 2D navigation map.
 
+Description
+-----------
+
+A region of the navigation map. It tells the :ref:`NavigationServer2D<class_NavigationServer2D>` what can be navigated and what cannot, based on its :ref:`NavigationPolygon<class_NavigationPolygon>` resource.
+
+Two regions can be connected to each other if they share a similar edge. You can set the minimum distance between two vertices required to connect two edges by using :ref:`NavigationServer2D.map_set_edge_connection_margin<class_NavigationServer2D_method_map_set_edge_connection_margin>`.
+
+**Note:** Overlapping two regions' polygons is not enough for connecting two regions. They must share a similar edge.
 
 Properties
 ----------
 
 +---------------------------------------------------+-----------------------------------------------------------+----------+
 | :ref:`bool<class_bool>`                           | :ref:`enabled<class_NavigationRegion2D_property_enabled>` | ``true`` |
++---------------------------------------------------+-----------------------------------------------------------+----------+
+| :ref:`int<class_int>`                             | :ref:`layers<class_NavigationRegion2D_property_layers>`   | ``1``    |
 +---------------------------------------------------+-----------------------------------------------------------+----------+
 | :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`navpoly<class_NavigationRegion2D_property_navpoly>` |          |
 +---------------------------------------------------+-----------------------------------------------------------+----------+
@@ -37,6 +48,24 @@ Property Descriptions
 | *Getter*  | is_enabled()       |
 +-----------+--------------------+
 
+Determines if the ``NavigationRegion2D`` is enabled or disabled.
+
+----
+
+.. _class_NavigationRegion2D_property_layers:
+
+- :ref:`int<class_int>` **layers**
+
++-----------+-------------------+
+| *Default* | ``1``             |
++-----------+-------------------+
+| *Setter*  | set_layers(value) |
++-----------+-------------------+
+| *Getter*  | get_layers()      |
++-----------+-------------------+
+
+A bitfield determining all layers the region belongs to. These layers can be checked upon when requesting a path with :ref:`NavigationServer2D.map_get_path<class_NavigationServer2D_method_map_get_path>`.
+
 ----
 
 .. _class_NavigationRegion2D_property_navpoly:
@@ -49,3 +78,11 @@ Property Descriptions
 | *Getter* | get_navigation_polygon()      |
 +----------+-------------------------------+
 
+The :ref:`NavigationPolygon<class_NavigationPolygon>` resource to use.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

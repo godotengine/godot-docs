@@ -16,21 +16,94 @@ Description
 
 3-element structure that can be used to represent positions in 3D space or any other pair of numeric values.
 
-It uses integer coordinates.
+It uses integer coordinates and is therefore preferable to :ref:`Vector3<class_Vector3>` when exact precision is required.
+
+**Note:** In a boolean context, a Vector3i will evaluate to ``false`` if it's equal to ``Vector3i(0, 0, 0)``. Otherwise, a Vector3i will always evaluate to ``true``.
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/math/index`
 
+- :doc:`../tutorials/math/vector_math`
+
+- `3Blue1Brown Essence of Linear Algebra <https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`__
+
+Properties
+----------
+
++-----------------------+-------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`x<class_Vector3i_property_x>` | ``0`` |
++-----------------------+-------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`y<class_Vector3i_property_y>` | ``0`` |
++-----------------------+-------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`z<class_Vector3i_property_z>` | ``0`` |
++-----------------------+-------------------------------------+-------+
+
 Methods
 -------
 
-+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3i<class_Vector3i>` | :ref:`Vector3i<class_Vector3i_method_Vector3i>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** |
-+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3i<class_Vector3i>` | :ref:`Vector3i<class_Vector3i_method_Vector3i>` **(** :ref:`Vector3<class_Vector3>` from **)**                                        |
-+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | :ref:`Vector3i<class_Vector3i_method_Vector3i>` **(** **)** |constructor|                                                                           |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | :ref:`Vector3i<class_Vector3i_method_Vector3i>` **(** :ref:`Vector3i<class_Vector3i>` from **)** |constructor|                                      |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | :ref:`Vector3i<class_Vector3i_method_Vector3i>` **(** :ref:`Vector3<class_Vector3>` from **)** |constructor|                                        |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | :ref:`Vector3i<class_Vector3i_method_Vector3i>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** |constructor| |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | :ref:`abs<class_Vector3i_method_abs>` **(** **)** |const|                                                                                           |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | :ref:`clamp<class_Vector3i_method_clamp>` **(** :ref:`Vector3i<class_Vector3i>` min, :ref:`Vector3i<class_Vector3i>` max **)** |const|              |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`max_axis<class_Vector3i_method_max_axis>` **(** **)** |const|                                                                                 |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`min_axis<class_Vector3i_method_min_axis>` **(** **)** |const|                                                                                 |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | **operator !=** **(** **)** |operator|                                                                                                              |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | **operator !=** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|                                                                        |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | **operator %** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|                                                                         |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | **operator %** **(** :ref:`int<class_int>` right **)** |operator|                                                                                   |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | **operator *** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|                                                                         |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | **operator *** **(** :ref:`float<class_float>` right **)** |operator|                                                                               |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | **operator *** **(** :ref:`int<class_int>` right **)** |operator|                                                                                   |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | **operator +** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|                                                                         |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | **operator -** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|                                                                         |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | **operator /** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|                                                                         |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | **operator /** **(** :ref:`float<class_float>` right **)** |operator|                                                                               |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | **operator /** **(** :ref:`int<class_int>` right **)** |operator|                                                                                   |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | **operator <** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|                                                                         |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | **operator <=** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|                                                                        |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | **operator ==** **(** **)** |operator|                                                                                                              |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | **operator ==** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|                                                                        |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | **operator >** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|                                                                         |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | **operator >=** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|                                                                        |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | **operator []** **(** :ref:`int<class_int>` index **)** |operator|                                                                                  |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | **operator unary+** **(** **)** |operator|                                                                                                          |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | **operator unary-** **(** **)** |operator|                                                                                                          |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>` | :ref:`sign<class_Vector3i_method_sign>` **(** **)** |const|                                                                                         |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Constants
 ---------
@@ -63,34 +136,239 @@ Constants
 
 - **AXIS_Z** = **2** --- Enumerated value for the Z axis.
 
-- **ZERO** = **Vector3i( 0, 0, 0 )** --- Zero vector.
+- **ZERO** = **Vector3i(0, 0, 0)** --- Zero vector, a vector with all components set to ``0``.
 
-- **ONE** = **Vector3i( 1, 1, 1 )** --- One vector.
+- **ONE** = **Vector3i(1, 1, 1)** --- One vector, a vector with all components set to ``1``.
 
-- **LEFT** = **Vector3i( -1, 0, 0 )** --- Left unit vector.
+- **LEFT** = **Vector3i(-1, 0, 0)** --- Left unit vector. Represents the local direction of left, and the global direction of west.
 
-- **RIGHT** = **Vector3i( 1, 0, 0 )** --- Right unit vector.
+- **RIGHT** = **Vector3i(1, 0, 0)** --- Right unit vector. Represents the local direction of right, and the global direction of east.
 
-- **UP** = **Vector3i( 0, 1, 0 )** --- Up unit vector.
+- **UP** = **Vector3i(0, 1, 0)** --- Up unit vector.
 
-- **DOWN** = **Vector3i( 0, -1, 0 )** --- Down unit vector.
+- **DOWN** = **Vector3i(0, -1, 0)** --- Down unit vector.
 
-- **FORWARD** = **Vector3i( 0, 0, -1 )** --- Forward unit vector.
+- **FORWARD** = **Vector3i(0, 0, -1)** --- Forward unit vector. Represents the local direction of forward, and the global direction of north.
 
-- **BACK** = **Vector3i( 0, 0, 1 )** --- Back unit vector.
+- **BACK** = **Vector3i(0, 0, 1)** --- Back unit vector. Represents the local direction of back, and the global direction of south.
+
+Property Descriptions
+---------------------
+
+.. _class_Vector3i_property_x:
+
+- :ref:`int<class_int>` **x**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+The vector's X component. Also accessible by using the index position ``[0]``.
+
+----
+
+.. _class_Vector3i_property_y:
+
+- :ref:`int<class_int>` **y**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+The vector's Y component. Also accessible by using the index position ``[1]``.
+
+----
+
+.. _class_Vector3i_property_z:
+
+- :ref:`int<class_int>` **z**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+The vector's Z component. Also accessible by using the index position ``[2]``.
 
 Method Descriptions
 -------------------
 
 .. _class_Vector3i_method_Vector3i:
 
-- :ref:`Vector3i<class_Vector3i>` **Vector3i** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)**
+- :ref:`Vector3i<class_Vector3i>` **Vector3i** **(** **)** |constructor|
+
+Constructs a default-initialized ``Vector3i`` with all components set to ``0``.
+
+----
+
+- :ref:`Vector3i<class_Vector3i>` **Vector3i** **(** :ref:`Vector3i<class_Vector3i>` from **)** |constructor|
+
+Constructs a ``Vector3i`` as a copy of the given ``Vector3i``.
+
+----
+
+- :ref:`Vector3i<class_Vector3i>` **Vector3i** **(** :ref:`Vector3<class_Vector3>` from **)** |constructor|
+
+Constructs a new ``Vector3i`` from :ref:`Vector3<class_Vector3>`. The floating point coordinates will be truncated.
+
+----
+
+- :ref:`Vector3i<class_Vector3i>` **Vector3i** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** |constructor|
 
 Returns a ``Vector3i`` with the given components.
 
 ----
 
-- :ref:`Vector3i<class_Vector3i>` **Vector3i** **(** :ref:`Vector3<class_Vector3>` from **)**
+.. _class_Vector3i_method_abs:
 
-Constructs a new ``Vector3i`` from :ref:`Vector3<class_Vector3>`. The floating point coordinates will be truncated.
+- :ref:`Vector3i<class_Vector3i>` **abs** **(** **)** |const|
 
+----
+
+.. _class_Vector3i_method_clamp:
+
+- :ref:`Vector3i<class_Vector3i>` **clamp** **(** :ref:`Vector3i<class_Vector3i>` min, :ref:`Vector3i<class_Vector3i>` max **)** |const|
+
+Returns a new vector with all components clamped between the components of ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
+
+----
+
+.. _class_Vector3i_method_max_axis:
+
+- :ref:`int<class_int>` **max_axis** **(** **)** |const|
+
+Returns the axis of the vector's largest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_X<class_Vector3i_constant_AXIS_X>`.
+
+----
+
+.. _class_Vector3i_method_min_axis:
+
+- :ref:`int<class_int>` **min_axis** **(** **)** |const|
+
+Returns the axis of the vector's smallest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_Z<class_Vector3i_constant_AXIS_Z>`.
+
+----
+
+.. _class_Vector3i_method_operator !=:
+
+- :ref:`bool<class_bool>` **operator !=** **(** **)** |operator|
+
+----
+
+- :ref:`bool<class_bool>` **operator !=** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|
+
+----
+
+.. _class_Vector3i_method_operator %:
+
+- :ref:`Vector3i<class_Vector3i>` **operator %** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|
+
+----
+
+- :ref:`Vector3i<class_Vector3i>` **operator %** **(** :ref:`int<class_int>` right **)** |operator|
+
+----
+
+.. _class_Vector3i_method_operator *:
+
+- :ref:`Vector3i<class_Vector3i>` **operator *** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|
+
+----
+
+- :ref:`Vector3i<class_Vector3i>` **operator *** **(** :ref:`float<class_float>` right **)** |operator|
+
+----
+
+- :ref:`Vector3i<class_Vector3i>` **operator *** **(** :ref:`int<class_int>` right **)** |operator|
+
+----
+
+.. _class_Vector3i_method_operator +:
+
+- :ref:`Vector3i<class_Vector3i>` **operator +** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|
+
+----
+
+.. _class_Vector3i_method_operator -:
+
+- :ref:`Vector3i<class_Vector3i>` **operator -** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|
+
+----
+
+.. _class_Vector3i_method_operator /:
+
+- :ref:`Vector3i<class_Vector3i>` **operator /** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|
+
+----
+
+- :ref:`Vector3i<class_Vector3i>` **operator /** **(** :ref:`float<class_float>` right **)** |operator|
+
+----
+
+- :ref:`Vector3i<class_Vector3i>` **operator /** **(** :ref:`int<class_int>` right **)** |operator|
+
+----
+
+.. _class_Vector3i_method_operator <:
+
+- :ref:`bool<class_bool>` **operator <** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|
+
+----
+
+.. _class_Vector3i_method_operator <=:
+
+- :ref:`bool<class_bool>` **operator <=** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|
+
+----
+
+.. _class_Vector3i_method_operator ==:
+
+- :ref:`bool<class_bool>` **operator ==** **(** **)** |operator|
+
+----
+
+- :ref:`bool<class_bool>` **operator ==** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|
+
+----
+
+.. _class_Vector3i_method_operator >:
+
+- :ref:`bool<class_bool>` **operator >** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|
+
+----
+
+.. _class_Vector3i_method_operator >=:
+
+- :ref:`bool<class_bool>` **operator >=** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|
+
+----
+
+.. _class_Vector3i_method_operator []:
+
+- :ref:`int<class_int>` **operator []** **(** :ref:`int<class_int>` index **)** |operator|
+
+----
+
+.. _class_Vector3i_method_operator unary+:
+
+- :ref:`Vector3i<class_Vector3i>` **operator unary+** **(** **)** |operator|
+
+----
+
+.. _class_Vector3i_method_operator unary-:
+
+- :ref:`Vector3i<class_Vector3i>` **operator unary-** **(** **)** |operator|
+
+----
+
+.. _class_Vector3i_method_sign:
+
+- :ref:`Vector3i<class_Vector3i>` **sign** **(** **)** |const|
+
+Returns the vector with each component set to one or negative one, depending on the signs of the components.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

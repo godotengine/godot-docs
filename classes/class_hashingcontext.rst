@@ -9,7 +9,7 @@
 HashingContext
 ==============
 
-**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Context to compute cryptographic hashes over multiple iterations.
 
@@ -20,9 +20,12 @@ The HashingContext class provides an interface for computing cryptographic hashe
 
 The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashing algorithms.
 
-::
 
-    const CHUNK_SIZE = 1024
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    const CHUNK_SIZE = 102
     
     func hash_file(path):
         var ctx = HashingContext.new()
@@ -41,6 +44,37 @@ The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashi
         var res = ctx.finish()
         # Print the result as hex string and array.
         printt(res.hex_encode(), Array(res))
+
+ .. code-tab:: csharp
+
+    public const int ChunkSize = 1024;
+    
+    public void HashFile(string path)
+    {
+        var ctx = new HashingContext();
+        var file = new File();
+        // Start a SHA-256 context.
+        ctx.Start(HashingContext.HashType.Sha256);
+        // Check that file exists.
+        if (!file.FileExists(path))
+        {
+            return;
+        }
+        // Open the file to hash.
+        file.Open(path, File.ModeFlags.Read);
+        // Update the context after reading each chunk.
+        while (!file.EofReached())
+        {
+            ctx.Update(file.GetBuffer(ChunkSize));
+        }
+        // Get the computed hash.
+        byte[] res = ctx.Finish();
+        // Print the result as hex string and array.
+    
+        GD.PrintT(res.HexEncode(), res);
+    }
+
+
 
 **Note:** Not available in HTML5 exports.
 
@@ -99,3 +133,9 @@ Starts a new hash computation of the given ``type`` (e.g. :ref:`HASH_SHA256<clas
 
 Updates the computation with the given ``chunk`` of data.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

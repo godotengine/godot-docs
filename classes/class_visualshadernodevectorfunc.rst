@@ -9,9 +9,14 @@
 VisualShaderNodeVectorFunc
 ==========================
 
-**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+A vector function to be used within the visual shader graph.
 
+Description
+-----------
+
+A visual shader node able to perform different functions using vectors.
 
 Properties
 ----------
@@ -95,77 +100,81 @@ Enumerations
 
 .. _class_VisualShaderNodeVectorFunc_constant_FUNC_ONEMINUS:
 
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_MAX:
+
 enum **Function**:
 
-- **FUNC_NORMALIZE** = **0**
+- **FUNC_NORMALIZE** = **0** --- Normalizes the vector so that it has a length of ``1`` but points in the same direction.
 
-- **FUNC_SATURATE** = **1**
+- **FUNC_SATURATE** = **1** --- Clamps the value between ``0.0`` and ``1.0``.
 
-- **FUNC_NEGATE** = **2**
+- **FUNC_NEGATE** = **2** --- Returns the opposite value of the parameter.
 
-- **FUNC_RECIPROCAL** = **3**
+- **FUNC_RECIPROCAL** = **3** --- Returns ``1/vector``.
 
-- **FUNC_RGB2HSV** = **4**
+- **FUNC_RGB2HSV** = **4** --- Converts RGB vector to HSV equivalent.
 
-- **FUNC_HSV2RGB** = **5**
+- **FUNC_HSV2RGB** = **5** --- Converts HSV vector to RGB equivalent.
 
-- **FUNC_ABS** = **6**
+- **FUNC_ABS** = **6** --- Returns the absolute value of the parameter.
 
-- **FUNC_ACOS** = **7**
+- **FUNC_ACOS** = **7** --- Returns the arc-cosine of the parameter.
 
-- **FUNC_ACOSH** = **8**
+- **FUNC_ACOSH** = **8** --- Returns the inverse hyperbolic cosine of the parameter.
 
-- **FUNC_ASIN** = **9**
+- **FUNC_ASIN** = **9** --- Returns the arc-sine of the parameter.
 
-- **FUNC_ASINH** = **10**
+- **FUNC_ASINH** = **10** --- Returns the inverse hyperbolic sine of the parameter.
 
-- **FUNC_ATAN** = **11**
+- **FUNC_ATAN** = **11** --- Returns the arc-tangent of the parameter.
 
-- **FUNC_ATANH** = **12**
+- **FUNC_ATANH** = **12** --- Returns the inverse hyperbolic tangent of the parameter.
 
-- **FUNC_CEIL** = **13**
+- **FUNC_CEIL** = **13** --- Finds the nearest integer that is greater than or equal to the parameter.
 
-- **FUNC_COS** = **14**
+- **FUNC_COS** = **14** --- Returns the cosine of the parameter.
 
-- **FUNC_COSH** = **15**
+- **FUNC_COSH** = **15** --- Returns the hyperbolic cosine of the parameter.
 
-- **FUNC_DEGREES** = **16**
+- **FUNC_DEGREES** = **16** --- Converts a quantity in radians to degrees.
 
-- **FUNC_EXP** = **17**
+- **FUNC_EXP** = **17** --- Base-e Exponential.
 
-- **FUNC_EXP2** = **18**
+- **FUNC_EXP2** = **18** --- Base-2 Exponential.
 
-- **FUNC_FLOOR** = **19**
+- **FUNC_FLOOR** = **19** --- Finds the nearest integer less than or equal to the parameter.
 
-- **FUNC_FRAC** = **20**
+- **FUNC_FRAC** = **20** --- Computes the fractional part of the argument.
 
-- **FUNC_INVERSE_SQRT** = **21**
+- **FUNC_INVERSE_SQRT** = **21** --- Returns the inverse of the square root of the parameter.
 
-- **FUNC_LOG** = **22**
+- **FUNC_LOG** = **22** --- Natural logarithm.
 
-- **FUNC_LOG2** = **23**
+- **FUNC_LOG2** = **23** --- Base-2 logarithm.
 
-- **FUNC_RADIANS** = **24**
+- **FUNC_RADIANS** = **24** --- Converts a quantity in degrees to radians.
 
-- **FUNC_ROUND** = **25**
+- **FUNC_ROUND** = **25** --- Finds the nearest integer to the parameter.
 
-- **FUNC_ROUNDEVEN** = **26**
+- **FUNC_ROUNDEVEN** = **26** --- Finds the nearest even integer to the parameter.
 
-- **FUNC_SIGN** = **27**
+- **FUNC_SIGN** = **27** --- Extracts the sign of the parameter, i.e. returns ``-1`` if the parameter is negative, ``1`` if it's positive and ``0`` otherwise.
 
-- **FUNC_SIN** = **28**
+- **FUNC_SIN** = **28** --- Returns the sine of the parameter.
 
-- **FUNC_SINH** = **29**
+- **FUNC_SINH** = **29** --- Returns the hyperbolic sine of the parameter.
 
-- **FUNC_SQRT** = **30**
+- **FUNC_SQRT** = **30** --- Returns the square root of the parameter.
 
-- **FUNC_TAN** = **31**
+- **FUNC_TAN** = **31** --- Returns the tangent of the parameter.
 
-- **FUNC_TANH** = **32**
+- **FUNC_TANH** = **32** --- Returns the hyperbolic tangent of the parameter.
 
-- **FUNC_TRUNC** = **33**
+- **FUNC_TRUNC** = **33** --- Returns a value equal to the nearest integer to the parameter whose absolute value is not larger than the absolute value of the parameter.
 
-- **FUNC_ONEMINUS** = **34**
+- **FUNC_ONEMINUS** = **34** --- Returns ``1.0 - vector``.
+
+- **FUNC_MAX** = **35** --- Represents the size of the :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` enum.
 
 Property Descriptions
 ---------------------
@@ -182,3 +191,11 @@ Property Descriptions
 | *Getter*  | get_function()      |
 +-----------+---------------------+
 
+The function to be performed. See :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` for options.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

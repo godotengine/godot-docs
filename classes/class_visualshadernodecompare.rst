@@ -9,7 +9,7 @@
 VisualShaderNodeCompare
 =======================
 
-**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A comparison function for common types within the visual shader graph.
 
@@ -44,6 +44,8 @@ Enumerations
 
 .. _class_VisualShaderNodeCompare_constant_CTYPE_TRANSFORM:
 
+.. _class_VisualShaderNodeCompare_constant_CTYPE_MAX:
+
 enum **ComparisonType**:
 
 - **CTYPE_SCALAR** = **0** --- A floating-point scalar.
@@ -55,6 +57,8 @@ enum **ComparisonType**:
 - **CTYPE_BOOLEAN** = **3** --- A boolean type.
 
 - **CTYPE_TRANSFORM** = **4** --- A transform (``mat4``) type.
+
+- **CTYPE_MAX** = **5** --- Represents the size of the :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` enum.
 
 ----
 
@@ -72,6 +76,8 @@ enum **ComparisonType**:
 
 .. _class_VisualShaderNodeCompare_constant_FUNC_LESS_THAN_EQUAL:
 
+.. _class_VisualShaderNodeCompare_constant_FUNC_MAX:
+
 enum **Function**:
 
 - **FUNC_EQUAL** = **0** --- Comparison for equality (``a == b``).
@@ -86,6 +92,8 @@ enum **Function**:
 
 - **FUNC_LESS_THAN_EQUAL** = **5** --- Comparison for less than or equal (``a <= b``). Cannot be used if :ref:`type<class_VisualShaderNodeCompare_property_type>` set to :ref:`CTYPE_BOOLEAN<class_VisualShaderNodeCompare_constant_CTYPE_BOOLEAN>` or :ref:`CTYPE_TRANSFORM<class_VisualShaderNodeCompare_constant_CTYPE_TRANSFORM>`.
 
+- **FUNC_MAX** = **6** --- Represents the size of the :ref:`Function<enum_VisualShaderNodeCompare_Function>` enum.
+
 ----
 
 .. _enum_VisualShaderNodeCompare_Condition:
@@ -94,11 +102,15 @@ enum **Function**:
 
 .. _class_VisualShaderNodeCompare_constant_COND_ANY:
 
+.. _class_VisualShaderNodeCompare_constant_COND_MAX:
+
 enum **Condition**:
 
 - **COND_ALL** = **0** --- The result will be true if all of component in vector satisfy the comparison condition.
 
 - **COND_ANY** = **1** --- The result will be true if any of component in vector satisfy the comparison condition.
+
+- **COND_MAX** = **2** --- Represents the size of the :ref:`Condition<enum_VisualShaderNodeCompare_Condition>` enum.
 
 Property Descriptions
 ---------------------
@@ -149,3 +161,9 @@ A comparison function. See :ref:`Function<enum_VisualShaderNodeCompare_Function>
 
 The type to be used in the comparison. See :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` for options.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

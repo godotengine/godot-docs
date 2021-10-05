@@ -9,7 +9,7 @@
 BitMap
 ======
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Boolean matrix.
 
@@ -26,15 +26,15 @@ Methods
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`create_from_image_alpha<class_BitMap_method_create_from_image_alpha>` **(** :ref:`Image<class_Image>` image, :ref:`float<class_float>` threshold=0.1 **)** |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_bit<class_BitMap_method_get_bit>` **(** :ref:`Vector2<class_Vector2>` position **)** const                                                             |
+| :ref:`bool<class_bool>`       | :ref:`get_bit<class_BitMap_method_get_bit>` **(** :ref:`Vector2<class_Vector2>` position **)** |const|                                                           |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_size<class_BitMap_method_get_size>` **(** **)** const                                                                                                  |
+| :ref:`Vector2<class_Vector2>` | :ref:`get_size<class_BitMap_method_get_size>` **(** **)** |const|                                                                                                |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_true_bit_count<class_BitMap_method_get_true_bit_count>` **(** **)** const                                                                              |
+| :ref:`int<class_int>`         | :ref:`get_true_bit_count<class_BitMap_method_get_true_bit_count>` **(** **)** |const|                                                                            |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`grow_mask<class_BitMap_method_grow_mask>` **(** :ref:`int<class_int>` pixels, :ref:`Rect2<class_Rect2>` rect **)**                                         |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`opaque_to_polygons<class_BitMap_method_opaque_to_polygons>` **(** :ref:`Rect2<class_Rect2>` rect, :ref:`float<class_float>` epsilon=2.0 **)** const        |
+| :ref:`Array<class_Array>`     | :ref:`opaque_to_polygons<class_BitMap_method_opaque_to_polygons>` **(** :ref:`Rect2<class_Rect2>` rect, :ref:`float<class_float>` epsilon=2.0 **)** |const|      |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_bit<class_BitMap_method_set_bit>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` bit **)**                                      |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -62,7 +62,7 @@ Creates a bitmap that matches the given image dimensions, every element of the b
 
 .. _class_BitMap_method_get_bit:
 
-- :ref:`bool<class_bool>` **get_bit** **(** :ref:`Vector2<class_Vector2>` position **)** const
+- :ref:`bool<class_bool>` **get_bit** **(** :ref:`Vector2<class_Vector2>` position **)** |const|
 
 Returns bitmap's value at the specified position.
 
@@ -70,7 +70,7 @@ Returns bitmap's value at the specified position.
 
 .. _class_BitMap_method_get_size:
 
-- :ref:`Vector2<class_Vector2>` **get_size** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_size** **(** **)** |const|
 
 Returns bitmap's dimensions.
 
@@ -78,7 +78,7 @@ Returns bitmap's dimensions.
 
 .. _class_BitMap_method_get_true_bit_count:
 
-- :ref:`int<class_int>` **get_true_bit_count** **(** **)** const
+- :ref:`int<class_int>` **get_true_bit_count** **(** **)** |const|
 
 Returns the amount of bitmap elements that are set to ``true``.
 
@@ -88,11 +88,23 @@ Returns the amount of bitmap elements that are set to ``true``.
 
 - void **grow_mask** **(** :ref:`int<class_int>` pixels, :ref:`Rect2<class_Rect2>` rect **)**
 
+Applies morphological dilation to the bitmap. The first argument is the dilation amount, Rect2 is the area where the dilation will be applied.
+
 ----
 
 .. _class_BitMap_method_opaque_to_polygons:
 
-- :ref:`Array<class_Array>` **opaque_to_polygons** **(** :ref:`Rect2<class_Rect2>` rect, :ref:`float<class_float>` epsilon=2.0 **)** const
+- :ref:`Array<class_Array>` **opaque_to_polygons** **(** :ref:`Rect2<class_Rect2>` rect, :ref:`float<class_float>` epsilon=2.0 **)** |const|
+
+Creates an :ref:`Array<class_Array>` of polygons covering a rectangular portion of the bitmap. It uses a marching squares algorithm, followed by Ramer-Douglas-Peucker (RDP) reduction of the number of vertices. Each polygon is described as a :ref:`PackedVector2Array<class_PackedVector2Array>` of its vertices.
+
+To get polygons covering the whole bitmap, pass:
+
+::
+
+    Rect2(Vector2(), get_size())
+
+``epsilon`` is passed to RDP to control how accurately the polygons cover the bitmap: a lower ``epsilon`` corresponds to more points in the polygons.
 
 ----
 
@@ -110,3 +122,9 @@ Sets the bitmap's element at the specified position, to the specified value.
 
 Sets a rectangular portion of the bitmap to the specified value.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

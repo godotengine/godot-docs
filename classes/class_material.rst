@@ -9,7 +9,7 @@
 Material
 ========
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 **Inherited By:** :ref:`BaseMaterial3D<class_BaseMaterial3D>`, :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`, :ref:`PanoramaSkyMaterial<class_PanoramaSkyMaterial>`, :ref:`ParticlesMaterial<class_ParticlesMaterial>`, :ref:`PhysicalSkyMaterial<class_PhysicalSkyMaterial>`, :ref:`ProceduralSkyMaterial<class_ProceduralSkyMaterial>`, :ref:`ShaderMaterial<class_ShaderMaterial>`
 
@@ -18,7 +18,14 @@ Abstract base :ref:`Resource<class_Resource>` for coloring and shading geometry.
 Description
 -----------
 
-Material is a base :ref:`Resource<class_Resource>` used for coloring and shading geometry. All materials inherit from it and almost all :ref:`VisualInstance<class_VisualInstance>` derived nodes carry a Material. A few flags and parameters are shared between all material types and are configured here.
+Material is a base :ref:`Resource<class_Resource>` used for coloring and shading geometry. All materials inherit from it and almost all :ref:`VisualInstance3D<class_VisualInstance3D>` derived nodes carry a Material. A few flags and parameters are shared between all material types and are configured here.
+
+Tutorials
+---------
+
+- `3D Material Testers Demo <https://godotengine.org/asset-library/asset/123>`__
+
+- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
 Properties
 ----------
@@ -28,6 +35,13 @@ Properties
 +---------------------------------+-----------------------------------------------------------------+-------+
 | :ref:`int<class_int>`           | :ref:`render_priority<class_Material_property_render_priority>` | ``0`` |
 +---------------------------------+-----------------------------------------------------------------+-------+
+
+Methods
+-------
+
++------+-------------------------------------------------------------------------------------------------+
+| void | :ref:`inspect_native_shader_code<class_Material_method_inspect_native_shader_code>` **(** **)** |
++------+-------------------------------------------------------------------------------------------------+
 
 Constants
 ---------
@@ -55,7 +69,7 @@ Property Descriptions
 
 Sets the ``Material`` to be used for the next pass. This renders the object again using a different material.
 
-**Note:** only applies to :ref:`StandardMaterial3D<class_StandardMaterial3D>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
+**Note:** This only applies to :ref:`StandardMaterial3D<class_StandardMaterial3D>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
 
 ----
 
@@ -73,5 +87,20 @@ Sets the ``Material`` to be used for the next pass. This renders the object agai
 
 Sets the render priority for transparent objects in 3D scenes. Higher priority objects will be sorted in front of lower priority objects.
 
-**Note:** this only applies to sorting of transparent objects. This will not impact how transparent objects are sorted relative to opaque objects. This is because opaque objects are sorted based on depth, while transparent objects are sorted from back to front (subject to priority).
+**Note:** This only applies to :ref:`StandardMaterial3D<class_StandardMaterial3D>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
 
+**Note:** This only applies to sorting of transparent objects. This will not impact how transparent objects are sorted relative to opaque objects. This is because opaque objects are not sorted, while transparent objects are sorted from back to front (subject to priority).
+
+Method Descriptions
+-------------------
+
+.. _class_Material_method_inspect_native_shader_code:
+
+- void **inspect_native_shader_code** **(** **)**
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -58,7 +58,7 @@ enum **SaverFlags**:
 
 - **FLAG_OMIT_EDITOR_PROPERTIES** = **8** --- Do not save editor-specific metadata (identified by their ``__editor`` prefix).
 
-- **FLAG_SAVE_BIG_ENDIAN** = **16** --- Save as big endian (see :ref:`File.endian_swap<class_File_property_endian_swap>`).
+- **FLAG_SAVE_BIG_ENDIAN** = **16** --- Save as big endian (see :ref:`File.big_endian<class_File_property_big_endian>`).
 
 - **FLAG_COMPRESS** = **32** --- Compress the resource on save using :ref:`File.COMPRESSION_ZSTD<class_File_constant_COMPRESSION_ZSTD>`. Only available for binary resource types.
 
@@ -85,3 +85,9 @@ The ``flags`` bitmask can be specified to customize the save behavior.
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

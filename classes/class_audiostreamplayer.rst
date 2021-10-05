@@ -18,10 +18,22 @@ Description
 
 Plays an audio stream non-positionally.
 
+To play audio positionally, use :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>` or :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>` instead of ``AudioStreamPlayer``.
+
 Tutorials
 ---------
 
 - :doc:`../tutorials/audio/audio_streams`
+
+- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
+
+- `Audio Device Changer Demo <https://godotengine.org/asset-library/asset/525>`__
+
+- `Audio Generator Demo <https://godotengine.org/asset-library/asset/526>`__
+
+- `Audio Mic Record Demo <https://godotengine.org/asset-library/asset/527>`__
+
+- `Audio Spectrum Demo <https://godotengine.org/asset-library/asset/528>`__
 
 Properties
 ----------
@@ -29,7 +41,9 @@ Properties
 +----------------------------------------------------+----------------------------------------------------------------------+---------------+
 | :ref:`bool<class_bool>`                            | :ref:`autoplay<class_AudioStreamPlayer_property_autoplay>`           | ``false``     |
 +----------------------------------------------------+----------------------------------------------------------------------+---------------+
-| :ref:`StringName<class_StringName>`                | :ref:`bus<class_AudioStreamPlayer_property_bus>`                     | ``@"Master"`` |
+| :ref:`StringName<class_StringName>`                | :ref:`bus<class_AudioStreamPlayer_property_bus>`                     | ``&"Master"`` |
++----------------------------------------------------+----------------------------------------------------------------------+---------------+
+| :ref:`int<class_int>`                              | :ref:`max_polyphony<class_AudioStreamPlayer_property_max_polyphony>` | ``1``         |
 +----------------------------------------------------+----------------------------------------------------------------------+---------------+
 | :ref:`MixTarget<enum_AudioStreamPlayer_MixTarget>` | :ref:`mix_target<class_AudioStreamPlayer_property_mix_target>`       | ``0``         |
 +----------------------------------------------------+----------------------------------------------------------------------+---------------+
@@ -111,7 +125,7 @@ If ``true``, audio plays when added to scene tree.
 - :ref:`StringName<class_StringName>` **bus**
 
 +-----------+----------------+
-| *Default* | ``@"Master"``  |
+| *Default* | ``&"Master"``  |
 +-----------+----------------+
 | *Setter*  | set_bus(value) |
 +-----------+----------------+
@@ -119,6 +133,22 @@ If ``true``, audio plays when added to scene tree.
 +-----------+----------------+
 
 Bus on which this audio is playing.
+
+----
+
+.. _class_AudioStreamPlayer_property_max_polyphony:
+
+- :ref:`int<class_int>` **max_polyphony**
+
++-----------+--------------------------+
+| *Default* | ``1``                    |
++-----------+--------------------------+
+| *Setter*  | set_max_polyphony(value) |
++-----------+--------------------------+
+| *Getter*  | get_max_polyphony()      |
++-----------+--------------------------+
+
+The maximum number of sounds this node can play at the same time. Playing additional sounds after this value is reached will cut off the oldest sounds.
 
 ----
 
@@ -150,7 +180,7 @@ If the audio configuration has more than two speakers, this sets the target chan
 | *Getter*  | get_pitch_scale()      |
 +-----------+------------------------+
 
-Changes the pitch and the tempo of the audio.
+The pitch and the tempo of the audio, as a multiplier of the audio sample's sample rate.
 
 ----
 
@@ -253,3 +283,9 @@ Sets the position from which audio will be played, in seconds.
 
 Stops the audio.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

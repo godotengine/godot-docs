@@ -9,7 +9,7 @@
 AudioEffectCompressor
 =====================
 
-**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Adds a compressor audio effect to an audio bus.
 
@@ -44,7 +44,7 @@ Properties
 +-------------------------------------+--------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`           | :ref:`release_ms<class_AudioEffectCompressor_property_release_ms>` | ``250.0`` |
 +-------------------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`StringName<class_StringName>` | :ref:`sidechain<class_AudioEffectCompressor_property_sidechain>`   | ``@""``   |
+| :ref:`StringName<class_StringName>` | :ref:`sidechain<class_AudioEffectCompressor_property_sidechain>`   | ``&""``   |
 +-------------------------------------+--------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`           | :ref:`threshold<class_AudioEffectCompressor_property_threshold>`   | ``0.0``   |
 +-------------------------------------+--------------------------------------------------------------------+-----------+
@@ -137,7 +137,7 @@ Compressor's delay time to stop reducing the signal after the signal level falls
 - :ref:`StringName<class_StringName>` **sidechain**
 
 +-----------+----------------------+
-| *Default* | ``@""``              |
+| *Default* | ``&""``              |
 +-----------+----------------------+
 | *Setter*  | set_sidechain(value) |
 +-----------+----------------------+
@@ -162,3 +162,9 @@ Reduce the sound level using another audio bus for threshold detection.
 
 The level above which compression is applied to the audio. Value can range from -60 to 0.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

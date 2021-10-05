@@ -9,12 +9,18 @@
 VisualShaderNodeFaceForward
 ===========================
 
-**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Returns the vector that points in the same direction as a reference vector within the visual shader graph.
 
 Description
 -----------
 
-Translates to ``faceforward(N, I, Nref)`` in the shader language. The function has three vector parameters: ``N``, the vector to orient, ``I``, the incident vector, and ``Nref``, the reference vector. If the dot product of ``I`` and ``Nref`` is smaller than zero the return value is ``N``. Otherwise ``-N`` is returned.
+Translates to ``faceforward(N, I, Nref)`` in the shader language. The function has three vector parameters: ``N``, the vector to orient, ``I``, the incident vector, and ``Nref``, the reference vector. If the dot product of ``I`` and ``Nref`` is smaller than zero the return value is ``N``. Otherwise, ``-N`` is returned.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -18,31 +18,56 @@ Description
 
 ``TextServerManager`` is the API backend for loading, enumeration and switching :ref:`TextServer<class_TextServer>`\ s.
 
-Note: Switching text server at runtime is possible, but will invalidate all fonts and text buffers. Make sure to unload all controls, fonts, and themes before doing so.
+**Note:** Switching text server at runtime is possible, but will invalidate all fonts and text buffers. Make sure to unload all controls, fonts, and themes before doing so.
 
 Methods
 -------
 
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TextServer<class_TextServer>` | :ref:`find_interface<class_TextServerManager_method_find_interface>` **(** :ref:`String<class_String>` name **)** |const|            |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TextServer<class_TextServer>` | :ref:`get_interface<class_TextServerManager_method_get_interface>` **(** :ref:`int<class_int>` index **)** |const|                   |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`get_interface_count<class_TextServerManager_method_get_interface_count>` **(** **)** |const|                                   |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`get_interface_features<class_TextServerManager_method_get_interface_features>` **(** :ref:`int<class_int>` index **)** |const| |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`get_interface_name<class_TextServerManager_method_get_interface_name>` **(** :ref:`int<class_int>` index **)** |const|         |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`           | :ref:`get_interfaces<class_TextServerManager_method_get_interfaces>` **(** **)** |const|                                             |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TextServer<class_TextServer>` | :ref:`get_primary_interface<class_TextServerManager_method_get_primary_interface>` **(** **)** |const|                               |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`set_primary_interface<class_TextServerManager_method_set_primary_interface>` **(** :ref:`int<class_int>` index **)**           |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`add_interface<class_TextServerManager_method_add_interface>` **(** :ref:`TextServer<class_TextServer>` interface **)**             |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TextServer<class_TextServer>` | :ref:`find_interface<class_TextServerManager_method_find_interface>` **(** :ref:`String<class_String>` name **)** |const|                |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TextServer<class_TextServer>` | :ref:`get_interface<class_TextServerManager_method_get_interface>` **(** :ref:`int<class_int>` idx **)** |const|                         |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`get_interface_count<class_TextServerManager_method_get_interface_count>` **(** **)** |const|                                       |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`           | :ref:`get_interfaces<class_TextServerManager_method_get_interfaces>` **(** **)** |const|                                                 |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TextServer<class_TextServer>` | :ref:`get_primary_interface<class_TextServerManager_method_get_primary_interface>` **(** **)** |const|                                   |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`remove_interface<class_TextServerManager_method_remove_interface>` **(** :ref:`TextServer<class_TextServer>` interface **)**       |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`set_primary_interface<class_TextServerManager_method_set_primary_interface>` **(** :ref:`TextServer<class_TextServer>` index **)** |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+.. _class_TextServerManager_signal_interface_added:
+
+- **interface_added** **(** :ref:`StringName<class_StringName>` interface_name **)**
+
+Emitted when a new interface has been added.
+
+----
+
+.. _class_TextServerManager_signal_interface_removed:
+
+- **interface_removed** **(** :ref:`StringName<class_StringName>` interface_name **)**
+
+Emitted when an interface is removed.
 
 Method Descriptions
 -------------------
+
+.. _class_TextServerManager_method_add_interface:
+
+- void **add_interface** **(** :ref:`TextServer<class_TextServer>` interface **)**
+
+Registers an :ref:`TextServer<class_TextServer>` interface.
+
+----
 
 .. _class_TextServerManager_method_find_interface:
 
@@ -54,7 +79,7 @@ Finds an interface by its name.
 
 .. _class_TextServerManager_method_get_interface:
 
-- :ref:`TextServer<class_TextServer>` **get_interface** **(** :ref:`int<class_int>` index **)** |const|
+- :ref:`TextServer<class_TextServer>` **get_interface** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the interface registered at a given index.
 
@@ -65,22 +90,6 @@ Returns the interface registered at a given index.
 - :ref:`int<class_int>` **get_interface_count** **(** **)** |const|
 
 Returns the number of interfaces currently registered.
-
-----
-
-.. _class_TextServerManager_method_get_interface_features:
-
-- :ref:`int<class_int>` **get_interface_features** **(** :ref:`int<class_int>` index **)** |const|
-
-Returns text server supported features (binary OR).
-
-----
-
-.. _class_TextServerManager_method_get_interface_name:
-
-- :ref:`String<class_String>` **get_interface_name** **(** :ref:`int<class_int>` index **)** |const|
-
-Returns the interface name registered at a given index.
 
 ----
 
@@ -96,16 +105,27 @@ Returns a list of available interfaces the index and name of each interface.
 
 - :ref:`TextServer<class_TextServer>` **get_primary_interface** **(** **)** |const|
 
-Returns the primary :ref:`TextServer<class_TextServer>` interface.
+Returns the primary :ref:`TextServer<class_TextServer>` interface currently in use.
+
+----
+
+.. _class_TextServerManager_method_remove_interface:
+
+- void **remove_interface** **(** :ref:`TextServer<class_TextServer>` interface **)**
+
+Removes interface. All fonts and shaped text caches should be freed before removing interface.
 
 ----
 
 .. _class_TextServerManager_method_set_primary_interface:
 
-- :ref:`bool<class_bool>` **set_primary_interface** **(** :ref:`int<class_int>` index **)**
+- void **set_primary_interface** **(** :ref:`TextServer<class_TextServer>` index **)**
 
-Sets (and initializes it if required) interface registered at a given index as the primary. Invalidates all references to the fonts and text buffers.
+Sets the primary :ref:`TextServer<class_TextServer>` interface.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

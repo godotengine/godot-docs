@@ -9,7 +9,7 @@
 VisualShaderNodeIntFunc
 =======================
 
-**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A scalar integer function to be used within the visual shader graph.
 
@@ -22,7 +22,7 @@ Properties
 ----------
 
 +--------------------------------------------------------+------------------------------------------------------------------+-------+
-| :ref:`Function<enum_VisualShaderNodeIntFunc_Function>` | :ref:`function<class_VisualShaderNodeIntFunc_property_function>` | ``3`` |
+| :ref:`Function<enum_VisualShaderNodeIntFunc_Function>` | :ref:`function<class_VisualShaderNodeIntFunc_property_function>` | ``2`` |
 +--------------------------------------------------------+------------------------------------------------------------------+-------+
 
 Enumerations
@@ -32,21 +32,21 @@ Enumerations
 
 .. _class_VisualShaderNodeIntFunc_constant_FUNC_ABS:
 
-.. _class_VisualShaderNodeIntFunc_constant_FUNC_CLAMP:
-
 .. _class_VisualShaderNodeIntFunc_constant_FUNC_NEGATE:
 
 .. _class_VisualShaderNodeIntFunc_constant_FUNC_SIGN:
+
+.. _class_VisualShaderNodeIntFunc_constant_FUNC_MAX:
 
 enum **Function**:
 
 - **FUNC_ABS** = **0** --- Returns the absolute value of the parameter. Translates to ``abs(x)`` in the Godot Shader Language.
 
-- **FUNC_CLAMP** = **1** --- Constrains a parameter between ``min`` and ``max``. Translates to ``clamp(x, min, max)`` in the Godot Shader Language.
+- **FUNC_NEGATE** = **1** --- Negates the ``x`` using ``-(x)``.
 
-- **FUNC_NEGATE** = **2** --- Negates the ``x`` using ``-(x)``.
+- **FUNC_SIGN** = **2** --- Extracts the sign of the parameter. Translates to ``sign(x)`` in the Godot Shader Language.
 
-- **FUNC_SIGN** = **3** --- Extracts the sign of the parameter. Translates to ``sign(x)`` in the Godot Shader Language.
+- **FUNC_MAX** = **3** --- Represents the size of the :ref:`Function<enum_VisualShaderNodeIntFunc_Function>` enum.
 
 Property Descriptions
 ---------------------
@@ -56,7 +56,7 @@ Property Descriptions
 - :ref:`Function<enum_VisualShaderNodeIntFunc_Function>` **function**
 
 +-----------+---------------------+
-| *Default* | ``3``               |
+| *Default* | ``2``               |
 +-----------+---------------------+
 | *Setter*  | set_function(value) |
 +-----------+---------------------+
@@ -65,3 +65,9 @@ Property Descriptions
 
 A function to be applied to the scalar. See :ref:`Function<enum_VisualShaderNodeIntFunc_Function>` for options.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

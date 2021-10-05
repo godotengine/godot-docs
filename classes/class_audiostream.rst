@@ -9,9 +9,9 @@
 AudioStream
 ===========
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AudioStreamGenerator<class_AudioStreamGenerator>`, :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`, :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>`, :ref:`AudioStreamRandomPitch<class_AudioStreamRandomPitch>`, :ref:`AudioStreamSample<class_AudioStreamSample>`
+**Inherited By:** :ref:`AudioStreamGenerator<class_AudioStreamGenerator>`, :ref:`AudioStreamMP3<class_AudioStreamMP3>`, :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`, :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>`, :ref:`AudioStreamRandomPitch<class_AudioStreamRandomPitch>`, :ref:`AudioStreamSample<class_AudioStreamSample>`
 
 Base class for audio streams.
 
@@ -25,19 +25,73 @@ Tutorials
 
 - :doc:`../tutorials/audio/audio_streams`
 
+- `Audio Generator Demo <https://godotengine.org/asset-library/asset/526>`__
+
+- `Audio Mic Record Demo <https://godotengine.org/asset-library/asset/527>`__
+
+- `Audio Spectrum Demo <https://godotengine.org/asset-library/asset/528>`__
+
 Methods
 -------
 
-+---------------------------+--------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_length<class_AudioStream_method_get_length>` **(** **)** const |
-+---------------------------+--------------------------------------------------------------------------+
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                             | :ref:`_get_length<class_AudioStream_method__get_length>` **(** **)** |virtual| |const|               |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                           | :ref:`_get_stream_name<class_AudioStream_method__get_stream_name>` **(** **)** |virtual| |const|     |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` | :ref:`_instance_playback<class_AudioStream_method__instance_playback>` **(** **)** |virtual| |const| |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                               | :ref:`_is_monophonic<class_AudioStream_method__is_monophonic>` **(** **)** |virtual| |const|         |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                             | :ref:`get_length<class_AudioStream_method_get_length>` **(** **)** |const|                           |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                               | :ref:`is_monophonic<class_AudioStream_method_is_monophonic>` **(** **)** |const|                     |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
+.. _class_AudioStream_method__get_length:
+
+- :ref:`float<class_float>` **_get_length** **(** **)** |virtual| |const|
+
+----
+
+.. _class_AudioStream_method__get_stream_name:
+
+- :ref:`String<class_String>` **_get_stream_name** **(** **)** |virtual| |const|
+
+----
+
+.. _class_AudioStream_method__instance_playback:
+
+- :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **_instance_playback** **(** **)** |virtual| |const|
+
+----
+
+.. _class_AudioStream_method__is_monophonic:
+
+- :ref:`bool<class_bool>` **_is_monophonic** **(** **)** |virtual| |const|
+
+----
+
 .. _class_AudioStream_method_get_length:
 
-- :ref:`float<class_float>` **get_length** **(** **)** const
+- :ref:`float<class_float>` **get_length** **(** **)** |const|
 
 Returns the length of the audio stream in seconds.
 
+----
+
+.. _class_AudioStream_method_is_monophonic:
+
+- :ref:`bool<class_bool>` **is_monophonic** **(** **)** |const|
+
+Returns true if this audio stream only supports monophonic playback, or false if the audio stream supports polyphony.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

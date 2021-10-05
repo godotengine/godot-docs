@@ -18,16 +18,27 @@ Description
 
 Encapsulates a :ref:`ColorPicker<class_ColorPicker>` making it accessible by pressing a button. Pressing the button will toggle the :ref:`ColorPicker<class_ColorPicker>` visibility.
 
+See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
+
+**Note:** By default, the button may not be wide enough for the color preview swatch to be visible. Make sure to set :ref:`Control.rect_min_size<class_Control_property_rect_min_size>` to a big enough value to give the button enough space.
+
+Tutorials
+---------
+
+- `GUI Drag And Drop Demo <https://godotengine.org/asset-library/asset/133>`__
+
+- `2D GD Paint Demo <https://godotengine.org/asset-library/asset/517>`__
+
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_ColorPickerButton_property_color>`           | ``Color( 0, 0, 0, 1 )`` |
-+---------------------------+----------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPickerButton_property_edit_alpha>` | ``true``                |
-+---------------------------+----------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`   | toggle_mode                                                    | **O:** ``true``         |
-+---------------------------+----------------------------------------------------------------+-------------------------+
++---------------------------+----------------------------------------------------------------+------------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_ColorPickerButton_property_color>`           | ``Color(0, 0, 0, 1)``        |
++---------------------------+----------------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPickerButton_property_edit_alpha>` | ``true``                     |
++---------------------------+----------------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>`   | toggle_mode                                                    | ``true`` *(parent override)* |
++---------------------------+----------------------------------------------------------------+------------------------------+
 
 Methods
 -------
@@ -41,31 +52,37 @@ Methods
 Theme Properties
 ----------------
 
-+-----------------------------------+---------------------+-----------------------------+
-| :ref:`Texture2D<class_Texture2D>` | bg                  |                             |
-+-----------------------------------+---------------------+-----------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | disabled            |                             |
-+-----------------------------------+---------------------+-----------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | focus               |                             |
-+-----------------------------------+---------------------+-----------------------------+
-| :ref:`Font<class_Font>`           | font                |                             |
-+-----------------------------------+---------------------+-----------------------------+
-| :ref:`Color<class_Color>`         | font_color          | Color( 1, 1, 1, 1 )         |
-+-----------------------------------+---------------------+-----------------------------+
-| :ref:`Color<class_Color>`         | font_color_disabled | Color( 0.9, 0.9, 0.9, 0.3 ) |
-+-----------------------------------+---------------------+-----------------------------+
-| :ref:`Color<class_Color>`         | font_color_hover    | Color( 1, 1, 1, 1 )         |
-+-----------------------------------+---------------------+-----------------------------+
-| :ref:`Color<class_Color>`         | font_color_pressed  | Color( 0.8, 0.8, 0.8, 1 )   |
-+-----------------------------------+---------------------+-----------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | hover               |                             |
-+-----------------------------------+---------------------+-----------------------------+
-| :ref:`int<class_int>`             | hseparation         | 2                           |
-+-----------------------------------+---------------------+-----------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | normal              |                             |
-+-----------------------------------+---------------------+-----------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | pressed             |                             |
-+-----------------------------------+---------------------+-----------------------------+
++-----------------------------------+-------------------------------------------------------------------------------------+-------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`bg<class_ColorPickerButton_theme_icon_bg>`                                    |                               |
++-----------------------------------+-------------------------------------------------------------------------------------+-------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`disabled<class_ColorPickerButton_theme_style_disabled>`                       |                               |
++-----------------------------------+-------------------------------------------------------------------------------------+-------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`focus<class_ColorPickerButton_theme_style_focus>`                             |                               |
++-----------------------------------+-------------------------------------------------------------------------------------+-------------------------------+
+| :ref:`Font<class_Font>`           | :ref:`font<class_ColorPickerButton_theme_font_font>`                                |                               |
++-----------------------------------+-------------------------------------------------------------------------------------+-------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_color<class_ColorPickerButton_theme_color_font_color>`                   | ``Color(1, 1, 1, 1)``         |
++-----------------------------------+-------------------------------------------------------------------------------------+-------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_disabled_color<class_ColorPickerButton_theme_color_font_disabled_color>` | ``Color(0.9, 0.9, 0.9, 0.3)`` |
++-----------------------------------+-------------------------------------------------------------------------------------+-------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_hover_color<class_ColorPickerButton_theme_color_font_hover_color>`       | ``Color(1, 1, 1, 1)``         |
++-----------------------------------+-------------------------------------------------------------------------------------+-------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_ColorPickerButton_theme_color_font_outline_color>`   | ``Color(1, 1, 1, 1)``         |
++-----------------------------------+-------------------------------------------------------------------------------------+-------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_pressed_color<class_ColorPickerButton_theme_color_font_pressed_color>`   | ``Color(0.8, 0.8, 0.8, 1)``   |
++-----------------------------------+-------------------------------------------------------------------------------------+-------------------------------+
+| :ref:`int<class_int>`             | :ref:`font_size<class_ColorPickerButton_theme_font_size_font_size>`                 |                               |
++-----------------------------------+-------------------------------------------------------------------------------------+-------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`hover<class_ColorPickerButton_theme_style_hover>`                             |                               |
++-----------------------------------+-------------------------------------------------------------------------------------+-------------------------------+
+| :ref:`int<class_int>`             | :ref:`hseparation<class_ColorPickerButton_theme_constant_hseparation>`              | ``2``                         |
++-----------------------------------+-------------------------------------------------------------------------------------+-------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`normal<class_ColorPickerButton_theme_style_normal>`                           |                               |
++-----------------------------------+-------------------------------------------------------------------------------------+-------------------------------+
+| :ref:`int<class_int>`             | :ref:`outline_size<class_ColorPickerButton_theme_constant_outline_size>`            | ``0``                         |
++-----------------------------------+-------------------------------------------------------------------------------------+-------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`pressed<class_ColorPickerButton_theme_style_pressed>`                         |                               |
++-----------------------------------+-------------------------------------------------------------------------------------+-------------------------------+
 
 Signals
 -------
@@ -99,13 +116,13 @@ Property Descriptions
 
 - :ref:`Color<class_Color>` **color**
 
-+-----------+-------------------------+
-| *Default* | ``Color( 0, 0, 0, 1 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_pick_color(value)   |
-+-----------+-------------------------+
-| *Getter*  | get_pick_color()        |
-+-----------+-------------------------+
++-----------+-----------------------+
+| *Default* | ``Color(0, 0, 0, 1)`` |
++-----------+-----------------------+
+| *Setter*  | set_pick_color(value) |
++-----------+-----------------------+
+| *Getter*  | get_pick_color()      |
++-----------+-----------------------+
 
 The currently selected color.
 
@@ -142,3 +159,158 @@ Returns the :ref:`ColorPicker<class_ColorPicker>` that this node toggles.
 
 Returns the control's :ref:`PopupPanel<class_PopupPanel>` which allows you to connect to popup signals. This allows you to handle events when the ColorPicker is shown or hidden.
 
+Theme Property Descriptions
+---------------------------
+
+.. _class_ColorPickerButton_theme_icon_bg:
+
+- :ref:`Texture2D<class_Texture2D>` **bg**
+
+The background of the color preview rect on the button.
+
+----
+
+.. _class_ColorPickerButton_theme_style_disabled:
+
+- :ref:`StyleBox<class_StyleBox>` **disabled**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``ColorPickerButton`` is disabled.
+
+----
+
+.. _class_ColorPickerButton_theme_style_focus:
+
+- :ref:`StyleBox<class_StyleBox>` **focus**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``ColorPickerButton`` is focused. It is displayed over the current :ref:`StyleBox<class_StyleBox>`, so using :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` will just disable the focus visual effect.
+
+----
+
+.. _class_ColorPickerButton_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+:ref:`Font<class_Font>` of the ``ColorPickerButton``'s text.
+
+----
+
+.. _class_ColorPickerButton_theme_color_font_color:
+
+- :ref:`Color<class_Color>` **font_color**
+
++-----------+-----------------------+
+| *Default* | ``Color(1, 1, 1, 1)`` |
++-----------+-----------------------+
+
+Default text :ref:`Color<class_Color>` of the ``ColorPickerButton``.
+
+----
+
+.. _class_ColorPickerButton_theme_color_font_disabled_color:
+
+- :ref:`Color<class_Color>` **font_disabled_color**
+
++-----------+-------------------------------+
+| *Default* | ``Color(0.9, 0.9, 0.9, 0.3)`` |
++-----------+-------------------------------+
+
+Text :ref:`Color<class_Color>` used when the ``ColorPickerButton`` is disabled.
+
+----
+
+.. _class_ColorPickerButton_theme_color_font_hover_color:
+
+- :ref:`Color<class_Color>` **font_hover_color**
+
++-----------+-----------------------+
+| *Default* | ``Color(1, 1, 1, 1)`` |
++-----------+-----------------------+
+
+Text :ref:`Color<class_Color>` used when the ``ColorPickerButton`` is being hovered.
+
+----
+
+.. _class_ColorPickerButton_theme_color_font_outline_color:
+
+- :ref:`Color<class_Color>` **font_outline_color**
+
++-----------+-----------------------+
+| *Default* | ``Color(1, 1, 1, 1)`` |
++-----------+-----------------------+
+
+The tint of text outline of the ``ColorPickerButton``.
+
+----
+
+.. _class_ColorPickerButton_theme_color_font_pressed_color:
+
+- :ref:`Color<class_Color>` **font_pressed_color**
+
++-----------+-----------------------------+
+| *Default* | ``Color(0.8, 0.8, 0.8, 1)`` |
++-----------+-----------------------------+
+
+Text :ref:`Color<class_Color>` used when the ``ColorPickerButton`` is being pressed.
+
+----
+
+.. _class_ColorPickerButton_theme_font_size_font_size:
+
+- :ref:`int<class_int>` **font_size**
+
+Font size of the ``ColorPickerButton``'s text.
+
+----
+
+.. _class_ColorPickerButton_theme_style_hover:
+
+- :ref:`StyleBox<class_StyleBox>` **hover**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``ColorPickerButton`` is being hovered.
+
+----
+
+.. _class_ColorPickerButton_theme_constant_hseparation:
+
+- :ref:`int<class_int>` **hseparation**
+
++-----------+-------+
+| *Default* | ``2`` |
++-----------+-------+
+
+The horizontal space between ``ColorPickerButton``'s icon and text.
+
+----
+
+.. _class_ColorPickerButton_theme_style_normal:
+
+- :ref:`StyleBox<class_StyleBox>` **normal**
+
+Default :ref:`StyleBox<class_StyleBox>` for the ``ColorPickerButton``.
+
+----
+
+.. _class_ColorPickerButton_theme_constant_outline_size:
+
+- :ref:`int<class_int>` **outline_size**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+The size of the text outline.
+
+----
+
+.. _class_ColorPickerButton_theme_style_pressed:
+
+- :ref:`StyleBox<class_StyleBox>` **pressed**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``ColorPickerButton`` is being pressed.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

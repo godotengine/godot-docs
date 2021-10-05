@@ -9,7 +9,7 @@
 VisualShaderNodeFloatFunc
 =========================
 
-**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A scalar floating-point function to be used within the visual shader graph.
 
@@ -94,6 +94,8 @@ Enumerations
 
 .. _class_VisualShaderNodeFloatFunc_constant_FUNC_ONEMINUS:
 
+.. _class_VisualShaderNodeFloatFunc_constant_FUNC_MAX:
+
 enum **Function**:
 
 - **FUNC_SIN** = **0** --- Returns the sine of the parameter. Translates to ``sin(x)`` in the Godot Shader Language.
@@ -160,6 +162,8 @@ enum **Function**:
 
 - **FUNC_ONEMINUS** = **31** --- Subtracts scalar ``x`` from 1 (i.e. ``1 - x``).
 
+- **FUNC_MAX** = **32** --- Represents the size of the :ref:`Function<enum_VisualShaderNodeFloatFunc_Function>` enum.
+
 Property Descriptions
 ---------------------
 
@@ -177,3 +181,9 @@ Property Descriptions
 
 A function to be applied to the scalar. See :ref:`Function<enum_VisualShaderNodeFloatFunc_Function>` for options.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

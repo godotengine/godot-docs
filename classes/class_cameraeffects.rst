@@ -9,32 +9,39 @@
 CameraEffects
 =============
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+Contains camera-specific effects such as depth of field and exposure override.
 
+Description
+-----------
+
+Contains camera-specific effects such as depth of field and exposure override.
+
+See also :ref:`Environment<class_Environment>` for general 3D environment settings.
 
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`dof_blur_amount<class_CameraEffects_property_dof_blur_amount>`                   | ``0.1``   |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`dof_blur_far_distance<class_CameraEffects_property_dof_blur_far_distance>`       | ``10.0``  |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`dof_blur_far_enabled<class_CameraEffects_property_dof_blur_far_enabled>`         | ``false`` |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`dof_blur_far_transition<class_CameraEffects_property_dof_blur_far_transition>`   | ``5.0``   |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`dof_blur_near_distance<class_CameraEffects_property_dof_blur_near_distance>`     | ``2.0``   |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`dof_blur_near_enabled<class_CameraEffects_property_dof_blur_near_enabled>`       | ``false`` |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`dof_blur_near_transition<class_CameraEffects_property_dof_blur_near_transition>` | ``1.0``   |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`override_exposure<class_CameraEffects_property_override_exposure>`               | ``1.0``   |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`override_exposure_enable<class_CameraEffects_property_override_exposure_enable>` | ``false`` |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`dof_blur_amount<class_CameraEffects_property_dof_blur_amount>`                     | ``0.1``   |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`dof_blur_far_distance<class_CameraEffects_property_dof_blur_far_distance>`         | ``10.0``  |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`dof_blur_far_enabled<class_CameraEffects_property_dof_blur_far_enabled>`           | ``false`` |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`dof_blur_far_transition<class_CameraEffects_property_dof_blur_far_transition>`     | ``5.0``   |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`dof_blur_near_distance<class_CameraEffects_property_dof_blur_near_distance>`       | ``2.0``   |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`dof_blur_near_enabled<class_CameraEffects_property_dof_blur_near_enabled>`         | ``false`` |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`dof_blur_near_transition<class_CameraEffects_property_dof_blur_near_transition>`   | ``1.0``   |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`override_exposure<class_CameraEffects_property_override_exposure>`                 | ``1.0``   |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`override_exposure_enabled<class_CameraEffects_property_override_exposure_enabled>` | ``false`` |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
@@ -51,6 +58,8 @@ Property Descriptions
 | *Getter*  | get_dof_blur_amount()      |
 +-----------+----------------------------+
 
+The amount of blur for both near and far depth-of-field effects. The amount of blur increases the radius of the blur effect, making the affected area blurrier. However, If the amount is too high, you might start to see lines appearing, especially when using a low quality blur.
+
 ----
 
 .. _class_CameraEffects_property_dof_blur_far_distance:
@@ -64,6 +73,8 @@ Property Descriptions
 +-----------+----------------------------------+
 | *Getter*  | get_dof_blur_far_distance()      |
 +-----------+----------------------------------+
+
+The distance from the camera where the far blur effect affects the rendering.
 
 ----
 
@@ -79,6 +90,8 @@ Property Descriptions
 | *Getter*  | is_dof_blur_far_enabled()       |
 +-----------+---------------------------------+
 
+If ``true``, enables the depth-of-field far blur effect. This has a significant performance cost. Consider disabling it in scenes where there are no far away objects.
+
 ----
 
 .. _class_CameraEffects_property_dof_blur_far_transition:
@@ -92,6 +105,8 @@ Property Descriptions
 +-----------+------------------------------------+
 | *Getter*  | get_dof_blur_far_transition()      |
 +-----------+------------------------------------+
+
+The length of the transition between the no-blur area and far blur.
 
 ----
 
@@ -107,6 +122,8 @@ Property Descriptions
 | *Getter*  | get_dof_blur_near_distance()      |
 +-----------+-----------------------------------+
 
+Distance from the camera where the near blur effect affects the rendering.
+
 ----
 
 .. _class_CameraEffects_property_dof_blur_near_enabled:
@@ -120,6 +137,8 @@ Property Descriptions
 +-----------+----------------------------------+
 | *Getter*  | is_dof_blur_near_enabled()       |
 +-----------+----------------------------------+
+
+If ``true``, enables the depth-of-field near blur effect. This has a significant performance cost. Consider disabling it in scenes where there are no nearby objects.
 
 ----
 
@@ -135,6 +154,8 @@ Property Descriptions
 | *Getter*  | get_dof_blur_near_transition()      |
 +-----------+-------------------------------------+
 
+The length of the transition between the near blur and no-blur area.
+
 ----
 
 .. _class_CameraEffects_property_override_exposure:
@@ -149,11 +170,13 @@ Property Descriptions
 | *Getter*  | get_override_exposure()      |
 +-----------+------------------------------+
 
+The exposure override value to use. Higher values will result in a brighter scene. Only effective if :ref:`override_exposure_enabled<class_CameraEffects_property_override_exposure_enabled>` is ``true``.
+
 ----
 
-.. _class_CameraEffects_property_override_exposure_enable:
+.. _class_CameraEffects_property_override_exposure_enabled:
 
-- :ref:`bool<class_bool>` **override_exposure_enable**
+- :ref:`bool<class_bool>` **override_exposure_enabled**
 
 +-----------+--------------------------------------+
 | *Default* | ``false``                            |
@@ -163,3 +186,11 @@ Property Descriptions
 | *Getter*  | is_override_exposure_enabled()       |
 +-----------+--------------------------------------+
 
+If ``true``, overrides the manual or automatic exposure defined in the :ref:`Environment<class_Environment>` with the value in :ref:`override_exposure<class_CameraEffects_property_override_exposure>`.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

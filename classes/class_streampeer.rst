@@ -9,16 +9,18 @@
 StreamPeer
 ==========
 
-**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`StreamPeerBuffer<class_StreamPeerBuffer>`, :ref:`StreamPeerGDNative<class_StreamPeerGDNative>`, :ref:`StreamPeerSSL<class_StreamPeerSSL>`, :ref:`StreamPeerTCP<class_StreamPeerTCP>`
+**Inherited By:** :ref:`StreamPeerBuffer<class_StreamPeerBuffer>`, :ref:`StreamPeerExtension<class_StreamPeerExtension>`, :ref:`StreamPeerSSL<class_StreamPeerSSL>`, :ref:`StreamPeerTCP<class_StreamPeerTCP>`
 
 Abstraction and base class for stream-based protocols.
 
 Description
 -----------
 
-StreamPeer is an abstraction and base class for stream-based protocols (such as TCP or UNIX sockets). It provides an API for sending and receiving data through streams as raw data or strings.
+StreamPeer is an abstraction and base class for stream-based protocols (such as TCP). It provides an API for sending and receiving data through streams as raw data or strings.
+
+**Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
 Properties
 ----------
@@ -39,7 +41,7 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                 | :ref:`get_8<class_StreamPeer_method_get_8>` **(** **)**                                                                                     |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_available_bytes<class_StreamPeer_method_get_available_bytes>` **(** **)** const                                                   |
+| :ref:`int<class_int>`                 | :ref:`get_available_bytes<class_StreamPeer_method_get_available_bytes>` **(** **)** |const|                                                 |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`             | :ref:`get_data<class_StreamPeer_method_get_data>` **(** :ref:`int<class_int>` bytes **)**                                                   |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -148,7 +150,7 @@ Gets a signed byte from the stream.
 
 .. _class_StreamPeer_method_get_available_bytes:
 
-- :ref:`int<class_int>` **get_available_bytes** **(** **)** const
+- :ref:`int<class_int>` **get_available_bytes** **(** **)** |const|
 
 Returns the amount of bytes this ``StreamPeer`` has available.
 
@@ -314,11 +316,20 @@ Sends a chunk of data through the connection. If all the data could not be sent 
 
 Puts a zero-terminated ASCII string into the stream prepended by a 32-bit unsigned integer representing its size.
 
-Note: To put an ASCII string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
+**Note:** To put an ASCII string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     put_data("Hello world".to_ascii())
+
+ .. code-tab:: csharp
+
+    PutData("Hello World".ToAscii());
+
+
 
 ----
 
@@ -360,11 +371,20 @@ Puts an unsigned byte into the stream.
 
 Puts a zero-terminated UTF-8 string into the stream prepended by a 32 bits unsigned integer representing its size.
 
-Note: To put an UTF-8 string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
+**Note:** To put an UTF-8 string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     put_data("Hello world".to_utf8())
+
+ .. code-tab:: csharp
+
+    PutData("Hello World".ToUTF8());
+
+
 
 ----
 
@@ -374,3 +394,9 @@ Note: To put an UTF-8 string without prepending its size, you can use :ref:`put_
 
 Puts a Variant into the stream. If ``full_objects`` is ``true`` encoding objects is allowed (and can potentially include code).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

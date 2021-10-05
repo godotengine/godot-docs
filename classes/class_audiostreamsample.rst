@@ -9,7 +9,7 @@
 AudioStreamSample
 =================
 
-**Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Stores audio data loaded from WAV files.
 
@@ -18,26 +18,26 @@ Description
 
 AudioStreamSample stores sound samples loaded from WAV files. To play the stored sound, use an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` (for non-positional audio) or :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>`/:ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>` (for positional audio). The sound can be looped.
 
-This class can also be used to store dynamically-generated PCM audio data.
+This class can also be used to store dynamically-generated PCM audio data. See also :ref:`AudioStreamGenerator<class_AudioStreamGenerator>` for procedural audio generation.
 
 Properties
 ----------
 
-+--------------------------------------------------+----------------------------------------------------------------+-------------------------+
-| :ref:`PackedByteArray<class_PackedByteArray>`    | :ref:`data<class_AudioStreamSample_property_data>`             | ``PackedByteArray(  )`` |
-+--------------------------------------------------+----------------------------------------------------------------+-------------------------+
-| :ref:`Format<enum_AudioStreamSample_Format>`     | :ref:`format<class_AudioStreamSample_property_format>`         | ``0``                   |
-+--------------------------------------------------+----------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`                            | :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` | ``0``                   |
-+--------------------------------------------------+----------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`                            | :ref:`loop_end<class_AudioStreamSample_property_loop_end>`     | ``0``                   |
-+--------------------------------------------------+----------------------------------------------------------------+-------------------------+
-| :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` | :ref:`loop_mode<class_AudioStreamSample_property_loop_mode>`   | ``0``                   |
-+--------------------------------------------------+----------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`                            | :ref:`mix_rate<class_AudioStreamSample_property_mix_rate>`     | ``44100``               |
-+--------------------------------------------------+----------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`stereo<class_AudioStreamSample_property_stereo>`         | ``false``               |
-+--------------------------------------------------+----------------------------------------------------------------+-------------------------+
++--------------------------------------------------+----------------------------------------------------------------+-----------------------+
+| :ref:`PackedByteArray<class_PackedByteArray>`    | :ref:`data<class_AudioStreamSample_property_data>`             | ``PackedByteArray()`` |
++--------------------------------------------------+----------------------------------------------------------------+-----------------------+
+| :ref:`Format<enum_AudioStreamSample_Format>`     | :ref:`format<class_AudioStreamSample_property_format>`         | ``0``                 |
++--------------------------------------------------+----------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`                            | :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` | ``0``                 |
++--------------------------------------------------+----------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`                            | :ref:`loop_end<class_AudioStreamSample_property_loop_end>`     | ``0``                 |
++--------------------------------------------------+----------------------------------------------------------------+-----------------------+
+| :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` | :ref:`loop_mode<class_AudioStreamSample_property_loop_mode>`   | ``0``                 |
++--------------------------------------------------+----------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`                            | :ref:`mix_rate<class_AudioStreamSample_property_mix_rate>`     | ``44100``             |
++--------------------------------------------------+----------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`                          | :ref:`stereo<class_AudioStreamSample_property_stereo>`         | ``false``             |
++--------------------------------------------------+----------------------------------------------------------------+-----------------------+
 
 Methods
 -------
@@ -81,11 +81,11 @@ enum **LoopMode**:
 
 - **LOOP_DISABLED** = **0** --- Audio does not loop.
 
-- **LOOP_FORWARD** = **1** --- Audio loops the data between :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` and :ref:`loop_end<class_AudioStreamSample_property_loop_end>` playing forward only.
+- **LOOP_FORWARD** = **1** --- Audio loops the data between :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` and :ref:`loop_end<class_AudioStreamSample_property_loop_end>`, playing forward only.
 
-- **LOOP_PING_PONG** = **2** --- Audio loops the data between :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` and :ref:`loop_end<class_AudioStreamSample_property_loop_end>` playing back and forth.
+- **LOOP_PING_PONG** = **2** --- Audio loops the data between :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` and :ref:`loop_end<class_AudioStreamSample_property_loop_end>`, playing back and forth.
 
-- **LOOP_BACKWARD** = **3** --- Audio loops the data between :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` and :ref:`loop_end<class_AudioStreamSample_property_loop_end>` playing backward only.
+- **LOOP_BACKWARD** = **3** --- Audio loops the data between :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` and :ref:`loop_end<class_AudioStreamSample_property_loop_end>`, playing backward only.
 
 Property Descriptions
 ---------------------
@@ -94,13 +94,13 @@ Property Descriptions
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **data**
 
-+-----------+-------------------------+
-| *Default* | ``PackedByteArray(  )`` |
-+-----------+-------------------------+
-| *Setter*  | set_data(value)         |
-+-----------+-------------------------+
-| *Getter*  | get_data()              |
-+-----------+-------------------------+
++-----------+-----------------------+
+| *Default* | ``PackedByteArray()`` |
++-----------+-----------------------+
+| *Setter*  | set_data(value)       |
++-----------+-----------------------+
+| *Getter*  | get_data()            |
++-----------+-----------------------+
 
 Contains the audio data in bytes.
 
@@ -136,7 +136,7 @@ Audio format. See :ref:`Format<enum_AudioStreamSample_Format>` constants for val
 | *Getter*  | get_loop_begin()      |
 +-----------+-----------------------+
 
-Loop start in bytes.
+The loop start point (in number of samples, relative to the beginning of the sample). This information will be imported automatically from the WAV file if present.
 
 ----
 
@@ -152,7 +152,7 @@ Loop start in bytes.
 | *Getter*  | get_loop_end()      |
 +-----------+---------------------+
 
-Loop end in bytes.
+The loop end point (in number of samples, relative to the beginning of the sample). This information will be imported automatically from the WAV file if present.
 
 ----
 
@@ -168,7 +168,7 @@ Loop end in bytes.
 | *Getter*  | get_loop_mode()      |
 +-----------+----------------------+
 
-Loop mode. See :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` constants for values.
+The loop mode. This information will be imported automatically from the WAV file if present. See :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` constants for values.
 
 ----
 
@@ -184,7 +184,11 @@ Loop mode. See :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` constants for va
 | *Getter*  | get_mix_rate()      |
 +-----------+---------------------+
 
-The sample rate for mixing this audio.
+The sample rate for mixing this audio. Higher values require more storage space, but result in better quality.
+
+In games, common sample rates in use are ``11025``, ``16000``, ``22050``, ``32000``, ``44100``, and ``48000``.
+
+According to the `Nyquist-Shannon sampling theorem <https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem>`__, there is no quality difference to human hearing when going past 40,000 Hz (since most humans can only hear up to ~20,000 Hz, often less). If you are using lower-pitched sounds such as voices, lower sample rates such as ``32000`` or ``22050`` may be usable with no loss in quality.
 
 ----
 
@@ -213,3 +217,9 @@ Saves the AudioStreamSample as a WAV file to ``path``. Samples with IMA ADPCM fo
 
 **Note:** A ``.wav`` extension is automatically appended to ``path`` if it is missing.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

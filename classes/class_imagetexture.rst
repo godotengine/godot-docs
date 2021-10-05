@@ -9,27 +9,62 @@
 ImageTexture
 ============
 
-**Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A :ref:`Texture2D<class_Texture2D>` based on an :ref:`Image<class_Image>`.
 
 Description
 -----------
 
-A :ref:`Texture2D<class_Texture2D>` based on an :ref:`Image<class_Image>`. Can be created from an :ref:`Image<class_Image>` with :ref:`create_from_image<class_ImageTexture_method_create_from_image>`.
+A :ref:`Texture2D<class_Texture2D>` based on an :ref:`Image<class_Image>`. For an image to be displayed, an ``ImageTexture`` has to be created from it using the :ref:`create_from_image<class_ImageTexture_method_create_from_image>` method:
+
+::
+
+    var texture = ImageTexture.new()
+    var image = Image.new()
+    image.load("res://icon.png")
+    texture.create_from_image(image)
+    $Sprite2D.texture = texture
+
+This way, textures can be created at run-time by loading images both from within the editor and externally.
+
+**Warning:** Prefer to load imported textures with :ref:`@GDScript.load<class_@GDScript_method_load>` over loading them from within the filesystem dynamically with :ref:`Image.load<class_Image_method_load>`, as it may not work in exported projects:
+
+::
+
+    var texture = load("res://icon.png")
+    $Sprite2D.texture = texture
+
+This is because images have to be imported as a :ref:`StreamTexture2D<class_StreamTexture2D>` first to be loaded with :ref:`@GDScript.load<class_@GDScript_method_load>`. If you'd still like to load an image file just like any other :ref:`Resource<class_Resource>`, import it as an :ref:`Image<class_Image>` resource instead, and then load it normally using the :ref:`@GDScript.load<class_@GDScript_method_load>` method.
+
+**Note:** The image can be retrieved from an imported texture using the :ref:`Texture2D.get_image<class_Texture2D_method_get_image>` method, which returns a copy of the image:
+
+::
+
+    var texture = load("res://icon.png")
+    var image : Image = texture.get_image()
+
+An ``ImageTexture`` is not meant to be operated from within the editor interface directly, and is mostly useful for rendering images on screen dynamically via code. If you need to generate images procedurally from within the editor, consider saving and importing images as custom texture resources implementing a new :ref:`EditorImportPlugin<class_EditorImportPlugin>`.
+
+**Note:** The maximum texture size is 16384×16384 pixels due to graphics hardware limitations.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/assets_pipeline/importing_images`
 
 Methods
 -------
 
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`create_from_image<class_ImageTexture_method_create_from_image>` **(** :ref:`Image<class_Image>` image **)**                    |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Format<enum_Image_Format>` | :ref:`get_format<class_ImageTexture_method_get_format>` **(** **)** const                                                            |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_size_override<class_ImageTexture_method_set_size_override>` **(** :ref:`Vector2<class_Vector2>` size **)**                 |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`update<class_ImageTexture_method_update>` **(** :ref:`Image<class_Image>` image, :ref:`bool<class_bool>` immediate=false **)** |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`create_from_image<class_ImageTexture_method_create_from_image>` **(** :ref:`Image<class_Image>` image **)**    |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`Format<enum_Image_Format>` | :ref:`get_format<class_ImageTexture_method_get_format>` **(** **)** |const|                                          |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_size_override<class_ImageTexture_method_set_size_override>` **(** :ref:`Vector2<class_Vector2>` size **)** |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`update<class_ImageTexture_method_update>` **(** :ref:`Image<class_Image>` image **)**                          |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -38,15 +73,15 @@ Method Descriptions
 
 - void **create_from_image** **(** :ref:`Image<class_Image>` image **)**
 
-Create a new ``ImageTexture`` from an :ref:`Image<class_Image>`.
+Initializes the texture by allocating and setting the data from an :ref:`Image<class_Image>`.
 
 ----
 
 .. _class_ImageTexture_method_get_format:
 
-- :ref:`Format<enum_Image_Format>` **get_format** **(** **)** const
+- :ref:`Format<enum_Image_Format>` **get_format** **(** **)** |const|
 
-Returns the format of the ``ImageTexture``, one of :ref:`Format<enum_Image_Format>`.
+Returns the format of the texture, one of :ref:`Format<enum_Image_Format>`.
 
 ----
 
@@ -54,13 +89,23 @@ Returns the format of the ``ImageTexture``, one of :ref:`Format<enum_Image_Forma
 
 - void **set_size_override** **(** :ref:`Vector2<class_Vector2>` size **)**
 
-Resizes the ``ImageTexture`` to the specified dimensions.
+Resizes the texture to the specified dimensions.
 
 ----
 
 .. _class_ImageTexture_method_update:
 
-- void **update** **(** :ref:`Image<class_Image>` image, :ref:`bool<class_bool>` immediate=false **)**
+- void **update** **(** :ref:`Image<class_Image>` image **)**
 
-Replaces the texture's data with a new ``image``. If ``immediate`` is ``true``, it will take effect immediately after the call.
+Replaces the texture's data with a new :ref:`Image<class_Image>`.
 
+**Note:** The texture has to be initialized first with the :ref:`create_from_image<class_ImageTexture_method_create_from_image>` method before it can be updated. The new image dimensions, format, and mipmaps configuration should match the existing texture's image configuration, otherwise it has to be re-created with the :ref:`create_from_image<class_ImageTexture_method_create_from_image>` method.
+
+Use this method over :ref:`create_from_image<class_ImageTexture_method_create_from_image>` if you need to update the texture frequently, which is faster than allocating additional memory for a new texture each time.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

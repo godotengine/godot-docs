@@ -25,13 +25,13 @@ This node's children will be affected by its scroll offset.
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`motion_mirroring<class_ParallaxLayer_property_motion_mirroring>` | ``Vector2( 0, 0 )`` |
-+-------------------------------+------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`motion_offset<class_ParallaxLayer_property_motion_offset>`       | ``Vector2( 0, 0 )`` |
-+-------------------------------+------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`motion_scale<class_ParallaxLayer_property_motion_scale>`         | ``Vector2( 1, 1 )`` |
-+-------------------------------+------------------------------------------------------------------------+---------------------+
++-------------------------------+------------------------------------------------------------------------+-------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`motion_mirroring<class_ParallaxLayer_property_motion_mirroring>` | ``Vector2(0, 0)`` |
++-------------------------------+------------------------------------------------------------------------+-------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`motion_offset<class_ParallaxLayer_property_motion_offset>`       | ``Vector2(0, 0)`` |
++-------------------------------+------------------------------------------------------------------------+-------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`motion_scale<class_ParallaxLayer_property_motion_scale>`         | ``Vector2(1, 1)`` |
++-------------------------------+------------------------------------------------------------------------+-------------------+
 
 Property Descriptions
 ---------------------
@@ -41,7 +41,7 @@ Property Descriptions
 - :ref:`Vector2<class_Vector2>` **motion_mirroring**
 
 +-----------+----------------------+
-| *Default* | ``Vector2( 0, 0 )``  |
+| *Default* | ``Vector2(0, 0)``    |
 +-----------+----------------------+
 | *Setter*  | set_mirroring(value) |
 +-----------+----------------------+
@@ -57,7 +57,7 @@ The ParallaxLayer's :ref:`Texture2D<class_Texture2D>` mirroring. Useful for crea
 - :ref:`Vector2<class_Vector2>` **motion_offset**
 
 +-----------+--------------------------+
-| *Default* | ``Vector2( 0, 0 )``      |
+| *Default* | ``Vector2(0, 0)``        |
 +-----------+--------------------------+
 | *Setter*  | set_motion_offset(value) |
 +-----------+--------------------------+
@@ -73,7 +73,7 @@ The ParallaxLayer's offset relative to the parent ParallaxBackground's :ref:`Par
 - :ref:`Vector2<class_Vector2>` **motion_scale**
 
 +-----------+-------------------------+
-| *Default* | ``Vector2( 1, 1 )``     |
+| *Default* | ``Vector2(1, 1)``       |
 +-----------+-------------------------+
 | *Setter*  | set_motion_scale(value) |
 +-----------+-------------------------+
@@ -82,3 +82,9 @@ The ParallaxLayer's offset relative to the parent ParallaxBackground's :ref:`Par
 
 Multiplies the ParallaxLayer's motion. If an axis is set to ``0``, it will not scroll.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

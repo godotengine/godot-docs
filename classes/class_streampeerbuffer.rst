@@ -9,16 +9,16 @@
 StreamPeerBuffer
 ================
 
-**Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 
 
 Properties
 ----------
 
-+-----------------------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`data_array<class_StreamPeerBuffer_property_data_array>` | ``PackedByteArray(  )`` |
-+-----------------------------------------------+---------------------------------------------------------------+-------------------------+
++-----------------------------------------------+---------------------------------------------------------------+-----------------------+
+| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`data_array<class_StreamPeerBuffer_property_data_array>` | ``PackedByteArray()`` |
++-----------------------------------------------+---------------------------------------------------------------+-----------------------+
 
 Methods
 -------
@@ -26,11 +26,11 @@ Methods
 +-------------------------------------------------+--------------------------------------------------------------------------------------------+
 | void                                            | :ref:`clear<class_StreamPeerBuffer_method_clear>` **(** **)**                              |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`StreamPeerBuffer<class_StreamPeerBuffer>` | :ref:`duplicate<class_StreamPeerBuffer_method_duplicate>` **(** **)** const                |
+| :ref:`StreamPeerBuffer<class_StreamPeerBuffer>` | :ref:`duplicate<class_StreamPeerBuffer_method_duplicate>` **(** **)** |const|              |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`get_position<class_StreamPeerBuffer_method_get_position>` **(** **)** const          |
+| :ref:`int<class_int>`                           | :ref:`get_position<class_StreamPeerBuffer_method_get_position>` **(** **)** |const|        |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`get_size<class_StreamPeerBuffer_method_get_size>` **(** **)** const                  |
+| :ref:`int<class_int>`                           | :ref:`get_size<class_StreamPeerBuffer_method_get_size>` **(** **)** |const|                |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------+
 | void                                            | :ref:`resize<class_StreamPeerBuffer_method_resize>` **(** :ref:`int<class_int>` size **)** |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------+
@@ -44,13 +44,13 @@ Property Descriptions
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **data_array**
 
-+-----------+-------------------------+
-| *Default* | ``PackedByteArray(  )`` |
-+-----------+-------------------------+
-| *Setter*  | set_data_array(value)   |
-+-----------+-------------------------+
-| *Getter*  | get_data_array()        |
-+-----------+-------------------------+
++-----------+-----------------------+
+| *Default* | ``PackedByteArray()`` |
++-----------+-----------------------+
+| *Setter*  | set_data_array(value) |
++-----------+-----------------------+
+| *Getter*  | get_data_array()      |
++-----------+-----------------------+
 
 Method Descriptions
 -------------------
@@ -63,19 +63,19 @@ Method Descriptions
 
 .. _class_StreamPeerBuffer_method_duplicate:
 
-- :ref:`StreamPeerBuffer<class_StreamPeerBuffer>` **duplicate** **(** **)** const
+- :ref:`StreamPeerBuffer<class_StreamPeerBuffer>` **duplicate** **(** **)** |const|
 
 ----
 
 .. _class_StreamPeerBuffer_method_get_position:
 
-- :ref:`int<class_int>` **get_position** **(** **)** const
+- :ref:`int<class_int>` **get_position** **(** **)** |const|
 
 ----
 
 .. _class_StreamPeerBuffer_method_get_size:
 
-- :ref:`int<class_int>` **get_size** **(** **)** const
+- :ref:`int<class_int>` **get_size** **(** **)** |const|
 
 ----
 
@@ -89,3 +89,9 @@ Method Descriptions
 
 - void **seek** **(** :ref:`int<class_int>` position **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

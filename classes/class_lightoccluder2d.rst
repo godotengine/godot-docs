@@ -26,30 +26,16 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------------------------+--------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                             | :ref:`light_mask<class_LightOccluder2D_property_light_mask>` | ``1`` |
-+---------------------------------------------------+--------------------------------------------------------------+-------+
-| :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` | :ref:`occluder<class_LightOccluder2D_property_occluder>`     |       |
-+---------------------------------------------------+--------------------------------------------------------------+-------+
++---------------------------------------------------+--------------------------------------------------------------------------------+----------+
+| :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` | :ref:`occluder<class_LightOccluder2D_property_occluder>`                       |          |
++---------------------------------------------------+--------------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                             | :ref:`occluder_light_mask<class_LightOccluder2D_property_occluder_light_mask>` | ``1``    |
++---------------------------------------------------+--------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                           | :ref:`sdf_collision<class_LightOccluder2D_property_sdf_collision>`             | ``true`` |
++---------------------------------------------------+--------------------------------------------------------------------------------+----------+
 
 Property Descriptions
 ---------------------
-
-.. _class_LightOccluder2D_property_light_mask:
-
-- :ref:`int<class_int>` **light_mask**
-
-+-----------+--------------------------------+
-| *Default* | ``1``                          |
-+-----------+--------------------------------+
-| *Setter*  | set_occluder_light_mask(value) |
-+-----------+--------------------------------+
-| *Getter*  | get_occluder_light_mask()      |
-+-----------+--------------------------------+
-
-The LightOccluder2D's light mask. The LightOccluder2D will cast shadows only from Light2D(s) that have the same light mask(s).
-
-----
 
 .. _class_LightOccluder2D_property_occluder:
 
@@ -63,3 +49,39 @@ The LightOccluder2D's light mask. The LightOccluder2D will cast shadows only fro
 
 The :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` used to compute the shadow.
 
+----
+
+.. _class_LightOccluder2D_property_occluder_light_mask:
+
+- :ref:`int<class_int>` **occluder_light_mask**
+
++-----------+--------------------------------+
+| *Default* | ``1``                          |
++-----------+--------------------------------+
+| *Setter*  | set_occluder_light_mask(value) |
++-----------+--------------------------------+
+| *Getter*  | get_occluder_light_mask()      |
++-----------+--------------------------------+
+
+The LightOccluder2D's occluder light mask. The LightOccluder2D will cast shadows only from Light2D(s) that have the same light mask(s).
+
+----
+
+.. _class_LightOccluder2D_property_sdf_collision:
+
+- :ref:`bool<class_bool>` **sdf_collision**
+
++-----------+-----------------------------+
+| *Default* | ``true``                    |
++-----------+-----------------------------+
+| *Setter*  | set_as_sdf_collision(value) |
++-----------+-----------------------------+
+| *Getter*  | is_set_as_sdf_collision()   |
++-----------+-----------------------------+
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

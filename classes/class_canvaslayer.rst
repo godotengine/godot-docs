@@ -27,35 +27,35 @@ Tutorials
 
 - :doc:`../tutorials/2d/canvas_layers`
 
+- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
+
 Properties
 ----------
 
-+---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Node<class_Node>`               | :ref:`custom_viewport<class_CanvasLayer_property_custom_viewport>`               |                                     |
-+---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`follow_viewport_enable<class_CanvasLayer_property_follow_viewport_enable>` | ``false``                           |
-+---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`float<class_float>`             | :ref:`follow_viewport_scale<class_CanvasLayer_property_follow_viewport_scale>`   | ``1.0``                             |
-+---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`layer<class_CanvasLayer_property_layer>`                                   | ``1``                               |
-+---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`offset<class_CanvasLayer_property_offset>`                                 | ``Vector2( 0, 0 )``                 |
-+---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`float<class_float>`             | :ref:`rotation<class_CanvasLayer_property_rotation>`                             | ``0.0``                             |
-+---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`float<class_float>`             | :ref:`rotation_degrees<class_CanvasLayer_property_rotation_degrees>`             | ``0.0``                             |
-+---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`scale<class_CanvasLayer_property_scale>`                                   | ``Vector2( 1, 1 )``                 |
-+---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_CanvasLayer_property_transform>`                           | ``Transform2D( 1, 0, 0, 1, 0, 0 )`` |
-+---------------------------------------+----------------------------------------------------------------------------------+-------------------------------------+
++---------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Node<class_Node>`               | :ref:`custom_viewport<class_CanvasLayer_property_custom_viewport>`               |                                   |
++---------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`follow_viewport_enable<class_CanvasLayer_property_follow_viewport_enable>` | ``false``                         |
++---------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`float<class_float>`             | :ref:`follow_viewport_scale<class_CanvasLayer_property_follow_viewport_scale>`   | ``1.0``                           |
++---------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`                 | :ref:`layer<class_CanvasLayer_property_layer>`                                   | ``1``                             |
++---------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`offset<class_CanvasLayer_property_offset>`                                 | ``Vector2(0, 0)``                 |
++---------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`float<class_float>`             | :ref:`rotation<class_CanvasLayer_property_rotation>`                             | ``0.0``                           |
++---------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`scale<class_CanvasLayer_property_scale>`                                   | ``Vector2(1, 1)``                 |
++---------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_CanvasLayer_property_transform>`                           | ``Transform2D(1, 0, 0, 1, 0, 0)`` |
++---------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
 
 Methods
 -------
 
-+-----------------------+--------------------------------------------------------------------------+
-| :ref:`RID<class_RID>` | :ref:`get_canvas<class_CanvasLayer_method_get_canvas>` **(** **)** const |
-+-----------------------+--------------------------------------------------------------------------+
++-----------------------+----------------------------------------------------------------------------+
+| :ref:`RID<class_RID>` | :ref:`get_canvas<class_CanvasLayer_method_get_canvas>` **(** **)** |const| |
++-----------------------+----------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -126,13 +126,13 @@ Layer index for draw order. Lower values are drawn first.
 
 - :ref:`Vector2<class_Vector2>` **offset**
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 0, 0 )`` |
-+-----------+---------------------+
-| *Setter*  | set_offset(value)   |
-+-----------+---------------------+
-| *Getter*  | get_offset()        |
-+-----------+---------------------+
++-----------+-------------------+
+| *Default* | ``Vector2(0, 0)`` |
++-----------+-------------------+
+| *Setter*  | set_offset(value) |
++-----------+-------------------+
+| *Getter*  | get_offset()      |
++-----------+-------------------+
 
 The layer's base offset.
 
@@ -154,33 +154,17 @@ The layer's rotation in radians.
 
 ----
 
-.. _class_CanvasLayer_property_rotation_degrees:
-
-- :ref:`float<class_float>` **rotation_degrees**
-
-+-----------+-----------------------------+
-| *Default* | ``0.0``                     |
-+-----------+-----------------------------+
-| *Setter*  | set_rotation_degrees(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_rotation_degrees()      |
-+-----------+-----------------------------+
-
-The layer's rotation in degrees.
-
-----
-
 .. _class_CanvasLayer_property_scale:
 
 - :ref:`Vector2<class_Vector2>` **scale**
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 1, 1 )`` |
-+-----------+---------------------+
-| *Setter*  | set_scale(value)    |
-+-----------+---------------------+
-| *Getter*  | get_scale()         |
-+-----------+---------------------+
++-----------+-------------------+
+| *Default* | ``Vector2(1, 1)`` |
++-----------+-------------------+
+| *Setter*  | set_scale(value)  |
++-----------+-------------------+
+| *Getter*  | get_scale()       |
++-----------+-------------------+
 
 The layer's scale.
 
@@ -190,13 +174,13 @@ The layer's scale.
 
 - :ref:`Transform2D<class_Transform2D>` **transform**
 
-+-----------+-------------------------------------+
-| *Default* | ``Transform2D( 1, 0, 0, 1, 0, 0 )`` |
-+-----------+-------------------------------------+
-| *Setter*  | set_transform(value)                |
-+-----------+-------------------------------------+
-| *Getter*  | get_transform()                     |
-+-----------+-------------------------------------+
++-----------+-----------------------------------+
+| *Default* | ``Transform2D(1, 0, 0, 1, 0, 0)`` |
++-----------+-----------------------------------+
+| *Setter*  | set_transform(value)              |
++-----------+-----------------------------------+
+| *Getter*  | get_transform()                   |
++-----------+-----------------------------------+
 
 The layer's transform.
 
@@ -205,7 +189,13 @@ Method Descriptions
 
 .. _class_CanvasLayer_method_get_canvas:
 
-- :ref:`RID<class_RID>` **get_canvas** **(** **)** const
+- :ref:`RID<class_RID>` **get_canvas** **(** **)** |const|
 
 Returns the RID of the canvas used by this layer.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

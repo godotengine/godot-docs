@@ -14,21 +14,83 @@ An optimized string type for unique names.
 Description
 -----------
 
-``StringName``\ s are immutable strings designed for general-purpose represention of unique names. ``StringName`` ensures that only one instance of a given name exists (so two ``StringName``\ s with the same value are the same object). Comparing them is much faster than with regular :ref:`String<class_String>`\ s, because only the pointers are compared, not the whole strings.
+``StringName``\ s are immutable strings designed for general-purpose representation of unique names. ``StringName`` ensures that only one instance of a given name exists (so two ``StringName``\ s with the same value are the same object). Comparing them is much faster than with regular :ref:`String<class_String>`\ s, because only the pointers are compared, not the whole strings.
 
 Methods
 -------
 
-+-------------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`StringName<class_StringName>` | :ref:`StringName<class_StringName_method_StringName>` **(** :ref:`String<class_String>` from **)** |
-+-------------------------------------+----------------------------------------------------------------------------------------------------+
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringName<class_StringName>` | :ref:`StringName<class_StringName_method_StringName>` **(** **)** |constructor|                                          |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringName<class_StringName>` | :ref:`StringName<class_StringName_method_StringName>` **(** :ref:`StringName<class_StringName>` from **)** |constructor| |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringName<class_StringName>` | :ref:`StringName<class_StringName_method_StringName>` **(** :ref:`String<class_String>` from **)** |constructor|         |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator !=** **(** **)** |operator|                                                                                   |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator !=** **(** :ref:`String<class_String>` right **)** |operator|                                                 |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator !=** **(** :ref:`StringName<class_StringName>` right **)** |operator|                                         |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator ==** **(** **)** |operator|                                                                                   |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator ==** **(** :ref:`String<class_String>` right **)** |operator|                                                 |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator ==** **(** :ref:`StringName<class_StringName>` right **)** |operator|                                         |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_StringName_method_StringName:
 
-- :ref:`StringName<class_StringName>` **StringName** **(** :ref:`String<class_String>` from **)**
+- :ref:`StringName<class_StringName>` **StringName** **(** **)** |constructor|
+
+Constructs an empty ``StringName``.
+
+----
+
+- :ref:`StringName<class_StringName>` **StringName** **(** :ref:`StringName<class_StringName>` from **)** |constructor|
+
+Constructs a ``StringName`` as a copy of the given ``StringName``.
+
+----
+
+- :ref:`StringName<class_StringName>` **StringName** **(** :ref:`String<class_String>` from **)** |constructor|
 
 Creates a new ``StringName`` from the given :ref:`String<class_String>`.
 
+----
+
+.. _class_StringName_method_operator !=:
+
+- :ref:`bool<class_bool>` **operator !=** **(** **)** |operator|
+
+----
+
+- :ref:`bool<class_bool>` **operator !=** **(** :ref:`String<class_String>` right **)** |operator|
+
+----
+
+- :ref:`bool<class_bool>` **operator !=** **(** :ref:`StringName<class_StringName>` right **)** |operator|
+
+----
+
+.. _class_StringName_method_operator ==:
+
+- :ref:`bool<class_bool>` **operator ==** **(** **)** |operator|
+
+----
+
+- :ref:`bool<class_bool>` **operator ==** **(** :ref:`String<class_String>` right **)** |operator|
+
+----
+
+- :ref:`bool<class_bool>` **operator ==** **(** :ref:`StringName<class_StringName>` right **)** |operator|
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

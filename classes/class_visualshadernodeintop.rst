@@ -9,7 +9,7 @@
 VisualShaderNodeIntOp
 =====================
 
-**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 An integer scalar operator to be used within the visual shader graph.
 
@@ -44,6 +44,8 @@ Enumerations
 
 .. _class_VisualShaderNodeIntOp_constant_OP_MIN:
 
+.. _class_VisualShaderNodeIntOp_constant_OP_ENUM_SIZE:
+
 enum **Operator**:
 
 - **OP_ADD** = **0** --- Sums two numbers using ``a + b``.
@@ -59,6 +61,8 @@ enum **Operator**:
 - **OP_MAX** = **5** --- Returns the greater of two numbers. Translates to ``max(a, b)`` in the Godot Shader Language.
 
 - **OP_MIN** = **6** --- Returns the lesser of two numbers. Translates to ``max(a, b)`` in the Godot Shader Language.
+
+- **OP_ENUM_SIZE** = **7** --- Represents the size of the :ref:`Operator<enum_VisualShaderNodeIntOp_Operator>` enum.
 
 Property Descriptions
 ---------------------
@@ -77,3 +81,9 @@ Property Descriptions
 
 An operator to be applied to the inputs. See :ref:`Operator<enum_VisualShaderNodeIntOp_Operator>` for options.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

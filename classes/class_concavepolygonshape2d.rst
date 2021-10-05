@@ -9,23 +9,23 @@
 ConcavePolygonShape2D
 =====================
 
-**Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Concave polygon 2D shape resource for physics.
 
 Description
 -----------
 
-Concave polygon 2D shape resource for physics. It is made out of segments and is optimal for complex polygonal concave collisions. However, it is not advised to use for :ref:`RigidBody2D<class_RigidBody2D>` nodes. A CollisionPolygon2D in convex decomposition mode (solids) or several convex objects are advised for that instead. Otherwise, a concave polygon 2D shape is better for static collisions.
+Concave polygon 2D shape resource for physics. It is made out of segments and is optimal for complex polygonal concave collisions. However, it is not advised to use for :ref:`RigidDynamicBody2D<class_RigidDynamicBody2D>` nodes. A CollisionPolygon2D in convex decomposition mode (solids) or several convex objects are advised for that instead. Otherwise, a concave polygon 2D shape is better for static collisions.
 
 The main difference between a :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>` and a ``ConcavePolygonShape2D`` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex in order to speed up collision detection.
 
 Properties
 ----------
 
-+-----------------------------------------------------+----------------------------------------------------------------+----------------------------+
-| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`segments<class_ConcavePolygonShape2D_property_segments>` | ``PackedVector2Array(  )`` |
-+-----------------------------------------------------+----------------------------------------------------------------+----------------------------+
++-----------------------------------------------------+----------------------------------------------------------------+--------------------------+
+| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`segments<class_ConcavePolygonShape2D_property_segments>` | ``PackedVector2Array()`` |
++-----------------------------------------------------+----------------------------------------------------------------+--------------------------+
 
 Property Descriptions
 ---------------------
@@ -34,13 +34,19 @@ Property Descriptions
 
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **segments**
 
-+-----------+----------------------------+
-| *Default* | ``PackedVector2Array(  )`` |
-+-----------+----------------------------+
-| *Setter*  | set_segments(value)        |
-+-----------+----------------------------+
-| *Getter*  | get_segments()             |
-+-----------+----------------------------+
++-----------+--------------------------+
+| *Default* | ``PackedVector2Array()`` |
++-----------+--------------------------+
+| *Setter*  | set_segments(value)      |
++-----------+--------------------------+
+| *Getter*  | get_segments()           |
++-----------+--------------------------+
 
 The array of points that make up the ``ConcavePolygonShape2D``'s line segments.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -14,37 +14,336 @@ Float built-in type.
 Description
 -----------
 
-Float built-in type.
+The ``float`` built-in type is a 64-bit double-precision floating-point number, equivalent to ``double`` in C++. This type has 14 reliable decimal digits of precision. The ``float`` type can be stored in :ref:`Variant<class_Variant>`, which is the generic type used by the engine. The maximum value of ``float`` is approximately ``1.79769e308``, and the minimum is approximately ``-1.79769e308``.
+
+Many methods and properties in the engine use 32-bit single-precision floating-point numbers instead, equivalent to ``float`` in C++, which have 6 reliable decimal digits of precision. For data structures such as :ref:`Vector2<class_Vector2>` and :ref:`Vector3<class_Vector3>`, Godot uses 32-bit floating-point numbers by default, but it can be changed to use 64-bit doubles if Godot is compiled with the ``float=64`` option.
+
+Math done using the ``float`` type is not guaranteed to be exact or deterministic, and will often result in small errors. You should usually use the :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` and :ref:`@GlobalScope.is_zero_approx<class_@GlobalScope_method_is_zero_approx>` methods instead of ``==`` to compare ``float`` values for equality.
+
+Tutorials
+---------
+
+- `Wikipedia: Double-precision floating-point format <https://en.wikipedia.org/wiki/Double-precision_floating-point_format>`__
+
+- `Wikipedia: Single-precision floating-point format <https://en.wikipedia.org/wiki/Single-precision_floating-point_format>`__
 
 Methods
 -------
 
-+---------------------------+-------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`float<class_float_method_float>` **(** :ref:`bool<class_bool>` from **)**     |
-+---------------------------+-------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`float<class_float_method_float>` **(** :ref:`int<class_int>` from **)**       |
-+---------------------------+-------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`float<class_float_method_float>` **(** :ref:`String<class_String>` from **)** |
-+---------------------------+-------------------------------------------------------------------------------------+
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | :ref:`float<class_float_method_float>` **(** **)** |constructor|                                |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | :ref:`float<class_float_method_float>` **(** :ref:`float<class_float>` from **)** |constructor| |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | :ref:`float<class_float_method_float>` **(** :ref:`bool<class_bool>` from **)** |constructor|   |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | :ref:`float<class_float_method_float>` **(** :ref:`int<class_int>` from **)** |constructor|     |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator !=** **(** **)** |operator|                                                          |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator !=** **(** :ref:`float<class_float>` right **)** |operator|                          |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator !=** **(** :ref:`int<class_int>` right **)** |operator|                              |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | **operator *** **(** :ref:`float<class_float>` right **)** |operator|                           |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`       | **operator *** **(** :ref:`Vector2<class_Vector2>` right **)** |operator|                       |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`Vector2i<class_Vector2i>`     | **operator *** **(** :ref:`Vector2i<class_Vector2i>` right **)** |operator|                     |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`       | **operator *** **(** :ref:`Vector3<class_Vector3>` right **)** |operator|                       |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>`     | **operator *** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|                     |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`Quaternion<class_Quaternion>` | **operator *** **(** :ref:`Quaternion<class_Quaternion>` right **)** |operator|                 |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`           | **operator *** **(** :ref:`Color<class_Color>` right **)** |operator|                           |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | **operator *** **(** :ref:`int<class_int>` right **)** |operator|                               |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | **operator +** **(** :ref:`float<class_float>` right **)** |operator|                           |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | **operator +** **(** :ref:`int<class_int>` right **)** |operator|                               |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | **operator -** **(** :ref:`float<class_float>` right **)** |operator|                           |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | **operator -** **(** :ref:`int<class_int>` right **)** |operator|                               |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | **operator /** **(** :ref:`float<class_float>` right **)** |operator|                           |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | **operator /** **(** :ref:`int<class_int>` right **)** |operator|                               |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator <** **(** :ref:`float<class_float>` right **)** |operator|                           |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator <** **(** :ref:`int<class_int>` right **)** |operator|                               |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator <=** **(** :ref:`float<class_float>` right **)** |operator|                          |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator <=** **(** :ref:`int<class_int>` right **)** |operator|                              |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator ==** **(** **)** |operator|                                                          |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator ==** **(** :ref:`float<class_float>` right **)** |operator|                          |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator ==** **(** :ref:`int<class_int>` right **)** |operator|                              |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator >** **(** :ref:`float<class_float>` right **)** |operator|                           |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator >** **(** :ref:`int<class_int>` right **)** |operator|                               |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator >=** **(** :ref:`float<class_float>` right **)** |operator|                          |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator >=** **(** :ref:`int<class_int>` right **)** |operator|                              |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | **operator unary+** **(** **)** |operator|                                                      |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | **operator unary-** **(** **)** |operator|                                                      |
++-------------------------------------+-------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_float_method_float:
 
-- :ref:`float<class_float>` **float** **(** :ref:`bool<class_bool>` from **)**
+- :ref:`float<class_float>` **float** **(** **)** |constructor|
+
+Constructs a default-initialized ``float`` set to ``0.0``.
+
+----
+
+- :ref:`float<class_float>` **float** **(** :ref:`float<class_float>` from **)** |constructor|
+
+Constructs a ``float`` as a copy of the given ``float``.
+
+----
+
+- :ref:`float<class_float>` **float** **(** :ref:`bool<class_bool>` from **)** |constructor|
 
 Cast a :ref:`bool<class_bool>` value to a floating-point value, ``float(true)`` will be equal to 1.0 and ``float(false)`` will be equal to 0.0.
 
 ----
 
-- :ref:`float<class_float>` **float** **(** :ref:`int<class_int>` from **)**
+- :ref:`float<class_float>` **float** **(** :ref:`int<class_int>` from **)** |constructor|
 
-Cast an :ref:`int<class_int>` value to a floating-point value, ``float(1)`` will be equal to 1.0.
+Cast an :ref:`int<class_int>` value to a floating-point value, ``float(1)`` will be equal to ``1.0``.
 
 ----
 
-- :ref:`float<class_float>` **float** **(** :ref:`String<class_String>` from **)**
+.. _class_float_method_operator !=:
 
-Cast a :ref:`String<class_String>` value to a floating-point value. This method accepts float value strings like ``"1.23"`` and exponential notation strings for its parameter so calling ``float("1e3")`` will return 1000.0 and calling ``float("1e-3")`` will return 0.001. Calling this method with an invalid float string will return 0. This method stops parsing at the first invalid character and will return the parsed result so far, so calling ``float("1a3")`` will return 1 while calling ``float("1e3a2")`` will return 1000.0.
+- :ref:`bool<class_bool>` **operator !=** **(** **)** |operator|
 
+----
+
+- :ref:`bool<class_bool>` **operator !=** **(** :ref:`float<class_float>` right **)** |operator|
+
+Returns ``true`` if two floats are different from each other.
+
+----
+
+- :ref:`bool<class_bool>` **operator !=** **(** :ref:`int<class_int>` right **)** |operator|
+
+Returns ``true`` if the integer has different value than the float.
+
+----
+
+.. _class_float_method_operator *:
+
+- :ref:`float<class_float>` **operator *** **(** :ref:`float<class_float>` right **)** |operator|
+
+Multiplies two ``float``\ s.
+
+----
+
+- :ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`Vector2<class_Vector2>` right **)** |operator|
+
+Multiplies each component of the :ref:`Vector2<class_Vector2>` by the given ``float``.
+
+::
+
+    print(2.5 * Vector2(1, 1)) # Vector2(2.5, 2.5)
+
+----
+
+- :ref:`Vector2i<class_Vector2i>` **operator *** **(** :ref:`Vector2i<class_Vector2i>` right **)** |operator|
+
+Multiplies each component of the :ref:`Vector2i<class_Vector2i>` by the given ``float``.
+
+::
+
+    print(2.0 * Vector2i(1, 1)) # Vector2i(2.0, 2.0)
+
+----
+
+- :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Vector3<class_Vector3>` right **)** |operator|
+
+Multiplies each component of the :ref:`Vector3<class_Vector3>` by the given ``float``.
+
+----
+
+- :ref:`Vector3i<class_Vector3i>` **operator *** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|
+
+Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given ``float``.
+
+----
+
+- :ref:`Quaternion<class_Quaternion>` **operator *** **(** :ref:`Quaternion<class_Quaternion>` right **)** |operator|
+
+Multiplies each component of the :ref:`Quaternion<class_Quaternion>` by the given ``float``.
+
+----
+
+- :ref:`Color<class_Color>` **operator *** **(** :ref:`Color<class_Color>` right **)** |operator|
+
+Multiplies each component of the :ref:`Color<class_Color>` by the given ``float``.
+
+::
+
+    print(1.5 * Color(0.5, 0.5, 0.5)) # Color(0.75, 0.75, 0.75)
+
+----
+
+- :ref:`float<class_float>` **operator *** **(** :ref:`int<class_int>` right **)** |operator|
+
+Multiplies a ``float`` and an :ref:`int<class_int>`. The result is a ``float``.
+
+----
+
+.. _class_float_method_operator +:
+
+- :ref:`float<class_float>` **operator +** **(** :ref:`float<class_float>` right **)** |operator|
+
+Adds two floats.
+
+----
+
+- :ref:`float<class_float>` **operator +** **(** :ref:`int<class_int>` right **)** |operator|
+
+Adds a ``float`` and an :ref:`int<class_int>`. The result is a ``float``.
+
+----
+
+.. _class_float_method_operator -:
+
+- :ref:`float<class_float>` **operator -** **(** :ref:`float<class_float>` right **)** |operator|
+
+Subtracts a float from a float.
+
+----
+
+- :ref:`float<class_float>` **operator -** **(** :ref:`int<class_int>` right **)** |operator|
+
+Subtracts an :ref:`int<class_int>` from a ``float``. The result is a ``float``.
+
+----
+
+.. _class_float_method_operator /:
+
+- :ref:`float<class_float>` **operator /** **(** :ref:`float<class_float>` right **)** |operator|
+
+Divides two floats.
+
+----
+
+- :ref:`float<class_float>` **operator /** **(** :ref:`int<class_int>` right **)** |operator|
+
+Divides a ``float`` by an :ref:`int<class_int>`. The result is a ``float``.
+
+----
+
+.. _class_float_method_operator <:
+
+- :ref:`bool<class_bool>` **operator <** **(** :ref:`float<class_float>` right **)** |operator|
+
+Returns ``true`` the left float is less than the right one.
+
+----
+
+- :ref:`bool<class_bool>` **operator <** **(** :ref:`int<class_int>` right **)** |operator|
+
+Returns ``true`` if this ``float`` is less than the given :ref:`int<class_int>`.
+
+----
+
+.. _class_float_method_operator <=:
+
+- :ref:`bool<class_bool>` **operator <=** **(** :ref:`float<class_float>` right **)** |operator|
+
+Returns ``true`` the left integer is less than or equal to the right one.
+
+----
+
+- :ref:`bool<class_bool>` **operator <=** **(** :ref:`int<class_int>` right **)** |operator|
+
+Returns ``true`` if this ``float`` is less than or equal to the given :ref:`int<class_int>`.
+
+----
+
+.. _class_float_method_operator ==:
+
+- :ref:`bool<class_bool>` **operator ==** **(** **)** |operator|
+
+----
+
+- :ref:`bool<class_bool>` **operator ==** **(** :ref:`float<class_float>` right **)** |operator|
+
+Returns ``true`` if both floats are exactly equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` or :ref:`@GlobalScope.is_zero_approx<class_@GlobalScope_method_is_zero_approx>` instead, which are more reliable.
+
+----
+
+- :ref:`bool<class_bool>` **operator ==** **(** :ref:`int<class_int>` right **)** |operator|
+
+Returns ``true`` if the ``float`` and the given :ref:`int<class_int>` are equal.
+
+----
+
+.. _class_float_method_operator >:
+
+- :ref:`bool<class_bool>` **operator >** **(** :ref:`float<class_float>` right **)** |operator|
+
+Returns ``true`` the left float is greater than the right one.
+
+----
+
+- :ref:`bool<class_bool>` **operator >** **(** :ref:`int<class_int>` right **)** |operator|
+
+Returns ``true`` if this ``float`` is greater than the given :ref:`int<class_int>`.
+
+----
+
+.. _class_float_method_operator >=:
+
+- :ref:`bool<class_bool>` **operator >=** **(** :ref:`float<class_float>` right **)** |operator|
+
+Returns ``true`` the left float is greater than or equal to the right one.
+
+----
+
+- :ref:`bool<class_bool>` **operator >=** **(** :ref:`int<class_int>` right **)** |operator|
+
+Returns ``true`` if this ``float`` is greater than or equal to the given :ref:`int<class_int>`.
+
+----
+
+.. _class_float_method_operator unary+:
+
+- :ref:`float<class_float>` **operator unary+** **(** **)** |operator|
+
+Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, but sometimes it can make your code more readable.
+
+----
+
+.. _class_float_method_operator unary-:
+
+- :ref:`float<class_float>` **operator unary-** **(** **)** |operator|
+
+Returns the negative value of the ``float``. If positive, turns the number negative. If negative, turns the number positive. With floats, the number zero can be either positive or negative.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

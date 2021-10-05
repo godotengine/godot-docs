@@ -9,7 +9,7 @@
 VisualScriptLocalVar
 ====================
 
-**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Gets a local variable's value.
 
@@ -32,7 +32,7 @@ Properties
 +-----------------------------------------------------+---------------------------------------------------------------+------------------+
 | :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptLocalVar_property_type>`         | ``0``            |
 +-----------------------------------------------------+---------------------------------------------------------------+------------------+
-| :ref:`StringName<class_StringName>`                 | :ref:`var_name<class_VisualScriptLocalVar_property_var_name>` | ``@"new_local"`` |
+| :ref:`StringName<class_StringName>`                 | :ref:`var_name<class_VisualScriptLocalVar_property_var_name>` | ``&"new_local"`` |
 +-----------------------------------------------------+---------------------------------------------------------------+------------------+
 
 Property Descriptions
@@ -59,7 +59,7 @@ The local variable's type.
 - :ref:`StringName<class_StringName>` **var_name**
 
 +-----------+---------------------+
-| *Default* | ``@"new_local"``    |
+| *Default* | ``&"new_local"``    |
 +-----------+---------------------+
 | *Setter*  | set_var_name(value) |
 +-----------+---------------------+
@@ -68,3 +68,9 @@ The local variable's type.
 
 The local variable's name.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

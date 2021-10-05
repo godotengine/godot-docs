@@ -11,14 +11,21 @@ GridContainer
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Grid container used to arrange elements in a grid like layout.
+Grid container used to arrange Control-derived children in a grid like layout.
 
 Description
 -----------
 
-Grid container will arrange its children in a grid like structure, the grid columns are specified using the :ref:`columns<class_GridContainer_property_columns>` property and the number of rows will be equal to the number of children in the container divided by the number of columns. For example, if the container has 5 children, and 2 columns, there will be 3 rows in the container.
+GridContainer will arrange its Control-derived children in a grid like structure, the grid columns are specified using the :ref:`columns<class_GridContainer_property_columns>` property and the number of rows will be equal to the number of children in the container divided by the number of columns. For example, if the container has 5 children, and 2 columns, there will be 3 rows in the container.
 
 Notice that grid layout will preserve the columns and rows for every size of the container, and that empty columns will be expanded automatically.
+
+**Note:** GridContainer only works with child nodes inheriting from Control. It won't rearrange child nodes inheriting from Node2D.
+
+Tutorials
+---------
+
+- `OS Test Demo <https://godotengine.org/asset-library/asset/677>`__
 
 Properties
 ----------
@@ -30,11 +37,11 @@ Properties
 Theme Properties
 ----------------
 
-+-----------------------+-------------+---+
-| :ref:`int<class_int>` | hseparation | 4 |
-+-----------------------+-------------+---+
-| :ref:`int<class_int>` | vseparation | 4 |
-+-----------------------+-------------+---+
++-----------------------+--------------------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`hseparation<class_GridContainer_theme_constant_hseparation>` | ``4`` |
++-----------------------+--------------------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`vseparation<class_GridContainer_theme_constant_vseparation>` | ``4`` |
++-----------------------+--------------------------------------------------------------------+-------+
 
 Property Descriptions
 ---------------------
@@ -51,5 +58,36 @@ Property Descriptions
 | *Getter*  | get_columns()      |
 +-----------+--------------------+
 
-The number of columns in the ``GridContainer``. If modified, ``GridContainer`` reorders its children to accommodate the new layout.
+The number of columns in the ``GridContainer``. If modified, ``GridContainer`` reorders its Control-derived children to accommodate the new layout.
 
+Theme Property Descriptions
+---------------------------
+
+.. _class_GridContainer_theme_constant_hseparation:
+
+- :ref:`int<class_int>` **hseparation**
+
++-----------+-------+
+| *Default* | ``4`` |
++-----------+-------+
+
+The horizontal separation of children nodes.
+
+----
+
+.. _class_GridContainer_theme_constant_vseparation:
+
+- :ref:`int<class_int>` **vseparation**
+
++-----------+-------+
+| *Default* | ``4`` |
++-----------+-------+
+
+The vertical separation of children nodes.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

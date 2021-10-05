@@ -9,7 +9,7 @@
 Thread
 ======
 
-**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A unit of execution in a process.
 
@@ -18,23 +18,29 @@ Description
 
 A unit of execution in a process. Can run methods on :ref:`Object<class_Object>`\ s simultaneously. The use of synchronization via :ref:`Mutex<class_Mutex>` or :ref:`Semaphore<class_Semaphore>` is advised if working with shared objects.
 
+**Note:** Breakpoints won't break on code if it's running in a thread. This is a current limitation of the GDScript debugger.
+
 Tutorials
 ---------
 
-- :doc:`../tutorials/performance/using_multiple_threads`
+- :doc:`../tutorials/threads/using_multiple_threads`
+
+- :doc:`../tutorials/threads/thread_safe_apis`
+
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
 Methods
 -------
 
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_id<class_Thread_method_get_id>` **(** **)** const                                                                                                                                                                         |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_active<class_Thread_method_is_active>` **(** **)** const                                                                                                                                                                   |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`start<class_Thread_method_start>` **(** :ref:`Object<class_Object>` instance, :ref:`StringName<class_StringName>` method, :ref:`Variant<class_Variant>` userdata=null, :ref:`Priority<enum_Thread_Priority>` priority=1 **)** |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` **(** **)**                                                                                                                                                               |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`get_id<class_Thread_method_get_id>` **(** **)** |const|                                                                                                                               |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`is_active<class_Thread_method_is_active>` **(** **)** |const|                                                                                                                         |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`start<class_Thread_method_start>` **(** :ref:`Callable<class_Callable>` callable, :ref:`Variant<class_Variant>` userdata=null, :ref:`Priority<enum_Thread_Priority>` priority=1 **)** |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`         | :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` **(** **)**                                                                                                                       |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -60,15 +66,15 @@ Method Descriptions
 
 .. _class_Thread_method_get_id:
 
-- :ref:`String<class_String>` **get_id** **(** **)** const
+- :ref:`String<class_String>` **get_id** **(** **)** |const|
 
-Returns the current ``Thread``'s ID, uniquely identifying it among all threads.
+Returns the current ``Thread``'s ID, uniquely identifying it among all threads. If the ``Thread`` is not running this returns an empty string.
 
 ----
 
 .. _class_Thread_method_is_active:
 
-- :ref:`bool<class_bool>` **is_active** **(** **)** const
+- :ref:`bool<class_bool>` **is_active** **(** **)** |const|
 
 Returns ``true`` if this ``Thread`` is currently active. An active ``Thread`` cannot start work on a new method but can be joined with :ref:`wait_to_finish<class_Thread_method_wait_to_finish>`.
 
@@ -76,9 +82,9 @@ Returns ``true`` if this ``Thread`` is currently active. An active ``Thread`` ca
 
 .. _class_Thread_method_start:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`Object<class_Object>` instance, :ref:`StringName<class_StringName>` method, :ref:`Variant<class_Variant>` userdata=null, :ref:`Priority<enum_Thread_Priority>` priority=1 **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`Callable<class_Callable>` callable, :ref:`Variant<class_Variant>` userdata=null, :ref:`Priority<enum_Thread_Priority>` priority=1 **)**
 
-Starts a new ``Thread`` that runs ``method`` on object ``instance`` with ``userdata`` passed as an argument. The ``priority`` of the ``Thread`` can be changed by passing a value from the :ref:`Priority<enum_Thread_Priority>` enum.
+Starts a new ``Thread`` that calls ``callable`` with ``userdata`` passed as an argument. Even if no userdata is passed, ``method`` must accept one argument and it will be null. The ``priority`` of the ``Thread`` can be changed by passing a value from the :ref:`Priority<enum_Thread_Priority>` enum.
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` on failure.
 
@@ -90,3 +96,13 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or :r
 
 Joins the ``Thread`` and waits for it to finish. Returns what the method called returned.
 
+Should either be used when you want to retrieve the value returned from the method called by the ``Thread`` or before freeing the instance that contains the ``Thread``.
+
+**Note:** After the ``Thread`` finishes joining it will be disposed. If you want to use it again you will have to create a new instance of it.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

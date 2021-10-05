@@ -9,7 +9,7 @@
 ReflectionProbe
 ===============
 
-**Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 Captures its surroundings to create reflections.
 
@@ -18,7 +18,7 @@ Description
 
 Captures its surroundings as a cubemap, and stores versions of it with increasing levels of blur to simulate different material roughnesses.
 
-The ``ReflectionProbe`` is used to create high-quality reflections at the cost of performance. It can be combined with :ref:`GIProbe<class_GIProbe>`\ s and Screen Space Reflections to achieve high quality reflections. ``ReflectionProbe``\ s render all objects within their :ref:`cull_mask<class_ReflectionProbe_property_cull_mask>`, so updating them can be quite expensive. It is best to update them once with the important static objects and then leave them.
+The ``ReflectionProbe`` is used to create high-quality reflections at the cost of performance. It can be combined with :ref:`VoxelGI<class_VoxelGI>`\ s and Screen Space Reflections to achieve high quality reflections. ``ReflectionProbe``\ s render all objects within their :ref:`cull_mask<class_ReflectionProbe_property_cull_mask>`, so updating them can be quite expensive. It is best to update them once with the important static objects and then leave them.
 
 Tutorials
 ---------
@@ -28,31 +28,33 @@ Tutorials
 Properties
 ----------
 
-+----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                            | :ref:`box_projection<class_ReflectionProbe_property_box_projection>`                     | ``false``               |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`                              | :ref:`cull_mask<class_ReflectionProbe_property_cull_mask>`                               | ``1048575``             |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                            | :ref:`enable_shadows<class_ReflectionProbe_property_enable_shadows>`                     | ``false``               |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`Vector3<class_Vector3>`                      | :ref:`extents<class_ReflectionProbe_property_extents>`                                   | ``Vector3( 1, 1, 1 )``  |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                          | :ref:`intensity<class_ReflectionProbe_property_intensity>`                               | ``1.0``                 |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>`                          | :ref:`interior_ambient_color<class_ReflectionProbe_property_interior_ambient_color>`     | ``Color( 0, 0, 0, 1 )`` |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                          | :ref:`interior_ambient_contrib<class_ReflectionProbe_property_interior_ambient_contrib>` | ``0.0``                 |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                          | :ref:`interior_ambient_energy<class_ReflectionProbe_property_interior_ambient_energy>`   | ``1.0``                 |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                            | :ref:`interior_enable<class_ReflectionProbe_property_interior_enable>`                   | ``false``               |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                          | :ref:`max_distance<class_ReflectionProbe_property_max_distance>`                         | ``0.0``                 |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`Vector3<class_Vector3>`                      | :ref:`origin_offset<class_ReflectionProbe_property_origin_offset>`                       | ``Vector3( 0, 0, 0 )``  |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`UpdateMode<enum_ReflectionProbe_UpdateMode>` | :ref:`update_mode<class_ReflectionProbe_property_update_mode>`                           | ``0``                   |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------+
++------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>`                            | :ref:`ambient_color<class_ReflectionProbe_property_ambient_color>`               | ``Color(0, 0, 0, 1)``   |
++------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                            | :ref:`ambient_color_energy<class_ReflectionProbe_property_ambient_color_energy>` | ``1.0``                 |
++------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`AmbientMode<enum_ReflectionProbe_AmbientMode>` | :ref:`ambient_mode<class_ReflectionProbe_property_ambient_mode>`                 | ``1``                   |
++------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                              | :ref:`box_projection<class_ReflectionProbe_property_box_projection>`             | ``false``               |
++------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                                | :ref:`cull_mask<class_ReflectionProbe_property_cull_mask>`                       | ``1048575``             |
++------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                              | :ref:`enable_shadows<class_ReflectionProbe_property_enable_shadows>`             | ``false``               |
++------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`Vector3<class_Vector3>`                        | :ref:`extents<class_ReflectionProbe_property_extents>`                           | ``Vector3(10, 10, 10)`` |
++------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                            | :ref:`intensity<class_ReflectionProbe_property_intensity>`                       | ``1.0``                 |
++------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                              | :ref:`interior<class_ReflectionProbe_property_interior>`                         | ``false``               |
++------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                            | :ref:`lod_threshold<class_ReflectionProbe_property_lod_threshold>`               | ``1.0``                 |
++------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                            | :ref:`max_distance<class_ReflectionProbe_property_max_distance>`                 | ``0.0``                 |
++------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`Vector3<class_Vector3>`                        | :ref:`origin_offset<class_ReflectionProbe_property_origin_offset>`               | ``Vector3(0, 0, 0)``    |
++------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
+| :ref:`UpdateMode<enum_ReflectionProbe_UpdateMode>`   | :ref:`update_mode<class_ReflectionProbe_property_update_mode>`                   | ``0``                   |
++------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
 
 Enumerations
 ------------
@@ -69,8 +71,68 @@ enum **UpdateMode**:
 
 - **UPDATE_ALWAYS** = **1** --- Update the probe every frame. This is needed when you want to capture dynamic objects. However, it results in an increased render time. Use :ref:`UPDATE_ONCE<class_ReflectionProbe_constant_UPDATE_ONCE>` whenever possible.
 
+----
+
+.. _enum_ReflectionProbe_AmbientMode:
+
+.. _class_ReflectionProbe_constant_AMBIENT_DISABLED:
+
+.. _class_ReflectionProbe_constant_AMBIENT_ENVIRONMENT:
+
+.. _class_ReflectionProbe_constant_AMBIENT_COLOR:
+
+enum **AmbientMode**:
+
+- **AMBIENT_DISABLED** = **0**
+
+- **AMBIENT_ENVIRONMENT** = **1**
+
+- **AMBIENT_COLOR** = **2**
+
 Property Descriptions
 ---------------------
+
+.. _class_ReflectionProbe_property_ambient_color:
+
+- :ref:`Color<class_Color>` **ambient_color**
+
++-----------+--------------------------+
+| *Default* | ``Color(0, 0, 0, 1)``    |
++-----------+--------------------------+
+| *Setter*  | set_ambient_color(value) |
++-----------+--------------------------+
+| *Getter*  | get_ambient_color()      |
++-----------+--------------------------+
+
+----
+
+.. _class_ReflectionProbe_property_ambient_color_energy:
+
+- :ref:`float<class_float>` **ambient_color_energy**
+
++-----------+---------------------------------+
+| *Default* | ``1.0``                         |
++-----------+---------------------------------+
+| *Setter*  | set_ambient_color_energy(value) |
++-----------+---------------------------------+
+| *Getter*  | get_ambient_color_energy()      |
++-----------+---------------------------------+
+
+----
+
+.. _class_ReflectionProbe_property_ambient_mode:
+
+- :ref:`AmbientMode<enum_ReflectionProbe_AmbientMode>` **ambient_mode**
+
++-----------+-------------------------+
+| *Default* | ``1``                   |
++-----------+-------------------------+
+| *Setter*  | set_ambient_mode(value) |
++-----------+-------------------------+
+| *Getter*  | get_ambient_mode()      |
++-----------+-------------------------+
+
+----
 
 .. _class_ReflectionProbe_property_box_projection:
 
@@ -100,7 +162,7 @@ If ``true``, enables box projection. This makes reflections look more correct in
 | *Getter*  | get_cull_mask()      |
 +-----------+----------------------+
 
-Sets the cull mask which determines what objects are drawn by this probe. Every :ref:`VisualInstance<class_VisualInstance>` with a layer included in this cull mask will be rendered by the probe. It is best to only include large objects which are likely to take up a lot of space in the reflection in order to save on rendering cost.
+Sets the cull mask which determines what objects are drawn by this probe. Every :ref:`VisualInstance3D<class_VisualInstance3D>` with a layer included in this cull mask will be rendered by the probe. It is best to only include large objects which are likely to take up a lot of space in the reflection in order to save on rendering cost.
 
 ----
 
@@ -124,15 +186,15 @@ If ``true``, computes shadows in the reflection probe. This makes the reflection
 
 - :ref:`Vector3<class_Vector3>` **extents**
 
-+-----------+------------------------+
-| *Default* | ``Vector3( 1, 1, 1 )`` |
-+-----------+------------------------+
-| *Setter*  | set_extents(value)     |
-+-----------+------------------------+
-| *Getter*  | get_extents()          |
-+-----------+------------------------+
++-----------+-------------------------+
+| *Default* | ``Vector3(10, 10, 10)`` |
++-----------+-------------------------+
+| *Setter*  | set_extents(value)      |
++-----------+-------------------------+
+| *Getter*  | get_extents()           |
++-----------+-------------------------+
 
-The size of the reflection probe. The larger the extents the more space covered by the probe which will lower the perceived resolution. It is best to keep the extents only as large as you need them.
+The size of the reflection probe. The larger the extents, the more space covered by the probe, which will lower the perceived resolution. It is best to keep the extents only as large as you need them.
 
 ----
 
@@ -152,57 +214,9 @@ Defines the reflection intensity. Intensity modulates the strength of the reflec
 
 ----
 
-.. _class_ReflectionProbe_property_interior_ambient_color:
+.. _class_ReflectionProbe_property_interior:
 
-- :ref:`Color<class_Color>` **interior_ambient_color**
-
-+-----------+-----------------------------+
-| *Default* | ``Color( 0, 0, 0, 1 )``     |
-+-----------+-----------------------------+
-| *Setter*  | set_interior_ambient(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_interior_ambient()      |
-+-----------+-----------------------------+
-
-Sets the ambient light color to be used when this probe is set to :ref:`interior_enable<class_ReflectionProbe_property_interior_enable>`.
-
-----
-
-.. _class_ReflectionProbe_property_interior_ambient_contrib:
-
-- :ref:`float<class_float>` **interior_ambient_contrib**
-
-+-----------+------------------------------------------------+
-| *Default* | ``0.0``                                        |
-+-----------+------------------------------------------------+
-| *Setter*  | set_interior_ambient_probe_contribution(value) |
-+-----------+------------------------------------------------+
-| *Getter*  | get_interior_ambient_probe_contribution()      |
-+-----------+------------------------------------------------+
-
-Sets the contribution value for how much the reflection affects the ambient light for this reflection probe when set to :ref:`interior_enable<class_ReflectionProbe_property_interior_enable>`. Useful so that ambient light matches the color of the room.
-
-----
-
-.. _class_ReflectionProbe_property_interior_ambient_energy:
-
-- :ref:`float<class_float>` **interior_ambient_energy**
-
-+-----------+------------------------------------+
-| *Default* | ``1.0``                            |
-+-----------+------------------------------------+
-| *Setter*  | set_interior_ambient_energy(value) |
-+-----------+------------------------------------+
-| *Getter*  | get_interior_ambient_energy()      |
-+-----------+------------------------------------+
-
-Sets the energy multiplier for this reflection probe's ambient light contribution when set to :ref:`interior_enable<class_ReflectionProbe_property_interior_enable>`.
-
-----
-
-.. _class_ReflectionProbe_property_interior_enable:
-
-- :ref:`bool<class_bool>` **interior_enable**
+- :ref:`bool<class_bool>` **interior**
 
 +-----------+------------------------+
 | *Default* | ``false``              |
@@ -212,7 +226,21 @@ Sets the energy multiplier for this reflection probe's ambient light contributio
 | *Getter*  | is_set_as_interior()   |
 +-----------+------------------------+
 
-If ``true``, reflections will ignore sky contribution. Ambient lighting is then controlled by the ``interior_ambient_*`` properties.
+If ``true``, reflections will ignore sky contribution.
+
+----
+
+.. _class_ReflectionProbe_property_lod_threshold:
+
+- :ref:`float<class_float>` **lod_threshold**
+
++-----------+--------------------------+
+| *Default* | ``1.0``                  |
++-----------+--------------------------+
+| *Setter*  | set_lod_threshold(value) |
++-----------+--------------------------+
+| *Getter*  | get_lod_threshold()      |
++-----------+--------------------------+
 
 ----
 
@@ -237,7 +265,7 @@ Sets the max distance away from the probe an object can be before it is culled.
 - :ref:`Vector3<class_Vector3>` **origin_offset**
 
 +-----------+--------------------------+
-| *Default* | ``Vector3( 0, 0, 0 )``   |
+| *Default* | ``Vector3(0, 0, 0)``     |
 +-----------+--------------------------+
 | *Setter*  | set_origin_offset(value) |
 +-----------+--------------------------+
@@ -262,3 +290,9 @@ Sets the origin offset to be used when this reflection probe is in box project m
 
 Sets how frequently the probe is updated. Can be :ref:`UPDATE_ONCE<class_ReflectionProbe_constant_UPDATE_ONCE>` or :ref:`UPDATE_ALWAYS<class_ReflectionProbe_constant_UPDATE_ALWAYS>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

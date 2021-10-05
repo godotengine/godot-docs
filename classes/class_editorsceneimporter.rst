@@ -9,28 +9,28 @@
 EditorSceneImporter
 ===================
 
-**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`EditorSceneImporterAssimp<class_EditorSceneImporterAssimp>`
+**Inherited By:** :ref:`EditorSceneImporterFBX<class_EditorSceneImporterFBX>`, :ref:`EditorSceneImporterGLTF<class_EditorSceneImporterGLTF>`
 
 Imports scenes from third-parties' 3D files.
 
 Methods
 -------
 
-+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`         | :ref:`_get_extensions<class_EditorSceneImporter_method__get_extensions>` **(** **)** virtual                                                                                                                                 |
-+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`_get_import_flags<class_EditorSceneImporter_method__get_import_flags>` **(** **)** virtual                                                                                                                             |
-+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Animation<class_Animation>` | :ref:`_import_animation<class_EditorSceneImporter_method__import_animation>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** virtual                               |
-+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`           | :ref:`_import_scene<class_EditorSceneImporter_method__import_scene>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** virtual                                       |
-+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Animation<class_Animation>` | :ref:`import_animation_from_other_importer<class_EditorSceneImporter_method_import_animation_from_other_importer>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** |
-+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`           | :ref:`import_scene_from_other_importer<class_EditorSceneImporter_method_import_scene_from_other_importer>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)**         |
-+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_extensions<class_EditorSceneImporter_method__get_extensions>` **(** **)** |virtual| |const|                                                                                                                       |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`_get_import_flags<class_EditorSceneImporter_method__get_import_flags>` **(** **)** |virtual| |const|                                                                                                                   |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Animation<class_Animation>`                 | :ref:`_import_animation<class_EditorSceneImporter_method__import_animation>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** |virtual|                             |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>`                       | :ref:`_import_scene<class_EditorSceneImporter_method__import_scene>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** |virtual|                                     |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Animation<class_Animation>`                 | :ref:`import_animation_from_other_importer<class_EditorSceneImporter_method_import_animation_from_other_importer>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_Node>`                           | :ref:`import_scene_from_other_importer<class_EditorSceneImporter_method_import_scene_from_other_importer>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)**         |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Constants
 ---------
@@ -39,66 +39,46 @@ Constants
 
 .. _class_EditorSceneImporter_constant_IMPORT_ANIMATION:
 
-.. _class_EditorSceneImporter_constant_IMPORT_ANIMATION_DETECT_LOOP:
-
-.. _class_EditorSceneImporter_constant_IMPORT_ANIMATION_OPTIMIZE:
-
-.. _class_EditorSceneImporter_constant_IMPORT_ANIMATION_FORCE_ALL_TRACKS_IN_ALL_CLIPS:
-
-.. _class_EditorSceneImporter_constant_IMPORT_ANIMATION_KEEP_VALUE_TRACKS:
+.. _class_EditorSceneImporter_constant_IMPORT_FAIL_ON_MISSING_DEPENDENCIES:
 
 .. _class_EditorSceneImporter_constant_IMPORT_GENERATE_TANGENT_ARRAYS:
 
-.. _class_EditorSceneImporter_constant_IMPORT_FAIL_ON_MISSING_DEPENDENCIES:
-
-.. _class_EditorSceneImporter_constant_IMPORT_MATERIALS_IN_INSTANCES:
-
-.. _class_EditorSceneImporter_constant_IMPORT_USE_COMPRESSION:
+.. _class_EditorSceneImporter_constant_IMPORT_USE_NAMED_SKIN_BINDS:
 
 - **IMPORT_SCENE** = **1**
 
 - **IMPORT_ANIMATION** = **2**
 
-- **IMPORT_ANIMATION_DETECT_LOOP** = **4**
+- **IMPORT_FAIL_ON_MISSING_DEPENDENCIES** = **4**
 
-- **IMPORT_ANIMATION_OPTIMIZE** = **8**
+- **IMPORT_GENERATE_TANGENT_ARRAYS** = **8**
 
-- **IMPORT_ANIMATION_FORCE_ALL_TRACKS_IN_ALL_CLIPS** = **16**
-
-- **IMPORT_ANIMATION_KEEP_VALUE_TRACKS** = **32**
-
-- **IMPORT_GENERATE_TANGENT_ARRAYS** = **256**
-
-- **IMPORT_FAIL_ON_MISSING_DEPENDENCIES** = **512**
-
-- **IMPORT_MATERIALS_IN_INSTANCES** = **1024**
-
-- **IMPORT_USE_COMPRESSION** = **2048**
+- **IMPORT_USE_NAMED_SKIN_BINDS** = **16**
 
 Method Descriptions
 -------------------
 
 .. _class_EditorSceneImporter_method__get_extensions:
 
-- :ref:`Array<class_Array>` **_get_extensions** **(** **)** virtual
+- :ref:`PackedStringArray<class_PackedStringArray>` **_get_extensions** **(** **)** |virtual| |const|
 
 ----
 
 .. _class_EditorSceneImporter_method__get_import_flags:
 
-- :ref:`int<class_int>` **_get_import_flags** **(** **)** virtual
+- :ref:`int<class_int>` **_get_import_flags** **(** **)** |virtual| |const|
 
 ----
 
 .. _class_EditorSceneImporter_method__import_animation:
 
-- :ref:`Animation<class_Animation>` **_import_animation** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** virtual
+- :ref:`Animation<class_Animation>` **_import_animation** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** |virtual|
 
 ----
 
 .. _class_EditorSceneImporter_method__import_scene:
 
-- :ref:`Node<class_Node>` **_import_scene** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** virtual
+- :ref:`Object<class_Object>` **_import_scene** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** |virtual|
 
 ----
 
@@ -112,3 +92,9 @@ Method Descriptions
 
 - :ref:`Node<class_Node>` **import_scene_from_other_importer** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

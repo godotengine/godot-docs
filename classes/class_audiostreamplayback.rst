@@ -9,7 +9,7 @@
 AudioStreamPlayback
 ===================
 
-**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 **Inherited By:** :ref:`AudioStreamPlaybackResampled<class_AudioStreamPlaybackResampled>`
 
@@ -20,3 +20,76 @@ Description
 
 Can play, loop, pause a scroll through audio. See :ref:`AudioStream<class_AudioStream>` and :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>` for usage.
 
+Tutorials
+---------
+
+- `Audio Generator Demo <https://godotengine.org/asset-library/asset/526>`__
+
+Methods
+-------
+
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`_get_loop_count<class_AudioStreamPlayback_method__get_loop_count>` **(** **)** |virtual| |const|                                                          |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`_get_playback_position<class_AudioStreamPlayback_method__get_playback_position>` **(** **)** |virtual| |const|                                            |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`_is_playing<class_AudioStreamPlayback_method__is_playing>` **(** **)** |virtual| |const|                                                                  |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`_mix<class_AudioStreamPlayback_method__mix>` **(** AudioFrame* buffer, :ref:`float<class_float>` rate_scale, :ref:`int<class_int>` frames **)** |virtual| |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`_seek<class_AudioStreamPlayback_method__seek>` **(** :ref:`float<class_float>` position **)** |virtual|                                                   |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`_start<class_AudioStreamPlayback_method__start>` **(** :ref:`float<class_float>` from_pos **)** |virtual|                                                 |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`_stop<class_AudioStreamPlayback_method__stop>` **(** **)** |virtual|                                                                                      |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Method Descriptions
+-------------------
+
+.. _class_AudioStreamPlayback_method__get_loop_count:
+
+- :ref:`int<class_int>` **_get_loop_count** **(** **)** |virtual| |const|
+
+----
+
+.. _class_AudioStreamPlayback_method__get_playback_position:
+
+- :ref:`float<class_float>` **_get_playback_position** **(** **)** |virtual| |const|
+
+----
+
+.. _class_AudioStreamPlayback_method__is_playing:
+
+- :ref:`bool<class_bool>` **_is_playing** **(** **)** |virtual| |const|
+
+----
+
+.. _class_AudioStreamPlayback_method__mix:
+
+- :ref:`int<class_int>` **_mix** **(** AudioFrame* buffer, :ref:`float<class_float>` rate_scale, :ref:`int<class_int>` frames **)** |virtual|
+
+----
+
+.. _class_AudioStreamPlayback_method__seek:
+
+- void **_seek** **(** :ref:`float<class_float>` position **)** |virtual|
+
+----
+
+.. _class_AudioStreamPlayback_method__start:
+
+- void **_start** **(** :ref:`float<class_float>` from_pos **)** |virtual|
+
+----
+
+.. _class_AudioStreamPlayback_method__stop:
+
+- void **_stop** **(** **)** |virtual|
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

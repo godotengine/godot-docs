@@ -18,28 +18,35 @@ Description
 
 Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one-shot" mode.
 
+**Note:** To create a one-shot timer without instantiating a node, use :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>`.
+
+Tutorials
+---------
+
+- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
+
 Properties
 ----------
 
-+------------------------------------------------------+--------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                              | :ref:`autostart<class_Timer_property_autostart>`       | ``false`` |
-+------------------------------------------------------+--------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                              | :ref:`one_shot<class_Timer_property_one_shot>`         | ``false`` |
-+------------------------------------------------------+--------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                              | :ref:`paused<class_Timer_property_paused>`             |           |
-+------------------------------------------------------+--------------------------------------------------------+-----------+
-| :ref:`TimerProcessMode<enum_Timer_TimerProcessMode>` | :ref:`process_mode<class_Timer_property_process_mode>` | ``1``     |
-+------------------------------------------------------+--------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                            | :ref:`time_left<class_Timer_property_time_left>`       |           |
-+------------------------------------------------------+--------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                            | :ref:`wait_time<class_Timer_property_wait_time>`       | ``1.0``   |
-+------------------------------------------------------+--------------------------------------------------------+-----------+
++--------------------------------------------------------------+----------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                      | :ref:`autostart<class_Timer_property_autostart>`               | ``false`` |
++--------------------------------------------------------------+----------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                      | :ref:`one_shot<class_Timer_property_one_shot>`                 | ``false`` |
++--------------------------------------------------------------+----------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                      | :ref:`paused<class_Timer_property_paused>`                     |           |
++--------------------------------------------------------------+----------------------------------------------------------------+-----------+
+| :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` | :ref:`process_callback<class_Timer_property_process_callback>` | ``1``     |
++--------------------------------------------------------------+----------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                                    | :ref:`time_left<class_Timer_property_time_left>`               |           |
++--------------------------------------------------------------+----------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                                    | :ref:`wait_time<class_Timer_property_wait_time>`               | ``1.0``   |
++--------------------------------------------------------------+----------------------------------------------------------------+-----------+
 
 Methods
 -------
 
 +-------------------------+------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_stopped<class_Timer_method_is_stopped>` **(** **)** const                       |
+| :ref:`bool<class_bool>` | :ref:`is_stopped<class_Timer_method_is_stopped>` **(** **)** |const|                     |
 +-------------------------+------------------------------------------------------------------------------------------+
 | void                    | :ref:`start<class_Timer_method_start>` **(** :ref:`float<class_float>` time_sec=-1 **)** |
 +-------------------------+------------------------------------------------------------------------------------------+
@@ -58,13 +65,13 @@ Emitted when the timer reaches 0.
 Enumerations
 ------------
 
-.. _enum_Timer_TimerProcessMode:
+.. _enum_Timer_TimerProcessCallback:
 
 .. _class_Timer_constant_TIMER_PROCESS_PHYSICS:
 
 .. _class_Timer_constant_TIMER_PROCESS_IDLE:
 
-enum **TimerProcessMode**:
+enum **TimerProcessCallback**:
 
 - **TIMER_PROCESS_PHYSICS** = **0** --- Update the timer during the physics step at each frame (fixed framerate processing).
 
@@ -121,19 +128,19 @@ If ``true``, the timer is paused and will not process until it is unpaused again
 
 ----
 
-.. _class_Timer_property_process_mode:
+.. _class_Timer_property_process_callback:
 
-- :ref:`TimerProcessMode<enum_Timer_TimerProcessMode>` **process_mode**
+- :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` **process_callback**
 
-+-----------+-------------------------------+
-| *Default* | ``1``                         |
-+-----------+-------------------------------+
-| *Setter*  | set_timer_process_mode(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_timer_process_mode()      |
-+-----------+-------------------------------+
++-----------+-----------------------------------+
+| *Default* | ``1``                             |
++-----------+-----------------------------------+
+| *Setter*  | set_timer_process_callback(value) |
++-----------+-----------------------------------+
+| *Getter*  | get_timer_process_callback()      |
++-----------+-----------------------------------+
 
-Processing mode. See :ref:`TimerProcessMode<enum_Timer_TimerProcessMode>`.
+Processing callback. See :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>`.
 
 ----
 
@@ -170,7 +177,7 @@ Method Descriptions
 
 .. _class_Timer_method_is_stopped:
 
-- :ref:`bool<class_bool>` **is_stopped** **(** **)** const
+- :ref:`bool<class_bool>` **is_stopped** **(** **)** |const|
 
 Returns ``true`` if the timer is stopped.
 
@@ -182,7 +189,7 @@ Returns ``true`` if the timer is stopped.
 
 Starts the timer. Sets ``wait_time`` to ``time_sec`` if ``time_sec > 0``. This also resets the remaining time to ``wait_time``.
 
-**Note:** this method will not resume a paused timer. See :ref:`paused<class_Timer_property_paused>`.
+**Note:** This method will not resume a paused timer. See :ref:`paused<class_Timer_property_paused>`.
 
 ----
 
@@ -192,3 +199,9 @@ Starts the timer. Sets ``wait_time`` to ``time_sec`` if ``time_sec > 0``. This a
 
 Stops the timer.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

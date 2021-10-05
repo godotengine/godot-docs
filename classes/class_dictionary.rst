@@ -14,113 +14,291 @@ Dictionary type.
 Description
 -----------
 
-Dictionary type. Associative container which contains values referenced by unique keys. Dictionary are composed of pairs of keys (which must be unique) and values. You can define a dictionary by placing a comma separated list of ``key: value`` pairs in curly braces ``{}``.
+Dictionary type. Associative container which contains values referenced by unique keys. Dictionaries are composed of pairs of keys (which must be unique) and values. Dictionaries will preserve the insertion order when adding elements, even though this may not be reflected when printing the dictionary. In other programming languages, this data structure is sometimes referred to as a hash map or associative array.
 
-Erasing elements while iterating over them **is not supported**.
+You can define a dictionary by placing a comma-separated list of ``key: value`` pairs in curly braces ``{}``.
+
+Erasing elements while iterating over them **is not supported** and will result in undefined behavior.
+
+**Note:** Dictionaries are always passed by reference. To get a copy of a dictionary which can be modified independently of the original dictionary, use :ref:`duplicate<class_Dictionary_method_duplicate>`.
 
 Creating a dictionary:
 
-::
 
-    var my_dir = {} # Creates an empty dictionary.
-    var points_dir = {"White": 50, "Yellow": 75, "Orange": 100}
-    var my_dir = {
-        key1: value1,
-        key2: value2,
-        key3: value3,
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var my_dict = {} # Creates an empty dictionary.
+    
+    var dict_variable_key = "Another key name"
+    var dict_variable_value = "value2"
+    var another_dict = {
+        "Some key name": "value1",
+        dict_variable_key: dict_variable_value,
+    }
+    
+    var points_dict = {"White": 50, "Yellow": 75, "Orange": 100}
+    
+    # Alternative Lua-style syntax.
+    # Doesn't require quotes around keys, but only string constants can be used as key names.
+    # Additionally, key names must start with a letter or an underscore.
+    # Here, `some_key` is a string literal, not a variable!
+    another_dict = {
+        some_key = 42,
     }
 
-You can access values of a dictionary by referencing appropriate key in above example ``points_dir["White"]`` would return value of 50.
+ .. code-tab:: csharp
 
-::
+    var myDict = new Godot.Collections.Dictionary(); // Creates an empty dictionary.
+    var pointsDict = new Godot.Collections.Dictionary
+    {
+        {"White", 50},
+        {"Yellow", 75},
+        {"Orange", 100}
+    };
 
-    export(String, "White", "Yellow", "Orange") var my_color
-    var points_dir = {"White": 50, "Yellow": 75, "Orange": 100}
-    
+
+
+You can access a dictionary's values by referencing the appropriate key. In the above example, ``points_dict["White"]`` will return ``50``. You can also write ``points_dict.White``, which is equivalent. However, you'll have to use the bracket syntax if the key you're accessing the dictionary with isn't a fixed string (such as a number or variable).
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    export(string, "White", "Yellow", "Orange") var my_color
+    var points_dict = {"White": 50, "Yellow": 75, "Orange": 100}
     func _ready():
-        var points = points_dir[my_color]
+        # We can't use dot syntax here as `my_color` is a variable.
+        var points = points_dict[my_color]
 
-In the above code ``points`` will be assigned the value that is paired with the appropriate color selected in ``my_color``.
+ .. code-tab:: csharp
+
+    [Export(PropertyHint.Enum, "White,Yellow,Orange")]
+    public string MyColor { get; set; }
+    public Godot.Collections.Dictionary pointsDict = new Godot.Collections.Dictionary
+    {
+        {"White", 50},
+        {"Yellow", 75},
+        {"Orange", 100}
+    };
+    
+    public override void _Ready()
+    {
+        int points = (int)pointsDict[MyColor];
+    }
+
+
+
+In the above code, ``points`` will be assigned the value that is paired with the appropriate color selected in ``my_color``.
 
 Dictionaries can contain more complex data:
 
-::
 
-    my_dir = {"First Array": [1, 2, 3, 4]} # Assigns an Array to a String key.
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    my_dict = {"First Array": [1, 2, 3, 4]} # Assigns an Array to a String key.
+
+ .. code-tab:: csharp
+
+    var myDict = new Godot.Collections.Dictionary
+    {
+        {"First Array", new Godot.Collections.Array{1, 2, 3, 4}}
+    };
+
+
 
 To add a key to an existing dictionary, access it like an existing key and assign to it:
 
-::
 
-    var points_dir = {"White": 50, "Yellow": 75, "Orange": 100}
-    var points_dir["Blue"] = 150 # Add "Blue" as a key and assign 150 as its value.
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var points_dict = {"White": 50, "Yellow": 75, "Orange": 100}
+    points_dict["Blue"] = 150 # Add "Blue" as a key and assign 150 as its value.
+
+ .. code-tab:: csharp
+
+    var pointsDict = new Godot.Collections.Dictionary
+    {
+        {"White", 50},
+        {"Yellow", 75},
+        {"Orange", 100}
+    };
+    pointsDict["blue"] = 150; // Add "Blue" as a key and assign 150 as its value.
+
+
 
 Finally, dictionaries can contain different types of keys and values in the same dictionary:
 
-::
 
-    var my_dir = {"String Key": 5, 4: [1, 2, 3], 7: "Hello"} # This is a valid dictionary.
+.. tabs::
 
-**Note:** Unlike :ref:`Array<class_Array>`\ s you can't compare dictionaries directly:
+ .. code-tab:: gdscript
 
-::
+    # This is a valid dictionary.
+    # To access the string "Nested value" below, use `my_dict.sub_dict.sub_key` or `my_dict["sub_dict"]["sub_key"]`.
+    # Indexing styles can be mixed and matched depending on your needs.
+    var my_dict = {
+        "String Key": 5,
+        4: [1, 2, 3],
+        7: "Hello",
+        "sub_dict": {"sub_key": "Nested value"},
+    }
 
-    array1 = [1, 2, 3]
-    array2 = [1, 2, 3]
+ .. code-tab:: csharp
+
+    // This is a valid dictionary.
+    // To access the string "Nested value" below, use `((Godot.Collections.Dictionary)myDict["sub_dict"])["sub_key"]`.
+    var myDict = new Godot.Collections.Dictionary {
+        {"String Key", 5},
+        {4, new Godot.Collections.Array{1,2,3}},
+        {7, "Hello"},
+        {"sub_dict", new Godot.Collections.Dictionary{{"sub_key", "Nested value"}}}
+    };
+
+
+
+**Note:** Unlike :ref:`Array<class_Array>`\ s, you can't compare dictionaries directly:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var array1 = [1, 2, 3]
+    var array2 = [1, 2, 3]
     
     func compare_arrays():
         print(array1 == array2) # Will print true.
     
-    dir1 = {"a": 1, "b": 2, "c": 3}
-    dir2 = {"a": 1, "b": 2, "c": 3}
+    var dict1 = {"a": 1, "b": 2, "c": 3}
+    var dict2 = {"a": 1, "b": 2, "c": 3}
     
     func compare_dictionaries():
-        print(dir1 == dir2) # Will NOT print true.
+        print(dict1 == dict2) # Will NOT print true.
+
+ .. code-tab:: csharp
+
+    // You have to use GD.Hash().
+    
+    public Godot.Collections.Array array1 = new Godot.Collections.Array{1, 2, 3};
+    public Godot.Collections.Array array2 = new Godot.Collections.Array{1, 2, 3};
+    
+    public void CompareArrays()
+    {
+        GD.Print(array1 == array2); // Will print FALSE!!
+        GD.Print(GD.Hash(array1) == GD.Hash(array2)); // Will print true.
+    }
+    
+    public Godot.Collections.Dictionary dict1 = new Godot.Collections.Dictionary{{"a", 1}, {"b", 2}, {"c", 3}};
+    public Godot.Collections.Dictionary dict2 = new Godot.Collections.Dictionary{{"a", 1}, {"b", 2}, {"c", 3}};
+    
+    public void CompareDictionaries()
+    {
+        GD.Print(dict1 == dict2); // Will NOT print true.
+    }
+
+
 
 You need to first calculate the dictionary's hash with :ref:`hash<class_Dictionary_method_hash>` before you can compare them:
 
-::
 
-    dir1 = {"a": 1, "b": 2, "c": 3}
-    dir2 = {"a": 1, "b": 2, "c": 3}
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var dict1 = {"a": 1, "b": 2, "c": 3}
+    var dict2 = {"a": 1, "b": 2, "c": 3}
     
     func compare_dictionaries():
-        print(dir1.hash() == dir2.hash()) # Will print true.
+        print(dict1.hash() == dict2.hash()) # Will print true.
+
+ .. code-tab:: csharp
+
+    // You have to use GD.Hash().
+    public Godot.Collections.Dictionary dict1 = new Godot.Collections.Dictionary{{"a", 1}, {"b", 2}, {"c", 3}};
+    public Godot.Collections.Dictionary dict2 = new Godot.Collections.Dictionary{{"a", 1}, {"b", 2}, {"c", 3}};
+    
+    public void CompareDictionaries()
+    {
+        GD.Print(GD.Hash(dict1) == GD.Hash(dict2)); // Will print true.
+    }
+
+
+
+**Note:** When declaring a dictionary with ``const``, the dictionary itself can still be mutated by defining the values of individual keys. Using ``const`` will only prevent assigning the constant with another value after it was initialized.
 
 Tutorials
 ---------
 
-- `#dictionary <../tutorials/scripting/gdscript/gdscript_basics.html#dictionary>`_ in :doc:`../tutorials/scripting/gdscript/gdscript_basics`
+- `#dictionary <../getting_started/scripting/gdscript/gdscript_basics.html#dictionary>`_ in :doc:`../getting_started/scripting/gdscript/gdscript_basics`
+
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
+
+- `OS Test Demo <https://godotengine.org/asset-library/asset/677>`__
 
 Methods
 -------
 
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                                | :ref:`clear<class_Dictionary_method_clear>` **(** **)**                                                                           |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`duplicate<class_Dictionary_method_duplicate>` **(** :ref:`bool<class_bool>` deep=false **)**                                |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`empty<class_Dictionary_method_empty>` **(** **)**                                                                           |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`erase<class_Dictionary_method_erase>` **(** :ref:`Variant<class_Variant>` key **)**                                         |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`       | :ref:`get<class_Dictionary_method_get>` **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=null **)** |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`has<class_Dictionary_method_has>` **(** :ref:`Variant<class_Variant>` key **)**                                             |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`has_all<class_Dictionary_method_has_all>` **(** :ref:`Array<class_Array>` keys **)**                                        |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`hash<class_Dictionary_method_hash>` **(** **)**                                                                             |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`           | :ref:`keys<class_Dictionary_method_keys>` **(** **)**                                                                             |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`size<class_Dictionary_method_size>` **(** **)**                                                                             |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`           | :ref:`values<class_Dictionary_method_values>` **(** **)**                                                                         |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`Dictionary<class_Dictionary_method_Dictionary>` **(** **)** |constructor|                                                           |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`Dictionary<class_Dictionary_method_Dictionary>` **(** :ref:`Dictionary<class_Dictionary>` from **)** |constructor|                  |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`clear<class_Dictionary_method_clear>` **(** **)**                                                                                   |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`duplicate<class_Dictionary_method_duplicate>` **(** :ref:`bool<class_bool>` deep=false **)** |const|                                |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`erase<class_Dictionary_method_erase>` **(** :ref:`Variant<class_Variant>` key **)**                                                 |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`       | :ref:`get<class_Dictionary_method_get>` **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=null **)** |const| |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`has<class_Dictionary_method_has>` **(** :ref:`Variant<class_Variant>` key **)** |const|                                             |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`has_all<class_Dictionary_method_has_all>` **(** :ref:`Array<class_Array>` keys **)** |const|                                        |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`hash<class_Dictionary_method_hash>` **(** **)** |const|                                                                             |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`is_empty<class_Dictionary_method_is_empty>` **(** **)** |const|                                                                     |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`           | :ref:`keys<class_Dictionary_method_keys>` **(** **)** |const|                                                                             |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator !=** **(** **)** |operator|                                                                                                    |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator !=** **(** :ref:`Dictionary<class_Dictionary>` right **)** |operator|                                                          |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator ==** **(** **)** |operator|                                                                                                    |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator ==** **(** :ref:`Dictionary<class_Dictionary>` right **)** |operator|                                                          |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`       | **operator []** **(** :ref:`Variant<class_Variant>` key **)** |operator|                                                                  |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`size<class_Dictionary_method_size>` **(** **)** |const|                                                                             |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`           | :ref:`values<class_Dictionary_method_values>` **(** **)** |const|                                                                         |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
+
+.. _class_Dictionary_method_Dictionary:
+
+- :ref:`Dictionary<class_Dictionary>` **Dictionary** **(** **)** |constructor|
+
+Constructs an empty ``Dictionary``.
+
+----
+
+- :ref:`Dictionary<class_Dictionary>` **Dictionary** **(** :ref:`Dictionary<class_Dictionary>` from **)** |constructor|
+
+Constructs a ``Dictionary`` as a copy of the given ``Dictionary``.
+
+----
 
 .. _class_Dictionary_method_clear:
 
@@ -132,17 +310,9 @@ Clear the dictionary, removing all key/value pairs.
 
 .. _class_Dictionary_method_duplicate:
 
-- :ref:`Dictionary<class_Dictionary>` **duplicate** **(** :ref:`bool<class_bool>` deep=false **)**
+- :ref:`Dictionary<class_Dictionary>` **duplicate** **(** :ref:`bool<class_bool>` deep=false **)** |const|
 
-Creates a copy of the dictionary, and returns it.
-
-----
-
-.. _class_Dictionary_method_empty:
-
-- :ref:`bool<class_bool>` **empty** **(** **)**
-
-Returns ``true`` if the dictionary is empty.
+Creates a copy of the dictionary, and returns it. The ``deep`` parameter causes inner dictionaries and arrays to be copied recursively, but does not apply to objects.
 
 ----
 
@@ -150,13 +320,15 @@ Returns ``true`` if the dictionary is empty.
 
 - :ref:`bool<class_bool>` **erase** **(** :ref:`Variant<class_Variant>` key **)**
 
-Erase a dictionary key/value pair by key. Returns ``true`` if the given key was present in the dictionary, ``false`` otherwise. Does not erase elements while iterating over the dictionary.
+Erase a dictionary key/value pair by key. Returns ``true`` if the given key was present in the dictionary, ``false`` otherwise.
+
+**Note:** Don't erase elements while iterating over the dictionary. You can iterate over the :ref:`keys<class_Dictionary_method_keys>` array instead.
 
 ----
 
 .. _class_Dictionary_method_get:
 
-- :ref:`Variant<class_Variant>` **get** **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=null **)**
+- :ref:`Variant<class_Variant>` **get** **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=null **)** |const|
 
 Returns the current value for the specified key in the ``Dictionary``. If the key does not exist, the method returns the value of the optional default argument, or ``null`` if it is omitted.
 
@@ -164,54 +336,132 @@ Returns the current value for the specified key in the ``Dictionary``. If the ke
 
 .. _class_Dictionary_method_has:
 
-- :ref:`bool<class_bool>` **has** **(** :ref:`Variant<class_Variant>` key **)**
+- :ref:`bool<class_bool>` **has** **(** :ref:`Variant<class_Variant>` key **)** |const|
 
 Returns ``true`` if the dictionary has a given key.
+
+**Note:** This is equivalent to using the ``in`` operator as follows:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    # Will evaluate to `true`.
+    if "godot" in {"godot": "engine"}:
+        pass
+
+ .. code-tab:: csharp
+
+    // You have to use Contains() here as an alternative to GDScript's `in` operator.
+    if (new Godot.Collections.Dictionary{{"godot", "engine"}}.Contains("godot"))
+    {
+        // I am executed.
+    }
+
+
+
+This method (like the ``in`` operator) will evaluate to ``true`` as long as the key exists, even if the associated value is ``null``.
 
 ----
 
 .. _class_Dictionary_method_has_all:
 
-- :ref:`bool<class_bool>` **has_all** **(** :ref:`Array<class_Array>` keys **)**
+- :ref:`bool<class_bool>` **has_all** **(** :ref:`Array<class_Array>` keys **)** |const|
 
-Returns ``true`` if the dictionary has all of the keys in the given array.
+Returns ``true`` if the dictionary has all the keys in the given array.
 
 ----
 
 .. _class_Dictionary_method_hash:
 
-- :ref:`int<class_int>` **hash** **(** **)**
+- :ref:`int<class_int>` **hash** **(** **)** |const|
 
 Returns a hashed integer value representing the dictionary contents. This can be used to compare dictionaries by value:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var dict1 = {0: 10}
     var dict2 = {0: 10}
     # The line below prints `true`, whereas it would have printed `false` if both variables were compared directly.
     print(dict1.hash() == dict2.hash())
 
+ .. code-tab:: csharp
+
+    var dict1 = new Godot.Collections.Dictionary{{0, 10}};
+    var dict2 = new Godot.Collections.Dictionary{{0, 10}};
+    // The line below prints `true`, whereas it would have printed `false` if both variables were compared directly.
+    // Dictionary has no Hash() method. Use GD.Hash() instead.
+    GD.Print(GD.Hash(dict1) == GD.Hash(dict2));
+
+
+
+**Note:** Dictionaries with the same keys/values but in a different order will have a different hash.
+
+----
+
+.. _class_Dictionary_method_is_empty:
+
+- :ref:`bool<class_bool>` **is_empty** **(** **)** |const|
+
+Returns ``true`` if the dictionary is empty.
+
 ----
 
 .. _class_Dictionary_method_keys:
 
-- :ref:`Array<class_Array>` **keys** **(** **)**
+- :ref:`Array<class_Array>` **keys** **(** **)** |const|
 
 Returns the list of keys in the ``Dictionary``.
 
 ----
 
+.. _class_Dictionary_method_operator !=:
+
+- :ref:`bool<class_bool>` **operator !=** **(** **)** |operator|
+
+----
+
+- :ref:`bool<class_bool>` **operator !=** **(** :ref:`Dictionary<class_Dictionary>` right **)** |operator|
+
+----
+
+.. _class_Dictionary_method_operator ==:
+
+- :ref:`bool<class_bool>` **operator ==** **(** **)** |operator|
+
+----
+
+- :ref:`bool<class_bool>` **operator ==** **(** :ref:`Dictionary<class_Dictionary>` right **)** |operator|
+
+----
+
+.. _class_Dictionary_method_operator []:
+
+- :ref:`Variant<class_Variant>` **operator []** **(** :ref:`Variant<class_Variant>` key **)** |operator|
+
+----
+
 .. _class_Dictionary_method_size:
 
-- :ref:`int<class_int>` **size** **(** **)**
+- :ref:`int<class_int>` **size** **(** **)** |const|
 
-Returns the size of the dictionary (in pairs).
+Returns the number of keys in the dictionary.
 
 ----
 
 .. _class_Dictionary_method_values:
 
-- :ref:`Array<class_Array>` **values** **(** **)**
+- :ref:`Array<class_Array>` **values** **(** **)** |const|
 
 Returns the list of values in the ``Dictionary``.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

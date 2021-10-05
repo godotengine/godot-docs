@@ -16,42 +16,280 @@ Description
 
 ``Rect2i`` consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
 
-It uses integer coordinates.
+It uses integer coordinates. If you need floating-point coordinates, use :ref:`Rect2<class_Rect2>` instead.
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/math/index`
 
+- :doc:`../tutorials/math/vector_math`
+
+Properties
+----------
+
++---------------------------------+-------------------------------------------------+--------------------+
+| :ref:`Vector2i<class_Vector2i>` | :ref:`end<class_Rect2i_property_end>`           | ``Vector2i(0, 0)`` |
++---------------------------------+-------------------------------------------------+--------------------+
+| :ref:`Vector2i<class_Vector2i>` | :ref:`position<class_Rect2i_property_position>` | ``Vector2i(0, 0)`` |
++---------------------------------+-------------------------------------------------+--------------------+
+| :ref:`Vector2i<class_Vector2i>` | :ref:`size<class_Rect2i_property_size>`         | ``Vector2i(0, 0)`` |
++---------------------------------+-------------------------------------------------+--------------------+
+
 Methods
 -------
 
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2i<class_Rect2i>` | :ref:`Rect2i<class_Rect2i_method_Rect2i>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`Vector2<class_Vector2>` size **)**                                  |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2i<class_Rect2i>` | :ref:`Rect2i<class_Rect2i_method_Rect2i>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` width, :ref:`int<class_int>` height **)** |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2i<class_Rect2i>` | :ref:`Rect2i<class_Rect2i_method_Rect2i>` **(** :ref:`Rect2<class_Rect2>` from **)**                                                                              |
-+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2i<class_Rect2i>`     | :ref:`Rect2i<class_Rect2i_method_Rect2i>` **(** **)** |constructor|                                                                                                                              |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2i<class_Rect2i>`     | :ref:`Rect2i<class_Rect2i_method_Rect2i>` **(** :ref:`Rect2i<class_Rect2i>` from **)** |constructor|                                                                                             |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2i<class_Rect2i>`     | :ref:`Rect2i<class_Rect2i_method_Rect2i>` **(** :ref:`Rect2<class_Rect2>` from **)** |constructor|                                                                                               |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2i<class_Rect2i>`     | :ref:`Rect2i<class_Rect2i_method_Rect2i>` **(** :ref:`Vector2i<class_Vector2i>` position, :ref:`Vector2i<class_Vector2i>` size **)** |constructor|                                               |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2i<class_Rect2i>`     | :ref:`Rect2i<class_Rect2i_method_Rect2i>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` width, :ref:`int<class_int>` height **)** |constructor|                  |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2i<class_Rect2i>`     | :ref:`abs<class_Rect2i_method_abs>` **(** **)** |const|                                                                                                                                          |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`encloses<class_Rect2i_method_encloses>` **(** :ref:`Rect2i<class_Rect2i>` b **)** |const|                                                                                                  |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2i<class_Rect2i>`     | :ref:`expand<class_Rect2i_method_expand>` **(** :ref:`Vector2i<class_Vector2i>` to **)** |const|                                                                                                 |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`get_area<class_Rect2i_method_get_area>` **(** **)** |const|                                                                                                                                |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2i<class_Vector2i>` | :ref:`get_center<class_Rect2i_method_get_center>` **(** **)** |const|                                                                                                                            |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2i<class_Rect2i>`     | :ref:`grow<class_Rect2i_method_grow>` **(** :ref:`int<class_int>` amount **)** |const|                                                                                                           |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2i<class_Rect2i>`     | :ref:`grow_individual<class_Rect2i_method_grow_individual>` **(** :ref:`int<class_int>` left, :ref:`int<class_int>` top, :ref:`int<class_int>` right, :ref:`int<class_int>` bottom **)** |const| |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2i<class_Rect2i>`     | :ref:`grow_side<class_Rect2i_method_grow_side>` **(** :ref:`int<class_int>` side, :ref:`int<class_int>` amount **)** |const|                                                                     |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`has_no_area<class_Rect2i_method_has_no_area>` **(** **)** |const|                                                                                                                          |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`has_point<class_Rect2i_method_has_point>` **(** :ref:`Vector2i<class_Vector2i>` point **)** |const|                                                                                        |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2i<class_Rect2i>`     | :ref:`intersection<class_Rect2i_method_intersection>` **(** :ref:`Rect2i<class_Rect2i>` b **)** |const|                                                                                          |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`intersects<class_Rect2i_method_intersects>` **(** :ref:`Rect2i<class_Rect2i>` b **)** |const|                                                                                              |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2i<class_Rect2i>`     | :ref:`merge<class_Rect2i_method_merge>` **(** :ref:`Rect2i<class_Rect2i>` b **)** |const|                                                                                                        |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | **operator !=** **(** **)** |operator|                                                                                                                                                           |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | **operator !=** **(** :ref:`Rect2i<class_Rect2i>` right **)** |operator|                                                                                                                         |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | **operator ==** **(** **)** |operator|                                                                                                                                                           |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | **operator ==** **(** :ref:`Rect2i<class_Rect2i>` right **)** |operator|                                                                                                                         |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Property Descriptions
+---------------------
+
+.. _class_Rect2i_property_end:
+
+- :ref:`Vector2i<class_Vector2i>` **end**
+
++-----------+--------------------+
+| *Default* | ``Vector2i(0, 0)`` |
++-----------+--------------------+
+
+Ending corner. This is calculated as ``position + size``. Setting this value will change the size.
+
+----
+
+.. _class_Rect2i_property_position:
+
+- :ref:`Vector2i<class_Vector2i>` **position**
+
++-----------+--------------------+
+| *Default* | ``Vector2i(0, 0)`` |
++-----------+--------------------+
+
+Beginning corner. Typically has values lower than :ref:`end<class_Rect2i_property_end>`.
+
+----
+
+.. _class_Rect2i_property_size:
+
+- :ref:`Vector2i<class_Vector2i>` **size**
+
++-----------+--------------------+
+| *Default* | ``Vector2i(0, 0)`` |
++-----------+--------------------+
+
+Size from :ref:`position<class_Rect2i_property_position>` to :ref:`end<class_Rect2i_property_end>`. Typically, all components are positive.
+
+If the size is negative, you can use :ref:`abs<class_Rect2i_method_abs>` to fix it.
 
 Method Descriptions
 -------------------
 
 .. _class_Rect2i_method_Rect2i:
 
-- :ref:`Rect2i<class_Rect2i>` **Rect2i** **(** :ref:`Vector2<class_Vector2>` position, :ref:`Vector2<class_Vector2>` size **)**
+- :ref:`Rect2i<class_Rect2i>` **Rect2i** **(** **)** |constructor|
+
+Constructs a default-initialized ``Rect2i`` with default (zero) values of :ref:`position<class_Rect2i_property_position>` and :ref:`size<class_Rect2i_property_size>`.
+
+----
+
+- :ref:`Rect2i<class_Rect2i>` **Rect2i** **(** :ref:`Rect2i<class_Rect2i>` from **)** |constructor|
+
+Constructs a ``Rect2i`` as a copy of the given ``Rect2i``.
+
+----
+
+- :ref:`Rect2i<class_Rect2i>` **Rect2i** **(** :ref:`Rect2<class_Rect2>` from **)** |constructor|
+
+Constructs a new ``Rect2i`` from :ref:`Rect2<class_Rect2>`. The floating point coordinates will be truncated.
+
+----
+
+- :ref:`Rect2i<class_Rect2i>` **Rect2i** **(** :ref:`Vector2i<class_Vector2i>` position, :ref:`Vector2i<class_Vector2i>` size **)** |constructor|
 
 Constructs a ``Rect2i`` by position and size.
 
 ----
 
-- :ref:`Rect2i<class_Rect2i>` **Rect2i** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` width, :ref:`int<class_int>` height **)**
+- :ref:`Rect2i<class_Rect2i>` **Rect2i** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` width, :ref:`int<class_int>` height **)** |constructor|
 
 Constructs a ``Rect2i`` by x, y, width, and height.
 
 ----
 
-- :ref:`Rect2i<class_Rect2i>` **Rect2i** **(** :ref:`Rect2<class_Rect2>` from **)**
+.. _class_Rect2i_method_abs:
 
-Constructs a new ``Rect2i`` from :ref:`Rect2<class_Rect2>`. The floating point coordinates will be truncated.
+- :ref:`Rect2i<class_Rect2i>` **abs** **(** **)** |const|
 
+Returns a ``Rect2i`` with equivalent position and area, modified so that the top-left corner is the origin and ``width`` and ``height`` are positive.
+
+----
+
+.. _class_Rect2i_method_encloses:
+
+- :ref:`bool<class_bool>` **encloses** **(** :ref:`Rect2i<class_Rect2i>` b **)** |const|
+
+Returns ``true`` if this ``Rect2i`` completely encloses another one.
+
+----
+
+.. _class_Rect2i_method_expand:
+
+- :ref:`Rect2i<class_Rect2i>` **expand** **(** :ref:`Vector2i<class_Vector2i>` to **)** |const|
+
+Returns this ``Rect2i`` expanded to include a given point.
+
+----
+
+.. _class_Rect2i_method_get_area:
+
+- :ref:`int<class_int>` **get_area** **(** **)** |const|
+
+Returns the area of the ``Rect2i``.
+
+----
+
+.. _class_Rect2i_method_get_center:
+
+- :ref:`Vector2i<class_Vector2i>` **get_center** **(** **)** |const|
+
+Returns the center of the ``Rect2i``, which is equal to :ref:`position<class_Rect2i_property_position>` + (:ref:`size<class_Rect2i_property_size>` / 2).
+
+If :ref:`size<class_Rect2i_property_size>` is an odd number, the returned center value will be rounded towards :ref:`position<class_Rect2i_property_position>`.
+
+----
+
+.. _class_Rect2i_method_grow:
+
+- :ref:`Rect2i<class_Rect2i>` **grow** **(** :ref:`int<class_int>` amount **)** |const|
+
+Returns a copy of the ``Rect2i`` grown by the specified ``amount`` on all sides.
+
+----
+
+.. _class_Rect2i_method_grow_individual:
+
+- :ref:`Rect2i<class_Rect2i>` **grow_individual** **(** :ref:`int<class_int>` left, :ref:`int<class_int>` top, :ref:`int<class_int>` right, :ref:`int<class_int>` bottom **)** |const|
+
+Returns a copy of the ``Rect2i`` grown by the specified amount on each side individually.
+
+----
+
+.. _class_Rect2i_method_grow_side:
+
+- :ref:`Rect2i<class_Rect2i>` **grow_side** **(** :ref:`int<class_int>` side, :ref:`int<class_int>` amount **)** |const|
+
+Returns a copy of the ``Rect2i`` grown by the specified ``amount`` on the specified :ref:`Side<enum_@GlobalScope_Side>`.
+
+----
+
+.. _class_Rect2i_method_has_no_area:
+
+- :ref:`bool<class_bool>` **has_no_area** **(** **)** |const|
+
+Returns ``true`` if the ``Rect2i`` is flat or empty.
+
+----
+
+.. _class_Rect2i_method_has_point:
+
+- :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector2i<class_Vector2i>` point **)** |const|
+
+Returns ``true`` if the ``Rect2i`` contains a point.
+
+----
+
+.. _class_Rect2i_method_intersection:
+
+- :ref:`Rect2i<class_Rect2i>` **intersection** **(** :ref:`Rect2i<class_Rect2i>` b **)** |const|
+
+Returns the intersection of this ``Rect2i`` and ``b``.
+
+If the rectangles do not intersect, an empty ``Rect2i`` is returned.
+
+----
+
+.. _class_Rect2i_method_intersects:
+
+- :ref:`bool<class_bool>` **intersects** **(** :ref:`Rect2i<class_Rect2i>` b **)** |const|
+
+Returns ``true`` if the ``Rect2i`` overlaps with ``b`` (i.e. they have at least one point in common).
+
+If ``include_borders`` is ``true``, they will also be considered overlapping if their borders touch, even without intersection.
+
+----
+
+.. _class_Rect2i_method_merge:
+
+- :ref:`Rect2i<class_Rect2i>` **merge** **(** :ref:`Rect2i<class_Rect2i>` b **)** |const|
+
+Returns a larger ``Rect2i`` that contains this ``Rect2i`` and ``b``.
+
+----
+
+.. _class_Rect2i_method_operator !=:
+
+- :ref:`bool<class_bool>` **operator !=** **(** **)** |operator|
+
+----
+
+- :ref:`bool<class_bool>` **operator !=** **(** :ref:`Rect2i<class_Rect2i>` right **)** |operator|
+
+----
+
+.. _class_Rect2i_method_operator ==:
+
+- :ref:`bool<class_bool>` **operator ==** **(** **)** |operator|
+
+----
+
+- :ref:`bool<class_bool>` **operator ==** **(** :ref:`Rect2i<class_Rect2i>` right **)** |operator|
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

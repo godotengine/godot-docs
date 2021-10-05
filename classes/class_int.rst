@@ -20,48 +20,483 @@ It can take values in the interval ``[-2^63, 2^63 - 1]``, i.e. ``[-9223372036854
 
 ``int`` is a :ref:`Variant<class_Variant>` type, and will thus be used when assigning an integer value to a :ref:`Variant<class_Variant>`. It can also be enforced with the ``: int`` type hint.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var my_variant = 0 # int, value 0.
     my_variant += 4.2 # float, value 4.2.
     var my_int: int = 1 # int, value 1.
     my_int = 4.2 # int, value 4, the right value is implicitly cast to int.
     my_int = int("6.7") # int, value 6, the String is explicitly cast with int.
-    
     var max_int = 9223372036854775807
     print(max_int) # 9223372036854775807, OK.
     max_int += 1
     print(max_int) # -9223372036854775808, we overflowed and wrapped around.
 
+ .. code-tab:: csharp
+
+    int myInt = (int)"6.7".ToFloat(); // int, value 6, the String is explicitly cast with int.
+    // We have to use `long` here, because GDSript's `int`
+    // is 64 bits long while C#'s `int` is only 32 bits.
+    long maxInt = 9223372036854775807;
+    GD.Print(maxInt); // 9223372036854775807, OK.
+    maxInt++;
+    GD.Print(maxInt); // -9223372036854775808, we overflowed and wrapped around.
+    
+    // Alternatively, if we used C#'s 32-bit `int` type, the maximum value is much smaller:
+    int halfInt = 2147483647;
+    GD.Print(halfInt); // 2147483647, OK.
+    halfInt++;
+    GD.Print(halfInt); // -2147483648, we overflowed and wrapped around.
+
+
+
 Methods
 -------
 
-+-----------------------+-------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`int<class_int_method_int>` **(** :ref:`bool<class_bool>` from **)**     |
-+-----------------------+-------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`int<class_int_method_int>` **(** :ref:`float<class_float>` from **)**   |
-+-----------------------+-------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`int<class_int_method_int>` **(** :ref:`String<class_String>` from **)** |
-+-----------------------+-------------------------------------------------------------------------------+
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`int<class_int_method_int>` **(** **)** |constructor|                                |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`int<class_int_method_int>` **(** :ref:`int<class_int>` from **)** |constructor|     |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`int<class_int_method_int>` **(** :ref:`bool<class_bool>` from **)** |constructor|   |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`int<class_int_method_int>` **(** :ref:`float<class_float>` from **)** |constructor| |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator !=** **(** **)** |operator|                                                    |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator !=** **(** :ref:`float<class_float>` right **)** |operator|                    |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator !=** **(** :ref:`int<class_int>` right **)** |operator|                        |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | **operator %** **(** :ref:`int<class_int>` right **)** |operator|                         |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | **operator &** **(** :ref:`int<class_int>` right **)** |operator|                         |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | **operator *** **(** :ref:`int<class_int>` right **)** |operator|                         |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | **operator *** **(** :ref:`float<class_float>` right **)** |operator|                     |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`       | **operator *** **(** :ref:`Vector2<class_Vector2>` right **)** |operator|                 |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`Vector2i<class_Vector2i>`     | **operator *** **(** :ref:`Vector2i<class_Vector2i>` right **)** |operator|               |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`       | **operator *** **(** :ref:`Vector3<class_Vector3>` right **)** |operator|                 |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>`     | **operator *** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|               |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`Quaternion<class_Quaternion>` | **operator *** **(** :ref:`Quaternion<class_Quaternion>` right **)** |operator|           |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`           | **operator *** **(** :ref:`Color<class_Color>` right **)** |operator|                     |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | **operator +** **(** :ref:`int<class_int>` right **)** |operator|                         |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | **operator +** **(** :ref:`float<class_float>` right **)** |operator|                     |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | **operator -** **(** :ref:`float<class_float>` right **)** |operator|                     |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | **operator -** **(** :ref:`int<class_int>` right **)** |operator|                         |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | **operator /** **(** :ref:`float<class_float>` right **)** |operator|                     |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | **operator /** **(** :ref:`int<class_int>` right **)** |operator|                         |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator <** **(** :ref:`float<class_float>` right **)** |operator|                     |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator <** **(** :ref:`int<class_int>` right **)** |operator|                         |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | **operator <<** **(** :ref:`int<class_int>` right **)** |operator|                        |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator <=** **(** :ref:`float<class_float>` right **)** |operator|                    |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator <=** **(** :ref:`int<class_int>` right **)** |operator|                        |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator ==** **(** **)** |operator|                                                    |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator ==** **(** :ref:`float<class_float>` right **)** |operator|                    |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator ==** **(** :ref:`int<class_int>` right **)** |operator|                        |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator >** **(** :ref:`float<class_float>` right **)** |operator|                     |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator >** **(** :ref:`int<class_int>` right **)** |operator|                         |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator >=** **(** :ref:`float<class_float>` right **)** |operator|                    |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | **operator >=** **(** :ref:`int<class_int>` right **)** |operator|                        |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | **operator >>** **(** :ref:`int<class_int>` right **)** |operator|                        |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | **operator ^** **(** :ref:`int<class_int>` right **)** |operator|                         |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | **operator unary+** **(** **)** |operator|                                                |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | **operator unary-** **(** **)** |operator|                                                |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | **operator |** **(** :ref:`int<class_int>` right **)** |operator|                         |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | **operator ~** **(** **)** |operator|                                                     |
++-------------------------------------+-------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_int_method_int:
 
-- :ref:`int<class_int>` **int** **(** :ref:`bool<class_bool>` from **)**
+- :ref:`int<class_int>` **int** **(** **)** |constructor|
+
+Constructs a default-initialized ``int`` set to ``0``.
+
+----
+
+- :ref:`int<class_int>` **int** **(** :ref:`int<class_int>` from **)** |constructor|
+
+Constructs an ``int`` as a copy of the given ``int``.
+
+----
+
+- :ref:`int<class_int>` **int** **(** :ref:`bool<class_bool>` from **)** |constructor|
 
 Cast a :ref:`bool<class_bool>` value to an integer value, ``int(true)`` will be equals to 1 and ``int(false)`` will be equals to 0.
 
 ----
 
-- :ref:`int<class_int>` **int** **(** :ref:`float<class_float>` from **)**
+- :ref:`int<class_int>` **int** **(** :ref:`float<class_float>` from **)** |constructor|
 
-Cast a float value to an integer value, this method simply removes the number fractions, so for example ``int(2.7)`` will be equals to 2, ``int(.1)`` will be equals to 0 and ``int(-2.7)`` will be equals to -2.
+Cast a float value to an integer value, this method simply removes the number fractions (i.e. rounds ``from`` towards zero), so for example ``int(2.7)`` will be equals to 2, ``int(0.1)`` will be equals to 0 and ``int(-2.7)`` will be equals to -2. This operation is also called truncation.
 
 ----
 
-- :ref:`int<class_int>` **int** **(** :ref:`String<class_String>` from **)**
+.. _class_int_method_operator !=:
 
-Cast a :ref:`String<class_String>` value to an integer value, this method is an integer parser from a string, so calling this method with an invalid integer string will return 0, a valid string will be something like ``'1.7'``. This method will ignore all non-number characters, so calling ``int('1e3')`` will return 13.
+- :ref:`bool<class_bool>` **operator !=** **(** **)** |operator|
 
+----
+
+- :ref:`bool<class_bool>` **operator !=** **(** :ref:`float<class_float>` right **)** |operator|
+
+Returns ``true`` if operands are different from each other.
+
+----
+
+- :ref:`bool<class_bool>` **operator !=** **(** :ref:`int<class_int>` right **)** |operator|
+
+Returns ``true`` if operands are different from each other.
+
+----
+
+.. _class_int_method_operator %:
+
+- :ref:`int<class_int>` **operator %** **(** :ref:`int<class_int>` right **)** |operator|
+
+Returns the result of the modulo operator for two integers, i.e. the remainder after dividing both numbers.
+
+::
+
+    print(5 % 2) # 1
+    print(12 % 4) # 0
+    print(12 % 2) # 2
+
+----
+
+.. _class_int_method_operator &:
+
+- :ref:`int<class_int>` **operator &** **(** :ref:`int<class_int>` right **)** |operator|
+
+Returns the result of bitwise ``AND`` operation for two integers.
+
+::
+
+    print(3 & 1) # 1
+    print(11 & 3) # 3
+
+It's useful to retrieve binary flags from a variable.
+
+::
+
+    var flags = 5
+    # Do something if the first bit is enabled.
+    if flags & 1:
+        do_stuff()
+
+----
+
+.. _class_int_method_operator *:
+
+- :ref:`int<class_int>` **operator *** **(** :ref:`int<class_int>` right **)** |operator|
+
+Multiplies two ``int``\ s.
+
+----
+
+- :ref:`float<class_float>` **operator *** **(** :ref:`float<class_float>` right **)** |operator|
+
+Multiplies an ``int`` and a :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
+
+----
+
+- :ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`Vector2<class_Vector2>` right **)** |operator|
+
+Multiplies each component of the vector by the given integer.
+
+::
+
+    print(2 * Vector2(1, 1)) # Vector2(2, 2)
+
+----
+
+- :ref:`Vector2i<class_Vector2i>` **operator *** **(** :ref:`Vector2i<class_Vector2i>` right **)** |operator|
+
+Multiplies each component of the integer vector by the given integer.
+
+----
+
+- :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Vector3<class_Vector3>` right **)** |operator|
+
+Multiplies each component of the vector by the given integer.
+
+----
+
+- :ref:`Vector3i<class_Vector3i>` **operator *** **(** :ref:`Vector3i<class_Vector3i>` right **)** |operator|
+
+Multiplies each component of the integer vector by the given integer.
+
+----
+
+- :ref:`Quaternion<class_Quaternion>` **operator *** **(** :ref:`Quaternion<class_Quaternion>` right **)** |operator|
+
+Multiplies each component of the quaternion by the given integer.
+
+----
+
+- :ref:`Color<class_Color>` **operator *** **(** :ref:`Color<class_Color>` right **)** |operator|
+
+Multiplies each component of the color by the given integer.
+
+::
+
+    print(2 * Color(0.5, 0.5, 0.5)) # Color(1, 1, 1)
+
+----
+
+.. _class_int_method_operator +:
+
+- :ref:`int<class_int>` **operator +** **(** :ref:`int<class_int>` right **)** |operator|
+
+Adds two integers.
+
+----
+
+- :ref:`float<class_float>` **operator +** **(** :ref:`float<class_float>` right **)** |operator|
+
+Adds an ``int`` to a :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
+
+----
+
+.. _class_int_method_operator -:
+
+- :ref:`float<class_float>` **operator -** **(** :ref:`float<class_float>` right **)** |operator|
+
+Subtracts a :ref:`float<class_float>` from an ``int``. The result is a :ref:`float<class_float>`.
+
+----
+
+- :ref:`int<class_int>` **operator -** **(** :ref:`int<class_int>` right **)** |operator|
+
+Subtracts two integers.
+
+----
+
+.. _class_int_method_operator /:
+
+- :ref:`float<class_float>` **operator /** **(** :ref:`float<class_float>` right **)** |operator|
+
+Divides an ``int`` by a :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
+
+::
+
+    print(10 / 3.0) # 3.333...
+
+----
+
+- :ref:`int<class_int>` **operator /** **(** :ref:`int<class_int>` right **)** |operator|
+
+Divides two integers. The decimal part of the result is discarded (truncated).
+
+::
+
+    print(10 / 2) # 5
+    print(10 / 3) # 3
+
+----
+
+.. _class_int_method_operator <:
+
+- :ref:`bool<class_bool>` **operator <** **(** :ref:`float<class_float>` right **)** |operator|
+
+Returns ``true`` if this ``int`` is less than the given :ref:`float<class_float>`.
+
+----
+
+- :ref:`bool<class_bool>` **operator <** **(** :ref:`int<class_int>` right **)** |operator|
+
+Returns ``true`` the left integer is less than the right one.
+
+----
+
+.. _class_int_method_operator <<:
+
+- :ref:`int<class_int>` **operator <<** **(** :ref:`int<class_int>` right **)** |operator|
+
+Performs bitwise shift left operation on the integer. Effectively the same as multiplying by a power of 2.
+
+::
+
+    print(10 << 1) # 20
+    print(10 << 4) # 160
+
+----
+
+.. _class_int_method_operator <=:
+
+- :ref:`bool<class_bool>` **operator <=** **(** :ref:`float<class_float>` right **)** |operator|
+
+Returns ``true`` if this ``int`` is less than or equal to the given :ref:`float<class_float>`.
+
+----
+
+- :ref:`bool<class_bool>` **operator <=** **(** :ref:`int<class_int>` right **)** |operator|
+
+Returns ``true`` the left integer is less than or equal to the right one.
+
+----
+
+.. _class_int_method_operator ==:
+
+- :ref:`bool<class_bool>` **operator ==** **(** **)** |operator|
+
+----
+
+- :ref:`bool<class_bool>` **operator ==** **(** :ref:`float<class_float>` right **)** |operator|
+
+Returns ``true`` if the integer is equal to the given :ref:`float<class_float>`.
+
+----
+
+- :ref:`bool<class_bool>` **operator ==** **(** :ref:`int<class_int>` right **)** |operator|
+
+Returns ``true`` if both integers are equal.
+
+----
+
+.. _class_int_method_operator >:
+
+- :ref:`bool<class_bool>` **operator >** **(** :ref:`float<class_float>` right **)** |operator|
+
+Returns ``true`` if this ``int`` is greater than the given :ref:`float<class_float>`.
+
+----
+
+- :ref:`bool<class_bool>` **operator >** **(** :ref:`int<class_int>` right **)** |operator|
+
+Returns ``true`` the left integer is greater than the right one.
+
+----
+
+.. _class_int_method_operator >=:
+
+- :ref:`bool<class_bool>` **operator >=** **(** :ref:`float<class_float>` right **)** |operator|
+
+Returns ``true`` if this ``int`` is greater than or equal to the given :ref:`float<class_float>`.
+
+----
+
+- :ref:`bool<class_bool>` **operator >=** **(** :ref:`int<class_int>` right **)** |operator|
+
+Returns ``true`` the left integer is greater than or equal to the right one.
+
+----
+
+.. _class_int_method_operator >>:
+
+- :ref:`int<class_int>` **operator >>** **(** :ref:`int<class_int>` right **)** |operator|
+
+Performs bitwise shift right operation on the integer. Effectively the same as dividing by a power of 2.
+
+::
+
+    print(10 >> 1) # 5
+    print(10 >> 2) # 2
+
+----
+
+.. _class_int_method_operator ^:
+
+- :ref:`int<class_int>` **operator ^** **(** :ref:`int<class_int>` right **)** |operator|
+
+Returns the result of bitwise ``XOR`` operation for two integers.
+
+::
+
+    print(5 ^ 1) # 4
+    print(4 ^ 7) # 3
+
+----
+
+.. _class_int_method_operator unary+:
+
+- :ref:`int<class_int>` **operator unary+** **(** **)** |operator|
+
+Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, but sometimes it can make your code more readable.
+
+----
+
+.. _class_int_method_operator unary-:
+
+- :ref:`int<class_int>` **operator unary-** **(** **)** |operator|
+
+Returns the negated value of the ``int``. If positive, turns the number negative. If negative, turns the number positive. If zero, does nothing.
+
+----
+
+.. _class_int_method_operator |:
+
+- :ref:`int<class_int>` **operator |** **(** :ref:`int<class_int>` right **)** |operator|
+
+Returns the result of bitwise ``OR`` operation for two integers.
+
+::
+
+    print(2 | 4) # 6
+    print(1 | 3) # 3
+
+It's useful to store binary flags in a variable.
+
+::
+
+    var flags = 0
+    # Turn first and third bit on.
+    flags |= 1
+    flags |= 4
+
+----
+
+.. _class_int_method_operator ~:
+
+- :ref:`int<class_int>` **operator ~** **(** **)** |operator|
+
+Returns the result of bitwise ``NOT`` operation for the integer. It's effectively equal to ``-int + 1``.
+
+::
+
+    print(~4) # -3
+    print(~7) # -6
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

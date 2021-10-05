@@ -9,7 +9,7 @@
 OccluderPolygon2D
 =================
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Defines a 2D polygon for LightOccluder2D.
 
@@ -21,13 +21,13 @@ Editor facility that helps you draw a 2D polygon used as resource for :ref:`Ligh
 Properties
 ----------
 
-+-----------------------------------------------------+--------------------------------------------------------------+----------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`closed<class_OccluderPolygon2D_property_closed>`       | ``true``                   |
-+-----------------------------------------------------+--------------------------------------------------------------+----------------------------+
-| :ref:`CullMode<enum_OccluderPolygon2D_CullMode>`    | :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>` | ``0``                      |
-+-----------------------------------------------------+--------------------------------------------------------------+----------------------------+
-| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`polygon<class_OccluderPolygon2D_property_polygon>`     | ``PackedVector2Array(  )`` |
-+-----------------------------------------------------+--------------------------------------------------------------+----------------------------+
++-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`closed<class_OccluderPolygon2D_property_closed>`       | ``true``                 |
++-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
+| :ref:`CullMode<enum_OccluderPolygon2D_CullMode>`    | :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>` | ``0``                    |
++-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
+| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`polygon<class_OccluderPolygon2D_property_polygon>`     | ``PackedVector2Array()`` |
++-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
 
 Enumerations
 ------------
@@ -87,15 +87,21 @@ The culling mode to use.
 
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **polygon**
 
-+-----------+----------------------------+
-| *Default* | ``PackedVector2Array(  )`` |
-+-----------+----------------------------+
-| *Setter*  | set_polygon(value)         |
-+-----------+----------------------------+
-| *Getter*  | get_polygon()              |
-+-----------+----------------------------+
++-----------+--------------------------+
+| *Default* | ``PackedVector2Array()`` |
++-----------+--------------------------+
+| *Setter*  | set_polygon(value)       |
++-----------+--------------------------+
+| *Getter*  | get_polygon()            |
++-----------+--------------------------+
 
 A :ref:`Vector2<class_Vector2>` array with the index for polygon's vertices positions.
 
 **Note:** The returned value is a copy of the underlying array, rather than a reference.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -9,7 +9,7 @@
 PCKPacker
 =========
 
-**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Creates packages that can be loaded into a running project.
 
@@ -18,32 +18,44 @@ Description
 
 The ``PCKPacker`` is used to create packages that can be loaded into a running project using :ref:`ProjectSettings.load_resource_pack<class_ProjectSettings_method_load_resource_pack>`.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var packer = PCKPacker.new()
     packer.pck_start("test.pck")
     packer.add_file("res://text.txt", "text.txt")
     packer.flush()
 
+ .. code-tab:: csharp
+
+    var packer = new PCKPacker();
+    packer.PckStart("test.pck");
+    packer.AddFile("res://text.txt", "text.txt");
+    packer.Flush();
+
+
+
 The above ``PCKPacker`` creates package ``test.pck``, then adds a file named ``text.txt`` at the root of the package.
 
 Methods
 -------
 
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`add_file<class_PCKPacker_method_add_file>` **(** :ref:`String<class_String>` pck_path, :ref:`String<class_String>` source_path **)** |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`flush<class_PCKPacker_method_flush>` **(** :ref:`bool<class_bool>` verbose=false **)**                                               |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pck_start<class_PCKPacker_method_pck_start>` **(** :ref:`String<class_String>` pck_name, :ref:`int<class_int>` alignment=0 **)**     |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`add_file<class_PCKPacker_method_add_file>` **(** :ref:`String<class_String>` pck_path, :ref:`String<class_String>` source_path, :ref:`bool<class_bool>` encrypt=false **)**                                           |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`flush<class_PCKPacker_method_flush>` **(** :ref:`bool<class_bool>` verbose=false **)**                                                                                                                                |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pck_start<class_PCKPacker_method_pck_start>` **(** :ref:`String<class_String>` pck_name, :ref:`int<class_int>` alignment=0, :ref:`String<class_String>` key="", :ref:`bool<class_bool>` encrypt_directory=false **)** |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_PCKPacker_method_add_file:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **add_file** **(** :ref:`String<class_String>` pck_path, :ref:`String<class_String>` source_path **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **add_file** **(** :ref:`String<class_String>` pck_path, :ref:`String<class_String>` source_path, :ref:`bool<class_bool>` encrypt=false **)**
 
 Adds the ``source_path`` file to the current PCK package at the ``pck_path`` internal path (should start with ``res://``).
 
@@ -59,7 +71,13 @@ Writes the files specified using all :ref:`add_file<class_PCKPacker_method_add_f
 
 .. _class_PCKPacker_method_pck_start:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **pck_start** **(** :ref:`String<class_String>` pck_name, :ref:`int<class_int>` alignment=0 **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **pck_start** **(** :ref:`String<class_String>` pck_name, :ref:`int<class_int>` alignment=0, :ref:`String<class_String>` key="", :ref:`bool<class_bool>` encrypt_directory=false **)**
 
 Creates a new PCK file with the name ``pck_name``. The ``.pck`` file extension isn't added automatically, so it should be part of ``pck_name`` (even though it's not required).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

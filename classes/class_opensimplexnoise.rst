@@ -9,7 +9,7 @@
 OpenSimplexNoise
 ================
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Noise generator based on Open Simplex.
 
@@ -52,23 +52,23 @@ Properties
 Methods
 -------
 
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_Image>` | :ref:`get_image<class_OpenSimplexNoise_method_get_image>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height **)**                                                                |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_noise_1d<class_OpenSimplexNoise_method_get_noise_1d>` **(** :ref:`float<class_float>` x **)**                                                                                        |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_noise_2d<class_OpenSimplexNoise_method_get_noise_2d>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**                                                           |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_noise_2dv<class_OpenSimplexNoise_method_get_noise_2dv>` **(** :ref:`Vector2<class_Vector2>` pos **)**                                                                                |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_noise_3d<class_OpenSimplexNoise_method_get_noise_3d>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)**                              |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_noise_3dv<class_OpenSimplexNoise_method_get_noise_3dv>` **(** :ref:`Vector3<class_Vector3>` pos **)**                                                                                |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_noise_4d<class_OpenSimplexNoise_method_get_noise_4d>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)** |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_Image>` | :ref:`get_seamless_image<class_OpenSimplexNoise_method_get_seamless_image>` **(** :ref:`int<class_int>` size **)**                                                                             |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Image<class_Image>` | :ref:`get_image<class_OpenSimplexNoise_method_get_image>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Vector2<class_Vector2>` noise_offset=Vector2(0, 0) **)** |const|      |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_noise_1d<class_OpenSimplexNoise_method_get_noise_1d>` **(** :ref:`float<class_float>` x **)** |const|                                                                                        |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_noise_2d<class_OpenSimplexNoise_method_get_noise_2d>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)** |const|                                                           |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_noise_2dv<class_OpenSimplexNoise_method_get_noise_2dv>` **(** :ref:`Vector2<class_Vector2>` pos **)** |const|                                                                                |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_noise_3d<class_OpenSimplexNoise_method_get_noise_3d>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)** |const|                              |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_noise_3dv<class_OpenSimplexNoise_method_get_noise_3dv>` **(** :ref:`Vector3<class_Vector3>` pos **)** |const|                                                                                |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_noise_4d<class_OpenSimplexNoise_method_get_noise_4d>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)** |const| |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Image<class_Image>` | :ref:`get_seamless_image<class_OpenSimplexNoise_method_get_seamless_image>` **(** :ref:`int<class_int>` size **)** |const|                                                                             |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -158,15 +158,15 @@ Method Descriptions
 
 .. _class_OpenSimplexNoise_method_get_image:
 
-- :ref:`Image<class_Image>` **get_image** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height **)**
+- :ref:`Image<class_Image>` **get_image** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Vector2<class_Vector2>` noise_offset=Vector2(0, 0) **)** |const|
 
-Generate a noise image with the requested ``width`` and ``height``, based on the current noise parameters.
+Generate a noise image in :ref:`Image.FORMAT_L8<class_Image_constant_FORMAT_L8>` format with the requested ``width`` and ``height``, based on the current noise parameters. If ``noise_offset`` is specified, then the offset value is used as the coordinates of the top-left corner of the generated noise.
 
 ----
 
 .. _class_OpenSimplexNoise_method_get_noise_1d:
 
-- :ref:`float<class_float>` **get_noise_1d** **(** :ref:`float<class_float>` x **)**
+- :ref:`float<class_float>` **get_noise_1d** **(** :ref:`float<class_float>` x **)** |const|
 
 Returns the 1D noise value ``[-1,1]`` at the given x-coordinate.
 
@@ -176,7 +176,7 @@ Returns the 1D noise value ``[-1,1]`` at the given x-coordinate.
 
 .. _class_OpenSimplexNoise_method_get_noise_2d:
 
-- :ref:`float<class_float>` **get_noise_2d** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**
+- :ref:`float<class_float>` **get_noise_2d** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)** |const|
 
 Returns the 2D noise value ``[-1,1]`` at the given position.
 
@@ -184,7 +184,7 @@ Returns the 2D noise value ``[-1,1]`` at the given position.
 
 .. _class_OpenSimplexNoise_method_get_noise_2dv:
 
-- :ref:`float<class_float>` **get_noise_2dv** **(** :ref:`Vector2<class_Vector2>` pos **)**
+- :ref:`float<class_float>` **get_noise_2dv** **(** :ref:`Vector2<class_Vector2>` pos **)** |const|
 
 Returns the 2D noise value ``[-1,1]`` at the given position.
 
@@ -192,7 +192,7 @@ Returns the 2D noise value ``[-1,1]`` at the given position.
 
 .. _class_OpenSimplexNoise_method_get_noise_3d:
 
-- :ref:`float<class_float>` **get_noise_3d** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)**
+- :ref:`float<class_float>` **get_noise_3d** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)** |const|
 
 Returns the 3D noise value ``[-1,1]`` at the given position.
 
@@ -200,7 +200,7 @@ Returns the 3D noise value ``[-1,1]`` at the given position.
 
 .. _class_OpenSimplexNoise_method_get_noise_3dv:
 
-- :ref:`float<class_float>` **get_noise_3dv** **(** :ref:`Vector3<class_Vector3>` pos **)**
+- :ref:`float<class_float>` **get_noise_3dv** **(** :ref:`Vector3<class_Vector3>` pos **)** |const|
 
 Returns the 3D noise value ``[-1,1]`` at the given position.
 
@@ -208,7 +208,7 @@ Returns the 3D noise value ``[-1,1]`` at the given position.
 
 .. _class_OpenSimplexNoise_method_get_noise_4d:
 
-- :ref:`float<class_float>` **get_noise_4d** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**
+- :ref:`float<class_float>` **get_noise_4d** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)** |const|
 
 Returns the 4D noise value ``[-1,1]`` at the given position.
 
@@ -216,7 +216,15 @@ Returns the 4D noise value ``[-1,1]`` at the given position.
 
 .. _class_OpenSimplexNoise_method_get_seamless_image:
 
-- :ref:`Image<class_Image>` **get_seamless_image** **(** :ref:`int<class_int>` size **)**
+- :ref:`Image<class_Image>` **get_seamless_image** **(** :ref:`int<class_int>` size **)** |const|
 
-Generate a tileable noise image, based on the current noise parameters. Generated seamless images are always square (``size`` × ``size``).
+Generate a tileable noise image in :ref:`Image.FORMAT_L8<class_Image_constant_FORMAT_L8>` format, based on the current noise parameters. Generated seamless images are always square (``size`` × ``size``).
 
+**Note:** Seamless noise has a lower contrast compared to non-seamless noise. This is due to the way noise uses higher dimensions for generating seamless noise.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

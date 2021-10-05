@@ -9,7 +9,7 @@
 PrismMesh
 =========
 
-**Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Class representing a prism-shaped :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
@@ -21,17 +21,17 @@ Class representing a prism-shaped :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------------------------+------------------------+
-| :ref:`float<class_float>`     | :ref:`left_to_right<class_PrismMesh_property_left_to_right>`       | ``0.5``                |
-+-------------------------------+--------------------------------------------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`size<class_PrismMesh_property_size>`                         | ``Vector3( 2, 2, 2 )`` |
-+-------------------------------+--------------------------------------------------------------------+------------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_PrismMesh_property_subdivide_depth>`   | ``0``                  |
-+-------------------------------+--------------------------------------------------------------------+------------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_height<class_PrismMesh_property_subdivide_height>` | ``0``                  |
-+-------------------------------+--------------------------------------------------------------------+------------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_width<class_PrismMesh_property_subdivide_width>`   | ``0``                  |
-+-------------------------------+--------------------------------------------------------------------+------------------------+
++-------------------------------+--------------------------------------------------------------------+----------------------+
+| :ref:`float<class_float>`     | :ref:`left_to_right<class_PrismMesh_property_left_to_right>`       | ``0.5``              |
++-------------------------------+--------------------------------------------------------------------+----------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`size<class_PrismMesh_property_size>`                         | ``Vector3(2, 2, 2)`` |
++-------------------------------+--------------------------------------------------------------------+----------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_PrismMesh_property_subdivide_depth>`   | ``0``                |
++-------------------------------+--------------------------------------------------------------------+----------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_height<class_PrismMesh_property_subdivide_height>` | ``0``                |
++-------------------------------+--------------------------------------------------------------------+----------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_width<class_PrismMesh_property_subdivide_width>`   | ``0``                |
++-------------------------------+--------------------------------------------------------------------+----------------------+
 
 Property Descriptions
 ---------------------
@@ -56,13 +56,13 @@ Displacement of the upper edge along the X axis. 0.0 positions edge straight abo
 
 - :ref:`Vector3<class_Vector3>` **size**
 
-+-----------+------------------------+
-| *Default* | ``Vector3( 2, 2, 2 )`` |
-+-----------+------------------------+
-| *Setter*  | set_size(value)        |
-+-----------+------------------------+
-| *Getter*  | get_size()             |
-+-----------+------------------------+
++-----------+----------------------+
+| *Default* | ``Vector3(2, 2, 2)`` |
++-----------+----------------------+
+| *Setter*  | set_size(value)      |
++-----------+----------------------+
+| *Getter*  | get_size()           |
++-----------+----------------------+
 
 Size of the prism.
 
@@ -114,3 +114,9 @@ Number of added edge loops along the Y axis.
 
 Number of added edge loops along the X axis.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

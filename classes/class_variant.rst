@@ -16,13 +16,26 @@ Description
 
 In computer programming, a Variant class is a class that is designed to store a variety of other types. Dynamic programming languages like PHP, Lua, JavaScript and GDScript like to use them to store variables' data on the backend. With these Variants, properties are able to change value types freely.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var foo = 2 # foo is dynamically an integer
     foo = "Now foo is a string!"
-    foo = Reference.new() # foo is an Object
+    foo = RefCounted.new() # foo is an Object
     var bar: int = 2 # bar is a statically typed integer.
     # bar = "Uh oh! I can't make static variables become a different type!"
+
+ .. code-tab:: csharp
+
+    // ... but C# is statically typed. Once a variable has a type it cannot be changed. However you can use the var keyword in methods to let the compiler decide the type automatically.
+    var foo = 2; // Foo is a 32-bit integer (int). Be cautious, integers in GDScript are 64-bit and the direct C# equivalent is "long".
+    // foo = "foo was and will always be an integer. It cannot be turned into a string!";
+    var boo = "Boo is a string!";
+    var ref = new Reference(); // var is especially useful when used together with a constructor.
+
+
 
 Godot tracks all scripting API variables within Variants. Without even realizing it, you use Variants all the time. When a particular language enforces its own rules for keeping data typed, then that language is applying its own custom logic over the base Variant scripting API.
 
@@ -34,9 +47,12 @@ Godot tracks all scripting API variables within Variants. Without even realizing
 
 - The statically-typed language NativeScript C++ does not define a built-in Variant-like class. Godot's GDNative bindings provide their own godot::Variant class for users; Any point at which the C++ code starts interacting with the Godot runtime is a place where you might have to start wrapping data inside Variant objects.
 
-The global :ref:`@GDScript.typeof<class_@GDScript_method_typeof>` function returns the enumerated value of the Variant type stored in the current variable (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`).
+The global :ref:`@GlobalScope.typeof<class_@GlobalScope_method_typeof>` function returns the enumerated value of the Variant type stored in the current variable (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`).
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var foo = 2
     match typeof(foo):
@@ -51,6 +67,20 @@ The global :ref:`@GDScript.typeof<class_@GDScript_method_typeof>` function retur
             # Note also that there is not yet any way to get a script's `class_name` string easily.
             # To fetch that value, you need to dig deeply into a hidden ProjectSettings setting: an Array of Dictionaries called "_global_script_classes".
             # Open your project.godot file to see it up close.
+
+ .. code-tab:: csharp
+
+    int foo = 2;
+    if (foo == null)
+    {
+        GD.Print("foo is null");
+    }
+    if (foo is int)
+    {
+        GD.Print("foo is an integer");
+    }
+
+
 
 A Variant takes up only 20 bytes and can store almost any engine datatype inside of it. Variants are rarely used to hold information for long periods of time. Instead, they are used mainly for communication, editing, serialization and moving data around.
 
@@ -87,3 +117,9 @@ Tutorials
 
 - :doc:`../development/cpp/variant_class`
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -9,7 +9,7 @@
 StyleBoxLine
 ============
 
-**Inherits:** :ref:`StyleBox<class_StyleBox>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`StyleBox<class_StyleBox>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 :ref:`StyleBox<class_StyleBox>` that displays a single line.
 
@@ -21,17 +21,17 @@ Description
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_StyleBoxLine_property_color>`           | ``Color( 0, 0, 0, 1 )`` |
-+---------------------------+-----------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>` | :ref:`grow_begin<class_StyleBoxLine_property_grow_begin>` | ``1.0``                 |
-+---------------------------+-----------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>` | :ref:`grow_end<class_StyleBoxLine_property_grow_end>`     | ``1.0``                 |
-+---------------------------+-----------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`     | :ref:`thickness<class_StyleBoxLine_property_thickness>`   | ``1``                   |
-+---------------------------+-----------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`   | :ref:`vertical<class_StyleBoxLine_property_vertical>`     | ``false``               |
-+---------------------------+-----------------------------------------------------------+-------------------------+
++---------------------------+-----------------------------------------------------------+-----------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_StyleBoxLine_property_color>`           | ``Color(0, 0, 0, 1)`` |
++---------------------------+-----------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>` | :ref:`grow_begin<class_StyleBoxLine_property_grow_begin>` | ``1.0``               |
++---------------------------+-----------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>` | :ref:`grow_end<class_StyleBoxLine_property_grow_end>`     | ``1.0``               |
++---------------------------+-----------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`     | :ref:`thickness<class_StyleBoxLine_property_thickness>`   | ``1``                 |
++---------------------------+-----------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`   | :ref:`vertical<class_StyleBoxLine_property_vertical>`     | ``false``             |
++---------------------------+-----------------------------------------------------------+-----------------------+
 
 Property Descriptions
 ---------------------
@@ -40,13 +40,13 @@ Property Descriptions
 
 - :ref:`Color<class_Color>` **color**
 
-+-----------+-------------------------+
-| *Default* | ``Color( 0, 0, 0, 1 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_color(value)        |
-+-----------+-------------------------+
-| *Getter*  | get_color()             |
-+-----------+-------------------------+
++-----------+-----------------------+
+| *Default* | ``Color(0, 0, 0, 1)`` |
++-----------+-----------------------+
+| *Setter*  | set_color(value)      |
++-----------+-----------------------+
+| *Getter*  | get_color()           |
++-----------+-----------------------+
 
 The line's color.
 
@@ -114,3 +114,9 @@ The line's thickness in pixels.
 
 If ``true``, the line will be vertical. If ``false``, the line will be horizontal.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

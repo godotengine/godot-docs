@@ -9,7 +9,7 @@
 WebSocketServer
 ===============
 
-**Inherits:** :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>` **<** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>` **<** :ref:`MultiplayerPeer<class_MultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A WebSocket server implementation.
 
@@ -18,41 +18,45 @@ Description
 
 This class implements a WebSocket server that can also support the high-level multiplayer API.
 
-After starting the server (:ref:`listen<class_WebSocketServer_method_listen>`), you will need to :ref:`NetworkedMultiplayerPeer.poll<class_NetworkedMultiplayerPeer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`). When clients connect, disconnect, or send data, you will receive the appropriate signal.
+After starting the server (:ref:`listen<class_WebSocketServer_method_listen>`), you will need to :ref:`MultiplayerPeer.poll<class_MultiplayerPeer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`). When clients connect, disconnect, or send data, you will receive the appropriate signal.
 
 **Note:** Not available in HTML5 exports.
+
+**Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
 Properties
 ----------
 
-+-----------------------------------------------+------------------------------------------------------------------------+---------+
-| :ref:`String<class_String>`                   | :ref:`bind_ip<class_WebSocketServer_property_bind_ip>`                 | ``"*"`` |
-+-----------------------------------------------+------------------------------------------------------------------------+---------+
-| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ca_chain<class_WebSocketServer_property_ca_chain>`               |         |
-+-----------------------------------------------+------------------------------------------------------------------------+---------+
-| :ref:`CryptoKey<class_CryptoKey>`             | :ref:`private_key<class_WebSocketServer_property_private_key>`         |         |
-+-----------------------------------------------+------------------------------------------------------------------------+---------+
-| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>` |         |
-+-----------------------------------------------+------------------------------------------------------------------------+---------+
++-----------------------------------------------+----------------------------------------------------------------------------+---------+
+| :ref:`String<class_String>`                   | :ref:`bind_ip<class_WebSocketServer_property_bind_ip>`                     | ``"*"`` |
++-----------------------------------------------+----------------------------------------------------------------------------+---------+
+| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ca_chain<class_WebSocketServer_property_ca_chain>`                   |         |
++-----------------------------------------------+----------------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`                     | :ref:`handshake_timeout<class_WebSocketServer_property_handshake_timeout>` | ``3.0`` |
++-----------------------------------------------+----------------------------------------------------------------------------+---------+
+| :ref:`CryptoKey<class_CryptoKey>`             | :ref:`private_key<class_WebSocketServer_property_private_key>`             |         |
++-----------------------------------------------+----------------------------------------------------------------------------+---------+
+| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>`     |         |
++-----------------------------------------------+----------------------------------------------------------------------------+---------+
 
 Methods
 -------
 
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`disconnect_peer<class_WebSocketServer_method_disconnect_peer>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**                                     |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_peer_address<class_WebSocketServer_method_get_peer_address>` **(** :ref:`int<class_int>` id **)** const                                                                                                     |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_peer_port<class_WebSocketServer_method_get_peer_port>` **(** :ref:`int<class_int>` id **)** const                                                                                                           |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_peer<class_WebSocketServer_method_has_peer>` **(** :ref:`int<class_int>` id **)** const                                                                                                                     |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_listening<class_WebSocketServer_method_is_listening>` **(** **)** const                                                                                                                                      |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`listen<class_WebSocketServer_method_listen>` **(** :ref:`int<class_int>` port, :ref:`PackedStringArray<class_PackedStringArray>` protocols=PackedStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)** |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`stop<class_WebSocketServer_method_stop>` **(** **)**                                                                                                                                                            |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`disconnect_peer<class_WebSocketServer_method_disconnect_peer>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**                                   |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`get_peer_address<class_WebSocketServer_method_get_peer_address>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                 |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`get_peer_port<class_WebSocketServer_method_get_peer_port>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                       |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`has_peer<class_WebSocketServer_method_has_peer>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                 |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`is_listening<class_WebSocketServer_method_is_listening>` **(** **)** |const|                                                                                                                                  |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`listen<class_WebSocketServer_method_listen>` **(** :ref:`int<class_int>` port, :ref:`PackedStringArray<class_PackedStringArray>` protocols=PackedStringArray(), :ref:`bool<class_bool>` gd_mp_api=false **)** |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`stop<class_WebSocketServer_method_stop>` **(** **)**                                                                                                                                                          |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -67,9 +71,11 @@ Emitted when a client requests a clean close. You should keep polling until you 
 
 .. _class_WebSocketServer_signal_client_connected:
 
-- **client_connected** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` protocol **)**
+- **client_connected** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` protocol, :ref:`String<class_String>` resource_name **)**
 
-Emitted when a new client connects. "protocol" will be the sub-protocol agreed with the client.
+Emitted when a new client connects. "protocol" will be the sub-protocol agreed with the client, and "resource_name" will be the resource name of the URI the peer used.
+
+"resource_name" is a path (at the very least a single forward slash) and potentially a query string.
 
 ----
 
@@ -122,6 +128,22 @@ When using SSL (see :ref:`private_key<class_WebSocketServer_property_private_key
 
 ----
 
+.. _class_WebSocketServer_property_handshake_timeout:
+
+- :ref:`float<class_float>` **handshake_timeout**
+
++-----------+------------------------------+
+| *Default* | ``3.0``                      |
++-----------+------------------------------+
+| *Setter*  | set_handshake_timeout(value) |
++-----------+------------------------------+
+| *Getter*  | get_handshake_timeout()      |
++-----------+------------------------------+
+
+The time in seconds before a pending client (i.e. a client that has not yet finished the HTTP handshake) is considered stale and forcefully disconnected.
+
+----
+
 .. _class_WebSocketServer_property_private_key:
 
 - :ref:`CryptoKey<class_CryptoKey>` **private_key**
@@ -161,7 +183,7 @@ Disconnects the peer identified by ``id`` from the server. See :ref:`WebSocketPe
 
 .. _class_WebSocketServer_method_get_peer_address:
 
-- :ref:`String<class_String>` **get_peer_address** **(** :ref:`int<class_int>` id **)** const
+- :ref:`String<class_String>` **get_peer_address** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the IP address of the given peer.
 
@@ -169,7 +191,7 @@ Returns the IP address of the given peer.
 
 .. _class_WebSocketServer_method_get_peer_port:
 
-- :ref:`int<class_int>` **get_peer_port** **(** :ref:`int<class_int>` id **)** const
+- :ref:`int<class_int>` **get_peer_port** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the remote port of the given peer.
 
@@ -177,7 +199,7 @@ Returns the remote port of the given peer.
 
 .. _class_WebSocketServer_method_has_peer:
 
-- :ref:`bool<class_bool>` **has_peer** **(** :ref:`int<class_int>` id **)** const
+- :ref:`bool<class_bool>` **has_peer** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns ``true`` if a peer with the given ID is connected.
 
@@ -185,7 +207,7 @@ Returns ``true`` if a peer with the given ID is connected.
 
 .. _class_WebSocketServer_method_is_listening:
 
-- :ref:`bool<class_bool>` **is_listening** **(** **)** const
+- :ref:`bool<class_bool>` **is_listening** **(** **)** |const|
 
 Returns ``true`` if the server is actively listening on a port.
 
@@ -193,13 +215,13 @@ Returns ``true`` if the server is actively listening on a port.
 
 .. _class_WebSocketServer_method_listen:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **listen** **(** :ref:`int<class_int>` port, :ref:`PackedStringArray<class_PackedStringArray>` protocols=PackedStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **listen** **(** :ref:`int<class_int>` port, :ref:`PackedStringArray<class_PackedStringArray>` protocols=PackedStringArray(), :ref:`bool<class_bool>` gd_mp_api=false **)**
 
 Starts listening on the given port.
 
 You can specify the desired subprotocols via the "protocols" array. If the list empty (default), no sub-protocol will be requested.
 
-If ``true`` is passed as ``gd_mp_api``, the server will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, connections from non-Godot clients will not work, and :ref:`data_received<class_WebSocketServer_signal_data_received>` will not be emitted.
+If ``true`` is passed as ``gd_mp_api``, the server will behave like a multiplayer peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, connections from non-Godot clients will not work, and :ref:`data_received<class_WebSocketServer_signal_data_received>` will not be emitted.
 
 If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_PacketPeer>` functions (``put_packet``, ``get_packet``, etc.), on the :ref:`WebSocketPeer<class_WebSocketPeer>` returned via ``get_peer(id)`` to communicate with the peer with given ``id`` (e.g. ``get_peer(id).get_available_packet_count``).
 
@@ -211,3 +233,9 @@ If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_P
 
 Stops the server and clear its state.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

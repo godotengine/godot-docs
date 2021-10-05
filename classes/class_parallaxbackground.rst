@@ -21,21 +21,21 @@ A ParallaxBackground uses one or more :ref:`ParallaxLayer<class_ParallaxLayer>` 
 Properties
 ----------
 
-+-------------------------------+-----------------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | layer                                                                                         | **O:** ``-100``     |
-+-------------------------------+-----------------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`scroll_base_offset<class_ParallaxBackground_property_scroll_base_offset>`               | ``Vector2( 0, 0 )`` |
-+-------------------------------+-----------------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`scroll_base_scale<class_ParallaxBackground_property_scroll_base_scale>`                 | ``Vector2( 1, 1 )`` |
-+-------------------------------+-----------------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`       | :ref:`scroll_ignore_camera_zoom<class_ParallaxBackground_property_scroll_ignore_camera_zoom>` | ``false``           |
-+-------------------------------+-----------------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`scroll_limit_begin<class_ParallaxBackground_property_scroll_limit_begin>`               | ``Vector2( 0, 0 )`` |
-+-------------------------------+-----------------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`scroll_limit_end<class_ParallaxBackground_property_scroll_limit_end>`                   | ``Vector2( 0, 0 )`` |
-+-------------------------------+-----------------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`scroll_offset<class_ParallaxBackground_property_scroll_offset>`                         | ``Vector2( 0, 0 )`` |
-+-------------------------------+-----------------------------------------------------------------------------------------------+---------------------+
++-------------------------------+-----------------------------------------------------------------------------------------------+------------------------------+
+| :ref:`int<class_int>`         | layer                                                                                         | ``-100`` *(parent override)* |
++-------------------------------+-----------------------------------------------------------------------------------------------+------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`scroll_base_offset<class_ParallaxBackground_property_scroll_base_offset>`               | ``Vector2(0, 0)``            |
++-------------------------------+-----------------------------------------------------------------------------------------------+------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`scroll_base_scale<class_ParallaxBackground_property_scroll_base_scale>`                 | ``Vector2(1, 1)``            |
++-------------------------------+-----------------------------------------------------------------------------------------------+------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`scroll_ignore_camera_zoom<class_ParallaxBackground_property_scroll_ignore_camera_zoom>` | ``false``                    |
++-------------------------------+-----------------------------------------------------------------------------------------------+------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`scroll_limit_begin<class_ParallaxBackground_property_scroll_limit_begin>`               | ``Vector2(0, 0)``            |
++-------------------------------+-----------------------------------------------------------------------------------------------+------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`scroll_limit_end<class_ParallaxBackground_property_scroll_limit_end>`                   | ``Vector2(0, 0)``            |
++-------------------------------+-----------------------------------------------------------------------------------------------+------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`scroll_offset<class_ParallaxBackground_property_scroll_offset>`                         | ``Vector2(0, 0)``            |
++-------------------------------+-----------------------------------------------------------------------------------------------+------------------------------+
 
 Property Descriptions
 ---------------------
@@ -45,7 +45,7 @@ Property Descriptions
 - :ref:`Vector2<class_Vector2>` **scroll_base_offset**
 
 +-----------+-------------------------------+
-| *Default* | ``Vector2( 0, 0 )``           |
+| *Default* | ``Vector2(0, 0)``             |
 +-----------+-------------------------------+
 | *Setter*  | set_scroll_base_offset(value) |
 +-----------+-------------------------------+
@@ -61,7 +61,7 @@ The base position offset for all :ref:`ParallaxLayer<class_ParallaxLayer>` child
 - :ref:`Vector2<class_Vector2>` **scroll_base_scale**
 
 +-----------+------------------------------+
-| *Default* | ``Vector2( 1, 1 )``          |
+| *Default* | ``Vector2(1, 1)``            |
 +-----------+------------------------------+
 | *Setter*  | set_scroll_base_scale(value) |
 +-----------+------------------------------+
@@ -93,7 +93,7 @@ If ``true``, elements in :ref:`ParallaxLayer<class_ParallaxLayer>` child aren't 
 - :ref:`Vector2<class_Vector2>` **scroll_limit_begin**
 
 +-----------+------------------------+
-| *Default* | ``Vector2( 0, 0 )``    |
+| *Default* | ``Vector2(0, 0)``      |
 +-----------+------------------------+
 | *Setter*  | set_limit_begin(value) |
 +-----------+------------------------+
@@ -109,7 +109,7 @@ Top-left limits for scrolling to begin. If the camera is outside of this limit, 
 - :ref:`Vector2<class_Vector2>` **scroll_limit_end**
 
 +-----------+----------------------+
-| *Default* | ``Vector2( 0, 0 )``  |
+| *Default* | ``Vector2(0, 0)``    |
 +-----------+----------------------+
 | *Setter*  | set_limit_end(value) |
 +-----------+----------------------+
@@ -125,7 +125,7 @@ Bottom-right limits for scrolling to end. If the camera is outside of this limit
 - :ref:`Vector2<class_Vector2>` **scroll_offset**
 
 +-----------+--------------------------+
-| *Default* | ``Vector2( 0, 0 )``      |
+| *Default* | ``Vector2(0, 0)``        |
 +-----------+--------------------------+
 | *Setter*  | set_scroll_offset(value) |
 +-----------+--------------------------+
@@ -134,3 +134,9 @@ Bottom-right limits for scrolling to end. If the camera is outside of this limit
 
 The ParallaxBackground's scroll value. Calculated automatically when using a :ref:`Camera2D<class_Camera2D>`, but can be used to manually manage scrolling when no camera is present.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

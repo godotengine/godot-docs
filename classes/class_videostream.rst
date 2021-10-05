@@ -9,7 +9,7 @@
 VideoStream
 ===========
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 **Inherited By:** :ref:`VideoStreamGDNative<class_VideoStreamGDNative>`, :ref:`VideoStreamTheora<class_VideoStreamTheora>`, :ref:`VideoStreamWebm<class_VideoStreamWebm>`
 
@@ -20,3 +20,9 @@ Description
 
 Base resource type for all video streams. Classes that derive from ``VideoStream`` can all be used as resource types to play back videos in :ref:`VideoPlayer<class_VideoPlayer>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

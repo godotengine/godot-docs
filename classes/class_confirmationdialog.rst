@@ -9,9 +9,9 @@
 ConfirmationDialog
 ==================
 
-**Inherits:** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`WindowDialog<class_WindowDialog>` **<** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`EditorFileDialog<class_EditorFileDialog>`, :ref:`FileDialog<class_FileDialog>`, :ref:`ScriptCreateDialog<class_ScriptCreateDialog>`
+**Inherited By:** :ref:`EditorCommandPalette<class_EditorCommandPalette>`, :ref:`EditorFileDialog<class_EditorFileDialog>`, :ref:`FileDialog<class_FileDialog>`, :ref:`ScriptCreateDialog<class_ScriptCreateDialog>`
 
 Dialog for confirmation of actions.
 
@@ -22,32 +22,49 @@ Dialog for confirmation of actions. This dialog inherits from :ref:`AcceptDialog
 
 To get cancel action, you can use:
 
-::
 
-    get_cancel().connect("pressed", self, "cancelled").
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    get_cancel().connect("pressed", self, "cancelled")
+
+ .. code-tab:: csharp
+
+    GetCancel().Connect("pressed", this, nameof(Cancelled));
+
+
 
 Properties
 ----------
 
-+-------------------------------+---------------+--------------------------------+
-| :ref:`Vector2<class_Vector2>` | rect_min_size | **O:** ``Vector2( 200, 70 )``  |
-+-------------------------------+---------------+--------------------------------+
-| :ref:`String<class_String>`   | window_title  | **O:** ``"Please Confirm..."`` |
-+-------------------------------+---------------+--------------------------------+
++---------------------------------+----------+---------------------------------------------+
+| :ref:`Vector2i<class_Vector2i>` | min_size | ``Vector2i(200, 70)`` *(parent override)*   |
++---------------------------------+----------+---------------------------------------------+
+| :ref:`Vector2i<class_Vector2i>` | size     | ``Vector2i(200, 100)`` *(parent override)*  |
++---------------------------------+----------+---------------------------------------------+
+| :ref:`String<class_String>`     | title    | ``"Please Confirm..."`` *(parent override)* |
++---------------------------------+----------+---------------------------------------------+
 
 Methods
 -------
 
-+-----------------------------+---------------------------------------------------------------------------+
-| :ref:`Button<class_Button>` | :ref:`get_cancel<class_ConfirmationDialog_method_get_cancel>` **(** **)** |
-+-----------------------------+---------------------------------------------------------------------------+
++-----------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`Button<class_Button>` | :ref:`get_cancel_button<class_ConfirmationDialog_method_get_cancel_button>` **(** **)** |
++-----------------------------+-----------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_ConfirmationDialog_method_get_cancel:
+.. _class_ConfirmationDialog_method_get_cancel_button:
 
-- :ref:`Button<class_Button>` **get_cancel** **(** **)**
+- :ref:`Button<class_Button>` **get_cancel_button** **(** **)**
 
 Returns the cancel button.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

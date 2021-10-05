@@ -16,31 +16,11 @@ NavigationObstacle2D
 Description
 -----------
 
-2D Obstacle used in navigation for collision avoidance. The obstacle needs navigation data to work correctly. This can be done by having the obstacle as a child of a :ref:`Navigation2D<class_Navigation2D>` node, or using :ref:`set_navigation<class_NavigationObstacle2D_method_set_navigation>`. :ref:`NavigationObstacle<class_NavigationObstacle>` is physics safe.
+2D Obstacle used in navigation for collision avoidance. The obstacle needs navigation data to work correctly. ``NavigationObstacle2D`` is physics safe.
 
-Methods
--------
-
-+-------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>` | :ref:`get_navigation<class_NavigationObstacle2D_method_get_navigation>` **(** **)** const                              |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`set_navigation<class_NavigationObstacle2D_method_set_navigation>` **(** :ref:`Node<class_Node>` navigation **)** |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------+
-
-Method Descriptions
--------------------
-
-.. _class_NavigationObstacle2D_method_get_navigation:
-
-- :ref:`Node<class_Node>` **get_navigation** **(** **)** const
-
-Returns the :ref:`Navigation2D<class_Navigation2D>` node that the obstacle is using for its navigation system.
-
-----
-
-.. _class_NavigationObstacle2D_method_set_navigation:
-
-- void **set_navigation** **(** :ref:`Node<class_Node>` navigation **)**
-
-Sets the :ref:`Navigation2D<class_Navigation2D>` node used by the obstacle. Useful when you don't want to make the obstacle a child of a :ref:`Navigation2D<class_Navigation2D>` node.
-
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

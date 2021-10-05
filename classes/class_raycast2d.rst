@@ -16,9 +16,9 @@ Query the closest object intersecting a ray.
 Description
 -----------
 
-A RayCast represents a line from its origin to its destination position, ``cast_to``. It is used to query the 2D space in order to find the closest object along the path of the ray.
+A RayCast represents a line from its origin to its destination position, :ref:`target_position<class_RayCast2D_property_target_position>`. It is used to query the 2D space in order to find the closest object along the path of the ray.
 
-RayCast2D can ignore some objects by adding them to the exception list via ``add_exception``, by setting proper filtering with collision layers, or by filtering object types with type masks.
+RayCast2D can ignore some objects by adding them to the exception list via :ref:`add_exception<class_RayCast2D_method_add_exception>`, by setting proper filtering with collision layers, or by filtering object types with type masks.
 
 RayCast2D can be configured to report collisions with :ref:`Area2D<class_Area2D>`\ s (:ref:`collide_with_areas<class_RayCast2D_property_collide_with_areas>`) and/or :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s (:ref:`collide_with_bodies<class_RayCast2D_property_collide_with_bodies>`).
 
@@ -34,69 +34,53 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------------------------------+----------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`cast_to<class_RayCast2D_property_cast_to>`                         | ``Vector2( 0, 50 )`` |
-+-------------------------------+--------------------------------------------------------------------------+----------------------+
-| :ref:`bool<class_bool>`       | :ref:`collide_with_areas<class_RayCast2D_property_collide_with_areas>`   | ``false``            |
-+-------------------------------+--------------------------------------------------------------------------+----------------------+
-| :ref:`bool<class_bool>`       | :ref:`collide_with_bodies<class_RayCast2D_property_collide_with_bodies>` | ``true``             |
-+-------------------------------+--------------------------------------------------------------------------+----------------------+
-| :ref:`int<class_int>`         | :ref:`collision_mask<class_RayCast2D_property_collision_mask>`           | ``1``                |
-+-------------------------------+--------------------------------------------------------------------------+----------------------+
-| :ref:`bool<class_bool>`       | :ref:`enabled<class_RayCast2D_property_enabled>`                         | ``false``            |
-+-------------------------------+--------------------------------------------------------------------------+----------------------+
-| :ref:`bool<class_bool>`       | :ref:`exclude_parent<class_RayCast2D_property_exclude_parent>`           | ``true``             |
-+-------------------------------+--------------------------------------------------------------------------+----------------------+
++-------------------------------+--------------------------------------------------------------------------+--------------------+
+| :ref:`bool<class_bool>`       | :ref:`collide_with_areas<class_RayCast2D_property_collide_with_areas>`   | ``false``          |
++-------------------------------+--------------------------------------------------------------------------+--------------------+
+| :ref:`bool<class_bool>`       | :ref:`collide_with_bodies<class_RayCast2D_property_collide_with_bodies>` | ``true``           |
++-------------------------------+--------------------------------------------------------------------------+--------------------+
+| :ref:`int<class_int>`         | :ref:`collision_mask<class_RayCast2D_property_collision_mask>`           | ``1``              |
++-------------------------------+--------------------------------------------------------------------------+--------------------+
+| :ref:`bool<class_bool>`       | :ref:`enabled<class_RayCast2D_property_enabled>`                         | ``true``           |
++-------------------------------+--------------------------------------------------------------------------+--------------------+
+| :ref:`bool<class_bool>`       | :ref:`exclude_parent<class_RayCast2D_property_exclude_parent>`           | ``true``           |
++-------------------------------+--------------------------------------------------------------------------+--------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`target_position<class_RayCast2D_property_target_position>`         | ``Vector2(0, 50)`` |
++-------------------------------+--------------------------------------------------------------------------+--------------------+
 
 Methods
 -------
 
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_exception<class_RayCast2D_method_add_exception>` **(** :ref:`Object<class_Object>` node **)**                                           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_exception_rid<class_RayCast2D_method_add_exception_rid>` **(** :ref:`RID<class_RID>` rid **)**                                          |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`clear_exceptions<class_RayCast2D_method_clear_exceptions>` **(** **)**                                                                      |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`force_raycast_update<class_RayCast2D_method_force_raycast_update>` **(** **)**                                                              |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>`   | :ref:`get_collider<class_RayCast2D_method_get_collider>` **(** **)** const                                                                        |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_collider_shape<class_RayCast2D_method_get_collider_shape>` **(** **)** const                                                            |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_collision_mask_bit<class_RayCast2D_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_collision_normal<class_RayCast2D_method_get_collision_normal>` **(** **)** const                                                        |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_collision_point<class_RayCast2D_method_get_collision_point>` **(** **)** const                                                          |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_colliding<class_RayCast2D_method_is_colliding>` **(** **)** const                                                                        |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`remove_exception<class_RayCast2D_method_remove_exception>` **(** :ref:`Object<class_Object>` node **)**                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`remove_exception_rid<class_RayCast2D_method_remove_exception_rid>` **(** :ref:`RID<class_RID>` rid **)**                                    |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_collision_mask_bit<class_RayCast2D_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`add_exception<class_RayCast2D_method_add_exception>` **(** :ref:`Object<class_Object>` node **)**                                                        |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`add_exception_rid<class_RayCast2D_method_add_exception_rid>` **(** :ref:`RID<class_RID>` rid **)**                                                       |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`clear_exceptions<class_RayCast2D_method_clear_exceptions>` **(** **)**                                                                                   |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`force_raycast_update<class_RayCast2D_method_force_raycast_update>` **(** **)**                                                                           |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>`   | :ref:`get_collider<class_RayCast2D_method_get_collider>` **(** **)** |const|                                                                                   |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`get_collider_shape<class_RayCast2D_method_get_collider_shape>` **(** **)** |const|                                                                       |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`get_collision_mask_value<class_RayCast2D_method_get_collision_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`get_collision_normal<class_RayCast2D_method_get_collision_normal>` **(** **)** |const|                                                                   |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`get_collision_point<class_RayCast2D_method_get_collision_point>` **(** **)** |const|                                                                     |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_colliding<class_RayCast2D_method_is_colliding>` **(** **)** |const|                                                                                   |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`remove_exception<class_RayCast2D_method_remove_exception>` **(** :ref:`Object<class_Object>` node **)**                                                  |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`remove_exception_rid<class_RayCast2D_method_remove_exception_rid>` **(** :ref:`RID<class_RID>` rid **)**                                                 |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_collision_mask_value<class_RayCast2D_method_set_collision_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
-
-.. _class_RayCast2D_property_cast_to:
-
-- :ref:`Vector2<class_Vector2>` **cast_to**
-
-+-----------+----------------------+
-| *Default* | ``Vector2( 0, 50 )`` |
-+-----------+----------------------+
-| *Setter*  | set_cast_to(value)   |
-+-----------+----------------------+
-| *Getter*  | get_cast_to()        |
-+-----------+----------------------+
-
-The ray's destination point, relative to the RayCast's ``position``.
-
-----
 
 .. _class_RayCast2D_property_collide_with_areas:
 
@@ -142,7 +126,7 @@ If ``true``, collision with :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s will be
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The ray's collision mask. Only objects in at least one collision layer enabled in the mask will be detected.
+The ray's collision mask. Only objects in at least one collision layer enabled in the mask will be detected. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
 ----
 
@@ -151,7 +135,7 @@ The ray's collision mask. Only objects in at least one collision layer enabled i
 - :ref:`bool<class_bool>` **enabled**
 
 +-----------+--------------------+
-| *Default* | ``false``          |
+| *Default* | ``true``           |
 +-----------+--------------------+
 | *Setter*  | set_enabled(value) |
 +-----------+--------------------+
@@ -175,6 +159,22 @@ If ``true``, collisions will be reported.
 +-----------+--------------------------------+
 
 If ``true``, the parent node will be excluded from collision detection.
+
+----
+
+.. _class_RayCast2D_property_target_position:
+
+- :ref:`Vector2<class_Vector2>` **target_position**
+
++-----------+----------------------------+
+| *Default* | ``Vector2(0, 50)``         |
++-----------+----------------------------+
+| *Setter*  | set_target_position(value) |
++-----------+----------------------------+
+| *Getter*  | get_target_position()      |
++-----------+----------------------------+
+
+The ray's destination point, relative to the RayCast's ``position``.
 
 Method Descriptions
 -------------------
@@ -209,13 +209,13 @@ Removes all collision exceptions for this ray.
 
 Updates the collision information for the ray. Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state.
 
-**Note:** ``enabled == true`` is not required for this to work.
+**Note:** :ref:`enabled<class_RayCast2D_property_enabled>` does not need to be ``true`` for this to work.
 
 ----
 
 .. _class_RayCast2D_method_get_collider:
 
-- :ref:`Object<class_Object>` **get_collider** **(** **)** const
+- :ref:`Object<class_Object>` **get_collider** **(** **)** |const|
 
 Returns the first object that the ray intersects, or ``null`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast2D_method_is_colliding>` returns ``false``).
 
@@ -223,23 +223,23 @@ Returns the first object that the ray intersects, or ``null`` if no object is in
 
 .. _class_RayCast2D_method_get_collider_shape:
 
-- :ref:`int<class_int>` **get_collider_shape** **(** **)** const
+- :ref:`int<class_int>` **get_collider_shape** **(** **)** |const|
 
 Returns the shape ID of the first object that the ray intersects, or ``0`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast2D_method_is_colliding>` returns ``false``).
 
 ----
 
-.. _class_RayCast2D_method_get_collision_mask_bit:
+.. _class_RayCast2D_method_get_collision_mask_value:
 
-- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
+- :ref:`bool<class_bool>` **get_collision_mask_value** **(** :ref:`int<class_int>` layer_number **)** |const|
 
-Returns an individual bit on the collision mask.
+Returns whether or not the specified layer of the :ref:`collision_mask<class_RayCast2D_property_collision_mask>` is enabled, given a ``layer_number`` between 1 and 32.
 
 ----
 
 .. _class_RayCast2D_method_get_collision_normal:
 
-- :ref:`Vector2<class_Vector2>` **get_collision_normal** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_collision_normal** **(** **)** |const|
 
 Returns the normal of the intersecting object's shape at the collision point.
 
@@ -247,17 +247,17 @@ Returns the normal of the intersecting object's shape at the collision point.
 
 .. _class_RayCast2D_method_get_collision_point:
 
-- :ref:`Vector2<class_Vector2>` **get_collision_point** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_collision_point** **(** **)** |const|
 
 Returns the collision point at which the ray intersects the closest object.
 
-**Note:** this point is in the **global** coordinate system.
+**Note:** This point is in the **global** coordinate system.
 
 ----
 
 .. _class_RayCast2D_method_is_colliding:
 
-- :ref:`bool<class_bool>` **is_colliding** **(** **)** const
+- :ref:`bool<class_bool>` **is_colliding** **(** **)** |const|
 
 Returns whether any object is intersecting with the ray's vector (considering the vector length).
 
@@ -279,9 +279,15 @@ Removes a collision exception so the ray does report collisions with the specifi
 
 ----
 
-.. _class_RayCast2D_method_set_collision_mask_bit:
+.. _class_RayCast2D_method_set_collision_mask_value:
 
-- void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
+- void **set_collision_mask_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
 
-Sets or clears individual bits on the collision mask. This makes selecting the areas scanned easier.
+Based on ``value``, enables or disables the specified layer in the :ref:`collision_mask<class_RayCast2D_property_collision_mask>`, given a ``layer_number`` between 1 and 32.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

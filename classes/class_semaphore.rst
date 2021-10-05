@@ -9,7 +9,7 @@
 Semaphore
 =========
 
-**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A synchronization semaphore.
 
@@ -21,7 +21,7 @@ A synchronization semaphore which can be used to synchronize multiple :ref:`Thre
 Tutorials
 ---------
 
-- :doc:`../tutorials/performance/using_multiple_threads`
+- :doc:`../tutorials/threads/using_multiple_threads`
 
 Methods
 -------
@@ -59,3 +59,9 @@ Like :ref:`wait<class_Semaphore_method_wait>`, but won't block, so if the value 
 
 Waits for the ``Semaphore``, if its value is zero, blocks until non-zero.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

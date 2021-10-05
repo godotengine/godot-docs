@@ -9,7 +9,7 @@
 AnimationNodeTransition
 =======================
 
-**Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A generic animation transition node for :ref:`AnimationTree<class_AnimationTree>`.
 
@@ -22,6 +22,10 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/animation/animation_tree`
+
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
+
+- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
 Properties
 ----------
@@ -36,9 +40,9 @@ Methods
 -------
 
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_input_caption<class_AnimationNodeTransition_method_get_input_caption>` **(** :ref:`int<class_int>` input **)** const                                           |
+| :ref:`String<class_String>` | :ref:`get_input_caption<class_AnimationNodeTransition_method_get_input_caption>` **(** :ref:`int<class_int>` input **)** |const|                                         |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`is_input_set_as_auto_advance<class_AnimationNodeTransition_method_is_input_set_as_auto_advance>` **(** :ref:`int<class_int>` input **)** const                     |
+| :ref:`bool<class_bool>`     | :ref:`is_input_set_as_auto_advance<class_AnimationNodeTransition_method_is_input_set_as_auto_advance>` **(** :ref:`int<class_int>` input **)** |const|                   |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                        | :ref:`set_input_as_auto_advance<class_AnimationNodeTransition_method_set_input_as_auto_advance>` **(** :ref:`int<class_int>` input, :ref:`bool<class_bool>` enable **)** |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -83,13 +87,13 @@ Method Descriptions
 
 .. _class_AnimationNodeTransition_method_get_input_caption:
 
-- :ref:`String<class_String>` **get_input_caption** **(** :ref:`int<class_int>` input **)** const
+- :ref:`String<class_String>` **get_input_caption** **(** :ref:`int<class_int>` input **)** |const|
 
 ----
 
 .. _class_AnimationNodeTransition_method_is_input_set_as_auto_advance:
 
-- :ref:`bool<class_bool>` **is_input_set_as_auto_advance** **(** :ref:`int<class_int>` input **)** const
+- :ref:`bool<class_bool>` **is_input_set_as_auto_advance** **(** :ref:`int<class_int>` input **)** |const|
 
 ----
 
@@ -103,3 +107,9 @@ Method Descriptions
 
 - void **set_input_caption** **(** :ref:`int<class_int>` input, :ref:`String<class_String>` caption **)**
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -9,36 +9,46 @@
 ScriptCreateDialog
 ==================
 
-**Inherits:** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`WindowDialog<class_WindowDialog>` **<** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 The Editor's popup dialog for creating new :ref:`Script<class_Script>` files.
 
 Description
 -----------
 
-The ``ScriptCreateDialog`` creates script files according to a given template for a given scripting language. The standard use is to configure its fields prior to calling one of the :ref:`Popup.popup<class_Popup_method_popup>` methods.
+The ``ScriptCreateDialog`` creates script files according to a given template for a given scripting language. The standard use is to configure its fields prior to calling one of the :ref:`Window.popup<class_Window_method_popup>` methods.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     func _ready():
-        dialog.config("Node", "res://new_node.gd") # For in-engine types
-        dialog.config("\"res://base_node.gd\"", "res://derived_node.gd") # For script types
+        var dialog = ScriptCreateDialog.new();
+        dialog.config("Node", "res://new_node.gd") # For in-engine types.
+        dialog.config("\"res://base_node.gd\"", "res://derived_node.gd") # For script types.
         dialog.popup_centered()
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        var dialog = new ScriptCreateDialog();
+        dialog.Config("Node", "res://NewNode.cs"); // For in-engine types.
+        dialog.Config("\"res://BaseNode.cs\"", "res://DerivedNode.cs"); // For script types.
+        dialog.PopupCentered();
+    }
+
+
 
 Properties
 ----------
 
-+-------------------------------+-------------------+---------------------------------+
-| :ref:`bool<class_bool>`       | dialog_hide_on_ok | **O:** ``false``                |
-+-------------------------------+-------------------+---------------------------------+
-| :ref:`float<class_float>`     | margin_bottom     | **O:** ``232.0``                |
-+-------------------------------+-------------------+---------------------------------+
-| :ref:`float<class_float>`     | margin_right      | **O:** ``361.0``                |
-+-------------------------------+-------------------+---------------------------------+
-| :ref:`Vector2<class_Vector2>` | rect_size         | **O:** ``Vector2( 361, 232 )``  |
-+-------------------------------+-------------------+---------------------------------+
-| :ref:`String<class_String>`   | window_title      | **O:** ``"Attach Node Script"`` |
-+-------------------------------+-------------------+---------------------------------+
++-----------------------------+-------------------+----------------------------------------------+
+| :ref:`bool<class_bool>`     | dialog_hide_on_ok | ``false`` *(parent override)*                |
++-----------------------------+-------------------+----------------------------------------------+
+| :ref:`String<class_String>` | title             | ``"Attach Node Script"`` *(parent override)* |
++-----------------------------+-------------------+----------------------------------------------+
 
 Methods
 -------
@@ -65,3 +75,9 @@ Method Descriptions
 
 Prefills required fields to configure the ScriptCreateDialog for use.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

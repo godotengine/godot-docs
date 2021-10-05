@@ -18,89 +18,98 @@ Description
 
 Camera node for 2D scenes. It forces the screen (current layer) to scroll following this node. This makes it easier (and faster) to program scrollable scenes than manually changing the position of :ref:`CanvasItem<class_CanvasItem>`-based nodes.
 
-This node is intended to be a simple helper to get things going quickly and it may happen that more functionality is desired to change how the camera works. To make your own custom camera node, simply inherit from :ref:`Node2D<class_Node2D>` and change the transform of the canvas by calling get_viewport().set_canvas_transform(m) in :ref:`Viewport<class_Viewport>`.
+Cameras register themselves in the nearest :ref:`Viewport<class_Viewport>` node (when ascending the tree). Only one camera can be active per viewport. If no viewport is available ascending the tree, the camera will register in the global viewport.
+
+This node is intended to be a simple helper to get things going quickly, but more functionality may be desired to change how the camera works. To make your own custom camera node, inherit it from :ref:`Node2D<class_Node2D>` and change the transform of the canvas by setting :ref:`Viewport.canvas_transform<class_Viewport_property_canvas_transform>` in :ref:`Viewport<class_Viewport>` (you can obtain the current :ref:`Viewport<class_Viewport>` by using :ref:`Node.get_viewport<class_Node_method_get_viewport>`).
+
+Note that the ``Camera2D`` node's ``position`` doesn't represent the actual position of the screen, which may differ due to applied smoothing or limits. You can use :ref:`get_camera_screen_center<class_Camera2D_method_get_camera_screen_center>` to get the real position.
+
+Tutorials
+---------
+
+- `2D Platformer Demo <https://godotengine.org/asset-library/asset/120>`__
+
+- `2D Isometric Demo <https://godotengine.org/asset-library/asset/112>`__
+
+- `2D HDR Demo <https://godotengine.org/asset-library/asset/110>`__
 
 Properties
 ----------
 
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`AnchorMode<enum_Camera2D_AnchorMode>`                   | :ref:`anchor_mode<class_Camera2D_property_anchor_mode>`                         | ``1``               |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                       | :ref:`current<class_Camera2D_property_current>`                                 | ``false``           |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`Node<class_Node>`                                       | :ref:`custom_viewport<class_Camera2D_property_custom_viewport>`                 |                     |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                                     | :ref:`drag_margin_bottom<class_Camera2D_property_drag_margin_bottom>`           | ``0.2``             |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                       | :ref:`drag_margin_h_enabled<class_Camera2D_property_drag_margin_h_enabled>`     | ``false``           |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                                     | :ref:`drag_margin_left<class_Camera2D_property_drag_margin_left>`               | ``0.2``             |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                                     | :ref:`drag_margin_right<class_Camera2D_property_drag_margin_right>`             | ``0.2``             |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                                     | :ref:`drag_margin_top<class_Camera2D_property_drag_margin_top>`                 | ``0.2``             |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                       | :ref:`drag_margin_v_enabled<class_Camera2D_property_drag_margin_v_enabled>`     | ``false``           |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                       | :ref:`editor_draw_drag_margin<class_Camera2D_property_editor_draw_drag_margin>` | ``false``           |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                       | :ref:`editor_draw_limits<class_Camera2D_property_editor_draw_limits>`           | ``false``           |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                       | :ref:`editor_draw_screen<class_Camera2D_property_editor_draw_screen>`           | ``true``            |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                                         | :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`                       | ``10000000``        |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                                         | :ref:`limit_left<class_Camera2D_property_limit_left>`                           | ``-10000000``       |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                                         | :ref:`limit_right<class_Camera2D_property_limit_right>`                         | ``10000000``        |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                       | :ref:`limit_smoothed<class_Camera2D_property_limit_smoothed>`                   | ``false``           |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                                         | :ref:`limit_top<class_Camera2D_property_limit_top>`                             | ``-10000000``       |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>`                                 | :ref:`offset<class_Camera2D_property_offset>`                                   | ``Vector2( 0, 0 )`` |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                                     | :ref:`offset_h<class_Camera2D_property_offset_h>`                               | ``0.0``             |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                                     | :ref:`offset_v<class_Camera2D_property_offset_v>`                               | ``0.0``             |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`Camera2DProcessMode<enum_Camera2D_Camera2DProcessMode>` | :ref:`process_mode<class_Camera2D_property_process_mode>`                       | ``1``               |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                       | :ref:`rotating<class_Camera2D_property_rotating>`                               | ``false``           |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                       | :ref:`smoothing_enabled<class_Camera2D_property_smoothing_enabled>`             | ``false``           |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                                     | :ref:`smoothing_speed<class_Camera2D_property_smoothing_speed>`                 | ``5.0``             |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>`                                 | :ref:`zoom<class_Camera2D_property_zoom>`                                       | ``Vector2( 1, 1 )`` |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+---------------------+
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`AnchorMode<enum_Camera2D_AnchorMode>`                           | :ref:`anchor_mode<class_Camera2D_property_anchor_mode>`                         | ``1``             |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`current<class_Camera2D_property_current>`                                 | ``false``         |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`Node<class_Node>`                                               | :ref:`custom_viewport<class_Camera2D_property_custom_viewport>`                 |                   |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`                                             | :ref:`drag_bottom_margin<class_Camera2D_property_drag_bottom_margin>`           | ``0.2``           |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`drag_horizontal_enabled<class_Camera2D_property_drag_horizontal_enabled>` | ``false``         |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`                                             | :ref:`drag_horizontal_offset<class_Camera2D_property_drag_horizontal_offset>`   | ``0.0``           |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`                                             | :ref:`drag_left_margin<class_Camera2D_property_drag_left_margin>`               | ``0.2``           |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`                                             | :ref:`drag_right_margin<class_Camera2D_property_drag_right_margin>`             | ``0.2``           |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`                                             | :ref:`drag_top_margin<class_Camera2D_property_drag_top_margin>`                 | ``0.2``           |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`drag_vertical_enabled<class_Camera2D_property_drag_vertical_enabled>`     | ``false``         |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`                                             | :ref:`drag_vertical_offset<class_Camera2D_property_drag_vertical_offset>`       | ``0.0``           |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`editor_draw_drag_margin<class_Camera2D_property_editor_draw_drag_margin>` | ``false``         |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`editor_draw_limits<class_Camera2D_property_editor_draw_limits>`           | ``false``         |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`editor_draw_screen<class_Camera2D_property_editor_draw_screen>`           | ``true``          |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`int<class_int>`                                                 | :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`                       | ``10000000``      |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`int<class_int>`                                                 | :ref:`limit_left<class_Camera2D_property_limit_left>`                           | ``-10000000``     |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`int<class_int>`                                                 | :ref:`limit_right<class_Camera2D_property_limit_right>`                         | ``10000000``      |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`limit_smoothed<class_Camera2D_property_limit_smoothed>`                   | ``false``         |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`int<class_int>`                                                 | :ref:`limit_top<class_Camera2D_property_limit_top>`                             | ``-10000000``     |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`Vector2<class_Vector2>`                                         | :ref:`offset<class_Camera2D_property_offset>`                                   | ``Vector2(0, 0)`` |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`Camera2DProcessCallback<enum_Camera2D_Camera2DProcessCallback>` | :ref:`process_callback<class_Camera2D_property_process_callback>`               | ``1``             |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`rotating<class_Camera2D_property_rotating>`                               | ``false``         |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`smoothing_enabled<class_Camera2D_property_smoothing_enabled>`             | ``false``         |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`                                             | :ref:`smoothing_speed<class_Camera2D_property_smoothing_speed>`                 | ``5.0``           |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+| :ref:`Vector2<class_Vector2>`                                         | :ref:`zoom<class_Camera2D_property_zoom>`                                       | ``Vector2(1, 1)`` |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
 
 Methods
 -------
 
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`align<class_Camera2D_method_align>` **(** **)**                                                                                                           |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`clear_current<class_Camera2D_method_clear_current>` **(** **)**                                                                                           |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`force_update_scroll<class_Camera2D_method_force_update_scroll>` **(** **)**                                                                               |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_camera_position<class_Camera2D_method_get_camera_position>` **(** **)** const                                                                         |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_camera_screen_center<class_Camera2D_method_get_camera_screen_center>` **(** **)** const                                                               |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`get_drag_margin<class_Camera2D_method_get_drag_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                                  |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_limit<class_Camera2D_method_get_limit>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                                              |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`make_current<class_Camera2D_method_make_current>` **(** **)**                                                                                             |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`reset_smoothing<class_Camera2D_method_reset_smoothing>` **(** **)**                                                                                       |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_drag_margin<class_Camera2D_method_set_drag_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`float<class_float>` drag_margin **)** |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_limit<class_Camera2D_method_set_limit>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`int<class_int>` limit **)**                       |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`align<class_Camera2D_method_align>` **(** **)**                                                                                                       |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`force_update_scroll<class_Camera2D_method_force_update_scroll>` **(** **)**                                                                           |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`get_camera_position<class_Camera2D_method_get_camera_position>` **(** **)** |const|                                                                   |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`get_camera_screen_center<class_Camera2D_method_get_camera_screen_center>` **(** **)** |const|                                                         |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`get_drag_margin<class_Camera2D_method_get_drag_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                                |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`get_limit<class_Camera2D_method_get_limit>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                                            |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`reset_smoothing<class_Camera2D_method_reset_smoothing>` **(** **)**                                                                                   |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_drag_margin<class_Camera2D_method_set_drag_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` drag_margin **)** |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_limit<class_Camera2D_method_set_limit>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` limit **)**                       |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -119,13 +128,13 @@ enum **AnchorMode**:
 
 ----
 
-.. _enum_Camera2D_Camera2DProcessMode:
+.. _enum_Camera2D_Camera2DProcessCallback:
 
 .. _class_Camera2D_constant_CAMERA2D_PROCESS_PHYSICS:
 
 .. _class_Camera2D_constant_CAMERA2D_PROCESS_IDLE:
 
-enum **Camera2DProcessMode**:
+enum **Camera2DProcessCallback**:
 
 - **CAMERA2D_PROCESS_PHYSICS** = **0** --- The camera updates with the ``_physics_process`` callback.
 
@@ -154,13 +163,15 @@ The Camera2D's anchor point. See :ref:`AnchorMode<enum_Camera2D_AnchorMode>` con
 
 - :ref:`bool<class_bool>` **current**
 
-+-----------+--------------+
-| *Default* | ``false``    |
-+-----------+--------------+
-| *Getter*  | is_current() |
-+-----------+--------------+
++-----------+--------------------+
+| *Default* | ``false``          |
++-----------+--------------------+
+| *Setter*  | set_current(value) |
++-----------+--------------------+
+| *Getter*  | is_current()       |
++-----------+--------------------+
 
-If ``true``, the camera is the active camera for the current scene. Only one camera can be current, so setting a different camera ``current`` will disable this one.
+If ``true``, the camera acts as the active camera for its :ref:`Viewport<class_Viewport>` ancestor. Only one camera can be current in a given viewport, so setting a different camera in the same viewport ``current`` will disable whatever camera was already active in that viewport.
 
 ----
 
@@ -178,41 +189,9 @@ The custom :ref:`Viewport<class_Viewport>` node attached to the ``Camera2D``. If
 
 ----
 
-.. _class_Camera2D_property_drag_margin_bottom:
+.. _class_Camera2D_property_drag_bottom_margin:
 
-- :ref:`float<class_float>` **drag_margin_bottom**
-
-+-----------+------------------------+
-| *Default* | ``0.2``                |
-+-----------+------------------------+
-| *Setter*  | set_drag_margin(value) |
-+-----------+------------------------+
-| *Getter*  | get_drag_margin()      |
-+-----------+------------------------+
-
-Bottom margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
-
-----
-
-.. _class_Camera2D_property_drag_margin_h_enabled:
-
-- :ref:`bool<class_bool>` **drag_margin_h_enabled**
-
-+-----------+---------------------------+
-| *Default* | ``false``                 |
-+-----------+---------------------------+
-| *Setter*  | set_h_drag_enabled(value) |
-+-----------+---------------------------+
-| *Getter*  | is_h_drag_enabled()       |
-+-----------+---------------------------+
-
-If ``true``, the camera only moves when reaching the horizontal drag margins. If ``false``, the camera moves horizontally regardless of margins.
-
-----
-
-.. _class_Camera2D_property_drag_margin_left:
-
-- :ref:`float<class_float>` **drag_margin_left**
+- :ref:`float<class_float>` **drag_bottom_margin**
 
 +-----------+------------------------+
 | *Default* | ``0.2``                |
@@ -222,13 +201,47 @@ If ``true``, the camera only moves when reaching the horizontal drag margins. If
 | *Getter*  | get_drag_margin()      |
 +-----------+------------------------+
 
-Left margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
+Bottom margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the bottom edge of the screen.
 
 ----
 
-.. _class_Camera2D_property_drag_margin_right:
+.. _class_Camera2D_property_drag_horizontal_enabled:
 
-- :ref:`float<class_float>` **drag_margin_right**
+- :ref:`bool<class_bool>` **drag_horizontal_enabled**
+
++-----------+------------------------------------+
+| *Default* | ``false``                          |
++-----------+------------------------------------+
+| *Setter*  | set_drag_horizontal_enabled(value) |
++-----------+------------------------------------+
+| *Getter*  | is_drag_horizontal_enabled()       |
++-----------+------------------------------------+
+
+If ``true``, the camera only moves when reaching the horizontal (left and right) drag margins. If ``false``, the camera moves horizontally regardless of margins.
+
+----
+
+.. _class_Camera2D_property_drag_horizontal_offset:
+
+- :ref:`float<class_float>` **drag_horizontal_offset**
+
++-----------+-----------------------------------+
+| *Default* | ``0.0``                           |
++-----------+-----------------------------------+
+| *Setter*  | set_drag_horizontal_offset(value) |
++-----------+-----------------------------------+
+| *Getter*  | get_drag_horizontal_offset()      |
++-----------+-----------------------------------+
+
+The relative horizontal drag offset of the camera between the right (``-1``) and left (``1``) drag margins.
+
+**Note:** Used to set the initial horizontal drag offset; determine the current offset; or force the current offset. It's not automatically updated when the horizontal drag margin is enabled or the drag margins are changed.
+
+----
+
+.. _class_Camera2D_property_drag_left_margin:
+
+- :ref:`float<class_float>` **drag_left_margin**
 
 +-----------+------------------------+
 | *Default* | ``0.2``                |
@@ -238,13 +251,13 @@ Left margin needed to drag the camera. A value of ``1`` makes the camera move on
 | *Getter*  | get_drag_margin()      |
 +-----------+------------------------+
 
-Right margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
+Left margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the left edge of the screen.
 
 ----
 
-.. _class_Camera2D_property_drag_margin_top:
+.. _class_Camera2D_property_drag_right_margin:
 
-- :ref:`float<class_float>` **drag_margin_top**
+- :ref:`float<class_float>` **drag_right_margin**
 
 +-----------+------------------------+
 | *Default* | ``0.2``                |
@@ -254,23 +267,57 @@ Right margin needed to drag the camera. A value of ``1`` makes the camera move o
 | *Getter*  | get_drag_margin()      |
 +-----------+------------------------+
 
-Top margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
+Right margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the right edge of the screen.
 
 ----
 
-.. _class_Camera2D_property_drag_margin_v_enabled:
+.. _class_Camera2D_property_drag_top_margin:
 
-- :ref:`bool<class_bool>` **drag_margin_v_enabled**
+- :ref:`float<class_float>` **drag_top_margin**
 
-+-----------+---------------------------+
-| *Default* | ``false``                 |
-+-----------+---------------------------+
-| *Setter*  | set_v_drag_enabled(value) |
-+-----------+---------------------------+
-| *Getter*  | is_v_drag_enabled()       |
-+-----------+---------------------------+
++-----------+------------------------+
+| *Default* | ``0.2``                |
++-----------+------------------------+
+| *Setter*  | set_drag_margin(value) |
++-----------+------------------------+
+| *Getter*  | get_drag_margin()      |
++-----------+------------------------+
 
-If ``true``, the camera only moves when reaching the vertical drag margins. If ``false``, the camera moves vertically regardless of margins.
+Top margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the top edge of the screen.
+
+----
+
+.. _class_Camera2D_property_drag_vertical_enabled:
+
+- :ref:`bool<class_bool>` **drag_vertical_enabled**
+
++-----------+----------------------------------+
+| *Default* | ``false``                        |
++-----------+----------------------------------+
+| *Setter*  | set_drag_vertical_enabled(value) |
++-----------+----------------------------------+
+| *Getter*  | is_drag_vertical_enabled()       |
++-----------+----------------------------------+
+
+If ``true``, the camera only moves when reaching the vertical (top and bottom) drag margins. If ``false``, the camera moves vertically regardless of the drag margins.
+
+----
+
+.. _class_Camera2D_property_drag_vertical_offset:
+
+- :ref:`float<class_float>` **drag_vertical_offset**
+
++-----------+---------------------------------+
+| *Default* | ``0.0``                         |
++-----------+---------------------------------+
+| *Setter*  | set_drag_vertical_offset(value) |
++-----------+---------------------------------+
+| *Getter*  | get_drag_vertical_offset()      |
++-----------+---------------------------------+
+
+The relative vertical drag offset of the camera between the bottom (``-1``) and top (``1``) drag margins.
+
+**Note:** Used to set the initial vertical drag offset; determine the current offset; or force the current offset. It's not automatically updated when the vertical drag margin is enabled or the drag margins are changed.
 
 ----
 
@@ -384,6 +431,10 @@ Right scroll limit in pixels. The camera stops moving when reaching this value.
 
 If ``true``, the camera smoothly stops when reaches its limits.
 
+This has no effect if smoothing is disabled.
+
+**Note:** To immediately update the camera's position to be within limits without smoothing, even with this setting enabled, invoke :ref:`reset_smoothing<class_Camera2D_method_reset_smoothing>`.
+
 ----
 
 .. _class_Camera2D_property_limit_top:
@@ -406,67 +457,31 @@ Top scroll limit in pixels. The camera stops moving when reaching this value.
 
 - :ref:`Vector2<class_Vector2>` **offset**
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 0, 0 )`` |
-+-----------+---------------------+
-| *Setter*  | set_offset(value)   |
-+-----------+---------------------+
-| *Getter*  | get_offset()        |
-+-----------+---------------------+
++-----------+-------------------+
+| *Default* | ``Vector2(0, 0)`` |
++-----------+-------------------+
+| *Setter*  | set_offset(value) |
++-----------+-------------------+
+| *Getter*  | get_offset()      |
++-----------+-------------------+
 
 The camera's offset, useful for looking around or camera shake animations.
 
 ----
 
-.. _class_Camera2D_property_offset_h:
+.. _class_Camera2D_property_process_callback:
 
-- :ref:`float<class_float>` **offset_h**
+- :ref:`Camera2DProcessCallback<enum_Camera2D_Camera2DProcessCallback>` **process_callback**
 
-+-----------+---------------------+
-| *Default* | ``0.0``             |
-+-----------+---------------------+
-| *Setter*  | set_h_offset(value) |
-+-----------+---------------------+
-| *Getter*  | get_h_offset()      |
-+-----------+---------------------+
++-----------+-----------------------------+
+| *Default* | ``1``                       |
++-----------+-----------------------------+
+| *Setter*  | set_process_callback(value) |
++-----------+-----------------------------+
+| *Getter*  | get_process_callback()      |
++-----------+-----------------------------+
 
-The horizontal offset of the camera, relative to the drag margins.
-
-**Note:** Offset H is used only to force offset relative to margins. It's not updated in any way if drag margins are enabled and can be used to set initial offset.
-
-----
-
-.. _class_Camera2D_property_offset_v:
-
-- :ref:`float<class_float>` **offset_v**
-
-+-----------+---------------------+
-| *Default* | ``0.0``             |
-+-----------+---------------------+
-| *Setter*  | set_v_offset(value) |
-+-----------+---------------------+
-| *Getter*  | get_v_offset()      |
-+-----------+---------------------+
-
-The vertical offset of the camera, relative to the drag margins.
-
-**Note:** Used the same as :ref:`offset_h<class_Camera2D_property_offset_h>`.
-
-----
-
-.. _class_Camera2D_property_process_mode:
-
-- :ref:`Camera2DProcessMode<enum_Camera2D_Camera2DProcessMode>` **process_mode**
-
-+-----------+-------------------------+
-| *Default* | ``1``                   |
-+-----------+-------------------------+
-| *Setter*  | set_process_mode(value) |
-+-----------+-------------------------+
-| *Getter*  | get_process_mode()      |
-+-----------+-------------------------+
-
-The camera's process callback. See :ref:`Camera2DProcessMode<enum_Camera2D_Camera2DProcessMode>`.
+The camera's process callback. See :ref:`Camera2DProcessCallback<enum_Camera2D_Camera2DProcessCallback>`.
 
 ----
 
@@ -522,13 +537,13 @@ Speed in pixels per second of the camera's smoothing effect when :ref:`smoothing
 
 - :ref:`Vector2<class_Vector2>` **zoom**
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 1, 1 )`` |
-+-----------+---------------------+
-| *Setter*  | set_zoom(value)     |
-+-----------+---------------------+
-| *Getter*  | get_zoom()          |
-+-----------+---------------------+
++-----------+-------------------+
+| *Default* | ``Vector2(1, 1)`` |
++-----------+-------------------+
+| *Setter*  | set_zoom(value)   |
++-----------+-------------------+
+| *Getter*  | get_zoom()        |
++-----------+-------------------+
 
 The camera's zoom relative to the viewport. Values larger than ``Vector2(1, 1)`` zoom out and smaller values zoom in. For an example, use ``Vector2(0.5, 0.5)`` for a 2× zoom-in, and ``Vector2(4, 4)`` for a 4× zoom-out.
 
@@ -543,14 +558,6 @@ Aligns the camera to the tracked node.
 
 ----
 
-.. _class_Camera2D_method_clear_current:
-
-- void **clear_current** **(** **)**
-
-Removes any ``Camera2D`` from the ancestor :ref:`Viewport<class_Viewport>`'s internal currently-assigned camera.
-
-----
-
 .. _class_Camera2D_method_force_update_scroll:
 
 - void **force_update_scroll** **(** **)**
@@ -561,7 +568,7 @@ Forces the camera to update scroll immediately.
 
 .. _class_Camera2D_method_get_camera_position:
 
-- :ref:`Vector2<class_Vector2>` **get_camera_position** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_camera_position** **(** **)** |const|
 
 Returns the camera position.
 
@@ -569,7 +576,7 @@ Returns the camera position.
 
 .. _class_Camera2D_method_get_camera_screen_center:
 
-- :ref:`Vector2<class_Vector2>` **get_camera_screen_center** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_camera_screen_center** **(** **)** |const|
 
 Returns the location of the ``Camera2D``'s screen-center, relative to the origin.
 
@@ -577,25 +584,17 @@ Returns the location of the ``Camera2D``'s screen-center, relative to the origin
 
 .. _class_Camera2D_method_get_drag_margin:
 
-- :ref:`float<class_float>` **get_drag_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+- :ref:`float<class_float>` **get_drag_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
-Returns the specified margin. See also :ref:`drag_margin_bottom<class_Camera2D_property_drag_margin_bottom>`, :ref:`drag_margin_top<class_Camera2D_property_drag_margin_top>`, :ref:`drag_margin_left<class_Camera2D_property_drag_margin_left>`, and :ref:`drag_margin_right<class_Camera2D_property_drag_margin_right>`.
+Returns the specified :ref:`Side<enum_@GlobalScope_Side>`'s margin. See also :ref:`drag_bottom_margin<class_Camera2D_property_drag_bottom_margin>`, :ref:`drag_top_margin<class_Camera2D_property_drag_top_margin>`, :ref:`drag_left_margin<class_Camera2D_property_drag_left_margin>`, and :ref:`drag_right_margin<class_Camera2D_property_drag_right_margin>`.
 
 ----
 
 .. _class_Camera2D_method_get_limit:
 
-- :ref:`int<class_int>` **get_limit** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+- :ref:`int<class_int>` **get_limit** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
-Returns the specified camera limit. See also :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`, :ref:`limit_top<class_Camera2D_property_limit_top>`, :ref:`limit_left<class_Camera2D_property_limit_left>`, and :ref:`limit_right<class_Camera2D_property_limit_right>`.
-
-----
-
-.. _class_Camera2D_method_make_current:
-
-- void **make_current** **(** **)**
-
-Make this the current 2D camera for the scene (viewport and layer), in case there are many cameras in the scene.
+Returns the camera limit for the specified :ref:`Side<enum_@GlobalScope_Side>`. See also :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`, :ref:`limit_top<class_Camera2D_property_limit_top>`, :ref:`limit_left<class_Camera2D_property_limit_left>`, and :ref:`limit_right<class_Camera2D_property_limit_right>`.
 
 ----
 
@@ -611,15 +610,21 @@ This has no effect if smoothing is disabled.
 
 .. _class_Camera2D_method_set_drag_margin:
 
-- void **set_drag_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`float<class_float>` drag_margin **)**
+- void **set_drag_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` drag_margin **)**
 
-Sets the specified margin. See also :ref:`drag_margin_bottom<class_Camera2D_property_drag_margin_bottom>`, :ref:`drag_margin_top<class_Camera2D_property_drag_margin_top>`, :ref:`drag_margin_left<class_Camera2D_property_drag_margin_left>`, and :ref:`drag_margin_right<class_Camera2D_property_drag_margin_right>`.
+Sets the specified :ref:`Side<enum_@GlobalScope_Side>`'s margin. See also :ref:`drag_bottom_margin<class_Camera2D_property_drag_bottom_margin>`, :ref:`drag_top_margin<class_Camera2D_property_drag_top_margin>`, :ref:`drag_left_margin<class_Camera2D_property_drag_left_margin>`, and :ref:`drag_right_margin<class_Camera2D_property_drag_right_margin>`.
 
 ----
 
 .. _class_Camera2D_method_set_limit:
 
-- void **set_limit** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`int<class_int>` limit **)**
+- void **set_limit** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` limit **)**
 
-Sets the specified camera limit. See also :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`, :ref:`limit_top<class_Camera2D_property_limit_top>`, :ref:`limit_left<class_Camera2D_property_limit_left>`, and :ref:`limit_right<class_Camera2D_property_limit_right>`.
+Sets the camera limit for the specified :ref:`Side<enum_@GlobalScope_Side>`. See also :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`, :ref:`limit_top<class_Camera2D_property_limit_top>`, :ref:`limit_left<class_Camera2D_property_limit_left>`, and :ref:`limit_right<class_Camera2D_property_limit_right>`.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

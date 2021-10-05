@@ -9,7 +9,7 @@
 Directory
 =========
 
-**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Type used to handle the filesystem.
 
@@ -18,11 +18,16 @@ Description
 
 Directory type. It is used to manage directories and their content (not restricted to the project folder).
 
-When creating a new ``Directory``, its default opened directory will be ``res://``. This may change in the future, so it is advised to always use :ref:`open<class_Directory_method_open>` to initialize your ``Directory`` where you want to operate, with explicit error checking.
+When creating a new ``Directory``, it must be explicitly opened using :ref:`open<class_Directory_method_open>` before most methods can be used. However, :ref:`file_exists<class_Directory_method_file_exists>` and :ref:`dir_exists<class_Directory_method_dir_exists>` can be used without opening a directory. If so, they use a path relative to ``res://``.
+
+**Note:** Many resources types are imported (e.g. textures or sound files), and their source asset will not be included in the exported game, as only the imported version is used. Use :ref:`ResourceLoader<class_ResourceLoader>` to access imported resources.
 
 Here is an example on how to iterate through the files of a directory:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     func dir_contents(path):
         var dir = Directory.new()
@@ -38,10 +43,40 @@ Here is an example on how to iterate through the files of a directory:
         else:
             print("An error occurred when trying to access the path.")
 
+ .. code-tab:: csharp
+
+    public void DirContents(string path)
+    {
+        var dir = new Directory();
+        if (dir.Open(path) == Error.Ok)
+        {
+            dir.ListDirBegin();
+            string fileName = dir.GetNext();
+            while (fileName != "")
+            {
+                if (dir.CurrentIsDir())
+                {
+                    GD.Print("Found directory: " + fileName);
+                }
+                else
+                {
+                    GD.Print("Found file: " + fileName);
+                }
+                fileName = dir.GetNext();
+            }
+        }
+        else
+        {
+            GD.Print("An error occurred when trying to access the path.");
+        }
+    }
+
+
+
 Tutorials
 ---------
 
-- :doc:`../tutorials/scripting/filesystem`
+- :doc:`../getting_started/step_by_step/filesystem`
 
 Methods
 -------
@@ -51,7 +86,7 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`copy<class_Directory_method_copy>` **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**                                               |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`current_is_dir<class_Directory_method_current_is_dir>` **(** **)** const                                                                                      |
+| :ref:`bool<class_bool>`               | :ref:`current_is_dir<class_Directory_method_current_is_dir>` **(** **)** |const|                                                                                    |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`               | :ref:`dir_exists<class_Directory_method_dir_exists>` **(** :ref:`String<class_String>` path **)**                                                                   |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -69,7 +104,7 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                 | :ref:`get_space_left<class_Directory_method_get_space_left>` **(** **)**                                                                                            |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`list_dir_begin<class_Directory_method_list_dir_begin>` **(** :ref:`bool<class_bool>` skip_navigational=false, :ref:`bool<class_bool>` skip_hidden=false **)** |
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`list_dir_begin<class_Directory_method_list_dir_begin>` **(** :ref:`bool<class_bool>` show_navigational=false, :ref:`bool<class_bool>` show_hidden=false **)** |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`list_dir_end<class_Directory_method_list_dir_end>` **(** **)**                                                                                                |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -109,7 +144,7 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` 
 
 .. _class_Directory_method_current_is_dir:
 
-- :ref:`bool<class_bool>` **current_is_dir** **(** **)** const
+- :ref:`bool<class_bool>` **current_is_dir** **(** **)** |const|
 
 Returns whether the current item processed with the last :ref:`get_next<class_Directory_method_get_next>` call is a directory (``.`` and ``..`` are considered directories).
 
@@ -121,6 +156,8 @@ Returns whether the current item processed with the last :ref:`get_next<class_Di
 
 Returns whether the target directory exists. The argument can be relative to the current directory, or an absolute path.
 
+If the ``Directory`` is not open, the path is relative to ``res://``.
+
 ----
 
 .. _class_Directory_method_file_exists:
@@ -128,6 +165,8 @@ Returns whether the target directory exists. The argument can be relative to the
 - :ref:`bool<class_bool>` **file_exists** **(** :ref:`String<class_String>` path **)**
 
 Returns whether the target file exists. The argument can be relative to the current directory, or an absolute path.
+
+If the ``Directory`` is not open, the path is relative to ``res://``.
 
 ----
 
@@ -151,7 +190,7 @@ Returns the currently opened directory's drive index. See :ref:`get_drive<class_
 
 - :ref:`String<class_String>` **get_drive** **(** :ref:`int<class_int>` idx **)**
 
-On Windows, returns the name of the drive (partition) passed as an argument (e.g. ``C:``). On other platforms, or if the requested drive does not existed, the method returns an empty String.
+On Windows, returns the name of the drive (partition) passed as an argument (e.g. ``C:``). On other platforms, or if the requested drive does not exist, the method returns an empty String.
 
 ----
 
@@ -183,13 +222,13 @@ On UNIX desktop systems, returns the available space on the current directory's 
 
 .. _class_Directory_method_list_dir_begin:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **list_dir_begin** **(** :ref:`bool<class_bool>` skip_navigational=false, :ref:`bool<class_bool>` skip_hidden=false **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **list_dir_begin** **(** :ref:`bool<class_bool>` show_navigational=false, :ref:`bool<class_bool>` show_hidden=false **)**
 
-Initializes the stream used to list all files and directories using the :ref:`get_next<class_Directory_method_get_next>` function, closing the current opened stream if needed. Once the stream has been processed, it should typically be closed with :ref:`list_dir_end<class_Directory_method_list_dir_end>`.
+Initializes the stream used to list all files and directories using the :ref:`get_next<class_Directory_method_get_next>` function, closing the currently opened stream if needed. Once the stream has been processed, it should typically be closed with :ref:`list_dir_end<class_Directory_method_list_dir_end>`.
 
-If ``skip_navigational`` is ``true``, ``.`` and ``..`` are filtered out.
+If ``show_navigational`` is ``true``, ``.`` and ``..`` are included too.
 
-If ``skip_hidden`` is ``true``, hidden files are filtered out.
+If ``show_hidden`` is ``true``, hidden files are included too.
 
 ----
 
@@ -197,7 +236,7 @@ If ``skip_hidden`` is ``true``, hidden files are filtered out.
 
 - void **list_dir_end** **(** **)**
 
-Closes the current stream opened with :ref:`list_dir_begin<class_Directory_method_list_dir_begin>` (whether it has been fully processed with :ref:`get_next<class_Directory_method_get_next>` or not does not matter).
+Closes the current stream opened with :ref:`list_dir_begin<class_Directory_method_list_dir_begin>` (whether it has been fully processed with :ref:`get_next<class_Directory_method_get_next>` does not matter).
 
 ----
 
@@ -245,7 +284,13 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` 
 
 - :ref:`Error<enum_@GlobalScope_Error>` **rename** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**
 
-Renames (move) the ``from`` file to the ``to`` destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
+Renames (move) the ``from`` file or directory to the ``to`` destination. Both arguments should be paths to files or directories, either relative or absolute. If the destination file or directory exists and is not access-protected, it will be overwritten.
 
 Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

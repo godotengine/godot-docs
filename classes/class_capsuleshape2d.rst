@@ -9,7 +9,7 @@
 CapsuleShape2D
 ==============
 
-**Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Capsule shape for 2D collisions.
 
@@ -22,7 +22,7 @@ Properties
 ----------
 
 +---------------------------+-----------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`height<class_CapsuleShape2D_property_height>` | ``20.0`` |
+| :ref:`float<class_float>` | :ref:`height<class_CapsuleShape2D_property_height>` | ``30.0`` |
 +---------------------------+-----------------------------------------------------+----------+
 | :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape2D_property_radius>` | ``10.0`` |
 +---------------------------+-----------------------------------------------------+----------+
@@ -35,7 +35,7 @@ Property Descriptions
 - :ref:`float<class_float>` **height**
 
 +-----------+-------------------+
-| *Default* | ``20.0``          |
+| *Default* | ``30.0``          |
 +-----------+-------------------+
 | *Setter*  | set_height(value) |
 +-----------+-------------------+
@@ -60,3 +60,9 @@ The capsule's height.
 
 The capsule's radius.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

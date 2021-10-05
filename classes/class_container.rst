@@ -11,7 +11,7 @@ Container
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`BoxContainer<class_BoxContainer>`, :ref:`CenterContainer<class_CenterContainer>`, :ref:`EditorProperty<class_EditorProperty>`, :ref:`GraphNode<class_GraphNode>`, :ref:`GridContainer<class_GridContainer>`, :ref:`MarginContainer<class_MarginContainer>`, :ref:`PanelContainer<class_PanelContainer>`, :ref:`ScrollContainer<class_ScrollContainer>`, :ref:`SplitContainer<class_SplitContainer>`, :ref:`TabContainer<class_TabContainer>`, :ref:`ViewportContainer<class_ViewportContainer>`
+**Inherited By:** :ref:`AspectRatioContainer<class_AspectRatioContainer>`, :ref:`BoxContainer<class_BoxContainer>`, :ref:`CenterContainer<class_CenterContainer>`, :ref:`EditorProperty<class_EditorProperty>`, :ref:`GraphNode<class_GraphNode>`, :ref:`GridContainer<class_GridContainer>`, :ref:`MarginContainer<class_MarginContainer>`, :ref:`PanelContainer<class_PanelContainer>`, :ref:`ScrollContainer<class_ScrollContainer>`, :ref:`SplitContainer<class_SplitContainer>`, :ref:`SubViewportContainer<class_SubViewportContainer>`, :ref:`TabContainer<class_TabContainer>`
 
 Base node for containers.
 
@@ -25,9 +25,9 @@ A Control can inherit this to create custom container classes.
 Properties
 ----------
 
-+----------------------------------------------+--------------+--------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter | **O:** ``1`` |
-+----------------------------------------------+--------------+--------------+
++----------------------------------------------+--------------+---------------------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter | ``1`` *(parent override)* |
++----------------------------------------------+--------------+---------------------------+
 
 Methods
 -------
@@ -71,3 +71,9 @@ Fit a child control in a given rect. This is mainly a helper for creating custom
 
 Queue resort of the contained children. This is called automatically anyway, but can be called upon request.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

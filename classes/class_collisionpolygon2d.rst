@@ -21,17 +21,17 @@ Provides a 2D collision polygon to a :ref:`CollisionObject2D<class_CollisionObje
 Properties
 ----------
 
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+----------------------------+
-| :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` | :ref:`build_mode<class_CollisionPolygon2D_property_build_mode>`                             | ``0``                      |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+----------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`disabled<class_CollisionPolygon2D_property_disabled>`                                 | ``false``                  |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+----------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`one_way_collision<class_CollisionPolygon2D_property_one_way_collision>`               | ``false``                  |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+----------------------------+
-| :ref:`float<class_float>`                           | :ref:`one_way_collision_margin<class_CollisionPolygon2D_property_one_way_collision_margin>` | ``1.0``                    |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+----------------------------+
-| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`polygon<class_CollisionPolygon2D_property_polygon>`                                   | ``PackedVector2Array(  )`` |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+----------------------------+
++-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` | :ref:`build_mode<class_CollisionPolygon2D_property_build_mode>`                             | ``0``                    |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`disabled<class_CollisionPolygon2D_property_disabled>`                                 | ``false``                |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`one_way_collision<class_CollisionPolygon2D_property_one_way_collision>`               | ``false``                |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`float<class_float>`                           | :ref:`one_way_collision_margin<class_CollisionPolygon2D_property_one_way_collision_margin>` | ``1.0``                  |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`polygon<class_CollisionPolygon2D_property_polygon>`                                   | ``PackedVector2Array()`` |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
 
 Enumerations
 ------------
@@ -119,13 +119,19 @@ The margin used for one-way collision (in pixels). Higher values will make the s
 
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **polygon**
 
-+-----------+----------------------------+
-| *Default* | ``PackedVector2Array(  )`` |
-+-----------+----------------------------+
-| *Setter*  | set_polygon(value)         |
-+-----------+----------------------------+
-| *Getter*  | get_polygon()              |
-+-----------+----------------------------+
++-----------+--------------------------+
+| *Default* | ``PackedVector2Array()`` |
++-----------+--------------------------+
+| *Setter*  | set_polygon(value)       |
++-----------+--------------------------+
+| *Getter*  | get_polygon()            |
++-----------+--------------------------+
 
 The polygon's list of vertices. The final point will be connected to the first. The returned value is a clone of the :ref:`PackedVector2Array<class_PackedVector2Array>`, not a reference.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

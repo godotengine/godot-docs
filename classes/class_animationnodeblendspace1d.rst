@@ -9,7 +9,7 @@
 AnimationNodeBlendSpace1D
 =========================
 
-**Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Blends linearly between two of any number of :ref:`AnimationNode<class_AnimationNode>` of any type placed on a virtual axis.
 
@@ -48,11 +48,11 @@ Methods
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`add_blend_point<class_AnimationNodeBlendSpace1D_method_add_blend_point>` **(** :ref:`AnimationRootNode<class_AnimationRootNode>` node, :ref:`float<class_float>` pos, :ref:`int<class_int>` at_index=-1 **)** |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`get_blend_point_count<class_AnimationNodeBlendSpace1D_method_get_blend_point_count>` **(** **)** const                                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`get_blend_point_count<class_AnimationNodeBlendSpace1D_method_get_blend_point_count>` **(** **)** |const|                                                                                                      |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AnimationRootNode<class_AnimationRootNode>` | :ref:`get_blend_point_node<class_AnimationNodeBlendSpace1D_method_get_blend_point_node>` **(** :ref:`int<class_int>` point **)** const                                                                              |
+| :ref:`AnimationRootNode<class_AnimationRootNode>` | :ref:`get_blend_point_node<class_AnimationNodeBlendSpace1D_method_get_blend_point_node>` **(** :ref:`int<class_int>` point **)** |const|                                                                            |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                         | :ref:`get_blend_point_position<class_AnimationNodeBlendSpace1D_method_get_blend_point_position>` **(** :ref:`int<class_int>` point **)** const                                                                      |
+| :ref:`float<class_float>`                         | :ref:`get_blend_point_position<class_AnimationNodeBlendSpace1D_method_get_blend_point_position>` **(** :ref:`int<class_int>` point **)** |const|                                                                    |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`remove_blend_point<class_AnimationNodeBlendSpace1D_method_remove_blend_point>` **(** :ref:`int<class_int>` point **)**                                                                                        |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -139,7 +139,7 @@ Adds a new point that represents a ``node`` on the virtual axis at a given posit
 
 .. _class_AnimationNodeBlendSpace1D_method_get_blend_point_count:
 
-- :ref:`int<class_int>` **get_blend_point_count** **(** **)** const
+- :ref:`int<class_int>` **get_blend_point_count** **(** **)** |const|
 
 Returns the number of points on the blend axis.
 
@@ -147,7 +147,7 @@ Returns the number of points on the blend axis.
 
 .. _class_AnimationNodeBlendSpace1D_method_get_blend_point_node:
 
-- :ref:`AnimationRootNode<class_AnimationRootNode>` **get_blend_point_node** **(** :ref:`int<class_int>` point **)** const
+- :ref:`AnimationRootNode<class_AnimationRootNode>` **get_blend_point_node** **(** :ref:`int<class_int>` point **)** |const|
 
 Returns the :ref:`AnimationNode<class_AnimationNode>` referenced by the point at index ``point``.
 
@@ -155,7 +155,7 @@ Returns the :ref:`AnimationNode<class_AnimationNode>` referenced by the point at
 
 .. _class_AnimationNodeBlendSpace1D_method_get_blend_point_position:
 
-- :ref:`float<class_float>` **get_blend_point_position** **(** :ref:`int<class_int>` point **)** const
+- :ref:`float<class_float>` **get_blend_point_position** **(** :ref:`int<class_int>` point **)** |const|
 
 Returns the position of the point at index ``point``.
 
@@ -183,3 +183,9 @@ Changes the :ref:`AnimationNode<class_AnimationNode>` referenced by the point at
 
 Updates the position of the point at index ``point`` on the blend axis.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

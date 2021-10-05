@@ -9,7 +9,7 @@
 PacketPeerDTLS
 ==============
 
-**Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 DTLS packet peer.
 
@@ -17,6 +17,10 @@ Description
 -----------
 
 This class represents a DTLS peer connection. It can be used to connect to a DTLS server, and is returned by :ref:`DTLSServer.take_connection<class_DTLSServer_method_take_connection>`.
+
+**Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
+
+**Warning:** SSL/TLS certificate revocation and certificate pinning are currently not supported. Revoked certificates are accepted as long as they are otherwise valid. If this is a concern, you may want to use automatically managed certificates with a short validity period.
 
 Methods
 -------
@@ -26,7 +30,7 @@ Methods
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`disconnect_from_peer<class_PacketPeerDTLS_method_disconnect_from_peer>` **(** **)**                                                                                                                                                                                                             |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Status<enum_PacketPeerDTLS_Status>` | :ref:`get_status<class_PacketPeerDTLS_method_get_status>` **(** **)** const                                                                                                                                                                                                                           |
+| :ref:`Status<enum_PacketPeerDTLS_Status>` | :ref:`get_status<class_PacketPeerDTLS_method_get_status>` **(** **)** |const|                                                                                                                                                                                                                         |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`poll<class_PacketPeerDTLS_method_poll>` **(** **)**                                                                                                                                                                                                                                             |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -79,7 +83,7 @@ Disconnects this peer, terminating the DTLS session.
 
 .. _class_PacketPeerDTLS_method_get_status:
 
-- :ref:`Status<enum_PacketPeerDTLS_Status>` **get_status** **(** **)** const
+- :ref:`Status<enum_PacketPeerDTLS_Status>` **get_status** **(** **)** |const|
 
 Returns the status of the connection. See :ref:`Status<enum_PacketPeerDTLS_Status>` for values.
 
@@ -91,3 +95,9 @@ Returns the status of the connection. See :ref:`Status<enum_PacketPeerDTLS_Statu
 
 Poll the connection to check for incoming packets. Call this frequently to update the status and keep the connection working.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

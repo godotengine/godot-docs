@@ -20,22 +20,24 @@ Description
 
 Base class for GUI sliders.
 
+**Note:** The :ref:`Range.changed<class_Range_signal_changed>` and :ref:`Range.value_changed<class_Range_signal_value_changed>` signals are part of the :ref:`Range<class_Range>` class which this class inherits from.
+
 Properties
 ----------
 
-+------------------------------------------+-----------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                  | :ref:`editable<class_Slider_property_editable>`                 | ``true``     |
-+------------------------------------------+-----------------------------------------------------------------+--------------+
-| :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                      | **O:** ``2`` |
-+------------------------------------------+-----------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                  | :ref:`scrollable<class_Slider_property_scrollable>`             | ``true``     |
-+------------------------------------------+-----------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                    | size_flags_vertical                                             | **O:** ``0`` |
-+------------------------------------------+-----------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                    | :ref:`tick_count<class_Slider_property_tick_count>`             | ``0``        |
-+------------------------------------------+-----------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                  | :ref:`ticks_on_borders<class_Slider_property_ticks_on_borders>` | ``false``    |
-+------------------------------------------+-----------------------------------------------------------------+--------------+
++------------------------------------------+-----------------------------------------------------------------+---------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`editable<class_Slider_property_editable>`                 | ``true``                  |
++------------------------------------------+-----------------------------------------------------------------+---------------------------+
+| :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                      | ``2`` *(parent override)* |
++------------------------------------------+-----------------------------------------------------------------+---------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`scrollable<class_Slider_property_scrollable>`             | ``true``                  |
++------------------------------------------+-----------------------------------------------------------------+---------------------------+
+| :ref:`int<class_int>`                    | size_flags_vertical                                             | ``0`` *(parent override)* |
++------------------------------------------+-----------------------------------------------------------------+---------------------------+
+| :ref:`int<class_int>`                    | :ref:`tick_count<class_Slider_property_tick_count>`             | ``0``                     |
++------------------------------------------+-----------------------------------------------------------------+---------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`ticks_on_borders<class_Slider_property_ticks_on_borders>` | ``false``                 |
++------------------------------------------+-----------------------------------------------------------------+---------------------------+
 
 Property Descriptions
 ---------------------
@@ -102,3 +104,9 @@ Number of ticks displayed on the slider, including border ticks. Ticks are unifo
 
 If ``true``, the slider will display ticks for minimum and maximum values.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

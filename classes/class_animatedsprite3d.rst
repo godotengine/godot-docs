@@ -9,7 +9,7 @@
 AnimatedSprite3D
 ================
 
-**Inherits:** :ref:`SpriteBase3D<class_SpriteBase3D>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`SpriteBase3D<class_SpriteBase3D>` **<** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 2D sprite node in 3D world, that can use multiple 2D textures for animation.
 
@@ -18,11 +18,16 @@ Description
 
 Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource, which can be configured in the editor via the SpriteFrames panel.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/2d_sprite_animation`
+
 Properties
 ----------
 
 +-----------------------------------------+-------------------------------------------------------------+----------------+
-| :ref:`StringName<class_StringName>`     | :ref:`animation<class_AnimatedSprite3D_property_animation>` | ``@"default"`` |
+| :ref:`StringName<class_StringName>`     | :ref:`animation<class_AnimatedSprite3D_property_animation>` | ``&"default"`` |
 +-----------------------------------------+-------------------------------------------------------------+----------------+
 | :ref:`int<class_int>`                   | :ref:`frame<class_AnimatedSprite3D_property_frame>`         | ``0``          |
 +-----------------------------------------+-------------------------------------------------------------+----------------+
@@ -35,15 +40,23 @@ Methods
 -------
 
 +-------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_playing<class_AnimatedSprite3D_method_is_playing>` **(** **)** const                            |
+| :ref:`bool<class_bool>` | :ref:`is_playing<class_AnimatedSprite3D_method_is_playing>` **(** **)** |const|                          |
 +-------------------------+----------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`play<class_AnimatedSprite3D_method_play>` **(** :ref:`StringName<class_StringName>` anim=@"" **)** |
+| void                    | :ref:`play<class_AnimatedSprite3D_method_play>` **(** :ref:`StringName<class_StringName>` anim=&"" **)** |
 +-------------------------+----------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`stop<class_AnimatedSprite3D_method_stop>` **(** **)**                                              |
 +-------------------------+----------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
+
+.. _class_AnimatedSprite3D_signal_animation_finished:
+
+- **animation_finished** **(** **)**
+
+Emitted when the animation is finished (when it plays the last frame). If the animation is looping, this signal is emitted every time the last frame is drawn.
+
+----
 
 .. _class_AnimatedSprite3D_signal_frame_changed:
 
@@ -59,7 +72,7 @@ Property Descriptions
 - :ref:`StringName<class_StringName>` **animation**
 
 +-----------+----------------------+
-| *Default* | ``@"default"``       |
+| *Default* | ``&"default"``       |
 +-----------+----------------------+
 | *Setter*  | set_animation(value) |
 +-----------+----------------------+
@@ -115,7 +128,7 @@ Method Descriptions
 
 .. _class_AnimatedSprite3D_method_is_playing:
 
-- :ref:`bool<class_bool>` **is_playing** **(** **)** const
+- :ref:`bool<class_bool>` **is_playing** **(** **)** |const|
 
 Returns ``true`` if an animation is currently being played.
 
@@ -123,7 +136,7 @@ Returns ``true`` if an animation is currently being played.
 
 .. _class_AnimatedSprite3D_method_play:
 
-- void **play** **(** :ref:`StringName<class_StringName>` anim=@"" **)**
+- void **play** **(** :ref:`StringName<class_StringName>` anim=&"" **)**
 
 Plays the animation named ``anim``. If no ``anim`` is provided, the current animation is played.
 
@@ -135,3 +148,9 @@ Plays the animation named ``anim``. If no ``anim`` is provided, the current anim
 
 Stops the current animation (does not reset the frame counter).
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -16,11 +16,13 @@ Tabs control.
 Description
 -----------
 
-Simple tabs control, similar to :ref:`TabContainer<class_TabContainer>` but is only in charge of drawing tabs, not interact with children.
+Simple tabs control, similar to :ref:`TabContainer<class_TabContainer>` but is only in charge of drawing tabs, not interacting with children.
 
 Properties
 ----------
 
++---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                             | :ref:`clip_tabs<class_Tabs_property_clip_tabs>`                                 | ``true``  |
 +---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
 | :ref:`int<class_int>`                                               | :ref:`current_tab<class_Tabs_property_current_tab>`                             | ``0``     |
 +---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
@@ -36,97 +38,109 @@ Properties
 Methods
 -------
 
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`add_tab<class_Tabs_method_add_tab>` **(** :ref:`String<class_String>` title="", :ref:`Texture2D<class_Texture2D>` icon=null **)** |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`ensure_tab_visible<class_Tabs_method_ensure_tab_visible>` **(** :ref:`int<class_int>` idx **)**                                   |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`get_offset_buttons_visible<class_Tabs_method_get_offset_buttons_visible>` **(** **)** const                                       |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`get_select_with_rmb<class_Tabs_method_get_select_with_rmb>` **(** **)** const                                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_tab_count<class_Tabs_method_get_tab_count>` **(** **)** const                                                                 |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`get_tab_disabled<class_Tabs_method_get_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** const                             |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`get_tab_icon<class_Tabs_method_get_tab_icon>` **(** :ref:`int<class_int>` tab_idx **)** const                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_tab_offset<class_Tabs_method_get_tab_offset>` **(** **)** const                                                               |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`         | :ref:`get_tab_rect<class_Tabs_method_get_tab_rect>` **(** :ref:`int<class_int>` tab_idx **)** const                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`       | :ref:`get_tab_title<class_Tabs_method_get_tab_title>` **(** :ref:`int<class_int>` tab_idx **)** const                                   |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_tabs_rearrange_group<class_Tabs_method_get_tabs_rearrange_group>` **(** **)** const                                           |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`move_tab<class_Tabs_method_move_tab>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**                            |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`remove_tab<class_Tabs_method_remove_tab>` **(** :ref:`int<class_int>` tab_idx **)**                                               |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_select_with_rmb<class_Tabs_method_set_select_with_rmb>` **(** :ref:`bool<class_bool>` enabled **)**                           |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_tab_disabled<class_Tabs_method_set_tab_disabled>` **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)** |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_tab_icon<class_Tabs_method_set_tab_icon>` **(** :ref:`int<class_int>` tab_idx, :ref:`Texture2D<class_Texture2D>` icon **)**   |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_tab_title<class_Tabs_method_set_tab_title>` **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**      |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_tabs_rearrange_group<class_Tabs_method_set_tabs_rearrange_group>` **(** :ref:`int<class_int>` group_id **)**                  |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`add_tab<class_Tabs_method_add_tab>` **(** :ref:`String<class_String>` title="", :ref:`Texture2D<class_Texture2D>` icon=null **)**                                              |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`clear_tab_opentype_features<class_Tabs_method_clear_tab_opentype_features>` **(** :ref:`int<class_int>` tab_idx **)**                                                          |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`ensure_tab_visible<class_Tabs_method_ensure_tab_visible>` **(** :ref:`int<class_int>` idx **)**                                                                                |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`get_offset_buttons_visible<class_Tabs_method_get_offset_buttons_visible>` **(** **)** |const|                                                                                  |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`get_previous_tab<class_Tabs_method_get_previous_tab>` **(** **)** |const|                                                                                                      |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`get_select_with_rmb<class_Tabs_method_get_select_with_rmb>` **(** **)** |const|                                                                                                |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`get_tab_count<class_Tabs_method_get_tab_count>` **(** **)** |const|                                                                                                            |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`get_tab_disabled<class_Tabs_method_get_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                                                        |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture2D<class_Texture2D>`                | :ref:`get_tab_icon<class_Tabs_method_get_tab_icon>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                                                                |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                      | :ref:`get_tab_language<class_Tabs_method_get_tab_language>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                                                        |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`get_tab_offset<class_Tabs_method_get_tab_offset>` **(** **)** |const|                                                                                                          |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`get_tab_opentype_feature<class_Tabs_method_get_tab_opentype_feature>` **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` tag **)** |const|                       |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_Rect2>`                        | :ref:`get_tab_rect<class_Tabs_method_get_tab_rect>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                                                                |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TextDirection<enum_Control_TextDirection>` | :ref:`get_tab_text_direction<class_Tabs_method_get_tab_text_direction>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                                            |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                      | :ref:`get_tab_title<class_Tabs_method_get_tab_title>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                                                              |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`get_tabs_rearrange_group<class_Tabs_method_get_tabs_rearrange_group>` **(** **)** |const|                                                                                      |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`move_tab<class_Tabs_method_move_tab>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**                                                                         |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`remove_tab<class_Tabs_method_remove_tab>` **(** :ref:`int<class_int>` tab_idx **)**                                                                                            |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_select_with_rmb<class_Tabs_method_set_select_with_rmb>` **(** :ref:`bool<class_bool>` enabled **)**                                                                        |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_tab_disabled<class_Tabs_method_set_tab_disabled>` **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)**                                              |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_tab_icon<class_Tabs_method_set_tab_icon>` **(** :ref:`int<class_int>` tab_idx, :ref:`Texture2D<class_Texture2D>` icon **)**                                                |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_tab_language<class_Tabs_method_set_tab_language>` **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` language **)**                                          |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_tab_opentype_feature<class_Tabs_method_set_tab_opentype_feature>` **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` tag, :ref:`int<class_int>` values **)** |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_tab_text_direction<class_Tabs_method_set_tab_text_direction>` **(** :ref:`int<class_int>` tab_idx, :ref:`TextDirection<enum_Control_TextDirection>` direction **)**        |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_tab_title<class_Tabs_method_set_tab_title>` **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**                                                   |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_tabs_rearrange_group<class_Tabs_method_set_tabs_rearrange_group>` **(** :ref:`int<class_int>` group_id **)**                                                               |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
 
-+-----------------------------------+---------------------+------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | button              |                              |
-+-----------------------------------+---------------------+------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | button_pressed      |                              |
-+-----------------------------------+---------------------+------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | close               |                              |
-+-----------------------------------+---------------------+------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | decrement           |                              |
-+-----------------------------------+---------------------+------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | decrement_highlight |                              |
-+-----------------------------------+---------------------+------------------------------+
-| :ref:`Font<class_Font>`           | font                |                              |
-+-----------------------------------+---------------------+------------------------------+
-| :ref:`Color<class_Color>`         | font_color_bg       | Color( 0.69, 0.69, 0.69, 1 ) |
-+-----------------------------------+---------------------+------------------------------+
-| :ref:`Color<class_Color>`         | font_color_disabled | Color( 0.9, 0.9, 0.9, 0.2 )  |
-+-----------------------------------+---------------------+------------------------------+
-| :ref:`Color<class_Color>`         | font_color_fg       | Color( 0.94, 0.94, 0.94, 1 ) |
-+-----------------------------------+---------------------+------------------------------+
-| :ref:`int<class_int>`             | hseparation         | 4                            |
-+-----------------------------------+---------------------+------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | increment           |                              |
-+-----------------------------------+---------------------+------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | increment_highlight |                              |
-+-----------------------------------+---------------------+------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | panel               |                              |
-+-----------------------------------+---------------------+------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | tab_bg              |                              |
-+-----------------------------------+---------------------+------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | tab_disabled        |                              |
-+-----------------------------------+---------------------+------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | tab_fg              |                              |
-+-----------------------------------+---------------------+------------------------------+
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`close<class_Tabs_theme_icon_close>`                                  |                                |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`close_bg_highlight<class_Tabs_theme_style_close_bg_highlight>`       |                                |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`close_bg_pressed<class_Tabs_theme_style_close_bg_pressed>`           |                                |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`decrement<class_Tabs_theme_icon_decrement>`                          |                                |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`decrement_highlight<class_Tabs_theme_icon_decrement_highlight>`      |                                |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`Font<class_Font>`           | :ref:`font<class_Tabs_theme_font_font>`                                    |                                |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_disabled_color<class_Tabs_theme_color_font_disabled_color>`     | ``Color(0.9, 0.9, 0.9, 0.2)``  |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_Tabs_theme_color_font_outline_color>`       | ``Color(1, 1, 1, 1)``          |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_selected_color<class_Tabs_theme_color_font_selected_color>`     | ``Color(0.94, 0.94, 0.94, 1)`` |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`int<class_int>`             | :ref:`font_size<class_Tabs_theme_font_size_font_size>`                     |                                |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_unselected_color<class_Tabs_theme_color_font_unselected_color>` | ``Color(0.69, 0.69, 0.69, 1)`` |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`int<class_int>`             | :ref:`hseparation<class_Tabs_theme_constant_hseparation>`                  | ``4``                          |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`increment<class_Tabs_theme_icon_increment>`                          |                                |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`increment_highlight<class_Tabs_theme_icon_increment_highlight>`      |                                |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`int<class_int>`             | :ref:`outline_size<class_Tabs_theme_constant_outline_size>`                | ``0``                          |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_disabled<class_Tabs_theme_style_tab_disabled>`                   |                                |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_selected<class_Tabs_theme_style_tab_selected>`                   |                                |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_unselected<class_Tabs_theme_style_tab_unselected>`               |                                |
++-----------------------------------+----------------------------------------------------------------------------+--------------------------------+
 
 Signals
 -------
 
-.. _class_Tabs_signal_reposition_active_tab_request:
+.. _class_Tabs_signal_active_tab_rearranged:
 
-- **reposition_active_tab_request** **(** :ref:`int<class_int>` idx_to **)**
+- **active_tab_rearranged** **(** :ref:`int<class_int>` idx_to **)**
 
 Emitted when the active tab is rearranged via mouse drag. See :ref:`drag_to_rearrange_enabled<class_Tabs_property_drag_to_rearrange_enabled>`.
-
-----
-
-.. _class_Tabs_signal_right_button_pressed:
-
-- **right_button_pressed** **(** :ref:`int<class_int>` tab **)**
-
-Emitted when a tab is right-clicked.
 
 ----
 
@@ -146,19 +160,27 @@ Emitted when a tab is clicked, even if it is the current tab.
 
 ----
 
-.. _class_Tabs_signal_tab_close:
+.. _class_Tabs_signal_tab_closed:
 
-- **tab_close** **(** :ref:`int<class_int>` tab **)**
+- **tab_closed** **(** :ref:`int<class_int>` tab **)**
 
 Emitted when a tab is closed.
 
 ----
 
-.. _class_Tabs_signal_tab_hover:
+.. _class_Tabs_signal_tab_hovered:
 
-- **tab_hover** **(** :ref:`int<class_int>` tab **)**
+- **tab_hovered** **(** :ref:`int<class_int>` tab **)**
 
 Emitted when a tab is hovered by the mouse.
+
+----
+
+.. _class_Tabs_signal_tab_rmb_clicked:
+
+- **tab_rmb_clicked** **(** :ref:`int<class_int>` tab **)**
+
+Emitted when a tab is right-clicked.
 
 Enumerations
 ------------
@@ -208,6 +230,22 @@ enum **CloseButtonDisplayPolicy**:
 Property Descriptions
 ---------------------
 
+.. _class_Tabs_property_clip_tabs:
+
+- :ref:`bool<class_bool>` **clip_tabs**
+
++-----------+----------------------+
+| *Default* | ``true``             |
++-----------+----------------------+
+| *Setter*  | set_clip_tabs(value) |
++-----------+----------------------+
+| *Getter*  | get_clip_tabs()      |
++-----------+----------------------+
+
+If ``true``, tabs overflowing this node's width will be hidden, displaying two navigation buttons instead. Otherwise, this node's minimum size is updated so that all tabs are visible.
+
+----
+
 .. _class_Tabs_property_current_tab:
 
 - :ref:`int<class_int>` **current_tab**
@@ -252,7 +290,7 @@ If ``true``, tabs can be rearranged with mouse drag.
 | *Getter*  | get_scrolling_enabled()      |
 +-----------+------------------------------+
 
-if ``true``, the mouse's scroll wheel cab be used to navigate the scroll view.
+if ``true``, the mouse's scroll wheel can be used to navigate the scroll view.
 
 ----
 
@@ -297,6 +335,14 @@ Adds a new tab.
 
 ----
 
+.. _class_Tabs_method_clear_tab_opentype_features:
+
+- void **clear_tab_opentype_features** **(** :ref:`int<class_int>` tab_idx **)**
+
+Removes all OpenType features from the tab title.
+
+----
+
 .. _class_Tabs_method_ensure_tab_visible:
 
 - void **ensure_tab_visible** **(** :ref:`int<class_int>` idx **)**
@@ -307,15 +353,23 @@ Moves the scroll view to make the tab visible.
 
 .. _class_Tabs_method_get_offset_buttons_visible:
 
-- :ref:`bool<class_bool>` **get_offset_buttons_visible** **(** **)** const
+- :ref:`bool<class_bool>` **get_offset_buttons_visible** **(** **)** |const|
 
 Returns ``true`` if the offset buttons (the ones that appear when there's not enough space for all tabs) are visible.
 
 ----
 
+.. _class_Tabs_method_get_previous_tab:
+
+- :ref:`int<class_int>` **get_previous_tab** **(** **)** |const|
+
+Returns the previously active tab index.
+
+----
+
 .. _class_Tabs_method_get_select_with_rmb:
 
-- :ref:`bool<class_bool>` **get_select_with_rmb** **(** **)** const
+- :ref:`bool<class_bool>` **get_select_with_rmb** **(** **)** |const|
 
 Returns ``true`` if select with right mouse button is enabled.
 
@@ -323,7 +377,7 @@ Returns ``true`` if select with right mouse button is enabled.
 
 .. _class_Tabs_method_get_tab_count:
 
-- :ref:`int<class_int>` **get_tab_count** **(** **)** const
+- :ref:`int<class_int>` **get_tab_count** **(** **)** |const|
 
 Returns the number of tabs.
 
@@ -331,7 +385,7 @@ Returns the number of tabs.
 
 .. _class_Tabs_method_get_tab_disabled:
 
-- :ref:`bool<class_bool>` **get_tab_disabled** **(** :ref:`int<class_int>` tab_idx **)** const
+- :ref:`bool<class_bool>` **get_tab_disabled** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns ``true`` if the tab at index ``tab_idx`` is disabled.
 
@@ -339,39 +393,63 @@ Returns ``true`` if the tab at index ``tab_idx`` is disabled.
 
 .. _class_Tabs_method_get_tab_icon:
 
-- :ref:`Texture2D<class_Texture2D>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** const
+- :ref:`Texture2D<class_Texture2D>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns the :ref:`Texture2D<class_Texture2D>` for the tab at index ``tab_idx`` or ``null`` if the tab has no :ref:`Texture2D<class_Texture2D>`.
 
 ----
 
+.. _class_Tabs_method_get_tab_language:
+
+- :ref:`String<class_String>` **get_tab_language** **(** :ref:`int<class_int>` tab_idx **)** |const|
+
+Returns tab title language code.
+
+----
+
 .. _class_Tabs_method_get_tab_offset:
 
-- :ref:`int<class_int>` **get_tab_offset** **(** **)** const
+- :ref:`int<class_int>` **get_tab_offset** **(** **)** |const|
 
 Returns the number of hidden tabs offsetted to the left.
 
 ----
 
+.. _class_Tabs_method_get_tab_opentype_feature:
+
+- :ref:`int<class_int>` **get_tab_opentype_feature** **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` tag **)** |const|
+
+Returns OpenType feature ``tag`` of the tab title.
+
+----
+
 .. _class_Tabs_method_get_tab_rect:
 
-- :ref:`Rect2<class_Rect2>` **get_tab_rect** **(** :ref:`int<class_int>` tab_idx **)** const
+- :ref:`Rect2<class_Rect2>` **get_tab_rect** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns tab :ref:`Rect2<class_Rect2>` with local position and size.
 
 ----
 
+.. _class_Tabs_method_get_tab_text_direction:
+
+- :ref:`TextDirection<enum_Control_TextDirection>` **get_tab_text_direction** **(** :ref:`int<class_int>` tab_idx **)** |const|
+
+Returns tab title text base writing direction.
+
+----
+
 .. _class_Tabs_method_get_tab_title:
 
-- :ref:`String<class_String>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** const
+- :ref:`String<class_String>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
-Returns the title of the tab at index ``tab_idx``. Tab titles default to the name of the indexed child node, but this can be overridden with :ref:`set_tab_title<class_Tabs_method_set_tab_title>`.
+Returns the title of the tab at index ``tab_idx``.
 
 ----
 
 .. _class_Tabs_method_get_tabs_rearrange_group:
 
-- :ref:`int<class_int>` **get_tabs_rearrange_group** **(** **)** const
+- :ref:`int<class_int>` **get_tabs_rearrange_group** **(** **)** |const|
 
 Returns the ``Tabs``' rearrange group ID.
 
@@ -405,9 +483,7 @@ If ``true``, enables selecting a tab with the right mouse button.
 
 - void **set_tab_disabled** **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)**
 
-If ``disabled`` is ``false``, hides the tab at index ``tab_idx``.
-
-**Note:** Its title text will remain unless it is also removed with :ref:`set_tab_title<class_Tabs_method_set_tab_title>`.
+If ``disabled`` is ``true``, disables the tab at index ``tab_idx``, making it non-interactable.
 
 ----
 
@@ -416,6 +492,30 @@ If ``disabled`` is ``false``, hides the tab at index ``tab_idx``.
 - void **set_tab_icon** **(** :ref:`int<class_int>` tab_idx, :ref:`Texture2D<class_Texture2D>` icon **)**
 
 Sets an ``icon`` for the tab at index ``tab_idx``.
+
+----
+
+.. _class_Tabs_method_set_tab_language:
+
+- void **set_tab_language** **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` language **)**
+
+Sets language code of tab title used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
+
+----
+
+.. _class_Tabs_method_set_tab_opentype_feature:
+
+- void **set_tab_opentype_feature** **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` tag, :ref:`int<class_int>` values **)**
+
+Sets OpenType feature ``tag`` for the tab title. More info: `OpenType feature tags <https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags>`__.
+
+----
+
+.. _class_Tabs_method_set_tab_text_direction:
+
+- void **set_tab_text_direction** **(** :ref:`int<class_int>` tab_idx, :ref:`TextDirection<enum_Control_TextDirection>` direction **)**
+
+Sets tab title base writing direction.
 
 ----
 
@@ -431,5 +531,180 @@ Sets a ``title`` for the tab at index ``tab_idx``.
 
 - void **set_tabs_rearrange_group** **(** :ref:`int<class_int>` group_id **)**
 
-Defines the rearrange group ID. Choose for each ``Tabs`` the same value to dragging tabs between ``Tabs``. Enable drag with ``set_drag_to_rearrange_enabled(true)``.
+Defines the rearrange group ID. Choose for each ``Tabs`` the same value to dragging tabs between ``Tabs``. Enable drag with :ref:`drag_to_rearrange_enabled<class_Tabs_property_drag_to_rearrange_enabled>`.
 
+Theme Property Descriptions
+---------------------------
+
+.. _class_Tabs_theme_icon_close:
+
+- :ref:`Texture2D<class_Texture2D>` **close**
+
+The icon for the close button (see :ref:`tab_close_display_policy<class_Tabs_property_tab_close_display_policy>`).
+
+----
+
+.. _class_Tabs_theme_style_close_bg_highlight:
+
+- :ref:`StyleBox<class_StyleBox>` **close_bg_highlight**
+
+Background of the close button when it's being hovered with the cursor.
+
+----
+
+.. _class_Tabs_theme_style_close_bg_pressed:
+
+- :ref:`StyleBox<class_StyleBox>` **close_bg_pressed**
+
+Background of the close button when it's being pressed.
+
+----
+
+.. _class_Tabs_theme_icon_decrement:
+
+- :ref:`Texture2D<class_Texture2D>` **decrement**
+
+Icon for the left arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the first tab is visible), it appears semi-transparent.
+
+----
+
+.. _class_Tabs_theme_icon_decrement_highlight:
+
+- :ref:`Texture2D<class_Texture2D>` **decrement_highlight**
+
+Icon for the left arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
+
+----
+
+.. _class_Tabs_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+The font used to draw tab names.
+
+----
+
+.. _class_Tabs_theme_color_font_disabled_color:
+
+- :ref:`Color<class_Color>` **font_disabled_color**
+
++-----------+-------------------------------+
+| *Default* | ``Color(0.9, 0.9, 0.9, 0.2)`` |
++-----------+-------------------------------+
+
+Font color of disabled tabs.
+
+----
+
+.. _class_Tabs_theme_color_font_outline_color:
+
+- :ref:`Color<class_Color>` **font_outline_color**
+
++-----------+-----------------------+
+| *Default* | ``Color(1, 1, 1, 1)`` |
++-----------+-----------------------+
+
+The tint of text outline of the tab name.
+
+----
+
+.. _class_Tabs_theme_color_font_selected_color:
+
+- :ref:`Color<class_Color>` **font_selected_color**
+
++-----------+--------------------------------+
+| *Default* | ``Color(0.94, 0.94, 0.94, 1)`` |
++-----------+--------------------------------+
+
+Font color of the currently selected tab.
+
+----
+
+.. _class_Tabs_theme_font_size_font_size:
+
+- :ref:`int<class_int>` **font_size**
+
+Font size of the tab names.
+
+----
+
+.. _class_Tabs_theme_color_font_unselected_color:
+
+- :ref:`Color<class_Color>` **font_unselected_color**
+
++-----------+--------------------------------+
+| *Default* | ``Color(0.69, 0.69, 0.69, 1)`` |
++-----------+--------------------------------+
+
+Font color of the other, unselected tabs.
+
+----
+
+.. _class_Tabs_theme_constant_hseparation:
+
+- :ref:`int<class_int>` **hseparation**
+
++-----------+-------+
+| *Default* | ``4`` |
++-----------+-------+
+
+The horizontal separation between the elements inside tabs.
+
+----
+
+.. _class_Tabs_theme_icon_increment:
+
+- :ref:`Texture2D<class_Texture2D>` **increment**
+
+Icon for the right arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the last tab is visible) it appears semi-transparent.
+
+----
+
+.. _class_Tabs_theme_icon_increment_highlight:
+
+- :ref:`Texture2D<class_Texture2D>` **increment_highlight**
+
+Icon for the right arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
+
+----
+
+.. _class_Tabs_theme_constant_outline_size:
+
+- :ref:`int<class_int>` **outline_size**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+The size of the tab text outline.
+
+----
+
+.. _class_Tabs_theme_style_tab_disabled:
+
+- :ref:`StyleBox<class_StyleBox>` **tab_disabled**
+
+The style of disabled tabs.
+
+----
+
+.. _class_Tabs_theme_style_tab_selected:
+
+- :ref:`StyleBox<class_StyleBox>` **tab_selected**
+
+The style of the currently selected tab.
+
+----
+
+.. _class_Tabs_theme_style_tab_unselected:
+
+- :ref:`StyleBox<class_StyleBox>` **tab_unselected**
+
+The style of the other, unselected tabs.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

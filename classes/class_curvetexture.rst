@@ -9,7 +9,7 @@
 CurveTexture
 ============
 
-**Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A texture that shows a curve.
 
@@ -21,11 +21,28 @@ Renders a given :ref:`Curve<class_Curve>` provided to it. Simplifies the task of
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------+----------+
-| :ref:`Curve<class_Curve>` | :ref:`curve<class_CurveTexture_property_curve>` |          |
-+---------------------------+-------------------------------------------------+----------+
-| :ref:`int<class_int>`     | :ref:`width<class_CurveTexture_property_width>` | ``2048`` |
-+---------------------------+-------------------------------------------------+----------+
++---------------------------------------------------+---------------------------------------------------------------+----------+
+| :ref:`Curve<class_Curve>`                         | :ref:`curve<class_CurveTexture_property_curve>`               |          |
++---------------------------------------------------+---------------------------------------------------------------+----------+
+| :ref:`TextureMode<enum_CurveTexture_TextureMode>` | :ref:`texture_mode<class_CurveTexture_property_texture_mode>` | ``0``    |
++---------------------------------------------------+---------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                             | :ref:`width<class_CurveTexture_property_width>`               | ``2048`` |
++---------------------------------------------------+---------------------------------------------------------------+----------+
+
+Enumerations
+------------
+
+.. _enum_CurveTexture_TextureMode:
+
+.. _class_CurveTexture_constant_TEXTURE_MODE_RGB:
+
+.. _class_CurveTexture_constant_TEXTURE_MODE_RED:
+
+enum **TextureMode**:
+
+- **TEXTURE_MODE_RGB** = **0**
+
+- **TEXTURE_MODE_RED** = **1**
 
 Property Descriptions
 ---------------------
@@ -44,6 +61,20 @@ The ``curve`` rendered onto the texture.
 
 ----
 
+.. _class_CurveTexture_property_texture_mode:
+
+- :ref:`TextureMode<enum_CurveTexture_TextureMode>` **texture_mode**
+
++-----------+-------------------------+
+| *Default* | ``0``                   |
++-----------+-------------------------+
+| *Setter*  | set_texture_mode(value) |
++-----------+-------------------------+
+| *Getter*  | get_texture_mode()      |
++-----------+-------------------------+
+
+----
+
 .. _class_CurveTexture_property_width:
 
 - :ref:`int<class_int>` **width**
@@ -58,3 +89,9 @@ The ``curve`` rendered onto the texture.
 
 The width of the texture.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

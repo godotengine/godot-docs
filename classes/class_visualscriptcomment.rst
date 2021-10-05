@@ -9,7 +9,7 @@
 VisualScriptComment
 ===================
 
-**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A Visual Script node used to annotate the script.
 
@@ -23,13 +23,13 @@ Comment nodes can be resized so they encompass a group of nodes.
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`String<class_String>`   | :ref:`description<class_VisualScriptComment_property_description>` | ``""``                  |
-+-------------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_VisualScriptComment_property_size>`               | ``Vector2( 150, 150 )`` |
-+-------------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`String<class_String>`   | :ref:`title<class_VisualScriptComment_property_title>`             | ``"Comment"``           |
-+-------------------------------+--------------------------------------------------------------------+-------------------------+
++-------------------------------+--------------------------------------------------------------------+-----------------------+
+| :ref:`String<class_String>`   | :ref:`description<class_VisualScriptComment_property_description>` | ``""``                |
++-------------------------------+--------------------------------------------------------------------+-----------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_VisualScriptComment_property_size>`               | ``Vector2(150, 150)`` |
++-------------------------------+--------------------------------------------------------------------+-----------------------+
+| :ref:`String<class_String>`   | :ref:`title<class_VisualScriptComment_property_title>`             | ``"Comment"``         |
++-------------------------------+--------------------------------------------------------------------+-----------------------+
 
 Property Descriptions
 ---------------------
@@ -54,13 +54,13 @@ The text inside the comment node.
 
 - :ref:`Vector2<class_Vector2>` **size**
 
-+-----------+-------------------------+
-| *Default* | ``Vector2( 150, 150 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_size(value)         |
-+-----------+-------------------------+
-| *Getter*  | get_size()              |
-+-----------+-------------------------+
++-----------+-----------------------+
+| *Default* | ``Vector2(150, 150)`` |
++-----------+-----------------------+
+| *Setter*  | set_size(value)       |
++-----------+-----------------------+
+| *Getter*  | get_size()            |
++-----------+-----------------------+
 
 The comment node's size (in pixels).
 
@@ -80,3 +80,9 @@ The comment node's size (in pixels).
 
 The comment node's title.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

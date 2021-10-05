@@ -9,7 +9,7 @@
 InputEventJoypadMotion
 ======================
 
-**Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Input event type for gamepad joysticks and other motions. For buttons, see ``InputEventJoypadButton``.
 
@@ -26,18 +26,18 @@ Tutorials
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`     | :ref:`axis<class_InputEventJoypadMotion_property_axis>`             | ``0``   |
-+---------------------------+---------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`axis_value<class_InputEventJoypadMotion_property_axis_value>` | ``0.0`` |
-+---------------------------+---------------------------------------------------------------------+---------+
++-------------------------------------------+---------------------------------------------------------------------+---------+
+| :ref:`JoyAxis<enum_@GlobalScope_JoyAxis>` | :ref:`axis<class_InputEventJoypadMotion_property_axis>`             | ``0``   |
++-------------------------------------------+---------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`                 | :ref:`axis_value<class_InputEventJoypadMotion_property_axis_value>` | ``0.0`` |
++-------------------------------------------+---------------------------------------------------------------------+---------+
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventJoypadMotion_property_axis:
 
-- :ref:`int<class_int>` **axis**
+- :ref:`JoyAxis<enum_@GlobalScope_JoyAxis>` **axis**
 
 +-----------+-----------------+
 | *Default* | ``0``           |
@@ -47,7 +47,7 @@ Property Descriptions
 | *Getter*  | get_axis()      |
 +-----------+-----------------+
 
-Axis identifier. Use one of the :ref:`JoystickList<enum_@GlobalScope_JoystickList>` axis constants.
+Axis identifier. Use one of the :ref:`JoyAxis<enum_@GlobalScope_JoyAxis>` axis constants.
 
 ----
 
@@ -65,3 +65,9 @@ Axis identifier. Use one of the :ref:`JoystickList<enum_@GlobalScope_JoystickLis
 
 Current position of the joystick on the given axis. The value ranges from ``-1.0`` to ``1.0``. A value of ``0`` means the axis is in its resting position.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

@@ -11,97 +11,73 @@ Engine
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Access to basic engine properties.
+Access to engine properties.
 
 Description
 -----------
 
-The ``Engine`` class allows you to query and modify the project's run-time parameters, such as frames per second, time scale, and others.
+The ``Engine`` singleton allows you to query and modify the project's run-time parameters, such as frames per second, time scale, and others.
 
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`   | :ref:`editor_hint<class_Engine_property_editor_hint>`                     | ``true`` |
-+---------------------------+---------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`     | :ref:`iterations_per_second<class_Engine_property_iterations_per_second>` | ``60``   |
-+---------------------------+---------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`physics_jitter_fix<class_Engine_property_physics_jitter_fix>`       | ``0.5``  |
-+---------------------------+---------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`     | :ref:`target_fps<class_Engine_property_target_fps>`                       | ``0``    |
-+---------------------------+---------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`time_scale<class_Engine_property_time_scale>`                       | ``1.0``  |
-+---------------------------+---------------------------------------------------------------------------+----------+
++---------------------------+---------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`physics_jitter_fix<class_Engine_property_physics_jitter_fix>`             | ``0.5``  |
++---------------------------+---------------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` | ``60``   |
++---------------------------+---------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`   | :ref:`print_error_messages<class_Engine_property_print_error_messages>`         | ``true`` |
++---------------------------+---------------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`target_fps<class_Engine_property_target_fps>`                             | ``0``    |
++---------------------------+---------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`time_scale<class_Engine_property_time_scale>`                             | ``1.0``  |
++---------------------------+---------------------------------------------------------------------------------+----------+
 
 Methods
 -------
 
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_author_info<class_Engine_method_get_author_info>` **(** **)** const                                       |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`           | :ref:`get_copyright_info<class_Engine_method_get_copyright_info>` **(** **)** const                                 |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_donor_info<class_Engine_method_get_donor_info>` **(** **)** const                                         |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`get_frames_drawn<class_Engine_method_get_frames_drawn>` **(** **)**                                           |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`get_frames_per_second<class_Engine_method_get_frames_per_second>` **(** **)** const                           |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`get_idle_frames<class_Engine_method_get_idle_frames>` **(** **)** const                                       |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_license_info<class_Engine_method_get_license_info>` **(** **)** const                                     |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`get_license_text<class_Engine_method_get_license_text>` **(** **)** const                                     |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`MainLoop<class_MainLoop>`     | :ref:`get_main_loop<class_Engine_method_get_main_loop>` **(** **)** const                                           |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`get_physics_frames<class_Engine_method_get_physics_frames>` **(** **)** const                                 |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`get_physics_interpolation_fraction<class_Engine_method_get_physics_interpolation_fraction>` **(** **)** const |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>`         | :ref:`get_singleton<class_Engine_method_get_singleton>` **(** :ref:`String<class_String>` name **)** const          |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_version_info<class_Engine_method_get_version_info>` **(** **)** const                                     |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`has_singleton<class_Engine_method_has_singleton>` **(** :ref:`String<class_String>` name **)** const          |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`is_in_physics_frame<class_Engine_method_is_in_physics_frame>` **(** **)** const                               |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`               | :ref:`get_author_info<class_Engine_method_get_author_info>` **(** **)** |const|                                                                              |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                         | :ref:`get_copyright_info<class_Engine_method_get_copyright_info>` **(** **)** |const|                                                                        |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`               | :ref:`get_donor_info<class_Engine_method_get_donor_info>` **(** **)** |const|                                                                                |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`get_frames_drawn<class_Engine_method_get_frames_drawn>` **(** **)**                                                                                    |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                         | :ref:`get_frames_per_second<class_Engine_method_get_frames_per_second>` **(** **)** |const|                                                                  |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`               | :ref:`get_license_info<class_Engine_method_get_license_info>` **(** **)** |const|                                                                            |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`get_license_text<class_Engine_method_get_license_text>` **(** **)** |const|                                                                            |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`MainLoop<class_MainLoop>`                   | :ref:`get_main_loop<class_Engine_method_get_main_loop>` **(** **)** |const|                                                                                  |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`get_physics_frames<class_Engine_method_get_physics_frames>` **(** **)** |const|                                                                        |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                         | :ref:`get_physics_interpolation_fraction<class_Engine_method_get_physics_interpolation_fraction>` **(** **)** |const|                                        |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`get_process_frames<class_Engine_method_get_process_frames>` **(** **)** |const|                                                                        |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>`                       | :ref:`get_singleton<class_Engine_method_get_singleton>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                         |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_singleton_list<class_Engine_method_get_singleton_list>` **(** **)** |const|                                                                        |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`               | :ref:`get_version_info<class_Engine_method_get_version_info>` **(** **)** |const|                                                                            |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`has_singleton<class_Engine_method_has_singleton>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                         |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`is_editor_hint<class_Engine_method_is_editor_hint>` **(** **)** |const|                                                                                |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`is_in_physics_frame<class_Engine_method_is_in_physics_frame>` **(** **)** |const|                                                                      |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`register_singleton<class_Engine_method_register_singleton>` **(** :ref:`StringName<class_StringName>` name, :ref:`Object<class_Object>` instance **)** |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`unregister_singleton<class_Engine_method_unregister_singleton>` **(** :ref:`StringName<class_StringName>` name **)**                                   |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
-
-.. _class_Engine_property_editor_hint:
-
-- :ref:`bool<class_bool>` **editor_hint**
-
-+-----------+------------------------+
-| *Default* | ``true``               |
-+-----------+------------------------+
-| *Setter*  | set_editor_hint(value) |
-+-----------+------------------------+
-| *Getter*  | is_editor_hint()       |
-+-----------+------------------------+
-
-If ``true``, it is running inside the editor. Useful for tool scripts.
-
-----
-
-.. _class_Engine_property_iterations_per_second:
-
-- :ref:`int<class_int>` **iterations_per_second**
-
-+-----------+----------------------------------+
-| *Default* | ``60``                           |
-+-----------+----------------------------------+
-| *Setter*  | set_iterations_per_second(value) |
-+-----------+----------------------------------+
-| *Getter*  | get_iterations_per_second()      |
-+-----------+----------------------------------+
-
-The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process<class_Node_method__physics_process>` methods are run. This value should generally always be set to ``60`` or above, as Godot doesn't interpolate the physics step. As a result, values lower than ``60`` will look stuttery. This value can be increased to make input more reactive or work around tunneling issues, but keep in mind doing so will increase CPU usage.
-
-----
 
 .. _class_Engine_property_physics_jitter_fix:
 
@@ -115,7 +91,45 @@ The number of fixed iterations per second. This controls how often physics simul
 | *Getter*  | get_physics_jitter_fix()      |
 +-----------+-------------------------------+
 
-Controls how much physics ticks are synchronized with real time. For 0 or less, the ticks are synchronized. Such values are recommended for network games, where clock synchronization matters. Higher values cause higher deviation of in-game clock and real clock, but allows to smooth out framerate jitters. The default value of 0.5 should be fine for most; values above 2 could cause the game to react to dropped frames with a noticeable delay and are not recommended.
+Controls how much physics ticks are synchronized with real time. For 0 or less, the ticks are synchronized. Such values are recommended for network games, where clock synchronization matters. Higher values cause higher deviation of the in-game clock and real clock but smooth out framerate jitters. The default value of 0.5 should be fine for most; values above 2 could cause the game to react to dropped frames with a noticeable delay and are not recommended.
+
+**Note:** For best results, when using a custom physics interpolation solution, the physics jitter fix should be disabled by setting :ref:`physics_jitter_fix<class_Engine_property_physics_jitter_fix>` to ``0``.
+
+----
+
+.. _class_Engine_property_physics_ticks_per_second:
+
+- :ref:`int<class_int>` **physics_ticks_per_second**
+
++-----------+-------------------------------------+
+| *Default* | ``60``                              |
++-----------+-------------------------------------+
+| *Setter*  | set_physics_ticks_per_second(value) |
++-----------+-------------------------------------+
+| *Getter*  | get_physics_ticks_per_second()      |
++-----------+-------------------------------------+
+
+The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process<class_Node_method__physics_process>` methods are run. This value should generally always be set to ``60`` or above, as Godot doesn't interpolate the physics step. As a result, values lower than ``60`` will look stuttery. This value can be increased to make input more reactive or work around tunneling issues, but keep in mind doing so will increase CPU usage. See also :ref:`target_fps<class_Engine_property_target_fps>`.
+
+----
+
+.. _class_Engine_property_print_error_messages:
+
+- :ref:`bool<class_bool>` **print_error_messages**
+
++-----------+---------------------------------+
+| *Default* | ``true``                        |
++-----------+---------------------------------+
+| *Setter*  | set_print_error_messages(value) |
++-----------+---------------------------------+
+| *Getter*  | is_printing_error_messages()    |
++-----------+---------------------------------+
+
+If ``false``, stops printing error and warning messages to the console and editor Output log. This can be used to hide error and warning messages during unit test suite runs. This property is equivalent to the :ref:`ProjectSettings.application/run/disable_stderr<class_ProjectSettings_property_application/run/disable_stderr>` project setting.
+
+**Warning:** If you set this to ``false`` anywhere in the project, important error messages may be hidden even if they are emitted from other scripts. If this is set to ``false`` in a ``@tool`` script, this will also impact the editor itself. Do *not* report bugs before ensuring error messages are enabled (as they are by default).
+
+**Note:** This property does not impact the editor's Errors tab when running a project from the editor.
 
 ----
 
@@ -131,7 +145,7 @@ Controls how much physics ticks are synchronized with real time. For 0 or less, 
 | *Getter*  | get_target_fps()      |
 +-----------+-----------------------+
 
-The desired frames per second. If the hardware cannot keep up, this setting may not be respected. A value of 0 means no limit.
+The desired frames per second. If the hardware cannot keep up, this setting may not be respected. A value of 0 means no limit. See also :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>`.
 
 ----
 
@@ -154,7 +168,7 @@ Method Descriptions
 
 .. _class_Engine_method_get_author_info:
 
-- :ref:`Dictionary<class_Dictionary>` **get_author_info** **(** **)** const
+- :ref:`Dictionary<class_Dictionary>` **get_author_info** **(** **)** |const|
 
 Returns engine author information in a Dictionary.
 
@@ -170,7 +184,7 @@ Returns engine author information in a Dictionary.
 
 .. _class_Engine_method_get_copyright_info:
 
-- :ref:`Array<class_Array>` **get_copyright_info** **(** **)** const
+- :ref:`Array<class_Array>` **get_copyright_info** **(** **)** |const|
 
 Returns an Array of copyright information Dictionaries.
 
@@ -182,11 +196,11 @@ Returns an Array of copyright information Dictionaries.
 
 .. _class_Engine_method_get_donor_info:
 
-- :ref:`Dictionary<class_Dictionary>` **get_donor_info** **(** **)** const
+- :ref:`Dictionary<class_Dictionary>` **get_donor_info** **(** **)** |const|
 
 Returns a Dictionary of Arrays of donor names.
 
-{``platinum_sponsors``, ``gold_sponsors``, ``mini_sponsors``, ``gold_donors``, ``silver_donors``, ``bronze_donors``}
+{``platinum_sponsors``, ``gold_sponsors``, ``silver_sponsors``, ``bronze_sponsors``, ``mini_sponsors``, ``gold_donors``, ``silver_donors``, ``bronze_donors``}
 
 ----
 
@@ -194,29 +208,21 @@ Returns a Dictionary of Arrays of donor names.
 
 - :ref:`int<class_int>` **get_frames_drawn** **(** **)**
 
-Returns the total number of frames drawn. If the render loop is disabled with ``--disable-render-loop`` via command line, this returns ``0``. See also :ref:`get_idle_frames<class_Engine_method_get_idle_frames>`.
+Returns the total number of frames drawn. On headless platforms, or if the render loop is disabled with ``--disable-render-loop`` via command line, :ref:`get_frames_drawn<class_Engine_method_get_frames_drawn>` always returns ``0``. See :ref:`get_process_frames<class_Engine_method_get_process_frames>`.
 
 ----
 
 .. _class_Engine_method_get_frames_per_second:
 
-- :ref:`float<class_float>` **get_frames_per_second** **(** **)** const
+- :ref:`float<class_float>` **get_frames_per_second** **(** **)** |const|
 
 Returns the frames per second of the running game.
 
 ----
 
-.. _class_Engine_method_get_idle_frames:
-
-- :ref:`int<class_int>` **get_idle_frames** **(** **)** const
-
-Returns the total number of frames passed since engine initialization which is advanced on each **idle frame**, regardless of whether the render loop is enabled. See also :ref:`get_frames_drawn<class_Engine_method_get_frames_drawn>`.
-
-----
-
 .. _class_Engine_method_get_license_info:
 
-- :ref:`Dictionary<class_Dictionary>` **get_license_info** **(** **)** const
+- :ref:`Dictionary<class_Dictionary>` **get_license_info** **(** **)** |const|
 
 Returns Dictionary of licenses used by Godot and included third party components.
 
@@ -224,7 +230,7 @@ Returns Dictionary of licenses used by Godot and included third party components
 
 .. _class_Engine_method_get_license_text:
 
-- :ref:`String<class_String>` **get_license_text** **(** **)** const
+- :ref:`String<class_String>` **get_license_text** **(** **)** |const|
 
 Returns Godot license text.
 
@@ -232,7 +238,7 @@ Returns Godot license text.
 
 .. _class_Engine_method_get_main_loop:
 
-- :ref:`MainLoop<class_MainLoop>` **get_main_loop** **(** **)** const
+- :ref:`MainLoop<class_MainLoop>` **get_main_loop** **(** **)** |const|
 
 Returns the main loop object (see :ref:`MainLoop<class_MainLoop>` and :ref:`SceneTree<class_SceneTree>`).
 
@@ -240,31 +246,61 @@ Returns the main loop object (see :ref:`MainLoop<class_MainLoop>` and :ref:`Scen
 
 .. _class_Engine_method_get_physics_frames:
 
-- :ref:`int<class_int>` **get_physics_frames** **(** **)** const
+- :ref:`int<class_int>` **get_physics_frames** **(** **)** |const|
 
-Returns the total number of frames passed since engine initialization which is advanced on each **physics frame**.
+Returns the total number of frames passed since engine initialization which is advanced on each **physics frame**. See also :ref:`get_process_frames<class_Engine_method_get_process_frames>`.
+
+:ref:`get_physics_frames<class_Engine_method_get_physics_frames>` can be used to run expensive logic less often without relying on a :ref:`Timer<class_Timer>`:
+
+::
+
+    func _physics_process(_delta):
+        if Engine.get_physics_frames() % 2 == 0:
+            pass  # Run expensive logic only once every 2 physics frames here.
 
 ----
 
 .. _class_Engine_method_get_physics_interpolation_fraction:
 
-- :ref:`float<class_float>` **get_physics_interpolation_fraction** **(** **)** const
+- :ref:`float<class_float>` **get_physics_interpolation_fraction** **(** **)** |const|
 
 Returns the fraction through the current physics tick we are at the time of rendering the frame. This can be used to implement fixed timestep interpolation.
 
 ----
 
+.. _class_Engine_method_get_process_frames:
+
+- :ref:`int<class_int>` **get_process_frames** **(** **)** |const|
+
+Returns the total number of frames passed since engine initialization which is advanced on each **process frame**, regardless of whether the render loop is enabled. See also :ref:`get_frames_drawn<class_Engine_method_get_frames_drawn>` and :ref:`get_physics_frames<class_Engine_method_get_physics_frames>`.
+
+:ref:`get_process_frames<class_Engine_method_get_process_frames>` can be used to run expensive logic less often without relying on a :ref:`Timer<class_Timer>`:
+
+::
+
+    func _process(_delta):
+        if Engine.get_process_frames() % 2 == 0:
+            pass  # Run expensive logic only once every 2 process (render) frames here.
+
+----
+
 .. _class_Engine_method_get_singleton:
 
-- :ref:`Object<class_Object>` **get_singleton** **(** :ref:`String<class_String>` name **)** const
+- :ref:`Object<class_Object>` **get_singleton** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
 Returns a global singleton with given ``name``. Often used for plugins, e.g. GodotPayments.
 
 ----
 
+.. _class_Engine_method_get_singleton_list:
+
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_singleton_list** **(** **)** |const|
+
+----
+
 .. _class_Engine_method_get_version_info:
 
-- :ref:`Dictionary<class_Dictionary>` **get_version_info** **(** **)** const
+- :ref:`Dictionary<class_Dictionary>` **get_version_info** **(** **)** |const|
 
 Returns the current engine version information in a Dictionary.
 
@@ -288,26 +324,79 @@ Returns the current engine version information in a Dictionary.
 
 The ``hex`` value is encoded as follows, from left to right: one byte for the major, one byte for the minor, one byte for the patch version. For example, "3.1.12" would be ``0x03010C``. **Note:** It's still an int internally, and printing it will give you its decimal representation, which is not particularly meaningful. Use hexadecimal literals for easy version comparisons from code:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     if Engine.get_version_info().hex >= 0x030200:
         # Do things specific to version 3.2 or later
     else:
         # Do things specific to versions before 3.2
 
+ .. code-tab:: csharp
+
+    if ((int)Engine.GetVersionInfo()["hex"] >= 0x030200)
+    {
+        // Do things specific to version 3.2 or later
+    }
+    else
+    {
+        // Do things specific to versions before 3.2
+    }
+
+
+
 ----
 
 .. _class_Engine_method_has_singleton:
 
-- :ref:`bool<class_bool>` **has_singleton** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **has_singleton** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
 Returns ``true`` if a singleton with given ``name`` exists in global scope.
 
 ----
 
+.. _class_Engine_method_is_editor_hint:
+
+- :ref:`bool<class_bool>` **is_editor_hint** **(** **)** |const|
+
+Returns ``true`` if the script is currently running inside the editor, ``false`` otherwise. This is useful for ``@tool`` scripts to conditionally draw editor helpers, or prevent accidentally running "game" code that would affect the scene state while in the editor:
+
+::
+
+    if Engine.is_editor_hint():
+        draw_gizmos()
+    else:
+        simulate_physics()
+
+See `Running code in the editor <https://docs.godotengine.org/en/latest/tutorials/plugins/running_code_in_the_editor.html>`__ in the documentation for more information.
+
+**Note:** To detect whether the script is run from an editor *build* (e.g. when pressing :kbd:`F5`), use :ref:`OS.has_feature<class_OS_method_has_feature>` with the ``"editor"`` argument instead. ``OS.has_feature("editor")`` will evaluate to ``true`` both when the code is running in the editor and when running the project from the editor, but it will evaluate to ``false`` when the code is run from an exported project.
+
+----
+
 .. _class_Engine_method_is_in_physics_frame:
 
-- :ref:`bool<class_bool>` **is_in_physics_frame** **(** **)** const
+- :ref:`bool<class_bool>` **is_in_physics_frame** **(** **)** |const|
 
 Returns ``true`` if the game is inside the fixed process and physics phase of the game loop.
 
+----
+
+.. _class_Engine_method_register_singleton:
+
+- void **register_singleton** **(** :ref:`StringName<class_StringName>` name, :ref:`Object<class_Object>` instance **)**
+
+----
+
+.. _class_Engine_method_unregister_singleton:
+
+- void **unregister_singleton** **(** :ref:`StringName<class_StringName>` name **)**
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`

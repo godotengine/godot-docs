@@ -9,7 +9,7 @@
 WebSocketClient
 ===============
 
-**Inherits:** :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>` **<** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>` **<** :ref:`MultiplayerPeer<class_MultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A WebSocket client implementation.
 
@@ -18,11 +18,13 @@ Description
 
 This class implements a WebSocket client compatible with any RFC 6455-compliant WebSocket server.
 
-This client can be optionally used as a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
+This client can be optionally used as a multiplayer peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
-After starting the client (:ref:`connect_to_url<class_WebSocketClient_method_connect_to_url>`), you will need to :ref:`NetworkedMultiplayerPeer.poll<class_NetworkedMultiplayerPeer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`).
+After starting the client (:ref:`connect_to_url<class_WebSocketClient_method_connect_to_url>`), you will need to :ref:`MultiplayerPeer.poll<class_MultiplayerPeer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`).
 
 You will receive appropriate signals when connecting, disconnecting, or when new data is available.
+
+**Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
 Properties
 ----------
@@ -36,15 +38,15 @@ Properties
 Methods
 -------
 
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`connect_to_url<class_WebSocketClient_method_connect_to_url>` **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` protocols=PackedStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(  ) **)** |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`disconnect_from_host<class_WebSocketClient_method_disconnect_from_host>` **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**                                                                                                                                                                  |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_connected_host<class_WebSocketClient_method_get_connected_host>` **(** **)** const                                                                                                                                                                                                                                       |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_connected_port<class_WebSocketClient_method_get_connected_port>` **(** **)** const                                                                                                                                                                                                                                       |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`connect_to_url<class_WebSocketClient_method_connect_to_url>` **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` protocols=PackedStringArray(), :ref:`bool<class_bool>` gd_mp_api=false, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray() **)** |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`disconnect_from_host<class_WebSocketClient_method_disconnect_from_host>` **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**                                                                                                                                                              |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`get_connected_host<class_WebSocketClient_method_get_connected_host>` **(** **)** |const|                                                                                                                                                                                                                                 |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`get_connected_port<class_WebSocketClient_method_get_connected_port>` **(** **)** |const|                                                                                                                                                                                                                                 |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -127,15 +129,17 @@ Method Descriptions
 
 .. _class_WebSocketClient_method_connect_to_url:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **connect_to_url** **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` protocols=PackedStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(  ) **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **connect_to_url** **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` protocols=PackedStringArray(), :ref:`bool<class_bool>` gd_mp_api=false, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray() **)**
 
 Connects to the given URL requesting one of the given ``protocols`` as sub-protocol. If the list empty (default), no sub-protocol will be requested.
 
-If ``true`` is passed as ``gd_mp_api``, the client will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, connections to non-Godot servers will not work, and :ref:`data_received<class_WebSocketClient_signal_data_received>` will not be emitted.
+If ``true`` is passed as ``gd_mp_api``, the client will behave like a multiplayer peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, connections to non-Godot servers will not work, and :ref:`data_received<class_WebSocketClient_signal_data_received>` will not be emitted.
 
 If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_PacketPeer>` functions (``put_packet``, ``get_packet``, etc.) on the :ref:`WebSocketPeer<class_WebSocketPeer>` returned via ``get_peer(1)`` and not on this object directly (e.g. ``get_peer(1).put_packet(data)``).
 
 You can optionally pass a list of ``custom_headers`` to be added to the handshake HTTP request.
+
+**Note:** To avoid mixed content warnings or errors in HTML5, you may have to use a ``url`` that starts with ``wss://`` (secure) instead of ``ws://``. When doing so, make sure to use the fully qualified domain name that matches the one defined in the server's SSL certificate. Do not connect directly via the IP address for ``wss://`` connections, as it won't match with the SSL certificate.
 
 **Note:** Specifying ``custom_headers`` is not supported in HTML5 exports due to browsers restrictions.
 
@@ -151,7 +155,7 @@ Disconnects this client from the connected host. See :ref:`WebSocketPeer.close<c
 
 .. _class_WebSocketClient_method_get_connected_host:
 
-- :ref:`String<class_String>` **get_connected_host** **(** **)** const
+- :ref:`String<class_String>` **get_connected_host** **(** **)** |const|
 
 Return the IP address of the currently connected host.
 
@@ -159,7 +163,13 @@ Return the IP address of the currently connected host.
 
 .. _class_WebSocketClient_method_get_connected_port:
 
-- :ref:`int<class_int>` **get_connected_port** **(** **)** const
+- :ref:`int<class_int>` **get_connected_port** **(** **)** |const|
 
 Return the IP port of the currently connected host.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
