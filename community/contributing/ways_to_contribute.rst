@@ -180,7 +180,7 @@ always provide:
    project that reproduces this issue out of the box, zip it and attach it to
    the issue (you can do this by drag and drop).
    Even if you think that the issue is trivial to reproduce, adding a minimal
-   project that lets reproduce it is a big added value. You have to keep in
+   project that lets everyone reproduce it is a big added value. You have to keep in
    mind that there are thousands of issues in the tracker, and developers can
    only dedicate little time to each issue.
 
