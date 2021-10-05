@@ -21,9 +21,9 @@ Description
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_CanvasModulate_property_color>` | ``Color( 1, 1, 1, 1 )`` |
-+---------------------------+---------------------------------------------------+-------------------------+
++---------------------------+---------------------------------------------------+-----------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_CanvasModulate_property_color>` | ``Color(1, 1, 1, 1)`` |
++---------------------------+---------------------------------------------------+-----------------------+
 
 Property Descriptions
 ---------------------
@@ -32,13 +32,18 @@ Property Descriptions
 
 - :ref:`Color<class_Color>` **color**
 
-+-----------+-------------------------+
-| *Default* | ``Color( 1, 1, 1, 1 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_color(value)        |
-+-----------+-------------------------+
-| *Getter*  | get_color()             |
-+-----------+-------------------------+
++-----------+-----------------------+
+| *Default* | ``Color(1, 1, 1, 1)`` |
++-----------+-----------------------+
+| *Setter*  | set_color(value)      |
++-----------+-----------------------+
+| *Getter*  | get_color()           |
++-----------+-----------------------+
 
 The tint color to apply.
 
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
