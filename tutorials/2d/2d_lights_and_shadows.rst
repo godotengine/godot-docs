@@ -162,7 +162,7 @@ for a polygon and some other information. For this demo, since our wall is a squ
 set ``Polygon`` to a square. The other default settings are fine.
 
 The first setting, ``Closed`` can be either ``on`` or ``off``. A closed polygon occludes light
-coming from all directions. An open polygon only occludes light from one direction
+coming from all directions. An open polygon only occludes light from one direction.
 
 ``Cull Mode`` lets you select which direction gets culled. The default is ``Disabled``, meaning the occluder
 will cast a shadow no matter which side the light is on. The other two settings ``Clockwise`` and
