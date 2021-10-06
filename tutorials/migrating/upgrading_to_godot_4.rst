@@ -618,7 +618,7 @@ converter doesn't support updating existing setups:
 +=====================+=======================+============================================================================+
 | AnimationTreePlayer | AnimationTree         | AnimationTreePlayer was deprecated since Godot 3.1.                        |
 +---------------------+-----------------------+----------------------------------------------------------------------------+
-| BakedLightmap       | LightmapGI            | See :ref:`doc_baked_lightmaps`.                                            |
+| BakedLightmap       | LightmapGI            | See :ref:`doc_using_lightmap_gi`.                                          |
 +---------------------+-----------------------+                                                                            |
 | BakedLightmapData   | LightmapGIData        |                                                                            |
 +---------------------+-----------------------+----------------------------------------------------------------------------+

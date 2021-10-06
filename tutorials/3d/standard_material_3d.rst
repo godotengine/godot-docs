@@ -267,9 +267,9 @@ Emission
 --------
 
 *Emission* specifies how much light is emitted by the material (keep in mind this
-does not include light surrounding geometry unless :ref:`doc_gi_probes` are used).
-This value is added to the resulting final image and is not affected by other
-lighting in the scene.
+does not include light surrounding geometry unless :ref:`VoxelGI <doc_using_voxel_gi>`
+or :ref:`SDFGI <doc_sdfgi>` are used). This value is added to the resulting
+final image and is not affected by other lighting in the scene.
 
 .. image:: img/spatial_material15.png
 

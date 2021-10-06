@@ -23,6 +23,8 @@ your texture to display correctly on all platforms, you should avoid using
 textures larger than 4096×4096 and use a power of two size if the texture needs
 to repeat.
 
+.. _doc_3d_rendering_limitations_color_banding:
+
 Color banding
 -------------
 
