@@ -55,7 +55,7 @@ Start by declaring the member variables this object will need:
     #ifndef PLAYER_H
     #define PLAYER_H
 
-    #include <AnimatedSprite.hpp>
+    #include <AnimatedSprite2D.hpp>
     #include <Area2D.hpp>
     #include <CollisionShape2D.hpp>
     #include <Godot.hpp>
@@ -64,7 +64,7 @@ Start by declaring the member variables this object will need:
     class Player : public godot::Area2D {
         GODOT_CLASS(Player, godot::Area2D)
 
-        godot::AnimatedSprite *_animated_sprite;
+        godot::AnimatedSprite2D *_animated_sprite;
         godot::CollisionShape2D *_collision_shape;
         godot::Input *_input;
         godot::Vector2 _screen_size; // Size of the game window.
@@ -120,7 +120,7 @@ a good time to find the size of the game window:
     #include "player.hpp"
 
     void Player::_ready() {
-        _animated_sprite = get_node<godot::AnimatedSprite>("AnimatedSprite");
+        _animated_sprite = get_node<godot::AnimatedSprite2D>("AnimatedSprite2D");
         _collision_shape = get_node<godot::CollisionShape2D>("CollisionShape2D");
         _input = godot::Input::get_singleton();
         _screen_size = get_viewport_rect().size;
@@ -161,9 +161,9 @@ which returns ``true`` if it's pressed or ``false`` if it isn't.
 
         if velocity.length() > 0:
             velocity = velocity.normalized() * speed
-            $AnimatedSprite.play()
+            $AnimatedSprite2D.play()
         else:
-            $AnimatedSprite.stop()
+            $AnimatedSprite2D.stop()
 
  .. code-tab:: csharp
 
@@ -191,7 +191,7 @@ which returns ``true`` if it's pressed or ``false`` if it isn't.
             velocity.y -= 1;
         }
 
-        var animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+        var animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
         if (velocity.Length() > 0)
         {
@@ -237,16 +237,16 @@ diagonal movement.
          It's good to know but won't be necessary for the rest of this tutorial.
 
 We also check whether the player is moving so we can call ``play()`` or
-``stop()`` on the AnimatedSprite.
+``stop()`` on the AnimatedSprite2D.
 
          ``$`` is shorthand for ``get_node()``. So in the code above,
-         ``$AnimatedSprite.play()`` is the same as
-         ``get_node("AnimatedSprite").play()``.
+         ``$AnimatedSprite2D.play()`` is the same as
+         ``get_node("AnimatedSprite2D").play()``.
 
 .. tip:: In GDScript, ``$`` returns the node at the relative path from the
          current node, or returns ``null`` if the node is not found. Since
-         AnimatedSprite is a child of the current node, we can use
-         ``$AnimatedSprite``.
+         AnimatedSprite2D is a child of the current node, we can use
+         ``$AnimatedSprite2D``.
 
 Now that we have a movement direction, we can update the player's position. We
 can also use ``clamp()`` to prevent it from leaving the screen. *Clamping* a
@@ -289,7 +289,7 @@ the player around the screen in all directions.
             ``Attempt to call function 'play' in base 'null instance' on a null
             instance``
 
-            this likely means you spelled the name of the AnimatedSprite node
+            this likely means you spelled the name of the AnimatedSprite2D node
             wrong. Node names are case-sensitive and ``$NodeName`` must match
             the name you see in the scene tree.
 
@@ -297,7 +297,7 @@ Choosing animations
 ~~~~~~~~~~~~~~~~~~~
 
 Now that the player can move, we need to change which animation the
-AnimatedSprite is playing based on its direction. We have the "walk" animation,
+AnimatedSprite2D is playing based on its direction. We have the "walk" animation,
 which shows the player walking to the right. This animation should be flipped
 horizontally using the ``flip_h`` property for left movement. We also have the
 "up" animation, which should be flipped vertically with ``flip_v`` for downward
@@ -307,27 +307,27 @@ movement. Let's place this code at the end of the ``_process()`` function:
  .. code-tab:: gdscript GDScript
 
         if velocity.x != 0:
-            $AnimatedSprite.animation = "walk"
-            $AnimatedSprite.flip_v = false
+            $AnimatedSprite2D.animation = "walk"
+            $AnimatedSprite2D.flip_v = false
             # See the note below about boolean assignment.
-            $AnimatedSprite.flip_h = velocity.x < 0
+            $AnimatedSprite2D.flip_h = velocity.x < 0
         elif velocity.y != 0:
-            $AnimatedSprite.animation = "up"
-            $AnimatedSprite.flip_v = velocity.y > 0
+            $AnimatedSprite2D.animation = "up"
+            $AnimatedSprite2D.flip_v = velocity.y > 0
 
  .. code-tab:: csharp
 
         if (velocity.x != 0)
         {
-            animatedSprite.Animation = "walk";
-            animatedSprite.FlipV = false;
+            animatedSprite2D.Animation = "walk";
+            animatedSprite2D.FlipV = false;
             // See the note below about boolean assignment.
-            animatedSprite.FlipH = velocity.x < 0;
+            animatedSprite2D.FlipH = velocity.x < 0;
         }
         else if (velocity.y != 0)
         {
-            animatedSprite.Animation = "up";
-            animatedSprite.FlipV = velocity.y > 0;
+            animatedSprite2D.Animation = "up";
+            animatedSprite2D.FlipV = velocity.y > 0;
         }
 
  .. code-tab:: cpp
@@ -351,19 +351,19 @@ movement. Let's place this code at the end of the ``_process()`` function:
            .. code-tab :: gdscript GDScript
 
              if velocity.x < 0:
-                 $AnimatedSprite.flip_h = true
+                 $AnimatedSprite2D.flip_h = true
              else:
-                 $AnimatedSprite.flip_h = false
+                 $AnimatedSprite2D.flip_h = false
 
            .. code-tab:: csharp
 
              if (velocity.x < 0)
              {
-                 animatedSprite.FlipH = true;
+                 animatedSprite2D.FlipH = true;
              }
              else
              {
-                 animatedSprite.FlipH = false;
+                 animatedSprite2D.FlipH = false;
              }
 
 Play the scene again and check that the animations are correct in each of the

@@ -44,7 +44,7 @@ There are two ways to save resources. They can be:
 2. **Built-in**, saved inside the ``.tscn`` or the ``.scn`` file they're attached to.
 
 To be more specific, here's a :ref:`Texture <class_Texture>`
-in a :ref:`Sprite <class_Sprite>` node:
+in a :ref:`Sprite2D <class_Sprite2D>` node:
 
 .. image:: img/spriteprop.png
 
@@ -83,7 +83,7 @@ There are two ways to load resources from code. First, you can use the ``load()`
     public override void _Ready()
     {
         var texture = (Texture)GD.Load("res://robi.png"); // Godot loads the Resource when it reads the line.
-        var sprite = GetNode<Sprite>("sprite");
+        var sprite = GetNode<Sprite2D>("sprite");
         sprite.Texture = texture;
     }
 

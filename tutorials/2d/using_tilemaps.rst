@@ -9,7 +9,7 @@ Introduction
 A tilemap is a grid of tiles used to create a game's layout. There are several
 benefits to using :ref:`TileMap <class_TileMap>` nodes to design your levels.
 First, they make it possible to draw the layout by "painting" the tiles onto a
-grid, which is much faster than placing individual :ref:`Sprite <class_Sprite>`
+grid, which is much faster than placing individual :ref:`Sprite2D <class_Sprite2D>`
 nodes one by one. Second, they allow for much larger levels because they are
 optimized for drawing large numbers of tiles. Finally, you can add collision,
 occlusion, and navigation shapes to tiles, adding additional functionality to

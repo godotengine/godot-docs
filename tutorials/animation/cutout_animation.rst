@@ -32,7 +32,7 @@ Godot provides tools for working with cutout rigs, and is ideal for the workflow
    means animations can control much more than just motion of objects. Textures,
    sprite sizes, pivots, opacity, color modulation, and more, can all be animated
    and blended.
--  **Combine animation styles**: AnimatedSprite allows traditional cel animation
+-  **Combine animation styles**: AnimatedSprite2D allows traditional cel animation
    to be used alongside cutout animation. In cel animation different animation
    frames use entirely different drawings rather than the same pieces positioned
    differently. In an otherwise cutout-based animation, cel animation can be used
@@ -87,7 +87,7 @@ and dragging with the left mouse button. To exit rotate mode hit :kbd:`ESC`.
 
 The rotation pivot is wrong and needs to be adjusted.
 
-This small cross in the middle of the :ref:`Sprite <class_Sprite>` is
+This small cross in the middle of the :ref:`Sprite2D <class_Sprite2D>` is
 the rotation pivot:
 
 .. image:: img/tuto_cutout4.png
@@ -96,13 +96,13 @@ Adjusting the pivot
 ~~~~~~~~~~~~~~~~~~~
 
 The pivot can be adjusted by changing the *offset* property in the
-Sprite:
+Sprite2D:
 
 .. image:: img/tuto_cutout5.png
 
 The pivot can also be adjusted *visually*. While hovering over the
 desired pivot point,  press :kbd:`V` to move the pivot there for the
-selected Sprite. There is also a tool in the tool bar that has a
+selected Sprite2D. There is also a tool in the tool bar that has a
 similar function.
 
 .. image:: img/tutovec_torso2.gif

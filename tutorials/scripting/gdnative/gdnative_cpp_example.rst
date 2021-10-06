@@ -178,12 +178,12 @@ GDNative node we'll be creating. We will name it ``gdexample.h``:
     #define GDEXAMPLE_H
 
     #include <Godot.hpp>
-    #include <Sprite.hpp>
+    #include <Sprite2D.hpp>
 
     namespace godot {
 
-    class GDExample : public Sprite {
-        GODOT_CLASS(GDExample, Sprite)
+    class GDExample : public Sprite2D {
+        GODOT_CLASS(GDExample, Sprite2D)
 
     private:
         float time_passed;
@@ -209,11 +209,11 @@ GDNative node we'll be creating. We will name it ``gdexample.h``:
     #define GDEXAMPLE_H
 
     #include <Godot.hpp>
-    #include <Sprite.hpp>
+    #include <Sprite2D.hpp>
 
     namespace godot {
 
-    class GDExample : public godot::GodotScript<Sprite> {
+    class GDExample : public godot::GodotScript<Sprite2D> {
         GODOT_CLASS(GDExample)
 
     private:
@@ -233,14 +233,14 @@ GDNative node we'll be creating. We will name it ``gdexample.h``:
     #endif
 
 There are a few things of note to the above. We're including ``Godot.hpp`` which
-contains all our basic definitions. After that, we include ``Sprite.hpp`` which
-contains bindings to the Sprite class. We'll be extending this class in our
+contains all our basic definitions. After that, we include ``Sprite2D.hpp`` which
+contains bindings to the Sprite2D class. We'll be extending this class in our
 module.
 
 We're using the namespace ``godot``, since everything in GDNative is defined
 within this namespace.
 
-Then we have our class definition, which inherits from our Sprite through a
+Then we have our class definition, which inherits from our Sprite2D through a
 container class. We'll see a few side effects of this later on. The
 ``GODOT_CLASS`` macro sets up a few internal things for us.
 
@@ -331,8 +331,8 @@ it. However, we do not have to tell Godot about our constructor, destructor and
 The other method of note is our ``_process`` function, which keeps track
 of how much time has passed and calculates a new position for our sprite using a
 sine and cosine function. What stands out is calling
-``owner->set_position`` to call one of the build in methods of our Sprite. This
-is because our class is a container class; ``owner`` points to the actual Sprite
+``owner->set_position`` to call one of the build in methods of our Sprite2D. This
+is because our class is a container class; ``owner`` points to the actual Sprite2D
 node our script relates to. In the upcoming NativeScript 1.1, ``set_position``
 can be called directly on our class.
 
@@ -480,7 +480,7 @@ library contains our NativeScript. It also defines the ``class_name`` which
 identifies the NativeScript in our plugin we want to use.
 
 Time to jump back into Godot. We load up the main scene we created way back in
-the beginning and now add a Sprite to our scene:
+the beginning and now add a Sprite2D to our scene:
 
 .. image:: img/gdnative_cpp_nodes.png
 
@@ -831,7 +831,7 @@ script on our main node and implemented our signal like this:
 
     extends Node
 
-    func _on_Sprite_position_changed(node, new_pos):
+    func _on_Sprite2D_position_changed(node, new_pos):
         print("The position of " + node.name + " is now " + str(new_pos))
 
 Every second we simply output our position to the console.

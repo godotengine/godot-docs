@@ -146,7 +146,7 @@ following code:
    # Convert Image to ImageTexture.
    var tex = ImageTexture.new()
    tex.create_from_image(img)
-   # Set Sprite Texture.
+   # Set sprite texture.
    $sprite.texture = tex
 
 But if you use this in ``_ready()`` or from the first frame of the :ref:`Viewport's <class_Viewport>` initialization,

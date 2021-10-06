@@ -199,9 +199,9 @@ Movement and walls
 
 If you've downloaded the sample project, this example is in "BasicMovement.tscn".
 
-For this example, add a ``KinematicBody2D`` with two children: a ``Sprite`` and a
-``CollisionShape2D``. Use the Godot "icon.png" as the Sprite's texture (drag it
-from the Filesystem dock to the *Texture* property of the ``Sprite``). In the
+For this example, add a ``KinematicBody2D`` with two children: a ``Sprite2D`` and a
+``CollisionShape2D``. Use the Godot "icon.png" as the Sprite2D's texture (drag it
+from the Filesystem dock to the *Texture* property of the ``Sprite2D``). In the
 ``CollisionShape2D``'s *Shape* property, select "New RectangleShape2D" and
 size the rectangle to fit over the sprite image.
 

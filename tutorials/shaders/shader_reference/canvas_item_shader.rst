@@ -132,7 +132,7 @@ is usually:
 | in bool **AT_LIGHT_PASS**      | ``true`` if this is a light pass.                 |
 +--------------------------------+---------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE** | Normalized pixel size of default 2D texture.      |
-|                                | For a Sprite with a texture of size 64x32px,      |
+|                                | For a Sprite2D with a texture of size 64x32px,    |
 |                                | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)` |
 +--------------------------------+---------------------------------------------------+
 | inout vec2 **VERTEX**          | Vertex, in image space.                           |
@@ -147,7 +147,7 @@ is usually:
 Fragment built-ins
 ^^^^^^^^^^^^^^^^^^
 
-Certain Nodes (for example, :ref:`Sprites <class_Sprite>`) display a texture by default. However,
+Certain Nodes (for example, :ref:`Sprite2Ds <class_Sprite2D>`) display a texture by default. However,
 when a custom fragment function is attached to these nodes, the texture lookup needs to be done
 manually. Godot does not provide the texture color in the ``COLOR`` built-in variable; to read
 the texture color for such nodes, use:
@@ -185,7 +185,7 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 | sampler2D **TEXTURE**                       | Default 2D texture.                                           |
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE**              | Normalized pixel size of default 2D texture.                  |
-|                                             | For a Sprite with a texture of size 64x32px,                  |
+|                                             | For a Sprite2D with a texture of size 64x32px,                |
 |                                             | **TEXTURE_PIXEL_SIZE** = :code`vec2(1/64, 1/32)`              |
 +---------------------------------------------+---------------------------------------------------------------+
 | sampler2D **SPECULAR_SHININESS_TEXTURE**    |                                                               |
@@ -244,7 +244,7 @@ When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``tru
 | sampler2D **TEXTURE**          | Current texture in use for CanvasItem.                                       |
 +--------------------------------+------------------------------------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE** | Normalized pixel size of default 2D texture.                                 |
-|                                | For a Sprite with a texture of size 64x32px,                                 |
+|                                | For a Sprite2D with a texture of size 64x32px,                               |
 |                                | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)`                            |
 +--------------------------------+------------------------------------------------------------------------------+
 | in vec2 **SCREEN_UV**          | **SCREEN_TEXTURE** Coordinate (for using with screen texture).               |

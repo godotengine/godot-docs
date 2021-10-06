@@ -88,7 +88,7 @@ Here is the code for the player using signals to emit the bullet:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Sprite
+    extends Sprite2D
 
     signal shoot(bullet, direction, location)
 
@@ -104,7 +104,7 @@ Here is the code for the player using signals to emit the bullet:
 
  .. code-tab:: csharp
 
-    public class Player : Sprite
+    public class Player : Sprite2D
     {
         [Signal]
         delegate void Shoot(PackedScene bullet, Vector2 direction, Vector2 location);

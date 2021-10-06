@@ -53,10 +53,10 @@ or :kbd:`Cmd + S` on macOS.
 Sprite animation
 ~~~~~~~~~~~~~~~~
 
-Click on the ``Player`` node and add an :ref:`AnimatedSprite
-<class_AnimatedSprite>` node as a child. The ``AnimatedSprite`` will handle the
+Click on the ``Player`` node and add an :ref:`AnimatedSprite2D
+<class_AnimatedSprite2D>` node as a child. The ``AnimatedSprite2D`` will handle the
 appearance and animations for our player. Notice that there is a warning symbol
-next to the node. An ``AnimatedSprite`` requires a :ref:`SpriteFrames
+next to the node. An ``AnimatedSprite2D`` requires a :ref:`SpriteFrames
 <class_SpriteFrames>` resource, which is a list of the animations it can
 display. To create one, find the ``Frames`` property in the Inspector and click
 "[empty]" -> "New SpriteFrames". Click again to open the "SpriteFrames" panel:
@@ -74,7 +74,7 @@ side of the panel for the corresponding animation:
 .. image:: img/spriteframes_panel2.png
 
 The player images are a bit too large for the game window, so we need to scale
-them down. Click on the ``AnimatedSprite`` node and set the ``Scale`` property
+them down. Click on the ``AnimatedSprite2D`` node and set the ``Scale`` property
 to ``(0.5, 0.5)``. You can find it in the Inspector under the ``Node2D``
 heading.
 

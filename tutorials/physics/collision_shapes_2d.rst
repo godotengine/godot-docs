@@ -87,8 +87,8 @@ If it is set to **Solids** (the default), collisions will include the polygon
 and its contained area. If it is set to **Segments**, collisions will only
 include the polygon edges.
 
-You can generate a concave collision shape from the editor by selecting a Sprite
-and using the **Sprite** menu at the top of the 2D viewport. The Sprite menu
+You can generate a concave collision shape from the editor by selecting a Sprite2D
+and using the **Sprite2D** menu at the top of the 2D viewport. The Sprite2D menu
 dropdown exposes an option called **Create CollisionPolygon2D Sibling**.
 Once you click it, it displays a menu with 3 settings:
 
@@ -108,7 +108,7 @@ Once you click it, it displays a menu with 3 settings:
     be blocked by small, decorative details.
 
     To use a separate image for collision polygon generation, create another
-    Sprite, generate a collision polygon sibling from it then remove the Sprite
+    Sprite2D, generate a collision polygon sibling from it then remove the Sprite2D
     node. This way, you can exclude small details from the generated collision.
 
 Performance caveats

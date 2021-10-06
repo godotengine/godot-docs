@@ -171,15 +171,15 @@ be used in the documentation. Here's the list of available tags:
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
 | Tag                       | Effect                         | Usage                             | Result                                            |
 +===========================+================================+===================================+===================================================+
-| [Class]                   | Link a class                   | Move the [Sprite].                | Move the :ref:`class_sprite`.                     |
+| [Class]                   | Link a class                   | Move the [Sprite2D].              | Move the :ref:`class_Sprite2D`.                   |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [method methodname]       | Link to a method in this class | Call [method hide].               | See :ref:`hide <class_spatial_method_hide>`.      |
+| [method methodname]       | Link to a method in this class | Call [method hide].               | Call :ref:`hide <class_Node3D_method_hide>`.      |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [method Class.methodname] | Link to another class's method | Call [method Spatial.hide].       | See :ref:`hide <class_spatial_method_hide>`.      |
+| [method Class.methodname] | Link to another class's method | Call [method Node3D.hide].        | Call :ref:`hide <class_Node3D_method_hide>`.      |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [member membername]       | Link to a member in this class | Get [member scale].               | Get :ref:`scale <class_node2d_property_scale>`.   |
+| [member membername]       | Link to a member in this class | Get [member scale].               | Get :ref:`scale <class_Node2D_property_scale>`.   |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [member Class.membername] | Link to another class's member | Get [member Node2D.scale].        | Get :ref:`scale <class_node2d_property_scale>`.   |
+| [member Class.membername] | Link to another class's member | Get [member Node2D.scale].        | Get :ref:`scale <class_Node2D_property_scale>`.   |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
 | [signal signalname]       | Link to a signal in this class | Emit [signal renamed].            | Emit :ref:`renamed <class_node_signal_renamed>`.  |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+

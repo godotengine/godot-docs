@@ -57,7 +57,7 @@ exception, not the norm.
 
 |image1|
 
-Sprite is a Node2D, a CanvasItem and a Node. It has all the properties
+Sprite2D is a Node2D, a CanvasItem and a Node. It has all the properties
 and features of its three parent classes, like transforms or the ability
 to draw custom shapes and render with a custom shader.
 

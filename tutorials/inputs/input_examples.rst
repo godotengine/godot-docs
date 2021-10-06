@@ -303,7 +303,7 @@ Mouse motion
 the mouse moves. You can find the move's distance with the ``relative``
 property.
 
-Here's an example using mouse events to drag-and-drop a :ref:`Sprite <class_Sprite>`
+Here's an example using mouse events to drag-and-drop a :ref:`Sprite2D <class_Sprite2D>`
 node:
 
 .. tabs::
@@ -318,7 +318,7 @@ node:
 
     func _input(event):
         if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
-            if (event.position - $Sprite.position).length() < click_radius:
+            if (event.position - $Sprite2D.position).length() < click_radius:
                 # Start dragging if the click is on the sprite.
                 if not dragging and event.pressed:
                     dragging = true
@@ -328,7 +328,7 @@ node:
 
         if event is InputEventMouseMotion and dragging:
             # While dragging, move the sprite with the mouse.
-            $Sprite.position = event.position
+            $Sprite2D.position = event.position
 
  .. code-tab:: csharp
 
@@ -342,7 +342,7 @@ node:
 
         public override void _Input(InputEvent inputEvent)
         {
-            Sprite sprite = GetNodeOrNull<Sprite>("Sprite");
+            Sprite2D sprite = GetNodeOrNull<Sprite2D>("Sprite2D");
             if (sprite == null)
             {
                 return; // No suitable node was found.

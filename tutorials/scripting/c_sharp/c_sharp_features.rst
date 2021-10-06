@@ -19,28 +19,28 @@ C# is a statically typed language. Therefore, you can't do the following:
     mySprite.SetFrame(0);
 
 The method ``GetNode()`` returns a ``Node`` instance.
-You must explicitly convert it to the desired derived type, ``Sprite`` in this case.
+You must explicitly convert it to the desired derived type, ``Sprite2D`` in this case.
 
 For this, you have various options in C#.
 
 **Casting and Type Checking**
 
-Throws ``InvalidCastException`` if the returned node cannot be cast to Sprite.
+Throws ``InvalidCastException`` if the returned node cannot be cast to Sprite2D.
 You would use it instead of the ``as`` operator if you are pretty sure it won't fail.
 
 .. code-block:: csharp
 
-    Sprite mySprite = (Sprite)GetNode("MySprite");
+    Sprite2D mySprite = (Sprite2D)GetNode("MySprite");
     mySprite.SetFrame(0);
 
 **Using the AS operator**
 
-The ``as`` operator returns ``null`` if the node cannot be cast to Sprite,
+The ``as`` operator returns ``null`` if the node cannot be cast to Sprite2D,
 and for that reason, it cannot be used with value types.
 
 .. code-block:: csharp
 
-    Sprite mySprite = GetNode("MySprite") as Sprite;
+    Sprite2D mySprite = GetNode("MySprite") as Sprite2D;
     // Only call SetFrame() if mySprite is not null
     mySprite?.SetFrame(0);
 
@@ -52,28 +52,28 @@ Generic methods are also provided to make this type conversion transparent.
 
 .. code-block:: csharp
 
-    Sprite mySprite = GetNode<Sprite>("MySprite");
+    Sprite2D mySprite = GetNode<Sprite2D>("MySprite");
     mySprite.SetFrame(0);
 
 ``GetNodeOrNull<T>()`` uses the ``as`` operator and will return ``null`` if the node cannot be cast to the desired type.
 
 .. code-block:: csharp
 
-    Sprite mySprite = GetNodeOrNull<Sprite>("MySprite");
+    Sprite2D mySprite = GetNodeOrNull<Sprite2D>("MySprite");
     // Only call SetFrame() if mySprite is not null
     mySprite?.SetFrame(0);
 
 **Type checking using the IS operator**
 
-To check if the node can be cast to Sprite, you can use the ``is`` operator.
-The ``is`` operator returns false if the node cannot be cast to Sprite,
+To check if the node can be cast to Sprite2D, you can use the ``is`` operator.
+The ``is`` operator returns false if the node cannot be cast to Sprite2D,
 otherwise it returns true.
 
 .. code-block:: csharp
 
-    if (GetNode("MySprite") is Sprite)
+    if (GetNode("MySprite") is Sprite2D)
     {
-        // Yup, it's a sprite!
+        // Yup, it's a Sprite2D!
     }
 
 For more advanced type checking, you can look into `Pattern Matching <https://docs.microsoft.com/en-us/dotnet/csharp/pattern-matching>`_.

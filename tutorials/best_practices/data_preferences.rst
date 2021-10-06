@@ -303,8 +303,8 @@ to group them together as related concepts, then it makes sense to use them as
 strings. That way, a separate data structure to execute on the printing is
 unnecessary.
 
-AnimatedTexture vs. AnimatedSprite vs. AnimationPlayer vs. AnimationTree
-------------------------------------------------------------------------
+AnimatedTexture vs. AnimatedSprite2D vs. AnimationPlayer vs. AnimationTree
+--------------------------------------------------------------------------
 
 Under what circumstances should one use each of Godot's animation classes?
 The answer may not be immediately clear to new Godot users.
@@ -324,13 +324,13 @@ that users have very little control.
 
 Also note that AnimatedTexture is a :ref:`Resource <class_Resource>` unlike
 the other :ref:`Node <class_Node>` objects discussed here. One might create
-a :ref:`Sprite <class_Sprite>` node that uses AnimatedTexture as its texture.
+a :ref:`Sprite2D <class_Sprite2D>` node that uses AnimatedTexture as its texture.
 Or (something the others can't do) one could add AnimatedTextures as tiles
 in a :ref:`TileSet <class_TileSet>` and integrate it with a
 :ref:`TileMap <class_TileMap>` for many auto-animating backgrounds that
 all render in a single batched draw call.
 
-The AnimatedSprite node, in combination with the
+The AnimatedSprite2D node, in combination with the
 :ref:`SpriteFrames <class_SpriteFrames>` resource, allows one to create a
 variety of animation sequences through spritesheets, flip between animations,
 and control their speed, regional offset, and orientation. This makes them
@@ -340,7 +340,7 @@ If one needs trigger other effects in relation to animation changes (for
 example, create particle effects, call functions, or manipulate other
 peripheral elements besides the frame-based animation), then will need to use
 an :ref:`AnimationPlayer <class_AnimationPlayer>` node in conjunction with
-the AnimatedSprite.
+the AnimatedSprite2D.
 
 AnimationPlayers are also the tool one will need to use if they wish to design
 more complex 2D animation systems, such as...

@@ -699,7 +699,7 @@ But this is not all, depending what you do, you will be greeted with
 some (hopefully positive) surprises.
 
 -  If you inherit from :ref:`class_Node` (or any derived node type, such as
-   Sprite), your new class will appear in the editor, in the inheritance
+   Sprite2D), your new class will appear in the editor, in the inheritance
    tree in the "Add Node" dialog.
 -  If you inherit from :ref:`class_Resource`, it will appear in the resource
    list, and all the exposed properties can be serialized when

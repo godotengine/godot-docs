@@ -86,7 +86,7 @@ at various points, and change their timing.
 Each line in the Animation Panel is an animation track that references a
 Normal or Transform property of a node. Each track stores a path to
 a node and its affected property. For example, the position track
-in the illustration refers to to the ``position`` property of the Sprite
+in the illustration refers to to the ``position`` property of the Sprite2D
 node.
 
 .. figure:: img/animation_normal_track.png
@@ -124,7 +124,7 @@ its child. We will animate the sprite to move between two points on the screen.
    Therefore, it is not recommended to add nodes that have a 2D/3D transform
    as a child of an AnimationPlayer node.
 
-The sprite holds an image texture. For this tutorial, select the Sprite node,
+The sprite holds an image texture. For this tutorial, select the Sprite2D node,
 click Texture in the Inspector, and then click Load. Select the default Godot
 icon for the sprite's texture.
 

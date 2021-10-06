@@ -114,14 +114,14 @@ Here is how a ``_process()`` function might look for you:
 Try it out
 -----------
 
-Add a ``Sprite`` node to your scene and set the texture to Godot icon. Attach
+Add a ``Sprite2D`` node to your scene and set the texture to Godot icon. Attach
 and open a script, and change it to this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     tool
-    extends Sprite
+    extends Sprite2D
 
     func _process(delta):
         rotation_degrees += 180 * delta
@@ -132,7 +132,7 @@ and open a script, and change it to this:
     using System;
 
     [Tool]
-    public class MySprite : Sprite
+    public class MySprite : Sprite2D
     {
         public override void _Process(float delta)
         {
@@ -189,7 +189,7 @@ Add and export a variable speed to the script. The function set_speed after
  .. code-tab:: gdscript GDScript
 
     tool
-    extends Sprite
+    extends Sprite2D
 
 
     export var speed = 1 setget set_speed
@@ -210,7 +210,7 @@ Add and export a variable speed to the script. The function set_speed after
     using System;
 
     [Tool]
-    public class MySprite : Sprite
+    public class MySprite : Sprite2D
     {
         private float speed = 1;
 

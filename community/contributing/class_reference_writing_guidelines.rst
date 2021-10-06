@@ -125,19 +125,19 @@ the text. Here's the list of available tags:
 +----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
 | Tag                        | Effect                               | Usage                             | Result                                            |
 +============================+======================================+===================================+===================================================+
-| [Class]                    | Link a class                         | Move the [Sprite].                | Move the :ref:`class_sprite`.                     |
+| [Class]                    | Link a class                         | Move the [Sprite2D].              | Move the :ref:`class_Sprite2D`.                   |
 +----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [method methodname]        | Link to a method in this class       | Call [method hide].               | See :ref:`hide <class_spatial_method_hide>`.      |
+| [method methodname]        | Link to a method in this class       | Call [method hide].               | Call :ref:`hide <class_Node3D_method_hide>`.      |
 +----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [method Class.methodname]  | Link to another class's method       | Call [method Spatial.hide].       | See :ref:`hide <class_spatial_method_hide>`.      |
+| [method Class.methodname]  | Link to another class's method       | Call [method Node3D.hide].        | Call :ref:`hide <class_Node3D_method_hide>`.      |
 +----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [member membername]        | Link to a member in this class       | Get [member scale].               | Get :ref:`scale <class_node2d_property_scale>`.   |
+| [member membername]        | Link to a member in this class       | Get [member scale].               | Get :ref:`scale <class_Node2D_property_scale>`.   |
 +----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [member Class.membername]  | Link to another class's member       | Get [member Node2D.scale].        | Get :ref:`scale <class_node2d_property_scale>`.   |
+| [member Class.membername]  | Link to another class's member       | Get [member Node2D.scale].        | Get :ref:`scale <class_Node2D_property_scale>`.   |
 +----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [signal signalname]        | Link to a signal in this class       | Emit [signal renamed].            | Emit :ref:`renamed <class_node_signal_renamed>`.  |
+| [signal signalname]        | Link to a signal in this class       | Emit [signal renamed].            | Emit :ref:`renamed <class_Node_signal_renamed>`.  |
 +----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [signal Class.signalname]  | Link to another class's signal       | Emit [signal Node.renamed].       | Emit :ref:`renamed <class_node_signal_renamed>`.  |
+| [signal Class.signalname]  | Link to another class's signal       | Emit [signal Node.renamed].       | Emit :ref:`renamed <class_Node_signal_renamed>`.  |
 +----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
 | [b] [/b]                   | Bold                                 | Some [b]bold[/b] text.            | Some **bold** text.                               |
 +----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
@@ -164,7 +164,7 @@ example:
 
     [codeblock]
     func _ready():
-        var sprite = get_node("Sprite")
+        var sprite = get_node("Sprite2D")
         print(sprite.get_pos())
     [/codeblock]
 
@@ -173,7 +173,7 @@ Will display as:
 .. code-block:: gdscript
 
     func _ready():
-        var sprite = get_node("Sprite")
+        var sprite = get_node("Sprite2D")
         print(sprite.get_pos())
 
 If you need to have different code version in GDScript and C#, use
@@ -189,13 +189,13 @@ workflow.
     [codeblocks]
     [gdscript]
     func _ready():
-        var sprite = get_node("Sprite")
+        var sprite = get_node("Sprite2D")
         print(sprite.get_pos())
     [/gdscript]
     [csharp]
     public override void _Ready()
     {
-        var sprite = GetNode("Sprite");
+        var sprite = GetNode("Sprite2D");
         GD.Print(sprite.GetPos());
     }
     [/csharp]
@@ -207,14 +207,14 @@ The above will display as:
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        var sprite = get_node("Sprite")
+        var sprite = get_node("Sprite2D")
         print(sprite.get_pos())
 
  .. code-tab:: csharp
 
     public override void _Ready()
     {
-        var sprite = GetNode("Sprite");
+        var sprite = GetNode("Sprite2D");
         GD.Print(sprite.GetPos());
     }
 

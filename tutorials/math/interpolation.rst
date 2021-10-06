@@ -43,7 +43,7 @@ Here is example pseudo-code for going from point A to B using interpolation:
     func _physics_process(delta):
         t += delta * 0.4
 
-        $Sprite.position = $A.position.linear_interpolate($B.position, t)
+        $Sprite2D.position = $A.position.linear_interpolate($B.position, t)
 
 It will produce the following motion:
 
@@ -89,7 +89,7 @@ Interpolation can be used to smooth movement, rotation, etc. Here is an example 
     func _physics_process(delta):
         var mouse_pos = get_local_mouse_position()
 
-        $Sprite.position = $Sprite.position.linear_interpolate(mouse_pos, delta * FOLLOW_SPEED)
+        $Sprite2D.position = $Sprite2D.position.linear_interpolate(mouse_pos, delta * FOLLOW_SPEED)
 
 Here is how it looks:
 

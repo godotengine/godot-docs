@@ -300,7 +300,7 @@ The exception is topics that explain static typing concepts to users.
     const MainAttack := preload("res://fire_attack.gd")
     var hit_points := 5
     var name: String = "Bob"
-    var body_sprite := $Sprite as Sprite
+    var body_sprite := $Sprite2D as Sprite2D
 
 
 **Do** write constants and variables with dynamic typing:
@@ -310,7 +310,7 @@ The exception is topics that explain static typing concepts to users.
     const MainAttack = preload("res://fire_attack.gd")
     var hit_points = 5
     var name = "Bob"
-    var body_sprite = $Sprite
+    var body_sprite = $Sprite2D
 
 
 **Don't** write functions with inferred arguments or return types:

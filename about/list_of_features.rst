@@ -83,7 +83,7 @@ Vulkan renderer.
 
    - High-level tools to draw lines and polygons such as Polygon2D and Line2D.
 
-- AnimatedSprite as a helper for creating animated sprites.
+- AnimatedSprite2D as a helper for creating animated sprites.
 - Parallax layers.
 
    - Pseudo-3D support by automatically duplicating a layer several times.

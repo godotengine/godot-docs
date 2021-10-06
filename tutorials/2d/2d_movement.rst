@@ -19,8 +19,8 @@ Setup
 -----
 
 Each example below uses the same scene setup. Start with a ``KinematicBody2D`` with two
-children: ``Sprite`` and ``CollisionShape2D``. You can use the Godot icon ("icon.png")
-for the Sprite's texture or use any other 2D image you have.
+children: ``Sprite2D`` and ``CollisionShape2D``. You can use the Godot icon ("icon.png")
+for the Sprite2D's texture or use any other 2D image you have.
 
 Open ``Project -> Project Settings`` and select the "Input Map" tab. Add the following
 input actions (see :ref:`InputEvent <doc_inputevent>` for details):

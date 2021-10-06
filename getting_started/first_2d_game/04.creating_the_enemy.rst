@@ -17,7 +17,7 @@ Click Scene -> New Scene and add the following nodes:
 
 - :ref:`RigidBody2D <class_RigidBody2D>` (named ``Mob``)
 
-   - :ref:`AnimatedSprite <class_AnimatedSprite>`
+   - :ref:`AnimatedSprite2D <class_AnimatedSprite2D>`
    - :ref:`CollisionShape2D <class_CollisionShape2D>`
    - :ref:`VisibilityNotifier2D <class_VisibilityNotifier2D>`
 
@@ -31,7 +31,7 @@ box. This will ensure the mobs do not collide with each other.
 
 .. image:: img/set_collision_mask.png
 
-Set up the :ref:`AnimatedSprite <class_AnimatedSprite>` like you did for the
+Set up the :ref:`AnimatedSprite2D <class_AnimatedSprite2D>` like you did for the
 player. This time, we have 3 animations: ``fly``, ``swim``, and ``walk``. There
 are two images for each animation in the art folder.
 
@@ -45,7 +45,7 @@ We'll select one of these animations randomly so that the mobs will have some
 variety.
 
 Like the player images, these mob images need to be scaled down. Set the
-``AnimatedSprite``'s ``Scale`` property to ``(0.75, 0.75)``.
+``AnimatedSprite2D``'s ``Scale`` property to ``(0.75, 0.75)``.
 
 As in the ``Player`` scene, add a ``CapsuleShape2D`` for the collision. To align
 the shape with the image, you'll need to set the ``Rotation Degrees`` property
@@ -80,14 +80,14 @@ Add a script to the ``Mob`` like this:
     #ifndef MOB_H
     #define MOB_H
 
-    #include <AnimatedSprite.hpp>
+    #include <AnimatedSprite2D.hpp>
     #include <Godot.hpp>
     #include <RigidBody2D.hpp>
 
     class Mob : public godot::RigidBody2D {
         GODOT_CLASS(Mob, godot::RigidBody2D)
 
-        godot::AnimatedSprite *_animated_sprite;
+        godot::AnimatedSprite2D *_animated_sprite;
 
     public:
         void _init() {}
@@ -106,18 +106,18 @@ and randomly choose one of the three animation types:
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        $AnimatedSprite.playing = true
-        var mob_types = $AnimatedSprite.frames.get_animation_names()
-        $AnimatedSprite.animation = mob_types[randi() % mob_types.size()]
+        $AnimatedSprite2D.playing = true
+        var mob_types = $AnimatedSprite2D.frames.get_animation_names()
+        $AnimatedSprite2D.animation = mob_types[randi() % mob_types.size()]
 
  .. code-tab:: csharp
 
     public override void _Ready()
     {
-        var animSprite = GetNode<AnimatedSprite>("AnimatedSprite");
-        animSprite.Playing = true;
-        string[] mobTypes = animSprite.Frames.GetAnimationNames();
-        animSprite.Animation = mobTypes[GD.Randi() % mobTypes.Length];
+        var animSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        animSprite2D.Playing = true;
+        string[] mobTypes = animSprite2D.Frames.GetAnimationNames();
+        animSprite2D.Animation = mobTypes[GD.Randi() % mobTypes.Length];
     }
 
  .. code-tab:: cpp
@@ -131,13 +131,13 @@ and randomly choose one of the three animation types:
     void Mob::_ready() {
         godot::Ref<godot::RandomNumberGenerator> random = godot::RandomNumberGenerator::_new();
         random->randomize();
-        _animated_sprite = get_node<godot::AnimatedSprite>("AnimatedSprite");
+        _animated_sprite = get_node<godot::AnimatedSprite2D>("AnimatedSprite2D");
         _animated_sprite->_set_playing(true);
         godot::PoolStringArray mob_types = _animated_sprite->get_sprite_frames()->get_animation_names();
         _animated_sprite->set_animation(mob_types[random->randi() % mob_types.size()]);
     }
 
-First, we get the list of animation names from the AnimatedSprite's ``frames``
+First, we get the list of animation names from the AnimatedSprite2D's ``frames``
 property. This returns an Array containing all three animation names: ``["walk",
 "swim", "fly"]``.
 

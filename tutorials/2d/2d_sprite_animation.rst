@@ -1,26 +1,26 @@
 .. _doc_2d_sprite_animation:
 
-2D Sprite animation
+2D sprite animation
 ===================
 
 Introduction
 ------------
 
 In this tutorial, you'll learn how to create 2D animated
-characters with the AnimatedSprite class and the AnimationPlayer. Typically, when you create or download an animated character, it
+characters with the AnimatedSprite2D class and the AnimationPlayer. Typically, when you create or download an animated character, it
 will come in one of two ways: as individual images or as a single sprite sheet
-containing all the animation's frames. Both can be animated in Godot with the AnimatedSprite class.
+containing all the animation's frames. Both can be animated in Godot with the AnimatedSprite2D class.
 
-First, we'll use :ref:`AnimatedSprite <class_AnimatedSprite>` to
+First, we'll use :ref:`AnimatedSprite2D <class_AnimatedSprite2D>` to
 animate a collection of individual images. Then we will animate a sprite sheet using this class. Finally, we will learn another way to animate a sprite sheet
 with :ref:`AnimationPlayer <class_AnimationPlayer>` and the *Animation*
-property of :ref:`Sprite <class_Sprite>`.
+property of :ref:`Sprite2D <class_Sprite2D>`.
 
 .. note:: Art for the following examples by https://opengameart.org/users/ansimuz and by
                                            https://opengameart.org/users/tgfcoder
 
-Individual images with AnimatedSprite
--------------------------------------
+Individual images with AnimatedSprite2D
+---------------------------------------
 
 In this scenario, you have a collection of images, each containing one of your
 character's animation frames. For this example, we'll use the following
@@ -43,7 +43,7 @@ with the following nodes:
           :ref:`Physics Introduction <doc_physics_introduction>` for more
           information.
 
-Now select the ``AnimatedSprite`` and in its *SpriteFrames* property, select
+Now select the ``AnimatedSprite2D`` and in its *SpriteFrames* property, select
 "New SpriteFrames".
 
 .. image:: img/2d_animation_new_spriteframes.png
@@ -79,7 +79,7 @@ released.
 
     extends KinematicBody2D
 
-    onready var _animated_sprite = $AnimatedSprite
+    onready var _animated_sprite = $AnimatedSprite2D
 
     func _process(delta):
         if Input.is_action_pressed("ui_right"):
@@ -91,7 +91,7 @@ released.
 
     public class Character : KinematicBody2D
     {
-        private AnimatedSprite _animatedSprite;
+        private AnimatedSprite2D _animatedSprite;
 
         public override void _Ready()
         {
@@ -112,16 +112,16 @@ released.
     }
 
 
-Sprite sheet with AnimatedSprite
---------------------------------
+Sprite sheet with AnimatedSprite2D
+----------------------------------
 
-You can also easily animate from a sprite sheet with the class ``AnimatedSprite``. We will use this public domain sprite sheet:
+You can also easily animate from a sprite sheet with the class ``AnimatedSprite2D``. We will use this public domain sprite sheet:
 
 .. image:: img/2d_animation_frog_spritesheet.png
 
 Right-click the image and choose "Save Image As" to download it, and then copy the image into your project folder.
 
-Set up your scene tree the same way you did previously when using individual images. Select the ``AnimatedSprite`` and in its *SpriteFrames* property, select
+Set up your scene tree the same way you did previously when using individual images. Select the ``AnimatedSprite2D`` and in its *SpriteFrames* property, select
 "New SpriteFrames".
 
 Click on the new SpriteFrames resource. This time, when the bottom panel appears, select "Add frames from a Sprite Sheet".
@@ -142,7 +142,7 @@ You will now see your animation under the list of animations in the bottom panel
 
 .. image:: img/2d_animation_spritesheet_animation.png
 
-Finally, check Playing on the AnimatedSprite in the inspector to see your frog jump!
+Finally, check Playing on the AnimatedSprite2D in the inspector to see your frog jump!
 
 .. image:: img/2d_animation_play_spritesheet_animation.png
 
@@ -151,7 +151,7 @@ Sprite sheet with AnimationPlayer
 ---------------------------------
 
 Another way that you can animate when using a sprite sheet is to use a standard
-:ref:`Sprite <class_Sprite>` node to display the texture, and then animating the
+:ref:`Sprite2D <class_Sprite2D>` node to display the texture, and then animating the
 change from texture to texture with :ref:`AnimationPlayer <class_AnimationPlayer>`.
 
 Consider this sprite sheet, which contains 6 frames of animation:
@@ -182,7 +182,7 @@ your sprite sheet.
 .. image:: img/2d_animation_setframes.png
 
 Now try changing the value of the *Frame* property. You'll see that it ranges
-from ``0`` to ``5`` and the image displayed by the Sprite changes accordingly.
+from ``0`` to ``5`` and the image displayed by the Sprite2D changes accordingly.
 This is the property we'll be animating.
 
 Select the ``AnimationPlayer`` and click the "Animation" button followed by
@@ -191,7 +191,7 @@ click the "Loop" button so that our animation will repeat.
 
 .. image:: img/2d_animation_new_animation.png
 
-Now select the ``Sprite`` node and click the key icon to add a new track.
+Now select the ``Sprite2D`` node and click the key icon to add a new track.
 
 .. image:: img/2d_animation_new_track.png
 
@@ -208,7 +208,7 @@ Press "Play" on the animation to see how it looks.
 Controlling an AnimationPlayer animation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Like with AnimatedSprite, you can control the animation via code using
+Like with AnimatedSprite2D, you can control the animation via code using
 the ``play()`` and ``stop()`` methods. Again, here is an example to play the
 animation while the right arrow key is held, and stop it when the key is
 released.
@@ -265,5 +265,5 @@ Summary
 
 These examples illustrate the two classes you can use in Godot for
 2D animation. ``AnimationPlayer`` is
-a bit more complex than ``AnimatedSprite``, but it provides additional functionality, since you can also
-animate other properties like position or scale. The class ``AnimationPlayer`` can also be used with an ``AnimatedSprite``. Experiment to see what works best for your needs.
+a bit more complex than ``AnimatedSprite2D``, but it provides additional functionality, since you can also
+animate other properties like position or scale. The class ``AnimationPlayer`` can also be used with an ``AnimatedSprite2D``. Experiment to see what works best for your needs.
