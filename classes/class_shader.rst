@@ -23,9 +23,7 @@ This class allows you to define a custom shader program that can be used by a :r
 Tutorials
 ---------
 
-- :doc:`../tutorials/shading/index`
-
-- :doc:`../tutorials/shading/your_first_shader/what_are_shaders`
+- :doc:`../tutorials/shaders/index`
 
 Properties
 ----------

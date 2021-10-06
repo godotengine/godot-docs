@@ -72,7 +72,7 @@ The :ref:`_post_import<class_EditorScenePostImport_method__post_import>` callbac
 Tutorials
 ---------
 
-- `#custom-script <../getting_started/workflow/assets/importing_scenes.html#custom-script>`_ in :doc:`../getting_started/workflow/assets/importing_scenes`
+- `#custom-script <../tutorials/assets_pipeline/importing_scenes.html#custom-script>`_ in :doc:`../tutorials/assets_pipeline/importing_scenes`
 
 Methods
 -------

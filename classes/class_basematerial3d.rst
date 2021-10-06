@@ -23,7 +23,7 @@ This provides a default material with a wide variety of rendering features and p
 Tutorials
 ---------
 
-- :doc:`../tutorials/3d/spatial_material`
+- :doc:`../tutorials/3d/standard_material_3d`
 
 Properties
 ----------

@@ -23,7 +23,7 @@ Theme resources can alternatively be loaded by writing them in a ``.theme`` file
 Tutorials
 ---------
 
-- :doc:`../tutorials/gui/gui_skinning`
+- :doc:`../tutorials/ui/gui_skinning`
 
 Properties
 ----------

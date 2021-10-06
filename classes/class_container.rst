@@ -41,6 +41,14 @@ Methods
 Signals
 -------
 
+.. _class_Container_signal_pre_sort_children:
+
+- **pre_sort_children** **(** **)**
+
+Emitted when children are going to be sorted.
+
+----
+
 .. _class_Container_signal_sort_children:
 
 - **sort_children** **(** **)**
@@ -50,9 +58,13 @@ Emitted when sorting the children is needed.
 Constants
 ---------
 
+.. _class_Container_constant_NOTIFICATION_PRE_SORT_CHILDREN:
+
 .. _class_Container_constant_NOTIFICATION_SORT_CHILDREN:
 
-- **NOTIFICATION_SORT_CHILDREN** = **50** --- Notification for when sorting the children, it must be obeyed immediately.
+- **NOTIFICATION_PRE_SORT_CHILDREN** = **50** --- Notification just before children are going to be sorted, in case there's something to process beforehand.
+
+- **NOTIFICATION_SORT_CHILDREN** = **51** --- Notification for when sorting the children, it must be obeyed immediately.
 
 Method Descriptions
 -------------------

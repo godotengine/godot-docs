@@ -43,7 +43,7 @@ Finally, when a node is freed with :ref:`Object.free<class_Object_method_free>` 
 Tutorials
 ---------
 
-- :doc:`../getting_started/step_by_step/scenes_and_nodes`
+- `Nodes and scenes <https://docs.godotengine.org/en/latest/getting_started/step_by_step/nodes_and_scenes.htmltml>`__
 
 - `All Demos <https://github.com/godotengine/godot-demo-projects/>`__
 

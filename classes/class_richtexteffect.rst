@@ -40,7 +40,7 @@ A custom effect for use with :ref:`RichTextLabel<class_RichTextLabel>`.
 Tutorials
 ---------
 
-- :doc:`../tutorials/gui/bbcode_in_richtextlabel`
+- :doc:`../tutorials/ui/bbcode_in_richtextlabel`
 
 - `RichTextEffect test project (third-party) <https://github.com/Eoin-ONeill-Yokai/Godot-Rich-Text-Effect-Test-Project>`__
 

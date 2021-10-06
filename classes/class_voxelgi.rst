@@ -25,7 +25,7 @@ Having ``VoxelGI``\ s in a scene can be expensive, the quality of the probe can 
 Tutorials
 ---------
 
-- :doc:`../tutorials/3d/voxel_gi`
+- :doc:`../tutorials/3d/gi_probes`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 

@@ -33,9 +33,9 @@ Finally, viewports can also behave as render targets, in which case they will no
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/2d_transforms`
+- :doc:`../tutorials/rendering/viewports`
 
-- :doc:`../tutorials/viewports/index`
+- :doc:`../tutorials/2d/2d_transforms`
 
 - `GUI in 3D Demo <https://godotengine.org/asset-library/asset/127>`__
 

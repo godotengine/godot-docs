@@ -23,11 +23,11 @@ This is useful to optimize the rendering of a high amount of instances of a give
 Tutorials
 ---------
 
-- :doc:`../tutorials/3d/vertex_animation/animating_thousands_of_fish`
+- :doc:`../tutorials/performance/vertex_animation/animating_thousands_of_fish`
 
 - :doc:`../tutorials/3d/using_multi_mesh_instance`
 
-- :doc:`../tutorials/optimization/using_multimesh`
+- :doc:`../tutorials/performance/using_multimesh`
 
 Properties
 ----------

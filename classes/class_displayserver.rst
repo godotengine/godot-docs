@@ -1142,6 +1142,8 @@ Shows the virtual keyboard if the platform has one.
 
 - :ref:`WindowMode<enum_DisplayServer_WindowMode>` **window_get_mode** **(** :ref:`int<class_int>` window_id=0 **)** |const|
 
+Returns the current window's mode.
+
 ----
 
 .. _class_DisplayServer_method_window_get_position:
@@ -1243,6 +1245,10 @@ Sets the minimum size for the given window to ``min_size`` (in pixels).
 .. _class_DisplayServer_method_window_set_mode:
 
 - void **window_set_mode** **(** :ref:`WindowMode<enum_DisplayServer_WindowMode>` mode, :ref:`int<class_int>` window_id=0 **)**
+
+Sets window mode for the given window to ``mode``. See :ref:`WindowMode<enum_DisplayServer_WindowMode>` for possible values and how each mode behaves.
+
+**Note:** Setting the window to fullscreen forcibly sets the borderless flag to ``true``, so make sure to set it back to ``false`` when not wanted.
 
 ----
 

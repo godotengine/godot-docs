@@ -56,7 +56,7 @@ Objects also receive notifications. Notifications are a simple way to notify the
 Tutorials
 ---------
 
-- :doc:`../getting_started/workflow/best_practices/node_alternatives`
+- :doc:`../tutorials/best_practices/node_alternatives`
 
 Methods
 -------

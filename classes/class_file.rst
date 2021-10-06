@@ -68,7 +68,7 @@ In the example above, the file will be saved in the user data folder as specifie
 Tutorials
 ---------
 
-- :doc:`../getting_started/step_by_step/filesystem`
+- :doc:`../tutorials/scripting/filesystem`
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 

@@ -23,7 +23,7 @@ Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_Par
 Tutorials
 ---------
 
-- :doc:`../tutorials/3d/vertex_animation/controlling_thousands_of_fish`
+- :doc:`../tutorials/performance/vertex_animation/controlling_thousands_of_fish`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
