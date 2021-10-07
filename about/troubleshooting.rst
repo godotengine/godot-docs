@@ -106,7 +106,7 @@ This is caused by the NVIDIA graphics driver injecting an overlay to display inf
 To disable this overlay on Windows, restore your graphics driver settings to the
 default values in the NVIDIA Control Panel.
 
-To disable this overlay on Linux, open ``Nvidia-settings``, go to **X Screen 0 >
+To disable this overlay on Linux, open ``nvidia-settings``, go to **X Screen 0 >
 OpenGL Settings** then uncheck **Enable Graphics API Visual Indicator**.
 
 The project window appears blurry, unlike the editor.

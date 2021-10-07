@@ -8,7 +8,7 @@ Introduction
     func _ready():
         $Label.text = "Hello world!"
 
-Welcome to the official documentation of Godot Engine, the free and open-source
+Welcome to the official documentation of Godot Engine, the free and open source
 community-driven 2D and 3D game engine! Behind this mouthful, you will find a
 powerful yet user-friendly tool that you can use to develop any kind of game,
 for any platform and with no usage restriction whatsoever.
@@ -31,7 +31,7 @@ especially the Godot Discord community and Q&A.
 About Godot Engine
 ------------------
 
-A game engine is a complex tool, and it is, therefore, difficult to present Godot
+A game engine is a complex tool, and it is therefore difficult to present Godot
 in a few words. Here's a quick synopsis, which you are free to reuse
 if you need a quick write-up about Godot Engine.
 
@@ -59,7 +59,7 @@ This documentation is continuously written, corrected, edited, and revamped by
 members of the Godot Engine community. It is edited via text files in the
 `reStructuredText <http://www.sphinx-doc.org/en/stable/rest.html>`_ markup
 language and then compiled into a static website/offline document using the
-open-source `Sphinx <http://www.sphinx-doc.org>`_ and `ReadTheDocs
+open source `Sphinx <http://www.sphinx-doc.org>`_ and `ReadTheDocs
 <https://readthedocs.org/>`_ tools.
 
 .. note:: You can contribute to Godot's documentation by opening issue tickets

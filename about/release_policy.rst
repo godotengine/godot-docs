@@ -6,7 +6,7 @@ Godot release policy
 Godot's release policy is in constant evolution. What is described below is
 intended to give a general idea of what to expect, but what will actually
 happen depends on the choices of core contributors, and the needs of the
-the community at a given time.
+community at a given time.
 
 Godot versioning
 ----------------
@@ -23,7 +23,8 @@ term adapted to the complexity of a game engine:
   running the project through a conversion tool, and then performing a number
   of further adjustments manually for what the tool could not do automatically.
 
-- The ``minor`` version is incremented for feature releases that do not break compatibility in a major way. Minor compatibility breakage in very specific
+- The ``minor`` version is incremented for feature releases that do not break
+  compatibility in a major way. Minor compatibility breakage in very specific
   areas *may* happen in minor versions, but the vast majority of projects
   should not be affected or require significant porting work.
 

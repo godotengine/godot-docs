@@ -55,7 +55,7 @@ Some users also report building and using Godot successfully on ARM-based
 systems with Linux, like the Raspberry Pi.
 
 Additionally, there is some unofficial third-party work being done on building
-some consoles. However, none of this is included in the default build
+for some consoles. However, none of this is included in the default build
 scripts or export templates at this time.
 
 For more on this, see the sections on :ref:`exporting <toc-learn-workflow-export>`
@@ -127,7 +127,8 @@ What were the motivations behind creating GDScript?
 ---------------------------------------------------
 
 In the early days, the engine used the `Lua <https://www.lua.org>`__ scripting
-language. Lua can be fast thanks to LuaJIT, but creating bindings to an object-oriented system (by using fallbacks) was complex and slow and took an enormous
+language. Lua can be fast thanks to LuaJIT, but creating bindings to an object-oriented
+system (by using fallbacks) was complex and slow and took an enormous
 amount of code. After some experiments with `Python <https://www.python.org>`__,
 it also proved difficult to embed.
 
@@ -386,7 +387,7 @@ Is it possible to use Godot as a library?
 
 Godot is meant to be used with its editor. We recommend you give it a try, as it
 will most likely save you time in the long term. There are no plans to make
-Godot is usable as a library, as it would make the rest of the engine more
+Godot usable as a library, as it would make the rest of the engine more
 convoluted and difficult to use for casual users.
 
 If you want to use a rendering library, look into using an established rendering

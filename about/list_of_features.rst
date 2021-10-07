@@ -101,7 +101,7 @@ Vulkan renderer.
    - Dynamic fonts support optional font outlines with adjustable width and color.
    - Dynamic fonts support variable fonts and OpenType features.
    - Dynamic fonts support oversampling to keep fonts sharp at higher resolutions.
-   - Signed-distance field fonts can be scaled at any resolution without
+   - Signed distance field fonts can be scaled at any resolution without
      requiring re-rasterization. Multi-channel usage makes SDF fonts scale down
      to lower sizes better compared to monochrome SDF fonts.
 
@@ -154,7 +154,7 @@ Vulkan renderer.
 - Follows the Disney PBR model.
 - Uses a roughness-metallic workflow with support for ORM textures.
 - Normal mapping.
-- Parallax/relief mapping with the level of detail automatically based on distance.
+- Parallax/relief mapping with automatic level of detail based on distance.
 - Sub-surface scattering and transmittance.
 - Proximity fade (soft particles) and distance fade.
 - Distance fade can use alpha blending or dithering to avoid going through
@@ -231,7 +231,7 @@ Vulkan renderer.
 
   - Particle attractor shapes supported: box, sphere and 3D vector fields.
   - Particle collision shapes supported: box, sphere, baked signed distance field
-    and real-time heightmap (suited for open-world weather effects).
+    and real-time heightmap (suited for open world weather effects).
   - Trails can use the built-in ribbon trail and tube trail meshes, or custom
     meshes with skeletons.
   - Support for custom particle shaders with manual emission.
@@ -540,7 +540,7 @@ The editor UI can easily be extended in many ways using add-ons.
 
 - Procedural vector-based theming using :ref:`class_StyleBoxFlat`.
 
-   - Supports rounded/bevelled corners, drop shadows and per-border widths.
+   - Supports rounded/beveled corners, drop shadows and per-border widths.
 
 - Texture-based theming using :ref:`class_StyleBoxTexture`.
 
@@ -584,7 +584,7 @@ Miscellaneous
 
 - :ref:`Low-level access to servers <doc_using_servers>` which allows bypassing
   the scene tree's overhead when needed.
-- Command-line interface for automation.
+- Command line interface for automation.
 
    - Export and deploy projects using continuous integration platforms.
    - `Completion scripts <https://github.com/godotengine/godot/tree/master/misc/dist/shell>`__
