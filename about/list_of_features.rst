@@ -101,7 +101,7 @@ Vulkan renderer.
    - Dynamic fonts support optional font outlines with adjustable width and color.
    - Dynamic fonts support variable fonts and OpenType features.
    - Dynamic fonts support oversampling to keep fonts sharp at higher resolutions.
-   - Signed distance field fonts can be scaled at any resolution without
+   - Signed-distance field fonts can be scaled at any resolution without
      requiring re-rasterization. Multi-channel usage makes SDF fonts scale down
      to lower sizes better compared to monochrome SDF fonts.
 
@@ -154,7 +154,7 @@ Vulkan renderer.
 - Follows the Disney PBR model.
 - Uses a roughness-metallic workflow with support for ORM textures.
 - Normal mapping.
-- Parallax/relief mapping with automatic level of detail based on distance.
+- Parallax/relief mapping with the level of detail automatically based on distance.
 - Sub-surface scattering and transmittance.
 - Proximity fade (soft particles) and distance fade.
 - Distance fade can use alpha blending or dithering to avoid going through
@@ -165,7 +165,7 @@ Vulkan renderer.
 
 - Directional lights (sun/moon). Up to 4 per scene.
 - Omnidirectional lights.
-- Spot lights with adjustable cone angle and attenuation.
+- Spotlights with adjustable cone angle and attenuation.
 - Adjustable light "size" for fake area lights (will also make shadows blurrier).
 - Lights are rendered with clustered forward optimizations to decrease their
   individual cost.
@@ -179,7 +179,7 @@ Vulkan renderer.
 - *SpotLight:* Single texture. Supports colored projector textures.
 - Shadow pancaking to decrease the amount of visible shadow acne and peter-panning.
 - PCSS-like shadow blur based on the light size and distance from the surface
-  the shadow is casted on.
+  the shadow is cast on.
 - Adjustable blur on a per-light basis.
 
 **Global illumination with indirect lighting:**
@@ -196,7 +196,7 @@ Vulkan renderer.
      to CPU lightmapping).
 
 - GI probes (slower, fully real-time). Supports reflections.
-- Signed distance field GI (intermediate, supports dynamic lights but not
+- Signed-distance field GI (intermediate, supports dynamic lights but not
   dynamic occluders). Supports reflections.
 - Global illumination uses a deferred pass to allow for rendering GI at half
   resolution to improve performance.
@@ -213,7 +213,7 @@ Vulkan renderer.
 **Sky:**
 
 - Panorama sky (using an HDRI).
-- Procedural sky and Physically-based sky that respond to the DirectionalLights in the scene.
+- Procedural sky and Physically-based sky that responds to the DirectionalLights in the scene.
 - Support for custom sky shaders, which can be animated.
 - Radiance can be updated in real-time depending on the quality settings chosen.
 
@@ -231,7 +231,7 @@ Vulkan renderer.
 
   - Particle attractor shapes supported: box, sphere and 3D vector fields.
   - Particle collision shapes supported: box, sphere, baked signed distance field
-    and real-time heightmap (suited for open world weather effects).
+    and real-time heightmap (suited for open-world weather effects).
   - Trails can use the built-in ribbon trail and tube trail meshes, or custom
     meshes with skeletons.
   - Support for custom particle shaders with manual emission.
@@ -246,7 +246,7 @@ Vulkan renderer.
 - Screen-space ambient occlusion at half or full resolution.
 - Glow/bloom with optional bicubic upscaling and several blend modes available:
   Screen, Soft Light, Add, Replace, Mix.
-- Color correction using an one-dimensional ramp.
+- Color correction using a one-dimensional ramp.
 - Roughness limiter to reduce the impact of specular aliasing.
 - Brightness, contrast and saturation adjustments.
 
@@ -540,7 +540,7 @@ The editor UI can easily be extended in many ways using add-ons.
 
 - Procedural vector-based theming using :ref:`class_StyleBoxFlat`.
 
-   - Supports rounded/beveled corners, drop shadows and per-border widths.
+   - Supports rounded/bevelled corners, drop shadows and per-border widths.
 
 - Texture-based theming using :ref:`class_StyleBoxTexture`.
 
@@ -584,7 +584,7 @@ Miscellaneous
 
 - :ref:`Low-level access to servers <doc_using_servers>` which allows bypassing
   the scene tree's overhead when needed.
-- Command line interface for automation.
+- Command-line interface for automation.
 
    - Export and deploy projects using continuous integration platforms.
    - `Completion scripts <https://github.com/godotengine/godot/tree/master/misc/dist/shell>`__
