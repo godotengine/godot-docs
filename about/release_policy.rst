@@ -63,7 +63,7 @@ further developed for maintenance releases in a Git branch of the same name
 
     As mentioned in the introduction, Godot's release policy is evolving, and
     earlier Godot releases may not have followed the above rules to the letter.
-    In particular, the 3.2 stable branch received several new features in
+    In particular, the 3.2 stable branch received a number of new features in
     3.2.2 that would have warranted a ``minor`` version increment.
 
 Release support timeline

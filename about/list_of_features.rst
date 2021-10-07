@@ -165,7 +165,7 @@ Vulkan renderer.
 
 - Directional lights (sun/moon). Up to 4 per scene.
 - Omnidirectional lights.
-- Spotlights with adjustable cone angle and attenuation.
+- Spot lights with adjustable cone angle and attenuation.
 - Adjustable light "size" for fake area lights (will also make shadows blurrier).
 - Lights are rendered with clustered forward optimizations to decrease their
   individual cost.
@@ -213,7 +213,7 @@ Vulkan renderer.
 **Sky:**
 
 - Panorama sky (using an HDRI).
-- Procedural sky and Physically-based sky that responds to the DirectionalLights in the scene.
+- Procedural sky and Physically-based sky that respond to the DirectionalLights in the scene.
 - Support for custom sky shaders, which can be animated.
 - Radiance can be updated in real-time depending on the quality settings chosen.
 
