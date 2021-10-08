@@ -48,10 +48,7 @@ Your project folder should look like this.
 
 .. image:: img/folder-content.png
 
-This game is designed for portrait mode, so we need to adjust the size of the
-game window. Click on *Project -> Project Settings* to open the project settings
-window and in the left column, open the *Display -> Window* tab. There, set
-"Width" to ``480`` and "Height" to ``720``.
+Because this game is meant to be played in portrait mode, we'll need to change the size of the game window. To open the project settings window, go to *Project -> Project Settings* and then to the *Display -> Window* tab in the left column. Set the "Width" and "Height" to 480 and 720 pixels, respectively.
 
 .. image:: img/setting-project-width-and-height.png
 
@@ -67,10 +64,7 @@ Organizing the project
 In this project, we will make 3 independent scenes: ``Player``, ``Mob``, and
 ``HUD``, which we will combine into the game's ``Main`` scene.
 
-In a larger project, it might be useful to create folders to hold the various
-scenes and their scripts, but for this relatively small game, you can save your
-scenes and scripts in the project's root folder, identified by ``res://``. You
-can see your project folders in the FileSystem dock in the lower left corner:
+Creating folders to hold the many scenes and their scripts would be beneficial in a larger project, but for this relatively tiny game, you can save your scenes and scripts in the project's root folder, indicated by res:/. In the FileSystem dock in the lower left corner, you can see your project folders:
 
 .. image:: img/filesystem_dock.png
 
