@@ -80,6 +80,11 @@ encountered by users of that branch who cannot port complex projects to the new
 major version. This is the case for the 2.1 branch, and will be the case for
 the latest 3.x stable branch by the time Godot 4.0 is released.
 
+In a given minor release series, only the latest patch release receives support.
+If you experience an issue using an older patch release, please upgrade to the
+latest patch release of that series and test again before reporting an issue
+on GitHub.
+
 +-------------+----------------------+--------------------------------------------------------------------------+
 | **Version** | **Release date**     | **Support level**                                                        |
 +-------------+----------------------+--------------------------------------------------------------------------+
