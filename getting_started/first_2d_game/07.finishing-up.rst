@@ -11,11 +11,11 @@ Feel free to expand the gameplay with your own ideas.
 Background
 ~~~~~~~~~~
 
-The default gray background is not very appealing, so let's change its color.
-One way to do this is to use a :ref:`ColorRect <class_ColorRect>` node. Make it
-the first node under ``Main`` so that it will be drawn behind the other nodes.
-``ColorRect`` only has one property: ``Color``. Choose a color you like and
-select "Layout" -> "Full Rect" so that it covers the screen.
+Because the default grey background is unappealing, let's modify it. 
+A:ref:'ColorRect class ColorRect>' node is one way to accomplish this. Make it happen. 
+The first node under "Main" is drawn behind the other nodes. 
+There is only one property in ColorRect: colour. Choose a colour that appeals to you. 
+Choose "Layout" -> "Full Rect" to cover the entire screen.
 
 You could also add a background image, if you have one, by using a
 ``TextureRect`` node instead.
@@ -23,10 +23,7 @@ You could also add a background image, if you have one, by using a
 Sound effects
 ~~~~~~~~~~~~~
 
-Sound and music can be the single most effective way to add appeal to the game
-experience. In your game assets folder, you have two sound files: "House In a
-Forest Loop.ogg" for background music, and "gameover.wav" for when the player
-loses.
+Sound and music can be one of the most effective ways to make a game more appealing. There are two sound files in your game assets folder: "House In a Forest Loop.ogg" for background music and "gameover.wav" for when the player loses.
 
 Add two :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` nodes as children of
 ``Main``. Name one of them ``Music`` and the other ``DeathSound``. On each one,
