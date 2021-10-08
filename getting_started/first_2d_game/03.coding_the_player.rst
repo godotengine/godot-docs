@@ -83,18 +83,9 @@ Start by declaring the member variables this object will need:
 
     #endif // PLAYER_H
 
-Using the ``export`` keyword on the first variable ``speed`` allows us to set
-its value in the Inspector. This can be handy for values that you want to be
-able to adjust just like a node's built-in properties. Click on the ``Player``
-node and you'll see the property now appears in the "Script Variables" section
-of the Inspector. Remember, if you change the value here, it will override the
-value written in the script.
+We may set the value of the first variable, "speed," in the Inspector by using the "export" keyword. This is useful for values that you wish to be able to alter like the built-in characteristics of a node. The property now displays in the "Script Variables" section of the Inspector when you click on the "Player" node. Remember that changing this value overrides the value written in the script.
 
-.. warning:: If you're using C#, you need to (re)build the project assemblies
-             whenever you want to see new export variables or signals. This
-             build can be manually triggered by clicking the word "Mono" at the
-             bottom of the editor window to reveal the Mono Panel, then clicking
-             the "Build Project" button.
+.. warning:: You must (re)build the project assembly everytime you wish to see new export variables or signals if you're using C#. This build can be manually triggered by revealing the Mono Panel by clicking the word "Mono" at the bottom of the editing window, then clicking the "Build Project" button.
 
 .. image:: img/export_variable.png
 
@@ -135,12 +126,7 @@ following:
 - Move in the given direction.
 - Play the appropriate animation.
 
-First, we need to check for input - is the player pressing a key? For this game,
-we have 4 direction inputs to check. Input actions are defined in the Project
-Settings under "Input Map". Here, you can define custom events and assign
-different keys, mouse events, or other inputs to them. For this game, we will
-just use the default events called "ui_right" etc that are assigned to the arrow
-keys on the keyboard.
+First, we must determine whether or not the player is pressing a key. We have four direction inputs to verify in this game. Input actions are defined under "Input Map" in the Project Settings. Custom events can be defined here, and different keys, mouse events, or other inputs can be assigned to them. We'll just utilise the default events like "ui right" and "ui left" that are associated to the arrow keys on the keyboard for this game.
 
 You can detect whether a key is pressed using ``Input.is_action_pressed()``,
 which returns ``true`` if it's pressed or ``false`` if it isn't.
