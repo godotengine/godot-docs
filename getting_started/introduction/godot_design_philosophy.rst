@@ -52,8 +52,8 @@ structure matches the game's design.
 Also note that Godot offers many different types of objects called
 nodes, each with a specific purpose. Nodes are part of a tree and always
 inherit from their parents up to the Node class. Although the engine
-does feature components like collision shapes, they're the
-exception, not the norm.
+does feature components like collision shapes which share their state
+upwards to their parents rather than downwards, they're the exception, not the norm.
 
 |image1|
 
