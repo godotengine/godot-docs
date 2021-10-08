@@ -1,6 +1,6 @@
 .. _doc_exporting_3d_scenes:
 
-Exporting 3D Scenes
+Exporting 3D scenes
 ===================
 
 Overview
@@ -14,7 +14,7 @@ program such as Blender, and then bring it back into Godot.
 
 .. note:: 
 
-    Only Blender 2.83 and newer can import glTF files exported by Godot
+    Only Blender 2.83 and newer can import glTF files exported by Godot.
 
 To export a scene in the editor go to **Project > Tools > Export GLTF...**
 
@@ -28,4 +28,4 @@ There are several limitations with glTF export.
 * No support for exporting particles since their implementation varies across engines.
 * ShaderMaterials cannot be exported.
 * No support for exporting 2D scenes.
-* Only supported in editor builds (tools=yes).
+* Only supported in editor builds (``tools=yes``).
