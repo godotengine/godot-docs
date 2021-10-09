@@ -1233,7 +1233,7 @@ either the ``load`` or ``preload`` functions (see below). Instancing of a loaded
 class resource is done by calling the ``new`` function on the class object::
 
     # Load the class resource when calling load().
-    var my_class = load("myclass.gd")
+    var MyClass = load("myclass.gd")
 
     # Preload the class only once at compile time.
     const MyClass = preload("myclass.gd")
