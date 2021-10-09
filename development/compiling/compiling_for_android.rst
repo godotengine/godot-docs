@@ -31,9 +31,8 @@ For compiling under Windows, Linux or macOS, the following is required:
       **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
 
 -  Gradle (will be downloaded and installed automatically if missing).
--  JDK 8 (either OpenJDK or Oracle JDK).
+-  JDK 11 (either OpenJDK or Oracle JDK).
 
-   -  JDK 9 or later are not currently supported.
    -  You can download a build from `ojdkbuild <https://github.com/ojdkbuild/ojdkbuild>`_.
 
 .. seealso:: For a general overview of SCons usage for Godot, see
