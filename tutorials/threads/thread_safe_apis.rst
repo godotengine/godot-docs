@@ -49,10 +49,19 @@ you are doing and you are sure that a single resource is not being used or
 set in multiple ones. Otherwise, you are safer just using the servers API
 (which is fully thread-safe) directly and not touching scene or resources.
 
+Rendering
+---------
+
+Instancing nodes that render anything in 2D or 3D (such as Sprite) is *not* thread-safe by default.
+To make rendering thread-safe, set the **Rendering > Threads > Thread Model** project setting to **Multi-Threaded**.
+
+Note that the Multi-Threaded thread model has several known bugs, so it may not be usable
+in all scenarios.
+
 GDScript arrays, dictionaries
 -----------------------------
 
-In GDScript, reading and writing elements from multiple threads is ok, but anything that changes the container size (resizing, adding or removing elements) requires locking a mutex.
+In GDScript, reading and writing elements from multiple threads is OK, but anything that changes the container size (resizing, adding or removing elements) requires locking a mutex.
 
 Resources
 ---------
