@@ -52,8 +52,11 @@ structure matches the game's design.
 Also note that Godot offers many different types of objects called
 nodes, each with a specific purpose. Nodes are part of a tree and always
 inherit from their parents up to the Node class. Although the engine
-does feature components like collision shapes, they're the
-exception, not the norm.
+does feature some nodes like collision shapes that a parent physics
+body will use, most nodes work independently from one another.
+
+In other words, Godot's nodes do not work like components in some
+other game engines.
 
 |image1|
 
