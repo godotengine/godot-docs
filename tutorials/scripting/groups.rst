@@ -12,13 +12,21 @@ groups as you want. Then, in code, you can use the SceneTree to:
 
 This is a useful feature to organize large scenes and decouple code.
 
-Adding nodes to a group
------------------------
 
-There are two ways to add nodes to groups:
+Creating groups
+-----------------
 
-- Using the Node dock in the editor.
-- Calling :ref:`Node.add_to_group() <class_Node_method_add_to_group>`.
+Either use the Node dock (see below), or call :ref:`Node.add_to_group() <class_Node_method_add_to_group>` with a new group name.
+
+
+Adding nodes to a group, or removing them
+-----------------------------------------
+
+There are two ways to add/remove nodes:
+
+- During design, by using the Node dock in the editor; or
+- during execution, by calling :ref:`Node.add_to_group() <class_Node_method_add_to_group>` or  :ref:`Node.remove_from_group() <String>`.
+
 
 Using the Node dock
 ~~~~~~~~~~~~~~~~~~~
