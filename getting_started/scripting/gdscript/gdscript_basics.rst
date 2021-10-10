@@ -247,7 +247,9 @@ The following is the list of supported operators and their precedence.
 |                                                                        | as C++. Integer division is truncated   |
 |                                                                        | rather than returning a fractional      |
 |                                                                        | number, and the % operator is only      |
-|                                                                        | available for ints ("fmod" for floats)  |
+|                                                                        | available for ints ("fmod" for floats), |
+|                                                                        | and is additionally used for Format     |
+|                                                                        | Strings                                 |
 +------------------------------------------------------------------------+-----------------------------------------+
 | ``+``                                                                  | Addition / Concatenation of arrays      |
 +------------------------------------------------------------------------+-----------------------------------------+
