@@ -36,10 +36,10 @@ Download and install the Android SDK.
     If you are using Linux,
     **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
 
-Install OpenJDK 8
------------------
+Install OpenJDK 11
+------------------
 
-Download and install  `OpenJDK 8 <https://adoptopenjdk.net/index.html?variant=openjdk8&jvmVariant=hotspot>`__.
+Download and install  `OpenJDK 11 <https://adoptium.net/?variant=openjdk11>`__.
 
 Create a debug.keystore
 -----------------------
