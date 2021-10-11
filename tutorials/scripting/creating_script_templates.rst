@@ -52,7 +52,7 @@ extensions must be ``gd`` and ``cs`` respectively.
 .. note:: The script templates have the same extension as the regular script
           files. This may lead to an issue of a script parser treating those templates as
           actual scripts within a project. To avoid this, make sure to ignore the
-          directory containing them by creating a ``.gdignore`` file. The directory won't be
+          directory containing them by creating an empty ``.gdignore`` file. The directory won't be
           visible throughout the project's filesystem anymore, yet the templates can be
           modified by an external text editor anytime.
 

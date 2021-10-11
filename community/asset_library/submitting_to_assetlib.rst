@@ -68,7 +68,7 @@ library a better place for all users.
   :ref:`doc_gdscript_styleguide` or the :ref:`doc_c_sharp_styleguide`.
 
 * If you have screenshots in your repo, place them in their own subfolder
-  and add a **.gdignore** file in the same folder (note: **gd**, not **git**).
+  and add an empty **.gdignore** file in the same folder (note: **gd**, not **git**).
   This prevents Godot from importing your screenshots.
   On Windows, open a command prompt in the project folder and run
   ``type nul > .gdignore`` to create a file whose name starts with a period.
