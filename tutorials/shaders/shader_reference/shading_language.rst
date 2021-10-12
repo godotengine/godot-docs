@@ -1021,40 +1021,47 @@ is used, it can be scalar or vector.
 | vec_type **fwidth** (vec_type p)                                                      | Sum of absolute derivative in ``x`` and ``y``                       |
 +---------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | uint **packHalf2x16** (vec2 v)                                                        | Convert two 32-bit floating-point numbers into 16-bit               |
-| vec2 **unpackHalf2x16** (uint v)                                                      | and pack them into a 32-bit unsigned integer and vice-versa.        |
+|                                                                                       | and pack them into a 32-bit unsigned integer and vice-versa.        |
+| vec2 **unpackHalf2x16** (uint v)                                                      |                                                                     |
 +---------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | uint **packUnorm2x16** (vec2 v)                                                       | Convert two 32-bit floating-point numbers (clamped                  |
-| vec2 **unpackUnorm2x16** (uint v)                                                     | within 0..1 range) into 16-bit and pack them                        |
-|                                                                                       | into a 32-bit unsigned integer and vice-versa.                      |
+|                                                                                       | within 0..1 range) into 16-bit and pack them                        |
+| vec2 **unpackUnorm2x16** (uint v)                                                     | into a 32-bit unsigned integer and vice-versa.                      |
 +---------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | uint **packSnorm2x16** (vec2 v)                                                       | Convert two 32-bit floating-point numbers (clamped                  |
-| vec2 **unpackSnorm2x16** (uint v)                                                     | within -1..1 range) into 16-bit and pack them                       |
-|                                                                                       | into a 32-bit unsigned integer and vice-versa.                      |
+|                                                                                       | within -1..1 range) into 16-bit and pack them                       |
+| vec2 **unpackSnorm2x16** (uint v)                                                     | into a 32-bit unsigned integer and vice-versa.                      |
 +---------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | uint **packUnorm4x8** (vec4 v)                                                        | Convert four 32-bit floating-point numbers (clamped                 |
-| vec4 **unpackUnorm4x8** (uint v)                                                      | within 0..1 range) into 8-bit and pack them                         |
-|                                                                                       | into a 32-bit unsigned integer and vice-versa.                      |
+|                                                                                       | within 0..1 range) into 8-bit and pack them                         |
+| vec4 **unpackUnorm4x8** (uint v)                                                      | into a 32-bit unsigned integer and vice-versa.                      |
 +---------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | uint **packSnorm4x8** (vec4 v)                                                        | Convert four 32-bit floating-point numbers (clamped                 |
-| vec4 **unpackSnorm4x8** (uint v)                                                      | within -1..1 range) into 8-bit and pack them                        |
-|                                                                                       | into a 32-bit unsigned integer and vice-versa.                      |
+|                                                                                       | within -1..1 range) into 8-bit and pack them                        |
+| vec4 **unpackSnorm4x8** (uint v)                                                      | into a 32-bit unsigned integer and vice-versa.                      |
 +---------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | ivec_type **bitfieldExtract** (ivec_type value, int offset, int bits)                 | Extracts a range of bits from an integer.                           |
+|                                                                                       |                                                                     |
 | uvec_type **bitfieldExtract** (uvec_type value, int offset, int bits)                 |                                                                     |
 +---------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | ivec_type **bitfieldInsert** (ivec_type base, ivec_type insert, int offset, int bits) | Insert a range of bits into an integer.                             |
+|                                                                                       |                                                                     |
 | uvec_type **bitfieldInsert** (uvec_type base, uvec_type insert, int offset, int bits) |                                                                     |
 +---------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | ivec_type **bitfieldReverse** (ivec_type value)                                       | Reverse the order of bits in an integer.                            |
+|                                                                                       |                                                                     |
 | uvec_type **bitfieldReverse** (uvec_type value)                                       |                                                                     |
 +---------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | ivec_type **bitCount** (ivec_type value)                                              | Counts the number of 1 bits in an integer.                          |
+|                                                                                       |                                                                     |
 | uvec_type **bitCount** (uvec_type value)                                              |                                                                     |
 +---------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | ivec_type **findLSB** (ivec_type value)                                               | Find the index of the least significant bit set to 1 in an integer. |
+|                                                                                       |                                                                     |
 | uvec_type **findLSB** (uvec_type value)                                               |                                                                     |
 +---------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | ivec_type **findMSB** (ivec_type value)                                               | Find the index of the most significant bit set to 1 in an integer.  |
+|                                                                                       |                                                                     |
 | uvec_type **findMSB** (uvec_type value)                                               |                                                                     |
 +---------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | uvec_type **uaddCarry** (uvec_type x, uvec_type y, out uvec_type carry)               | Add unsigned integers and generate carry.                           |
