@@ -165,7 +165,7 @@ indentation level to distinguish continuation lines:
         "Steve",
     ]
 
-    var character_dir = {
+    var character_dict = {
         "Name": "Bob",
         "Age": 27,
         "Job": "Mechanic",
@@ -190,7 +190,7 @@ indentation level to distinguish continuation lines:
             "Steve",
     ]
 
-    var character_dir = {
+    var character_dict = {
             "Name": "Bob",
             "Age": 27,
             "Job": "Mechanic",
