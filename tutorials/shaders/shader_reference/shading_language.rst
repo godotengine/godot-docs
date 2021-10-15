@@ -629,7 +629,7 @@ It's also possible to send data from *fragment* to *light* processors using *var
     varying vec3 some_light;
 
     void fragment() {
-        some_light = ALBEDO * 100.0; // Make a shinning light.
+        some_light = ALBEDO * 100.0; // Make a shining light.
     }
 
     void light() {
