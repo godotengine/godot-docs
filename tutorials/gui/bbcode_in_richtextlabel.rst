@@ -49,45 +49,49 @@ markup. All changes to the text must be done in the BBCode parameter.
 Reference
 ---------
 
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| Command           | Tag                                        | Description                                                     |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **bold**          | ``[b]{text}[/b]``                          | Makes {text} bold.                                              |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **italics**       | ``[i]{text}[/i]``                          | Makes {text} italics.                                           |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **underline**     | ``[u]{text}[/u]``                          | Makes {text} underline.                                         |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **strikethrough** | ``[s]{text}[/s]``                          | Makes {text} strikethrough.                                     |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **code**          | ``[code]{text}[/code]``                    | Makes {text} use the code font (which is typically monospace).  |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **center**        | ``[center]{text}[/center]``                | Makes {text} horizontally centered.                             |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **right**         | ``[right]{text}[/right]``                  | Makes {text} horizontally right-aligned.                        |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **fill**          | ``[fill]{text}[/fill]``                    | Makes {text} fill the RichTextLabel's width.                    |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **indent**        | ``[indent]{text}[/indent]``                | Increase the indentation level of {text}.                       |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **url**           | ``[url]{url}[/url]``                       | Show {url} as such, underline it and make it clickable.         |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **url (ref)**     | ``[url=<url>]{text}[/url]``                | Makes {text} reference <url> (underlined and clickable).        |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **image**         | ``[img]{path}[/img]``                      | Insert image at resource {path}.                                |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **resized image** | ``[img=<width>]{path}[/img]``              | Insert image at resource {path} using <width> (keeps ratio).    |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **resized image** | ``[img=<width>x<height>]{path}[/img]``     | Insert image at resource {path} using <width>×<height>.         |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **font**          | ``[font=<path>]{text}[/font]``             | Use custom font at <path> for {text}.                           |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **color**         | ``[color=<code/name>]{text}[/color]``      | Change {text} color; use name or # format, such as ``#ff00ff``. |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **table**         | ``[table=<number>]{cells}[/table]``        | Creates a table with <number> of columns.                       |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
-| **cell**          | ``[cell]{text}[/cell]``                    | Adds cells with the {text} to the table.                        |
-+-------------------+--------------------------------------------+-----------------------------------------------------------------+
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| Command               | Tag                                                       | Description                                                              |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **bold**              | ``[b]{text}[/b]``                                         | Makes {text} bold.                                                       |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **italics**           | ``[i]{text}[/i]``                                         | Makes {text} italics.                                                    |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **underline**         | ``[u]{text}[/u]``                                         | Makes {text} underline.                                                  |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **strikethrough**     | ``[s]{text}[/s]``                                         | Makes {text} strikethrough.                                              |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **code**              | ``[code]{text}[/code]``                                   | Makes {text} use the code font (which is typically monospace).           |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **center**            | ``[center]{text}[/center]``                               | Makes {text} horizontally centered.                                      |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **right**             | ``[right]{text}[/right]``                                 | Makes {text} horizontally right-aligned.                                 |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **fill**              | ``[fill]{text}[/fill]``                                   | Makes {text} fill the RichTextLabel's width.                             |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **indent**            | ``[indent]{text}[/indent]``                               | Increase the indentation level of {text}.                                |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **url**               | ``[url]{url}[/url]``                                      | Show {url} as such, underline it and make it clickable.                  |
+|                       |                                                           | **Must be handled with the "meta_clicked" signal to have an effect.**    |
+|                       |                                                           | See :ref:`doc_bbcode_in_richtextlabel_handling_url_tag_clicks`.          |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **url (ref)**         | ``[url=<url>]{text}[/url]``                               | Makes {text} reference <url> (underlined and clickable).                 |
+|                       |                                                           | **Must be handled with the "meta_clicked" signal to have an effect.**    |
+|                       |                                                           | See :ref:`doc_bbcode_in_richtextlabel_handling_url_tag_clicks`.          |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **image**             | ``[img]{path}[/img]``                                     | Insert image at resource {path}.                                         |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **resized image**     | ``[img=<width>]{path}[/img]``                             | Insert image at resource {path} using <width> (keeps ratio).             |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **resized image**     | ``[img=<width>x<height>]{path}[/img]``                    | Insert image at resource {path} using <width>×<height>.                  |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **font**              | ``[font=<path>]{text}[/font]``                            | Use custom font at <path> for {text}.                                    |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **color**             | ``[color=<code/name>]{text}[/color]``                     | Change {text} color; use name or # format, such as ``#ff00ff``.          |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **table**             | ``[table=<number>]{cells}[/table]``                       | Creates a table with <number> of columns.                                |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| **cell**              | ``[cell]{text}[/cell]``                                   | Adds cells with the {text} to the table.                                 |
++-----------------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
 
 Built-in color names
 ~~~~~~~~~~~~~~~~~~~~
@@ -119,6 +123,31 @@ Short RGB color codes such as ``#6f2`` (equivalent to ``#66ff22``) are also supp
 For transparent RGB colors, any 8-digit hexadecimal code can be used, e.g. ``[color=#88ffffff]translucent white[/color]``.
 In this case, note that the alpha channel is the **first** component of the color code, not the last one.
 Short RGBA color codes such as ``#86f2`` (equivalent to ``#8866ff22``) are also supported.
+
+.. _doc_bbcode_in_richtextlabel_handling_url_tag_clicks:
+
+Handling ``[url]`` tag clicks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default, ``[url]`` tags do nothing when clicked. This is to allow flexible use
+of ``[url]`` tags rather than limiting them to opening URLs in a web browser.
+
+To handle clicked ``[url]`` tags, connect the RichTextLabel node's
+:ref:`meta_clicked <class_RichTextLabel_signal_meta_clicked>` signal to a script function.
+
+For example, the following method can be connected to ``meta_clicked`` to open
+clicked URLs using the user's default web browser::
+
+    # This assumes RichTextLabel's `meta_clicked` signal was connected to
+    # the function below using the signal connection dialog.
+    func _richtextlabel_on_meta_clicked(meta):
+        # `meta` is not guaranteed to be a String, so convert it to a String
+        # to avoid script errors at run-time.
+        OS.shell_open(str(meta))
+
+For more advanced use cases, it's also possible to store JSON in an ``[url]``
+tag's option and parse it in the function that handles the ``meta_clicked`` signal.
+For example: ``[url={"example": "value"}]JSON[/url]``
 
 Image vertical offset
 ~~~~~~~~~~~~~~~~~~~~~
@@ -191,7 +220,8 @@ You can extend the :ref:`class_RichTextEffect` resource type to create your own 
 BBCode tags. You begin by extending the :ref:`class_RichTextEffect` resource type. Add
 the ``tool`` prefix to your GDScript file if you wish to have these custom effects run
 within the editor itself. The RichTextLabel does not need to have a script attached,
-nor does it need to be running in ``tool`` mode.
+nor does it need to be running in ``tool`` mode. The new effect will be activable in
+the Inspector through the **Custom Effects** property.
 
 There is only one function that you need to extend: ``_process_custom_fx(char_fx)``.
 Optionally, you can also provide a custom BBCode identifier simply by adding a member
