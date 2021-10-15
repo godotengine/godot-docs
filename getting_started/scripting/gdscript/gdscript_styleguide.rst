@@ -818,6 +818,18 @@ should set the type explicitly.
 
    onready var health_bar: ProgressBar = get_node("UI/LifeBar")
 
+Alternatively, you can use the ``as`` keyword to cast the return type, and
+that type will be used to infer the type of the var.
+
+.. rst-class:: code-example-good
+
+::
+
+   onready var health_bar := get_node("UI/LifeBar") as ProgressBar
+   # health_bar will be typed as ProgressBar
+
+This option is also considered more :ref:`type-safe<doc_gdscript_static_typing_safe_lines>` than the first.
+
 **Bad**:
 
 ::
