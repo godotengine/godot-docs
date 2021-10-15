@@ -14,7 +14,6 @@ For compiling under macOS, the following is required:
 - `SCons 3.0+ <https://www.scons.org>`_ build system.
 - `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`_
   (or the more lightweight Command Line Tools for Xcode).
-- *Optional* - `yasm <https://yasm.tortall.net/>`_ (for WebM SIMD optimizations).
 
 .. important::
 
@@ -22,18 +21,18 @@ For compiling under macOS, the following is required:
     `Vulkan SDK for macOS <https://vulkan.lunarg.com/sdk/home>`__.
 
 .. note:: If you have `Homebrew <https://brew.sh/>`_ installed, you can easily
-          install SCons and yasm using the following command::
+          install SCons using the following command::
 
-              brew install scons yasm
+              brew install scons
 
           Installing Homebrew will also fetch the Command Line Tools
           for Xcode automatically if you don't have them already.
 
           Similarly, if you have `MacPorts <https://www.macports.org/>`_
-          installed, you can easily install SCons and yasm using the
+          installed, you can easily install SCons using the
           following command::
 
-              sudo port install scons yasm
+              sudo port install scons
 
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
