@@ -22,20 +22,17 @@ For compiling under Windows, the following is required:
 - `Python 3.5+ <https://www.python.org/downloads/windows/>`_.
 - `SCons 3.0 <https://www.scons.org/>`_ build system. If using Visual Studio 2019,
   you need at least SCons 3.1.1.
-- *Optional* - `yasm <https://yasm.tortall.net/>`_ (for WebM SIMD optimizations)
 
 .. note:: If you have `Scoop <https://scoop.sh/>`_ installed, you can easily
           install MinGW and other dependencies using the following command::
 
-              scoop install gcc python scons yasm make
+              scoop install gcc python scons make
 
 .. note:: If you have `MSYS2 <https://www.msys2.org/>`_ installed, you can easily
           install MinGW and other dependencies using the following command::
 
-              pacman -S mingw-w64-x86_64-python3-pip \
-                  mingw-w64-x86_64-gcc mingw-w64-x86_64-yasm \
-                  mingw-w64-i686-python3-pip mingw-w64-i686-gcc \
-                  mingw-w64-i686-yasm make
+              pacman -S mingw-w64-x86_64-python3-pip mingw-w64-x86_64-gcc  \
+                  mingw-w64-i686-python3-pip mingw-w64-i686-gcc make
 
           For each MSYS2 MinGW subsystem, you should then run
           `pip3 install scons` in its shell.
