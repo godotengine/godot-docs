@@ -41,7 +41,7 @@ Property Descriptions
 | *Getter*  | get_height()      |
 +-----------+-------------------+
 
-The height of the light. Used with 2D normal mapping.
+The height of the light. Used with 2D normal mapping. The units are in pixels, e.g. if the height is 100, then it will illuminate an object 100 pixels away at a 45° angle.
 
 ----
 

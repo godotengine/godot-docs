@@ -37,7 +37,7 @@ Property Descriptions
 | *Getter*  | get_height()      |
 +-----------+-------------------+
 
-The height of the light. Used with 2D normal mapping.
+The height of the light. Used with 2D normal mapping. Ranges from 0 (level with the plane) to 1 (perpendicular to the plane).
 
 ----
 
