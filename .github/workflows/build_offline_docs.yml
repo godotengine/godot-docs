@@ -1,5 +1,6 @@
 name: Build documentation for offline usage
 on:
+  workflow_dispatch:
   schedule:
     # Every week on Monday at midnight (UTC).
     # This keeps the generated HTML documentation fresh.
