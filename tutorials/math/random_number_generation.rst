@@ -174,7 +174,7 @@ and ``to``, and returns a random integer between ``from`` and ``to``:
 
  .. code-tab:: csharp
 
-    # Prints a random integer number between -10 and 10.
+    // Prints a random integer number between -10 and 10.
     random.Randomize();
     GD.Print(random.RandiRange(-10, 10));
 
