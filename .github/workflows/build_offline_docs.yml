@@ -28,7 +28,7 @@ jobs:
       # Build the HTML to upload it.
       - name: Sphinx build
         run: |
-          sphinx-build --color -d _build/doctrees -W . _build/html
+          sphinx-build --color -d _build/doctrees . _build/html
 
       - uses: actions/upload-artifact@v2
         with:
