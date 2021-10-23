@@ -1306,6 +1306,10 @@ Inheritance uses the ``extends`` keyword::
     # Inherit/extend an inner class in another file.
     extends "somefile.gd".SomeInnerClass
 
+.. note::
+
+    If inheritance is not explicitly defined, the class will default to inheriting
+    :ref:`class_RefCounted`.
 
 To check if a given instance inherits from a given class,
 the ``is`` keyword can be used::
@@ -1526,27 +1530,44 @@ See :ref:`doc_running_code_in_the_editor` for more information.
 Memory management
 ~~~~~~~~~~~~~~~~~
 
-If a class inherits from :ref:`class_Reference`, then instances will be
-freed when no longer in use. No garbage collector exists, just
-reference counting. By default, all classes that don't define
-inheritance extend **Reference**. If this is not desired, then a class
-must inherit :ref:`class_Object` manually and must call ``instance.free()``. To
-avoid reference cycles that can't be freed, a :ref:`class_WeakRef` function is
-provided for creating weak references. Here is an example:
+Godot implements reference counting to free certain instances that are no longer
+used, instead of a garbage collector, or requiring purely manual management.
+Any instance of the :ref:`class_RefCounted` class (or any class that inherits
+it, such as :ref:`class_Resource`) will be freed automatically when no longer
+in use. For an instance of any class that is not a :ref:`class_RefCounted`
+(such as :ref:`class_Node` or the base :ref:`class_Object` type), it will
+remain in memory until it is deleted with ``free()`` (or ``queue_free()``
+for Nodes).
+
+.. note::
+
+    If a :ref:`class_Node` is deleted via ``free()`` or ``queue_free()``,
+    all of its children will also recursively be deleted.
+
+To avoid reference cycles that can't be freed, a :ref:`class_WeakRef`
+function is provided for creating weak references, which allow access
+to the object without preventing a :ref:`class_RefCounted` from freeing.
+Here is an example:
+
 
 ::
 
     extends Node
 
-    var my_node_ref
+    var my_file_ref
 
     func _ready():
-        my_node_ref = weakref(get_node("MyNode"))
+        var f = File.new()
+        my_file_ref = weakref(f)
+        # the File class inherits RefCounted, so it will be freed when not in use
+
+        # the WeakRef will not prevent f from being freed when other_node is finished
+        other_node.use_file(f)
 
     func _this_is_called_later():
-        var my_node = my_node_ref.get_ref()
-        if my_node:
-            my_node.do_something()
+        var my_file = my_file_ref.get_ref()
+        if my_file:
+            my_file.close()
 
 Alternatively, when not using references, the
 ``is_instance_valid(instance)`` can be used to check if an object has been
