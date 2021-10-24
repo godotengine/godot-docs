@@ -52,7 +52,13 @@ Setting up SCons
 
 To install SCons open the command prompt and run the following command.
 
-``python -m pip3 install scons``
+``python -m pip install scons``
+
+In case during the installation you are prompted with the following message
+``Defaulting to user installation because normal site-packages is not 
+writeable`` you may have to run that command again using elevated
+permissions (i.e. opening the command prompt as an Administrator) to
+ensure that SCons is available from the ``PATH``.
 
 To check whether you have installed Python and SCons correctly, you can
 type ``python --version`` and ``scons --version`` into a command prompt
