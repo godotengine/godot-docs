@@ -77,7 +77,7 @@ who need maintenance updates.
 Whenever a new major version is released, we make the previous stable branch a
 long-term supported release, and do our best to provide fixes for issues
 encountered by users of that branch who cannot port complex projects to the new
-major version. This is the case for the 2.1 branch, and will be the case for
+major version. This was the case for the 2.1 branch, and will be the case for
 the latest 3.x stable branch by the time Godot 4.0 is released.
 
 In a given minor release series, only the latest patch release receives support.
@@ -99,13 +99,11 @@ on GitHub.
 | Godot 3.2   | January 2020         | |eol| No longer supported as fully superseded by the compatible 3.3      |
 |             |                      | release (last update: 3.2.3).                                            |
 +-------------+----------------------+--------------------------------------------------------------------------+
-| Godot 3.1   | March 2019           | |partial| Only critical, security and platform support fixes             |
-|             |                      | (last update: 3.1.2).                                                    |
+| Godot 3.1   | March 2019           | |eol| No longer supported (last update: 3.1.2).                          |
 +-------------+----------------------+--------------------------------------------------------------------------+
 | Godot 3.0   | January 2018         | |eol| No longer supported (last update: 3.0.6).                          |
 +-------------+----------------------+--------------------------------------------------------------------------+
-| Godot 2.1   | July 2016            | |partial| Only critical, security and platform support fixes             |
-|             |                      | (last update: 2.1.6).                                                    |
+| Godot 2.1   | July 2016            | |eol| No longer supported (last update: 2.1.6).                          |
 +-------------+----------------------+--------------------------------------------------------------------------+
 | Godot 2.0   | February 2016        | |eol| No longer supported (last update: 2.0.4.1).                        |
 +-------------+----------------------+--------------------------------------------------------------------------+
