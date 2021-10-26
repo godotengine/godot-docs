@@ -42,7 +42,7 @@ The :ref:`_post_import<class_EditorScenePostImport_method__post_import>` callbac
  .. code-tab:: csharp
 
     using Godot;
-    
+
     // This sample changes all node names.
     // Called right after the scene is imported and gets the root node.
     [Tool]
@@ -68,6 +68,46 @@ The :ref:`_post_import<class_EditorScenePostImport_method__post_import>` callbac
     }
 
 
+Modify materials on import example:
+---------
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    tool # Needed so it runs in editor.
+    extends EditorScenePostImport
+
+    # The specular value we want to set on all imported materials
+    export var specular := 0
+
+    func post_import(scene):
+        iterate(scene)
+        return scene
+
+    func iterate(node):
+        if node == null:
+            return node
+        # Try to get the materials inside the mesh resource only if there is one.
+        if "mesh" in node:
+            handleMesh(node.mesh)
+
+        # Do the same process on all children of the scene
+        for child in node.get_children():
+            iterate(child)
+
+    func handleMesh(mesh: Mesh):
+        var surfacesCount :int= mesh.get_surface_count()
+        for i in range(surfacesCount):
+            handleMaterial(mesh.surface_get_material(i))
+
+    func handleMaterial(material: SpatialMaterial):
+        material.metallic_specular = specular
+        # Save the material and log any erros
+        material.emit_changed()
+        var error = ResourceSaver.save(material.resource_path, material)
+        if error:
+            push_error(error)
 
 Tutorials
 ---------
