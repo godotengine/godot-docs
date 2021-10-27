@@ -19,7 +19,7 @@ series, you will get to use them in practice.
 Scenes
 ------
 
-In Godot, you break down your game in reusable scenes. A scene like a character,
+In Godot, you break down your game in reusable scenes. A scene can be a character,
 a weapon, a menu in the user interface, a single house, an entire level, or
 anything you can think of. Godot's scenes are flexible; they fill the role of
 both prefabs and scenes in some other game engines.
@@ -35,7 +35,7 @@ Nodes
 -----
 
 A scene is composed of one or more **nodes**. Nodes are your game's smallest
-building block that you arrange into trees. Here's an example of a character's
+building blocks that you arrange into trees. Here's an example of a character's
 nodes.
 
 .. image:: img/key_concepts_character_nodes.png
@@ -69,7 +69,7 @@ represent characters, weapons, doors, or your user interface.
 Signals
 -------
 
-Nodes emit signals when some event occurred. This feature allows you to make
+Nodes emit signals when some event occurs. This feature allows you to make
 nodes communicate without hard-wiring them in code. It gives you a lot of
 flexibility in how you structure your scenes.
 
@@ -92,7 +92,7 @@ Summary
 Nodes, scenes, the scene tree, and signals are four core concepts in Godot that
 you will manipulate all the time.
 
-Nodes are your game's smallest building block. You combine them to create scenes
+Nodes are your game's smallest building blocks. You combine them to create scenes
 that you then combine and nest into the scene tree. You can then use signals to
 make nodes react to events in other nodes or different scene tree branches.
 
