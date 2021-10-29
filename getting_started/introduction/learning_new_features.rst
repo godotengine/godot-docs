@@ -29,7 +29,7 @@ general features, concepts, and how to use the editor, the reference is all
 about using Godot's scripting API (Application Programming Interface). You can
 access it both online and offline. We recommend browsing the reference offline,
 from within the Godot editor. To do so, go to Help -> Search or press
-:kbd:`Shift F1`.
+:kbd:`F1`.
 
 .. image:: img/manual_class_reference_search.png
 
