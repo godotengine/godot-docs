@@ -33,7 +33,7 @@ Here is a quick example, closing your game if the escape key is hit:
 
 However, it is cleaner and more flexible to use the provided :ref:`InputMap <class_InputMap>` feature,
 which allows you to define input actions and assign them different keys. This way,
-you can define multiple keys for the same action (e.g. they keyboard escape key and the start button on a gamepad).
+you can define multiple keys for the same action (e.g. the keyboard escape key and the start button on a gamepad).
 You can then more easily change this mapping in the project settings without updating your code,
 and even build a key mapping feature on top of it to allow your game to change the key mapping at runtime!
 
