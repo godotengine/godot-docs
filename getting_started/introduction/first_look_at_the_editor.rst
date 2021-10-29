@@ -139,7 +139,8 @@ signal by any one of the following methods:
 * Pressing :kbd:`F1` (or :kbd:`Alt + Space` on macOS) anywhere in the editor.
 * Clicking the "Search Help" button in the top-right of the Script main screen.
 * Clicking on the Help menu and Search Help.
-* Clicking while pressing the :kbd:`Ctrl` key on a class name, function name, or built-in variable in the script editor.
+* Clicking while pressing the :kbd:`Ctrl` key on a class name, function name, 
+  or built-in variable in the script editor.
 
 
 .. image:: img/editor_intro_search_help_button.png
