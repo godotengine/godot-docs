@@ -130,7 +130,7 @@ Emitted when one of another Area's :ref:`Shape<class_Shape>`\ s enters one of th
 
 - **area_shape_exited** **(** :ref:`int<class_int>` area_id, :ref:`Area<class_Area>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` local_shape **)**
 
-Emitted when one of another Area's :ref:`Shape<class_Shape>`\ s enters one of this Area's :ref:`Shape<class_Shape>`\ s. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``.
+Emitted when one of another Area's :ref:`Shape<class_Shape>`\ s exits one of this Area's :ref:`Shape<class_Shape>`\ s. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``.
 
 ``area_id`` the :ref:`RID<class_RID>` of the other Area's :ref:`CollisionObject<class_CollisionObject>` used by the :ref:`PhysicsServer<class_PhysicsServer>`.
 
