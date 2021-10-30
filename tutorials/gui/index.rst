@@ -37,6 +37,7 @@ The following pages explain the basics of using such controls.
    size_and_anchors
    gui_containers
    custom_gui_controls
+   gui_navigation
    control_node_gallery
 
 GUI skinning and themes
