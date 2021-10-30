@@ -48,7 +48,10 @@ with becomes your minimum version.
 
 .. note::
 
-    Currently, GDExtentions has been merged into the master branch of godot-cpp. Therefore use the 3.x branch to use GDNative and follow this example. 
+    `GDExtension <https://godotengine.org/article/introducing-gd-extensions>`__ has been merged in the ``master`` branch of godot-cpp,
+    but it is only compatible with the upcoming Godot 4.0.
+    Therefore, you need to use the ``3.x`` branch of godot-cpp to use GDNative
+    and follow this example.
 
 If you are versioning your project using Git, it is a good idea to add them as
 Git submodules:
