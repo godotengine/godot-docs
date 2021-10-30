@@ -46,6 +46,10 @@ between 3.0 and 3.1) but not vice versa, so make sure you download the correct
 branch. Also, note that the version of Godot you use to generate the ``api.json``
 with becomes your minimum version.
 
+.. note::
+
+    Currently, GDExtentions has been merged into the master branch of godot-cpp. Therefore use the 3.x branch to use GDNative and follow this example. 
+
 If you are versioning your project using Git, it is a good idea to add them as
 Git submodules:
 
@@ -55,7 +59,7 @@ Git submodules:
     mkdir gdnative_cpp_example
     cd gdnative_cpp_example
     git init
-    git submodule add https://github.com/godotengine/godot-cpp
+    git submodule add -b 3.x https://github.com/godotengine/godot-cpp
     cd godot-cpp
     git submodule update --init
 
