@@ -87,7 +87,7 @@ Do make sure you clone recursive to pull in both repositories:
 
     mkdir gdnative_cpp_example
     cd gdnative_cpp_example
-    git clone --recursive https://github.com/godotengine/godot-cpp
+    git clone --recursive -b 3.x https://github.com/godotengine/godot-cpp
 
  .. code-tab:: none Godot 3.0
 
