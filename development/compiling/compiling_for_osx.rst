@@ -77,7 +77,12 @@ projects in an automated manner, use::
 
     scons platform=server tools=yes target=release_debug --jobs=$(sysctl -n hw.logicalcpu)
 
-To compile a *server* build which is optimized to run dedicated game servers,
+To compile a debug *server* build which can be used with
+:ref:`remote debugging tools <doc_command_line_tutorial>`, use::
+
+    scons platform=server tools=no target=release_debug --jobs=$(sysctl -n hw.logicalcpu)
+
+To compile a release *server* build which is optimized to run dedicated game servers,
 use::
 
     scons platform=server tools=no target=release --jobs=$(sysctl -n hw.logicalcpu)

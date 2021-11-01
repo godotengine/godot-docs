@@ -142,6 +142,11 @@ projects in an automated manner, use::
 
     scons -j8 platform=server tools=yes target=release_debug
 
+To compile a debug *server* build which can be used with
+:ref:`remote debugging tools <doc_command_line_tutorial>`, use::
+
+    scons -j8 platform=server tools=no target=release_debug
+
 To compile a *server* build which is optimized to run dedicated game servers,
 use::
 
