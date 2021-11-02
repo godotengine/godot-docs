@@ -4,7 +4,7 @@
 # https://github.com/readthedocs/readthedocs.org/blob/master/requirements/pip.txt
 # https://github.com/readthedocs/readthedocs.org/blob/master/requirements/docs.txt
 sphinx==4.0.2
-sphinx_rtd_theme==0.5.2
+sphinx_rtd_theme==1.0.0
 docutils<0.18
 
 # Code tabs extension for GDScript/C#
