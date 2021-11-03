@@ -75,7 +75,7 @@ although that may lead to decreased performance.
       The main downside is that it may cause lighting to leak in some corners.
       The other downside is that materials that have their cull mode set to
       **Disabled** or MeshInstances with Cast Shadow set to **Double-Sided**
-      will exhibit shadow acne.
+      may exhibit shadow acne.
     - Set **Bias** to ``-0.01``. The bias should be a negative value when
       **Reverse Cull Face** is enabled, but it should be a positive value when it's disabled.
     - For DirectionalLight, set the directional shadow **Normal Bias** to ``0.0``
