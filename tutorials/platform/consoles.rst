@@ -31,7 +31,8 @@ single console often exceeds $1,000 (this is a rough figure).
 Official support
 ----------------
 
-Godot currently does not officially support consoles. The reasons for this are:
+Godot supports the Linux-based Steam Deck. The reason other consoles are not
+officially supported are:
 
 - To develop for consoles, one must be licensed as a company.
   As an open source project, Godot does not have such a legal figure.
