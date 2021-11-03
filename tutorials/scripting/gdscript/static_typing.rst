@@ -178,6 +178,8 @@ get full autocompletion on the player variable thanks to that cast.
 
     If you try to cast with a built-in type and it fails, Godot will throw an error.
 
+.. _doc_gdscript_static_typing_safe_lines:
+
 Safe lines
 ^^^^^^^^^^
 
