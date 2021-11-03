@@ -179,7 +179,7 @@ Vulkan renderer.
 - *SpotLight:* Single texture. Supports colored projector textures.
 - Shadow pancaking to decrease the amount of visible shadow acne and peter-panning.
 - PCSS-like shadow blur based on the light size and distance from the surface
-  the shadow is casted on.
+  the shadow is cast on.
 - Adjustable blur on a per-light basis.
 
 **Global illumination with indirect lighting:**
@@ -196,7 +196,7 @@ Vulkan renderer.
      to CPU lightmapping).
 
 - GI probes (slower, fully real-time). Supports reflections.
-- Signed distance field GI (intermediate, supports dynamic lights but not
+- Signed-distance field GI (intermediate, supports dynamic lights but not
   dynamic occluders). Supports reflections.
 - Global illumination uses a deferred pass to allow for rendering GI at half
   resolution to improve performance.
@@ -246,7 +246,7 @@ Vulkan renderer.
 - Screen-space ambient occlusion at half or full resolution.
 - Glow/bloom with optional bicubic upscaling and several blend modes available:
   Screen, Soft Light, Add, Replace, Mix.
-- Color correction using an one-dimensional ramp.
+- Color correction using a one-dimensional ramp.
 - Roughness limiter to reduce the impact of specular aliasing.
 - Brightness, contrast and saturation adjustments.
 

@@ -23,7 +23,7 @@ term adapted to the complexity of a game engine:
   running the project through a conversion tool, and then performing a number
   of further adjustments manually for what the tool could not do automatically.
 
-- The ``minor`` version is incremented for feature releases which do not break
+- The ``minor`` version is incremented for feature releases that do not break
   compatibility in a major way. Minor compatibility breakage in very specific
   areas *may* happen in minor versions, but the vast majority of projects
   should not be affected or require significant porting work.
@@ -64,7 +64,7 @@ further developed for maintenance releases in a Git branch of the same name
     As mentioned in the introduction, Godot's release policy is evolving, and
     earlier Godot releases may not have followed the above rules to the letter.
     In particular, the 3.2 stable branch received a number of new features in
-    3.2.2 which would have warranted a ``minor`` version increment.
+    3.2.2 that would have warranted a ``minor`` version increment.
 
 Release support timeline
 ------------------------

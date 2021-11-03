@@ -33,7 +33,7 @@ About Godot Engine
 
 A game engine is a complex tool, and it is therefore difficult to present Godot
 in a few words. Here's a quick synopsis, which you are free to reuse
-if you need a quick writeup about Godot Engine.
+if you need a quick write-up about Godot Engine.
 
     Godot Engine is a feature-packed, cross-platform game engine to create 2D
     and 3D games from a unified interface. It provides a comprehensive set of
@@ -103,7 +103,7 @@ relatively intuitive:
   the generated files of the documentation are not meant to be modified. See
   :ref:`doc_class_reference_writing_guidelines` for details.
 
-In addition to this documentation you may also want to take a look at the
+In addition to this documentation, you may also want to take a look at the
 various `Godot demo projects <https://github.com/godotengine/godot-demo-projects>`_.
 
 Have fun reading and making games with Godot Engine!
