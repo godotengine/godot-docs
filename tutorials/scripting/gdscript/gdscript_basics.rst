@@ -986,9 +986,9 @@ nature of the tab-based indentation, ``elif`` can be used instead of
 
 ::
 
-    if [expression]:
+    if (expression):
         statement(s)
-    elif [expression]:
+    elif (expression):
         statement(s)
     else:
         statement(s)
@@ -1003,7 +1003,7 @@ Short statements can be written on the same line as the condition::
 Sometimes, you might want to assign a different initial value based on a
 boolean expression. In this case, ternary-if expressions come in handy::
 
-    var x = [value] if [expression] else [value]
+    var x = (value) if (expression) else (value)
     y += 3 if y < 10 else -1
 
 Ternary-if expressions can be nested to handle more than 2 cases. When nesting
