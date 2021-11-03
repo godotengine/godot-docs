@@ -56,6 +56,12 @@ You can set up your InputMap under **Project > Project Settings > Input Map** an
         }
     }
 
+ .. code-tab:: VisualScript
+ 
+    image:: img/VisualScript Snippits/Using_InputEvent_1.png
+
+
+
 How does it work?
 -----------------
 
@@ -198,7 +204,12 @@ The Input singleton has a method for this:
     ev.SetPressed(true);
     // Feedback.
     Input.ParseInputEvent(ev);
+    
+ .. code-tab:: VisualScript
+ 
+    image:: img/VisualScript Snippits/Using_InputEvent_2.png
 
+    
 InputMap
 --------
 
