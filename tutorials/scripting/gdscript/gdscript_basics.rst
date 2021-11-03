@@ -1037,7 +1037,7 @@ using ``break`` or continued using ``continue``:
 
 ::
 
-    while [expression]:
+    while (expression):
         statement(s)
 
 for
@@ -1083,7 +1083,7 @@ It's the equivalent of the ``switch`` statement found in many other languages, b
 
 Basic syntax::
 
-    match [expression]:
+    match (expression):
         [pattern](s):
             [block]
         [pattern](s):
