@@ -32,8 +32,8 @@ Here is a quick example, closing your game if the escape key is hit:
     }
 
  .. code-tab:: VisualScript
- 
-    .. image:: img/VisualScript Snippits/Using_InputEvent_1.png
+
+    .. image:: img/visualscript_1.png
 
 
 However, it is cleaner and more flexible to use the provided :ref:`InputMap <class_InputMap>` feature,
@@ -62,8 +62,8 @@ You can set up your InputMap under **Project > Project Settings > Input Map** an
     }
 
  .. code-tab:: VisualScript
- 
-    .. image:: img/VisualScript Snippits/Using_InputEvent_2.png
+
+    .. image:: img/visualscript_2.png
 
 
 How does it work?
@@ -210,8 +210,8 @@ The Input singleton has a method for this:
     Input.ParseInputEvent(ev);
 
  .. code-tab:: VisualScript
- 
-    .. image:: img/VisualScript Snippits/Using_InputEvent_3.png
+
+    .. image:: img/visualscript_3.png
 
 
 InputMap
