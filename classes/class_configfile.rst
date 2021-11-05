@@ -90,6 +90,8 @@ Method Descriptions
 
 - void **clear** **(** **)**
 
+Removes the entire contents of the config.
+
 ----
 
 .. _class_ConfigFile_method_erase_section:
