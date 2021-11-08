@@ -144,7 +144,7 @@ and ``get_slide_collision()``:
     for (int i = 0; i < GetSlideCount(); i++)
     {
         var collision = GetSlideCollision(i);
-        GD.Print("I collided with ", collision.Collider.Name);
+        GD.Print("I collided with ", ((Node)collision.Collider).Name);
     }
 
 .. note:: `get_slide_count()` only counts times the body has collided and changed direction.
