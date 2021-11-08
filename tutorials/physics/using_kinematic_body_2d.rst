@@ -136,7 +136,7 @@ and ``get_slide_collision()``:
     var collision = MoveAndCollide(velocity * delta);
     if (collision != null)
     {
-        GD.Print("I collided with ", collision.Collider.Name);
+        GD.Print("I collided with ", ((Node)collision.Collider).Name);
     }
 
     // Using MoveAndSlide.
