@@ -89,7 +89,7 @@ like this:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    tool
+    @tool
     extends EditorPlugin
 
 
@@ -156,7 +156,7 @@ clicked. For that, we'll need a script that extends from
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    tool
+    @tool
     extends Button
 
 
@@ -200,7 +200,7 @@ dialog. For that, change the ``custom_node.gd`` script to the following:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    tool
+    @tool
     extends EditorPlugin
 
 
@@ -316,7 +316,7 @@ The script could look like this:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    tool
+    @tool
     extends EditorPlugin
 
 
