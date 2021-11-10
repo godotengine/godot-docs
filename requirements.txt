@@ -11,7 +11,7 @@ docutils<0.18
 sphinx-tabs==3.2.0
 
 # Custom 404 error page (more useful than the default)
-sphinx-notfound-page==0.7.1
+sphinx-notfound-page==0.8
 
 # Adds Open Graph tags in the HTML `<head>` tag
 sphinxext-opengraph==0.4.2
