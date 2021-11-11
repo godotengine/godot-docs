@@ -139,8 +139,32 @@ First, we need to check for input - is the player pressing a key? For this game,
 we have 4 direction inputs to check. Input actions are defined in the Project
 Settings under "Input Map". Here, you can define custom events and assign
 different keys, mouse events, or other inputs to them. For this game, we will
-just use the default events called "ui_right" etc that are assigned to the arrow
-keys on the keyboard.
+map the arrow keys to the four directions.
+
+Click on *Project -> Project Settings* to open the project settings and then
+click on the *Input Map* tab at the top. Enter "move_right" and then click
+the "Add" button to add the ``move_right`` action, as shown here:
+
+.. image:: img/input-mapping-add-action.png
+
+Now we need to add a key assignment to this action. Press the "+" button and
+then press "Key" in the pop-up menu.  A dialog will ask you to press the key
+you want mapped.  Press the right arrow and then click "Ok":
+
+.. image:: img/input-mapping-add-key.png
+
+Repeat these steps to add three more mappings: ``move_left`` mapped to the left arrow
+key, ``move_up`` mapped to the up arrow key, and ``move_down`` mapped to the down arrow key.
+It should look something like this:
+
+.. image:: img/input-mapping-completed.png
+
+Press "Close" to close the project settings.
+
+.. note::
+
+  You can map multiple keys, joystick buttons, or joystick
+  axes to the same input action.
 
 You can detect whether a key is pressed using ``Input.is_action_pressed()``,
 which returns ``true`` if it's pressed or ``false`` if it isn't.
@@ -150,13 +174,13 @@ which returns ``true`` if it's pressed or ``false`` if it isn't.
 
     func _process(delta):
         var velocity = Vector2.ZERO # The player's movement vector.
-        if Input.is_action_pressed("ui_right"):
+        if Input.is_action_pressed("move_right"):
             velocity.x += 1
-        if Input.is_action_pressed("ui_left"):
+        if Input.is_action_pressed("move_left"):
             velocity.x -= 1
-        if Input.is_action_pressed("ui_down"):
+        if Input.is_action_pressed("move_down"):
             velocity.y += 1
-        if Input.is_action_pressed("ui_up"):
+        if Input.is_action_pressed("move_up"):
             velocity.y -= 1
 
         if velocity.length() > 0:
@@ -171,22 +195,22 @@ which returns ``true`` if it's pressed or ``false`` if it isn't.
     {
         var velocity = Vector2.Zero; // The player's movement vector.
 
-        if (Input.IsActionPressed("ui_right"))
+        if (Input.IsActionPressed("move_right"))
         {
             velocity.x += 1;
         }
 
-        if (Input.IsActionPressed("ui_left"))
+        if (Input.IsActionPressed("move_left"))
         {
             velocity.x -= 1;
         }
 
-        if (Input.IsActionPressed("ui_down"))
+        if (Input.IsActionPressed("move_down"))
         {
             velocity.y += 1;
         }
 
-        if (Input.IsActionPressed("ui_up"))
+        if (Input.IsActionPressed("move_up"))
         {
             velocity.y -= 1;
         }

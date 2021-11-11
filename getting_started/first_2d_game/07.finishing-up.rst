@@ -45,12 +45,15 @@ Since the game is played with keyboard controls, it would be convenient if we
 could also start the game by pressing a key on the keyboard. We can do this with
 the "Shortcut" property of the ``Button`` node.
 
+First, return to the *Project -> Project Settings* and click on the *Input Map*
+tab.  Add another action (like you did for the movement keys) called
+``start_game`` mapped to ``space``.
+
 In the ``HUD`` scene, select the ``StartButton`` and find its *Shortcut*
 property in the Inspector. Select "New Shortcut" and click on the "Shortcut"
 item. A second *Shortcut* property will appear. Select "New InputEventAction"
 and click the new "InputEventAction". Finally, in the *Action* property, type
-the name ``ui_select``. This is the default input event associated with the
-spacebar.
+the name ``start_game``.
 
 .. image:: img/start_button_shortcut.png
 
