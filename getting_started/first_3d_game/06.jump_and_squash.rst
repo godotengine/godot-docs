@@ -255,7 +255,7 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
     {
         // ...
 
-        for (int index = 0; i < GetSlideCount(); index++)
+        for (int index = 0; index < GetSlideCount(); index++)
         {
             // We check every collision that occurred this frame.
             KinematicCollision collision = GetSlideCollision(index);
