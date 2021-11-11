@@ -24,7 +24,7 @@ your project's features.
      though is actually a tree of :ref:`TreeItem <class_TreeItem>` Objects.
 
    - **Advantages:** Simplifying one's API to smaller scoped objects helps improve
-     its accessibility improve iteration time. Rather than working with the
+     its accessibility and improve iteration time. Rather than working with the
      entire Node library, one creates an abbreviated set of Objects from which
      a node can generate and manage the appropriate sub-nodes.
 
