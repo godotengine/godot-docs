@@ -14,40 +14,40 @@ name is available.
 
 (in alphabetical order, with over 10 commits excluding merges)
 
-Aaron Franke (aaronfranke)
-Andrew Conrad (her001)
-Andrii Doroshenko (Xrayez)
-Arman (puchik)
-Bastiaan Olij (BastiaanOlij)
-bitbutter
-Camille Mohr-Daurat (pouleyKetchoupp)
-Chris Bradfield (cbscribe)
-Clay John (clayjohn)
-corrigentia
-Fabio Alessandrelli (Faless)
-FeralBytes
-Frido (mega-bit)
-George Marques (vnen)
-Gerrit Großkopf (Grosskopf)
-Griatch
-Haoyu Qiu (timothyqiu)
-Hugo Locurcio (Calinou)
-Ignacio Roldán Etcheverry (neikeq)
-Jérôme Gully (Nutriz)
-Juan Linietsky (reduz)
-Julian Murgia (StraToN)
-Kelly Thomas (KellyThomas)
-Leon Krause (leonkrause)
-Matthew (skyace65)
-Max Hilbrunner (mhilbrunner)
-Michael Alexsander (YeldhamDev)
-Nathan Lovato (NathanLovato)
-Paul Joannon (paulloz)
-Poommetee Ketson (Naryosha)
-Rémi Verschelde (akien-mga)
-Tomasz Chabora (KoBeWi)
-TwistedTwigleg
-Will Nations (willnationsdev)
-Yuri Roubinsky (Chaosus)
-Yuri Sizov (pycbouh)
-ZX-WT
+    Aaron Franke (aaronfranke)
+    Andrew Conrad (her001)
+    Andrii Doroshenko (Xrayez)
+    Arman (puchik)
+    Bastiaan Olij (BastiaanOlij)
+    bitbutter
+    Camille Mohr-Daurat (pouleyKetchoupp)
+    Chris Bradfield (cbscribe)
+    Clay John (clayjohn)
+    corrigentia
+    Fabio Alessandrelli (Faless)
+    FeralBytes
+    Frido (mega-bit)
+    George Marques (vnen)
+    Gerrit Großkopf (Grosskopf)
+    Griatch
+    Haoyu Qiu (timothyqiu)
+    Hugo Locurcio (Calinou)
+    Ignacio Roldán Etcheverry (neikeq)
+    Jérôme Gully (Nutriz)
+    Juan Linietsky (reduz)
+    Julian Murgia (StraToN)
+    Kelly Thomas (KellyThomas)
+    Leon Krause (leonkrause)
+    Matthew (skyace65)
+    Max Hilbrunner (mhilbrunner)
+    Michael Alexsander (YeldhamDev)
+    Nathan Lovato (NathanLovato)
+    Paul Joannon (paulloz)
+    Poommetee Ketson (Naryosha)
+    Rémi Verschelde (akien-mga)
+    Tomasz Chabora (KoBeWi)
+    TwistedTwigleg
+    Will Nations (willnationsdev)
+    Yuri Roubinsky (Chaosus)
+    Yuri Sizov (pycbouh)
+    ZX-WT
