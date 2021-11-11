@@ -48,7 +48,7 @@ ArrayMesh
 ---------
 
 Add an :ref:`ArrayMesh <class_arraymesh>` to a MeshInstance. Normally, adding an ArrayMesh in
-the editor is not useful, but in this case it allows as to access the ArrayMesh from code
+the editor is not useful, but in this case it allows us to access the ArrayMesh from code
 without creating one.
 
 Next, add a script to the MeshInstance.
