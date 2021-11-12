@@ -141,30 +141,34 @@ Settings under "Input Map". Here, you can define custom events and assign
 different keys, mouse events, or other inputs to them. For this game, we will
 map the arrow keys to the four directions.
 
-Click on *Project -> Project Settings* to open the project settings and then
-click on the *Input Map* tab at the top. Enter "move_right" and then click
-the "Add" button to add the ``move_right`` action, as shown here:
+Click on *Project -> Project Settings* to open the project settings window and
+click on the *Input Map* tab at the top. Type "move_right" in the top bar and
+click the "Add" button to add the ``move_right`` action.
 
 .. image:: img/input-mapping-add-action.png
 
-Now we need to add a key assignment to this action. Press the "+" button and
-then press "Key" in the pop-up menu.  A dialog will ask you to press the key
-you want mapped.  Press the right arrow and then click "Ok":
+We need to assign a key to this action. Click the "+" icon on the right, then
+click the "Key" option in the drop-down menu. A dialog asks you to type in the
+desired key. Press the right arrow on your keyboard and click "Ok".
 
 .. image:: img/input-mapping-add-key.png
 
-Repeat these steps to add three more mappings: ``move_left`` mapped to the left arrow
-key, ``move_up`` mapped to the up arrow key, and ``move_down`` mapped to the down arrow key.
-It should look something like this:
+Repeat these steps to add three more mappings:
+
+1. ``move_left`` mapped to the left arrow key.
+2. ``move_up`` mapped to the up arrow key.
+3. And ``move_down`` mapped to the down arrow key.
+
+Your input map tab should look like this:
 
 .. image:: img/input-mapping-completed.png
 
-Press "Close" to close the project settings.
+Click the "Close" button to close the project settings.
 
 .. note::
 
-  You can map multiple keys, joystick buttons, or joystick
-  axes to the same input action.
+   We only mapped one key to each input action, but you can map multiple keys,
+   joystick buttons, or mouse buttons to the same input action.
 
 You can detect whether a key is pressed using ``Input.is_action_pressed()``,
 which returns ``true`` if it's pressed or ``false`` if it isn't.
