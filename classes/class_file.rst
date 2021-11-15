@@ -59,7 +59,7 @@ Here's a sample on how to write and read from a file:
 
 
 
-In the example above, the file will be saved in the user data folder as specified in the `Data paths <https://docs.godotengine.org/en/latest/tutorials/io/data_paths.html>`__ documentation.
+In the example above, the file will be saved in the user data folder as specified in the :doc:`Data paths <../tutorials/io/data_paths>` documentation.
 
 **Note:** To access project resources once exported, it is recommended to use :ref:`ResourceLoader<class_ResourceLoader>` instead of the ``File`` API, as some files are converted to engine-specific formats and their original source files might not be present in the exported PCK package.
 
@@ -68,7 +68,7 @@ In the example above, the file will be saved in the user data folder as specifie
 Tutorials
 ---------
 
-- :doc:`../tutorials/scripting/filesystem`
+- :doc:`File system <../tutorials/scripting/filesystem>`
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 

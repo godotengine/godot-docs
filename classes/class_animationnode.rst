@@ -25,7 +25,7 @@ Inherit this when creating nodes mainly for use in :ref:`AnimationNodeBlendTree<
 Tutorials
 ---------
 
-- :doc:`../tutorials/animation/animation_tree`
+- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
 
 Properties
 ----------

@@ -21,7 +21,7 @@ An Omnidirectional light is a type of :ref:`Light3D<class_Light3D>` that emits l
 Tutorials
 ---------
 
-- :doc:`../tutorials/3d/lights_and_shadows`
+- :doc:`3D lights and shadows <../tutorials/3d/lights_and_shadows>`
 
 Properties
 ----------

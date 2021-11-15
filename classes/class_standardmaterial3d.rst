@@ -16,7 +16,7 @@ StandardMaterial3D
 Tutorials
 ---------
 
-- :doc:`../tutorials/3d/standard_material_3d`
+- :doc:`Standard Material 3D <../tutorials/3d/standard_material_3d>`
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

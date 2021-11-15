@@ -23,7 +23,7 @@ SSL stream peer. This object can be used to connect to an SSL server or accept a
 Tutorials
 ---------
 
-- :doc:`../tutorials/networking/ssl_certificates`
+- :doc:`SSL certificates <../tutorials/networking/ssl_certificates>`
 
 Properties
 ----------

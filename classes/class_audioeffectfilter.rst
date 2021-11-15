@@ -23,7 +23,7 @@ Allows frequencies other than the :ref:`cutoff_hz<class_AudioEffectFilter_proper
 Tutorials
 ---------
 
-- :doc:`../tutorials/audio/audio_buses`
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
 Properties
 ----------

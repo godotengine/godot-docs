@@ -21,7 +21,7 @@ A singleton that deals with inputs. This includes key presses, mouse buttons and
 Tutorials
 ---------
 
-- :doc:`../tutorials/inputs/index`
+- :doc:`Inputs documentation index <../tutorials/inputs/index>`
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 

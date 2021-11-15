@@ -23,7 +23,7 @@ Base class for all 2D shapes. All 2D shape types inherit from this.
 Tutorials
 ---------
 
-- :doc:`../tutorials/physics/physics_introduction`
+- :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
 
 Properties
 ----------

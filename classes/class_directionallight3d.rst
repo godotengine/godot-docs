@@ -21,7 +21,7 @@ A directional light is a type of :ref:`Light3D<class_Light3D>` node that models 
 Tutorials
 ---------
 
-- :doc:`../tutorials/3d/lights_and_shadows`
+- :doc:`Lights and shadows <../tutorials/3d/lights_and_shadows>`
 
 Properties
 ----------

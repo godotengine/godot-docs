@@ -21,7 +21,7 @@ Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource,
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/2d_sprite_animation`
+- :doc:`2D Sprite animation (also applies to 3D) <../tutorials/2d/2d_sprite_animation>`
 
 Properties
 ----------

@@ -29,9 +29,9 @@ Resource for environment nodes (like :ref:`WorldEnvironment<class_WorldEnvironme
 Tutorials
 ---------
 
-- :doc:`../tutorials/3d/environment_and_post_processing`
+- :doc:`Environment and post-processing <../tutorials/3d/environment_and_post_processing>`
 
-- :doc:`../tutorials/3d/high_dynamic_range`
+- :doc:`Light transport in game engines <../tutorials/3d/high_dynamic_range>`
 
 - `3D Material Testers Demo <https://godotengine.org/asset-library/asset/123>`__
 

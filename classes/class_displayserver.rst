@@ -475,7 +475,7 @@ enum **WindowMode**:
 
 - **WINDOW_MODE_FULLSCREEN** = **3** --- Fullscreen window mode. Note that this is not *exclusive* fullscreen. On Windows and Linux, a borderless window is used to emulate fullscreen. On macOS, a new desktop is used to display the running project.
 
-Regardless of the platform, enabling fullscreen will change the window size to match the monitor's size. Therefore, make sure your project supports `multiple resolutions <https://docs.godotengine.org/en/latest/tutorials/rendering/multiple_resolutions.html>`__ when enabling fullscreen mode.
+Regardless of the platform, enabling fullscreen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling fullscreen mode.
 
 ----
 

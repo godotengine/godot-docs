@@ -23,7 +23,7 @@ A node to be used for advanced animation transitions in an :ref:`AnimationPlayer
 Tutorials
 ---------
 
-- :doc:`../tutorials/animation/animation_tree`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 

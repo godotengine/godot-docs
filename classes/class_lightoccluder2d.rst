@@ -21,7 +21,7 @@ Occludes light cast by a Light2D, casting shadows. The LightOccluder2D must be p
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/2d_lights_and_shadows`
+- :doc:`2D lights and shadows <../tutorials/2d/2d_lights_and_shadows>`
 
 Properties
 ----------

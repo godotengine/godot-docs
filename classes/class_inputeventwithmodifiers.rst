@@ -23,7 +23,7 @@ Contains keys events information with modifiers support like :kbd:`Shift` or :kb
 Tutorials
 ---------
 
-- :doc:`../tutorials/inputs/inputevent`
+- :doc:`InputEvent <../tutorials/inputs/inputevent>`
 
 Properties
 ----------

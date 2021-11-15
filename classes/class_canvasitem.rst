@@ -33,9 +33,9 @@ Ultimately, a transform notification can be requested, which will notify the nod
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/2d_transforms`
+- :doc:`Viewport and canvas transforms <../tutorials/2d/2d_transforms>`
 
-- :doc:`../tutorials/2d/custom_drawing_in_2d`
+- :doc:`Custom drawing in 2D <../tutorials/2d/custom_drawing_in_2d>`
 
 - `Audio Spectrum Demo <https://godotengine.org/asset-library/asset/528>`__
 

@@ -23,7 +23,7 @@ Description
 Tutorials
 ---------
 
-- `#root-motion <../tutorials/animation/animation_tree.html#root-motion>`_ in :doc:`../tutorials/animation/animation_tree`
+- `Using AnimationTree - Root motion <../tutorials/animation/animation_tree.html#root-motion>`__
 
 Properties
 ----------

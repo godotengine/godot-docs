@@ -23,7 +23,7 @@ To use ``EditorNode3DGizmoPlugin``, register it using the :ref:`EditorPlugin.add
 Tutorials
 ---------
 
-- :doc:`../tutorials/plugins/editor/spatial_gizmos`
+- :doc:`Spatial gizmo plugins <../tutorials/plugins/editor/spatial_gizmos>`
 
 Methods
 -------

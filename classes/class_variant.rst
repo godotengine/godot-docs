@@ -115,7 +115,7 @@ Modifications to a container will modify all references to it. A :ref:`Mutex<cla
 Tutorials
 ---------
 
-- :doc:`../development/cpp/variant_class`
+- :doc:`Variant class <../development/cpp/variant_class>`
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -21,7 +21,7 @@ A synchronization mutex (mutual exclusion). This is used to synchronize multiple
 Tutorials
 ---------
 
-- :doc:`../tutorials/performance/using_multiple_threads`
+- :doc:`Using multiple threads <../tutorials/performance/using_multiple_threads>`
 
 Methods
 -------

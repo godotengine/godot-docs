@@ -25,7 +25,7 @@ The :ref:`XRController3D<class_XRController3D>` and :ref:`XRAnchor3D<class_XRAnc
 Tutorials
 ---------
 
-- :doc:`../tutorials/vr/index`
+- :doc:`VR documentation index <../tutorials/vr/index>`
 
 Properties
 ----------

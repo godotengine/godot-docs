@@ -16,9 +16,9 @@ Creates a sub-view into the screen.
 Tutorials
 ---------
 
-- :doc:`../tutorials/rendering/viewports`
+- :doc:`Using Viewports <../tutorials/rendering/viewports>`
 
-- :doc:`../tutorials/2d/2d_transforms`
+- :doc:`Viewport and canvas transforms <../tutorials/2d/2d_transforms>`
 
 - `GUI in 3D Demo <https://godotengine.org/asset-library/asset/127>`__
 

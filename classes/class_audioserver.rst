@@ -21,7 +21,7 @@ Description
 Tutorials
 ---------
 
-- :doc:`../tutorials/audio/audio_buses`
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
 - `Audio Device Changer Demo <https://godotengine.org/asset-library/asset/525>`__
 

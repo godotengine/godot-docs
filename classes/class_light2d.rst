@@ -25,7 +25,7 @@ Casts light in a 2D environment. Light is defined by a (usually grayscale) textu
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/2d_lights_and_shadows`
+- :doc:`2D lights and shadows <../tutorials/2d/2d_lights_and_shadows>`
 
 Properties
 ----------

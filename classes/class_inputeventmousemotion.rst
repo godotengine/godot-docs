@@ -23,7 +23,7 @@ Contains mouse and pen motion information. Supports relative, absolute positions
 Tutorials
 ---------
 
-- :doc:`../tutorials/inputs/mouse_and_input_coordinates`
+- :doc:`Mouse and input coordinates <../tutorials/inputs/mouse_and_input_coordinates>`
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 

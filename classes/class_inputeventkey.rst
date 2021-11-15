@@ -21,7 +21,7 @@ Stores key presses on the keyboard. Supports key presses, key releases and :ref:
 Tutorials
 ---------
 
-- :doc:`../tutorials/inputs/inputevent`
+- :doc:`InputEvent <../tutorials/inputs/inputevent>`
 
 Properties
 ----------

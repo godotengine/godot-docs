@@ -29,7 +29,7 @@ Internally, a GridMap is split into a sparse collection of octants for efficient
 Tutorials
 ---------
 
-- :doc:`../tutorials/3d/using_gridmaps`
+- :doc:`Using gridmaps <../tutorials/3d/using_gridmaps>`
 
 - `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
 
@@ -268,7 +268,7 @@ GridMaps act as static bodies, meaning they aren't affected by gravity or other 
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The physics layers this GridMap detects collisions in. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+The physics layers this GridMap detects collisions in. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
 ----
 

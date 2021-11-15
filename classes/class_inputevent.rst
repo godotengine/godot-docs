@@ -23,9 +23,9 @@ Base class of all sort of input event. See :ref:`Node._input<class_Node_method__
 Tutorials
 ---------
 
-- :doc:`../tutorials/inputs/inputevent`
+- :doc:`InputEvent <../tutorials/inputs/inputevent>`
 
-- :doc:`../tutorials/2d/2d_transforms`
+- :doc:`Viewport and canvas transforms <../tutorials/2d/2d_transforms>`
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 

@@ -21,7 +21,7 @@ A Spotlight is a type of :ref:`Light3D<class_Light3D>` node that emits lights in
 Tutorials
 ---------
 
-- :doc:`../tutorials/3d/lights_and_shadows`
+- :doc:`3D lights and shadows <../tutorials/3d/lights_and_shadows>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 

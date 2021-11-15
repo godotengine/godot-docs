@@ -491,7 +491,7 @@ Returns the keycode of the given string (e.g. "Escape").
 
 - :ref:`String<class_String>` **get_cache_dir** **(** **)** |const|
 
-Returns the *global* cache data directory according to the operating system's standards. On desktop platforms, this path can be overridden by setting the ``XDG_CACHE_HOME`` environment variable before starting the project. See `File paths in Godot projects <https://docs.godotengine.org/en/latest/tutorials/io/data_paths.html>`__ in the documentation for more information. See also :ref:`get_config_dir<class_OS_method_get_config_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
+Returns the *global* cache data directory according to the operating system's standards. On desktop platforms, this path can be overridden by setting the ``XDG_CACHE_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_config_dir<class_OS_method_get_config_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
 
 Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
 
@@ -542,7 +542,7 @@ Here's a minimal example on how to parse command-line arguments into a dictionar
 
 - :ref:`String<class_String>` **get_config_dir** **(** **)** |const|
 
-Returns the *global* user configuration directory according to the operating system's standards. On desktop platforms, this path can be overridden by setting the ``XDG_CONFIG_HOME`` environment variable before starting the project. See `File paths in Godot projects <https://docs.godotengine.org/en/latest/tutorials/io/data_paths.html>`__ in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
+Returns the *global* user configuration directory according to the operating system's standards. On desktop platforms, this path can be overridden by setting the ``XDG_CONFIG_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
 
 Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
 
@@ -564,7 +564,7 @@ The returned array will be empty if the system MIDI driver has not previously be
 
 - :ref:`String<class_String>` **get_data_dir** **(** **)** |const|
 
-Returns the *global* user data directory according to the operating system's standards. On desktop platforms, this path can be overridden by setting the ``XDG_DATA_HOME`` environment variable before starting the project. See `File paths in Godot projects <https://docs.godotengine.org/en/latest/tutorials/io/data_paths.html>`__ in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_config_dir<class_OS_method_get_config_dir>`.
+Returns the *global* user data directory according to the operating system's standards. On desktop platforms, this path can be overridden by setting the ``XDG_DATA_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_config_dir<class_OS_method_get_config_dir>`.
 
 Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
 
@@ -756,7 +756,7 @@ Returns ``true`` if the environment variable with the name ``variable`` exists.
 
 - :ref:`bool<class_bool>` **has_feature** **(** :ref:`String<class_String>` tag_name **)** |const|
 
-Returns ``true`` if the feature for the given feature tag is supported in the currently running instance, depending on the platform, build, etc. Can be used to check whether you're currently running a debug build, on a certain platform or arch, etc. Refer to the `Feature Tags <https://docs.godotengine.org/en/latest/getting_started/workflow/export/feature_tags.html>`__ documentation for more details.
+Returns ``true`` if the feature for the given feature tag is supported in the currently running instance, depending on the platform, build, etc. Can be used to check whether you're currently running a debug build, on a certain platform or arch, etc. Refer to the :doc:`Feature Tags <../getting_started/workflow/export/feature_tags>` documentation for more details.
 
 **Note:** Tag names are case-sensitive.
 
@@ -906,7 +906,7 @@ Requests the OS to open a resource with the most appropriate program. For exampl
 
 - ``OS.shell_open("https://godotengine.org")`` opens the default web browser on the official Godot website.
 
-- ``OS.shell_open("mailto:example@example.com")`` opens the default email client with the "To" field set to ``example@example.com``. See `Customizing ``mailto:`` Links <https://blog.escapecreative.com/customizing-mailto-links/>`__ for a list of fields that can be added.
+- ``OS.shell_open("mailto:example@example.com")`` opens the default email client with the "To" field set to ``example@example.com``. See `Customizing [code]mailto:[/code] Links <https://blog.escapecreative.com/customizing-mailto-links/>`__ for a list of fields that can be added.
 
 Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>` to convert a ``res://`` or ``user://`` path into a system path for use with this method.
 

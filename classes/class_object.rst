@@ -56,7 +56,7 @@ Objects also receive notifications. Notifications are a simple way to notify the
 Tutorials
 ---------
 
-- :doc:`../tutorials/best_practices/node_alternatives`
+- :doc:`When and how to avoid using nodes for everything <../tutorials/best_practices/node_alternatives>`
 
 Methods
 -------
@@ -871,7 +871,7 @@ Translates a message using translation catalogs configured in the Project Settin
 
 Only works if message translation is enabled (which it is by default), otherwise it returns the ``message`` unchanged. See :ref:`set_message_translation<class_Object_method_set_message_translation>`.
 
-See `Internationalizing games <https://docs.godotengine.org/en/latest/tutorials/i18n/internationalizing_games.html>`__ for examples of the usage of this method.
+See :doc:`Internationalizing games <../tutorials/i18n/internationalizing_games>` for examples of the usage of this method.
 
 ----
 
@@ -887,7 +887,7 @@ The number ``n`` is the number or quantity of the plural object. It will be used
 
 **Note:** Negative and floating-point values usually represent physical entities for which singular and plural don't clearly apply. In such cases, use :ref:`tr<class_Object_method_tr>`.
 
-See `Localization using gettext <https://docs.godotengine.org/en/latest/tutorials/i18n/localization_using_gettext.html>`__ for examples of the usage of this method.
+See :doc:`Localization using gettext <../tutorials/i18n/localization_using_gettext>` for examples of the usage of this method.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

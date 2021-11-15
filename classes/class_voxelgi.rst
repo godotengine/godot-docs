@@ -27,7 +27,7 @@ Description
 Tutorials
 ---------
 
-- :doc:`../tutorials/3d/gi_probes`
+- :doc:`GI probes <../tutorials/3d/gi_probes>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 

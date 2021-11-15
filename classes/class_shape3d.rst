@@ -23,7 +23,7 @@ Base class for all 3D shape resources. Nodes that inherit from this can be used 
 Tutorials
 ---------
 
-- :doc:`../tutorials/physics/physics_introduction`
+- :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
 
 Properties
 ----------

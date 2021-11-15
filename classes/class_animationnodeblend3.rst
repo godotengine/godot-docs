@@ -29,7 +29,7 @@ This node has three inputs:
 Tutorials
 ---------
 
-- :doc:`../tutorials/animation/animation_tree`
+- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
 
 Properties
 ----------

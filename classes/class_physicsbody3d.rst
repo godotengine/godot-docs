@@ -23,7 +23,7 @@ PhysicsBody3D is an abstract base class for implementing a physics body. All \*B
 Tutorials
 ---------
 
-- :doc:`../tutorials/physics/physics_introduction`
+- :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
 
 Properties
 ----------

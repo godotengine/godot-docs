@@ -370,7 +370,7 @@ Returns ``true`` if the script is currently running inside the editor, ``false``
     else:
         simulate_physics()
 
-See `Running code in the editor <https://docs.godotengine.org/en/latest/tutorials/plugins/running_code_in_the_editor.html>`__ in the documentation for more information.
+See :doc:`Running code in the editor <../tutorials/plugins/running_code_in_the_editor>` in the documentation for more information.
 
 **Note:** To detect whether the script is run from an editor *build* (e.g. when pressing :kbd:`F5`), use :ref:`OS.has_feature<class_OS_method_has_feature>` with the ``"editor"`` argument instead. ``OS.has_feature("editor")`` will evaluate to ``true`` both when the code is running in the editor and when running the project from the editor, but it will evaluate to ``false`` when the code is run from an exported project.
 

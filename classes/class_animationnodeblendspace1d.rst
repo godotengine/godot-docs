@@ -27,7 +27,7 @@ You can set the extents of the axis using the :ref:`min_space<class_AnimationNod
 Tutorials
 ---------
 
-- :doc:`../tutorials/animation/animation_tree`
+- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
 
 Properties
 ----------

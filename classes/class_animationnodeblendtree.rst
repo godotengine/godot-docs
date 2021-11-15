@@ -21,7 +21,7 @@ This node may contain a sub-tree of any other blend type nodes, such as mix, ble
 Tutorials
 ---------
 
-- :doc:`../tutorials/animation/animation_tree`
+- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
 
 Properties
 ----------

@@ -21,7 +21,7 @@ The AR/VR server is the heart of our Advanced and Virtual Reality solution and h
 Tutorials
 ---------
 
-- :doc:`../tutorials/vr/index`
+- :doc:`VR documentation index <../tutorials/vr/index>`
 
 Properties
 ----------

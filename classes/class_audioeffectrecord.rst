@@ -21,7 +21,7 @@ Allows the user to record sound from a microphone. It sets and gets the format i
 Tutorials
 ---------
 
-- :doc:`../tutorials/audio/recording_with_microphone`
+- :doc:`Recording with microphone <../tutorials/audio/recording_with_microphone>`
 
 - `Audio Mic Record Demo <https://godotengine.org/asset-library/asset/527>`__
 

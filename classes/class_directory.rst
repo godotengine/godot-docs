@@ -76,7 +76,7 @@ Here is an example on how to iterate through the files of a directory:
 Tutorials
 ---------
 
-- :doc:`../tutorials/scripting/filesystem`
+- :doc:`File system <../tutorials/scripting/filesystem>`
 
 Methods
 -------

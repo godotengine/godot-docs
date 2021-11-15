@@ -183,9 +183,9 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
 Tutorials
 ---------
 
-- :doc:`../tutorials/networking/http_request_class`
+- :doc:`Making HTTP requests <../tutorials/networking/http_request_class>`
 
-- :doc:`../tutorials/networking/ssl_certificates`
+- :doc:`SSL certificates <../tutorials/networking/ssl_certificates>`
 
 Properties
 ----------

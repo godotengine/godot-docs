@@ -70,7 +70,7 @@ See also :ref:`ImmediateMesh<class_ImmediateMesh>`, :ref:`MeshDataTool<class_Mes
 Tutorials
 ---------
 
-- :doc:`../tutorials/3d/procedural_geometry/arraymesh`
+- :doc:`Procedural geometry using the ArrayMesh <../tutorials/3d/procedural_geometry/arraymesh>`
 
 Properties
 ----------
