@@ -37,9 +37,9 @@ For more information on HTTP, see https://developer.mozilla.org/en-US/docs/Web/H
 Tutorials
 ---------
 
-- :doc:`../tutorials/networking/http_client_class`
+- :doc:`HTTP client class <../tutorials/networking/http_client_class>`
 
-- :doc:`../tutorials/networking/ssl_certificates`
+- :doc:`SSL certificates <../tutorials/networking/ssl_certificates>`
 
 Properties
 ----------

@@ -21,7 +21,7 @@ Editor facility for creating and editing collision shapes in 3D space. You can u
 Tutorials
 ---------
 
-- :doc:`../tutorials/physics/physics_introduction`
+- :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
 
 - `3D Kinematic Character Demo <https://godotengine.org/asset-library/asset/126>`__
 

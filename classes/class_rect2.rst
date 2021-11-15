@@ -23,11 +23,11 @@ The 3D counterpart to ``Rect2`` is :ref:`AABB<class_AABB>`.
 Tutorials
 ---------
 
-- :doc:`../tutorials/math/index`
+- :doc:`Math documentation index <../tutorials/math/index>`
 
-- :doc:`../tutorials/math/vector_math`
+- :doc:`Vector math <../tutorials/math/vector_math>`
 
-- :doc:`../tutorials/math/vectors_advanced`
+- :doc:`Advanced vector math <../tutorials/math/vectors_advanced>`
 
 Properties
 ----------

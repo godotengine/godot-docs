@@ -21,7 +21,7 @@ Description
 Tutorials
 ---------
 
-- :doc:`../tutorials/physics/using_area_2d`
+- :doc:`Using Area2D <../tutorials/physics/using_area_2d>`
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 

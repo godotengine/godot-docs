@@ -133,7 +133,7 @@ To use ``EditorImportPlugin``, register it using the :ref:`EditorPlugin.add_impo
 Tutorials
 ---------
 
-- :doc:`../tutorials/plugins/editor/import_plugins`
+- :doc:`Import plugins <../tutorials/plugins/editor/import_plugins>`
 
 Methods
 -------

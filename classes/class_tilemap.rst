@@ -21,7 +21,7 @@ Node for 2D tile-based maps. Tilemaps use a :ref:`TileSet<class_TileSet>` which 
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/using_tilemaps`
+- :doc:`Using Tilemaps <../tutorials/2d/using_tilemaps>`
 
 - `2D Platformer Demo <https://godotengine.org/asset-library/asset/120>`__
 

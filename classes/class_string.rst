@@ -19,7 +19,7 @@ This is the built-in string class (and the one used by GDScript). It supports Un
 Tutorials
 ---------
 
-- :doc:`../tutorials/scripting/gdscript/gdscript_format_string`
+- :doc:`GDScript format strings <../tutorials/scripting/gdscript/gdscript_format_string>`
 
 Constructors
 ------------

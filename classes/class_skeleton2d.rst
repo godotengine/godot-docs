@@ -23,7 +23,7 @@ To setup different types of inverse kinematics for the given Skeleton2D, a :ref:
 Tutorials
 ---------
 
-- :doc:`../tutorials/animation/2d_skeletons`
+- :doc:`2D skeletons <../tutorials/animation/2d_skeletons>`
 
 Methods
 -------

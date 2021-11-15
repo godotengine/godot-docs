@@ -27,7 +27,7 @@ Manages the connection to multiplayer peers. Assigns unique IDs to each client c
 Tutorials
 ---------
 
-- :doc:`../tutorials/networking/high_level_multiplayer`
+- :doc:`High-level multiplayer <../tutorials/networking/high_level_multiplayer>`
 
 - `WebRTC Signaling Demo <https://godotengine.org/asset-library/asset/537>`__
 

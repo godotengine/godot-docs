@@ -34,7 +34,7 @@ To generate a random float number (within a given range) based on a time-dependa
 Tutorials
 ---------
 
-- :doc:`../tutorials/math/random_number_generation`
+- :doc:`Random number generation <../tutorials/math/random_number_generation>`
 
 Properties
 ----------

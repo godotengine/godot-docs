@@ -21,7 +21,7 @@ Input event type for gamepad buttons. For gamepad analog sticks and joysticks, s
 Tutorials
 ---------
 
-- :doc:`../tutorials/inputs/inputevent`
+- :doc:`InputEvent <../tutorials/inputs/inputevent>`
 
 Properties
 ----------

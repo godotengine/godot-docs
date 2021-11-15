@@ -25,9 +25,9 @@ Updating the target properties of animations occurs at process time.
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/2d_sprite_animation`
+- :doc:`2D Sprite animation <../tutorials/2d/2d_sprite_animation>`
 
-- :doc:`../tutorials/animation/index`
+- :doc:`Animation documentation index <../tutorials/animation/index>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 

@@ -23,7 +23,7 @@ Base class for audio streams. Audio streams are used for sound effects and music
 Tutorials
 ---------
 
-- :doc:`../tutorials/audio/audio_streams`
+- :doc:`Audio streams <../tutorials/audio/audio_streams>`
 
 - `Audio Generator Demo <https://godotengine.org/asset-library/asset/526>`__
 

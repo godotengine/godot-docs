@@ -29,7 +29,7 @@ If you need to override the default physics behavior, you can write a custom for
 Tutorials
 ---------
 
-- :doc:`../tutorials/physics/physics_introduction`
+- :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
 
 - `3D Truck Town Demo <https://godotengine.org/asset-library/asset/524>`__
 

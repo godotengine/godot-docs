@@ -23,11 +23,11 @@ It uses floating-point coordinates. See :ref:`Vector3i<class_Vector3i>` for its 
 Tutorials
 ---------
 
-- :doc:`../tutorials/math/index`
+- :doc:`Math documentation index <../tutorials/math/index>`
 
-- :doc:`../tutorials/math/vector_math`
+- :doc:`Vector math <../tutorials/math/vector_math>`
 
-- :doc:`../tutorials/math/vectors_advanced`
+- :doc:`Advanced vector math <../tutorials/math/vectors_advanced>`
 
 - `3Blue1Brown Essence of Linear Algebra <https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`__
 

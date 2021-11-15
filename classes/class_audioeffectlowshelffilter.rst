@@ -16,7 +16,7 @@ Reduces all frequencies below the :ref:`AudioEffectFilter.cutoff_hz<class_AudioE
 Tutorials
 ---------
 
-- :doc:`../tutorials/audio/audio_buses`
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

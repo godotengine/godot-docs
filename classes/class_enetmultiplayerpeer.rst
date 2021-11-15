@@ -23,7 +23,7 @@ A MultiplayerPeer implementation that should be passed to :ref:`MultiplayerAPI.m
 Tutorials
 ---------
 
-- :doc:`../tutorials/networking/high_level_multiplayer`
+- :doc:`High-level multiplayer <../tutorials/networking/high_level_multiplayer>`
 
 - `API documentation on the ENet website <http://enet.bespin.org/usergroup0.html>`__
 

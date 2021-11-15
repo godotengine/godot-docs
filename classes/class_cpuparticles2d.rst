@@ -23,7 +23,7 @@ See also :ref:`GPUParticles2D<class_GPUParticles2D>`, which provides the same fu
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/particle_systems_2d`
+- :doc:`Particle systems (2D) <../tutorials/2d/particle_systems_2d>`
 
 Properties
 ----------

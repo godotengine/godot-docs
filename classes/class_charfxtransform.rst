@@ -21,7 +21,7 @@ By setting various properties on this object, you can control how individual cha
 Tutorials
 ---------
 
-- :doc:`../tutorials/ui/bbcode_in_richtextlabel`
+- :doc:`BBCode in RichTextLabel <../tutorials/ui/bbcode_in_richtextlabel>`
 
 - `RichTextEffect test project (third-party) <https://github.com/Eoin-ONeill-Yokai/Godot-Rich-Text-Effect-Test-Project>`__
 

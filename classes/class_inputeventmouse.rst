@@ -23,7 +23,7 @@ Stores general mouse events information.
 Tutorials
 ---------
 
-- :doc:`../tutorials/inputs/inputevent`
+- :doc:`InputEvent <../tutorials/inputs/inputevent>`
 
 Properties
 ----------

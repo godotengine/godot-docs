@@ -23,7 +23,7 @@ Light3D is the *abstract* base class for light nodes. As it can't be instantiate
 Tutorials
 ---------
 
-- :doc:`../tutorials/3d/lights_and_shadows`
+- :doc:`3D lights and shadows <../tutorials/3d/lights_and_shadows>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 

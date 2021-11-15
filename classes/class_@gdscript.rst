@@ -19,7 +19,7 @@ List of core built-in GDScript functions. Math functions and other utilities. Ev
 Tutorials
 ---------
 
-- :doc:`../tutorials/math/random_number_generation`
+- :doc:`Random number generation <../tutorials/math/random_number_generation>`
 
 Methods
 -------

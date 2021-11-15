@@ -23,9 +23,9 @@ Canvas drawing layer. :ref:`CanvasItem<class_CanvasItem>` nodes that are direct 
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/2d_transforms`
+- :doc:`Viewport and canvas transforms <../tutorials/2d/2d_transforms>`
 
-- :doc:`../tutorials/2d/canvas_layers`
+- :doc:`Canvas layers <../tutorials/2d/canvas_layers>`
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 

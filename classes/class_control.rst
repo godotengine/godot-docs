@@ -41,11 +41,11 @@ Sets :ref:`mouse_filter<class_Control_property_mouse_filter>` to :ref:`MOUSE_FIL
 Tutorials
 ---------
 
-- :doc:`../tutorials/ui/index`
+- :doc:`GUI documentation index <../tutorials/ui/index>`
 
-- :doc:`../tutorials/2d/custom_drawing_in_2d`
+- :doc:`Custom drawing in 2D <../tutorials/2d/custom_drawing_in_2d>`
 
-- :doc:`../tutorials/ui/control_node_gallery`
+- :doc:`Control node gallery <../tutorials/ui/control_node_gallery>`
 
 - `All GUI Demos <https://github.com/godotengine/godot-demo-projects/tree/master/gui>`__
 
@@ -1238,7 +1238,7 @@ The node's rotation around its pivot, in radians. See :ref:`rect_pivot_offset<cl
 
 The node's scale, relative to its :ref:`rect_size<class_Control_property_rect_size>`. Change this property to scale the node around its :ref:`rect_pivot_offset<class_Control_property_rect_pivot_offset>`. The Control's :ref:`hint_tooltip<class_Control_property_hint_tooltip>` will also scale according to this value.
 
-**Note:** This property is mainly intended to be used for animation purposes. Text inside the Control will look pixelated or blurry when the Control is scaled. To support multiple resolutions in your project, use an appropriate viewport stretch mode as described in the `documentation <https://docs.godotengine.org/en/latest/tutorials/viewports/multiple_resolutions.html>`__ instead of scaling Controls individually.
+**Note:** This property is mainly intended to be used for animation purposes. Text inside the Control will look pixelated or blurry when the Control is scaled. To support multiple resolutions in your project, use an appropriate viewport stretch mode as described in the :doc:`documentation <../tutorials/viewports/multiple_resolutions>` instead of scaling Controls individually.
 
 **Note:** If the Control node is a child of a :ref:`Container<class_Container>` node, the scale will be reset to ``Vector2(1, 1)`` when the scene is instantiated. To set the Control's scale when it's instantiated, wait for one frame using ``await get_tree().process_frame`` then set its :ref:`rect_scale<class_Control_property_rect_scale>` property.
 

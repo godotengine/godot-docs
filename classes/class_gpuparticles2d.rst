@@ -23,7 +23,7 @@ Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_Par
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/particle_systems_2d`
+- :doc:`Particle systems (2D) <../tutorials/2d/particle_systems_2d>`
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 

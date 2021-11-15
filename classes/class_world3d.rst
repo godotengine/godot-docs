@@ -21,7 +21,7 @@ Class that has everything pertaining to a world. A physics space, a visual scena
 Tutorials
 ---------
 
-- :doc:`../tutorials/physics/ray-casting`
+- :doc:`Ray-casting <../tutorials/physics/ray-casting>`
 
 Properties
 ----------

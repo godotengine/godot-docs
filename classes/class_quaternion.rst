@@ -23,7 +23,7 @@ Due to its compactness and the way it is stored in memory, certain operations (o
 Tutorials
 ---------
 
-- `#interpolating-with-quaternions <../tutorials/3d/using_transforms.html#interpolating-with-quaternions>`_ in :doc:`../tutorials/3d/using_transforms`
+- `Using 3D transforms <../tutorials/3d/using_transforms.html#interpolating-with-quaternions>`__
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 

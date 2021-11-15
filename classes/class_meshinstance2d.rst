@@ -21,7 +21,7 @@ Node used for displaying a :ref:`Mesh<class_Mesh>` in 2D. Can be constructed fro
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/2d_meshes`
+- :doc:`2D meshes <../tutorials/2d/2d_meshes>`
 
 Properties
 ----------

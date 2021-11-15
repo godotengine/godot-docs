@@ -21,7 +21,7 @@ Contains a generic action which can be targeted from several types of inputs. Ac
 Tutorials
 ---------
 
-- `#actions <../tutorials/inputs/inputevent.html#actions>`_ in :doc:`../tutorials/inputs/inputevent`
+- `InputEvent: Actions <../tutorials/inputs/inputevent.html#actions>`__
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 

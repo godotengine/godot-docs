@@ -29,7 +29,7 @@ In the vast majority of use cases, instantiating and using ``RefCounted``-derive
 Tutorials
 ---------
 
-- :doc:`../tutorials/best_practices/node_alternatives`
+- :doc:`When and how to avoid using nodes for everything <../tutorials/best_practices/node_alternatives>`
 
 Methods
 -------

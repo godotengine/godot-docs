@@ -27,7 +27,7 @@ For example, if your character is driving a car, the XROrigin3D node should be a
 Tutorials
 ---------
 
-- :doc:`../tutorials/vr/index`
+- :doc:`VR documentation index <../tutorials/vr/index>`
 
 Properties
 ----------

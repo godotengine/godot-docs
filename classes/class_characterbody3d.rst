@@ -25,7 +25,7 @@ Character bodies are special types of bodies that are meant to be user-controlle
 Tutorials
 ---------
 
-- :doc:`../tutorials/physics/kinematic_character_2d`
+- :doc:`Kinematic character (2D) <../tutorials/physics/kinematic_character_2d>`
 
 - `3D Kinematic Character Demo <https://godotengine.org/asset-library/asset/126>`__
 

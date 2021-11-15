@@ -37,7 +37,7 @@ In 2D, all visible objects are some form of canvas item. In order to be visible,
 Tutorials
 ---------
 
-- :doc:`../tutorials/performance/using_servers`
+- :doc:`Optimization using Servers <../tutorials/performance/using_servers>`
 
 Properties
 ----------

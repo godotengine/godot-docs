@@ -38,7 +38,7 @@ Contains multiple nodes representing animation states, connected in a graph. Nod
 Tutorials
 ---------
 
-- :doc:`../tutorials/animation/animation_tree`
+- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
 
 Methods
 -------

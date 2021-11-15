@@ -21,7 +21,7 @@ Class that has everything pertaining to a 2D world. A physics space, a visual sc
 Tutorials
 ---------
 
-- :doc:`../tutorials/physics/ray-casting`
+- :doc:`Ray-casting <../tutorials/physics/ray-casting>`
 
 Properties
 ----------

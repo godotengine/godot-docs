@@ -23,7 +23,7 @@ Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource,
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/2d_sprite_animation`
+- :doc:`2D Sprite animation <../tutorials/2d/2d_sprite_animation>`
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 

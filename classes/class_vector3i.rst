@@ -23,9 +23,9 @@ It uses integer coordinates and is therefore preferable to :ref:`Vector3<class_V
 Tutorials
 ---------
 
-- :doc:`../tutorials/math/index`
+- :doc:`Math documentation index <../tutorials/math/index>`
 
-- :doc:`../tutorials/math/vector_math`
+- :doc:`Vector math <../tutorials/math/vector_math>`
 
 - `3Blue1Brown Essence of Linear Algebra <https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`__
 

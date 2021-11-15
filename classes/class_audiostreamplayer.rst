@@ -23,7 +23,7 @@ To play audio positionally, use :ref:`AudioStreamPlayer2D<class_AudioStreamPlaye
 Tutorials
 ---------
 
-- :doc:`../tutorials/audio/audio_streams`
+- :doc:`Audio streams <../tutorials/audio/audio_streams>`
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 

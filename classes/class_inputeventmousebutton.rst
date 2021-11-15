@@ -21,7 +21,7 @@ Contains mouse click information. See :ref:`Node._input<class_Node_method__input
 Tutorials
 ---------
 
-- :doc:`../tutorials/inputs/mouse_and_input_coordinates`
+- :doc:`Mouse and input coordinates <../tutorials/inputs/mouse_and_input_coordinates>`
 
 Properties
 ----------

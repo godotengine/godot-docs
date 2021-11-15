@@ -27,7 +27,7 @@ Affine operations (rotate, scale, translate) happen in parent's local coordinate
 Tutorials
 ---------
 
-- :doc:`../tutorials/3d/introduction_to_3d`
+- :doc:`Introduction to 3D <../tutorials/3d/introduction_to_3d>`
 
 - `All 3D Demos <https://github.com/godotengine/godot-demo-projects/tree/master/3d>`__
 
