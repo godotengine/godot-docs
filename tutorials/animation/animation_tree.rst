@@ -259,7 +259,8 @@ State machine travel
 --------------------
 
 One of the nice features in Godot's ``StateMachine`` implementation is the ability to travel. The graph can be instructed to go from the
-current state to another one, while visiting all the intermediate ones. This is done via the A\* algorithm.In the absence of any transition between the current state and the destination state, the graph teleports to the destination state. 
+current state to another one, while visiting all the intermediate ones. This is done via the A\* algorithm.
+In the absence of any transition between the current state and the destination state, the graph teleports to the destination state.
 
 To use the travel ability, you should first retrieve the :ref:`AnimationNodeStateMachinePlayback <class_AnimationNodeStateMachinePlayback>`
 object from the ``AnimationTree`` node (it is exported as a property).
