@@ -144,10 +144,10 @@ while up/down moves it forward or backward in whatever direction it's facing.
             rotation_dir += 1
         if Input.is_action_pressed("left"):
             rotation_dir -= 1
-        if Input.is_action_pressed("down"):
-            velocity = Vector2(-speed, 0).rotated(rotation)
-        if Input.is_action_pressed("up"):
-            velocity = Vector2(speed, 0).rotated(rotation)
+	    if Input.is_action_pressed("down"):
+		    velocity = Vector2(0, speed).rotated(rotation)
+	    if Input.is_action_pressed("up"):
+		    velocity = Vector2(0, -speed).rotated(rotation)
 
     func _physics_process(delta):
         get_input()
