@@ -18,8 +18,7 @@ Official Git plugin
 
 Using Git from inside the editor is supported with an official plugin.
 You can find the latest releases
-`here <https://github.com/godotengine/godot-git-plugin/releases>`__
-(it is not available in the asset library). Documentation on how to use the Git
+`here <https://github.com/godotengine/godot-git-plugin/releases>`__. Documentation on how to use the Git
 plugin can be found
 `here <https://github.com/godotengine/godot-git-plugin/wiki>`__.
 
