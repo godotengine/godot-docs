@@ -113,7 +113,9 @@ Return)*.
 Capture
 ~~~~~~~
 
-Capture allows access to the microphone and other audio on an audio bus in real-time.
+The Capture effect copies the audio frames of the audio bus that it is on into
+an internal buffer. This can be used to capture data from the microphone
+or to transmit audio over the network in real-time.
 
 Chorus
 ~~~~~~
@@ -249,7 +251,7 @@ transients. PitchShift can be useful to create unusually high or deep voices.
 Record
 ~~~~~~
 
-The Record effect allows audio passing through the bus to be written to a file.
+The Record effect allows the user to record sound from a microphone.
 
 Reverb
 ~~~~~~
