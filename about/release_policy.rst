@@ -96,8 +96,7 @@ on GitHub.
 | Godot 3.4   | November 2021        | |supported| Receives fixes for bugs, security and platform support       |
 |             |                      | issues, as well as backwards-compatible usability enhancements.          |
 +-------------+----------------------+--------------------------------------------------------------------------+
-| Godot 3.3   | April 2021           | |supported| Receives fixes for bugs, security and platform support       |
-|             |                      | issues, as well as backwards-compatible usability enhancements.          |
+| Godot 3.3   | April 2021           | |partial| Receives fixes for security and platform support issues only.  |
 +-------------+----------------------+--------------------------------------------------------------------------+
 | Godot 3.2   | January 2020         | |eol| No longer supported as fully superseded by the compatible 3.3      |
 |             |                      | release (last update: 3.2.3).                                            |
