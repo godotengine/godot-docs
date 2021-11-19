@@ -211,9 +211,9 @@ enum **Overlay**:
 
 - **OVERLAY_DISABLED** = **0** --- No overlay is shown.
 
-- **OVERLAY_BREAKPOINT** = **1** --- Show overlay set in the ``breakpoint`` theme property.
+- **OVERLAY_BREAKPOINT** = **1** --- Show overlay set in the :ref:`breakpoint<class_GraphNode_theme_style_breakpoint>` theme property.
 
-- **OVERLAY_POSITION** = **2** --- Show overlay set in the ``position`` theme property.
+- **OVERLAY_POSITION** = **2** --- Show overlay set in the :ref:`position<class_GraphNode_theme_style_position>` theme property.
 
 Property Descriptions
 ---------------------

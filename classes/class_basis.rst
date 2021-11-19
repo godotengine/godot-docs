@@ -404,15 +404,23 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Basis<class_Basis>` right **)**
 
+Returns ``true`` if the ``Basis`` matrices are not equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Basis_method_is_equal_approx>` instead, which is more reliable.
+
 ----
 
 .. _class_Basis_operator_mul_Basis:
 
 - :ref:`Basis<class_Basis>` **operator *** **(** :ref:`Basis<class_Basis>` right **)**
 
+Composes these two basis matrices by multiplying them together. This has the effect of transforming the second basis (the child) by the first basis (the parent).
+
 ----
 
 - :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Vector3<class_Vector3>` right **)**
+
+Transforms (multiplies) the :ref:`Vector3<class_Vector3>` by the given ``Basis`` matrix.
 
 ----
 
@@ -436,11 +444,17 @@ This operator multiplies all components of the ``Basis``, which scales it unifor
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Basis<class_Basis>` right **)**
 
+Returns ``true`` if the ``Basis`` matrices are exactly equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Basis_method_is_equal_approx>` instead, which is more reliable.
+
 ----
 
 .. _class_Basis_operator_idx_Vector3:
 
 - :ref:`Vector3<class_Vector3>` **operator []** **(** :ref:`int<class_int>` index **)**
+
+Access basis components using their index. ``b[0]`` is equivalent to ``b.x``, ``b[1]`` is equivalent to ``b.y``, and ``b[2]`` is equivalent to ``b.z``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

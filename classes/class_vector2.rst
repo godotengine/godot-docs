@@ -590,23 +590,39 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Vector2<class_Vector2>` right **)**
 
+Returns ``true`` if the vectors are not equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector2_method_is_equal_approx>` instead, which is more reliable.
+
 ----
 
 .. _class_Vector2_operator_mul_Vector2:
 
 - :ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`Vector2<class_Vector2>` right **)**
 
+Multiplies each component of the ``Vector2`` by the components of the given ``Vector2``.
+
+::
+
+    print(Vector2(10, 20) * Vector2(3, 4)) # Prints "(30, 80)"
+
 ----
 
 - :ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`Transform2D<class_Transform2D>` right **)**
+
+Inversely transforms (multiplies) the ``Vector2`` by the given :ref:`Transform2D<class_Transform2D>` transformation matrix.
 
 ----
 
 - :ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`float<class_float>` right **)**
 
+Multiplies each component of the ``Vector2`` by the given :ref:`float<class_float>`.
+
 ----
 
 - :ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`int<class_int>` right **)**
+
+Multiplies each component of the ``Vector2`` by the given :ref:`int<class_int>`.
 
 ----
 
@@ -614,11 +630,23 @@ Operator Descriptions
 
 - :ref:`Vector2<class_Vector2>` **operator +** **(** :ref:`Vector2<class_Vector2>` right **)**
 
+Adds each component of the ``Vector2`` by the components of the given ``Vector2``.
+
+::
+
+    print(Vector2(10, 20) + Vector2(3, 4)) # Prints "(13, 24)"
+
 ----
 
 .. _class_Vector2_operator_dif_Vector2:
 
 - :ref:`Vector2<class_Vector2>` **operator -** **(** :ref:`Vector2<class_Vector2>` right **)**
+
+Subtracts each component of the ``Vector2`` by the components of the given ``Vector2``.
+
+::
+
+    print(Vector2(10, 20) - Vector2(3, 4)) # Prints "(7, 16)"
 
 ----
 
@@ -626,13 +654,23 @@ Operator Descriptions
 
 - :ref:`Vector2<class_Vector2>` **operator /** **(** :ref:`Vector2<class_Vector2>` right **)**
 
+Divides each component of the ``Vector2`` by the components of the given ``Vector2``.
+
+::
+
+    print(Vector2(10, 20) / Vector2(2, 5)) # Prints "(5, 4)"
+
 ----
 
 - :ref:`Vector2<class_Vector2>` **operator /** **(** :ref:`float<class_float>` right **)**
 
+Divides each component of the ``Vector2`` by the given :ref:`float<class_float>`.
+
 ----
 
 - :ref:`Vector2<class_Vector2>` **operator /** **(** :ref:`int<class_int>` right **)**
+
+Divides each component of the ``Vector2`` by the given :ref:`int<class_int>`.
 
 ----
 
@@ -640,11 +678,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator <** **(** :ref:`Vector2<class_Vector2>` right **)**
 
+Compares two ``Vector2`` vectors by first checking if the X value of the left vector is less than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
+
 ----
 
 .. _class_Vector2_operator_lte_bool:
 
 - :ref:`bool<class_bool>` **operator <=** **(** :ref:`Vector2<class_Vector2>` right **)**
+
+Compares two ``Vector2`` vectors by first checking if the X value of the left vector is less than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
 
 ----
 
@@ -656,11 +698,17 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Vector2<class_Vector2>` right **)**
 
+Returns ``true`` if the vectors are exactly equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector2_method_is_equal_approx>` instead, which is more reliable.
+
 ----
 
 .. _class_Vector2_operator_gt_bool:
 
 - :ref:`bool<class_bool>` **operator >** **(** :ref:`Vector2<class_Vector2>` right **)**
+
+Compares two ``Vector2`` vectors by first checking if the X value of the left vector is greater than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
 
 ----
 
@@ -668,11 +716,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator >=** **(** :ref:`Vector2<class_Vector2>` right **)**
 
+Compares two ``Vector2`` vectors by first checking if the X value of the left vector is greater than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
+
 ----
 
 .. _class_Vector2_operator_idx_float:
 
 - :ref:`float<class_float>` **operator []** **(** :ref:`int<class_int>` index **)**
+
+Access vector components using their index. ``v[0]`` is equivalent to ``v.x``, and ``v[1]`` is equivalent to ``v.y``.
 
 ----
 
@@ -680,11 +732,15 @@ Operator Descriptions
 
 - :ref:`Vector2<class_Vector2>` **operator unary+** **(** **)**
 
+Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, but sometimes it can make your code more readable.
+
 ----
 
 .. _class_Vector2_operator_unminus_Vector2:
 
 - :ref:`Vector2<class_Vector2>` **operator unary-** **(** **)**
+
+Returns the negative value of the ``Vector2``. This is the same as writing ``Vector2(-v.x, -v.y)``. This operation flips the direction of the vector while keeping the same magnitude. With floats, the number zero can be either positive or negative.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

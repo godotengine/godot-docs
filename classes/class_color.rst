@@ -1366,19 +1366,29 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Color<class_Color>` right **)**
 
+Returns ``true`` if the colors are not equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Color_method_is_equal_approx>` instead, which is more reliable.
+
 ----
 
 .. _class_Color_operator_mul_Color:
 
 - :ref:`Color<class_Color>` **operator *** **(** :ref:`Color<class_Color>` right **)**
 
+Multiplies each component of the ``Color`` by the components of the given ``Color``.
+
 ----
 
 - :ref:`Color<class_Color>` **operator *** **(** :ref:`float<class_float>` right **)**
 
+Multiplies each component of the ``Color`` by the given :ref:`float<class_float>`.
+
 ----
 
 - :ref:`Color<class_Color>` **operator *** **(** :ref:`int<class_int>` right **)**
+
+Multiplies each component of the ``Color`` by the given :ref:`int<class_int>`.
 
 ----
 
@@ -1386,11 +1396,15 @@ Operator Descriptions
 
 - :ref:`Color<class_Color>` **operator +** **(** :ref:`Color<class_Color>` right **)**
 
+Adds each component of the ``Color`` with the components of the given ``Color``.
+
 ----
 
 .. _class_Color_operator_dif_Color:
 
 - :ref:`Color<class_Color>` **operator -** **(** :ref:`Color<class_Color>` right **)**
+
+Subtracts each component of the ``Color`` by the components of the given ``Color``.
 
 ----
 
@@ -1398,13 +1412,19 @@ Operator Descriptions
 
 - :ref:`Color<class_Color>` **operator /** **(** :ref:`Color<class_Color>` right **)**
 
+Divides each component of the ``Color`` by the components of the given ``Color``.
+
 ----
 
 - :ref:`Color<class_Color>` **operator /** **(** :ref:`float<class_float>` right **)**
 
+Divides each component of the ``Color`` by the given :ref:`float<class_float>`.
+
 ----
 
 - :ref:`Color<class_Color>` **operator /** **(** :ref:`int<class_int>` right **)**
+
+Divides each component of the ``Color`` by the given :ref:`int<class_int>`.
 
 ----
 
@@ -1416,11 +1436,17 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Color<class_Color>` right **)**
 
+Returns ``true`` if the colors are exactly equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Color_method_is_equal_approx>` instead, which is more reliable.
+
 ----
 
 .. _class_Color_operator_idx_float:
 
 - :ref:`float<class_float>` **operator []** **(** :ref:`int<class_int>` index **)**
+
+Access color components using their index. ``c[0]`` is equivalent to ``c.r``, ``c[1]`` is equivalent to ``c.g``, ``c[2]`` is equivalent to ``c.b``, and ``c[3]`` is equivalent to ``c.a``.
 
 ----
 
@@ -1428,11 +1454,15 @@ Operator Descriptions
 
 - :ref:`Color<class_Color>` **operator unary+** **(** **)**
 
+Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, but sometimes it can make your code more readable.
+
 ----
 
 .. _class_Color_operator_unminus_Color:
 
 - :ref:`Color<class_Color>` **operator unary-** **(** **)**
+
+Inverts the given color. This is equivalent to ``Color.WHITE - c`` or ``Color(1 - c.r, 1 - c.g, 1 - c.b, 1 - c.a)``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

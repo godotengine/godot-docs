@@ -242,15 +242,29 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Vector2i<class_Vector2i>` right **)**
 
+Returns ``true`` if the vectors are not equal.
+
 ----
 
 .. _class_Vector2i_operator_mod_Vector2i:
 
 - :ref:`Vector2i<class_Vector2i>` **operator %** **(** :ref:`Vector2i<class_Vector2i>` right **)**
 
+Gets the remainder of each component of the ``Vector2i`` with the components of the given ``Vector2i``. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
+
+::
+
+    print(Vector2i(10, -20) % Vector2i(7, 8)) # Prints "(3, -4)"
+
 ----
 
 - :ref:`Vector2i<class_Vector2i>` **operator %** **(** :ref:`int<class_int>` right **)**
+
+Gets the remainder of each component of the ``Vector2i`` with the the given :ref:`int<class_int>`. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
+
+::
+
+    print(Vector2i(10, -20) % 7) # Prints "(3, -6)"
 
 ----
 
@@ -258,13 +272,27 @@ Operator Descriptions
 
 - :ref:`Vector2i<class_Vector2i>` **operator *** **(** :ref:`Vector2i<class_Vector2i>` right **)**
 
+Multiplies each component of the ``Vector2i`` by the components of the given ``Vector2i``.
+
+::
+
+    print(Vector2i(10, 20) * Vector2i(3, 4)) # Prints "(30, 80)"
+
 ----
 
 - :ref:`Vector2i<class_Vector2i>` **operator *** **(** :ref:`float<class_float>` right **)**
 
+Multiplies each component of the ``Vector2i`` by the given :ref:`float<class_float>` truncated to an integer.
+
+::
+
+    print(Vector2i(10, 20) * 0.9) # Prints "(0, 0)"
+
 ----
 
 - :ref:`Vector2i<class_Vector2i>` **operator *** **(** :ref:`int<class_int>` right **)**
+
+Multiplies each component of the ``Vector2i`` by the given :ref:`int<class_int>`.
 
 ----
 
@@ -272,11 +300,23 @@ Operator Descriptions
 
 - :ref:`Vector2i<class_Vector2i>` **operator +** **(** :ref:`Vector2i<class_Vector2i>` right **)**
 
+Adds each component of the ``Vector2i`` by the components of the given ``Vector2i``.
+
+::
+
+    print(Vector2i(10, 20) + Vector2i(3, 4)) # Prints "(13, 24)"
+
 ----
 
 .. _class_Vector2i_operator_dif_Vector2i:
 
 - :ref:`Vector2i<class_Vector2i>` **operator -** **(** :ref:`Vector2i<class_Vector2i>` right **)**
+
+Subtracts each component of the ``Vector2i`` by the components of the given ``Vector2i``.
+
+::
+
+    print(Vector2i(10, 20) - Vector2i(3, 4)) # Prints "(7, 16)"
 
 ----
 
@@ -284,13 +324,27 @@ Operator Descriptions
 
 - :ref:`Vector2i<class_Vector2i>` **operator /** **(** :ref:`Vector2i<class_Vector2i>` right **)**
 
+Divides each component of the ``Vector2i`` by the components of the given ``Vector2i``.
+
+::
+
+    print(Vector2i(10, 20) / Vector2i(2, 5)) # Prints "(5, 4)"
+
 ----
 
 - :ref:`Vector2i<class_Vector2i>` **operator /** **(** :ref:`float<class_float>` right **)**
 
+Divides each component of the ``Vector2i`` by the given :ref:`float<class_float>` truncated to an integer.
+
+::
+
+    print(Vector2i(10, 20) / 2.9) # Prints "(5, 10)"
+
 ----
 
 - :ref:`Vector2i<class_Vector2i>` **operator /** **(** :ref:`int<class_int>` right **)**
+
+Divides each component of the ``Vector2i`` by the given :ref:`int<class_int>`.
 
 ----
 
@@ -298,11 +352,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator <** **(** :ref:`Vector2i<class_Vector2i>` right **)**
 
+Compares two ``Vector2i`` vectors by first checking if the X value of the left vector is less than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
+
 ----
 
 .. _class_Vector2i_operator_lte_bool:
 
 - :ref:`bool<class_bool>` **operator <=** **(** :ref:`Vector2i<class_Vector2i>` right **)**
+
+Compares two ``Vector2i`` vectors by first checking if the X value of the left vector is less than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
 
 ----
 
@@ -314,11 +372,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Vector2i<class_Vector2i>` right **)**
 
+Returns ``true`` if the vectors are equal.
+
 ----
 
 .. _class_Vector2i_operator_gt_bool:
 
 - :ref:`bool<class_bool>` **operator >** **(** :ref:`Vector2i<class_Vector2i>` right **)**
+
+Compares two ``Vector2i`` vectors by first checking if the X value of the left vector is greater than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
 
 ----
 
@@ -326,11 +388,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator >=** **(** :ref:`Vector2i<class_Vector2i>` right **)**
 
+Compares two ``Vector2i`` vectors by first checking if the X value of the left vector is greater than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
+
 ----
 
 .. _class_Vector2i_operator_idx_int:
 
 - :ref:`int<class_int>` **operator []** **(** :ref:`int<class_int>` index **)**
+
+Access vector components using their index. ``v[0]`` is equivalent to ``v.x``, and ``v[1]`` is equivalent to ``v.y``.
 
 ----
 
@@ -338,11 +404,15 @@ Operator Descriptions
 
 - :ref:`Vector2i<class_Vector2i>` **operator unary+** **(** **)**
 
+Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, but sometimes it can make your code more readable.
+
 ----
 
 .. _class_Vector2i_operator_unminus_Vector2i:
 
 - :ref:`Vector2i<class_Vector2i>` **operator unary-** **(** **)**
+
+Returns the negative value of the ``Vector2i``. This is the same as writing ``Vector2i(-v.x, -v.y)``. This operation flips the direction of the vector while keeping the same magnitude.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

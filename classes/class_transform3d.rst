@@ -262,23 +262,35 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Transform3D<class_Transform3D>` right **)**
 
+Returns ``true`` if the transforms are not equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Transform3D_method_is_equal_approx>` instead, which is more reliable.
+
 ----
 
 .. _class_Transform3D_operator_mul_PackedVector3Array:
 
 - :ref:`PackedVector3Array<class_PackedVector3Array>` **operator *** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` right **)**
 
+Transforms (multiplies) each element of the :ref:`Vector3<class_Vector3>` array by the given ``Transform3D`` matrix.
+
 ----
 
 - :ref:`Transform3D<class_Transform3D>` **operator *** **(** :ref:`Transform3D<class_Transform3D>` right **)**
+
+Composes these two transformation matrices by multiplying them together. This has the effect of transforming the second transform (the child) by the first transform (the parent).
 
 ----
 
 - :ref:`AABB<class_AABB>` **operator *** **(** :ref:`AABB<class_AABB>` right **)**
 
+Transforms (multiplies) the :ref:`AABB<class_AABB>` by the given ``Transform3D`` matrix.
+
 ----
 
 - :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Vector3<class_Vector3>` right **)**
+
+Transforms (multiplies) the :ref:`Vector3<class_Vector3>` by the given ``Transform3D`` matrix.
 
 ----
 
@@ -301,6 +313,10 @@ This operator multiplies all components of the ``Transform3D``, including the or
 ----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Transform3D<class_Transform3D>` right **)**
+
+Returns ``true`` if the transforms are exactly equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Transform3D_method_is_equal_approx>` instead, which is more reliable.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

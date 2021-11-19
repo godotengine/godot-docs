@@ -326,11 +326,17 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Rect2<class_Rect2>` right **)**
 
+Returns ``true`` if the rectangles are not equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Rect2_method_is_equal_approx>` instead, which is more reliable.
+
 ----
 
 .. _class_Rect2_operator_mul_Rect2:
 
 - :ref:`Rect2<class_Rect2>` **operator *** **(** :ref:`Transform2D<class_Transform2D>` right **)**
+
+Inversely transforms (multiplies) the ``Rect2`` by the given :ref:`Transform2D<class_Transform2D>` transformation matrix.
 
 ----
 
@@ -341,6 +347,10 @@ Operator Descriptions
 ----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Rect2<class_Rect2>` right **)**
+
+Returns ``true`` if the rectangles are exactly equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Rect2_method_is_equal_approx>` instead, which is more reliable.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

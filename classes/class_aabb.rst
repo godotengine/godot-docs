@@ -402,11 +402,17 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`AABB<class_AABB>` right **)**
 
+Returns ``true`` if the vectors are not equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_AABB_method_is_equal_approx>` instead, which is more reliable.
+
 ----
 
 .. _class_AABB_operator_mul_AABB:
 
 - :ref:`AABB<class_AABB>` **operator *** **(** :ref:`Transform3D<class_Transform3D>` right **)**
+
+Inversely transforms (multiplies) the ``AABB`` by the given :ref:`Transform3D<class_Transform3D>` transformation matrix.
 
 ----
 
@@ -417,6 +423,10 @@ Operator Descriptions
 ----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`AABB<class_AABB>` right **)**
+
+Returns ``true`` if the AABBs are exactly equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_AABB_method_is_equal_approx>` instead, which is more reliable.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

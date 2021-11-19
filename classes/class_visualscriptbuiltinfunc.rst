@@ -98,9 +98,11 @@ Enumerations
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_RANDF:
 
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDI_RANGE:
+
 .. _class_VisualScriptBuiltinFunc_constant_MATH_RANDF_RANGE:
 
-.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDI_RANGE:
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDFN:
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_SEED:
 
@@ -234,78 +236,80 @@ enum **BuiltinFunc**:
 
 - **MATH_RANDF** = **32** --- Return a random floating-point value between 0 and 1. To obtain a random value between 0 to N, you can use it with multiplication.
 
-- **MATH_RANDF_RANGE** = **33** --- Return a random floating-point value between the two inputs.
+- **MATH_RANDI_RANGE** = **33** --- Return a random 32-bit integer value between the two inputs.
 
-- **MATH_RANDI_RANGE** = **34** --- Return a random 32-bit integer value between the two inputs.
+- **MATH_RANDF_RANGE** = **34** --- Return a random floating-point value between the two inputs.
 
-- **MATH_SEED** = **35** --- Set the seed for the random number generator.
+- **MATH_RANDFN** = **35** --- Returns a normally-distributed pseudo-random number, using Box-Muller transform with the specified mean and a standard deviation. This is also called Gaussian distribution.
 
-- **MATH_RANDSEED** = **36** --- Return a random value from the given seed, along with the new seed.
+- **MATH_SEED** = **36** --- Set the seed for the random number generator.
 
-- **MATH_DEG2RAD** = **37** --- Convert the input from degrees to radians.
+- **MATH_RANDSEED** = **37** --- Return a random value from the given seed, along with the new seed.
 
-- **MATH_RAD2DEG** = **38** --- Convert the input from radians to degrees.
+- **MATH_DEG2RAD** = **38** --- Convert the input from degrees to radians.
 
-- **MATH_LINEAR2DB** = **39** --- Convert the input from linear volume to decibel volume.
+- **MATH_RAD2DEG** = **39** --- Convert the input from radians to degrees.
 
-- **MATH_DB2LINEAR** = **40** --- Convert the input from decibel volume to linear volume.
+- **MATH_LINEAR2DB** = **40** --- Convert the input from linear volume to decibel volume.
 
-- **MATH_WRAP** = **41**
+- **MATH_DB2LINEAR** = **41** --- Convert the input from decibel volume to linear volume.
 
-- **MATH_WRAPF** = **42**
+- **MATH_WRAP** = **42**
 
-- **MATH_PINGPONG** = **43** --- Return the ``value`` wrapped between ``0`` and the ``length``. If the limit is reached, the next value the function returned is decreased to the ``0`` side or increased to the ``length`` side (like a triangle wave). If ``length`` is less than zero, it becomes positive.
+- **MATH_WRAPF** = **43**
 
-- **LOGIC_MAX** = **44** --- Return the greater of the two numbers, also known as their maximum.
+- **MATH_PINGPONG** = **44** --- Return the ``value`` wrapped between ``0`` and the ``length``. If the limit is reached, the next value the function returned is decreased to the ``0`` side or increased to the ``length`` side (like a triangle wave). If ``length`` is less than zero, it becomes positive.
 
-- **LOGIC_MIN** = **45** --- Return the lesser of the two numbers, also known as their minimum.
+- **LOGIC_MAX** = **45** --- Return the greater of the two numbers, also known as their maximum.
 
-- **LOGIC_CLAMP** = **46** --- Return the input clamped inside the given range, ensuring the result is never outside it. Equivalent to ``min(max(input, range_low), range_high)``.
+- **LOGIC_MIN** = **46** --- Return the lesser of the two numbers, also known as their minimum.
 
-- **LOGIC_NEAREST_PO2** = **47** --- Return the nearest power of 2 to the input.
+- **LOGIC_CLAMP** = **47** --- Return the input clamped inside the given range, ensuring the result is never outside it. Equivalent to ``min(max(input, range_low), range_high)``.
 
-- **OBJ_WEAKREF** = **48** --- Create a :ref:`WeakRef<class_WeakRef>` from the input.
+- **LOGIC_NEAREST_PO2** = **48** --- Return the nearest power of 2 to the input.
 
-- **TYPE_CONVERT** = **49** --- Convert between types.
+- **OBJ_WEAKREF** = **49** --- Create a :ref:`WeakRef<class_WeakRef>` from the input.
 
-- **TYPE_OF** = **50** --- Return the type of the input as an integer. Check :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` for the integers that might be returned.
+- **TYPE_CONVERT** = **50** --- Convert between types.
 
-- **TYPE_EXISTS** = **51** --- Checks if a type is registered in the :ref:`ClassDB<class_ClassDB>`.
+- **TYPE_OF** = **51** --- Return the type of the input as an integer. Check :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` for the integers that might be returned.
 
-- **TEXT_CHAR** = **52** --- Return a character with the given ascii value.
+- **TYPE_EXISTS** = **52** --- Checks if a type is registered in the :ref:`ClassDB<class_ClassDB>`.
 
-- **TEXT_STR** = **53** --- Convert the input to a string.
+- **TEXT_CHAR** = **53** --- Return a character with the given ascii value.
 
-- **TEXT_PRINT** = **54** --- Print the given string to the output window.
+- **TEXT_STR** = **54** --- Convert the input to a string.
 
-- **TEXT_PRINTERR** = **55** --- Print the given string to the standard error output.
+- **TEXT_PRINT** = **55** --- Print the given string to the output window.
 
-- **TEXT_PRINTRAW** = **56** --- Print the given string to the standard output, without adding a newline.
+- **TEXT_PRINTERR** = **56** --- Print the given string to the standard error output.
 
-- **TEXT_PRINT_VERBOSE** = **57**
+- **TEXT_PRINTRAW** = **57** --- Print the given string to the standard output, without adding a newline.
 
-- **VAR_TO_STR** = **58** --- Serialize a :ref:`Variant<class_Variant>` to a string.
+- **TEXT_PRINT_VERBOSE** = **58**
 
-- **STR_TO_VAR** = **59** --- Deserialize a :ref:`Variant<class_Variant>` from a string serialized using :ref:`VAR_TO_STR<class_VisualScriptBuiltinFunc_constant_VAR_TO_STR>`.
+- **VAR_TO_STR** = **59** --- Serialize a :ref:`Variant<class_Variant>` to a string.
 
-- **VAR_TO_BYTES** = **60** --- Serialize a :ref:`Variant<class_Variant>` to a :ref:`PackedByteArray<class_PackedByteArray>`.
+- **STR_TO_VAR** = **60** --- Deserialize a :ref:`Variant<class_Variant>` from a string serialized using :ref:`VAR_TO_STR<class_VisualScriptBuiltinFunc_constant_VAR_TO_STR>`.
 
-- **BYTES_TO_VAR** = **61** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PackedByteArray<class_PackedByteArray>` serialized using :ref:`VAR_TO_BYTES<class_VisualScriptBuiltinFunc_constant_VAR_TO_BYTES>`.
+- **VAR_TO_BYTES** = **61** --- Serialize a :ref:`Variant<class_Variant>` to a :ref:`PackedByteArray<class_PackedByteArray>`.
 
-- **MATH_SMOOTHSTEP** = **62** --- Return a number smoothly interpolated between the first two inputs, based on the third input. Similar to :ref:`MATH_LERP<class_VisualScriptBuiltinFunc_constant_MATH_LERP>`, but interpolates faster at the beginning and slower at the end. Using Hermite interpolation formula:
+- **BYTES_TO_VAR** = **62** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PackedByteArray<class_PackedByteArray>` serialized using :ref:`VAR_TO_BYTES<class_VisualScriptBuiltinFunc_constant_VAR_TO_BYTES>`.
+
+- **MATH_SMOOTHSTEP** = **63** --- Return a number smoothly interpolated between the first two inputs, based on the third input. Similar to :ref:`MATH_LERP<class_VisualScriptBuiltinFunc_constant_MATH_LERP>`, but interpolates faster at the beginning and slower at the end. Using Hermite interpolation formula:
 
 ::
 
     var t = clamp((weight - from) / (to - from), 0.0, 1.0)
     return t * t * (3.0 - 2.0 * t)
 
-- **MATH_POSMOD** = **63**
+- **MATH_POSMOD** = **64**
 
-- **MATH_LERP_ANGLE** = **64**
+- **MATH_LERP_ANGLE** = **65**
 
-- **TEXT_ORD** = **65**
+- **TEXT_ORD** = **66**
 
-- **FUNC_MAX** = **66** --- Represents the size of the :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` enum.
+- **FUNC_MAX** = **67** --- Represents the size of the :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` enum.
 
 Property Descriptions
 ---------------------

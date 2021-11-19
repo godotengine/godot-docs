@@ -310,6 +310,8 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Rect2i<class_Rect2i>` right **)**
 
+Returns ``true`` if the rectangles are not equal.
+
 ----
 
 .. _class_Rect2i_operator_eq_bool:
@@ -319,6 +321,8 @@ Operator Descriptions
 ----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Rect2i<class_Rect2i>` right **)**
+
+Returns ``true`` if the rectangles are equal.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

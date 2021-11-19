@@ -163,7 +163,7 @@ Multiplies two ``float``\ s.
 
 - :ref:`Quaternion<class_Quaternion>` **operator *** **(** :ref:`Quaternion<class_Quaternion>` right **)**
 
-Multiplies each component of the :ref:`Quaternion<class_Quaternion>` by the given ``float``.
+Multiplies each component of the :ref:`Quaternion<class_Quaternion>` by the given ``float``. This operation is not meaningful on its own, but it can be used as a part of a larger expression.
 
 ----
 
@@ -173,17 +173,17 @@ Multiplies each component of the :ref:`Vector2<class_Vector2>` by the given ``fl
 
 ::
 
-    print(2.5 * Vector2(1, 1)) # Vector2(2.5, 2.5)
+    print(2.5 * Vector2(1, 3)) # Prints "(2.5, 7.5)"
 
 ----
 
 - :ref:`Vector2i<class_Vector2i>` **operator *** **(** :ref:`Vector2i<class_Vector2i>` right **)**
 
-Multiplies each component of the :ref:`Vector2i<class_Vector2i>` by the given ``float``.
+Multiplies each component of the :ref:`Vector2i<class_Vector2i>` by the given ``float`` truncated to an integer.
 
 ::
 
-    print(2.0 * Vector2i(1, 1)) # Vector2i(2.0, 2.0)
+    print(0.9 * Vector2i(10, 20)) # Prints "(0, 0)"
 
 ----
 
@@ -195,7 +195,11 @@ Multiplies each component of the :ref:`Vector3<class_Vector3>` by the given ``fl
 
 - :ref:`Vector3i<class_Vector3i>` **operator *** **(** :ref:`Vector3i<class_Vector3i>` right **)**
 
-Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given ``float``.
+Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given ``float`` truncated to an integer.
+
+::
+
+    print(0.9 * Vector3i(10, 20, 30)) # Prints "(0, 0, 0)"
 
 ----
 

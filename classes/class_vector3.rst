@@ -618,31 +618,51 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Vector3<class_Vector3>` right **)**
 
+Returns ``true`` if the vectors are not equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector3_method_is_equal_approx>` instead, which is more reliable.
+
 ----
 
 .. _class_Vector3_operator_mul_Vector3:
 
 - :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Vector3<class_Vector3>` right **)**
 
+Multiplies each component of the ``Vector3`` by the components of the given ``Vector3``.
+
+::
+
+    print(Vector3(10, 20, 30) * Vector3(3, 4, 5)) # Prints "(30, 80, 150)"
+
 ----
 
 - :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Basis<class_Basis>` right **)**
+
+Inversely transforms (multiplies) the ``Vector3`` by the given :ref:`Basis<class_Basis>` matrix.
 
 ----
 
 - :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Quaternion<class_Quaternion>` right **)**
 
+Inversely transforms (multiplies) the ``Vector3`` by the given :ref:`Quaternion<class_Quaternion>`.
+
 ----
 
 - :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Transform3D<class_Transform3D>` right **)**
+
+Inversely transforms (multiplies) the ``Vector3`` by the given :ref:`Transform3D<class_Transform3D>` transformation matrix.
 
 ----
 
 - :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`float<class_float>` right **)**
 
+Multiplies each component of the ``Vector3`` by the given :ref:`float<class_float>`.
+
 ----
 
 - :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`int<class_int>` right **)**
+
+Multiplies each component of the ``Vector3`` by the given :ref:`int<class_int>`.
 
 ----
 
@@ -650,11 +670,23 @@ Operator Descriptions
 
 - :ref:`Vector3<class_Vector3>` **operator +** **(** :ref:`Vector3<class_Vector3>` right **)**
 
+Adds each component of the ``Vector3`` by the components of the given ``Vector3``.
+
+::
+
+    print(Vector3(10, 20, 30) + Vector3(3, 4, 5)) # Prints "(13, 24, 35)"
+
 ----
 
 .. _class_Vector3_operator_dif_Vector3:
 
 - :ref:`Vector3<class_Vector3>` **operator -** **(** :ref:`Vector3<class_Vector3>` right **)**
+
+Subtracts each component of the ``Vector3`` by the components of the given ``Vector3``.
+
+::
+
+    print(Vector3(10, 20, 30) - Vector3(3, 4, 5)) # Prints "(7, 16, 25)"
 
 ----
 
@@ -662,13 +694,23 @@ Operator Descriptions
 
 - :ref:`Vector3<class_Vector3>` **operator /** **(** :ref:`Vector3<class_Vector3>` right **)**
 
+Divides each component of the ``Vector3`` by the components of the given ``Vector3``.
+
+::
+
+    print(Vector3(10, 20, 30) / Vector3(2, 5, 3)) # Prints "(5, 4, 10)"
+
 ----
 
 - :ref:`Vector3<class_Vector3>` **operator /** **(** :ref:`float<class_float>` right **)**
 
+Divides each component of the ``Vector3`` by the given :ref:`float<class_float>`.
+
 ----
 
 - :ref:`Vector3<class_Vector3>` **operator /** **(** :ref:`int<class_int>` right **)**
+
+Divides each component of the ``Vector3`` by the given :ref:`int<class_int>`.
 
 ----
 
@@ -676,11 +718,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator <** **(** :ref:`Vector3<class_Vector3>` right **)**
 
+Compares two ``Vector3`` vectors by first checking if the X value of the left vector is less than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, and then with the Z values. This operator is useful for sorting vectors.
+
 ----
 
 .. _class_Vector3_operator_lte_bool:
 
 - :ref:`bool<class_bool>` **operator <=** **(** :ref:`Vector3<class_Vector3>` right **)**
+
+Compares two ``Vector3`` vectors by first checking if the X value of the left vector is less than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, and then with the Z values. This operator is useful for sorting vectors.
 
 ----
 
@@ -692,11 +738,17 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Vector3<class_Vector3>` right **)**
 
+Returns ``true`` if the vectors are exactly equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector3_method_is_equal_approx>` instead, which is more reliable.
+
 ----
 
 .. _class_Vector3_operator_gt_bool:
 
 - :ref:`bool<class_bool>` **operator >** **(** :ref:`Vector3<class_Vector3>` right **)**
+
+Compares two ``Vector3`` vectors by first checking if the X value of the left vector is greater than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, and then with the Z values. This operator is useful for sorting vectors.
 
 ----
 
@@ -704,11 +756,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator >=** **(** :ref:`Vector3<class_Vector3>` right **)**
 
+Compares two ``Vector3`` vectors by first checking if the X value of the left vector is greater than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, and then with the Z values. This operator is useful for sorting vectors.
+
 ----
 
 .. _class_Vector3_operator_idx_float:
 
 - :ref:`float<class_float>` **operator []** **(** :ref:`int<class_int>` index **)**
+
+Access vector components using their index. ``v[0]`` is equivalent to ``v.x``, ``v[1]`` is equivalent to ``v.y``, and ``v[2]`` is equivalent to ``v.z``.
 
 ----
 
@@ -716,11 +772,15 @@ Operator Descriptions
 
 - :ref:`Vector3<class_Vector3>` **operator unary+** **(** **)**
 
+Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, but sometimes it can make your code more readable.
+
 ----
 
 .. _class_Vector3_operator_unminus_Vector3:
 
 - :ref:`Vector3<class_Vector3>` **operator unary-** **(** **)**
+
+Returns the negative value of the ``Vector3``. This is the same as writing ``Vector3(-v.x, -v.y, -v.z)``. This operation flips the direction of the vector while keeping the same magnitude. With floats, the number zero can be either positive or negative.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

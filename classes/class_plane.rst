@@ -314,6 +314,10 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Plane<class_Plane>` right **)**
 
+Returns ``true`` if the planes are not equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Plane_method_is_equal_approx>` instead, which is more reliable.
+
 ----
 
 .. _class_Plane_operator_eq_bool:
@@ -324,17 +328,25 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Plane<class_Plane>` right **)**
 
+Returns ``true`` if the planes are exactly equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Plane_method_is_equal_approx>` instead, which is more reliable.
+
 ----
 
 .. _class_Plane_operator_unplus_Plane:
 
 - :ref:`Plane<class_Plane>` **operator unary+** **(** **)**
 
+Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, but sometimes it can make your code more readable.
+
 ----
 
 .. _class_Plane_operator_unminus_Plane:
 
 - :ref:`Plane<class_Plane>` **operator unary-** **(** **)**
+
+Returns the negative value of the ``Plane``. This is the same as writing ``Plane(-p.normal, -p.d)``. This operation flips the direction of the normal vector and also flips the distance value, resulting in a Plane that is in the same place, but facing the opposite direction.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

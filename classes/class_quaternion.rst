@@ -356,23 +356,35 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Quaternion<class_Quaternion>` right **)**
 
+Returns ``true`` if the quaternions are not equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Quaternion_method_is_equal_approx>` instead, which is more reliable.
+
 ----
 
 .. _class_Quaternion_operator_mul_Quaternion:
 
 - :ref:`Quaternion<class_Quaternion>` **operator *** **(** :ref:`Quaternion<class_Quaternion>` right **)**
 
+Composes these two quaternions by multiplying them together. This has the effect of rotating the second quaternion (the child) by the first quaternion (the parent).
+
 ----
 
 - :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Vector3<class_Vector3>` right **)**
+
+Rotates (multiplies) the :ref:`Vector3<class_Vector3>` by the given ``Quaternion``.
 
 ----
 
 - :ref:`Quaternion<class_Quaternion>` **operator *** **(** :ref:`float<class_float>` right **)**
 
+Multiplies each component of the ``Quaternion`` by the given value. This operation is not meaningful on its own, but it can be used as a part of a larger expression.
+
 ----
 
 - :ref:`Quaternion<class_Quaternion>` **operator *** **(** :ref:`int<class_int>` right **)**
+
+Multiplies each component of the ``Quaternion`` by the given value. This operation is not meaningful on its own, but it can be used as a part of a larger expression.
 
 ----
 
@@ -380,11 +392,15 @@ Operator Descriptions
 
 - :ref:`Quaternion<class_Quaternion>` **operator +** **(** :ref:`Quaternion<class_Quaternion>` right **)**
 
+Adds each component of the left ``Quaternion`` to the right ``Quaternion``. This operation is not meaningful on its own, but it can be used as a part of a larger expression, such as approximating an intermediate rotation between two nearby rotations.
+
 ----
 
 .. _class_Quaternion_operator_dif_Quaternion:
 
 - :ref:`Quaternion<class_Quaternion>` **operator -** **(** :ref:`Quaternion<class_Quaternion>` right **)**
+
+Subtracts each component of the left ``Quaternion`` by the right ``Quaternion``. This operation is not meaningful on its own, but it can be used as a part of a larger expression.
 
 ----
 
@@ -392,9 +408,13 @@ Operator Descriptions
 
 - :ref:`Quaternion<class_Quaternion>` **operator /** **(** :ref:`float<class_float>` right **)**
 
+Divides each component of the ``Quaternion`` by the given value. This operation is not meaningful on its own, but it can be used as a part of a larger expression.
+
 ----
 
 - :ref:`Quaternion<class_Quaternion>` **operator /** **(** :ref:`int<class_int>` right **)**
+
+Divides each component of the ``Quaternion`` by the given value. This operation is not meaningful on its own, but it can be used as a part of a larger expression.
 
 ----
 
@@ -406,11 +426,17 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Quaternion<class_Quaternion>` right **)**
 
+Returns ``true`` if the quaternions are exactly equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Quaternion_method_is_equal_approx>` instead, which is more reliable.
+
 ----
 
 .. _class_Quaternion_operator_idx_float:
 
 - :ref:`float<class_float>` **operator []** **(** :ref:`int<class_int>` index **)**
+
+Access quaternion components using their index. ``q[0]`` is equivalent to ``q.x``, ``q[1]`` is equivalent to ``q.y``, ``q[2]`` is equivalent to ``q.z``, and ``q[3]`` is equivalent to ``q.w``.
 
 ----
 
@@ -418,11 +444,15 @@ Operator Descriptions
 
 - :ref:`Quaternion<class_Quaternion>` **operator unary+** **(** **)**
 
+Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, but sometimes it can make your code more readable.
+
 ----
 
 .. _class_Quaternion_operator_unminus_Quaternion:
 
 - :ref:`Quaternion<class_Quaternion>` **operator unary-** **(** **)**
+
+Returns the negative value of the ``Quaternion``. This is the same as writing ``Quaternion(-q.x, -q.y, -q.z, -q.w)``. This operation results in a quaternion that represents the same rotation.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

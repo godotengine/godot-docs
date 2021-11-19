@@ -169,7 +169,7 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`                         | :ref:`get_line_background_color<class_TextEdit_method_get_line_background_color>` **(** :ref:`int<class_int>` line **)** |const|                                                                                                     |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2i<class_Vector2i>`                   | :ref:`get_line_column_at_pos<class_TextEdit_method_get_line_column_at_pos>` **(** :ref:`Vector2i<class_Vector2i>` position **)** |const|                                                                                             |
+| :ref:`Vector2i<class_Vector2i>`                   | :ref:`get_line_column_at_pos<class_TextEdit_method_get_line_column_at_pos>` **(** :ref:`Vector2i<class_Vector2i>` position, :ref:`bool<class_bool>` allow_out_of_bounds=true **)** |const|                                           |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_line_count<class_TextEdit_method_get_line_count>` **(** **)** |const|                                                                                                                                                      |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -234,6 +234,8 @@ Methods
 | :ref:`int<class_int>`                             | :ref:`get_version<class_TextEdit_method_get_version>` **(** **)** |const|                                                                                                                                                            |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_visible_line_count<class_TextEdit_method_get_visible_line_count>` **(** **)** |const|                                                                                                                                      |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`get_visible_line_count_in_range<class_TextEdit_method_get_visible_line_count_in_range>` **(** :ref:`int<class_int>` from_line, :ref:`int<class_int>` to_line **)** |const|                                                     |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`get_word_at_pos<class_TextEdit_method_get_word_at_pos>` **(** :ref:`Vector2<class_Vector2>` position **)** |const|                                                                                                             |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1473,9 +1475,9 @@ Returns the current background color of the line. ``Color(0, 0, 0, 0)`` is retur
 
 .. _class_TextEdit_method_get_line_column_at_pos:
 
-- :ref:`Vector2i<class_Vector2i>` **get_line_column_at_pos** **(** :ref:`Vector2i<class_Vector2i>` position **)** |const|
+- :ref:`Vector2i<class_Vector2i>` **get_line_column_at_pos** **(** :ref:`Vector2i<class_Vector2i>` position, :ref:`bool<class_bool>` allow_out_of_bounds=true **)** |const|
 
-Returns the line and column at the given position. In the returned vector, ``x`` is the column, ``y`` is the line.
+Returns the line and column at the given position. In the returned vector, ``x`` is the column, ``y`` is the line. If ``allow_out_of_bounds`` is ``false`` and the position is not over the text, both vector values will be set to ``-1``.
 
 ----
 
@@ -1734,6 +1736,14 @@ Returns the current version of the ``TextEdit``. The version is a count of recor
 - :ref:`int<class_int>` **get_visible_line_count** **(** **)** |const|
 
 Returns the number of visible lines, including wrapped text.
+
+----
+
+.. _class_TextEdit_method_get_visible_line_count_in_range:
+
+- :ref:`int<class_int>` **get_visible_line_count_in_range** **(** :ref:`int<class_int>` from_line, :ref:`int<class_int>` to_line **)** |const|
+
+Returns the total number of visible + wrapped lines between the two lines.
 
 ----
 

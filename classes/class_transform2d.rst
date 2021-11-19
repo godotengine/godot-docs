@@ -372,23 +372,35 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Transform2D<class_Transform2D>` right **)**
 
+Returns ``true`` if the transforms are not equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Transform2D_method_is_equal_approx>` instead, which is more reliable.
+
 ----
 
 .. _class_Transform2D_operator_mul_PackedVector2Array:
 
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **operator *** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` right **)**
 
+Transforms (multiplies) each element of the :ref:`Vector2<class_Vector2>` array by the given ``Transform2D`` matrix.
+
 ----
 
 - :ref:`Transform2D<class_Transform2D>` **operator *** **(** :ref:`Transform2D<class_Transform2D>` right **)**
+
+Composes these two transformation matrices by multiplying them together. This has the effect of transforming the second transform (the child) by the first transform (the parent).
 
 ----
 
 - :ref:`Rect2<class_Rect2>` **operator *** **(** :ref:`Rect2<class_Rect2>` right **)**
 
+Transforms (multiplies) the :ref:`Rect2<class_Rect2>` by the given ``Transform2D`` matrix.
+
 ----
 
 - :ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`Vector2<class_Vector2>` right **)**
+
+Transforms (multiplies) the :ref:`Vector2<class_Vector2>` by the given ``Transform2D`` matrix.
 
 ----
 
@@ -412,11 +424,17 @@ This operator multiplies all components of the ``Transform2D``, including the or
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Transform2D<class_Transform2D>` right **)**
 
+Returns ``true`` if the transforms are exactly equal.
+
+**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Transform2D_method_is_equal_approx>` instead, which is more reliable.
+
 ----
 
 .. _class_Transform2D_operator_idx_Vector2:
 
 - :ref:`Vector2<class_Vector2>` **operator []** **(** :ref:`int<class_int>` index **)**
+
+Access transform components using their index. ``t[0]`` is equivalent to ``t.x``, ``t[1]`` is equivalent to ``t.y``, and ``t[2]`` is equivalent to ``t.origin``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

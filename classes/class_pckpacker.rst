@@ -42,13 +42,13 @@ The above ``PCKPacker`` creates package ``test.pck``, then adds a file named ``t
 Methods
 -------
 
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`add_file<class_PCKPacker_method_add_file>` **(** :ref:`String<class_String>` pck_path, :ref:`String<class_String>` source_path, :ref:`bool<class_bool>` encrypt=false **)**                                           |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`flush<class_PCKPacker_method_flush>` **(** :ref:`bool<class_bool>` verbose=false **)**                                                                                                                                |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pck_start<class_PCKPacker_method_pck_start>` **(** :ref:`String<class_String>` pck_name, :ref:`int<class_int>` alignment=0, :ref:`String<class_String>` key="", :ref:`bool<class_bool>` encrypt_directory=false **)** |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`add_file<class_PCKPacker_method_add_file>` **(** :ref:`String<class_String>` pck_path, :ref:`String<class_String>` source_path, :ref:`bool<class_bool>` encrypt=false **)**                                                                                                            |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`flush<class_PCKPacker_method_flush>` **(** :ref:`bool<class_bool>` verbose=false **)**                                                                                                                                                                                                 |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pck_start<class_PCKPacker_method_pck_start>` **(** :ref:`String<class_String>` pck_name, :ref:`int<class_int>` alignment=32, :ref:`String<class_String>` key="0000000000000000000000000000000000000000000000000000000000000000", :ref:`bool<class_bool>` encrypt_directory=false **)** |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -71,7 +71,7 @@ Writes the files specified using all :ref:`add_file<class_PCKPacker_method_add_f
 
 .. _class_PCKPacker_method_pck_start:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **pck_start** **(** :ref:`String<class_String>` pck_name, :ref:`int<class_int>` alignment=0, :ref:`String<class_String>` key="", :ref:`bool<class_bool>` encrypt_directory=false **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **pck_start** **(** :ref:`String<class_String>` pck_name, :ref:`int<class_int>` alignment=32, :ref:`String<class_String>` key="0000000000000000000000000000000000000000000000000000000000000000", :ref:`bool<class_bool>` encrypt_directory=false **)**
 
 Creates a new PCK file with the name ``pck_name``. The ``.pck`` file extension isn't added automatically, so it should be part of ``pck_name`` (even though it's not required).
 

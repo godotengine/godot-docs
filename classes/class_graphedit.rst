@@ -608,7 +608,7 @@ Removes the possibility to disconnect nodes when dragging from the slot at the r
 
 - void **set_connection_activity** **(** :ref:`StringName<class_StringName>` from, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to, :ref:`int<class_int>` to_port, :ref:`float<class_float>` amount **)**
 
-Sets the coloration of the connection between ``from``'s ``from_port`` and ``to``'s ``to_port`` with the color provided in the ``activity`` theme property.
+Sets the coloration of the connection between ``from``'s ``from_port`` and ``to``'s ``to_port`` with the color provided in the :ref:`activity<class_GraphEdit_theme_color_activity>` theme property.
 
 ----
 

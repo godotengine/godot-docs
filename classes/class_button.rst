@@ -247,6 +247,8 @@ Flat buttons don't display decoration.
 
 Button's icon, if text is present the icon will be placed before the text.
 
+To edit margin and spacing of the icon, use :ref:`hseparation<class_Button_theme_constant_hseparation>` theme property and ``content_margin_*`` properties of the used :ref:`StyleBox<class_StyleBox>`\ es.
+
 ----
 
 .. _class_Button_property_icon_align:

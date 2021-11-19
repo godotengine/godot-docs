@@ -197,13 +197,13 @@ Returns ``true`` if operands are different from each other.
 
 - :ref:`int<class_int>` **operator %** **(** :ref:`int<class_int>` right **)**
 
-Returns the result of the modulo operator for two integers, i.e. the remainder after dividing both numbers.
+Returns the remainder after dividing two integers. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
 
 ::
 
     print(5 % 2) # 1
     print(12 % 4) # 0
-    print(12 % 2) # 2
+    print(-5 % 3) # -2
 
 ----
 
@@ -233,9 +233,13 @@ It's useful to retrieve binary flags from a variable.
 
 - :ref:`Color<class_Color>` **operator *** **(** :ref:`Color<class_Color>` right **)**
 
+Multiplies each component of the :ref:`Color<class_Color>` by the given ``int``.
+
 ----
 
 - :ref:`Quaternion<class_Quaternion>` **operator *** **(** :ref:`Quaternion<class_Quaternion>` right **)**
+
+Multiplies each component of the :ref:`Quaternion<class_Quaternion>` by the given ``int``. This operation is not meaningful on its own, but it can be used as a part of a larger expression.
 
 ----
 

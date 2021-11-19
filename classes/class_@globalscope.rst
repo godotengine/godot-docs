@@ -211,6 +211,8 @@ Methods
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                       | :ref:`randf_range<class_@GlobalScope_method_randf_range>` **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to **)**                                                                                                        |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`randfn<class_@GlobalScope_method_randfn>` **(** :ref:`float<class_float>` mean, :ref:`float<class_float>` deviation **)**                                                                                                           |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`randi<class_@GlobalScope_method_randi>` **(** **)**                                                                                                                                                                                 |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`randi_range<class_@GlobalScope_method_randi_range>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**                                                                                                                |
@@ -3670,6 +3672,14 @@ Returns a random floating point value on the interval between ``from`` and ``to`
 ::
 
     prints(randf_range(-10, 10), randf_range(-10, 10)) # Prints e.g. -3.844535 7.45315
+
+----
+
+.. _class_@GlobalScope_method_randfn:
+
+- :ref:`float<class_float>` **randfn** **(** :ref:`float<class_float>` mean, :ref:`float<class_float>` deviation **)**
+
+Returns a normally-distributed pseudo-random floating point value using Box-Muller transform with the specified ``mean`` and a standard ``deviation``. This is also called Gaussian distribution.
 
 ----
 
