@@ -17,15 +17,84 @@ This tutorial aims to give an overview on different methods to create
 a smaller binary. Before continuing, it is recommended to read the previous tutorials
 on compiling Godot for each platform.
 
-.. seealso::
+The options below are listed from the most important (greatest size savings)
+to the least important (lowest size savings).
 
-    You can use the online
-    `Godot build options generator <https://godot-build-options-generator.github.io/>`__
-    to generate a ``custom.py`` file containing SCons options.
-    You can then save this file and place it at the root of your Godot source directory.
+Stripping binaries
+------------------
+
+- **Space savings:** Very high
+- **Difficulty:** Easy
+- **Performed in official builds:** Yes
+
+If you build Windows (MinGW), Linux or macOS binaries from source, remember to
+strip debug symbols from binaries by installing the ``strip`` package from your
+distribution then running:
+
+::
+
+    strip path/to/godot.binary
+
+On Windows, ``strip.exe`` is included in most MinGW toolchain setups.
+
+This will reduce the size of compiled binaries by a factor between 5× and 10×.
+The downside is that crash backtraces will no longer provide accurate information
+(which is useful for troubleshooting the cause of a crash).
+:ref:`C++ profilers <using_cpp_profilers>` will also no longer be able to display
+function names (this does not affect the built-in GDScript profiler).
+
+.. note::
+
+    The above command will not work on Windows binaries compiled with MSVC
+    and platforms such as Android and HTML5. Instead, pass ``debug_symbols=no``
+    on the SCons command line when compiling.
+
+Optimizing for size instead of speed
+------------------------------------
+
+- **Space savings:** High
+- **Difficulty:** Easy
+- **Performed in official builds:** Yes, but only for HTML5
+
+Godot 3.1 onwards allows compiling using size optimizations (instead of speed).
+To enable this, set the ``optimize`` flag to ``size``:
+
+::
+
+    scons p=windows target=release tools=no optimize=size
+
+Some platforms such as WebAssembly already use this mode by default.
+
+Compiling with link-time optimization
+-------------------------------------
+
+- **Space savings:** High
+- **Difficulty:** Easy
+- **Performed in official builds:** Yes
+
+Enabling link-time optimization produces more efficient binaries, both in
+terms of performance and file size. It works by eliminating duplicate
+template functions and unused code. It can currently be used with the GCC
+and MSVC compilers:
+
+::
+
+    scons p=windows target=release tools=no use_lto=yes
+
+Linking becomes much slower and more RAM-consuming with this option,
+so it should be used only for release builds:
+
+- When compiling the ``master`` branch, you need to have at least 8 GB of RAM
+  available for successful linking with LTO enabled.
+- When compiling the ``3.x`` branch, you need to have at least 6 GB of RAM
+  available for successful linking with LTO enabled.
 
 Disabling 3D
 ------------
+
+- **Space savings:** Moderate
+- **Difficulty:** Easy
+- **Performed in official builds:** No
 
 For 2D games, having the whole 3D engine available usually makes no sense. Because of this, there is a build flag to disable it:
 
@@ -40,6 +109,10 @@ by about 15%.
 Disabling advanced GUI nodes
 ----------------------------
 
+- **Space savings:** Moderate
+- **Difficulty:** Easy
+- **Performed in official builds:** No
+
 Most small games don't require complex GUI controls such as Tree, ItemList,
 TextEdit or GraphEdit. They can be disabled using a build flag:
 
@@ -49,6 +122,10 @@ TextEdit or GraphEdit. They can be disabled using a build flag:
 
 Disabling unwanted modules
 --------------------------
+
+- **Space savings:** Very low to moderate depending on modules
+- **Difficulty:** Medium to hard depending on modules
+- **Performed in official builds:** No
 
 A lot of Godot's functions are offered as modules.
 You can see a list of modules with the following command:
@@ -115,39 +192,3 @@ following:
 .. seealso::
 
     :ref:`doc_overriding_build_options`.
-
-Optimizing for size instead of speed
-------------------------------------
-
-Godot 3.1 onwards allows compiling using size optimizations (instead of speed).
-To enable this, set the ``optimize`` flag to ``size``:
-
-::
-
-    scons p=windows target=release tools=no optimize=size
-
-Some platforms such as WebAssembly already use this mode by default.
-
-Compiling with link-time optimization
--------------------------------------
-
-Enabling link-time optimization produces more efficient binaries, both in
-terms of performance and file size. It works by eliminating duplicate
-template functions and unused code. It can currently be used with the GCC
-and MSVC compilers:
-
-::
-
-    scons p=windows target=release tools=no use_lto=yes
-
-Linking becomes much slower and more RAM consuming with this option, so it should be used only for
-release builds.
-
-Stripping binaries
-------------------
-
-If you build from source, remember to strip debug symbols from binaries:
-
-::
-
-    strip godot.64
