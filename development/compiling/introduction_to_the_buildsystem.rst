@@ -255,7 +255,14 @@ source to initialize any SCons build options passed via the command line:
     extra_suffix = "game_title"
 
 You can also disable some of the builtin modules before compiling, saving some
-time it takes to build the engine, see :ref:`doc_optimizing_for_size` page for more details.
+time it takes to build the engine. See :ref:`doc_optimizing_for_size` page for more details.
+
+.. seealso::
+
+    You can use the online
+    `Godot build options generator <https://godot-build-options-generator.github.io/>`__
+    to generate a ``custom.py`` file containing SCons options.
+    You can then save this file and place it at the root of your Godot source directory.
 
 Another custom file can be specified explicitly with the ``profile`` command
 line option, both overriding the default build configuration:
