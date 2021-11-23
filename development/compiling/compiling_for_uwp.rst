@@ -5,6 +5,11 @@ Compiling for Universal Windows Platform
 
 .. highlight:: shell
 
+.. seealso::
+
+    This page describes how to compile UWP export template binaries from source.
+    If you're looking to export your project to UWP instead, read :ref:`doc_exporting_for_uwp`.
+
 Requirements
 ------------
 

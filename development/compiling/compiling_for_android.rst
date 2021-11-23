@@ -5,6 +5,11 @@ Compiling for Android
 
 .. highlight:: shell
 
+.. seealso::
+
+    This page describes how to compile Android export template binaries from source.
+    If you're looking to export your project to Android instead, read :ref:`doc_exporting_for_android`.
+
 Note
 ----
 

@@ -5,6 +5,11 @@ Compiling for iOS
 
 .. highlight:: shell
 
+.. seealso::
+
+    This page describes how to compile iOS export template binaries from source.
+    If you're looking to export your project to iOS instead, read :ref:`doc_exporting_for_ios`.
+
 Requirements
 ------------
 

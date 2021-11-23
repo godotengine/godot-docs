@@ -3,6 +3,12 @@
 Exporting for the Web
 =====================
 
+.. seealso::
+
+    This page describes how to export a Godot project to HTML5.
+    If you're looking to compile editor or export template binaries from source instead,
+    read :ref:`doc_compiling_for_web`.
+
 HTML5 export allows publishing games made in Godot Engine to the browser.
 This requires support for `WebAssembly
 <https://webassembly.org/>`__ and `WebGL <https://www.khronos.org/webgl/>`__

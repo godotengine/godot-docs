@@ -3,6 +3,11 @@
 Compiling for the Web
 =====================
 
+.. seealso::
+
+    This page describes how to compile HTML5 editor and export template binaries from source.
+    If you're looking to export your project to HTML5 instead, read :ref:`doc_exporting_for_web`.
+
 .. highlight:: shell
 
 Requirements
