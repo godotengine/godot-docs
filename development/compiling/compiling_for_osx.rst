@@ -5,6 +5,11 @@ Compiling for macOS
 
 .. highlight:: shell
 
+.. note::
+
+    This page describes how to compile macOS editor and export template binaries from source.
+    If you're looking to export your project to macOS instead, read :ref:`doc_exporting_for_macos`.
+
 Requirements
 ------------
 

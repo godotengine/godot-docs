@@ -3,6 +3,12 @@
 Exporting for iOS
 =================
 
+.. seealso::
+
+    This page describes how to export a Godot project to iOS.
+    If you're looking to compile export template binaries from source instead,
+    read :ref:`doc_compiling_for_ios`.
+
 These are the steps to load a Godot project in Xcode. This allows you to
 build and deploy to an iOS device, build a release for the App Store, and
 do everything else you can normally do with Xcode.

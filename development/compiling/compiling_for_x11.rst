@@ -5,6 +5,11 @@ Compiling for X11 (Linux, \*BSD)
 
 .. highlight:: shell
 
+.. seealso::
+
+    This page describes how to compile Linux editor and export template binaries from source.
+    If you're looking to export your project to Linux instead, read :ref:`doc_exporting_for_linux`.
+
 Requirements
 ------------
 

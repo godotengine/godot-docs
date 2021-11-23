@@ -5,6 +5,11 @@ Compiling for Windows
 
 .. highlight:: shell
 
+.. seealso::
+
+    This page describes how to compile Windows editor and export template binaries from source.
+    If you're looking to export your project to Windows instead, read :ref:`doc_exporting_for_windows`.
+
 Requirements
 ------------
 

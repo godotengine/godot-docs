@@ -1,7 +1,12 @@
-.. _doc_running_on_mac:
+.. _doc_running_on_macos:
 
 Running Godot apps on macOS
 ===========================
+
+.. seealso::
+
+    This page covers running Godot projects on macOS.
+    If you haven't exported your project yet, read :ref:`doc_exporting_for_macos` first.
 
 By default, macOS will run only applications that are signed and notarized.
 
