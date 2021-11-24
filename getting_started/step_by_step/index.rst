@@ -16,9 +16,9 @@ where appropriate.
    :maxdepth: 1
    :name: toc-learn-step_by_step
 
-   intro_to_the_editor_interface
-   scenes_and_nodes
+   nodes_and_scenes
    instancing
-   instancing_continued
-   scripting
+   scripting_languages
+   scripting_first_script
+   scripting_player_input
    signals
