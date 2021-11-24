@@ -99,7 +99,7 @@ new functions:
 |image6|
 
 You can learn how to submit assets to the Library, and what the asset submission
-guidelines are, in the next part of this tutorial, :ref:`doc_uploading_to_assetlib`.
+guidelines are, in the next part of this tutorial, :ref:`doc_submitting_to_assetlib`.
 
 In the editor
 -------------

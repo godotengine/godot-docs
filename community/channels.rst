@@ -14,8 +14,17 @@ Q&A
 
 - `Official Godot Questions & Answers <https://godotengine.org/qa/>`_
 
+Rocket.Chat
+-----------
+
+- `Godot Contributors Chat <https://chat.godotengine.org/>`_
+
 IRC on Freenode
 ---------------
+
+.. note::
+
+    As of January 2021, core developer chat has moved to the Godot Contributors Chat platform listed above.
 
 - `General: #godotengine <https://webchat.freenode.net/?channels=#godotengine>`_
 - `Engine development: #godotengine-devel <https://webchat.freenode.net/?channels=#godotengine-devel>`_
@@ -23,7 +32,7 @@ IRC on Freenode
 - `Pull request meetings: #godotengine-meeting <https://webchat.freenode.net/?channels=#godotengine-meeting>`_
 - `GDNative: #godotengine-gdnative <https://webchat.freenode.net/?channels=#godotengine-gdnative>`_
 - `Website and public relations: #godotengine-atelier <https://webchat.freenode.net/?channels=#godotengine-atelier>`_
-- `IRC logs <https://godot.eska.me/irc-logs/>`_
+- `IRC logs <https://freenode.logbot.info/godotengine-devel>`_
 
 Other chats
 -----------
