@@ -13,3 +13,4 @@ other sections where appropriate. For example, the :ref:`animation editor
    command_line_tutorial
    external_editor
    default_key_mapping
+   using_the_web_editor
