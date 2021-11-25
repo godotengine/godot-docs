@@ -75,7 +75,10 @@ The main documentation for the site is organized into the following sections:
    :caption: Getting started
    :name: sec-learn
 
+   getting_started/introduction/index
    getting_started/step_by_step/index
+   getting_started/first_2d_game/index
+   getting_started/first_3d_game/index
 
 
 .. The sections below are sorted alphabetically. Please keep them that way.
@@ -96,6 +99,7 @@ The main documentation for the site is organized into the following sections:
    tutorials/inputs/index
    tutorials/io/index
    tutorials/math/index
+   tutorials/navigation/index
    tutorials/networking/index
    tutorials/performance/index
    tutorials/physics/index

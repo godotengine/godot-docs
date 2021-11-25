@@ -64,6 +64,7 @@ documentation.
 
    content_guidelines
    docs_writing_guidelines
+   documentation_guidelines
 
 Writing the manual
 ~~~~~~~~~~~~~~~~~~

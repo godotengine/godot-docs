@@ -71,7 +71,7 @@ GPU
 
 .. toctree::
    :maxdepth: 1
-   :name: toc-learn-features-3d-optimization
+   :name: toc-learn-features-2d-optimization
 
    optimizing_3d_performance
    vertex_animation/index

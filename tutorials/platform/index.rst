@@ -6,6 +6,6 @@ Platform-specific
    :name: toc-learn-features-platform
 
    android/index
-   services_for_ios
+   ios/index
    platform_html5
    consoles

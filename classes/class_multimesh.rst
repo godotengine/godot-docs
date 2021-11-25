@@ -29,7 +29,7 @@ Tutorials
 
 - :doc:`../tutorials/performance/vertex_animation/animating_thousands_of_fish`
 
-- :doc:`../tutorials/optimization/using_multimesh`
+- :doc:`../tutorials/performance/using_multimesh`
 
 Properties
 ----------
