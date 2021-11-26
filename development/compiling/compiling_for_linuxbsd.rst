@@ -202,7 +202,8 @@ following parameters:
 Note that cross-compiling for the opposite bits (64/32) as your host
 platform is not always straight-forward and might need a chroot environment.
 
-To create standard export templates, the resulting files must be copied to:
+To create standard export templates, the resulting files in the ``bin/`` folder
+must be copied to:
 
 ::
 
