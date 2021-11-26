@@ -21,7 +21,7 @@ A synchronization semaphore which can be used to synchronize multiple :ref:`Thre
 Tutorials
 ---------
 
-- :doc:`../tutorials/threads/using_multiple_threads`
+- :doc:`../tutorials/performance/threads/using_multiple_threads`
 
 Methods
 -------

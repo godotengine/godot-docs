@@ -87,7 +87,6 @@ Here are the available types:
 * :ref:`spatial <doc_spatial_shader>` for 3D rendering.
 * :ref:`canvas_item <doc_canvas_item_shader>` for 2D rendering.
 * :ref:`particles <doc_particle_shader>` for particle systems.
-* :ref:`sky <doc_sky_shader>` to render :ref:`Skies <class_Sky>`.
 
 Render modes
 ------------

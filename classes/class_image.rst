@@ -25,7 +25,7 @@ An ``Image`` cannot be assigned to a ``texture`` property of an object directly 
 Tutorials
 ---------
 
-- :doc:`../getting_started/workflow/assets/importing_images`
+- :doc:`../tutorials/assets_pipeline/importing_images`
 
 Properties
 ----------

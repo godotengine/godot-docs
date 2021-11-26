@@ -23,9 +23,9 @@ A unit of execution in a process. Can run methods on :ref:`Object<class_Object>`
 Tutorials
 ---------
 
-- :doc:`../tutorials/threads/using_multiple_threads`
+- :doc:`../tutorials/performance/threads/using_multiple_threads`
 
-- :doc:`../tutorials/threads/thread_safe_apis`
+- :doc:`../tutorials/performance/threads/thread_safe_apis`
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 

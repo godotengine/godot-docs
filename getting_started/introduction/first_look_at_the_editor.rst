@@ -28,9 +28,6 @@ At the top of the window, there is another tab named "Templates". You can search
 for demo projects in the open-source asset library, which includes many projects
 developed by the community.
 
-.. seealso:: To learn the project manager's ins and outs, read
-             :ref:`doc_project_manager`.
-
 .. image:: img/editor_intro_project_templates.png
 
 You can also change the editor's language using the drop-down menu to the right

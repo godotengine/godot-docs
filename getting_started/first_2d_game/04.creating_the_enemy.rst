@@ -17,7 +17,7 @@ Click Scene -> New Scene and add the following nodes:
 
 - :ref:`RigidBody2D <class_RigidBody2D>` (named ``Mob``)
 
-   - :ref:`AnimatedSprite2D <class_AnimatedSprite2D>`
+   - :ref:`AnimatedSprite <class_AnimatedSprite>`
    - :ref:`CollisionShape2D <class_CollisionShape2D>`
    - :ref:`VisibilityNotifier2D <class_VisibilityNotifier2D>`
 
@@ -31,7 +31,7 @@ box. This will ensure the mobs do not collide with each other.
 
 .. image:: img/set_collision_mask.png
 
-Set up the :ref:`AnimatedSprite2D <class_AnimatedSprite2D>` like you did for the
+Set up the :ref:`AnimatedSprite <class_AnimatedSprite>` like you did for the
 player. This time, we have 3 animations: ``fly``, ``swim``, and ``walk``. There
 are two images for each animation in the art folder.
 

@@ -30,9 +30,9 @@ circles using GDScript. As we mentioned :ref:`in the introduction
 Project setup
 -------------
 
-Please :ref:`create a new project <doc_creating_and_importing_projects>` to
-start with a clean slate. Your project should contain one picture: the Godot
-icon, which we often use for prototyping in the community.
+Please create a new project to start with a clean slate. Your project should
+contain one picture: the Godot icon, which we often use for prototyping in the
+community.
 
 .. Godot icon
 

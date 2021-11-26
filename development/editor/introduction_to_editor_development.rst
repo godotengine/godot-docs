@@ -22,7 +22,7 @@ Technical choices
 -----------------
 
 The Godot editor is drawn using Godot's renderer and
-:ref:`UI system <doc_user_interface>`. It does *not* rely on a toolkit
+:ref:`UI system <toc-gui-basics>`. It does *not* rely on a toolkit
 such as GTK or Qt. This is similar in spirit to software like Blender.
 While using toolkits makes it easier to achieve a "native" appearance, they are
 also quite heavy and their licensing is not compatible with Godot's.

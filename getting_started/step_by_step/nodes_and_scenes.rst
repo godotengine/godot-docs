@@ -65,8 +65,8 @@ Creating your first scene
 -------------------------
 
 Let's create our first scene with a single node. To do so, you will need to
-:ref:`create a new project <doc_creating_and_importing_projects>` first. After
-opening the project, you should see an empty editor.
+create a new project first. After opening the project, you should see an empty
+editor.
 
 .. image:: img/nodes_and_scenes_01_empty_editor.png
 
@@ -115,10 +115,6 @@ below the Text property and type "Hello World".
 .. image:: img/nodes_and_scenes_06_label_text.png
 
 You will see the text draw in the viewport as you type.
-
-.. seealso:: You can edit any property listed in the Inspector as we did with
-             the Text. For a complete reference of the Inspector dock, see the
-             :ref:`doc_editor_inspector_dock`.
 
 You can move your Label node in the viewport by selecting the move tool in the
 toolbar.
@@ -189,8 +185,7 @@ will use this scene as a starting point.
 .. note:: The editor saves the main scene's path in a project.godot file in your
           project's directory. While you can edit this text file directly to
           change project settings, you can also use the "Project -> Project
-          Settings" window to do so. For more information, see
-          :ref:`doc_project_settings`.
+          Settings" window to do so.
 
 In the next part, we will discuss another key concept in games and in Godot:
 creating instances of a scene.

@@ -1357,6 +1357,8 @@ See :ref:`doc_running_code_in_the_editor` for more information.
              scripts run their code in the editor, misusing them may lead to
              crashing the editor.
 
+.. _doc_gdscript_basics_memory_management:
+
 Memory management
 ~~~~~~~~~~~~~~~~~
 

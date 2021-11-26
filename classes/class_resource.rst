@@ -27,7 +27,7 @@ Tutorials
 
 - :doc:`../tutorials/scripting/resources`
 
-- :doc:`../getting_started/workflow/best_practices/node_alternatives`
+- :doc:`../tutorials/best_practices/node_alternatives`
 
 Properties
 ----------

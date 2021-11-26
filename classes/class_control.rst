@@ -41,7 +41,7 @@ Tutorials
 
 - :doc:`../tutorials/2d/custom_drawing_in_2d`
 
-- :doc:`../tutorials/gui/control_node_gallery`
+- :doc:`../tutorials/ui/control_node_gallery`
 
 - `All GUI Demos <https://github.com/godotengine/godot-demo-projects/tree/master/gui>`__
 
