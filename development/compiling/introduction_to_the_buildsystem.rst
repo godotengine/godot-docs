@@ -41,7 +41,7 @@ Setup
 
 Please refer to the documentation for :ref:`doc_compiling_for_android`,
 :ref:`doc_compiling_for_ios`,  :ref:`doc_compiling_for_linuxbsd`,
-:ref:`doc_compiling_for_osx`, :ref:`doc_compiling_for_uwp`,
+:ref:`doc_compiling_for_macos`, :ref:`doc_compiling_for_uwp`,
 :ref:`doc_compiling_for_web`, and :ref:`doc_compiling_for_windows`.
 
 Note that for **Windows/Visual Studio**, you need to use ``x86_x64 Cross Tools
