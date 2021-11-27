@@ -122,7 +122,7 @@ There are 4 ``LIGHTX`` lights, accessed as ``LIGHT0``, ``LIGHT1``, ``LIGHT2``, a
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | in vec3 **POSITION**            | Camera position in world space                                                                                           |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| SamplerCube **RADIANCE**        | Radiance cubemap. Can only be read from during background pass. Check ``!AT_CUBEMAP_PASS`` before using.                 |
+| samplerCube **RADIANCE**        | Radiance cubemap. Can only be read from during background pass. Check ``!AT_CUBEMAP_PASS`` before using.                 |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | in bool **AT_HALF_RES_PASS**    | Currently rendering to half resolution pass.                                                                             |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
