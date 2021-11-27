@@ -144,6 +144,24 @@ is usually:
 | inout float **POINT_SIZE**     | Point size for point drawing.                     |
 +--------------------------------+---------------------------------------------------+
 
+SDF functions
+^^^^^^^^^^^^^
+
+There are some functions implemented to support a SDF (Signed Distance Field) feature.
+They are available for Fragment and Light functions of CanvasItem shader.
+
++-----------------------------------------------+----------------------------------------+
+| Function                                      | Description                            |
++===============================================+========================================+
+| float **texture_sdf** (vec2 sdf_pos)          | Performs an SDF texture lookup.        |
++-----------------------------------------------+----------------------------------------+
+| vec2 **texture_sdf_normal** (vec2 sdf_pos)    | Performs an SDF normal texture lookup. |
++-----------------------------------------------+----------------------------------------+
+| vec2 **sdf_to_screen_uv** (vec2 sdf_pos)      | Converts a SDF to screen UV.           |
++-----------------------------------------------+----------------------------------------+
+| vec2 **screen_uv_to_sdf** (vec2 uv)           | Converts screen UV to a SDF.           |
++-----------------------------------------------+----------------------------------------+
+
 Fragment built-ins
 ^^^^^^^^^^^^^^^^^^
 

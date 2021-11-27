@@ -39,7 +39,7 @@ This is an example of a shader for leaves:
 .. code-block:: glsl
 
     shader_type spatial;
-    render_mode depth_draw_alpha_prepass, cull_disabled, world_vertex_coords;
+    render_mode depth_prepass_alpha, cull_disabled, world_vertex_coords;
 
 This is a spatial shader. There is no front/back culling (so leaves can be seen from both sides), and alpha prepass is used, so there are less depth artifacts that result from using transparency (and leaves cast shadow). Finally, for the sway effect, world coordinates are recommended, so the tree can be duplicated, moved, etc. and it will still work together with other trees.
 
