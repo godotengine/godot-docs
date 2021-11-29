@@ -42,6 +42,10 @@ Linux, and ``%APPDATA%/Name`` on Windows. ``Name`` is based on the application
 name defined in the Project Settings, but you can override it on a per-platform
 basis using :ref:`feature tags <doc_feature_tags>`.
 
+On HTML5 exports, ``user://`` will refer to a virtual filesystem stored on the
+device via IndexedDB. (Interaction with the main filesystem can still be performed
+through the :ref:`JavaScript <class_JavaScript>` singleton.)
+
 Editor data paths
 -----------------
 
