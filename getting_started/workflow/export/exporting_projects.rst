@@ -142,20 +142,31 @@ the export parameters. A basic invocation of the command would be:
     godot --export "Windows Desktop" some_name
 
 This will export to ``some_name.exe``, assuming there is a preset
-called "Windows Desktop" and the template can be found.
+called "Windows Desktop" and the template can be found. (The export preset name
+must be written within quotes if it contains spaces or special characters.)
 The output path is relative to the project path or absolute;
 it does not respect the directory the command was invoked from.
 
-You can also configure it to export only the PCK or ZIP file, allowing
-a single export to be used with multiple Godot executables.
-This takes place if the target name ends with ``.pck`` or ``.zip``.
-
-It is often useful to combine the ``--export`` flag with the ``--path``
-flag, and to create a dedicated export preset for automated export:
+You can also configure it to export *only* the PCK or ZIP file, allowing
+a single exported main pack file to be used with multiple Godot executables.
+When doing so, the export preset name must still be specified on the command line:
 
 .. code-block:: shell
 
-    godot --path path/to/project --export "pck" game_name.pck
+    godot --export-pack "Windows Desktop" some_name.pck
+
+It is often useful to combine the ``--export`` flag with the ``--path``
+flag, so that you do not need to ``cd`` to the project folder before running
+the command:
+
+.. code-block:: shell
+
+    godot --path /path/to/project --export "Windows Desktop" some_name
+
+.. seealso::
+
+    See :ref:`doc_command_line_tutorial` for more information about using Godot
+    from the command line.
 
 PCK versus ZIP pack file formats
 --------------------------------
