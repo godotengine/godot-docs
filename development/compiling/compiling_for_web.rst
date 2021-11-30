@@ -8,9 +8,9 @@ Compiling for the Web
 Requirements
 ------------
 
-To compile export templates for the Web, the following is required:
+To compile Godot 3.4 export templates for the Web, the following is required:
 
--  `Emscripten 1.39.9+ <https://emscripten.org>`__.
+-  `Emscripten 2.0.17+ <https://emscripten.org>`__.
 -  `Python 3.5+ <https://www.python.org/>`__.
 -  `SCons 3.0+ <https://www.scons.org>`__ build system.
 
