@@ -125,7 +125,7 @@ with the following commands (assuming a universal build, otherwise replace the
     mkdir -p osx_template.app/Contents/MacOS
     cp bin/godot.osx.opt.universal osx_template.app/Contents/MacOS/godot_osx_release.64
     cp bin/godot.osx.opt.debug.universal osx_template.app/Contents/MacOS/godot_osx_debug.64
-    chmod +x Godot.app/Contents/MacOS/godot_osx*
+    chmod +x osx_template.app/Contents/MacOS/godot_osx*
 
 You can then zip the ``osx_template.app`` folder to reproduce the ``osx.zip``
 template from the official Godot distribution::
