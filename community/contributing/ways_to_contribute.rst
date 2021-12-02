@@ -16,8 +16,8 @@ positive to the engine, regardless of their skill set:
 -  **Be part of the community.** The best way to contribute to Godot and help
    it become ever better is simply to use the engine and promote it by
    word-of-mouth, in the credits or splash screen of your games, blog posts, tutorials,
-   videos, demos, gamedev or free software events, support on the Q&A, IRC,
-   forums, Discord, etc. Participate!
+   videos, demos, gamedev or free software events, support on the Q&A, forums,
+   Contributors Chat, Discord, etc. Participate!
    Being a user and advocate helps spread the word about our great engine,
    which has no marketing budget and can therefore only rely on its community
    to become more mainstream.
@@ -144,7 +144,7 @@ Filing an issue on GitHub
 
 Godot uses `GitHub's issue tracker <https://github.com/godotengine/godot/issues>`_
 for bug reports and enhancement suggestions. You will need a GitHub account to
-be able to open a new issue there, and click on the "New issue" button.
+be able to open a new issue there, and click on the **New issue** button.
 
 When you report a bug, you should keep in mind that the process is similar
 to an appointment with your doctor. You noticed *symptoms* that make you think
@@ -167,7 +167,7 @@ always provide:
    only on certain processors, graphic cards, etc. If you are able to,
    it can be helpful to include information on your hardware.
 
--  **Godot version.** This is a must have. Some issues might be relevant in the
+-  **Godot version.** This is a must-have. Some issues might be relevant in the
    current stable release, but fixed in the development branch, or the other
    way around. You might also be using an obsolete version of Godot and
    experiencing a known issue fixed in a later version, so knowing this from
@@ -184,7 +184,7 @@ always provide:
    mind that there are thousands of issues in the tracker, and developers can
    only dedicate little time to each issue.
 
-When you click the "New issue" button, you should be presented with a text area
+When you click the **New issue** button, you should be presented with a text area
 prefilled with our issue template. Please try to follow it so that all issues
 are consistent and provide the required information.
 
@@ -193,20 +193,20 @@ Contributing to the documentation
 
 There are two separate resources referred to as "documentation" in Godot:
 
--  **The class reference.** This is the documentation for the complete Godot
-   API as exposed to GDScript and the other scripting languages. It can be
-   consulted offline, directly in Godot's code editor, or online at
-   :ref:`Godot API <toc-class-ref>`.
-   To contribute to the class reference, you have to edit the
-   `doc/base/classes.xml` in Godot's Git repository, and make a pull request.
-   See :ref:`doc_updating_the_class_reference` for more details.
+- **The class reference.** This is the documentation for the complete Godot API
+  as exposed to GDScript and the other scripting languages. It can be consulted
+  offline, directly in Godot's code editor, or online at :ref:`Godot API
+  <toc-class-ref>`. To contribute to the class reference, you have to edit the
+  XML file corresponding to the class and make a pull request.
+  See :ref:`doc_updating_the_class_reference` and
+  :ref:`doc_class_reference_writing_guidelines` for more details.
 
--  **The tutorials and engine documentation and its translations.** This is the part you are reading
-   now, which is distributed in the HTML, PDF and EPUB formats. Its contents
-   are generated from plain text files in the reStructured Text (rst) format,
-   to which you can contribute via pull requests on the
-   `godot-docs <https://github.com/godotengine/godot-docs>`_ GitHub repository.
-   See :ref:`doc_documentation_guidelines` for more details.
+- **The tutorials and engine documentation and its translations.**
+  This is the part you are reading now, which is distributed in the HTML format.
+  Its contents are generated from plain text files in the reStructured Text
+  (rst) format, to which you can contribute via pull requests on the
+  `godot-docs <https://github.com/godotengine/godot-docs>`_ GitHub repository.
+  See :ref:`doc_contributing_to_the_documentation` for more details.
 
 Contributing translations
 -------------------------

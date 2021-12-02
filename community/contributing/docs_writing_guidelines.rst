@@ -32,6 +32,11 @@ There are 3 rules to describe classes:
     the smallest and clearest sentences possible. These guidelines will help
     you work towards that goal.
 
+.. seealso::
+
+    See the :ref:`content guidelines <doc_content_guidelines>` for information
+    on the types of documentation you can write in the official documentation.
+
 7 rules for clear English
 -------------------------
 
@@ -105,7 +110,7 @@ The progressive forms describe continuous actions. E.g. "is calling",
     Vector2 move ( Vector2 rel_vec )
     Move the body in the given direction, **stopping** if there is an obstacle. [...]
 
-**Do** use simple present, preterit or future.
+**Do** use simple present, past, or future.
 
 ::
 
@@ -295,7 +300,7 @@ The exception is topics that explain static typing concepts to users.
     const MainAttack := preload("res://fire_attack.gd")
     var hit_points := 5
     var name: String = "Bob"
-    var body_sprite := $Sprite as Sprite
+    var body_sprite := $Sprite2D as Sprite2D
 
 
 **Do** write constants and variables with dynamic typing:
@@ -305,14 +310,14 @@ The exception is topics that explain static typing concepts to users.
     const MainAttack = preload("res://fire_attack.gd")
     var hit_points = 5
     var name = "Bob"
-    var body_sprite = $Sprite
+    var body_sprite = $Sprite2D
 
 
 **Don't** write functions with inferred arguments or return types:
 
 ::
 
-    func choose(arguments: PoolStringArray) -> String:
+    func choose(arguments: PackedStringArray) -> String:
         # Chooses one of the arguments from array with equal chances
         randomize()
         var size := arguments.size()

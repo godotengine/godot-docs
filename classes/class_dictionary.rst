@@ -115,7 +115,7 @@ You need to first calculate the dictionary's hash with :ref:`hash<class_Dictiona
 Tutorials
 ---------
 
-- `#dictionary <../getting_started/scripting/gdscript/gdscript_basics.html#dictionary>`_ in :doc:`../getting_started/scripting/gdscript/gdscript_basics`
+- `#dictionary <../tutorials/scripting/gdscript/gdscript_basics.html#dictionary>`_ in :doc:`../tutorials/scripting/gdscript/gdscript_basics`
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 

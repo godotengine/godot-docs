@@ -48,6 +48,11 @@ setup clang-format locally to check and automatically fix all your commits.
              ``/* clang-format off */`` and ``/* clang-format on */`` to tell
              clang-format to ignore a chunk of code.
 
+.. seealso::
+
+    These guidelines only cover code formatting. See :ref:`doc_cpp_usage_guidelines`
+    for a list of language features that are permitted in pull requests.
+
 Using clang-format locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -117,8 +122,12 @@ Here is a non-exhaustive list of beautifier plugins for some IDEs:
 - Visual Studio Code: `Clang-Format <https://marketplace.visualstudio.com/items?itemName=xaver.clang-format>`__
 - Visual Studio: `ClangFormat <https://marketplace.visualstudio.com/items?itemName=LLVMExtensions.ClangFormat>`__
 - vim: `vim-clang-format <https://github.com/rhysd/vim-clang-format>`__
+- CLion: Starting from version ``2019.1``, no plugin is required. Instead, enable
+  `ClangFormat <https://www.jetbrains.com/help/clion/clangformat-as-alternative-formatter.html#clion-support>`__
 
 (Pull requests welcome to extend this list with tested plugins.)
+
+.. _doc_code_style_guidelines_header_includes:
 
 Header includes
 ~~~~~~~~~~~~~~~
@@ -186,7 +195,7 @@ Example:
 
     #include "core/hash_map.h"
     #include "core/list.h"
-    #include "scene/gui/control.h
+    #include "scene/gui/control.h"
 
     #include <png.h>
 
@@ -229,7 +238,7 @@ Example:
     #include "my_new_file.h"
 
     #include "core/math/math_funcs.h"
-    #include "scene/gui/line_edit.h
+    #include "scene/gui/line_edit.h"
 
     #include <zlib.h>
     #include <zstd.h>
@@ -254,7 +263,7 @@ Blacken your Python changes using `Black <https://pypi.org/project/black/>`__.
 Using black locally
 ~~~~~~~~~~~~~~~~~~~
 
-First of all, you will need to install black. Black requires Python 3.6.0+ 
+First of all, you will need to install black. Black requires Python 3.6.0+
 to run.
 
 Installation

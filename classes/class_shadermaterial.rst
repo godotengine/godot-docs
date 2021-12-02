@@ -23,7 +23,7 @@ A material that uses a custom :ref:`Shader<class_Shader>` program to render eith
 Tutorials
 ---------
 
-- :doc:`../tutorials/shading/index`
+- :doc:`../tutorials/shaders/index`
 
 Properties
 ----------

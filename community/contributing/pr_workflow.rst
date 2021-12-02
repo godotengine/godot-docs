@@ -47,6 +47,7 @@ which quickly leads to PRs with an unreadable Git history (especially after peer
              the tool's philosophy and the various commands you need to
              master in your daily workflow. You can read them online on the
              `Git SCM <https://git-scm.com/book/en/v2>`_ website.
+             You can also try out `GitHub's interactive guide <https://try.github.io/>`__.
 
 The branches on the Git repository are organized as follows:
 
@@ -364,7 +365,8 @@ On that line, there is a "Pull request" link. Clicking it will open a form
 that will let you issue a pull request on the ``godotengine/godot`` upstream
 repository. It should show you your two commits, and state "Able to merge".
 If not (e.g. it has way more commits, or says there are merge conflicts),
-don't create the PR, something went wrong. Go to IRC and ask for support :)
+don't create the PR yet, something went wrong. Go to our `Contributors Chat
+<https://chat.godotengine.org/>`_ and ask for support :)
 
 Use an explicit title for the PR and put the necessary details in the comment
 area. You can drag and drop screenshots, GIFs or zipped projects if relevant,
@@ -469,7 +471,7 @@ between, the most common and convenient workflow involves rebasing on the
           with this little by little).
 
 This will open a text editor (``vi`` by default, see
-`Git docs <https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor>__`
+`Git docs <https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor>`_
 to configure your favorite one) with something which may look like this:
 
 .. code-block:: text

@@ -51,7 +51,7 @@ An ``ImageTexture`` is not meant to be operated from within the editor interface
 Tutorials
 ---------
 
-- :doc:`../getting_started/workflow/assets/importing_images`
+- :doc:`../tutorials/assets_pipeline/importing_images`
 
 Properties
 ----------

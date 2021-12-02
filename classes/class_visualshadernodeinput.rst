@@ -21,7 +21,7 @@ Gives access to input variables (built-ins) available for the shader. See the sh
 Tutorials
 ---------
 
-- :doc:`../tutorials/shading/shading_reference/index`
+- :doc:`../tutorials/shaders/shader_reference/index`
 
 Properties
 ----------

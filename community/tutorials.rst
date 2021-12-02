@@ -23,6 +23,7 @@ Video tutorials
 
 - `Godot Tutorials <https://www.youtube.com/channel/UCnr9ojBEQGgwbcKsZC-2rIg>`_ (2D, GDScript, Programming Basics).
 - `Emilio <https://www.youtube.com/channel/UC9DR22-qohBDtZ74R3FxOZg>`_ (2D, GDScript and VisualScript).
+- `FinePointCGI <https://www.youtube.com/channel/UCSojAWUnEUTUcdA9iJ6bryQ>`_ (2D, 3D, GDScript and C#).
 - `GDQuest <https://www.youtube.com/channel/UCxboW7x0jZqFdvMdCFKTMsQ/playlists>`_ (2D and 3D, GDScript, VisualScript and C#).
 - `Game Development Center <https://www.youtube.com/c/GameDevelopmentCenter>`_ (2D, networked multiplayer, GDScript).
 - `Game Endeavor <https://www.youtube.com/channel/UCLweX1UtQjRjj7rs_0XQ2Eg/videos>`_ (2D, GDScript).
@@ -41,10 +42,12 @@ Video tutorials
 - `TheGuideKnight <https://www.youtube.com/playlist?list=PLYcTJBw32KtX2fvOdtO_fS3Nd6sxM71tn>`_ (2D, GDScript).
 - `GDScript Dude <https://www.youtube.com/channel/UCQs0i6vKISElM6mh7OzLouQ>`_ (GDScript).
 - `Garbaj <https://www.youtube.com/c/Garbaj/>`_ (3D, GDScript).
+- `Kasper Frandsen <https://www.youtube.com/c/KasperFrandsen/>`_ (3D, Shaders).
 
 Text tutorials
 --------------
 
+- `FinepointCGI website by Mitch <http://finepointcgi.io/>`__
 - `GDScript website by Andrew Wilkes <https://gdscript.com>`__
 - `Godot Recipes by KidsCanCode <http://godotrecipes.com/>`__
 - `Steincodes <https://steincodes.tumblr.com>`__

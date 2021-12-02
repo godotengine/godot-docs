@@ -23,7 +23,7 @@ The JavaScript singleton is implemented only in the HTML5 export. It's used to a
 Tutorials
 ---------
 
-- `#calling-javascript-from-script <../getting_started/workflow/export/exporting_for_web.html#calling-javascript-from-script>`_ in :doc:`../getting_started/workflow/export/exporting_for_web`
+- `#calling-javascript-from-script <../tutorials/export/exporting_for_web.html#calling-javascript-from-script>`_ in :doc:`../tutorials/export/exporting_for_web`
 
 Methods
 -------

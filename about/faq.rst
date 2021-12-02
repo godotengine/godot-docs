@@ -409,6 +409,8 @@ This custom UI toolkit :ref:`can't be used as a library <doc_faq_use_godot_as_li
 but you can still
 :ref:`use Godot to create non-game applications by using the editor <doc_faq_non_game_applications>`.
 
+.. _doc_faq_why_not_stl:
+
 Why does Godot not use STL (Standard Template Library)?
 -------------------------------------------------------
 

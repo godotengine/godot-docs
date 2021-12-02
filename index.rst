@@ -75,12 +75,13 @@ The main documentation for the site is organized into the following sections:
    :caption: Getting started
    :name: sec-learn
 
+   getting_started/introduction/index
    getting_started/step_by_step/index
-   getting_started/editor/index
-   getting_started/scripting/index
-   getting_started/workflow/index
+   getting_started/first_2d_game/index
+   getting_started/first_3d_game/index
 
 
+.. The sections below are sorted alphabetically. Please keep them that way.
 .. toctree::
    :maxdepth: 1
    :caption: Tutorials
@@ -88,28 +89,27 @@ The main documentation for the site is organized into the following sections:
 
    tutorials/2d/index
    tutorials/3d/index
-   tutorials/audio/index
-   tutorials/physics/index
-   tutorials/math/index
    tutorials/animation/index
+   tutorials/assets_pipeline/index
+   tutorials/audio/index
+   tutorials/best_practices/index
+   tutorials/editor/index
+   tutorials/export/index
+   tutorials/i18n/index
    tutorials/inputs/index
    tutorials/io/index
-   tutorials/i18n/index
-   tutorials/gui/index
-   tutorials/viewports/index
-   tutorials/shading/index
-   tutorials/networking/index
+   tutorials/math/index
    tutorials/navigation/index
-   tutorials/assetlib/index
-   tutorials/vr/index
-   tutorials/plugins/index
+   tutorials/networking/index
+   tutorials/performance/index
+   tutorials/physics/index
    tutorials/platform/index
-   tutorials/threads/index
-   tutorials/content/index
-   tutorials/optimization/index
-   tutorials/misc/index
-   tutorials/debug/index
-   tutorials/legal/index
+   tutorials/plugins/index
+   tutorials/rendering/index
+   tutorials/scripting/index
+   tutorials/shaders/index
+   tutorials/ui/index
+   tutorials/vr/index
 
 
 .. toctree::
@@ -129,6 +129,7 @@ The main documentation for the site is organized into the following sections:
    :name: sec-community
 
    community/contributing/index
+   community/asset_library/index
    community/channels
    community/tutorials
 

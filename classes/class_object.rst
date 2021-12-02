@@ -45,9 +45,9 @@ Objects also receive notifications. Notifications are a simple way to notify the
 Tutorials
 ---------
 
-- :doc:`../getting_started/workflow/best_practices/node_alternatives`
+- :doc:`../tutorials/best_practices/node_alternatives`
 
-- `#advanced-exports <../getting_started/scripting/gdscript/gdscript_exports.html#advanced-exports>`_ in :doc:`../getting_started/scripting/gdscript/gdscript_exports`
+- `#advanced-exports <../tutorials/scripting/gdscript/gdscript_exports.html#advanced-exports>`_ in :doc:`../tutorials/scripting/gdscript/gdscript_exports`
 
 Methods
 -------

@@ -1,284 +1,340 @@
+.. Intention: give the user a first taste of signals. We should write more
+   documentation in the scripting/ section.
+.. Note: GDScript snippets use one line return instead of two because they're
+   really short.
+
 .. meta::
     :keywords: Signal
 
 .. _doc_signals:
 
-Signals
-=======
+Using Signals
+=============
 
-Introduction
-------------
+In this lesson, we will look at signals. They are messages that nodes emit when
+something specific happens to them, like a button being pressed. Other nodes can
+connect to that signal and call a function when the event occurs.
 
-Signals are Godot's version of the *observer* pattern. They allow a node to
-send out a message that other nodes can listen for and respond to. For example,
-rather than continuously checking a button to see if it's being pressed, the
-button can emit a signal when it's pressed.
+It is a delegation mechanism built into Godot that allows one game object to
+react to a change in another without them referencing one another. Using signals
+limits `coupling
+<https://en.wikipedia.org/wiki/Coupling_(computer_programming)>`_ and keeps your
+code flexible.
 
-.. note:: You can read more about the observer pattern here: https://gameprogrammingpatterns.com/observer.html
+For example, you might have a life bar on the screen that represents the
+player’s health. When the player takes damage or uses a healing potion, you want
+the bar to reflect the change. To do so, in Godot, you would use signals.
 
-Signals are a way to *decouple* your game objects, which leads to better organized
-and more manageable code. Instead of forcing game objects to expect other objects
-to always be present, they can instead emit signals that all interested objects can
-subscribe to and respond to.
+.. note:: As mentioned in the introduction, signals are Godot's version of the
+          observer pattern. You can learn more about it here:
+          https://gameprogrammingpatterns.com/observer.html
 
-Below you can see some examples of how you can use signals in your own projects.
+We will now use a signal to make our Godot icon from last part move and stop
+by pressing a button.
 
-Timer example
--------------
+.. Example
 
-To see how signals work, let's try using a :ref:`Timer <class_Timer>` node. Create
-a new scene with a Node2D and two children: a Timer and a :ref:`Sprite <class_Sprite>`.
-In the Scene dock, rename Node2D to TimerExample.
+Scene setup
+-----------
 
-For the Sprite's texture, you can use the Godot icon, or any other image you
-like. Do so by selecting ``Load`` in the Sprite's Texture attribute drop-down menu.
-Attach a script to the root node, but don't add any code to it yet.
+Create a new scene by going to the menu Scene -> New Scene.
 
-Your scene tree should look like this:
+.. image:: img/signals_01_new_scene.png
 
-.. image:: img/signals_node_setup.png
+In the Scene dock, click the 2D Scene button. This will add a Node2D as our
+root.
 
-In the Timer node's properties, check the "On" box next to *Autostart*. This will
-cause the timer to start automatically when you run the scene. You can leave the
-*Wait Time* at 1 second.
-
-Next to the "Inspector" tab is a tab labeled "Node". Click on this tab and you'll
-see all of the signals that the selected node can emit. In the case of the Timer
-node, the one we're concerned with is "timeout". This signal is emitted whenever
-the Timer reaches ``0``.
-
-.. image:: img/signals_node_tab_timer.png
-
-Click on the "timeout()" signal and click "Connect..." at the bottom of the signals
-panel. You'll see the following window, where you can define how you want to connect
-the signal:
-
-.. image:: img/signals_connect_dialog_timer.png
-
-On the left side, you'll see the nodes in your scene and can select the node that
-you want to "listen" for the signal. Note that the Timer node is blue, this is a
-visual indication that it's the node that is emitting the signal. Select the root
-node.
-
-.. warning:: The target node *must* have a script attached or you'll receive
-             an error message.
-
-If you toggle the Advanced menu, you'll see on the right side that you can bind an arbitrary number of arguments of (possibly) different
-types. This can be useful when you have more than one signal connected to the same method,
-as each signal propagation will result in different values for those extra call arguments.
-
-On the bottom of the window is a field labeled "Receiver Method". This is the name
-of the function in the target node's script that you want to use. By default,
-Godot will create this function using the naming convention ``_on_<node_name>_<signal_name>``
-but you can change it if you wish.
-
-Click "Connect" and you'll see that the function has been created in the script:
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    extends Node2D
+.. image:: img/signals_02_2d_scene.png
 
 
-    func _on_Timer_timeout():
-        pass # Replace with function body.
+In the FileSystem dock, click and drag the ``Sprite2D.tscn`` file you saved
+previously onto the Node2D to instantiate it.
 
- .. code-tab:: csharp
+.. image:: img/signals_03_dragging_scene.png
 
-    public class TimerExample : Node2D
-    {
-        public void _on_Timer_timeout()
-        {
-            // Replace with function body.
-        }
-    }
+We want to add another node as a sibling of the Sprite2D. To do so, right-click on
+Node2D and select Add Child Node.
 
-Now we can replace the placeholder code with whatever code we want to run when
-the signal is received. Let's make the Sprite blink:
+.. image:: img/signals_04_add_child_node.png
 
-.. tabs::
- .. code-tab:: gdscript GDScript
+Search for the Button node type and add it.
 
-    extends Node2D
+.. image:: img/signals_05_add_button.png
 
+The node is small by default. Click and drag on the bottom-right handle of the
+Button in the viewport to resize it.
 
-    func _on_Timer_timeout():
-        # Note: the `$` operator is a shorthand for `get_node()`,
-        # so `$Sprite` is equivalent to `get_node("Sprite")`.
-        $Sprite.visible = !$Sprite.visible
+.. image:: img/signals_06_drag_button.png
 
- .. code-tab:: csharp
+If you don't see the handles, ensure the select tool is active in the toolbar.
 
-    public class TimerExample : Node2D
-    {
-        public void _on_Timer_timeout()
-        {
-            var sprite = GetNode<Sprite>("Sprite");
-            sprite.Visible = !sprite.Visible;
-        }
-    }
+.. image:: img/signals_07_select_tool.png
 
-Run the scene and you'll see the Sprite blinking on and off every second. You can
-change the Timer's *Wait Time* property to alter this.
+Click and drag on the button itself to move it closer to the sprite.
 
-Connecting signals in code
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+You can also write a label on the Button by editing its Text property in the
+Inspector.
 
-You can also make the signal connection in code rather than with the editor. This
-is usually necessary when you're instancing nodes via code and so you can't use
-the editor to make the connection.
+.. image:: img/signals_08_toggle_motion_text.png
 
-First, disconnect the signal by selecting the connection in the Timer's "Node"
-tab and clicking disconnect.
+Your scene tree and viewport should look like this.
 
-.. image:: img/signals_disconnect_timer.png
+.. image:: img/signals_09_scene_setup.png
 
-To make the connection in code, we can use the ``connect`` function. We'll put it
-in ``_ready()`` so that the connection will be made on run. The syntax of the
-function is ``<source_node>.connect(<signal_name>, <target_node>, <target_function_name>)``.
-Here is the code for our Timer connection:
+Connecting a signal in the editor
+---------------------------------
+
+Here, we want to connect the Button's "pressed" signal to our Sprite2D, and we
+want to call a new function that will toggle its motion on and off. We need to
+have a script attached to the Sprite2D node, which we do from the previous lesson.
+
+You can connect signals in the Node dock. Select the Button node and, on the
+right side of the editor, click on the tab named "Node" next to the Inspector.
+
+.. image:: img/signals_10_node_dock.png
+
+The dock displays a list of signals available on the selected node.
+
+.. image:: img/signals_11_pressed_signals.png
+
+Double-click the "pressed" signal to open the node connection window.
+
+.. image:: img/signals_12_node_connection.png
+
+There, you can connect the signal to the Sprite2D node. The node needs a receiver
+method, a function that Godot will call when the Button emits the signal. The
+editor generates one for you. By convention, we name these callback methods
+"_on_NodeName_signal_name". Here, it'll be "_on_Button_pressed".
+
+.. note::
+
+   When connecting signals via the editor's Node dock, you can use two
+   modes. The simple one only allows you to connect to nodes that have a
+   script attached to them and creates a new callback function on them.
+
+   .. image:: img/signals_advanced_connection_window.png
+
+   The advanced view lets you connect to any node and any built-in
+   function, add arguments to the callback, and set options. You can
+   toggle the mode in the window's bottom-right by clicking the radio
+   button.
+
+Click the connect button to complete the signal connection and jump to the
+Script workspace. You should see the new method with a connection icon in the
+left margin.
+
+.. image:: img/signals_13_signals_connection_icon.png
+
+If you click the icon, a window pops up and displays information about the
+connection. This feature is only available when connecting nodes in the editor.
+
+.. image:: img/signals_14_signals_connection_info.png
+
+Let's replace the line with the ``pass`` keyword with code that'll toggle the
+node's motion.
+
+Our Sprite2D moves thanks to code in the ``_process()`` function. Godot provides a
+method to toggle processing on and off: :ref:`Node.set_process()
+<class_Node_method_set_process>`. Another method of the Node class,
+``is_processing()``, returns ``true`` if idle processing is active. We can use
+the ``not`` keyword to invert the value.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Node2D
+    func _on_Button_pressed():
+        set_process(not is_processing())
 
+This function will toggle processing and, in turn, the icon's motion on and off
+upon pressing the button.
+
+Before trying the game, we need to simplify our ``_process()`` function to move
+the node automatically and not wait for user input. Replace it with the
+following code, which we saw two lessons ago:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _process(delta: float) -> void:
+        rotation += angular_speed * delta
+        var velocity = Vector2.UP.rotated(rotation) * speed
+        position += velocity * delta
+
+Your complete ``Sprite2D.gd`` code should look like the following.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends Sprite2D
+
+    var speed = 400
+    var angular_speed = PI
+
+    func _process(delta: float) -> void:
+        rotation += angular_speed * delta
+        var velocity = Vector2.UP.rotated(rotation) * speed
+        position += velocity * delta
+
+    func _on_Button_pressed():
+        set_process(not is_processing())
+
+Run the scene now and click the button to see the sprite start and stop.
+
+Connecting a signal via code
+----------------------------
+
+You can connect signals via code instead of using the editor. This is necessary
+when you create nodes or instantiate scenes inside of a script.
+
+Let's use a different node here. Godot has a :ref:`Timer <class_Timer>` node
+that's useful to implement skill cooldown times, weapon reloading, and more.
+
+Head back to the 2D workspace. You can either click the "2D" text at the top of
+the window or press :kbd:`Ctrl + F2` (:kbd:`Alt + 2` on macOS).
+
+In the Scene dock, right-click on the Sprite2D node and add a new node. Search for
+Timer and add the corresponding node. Your scene should now look like this.
+
+.. image:: img/signals_15_scene_tree.png
+
+With the Timer node selected, go to the Inspector and check the **Autostart** property.
+
+.. image:: img/signals_18_timer_autostart.png
+
+Click the script icon next to Sprite2D to jump back to the scripting workspace.
+
+.. image:: img/signals_16_click_script.png
+
+We need to do two operations to connect the nodes via code:
+
+1. Get a reference to the Timer from the Sprite2D.
+2. Call the Timer's ``connect()`` method.
+
+.. note:: To connect to a signal via code, you need to call the ``connect()``
+          method of the node you want to listen to. In this case, we want to
+          listen to the Timer's "timeout" signal.
+
+To get a reference to a node relative to the current one, we use the method
+:ref:`Node.get_node() <class_Node_method_get_node>`. We can store the reference
+in a variable.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends Sprite2D
+
+    #...
 
     func _ready():
-        $Timer.connect("timeout", self, "_on_Timer_timeout")
+        var timer = get_node("Timer")
 
+The function ``get_node()`` looks at the Sprite2D's children and gets nodes by
+their name. For example, if you renamed the Timer node to "BlinkingTimer" in the
+editor, you would have to change the call to ``get_node("BlinkingTimer")``.
+
+.. add seealso to a page that explains node features.
+
+We can now connect the Timer to the Sprite2D in the ``_ready()`` function.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _ready():
+        var timer = get_node("Timer")
+        timer.connect("timeout", self, "_on_Timer_timeout")
+
+The line reads like so: we connect the Timer's "timeout" signal to the node to
+which the script is attached (``self``). When the Timer emits "timeout", we want
+to call the function "_on_Timer_timeout", that we need to define. Let's add it
+at the bottom of our script and use it to toggle our sprite's visibility.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _on_Timer_timeout():
-        $Sprite.visible = !$Sprite.visible
+        visible = not visible
 
- .. code-tab:: csharp
-
-    public class TimerExample : Node2D
-    {
-        public override void _Ready()
-        {
-            GetNode("Timer").Connect("timeout", this, nameof(_on_Timer_timeout));
-        }
-
-        public void _on_Timer_timeout()
-        {
-            var sprite = GetNode<Sprite>("Sprite");
-            sprite.Visible = !sprite.Visible;
-        }
-    }
+The ``visible`` property is a boolean that controls the visibility of our node.
+The line ``visible = not visible`` toggles the value. If ``visible`` is
+``true``, it becomes ``false``, and vice-versa.
 
 Custom signals
 --------------
 
-You can also declare your own custom signals in Godot:
-
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    extends Node2D
-
-
-    signal my_signal
-
- .. code-tab:: csharp
-
-    public class Main : Node2D
-    {
-        [Signal]
-        public delegate void MySignal();
-    }
-
-Once declared, your custom signals will appear in the Inspector and can be connected
-in the same way as a node's built-in signals.
-
-To emit a signal via code, use the ``emit_signal`` function:
+You can define custom signals in a script. Say, for example, that you want to
+show a game over screen when the player's health reaches zero. To do so, you
+could define a signal named "died" or "health_depleted" when their health
+reaches 0.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     extends Node2D
 
+    signal health_depleted
 
-    signal my_signal
+    var health = 10
 
+.. note:: As signals represent events that just occurred, we generally use an
+          action verb in the past tense in their names.
 
-    func _ready():
-        emit_signal("my_signal")
+Your signals work the same way as built-in ones: they appear in the Node tab and
+you can connect to them like any other.
 
- .. code-tab:: csharp
+.. image:: img/signals_17_custom_signal.png
 
-    public class Main : Node2D
-    {
-        [Signal]
-        public delegate void MySignal();
+To emit a signal in your scripts, call ``emit_signal()``.
 
-        public override void _Ready()
-        {
-            EmitSignal(nameof(MySignal));
-        }
-    }
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
-A signal can also optionally declare one or more arguments. Specify the
-argument names between parentheses:
+    func take_damage(amount):
+        health -= amount
+        if health <= 0:
+            emit_signal("health_depleted")
+
+A signal can optionally declare one or more arguments. Specify the argument
+names between parentheses:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     extends Node
 
-
-    signal my_signal(value, other_value)
-
- .. code-tab:: csharp
-
-    public class Main : Node
-    {
-        [Signal]
-        public delegate void MySignal(bool value, int other_value);
-    }
+    signal health_changed(old_value, new_value)
 
 .. note::
 
-    The signal arguments show up in the editor's node dock, and Godot
-    can use them to generate callback functions for you. However, you can still
-    emit any number of arguments when you emit signals. So it's up to you to
-    emit the correct values.
+    The signal arguments show up in the editor's node dock, and Godot can use
+    them to generate callback functions for you. However, you can still emit any
+    number of arguments when you emit signals. So it's up to you to emit the
+    correct values.
 
-To pass values, add them as the second argument to the ``emit_signal`` function:
+To emit values along with the signal, add them as extra arguments to the
+``emit_signal()`` function:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Node
+    func take_damage(amount):
+        var old_health = health
+        health -= amount
+        emit_signal("health_changed", old_health, health)
 
+Summary
+-------
 
-    signal my_signal(value, other_value)
+Any node in Godot emits signals when something specific happens to them, like a
+button being pressed. Other nodes can connect to individual signals and react to
+selected events.
 
+Signals have many uses. With them, you can react to a node entering or exiting
+the game world, to a collision, to a character entering or leaving an area, to
+an element of the interface changing size, and much more.
 
-    func _ready():
-        emit_signal("my_signal", true, 42)
-
- .. code-tab:: csharp
-
-    public class Main : Node
-    {
-        [Signal]
-        public delegate void MySignal(bool value, int other_value);
-
-        public override void _Ready()
-        {
-            EmitSignal(nameof(MySignal), true, 42);
-        }
-    }
-
-Conclusion
-----------
-
-Many of Godot's built-in node types provide signals you can use to detect
-events. For example, an :ref:`Area2D <class_Area2D>` representing a coin emits
-a ``body_entered`` signal whenever the player's physics body enters its collision
+For example, an :ref:`Area2D <class_Area2D>` representing a coin emits a
+``body_entered`` signal whenever the player's physics body enters its collision
 shape, allowing you to know when the player collected it.
 
-In the next section, :ref:`doc_your_first_game`, you'll build a complete game
-including several uses of signals to connect different game components.
+In the next section, :ref:`doc_your_first_2d_game`, you'll create a complete 2D
+game and put everything you learned so far into practice.

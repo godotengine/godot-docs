@@ -25,9 +25,11 @@ documentation.
              describes regarding the main godotengine/godot repository is
              also valid for the docs repository.
 
-The README.md file contains all the information you need to get you started,
-please read it. In particular, it contains some tips and tricks and links to
-reference documentation about the reStructuredText markup language.
+.. warning:: The class reference's source files are in the `Godot engine repository
+             <https://github.com/godotengine/godot>`_. We generate the :ref:`Godot API
+             <toc-class-ref>` section of this documentation from them. If you want to update the
+             description of a class, its methods, or properties, read
+             :ref:`doc_updating_the_class_reference`.
 
 .. warning:: If you want to edit the **API reference**, please note that it
              should *not* be done in the godot-docs repository. Instead, you
