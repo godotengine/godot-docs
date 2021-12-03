@@ -205,8 +205,8 @@ different approach such as blob shadows instead. Blob shadows can be implemented
 with a Sprite3D + RayCast setup, or a negative SpotLight pointing down with its
 bake mode set to **Disabled**.
 
-The light will not be adjustable at all during gameplay; moving
-it and changing its color will not have any effect on static surfaces.
+The light will not be adjustable at all during gameplay. Moving
+the light and changing its color or energy will not have any effect on static surfaces.
 
 Since bake modes can be adjusted on a per-light basis, it is possible to create
 hybrid baked light setups. One popular option is to use a real-time
@@ -232,6 +232,23 @@ Since high-quality bakes can take very long (up to several hours for large compl
 it is recommended to use lower quality settings at first. Then, once you are confident
 with your scene's lighting setup, raise the quality settings and perform a "final"
 bake before exporting your project.
+
+.. note::
+
+    By default, the lightmap baker will use all the system's logical CPU cores
+    to speed up baking. This can reduce system responsiveness. To preserve system
+    responsiveness while lightmaps are baking, you can reduce the number of CPU threads
+    used to bake lightmaps. Keeping 1 or 2 CPU threads free will help improve
+    system responsiveness, which is useful when multi-tasking while lightmaps are
+    baking at the cost of slowing down lightmap baking slightly.
+
+    To do so, open **Editor > Editor Settings** and adjust
+    **Editors > 3d > Lightmap Baking Number Of Cpu Threads**.
+    The default value (``0``) uses all of the system's logical CPU cores.
+    Positive values will specify a number of threads to use, while negative
+    values will subtract from the total number of logical CPU cores in the system.
+    For example, on a system with 8 logical CPU cores, adjusting the setting to
+    ``-1`` will use 7 CPU threads for lightmap baking.
 
 Configuring bake
 ~~~~~~~~~~~~~~~~
