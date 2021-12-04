@@ -25,7 +25,7 @@ plugin can be found
 Files to exclude from VCS
 -------------------------
 
-There are some folders Godot creates which you should have your VCS ignore:
+There are some files and folders Godot automatically creates. You should add them to your VCS ignore:
 
 - ``.godot/``: This folder stores various project cache data. ``.godot/imported/`` stores
   all the files the engine imports automatically based on your source assets and their
