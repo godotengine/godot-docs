@@ -25,10 +25,12 @@ plugin can be found
 Files to exclude from VCS
 -------------------------
 
-There are some folders Godot creates you should have your VCS ignore:
+There are some folders Godot creates which you should have your VCS ignore:
 
-- ``.import/``: This folder stores all the files it imports automatically based on
-  your source assets and their import flags.
+- ``.godot/``: This folder stores various project cache data. ``.godot/imported/`` stores
+  all the files the engine imports automatically based on your source assets and their
+  import flags. ``.godot/editor/`` holds data regarding the editor state, such as currently
+  opened script files, and recently used nodes.
 - ``*.translation``: These files are binary imported translations generated from CSV files.
 - ``export_presets.cfg``: This file contains all the export presets for the
   project, including sensitive information such as Android keystore credentials.
