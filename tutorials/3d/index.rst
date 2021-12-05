@@ -19,4 +19,5 @@
    using_multi_mesh_instance
    csg_tools
    procedural_geometry/index
+   occluders
    portals/index
