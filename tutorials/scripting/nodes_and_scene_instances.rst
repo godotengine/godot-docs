@@ -204,19 +204,19 @@ only available with GDScript.
     var scene = preload("res://MyScene.tscn")
 
 At that point, ``scene`` is a packed scene resource, not a node. To create the
-actual node, you need to call :ref:`PackedScene.instance()
-<class_PackedScene_method_instance>`. It returns a tree of nodes that you can use
+actual node, you need to call :ref:`PackedScene.instantiate()
+<class_PackedScene_method_instantiate>`. It returns a tree of nodes that you can use
 as a child of your current node.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var instance = scene.instance()
+    var instance = scene.instantiate()
     add_child(instance)
 
  .. code-tab:: csharp
 
-    var instance = scene.Instance();
+    var instance = scene.Instantiate();
     AddChild(instance);
 
 The advantage of this two-step process is you can keep a packed scene loaded and
