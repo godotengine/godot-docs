@@ -214,6 +214,18 @@ DirectionalLight with its bake mode set to **Indirect**, and use the **All**
 bake mode for OmniLights and SpotLights. This provides good performance while
 still allowing dynamic objects to cast real-time shadows in outdoor areas.
 
+After selecting the **All** bake mode on a light, you can optionally
+specify a **Size** greater than 0 for the light in the inspector.
+This size is used to provide softer shadows depending on the distance between
+the shadow caster and the object receiving the shadow. This mimics real life
+shadow appearance:
+
+.. image:: img/baked_light_omnilight_size.png
+
+The light's **Size** property is ignored for real-time shadows; it will only affect baked
+shadows. When the **Size** property is changed, lightmaps must be baked again to
+make changes visible.
+
 Baking
 ------
 
