@@ -45,16 +45,23 @@ Since the game is played with keyboard controls, it would be convenient if we
 could also start the game by pressing a key on the keyboard. We can do this with
 the "Shortcut" property of the ``Button`` node.
 
+In a previous lesson, we created four input actions to move the character. We
+will create a similar input action to map to the start button.
+
+Select "Project" -> "Project Settings" and then click on the "Input Map"
+tab. In the same way you created the movement input actions, create a new
+input action called ``start_game`` and add a key mapping for the :kbd:`Enter`
+key.
+
 In the ``HUD`` scene, select the ``StartButton`` and find its *Shortcut*
 property in the Inspector. Select "New Shortcut" and click on the "Shortcut"
 item. A second *Shortcut* property will appear. Select "New InputEventAction"
 and click the new "InputEventAction". Finally, in the *Action* property, type
-the name ``ui_select``. This is the default input event associated with the
-spacebar.
+the name ``start_game``.
 
 .. image:: img/start_button_shortcut.png
 
-Now when the start button appears, you can either click it or press :kbd:`Space`
+Now when the start button appears, you can either click it or press :kbd:`Enter`
 to start the game.
 
 And with that, you completed your first 2D game in Godot.
