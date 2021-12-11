@@ -61,7 +61,7 @@ section on the GitHub repository. The starter assets contain some 3D models, sou
 Getting everything ready
 ------------------------
 
-If you have not already, go to the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`_ and download the "Starter Assets" file from the releases. Once you have the
+If you have not already, go to the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps/releases/>`_ and download the "Starter Assets" file from the releases. Once you have the
 starter assets downloaded, open up the project in Godot.
 
 .. note:: The starter assets are not required to use the scripts provided in this tutorial.
