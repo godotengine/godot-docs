@@ -126,15 +126,15 @@ Coordinate system
 -----------------
 
 Godot uses the `metric <https://en.wikipedia.org/wiki/Metric_system>`__
-system for everything. 3D Physics and other areas are tuned for this, so
-attempting to use a different scale is usually a bad idea (unless you
-know what you are doing).
+system for everything in 3D, with 1 unit being equal to 1 meter.
+Physics and other areas are tuned for this scale. Therefore, attempting to use a
+different scale is usually a bad idea (unless you know what you are doing).
 
 When working with 3D assets, it's always best to work in the correct
 scale (set your DCC to metric). Godot allows scaling post-import and,
 while this works in most cases, in rare situations it may introduce
 floating-point precision issues (and thus, glitches or artifacts) in
-delicate areas, such as rendering or physics, so make sure your artists
+delicate areas such as rendering or physics. Make sure your artists
 always work in the right scale!
 
 The Y coordinate is used for "up", though for most objects that need
