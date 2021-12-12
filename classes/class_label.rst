@@ -442,7 +442,7 @@ Controls the text's vertical align. Supports top, center, bottom, and fill. Set 
 | *Getter*  | get_visible_characters()      |
 +-----------+-------------------------------+
 
-Restricts the number of characters to display. Set to -1 to disable.
+Restricts the number of visible characters to display. Whitespace characters are not counted. Set to -1 to disable.
 
 Method Descriptions
 -------------------
