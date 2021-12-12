@@ -29,7 +29,7 @@ rendering because they are optimized for running thousands of instructions in pa
 The output of the shader is typically the colored pixels of the object drawn to the viewport. But some
 shaders allow for specialized outputs (this is especially true for APIs like Vulkan). Shaders operate
 inside the shader pipeline. The standard process is the vertex -> fragment shader pipeline. The vertex
-shader is used to decided where each vertex (point in a 3D model, or corner of a Sprite) goes and the
+shader is used to decide where each vertex (point in a 3D model, or corner of a Sprite) goes and the
 fragment shader decides what color individual pixels receive.
 
 Suppose you want to update all the pixels in a texture to a given color, on the CPU you would write:
