@@ -24,8 +24,8 @@ PoolIntArray, etc.) for each type of information.
 - ``ARRAY_COLOR`` = 3 | PoolColorArray
 - ``ARRAY_TEX_UV`` = 4 | PoolVector2Array or PoolVector3Array
 - ``ARRAY_TEX_UV2`` = 5 | PoolVector2Array or PoolVector3Array
-- ``ARRAY_BONES`` = 6 | PoolRealArray of groups of 4 floats or PoolIntArray of groups of 4 ints
-- ``ARRAY_WEIGHTS`` = 7 | PoolRealArray of groups of 4 floats
+- ``ARRAY_BONES`` = 6 | PoolRealArray of groups of 4 floats or PoolIntArray of groups of 4 ints. Each group lists indexes of 4 bones that affects a given vertex.
+- ``ARRAY_WEIGHTS`` = 7 | PoolRealArray of groups of 4 floats. Each float lists the amount of weight an determined bone on ``ARRAY_BONES`` has on a given vertex.
 - ``ARRAY_INDEX`` = 8 | PoolIntArray
 
 The Array of vertices is always required. All the others are optional and will only be used if included.
