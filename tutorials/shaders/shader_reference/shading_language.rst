@@ -337,6 +337,23 @@ accessible outside of the shader.
 
     const float PI = 3.14159265358979323846;
 
+Constants of the ``float`` type must be initialized using ``.`` notation after the
+decimal part or by using the scientific notation. The optional ``f`` post-suffix is
+also supported.
+
+.. code-block:: glsl
+
+    float a = 1.0;
+    float b = 1.0f; // same, using suffix for clarity
+    float c = 1e-1; // gives 0.1 by using the scientific notation
+
+Constants of the ``uint`` (unsigned int) type must have a ``u`` suffix to differentiate them from signed integers.
+Alternatively, this can be done by using the ``uint(x)`` built-in conversion function.
+
+.. code-block:: glsl
+
+    uint a = 1u;
+    uint b = uint(1);
 
 Structs
 -------
@@ -735,25 +752,31 @@ engine renders in linear color space.
 
 Full list of hints below:
 
-+----------------+------------------------------+-------------------------------------+
-| Type           | Hint                         | Description                         |
-+================+==============================+=====================================+
-| **vec4**       | hint_color                   | Used as color                       |
-+----------------+------------------------------+-------------------------------------+
-| **int, float** | hint_range(min, max[, step]) | Used as range (with min/max/step)   |
-+----------------+------------------------------+-------------------------------------+
-| **sampler2D**  | hint_albedo                  | Used as albedo color, default white |
-+----------------+------------------------------+-------------------------------------+
-| **sampler2D**  | hint_black_albedo            | Used as albedo color, default black |
-+----------------+------------------------------+-------------------------------------+
-| **sampler2D**  | hint_normal                  | Used as normalmap                   |
-+----------------+------------------------------+-------------------------------------+
-| **sampler2D**  | hint_white                   | As value, default to white.         |
-+----------------+------------------------------+-------------------------------------+
-| **sampler2D**  | hint_black                   | As value, default to black          |
-+----------------+------------------------------+-------------------------------------+
-| **sampler2D**  | hint_aniso                   | As flowmap, default to right.       |
-+----------------+------------------------------+-------------------------------------+
++----------------------+------------------------------------------------+--------------------------------------+
+| Type                 | Hint                                           | Description                          |
++======================+================================================+======================================+
+| **vec4**             | hint_color                                     | Used as color.                       |
++----------------------+------------------------------------------------+--------------------------------------+
+| **int, float**       | hint_range(min, max[, step])                   | Used as range (with min/max/step).   |
++----------------------+------------------------------------------------+--------------------------------------+
+| **sampler2D**        | hint_albedo                                    | Used as albedo color, default white. |
++----------------------+------------------------------------------------+--------------------------------------+
+| **sampler2D**        | hint_black_albedo                              | Used as albedo color, default black. |
++----------------------+------------------------------------------------+--------------------------------------+
+| **sampler2D**        | hint_normal                                    | Used as normalmap.                   |
++----------------------+------------------------------------------------+--------------------------------------+
+| **sampler2D**        | hint_white                                     | As value, default to white.          |
++----------------------+------------------------------------------------+--------------------------------------+
+| **sampler2D**        | hint_black                                     | As value, default to black.          |
++----------------------+------------------------------------------------+--------------------------------------+
+| **sampler2D**        | hint_anisotropy                                | As flowmap, default to right.        |
++----------------------+------------------------------------------------+--------------------------------------+
+| **sampler2D**        | hint_roughness[_r, _g, _b, _a, _normal, _gray] |                                      |
++----------------------+------------------------------------------------+--------------------------------------+
+| **sampler2D**        | filter[_nearest, _linear][_mipmap][_aniso]     | Enabled specified texture filtering. |
++----------------------+------------------------------------------------+--------------------------------------+
+| **sampler2D**        | repeat_[enable, disable]                       | Enabled texture repeating.           |
++----------------------+------------------------------------------------+--------------------------------------+
 
 GDScript uses different variable types than GLSL does, so when passing variables
 from GDScript to shaders, Godot converts the type automatically. Below is a

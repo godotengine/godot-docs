@@ -26,15 +26,15 @@ data they have calculated once they draw to the frame buffer.
 Render modes
 ^^^^^^^^^^^^
 
-+---------------------------------+----------------------------------------------------------------------+
-| Render mode                     | Description                                                          |
-+=================================+======================================================================+
-| **keep_data**                   | Do not clear previous data on restart.                               |
-+---------------------------------+----------------------------------------------------------------------+
-| **disable_force**               | Disable attractor force.                                             |
-+---------------------------------+----------------------------------------------------------------------+
-| **disable_velocity**            | Ignore **VELOCITY** value.                                           |
-+---------------------------------+----------------------------------------------------------------------+
++-----------------------+----------------------------------------+
+| Render mode           | Description                            |
++=======================+========================================+
+| **keep_data**         | Do not clear previous data on restart. |
++-----------------------+----------------------------------------+
+| **disable_force**     | Disable attractor force.               |
++-----------------------+----------------------------------------+
+| **disable_velocity**  | Ignore **VELOCITY** value.             |
++-----------------------+----------------------------------------+
 
 Built-ins
 ^^^^^^^^^
@@ -50,7 +50,7 @@ Global built-ins
 Global built-ins are available everywhere, including custom functions.
 
 +-------------------+----------------------------------------------------------------------------------------+
-|  Built-in         |  Description                                                                           |
+| Built-in          | Description                                                                            |
 +===================+========================================================================================+
 | in float **TIME** | Global time, in seconds.                                                               |
 +-------------------+----------------------------------------------------------------------------------------+
@@ -60,7 +60,7 @@ Global built-ins are available everywhere, including custom functions.
 | in float **TAU**  | A ``TAU`` constant (``6.283185``).                                                     |
 |                   | An equivalent of ``PI * 2`` and amount of radians in full turn.                        |
 +-------------------+----------------------------------------------------------------------------------------+
-| in float **E**    | A ``E`` constant (``2.718281``). Euler's number and a base of natural logarithm.       |
+| in float **E**    | A ``E`` constant (``2.718281``). Euler's number and a base of the natural logarithm.   |
 +-------------------+----------------------------------------------------------------------------------------+
 
 Start and Process built-ins
