@@ -106,11 +106,18 @@ Tree order
 ----------
 
 Most node operations in Godot, such as drawing 2D, processing, or getting
-notifications are done in tree order. This means that parents and
-siblings with a lower rank in the tree order will get notified before
-the current node.
+notifications are done in tree order, or top to bottom. For example, the
+top node in a scene has its ``_ready()`` function called first, then the
+node below it has its function called, then the node below that and so
+on. However, children of a node will get called before their parent, also
+in top to bottom order. So the top child node of the top node will get its
+``_ready()`` function called first.
 
 .. image:: img/toptobottom.png
+
+This can also be overridden using the ``process_priority`` node property.
+Nodes with a lower number are called first. For example, nodes with the
+priorities "0,1,2,3" would be called in that order.
 
 "Becoming active" by entering the *Scene Tree*
 ----------------------------------------------
