@@ -117,6 +117,19 @@ The method ``OS.is_userfs_persistent()`` can be used to check if the
 ``user://`` file system is persistent, but can give false positives in some
 cases.
 
+Background processing
+~~~~~~~~~~~~~~~~~~~~~
+
+The project will be paused by the browser when the tab is no longer the active
+tab in the user's browser. This means functions such as ``_process()`` and
+``_physics_process()`` will no longer run until the tab is made active again by
+the user (by switching back to the tab). This can cause networked games to
+disconnect if the user switches tabs for a long duration.
+
+This limitation does not apply to unfocused browser *windows*. Therefore, on the
+user's side, this can be worked around by running the project in a separate
+*window* instead of a separate tab.
+
 Threads
 ~~~~~~~
 
@@ -125,7 +138,7 @@ only available if the appropriate **Export Type** is set and support for it
 across browsers is still limited.
 
 .. warning:: Requires a :ref:`secure context <doc_javascript_secure_contexts>`.
-             Browsers are also starting to require that the web page is served with specific
+             Browsers also require that the web page is served with specific
              `cross-origin isolation headers <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy>`__.
 
 GDNative
