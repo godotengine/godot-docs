@@ -117,7 +117,7 @@ in top to bottom order. So the top child node of the top node will get its
 
 This can also be overridden using the ``process_priority`` node property.
 Nodes with a lower number are called first. For example, nodes with the
-priorities "0,1,2,3" would be called in that order.
+priorities "0, 1, 2, 3" would be called in that order (from left to right).
 
 "Becoming active" by entering the *Scene Tree*
 ----------------------------------------------
