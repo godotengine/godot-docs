@@ -16,8 +16,7 @@ animate a collection of individual images. Then we will animate a sprite sheet u
 with :ref:`AnimationPlayer <class_AnimationPlayer>` and the *Animation*
 property of :ref:`Sprite2D <class_Sprite2D>`.
 
-.. note:: Art for the following examples by https://opengameart.org/users/ansimuz and by
-                                           https://opengameart.org/users/tgfcoder
+.. note:: Art for the following examples by https://opengameart.org/users/ansimuz and tgfcoder.
 
 Individual images with AnimatedSprite2D
 ---------------------------------------
