@@ -13,7 +13,7 @@ In this part of the VR starter tutorial series, we will be adding a number of sp
 This continues from where we left on in the last tutorial part, where we just finished getting the VR controllers working and defined a custom
 class called ``VR_Interactable_Rigidbody``.
 
-.. tip:: You can find the finished project on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`_.
+.. tip:: You can find the finished project on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`__.
 
 
 Adding destroyable targets
@@ -1032,4 +1032,4 @@ Now you have a fully working VR project with multiple different types of special
 help serve as an introduction to making fully-featured VR games in Godot! The code and concepts detailed in this tutorial can be expanded on to make puzzle games, action games,
 story-based games, and more!
 
-.. warning:: You can download the finished project for this tutorial series on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`_, under the releases tab!
+.. warning:: You can download the finished project for this tutorial series on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`__, under the releases tab!

@@ -15,7 +15,7 @@ It can take lots of practice and iterations to get this right, but there are a f
 
 - In VR, 1 unit is typically considered 1 meter. If you design your assets around that standard, you can save yourself a lot of headache.
 - In your 3D modeling program, see if there is a way to measure and use real world distances. In Blender, you can use the MeasureIt add-on; in Maya, you can use the Measure Tool.
-- You can make rough models using a tool like `Google Blocks <https://vr.google.com/blocks/>`_, and then refine in another 3D modelling program.
+- You can make rough models using a tool like `Google Blocks <https://vr.google.com/blocks/>`__, and then refine in another 3D modelling program.
 - Test often, as the assets can look dramatically different in VR than on a flat screen!
 
 Throughout the course of this tutorial, we will cover:
@@ -38,30 +38,30 @@ Throughout the course of this tutorial, we will cover:
           This tutorial was written and tested using a Windows Mixed Reality headset and controllers. This project has also been tested on the HTC Vive. Code adjustments may be required
           for other VR Headsets, such as the Oculus Rift.
 
-The Godot project for this tutorial is found on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`_. The starter assets for this tutorial can be found in the releases
+The Godot project for this tutorial is found on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`__. The starter assets for this tutorial can be found in the releases
 section on the GitHub repository. The starter assets contain some 3D models, sounds, scripts, and scenes that are configured for this tutorial.
 
 .. note:: **Credits for the assets provided**:
 
-          - The sky panorama was created by `CGTuts <https://cgi.tutsplus.com/articles/freebie-8-awesome-ocean-hdris--cg-5684>`_.
+          - The sky panorama was created by `CGTuts <https://cgi.tutsplus.com/articles/freebie-8-awesome-ocean-hdris--cg-5684>`__.
 
           - The font used is Titillium-Regular
           - - The font is licensed under the SIL Open Font License, Version 1.1
 
-          - The audio used are from several different sources, all downloaded from the Sonniss #GameAudioGDC Bundle (`License PDF <https://sonniss.com/gdc-bundle-license/>`_)
+          - The audio used are from several different sources, all downloaded from the Sonniss #GameAudioGDC Bundle (`License PDF <https://sonniss.com/gdc-bundle-license/>`__)
           - - The folders where the audio files are stored have the same name as folders in the Sonniss audio bundle.
 
-          - The OpenVR addon was created by `Bastiaan Olij <https://github.com/BastiaanOlij>`_ and is released under the MIT license. It can be found both on the `Godot Asset Library <https://godotengine.org/asset-library/asset/150>`_ and on `GitHub <https://github.com/GodotVR/godot-openvr-asset>`_. *3rd party code and libraries used in the OpenVR addon may be under a different license.*
+          - The OpenVR addon was created by `Bastiaan Olij <https://github.com/BastiaanOlij>`__ and is released under the MIT license. It can be found both on the `Godot Asset Library <https://godotengine.org/asset-library/asset/150>`__ and on `GitHub <https://github.com/GodotVR/godot-openvr-asset>`__. *3rd party code and libraries used in the OpenVR addon may be under a different license.*
 
-          - The initial project, 3D models, and scripts were created by `TwistedTwigleg <https://github.com/TwistedTwigleg>`_ and is released under the MIT license.
+          - The initial project, 3D models, and scripts were created by `TwistedTwigleg <https://github.com/TwistedTwigleg>`__ and is released under the MIT license.
 
-.. tip:: You can find the finished project on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`_.
+.. tip:: You can find the finished project on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`__.
 
 
 Getting everything ready
 ------------------------
 
-If you have not already, go to the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps/releases/>`_ and download the "Starter Assets" file from the releases. Once you have the
+If you have not already, go to the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps/releases/>`__ and download the "Starter Assets" file from the releases. Once you have the
 starter assets downloaded, open up the project in Godot.
 
 .. note:: The starter assets are not required to use the scripts provided in this tutorial.
@@ -162,7 +162,7 @@ In the ``_ready`` function, we first get the OpenVR VR interface using the ``fin
 called `VR`. If the :ref:`ARVRServer <class_ARVRServer>` finds an interface with the name OpenVR, it will return it, otherwise it will return ``null``.
 
 .. note:: The OpenVR VR interface is not included with Godot by default. You will need to download the OpenVR asset from the
-          `Asset Library <https://godotengine.org/asset-library/asset/150>`_ or `GitHub <https://github.com/GodotVR/godot-openvr-asset>`_.
+          `Asset Library <https://godotengine.org/asset-library/asset/150>`__ or `GitHub <https://github.com/GodotVR/godot-openvr-asset>`__.
 
 The code then combines two conditionals, one to check if the `VR` variable is NOT null (``if VR``) and another calls the initialize function, which returns a boolean based on
 whether the OpenVR interface was able to initialize or not. If both of these conditionals return true, then we can turn the main Godot :ref:`Viewport <class_Viewport>` into
@@ -1036,7 +1036,7 @@ Reducing motion sickness
 ------------------------
 
 .. note:: There are plenty of ways to reduce motion sickness in VR, and there is no one perfect way to reduce motion sickness. See
-          `this page on the Oculus Developer Center <https://developer.oculus.com/design/latest/concepts/bp-locomotion/>`_
+          `this page on the Oculus Developer Center <https://developer.oculus.com/design/latest/concepts/bp-locomotion/>`__
           for more information on how to implement locomotion and reducing motion sickness.
 
 To help reduce motion sickness while moving, we are going to add a vignette effect that will only be visible while the player moves.
@@ -1046,7 +1046,7 @@ vignette to the VR headset when the player is moving using the VR controllers. T
 
 Open up ``Movement_Vignette.tscn``, which you can find in the ``Scenes`` folder. The scene is just a :ref:`ColorRect <class_ColorRect>` node with a custom
 shader. Feel free to look at the custom shader if you want, it is just a slightly modified version of the vignette shader you can find in the
-`Godot demo repository <https://github.com/godotengine/godot-demo-projects>`_.
+`Godot demo repository <https://github.com/godotengine/godot-demo-projects>`__.
 
 Let's write the code that will make the vignette shader visible when the player is moving. Select the ``Movement_Vignette`` node and create a new script called ``Movement_Vignette.gd``.
 Add the following code:
@@ -1130,7 +1130,7 @@ That is the whole script! Now that we have written the code, go ahead and try mo
 then before!
 
 .. note:: As previously mentioned, there are plenty of ways to reduce motion sickness in VR. Check out
-          `this page on the Oculus Developer Center <https://developer.oculus.com/design/latest/concepts/bp-locomotion/>`_
+          `this page on the Oculus Developer Center <https://developer.oculus.com/design/latest/concepts/bp-locomotion/>`__
           for more information on how to implement locomotion and reducing motion sickness.
 
 

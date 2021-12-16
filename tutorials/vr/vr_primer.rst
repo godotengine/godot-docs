@@ -120,19 +120,19 @@ Official plugins and resources
 
 As mentioned earlier, Godot does not support the various VR and AR SDKs out of the box, you
 need a plugin for the specific SDK you want to use. There are several official plugins available
-in the `GodotVR Repository <https://github.com/GodotVR>`_.
+in the `GodotVR Repository <https://github.com/GodotVR>`__.
 
-* `Godot OpenXR <https://github.com/GodotVR/godot_openxr>`_ supports OpenXR, an open standard
+* `Godot OpenXR <https://github.com/GodotVR/godot_openxr>`__ supports OpenXR, an open standard
   for VR and AR software. Tested with SteamVR, Monada and Oculus OpenXR runtimes.
-* `Godot Oculus Mobile <https://github.com/GodotVR/godot_oculus_mobile>`_ provides support for
+* `Godot Oculus Mobile <https://github.com/GodotVR/godot_oculus_mobile>`__ provides support for
   the Oculus Go and Oculus Quest. The Quest will require additional setup documented in
   :ref:`doc_developing_for_oculus_quest`.
-* `Godot OpenVR <https://github.com/GodotVR/godot_openvr>`_ (not to be confused with OpenXR)
+* `Godot OpenVR <https://github.com/GodotVR/godot_openvr>`__ (not to be confused with OpenXR)
   supports the OpenVR SDK used by Steam.
-* `Godot OpenHMD <https://github.com/GodotVR/godot_openhmd>`_ supports OpenHMD, an open source
+* `Godot OpenHMD <https://github.com/GodotVR/godot_openhmd>`__ supports OpenHMD, an open source
   API and drivers for headsets.
 
-.. note:: Oculus has announced the `deprecation of their APIs <https://developer.oculus.com/blog/oculus-all-in-on-openxr-deprecates-proprietary-apis/>`_
+.. note:: Oculus has announced the `deprecation of their APIs <https://developer.oculus.com/blog/oculus-all-in-on-openxr-deprecates-proprietary-apis/>`__
           in favor of OpenXR. The OpenXR plugin does not currently support the Oculus Quest,
           until it does the Oculus mobile plugin should still be used.
 
@@ -140,10 +140,10 @@ These plugins can be downloaded from GitHub or the Godot Asset Library.
 
 In addition to the plugins, there are several official demos.
 
-* `Godot Oculus Demo <https://github.com/GodotVR/godot-oculus-demo>`_.
-* `Godot OpenVR FPS <https://github.com/GodotVR/godot_openvr_fps>`_ (the tutorial for this project
+* `Godot Oculus Demo <https://github.com/GodotVR/godot-oculus-demo>`__.
+* `Godot OpenVR FPS <https://github.com/GodotVR/godot_openvr_fps>`__ (the tutorial for this project
   is :ref:`doc_vr_starter_tutorial_part_one`).
-* `Godot XR tools <https://github.com/GodotVR/godot-xr-tools>`_, which shows implementations for VR
+* `Godot XR tools <https://github.com/GodotVR/godot-xr-tools>`__, which shows implementations for VR
   features such as movement and picking up objects.
 
 Other things to consider
