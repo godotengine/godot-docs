@@ -62,8 +62,8 @@ menu and switch to the **AutoLoad** tab.
 Here you can add any number of scenes or scripts. Each entry in the list
 requires a name, which is assigned as the node's ``name`` property. The order of
 the entries as they are added to the global scene tree can be manipulated using
-the up/down arrow keys. Like regular scenes the engine will read these nodes
-in top to bottom order.
+the up/down arrow keys. Like regular scenes, the engine will read these nodes
+in top-to-bottom order.
 
 .. image:: img/autoload_example.png
 
