@@ -125,7 +125,7 @@ the text. Here's the list of available tags:
 +----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
 | Tag                        | Effect                               | Usage                             | Result                                            |
 +============================+======================================+===================================+===================================================+
-| [Class]                    | Link a class                         | Move the [Sprite2D].              | Move the :ref:`class_Sprite`.                     |
+| [Class]                    | Link a class                         | Move the [Sprite].                | Move the :ref:`class_Sprite`.                     |
 +----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
 | [method methodname]        | Link to a method in this class       | Call [method hide].               | Call :ref:`hide <class_Spatial_method_hide>`.     |
 +----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
@@ -164,7 +164,7 @@ example:
 
     [codeblock]
     func _ready():
-        var sprite = get_node("Sprite2D")
+        var sprite = get_node("Sprite")
         print(sprite.get_pos())
     [/codeblock]
 
@@ -173,7 +173,7 @@ Will display as:
 .. code-block:: gdscript
 
     func _ready():
-        var sprite = get_node("Sprite2D")
+        var sprite = get_node("Sprite")
         print(sprite.get_pos())
 
 If you need to have different code version in GDScript and C#, use
@@ -189,13 +189,13 @@ workflow.
     [codeblocks]
     [gdscript]
     func _ready():
-        var sprite = get_node("Sprite2D")
+        var sprite = get_node("Sprite")
         print(sprite.get_pos())
     [/gdscript]
     [csharp]
     public override void _Ready()
     {
-        var sprite = GetNode("Sprite2D");
+        var sprite = GetNode("Sprite");
         GD.Print(sprite.GetPos());
     }
     [/csharp]
@@ -207,14 +207,14 @@ The above will display as:
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        var sprite = get_node("Sprite2D")
+        var sprite = get_node("Sprite")
         print(sprite.get_pos())
 
  .. code-tab:: csharp
 
     public override void _Ready()
     {
-        var sprite = GetNode("Sprite2D");
+        var sprite = GetNode("Sprite");
         GD.Print(sprite.GetPos());
     }
 
