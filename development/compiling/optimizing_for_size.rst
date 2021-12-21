@@ -40,7 +40,7 @@ On Windows, ``strip.exe`` is included in most MinGW toolchain setups.
 This will reduce the size of compiled binaries by a factor between 5× and 10×.
 The downside is that crash backtraces will no longer provide accurate information
 (which is useful for troubleshooting the cause of a crash).
-:ref:`C++ profilers <using_cpp_profilers>` will also no longer be able to display
+:ref:`C++ profilers <doc_using_cpp_profilers>` will also no longer be able to display
 function names (this does not affect the built-in GDScript profiler).
 
 .. note::
