@@ -47,12 +47,12 @@ root.
 .. image:: img/signals_02_2d_scene.png
 
 
-In the FileSystem dock, click and drag the ``Sprite2D.tscn`` file you saved
+In the FileSystem dock, click and drag the ``Sprite.tscn`` file you saved
 previously onto the Node2D to instantiate it.
 
 .. image:: img/signals_03_dragging_scene.png
 
-We want to add another node as a sibling of the Sprite2D. To do so, right-click on
+We want to add another node as a sibling of the Sprite. To do so, right-click on
 Node2D and select Add Child Node.
 
 .. image:: img/signals_04_add_child_node.png
@@ -84,9 +84,9 @@ Your scene tree and viewport should look like this.
 Connecting a signal in the editor
 ---------------------------------
 
-Here, we want to connect the Button's "pressed" signal to our Sprite2D, and we
+Here, we want to connect the Button's "pressed" signal to our Sprite, and we
 want to call a new function that will toggle its motion on and off. We need to
-have a script attached to the Sprite2D node, which we do from the previous lesson.
+have a script attached to the Sprite node, which we do from the previous lesson.
 
 You can connect signals in the Node dock. Select the Button node and, on the
 right side of the editor, click on the tab named "Node" next to the Inspector.
@@ -101,7 +101,7 @@ Double-click the "pressed" signal to open the node connection window.
 
 .. image:: img/signals_12_node_connection.png
 
-There, you can connect the signal to the Sprite2D node. The node needs a receiver
+There, you can connect the signal to the Sprite node. The node needs a receiver
 method, a function that Godot will call when the Button emits the signal. The
 editor generates one for you. By convention, we name these callback methods
 "_on_NodeName_signal_name". Here, it'll be "_on_Button_pressed".
@@ -133,7 +133,7 @@ connection. This feature is only available when connecting nodes in the editor.
 Let's replace the line with the ``pass`` keyword with code that'll toggle the
 node's motion.
 
-Our Sprite2D moves thanks to code in the ``_process()`` function. Godot provides a
+Our Sprite moves thanks to code in the ``_process()`` function. Godot provides a
 method to toggle processing on and off: :ref:`Node.set_process()
 <class_Node_method_set_process>`. Another method of the Node class,
 ``is_processing()``, returns ``true`` if idle processing is active. We can use
@@ -160,12 +160,12 @@ following code, which we saw two lessons ago:
         var velocity = Vector2.UP.rotated(rotation) * speed
         position += velocity * delta
 
-Your complete ``Sprite2D.gd`` code should look like the following.
+Your complete ``Sprite.gd`` code should look like the following.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Sprite2D
+    extends Sprite
 
     var speed = 400
     var angular_speed = PI
@@ -192,7 +192,7 @@ that's useful to implement skill cooldown times, weapon reloading, and more.
 Head back to the 2D workspace. You can either click the "2D" text at the top of
 the window or press :kbd:`Ctrl + F2` (:kbd:`Alt + 2` on macOS).
 
-In the Scene dock, right-click on the Sprite2D node and add a new node. Search for
+In the Scene dock, right-click on the Sprite node and add a new node. Search for
 Timer and add the corresponding node. Your scene should now look like this.
 
 .. image:: img/signals_15_scene_tree.png
@@ -201,13 +201,13 @@ With the Timer node selected, go to the Inspector and check the **Autostart** pr
 
 .. image:: img/signals_18_timer_autostart.png
 
-Click the script icon next to Sprite2D to jump back to the scripting workspace.
+Click the script icon next to Sprite to jump back to the scripting workspace.
 
 .. image:: img/signals_16_click_script.png
 
 We need to do two operations to connect the nodes via code:
 
-1. Get a reference to the Timer from the Sprite2D.
+1. Get a reference to the Timer from the Sprite.
 2. Call the Timer's ``connect()`` method.
 
 .. note:: To connect to a signal via code, you need to call the ``connect()``
@@ -221,20 +221,20 @@ in a variable.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Sprite2D
+    extends Sprite
 
     #...
 
     func _ready():
         var timer = get_node("Timer")
 
-The function ``get_node()`` looks at the Sprite2D's children and gets nodes by
+The function ``get_node()`` looks at the Sprite's children and gets nodes by
 their name. For example, if you renamed the Timer node to "BlinkingTimer" in the
 editor, you would have to change the call to ``get_node("BlinkingTimer")``.
 
 .. add seealso to a page that explains node features.
 
-We can now connect the Timer to the Sprite2D in the ``_ready()`` function.
+We can now connect the Timer to the Sprite in the ``_ready()`` function.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

@@ -36,21 +36,21 @@ community.
 
 .. Godot icon
 
-We need to create a Sprite2D node to display it in the game. In the Scene dock,
+We need to create a Sprite node to display it in the game. In the Scene dock,
 click the Other Node button.
 
 .. image:: img/scripting_first_script_click_other_node.png
 
-Type "Sprite2D" in the search bar to filter nodes and double-click on Sprite2D to
+Type "Sprite" in the search bar to filter nodes and double-click on Sprite to
 create the node.
 
 .. image:: img/scripting_first_script_add_sprite_node.png
 
-Your Scene tab should now only have a Sprite2D node.
+Your Scene tab should now only have a Sprite node.
 
 .. image:: img/scripting_first_script_scene_tree.png
 
-A Sprite2D node needs a texture to display. In the Inspector on the right, you can
+A Sprite node needs a texture to display. In the Inspector on the right, you can
 see that the Texture property says "[empty]". To display the Godot icon, click
 and drag the file ``icon.png`` from the FileSystem dock onto the Texture slot.
 
@@ -58,7 +58,7 @@ and drag the file ``icon.png`` from the FileSystem dock onto the Texture slot.
 
 .. note::
 
-    You can create Sprite2D nodes automatically by dragging and dropping images on
+    You can create Sprite nodes automatically by dragging and dropping images on
     the viewport.
 
     .. image:: img/scripting_first_script_dragging_sprite.png
@@ -70,7 +70,7 @@ Then, click and drag the icon in the viewport to center it in the game view.
 Creating a new script
 ---------------------
 
-To create and attach a new script to our node, right-click on Sprite2D in the
+To create and attach a new script to our node, right-click on Sprite in the
 scene dock and select "Attach Script".
 
 .. image:: img/scripting_first_script_attach_script.png
@@ -89,11 +89,11 @@ line of code:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Sprite2D
+    extends Sprite
 
 Every GDScript file is implicitly a class. The ``extends`` keyword defines the
-class this script inherits or extends. In this case, it's ``Sprite2D``, meaning
-our script will get access to all the properties and functions of the Sprite2D
+class this script inherits or extends. In this case, it's ``Sprite``, meaning
+our script will get access to all the properties and functions of the Sprite
 node, including classes it extends, like ``Node2D``, ``CanvasItem``, and
 ``Node``.
 
@@ -143,7 +143,7 @@ the Output bottom panel that expands. It should display "Hello, world!"
 .. image:: img/scripting_first_script_print_hello_world.png
 
 Delete the ``_init()`` function, so you're only left with the line ``extends
-Sprite2D``.
+Sprite``.
 
 Turning around
 --------------
@@ -155,7 +155,7 @@ angular speed in radians per second.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Sprite2D
+    extends Sprite
 
     var speed = 400
     var angular_speed = PI
@@ -170,7 +170,7 @@ and ``angular_speed`` properties.
 
 To move our icon, we need to update its position and rotation every frame in the
 game loop. We can use the ``_process()`` virtual function of the ``Node`` class.
-If you define it in any class that extends the Node class, like Sprite2D, Godot
+If you define it in any class that extends the Node class, like Sprite, Godot
 will call the function every frame and pass it an argument named ``delta``, the
 time elapsed since the last frame.
 
@@ -207,7 +207,7 @@ instructions.
 
 The line inside the function, ``rotation += angular_speed * delta``, increments
 our sprite's rotation every frame. Here, ``rotation`` is a property inherited
-from the class ``Node2D``, which ``Sprite2D`` extends. It controls the rotation of
+from the class ``Node2D``, which ``Sprite`` extends. It controls the rotation of
 our node and works with radians.
 
 .. tip:: In the code editor, you can ctrl-click on any built-in property or

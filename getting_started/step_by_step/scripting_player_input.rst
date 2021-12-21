@@ -89,12 +89,12 @@ constant of the built-in ``Vector`` type representing a 2D vector of length 0.
 If the player presses the "ui_up" action, we then update the velocity's value,
 causing the sprite to move forward.
 
-Here is the complete ``Sprite2D.gd`` file for reference.
+Here is the complete ``Sprite.gd`` file for reference.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Sprite2D
+    extends Sprite
 
     var speed = 400
     var angular_speed = PI
