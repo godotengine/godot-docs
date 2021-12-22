@@ -25,7 +25,7 @@ You are most likely to use this class via the Visual Script editor or when writi
 Tutorials
 ---------
 
-- :doc:`../tutorials/scripting/visual_script/index`
+- :doc:`../getting_started/scripting/visual_script/index`
 
 Methods
 -------

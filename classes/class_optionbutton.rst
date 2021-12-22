@@ -84,16 +84,6 @@ Theme Properties
 ----------------
 
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`arrow<class_OptionButton_theme_icon_arrow>`                              |                                  |
-+---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
-| :ref:`int<class_int>`           | :ref:`arrow_margin<class_OptionButton_theme_constant_arrow_margin>`            | ``2``                            |
-+---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_OptionButton_theme_style_disabled>`                       |                                  |
-+---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_OptionButton_theme_style_focus>`                             |                                  |
-+---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_OptionButton_theme_font_font>`                                |                                  |
-+---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color<class_OptionButton_theme_color_font_color>`                   | ``Color( 0.88, 0.88, 0.88, 1 )`` |
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_OptionButton_theme_color_font_color_disabled>` | ``Color( 0.9, 0.9, 0.9, 0.2 )``  |
@@ -104,9 +94,19 @@ Theme Properties
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_OptionButton_theme_color_font_color_pressed>`   | ``Color( 1, 1, 1, 1 )``          |
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_OptionButton_theme_style_hover>`                             |                                  |
+| :ref:`int<class_int>`           | :ref:`arrow_margin<class_OptionButton_theme_constant_arrow_margin>`            | ``2``                            |
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
 | :ref:`int<class_int>`           | :ref:`hseparation<class_OptionButton_theme_constant_hseparation>`              | ``2``                            |
++---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_OptionButton_theme_font_font>`                                |                                  |
++---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`arrow<class_OptionButton_theme_icon_arrow>`                              |                                  |
++---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_OptionButton_theme_style_disabled>`                       |                                  |
++---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_OptionButton_theme_style_focus>`                             |                                  |
++---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_OptionButton_theme_style_hover>`                             |                                  |
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_OptionButton_theme_style_normal>`                           |                                  |
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
@@ -321,50 +321,6 @@ Sets the text of the item at index ``idx``.
 Theme Property Descriptions
 ---------------------------
 
-.. _class_OptionButton_theme_icon_arrow:
-
-- :ref:`Texture<class_Texture>` **arrow**
-
-The arrow icon to be drawn on the right end of the button.
-
-----
-
-.. _class_OptionButton_theme_constant_arrow_margin:
-
-- :ref:`int<class_int>` **arrow_margin**
-
-+-----------+-------+
-| *Default* | ``2`` |
-+-----------+-------+
-
-The horizontal space between the arrow icon and the right edge of the button.
-
-----
-
-.. _class_OptionButton_theme_style_disabled:
-
-- :ref:`StyleBox<class_StyleBox>` **disabled**
-
-:ref:`StyleBox<class_StyleBox>` used when the ``OptionButton`` is disabled.
-
-----
-
-.. _class_OptionButton_theme_style_focus:
-
-- :ref:`StyleBox<class_StyleBox>` **focus**
-
-:ref:`StyleBox<class_StyleBox>` used when the ``OptionButton`` is focused. It is displayed over the current :ref:`StyleBox<class_StyleBox>`, so using :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` will just disable the focus visual effect.
-
-----
-
-.. _class_OptionButton_theme_font_font:
-
-- :ref:`Font<class_Font>` **font**
-
-:ref:`Font<class_Font>` of the ``OptionButton``'s text.
-
-----
-
 .. _class_OptionButton_theme_color_font_color:
 
 - :ref:`Color<class_Color>` **font_color**
@@ -425,11 +381,15 @@ Text :ref:`Color<class_Color>` used when the ``OptionButton`` is being pressed.
 
 ----
 
-.. _class_OptionButton_theme_style_hover:
+.. _class_OptionButton_theme_constant_arrow_margin:
 
-- :ref:`StyleBox<class_StyleBox>` **hover**
+- :ref:`int<class_int>` **arrow_margin**
 
-:ref:`StyleBox<class_StyleBox>` used when the ``OptionButton`` is being hovered.
++-----------+-------+
+| *Default* | ``2`` |
++-----------+-------+
+
+The horizontal space between the arrow icon and the right edge of the button.
 
 ----
 
@@ -442,6 +402,46 @@ Text :ref:`Color<class_Color>` used when the ``OptionButton`` is being pressed.
 +-----------+-------+
 
 The horizontal space between ``OptionButton``'s icon and text.
+
+----
+
+.. _class_OptionButton_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+:ref:`Font<class_Font>` of the ``OptionButton``'s text.
+
+----
+
+.. _class_OptionButton_theme_icon_arrow:
+
+- :ref:`Texture<class_Texture>` **arrow**
+
+The arrow icon to be drawn on the right end of the button.
+
+----
+
+.. _class_OptionButton_theme_style_disabled:
+
+- :ref:`StyleBox<class_StyleBox>` **disabled**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``OptionButton`` is disabled.
+
+----
+
+.. _class_OptionButton_theme_style_focus:
+
+- :ref:`StyleBox<class_StyleBox>` **focus**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``OptionButton`` is focused. It is displayed over the current :ref:`StyleBox<class_StyleBox>`, so using :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` will just disable the focus visual effect.
+
+----
+
+.. _class_OptionButton_theme_style_hover:
+
+- :ref:`StyleBox<class_StyleBox>` **hover**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``OptionButton`` is being hovered.
 
 ----
 

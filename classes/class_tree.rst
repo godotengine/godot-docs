@@ -115,39 +115,9 @@ Theme Properties
 ----------------
 
 +---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`arrow<class_Tree_theme_icon_arrow>`                                                |                                  |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`arrow_collapsed<class_Tree_theme_icon_arrow_collapsed>`                            |                                  |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_Tree_theme_style_bg>`                                                     |                                  |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`bg_focus<class_Tree_theme_style_bg_focus>`                                         |                                  |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`int<class_int>`           | :ref:`button_margin<class_Tree_theme_constant_button_margin>`                            | ``4``                            |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`button_pressed<class_Tree_theme_style_button_pressed>`                             |                                  |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`checked<class_Tree_theme_icon_checked>`                                            |                                  |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`cursor<class_Tree_theme_style_cursor>`                                             |                                  |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`cursor_unfocused<class_Tree_theme_style_cursor_unfocused>`                         |                                  |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`custom_button<class_Tree_theme_style_custom_button>`                               |                                  |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`custom_button_font_highlight<class_Tree_theme_color_custom_button_font_highlight>` | ``Color( 0.94, 0.94, 0.94, 1 )`` |
 +---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`custom_button_hover<class_Tree_theme_style_custom_button_hover>`                   |                                  |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`custom_button_pressed<class_Tree_theme_style_custom_button_pressed>`               |                                  |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`int<class_int>`           | :ref:`draw_guides<class_Tree_theme_constant_draw_guides>`                                | ``1``                            |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`int<class_int>`           | :ref:`draw_relationship_lines<class_Tree_theme_constant_draw_relationship_lines>`        | ``0``                            |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`drop_position_color<class_Tree_theme_color_drop_position_color>`                   | ``Color( 1, 0.3, 0.2, 1 )``      |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_Tree_theme_font_font>`                                                  |                                  |
 +---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color<class_Tree_theme_color_font_color>`                                     | ``Color( 0.69, 0.69, 0.69, 1 )`` |
 +---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
@@ -155,37 +125,67 @@ Theme Properties
 +---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`guide_color<class_Tree_theme_color_guide_color>`                                   | ``Color( 0, 0, 0, 0.1 )``        |
 +---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`relationship_line_color<class_Tree_theme_color_relationship_line_color>`           | ``Color( 0.27, 0.27, 0.27, 1 )`` |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`title_button_color<class_Tree_theme_color_title_button_color>`                     | ``Color( 0.88, 0.88, 0.88, 1 )`` |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`int<class_int>`           | :ref:`button_margin<class_Tree_theme_constant_button_margin>`                            | ``4``                            |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`int<class_int>`           | :ref:`draw_guides<class_Tree_theme_constant_draw_guides>`                                | ``1``                            |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`int<class_int>`           | :ref:`draw_relationship_lines<class_Tree_theme_constant_draw_relationship_lines>`        | ``0``                            |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`int<class_int>`           | :ref:`hseparation<class_Tree_theme_constant_hseparation>`                                | ``4``                            |
 +---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`int<class_int>`           | :ref:`item_margin<class_Tree_theme_constant_item_margin>`                                | ``12``                           |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`relationship_line_color<class_Tree_theme_color_relationship_line_color>`           | ``Color( 0.27, 0.27, 0.27, 1 )`` |
 +---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`int<class_int>`           | :ref:`scroll_border<class_Tree_theme_constant_scroll_border>`                            | ``4``                            |
 +---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`int<class_int>`           | :ref:`scroll_speed<class_Tree_theme_constant_scroll_speed>`                              | ``12``                           |
 +---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`int<class_int>`           | :ref:`vseparation<class_Tree_theme_constant_vseparation>`                                | ``4``                            |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_Tree_theme_font_font>`                                                  |                                  |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`title_button_font<class_Tree_theme_font_title_button_font>`                        |                                  |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`arrow<class_Tree_theme_icon_arrow>`                                                |                                  |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`arrow_collapsed<class_Tree_theme_icon_arrow_collapsed>`                            |                                  |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`checked<class_Tree_theme_icon_checked>`                                            |                                  |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Texture<class_Texture>`   | :ref:`select_arrow<class_Tree_theme_icon_select_arrow>`                                  |                                  |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`unchecked<class_Tree_theme_icon_unchecked>`                                        |                                  |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`updown<class_Tree_theme_icon_updown>`                                              |                                  |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_Tree_theme_style_bg>`                                                     |                                  |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`bg_focus<class_Tree_theme_style_bg_focus>`                                         |                                  |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`button_pressed<class_Tree_theme_style_button_pressed>`                             |                                  |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`cursor<class_Tree_theme_style_cursor>`                                             |                                  |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`cursor_unfocused<class_Tree_theme_style_cursor_unfocused>`                         |                                  |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`custom_button<class_Tree_theme_style_custom_button>`                               |                                  |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`custom_button_hover<class_Tree_theme_style_custom_button_hover>`                   |                                  |
++---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`custom_button_pressed<class_Tree_theme_style_custom_button_pressed>`               |                                  |
 +---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`selected<class_Tree_theme_style_selected>`                                         |                                  |
 +---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`selected_focus<class_Tree_theme_style_selected_focus>`                             |                                  |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`title_button_color<class_Tree_theme_color_title_button_color>`                     | ``Color( 0.88, 0.88, 0.88, 1 )`` |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`title_button_font<class_Tree_theme_font_title_button_font>`                        |                                  |
 +---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`title_button_hover<class_Tree_theme_style_title_button_hover>`                     |                                  |
 +---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`title_button_normal<class_Tree_theme_style_title_button_normal>`                   |                                  |
 +---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`title_button_pressed<class_Tree_theme_style_title_button_pressed>`                 |                                  |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`unchecked<class_Tree_theme_icon_unchecked>`                                        |                                  |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`updown<class_Tree_theme_icon_updown>`                                              |                                  |
-+---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`int<class_int>`           | :ref:`vseparation<class_Tree_theme_constant_vseparation>`                                | ``4``                            |
 +---------------------------------+------------------------------------------------------------------------------------------+----------------------------------+
 
 Signals
@@ -715,90 +715,6 @@ If ``true``, column titles are visible.
 Theme Property Descriptions
 ---------------------------
 
-.. _class_Tree_theme_icon_arrow:
-
-- :ref:`Texture<class_Texture>` **arrow**
-
-The arrow icon used when a foldable item is not collapsed.
-
-----
-
-.. _class_Tree_theme_icon_arrow_collapsed:
-
-- :ref:`Texture<class_Texture>` **arrow_collapsed**
-
-The arrow icon used when a foldable item is collapsed.
-
-----
-
-.. _class_Tree_theme_style_bg:
-
-- :ref:`StyleBox<class_StyleBox>` **bg**
-
-Default :ref:`StyleBox<class_StyleBox>` for the ``Tree``, i.e. used when the control is not being focused.
-
-----
-
-.. _class_Tree_theme_style_bg_focus:
-
-- :ref:`StyleBox<class_StyleBox>` **bg_focus**
-
-:ref:`StyleBox<class_StyleBox>` used when the ``Tree`` is being focused.
-
-----
-
-.. _class_Tree_theme_constant_button_margin:
-
-- :ref:`int<class_int>` **button_margin**
-
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
-
-The horizontal space between each button in a cell.
-
-----
-
-.. _class_Tree_theme_style_button_pressed:
-
-- :ref:`StyleBox<class_StyleBox>` **button_pressed**
-
-:ref:`StyleBox<class_StyleBox>` used when a button in the tree is pressed.
-
-----
-
-.. _class_Tree_theme_icon_checked:
-
-- :ref:`Texture<class_Texture>` **checked**
-
-The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell is checked.
-
-----
-
-.. _class_Tree_theme_style_cursor:
-
-- :ref:`StyleBox<class_StyleBox>` **cursor**
-
-:ref:`StyleBox<class_StyleBox>` used for the cursor, when the ``Tree`` is being focused.
-
-----
-
-.. _class_Tree_theme_style_cursor_unfocused:
-
-- :ref:`StyleBox<class_StyleBox>` **cursor_unfocused**
-
-:ref:`StyleBox<class_StyleBox>` used for the cursor, when the ``Tree`` is not being focused.
-
-----
-
-.. _class_Tree_theme_style_custom_button:
-
-- :ref:`StyleBox<class_StyleBox>` **custom_button**
-
-Default :ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode cell.
-
-----
-
 .. _class_Tree_theme_color_custom_button_font_highlight:
 
 - :ref:`Color<class_Color>` **custom_button_font_highlight**
@@ -811,46 +727,6 @@ Text :ref:`Color<class_Color>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeI
 
 ----
 
-.. _class_Tree_theme_style_custom_button_hover:
-
-- :ref:`StyleBox<class_StyleBox>` **custom_button_hover**
-
-:ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode cell when it's hovered.
-
-----
-
-.. _class_Tree_theme_style_custom_button_pressed:
-
-- :ref:`StyleBox<class_StyleBox>` **custom_button_pressed**
-
-:ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode cell when it's pressed.
-
-----
-
-.. _class_Tree_theme_constant_draw_guides:
-
-- :ref:`int<class_int>` **draw_guides**
-
-+-----------+-------+
-| *Default* | ``1`` |
-+-----------+-------+
-
-Draws the guidelines if not zero, this acts as a boolean. The guideline is a horizontal line drawn at the bottom of each item.
-
-----
-
-.. _class_Tree_theme_constant_draw_relationship_lines:
-
-- :ref:`int<class_int>` **draw_relationship_lines**
-
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
-
-Draws the relationship lines if not zero, this acts as a boolean. Relationship lines are drawn at the start of child items to show hierarchy.
-
-----
-
 .. _class_Tree_theme_color_drop_position_color:
 
 - :ref:`Color<class_Color>` **drop_position_color**
@@ -860,14 +736,6 @@ Draws the relationship lines if not zero, this acts as a boolean. Relationship l
 +-----------+-----------------------------+
 
 :ref:`Color<class_Color>` used to draw possible drop locations. See :ref:`DropModeFlags<enum_Tree_DropModeFlags>` constants for further description of drop locations.
-
-----
-
-.. _class_Tree_theme_font_font:
-
-- :ref:`Font<class_Font>` **font**
-
-:ref:`Font<class_Font>` of the item's text.
 
 ----
 
@@ -907,6 +775,66 @@ Text :ref:`Color<class_Color>` used when the item is selected.
 
 ----
 
+.. _class_Tree_theme_color_relationship_line_color:
+
+- :ref:`Color<class_Color>` **relationship_line_color**
+
++-----------+----------------------------------+
+| *Default* | ``Color( 0.27, 0.27, 0.27, 1 )`` |
++-----------+----------------------------------+
+
+:ref:`Color<class_Color>` of the relationship lines.
+
+----
+
+.. _class_Tree_theme_color_title_button_color:
+
+- :ref:`Color<class_Color>` **title_button_color**
+
++-----------+----------------------------------+
+| *Default* | ``Color( 0.88, 0.88, 0.88, 1 )`` |
++-----------+----------------------------------+
+
+Default text :ref:`Color<class_Color>` of the title button.
+
+----
+
+.. _class_Tree_theme_constant_button_margin:
+
+- :ref:`int<class_int>` **button_margin**
+
++-----------+-------+
+| *Default* | ``4`` |
++-----------+-------+
+
+The horizontal space between each button in a cell.
+
+----
+
+.. _class_Tree_theme_constant_draw_guides:
+
+- :ref:`int<class_int>` **draw_guides**
+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+Draws the guidelines if not zero, this acts as a boolean. The guideline is a horizontal line drawn at the bottom of each item.
+
+----
+
+.. _class_Tree_theme_constant_draw_relationship_lines:
+
+- :ref:`int<class_int>` **draw_relationship_lines**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+Draws the relationship lines if not zero, this acts as a boolean. Relationship lines are drawn at the start of child items to show hierarchy.
+
+----
+
 .. _class_Tree_theme_constant_hseparation:
 
 - :ref:`int<class_int>` **hseparation**
@@ -928,18 +856,6 @@ The horizontal space between item cells. This is also used as the margin at the 
 +-----------+--------+
 
 The horizontal margin at the start of an item. This is used when folding is enabled for the item.
-
-----
-
-.. _class_Tree_theme_color_relationship_line_color:
-
-- :ref:`Color<class_Color>` **relationship_line_color**
-
-+-----------+----------------------------------+
-| *Default* | ``Color( 0.27, 0.27, 0.27, 1 )`` |
-+-----------+----------------------------------+
-
-:ref:`Color<class_Color>` of the relationship lines.
 
 ----
 
@@ -967,11 +883,143 @@ The speed of border scrolling.
 
 ----
 
+.. _class_Tree_theme_constant_vseparation:
+
+- :ref:`int<class_int>` **vseparation**
+
++-----------+-------+
+| *Default* | ``4`` |
++-----------+-------+
+
+The vertical padding inside each item, i.e. the distance between the item's content and top/bottom border.
+
+----
+
+.. _class_Tree_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+:ref:`Font<class_Font>` of the item's text.
+
+----
+
+.. _class_Tree_theme_font_title_button_font:
+
+- :ref:`Font<class_Font>` **title_button_font**
+
+:ref:`Font<class_Font>` of the title button's text.
+
+----
+
+.. _class_Tree_theme_icon_arrow:
+
+- :ref:`Texture<class_Texture>` **arrow**
+
+The arrow icon used when a foldable item is not collapsed.
+
+----
+
+.. _class_Tree_theme_icon_arrow_collapsed:
+
+- :ref:`Texture<class_Texture>` **arrow_collapsed**
+
+The arrow icon used when a foldable item is collapsed.
+
+----
+
+.. _class_Tree_theme_icon_checked:
+
+- :ref:`Texture<class_Texture>` **checked**
+
+The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell is checked.
+
+----
+
 .. _class_Tree_theme_icon_select_arrow:
 
 - :ref:`Texture<class_Texture>` **select_arrow**
 
 The arrow icon to display for the :ref:`TreeItem.CELL_MODE_RANGE<class_TreeItem_constant_CELL_MODE_RANGE>` mode cell.
+
+----
+
+.. _class_Tree_theme_icon_unchecked:
+
+- :ref:`Texture<class_Texture>` **unchecked**
+
+The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell is unchecked.
+
+----
+
+.. _class_Tree_theme_icon_updown:
+
+- :ref:`Texture<class_Texture>` **updown**
+
+The updown arrow icon to display for the :ref:`TreeItem.CELL_MODE_RANGE<class_TreeItem_constant_CELL_MODE_RANGE>` mode cell.
+
+----
+
+.. _class_Tree_theme_style_bg:
+
+- :ref:`StyleBox<class_StyleBox>` **bg**
+
+Default :ref:`StyleBox<class_StyleBox>` for the ``Tree``, i.e. used when the control is not being focused.
+
+----
+
+.. _class_Tree_theme_style_bg_focus:
+
+- :ref:`StyleBox<class_StyleBox>` **bg_focus**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``Tree`` is being focused.
+
+----
+
+.. _class_Tree_theme_style_button_pressed:
+
+- :ref:`StyleBox<class_StyleBox>` **button_pressed**
+
+:ref:`StyleBox<class_StyleBox>` used when a button in the tree is pressed.
+
+----
+
+.. _class_Tree_theme_style_cursor:
+
+- :ref:`StyleBox<class_StyleBox>` **cursor**
+
+:ref:`StyleBox<class_StyleBox>` used for the cursor, when the ``Tree`` is being focused.
+
+----
+
+.. _class_Tree_theme_style_cursor_unfocused:
+
+- :ref:`StyleBox<class_StyleBox>` **cursor_unfocused**
+
+:ref:`StyleBox<class_StyleBox>` used for the cursor, when the ``Tree`` is not being focused.
+
+----
+
+.. _class_Tree_theme_style_custom_button:
+
+- :ref:`StyleBox<class_StyleBox>` **custom_button**
+
+Default :ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode cell.
+
+----
+
+.. _class_Tree_theme_style_custom_button_hover:
+
+- :ref:`StyleBox<class_StyleBox>` **custom_button_hover**
+
+:ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode cell when it's hovered.
+
+----
+
+.. _class_Tree_theme_style_custom_button_pressed:
+
+- :ref:`StyleBox<class_StyleBox>` **custom_button_pressed**
+
+:ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode cell when it's pressed.
 
 ----
 
@@ -988,26 +1036,6 @@ The arrow icon to display for the :ref:`TreeItem.CELL_MODE_RANGE<class_TreeItem_
 - :ref:`StyleBox<class_StyleBox>` **selected_focus**
 
 :ref:`StyleBox<class_StyleBox>` for the selected items, used when the ``Tree`` is being focused.
-
-----
-
-.. _class_Tree_theme_color_title_button_color:
-
-- :ref:`Color<class_Color>` **title_button_color**
-
-+-----------+----------------------------------+
-| *Default* | ``Color( 0.88, 0.88, 0.88, 1 )`` |
-+-----------+----------------------------------+
-
-Default text :ref:`Color<class_Color>` of the title button.
-
-----
-
-.. _class_Tree_theme_font_title_button_font:
-
-- :ref:`Font<class_Font>` **title_button_font**
-
-:ref:`Font<class_Font>` of the title button's text.
 
 ----
 
@@ -1032,34 +1060,6 @@ Default :ref:`StyleBox<class_StyleBox>` for the title button.
 - :ref:`StyleBox<class_StyleBox>` **title_button_pressed**
 
 :ref:`StyleBox<class_StyleBox>` used when the title button is being pressed.
-
-----
-
-.. _class_Tree_theme_icon_unchecked:
-
-- :ref:`Texture<class_Texture>` **unchecked**
-
-The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell is unchecked.
-
-----
-
-.. _class_Tree_theme_icon_updown:
-
-- :ref:`Texture<class_Texture>` **updown**
-
-The updown arrow icon to display for the :ref:`TreeItem.CELL_MODE_RANGE<class_TreeItem_constant_CELL_MODE_RANGE>` mode cell.
-
-----
-
-.. _class_Tree_theme_constant_vseparation:
-
-- :ref:`int<class_int>` **vseparation**
-
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
-
-The vertical padding inside each item, i.e. the distance between the item's content and top/bottom border.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

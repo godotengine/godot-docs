@@ -130,17 +130,11 @@ Theme Properties
 ----------------
 
 +---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`clear<class_LineEdit_theme_icon_clear>`                                            |                                    |
-+---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`clear_button_color<class_LineEdit_theme_color_clear_button_color>`                 | ``Color( 0.88, 0.88, 0.88, 1 )``   |
 +---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`clear_button_color_pressed<class_LineEdit_theme_color_clear_button_color_pressed>` | ``Color( 1, 1, 1, 1 )``            |
 +---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`cursor_color<class_LineEdit_theme_color_cursor_color>`                             | ``Color( 0.94, 0.94, 0.94, 1 )``   |
-+---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_LineEdit_theme_style_focus>`                                           |                                    |
-+---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_LineEdit_theme_font_font>`                                              |                                    |
 +---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color<class_LineEdit_theme_color_font_color>`                                 | ``Color( 0.88, 0.88, 0.88, 1 )``   |
 +---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
@@ -148,13 +142,19 @@ Theme Properties
 +---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_uneditable<class_LineEdit_theme_color_font_color_uneditable>`           | ``Color( 0.88, 0.88, 0.88, 0.5 )`` |
 +---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`selection_color<class_LineEdit_theme_color_selection_color>`                       | ``Color( 0.49, 0.49, 0.49, 1 )``   |
++---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`int<class_int>`           | :ref:`minimum_spaces<class_LineEdit_theme_constant_minimum_spaces>`                      | ``12``                             |
++---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_LineEdit_theme_font_font>`                                              |                                    |
++---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`clear<class_LineEdit_theme_icon_clear>`                                            |                                    |
++---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_LineEdit_theme_style_focus>`                                           |                                    |
 +---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_LineEdit_theme_style_normal>`                                         |                                    |
 +---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`read_only<class_LineEdit_theme_style_read_only>`                                   |                                    |
-+---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`selection_color<class_LineEdit_theme_color_selection_color>`                       | ``Color( 0.49, 0.49, 0.49, 1 )``   |
 +---------------------------------+------------------------------------------------------------------------------------------+------------------------------------+
 
 Signals
@@ -641,14 +641,6 @@ Selects the whole :ref:`String<class_String>`.
 Theme Property Descriptions
 ---------------------------
 
-.. _class_LineEdit_theme_icon_clear:
-
-- :ref:`Texture<class_Texture>` **clear**
-
-Texture for the clear button. See :ref:`clear_button_enabled<class_LineEdit_property_clear_button_enabled>`.
-
-----
-
 .. _class_LineEdit_theme_color_clear_button_color:
 
 - :ref:`Color<class_Color>` **clear_button_color**
@@ -682,22 +674,6 @@ Color used for the clear button when it's pressed.
 +-----------+----------------------------------+
 
 Color of the ``LineEdit``'s visual cursor (caret).
-
-----
-
-.. _class_LineEdit_theme_style_focus:
-
-- :ref:`StyleBox<class_StyleBox>` **focus**
-
-Background used when ``LineEdit`` has GUI focus.
-
-----
-
-.. _class_LineEdit_theme_font_font:
-
-- :ref:`Font<class_Font>` **font**
-
-Font used for the text.
 
 ----
 
@@ -737,6 +713,18 @@ Font color when editing is disabled.
 
 ----
 
+.. _class_LineEdit_theme_color_selection_color:
+
+- :ref:`Color<class_Color>` **selection_color**
+
++-----------+----------------------------------+
+| *Default* | ``Color( 0.49, 0.49, 0.49, 1 )`` |
++-----------+----------------------------------+
+
+Color of the selection rectangle.
+
+----
+
 .. _class_LineEdit_theme_constant_minimum_spaces:
 
 - :ref:`int<class_int>` **minimum_spaces**
@@ -746,6 +734,30 @@ Font color when editing is disabled.
 +-----------+--------+
 
 Minimum horizontal space for the text (not counting the clear button and content margins). This value is measured in count of space characters (i.e. this amount of space characters can be displayed without scrolling).
+
+----
+
+.. _class_LineEdit_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+Font used for the text.
+
+----
+
+.. _class_LineEdit_theme_icon_clear:
+
+- :ref:`Texture<class_Texture>` **clear**
+
+Texture for the clear button. See :ref:`clear_button_enabled<class_LineEdit_property_clear_button_enabled>`.
+
+----
+
+.. _class_LineEdit_theme_style_focus:
+
+- :ref:`StyleBox<class_StyleBox>` **focus**
+
+Background used when ``LineEdit`` has GUI focus.
 
 ----
 
@@ -762,18 +774,6 @@ Default background for the ``LineEdit``.
 - :ref:`StyleBox<class_StyleBox>` **read_only**
 
 Background used when ``LineEdit`` is in read-only mode (:ref:`editable<class_LineEdit_property_editable>` is set to ``false``).
-
-----
-
-.. _class_LineEdit_theme_color_selection_color:
-
-- :ref:`Color<class_Color>` **selection_color**
-
-+-----------+----------------------------------+
-| *Default* | ``Color( 0.49, 0.49, 0.49, 1 )`` |
-+-----------+----------------------------------+
-
-Color of the selection rectangle.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

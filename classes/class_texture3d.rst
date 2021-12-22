@@ -16,7 +16,9 @@ Texture with 3 dimensions.
 Description
 -----------
 
-Texture3D is a 3-dimensional texture that has a width, height, and depth.
+Texture3D is a 3-dimensional :ref:`Texture<class_Texture>` that has a width, height, and depth. See also :ref:`TextureArray<class_TextureArray>`.
+
+**Note:** ``Texture3D``\ s can only be sampled in shaders in the GLES3 backend. In GLES2, their data can be accessed via scripting, but there is no way to render them in a hardware-accelerated manner.
 
 Properties
 ----------

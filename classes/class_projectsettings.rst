@@ -20,9 +20,9 @@ Contains global variables accessible from everywhere. Use :ref:`get_setting<clas
 
 When naming a Project Settings property, use the full path to the setting including the category. For example, ``"application/config/name"`` for the project name. Category and property names can be viewed in the Project Settings dialog.
 
-**Feature tags:** Project settings can be overridden for specific platforms and configurations (debug, release, ...) using `feature tags <https://docs.godotengine.org/en/latest/tutorials/export/feature_tags.html>`__.
+**Feature tags:** Project settings can be overridden for specific platforms and configurations (debug, release, ...) using `feature tags <https://docs.godotengine.org/en/3.4/tutorials/export/feature_tags.html>`__.
 
-**Overriding:** Any project setting can be overridden by creating a file named ``override.cfg`` in the project's root directory. This can also be used in exported projects by placing this file in the same directory as the project binary. Overriding will still take the base project settings' `feature tags <https://docs.godotengine.org/en/latest/tutorials/export/feature_tags.html>`__ in account. Therefore, make sure to *also* override the setting with the desired feature tags if you want them to override base project settings on all platforms and configurations.
+**Overriding:** Any project setting can be overridden by creating a file named ``override.cfg`` in the project's root directory. This can also be used in exported projects by placing this file in the same directory as the project binary. Overriding will still take the base project settings' `feature tags <https://docs.godotengine.org/en/3.4/tutorials/export/feature_tags.html>`__ in account. Therefore, make sure to *also* override the setting with the desired feature tags if you want them to override base project settings on all platforms and configurations.
 
 Tutorials
 ---------
@@ -569,6 +569,8 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`physics/2d/bp_hash_table_size<class_ProjectSettings_property_physics/2d/bp_hash_table_size>`                                                                   | ``4096``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`physics/2d/bvh_collision_margin<class_ProjectSettings_property_physics/2d/bvh_collision_margin>`                                                               | ``1.0``                                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`physics/2d/cell_size<class_ProjectSettings_property_physics/2d/cell_size>`                                                                                     | ``128``                                                                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                     | :ref:`physics/2d/default_angular_damp<class_ProjectSettings_property_physics/2d/default_angular_damp>`                                                               | ``1.0``                                                                                         |
@@ -602,6 +604,8 @@ Properties
 | :ref:`Vector3<class_Vector3>`                 | :ref:`physics/3d/default_gravity_vector<class_ProjectSettings_property_physics/3d/default_gravity_vector>`                                                           | ``Vector3( 0, -1, 0 )``                                                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                     | :ref:`physics/3d/default_linear_damp<class_ProjectSettings_property_physics/3d/default_linear_damp>`                                                                 | ``0.1``                                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`physics/3d/godot_physics/bvh_collision_margin<class_ProjectSettings_property_physics/3d/godot_physics/bvh_collision_margin>`                                   | ``0.1``                                                                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`physics/3d/godot_physics/use_bvh<class_ProjectSettings_property_physics/3d/godot_physics/use_bvh>`                                                             | ``true``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -798,6 +802,8 @@ Properties
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/skinning/force_software_skinning<class_ProjectSettings_property_rendering/quality/skinning/force_software_skinning>`                         | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/skinning/software_skinning_fallback<class_ProjectSettings_property_rendering/quality/skinning/software_skinning_fallback>`                   | ``true``                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`rendering/quality/spatial_partitioning/bvh_collision_margin<class_ProjectSettings_property_rendering/quality/spatial_partitioning/bvh_collision_margin>`       | ``0.1``                                                                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                     | :ref:`rendering/quality/spatial_partitioning/render_tree_balance<class_ProjectSettings_property_rendering/quality/spatial_partitioning/render_tree_balance>`         | ``0.0``                                                                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -1758,11 +1764,13 @@ Message to be displayed before the backtrace when the engine crashes.
 | *Default* | ``0`` |
 +-----------+-------+
 
-Maximum number of frames per second allowed. The actual number of frames per second may still be below this value if the game is lagging.
+Maximum number of frames per second allowed. The actual number of frames per second may still be below this value if the game is lagging. See also :ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`.
 
 If :ref:`display/window/vsync/use_vsync<class_ProjectSettings_property_display/window/vsync/use_vsync>` is enabled, it takes precedence and the forced FPS number cannot exceed the monitor's refresh rate.
 
 This setting is therefore mostly relevant for lowering the maximum FPS below VSync, e.g. to perform non-real-time rendering of static frames, or test the project under lag conditions.
+
+**Note:** This property is only read when the project starts. To change the rendering FPS cap at runtime, set :ref:`Engine.target_fps<class_Engine_property_target_fps>` instead.
 
 ----
 
@@ -4096,6 +4104,22 @@ Size of the hash table used for the broad-phase 2D hash grid algorithm.
 
 ----
 
+.. _class_ProjectSettings_property_physics/2d/bvh_collision_margin:
+
+- :ref:`float<class_float>` **physics/2d/bvh_collision_margin**
+
++-----------+---------+
+| *Default* | ``1.0`` |
++-----------+---------+
+
+Additional expansion applied to object bounds in the 2D physics bounding volume hierarchy. This can reduce BVH processing at the cost of a slightly coarser broadphase, which can stress the physics more in some situations.
+
+The default value will work well in most situations. A value of 0.0 will turn this optimization off, and larger values may work better for larger, faster moving objects.
+
+**Note:** Used only if :ref:`physics/2d/use_bvh<class_ProjectSettings_property_physics/2d/use_bvh>` is enabled.
+
+----
+
 .. _class_ProjectSettings_property_physics/2d/cell_size:
 
 - :ref:`int<class_int>` **physics/2d/cell_size**
@@ -4344,6 +4368,22 @@ The default linear damp in 3D.
 
 ----
 
+.. _class_ProjectSettings_property_physics/3d/godot_physics/bvh_collision_margin:
+
+- :ref:`float<class_float>` **physics/3d/godot_physics/bvh_collision_margin**
+
++-----------+---------+
+| *Default* | ``0.1`` |
++-----------+---------+
+
+Additional expansion applied to object bounds in the 3D physics bounding volume hierarchy. This can reduce BVH processing at the cost of a slightly coarser broadphase, which can stress the physics more in some situations.
+
+The default value will work well in most situations. A value of 0.0 will turn this optimization off, and larger values may work better for larger, faster moving objects.
+
+**Note:** Used only if :ref:`physics/3d/godot_physics/use_bvh<class_ProjectSettings_property_physics/3d/godot_physics/use_bvh>` is enabled.
+
+----
+
 .. _class_ProjectSettings_property_physics/3d/godot_physics/use_bvh:
 
 - :ref:`bool<class_bool>` **physics/3d/godot_physics/use_bvh**
@@ -4408,9 +4448,11 @@ If disabled, the legacy behavior is used, which consists in queuing the picking 
 | *Default* | ``60`` |
 +-----------+--------+
 
-The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process<class_Node_method__physics_process>` methods are run.
+The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process<class_Node_method__physics_process>` methods are run. See also :ref:`debug/settings/fps/force_fps<class_ProjectSettings_property_debug/settings/fps/force_fps>`.
 
 **Note:** This property is only read when the project starts. To change the physics FPS at runtime, set :ref:`Engine.iterations_per_second<class_Engine_property_iterations_per_second>` instead.
+
+**Note:** Only 8 physics ticks may be simulated per rendered frame at most. If more than 8 physics ticks have to be simulated per rendered frame to keep up with rendering, the game will appear to slow down (even if ``delta`` is used consistently in physics calculations). Therefore, it is recommended not to increase :ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>` above 240. Otherwise, the game will slow down when the rendering framerate goes below 30 FPS.
 
 ----
 
@@ -5602,6 +5644,22 @@ See also :ref:`rendering/quality/skinning/force_software_skinning<class_ProjectS
 
 ----
 
+.. _class_ProjectSettings_property_rendering/quality/spatial_partitioning/bvh_collision_margin:
+
+- :ref:`float<class_float>` **rendering/quality/spatial_partitioning/bvh_collision_margin**
+
++-----------+---------+
+| *Default* | ``0.1`` |
++-----------+---------+
+
+Additional expansion applied to object bounds in the 3D rendering bounding volume hierarchy. This can reduce BVH processing at the cost of a slightly reduced accuracy.
+
+The default value will work well in most situations. A value of 0.0 will turn this optimization off, and larger values may work better for larger, faster moving objects.
+
+**Note:** Used only if :ref:`rendering/quality/spatial_partitioning/use_bvh<class_ProjectSettings_property_rendering/quality/spatial_partitioning/use_bvh>` is enabled.
+
+----
+
 .. _class_ProjectSettings_property_rendering/quality/spatial_partitioning/render_tree_balance:
 
 - :ref:`float<class_float>` **rendering/quality/spatial_partitioning/render_tree_balance**
@@ -5613,6 +5671,8 @@ See also :ref:`rendering/quality/skinning/force_software_skinning<class_ProjectS
 The rendering octree balance can be changed to favor smaller (``0``), or larger (``1``) branches.
 
 Larger branches can increase performance significantly in some projects.
+
+**Note:** Not used if :ref:`rendering/quality/spatial_partitioning/use_bvh<class_ProjectSettings_property_rendering/quality/spatial_partitioning/use_bvh>` is enabled.
 
 ----
 

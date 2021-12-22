@@ -64,15 +64,15 @@ Theme Properties
 ----------------
 
 +-------------------------------+--------------------------------------------------------------------------------+---------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`file<class_FileDialog_theme_icon_file>`                                  |                           |
-+-------------------------------+--------------------------------------------------------------------------------+---------------------------+
 | :ref:`Color<class_Color>`     | :ref:`file_icon_modulate<class_FileDialog_theme_color_file_icon_modulate>`     | ``Color( 1, 1, 1, 1 )``   |
 +-------------------------------+--------------------------------------------------------------------------------+---------------------------+
 | :ref:`Color<class_Color>`     | :ref:`files_disabled<class_FileDialog_theme_color_files_disabled>`             | ``Color( 0, 0, 0, 0.7 )`` |
 +-------------------------------+--------------------------------------------------------------------------------+---------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`folder<class_FileDialog_theme_icon_folder>`                              |                           |
-+-------------------------------+--------------------------------------------------------------------------------+---------------------------+
 | :ref:`Color<class_Color>`     | :ref:`folder_icon_modulate<class_FileDialog_theme_color_folder_icon_modulate>` | ``Color( 1, 1, 1, 1 )``   |
++-------------------------------+--------------------------------------------------------------------------------+---------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`file<class_FileDialog_theme_icon_file>`                                  |                           |
++-------------------------------+--------------------------------------------------------------------------------+---------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`folder<class_FileDialog_theme_icon_folder>`                              |                           |
 +-------------------------------+--------------------------------------------------------------------------------+---------------------------+
 | :ref:`Texture<class_Texture>` | :ref:`parent_folder<class_FileDialog_theme_icon_parent_folder>`                |                           |
 +-------------------------------+--------------------------------------------------------------------------------+---------------------------+
@@ -338,14 +338,6 @@ Invalidate and update the current dialog content list.
 Theme Property Descriptions
 ---------------------------
 
-.. _class_FileDialog_theme_icon_file:
-
-- :ref:`Texture<class_Texture>` **file**
-
-Custom icon for files.
-
-----
-
 .. _class_FileDialog_theme_color_file_icon_modulate:
 
 - :ref:`Color<class_Color>` **file_icon_modulate**
@@ -370,14 +362,6 @@ The color tint for disabled files (when the ``FileDialog`` is used in open folde
 
 ----
 
-.. _class_FileDialog_theme_icon_folder:
-
-- :ref:`Texture<class_Texture>` **folder**
-
-Custom icon for folders.
-
-----
-
 .. _class_FileDialog_theme_color_folder_icon_modulate:
 
 - :ref:`Color<class_Color>` **folder_icon_modulate**
@@ -387,6 +371,22 @@ Custom icon for folders.
 +-----------+-------------------------+
 
 The color modulation applied to the folder icon.
+
+----
+
+.. _class_FileDialog_theme_icon_file:
+
+- :ref:`Texture<class_Texture>` **file**
+
+Custom icon for files.
+
+----
+
+.. _class_FileDialog_theme_icon_folder:
+
+- :ref:`Texture<class_Texture>` **folder**
+
+Custom icon for folders.
 
 ----
 

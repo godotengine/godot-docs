@@ -40,23 +40,23 @@ Theme Properties
 ----------------
 
 +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`close<class_WindowDialog_theme_icon_close>`                           |                         |
+| :ref:`Color<class_Color>`       | :ref:`title_color<class_WindowDialog_theme_color_title_color>`              | ``Color( 0, 0, 0, 1 )`` |
 +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
 | :ref:`int<class_int>`           | :ref:`close_h_ofs<class_WindowDialog_theme_constant_close_h_ofs>`           | ``18``                  |
 +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`close_highlight<class_WindowDialog_theme_icon_close_highlight>`       |                         |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
 | :ref:`int<class_int>`           | :ref:`close_v_ofs<class_WindowDialog_theme_constant_close_v_ofs>`           | ``18``                  |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_WindowDialog_theme_style_panel>`                          |                         |
 +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
 | :ref:`int<class_int>`           | :ref:`scaleborder_size<class_WindowDialog_theme_constant_scaleborder_size>` | ``4``                   |
 +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>`       | :ref:`title_color<class_WindowDialog_theme_color_title_color>`              | ``Color( 0, 0, 0, 1 )`` |
+| :ref:`int<class_int>`           | :ref:`title_height<class_WindowDialog_theme_constant_title_height>`         | ``20``                  |
 +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
 | :ref:`Font<class_Font>`         | :ref:`title_font<class_WindowDialog_theme_font_title_font>`                 |                         |
 +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`           | :ref:`title_height<class_WindowDialog_theme_constant_title_height>`         | ``20``                  |
+| :ref:`Texture<class_Texture>`   | :ref:`close<class_WindowDialog_theme_icon_close>`                           |                         |
++---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`close_highlight<class_WindowDialog_theme_icon_close_highlight>`       |                         |
++---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_WindowDialog_theme_style_panel>`                          |                         |
 +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
 
 Property Descriptions
@@ -106,11 +106,15 @@ Returns the close :ref:`TextureButton<class_TextureButton>`.
 Theme Property Descriptions
 ---------------------------
 
-.. _class_WindowDialog_theme_icon_close:
+.. _class_WindowDialog_theme_color_title_color:
 
-- :ref:`Texture<class_Texture>` **close**
+- :ref:`Color<class_Color>` **title_color**
 
-The icon for the close button.
++-----------+-------------------------+
+| *Default* | ``Color( 0, 0, 0, 1 )`` |
++-----------+-------------------------+
+
+The color of the title text.
 
 ----
 
@@ -126,14 +130,6 @@ The horizontal offset of the close button.
 
 ----
 
-.. _class_WindowDialog_theme_icon_close_highlight:
-
-- :ref:`Texture<class_Texture>` **close_highlight**
-
-The icon used for the close button when it's hovered with the mouse cursor.
-
-----
-
 .. _class_WindowDialog_theme_constant_close_v_ofs:
 
 - :ref:`int<class_int>` **close_v_ofs**
@@ -143,14 +139,6 @@ The icon used for the close button when it's hovered with the mouse cursor.
 +-----------+--------+
 
 The vertical offset of the close button.
-
-----
-
-.. _class_WindowDialog_theme_style_panel:
-
-- :ref:`StyleBox<class_StyleBox>` **panel**
-
-The style for both the content background of the ``WindowDialog`` and the title bar. The title bar is created with a top border and an expand margin using the ``panel`` stylebox.
 
 ----
 
@@ -166,15 +154,15 @@ The thickness of the border that can be dragged when scaling the window (if :ref
 
 ----
 
-.. _class_WindowDialog_theme_color_title_color:
+.. _class_WindowDialog_theme_constant_title_height:
 
-- :ref:`Color<class_Color>` **title_color**
+- :ref:`int<class_int>` **title_height**
 
-+-----------+-------------------------+
-| *Default* | ``Color( 0, 0, 0, 1 )`` |
-+-----------+-------------------------+
++-----------+--------+
+| *Default* | ``20`` |
++-----------+--------+
 
-The color of the title text.
+The vertical offset of the title text.
 
 ----
 
@@ -186,15 +174,27 @@ The font used to draw the title.
 
 ----
 
-.. _class_WindowDialog_theme_constant_title_height:
+.. _class_WindowDialog_theme_icon_close:
 
-- :ref:`int<class_int>` **title_height**
+- :ref:`Texture<class_Texture>` **close**
 
-+-----------+--------+
-| *Default* | ``20`` |
-+-----------+--------+
+The icon for the close button.
 
-The vertical offset of the title text.
+----
+
+.. _class_WindowDialog_theme_icon_close_highlight:
+
+- :ref:`Texture<class_Texture>` **close_highlight**
+
+The icon used for the close button when it's hovered with the mouse cursor.
+
+----
+
+.. _class_WindowDialog_theme_style_panel:
+
+- :ref:`StyleBox<class_StyleBox>` **panel**
+
+The style for both the content background of the ``WindowDialog`` and the title bar. The title bar is created with a top border and an expand margin using the ``panel`` stylebox.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

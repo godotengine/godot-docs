@@ -96,13 +96,29 @@ Theme Properties
 ----------------
 
 +---------------------------------+------------------------------------------------------------------+-------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`breakpoint<class_GraphNode_theme_style_breakpoint>`        |                         |
+| :ref:`Color<class_Color>`       | :ref:`close_color<class_GraphNode_theme_color_close_color>`      | ``Color( 0, 0, 0, 1 )`` |
++---------------------------------+------------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>`       | :ref:`resizer_color<class_GraphNode_theme_color_resizer_color>`  | ``Color( 0, 0, 0, 1 )`` |
++---------------------------------+------------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>`       | :ref:`title_color<class_GraphNode_theme_color_title_color>`      | ``Color( 0, 0, 0, 1 )`` |
++---------------------------------+------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`           | :ref:`close_offset<class_GraphNode_theme_constant_close_offset>` | ``18``                  |
++---------------------------------+------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`           | :ref:`port_offset<class_GraphNode_theme_constant_port_offset>`   | ``3``                   |
++---------------------------------+------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`           | :ref:`separation<class_GraphNode_theme_constant_separation>`     | ``1``                   |
++---------------------------------+------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`           | :ref:`title_offset<class_GraphNode_theme_constant_title_offset>` | ``20``                  |
++---------------------------------+------------------------------------------------------------------+-------------------------+
+| :ref:`Font<class_Font>`         | :ref:`title_font<class_GraphNode_theme_font_title_font>`         |                         |
 +---------------------------------+------------------------------------------------------------------+-------------------------+
 | :ref:`Texture<class_Texture>`   | :ref:`close<class_GraphNode_theme_icon_close>`                   |                         |
 +---------------------------------+------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>`       | :ref:`close_color<class_GraphNode_theme_color_close_color>`      | ``Color( 0, 0, 0, 1 )`` |
+| :ref:`Texture<class_Texture>`   | :ref:`port<class_GraphNode_theme_icon_port>`                     |                         |
 +---------------------------------+------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`           | :ref:`close_offset<class_GraphNode_theme_constant_close_offset>` | ``18``                  |
+| :ref:`Texture<class_Texture>`   | :ref:`resizer<class_GraphNode_theme_icon_resizer>`               |                         |
++---------------------------------+------------------------------------------------------------------+-------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`breakpoint<class_GraphNode_theme_style_breakpoint>`        |                         |
 +---------------------------------+------------------------------------------------------------------+-------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`comment<class_GraphNode_theme_style_comment>`              |                         |
 +---------------------------------+------------------------------------------------------------------+-------------------------+
@@ -114,25 +130,9 @@ Theme Properties
 +---------------------------------+------------------------------------------------------------------+-------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`frame<class_GraphNode_theme_style_frame>`                  |                         |
 +---------------------------------+------------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`port<class_GraphNode_theme_icon_port>`                     |                         |
-+---------------------------------+------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`           | :ref:`port_offset<class_GraphNode_theme_constant_port_offset>`   | ``3``                   |
-+---------------------------------+------------------------------------------------------------------+-------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`position<class_GraphNode_theme_style_position>`            |                         |
 +---------------------------------+------------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`resizer<class_GraphNode_theme_icon_resizer>`               |                         |
-+---------------------------------+------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>`       | :ref:`resizer_color<class_GraphNode_theme_color_resizer_color>`  | ``Color( 0, 0, 0, 1 )`` |
-+---------------------------------+------------------------------------------------------------------+-------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`selectedframe<class_GraphNode_theme_style_selectedframe>`  |                         |
-+---------------------------------+------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`           | :ref:`separation<class_GraphNode_theme_constant_separation>`     | ``1``                   |
-+---------------------------------+------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>`       | :ref:`title_color<class_GraphNode_theme_color_title_color>`      | ``Color( 0, 0, 0, 1 )`` |
-+---------------------------------+------------------------------------------------------------------+-------------------------+
-| :ref:`Font<class_Font>`         | :ref:`title_font<class_GraphNode_theme_font_title_font>`         |                         |
-+---------------------------------+------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`           | :ref:`title_offset<class_GraphNode_theme_constant_title_offset>` | ``20``                  |
 +---------------------------------+------------------------------------------------------------------+-------------------------+
 
 Signals
@@ -522,22 +522,6 @@ Sets the right (output) type of the slot ``idx`` to ``type_right``.
 Theme Property Descriptions
 ---------------------------
 
-.. _class_GraphNode_theme_style_breakpoint:
-
-- :ref:`StyleBox<class_StyleBox>` **breakpoint**
-
-The background used when :ref:`overlay<class_GraphNode_property_overlay>` is set to :ref:`OVERLAY_BREAKPOINT<class_GraphNode_constant_OVERLAY_BREAKPOINT>`.
-
-----
-
-.. _class_GraphNode_theme_icon_close:
-
-- :ref:`Texture<class_Texture>` **close**
-
-The icon for the close button, visible when :ref:`show_close<class_GraphNode_property_show_close>` is enabled.
-
-----
-
 .. _class_GraphNode_theme_color_close_color:
 
 - :ref:`Color<class_Color>` **close_color**
@@ -550,6 +534,30 @@ The color modulation applied to the close button icon.
 
 ----
 
+.. _class_GraphNode_theme_color_resizer_color:
+
+- :ref:`Color<class_Color>` **resizer_color**
+
++-----------+-------------------------+
+| *Default* | ``Color( 0, 0, 0, 1 )`` |
++-----------+-------------------------+
+
+The color modulation applied to the resizer icon.
+
+----
+
+.. _class_GraphNode_theme_color_title_color:
+
+- :ref:`Color<class_Color>` **title_color**
+
++-----------+-------------------------+
+| *Default* | ``Color( 0, 0, 0, 1 )`` |
++-----------+-------------------------+
+
+Color of the title text.
+
+----
+
 .. _class_GraphNode_theme_constant_close_offset:
 
 - :ref:`int<class_int>` **close_offset**
@@ -559,6 +567,82 @@ The color modulation applied to the close button icon.
 +-----------+--------+
 
 The vertical offset of the close button.
+
+----
+
+.. _class_GraphNode_theme_constant_port_offset:
+
+- :ref:`int<class_int>` **port_offset**
+
++-----------+-------+
+| *Default* | ``3`` |
++-----------+-------+
+
+Horizontal offset for the ports.
+
+----
+
+.. _class_GraphNode_theme_constant_separation:
+
+- :ref:`int<class_int>` **separation**
+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+The vertical distance between ports.
+
+----
+
+.. _class_GraphNode_theme_constant_title_offset:
+
+- :ref:`int<class_int>` **title_offset**
+
++-----------+--------+
+| *Default* | ``20`` |
++-----------+--------+
+
+Vertical offset of the title text.
+
+----
+
+.. _class_GraphNode_theme_font_title_font:
+
+- :ref:`Font<class_Font>` **title_font**
+
+Font used for the title text.
+
+----
+
+.. _class_GraphNode_theme_icon_close:
+
+- :ref:`Texture<class_Texture>` **close**
+
+The icon for the close button, visible when :ref:`show_close<class_GraphNode_property_show_close>` is enabled.
+
+----
+
+.. _class_GraphNode_theme_icon_port:
+
+- :ref:`Texture<class_Texture>` **port**
+
+The icon used for representing ports.
+
+----
+
+.. _class_GraphNode_theme_icon_resizer:
+
+- :ref:`Texture<class_Texture>` **resizer**
+
+The icon used for resizer, visible when :ref:`resizable<class_GraphNode_property_resizable>` is enabled.
+
+----
+
+.. _class_GraphNode_theme_style_breakpoint:
+
+- :ref:`StyleBox<class_StyleBox>` **breakpoint**
+
+The background used when :ref:`overlay<class_GraphNode_property_overlay>` is set to :ref:`OVERLAY_BREAKPOINT<class_GraphNode_constant_OVERLAY_BREAKPOINT>`.
 
 ----
 
@@ -598,26 +682,6 @@ The default background for ``GraphNode``.
 
 ----
 
-.. _class_GraphNode_theme_icon_port:
-
-- :ref:`Texture<class_Texture>` **port**
-
-The icon used for representing ports.
-
-----
-
-.. _class_GraphNode_theme_constant_port_offset:
-
-- :ref:`int<class_int>` **port_offset**
-
-+-----------+-------+
-| *Default* | ``3`` |
-+-----------+-------+
-
-Horizontal offset for the ports.
-
-----
-
 .. _class_GraphNode_theme_style_position:
 
 - :ref:`StyleBox<class_StyleBox>` **position**
@@ -626,75 +690,11 @@ The background used when :ref:`overlay<class_GraphNode_property_overlay>` is set
 
 ----
 
-.. _class_GraphNode_theme_icon_resizer:
-
-- :ref:`Texture<class_Texture>` **resizer**
-
-The icon used for resizer, visible when :ref:`resizable<class_GraphNode_property_resizable>` is enabled.
-
-----
-
-.. _class_GraphNode_theme_color_resizer_color:
-
-- :ref:`Color<class_Color>` **resizer_color**
-
-+-----------+-------------------------+
-| *Default* | ``Color( 0, 0, 0, 1 )`` |
-+-----------+-------------------------+
-
-The color modulation applied to the resizer icon.
-
-----
-
 .. _class_GraphNode_theme_style_selectedframe:
 
 - :ref:`StyleBox<class_StyleBox>` **selectedframe**
 
 The background used when the ``GraphNode`` is selected.
-
-----
-
-.. _class_GraphNode_theme_constant_separation:
-
-- :ref:`int<class_int>` **separation**
-
-+-----------+-------+
-| *Default* | ``1`` |
-+-----------+-------+
-
-The vertical distance between ports.
-
-----
-
-.. _class_GraphNode_theme_color_title_color:
-
-- :ref:`Color<class_Color>` **title_color**
-
-+-----------+-------------------------+
-| *Default* | ``Color( 0, 0, 0, 1 )`` |
-+-----------+-------------------------+
-
-Color of the title text.
-
-----
-
-.. _class_GraphNode_theme_font_title_font:
-
-- :ref:`Font<class_Font>` **title_font**
-
-Font used for the title text.
-
-----
-
-.. _class_GraphNode_theme_constant_title_offset:
-
-- :ref:`int<class_int>` **title_offset**
-
-+-----------+--------+
-| *Default* | ``20`` |
-+-----------+--------+
-
-Vertical offset of the title text.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

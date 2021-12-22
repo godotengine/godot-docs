@@ -94,15 +94,21 @@ Theme Properties
 +---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
 | :ref:`Color<class_Color>`       | :ref:`activity<class_GraphEdit_theme_color_activity>`                                              | ``Color( 1, 1, 1, 1 )``    |
 +---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
+| :ref:`Color<class_Color>`       | :ref:`grid_major<class_GraphEdit_theme_color_grid_major>`                                          | ``Color( 1, 1, 1, 0.2 )``  |
++---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
+| :ref:`Color<class_Color>`       | :ref:`grid_minor<class_GraphEdit_theme_color_grid_minor>`                                          | ``Color( 1, 1, 1, 0.05 )`` |
++---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
+| :ref:`Color<class_Color>`       | :ref:`selection_fill<class_GraphEdit_theme_color_selection_fill>`                                  | ``Color( 1, 1, 1, 0.3 )``  |
++---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
+| :ref:`Color<class_Color>`       | :ref:`selection_stroke<class_GraphEdit_theme_color_selection_stroke>`                              | ``Color( 1, 1, 1, 0.8 )``  |
++---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
 | :ref:`int<class_int>`           | :ref:`bezier_len_neg<class_GraphEdit_theme_constant_bezier_len_neg>`                               | ``160``                    |
 +---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
 | :ref:`int<class_int>`           | :ref:`bezier_len_pos<class_GraphEdit_theme_constant_bezier_len_pos>`                               | ``80``                     |
 +---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_GraphEdit_theme_style_bg>`                                                          |                            |
+| :ref:`int<class_int>`           | :ref:`port_grab_distance_horizontal<class_GraphEdit_theme_constant_port_grab_distance_horizontal>` | ``24``                     |
 +---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
-| :ref:`Color<class_Color>`       | :ref:`grid_major<class_GraphEdit_theme_color_grid_major>`                                          | ``Color( 1, 1, 1, 0.2 )``  |
-+---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
-| :ref:`Color<class_Color>`       | :ref:`grid_minor<class_GraphEdit_theme_color_grid_minor>`                                          | ``Color( 1, 1, 1, 0.05 )`` |
+| :ref:`int<class_int>`           | :ref:`port_grab_distance_vertical<class_GraphEdit_theme_constant_port_grab_distance_vertical>`     | ``6``                      |
 +---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
 | :ref:`Texture<class_Texture>`   | :ref:`minimap<class_GraphEdit_theme_icon_minimap>`                                                 |                            |
 +---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
@@ -110,17 +116,11 @@ Theme Properties
 +---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
 | :ref:`Texture<class_Texture>`   | :ref:`more<class_GraphEdit_theme_icon_more>`                                                       |                            |
 +---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
-| :ref:`int<class_int>`           | :ref:`port_grab_distance_horizontal<class_GraphEdit_theme_constant_port_grab_distance_horizontal>` | ``24``                     |
-+---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
-| :ref:`int<class_int>`           | :ref:`port_grab_distance_vertical<class_GraphEdit_theme_constant_port_grab_distance_vertical>`     | ``6``                      |
-+---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
 | :ref:`Texture<class_Texture>`   | :ref:`reset<class_GraphEdit_theme_icon_reset>`                                                     |                            |
 +---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
-| :ref:`Color<class_Color>`       | :ref:`selection_fill<class_GraphEdit_theme_color_selection_fill>`                                  | ``Color( 1, 1, 1, 0.3 )``  |
-+---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
-| :ref:`Color<class_Color>`       | :ref:`selection_stroke<class_GraphEdit_theme_color_selection_stroke>`                              | ``Color( 1, 1, 1, 0.8 )``  |
-+---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
 | :ref:`Texture<class_Texture>`   | :ref:`snap<class_GraphEdit_theme_icon_snap>`                                                       |                            |
++---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_GraphEdit_theme_style_bg>`                                                          |                            |
 +---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
 
 Signals
@@ -563,34 +563,6 @@ Theme Property Descriptions
 
 ----
 
-.. _class_GraphEdit_theme_constant_bezier_len_neg:
-
-- :ref:`int<class_int>` **bezier_len_neg**
-
-+-----------+---------+
-| *Default* | ``160`` |
-+-----------+---------+
-
-----
-
-.. _class_GraphEdit_theme_constant_bezier_len_pos:
-
-- :ref:`int<class_int>` **bezier_len_pos**
-
-+-----------+--------+
-| *Default* | ``80`` |
-+-----------+--------+
-
-----
-
-.. _class_GraphEdit_theme_style_bg:
-
-- :ref:`StyleBox<class_StyleBox>` **bg**
-
-The background drawn under the grid.
-
-----
-
 .. _class_GraphEdit_theme_color_grid_major:
 
 - :ref:`Color<class_Color>` **grid_major**
@@ -612,60 +584,6 @@ Color of major grid lines.
 +-----------+----------------------------+
 
 Color of minor grid lines.
-
-----
-
-.. _class_GraphEdit_theme_icon_minimap:
-
-- :ref:`Texture<class_Texture>` **minimap**
-
-----
-
-.. _class_GraphEdit_theme_icon_minus:
-
-- :ref:`Texture<class_Texture>` **minus**
-
-The icon for the zoom out button.
-
-----
-
-.. _class_GraphEdit_theme_icon_more:
-
-- :ref:`Texture<class_Texture>` **more**
-
-The icon for the zoom in button.
-
-----
-
-.. _class_GraphEdit_theme_constant_port_grab_distance_horizontal:
-
-- :ref:`int<class_int>` **port_grab_distance_horizontal**
-
-+-----------+--------+
-| *Default* | ``24`` |
-+-----------+--------+
-
-The horizontal range within which a port can be grabbed (on both sides).
-
-----
-
-.. _class_GraphEdit_theme_constant_port_grab_distance_vertical:
-
-- :ref:`int<class_int>` **port_grab_distance_vertical**
-
-+-----------+-------+
-| *Default* | ``6`` |
-+-----------+-------+
-
-The vertical range within which a port can be grabbed (on both sides).
-
-----
-
-.. _class_GraphEdit_theme_icon_reset:
-
-- :ref:`Texture<class_Texture>` **reset**
-
-The icon for the zoom reset button.
 
 ----
 
@@ -693,11 +611,93 @@ The outline color of the selection rectangle.
 
 ----
 
+.. _class_GraphEdit_theme_constant_bezier_len_neg:
+
+- :ref:`int<class_int>` **bezier_len_neg**
+
++-----------+---------+
+| *Default* | ``160`` |
++-----------+---------+
+
+----
+
+.. _class_GraphEdit_theme_constant_bezier_len_pos:
+
+- :ref:`int<class_int>` **bezier_len_pos**
+
++-----------+--------+
+| *Default* | ``80`` |
++-----------+--------+
+
+----
+
+.. _class_GraphEdit_theme_constant_port_grab_distance_horizontal:
+
+- :ref:`int<class_int>` **port_grab_distance_horizontal**
+
++-----------+--------+
+| *Default* | ``24`` |
++-----------+--------+
+
+The horizontal range within which a port can be grabbed (on both sides).
+
+----
+
+.. _class_GraphEdit_theme_constant_port_grab_distance_vertical:
+
+- :ref:`int<class_int>` **port_grab_distance_vertical**
+
++-----------+-------+
+| *Default* | ``6`` |
++-----------+-------+
+
+The vertical range within which a port can be grabbed (on both sides).
+
+----
+
+.. _class_GraphEdit_theme_icon_minimap:
+
+- :ref:`Texture<class_Texture>` **minimap**
+
+----
+
+.. _class_GraphEdit_theme_icon_minus:
+
+- :ref:`Texture<class_Texture>` **minus**
+
+The icon for the zoom out button.
+
+----
+
+.. _class_GraphEdit_theme_icon_more:
+
+- :ref:`Texture<class_Texture>` **more**
+
+The icon for the zoom in button.
+
+----
+
+.. _class_GraphEdit_theme_icon_reset:
+
+- :ref:`Texture<class_Texture>` **reset**
+
+The icon for the zoom reset button.
+
+----
+
 .. _class_GraphEdit_theme_icon_snap:
 
 - :ref:`Texture<class_Texture>` **snap**
 
 The icon for the snap toggle button.
+
+----
+
+.. _class_GraphEdit_theme_style_bg:
+
+- :ref:`StyleBox<class_StyleBox>` **bg**
+
+The background drawn under the grid.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

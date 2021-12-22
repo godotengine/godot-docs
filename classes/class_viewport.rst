@@ -28,12 +28,14 @@ Also, viewports can be assigned to different screens in case the devices have mu
 
 Finally, viewports can also behave as render targets, in which case they will not be visible unless the associated texture is used to draw.
 
+**Note:** By default, a newly created Viewport in Godot 3.x will appear to be upside down. Enabling :ref:`render_target_v_flip<class_Viewport_property_render_target_v_flip>` will display the Viewport with the correct orientation.
+
 Tutorials
 ---------
 
 - :doc:`../tutorials/2d/2d_transforms`
 
-- :doc:`../tutorials/rendering/viewports`
+- :doc:`../tutorials/rendering/index`
 
 - `GUI in 3D Demo <https://godotengine.org/asset-library/asset/127>`__
 
@@ -716,7 +718,7 @@ The update mode when viewport used as a render target.
 | *Getter*  | get_vflip()      |
 +-----------+------------------+
 
-If ``true``, the result of rendering will be flipped vertically.
+If ``true``, the result of rendering will be flipped vertically. Since Viewports in Godot 3.x render upside-down, it's recommended to set this to ``true`` in most situations.
 
 ----
 
@@ -915,7 +917,7 @@ Method Descriptions
 
 - :ref:`World<class_World>` **find_world** **(** **)** |const|
 
-Returns the 3D world of the viewport, or if none the world of the parent viewport.
+Returns the first valid :ref:`World<class_World>` for this viewport, searching the :ref:`world<class_Viewport_property_world>` property of itself and any Viewport ancestor.
 
 ----
 
@@ -923,7 +925,7 @@ Returns the 3D world of the viewport, or if none the world of the parent viewpor
 
 - :ref:`World2D<class_World2D>` **find_world_2d** **(** **)** |const|
 
-Returns the 2D world of the viewport.
+Returns the first valid :ref:`World2D<class_World2D>` for this viewport, searching the :ref:`world_2d<class_Viewport_property_world_2d>` property of itself and any Viewport ancestor.
 
 ----
 

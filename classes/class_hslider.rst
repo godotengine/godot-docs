@@ -26,17 +26,17 @@ Theme Properties
 +---------------------------------+---------------------------------------------------------------------------------+
 | :ref:`Texture<class_Texture>`   | :ref:`grabber<class_HSlider_theme_icon_grabber>`                                |
 +---------------------------------+---------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`grabber_area<class_HSlider_theme_style_grabber_area>`                     |
-+---------------------------------+---------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`grabber_area_highlight<class_HSlider_theme_style_grabber_area_highlight>` |
-+---------------------------------+---------------------------------------------------------------------------------+
 | :ref:`Texture<class_Texture>`   | :ref:`grabber_disabled<class_HSlider_theme_icon_grabber_disabled>`              |
 +---------------------------------+---------------------------------------------------------------------------------+
 | :ref:`Texture<class_Texture>`   | :ref:`grabber_highlight<class_HSlider_theme_icon_grabber_highlight>`            |
 +---------------------------------+---------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`slider<class_HSlider_theme_style_slider>`                                 |
-+---------------------------------+---------------------------------------------------------------------------------+
 | :ref:`Texture<class_Texture>`   | :ref:`tick<class_HSlider_theme_icon_tick>`                                      |
++---------------------------------+---------------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`grabber_area<class_HSlider_theme_style_grabber_area>`                     |
++---------------------------------+---------------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`grabber_area_highlight<class_HSlider_theme_style_grabber_area_highlight>` |
++---------------------------------+---------------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`slider<class_HSlider_theme_style_slider>`                                 |
 +---------------------------------+---------------------------------------------------------------------------------+
 
 Theme Property Descriptions
@@ -47,20 +47,6 @@ Theme Property Descriptions
 - :ref:`Texture<class_Texture>` **grabber**
 
 The texture for the grabber (the draggable element).
-
-----
-
-.. _class_HSlider_theme_style_grabber_area:
-
-- :ref:`StyleBox<class_StyleBox>` **grabber_area**
-
-The background of the area to the left of the grabber.
-
-----
-
-.. _class_HSlider_theme_style_grabber_area_highlight:
-
-- :ref:`StyleBox<class_StyleBox>` **grabber_area_highlight**
 
 ----
 
@@ -80,19 +66,33 @@ The texture for the grabber when it's focused.
 
 ----
 
-.. _class_HSlider_theme_style_slider:
-
-- :ref:`StyleBox<class_StyleBox>` **slider**
-
-The background for the whole slider. Determines the height of the ``grabber_area``.
-
-----
-
 .. _class_HSlider_theme_icon_tick:
 
 - :ref:`Texture<class_Texture>` **tick**
 
 The texture for the ticks, visible when :ref:`Slider.tick_count<class_Slider_property_tick_count>` is greater than 0.
+
+----
+
+.. _class_HSlider_theme_style_grabber_area:
+
+- :ref:`StyleBox<class_StyleBox>` **grabber_area**
+
+The background of the area to the left of the grabber.
+
+----
+
+.. _class_HSlider_theme_style_grabber_area_highlight:
+
+- :ref:`StyleBox<class_StyleBox>` **grabber_area_highlight**
+
+----
+
+.. _class_HSlider_theme_style_slider:
+
+- :ref:`StyleBox<class_StyleBox>` **slider**
+
+The background for the whole slider. Determines the height of the ``grabber_area``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

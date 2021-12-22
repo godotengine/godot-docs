@@ -142,16 +142,6 @@ Theme Properties
 ----------------
 
 +---------------------------------+----------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_ItemList_theme_style_bg>`                                   |                                  |
-+---------------------------------+----------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`bg_focus<class_ItemList_theme_style_bg_focus>`                       |                                  |
-+---------------------------------+----------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`cursor<class_ItemList_theme_style_cursor>`                           |                                  |
-+---------------------------------+----------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`cursor_unfocused<class_ItemList_theme_style_cursor_unfocused>`       |                                  |
-+---------------------------------+----------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_ItemList_theme_font_font>`                                |                                  |
-+---------------------------------+----------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color<class_ItemList_theme_color_font_color>`                   | ``Color( 0.63, 0.63, 0.63, 1 )`` |
 +---------------------------------+----------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_selected<class_ItemList_theme_color_font_color_selected>` | ``Color( 1, 1, 1, 1 )``          |
@@ -164,11 +154,21 @@ Theme Properties
 +---------------------------------+----------------------------------------------------------------------------+----------------------------------+
 | :ref:`int<class_int>`           | :ref:`line_separation<class_ItemList_theme_constant_line_separation>`      | ``2``                            |
 +---------------------------------+----------------------------------------------------------------------------+----------------------------------+
+| :ref:`int<class_int>`           | :ref:`vseparation<class_ItemList_theme_constant_vseparation>`              | ``2``                            |
++---------------------------------+----------------------------------------------------------------------------+----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_ItemList_theme_font_font>`                                |                                  |
++---------------------------------+----------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_ItemList_theme_style_bg>`                                   |                                  |
++---------------------------------+----------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`bg_focus<class_ItemList_theme_style_bg_focus>`                       |                                  |
++---------------------------------+----------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`cursor<class_ItemList_theme_style_cursor>`                           |                                  |
++---------------------------------+----------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`cursor_unfocused<class_ItemList_theme_style_cursor_unfocused>`       |                                  |
++---------------------------------+----------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`selected<class_ItemList_theme_style_selected>`                       |                                  |
 +---------------------------------+----------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`selected_focus<class_ItemList_theme_style_selected_focus>`           |                                  |
-+---------------------------------+----------------------------------------------------------------------------+----------------------------------+
-| :ref:`int<class_int>`           | :ref:`vseparation<class_ItemList_theme_constant_vseparation>`              | ``2``                            |
 +---------------------------------+----------------------------------------------------------------------------+----------------------------------+
 
 Signals
@@ -780,46 +780,6 @@ Ensures there are no items selected.
 Theme Property Descriptions
 ---------------------------
 
-.. _class_ItemList_theme_style_bg:
-
-- :ref:`StyleBox<class_StyleBox>` **bg**
-
-Default :ref:`StyleBox<class_StyleBox>` for the ``ItemList``, i.e. used when the control is not being focused.
-
-----
-
-.. _class_ItemList_theme_style_bg_focus:
-
-- :ref:`StyleBox<class_StyleBox>` **bg_focus**
-
-:ref:`StyleBox<class_StyleBox>` used when the ``ItemList`` is being focused.
-
-----
-
-.. _class_ItemList_theme_style_cursor:
-
-- :ref:`StyleBox<class_StyleBox>` **cursor**
-
-:ref:`StyleBox<class_StyleBox>` used for the cursor, when the ``ItemList`` is being focused.
-
-----
-
-.. _class_ItemList_theme_style_cursor_unfocused:
-
-- :ref:`StyleBox<class_StyleBox>` **cursor_unfocused**
-
-:ref:`StyleBox<class_StyleBox>` used for the cursor, when the ``ItemList`` is not being focused.
-
-----
-
-.. _class_ItemList_theme_font_font:
-
-- :ref:`Font<class_Font>` **font**
-
-:ref:`Font<class_Font>` of the item's text.
-
-----
-
 .. _class_ItemList_theme_color_font_color:
 
 - :ref:`Color<class_Color>` **font_color**
@@ -892,6 +852,58 @@ The vertical spacing between each line of text.
 
 ----
 
+.. _class_ItemList_theme_constant_vseparation:
+
+- :ref:`int<class_int>` **vseparation**
+
++-----------+-------+
+| *Default* | ``2`` |
++-----------+-------+
+
+The vertical spacing between items.
+
+----
+
+.. _class_ItemList_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+:ref:`Font<class_Font>` of the item's text.
+
+----
+
+.. _class_ItemList_theme_style_bg:
+
+- :ref:`StyleBox<class_StyleBox>` **bg**
+
+Default :ref:`StyleBox<class_StyleBox>` for the ``ItemList``, i.e. used when the control is not being focused.
+
+----
+
+.. _class_ItemList_theme_style_bg_focus:
+
+- :ref:`StyleBox<class_StyleBox>` **bg_focus**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``ItemList`` is being focused.
+
+----
+
+.. _class_ItemList_theme_style_cursor:
+
+- :ref:`StyleBox<class_StyleBox>` **cursor**
+
+:ref:`StyleBox<class_StyleBox>` used for the cursor, when the ``ItemList`` is being focused.
+
+----
+
+.. _class_ItemList_theme_style_cursor_unfocused:
+
+- :ref:`StyleBox<class_StyleBox>` **cursor_unfocused**
+
+:ref:`StyleBox<class_StyleBox>` used for the cursor, when the ``ItemList`` is not being focused.
+
+----
+
 .. _class_ItemList_theme_style_selected:
 
 - :ref:`StyleBox<class_StyleBox>` **selected**
@@ -905,18 +917,6 @@ The vertical spacing between each line of text.
 - :ref:`StyleBox<class_StyleBox>` **selected_focus**
 
 :ref:`StyleBox<class_StyleBox>` for the selected items, used when the ``ItemList`` is being focused.
-
-----
-
-.. _class_ItemList_theme_constant_vseparation:
-
-- :ref:`int<class_int>` **vseparation**
-
-+-----------+-------+
-| *Default* | ``2`` |
-+-----------+-------+
-
-The vertical spacing between items.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

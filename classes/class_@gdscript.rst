@@ -521,9 +521,9 @@ Returns an "eased" value of ``x`` based on an easing function defined with ``cur
     - 1.0: Linear
     - Between -1.0 and 0.0 (exclusive): Ease out-in
     - 0.0: Constant
-    - Between 0.0 to 1.0 (exclusive): Ease in
+    - Between 0.0 to 1.0 (exclusive): Ease out
     - 1.0: Linear
-    - Greater than 1.0 (exclusive): Ease out
+    - Greater than 1.0 (exclusive): Ease in
 
 `ease() curve values cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/3.4/img/ease_cheatsheet.png>`__
 

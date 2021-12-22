@@ -123,6 +123,8 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`humanize_size<class_String_method_humanize_size>` **(** :ref:`int<class_int>` size **)**                                                                          |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`indent<class_String_method_indent>` **(** :ref:`String<class_String>` prefix **)**                                                                                |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`insert<class_String_method_insert>` **(** :ref:`int<class_int>` position, :ref:`String<class_String>` what **)**                                                  |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_abs_path<class_String_method_is_abs_path>` **(** **)**                                                                                                         |
@@ -467,7 +469,7 @@ Returns the number of occurrences of substring ``what`` (ignoring case) between 
 
 - :ref:`String<class_String>` **dedent** **(** **)**
 
-Returns a copy of the string with indentation (leading tabs and spaces) removed.
+Returns a copy of the string with indentation (leading tabs and spaces) removed. See also :ref:`indent<class_String_method_indent>` to add indentation.
 
 ----
 
@@ -633,6 +635,18 @@ Converts ``size`` represented as number of bytes to human-readable format using 
     var bytes = 133790307
     var size = String.humanize_size(bytes)
     print(size) # prints "127.5 MiB"
+
+----
+
+.. _class_String_method_indent:
+
+- :ref:`String<class_String>` **indent** **(** :ref:`String<class_String>` prefix **)**
+
+Returns a copy of the string with lines indented with ``prefix``.
+
+For example, the string can be indented with two tabs using ``"\t\t"``, or four spaces using ``"    "``. The prefix can be any string so it can also be used to comment out strings with e.g. ``"# "``. See also :ref:`dedent<class_String_method_dedent>` to remove indentation.
+
+**Note:** Empty lines are kept empty.
 
 ----
 

@@ -143,29 +143,15 @@ Theme Properties
 ----------------
 
 +---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`bold_font<class_RichTextLabel_theme_font_bold_font>`                      |                                  |
-+---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`bold_italics_font<class_RichTextLabel_theme_font_bold_italics_font>`      |                                  |
-+---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`default_color<class_RichTextLabel_theme_color_default_color>`             | ``Color( 1, 1, 1, 1 )``          |
-+---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_RichTextLabel_theme_style_focus>`                             |                                  |
 +---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_selected<class_RichTextLabel_theme_color_font_color_selected>` | ``Color( 0.49, 0.49, 0.49, 1 )`` |
 +---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_shadow<class_RichTextLabel_theme_color_font_color_shadow>`     | ``Color( 0, 0, 0, 0 )``          |
 +---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`italics_font<class_RichTextLabel_theme_font_italics_font>`                |                                  |
+| :ref:`Color<class_Color>`       | :ref:`selection_color<class_RichTextLabel_theme_color_selection_color>`         | ``Color( 0.1, 0.1, 1, 0.8 )``    |
 +---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
 | :ref:`int<class_int>`           | :ref:`line_separation<class_RichTextLabel_theme_constant_line_separation>`      | ``1``                            |
-+---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`mono_font<class_RichTextLabel_theme_font_mono_font>`                      |                                  |
-+---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_RichTextLabel_theme_style_normal>`                           |                                  |
-+---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`normal_font<class_RichTextLabel_theme_font_normal_font>`                  |                                  |
-+---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`selection_color<class_RichTextLabel_theme_color_selection_color>`         | ``Color( 0.1, 0.1, 1, 0.8 )``    |
 +---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
 | :ref:`int<class_int>`           | :ref:`shadow_as_outline<class_RichTextLabel_theme_constant_shadow_as_outline>`  | ``0``                            |
 +---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
@@ -176,6 +162,20 @@ Theme Properties
 | :ref:`int<class_int>`           | :ref:`table_hseparation<class_RichTextLabel_theme_constant_table_hseparation>`  | ``3``                            |
 +---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
 | :ref:`int<class_int>`           | :ref:`table_vseparation<class_RichTextLabel_theme_constant_table_vseparation>`  | ``3``                            |
++---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`bold_font<class_RichTextLabel_theme_font_bold_font>`                      |                                  |
++---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`bold_italics_font<class_RichTextLabel_theme_font_bold_italics_font>`      |                                  |
++---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`italics_font<class_RichTextLabel_theme_font_italics_font>`                |                                  |
++---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`mono_font<class_RichTextLabel_theme_font_mono_font>`                      |                                  |
++---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`normal_font<class_RichTextLabel_theme_font_normal_font>`                  |                                  |
++---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_RichTextLabel_theme_style_focus>`                             |                                  |
++---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_RichTextLabel_theme_style_normal>`                           |                                  |
 +---------------------------------+---------------------------------------------------------------------------------+----------------------------------+
 
 Signals
@@ -821,22 +821,6 @@ If ``expand`` is ``false``, the column will not contribute to the total ratio.
 Theme Property Descriptions
 ---------------------------
 
-.. _class_RichTextLabel_theme_font_bold_font:
-
-- :ref:`Font<class_Font>` **bold_font**
-
-The font used for bold text.
-
-----
-
-.. _class_RichTextLabel_theme_font_bold_italics_font:
-
-- :ref:`Font<class_Font>` **bold_italics_font**
-
-The font used for bold italics text.
-
-----
-
 .. _class_RichTextLabel_theme_color_default_color:
 
 - :ref:`Color<class_Color>` **default_color**
@@ -846,14 +830,6 @@ The font used for bold italics text.
 +-----------+-------------------------+
 
 The default text color.
-
-----
-
-.. _class_RichTextLabel_theme_style_focus:
-
-- :ref:`StyleBox<class_StyleBox>` **focus**
-
-The background The background used when the ``RichTextLabel`` is focused.
 
 ----
 
@@ -881,11 +857,15 @@ The color of the font's shadow.
 
 ----
 
-.. _class_RichTextLabel_theme_font_italics_font:
+.. _class_RichTextLabel_theme_color_selection_color:
 
-- :ref:`Font<class_Font>` **italics_font**
+- :ref:`Color<class_Color>` **selection_color**
 
-The font used for italics text.
++-----------+-------------------------------+
+| *Default* | ``Color( 0.1, 0.1, 1, 0.8 )`` |
++-----------+-------------------------------+
+
+The color of the selection box.
 
 ----
 
@@ -898,42 +878,6 @@ The font used for italics text.
 +-----------+-------+
 
 The vertical space between lines.
-
-----
-
-.. _class_RichTextLabel_theme_font_mono_font:
-
-- :ref:`Font<class_Font>` **mono_font**
-
-The font used for monospace text.
-
-----
-
-.. _class_RichTextLabel_theme_style_normal:
-
-- :ref:`StyleBox<class_StyleBox>` **normal**
-
-The normal background for the ``RichTextLabel``.
-
-----
-
-.. _class_RichTextLabel_theme_font_normal_font:
-
-- :ref:`Font<class_Font>` **normal_font**
-
-The default text font.
-
-----
-
-.. _class_RichTextLabel_theme_color_selection_color:
-
-- :ref:`Color<class_Color>` **selection_color**
-
-+-----------+-------------------------------+
-| *Default* | ``Color( 0.1, 0.1, 1, 0.8 )`` |
-+-----------+-------------------------------+
-
-The color of the selection box.
 
 ----
 
@@ -994,6 +938,62 @@ The horizontal separation of elements in a table.
 +-----------+-------+
 
 The vertical separation of elements in a table.
+
+----
+
+.. _class_RichTextLabel_theme_font_bold_font:
+
+- :ref:`Font<class_Font>` **bold_font**
+
+The font used for bold text.
+
+----
+
+.. _class_RichTextLabel_theme_font_bold_italics_font:
+
+- :ref:`Font<class_Font>` **bold_italics_font**
+
+The font used for bold italics text.
+
+----
+
+.. _class_RichTextLabel_theme_font_italics_font:
+
+- :ref:`Font<class_Font>` **italics_font**
+
+The font used for italics text.
+
+----
+
+.. _class_RichTextLabel_theme_font_mono_font:
+
+- :ref:`Font<class_Font>` **mono_font**
+
+The font used for monospace text.
+
+----
+
+.. _class_RichTextLabel_theme_font_normal_font:
+
+- :ref:`Font<class_Font>` **normal_font**
+
+The default text font.
+
+----
+
+.. _class_RichTextLabel_theme_style_focus:
+
+- :ref:`StyleBox<class_StyleBox>` **focus**
+
+The background The background used when the ``RichTextLabel`` is focused.
+
+----
+
+.. _class_RichTextLabel_theme_style_normal:
+
+- :ref:`StyleBox<class_StyleBox>` **normal**
+
+The normal background for the ``RichTextLabel``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

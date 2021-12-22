@@ -11,16 +11,18 @@ ReflectionProbe
 
 **Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`CullInstance<class_CullInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Captures its surroundings to create reflections.
+Captures its surroundings to create fast, accurate reflections from a given point.
 
 Description
 -----------
 
 Capture its surroundings as a dual paraboloid image, and stores versions of it with increasing levels of blur to simulate different material roughnesses.
 
-The ``ReflectionProbe`` is used to create high-quality reflections at the cost of performance. It can be combined with :ref:`GIProbe<class_GIProbe>`\ s and Screen Space Reflections to achieve high quality reflections. ``ReflectionProbe``\ s render all objects within their :ref:`cull_mask<class_ReflectionProbe_property_cull_mask>`, so updating them can be quite expensive. It is best to update them once with the important static objects and then leave them.
+The ``ReflectionProbe`` is used to create high-quality reflections at a low performance cost (when :ref:`update_mode<class_ReflectionProbe_property_update_mode>` is :ref:`UPDATE_ONCE<class_ReflectionProbe_constant_UPDATE_ONCE>`). ``ReflectionProbe``\ s can be blended together and with the rest of the scene smoothly. ``ReflectionProbe``\ s can also be combined with :ref:`GIProbe<class_GIProbe>` and screen-space reflections (:ref:`Environment.ss_reflections_enabled<class_Environment_property_ss_reflections_enabled>`) to get more accurate reflections in specific areas. ``ReflectionProbe``\ s render all objects within their :ref:`cull_mask<class_ReflectionProbe_property_cull_mask>`, so updating them can be quite expensive. It is best to update them once with the important static objects and then leave them as-is.
 
-**Note:** By default Godot will only render 16 reflection probes. If you need more, increase the number of atlas subdivisions. This setting can be found in :ref:`ProjectSettings.rendering/quality/reflections/atlas_subdiv<class_ProjectSettings_property_rendering/quality/reflections/atlas_subdiv>`.
+**Note:** Unlike :ref:`GIProbe<class_GIProbe>`, ``ReflectionProbe``\ s only source their environment from a :ref:`WorldEnvironment<class_WorldEnvironment>` node. If you specify an :ref:`Environment<class_Environment>` resource within a :ref:`Camera<class_Camera>` node, it will be ignored by the ``ReflectionProbe``. This can lead to incorrect lighting within the ``ReflectionProbe``.
+
+**Note:** By default, Godot will only render 16 reflection probes. If you need more, increase the number of atlas subdivisions. This setting can be found in :ref:`ProjectSettings.rendering/quality/reflections/atlas_subdiv<class_ProjectSettings_property_rendering/quality/reflections/atlas_subdiv>`.
 
 **Note:** The GLES2 backend will only display two reflection probes at the same time for a single mesh. If possible, split up large meshes that span over multiple reflection probes into smaller ones.
 
@@ -69,9 +71,9 @@ Enumerations
 
 enum **UpdateMode**:
 
-- **UPDATE_ONCE** = **0** --- Update the probe once on the next frame.
+- **UPDATE_ONCE** = **0** --- Update the probe once on the next frame (recommended for most objects). The corresponding radiance map will be generated over the following six frames. This takes more time to update than :ref:`UPDATE_ALWAYS<class_ReflectionProbe_constant_UPDATE_ALWAYS>`, but it has a lower performance cost and can result in higher-quality reflections. The ReflectionProbe is updated when its transform changes, but not when nearby geometry changes. You can force a ``ReflectionProbe`` update by moving the ``ReflectionProbe`` slightly in any direction.
 
-- **UPDATE_ALWAYS** = **1** --- Update the probe every frame. This is needed when you want to capture dynamic objects. However, it results in an increased render time. Use :ref:`UPDATE_ONCE<class_ReflectionProbe_constant_UPDATE_ONCE>` whenever possible.
+- **UPDATE_ALWAYS** = **1** --- Update the probe every frame. This provides better results for fast-moving dynamic objects (such as cars). However, it has a significant performance cost. Due to the cost, it's recommended to only use one ReflectionProbe with :ref:`UPDATE_ALWAYS<class_ReflectionProbe_constant_UPDATE_ALWAYS>` at most per scene. For all other use cases, use :ref:`UPDATE_ONCE<class_ReflectionProbe_constant_UPDATE_ONCE>`.
 
 Property Descriptions
 ---------------------
@@ -90,6 +92,8 @@ Property Descriptions
 
 If ``true``, enables box projection. This makes reflections look more correct in rectangle-shaped rooms by offsetting the reflection center depending on the camera's location.
 
+**Note:** To better fit rectangle-shaped rooms that are not aligned to the grid, you can rotate the ``ReflectionProbe`` node.
+
 ----
 
 .. _class_ReflectionProbe_property_cull_mask:
@@ -104,7 +108,7 @@ If ``true``, enables box projection. This makes reflections look more correct in
 | *Getter*  | get_cull_mask()      |
 +-----------+----------------------+
 
-Sets the cull mask which determines what objects are drawn by this probe. Every :ref:`VisualInstance<class_VisualInstance>` with a layer included in this cull mask will be rendered by the probe. It is best to only include large objects which are likely to take up a lot of space in the reflection in order to save on rendering cost.
+Sets the cull mask which determines what objects are drawn by this probe. Every :ref:`VisualInstance<class_VisualInstance>` with a layer included in this cull mask will be rendered by the probe. To improve performance, it is best to only include large objects which are likely to take up a lot of space in the reflection.
 
 ----
 
@@ -137,6 +141,8 @@ If ``true``, computes shadows in the reflection probe. This makes the reflection
 +-----------+------------------------+
 
 The size of the reflection probe. The larger the extents the more space covered by the probe which will lower the perceived resolution. It is best to keep the extents only as large as you need them.
+
+**Note:** To better fit areas that are not aligned to the grid, you can rotate the ``ReflectionProbe`` node.
 
 ----
 
@@ -232,7 +238,7 @@ If ``true``, reflections will ignore sky contribution. Ambient lighting is then 
 | *Getter*  | get_max_distance()      |
 +-----------+-------------------------+
 
-Sets the max distance away from the probe an object can be before it is culled.
+The maximum distance away from the ``ReflectionProbe`` an object can be before it is culled. Decrease this to improve performance, especially when using the :ref:`UPDATE_ALWAYS<class_ReflectionProbe_constant_UPDATE_ALWAYS>` :ref:`update_mode<class_ReflectionProbe_property_update_mode>`.
 
 ----
 
@@ -248,7 +254,7 @@ Sets the max distance away from the probe an object can be before it is culled.
 | *Getter*  | get_origin_offset()      |
 +-----------+--------------------------+
 
-Sets the origin offset to be used when this reflection probe is in box project mode.
+Sets the origin offset to be used when this ``ReflectionProbe`` is in :ref:`box_projection<class_ReflectionProbe_property_box_projection>` mode. This can be set to a non-zero value to ensure a reflection fits a rectangle-shaped room, while reducing the amount of objects that "get in the way" of the reflection.
 
 ----
 
@@ -264,7 +270,7 @@ Sets the origin offset to be used when this reflection probe is in box project m
 | *Getter*  | get_update_mode()      |
 +-----------+------------------------+
 
-Sets how frequently the probe is updated. Can be :ref:`UPDATE_ONCE<class_ReflectionProbe_constant_UPDATE_ONCE>` or :ref:`UPDATE_ALWAYS<class_ReflectionProbe_constant_UPDATE_ALWAYS>`.
+Sets how frequently the ``ReflectionProbe`` is updated. Can be :ref:`UPDATE_ONCE<class_ReflectionProbe_constant_UPDATE_ONCE>` or :ref:`UPDATE_ALWAYS<class_ReflectionProbe_constant_UPDATE_ALWAYS>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

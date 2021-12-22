@@ -150,10 +150,6 @@ Theme Properties
 ----------------
 
 +---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`checked<class_PopupMenu_theme_icon_checked>`                                  |                                  |
-+---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_PopupMenu_theme_font_font>`                                        |                                  |
-+---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color<class_PopupMenu_theme_color_font_color>`                           | ``Color( 0.88, 0.88, 0.88, 1 )`` |
 +---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_accel<class_PopupMenu_theme_color_font_color_accel>`               | ``Color( 0.7, 0.7, 0.7, 0.8 )``  |
@@ -164,9 +160,23 @@ Theme Properties
 +---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_separator<class_PopupMenu_theme_color_font_color_separator>`       | ``Color( 0.88, 0.88, 0.88, 1 )`` |
 +---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_PopupMenu_theme_style_hover>`                                     |                                  |
-+---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`int<class_int>`           | :ref:`hseparation<class_PopupMenu_theme_constant_hseparation>`                      | ``4``                            |
++---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`int<class_int>`           | :ref:`vseparation<class_PopupMenu_theme_constant_vseparation>`                      | ``4``                            |
++---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_PopupMenu_theme_font_font>`                                        |                                  |
++---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`checked<class_PopupMenu_theme_icon_checked>`                                  |                                  |
++---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`radio_checked<class_PopupMenu_theme_icon_radio_checked>`                      |                                  |
++---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`radio_unchecked<class_PopupMenu_theme_icon_radio_unchecked>`                  |                                  |
++---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`submenu<class_PopupMenu_theme_icon_submenu>`                                  |                                  |
++---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`unchecked<class_PopupMenu_theme_icon_unchecked>`                              |                                  |
++---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_PopupMenu_theme_style_hover>`                                     |                                  |
 +---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`labeled_separator_left<class_PopupMenu_theme_style_labeled_separator_left>`   |                                  |
 +---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
@@ -176,17 +186,7 @@ Theme Properties
 +---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`panel_disabled<class_PopupMenu_theme_style_panel_disabled>`                   |                                  |
 +---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`radio_checked<class_PopupMenu_theme_icon_radio_checked>`                      |                                  |
-+---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`radio_unchecked<class_PopupMenu_theme_icon_radio_unchecked>`                  |                                  |
-+---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`separator<class_PopupMenu_theme_style_separator>`                             |                                  |
-+---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`submenu<class_PopupMenu_theme_icon_submenu>`                                  |                                  |
-+---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`unchecked<class_PopupMenu_theme_icon_unchecked>`                              |                                  |
-+---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`int<class_int>`           | :ref:`vseparation<class_PopupMenu_theme_constant_vseparation>`                      | ``4``                            |
 +---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
 
 Signals
@@ -773,22 +773,6 @@ Cycle to the next state of a multistate item. See :ref:`add_multistate_item<clas
 Theme Property Descriptions
 ---------------------------
 
-.. _class_PopupMenu_theme_icon_checked:
-
-- :ref:`Texture<class_Texture>` **checked**
-
-:ref:`Texture<class_Texture>` icon for the checked checkbox items.
-
-----
-
-.. _class_PopupMenu_theme_font_font:
-
-- :ref:`Font<class_Font>` **font**
-
-:ref:`Font<class_Font>` used for the menu items.
-
-----
-
 .. _class_PopupMenu_theme_color_font_color:
 
 - :ref:`Color<class_Color>` **font_color**
@@ -849,14 +833,6 @@ The text :ref:`Color<class_Color>` used for shortcuts and accelerators that show
 
 ----
 
-.. _class_PopupMenu_theme_style_hover:
-
-- :ref:`StyleBox<class_StyleBox>` **hover**
-
-:ref:`StyleBox<class_StyleBox>` displayed when the ``PopupMenu`` item is hovered.
-
-----
-
 .. _class_PopupMenu_theme_constant_hseparation:
 
 - :ref:`int<class_int>` **hseparation**
@@ -866,6 +842,74 @@ The text :ref:`Color<class_Color>` used for shortcuts and accelerators that show
 +-----------+-------+
 
 The horizontal space between the item's name and the shortcut text/submenu arrow.
+
+----
+
+.. _class_PopupMenu_theme_constant_vseparation:
+
+- :ref:`int<class_int>` **vseparation**
+
++-----------+-------+
+| *Default* | ``4`` |
++-----------+-------+
+
+The vertical space between each menu item.
+
+----
+
+.. _class_PopupMenu_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+:ref:`Font<class_Font>` used for the menu items.
+
+----
+
+.. _class_PopupMenu_theme_icon_checked:
+
+- :ref:`Texture<class_Texture>` **checked**
+
+:ref:`Texture<class_Texture>` icon for the checked checkbox items.
+
+----
+
+.. _class_PopupMenu_theme_icon_radio_checked:
+
+- :ref:`Texture<class_Texture>` **radio_checked**
+
+:ref:`Texture<class_Texture>` icon for the checked radio button items.
+
+----
+
+.. _class_PopupMenu_theme_icon_radio_unchecked:
+
+- :ref:`Texture<class_Texture>` **radio_unchecked**
+
+:ref:`Texture<class_Texture>` icon for the unchecked radio button items.
+
+----
+
+.. _class_PopupMenu_theme_icon_submenu:
+
+- :ref:`Texture<class_Texture>` **submenu**
+
+:ref:`Texture<class_Texture>` icon for the submenu arrow.
+
+----
+
+.. _class_PopupMenu_theme_icon_unchecked:
+
+- :ref:`Texture<class_Texture>` **unchecked**
+
+:ref:`Texture<class_Texture>` icon for the unchecked checkbox items.
+
+----
+
+.. _class_PopupMenu_theme_style_hover:
+
+- :ref:`StyleBox<class_StyleBox>` **hover**
+
+:ref:`StyleBox<class_StyleBox>` displayed when the ``PopupMenu`` item is hovered.
 
 ----
 
@@ -901,55 +945,11 @@ Default :ref:`StyleBox<class_StyleBox>` of the ``PopupMenu`` items.
 
 ----
 
-.. _class_PopupMenu_theme_icon_radio_checked:
-
-- :ref:`Texture<class_Texture>` **radio_checked**
-
-:ref:`Texture<class_Texture>` icon for the checked radio button items.
-
-----
-
-.. _class_PopupMenu_theme_icon_radio_unchecked:
-
-- :ref:`Texture<class_Texture>` **radio_unchecked**
-
-:ref:`Texture<class_Texture>` icon for the unchecked radio button items.
-
-----
-
 .. _class_PopupMenu_theme_style_separator:
 
 - :ref:`StyleBox<class_StyleBox>` **separator**
 
 :ref:`StyleBox<class_StyleBox>` used for the separators. See :ref:`add_separator<class_PopupMenu_method_add_separator>`.
-
-----
-
-.. _class_PopupMenu_theme_icon_submenu:
-
-- :ref:`Texture<class_Texture>` **submenu**
-
-:ref:`Texture<class_Texture>` icon for the submenu arrow.
-
-----
-
-.. _class_PopupMenu_theme_icon_unchecked:
-
-- :ref:`Texture<class_Texture>` **unchecked**
-
-:ref:`Texture<class_Texture>` icon for the unchecked checkbox items.
-
-----
-
-.. _class_PopupMenu_theme_constant_vseparation:
-
-- :ref:`int<class_int>` **vseparation**
-
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
-
-The vertical space between each menu item.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

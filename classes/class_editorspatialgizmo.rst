@@ -30,7 +30,7 @@ Methods
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                            | :ref:`add_lines<class_EditorSpatialGizmo_method_add_lines>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` lines, :ref:`Material<class_Material>` material, :ref:`bool<class_bool>` billboard=false, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ) **)** |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                            | :ref:`add_mesh<class_EditorSpatialGizmo_method_add_mesh>` **(** :ref:`ArrayMesh<class_ArrayMesh>` mesh, :ref:`bool<class_bool>` billboard=false, :ref:`SkinReference<class_SkinReference>` skeleton=null, :ref:`Material<class_Material>` material=null **)**            |
+| void                                                            | :ref:`add_mesh<class_EditorSpatialGizmo_method_add_mesh>` **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`bool<class_bool>` billboard=false, :ref:`SkinReference<class_SkinReference>` skeleton=null, :ref:`Material<class_Material>` material=null **)**                      |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                            | :ref:`add_unscaled_billboard<class_EditorSpatialGizmo_method_add_unscaled_billboard>` **(** :ref:`Material<class_Material>` material, :ref:`float<class_float>` default_scale=1, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ) **)**                            |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -96,7 +96,7 @@ Adds lines to the gizmo (as sets of 2 points), with a given material. The lines 
 
 .. _class_EditorSpatialGizmo_method_add_mesh:
 
-- void **add_mesh** **(** :ref:`ArrayMesh<class_ArrayMesh>` mesh, :ref:`bool<class_bool>` billboard=false, :ref:`SkinReference<class_SkinReference>` skeleton=null, :ref:`Material<class_Material>` material=null **)**
+- void **add_mesh** **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`bool<class_bool>` billboard=false, :ref:`SkinReference<class_SkinReference>` skeleton=null, :ref:`Material<class_Material>` material=null **)**
 
 Adds a mesh to the gizmo with the specified ``billboard`` state, ``skeleton`` and ``material``. If ``billboard`` is ``true``, the mesh will rotate to always face the camera. Call this function during :ref:`redraw<class_EditorSpatialGizmo_method_redraw>`.
 

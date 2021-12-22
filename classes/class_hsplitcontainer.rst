@@ -24,11 +24,11 @@ Theme Properties
 +---------------------------------+--------------------------------------------------------------------+--------+
 | :ref:`int<class_int>`           | :ref:`autohide<class_HSplitContainer_theme_constant_autohide>`     | ``1``  |
 +---------------------------------+--------------------------------------------------------------------+--------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_HSplitContainer_theme_style_bg>`                    |        |
+| :ref:`int<class_int>`           | :ref:`separation<class_HSplitContainer_theme_constant_separation>` | ``12`` |
 +---------------------------------+--------------------------------------------------------------------+--------+
 | :ref:`Texture<class_Texture>`   | :ref:`grabber<class_HSplitContainer_theme_icon_grabber>`           |        |
 +---------------------------------+--------------------------------------------------------------------+--------+
-| :ref:`int<class_int>`           | :ref:`separation<class_HSplitContainer_theme_constant_separation>` | ``12`` |
+| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_HSplitContainer_theme_style_bg>`                    |        |
 +---------------------------------+--------------------------------------------------------------------+--------+
 
 Theme Property Descriptions
@@ -46,9 +46,15 @@ Boolean value. If 1 (``true``), the grabber will hide automatically when it isn'
 
 ----
 
-.. _class_HSplitContainer_theme_style_bg:
+.. _class_HSplitContainer_theme_constant_separation:
 
-- :ref:`StyleBox<class_StyleBox>` **bg**
+- :ref:`int<class_int>` **separation**
+
++-----------+--------+
+| *Default* | ``12`` |
++-----------+--------+
+
+The space between sides of the container.
 
 ----
 
@@ -60,15 +66,9 @@ The icon used for the grabber drawn in the middle area.
 
 ----
 
-.. _class_HSplitContainer_theme_constant_separation:
+.. _class_HSplitContainer_theme_style_bg:
 
-- :ref:`int<class_int>` **separation**
-
-+-----------+--------+
-| *Default* | ``12`` |
-+-----------+--------+
-
-The space between sides of the container.
+- :ref:`StyleBox<class_StyleBox>` **bg**
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

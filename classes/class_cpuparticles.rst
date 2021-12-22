@@ -400,7 +400,7 @@ Rotation randomness ratio.
 | *Getter*  | get_param()      |
 +-----------+------------------+
 
-Initial angular velocity applied to each particle. Sets the speed of rotation of the particle.
+Initial angular velocity applied to each particle in *degrees* per second. Sets the speed of rotation of the particle.
 
 ----
 

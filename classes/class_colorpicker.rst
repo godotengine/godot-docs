@@ -59,27 +59,27 @@ Theme Properties
 ----------------
 
 +-------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`Texture<class_Texture>` | :ref:`add_preset<class_ColorPicker_theme_icon_add_preset>`                     |         |
-+-------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`Texture<class_Texture>` | :ref:`color_hue<class_ColorPicker_theme_icon_color_hue>`                       |         |
-+-------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`Texture<class_Texture>` | :ref:`color_sample<class_ColorPicker_theme_icon_color_sample>`                 |         |
-+-------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`int<class_int>`         | :ref:`h_width<class_ColorPicker_theme_constant_h_width>`                       | ``30``  |
 +-------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`int<class_int>`         | :ref:`label_width<class_ColorPicker_theme_constant_label_width>`               | ``10``  |
 +-------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`int<class_int>`         | :ref:`margin<class_ColorPicker_theme_constant_margin>`                         | ``4``   |
 +-------------------------------+--------------------------------------------------------------------------------+---------+
+| :ref:`int<class_int>`         | :ref:`sv_height<class_ColorPicker_theme_constant_sv_height>`                   | ``256`` |
++-------------------------------+--------------------------------------------------------------------------------+---------+
+| :ref:`int<class_int>`         | :ref:`sv_width<class_ColorPicker_theme_constant_sv_width>`                     | ``256`` |
++-------------------------------+--------------------------------------------------------------------------------+---------+
+| :ref:`Texture<class_Texture>` | :ref:`add_preset<class_ColorPicker_theme_icon_add_preset>`                     |         |
++-------------------------------+--------------------------------------------------------------------------------+---------+
+| :ref:`Texture<class_Texture>` | :ref:`color_hue<class_ColorPicker_theme_icon_color_hue>`                       |         |
++-------------------------------+--------------------------------------------------------------------------------+---------+
+| :ref:`Texture<class_Texture>` | :ref:`color_sample<class_ColorPicker_theme_icon_color_sample>`                 |         |
++-------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture<class_Texture>` | :ref:`overbright_indicator<class_ColorPicker_theme_icon_overbright_indicator>` |         |
 +-------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture<class_Texture>` | :ref:`preset_bg<class_ColorPicker_theme_icon_preset_bg>`                       |         |
 +-------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture<class_Texture>` | :ref:`screen_picker<class_ColorPicker_theme_icon_screen_picker>`               |         |
-+-------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`         | :ref:`sv_height<class_ColorPicker_theme_constant_sv_height>`                   | ``256`` |
-+-------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`         | :ref:`sv_width<class_ColorPicker_theme_constant_sv_width>`                     | ``256`` |
 +-------------------------------+--------------------------------------------------------------------------------+---------+
 
 Signals
@@ -254,28 +254,6 @@ Returns the list of colors in the presets of the color picker.
 Theme Property Descriptions
 ---------------------------
 
-.. _class_ColorPicker_theme_icon_add_preset:
-
-- :ref:`Texture<class_Texture>` **add_preset**
-
-The icon for the "Add Preset" button.
-
-----
-
-.. _class_ColorPicker_theme_icon_color_hue:
-
-- :ref:`Texture<class_Texture>` **color_hue**
-
-Custom texture for the hue selection slider on the right.
-
-----
-
-.. _class_ColorPicker_theme_icon_color_sample:
-
-- :ref:`Texture<class_Texture>` **color_sample**
-
-----
-
 .. _class_ColorPicker_theme_constant_h_width:
 
 - :ref:`int<class_int>` **h_width**
@@ -310,28 +288,6 @@ The margin around the ``ColorPicker``.
 
 ----
 
-.. _class_ColorPicker_theme_icon_overbright_indicator:
-
-- :ref:`Texture<class_Texture>` **overbright_indicator**
-
-The indicator used to signalize that the color value is outside the 0-1 range.
-
-----
-
-.. _class_ColorPicker_theme_icon_preset_bg:
-
-- :ref:`Texture<class_Texture>` **preset_bg**
-
-----
-
-.. _class_ColorPicker_theme_icon_screen_picker:
-
-- :ref:`Texture<class_Texture>` **screen_picker**
-
-The icon for the screen color picker button.
-
-----
-
 .. _class_ColorPicker_theme_constant_sv_height:
 
 - :ref:`int<class_int>` **sv_height**
@@ -353,6 +309,50 @@ The height of the saturation-value selection box.
 +-----------+---------+
 
 The width of the saturation-value selection box.
+
+----
+
+.. _class_ColorPicker_theme_icon_add_preset:
+
+- :ref:`Texture<class_Texture>` **add_preset**
+
+The icon for the "Add Preset" button.
+
+----
+
+.. _class_ColorPicker_theme_icon_color_hue:
+
+- :ref:`Texture<class_Texture>` **color_hue**
+
+Custom texture for the hue selection slider on the right.
+
+----
+
+.. _class_ColorPicker_theme_icon_color_sample:
+
+- :ref:`Texture<class_Texture>` **color_sample**
+
+----
+
+.. _class_ColorPicker_theme_icon_overbright_indicator:
+
+- :ref:`Texture<class_Texture>` **overbright_indicator**
+
+The indicator used to signalize that the color value is outside the 0-1 range.
+
+----
+
+.. _class_ColorPicker_theme_icon_preset_bg:
+
+- :ref:`Texture<class_Texture>` **preset_bg**
+
+----
+
+.. _class_ColorPicker_theme_icon_screen_picker:
+
+- :ref:`Texture<class_Texture>` **screen_picker**
+
+The icon for the screen color picker button.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

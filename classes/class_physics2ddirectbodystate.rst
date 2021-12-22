@@ -108,7 +108,7 @@ Property Descriptions
 | *Getter* | get_angular_velocity()      |
 +----------+-----------------------------+
 
-The body's rotational velocity.
+The body's rotational velocity in *radians* per second.
 
 ----
 
@@ -146,7 +146,7 @@ The inverse of the mass of the body.
 | *Getter* | get_linear_velocity()      |
 +----------+----------------------------+
 
-The body's linear velocity.
+The body's linear velocity in pixels per second.
 
 ----
 

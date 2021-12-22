@@ -80,18 +80,6 @@ Theme Properties
 ----------------
 
 +---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`button<class_Tabs_theme_style_button>`                           |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`button_pressed<class_Tabs_theme_style_button_pressed>`           |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`close<class_Tabs_theme_icon_close>`                              |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`decrement<class_Tabs_theme_icon_decrement>`                      |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`decrement_highlight<class_Tabs_theme_icon_decrement_highlight>`  |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_Tabs_theme_font_font>`                                |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_bg<class_Tabs_theme_color_font_color_bg>`             | ``Color( 0.69, 0.69, 0.69, 1 )`` |
 +---------------------------------+------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_Tabs_theme_color_font_color_disabled>` | ``Color( 0.9, 0.9, 0.9, 0.2 )``  |
@@ -100,21 +88,33 @@ Theme Properties
 +---------------------------------+------------------------------------------------------------------------+----------------------------------+
 | :ref:`int<class_int>`           | :ref:`hseparation<class_Tabs_theme_constant_hseparation>`              | ``4``                            |
 +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+| :ref:`int<class_int>`           | :ref:`label_valign_bg<class_Tabs_theme_constant_label_valign_bg>`      | ``2``                            |
++---------------------------------+------------------------------------------------------------------------+----------------------------------+
+| :ref:`int<class_int>`           | :ref:`label_valign_fg<class_Tabs_theme_constant_label_valign_fg>`      | ``0``                            |
++---------------------------------+------------------------------------------------------------------------+----------------------------------+
+| :ref:`int<class_int>`           | :ref:`top_margin<class_Tabs_theme_constant_top_margin>`                | ``24``                           |
++---------------------------------+------------------------------------------------------------------------+----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_Tabs_theme_font_font>`                                |                                  |
++---------------------------------+------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`close<class_Tabs_theme_icon_close>`                              |                                  |
++---------------------------------+------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`decrement<class_Tabs_theme_icon_decrement>`                      |                                  |
++---------------------------------+------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`decrement_highlight<class_Tabs_theme_icon_decrement_highlight>`  |                                  |
++---------------------------------+------------------------------------------------------------------------+----------------------------------+
 | :ref:`Texture<class_Texture>`   | :ref:`increment<class_Tabs_theme_icon_increment>`                      |                                  |
 +---------------------------------+------------------------------------------------------------------------+----------------------------------+
 | :ref:`Texture<class_Texture>`   | :ref:`increment_highlight<class_Tabs_theme_icon_increment_highlight>`  |                                  |
 +---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`int<class_int>`           | :ref:`label_valign_bg<class_Tabs_theme_constant_label_valign_bg>`      | ``2``                            |
+| :ref:`StyleBox<class_StyleBox>` | :ref:`button<class_Tabs_theme_style_button>`                           |                                  |
 +---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`int<class_int>`           | :ref:`label_valign_fg<class_Tabs_theme_constant_label_valign_fg>`      | ``0``                            |
+| :ref:`StyleBox<class_StyleBox>` | :ref:`button_pressed<class_Tabs_theme_style_button_pressed>`           |                                  |
 +---------------------------------+------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`tab_bg<class_Tabs_theme_style_tab_bg>`                           |                                  |
 +---------------------------------+------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`tab_disabled<class_Tabs_theme_style_tab_disabled>`               |                                  |
 +---------------------------------+------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`tab_fg<class_Tabs_theme_style_tab_fg>`                           |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`int<class_int>`           | :ref:`top_margin<class_Tabs_theme_constant_top_margin>`                | ``24``                           |
 +---------------------------------+------------------------------------------------------------------------+----------------------------------+
 
 Signals
@@ -448,54 +448,6 @@ Defines the rearrange group ID. Choose for each ``Tabs`` the same value to dragg
 Theme Property Descriptions
 ---------------------------
 
-.. _class_Tabs_theme_style_button:
-
-- :ref:`StyleBox<class_StyleBox>` **button**
-
-Background of the close button when it's being hovered with the cursor.
-
-----
-
-.. _class_Tabs_theme_style_button_pressed:
-
-- :ref:`StyleBox<class_StyleBox>` **button_pressed**
-
-Background of the close button when it's being pressed.
-
-----
-
-.. _class_Tabs_theme_icon_close:
-
-- :ref:`Texture<class_Texture>` **close**
-
-The icon for the close button (see :ref:`tab_close_display_policy<class_Tabs_property_tab_close_display_policy>`).
-
-----
-
-.. _class_Tabs_theme_icon_decrement:
-
-- :ref:`Texture<class_Texture>` **decrement**
-
-Icon for the left arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the first tab is visible), it appears semi-transparent.
-
-----
-
-.. _class_Tabs_theme_icon_decrement_highlight:
-
-- :ref:`Texture<class_Texture>` **decrement_highlight**
-
-Icon for the left arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
-
-----
-
-.. _class_Tabs_theme_font_font:
-
-- :ref:`Font<class_Font>` **font**
-
-The font used to draw tab names.
-
-----
-
 .. _class_Tabs_theme_color_font_color_bg:
 
 - :ref:`Color<class_Color>` **font_color_bg**
@@ -544,22 +496,6 @@ The horizontal separation between the tabs.
 
 ----
 
-.. _class_Tabs_theme_icon_increment:
-
-- :ref:`Texture<class_Texture>` **increment**
-
-Icon for the right arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the last tab is visible) it appears semi-transparent.
-
-----
-
-.. _class_Tabs_theme_icon_increment_highlight:
-
-- :ref:`Texture<class_Texture>` **increment_highlight**
-
-Icon for the right arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
-
-----
-
 .. _class_Tabs_theme_constant_label_valign_bg:
 
 - :ref:`int<class_int>` **label_valign_bg**
@@ -577,6 +513,80 @@ Icon for the right arrow button that appears when there are too many tabs to fit
 +-----------+-------+
 | *Default* | ``0`` |
 +-----------+-------+
+
+----
+
+.. _class_Tabs_theme_constant_top_margin:
+
+- :ref:`int<class_int>` **top_margin**
+
++-----------+--------+
+| *Default* | ``24`` |
++-----------+--------+
+
+----
+
+.. _class_Tabs_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+The font used to draw tab names.
+
+----
+
+.. _class_Tabs_theme_icon_close:
+
+- :ref:`Texture<class_Texture>` **close**
+
+The icon for the close button (see :ref:`tab_close_display_policy<class_Tabs_property_tab_close_display_policy>`).
+
+----
+
+.. _class_Tabs_theme_icon_decrement:
+
+- :ref:`Texture<class_Texture>` **decrement**
+
+Icon for the left arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the first tab is visible), it appears semi-transparent.
+
+----
+
+.. _class_Tabs_theme_icon_decrement_highlight:
+
+- :ref:`Texture<class_Texture>` **decrement_highlight**
+
+Icon for the left arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
+
+----
+
+.. _class_Tabs_theme_icon_increment:
+
+- :ref:`Texture<class_Texture>` **increment**
+
+Icon for the right arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the last tab is visible) it appears semi-transparent.
+
+----
+
+.. _class_Tabs_theme_icon_increment_highlight:
+
+- :ref:`Texture<class_Texture>` **increment_highlight**
+
+Icon for the right arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
+
+----
+
+.. _class_Tabs_theme_style_button:
+
+- :ref:`StyleBox<class_StyleBox>` **button**
+
+Background of the close button when it's being hovered with the cursor.
+
+----
+
+.. _class_Tabs_theme_style_button_pressed:
+
+- :ref:`StyleBox<class_StyleBox>` **button_pressed**
+
+Background of the close button when it's being pressed.
 
 ----
 
@@ -601,16 +611,6 @@ The style of a disabled tab
 - :ref:`StyleBox<class_StyleBox>` **tab_fg**
 
 The style of the currently selected tab.
-
-----
-
-.. _class_Tabs_theme_constant_top_margin:
-
-- :ref:`int<class_int>` **top_margin**
-
-+-----------+--------+
-| *Default* | ``24`` |
-+-----------+--------+
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

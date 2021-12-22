@@ -72,7 +72,7 @@ Properties
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------+---------------------------+
 | :ref:`Texture<class_Texture>`                              | :ref:`emission_point_texture<class_ParticlesMaterial_property_emission_point_texture>`         |                           |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`Vector3<class_Vector3>`                              | :ref:`emission_ring_axis<class_ParticlesMaterial_property_emission_ring_axis>`                 | ``Vector3( 0, 0, 1 )``    |
+| :ref:`Vector3<class_Vector3>`                              | :ref:`emission_ring_axis<class_ParticlesMaterial_property_emission_ring_axis>`                 |                           |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------+---------------------------+
 | :ref:`float<class_float>`                                  | :ref:`emission_ring_height<class_ParticlesMaterial_property_emission_ring_height>`             |                           |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------+---------------------------+
@@ -298,7 +298,7 @@ Property Descriptions
 
 Initial rotation applied to each particle, in degrees.
 
-Only applied when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` or :ref:`flag_rotate_y<class_ParticlesMaterial_property_flag_rotate_y>` are ``true`` or the :ref:`SpatialMaterial<class_SpatialMaterial>` being used to draw the particle is using :ref:`SpatialMaterial.BILLBOARD_PARTICLES<class_SpatialMaterial_constant_BILLBOARD_PARTICLES>`.
+**Note:** Only applied when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` or :ref:`flag_rotate_y<class_ParticlesMaterial_property_flag_rotate_y>` are ``true`` or the :ref:`SpatialMaterial<class_SpatialMaterial>` being used to draw the particle is using :ref:`SpatialMaterial.BILLBOARD_PARTICLES<class_SpatialMaterial_constant_BILLBOARD_PARTICLES>`.
 
 ----
 
@@ -344,9 +344,9 @@ Rotation randomness ratio.
 | *Getter*  | get_param()      |
 +-----------+------------------+
 
-Initial angular velocity applied to each particle. Sets the speed of rotation of the particle.
+Initial angular velocity applied to each particle in *degrees* per second. Sets the speed of rotation of the particle.
 
-Only applied when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` or :ref:`flag_rotate_y<class_ParticlesMaterial_property_flag_rotate_y>` are ``true`` or the :ref:`SpatialMaterial<class_SpatialMaterial>` being used to draw the particle is using :ref:`SpatialMaterial.BILLBOARD_PARTICLES<class_SpatialMaterial_constant_BILLBOARD_PARTICLES>`.
+**Note:** Only applied when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` or :ref:`flag_rotate_y<class_ParticlesMaterial_property_flag_rotate_y>` are ``true`` or the :ref:`SpatialMaterial<class_SpatialMaterial>` being used to draw the particle is using :ref:`SpatialMaterial.BILLBOARD_PARTICLES<class_SpatialMaterial_constant_BILLBOARD_PARTICLES>`.
 
 ----
 
@@ -638,13 +638,11 @@ Particles will be emitted at positions determined by sampling this texture at a 
 
 - :ref:`Vector3<class_Vector3>` **emission_ring_axis**
 
-+-----------+-------------------------------+
-| *Default* | ``Vector3( 0, 0, 1 )``        |
-+-----------+-------------------------------+
-| *Setter*  | set_emission_ring_axis(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_emission_ring_axis()      |
-+-----------+-------------------------------+
++----------+-------------------------------+
+| *Setter* | set_emission_ring_axis(value) |
++----------+-------------------------------+
+| *Getter* | get_emission_ring_axis()      |
++----------+-------------------------------+
 
 The axis of the ring when using the emitter :ref:`EMISSION_SHAPE_RING<class_ParticlesMaterial_constant_EMISSION_SHAPE_RING>`.
 
@@ -954,7 +952,7 @@ Linear acceleration randomness ratio.
 
 Orbital velocity applied to each particle. Makes the particles circle around origin. Specified in number of full rotations around origin per second.
 
-Only available when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` is ``true``.
+**Note:** Only available when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` is ``true``.
 
 ----
 

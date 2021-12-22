@@ -67,12 +67,6 @@ Theme Properties
 ----------------
 
 +---------------------------------+--------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_Button_theme_style_disabled>`                       |                                  |
-+---------------------------------+--------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_Button_theme_style_focus>`                             |                                  |
-+---------------------------------+--------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_Button_theme_font_font>`                                |                                  |
-+---------------------------------+--------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color<class_Button_theme_color_font_color>`                   | ``Color( 0.88, 0.88, 0.88, 1 )`` |
 +---------------------------------+--------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_Button_theme_color_font_color_disabled>` | ``Color( 0.9, 0.9, 0.9, 0.2 )``  |
@@ -83,9 +77,15 @@ Theme Properties
 +---------------------------------+--------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_Button_theme_color_font_color_pressed>`   | ``Color( 1, 1, 1, 1 )``          |
 +---------------------------------+--------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_Button_theme_style_hover>`                             |                                  |
-+---------------------------------+--------------------------------------------------------------------------+----------------------------------+
 | :ref:`int<class_int>`           | :ref:`hseparation<class_Button_theme_constant_hseparation>`              | ``2``                            |
++---------------------------------+--------------------------------------------------------------------------+----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_Button_theme_font_font>`                                |                                  |
++---------------------------------+--------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_Button_theme_style_disabled>`                       |                                  |
++---------------------------------+--------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_Button_theme_style_focus>`                             |                                  |
++---------------------------------+--------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_Button_theme_style_hover>`                             |                                  |
 +---------------------------------+--------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_Button_theme_style_normal>`                           |                                  |
 +---------------------------------+--------------------------------------------------------------------------+----------------------------------+
@@ -190,6 +190,8 @@ Flat buttons don't display decoration.
 
 Button's icon, if text is present the icon will be placed before the text.
 
+To edit margin and spacing of the icon, use ``hseparation`` theme property of ``Button`` and ``content_margin_*`` properties of the used :ref:`StyleBox<class_StyleBox>`\ es.
+
 ----
 
 .. _class_Button_property_text:
@@ -208,30 +210,6 @@ The button's text that will be displayed inside the button's area.
 
 Theme Property Descriptions
 ---------------------------
-
-.. _class_Button_theme_style_disabled:
-
-- :ref:`StyleBox<class_StyleBox>` **disabled**
-
-:ref:`StyleBox<class_StyleBox>` used when the ``Button`` is disabled.
-
-----
-
-.. _class_Button_theme_style_focus:
-
-- :ref:`StyleBox<class_StyleBox>` **focus**
-
-:ref:`StyleBox<class_StyleBox>` used when the ``Button`` is focused. It is displayed over the current :ref:`StyleBox<class_StyleBox>`, so using :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` will just disable the focus visual effect.
-
-----
-
-.. _class_Button_theme_font_font:
-
-- :ref:`Font<class_Font>` **font**
-
-:ref:`Font<class_Font>` of the ``Button``'s text.
-
-----
 
 .. _class_Button_theme_color_font_color:
 
@@ -293,14 +271,6 @@ Text :ref:`Color<class_Color>` used when the ``Button`` is being pressed.
 
 ----
 
-.. _class_Button_theme_style_hover:
-
-- :ref:`StyleBox<class_StyleBox>` **hover**
-
-:ref:`StyleBox<class_StyleBox>` used when the ``Button`` is being hovered.
-
-----
-
 .. _class_Button_theme_constant_hseparation:
 
 - :ref:`int<class_int>` **hseparation**
@@ -310,6 +280,38 @@ Text :ref:`Color<class_Color>` used when the ``Button`` is being pressed.
 +-----------+-------+
 
 The horizontal space between ``Button``'s icon and text.
+
+----
+
+.. _class_Button_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+:ref:`Font<class_Font>` of the ``Button``'s text.
+
+----
+
+.. _class_Button_theme_style_disabled:
+
+- :ref:`StyleBox<class_StyleBox>` **disabled**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``Button`` is disabled.
+
+----
+
+.. _class_Button_theme_style_focus:
+
+- :ref:`StyleBox<class_StyleBox>` **focus**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``Button`` is focused. It is displayed over the current :ref:`StyleBox<class_StyleBox>`, so using :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` will just disable the focus visual effect.
+
+----
+
+.. _class_Button_theme_style_hover:
+
+- :ref:`StyleBox<class_StyleBox>` **hover**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``Button`` is being hovered.
 
 ----
 

@@ -73,8 +73,6 @@ Theme Properties
 ----------------
 
 +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_Label_theme_font_font>`                                    |                         |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color<class_Label_theme_color_font_color>`                       | ``Color( 1, 1, 1, 1 )`` |
 +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_shadow<class_Label_theme_color_font_color_shadow>`         | ``Color( 0, 0, 0, 0 )`` |
@@ -83,13 +81,15 @@ Theme Properties
 +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
 | :ref:`int<class_int>`           | :ref:`line_spacing<class_Label_theme_constant_line_spacing>`                | ``3``                   |
 +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_Label_theme_style_normal>`                               |                         |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
 | :ref:`int<class_int>`           | :ref:`shadow_as_outline<class_Label_theme_constant_shadow_as_outline>`      | ``0``                   |
 +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
 | :ref:`int<class_int>`           | :ref:`shadow_offset_x<class_Label_theme_constant_shadow_offset_x>`          | ``1``                   |
 +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
 | :ref:`int<class_int>`           | :ref:`shadow_offset_y<class_Label_theme_constant_shadow_offset_y>`          | ``1``                   |
++---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_Label_theme_font_font>`                                    |                         |
++---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_Label_theme_style_normal>`                               |                         |
 +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
 
 Enumerations
@@ -334,14 +334,6 @@ Returns the number of lines shown. Useful if the ``Label``'s height cannot curre
 Theme Property Descriptions
 ---------------------------
 
-.. _class_Label_theme_font_font:
-
-- :ref:`Font<class_Font>` **font**
-
-:ref:`Font<class_Font>` used for the ``Label``'s text.
-
-----
-
 .. _class_Label_theme_color_font_color:
 
 - :ref:`Color<class_Color>` **font_color**
@@ -390,14 +382,6 @@ Vertical space between lines in multiline ``Label``.
 
 ----
 
-.. _class_Label_theme_style_normal:
-
-- :ref:`StyleBox<class_StyleBox>` **normal**
-
-Background :ref:`StyleBox<class_StyleBox>` for the ``Label``.
-
-----
-
 .. _class_Label_theme_constant_shadow_as_outline:
 
 - :ref:`int<class_int>` **shadow_as_outline**
@@ -431,6 +415,22 @@ The horizontal offset of the text's shadow.
 +-----------+-------+
 
 The vertical offset of the text's shadow.
+
+----
+
+.. _class_Label_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+:ref:`Font<class_Font>` used for the ``Label``'s text.
+
+----
+
+.. _class_Label_theme_style_normal:
+
+- :ref:`StyleBox<class_StyleBox>` **normal**
+
+Background :ref:`StyleBox<class_StyleBox>` for the ``Label``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

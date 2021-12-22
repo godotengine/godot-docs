@@ -97,6 +97,8 @@ Methods
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                    | :ref:`is_mouse_button_pressed<class_Input_method_is_mouse_button_pressed>` **(** :ref:`int<class_int>` button **)** |const|                                                                                                                                                  |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>` **(** :ref:`int<class_int>` scancode **)** |const|                                                                                                                                                |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`joy_connection_changed<class_Input_method_joy_connection_changed>` **(** :ref:`int<class_int>` device, :ref:`bool<class_bool>` connected, :ref:`String<class_String>` name, :ref:`String<class_String>` guid **)**                                                     |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`parse_input_event<class_Input_method_parse_input_event>` **(** :ref:`InputEvent<class_InputEvent>` event **)**                                                                                                                                                         |
@@ -534,6 +536,14 @@ Returns ``true`` if you are pressing the key. You can pass a :ref:`KeyList<enum_
 - :ref:`bool<class_bool>` **is_mouse_button_pressed** **(** :ref:`int<class_int>` button **)** |const|
 
 Returns ``true`` if you are pressing the mouse button specified with :ref:`ButtonList<enum_@GlobalScope_ButtonList>`.
+
+----
+
+.. _class_Input_method_is_physical_key_pressed:
+
+- :ref:`bool<class_bool>` **is_physical_key_pressed** **(** :ref:`int<class_int>` scancode **)** |const|
+
+Returns ``true`` if you are pressing the key in the physical location on the 101/102-key US QWERTY keyboard. You can pass a :ref:`KeyList<enum_@GlobalScope_KeyList>` constant.
 
 ----
 

@@ -278,7 +278,7 @@ Transforms the given :ref:`Vector2<class_Vector2>`, :ref:`Rect2<class_Rect2>`, o
 
 - :ref:`Variant<class_Variant>` **xform_inv** **(** :ref:`Variant<class_Variant>` v **)**
 
-Inverse-transforms the given :ref:`Vector2<class_Vector2>`, :ref:`Rect2<class_Rect2>`, or :ref:`PoolVector2Array<class_PoolVector2Array>` by this transform.
+Inverse-transforms the given :ref:`Vector2<class_Vector2>`, :ref:`Rect2<class_Rect2>`, or :ref:`PoolVector2Array<class_PoolVector2Array>` by this transform, under the assumption that the transformation is composed of rotation and translation (no scaling). Equivalent to calling ``inverse().xform(v)`` on this transform. For affine transformations (e.g. with scaling) see :ref:`affine_inverse<class_Transform2D_method_affine_inverse>` method.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

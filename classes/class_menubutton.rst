@@ -50,12 +50,6 @@ Theme Properties
 ----------------
 
 +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_MenuButton_theme_style_disabled>`                       |                                  |
-+---------------------------------+------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_MenuButton_theme_style_focus>`                             |                                  |
-+---------------------------------+------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_MenuButton_theme_font_font>`                                |                                  |
-+---------------------------------+------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color<class_MenuButton_theme_color_font_color>`                   | ``Color( 0.88, 0.88, 0.88, 1 )`` |
 +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_MenuButton_theme_color_font_color_disabled>` | ``Color( 1, 1, 1, 0.3 )``        |
@@ -66,9 +60,15 @@ Theme Properties
 +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_MenuButton_theme_color_font_color_pressed>`   | ``Color( 1, 1, 1, 1 )``          |
 +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_MenuButton_theme_style_hover>`                             |                                  |
-+---------------------------------+------------------------------------------------------------------------------+----------------------------------+
 | :ref:`int<class_int>`           | :ref:`hseparation<class_MenuButton_theme_constant_hseparation>`              | ``3``                            |
++---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_MenuButton_theme_font_font>`                                |                                  |
++---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_MenuButton_theme_style_disabled>`                       |                                  |
++---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_MenuButton_theme_style_focus>`                             |                                  |
++---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_MenuButton_theme_style_hover>`                             |                                  |
 +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_MenuButton_theme_style_normal>`                           |                                  |
 +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
@@ -122,30 +122,6 @@ If ``true``, shortcuts are disabled and cannot be used to trigger the button.
 
 Theme Property Descriptions
 ---------------------------
-
-.. _class_MenuButton_theme_style_disabled:
-
-- :ref:`StyleBox<class_StyleBox>` **disabled**
-
-:ref:`StyleBox<class_StyleBox>` used when the ``MenuButton`` is disabled.
-
-----
-
-.. _class_MenuButton_theme_style_focus:
-
-- :ref:`StyleBox<class_StyleBox>` **focus**
-
-:ref:`StyleBox<class_StyleBox>` used when the ``MenuButton`` is focused. It is displayed over the current :ref:`StyleBox<class_StyleBox>`, so using :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` will just disable the focus visual effect.
-
-----
-
-.. _class_MenuButton_theme_font_font:
-
-- :ref:`Font<class_Font>` **font**
-
-:ref:`Font<class_Font>` of the ``MenuButton``'s text.
-
-----
 
 .. _class_MenuButton_theme_color_font_color:
 
@@ -207,14 +183,6 @@ Text :ref:`Color<class_Color>` used when the ``MenuButton`` is being pressed.
 
 ----
 
-.. _class_MenuButton_theme_style_hover:
-
-- :ref:`StyleBox<class_StyleBox>` **hover**
-
-:ref:`StyleBox<class_StyleBox>` used when the ``MenuButton`` is being hovered.
-
-----
-
 .. _class_MenuButton_theme_constant_hseparation:
 
 - :ref:`int<class_int>` **hseparation**
@@ -224,6 +192,38 @@ Text :ref:`Color<class_Color>` used when the ``MenuButton`` is being pressed.
 +-----------+-------+
 
 The horizontal space between ``MenuButton``'s icon and text.
+
+----
+
+.. _class_MenuButton_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+:ref:`Font<class_Font>` of the ``MenuButton``'s text.
+
+----
+
+.. _class_MenuButton_theme_style_disabled:
+
+- :ref:`StyleBox<class_StyleBox>` **disabled**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``MenuButton`` is disabled.
+
+----
+
+.. _class_MenuButton_theme_style_focus:
+
+- :ref:`StyleBox<class_StyleBox>` **focus**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``MenuButton`` is focused. It is displayed over the current :ref:`StyleBox<class_StyleBox>`, so using :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` will just disable the focus visual effect.
+
+----
+
+.. _class_MenuButton_theme_style_hover:
+
+- :ref:`StyleBox<class_StyleBox>` **hover**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``MenuButton`` is being hovered.
 
 ----
 

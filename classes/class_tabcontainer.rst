@@ -16,9 +16,11 @@ Tabbed container.
 Description
 -----------
 
-Sets the active tab's ``visible`` property to the value ``true``. Sets all other children's to ``false``.
+Arranges :ref:`Control<class_Control>` children into a tabbed view, creating a tab for each one. The active tab's corresponding :ref:`Control<class_Control>` has its ``visible`` property set to ``true``, and all other children's to ``false``.
 
 Ignores non-:ref:`Control<class_Control>` children.
+
+**Note:** The drawing of the clickable tabs themselves is handled by this node. Adding :ref:`Tabs<class_Tabs>` as children is not needed.
 
 Properties
 ----------
@@ -80,12 +82,6 @@ Theme Properties
 ----------------
 
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`decrement<class_TabContainer_theme_icon_decrement>`                      |                                  |
-+---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`decrement_highlight<class_TabContainer_theme_icon_decrement_highlight>`  |                                  |
-+---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_TabContainer_theme_font_font>`                                |                                  |
-+---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_bg<class_TabContainer_theme_color_font_color_bg>`             | ``Color( 0.69, 0.69, 0.69, 1 )`` |
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_TabContainer_theme_color_font_color_disabled>` | ``Color( 0.9, 0.9, 0.9, 0.2 )``  |
@@ -94,13 +90,23 @@ Theme Properties
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
 | :ref:`int<class_int>`           | :ref:`hseparation<class_TabContainer_theme_constant_hseparation>`              | ``4``                            |
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`increment<class_TabContainer_theme_icon_increment>`                      |                                  |
-+---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`increment_highlight<class_TabContainer_theme_icon_increment_highlight>`  |                                  |
-+---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
 | :ref:`int<class_int>`           | :ref:`label_valign_bg<class_TabContainer_theme_constant_label_valign_bg>`      | ``2``                            |
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
 | :ref:`int<class_int>`           | :ref:`label_valign_fg<class_TabContainer_theme_constant_label_valign_fg>`      | ``0``                            |
++---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
+| :ref:`int<class_int>`           | :ref:`side_margin<class_TabContainer_theme_constant_side_margin>`              | ``8``                            |
++---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
+| :ref:`int<class_int>`           | :ref:`top_margin<class_TabContainer_theme_constant_top_margin>`                | ``24``                           |
++---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_TabContainer_theme_font_font>`                                |                                  |
++---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`decrement<class_TabContainer_theme_icon_decrement>`                      |                                  |
++---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`decrement_highlight<class_TabContainer_theme_icon_decrement_highlight>`  |                                  |
++---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`increment<class_TabContainer_theme_icon_increment>`                      |                                  |
++---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`increment_highlight<class_TabContainer_theme_icon_increment_highlight>`  |                                  |
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Texture<class_Texture>`   | :ref:`menu<class_TabContainer_theme_icon_menu>`                                |                                  |
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
@@ -108,15 +114,11 @@ Theme Properties
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_TabContainer_theme_style_panel>`                             |                                  |
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
-| :ref:`int<class_int>`           | :ref:`side_margin<class_TabContainer_theme_constant_side_margin>`              | ``8``                            |
-+---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`tab_bg<class_TabContainer_theme_style_tab_bg>`                           |                                  |
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`tab_disabled<class_TabContainer_theme_style_tab_disabled>`               |                                  |
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`tab_fg<class_TabContainer_theme_style_tab_fg>`                           |                                  |
-+---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
-| :ref:`int<class_int>`           | :ref:`top_margin<class_TabContainer_theme_constant_top_margin>`                | ``24``                           |
 +---------------------------------+--------------------------------------------------------------------------------+----------------------------------+
 
 Signals
@@ -402,30 +404,6 @@ Defines rearrange group id, choose for each ``TabContainer`` the same value to e
 Theme Property Descriptions
 ---------------------------
 
-.. _class_TabContainer_theme_icon_decrement:
-
-- :ref:`Texture<class_Texture>` **decrement**
-
-Icon for the left arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the first tab is visible), it appears semi-transparent.
-
-----
-
-.. _class_TabContainer_theme_icon_decrement_highlight:
-
-- :ref:`Texture<class_Texture>` **decrement_highlight**
-
-Icon for the left arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
-
-----
-
-.. _class_TabContainer_theme_font_font:
-
-- :ref:`Font<class_Font>` **font**
-
-The font used to draw tab names.
-
-----
-
 .. _class_TabContainer_theme_color_font_color_bg:
 
 - :ref:`Color<class_Color>` **font_color_bg**
@@ -474,22 +452,6 @@ Horizontal separation between tabs.
 
 ----
 
-.. _class_TabContainer_theme_icon_increment:
-
-- :ref:`Texture<class_Texture>` **increment**
-
-Icon for the right arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the last tab is visible) it appears semi-transparent.
-
-----
-
-.. _class_TabContainer_theme_icon_increment_highlight:
-
-- :ref:`Texture<class_Texture>` **increment_highlight**
-
-Icon for the right arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
-
-----
-
 .. _class_TabContainer_theme_constant_label_valign_bg:
 
 - :ref:`int<class_int>` **label_valign_bg**
@@ -507,6 +469,68 @@ Icon for the right arrow button that appears when there are too many tabs to fit
 +-----------+-------+
 | *Default* | ``0`` |
 +-----------+-------+
+
+----
+
+.. _class_TabContainer_theme_constant_side_margin:
+
+- :ref:`int<class_int>` **side_margin**
+
++-----------+-------+
+| *Default* | ``8`` |
++-----------+-------+
+
+The space at the left and right edges of the tab bar.
+
+----
+
+.. _class_TabContainer_theme_constant_top_margin:
+
+- :ref:`int<class_int>` **top_margin**
+
++-----------+--------+
+| *Default* | ``24`` |
++-----------+--------+
+
+----
+
+.. _class_TabContainer_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+The font used to draw tab names.
+
+----
+
+.. _class_TabContainer_theme_icon_decrement:
+
+- :ref:`Texture<class_Texture>` **decrement**
+
+Icon for the left arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the first tab is visible), it appears semi-transparent.
+
+----
+
+.. _class_TabContainer_theme_icon_decrement_highlight:
+
+- :ref:`Texture<class_Texture>` **decrement_highlight**
+
+Icon for the left arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
+
+----
+
+.. _class_TabContainer_theme_icon_increment:
+
+- :ref:`Texture<class_Texture>` **increment**
+
+Icon for the right arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the last tab is visible) it appears semi-transparent.
+
+----
+
+.. _class_TabContainer_theme_icon_increment_highlight:
+
+- :ref:`Texture<class_Texture>` **increment_highlight**
+
+Icon for the right arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
 
 ----
 
@@ -534,18 +558,6 @@ The style for the background fill.
 
 ----
 
-.. _class_TabContainer_theme_constant_side_margin:
-
-- :ref:`int<class_int>` **side_margin**
-
-+-----------+-------+
-| *Default* | ``8`` |
-+-----------+-------+
-
-The space at the left and right edges of the tab bar.
-
-----
-
 .. _class_TabContainer_theme_style_tab_bg:
 
 - :ref:`StyleBox<class_StyleBox>` **tab_bg**
@@ -567,16 +579,6 @@ The style of disabled tabs.
 - :ref:`StyleBox<class_StyleBox>` **tab_fg**
 
 The style of the currently selected tab.
-
-----
-
-.. _class_TabContainer_theme_constant_top_margin:
-
-- :ref:`int<class_int>` **top_margin**
-
-+-----------+--------+
-| *Default* | ``24`` |
-+-----------+--------+
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

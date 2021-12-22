@@ -178,6 +178,14 @@ Method Descriptions
 
 Ensures the given ``control`` is visible (must be a direct or indirect child of the ScrollContainer). Used by :ref:`follow_focus<class_ScrollContainer_property_follow_focus>`.
 
+**Note:** This will not work on a node that was just added during the same frame. If you want to scroll to a newly added child, you must wait until the next frame using :ref:`SceneTree.idle_frame<class_SceneTree_signal_idle_frame>`:
+
+::
+
+    add_child(child_node)
+    yield(get_tree(), "idle_frame")
+    ensure_control_visible(child_node)
+
 ----
 
 .. _class_ScrollContainer_method_get_h_scrollbar:

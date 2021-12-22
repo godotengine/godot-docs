@@ -33,15 +33,15 @@ Theme Properties
 ----------------
 
 +---------------------------------+---------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_ProgressBar_theme_style_bg>`                               |                                  |
-+---------------------------------+---------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`fg<class_ProgressBar_theme_style_fg>`                               |                                  |
-+---------------------------------+---------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_ProgressBar_theme_font_font>`                            |                                  |
-+---------------------------------+---------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color<class_ProgressBar_theme_color_font_color>`               | ``Color( 0.94, 0.94, 0.94, 1 )`` |
 +---------------------------------+---------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_shadow<class_ProgressBar_theme_color_font_color_shadow>` | ``Color( 0, 0, 0, 1 )``          |
++---------------------------------+---------------------------------------------------------------------------+----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_ProgressBar_theme_font_font>`                            |                                  |
++---------------------------------+---------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_ProgressBar_theme_style_bg>`                               |                                  |
++---------------------------------+---------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`fg<class_ProgressBar_theme_style_fg>`                               |                                  |
 +---------------------------------+---------------------------------------------------------------------------+----------------------------------+
 
 Property Descriptions
@@ -64,30 +64,6 @@ If ``true``, the fill percentage is displayed on the bar.
 Theme Property Descriptions
 ---------------------------
 
-.. _class_ProgressBar_theme_style_bg:
-
-- :ref:`StyleBox<class_StyleBox>` **bg**
-
-The style of the background.
-
-----
-
-.. _class_ProgressBar_theme_style_fg:
-
-- :ref:`StyleBox<class_StyleBox>` **fg**
-
-The style of the progress (i.e. the part that fills the bar).
-
-----
-
-.. _class_ProgressBar_theme_font_font:
-
-- :ref:`Font<class_Font>` **font**
-
-Font used to draw the fill percentage if :ref:`percent_visible<class_ProgressBar_property_percent_visible>` is ``true``.
-
-----
-
 .. _class_ProgressBar_theme_color_font_color:
 
 - :ref:`Color<class_Color>` **font_color**
@@ -109,6 +85,30 @@ The color of the text.
 +-----------+-------------------------+
 
 The color of the text's shadow.
+
+----
+
+.. _class_ProgressBar_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+Font used to draw the fill percentage if :ref:`percent_visible<class_ProgressBar_property_percent_visible>` is ``true``.
+
+----
+
+.. _class_ProgressBar_theme_style_bg:
+
+- :ref:`StyleBox<class_StyleBox>` **bg**
+
+The style of the background.
+
+----
+
+.. _class_ProgressBar_theme_style_fg:
+
+- :ref:`StyleBox<class_StyleBox>` **fg**
+
+The style of the progress (i.e. the part that fills the bar).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

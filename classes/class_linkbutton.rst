@@ -37,10 +37,6 @@ Theme Properties
 ----------------
 
 +---------------------------------+-----------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_LinkButton_theme_style_focus>`                            |                                  |
-+---------------------------------+-----------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_LinkButton_theme_font_font>`                               |                                  |
-+---------------------------------+-----------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color<class_LinkButton_theme_color_font_color>`                  | ``Color( 0.88, 0.88, 0.88, 1 )`` |
 +---------------------------------+-----------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_focus<class_LinkButton_theme_color_font_color_focus>`      | ``Color( 0.94, 0.94, 0.94, 1 )`` |
@@ -50,6 +46,10 @@ Theme Properties
 | :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_LinkButton_theme_color_font_color_pressed>`  | ``Color( 1, 1, 1, 1 )``          |
 +---------------------------------+-----------------------------------------------------------------------------+----------------------------------+
 | :ref:`int<class_int>`           | :ref:`underline_spacing<class_LinkButton_theme_constant_underline_spacing>` | ``2``                            |
++---------------------------------+-----------------------------------------------------------------------------+----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_LinkButton_theme_font_font>`                               |                                  |
++---------------------------------+-----------------------------------------------------------------------------+----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_LinkButton_theme_style_focus>`                            |                                  |
 +---------------------------------+-----------------------------------------------------------------------------+----------------------------------+
 
 Enumerations
@@ -106,22 +106,6 @@ Determines when to show the underline. See :ref:`UnderlineMode<enum_LinkButton_U
 
 Theme Property Descriptions
 ---------------------------
-
-.. _class_LinkButton_theme_style_focus:
-
-- :ref:`StyleBox<class_StyleBox>` **focus**
-
-:ref:`StyleBox<class_StyleBox>` used when the ``LinkButton`` is focused. It is displayed over the current :ref:`StyleBox<class_StyleBox>`, so using :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` will just disable the focus visual effect.
-
-----
-
-.. _class_LinkButton_theme_font_font:
-
-- :ref:`Font<class_Font>` **font**
-
-:ref:`Font<class_Font>` of the ``LinkButton``'s text.
-
-----
 
 .. _class_LinkButton_theme_color_font_color:
 
@@ -180,6 +164,22 @@ Text :ref:`Color<class_Color>` used when the ``LinkButton`` is being pressed.
 +-----------+-------+
 
 The vertical space between the baseline of text and the underline.
+
+----
+
+.. _class_LinkButton_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+:ref:`Font<class_Font>` of the ``LinkButton``'s text.
+
+----
+
+.. _class_LinkButton_theme_style_focus:
+
+- :ref:`StyleBox<class_StyleBox>` **focus**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``LinkButton`` is focused. It is displayed over the current :ref:`StyleBox<class_StyleBox>`, so using :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` will just disable the focus visual effect.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

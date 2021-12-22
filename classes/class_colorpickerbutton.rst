@@ -53,14 +53,6 @@ Theme Properties
 ----------------
 
 +---------------------------------+-------------------------------------------------------------------------------------+---------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`bg<class_ColorPickerButton_theme_icon_bg>`                                    |                                 |
-+---------------------------------+-------------------------------------------------------------------------------------+---------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_ColorPickerButton_theme_style_disabled>`                       |                                 |
-+---------------------------------+-------------------------------------------------------------------------------------+---------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_ColorPickerButton_theme_style_focus>`                             |                                 |
-+---------------------------------+-------------------------------------------------------------------------------------+---------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_ColorPickerButton_theme_font_font>`                                |                                 |
-+---------------------------------+-------------------------------------------------------------------------------------+---------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color<class_ColorPickerButton_theme_color_font_color>`                   | ``Color( 1, 1, 1, 1 )``         |
 +---------------------------------+-------------------------------------------------------------------------------------+---------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_ColorPickerButton_theme_color_font_color_disabled>` | ``Color( 0.9, 0.9, 0.9, 0.3 )`` |
@@ -71,9 +63,17 @@ Theme Properties
 +---------------------------------+-------------------------------------------------------------------------------------+---------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_ColorPickerButton_theme_color_font_color_pressed>`   | ``Color( 0.8, 0.8, 0.8, 1 )``   |
 +---------------------------------+-------------------------------------------------------------------------------------+---------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_ColorPickerButton_theme_style_hover>`                             |                                 |
-+---------------------------------+-------------------------------------------------------------------------------------+---------------------------------+
 | :ref:`int<class_int>`           | :ref:`hseparation<class_ColorPickerButton_theme_constant_hseparation>`              | ``2``                           |
++---------------------------------+-------------------------------------------------------------------------------------+---------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_ColorPickerButton_theme_font_font>`                                |                                 |
++---------------------------------+-------------------------------------------------------------------------------------+---------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`bg<class_ColorPickerButton_theme_icon_bg>`                                    |                                 |
++---------------------------------+-------------------------------------------------------------------------------------+---------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_ColorPickerButton_theme_style_disabled>`                       |                                 |
++---------------------------------+-------------------------------------------------------------------------------------+---------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_ColorPickerButton_theme_style_focus>`                             |                                 |
++---------------------------------+-------------------------------------------------------------------------------------+---------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_ColorPickerButton_theme_style_hover>`                             |                                 |
 +---------------------------------+-------------------------------------------------------------------------------------+---------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_ColorPickerButton_theme_style_normal>`                           |                                 |
 +---------------------------------+-------------------------------------------------------------------------------------+---------------------------------+
@@ -162,38 +162,6 @@ Returns the control's :ref:`PopupPanel<class_PopupPanel>` which allows you to co
 Theme Property Descriptions
 ---------------------------
 
-.. _class_ColorPickerButton_theme_icon_bg:
-
-- :ref:`Texture<class_Texture>` **bg**
-
-The background of the color preview rect on the button.
-
-----
-
-.. _class_ColorPickerButton_theme_style_disabled:
-
-- :ref:`StyleBox<class_StyleBox>` **disabled**
-
-:ref:`StyleBox<class_StyleBox>` used when the ``ColorPickerButton`` is disabled.
-
-----
-
-.. _class_ColorPickerButton_theme_style_focus:
-
-- :ref:`StyleBox<class_StyleBox>` **focus**
-
-:ref:`StyleBox<class_StyleBox>` used when the ``ColorPickerButton`` is focused. It is displayed over the current :ref:`StyleBox<class_StyleBox>`, so using :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` will just disable the focus visual effect.
-
-----
-
-.. _class_ColorPickerButton_theme_font_font:
-
-- :ref:`Font<class_Font>` **font**
-
-:ref:`Font<class_Font>` of the ``ColorPickerButton``'s text.
-
-----
-
 .. _class_ColorPickerButton_theme_color_font_color:
 
 - :ref:`Color<class_Color>` **font_color**
@@ -254,14 +222,6 @@ Text :ref:`Color<class_Color>` used when the ``ColorPickerButton`` is being pres
 
 ----
 
-.. _class_ColorPickerButton_theme_style_hover:
-
-- :ref:`StyleBox<class_StyleBox>` **hover**
-
-:ref:`StyleBox<class_StyleBox>` used when the ``ColorPickerButton`` is being hovered.
-
-----
-
 .. _class_ColorPickerButton_theme_constant_hseparation:
 
 - :ref:`int<class_int>` **hseparation**
@@ -271,6 +231,46 @@ Text :ref:`Color<class_Color>` used when the ``ColorPickerButton`` is being pres
 +-----------+-------+
 
 The horizontal space between ``ColorPickerButton``'s icon and text.
+
+----
+
+.. _class_ColorPickerButton_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+:ref:`Font<class_Font>` of the ``ColorPickerButton``'s text.
+
+----
+
+.. _class_ColorPickerButton_theme_icon_bg:
+
+- :ref:`Texture<class_Texture>` **bg**
+
+The background of the color preview rect on the button.
+
+----
+
+.. _class_ColorPickerButton_theme_style_disabled:
+
+- :ref:`StyleBox<class_StyleBox>` **disabled**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``ColorPickerButton`` is disabled.
+
+----
+
+.. _class_ColorPickerButton_theme_style_focus:
+
+- :ref:`StyleBox<class_StyleBox>` **focus**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``ColorPickerButton`` is focused. It is displayed over the current :ref:`StyleBox<class_StyleBox>`, so using :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` will just disable the focus visual effect.
+
+----
+
+.. _class_ColorPickerButton_theme_style_hover:
+
+- :ref:`StyleBox<class_StyleBox>` **hover**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``ColorPickerButton`` is being hovered.
 
 ----
 

@@ -770,7 +770,7 @@ You can fine-tune the behavior using the ``flags`` (see :ref:`DuplicateFlags<enu
 
 - :ref:`Node<class_Node>` **find_node** **(** :ref:`String<class_String>` mask, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|
 
-Finds a descendant of this node whose name matches ``mask`` as in :ref:`String.match<class_String_method_match>` (i.e. case-sensitive, but ``"*"`` matches zero or more characters and ``"?"`` matches any single character except ``"."``).
+Finds a descendant of this node whose name matches ``mask`` as in :ref:`String.match<class_String_method_match>` (i.e. case-sensitive, but ``"*"`` matches zero or more characters and ``"?"`` matches any single character except ``"."``). Returns ``null`` if no matching ``Node`` is found.
 
 **Note:** It does not match against the full path, just against individual node names.
 
@@ -825,6 +825,16 @@ Returns an array of references to node's children.
 Returns an array listing the groups that the node is a member of.
 
 **Note:** For performance reasons, the order of node groups is *not* guaranteed. The order of node groups should not be relied upon as it can vary across project runs.
+
+**Note:** The engine uses some group names internally (all starting with an underscore). To avoid conflicts with internal groups, do not add custom groups whose name starts with an underscore. To exclude internal groups while looping over :ref:`get_groups<class_Node_method_get_groups>`, use the following snippet:
+
+::
+
+    # Stores the node's non-internal groups only (as an array of Strings).
+    var non_internal_groups = []
+    for group in get_groups():
+        if not group.begins_with("_"):
+            non_internal_groups.push_back(group)
 
 ----
 
@@ -1213,6 +1223,8 @@ Removes a node from a group. See notes in the description, and the group methods
 - void **replace_by** **(** :ref:`Node<class_Node>` node, :ref:`bool<class_bool>` keep_data=false **)**
 
 Replaces a node in a scene by the given one. Subscriptions that pass through this node will be lost.
+
+Note that the replaced node is not automatically freed, so you either need to keep it in a variable for later use or free it using :ref:`Object.free<class_Object_method_free>`.
 
 ----
 

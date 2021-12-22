@@ -25,7 +25,7 @@ Tutorials
 
 - :doc:`../tutorials/shaders/index`
 
-- :ref:`doc_introduction_to_shaders`
+- :doc:`../tutorials/shaders/introduction_to_shaders`
 
 Properties
 ----------

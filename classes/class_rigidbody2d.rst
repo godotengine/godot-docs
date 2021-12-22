@@ -242,7 +242,7 @@ See :ref:`ProjectSettings.physics/2d/default_angular_damp<class_ProjectSettings_
 | *Getter*  | get_angular_velocity()      |
 +-----------+-----------------------------+
 
-The body's rotational velocity.
+The body's rotational velocity in *radians* per second.
 
 ----
 
@@ -456,7 +456,7 @@ See :ref:`ProjectSettings.physics/2d/default_linear_damp<class_ProjectSettings_p
 | *Getter*  | get_linear_velocity()      |
 +-----------+----------------------------+
 
-The body's linear velocity.
+The body's linear velocity in pixels per second. Can be used sporadically, but **don't set this every frame**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_RigidBody2D_method__integrate_forces>` as your process loop for precise control of the body state.
 
 ----
 

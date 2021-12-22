@@ -112,7 +112,7 @@ Property Descriptions
 | *Getter* | get_angular_velocity()      |
 +----------+-----------------------------+
 
-The body's rotational velocity.
+The body's rotational velocity in axis-angle format. The magnitude of the vector is the rotation rate in *radians* per second.
 
 ----
 
@@ -160,7 +160,7 @@ The inverse of the mass of the body.
 | *Getter* | get_linear_velocity()      |
 +----------+----------------------------+
 
-The body's linear velocity.
+The body's linear velocity in units per second.
 
 ----
 

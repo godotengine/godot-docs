@@ -23,7 +23,7 @@ A script implemented in the GDScript programming language. The script extends th
 Tutorials
 ---------
 
-- :doc:`../tutorials/scripting/gdscript/index`
+- :doc:`../getting_started/scripting/gdscript/index`
 
 Methods
 -------

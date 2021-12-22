@@ -112,7 +112,9 @@ See `Running code in the editor <https://docs.godotengine.org/en/3.4/tutorials/m
 | *Getter*  | get_iterations_per_second()      |
 +-----------+----------------------------------+
 
-The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process<class_Node_method__physics_process>` methods are run. This value should generally always be set to ``60`` or above, as Godot doesn't interpolate the physics step. As a result, values lower than ``60`` will look stuttery. This value can be increased to make input more reactive or work around tunneling issues, but keep in mind doing so will increase CPU usage.
+The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process<class_Node_method__physics_process>` methods are run. This value should generally always be set to ``60`` or above, as Godot doesn't interpolate the physics step. As a result, values lower than ``60`` will look stuttery. This value can be increased to make input more reactive or work around collision tunneling issues, but keep in mind doing so will increase CPU usage. See also :ref:`target_fps<class_Engine_property_target_fps>` and :ref:`ProjectSettings.physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`.
+
+**Note:** Only 8 physics ticks may be simulated per rendered frame at most. If more than 8 physics ticks have to be simulated per rendered frame to keep up with rendering, the game will appear to slow down (even if ``delta`` is used consistently in physics calculations). Therefore, it is recommended not to increase :ref:`iterations_per_second<class_Engine_property_iterations_per_second>` above 240. Otherwise, the game will slow down when the rendering framerate goes below 30 FPS.
 
 ----
 

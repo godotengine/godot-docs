@@ -1189,8 +1189,6 @@ Returns the physics layer or layers a body belongs to.
 
 Returns the physics layer or layers a body can collide with.
 
--
-
 ----
 
 .. _class_PhysicsServer_method_body_get_direct_state:
