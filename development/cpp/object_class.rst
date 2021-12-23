@@ -240,9 +240,9 @@ Adding signals to a class is done in ``_bind_methods``, using the
 Notifications
 -------------
 
-All objects in godot have a :ref:`_notification <class_Object_method__notification>`
+All objects in Godot have a :ref:`_notification <class_Object_method__notification>`
 method that allows it to respond to engine level callbacks that may relate to it.
-More information can be found on :ref:`this page <doc_doc_godot_notifications>`.
+More information can be found on the :ref:`doc_godot_notifications` page.
 
 References
 ----------
