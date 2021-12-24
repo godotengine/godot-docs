@@ -361,7 +361,7 @@ Let's first split the 3D view to be able to freely navigate the scene and see
 what the camera sees.
 
 In the toolbar right above the viewport, click on *View*, then *2 Viewports*.
-You can also press :kbd:`Ctrl + 2` (:kbd:`Cmd + 2` on MacOS).
+You can also press :kbd:`Ctrl + 2` (:kbd:`Cmd + 2` on macOS).
 
 |image5|
 

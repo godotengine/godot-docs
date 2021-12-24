@@ -35,7 +35,7 @@ a path, we won't see it from the camera preview.
 
 To find the view's limits, we can use some placeholder meshes. Your viewport
 should still be split into two parts, with the camera preview at the bottom. If
-that isn't the case, press :kbd:`Ctrl + 2` (:kbd:`Cmd + 2` on MacOS) to split the view into two.
+that isn't the case, press :kbd:`Ctrl + 2` (:kbd:`Cmd + 2` on macOS) to split the view into two.
 Select the *Camera* node and click the *Preview* checkbox in the bottom
 viewport.
 
@@ -76,7 +76,7 @@ corner.
 |image9|
 
 We're going to create copies of the mesh and place them around the game area.
-Press :kbd:`Ctrl + D` (:kbd:`Cmd + D` on MacOS) to duplicate the node. You can also right-click
+Press :kbd:`Ctrl + D` (:kbd:`Cmd + D` on macOS) to duplicate the node. You can also right-click
 the node in the *Scene* dock and select *Duplicate*. Move the copy down along
 the blue Z axis until it's right outside the camera's preview.
 
