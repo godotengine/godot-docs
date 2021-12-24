@@ -73,7 +73,7 @@ depending on the platform. By default, these paths are:
 |                              | - macOS: ``~/Library/Application Support/Godot/[project_name]``|
 |                              | - Linux: ``~/.local/share/godot/[project_name]``               |
 +------------------------------+----------------------------------------------------------------+
-| User Data                    | - Windows: ``%APPDATA%\[project_name]``                        |
+| User data                    | - Windows: ``%APPDATA%\[project_name]``                        |
 | (when ``use_custom_user_dir``| - macOS: ``~/Library/Application Support/[project_name]``      |
 | project setting is true)     | - Linux: ``~/.local/share/[project_name]``                     |
 +------------------------------+----------------------------------------------------------------+
