@@ -35,7 +35,7 @@ folder of this repository with the following command:
 
 .. code:: sh
 
-    # On Linux and MacOS
+    # On Linux and macOS
     make html
 
     # On Windows, you need to execute the ``make.bat`` file instead.
