@@ -1069,8 +1069,8 @@ Registering named classes
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can give your class a name to register it as a new type in Godot's
-editor. For that, you use the ``class_name`` keyword. You can optionally use
-the ``@icon`` annotation with a path to an image, to use it as an icon. Your
+editor. For that, you use the ``class_name`` keyword. You can optionally add
+a comma followed by a path to an image, to use it as an icon. Your
 class will then appear with its new icon in the editor::
 
    # Item.gd
