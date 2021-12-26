@@ -1,6 +1,6 @@
 .. _doc_audio_effects:
 
-Audio Effects
+Audio effects
 =============
 
 Godot includes several audio effects that can be added to an audio bus to
