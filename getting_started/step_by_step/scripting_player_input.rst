@@ -140,4 +140,5 @@ button presses from the users. There are quite a few more.
 The ``Input`` singleton allows you to react to the players' input anywhere in
 your code. In particular, you'll get to use it in the ``_process()`` loop.
 
-In the next lesson, we'll build upon
+In the next lesson, we'll build upon the relationship between scripts and nodes
+by having our nodes trigger code in scripts.
