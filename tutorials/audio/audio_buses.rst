@@ -91,7 +91,7 @@ one way or another and are applied in order.
 
 .. image:: img/audio_buses4.png
 
-For information on what each effect does see :ref:`doc_audio_effects`.
+For information on what each effect does, see :ref:`doc_audio_effects`.
 
 Automatic bus disabling
 -----------------------
