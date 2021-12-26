@@ -53,6 +53,12 @@ Even if the function has returned already, the thread must collect it, so call
 :ref:`Thread.wait_to_finish()<class_Thread_method_wait_to_finish>`, which will
 wait until the thread is done (if not done yet), then properly dispose of it.
 
+.. warning::
+
+    Creating threads at run-time is slow on Windows and should be avoided to
+    prevent stuttering. Semaphores, explained later on this page, should be used
+    instead.
+
 Mutexes
 -------
 
