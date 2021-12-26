@@ -447,7 +447,8 @@ We want ``Player`` to detect when it's hit by an enemy, but we haven't
 made any enemies yet! That's OK, because we're going to use Godot's
 *signal* functionality to make it work.
 
-Add the following at the top of the script, after ``extends Area2D``:
+Add the following at the top of the script. If you're using GDScript add it after
+``extends Area2D``, and if you're using C# after ``using System;``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
