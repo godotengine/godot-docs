@@ -229,10 +229,17 @@ mode, the track interpolation, and the loop mode.
 The update mode of a track tells Godot when to update the property
 values. This can be:
 
--  Continuous: Update the property on each frame
--  Discrete: Only update the property on keyframes
--  Trigger: Only update the property on keyframes or triggers
--  Capture: The current value of a property is remembered, and it will blend with the first animation key found
+-  **Continuous:** Update the property on each frame.
+-  **Discrete:** Only update the property on keyframes.
+-  **Trigger:** Only update the property on keyframes or triggers.
+   Triggers are a type of keyframe used by the
+   ``current_animation`` property of a :ref:`class_AnimationPlayer`,
+   and Animation Playback tracks.
+-  **Capture:** If the first keyframe's time is greater than ``0.0``, the
+   current value of the property will be remembered and
+   will be blended with the first animation key. For example, you
+   could use the Capture mode to move a node that's located anywhere
+   to a specific location.
 
 .. figure:: img/animation_track_rate.png
    :alt: Track mode
