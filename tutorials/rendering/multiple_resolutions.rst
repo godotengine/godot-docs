@@ -135,8 +135,8 @@ demonstrate the effect of different stretch modes. A single sprite, also
 
    .. image:: img/stretch_disabled_expand.gif
 
--  **Stretch Mode = 2D**: In this mode, the size specified in
-   display/width and display/height in the project settings is
+-  **Stretch Mode = 2D**: In this mode, the base size specified in
+   width and height in the project settings is
    stretched to cover the whole screen (taking the **Stretch Aspect**
    setting into account). This means that everything is rendered
    directly at the target resolution. 3D is largely unaffected,
