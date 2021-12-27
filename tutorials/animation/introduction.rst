@@ -237,10 +237,11 @@ values. This can be:
    Triggers are a type of keyframe used by the
    ``current_animation`` property of a :ref:`class_AnimationPlayer`,
    and Animation Playback tracks.
--  Capture: if the first keyframes time is greater than 0 the
-   current value of the property will be remembered, and it
-   will blend with the first animation key. For example, you
-   could move a node that's anywhere to a specific location.
+-  Capture: if the first keyframe's time is greater than ``0.0``, the
+   current value of the property will be remembered and
+   will be blended with the first animation key. For example, you
+   could use the Capture mode to move a node that's located anywhere
+   to a specific location.
 
 .. figure:: img/animation_track_rate.png
    :alt: Track mode
