@@ -233,9 +233,14 @@ values. This can be:
 
 -  Continuous: Update the property on each frame
 -  Discrete: Only update the property on keyframes
--  Trigger: Only update the property on keyframes or triggers
--  Capture: Remember the current value of the property, and blend it with the
-   first animation key
+-  Trigger: Only update the property on keyframes or triggers.
+   Triggers are a type of keyframe used by the
+   ``current_animation`` property of a :ref:`class_AnimationPlayer`,
+   and Animation Playback tracks.
+-  Capture: if the first keyframes time is greater than 0 the
+   current value of the property will be remembered, and it
+   will blend with the first animation key. For example, you
+   could move a node that's anywhere to a specific location.
 
 .. figure:: img/animation_track_rate.png
    :alt: Track mode
