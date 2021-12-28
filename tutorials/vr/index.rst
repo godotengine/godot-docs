@@ -1,10 +1,11 @@
-VR
-==
+XR (AR/VR)
+==========
 
 .. toctree::
    :maxdepth: 1
    :name: toc-tutorials-vr
 
-   vr_primer
-   vr_starter_tutorial/index
-   developing_for_oculus_quest
+   xr_primer
+   openxr/index
+   oculus_mobile/index
+   openvr/index

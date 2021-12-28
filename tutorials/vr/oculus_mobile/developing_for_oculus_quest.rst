@@ -7,7 +7,7 @@ Introduction
 ------------
 
 This tutorial goes over how to get started developing for the
-*Oculus Quest* with an official Godot plugin.
+*Meta Quest* with the Godot Oculus Mobile plugin.
 
 Before starting, there are two things you need to do:
 
@@ -97,28 +97,13 @@ Now save and close the export window.
 Setting Up Your Quest
 ---------------------
 
-Finally take out your phone, when you got your Quest you needed to
-install an Oculus app on it and link it up to your Quest. Start the
-Oculus app. Press the settings cogwheel on the bottom right hand side.
-Select your Quest:
+Follow `these instructions <https://developer.oculus.com/documentation/native/android/mobile-device-setup/>`__ to 
+setup your device for development. 
 
-.. image:: img/quest_phone_settings.png
-
-Select "More Settings", and select "Developer Mode":
-
-.. image:: img/quest_phone_settings_2.png
-
-Now turn developer mode on:
-
-.. image:: img/quest_developer_mode.png
-
-This allows you to deploy your games to the Quest.
-
-Connect the Quest to your PC with the provided USB cable. Put the Quest
-on, it may give a few dialogs to give the PC permission to deploy apps.
-Now hit the little Android button that should be visible in the top right
-hand side of your Godot window. It should build your game and export it
-to the Quest.
+Once your device is set up and connected, click the **Android logo** that should be visible in the top-right corner of the Godot editor.
+When clicked, it exports your project and runs it on the connected device.
+If you do not see this Android logo, make sure you have create an Android export preset
+and that the preset is marked as **Runnable** in the Export dialog.
 
 The above does the bare minimum to get your project running on the Quest,
 it's not very exciting. Holger Dammertz has made a great toolkit for the

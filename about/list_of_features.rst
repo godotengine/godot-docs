@@ -488,8 +488,11 @@ XR support (AR and VR)
 ^^^^^^^^^^^^^^^^^^^^^^
 
 - Support for ARKit on iOS out of the box.
-- Support for the OpenXR and OpenVR APIs.
-- Popular VR headsets like the Oculus Quest and HTC Vive are supported thanks to plugins.
+- Support for the OpenXR APIs.
+  
+   - Includes support for popular headsets like the Meta Quest and the Valve Index.
+  
+- Support for the OpenVR APIs.
 
 GUI system
 ^^^^^^^^^^
