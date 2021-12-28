@@ -112,7 +112,7 @@ The main documentation for the site is organized into the following sections:
    tutorials/scripting/index
    tutorials/shaders/index
    tutorials/ui/index
-   tutorials/vr/index
+   tutorials/xr/index
 
 
 .. toctree::

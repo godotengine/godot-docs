@@ -495,9 +495,12 @@ Mobile
 XR support (AR and VR)
 ^^^^^^^^^^^^^^^^^^^^^^
 
+- Out of the box support for OpenXR.
+
+   - Including support for popular headsets like the Meta Quest and the Valve Index.
+
 - Support for ARKit on iOS out of the box.
-- Support for the OpenXR and OpenVR APIs.
-- Popular VR headsets like the Oculus Quest and HTC Vive are supported thanks to plugins.
+- Support for the OpenVR APIs.
 
 GUI system
 ^^^^^^^^^^
