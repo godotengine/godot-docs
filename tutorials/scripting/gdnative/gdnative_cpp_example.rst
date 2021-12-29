@@ -340,7 +340,7 @@ of how much time has passed and calculates a new position for our sprite using a
 sine and cosine function. What stands out is calling
 ``owner->set_position`` to call one of the build in methods of our Sprite2D. This
 is because our class is a container class; ``owner`` points to the actual Sprite2D
-node our script relates to. In the upcoming NativeScript 1.1, ``set_position``
+node our script relates to. Since NativeScript 1.1, ``set_position``
 can be called directly on our class.
 
 There is one more C++ file we need; we'll name it ``gdlibrary.cpp``. Our
