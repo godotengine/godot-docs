@@ -174,7 +174,7 @@ shader, outside the ``vertex()`` function.
   uniform sampler2D noise;
 
 This will allow you to send a noise texture to the shader. Now look in the
-inspecter under your material. You should see a section called "Shader Params".
+inspector under your material. You should see a section called "Shader Params".
 If you open it up, you'll see a section called "noise".
 
 Click beside it where it says "[empty]" and select "New NoiseTexture". Then in
