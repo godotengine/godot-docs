@@ -12,11 +12,13 @@ system. When exporting for Windows, the exporter takes all the project files and
 creates a ``data.pck`` file. This file is bundled with a specially optimized
 binary that is smaller, faster and does not contain the editor and debugger.
 
-Requirements
+Code signing
 ------------
 
--  To enable code signing, you must have the ``Windows 10 SDK`` (on Windows) or `osslsigncode <https://github.com/mtrojnar/osslsigncode>`__ (on any other OS) installed.
--  Download the Godot export templates. Use the Godot menu: ``Editor > Manage Export Templates``.
+Godot is capable of automatic code signing on export. To do this you must have the
+``Windows SDK`` (on Windows) or `osslsigncode <https://github.com/mtrojnar/osslsigncode>`__
+(on any other OS) installed. You will also need a package signing certificate,
+information on creating one can be found `here <https://docs.microsoft.com/en-us/windows/win32/appxpkg/how-to-create-a-package-signing-certificate?redirectedfrom=MSDN>`__.
 
 .. warning::
 
@@ -27,3 +29,23 @@ Requirements
     antivirus programs. Therefore, it's recommended to avoid using it unless
     you're distributing your project via Steam as it bypasses code signing and
     antivirus checks.
+
+Setup
+~~~~~
+
+Settings need to be changed in two places. First, in the editor settings, under
+**Export > Windows**. Click on the folder next to the ``Sign Tool`` setting, if
+you're using Windows navigate to and select ``SignTool.exe``, if you're on a different
+OS select ``osslsigncode``.
+
+.. image:: img/windows_editor_settings.png
+
+The second location is the Windows export preset, which can be found in
+**Project > Export...**. Add a windows desktop preset if you haven't already.
+Under options there is a code signing category.
+
+.. image:: img/windows_export_codesign.png
+
+``Enabled`` must be set to true, and ``Identity`` must be set to the signing
+certificate. The other settings can be adjusted as needed. Once this is Done
+Godot will sign your project on export.
