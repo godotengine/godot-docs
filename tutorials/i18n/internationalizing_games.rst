@@ -202,20 +202,17 @@ Icons with left and right pointing arrows which may need to be reversed for Arab
 and Hebrew locales, in case they indicate movement or direction (e.g. back/forward
 buttons), otherwise they can remain the same.
 
-Testing Translations
+Testing translations
 --------------------
 
-You may want to test a games translation before release, Godot provides two ways to
+You may want to test a project's translation before releasing it. Godot provides two ways to
 do this.
 
-First, in the project settings under **Input Devices > Locale** there is a ``Test`` property.
-Set it to the locale that you want to test and Godot will run the project with that locale
-from the editor.
+First, in the Project Settings, under **Input Devices > Locale**, there is a **Test** property. Set this property to the locale code of the language you want to test. Godot will run the project with that locale when the project is run (either from the editor or when exported).
 
 ..image:: img/locale_test.png
 
-Keep in mind that as this is a project setting it will show up in version control, and it
-should be set back to nothing before committing changes.
+Keep in mind that since this is a project setting, it will show up in version control when it is set to a non-empty value. Therefore, it should be set back to an empty value before committing changes to version control.
 
 Translations can also be tested when running Godot from the command line.
 For example, to test a game in French, the following argument can be
