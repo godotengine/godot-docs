@@ -106,8 +106,8 @@ Tools must be disabled in order to use this flag, as the editor is not designed
 to operate without 3D support. Without it, the binary size can be reduced
 by about 15%.
 
-Disabling advanced GUI nodes
-----------------------------
+Disabling advanced GUI objects
+------------------------------
 
 - **Space savings:** Moderate
 - **Difficulty:** Easy
@@ -119,6 +119,33 @@ TextEdit or GraphEdit. They can be disabled using a build flag:
 ::
 
     scons p=windows target=release tools=no disable_advanced_gui=yes
+
+This is everything that will be disabled:
+
+- FileDialog
+- PopupMenu
+- Tree
+- TextEdit
+- CodeEdit
+- SyntaxHighlighter
+- CodeHighlighter
+- TreeItem
+- OptionButton
+- SpinBox
+- ColorPicker
+- ColorPickerButton
+- RichTextlabel
+- RichTextEffect
+- CharFXTransform
+- AcceptDialog
+- ConfirmationDialog
+- MarginContainer
+- SubViewportContainer
+- SplitContainer
+- HSplitContainer
+- VSplitContainer
+- GraphNode
+- GraphEdit
 
 Disabling unwanted modules
 --------------------------
