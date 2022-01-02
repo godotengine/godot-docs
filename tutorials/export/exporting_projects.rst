@@ -103,8 +103,8 @@ option in the editor:
 
 .. _doc_exporting_projects_export_mode:
 
-Export mode
-~~~~~~~~~~~
+Resource options
+~~~~~~~~~~~~~~~~
 
 When exporting, Godot makes a list of all the files to export and then
 creates the package. There are 3 different modes for exporting:
@@ -127,6 +127,11 @@ select every scene or resource you want to export.
     Files and folders whose name begin with a period will never be included in
     the exported project. This is done to prevent version control folders like
     ``.git`` from being included in the exported PCK file.
+
+Below the list of resources are two filters that can be setup. The first allows
+non resource files such as ``.txt``,``.json`` and ``.csv`` to be exported with
+the project. The second filter can be used to exclude every file of a certain
+type without manually deselecting every one. For example, ``.png`` files.
 
 Exporting from the command line
 -------------------------------
