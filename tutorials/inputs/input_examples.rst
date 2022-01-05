@@ -213,6 +213,19 @@ the :kbd:`T`:
 .. tip:: See :ref:`@GlobalScope_KeyList <enum_@GlobalScope_KeyList>` for a list of keycode
         constants.
 
+.. warning::
+
+    Due to *keyboard ghosting*, not all key inputs may be registered at a given time
+    if you press too many keys at once. Due to their location on the keyboard,
+    certain keys are more prone to ghosting than others. Some keyboards feature
+    antighosting at a hardware level, but this feature is generally
+    not present on low-end keyboards and laptop keyboards.
+
+    As a result, it's recommended to use a default keyboard layout that is designed to work well
+    on a keyboard without antighosting. See
+    `this Gamedev Stack Exchange question <https://gamedev.stackexchange.com/a/109002>`__
+    for more information.
+
 Keyboard modifiers
 ~~~~~~~~~~~~~~~~~~
 
