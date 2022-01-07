@@ -132,7 +132,7 @@ Go to the Run tab and click on **Add Configuration...**. Select **C# Godot**
 from the dropdown menu. Open the ``tasks.json`` and ``launch.json`` files that
 were created. Change the executable setting in ``launch.json`` and  command
 settings in ``tasks.json`` to your Godot executable path. Now, when you start
-the debugger in VS Code your Godot project will run.
+the debugger in VS Code, your Godot project will run.
 
 Visual Studio (Windows only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
