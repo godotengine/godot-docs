@@ -40,7 +40,7 @@ the geometry that will be affected.
 
 .. image:: img/giprobe_wrap.png
 
-Afterwards, make sure to enable the geometry will be baked. This is important in
+Afterwards, make sure to enable the "Use In Baked" property on the geometry instances. This is important in
 order for ``GIProbe`` to recognize objects, otherwise they will be ignored:
 
 .. image:: img/giprobe_bake_property.png
