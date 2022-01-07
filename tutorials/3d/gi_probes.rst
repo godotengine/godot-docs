@@ -40,8 +40,9 @@ the geometry that will be affected.
 
 .. image:: img/giprobe_wrap.png
 
-Afterwards, make sure to enable the geometry will be baked. This is important in
-order for ``GIProbe`` to recognize objects, otherwise they will be ignored:
+Afterwards, make sure to enable the **Use In Baked Light** property on the geometry instances
+in the inspector. This is required for ``GIProbe`` to recognize objects,
+otherwise they will be ignored:
 
 .. image:: img/giprobe_bake_property.png
 
