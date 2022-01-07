@@ -128,8 +128,11 @@ In Visual Studio Code:
           for the C# tools plugin to work.
 
 To configure a project for debugging open the Godot project folder in VS Code.
-Go to the Run tab and click on **create a launch.json file**. Select **C# Godot** from the dropdown
-menu. Now, when you start the debugger in VS Code your Godot project will run.
+Go to the Run tab and click on **Add Configuration...**. Select **C# Godot**
+from the dropdown menu. Open the ``tasks.json`` and ``launch.json`` files that
+were created. Change the executable setting in ``launch.json`` and  command
+settings in ``tasks.json`` to your Godot executable path. Now, when you start
+the debugger in VS Code, your Godot project will run.
 
 Visual Studio (Windows only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
