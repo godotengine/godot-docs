@@ -122,10 +122,10 @@ Note that RGTC compression affects the resulting normal map image. You will have
 
 .. note::
 
-  Godot requires the normal map to use the X+, Y- and Z+ coordinates. In other
-  words, if you've imported a material made to be used with another engine, you
-  may have to convert the normal map so its Y axis is flipped. Otherwise, the
-  normal map direction may appear to be inverted on the Y axis.
+  Godot requires the normal map to use the X+, Y+ and Z+ coordinates, this is
+  known as OpenGL style. If you've imported a material made to be used with
+  another engine it may be DirectX style, in which case the normal map needs to
+  be converted so its Y axis is flipped.
 
   More information about normal maps (including a coordinate order table for
   popular engines) can be found
