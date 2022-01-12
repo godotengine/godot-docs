@@ -223,6 +223,11 @@ Reference
 
     - ``[ol type={type}]{items}[/ol]``
 
+  * - | **lb**, **rb**
+      | Adds ``[`` and ``]`` respectively. Allows escaping BBCode markup.
+
+    - | ``[lb]b[rb]text[lb]/b[rb]`` will display as ``[b]text[/b]``.
+
   * - | Several Unicode control character can be added using their own tags.
 
     - | ``[lrm]``, ``[rlm]``, ``[lre]``, ``[rle]``, ``[lro]``, ``[rlo]``,
