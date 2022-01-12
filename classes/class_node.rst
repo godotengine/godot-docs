@@ -420,7 +420,7 @@ Constants
 
 - **NOTIFICATION_ENTER_TREE** = **10** --- Notification received when the node enters a :ref:`SceneTree<class_SceneTree>`.
 
-- **NOTIFICATION_EXIT_TREE** = **11** --- Notification received when the node is about to exit a :ref:`SceneTree<class_SceneTree>`.
+- **NOTIFICATION_EXIT_TREE** = **11** --- Notification received after the node exits a :ref:`SceneTree<class_SceneTree>`.
 
 - **NOTIFICATION_MOVED_IN_PARENT** = **12** --- Notification received when the node is moved in the parent.
 
