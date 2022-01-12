@@ -57,8 +57,7 @@ the top-level ``index.html`` in a web browser.
           <https://github.com/godotengine/godot-docs/issues>`_,
           help us `translate the documentation
           <https://hosted.weblate.org/engage/godot-engine/>`_ into your
-          language, or talk to us on either the ``#documentation``
-          channel on `Discord <https://discord.gg/zH7NUgz>`_, or the
+          language, or talk to us on the
           ``#documentation`` channel on the `Godot Contributors Chat
           <https://chat.godotengine.org/>`_!
 
