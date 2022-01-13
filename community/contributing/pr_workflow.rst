@@ -351,6 +351,10 @@ Git will ask you for your username and password, and the changes will be sent
 to your remote. If you check the fork's page on GitHub, you should see a new
 branch with your added commits.
 
+.. note:: Since july 2020, GitHub changed the way you verify yourself in HTTPS clones.
+          The password you must introduce is a `PAT
+https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token`_
+
 Issuing a pull request
 ----------------------
 
