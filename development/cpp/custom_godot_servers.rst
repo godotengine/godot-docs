@@ -164,7 +164,7 @@ an initialization state and a cleanup procedure.
 	}
 
 	Variant HilbertHotel::get_bus_info(RID id) {
-		InfiniteBus *)bus = bus_owner.getornull(id);
+		InfiniteBus *bus = bus_owner.getornull(id);
 
 		if (bus) {
 			Dictionary d;
