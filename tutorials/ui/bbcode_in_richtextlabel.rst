@@ -181,6 +181,16 @@ Reference
 
     - ``[color={code/name}]{text}[/color]``
 
+  * - | **bgcolor**
+      | Draws the color behind ``{text}``. Accepts same values as the ``color`` tag.
+
+    - ``[bgcolor={code/name}]{text}[/bgcolor]``
+
+  * - | **fgcolor**
+      | Draws the color in front of ``{text}``. Accepts same values as the ``color`` tag.
+
+    - ``[fgcolor={code/name}]{text}[/fgcolor]``
+
   * - | **outline_size**
       | Use custom font outline size for ``{text}``.
 
@@ -191,7 +201,7 @@ Reference
   * - | **outline_color**
       | Use custom outline color for ``{text}``. Accepts same values as the ``color`` tag.
 
-    - | ``[outline_color={color}]``
+    - | ``[outline_color={code/name}]``
       | ``{text}``
       | ``[/outline_color]``
 
