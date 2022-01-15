@@ -692,6 +692,8 @@ Sorts the array.
  .. code-tab:: csharp
 
     // There is no sort support for Godot.Collections.Array
+ 
+For natural sorting the same array you can use ``strings.sort_custom(func(a,b): return a.naturalnocasecmp_to(b) < 0)``
 
 
 
