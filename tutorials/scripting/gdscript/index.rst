@@ -7,6 +7,7 @@ GDScript
 
    gdscript_basics
    gdscript_advanced
+   gdscript_classes
    gdscript_exports
    gdscript_documentation_comments
    gdscript_styleguide

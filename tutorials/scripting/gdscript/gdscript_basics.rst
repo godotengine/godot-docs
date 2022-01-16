@@ -16,16 +16,9 @@ allowing great flexibility for content creation and integration.
 
 GDScript is entirely independent from Python and is not based on it.
 
-History
--------
-
-.. note::
-
-    Documentation about GDScript's history has been moved to the
-    :ref:`Frequently Asked Questions <doc_faq_what_is_gdscript>`.
-
 Example of GDScript
 -------------------
+
 
 Some people can learn better by taking a look at the syntax, so
 here's an example of how GDScript looks.
@@ -136,7 +129,7 @@ as an identifier. Additionally, identifiers must not begin with a digit.
 Identifiers are case-sensitive (``foo`` is different from ``FOO``).
 
 Keywords
-~~~~~~~~
+--------
 
 The following is the list of keywords supported by the language. Since
 keywords are reserved words (tokens), they can't be used as identifiers.
@@ -213,6 +206,90 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | NAN        | NAN (not a number) constant. Used as impossible result from calculations.                                                                         |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Awaiting for signals
+~~~~~~~~~~~~~~~~~~~~
+
+The ``await`` keyword can be used to create `coroutines <https://en.wikipedia.org/wiki/Coroutine>`_
+which waits until a signal is emitted before continuing execution. Using the ``await`` keyword with a signal or a
+call to a function that is also a coroutine will immediately return the control to the caller. When the signal is
+emitted (or the called coroutine finishes), it will resume execution from the point on where it stopped.
+
+For example, to stop execution until the user presses a button, you can do something like this::
+
+    func wait_confirmation():
+        print("Prompting user")
+        await $Button.button_up # Waits for the button_up signal from Button node.
+        print("User confirmed")
+        return true
+
+In this case, the ``wait_confirmation`` becomes a coroutine, which means that the caller also needs to await for it::
+
+    func request_confirmation():
+        print("Will ask the user")
+        var confirmed = await wait_confirmation()
+        if confirmed:
+            print("User confirmed")
+        else:
+            print("User cancelled")
+
+Note that requesting a coroutine's return value without ``await`` will trigger an error::
+
+    func wrong():
+        var confirmed = wait_confirmation() # Will give an error.
+
+However, if you don't depend on the result, you can just call it asynchronously, which won't stop execution and won't
+make the current function a coroutine::
+
+    func okay():
+        wait_confirmation()
+        print("This will be printed immediately, before the user press the button.")
+
+If you use await with an expression that isn't a signal nor a coroutine, the value will be returned immediately and the
+function won't give the control back to the caller::
+
+    func no_wait():
+        var x = await get_five()
+        print("This doesn't make this function a coroutine.")
+
+    func get_five():
+        return 5
+
+This also means that returning a signal from a function that isn't a coroutine will make the caller await on that signal::
+
+    func get_signal():
+        return $Button.button_up
+
+    func wait_button():
+        await get_signal()
+        print("Button was pressed")
+
+.. note:: Unlike ``yield`` in previous Godot versions, you cannot obtain the function state object. This in spirit of
+          type-safety, because a function cannot say that returns an ``int`` but actually give a function state object
+          during runtime.
+
+Assert keyword
+~~~~~~~~~~~~~~
+
+The ``assert`` keyword can be used to check conditions in debug builds. These
+assertions are ignored in non-debug builds. This means that the expression
+passed as argument won't be evaluated in a project exported in release mode.
+Due to this, assertions must **not** contain expressions that have
+side effects. Otherwise, the behavior of the script would vary
+depending on whether the project is run in a debug build.
+
+::
+
+    # Check that 'i' is 0. If 'i' is not 0, an assertion error will occur.
+    assert(i == 0)
+
+When running a project from the editor, the project will be paused if an
+assertion error occurs.
+
+You can optionally pass a custom error message to be shown if the assertion
+fails::
+
+    assert(enemy_power < 256, "Enemy is too powerful!")
 
 Operators
 ~~~~~~~~~
@@ -307,7 +384,7 @@ The following ways to write numbers are all valid::
     0b11_00_11_00  # Equal to 0b11001100.
 
 Annotations
-~~~~~~~~~~~
+-----------
 
 There are some special tokens in GDScript that act like keywords but are not,
 they are *annotations* instead. Every annotation start with the ``@`` character
@@ -392,6 +469,56 @@ Here's the list of available annotations:
 |                              |                                                                                                   |
 | ``@export_flags_3d_physics`` |                                                                                                   |
 +------------------------------+---------------------------------------------------------------------------------------------------+
+
+.. _doc_gdscript_onready_annotation:
+
+`@onready` annotation
+~~~~~~~~~~~~~~~~~~~~~
+
+When using nodes, it's common to desire to keep references to parts
+of the scene in a variable. As scenes are only warranted to be
+configured when entering the active scene tree, the sub-nodes can only
+be obtained when a call to ``Node._ready()`` is made.
+
+::
+
+    var my_label
+
+
+    func _ready():
+        my_label = get_node("MyLabel")
+
+This can get a little cumbersome, especially when nodes and external
+references pile up. For this, GDScript has the ``@onready`` annotation, that
+defers initialization of a member variable until ``_ready()`` is called. It
+can replace the above code with a single line::
+
+    @onready var my_label = get_node("MyLabel")
+
+.. _doc_gdscript_tool_mode:
+
+`@tool` annotation
+~~~~~~~~~~~~~~~~~~
+
+By default, scripts don't run inside the editor and only the exported
+properties can be changed. In some cases, it is desired that they do run
+inside the editor (as long as they don't execute game code or manually
+avoid doing so). For this, the ``@tool`` annotation exists and must be
+placed at the top of the file::
+
+    @tool
+    extends Button
+
+    func _ready():
+        print("Hello")
+
+
+See :ref:`doc_running_code_in_the_editor` for more information.
+
+.. warning:: Be cautious when freeing nodes with ``queue_free()`` or ``free()``
+             in a tool script (especially the script's owner itself). As tool
+             scripts run their code in the editor, misusing them may lead to
+             crashing the editor.
 
 Comments
 ~~~~~~~~
@@ -853,7 +980,7 @@ dictionary of that name.
 
 
 Functions
-~~~~~~~~~
+---------
 
 Functions always belong to a `class <Classes_>`_. The scope priority for
 variable look-up is: local → class member → global. The ``self`` variable is
@@ -942,7 +1069,7 @@ useful to make libraries of helper functions::
 
 
 Statements and control flow
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 Statements are standard and can be assignments, function calls, control
 flow structures, etc (see below). ``;`` as a statement separator is
@@ -1217,318 +1344,12 @@ There are 6 pattern types:
             "Sword", "Splash potion", "Fist":
                 print("Yep, you've taken damage")
 
-Classes
-~~~~~~~
 
-By default, all script files are unnamed classes. In this case, you can only
-reference them using the file's path, using either a relative or an absolute
-path. For example, if you name a script file ``character.gd``::
-
-   # Inherit from 'Character.gd'.
-
-   extends "res://path/to/character.gd"
-
-   # Load character.gd and create a new node instance from it.
-
-   var Character = load("res://path/to/character.gd")
-   var character_node = Character.new()
-
-.. _doc_gdscript_basics_class_name:
-
-Registering named classes
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can give your class a name to register it as a new type in Godot's
-editor. For that, you use the ``class_name`` keyword. You can optionally use
-the ``@icon`` annotation with a path to an image, to use it as an icon. Your
-class will then appear with its new icon in the editor::
-
-   # Item.gd
-
-   extends Node
-   class_name Item
-   @icon("res://interface/icons/item.png")
-
-.. image:: img/class_name_editor_register_example.png
-
-Here's a class file example:
-
-::
-
-    # Saved as a file named 'character.gd'.
-
-    class_name Character
-
-
-    var health = 5
-
-
-    func print_health():
-        print(health)
-
-
-    func print_this_script_three_times():
-        print(get_script())
-        print(ResourceLoader.load("res://character.gd"))
-        print(Character)
-
-If you want to use ``extends`` too, you can keep both on the same line::
-
-    class_name MyNode extends Node
-
-.. note:: Godot's class syntax is compact: it can only contain member variables or
-          functions. You can use static functions, but not static member variables. In the
-          same way, the engine initializes variables every time you create an instance,
-          and this includes arrays and dictionaries. This is in the spirit of thread
-          safety, since scripts can be initialized in separate threads without the user
-          knowing.
-
-
-Inheritance
-^^^^^^^^^^^
-
-A class (stored as a file) can inherit from:
-
-- A global class.
-- Another class file.
-- An inner class inside another class file.
-
-Multiple inheritance is not allowed.
-
-Inheritance uses the ``extends`` keyword::
-
-    # Inherit/extend a globally available class.
-    extends SomeClass
-
-    # Inherit/extend a named class file.
-    extends "somefile.gd"
-
-    # Inherit/extend an inner class in another file.
-    extends "somefile.gd".SomeInnerClass
-
-.. note::
-
-    If inheritance is not explicitly defined, the class will default to inheriting
-    :ref:`class_RefCounted`.
-
-To check if a given instance inherits from a given class,
-the ``is`` keyword can be used::
-
-    # Cache the enemy class.
-    const Enemy = preload("enemy.gd")
-
-    # [...]
-
-    # Use 'is' to check inheritance.
-    if entity is Enemy:
-        entity.apply_damage()
-
-To call a function in a *super class* (i.e. one ``extend``-ed in your current
-class), user the ``super`` keyword::
-
-    super(args)
-
-This is especially useful because functions in extending classes replace
-functions with the same name in their super classes. If you still want to
-call them, you can use ``super``::
-
-    func some_func(x):
-        super(x) # Calls the same function on the super class.
-
-If you need to call a different function from the super class, you can specify
-the function name with the attribute operator::
-
-    func overriding():
-        return 0 # This overrides the method in the base class.
-
-    func dont_override():
-        return super.overriding() # This calls the method as defined in the base class.
-
-
-Class constructor
-^^^^^^^^^^^^^^^^^
-
-The class constructor, called on class instantiation, is named ``_init``. If you
-want to call the base class constructor, you can also use the ``super`` syntax.
-Note that every class has an implicit constructor that it's always called
-(defining the default values of class variables). ``super`` is used to call the
-explicit constructor::
-
-    func _init(arg):
-       super("some_default", arg) # Call the custom base constructor.
-
-This is better explained through examples. Consider this scenario::
-
-    # State.gd (inherited class).
-    var entity = null
-    var message = null
-
-
-    func _init(e=null):
-        entity = e
-
-
-    func enter(m):
-        message = m
-
-
-    # Idle.gd (inheriting class).
-    extends "State.gd"
-
-
-    func _init(e=null, m=null):
-        super(e)
-        # Do something with 'e'.
-        message = m
-
-There are a few things to keep in mind here:
-
-1. If the inherited class (``State.gd``) defines a ``_init`` constructor that takes
-   arguments (``e`` in this case), then the inheriting class (``Idle.gd``) *must*
-   define ``_init`` as well and pass appropriate parameters to ``_init`` from ``State.gd``.
-2. ``Idle.gd`` can have a different number of arguments than the base class ``State.gd``.
-3. In the example above, ``e`` passed to the ``State.gd`` constructor is the same ``e`` passed
-   in to ``Idle.gd``.
-4. If ``Idle.gd``'s ``_init`` constructor takes 0 arguments, it still needs to pass some value
-   to the ``State.gd`` base class, even if it does nothing. This brings us to the fact that you
-   can pass expressions to the base constructor as well, not just variables, e.g.::
-
-    # Idle.gd
-
-    func _init():
-        super(5)
-
-Inner classes
-^^^^^^^^^^^^^
-
-A class file can contain inner classes. Inner classes are defined using the
-``class`` keyword. They are instanced using the ``ClassName.new()``
-function.
-
-::
-
-    # Inside a class file.
-
-    # An inner class in this class file.
-    class SomeInnerClass:
-        var a = 5
-
-
-        func print_value_of_a():
-            print(a)
-
-
-    # This is the constructor of the class file's main class.
-    func _init():
-        var c = SomeInnerClass.new()
-        c.print_value_of_a()
-
-.. _doc_gdscript_classes_as_resources:
-
-Classes as resources
-^^^^^^^^^^^^^^^^^^^^
-
-Classes stored as files are treated as :ref:`resources <class_GDScript>`. They
-must be loaded from disk to access them in other classes. This is done using
-either the ``load`` or ``preload`` functions (see below). Instancing of a loaded
-class resource is done by calling the ``new`` function on the class object::
-
-    # Load the class resource when calling load().
-    var MyClass = load("myclass.gd")
-
-    # Preload the class only once at compile time.
-    const MyClass = preload("myclass.gd")
-
-
-    func _init():
-        var a = MyClass.new()
-        a.some_function()
-
-Exports
-~~~~~~~
-
-.. note::
-
-    Documentation about exports has been moved to :ref:`doc_gdscript_exports`.
-
-.. _doc_gdscript_tool_mode:
-
-
-Properties
-~~~~~~~~~~
-
-Sometimes you want a class' member variable to do more than just hold data and actually perform
-some validation or computation whenever its value change. It may also be desired to
-encapsulate its access in some way.
-
-For this, GDScript provides a special syntax to define properties using the ``set`` and ``get``
-keywords after a variable declaration. Then you can define a code block that will be executed
-when the variable is accessed or assigned.
-
-Example::
-
-    var milliseconds: int = 0
-    var seconds: int:
-        get:
-            return milliseconds / 1000
-        set(value):
-            milliseconds = value * 1000
-
-Using the variable name inside its own setter or getter will directly access the underlying member, so it
-won't generate infinite recursion and saves you from explicitly declaring another variable::
-
-    signal changed(new_value)
-    var warns_when_changed = "some value":
-        get:
-            return warns_when_changed
-        set(value):
-            changed.emit(value)
-            warns_when_changed = value
-
-This backing member variable is not created if you don't use it.
-
-.. note::
-
-    Unlike ``setget`` in previous Godot versions, the properties setter and getter are **always** called,
-    even when accessed inside the same class (with or without prefixing with ``self.``). This makes the behavior
-    consistent. If you need direct access to the value, use another variable for direct access and make the property
-    code use that name.
-
-In case you want to split the code from the variable declaration or you need to share the code across multiple properties,
-you can use a different notation to use existing class functions::
-
-    var my_prop:
-        get = get_my_prop, set = set_my_prop
-
-This can also be done in the same line.
-
-Tool mode
-~~~~~~~~~
-
-By default, scripts don't run inside the editor and only the exported
-properties can be changed. In some cases, it is desired that they do run
-inside the editor (as long as they don't execute game code or manually
-avoid doing so). For this, the ``@tool`` annotation exists and must be
-placed at the top of the file::
-
-    @tool
-    extends Button
-
-    func _ready():
-        print("Hello")
-
-
-See :ref:`doc_running_code_in_the_editor` for more information.
-
-.. warning:: Be cautious when freeing nodes with ``queue_free()`` or ``free()``
-             in a tool script (especially the script's owner itself). As tool
-             scripts run their code in the editor, misusing them may lead to
-             crashing the editor.
 
 .. _doc_gdscript_basics_memory_management:
 
 Memory management
-~~~~~~~~~~~~~~~~~
+-----------------
 
 Godot implements reference counting to free certain instances that are no longer
 used, instead of a garbage collector, or requiring purely manual management.
@@ -1548,7 +1369,6 @@ To avoid reference cycles that can't be freed, a :ref:`class_WeakRef`
 function is provided for creating weak references, which allow access
 to the object without preventing a :ref:`class_RefCounted` from freeing.
 Here is an example:
-
 
 ::
 
@@ -1572,263 +1392,3 @@ Here is an example:
 Alternatively, when not using references, the
 ``is_instance_valid(instance)`` can be used to check if an object has been
 freed.
-
-.. _doc_gdscript_signals:
-
-Signals
-~~~~~~~
-
-Signals are a tool to emit messages from an object that other objects can react
-to. To create custom signals for a class, use the ``signal`` keyword.
-
-::
-
-   extends Node
-
-
-   # A signal named health_depleted.
-   signal health_depleted
-
-.. note::
-
-   Signals are a `Callback
-   <https://en.wikipedia.org/wiki/Callback_(computer_programming)>`_
-   mechanism. They also fill the role of Observers, a common programming
-   pattern. For more information, read the `Observer tutorial
-   <https://gameprogrammingpatterns.com/observer.html>`_ in the
-   Game Programming Patterns ebook.
-
-You can connect these signals to methods the same way you connect built-in
-signals of nodes like :ref:`class_Button` or :ref:`class_RigidBody`.
-
-In the example below, we connect the ``health_depleted`` signal from a
-``Character`` node to a ``Game`` node. When the ``Character`` node emits the
-signal, the game node's ``_on_Character_health_depleted`` is called::
-
-    # Game.gd
-
-    func _ready():
-        var character_node = get_node('Character')
-        character_node.health_depleted.connect(_on_Character_health_depleted)
-
-
-    func _on_Character_health_depleted():
-        get_tree().reload_current_scene()
-
-You can emit as many arguments as you want along with a signal.
-
-Here is an example where this is useful. Let's say we want a life bar on screen
-to react to health changes with an animation, but we want to keep the user
-interface separate from the player in our scene tree.
-
-In our ``Character.gd`` script, we define a ``health_changed`` signal and emit
-it with :ref:`Signal.emit() <class_Signal_method_emit>`, and from
-a ``Game`` node higher up our scene tree, we connect it to the ``Lifebar`` using
-the :ref:`Signal.connect() <class_Signal_method_connect>` method::
-
-    # Character.gd
-
-    ...
-    signal health_changed
-
-
-    func take_damage(amount):
-        var old_health = health
-        health -= amount
-
-        # We emit the health_changed signal every time the
-        # character takes damage.
-        health_changed.emit(old_health, health)
-    ...
-
-::
-
-    # Lifebar.gd
-
-    # Here, we define a function to use as a callback when the
-    # character's health_changed signal is emitted.
-
-    ...
-    func _on_Character_health_changed(old_value, new_value):
-        if old_value > new_value:
-            progress_bar.modulate = Color.red
-        else:
-            progress_bar.modulate = Color.green
-
-        # Imagine that `animate` is a user-defined function that animates the
-        # bar filling up or emptying itself.
-        progress_bar.animate(old_value, new_value)
-    ...
-
-In the ``Game`` node, we get both the ``Character`` and ``Lifebar`` nodes, then
-connect the character, that emits the signal, to the receiver, the ``Lifebar``
-node in this case.
-
-::
-
-    # Game.gd
-
-    func _ready():
-        var character_node = get_node('Character')
-        var lifebar_node = get_node('UserInterface/Lifebar')
-
-        character_node.health_changed.connect(lifebar_node._on_Character_health_changed)
-
-This allows the ``Lifebar`` to react to health changes without coupling it to
-the ``Character`` node.
-
-You can write optional argument names in parentheses after the signal's
-definition::
-
-    # Defining a signal that forwards two arguments.
-    signal health_changed(old_value, new_value)
-
-These arguments show up in the editor's node dock, and Godot can use them to
-generate callback functions for you. However, you can still emit any number of
-arguments when you emit signals; it's up to you to emit the correct values.
-
-.. image:: img/gdscript_basics_signals_node_tab_1.png
-
-GDScript can bind an array of values to connections between a signal
-and a method. When the signal is emitted, the callback method receives
-the bound values. These bound arguments are unique to each connection,
-and the values will stay the same.
-
-You can use this array of values to add extra constant information to the
-connection if the emitted signal itself doesn't give you access to all the data
-that you need.
-
-Building on the example above, let's say we want to display a log of the damage
-taken by each character on the screen, like ``Player1 took 22 damage.``. The
-``health_changed`` signal doesn't give us the name of the character that took
-damage. So when we connect the signal to the in-game console, we can add the
-character's name in the binds array argument::
-
-    # Game.gd
-
-    func _ready():
-        var character_node = get_node('Character')
-        var battle_log_node = get_node('UserInterface/BattleLog')
-
-        character_node.health_changed.connect(battle_log_node._on_Character_health_changed, [character_node.name])
-
-Our ``BattleLog`` node receives each element in the binds array as an extra argument::
-
-    # BattleLog.gd
-
-    func _on_Character_health_changed(old_value, new_value, character_name):
-        if not new_value <= old_value:
-            return
-
-        var damage = old_value - new_value
-        label.text += character_name + " took " + str(damage) + " damage."
-
-
-Awaiting for signals
-~~~~~~~~~~~~~~~~~~~~
-
-The ``await`` keyword can be used to create `coroutines <https://en.wikipedia.org/wiki/Coroutine>`_
-which waits until a signal is emitted before continuing execution. Using the ``await`` keyword with a signal or a
-call to a function that is also a coroutine will immediately return the control to the caller. When the signal is
-emitted (or the called coroutine finishes), it will resume execution from the point on where it stopped.
-
-For example, to stop execution until the user presses a button, you can do something like this::
-
-    func wait_confirmation():
-        print("Prompting user")
-        await $Button.button_up # Waits for the button_up signal from Button node.
-        print("User confirmed")
-        return true
-
-In this case, the ``wait_confirmation`` becomes a coroutine, which means that the caller also needs to await for it::
-
-    func request_confirmation():
-        print("Will ask the user")
-        var confirmed = await wait_confirmation()
-        if confirmed:
-            print("User confirmed")
-        else:
-            print("User cancelled")
-
-Note that requesting a coroutine's return value without ``await`` will trigger an error::
-
-    func wrong():
-        var confirmed = wait_confirmation() # Will give an error.
-
-However, if you don't depend on the result, you can just call it asynchronously, which won't stop execution and won't
-make the current function a coroutine::
-
-    func okay():
-        wait_confirmation()
-        print("This will be printed immediately, before the user press the button.")
-
-If you use await with an expression that isn't a signal nor a coroutine, the value will be returned immediately and the
-function won't give the control back to the caller::
-
-    func no_wait():
-        var x = await get_five()
-        print("This doesn't make this function a coroutine.")
-
-    func get_five():
-        return 5
-
-This also means that returning a signal from a function that isn't a coroutine will make the caller await on that signal::
-
-    func get_signal():
-        return $Button.button_up
-
-    func wait_button():
-        await get_signal()
-        print("Button was pressed")
-
-.. note:: Unlike ``yield`` in previous Godot versions, you cannot obtain the function state object. This in spirit of
-          type-safety, because a function cannot say that returns an ``int`` but actually give a function state object
-          during runtime.
-
-.. _doc_gdscript_onready_annotation:
-
-`@onready` annotation
-~~~~~~~~~~~~~~~~~~~~~
-
-When using nodes, it's common to desire to keep references to parts
-of the scene in a variable. As scenes are only warranted to be
-configured when entering the active scene tree, the sub-nodes can only
-be obtained when a call to ``Node._ready()`` is made.
-
-::
-
-    var my_label
-
-
-    func _ready():
-        my_label = get_node("MyLabel")
-
-This can get a little cumbersome, especially when nodes and external
-references pile up. For this, GDScript has the ``@onready`` annotation, that
-defers initialization of a member variable until ``_ready()`` is called. It
-can replace the above code with a single line::
-
-    @onready var my_label = get_node("MyLabel")
-
-Assert keyword
-~~~~~~~~~~~~~~
-
-The ``assert`` keyword can be used to check conditions in debug builds. These
-assertions are ignored in non-debug builds. This means that the expression
-passed as argument won't be evaluated in a project exported in release mode.
-Due to this, assertions must **not** contain expressions that have
-side effects. Otherwise, the behavior of the script would vary
-depending on whether the project is run in a debug build.
-
-::
-
-    # Check that 'i' is 0. If 'i' is not 0, an assertion error will occur.
-    assert(i == 0)
-
-When running a project from the editor, the project will be paused if an
-assertion error occurs.
-
-You can optionally pass a custom error message to be shown if the assertion
-fails::
-
-    assert(enemy_power < 256, "Enemy is too powerful!")
