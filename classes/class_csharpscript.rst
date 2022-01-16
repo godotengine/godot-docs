@@ -23,7 +23,7 @@ See also :ref:`GodotSharp<class_GodotSharp>`.
 Tutorials
 ---------
 
-- :doc:`../getting_started/scripting/c_sharp/index`
+- :doc:`../tutorials/scripting/c_sharp/index`
 
 Methods
 -------
