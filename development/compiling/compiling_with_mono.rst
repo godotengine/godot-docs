@@ -8,10 +8,15 @@ Compiling with Mono
 Requirements
 ------------
 
-- Mono 6.12.0 or greater
+- Mono 6.12.0 or greater (generally 64 bit)
 - MSBuild
 - NuGet
 - **On Linux/macOS only:** pkg-config
+
+You can use ``mono -V`` to check your Mono version.
+A build error like the one below may indicate your Mono version is too old:
+
+    'mono_runtime_set_pending_exception': identifier not found
 
 You may need to import necessary certificates for NuGet to perform HTTPS
 requests.
@@ -39,6 +44,7 @@ directory by passing the ``mono_prefix`` command-line option to SCons; e.g.
 ``scons [...] mono_prefix=%ProgramFiles%/Mono``.
 
 This is the directory that contains the subdirectories ``include`` and ``lib``.
+Note that as usual, paths including spaces must be wrapped in double quotes.
 
 Enable the Mono module
 ----------------------
