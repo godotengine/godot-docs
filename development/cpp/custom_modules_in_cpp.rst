@@ -40,6 +40,9 @@ and compile it <toc-devel-compiling>`.
 To create a new module, the first step is creating a directory inside
 ``modules/``. If you want to maintain the module separately, you can checkout
 a different VCS into modules and use it.
+New Version Changes
+(#include "core/class_db.h" --> #include "core/object/class_db.h"
+#include "core/reference.h" --> #include "core/object/ref_counted.h")
 
 The example module will be called "summator" (``godot/modules/summator``).
 Inside we will create a summator class:
