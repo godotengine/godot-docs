@@ -974,15 +974,15 @@ Inspector. The default font for ``Control`` nodes is small and doesn't scale
 well. There is a font file included in the game assets called
 "Xolonium-Regular.ttf". To use this font, do the following:
 
-1. Under "Custom Fonts", choose "New DynamicFont"
+1. Under "Theme Overrides/Fonts", choose "New DynamicFont"
 
-.. image:: img/custom_font1.png
+.. image:: img/theme_override_font1.png
 
-2. Click on the "DynamicFont" you added, and under "Font/Font Data",
-   choose "Load" and select the "Xolonium-Regular.ttf" file. You must
-   also set the font's ``Size``. A setting of ``64`` works well.
+2. Now in the new dropdown, under "Font/Font Data",
+   choose "Load" and select the "Xolonium-Regular.ttf" file from the fonts folder.
+   You must also set the font's ``Size`` in "Settings/Size". A setting of ``64`` works well.
 
-.. image:: img/custom_font2.png
+.. image:: img/theme_override_font2.png
 
 Once you've done this on the ``ScoreLabel``, you can click the down arrow next
 to the DynamicFont property and choose "Copy", then "Paste" it in the same place
