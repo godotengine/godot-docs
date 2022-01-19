@@ -5,8 +5,11 @@ The main game scene
 
 Now it's time to bring everything we did together into a playable game scene.
 
-Create a new scene and add a :ref:`Node <class_Node>` named ``Main``. Ensure you
-create a Node, **not** a Node2D. Click the "Instance" button and select your
+Create a new scene and add a :ref:`Node <class_Node>` named ``Main``. 
+
+*Note: the reason we are using Node, and not a Node2D, is because this node will be a container for handling game logic and does not itself require 2D functionality.*
+
+Click the "Instance" button and select your
 saved ``Player.tscn``.
 
 .. image:: img/instance_scene.png
