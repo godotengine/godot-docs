@@ -5,7 +5,7 @@ Sky shaders
 
 Sky shaders are a special type of shader used for drawing sky backgrounds
 and for updating radiance cubemaps which are used for image-based lighting
-(IBL). Sky shaders only have one processing function, the ``fragment()``
+(IBL). Sky shaders only have one processing function, the ``sky()``
 function.
 
 There are three places the sky shader is used.
@@ -55,7 +55,7 @@ the radiance cubemap:
 * ``TIME`` is used.
 * ``POSITION`` is used and the camera position changes.
 * If any ``LIGHTX_*`` properties are used and any
-  :ref:`DirectionalLight3D <class_DirectionalLight>` changes.
+  :ref:`DirectionalLight3D <class_DirectionalLight3D>` changes.
 * If any uniform is changed in the shader.
 * If the screen is resized and either of the subpasses are used.
 
@@ -102,15 +102,14 @@ a lower resolution than the rest of the sky:
 Built-ins
 ^^^^^^^^^
 
-Values marked as "in" are read-only. Values marked as "out" are for optional writing and will
-not necessarily contain sensible values. Values marked as "inout" provide a sensible default
-value, and can optionally be written to. Samplers are not subjects of writing and they are
-not marked.
+Values marked as "in" are read-only. Values marked as "out" are for optional
+writing and will not necessarily contain sensible values. Samplers cannot be 
+written to so they are not marked.
 
 Global built-ins
 ^^^^^^^^^^^^^^^^
 
-Global built-ins are available everywhere, including custom functions.
+Global built-ins are available everywhere, including in custom functions.
 
 There are 4 ``LIGHTX`` lights, accessed as ``LIGHT0``, ``LIGHT1``, ``LIGHT2``, and ``LIGHT3``.
 
@@ -141,7 +140,7 @@ There are 4 ``LIGHTX`` lights, accessed as ``LIGHT0``, ``LIGHT1``, ``LIGHT2``, a
 | in float **LIGHTX_SIZE**        | Angular diameter of ``LIGHTX`` in the sky. Expressed in degrees. For reference, the sun from earth is about 0.5 degrees. |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | in float **PI**                 | A ``PI`` constant (``3.141592``).                                                                                        |
-|                                 | A ration of circle's circumference to its diameter and amount of radians in half turn.                                   |
+|                                 | A ratio of a circle's circumference to its diameter and amount of radians in half turn.                                  |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | in float **TAU**                | A ``TAU`` constant (``6.283185``).                                                                                       |
 |                                 | An equivalent of ``PI * 2`` and amount of radians in full turn.                                                          |
