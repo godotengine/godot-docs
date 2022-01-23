@@ -33,7 +33,7 @@ because it only shows what lies behind:
     }
 
 The reason why textureLod must be used is because, when Godot copies back
-a chunk of the screen, it also does an efficient separatable gaussian blur to its mipmaps.
+a chunk of the screen, it also does an efficient separable gaussian blur to its mipmaps.
 
 This allows for not only reading from the screen, but reading from it with different amounts
 of blur at no cost.
