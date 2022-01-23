@@ -236,6 +236,64 @@ described in :ref:`doc_accessing_data_or_logic_from_object`.
 .. warning:: The script must operate in the ``tool`` mode so the above methods
              can work from within the editor.
 
+Using _get_property_list()
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+By adding an _get_property_list() function to your tool script, you can create advanced exports for the inspector. 
+
+Let's look at an example.
+
+::
+    func _get_property_list():
+        var property_list = []
+        property_list.append({
+            "name": "Name_of_your_export_variable",
+            "type": TYPE_INT,
+            "hint": PROPERTY_HINT_RANGE,
+            "usage": PROPERTY_USAGE_DEFAULT,    			
+            "hint_string": "-10, 10, 2"
+        })
+        return property_list
+
+In this example we are creating a number selector with a minimum value of -10, a maximum value of +10, that can be changed in increments of 2. 
+
+The "name" parameter is the name of your variable. You can group variables together using a "/" in the name. 
+e.g. "GroupA/Name_of_your_variable". This will tell the inspector ot display your variable in a collapsable group called "GroupA". For subgroups use "GroupA/SubgroupA/Variable"
+
+The "type" parameter is the variable's type.  e.g String, Int, Array, etc. For a list of types search for Variant.Type in https://docs.godotengine.org/en/stable/classes/class_@globalscope.html
+
+The "hint" parameter specifies how the inspector should display the variable. e.g. enum, string, int, range. For a list of options, search for PropertyHint section in: https://docs.godotengine.org/en/stable/classes/class_@globalscope.html
+
+The "usage" parameter specifies how this variable will be exported: e.g. whether it will be serialised and saved in save files, whether it should appear in the inspector. For a list of options see: https://docs.godotengine.org/en/stable/classes/class_@globalscope.html
+
+The "hint_string" parameter has different effects depending on the "hint" parameter you've set. In this case, the "hint_string" is a comma separated list of possible options for the dropdown box. If the "hint" was FILE, the "hint_string" would be dictating what file formats are acceptable. For more information about hint_string ... ?????
+
+Finally, the function returns the list of properties to append to the inspector. The return value should be an Array of Dictionary, as in this example. 
+
+Let's look at a more advanced example.
+
+Let's say we have a node, and we want the user to be able to select one of it's children as the "current_child". We can use scripting to present the options in the inspector as a dropdown box, like you see with an enum. 
+
+::
+    func _get_property_list():
+        var myhint: PoolStringArray = []
+        var children = get_children()    
+        for child in children:
+            myhint.push_back(child.name)
+
+        var property_list = []
+        property_list.append({
+            "name": "current_child",
+            "type": TYPE_STRING,
+            "hint": PROPERTY_HINT_ENUM,
+            "usage": PROPERTY_USAGE_DEFAULT,    			
+            "hint_string": myhint.join(",")
+        })
+        return property_list
+
+First we are creating an array and filling it with the names of all the child nodes. 
+Then we are setting the variable hint to PROPERTY_HINT_ENUM. This tells the inspector to display the variable as a dropdown box.
+Then we are setting the "hint_string" to a comma-separated list of option by using Array's "join" function to combine the items into a comma-separated string
+    
 Adding script categories
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -289,3 +347,4 @@ A list of properties with similar names can be grouped.
 * ``PROPERTY_USAGE_GROUP`` indicates that the property should be treated as a
   script group specifically, so the type ``TYPE_NIL`` can be ignored as it
   won't be actually used for the scripting logic, yet it must be defined anyway.
+  
