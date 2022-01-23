@@ -247,9 +247,9 @@ def main():
                 "destination",
             }, "CSV file must have a header and two columns: source, destination."
 
-        for row in redirects_file:
-            to_add.append([row["source"], row["destination"]])
-        print("Loaded", len(redirects_file), "redirects from", args.file + ".")
+    for row in redirects_file:
+        to_add.append([row["source"], row["destination"]])
+    print("Loaded", len(redirects_file), "redirects from", args.file + ".")
 
     existing = []
     if not args.dry_run:
@@ -261,6 +261,8 @@ def main():
 
     redirects = []
     added = {}
+    sources = {}
+
     for redirect in to_add:
         if len(redirect) != 2:
             print("Invalid redirect:", redirect, "- expected 2 elements, got:", len(redirect))
@@ -278,17 +280,19 @@ def main():
             print("Invalid redirect:", redirect, "- invalid URL: should start with slash!")
             continue
 
+        if redirect[0] in sources:
+            print("Invalid redirect:", redirect,
+                  "- collision, source", redirect[0], "already has redirect:",
+                  sources[redirect[0]])
+            continue
+
         redirect_id = id(redirect[0], redirect[1])
         if redirect_id in added:
             # Duplicate; skip.
             continue
 
-        reverse_id = id(redirect[1], redirect[0])
-        if reverse_id in added:
-            # Duplicate; skip.
-            continue
-
         added[redirect_id] = True
+        sources[redirect[0]] = redirect
         redirects.append(redirect)
 
     redirects.sort(key=redirect_to_str)
@@ -308,14 +312,10 @@ def main():
             if not id(redirect[0], redirect[1]) in existing_ids:
                 make_redirect(redirect[0], redirect[1], args)
 
-            if not id(redirect[1], redirect[0]) in existing_ids:
-                make_redirect(redirect[1], redirect[0], args)
-
             if not args.dry_run:
                 sleep()
 
     print("Finished creating", len(redirects), "redirects.")
-    print("(" + str(2*len(redirects)) + " including reverse redirects.)")
 
     if args.dry_run:
         print("THIS WAS A DRY RUN, NOTHING WAS SUBMITTED TO READTHEDOCS!")
