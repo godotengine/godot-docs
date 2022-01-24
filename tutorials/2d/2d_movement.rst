@@ -49,13 +49,13 @@ Add a script to the kinematic body and add the following code:
 
     func get_input():
         velocity = Vector2()
-        if Input.is_action_pressed("right"):
+        if Input.is_action_pressed("ui_right"):
             velocity.x += 1
-        if Input.is_action_pressed("left"):
+        if Input.is_action_pressed("ui_left"):
             velocity.x -= 1
-        if Input.is_action_pressed("down"):
+        if Input.is_action_pressed("ui_down"):
             velocity.y += 1
-        if Input.is_action_pressed("up"):
+        if Input.is_action_pressed("ui_up"):
             velocity.y -= 1
         velocity = velocity.normalized() * speed
 
@@ -78,16 +78,16 @@ Add a script to the kinematic body and add the following code:
         {
             velocity = new Vector2();
 
-            if (Input.IsActionPressed("right"))
+            if (Input.IsActionPressed("ui_right"))
                 velocity.x += 1;
 
-            if (Input.IsActionPressed("left"))
+            if (Input.IsActionPressed("ui_left"))
                 velocity.x -= 1;
 
-            if (Input.IsActionPressed("down"))
+            if (Input.IsActionPressed("ui_down"))
                 velocity.y += 1;
 
-            if (Input.IsActionPressed("up"))
+            if (Input.IsActionPressed("ui_up"))
                 velocity.y -= 1;
 
             velocity = velocity.Normalized() * speed;
@@ -140,13 +140,13 @@ while up/down moves it forward or backward in whatever direction it's facing.
     func get_input():
         rotation_dir = 0
         velocity = Vector2()
-        if Input.is_action_pressed("right"):
+        if Input.is_action_pressed("ui_right"):
             rotation_dir += 1
-        if Input.is_action_pressed("left"):
+        if Input.is_action_pressed("ui_left"):
             rotation_dir -= 1
-        if Input.is_action_pressed("down"):
+        if Input.is_action_pressed("ui_down"):
             velocity = Vector2(-speed, 0).rotated(rotation)
-        if Input.is_action_pressed("up"):
+        if Input.is_action_pressed("ui_up"):
             velocity = Vector2(speed, 0).rotated(rotation)
 
     func _physics_process(delta):
@@ -172,16 +172,16 @@ while up/down moves it forward or backward in whatever direction it's facing.
             rotationDir = 0;
             velocity = new Vector2();
 
-            if (Input.IsActionPressed("right"))
+            if (Input.IsActionPressed("ui_right"))
                 rotationDir += 1;
 
-            if (Input.IsActionPressed("left"))
+            if (Input.IsActionPressed("ui_left"))
                 rotationDir -= 1;
 
-            if (Input.IsActionPressed("down"))
+            if (Input.IsActionPressed("ui_down"))
                 velocity = new Vector2(-speed, 0).Rotated(Rotation);
 
-            if (Input.IsActionPressed("up"))
+            if (Input.IsActionPressed("ui_up"))
                 velocity = new Vector2(speed, 0).Rotated(Rotation);
 
             velocity = velocity.Normalized() * speed;
@@ -225,9 +225,9 @@ is set by the mouse position instead of the keyboard. The character will always
     func get_input():
         look_at(get_global_mouse_position())
         velocity = Vector2()
-        if Input.is_action_pressed("down"):
+        if Input.is_action_pressed("ui_down"):
             velocity = Vector2(-speed, 0).rotated(rotation)
-        if Input.is_action_pressed("up"):
+        if Input.is_action_pressed("ui_up"):
             velocity = Vector2(speed, 0).rotated(rotation)
 
     func _physics_process(delta):
