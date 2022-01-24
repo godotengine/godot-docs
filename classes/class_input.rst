@@ -485,6 +485,8 @@ This is useful for code that needs to run only once when an action is pressed, i
 
 If ``exact`` is ``false``, it ignores the input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
+**Note:** Due to keyboard ghosting, :ref:`is_action_just_pressed<class_Input_method_is_action_just_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <$DOCS_URL/tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
+
 ----
 
 .. _class_Input_method_is_action_just_released:
@@ -504,6 +506,8 @@ If ``exact`` is ``false``, it ignores the input modifiers for :ref:`InputEventKe
 Returns ``true`` if you are pressing the action event. Note that if an action has multiple buttons assigned and more than one of them is pressed, releasing one button will release the action, even if some other button assigned to this action is still pressed.
 
 If ``exact`` is ``false``, it ignores the input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
+
+**Note:** Due to keyboard ghosting, :ref:`is_action_pressed<class_Input_method_is_action_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <$DOCS_URL/tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
 
 ----
 
@@ -527,7 +531,11 @@ Returns ``true`` if the system knows the specified device. This means that it se
 
 - :ref:`bool<class_bool>` **is_key_pressed** **(** :ref:`int<class_int>` scancode **)** |const|
 
-Returns ``true`` if you are pressing the key. You can pass a :ref:`KeyList<enum_@GlobalScope_KeyList>` constant.
+Returns ``true`` if you are pressing the key in the current keyboard layout. You can pass a :ref:`KeyList<enum_@GlobalScope_KeyList>` constant.
+
+:ref:`is_key_pressed<class_Input_method_is_key_pressed>` is only recommended over :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>` in non-game applications. This ensures that shortcut keys behave as expected depending on the user's keyboard layout, as keyboard shortcuts are generally dependent on the keyboard layout in non-game applications. If in doubt, use :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>`.
+
+**Note:** Due to keyboard ghosting, :ref:`is_key_pressed<class_Input_method_is_key_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <$DOCS_URL/tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
 
 ----
 
@@ -544,6 +552,10 @@ Returns ``true`` if you are pressing the mouse button specified with :ref:`Butto
 - :ref:`bool<class_bool>` **is_physical_key_pressed** **(** :ref:`int<class_int>` scancode **)** |const|
 
 Returns ``true`` if you are pressing the key in the physical location on the 101/102-key US QWERTY keyboard. You can pass a :ref:`KeyList<enum_@GlobalScope_KeyList>` constant.
+
+:ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>` is recommended over :ref:`is_key_pressed<class_Input_method_is_key_pressed>` for in-game actions, as it will make W/A/S/D layouts work regardless of the user's keyboard layout. :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>` will also ensure that the top row number keys work on any keyboard layout. If in doubt, use :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>`.
+
+**Note:** Due to keyboard ghosting, :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <$DOCS_URL/tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
 
 ----
 

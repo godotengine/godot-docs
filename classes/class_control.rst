@@ -326,6 +326,14 @@ Emitted when the mouse leaves the control's ``Rect`` area, provided its :ref:`mo
 
 **Note:** :ref:`mouse_exited<class_Control_signal_mouse_exited>` will be emitted if the mouse enters a child ``Control`` node, even if the mouse cursor is still inside the parent's ``Rect`` area.
 
+If you want to check whether the mouse truly left the area, ignoring any top nodes, you can use code like this:
+
+::
+
+    func _on_mouse_exited():
+        if not Rect2(Vector2(), rect_size).has_point(get_local_mouse_position()):
+            # Not hovering over area.
+
 ----
 
 .. _class_Control_signal_resized:

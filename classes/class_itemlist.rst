@@ -577,7 +577,7 @@ Returns an array with the indexes of the selected items.
 
 - :ref:`VScrollBar<class_VScrollBar>` **get_v_scroll** **(** **)**
 
-Returns the :ref:`Object<class_Object>` ID associated with the list.
+Returns the vertical scrollbar.
 
 **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 

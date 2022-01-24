@@ -16,7 +16,9 @@ Used by the editor to define Spatial gizmo types.
 Description
 -----------
 
-EditorSpatialGizmoPlugin allows you to define a new type of Gizmo. There are two main ways to do so: extending ``EditorSpatialGizmoPlugin`` for the simpler gizmos, or creating a new :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` type. See the tutorial in the documentation for more info.
+``EditorSpatialGizmoPlugin`` allows you to define a new type of Gizmo. There are two main ways to do so: extending ``EditorSpatialGizmoPlugin`` for the simpler gizmos, or creating a new :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` type. See the tutorial in the documentation for more info.
+
+To use ``EditorSpatialGizmoPlugin``, register it using the :ref:`EditorPlugin.add_spatial_gizmo_plugin<class_EditorPlugin_method_add_spatial_gizmo_plugin>` method first.
 
 Tutorials
 ---------

@@ -5030,7 +5030,7 @@ The default convention is for portal normals to point outward (face outward) fro
 
 If you accidentally build your level with portals facing the wrong way, this setting can fix the problem.
 
-It will flip named portal meshes (i.e. ``-portal``) on the initial convertion to :ref:`Portal<class_Portal>` nodes.
+It will flip named portal meshes (i.e. ``-portal``) on the initial conversion to :ref:`Portal<class_Portal>` nodes.
 
 ----
 
@@ -6029,6 +6029,8 @@ Sets the value of a setting.
 ::
 
     ProjectSettings.set_setting("application/config/name", "Example")
+
+This can also be used to erase custom project settings. To do this change the setting value to ``null``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

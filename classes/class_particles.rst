@@ -22,6 +22,8 @@ Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_Par
 
 **Note:** ``Particles`` only work when using the GLES3 renderer. If using the GLES2 renderer, use :ref:`CPUParticles<class_CPUParticles>` instead. You can convert ``Particles`` to :ref:`CPUParticles<class_CPUParticles>` by selecting the node, clicking the **Particles** menu at the top of the 3D editor viewport then choosing **Convert to CPUParticles**.
 
+**Note:** On macOS, ``Particles`` rendering is much slower than :ref:`CPUParticles<class_CPUParticles>` due to transform feedback being implemented on the CPU instead of the GPU. Consider using :ref:`CPUParticles<class_CPUParticles>` instead when targeting macOS.
+
 **Note:** After working on a Particles node, remember to update its :ref:`visibility_aabb<class_Particles_property_visibility_aabb>` by selecting it, clicking the **Particles** menu at the top of the 3D editor viewport then choose **Generate Visibility AABB**. Otherwise, particles may suddenly disappear depending on the camera position and angle.
 
 Tutorials

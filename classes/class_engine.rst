@@ -150,7 +150,7 @@ Controls how much physics ticks are synchronized with real time. For 0 or less, 
 
 If ``false``, stops printing error and warning messages to the console and editor Output log. This can be used to hide error and warning messages during unit test suite runs. This property is equivalent to the :ref:`ProjectSettings.application/run/disable_stderr<class_ProjectSettings_property_application/run/disable_stderr>` project setting.
 
-**Warning:** If you set this to ``false`` anywhere in the project, important error messages may be hidden even if they are emitted from other scripts. If this is set to ``false`` in a ``@tool`` script, this will also impact the editor itself. Do *not* report bugs before ensuring error messages are enabled (as they are by default).
+**Warning:** If you set this to ``false`` anywhere in the project, important error messages may be hidden even if they are emitted from other scripts. If this is set to ``false`` in a ``tool`` script, this will also impact the editor itself. Do *not* report bugs before ensuring error messages are enabled (as they are by default).
 
 **Note:** This property does not impact the editor's Errors tab when running a project from the editor.
 

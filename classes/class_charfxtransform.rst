@@ -61,7 +61,7 @@ Property Descriptions
 | *Getter*  | get_absolute_index()      |
 +-----------+---------------------------+
 
-The index of the current character (starting from 0). Setting this property won't affect drawing.
+The index of the current character (starting from 0) for the :ref:`RichTextLabel<class_RichTextLabel>`'s BBCode text. Setting this property won't affect drawing.
 
 ----
 
@@ -171,7 +171,7 @@ The position offset the character will be drawn with (in pixels).
 | *Getter*  | get_relative_index()      |
 +-----------+---------------------------+
 
-The index of the current character (starting from 0). Setting this property won't affect drawing.
+The index of the current character (starting from 0) for this :ref:`RichTextEffect<class_RichTextEffect>` custom block. Setting this property won't affect drawing.
 
 ----
 

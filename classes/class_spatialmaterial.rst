@@ -723,7 +723,7 @@ Texture to multiply by :ref:`albedo_color<class_SpatialMaterial_property_albedo_
 | *Getter* | get_anisotropy()      |
 +----------+-----------------------+
 
-The strength of the anisotropy effect.
+The strength of the anisotropy effect. This is multiplied by :ref:`anisotropy_flowmap<class_SpatialMaterial_property_anisotropy_flowmap>`'s alpha channel if a texture is defined there and the texture contains an alpha channel.
 
 ----
 
@@ -739,7 +739,11 @@ The strength of the anisotropy effect.
 | *Getter*  | get_feature()      |
 +-----------+--------------------+
 
-If ``true``, anisotropy is enabled. Changes the shape of the specular blob and aligns it to tangent space. Mesh tangents are needed for this to work. If the mesh does not contain tangents the anisotropy effect will appear broken.
+If ``true``, anisotropy is enabled. Anisotropy changes the shape of the specular blob and aligns it to tangent space. This is useful for brushed aluminium and hair reflections.
+
+**Note:** Mesh tangents are needed for anisotropy to work. If the mesh does not contain tangents, the anisotropy effect will appear broken.
+
+**Note:** Material anisotropy should not to be confused with anisotropic texture filtering. Anisotropic texture filtering can be enabled by selecting a texture in the FileSystem dock, going to the Import dock, checking the **Anisotropic** checkbox then clicking **Reimport**.
 
 ----
 
@@ -753,7 +757,9 @@ If ``true``, anisotropy is enabled. Changes the shape of the specular blob and a
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-Texture that offsets the tangent map for anisotropy calculations.
+Texture that offsets the tangent map for anisotropy calculations and optionally controls the anisotropy effect (if an alpha channel is present). The flowmap texture is expected to be a derivative map, with the red channel representing distortion on the X axis and green channel representing distortion on the Y axis. Values below 0.5 will result in negative distortion, whereas values above 0.5 will result in positive distortion.
+
+If present, the texture's alpha channel will be used to multiply the strength of the :ref:`anisotropy<class_SpatialMaterial_property_anisotropy>` effect. Fully opaque pixels will keep the anisotropy effect's original strength while fully transparent pixels will disable the anisotropy effect entirely. The flowmap texture's blue channel is ignored.
 
 ----
 
@@ -1075,7 +1081,7 @@ Texture used to specify how the detail textures get blended with the base textur
 
 Texture that specifies the per-pixel normal of the detail overlay.
 
-**Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
+**Note:** Godot expects the normal map to use X+, Y+, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
 
 ----
 
@@ -1529,7 +1535,7 @@ Texture used to specify the normal at a given pixel. The ``normal_texture`` only
 
 **Note:** The mesh must have both normals and tangents defined in its vertex data. Otherwise, the normal map won't render correctly and will only appear to darken the whole surface. If creating geometry with :ref:`SurfaceTool<class_SurfaceTool>`, you can use :ref:`SurfaceTool.generate_normals<class_SurfaceTool_method_generate_normals>` and :ref:`SurfaceTool.generate_tangents<class_SurfaceTool_method_generate_tangents>` to automatically generate normals and tangents respectively.
 
-**Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
+**Note:** Godot expects the normal map to use X+, Y+, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
 
 ----
 

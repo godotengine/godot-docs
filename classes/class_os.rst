@@ -1452,7 +1452,7 @@ Returns the maximum amount of static memory used (only works in debug).
 
 - :ref:`int<class_int>` **get_static_memory_usage** **(** **)** |const|
 
-Returns the amount of static memory being used by the program in bytes.
+Returns the amount of static memory being used by the program in bytes (only works in debug).
 
 ----
 

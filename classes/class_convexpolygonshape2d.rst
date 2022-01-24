@@ -49,7 +49,7 @@ Property Descriptions
 | *Getter*  | get_points()             |
 +-----------+--------------------------+
 
-The polygon's list of vertices. Can be in either clockwise or counterclockwise order.
+The polygon's list of vertices. Can be in either clockwise or counterclockwise order. Only set this property with convex hull points, use :ref:`set_point_cloud<class_ConvexPolygonShape2D_method_set_point_cloud>` to generate a convex hull shape from concave shape points.
 
 Method Descriptions
 -------------------

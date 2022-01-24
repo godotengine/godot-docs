@@ -202,7 +202,7 @@ Returns the number of faces in this :ref:`Mesh<class_Mesh>`.
 
 Returns specified edge associated with given face.
 
-Edge argument must 2 or less because a face only has three edges.
+Edge argument must be either 0, 1, or 2 because a face only has three edges.
 
 ----
 
@@ -228,7 +228,7 @@ Calculates and returns the face normal of the given face.
 
 Returns the specified vertex of the given face.
 
-Vertex argument must be 2 or less because faces contain three vertices.
+Vertex argument must be either 0, 1, or 2 because faces contain three vertices.
 
 ----
 

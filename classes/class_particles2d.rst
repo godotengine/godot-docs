@@ -22,6 +22,8 @@ Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_Par
 
 **Note:** ``Particles2D`` only work when using the GLES3 renderer. If using the GLES2 renderer, use :ref:`CPUParticles2D<class_CPUParticles2D>` instead. You can convert ``Particles2D`` to :ref:`CPUParticles2D<class_CPUParticles2D>` by selecting the node, clicking the **Particles** menu at the top of the 2D editor viewport then choosing **Convert to CPUParticles2D**.
 
+**Note:** On macOS, ``Particles2D`` rendering is much slower than :ref:`CPUParticles2D<class_CPUParticles2D>` due to transform feedback being implemented on the CPU instead of the GPU. Consider using :ref:`CPUParticles2D<class_CPUParticles2D>` instead when targeting macOS.
+
 **Note:** After working on a Particles node, remember to update its :ref:`visibility_rect<class_Particles2D_property_visibility_rect>` by selecting it, clicking the **Particles** menu at the top of the 2D editor viewport then choose **Generate Visibility Rect**. Otherwise, particles may suddenly disappear depending on the camera position and angle.
 
 **Note:** Unlike :ref:`CPUParticles2D<class_CPUParticles2D>`, ``Particles2D`` currently ignore the texture region defined in :ref:`AtlasTexture<class_AtlasTexture>`\ s.

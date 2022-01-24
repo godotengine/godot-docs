@@ -190,7 +190,7 @@ Returns a chunk data with the received bytes. The amount of bytes to be received
 
 - :ref:`String<class_String>` **get_string** **(** :ref:`int<class_int>` bytes=-1 **)**
 
-Gets a string with byte-length ``bytes`` from the stream. If ``bytes`` is negative (default) the length will be read from the stream using the reverse process of :ref:`put_string<class_StreamPeer_method_put_string>`.
+Gets an ASCII string with byte-length ``bytes`` from the stream. If ``bytes`` is negative (default) the length will be read from the stream using the reverse process of :ref:`put_string<class_StreamPeer_method_put_string>`.
 
 ----
 

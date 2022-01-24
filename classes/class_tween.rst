@@ -36,6 +36,8 @@ Many of the methods accept ``trans_type`` and ``ease_type``. The first accepts a
 
 `Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.png>`__
 
+**Note:** Tween methods will return ``false`` if the requested operation cannot be completed.
+
 Properties
 ----------
 

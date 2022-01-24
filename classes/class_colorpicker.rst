@@ -154,7 +154,7 @@ If ``true``, the color will apply only after the user releases the mouse button,
 | *Getter*  | is_editing_alpha()    |
 +-----------+-----------------------+
 
-If ``true``, shows an alpha channel slider (transparency).
+If ``true``, shows an alpha channel slider (opacity).
 
 ----
 

@@ -15,6 +15,13 @@ EditorSceneImporter
 
 Imports scenes from third-parties' 3D files.
 
+Description
+-----------
+
+``EditorSceneImporter`` allows to define an importer script for a third-party 3D format.
+
+To use ``EditorSceneImporter``, register it using the :ref:`EditorPlugin.add_scene_import_plugin<class_EditorPlugin_method_add_scene_import_plugin>` method first.
+
 Methods
 -------
 

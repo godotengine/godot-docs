@@ -414,7 +414,7 @@ Returns the vector projected onto the vector ``b``.
 
 - :ref:`Vector2<class_Vector2>` **reflect** **(** :ref:`Vector2<class_Vector2>` n **)**
 
-Returns the vector reflected from a plane defined by the given normal.
+Returns the vector reflected (i.e. mirrored, or symmetric) over a line defined by the given direction vector ``n``.
 
 ----
 

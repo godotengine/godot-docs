@@ -14,7 +14,7 @@ Color in RGBA format using floats on the range of 0 to 1.
 Description
 -----------
 
-A color represented by red, green, blue, and alpha (RGBA) components. The alpha component is often used for transparency. Values are in floating-point and usually range from 0 to 1. Some properties (such as CanvasItem.modulate) may accept values greater than 1 (overbright or HDR colors).
+A color represented by red, green, blue, and alpha (RGBA) components. The alpha component is often used for opacity. Values are in floating-point and usually range from 0 to 1. Some properties (such as CanvasItem.modulate) may accept values greater than 1 (overbright or HDR colors).
 
 You can also create a color from standardized color names by using :ref:`@GDScript.ColorN<class_@GDScript_method_ColorN>` or directly using the color constants defined here. The standardized color set is based on the `X11 color names <https://en.wikipedia.org/wiki/X11_color_names>`__.
 
@@ -703,7 +703,7 @@ Property Descriptions
 | *Default* | ``1.0`` |
 +-----------+---------+
 
-The color's alpha (transparency) component, typically on the range of 0 to 1.
+The color's alpha component, typically on the range of 0 to 1. A value of 0 means that the color is fully transparent. A value of 1 means that the color is fully opaque.
 
 ----
 

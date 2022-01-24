@@ -701,15 +701,18 @@ Returns the Object that corresponds to ``instance_id``. All Objects have a uniqu
 
 - :ref:`float<class_float>` **inverse_lerp** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**
 
-Returns a normalized value considering the given range. This is the opposite of :ref:`lerp<class_@GDScript_method_lerp>`.
+Returns an interpolation or extrapolation factor considering the range specified in ``from`` and ``to``, and the interpolated value specified in ``weight``. The returned value will be between ``0.0`` and ``1.0`` if ``weight`` is between ``from`` and ``to`` (inclusive). If ``weight`` is located outside this range, then an extrapolation factor will be returned (return value lower than ``0.0`` or greater than ``1.0``).
 
 ::
 
+    # The interpolation ratio in the `lerp()` call below is 0.75.
     var middle = lerp(20, 30, 0.75)
     # `middle` is now 27.5.
     # Now, we pretend to have forgotten the original ratio and want to get it back.
     var ratio = inverse_lerp(20, 30, 27.5)
     # `ratio` is now 0.75.
+
+See also :ref:`lerp<class_@GDScript_method_lerp>` which performs the reverse of this operation.
 
 ----
 
@@ -778,7 +781,7 @@ Returns length of Variant ``var``. Length is the character count of String, elem
 
 - :ref:`Variant<class_Variant>` **lerp** **(** :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` weight **)**
 
-Linearly interpolates between two values by a normalized value. This is the opposite of :ref:`inverse_lerp<class_@GDScript_method_inverse_lerp>`.
+Linearly interpolates between two values by the factor defined in ``weight``. To perform interpolation, ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). However, values outside this range are allowed and can be used to perform *extrapolation*.
 
 If the ``from`` and ``to`` arguments are of type :ref:`int<class_int>` or :ref:`float<class_float>`, the return value is a :ref:`float<class_float>`.
 
@@ -789,6 +792,8 @@ If both are of the same vector type (:ref:`Vector2<class_Vector2>`, :ref:`Vector
     lerp(0, 4, 0.75) # Returns 3.0
     lerp(Vector2(1, 5), Vector2(3, 2), 0.5) # Returns Vector2(2, 3.5)
 
+See also :ref:`inverse_lerp<class_@GDScript_method_inverse_lerp>` which performs the reverse of this operation. To perform eased interpolation with :ref:`lerp<class_@GDScript_method_lerp>`, combine it with :ref:`ease<class_@GDScript_method_ease>` or :ref:`smoothstep<class_@GDScript_method_smoothstep>`.
+
 ----
 
 .. _class_@GDScript_method_lerp_angle:
@@ -797,7 +802,7 @@ If both are of the same vector type (:ref:`Vector2<class_Vector2>`, :ref:`Vector
 
 Linearly interpolates between two angles (in radians) by a normalized value.
 
-Similar to :ref:`lerp<class_@GDScript_method_lerp>`, but interpolates correctly when the angles wrap around :ref:`TAU<class_@GDScript_constant_TAU>`.
+Similar to :ref:`lerp<class_@GDScript_method_lerp>`, but interpolates correctly when the angles wrap around :ref:`TAU<class_@GDScript_constant_TAU>`. To perform eased interpolation with :ref:`lerp_angle<class_@GDScript_method_lerp_angle>`, combine it with :ref:`ease<class_@GDScript_method_ease>` or :ref:`smoothstep<class_@GDScript_method_smoothstep>`.
 
 ::
 

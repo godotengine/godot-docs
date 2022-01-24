@@ -11,12 +11,16 @@ AudioEffectRecord
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-Audio effect used for recording sound from a microphone.
+Audio effect used for recording the sound from an audio bus.
 
 Description
 -----------
 
-Allows the user to record sound from a microphone. It sets and gets the format in which the audio file will be recorded (8-bit, 16-bit, or compressed). It checks whether or not the recording is active, and if it is, records the sound. It then returns the recorded sample.
+Allows the user to record the sound from an audio bus. This can include all audio output by Godot when used on the "Master" audio bus.
+
+Can be used (with an :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`) to record from a microphone.
+
+It sets and gets the format in which the audio file will be recorded (8-bit, 16-bit, or compressed). It checks whether or not the recording is active, and if it is, records the sound. It then returns the recorded sample.
 
 Tutorials
 ---------

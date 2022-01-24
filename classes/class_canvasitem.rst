@@ -380,7 +380,7 @@ Overridable function called by the engine (if defined) to draw the canvas item.
 
 - void **draw_arc** **(** :ref:`Vector2<class_Vector2>` center, :ref:`float<class_float>` radius, :ref:`float<class_float>` start_angle, :ref:`float<class_float>` end_angle, :ref:`int<class_int>` point_count, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draws an arc between the given angles. The larger the value of ``point_count``, the smoother the curve.
+Draws a unfilled arc between the given angles. The larger the value of ``point_count``, the smoother the curve. See also :ref:`draw_circle<class_CanvasItem_method_draw_circle>`.
 
 ----
 
@@ -396,7 +396,7 @@ Draws a string character using a custom font. Returns the advance, depending on 
 
 - void **draw_circle** **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` radius, :ref:`Color<class_Color>` color **)**
 
-Draws a colored circle.
+Draws a colored, unfilled circle. See also :ref:`draw_arc<class_CanvasItem_method_draw_arc>`, :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` and :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
 
 ----
 
@@ -404,7 +404,7 @@ Draws a colored circle.
 
 - void **draw_colored_polygon** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_Texture>` texture=null, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draws a colored polygon of any amount of points, convex or concave.
+Draws a colored polygon of any amount of points, convex or concave. Unlike :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`, a single color must be specified for the whole polygon.
 
 ----
 
@@ -412,7 +412,7 @@ Draws a colored polygon of any amount of points, convex or concave.
 
 - void **draw_line** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draws a line from a 2D point to another, with a given color and width. It can be optionally antialiased.
+Draws a line from a 2D point to another, with a given color and width. It can be optionally antialiased. See also :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` and :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`.
 
 ----
 
@@ -428,7 +428,7 @@ Draws a :ref:`Mesh<class_Mesh>` in 2D, using the provided texture. See :ref:`Mes
 
 - void **draw_multiline** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draws multiple, parallel lines with a uniform ``color``.
+Draws multiple disconnected lines with a uniform ``color``. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw interconnected lines, use :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` instead.
 
 **Note:** ``width`` and ``antialiased`` are currently not implemented and have no effect.
 
@@ -438,7 +438,7 @@ Draws multiple, parallel lines with a uniform ``color``.
 
 - void **draw_multiline_colors** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draws multiple, parallel lines with a uniform ``width`` and segment-by-segment coloring. Colors assigned to line segments match by index between ``points`` and ``colors``.
+Draws multiple disconnected lines with a uniform ``width`` and segment-by-segment coloring. Colors assigned to line segments match by index between ``points`` and ``colors``. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw interconnected lines, use :ref:`draw_polyline_colors<class_CanvasItem_method_draw_polyline_colors>` instead.
 
 **Note:** ``width`` and ``antialiased`` are currently not implemented and have no effect.
 
@@ -456,7 +456,7 @@ Draws a :ref:`MultiMesh<class_MultiMesh>` in 2D with the provided texture. See :
 
 - void **draw_polygon** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_Texture>` texture=null, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draws a polygon of any amount of points, convex or concave.
+Draws a solid polygon of any amount of points, convex or concave. Unlike :ref:`draw_colored_polygon<class_CanvasItem_method_draw_colored_polygon>`, each point's color can be changed individually. See also :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` and :ref:`draw_polyline_colors<class_CanvasItem_method_draw_polyline_colors>`.
 
 ----
 
@@ -464,7 +464,7 @@ Draws a polygon of any amount of points, convex or concave.
 
 - void **draw_polyline** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draws interconnected line segments with a uniform ``color`` and ``width`` and optional antialiasing.
+Draws interconnected line segments with a uniform ``color`` and ``width`` and optional antialiasing. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw disconnected lines, use :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` instead. See also :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
 
 ----
 
@@ -472,7 +472,7 @@ Draws interconnected line segments with a uniform ``color`` and ``width`` and op
 
 - void **draw_polyline_colors** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draws interconnected line segments with a uniform ``width``, segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between ``points`` and ``colors``.
+Draws interconnected line segments with a uniform ``width`` and segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between ``points`` and ``colors``. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw disconnected lines, use :ref:`draw_multiline_colors<class_CanvasItem_method_draw_multiline_colors>` instead. See also :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
 
 ----
 
@@ -480,7 +480,7 @@ Draws interconnected line segments with a uniform ``width``, segment-by-segment 
 
 - void **draw_primitive** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs, :ref:`Texture<class_Texture>` texture=null, :ref:`float<class_float>` width=1.0, :ref:`Texture<class_Texture>` normal_map=null **)**
 
-Draws a custom primitive. 1 point for a point, 2 points for a line, 3 points for a triangle and 4 points for a quad.
+Draws a custom primitive. 1 point for a point, 2 points for a line, 3 points for a triangle, and 4 points for a quad. If 0 points or more than 4 points are specified, nothing will be drawn and an error message will be printed. See also :ref:`draw_line<class_CanvasItem_method_draw_line>`, :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`, :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`, and :ref:`draw_rect<class_CanvasItem_method_draw_rect>`.
 
 ----
 
@@ -662,7 +662,7 @@ Returns the :ref:`World2D<class_World2D>` where this item is in.
 
 - void **hide** **(** **)**
 
-Hide the ``CanvasItem`` if it's currently visible.
+Hide the ``CanvasItem`` if it's currently visible. This is equivalent to setting :ref:`visible<class_CanvasItem_property_visible>` to ``false``.
 
 ----
 
@@ -742,7 +742,7 @@ If ``enable`` is ``true``, children will be updated with global transform data.
 
 - void **show** **(** **)**
 
-Show the ``CanvasItem`` if it's currently hidden. For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
+Show the ``CanvasItem`` if it's currently hidden. This is equivalent to setting :ref:`visible<class_CanvasItem_property_visible>` to ``true``. For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
 
 ----
 
