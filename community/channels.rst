@@ -19,20 +19,17 @@ Rocket.Chat
 
 - `Godot Contributors Chat <https://chat.godotengine.org/>`_
 
-IRC on Freenode
----------------
+IRC on Libera.Chat
+------------------
 
 .. note::
 
     As of January 2021, core developer chat has moved to the Godot Contributors Chat platform listed above.
 
-- `General: #godotengine <https://webchat.freenode.net/?channels=#godotengine>`_
-- `Engine development: #godotengine-devel <https://webchat.freenode.net/?channels=#godotengine-devel>`_
-- `Documentation: #godotengine-doc <https://webchat.freenode.net/?channels=#godotengine-doc>`_
-- `Pull request meetings: #godotengine-meeting <https://webchat.freenode.net/?channels=#godotengine-meeting>`_
-- `GDNative: #godotengine-gdnative <https://webchat.freenode.net/?channels=#godotengine-gdnative>`_
-- `Website and public relations: #godotengine-atelier <https://webchat.freenode.net/?channels=#godotengine-atelier>`_
-- `IRC logs <https://freenode.logbot.info/godotengine-devel>`_
+- `General: #godotengine <https://web.libera.chat/?channels=#godotengine>`_
+
+IRC is less active than Discord. Please stick around to get an answer, as
+it may take several hours for someone to see and answer your questions.
 
 Other chats
 -----------
