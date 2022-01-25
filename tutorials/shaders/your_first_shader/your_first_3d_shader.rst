@@ -320,7 +320,7 @@ explained in more detail in the next part of this tutorial.
 
 When we have normals that correspond to a specific vertex we set ``NORMAL``, but
 if you have a normalmap that comes from a texture, set the normal using
-``NORMALMAP``. This way Godot will handle the wrapping the texture around the
+``NORMAL_MAP``. This way Godot will handle the wrapping the texture around the
 mesh automatically.
 
 Lastly, in order to ensure that we are reading from the same places on the noise
@@ -347,7 +347,7 @@ And now we can access ``tex_position`` from the ``fragment()`` function.
 .. code-block:: glsl
 
   void fragment() {
-    NORMALMAP = texture(normalmap, tex_position).xyz;
+    NORMAL_MAP = texture(normalmap, tex_position).xyz;
   }
 
 With the normals in place the light now reacts to the height of the mesh
@@ -379,7 +379,7 @@ Godot handles most of the difficult stuff for you.
   }
 
   void fragment() {
-    NORMALMAP = texture(normalmap, tex_position).xyz;
+    NORMAL_MAP = texture(normalmap, tex_position).xyz;
   }
 
 That is everything for this part. Hopefully, you now understand the basics of
