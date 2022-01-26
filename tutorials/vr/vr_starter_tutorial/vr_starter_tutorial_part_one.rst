@@ -38,7 +38,7 @@ Throughout the course of this tutorial, we will cover:
           This tutorial was written and tested using a Windows Mixed Reality headset and controllers. This project has also been tested on the HTC Vive. Code adjustments may be required
           for other VR Headsets, such as the Oculus Rift.
 
-The Godot project for this tutorial is found on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`_. The starter assets for this tutorial can be found in the releases
+The Godot project for this tutorial is found on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`__. The starter assets for this tutorial can be found in the releases
 section on the GitHub repository. The starter assets contain some 3D models, sounds, scripts, and scenes that are configured for this tutorial.
 
 .. note:: **Credits for the assets provided**:
@@ -55,13 +55,13 @@ section on the GitHub repository. The starter assets contain some 3D models, sou
 
           - The initial project, 3D models, and scripts were created by `TwistedTwigleg <https://github.com/TwistedTwigleg>`_ and is released under the MIT license.
 
-.. tip:: You can find the finished project on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`_.
+.. tip:: You can find the finished project on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`__.
 
 
 Getting everything ready
 ------------------------
 
-If you have not already, go to the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps/releases/>`_ and download the "Starter Assets" file from the releases. Once you have the
+If you have not already, go to the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps/releases/>`__ and download the "Starter Assets" file from the releases. Once you have the
 starter assets downloaded, open up the project in Godot.
 
 .. note:: The starter assets are not required to use the scripts provided in this tutorial.
