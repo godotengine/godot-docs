@@ -200,7 +200,7 @@ be patient!
 .. note::
 
     You may have some luck accelerating the approval process by messaging the
-    moderators and AssetLib reviewers on the `Contributors Chat <https://chat.godotengine.org/>`_,
+    moderators and AssetLib reviewers on the `Godot Contributors Chat <https://chat.godotengine.org/>`_,
     or the official Discord server.
 
 You will be informed when your asset is reviewed. If it was rejected,
