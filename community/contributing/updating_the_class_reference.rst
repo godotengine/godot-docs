@@ -119,7 +119,7 @@ Another option is to delete the branch you're working on, synchronize the master
     git pull --rebase upstream master
     git checkout -b your-new-branch-name
 
-If you're feeling lost by now, come to our `IRC channels <https://webchat.freenode.net/?channels=#godotengine>`_ and ask for help. Experienced Git users will give you a hand.
+If you're feeling lost by now, come to our `Godot Contributors Chat <https://chat.godotengine.org/>`_ and ask for help. Experienced Git users will give you a hand.
 
 Updating the documentation template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -310,7 +310,7 @@ I don't know what this method does!
 
 No problem. Leave it behind, and list the methods you skipped when you request a pull of your changes. Another writer will take care of it.
 
-You can still have a look at the methods' implementation in Godot's source code on GitHub. Also, if you have doubts, feel free to ask on the `Q&A website <https://godotengine.org/qa/>`__ and on IRC (freenode, #godotengine).
+You can still have a look at the methods' implementation in Godot's source code on GitHub. Also, if you have doubts, feel free to ask on the `Q&A website <https://godotengine.org/qa/>`__ and on the `Godot Contributors Chat <https://chat.godotengine.org/>`__.
 
 
 Localization
