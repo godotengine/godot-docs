@@ -397,7 +397,10 @@ build files in a subsequent tutorial.
     refer to the ``SConstruct`` file in the Godot 3.0 documentation.
 
 Once you've downloaded the ``SConstruct`` file, place it in your GDNative module
-folder besides ``godot-cpp``, and ``demo``, then run:
+folder besides ``godot-cpp``, and ``demo``.
+
+You will need a ``demo/bin`` directory to place the libraries, create a ``bin``
+folder inside ``demo`` and then from the root directory run:
 
 .. code-block:: none
 
