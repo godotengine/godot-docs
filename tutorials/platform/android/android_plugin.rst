@@ -56,12 +56,10 @@ The instructions below assumes that you're using Android Studio.
 
 2. Add the Godot engine library as a dependency to your plugin module:
 
-  - Download the Godot engine library (``godot-lib.<version>.<status>.aar``) from the `Godot download page <https://godotengine.org/download>`_ (e.g.: ``godot-lib.4.0.stable.aar``).
+  -  Download the Godot engine library (``godot-lib.<version>.<status>.aar``) from the `Godot download page <https://godotengine.org/download>`_ (e.g.: ``godot-lib.3.4.2.stable.release.aar``). 
   - Follow `these instructions <https://developer.android.com/studio/projects/android-library#AddDependency>`__ to add
     the Godot engine library as a dependency for your plugin.
   - In the plugin module's ``build.gradle`` file, replace ``implementation`` with ``compileOnly`` for the dependency line for the Godot engine library.
-
-    -  Download the Godot engine library (``godot-lib.<version>.<status>.aar``) from the `Godot download page <https://godotengine.org/download>`_ (e.g.: ``godot-lib.3.2.2.stable.aar``).
 
 4. Update the plugin ``AndroidManifest.xml`` file:
 
@@ -85,22 +83,6 @@ The instructions below assumes that you're using Android Studio.
 
   - The configuration file extension must be ``gdap`` (e.g.: ``MyPlugin.gdap``).
   - The configuration file format is as follow::
-
-        [config]
-
-5.  Add the remaining logic for your plugin and run the ``gradlew build`` command to generate the plugin's ``aar`` file.
-    The build will likely generate both a ``debug`` and ``release`` ``aar`` files.
-    Depending on your need, pick only one version (usually the ``release`` one) which to provide your users with.
-
-        [dependencies]
-
-        local=["local_dep1.aar", "local_dep2.aar"]
-        remote=["example.plugin.android:remote-dep1:0.0.1", "example.plugin.android:remote-dep2:0.0.1"]
-        custom_maven_repos=["http://repo.mycompany.com/maven2"]
-
-    -   The configuration file extension must be ``gdap`` (e.g.: ``MyPlugin.gdap``).
-
-    -   The configuration file format is as follow::
 
             [config]
 
