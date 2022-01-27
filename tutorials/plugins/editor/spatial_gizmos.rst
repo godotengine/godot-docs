@@ -39,7 +39,7 @@ This would be a basic setup:
 ::
 
     # MyCustomEditorPlugin.gd
-    tool
+    @tool
     extends EditorPlugin
 
 

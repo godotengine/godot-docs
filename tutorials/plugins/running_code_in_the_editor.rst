@@ -3,10 +3,10 @@
 Running code in the editor
 ==========================
 
-What is ``tool``?
+What is ``@tool``?
 -----------------
 
-``tool`` is a powerful line of code that, when added at the top of your script,
+``@tool`` is a powerful line of code that, when added at the top of your script,
 makes it execute in the editor. You can also decide which parts of the script
 execute in the editor, which in game, and which in both.
 
@@ -25,10 +25,10 @@ use cases:
 
 .. DANGER::
 
-    ``tool`` scripts run inside the editor, and let you access the scene tree
+    ``@tool`` scripts run inside the editor, and let you access the scene tree
     of the currently edited scene. This is a powerful feature which also comes
     with caveats, as the editor does not include protections for potential
-    misuse of ``tool`` scripts.
+    misuse of ``@tool`` scripts.
     Be **extremely** cautious when manipulating the scene tree, especially via
     :ref:`Node.queue_free<class_Node_method_queue_free>`, as it can cause
     crashes if you free a node while the editor runs logic involving it.
@@ -36,7 +36,7 @@ use cases:
 How to use it
 -------------
 
-To turn a script into a tool, add the keyword ``tool`` at the top of your code.
+To turn a script into a tool, add the keyword ``@tool`` at the top of your code.
 
 To check if you are currently in the editor, use: ``Engine.editor_hint``.
 
@@ -120,7 +120,7 @@ and open a script, and change it to this:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    tool
+    @tool
     extends Sprite2D
 
     func _process(delta):
@@ -188,7 +188,7 @@ Add and export a variable speed to the script. The function set_speed after
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    tool
+    @tool
     extends Sprite2D
 
 
@@ -295,7 +295,7 @@ You can instantiate packed scenes normally and add them to the scene currently
 opened in the editor. Be sure to set the scene root as the owner of all the
 nodes created this way or the nodes won't be visible in the editor.
 
-If you are using ``tool``:
+If you are using ``@tool``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -339,7 +339,7 @@ If you are using :ref:`EditorScript<class_EditorScript>`:
 
 .. warning::
 
-    Using ``tool`` improperly can yield many errors. It is advised to first
-    write the code how you want it, and only then add the ``tool`` keyword to
+    Using ``@tool`` improperly can yield many errors. It is advised to first
+    write the code how you want it, and only then add the ``@tool`` keyword to
     the top. Also, make sure to separate code that runs in-editor from code that
     runs in-game. This way, you can find bugs more easily.
