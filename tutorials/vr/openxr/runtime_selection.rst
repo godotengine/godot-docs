@@ -16,8 +16,9 @@ switch the runtime Godot will use when testing:
 
 .. image:: img/switch_runtime.png
 
-The OpenXR plugin will not work with the Microsoft MR runtime. That runtime only supports
-OpenXR applications that use DirectX, and Godot uses OpenGL 3 and 2. 
+The OpenXR plugin will **not** work with the Microsoft MR runtime.
+That runtime only supports OpenXR applications that use DirectX,
+but Godot uses OpenGL ES 3.0 or 2.0.
 
 .. note::
 
