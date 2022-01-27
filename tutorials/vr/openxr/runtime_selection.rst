@@ -4,7 +4,7 @@ Switching runtimes
 ==================
 
 In OpenXR, it is standard for each runtime to implement a mechanism to make it
-the current runtime.  In Steam, the Oculus application or Windows MR portal,
+the current runtime. In Steam, the Oculus application or Windows MR portal,
 there will be an option to switch to their runtime as the current OpenXR runtime.
 
 Generally speaking, end users will have a preferred runtime due to not having a reason
@@ -15,6 +15,9 @@ To make this easy, Godot provides a dropdown in the top-right corner which can
 switch the runtime Godot will use when testing:
 
 .. image:: img/switch_runtime.png
+
+The OpenXR plugin will not work with the Microsoft MR runtime. That runtime only supports
+OpenXR applications that use DirectX, and Godot uses OpenGL 3 and 2. 
 
 .. note::
 
