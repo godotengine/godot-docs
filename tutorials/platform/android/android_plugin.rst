@@ -56,10 +56,13 @@ The instructions below assumes that you're using Android Studio.
 
 2. Add the Godot engine library as a dependency to your plugin module:
 
-  -  Download the Godot engine library (``godot-lib.<version>.<status>.aar``) from the `Godot download page <https://godotengine.org/download>`_ (e.g.: ``godot-lib.3.4.2.stable.release.aar``). 
+  - Download the Godot engine library (``godot-lib.<version>.<status>.aar``) from the `Godot download page <https://godotengine.org/download>`_ (e.g.: ``godot-lib.3.4.2.stable.release.aar``). 
   - Follow `these instructions <https://developer.android.com/studio/projects/android-library#AddDependency>`__ to add
     the Godot engine library as a dependency for your plugin.
   - In the plugin module's ``build.gradle`` file, replace ``implementation`` with ``compileOnly`` for the dependency line for the Godot engine library.
+
+3. Create a new class in the plugin module and make sure it extends ``org.godotengine.godot.plugin.GodotPlugin``.
+   At runtime, it will be used to instantiate a singleton object that will be used by the Godot engine to load, initialize and run the plugin.
 
 4. Update the plugin ``AndroidManifest.xml`` file:
 
@@ -84,43 +87,36 @@ The instructions below assumes that you're using Android Studio.
   - The configuration file extension must be ``gdap`` (e.g.: ``MyPlugin.gdap``).
   - The configuration file format is as follow::
 
-            [config]
+        [config]
 
-            name="MyPlugin"
-            binary_type="local"
-            binary="MyPlugin.aar"
+        name="MyPlugin"
+        binary_type="local"
+        binary="MyPlugin.aar"
 
-            [dependencies]
+        [dependencies]
 
-            local=["local_dep1.aar", "local_dep2.aar"]
-            remote=["example.plugin.android:remote-dep1:0.0.1", "example.plugin.android:remote-dep2:0.0.1"]
-            custom_maven_repos=["http://repo.mycompany.com/maven2"]
+        local=["local_dep1.aar", "local_dep2.aar"]
+        remote=["example.plugin.android:remote-dep1:0.0.1", "example.plugin.android:remote-dep2:0.0.1"]
+        custom_maven_repos=["http://repo.mycompany.com/maven2"]
 
-        The ``config`` section and fields are required and defined as follow:
-
-            -   **name**: name of the plugin
+    The ``config`` section and fields are required and defined as follow:
 
     - **name**: name of the plugin.
     - **binary_type**: can be either ``local`` or ``remote``. The type affects the **binary** field.
     - **binary**:
 
-            -   **binary**:
+      - If **binary_type** is ``local``, then this should be the filepath of the plugin ``aar`` file.
 
-                -   if **binary_type** is ``local``, then this should be the filepath of the plugin ``aar`` file.
-
-                    -   The filepath can be relative (e.g.: ``MyPlugin.aar``) in which case it's relative to the ``res://android/plugins`` directory.
-
-                    -   The filepath can be absolute: ``res://some_path/MyPlugin.aar``.
-
-                -   if **binary_type** is ``remote``, then this should be a declaration for a `remote gradle binary <https://developer.android.com/studio/build/dependencies#dependency-types>`_ (e.g.: ``org.godot.example:my-plugin:0.0.0``).
-
-        The ``dependencies`` section and fields are optional and defined as follow:
-
-            -   **local**: contains a list of filepaths to the local ``.aar`` binary files the plugin depends on. Similarly to the ``binary`` field (when the ``binary_type`` is ``local``), the local binaries' filepaths can be relative or absolute.
+        - The filepath can be relative (e.g.: ``MyPlugin.aar``) in which case it's relative to the ``res://android/plugins`` directory.
+        - The filepath can be absolute: ``res://some_path/MyPlugin.aar``.
 
       - If **binary_type** is ``remote``, then this should be a declaration for a `remote gradle binary <https://developer.android.com/studio/build/dependencies#dependency-types>`_ (e.g.: ``org.godot.example:my-plugin:0.0.0``).
 
-            -   **custom_maven_repos**: contains a list of URLs specifying the custom maven repositories required for the plugin's dependencies
+    The ``dependencies`` section and fields are optional and defined as follow:
+
+    - **local**: contains a list of filepaths to the local ``.aar`` binary files the plugin depends on. Similarly to the ``binary`` field (when the ``binary_type`` is ``local``), the local binaries' filepaths can be relative or absolute.
+    - **remote**: contains a list of remote binary gradle dependencies for the plugin.
+    - **custom_maven_repos**: contains a list of URLs specifying the custom maven repositories required for the plugin's dependencies.
 
 Loading and using an Android plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
