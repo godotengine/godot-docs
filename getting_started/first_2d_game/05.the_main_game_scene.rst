@@ -73,14 +73,16 @@ Your scene should look like this:
 Main script
 ~~~~~~~~~~~
 
-Add a script to ``Main``. At the top of the script, we use ``export
-(PackedScene)`` to allow us to choose the Mob scene we want to instance.
+Add a script to ``Main``. At the top of the script, we use 
+``@export var mob_scene: PackedScene`` to allow us to choose the Mob scene we want
+ to instance.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     extends Node
 
+    @export var mob_scene: PackedScene
     export(PackedScene) var mob_scene
     var score
 
@@ -327,7 +329,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
         mob_spawn_location.offset = randi()
 
         # Create a Mob instance and add it to the scene.
-        var mob = mob_scene.instance()
+        var mob = mob_scene.instantiate()
         add_child(mob)
 
         # Set the mob's direction perpendicular to the path direction.
@@ -337,11 +339,11 @@ Note that a new instance must be added to the scene using ``add_child()``.
         mob.position = mob_spawn_location.position
 
         # Add some randomness to the direction.
-        direction += rand_range(-PI / 4, PI / 4)
+        direction += randf_range(-PI / 4, PI / 4)
         mob.rotation = direction
 
         # Choose the velocity.
-        var velocity = Vector2(rand_range(150.0, 250.0), 0.0)
+        var velocity = Vector2(randi_range(150, 250), 0.0)
         mob.linear_velocity = velocity.rotated(direction)
 
  .. code-tab:: csharp
