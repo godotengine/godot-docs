@@ -22,8 +22,9 @@ but Godot uses OpenGL ES 3.0 or 2.0.
 
 .. note::
 
-    Selecting a runtime in this dropdown only applies to your local session. 
-    It does **not** change the runtime used by other applications. 
+    Selecting a runtime in this dropdown only applies to running the game
+    from the editor. It does **not** change the runtime used by other
+    applications. Exported projects will use the computers current runtime.
     Also, if you are deploying to an external device, this setting has no effect.
 
 As OpenXR doesn't have a mechanism for registering runtimes that we can query,
