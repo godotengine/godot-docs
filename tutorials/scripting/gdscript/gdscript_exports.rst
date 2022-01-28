@@ -237,12 +237,14 @@ has value 1, ``Water`` has value 2, ``Earth`` has value 4 and ``Wind``
 corresponds to value 8. Usually, constants should be defined accordingly (e.g.
 ``const ELEMENT_WIND = 8`` and so on).
 
-Export annotations are also provided for the physics and render layers defined in the project settings::
+Export annotations are also provided for the physics, render, and navigation layers defined in the project settings::
 
     @export_flags_2d_physics var layers_2d_physics
     @export_flags_2d_render var layers_2d_render
+    @export_flags_2d_navigation var layers_2d_navigation
     @export_flags_3d_physics var layers_3d_physics
     @export_flags_3d_render var layers_3d_render
+    @export_flags_3d_navigation var layers_3d_navigation
 
 Using bit flags requires some understanding of bitwise operations.
 If in doubt, use boolean variables instead.
