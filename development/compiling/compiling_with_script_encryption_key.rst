@@ -24,15 +24,13 @@ Step by step
 
    ::
 
-       openssl enc -aes-256-cbc -k secret -P -md sha1 > godot.gdkey
+       openssl rand -hex 32 > godot.gdkey
 
-   This should output the following to ``godot.gdkey`` file:
+   The output in ``godot.gdkey`` should be similar to:
 
    ::
 
-       salt=5786FE8B91CA048A
-       key=D2F90FCC4FCA64B8990F916EF5A73230C1841601D1EA06B2380EC0F530E4EF85
-       iv =047C353AEC9E6C211515E3341BF9C61B
+       aeb1bc56aaf580cc31784e9c41551e9ed976ecba10d315db591e749f3f64890f
 
    You can generate the key without redirecting the output to a file, but
    that way you can minimize the risk of exposing the key.
