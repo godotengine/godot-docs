@@ -4,7 +4,7 @@ Running code in the editor
 ==========================
 
 What is ``@tool``?
------------------
+------------------
 
 ``@tool`` is a powerful line of code that, when added at the top of your script,
 makes it execute in the editor. You can also decide which parts of the script
