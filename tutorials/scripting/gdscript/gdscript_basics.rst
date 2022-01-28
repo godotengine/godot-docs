@@ -327,11 +327,11 @@ between parentheses and separated by commas.
 
 Both of these are the same::
 
-    @export_file("*.png")
-    @remote
-    var x
+    @onready
+    @export_node_path(TextEdit, LineEdit)
+    var input_field
 
-    @export_file("*.png") @remote var x
+    @onready @export_node_path(TextEdit, LineEdit) var input_field
 
 
 Here's the list of available annotations:
@@ -346,17 +346,7 @@ Here's the list of available annotations:
 +------------------------------+---------------------------------------------------------------------------------------------------+
 | ``@icon(path)``              | Set the class icon to show in editor. To be used together with the ``class_name`` keyword.        |
 +------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@master``                  | RPC modifiers. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
-|                              |                                                                                                   |
-| ``@puppet``                  |                                                                                                   |
-|                              |                                                                                                   |
-| ``@remote``                  |                                                                                                   |
-|                              |                                                                                                   |
-| ``@mastersync``              |                                                                                                   |
-|                              |                                                                                                   |
-| ``@puppetsync``              |                                                                                                   |
-|                              |                                                                                                   |
-| ``@remotesync``              |                                                                                                   |
+| ``@rpc``                     | RPC modifiers. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
 +------------------------------+---------------------------------------------------------------------------------------------------+
 | ``@export``                  | Export hints for the editor. See :ref:`doc_gdscript_exports`.                                     |
 |                              |                                                                                                   |
