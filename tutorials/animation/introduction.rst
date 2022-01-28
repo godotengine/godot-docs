@@ -107,7 +107,7 @@ Tutorial: Creating a simple animation
 Scene setup
 ~~~~~~~~~~~
 
-For this tutorial, we'll create an AnimationPlayer node with a sprite node as
+For this tutorial, we'll create a Sprite node with an AnimationPlayer as
 its child. We will animate the sprite to move between two points on the screen.
 
 .. figure:: img/animation_animation_player_tree.png
