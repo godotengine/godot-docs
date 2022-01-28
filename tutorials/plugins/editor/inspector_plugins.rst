@@ -45,7 +45,7 @@ you should remove the instance you have added by calling
   .. code-tab:: gdscript GDScript
 
     # plugin.gd
-    tool
+    @tool
     extends EditorPlugin
 
     var plugin

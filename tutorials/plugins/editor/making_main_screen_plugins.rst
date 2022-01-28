@@ -28,7 +28,7 @@ Add five extra methods such that the script looks like this:
 
 ::
 
-    tool
+    @tool
     extends EditorPlugin
 
 
@@ -77,7 +77,7 @@ Add a script to the button like this:
 
 ::
 
-    tool
+    @tool
     extends Button
 
 
@@ -98,7 +98,7 @@ Here is the full plugin script:
 
 ::
 
-    tool
+    @tool
     extends EditorPlugin
 
 

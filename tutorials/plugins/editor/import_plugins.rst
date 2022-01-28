@@ -48,7 +48,7 @@ when needed:
 ::
 
     # material_import.gd
-    tool
+    @tool
     extends EditorPlugin
 
 
@@ -90,7 +90,7 @@ Let's begin to code our plugin, one method at time:
 ::
 
     # import_plugin.gd
-    tool
+    @tool
     extends EditorImportPlugin
 
 
@@ -179,7 +179,7 @@ good practice to use an enum so you can refer to them using names.
 
 ::
 
-    tool
+    @tool
     extends EditorImportPlugin
 
 
