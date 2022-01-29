@@ -26,7 +26,7 @@ Still, Godot is designed to work around this problem.
 Servers
 -------
 
-One of the most interesting design decisions for Godot, is the fact that the whole scene system is
+One of the most interesting design decisions for Godot is the fact that the whole scene system is
 *optional*. While it is not currently possible to compile it out, it can be completely bypassed.
 
 At the core, Godot uses the concept of Servers. They are very low level APIs to control
@@ -38,7 +38,7 @@ The most common servers are:
 * :ref:`Physics2DServer <class_Physics2DServer>`: handles everything related to 2D physics.
 * :ref:`AudioServer <class_AudioServer>`: handles everything related to audio.
 
-Just explore their APIs and you will realize that the all functions provided are low-level
+Explore their APIs and you will realize that all the functions provided are low-level
 implementations of everything Godot allows you to do.
 
 RIDs
@@ -50,10 +50,13 @@ function in the servers requires RIDs to access the actual resource.
 
 Most Godot nodes and resources contain these RIDs from the servers internally, and they can
 be obtained with different functions. In fact, anything that inherits :ref:`Resource <class_Resource>`
-can be directly casted to an RID (not all resources contain an RID, though, in such cases
-the RID will be empty). In fact, resources can be passed to server APIs as RIDs. Just make
-sure to keep references to the resources outside the server, because if the resource is erased,
-the internal RID is erased too.
+can be directly casted to an RID (not all resources contain an RID, though; in such cases
+the RID will be empty). The resource can then be passed to server APIs as an RID.
+
+.. Warning::  Resources are reference-counted (see :ref:`Reference <class_Reference>`), and
+              references to a resource's RID are *not* counted when determining whether
+              the resource is still in use. Make sure to keep a reference to the resource
+              outside the server, or else both it and its RID will be erased.
 
 For nodes, there are many functions available:
 
@@ -75,7 +78,7 @@ For nodes, there are many functions available:
   *instance base* via the :ref:`VisualInstance.get_instance() <class_VisualInstance_method_get_instance>`
   and :ref:`VisualInstance.get_base() <class_VisualInstance_method_get_base>` respectively.
 
-Just explore the nodes and resources you are familiar with and find the functions to obtain the server *RIDs*.
+Try exploring the nodes and resources you are familiar with and find the functions to obtain the server *RIDs*.
 
 It is not advised to control RIDs from objects that already have a node associated. Instead, server
 functions should always be used for creating and controlling new ones and interacting with the existing ones.
