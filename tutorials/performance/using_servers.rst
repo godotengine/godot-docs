@@ -50,8 +50,7 @@ function in the servers requires RIDs to access the actual resource.
 
 Most Godot nodes and resources contain these RIDs from the servers internally, and they can
 be obtained with different functions. In fact, anything that inherits :ref:`Resource <class_Resource>`
-can be directly casted to an RID (not all resources contain an RID, though; in such cases
-the RID will be empty). The resource can then be passed to server APIs as an RID.
+can be directly casted to an RID. Not all resources contain an RID, though: in such cases, the RID will be empty. The resource can then be passed to server APIs as an RID.
 
 .. Warning::  Resources are reference-counted (see :ref:`Reference <class_Reference>`), and
               references to a resource's RID are *not* counted when determining whether
