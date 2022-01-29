@@ -29,7 +29,7 @@ Servers
 One of the most interesting design decisions for Godot is the fact that the whole scene system is
 *optional*. While it is not currently possible to compile it out, it can be completely bypassed.
 
-At the core, Godot uses the concept of Servers. They are very low level APIs to control
+At the core, Godot uses the concept of Servers. They are very low-level APIs to control
 rendering, physics, sound, etc. The scene system is built on top of them and uses them directly.
 The most common servers are:
 
