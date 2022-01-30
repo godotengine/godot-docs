@@ -70,7 +70,7 @@ editor binary built with ``target=release_debug``::
 
     cp -r misc/dist/osx_tools.app ./Godot.app
     mkdir -p Godot.app/Contents/MacOS
-    cp bin/godot.osx.opt.tools.universal Godot.app/Contents/MacOS/Godot
+    cp bin/godot.osx.tools.universal Godot.app/Contents/MacOS/Godot
     chmod +x Godot.app/Contents/MacOS/Godot
 
 .. note::
@@ -81,7 +81,7 @@ editor binary built with ``target=release_debug``::
     dynamic library in your ``.app`` bundle::
 
         mkdir -p Godot.app/Contents/Frameworks
-        cp <Vulkan SDK path>/macOS/libs/libMoltenVK.dylib Godot.app/Contents/Frameworks/libMoltenVK.dylib
+        cp <Vulkan SDK path>/macOS/lib/libMoltenVK.dylib Godot.app/Contents/Frameworks/libMoltenVK.dylib
 
 Compiling a headless/server build
 ---------------------------------
