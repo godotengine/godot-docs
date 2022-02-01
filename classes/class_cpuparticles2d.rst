@@ -57,6 +57,8 @@ Properties
 +---------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
 | :ref:`Color<class_Color>`                               | :ref:`color<class_CPUParticles2D_property_color>`                                   | ``Color(1, 1, 1, 1)`` |
 +---------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Gradient<class_Gradient>`                         | :ref:`color_initial_ramp<class_CPUParticles2D_property_color_initial_ramp>`         |                       |
++---------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
 | :ref:`Gradient<class_Gradient>`                         | :ref:`color_ramp<class_CPUParticles2D_property_color_ramp>`                         |                       |
 +---------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
 | :ref:`Curve<class_Curve>`                               | :ref:`damping_curve<class_CPUParticles2D_property_damping_curve>`                   |                       |
@@ -508,6 +510,20 @@ Each particle's animation speed will vary along this :ref:`Curve<class_Curve>`.
 +-----------+-----------------------+
 
 Each particle's initial color. If :ref:`texture<class_CPUParticles2D_property_texture>` is defined, it will be multiplied by this color.
+
+----
+
+.. _class_CPUParticles2D_property_color_initial_ramp:
+
+- :ref:`Gradient<class_Gradient>` **color_initial_ramp**
+
++----------+-------------------------------+
+| *Setter* | set_color_initial_ramp(value) |
++----------+-------------------------------+
+| *Getter* | get_color_initial_ramp()      |
++----------+-------------------------------+
+
+Each particle's initial color will vary along this :ref:`GradientTexture1D<class_GradientTexture1D>` (multiplied with :ref:`color<class_CPUParticles2D_property_color>`).
 
 ----
 

@@ -18,7 +18,9 @@ Description
 
 It uses floating-point coordinates. The 2D counterpart to ``AABB`` is :ref:`Rect2<class_Rect2>`.
 
-**Note:** Unlike :ref:`Rect2<class_Rect2>`, ``AABB`` does not have a variant that uses integer coordinates.
+Negative values for :ref:`size<class_AABB_property_size>` are not supported and will not work for most methods. Use :ref:`abs<class_AABB_method_abs>` to get an AABB with a positive size.
+
+\ **Note:** Unlike :ref:`Rect2<class_Rect2>`, ``AABB`` does not have a variant that uses integer coordinates.
 
 Tutorials
 ---------
@@ -204,7 +206,7 @@ Returns ``true`` if this ``AABB`` completely encloses another one.
 
 Returns a copy of this ``AABB`` expanded to include a given point.
 
-**Example:**
+\ **Example:**\ 
 
 
 .. tabs::
@@ -335,7 +337,9 @@ Returns ``true`` if the ``AABB`` is flat or empty.
 
 - :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_Vector3>` point **)** |const|
 
-Returns ``true`` if the ``AABB`` contains a point.
+Returns ``true`` if the ``AABB`` contains a point. Points on the faces of the AABB are considered included, though float-point precision errors may impact the accuracy of such checks.
+
+\ **Note:** This method is not reliable for ``AABB`` with a *negative size*. Use :ref:`abs<class_AABB_method_abs>` to get a positive sized equivalent ``AABB`` to check for contained points.
 
 ----
 
@@ -343,7 +347,7 @@ Returns ``true`` if the ``AABB`` contains a point.
 
 - :ref:`AABB<class_AABB>` **intersection** **(** :ref:`AABB<class_AABB>` with **)** |const|
 
-Returns the intersection between two ``AABB``. An empty AABB (size 0,0,0) is returned on failure.
+Returns the intersection between two ``AABB``. An empty AABB (size ``(0, 0, 0)``) is returned on failure.
 
 ----
 
@@ -404,7 +408,7 @@ Operator Descriptions
 
 Returns ``true`` if the vectors are not equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_AABB_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_AABB_method_is_equal_approx>` instead, which is more reliable.
 
 ----
 
@@ -426,7 +430,7 @@ Inversely transforms (multiplies) the ``AABB`` by the given :ref:`Transform3D<cl
 
 Returns ``true`` if the AABBs are exactly equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_AABB_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_AABB_method_is_equal_approx>` instead, which is more reliable.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

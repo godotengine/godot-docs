@@ -18,7 +18,7 @@ Description
 
 It uses floating-point coordinates. See :ref:`Vector2i<class_Vector2i>` for its integer counterpart.
 
-**Note:** In a boolean context, a Vector2 will evaluate to ``false`` if it's equal to ``Vector2(0, 0)``. Otherwise, a Vector2 will always evaluate to ``true``.
+\ **Note:** In a boolean context, a Vector2 will evaluate to ``false`` if it's equal to ``Vector2(0, 0)``. Otherwise, a Vector2 will always evaluate to ``true``.
 
 Tutorials
 ---------
@@ -81,7 +81,7 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`cubic_interpolate<class_Vector2_method_cubic_interpolate>` **(** :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` pre_a, :ref:`Vector2<class_Vector2>` post_b, :ref:`float<class_float>` weight **)** |const| |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`direction_to<class_Vector2_method_direction_to>` **(** :ref:`Vector2<class_Vector2>` b **)** |const|                                                                                                                        |
+| :ref:`Vector2<class_Vector2>` | :ref:`direction_to<class_Vector2_method_direction_to>` **(** :ref:`Vector2<class_Vector2>` to **)** |const|                                                                                                                       |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`     | :ref:`distance_squared_to<class_Vector2_method_distance_squared_to>` **(** :ref:`Vector2<class_Vector2>` to **)** |const|                                                                                                         |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -104,6 +104,10 @@ Methods
 | :ref:`Vector2<class_Vector2>` | :ref:`lerp<class_Vector2_method_lerp>` **(** :ref:`Vector2<class_Vector2>` to, :ref:`float<class_float>` weight **)** |const|                                                                                                     |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`limit_length<class_Vector2_method_limit_length>` **(** :ref:`float<class_float>` length=1.0 **)** |const|                                                                                                                   |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`max_axis_index<class_Vector2_method_max_axis_index>` **(** **)** |const|                                                                                                                                                    |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`min_axis_index<class_Vector2_method_min_axis_index>` **(** **)** |const|                                                                                                                                                    |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`move_toward<class_Vector2_method_move_toward>` **(** :ref:`Vector2<class_Vector2>` to, :ref:`float<class_float>` delta **)** |const|                                                                                        |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -140,9 +144,9 @@ Operators
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`operator !=<class_Vector2_operator_neq_bool>` **(** :ref:`Vector2<class_Vector2>` right **)**           |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`operator *<class_Vector2_operator_mul_Vector2>` **(** :ref:`Vector2<class_Vector2>` right **)**         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`operator *<class_Vector2_operator_mul_Vector2>` **(** :ref:`Transform2D<class_Transform2D>` right **)** |
++-------------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`operator *<class_Vector2_operator_mul_Vector2>` **(** :ref:`Vector2<class_Vector2>` right **)**         |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`operator *<class_Vector2_operator_mul_Vector2>` **(** :ref:`float<class_float>` right **)**             |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
@@ -198,9 +202,9 @@ Constants
 
 .. _class_Vector2_constant_DOWN:
 
-- **AXIS_X** = **0** --- Enumerated value for the X axis.
+- **AXIS_X** = **0** --- Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector2_method_max_axis_index>` and :ref:`min_axis_index<class_Vector2_method_min_axis_index>`.
 
-- **AXIS_Y** = **1** --- Enumerated value for the Y axis.
+- **AXIS_Y** = **1** --- Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector2_method_max_axis_index>` and :ref:`min_axis_index<class_Vector2_method_min_axis_index>`.
 
 - **ZERO** = **Vector2(0, 0)** --- Zero vector, a vector with all components set to ``0``.
 
@@ -287,7 +291,7 @@ Returns this vector's angle with respect to the positive X axis, or ``(1, 0)`` v
 
 For example, ``Vector2.RIGHT.angle()`` will return zero, ``Vector2.DOWN.angle()`` will return ``PI / 2`` (a quarter turn, or 90 degrees), and ``Vector2(1, -1).angle()`` will return ``-PI / 4`` (a negative eighth turn, or -45 degrees).
 
-`Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle.png>`__
+\ `Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle.png>`__\ 
 
 Equivalent to the result of :ref:`@GlobalScope.atan2<class_@GlobalScope_method_atan2>` when called with the vector's :ref:`y<class_Vector2_property_y>` and :ref:`x<class_Vector2_property_x>` as parameters: ``atan2(y, x)``.
 
@@ -299,7 +303,7 @@ Equivalent to the result of :ref:`@GlobalScope.atan2<class_@GlobalScope_method_a
 
 Returns the angle to the given vector, in radians.
 
-`Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle_to.png>`__
+\ `Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle_to.png>`__
 
 ----
 
@@ -309,9 +313,9 @@ Returns the angle to the given vector, in radians.
 
 Returns the angle between the line connecting the two points and the X axis, in radians.
 
-``a.angle_to_point(b)`` is equivalent of doing ``(b - a).angle()``.
+\ ``a.angle_to_point(b)`` is equivalent of doing ``(b - a).angle()``.
 
-`Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle_to_point.png>`__
+\ `Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle_to_point.png>`__
 
 ----
 
@@ -335,7 +339,7 @@ Returns the vector "bounced off" from a plane defined by the given normal.
 
 - :ref:`Vector2<class_Vector2>` **ceil** **(** **)** |const|
 
-Returns the vector with all components rounded up (towards positive infinity).
+Returns a new vector with all components rounded up (towards positive infinity).
 
 ----
 
@@ -351,7 +355,11 @@ Returns a new vector with all components clamped between the components of ``min
 
 - :ref:`float<class_float>` **cross** **(** :ref:`Vector2<class_Vector2>` with **)** |const|
 
-Returns the cross product of this vector and ``with``.
+Returns the 2D analog of the cross product for this vector and ``with``.
+
+This is the signed area of the parallelogram formed by the two vectors. If the second vector is clockwise from the first vector, then the cross product is the positive area. If counter-clockwise, the cross product is the negative area.
+
+\ **Note:** Cross product is not defined in 2D mathematically. This method embeds the 2D vectors in the XY plane of 3D space and uses their cross product's Z component as the analog.
 
 ----
 
@@ -365,9 +373,9 @@ Cubically interpolates between this vector and ``b`` using ``pre_a`` and ``post_
 
 .. _class_Vector2_method_direction_to:
 
-- :ref:`Vector2<class_Vector2>` **direction_to** **(** :ref:`Vector2<class_Vector2>` b **)** |const|
+- :ref:`Vector2<class_Vector2>` **direction_to** **(** :ref:`Vector2<class_Vector2>` to **)** |const|
 
-Returns the normalized vector pointing from this vector to ``b``. This is equivalent to using ``(b - a).normalized()``.
+Returns the normalized vector pointing from this vector to ``to``. This is equivalent to using ``(b - a).normalized()``.
 
 ----
 
@@ -375,7 +383,7 @@ Returns the normalized vector pointing from this vector to ``b``. This is equiva
 
 - :ref:`float<class_float>` **distance_squared_to** **(** :ref:`Vector2<class_Vector2>` to **)** |const|
 
-Returns the squared distance between this vector and ``b``.
+Returns the squared distance between this vector and ``to``.
 
 This method runs faster than :ref:`distance_to<class_Vector2_method_distance_to>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
 
@@ -399,7 +407,7 @@ The dot product will be ``0`` for a straight angle (90 degrees), greater than 0 
 
 When using unit (normalized) vectors, the result will always be between ``-1.0`` (180 degree angle) when the vectors are facing opposite directions, and ``1.0`` (0 degree angle) when the vectors are aligned.
 
-**Note:** ``a.dot(b)`` is equivalent to ``b.dot(a)``.
+\ **Note:** ``a.dot(b)`` is equivalent to ``b.dot(a)``.
 
 ----
 
@@ -407,7 +415,7 @@ When using unit (normalized) vectors, the result will always be between ``-1.0``
 
 - :ref:`Vector2<class_Vector2>` **floor** **(** **)** |const|
 
-Returns the vector with all components rounded down (towards negative infinity).
+Returns a new vector with all components rounded down (towards negative infinity).
 
 ----
 
@@ -475,11 +483,27 @@ Returns the vector with a maximum length by limiting its length to ``length``.
 
 ----
 
+.. _class_Vector2_method_max_axis_index:
+
+- :ref:`int<class_int>` **max_axis_index** **(** **)** |const|
+
+Returns the axis of the vector's highest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_X<class_Vector2_constant_AXIS_X>`.
+
+----
+
+.. _class_Vector2_method_min_axis_index:
+
+- :ref:`int<class_int>` **min_axis_index** **(** **)** |const|
+
+Returns the axis of the vector's lowest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_Y<class_Vector2_constant_AXIS_Y>`.
+
+----
+
 .. _class_Vector2_method_move_toward:
 
 - :ref:`Vector2<class_Vector2>` **move_toward** **(** :ref:`Vector2<class_Vector2>` to, :ref:`float<class_float>` delta **)** |const|
 
-Moves the vector toward ``to`` by the fixed ``delta`` amount.
+Returns a new vector moved toward ``to`` by the fixed ``delta`` amount. Will not go past the final value.
 
 ----
 
@@ -519,7 +543,7 @@ Returns a vector composed of the :ref:`@GlobalScope.fposmod<class_@GlobalScope_m
 
 - :ref:`Vector2<class_Vector2>` **project** **(** :ref:`Vector2<class_Vector2>` b **)** |const|
 
-Returns the vector projected onto the vector ``b``.
+Returns this vector projected onto the vector ``b``.
 
 ----
 
@@ -527,7 +551,7 @@ Returns the vector projected onto the vector ``b``.
 
 - :ref:`Vector2<class_Vector2>` **reflect** **(** :ref:`Vector2<class_Vector2>` n **)** |const|
 
-Returns the vector reflected from a plane defined by the given normal.
+Returns the vector reflected (i.e. mirrored, or symmetric) over a line defined by the given direction vector ``n``.
 
 ----
 
@@ -543,7 +567,7 @@ Returns the vector rotated by ``phi`` radians. See also :ref:`@GlobalScope.deg2r
 
 - :ref:`Vector2<class_Vector2>` **round** **(** **)** |const|
 
-Returns the vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
+Returns a new vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
 
 ----
 
@@ -551,7 +575,7 @@ Returns the vector with all components rounded to the nearest integer, with half
 
 - :ref:`Vector2<class_Vector2>` **sign** **(** **)** |const|
 
-Returns the vector with each component set to one or negative one, depending on the signs of the components, or zero if the component is zero, by calling :ref:`@GlobalScope.sign<class_@GlobalScope_method_sign>` on each component.
+Returns a new vector with each component set to one or negative one, depending on the signs of the components, or zero if the component is zero, by calling :ref:`@GlobalScope.sign<class_@GlobalScope_method_sign>` on each component.
 
 ----
 
@@ -561,7 +585,7 @@ Returns the vector with each component set to one or negative one, depending on 
 
 Returns the result of spherical linear interpolation between this vector and ``to``, by amount ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
-**Note:** Both vectors must be normalized.
+This method also handles interpolating the lengths if the input vectors have different lengths. For the special case of one or both input vectors having zero length, this method behaves like :ref:`lerp<class_Vector2_method_lerp>`.
 
 ----
 
@@ -592,11 +616,17 @@ Operator Descriptions
 
 Returns ``true`` if the vectors are not equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector2_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector2_method_is_equal_approx>` instead, which is more reliable.
 
 ----
 
 .. _class_Vector2_operator_mul_Vector2:
+
+- :ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`Transform2D<class_Transform2D>` right **)**
+
+Inversely transforms (multiplies) the ``Vector2`` by the given :ref:`Transform2D<class_Transform2D>` transformation matrix.
+
+----
 
 - :ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`Vector2<class_Vector2>` right **)**
 
@@ -605,12 +635,6 @@ Multiplies each component of the ``Vector2`` by the components of the given ``Ve
 ::
 
     print(Vector2(10, 20) * Vector2(3, 4)) # Prints "(30, 80)"
-
-----
-
-- :ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`Transform2D<class_Transform2D>` right **)**
-
-Inversely transforms (multiplies) the ``Vector2`` by the given :ref:`Transform2D<class_Transform2D>` transformation matrix.
 
 ----
 
@@ -700,7 +724,7 @@ Compares two ``Vector2`` vectors by first checking if the X value of the left ve
 
 Returns ``true`` if the vectors are exactly equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector2_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector2_method_is_equal_approx>` instead, which is more reliable.
 
 ----
 

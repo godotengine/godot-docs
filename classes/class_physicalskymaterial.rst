@@ -34,7 +34,7 @@ Properties
 +-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
 | :ref:`float<class_float>`         | :ref:`mie_coefficient<class_PhysicalSkyMaterial_property_mie_coefficient>`           | ``0.005``                      |
 +-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`mie_color<class_PhysicalSkyMaterial_property_mie_color>`                       | ``Color(0.36, 0.56, 0.82, 1)`` |
+| :ref:`Color<class_Color>`         | :ref:`mie_color<class_PhysicalSkyMaterial_property_mie_color>`                       | ``Color(0.63, 0.77, 0.92, 1)`` |
 +-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
 | :ref:`float<class_float>`         | :ref:`mie_eccentricity<class_PhysicalSkyMaterial_property_mie_eccentricity>`         | ``0.8``                        |
 +-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
@@ -42,7 +42,7 @@ Properties
 +-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
 | :ref:`float<class_float>`         | :ref:`rayleigh_coefficient<class_PhysicalSkyMaterial_property_rayleigh_coefficient>` | ``2.0``                        |
 +-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`rayleigh_color<class_PhysicalSkyMaterial_property_rayleigh_color>`             | ``Color(0.056, 0.14, 0.3, 1)`` |
+| :ref:`Color<class_Color>`         | :ref:`rayleigh_color<class_PhysicalSkyMaterial_property_rayleigh_color>`             | ``Color(0.26, 0.41, 0.58, 1)`` |
 +-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
 | :ref:`float<class_float>`         | :ref:`sun_disk_scale<class_PhysicalSkyMaterial_property_sun_disk_scale>`             | ``1.0``                        |
 +-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
@@ -121,7 +121,7 @@ Controls the strength of mie scattering for the sky. Mie scattering results from
 - :ref:`Color<class_Color>` **mie_color**
 
 +-----------+--------------------------------+
-| *Default* | ``Color(0.36, 0.56, 0.82, 1)`` |
+| *Default* | ``Color(0.63, 0.77, 0.92, 1)`` |
 +-----------+--------------------------------+
 | *Setter*  | set_mie_color(value)           |
 +-----------+--------------------------------+
@@ -183,7 +183,7 @@ Controls the strength of the Rayleigh scattering. Rayleigh scattering results fr
 - :ref:`Color<class_Color>` **rayleigh_color**
 
 +-----------+--------------------------------+
-| *Default* | ``Color(0.056, 0.14, 0.3, 1)`` |
+| *Default* | ``Color(0.26, 0.41, 0.58, 1)`` |
 +-----------+--------------------------------+
 | *Setter*  | set_rayleigh_color(value)      |
 +-----------+--------------------------------+

@@ -18,13 +18,13 @@ Description
 
 Changes a local variable's value to the given input. The new value is also provided on an output Data port.
 
-**Input Ports:**
+\ **Input Ports:**\ 
 
 - Sequence
 
-- Data (variant): ``set``
+- Data (variant): ``set``\ 
 
-**Output Ports:**
+\ **Output Ports:**\ 
 
 - Sequence
 

@@ -39,14 +39,14 @@ Command key names use slash delimiters to distinguish sections Example: ``"examp
 
 
 
-**Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_command_palette<class_EditorInterface_method_get_command_palette>`.
+\ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_command_palette<class_EditorInterface_method_get_command_palette>`.
 
 Properties
 ----------
 
-+-------------------------+-------------------+-------------------------------+
-| :ref:`bool<class_bool>` | dialog_hide_on_ok | ``false`` *(parent override)* |
-+-------------------------+-------------------+-------------------------------+
++-------------------------+-------------------+------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | dialog_hide_on_ok | ``false`` (overrides :ref:`AcceptDialog<class_AcceptDialog_property_dialog_hide_on_ok>`) |
++-------------------------+-------------------+------------------------------------------------------------------------------------------+
 
 Methods
 -------

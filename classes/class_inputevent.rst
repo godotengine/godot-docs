@@ -82,7 +82,7 @@ Property Descriptions
 
 The event's device ID.
 
-**Note:** This device ID will always be ``-1`` for emulated mouse input from a touchscreen. This can be used to distinguish emulated mouse input from physical mouse input.
+\ **Note:** This device ID will always be ``-1`` for emulated mouse input from a touchscreen. This can be used to distinguish emulated mouse input from physical mouse input.
 
 Method Descriptions
 -------------------
@@ -133,6 +133,8 @@ Returns ``true`` if the given action is being pressed (and is not an echo event 
 
 If ``exact_match`` is ``false``, it ignores the input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
+\ **Note:** Due to keyboard ghosting, :ref:`is_action_pressed<class_InputEvent_method_is_action_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <../tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
+
 ----
 
 .. _class_InputEvent_method_is_action_released:
@@ -176,6 +178,8 @@ If ``exact_match`` is ``false``, it ignores the input modifiers for :ref:`InputE
 - :ref:`bool<class_bool>` **is_pressed** **(** **)** |const|
 
 Returns ``true`` if this input event is pressed. Not relevant for events of type :ref:`InputEventMouseMotion<class_InputEventMouseMotion>` or :ref:`InputEventScreenDrag<class_InputEventScreenDrag>`.
+
+\ **Note:** Due to keyboard ghosting, :ref:`is_pressed<class_InputEvent_method_is_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <../tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
 
 ----
 

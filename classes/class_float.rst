@@ -50,7 +50,7 @@ Operators
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`operator !=<class_float_operator_neq_bool>` **(** :ref:`int<class_int>` right **)**                    |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`operator *<class_float_operator_mul_float>` **(** :ref:`float<class_float>` right **)**                |
+| :ref:`Color<class_Color>`           | :ref:`operator *<class_float_operator_mul_Color>` **(** :ref:`Color<class_Color>` right **)**                |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`Quaternion<class_Quaternion>` | :ref:`operator *<class_float_operator_mul_Quaternion>` **(** :ref:`Quaternion<class_Quaternion>` right **)** |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
@@ -62,7 +62,7 @@ Operators
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3i<class_Vector3i>`     | :ref:`operator *<class_float_operator_mul_Vector3i>` **(** :ref:`Vector3i<class_Vector3i>` right **)**       |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`           | :ref:`operator *<class_float_operator_mul_Color>` **(** :ref:`Color<class_Color>` right **)**                |
+| :ref:`float<class_float>`           | :ref:`operator *<class_float_operator_mul_float>` **(** :ref:`float<class_float>` right **)**                |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`           | :ref:`operator *<class_float_operator_mul_float>` **(** :ref:`int<class_int>` right **)**                    |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
@@ -153,11 +153,15 @@ Returns ``true`` if the integer has different value than the float.
 
 ----
 
-.. _class_float_operator_mul_float:
+.. _class_float_operator_mul_Color:
 
-- :ref:`float<class_float>` **operator *** **(** :ref:`float<class_float>` right **)**
+- :ref:`Color<class_Color>` **operator *** **(** :ref:`Color<class_Color>` right **)**
 
-Multiplies two ``float``\ s.
+Multiplies each component of the :ref:`Color<class_Color>` by the given ``float``.
+
+::
+
+    print(1.5 * Color(0.5, 0.5, 0.5)) # Color(0.75, 0.75, 0.75)
 
 ----
 
@@ -203,13 +207,9 @@ Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given ``
 
 ----
 
-- :ref:`Color<class_Color>` **operator *** **(** :ref:`Color<class_Color>` right **)**
+- :ref:`float<class_float>` **operator *** **(** :ref:`float<class_float>` right **)**
 
-Multiplies each component of the :ref:`Color<class_Color>` by the given ``float``.
-
-::
-
-    print(1.5 * Color(0.5, 0.5, 0.5)) # Color(0.75, 0.75, 0.75)
+Multiplies two ``float``\ s.
 
 ----
 
@@ -299,7 +299,7 @@ Returns ``true`` if this ``float`` is less than or equal to the given :ref:`int<
 
 Returns ``true`` if both floats are exactly equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` or :ref:`@GlobalScope.is_zero_approx<class_@GlobalScope_method_is_zero_approx>` instead, which are more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` or :ref:`@GlobalScope.is_zero_approx<class_@GlobalScope_method_is_zero_approx>` instead, which are more reliable.
 
 ----
 

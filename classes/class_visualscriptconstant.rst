@@ -18,11 +18,11 @@ Description
 
 This node returns a constant's value.
 
-**Input Ports:**
+\ **Input Ports:**\ 
 
 none
 
-**Output Ports:**
+\ **Output Ports:**\ 
 
 - Data (variant): ``get``
 

@@ -32,6 +32,8 @@ Properties
 +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
 | :ref:`ContentScaleAspect<enum_Window_ContentScaleAspect>` | :ref:`content_scale_aspect<class_Window_property_content_scale_aspect>` | ``0``                  |
 +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+| :ref:`float<class_float>`                                 | :ref:`content_scale_factor<class_Window_property_content_scale_factor>` | ``1.0``                |
++-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
 | :ref:`ContentScaleMode<enum_Window_ContentScaleMode>`     | :ref:`content_scale_mode<class_Window_property_content_scale_mode>`     | ``0``                  |
 +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
 | :ref:`Vector2i<class_Vector2i>`                           | :ref:`content_scale_size<class_Window_property_content_scale_size>`     | ``Vector2i(0, 0)``     |
@@ -143,6 +145,8 @@ Methods
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`request_attention<class_Window_method_request_attention>` **(** **)**                                                                                                                 |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`reset_size<class_Window_method_reset_size>` **(** **)**                                                                                                                               |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`set_flag<class_Window_method_set_flag>` **(** :ref:`Flags<enum_Window_Flags>` flag, :ref:`bool<class_bool>` enabled **)**                                                             |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`set_ime_active<class_Window_method_set_ime_active>` **(** :ref:`bool<class_bool>` active **)**                                                                                        |
@@ -159,33 +163,33 @@ Methods
 Theme Properties
 ----------------
 
-+-----------------------------------+--------------------------------------------------------------------------------+-----------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`close<class_Window_theme_icon_close>`                                    |                       |
-+-----------------------------------+--------------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`             | :ref:`close_h_ofs<class_Window_theme_constant_close_h_ofs>`                    | ``18``                |
-+-----------------------------------+--------------------------------------------------------------------------------+-----------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`close_pressed<class_Window_theme_icon_close_pressed>`                    |                       |
-+-----------------------------------+--------------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`             | :ref:`close_v_ofs<class_Window_theme_constant_close_v_ofs>`                    | ``18``                |
-+-----------------------------------+--------------------------------------------------------------------------------+-----------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`embedded_border<class_Window_theme_style_embedded_border>`               |                       |
-+-----------------------------------+--------------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`             | :ref:`resize_margin<class_Window_theme_constant_resize_margin>`                | ``4``                 |
-+-----------------------------------+--------------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`             | :ref:`scaleborder_size<class_Window_theme_constant_scaleborder_size>`          | ``4``                 |
-+-----------------------------------+--------------------------------------------------------------------------------+-----------------------+
-| :ref:`Color<class_Color>`         | :ref:`title_color<class_Window_theme_color_title_color>`                       | ``Color(0, 0, 0, 1)`` |
-+-----------------------------------+--------------------------------------------------------------------------------+-----------------------+
-| :ref:`Font<class_Font>`           | :ref:`title_font<class_Window_theme_font_title_font>`                          |                       |
-+-----------------------------------+--------------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`             | :ref:`title_font_size<class_Window_theme_font_size_title_font_size>`           |                       |
-+-----------------------------------+--------------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`             | :ref:`title_height<class_Window_theme_constant_title_height>`                  | ``20``                |
-+-----------------------------------+--------------------------------------------------------------------------------+-----------------------+
-| :ref:`Color<class_Color>`         | :ref:`title_outline_modulate<class_Window_theme_color_title_outline_modulate>` | ``Color(1, 1, 1, 1)`` |
-+-----------------------------------+--------------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`             | :ref:`title_outline_size<class_Window_theme_constant_title_outline_size>`      | ``0``                 |
-+-----------------------------------+--------------------------------------------------------------------------------+-----------------------+
++-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`title_color<class_Window_theme_color_title_color>`                       | ``Color(0.875, 0.875, 0.875, 1)`` |
++-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`title_outline_modulate<class_Window_theme_color_title_outline_modulate>` | ``Color(1, 1, 1, 1)``             |
++-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`             | :ref:`close_h_ofs<class_Window_theme_constant_close_h_ofs>`                    | ``18``                            |
++-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`             | :ref:`close_v_ofs<class_Window_theme_constant_close_v_ofs>`                    | ``24``                            |
++-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`             | :ref:`resize_margin<class_Window_theme_constant_resize_margin>`                | ``4``                             |
++-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`             | :ref:`scaleborder_size<class_Window_theme_constant_scaleborder_size>`          | ``4``                             |
++-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`             | :ref:`title_height<class_Window_theme_constant_title_height>`                  | ``36``                            |
++-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`             | :ref:`title_outline_size<class_Window_theme_constant_title_outline_size>`      | ``0``                             |
++-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Font<class_Font>`           | :ref:`title_font<class_Window_theme_font_title_font>`                          |                                   |
++-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`             | :ref:`title_font_size<class_Window_theme_font_size_title_font_size>`           |                                   |
++-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`close<class_Window_theme_icon_close>`                                    |                                   |
++-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`close_pressed<class_Window_theme_icon_close_pressed>`                    |                                   |
++-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`embedded_border<class_Window_theme_style_embedded_border>`               |                                   |
++-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
 
 Signals
 -------
@@ -235,6 +239,12 @@ Signals
 .. _class_Window_signal_mouse_exited:
 
 - **mouse_exited** **(** **)**
+
+----
+
+.. _class_Window_signal_theme_changed:
+
+- **theme_changed** **(** **)**
 
 ----
 
@@ -441,6 +451,20 @@ If ``true``, the window will have no borders.
 
 ----
 
+.. _class_Window_property_content_scale_factor:
+
+- :ref:`float<class_float>` **content_scale_factor**
+
++-----------+---------------------------------+
+| *Default* | ``1.0``                         |
++-----------+---------------------------------+
+| *Setter*  | set_content_scale_factor(value) |
++-----------+---------------------------------+
+| *Getter*  | get_content_scale_factor()      |
++-----------+---------------------------------+
+
+----
+
 .. _class_Window_property_content_scale_mode:
 
 - :ref:`ContentScaleMode<enum_Window_ContentScaleMode>` **content_scale_mode**
@@ -541,7 +565,7 @@ The screen the window is currently on.
 
 Set's the window's current mode.
 
-**Note:** Fullscreen mode is not exclusive fullscreen on Windows and Linux.
+\ **Note:** Fullscreen mode is not exclusive fullscreen on Windows and Linux.
 
 ----
 
@@ -948,6 +972,14 @@ Returns ``true`` if layout is right-to-left.
 
 ----
 
+.. _class_Window_method_reset_size:
+
+- void **reset_size** **(** **)**
+
+Resets the size to the minimum size, which is the max of :ref:`min_size<class_Window_property_min_size>` and (if :ref:`wrap_controls<class_Window_property_wrap_controls>` is enabled) :ref:`get_contents_minimum_size<class_Window_method_get_contents_minimum_size>`. This is equivalent to calling ``set_size(Vector2i())`` (or any size below the minimum).
+
+----
+
 .. _class_Window_method_set_flag:
 
 - void **set_flag** **(** :ref:`Flags<enum_Window_Flags>` flag, :ref:`bool<class_bool>` enabled **)**
@@ -989,9 +1021,25 @@ Sets layout direction and text writing direction. Right-to-left layouts are nece
 Theme Property Descriptions
 ---------------------------
 
-.. _class_Window_theme_icon_close:
+.. _class_Window_theme_color_title_color:
 
-- :ref:`Texture2D<class_Texture2D>` **close**
+- :ref:`Color<class_Color>` **title_color**
+
++-----------+-----------------------------------+
+| *Default* | ``Color(0.875, 0.875, 0.875, 1)`` |
++-----------+-----------------------------------+
+
+----
+
+.. _class_Window_theme_color_title_outline_modulate:
+
+- :ref:`Color<class_Color>` **title_outline_modulate**
+
++-----------+-----------------------+
+| *Default* | ``Color(1, 1, 1, 1)`` |
++-----------+-----------------------+
+
+The color of the title outline.
 
 ----
 
@@ -1005,25 +1053,13 @@ Theme Property Descriptions
 
 ----
 
-.. _class_Window_theme_icon_close_pressed:
-
-- :ref:`Texture2D<class_Texture2D>` **close_pressed**
-
-----
-
 .. _class_Window_theme_constant_close_v_ofs:
 
 - :ref:`int<class_int>` **close_v_ofs**
 
 +-----------+--------+
-| *Default* | ``18`` |
+| *Default* | ``24`` |
 +-----------+--------+
-
-----
-
-.. _class_Window_theme_style_embedded_border:
-
-- :ref:`StyleBox<class_StyleBox>` **embedded_border**
 
 ----
 
@@ -1047,13 +1083,25 @@ Theme Property Descriptions
 
 ----
 
-.. _class_Window_theme_color_title_color:
+.. _class_Window_theme_constant_title_height:
 
-- :ref:`Color<class_Color>` **title_color**
+- :ref:`int<class_int>` **title_height**
 
-+-----------+-----------------------+
-| *Default* | ``Color(0, 0, 0, 1)`` |
-+-----------+-----------------------+
++-----------+--------+
+| *Default* | ``36`` |
++-----------+--------+
+
+----
+
+.. _class_Window_theme_constant_title_outline_size:
+
+- :ref:`int<class_int>` **title_outline_size**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+The size of the title outline.
 
 ----
 
@@ -1071,37 +1119,21 @@ The size of the title font.
 
 ----
 
-.. _class_Window_theme_constant_title_height:
+.. _class_Window_theme_icon_close:
 
-- :ref:`int<class_int>` **title_height**
-
-+-----------+--------+
-| *Default* | ``20`` |
-+-----------+--------+
+- :ref:`Texture2D<class_Texture2D>` **close**
 
 ----
 
-.. _class_Window_theme_color_title_outline_modulate:
+.. _class_Window_theme_icon_close_pressed:
 
-- :ref:`Color<class_Color>` **title_outline_modulate**
-
-+-----------+-----------------------+
-| *Default* | ``Color(1, 1, 1, 1)`` |
-+-----------+-----------------------+
-
-The color of the title outline.
+- :ref:`Texture2D<class_Texture2D>` **close_pressed**
 
 ----
 
-.. _class_Window_theme_constant_title_outline_size:
+.. _class_Window_theme_style_embedded_border:
 
-- :ref:`int<class_int>` **title_outline_size**
-
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
-
-The size of the title outline.
+- :ref:`StyleBox<class_StyleBox>` **embedded_border**
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

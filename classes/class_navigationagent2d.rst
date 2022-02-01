@@ -227,7 +227,7 @@ Returns the distance to the target location, using the agent's global position. 
 
 - :ref:`Vector2<class_Vector2>` **get_final_location** **(** **)**
 
-Returns the reachable final location in global coordinates. This can change if the navigation path is altered in any way.
+Returns the reachable final location in global coordinates. This can change if the navigation path is altered in any way. Because of this, it would be best to check this each frame.
 
 ----
 

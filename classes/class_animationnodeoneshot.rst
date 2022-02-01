@@ -28,28 +28,21 @@ Tutorials
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>`                           | ``false`` |
-+---------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`autorestart_delay<class_AnimationNodeOneShot_property_autorestart_delay>`               | ``1.0``   |
-+---------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`autorestart_random_delay<class_AnimationNodeOneShot_property_autorestart_random_delay>` | ``0.0``   |
-+---------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`fadein_time<class_AnimationNodeOneShot_property_fadein_time>`                           | ``0.1``   |
-+---------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`fadeout_time<class_AnimationNodeOneShot_property_fadeout_time>`                         | ``0.1``   |
-+---------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`sync<class_AnimationNodeOneShot_property_sync>`                                         | ``false`` |
-+---------------------------+-----------------------------------------------------------------------------------------------+-----------+
-
-Methods
--------
-
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` | :ref:`get_mix_mode<class_AnimationNodeOneShot_method_get_mix_mode>` **(** **)** |const|                                                |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`set_mix_mode<class_AnimationNodeOneShot_method_set_mix_mode>` **(** :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` mode **)** |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                           | :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>`                           | ``false`` |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                         | :ref:`autorestart_delay<class_AnimationNodeOneShot_property_autorestart_delay>`               | ``1.0``   |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                         | :ref:`autorestart_random_delay<class_AnimationNodeOneShot_property_autorestart_random_delay>` | ``0.0``   |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                         | :ref:`fadein_time<class_AnimationNodeOneShot_property_fadein_time>`                           | ``0.1``   |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                         | :ref:`fadeout_time<class_AnimationNodeOneShot_property_fadeout_time>`                         | ``0.1``   |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` | :ref:`mix_mode<class_AnimationNodeOneShot_property_mix_mode>`                                 | ``0``     |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                           | :ref:`sync<class_AnimationNodeOneShot_property_sync>`                                         | ``false`` |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
 
 Enumerations
 ------------
@@ -145,6 +138,20 @@ If :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>` is ``true
 
 ----
 
+.. _class_AnimationNodeOneShot_property_mix_mode:
+
+- :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **mix_mode**
+
++-----------+---------------------+
+| *Default* | ``0``               |
++-----------+---------------------+
+| *Setter*  | set_mix_mode(value) |
++-----------+---------------------+
+| *Getter*  | get_mix_mode()      |
++-----------+---------------------+
+
+----
+
 .. _class_AnimationNodeOneShot_property_sync:
 
 - :ref:`bool<class_bool>` **sync**
@@ -156,19 +163,6 @@ If :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>` is ``true
 +-----------+---------------------+
 | *Getter*  | is_using_sync()     |
 +-----------+---------------------+
-
-Method Descriptions
--------------------
-
-.. _class_AnimationNodeOneShot_method_get_mix_mode:
-
-- :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **get_mix_mode** **(** **)** |const|
-
-----
-
-.. _class_AnimationNodeOneShot_method_set_mix_mode:
-
-- void **set_mix_mode** **(** :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` mode **)**
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

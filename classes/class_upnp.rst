@@ -33,7 +33,7 @@ To close a specific port (e.g. after you have finished using it):
 
     upnp.delete_port_mapping(port)
 
-**Note:** UPnP discovery blocks the current thread. To perform discovery without blocking the main thread, use :ref:`Thread<class_Thread>`\ s like this:
+\ **Note:** UPnP discovery blocks the current thread. To perform discovery without blocking the main thread, use :ref:`Thread<class_Thread>`\ s like this:
 
 ::
 

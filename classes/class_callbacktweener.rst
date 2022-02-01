@@ -18,7 +18,7 @@ Description
 
 ``CallbackTweener`` is used to call a method in a tweening sequence. See :ref:`Tween.tween_callback<class_Tween_method_tween_callback>` for more usage information.
 
-**Note:** :ref:`Tween.tween_callback<class_Tween_method_tween_callback>` is the only correct way to create ``CallbackTweener``. Any ``CallbackTweener`` created manually will not function correctly.
+\ **Note:** :ref:`Tween.tween_callback<class_Tween_method_tween_callback>` is the only correct way to create ``CallbackTweener``. Any ``CallbackTweener`` created manually will not function correctly.
 
 Methods
 -------

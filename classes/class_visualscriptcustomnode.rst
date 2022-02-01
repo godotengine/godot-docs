@@ -112,7 +112,7 @@ Method Descriptions
 
 - :ref:`String<class_String>` **_get_caption** **(** **)** |virtual| |const|
 
-Return the node's title.
+Returns the node's title.
 
 ----
 
@@ -120,7 +120,7 @@ Return the node's title.
 
 - :ref:`String<class_String>` **_get_category** **(** **)** |virtual| |const|
 
-Return the node's category.
+Returns the node's category.
 
 ----
 
@@ -128,7 +128,7 @@ Return the node's category.
 
 - :ref:`int<class_int>` **_get_input_value_port_count** **(** **)** |virtual| |const|
 
-Return the count of input value ports.
+Returns the count of input value ports.
 
 ----
 
@@ -136,7 +136,7 @@ Return the count of input value ports.
 
 - :ref:`int<class_int>` **_get_input_value_port_hint** **(** :ref:`int<class_int>` input_idx **)** |virtual| |const|
 
-Return the specified input port's hint. See the :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` hints.
+Returns the specified input port's hint. See the :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` hints.
 
 ----
 
@@ -144,7 +144,7 @@ Return the specified input port's hint. See the :ref:`PropertyHint<enum_@GlobalS
 
 - :ref:`String<class_String>` **_get_input_value_port_hint_string** **(** :ref:`int<class_int>` input_idx **)** |virtual| |const|
 
-Return the specified input port's hint string.
+Returns the specified input port's hint string.
 
 ----
 
@@ -152,7 +152,7 @@ Return the specified input port's hint string.
 
 - :ref:`String<class_String>` **_get_input_value_port_name** **(** :ref:`int<class_int>` input_idx **)** |virtual| |const|
 
-Return the specified input port's name.
+Returns the specified input port's name.
 
 ----
 
@@ -160,7 +160,7 @@ Return the specified input port's name.
 
 - :ref:`int<class_int>` **_get_input_value_port_type** **(** :ref:`int<class_int>` input_idx **)** |virtual| |const|
 
-Return the specified input port's type. See the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
+Returns the specified input port's type. See the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
 
 ----
 
@@ -168,7 +168,7 @@ Return the specified input port's type. See the :ref:`Variant.Type<enum_@GlobalS
 
 - :ref:`int<class_int>` **_get_output_sequence_port_count** **(** **)** |virtual| |const|
 
-Return the amount of output **sequence** ports.
+Returns the amount of output **sequence** ports.
 
 ----
 
@@ -176,7 +176,7 @@ Return the amount of output **sequence** ports.
 
 - :ref:`String<class_String>` **_get_output_sequence_port_text** **(** :ref:`int<class_int>` seq_idx **)** |virtual| |const|
 
-Return the specified **sequence** output's name.
+Returns the specified **sequence** output's name.
 
 ----
 
@@ -184,7 +184,7 @@ Return the specified **sequence** output's name.
 
 - :ref:`int<class_int>` **_get_output_value_port_count** **(** **)** |virtual| |const|
 
-Return the amount of output value ports.
+Returns the amount of output value ports.
 
 ----
 
@@ -192,7 +192,7 @@ Return the amount of output value ports.
 
 - :ref:`int<class_int>` **_get_output_value_port_hint** **(** :ref:`int<class_int>` output_idx **)** |virtual| |const|
 
-Return the specified output port's hint. See the :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` hints.
+Returns the specified output port's hint. See the :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` hints.
 
 ----
 
@@ -200,7 +200,7 @@ Return the specified output port's hint. See the :ref:`PropertyHint<enum_@Global
 
 - :ref:`String<class_String>` **_get_output_value_port_hint_string** **(** :ref:`int<class_int>` output_idx **)** |virtual| |const|
 
-Return the specified output port's hint string.
+Returns the specified output port's hint string.
 
 ----
 
@@ -208,7 +208,7 @@ Return the specified output port's hint string.
 
 - :ref:`String<class_String>` **_get_output_value_port_name** **(** :ref:`int<class_int>` output_idx **)** |virtual| |const|
 
-Return the specified output port's name.
+Returns the specified output port's name.
 
 ----
 
@@ -216,7 +216,7 @@ Return the specified output port's name.
 
 - :ref:`int<class_int>` **_get_output_value_port_type** **(** :ref:`int<class_int>` output_idx **)** |virtual| |const|
 
-Return the specified output port's type. See the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
+Returns the specified output port's type. See the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
 
 ----
 
@@ -224,7 +224,7 @@ Return the specified output port's type. See the :ref:`Variant.Type<enum_@Global
 
 - :ref:`String<class_String>` **_get_text** **(** **)** |virtual| |const|
 
-Return the custom node's text, which is shown right next to the input **sequence** port (if there is none, on the place that is usually taken by it).
+Returns the custom node's text, which is shown right next to the input **sequence** port (if there is none, on the place that is usually taken by it).
 
 ----
 
@@ -232,7 +232,7 @@ Return the custom node's text, which is shown right next to the input **sequence
 
 - :ref:`int<class_int>` **_get_working_memory_size** **(** **)** |virtual| |const|
 
-Return the size of the custom node's working memory. See :ref:`_step<class_VisualScriptCustomNode_method__step>` for more details.
+Returns the size of the custom node's working memory. See :ref:`_step<class_VisualScriptCustomNode_method__step>` for more details.
 
 ----
 
@@ -240,7 +240,7 @@ Return the size of the custom node's working memory. See :ref:`_step<class_Visua
 
 - :ref:`bool<class_bool>` **_has_input_sequence_port** **(** **)** |virtual| |const|
 
-Return whether the custom node has an input **sequence** port.
+Returns whether the custom node has an input **sequence** port.
 
 ----
 
@@ -252,11 +252,11 @@ Execute the custom node's logic, returning the index of the output sequence port
 
 The ``inputs`` array contains the values of the input ports.
 
-``outputs`` is an array whose indices should be set to the respective outputs.
+\ ``outputs`` is an array whose indices should be set to the respective outputs.
 
 The ``start_mode`` is usually :ref:`START_MODE_BEGIN_SEQUENCE<class_VisualScriptCustomNode_constant_START_MODE_BEGIN_SEQUENCE>`, unless you have used the ``STEP_*`` constants.
 
-``working_mem`` is an array which can be used to persist information between runs of the custom node. The size needs to be predefined using :ref:`_get_working_memory_size<class_VisualScriptCustomNode_method__get_working_memory_size>`.
+\ ``working_mem`` is an array which can be used to persist information between runs of the custom node. The size needs to be predefined using :ref:`_get_working_memory_size<class_VisualScriptCustomNode_method__get_working_memory_size>`.
 
 When returning, you can mask the returned value with one of the ``STEP_*`` constants.
 

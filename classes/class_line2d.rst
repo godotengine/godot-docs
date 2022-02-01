@@ -145,7 +145,7 @@ Property Descriptions
 
 If ``true``, the line's border will be anti-aliased.
 
-**Note:** Line2D is not accelerated by batching when being anti-aliased.
+\ **Note:** Line2D is not accelerated by batching when being anti-aliased.
 
 ----
 
@@ -271,7 +271,7 @@ The smoothness of the rounded joints and caps. This is only used if a cap or joi
 | *Getter*  | get_sharp_limit()      |
 +-----------+------------------------+
 
-The direction difference in radians between vector points. This value is only used if ``joint mode`` is set to :ref:`LINE_JOINT_SHARP<class_Line2D_constant_LINE_JOINT_SHARP>`.
+The direction difference in radians between vector points. This value is only used if :ref:`joint_mode<class_Line2D_property_joint_mode>` is set to :ref:`LINE_JOINT_SHARP<class_Line2D_constant_LINE_JOINT_SHARP>`.
 
 ----
 

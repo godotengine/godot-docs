@@ -406,7 +406,7 @@ Operator Descriptions
 
 Returns ``true`` if the ``Basis`` matrices are not equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Basis_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Basis_method_is_equal_approx>` instead, which is more reliable.
 
 ----
 
@@ -446,7 +446,7 @@ This operator multiplies all components of the ``Basis``, which scales it unifor
 
 Returns ``true`` if the ``Basis`` matrices are exactly equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Basis_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Basis_method_is_equal_approx>` instead, which is more reliable.
 
 ----
 

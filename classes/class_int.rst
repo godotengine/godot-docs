@@ -18,7 +18,7 @@ Signed 64-bit integer type.
 
 It can take values in the interval ``[-2^63, 2^63 - 1]``, i.e. ``[-9223372036854775808, 9223372036854775807]``. Exceeding those bounds will wrap around.
 
-``int`` is a :ref:`Variant<class_Variant>` type, and will thus be used when assigning an integer value to a :ref:`Variant<class_Variant>`. It can also be enforced with the ``: int`` type hint.
+\ ``int`` is a :ref:`Variant<class_Variant>` type, and will thus be used when assigning an integer value to a :ref:`Variant<class_Variant>`. It can also be enforced with the ``: int`` type hint.
 
 
 .. tabs::
@@ -84,10 +84,6 @@ Operators
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`Quaternion<class_Quaternion>` | :ref:`operator *<class_int_operator_mul_Quaternion>` **(** :ref:`Quaternion<class_Quaternion>` right **)** |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`operator *<class_int_operator_mul_int>` **(** :ref:`int<class_int>` right **)**                      |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`operator *<class_int_operator_mul_float>` **(** :ref:`float<class_float>` right **)**                |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`       | :ref:`operator *<class_int_operator_mul_Vector2>` **(** :ref:`Vector2<class_Vector2>` right **)**          |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2i<class_Vector2i>`     | :ref:`operator *<class_int_operator_mul_Vector2i>` **(** :ref:`Vector2i<class_Vector2i>` right **)**       |
@@ -95,6 +91,10 @@ Operators
 | :ref:`Vector3<class_Vector3>`       | :ref:`operator *<class_int_operator_mul_Vector3>` **(** :ref:`Vector3<class_Vector3>` right **)**          |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3i<class_Vector3i>`     | :ref:`operator *<class_int_operator_mul_Vector3i>` **(** :ref:`Vector3i<class_Vector3i>` right **)**       |
++-------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | :ref:`operator *<class_int_operator_mul_float>` **(** :ref:`float<class_float>` right **)**                |
++-------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`operator *<class_int_operator_mul_int>` **(** :ref:`int<class_int>` right **)**                      |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`           | :ref:`operator +<class_int_operator_sum_float>` **(** :ref:`float<class_float>` right **)**                |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
@@ -243,18 +243,6 @@ Multiplies each component of the :ref:`Quaternion<class_Quaternion>` by the give
 
 ----
 
-- :ref:`int<class_int>` **operator *** **(** :ref:`int<class_int>` right **)**
-
-Multiplies two ``int``\ s.
-
-----
-
-- :ref:`float<class_float>` **operator *** **(** :ref:`float<class_float>` right **)**
-
-Multiplies an ``int`` and a :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
-
-----
-
 - :ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`Vector2<class_Vector2>` right **)**
 
 Multiplies each component of the :ref:`Vector2<class_Vector2>` by the given ``int``.
@@ -280,6 +268,18 @@ Multiplies each component of the :ref:`Vector3<class_Vector3>` by the given ``in
 - :ref:`Vector3i<class_Vector3i>` **operator *** **(** :ref:`Vector3i<class_Vector3i>` right **)**
 
 Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given ``int``.
+
+----
+
+- :ref:`float<class_float>` **operator *** **(** :ref:`float<class_float>` right **)**
+
+Multiplies an ``int`` and a :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
+
+----
+
+- :ref:`int<class_int>` **operator *** **(** :ref:`int<class_int>` right **)**
+
+Multiplies two ``int``\ s.
 
 ----
 

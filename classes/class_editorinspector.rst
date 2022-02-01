@@ -18,17 +18,25 @@ Description
 
 The editor inspector is by default located on the right-hand side of the editor. It's used to edit the properties of the selected node. For example, you can select a node such as the Sprite2D then edit its transform through the inspector tool. The editor inspector is an essential tool in the game development workflow.
 
-**Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_inspector<class_EditorInterface_method_get_inspector>`.
+\ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_inspector<class_EditorInterface_method_get_inspector>`.
 
 Properties
 ----------
 
-+-------------------------+---------------------------+-------------------------------+
-| :ref:`bool<class_bool>` | scroll_horizontal_enabled | ``false`` *(parent override)* |
-+-------------------------+---------------------------+-------------------------------+
++----------------------------------------------------+------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` | horizontal_scroll_mode | ``0`` (overrides :ref:`ScrollContainer<class_ScrollContainer_property_horizontal_scroll_mode>`) |
++----------------------------------------------------+------------------------+-------------------------------------------------------------------------------------------------+
 
 Signals
 -------
+
+.. _class_EditorInspector_signal_edited_object_changed:
+
+- **edited_object_changed** **(** **)**
+
+Emitted when the object being edited by the inspector has changed.
+
+----
 
 .. _class_EditorInspector_signal_object_id_selected:
 
@@ -56,7 +64,7 @@ Emitted when a property is edited in the inspector.
 
 .. _class_EditorInspector_signal_property_keyed:
 
-- **property_keyed** **(** :ref:`String<class_String>` property **)**
+- **property_keyed** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` advance **)**
 
 Emitted when a property is keyed in the inspector. Properties can be keyed by clicking the "key" icon next to a property when the Animation panel is toggled.
 
@@ -76,13 +84,13 @@ Emitted when a property is selected in the inspector.
 
 Emitted when a boolean property is toggled in the inspector.
 
-**Note:** This signal is never emitted if the internal ``autoclear`` property enabled. Since this property is always enabled in the editor inspector, this signal is never emitted by the editor itself.
+\ **Note:** This signal is never emitted if the internal ``autoclear`` property enabled. Since this property is always enabled in the editor inspector, this signal is never emitted by the editor itself.
 
 ----
 
 .. _class_EditorInspector_signal_resource_selected:
 
-- **resource_selected** **(** :ref:`Object<class_Object>` res, :ref:`String<class_String>` prop **)**
+- **resource_selected** **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path **)**
 
 Emitted when a resource is selected in the inspector.
 

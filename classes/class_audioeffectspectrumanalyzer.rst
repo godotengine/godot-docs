@@ -23,9 +23,9 @@ See also :ref:`AudioStreamGenerator<class_AudioStreamGenerator>` for procedurall
 Tutorials
 ---------
 
-- `https://godotengine.org/asset-library/asset/528 <Audio Spectrum Demo>`__
+- `Audio Spectrum Demo <https://godotengine.org/asset-library/asset/528>`__
 
-- `https://godotengine.org/article/godot-32-will-get-new-audio-features <Godot 3.2 will get new audio features>`__
+- `Godot 3.2 will get new audio features <https://godotengine.org/article/godot-32-will-get-new-audio-features>`__
 
 Properties
 ----------

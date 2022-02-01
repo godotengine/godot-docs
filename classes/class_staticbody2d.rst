@@ -24,9 +24,9 @@ A static body is a simple body that can't be moved by external forces or contact
 
 They have extra functionalities to move and affect other bodies:
 
-**Static transform change:** Static bodies can be moved by animation or script. In this case, they are just teleported and don't affect other bodies on their path.
+\ **Static transform change:** Static bodies can be moved by animation or script. In this case, they are just teleported and don't affect other bodies on their path.
 
-**Constant velocity:** When :ref:`constant_linear_velocity<class_StaticBody2D_property_constant_linear_velocity>` or :ref:`constant_angular_velocity<class_StaticBody2D_property_constant_angular_velocity>` is set, static bodies don't move themselves but affect touching bodies as if they were moving. This is useful for simulating conveyor belts or conveyor wheels.
+\ **Constant velocity:** When :ref:`constant_linear_velocity<class_StaticBody2D_property_constant_linear_velocity>` or :ref:`constant_angular_velocity<class_StaticBody2D_property_constant_angular_velocity>` is set, static bodies don't move themselves but affect touching bodies as if they were moving. This is useful for simulating conveyor belts or conveyor wheels.
 
 Properties
 ----------

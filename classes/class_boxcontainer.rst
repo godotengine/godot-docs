@@ -23,9 +23,9 @@ Arranges child :ref:`Control<class_Control>` nodes vertically or horizontally, a
 Properties
 ----------
 
-+-----------------------------------------------+---------------------------------------------------------+-------+
-| :ref:`AlignMode<enum_BoxContainer_AlignMode>` | :ref:`alignment<class_BoxContainer_property_alignment>` | ``0`` |
-+-----------------------------------------------+---------------------------------------------------------+-------+
++-------------------------------------------------------+---------------------------------------------------------+-------+
+| :ref:`AlignmentMode<enum_BoxContainer_AlignmentMode>` | :ref:`alignment<class_BoxContainer_property_alignment>` | ``0`` |
++-------------------------------------------------------+---------------------------------------------------------+-------+
 
 Methods
 -------
@@ -37,28 +37,28 @@ Methods
 Enumerations
 ------------
 
-.. _enum_BoxContainer_AlignMode:
+.. _enum_BoxContainer_AlignmentMode:
 
-.. _class_BoxContainer_constant_ALIGN_BEGIN:
+.. _class_BoxContainer_constant_ALIGNMENT_BEGIN:
 
-.. _class_BoxContainer_constant_ALIGN_CENTER:
+.. _class_BoxContainer_constant_ALIGNMENT_CENTER:
 
-.. _class_BoxContainer_constant_ALIGN_END:
+.. _class_BoxContainer_constant_ALIGNMENT_END:
 
-enum **AlignMode**:
+enum **AlignmentMode**:
 
-- **ALIGN_BEGIN** = **0** --- Aligns children with the beginning of the container.
+- **ALIGNMENT_BEGIN** = **0**
 
-- **ALIGN_CENTER** = **1** --- Aligns children with the center of the container.
+- **ALIGNMENT_CENTER** = **1**
 
-- **ALIGN_END** = **2** --- Aligns children with the end of the container.
+- **ALIGNMENT_END** = **2**
 
 Property Descriptions
 ---------------------
 
 .. _class_BoxContainer_property_alignment:
 
-- :ref:`AlignMode<enum_BoxContainer_AlignMode>` **alignment**
+- :ref:`AlignmentMode<enum_BoxContainer_AlignmentMode>` **alignment**
 
 +-----------+----------------------+
 | *Default* | ``0``                |
@@ -68,7 +68,7 @@ Property Descriptions
 | *Getter*  | get_alignment()      |
 +-----------+----------------------+
 
-The alignment of the container's children (must be one of :ref:`ALIGN_BEGIN<class_BoxContainer_constant_ALIGN_BEGIN>`, :ref:`ALIGN_CENTER<class_BoxContainer_constant_ALIGN_CENTER>`, or :ref:`ALIGN_END<class_BoxContainer_constant_ALIGN_END>`).
+The alignment of the container's children (must be one of :ref:`ALIGNMENT_BEGIN<class_BoxContainer_constant_ALIGNMENT_BEGIN>`, :ref:`ALIGNMENT_CENTER<class_BoxContainer_constant_ALIGNMENT_CENTER>`, or :ref:`ALIGNMENT_END<class_BoxContainer_constant_ALIGNMENT_END>`).
 
 Method Descriptions
 -------------------

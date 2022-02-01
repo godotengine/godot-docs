@@ -14,12 +14,9 @@ Built-in GDScript functions.
 Description
 -----------
 
-List of core built-in GDScript functions. Math functions and other utilities. Everything else is provided by objects. (Keywords: builtin, built in, global functions.)
+A list of GDScript-specific utility functions accessed in any script.
 
-Tutorials
----------
-
-- :doc:`Random number generation <../tutorials/math/random_number_generation>`
+For the list of the global functions and constants see :ref:`@GlobalScope<class_@GlobalScope>`.
 
 Methods
 -------
@@ -73,11 +70,11 @@ Constants
 
 - **INF** = **inf** --- Positive floating-point infinity. This is the result of floating-point division when the divisor is ``0.0``. For negative infinity, use ``-INF``. Dividing by ``-0.0`` will result in negative infinity if the numerator is positive, so dividing by ``0.0`` is not the same as dividing by ``-0.0`` (despite ``0.0 == -0.0`` returning ``true``).
 
-**Note:** Numeric infinity is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer number by ``0`` will not result in :ref:`INF<class_@GDScript_constant_INF>` and will result in a run-time error instead.
+\ **Note:** Numeric infinity is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer number by ``0`` will not result in :ref:`INF<class_@GDScript_constant_INF>` and will result in a run-time error instead.
 
 - **NAN** = **nan** --- "Not a Number", an invalid floating-point value. :ref:`NAN<class_@GDScript_constant_NAN>` has special properties, including that it is not equal to itself (``NAN == NAN`` returns ``false``). It is output by some invalid operations, such as dividing floating-point ``0.0`` by ``0.0``.
 
-**Note:** "Not a Number" is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer ``0`` by ``0`` will not result in :ref:`NAN<class_@GDScript_constant_NAN>` and will result in a run-time error instead.
+\ **Note:** "Not a Number" is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer ``0`` by ``0`` will not result in :ref:`NAN<class_@GDScript_constant_NAN>` and will result in a run-time error instead.
 
 Method Descriptions
 -------------------
@@ -88,13 +85,13 @@ Method Descriptions
 
 Returns a color constructed from integer red, green, blue, and alpha channels. Each channel should have 8 bits of information ranging from 0 to 255.
 
-``r8`` red channel
+\ ``r8`` red channel
 
-``g8`` green channel
+\ ``g8`` green channel
 
-``b8`` blue channel
+\ ``b8`` blue channel
 
-``a8`` alpha channel
+\ ``a8`` alpha channel
 
 ::
 
@@ -108,7 +105,7 @@ Returns a color constructed from integer red, green, blue, and alpha channels. E
 
 Asserts that the ``condition`` is ``true``. If the ``condition`` is ``false``, an error is generated. When running from the editor, the running project will also be paused until you resume it. This can be used as a stronger form of :ref:`@GlobalScope.push_error<class_@GlobalScope_method_push_error>` for reporting errors to project developers or add-on users.
 
-**Note:** For performance reasons, the code inside :ref:`assert<class_@GDScript_method_assert>` is only executed in debug builds or when running the project from the editor. Don't include code that has side effects in an :ref:`assert<class_@GDScript_method_assert>` call. Otherwise, the project will behave differently when exported in release mode.
+\ **Note:** For performance reasons, the code inside :ref:`assert<class_@GDScript_method_assert>` is only executed in debug builds or when running the project from the editor. Don't include code that has side effects in an :ref:`assert<class_@GDScript_method_assert>` call. Otherwise, the project will behave differently when exported in release mode.
 
 The optional ``message`` argument, if given, is shown in addition to the generic "Assertion failed" message. You can use this to provide additional details about why the assertion failed.
 
@@ -185,7 +182,7 @@ would print
 
     [{function:bar, line:12, source:res://script.gd}, {function:foo, line:9, source:res://script.gd}, {function:_ready, line:6, source:res://script.gd}]
 
-**Note:** Not supported for calling from threads. Instead, this will return an empty array.
+\ **Note:** Not supported for calling from threads. Instead, this will return an empty array.
 
 ----
 
@@ -218,7 +215,7 @@ Prints out:
 
 Returns length of Variant ``var``. Length is the character count of String, element count of Array, size of Dictionary, etc.
 
-**Note:** Generates a fatal error if Variant can not provide a length.
+\ **Note:** Generates a fatal error if Variant can not provide a length.
 
 ::
 
@@ -233,14 +230,14 @@ Returns length of Variant ``var``. Length is the character count of String, elem
 
 Loads a resource from the filesystem located at ``path``. The resource is loaded on the method call (unless it's referenced already elsewhere, e.g. in another script or in the scene), which might cause slight delay, especially when loading scenes. To avoid unnecessary delays when loading something multiple times, either store the resource in a variable or use :ref:`preload<class_@GDScript_method_preload>`.
 
-**Note:** Resource paths can be obtained by right-clicking on a resource in the FileSystem dock and choosing "Copy Path" or by dragging the file from the FileSystem dock into the script.
+\ **Note:** Resource paths can be obtained by right-clicking on a resource in the FileSystem dock and choosing "Copy Path" or by dragging the file from the FileSystem dock into the script.
 
 ::
 
     # Load a scene called main located in the root of the project directory and cache it in a variable.
     var main = load("res://main.tscn") # main will contain a PackedScene resource.
 
-**Important:** The path must be absolute, a local path will just return ``null``.
+\ **Important:** The path must be absolute, a local path will just return ``null``.
 
 This method is a simplified version of :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`, which can be used for more advanced scenarios.
 
@@ -252,7 +249,7 @@ This method is a simplified version of :ref:`ResourceLoader.load<class_ResourceL
 
 Returns a :ref:`Resource<class_Resource>` from the filesystem located at ``path``. The resource is loaded during script parsing, i.e. is loaded with the script and :ref:`preload<class_@GDScript_method_preload>` effectively acts as a reference to that resource. Note that the method requires a constant path. If you want to load a resource from a dynamic/variable path, use :ref:`load<class_@GDScript_method_load>`.
 
-**Note:** Resource paths can be obtained by right clicking on a resource in the Assets Panel and choosing "Copy Path" or by dragging the file from the FileSystem dock into the script.
+\ **Note:** Resource paths can be obtained by right clicking on a resource in the Assets Panel and choosing "Copy Path" or by dragging the file from the FileSystem dock into the script.
 
 ::
 
@@ -274,7 +271,7 @@ Output in the console would look something like this:
     Test print
        At: res://test.gd:15:_process()
 
-**Note:** Not supported for calling from threads. Instead of the stack frame, this will print the thread ID.
+\ **Note:** Not supported for calling from threads. Instead of the stack frame, this will print the thread ID.
 
 ----
 
@@ -290,7 +287,7 @@ Output in the console would look something like this:
 
     Frame 0 - res://test.gd:16 in function '_process'
 
-**Note:** Not supported for calling from threads. Instead of the stack trace, this will print the thread ID.
+\ **Note:** Not supported for calling from threads. Instead of the stack trace, this will print the thread ID.
 
 ----
 

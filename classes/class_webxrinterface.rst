@@ -206,7 +206,7 @@ At this point, you should do ``get_viewport().xr = false`` to instruct Godot to 
 
 Emitted by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` if the session fails to start.
 
-``message`` may optionally contain an error message from WebXR, or an empty string if no message is available.
+\ ``message`` may optionally contain an error message from WebXR, or an empty string if no message is available.
 
 ----
 
@@ -400,15 +400,15 @@ In the context of WebXR, a "controller" can be an advanced VR controller like th
 
 Use this method to get information about the controller that triggered one of these signals:
 
-- :ref:`selectstart<class_WebXRInterface_signal_selectstart>`
+- :ref:`selectstart<class_WebXRInterface_signal_selectstart>`\ 
 
-- :ref:`select<class_WebXRInterface_signal_select>`
+- :ref:`select<class_WebXRInterface_signal_select>`\ 
 
-- :ref:`selectend<class_WebXRInterface_signal_selectend>`
+- :ref:`selectend<class_WebXRInterface_signal_selectend>`\ 
 
-- :ref:`squeezestart<class_WebXRInterface_signal_squeezestart>`
+- :ref:`squeezestart<class_WebXRInterface_signal_squeezestart>`\ 
 
-- :ref:`squeeze<class_WebXRInterface_signal_squeeze>`
+- :ref:`squeeze<class_WebXRInterface_signal_squeeze>`\ 
 
 - :ref:`squeezestart<class_WebXRInterface_signal_squeezestart>`
 

@@ -100,7 +100,7 @@ Returns whether this ``Bone2D`` node is going to autocalculate its length and bo
 
 Returns the angle of the bone in the ``Bone2D`` node.
 
-**Note:** This is different from the ``Bone2D``'s rotation. The bone angle is the rotation of the bone shown by the ``Bone2D`` gizmo, and because ``Bone2D`` bones are based on positions, this can vary from the actual rotation of the ``Bone2D`` node.
+\ **Note:** This is different from the ``Bone2D``'s rotation. The bone angle is the rotation of the bone shown by the ``Bone2D`` gizmo, and because ``Bone2D`` bones are based on positions, this can vary from the actual rotation of the ``Bone2D`` node.
 
 ----
 
@@ -150,7 +150,7 @@ When set to ``true``, the ``Bone2D`` node will attempt to automatically calculat
 
 Sets the bone angle for the ``Bone2D`` node. This is typically set to the rotation from the ``Bone2D`` node to a child ``Bone2D`` node.
 
-**Note:** This is different from the ``Bone2D``'s rotation. The bone angle is the rotation of the bone shown by the ``Bone2D`` gizmo, and because ``Bone2D`` bones are based on positions, this can vary from the actual rotation of the ``Bone2D`` node.
+\ **Note:** This is different from the ``Bone2D``'s rotation. The bone angle is the rotation of the bone shown by the ``Bone2D`` gizmo, and because ``Bone2D`` bones are based on positions, this can vary from the actual rotation of the ``Bone2D`` node.
 
 ----
 

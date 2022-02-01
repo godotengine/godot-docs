@@ -52,6 +52,8 @@ Properties
 +---------------------------------------------------------+---------------------------------------------------------------------------------------------+-------------------------+
 | :ref:`Color<class_Color>`                               | :ref:`color<class_CPUParticles3D_property_color>`                                           | ``Color(1, 1, 1, 1)``   |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Gradient<class_Gradient>`                         | :ref:`color_initial_ramp<class_CPUParticles3D_property_color_initial_ramp>`                 |                         |
++---------------------------------------------------------+---------------------------------------------------------------------------------------------+-------------------------+
 | :ref:`Gradient<class_Gradient>`                         | :ref:`color_ramp<class_CPUParticles3D_property_color_ramp>`                                 |                         |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------------+-------------------------+
 | :ref:`Curve<class_Curve>`                               | :ref:`damping_curve<class_CPUParticles3D_property_damping_curve>`                           |                         |
@@ -402,7 +404,7 @@ Minimum angle.
 | *Getter* | get_param_curve()      |
 +----------+------------------------+
 
-Each particle's angular velocity will vary along this :ref:`Curve<class_Curve>`.
+Each particle's angular velocity (rotation speed) will vary along this :ref:`Curve<class_Curve>` over its lifetime.
 
 ----
 
@@ -418,7 +420,7 @@ Each particle's angular velocity will vary along this :ref:`Curve<class_Curve>`.
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
-Maximum angular velocity.
+Maximum initial angular velocity (rotation speed) applied to each particle in *degrees* per second.
 
 ----
 
@@ -434,7 +436,7 @@ Maximum angular velocity.
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
 
-Minimum angular velocity.
+Minimum initial angular velocity (rotation speed) applied to each particle in *degrees* per second.
 
 ----
 
@@ -543,6 +545,20 @@ Minimum particle animation speed.
 +-----------+-----------------------+
 
 Each particle's initial color. To have particle display color in a :ref:`BaseMaterial3D<class_BaseMaterial3D>` make sure to set :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` to ``true``.
+
+----
+
+.. _class_CPUParticles3D_property_color_initial_ramp:
+
+- :ref:`Gradient<class_Gradient>` **color_initial_ramp**
+
++----------+-------------------------------+
+| *Setter* | set_color_initial_ramp(value) |
++----------+-------------------------------+
+| *Getter* | get_color_initial_ramp()      |
++----------+-------------------------------+
+
+Each particle's initial color will vary along this :ref:`GradientTexture1D<class_GradientTexture1D>` (multiplied with :ref:`color<class_CPUParticles3D_property_color>`).
 
 ----
 

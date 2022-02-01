@@ -20,7 +20,7 @@ GridContainer will arrange its Control-derived children in a grid like structure
 
 Notice that grid layout will preserve the columns and rows for every size of the container, and that empty columns will be expanded automatically.
 
-**Note:** GridContainer only works with child nodes inheriting from Control. It won't rearrange child nodes inheriting from Node2D.
+\ **Note:** GridContainer only works with child nodes inheriting from Control. It won't rearrange child nodes inheriting from Node2D.
 
 Tutorials
 ---------

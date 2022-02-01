@@ -23,11 +23,15 @@ Performs a lookup operation on the texture provided as a uniform for the shader.
 Properties
 ----------
 
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
-| :ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` | :ref:`color_default<class_VisualShaderNodeTextureUniform_property_color_default>` | ``0`` |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
-| :ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>`   | :ref:`texture_type<class_VisualShaderNodeTextureUniform_property_texture_type>`   | ``0`` |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-------+
+| :ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>`   | :ref:`color_default<class_VisualShaderNodeTextureUniform_property_color_default>`   | ``0`` |
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-------+
+| :ref:`TextureFilter<enum_VisualShaderNodeTextureUniform_TextureFilter>` | :ref:`texture_filter<class_VisualShaderNodeTextureUniform_property_texture_filter>` | ``0`` |
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-------+
+| :ref:`TextureRepeat<enum_VisualShaderNodeTextureUniform_TextureRepeat>` | :ref:`texture_repeat<class_VisualShaderNodeTextureUniform_property_texture_repeat>` | ``0`` |
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-------+
+| :ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>`     | :ref:`texture_type<class_VisualShaderNodeTextureUniform_property_texture_type>`     | ``0`` |
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-------+
 
 Enumerations
 ------------
@@ -40,7 +44,7 @@ Enumerations
 
 .. _class_VisualShaderNodeTextureUniform_constant_TYPE_NORMAL_MAP:
 
-.. _class_VisualShaderNodeTextureUniform_constant_TYPE_ANISO:
+.. _class_VisualShaderNodeTextureUniform_constant_TYPE_ANISOTROPY:
 
 .. _class_VisualShaderNodeTextureUniform_constant_TYPE_MAX:
 
@@ -52,7 +56,7 @@ enum **TextureType**:
 
 - **TYPE_NORMAL_MAP** = **2** --- Adds ``hint_normal`` as hint to the uniform declaration, which internally converts the texture for proper usage as normal map.
 
-- **TYPE_ANISO** = **3** --- Adds ``hint_aniso`` as hint to the uniform declaration to use for a flowmap.
+- **TYPE_ANISOTROPY** = **3** --- Adds ``hint_anisotropy`` as hint to the uniform declaration to use for a flowmap.
 
 - **TYPE_MAX** = **4** --- Represents the size of the :ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>` enum.
 
@@ -74,6 +78,66 @@ enum **ColorDefault**:
 
 - **COLOR_DEFAULT_MAX** = **2** --- Represents the size of the :ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` enum.
 
+----
+
+.. _enum_VisualShaderNodeTextureUniform_TextureFilter:
+
+.. _class_VisualShaderNodeTextureUniform_constant_FILTER_DEFAULT:
+
+.. _class_VisualShaderNodeTextureUniform_constant_FILTER_NEAREST:
+
+.. _class_VisualShaderNodeTextureUniform_constant_FILTER_LINEAR:
+
+.. _class_VisualShaderNodeTextureUniform_constant_FILTER_NEAREST_MIPMAP:
+
+.. _class_VisualShaderNodeTextureUniform_constant_FILTER_LINEAR_MIPMAP:
+
+.. _class_VisualShaderNodeTextureUniform_constant_FILTER_NEAREST_MIPMAP_ANISOTROPIC:
+
+.. _class_VisualShaderNodeTextureUniform_constant_FILTER_LINEAR_MIPMAP_ANISOTROPIC:
+
+.. _class_VisualShaderNodeTextureUniform_constant_FILTER_MAX:
+
+enum **TextureFilter**:
+
+- **FILTER_DEFAULT** = **0**
+
+- **FILTER_NEAREST** = **1**
+
+- **FILTER_LINEAR** = **2**
+
+- **FILTER_NEAREST_MIPMAP** = **3**
+
+- **FILTER_LINEAR_MIPMAP** = **4**
+
+- **FILTER_NEAREST_MIPMAP_ANISOTROPIC** = **5**
+
+- **FILTER_LINEAR_MIPMAP_ANISOTROPIC** = **6**
+
+- **FILTER_MAX** = **7** --- Represents the size of the :ref:`TextureFilter<enum_VisualShaderNodeTextureUniform_TextureFilter>` enum.
+
+----
+
+.. _enum_VisualShaderNodeTextureUniform_TextureRepeat:
+
+.. _class_VisualShaderNodeTextureUniform_constant_REPEAT_DEFAULT:
+
+.. _class_VisualShaderNodeTextureUniform_constant_REPEAT_ENABLED:
+
+.. _class_VisualShaderNodeTextureUniform_constant_REPEAT_DISABLED:
+
+.. _class_VisualShaderNodeTextureUniform_constant_REPEAT_MAX:
+
+enum **TextureRepeat**:
+
+- **REPEAT_DEFAULT** = **0**
+
+- **REPEAT_ENABLED** = **1**
+
+- **REPEAT_DISABLED** = **2**
+
+- **REPEAT_MAX** = **3** --- Represents the size of the :ref:`TextureRepeat<enum_VisualShaderNodeTextureUniform_TextureRepeat>` enum.
+
 Property Descriptions
 ---------------------
 
@@ -90,6 +154,38 @@ Property Descriptions
 +-----------+--------------------------+
 
 Sets the default color if no texture is assigned to the uniform.
+
+----
+
+.. _class_VisualShaderNodeTextureUniform_property_texture_filter:
+
+- :ref:`TextureFilter<enum_VisualShaderNodeTextureUniform_TextureFilter>` **texture_filter**
+
++-----------+---------------------------+
+| *Default* | ``0``                     |
++-----------+---------------------------+
+| *Setter*  | set_texture_filter(value) |
++-----------+---------------------------+
+| *Getter*  | get_texture_filter()      |
++-----------+---------------------------+
+
+Sets the texture filtering mode. See :ref:`TextureFilter<enum_VisualShaderNodeTextureUniform_TextureFilter>` for options.
+
+----
+
+.. _class_VisualShaderNodeTextureUniform_property_texture_repeat:
+
+- :ref:`TextureRepeat<enum_VisualShaderNodeTextureUniform_TextureRepeat>` **texture_repeat**
+
++-----------+---------------------------+
+| *Default* | ``0``                     |
++-----------+---------------------------+
+| *Setter*  | set_texture_repeat(value) |
++-----------+---------------------------+
+| *Getter*  | get_texture_repeat()      |
++-----------+---------------------------+
+
+Sets the texture repeating mode. See :ref:`TextureRepeat<enum_VisualShaderNodeTextureUniform_TextureRepeat>` for options.
 
 ----
 

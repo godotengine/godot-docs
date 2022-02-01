@@ -192,7 +192,7 @@ Texture to display when the node is disabled. See :ref:`BaseButton.disabled<clas
 | *Getter* | get_focused_texture()      |
 +----------+----------------------------+
 
-Texture to display when the node has mouse or keyboard focus.
+Texture to display when the node has mouse or keyboard focus. :ref:`texture_focused<class_TextureButton_property_texture_focused>` is displayed *over* the base texture, so a partially transparent texture should be used to ensure the base texture remains visible. A texture that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a fully transparent texture of any size. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
 ----
 

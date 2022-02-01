@@ -241,7 +241,7 @@ Method Descriptions
 
 Returns the angle between this quaternion and ``to``. This is the magnitude of the angle you would need to rotate by to get from one to the other.
 
-**Note:** This method has an abnormally high amount of floating-point error, so methods such as ``is_zero_approx`` will not work reliably.
+\ **Note:** This method has an abnormally high amount of floating-point error, so methods such as ``is_zero_approx`` will not work reliably.
 
 ----
 
@@ -335,7 +335,7 @@ Returns a copy of the quaternion, normalized to unit length.
 
 Returns the result of the spherical linear interpolation between this quaternion and ``to`` by amount ``weight``.
 
-**Note:** Both quaternions must be normalized.
+\ **Note:** Both quaternions must be normalized.
 
 ----
 
@@ -358,7 +358,7 @@ Operator Descriptions
 
 Returns ``true`` if the quaternions are not equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Quaternion_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Quaternion_method_is_equal_approx>` instead, which is more reliable.
 
 ----
 
@@ -428,7 +428,7 @@ Divides each component of the ``Quaternion`` by the given value. This operation 
 
 Returns ``true`` if the quaternions are exactly equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Quaternion_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Quaternion_method_is_equal_approx>` instead, which is more reliable.
 
 ----
 

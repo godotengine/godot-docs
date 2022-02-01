@@ -18,11 +18,11 @@ Description
 
 A simplified interface to a scene file. Provides access to operations and checks that can be performed on the scene resource itself.
 
-Can be used to save a node to a file. When saving, the node as well as all the nodes it owns get saved (see ``owner`` property on :ref:`Node<class_Node>`).
+Can be used to save a node to a file. When saving, the node as well as all the nodes it owns get saved (see :ref:`Node.owner<class_Node_property_owner>` property).
 
-**Note:** The node doesn't need to own itself.
+\ **Note:** The node doesn't need to own itself.
 
-**Example of loading a saved scene:**
+\ **Example of loading a saved scene:**\ 
 
 
 .. tabs::
@@ -43,7 +43,7 @@ Can be used to save a node to a file. When saving, the node as well as all the n
 
 
 
-**Example of saving a node with different owners:** The following example creates 3 objects: ``Node2D`` (``node``), ``RigidDynamicBody2D`` (``body``) and ``CollisionObject2D`` (``collision``). ``collision`` is a child of ``body`` which is a child of ``node``. Only ``body`` is owned by ``node`` and ``pack`` will therefore only save those two nodes, but not ``collision``.
+\ **Example of saving a node with different owners:** The following example creates 3 objects: :ref:`Node2D<class_Node2D>` (``node``), :ref:`RigidDynamicBody2D<class_RigidDynamicBody2D>` (``body``) and :ref:`CollisionObject2D<class_CollisionObject2D>` (``collision``). ``collision`` is a child of ``body`` which is a child of ``node``. Only ``body`` is owned by ``node`` and ``pack`` will therefore only save those two nodes, but not ``collision``.
 
 
 .. tabs::
@@ -106,9 +106,9 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------------+------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`_bundled<class_PackedScene_property__bundled>` | ``{"conn_count": 0,"conns": PackedInt32Array(),"editable_instances": [],"names": PackedStringArray(),"node_count": 0,"node_paths": [],"nodes": PackedInt32Array(),"variants": [],"version": 2}`` |
-+-------------------------------------+------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`_bundled<class_PackedScene_property__bundled>` | ``{ "conn_count": 0, "conns": PackedInt32Array(), "editable_instances": [], "names": PackedStringArray(), "node_count": 0, "node_paths": [], "nodes": PackedInt32Array(), "variants": [], "version": 2 }`` |
++-------------------------------------+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -142,15 +142,15 @@ enum **GenEditState**:
 
 - **GEN_EDIT_STATE_INSTANCE** = **1** --- If passed to :ref:`instantiate<class_PackedScene_method_instantiate>`, provides local scene resources to the local scene.
 
-**Note:** Only available in editor builds.
+\ **Note:** Only available in editor builds.
 
 - **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`instantiate<class_PackedScene_method_instantiate>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state.
 
-**Note:** Only available in editor builds.
+\ **Note:** Only available in editor builds.
 
 - **GEN_EDIT_STATE_MAIN_INHERITED** = **3** --- It's similar to :ref:`GEN_EDIT_STATE_MAIN<class_PackedScene_constant_GEN_EDIT_STATE_MAIN>`, but for the case where the scene is being instantiated to be the base of another one.
 
-**Note:** Only available in editor builds.
+\ **Note:** Only available in editor builds.
 
 Property Descriptions
 ---------------------
@@ -159,9 +159,9 @@ Property Descriptions
 
 - :ref:`Dictionary<class_Dictionary>` **_bundled**
 
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| *Default* | ``{"conn_count": 0,"conns": PackedInt32Array(),"editable_instances": [],"names": PackedStringArray(),"node_count": 0,"node_paths": [],"nodes": PackedInt32Array(),"variants": [],"version": 2}`` |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| *Default* | ``{ "conn_count": 0, "conns": PackedInt32Array(), "editable_instances": [], "names": PackedStringArray(), "node_count": 0, "node_paths": [], "nodes": PackedInt32Array(), "variants": [], "version": 2 }`` |
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 A dictionary representation of the scene contents.
 

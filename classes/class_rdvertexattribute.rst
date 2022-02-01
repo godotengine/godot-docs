@@ -17,7 +17,7 @@ Properties
 ----------
 
 +--------------------------------------------------------------+--------------------------------------------------------------+---------+
-| :ref:`DataFormat<enum_RenderingDevice_DataFormat>`           | :ref:`format<class_RDVertexAttribute_property_format>`       | ``226`` |
+| :ref:`DataFormat<enum_RenderingDevice_DataFormat>`           | :ref:`format<class_RDVertexAttribute_property_format>`       | ``218`` |
 +--------------------------------------------------------------+--------------------------------------------------------------+---------+
 | :ref:`VertexFrequency<enum_RenderingDevice_VertexFrequency>` | :ref:`frequency<class_RDVertexAttribute_property_frequency>` | ``0``   |
 +--------------------------------------------------------------+--------------------------------------------------------------+---------+
@@ -36,7 +36,7 @@ Property Descriptions
 - :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **format**
 
 +-----------+-------------------+
-| *Default* | ``226``           |
+| *Default* | ``218``           |
 +-----------+-------------------+
 | *Setter*  | set_format(value) |
 +-----------+-------------------+

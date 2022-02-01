@@ -423,7 +423,7 @@ If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
 Locks the audio driver's main loop.
 
-**Note:** Remember to unlock it afterwards.
+\ **Note:** Remember to unlock it afterwards.
 
 ----
 

@@ -16,9 +16,9 @@ Exposes a set of scenes as tiles for a :ref:`TileSet<class_TileSet>` resource.
 Description
 -----------
 
-When placed on a :ref:`TileMap<class_TileMap>`, tiles from ``TileSetScenesCollectionSource`` will automatically instanciate an assiciated scene at the cell's position in the TileMap.
+When placed on a :ref:`TileMap<class_TileMap>`, tiles from ``TileSetScenesCollectionSource`` will automatically instantiate an associated scene at the cell's position in the TileMap.
 
-Scenes are instanciated as children of the :ref:`TileMap<class_TileMap>` when it enters the tree. If you add/remove a scene tile in the :ref:`TileMap<class_TileMap>` that is already inside the tree, the :ref:`TileMap<class_TileMap>` will automatically instanciate/free the scene accordingly.
+Scenes are instantiated as children of the :ref:`TileMap<class_TileMap>` when it enters the tree. If you add/remove a scene tile in the :ref:`TileMap<class_TileMap>` that is already inside the tree, the :ref:`TileMap<class_TileMap>` will automatically instantiate/free the scene accordingly.
 
 Methods
 -------
@@ -136,7 +136,7 @@ Changes a scene tile's ID from ``id`` to ``new_id``. This will fail if there is 
 
 - void **set_scene_tile_scene** **(** :ref:`int<class_int>` id, :ref:`PackedScene<class_PackedScene>` packed_scene **)**
 
-Assigns a :ref:`PackedScene<class_PackedScene>` resource to the scene tile with id ``id``. This will fail if the scene does not extend CanvasItem, as positionning properties are needed to place the scene on the TileMap.
+Assigns a :ref:`PackedScene<class_PackedScene>` resource to the scene tile with id ``id``. This will fail if the scene does not extend CanvasItem, as positioning properties are needed to place the scene on the TileMap.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

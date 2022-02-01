@@ -22,7 +22,7 @@ Base syntax highlighter resource all syntax highlighters extend from, provides s
 
 The associated :ref:`TextEdit<class_TextEdit>` node will call into the ``SyntaxHighlighter`` on a as needed basis.
 
-**Note:** Each Syntax highlighter instance should not be shared across multiple :ref:`TextEdit<class_TextEdit>` nodes.
+\ **Note:** Each Syntax highlighter instance should not be shared across multiple :ref:`TextEdit<class_TextEdit>` nodes.
 
 Methods
 -------
@@ -90,7 +90,7 @@ Returns syntax highlighting data for a single line. If the line is not cached, c
 
 The return :ref:`Dictionary<class_Dictionary>` is column number to :ref:`Dictionary<class_Dictionary>`. The column number notes the start of a region, the region will end if another region is found, or at the end of the line. The nested :ref:`Dictionary<class_Dictionary>` contains the data for that region, currently only the key "color" is supported.
 
-**Example return:**
+\ **Example return:**\ 
 
 ::
 
@@ -121,7 +121,7 @@ Returns the associated :ref:`TextEdit<class_TextEdit>` node.
 
 Clears then updates the ``SyntaxHighlighter`` caches. Override :ref:`_update_cache<class_SyntaxHighlighter_method__update_cache>` for a callback.
 
-**Note:** This is called automatically when the associated :ref:`TextEdit<class_TextEdit>` node, updates its own cache.
+\ **Note:** This is called automatically when the associated :ref:`TextEdit<class_TextEdit>` node, updates its own cache.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

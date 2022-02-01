@@ -127,7 +127,7 @@ Tip: You may find this function useful in servers when parsing spawn requests fr
 
 - :ref:`Error<enum_@GlobalScope_Error>` **despawn** **(** :ref:`int<class_int>` scene_id, :ref:`Object<class_Object>` object, :ref:`int<class_int>` peer_id=0 **)**
 
-Request a despawn for the scene identified by ``scene_id`` to the given ``peer_id``. This will either trigger the default behaviour, or invoke the custom spawn/despawn callables specified in :ref:`spawn_config<class_MultiplayerReplicator_method_spawn_config>`. See :ref:`send_despawn<class_MultiplayerReplicator_method_send_despawn>` for the default behavior.
+Request a despawn for the scene identified by ``scene_id`` to the given ``peer_id``. This will either trigger the default behavior, or invoke the custom spawn/despawn callables specified in :ref:`spawn_config<class_MultiplayerReplicator_method_spawn_config>`. See :ref:`send_despawn<class_MultiplayerReplicator_method_send_despawn>` for the default behavior.
 
 ----
 
@@ -169,7 +169,7 @@ Sends a sync request for the instances of the scene identified by ``scene_id`` t
 
 - :ref:`Error<enum_@GlobalScope_Error>` **spawn** **(** :ref:`int<class_int>` scene_id, :ref:`Object<class_Object>` object, :ref:`int<class_int>` peer_id=0 **)**
 
-Request a spawn for the scene identified by ``scene_id`` to the given ``peer_id``. This will either trigger the default behaviour, or invoke the custom spawn/despawn callables specified in :ref:`spawn_config<class_MultiplayerReplicator_method_spawn_config>`. See :ref:`send_spawn<class_MultiplayerReplicator_method_send_spawn>` for the default behavior.
+Request a spawn for the scene identified by ``scene_id`` to the given ``peer_id``. This will either trigger the default behavior, or invoke the custom spawn/despawn callables specified in :ref:`spawn_config<class_MultiplayerReplicator_method_spawn_config>`. See :ref:`send_spawn<class_MultiplayerReplicator_method_send_spawn>` for the default behavior.
 
 ----
 
@@ -177,7 +177,7 @@ Request a spawn for the scene identified by ``scene_id`` to the given ``peer_id`
 
 - :ref:`Error<enum_@GlobalScope_Error>` **spawn_config** **(** :ref:`int<class_int>` scene_id, :ref:`ReplicationMode<enum_MultiplayerReplicator_ReplicationMode>` spawn_mode, :ref:`StringName[]<class_StringName>` properties=[], :ref:`Callable<class_Callable>` custom_send, :ref:`Callable<class_Callable>` custom_receive **)**
 
-Configures the MultiplayerReplicator to track instances of the :ref:`PackedScene<class_PackedScene>` identified by ``scene_id`` (see :ref:`ResourceLoader.get_resource_uid<class_ResourceLoader_method_get_resource_uid>`) for the purpose of network replication. When ``mode`` is :ref:`REPLICATION_MODE_SERVER<class_MultiplayerReplicator_constant_REPLICATION_MODE_SERVER>`, the specified ``properties`` will also be replicated to clients during the initial spawn. You can optionally specify a ``custom_send`` and a ``custom_receive`` to override the default behaviour and customize the spawn/despawn proecess.
+Configures the MultiplayerReplicator to track instances of the :ref:`PackedScene<class_PackedScene>` identified by ``scene_id`` (see :ref:`ResourceLoader.get_resource_uid<class_ResourceLoader_method_get_resource_uid>`) for the purpose of network replication. When ``mode`` is :ref:`REPLICATION_MODE_SERVER<class_MultiplayerReplicator_constant_REPLICATION_MODE_SERVER>`, the specified ``properties`` will also be replicated to clients during the initial spawn. You can optionally specify a ``custom_send`` and a ``custom_receive`` to override the default behavior and customize the spawn/despawn proecess.
 
 Tip: You can use a custom property in the scene main script to return a customly optimized state representation.
 
@@ -187,9 +187,9 @@ Tip: You can use a custom property in the scene main script to return a customly
 
 - :ref:`Error<enum_@GlobalScope_Error>` **sync_all** **(** :ref:`int<class_int>` scene_id, :ref:`int<class_int>` peer_id=0 **)**
 
-Manually request a sync for all the instances of the scene identified by ``scene_id``. This function will trigger the default sync behaviour, or call your send custom send callable if specified in :ref:`sync_config<class_MultiplayerReplicator_method_sync_config>`.
+Manually request a sync for all the instances of the scene identified by ``scene_id``. This function will trigger the default sync behavior, or call your send custom send callable if specified in :ref:`sync_config<class_MultiplayerReplicator_method_sync_config>`.
 
-**Note:** The default implementation only allow syncing from server to clients.
+\ **Note:** The default implementation only allow syncing from server to clients.
 
 ----
 
@@ -197,9 +197,9 @@ Manually request a sync for all the instances of the scene identified by ``scene
 
 - :ref:`Error<enum_@GlobalScope_Error>` **sync_config** **(** :ref:`int<class_int>` scene_id, :ref:`int<class_int>` interval, :ref:`StringName[]<class_StringName>` properties=[], :ref:`Callable<class_Callable>` custom_send, :ref:`Callable<class_Callable>` custom_receive **)**
 
-Configures the MultiplayerReplicator to sync instances of the :ref:`PackedScene<class_PackedScene>` identified by ``scene_id`` (see :ref:`ResourceLoader.get_resource_uid<class_ResourceLoader_method_get_resource_uid>`) for the purpose of network replication at the desired ``interval`` (in milliseconds). The specified ``properties`` will be part of the state sync. You can optionally specify a ``custom_send`` and a ``custom_receive`` to override the default behaviour and customize the syncronization proecess.
+Configures the MultiplayerReplicator to sync instances of the :ref:`PackedScene<class_PackedScene>` identified by ``scene_id`` (see :ref:`ResourceLoader.get_resource_uid<class_ResourceLoader_method_get_resource_uid>`) for the purpose of network replication at the desired ``interval`` (in milliseconds). The specified ``properties`` will be part of the state sync. You can optionally specify a ``custom_send`` and a ``custom_receive`` to override the default behavior and customize the synchronization proecess.
 
-Tip: You can use a custom property in the scene main script to return a customly optimized state representation (having a single property that returns a PackedByteArray is higly recommended when dealing with many instances).
+Tip: You can use a custom property in the scene main script to return a customly optimized state representation (having a single property that returns a PackedByteArray is highly recommended when dealing with many instances).
 
 ----
 

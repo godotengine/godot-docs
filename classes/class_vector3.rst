@@ -18,7 +18,7 @@ Description
 
 It uses floating-point coordinates. See :ref:`Vector3i<class_Vector3i>` for its integer counterpart.
 
-**Note:** In a boolean context, a Vector3 will evaluate to ``false`` if it's equal to ``Vector3(0, 0, 0)``. Otherwise, a Vector3 will always evaluate to ``true``.
+\ **Note:** In a boolean context, a Vector3 will evaluate to ``false`` if it's equal to ``Vector3(0, 0, 0)``. Otherwise, a Vector3 will always evaluate to ``true``.
 
 Tutorials
 ---------
@@ -77,11 +77,11 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`cubic_interpolate<class_Vector3_method_cubic_interpolate>` **(** :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` pre_a, :ref:`Vector3<class_Vector3>` post_b, :ref:`float<class_float>` weight **)** |const| |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`direction_to<class_Vector3_method_direction_to>` **(** :ref:`Vector3<class_Vector3>` b **)** |const|                                                                                                                        |
+| :ref:`Vector3<class_Vector3>` | :ref:`direction_to<class_Vector3_method_direction_to>` **(** :ref:`Vector3<class_Vector3>` to **)** |const|                                                                                                                       |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`distance_squared_to<class_Vector3_method_distance_squared_to>` **(** :ref:`Vector3<class_Vector3>` b **)** |const|                                                                                                          |
+| :ref:`float<class_float>`     | :ref:`distance_squared_to<class_Vector3_method_distance_squared_to>` **(** :ref:`Vector3<class_Vector3>` to **)** |const|                                                                                                         |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`distance_to<class_Vector3_method_distance_to>` **(** :ref:`Vector3<class_Vector3>` b **)** |const|                                                                                                                          |
+| :ref:`float<class_float>`     | :ref:`distance_to<class_Vector3_method_distance_to>` **(** :ref:`Vector3<class_Vector3>` to **)** |const|                                                                                                                         |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`     | :ref:`dot<class_Vector3_method_dot>` **(** :ref:`Vector3<class_Vector3>` with **)** |const|                                                                                                                                       |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -101,9 +101,9 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`limit_length<class_Vector3_method_limit_length>` **(** :ref:`float<class_float>` length=1.0 **)** |const|                                                                                                                   |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`max_axis<class_Vector3_method_max_axis>` **(** **)** |const|                                                                                                                                                                |
+| :ref:`int<class_int>`         | :ref:`max_axis_index<class_Vector3_method_max_axis_index>` **(** **)** |const|                                                                                                                                                    |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`min_axis<class_Vector3_method_min_axis>` **(** **)** |const|                                                                                                                                                                |
+| :ref:`int<class_int>`         | :ref:`min_axis_index<class_Vector3_method_min_axis_index>` **(** **)** |const|                                                                                                                                                    |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`move_toward<class_Vector3_method_move_toward>` **(** :ref:`Vector3<class_Vector3>` to, :ref:`float<class_float>` delta **)** |const|                                                                                        |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -146,13 +146,13 @@ Operators
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`operator !=<class_Vector3_operator_neq_bool>` **(** :ref:`Vector3<class_Vector3>` right **)**           |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`operator *<class_Vector3_operator_mul_Vector3>` **(** :ref:`Vector3<class_Vector3>` right **)**         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`operator *<class_Vector3_operator_mul_Vector3>` **(** :ref:`Basis<class_Basis>` right **)**             |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`operator *<class_Vector3_operator_mul_Vector3>` **(** :ref:`Quaternion<class_Quaternion>` right **)**   |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`operator *<class_Vector3_operator_mul_Vector3>` **(** :ref:`Transform3D<class_Transform3D>` right **)** |
++-------------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`operator *<class_Vector3_operator_mul_Vector3>` **(** :ref:`Vector3<class_Vector3>` right **)**         |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`operator *<class_Vector3_operator_mul_Vector3>` **(** :ref:`float<class_float>` right **)**             |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
@@ -214,11 +214,11 @@ Constants
 
 .. _class_Vector3_constant_BACK:
 
-- **AXIS_X** = **0** --- Enumerated value for the X axis. Returned by :ref:`max_axis<class_Vector3_method_max_axis>` and :ref:`min_axis<class_Vector3_method_min_axis>`.
+- **AXIS_X** = **0** --- Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector3_method_max_axis_index>` and :ref:`min_axis_index<class_Vector3_method_min_axis_index>`.
 
-- **AXIS_Y** = **1** --- Enumerated value for the Y axis. Returned by :ref:`max_axis<class_Vector3_method_max_axis>` and :ref:`min_axis<class_Vector3_method_min_axis>`.
+- **AXIS_Y** = **1** --- Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector3_method_max_axis_index>` and :ref:`min_axis_index<class_Vector3_method_min_axis_index>`.
 
-- **AXIS_Z** = **2** --- Enumerated value for the Z axis. Returned by :ref:`max_axis<class_Vector3_method_max_axis>` and :ref:`min_axis<class_Vector3_method_min_axis>`.
+- **AXIS_Z** = **2** --- Enumerated value for the Z axis. Returned by :ref:`max_axis_index<class_Vector3_method_max_axis_index>` and :ref:`min_axis_index<class_Vector3_method_min_axis_index>`.
 
 - **ZERO** = **Vector3(0, 0, 0)** --- Zero vector, a vector with all components set to ``0``.
 
@@ -349,7 +349,7 @@ Returns a new vector with all components clamped between the components of ``min
 
 - :ref:`Vector3<class_Vector3>` **cross** **(** :ref:`Vector3<class_Vector3>` with **)** |const|
 
-Returns the cross product of this vector and ``b``.
+Returns the cross product of this vector and ``with``.
 
 ----
 
@@ -357,23 +357,23 @@ Returns the cross product of this vector and ``b``.
 
 - :ref:`Vector3<class_Vector3>` **cubic_interpolate** **(** :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` pre_a, :ref:`Vector3<class_Vector3>` post_b, :ref:`float<class_float>` weight **)** |const|
 
-Performs a cubic interpolation between vectors ``pre_a``, ``a``, ``b``, ``post_b`` (``a`` is current), by the given amount ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
+Performs a cubic interpolation between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
 ----
 
 .. _class_Vector3_method_direction_to:
 
-- :ref:`Vector3<class_Vector3>` **direction_to** **(** :ref:`Vector3<class_Vector3>` b **)** |const|
+- :ref:`Vector3<class_Vector3>` **direction_to** **(** :ref:`Vector3<class_Vector3>` to **)** |const|
 
-Returns the normalized vector pointing from this vector to ``b``. This is equivalent to using ``(b - a).normalized()``.
+Returns the normalized vector pointing from this vector to ``to``. This is equivalent to using ``(b - a).normalized()``.
 
 ----
 
 .. _class_Vector3_method_distance_squared_to:
 
-- :ref:`float<class_float>` **distance_squared_to** **(** :ref:`Vector3<class_Vector3>` b **)** |const|
+- :ref:`float<class_float>` **distance_squared_to** **(** :ref:`Vector3<class_Vector3>` to **)** |const|
 
-Returns the squared distance between this vector and ``b``.
+Returns the squared distance between this vector and ``to``.
 
 This method runs faster than :ref:`distance_to<class_Vector3_method_distance_to>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
 
@@ -381,9 +381,9 @@ This method runs faster than :ref:`distance_to<class_Vector3_method_distance_to>
 
 .. _class_Vector3_method_distance_to:
 
-- :ref:`float<class_float>` **distance_to** **(** :ref:`Vector3<class_Vector3>` b **)** |const|
+- :ref:`float<class_float>` **distance_to** **(** :ref:`Vector3<class_Vector3>` to **)** |const|
 
-Returns the distance between this vector and ``b``.
+Returns the distance between this vector and ``to``.
 
 ----
 
@@ -391,13 +391,13 @@ Returns the distance between this vector and ``b``.
 
 - :ref:`float<class_float>` **dot** **(** :ref:`Vector3<class_Vector3>` with **)** |const|
 
-Returns the dot product of this vector and ``b``. This can be used to compare the angle between two vectors. For example, this can be used to determine whether an enemy is facing the player.
+Returns the dot product of this vector and ``with``. This can be used to compare the angle between two vectors. For example, this can be used to determine whether an enemy is facing the player.
 
 The dot product will be ``0`` for a straight angle (90 degrees), greater than 0 for angles narrower than 90 degrees and lower than 0 for angles wider than 90 degrees.
 
 When using unit (normalized) vectors, the result will always be between ``-1.0`` (180 degree angle) when the vectors are facing opposite directions, and ``1.0`` (0 degree angle) when the vectors are aligned.
 
-**Note:** ``a.dot(b)`` is equivalent to ``b.dot(a)``.
+\ **Note:** ``a.dot(b)`` is equivalent to ``b.dot(a)``.
 
 ----
 
@@ -467,19 +467,19 @@ Returns the vector with a maximum length by limiting its length to ``length``.
 
 ----
 
-.. _class_Vector3_method_max_axis:
+.. _class_Vector3_method_max_axis_index:
 
-- :ref:`int<class_int>` **max_axis** **(** **)** |const|
+- :ref:`int<class_int>` **max_axis_index** **(** **)** |const|
 
-Returns the axis of the vector's largest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_X<class_Vector3_constant_AXIS_X>`.
+Returns the axis of the vector's highest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_X<class_Vector3_constant_AXIS_X>`.
 
 ----
 
-.. _class_Vector3_method_min_axis:
+.. _class_Vector3_method_min_axis_index:
 
-- :ref:`int<class_int>` **min_axis** **(** **)** |const|
+- :ref:`int<class_int>` **min_axis_index** **(** **)** |const|
 
-Returns the axis of the vector's smallest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_Z<class_Vector3_constant_AXIS_Z>`.
+Returns the axis of the vector's lowest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_Z<class_Vector3_constant_AXIS_Z>`.
 
 ----
 
@@ -487,7 +487,7 @@ Returns the axis of the vector's smallest value. See ``AXIS_*`` constants. If al
 
 - :ref:`Vector3<class_Vector3>` **move_toward** **(** :ref:`Vector3<class_Vector3>` to, :ref:`float<class_float>` delta **)** |const|
 
-Moves this vector toward ``to`` by the fixed ``delta`` amount.
+Returns a new vector moved toward ``to`` by the fixed ``delta`` amount. Will not go past the final value.
 
 ----
 
@@ -515,7 +515,7 @@ Returns the vector scaled to unit length. Equivalent to ``v / v.length()``.
 
 - :ref:`Basis<class_Basis>` **outer** **(** :ref:`Vector3<class_Vector3>` with **)** |const|
 
-Returns the outer product with ``b``.
+Returns the outer product with ``with``.
 
 ----
 
@@ -539,7 +539,7 @@ Returns a vector composed of the :ref:`@GlobalScope.fposmod<class_@GlobalScope_m
 
 - :ref:`Vector3<class_Vector3>` **project** **(** :ref:`Vector3<class_Vector3>` b **)** |const|
 
-Returns this vector projected onto another vector ``b``.
+Returns this vector projected onto the vector ``b``.
 
 ----
 
@@ -563,7 +563,7 @@ Rotates this vector around a given axis by ``phi`` radians. The axis must be a n
 
 - :ref:`Vector3<class_Vector3>` **round** **(** **)** |const|
 
-Returns this vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
+Returns a new vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
 
 ----
 
@@ -571,7 +571,7 @@ Returns this vector with all components rounded to the nearest integer, with hal
 
 - :ref:`Vector3<class_Vector3>` **sign** **(** **)** |const|
 
-Returns a vector with each component set to one or negative one, depending on the signs of this vector's components, or zero if the component is zero, by calling :ref:`@GlobalScope.sign<class_@GlobalScope_method_sign>` on each component.
+Returns a new vector with each component set to one or negative one, depending on the signs of the components, or zero if the component is zero, by calling :ref:`@GlobalScope.sign<class_@GlobalScope_method_sign>` on each component.
 
 ----
 
@@ -589,7 +589,7 @@ Returns the signed angle to the given vector, in radians. The sign of the angle 
 
 Returns the result of spherical linear interpolation between this vector and ``to``, by amount ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
-**Note:** Both vectors must be normalized.
+This method also handles interpolating the lengths if the input vectors have different lengths. For the special case of one or both input vectors having zero length, this method behaves like :ref:`lerp<class_Vector3_method_lerp>`.
 
 ----
 
@@ -620,21 +620,11 @@ Operator Descriptions
 
 Returns ``true`` if the vectors are not equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector3_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector3_method_is_equal_approx>` instead, which is more reliable.
 
 ----
 
 .. _class_Vector3_operator_mul_Vector3:
-
-- :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Vector3<class_Vector3>` right **)**
-
-Multiplies each component of the ``Vector3`` by the components of the given ``Vector3``.
-
-::
-
-    print(Vector3(10, 20, 30) * Vector3(3, 4, 5)) # Prints "(30, 80, 150)"
-
-----
 
 - :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Basis<class_Basis>` right **)**
 
@@ -651,6 +641,16 @@ Inversely transforms (multiplies) the ``Vector3`` by the given :ref:`Quaternion<
 - :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Transform3D<class_Transform3D>` right **)**
 
 Inversely transforms (multiplies) the ``Vector3`` by the given :ref:`Transform3D<class_Transform3D>` transformation matrix.
+
+----
+
+- :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Vector3<class_Vector3>` right **)**
+
+Multiplies each component of the ``Vector3`` by the components of the given ``Vector3``.
+
+::
+
+    print(Vector3(10, 20, 30) * Vector3(3, 4, 5)) # Prints "(30, 80, 150)"
 
 ----
 
@@ -740,7 +740,7 @@ Compares two ``Vector3`` vectors by first checking if the X value of the left ve
 
 Returns ``true`` if the vectors are exactly equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector3_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector3_method_is_equal_approx>` instead, which is more reliable.
 
 ----
 

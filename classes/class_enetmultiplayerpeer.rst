@@ -18,7 +18,7 @@ Description
 
 A MultiplayerPeer implementation that should be passed to :ref:`MultiplayerAPI.multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` after being initialized as either a client, server, or mesh. Events can then be handled by connecting to :ref:`MultiplayerAPI<class_MultiplayerAPI>` signals. See :ref:`ENetConnection<class_ENetConnection>` for more information on the ENet library wrapper.
 
-**Note:** ENet only uses UDP, not TCP. When forwarding the server port to make your server accessible on the public Internet, you only need to forward the server port in UDP. You can use the :ref:`UPNP<class_UPNP>` class to try to forward the server port automatically when starting the server.
+\ **Note:** ENet only uses UDP, not TCP. When forwarding the server port to make your server accessible on the public Internet, you only need to forward the server port in UDP. You can use the :ref:`UPNP<class_UPNP>` class to try to forward the server port automatically when starting the server.
 
 Tutorials
 ---------
@@ -93,7 +93,7 @@ Method Descriptions
 
 Add a new remote peer with the given ``peer_id`` connected to the given ``host``.
 
-**Note:** The ``host`` must have exactly one peer in the :ref:`ENetPacketPeer.STATE_CONNECTED<class_ENetPacketPeer_constant_STATE_CONNECTED>` state.
+\ **Note:** The ``host`` must have exactly one peer in the :ref:`ENetPacketPeer.STATE_CONNECTED<class_ENetPacketPeer_constant_STATE_CONNECTED>` state.
 
 ----
 
@@ -133,7 +133,7 @@ Create server that listens to connections via ``port``. The port needs to be an 
 
 - :ref:`ENetPacketPeer<class_ENetPacketPeer>` **get_peer** **(** :ref:`int<class_int>` id **)** |const|
 
-Return the :ref:`ENetPacketPeer<class_ENetPacketPeer>` associated to the given ``id``.
+Returns the :ref:`ENetPacketPeer<class_ENetPacketPeer>` associated to the given ``id``.
 
 ----
 

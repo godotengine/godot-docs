@@ -18,9 +18,9 @@ Description
 
 This editor-only singleton returns OS-specific paths to various data folders and files. It can be used in editor plugins to ensure files are saved in the correct location on each operating system.
 
-**Note:** This singleton is not accessible in exported projects. Attempting to access it in an exported project will result in a script error as the singleton won't be declared. To prevent script errors in exported projects, use :ref:`Engine.has_singleton<class_Engine_method_has_singleton>` to check whether the singleton is available before using it.
+\ **Note:** This singleton is not accessible in exported projects. Attempting to access it in an exported project will result in a script error as the singleton won't be declared. To prevent script errors in exported projects, use :ref:`Engine.has_singleton<class_Engine_method_has_singleton>` to check whether the singleton is available before using it.
 
-**Note:** Godot complies with the `XDG Base Directory Specification <https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html>`__ on *all* platforms. You can override environment variables following the specification to change the editor and project data paths.
+\ **Note:** Godot complies with the `XDG Base Directory Specification <https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html>`__ on *all* platforms. You can override environment variables following the specification to change the editor and project data paths.
 
 Tutorials
 ---------
@@ -51,7 +51,7 @@ Method Descriptions
 
 Returns the absolute path to the user's cache folder. This folder should be used for temporary data that can be removed safely whenever the editor is closed (such as generated resource thumbnails).
 
-**Default paths per platform:**
+\ **Default paths per platform:**\ 
 
 ::
 
@@ -67,7 +67,7 @@ Returns the absolute path to the user's cache folder. This folder should be used
 
 Returns the absolute path to the user's configuration folder. This folder should be used for *persistent* user configuration files.
 
-**Default paths per platform:**
+\ **Default paths per platform:**\ 
 
 ::
 
@@ -83,7 +83,7 @@ Returns the absolute path to the user's configuration folder. This folder should
 
 Returns the absolute path to the user's data folder. This folder should be used for *persistent* user data files such as installed export templates.
 
-**Default paths per platform:**
+\ **Default paths per platform:**\ 
 
 ::
 
@@ -109,7 +109,7 @@ Returns ``true`` if the editor is marked as self-contained, ``false`` otherwise.
 
 Self-contained mode can be enabled by creating a file named ``._sc_`` or ``_sc_`` in the same folder as the editor binary while the editor is not running. See also :ref:`get_self_contained_file<class_EditorPaths_method_get_self_contained_file>`.
 
-**Note:** The Steam release of Godot uses self-contained mode by default.
+\ **Note:** The Steam release of Godot uses self-contained mode by default.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

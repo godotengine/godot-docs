@@ -99,7 +99,7 @@ Methods
 +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`add_tool_menu_item<class_EditorPlugin_method_add_tool_menu_item>` **(** :ref:`String<class_String>` name, :ref:`Callable<class_Callable>` callable **)**                                                                     |
 +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`add_tool_submenu_item<class_EditorPlugin_method_add_tool_submenu_item>` **(** :ref:`String<class_String>` name, :ref:`Object<class_Object>` submenu **)**                                                                    |
+| void                                                | :ref:`add_tool_submenu_item<class_EditorPlugin_method_add_tool_submenu_item>` **(** :ref:`String<class_String>` name, :ref:`PopupMenu<class_PopupMenu>` submenu **)**                                                              |
 +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`add_translation_parser_plugin<class_EditorPlugin_method_add_translation_parser_plugin>` **(** :ref:`EditorTranslationParserPlugin<class_EditorTranslationParserPlugin>` parser **)**                                         |
 +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -749,7 +749,7 @@ See :ref:`add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>` 
 
 Registers a new :ref:`EditorImportPlugin<class_EditorImportPlugin>`. Import plugins are used to import custom and unsupported assets as a custom :ref:`Resource<class_Resource>` type.
 
-**Note:** If you want to import custom 3D asset formats use :ref:`add_scene_format_importer_plugin<class_EditorPlugin_method_add_scene_format_importer_plugin>` instead.
+\ **Note:** If you want to import custom 3D asset formats use :ref:`add_scene_format_importer_plugin<class_EditorPlugin_method_add_scene_format_importer_plugin>` instead.
 
 See :ref:`add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>` for an example of how to register a plugin.
 
@@ -761,7 +761,7 @@ See :ref:`add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>` 
 
 Registers a new :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>`. Inspector plugins are used to extend :ref:`EditorInspector<class_EditorInspector>` and provide custom configuration tools for your object's properties.
 
-**Note:** Always use :ref:`remove_inspector_plugin<class_EditorPlugin_method_remove_inspector_plugin>` to remove the registered :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` when your ``EditorPlugin`` is disabled to prevent leaks and an unexpected behavior.
+\ **Note:** Always use :ref:`remove_inspector_plugin<class_EditorPlugin_method_remove_inspector_plugin>` to remove the registered :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` when your ``EditorPlugin`` is disabled to prevent leaks and an unexpected behavior.
 
 
 .. tabs::
@@ -817,9 +817,9 @@ Adds a custom menu item to **Project > Tools** named ``name``. When clicked, the
 
 .. _class_EditorPlugin_method_add_tool_submenu_item:
 
-- void **add_tool_submenu_item** **(** :ref:`String<class_String>` name, :ref:`Object<class_Object>` submenu **)**
+- void **add_tool_submenu_item** **(** :ref:`String<class_String>` name, :ref:`PopupMenu<class_PopupMenu>` submenu **)**
 
-Adds a custom submenu under **Project > Tools >** ``name``. ``submenu`` should be an object of class :ref:`PopupMenu<class_PopupMenu>`. Use ``remove_tool_menu_item(name)`` on plugin clean up to remove the menu.
+Adds a custom :ref:`PopupMenu<class_PopupMenu>` submenu under **Project > Tools >** ``name``. Use ``remove_tool_menu_item(name)`` on plugin clean up to remove the menu.
 
 ----
 
@@ -855,9 +855,9 @@ Returns the :ref:`EditorInterface<class_EditorInterface>` object that gives you 
 
 Gets the Editor's dialogue used for making scripts.
 
-**Note:** Users can configure it before use.
+\ **Note:** Users can configure it before use.
 
-**Warning:** Removing and freeing this node will render a part of the editor useless and may cause a crash.
+\ **Warning:** Removing and freeing this node will render a part of the editor useless and may cause a crash.
 
 ----
 

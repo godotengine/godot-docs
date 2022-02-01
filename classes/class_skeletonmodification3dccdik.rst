@@ -16,11 +16,11 @@ A modification that uses CCDIK to manipulate a series of bones to reach a target
 Description
 -----------
 
-This :ref:`SkeletonModification3D<class_SkeletonModification3D>` uses an algorithm called Cyclic Coordinate Descent Inverse Kinematics, or CCDIK, to maniuplate a chain of bones in a Skeleton so it reaches a defined target.
+This :ref:`SkeletonModification3D<class_SkeletonModification3D>` uses an algorithm called Cyclic Coordinate Descent Inverse Kinematics, or CCDIK, to manipulate a chain of bones in a Skeleton so it reaches a defined target.
 
 CCDIK works by rotating a set of bones, typically called a "bone chain", on a single axis. Each bone is rotated to face the target from the tip (by default), which over a chain of bones allow it to rotate properly to reach the target. Because the bones only rotate on a single axis, CCDIK *can* look more robotic than other IK solvers.
 
-**Note:** The CCDIK modifier has ``ccdik_joints``, which are the data objects that hold the data for each joint in the CCDIK chain. This is different from a bone! CCDIK joints hold the data needed for each bone in the bone chain used by CCDIK.
+\ **Note:** The CCDIK modifier has ``ccdik_joints``, which are the data objects that hold the data for each joint in the CCDIK chain. This is different from a bone! CCDIK joints hold the data needed for each bone in the bone chain used by CCDIK.
 
 CCDIK also fully supports angle constraints, allowing for more control over how a solution is met.
 

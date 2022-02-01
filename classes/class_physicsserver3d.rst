@@ -70,19 +70,25 @@ Methods
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`area_set_transform<class_PhysicsServer3D_method_area_set_transform>` **(** :ref:`RID<class_RID>` area, :ref:`Transform3D<class_Transform3D>` transform **)**                                                                                                                             |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`body_add_central_force<class_PhysicsServer3D_method_body_add_central_force>` **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force **)**                                                                                                                                 |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`body_add_collision_exception<class_PhysicsServer3D_method_body_add_collision_exception>` **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` excepted_body **)**                                                                                                                     |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`body_add_force<class_PhysicsServer3D_method_body_add_force>` **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**                                                                                        |
+| void                                                              | :ref:`body_add_constant_central_force<class_PhysicsServer3D_method_body_add_constant_central_force>` **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force **)**                                                                                                               |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`body_add_constant_force<class_PhysicsServer3D_method_body_add_constant_force>` **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**                                                                      |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`body_add_constant_torque<class_PhysicsServer3D_method_body_add_constant_torque>` **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` torque **)**                                                                                                                            |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`body_add_shape<class_PhysicsServer3D_method_body_add_shape>` **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` shape, :ref:`Transform3D<class_Transform3D>` transform=Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0), :ref:`bool<class_bool>` disabled=false **)**                |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`body_add_torque<class_PhysicsServer3D_method_body_add_torque>` **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` torque **)**                                                                                                                                              |
+| void                                                              | :ref:`body_apply_central_force<class_PhysicsServer3D_method_body_apply_central_force>` **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force **)**                                                                                                                             |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`body_apply_central_impulse<class_PhysicsServer3D_method_body_apply_central_impulse>` **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` impulse **)**                                                                                                                       |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`body_apply_force<class_PhysicsServer3D_method_body_apply_force>` **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**                                                                                    |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`body_apply_impulse<class_PhysicsServer3D_method_body_apply_impulse>` **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**                                                                              |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`body_apply_torque<class_PhysicsServer3D_method_body_apply_torque>` **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` torque **)**                                                                                                                                          |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`body_apply_torque_impulse<class_PhysicsServer3D_method_body_apply_torque_impulse>` **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` impulse **)**                                                                                                                         |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -95,6 +101,10 @@ Methods
 | :ref:`int<class_int>`                                             | :ref:`body_get_collision_layer<class_PhysicsServer3D_method_body_get_collision_layer>` **(** :ref:`RID<class_RID>` body **)** |const|                                                                                                                                                          |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                             | :ref:`body_get_collision_mask<class_PhysicsServer3D_method_body_get_collision_mask>` **(** :ref:`RID<class_RID>` body **)** |const|                                                                                                                                                            |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                                     | :ref:`body_get_constant_force<class_PhysicsServer3D_method_body_get_constant_force>` **(** :ref:`RID<class_RID>` body **)** |const|                                                                                                                                                            |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                                     | :ref:`body_get_constant_torque<class_PhysicsServer3D_method_body_get_constant_torque>` **(** :ref:`RID<class_RID>` body **)** |const|                                                                                                                                                          |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>`   | :ref:`body_get_direct_state<class_PhysicsServer3D_method_body_get_direct_state>` **(** :ref:`RID<class_RID>` body **)**                                                                                                                                                                        |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -135,6 +145,10 @@ Methods
 | void                                                              | :ref:`body_set_collision_layer<class_PhysicsServer3D_method_body_set_collision_layer>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` layer **)**                                                                                                                                     |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`body_set_collision_mask<class_PhysicsServer3D_method_body_set_collision_mask>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` mask **)**                                                                                                                                        |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`body_set_constant_force<class_PhysicsServer3D_method_body_set_constant_force>` **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force **)**                                                                                                                               |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`body_set_constant_torque<class_PhysicsServer3D_method_body_set_constant_torque>` **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` torque **)**                                                                                                                            |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`body_set_enable_continuous_collision_detection<class_PhysicsServer3D_method_body_set_enable_continuous_collision_detection>` **(** :ref:`RID<class_RID>` body, :ref:`bool<class_bool>` enable **)**                                                                                      |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -235,8 +249,6 @@ Methods
 | :ref:`RID<class_RID>`                                             | :ref:`separation_ray_shape_create<class_PhysicsServer3D_method_separation_ray_shape_create>` **(** **)**                                                                                                                                                                                       |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`set_active<class_PhysicsServer3D_method_set_active>` **(** :ref:`bool<class_bool>` active **)**                                                                                                                                                                                          |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`set_collision_iterations<class_PhysicsServer3D_method_set_collision_iterations>` **(** :ref:`int<class_int>` iterations **)**                                                                                                                                                            |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                                     | :ref:`shape_get_data<class_PhysicsServer3D_method_shape_get_data>` **(** :ref:`RID<class_RID>` shape **)** |const|                                                                                                                                                                             |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -590,13 +602,13 @@ enum **G6DOFJointAxisParam**:
 
 enum **G6DOFJointAxisFlag**:
 
-- **G6DOF_JOINT_FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If ``set`` there is linear motion possible within the given limits.
+- **G6DOF_JOINT_FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If set, linear motion is possible within the given limits.
 
-- **G6DOF_JOINT_FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is rotational motion possible.
+- **G6DOF_JOINT_FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If set, rotational motion is possible.
 
-- **G6DOF_JOINT_FLAG_ENABLE_MOTOR** = **4** --- If ``set`` there is a rotational motor across these axes.
+- **G6DOF_JOINT_FLAG_ENABLE_MOTOR** = **4** --- If set, there is a rotational motor across these axes.
 
-- **G6DOF_JOINT_FLAG_ENABLE_LINEAR_MOTOR** = **5** --- If ``set`` there is a linear motor on this axis that targets a specific velocity.
+- **G6DOF_JOINT_FLAG_ENABLE_LINEAR_MOTOR** = **5** --- If set, there is a linear motor on this axis that targets a specific velocity.
 
 ----
 
@@ -892,7 +904,9 @@ enum **ProcessInfo**:
 
 .. _class_PhysicsServer3D_constant_SPACE_PARAM_CONTACT_MAX_SEPARATION:
 
-.. _class_PhysicsServer3D_constant_SPACE_PARAM_BODY_MAX_ALLOWED_PENETRATION:
+.. _class_PhysicsServer3D_constant_SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION:
+
+.. _class_PhysicsServer3D_constant_SPACE_PARAM_CONTACT_DEFAULT_BIAS:
 
 .. _class_PhysicsServer3D_constant_SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD:
 
@@ -900,27 +914,25 @@ enum **ProcessInfo**:
 
 .. _class_PhysicsServer3D_constant_SPACE_PARAM_BODY_TIME_TO_SLEEP:
 
-.. _class_PhysicsServer3D_constant_SPACE_PARAM_BODY_ANGULAR_VELOCITY_DAMP_RATIO:
-
-.. _class_PhysicsServer3D_constant_SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS:
+.. _class_PhysicsServer3D_constant_SPACE_PARAM_SOLVER_ITERATIONS:
 
 enum **SpaceParameter**:
 
 - **SPACE_PARAM_CONTACT_RECYCLE_RADIUS** = **0** --- Constant to set/get the maximum distance a pair of bodies has to move before their collision status has to be recalculated.
 
-- **SPACE_PARAM_CONTACT_MAX_SEPARATION** = **1** --- Constant to set/get the maximum distance a shape can be from another before they are considered separated.
+- **SPACE_PARAM_CONTACT_MAX_SEPARATION** = **1** --- Constant to set/get the maximum distance a shape can be from another before they are considered separated and the contact is discarded.
 
-- **SPACE_PARAM_BODY_MAX_ALLOWED_PENETRATION** = **2** --- Constant to set/get the maximum distance a shape can penetrate another shape before it is considered a collision.
+- **SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION** = **2** --- Constant to set/get the maximum distance a shape can penetrate another shape before it is considered a collision.
 
-- **SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD** = **3** --- Constant to set/get the threshold linear velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
+- **SPACE_PARAM_CONTACT_DEFAULT_BIAS** = **3** --- Constant to set/get the default solver bias for all physics contacts. A solver bias is a factor controlling how much two objects "rebound", after overlapping, to avoid leaving them in that state because of numerical imprecision.
 
-- **SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD** = **4** --- Constant to set/get the threshold angular velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
+- **SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD** = **4** --- Constant to set/get the threshold linear velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
 
-- **SPACE_PARAM_BODY_TIME_TO_SLEEP** = **5** --- Constant to set/get the maximum time of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after this time.
+- **SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD** = **5** --- Constant to set/get the threshold angular velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
 
-- **SPACE_PARAM_BODY_ANGULAR_VELOCITY_DAMP_RATIO** = **6**
+- **SPACE_PARAM_BODY_TIME_TO_SLEEP** = **6** --- Constant to set/get the maximum time of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after this time.
 
-- **SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS** = **7** --- Constant to set/get the default solver bias for all physics constraints. A solver bias is a factor controlling how much two objects "rebound", after violating a constraint, to avoid leaving them in that state because of numerical imprecision.
+- **SPACE_PARAM_SOLVER_ITERATIONS** = **7** --- Constant to set/get the number of solver iterations for contacts and constraints. The greater the amount of iterations, the more accurate the collisions and constraints will be. However, a greater amount of iterations requires more CPU power, which can decrease performance.
 
 ----
 
@@ -1151,12 +1163,6 @@ Sets the transform matrix for an area.
 
 ----
 
-.. _class_PhysicsServer3D_method_body_add_central_force:
-
-- void **body_add_central_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force **)**
-
-----
-
 .. _class_PhysicsServer3D_method_body_add_collision_exception:
 
 - void **body_add_collision_exception** **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` excepted_body **)**
@@ -1165,9 +1171,31 @@ Adds a body to the list of bodies exempt from collisions.
 
 ----
 
-.. _class_PhysicsServer3D_method_body_add_force:
+.. _class_PhysicsServer3D_method_body_add_constant_central_force:
 
-- void **body_add_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**
+- void **body_add_constant_central_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force **)**
+
+Adds a constant directional force without affecting rotation that keeps being applied over time until cleared with ``body_set_constant_force(body, Vector3(0, 0, 0))``.
+
+This is equivalent to using :ref:`body_add_constant_force<class_PhysicsServer3D_method_body_add_constant_force>` at the body's center of mass.
+
+----
+
+.. _class_PhysicsServer3D_method_body_add_constant_force:
+
+- void **body_add_constant_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**
+
+Adds a constant positioned force to the body that keeps being applied over time until cleared with ``body_set_constant_force(body, Vector3(0, 0, 0))``.
+
+\ ``position`` is the offset from the body origin in global coordinates.
+
+----
+
+.. _class_PhysicsServer3D_method_body_add_constant_torque:
+
+- void **body_add_constant_torque** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` torque **)**
+
+Adds a constant rotational force without affecting position that keeps being applied over time until cleared with ``body_set_constant_torque(body, Vector3(0, 0, 0))``.
 
 ----
 
@@ -1179,9 +1207,13 @@ Adds a shape to the body, along with a transform matrix. Shapes are usually refe
 
 ----
 
-.. _class_PhysicsServer3D_method_body_add_torque:
+.. _class_PhysicsServer3D_method_body_apply_central_force:
 
-- void **body_add_torque** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` torque **)**
+- void **body_apply_central_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force **)**
+
+Applies a directional force without affecting rotation. A force is time dependent and meant to be applied every physics update.
+
+This is equivalent to using :ref:`body_apply_force<class_PhysicsServer3D_method_body_apply_force>` at the body's center of mass.
 
 ----
 
@@ -1189,13 +1221,41 @@ Adds a shape to the body, along with a transform matrix. Shapes are usually refe
 
 - void **body_apply_central_impulse** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` impulse **)**
 
+Applies a directional impulse without affecting rotation.
+
+An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
+
+This is equivalent to using :ref:`body_apply_impulse<class_PhysicsServer3D_method_body_apply_impulse>` at the body's center of mass.
+
+----
+
+.. _class_PhysicsServer3D_method_body_apply_force:
+
+- void **body_apply_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**
+
+Applies a positioned force to the body. A force is time dependent and meant to be applied every physics update.
+
+\ ``position`` is the offset from the body origin in global coordinates.
+
 ----
 
 .. _class_PhysicsServer3D_method_body_apply_impulse:
 
 - void **body_apply_impulse** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**
 
-Gives the body a push at a ``position`` in the direction of the ``impulse``.
+Applies a positioned impulse to the body.
+
+An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
+
+\ ``position`` is the offset from the body origin in global coordinates.
+
+----
+
+.. _class_PhysicsServer3D_method_body_apply_torque:
+
+- void **body_apply_torque** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` torque **)**
+
+Applies a rotational force without affecting position. A force is time dependent and meant to be applied every physics update.
 
 ----
 
@@ -1203,7 +1263,9 @@ Gives the body a push at a ``position`` in the direction of the ``impulse``.
 
 - void **body_apply_torque_impulse** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` impulse **)**
 
-Gives the body a push to rotate it.
+Applies a rotational impulse to the body without affecting the position.
+
+An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
 
 ----
 
@@ -1243,7 +1305,25 @@ Returns the physics layer or layers a body belongs to.
 
 Returns the physics layer or layers a body can collide with.
 
--
+----
+
+.. _class_PhysicsServer3D_method_body_get_constant_force:
+
+- :ref:`Vector3<class_Vector3>` **body_get_constant_force** **(** :ref:`RID<class_RID>` body **)** |const|
+
+Returns the body's total constant positional forces applied during each physics update.
+
+See :ref:`body_add_constant_force<class_PhysicsServer3D_method_body_add_constant_force>` and :ref:`body_add_constant_central_force<class_PhysicsServer3D_method_body_add_constant_central_force>`.
+
+----
+
+.. _class_PhysicsServer3D_method_body_get_constant_torque:
+
+- :ref:`Vector3<class_Vector3>` **body_get_constant_torque** **(** :ref:`RID<class_RID>` body **)** |const|
+
+Returns the body's total constant rotational forces applied during each physics update.
+
+See :ref:`body_add_constant_torque<class_PhysicsServer3D_method_body_add_constant_torque>`.
 
 ----
 
@@ -1405,6 +1485,26 @@ Sets the physics layer or layers a body can collide with.
 
 ----
 
+.. _class_PhysicsServer3D_method_body_set_constant_force:
+
+- void **body_set_constant_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force **)**
+
+Sets the body's total constant positional forces applied during each physics update.
+
+See :ref:`body_add_constant_force<class_PhysicsServer3D_method_body_add_constant_force>` and :ref:`body_add_constant_central_force<class_PhysicsServer3D_method_body_add_constant_central_force>`.
+
+----
+
+.. _class_PhysicsServer3D_method_body_set_constant_torque:
+
+- void **body_set_constant_torque** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` torque **)**
+
+Sets the body's total constant rotational forces applied during each physics update.
+
+See :ref:`body_add_constant_torque<class_PhysicsServer3D_method_body_add_constant_torque>`.
+
+----
+
 .. _class_PhysicsServer3D_method_body_set_enable_continuous_collision_detection:
 
 - void **body_set_enable_continuous_collision_detection** **(** :ref:`RID<class_RID>` body, :ref:`bool<class_bool>` enable **)**
@@ -1423,9 +1523,9 @@ Sets the function used to calculate physics for an object, if that object allows
 
 The force integration function takes 2 arguments:
 
-``state:`` :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` used to retrieve and modify the body's state.
+\ ``state:`` :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` used to retrieve and modify the body's state.
 
-``userdata:`` Optional user data, if it was passed when calling ``body_set_force_integration_callback``.
+\ ``userdata:`` Optional user data, if it was passed when calling ``body_set_force_integration_callback``.
 
 ----
 
@@ -1778,16 +1878,6 @@ Sets a pin_joint parameter (see :ref:`PinJointParam<enum_PhysicsServer3D_PinJoin
 - void **set_active** **(** :ref:`bool<class_bool>` active **)**
 
 Activates or deactivates the 3D physics engine.
-
-----
-
-.. _class_PhysicsServer3D_method_set_collision_iterations:
-
-- void **set_collision_iterations** **(** :ref:`int<class_int>` iterations **)**
-
-Sets the amount of iterations for calculating velocities of colliding bodies. The greater the amount of iterations, the more accurate the collisions will be. However, a greater amount of iterations requires more CPU power, which can decrease performance. The default value is ``8``.
-
-**Note:** Only has an effect when using the default GodotPhysics engine, not the Bullet physics engine.
 
 ----
 

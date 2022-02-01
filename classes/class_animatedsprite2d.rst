@@ -18,7 +18,7 @@ Description
 
 Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource, which can be configured in the editor via the SpriteFrames panel.
 
-**Note:** You can associate a set of normal or specular maps by creating additional :ref:`SpriteFrames<class_SpriteFrames>` resources with a ``_normal`` or ``_specular`` suffix. For example, having 3 :ref:`SpriteFrames<class_SpriteFrames>` resources ``run``, ``run_normal``, and ``run_specular`` will make it so the ``run`` animation uses normal and specular maps.
+\ **Note:** You can associate a set of normal or specular maps by creating additional :ref:`SpriteFrames<class_SpriteFrames>` resources with a ``_normal`` or ``_specular`` suffix. For example, having 3 :ref:`SpriteFrames<class_SpriteFrames>` resources ``run``, ``run_normal``, and ``run_specular`` will make it so the ``run`` animation uses normal and specular maps.
 
 Tutorials
 ---------
@@ -53,13 +53,11 @@ Properties
 Methods
 -------
 
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_playing<class_AnimatedSprite2D_method_is_playing>` **(** **)** |const|                                                                   |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`play<class_AnimatedSprite2D_method_play>` **(** :ref:`StringName<class_StringName>` anim=&"", :ref:`bool<class_bool>` backwards=false **)** |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`stop<class_AnimatedSprite2D_method_stop>` **(** **)**                                                                                       |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
++------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`play<class_AnimatedSprite2D_method_play>` **(** :ref:`StringName<class_StringName>` anim=&"", :ref:`bool<class_bool>` backwards=false **)** |
++------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`stop<class_AnimatedSprite2D_method_stop>` **(** **)**                                                                                       |
++------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -195,9 +193,13 @@ The texture's drawing offset.
 
 - :ref:`bool<class_bool>` **playing**
 
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
++-----------+--------------------+
+| *Default* | ``false``          |
++-----------+--------------------+
+| *Setter*  | set_playing(value) |
++-----------+--------------------+
+| *Getter*  | is_playing()       |
++-----------+--------------------+
 
 If ``true``, the :ref:`animation<class_AnimatedSprite2D_property_animation>` is currently playing.
 
@@ -219,14 +221,6 @@ The animation speed is multiplied by this value.
 
 Method Descriptions
 -------------------
-
-.. _class_AnimatedSprite2D_method_is_playing:
-
-- :ref:`bool<class_bool>` **is_playing** **(** **)** |const|
-
-Returns ``true`` if an animation is currently being played.
-
-----
 
 .. _class_AnimatedSprite2D_method_play:
 

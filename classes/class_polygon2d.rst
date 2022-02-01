@@ -197,7 +197,7 @@ The offset applied to each vertex.
 
 The polygon's list of vertices. The final point will be connected to the first.
 
-**Note:** This returns a copy of the :ref:`PackedVector2Array<class_PackedVector2Array>` rather than a reference.
+\ **Note:** This returns a copy of the :ref:`PackedVector2Array<class_PackedVector2Array>` rather than a reference.
 
 ----
 

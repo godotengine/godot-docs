@@ -20,7 +20,7 @@ Description
 
 StreamPeer is an abstraction and base class for stream-based protocols (such as TCP). It provides an API for sending and receiving data through streams as raw data or strings.
 
-**Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
+\ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
 Properties
 ----------
@@ -192,7 +192,7 @@ Returns a chunk data with the received bytes. The amount of bytes to be received
 
 - :ref:`String<class_String>` **get_string** **(** :ref:`int<class_int>` bytes=-1 **)**
 
-Gets a string with byte-length ``bytes`` from the stream. If ``bytes`` is negative (default) the length will be read from the stream using the reverse process of :ref:`put_string<class_StreamPeer_method_put_string>`.
+Gets an ASCII string with byte-length ``bytes`` from the stream. If ``bytes`` is negative (default) the length will be read from the stream using the reverse process of :ref:`put_string<class_StreamPeer_method_put_string>`.
 
 ----
 
@@ -242,7 +242,7 @@ Gets an UTF-8 string with byte-length ``bytes`` from the stream (this decodes th
 
 Gets a Variant from the stream. If ``allow_objects`` is ``true``, decoding objects is allowed.
 
-**Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
+\ **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
 ----
 
@@ -316,7 +316,7 @@ Sends a chunk of data through the connection. If all the data could not be sent 
 
 Puts a zero-terminated ASCII string into the stream prepended by a 32-bit unsigned integer representing its size.
 
-**Note:** To put an ASCII string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
+\ **Note:** To put an ASCII string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
 
 
 .. tabs::
@@ -371,7 +371,7 @@ Puts an unsigned byte into the stream.
 
 Puts a zero-terminated UTF-8 string into the stream prepended by a 32 bits unsigned integer representing its size.
 
-**Note:** To put an UTF-8 string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
+\ **Note:** To put an UTF-8 string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
 
 
 .. tabs::

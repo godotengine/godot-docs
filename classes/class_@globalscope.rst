@@ -9,14 +9,21 @@
 @GlobalScope
 ============
 
-Global scope constants and variables.
+Global scope constants and functions.
 
 Description
 -----------
 
-Global scope constants and variables. This is all that resides in the globals, constants regarding error codes, keycodes, property hints, etc.
+A list of global scope enumerated constants and built-in functions. This is all that resides in the globals, constants regarding error codes, keycodes, property hints, etc.
 
 Singletons are also documented here, since they can be accessed from anywhere.
+
+For the entries related to GDScript which can be accessed in any script see :ref:`@GDScript<class_@GDScript>`.
+
+Tutorials
+---------
+
+- :doc:`Random number generation <../tutorials/math/random_number_generation>`
 
 Properties
 ----------
@@ -347,89 +354,93 @@ enum **ClockDirection**:
 
 ----
 
-.. _enum_@GlobalScope_HAlign:
+.. _enum_@GlobalScope_HorizontalAlignment:
 
-.. _class_@GlobalScope_constant_HALIGN_LEFT:
+.. _class_@GlobalScope_constant_HORIZONTAL_ALIGNMENT_LEFT:
 
-.. _class_@GlobalScope_constant_HALIGN_CENTER:
+.. _class_@GlobalScope_constant_HORIZONTAL_ALIGNMENT_CENTER:
 
-.. _class_@GlobalScope_constant_HALIGN_RIGHT:
+.. _class_@GlobalScope_constant_HORIZONTAL_ALIGNMENT_RIGHT:
 
-.. _class_@GlobalScope_constant_HALIGN_FILL:
+.. _class_@GlobalScope_constant_HORIZONTAL_ALIGNMENT_FILL:
 
-enum **HAlign**:
+enum **HorizontalAlignment**:
 
-- **HALIGN_LEFT** = **0** --- Horizontal left alignment, usually for text-derived classes.
+- **HORIZONTAL_ALIGNMENT_LEFT** = **0** --- Horizontal left alignment, usually for text-derived classes.
 
-- **HALIGN_CENTER** = **1** --- Horizontal center alignment, usually for text-derived classes.
+- **HORIZONTAL_ALIGNMENT_CENTER** = **1** --- Horizontal center alignment, usually for text-derived classes.
 
-- **HALIGN_RIGHT** = **2** --- Horizontal right alignment, usually for text-derived classes.
+- **HORIZONTAL_ALIGNMENT_RIGHT** = **2** --- Horizontal right alignment, usually for text-derived classes.
 
-- **HALIGN_FILL** = **3** --- Expand row to fit width, usually for text-derived classes.
-
-----
-
-.. _enum_@GlobalScope_VAlign:
-
-.. _class_@GlobalScope_constant_VALIGN_TOP:
-
-.. _class_@GlobalScope_constant_VALIGN_CENTER:
-
-.. _class_@GlobalScope_constant_VALIGN_BOTTOM:
-
-enum **VAlign**:
-
-- **VALIGN_TOP** = **0** --- Vertical top alignment, usually for text-derived classes.
-
-- **VALIGN_CENTER** = **1** --- Vertical center alignment, usually for text-derived classes.
-
-- **VALIGN_BOTTOM** = **2** --- Vertical bottom alignment, usually for text-derived classes.
+- **HORIZONTAL_ALIGNMENT_FILL** = **3** --- Expand row to fit width, usually for text-derived classes.
 
 ----
 
-.. _enum_@GlobalScope_InlineAlign:
+.. _enum_@GlobalScope_VerticalAlignment:
 
-.. _class_@GlobalScope_constant_INLINE_ALIGN_TOP_TO:
+.. _class_@GlobalScope_constant_VERTICAL_ALIGNMENT_TOP:
 
-.. _class_@GlobalScope_constant_INLINE_ALIGN_CENTER_TO:
+.. _class_@GlobalScope_constant_VERTICAL_ALIGNMENT_CENTER:
 
-.. _class_@GlobalScope_constant_INLINE_ALIGN_BOTTOM_TO:
+.. _class_@GlobalScope_constant_VERTICAL_ALIGNMENT_BOTTOM:
 
-.. _class_@GlobalScope_constant_INLINE_ALIGN_TO_TOP:
+.. _class_@GlobalScope_constant_VERTICAL_ALIGNMENT_FILL:
 
-.. _class_@GlobalScope_constant_INLINE_ALIGN_TO_CENTER:
+enum **VerticalAlignment**:
 
-.. _class_@GlobalScope_constant_INLINE_ALIGN_TO_BASELINE:
+- **VERTICAL_ALIGNMENT_TOP** = **0** --- Vertical top alignment, usually for text-derived classes.
 
-.. _class_@GlobalScope_constant_INLINE_ALIGN_TO_BOTTOM:
+- **VERTICAL_ALIGNMENT_CENTER** = **1** --- Vertical center alignment, usually for text-derived classes.
 
-.. _class_@GlobalScope_constant_INLINE_ALIGN_TOP:
+- **VERTICAL_ALIGNMENT_BOTTOM** = **2** --- Vertical bottom alignment, usually for text-derived classes.
 
-.. _class_@GlobalScope_constant_INLINE_ALIGN_CENTER:
+- **VERTICAL_ALIGNMENT_FILL** = **3** --- Expand rows to fit height, usually for text-derived classes.
 
-.. _class_@GlobalScope_constant_INLINE_ALIGN_BOTTOM:
+----
 
-enum **InlineAlign**:
+.. _enum_@GlobalScope_InlineAlignment:
 
-- **INLINE_ALIGN_TOP_TO** = **0** --- Aligns the top of the inline object (e.g. image, table) to the position of the text specified by ``INLINE_ALIGN_TO_*`` constant.
+.. _class_@GlobalScope_constant_INLINE_ALIGNMENT_TOP_TO:
 
-- **INLINE_ALIGN_CENTER_TO** = **1** --- Aligns the center of the inline object (e.g. image, table) to the position of the text specified by ``INLINE_ALIGN_TO_*`` constant.
+.. _class_@GlobalScope_constant_INLINE_ALIGNMENT_CENTER_TO:
 
-- **INLINE_ALIGN_BOTTOM_TO** = **2** --- Aligns the bottom of the inline object (e.g. image, table) to the position of the text specified by ``INLINE_ALIGN_TO_*`` constant.
+.. _class_@GlobalScope_constant_INLINE_ALIGNMENT_BOTTOM_TO:
 
-- **INLINE_ALIGN_TO_TOP** = **0** --- Aligns the position of the inline object (e.g. image, table) specified by ``INLINE_ALIGN_*_TO`` constant to the top of the text.
+.. _class_@GlobalScope_constant_INLINE_ALIGNMENT_TO_TOP:
 
-- **INLINE_ALIGN_TO_CENTER** = **4** --- Aligns the position of the inline object (e.g. image, table) specified by ``INLINE_ALIGN_*_TO`` constant to the center of the text.
+.. _class_@GlobalScope_constant_INLINE_ALIGNMENT_TO_CENTER:
 
-- **INLINE_ALIGN_TO_BASELINE** = **8** --- Aligns the position of the inline object (e.g. image, table) specified by ``INLINE_ALIGN_*_TO`` constant to the baseline of the text.
+.. _class_@GlobalScope_constant_INLINE_ALIGNMENT_TO_BASELINE:
 
-- **INLINE_ALIGN_TO_BOTTOM** = **12** --- Aligns inline object (e.g. image, table) to the bottom of the text.
+.. _class_@GlobalScope_constant_INLINE_ALIGNMENT_TO_BOTTOM:
 
-- **INLINE_ALIGN_TOP** = **0** --- Aligns top of the inline object (e.g. image, table) to the top of the text. Equvalent to ``INLINE_ALIGN_TOP_TO | INLINE_ALIGN_TO_TOP``.
+.. _class_@GlobalScope_constant_INLINE_ALIGNMENT_TOP:
 
-- **INLINE_ALIGN_CENTER** = **5** --- Aligns center of the inline object (e.g. image, table) to the center of the text. Equvalent to ``INLINE_ALIGN_CENTER_TO | INLINE_ALIGN_TO_CENTER``.
+.. _class_@GlobalScope_constant_INLINE_ALIGNMENT_CENTER:
 
-- **INLINE_ALIGN_BOTTOM** = **14** --- Aligns bottom of the inline object (e.g. image, table) to the bottom of the text. Equvalent to ``INLINE_ALIGN_BOTTOM_TO | INLINE_ALIGN_TO_BOTTOM``.
+.. _class_@GlobalScope_constant_INLINE_ALIGNMENT_BOTTOM:
+
+enum **InlineAlignment**:
+
+- **INLINE_ALIGNMENT_TOP_TO** = **0** --- Aligns the top of the inline object (e.g. image, table) to the position of the text specified by ``INLINE_ALIGNMENT_TO_*`` constant.
+
+- **INLINE_ALIGNMENT_CENTER_TO** = **1** --- Aligns the center of the inline object (e.g. image, table) to the position of the text specified by ``INLINE_ALIGNMENT_TO_*`` constant.
+
+- **INLINE_ALIGNMENT_BOTTOM_TO** = **2** --- Aligns the bottom of the inline object (e.g. image, table) to the position of the text specified by ``INLINE_ALIGNMENT_TO_*`` constant.
+
+- **INLINE_ALIGNMENT_TO_TOP** = **0** --- Aligns the position of the inline object (e.g. image, table) specified by ``INLINE_ALIGNMENT_*_TO`` constant to the top of the text.
+
+- **INLINE_ALIGNMENT_TO_CENTER** = **4** --- Aligns the position of the inline object (e.g. image, table) specified by ``INLINE_ALIGNMENT_*_TO`` constant to the center of the text.
+
+- **INLINE_ALIGNMENT_TO_BASELINE** = **8** --- Aligns the position of the inline object (e.g. image, table) specified by ``INLINE_ALIGNMENT_*_TO`` constant to the baseline of the text.
+
+- **INLINE_ALIGNMENT_TO_BOTTOM** = **12** --- Aligns inline object (e.g. image, table) to the bottom of the text.
+
+- **INLINE_ALIGNMENT_TOP** = **0** --- Aligns top of the inline object (e.g. image, table) to the top of the text. Equivalent to ``INLINE_ALIGNMENT_TOP_TO | INLINE_ALIGNMENT_TO_TOP``.
+
+- **INLINE_ALIGNMENT_CENTER** = **5** --- Aligns center of the inline object (e.g. image, table) to the center of the text. Equivalent to ``INLINE_ALIGNMENT_CENTER_TO | INLINE_ALIGNMENT_TO_CENTER``.
+
+- **INLINE_ALIGNMENT_BOTTOM** = **14** --- Aligns bottom of the inline object (e.g. image, table) to the bottom of the text. Equivalent to ``INLINE_ALIGNMENT_BOTTOM_TO | INLINE_ALIGNMENT_TO_BOTTOM``.
 
 ----
 
@@ -1613,7 +1624,13 @@ enum **JoyButton**:
 
 - **JOY_BUTTON_SDL_MAX** = **21** --- The number of SDL game controller buttons.
 
-- **JOY_BUTTON_MAX** = **36** --- The maximum number of game controller buttons: Android supports up to 36 buttons.
+- **JOY_BUTTON_MAX** = **128** --- The maximum number of game controller buttons supported by the engine. The actual limit may be lower on specific platforms:
+
+- Android: Up to 36 buttons.
+
+- Linux: Up to 80 buttons.
+
+- Windows and macOS: Up to 128 buttons.
 
 ----
 
@@ -1675,21 +1692,65 @@ enum **JoyAxis**:
 
 .. _class_@GlobalScope_constant_MIDI_MESSAGE_PITCH_BEND:
 
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_SYSTEM_EXCLUSIVE:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_QUARTER_FRAME:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_SONG_POSITION_POINTER:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_SONG_SELECT:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_TUNE_REQUEST:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_TIMING_CLOCK:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_START:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_CONTINUE:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_STOP:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_ACTIVE_SENSING:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_SYSTEM_RESET:
+
 enum **MIDIMessage**:
 
-- **MIDI_MESSAGE_NOTE_OFF** = **8** --- MIDI note OFF message.
+- **MIDI_MESSAGE_NOTE_OFF** = **8** --- MIDI note OFF message. See the documentation of :ref:`InputEventMIDI<class_InputEventMIDI>` for information of how to use MIDI inputs.
 
-- **MIDI_MESSAGE_NOTE_ON** = **9** --- MIDI note ON message.
+- **MIDI_MESSAGE_NOTE_ON** = **9** --- MIDI note ON message. See the documentation of :ref:`InputEventMIDI<class_InputEventMIDI>` for information of how to use MIDI inputs.
 
-- **MIDI_MESSAGE_AFTERTOUCH** = **10** --- MIDI aftertouch message.
+- **MIDI_MESSAGE_AFTERTOUCH** = **10** --- MIDI aftertouch message. This message is most often sent by pressing down on the key after it "bottoms out".
 
-- **MIDI_MESSAGE_CONTROL_CHANGE** = **11** --- MIDI control change message.
+- **MIDI_MESSAGE_CONTROL_CHANGE** = **11** --- MIDI control change message. This message is sent when a controller value changes. Controllers include devices such as pedals and levers.
 
-- **MIDI_MESSAGE_PROGRAM_CHANGE** = **12** --- MIDI program change message.
+- **MIDI_MESSAGE_PROGRAM_CHANGE** = **12** --- MIDI program change message. This message sent when the program patch number changes.
 
-- **MIDI_MESSAGE_CHANNEL_PRESSURE** = **13** --- MIDI channel pressure message.
+- **MIDI_MESSAGE_CHANNEL_PRESSURE** = **13** --- MIDI channel pressure message. This message is most often sent by pressing down on the key after it "bottoms out". This message is different from polyphonic after-touch as it indicates the highest pressure across all keys.
 
-- **MIDI_MESSAGE_PITCH_BEND** = **14** --- MIDI pitch bend message.
+- **MIDI_MESSAGE_PITCH_BEND** = **14** --- MIDI pitch bend message. This message is sent to indicate a change in the pitch bender (wheel or lever, typically).
+
+- **MIDI_MESSAGE_SYSTEM_EXCLUSIVE** = **240** --- MIDI system exclusive message. This has behavior exclusive to the device you're receiving input from. Getting this data is not implemented in Godot.
+
+- **MIDI_MESSAGE_QUARTER_FRAME** = **241** --- MIDI quarter frame message. Contains timing information that is used to synchronize MIDI devices. Getting this data is not implemented in Godot.
+
+- **MIDI_MESSAGE_SONG_POSITION_POINTER** = **242** --- MIDI song position pointer message. Gives the number of 16th notes since the start of the song. Getting this data is not implemented in Godot.
+
+- **MIDI_MESSAGE_SONG_SELECT** = **243** --- MIDI song select message. Specifies which sequence or song is to be played. Getting this data is not implemented in Godot.
+
+- **MIDI_MESSAGE_TUNE_REQUEST** = **246** --- MIDI tune request message. Upon receiving a tune request, all analog synthesizers should tune their oscillators.
+
+- **MIDI_MESSAGE_TIMING_CLOCK** = **248** --- MIDI timing clock message. Sent 24 times per quarter note when synchronization is required.
+
+- **MIDI_MESSAGE_START** = **250** --- MIDI start message. Start the current sequence playing. This message will be followed with Timing Clocks.
+
+- **MIDI_MESSAGE_CONTINUE** = **251** --- MIDI continue message. Continue at the point the sequence was stopped.
+
+- **MIDI_MESSAGE_STOP** = **252** --- MIDI stop message. Stop the current sequence.
+
+- **MIDI_MESSAGE_ACTIVE_SENSING** = **254** --- MIDI active sensing message. This message is intended to be sent repeatedly to tell the receiver that a connection is alive.
+
+- **MIDI_MESSAGE_SYSTEM_RESET** = **255** --- MIDI system reset message. Reset all receivers in the system to power-up status. It should not be sent on power-up itself.
 
 ----
 
@@ -1990,6 +2051,8 @@ Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other failu
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_ARRAY_TYPE:
 
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LOCALE_ID:
+
 .. _class_@GlobalScope_constant_PROPERTY_HINT_MAX:
 
 enum **PropertyHint**:
@@ -2057,7 +2120,7 @@ Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`
     hint_string = "%s/%s:Resource" % [TYPE_OBJECT, TYPE_OBJECT] # Array of resources.
     hint_string = "%s:%s/%s:Resource" % [TYPE_ARRAY, TYPE_OBJECT, TYPE_OBJECT] # Two-dimensional array of resources.
 
-**Note:** The final colon is required to specify for properly detecting built-in types.
+\ **Note:** The final colon is required to specify for properly detecting built-in types.
 
 - **PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE** = **26**
 
@@ -2089,7 +2152,9 @@ Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`
 
 - **PROPERTY_HINT_ARRAY_TYPE** = **39**
 
-- **PROPERTY_HINT_MAX** = **41**
+- **PROPERTY_HINT_LOCALE_ID** = **41** --- Hints that a string property is a locale code. Editing it will show a locale dialog for picking language and country.
+
+- **PROPERTY_HINT_MAX** = **42**
 
 ----
 
@@ -2367,23 +2432,23 @@ enum **TransferMode**:
 
 .. _class_@GlobalScope_constant_TYPE_ARRAY:
 
-.. _class_@GlobalScope_constant_TYPE_RAW_ARRAY:
+.. _class_@GlobalScope_constant_TYPE_PACKED_BYTE_ARRAY:
 
-.. _class_@GlobalScope_constant_TYPE_INT32_ARRAY:
+.. _class_@GlobalScope_constant_TYPE_PACKED_INT32_ARRAY:
 
-.. _class_@GlobalScope_constant_TYPE_INT64_ARRAY:
+.. _class_@GlobalScope_constant_TYPE_PACKED_INT64_ARRAY:
 
-.. _class_@GlobalScope_constant_TYPE_FLOAT32_ARRAY:
+.. _class_@GlobalScope_constant_TYPE_PACKED_FLOAT32_ARRAY:
 
-.. _class_@GlobalScope_constant_TYPE_FLOAT64_ARRAY:
+.. _class_@GlobalScope_constant_TYPE_PACKED_FLOAT64_ARRAY:
 
-.. _class_@GlobalScope_constant_TYPE_STRING_ARRAY:
+.. _class_@GlobalScope_constant_TYPE_PACKED_STRING_ARRAY:
 
-.. _class_@GlobalScope_constant_TYPE_VECTOR2_ARRAY:
+.. _class_@GlobalScope_constant_TYPE_PACKED_VECTOR2_ARRAY:
 
-.. _class_@GlobalScope_constant_TYPE_VECTOR3_ARRAY:
+.. _class_@GlobalScope_constant_TYPE_PACKED_VECTOR3_ARRAY:
 
-.. _class_@GlobalScope_constant_TYPE_COLOR_ARRAY:
+.. _class_@GlobalScope_constant_TYPE_PACKED_COLOR_ARRAY:
 
 .. _class_@GlobalScope_constant_TYPE_MAX:
 
@@ -2441,23 +2506,23 @@ enum **Variant.Type**:
 
 - **TYPE_ARRAY** = **25** --- Variable is of type :ref:`Array<class_Array>`.
 
-- **TYPE_RAW_ARRAY** = **26** --- Variable is of type :ref:`PackedByteArray<class_PackedByteArray>`.
+- **TYPE_PACKED_BYTE_ARRAY** = **26** --- Variable is of type :ref:`PackedByteArray<class_PackedByteArray>`.
 
-- **TYPE_INT32_ARRAY** = **27** --- Variable is of type :ref:`PackedInt32Array<class_PackedInt32Array>`.
+- **TYPE_PACKED_INT32_ARRAY** = **27** --- Variable is of type :ref:`PackedInt32Array<class_PackedInt32Array>`.
 
-- **TYPE_INT64_ARRAY** = **28** --- Variable is of type :ref:`PackedInt64Array<class_PackedInt64Array>`.
+- **TYPE_PACKED_INT64_ARRAY** = **28** --- Variable is of type :ref:`PackedInt64Array<class_PackedInt64Array>`.
 
-- **TYPE_FLOAT32_ARRAY** = **29** --- Variable is of type :ref:`PackedFloat32Array<class_PackedFloat32Array>`.
+- **TYPE_PACKED_FLOAT32_ARRAY** = **29** --- Variable is of type :ref:`PackedFloat32Array<class_PackedFloat32Array>`.
 
-- **TYPE_FLOAT64_ARRAY** = **30** --- Variable is of type :ref:`PackedFloat64Array<class_PackedFloat64Array>`.
+- **TYPE_PACKED_FLOAT64_ARRAY** = **30** --- Variable is of type :ref:`PackedFloat64Array<class_PackedFloat64Array>`.
 
-- **TYPE_STRING_ARRAY** = **31** --- Variable is of type :ref:`PackedStringArray<class_PackedStringArray>`.
+- **TYPE_PACKED_STRING_ARRAY** = **31** --- Variable is of type :ref:`PackedStringArray<class_PackedStringArray>`.
 
-- **TYPE_VECTOR2_ARRAY** = **32** --- Variable is of type :ref:`PackedVector2Array<class_PackedVector2Array>`.
+- **TYPE_PACKED_VECTOR2_ARRAY** = **32** --- Variable is of type :ref:`PackedVector2Array<class_PackedVector2Array>`.
 
-- **TYPE_VECTOR3_ARRAY** = **33** --- Variable is of type :ref:`PackedVector3Array<class_PackedVector3Array>`.
+- **TYPE_PACKED_VECTOR3_ARRAY** = **33** --- Variable is of type :ref:`PackedVector3Array<class_PackedVector3Array>`.
 
-- **TYPE_COLOR_ARRAY** = **34** --- Variable is of type :ref:`PackedColorArray<class_PackedColorArray>`.
+- **TYPE_PACKED_COLOR_ARRAY** = **34** --- Variable is of type :ref:`PackedColorArray<class_PackedColorArray>`.
 
 - **TYPE_MAX** = **35** --- Represents the size of the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` enum.
 
@@ -2672,7 +2737,7 @@ The :ref:`InputMap<class_InputMap>` singleton.
 
 The :ref:`JavaClassWrapper<class_JavaClassWrapper>` singleton.
 
-**Note:** Only implemented on Android.
+\ **Note:** Only implemented on Android.
 
 ----
 
@@ -2682,7 +2747,7 @@ The :ref:`JavaClassWrapper<class_JavaClassWrapper>` singleton.
 
 The :ref:`JavaScript<class_JavaScript>` singleton.
 
-**Note:** Only implemented on HTML5.
+\ **Note:** Only implemented on HTML5.
 
 ----
 
@@ -2951,7 +3016,7 @@ Important note: The Y coordinate comes first, by convention.
 
 Decodes a byte array back to a :ref:`Variant<class_Variant>` value, without decoding objects.
 
-**Note:** If you need object deserialization, see :ref:`bytes2var_with_objects<class_@GlobalScope_method_bytes2var_with_objects>`.
+\ **Note:** If you need object deserialization, see :ref:`bytes2var_with_objects<class_@GlobalScope_method_bytes2var_with_objects>`.
 
 ----
 
@@ -2961,7 +3026,7 @@ Decodes a byte array back to a :ref:`Variant<class_Variant>` value, without deco
 
 Decodes a byte array back to a :ref:`Variant<class_Variant>` value. Decoding objects is allowed.
 
-**Warning:** Deserialized object can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats (remote code execution).
+\ **Warning:** Deserialized object can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats (remote code execution).
 
 ----
 
@@ -3104,11 +3169,11 @@ Returns an "eased" value of ``x`` based on an easing function defined with ``cur
     - 1.0: Linear
     - Between -1.0 and 0.0 (exclusive): Ease out-in
     - 0.0: Constant
-    - Between 0.0 to 1.0 (exclusive): Ease in
+    - Between 0.0 to 1.0 (exclusive): Ease out
     - 1.0: Linear
-    - Greater than 1.0 (exclusive): Ease out
+    - Greater than 1.0 (exclusive): Ease in
 
-`ease() curve values cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/ease_cheatsheet.png>`__
+\ `ease() curve values cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/ease_cheatsheet.png>`__\ 
 
 See also :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`. If you need to perform more advanced transitions, use :ref:`Tween<class_Tween>` or :ref:`AnimationPlayer<class_AnimationPlayer>`.
 
@@ -3128,7 +3193,7 @@ Returns a human-readable name for the given error code.
 
 The natural exponential function. It raises the mathematical constant **e** to the power of ``x`` and returns it.
 
-**e** has an approximate value of 2.71828, and can be obtained with ``exp(1)``.
+\ **e** has an approximate value of 2.71828, and can be obtained with ``exp(1)``.
 
 For exponents to other bases use the method :ref:`pow<class_@GlobalScope_method_pow>`.
 
@@ -3153,7 +3218,7 @@ Rounds ``x`` downward (towards negative infinity), returning the largest whole n
 
 See also :ref:`ceil<class_@GlobalScope_method_ceil>`, :ref:`round<class_@GlobalScope_method_round>`, and :ref:`snapped<class_@GlobalScope_method_snapped>`.
 
-**Note:** This method returns a float. If you need an integer, you can use ``int(x)`` directly.
+\ **Note:** This method returns a float. If you need an integer, you can use ``int(x)`` directly.
 
 ----
 
@@ -3230,15 +3295,18 @@ Returns the Object that corresponds to ``instance_id``. All Objects have a uniqu
 
 - :ref:`float<class_float>` **inverse_lerp** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**
 
-Returns a normalized value considering the given range. This is the opposite of :ref:`lerp<class_@GlobalScope_method_lerp>`.
+Returns an interpolation or extrapolation factor considering the range specified in ``from`` and ``to``, and the interpolated value specified in ``weight``. The returned value will be between ``0.0`` and ``1.0`` if ``weight`` is between ``from`` and ``to`` (inclusive). If ``weight`` is located outside this range, then an extrapolation factor will be returned (return value lower than ``0.0`` or greater than ``1.0``).
 
 ::
 
+    # The interpolation ratio in the `lerp()` call below is 0.75.
     var middle = lerp(20, 30, 0.75)
     # `middle` is now 27.5.
     # Now, we pretend to have forgotten the original ratio and want to get it back.
     var ratio = inverse_lerp(20, 30, 27.5)
     # `ratio` is now 0.75.
+
+See also :ref:`lerp<class_@GlobalScope_method_lerp>` which performs the reverse of this operation.
 
 ----
 
@@ -3300,11 +3368,13 @@ This method is faster than using :ref:`is_equal_approx<class_@GlobalScope_method
 
 - :ref:`float<class_float>` **lerp** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**
 
-Linearly interpolates between two values by a normalized value. This is the opposite of :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>`.
+Linearly interpolates between two values by the factor defined in ``weight``. To perform interpolation, ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). However, values outside this range are allowed and can be used to perform *extrapolation*.
 
 ::
 
     lerp(0, 4, 0.75) # Returns 3.0
+
+See also :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>` which performs the reverse of this operation. To perform eased interpolation with :ref:`lerp<class_@GlobalScope_method_lerp>`, combine it with :ref:`ease<class_@GlobalScope_method_ease>` or :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`.
 
 ----
 
@@ -3314,7 +3384,7 @@ Linearly interpolates between two values by a normalized value. This is the oppo
 
 Linearly interpolates between two angles (in radians) by a normalized value.
 
-Similar to :ref:`lerp<class_@GlobalScope_method_lerp>`, but interpolates correctly when the angles wrap around :ref:`@GDScript.TAU<class_@GDScript_constant_TAU>`.
+Similar to :ref:`lerp<class_@GlobalScope_method_lerp>`, but interpolates correctly when the angles wrap around :ref:`@GDScript.TAU<class_@GDScript_constant_TAU>`. To perform eased interpolation with :ref:`lerp_angle<class_@GlobalScope_method_lerp_angle>`, combine it with :ref:`ease<class_@GlobalScope_method_ease>` or :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`.
 
 ::
 
@@ -3349,13 +3419,13 @@ Converts from linear energy to decibels (audio). This can be used to implement v
 
 Natural logarithm. The amount of time needed to reach a certain level of continuous growth.
 
-**Note:** This is not the same as the "log" function on most calculators, which uses a base 10 logarithm.
+\ **Note:** This is not the same as the "log" function on most calculators, which uses a base 10 logarithm.
 
 ::
 
     log(10) # Returns 2.302585
 
-**Note:** The logarithm of ``0`` returns ``-inf``, while negative values return ``-nan``.
+\ **Note:** The logarithm of ``0`` returns ``-inf``, while negative values return ``-nan``.
 
 ----
 
@@ -3468,7 +3538,7 @@ In other words, returns the smallest value ``a`` where ``a = pow(2, n)`` such th
     nearest_po2(0) # Returns 0 (this may not be what you expect)
     nearest_po2(-1) # Returns 0 (this may not be what you expect)
 
-**Warning:** Due to the way it is implemented, this function returns ``0`` rather than ``1`` for non-positive values of ``value`` (in reality, 1 is the smallest integer power of 2).
+\ **Warning:** Due to the way it is implemented, this function returns ``0`` rather than ``1`` for non-positive values of ``value`` (in reality, 1 is the smallest integer power of 2).
 
 ----
 
@@ -3541,7 +3611,7 @@ Converts one or more arguments of any type to string in the best way possible an
     var a = [1, 2, 3]
     print("a", "b", a) # Prints ab[1, 2, 3]
 
-**Note:** Consider using :ref:`push_error<class_@GlobalScope_method_push_error>` and :ref:`push_warning<class_@GlobalScope_method_push_warning>` to print error and warning messages instead of :ref:`print<class_@GlobalScope_method_print>`. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed.
+\ **Note:** Consider using :ref:`push_error<class_@GlobalScope_method_push_error>` and :ref:`push_warning<class_@GlobalScope_method_push_warning>` to print error and warning messages instead of :ref:`print<class_@GlobalScope_method_print>`. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed.
 
 ----
 
@@ -3577,7 +3647,7 @@ Prints one or more arguments to strings in the best way possible to console. No 
     printraw("B")
     # Prints AB
 
-**Note:** Due to limitations with Godot's built-in console, this only prints to the terminal. If you need to print in the editor, use another method, such as :ref:`print<class_@GlobalScope_method_print>`.
+\ **Note:** Due to limitations with Godot's built-in console, this only prints to the terminal. If you need to print in the editor, use another method, such as :ref:`print<class_@GlobalScope_method_print>`.
 
 ----
 
@@ -3615,7 +3685,7 @@ Pushes an error message to Godot's built-in debugger and to the OS terminal.
 
     push_error("test error") # Prints "test error" to debugger and terminal as error call
 
-**Note:** Errors printed this way will not pause project execution. To print an error message and pause project execution in debug builds, use ``assert(false, "test error")`` instead.
+\ **Note:** Errors printed this way will not pause project execution. To print an error message and pause project execution in debug builds, use ``assert(false, "test error")`` instead.
 
 ----
 
@@ -3717,7 +3787,7 @@ Returns a random signed 32-bit integer between ``from`` and ``to`` (inclusive). 
 
 Randomizes the seed (or the internal state) of the random number generator. Current implementation reseeds using a number based on time.
 
-**Note:** This method is called automatically when the project is run. If you need to fix the seed to have reproducible results, use :ref:`seed<class_@GlobalScope_method_seed>` to initialize the random number generator.
+\ **Note:** This method is called automatically when the project is run. If you need to fix the seed to have reproducible results, use :ref:`seed<class_@GlobalScope_method_seed>` to initialize the random number generator.
 
 ----
 
@@ -3871,7 +3941,7 @@ This S-shaped curve is the cubic Hermite interpolator, given by ``f(y) = 3*y^2 -
 
 Compared to :ref:`ease<class_@GlobalScope_method_ease>` with a curve value of ``-1.6521``, :ref:`smoothstep<class_@GlobalScope_method_smoothstep>` returns the smoothest possible curve with no sudden changes in the derivative. If you need to perform more advanced transitions, use :ref:`Tween<class_Tween>` or :ref:`AnimationPlayer<class_AnimationPlayer>`.
 
-`Comparison between smoothstep() and ease(x, -1.6521) return values <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/smoothstep_ease_comparison.png>`__
+\ `Comparison between smoothstep() and ease(x, -1.6521) return values <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/smoothstep_ease_comparison.png>`__
 
 ----
 
@@ -3900,7 +3970,7 @@ Returns the square root of ``x``, where ``x`` is a non-negative number.
 
     sqrt(9) # Returns 3
 
-**Note:** Negative values of ``x`` return NaN. If you need negative inputs, use ``System.Numerics.Complex`` in C#.
+\ **Note:** Negative values of ``x`` return NaN. If you need negative inputs, use ``System.Numerics.Complex`` in C#.
 
 ----
 
@@ -3992,7 +4062,7 @@ Returns the internal type of the given Variant object, using the :ref:`Variant.T
 
 Encodes a :ref:`Variant<class_Variant>` value to a byte array, without encoding objects. Deserialization can be done with :ref:`bytes2var<class_@GlobalScope_method_bytes2var>`.
 
-**Note:** If you need object serialization, see :ref:`var2bytes_with_objects<class_@GlobalScope_method_var2bytes_with_objects>`.
+\ **Note:** If you need object serialization, see :ref:`var2bytes_with_objects<class_@GlobalScope_method_var2bytes_with_objects>`.
 
 ----
 
@@ -4059,9 +4129,9 @@ Usable for creating loop-alike behavior or infinite surfaces.
     # Infinite rotation (in radians)
     angle = wrapf(angle + 0.1, -PI, PI)
 
-**Note:** If ``min`` is ``0``, this is equivalent to :ref:`fposmod<class_@GlobalScope_method_fposmod>`, so prefer using that instead.
+\ **Note:** If ``min`` is ``0``, this is equivalent to :ref:`fposmod<class_@GlobalScope_method_fposmod>`, so prefer using that instead.
 
-``wrapf`` is more flexible than using the :ref:`fposmod<class_@GlobalScope_method_fposmod>` approach by giving the user control over the minimum value.
+\ ``wrapf`` is more flexible than using the :ref:`fposmod<class_@GlobalScope_method_fposmod>` approach by giving the user control over the minimum value.
 
 ----
 

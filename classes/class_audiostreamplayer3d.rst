@@ -22,7 +22,7 @@ By default, audio is heard from the camera position. This can be changed by addi
 
 See also :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` to play a sound non-positionally.
 
-**Note:** Hiding an ``AudioStreamPlayer3D`` node does not disable its audio output. To temporarily disable an ``AudioStreamPlayer3D``'s audio output, set :ref:`unit_db<class_AudioStreamPlayer3D_property_unit_db>` to a very low value like ``-100`` (which isn't audible to human hearing).
+\ **Note:** Hiding an ``AudioStreamPlayer3D`` node does not disable its audio output. To temporarily disable an ``AudioStreamPlayer3D``'s audio output, set :ref:`unit_db<class_AudioStreamPlayer3D_property_unit_db>` to a very low value like ``-100`` (which isn't audible to human hearing).
 
 Tutorials
 ---------

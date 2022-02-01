@@ -52,12 +52,6 @@ Methods
 +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                             | :ref:`get_interfaces<class_XRServer_method_get_interfaces>` **(** **)** |const|                                                                                          |
 +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                 | :ref:`get_last_commit_usec<class_XRServer_method_get_last_commit_usec>` **(** **)**                                                                                      |
-+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                 | :ref:`get_last_frame_usec<class_XRServer_method_get_last_frame_usec>` **(** **)**                                                                                        |
-+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                 | :ref:`get_last_process_usec<class_XRServer_method_get_last_process_usec>` **(** **)**                                                                                    |
-+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform3D<class_Transform3D>`                 | :ref:`get_reference_frame<class_XRServer_method_get_reference_frame>` **(** **)** |const|                                                                                |
 +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`XRPositionalTracker<class_XRPositionalTracker>` | :ref:`get_tracker<class_XRServer_method_get_tracker>` **(** :ref:`StringName<class_StringName>` tracker_name **)** |const|                                               |
@@ -268,30 +262,6 @@ Returns the number of interfaces currently registered with the AR/VR server. If 
 - :ref:`Array<class_Array>` **get_interfaces** **(** **)** |const|
 
 Returns a list of available interfaces the ID and name of each interface.
-
-----
-
-.. _class_XRServer_method_get_last_commit_usec:
-
-- :ref:`int<class_int>` **get_last_commit_usec** **(** **)**
-
-Returns the absolute timestamp (in μs) of the last ``XRServer`` commit of the AR/VR eyes to :ref:`RenderingServer<class_RenderingServer>`. The value comes from an internal call to :ref:`Time.get_ticks_usec<class_Time_method_get_ticks_usec>`.
-
-----
-
-.. _class_XRServer_method_get_last_frame_usec:
-
-- :ref:`int<class_int>` **get_last_frame_usec** **(** **)**
-
-Returns the duration (in μs) of the last frame. This is computed as the difference between :ref:`get_last_commit_usec<class_XRServer_method_get_last_commit_usec>` and :ref:`get_last_process_usec<class_XRServer_method_get_last_process_usec>` when committing.
-
-----
-
-.. _class_XRServer_method_get_last_process_usec:
-
-- :ref:`int<class_int>` **get_last_process_usec** **(** **)**
-
-Returns the absolute timestamp (in μs) of the last ``XRServer`` process callback. The value comes from an internal call to :ref:`Time.get_ticks_usec<class_Time_method_get_ticks_usec>`.
 
 ----
 

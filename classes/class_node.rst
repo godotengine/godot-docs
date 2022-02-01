@@ -22,13 +22,13 @@ Nodes are Godot's building blocks. They can be assigned as the child of another 
 
 A tree of nodes is called a *scene*. Scenes can be saved to the disk and then instantiated into other scenes. This allows for very high flexibility in the architecture and data model of Godot projects.
 
-**Scene tree:** The :ref:`SceneTree<class_SceneTree>` contains the active tree of nodes. When a node is added to the scene tree, it receives the :ref:`NOTIFICATION_ENTER_TREE<class_Node_constant_NOTIFICATION_ENTER_TREE>` notification and its :ref:`_enter_tree<class_Node_method__enter_tree>` callback is triggered. Child nodes are always added *after* their parent node, i.e. the :ref:`_enter_tree<class_Node_method__enter_tree>` callback of a parent node will be triggered before its child's.
+\ **Scene tree:** The :ref:`SceneTree<class_SceneTree>` contains the active tree of nodes. When a node is added to the scene tree, it receives the :ref:`NOTIFICATION_ENTER_TREE<class_Node_constant_NOTIFICATION_ENTER_TREE>` notification and its :ref:`_enter_tree<class_Node_method__enter_tree>` callback is triggered. Child nodes are always added *after* their parent node, i.e. the :ref:`_enter_tree<class_Node_method__enter_tree>` callback of a parent node will be triggered before its child's.
 
 Once all nodes have been added in the scene tree, they receive the :ref:`NOTIFICATION_READY<class_Node_constant_NOTIFICATION_READY>` notification and their respective :ref:`_ready<class_Node_method__ready>` callbacks are triggered. For groups of nodes, the :ref:`_ready<class_Node_method__ready>` callback is called in reverse order, starting with the children and moving up to the parent nodes.
 
 This means that when adding a node to the scene tree, the following order will be used for the callbacks: :ref:`_enter_tree<class_Node_method__enter_tree>` of the parent, :ref:`_enter_tree<class_Node_method__enter_tree>` of the children, :ref:`_ready<class_Node_method__ready>` of the children and finally :ref:`_ready<class_Node_method__ready>` of the parent (recursively for the entire scene tree).
 
-**Processing:** Nodes can override the "process" state, so that they receive a callback on each frame requesting them to process (do something). Normal processing (callback :ref:`_process<class_Node_method__process>`, toggled with :ref:`set_process<class_Node_method_set_process>`) happens as fast as possible and is dependent on the frame rate, so the processing time *delta* (in seconds) is passed as an argument. Physics processing (callback :ref:`_physics_process<class_Node_method__physics_process>`, toggled with :ref:`set_physics_process<class_Node_method_set_physics_process>`) happens a fixed number of times per second (60 by default) and is useful for code related to the physics engine.
+\ **Processing:** Nodes can override the "process" state, so that they receive a callback on each frame requesting them to process (do something). Normal processing (callback :ref:`_process<class_Node_method__process>`, toggled with :ref:`set_process<class_Node_method_set_process>`) happens as fast as possible and is dependent on the frame rate, so the processing time *delta* (in seconds) is passed as an argument. Physics processing (callback :ref:`_physics_process<class_Node_method__physics_process>`, toggled with :ref:`set_physics_process<class_Node_method_set_physics_process>`) happens a fixed number of times per second (60 by default) and is useful for code related to the physics engine.
 
 Nodes can also process input events. When present, the :ref:`_input<class_Node_method__input>` function will be called for each input that the program receives. In many cases, this can be overkill (unless used for simple projects), and the :ref:`_unhandled_input<class_Node_method__unhandled_input>` function might be preferred; it is called when the input event was not handled by anyone else (typically, GUI :ref:`Control<class_Control>` nodes), ensuring that the node only receives the events that were meant for it.
 
@@ -36,9 +36,11 @@ To keep track of the scene hierarchy (especially when instancing scenes into oth
 
 Finally, when a node is freed with :ref:`Object.free<class_Object_method_free>` or :ref:`queue_free<class_Node_method_queue_free>`, it will also free all its children.
 
-**Groups:** Nodes can be added to as many groups as you want to be easy to manage, you could create groups like "enemies" or "collectables" for example, depending on your game. See :ref:`add_to_group<class_Node_method_add_to_group>`, :ref:`is_in_group<class_Node_method_is_in_group>` and :ref:`remove_from_group<class_Node_method_remove_from_group>`. You can then retrieve all nodes in these groups, iterate them and even call methods on groups via the methods on :ref:`SceneTree<class_SceneTree>`.
+\ **Groups:** Nodes can be added to as many groups as you want to be easy to manage, you could create groups like "enemies" or "collectables" for example, depending on your game. See :ref:`add_to_group<class_Node_method_add_to_group>`, :ref:`is_in_group<class_Node_method_is_in_group>` and :ref:`remove_from_group<class_Node_method_remove_from_group>`. You can then retrieve all nodes in these groups, iterate them and even call methods on groups via the methods on :ref:`SceneTree<class_SceneTree>`.
 
-**Networking with nodes:** After connecting to a server (or making one, see :ref:`ENetMultiplayerPeer<class_ENetMultiplayerPeer>`), it is possible to use the built-in RPC (remote procedure call) system to communicate over the network. By calling :ref:`rpc<class_Node_method_rpc>` with a method name, it will be called locally and in all connected peers (peers = clients and the server that accepts connections). To identify which node receives the RPC call, Godot will use its :ref:`NodePath<class_NodePath>` (make sure node names are the same on all peers). Also, take a look at the high-level networking tutorial and corresponding demos.
+\ **Networking with nodes:** After connecting to a server (or making one, see :ref:`ENetMultiplayerPeer<class_ENetMultiplayerPeer>`), it is possible to use the built-in RPC (remote procedure call) system to communicate over the network. By calling :ref:`rpc<class_Node_method_rpc>` with a method name, it will be called locally and in all connected peers (peers = clients and the server that accepts connections). To identify which node receives the RPC call, Godot will use its :ref:`NodePath<class_NodePath>` (make sure node names are the same on all peers). Also, take a look at the high-level networking tutorial and corresponding demos.
+
+\ **Note:** The ``script`` property is part of the :ref:`Object<class_Object>` class, not ``Node``. It isn't exposed like most properties but does have a setter and getter (``set_script()`` and ``get_script()``).
 
 Tutorials
 ---------
@@ -236,7 +238,7 @@ Signals
 
 - **ready** **(** **)**
 
-Emitted when the node is ready.
+Emitted when the node is ready. Comes after :ref:`_ready<class_Node_method__ready>` callback and follows the same rules.
 
 ----
 
@@ -368,7 +370,7 @@ Constants
 
 .. _class_Node_constant_NOTIFICATION_DRAG_END:
 
-.. _class_Node_constant_NOTIFICATION_PATH_CHANGED:
+.. _class_Node_constant_NOTIFICATION_PATH_RENAMED:
 
 .. _class_Node_constant_NOTIFICATION_INTERNAL_PROCESS:
 
@@ -436,7 +438,7 @@ Constants
 
 - **NOTIFICATION_PARENTED** = **18** --- Notification received when a node is set as a child of another node.
 
-**Note:** This doesn't mean that a node entered the :ref:`SceneTree<class_SceneTree>`.
+\ **Note:** This doesn't mean that a node entered the :ref:`SceneTree<class_SceneTree>`.
 
 - **NOTIFICATION_UNPARENTED** = **19** --- Notification received when a node is unparented (parent removed it from the list of children).
 
@@ -446,7 +448,7 @@ Constants
 
 - **NOTIFICATION_DRAG_END** = **22** --- Notification received when a drag ends.
 
-- **NOTIFICATION_PATH_CHANGED** = **23** --- Notification received when the node's :ref:`NodePath<class_NodePath>` changed.
+- **NOTIFICATION_PATH_RENAMED** = **23** --- Notification received when the node's name or one of its parents' name is changed. This notification is *not* received when the node is removed from the scene tree to be added to another parent later on.
 
 - **NOTIFICATION_INTERNAL_PROCESS** = **25** --- Notification received every frame when the internal process flag is set (see :ref:`set_process_internal<class_Node_method_set_process_internal>`).
 
@@ -577,7 +579,7 @@ The :ref:`MultiplayerAPI<class_MultiplayerAPI>` instance associated with this no
 
 The name of the node. This name is unique among the siblings (other child nodes from the same parent). When set to an existing name, the node will be automatically renamed.
 
-**Note:** Auto-generated names might include the ``@`` character, which is reserved for unique names when using :ref:`add_child<class_Node_method_add_child>`. When setting the name manually, any ``@`` will be removed.
+\ **Note:** Auto-generated names might include the ``@`` character, which is reserved for unique names when using :ref:`add_child<class_Node_method_add_child>`. When setting the name manually, any ``@`` will be removed.
 
 ----
 
@@ -686,7 +688,7 @@ To consume the input event and stop it propagating further to other nodes, :ref:
 
 For gameplay input, :ref:`_unhandled_input<class_Node_method__unhandled_input>` and :ref:`_unhandled_key_input<class_Node_method__unhandled_key_input>` are usually a better fit as they allow the GUI to intercept the events first.
 
-**Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
+\ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
 
 ----
 
@@ -700,7 +702,7 @@ It is only called if physics processing is enabled, which is done automatically 
 
 Corresponds to the :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` notification in :ref:`Object._notification<class_Object_method__notification>`.
 
-**Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
+\ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
 
 ----
 
@@ -714,7 +716,7 @@ It is only called if processing is enabled, which is done automatically if this 
 
 Corresponds to the :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>` notification in :ref:`Object._notification<class_Object_method__notification>`.
 
-**Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
+\ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
 
 ----
 
@@ -728,7 +730,7 @@ Corresponds to the :ref:`NOTIFICATION_READY<class_Node_constant_NOTIFICATION_REA
 
 Usually used for initialization. For even earlier initialization, :ref:`Object._init<class_Object_method__init>` may be used. See also :ref:`_enter_tree<class_Node_method__enter_tree>`.
 
-**Note:** :ref:`_ready<class_Node_method__ready>` may be called only once for each node. After removing a node from the scene tree and adding again, ``_ready`` will not be called for the second time. This can be bypassed with requesting another call with :ref:`request_ready<class_Node_method_request_ready>`, which may be called anywhere before adding the node again.
+\ **Note:** :ref:`_ready<class_Node_method__ready>` may be called only once for each node. After removing a node from the scene tree and adding again, ``_ready`` will not be called for the second time. This can be bypassed with requesting another call with :ref:`request_ready<class_Node_method_request_ready>`, which may be called anywhere before adding the node again.
 
 ----
 
@@ -744,7 +746,7 @@ To consume the input event and stop it propagating further to other nodes, :ref:
 
 For gameplay input, this and :ref:`_unhandled_key_input<class_Node_method__unhandled_key_input>` are usually a better fit than :ref:`_input<class_Node_method__input>` as they allow the GUI to intercept the events first.
 
-**Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
+\ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
 
 ----
 
@@ -760,7 +762,7 @@ To consume the input event and stop it propagating further to other nodes, :ref:
 
 For gameplay input, this and :ref:`_unhandled_input<class_Node_method__unhandled_input>` are usually a better fit than :ref:`_input<class_Node_method__input>` as they allow the GUI to intercept the events first.
 
-**Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
+\ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
 
 ----
 
@@ -774,7 +776,7 @@ If ``legible_unique_name`` is ``true``, the child node will have a human-readabl
 
 If ``internal`` is different than :ref:`INTERNAL_MODE_DISABLED<class_Node_constant_INTERNAL_MODE_DISABLED>`, the child will be added as internal node. Such nodes are ignored by methods like :ref:`get_children<class_Node_method_get_children>`, unless their parameter ``include_internal`` is ``true``.The intended usage is to hide the internal nodes from the user, so the user won't accidentally delete or modify them. Used by some GUI nodes, e.g. :ref:`ColorPicker<class_ColorPicker>`. See :ref:`InternalMode<enum_Node_InternalMode>` for available modes.
 
-**Note:** If the child node already has a parent, the function will fail. Use :ref:`remove_child<class_Node_method_remove_child>` first to remove the node from its current parent. For example:
+\ **Note:** If the child node already has a parent, the function will fail. Use :ref:`remove_child<class_Node_method_remove_child>` first to remove the node from its current parent. For example:
 
 
 .. tabs::
@@ -799,7 +801,7 @@ If ``internal`` is different than :ref:`INTERNAL_MODE_DISABLED<class_Node_consta
 
 If you need the child node to be added below a specific node in the list of children, use :ref:`add_sibling<class_Node_method_add_sibling>` instead of this method.
 
-**Note:** If you want a child to be persisted to a :ref:`PackedScene<class_PackedScene>`, you must set :ref:`owner<class_Node_property_owner>` in addition to calling :ref:`add_child<class_Node_method_add_child>`. This is typically relevant for `tool scripts <https://godot.readthedocs.io/en/latest/tutorials/misc/running_code_in_the_editor.html>`__ and `editor plugins <https://godot.readthedocs.io/en/latest/tutorials/plugins/editor/index.html>`__. If :ref:`add_child<class_Node_method_add_child>` is called without setting :ref:`owner<class_Node_property_owner>`, the newly added ``Node`` will not be visible in the scene tree, though it will be visible in the 2D/3D view.
+\ **Note:** If you want a child to be persisted to a :ref:`PackedScene<class_PackedScene>`, you must set :ref:`owner<class_Node_property_owner>` in addition to calling :ref:`add_child<class_Node_method_add_child>`. This is typically relevant for `tool scripts <https://godot.readthedocs.io/en/latest/tutorials/misc/running_code_in_the_editor.html>`__ and `editor plugins <https://godot.readthedocs.io/en/latest/tutorials/plugins/editor/index.html>`__. If :ref:`add_child<class_Node_method_add_child>` is called without setting :ref:`owner<class_Node_property_owner>`, the newly added ``Node`` will not be visible in the scene tree, though it will be visible in the 2D/3D view.
 
 ----
 
@@ -813,7 +815,7 @@ If ``legible_unique_name`` is ``true``, the child node will have a human-readabl
 
 Use :ref:`add_child<class_Node_method_add_child>` instead of this method if you don't need the child node to be added below a specific node in the list of children.
 
-**Note:** If this node is internal, the new sibling will be internal too (see ``internal`` parameter in :ref:`add_child<class_Node_method_add_child>`).
+\ **Note:** If this node is internal, the new sibling will be internal too (see ``internal`` parameter in :ref:`add_child<class_Node_method_add_child>`).
 
 ----
 
@@ -825,7 +827,7 @@ Adds the node to a group. Groups are helpers to name and organize a subset of no
 
 The ``persistent`` option is used when packing node to :ref:`PackedScene<class_PackedScene>` and saving to file. Non-persistent groups aren't stored.
 
-**Note:** For performance reasons, the order of node groups is *not* guaranteed. The order of node groups should not be relied upon as it can vary across project runs.
+\ **Note:** For performance reasons, the order of node groups is *not* guaranteed. The order of node groups should not be relied upon as it can vary across project runs.
 
 ----
 
@@ -857,7 +859,7 @@ Duplicates the node, returning a new node.
 
 You can fine-tune the behavior using the ``flags`` (see :ref:`DuplicateFlags<enum_Node_DuplicateFlags>`).
 
-**Note:** It will not work properly if the node contains a script with constructor arguments (i.e. needs to supply arguments to :ref:`Object._init<class_Object_method__init>` method). In that case, the node will be duplicated without a script.
+\ **Note:** It will not work properly if the node contains a script with constructor arguments (i.e. needs to supply arguments to :ref:`Object._init<class_Object_method__init>` method). In that case, the node will be duplicated without a script.
 
 ----
 
@@ -865,13 +867,13 @@ You can fine-tune the behavior using the ``flags`` (see :ref:`DuplicateFlags<enu
 
 - :ref:`Node<class_Node>` **find_node** **(** :ref:`String<class_String>` mask, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|
 
-Finds a descendant of this node whose name matches ``mask`` as in :ref:`String.match<class_String_method_match>` (i.e. case-sensitive, but ``"*"`` matches zero or more characters and ``"?"`` matches any single character except ``"."``).
+Finds a descendant of this node whose name matches ``mask`` as in :ref:`String.match<class_String_method_match>` (i.e. case-sensitive, but ``"*"`` matches zero or more characters and ``"?"`` matches any single character except ``"."``). Returns ``null`` if no matching ``Node`` is found.
 
-**Note:** It does not match against the full path, just against individual node names.
+\ **Note:** It does not match against the full path, just against individual node names.
 
 If ``owned`` is ``true``, this method only finds nodes whose owner is this node. This is especially important for scenes instantiated through a script, because those scenes don't have an owner.
 
-**Note:** As this method walks through all the descendants of the node, it is the slowest way to get a reference to another node. Whenever possible, consider using :ref:`get_node<class_Node_method_get_node>` instead. To avoid using :ref:`find_node<class_Node_method_find_node>` too often, consider caching the node reference into a variable.
+\ **Note:** As this method walks through all the descendants of the node, it is the slowest way to get a reference to another node. Whenever possible, consider using :ref:`get_node<class_Node_method_get_node>` instead. To avoid using :ref:`find_node<class_Node_method_find_node>` too often, consider caching the node reference into a variable.
 
 ----
 
@@ -881,9 +883,9 @@ If ``owned`` is ``true``, this method only finds nodes whose owner is this node.
 
 Finds the first parent of the current node whose name matches ``mask`` as in :ref:`String.match<class_String_method_match>` (i.e. case-sensitive, but ``"*"`` matches zero or more characters and ``"?"`` matches any single character except ``"."``).
 
-**Note:** It does not match against the full path, just against individual node names.
+\ **Note:** It does not match against the full path, just against individual node names.
 
-**Note:** As this method walks upwards in the scene tree, it can be slow in large, deeply nested scene trees. Whenever possible, consider using :ref:`get_node<class_Node_method_get_node>` instead. To avoid using :ref:`find_parent<class_Node_method_find_parent>` too often, consider caching the node reference into a variable.
+\ **Note:** As this method walks upwards in the scene tree, it can be slow in large, deeply nested scene trees. Whenever possible, consider using :ref:`get_node<class_Node_method_get_node>` instead. To avoid using :ref:`find_parent<class_Node_method_find_parent>` too often, consider caching the node reference into a variable.
 
 ----
 
@@ -927,7 +929,17 @@ If ``include_internal`` is ``false``, the returned array won't include internal 
 
 Returns an array listing the groups that the node is a member of.
 
-**Note:** For performance reasons, the order of node groups is *not* guaranteed. The order of node groups should not be relied upon as it can vary across project runs.
+\ **Note:** For performance reasons, the order of node groups is *not* guaranteed. The order of node groups should not be relied upon as it can vary across project runs.
+
+\ **Note:** The engine uses some group names internally (all starting with an underscore). To avoid conflicts with internal groups, do not add custom groups whose name starts with an underscore. To exclude internal groups while looping over :ref:`get_groups<class_Node_method_get_groups>`, use the following snippet:
+
+::
+
+    # Stores the node's non-internal groups only (as an array of Strings).
+    var non_internal_groups = []
+    for group in get_groups():
+        if not group.begins_with("_"):
+            non_internal_groups.push_back(group)
 
 ----
 
@@ -953,11 +965,11 @@ Returns the peer ID of the multiplayer authority for this node. See :ref:`set_mu
 
 - :ref:`Node<class_Node>` **get_node** **(** :ref:`NodePath<class_NodePath>` path **)** |const|
 
-Fetches a node. The :ref:`NodePath<class_NodePath>` can be either a relative path (from the current node) or an absolute path (in the scene tree) to a node. If the path does not exist, a ``null instance`` is returned and an error is logged. Attempts to access methods on the return value will result in an "Attempt to call <method> on a null instance." error.
+Fetches a node. The :ref:`NodePath<class_NodePath>` can be either a relative path (from the current node) or an absolute path (in the scene tree) to a node. If the path does not exist, ``null`` is returned and an error is logged. Attempts to access methods on the return value will result in an "Attempt to call <method> on a null instance." error.
 
-**Note:** Fetching absolute paths only works when the node is inside the scene tree (see :ref:`is_inside_tree<class_Node_method_is_inside_tree>`).
+\ **Note:** Fetching absolute paths only works when the node is inside the scene tree (see :ref:`is_inside_tree<class_Node_method_is_inside_tree>`).
 
-**Example:** Assume your current node is Character and the following tree:
+\ **Example:** Assume your current node is Character and the following tree:
 
 ::
 
@@ -1034,7 +1046,7 @@ Similar to :ref:`get_node<class_Node_method_get_node>`, but does not log an erro
 
 - :ref:`Node<class_Node>` **get_parent** **(** **)** |const|
 
-Returns the parent node of the current node, or a ``null instance`` if the node lacks a parent.
+Returns the parent node of the current node, or ``null`` if the node lacks a parent.
 
 ----
 
@@ -1228,7 +1240,7 @@ Returns ``true`` if the node is processing unhandled key input (see :ref:`set_pr
 
 Moves a child node to a different position (order) among the other children. Since calls, signals, etc are performed by tree order, changing the order of children nodes may be useful.
 
-**Note:** Internal children can only be moved within their expected "internal range" (see ``internal`` parameter in :ref:`add_child<class_Node_method_add_child>`).
+\ **Note:** Internal children can only be moved within their expected "internal range" (see ``internal`` parameter in :ref:`add_child<class_Node_method_add_child>`).
 
 ----
 
@@ -1246,7 +1258,7 @@ Prints all stray nodes (nodes outside the :ref:`SceneTree<class_SceneTree>`). Us
 
 Prints the tree to stdout. Used mainly for debugging purposes. This version displays the path relative to the current node, and is good for copy/pasting into the :ref:`get_node<class_Node_method_get_node>` function.
 
-**Example output:**
+\ **Example output:**\ 
 
 ::
 
@@ -1265,7 +1277,7 @@ Prints the tree to stdout. Used mainly for debugging purposes. This version disp
 
 Similar to :ref:`print_tree<class_Node_method_print_tree>`, this prints the tree to stdout. This version displays a more graphical representation similar to what is displayed in the scene inspector. It is useful for inspecting larger trees.
 
-**Example output:**
+\ **Example output:**\ 
 
 ::
 
@@ -1324,7 +1336,7 @@ Removes a node and sets all its children as children of the parent node (if it e
 
 Removes a child node. The node is NOT deleted and must be deleted manually.
 
-**Note:** This function may set the :ref:`owner<class_Node_property_owner>` of the removed Node (or its descendants) to be ``null``, if that :ref:`owner<class_Node_property_owner>` is no longer a parent or ancestor.
+\ **Note:** This function may set the :ref:`owner<class_Node_property_owner>` of the removed Node (or its descendants) to be ``null``, if that :ref:`owner<class_Node_property_owner>` is no longer a parent or ancestor.
 
 ----
 
@@ -1344,6 +1356,10 @@ Replaces a node in a scene by the given one. Subscriptions that pass through thi
 
 If ``keep_groups`` is ``true``, the ``node`` is added to the same groups that the replaced node is in.
 
+\ **Note:** The given node will become the new parent of any child nodes that the replaced node had.
+
+\ **Note:** The replaced node is not automatically freed, so you either need to keep it in a variable for later use or free it using :ref:`Object.free<class_Object_method_free>`.
+
 ----
 
 .. _class_Node_method_request_ready:
@@ -1360,7 +1376,7 @@ Requests that ``_ready`` be called again. Note that the method won't be called i
 
 Sends a remote procedure call request for the given ``method`` to peers on the network (and locally), optionally sending all additional arguments as arguments to the method called by the RPC. The call request will only be received by nodes with the same :ref:`NodePath<class_NodePath>`, including the exact same node name. Behaviour depends on the RPC configuration for the given method, see :ref:`rpc_config<class_Node_method_rpc_config>`. Methods are not exposed to RPCs by default. Returns an empty :ref:`Variant<class_Variant>`.
 
-**Note:** You can only safely use RPCs on clients after you received the ``connected_to_server`` signal from the :ref:`MultiplayerAPI<class_MultiplayerAPI>`. You also need to keep track of the connection state, either by the :ref:`MultiplayerAPI<class_MultiplayerAPI>` signals like ``server_disconnected`` or by checking ``get_multiplayer().peer.get_connection_status() == CONNECTION_CONNECTED``.
+\ **Note:** You can only safely use RPCs on clients after you received the ``connected_to_server`` signal from the :ref:`MultiplayerAPI<class_MultiplayerAPI>`. You also need to keep track of the connection state, either by the :ref:`MultiplayerAPI<class_MultiplayerAPI>` signals like ``server_disconnected`` or by checking ``get_multiplayer().peer.get_connection_status() == CONNECTION_CONNECTED``.
 
 ----
 
@@ -1418,7 +1434,7 @@ Enables or disables physics (i.e. fixed framerate) processing. When a node is be
 
 Enables or disables internal physics for this node. Internal physics processing happens in isolation from the normal :ref:`_physics_process<class_Node_method__physics_process>` calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or physics processing is disabled for scripting (:ref:`set_physics_process<class_Node_method_set_physics_process>`). Only useful for advanced uses to manipulate built-in nodes' behavior.
 
-**Warning:** Built-in Nodes rely on the internal processing for their own logic, so changing this value from your code may lead to unexpected behavior. Script access to this internal logic is provided for specific advanced uses, but is unsafe and not supported.
+\ **Warning:** Built-in Nodes rely on the internal processing for their own logic, so changing this value from your code may lead to unexpected behavior. Script access to this internal logic is provided for specific advanced uses, but is unsafe and not supported.
 
 ----
 
@@ -1444,7 +1460,7 @@ Enables or disables input processing. This is not required for GUI controls! Ena
 
 Enables or disabled internal processing for this node. Internal processing happens in isolation from the normal :ref:`_process<class_Node_method__process>` calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or processing is disabled for scripting (:ref:`set_process<class_Node_method_set_process>`). Only useful for advanced uses to manipulate built-in nodes' behavior.
 
-**Warning:** Built-in Nodes rely on the internal processing for their own logic, so changing this value from your code may lead to unexpected behavior. Script access to this internal logic is provided for specific advanced uses, but is unsafe and not supported.
+\ **Warning:** Built-in Nodes rely on the internal processing for their own logic, so changing this value from your code may lead to unexpected behavior. Script access to this internal logic is provided for specific advanced uses, but is unsafe and not supported.
 
 ----
 

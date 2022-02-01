@@ -177,7 +177,7 @@ Property Descriptions
 
 The minimum floor to ceiling height that will still allow the floor area to be considered walkable.
 
-**Note:** While baking, this value will be rounded up to the nearest multiple of :ref:`cell/height<class_NavigationMesh_property_cell/height>`.
+\ **Note:** While baking, this value will be rounded up to the nearest multiple of :ref:`cell/height<class_NavigationMesh_property_cell/height>`.
 
 ----
 
@@ -195,7 +195,7 @@ The minimum floor to ceiling height that will still allow the floor area to be c
 
 The minimum ledge height that is considered to still be traversable.
 
-**Note:** While baking, this value will be rounded down to the nearest multiple of :ref:`cell/height<class_NavigationMesh_property_cell/height>`.
+\ **Note:** While baking, this value will be rounded down to the nearest multiple of :ref:`cell/height<class_NavigationMesh_property_cell/height>`.
 
 ----
 
@@ -229,7 +229,7 @@ The maximum slope that is considered walkable, in degrees.
 
 The distance to erode/shrink the walkable area of the heightfield away from obstructions.
 
-**Note:** While baking, this value will be rounded up to the nearest multiple of :ref:`cell/size<class_NavigationMesh_property_cell/size>`.
+\ **Note:** While baking, this value will be rounded up to the nearest multiple of :ref:`cell/size<class_NavigationMesh_property_cell/size>`.
 
 ----
 
@@ -327,7 +327,7 @@ The maximum distance a simplfied contour's border edges should deviate the origi
 
 The maximum allowed length for contour edges along the border of the mesh.
 
-**Note:** While baking, this value will be rounded up to the nearest multiple of :ref:`cell/size<class_NavigationMesh_property_cell/size>`.
+\ **Note:** While baking, this value will be rounded up to the nearest multiple of :ref:`cell/size<class_NavigationMesh_property_cell/size>`.
 
 ----
 
@@ -473,7 +473,7 @@ The maximum number of vertices allowed for polygons generated during the contour
 
 Any regions with a size smaller than this will be merged with larger regions if possible.
 
-**Note:** This value will be squared to calculate the number of cells. For example, a value of 20 will set the number of cells to 400.
+\ **Note:** This value will be squared to calculate the number of cells. For example, a value of 20 will set the number of cells to 400.
 
 ----
 
@@ -491,7 +491,7 @@ Any regions with a size smaller than this will be merged with larger regions if 
 
 The minimum size of a region for it to be created.
 
-**Note:** This value will be squared to calculate the minimum number of cells allowed to form isolated island areas. For example, a value of 8 will set the number of cells to 64.
+\ **Note:** This value will be squared to calculate the minimum number of cells allowed to form isolated island areas. For example, a value of 8 will set the number of cells to 64.
 
 ----
 

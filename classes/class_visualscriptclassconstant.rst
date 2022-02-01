@@ -18,11 +18,11 @@ Description
 
 This node returns a constant from a given class, such as :ref:`@GlobalScope.TYPE_INT<class_@GlobalScope_constant_TYPE_INT>`. See the given class' documentation for available constants.
 
-**Input Ports:**
+\ **Input Ports:**\ 
 
 none
 
-**Output Ports:**
+\ **Output Ports:**\ 
 
 - Data (variant): ``value``
 

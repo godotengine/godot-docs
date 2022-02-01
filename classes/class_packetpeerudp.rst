@@ -18,7 +18,7 @@ Description
 
 UDP packet peer. Can be used to send raw UDP packets as well as :ref:`Variant<class_Variant>`\ s.
 
-**Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
+\ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
 Methods
 -------
@@ -82,7 +82,7 @@ Closes the ``PacketPeerUDP``'s underlying UDP socket.
 
 Calling this method connects this UDP peer to the given ``host``/``port`` pair. UDP is in reality connectionless, so this option only means that incoming packets from different addresses are automatically discarded, and that outgoing packets are always sent to the connected address (future calls to :ref:`set_dest_address<class_PacketPeerUDP_method_set_dest_address>` are not allowed). This method does not send any data to the remote peer, to do that, use :ref:`PacketPeer.put_var<class_PacketPeer_method_put_var>` or :ref:`PacketPeer.put_packet<class_PacketPeer_method_put_packet>` as usual. See also :ref:`UDPServer<class_UDPServer>`.
 
-**Note:** Connecting to the remote peer does not help to protect from malicious attacks like IP spoofing, etc. Think about using an encryption technique like SSL or DTLS if you feel like your application is transferring sensitive information.
+\ **Note:** Connecting to the remote peer does not help to protect from malicious attacks like IP spoofing, etc. Think about using an encryption technique like SSL or DTLS if you feel like your application is transferring sensitive information.
 
 ----
 
@@ -134,7 +134,7 @@ Joins the multicast group specified by ``multicast_address`` using the interface
 
 You can join the same multicast group with multiple interfaces. Use :ref:`IP.get_local_interfaces<class_IP_method_get_local_interfaces>` to know which are available.
 
-**Note:** Some Android devices might require the ``CHANGE_WIFI_MULTICAST_STATE`` permission for multicast to work.
+\ **Note:** Some Android devices might require the ``CHANGE_WIFI_MULTICAST_STATE`` permission for multicast to work.
 
 ----
 
@@ -152,7 +152,7 @@ Removes the interface identified by ``interface_name`` from the multicast group 
 
 Enable or disable sending of broadcast packets (e.g. ``set_dest_address("255.255.255.255", 4343)``. This option is disabled by default.
 
-**Note:** Some Android devices might require the ``CHANGE_WIFI_MULTICAST_STATE`` permission and this option to be enabled to receive broadcast packets too.
+\ **Note:** Some Android devices might require the ``CHANGE_WIFI_MULTICAST_STATE`` permission and this option to be enabled to receive broadcast packets too.
 
 ----
 
@@ -162,7 +162,7 @@ Enable or disable sending of broadcast packets (e.g. ``set_dest_address("255.255
 
 Sets the destination address and port for sending packets and variables. A hostname will be resolved using DNS if needed.
 
-**Note:** :ref:`set_broadcast_enabled<class_PacketPeerUDP_method_set_broadcast_enabled>` must be enabled before sending packets to a broadcast address (e.g. ``255.255.255.255``).
+\ **Note:** :ref:`set_broadcast_enabled<class_PacketPeerUDP_method_set_broadcast_enabled>` must be enabled before sending packets to a broadcast address (e.g. ``255.255.255.255``).
 
 ----
 
@@ -172,7 +172,7 @@ Sets the destination address and port for sending packets and variables. A hostn
 
 Waits for a packet to arrive on the bound address. See :ref:`bind<class_PacketPeerUDP_method_bind>`.
 
-**Note:** :ref:`wait<class_PacketPeerUDP_method_wait>` can't be interrupted once it has been called. This can be worked around by allowing the other party to send a specific "death pill" packet like this:
+\ **Note:** :ref:`wait<class_PacketPeerUDP_method_wait>` can't be interrupted once it has been called. This can be worked around by allowing the other party to send a specific "death pill" packet like this:
 
 
 .. tabs::

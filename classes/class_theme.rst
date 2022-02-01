@@ -632,7 +632,7 @@ Returns ``true`` if ``theme_type`` is marked as a variation of ``base_type`` in 
 
 Adds missing and overrides existing definitions with values from the ``other`` ``Theme``.
 
-**Note:** This modifies the current theme. If you want to merge two themes together without modifying either one, create a new empty theme and merge the other two into it one after another.
+\ **Note:** This modifies the current theme. If you want to merge two themes together without modifying either one, create a new empty theme and merge the other two into it one after another.
 
 ----
 
@@ -774,7 +774,7 @@ This adds ``theme_type`` as a suggested option for :ref:`Control.theme_type_vari
 
 Variations can also be nested, i.e. ``base_type`` can be another variation. If a chain of variations ends with a ``base_type`` matching a class of a :ref:`Control<class_Control>`, the whole chain is going to be suggested as options.
 
-**Note:** Suggestions only show up if this ``Theme`` is set as the project default theme. See :ref:`ProjectSettings.gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>`.
+\ **Note:** Suggestions only show up if this ``Theme`` is set as the project default theme. See :ref:`ProjectSettings.gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

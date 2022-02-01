@@ -38,6 +38,8 @@ Methods
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`NodePath<class_NodePath>`                   | :ref:`get_connection_target<class_SceneState_method_get_connection_target>` **(** :ref:`int<class_int>` idx **)** |const|                                     |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`get_connection_unbinds<class_SceneState_method_get_connection_unbinds>` **(** :ref:`int<class_int>` idx **)** |const|                                   |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_node_count<class_SceneState_method_get_node_count>` **(** **)** |const|                                                                             |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_node_groups<class_SceneState_method_get_node_groups>` **(** :ref:`int<class_int>` idx **)** |const|                                                 |
@@ -84,15 +86,15 @@ enum **GenEditState**:
 
 - **GEN_EDIT_STATE_INSTANCE** = **1** --- If passed to :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>`, provides inherited scene resources to the local scene.
 
-**Note:** Only available in editor builds.
+\ **Note:** Only available in editor builds.
 
 - **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state.
 
-**Note:** Only available in editor builds.
+\ **Note:** Only available in editor builds.
 
 - **GEN_EDIT_STATE_MAIN_INHERITED** = **3** --- If passed to :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>`, it's similar to :ref:`GEN_EDIT_STATE_MAIN<class_SceneState_constant_GEN_EDIT_STATE_MAIN>`, but for the case where the scene is being instantiated to be the base of another one.
 
-**Note:** Only available in editor builds.
+\ **Note:** Only available in editor builds.
 
 Method Descriptions
 -------------------
@@ -152,6 +154,14 @@ Returns the path to the node that owns the signal at ``idx``, relative to the ro
 - :ref:`NodePath<class_NodePath>` **get_connection_target** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the path to the node that owns the method connected to the signal at ``idx``, relative to the root node.
+
+----
+
+.. _class_SceneState_method_get_connection_unbinds:
+
+- :ref:`int<class_int>` **get_connection_unbinds** **(** :ref:`int<class_int>` idx **)** |const|
+
+Returns the number of unbound parameters for the signal at ``idx``.
 
 ----
 

@@ -224,7 +224,7 @@ This method can be overridden to hide specific import options if conditions are 
 
 
 
-Return ``true`` to make all options always visible.
+Returns ``true`` to make all options always visible.
 
 ----
 

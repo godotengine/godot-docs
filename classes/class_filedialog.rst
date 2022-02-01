@@ -21,27 +21,27 @@ FileDialog is a preset dialog used to choose files and directories in the filesy
 Properties
 ----------
 
-+---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`Access<enum_FileDialog_Access>`             | :ref:`access<class_FileDialog_property_access>`                             | ``0``                                 |
-+---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`String<class_String>`                       | :ref:`current_dir<class_FileDialog_property_current_dir>`                   | ``"res://"``                          |
-+---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`String<class_String>`                       | :ref:`current_file<class_FileDialog_property_current_file>`                 | ``""``                                |
-+---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`String<class_String>`                       | :ref:`current_path<class_FileDialog_property_current_path>`                 | ``"res://"``                          |
-+---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`bool<class_bool>`                           | dialog_hide_on_ok                                                           | ``false`` *(parent override)*         |
-+---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`FileMode<enum_FileDialog_FileMode>`         | :ref:`file_mode<class_FileDialog_property_file_mode>`                       | ``4``                                 |
-+---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`filters<class_FileDialog_property_filters>`                           | ``PackedStringArray()``               |
-+---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`mode_overrides_title<class_FileDialog_property_mode_overrides_title>` | ``true``                              |
-+---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`show_hidden_files<class_FileDialog_property_show_hidden_files>`       | ``false``                             |
-+---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`String<class_String>`                       | title                                                                       | ``"Save a File"`` *(parent override)* |
-+---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
++---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| :ref:`Access<enum_FileDialog_Access>`             | :ref:`access<class_FileDialog_property_access>`                             | ``0``                                                                                    |
++---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`current_dir<class_FileDialog_property_current_dir>`                   | ``"res://"``                                                                             |
++---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`current_file<class_FileDialog_property_current_file>`                 | ``""``                                                                                   |
++---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`current_path<class_FileDialog_property_current_path>`                 | ``"res://"``                                                                             |
++---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | dialog_hide_on_ok                                                           | ``false`` (overrides :ref:`AcceptDialog<class_AcceptDialog_property_dialog_hide_on_ok>`) |
++---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| :ref:`FileMode<enum_FileDialog_FileMode>`         | :ref:`file_mode<class_FileDialog_property_file_mode>`                       | ``4``                                                                                    |
++---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`filters<class_FileDialog_property_filters>`                           | ``PackedStringArray()``                                                                  |
++---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`mode_overrides_title<class_FileDialog_property_mode_overrides_title>` | ``true``                                                                                 |
++---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`show_hidden_files<class_FileDialog_property_show_hidden_files>`       | ``false``                                                                                |
++---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | title                                                                       | ``"Save a File"`` (overrides :ref:`Window<class_Window_property_title>`)                 |
++---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -64,17 +64,17 @@ Theme Properties
 ----------------
 
 +-----------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`back_folder<class_FileDialog_theme_icon_back_folder>`                    |                         |
-+-----------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`file<class_FileDialog_theme_icon_file>`                                  |                         |
-+-----------------------------------+--------------------------------------------------------------------------------+-------------------------+
 | :ref:`Color<class_Color>`         | :ref:`file_icon_modulate<class_FileDialog_theme_color_file_icon_modulate>`     | ``Color(1, 1, 1, 1)``   |
 +-----------------------------------+--------------------------------------------------------------------------------+-------------------------+
 | :ref:`Color<class_Color>`         | :ref:`files_disabled<class_FileDialog_theme_color_files_disabled>`             | ``Color(0, 0, 0, 0.7)`` |
 +-----------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`folder<class_FileDialog_theme_icon_folder>`                              |                         |
-+-----------------------------------+--------------------------------------------------------------------------------+-------------------------+
 | :ref:`Color<class_Color>`         | :ref:`folder_icon_modulate<class_FileDialog_theme_color_folder_icon_modulate>` | ``Color(1, 1, 1, 1)``   |
++-----------------------------------+--------------------------------------------------------------------------------+-------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`back_folder<class_FileDialog_theme_icon_back_folder>`                    |                         |
++-----------------------------------+--------------------------------------------------------------------------------+-------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`file<class_FileDialog_theme_icon_file>`                                  |                         |
++-----------------------------------+--------------------------------------------------------------------------------+-------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`folder<class_FileDialog_theme_icon_folder>`                              |                         |
 +-----------------------------------+--------------------------------------------------------------------------------+-------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`forward_folder<class_FileDialog_theme_icon_forward_folder>`              |                         |
 +-----------------------------------+--------------------------------------------------------------------------------+-------------------------+
@@ -172,7 +172,7 @@ Property Descriptions
 
 The file system access scope. See enum ``Access`` constants.
 
-**Warning:** Currently, in sandboxed environments such as HTML5 builds or sandboxed macOS apps, FileDialog cannot access the host file system. See `godot-proposals#1123 <https://github.com/godotengine/godot-proposals/issues/1123>`__.
+\ **Warning:** Currently, in sandboxed environments such as HTML5 builds or sandboxed macOS apps, FileDialog cannot access the host file system. See `godot-proposals#1123 <https://github.com/godotengine/godot-proposals/issues/1123>`__.
 
 ----
 
@@ -252,7 +252,7 @@ The dialog's open or save mode, which affects the selection behavior. See :ref:`
 | *Getter*  | get_filters()           |
 +-----------+-------------------------+
 
-The available file type filters. For example, this shows only ``.png`` and ``.gd`` files: ``set_filters(PackedStringArray(["*.png ; PNG Images","*.gd ; GDScript Files"]))``.
+The available file type filters. For example, this shows only ``.png`` and ``.gd`` files: ``set_filters(PackedStringArray(["*.png ; PNG Images","*.gd ; GDScript Files"]))``. Multiple file types can also be specified in a single filter. ``"*.png, *.jpg, *.jpeg ; Supported Images"`` will show both PNG and JPEG files when selected.
 
 ----
 
@@ -293,7 +293,11 @@ Method Descriptions
 
 - void **add_filter** **(** :ref:`String<class_String>` filter **)**
 
-Adds ``filter`` as a custom filter; ``filter`` should be of the form ``"filename.extension ; Description"``. For example, ``"*.png ; PNG Images"``.
+Adds ``filter`` to the list of filters, which restricts what files can be picked.
+
+A ``filter`` should be of the form ``"filename.extension ; Description"``, where filename and extension can be ``*`` to match any string. Filters starting with ``.`` (i.e. empty filenames) are not allowed.
+
+Example filters: ``"*.png ; PNG Images"``, ``"project.godot ; Godot Project"``.
 
 ----
 
@@ -319,7 +323,7 @@ Clear all currently selected items in the dialog.
 
 Returns the LineEdit for the selected file.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 ----
 
@@ -329,7 +333,7 @@ Returns the LineEdit for the selected file.
 
 Returns the vertical box container of the dialog, custom controls can be added to it.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 ----
 
@@ -341,22 +345,6 @@ Invalidate and update the current dialog content list.
 
 Theme Property Descriptions
 ---------------------------
-
-.. _class_FileDialog_theme_icon_back_folder:
-
-- :ref:`Texture2D<class_Texture2D>` **back_folder**
-
-Custom icon for the back arrow.
-
-----
-
-.. _class_FileDialog_theme_icon_file:
-
-- :ref:`Texture2D<class_Texture2D>` **file**
-
-Custom icon for files.
-
-----
 
 .. _class_FileDialog_theme_color_file_icon_modulate:
 
@@ -382,14 +370,6 @@ The color tint for disabled files (when the ``FileDialog`` is used in open folde
 
 ----
 
-.. _class_FileDialog_theme_icon_folder:
-
-- :ref:`Texture2D<class_Texture2D>` **folder**
-
-Custom icon for folders.
-
-----
-
 .. _class_FileDialog_theme_color_folder_icon_modulate:
 
 - :ref:`Color<class_Color>` **folder_icon_modulate**
@@ -399,6 +379,30 @@ Custom icon for folders.
 +-----------+-----------------------+
 
 The color modulation applied to the folder icon.
+
+----
+
+.. _class_FileDialog_theme_icon_back_folder:
+
+- :ref:`Texture2D<class_Texture2D>` **back_folder**
+
+Custom icon for the back arrow.
+
+----
+
+.. _class_FileDialog_theme_icon_file:
+
+- :ref:`Texture2D<class_Texture2D>` **file**
+
+Custom icon for files.
+
+----
+
+.. _class_FileDialog_theme_icon_folder:
+
+- :ref:`Texture2D<class_Texture2D>` **folder**
+
+Custom icon for folders.
 
 ----
 

@@ -264,7 +264,7 @@ Returns the color for a member keyword.
 
 - :ref:`bool<class_bool>` **has_color_region** **(** :ref:`String<class_String>` start_key **)** |const|
 
-Return ``true`` if the start key exists, else ``false``.
+Returns ``true`` if the start key exists, else ``false``.
 
 ----
 
@@ -272,7 +272,7 @@ Return ``true`` if the start key exists, else ``false``.
 
 - :ref:`bool<class_bool>` **has_keyword_color** **(** :ref:`String<class_String>` keyword **)** |const|
 
-Return ``true`` if the keyword exists, else ``false``.
+Returns ``true`` if the keyword exists, else ``false``.
 
 ----
 
@@ -280,7 +280,7 @@ Return ``true`` if the keyword exists, else ``false``.
 
 - :ref:`bool<class_bool>` **has_member_keyword_color** **(** :ref:`String<class_String>` member_keyword **)** |const|
 
-Return ``true`` if the member keyword exists, else ``false``.
+Returns ``true`` if the member keyword exists, else ``false``.
 
 ----
 

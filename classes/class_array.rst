@@ -16,7 +16,7 @@ Description
 
 A generic array that can contain several elements of any type, accessible by a numerical index starting at 0. Negative indices can be used to count from the back, like in Python (-1 is the last element, -2 is the second to last, etc.).
 
-**Example:**
+\ **Example:**\ 
 
 
 .. tabs::
@@ -61,11 +61,11 @@ Arrays can be concatenated using the ``+`` operator:
 
 
 
-**Note:** Concatenating with the ``+=`` operator will create a new array, which has a cost. If you want to append another array to an existing array, :ref:`append_array<class_Array_method_append_array>` is more efficient.
+\ **Note:** Concatenating with the ``+=`` operator will create a new array, which has a cost. If you want to append another array to an existing array, :ref:`append_array<class_Array_method_append_array>` is more efficient.
 
-**Note:** Arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_Array_method_duplicate>`.
+\ **Note:** Arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_Array_method_duplicate>`.
 
-**Note:** When declaring an array with ``const``, the array itself can still be mutated by defining the values at individual indices or pushing/removing elements. Using ``const`` will only prevent assigning the constant with another value after it was initialized.
+\ **Note:** When declaring an array with ``const``, the array itself can still be mutated by defining the values at individual indices or pushing/removing elements. Using ``const`` will only prevent assigning the constant with another value after it was initialized.
 
 Constructors
 ------------
@@ -97,79 +97,79 @@ Constructors
 Methods
 -------
 
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`append<class_Array_method_append>` **(** :ref:`Variant<class_Variant>` value **)**                                                                                            |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`append_array<class_Array_method_append_array>` **(** :ref:`Array<class_Array>` array **)**                                                                                    |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`back<class_Array_method_back>` **(** **)** |const|                                                                                                                            |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`bsearch<class_Array_method_bsearch>` **(** :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` before=true **)**                                                     |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`bsearch_custom<class_Array_method_bsearch_custom>` **(** :ref:`Variant<class_Variant>` value, :ref:`Callable<class_Callable>` func, :ref:`bool<class_bool>` before=true **)** |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`clear<class_Array_method_clear>` **(** **)**                                                                                                                                  |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`count<class_Array_method_count>` **(** :ref:`Variant<class_Variant>` value **)** |const|                                                                                      |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`duplicate<class_Array_method_duplicate>` **(** :ref:`bool<class_bool>` deep=false **)** |const|                                                                               |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`erase<class_Array_method_erase>` **(** :ref:`Variant<class_Variant>` value **)**                                                                                              |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`fill<class_Array_method_fill>` **(** :ref:`Variant<class_Variant>` value **)**                                                                                                |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`filter<class_Array_method_filter>` **(** :ref:`Callable<class_Callable>` method **)** |const|                                                                                 |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`find<class_Array_method_find>` **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` from=0 **)** |const|                                                           |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`find_last<class_Array_method_find_last>` **(** :ref:`Variant<class_Variant>` value **)** |const|                                                                              |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`front<class_Array_method_front>` **(** **)** |const|                                                                                                                          |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`has<class_Array_method_has>` **(** :ref:`Variant<class_Variant>` value **)** |const|                                                                                          |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`hash<class_Array_method_hash>` **(** **)** |const|                                                                                                                            |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`insert<class_Array_method_insert>` **(** :ref:`int<class_int>` position, :ref:`Variant<class_Variant>` value **)**                                                            |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_empty<class_Array_method_is_empty>` **(** **)** |const|                                                                                                                    |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`map<class_Array_method_map>` **(** :ref:`Callable<class_Callable>` method **)** |const|                                                                                       |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`max<class_Array_method_max>` **(** **)** |const|                                                                                                                              |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`min<class_Array_method_min>` **(** **)** |const|                                                                                                                              |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`pop_at<class_Array_method_pop_at>` **(** :ref:`int<class_int>` position **)**                                                                                                 |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`pop_back<class_Array_method_pop_back>` **(** **)**                                                                                                                            |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`pop_front<class_Array_method_pop_front>` **(** **)**                                                                                                                          |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`push_back<class_Array_method_push_back>` **(** :ref:`Variant<class_Variant>` value **)**                                                                                      |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`push_front<class_Array_method_push_front>` **(** :ref:`Variant<class_Variant>` value **)**                                                                                    |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`reduce<class_Array_method_reduce>` **(** :ref:`Callable<class_Callable>` method, :ref:`Variant<class_Variant>` accum=null **)** |const|                                       |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`remove<class_Array_method_remove>` **(** :ref:`int<class_int>` position **)**                                                                                                 |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`resize<class_Array_method_resize>` **(** :ref:`int<class_int>` size **)**                                                                                                     |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`reverse<class_Array_method_reverse>` **(** **)**                                                                                                                              |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`rfind<class_Array_method_rfind>` **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` from=-1 **)** |const|                                                        |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`shuffle<class_Array_method_shuffle>` **(** **)**                                                                                                                              |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`size<class_Array_method_size>` **(** **)** |const|                                                                                                                            |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`slice<class_Array_method_slice>` **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end, :ref:`int<class_int>` step=1, :ref:`bool<class_bool>` deep=false **)** |const| |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`sort<class_Array_method_sort>` **(** **)**                                                                                                                                    |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`sort_custom<class_Array_method_sort_custom>` **(** :ref:`Callable<class_Callable>` func **)**                                                                                 |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`append<class_Array_method_append>` **(** :ref:`Variant<class_Variant>` value **)**                                                                                                       |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`append_array<class_Array_method_append_array>` **(** :ref:`Array<class_Array>` array **)**                                                                                               |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`back<class_Array_method_back>` **(** **)** |const|                                                                                                                                       |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`bsearch<class_Array_method_bsearch>` **(** :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` before=true **)**                                                                |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`bsearch_custom<class_Array_method_bsearch_custom>` **(** :ref:`Variant<class_Variant>` value, :ref:`Callable<class_Callable>` func, :ref:`bool<class_bool>` before=true **)**            |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`clear<class_Array_method_clear>` **(** **)**                                                                                                                                             |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`count<class_Array_method_count>` **(** :ref:`Variant<class_Variant>` value **)** |const|                                                                                                 |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`     | :ref:`duplicate<class_Array_method_duplicate>` **(** :ref:`bool<class_bool>` deep=false **)** |const|                                                                                          |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`erase<class_Array_method_erase>` **(** :ref:`Variant<class_Variant>` value **)**                                                                                                         |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`fill<class_Array_method_fill>` **(** :ref:`Variant<class_Variant>` value **)**                                                                                                           |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`     | :ref:`filter<class_Array_method_filter>` **(** :ref:`Callable<class_Callable>` method **)** |const|                                                                                            |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`find<class_Array_method_find>` **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` from=0 **)** |const|                                                                      |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`find_last<class_Array_method_find_last>` **(** :ref:`Variant<class_Variant>` value **)** |const|                                                                                         |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`front<class_Array_method_front>` **(** **)** |const|                                                                                                                                     |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`has<class_Array_method_has>` **(** :ref:`Variant<class_Variant>` value **)** |const|                                                                                                     |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`hash<class_Array_method_hash>` **(** **)** |const|                                                                                                                                       |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`insert<class_Array_method_insert>` **(** :ref:`int<class_int>` position, :ref:`Variant<class_Variant>` value **)**                                                                       |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_empty<class_Array_method_is_empty>` **(** **)** |const|                                                                                                                               |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`     | :ref:`map<class_Array_method_map>` **(** :ref:`Callable<class_Callable>` method **)** |const|                                                                                                  |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`max<class_Array_method_max>` **(** **)** |const|                                                                                                                                         |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`min<class_Array_method_min>` **(** **)** |const|                                                                                                                                         |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`pop_at<class_Array_method_pop_at>` **(** :ref:`int<class_int>` position **)**                                                                                                            |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`pop_back<class_Array_method_pop_back>` **(** **)**                                                                                                                                       |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`pop_front<class_Array_method_pop_front>` **(** **)**                                                                                                                                     |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`push_back<class_Array_method_push_back>` **(** :ref:`Variant<class_Variant>` value **)**                                                                                                 |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`push_front<class_Array_method_push_front>` **(** :ref:`Variant<class_Variant>` value **)**                                                                                               |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`reduce<class_Array_method_reduce>` **(** :ref:`Callable<class_Callable>` method, :ref:`Variant<class_Variant>` accum=null **)** |const|                                                  |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`remove_at<class_Array_method_remove_at>` **(** :ref:`int<class_int>` position **)**                                                                                                      |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`resize<class_Array_method_resize>` **(** :ref:`int<class_int>` size **)**                                                                                                                |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`reverse<class_Array_method_reverse>` **(** **)**                                                                                                                                         |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`rfind<class_Array_method_rfind>` **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` from=-1 **)** |const|                                                                   |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`shuffle<class_Array_method_shuffle>` **(** **)**                                                                                                                                         |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`size<class_Array_method_size>` **(** **)** |const|                                                                                                                                       |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`     | :ref:`slice<class_Array_method_slice>` **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end=2147483647, :ref:`int<class_int>` step=1, :ref:`bool<class_bool>` deep=false **)** |const| |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`sort<class_Array_method_sort>` **(** **)**                                                                                                                                               |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`sort_custom<class_Array_method_sort_custom>` **(** :ref:`Callable<class_Callable>` func **)**                                                                                            |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Operators
 ---------
@@ -297,7 +297,7 @@ Appends another array at the end of this array.
 
 Returns the last element of the array. Prints an error and returns ``null`` if the array is empty.
 
-**Note:** Calling this function is not the same as writing ``array[-1]``. If the array is empty, accessing by index will pause project execution when running from the editor.
+\ **Note:** Calling this function is not the same as writing ``array[-1]``. If the array is empty, accessing by index will pause project execution when running from the editor.
 
 ----
 
@@ -307,7 +307,7 @@ Returns the last element of the array. Prints an error and returns ``null`` if t
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
-**Note:** Calling :ref:`bsearch<class_Array_method_bsearch>` on an unsorted array results in unexpected behavior.
+\ **Note:** Calling :ref:`bsearch<class_Array_method_bsearch>` on an unsorted array results in unexpected behavior.
 
 ----
 
@@ -317,7 +317,7 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search and a custom comparison method. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array. The custom method receives two arguments (an element from the array and the value searched for) and must return ``true`` if the first argument is less than the second, and return ``false`` otherwise.
 
-**Note:** Calling :ref:`bsearch_custom<class_Array_method_bsearch_custom>` on an unsorted array results in unexpected behavior.
+\ **Note:** Calling :ref:`bsearch_custom<class_Array_method_bsearch_custom>` on an unsorted array results in unexpected behavior.
 
 ----
 
@@ -351,11 +351,11 @@ If ``deep`` is ``true``, a deep copy is performed: all nested arrays and diction
 
 - void **erase** **(** :ref:`Variant<class_Variant>` value **)**
 
-Removes the first occurrence of a value from the array. To remove an element by index, use :ref:`remove<class_Array_method_remove>` instead.
+Removes the first occurrence of a value from the array. To remove an element by index, use :ref:`remove_at<class_Array_method_remove_at>` instead.
 
-**Note:** This method acts in-place and doesn't return a value.
+\ **Note:** This method acts in-place and doesn't return a value.
 
-**Note:** On large arrays, this method will be slower if the removed element is close to the beginning of the array (index 0). This is because all elements placed after the removed element have to be reindexed.
+\ **Note:** On large arrays, this method will be slower if the removed element is close to the beginning of the array (index 0). This is because all elements placed after the removed element have to be reindexed.
 
 ----
 
@@ -425,7 +425,7 @@ Searches the array in reverse order for a value and returns its index or ``-1`` 
 
 Returns the first element of the array. Prints an error and returns ``null`` if the array is empty.
 
-**Note:** Calling this function is not the same as writing ``array[0]``. If the array is empty, accessing by index will pause project execution when running from the editor.
+\ **Note:** Calling this function is not the same as writing ``array[0]``. If the array is empty, accessing by index will pause project execution when running from the editor.
 
 ----
 
@@ -458,7 +458,7 @@ Returns ``true`` if the array contains the given value.
 
 
 
-**Note:** This is equivalent to using the ``in`` operator as follows:
+\ **Note:** This is equivalent to using the ``in`` operator as follows:
 
 
 .. tabs::
@@ -488,7 +488,7 @@ Returns ``true`` if the array contains the given value.
 
 Returns a hashed integer value representing the array and its contents.
 
-**Note:** Arrays with equal contents can still produce different hashes. Only the exact same arrays will produce the same hashed integer value.
+\ **Note:** Arrays with equal contents can still produce different hashes. Only the exact same arrays will produce the same hashed integer value.
 
 ----
 
@@ -498,9 +498,9 @@ Returns a hashed integer value representing the array and its contents.
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``pos == size()``).
 
-**Note:** This method acts in-place and doesn't return a value.
+\ **Note:** This method acts in-place and doesn't return a value.
 
-**Note:** On large arrays, this method will be slower if the inserted element is close to the beginning of the array (index 0). This is because all elements placed after the newly inserted element have to be reindexed.
+\ **Note:** On large arrays, this method will be slower if the inserted element is close to the beginning of the array (index 0). This is because all elements placed after the newly inserted element have to be reindexed.
 
 ----
 
@@ -553,7 +553,7 @@ Returns the minimum value contained in the array if all elements are of comparab
 
 Removes and returns the element of the array at index ``position``. If negative, ``position`` is considered relative to the end of the array. Leaves the array untouched and returns ``null`` if the array is empty or if it's accessed out of bounds. An error message is printed when the array is accessed out of bounds, but not when the array is empty.
 
-**Note:** On large arrays, this method can be slower than :ref:`pop_back<class_Array_method_pop_back>` as it will reindex the array's elements that are located after the removed element. The larger the array and the lower the index of the removed element, the slower :ref:`pop_at<class_Array_method_pop_at>` will be.
+\ **Note:** On large arrays, this method can be slower than :ref:`pop_back<class_Array_method_pop_back>` as it will reindex the array's elements that are located after the removed element. The larger the array and the lower the index of the removed element, the slower :ref:`pop_at<class_Array_method_pop_at>` will be.
 
 ----
 
@@ -571,7 +571,7 @@ Removes and returns the last element of the array. Returns ``null`` if the array
 
 Removes and returns the first element of the array. Returns ``null`` if the array is empty, without printing an error message. See also :ref:`pop_back<class_Array_method_pop_back>`.
 
-**Note:** On large arrays, this method is much slower than :ref:`pop_back<class_Array_method_pop_back>` as it will reindex all the array's elements every time it's called. The larger the array, the slower :ref:`pop_front<class_Array_method_pop_front>` will be.
+\ **Note:** On large arrays, this method is much slower than :ref:`pop_back<class_Array_method_pop_back>` as it will reindex all the array's elements every time it's called. The larger the array, the slower :ref:`pop_front<class_Array_method_pop_front>` will be.
 
 ----
 
@@ -589,7 +589,7 @@ Appends an element at the end of the array. See also :ref:`push_front<class_Arra
 
 Adds an element at the beginning of the array. See also :ref:`push_back<class_Array_method_push_back>`.
 
-**Note:** On large arrays, this method is much slower than :ref:`push_back<class_Array_method_push_back>` as it will reindex all the array's elements every time it's called. The larger the array, the slower :ref:`push_front<class_Array_method_push_front>` will be.
+\ **Note:** On large arrays, this method is much slower than :ref:`push_back<class_Array_method_push_back>` as it will reindex all the array's elements every time it's called. The larger the array, the slower :ref:`push_front<class_Array_method_push_front>` will be.
 
 ----
 
@@ -612,15 +612,15 @@ The callable's method takes two arguments: the current value of ``accum`` and th
 
 ----
 
-.. _class_Array_method_remove:
+.. _class_Array_method_remove_at:
 
-- void **remove** **(** :ref:`int<class_int>` position **)**
+- void **remove_at** **(** :ref:`int<class_int>` position **)**
 
 Removes an element from the array by index. If the index does not exist in the array, nothing happens. To remove an element by searching for its value, use :ref:`erase<class_Array_method_erase>` instead.
 
-**Note:** This method acts in-place and doesn't return a value.
+\ **Note:** This method acts in-place and doesn't return a value.
 
-**Note:** On large arrays, this method will be slower if the removed element is close to the beginning of the array (index 0). This is because all elements placed after the removed element have to be reindexed.
+\ **Note:** On large arrays, this method will be slower if the removed element is close to the beginning of the array (index 0). This is because all elements placed after the removed element have to be reindexed.
 
 ----
 
@@ -666,9 +666,17 @@ Returns the number of elements in the array.
 
 .. _class_Array_method_slice:
 
-- :ref:`Array<class_Array>` **slice** **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end, :ref:`int<class_int>` step=1, :ref:`bool<class_bool>` deep=false **)** |const|
+- :ref:`Array<class_Array>` **slice** **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end=2147483647, :ref:`int<class_int>` step=1, :ref:`bool<class_bool>` deep=false **)** |const|
 
-Duplicates the subset described in the function and returns it in an array, deeply copying the array if ``deep`` is ``true``. Lower and upper index are inclusive, with the ``step`` describing the change between indices while slicing. Wraps around if ``begin`` or ``end`` are out of bounds or negative. Returns an empty array for invalid parameters.
+Returns the slice of the ``Array``, from ``begin`` (inclusive) to ``end`` (exclusive), as a new ``Array``.
+
+The absolute value of ``begin`` and ``end`` will be clamped to the array size, so the default value for ``end`` makes it slice to the size of the array by default (i.e. ``arr.slice(1)`` is a shorthand for ``arr.slice(1, arr.size())``).
+
+If either ``begin`` or ``end`` are negative, they will be relative to the end of the array (i.e. ``arr.slice(0, -2)`` is a shorthand for ``arr.slice(0, arr.size() - 2)``).
+
+If specified, ``step`` is the relative index between source elements. It can be negative, then ``begin`` must be higher than ``end``. For example, ``[0, 1, 2, 3, 4, 5].slice(5, 1, -2)`` returns ``[5, 3]``).
+
+If ``deep`` is true, each element will be copied by value rather than by reference.
 
 ----
 
@@ -678,7 +686,7 @@ Duplicates the subset described in the function and returns it in an array, deep
 
 Sorts the array.
 
-**Note:** Strings are sorted in alphabetical order (as opposed to natural order). This may lead to unexpected behavior when sorting an array of strings ending with a sequence of numbers. Consider the following example:
+\ **Note:** Strings are sorted in alphabetical order (as opposed to natural order). This may lead to unexpected behavior when sorting an array of strings ending with a sequence of numbers. Consider the following example:
 
 
 .. tabs::
@@ -695,6 +703,14 @@ Sorts the array.
 
 
 
+To perform natural order sorting, you can use :ref:`sort_custom<class_Array_method_sort_custom>` with :ref:`String.naturalnocasecmp_to<class_String_method_naturalnocasecmp_to>` as follows:
+
+::
+
+    var strings = ["string1", "string2", "string10", "string11"]
+    strings.sort_custom(func(a, b): return a.naturalnocasecmp_to(b) < 0)
+    print(strings) # Prints [string1, string2, string10, string11]
+
 ----
 
 .. _class_Array_method_sort_custom:
@@ -703,7 +719,7 @@ Sorts the array.
 
 Sorts the array using a custom method. The custom method receives two arguments (a pair of elements from the array) and must return either ``true`` or ``false``. For two elements ``a`` and ``b``, if the given method returns ``true``, element ``b`` will be after element ``a`` in the array.
 
-**Note:** You cannot randomize the return value as the heapsort algorithm expects a deterministic result. Doing so will result in unexpected behavior.
+\ **Note:** You cannot randomize the return value as the heapsort algorithm expects a deterministic result. Doing so will result in unexpected behavior.
 
 
 .. tabs::

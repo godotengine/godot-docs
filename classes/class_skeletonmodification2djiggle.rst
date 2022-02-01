@@ -20,7 +20,7 @@ This modification moves a series of bones, typically called a bone chain, toward
 
 This modification is useful for adding additional motion to things like hair, the edges of clothing, and more. It has several settings to that allow control over how the joint moves when the target moves.
 
-**Note:** The Jiggle modifier has ``jiggle_joints``, which are the data objects that hold the data for each joint in the Jiggle chain. This is different from than :ref:`Bone2D<class_Bone2D>` nodes! Jiggle joints hold the data needed for each :ref:`Bone2D<class_Bone2D>` in the bone chain used by the Jiggle modification.
+\ **Note:** The Jiggle modifier has ``jiggle_joints``, which are the data objects that hold the data for each joint in the Jiggle chain. This is different from than :ref:`Bone2D<class_Bone2D>` nodes! Jiggle joints hold the data needed for each :ref:`Bone2D<class_Bone2D>` in the bone chain used by the Jiggle modification.
 
 Properties
 ----------

@@ -18,7 +18,7 @@ Description
 
 The JavaScript singleton is implemented only in the HTML5 export. It's used to access the browser's JavaScript context. This allows interaction with embedding pages or calling third-party JavaScript APIs.
 
-**Note:** This singleton can be disabled at build-time to improve security. By default, the JavaScript singleton is enabled. Official export templates also have the JavaScript singleton enabled. See :doc:`Compiling for the Web <../development/compiling/compiling_for_web>` in the documentation for more information.
+\ **Note:** This singleton can be disabled at build-time to improve security. By default, the JavaScript singleton is enabled. Official export templates also have the JavaScript singleton enabled. See :doc:`Compiling for the Web <../development/compiling/compiling_for_web>` in the documentation for more information.
 
 Tutorials
 ---------
@@ -65,11 +65,11 @@ Creates a new JavaScript object using the ``new`` constructor. The ``object`` mu
 
 Prompts the user to download a file containing the specified ``buffer``. The file will have the given ``name`` and ``mime`` type.
 
-**Note:** The browser may override the `MIME type <https://en.wikipedia.org/wiki/Media_type>`__ provided based on the file ``name``'s extension.
+\ **Note:** The browser may override the `MIME type <https://en.wikipedia.org/wiki/Media_type>`__ provided based on the file ``name``'s extension.
 
-**Note:** Browsers might block the download if :ref:`download_buffer<class_JavaScript_method_download_buffer>` is not being called from a user interaction (e.g. button click).
+\ **Note:** Browsers might block the download if :ref:`download_buffer<class_JavaScript_method_download_buffer>` is not being called from a user interaction (e.g. button click).
 
-**Note:** Browsers might ask the user for permission or block the download if multiple download requests are made in a quick succession.
+\ **Note:** Browsers might ask the user for permission or block the download if multiple download requests are made in a quick succession.
 
 ----
 

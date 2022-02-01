@@ -20,6 +20,8 @@ Description
 
 A class stored as a resource. A script extends the functionality of all objects that instance it.
 
+This is the base class for all scripts and should not be used directly. Trying to create a new script with this class will result in an error.
+
 The ``new`` method of a script subclass creates a new instance. :ref:`Object.set_script<class_Object_method_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
 
 Tutorials

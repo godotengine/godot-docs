@@ -82,7 +82,7 @@ Returns the :ref:`PhysicalBone2D<class_PhysicalBone2D>` node at ``joint_idx``.
 
 Sets the :ref:`PhysicalBone2D<class_PhysicalBone2D>` node at ``joint_idx``.
 
-**Note:** This is just the index used for this modification, not the bone index used in the :ref:`Skeleton2D<class_Skeleton2D>`.
+\ **Note:** This is just the index used for this modification, not the bone index used in the :ref:`Skeleton2D<class_Skeleton2D>`.
 
 ----
 

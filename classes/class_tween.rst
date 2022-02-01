@@ -18,7 +18,7 @@ Description
 
 Tweens are mostly useful for animations requiring a numerical property to be interpolated over a range of values. The name *tween* comes from *in-betweening*, an animation technique where you specify *keyframes* and the computer interpolates the frames that appear between them.
 
-``Tween`` is more suited than :ref:`AnimationPlayer<class_AnimationPlayer>` for animations where you don't know the final values in advance. For example, interpolating a dynamically-chosen camera zoom value is best done with a ``Tween``; it would be difficult to do the same thing with an :ref:`AnimationPlayer<class_AnimationPlayer>` node. Tweens are also more light-weight than :ref:`AnimationPlayer<class_AnimationPlayer>`, so they are very much suited for simple animations or general tasks that don't require visual tweaking provided by the editor. They can be used in a fire-and-forget manner for some logic that normally would be done by code. You can e.g. make something shoot periodically by using a looped :ref:`CallbackTweener<class_CallbackTweener>` with a delay.
+\ ``Tween`` is more suited than :ref:`AnimationPlayer<class_AnimationPlayer>` for animations where you don't know the final values in advance. For example, interpolating a dynamically-chosen camera zoom value is best done with a ``Tween``; it would be difficult to do the same thing with an :ref:`AnimationPlayer<class_AnimationPlayer>` node. Tweens are also more light-weight than :ref:`AnimationPlayer<class_AnimationPlayer>`, so they are very much suited for simple animations or general tasks that don't require visual tweaking provided by the editor. They can be used in a fire-and-forget manner for some logic that normally would be done by code. You can e.g. make something shoot periodically by using a looped :ref:`CallbackTweener<class_CallbackTweener>` with a delay.
 
 A ``Tween`` can be created by using either :ref:`SceneTree.create_tween<class_SceneTree_method_create_tween>` or :ref:`Node.create_tween<class_Node_method_create_tween>`. ``Tween``\ s created manually (i.e. by using ``Tween.new()``) are invalid. They can't be used for tweening values, but you can do manual interpolation with :ref:`interpolate_value<class_Tween_method_interpolate_value>`.
 
@@ -63,9 +63,9 @@ In the example above, all children of a node are moved one after another to posi
 
 Some :ref:`Tweener<class_Tweener>`\ s use transitions and eases. The first accepts an :ref:`TransitionType<enum_Tween_TransitionType>` constant, and refers to the way the timing of the animation is handled (see `easings.net <https://easings.net/>`__ for some examples). The second accepts an :ref:`EaseType<enum_Tween_EaseType>` constant, and controls where the ``trans_type`` is applied to the interpolation (in the beginning, the end, or both). If you don't know which transition and easing to pick, you can try different :ref:`TransitionType<enum_Tween_TransitionType>` constants with :ref:`EASE_IN_OUT<class_Tween_constant_EASE_IN_OUT>`, and use the one that looks best.
 
-`Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.png>`__
+\ `Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.png>`__\ 
 
-**Note:** All ``Tween``\ s will automatically start by default. To prevent a ``Tween`` from autostarting, you can call :ref:`stop<class_Tween_method_stop>` immediately after it was created.
+\ **Note:** All ``Tween``\ s will automatically start by default. To prevent a ``Tween`` from autostarting, you can call :ref:`stop<class_Tween_method_stop>` immediately after it was created.
 
 Methods
 -------
@@ -125,7 +125,7 @@ Signals
 
 Emitted when the ``Tween`` has finished all tweening. Never emitted when the ``Tween`` is set to infinite looping (see :ref:`set_loops<class_Tween_method_set_loops>`).
 
-**Note:** The ``Tween`` is removed (invalidated) after this signal is emitted, but it doesn't happen immediately, but on the next processing frame. Calling :ref:`stop<class_Tween_method_stop>` inside the signal callback will preserve the ``Tween``.
+\ **Note:** The ``Tween`` is removed (invalidated) after this signal is emitted, but it doesn't happen immediately, but on the next processing frame. Calling :ref:`stop<class_Tween_method_stop>` inside the signal callback will preserve the ``Tween``.
 
 ----
 
@@ -154,9 +154,9 @@ Enumerations
 
 enum **TweenProcessMode**:
 
-- **TWEEN_PROCESS_PHYSICS** = **0** --- The ``Tween`` updates during physics frame.
+- **TWEEN_PROCESS_PHYSICS** = **0** --- The ``Tween`` updates during the physics frame.
 
-- **TWEEN_PROCESS_IDLE** = **1** --- The ``Tween`` updates during idle
+- **TWEEN_PROCESS_IDLE** = **1** --- The ``Tween`` updates during the idle frame.
 
 ----
 
@@ -170,11 +170,11 @@ enum **TweenProcessMode**:
 
 enum **TweenPauseMode**:
 
-- **TWEEN_PAUSE_BOUND** = **0**
+- **TWEEN_PAUSE_BOUND** = **0** --- If the ``Tween`` has a bound node, it will process when that node can process (see :ref:`Node.process_mode<class_Node_property_process_mode>`). Otherwise it's the same as :ref:`TWEEN_PAUSE_STOP<class_Tween_constant_TWEEN_PAUSE_STOP>`.
 
-- **TWEEN_PAUSE_STOP** = **1**
+- **TWEEN_PAUSE_STOP** = **1** --- If :ref:`SceneTree<class_SceneTree>` is paused, the ``Tween`` will also pause.
 
-- **TWEEN_PAUSE_PROCESS** = **2**
+- **TWEEN_PAUSE_PROCESS** = **2** --- The ``Tween`` will process regardless of whether :ref:`SceneTree<class_SceneTree>` is paused.
 
 ----
 
@@ -204,27 +204,27 @@ enum **TweenPauseMode**:
 
 enum **TransitionType**:
 
-- **TRANS_LINEAR** = **0**
+- **TRANS_LINEAR** = **0** --- The animation is interpolated linearly.
 
-- **TRANS_SINE** = **1**
+- **TRANS_SINE** = **1** --- The animation is interpolated using a sine function.
 
-- **TRANS_QUINT** = **2**
+- **TRANS_QUINT** = **2** --- The animation is interpolated with a quintic (to the power of 5) function.
 
-- **TRANS_QUART** = **3**
+- **TRANS_QUART** = **3** --- The animation is interpolated with a quartic (to the power of 4) function.
 
-- **TRANS_QUAD** = **4**
+- **TRANS_QUAD** = **4** --- The animation is interpolated with a quadratic (to the power of 2) function.
 
-- **TRANS_EXPO** = **5**
+- **TRANS_EXPO** = **5** --- The animation is interpolated with an exponential (to the power of x) function.
 
-- **TRANS_ELASTIC** = **6**
+- **TRANS_ELASTIC** = **6** --- The animation is interpolated with elasticity, wiggling around the edges.
 
-- **TRANS_CUBIC** = **7**
+- **TRANS_CUBIC** = **7** --- The animation is interpolated with a cubic (to the power of 3) function.
 
-- **TRANS_CIRC** = **8**
+- **TRANS_CIRC** = **8** --- The animation is interpolated with a function using square roots.
 
-- **TRANS_BOUNCE** = **9**
+- **TRANS_BOUNCE** = **9** --- The animation is interpolated by bouncing at the end.
 
-- **TRANS_BACK** = **10**
+- **TRANS_BACK** = **10** --- The animation is interpolated backing out at ends.
 
 ----
 
@@ -240,13 +240,13 @@ enum **TransitionType**:
 
 enum **EaseType**:
 
-- **EASE_IN** = **0**
+- **EASE_IN** = **0** --- The interpolation starts slowly and speeds up towards the end.
 
-- **EASE_OUT** = **1**
+- **EASE_OUT** = **1** --- The interpolation starts quickly and slows down towards the end.
 
-- **EASE_IN_OUT** = **2**
+- **EASE_IN_OUT** = **2** --- A combination of :ref:`EASE_IN<class_Tween_constant_EASE_IN>` and :ref:`EASE_OUT<class_Tween_constant_EASE_OUT>`. The interpolation is slowest at both ends.
 
-- **EASE_OUT_IN** = **3**
+- **EASE_OUT_IN** = **3** --- A combination of :ref:`EASE_IN<class_Tween_constant_EASE_IN>` and :ref:`EASE_OUT<class_Tween_constant_EASE_OUT>`. The interpolation is fastest at both ends.
 
 Method Descriptions
 -------------------
@@ -284,7 +284,7 @@ Processes the ``Tween`` by given ``delta`` value, in seconds. Mostly useful when
 
 Returns ``true`` if the ``Tween`` still has :ref:`Tweener<class_Tweener>`\ s that haven't finished.
 
-**Note:** The ``Tween`` will become invalid after finished, but you can call :ref:`stop<class_Tween_method_stop>` after the step, to keep it and reset.
+\ **Note:** The ``Tween`` will become invalid after finished, but you can call :ref:`stop<class_Tween_method_stop>` after the step, to keep it and reset.
 
 ----
 
@@ -294,15 +294,15 @@ Returns ``true`` if the ``Tween`` still has :ref:`Tweener<class_Tweener>`\ s tha
 
 This method can be used for manual interpolation of a value, when you don't want ``Tween`` to do animating for you. It's similar to :ref:`@GlobalScope.lerp<class_@GlobalScope_method_lerp>`, but with support for custom transition and easing.
 
-``initial_value`` is the starting value of the interpolation.
+\ ``initial_value`` is the starting value of the interpolation.
 
-``delta_value`` is the change of the value in the interpolation, i.e. it's equal to ``final_value - initial_value``.
+\ ``delta_value`` is the change of the value in the interpolation, i.e. it's equal to ``final_value - initial_value``.
 
-``elapsed_time`` is the time in seconds that passed after the interpolation started and it's used to control the position of the interpolation. E.g. when it's equal to half of the ``duration``, the interpolated value will be halfway between initial and final values. This value can also be greater than ``duration`` or lower than 0, which will extrapolate the value.
+\ ``elapsed_time`` is the time in seconds that passed after the interpolation started and it's used to control the position of the interpolation. E.g. when it's equal to half of the ``duration``, the interpolated value will be halfway between initial and final values. This value can also be greater than ``duration`` or lower than 0, which will extrapolate the value.
 
-``duration`` is the total time of the interpolation.
+\ ``duration`` is the total time of the interpolation.
 
-**Note:** If ``duration`` is equal to ``0``, the method will always return the final value, regardless of ``elapsed_time`` provided.
+\ **Note:** If ``duration`` is equal to ``0``, the method will always return the final value, regardless of ``elapsed_time`` provided.
 
 ----
 
@@ -381,7 +381,7 @@ Sets the number of times the tweening sequence will be repeated, i.e. ``set_loop
 
 Calling this method without arguments will make the ``Tween`` run infinitely, until it is either killed by :ref:`kill<class_Tween_method_kill>` or by freeing bound node, or all the animated objects have been freed (which makes further animation impossible).
 
-**Warning:** Make sure to always add some duration/delay when using infinite loops. 0-duration looped animations (e.g. single :ref:`CallbackTweener<class_CallbackTweener>` with no delay) are equivalent to infinite ``while`` loops and will freeze your game.
+\ **Warning:** Make sure to always add some duration/delay when using infinite loops. 0-duration looped animations (e.g. single :ref:`CallbackTweener<class_CallbackTweener>` with no delay or :ref:`PropertyTweener<class_PropertyTweener>` with invalid node) are equivalent to infinite ``while`` loops and will freeze your game. If a ``Tween``'s lifetime depends on some node, always use :ref:`bind_node<class_Tween_method_bind_node>`.
 
 ----
 
@@ -528,7 +528,7 @@ Creates and appends a :ref:`PropertyTweener<class_PropertyTweener>`. This method
 
 will move the sprite to position (100, 200) and then to (200, 300). If you use :ref:`PropertyTweener.from<class_PropertyTweener_method_from>` or :ref:`PropertyTweener.from_current<class_PropertyTweener_method_from_current>`, the starting position will be overwritten by the given value instead. See other methods in :ref:`PropertyTweener<class_PropertyTweener>` to see how the tweening can be tweaked further.
 
-**Note:** You can find the correct property name by hovering over the property in the Inspector. You can also provide the components of a property directly by using ``"property:component"`` (eg. ``position:x``), where it would only apply to that particular component.
+\ **Note:** You can find the correct property name by hovering over the property in the Inspector. You can also provide the components of a property directly by using ``"property:component"`` (eg. ``position:x``), where it would only apply to that particular component.
 
 Example: moving object twice from the same position, with different transition types.
 

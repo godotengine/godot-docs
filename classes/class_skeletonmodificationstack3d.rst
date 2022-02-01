@@ -136,7 +136,7 @@ Enables all :ref:`SkeletonModification3D<class_SkeletonModification3D>`\ s in th
 
 Executes all of the :ref:`SkeletonModification3D<class_SkeletonModification3D>`\ s in the stack that use the same execution mode as the passed-in ``execution_mode``, starting from index ``0`` to :ref:`modification_count<class_SkeletonModificationStack3D_property_modification_count>`.
 
-**Note:** The order of the modifications can matter depending on the modifications. For example, modifications on a spine should operate before modifications on the arms in order to get proper results.
+\ **Note:** The order of the modifications can matter depending on the modifications. For example, modifications on a spine should operate before modifications on the arms in order to get proper results.
 
 ----
 
@@ -144,7 +144,7 @@ Executes all of the :ref:`SkeletonModification3D<class_SkeletonModification3D>`\
 
 - :ref:`bool<class_bool>` **get_is_setup** **(** **)** |const|
 
-Returns a boolean that indiciates whether the modification stack is setup and can execute.
+Returns a boolean that indicates whether the modification stack is setup and can execute.
 
 ----
 

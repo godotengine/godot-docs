@@ -23,23 +23,23 @@ See also :ref:`BaseButton<class_BaseButton>` which contains common properties an
 Properties
 ----------
 
-+----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`FocusMode<enum_Control_FocusMode>`                       | focus_mode                                                                                                    | ``0`` *(parent override)* |
-+----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`String<class_String>`                                    | :ref:`language<class_LinkButton_property_language>`                                                           | ``""``                    |
-+----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`CursorShape<enum_Control_CursorShape>`                   | mouse_default_cursor_shape                                                                                    | ``2`` *(parent override)* |
-+----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`StructuredTextParser<enum_Control_StructuredTextParser>` | :ref:`structured_text_bidi_override<class_LinkButton_property_structured_text_bidi_override>`                 | ``0``                     |
-+----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`Array<class_Array>`                                      | :ref:`structured_text_bidi_override_options<class_LinkButton_property_structured_text_bidi_override_options>` | ``[]``                    |
-+----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`String<class_String>`                                    | :ref:`text<class_LinkButton_property_text>`                                                                   | ``""``                    |
-+----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`TextDirection<enum_Control_TextDirection>`               | :ref:`text_direction<class_LinkButton_property_text_direction>`                                               | ``0``                     |
-+----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>`            | :ref:`underline<class_LinkButton_property_underline>`                                                         | ``0``                     |
-+----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+---------------------------+
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`FocusMode<enum_Control_FocusMode>`                       | focus_mode                                                                                                    | ``0`` (overrides :ref:`Control<class_Control_property_focus_mode>`)                 |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                                    | :ref:`language<class_LinkButton_property_language>`                                                           | ``""``                                                                              |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`CursorShape<enum_Control_CursorShape>`                   | mouse_default_cursor_shape                                                                                    | ``2`` (overrides :ref:`Control<class_Control_property_mouse_default_cursor_shape>`) |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`StructuredTextParser<enum_Control_StructuredTextParser>` | :ref:`structured_text_bidi_override<class_LinkButton_property_structured_text_bidi_override>`                 | ``0``                                                                               |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                                      | :ref:`structured_text_bidi_override_options<class_LinkButton_property_structured_text_bidi_override_options>` | ``[]``                                                                              |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                                    | :ref:`text<class_LinkButton_property_text>`                                                                   | ``""``                                                                              |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`TextDirection<enum_Control_TextDirection>`               | :ref:`text_direction<class_LinkButton_property_text_direction>`                                               | ``0``                                                                               |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>`            | :ref:`underline<class_LinkButton_property_underline>`                                                         | ``0``                                                                               |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -55,27 +55,27 @@ Methods
 Theme Properties
 ----------------
 
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_LinkButton_theme_style_focus>`                            |                                |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_LinkButton_theme_font_font>`                               |                                |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color<class_LinkButton_theme_color_font_color>`                  | ``Color(0.88, 0.88, 0.88, 1)`` |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_focus_color<class_LinkButton_theme_color_font_focus_color>`      | ``Color(0.94, 0.94, 0.94, 1)`` |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_hover_color<class_LinkButton_theme_color_font_hover_color>`      | ``Color(0.94, 0.94, 0.94, 1)`` |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_LinkButton_theme_color_font_outline_color>`  | ``Color(1, 1, 1, 1)``          |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_pressed_color<class_LinkButton_theme_color_font_pressed_color>`  | ``Color(1, 1, 1, 1)``          |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`int<class_int>`           | :ref:`font_size<class_LinkButton_theme_font_size_font_size>`                |                                |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`int<class_int>`           | :ref:`outline_size<class_LinkButton_theme_constant_outline_size>`           | ``0``                          |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`int<class_int>`           | :ref:`underline_spacing<class_LinkButton_theme_constant_underline_spacing>` | ``2``                          |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
++---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color<class_LinkButton_theme_color_font_color>`                  | ``Color(0.875, 0.875, 0.875, 1)`` |
++---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_focus_color<class_LinkButton_theme_color_font_focus_color>`      | ``Color(0.95, 0.95, 0.95, 1)``    |
++---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_hover_color<class_LinkButton_theme_color_font_hover_color>`      | ``Color(0.95, 0.95, 0.95, 1)``    |
++---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_LinkButton_theme_color_font_outline_color>`  | ``Color(1, 1, 1, 1)``             |
++---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_pressed_color<class_LinkButton_theme_color_font_pressed_color>`  | ``Color(1, 1, 1, 1)``             |
++---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`           | :ref:`outline_size<class_LinkButton_theme_constant_outline_size>`           | ``0``                             |
++---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`           | :ref:`underline_spacing<class_LinkButton_theme_constant_underline_spacing>` | ``2``                             |
++---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_LinkButton_theme_font_font>`                               |                                   |
++---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`           | :ref:`font_size<class_LinkButton_theme_font_size_font_size>`                |                                   |
++---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_LinkButton_theme_style_focus>`                            |                                   |
++---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
 
 Enumerations
 ------------
@@ -221,29 +221,13 @@ Returns OpenType feature ``tag``. More info: `OpenType feature tags <https://doc
 Theme Property Descriptions
 ---------------------------
 
-.. _class_LinkButton_theme_style_focus:
-
-- :ref:`StyleBox<class_StyleBox>` **focus**
-
-:ref:`StyleBox<class_StyleBox>` used when the ``LinkButton`` is focused. It is displayed over the current :ref:`StyleBox<class_StyleBox>`, so using :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` will just disable the focus visual effect.
-
-----
-
-.. _class_LinkButton_theme_font_font:
-
-- :ref:`Font<class_Font>` **font**
-
-:ref:`Font<class_Font>` of the ``LinkButton``'s text.
-
-----
-
 .. _class_LinkButton_theme_color_font_color:
 
 - :ref:`Color<class_Color>` **font_color**
 
-+-----------+--------------------------------+
-| *Default* | ``Color(0.88, 0.88, 0.88, 1)`` |
-+-----------+--------------------------------+
++-----------+-----------------------------------+
+| *Default* | ``Color(0.875, 0.875, 0.875, 1)`` |
++-----------+-----------------------------------+
 
 Default text :ref:`Color<class_Color>` of the ``LinkButton``.
 
@@ -254,7 +238,7 @@ Default text :ref:`Color<class_Color>` of the ``LinkButton``.
 - :ref:`Color<class_Color>` **font_focus_color**
 
 +-----------+--------------------------------+
-| *Default* | ``Color(0.94, 0.94, 0.94, 1)`` |
+| *Default* | ``Color(0.95, 0.95, 0.95, 1)`` |
 +-----------+--------------------------------+
 
 Text :ref:`Color<class_Color>` used when the ``LinkButton`` is focused. Only replaces the normal text color of the button. Disabled, hovered, and pressed states take precedence over this color.
@@ -266,7 +250,7 @@ Text :ref:`Color<class_Color>` used when the ``LinkButton`` is focused. Only rep
 - :ref:`Color<class_Color>` **font_hover_color**
 
 +-----------+--------------------------------+
-| *Default* | ``Color(0.94, 0.94, 0.94, 1)`` |
+| *Default* | ``Color(0.95, 0.95, 0.95, 1)`` |
 +-----------+--------------------------------+
 
 Text :ref:`Color<class_Color>` used when the ``LinkButton`` is being hovered.
@@ -297,14 +281,6 @@ Text :ref:`Color<class_Color>` used when the ``LinkButton`` is being pressed.
 
 ----
 
-.. _class_LinkButton_theme_font_size_font_size:
-
-- :ref:`int<class_int>` **font_size**
-
-Font size of the ``LinkButton``'s text.
-
-----
-
 .. _class_LinkButton_theme_constant_outline_size:
 
 - :ref:`int<class_int>` **outline_size**
@@ -326,6 +302,30 @@ The size of the text outline.
 +-----------+-------+
 
 The vertical space between the baseline of text and the underline.
+
+----
+
+.. _class_LinkButton_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+:ref:`Font<class_Font>` of the ``LinkButton``'s text.
+
+----
+
+.. _class_LinkButton_theme_font_size_font_size:
+
+- :ref:`int<class_int>` **font_size**
+
+Font size of the ``LinkButton``'s text.
+
+----
+
+.. _class_LinkButton_theme_style_focus:
+
+- :ref:`StyleBox<class_StyleBox>` **focus**
+
+:ref:`StyleBox<class_StyleBox>` used when the ``LinkButton`` is focused. The ``focus`` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

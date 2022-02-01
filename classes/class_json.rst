@@ -18,11 +18,11 @@ Description
 
 The ``JSON`` enables all data types to be converted to and from a JSON string. This useful for serializing data to save to a file or send over the network.
 
-:ref:`stringify<class_JSON_method_stringify>` is used to convert any data type into a JSON string.
+\ :ref:`stringify<class_JSON_method_stringify>` is used to convert any data type into a JSON string.
 
-:ref:`parse<class_JSON_method_parse>` is used to convert any existing JSON data into a :ref:`Variant<class_Variant>` that can be used within Godot. If successfully parsed, use :ref:`get_data<class_JSON_method_get_data>` to retrieve the :ref:`Variant<class_Variant>`, and use ``typeof`` to check if the Variant's type is what you expect. JSON Objects are converted into a :ref:`Dictionary<class_Dictionary>`, but JSON data can be used to store :ref:`Array<class_Array>`\ s, numbers, :ref:`String<class_String>`\ s and even just a boolean.
+\ :ref:`parse<class_JSON_method_parse>` is used to convert any existing JSON data into a :ref:`Variant<class_Variant>` that can be used within Godot. If successfully parsed, use :ref:`get_data<class_JSON_method_get_data>` to retrieve the :ref:`Variant<class_Variant>`, and use ``typeof`` to check if the Variant's type is what you expect. JSON Objects are converted into a :ref:`Dictionary<class_Dictionary>`, but JSON data can be used to store :ref:`Array<class_Array>`\ s, numbers, :ref:`String<class_String>`\ s and even just a boolean.
 
-**Example**
+\ **Example**\ 
 
 ::
 
@@ -66,7 +66,7 @@ Method Descriptions
 
 Returns the :ref:`Variant<class_Variant>` containing the data of a successful :ref:`parse<class_JSON_method_parse>`.
 
-**Note:** It will return ``Null`` if the last call to parse was unsuccessful or :ref:`parse<class_JSON_method_parse>` has not yet been called.
+\ **Note:** It will return ``Null`` if the last call to parse was unsuccessful or :ref:`parse<class_JSON_method_parse>` has not yet been called.
 
 ----
 
@@ -102,13 +102,13 @@ Returns an :ref:`Error<enum_@GlobalScope_Error>`. If the parse was successful, i
 
 Converts a :ref:`Variant<class_Variant>` var to JSON text and returns the result. Useful for serializing data to store or send over the network.
 
-**Note:** The JSON specification does not define integer or float types, but only a *number* type. Therefore, converting a Variant to JSON text will convert all numerical values to :ref:`float<class_float>` types.
+\ **Note:** The JSON specification does not define integer or float types, but only a *number* type. Therefore, converting a Variant to JSON text will convert all numerical values to :ref:`float<class_float>` types.
 
-**Note:** If ``full_precision`` is true, when stringifying floats, the unreliable digits are stringified in addition to the reliable digits to guarantee exact decoding.
+\ **Note:** If ``full_precision`` is true, when stringifying floats, the unreliable digits are stringified in addition to the reliable digits to guarantee exact decoding.
 
-Use ``indent`` parameter to pretty stringify the output.
+The ``indent`` parameter controls if and how something is indented, the string used for this parameter will be used where there should be an indent in the output, even spaces like ``"   "`` will work. ``\t`` and ``\n`` can also be used for a tab indent, or to make a newline for each indent respectively.
 
-**Example output:**
+\ **Example output:**\ 
 
 ::
 
@@ -117,18 +117,34 @@ Use ``indent`` parameter to pretty stringify the output.
     
     ## JSON.stringify(my_dictionary, "\t")
     {
-            "name": "my_dictionary",
-            "version": "1.0.0",
-            "entities": [
-                    {
-                            "name": "entity_0",
-                            "value": "value_0"
-                    },
-                    {
-                            "name": "entity_1",
-                            "value": "value_1"
-                    }
-            ]
+        "name": "my_dictionary",
+        "version": "1.0.0",
+        "entities": [
+            {
+                "name": "entity_0",
+                "value": "value_0"
+            },
+            {
+                "name": "entity_1",
+                "value": "value_1"
+            }
+        ]
+    }
+    
+    ## JSON.stringify(my_dictionary, "...")
+    {
+    ..."name": "my_dictionary",
+    ..."version": "1.0.0",
+    ..."entities": [
+    ......{
+    ........."name": "entity_0",
+    ........."value": "value_0"
+    ......},
+    ......{
+    ........."name": "entity_1",
+    ........."value": "value_1"
+    ......}
+    ...]
     }
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`

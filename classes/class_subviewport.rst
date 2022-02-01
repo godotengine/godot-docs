@@ -109,7 +109,7 @@ Property Descriptions
 
 The clear mode when the sub-viewport is used as a render target.
 
-**Note:** This property is intended for 2D usage.
+\ **Note:** This property is intended for 2D usage.
 
 ----
 

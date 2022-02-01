@@ -22,7 +22,7 @@ Immediate collision overlaps can be done with the :ref:`target_position<class_Sh
 
 The node can detect multiple collision objects, but usually the first detected collision
 
-**Note:** shape casting is more computationally expensive compared to ray casting.
+\ **Note:** shape casting is more computationally expensive compared to ray casting.
 
 Properties
 ----------
@@ -53,7 +53,7 @@ Methods
 -------
 
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_exception<class_ShapeCast2D_method_add_exception>` **(** :ref:`Object<class_Object>` node **)**                                                        |
+| void                          | :ref:`add_exception<class_ShapeCast2D_method_add_exception>` **(** :ref:`CollisionObject2D<class_CollisionObject2D>` node **)**                                  |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`add_exception_rid<class_ShapeCast2D_method_add_exception_rid>` **(** :ref:`RID<class_RID>` rid **)**                                                       |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -79,7 +79,7 @@ Methods
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`is_colliding<class_ShapeCast2D_method_is_colliding>` **(** **)** |const|                                                                                   |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`remove_exception<class_ShapeCast2D_method_remove_exception>` **(** :ref:`Object<class_Object>` node **)**                                                  |
+| void                          | :ref:`remove_exception<class_ShapeCast2D_method_remove_exception>` **(** :ref:`CollisionObject2D<class_CollisionObject2D>` node **)**                            |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`remove_exception_rid<class_ShapeCast2D_method_remove_exception_rid>` **(** :ref:`RID<class_RID>` rid **)**                                                 |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -246,9 +246,9 @@ Method Descriptions
 
 .. _class_ShapeCast2D_method_add_exception:
 
-- void **add_exception** **(** :ref:`Object<class_Object>` node **)**
+- void **add_exception** **(** :ref:`CollisionObject2D<class_CollisionObject2D>` node **)**
 
-Adds a collision exception so the shape does not report collisions with the specified node.
+Adds a collision exception so the shape does not report collisions with the specified :ref:`CollisionObject2D<class_CollisionObject2D>` node.
 
 ----
 
@@ -274,7 +274,7 @@ Removes all collision exceptions for this shape.
 
 Updates the collision information for the shape. Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the shape or its parent has changed state.
 
-**Note:** ``enabled == true`` is not required for this to work.
+\ **Note:** ``enabled == true`` is not required for this to work.
 
 ----
 
@@ -340,7 +340,7 @@ Returns the normal containing one of the multiple collisions at ``index`` of the
 
 Returns the collision point containing one of the multiple collisions at ``index`` at which the shape intersects the object.
 
-**Note:** this point is in the **global** coordinate system.
+\ **Note:** this point is in the **global** coordinate system.
 
 ----
 
@@ -354,9 +354,9 @@ Returns whether any object is intersecting with the shape's vector (considering 
 
 .. _class_ShapeCast2D_method_remove_exception:
 
-- void **remove_exception** **(** :ref:`Object<class_Object>` node **)**
+- void **remove_exception** **(** :ref:`CollisionObject2D<class_CollisionObject2D>` node **)**
 
-Removes a collision exception so the shape does report collisions with the specified node.
+Removes a collision exception so the shape does report collisions with the specified :ref:`CollisionObject2D<class_CollisionObject2D>` node.
 
 ----
 

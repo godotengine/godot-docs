@@ -11,7 +11,7 @@ GPUParticlesCollision3D
 
 **Inherits:** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`GPUParticlesCollisionBox<class_GPUParticlesCollisionBox>`, :ref:`GPUParticlesCollisionHeightField<class_GPUParticlesCollisionHeightField>`, :ref:`GPUParticlesCollisionSDF<class_GPUParticlesCollisionSDF>`, :ref:`GPUParticlesCollisionSphere<class_GPUParticlesCollisionSphere>`
+**Inherited By:** :ref:`GPUParticlesCollisionBox3D<class_GPUParticlesCollisionBox3D>`, :ref:`GPUParticlesCollisionHeightField3D<class_GPUParticlesCollisionHeightField3D>`, :ref:`GPUParticlesCollisionSDF3D<class_GPUParticlesCollisionSDF3D>`, :ref:`GPUParticlesCollisionSphere3D<class_GPUParticlesCollisionSphere3D>`
 
 
 

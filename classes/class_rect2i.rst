@@ -18,6 +18,8 @@ Description
 
 It uses integer coordinates. If you need floating-point coordinates, use :ref:`Rect2<class_Rect2>` instead.
 
+Negative values for :ref:`size<class_Rect2i_property_size>` are not supported and will not work for most methods. Use :ref:`abs<class_Rect2i_method_abs>` to get a Rect2i with a positive size.
+
 Tutorials
 ---------
 
@@ -190,7 +192,7 @@ Returns ``true`` if this ``Rect2i`` completely encloses another one.
 
 - :ref:`Rect2i<class_Rect2i>` **expand** **(** :ref:`Vector2i<class_Vector2i>` to **)** |const|
 
-Returns a copy of this ``Rect2i`` expanded to include a given point.
+Returns a copy of this ``Rect2i`` expanded so that the borders align with the given point.
 
 
 .. tabs::
@@ -269,7 +271,7 @@ Returns ``true`` if the ``Rect2i`` is flat or empty.
 
 Returns ``true`` if the ``Rect2i`` contains a point. By convention, the right and bottom edges of the ``Rect2i`` are considered exclusive, so points on these edges are **not** included.
 
-**Note:** This method is not reliable for ``Rect2i`` with a *negative size*. Use :ref:`abs<class_Rect2i_method_abs>` to get a positive sized equivalent rectangle to check for contained points.
+\ **Note:** This method is not reliable for ``Rect2i`` with a *negative size*. Use :ref:`abs<class_Rect2i_method_abs>` to get a positive sized equivalent rectangle to check for contained points.
 
 ----
 

@@ -18,11 +18,11 @@ Description
 
 Returns a local variable's value. "Var Name" must be supplied, with an optional type.
 
-**Input Ports:**
+\ **Input Ports:**\ 
 
 none
 
-**Output Ports:**
+\ **Output Ports:**\ 
 
 - Data (variant): ``get``
 

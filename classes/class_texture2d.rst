@@ -22,9 +22,9 @@ A texture works by registering an image in the video hardware, which then can be
 
 Textures are often created by loading them from a file. See :ref:`@GDScript.load<class_@GDScript_method_load>`.
 
-``Texture2D`` is a base for other resources. It cannot be used directly.
+\ ``Texture2D`` is a base for other resources. It cannot be used directly.
 
-**Note:** The maximum texture size is 16384×16384 pixels due to graphics hardware limitations. Larger textures may fail to import.
+\ **Note:** The maximum texture size is 16384×16384 pixels due to graphics hardware limitations. Larger textures may fail to import.
 
 Methods
 -------

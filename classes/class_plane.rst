@@ -316,7 +316,7 @@ Operator Descriptions
 
 Returns ``true`` if the planes are not equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Plane_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Plane_method_is_equal_approx>` instead, which is more reliable.
 
 ----
 
@@ -330,7 +330,7 @@ Returns ``true`` if the planes are not equal.
 
 Returns ``true`` if the planes are exactly equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Plane_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Plane_method_is_equal_approx>` instead, which is more reliable.
 
 ----
 

@@ -141,7 +141,7 @@ Property Descriptions
 | *Getter*  | get_engine_version()      |
 +-----------+---------------------------+
 
-The Godot version this ``VisualShader`` was designed for, in the form of a :ref:`Dictionary<class_Dictionary>` with ``major`` and ``minor`` keys with integer values. Example: ``{"major": 4, "minor": 0}``
+The Godot version this ``VisualShader`` was designed for, in the form of a :ref:`Dictionary<class_Dictionary>` with ``major`` and ``minor`` keys with integer values. Example: ``{"major": 4, "minor": 0}``\ 
 
 This is used by the editor to convert visual shaders from older Godot versions.
 

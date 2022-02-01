@@ -56,7 +56,7 @@ Method Descriptions
 
 - :ref:`Object<class_Object>` **get_collider** **(** **)** |const|
 
-Returns the colliding body's attached :ref:`Object<class_Object>`, if a collision occured.
+Returns the colliding body's attached :ref:`Object<class_Object>`, if a collision occurred.
 
 ----
 
@@ -64,7 +64,7 @@ Returns the colliding body's attached :ref:`Object<class_Object>`, if a collisio
 
 - :ref:`int<class_int>` **get_collider_id** **(** **)** |const|
 
-Returns the unique instance ID of the colliding body's attached :ref:`Object<class_Object>`, if a collision occured. See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
+Returns the unique instance ID of the colliding body's attached :ref:`Object<class_Object>`, if a collision occurred. See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
 
 ----
 
@@ -72,7 +72,7 @@ Returns the unique instance ID of the colliding body's attached :ref:`Object<cla
 
 - :ref:`RID<class_RID>` **get_collider_rid** **(** **)** |const|
 
-Returns the colliding body's :ref:`RID<class_RID>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`, if a collision occured.
+Returns the colliding body's :ref:`RID<class_RID>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`, if a collision occurred.
 
 ----
 
@@ -80,7 +80,7 @@ Returns the colliding body's :ref:`RID<class_RID>` used by the :ref:`PhysicsServ
 
 - :ref:`int<class_int>` **get_collider_shape** **(** **)** |const|
 
-Returns the colliding body's shape index, if a collision occured. See :ref:`CollisionObject2D<class_CollisionObject2D>`.
+Returns the colliding body's shape index, if a collision occurred. See :ref:`CollisionObject2D<class_CollisionObject2D>`.
 
 ----
 
@@ -88,7 +88,7 @@ Returns the colliding body's shape index, if a collision occured. See :ref:`Coll
 
 - :ref:`Vector2<class_Vector2>` **get_collider_velocity** **(** **)** |const|
 
-Returns the colliding body's velocity, if a collision occured.
+Returns the colliding body's velocity, if a collision occurred.
 
 ----
 
@@ -96,7 +96,7 @@ Returns the colliding body's velocity, if a collision occured.
 
 - :ref:`float<class_float>` **get_collision_depth** **(** **)** |const|
 
-Returns the length of overlap along the collision normal, if a collision occured.
+Returns the length of overlap along the collision normal, if a collision occurred.
 
 ----
 
@@ -104,7 +104,7 @@ Returns the length of overlap along the collision normal, if a collision occured
 
 - :ref:`int<class_int>` **get_collision_local_shape** **(** **)** |const|
 
-Returns the moving object's colliding shape, if a collision occured.
+Returns the moving object's colliding shape, if a collision occurred.
 
 ----
 
@@ -112,7 +112,7 @@ Returns the moving object's colliding shape, if a collision occured.
 
 - :ref:`Vector2<class_Vector2>` **get_collision_normal** **(** **)** |const|
 
-Returns the colliding body's shape's normal at the point of collision, if a collision occured.
+Returns the colliding body's shape's normal at the point of collision, if a collision occurred.
 
 ----
 
@@ -120,7 +120,7 @@ Returns the colliding body's shape's normal at the point of collision, if a coll
 
 - :ref:`Vector2<class_Vector2>` **get_collision_point** **(** **)** |const|
 
-Returns the point of collision in global coordinates, if a collision occured.
+Returns the point of collision in global coordinates, if a collision occurred.
 
 ----
 
@@ -136,7 +136,7 @@ Returns the maximum fraction of the motion that can occur without a collision, b
 
 - :ref:`float<class_float>` **get_collision_unsafe_fraction** **(** **)** |const|
 
-Returns the minimum fraction of the motion needed to collide, if a collision occured, between ``0`` and ``1``.
+Returns the minimum fraction of the motion needed to collide, if a collision occurred, between ``0`` and ``1``.
 
 ----
 

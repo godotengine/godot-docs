@@ -90,7 +90,7 @@ enum **ProcessMode**:
 
 - **PROCESS_MODE_REALTIME** = **3** --- Uses the fast filtering algorithm to process the radiance map. In general this results in lower quality, but substantially faster run times. If you need better quality, but still need to update the sky every frame, consider turning on :ref:`ProjectSettings.rendering/reflections/sky_reflections/fast_filter_high_quality<class_ProjectSettings_property_rendering/reflections/sky_reflections/fast_filter_high_quality>`.
 
-**Note:** The fast filtering algorithm is limited to 256x256 cubemaps, so :ref:`radiance_size<class_Sky_property_radiance_size>` must be set to :ref:`RADIANCE_SIZE_256<class_Sky_constant_RADIANCE_SIZE_256>`.
+\ **Note:** The fast filtering algorithm is limited to 256x256 cubemaps, so :ref:`radiance_size<class_Sky_property_radiance_size>` must be set to :ref:`RADIANCE_SIZE_256<class_Sky_constant_RADIANCE_SIZE_256>`.
 
 Property Descriptions
 ---------------------
@@ -127,7 +127,7 @@ The ``Sky``'s radiance map size. The higher the radiance map size, the more deta
 
 See :ref:`RadianceSize<enum_Sky_RadianceSize>` constants for values.
 
-**Note:** Some hardware will have trouble with higher radiance sizes, especially :ref:`RADIANCE_SIZE_512<class_Sky_constant_RADIANCE_SIZE_512>` and above. Only use such high values on high-end hardware.
+\ **Note:** Some hardware will have trouble with higher radiance sizes, especially :ref:`RADIANCE_SIZE_512<class_Sky_constant_RADIANCE_SIZE_512>` and above. Only use such high values on high-end hardware.
 
 ----
 

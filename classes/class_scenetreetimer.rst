@@ -41,6 +41,8 @@ As opposed to :ref:`Timer<class_Timer>`, it does not require the instantiation o
 
 
 
+The timer will be automatically freed after its time elapses.
+
 Properties
 ----------
 
@@ -70,7 +72,7 @@ Property Descriptions
 | *Getter* | get_time_left()      |
 +----------+----------------------+
 
-The time remaining.
+The time remaining (in seconds).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

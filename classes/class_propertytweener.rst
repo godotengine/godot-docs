@@ -18,7 +18,7 @@ Description
 
 ``PropertyTweener`` is used to interpolate a property in an object. See :ref:`Tween.tween_property<class_Tween_method_tween_property>` for more usage information.
 
-**Note:** :ref:`Tween.tween_property<class_Tween_method_tween_property>` is the only correct way to create ``PropertyTweener``. Any ``PropertyTweener`` created manually will not function correctly.
+\ **Note:** :ref:`Tween.tween_property<class_Tween_method_tween_property>` is the only correct way to create ``PropertyTweener``. Any ``PropertyTweener`` created manually will not function correctly.
 
 Methods
 -------

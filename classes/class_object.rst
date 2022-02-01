@@ -51,12 +51,16 @@ The ``in`` operator will evaluate to ``true`` as long as the key exists, even if
 
 Objects also receive notifications. Notifications are a simple way to notify the object about different events, so they can all be handled together. See :ref:`_notification<class_Object_method__notification>`.
 
-**Note:** Unlike references to a :ref:`RefCounted<class_RefCounted>`, references to an Object stored in a variable can become invalid without warning. Therefore, it's recommended to use :ref:`RefCounted<class_RefCounted>` for data classes instead of ``Object``.
+\ **Note:** Unlike references to a :ref:`RefCounted<class_RefCounted>`, references to an Object stored in a variable can become invalid without warning. Therefore, it's recommended to use :ref:`RefCounted<class_RefCounted>` for data classes instead of ``Object``.
+
+\ **Note:** The ``script`` property is not exposed like most properties, but it does have a setter and getter (``set_script()`` and ``get_script()``).
 
 Tutorials
 ---------
 
 - :doc:`When and how to avoid using nodes for everything <../tutorials/best_practices/node_alternatives>`
+
+- :doc:`Object notifications <../tutorials/best_practices/godot_notifications>`
 
 Methods
 -------
@@ -298,7 +302,7 @@ Calls the ``method`` on the object and returns the result. This method supports 
 
 
 
-**Note:** In C#, the method name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined methods where you should use the same convention as in the C# source (typically PascalCase).
+\ **Note:** In C#, the method name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined methods where you should use the same convention as in the C# source (typically PascalCase).
 
 ----
 
@@ -323,7 +327,7 @@ Calls the ``method`` on the object during idle time. This method supports a vari
 
 
 
-**Note:** In C#, the method name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined methods where you should use the same convention as in the C# source (typically PascalCase).
+\ **Note:** In C#, the method name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined methods where you should use the same convention as in the C# source (typically PascalCase).
 
 ----
 
@@ -364,13 +368,13 @@ Returns ``true`` if the object can translate strings. See :ref:`set_message_tran
 
 Connects a ``signal`` to a ``callable``. Pass optional ``binds`` to the call as an :ref:`Array<class_Array>` of parameters. These parameters will be passed to the :ref:`Callable<class_Callable>`'s method after any parameter used in the call to :ref:`emit_signal<class_Object_method_emit_signal>`. Use ``flags`` to set deferred or one-shot connections. See :ref:`ConnectFlags<enum_Object_ConnectFlags>` constants.
 
-**Note:** This method is the legacy implementation for connecting signals. The recommended modern approach is to use :ref:`Signal.connect<class_Signal_method_connect>` and to use :ref:`Callable.bind<class_Callable_method_bind>` to add and validate parameter binds. Both syntaxes are shown below.
+\ **Note:** This method is the legacy implementation for connecting signals. The recommended modern approach is to use :ref:`Signal.connect<class_Signal_method_connect>` and to use :ref:`Callable.bind<class_Callable_method_bind>` to add and validate parameter binds. Both syntaxes are shown below.
 
 A signal can only be connected once to a :ref:`Callable<class_Callable>`. It will throw an error if already connected, unless the signal was connected with :ref:`CONNECT_REFERENCE_COUNTED<class_Object_constant_CONNECT_REFERENCE_COUNTED>`. To avoid this, first, use :ref:`is_connected<class_Object_method_is_connected>` to check for existing connections.
 
 If the callable's target is destroyed in the game's lifecycle, the connection will be lost.
 
-**Examples with recommended syntax:**
+\ **Examples with recommended syntax:**\ 
 
 Connecting signals is one of the most common operations in Godot and the API gives many options to do so, which are described further down. The code block below shows the recommended approach for both GDScript and C#.
 
@@ -423,7 +427,7 @@ Connecting signals is one of the most common operations in Godot and the API giv
 
 
 
-**``Object.connect()`` or ``Signal.connect()``?**
+\ **\ ``Object.connect()`` or ``Signal.connect()``?**\ 
 
 As seen above, the recommended method to connect signals is not :ref:`connect<class_Object_method_connect>`. The code block below shows the four options for connecting signals, using either this legacy method or the recommended :ref:`Signal.connect<class_Signal_method_connect>`, and using either an implicit :ref:`Callable<class_Callable>` or a manually defined one.
 
@@ -472,7 +476,7 @@ As seen above, the recommended method to connect signals is not :ref:`connect<cl
 
 While all options have the same outcome (``button``'s :ref:`BaseButton.button_down<class_BaseButton_signal_button_down>` signal will be connected to ``_on_button_down``), option 3 offers the best validation: it will throw a compile-time error if either the ``button_down`` signal or the ``_on_button_down`` callable are undefined. On the other hand, option 2 only relies on string names and will only be able to validate either names at runtime: it will throw a runtime error if ``"button_down"`` doesn't correspond to a signal, or if ``"_on_button_down"`` is not a registered method in the object ``self``. The main reason for using options 1, 2, or 4 would be if you actually need to use strings (e.g. to connect signals programmatically based on strings read from a configuration file). Otherwise, option 3 is the recommended (and fastest) method.
 
-**Parameter bindings and passing:**
+\ **Parameter bindings and passing:**\ 
 
 For legacy or language-specific reasons, there are also several ways to bind parameters to signals. One can pass a ``binds`` :ref:`Array<class_Array>` to :ref:`connect<class_Object_method_connect>` or :ref:`Signal.connect<class_Signal_method_connect>`, or use the recommended :ref:`Callable.bind<class_Callable_method_bind>` method to create a new callable from an existing one, with the given parameter binds.
 
@@ -572,7 +576,7 @@ Deletes the object from memory. Any pre-existing reference to the freed object w
 
 Returns the :ref:`Variant<class_Variant>` value of the given ``property``. If the ``property`` doesn't exist, this will return ``null``.
 
-**Note:** In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
+\ **Note:** In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
 
 ----
 
@@ -582,7 +586,7 @@ Returns the :ref:`Variant<class_Variant>` value of the given ``property``. If th
 
 Returns the object's class as a :ref:`String<class_String>`. See also :ref:`is_class<class_Object_method_is_class>`.
 
-**Note:** :ref:`get_class<class_Object_method_get_class>` does not take ``class_name`` declarations into account. If the object has a ``class_name`` defined, the base class name will be returned instead.
+\ **Note:** :ref:`get_class<class_Object_method_get_class>` does not take ``class_name`` declarations into account. If the object has a ``class_name`` defined, the base class name will be returned instead.
 
 ----
 
@@ -607,6 +611,8 @@ Each :ref:`Dictionary<class_Dictionary>` contains three String entries:
 - :ref:`Variant<class_Variant>` **get_indexed** **(** :ref:`NodePath<class_NodePath>` property **)** |const|
 
 Gets the object's property indexed by the given :ref:`NodePath<class_NodePath>`. The node path should be relative to the current object and can use the colon character (``:``) to access nested properties. Examples: ``"position:x"`` or ``"material:next_pass:blend_mode"``.
+
+\ **Note:** Even though the method takes :ref:`NodePath<class_NodePath>` argument, it doesn't support actual paths to :ref:`Node<class_Node>`\ s in the scene tree, only colon-separated sub-property paths. For the purpose of nodes, use :ref:`Node.get_node_and_resource<class_Node_method_get_node_and_resource>` instead.
 
 ----
 
@@ -724,7 +730,7 @@ Returns ``true`` if signal emission blocking is enabled.
 
 Returns ``true`` if the object inherits from the given ``class``. See also :ref:`get_class<class_Object_method_get_class>`.
 
-**Note:** :ref:`is_class<class_Object_method_is_class>` does not take ``class_name`` declarations into account. If the object has a ``class_name`` defined, :ref:`is_class<class_Object_method_is_class>` will return ``false`` for that name.
+\ **Note:** :ref:`is_class<class_Object_method_is_class>` does not take ``class_name`` declarations into account. If the object has a ``class_name`` defined, :ref:`is_class<class_Object_method_is_class>` will return ``false`` for that name.
 
 ----
 
@@ -776,7 +782,7 @@ Removes a given entry from the object's metadata. See also :ref:`set_meta<class_
 
 Assigns a new value to the given property. If the ``property`` does not exist, nothing will happen.
 
-**Note:** In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
+\ **Note:** In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
 
 ----
 
@@ -794,7 +800,7 @@ If set to ``true``, signal emission is blocked.
 
 Assigns a new value to the given property, after the current frame's physics step. This is equivalent to calling :ref:`set<class_Object_method_set>` via :ref:`call_deferred<class_Object_method_call_deferred>`, i.e. ``call_deferred("set", property, value)``.
 
-**Note:** In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
+\ **Note:** In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
 
 ----
 
@@ -885,7 +891,7 @@ Only works if message translation is enabled (which it is by default), otherwise
 
 The number ``n`` is the number or quantity of the plural object. It will be used to guide the translation system to fetch the correct plural form for the selected language.
 
-**Note:** Negative and floating-point values usually represent physical entities for which singular and plural don't clearly apply. In such cases, use :ref:`tr<class_Object_method_tr>`.
+\ **Note:** Negative and floating-point values usually represent physical entities for which singular and plural don't clearly apply. In such cases, use :ref:`tr<class_Object_method_tr>`.
 
 See :doc:`Localization using gettext <../tutorials/i18n/localization_using_gettext>` for examples of the usage of this method.
 
